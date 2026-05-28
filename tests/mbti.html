@@ -523,8 +523,8 @@
       // Ties default to I, N, T, J
       const ei = counts.E > counts.I ? "E" : "I";
       const sn = counts.S > counts.N ? "S" : "N";
-      const tf = counts.T > counts.F ? "T" : "F";
-      const jp = counts.J > counts.P ? "J" : "P";
+      const tf = counts.F > counts.T ? "F" : "T";
+      const jp = counts.P > counts.J ? "P" : "J";
       return { type: ei + sn + tf + jp, axes: axisScores };
     }
 

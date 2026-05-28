@@ -463,8 +463,8 @@
       for (let i = 2; i <= 9; i++) if (scores[i] > max) { max = scores[i]; dom = i; }
       const adjacents = {1:[9,2], 2:[1,3], 3:[2,4], 4:[3,5], 5:[4,6], 6:[5,7], 7:[6,8], 8:[7,9], 9:[8,1]};
       const [a, b] = adjacents[dom];
-      const wing = scores[a] > scores[b] ? a : (scores[b] > scores[a] ? b : a);
-      return { dominant: dom, wing, scores, profile: `${dom}w${wing}` };
+      const wing = scores[a] > scores[b] ? a : (scores[b] > scores[a] ? b : null);
+      return { dominant: dom, wing, scores, profile: wing ? `${dom}w${wing}` : `${dom}` };
     }
 
     function showResult() {
