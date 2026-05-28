@@ -299,7 +299,7 @@ function permalinkHtml(soul, uuid) {
     <footer class="ed-colophon">
       <span>End of feature · pp. 12</span>
       <span>Set in Newsreader &amp; IBM Plex</span>
-      <span>MIT · psyduckler / agenttune</span>
+      <span>MIT · psyduckler / agenttune · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
 
   </main>

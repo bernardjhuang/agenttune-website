@@ -33,6 +33,20 @@
     <lastmod>2026-05-26</lastmod>
   </url>
 
+  <!-- Legal -->
+  <url>
+    <loc>https://agent-tune.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-05-28</lastmod>
+  </url>
+  <url>
+    <loc>https://agent-tune.com/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-05-28</lastmod>
+  </url>
+
   <!-- Individual test pages -->
   <url>
     <loc>https://agent-tune.com/tests/mbti</loc>
