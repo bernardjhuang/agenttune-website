@@ -4,22 +4,61 @@ User-agent: *
 Allow: /
 
 # Be friendly to AI-agent crawlers (this site is meant to be read by them).
+# Named records matter: several of these (Google-Extended, Applebot-Extended,
+# etc.) only honor an explicit user-agent block, not the wildcard above.
+
+# --- OpenAI ---
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# --- Anthropic ---
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+# --- Google (Gemini / AI Overviews training opt-in) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Apple Intelligence / Siri ---
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Perplexity ---
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Perplexity-User
+Allow: /
+
+# --- Other AI / search crawlers ---
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 User-agent: CCBot

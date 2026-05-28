@@ -11,18 +11,19 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/library/mbti/enfj" />
   <meta property="og:site_name" content="AgentTune" />
-  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
-  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image" content="https://agent-tune.com/og/library/mbti/enfj.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/library/mbti/enfj.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+  <meta property="og:image:alt" content="ENFJ — Protagonist · AgentTune personality tuning for AI agents" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ENFJ — Protagonist" />
   <meta name="twitter:description" content="Mission-driven, warm. Thinks through people." />
   <meta name="twitter:site" content="@psyduckler" />
-  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/library/mbti/enfj.png" />
+  <meta name="twitter:image:alt" content="ENFJ — Protagonist · AgentTune" />
 
   <link rel="canonical" href="https://agent-tune.com/library/mbti/enfj" />
   <link rel="alternate" type="text/markdown" title="Tuning file" href="https://agent-tune.com/tunings/mbti/ENFJ.md" />
@@ -201,7 +202,7 @@
         <span>AgentTune</span>
       </a>
       <div class="nav-links">
-        <a href="/library" class="active">Library</a>
+        <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -472,7 +473,7 @@ When you&#39;re doing work that matters to you, &quot;stuck&quot; is almost alwa
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
         <a class="lib-related-pill" href="/library/mbti/infj" style="color: #5b4dc0;">INFJ →</a><a class="lib-related-pill" href="/library/mbti/infp" style="color: #5b4dc0;">INFP →</a><a class="lib-related-pill" href="/library/mbti/enfp" style="color: #5b4dc0;">ENFP →</a>
-        <a class="lib-related-pill is-all" href="/library#mbti">All 16 MBTI types →</a>
+        <a class="lib-related-pill is-all" href="/library/#mbti">All 16 MBTI types →</a>
       </div>
     </section>
 
@@ -499,7 +500,7 @@ When you&#39;re doing work that matters to you, &quot;stuck&quot; is almost alwa
       function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
 
       if (window.renderIntegrations) {
-        window.renderIntegrations(TUNING, { only: ["claude-code", "claude-ai", "chatgpt-custom", "cursor", "gemini-gems", "codex-cli"] });
+        window.renderIntegrations(TUNING);
       }
 
       function doDownload() {

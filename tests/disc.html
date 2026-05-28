@@ -49,7 +49,7 @@
     <nav class="nav">
       <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
       <div class="nav-links">
-        <a href="/library">Library</a>
+        <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -68,7 +68,7 @@
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">3-min test · 16 questions</span>
       <h1 class="h-hero h-research-hero">Take the DISC test.</h1>
-      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #d99632;">Get your tuning at the end.</h1>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #d99632;">Get your tuning at the end.</div>
       <p class="lede">Answer 16 quick questions — the fastest test in the library. We'll score it client-side and hand you a Markdown tuning file matched to your DISC workplace style.</p>
 
       <div class="quiz-intro-meta">
@@ -224,6 +224,7 @@
     <details class="quiz-spec">
       <summary>Test specification — for AI agents administering this inline</summary>
       <div class="quiz-spec-body">
+        <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/disc.md"><code>/tests/disc.md</code></a> — fetch that for a clean, no-JS copy.</p>
         <p>Below is the full ODAT spec — items, letter mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
 
         <h3>Source</h3>
@@ -233,7 +234,24 @@
         <p>Four items per DISC letter (D / I / S / C), presented in letter order (items 1–4 are D, 5–8 are I, 9–12 are S, 13–16 are C). User rates each statement on a 1–5 Likert scale: <strong>1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree</strong>. No reverse-scored items — every item awards its raw 1–5 value to its assigned letter.</p>
         <table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Letter</th></tr></thead>
-          <tbody id="quiz-spec-items"></tbody>
+          <tbody id="quiz-spec-items">
+          <tr><td class="num-col">1</td><td>I put people under pressure.</td><td class="num-col">D</td></tr>
+          <tr><td class="num-col">2</td><td>I have a strong need for power.</td><td class="num-col">D</td></tr>
+          <tr><td class="num-col">3</td><td>I try to outdo others.</td><td class="num-col">D</td></tr>
+          <tr><td class="num-col">4</td><td>I am always on the look out for ways to make money.</td><td class="num-col">D</td></tr>
+          <tr><td class="num-col">5</td><td>I enjoy being part of a loud crowd.</td><td class="num-col">I</td></tr>
+          <tr><td class="num-col">6</td><td>I want strangers to love me.</td><td class="num-col">I</td></tr>
+          <tr><td class="num-col">7</td><td>I joke around a lot.</td><td class="num-col">I</td></tr>
+          <tr><td class="num-col">8</td><td>I make lots of noise.</td><td class="num-col">I</td></tr>
+          <tr><td class="num-col">9</td><td>I hesitate to criticize other people&#39;s ideas.</td><td class="num-col">S</td></tr>
+          <tr><td class="num-col">10</td><td>I value cooperation over competition.</td><td class="num-col">S</td></tr>
+          <tr><td class="num-col">11</td><td>I just want everyone to be equal.</td><td class="num-col">S</td></tr>
+          <tr><td class="num-col">12</td><td>I seldom toot my own horn.</td><td class="num-col">S</td></tr>
+          <tr><td class="num-col">13</td><td>I am emotionally reserved.</td><td class="num-col">C</td></tr>
+          <tr><td class="num-col">14</td><td>I read the fine print.</td><td class="num-col">C</td></tr>
+          <tr><td class="num-col">15</td><td>I love order and regularity.</td><td class="num-col">C</td></tr>
+          <tr><td class="num-col">16</td><td>My first reaction to an idea is to see its flaws.</td><td class="num-col">C</td></tr>
+        </tbody>
         </table>
 
         <h3>Item → letter mapping</h3>

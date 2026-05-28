@@ -43,3 +43,6 @@
 /library/ocean/agreeableness-low.md  /tunings/ocean/A-low.md  200
 /library/ocean/neuroticism-high.md  /tunings/ocean/N-high.md  200
 /library/ocean/neuroticism-low.md  /tunings/ocean/N-low.md  200
+
+# Catch-all: real 404 for unknown paths (must stay last)
+/*  /404.html  404

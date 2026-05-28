@@ -48,7 +48,7 @@
     <nav class="nav">
       <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
       <div class="nav-links">
-        <a href="/library">Library</a>
+        <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -67,7 +67,7 @@
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">5-min test · 36 questions · 1–7 scale</span>
       <h1 class="h-hero h-research-hero">Take the Attachment test.</h1>
-      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #e07a8a;">Get your tuning at the end.</h1>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #e07a8a;">Get your tuning at the end.</div>
       <p class="lede">Answer 36 questions on a 1–7 Likert scale. We'll score it client-side (handling the 14 reverse-scored items) and hand you a Markdown tuning file matched to your attachment style.</p>
 
       <div class="quiz-intro-meta">
@@ -233,6 +233,7 @@
     <details class="quiz-spec">
       <summary>Test specification — for AI agents administering this inline</summary>
       <div class="quiz-spec-body">
+        <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/attachment.md"><code>/tests/attachment.md</code></a> — fetch that for a clean, no-JS copy.</p>
         <p>Below is the full ECR-R spec — items, subscale mapping, reverse-scoring rules, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
 
         <h3>Source</h3>
@@ -242,7 +243,44 @@
         <p>18 anxiety items (items 1–18) and 18 avoidance items (items 19–36). User rates each statement on a <strong>1–7 Likert scale</strong> (not 1–5): <strong>1 = Strongly Disagree, 4 = Neutral, 7 = Strongly Agree</strong>. <strong>14 of the 36 items are reverse-scored</strong> — see the <em>Rev?</em> column below.</p>
         <table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Subscale</th><th class="num-col">Rev?</th></tr></thead>
-          <tbody id="quiz-spec-items"></tbody>
+          <tbody id="quiz-spec-items">
+          <tr><td class="num-col">1</td><td>I&#39;m afraid that I will lose my partner&#39;s love.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">2</td><td>I often worry that my partner will not want to stay with me.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">3</td><td>I often worry that my partner doesn&#39;t really love me.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">4</td><td>I worry that romantic partners won&#39;t care about me as much as I care about them.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">5</td><td>I often wish that my partner&#39;s feelings for me were as strong as my feelings for them.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">6</td><td>I worry a lot about my relationships.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">7</td><td>When my partner is out of sight, I worry that they might become interested in someone else.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">8</td><td>When I show my feelings for romantic partners, I&#39;m afraid they will not feel the same about me.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">9</td><td>I rarely worry about my partner leaving me.</td><td class="num-col">Anxiety</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">10</td><td>My romantic partner makes me doubt myself.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">11</td><td>I do not often worry about being abandoned.</td><td class="num-col">Anxiety</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">12</td><td>I find that my partner(s) don&#39;t want to get as close as I would like.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">13</td><td>Sometimes romantic partners change their feelings about me for no apparent reason.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">14</td><td>My desire to be very close sometimes scares people away.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">15</td><td>I&#39;m afraid that once a romantic partner gets to know me, they won&#39;t like who I really am.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">16</td><td>It makes me mad that I don&#39;t get the affection and support I need from my partner.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">17</td><td>I worry that I won&#39;t measure up to other people.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">18</td><td>My partner only seems to notice me when I&#39;m angry.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">19</td><td>I prefer not to show a partner how I feel deep down.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">20</td><td>I feel comfortable sharing my private thoughts and feelings with my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">21</td><td>I find it difficult to allow myself to depend on romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">22</td><td>I am very comfortable being close to romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">23</td><td>I don&#39;t feel comfortable opening up to romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">24</td><td>I prefer not to be too close to romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">25</td><td>I get uncomfortable when a romantic partner wants to be very close.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">26</td><td>I find it relatively easy to get close to my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">27</td><td>It&#39;s not difficult for me to get close to my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">28</td><td>I usually discuss my problems and concerns with my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">29</td><td>It helps to turn to my romantic partner in times of need.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">30</td><td>I tell my partner just about everything.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">31</td><td>I talk things over with my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">32</td><td>I am nervous when partners get too close to me.</td><td class="num-col">Avoidance</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">33</td><td>I feel comfortable depending on romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">34</td><td>I find it easy to depend on romantic partners.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">35</td><td>It&#39;s easy for me to be affectionate with my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">36</td><td>My partner really understands me and my needs.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
+        </tbody>
         </table>
 
         <h3>Subscale mapping + reverse-scored items</h3>

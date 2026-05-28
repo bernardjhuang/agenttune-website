@@ -11,18 +11,19 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/library/mbti/esfj" />
   <meta property="og:site_name" content="AgentTune" />
-  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
-  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image" content="https://agent-tune.com/og/library/mbti/esfj.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/library/mbti/esfj.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+  <meta property="og:image:alt" content="ESFJ — Consul · AgentTune personality tuning for AI agents" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ESFJ — Consul" />
   <meta name="twitter:description" content="Warm, considerate. Thinks through impact." />
   <meta name="twitter:site" content="@psyduckler" />
-  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/library/mbti/esfj.png" />
+  <meta name="twitter:image:alt" content="ESFJ — Consul · AgentTune" />
 
   <link rel="canonical" href="https://agent-tune.com/library/mbti/esfj" />
   <link rel="alternate" type="text/markdown" title="Tuning file" href="https://agent-tune.com/tunings/mbti/ESFJ.md" />
@@ -201,7 +202,7 @@
         <span>AgentTune</span>
       </a>
       <div class="nav-links">
-        <a href="/library" class="active">Library</a>
+        <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -472,7 +473,7 @@ If yes, the unblock isn&#39;t the project. It&#39;s permission to ask for help, 
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
         <a class="lib-related-pill" href="/library/mbti/istj" style="color: #5b4dc0;">ISTJ →</a><a class="lib-related-pill" href="/library/mbti/isfj" style="color: #5b4dc0;">ISFJ →</a><a class="lib-related-pill" href="/library/mbti/estj" style="color: #5b4dc0;">ESTJ →</a>
-        <a class="lib-related-pill is-all" href="/library#mbti">All 16 MBTI types →</a>
+        <a class="lib-related-pill is-all" href="/library/#mbti">All 16 MBTI types →</a>
       </div>
     </section>
 
@@ -499,7 +500,7 @@ If yes, the unblock isn&#39;t the project. It&#39;s permission to ask for help, 
       function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
 
       if (window.renderIntegrations) {
-        window.renderIntegrations(TUNING, { only: ["claude-code", "claude-ai", "chatgpt-custom", "cursor", "gemini-gems", "codex-cli"] });
+        window.renderIntegrations(TUNING);
       }
 
       function doDownload() {

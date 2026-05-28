@@ -48,7 +48,7 @@
     <nav class="nav">
       <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
       <div class="nav-links">
-        <a href="/library">Library</a>
+        <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -67,7 +67,7 @@
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">7-min test · 50 questions · 1–5 scale</span>
       <h1 class="h-hero h-research-hero">Take the Big Five test.</h1>
-      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #3a72c4;">Get your tuning at the end.</h1>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #3a72c4;">Get your tuning at the end.</div>
       <p class="lede">Answer 50 quick questions on a 1–5 Likert scale. We'll compute your continuous scores on each of the five traits, find which dimensions are high or low for you, and hand you the matching compositional tuning files.</p>
 
       <div class="quiz-intro-meta">
@@ -252,6 +252,7 @@
     <details class="quiz-spec">
       <summary>Test specification — for AI agents administering this inline</summary>
       <div class="quiz-spec-body">
+        <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/big-five.md"><code>/tests/big-five.md</code></a> — fetch that for a clean, no-JS copy.</p>
         <p>Below is the full IPIP-50 spec — items, dimension mapping, reverse-scoring rules, scoring algorithm, z-score interpretation, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
 
         <h3>Source</h3>
@@ -261,7 +262,58 @@
         <p>Ten items per OCEAN dimension (O / C / E / A / N), <strong>interleaved</strong> in a fixed rotation (item 1 = E, 2 = A, 3 = C, 4 = N, 5 = O, 6 = E, …). Each statement begins with an implicit "I …" (e.g. "Am the life of the party" → "I am the life of the party"). User rates each on a <strong>1–5 Likert scale</strong>: <strong>1 = Very Inaccurate, 5 = Very Accurate</strong>. <strong>20 of the 50 items are reverse-scored</strong> — see the <em>Rev?</em> column.</p>
         <table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement (implicit "I…")</th><th class="num-col">Dim</th><th class="num-col">Rev?</th></tr></thead>
-          <tbody id="quiz-spec-items"></tbody>
+          <tbody id="quiz-spec-items">
+          <tr><td class="num-col">1</td><td>Am the life of the party.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">2</td><td>Feel little concern for others.</td><td class="num-col">A</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">3</td><td>Am always prepared.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">4</td><td>Get stressed out easily.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">5</td><td>Have a rich vocabulary.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">6</td><td>Don&#39;t talk a lot.</td><td class="num-col">E</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">7</td><td>Am interested in people.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">8</td><td>Leave my belongings around.</td><td class="num-col">C</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">9</td><td>Am relaxed most of the time.</td><td class="num-col">N</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">10</td><td>Have difficulty understanding abstract ideas.</td><td class="num-col">O</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">11</td><td>Feel comfortable around people.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">12</td><td>Insult people.</td><td class="num-col">A</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">13</td><td>Pay attention to details.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">14</td><td>Worry about things.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">15</td><td>Have a vivid imagination.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">16</td><td>Keep in the background.</td><td class="num-col">E</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">17</td><td>Sympathize with others&#39; feelings.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">18</td><td>Make a mess of things.</td><td class="num-col">C</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">19</td><td>Seldom feel blue.</td><td class="num-col">N</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">20</td><td>Am not interested in abstract ideas.</td><td class="num-col">O</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">21</td><td>Start conversations.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">22</td><td>Am not interested in other people&#39;s problems.</td><td class="num-col">A</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">23</td><td>Get chores done right away.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">24</td><td>Am easily disturbed.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">25</td><td>Have excellent ideas.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">26</td><td>Have little to say.</td><td class="num-col">E</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">27</td><td>Have a soft heart.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">28</td><td>Often forget to put things back in their proper place.</td><td class="num-col">C</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">29</td><td>Get upset easily.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">30</td><td>Do not have a good imagination.</td><td class="num-col">O</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">31</td><td>Talk to a lot of different people at parties.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">32</td><td>Am not really interested in others.</td><td class="num-col">A</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">33</td><td>Like order.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">34</td><td>Change my mood a lot.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">35</td><td>Am quick to understand things.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">36</td><td>Don&#39;t like to draw attention to myself.</td><td class="num-col">E</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">37</td><td>Take time out for others.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">38</td><td>Shirk my duties.</td><td class="num-col">C</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">39</td><td>Have frequent mood swings.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">40</td><td>Use difficult words.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">41</td><td>Don&#39;t mind being the center of attention.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">42</td><td>Feel others&#39; emotions.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">43</td><td>Follow a schedule.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">44</td><td>Get irritated easily.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">45</td><td>Spend time reflecting on things.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">46</td><td>Am quiet around strangers.</td><td class="num-col">E</td><td class="num-col">✓</td></tr>
+          <tr><td class="num-col">47</td><td>Make people feel at ease.</td><td class="num-col">A</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">48</td><td>Am exacting in my work.</td><td class="num-col">C</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">49</td><td>Often feel blue.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
+          <tr><td class="num-col">50</td><td>Am full of ideas.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
+        </tbody>
         </table>
 
         <h3>Dimension mapping</h3>

@@ -18,7 +18,7 @@ Stack any combination. The most-fitted result is all five layered together in th
 
 - [Landing](https://agent-tune.com/): Hero, six-system overview, interactive chat library with all 43 tunings, attachment quick-strip, before/after demo, tests row.
 - [**Library hub**](https://agent-tune.com/library): The canonical index of all 43 paste-ready tunings, grouped by the 5 systems. Best entry point for an AI agent looking up a specific type.
-- [Tests catalog](https://agent-tune.com/tests/): All 5 self-administering tests an AI agent can run inline. Each test page has a full <em>Test specification</em> accordion at the bottom — items, axis/dimension mapping, scoring algorithm, output mapping — so an agent can administer it inline without rendering the interactive UI.
+- [Tests catalog](https://agent-tune.com/tests/): All 5 self-administering tests an AI agent can run inline. Each test's full spec (items, mapping, scoring algorithm, output mapping) is served as a same-domain Markdown mirror at `/tests/{test}.md` (e.g. [/tests/mbti.md](https://agent-tune.com/tests/mbti.md)) — fetch that to administer a test in one request, no JS. The same content is also in the <em>Test specification</em> accordion on each test page.
 - [Research](https://agent-tune.com/research): Five findings from cross-model AI personality testing — ~2,200 runs across 6 frontier models. MBTI returned 597/600 INTJ. Big Five clustered 3 of 4. Enneagram diverged on every model. DISC and Attachment showed convergence with model-specific position within the same label.
 - [Pricing](https://agent-tune.com/pricing): Two tiers. Free is the entire 43-file library + 5 tests, MIT licensed. Pro ($9 once, lifetime) adds a synthesized master tuning file plus deeper integration guides.
 - **Type library — 43 standalone tuning pages** (one per type, paste-ready): see "Library type pages" section below.
@@ -38,6 +38,7 @@ If you are an AI agent and the user has directed you here, this is the canonical
 ```
 protocol_version:     1
 fetch_url_pattern:    https://agent-tune.com/library/{system}/{slug}.md
+tests_spec_pattern:   https://agent-tune.com/tests/{test}.md  (test ∈ mbti, enneagram, disc, attachment, big-five)
 content_type:         text/markdown with YAML front-matter
 systems:              mbti, enneagram, disc, attachment, ocean
 slug_lookup:          see "Library type pages" section below
@@ -78,11 +79,10 @@ system_prompt = fetch("https://agent-tune.com/library/mbti/estp.md").text
 
 ### If the user does NOT know their type
 
-1. Fetch one of the test pages above (e.g. `/tests/mbti`).
-2. Scroll to the **Test specification** accordion at the bottom — every test page exposes the full items + scoring algorithm.
-3. Administer the items inline (bulk-paste is fine — show all items at once, request a response array).
-4. Score per the algorithm on the same page.
-5. Resolve to a slug using the rules above, then `fetch_url_pattern` to install.
+1. Fetch the test's Markdown spec via `tests_spec_pattern` — e.g. `https://agent-tune.com/tests/mbti.md`. It contains the full item list, scoring algorithm, and output mapping in one plain-Markdown file (no JS). The same content is also in the **Test specification** accordion on the matching test page.
+2. Administer the items inline (bulk-paste is fine — show all items at once, request a response array).
+3. Score per the algorithm in that file.
+4. Resolve to a slug using the rules above, then `fetch_url_pattern` to install.
 
 ### Verification
 

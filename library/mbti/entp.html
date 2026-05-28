@@ -11,18 +11,19 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/library/mbti/entp" />
   <meta property="og:site_name" content="AgentTune" />
-  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
-  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image" content="https://agent-tune.com/og/library/mbti/entp.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/library/mbti/entp.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+  <meta property="og:image:alt" content="ENTP — Debater · AgentTune personality tuning for AI agents" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ENTP — Debater" />
   <meta name="twitter:description" content="Generative, contrarian. Thinks by colliding ideas." />
   <meta name="twitter:site" content="@psyduckler" />
-  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/library/mbti/entp.png" />
+  <meta name="twitter:image:alt" content="ENTP — Debater · AgentTune" />
 
   <link rel="canonical" href="https://agent-tune.com/library/mbti/entp" />
   <link rel="alternate" type="text/markdown" title="Tuning file" href="https://agent-tune.com/tunings/mbti/ENTP.md" />
@@ -201,7 +202,7 @@
         <span>AgentTune</span>
       </a>
       <div class="nav-links">
-        <a href="/library" class="active">Library</a>
+        <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
@@ -472,7 +473,7 @@ Those are different problems. Stuck wants a new angle. Bored wants either a cons
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
         <a class="lib-related-pill" href="/library/mbti/intj" style="color: #5b4dc0;">INTJ →</a><a class="lib-related-pill" href="/library/mbti/intp" style="color: #5b4dc0;">INTP →</a><a class="lib-related-pill" href="/library/mbti/entj" style="color: #5b4dc0;">ENTJ →</a>
-        <a class="lib-related-pill is-all" href="/library#mbti">All 16 MBTI types →</a>
+        <a class="lib-related-pill is-all" href="/library/#mbti">All 16 MBTI types →</a>
       </div>
     </section>
 
@@ -499,7 +500,7 @@ Those are different problems. Stuck wants a new angle. Bored wants either a cons
       function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
 
       if (window.renderIntegrations) {
-        window.renderIntegrations(TUNING, { only: ["claude-code", "claude-ai", "chatgpt-custom", "cursor", "gemini-gems", "codex-cli"] });
+        window.renderIntegrations(TUNING);
       }
 
       function doDownload() {
