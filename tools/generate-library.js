@@ -1230,7 +1230,7 @@ function buildHub(contacts) {
       </div>
       <div class="cta-row" style="justify-content: center; margin-top: 28px;">
         <a class="btn btn-light closer-cta" href="/tests/">All five tests →</a>
-        <a class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25);" href="/research">Read the research</a>
+        <a class="btn btn-ghost-on-dark closer-cta" href="/research">Read the research →</a>
       </div>
     </section>
 
