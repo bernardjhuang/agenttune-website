@@ -77,11 +77,36 @@ The ESTP page at `library/mbti/estp.html` is **hand-built** and intentionally sk
 
 ## Deploying
 
+**The primary deploy path is `git push`.** A GitHub Action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) runs `wrangler pages deploy` on every push to `main`, so a normal commit-and-push deploys the site automatically.
+
+```sh
+git add .
+git commit -m "..."
+git push origin main      # ← triggers deploy via GitHub Actions
+```
+
+**Local deploy is still available as a backup** (no commit required — useful for hotfixes):
+
 ```sh
 npm run deploy
 ```
 
-This runs `wrangler pages deploy . --project-name=agent-tune --commit-dirty=true`. Cloudflare Pages picks up the upload, builds the Functions bundle, and rolls it out to production.
+This runs `wrangler pages deploy . --project-name=agent-tune --commit-dirty=true` directly from your laptop.
+
+### How the deploy is wired
+
+The Cloudflare Pages project `agent-tune` is a **Direct Upload** project (originally created via the wrangler CLI). The GitHub Action doesn't convert it to a Git-connected project — it just automates the same `wrangler pages deploy` command on each push. This avoids any disruption to the existing `agent-tune.com` custom-domain attachment.
+
+### Required GitHub repo secrets (one-time setup)
+
+For the Action to authenticate with Cloudflare, set these in the GitHub repo at **Settings → Secrets and variables → Actions**:
+
+| Secret | How to get it |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens → Create Token → use the "Edit Cloudflare Workers" template |
+| `CLOUDFLARE_ACCOUNT_ID` | Visible in the right sidebar of any Cloudflare dashboard page |
+
+Once those are set, every `git push origin main` deploys production.
 
 ## Keeping `tunings/` in sync with the library repo
 

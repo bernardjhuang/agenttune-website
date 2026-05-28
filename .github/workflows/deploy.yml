@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Pages
+
+# Triggers a production deploy of agent-tune.com on every push to main.
+# Equivalent to running `npm run deploy` locally, but driven by GitHub.
+#
+# Requires two repo secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  — token with Cloudflare Pages: Edit permission
+#                           (use the "Edit Cloudflare Workers" template)
+#   CLOUDFLARE_ACCOUNT_ID — visible in any Cloudflare dashboard sidebar
+#
+# The Cloudflare Pages project "agent-tune" remains a Direct Upload project;
+# this workflow just automates the trigger. Local `npm run deploy` continues
+# to work as a backup / for emergency hotfixes.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy . --project-name=agent-tune --commit-dirty=true
