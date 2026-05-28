@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free MBTI Test — Tune Your AI to Your Type · AgentTune</title>
+  <meta name="description" content="Take 32 quick questions (~5 min) and get a Markdown tuning file matched to your MBTI type. Paste it into your AI agent's system prompt — same model, now tuned to how you think and how you want to be communicated with." />
+
+  <meta property="og:title" content="Take the MBTI test · improve your AI agent — AgentTune" />
+  <meta property="og:description" content="32 questions · ~5 min · returns a tuning file that improves how your AI agent talks to you." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/tests/mbti" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Take the MBTI test · improve your AI agent — AgentTune" />
+  <meta name="twitter:description" content="32 questions · 5 min · tune your AI agent to how you think." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/tests/mbti" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "MBTI Test (OEJTS)",
+    "description": "Interactive 32-item Jungian type assessment. Returns one of 16 four-letter MBTI types plus a Markdown tuning file for the user's AI agent.",
+    "url": "https://agent-tune.com/tests/mbti",
+    "inLanguage": "en",
+    "numberOfQuestions": 32,
+    "timeRequired": "PT5M",
+    "about": [
+      {"@type": "Thing", "name": "Myers-Briggs Type Indicator"},
+      {"@type": "Thing", "name": "Personality psychology"}
+    ],
+    "publisher": {"@type": "Organization", "name": "AgentTune", "url": "https://agent-tune.com/"}
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/data.js"></script>
+  <script src="/integrations.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%235b4dc0'/%3E%3C/svg%3E" />
+  <style>:root { --lib-accent: #5b4dc0; --lib-accent-22: rgba(91,77,192,0.13); --lib-accent-55: rgba(91,77,192,0.34); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"MBTI"}]}</script>
+</head>
+<body class="quiz-page">
+  <div class="page">
+
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/tests/">Tests</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">MBTI</span>
+    </nav>
+
+    <!-- INTRO (shown before test starts) -->
+    <section class="quiz-intro" id="quiz-intro">
+      <span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">5-min test · 32 questions</span>
+      <h1 class="h-hero h-research-hero">Take the MBTI test.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #5b4dc0;">Get your tuning at the end.</h1>
+      <p class="lede">
+        Answer 32 quick questions — each is a choice between two statements, rated 1 to 5. We'll score it client-side and hand you a Markdown tuning file matched to your MBTI type, ready to paste into any AI agent's system prompt.
+      </p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Instrument:</strong> OEJTS (Open Extended Jungian Type Scales)</div>
+        <div><strong>Format:</strong> 32 bipolar items · 1–5 Likert</div>
+        <div><strong>Time:</strong> ~5 minutes</div>
+        <div><strong>Returns:</strong> one of 16 MBTI types + your tuning file</div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary quiz-start-btn" id="quiz-start" style="background: #5b4dc0; border-color: #5b4dc0;">Start the test →</button>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys on your keyboard for fast input.</p>
+
+      <!-- WHAT MBTI MEASURES (signature chart) -->
+      <div class="quiz-intro-chart">
+        <h3 class="quiz-intro-chart-h">What MBTI measures</h3>
+        <p class="quiz-intro-chart-sub">Four bipolar dimensions. One letter from each. Sixteen possible four-letter types.</p>
+        <svg viewBox="0 0 700 320" style="width: 100%; max-width: 700px; height: auto; font-family: var(--font-sans); display: block; margin: 0 auto;">
+          <g transform="translate(0, 36)">
+            <text x="30" y="-4" font-size="13" font-weight="600" fill="#5b4dc0">E · Extraversion</text>
+            <text x="670" y="-4" font-size="13" font-weight="600" fill="#5b4dc0" text-anchor="end">Introversion · I</text>
+            <rect x="30" y="6" width="640" height="14" rx="7" fill="#efe9df"/>
+            <circle cx="30" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="30" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">E</text>
+            <circle cx="670" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="670" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">I</text>
+            <text x="350" y="38" text-anchor="middle" font-size="11" fill="#7a7468">8 items · energy direction</text>
+          </g>
+          <g transform="translate(0, 112)">
+            <text x="30" y="-4" font-size="13" font-weight="600" fill="#5b4dc0">S · Sensing</text>
+            <text x="670" y="-4" font-size="13" font-weight="600" fill="#5b4dc0" text-anchor="end">Intuition · N</text>
+            <rect x="30" y="6" width="640" height="14" rx="7" fill="#efe9df"/>
+            <circle cx="30" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="30" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">S</text>
+            <circle cx="670" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="670" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">N</text>
+            <text x="350" y="38" text-anchor="middle" font-size="11" fill="#7a7468">8 items · how you take in information</text>
+          </g>
+          <g transform="translate(0, 188)">
+            <text x="30" y="-4" font-size="13" font-weight="600" fill="#5b4dc0">T · Thinking</text>
+            <text x="670" y="-4" font-size="13" font-weight="600" fill="#5b4dc0" text-anchor="end">Feeling · F</text>
+            <rect x="30" y="6" width="640" height="14" rx="7" fill="#efe9df"/>
+            <circle cx="30" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="30" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">T</text>
+            <circle cx="670" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="670" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">F</text>
+            <text x="350" y="38" text-anchor="middle" font-size="11" fill="#7a7468">8 items · how you make decisions</text>
+          </g>
+          <g transform="translate(0, 264)">
+            <text x="30" y="-4" font-size="13" font-weight="600" fill="#5b4dc0">J · Judging</text>
+            <text x="670" y="-4" font-size="13" font-weight="600" fill="#5b4dc0" text-anchor="end">Perceiving · P</text>
+            <rect x="30" y="6" width="640" height="14" rx="7" fill="#efe9df"/>
+            <circle cx="30" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="30" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">J</text>
+            <circle cx="670" cy="13" r="14" fill="#5b4dc0"/>
+            <text x="670" y="13" text-anchor="middle" dy="4" font-size="11" font-weight="700" fill="white">P</text>
+            <text x="350" y="38" text-anchor="middle" font-size="11" fill="#7a7468">8 items · how you orient to the outside world</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- TEST RUNNER (shown during test) -->
+    <section class="quiz-runner" id="quiz-runner" hidden>
+      <div class="quiz-progress">
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
+        <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 32</div>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #5b4dc0;">M</div>
+          <div class="quiz-card-prompt-text">Which feels more like you?</div>
+        </div>
+
+        <div class="quiz-statements">
+          <div class="quiz-statement quiz-statement-left">
+            <div class="quiz-statement-label">First statement</div>
+            <p class="quiz-statement-text" id="quiz-statement-first"></p>
+          </div>
+          <div class="quiz-statement-divider">vs</div>
+          <div class="quiz-statement quiz-statement-right">
+            <div class="quiz-statement-label">Second statement</div>
+            <p class="quiz-statement-text" id="quiz-statement-second"></p>
+          </div>
+        </div>
+
+        <div class="quiz-likert" role="radiogroup" aria-label="Rate how much you identify with each statement">
+          <button class="quiz-likert-btn" data-value="1" role="radio" aria-checked="false">
+            <span class="quiz-likert-num">1</span>
+            <span class="quiz-likert-label">Strongly first</span>
+          </button>
+          <button class="quiz-likert-btn" data-value="2" role="radio" aria-checked="false">
+            <span class="quiz-likert-num">2</span>
+            <span class="quiz-likert-label">Lean first</span>
+          </button>
+          <button class="quiz-likert-btn" data-value="3" role="radio" aria-checked="false">
+            <span class="quiz-likert-num">3</span>
+            <span class="quiz-likert-label">Neutral</span>
+          </button>
+          <button class="quiz-likert-btn" data-value="4" role="radio" aria-checked="false">
+            <span class="quiz-likert-num">4</span>
+            <span class="quiz-likert-label">Lean second</span>
+          </button>
+          <button class="quiz-likert-btn" data-value="5" role="radio" aria-checked="false">
+            <span class="quiz-likert-num">5</span>
+            <span class="quiz-likert-label">Strongly second</span>
+          </button>
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT (shown when test complete) -->
+    <section class="quiz-result" id="quiz-result" hidden>
+      <span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">Done · here's your result</span>
+
+      <div class="quiz-result-card">
+        <div class="quiz-result-headline">
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar">IN</div>
+          <div>
+            <div class="quiz-result-label">Your MBTI type</div>
+            <div class="quiz-result-code" id="quiz-result-code">INTJ</div>
+            <div class="quiz-result-name" id="quiz-result-name">The Architect</div>
+          </div>
+        </div>
+
+        <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
+
+        <div class="quiz-result-axes" id="quiz-result-axes"></div>
+
+        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <article class="c-editor" id="quiz-result-editor">
+          <div class="c-titlebar">
+            <div class="c-dots"><span></span><span></span><span></span></div>
+            <div class="c-titlebar-label" id="quiz-editor-titlebar">~/.agenttune/tuning.md</div>
+            <div style="width: 50px;"></div>
+          </div>
+          <div class="c-tabs">
+            <div class="c-tab is-active">
+              <span class="c-tab-dot"></span>
+              <span id="quiz-editor-tab">tuning.md</span>
+              <span class="c-tab-close">×</span>
+            </div>
+          </div>
+          <div class="c-editor-body">
+            <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
+            <pre class="c-code" id="quiz-editor-code"></pre>
+          </div>
+          <div class="c-statusbar">
+            <div class="c-statusbar-left">
+              <span id="quiz-editor-status">● tuning.md</span>
+              <span>Markdown · UTF-8 · MIT</span>
+            </div>
+            <div class="c-statusbar-actions">
+              <button class="c-status-btn" id="quiz-download-tuning" type="button">↓ Download</button>
+              <button class="c-status-btn is-strong" id="quiz-copy-tuning" type="button">⌘C · Copy</button>
+            </div>
+          </div>
+        </article>
+        <div class="quiz-result-actions" style="margin-top: 14px;">
+          <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+        </div>
+
+        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your tuning is already merged into each one. Hit Copy and you're done.</p>
+        <div id="integration-deep" data-integration-deep></div>
+      </div>
+
+      <!-- Premium upsell -->
+      <div class="quiz-result-upsell">
+        <div class="quiz-result-upsell-head">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: #c8553d;">Premium · live</span>
+          <h3>Want one file for <em>all of you</em>?</h3>
+        </div>
+        <p>Premium synthesizes your MBTI with Enneagram, DISC, Attachment, and OCEAN into one master tuning file — plus integration guides for Claude, ChatGPT, Codex, Cursor, Gemini, Hermes, OpenClaw. $9 once, lifetime access.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/pricing">Get Premium · $9 →</a>
+        </div>
+      </div>
+
+      <!-- Next steps -->
+      <div class="quiz-result-next">
+        <h3>Stack another system for higher fidelity</h3>
+        <p class="muted">Tuning files layer cleanly. Take another test and add a second tuning to your agent.</p>
+        <div class="quiz-result-next-grid">
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;">
+            <span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span>
+            <div class="quiz-next-card-name">Get your Enneagram tuning</div>
+            <div class="quiz-next-card-meta">5-min OEPS test →</div>
+          </a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;">
+            <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span>
+            <div class="quiz-next-card-name">Get your DISC tuning</div>
+            <div class="quiz-next-card-meta">3-min ODAT test →</div>
+          </a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;">
+            <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span>
+            <div class="quiz-next-card-name">Get your Attachment tuning</div>
+            <div class="quiz-next-card-meta">5-min ECR-R test →</div>
+          </a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;">
+            <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span>
+            <div class="quiz-next-card-name">Get your OCEAN tuning</div>
+            <div class="quiz-next-card-meta">7-min IPIP-50 test →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cta-row" style="justify-content: center; margin-top: 32px;">
+        <button class="btn btn-secondary" id="quiz-restart">Retake MBTI test</button>
+      </div>
+    </section>
+
+    <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
+    <details class="quiz-spec">
+      <summary>Test specification — for AI agents administering this inline</summary>
+      <div class="quiz-spec-body">
+        <p>Below is the full OEJTS spec — items, axis mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+
+        <h3>Source</h3>
+        <p>Open Extended Jungian Type Scales (OEJTS), Eric Jorgenson via <a href="https://openpsychometrics.org/tests/OEJTS/" target="_blank" rel="noopener">Open Psychometrics Project</a>. Free for educational use.</p>
+
+        <h3>The 32 items</h3>
+        <table class="items-table">
+          <thead><tr><th class="num-col">#</th><th>First statement</th><th>Second statement</th></tr></thead>
+          <tbody id="quiz-spec-items"></tbody>
+        </table>
+
+        <h3>Item → axis mapping</h3>
+        <p>Each item belongs to one of four axes (E/I, S/N, T/F, J/P) and awards points to one letter depending on the user's 1–5 response.</p>
+        <table class="score-table" id="quiz-spec-scoring"></table>
+
+        <h3>Scoring algorithm</h3>
+        <ol class="steps-list">
+          <li>For each axis (E/I, S/N, T/F, J/P), initialize counts for both letters at 0.</li>
+          <li>For each of the 8 items in that axis: score 1 → +2 to the "score 1" letter; 2 → +1; 3 → 0 (neutral); 4 → +1 to "score 5" letter; 5 → +2.</li>
+          <li>Compare counts. Higher count wins the letter. In a tie, default to I, N, T, J (more common in adults).</li>
+          <li>Concatenate winners in order E/I, S/N, T/F, J/P → the 4-letter type.</li>
+        </ol>
+
+        <h3>Output mapping</h3>
+        <p>Once you have the type, fetch <code>mbti/&lt;TYPE&gt;.md</code> from the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
+      </div>
+    </details>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span><a href="/tests/">← all five tests</a></span>
+    </div>
+
+  </div>
+
+  <script>
+  (function() {
+    // ==================================================
+    // The 32 OEJTS items with axis + letter mapping
+    // ==================================================
+    const ITEMS = [
+      { first: "I make lists",                                   second: "I just put stuff wherever",                axis: "JP", low: "J", high: "P" },
+      { first: "I am skeptical",                                 second: "I want to believe",                        axis: "TF", low: "T", high: "F" },
+      { first: "I get bored when I'm alone",                     second: "I need time alone",                        axis: "EI", low: "E", high: "I" },
+      { first: "I accept things as they are",                    second: "I'm unsatisfied with the way things are",  axis: "SN", low: "S", high: "N" },
+      { first: "I keep my room clean",                           second: "I just put stuff wherever",                axis: "JP", low: "J", high: "P" },
+      { first: "I think \"robotic\" is an insult",               second: "I strive to have a mechanical mind",       axis: "TF", low: "F", high: "T" },
+      { first: "I'm energetic",                                  second: "I'm mellow",                               axis: "EI", low: "E", high: "I" },
+      { first: "I prefer multiple choice tests",                 second: "I prefer essay answers",                   axis: "SN", low: "S", high: "N" },
+      { first: "I'm chaotic",                                    second: "I'm organized",                            axis: "JP", low: "P", high: "J" },
+      { first: "I'm easily hurt",                                second: "I'm thick-skinned",                        axis: "TF", low: "F", high: "T" },
+      { first: "I work best in groups",                          second: "I work best alone",                        axis: "EI", low: "E", high: "I" },
+      { first: "I focus on the present",                         second: "I focus on the future",                    axis: "SN", low: "S", high: "N" },
+      { first: "I plan far ahead",                               second: "I plan at the last minute",                axis: "JP", low: "J", high: "P" },
+      { first: "I want people's respect",                        second: "I want their love",                        axis: "TF", low: "T", high: "F" },
+      { first: "Parties wear me out",                            second: "Parties fire me up",                       axis: "EI", low: "I", high: "E" },
+      { first: "I try to fit in",                                second: "I try to stand out",                       axis: "SN", low: "S", high: "N" },
+      { first: "I keep my options open",                         second: "I commit",                                 axis: "JP", low: "P", high: "J" },
+      { first: "I want to be good at fixing things",             second: "I want to be good at fixing people",       axis: "TF", low: "T", high: "F" },
+      { first: "I talk more than I listen",                      second: "I listen more than I talk",                axis: "EI", low: "E", high: "I" },
+      { first: "When describing an event, I tell what happened", second: "I tell what it meant",                     axis: "SN", low: "S", high: "N" },
+      { first: "I get work done right away",                     second: "I procrastinate",                          axis: "JP", low: "J", high: "P" },
+      { first: "I follow my heart",                              second: "I follow my head",                         axis: "TF", low: "F", high: "T" },
+      { first: "I stay at home",                                 second: "I go out on the town",                     axis: "EI", low: "I", high: "E" },
+      { first: "I want the big picture",                         second: "I want the details",                       axis: "SN", low: "N", high: "S" },
+      { first: "I improvise",                                    second: "I prepare",                                axis: "JP", low: "P", high: "J" },
+      { first: "I base morality on justice",                     second: "I base morality on compassion",            axis: "TF", low: "T", high: "F" },
+      { first: "It's hard for me to yell loudly",                second: "Yelling comes naturally to me",            axis: "EI", low: "I", high: "E" },
+      { first: "I'm theoretical",                                second: "I'm empirical",                            axis: "SN", low: "N", high: "S" },
+      { first: "I work hard",                                    second: "I play hard",                              axis: "JP", low: "J", high: "P" },
+      { first: "I'm uncomfortable with emotions",                second: "I value emotions",                         axis: "TF", low: "T", high: "F" },
+      { first: "I like to perform in front of people",           second: "I avoid public speaking",                  axis: "EI", low: "E", high: "I" },
+      { first: "I like to know \"who, what, when\"",             second: "I like to know \"why\"",                   axis: "SN", low: "S", high: "N" }
+    ];
+
+    // MBTI type metadata (for result display)
+    const TYPE_META = {
+      INTJ: { name: "The Architect",   blurb: "Strategic, systems-first. Wants the model, not the bullet list." },
+      INTP: { name: "The Logician",    blurb: "Curious, model-builder. Wants the why before the what." },
+      INFJ: { name: "The Advocate",    blurb: "Insight-driven, careful. Reads between the lines." },
+      INFP: { name: "The Mediator",    blurb: "Values-led, reflective. Wants thinking-with, not advice-at." },
+      ISTJ: { name: "The Inspector",   blurb: "Methodical, evidence-based. Wants procedure." },
+      ISTP: { name: "The Virtuoso",    blurb: "Hands-on, terse. Wants the lever, not the lecture." },
+      ISFJ: { name: "The Defender",    blurb: "Caring, practical. Wants steady support." },
+      ISFP: { name: "The Adventurer",  blurb: "Aesthetic, present-focused. Trusts feel." },
+      ENTJ: { name: "The Commander",   blurb: "Decisive, outcome-led. Cuts to the move." },
+      ENTP: { name: "The Debater",     blurb: "Generative, contrarian. Thinks by colliding ideas." },
+      ENFJ: { name: "The Protagonist", blurb: "Mission-driven, warm. Thinks through people." },
+      ENFP: { name: "The Campaigner",  blurb: "Sparky, possibility-rich. Lives in the maybe." },
+      ESTJ: { name: "The Executive",   blurb: "Direct, organized. Wants the plan executed." },
+      ESTP: { name: "The Entrepreneur",blurb: "Action-first, real-world. Learns by doing." },
+      ESFJ: { name: "The Consul",      blurb: "Warm, considerate. Thinks through impact." },
+      ESFP: { name: "The Entertainer", blurb: "Live-wire, present. Energy follows fun." }
+    };
+
+    // ==================================================
+    // State
+    // ==================================================
+    const state = {
+      currentIndex: 0,
+      answers: new Array(32).fill(null),
+      currentTuning: ""
+    };
+
+    const $ = id => document.getElementById(id);
+
+    // ==================================================
+    // Intro screen
+    // ==================================================
+    $("quiz-start").addEventListener("click", startQuiz);
+
+    function startQuiz() {
+      $("quiz-intro").hidden = true;
+      $("quiz-runner").hidden = false;
+      state.currentIndex = 0;
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // ==================================================
+    // Question screen
+    // ==================================================
+    function renderQuestion() {
+      const item = ITEMS[state.currentIndex];
+      $("quiz-progress-current").textContent = (state.currentIndex + 1);
+      const pct = ((state.currentIndex) / ITEMS.length) * 100;
+      $("quiz-progress-bar").style.width = pct + "%";
+
+      $("quiz-statement-first").textContent = item.first;
+      $("quiz-statement-second").textContent = item.second;
+
+      // Reflect existing answer if any
+      const existing = state.answers[state.currentIndex];
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const v = parseInt(btn.dataset.value);
+        const isSel = v === existing;
+        btn.classList.toggle("selected", isSel);
+        btn.setAttribute("aria-checked", isSel ? "true" : "false");
+      });
+
+      $("quiz-back").disabled = state.currentIndex === 0;
+    }
+
+    function selectAnswer(value) {
+      state.answers[state.currentIndex] = value;
+      // Visual highlight
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const isSel = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", isSel);
+        btn.setAttribute("aria-checked", isSel ? "true" : "false");
+      });
+      // Auto-advance after a brief moment
+      setTimeout(() => {
+        if (state.currentIndex < ITEMS.length - 1) {
+          state.currentIndex++;
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      }, 220);
+    }
+
+    // Likert buttons
+    document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+    });
+
+    // Back / Skip
+    $("quiz-back").addEventListener("click", () => {
+      if (state.currentIndex > 0) {
+        state.currentIndex--;
+        renderQuestion();
+      }
+    });
+    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+
+    // Keyboard
+    document.addEventListener("keydown", e => {
+      if ($("quiz-runner").hidden) return;
+      if (["1","2","3","4","5"].includes(e.key)) {
+        e.preventDefault();
+        selectAnswer(parseInt(e.key));
+      } else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        e.preventDefault();
+        if (state.currentIndex > 0) {
+          state.currentIndex--;
+          renderQuestion();
+        }
+      }
+    });
+
+    // ==================================================
+    // Scoring
+    // ==================================================
+    function computeType(answers) {
+      const counts = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
+      const axisScores = { EI: {E:0, I:0}, SN: {S:0, N:0}, TF: {T:0, F:0}, JP: {J:0, P:0} };
+      answers.forEach((v, i) => {
+        if (v == null || v === 3) return;
+        const item = ITEMS[i];
+        const letter = v < 3 ? item.low : item.high;
+        const pts = Math.abs(v - 3); // 1 or 5 → 2, 2 or 4 → 1
+        counts[letter] += pts;
+        if (axisScores[item.axis] && axisScores[item.axis][letter] != null) {
+          axisScores[item.axis][letter] += pts;
+        }
+      });
+      // Ties default to I, N, T, J
+      const ei = counts.E > counts.I ? "E" : "I";
+      const sn = counts.S > counts.N ? "S" : "N";
+      const tf = counts.T > counts.F ? "T" : "F";
+      const jp = counts.J > counts.P ? "J" : "P";
+      return { type: ei + sn + tf + jp, axes: axisScores };
+    }
+
+    // ==================================================
+    // Result screen
+    // ==================================================
+    function showResult() {
+      $("quiz-runner").hidden = true;
+      $("quiz-result").hidden = false;
+      const { type, axes } = computeType(state.answers);
+      const meta = TYPE_META[type];
+
+      $("quiz-result-code").textContent = type;
+      $("quiz-result-name").textContent = meta.name;
+      $("quiz-result-blurb").textContent = meta.blurb;
+      $("quiz-result-avatar").textContent = type.slice(0, 2);
+
+      // Axis breakdown
+      const axesHtml = ["EI", "SN", "TF", "JP"].map(ax => {
+        const [a, b] = ax.split("");
+        const va = axes[ax][a];
+        const vb = axes[ax][b];
+        const total = va + vb || 1;
+        const winner = va > vb ? a : (vb > va ? b : (["I","N","T","J"].includes(a) ? a : b));
+        const pa = (va / total) * 100;
+        return `
+          <div class="quiz-axis">
+            <div class="quiz-axis-letters">
+              <span class="quiz-axis-letter ${winner === a ? "winner" : ""}">${a}</span>
+              <span class="quiz-axis-letter ${winner === b ? "winner" : ""}">${b}</span>
+            </div>
+            <div class="quiz-axis-bar">
+              <div class="quiz-axis-fill" style="width: ${pa}%"></div>
+            </div>
+            <div class="quiz-axis-counts">${a}: ${va} · ${b}: ${vb}</div>
+          </div>
+        `;
+      }).join("");
+      $("quiz-result-axes").innerHTML = axesHtml;
+
+      // Tuning preview — first paint uses the short data.js fallback so the
+      // result screen never flashes empty; the rich file from /tunings/ then
+      // replaces it as soon as the fetch resolves.
+      const shortTuning = getTuningContent(type);
+      state.currentTuning = shortTuning;
+      const fileName = `${type}.md`;
+      renderTuningPreview(shortTuning, fileName);
+      if (window.renderIntegrations) window.renderIntegrations(shortTuning);
+
+      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/mbti/${type}.md`;
+
+      // Async — replace with the rich GitHub-mirrored file once it lands.
+      if (window.fetchTuning) {
+        window.fetchTuning(`mbti/${type}.md`).then((rich) => {
+          if (!rich || rich === state.currentTuning) return;
+          state.currentTuning = rich;
+          renderTuningPreview(rich, fileName);
+          if (window.renderIntegrations) window.renderIntegrations(rich);
+        });
+      }
+
+      $("quiz-copy-tuning").addEventListener("click", () => {
+        navigator.clipboard.writeText(state.currentTuning || shortTuning).then(() => {
+          const btn = $("quiz-copy-tuning");
+          const original = btn.textContent;
+          btn.textContent = "Copied ✓";
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        });
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+
+    function renderTuningPreview(tuning, filename) {
+      // Strip YAML front-matter for editor display
+      const allLines = tuning.split("\n");
+      let bodyStart = 0;
+      if (allLines[0] && allLines[0].trim() === "---") {
+        for (let i = 1; i < allLines.length; i++) {
+          if (allLines[i].trim() === "---") { bodyStart = i + 1; break; }
+        }
+      }
+      while (bodyStart < allLines.length && allLines[bodyStart].trim() === "") bodyStart++;
+      const bodyLines = allLines.slice(bodyStart);
+      while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "") bodyLines.pop();
+
+      const gutter = bodyLines.map((_, i) => `<span>${i + 1}</span>`).join("");
+      const code = bodyLines.map((line) => {
+        if (line.startsWith("# ")) return `<span class="c-h1">${escapeHtml(line)}</span>`;
+        if (line.startsWith("## ")) return `<span class="c-h2">${escapeHtml(line)}</span>`;
+        return escapeHtml(line);
+      }).join("\n");
+
+      $("quiz-editor-gutter").innerHTML = gutter;
+      $("quiz-editor-code").innerHTML = code;
+
+      const baseName = (filename || "tuning.md").split("/").pop();
+      $("quiz-editor-titlebar").textContent = `~/.agenttune/${baseName}`;
+      $("quiz-editor-tab").textContent = baseName;
+      $("quiz-editor-status").textContent = `● ${baseName}`;
+    }
+
+    // Pull the tuning content for the user's type from window.AT_CONTACTS (loaded via /data.js).
+    // All 16 MBTI tunings are bundled — no fetch, no worker needed for the free flow.
+    function getTuningContent(type) {
+      const contacts = (window.AT_CONTACTS || []);
+      const contact = contacts.find(c => c.id === `mbti-${type}`);
+      if (contact && contact.tuning) return contact.tuning;
+      // Fallback if data.js failed to load
+      return `# ${type} — Agent Tuning Rules\n\nUnable to load the bundled tuning. View the full file on GitHub:\nhttps://github.com/psyduckler/agenttune/blob/main/mbti/${type}.md`;
+    }
+
+    // Download as .md file — pulls live state.currentTuning so the rich
+    // GitHub-mirrored file is what hits disk, not the short fallback.
+    document.getElementById("quiz-download-tuning").addEventListener("click", function() {
+      const type = document.getElementById("quiz-result-code").textContent;
+      const content = state.currentTuning || getTuningContent(type);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${type}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      const btn = this;
+      const original = btn.textContent;
+      btn.textContent = "Downloaded ✓";
+      setTimeout(() => { btn.textContent = original; }, 2000);
+    });
+
+    // Retake
+    $("quiz-restart").addEventListener("click", () => {
+      state.currentIndex = 0;
+      state.answers = new Array(32).fill(null);
+      $("quiz-result").hidden = true;
+      $("quiz-intro").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // ==================================================
+    // Populate spec section (for AI agents)
+    // ==================================================
+    $("quiz-spec-items").innerHTML = ITEMS.map((it, i) => `
+      <tr>
+        <td class="num-col">${i + 1}</td>
+        <td>${escapeHtml(it.first)}</td>
+        <td>${escapeHtml(it.second)}</td>
+      </tr>
+    `).join("");
+
+    $("quiz-spec-scoring").innerHTML = `
+      <thead><tr><th>Item</th><th>Axis</th><th>If score is 1 (first)</th><th>If score is 5 (second)</th></tr></thead>
+      <tbody>
+        ${ITEMS.map((it, i) => `
+          <tr>
+            <td class="mono">${i + 1}</td>
+            <td>${it.axis.split("").join("/")}</td>
+            <td>${it.low}</td>
+            <td>${it.high}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    `;
+  })();
+  </script>
+</body>
+</html>

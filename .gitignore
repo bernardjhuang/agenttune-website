@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Wrangler / Cloudflare Pages local state
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code project state
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build artifacts (none right now, but reserved)
+dist/
+build/
+
+# Local notes / scratch
+*.local.md
+NOTES.md

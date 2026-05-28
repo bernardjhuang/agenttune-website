@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>43 Personality System Prompts for Claude & ChatGPT — AgentTune</title>
+  <meta name="description" content="The full AgentTune library. 43 Markdown tuning files matched to every personality type across MBTI, Enneagram, DISC, Attachment, and OCEAN. Paste any one into your AI agent's system prompt." />
+
+  <meta property="og:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/library" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta name="twitter:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/library/" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AgentTune Library","description":"43 paste-ready personality tuning files for AI agents — MBTI, Enneagram, DISC, Attachment, OCEAN. MIT licensed.","url":"https://agent-tune.com/library","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"mainEntity":{"@type":"ItemList","numberOfItems":43,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://agent-tune.com/library/mbti/intj","name":"INTJ — Architect"},{"@type":"ListItem","position":2,"url":"https://agent-tune.com/library/mbti/intp","name":"INTP — Logician"},{"@type":"ListItem","position":3,"url":"https://agent-tune.com/library/mbti/infj","name":"INFJ — Advocate"},{"@type":"ListItem","position":4,"url":"https://agent-tune.com/library/mbti/infp","name":"INFP — Mediator"},{"@type":"ListItem","position":5,"url":"https://agent-tune.com/library/mbti/istj","name":"ISTJ — Inspector"},{"@type":"ListItem","position":6,"url":"https://agent-tune.com/library/mbti/istp","name":"ISTP — Virtuoso"},{"@type":"ListItem","position":7,"url":"https://agent-tune.com/library/mbti/isfj","name":"ISFJ — Defender"},{"@type":"ListItem","position":8,"url":"https://agent-tune.com/library/mbti/isfp","name":"ISFP — Adventurer"},{"@type":"ListItem","position":9,"url":"https://agent-tune.com/library/mbti/entj","name":"ENTJ — Commander"},{"@type":"ListItem","position":10,"url":"https://agent-tune.com/library/mbti/entp","name":"ENTP — Debater"},{"@type":"ListItem","position":11,"url":"https://agent-tune.com/library/mbti/enfj","name":"ENFJ — Protagonist"},{"@type":"ListItem","position":12,"url":"https://agent-tune.com/library/mbti/enfp","name":"ENFP — Campaigner"},{"@type":"ListItem","position":13,"url":"https://agent-tune.com/library/mbti/estj","name":"ESTJ — Executive"},{"@type":"ListItem","position":14,"url":"https://agent-tune.com/library/mbti/estp","name":"ESTP — Entrepreneur"},{"@type":"ListItem","position":15,"url":"https://agent-tune.com/library/mbti/esfj","name":"ESFJ — Consul"},{"@type":"ListItem","position":16,"url":"https://agent-tune.com/library/mbti/esfp","name":"ESFP — Entertainer"},{"@type":"ListItem","position":17,"url":"https://agent-tune.com/library/enneagram/1-reformer","name":"Type 1 — Reformer"},{"@type":"ListItem","position":18,"url":"https://agent-tune.com/library/enneagram/2-helper","name":"Type 2 — Helper"},{"@type":"ListItem","position":19,"url":"https://agent-tune.com/library/enneagram/3-achiever","name":"Type 3 — Achiever"},{"@type":"ListItem","position":20,"url":"https://agent-tune.com/library/enneagram/4-individualist","name":"Type 4 — Individualist"},{"@type":"ListItem","position":21,"url":"https://agent-tune.com/library/enneagram/5-investigator","name":"Type 5 — Investigator"},{"@type":"ListItem","position":22,"url":"https://agent-tune.com/library/enneagram/6-loyalist","name":"Type 6 — Loyalist"},{"@type":"ListItem","position":23,"url":"https://agent-tune.com/library/enneagram/7-enthusiast","name":"Type 7 — Enthusiast"},{"@type":"ListItem","position":24,"url":"https://agent-tune.com/library/enneagram/8-challenger","name":"Type 8 — Challenger"},{"@type":"ListItem","position":25,"url":"https://agent-tune.com/library/enneagram/9-peacemaker","name":"Type 9 — Peacemaker"},{"@type":"ListItem","position":26,"url":"https://agent-tune.com/library/disc/d-dominance","name":"D — Dominance"},{"@type":"ListItem","position":27,"url":"https://agent-tune.com/library/disc/i-influence","name":"I — Influence"},{"@type":"ListItem","position":28,"url":"https://agent-tune.com/library/disc/s-steadiness","name":"S — Steadiness"},{"@type":"ListItem","position":29,"url":"https://agent-tune.com/library/disc/c-conscientiousness","name":"C — Conscientiousness"},{"@type":"ListItem","position":30,"url":"https://agent-tune.com/library/attachment/secure","name":"Secure — Secure"},{"@type":"ListItem","position":31,"url":"https://agent-tune.com/library/attachment/anxious","name":"Anxious — Anxious"},{"@type":"ListItem","position":32,"url":"https://agent-tune.com/library/attachment/avoidant","name":"Avoidant — Avoidant"},{"@type":"ListItem","position":33,"url":"https://agent-tune.com/library/attachment/disorganized","name":"Disorganized — Disorganized"},{"@type":"ListItem","position":34,"url":"https://agent-tune.com/library/ocean/openness-high","name":"O-high — High Openness"},{"@type":"ListItem","position":35,"url":"https://agent-tune.com/library/ocean/openness-low","name":"O-low — Low Openness"},{"@type":"ListItem","position":36,"url":"https://agent-tune.com/library/ocean/conscientiousness-high","name":"C-high — High Conscientiousness"},{"@type":"ListItem","position":37,"url":"https://agent-tune.com/library/ocean/conscientiousness-low","name":"C-low — Low Conscientiousness"},{"@type":"ListItem","position":38,"url":"https://agent-tune.com/library/ocean/extraversion-high","name":"E-high — High Extraversion"},{"@type":"ListItem","position":39,"url":"https://agent-tune.com/library/ocean/extraversion-low","name":"E-low — Low Extraversion"},{"@type":"ListItem","position":40,"url":"https://agent-tune.com/library/ocean/agreeableness-high","name":"A-high — High Agreeableness"},{"@type":"ListItem","position":41,"url":"https://agent-tune.com/library/ocean/agreeableness-low","name":"A-low — Low Agreeableness"},{"@type":"ListItem","position":42,"url":"https://agent-tune.com/library/ocean/neuroticism-high","name":"N-high — High Neuroticism"},{"@type":"ListItem","position":43,"url":"https://agent-tune.com/library/ocean/neuroticism-low","name":"N-low — Low Neuroticism"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Library"}]}</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library" class="active">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Library</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every system.</em></h1>
+      <p class="lede">
+        Five validated systems. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>
+        <a class="btn btn-secondary" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STATS -->
+    <section class="library-stats" aria-label="Library facts">
+      <div class="library-stat"><div class="library-stat-num">43</div><div class="library-stat-label">tunings</div></div>
+      <div class="library-stat"><div class="library-stat-num">5</div><div class="library-stat-label">systems</div></div>
+      <div class="library-stat"><div class="library-stat-num">12</div><div class="library-stat-label">agent surfaces</div></div>
+      <div class="library-stat"><div class="library-stat-num">MIT</div><div class="library-stat-label">licensed</div></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SYSTEM STRIPS -->
+    <div id="all-types-strips">
+      
+      <section class="type-strip" id="mbti">
+        <div class="type-strip-header">
+          <span class="type-strip-pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI · 16</span>
+          <h2 class="type-strip-title">16 communication styles</h2>
+          <a class="type-strip-cta" href="/tests/mbti" style="--cta-color: #5b4dc0;">
+            <span class="type-strip-cta-label">Take the MBTI test</span>
+            <span class="type-strip-cta-meta">5-min OEJTS test</span>
+            <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="type-strip-desc">How you process. How you want to be communicated with.</p>
+        <div class="type-grid type-grid-4">
+        <a class="type-card card-accent" href="/library/mbti/intj" style="border-top-color: #5b4dc0;" aria-label="INTJ · The Architect — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">INTJ</span>
+          <div class="type-card-name">Architect</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NT</span></div>
+          <div class="type-card-blurb">Strategic, systems-first. Wants the model, not the bullet list.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/intp" style="border-top-color: #5b4dc0;" aria-label="INTP · The Logician — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">INTP</span>
+          <div class="type-card-name">Logician</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NT</span></div>
+          <div class="type-card-blurb">Curious, model-builder. Wants the why before the what.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/infj" style="border-top-color: #5b4dc0;" aria-label="INFJ · The Advocate — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">INFJ</span>
+          <div class="type-card-name">Advocate</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NF</span></div>
+          <div class="type-card-blurb">Insight-driven, careful. Reads between the lines.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/infp" style="border-top-color: #5b4dc0;" aria-label="INFP · The Mediator — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">INFP</span>
+          <div class="type-card-name">Mediator</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NF</span></div>
+          <div class="type-card-blurb">Values-led, reflective. Wants thinking-with, not advice-at.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/istj" style="border-top-color: #5b4dc0;" aria-label="ISTJ · The Inspector — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ISTJ</span>
+          <div class="type-card-name">Inspector</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SJ</span></div>
+          <div class="type-card-blurb">Methodical, evidence-based. Wants procedure.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/istp" style="border-top-color: #5b4dc0;" aria-label="ISTP · The Virtuoso — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ISTP</span>
+          <div class="type-card-name">Virtuoso</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SP</span></div>
+          <div class="type-card-blurb">Hands-on, terse. Wants the lever, not the lecture.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/isfj" style="border-top-color: #5b4dc0;" aria-label="ISFJ · The Defender — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ISFJ</span>
+          <div class="type-card-name">Defender</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SJ</span></div>
+          <div class="type-card-blurb">Caring, practical. Wants steady support.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/isfp" style="border-top-color: #5b4dc0;" aria-label="ISFP · The Adventurer — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ISFP</span>
+          <div class="type-card-name">Adventurer</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SP</span></div>
+          <div class="type-card-blurb">Aesthetic, present-focused. Trusts feel.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/entj" style="border-top-color: #5b4dc0;" aria-label="ENTJ · The Commander — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ENTJ</span>
+          <div class="type-card-name">Commander</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NT</span></div>
+          <div class="type-card-blurb">Decisive, outcome-led. Cuts to the move.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/entp" style="border-top-color: #5b4dc0;" aria-label="ENTP · The Debater — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ENTP</span>
+          <div class="type-card-name">Debater</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NT</span></div>
+          <div class="type-card-blurb">Generative, contrarian. Thinks by colliding ideas.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/enfj" style="border-top-color: #5b4dc0;" aria-label="ENFJ · The Protagonist — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ENFJ</span>
+          <div class="type-card-name">Protagonist</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NF</span></div>
+          <div class="type-card-blurb">Mission-driven, warm. Thinks through people.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/enfp" style="border-top-color: #5b4dc0;" aria-label="ENFP · The Campaigner — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ENFP</span>
+          <div class="type-card-name">Campaigner</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">NF</span></div>
+          <div class="type-card-blurb">Sparky, possibility-rich. Lives in the maybe.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/estj" style="border-top-color: #5b4dc0;" aria-label="ESTJ · The Executive — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ESTJ</span>
+          <div class="type-card-name">Executive</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SJ</span></div>
+          <div class="type-card-blurb">Direct, organized. Wants the plan executed.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/estp" style="border-top-color: #5b4dc0;" aria-label="ESTP · The Entrepreneur — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ESTP</span>
+          <div class="type-card-name">Entrepreneur</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SP</span></div>
+          <div class="type-card-blurb">Action-first, real-world. Learns by doing.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/esfj" style="border-top-color: #5b4dc0;" aria-label="ESFJ · The Consul — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ESFJ</span>
+          <div class="type-card-name">Consul</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SJ</span></div>
+          <div class="type-card-blurb">Warm, considerate. Thinks through impact.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/mbti/esfp" style="border-top-color: #5b4dc0;" aria-label="ESFP · The Entertainer — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">ESFP</span>
+          <div class="type-card-name">Entertainer</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">SP</span></div>
+          <div class="type-card-blurb">Live-wire, present. Energy follows fun.</div>
+        </a></div>
+      </section>
+      <section class="type-strip" id="enneagram">
+        <div class="type-strip-header">
+          <span class="type-strip-pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram · 9</span>
+          <h2 class="type-strip-title">9 core motivations</h2>
+          <a class="type-strip-cta" href="/tests/enneagram" style="--cta-color: #2f8a5b;">
+            <span class="type-strip-cta-label">Take the Enneagram test</span>
+            <span class="type-strip-cta-meta">5-min OEPS test</span>
+            <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="type-strip-desc">What you&#39;re protecting. What you&#39;re seeking.</p>
+        <div class="type-grid type-grid-3">
+        <a class="type-card card-accent" href="/library/enneagram/1-reformer" style="border-top-color: #2f8a5b;" aria-label="Type 1 · The Reformer — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 1</span>
+          <div class="type-card-name">Reformer</div>
+          
+          <div class="type-card-blurb">Wants it right. Loads precision and improvement.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/2-helper" style="border-top-color: #2f8a5b;" aria-label="Type 2 · The Helper — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 2</span>
+          <div class="type-card-name">Helper</div>
+          
+          <div class="type-card-blurb">Wants to matter to people. Loads warmth and service.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/3-achiever" style="border-top-color: #2f8a5b;" aria-label="Type 3 · The Achiever — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 3</span>
+          <div class="type-card-name">Achiever</div>
+          
+          <div class="type-card-blurb">Wants the win. Loads efficiency and outcome.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/4-individualist" style="border-top-color: #2f8a5b;" aria-label="Type 4 · The Individualist — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 4</span>
+          <div class="type-card-name">Individualist</div>
+          
+          <div class="type-card-blurb">Wants depth and authenticity. Loads emotional truth.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/5-investigator" style="border-top-color: #2f8a5b;" aria-label="Type 5 · The Investigator — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 5</span>
+          <div class="type-card-name">Investigator</div>
+          
+          <div class="type-card-blurb">Wants understanding. Loads model-first explanation.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/6-loyalist" style="border-top-color: #2f8a5b;" aria-label="Type 6 · The Loyalist — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 6</span>
+          <div class="type-card-name">Loyalist</div>
+          
+          <div class="type-card-blurb">Wants safety and trust. Loads risk-aware framing.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/7-enthusiast" style="border-top-color: #2f8a5b;" aria-label="Type 7 · The Enthusiast — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 7</span>
+          <div class="type-card-name">Enthusiast</div>
+          
+          <div class="type-card-blurb">Wants possibility. Loads divergent options.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/8-challenger" style="border-top-color: #2f8a5b;" aria-label="Type 8 · The Challenger — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 8</span>
+          <div class="type-card-name">Challenger</div>
+          
+          <div class="type-card-blurb">Wants control and impact. Loads directness.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/enneagram/9-peacemaker" style="border-top-color: #2f8a5b;" aria-label="Type 9 · The Peacemaker — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Type 9</span>
+          <div class="type-card-name">Peacemaker</div>
+          
+          <div class="type-card-blurb">Wants ease and integration. Loads gentle pacing.</div>
+        </a></div>
+      </section>
+      <section class="type-strip" id="disc">
+        <div class="type-strip-header">
+          <span class="type-strip-pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC · 4</span>
+          <h2 class="type-strip-title">4 workplace modes</h2>
+          <a class="type-strip-cta" href="/tests/disc" style="--cta-color: #d99632;">
+            <span class="type-strip-cta-label">Take the DISC test</span>
+            <span class="type-strip-cta-meta">3-min ODAT test</span>
+            <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="type-strip-desc">How you behave in teams and under pressure.</p>
+        <div class="type-grid type-grid-4">
+        <a class="type-card card-accent" href="/library/disc/d-dominance" style="border-top-color: #d99632;" aria-label="D · Dominance — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">D</span>
+          <div class="type-card-name">Dominance</div>
+          
+          <div class="type-card-blurb">Direct, results-focused, decisive. Wants the bottom line.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/disc/i-influence" style="border-top-color: #d99632;" aria-label="I · Influence — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">I</span>
+          <div class="type-card-name">Influence</div>
+          
+          <div class="type-card-blurb">Outgoing, persuasive, energetic. Thinks out loud.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/disc/s-steadiness" style="border-top-color: #d99632;" aria-label="S · Steadiness — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">S</span>
+          <div class="type-card-name">Steadiness</div>
+          
+          <div class="type-card-blurb">Patient, supportive, methodical. Wants stability.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/disc/c-conscientiousness" style="border-top-color: #d99632;" aria-label="C · Conscientiousness — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">C</span>
+          <div class="type-card-name">Conscientiousness</div>
+          
+          <div class="type-card-blurb">Analytical, precise, evidence-driven. Wants the data.</div>
+        </a></div>
+      </section>
+      <section class="type-strip" id="attachment">
+        <div class="type-strip-header">
+          <span class="type-strip-pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment · 4</span>
+          <h2 class="type-strip-title">4 relational patterns</h2>
+          <a class="type-strip-cta" href="/tests/attachment" style="--cta-color: #e07a8a;">
+            <span class="type-strip-cta-label">Take the Attachment test</span>
+            <span class="type-strip-cta-meta">5-min ECR-R test</span>
+            <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="type-strip-desc">How you want closeness, distance, reassurance.</p>
+        <div class="type-grid type-grid-4">
+        <a class="type-card card-accent" href="/library/attachment/secure" style="border-top-color: #2f8a5b;" aria-label="Secure — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">Secure</span>
+          <div class="type-card-name">Secure</div>
+          <div class="type-card-meta">anxiety <span style="color: #2f8a5b; font-weight: 600;">low</span>&nbsp;&nbsp;avoidance <span style="color: #2f8a5b; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Direct without cushioning. Peer register. ~55% of adults.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/attachment/anxious" style="border-top-color: #e07a8a;" aria-label="Anxious — view tuning">
+          <span class="type-card-pill" style="background: rgba(224,122,138,0.1); color: #e07a8a;">Anxious</span>
+          <div class="type-card-name">Anxious</div>
+          <div class="type-card-meta">anxiety <span style="color: #e07a8a; font-weight: 600;">high</span>&nbsp;&nbsp;avoidance <span style="color: #e07a8a; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Reassure with decisiveness. Warmth AND clarity together — no caveats undercutting.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/attachment/avoidant" style="border-top-color: #3a72c4;" aria-label="Avoidant — view tuning">
+          <span class="type-card-pill" style="background: rgba(58,114,196,0.1); color: #3a72c4;">Avoidant</span>
+          <div class="type-card-name">Avoidant</div>
+          <div class="type-card-meta">anxiety <span style="color: #3a72c4; font-weight: 600;">low</span>&nbsp;&nbsp;avoidance <span style="color: #3a72c4; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Give them space. No performative warmth they didn&#39;t ask for.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/attachment/disorganized" style="border-top-color: #7a4ac8;" aria-label="Disorganized — view tuning">
+          <span class="type-card-pill" style="background: rgba(122,74,200,0.1); color: #7a4ac8;">Disorganized</span>
+          <div class="type-card-name">Disorganized</div>
+          <div class="type-card-meta">anxiety <span style="color: #7a4ac8; font-weight: 600;">high</span>&nbsp;&nbsp;avoidance <span style="color: #7a4ac8; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Tolerate inconsistency. Predictability over warmth.</div>
+        </a></div>
+      </section>
+      <section class="type-strip" id="ocean">
+        <div class="type-strip-header">
+          <span class="type-strip-pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN · 10</span>
+          <h2 class="type-strip-title">10 trait dimensions</h2>
+          <a class="type-strip-cta" href="/tests/big-five" style="--cta-color: #3a72c4;">
+            <span class="type-strip-cta-label">Take the Big Five test</span>
+            <span class="type-strip-cta-meta">7-min IPIP-50 test</span>
+            <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <p class="type-strip-desc">Continuous Big Five scores, loaded compositionally.</p>
+        <div class="type-grid type-grid-5">
+        <a class="type-card card-accent" href="/library/ocean/openness-high" style="border-top-color: #5b4dc0;" aria-label="O-high · High Openness — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">O-high</span>
+          <div class="type-card-name">High Openness</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Concepts over procedure. Lateral connections welcome. Don&#39;t sanitize the weird.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/openness-low" style="border-top-color: #5b4dc0;" aria-label="O-low · Low Openness — view tuning">
+          <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">O-low</span>
+          <div class="type-card-name">Low Openness</div>
+          <div class="type-card-meta"><span style="color: #5b4dc0; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Concrete over abstract. Proven beats novel. Practical framing, every time.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/conscientiousness-high" style="border-top-color: #3a72c4;" aria-label="C-high · High Conscientiousness — view tuning">
+          <span class="type-card-pill" style="background: rgba(58,114,196,0.1); color: #3a72c4;">C-high</span>
+          <div class="type-card-name">High Conscientiousness</div>
+          <div class="type-card-meta"><span style="color: #3a72c4; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Structure the response. Commit to specifics. Follow through visibly. Close loops.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/conscientiousness-low" style="border-top-color: #3a72c4;" aria-label="C-low · Low Conscientiousness — view tuning">
+          <span class="type-card-pill" style="background: rgba(58,114,196,0.1); color: #3a72c4;">C-low</span>
+          <div class="type-card-name">Low Conscientiousness</div>
+          <div class="type-card-meta"><span style="color: #3a72c4; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Don&#39;t impose structure they didn&#39;t ask for. Improvisation is the mode. Last-minute is on time.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/extraversion-high" style="border-top-color: #d99632;" aria-label="E-high · High Extraversion — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">E-high</span>
+          <div class="type-card-name">High Extraversion</div>
+          <div class="type-card-meta"><span style="color: #d99632; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Engage in dialogue, not monologue. Bring energy. Think out loud with them.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/extraversion-low" style="border-top-color: #d99632;" aria-label="E-low · Low Extraversion — view tuning">
+          <span class="type-card-pill" style="background: rgba(217,150,50,0.1); color: #d99632;">E-low</span>
+          <div class="type-card-name">Low Extraversion</div>
+          <div class="type-card-meta"><span style="color: #d99632; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Give them processing space. Depth beats interaction. Written, not spoken.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/agreeableness-high" style="border-top-color: #2f8a5b;" aria-label="A-high · High Agreeableness — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">A-high</span>
+          <div class="type-card-name">High Agreeableness</div>
+          <div class="type-card-meta"><span style="color: #2f8a5b; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Lead with warmth, then substance. Frame disagreement carefully. Harmony has signal value.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/agreeableness-low" style="border-top-color: #2f8a5b;" aria-label="A-low · Low Agreeableness — view tuning">
+          <span class="type-card-pill" style="background: rgba(47,138,91,0.1); color: #2f8a5b;">A-low</span>
+          <div class="type-card-name">Low Agreeableness</div>
+          <div class="type-card-meta"><span style="color: #2f8a5b; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Be direct — soft framing reads as evasion. Debate is the engine. Wrong beats interesting.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/neuroticism-high" style="border-top-color: #a8482a;" aria-label="N-high · High Neuroticism — view tuning">
+          <span class="type-card-pill" style="background: rgba(168,72,42,0.1); color: #a8482a;">N-high</span>
+          <div class="type-card-name">High Neuroticism</div>
+          <div class="type-card-meta"><span style="color: #a8482a; font-weight: 600;">high</span></div>
+          <div class="type-card-blurb">Reassure with decisiveness, not caveats. Don&#39;t pile on hypotheticals. Warmth + clarity together.</div>
+        </a>
+        <a class="type-card card-accent" href="/library/ocean/neuroticism-low" style="border-top-color: #a8482a;" aria-label="N-low · Low Neuroticism — view tuning">
+          <span class="type-card-pill" style="background: rgba(168,72,42,0.1); color: #a8482a;">N-low</span>
+          <div class="type-card-name">Low Neuroticism</div>
+          <div class="type-card-meta"><span style="color: #a8482a; font-weight: 600;">low</span></div>
+          <div class="type-card-blurb">Skip the reassurance. Don&#39;t soften bad news. Tradeoffs are tradeoffs, not threats.</div>
+        </a></div>
+      </section>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CLOSING CTA -->
+    <section class="closer">
+      <span class="pill">Not sure of your type?</span>
+      <div class="closer-headline">
+        Take a 3–7 minute test.<br/>
+        <span class="closer-accent">Get the right tuning matched automatically.</span>
+      </div>
+      <div class="cta-row" style="justify-content: center; margin-top: 28px;">
+        <a class="btn btn-light closer-cta" href="/tests/">All five tests →</a>
+        <a class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25);" href="/research">Read the research</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span>43 standalone tunings · pasteable everywhere</span>
+    </div>
+
+  </div>
+</body>
+</html>

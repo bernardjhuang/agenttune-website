@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG #5 — 597 / 600</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" />
+<style>
+  html, body { margin: 0; padding: 0; background: #2a2a26; }
+  body { font-family: "IBM Plex Sans", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #1a1a17;
+    color: #fafaf7;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    box-sizing: border-box;
+    padding: 56px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .og::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,72,42,0.40) 0%, rgba(168,72,42,0) 70%);
+    pointer-events: none;
+  }
+  .og::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,77,138,0.32) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .top-row, .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "Newsreader", serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #fafaf7;
+  }
+  .brand-dot { width: 14px; height: 14px; border-radius: 50%; background: #a8482a; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #a8482a;
+    font-weight: 600;
+  }
+  .number {
+    font-family: "Newsreader", serif;
+    font-weight: 600;
+    font-size: 232px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #fafaf7;
+    text-align: center;
+    margin: 0;
+    position: relative;
+  }
+  .number .slash {
+    color: #a8482a;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 6px;
+  }
+  .number .denom {
+    color: rgba(250,250,247,0.45);
+    font-weight: 400;
+  }
+  .sub {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.25;
+    color: #fafaf7;
+    text-align: center;
+    margin: 4px 0 0;
+    position: relative;
+  }
+  .sub-2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    color: rgba(250,250,247,0.7);
+    text-align: center;
+    margin: 14px 0 0;
+    line-height: 1.5;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .url {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a8482a;
+    font-weight: 600;
+  }
+  .right-meta {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.5);
+    text-align: right;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="top-row">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>AgentTune</span>
+    </div>
+    <div class="eyebrow">Research finding · n = 600</div>
+  </div>
+
+  <div>
+    <h1 class="number"><span>597</span><span class="slash">/</span><span class="denom">600</span></h1>
+    <p class="sub">runs returned <em>INTJ</em> across six frontier models.</p>
+    <p class="sub-2">Claude, GPT-5.5, Gemini, Grok, GLM, MiniMax — 100 trials each on the MBTI. The default AI personality is the same one, again and again. AgentTune is how you make it sound like you instead.</p>
+  </div>
+
+  <div class="bottom-row">
+    <span class="url">agent-tune.com / research</span>
+    <span class="right-meta">5 systems · 43 tunings<br/>free · MIT</span>
+  </div>
+</div>
+</body>
+</html>

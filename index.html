@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI System Prompts for Your Personality Type — AgentTune</title>
+  <meta name="description" content="Personality-based tuning files for AI agents. Take a quick test, get a Markdown file matched to how you think, paste it into Claude / ChatGPT / Cursor. Five layerable systems, 43 tunings — free, MIT." />
+  <meta property="og:title" content="Personality-Based AI Agent Tunings | AgentTune" />
+  <meta property="og:description" content="Take a personality test, get a Markdown tuning file, paste it into your AI agent. Same model — now interacts with you the way you think." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent. A CLAUDE.md window shows a sample tuning file." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personality-Based AI Agent Tunings | AgentTune" />
+  <meta name="twitter:description" content="Take a personality test, get a tuning file, paste it into your AI agent. Better interactions in 5 minutes." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://agent-tune.com/#website",
+        "url": "https://agent-tune.com/",
+        "name": "AgentTune",
+        "alternateName": "agent-tune.com",
+        "description": "An open library of agent tuning files that align an AI agent's interaction style with how a particular user thinks. Five personality systems, 43 layerable tuning files, five inline-administered tests. MIT licensed.",
+        "publisher": {"@id": "https://agent-tune.com/#organization"},
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://agent-tune.com/#organization",
+        "name": "AgentTune",
+        "url": "https://agent-tune.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://agent-tune.com/favicon.ico"
+        },
+        "sameAs": [
+          "https://github.com/psyduckler/agenttune"
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://agent-tune.com/#source",
+        "name": "AgentTune",
+        "codeRepository": "https://github.com/psyduckler/agenttune",
+        "license": "https://opensource.org/licenses/MIT",
+        "programmingLanguage": "Markdown",
+        "applicationCategory": "AIApplication",
+        "description": "43 Markdown tuning files across 5 personality systems (MBTI, Enneagram, DISC, Attachment, OCEAN) that adjust AI agent interaction style to match how a user thinks."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://agent-tune.com/#webpage",
+        "url": "https://agent-tune.com/",
+        "name": "AgentTune — An AI that talks your language from the first reply.",
+        "isPartOf": {"@id": "https://agent-tune.com/#website"},
+        "about": {"@id": "https://agent-tune.com/#source"},
+        "description": "Take a 5-minute personality test. Get a short Markdown tuning file. Paste it into Claude, ChatGPT, Cursor — same model, sharper answers."
+      }
+    ]
+  }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MYEW2MEE1');
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="hp2">
+
+  <div class="page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hp2-hero" aria-labelledby="hp2-hero-h1">
+    <h1 class="hp2-hero-h1" id="hp2-hero-h1">
+      Personalize your AI agent to <em>work with you better.</em>
+    </h1>
+    <p class="hp2-hero-lede">
+      Pick from 43 personality-matched tuning files — or take a 5-min test to find yours. Paste into Claude, ChatGPT, or Gemini and superpower your AI agent.
+    </p>
+
+    <div class="hp2-hero-ctas">
+      <a class="hp2-btn is-primary" href="/library">Know your type? Browse the library →</a>
+      <a class="hp2-btn is-ghost" href="/tests/">Test yourself · 5 min →</a>
+      <span class="hp2-reassure">No signup. No email. Yours forever.</span>
+    </div>
+  </section>
+
+  <!-- ===== Rule ===== -->
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § I · How it works -->
+  <section class="hp2-section" aria-labelledby="hp2-step-h2">
+    <h2 class="hp2-h2 hp2-h2-first" id="hp2-step-h2">Three steps. <em style="color: var(--accent);">One better agent.</em></h2>
+    <p class="hp2-section-lede">You spend five minutes once. After that, every conversation with your AI starts where you'd otherwise have to drag it to manually.</p>
+
+    <div class="hp2-three-step">
+      <!-- Card 1 -->
+      <article class="hp2-step-card" style="--step-accent: #2f8a5b;">
+        <div class="hp2-step-num">01</div>
+        <div class="hp2-step-meta">Step 1 of 3</div>
+        <h3 class="hp2-step-title">Take a 5-min test</h3>
+        <p class="hp2-step-body">Five research-grade instruments to choose from: MBTI, Big Five, Enneagram, DISC, or Attachment. No signup, no email, no progress bar disguised as a sales funnel.</p>
+        <div class="hp2-step-demo">
+          <div class="hp2-demo-question">
+            <div class="hp2-demo-q-meta"><span>Question 12 / 30</span><span>MBTI</span></div>
+            <p class="hp2-demo-q-text">I'd rather have the underlying model than the bullet list.</p>
+            <div class="hp2-demo-q-options">
+              <div class="hp2-demo-q-opt is-selected"><span class="hp2-demo-q-radio"></span>Strongly agree</div>
+              <div class="hp2-demo-q-opt"><span class="hp2-demo-q-radio"></span>Agree</div>
+              <div class="hp2-demo-q-opt"><span class="hp2-demo-q-radio"></span>Neutral</div>
+              <div class="hp2-demo-q-opt"><span class="hp2-demo-q-radio"></span>Disagree</div>
+            </div>
+          </div>
+        </div>
+        <div class="hp2-step-foot">
+          <span class="hp2-step-foot-swatch" aria-hidden="true"></span>
+          You walk away knowing how you actually think.
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="hp2-step-card" style="--step-accent: #5b4dc0;">
+        <div class="hp2-step-num">02</div>
+        <div class="hp2-step-meta">Step 2 of 3</div>
+        <h3 class="hp2-step-title">Get your tuning file</h3>
+        <p class="hp2-step-body">Your result compiles into a short Markdown file — behavior rules for your agent, not a horoscope. A dozen lines that cancel the model's worst defaults.</p>
+        <div class="hp2-step-demo">
+          <div class="hp2-demo-code">
+            <div class="hp2-demo-code-meta">
+              <span class="hp2-demo-code-dot" aria-hidden="true"></span>
+              your-tuning.md
+            </div>
+<pre class="hp2-demo-code-pre"># INTJ — Architect
+
+Lead with the underlying model.
+Skip the encouraging preamble.
+
+- No "great question" openers
+- One structured answer, not a menu
+- Push back on flawed premises</pre>
+          </div>
+        </div>
+        <div class="hp2-step-foot">
+          <span class="hp2-step-foot-swatch" aria-hidden="true"></span>
+          You get a tangible artifact. It's yours, forever.
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="hp2-step-card" style="--step-accent: #a8482a;">
+        <div class="hp2-step-num">03</div>
+        <div class="hp2-step-meta">Step 3 of 3</div>
+        <h3 class="hp2-step-title">Paste it into your agent</h3>
+        <p class="hp2-step-body">One paste into your system prompt — Claude, ChatGPT, Cursor, Gemini, or any API. No SDK, no subscription, no lock-in. Works the next time you press send.</p>
+        <div class="hp2-step-demo">
+          <div class="hp2-demo-surfaces">
+            <div class="hp2-demo-surf-header">Works anywhere</div>
+            <div class="hp2-demo-surf-grid">
+              <div class="hp2-demo-surf-cell">Claude · System</div>
+              <div class="hp2-demo-surf-cell">ChatGPT · Custom</div>
+              <div class="hp2-demo-surf-cell">Cursor · .rules</div>
+              <div class="hp2-demo-surf-cell">Gemini · Gems</div>
+              <div class="hp2-demo-surf-cell">Copilot · Inst.</div>
+              <div class="hp2-demo-surf-cell">Any API call</div>
+            </div>
+          </div>
+        </div>
+        <div class="hp2-step-foot">
+          <span class="hp2-step-foot-swatch" aria-hidden="true"></span>
+          Every conversation, every model — already calibrated.
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § II · What actually changes -->
+  <section class="hp2-section" aria-labelledby="hp2-ba-h2">
+    <h2 class="hp2-h2 hp2-h2-first" id="hp2-ba-h2">The <em style="color: #2a4d8a;">same question</em>, a different answer.</h2>
+    <p class="hp2-section-lede">Same prompt, same model — only the tuning file changed. The left is what Claude says to everyone. The right is what it says once it knows you're an INTJ who wants the underlying model, not a bullet menu.</p>
+
+    <div class="hp2-prompt-bar">
+      <div class="hp2-prompt-avatar" aria-hidden="true">You</div>
+      <div class="hp2-prompt-text">"I'm feeling stuck on a project. What should I do?"</div>
+    </div>
+
+    <div class="hp2-ba-grid">
+      <article class="hp2-ba-card is-before">
+        <header class="hp2-ba-head">
+          <span class="hp2-ba-pill is-before">Before · untuned</span>
+          <span class="hp2-ba-tag is-before">Generic</span>
+        </header>
+<p class="hp2-ba-body">Great question! Here are a few approaches:
+
+1. Break the project into smaller, more manageable chunks
+2. Take a short break and come back with fresh eyes
+3. Talk it through with someone to externalize the problem
+4. Identify what specifically feels stuck
+
+Which resonates? Happy to go deeper on any of them.</p>
+      </article>
+      <article class="hp2-ba-card is-after">
+        <header class="hp2-ba-head">
+          <span class="hp2-ba-pill is-after">After · tuned to you</span>
+          <span class="hp2-ba-tag is-after">Yours</span>
+        </header>
+<p class="hp2-ba-body">What's the underlying model of the project — what depends on what, and where's the blocker?
+
+"Stuck" is usually a missing piece of the structure, not a missing piece of effort. If you can name the upstream dependency that hasn't resolved, the next move is obvious. If you can't, the work is to map it, not push through.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § III · Five small wins -->
+  <section class="hp2-section" aria-labelledby="hp2-wins-h2">
+    <h2 class="hp2-h2 hp2-h2-first" id="hp2-wins-h2">Five small wins. <em style="color: #2f8a5b;">Every conversation.</em></h2>
+    <p class="hp2-section-lede">Tuning isn't about a personality test on the wall — it's about removing friction from every reply your agent gives.</p>
+
+    <div class="hp2-wins-grid">
+      <div class="hp2-win-col" style="--win-color: #a8482a;">
+        <div class="hp2-win-num">#01</div>
+        <h3 class="hp2-win-title">Less re-prompting</h3>
+        <p class="hp2-win-body">Stop typing "be more direct," "skip the recap," "no caveats." The model already knows.</p>
+      </div>
+      <div class="hp2-win-col" style="--win-color: #5b4dc0;">
+        <div class="hp2-win-num">#02</div>
+        <h3 class="hp2-win-title">Faster answers</h3>
+        <p class="hp2-win-body">Cut 30–60% of the words you don't read anyway. Same depth, less noise.</p>
+      </div>
+      <div class="hp2-win-col" style="--win-color: #2f8a5b;">
+        <div class="hp2-win-num">#03</div>
+        <h3 class="hp2-win-title">Fewer dead-ends</h3>
+        <p class="hp2-win-body">No more bullet menus when you wanted a recommendation. No more recommendations when you wanted options.</p>
+      </div>
+      <div class="hp2-win-col" style="--win-color: #2a4d8a;">
+        <div class="hp2-win-num">#04</div>
+        <h3 class="hp2-win-title">Real pushback</h3>
+        <p class="hp2-win-body">If you're the type who wants challenge, you get challenge. Not a polite hedge wrapped in three disclaimers.</p>
+      </div>
+      <div class="hp2-win-col" style="--win-color: #8a5a2d;">
+        <div class="hp2-win-num">#05</div>
+        <h3 class="hp2-win-title">Carries everywhere</h3>
+        <p class="hp2-win-body">Use the same file in Claude, GPT, Cursor, your own API call. Switch models, keep the tuning.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § IV · Why this works at all -->
+  <section class="hp2-section" aria-labelledby="hp2-why-h2">
+    <div class="hp2-why-grid">
+      <div>
+        <h2 class="hp2-h2 hp2-h2-first" id="hp2-why-h2">Models default to <em style="color: var(--accent);">everyone</em>. You are <em style="color: var(--accent);">not</em> everyone.</h2>
+        <p class="hp2-why-body">Frontier models are trained on the population, then RLHF'd toward the safest, most agreeable response anyone could want. That's a sensible default for billions of users — and a mediocre one for any individual.</p>
+        <p class="hp2-why-body is-soft">A personality test is the cheapest known instrument for telling a model how you differ from the average. AgentTune is just the bridge: the test gives you a type, the type compiles to a Markdown file, the file becomes context the next time you press send.</p>
+        <p class="hp2-why-body is-italic">No magic. No new model. Just the right context, written down once.</p>
+      </div>
+      <div class="hp2-removes-card">
+        <div class="hp2-eyebrow" style="color: #5b4dc0;">What it removes</div>
+        <div class="hp2-removes-row" style="margin-top: 16px;">
+          <span class="hp2-removes-x" aria-hidden="true">✗</span>
+          <div>
+            <div class="hp2-removes-quote">"Great question!"</div>
+            <div class="hp2-removes-caption">Filler that delays the answer by 3 seconds.</div>
+          </div>
+        </div>
+        <div class="hp2-removes-row">
+          <span class="hp2-removes-x" aria-hidden="true">✗</span>
+          <div>
+            <div class="hp2-removes-quote">"Here are a few approaches…"</div>
+            <div class="hp2-removes-caption">Bullet menus when you wanted a recommendation.</div>
+          </div>
+        </div>
+        <div class="hp2-removes-row">
+          <span class="hp2-removes-x" aria-hidden="true">✗</span>
+          <div>
+            <div class="hp2-removes-quote">"Which resonates?"</div>
+            <div class="hp2-removes-caption">The pointless check-in that interrupts flow.</div>
+          </div>
+        </div>
+        <div class="hp2-removes-row">
+          <span class="hp2-removes-x" aria-hidden="true">✗</span>
+          <div>
+            <div class="hp2-removes-quote">"I'd be happy to dig deeper"</div>
+            <div class="hp2-removes-caption">Performative warmth nobody asked for.</div>
+          </div>
+        </div>
+        <div class="hp2-removes-row">
+          <span class="hp2-removes-x" aria-hidden="true">✗</span>
+          <div>
+            <div class="hp2-removes-quote">"It really depends"</div>
+            <div class="hp2-removes-caption">Hedging when you needed a call.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § V · How people use it -->
+  <section class="hp2-section" aria-labelledby="hp2-uses-h2">
+    <h2 class="hp2-h2 hp2-h2-first" id="hp2-uses-h2">Same file. <em style="color: #2a4d8a;">Different surfaces.</em></h2>
+    <p class="hp2-section-lede">One Markdown file lives in your password manager, your dotfiles, or a note. Drop it wherever you talk to a model.</p>
+
+    <div class="hp2-uses-grid">
+      <article class="hp2-use-card" style="--use-color: #a8482a; --use-tint: rgba(168,72,42,0.08);">
+        <span class="hp2-use-pill">For thinkers</span>
+        <h3 class="hp2-use-title">A real sounding board</h3>
+        <p class="hp2-use-body">Your AI pushes back instead of agreeing. Names flawed premises. Stops asking what kind of help you'd like — and just gives it.</p>
+      </article>
+      <article class="hp2-use-card" style="--use-color: #5b4dc0; --use-tint: rgba(91,77,192,0.08);">
+        <span class="hp2-use-pill">For coders</span>
+        <h3 class="hp2-use-title">A pair without the chatter</h3>
+        <p class="hp2-use-body">No "would you like me to add tests?" No 80-line apology when the diff is wrong. Just the code you'd have written, faster.</p>
+      </article>
+      <article class="hp2-use-card" style="--use-color: #2f8a5b; --use-tint: rgba(47,138,91,0.08);">
+        <span class="hp2-use-pill">For writers</span>
+        <h3 class="hp2-use-title">An editor that gets your voice</h3>
+        <p class="hp2-use-body">It stops adding em-dashes everywhere and proposing structures you'd never use. It edits your draft instead of rewriting it.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- § VI · Pick the lens you trust -->
+  <section class="hp2-section" aria-labelledby="hp2-tests-h2">
+    <h2 class="hp2-h2 hp2-h2-first" id="hp2-tests-h2">Five tests. <em style="color: #2f8a5b;">Whichever speaks to you.</em></h2>
+    <p class="hp2-section-lede">All five tests return the same kind of file. Pick the framework you already believe in — or start with MBTI if you're undecided. You can stack files later.</p>
+
+    <div class="hp2-tests-grid">
+      <a class="hp2-test-col" href="/tests/mbti" style="--test-color: #5b4dc0; --test-tint: rgba(91,77,192,0.06);">
+        <span class="hp2-test-pill">OEJTS</span>
+        <h3 class="hp2-test-name">MBTI</h3>
+        <div class="hp2-test-meta">32 items · ~5 min</div>
+        <span class="hp2-test-path">tests/mbti.md</span>
+      </a>
+      <a class="hp2-test-col" href="/tests/enneagram" style="--test-color: #2f8a5b; --test-tint: rgba(47,138,91,0.06);">
+        <span class="hp2-test-pill">OEPS</span>
+        <h3 class="hp2-test-name">Enneagram</h3>
+        <div class="hp2-test-meta">36 items · ~5 min</div>
+        <span class="hp2-test-path">tests/enneagram.md</span>
+      </a>
+      <a class="hp2-test-col" href="/tests/disc" style="--test-color: #d99632; --test-tint: rgba(217,150,50,0.06);">
+        <span class="hp2-test-pill">ODAT</span>
+        <h3 class="hp2-test-name">DISC</h3>
+        <div class="hp2-test-meta">16 items · ~3 min</div>
+        <span class="hp2-test-path">tests/disc.md</span>
+      </a>
+      <a class="hp2-test-col" href="/tests/attachment" style="--test-color: #e07a8a; --test-tint: rgba(224,122,138,0.08);">
+        <span class="hp2-test-pill">ECR-R</span>
+        <h3 class="hp2-test-name">Attachment</h3>
+        <div class="hp2-test-meta">36 items · ~5 min</div>
+        <span class="hp2-test-path">tests/attachment.md</span>
+      </a>
+      <a class="hp2-test-col" href="/tests/big-five" style="--test-color: #3a72c4; --test-tint: rgba(58,114,196,0.06);">
+        <span class="hp2-test-pill">IPIP-50</span>
+        <h3 class="hp2-test-name">Big Five</h3>
+        <div class="hp2-test-meta">50 items · ~7 min</div>
+        <span class="hp2-test-path">tests/big-five.md</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="hp2-rule"><div class="hp2-rule-line"></div></div>
+
+  <!-- Trust strip -->
+  <section class="hp2-section" aria-label="Trust">
+    <div class="hp2-trust-grid">
+      <div class="hp2-trust-col">
+        <div class="hp2-trust-label">No signup</div>
+        <p class="hp2-trust-body">No email, no account. Take a test, get a file, leave.</p>
+      </div>
+      <div class="hp2-trust-col">
+        <div class="hp2-trust-label">MIT license</div>
+        <p class="hp2-trust-body">The library is open. Fork it, edit it, ship your own.</p>
+      </div>
+      <div class="hp2-trust-col">
+        <div class="hp2-trust-label">Your data</div>
+        <p class="hp2-trust-body">Tests run client-side. Results never leave your browser.</p>
+      </div>
+      <div class="hp2-trust-col">
+        <div class="hp2-trust-label">Works offline</div>
+        <p class="hp2-trust-body">It's a Markdown file. Save it, version it, share it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing dark CTA -->
+  <div class="hp2-closer-wrap">
+    <div class="hp2-closer">
+      <div>
+        <span class="hp2-closer-pill">5 min once · everything after, easier</span>
+        <h2 class="hp2-closer-h1">Stop training your AI one prompt at a time. <em>Tune it once.</em></h2>
+        <p class="hp2-closer-body">Five minutes for the test. Ten seconds to paste the file. From the next reply onward — every conversation, every model — your agent already knows the shape of you.</p>
+        <div class="hp2-closer-ctas">
+          <a class="hp2-closer-btn is-primary" href="/tests/">Take the test →</a>
+          <a class="hp2-closer-btn is-ghost" href="/library">Browse first</a>
+        </div>
+      </div>
+      <div class="hp2-closer-code">
+        <div class="hp2-closer-code-bar">
+          <div class="hp2-closer-code-meta">
+            <span class="hp2-closer-code-dot" aria-hidden="true"></span>
+            your-tuning.md
+          </div>
+          <button class="hp2-closer-code-copy" type="button" id="hp2-copy-sample" aria-label="Copy sample INTJ tuning to clipboard">Copy ↵</button>
+        </div>
+<pre class="hp2-closer-code-body" id="hp2-sample-code"># INTJ — Architect
+
+Lead with the underlying model, then the conclusion.
+Skip the encouraging preamble.
+
+- No "great question" openers
+- One structured answer, not a menu of options
+- When uncertain, name it in one line and pick anyway
+- Push back on flawed premises directly</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="hp2-footer">
+    <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">psyduckler/agenttune</a></span>
+  </footer>
+
+  <script>
+    // Copy-to-clipboard for the sample tuning in the dark closer CTA.
+    (function () {
+      const btn = document.getElementById("hp2-copy-sample");
+      const pre = document.getElementById("hp2-sample-code");
+      if (!btn || !pre) return;
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(pre.textContent).then(function () {
+          const original = btn.textContent;
+          btn.textContent = "Copied ↵";
+          btn.style.background = "#fafaf7";
+          btn.style.color = "#1a1a17";
+          setTimeout(function () {
+            btn.textContent = original;
+            btn.style.background = "";
+            btn.style.color = "";
+          }, 1500);
+        }).catch(function () {});
+      });
+    })();
+  </script>
+
+</body>
+</html>

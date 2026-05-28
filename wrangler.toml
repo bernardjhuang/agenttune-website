@@ -1,0 +1,22 @@
+# Cloudflare Pages config for agent-tune
+# Used by `wrangler pages deploy` and Pages Functions.
+
+name = "agent-tune"
+compatibility_date = "2026-05-26"
+pages_build_output_dir = "."
+
+# KV namespace binding for the Pro flow
+# - draft:{draft_id}   → assessment summaries (14 day TTL)
+# - checkout:{cs_id}   → Stripe session metadata (30 day TTL)
+# - soul:{uuid}        → generated master tuning JSON (permanent)
+# - email_index:{addr} → uuid history for future retune lookup
+[[kv_namespaces]]
+binding = "AGENTTUNE_KV"
+id = "15986f5c3c9c401496921047631ecfea"
+
+# Non-secret env vars (secrets are set via `wrangler pages secret put`)
+[vars]
+SITE_URL = "https://agent-tune.com"
+RESEND_FROM = "hello@agent-tune.com"
+GEMINI_MODEL = "gemini-2.5-flash"
+STRIPE_PRICE_ID = "price_1TbQmoGXBp4fykLjM8XSfmq6"

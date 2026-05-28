@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Premium Assessment · AgentTune</title>
+  <meta name="description" content="Take the full AgentTune Pro assessment — 5 personality tests + AgentFit calibration. We synthesize one master tuning file from your complete profile." />
+
+  <link rel="canonical" href="https://agent-tune.com/pro/assessment" />
+  <link rel="stylesheet" href="/styles.css?v=20260526d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/pro/test-data.js?v=20260526d"></script>
+</head>
+<body>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing" class="active">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/pricing">Premium</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Pro assessment</span>
+    </nav>
+
+    <!-- INTRO (shown before assessment starts) -->
+    <section id="pro-intro" class="quiz-intro">
+      <h1 class="h-hero h-research-hero">Take the Pro assessment.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #a8482a;">See a preview before you pay.</h1>
+      <p class="lede">
+        Five personality tests back-to-back (170 items) plus 10 quick questions about how you actually want your AI to behave. We'll show you a free preview of what we found — three concrete rules + the conflicts in your profile. If it looks useful, $9 once unlocks the full master tuning file.
+      </p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Five tests:</strong> MBTI · Enneagram · DISC · Attachment · Big Five</div>
+        <div><strong>Plus:</strong> 10 forced-choice AgentFit calibration items</div>
+        <div><strong>Time:</strong> ~30 minutes · saves to this device</div>
+        <div><strong>Returns:</strong> a preview now · master tuning file after $9</div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" id="pro-start" style="background: #a8482a; border-color: #a8482a;">Start the assessment →</button>
+      </div>
+
+      <p class="quiz-intro-hint" id="pro-resume-hint" hidden>
+        <strong>Resuming from where you left off.</strong> <button class="btn-link" id="pro-reset" type="button">Start over</button>
+      </p>
+
+      <!-- "I already know my type" skip path — only for MBTI / Enneagram.
+           The other 3 systems (DISC / Attachment / Big Five) are harder to
+           self-report accurately so we keep those required. -->
+      <div class="pro-skip">
+        <button type="button" id="pro-skip-toggle" class="pro-skip-toggle" aria-expanded="false">
+          Already know your MBTI or Enneagram? <span class="pro-skip-chev" aria-hidden="true">↓</span>
+        </button>
+
+        <div class="pro-skip-form" id="pro-skip-form" hidden>
+          <p class="pro-skip-lead">If you've taken these before and trust the result, drop your code in and we'll skip that section. Your input feeds directly into the file.</p>
+
+          <div class="pro-skip-grid">
+            <div class="pro-skip-field">
+              <label for="pro-skip-mbti">MBTI</label>
+              <select id="pro-skip-mbti">
+                <option value="">Take the test (32 items, ~5 min)</option>
+                <option value="INTJ">INTJ — The Architect</option>
+                <option value="INTP">INTP — The Logician</option>
+                <option value="ENTJ">ENTJ — The Commander</option>
+                <option value="ENTP">ENTP — The Debater</option>
+                <option value="INFJ">INFJ — The Advocate</option>
+                <option value="INFP">INFP — The Mediator</option>
+                <option value="ENFJ">ENFJ — The Protagonist</option>
+                <option value="ENFP">ENFP — The Campaigner</option>
+                <option value="ISTJ">ISTJ — The Logistician</option>
+                <option value="ISFJ">ISFJ — The Defender</option>
+                <option value="ESTJ">ESTJ — The Executive</option>
+                <option value="ESFJ">ESFJ — The Consul</option>
+                <option value="ISTP">ISTP — The Virtuoso</option>
+                <option value="ISFP">ISFP — The Adventurer</option>
+                <option value="ESTP">ESTP — The Entrepreneur</option>
+                <option value="ESFP">ESFP — The Entertainer</option>
+              </select>
+            </div>
+
+            <div class="pro-skip-field">
+              <label for="pro-skip-enneagram">Enneagram</label>
+              <div class="pro-skip-pair">
+                <select id="pro-skip-enneagram">
+                  <option value="">Take the test (36 items, ~6 min)</option>
+                  <option value="1">Type 1 — The Reformer</option>
+                  <option value="2">Type 2 — The Helper</option>
+                  <option value="3">Type 3 — The Achiever</option>
+                  <option value="4">Type 4 — The Individualist</option>
+                  <option value="5">Type 5 — The Investigator</option>
+                  <option value="6">Type 6 — The Loyalist</option>
+                  <option value="7">Type 7 — The Enthusiast</option>
+                  <option value="8">Type 8 — The Challenger</option>
+                  <option value="9">Type 9 — The Peacemaker</option>
+                </select>
+                <select id="pro-skip-enneagram-wing" disabled>
+                  <option value="">no wing</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pro-skip-actions">
+            <button type="button" id="pro-skip-confirm" class="btn btn-primary" disabled style="background: #a8482a; border-color: #a8482a;">Skip selected tests + start →</button>
+            <p class="pro-skip-note">Big Five, DISC, and Attachment are still required — they're harder to self-report and the Big Five anchors the rest of your file.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use number keys for fast input. Your progress saves to this device automatically — close the tab and come back any time.</p>
+    </section>
+
+    <!-- RUNNER (active during assessment) -->
+    <section class="quiz-runner" id="pro-runner" hidden>
+      <!-- Section progress -->
+      <div class="quiz-progress" style="margin-bottom: 16px;">
+        <div class="quiz-progress-meta" id="pro-progress-meta">System 1 of 5 · MBTI</div>
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="pro-progress-bar" style="background: #a8482a;"></div></div>
+        <div class="quiz-progress-text"><span id="pro-progress-current">1</span> / <span id="pro-progress-total">180</span></div>
+      </div>
+
+      <!-- Single-statement / Likert card -->
+      <div class="quiz-card" id="pro-card-single" hidden>
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" id="pro-card-avatar" aria-hidden="true">M</div>
+          <p class="quiz-item-statement" id="pro-card-statement"></p>
+        </div>
+        <div class="quiz-likert" id="pro-card-likert" role="radiogroup"></div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="pro-back" disabled>← Back</button>
+          <div class="quiz-nav-hint" id="pro-likert-hint">Press 1–5 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="pro-skip">Skip (neutral) →</button>
+        </div>
+      </div>
+
+      <!-- Bipolar (MBTI two-statement) card -->
+      <div class="quiz-card" id="pro-card-bipolar" hidden>
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #5b4dc0;" aria-hidden="true">M</div>
+          <div class="quiz-card-prompt-text">Which feels more like you?</div>
+        </div>
+        <div class="quiz-statements">
+          <div class="quiz-statement quiz-statement-left">
+            <div class="quiz-statement-label">First</div>
+            <p class="quiz-statement-text" id="pro-stmt-first"></p>
+          </div>
+          <div class="quiz-statement-divider">vs</div>
+          <div class="quiz-statement quiz-statement-right">
+            <div class="quiz-statement-label">Second</div>
+            <p class="quiz-statement-text" id="pro-stmt-second"></p>
+          </div>
+        </div>
+        <div class="quiz-likert" id="pro-card-bipolar-likert" role="radiogroup"></div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="pro-back-2" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="pro-skip-2">Skip →</button>
+        </div>
+      </div>
+
+      <!-- Multi-select (use cases) card -->
+      <div class="quiz-card" id="pro-card-multi" hidden>
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #a8482a;" aria-hidden="true">AF</div>
+          <p class="quiz-item-statement" id="pro-multi-prompt"></p>
+        </div>
+        <div class="quiz-multi-grid" id="pro-multi-grid"></div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="pro-back-3" disabled>← Back</button>
+          <div class="quiz-nav-hint">Pick all that apply</div>
+          <button class="quiz-nav-btn quiz-nav-btn-primary" id="pro-multi-continue">Continue →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI-RESULT (between sections) — split-panel "big bold reveal" -->
+    <section class="quiz-runner" id="pro-mini-result" hidden>
+      <div class="mini-split" id="pro-mini-split">
+        <!-- Left: color-flooded reveal with code + description -->
+        <div class="mini-split-left" id="pro-mini-left">
+          <div class="mini-split-eyebrow" id="pro-mini-eyebrow">MBTI</div>
+          <div class="mini-split-code-block">
+            <div class="mini-split-code" id="pro-mini-headline">INTJ</div>
+            <div class="mini-split-name" id="pro-mini-sub">The Architect</div>
+            <p class="mini-split-desc" id="pro-mini-desc">Description appears here.</p>
+          </div>
+          <div class="mini-split-progress" id="pro-mini-progress">●●○○○ · 1 of 5 complete</div>
+        </div>
+
+        <!-- Right: paste-ready system prompt preview -->
+        <div class="mini-split-right">
+          <div class="mini-split-r-header">
+            <span class="mini-split-r-label" id="pro-mini-snippet-label"><strong>Mini tuning</strong> · MBTI-only preview</span>
+            <button class="mini-split-r-copy" id="pro-mini-copy" type="button">Copy ✦</button>
+          </div>
+          <pre class="mini-split-r-snippet" id="pro-mini-snippet">Snippet appears here.</pre>
+          <div class="mini-split-r-foot">
+            <span class="mini-split-r-meta" id="pro-mini-next"><strong>Next up:</strong> Enneagram · 36 items, ~6 min</span>
+            <button class="mini-split-cta" id="pro-mini-continue" type="button">Continue →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONE — redirect to preview -->
+    <section class="quiz-runner" id="pro-done" hidden>
+      <div class="quiz-card" style="text-align: center; padding: 64px 32px;">
+        <div class="quiz-mini-eyebrow">Assessment complete</div>
+        <div class="quiz-mini-headline" style="color: #a8482a;">All 180 items done.</div>
+        <div class="quiz-mini-sub">Building your preview…</div>
+        <div class="quiz-loading-spinner"></div>
+      </div>
+    </section>
+
+    <div class="footer" style="margin-top: 56px;">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span>Save and resume · ~30 min total</span>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+    const T = window.AT_PRO_TESTS;
+    if (!T) { console.error("AT_PRO_TESTS not loaded"); return; }
+
+    const STORAGE_KEY = "agenttune:pro:draft";
+    const TOTAL_QUESTIONS = T.TOTAL_ITEMS + T.AGENTFIT_COUNT;
+
+    // ----------------------------------------------------------
+    // State
+    // ----------------------------------------------------------
+    // NOTE: SECTIONS / AGENTFIT must be initialized BEFORE makeFreshState()
+    // runs (temporal dead zone — const declarations are hoisted but not
+    // initialized, so referencing them inside a function called earlier
+    // throws ReferenceError).
+    const SECTIONS = T.SECTIONS;
+    const AGENTFIT = T.AGENTFIT_ITEMS;
+
+    // Slightly darken a #rrggbb color for gradient ends.
+    function shade(hex, percent) {
+      const num = parseInt(String(hex).replace("#", ""), 16);
+      const r = (num >> 16) & 0xff, g = (num >> 8) & 0xff, b = num & 0xff;
+      const k = (1 + percent / 100);
+      const clamp = (v) => Math.max(0, Math.min(255, Math.round(v * k)));
+      return "rgb(" + clamp(r) + ", " + clamp(g) + ", " + clamp(b) + ")";
+    }
+
+    let state = loadState() || makeFreshState();
+    let sectionIdx = state.sectionIdx;       // 0..4 for the 5 tests, 5 for AgentFit
+    let itemIdx = state.itemIdx;             // index within current section
+
+    function makeFreshState() {
+      const s = {
+        sectionIdx: 0,
+        itemIdx: 0,
+        answers: {},       // { mbti: [...], enneagram: [...], ... }
+        agentfit: {},      // { wrongness: "a", ..., use_cases: ["coding", ...] }
+        results: {},       // { mbti: {code, ...}, enneagram: {...}, ... }
+        skipped: [],       // section ids the user opted out of (manual code entry)
+        startedAt: Date.now()
+      };
+      SECTIONS.forEach((sec) => { s.answers[sec.id] = new Array(sec.items.length).fill(null); });
+      return s;
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const s = JSON.parse(raw);
+        // Validate shape — if schema changed, discard
+        if (!s.answers || !s.agentfit) return null;
+        SECTIONS.forEach((sec) => {
+          if (!Array.isArray(s.answers[sec.id]) || s.answers[sec.id].length !== sec.items.length) {
+            s.answers[sec.id] = new Array(sec.items.length).fill(null);
+          }
+        });
+        if (typeof s.sectionIdx !== "number") s.sectionIdx = 0;
+        if (typeof s.itemIdx !== "number") s.itemIdx = 0;
+        s.results = s.results || {};
+        s.skipped = Array.isArray(s.skipped) ? s.skipped : [];
+        return s;
+      } catch (e) { return null; }
+    }
+
+    function saveState() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function resetState() {
+      state = makeFreshState();
+      sectionIdx = 0; itemIdx = 0;
+      saveState();
+    }
+
+    // ----------------------------------------------------------
+    // Progress
+    // ----------------------------------------------------------
+    function isSkipped(secId) {
+      return Array.isArray(state.skipped) && state.skipped.indexOf(secId) >= 0;
+    }
+
+    function totalAnswered() {
+      let n = 0;
+      SECTIONS.forEach((sec) => {
+        if (isSkipped(sec.id)) {
+          // Skipped sections count as fully answered for progress purposes.
+          n += sec.items.length;
+        } else {
+          n += state.answers[sec.id].filter((v) => v != null).length;
+        }
+      });
+      AGENTFIT.forEach((q) => { if (state.agentfit[q.id] != null) n++; });
+      return n;
+    }
+
+    function updateProgress() {
+      const answered = totalAnswered();
+      const pct = Math.round((answered / TOTAL_QUESTIONS) * 100);
+      $("pro-progress-bar").style.width = pct + "%";
+      $("pro-progress-current").textContent = answered;
+      $("pro-progress-total").textContent = TOTAL_QUESTIONS;
+
+      if (sectionIdx < SECTIONS.length) {
+        const sec = SECTIONS[sectionIdx];
+        $("pro-progress-meta").innerHTML = `System ${sectionIdx + 1} of 5 · <strong>${sec.name}</strong> · item ${itemIdx + 1} of ${sec.items.length}`;
+        $("pro-progress-bar").style.background = sec.color;
+      } else {
+        // AgentFit
+        const afIdx = Object.keys(state.agentfit).length;
+        $("pro-progress-meta").innerHTML = `<strong>AgentFit calibration</strong> · item ${Math.min(afIdx + 1, AGENTFIT.length)} of ${AGENTFIT.length}`;
+        $("pro-progress-bar").style.background = "#a8482a";
+      }
+    }
+
+    // ----------------------------------------------------------
+    // Likert button rendering
+    // ----------------------------------------------------------
+    function buildLikert(containerId, scale, labels) {
+      const c = $(containerId);
+      c.innerHTML = "";
+      for (let i = 1; i <= scale; i++) {
+        const btn = document.createElement("button");
+        btn.className = "quiz-likert-btn";
+        btn.dataset.value = i;
+        btn.setAttribute("role", "radio");
+        btn.innerHTML = `<span class="quiz-likert-num">${i}</span><span class="quiz-likert-label">${likertLabel(i, scale, labels)}</span>`;
+        c.appendChild(btn);
+      }
+    }
+
+    function likertLabel(i, scale, labels) {
+      if (i === 1) return labels.left;
+      if (i === scale) return labels.right;
+      if (i === Math.ceil(scale / 2)) return labels.mid;
+      if (scale === 5) {
+        if (i === 2) return "Slightly";
+        if (i === 4) return "Slightly";
+      }
+      if (scale === 7) {
+        if (i === 2) return "Disagree";
+        if (i === 3) return "Slightly";
+        if (i === 5) return "Slightly";
+        if (i === 6) return "Agree";
+      }
+      return "";
+    }
+
+    // ----------------------------------------------------------
+    // Render the current question
+    // ----------------------------------------------------------
+    function render() {
+      // New item is being shown — release the click lock from the previous one.
+      advancePending = false;
+      // Past all 5 tests?
+      if (sectionIdx >= SECTIONS.length) {
+        renderAgentFit();
+        return;
+      }
+
+      const sec = SECTIONS[sectionIdx];
+      // User opted out of this test? Jump straight to its mini-result.
+      if (isSkipped(sec.id)) {
+        showMiniResult(sec);
+        return;
+      }
+      // Past all items in this section? Move to mini-result.
+      if (itemIdx >= sec.items.length) {
+        showMiniResult(sec);
+        return;
+      }
+
+      const item = sec.items[itemIdx];
+      updateProgress();
+      $("pro-intro").hidden = true;
+      $("pro-mini-result").hidden = true;
+      $("pro-runner").hidden = false;
+      $("pro-done").hidden = true;
+
+      if (sec.type === "bipolar") {
+        $("pro-card-single").hidden = true;
+        $("pro-card-multi").hidden = true;
+        $("pro-card-bipolar").hidden = false;
+        $("pro-stmt-first").textContent = item.first;
+        $("pro-stmt-second").textContent = item.second;
+        buildLikert("pro-card-bipolar-likert", sec.likert, sec.labels);
+        bindLikert($("pro-card-bipolar-likert"), sec, item);
+        const existing = state.answers[sec.id][itemIdx];
+        document.querySelectorAll("#pro-card-bipolar-likert .quiz-likert-btn").forEach((b) => {
+          b.classList.toggle("selected", parseInt(b.dataset.value, 10) === existing);
+        });
+        $("pro-back-2").disabled = sectionIdx === 0 && itemIdx === 0;
+      } else {
+        $("pro-card-bipolar").hidden = true;
+        $("pro-card-multi").hidden = true;
+        $("pro-card-single").hidden = false;
+        const avatar = $("pro-card-avatar");
+        avatar.style.background = sec.color;
+        avatar.textContent = sec.name.charAt(0);
+        const text = sec.itemPrefix ? sec.itemPrefix + item.text.charAt(0).toLowerCase() + item.text.slice(1) : item.text;
+        $("pro-card-statement").textContent = text;
+        buildLikert("pro-card-likert", sec.likert, sec.labels);
+        bindLikert($("pro-card-likert"), sec, item);
+        const existing = state.answers[sec.id][itemIdx];
+        document.querySelectorAll("#pro-card-likert .quiz-likert-btn").forEach((b) => {
+          b.classList.toggle("selected", parseInt(b.dataset.value, 10) === existing);
+        });
+        $("pro-back").disabled = sectionIdx === 0 && itemIdx === 0;
+        $("pro-likert-hint").textContent = sec.likert === 7 ? "Press 1–7 or click · auto-advances" : "Press 1–5 or click · auto-advances";
+      }
+    }
+
+    // Lock against double-advance: if the user clicks (or holds a key) while
+    // the 220ms auto-advance is pending, we'd otherwise queue a second
+    // advance and skip the next item entirely. `advancePending` blocks
+    // additional clicks/keys until render() resets it.
+    let advancePending = false;
+
+    function bindLikert(container, sec, item) {
+      container.querySelectorAll(".quiz-likert-btn").forEach((btn) => {
+        btn.onclick = () => {
+          if (advancePending) return;
+          const v = parseInt(btn.dataset.value, 10);
+          recordAnswer(sec, v);
+        };
+      });
+    }
+
+    function recordAnswer(sec, value) {
+      state.answers[sec.id][itemIdx] = value;
+      saveState();
+      // Visual selection feedback
+      document.querySelectorAll(".quiz-likert-btn").forEach((b) => {
+        b.classList.toggle("selected", parseInt(b.dataset.value, 10) === value);
+      });
+      // Auto-advance after a beat
+      advancePending = true;
+      setTimeout(advance, 220);
+    }
+
+    function advance() {
+      const sec = SECTIONS[sectionIdx];
+      itemIdx++;
+      state.sectionIdx = sectionIdx;
+      state.itemIdx = itemIdx;
+      saveState();
+      render();
+    }
+
+    function back() {
+      if (itemIdx > 0) {
+        itemIdx--;
+      } else if (sectionIdx > 0) {
+        sectionIdx--;
+        itemIdx = SECTIONS[sectionIdx].items.length - 1;
+      }
+      state.sectionIdx = sectionIdx;
+      state.itemIdx = itemIdx;
+      saveState();
+      render();
+    }
+
+    function skip() {
+      const sec = SECTIONS[sectionIdx];
+      state.answers[sec.id][itemIdx] = sec.likert === 7 ? 4 : 3; // neutral
+      saveState();
+      advance();
+    }
+
+    // ----------------------------------------------------------
+    // Mini-result reveal between sections
+    // ----------------------------------------------------------
+    function showMiniResult(sec) {
+      // If user opted out of this test, use the manually-entered result.
+      // Otherwise, score from their answers.
+      const r = (isSkipped(sec.id) && state.results[sec.id])
+        ? state.results[sec.id]
+        : sec.score(state.answers[sec.id]);
+      state.results[sec.id] = r;
+      saveState();
+
+      const meta = sec.result(r);
+      const payoff = sec.payoff ? sec.payoff(r) : { desc: "", snippet: "" };
+
+      $("pro-runner").hidden = true;
+      $("pro-intro").hidden = true;
+      $("pro-mini-result").hidden = false;
+
+      // Left panel — color flood is per-section
+      const left = $("pro-mini-left");
+      left.style.background = "linear-gradient(135deg, " + sec.color + " 0%, " + shade(sec.color, -8) + " 100%)";
+
+      $("pro-mini-eyebrow").textContent = "System " + (sectionIdx + 1) + " of 5 · " + sec.name;
+      $("pro-mini-headline").textContent = meta.headline;
+      $("pro-mini-sub").textContent = meta.sub;
+      $("pro-mini-desc").textContent = payoff.desc;
+
+      // Progress dots (5 systems)
+      const dots = SECTIONS.map((_, i) => i <= sectionIdx ? "●" : "○").join("");
+      $("pro-mini-progress").textContent = dots + " · " + (sectionIdx + 1) + " of 5 complete";
+
+      // Right panel — snippet + label tinted in section color
+      $("pro-mini-snippet-label").innerHTML = "<strong style=\"color: " + sec.color + "\">Mini tuning</strong> · " + sec.name + "-only preview";
+      $("pro-mini-snippet").textContent = payoff.snippet;
+
+      // What's next?
+      if (sectionIdx + 1 < SECTIONS.length) {
+        const nxt = SECTIONS[sectionIdx + 1];
+        $("pro-mini-next").innerHTML = "<strong>Next up:</strong> " + nxt.name + " · " + nxt.items.length + " items";
+      } else {
+        $("pro-mini-next").innerHTML = "<strong>Last step:</strong> 10 quick AgentFit questions about how you actually want your AI to behave.";
+      }
+
+      // Copy + Continue
+      const copyBtn = $("pro-mini-copy");
+      copyBtn.style.color = sec.color;
+      copyBtn.onclick = () => {
+        navigator.clipboard.writeText(payoff.snippet || "").then(() => {
+          const orig = copyBtn.textContent;
+          copyBtn.textContent = "Copied ✓";
+          setTimeout(() => { copyBtn.textContent = orig; }, 1400);
+        });
+      };
+
+      const btn = $("pro-mini-continue");
+      btn.style.background = sec.color;
+      btn.style.borderColor = sec.color;
+      btn.onclick = () => {
+        sectionIdx++;
+        itemIdx = 0;
+        state.sectionIdx = sectionIdx;
+        state.itemIdx = itemIdx;
+        saveState();
+        render();
+      };
+    }
+
+    // ----------------------------------------------------------
+    // AgentFit rendering
+    // ----------------------------------------------------------
+    let agentfitIdx = 0;
+    function renderAgentFit() {
+      // Same lock-release as render() — new item, new clicks accepted.
+      advancePending = false;
+
+      // Determine next un-answered AgentFit item
+      while (agentfitIdx < AGENTFIT.length && state.agentfit[AGENTFIT[agentfitIdx].id] != null) {
+        agentfitIdx++;
+      }
+      if (agentfitIdx >= AGENTFIT.length) {
+        return finish();
+      }
+      updateProgress();
+      const q = AGENTFIT[agentfitIdx];
+      $("pro-intro").hidden = true;
+      $("pro-mini-result").hidden = true;
+      $("pro-runner").hidden = false;
+      $("pro-done").hidden = true;
+
+      if (q.multi) {
+        $("pro-card-bipolar").hidden = true;
+        $("pro-card-single").hidden = true;
+        $("pro-card-multi").hidden = false;
+        $("pro-multi-prompt").textContent = q.prompt;
+        const grid = $("pro-multi-grid");
+        grid.innerHTML = "";
+        const selected = new Set(state.agentfit[q.id] || []);
+        q.options.forEach((opt) => {
+          const btn = document.createElement("button");
+          btn.className = "quiz-multi-btn" + (selected.has(opt.id) ? " selected" : "");
+          btn.dataset.value = opt.id;
+          btn.textContent = opt.label;
+          btn.onclick = () => {
+            if (selected.has(opt.id)) selected.delete(opt.id);
+            else selected.add(opt.id);
+            state.agentfit[q.id] = Array.from(selected);
+            saveState();
+            btn.classList.toggle("selected");
+          };
+          grid.appendChild(btn);
+        });
+        $("pro-multi-continue").onclick = () => {
+          if (!state.agentfit[q.id] || state.agentfit[q.id].length === 0) {
+            state.agentfit[q.id] = []; // allow empty
+            saveState();
+          }
+          agentfitIdx++;
+          renderAgentFit();
+        };
+        $("pro-back-3").disabled = false;
+        $("pro-back-3").onclick = () => {
+          if (agentfitIdx > 0) {
+            agentfitIdx--;
+            delete state.agentfit[AGENTFIT[agentfitIdx].id];
+            saveState();
+            renderAgentFit();
+          } else {
+            // Go back to last item of last test section
+            sectionIdx = SECTIONS.length - 1;
+            itemIdx = SECTIONS[sectionIdx].items.length - 1;
+            state.sectionIdx = sectionIdx;
+            state.itemIdx = itemIdx;
+            saveState();
+            render();
+          }
+        };
+      } else {
+        // Forced-choice A/B as a two-statement bipolar card
+        $("pro-card-bipolar").hidden = false;
+        $("pro-card-single").hidden = true;
+        $("pro-card-multi").hidden = true;
+        $("pro-stmt-first").textContent = q.a;
+        $("pro-stmt-second").textContent = q.b;
+        // Replace the prompt text and avatar
+        document.querySelector("#pro-card-bipolar .quiz-card-prompt-text").textContent = q.prompt;
+        document.querySelector("#pro-card-bipolar .avatar").style.background = "#a8482a";
+        document.querySelector("#pro-card-bipolar .avatar").textContent = "AF";
+
+        buildLikert("pro-card-bipolar-likert", 5, { left: "Strongly first", mid: "Neutral", right: "Strongly second" });
+        // If the user has already answered this question (e.g. came back via
+        // Back), pre-select the previously chosen Likert button.
+        const existingAF = state.agentfit[q.id];
+        if (existingAF && typeof existingAF.strength === "number") {
+          document.querySelectorAll("#pro-card-bipolar-likert .quiz-likert-btn").forEach((b) => {
+            b.classList.toggle("selected", parseInt(b.dataset.value, 10) === existingAF.strength);
+          });
+        }
+        document.querySelectorAll("#pro-card-bipolar-likert .quiz-likert-btn").forEach((btn) => {
+          btn.onclick = () => {
+            if (advancePending) return;
+            const v = parseInt(btn.dataset.value, 10);
+            // Visual selection feedback (matches the regular Likert flow)
+            document.querySelectorAll("#pro-card-bipolar-likert .quiz-likert-btn").forEach((b) => {
+              b.classList.toggle("selected", parseInt(b.dataset.value, 10) === v);
+            });
+            // Map 1-2 → a, 3 → neutral, 4-5 → b. Store the actual likert for nuance.
+            state.agentfit[q.id] = { choice: v <= 2 ? "a" : v === 3 ? "neutral" : "b", strength: v };
+            saveState();
+            advancePending = true;
+            setTimeout(() => { agentfitIdx++; renderAgentFit(); }, 220);
+          };
+        });
+        $("pro-back-2").disabled = false;
+        $("pro-back-2").onclick = () => {
+          if (agentfitIdx > 0) {
+            agentfitIdx--;
+            delete state.agentfit[AGENTFIT[agentfitIdx].id];
+            saveState();
+            renderAgentFit();
+          } else {
+            sectionIdx = SECTIONS.length - 1;
+            itemIdx = SECTIONS[sectionIdx].items.length - 1;
+            state.sectionIdx = sectionIdx;
+            state.itemIdx = itemIdx;
+            saveState();
+            render();
+          }
+        };
+        $("pro-skip-2").onclick = () => {
+          state.agentfit[q.id] = { choice: "neutral", strength: 3 };
+          saveState();
+          agentfitIdx++;
+          renderAgentFit();
+        };
+      }
+    }
+
+    // ----------------------------------------------------------
+    // Finish — go to preview
+    // ----------------------------------------------------------
+    function finish() {
+      $("pro-runner").hidden = true;
+      $("pro-mini-result").hidden = true;
+      $("pro-done").hidden = false;
+      // Compute final summary, save, redirect
+      state.completedAt = Date.now();
+      saveState();
+      setTimeout(() => { window.location.href = "/pro/preview"; }, 900);
+    }
+
+    // ----------------------------------------------------------
+    // Keyboard input
+    // ----------------------------------------------------------
+    document.addEventListener("keydown", (e) => {
+      if ($("pro-intro").hidden === false || $("pro-mini-result").hidden === false || $("pro-done").hidden === false) return;
+      // Active card determines scale
+      let likertContainer = null;
+      if (!$("pro-card-single").hidden) likertContainer = $("pro-card-likert");
+      else if (!$("pro-card-bipolar").hidden) likertContainer = $("pro-card-bipolar-likert");
+      if (!likertContainer) return;
+      const max = likertContainer.querySelectorAll(".quiz-likert-btn").length;
+      const k = parseInt(e.key, 10);
+      if (k >= 1 && k <= max) {
+        const btn = likertContainer.querySelector(`.quiz-likert-btn[data-value="${k}"]`);
+        if (btn) btn.click();
+      } else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        // Back (only if focus not in input)
+        if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
+        e.preventDefault();
+        back();
+      }
+    });
+
+    // ----------------------------------------------------------
+    // Hooks
+    // ----------------------------------------------------------
+    $("pro-start").onclick = () => {
+      // If state exists, resume; else start fresh
+      sectionIdx = state.sectionIdx;
+      itemIdx = state.itemIdx;
+      render();
+    };
+    $("pro-back").onclick = back;
+    $("pro-back-2").onclick = back;
+    $("pro-skip").onclick = skip;
+    $("pro-skip-2").onclick = skip;
+    $("pro-reset").onclick = () => {
+      if (confirm("Start over? This wipes your current progress.")) {
+        resetState();
+        agentfitIdx = 0;
+        location.reload();
+      }
+    };
+
+    // ----------------------------------------------------------
+    // "Already know your type" skip path (MBTI / Enneagram only)
+    // ----------------------------------------------------------
+    const ENNEAGRAM_NAMES = {
+      1: "The Reformer", 2: "The Helper", 3: "The Achiever",
+      4: "The Individualist", 5: "The Investigator", 6: "The Loyalist",
+      7: "The Enthusiast", 8: "The Challenger", 9: "The Peacemaker"
+    };
+
+    const skipToggle = $("pro-skip-toggle");
+    const skipForm = $("pro-skip-form");
+    const mbtiSel = $("pro-skip-mbti");
+    const enneSel = $("pro-skip-enneagram");
+    const wingSel = $("pro-skip-enneagram-wing");
+    const confirmBtn = $("pro-skip-confirm");
+
+    if (skipToggle) {
+      skipToggle.onclick = () => {
+        const open = !skipForm.hidden;
+        skipForm.hidden = open;
+        skipToggle.setAttribute("aria-expanded", String(!open));
+        skipToggle.classList.toggle("is-open", !open);
+      };
+    }
+
+    // When enneagram type changes, populate wing options (adjacent types only)
+    if (enneSel) {
+      enneSel.onchange = () => {
+        const t = parseInt(enneSel.value, 10);
+        wingSel.innerHTML = "";
+        if (!t) {
+          wingSel.disabled = true;
+          wingSel.appendChild(new Option("no wing", ""));
+          updateConfirmState();
+          return;
+        }
+        wingSel.disabled = false;
+        const left = t === 1 ? 9 : t - 1;
+        const right = t === 9 ? 1 : t + 1;
+        wingSel.appendChild(new Option(t + "w" + left + " (wing " + left + ")", String(left)));
+        wingSel.appendChild(new Option(t + "w" + right + " (wing " + right + ")", String(right)));
+        wingSel.appendChild(new Option("no wing", ""));
+        updateConfirmState();
+      };
+    }
+    if (mbtiSel) mbtiSel.onchange = updateConfirmState;
+    if (wingSel) wingSel.onchange = updateConfirmState;
+
+    function updateConfirmState() {
+      // Enable the confirm button only if at least one skip is selected
+      const any = (mbtiSel && mbtiSel.value) || (enneSel && enneSel.value);
+      if (confirmBtn) confirmBtn.disabled = !any;
+    }
+
+    if (confirmBtn) {
+      confirmBtn.onclick = () => {
+        // Start fresh so we don't merge with stale answers
+        resetState();
+
+        const skipped = [];
+
+        if (mbtiSel && mbtiSel.value) {
+          const code = mbtiSel.value;
+          skipped.push("mbti");
+          state.results.mbti = { code, counts: {}, source: "user-supplied" };
+          // Pre-fill answer array so progress count is correct
+          state.answers.mbti = state.answers.mbti.map(() => 3);
+        }
+
+        if (enneSel && enneSel.value) {
+          const dominant = parseInt(enneSel.value, 10);
+          const wing = wingSel && wingSel.value ? parseInt(wingSel.value, 10) : null;
+          skipped.push("enneagram");
+          state.results.enneagram = { dominant, wing, scores: {}, source: "user-supplied" };
+          state.answers.enneagram = state.answers.enneagram.map(() => 3);
+        }
+
+        state.skipped = skipped;
+        // Reset to first non-skipped section so render() doesn't start mid-skip
+        sectionIdx = 0;
+        itemIdx = 0;
+        state.sectionIdx = 0;
+        state.itemIdx = 0;
+        saveState();
+        render();
+      };
+    }
+
+    // Resume hint?
+    const answered = totalAnswered();
+    if (answered > 0 && answered < TOTAL_QUESTIONS) {
+      $("pro-resume-hint").hidden = false;
+      $("pro-start").textContent = "Resume assessment (" + answered + "/" + TOTAL_QUESTIONS + " done) →";
+    }
+  })();
+  </script>
+</body>
+</html>

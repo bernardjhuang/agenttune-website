@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Your Preview · AgentTune Premium</title>
+  <link rel="canonical" href="https://agent-tune.com/pro/preview" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/pro/test-data.js"></script>
+</head>
+<body>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing" class="active">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/pricing">Premium</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/pro/assessment">Assessment</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Preview</span>
+    </nav>
+
+    <!-- Shown if user lands here without completing the assessment -->
+    <section class="hero" id="preview-empty" hidden>
+      <h1 class="h-hero h-research-hero">No assessment found.</h1>
+      <p class="lede">Take the Pro assessment first — we'll save your results to this device and bring you back here for the preview.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/pro/assessment" style="background: #a8482a; border-color: #a8482a;">Start the assessment →</a>
+        <a class="btn btn-secondary" href="/pricing">← Back to pricing</a>
+      </div>
+    </section>
+
+    <!-- Preview content -->
+    <section id="preview-main" hidden>
+      <h1 class="h-hero h-research-hero">Here's what we found.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #a8482a;">Unlock the full file for $9.</h1>
+
+      <!-- Profile signal summary -->
+      <div class="preview-grid" id="preview-grid"></div>
+
+      <!-- Conflicts found -->
+      <section class="preview-conflicts" id="preview-conflicts" hidden>
+        <h2 class="h-section" style="margin-bottom: 8px;"><span id="preview-conflict-count">3</span> real conflicts in your profile.</h2>
+        <p class="lede" style="font-size: 16px; margin-bottom: 18px;">These are the cases where your personality signals disagree — exactly where the master tuning file is most valuable, because it turns them into operational rules instead of mushy compromises.</p>
+        <div class="preview-conflicts-list" id="preview-conflicts-list"></div>
+      </section>
+
+      <!-- 3 sample rules -->
+      <section class="preview-rules">
+        <h2 class="h-section" style="margin-bottom: 8px;">Three sample rules from your tuning.</h2>
+        <p class="lede" style="font-size: 16px; margin-bottom: 18px;">These come from your AgentFit answers + your strongest personality signals. The full file has 8–12 more like this, plus paste-ready prompts for every major agent surface.</p>
+        <div class="preview-rules-list" id="preview-rules-list"></div>
+      </section>
+
+      <!-- Locked section + checkout -->
+      <section class="preview-locked">
+        <div class="preview-locked-card">
+          <div class="preview-locked-overlay">
+            <div class="preview-locked-pill">Locked · $9 to unlock</div>
+            <h2 class="h-section" style="margin: 16px 0 12px; font-size: 36px;">Your master tuning file.</h2>
+            <p class="lede" style="font-size: 16px; max-width: 520px; margin: 0 auto 28px;">
+              Includes: a 250-word paste-ready short prompt · a 900-word full prompt · 8–12 concrete operating rules with evidence · cross-instrument conflict resolution · install snippets for Claude Code, Claude.ai, ChatGPT, Cursor, Gemini Gems, Codex CLI, and any API · a private permalink you can return to forever · downloadable Markdown.
+            </p>
+            <div class="preview-email-row">
+              <input
+                type="email"
+                id="preview-email"
+                class="preview-email-input"
+                placeholder="your@email.com"
+                autocomplete="email"
+                inputmode="email"
+                required
+              />
+              <button class="btn btn-primary" id="preview-checkout" style="background: #a8482a; border-color: #a8482a; padding: 14px 28px;">Unlock — $9 once →</button>
+            </div>
+            <p class="preview-email-help" id="preview-email-help">We'll email you the permalink so you can return to your file. No password, no account.</p>
+            <p style="margin-top: 14px; font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted);">30-day no-questions refund if it feels generic.</p>
+          </div>
+          <div class="preview-locked-blur" aria-hidden="true">
+            <!-- Decorative blurred preview -->
+            <div class="preview-blur-block"></div>
+            <div class="preview-blur-block" style="width: 90%;"></div>
+            <div class="preview-blur-block" style="width: 70%;"></div>
+            <div class="preview-blur-block"></div>
+            <div class="preview-blur-block" style="width: 85%;"></div>
+            <div class="preview-blur-block" style="width: 60%;"></div>
+            <div class="preview-blur-block"></div>
+            <div class="preview-blur-block" style="width: 75%;"></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="quiz-intro-hint" style="text-align: center; margin-top: 36px;">
+        Your assessment is saved on this device · <a href="/pro/assessment" style="color: #a8482a;">re-take or revise →</a>
+      </p>
+    </section>
+
+    <div class="footer" style="margin-top: 56px;">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span>Preview · pay only to unlock</span>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+    const T = window.AT_PRO_TESTS;
+    const STORAGE_KEY = "agenttune:pro:draft";
+
+    // Load assessment state
+    let state = null;
+    try { state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (e) {}
+    if (!state || !state.completedAt) {
+      $("preview-empty").hidden = false;
+      return;
+    }
+
+    $("preview-main").hidden = false;
+
+    // ----------------------------------------------------------
+    // Render the per-system profile signal grid
+    // ----------------------------------------------------------
+    const grid = $("preview-grid");
+    T.SECTIONS.forEach((sec) => {
+      const r = state.results[sec.id];
+      if (!r) return;
+      const meta = sec.result(r);
+      const card = document.createElement("div");
+      card.className = "preview-grid-card";
+      card.style.borderTopColor = sec.color;
+      card.innerHTML = `
+        <div class="preview-card-eyebrow" style="color: ${sec.color};">${sec.name}</div>
+        <div class="preview-card-headline" style="color: ${sec.color};">${meta.headline}</div>
+        <div class="preview-card-sub">${meta.sub}</div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // ----------------------------------------------------------
+    // Compute conflicts (server will redo this in /api/unlock —
+    // this client preview is for the teaser only)
+    // ----------------------------------------------------------
+    const conflicts = computeConflicts(state);
+    if (conflicts.length > 0) {
+      $("preview-conflicts").hidden = false;
+      $("preview-conflict-count").textContent = conflicts.length;
+      const list = $("preview-conflicts-list");
+      conflicts.forEach((c) => {
+        const item = document.createElement("div");
+        item.className = "preview-conflict-item";
+        item.innerHTML = `
+          <div class="preview-conflict-between">${c.between.join(" <span style='color: var(--muted);'>vs</span> ")}</div>
+          <div class="preview-conflict-rule">${c.rule}</div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    // ----------------------------------------------------------
+    // Three sample rules — derived from AgentFit + strongest signal
+    // (a teaser; final file generated server-side by Gemini)
+    // ----------------------------------------------------------
+    const sampleRules = generateSampleRules(state);
+    const rulesList = $("preview-rules-list");
+    sampleRules.forEach((r, i) => {
+      const card = document.createElement("div");
+      card.className = "preview-rule-card";
+      card.innerHTML = `
+        <div class="preview-rule-num">0${i + 1}</div>
+        <div class="preview-rule-body">
+          <div class="preview-rule-headline">${r.rule}</div>
+          <div class="preview-rule-evidence">based on: ${r.evidence.join(" · ")}</div>
+        </div>
+      `;
+      rulesList.appendChild(card);
+    });
+
+    // ----------------------------------------------------------
+    // Checkout flow:
+    //   1. POST assessment summary to /api/draft → get draft_id
+    //   2. POST { draft_id, email } to /api/checkout → get Stripe Checkout URL
+    //   3. window.location = checkoutUrl
+    // ----------------------------------------------------------
+    const emailInput = $("preview-email");
+    const checkoutBtn = $("preview-checkout");
+    const helpEl = $("preview-email-help");
+
+    // Restore previously-entered email (if user bounced and came back)
+    const REMEMBER_EMAIL_KEY = "agenttune:pro:email";
+    try {
+      const saved = localStorage.getItem(REMEMBER_EMAIL_KEY);
+      if (saved) emailInput.value = saved;
+    } catch (e) {}
+
+    function setHelp(msg, kind) {
+      helpEl.textContent = msg;
+      helpEl.dataset.kind = kind || "info"; // info | error
+    }
+
+    function isValidEmail(s) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(s || "").trim());
+    }
+
+    checkoutBtn.onclick = async () => {
+      const email = (emailInput.value || "").trim();
+      if (!isValidEmail(email)) {
+        setHelp("Please enter a valid email — it's how you get the permalink back.", "error");
+        emailInput.focus();
+        return;
+      }
+
+      // Persist email locally so a bounce-and-return doesn't lose it
+      try { localStorage.setItem(REMEMBER_EMAIL_KEY, email); } catch (e) {}
+
+      const originalLabel = checkoutBtn.textContent;
+      checkoutBtn.disabled = true;
+      checkoutBtn.textContent = "Setting up checkout…";
+      setHelp("One moment — preparing your draft and Stripe session.", "info");
+
+      try {
+        // Step 1: store the draft
+        const draftRes = await fetch("/api/draft", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            results: state.results,
+            agentfit: state.agentfit,
+          }),
+        });
+        if (!draftRes.ok) {
+          const detail = await draftRes.json().catch(() => ({}));
+          throw new Error(detail.error || `Draft save failed (${draftRes.status})`);
+        }
+        const { draft_id } = await draftRes.json();
+
+        // Step 2: create Stripe Checkout Session
+        const checkoutRes = await fetch("/api/checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ draft_id, email }),
+        });
+        if (!checkoutRes.ok) {
+          const detail = await checkoutRes.json().catch(() => ({}));
+          throw new Error(detail.error || `Checkout setup failed (${checkoutRes.status})`);
+        }
+        const { url } = await checkoutRes.json();
+        if (!url) throw new Error("No checkout URL returned");
+
+        // Step 3: redirect to Stripe
+        window.location.href = url;
+      } catch (e) {
+        checkoutBtn.disabled = false;
+        checkoutBtn.textContent = originalLabel;
+        setHelp(`Couldn't start checkout: ${e.message}. Try again or email support@agent-tune.com.`, "error");
+      }
+    };
+
+    // Enter key in email field triggers checkout
+    emailInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        checkoutBtn.click();
+      }
+    });
+
+    // ==========================================================
+    // Conflict detection (client-side teaser; mirrored server-side in Phase 3)
+    // ==========================================================
+    function computeConflicts(s) {
+      const out = [];
+      const m = s.results.mbti, b = s.results.bigfive, a = s.results.attachment, e = s.results.enneagram, d = s.results.disc;
+      const af = s.agentfit || {};
+
+      // MBTI I vs Big Five high E
+      if (m && b && m.code && m.code.startsWith("I") && b.level && b.level.E === "high") {
+        out.push({
+          between: ["MBTI · I (introvert)", "Big Five · E high"],
+          rule: "Default to concise solo-processing answers — but match my energy in collaborative-brainstorm mode."
+        });
+      }
+      // MBTI E vs Big Five low E
+      if (m && b && m.code && m.code.startsWith("E") && b.level && b.level.E === "low") {
+        out.push({
+          between: ["MBTI · E (extravert)", "Big Five · E low"],
+          rule: "Keep replies tight by default; expand only when I'm actively brainstorming with you."
+        });
+      }
+      // AgentFit warmth=dry but Attachment high anxiety
+      if (af.warmth && af.warmth.choice === "a" && a && a.anxiety > 4) {
+        out.push({
+          between: ["AgentFit · warmth = dry/direct", "Attachment · high anxiety"],
+          rule: "Deliver hard news plainly — but always include a recovery path. No vague reassurance, no excess softening."
+        });
+      }
+      // High openness + AgentFit detail=compact
+      if (b && b.level && b.level.O === "high" && af.detail && af.detail.choice === "a") {
+        out.push({
+          between: ["Big Five · O high (open)", "AgentFit · compact answers"],
+          rule: "Offer the unexpected angle, but in a sentence — not a 200-word lateral tangent."
+        });
+      }
+      // AgentFit autonomy=act unless blocked + Big Five high conscientiousness
+      if (af.autonomy && af.autonomy.choice === "a" && b && b.level && b.level.C === "high") {
+        out.push({
+          between: ["AgentFit · act unless blocked", "Big Five · C high (cautious planner)"],
+          rule: "Act on the obvious next step; confirm only when stakes are non-recoverable. Default to forward motion."
+        });
+      }
+
+      return out.slice(0, 3); // cap teaser at 3
+    }
+
+    // ==========================================================
+    // Three sample rules — quick deterministic templates from
+    // AgentFit + strongest signals (final file is Gemini-synthesized)
+    // ==========================================================
+    function generateSampleRules(s) {
+      const af = s.agentfit || {};
+      const b = s.results.bigfive || {};
+      const rules = [];
+
+      // Rule 1: from answer_order
+      if (af.answer_order && af.answer_order.choice === "a") {
+        rules.push({ rule: "Lead with the recommendation. Reasoning can follow if I want it.", evidence: ["AgentFit: answer first", b.level && b.level.C === "high" ? "Big Five C high" : null].filter(Boolean) });
+      } else if (af.answer_order && af.answer_order.choice === "b") {
+        rules.push({ rule: "Show your reasoning before the conclusion. I want to see the path.", evidence: ["AgentFit: reasoning first", b.level && b.level.O === "high" ? "Big Five O high" : null].filter(Boolean) });
+      }
+      // Rule 2: from help_shape
+      if (af.help_shape && af.help_shape.choice === "a") {
+        rules.push({ rule: "When I ask for help, give me one recommendation — not a menu. Default to a call, not options.", evidence: ["AgentFit: one recommendation", "Enneagram T" + (s.results.enneagram && s.results.enneagram.dominant)].filter(Boolean) });
+      } else if (af.help_shape && af.help_shape.choice === "b") {
+        rules.push({ rule: "When I ask for help, give me a menu of distinct options I can choose from. Don't pre-commit me.", evidence: ["AgentFit: menu of options"] });
+      }
+      // Rule 3: from wrongness
+      if (af.wrongness && af.wrongness.choice === "a") {
+        rules.push({ rule: "When I'm wrong, tell me plainly. No softening, no preamble.", evidence: ["AgentFit: tell me plainly"] });
+      } else if (af.wrongness && af.wrongness.choice === "b") {
+        rules.push({ rule: "When I'm wrong, soften the landing first. Then deliver the correction.", evidence: ["AgentFit: soften the landing"] });
+      }
+
+      // Fallback rules if AgentFit answers were sparse
+      while (rules.length < 3) {
+        if (rules.length === 0) rules.push({ rule: "Skip filler openers like 'Great question!' — get to the point in your first sentence.", evidence: ["AgentTune default"] });
+        if (rules.length === 1) rules.push({ rule: "Don't add 'would you like me to...' check-ins unless I genuinely need to choose between paths.", evidence: ["AgentTune default"] });
+        if (rules.length === 2) rules.push({ rule: "Match my register — terse if I'm terse, exploratory if I'm exploring.", evidence: ["AgentTune default"] });
+      }
+
+      return rules.slice(0, 3);
+    }
+  })();
+  </script>
+</body>
+</html>

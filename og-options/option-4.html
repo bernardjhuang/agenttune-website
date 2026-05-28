@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG #4 — Before/After</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" />
+<style>
+  html, body { margin: 0; padding: 0; background: #2a2a26; }
+  body { font-family: "IBM Plex Sans", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #fafaf7;
+    color: #1a1a17;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    box-sizing: border-box;
+    padding: 56px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "Newsreader", serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .brand-dot { width: 14px; height: 14px; border-radius: 50%; background: #a8482a; }
+  .h1 {
+    font-family: "Newsreader", serif;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    margin: 0;
+    flex: 1;
+    text-align: right;
+    margin-left: 40px;
+  }
+  .h1 em { font-style: italic; font-weight: 400; color: #a8482a; }
+
+  .split {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .col {
+    border: 1px solid #dad3c0;
+    border-radius: 16px;
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #ffffff;
+    position: relative;
+  }
+  .col.tuned {
+    border-color: #a8482a;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(168,72,42,0.10);
+  }
+  .label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6e6a5e;
+  }
+  .col.tuned .label { color: #a8482a; }
+
+  .msg {
+    background: #f3f0e6;
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-family: "Newsreader", serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #1a1a17;
+  }
+  .col.tuned .msg {
+    background: #1a1a17;
+    color: #fafaf7;
+  }
+  .msg .strike {
+    text-decoration: line-through;
+    color: #6e6a5e;
+  }
+  .meta-row {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e6a5e;
+    display: flex;
+    justify-content: space-between;
+  }
+  .col.tuned .meta-row { color: rgba(255,255,255,0.55); }
+  .col.tuned .meta-row .model { color: #fafaf7; }
+
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+  }
+  .url {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a8482a;
+    font-weight: 600;
+  }
+  .ft {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: #6e6a5e;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="head">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>AgentTune</span>
+    </div>
+    <h1 class="h1">Same model.<br/><em>Tuned to you.</em></h1>
+  </div>
+
+  <div class="split">
+    <div class="col">
+      <div class="meta-row">
+        <span class="label">Default Claude</span>
+        <span class="model">Sonnet 4.7</span>
+      </div>
+      <div class="msg">Great question! Let me walk you through the considerations step by step. There are several factors to think about, including…</div>
+      <div class="meta-row"><span>verbose</span><span>generic</span></div>
+    </div>
+    <div class="col tuned">
+      <div class="meta-row">
+        <span class="label">Tuned · ENTJ + 5w4</span>
+        <span class="model">Sonnet 4.7</span>
+      </div>
+      <div class="msg">Three trade-offs. Pick one:<br/>1. Speed (60s, lossy)<br/>2. Cost (free, 4× slower)<br/>3. Both (worker + queue, 1hr build)</div>
+      <div class="meta-row"><span>direct</span><span class="model">matches how you think</span></div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span class="ft">Free · MIT · paste-ready for Claude, ChatGPT, Cursor, Codex</span>
+    <span class="url">agent-tune.com</span>
+  </div>
+</div>
+</body>
+</html>

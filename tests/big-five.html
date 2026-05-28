@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Big Five Test — Tune Your AI to Your Type · AgentTune</title>
+  <meta name="description" content="Take the 50-item IPIP-50 Big Five test (~7 min) and get Markdown tuning files for wherever you score high or low across the five traits." />
+
+  <meta property="og:title" content="Take the Big Five test · improve your AI agent — AgentTune" />
+  <meta property="og:description" content="50 items · ~7 min · returns compositional tuning files matched to your continuous trait profile." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/tests/big-five" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Take the Big Five test · improve your AI agent — AgentTune" />
+  <meta name="twitter:description" content="50 items · 7 min · tune your AI agent to your continuous trait profile." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/tests/big-five" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Quiz","name":"Big Five Test (IPIP-50)","description":"Interactive 50-item Big Five assessment. Returns continuous trait z-scores for O/C/E/A/N.","url":"https://agent-tune.com/tests/big-five","inLanguage":"en","numberOfQuestions":50,"timeRequired":"PT7M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/data.js"></script>
+  <script src="/integrations.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%233a72c4'/%3E%3C/svg%3E" />
+  <style>:root { --lib-accent: #3a72c4; --lib-accent-22: rgba(58,114,196,0.13); --lib-accent-55: rgba(58,114,196,0.34); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"Big Five"}]}</script>
+</head>
+<body class="quiz-page">
+  <div class="page">
+
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/tests/">Tests</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Big Five</span>
+    </nav>
+
+    <section class="quiz-intro" id="quiz-intro">
+      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">7-min test · 50 questions · 1–5 scale</span>
+      <h1 class="h-hero h-research-hero">Take the Big Five test.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #3a72c4;">Get your tuning at the end.</h1>
+      <p class="lede">Answer 50 quick questions on a 1–5 Likert scale. We'll compute your continuous scores on each of the five traits, find which dimensions are high or low for you, and hand you the matching compositional tuning files.</p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Instrument:</strong> IPIP-50 (International Personality Item Pool)</div>
+        <div><strong>Format:</strong> 50 Likert items · 1–5 (Inaccurate → Accurate)</div>
+        <div><strong>Time:</strong> ~7 minutes</div>
+        <div><strong>Returns:</strong> 5 trait z-scores → up to 5 OCEAN tuning files</div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" id="quiz-start" style="background: #3a72c4; border-color: #3a72c4;">Start the test →</button>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
+
+      <!-- WHAT BIG FIVE MEASURES -->
+      <div class="quiz-intro-chart">
+        <h3 class="quiz-intro-chart-h">What Big Five measures</h3>
+        <p class="quiz-intro-chart-sub">Five continuous dimensions. Your profile is a polygon. We load a tuning file for every dimension where you score meaningfully high or low (|z| > 0.5).</p>
+        <!--
+          Big Five radar — pentagon with 5 axes (O, C, E, A, N) at 72° intervals.
+          Center (250, 230), outer radius 156, viewBox padded ±60px horizontally to
+          accommodate long labels ("Conscientiousness", "Neuroticism", etc.).
+        -->
+        <svg viewBox="-60 0 620 470" style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);" role="img" aria-label="Big Five radar chart with five dimensions: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism">
+          <g fill="none" stroke="#e3ddd1" stroke-width="1">
+            <polygon points="250,80 411.8,196.2 350,386 150,386 88.2,196.2"/>
+            <polygon points="250,123 374.4,212 326.2,358 173.8,358 125.6,212"/>
+            <polygon points="250,167 336.9,228 302.5,330 197.5,330 163.1,228"/>
+            <polygon points="250,211 299.5,244 278.7,302 221.3,302 200.5,244"/>
+          </g>
+          <g stroke="#e3ddd1" stroke-width="1">
+            <line x1="250" y1="230" x2="250" y2="80"/>
+            <line x1="250" y1="230" x2="411.8" y2="196.2"/>
+            <line x1="250" y1="230" x2="350" y2="386"/>
+            <line x1="250" y1="230" x2="150" y2="386"/>
+            <line x1="250" y1="230" x2="88.2" y2="196.2"/>
+          </g>
+          <polygon points="250,90 393.3,200 343,378 157,378 106.7,200" fill="#3a72c4" fill-opacity="0.18" stroke="#3a72c4" stroke-width="2"/>
+          <polygon points="250,200 287.5,222 274.3,261 225.7,261 212.5,222" fill="#c8553d" fill-opacity="0.15" stroke="#c8553d" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+          <!-- Openness · top axis -->
+          <text x="250" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#5b4dc0">Openness</text>
+          <text x="250" y="76" text-anchor="middle" font-size="11" fill="#7a7468">O</text>
+
+          <!-- Conscientiousness · upper-right axis -->
+          <text x="428" y="190" text-anchor="start" font-size="14" font-weight="700" fill="#3a72c4">Conscientiousness</text>
+          <text x="428" y="206" text-anchor="start" font-size="11" fill="#7a7468">C</text>
+
+          <!-- Extraversion · lower-right axis -->
+          <text x="372" y="404" text-anchor="middle" font-size="14" font-weight="700" fill="#d99632">Extraversion</text>
+          <text x="372" y="418" text-anchor="middle" font-size="11" fill="#7a7468">E</text>
+
+          <!-- Agreeableness · lower-left axis -->
+          <text x="128" y="404" text-anchor="middle" font-size="14" font-weight="700" fill="#2f8a5b">Agreeableness</text>
+          <text x="128" y="418" text-anchor="middle" font-size="11" fill="#7a7468">A</text>
+
+          <!-- Neuroticism · upper-left axis -->
+          <text x="72" y="190" text-anchor="end" font-size="14" font-weight="700" fill="#c8553d">Neuroticism</text>
+          <text x="72" y="206" text-anchor="end" font-size="11" fill="#7a7468">N</text>
+
+          <!-- Legend -->
+          <g transform="translate(80, 448)">
+            <rect width="14" height="10" fill="#3a72c4" fill-opacity="0.18" stroke="#3a72c4" stroke-width="1.5"/>
+            <text x="22" y="9" font-size="11" fill="#1e1d1a">High on all (sample)</text>
+            <rect x="200" width="14" height="10" fill="#c8553d" fill-opacity="0.15" stroke="#c8553d" stroke-width="1.5" stroke-dasharray="2 2"/>
+            <text x="222" y="9" font-size="11" fill="#1e1d1a">Low on all (sample)</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="quiz-runner" id="quiz-runner" hidden>
+      <div class="quiz-progress">
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #3a72c4;"></div></div>
+        <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 50</div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #3a72c4;" aria-hidden="true">B5</div>
+          <p class="quiz-item-statement" id="quiz-item-statement"></p>
+        </div>
+        <div class="quiz-likert" role="radiogroup">
+          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
+          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
+          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
+          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
+          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-result" id="quiz-result" hidden>
+      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">Done · here's your result</span>
+      <div class="quiz-result-card" style="border-top-color: #3a72c4;">
+        <div class="quiz-result-headline">
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #3a72c4;">B5</div>
+          <div>
+            <div class="quiz-result-label">Your OCEAN profile</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #3a72c4; font-size: 22px;">Continuous trait profile</div>
+            <div class="quiz-result-name" id="quiz-result-name">5 dimensions, compositional</div>
+          </div>
+        </div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb">OCEAN doesn't return a single type — it returns continuous scores. We load tuning files only for dimensions where you score meaningfully high or low (|z| > 0.5). Average dimensions are skipped; the model's default handles them.</div>
+
+        <h3 class="quiz-result-section-h">Your five trait z-scores</h3>
+        <div class="quiz-result-axes" id="quiz-result-scores"></div>
+
+        <h3 class="quiz-result-section-h">Tuning files to load</h3>
+        <div class="quiz-result-files" id="quiz-result-files"></div>
+
+        <h3 class="quiz-result-section-h" style="margin-top: 28px;">Your bundled tuning</h3>
+        <article class="c-editor" id="quiz-result-editor">
+          <div class="c-titlebar">
+            <div class="c-dots"><span></span><span></span><span></span></div>
+            <div class="c-titlebar-label" id="quiz-editor-titlebar">~/.agenttune/ocean-tuning.md</div>
+            <div style="width: 50px;"></div>
+          </div>
+          <div class="c-tabs">
+            <div class="c-tab is-active">
+              <span class="c-tab-dot"></span>
+              <span id="quiz-editor-tab">ocean-tuning.md</span>
+              <span class="c-tab-close">×</span>
+            </div>
+          </div>
+          <div class="c-editor-body">
+            <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
+            <pre class="c-code" id="quiz-editor-code"></pre>
+          </div>
+          <div class="c-statusbar">
+            <div class="c-statusbar-left">
+              <span id="quiz-editor-status">● ocean-tuning.md</span>
+              <span>Markdown · UTF-8 · MIT</span>
+            </div>
+            <div class="c-statusbar-actions">
+              <button class="c-status-btn" id="quiz-download-tuning" type="button">↓ Download</button>
+              <button class="c-status-btn is-strong" id="quiz-copy-tuning" type="button">⌘C · Copy</button>
+            </div>
+          </div>
+        </article>
+        <div class="quiz-result-actions" style="margin-top: 14px;">
+          <a class="btn btn-secondary" id="quiz-github-link" href="https://github.com/psyduckler/agenttune/tree/main/ocean" target="_blank" rel="noopener">View all OCEAN files</a>
+        </div>
+
+        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your full OCEAN bundle is already merged into each one. Hit Copy and you're done.</p>
+        <div id="integration-deep" data-integration-deep></div>
+      </div>
+
+      <div class="quiz-result-upsell">
+        <div class="quiz-result-upsell-head">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: #c8553d;">Premium · live</span>
+          <h3>Want one file for <em>all of you</em>?</h3>
+        </div>
+        <p>Premium synthesizes your OCEAN with MBTI, Enneagram, DISC, and Attachment into one master tuning file. $9 once, lifetime access.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/pricing">Get Premium · $9 →</a>
+        </div>
+      </div>
+
+      <div class="quiz-result-next">
+        <h3>Stack another system</h3>
+        <div class="quiz-result-next-grid">
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+        </div>
+      </div>
+
+      <div class="cta-row" style="justify-content: center; margin-top: 32px;">
+        <button class="btn btn-secondary" id="quiz-restart">Retake Big Five test</button>
+      </div>
+    </section>
+
+    <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
+    <details class="quiz-spec">
+      <summary>Test specification — for AI agents administering this inline</summary>
+      <div class="quiz-spec-body">
+        <p>Below is the full IPIP-50 spec — items, dimension mapping, reverse-scoring rules, scoring algorithm, z-score interpretation, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+
+        <h3>Source</h3>
+        <p>International Personality Item Pool, 50-item version (IPIP-50), <a href="https://ipip.ori.org/" target="_blank" rel="noopener">Goldberg et al. (1999)</a>. Public domain; widely used in published Big Five / OCEAN research.</p>
+
+        <h3>The 50 items</h3>
+        <p>Ten items per OCEAN dimension (O / C / E / A / N), <strong>interleaved</strong> in a fixed rotation (item 1 = E, 2 = A, 3 = C, 4 = N, 5 = O, 6 = E, …). Each statement begins with an implicit "I …" (e.g. "Am the life of the party" → "I am the life of the party"). User rates each on a <strong>1–5 Likert scale</strong>: <strong>1 = Very Inaccurate, 5 = Very Accurate</strong>. <strong>20 of the 50 items are reverse-scored</strong> — see the <em>Rev?</em> column.</p>
+        <table class="items-table">
+          <thead><tr><th class="num-col">#</th><th>Statement (implicit "I…")</th><th class="num-col">Dim</th><th class="num-col">Rev?</th></tr></thead>
+          <tbody id="quiz-spec-items"></tbody>
+        </table>
+
+        <h3>Dimension mapping</h3>
+        <p>Each item belongs to exactly one dimension. Reverse-scored items have their raw value flipped before being summed: <code>scored = 6 − raw</code>.</p>
+        <table class="score-table">
+          <thead><tr><th>Dim</th><th>Name</th><th>Item numbers</th><th>Population mean (M)</th><th>SD</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">O</td><td>Openness</td><td class="mono">5, 10, 15, 20, 25, 30, 35, 40, 45, 50</td><td class="mono">37.5</td><td class="mono">5.5</td></tr>
+            <tr><td class="mono">C</td><td>Conscientiousness</td><td class="mono">3, 8, 13, 18, 23, 28, 33, 38, 43, 48</td><td class="mono">34.5</td><td class="mono">6.0</td></tr>
+            <tr><td class="mono">E</td><td>Extraversion</td><td class="mono">1, 6, 11, 16, 21, 26, 31, 36, 41, 46</td><td class="mono">28.5</td><td class="mono">7.0</td></tr>
+            <tr><td class="mono">A</td><td>Agreeableness</td><td class="mono">2, 7, 12, 17, 22, 27, 32, 37, 42, 47</td><td class="mono">36.5</td><td class="mono">5.5</td></tr>
+            <tr><td class="mono">N</td><td>Neuroticism</td><td class="mono">4, 9, 14, 19, 24, 29, 34, 39, 44, 49</td><td class="mono">26.0</td><td class="mono">7.0</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Scoring algorithm</h3>
+        <ol class="steps-list">
+          <li>For each of the 50 items, capture the user's raw 1–5 response.</li>
+          <li>For each <strong>reverse-scored</strong> item (Rev? = ✓), compute <code>scored = 6 − raw</code>. Otherwise <code>scored = raw</code>.</li>
+          <li>For each dimension, sum the 10 scored values. Each dimension total is in <strong>10–50</strong>.</li>
+          <li>Compute the <strong>z-score</strong> per dimension using the population norms above: <code>z = (raw_sum − M) / SD</code>.</li>
+          <li>For each dimension, derive a load decision:
+            <ul>
+              <li><code>z &gt; +0.5</code> → load the <strong>high</strong> file for that dimension</li>
+              <li><code>z &lt; −0.5</code> → load the <strong>low</strong> file for that dimension</li>
+              <li><code>−0.5 ≤ z ≤ +0.5</code> → average band, do not load a file for this dimension</li>
+            </ul>
+          </li>
+          <li>The user's tuning is the <strong>concatenation</strong> of every file that crossed the threshold (could be 0 to 5 files). Users with all dimensions in the average band get no OCEAN tuning — recommend a different instrument.</li>
+        </ol>
+
+        <h3>Output mapping</h3>
+        <p>Fetch each crossing dimension's file from <code>ocean/&lt;LETTER&gt;-&lt;high|low&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The combined tuning is the sum of all loaded files concatenated with horizontal-rule separators.</p>
+        <table class="score-table">
+          <thead><tr><th>Dim</th><th>High file</th><th>High one-line</th><th>Low file</th><th>Low one-line</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="mono">O</td>
+              <td class="mono">ocean/O-high.md</td><td>Concepts over procedure. Lateral connections welcome.</td>
+              <td class="mono">ocean/O-low.md</td><td>Concrete, present. Default to what's known to work.</td>
+            </tr>
+            <tr>
+              <td class="mono">C</td>
+              <td class="mono">ocean/C-high.md</td><td>Sequential, structured. Plan the order, not just the items.</td>
+              <td class="mono">ocean/C-low.md</td><td>Reactive, exploratory. Keep options open.</td>
+            </tr>
+            <tr>
+              <td class="mono">E</td>
+              <td class="mono">ocean/E-high.md</td><td>Warmer register, more momentum, more enthusiasm visible.</td>
+              <td class="mono">ocean/E-low.md</td><td>Quieter register, less performative warmth.</td>
+            </tr>
+            <tr>
+              <td class="mono">A</td>
+              <td class="mono">ocean/A-high.md</td><td>Cooperative. Soften disagreement. Surface common ground.</td>
+              <td class="mono">ocean/A-low.md</td><td>Critical, transactional. Direct, unvarnished signal.</td>
+            </tr>
+            <tr>
+              <td class="mono">N</td>
+              <td class="mono">ocean/N-high.md</td><td>Reduce stakes. Structure uncertainty, don't amplify it.</td>
+              <td class="mono">ocean/N-low.md</td><td>Plain-faced risk discussion. Skepticism without dressing.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span><a href="/tests/">← all five tests</a></span>
+    </div>
+
+  </div>
+
+  <script>
+  (function() {
+    // 50 IPIP-50 items with dimension + reverse-score flag
+    // Each begins with implicit "I…"
+    const ITEMS = [
+      { text: "Am the life of the party.", dim: "E", rev: false },
+      { text: "Feel little concern for others.", dim: "A", rev: true },
+      { text: "Am always prepared.", dim: "C", rev: false },
+      { text: "Get stressed out easily.", dim: "N", rev: false },
+      { text: "Have a rich vocabulary.", dim: "O", rev: false },
+      { text: "Don't talk a lot.", dim: "E", rev: true },
+      { text: "Am interested in people.", dim: "A", rev: false },
+      { text: "Leave my belongings around.", dim: "C", rev: true },
+      { text: "Am relaxed most of the time.", dim: "N", rev: true },
+      { text: "Have difficulty understanding abstract ideas.", dim: "O", rev: true },
+      { text: "Feel comfortable around people.", dim: "E", rev: false },
+      { text: "Insult people.", dim: "A", rev: true },
+      { text: "Pay attention to details.", dim: "C", rev: false },
+      { text: "Worry about things.", dim: "N", rev: false },
+      { text: "Have a vivid imagination.", dim: "O", rev: false },
+      { text: "Keep in the background.", dim: "E", rev: true },
+      { text: "Sympathize with others' feelings.", dim: "A", rev: false },
+      { text: "Make a mess of things.", dim: "C", rev: true },
+      { text: "Seldom feel blue.", dim: "N", rev: true },
+      { text: "Am not interested in abstract ideas.", dim: "O", rev: true },
+      { text: "Start conversations.", dim: "E", rev: false },
+      { text: "Am not interested in other people's problems.", dim: "A", rev: true },
+      { text: "Get chores done right away.", dim: "C", rev: false },
+      { text: "Am easily disturbed.", dim: "N", rev: false },
+      { text: "Have excellent ideas.", dim: "O", rev: false },
+      { text: "Have little to say.", dim: "E", rev: true },
+      { text: "Have a soft heart.", dim: "A", rev: false },
+      { text: "Often forget to put things back in their proper place.", dim: "C", rev: true },
+      { text: "Get upset easily.", dim: "N", rev: false },
+      { text: "Do not have a good imagination.", dim: "O", rev: true },
+      { text: "Talk to a lot of different people at parties.", dim: "E", rev: false },
+      { text: "Am not really interested in others.", dim: "A", rev: true },
+      { text: "Like order.", dim: "C", rev: false },
+      { text: "Change my mood a lot.", dim: "N", rev: false },
+      { text: "Am quick to understand things.", dim: "O", rev: false },
+      { text: "Don't like to draw attention to myself.", dim: "E", rev: true },
+      { text: "Take time out for others.", dim: "A", rev: false },
+      { text: "Shirk my duties.", dim: "C", rev: true },
+      { text: "Have frequent mood swings.", dim: "N", rev: false },
+      { text: "Use difficult words.", dim: "O", rev: false },
+      { text: "Don't mind being the center of attention.", dim: "E", rev: false },
+      { text: "Feel others' emotions.", dim: "A", rev: false },
+      { text: "Follow a schedule.", dim: "C", rev: false },
+      { text: "Get irritated easily.", dim: "N", rev: false },
+      { text: "Spend time reflecting on things.", dim: "O", rev: false },
+      { text: "Am quiet around strangers.", dim: "E", rev: true },
+      { text: "Make people feel at ease.", dim: "A", rev: false },
+      { text: "Am exacting in my work.", dim: "C", rev: false },
+      { text: "Often feel blue.", dim: "N", rev: false },
+      { text: "Am full of ideas.", dim: "O", rev: false }
+    ];
+
+    // Population norms (M, SD)
+    const NORMS = {
+      O: { M: 37.5, SD: 5.5, name: "Openness",          color: "#5b4dc0" },
+      C: { M: 34.5, SD: 6.0, name: "Conscientiousness", color: "#3a72c4" },
+      E: { M: 28.5, SD: 7.0, name: "Extraversion",      color: "#d99632" },
+      A: { M: 36.5, SD: 5.5, name: "Agreeableness",     color: "#2f8a5b" },
+      N: { M: 26.0, SD: 7.0, name: "Neuroticism",       color: "#c8553d" }
+    };
+
+    const state = { currentIndex: 0, answers: new Array(50).fill(null), currentTuning: "" };
+    const $ = id => document.getElementById(id);
+
+    $("quiz-start").addEventListener("click", () => {
+      $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
+      state.currentIndex = 0; renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    function renderQuestion() {
+      const item = ITEMS[state.currentIndex];
+      $("quiz-progress-current").textContent = state.currentIndex + 1;
+      $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
+      // Statement text — prepend "I " (lowercased first letter) so the implicit
+      // first-person reads naturally now that the statement is the bold heading.
+      const t = item.text;
+      $("quiz-item-statement").textContent = "I " + t.charAt(0).toLowerCase() + t.slice(1);
+      const existing = state.answers[state.currentIndex];
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
+      });
+      $("quiz-back").disabled = state.currentIndex === 0;
+    }
+
+    function selectAnswer(value) {
+      state.answers[state.currentIndex] = value;
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
+      });
+      setTimeout(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      }, 220);
+    }
+
+    document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+    });
+    $("quiz-back").addEventListener("click", () => { if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
+    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    document.addEventListener("keydown", e => {
+      if ($("quiz-runner").hidden) return;
+      if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
+      else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        e.preventDefault(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+      }
+    });
+
+    function computeResult(answers) {
+      const sums = { O: 0, C: 0, E: 0, A: 0, N: 0 };
+      const counts = { O: 0, C: 0, E: 0, A: 0, N: 0 };
+      answers.forEach((v, i) => {
+        if (v == null) return;
+        const item = ITEMS[i];
+        const score = item.rev ? (6 - v) : v;
+        sums[item.dim] += score;
+        counts[item.dim]++;
+      });
+      // Each dim has 10 items; if some unanswered, scale to 10
+      const raw = {};
+      const zs = {};
+      const files = [];
+      for (const d of ["O", "C", "E", "A", "N"]) {
+        // If user skipped items, extrapolate to full 10-item sum
+        const observed = sums[d];
+        const observedCount = counts[d];
+        raw[d] = observedCount > 0 ? (observed / observedCount) * 10 : NORMS[d].M;
+        zs[d] = (raw[d] - NORMS[d].M) / NORMS[d].SD;
+        if (zs[d] > 0.5) files.push({ dim: d, level: "high" });
+        else if (zs[d] < -0.5) files.push({ dim: d, level: "low" });
+      }
+      return { raw, zs, files };
+    }
+
+    function showResult() {
+      $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
+      const r = computeResult(state.answers);
+
+      // Score breakdown
+      $("quiz-result-scores").innerHTML = ["O","C","E","A","N"].map(d => {
+        const z = r.zs[d];
+        const raw = r.raw[d];
+        const m = NORMS[d];
+        const pct = Math.min(100, Math.max(0, ((raw - 10) / 40) * 100));
+        let label = "average";
+        if (z > 2) label = "very high";
+        else if (z > 0.5) label = "high";
+        else if (z < -2) label = "very low";
+        else if (z < -0.5) label = "low";
+        const isLoaded = Math.abs(z) > 0.5;
+        return `
+          <div class="quiz-axis">
+            <div class="quiz-axis-letters">
+              <span class="quiz-axis-letter ${isLoaded ? "winner" : ""}" style="${isLoaded ? `color: ${m.color};` : ""}">${d} · ${m.name}</span>
+              <span class="quiz-axis-counts" style="font-family: var(--font-mono);">${raw.toFixed(1)} · z ${z >= 0 ? "+" : ""}${z.toFixed(2)} · ${label}</span>
+            </div>
+            <div class="quiz-axis-bar" style="position: relative;">
+              <div class="quiz-axis-fill" style="width: ${pct}%; background: ${isLoaded ? m.color : "#bdb6a4"};"></div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // Files to load
+      if (r.files.length === 0) {
+        $("quiz-result-files").innerHTML = `<p style="font-family: var(--font-serif); font-size: 17px; color: var(--muted); line-height: 1.55;">All five of your traits are within the average range. The model's default handles you well — no specific OCEAN files needed. Consider taking MBTI or Enneagram for a different angle.</p>`;
+      } else {
+        $("quiz-result-files").innerHTML = `
+          <div class="integration-grid" style="margin-top: 8px;">
+            ${r.files.map(f => {
+              const m = NORMS[f.dim];
+              return `
+                <div class="integration-card" style="background: ${m.color}10; border-color: ${m.color}40;">
+                  <div class="integration-name" style="color: ${m.color};">${f.dim}-${f.level} · ${m.name} ${f.level}</div>
+                  <p><code>ocean/${f.dim}-${f.level}.md</code></p>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+      }
+
+      // Combined tuning — first paint uses the short data.js fallback for
+      // every relevant OCEAN dimension, then we fetch each rich file in
+      // parallel from /tunings/ocean/ and re-build with the full content.
+      const shortCombined = buildCombinedTuning(r.files);
+      const fileName = "ocean-tuning.md";
+      state.currentTuning = shortCombined;
+      renderTuningPreview(shortCombined, fileName);
+      if (window.renderIntegrations) window.renderIntegrations(shortCombined);
+
+      if (window.fetchTuning && r.files.length > 0) {
+        Promise.all(
+          r.files.map((f) => window.fetchTuning(`ocean/${f.dim}-${f.level}.md`).then((rich) => ({ f, rich })))
+        ).then((parts) => {
+          // Bail if any file failed — stick with the short combined version
+          if (parts.some((p) => !p.rich)) return;
+          const richCombined = buildCombinedTuningFromTexts(r.files, parts);
+          if (richCombined === state.currentTuning) return;
+          state.currentTuning = richCombined;
+          renderTuningPreview(richCombined, fileName);
+          if (window.renderIntegrations) window.renderIntegrations(richCombined);
+        });
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderTuningPreview(tuning, filename) {
+      const allLines = tuning.split("\n");
+      let bodyStart = 0;
+      if (allLines[0] && allLines[0].trim() === "---") {
+        for (let i = 1; i < allLines.length; i++) {
+          if (allLines[i].trim() === "---") { bodyStart = i + 1; break; }
+        }
+      }
+      while (bodyStart < allLines.length && allLines[bodyStart].trim() === "") bodyStart++;
+      const bodyLines = allLines.slice(bodyStart);
+      while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "") bodyLines.pop();
+
+      const gutter = bodyLines.map((_, i) => `<span>${i + 1}</span>`).join("");
+      const code = bodyLines.map((line) => {
+        if (line.startsWith("# ")) return `<span class="c-h1">${escapeHtml(line)}</span>`;
+        if (line.startsWith("## ")) return `<span class="c-h2">${escapeHtml(line)}</span>`;
+        return escapeHtml(line);
+      }).join("\n");
+
+      $("quiz-editor-gutter").innerHTML = gutter;
+      $("quiz-editor-code").innerHTML = code;
+
+      const baseName = (filename || "ocean-tuning.md").split("/").pop();
+      $("quiz-editor-titlebar").textContent = `~/.agenttune/${baseName}`;
+      $("quiz-editor-tab").textContent = baseName;
+      $("quiz-editor-status").textContent = `● ${baseName}`;
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    function buildCombinedHeader(n) {
+      return `# Your OCEAN tuning\n\n# This file bundles ${n} OCEAN trait file${n > 1 ? "s" : ""} from agent-tune.com.\n# Paste all of it into your AI agent's system prompt.\n\n`;
+    }
+
+    function buildCombinedTuning(files) {
+      if (files.length === 0) {
+        return `# Your OCEAN profile\n\nAll five traits within average range. The model's default works well for you.`;
+      }
+      const contacts = (window.AT_CONTACTS || []);
+      let combined = buildCombinedHeader(files.length);
+      files.forEach(f => {
+        const id = `ocean-${f.dim}-${f.level}`;
+        const c = contacts.find(x => x.id === id);
+        if (c && c.tuning) {
+          combined += c.tuning + "\n\n---\n\n";
+        } else {
+          combined += `# ${f.dim}-${f.level}\nSee https://github.com/psyduckler/agenttune/blob/main/ocean/${f.dim}-${f.level}.md\n\n---\n\n`;
+        }
+      });
+      return combined.trim();
+    }
+
+    // Rebuild the combined tuning from already-fetched rich texts.
+    function buildCombinedTuningFromTexts(files, parts) {
+      if (files.length === 0) return buildCombinedTuning(files);
+      let combined = buildCombinedHeader(files.length);
+      parts.forEach(({ rich }) => {
+        combined += rich.trim() + "\n\n---\n\n";
+      });
+      return combined.trim();
+    }
+
+    $("quiz-copy-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || buildCombinedTuning(r.files);
+      navigator.clipboard.writeText(content).then(() => {
+        const o = this.textContent; this.textContent = "Copied ✓";
+        setTimeout(() => { this.textContent = o; }, 2000);
+      });
+    });
+
+    $("quiz-download-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || buildCombinedTuning(r.files);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `ocean-tuning.md`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      const o = this.textContent; this.textContent = "Downloaded ✓";
+      setTimeout(() => { this.textContent = o; }, 2000);
+    });
+
+    $("quiz-restart").addEventListener("click", () => {
+      state.currentIndex = 0; state.answers = new Array(50).fill(null);
+      $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Populate spec items table (for AI agents reading the spec)
+    const specItems = document.getElementById("quiz-spec-items");
+    if (specItems) {
+      specItems.innerHTML = ITEMS.map((it, i) => `
+        <tr>
+          <td class="num-col">${i + 1}</td>
+          <td>${escapeHtml(it.text)}</td>
+          <td class="num-col mono">${it.dim}</td>
+          <td class="num-col mono">${it.rev ? "✓" : ""}</td>
+        </tr>
+      `).join("");
+    }
+  })();
+  </script>
+</body>
+</html>

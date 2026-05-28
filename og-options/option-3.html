@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG #3 — 5 systems grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" />
+<style>
+  html, body { margin: 0; padding: 0; background: #2a2a26; }
+  body { font-family: "IBM Plex Sans", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #fafaf7;
+    color: #1a1a17;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    padding: 60px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .brand-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "Newsreader", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .brand-dot { width: 14px; height: 14px; border-radius: 50%; background: #a8482a; }
+  .tagline {
+    font-family: "Newsreader", serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    max-width: 600px;
+    margin: 0;
+  }
+  .tagline em {
+    font-style: italic;
+    font-weight: 400;
+    color: #a8482a;
+  }
+  .meta {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6e6a5e;
+    text-align: right;
+    line-height: 1.6;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .card {
+    background: var(--c-bg);
+    border: 1.5px solid var(--c);
+    padding: 22px 18px 20px;
+    border-radius: 14px;
+    aspect-ratio: 1 / 1.05;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pill {
+    display: inline-block;
+    background: var(--c);
+    color: #fafaf7;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 999px;
+    width: fit-content;
+  }
+  .ex {
+    font-family: "Newsreader", serif;
+    font-size: 44px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--c);
+    line-height: 1;
+  }
+  .name {
+    font-family: "Newsreader", serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a17;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+  }
+  .files {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    color: #6e6a5e;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .url {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a8482a;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="top">
+    <div class="brand-wrap">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>AgentTune</span>
+      </div>
+      <h2 class="tagline">Five systems. <em>One tuned agent.</em></h2>
+    </div>
+    <div class="meta">Free · MIT<br/>agent-tune.com</div>
+  </div>
+
+  <div class="grid">
+    <div class="card" style="--c:#5b4dc0; --c-bg:#5b4dc010;">
+      <div>
+        <div class="pill">MBTI</div>
+        <div class="files" style="margin-top: 10px;">16 types</div>
+      </div>
+      <div class="ex">INTJ</div>
+      <div class="name">Cognitive functions</div>
+    </div>
+    <div class="card" style="--c:#2f8a5b; --c-bg:#2f8a5b10;">
+      <div>
+        <div class="pill">Enneagram</div>
+        <div class="files" style="margin-top: 10px;">9 + wings</div>
+      </div>
+      <div class="ex">5w4</div>
+      <div class="name">Core motivation</div>
+    </div>
+    <div class="card" style="--c:#d99632; --c-bg:#d9963210;">
+      <div>
+        <div class="pill">DISC</div>
+        <div class="files" style="margin-top: 10px;">4 + blends</div>
+      </div>
+      <div class="ex">D · C</div>
+      <div class="name">Behavior style</div>
+    </div>
+    <div class="card" style="--c:#e07a8a; --c-bg:#e07a8a12;">
+      <div>
+        <div class="pill">Attach</div>
+        <div class="files" style="margin-top: 10px;">4 styles</div>
+      </div>
+      <div class="ex">Secure</div>
+      <div class="name">Relational pattern</div>
+    </div>
+    <div class="card" style="--c:#3a72c4; --c-bg:#3a72c410;">
+      <div>
+        <div class="pill">OCEAN</div>
+        <div class="files" style="margin-top: 10px;">5 dims · z-scored</div>
+      </div>
+      <div class="ex">O+C</div>
+      <div class="name">Big Five traits</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

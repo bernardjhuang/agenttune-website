@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free DISC Test — Tune Your AI to Your Type · AgentTune</title>
+  <meta name="description" content="Take 16 quick questions (~3 min, fastest in the library) and get a Markdown tuning file matched to your DISC style." />
+
+  <meta property="og:title" content="Take the DISC test · improve your AI agent — AgentTune" />
+  <meta property="og:description" content="16 items · 3 min · returns a tuning file that tunes your AI agent to your workplace style." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/tests/disc" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Take the DISC test · improve your AI agent — AgentTune" />
+  <meta name="twitter:description" content="16 items · 3 min · tune your AI agent to your workplace style." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/tests/disc" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Quiz","name":"DISC Test (ODAT)","description":"Interactive 16-item DISC assessment. Returns D/I/S/C plus optional blend.","url":"https://agent-tune.com/tests/disc","inLanguage":"en","numberOfQuestions":16,"timeRequired":"PT3M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/data.js"></script>
+  <script src="/integrations.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23d99632'/%3E%3C/svg%3E" />
+  <style>:root { --lib-accent: #d99632; --lib-accent-22: rgba(217,150,50,0.13); --lib-accent-55: rgba(217,150,50,0.34); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"DISC"}]}</script>
+</head>
+<body class="quiz-page">
+  <div class="page">
+
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/tests/">Tests</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">DISC</span>
+    </nav>
+
+    <section class="quiz-intro" id="quiz-intro">
+      <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">3-min test · 16 questions</span>
+      <h1 class="h-hero h-research-hero">Take the DISC test.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #d99632;">Get your tuning at the end.</h1>
+      <p class="lede">Answer 16 quick questions — the fastest test in the library. We'll score it client-side and hand you a Markdown tuning file matched to your DISC workplace style.</p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Instrument:</strong> ODAT (Open DISC Assessment Test)</div>
+        <div><strong>Format:</strong> 16 Likert items · 1–5 (Disagree → Agree)</div>
+        <div><strong>Time:</strong> ~3 minutes</div>
+        <div><strong>Returns:</strong> D / I / S / C + optional blend</div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" id="quiz-start" style="background: #d99632; border-color: #d99632;">Start the test →</button>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
+
+      <!-- WHAT DISC MEASURES -->
+      <div class="quiz-intro-chart">
+        <h3 class="quiz-intro-chart-h">What DISC measures</h3>
+        <p class="quiz-intro-chart-sub">Active or Reserved × Task-focused or People-focused. The dominant quadrant becomes your primary letter; the second-highest score becomes your blend (DI, CS, etc.).</p>
+        <svg viewBox="0 0 500 500" style="width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);">
+          <text x="250" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a">Active · Outgoing</text>
+          <text x="250" y="490" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a">Reserved · Cautious</text>
+          <text x="14" y="250" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a" transform="rotate(-90 14 250)">People-focused</text>
+          <text x="486" y="250" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a" transform="rotate(90 486 250)">Task-focused</text>
+          <rect x="50" y="50" width="200" height="200" fill="#d99632" fill-opacity="0.08" stroke="#d99632" stroke-width="2" rx="8"/>
+          <circle cx="150" cy="120" r="32" fill="#d99632"/><text x="150" y="130" text-anchor="middle" font-size="28" font-weight="700" fill="white">I</text>
+          <text x="150" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1e1d1a">Influence</text>
+          <text x="150" y="200" text-anchor="middle" font-size="11" fill="#7a7468">enthusiastic, persuasive</text><text x="150" y="216" text-anchor="middle" font-size="11" fill="#7a7468">people-energizer</text>
+          <rect x="250" y="50" width="200" height="200" fill="#c8553d" fill-opacity="0.08" stroke="#c8553d" stroke-width="2" rx="8"/>
+          <circle cx="350" cy="120" r="32" fill="#c8553d"/><text x="350" y="130" text-anchor="middle" font-size="28" font-weight="700" fill="white">D</text>
+          <text x="350" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1e1d1a">Dominance</text>
+          <text x="350" y="200" text-anchor="middle" font-size="11" fill="#7a7468">direct, results-focused</text><text x="350" y="216" text-anchor="middle" font-size="11" fill="#7a7468">decisive</text>
+          <rect x="50" y="250" width="200" height="200" fill="#2f8a5b" fill-opacity="0.08" stroke="#2f8a5b" stroke-width="2" rx="8"/>
+          <circle cx="150" cy="320" r="32" fill="#2f8a5b"/><text x="150" y="330" text-anchor="middle" font-size="28" font-weight="700" fill="white">S</text>
+          <text x="150" y="380" text-anchor="middle" font-size="14" font-weight="600" fill="#1e1d1a">Steadiness</text>
+          <text x="150" y="400" text-anchor="middle" font-size="11" fill="#7a7468">patient, supportive</text><text x="150" y="416" text-anchor="middle" font-size="11" fill="#7a7468">team-stabilizer</text>
+          <rect x="250" y="250" width="200" height="200" fill="#3a72c4" fill-opacity="0.08" stroke="#3a72c4" stroke-width="2" rx="8"/>
+          <circle cx="350" cy="320" r="32" fill="#3a72c4"/><text x="350" y="330" text-anchor="middle" font-size="28" font-weight="700" fill="white">C</text>
+          <text x="350" y="380" text-anchor="middle" font-size="14" font-weight="600" fill="#1e1d1a">Conscientiousness</text>
+          <text x="350" y="400" text-anchor="middle" font-size="11" fill="#7a7468">analytical, precise</text><text x="350" y="416" text-anchor="middle" font-size="11" fill="#7a7468">data-driven</text>
+          <line x1="50" y1="250" x2="450" y2="250" stroke="#7a7468" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="250" y1="50" x2="250" y2="450" stroke="#7a7468" stroke-width="1" stroke-dasharray="4 4"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="quiz-runner" id="quiz-runner" hidden>
+      <div class="quiz-progress">
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #d99632;"></div></div>
+        <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 16</div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #d99632;" aria-hidden="true">D</div>
+          <p class="quiz-item-statement" id="quiz-item-statement"></p>
+        </div>
+        <div class="quiz-likert" role="radiogroup">
+          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
+          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
+          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-result" id="quiz-result" hidden>
+      <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">Done · here's your result</span>
+      <div class="quiz-result-card" style="border-top-color: #d99632;">
+        <div class="quiz-result-headline">
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #d99632;">CS</div>
+          <div>
+            <div class="quiz-result-label">Your DISC profile</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #d99632;">CS</div>
+            <div class="quiz-result-name" id="quiz-result-name">Conscientiousness with Steadiness blend</div>
+          </div>
+        </div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
+
+        <h3 class="quiz-result-section-h">All four type scores</h3>
+        <div class="quiz-result-axes" id="quiz-result-scores"></div>
+
+        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <article class="c-editor" id="quiz-result-editor">
+          <div class="c-titlebar">
+            <div class="c-dots"><span></span><span></span><span></span></div>
+            <div class="c-titlebar-label" id="quiz-editor-titlebar">~/.agenttune/tuning.md</div>
+            <div style="width: 50px;"></div>
+          </div>
+          <div class="c-tabs">
+            <div class="c-tab is-active">
+              <span class="c-tab-dot"></span>
+              <span id="quiz-editor-tab">tuning.md</span>
+              <span class="c-tab-close">×</span>
+            </div>
+          </div>
+          <div class="c-editor-body">
+            <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
+            <pre class="c-code" id="quiz-editor-code"></pre>
+          </div>
+          <div class="c-statusbar">
+            <div class="c-statusbar-left">
+              <span id="quiz-editor-status">● tuning.md</span>
+              <span>Markdown · UTF-8 · MIT</span>
+            </div>
+            <div class="c-statusbar-actions">
+              <button class="c-status-btn" id="quiz-download-tuning" type="button">↓ Download</button>
+              <button class="c-status-btn is-strong" id="quiz-copy-tuning" type="button">⌘C · Copy</button>
+            </div>
+          </div>
+        </article>
+        <div class="quiz-result-actions" style="margin-top: 14px;">
+          <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+        </div>
+
+        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your tuning is already merged into each one. Hit Copy and you're done.</p>
+        <div id="integration-deep" data-integration-deep></div>
+      </div>
+
+      <div class="quiz-result-upsell">
+        <div class="quiz-result-upsell-head">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: #c8553d;">Premium · live</span>
+          <h3>Want one file for <em>all of you</em>?</h3>
+        </div>
+        <p>Premium synthesizes your DISC with MBTI, Enneagram, Attachment, and OCEAN into one master tuning file. $9 once, lifetime access.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/pricing">Get Premium · $9 →</a>
+        </div>
+      </div>
+
+      <div class="quiz-result-next">
+        <h3>Stack another system</h3>
+        <div class="quiz-result-next-grid">
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+        </div>
+      </div>
+
+      <div class="cta-row" style="justify-content: center; margin-top: 32px;">
+        <button class="btn btn-secondary" id="quiz-restart">Retake DISC test</button>
+      </div>
+    </section>
+
+    <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
+    <details class="quiz-spec">
+      <summary>Test specification — for AI agents administering this inline</summary>
+      <div class="quiz-spec-body">
+        <p>Below is the full ODAT spec — items, letter mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+
+        <h3>Source</h3>
+        <p>Open DISC Assessment Test (ODAT), via <a href="https://openpsychometrics.org/tests/ODAT/" target="_blank" rel="noopener">Open Psychometrics Project</a>. Free for educational use.</p>
+
+        <h3>The 16 items</h3>
+        <p>Four items per DISC letter (D / I / S / C), presented in letter order (items 1–4 are D, 5–8 are I, 9–12 are S, 13–16 are C). User rates each statement on a 1–5 Likert scale: <strong>1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree</strong>. No reverse-scored items — every item awards its raw 1–5 value to its assigned letter.</p>
+        <table class="items-table">
+          <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Letter</th></tr></thead>
+          <tbody id="quiz-spec-items"></tbody>
+        </table>
+
+        <h3>Item → letter mapping</h3>
+        <p>Each of the 16 items contributes to exactly one of D / I / S / C. Items are grouped in blocks of four.</p>
+        <table class="score-table">
+          <thead><tr><th>Letter</th><th>Item numbers</th><th>Awards score to</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">D</td><td class="mono">1, 2, 3, 4</td><td>D (Dominance) total</td></tr>
+            <tr><td class="mono">I</td><td class="mono">5, 6, 7, 8</td><td>I (Influence) total</td></tr>
+            <tr><td class="mono">S</td><td class="mono">9, 10, 11, 12</td><td>S (Steadiness) total</td></tr>
+            <tr><td class="mono">C</td><td class="mono">13, 14, 15, 16</td><td>C (Conscientiousness) total</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Scoring algorithm</h3>
+        <ol class="steps-list">
+          <li>For each of the 4 letters (D, I, S, C), initialize a running total = 0.</li>
+          <li>For each of the 4 items in that letter, add the user's 1–5 response directly (no reverse-scoring).</li>
+          <li>Each letter ends with a total between <strong>4</strong> (all 1s) and <strong>20</strong> (all 5s).</li>
+          <li><strong>Dominant letter</strong> = highest total. In a tie, prefer the earlier letter in DISC order (D → I → S → C).</li>
+          <li><strong>Blend</strong> = the next-highest letter if it scores within <strong>2 points</strong> of the dominant. Otherwise no blend.</li>
+          <li>Profile code = <code>{dominant}</code> if no blend, or <code>{dominant}{blend}</code> if blend (e.g. <code>D</code>, <code>CS</code>, <code>DI</code>).</li>
+        </ol>
+
+        <h3>Output mapping</h3>
+        <p>Fetch the file matching the dominant letter from <code>disc/&lt;LETTER&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The blend (if any) is a fidelity signal — you can optionally stack the blend's file as a secondary layer.</p>
+        <table class="score-table">
+          <thead><tr><th>Letter</th><th>Name</th><th>One-line</th><th>File</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">D</td><td>Dominance</td><td>Direct, results-focused, decisive. Wants the bottom line.</td><td class="mono">disc/D-dominance.md</td></tr>
+            <tr><td class="mono">I</td><td>Influence</td><td>Outgoing, persuasive, energetic. Thinks out loud.</td><td class="mono">disc/I-influence.md</td></tr>
+            <tr><td class="mono">S</td><td>Steadiness</td><td>Patient, supportive, methodical. Wants stability.</td><td class="mono">disc/S-steadiness.md</td></tr>
+            <tr><td class="mono">C</td><td>Conscientiousness</td><td>Analytical, precise, evidence-driven. Wants the data.</td><td class="mono">disc/C-conscientiousness.md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span><a href="/tests/">← all five tests</a></span>
+    </div>
+
+  </div>
+
+  <script>
+  (function() {
+    const ITEMS = [
+      // D — items 1-4
+      { text: "I put people under pressure.", type: "D" },
+      { text: "I have a strong need for power.", type: "D" },
+      { text: "I try to outdo others.", type: "D" },
+      { text: "I am always on the look out for ways to make money.", type: "D" },
+      // I — items 5-8
+      { text: "I enjoy being part of a loud crowd.", type: "I" },
+      { text: "I want strangers to love me.", type: "I" },
+      { text: "I joke around a lot.", type: "I" },
+      { text: "I make lots of noise.", type: "I" },
+      // S — items 9-12
+      { text: "I hesitate to criticize other people's ideas.", type: "S" },
+      { text: "I value cooperation over competition.", type: "S" },
+      { text: "I just want everyone to be equal.", type: "S" },
+      { text: "I seldom toot my own horn.", type: "S" },
+      // C — items 13-16
+      { text: "I am emotionally reserved.", type: "C" },
+      { text: "I read the fine print.", type: "C" },
+      { text: "I love order and regularity.", type: "C" },
+      { text: "My first reaction to an idea is to see its flaws.", type: "C" }
+    ];
+
+    const TYPE_META = {
+      D: { name: "Dominance",         color: "#c8553d", file: "D-dominance",         blurb: "Direct, results-focused, decisive. Wants the bottom line." },
+      I: { name: "Influence",         color: "#d99632", file: "I-influence",         blurb: "Outgoing, persuasive, energetic. Thinks out loud." },
+      S: { name: "Steadiness",        color: "#2f8a5b", file: "S-steadiness",        blurb: "Patient, supportive, methodical. Wants stability." },
+      C: { name: "Conscientiousness", color: "#3a72c4", file: "C-conscientiousness", blurb: "Analytical, precise, evidence-driven. Wants the data." }
+    };
+
+    const state = { currentIndex: 0, answers: new Array(16).fill(null), currentTuning: "" };
+    const $ = id => document.getElementById(id);
+
+    $("quiz-start").addEventListener("click", () => {
+      $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
+      state.currentIndex = 0; renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    function renderQuestion() {
+      const item = ITEMS[state.currentIndex];
+      $("quiz-progress-current").textContent = state.currentIndex + 1;
+      $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
+      $("quiz-item-statement").textContent = item.text;
+      const existing = state.answers[state.currentIndex];
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
+      });
+      $("quiz-back").disabled = state.currentIndex === 0;
+    }
+
+    function selectAnswer(value) {
+      state.answers[state.currentIndex] = value;
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
+      });
+      setTimeout(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      }, 220);
+    }
+
+    document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+    });
+    $("quiz-back").addEventListener("click", () => { if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
+    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    document.addEventListener("keydown", e => {
+      if ($("quiz-runner").hidden) return;
+      if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
+      else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        e.preventDefault(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+      }
+    });
+
+    function computeResult(answers) {
+      const scores = { D: 0, I: 0, S: 0, C: 0 };
+      answers.forEach((v, i) => { if (v != null) scores[ITEMS[i].type] += v; });
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const dominant = sorted[0][0];
+      const secondary = sorted[1][0];
+      const diff = sorted[0][1] - sorted[1][1];
+      const isBlend = diff <= 2;
+      return { dominant, secondary, isBlend, profile: isBlend ? dominant + secondary : dominant, scores };
+    }
+
+    function showResult() {
+      $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
+      const r = computeResult(state.answers);
+      const meta = TYPE_META[r.dominant];
+
+      $("quiz-result-code").textContent = r.profile;
+      $("quiz-result-code").style.color = meta.color;
+      $("quiz-result-name").textContent = r.isBlend ? `${meta.name} with ${TYPE_META[r.secondary].name} blend` : meta.name;
+      $("quiz-result-blurb").textContent = meta.blurb;
+      $("quiz-result-avatar").textContent = r.profile;
+      $("quiz-result-avatar").style.background = meta.color;
+
+      const maxScore = 20;
+      $("quiz-result-scores").innerHTML = ["D","I","S","C"].map(t => {
+        const score = r.scores[t];
+        const pct = (score / maxScore) * 100;
+        const isW = t === r.dominant;
+        const isB = t === r.secondary && r.isBlend;
+        const m = TYPE_META[t];
+        return `
+          <div class="quiz-axis">
+            <div class="quiz-axis-letters">
+              <span class="quiz-axis-letter ${isW ? "winner" : ""}" style="${isW ? `color: ${m.color};` : ""}">${t} · ${m.name}</span>
+              <span class="quiz-axis-counts">${score}/20${isW ? " · dom" : isB ? " · blend" : ""}</span>
+            </div>
+            <div class="quiz-axis-bar"><div class="quiz-axis-fill" style="width: ${pct}%; background: ${isW ? m.color : isB ? m.color + "99" : "#bdb6a4"};"></div></div>
+          </div>
+        `;
+      }).join("");
+
+      const shortTuning = getTuningContent(r.dominant);
+      const fileName = `${meta.file}.md`;
+      state.currentTuning = shortTuning;
+      renderTuningPreview(shortTuning, fileName);
+      if (window.renderIntegrations) window.renderIntegrations(shortTuning);
+      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/disc/${meta.file}.md`;
+
+      if (window.fetchTuning) {
+        window.fetchTuning(`disc/${meta.file}.md`).then((rich) => {
+          if (!rich || rich === state.currentTuning) return;
+          state.currentTuning = rich;
+          renderTuningPreview(rich, fileName);
+          if (window.renderIntegrations) window.renderIntegrations(rich);
+        });
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderTuningPreview(tuning, filename) {
+      // Strip YAML front-matter for editor display
+      const allLines = tuning.split("\n");
+      let bodyStart = 0;
+      if (allLines[0] && allLines[0].trim() === "---") {
+        for (let i = 1; i < allLines.length; i++) {
+          if (allLines[i].trim() === "---") { bodyStart = i + 1; break; }
+        }
+      }
+      while (bodyStart < allLines.length && allLines[bodyStart].trim() === "") bodyStart++;
+      const bodyLines = allLines.slice(bodyStart);
+      while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "") bodyLines.pop();
+
+      const gutter = bodyLines.map((_, i) => `<span>${i + 1}</span>`).join("");
+      const code = bodyLines.map((line) => {
+        if (line.startsWith("# ")) return `<span class="c-h1">${escapeHtml(line)}</span>`;
+        if (line.startsWith("## ")) return `<span class="c-h2">${escapeHtml(line)}</span>`;
+        return escapeHtml(line);
+      }).join("\n");
+
+      $("quiz-editor-gutter").innerHTML = gutter;
+      $("quiz-editor-code").innerHTML = code;
+
+      const baseName = (filename || "tuning.md").split("/").pop();
+      $("quiz-editor-titlebar").textContent = `~/.agenttune/${baseName}`;
+      $("quiz-editor-tab").textContent = baseName;
+      $("quiz-editor-status").textContent = `● ${baseName}`;
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    function getTuningContent(letter) {
+      const contacts = (window.AT_CONTACTS || []);
+      const c = contacts.find(x => x.id === `disc-${letter}`);
+      return (c && c.tuning) || `# ${letter} tuning\n\nView on GitHub: https://github.com/psyduckler/agenttune/blob/main/disc/${TYPE_META[letter].file}.md`;
+    }
+
+    $("quiz-copy-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.dominant);
+      navigator.clipboard.writeText(content).then(() => {
+        const o = this.textContent; this.textContent = "Copied ✓";
+        setTimeout(() => { this.textContent = o; }, 2000);
+      });
+    });
+
+    $("quiz-download-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.dominant);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `${TYPE_META[r.dominant].file}.md`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      const o = this.textContent; this.textContent = "Downloaded ✓";
+      setTimeout(() => { this.textContent = o; }, 2000);
+    });
+
+    $("quiz-restart").addEventListener("click", () => {
+      state.currentIndex = 0; state.answers = new Array(16).fill(null);
+      $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Populate spec items table (for AI agents reading the spec)
+    const specItems = document.getElementById("quiz-spec-items");
+    if (specItems) {
+      specItems.innerHTML = ITEMS.map((it, i) => `
+        <tr>
+          <td class="num-col">${i + 1}</td>
+          <td>${escapeHtml(it.text)}</td>
+          <td class="num-col mono">${it.type}</td>
+        </tr>
+      `).join("");
+    }
+  })();
+  </script>
+</body>
+</html>

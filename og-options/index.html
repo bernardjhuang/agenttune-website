@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>OG image options — AgentTune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" />
+<style>
+  :root {
+    --bg: #fafaf7;
+    --ink: #1a1a17;
+    --muted: #6e6a5e;
+    --border: #dad3c0;
+    --accent: #a8482a;
+    --font-serif: "Newsreader", serif;
+    --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+  }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+  }
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: -0.018em;
+    line-height: 1.05;
+    margin: 32px 0 12px;
+  }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .lede {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 720px;
+    margin: 0;
+  }
+  .meta-row {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+    margin-top: 48px;
+  }
+  .opt {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 28px 32px;
+    background: #ffffff;
+  }
+  .opt-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .opt-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .opt-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .opt-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .opt-vibe {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  .opt-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .opt-actions a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .opt-actions a:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .opt-actions a.primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .opt-actions a.primary:hover {
+    background: #8a3a21;
+    border-color: #8a3a21;
+  }
+  .preview-wrap {
+    background: #2a2a26;
+    border-radius: 12px;
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .preview-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  iframe {
+    width: 100%;
+    aspect-ratio: 1200 / 630;
+    border: 0;
+    display: block;
+    border-radius: 6px;
+    background: #fafaf7;
+  }
+  .pros-cons {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .pc {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .pc-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .pc.good .pc-label { color: #2f8a5b; }
+  .pc.weak .pc-label { color: #a8482a; }
+  .pc ul { margin: 0; padding-left: 20px; }
+  .pc li { margin-bottom: 4px; }
+  .footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 720px) {
+    .pros-cons { grid-template-columns: 1fr; gap: 14px; }
+    h1 { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="brand" href="/">
+    <span class="brand-dot"></span>
+    <span>AgentTune · OG image options</span>
+  </a>
+
+  <h1>Five takes on <em>one share card</em>.</h1>
+  <p class="lede">Each rendered at the real 1200×630 OG size. Pick the one that feels most like AgentTune — once you choose, I'll rasterize it to PNG and wire <code>og:image</code> + <code>twitter:image</code> across every page on the site.</p>
+  <div class="meta-row">5 options · all 1200×630 · all rendered live</div>
+
+  <div class="grid">
+
+    <!-- Option 1 -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="opt-title-row">
+          <span class="opt-num">Option 1</span>
+          <h2 class="opt-name">Pure typography</h2>
+          <span class="opt-vibe">brand-first, calm, confident</span>
+        </div>
+        <div class="opt-actions">
+          <a href="/og-options/option-1" target="_blank">Open full size</a>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-meta"><span>OPTION 1 · TYPOGRAPHY</span><span>1200 × 630</span></div>
+        <iframe src="/og-options/option-1" loading="lazy" title="Option 1"></iframe>
+      </div>
+      <div class="pros-cons">
+        <div class="pc good">
+          <div class="pc-label">Strengths</div>
+          <ul>
+            <li>Matches the site's visual identity exactly — Newsreader + italic accent</li>
+            <li>Readable at any thumbnail size in iMessage / X / LinkedIn previews</li>
+            <li>Most "ownable" — instantly says AgentTune even at 30% scale</li>
+          </ul>
+        </div>
+        <div class="pc weak">
+          <div class="pc-label">Trade-offs</div>
+          <ul>
+            <li>Doesn't explain what the product IS at first glance</li>
+            <li>Tagline-only, no product hook</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 2 -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="opt-title-row">
+          <span class="opt-num">Option 2</span>
+          <h2 class="opt-name">Code window</h2>
+          <span class="opt-vibe">developer-first, product-explicit</span>
+        </div>
+        <div class="opt-actions">
+          <a href="/og-options/option-2" target="_blank">Open full size</a>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-meta"><span>OPTION 2 · CODE WINDOW</span><span>1200 × 630</span></div>
+        <iframe src="/og-options/option-2" loading="lazy" title="Option 2"></iframe>
+      </div>
+      <div class="pros-cons">
+        <div class="pc good">
+          <div class="pc-label">Strengths</div>
+          <ul>
+            <li>Shows what a tuning file actually looks like — visceral proof</li>
+            <li>Signals "this is for developers" instantly</li>
+            <li>The CLAUDE.md filename tab does the explaining for you</li>
+          </ul>
+        </div>
+        <div class="pc weak">
+          <div class="pc-label">Trade-offs</div>
+          <ul>
+            <li>Code might be too small on small thumbnails (e.g. iMessage)</li>
+            <li>Skews "for engineers" — could alienate the personality/coaching crowd</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 3 -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="opt-title-row">
+          <span class="opt-num">Option 3</span>
+          <h2 class="opt-name">Five systems grid</h2>
+          <span class="opt-vibe">breadth-first, library showcase</span>
+        </div>
+        <div class="opt-actions">
+          <a href="/og-options/option-3" target="_blank">Open full size</a>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-meta"><span>OPTION 3 · SYSTEMS GRID</span><span>1200 × 630</span></div>
+        <iframe src="/og-options/option-3" loading="lazy" title="Option 3"></iframe>
+      </div>
+      <div class="pros-cons">
+        <div class="pc good">
+          <div class="pc-label">Strengths</div>
+          <ul>
+            <li>Shows the breadth (5 systems, 43 tunings) at one glance</li>
+            <li>Color-coded — the same palette people see on the site</li>
+            <li>Looks like a product catalog, signals "real library"</li>
+          </ul>
+        </div>
+        <div class="pc weak">
+          <div class="pc-label">Trade-offs</div>
+          <ul>
+            <li>Most visually busy of the 5 — small thumbnails get noisy</li>
+            <li>Doesn't say what to DO with it — needs the headline to carry the why</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 4 -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="opt-title-row">
+          <span class="opt-num">Option 4</span>
+          <h2 class="opt-name">Before / After</h2>
+          <span class="opt-vibe">value-prop-first, instant aha</span>
+        </div>
+        <div class="opt-actions">
+          <a href="/og-options/option-4" target="_blank">Open full size</a>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-meta"><span>OPTION 4 · BEFORE / AFTER</span><span>1200 × 630</span></div>
+        <iframe src="/og-options/option-4" loading="lazy" title="Option 4"></iframe>
+      </div>
+      <div class="pros-cons">
+        <div class="pc good">
+          <div class="pc-label">Strengths</div>
+          <ul>
+            <li>Shows the actual transformation — generic → tuned</li>
+            <li>"Same model. Tuned to you." is the entire pitch in 5 words</li>
+            <li>Most shareable — people will retweet for the punchline</li>
+          </ul>
+        </div>
+        <div class="pc weak">
+          <div class="pc-label">Trade-offs</div>
+          <ul>
+            <li>Chat bubble copy needs to be readable at thumbnail — text might shrink too small</li>
+            <li>Two columns get cramped on mobile preview crops</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Option 5 -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="opt-title-row">
+          <span class="opt-num">Option 5</span>
+          <h2 class="opt-name">597 / 600</h2>
+          <span class="opt-vibe">research-stat, scroll-stopper</span>
+        </div>
+        <div class="opt-actions">
+          <a href="/og-options/option-5" target="_blank">Open full size</a>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-meta"><span>OPTION 5 · 597 / 600</span><span>1200 × 630</span></div>
+        <iframe src="/og-options/option-5" loading="lazy" title="Option 5"></iframe>
+      </div>
+      <div class="pros-cons">
+        <div class="pc good">
+          <div class="pc-label">Strengths</div>
+          <ul>
+            <li>Strongest scroll-stop — a big number with a strange ratio earns the click</li>
+            <li>Ties directly to your research, makes the site feel credible</li>
+            <li>Dark-mode card stands out against everything else on X/iMessage</li>
+          </ul>
+        </div>
+        <div class="pc weak">
+          <div class="pc-label">Trade-offs</div>
+          <ul>
+            <li>Hides the product — "what's AgentTune?" requires a click</li>
+            <li>Best as a one-off announcement card; less universal as the default</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="footer">
+    <span>Pick one → I rasterize to PNG + wire og:image across every page.</span>
+    <span><a href="/" style="color:inherit;">← back to agent-tune.com</a></span>
+  </div>
+
+</div>
+</body>
+</html>

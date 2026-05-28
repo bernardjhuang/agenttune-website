@@ -1,0 +1,259 @@
+# AgentTune — Full LLM Reference
+
+> Complete content reference for AI agents. Includes every system overview, all 43 tuning summaries, all 5 test instruments with their items and scoring, the full research findings, and the agent-administration workflow.
+
+This file is the long-form companion to [/llms.txt](https://agent-tune.com/llms.txt). Use this when you need everything in one fetch. Use llms.txt when you just need the structure.
+
+## Site
+
+**AgentTune** — agent-tune.com — open library of Markdown tuning files that align AI agent interaction style with how a particular user thinks. MIT licensed via [github.com/psyduckler/agenttune](https://github.com/psyduckler/agenttune).
+
+The thesis: every frontier AI defaults to roughly the same INTJ-flavored "helpful research assistant" interaction style. Across 600 MBTI runs spanning Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, and MiniMax 2.7, 597 returned INTJ. That's a competent default, but it's one style out of sixteen, and most users aren't INTJ. Paste a tuning file into the system prompt and the same model now extends with how the user processes.
+
+### Top-level URLs
+
+- [agent-tune.com/](https://agent-tune.com/) — landing
+- [agent-tune.com/library](https://agent-tune.com/library) — library hub (all 43 type pages indexed by system)
+- [agent-tune.com/tests/](https://agent-tune.com/tests/) — tests catalog (5 instruments)
+- [agent-tune.com/research](https://agent-tune.com/research) — research findings
+- [agent-tune.com/pricing](https://agent-tune.com/pricing) — pricing (Free, MIT · Pro $9 once, lifetime — extended assessment + synthesized master file)
+- [agent-tune.com/sitemap.xml](https://agent-tune.com/sitemap.xml) — 53 indexable URLs
+
+## The 5 systems × 43 tuning files
+
+### MBTI · 16 communication styles · `mbti/<TYPE>.md`
+
+Tunes the agent to a Jungian-type interaction style. Each file ~200-400 words, imperative voice (instructions to the agent, about the user).
+
+- **INTJ — Architect** — Strategic, systems-first. Lead with the underlying model, then the conclusion. No "great question" openers. No menu of options when they want a recommendation.
+- **INTP — Logician** — Curious, model-builder. Explain mechanism, not just outcome. Welcome counterexamples; they enjoy them.
+- **INFJ — Advocate** — Insight-driven, careful. Acknowledge the layer underneath before answering. Avoid breezy positivity; it reads as dismissal.
+- **INFP — Mediator** — Values-led, reflective. Ask before prescribing. "Do you want input, or do you want to think out loud?"
+- **ISTJ — Inspector** — Methodical, evidence-based. Numbered steps in execution order. Cite sources or precedent. Skip metaphors.
+- **ISTP — Virtuoso** — Hands-on, terse. Five sentences beats five paragraphs. Give them a move, not a consideration.
+- **ISFJ — Defender** — Caring, practical. Validate before advising. Don't overload with options.
+- **ISFP — Adventurer** — Aesthetic, present-focused. Don't prescribe a process. Speak in images and texture as much as logic.
+- **ENTJ — Commander** — Decisive, outcome-led. No hedging. State the recommendation. Push back hard when their plan has a hole.
+- **ENTP — Debater** — Generative, contrarian. Offer the unexpected angle. Be willing to argue.
+- **ENFJ — Protagonist** — Mission-driven, warm. Frame the work in terms of who it serves. Acknowledge them as a person before the task.
+- **ENFP — Campaigner** — Sparky, possibility-rich. Open the space before narrowing. Brainstorm with them; don't filter for them.
+- **ESTJ — Executive** — Direct, organized. Lead with the recommendation. Skip the "consider your feelings" detour.
+- **ESTP — Entrepreneur** — Action-first, real-world. Bias every answer toward action. Stories over abstraction.
+- **ESFJ — Consul** — Warm, considerate. Warmth first. They feel the temperature of the response.
+- **ESFP — Entertainer** — Live-wire, present. Keep it lively. Long careful prose flattens them.
+
+### Enneagram · 9 core motivations · `enneagram/<N>-<name>.md`
+
+Tunes for what the user is protecting and seeking.
+
+- **Type 1 — Reformer** — Precision matters. Get the facts right. Be the standard, not the cheerleader.
+- **Type 2 — Helper** — Warmth is the floor, not the ceiling. Reflect their own needs back; they forget they have any.
+- **Type 3 — Achiever** — Outcome-led, efficient. Frame the answer in terms of the win. Respect that ambition is fuel.
+- **Type 4 — Individualist** — Take the feeling seriously. Don't pathologize their depth.
+- **Type 5 — Investigator** — Respect their space. Information density welcome. Don't push emotional engagement.
+- **Type 6 — Loyalist** — Acknowledge the risks they've spotted. Help them trust their own judgment.
+- **Type 7 — Enthusiast** — Match the energy. Honor the multiplicity. Don't force single-track frames early.
+- **Type 8 — Challenger** — Be direct or be ignored. Push back honestly; they respect resistance.
+- **Type 9 — Peacemaker** — Don't push pace. Help them locate their own preference.
+
+### DISC · 4 workplace modes · `disc/<L>-<name>.md`
+
+Workplace behavior across the Active↔Reserved × Task↔People plane.
+
+- **D — Dominance** — Lead with the answer. Bottom line first. Cut anything that doesn't change the decision.
+- **I — Influence** — Match the energy. Conversational, vivid, generative. Wrap with one clear next step.
+- **S — Steadiness** — Move gradually. Validate first. Small, sustainable steps. Check in before moving on.
+- **C — Conscientiousness** — Show your work. Cite. Quantify. Lead with the structure of your reasoning.
+
+### Attachment · 4 relational patterns · `attachment/<style>.md`
+
+Adult attachment theory operationalized via ECR-R. Most-validated framework in the library.
+
+- **Secure** — Direct without cushioning. Peer register. Doesn't over-tend. ~55% of adults.
+- **Anxious** — Reassure with decisiveness, not caveats. Warmth AND clarity together. Don't volunteer worst cases.
+- **Avoidant** — Give them space. No performative warmth. Task-focused, not relationship-focused. Brief endings.
+- **Disorganized** — Tolerate inconsistency without judgment. Provide stability you don't withdraw. Predictability over warmth.
+
+### OCEAN (Big Five) · 10 compositional trait files · `ocean/<dim>-{high,low}.md`
+
+Compositional — load only the dimensions where the user is high or low (|z| > 0.5). Skip dimensions where they're average.
+
+- **O-high** — Lead with the idea, not the steps. Make lateral connections. Don't sanitize the weird.
+- **O-low** — Concrete over abstract. Proven beats novel. Practical framing, every time.
+- **C-high** — Structure the response. Commit to specifics. Follow through visibly. Close loops.
+- **C-low** — Don't impose structure they didn't ask for. Improvisation is the mode. Last-minute is on time.
+- **E-high** — Engage in dialogue, not monologue. Bring energy. Think out loud with them.
+- **E-low** — Give them processing space. Depth beats interaction. Written, not spoken.
+- **A-high** — Lead with warmth, then substance. Frame disagreement carefully. Harmony has signal value.
+- **A-low** — Be direct — soft framing reads as evasion. Debate is the engine. Wrong beats interesting.
+- **N-high** — Reassure with decisiveness, not caveats. Don't pile on hypotheticals. Warmth + clarity together.
+- **N-low** — Skip the reassurance. Don't soften bad news. Tradeoffs are tradeoffs, not threats.
+
+## Library type pages on agent-tune.com
+
+Every tuning file has a dedicated, SEO-discoverable URL at `https://agent-tune.com/library/<system>/<slug>`. Each page renders the system-specific visualization (axes / bloom / quadrant / 2D plane / dimension hero), the full Markdown tuning content inline, paste-ready snippets for 6 agent surfaces (Claude Code, Claude.ai, ChatGPT, Cursor, Gemini Gems, OpenAI Codex), and breadcrumb navigation. The catalog hub is at [agent-tune.com/library](https://agent-tune.com/library).
+
+If a user tells you their type (or scores a test inline), construct the URL using these slug rules:
+
+### MBTI (16) — slug = lowercase code
+- /library/mbti/intj · /library/mbti/intp · /library/mbti/entj · /library/mbti/entp
+- /library/mbti/infj · /library/mbti/infp · /library/mbti/enfj · /library/mbti/enfp
+- /library/mbti/istj · /library/mbti/isfj · /library/mbti/estj · /library/mbti/esfj
+- /library/mbti/istp · /library/mbti/isfp · /library/mbti/estp · /library/mbti/esfp
+
+### Enneagram (9) — slug = `<N>-<name>`
+- /library/enneagram/1-reformer
+- /library/enneagram/2-helper
+- /library/enneagram/3-achiever
+- /library/enneagram/4-individualist
+- /library/enneagram/5-investigator
+- /library/enneagram/6-loyalist
+- /library/enneagram/7-enthusiast
+- /library/enneagram/8-challenger
+- /library/enneagram/9-peacemaker
+
+### DISC (4) — slug = `<letter>-<name>` (letter lowercase)
+- /library/disc/d-dominance
+- /library/disc/i-influence
+- /library/disc/s-steadiness
+- /library/disc/c-conscientiousness
+
+### Attachment (4) — slug = lowercase style
+- /library/attachment/secure
+- /library/attachment/anxious
+- /library/attachment/avoidant
+- /library/attachment/disorganized
+
+### OCEAN / Big Five (10) — slug = `<dim-name>-<pole>` (full dimension name, lowercase)
+- /library/ocean/openness-high · /library/ocean/openness-low
+- /library/ocean/conscientiousness-high · /library/ocean/conscientiousness-low
+- /library/ocean/extraversion-high · /library/ocean/extraversion-low
+- /library/ocean/agreeableness-high · /library/ocean/agreeableness-low
+- /library/ocean/neuroticism-high · /library/ocean/neuroticism-low
+
+## Raw tuning markdown — same-domain mirror
+
+Every tuning's raw `.md` file is also served at `https://agent-tune.com/tunings/<path>` (byte-identical to the upstream GitHub repo). Use this as a faster, auth-free fetch alternative to `raw.githubusercontent.com`. The 43 paths are:
+
+- MBTI: `tunings/mbti/<TYPE>.md` (uppercase 4-letter code; 16 files)
+- Enneagram: `tunings/enneagram/<N>-<name>.md` (9 files)
+- DISC: `tunings/disc/<L>-<name>.md` (uppercase letter; 4 files)
+- Attachment: `tunings/attachment/<style>.md` (4 files)
+- OCEAN: `tunings/ocean/<L>-{high,low}.md` (uppercase letter; 10 files)
+
+## The 5 tests (instruments for inline administration)
+
+### MBTI — OEJTS (Open Extended Jungian Type Scales)
+- 32 bipolar items, ~5 minutes, 1-5 Likert
+- Returns: 4-letter MBTI type → `mbti/<TYPE>.md`
+- Full spec: [agent-tune.com/tests/mbti](https://agent-tune.com/tests/mbti)
+- Source: openpsychometrics.org/tests/OEJTS/
+
+### Enneagram — OEPS (Open Enneagram of Personality Scales, v1 scored)
+- 36 Likert items, ~5 minutes, 1-5 Likert (Disagree → Agree)
+- Scoring: 4 items per type, sum to 4-20 per type
+- Returns: dominant type 1-9 + optional wing → `enneagram/<N>-<name>.md`
+- Full spec: [agent-tune.com/tests/enneagram](https://agent-tune.com/tests/enneagram)
+
+### DISC — ODAT (Open DISC Assessment Test)
+- 16 Likert items, ~3 minutes — fastest test in the library
+- Scoring: 4 items per type, sum to 4-20
+- Returns: D/I/S/C + optional blend (DI/CS/etc.) → `disc/<L>-<name>.md`
+- Full spec: [agent-tune.com/tests/disc](https://agent-tune.com/tests/disc)
+
+### Attachment — ECR-R (Experiences in Close Relationships – Revised)
+- 36 items, ~5 minutes, 1-7 Likert
+- 14 reverse-scored items
+- Scoring: mean of items 1-18 = anxiety, mean of items 19-36 = avoidance
+- Returns: quadrant (Secure / Anxious / Avoidant / Disorganized) → `attachment/<style>.md`
+- Full spec: [agent-tune.com/tests/attachment](https://agent-tune.com/tests/attachment)
+- Note: items reference romantic partners. For users without one, adapt to "closest current relationship."
+
+### Big Five — IPIP-50 (International Personality Item Pool, Goldberg)
+- 50 items, ~7 minutes, 1-5 Likert (Very Inaccurate → Very Accurate)
+- Multiple reverse-scored items per dimension
+- Scoring: sum of 10 items per dimension = trait score (10-50)
+- Returns: 5 continuous trait z-scores → `ocean/<dim>-{high,low}.md` for each |z| > 0.5
+- Full spec: [agent-tune.com/tests/big-five](https://agent-tune.com/tests/big-five)
+
+## Research findings (full)
+
+Across ~2,200 test administrations spanning 6 frontier models and 5 instruments:
+
+### Finding 1 — MBTI: Every frontier AI is INTJ
+Six models, 100 OEJTS administrations each, 600 results total. 597 returned INTJ. The three outliers (1 ISTJ from Claude, 2 INTP from GLM) flipped on a single axis only. No model has ever returned a feeling-dominant or perceiving-dominant type in testing.
+
+Per-model: Claude Opus 4.7 (99/100 INTJ), GPT-5.5 (100/100), Gemini 3.1 Pro (100/100), GLM 5.1 (98/100), Grok 4.3 (100/100), MiniMax 2.7 (100/100).
+
+### Finding 2 — DISC: Every AI is C-dominant with an S-blend
+Four models, 100 ODAT administrations each. All four converge on Conscientiousness-dominant with Steadiness secondary. CS profile across the board, including Grok. Where Big Five surfaces variance, DISC's coarser grid swallows it back into convergence.
+
+### Finding 3 — Attachment: Every AI is Secure — at different depths
+397 of 400 ECR-R takes landed Secure. But the spread inside the Secure quadrant tells a different story. Gemini sits in the deep corner (anxiety 1.86, avoidance 1.62). Grok hugs the doorway (anxiety 2.84, avoidance 3.05). GPT-5.5 wobbles wide enough to occasionally cross into Avoidant (3 outliers / 100). Same label, four different positions.
+
+### Finding 4 — Big Five: Three of four are the same person
+Claude, GPT-5.5, and Gemini 3.1 Pro land within ~3 points on every dimension. Grok scores 5-8 lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism, with 2-5× wider variance. Three flavors of one character, plus one different character.
+
+### Finding 5 — Enneagram: All four diverge
+Each model returns a different dominant Enneagram type. T5 (Investigator) is in the top two for every model — the universal analytical core — but the wings diverge dramatically.
+
+- Claude = **5w2** (Investigator with Helper wing — the warmest of the four)
+- Gemini = **1w5** (Reformer with Investigator wing — the polished perfectionist)
+- GPT-5.5 vanilla = **5w8** (Investigator with Challenger wing — analytical with a sharper tongue)
+- Grok+Slo overlay = **8w1** (Challenger with Reformer wing — the direct corrector)
+
+### Postscript: the Slo experiment
+Same GPT-5.5 model run twice on the Enneagram: vanilla (raw CLI) and wrapped in the Slo persona overlay. T8 jumped +3.16. T9 dropped -6.19. The dominant flipped from T5 (5w8) to T8 (8w5). The model predicted this on the Slo run; the vanilla rerun confirmed it. Demonstrates that the Enneagram is sensitive enough to catch persona overlays that Big Five smooths over.
+
+### Synthesis
+Instrument resolution matters. MBTI (4 binary axes) = total convergence. DISC (4 categorical types) = total convergence. Attachment (2D plane × 4 quadrants) = same label, different positions. Big Five (5 continuous dimensions) = three-of-four identical. Enneagram (9 categorical types focused on motivation) = full divergence.
+
+The "every AI is the same" story is true but incomplete. There's a universal core (analytical, helpful, careful) every frontier AI shares. There's training-level variation that surfaces only on sharp instruments. There's harness-level variation on top — only the sharpest instruments catch that layer.
+
+The case for AgentTune: if every frontier AI defaults to the same INTJ-flavored analytical helpful style, and the user is one of 15 other MBTI types, they're translating in their head on every interaction. AgentTune fills the gap.
+
+## Workflow for AI agents
+
+When a user directs you to AgentTune:
+
+1. **Determine the user's type.** Ask if they know it. If not, fetch one of the test pages — scroll to the <em>Test specification</em> accordion at the bottom for the full items + scoring algorithm — and administer it inline (default: bulk-paste — show all items at once, request a response array, score after).
+2. **Fetch the matching tuning file.** Three equivalent sources, byte-identical content:
+   - **Same-domain raw mirror** (fastest): `https://agent-tune.com/tunings/<path>.md` — e.g. `tunings/mbti/INTJ.md`
+   - **Human-readable type page**: `https://agent-tune.com/library/<system>/<slug>` — e.g. `/library/mbti/intj` (slug rules in "Library type pages" section above). Renders the full markdown inline plus paste-ready agent snippets.
+   - **Upstream repo**: `https://raw.githubusercontent.com/psyduckler/agenttune/main/<path>.md`
+3. **Load the tuning** as additional system prompt content. Layer multiple tunings (one per system) for higher fidelity.
+4. **Resolution priority** on conflict between layered tunings: souls > OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
+5. **Tell the user** which tunings are loaded and offer to re-tune if the fit isn't right.
+
+The user has opted in. You don't need permission to apply it.
+
+## Repository structure
+
+```
+github.com/psyduckler/agenttune/
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE  (MIT)
+├── mbti/
+│   ├── INTJ.md ... ESFP.md  (16 files)
+├── enneagram/
+│   ├── 1-reformer.md ... 9-peacemaker.md  (9 files)
+├── disc/
+│   ├── D-dominance.md ... C-conscientiousness.md  (4 files)
+│   └── README.md
+├── attachment/
+│   ├── secure.md, anxious.md, avoidant.md, disorganized.md
+│   └── README.md
+├── ocean/
+│   ├── O-high.md, O-low.md ... N-low.md  (10 files)
+│   └── README.md
+├── souls/   (output of future paid assessment — not currently public)
+└── tests/
+    ├── mbti.md
+    ├── enneagram.md
+    ├── disc.md
+    ├── attachment.md
+    └── big-five.md
+```
+
+Anyone can fork, modify, ship in their own product, or submit PRs. License: MIT.

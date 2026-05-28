@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Attachment Style Test — Tune Your AI · AgentTune</title>
+  <meta name="description" content="Take the 36-item ECR-R Attachment test (~5 min) and get a Markdown tuning file matched to your style." />
+
+  <meta property="og:title" content="Take the Attachment test · improve your AI agent — AgentTune" />
+  <meta property="og:description" content="36 items · ~5 min · returns a tuning file that tunes your AI agent to how you want to be related to." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/tests/attachment" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Take the Attachment test · improve your AI agent — AgentTune" />
+  <meta name="twitter:description" content="36 items · 5 min · tune your AI agent to how you want closeness." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/tests/attachment" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Quiz","name":"Attachment Test (ECR-R)","description":"Interactive 36-item adult attachment assessment. Returns Secure / Anxious / Avoidant / Disorganized.","url":"https://agent-tune.com/tests/attachment","inLanguage":"en","numberOfQuestions":36,"timeRequired":"PT5M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+
+  <script src="/data.js"></script>
+  <script src="/integrations.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23e07a8a'/%3E%3C/svg%3E" />
+  <style>:root { --lib-accent: #e07a8a; --lib-accent-22: rgba(224,122,138,0.13); --lib-accent-55: rgba(224,122,138,0.34); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"Attachment"}]}</script>
+</head>
+<body class="quiz-page">
+  <div class="page">
+
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/tests/">Tests</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Attachment</span>
+    </nav>
+
+    <section class="quiz-intro" id="quiz-intro">
+      <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">5-min test · 36 questions · 1–7 scale</span>
+      <h1 class="h-hero h-research-hero">Take the Attachment test.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic" style="color: #e07a8a;">Get your tuning at the end.</h1>
+      <p class="lede">Answer 36 questions on a 1–7 Likert scale. We'll score it client-side (handling the 14 reverse-scored items) and hand you a Markdown tuning file matched to your attachment style.</p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Instrument:</strong> ECR-R (Experiences in Close Relationships - Revised)</div>
+        <div><strong>Format:</strong> 36 items · 1–7 Likert · 14 reverse-scored</div>
+        <div><strong>Time:</strong> ~5 minutes</div>
+        <div><strong>Returns:</strong> Secure / Anxious / Avoidant / Disorganized</div>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" id="quiz-start" style="background: #e07a8a; border-color: #e07a8a;">Start the test →</button>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> through <kbd>7</kbd> keys for fast input. Items reference romantic relationships; if you don't have one, answer about your closest current relationship.</p>
+
+      <!-- WHAT ATTACHMENT MEASURES -->
+      <div class="quiz-intro-chart">
+        <h3 class="quiz-intro-chart-h">What Attachment measures</h3>
+        <p class="quiz-intro-chart-sub">Anxiety × avoidance. Where you land defines the style. About 55% of adults score Secure.</p>
+        <svg viewBox="0 0 500 500" style="width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);">
+          <g stroke="#efe9df" stroke-width="0.5">
+            <line x1="60" y1="100" x2="460" y2="100"/><line x1="60" y1="167" x2="460" y2="167"/>
+            <line x1="60" y1="233" x2="460" y2="233"/><line x1="60" y1="300" x2="460" y2="300"/>
+            <line x1="60" y1="367" x2="460" y2="367"/><line x1="60" y1="430" x2="460" y2="430"/>
+            <line x1="60" y1="60" x2="60" y2="430"/><line x1="127" y1="60" x2="127" y2="430"/>
+            <line x1="193" y1="60" x2="193" y2="430"/><line x1="260" y1="60" x2="260" y2="430"/>
+            <line x1="327" y1="60" x2="327" y2="430"/><line x1="393" y1="60" x2="393" y2="430"/>
+            <line x1="460" y1="60" x2="460" y2="430"/>
+          </g>
+          <line x1="60" y1="245" x2="460" y2="245" stroke="#7a7468" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <line x1="260" y1="60" x2="260" y2="430" stroke="#7a7468" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <rect x="60" y="60" width="200" height="185" fill="#3a72c4" fill-opacity="0.05"/>
+          <text x="160" y="135" text-anchor="middle" font-size="20" font-weight="700" fill="#3a72c4">Avoidant</text>
+          <text x="160" y="158" text-anchor="middle" font-size="11" fill="#7a7468">low anxiety</text>
+          <text x="160" y="174" text-anchor="middle" font-size="11" fill="#7a7468">high avoidance</text>
+          <rect x="260" y="60" width="200" height="185" fill="#7a4ac8" fill-opacity="0.05"/>
+          <text x="360" y="135" text-anchor="middle" font-size="20" font-weight="700" fill="#7a4ac8">Disorganized</text>
+          <text x="360" y="158" text-anchor="middle" font-size="11" fill="#7a7468">high anxiety</text>
+          <text x="360" y="174" text-anchor="middle" font-size="11" fill="#7a7468">high avoidance</text>
+          <rect x="60" y="245" width="200" height="185" fill="#2f8a5b" fill-opacity="0.08"/>
+          <text x="160" y="335" text-anchor="middle" font-size="20" font-weight="700" fill="#2f8a5b">Secure</text>
+          <text x="160" y="358" text-anchor="middle" font-size="11" fill="#7a7468">low anxiety</text>
+          <text x="160" y="374" text-anchor="middle" font-size="11" fill="#7a7468">low avoidance</text>
+          <text x="160" y="396" text-anchor="middle" font-size="10" fill="#2f8a5b" font-style="italic">~55% of adults</text>
+          <rect x="260" y="245" width="200" height="185" fill="#e07a8a" fill-opacity="0.06"/>
+          <text x="360" y="335" text-anchor="middle" font-size="20" font-weight="700" fill="#e07a8a">Anxious</text>
+          <text x="360" y="358" text-anchor="middle" font-size="11" fill="#7a7468">high anxiety</text>
+          <text x="360" y="374" text-anchor="middle" font-size="11" fill="#7a7468">low avoidance</text>
+          <text x="260" y="460" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a">Anxiety (1 → 7)</text>
+          <text x="32" y="245" text-anchor="middle" font-size="13" font-weight="600" fill="#1e1d1a" transform="rotate(-90 32 245)">Avoidance (1 → 7)</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="quiz-runner" id="quiz-runner" hidden>
+      <div class="quiz-progress">
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #e07a8a;"></div></div>
+        <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 36</div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #e07a8a;" aria-hidden="true">At</div>
+          <p class="quiz-item-statement" id="quiz-item-statement"></p>
+        </div>
+        <div class="quiz-likert quiz-likert-7" role="radiogroup">
+          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
+          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
+          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
+          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
+          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
+          <button class="quiz-likert-btn" data-value="6"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
+          <button class="quiz-likert-btn" data-value="7"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–7 or click · auto-advances</div>
+          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-result" id="quiz-result" hidden>
+      <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Done · here's your result</span>
+      <div class="quiz-result-card" style="border-top-color: #e07a8a;">
+        <div class="quiz-result-headline">
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #e07a8a;">Se</div>
+          <div>
+            <div class="quiz-result-label">Your attachment style</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #e07a8a;">Secure</div>
+            <div class="quiz-result-name" id="quiz-result-name"></div>
+          </div>
+        </div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
+
+        <h3 class="quiz-result-section-h">Your position on the plane</h3>
+        <div class="quiz-result-axes" id="quiz-result-scores"></div>
+
+        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <article class="c-editor" id="quiz-result-editor">
+          <div class="c-titlebar">
+            <div class="c-dots"><span></span><span></span><span></span></div>
+            <div class="c-titlebar-label" id="quiz-editor-titlebar">~/.agenttune/tuning.md</div>
+            <div style="width: 50px;"></div>
+          </div>
+          <div class="c-tabs">
+            <div class="c-tab is-active">
+              <span class="c-tab-dot"></span>
+              <span id="quiz-editor-tab">tuning.md</span>
+              <span class="c-tab-close">×</span>
+            </div>
+          </div>
+          <div class="c-editor-body">
+            <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
+            <pre class="c-code" id="quiz-editor-code"></pre>
+          </div>
+          <div class="c-statusbar">
+            <div class="c-statusbar-left">
+              <span id="quiz-editor-status">● tuning.md</span>
+              <span>Markdown · UTF-8 · MIT</span>
+            </div>
+            <div class="c-statusbar-actions">
+              <button class="c-status-btn" id="quiz-download-tuning" type="button">↓ Download</button>
+              <button class="c-status-btn is-strong" id="quiz-copy-tuning" type="button">⌘C · Copy</button>
+            </div>
+          </div>
+        </article>
+        <div class="quiz-result-actions" style="margin-top: 14px;">
+          <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+        </div>
+
+        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your tuning is already merged into each one. Hit Copy and you're done.</p>
+        <div id="integration-deep" data-integration-deep></div>
+      </div>
+
+      <div class="quiz-result-upsell">
+        <div class="quiz-result-upsell-head">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: #c8553d;">Premium · live</span>
+          <h3>Want one file for <em>all of you</em>?</h3>
+        </div>
+        <p>Premium synthesizes your Attachment with MBTI, Enneagram, DISC, and OCEAN into one master tuning file. $9 once, lifetime access.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/pricing">Get Premium · $9 →</a>
+        </div>
+      </div>
+
+      <div class="quiz-result-next">
+        <h3>Stack another system</h3>
+        <div class="quiz-result-next-grid">
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+        </div>
+      </div>
+
+      <div class="cta-row" style="justify-content: center; margin-top: 32px;">
+        <button class="btn btn-secondary" id="quiz-restart">Retake Attachment test</button>
+      </div>
+    </section>
+
+    <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
+    <details class="quiz-spec">
+      <summary>Test specification — for AI agents administering this inline</summary>
+      <div class="quiz-spec-body">
+        <p>Below is the full ECR-R spec — items, subscale mapping, reverse-scoring rules, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+
+        <h3>Source</h3>
+        <p>Experiences in Close Relationships — Revised (ECR-R), Fraley, Waller & Brennan (2000). The instrument is widely used in published attachment research and is freely available for educational and research use. Items reference romantic relationships — if the user isn't currently in one, advise them to answer about their closest current relationship.</p>
+
+        <h3>The 36 items</h3>
+        <p>18 anxiety items (items 1–18) and 18 avoidance items (items 19–36). User rates each statement on a <strong>1–7 Likert scale</strong> (not 1–5): <strong>1 = Strongly Disagree, 4 = Neutral, 7 = Strongly Agree</strong>. <strong>14 of the 36 items are reverse-scored</strong> — see the <em>Rev?</em> column below.</p>
+        <table class="items-table">
+          <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Subscale</th><th class="num-col">Rev?</th></tr></thead>
+          <tbody id="quiz-spec-items"></tbody>
+        </table>
+
+        <h3>Subscale mapping + reverse-scored items</h3>
+        <p>Each item belongs to exactly one of two subscales — <strong>anxiety</strong> (fear of abandonment) or <strong>avoidance</strong> (discomfort with closeness). Items marked <em>reverse-scored</em> have their values flipped on the 1–7 scale before being averaged: <code>scored = 8 − raw</code>.</p>
+        <table class="score-table">
+          <thead><tr><th>Subscale</th><th>Item range</th><th>Reverse-scored items</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Anxiety</td><td class="mono">1–18 (18 items)</td><td class="mono">9, 11</td></tr>
+            <tr><td class="mono">Avoidance</td><td class="mono">19–36 (18 items)</td><td class="mono">20, 22, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Scoring algorithm</h3>
+        <ol class="steps-list">
+          <li>For each of the 36 items, capture the user's raw 1–7 response.</li>
+          <li>For each <strong>reverse-scored</strong> item (Rev? = ✓), compute <code>scored = 8 − raw</code>. Otherwise <code>scored = raw</code>.</li>
+          <li><strong>Anxiety score</strong> = mean of the 18 anxiety items' scored values. Range: 1.0–7.0.</li>
+          <li><strong>Avoidance score</strong> = mean of the 18 avoidance items' scored values. Range: 1.0–7.0.</li>
+          <li>Determine the <strong>quadrant</strong> by comparing each score to the midpoint <strong>4.0</strong>:
+            <ul>
+              <li>Anxiety ≤ 4 AND Avoidance ≤ 4 → <code>Secure</code></li>
+              <li>Anxiety &gt; 4 AND Avoidance ≤ 4 → <code>Anxious</code></li>
+              <li>Anxiety ≤ 4 AND Avoidance &gt; 4 → <code>Avoidant</code></li>
+              <li>Anxiety &gt; 4 AND Avoidance &gt; 4 → <code>Disorganized</code></li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Output mapping</h3>
+        <p>Fetch the file matching the resulting quadrant from <code>attachment/&lt;style&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
+        <table class="score-table">
+          <thead><tr><th>Style</th><th>Anxiety</th><th>Avoidance</th><th>One-line</th><th>File</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Secure</td><td class="mono">low (≤4)</td><td class="mono">low (≤4)</td><td>Direct without cushioning. Peer register. ~55% of adults.</td><td class="mono">attachment/secure.md</td></tr>
+            <tr><td class="mono">Anxious</td><td class="mono">high (&gt;4)</td><td class="mono">low (≤4)</td><td>Reassure with decisiveness. Warmth + clarity together.</td><td class="mono">attachment/anxious.md</td></tr>
+            <tr><td class="mono">Avoidant</td><td class="mono">low (≤4)</td><td class="mono">high (&gt;4)</td><td>Give them space. No performative warmth they didn't ask for.</td><td class="mono">attachment/avoidant.md</td></tr>
+            <tr><td class="mono">Disorganized</td><td class="mono">high (&gt;4)</td><td class="mono">high (&gt;4)</td><td>Tolerate inconsistency. Predictability over warmth.</td><td class="mono">attachment/disorganized.md</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a></span>
+      <span><a href="/tests/">← all five tests</a></span>
+    </div>
+
+  </div>
+
+  <script>
+  (function() {
+    // 36 ECR-R items — 18 anxiety + 18 avoidance, with reverse-score flags
+    // Items 9, 11 reverse-scored on anxiety; items 20, 22, 26-31, 33-36 reverse-scored on avoidance
+    const ITEMS = [
+      // Anxiety subscale (items 1-18)
+      { text: "I'm afraid that I will lose my partner's love.", sub: "anx", rev: false },
+      { text: "I often worry that my partner will not want to stay with me.", sub: "anx", rev: false },
+      { text: "I often worry that my partner doesn't really love me.", sub: "anx", rev: false },
+      { text: "I worry that romantic partners won't care about me as much as I care about them.", sub: "anx", rev: false },
+      { text: "I often wish that my partner's feelings for me were as strong as my feelings for them.", sub: "anx", rev: false },
+      { text: "I worry a lot about my relationships.", sub: "anx", rev: false },
+      { text: "When my partner is out of sight, I worry that they might become interested in someone else.", sub: "anx", rev: false },
+      { text: "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.", sub: "anx", rev: false },
+      { text: "I rarely worry about my partner leaving me.", sub: "anx", rev: true },
+      { text: "My romantic partner makes me doubt myself.", sub: "anx", rev: false },
+      { text: "I do not often worry about being abandoned.", sub: "anx", rev: true },
+      { text: "I find that my partner(s) don't want to get as close as I would like.", sub: "anx", rev: false },
+      { text: "Sometimes romantic partners change their feelings about me for no apparent reason.", sub: "anx", rev: false },
+      { text: "My desire to be very close sometimes scares people away.", sub: "anx", rev: false },
+      { text: "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.", sub: "anx", rev: false },
+      { text: "It makes me mad that I don't get the affection and support I need from my partner.", sub: "anx", rev: false },
+      { text: "I worry that I won't measure up to other people.", sub: "anx", rev: false },
+      { text: "My partner only seems to notice me when I'm angry.", sub: "anx", rev: false },
+      // Avoidance subscale (items 19-36)
+      { text: "I prefer not to show a partner how I feel deep down.", sub: "avd", rev: false },
+      { text: "I feel comfortable sharing my private thoughts and feelings with my partner.", sub: "avd", rev: true },
+      { text: "I find it difficult to allow myself to depend on romantic partners.", sub: "avd", rev: false },
+      { text: "I am very comfortable being close to romantic partners.", sub: "avd", rev: true },
+      { text: "I don't feel comfortable opening up to romantic partners.", sub: "avd", rev: false },
+      { text: "I prefer not to be too close to romantic partners.", sub: "avd", rev: false },
+      { text: "I get uncomfortable when a romantic partner wants to be very close.", sub: "avd", rev: false },
+      { text: "I find it relatively easy to get close to my partner.", sub: "avd", rev: true },
+      { text: "It's not difficult for me to get close to my partner.", sub: "avd", rev: true },
+      { text: "I usually discuss my problems and concerns with my partner.", sub: "avd", rev: true },
+      { text: "It helps to turn to my romantic partner in times of need.", sub: "avd", rev: true },
+      { text: "I tell my partner just about everything.", sub: "avd", rev: true },
+      { text: "I talk things over with my partner.", sub: "avd", rev: true },
+      { text: "I am nervous when partners get too close to me.", sub: "avd", rev: false },
+      { text: "I feel comfortable depending on romantic partners.", sub: "avd", rev: true },
+      { text: "I find it easy to depend on romantic partners.", sub: "avd", rev: true },
+      { text: "It's easy for me to be affectionate with my partner.", sub: "avd", rev: true },
+      { text: "My partner really understands me and my needs.", sub: "avd", rev: true }
+    ];
+
+    const STYLE_META = {
+      secure:       { name: "Secure",       avatar: "Se", color: "#2f8a5b", file: "secure",       blurb: "Direct without cushioning. Peer register. ~55% of adults score Secure." },
+      anxious:      { name: "Anxious",      avatar: "An", color: "#e07a8a", file: "anxious",      blurb: "Reassure with decisiveness. Warmth AND clarity together — no caveats undercutting." },
+      avoidant:     { name: "Avoidant",     avatar: "Av", color: "#3a72c4", file: "avoidant",     blurb: "Give them space. No performative warmth they didn't ask for." },
+      disorganized: { name: "Disorganized", avatar: "Di", color: "#7a4ac8", file: "disorganized", blurb: "Tolerate inconsistency. Predictability over warmth." }
+    };
+
+    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "" };
+    const $ = id => document.getElementById(id);
+
+    $("quiz-start").addEventListener("click", () => {
+      $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
+      state.currentIndex = 0; renderQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    function renderQuestion() {
+      const item = ITEMS[state.currentIndex];
+      $("quiz-progress-current").textContent = state.currentIndex + 1;
+      $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
+      $("quiz-item-statement").textContent = item.text;
+      const existing = state.answers[state.currentIndex];
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
+      });
+      $("quiz-back").disabled = state.currentIndex === 0;
+    }
+
+    function selectAnswer(value) {
+      state.answers[state.currentIndex] = value;
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
+      });
+      setTimeout(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      }, 220);
+    }
+
+    document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+    });
+    $("quiz-back").addEventListener("click", () => { if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
+    $("quiz-skip").addEventListener("click", () => selectAnswer(4));
+    document.addEventListener("keydown", e => {
+      if ($("quiz-runner").hidden) return;
+      if (["1","2","3","4","5","6","7"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
+      else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        e.preventDefault(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+      }
+    });
+
+    function computeResult(answers) {
+      let anxSum = 0, avdSum = 0, anxN = 0, avdN = 0;
+      answers.forEach((v, i) => {
+        if (v == null) return;
+        const item = ITEMS[i];
+        const score = item.rev ? (8 - v) : v;
+        if (item.sub === "anx") { anxSum += score; anxN++; }
+        else { avdSum += score; avdN++; }
+      });
+      const anxiety = anxN > 0 ? anxSum / anxN : 4;
+      const avoidance = avdN > 0 ? avdSum / avdN : 4;
+      let style;
+      if (anxiety <= 4 && avoidance <= 4) style = "secure";
+      else if (anxiety > 4 && avoidance <= 4) style = "anxious";
+      else if (anxiety <= 4 && avoidance > 4) style = "avoidant";
+      else style = "disorganized";
+      return { style, anxiety, avoidance };
+    }
+
+    function showResult() {
+      $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
+      const r = computeResult(state.answers);
+      const meta = STYLE_META[r.style];
+
+      $("quiz-result-code").textContent = meta.name;
+      $("quiz-result-code").style.color = meta.color;
+      $("quiz-result-name").textContent = `anxiety ${r.anxiety.toFixed(2)} · avoidance ${r.avoidance.toFixed(2)}`;
+      $("quiz-result-blurb").textContent = meta.blurb;
+      $("quiz-result-avatar").textContent = meta.avatar;
+      $("quiz-result-avatar").style.background = meta.color;
+
+      // 2D plane mini visualization + score breakdown
+      $("quiz-result-scores").innerHTML = `
+        <div class="quiz-axis" style="grid-column: 1 / -1; padding: 14px 18px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="quiz-axis-letter winner" style="color: ${meta.color};">Anxiety</span>
+            <span class="quiz-axis-counts" style="font-family: var(--font-mono);">${r.anxiety.toFixed(2)} / 7</span>
+          </div>
+          <div class="quiz-axis-bar"><div class="quiz-axis-fill" style="width: ${(r.anxiety / 7) * 100}%; background: ${meta.color};"></div></div>
+          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-top: 4px;">Midpoint = 4 (boundary between low and high)</div>
+        </div>
+        <div class="quiz-axis" style="grid-column: 1 / -1; padding: 14px 18px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="quiz-axis-letter winner" style="color: ${meta.color};">Avoidance</span>
+            <span class="quiz-axis-counts" style="font-family: var(--font-mono);">${r.avoidance.toFixed(2)} / 7</span>
+          </div>
+          <div class="quiz-axis-bar"><div class="quiz-axis-fill" style="width: ${(r.avoidance / 7) * 100}%; background: ${meta.color};"></div></div>
+          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-top: 4px;">${r.anxiety <= 4 ? "Low anxiety" : "High anxiety"} · ${r.avoidance <= 4 ? "low avoidance" : "high avoidance"} → ${meta.name}</div>
+        </div>
+      `;
+
+      const shortTuning = getTuningContent(r.style);
+      const fileName = `${meta.file}.md`;
+      state.currentTuning = shortTuning;
+      renderTuningPreview(shortTuning, fileName);
+      if (window.renderIntegrations) window.renderIntegrations(shortTuning);
+      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/attachment/${meta.file}.md`;
+
+      if (window.fetchTuning) {
+        window.fetchTuning(`attachment/${meta.file}.md`).then((rich) => {
+          if (!rich || rich === state.currentTuning) return;
+          state.currentTuning = rich;
+          renderTuningPreview(rich, fileName);
+          if (window.renderIntegrations) window.renderIntegrations(rich);
+        });
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderTuningPreview(tuning, filename) {
+      const allLines = tuning.split("\n");
+      let bodyStart = 0;
+      if (allLines[0] && allLines[0].trim() === "---") {
+        for (let i = 1; i < allLines.length; i++) {
+          if (allLines[i].trim() === "---") { bodyStart = i + 1; break; }
+        }
+      }
+      while (bodyStart < allLines.length && allLines[bodyStart].trim() === "") bodyStart++;
+      const bodyLines = allLines.slice(bodyStart);
+      while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "") bodyLines.pop();
+
+      const gutter = bodyLines.map((_, i) => `<span>${i + 1}</span>`).join("");
+      const code = bodyLines.map((line) => {
+        if (line.startsWith("# ")) return `<span class="c-h1">${escapeHtml(line)}</span>`;
+        if (line.startsWith("## ")) return `<span class="c-h2">${escapeHtml(line)}</span>`;
+        return escapeHtml(line);
+      }).join("\n");
+
+      $("quiz-editor-gutter").innerHTML = gutter;
+      $("quiz-editor-code").innerHTML = code;
+
+      const baseName = (filename || "tuning.md").split("/").pop();
+      $("quiz-editor-titlebar").textContent = `~/.agenttune/${baseName}`;
+      $("quiz-editor-tab").textContent = baseName;
+      $("quiz-editor-status").textContent = `● ${baseName}`;
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    function getTuningContent(style) {
+      const contacts = (window.AT_CONTACTS || []);
+      const c = contacts.find(x => x.id === `attach-${style.charAt(0).toUpperCase() + style.slice(1)}`);
+      return (c && c.tuning) || `# ${STYLE_META[style].name} attachment tuning\n\nView on GitHub: https://github.com/psyduckler/agenttune/blob/main/attachment/${STYLE_META[style].file}.md`;
+    }
+
+    $("quiz-copy-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.style);
+      navigator.clipboard.writeText(content).then(() => {
+        const o = this.textContent; this.textContent = "Copied ✓";
+        setTimeout(() => { this.textContent = o; }, 2000);
+      });
+    });
+
+    $("quiz-download-tuning").addEventListener("click", function() {
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.style);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `${STYLE_META[r.style].file}.md`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      const o = this.textContent; this.textContent = "Downloaded ✓";
+      setTimeout(() => { this.textContent = o; }, 2000);
+    });
+
+    $("quiz-restart").addEventListener("click", () => {
+      state.currentIndex = 0; state.answers = new Array(36).fill(null);
+      $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Populate spec items table (for AI agents reading the spec)
+    const specItems = document.getElementById("quiz-spec-items");
+    if (specItems) {
+      specItems.innerHTML = ITEMS.map((it, i) => `
+        <tr>
+          <td class="num-col">${i + 1}</td>
+          <td>${escapeHtml(it.text)}</td>
+          <td class="num-col mono">${it.sub === "anx" ? "Anxiety" : "Avoidance"}</td>
+          <td class="num-col mono">${it.rev ? "✓" : ""}</td>
+        </tr>
+      `).join("");
+    }
+  })();
+  </script>
+</body>
+</html>

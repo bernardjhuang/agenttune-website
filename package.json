@@ -1,0 +1,13 @@
+{
+  "name": "agent-tune-site",
+  "version": "0.1.0",
+  "description": "Landing page for AgentTune (agent-tune.com)",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=agent-tune --commit-dirty=true",
+    "dev": "npx serve ."
+  },
+  "devDependencies": {
+    "wrangler": "^4.94.0"
+  }
+}

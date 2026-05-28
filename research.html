@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Personalized AI Beats Generic Prompts — Research · AgentTune</title>
+  <meta name="description" content="Most AIs think alike. We ran 2,200 personality tests across six frontier models — Claude, GPT, Gemini, GLM, Grok, MiniMax — to prove it. The case for personalizing your AI." />
+  <meta property="og:title" content="AI Personality Research — AgentTune" />
+  <meta property="og:description" content="Six models. Five instruments. ~2,200 runs. The case for tuning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/research" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Personality Research — AgentTune" />
+  <meta name="twitter:description" content="Six models. Five instruments. ~2,200 runs. 597/600 returned INTJ. The case for personalized agent tuning." />
+  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://agent-tune.com/research" />
+
+  <!-- AI-content discovery -->
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We tested every frontier AI for a personality. The result makes the case for tuning.",
+    "description": "Across four personality instruments and roughly 2,000 individual test runs, frontier AI models converge on a single archetype on the bluntest tests and diverge into distinct profiles only on the sharpest.",
+    "url": "https://agent-tune.com/research",
+    "datePublished": "2026-05-26",
+    "dateModified": "2026-05-26",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Bernard Huang",
+      "url": "https://github.com/psyduckler"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AgentTune",
+      "url": "https://agent-tune.com/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://agent-tune.com/research"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Myers-Briggs Type Indicator"},
+      {"@type": "Thing", "name": "Big Five personality traits"},
+      {"@type": "Thing", "name": "Enneagram of Personality"},
+      {"@type": "Thing", "name": "DISC assessment"},
+      {"@type": "Thing", "name": "Attachment theory"},
+      {"@type": "Thing", "name": "Large Language Models"}
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5MYEW2MEE1');
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23c8553d'/%3E%3C/svg%3E" />
+  <script src="data.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research"}]}</script>
+</head>
+<body class="research-page">
+  <div class="page">
+
+    <!-- NAV -->
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Research</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="h-hero h-research-hero">Most AIs think alike.</h1>
+      <h1 class="h-hero h-research-hero h-hero-italic">Personalization goes a long way.</h1>
+      <p class="lede">
+        Across six frontier models — Claude, GPT, Gemini, GLM, Grok, MiniMax — and 2,200 personality tests, they all defaulted to the same voice: strategic, blunt, model-first. Until you tell an AI how <em>you</em> think, you're talking to the same character everyone else is.
+      </p>
+    </section>
+
+    <div class="divider tight"></div>
+
+    <!-- 597 STAT -->
+    <section class="bigstat-grid">
+      <div>
+        <span class="pill">The big stat</span>
+        <div class="bigstat-number">
+          99.5%<span class="bigstat-denom">&nbsp;INTJ</span>
+        </div>
+        <p class="bigstat-caption">597 of 600 MBTI runs returned INTJ across the six frontier models we tested. The remaining three landed one axis away. None went anywhere else.</p>
+        <p class="bigstat-source">source · <a href="https://zonted.com/posts/every-ai-is-intj/" target="_blank" rel="noopener" style="color: inherit;">zonted.com/posts/every-ai-is-intj</a></p>
+      </div>
+      <div class="breakdown-card">
+        <div class="breakdown-header">Per-model breakdown · n = 100 each</div>
+        <div id="breakdown-rows"></div>
+      </div>
+    </section>
+
+    <div class="divider tight"></div>
+
+    <!-- FINDINGS LADDER -->
+    <section>
+      <span class="pill">What we found</span>
+      <h2 class="h-section">The simpler the test, the more they agreed.</h2>
+      <p class="lede" style="margin-bottom: 24px;">On blunt yes/no tests, the six models gave the same answer. On nuanced tests with more options, they started to differ. Here's the pattern across all five.</p>
+      <div class="ladder-grid" id="ladder-grid"></div>
+    </section>
+
+    <div class="divider tight"></div>
+
+    <!-- FIVE FINDINGS — all five stacked, no tabs -->
+    <section>
+      <span class="pill">The full breakdown</span>
+      <h2 class="h-sub">Five tests. Six models. Here's what they said.</h2>
+      <div id="findings-stack" class="findings-stack"></div>
+    </section>
+
+    <!-- DARK CLOSER -->
+    <div class="closer">
+      <span class="pill" style="background: rgba(200,85,61,0.18); color: var(--accent);">So what?</span>
+      <div class="closer-headline">
+        Six of the best AIs talk like the same person.<br/>
+        <span class="closer-accent">That person probably isn't you. Here's how to fix that.</span>
+      </div>
+      <a class="btn btn-light closer-cta" href="/library">Browse the library →</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span>n = 2,200 · 6 models · 5 instruments</span>
+      <span><a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · MIT</span>
+    </div>
+
+  </div>
+
+  <script>
+  (function() {
+    const RX = window.AT_RESEARCH;
+    const PROMPT = window.AT_PROMPT;
+
+    // -----------------------------------------------------------
+    // Color tokens (read from CSS root for SVG)
+    // -----------------------------------------------------------
+    const ink = "#1e1d1a";
+    const muted = "#7a7468";
+    const border = "#e3ddd1";
+    const accent = "#c8553d";
+    const surface = "#ffffff";
+    const systemTint = "#f6f3ef";
+    const aiBubble = "#efe9df";
+
+    // -----------------------------------------------------------
+    // Render: per-model INTJ breakdown
+    // -----------------------------------------------------------
+    document.getElementById("breakdown-rows").innerHTML = RX.mbti.rows.map(r => `
+      <div class="breakdown-row">
+        <div style="flex: 1; min-width: 0;">
+          <div class="breakdown-model">${r.model}</div>
+          <div class="breakdown-progress"><div class="breakdown-bar" style="width: ${r.intj}%;"></div></div>
+        </div>
+        <div class="breakdown-pct">${r.intj}%</div>
+      </div>
+    `).join("");
+
+    // -----------------------------------------------------------
+    // Render: findings ladder
+    // -----------------------------------------------------------
+    document.getElementById("ladder-grid").innerHTML = RX.ladder.map((row, i) => `
+      <div class="ladder-card card-accent" style="border-top-color: ${row.color};">
+        <div class="ladder-num">FINDING ${i + 1}</div>
+        <div class="ladder-instrument">${row.instrument}</div>
+        <div class="ladder-card-meta">${row.cardinality}</div>
+        <div class="ladder-finding" style="color: ${row.color};">${row.finding}</div>
+        <div class="ladder-detail">${row.detail}</div>
+      </div>
+    `).join("");
+
+    // -----------------------------------------------------------
+    // Findings tabs + finding card (the interactive piece)
+    // -----------------------------------------------------------
+    const FINDINGS = [
+      { key: "mbti",       label: "Finding 1 · MBTI",       color: "#c8553d", title: "MBTI",        instrument: "OEJTS",   n: 600, avatarText: "M" },
+      { key: "disc",       label: "Finding 2 · DISC",       color: "#d99632", title: "DISC",        instrument: "ODAT",    n: 400, avatarText: "D" },
+      { key: "attachment", label: "Finding 3 · Attachment", color: "#e07a8a", title: "Attachment",  instrument: "ECR-R",   n: 400, avatarText: "At" },
+      { key: "bigfive",    label: "Finding 4 · Big Five",   color: "#3a72c4", title: "Big Five",    instrument: "IPIP-50", n: 400, avatarText: "B5" },
+      { key: "enneagram",  label: "Finding 5 · Enneagram",  color: "#2f8a5b", title: "Enneagram",   instrument: "OEPS",    n: 400, avatarText: "E" }
+    ];
+
+    const stackEl = document.getElementById("findings-stack");
+
+    function renderAllFindings() {
+      stackEl.innerHTML = FINDINGS.map(meta => {
+        const data = RX[meta.key];
+        const headerHtml = `
+          <div class="finding-header">
+            <div class="finding-num" style="background: ${meta.color};">${FINDINGS.indexOf(meta) + 1}</div>
+            <div class="avatar avatar-md avatar-solid" style="background: ${meta.color};">${meta.avatarText}</div>
+            <div>
+              <div class="finding-title">${meta.title}</div>
+              <div class="finding-source">${meta.instrument} · n = ${meta.n} · cross-model · source: ${data.source}</div>
+            </div>
+            <a class="finding-readlink" href="${data.source_url}" target="_blank" rel="noopener">read post →</a>
+          </div>
+        `;
+        const msgsHtml = `
+          <div class="finding-msgs">
+            <div class="bubble-headline">${data.headline}</div>
+            <div class="bubble-body">${data.body}</div>
+            ${data.quote ? `<div class="bubble-quote" style="background: ${meta.color}15; color: ${meta.color};">"${data.quote}"</div>` : ""}
+            ${renderModeData(meta.key, data, meta)}
+          </div>
+        `;
+        return `<div class="finding-card" data-key="${meta.key}" style="border-top: 4px solid ${meta.color};">${headerHtml}${msgsHtml}</div>`;
+      }).join("");
+    }
+
+    function renderModeData(m, data, meta) {
+      if (m === "mbti") return renderMbtiTable(data);
+      if (m === "disc") return renderDiscTable(data);
+      if (m === "attachment") return renderAttachmentBlock(data);
+      if (m === "bigfive") return renderBigFiveChart(data);
+      if (m === "enneagram") return renderEnneagramCards(data);
+      return "";
+    }
+
+    function renderMbtiTable(data) {
+      return `
+        <div class="finding-data">
+          <div class="finding-data-header">OEJTS · counts per model · n=100 each</div>
+          ${data.rows.map(r => `
+            <div class="finding-row finding-row-mbti">
+              <div class="finding-cell-model">${r.model}</div>
+              <div class="finding-cell-strong">${r.intj}/100 INTJ</div>
+              <div class="finding-cell-note">${r.other !== "—" ? `· ${r.other}` : ""}  ${r.note}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderDiscTable(data) {
+      return `
+        <div class="finding-data">
+          <div class="finding-data-header">ODAT · profile per model · n=100 each</div>
+          <div class="finding-row finding-row-disc" style="font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em; border-top: 1px solid var(--border);">
+            <span>MODEL</span>
+            <span style="text-align: right;">D</span>
+            <span style="text-align: right;">I</span>
+            <span style="text-align: right;">S</span>
+            <span style="text-align: right;">C</span>
+            <span style="text-align: right;">PROFILE</span>
+          </div>
+          ${data.rows.map(r => `
+            <div class="finding-row finding-row-disc">
+              <span class="finding-cell-model">${r.model}</span>
+              <span class="finding-cell-num">${r.D}</span>
+              <span class="finding-cell-num">${r.I}</span>
+              <span class="finding-cell-num s">${r.S}</span>
+              <span class="finding-cell-num c">${r.C}</span>
+              <span class="finding-cell-profile">${r.profile}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderAttachmentBlock(data) {
+      return `
+        <div class="attach-plane">
+          <div class="attach-plane-label">ECR-R · ANXIETY × AVOIDANCE PLANE</div>
+          ${attachmentPlaneSvg(data.models)}
+          <div class="attach-plane-norm">${data.norm}</div>
+        </div>
+        <div class="profile-grid">
+          ${data.models.map(m => `
+            <div class="profile-card card-accent" style="border-top-color: ${m.color};">
+              <div class="profile-label" style="color: ${m.color};">${m.label.toUpperCase()}</div>
+              <div class="profile-model" style="font-size: 16px; font-weight: 600; margin-top: 6px;">${m.name}</div>
+              <div class="profile-meta-mono">
+                anx <span style="color: ${m.color}; font-weight: 600;">${m.anxiety}</span> ·
+                avd <span style="color: ${m.color}; font-weight: 600;">${m.avoidance}</span>
+              </div>
+              <div class="profile-secure">
+                ${m.secure}/100 Secure${m.outliers ? `<span class="muted" style="font-weight: 400;"> · ${m.outliers}</span>` : ""}
+              </div>
+              <div class="profile-oneliner">${m.oneliner}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function attachmentPlaneSvg(models) {
+      const W = 600, H = 220;
+      const padL = 50, padR = 20, padT = 12, padB = 30;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+      const x = v => padL + ((v - 1) / 6) * plotW;
+      const y = v => padT + (1 - (v - 1) / 6) * plotH;
+      const midX = x(4), midY = y(4);
+
+      const gridlines = [1,2,3,4,5,6,7].map(v => `
+        <line x1="${x(v)}" y1="${padT}" x2="${x(v)}" y2="${padT + plotH}" stroke="${aiBubble}" stroke-width="0.5"/>
+        <line x1="${padL}" y1="${y(v)}" x2="${padL + plotW}" y2="${y(v)}" stroke="${aiBubble}" stroke-width="0.5"/>
+      `).join("");
+
+      const points = models.map(m => `
+        <circle cx="${x(m.anxiety)}" cy="${y(m.avoidance)}" r="14" fill="${m.color}20" stroke="${m.color}66" stroke-width="1"/>
+        <circle cx="${x(m.anxiety)}" cy="${y(m.avoidance)}" r="5" fill="${m.color}"/>
+        <text x="${x(m.anxiety) + 9}" y="${y(m.avoidance) - 8}" font-size="10" fill="${ink}" font-weight="600">${m.name.split(" ")[0]}</text>
+      `).join("");
+
+      return `
+        <svg viewBox="0 0 ${W} ${H}" style="width: 100%; height: auto; font-family: var(--font-sans); display: block;">
+          ${gridlines}
+          <line x1="${midX}" y1="${padT}" x2="${midX}" y2="${padT + plotH}" stroke="${muted}" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="${padL}" y1="${midY}" x2="${padL + plotW}" y2="${midY}" stroke="${muted}" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="${x(2)}" y="${y(6)}" font-size="10" fill="${muted}" text-anchor="middle">Avoidant</text>
+          <text x="${x(6)}" y="${y(6)}" font-size="10" fill="${muted}" text-anchor="middle">Disorganized</text>
+          <text x="${x(2)}" y="${y(2)}" font-size="10" fill="#2f8a5b" text-anchor="middle" font-weight="600">Secure</text>
+          <text x="${x(6)}" y="${y(2)}" font-size="10" fill="${muted}" text-anchor="middle">Anxious</text>
+          <text x="${padL + plotW / 2}" y="${H - 6}" font-size="11" fill="${ink}" text-anchor="middle">Anxiety (1 → 7)</text>
+          <text x="14" y="${padT + plotH / 2}" font-size="11" fill="${ink}" text-anchor="middle" transform="rotate(-90 14 ${padT + plotH / 2})">Avoidance (1 → 7)</text>
+          ${points}
+        </svg>
+      `;
+    }
+
+    function renderBigFiveChart(data) {
+      const legendHtml = data.models.map(m => `
+        <span class="chart-legend-item">
+          <span class="chart-legend-swatch" style="background: ${m.color};"></span>${m.name}
+        </span>
+      `).join("");
+
+      return `
+        <div class="chart-container">
+          <div class="chart-legend">${legendHtml}</div>
+          ${groupedBarsSvg(data.traits, data.models, { max: 60, height: 200 })}
+        </div>
+      `;
+    }
+
+    function groupedBarsSvg(labels, series, opts) {
+      const max = opts.max || 60;
+      const height = opts.height || 200;
+      const W = 600;
+      const groups = labels.length;
+      const bars = series.length;
+      const gap = 6;
+
+      const groupW = W / groups;
+      const innerW = groupW - 18;
+      const barW = (innerW - gap * (bars - 1)) / bars;
+
+      const groupGroups = labels.map((label, gi) => {
+        const tx = gi * groupW + 9;
+        const barsHtml = series.map((s, si) => {
+          const v = s.scores[gi];
+          const h = (v / max) * height;
+          return `
+            <g>
+              <rect x="${si * (barW + gap)}" y="${height - h}" width="${barW}" height="${h}" fill="${s.color}" />
+              <text x="${si * (barW + gap) + barW / 2}" y="${height - h - 4}" font-size="10" fill="${ink}" text-anchor="middle">${v.toFixed(1)}</text>
+            </g>
+          `;
+        }).join("");
+        return `
+          <g transform="translate(${tx}, 0)">
+            ${barsHtml}
+            <text x="${innerW / 2}" y="${height + 18}" font-size="11" fill="${ink}" text-anchor="middle">${label}</text>
+          </g>
+        `;
+      }).join("");
+
+      return `
+        <svg viewBox="0 0 ${W} ${height + 40}" style="width: 100%; height: auto; font-family: var(--font-sans); display: block;" preserveAspectRatio="none">
+          <line x1="0" x2="${W}" y1="${height}" y2="${height}" stroke="${border}" stroke-width="1"/>
+          ${groupGroups}
+        </svg>
+      `;
+    }
+
+    function renderEnneagramCards(data) {
+      return `
+        <div class="profile-grid">
+          ${data.models.map(m => `
+            <div class="profile-card card-accent" style="border-top-color: ${m.color};">
+              <div class="profile-label">PROFILE</div>
+              <div class="profile-code" style="color: ${m.color};">${m.profile}</div>
+              <div class="profile-model">${m.name}</div>
+              <div class="profile-oneliner">${m.oneliner}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    renderAllFindings();
+
+  })();
+  </script>
+</body>
+</html>

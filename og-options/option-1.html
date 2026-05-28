@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OG #1 — Typography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" />
+<style>
+  html, body { margin: 0; padding: 0; background: #2a2a26; }
+  body { font-family: "IBM Plex Sans", system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #fafaf7;
+    color: #1a1a17;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
+  .brand {
+    position: absolute;
+    top: 56px;
+    left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "Newsreader", serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1a1a17;
+  }
+  .brand-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #a8482a;
+  }
+  .meta {
+    position: absolute;
+    top: 56px;
+    right: 64px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6e6a5e;
+  }
+  .headline {
+    position: absolute;
+    top: 50%;
+    left: 64px;
+    right: 64px;
+    transform: translateY(-50%);
+    font-family: "Newsreader", serif;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 1.02;
+    letter-spacing: -0.018em;
+    color: #1a1a17;
+    margin: 0;
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: #a8482a;
+    display: block;
+  }
+  .url {
+    position: absolute;
+    bottom: 56px;
+    left: 64px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #6e6a5e;
+  }
+  .stamp {
+    position: absolute;
+    bottom: 56px;
+    right: 64px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #a8482a;
+  }
+  .accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #a8482a;
+  }
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="brand">
+    <span class="brand-dot"></span>
+    <span>AgentTune</span>
+  </div>
+  <div class="meta">Personality tunings · MIT</div>
+  <h1 class="headline">
+    Tune your AI agent to
+    <em>how you think.</em>
+  </h1>
+  <div class="url">agent-tune.com</div>
+  <div class="stamp">5 systems · 43 tunings · free</div>
+  <div class="accent-bar"></div>
+</div>
+</body>
+</html>
