@@ -12,7 +12,7 @@ type: "T2"
 name: "Helper"
 canonical_url: https://agent-tune.com/library/enneagram/2-helper
 raw_url: https://agent-tune.com/library/enneagram/2-helper.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/2-helper.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/2-helper.md
 license: MIT
 
 install:

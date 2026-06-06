@@ -12,7 +12,7 @@ type: "T1"
 name: "Reformer"
 canonical_url: https://agent-tune.com/library/enneagram/1-reformer
 raw_url: https://agent-tune.com/library/enneagram/1-reformer.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/1-reformer.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/1-reformer.md
 license: MIT
 
 install:

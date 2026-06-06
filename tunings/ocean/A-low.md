@@ -12,7 +12,7 @@ type: "A-low"
 name: "Low Agreeableness"
 canonical_url: https://agent-tune.com/library/ocean/agreeableness-low
 raw_url: https://agent-tune.com/library/ocean/agreeableness-low.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/A-low.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-low.md
 license: MIT
 
 install:

@@ -12,7 +12,7 @@ type: "ENFP"
 name: "Campaigner"
 canonical_url: https://agent-tune.com/library/mbti/enfp
 raw_url: https://agent-tune.com/library/mbti/enfp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ENFP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFP.md
 license: MIT
 
 install:

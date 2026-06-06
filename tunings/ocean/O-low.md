@@ -12,7 +12,7 @@ type: "O-low"
 name: "Low Openness"
 canonical_url: https://agent-tune.com/library/ocean/openness-low
 raw_url: https://agent-tune.com/library/ocean/openness-low.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/O-low.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-low.md
 license: MIT
 
 install:

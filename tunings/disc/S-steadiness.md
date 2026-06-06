@@ -12,7 +12,7 @@ type: "S"
 name: "Steadiness"
 canonical_url: https://agent-tune.com/library/disc/s-steadiness
 raw_url: https://agent-tune.com/library/disc/s-steadiness.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/disc/S-steadiness.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/S-steadiness.md
 license: MIT
 
 install:

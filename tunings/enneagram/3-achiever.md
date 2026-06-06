@@ -12,7 +12,7 @@ type: "T3"
 name: "Achiever"
 canonical_url: https://agent-tune.com/library/enneagram/3-achiever
 raw_url: https://agent-tune.com/library/enneagram/3-achiever.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/3-achiever.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/3-achiever.md
 license: MIT
 
 install:

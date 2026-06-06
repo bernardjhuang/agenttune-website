@@ -12,7 +12,7 @@ type: "ENTP"
 name: "Debater"
 canonical_url: https://agent-tune.com/library/mbti/entp
 raw_url: https://agent-tune.com/library/mbti/entp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ENTP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTP.md
 license: MIT
 
 install:

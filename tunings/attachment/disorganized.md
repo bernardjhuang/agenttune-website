@@ -12,7 +12,7 @@ type: "Disorganized"
 name: "Disorganized"
 canonical_url: https://agent-tune.com/library/attachment/disorganized
 raw_url: https://agent-tune.com/library/attachment/disorganized.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/attachment/disorganized.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/disorganized.md
 license: MIT
 
 install:

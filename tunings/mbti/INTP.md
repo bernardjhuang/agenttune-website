@@ -12,7 +12,7 @@ type: "INTP"
 name: "Logician"
 canonical_url: https://agent-tune.com/library/mbti/intp
 raw_url: https://agent-tune.com/library/mbti/intp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/INTP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTP.md
 license: MIT
 
 install:

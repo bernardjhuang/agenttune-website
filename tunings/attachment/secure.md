@@ -12,7 +12,7 @@ type: "Secure"
 name: "Secure"
 canonical_url: https://agent-tune.com/library/attachment/secure
 raw_url: https://agent-tune.com/library/attachment/secure.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/attachment/secure.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/secure.md
 license: MIT
 
 install:

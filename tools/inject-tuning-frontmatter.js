@@ -52,7 +52,7 @@ function frontmatterFor(c) {
   const slug = slugFor(c);
   const canonical = `https://agent-tune.com/library/${c.system}/${slug}`;
   const raw = `https://agent-tune.com/library/${c.system}/${slug}.md`;
-  const githubRaw = `https://raw.githubusercontent.com/psyduckler/agenttune/main/${c.path}`;
+  const githubRaw = `https://raw.githubusercontent.com/bernardjhuang/agenttune/main/${c.path}`;
 
   // For Enneagram, type field is "Type N · Name"; for others, just the code.
   const typeField = c.system === "enneagram"

@@ -12,7 +12,7 @@ type: "T6"
 name: "Loyalist"
 canonical_url: https://agent-tune.com/library/enneagram/6-loyalist
 raw_url: https://agent-tune.com/library/enneagram/6-loyalist.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/6-loyalist.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/6-loyalist.md
 license: MIT
 
 install:

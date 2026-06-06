@@ -12,7 +12,7 @@ type: "T9"
 name: "Peacemaker"
 canonical_url: https://agent-tune.com/library/enneagram/9-peacemaker
 raw_url: https://agent-tune.com/library/enneagram/9-peacemaker.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/9-peacemaker.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/9-peacemaker.md
 license: MIT
 
 install:

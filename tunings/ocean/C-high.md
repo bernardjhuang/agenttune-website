@@ -12,7 +12,7 @@ type: "C-high"
 name: "High Conscientiousness"
 canonical_url: https://agent-tune.com/library/ocean/conscientiousness-high
 raw_url: https://agent-tune.com/library/ocean/conscientiousness-high.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/C-high.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-high.md
 license: MIT
 
 install:

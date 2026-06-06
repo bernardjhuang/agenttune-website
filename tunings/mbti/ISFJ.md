@@ -12,7 +12,7 @@ type: "ISFJ"
 name: "Defender"
 canonical_url: https://agent-tune.com/library/mbti/isfj
 raw_url: https://agent-tune.com/library/mbti/isfj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ISFJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFJ.md
 license: MIT
 
 install:

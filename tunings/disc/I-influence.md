@@ -12,7 +12,7 @@ type: "I"
 name: "Influence"
 canonical_url: https://agent-tune.com/library/disc/i-influence
 raw_url: https://agent-tune.com/library/disc/i-influence.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/disc/I-influence.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/I-influence.md
 license: MIT
 
 install:

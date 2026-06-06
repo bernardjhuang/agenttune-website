@@ -12,7 +12,7 @@ type: "INFJ"
 name: "Advocate"
 canonical_url: https://agent-tune.com/library/mbti/infj
 raw_url: https://agent-tune.com/library/mbti/infj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/INFJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFJ.md
 license: MIT
 
 install:

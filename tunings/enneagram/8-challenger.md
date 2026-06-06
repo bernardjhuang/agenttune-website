@@ -12,7 +12,7 @@ type: "T8"
 name: "Challenger"
 canonical_url: https://agent-tune.com/library/enneagram/8-challenger
 raw_url: https://agent-tune.com/library/enneagram/8-challenger.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/8-challenger.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/8-challenger.md
 license: MIT
 
 install:

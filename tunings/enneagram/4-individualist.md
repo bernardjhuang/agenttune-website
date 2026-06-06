@@ -12,7 +12,7 @@ type: "T4"
 name: "Individualist"
 canonical_url: https://agent-tune.com/library/enneagram/4-individualist
 raw_url: https://agent-tune.com/library/enneagram/4-individualist.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/4-individualist.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/4-individualist.md
 license: MIT
 
 install:

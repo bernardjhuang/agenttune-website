@@ -2,7 +2,7 @@
 
 The marketing + commerce site for [AgentTune](https://github.com/bernardjhuang/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
 
-The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[psyduckler/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo is **private** because it contains Premium / Stripe / Cloudflare KV plumbing that shouldn't be public.
+The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo is **private** because it contains Premium / Stripe / Cloudflare KV plumbing that shouldn't be public.
 
 ## Stack
 
@@ -35,7 +35,7 @@ The tuning library itself (43 personality tuning markdown files) is in the publi
 │   ├── webhook/stripe.js       Stripe webhook handler
 │   └── _synthesis.js, _shared.js
 ├── tunings/                    Markdown source of truth (mirrored from
-│                               psyduckler/agenttune — DO NOT EDIT HERE)
+│                               bernardjhuang/agenttune — DO NOT EDIT HERE)
 ├── tools/
 │   ├── generate-library.js     Builds the 43 /library pages from /tunings
 │   └── v2-content.js           Per-type human content (humanContexts, outward)
@@ -110,7 +110,7 @@ Once those are set, every `git push origin main` deploys production.
 
 ## Keeping `tunings/` in sync with the library repo
 
-The `tunings/` directory mirrors the canonical library at `psyduckler/agenttune`. A GitHub Action (planned) will open a sync PR when upstream changes. For now, sync manually:
+The `tunings/` directory mirrors the canonical library at `bernardjhuang/agenttune`. A GitHub Action (planned) will open a sync PR when upstream changes. For now, sync manually:
 
 ```sh
 rsync -av --delete \
@@ -122,4 +122,4 @@ npm run deploy
 
 ## License
 
-Source code in this repo is **proprietary** — all rights reserved. Tunings under `tunings/` are MIT, mirrored from [psyduckler/agenttune](https://github.com/bernardjhuang/agenttune).
+Source code in this repo is **proprietary** — all rights reserved. Tunings under `tunings/` are MIT, mirrored from [bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune).

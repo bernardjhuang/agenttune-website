@@ -12,7 +12,7 @@ type: "O-high"
 name: "High Openness"
 canonical_url: https://agent-tune.com/library/ocean/openness-high
 raw_url: https://agent-tune.com/library/ocean/openness-high.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/O-high.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-high.md
 license: MIT
 
 install:

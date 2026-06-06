@@ -12,7 +12,7 @@ type: "ENTJ"
 name: "Commander"
 canonical_url: https://agent-tune.com/library/mbti/entj
 raw_url: https://agent-tune.com/library/mbti/entj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ENTJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTJ.md
 license: MIT
 
 install:

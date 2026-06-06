@@ -12,7 +12,7 @@ type: "INTJ"
 name: "Architect"
 canonical_url: https://agent-tune.com/library/mbti/intj
 raw_url: https://agent-tune.com/library/mbti/intj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/INTJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTJ.md
 license: MIT
 
 install:

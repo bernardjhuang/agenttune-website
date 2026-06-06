@@ -12,7 +12,7 @@ type: "Avoidant"
 name: "Avoidant"
 canonical_url: https://agent-tune.com/library/attachment/avoidant
 raw_url: https://agent-tune.com/library/attachment/avoidant.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/attachment/avoidant.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/avoidant.md
 license: MIT
 
 install:

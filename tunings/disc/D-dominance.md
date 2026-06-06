@@ -12,7 +12,7 @@ type: "D"
 name: "Dominance"
 canonical_url: https://agent-tune.com/library/disc/d-dominance
 raw_url: https://agent-tune.com/library/disc/d-dominance.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/disc/D-dominance.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/D-dominance.md
 license: MIT
 
 install:

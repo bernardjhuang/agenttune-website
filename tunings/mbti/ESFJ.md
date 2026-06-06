@@ -12,7 +12,7 @@ type: "ESFJ"
 name: "Consul"
 canonical_url: https://agent-tune.com/library/mbti/esfj
 raw_url: https://agent-tune.com/library/mbti/esfj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ESFJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFJ.md
 license: MIT
 
 install:

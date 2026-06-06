@@ -12,7 +12,7 @@ type: "C-low"
 name: "Low Conscientiousness"
 canonical_url: https://agent-tune.com/library/ocean/conscientiousness-low
 raw_url: https://agent-tune.com/library/ocean/conscientiousness-low.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/C-low.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-low.md
 license: MIT
 
 install:

@@ -12,7 +12,7 @@ type: "ESTP"
 name: "Entrepreneur"
 canonical_url: https://agent-tune.com/library/mbti/estp
 raw_url: https://agent-tune.com/library/mbti/estp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ESTP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTP.md
 license: MIT
 
 install:

@@ -12,7 +12,7 @@ type: "ESTJ"
 name: "Executive"
 canonical_url: https://agent-tune.com/library/mbti/estj
 raw_url: https://agent-tune.com/library/mbti/estj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ESTJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTJ.md
 license: MIT
 
 install:

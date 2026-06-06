@@ -12,7 +12,7 @@ type: "N-high"
 name: "High Neuroticism"
 canonical_url: https://agent-tune.com/library/ocean/neuroticism-high
 raw_url: https://agent-tune.com/library/ocean/neuroticism-high.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/N-high.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/N-high.md
 license: MIT
 
 install:

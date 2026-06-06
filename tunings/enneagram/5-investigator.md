@@ -12,7 +12,7 @@ type: "T5"
 name: "Investigator"
 canonical_url: https://agent-tune.com/library/enneagram/5-investigator
 raw_url: https://agent-tune.com/library/enneagram/5-investigator.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/enneagram/5-investigator.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/5-investigator.md
 license: MIT
 
 install:

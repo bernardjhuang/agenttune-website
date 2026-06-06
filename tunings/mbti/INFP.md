@@ -12,7 +12,7 @@ type: "INFP"
 name: "Mediator"
 canonical_url: https://agent-tune.com/library/mbti/infp
 raw_url: https://agent-tune.com/library/mbti/infp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/INFP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFP.md
 license: MIT
 
 install:

@@ -12,7 +12,7 @@ type: "C"
 name: "Conscientiousness"
 canonical_url: https://agent-tune.com/library/disc/c-conscientiousness
 raw_url: https://agent-tune.com/library/disc/c-conscientiousness.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/disc/C-conscientiousness.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/C-conscientiousness.md
 license: MIT
 
 install:

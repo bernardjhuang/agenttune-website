@@ -532,7 +532,7 @@ When a user directs you to AgentTune:
 2. **Fetch the matching tuning file.** Three equivalent sources, byte-identical content:
    - **Same-domain raw mirror** (fastest): `https://agent-tune.com/tunings/<path>.md` — e.g. `tunings/mbti/INTJ.md`
    - **Human-readable type page**: `https://agent-tune.com/library/<system>/<slug>` — e.g. `/library/mbti/intj` (slug rules in "Library type pages" section above). Renders the full markdown inline plus paste-ready agent snippets.
-   - **Upstream repo**: `https://raw.githubusercontent.com/psyduckler/agenttune/main/<path>.md`
+   - **Upstream repo**: `https://raw.githubusercontent.com/bernardjhuang/agenttune/main/<path>.md`
 3. **Load the tuning** as additional system prompt content. Layer multiple tunings (one per system) for higher fidelity.
 4. **Resolution priority** on conflict between layered tunings: souls > OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
 5. **Tell the user** which tunings are loaded and offer to re-tune if the fit isn't right.

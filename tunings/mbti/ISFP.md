@@ -12,7 +12,7 @@ type: "ISFP"
 name: "Adventurer"
 canonical_url: https://agent-tune.com/library/mbti/isfp
 raw_url: https://agent-tune.com/library/mbti/isfp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ISFP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFP.md
 license: MIT
 
 install:

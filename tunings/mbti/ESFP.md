@@ -12,7 +12,7 @@ type: "ESFP"
 name: "Entertainer"
 canonical_url: https://agent-tune.com/library/mbti/esfp
 raw_url: https://agent-tune.com/library/mbti/esfp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ESFP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFP.md
 license: MIT
 
 install:

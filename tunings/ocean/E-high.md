@@ -12,7 +12,7 @@ type: "E-high"
 name: "High Extraversion"
 canonical_url: https://agent-tune.com/library/ocean/extraversion-high
 raw_url: https://agent-tune.com/library/ocean/extraversion-high.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/E-high.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/E-high.md
 license: MIT
 
 install:

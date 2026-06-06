@@ -12,7 +12,7 @@ type: "Anxious"
 name: "Anxious"
 canonical_url: https://agent-tune.com/library/attachment/anxious
 raw_url: https://agent-tune.com/library/attachment/anxious.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/attachment/anxious.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/anxious.md
 license: MIT
 
 install:

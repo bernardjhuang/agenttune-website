@@ -12,7 +12,7 @@ type: "A-high"
 name: "High Agreeableness"
 canonical_url: https://agent-tune.com/library/ocean/agreeableness-high
 raw_url: https://agent-tune.com/library/ocean/agreeableness-high.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/ocean/A-high.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-high.md
 license: MIT
 
 install:

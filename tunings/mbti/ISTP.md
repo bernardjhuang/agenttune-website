@@ -12,7 +12,7 @@ type: "ISTP"
 name: "Virtuoso"
 canonical_url: https://agent-tune.com/library/mbti/istp
 raw_url: https://agent-tune.com/library/mbti/istp.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ISTP.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTP.md
 license: MIT
 
 install:

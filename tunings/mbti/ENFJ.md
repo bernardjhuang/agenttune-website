@@ -12,7 +12,7 @@ type: "ENFJ"
 name: "Protagonist"
 canonical_url: https://agent-tune.com/library/mbti/enfj
 raw_url: https://agent-tune.com/library/mbti/enfj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ENFJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFJ.md
 license: MIT
 
 install:

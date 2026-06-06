@@ -12,7 +12,7 @@ type: "ISTJ"
 name: "Inspector"
 canonical_url: https://agent-tune.com/library/mbti/istj
 raw_url: https://agent-tune.com/library/mbti/istj.md
-upstream_url: https://raw.githubusercontent.com/psyduckler/agenttune/main/mbti/ISTJ.md
+upstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTJ.md
 license: MIT
 
 install:
