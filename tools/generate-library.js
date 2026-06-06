@@ -548,7 +548,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escAttr(`${displayCode} — ${displayName}`)}" />
   <meta name="twitter:description" content="${escAttr(c.blurb)}" />
-  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og${route}.png" />
   <meta name="twitter:image:alt" content="${escAttr(`${displayCode} — ${displayName} · AgentTune`)}" />
 
@@ -1146,7 +1146,7 @@ function buildHub(contacts) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
   <meta name="twitter:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
-  <meta name="twitter:site" content="@psyduckler" />
+  <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/library/" />
