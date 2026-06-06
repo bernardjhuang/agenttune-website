@@ -1193,7 +1193,7 @@ function buildHub(contacts) {
 
     <!-- HERO -->
     <section class="hero">
-      <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every system.</em></h1>
+      <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every agent.</em></h1>
       <p class="lede">
         Five validated systems. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
       </p>
