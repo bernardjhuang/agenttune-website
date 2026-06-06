@@ -52,7 +52,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
 
@@ -310,7 +310,7 @@
         </ol>
 
         <h3>Output mapping</h3>
-        <p>Fetch the file matching the resulting quadrant from <code>attachment/&lt;style&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
+        <p>Fetch the file matching the resulting quadrant from <code>attachment/&lt;style&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
         <table class="score-table">
           <thead><tr><th>Style</th><th>Anxiety</th><th>Avoidance</th><th>One-line</th><th>File</th></tr></thead>
           <tbody>
@@ -324,7 +324,7 @@
     </details>
 
     <div class="footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
     </div>
 
@@ -483,7 +483,7 @@
       state.currentTuning = shortTuning;
       renderTuningPreview(shortTuning, fileName);
       if (window.renderIntegrations) window.renderIntegrations(shortTuning);
-      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/attachment/${meta.file}.md`;
+      $("quiz-github-link").href = `https://github.com/bernardjhuang/agenttune/blob/main/attachment/${meta.file}.md`;
 
       if (window.fetchTuning) {
         window.fetchTuning(`attachment/${meta.file}.md`).then((rich) => {
@@ -532,7 +532,7 @@
     function getTuningContent(style) {
       const contacts = (window.AT_CONTACTS || []);
       const c = contacts.find(x => x.id === `attach-${style.charAt(0).toUpperCase() + style.slice(1)}`);
-      return (c && c.tuning) || `# ${STYLE_META[style].name} attachment tuning\n\nView on GitHub: https://github.com/psyduckler/agenttune/blob/main/attachment/${STYLE_META[style].file}.md`;
+      return (c && c.tuning) || `# ${STYLE_META[style].name} attachment tuning\n\nView on GitHub: https://github.com/bernardjhuang/agenttune/blob/main/attachment/${STYLE_META[style].file}.md`;
     }
 
     $("quiz-copy-tuning").addEventListener("click", function() {

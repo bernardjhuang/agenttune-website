@@ -6,7 +6,7 @@ This file is the long-form companion to [/llms.txt](https://agent-tune.com/llms.
 
 ## Site
 
-**AgentTune** — agent-tune.com — open library of Markdown tuning files that align AI agent interaction style with how a particular user thinks. MIT licensed via [github.com/psyduckler/agenttune](https://github.com/psyduckler/agenttune).
+**AgentTune** — agent-tune.com — open library of Markdown tuning files that align AI agent interaction style with how a particular user thinks. MIT licensed via [github.com/bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune).
 
 The thesis: every frontier AI defaults to roughly the same INTJ-flavored "helpful research assistant" interaction style. Across 600 MBTI runs spanning Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, and MiniMax 2.7, 597 returned INTJ. That's a competent default, but it's one style out of sixteen, and most users aren't INTJ. Paste a tuning file into the system prompt and the same model now extends with how the user processes.
 
@@ -542,7 +542,7 @@ The user has opted in. You don't need permission to apply it.
 ## Repository structure
 
 ```
-github.com/psyduckler/agenttune/
+github.com/bernardjhuang/agenttune/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE  (MIT)

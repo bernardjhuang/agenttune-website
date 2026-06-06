@@ -1,8 +1,8 @@
 # agent-tune.com — website
 
-The marketing + commerce site for [AgentTune](https://github.com/psyduckler/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
+The marketing + commerce site for [AgentTune](https://github.com/bernardjhuang/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
 
-The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[psyduckler/agenttune](https://github.com/psyduckler/agenttune)**. This repo is **private** because it contains Premium / Stripe / Cloudflare KV plumbing that shouldn't be public.
+The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[psyduckler/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo is **private** because it contains Premium / Stripe / Cloudflare KV plumbing that shouldn't be public.
 
 ## Stack
 
@@ -122,4 +122,4 @@ npm run deploy
 
 ## License
 
-Source code in this repo is **proprietary** — all rights reserved. Tunings under `tunings/` are MIT, mirrored from [psyduckler/agenttune](https://github.com/psyduckler/agenttune).
+Source code in this repo is **proprietary** — all rights reserved. Tunings under `tunings/` are MIT, mirrored from [psyduckler/agenttune](https://github.com/bernardjhuang/agenttune).

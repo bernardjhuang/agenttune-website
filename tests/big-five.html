@@ -52,7 +52,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
 
@@ -214,7 +214,7 @@
           </div>
         </article>
         <div class="quiz-result-actions" style="margin-top: 14px;">
-          <a class="btn btn-secondary" id="quiz-github-link" href="https://github.com/psyduckler/agenttune/tree/main/ocean" target="_blank" rel="noopener">View all OCEAN files</a>
+          <a class="btn btn-secondary" id="quiz-github-link" href="https://github.com/bernardjhuang/agenttune/tree/main/ocean" target="_blank" rel="noopener">View all OCEAN files</a>
         </div>
 
         <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
@@ -346,7 +346,7 @@
         </ol>
 
         <h3>Output mapping</h3>
-        <p>Fetch each crossing dimension's file from <code>ocean/&lt;LETTER&gt;-&lt;high|low&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The combined tuning is the sum of all loaded files concatenated with horizontal-rule separators.</p>
+        <p>Fetch each crossing dimension's file from <code>ocean/&lt;LETTER&gt;-&lt;high|low&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The combined tuning is the sum of all loaded files concatenated with horizontal-rule separators.</p>
         <table class="score-table">
           <thead><tr><th>Dim</th><th>High file</th><th>High one-line</th><th>Low file</th><th>Low one-line</th></tr></thead>
           <tbody>
@@ -381,7 +381,7 @@
     </details>
 
     <div class="footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
     </div>
 
@@ -649,7 +649,7 @@
         if (c && c.tuning) {
           combined += c.tuning + "\n\n---\n\n";
         } else {
-          combined += `# ${f.dim}-${f.level}\nSee https://github.com/psyduckler/agenttune/blob/main/ocean/${f.dim}-${f.level}.md\n\n---\n\n`;
+          combined += `# ${f.dim}-${f.level}\nSee https://github.com/bernardjhuang/agenttune/blob/main/ocean/${f.dim}-${f.level}.md\n\n---\n\n`;
         }
       });
       return combined.trim();

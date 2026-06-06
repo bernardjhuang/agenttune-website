@@ -733,7 +733,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
   </div>
@@ -924,7 +924,7 @@ ${summaryLis}
     </section>
 
     <footer class="lib-footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span>43 standalone tunings · pasteable everywhere</span>
     </footer>
 
@@ -1181,7 +1181,7 @@ function buildHub(contacts) {
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
 
@@ -1199,7 +1199,7 @@ function buildHub(contacts) {
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>
-        <a class="btn btn-secondary" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
     </section>
 
@@ -1236,7 +1236,7 @@ function buildHub(contacts) {
     </section>
 
     <div class="footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span>43 standalone tunings · pasteable everywhere</span>
     </div>
 

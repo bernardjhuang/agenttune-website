@@ -53,7 +53,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
 
@@ -277,7 +277,7 @@
         </ol>
 
         <h3>Output mapping</h3>
-        <p>Fetch the file matching the dominant letter from <code>disc/&lt;LETTER&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The blend (if any) is a fidelity signal — you can optionally stack the blend's file as a secondary layer.</p>
+        <p>Fetch the file matching the dominant letter from <code>disc/&lt;LETTER&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The blend (if any) is a fidelity signal — you can optionally stack the blend's file as a secondary layer.</p>
         <table class="score-table">
           <thead><tr><th>Letter</th><th>Name</th><th>One-line</th><th>File</th></tr></thead>
           <tbody>
@@ -291,7 +291,7 @@
     </details>
 
     <div class="footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
     </div>
 
@@ -420,7 +420,7 @@
       state.currentTuning = shortTuning;
       renderTuningPreview(shortTuning, fileName);
       if (window.renderIntegrations) window.renderIntegrations(shortTuning);
-      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/disc/${meta.file}.md`;
+      $("quiz-github-link").href = `https://github.com/bernardjhuang/agenttune/blob/main/disc/${meta.file}.md`;
 
       if (window.fetchTuning) {
         window.fetchTuning(`disc/${meta.file}.md`).then((rich) => {
@@ -470,7 +470,7 @@
     function getTuningContent(letter) {
       const contacts = (window.AT_CONTACTS || []);
       const c = contacts.find(x => x.id === `disc-${letter}`);
-      return (c && c.tuning) || `# ${letter} tuning\n\nView on GitHub: https://github.com/psyduckler/agenttune/blob/main/disc/${TYPE_META[letter].file}.md`;
+      return (c && c.tuning) || `# ${letter} tuning\n\nView on GitHub: https://github.com/bernardjhuang/agenttune/blob/main/disc/${TYPE_META[letter].file}.md`;
     }
 
     $("quiz-copy-tuning").addEventListener("click", function() {

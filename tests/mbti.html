@@ -67,7 +67,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/pricing">Premium</a>
-        <a class="github" href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
 
@@ -371,12 +371,12 @@
         </ol>
 
         <h3>Output mapping</h3>
-        <p>Once you have the type, fetch <code>mbti/&lt;TYPE&gt;.md</code> from the <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
+        <p>Once you have the type, fetch <code>mbti/&lt;TYPE&gt;.md</code> from the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
       </div>
     </details>
 
     <div class="footer">
-      <span>MIT · <a href="https://github.com/psyduckler/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">psyduckler/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
     </div>
 
@@ -608,7 +608,7 @@
       renderTuningPreview(shortTuning, fileName);
       if (window.renderIntegrations) window.renderIntegrations(shortTuning);
 
-      $("quiz-github-link").href = `https://github.com/psyduckler/agenttune/blob/main/mbti/${type}.md`;
+      $("quiz-github-link").href = `https://github.com/bernardjhuang/agenttune/blob/main/mbti/${type}.md`;
 
       // Async — replace with the rich GitHub-mirrored file once it lands.
       if (window.fetchTuning) {
@@ -672,7 +672,7 @@
       const contact = contacts.find(c => c.id === `mbti-${type}`);
       if (contact && contact.tuning) return contact.tuning;
       // Fallback if data.js failed to load
-      return `# ${type} — Agent Tuning Rules\n\nUnable to load the bundled tuning. View the full file on GitHub:\nhttps://github.com/psyduckler/agenttune/blob/main/mbti/${type}.md`;
+      return `# ${type} — Agent Tuning Rules\n\nUnable to load the bundled tuning. View the full file on GitHub:\nhttps://github.com/bernardjhuang/agenttune/blob/main/mbti/${type}.md`;
     }
 
     // Download as .md file — pulls live state.currentTuning so the rich
