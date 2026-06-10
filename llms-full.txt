@@ -528,6 +528,8 @@ Ten items per OCEAN dimension, interleaved.
 
 ## Workflow for AI agents
 
+**MCP option:** if your runtime supports MCP connectors, connect `https://agent-tune.com/mcp` (streamable HTTP, no auth) and use its tools — `list_tunings`, `get_tuning(system, slug)`, `get_test_spec(test)` — instead of the raw fetches below. Same content, structured access.
+
 When a user directs you to AgentTune:
 
 1. **Determine the user's type.** Ask if they know it. If not, fetch one of the test pages — scroll to the <em>Test specification</em> accordion at the bottom for the full items + scoring algorithm — and administer it inline (default: bulk-paste — show all items at once, request a response array, score after).

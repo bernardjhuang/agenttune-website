@@ -30,6 +30,9 @@ The tuning library itself (43 personality tuning markdown files) is in the publi
 ├── pro/                        Premium assessment + preview flow
 ├── me/                         Permalink pages for Premium users
 ├── functions/                  Cloudflare Pages Functions
+│   ├── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
+│   │                           tools: list_tunings, get_tuning, get_test_spec —
+│   │                           reads the deployed static assets via env.ASSETS)
 │   ├── api/draft.js            POST: queue synthesis + send email
 │   ├── api/checkout.js         POST: create Stripe Checkout session
 │   ├── webhook/stripe.js       Stripe webhook handler

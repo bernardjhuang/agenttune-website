@@ -48,6 +48,7 @@
       "blurb": "Strategic, systems-first. Wants the model, not the bullet list.",
       "page": "https://agent-tune.com/library/mbti/intj",
       "md": "https://agent-tune.com/library/mbti/intj.md",
+      "src": "/tunings/mbti/INTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTJ.md"
     },
     {
@@ -58,6 +59,7 @@
       "blurb": "Curious, model-builder. Wants the why before the what.",
       "page": "https://agent-tune.com/library/mbti/intp",
       "md": "https://agent-tune.com/library/mbti/intp.md",
+      "src": "/tunings/mbti/INTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTP.md"
     },
     {
@@ -68,6 +70,7 @@
       "blurb": "Insight-driven, careful. Reads between the lines.",
       "page": "https://agent-tune.com/library/mbti/infj",
       "md": "https://agent-tune.com/library/mbti/infj.md",
+      "src": "/tunings/mbti/INFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFJ.md"
     },
     {
@@ -78,6 +81,7 @@
       "blurb": "Values-led, reflective. Wants thinking-with, not advice-at.",
       "page": "https://agent-tune.com/library/mbti/infp",
       "md": "https://agent-tune.com/library/mbti/infp.md",
+      "src": "/tunings/mbti/INFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFP.md"
     },
     {
@@ -88,6 +92,7 @@
       "blurb": "Methodical, evidence-based. Wants procedure.",
       "page": "https://agent-tune.com/library/mbti/istj",
       "md": "https://agent-tune.com/library/mbti/istj.md",
+      "src": "/tunings/mbti/ISTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTJ.md"
     },
     {
@@ -98,6 +103,7 @@
       "blurb": "Hands-on, terse. Wants the lever, not the lecture.",
       "page": "https://agent-tune.com/library/mbti/istp",
       "md": "https://agent-tune.com/library/mbti/istp.md",
+      "src": "/tunings/mbti/ISTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTP.md"
     },
     {
@@ -108,6 +114,7 @@
       "blurb": "Caring, practical. Wants steady support.",
       "page": "https://agent-tune.com/library/mbti/isfj",
       "md": "https://agent-tune.com/library/mbti/isfj.md",
+      "src": "/tunings/mbti/ISFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFJ.md"
     },
     {
@@ -118,6 +125,7 @@
       "blurb": "Aesthetic, present-focused. Trusts feel.",
       "page": "https://agent-tune.com/library/mbti/isfp",
       "md": "https://agent-tune.com/library/mbti/isfp.md",
+      "src": "/tunings/mbti/ISFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFP.md"
     },
     {
@@ -128,6 +136,7 @@
       "blurb": "Decisive, outcome-led. Cuts to the move.",
       "page": "https://agent-tune.com/library/mbti/entj",
       "md": "https://agent-tune.com/library/mbti/entj.md",
+      "src": "/tunings/mbti/ENTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTJ.md"
     },
     {
@@ -138,6 +147,7 @@
       "blurb": "Generative, contrarian. Thinks by colliding ideas.",
       "page": "https://agent-tune.com/library/mbti/entp",
       "md": "https://agent-tune.com/library/mbti/entp.md",
+      "src": "/tunings/mbti/ENTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTP.md"
     },
     {
@@ -148,6 +158,7 @@
       "blurb": "Mission-driven, warm. Thinks through people.",
       "page": "https://agent-tune.com/library/mbti/enfj",
       "md": "https://agent-tune.com/library/mbti/enfj.md",
+      "src": "/tunings/mbti/ENFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFJ.md"
     },
     {
@@ -158,6 +169,7 @@
       "blurb": "Sparky, possibility-rich. Lives in the maybe.",
       "page": "https://agent-tune.com/library/mbti/enfp",
       "md": "https://agent-tune.com/library/mbti/enfp.md",
+      "src": "/tunings/mbti/ENFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFP.md"
     },
     {
@@ -168,6 +180,7 @@
       "blurb": "Direct, organized. Wants the plan executed.",
       "page": "https://agent-tune.com/library/mbti/estj",
       "md": "https://agent-tune.com/library/mbti/estj.md",
+      "src": "/tunings/mbti/ESTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTJ.md"
     },
     {
@@ -178,6 +191,7 @@
       "blurb": "Action-first, real-world. Learns by doing.",
       "page": "https://agent-tune.com/library/mbti/estp",
       "md": "https://agent-tune.com/library/mbti/estp.md",
+      "src": "/tunings/mbti/ESTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTP.md"
     },
     {
@@ -188,6 +202,7 @@
       "blurb": "Warm, considerate. Thinks through impact.",
       "page": "https://agent-tune.com/library/mbti/esfj",
       "md": "https://agent-tune.com/library/mbti/esfj.md",
+      "src": "/tunings/mbti/ESFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFJ.md"
     },
     {
@@ -198,6 +213,7 @@
       "blurb": "Live-wire, present. Energy follows fun.",
       "page": "https://agent-tune.com/library/mbti/esfp",
       "md": "https://agent-tune.com/library/mbti/esfp.md",
+      "src": "/tunings/mbti/ESFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFP.md"
     },
     {
@@ -208,6 +224,7 @@
       "blurb": "Wants it right. Loads precision and improvement.",
       "page": "https://agent-tune.com/library/enneagram/1-reformer",
       "md": "https://agent-tune.com/library/enneagram/1-reformer.md",
+      "src": "/tunings/enneagram/1-reformer.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/1-reformer.md"
     },
     {
@@ -218,6 +235,7 @@
       "blurb": "Wants to matter to people. Loads warmth and service.",
       "page": "https://agent-tune.com/library/enneagram/2-helper",
       "md": "https://agent-tune.com/library/enneagram/2-helper.md",
+      "src": "/tunings/enneagram/2-helper.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/2-helper.md"
     },
     {
@@ -228,6 +246,7 @@
       "blurb": "Wants the win. Loads efficiency and outcome.",
       "page": "https://agent-tune.com/library/enneagram/3-achiever",
       "md": "https://agent-tune.com/library/enneagram/3-achiever.md",
+      "src": "/tunings/enneagram/3-achiever.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/3-achiever.md"
     },
     {
@@ -238,6 +257,7 @@
       "blurb": "Wants depth and authenticity. Loads emotional truth.",
       "page": "https://agent-tune.com/library/enneagram/4-individualist",
       "md": "https://agent-tune.com/library/enneagram/4-individualist.md",
+      "src": "/tunings/enneagram/4-individualist.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/4-individualist.md"
     },
     {
@@ -248,6 +268,7 @@
       "blurb": "Wants understanding. Loads model-first explanation.",
       "page": "https://agent-tune.com/library/enneagram/5-investigator",
       "md": "https://agent-tune.com/library/enneagram/5-investigator.md",
+      "src": "/tunings/enneagram/5-investigator.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/5-investigator.md"
     },
     {
@@ -258,6 +279,7 @@
       "blurb": "Wants safety and trust. Loads risk-aware framing.",
       "page": "https://agent-tune.com/library/enneagram/6-loyalist",
       "md": "https://agent-tune.com/library/enneagram/6-loyalist.md",
+      "src": "/tunings/enneagram/6-loyalist.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/6-loyalist.md"
     },
     {
@@ -268,6 +290,7 @@
       "blurb": "Wants possibility. Loads divergent options.",
       "page": "https://agent-tune.com/library/enneagram/7-enthusiast",
       "md": "https://agent-tune.com/library/enneagram/7-enthusiast.md",
+      "src": "/tunings/enneagram/7-enthusiast.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/7-enthusiast.md"
     },
     {
@@ -278,6 +301,7 @@
       "blurb": "Wants control and impact. Loads directness.",
       "page": "https://agent-tune.com/library/enneagram/8-challenger",
       "md": "https://agent-tune.com/library/enneagram/8-challenger.md",
+      "src": "/tunings/enneagram/8-challenger.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/8-challenger.md"
     },
     {
@@ -288,6 +312,7 @@
       "blurb": "Wants ease and integration. Loads gentle pacing.",
       "page": "https://agent-tune.com/library/enneagram/9-peacemaker",
       "md": "https://agent-tune.com/library/enneagram/9-peacemaker.md",
+      "src": "/tunings/enneagram/9-peacemaker.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/9-peacemaker.md"
     },
     {
@@ -298,6 +323,7 @@
       "blurb": "Direct, results-focused, decisive. Wants the bottom line.",
       "page": "https://agent-tune.com/library/disc/d-dominance",
       "md": "https://agent-tune.com/library/disc/d-dominance.md",
+      "src": "/tunings/disc/D-dominance.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/D-dominance.md"
     },
     {
@@ -308,6 +334,7 @@
       "blurb": "Outgoing, persuasive, energetic. Thinks out loud.",
       "page": "https://agent-tune.com/library/disc/i-influence",
       "md": "https://agent-tune.com/library/disc/i-influence.md",
+      "src": "/tunings/disc/I-influence.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/I-influence.md"
     },
     {
@@ -318,6 +345,7 @@
       "blurb": "Patient, supportive, methodical. Wants stability.",
       "page": "https://agent-tune.com/library/disc/s-steadiness",
       "md": "https://agent-tune.com/library/disc/s-steadiness.md",
+      "src": "/tunings/disc/S-steadiness.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/S-steadiness.md"
     },
     {
@@ -328,6 +356,7 @@
       "blurb": "Analytical, precise, evidence-driven. Wants the data.",
       "page": "https://agent-tune.com/library/disc/c-conscientiousness",
       "md": "https://agent-tune.com/library/disc/c-conscientiousness.md",
+      "src": "/tunings/disc/C-conscientiousness.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/C-conscientiousness.md"
     },
     {
@@ -338,6 +367,7 @@
       "blurb": "Direct without cushioning. Peer register. ~55% of adults.",
       "page": "https://agent-tune.com/library/attachment/secure",
       "md": "https://agent-tune.com/library/attachment/secure.md",
+      "src": "/tunings/attachment/secure.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/secure.md"
     },
     {
@@ -348,6 +378,7 @@
       "blurb": "Reassure with decisiveness. Warmth AND clarity together — no caveats undercutting.",
       "page": "https://agent-tune.com/library/attachment/anxious",
       "md": "https://agent-tune.com/library/attachment/anxious.md",
+      "src": "/tunings/attachment/anxious.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/anxious.md"
     },
     {
@@ -358,6 +389,7 @@
       "blurb": "Give them space. No performative warmth they didn't ask for.",
       "page": "https://agent-tune.com/library/attachment/avoidant",
       "md": "https://agent-tune.com/library/attachment/avoidant.md",
+      "src": "/tunings/attachment/avoidant.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/avoidant.md"
     },
     {
@@ -368,6 +400,7 @@
       "blurb": "Tolerate inconsistency. Predictability over warmth.",
       "page": "https://agent-tune.com/library/attachment/disorganized",
       "md": "https://agent-tune.com/library/attachment/disorganized.md",
+      "src": "/tunings/attachment/disorganized.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/disorganized.md"
     },
     {
@@ -378,6 +411,7 @@
       "blurb": "Concepts over procedure. Lateral connections welcome. Don't sanitize the weird.",
       "page": "https://agent-tune.com/library/ocean/openness-high",
       "md": "https://agent-tune.com/library/ocean/openness-high.md",
+      "src": "/tunings/ocean/O-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-high.md"
     },
     {
@@ -388,6 +422,7 @@
       "blurb": "Concrete over abstract. Proven beats novel. Practical framing, every time.",
       "page": "https://agent-tune.com/library/ocean/openness-low",
       "md": "https://agent-tune.com/library/ocean/openness-low.md",
+      "src": "/tunings/ocean/O-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-low.md"
     },
     {
@@ -398,6 +433,7 @@
       "blurb": "Structure the response. Commit to specifics. Follow through visibly. Close loops.",
       "page": "https://agent-tune.com/library/ocean/conscientiousness-high",
       "md": "https://agent-tune.com/library/ocean/conscientiousness-high.md",
+      "src": "/tunings/ocean/C-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-high.md"
     },
     {
@@ -408,6 +444,7 @@
       "blurb": "Don't impose structure they didn't ask for. Improvisation is the mode. Last-minute is on time.",
       "page": "https://agent-tune.com/library/ocean/conscientiousness-low",
       "md": "https://agent-tune.com/library/ocean/conscientiousness-low.md",
+      "src": "/tunings/ocean/C-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-low.md"
     },
     {
@@ -418,6 +455,7 @@
       "blurb": "Engage in dialogue, not monologue. Bring energy. Think out loud with them.",
       "page": "https://agent-tune.com/library/ocean/extraversion-high",
       "md": "https://agent-tune.com/library/ocean/extraversion-high.md",
+      "src": "/tunings/ocean/E-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/E-high.md"
     },
     {
@@ -428,6 +466,7 @@
       "blurb": "Give them processing space. Depth beats interaction. Written, not spoken.",
       "page": "https://agent-tune.com/library/ocean/extraversion-low",
       "md": "https://agent-tune.com/library/ocean/extraversion-low.md",
+      "src": "/tunings/ocean/E-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/E-low.md"
     },
     {
@@ -438,6 +477,7 @@
       "blurb": "Lead with warmth, then substance. Frame disagreement carefully. Harmony has signal value.",
       "page": "https://agent-tune.com/library/ocean/agreeableness-high",
       "md": "https://agent-tune.com/library/ocean/agreeableness-high.md",
+      "src": "/tunings/ocean/A-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-high.md"
     },
     {
@@ -448,6 +488,7 @@
       "blurb": "Be direct — soft framing reads as evasion. Debate is the engine. Wrong beats interesting.",
       "page": "https://agent-tune.com/library/ocean/agreeableness-low",
       "md": "https://agent-tune.com/library/ocean/agreeableness-low.md",
+      "src": "/tunings/ocean/A-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-low.md"
     },
     {
@@ -458,6 +499,7 @@
       "blurb": "Reassure with decisiveness, not caveats. Don't pile on hypotheticals. Warmth + clarity together.",
       "page": "https://agent-tune.com/library/ocean/neuroticism-high",
       "md": "https://agent-tune.com/library/ocean/neuroticism-high.md",
+      "src": "/tunings/ocean/N-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/N-high.md"
     },
     {
@@ -468,6 +510,7 @@
       "blurb": "Skip the reassurance. Don't soften bad news. Tradeoffs are tradeoffs, not threats.",
       "page": "https://agent-tune.com/library/ocean/neuroticism-low",
       "md": "https://agent-tune.com/library/ocean/neuroticism-low.md",
+      "src": "/tunings/ocean/N-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/N-low.md"
     }
   ]
