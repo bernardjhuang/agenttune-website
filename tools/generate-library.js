@@ -1349,6 +1349,7 @@ function writeCatalog(contacts) {
       blurb: c.blurb,
       page: `${SITE}/library/${c.system}/${slug}`,
       md: `${SITE}/library/${c.system}/${slug}.md`,
+      src: `/tunings/${c.path}`,
       upstream_md: `https://raw.githubusercontent.com/bernardjhuang/agenttune/main/${c.path}`
     };
   });

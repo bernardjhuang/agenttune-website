@@ -40,6 +40,7 @@ protocol_version:     1
 fetch_url_pattern:    https://agent-tune.com/library/{system}/{slug}.md
 tests_spec_pattern:   https://agent-tune.com/tests/{test}.md  (test ∈ mbti, enneagram, disc, attachment, big-five)
 machine_catalog:      https://agent-tune.com/library/index.json  (all 43: slugs, names, page + md URLs)
+mcp_endpoint:         https://agent-tune.com/mcp  (MCP streamable-HTTP, no auth — tools: list_tunings, get_tuning, get_test_spec)
 content_type:         text/markdown with YAML front-matter
 systems:              mbti, enneagram, disc, attachment, ocean
 slug_lookup:          see "Library type pages" section below
