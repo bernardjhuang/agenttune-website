@@ -48,7 +48,7 @@ export async function onRequest(ctx) {
   try {
     soul = JSON.parse(raw);
   } catch {
-    return new Response(notFoundHtml("This file is corrupted. Reach out to support@agent-tune.com."), { status: 500, headers: baseHeaders });
+    return new Response(notFoundHtml("This file is corrupted. Reach out to hello@agent-tune.com."), { status: 500, headers: baseHeaders });
   }
 
   // Strip server-internal fields. Keep `profile.results` so the subject
@@ -974,7 +974,7 @@ function notFoundHtml(detail) {
     <div class="nf-mark">§ 404 · AgentTune</div>
     <h1 class="nf-h">Tuning <em>not found.</em></h1>
     <p class="nf-p">${esc(msg)}</p>
-    <p class="nf-p">If you have the email from your purchase, the link inside is your permanent URL. Lost it? <a class="nf-link" href="mailto:support@agent-tune.com">support@agent-tune.com</a> — we'll resend.</p>
+    <p class="nf-p">If you have the email from your purchase, the link inside is your permanent URL. Lost it? <a class="nf-link" href="mailto:hello@agent-tune.com">hello@agent-tune.com</a> — we'll resend.</p>
     <a class="nf-link" href="/">← Home</a>
   </div>
 </body>

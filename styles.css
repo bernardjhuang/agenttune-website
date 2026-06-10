@@ -5,12 +5,29 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 
+/* Keyboard users: first tabbable element on every page */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 18px;
+  border-radius: 0 0 8px 0;
+  font-size: 14px;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+}
+
 :root {
   /* Base palette */
   --bg: #f6f3ef;
   --surface: #ffffff;
   --ink: #1e1d1a;
-  --muted: #7a7468;
+  --muted: #6e6a5e; /* ≥4.5:1 on --bg (WCAG AA body text) */
   --border: #e3ddd1;
   --border-soft: #f0eadd;
   --accent: #c8553d;

@@ -32,8 +32,7 @@
   {"@context":"https://schema.org","@type":"Quiz","name":"Big Five Test (IPIP-50)","description":"Interactive 50-item Big Five assessment. Returns continuous trait z-scores for O/C/E/A/N.","url":"https://agent-tune.com/tests/big-five","inLanguage":"en","numberOfQuestions":50,"timeRequired":"PT7M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+  <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
   <script src="/integrations.js"></script>
@@ -43,6 +42,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"Big Five"}]}</script>
 </head>
 <body class="quiz-page">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
 
     <nav class="nav">
@@ -63,6 +63,8 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <span class="crumb-current" aria-current="page">Big Five</span>
     </nav>
+
+    <div id="main" tabindex="-1"></div>
 
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">7-min test · 50 questions · 1–5 scale</span>

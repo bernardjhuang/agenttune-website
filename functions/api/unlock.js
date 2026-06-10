@@ -56,7 +56,7 @@ export async function onRequest(ctx) {
     await sleep(2000);
     draftRaw = await KV.get(`draft:${draft_id}`);
   }
-  if (!draftRaw) return err(`Draft not found: ${draft_id}. Reach out to support@agent-tune.com — we have your payment.`, 500);
+  if (!draftRaw) return err(`Draft not found: ${draft_id}. Reach out to hello@agent-tune.com — we have your payment.`, 500);
   const draft = JSON.parse(draftRaw);
 
   // ---------- Synthesize via Gemini ----------
@@ -64,7 +64,7 @@ export async function onRequest(ctx) {
   try {
     soul = await synthesize(ctx.env, draft);
   } catch (e) {
-    return err(`Synthesis failed: ${e.message}. Your payment is safe — reach out to support@agent-tune.com.`, 502);
+    return err(`Synthesis failed: ${e.message}. Your payment is safe — reach out to hello@agent-tune.com.`, 502);
   }
 
   // ---------- Store the soul ----------

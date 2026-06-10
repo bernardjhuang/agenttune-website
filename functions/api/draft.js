@@ -16,6 +16,18 @@ export async function onRequestPost(ctx) {
     return err(e.message || "Bad JSON", 400);
   }
 
+  // Coarse per-IP throttle: 10 drafts/hour. KV increments aren't atomic, but
+  // for a human-driven form this stops scripted abuse without extra infra.
+  // (Each accepted request refreshes the TTL, so a sustained flood stays
+  // throttled until it actually stops for an hour.)
+  const ip = ctx.request.headers.get("cf-connecting-ip") || "unknown";
+  const rlKey = `rl:draft:${ip}`;
+  const seen = parseInt((await kv(ctx).get(rlKey)) || "0", 10);
+  if (seen >= 10) {
+    return err("Too many requests from this address — try again in an hour", 429);
+  }
+  await kv(ctx).put(rlKey, String(seen + 1), { expirationTtl: 60 * 60 });
+
   const { email, results, agentfit } = body || {};
 
   // Light validation — we trust the client to send shape, but reject obvious junk

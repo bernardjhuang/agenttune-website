@@ -66,6 +66,34 @@ AGENTTUNE_EOF`
       ]
     },
     {
+      id: "mcp",
+      name: "MCP connector (any agent)",
+      sub: "agent-tune.com/mcp — live tools, no pasting. Claude, Cursor, anything MCP.",
+      badge: "MCP",
+      lang: "bash",
+      steps: [
+        {
+          kind: "text",
+          body:
+            "AgentTune runs a public MCP server. Connect it once and your agent fetches tunings and tests itself — tools: <code>list_tunings</code>, <code>get_tuning</code>, <code>get_test_spec</code>. No auth."
+        },
+        {
+          kind: "snippet",
+          body: `# Claude Code
+claude mcp add --transport http agenttune https://agent-tune.com/mcp`
+        },
+        {
+          kind: "text",
+          body:
+            "Claude.ai / Desktop: <strong>Settings → Connectors → Add custom connector</strong> → <code>https://agent-tune.com/mcp</code>. Cursor: <strong>Settings → MCP → Add server</strong> with the same URL."
+        },
+        {
+          kind: "text",
+          body: "Then just ask: <em>“Load my tuning from AgentTune and apply it for this session.”</em>"
+        }
+      ]
+    },
+    {
       id: "chatgpt-custom",
       name: "ChatGPT (Custom Instructions)",
       sub: "Settings → Personalization → Custom Instructions. Applies to every chat.",
