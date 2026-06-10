@@ -3,7 +3,7 @@
  * Single source of truth for "Add it to your agent" cards on every test
  * result screen. Each test page calls window.renderIntegrations(tuning,
  * containerEl) after computing the user's tuning markdown — this builds
- * 12 paste-ready cards (CLI snippets, chat preambles, API examples).
+ * 13 paste-ready cards (CLI snippets, chat preambles, API examples).
  *
  * Each snippet contains the literal placeholder [TUNING_PLACEHOLDER]
  * which is substituted with the user's actual tuning content at render

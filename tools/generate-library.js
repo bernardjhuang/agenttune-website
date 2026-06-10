@@ -125,8 +125,8 @@ function escAttr(s) { return escHtml(s); }
 // literal "</script>" or "<!--" inside any value from terminating the block —
 // prerequisite for ever flowing non-founder-authored content (e.g. Voices)
 // through this generator.
-function jsonInline(v, ...args) {
-  return JSON.stringify(v, ...args).replace(/</g, "\\u003c");
+function jsonInline(v) {
+  return JSON.stringify(v).replace(/</g, "\\u003c");
 }
 
 // ---------- Tuning markdown parsing ----------
@@ -916,6 +916,7 @@ ${summaryLis}
           <tbody>
             <tr><td>Claude Code (CLI)</td><td><code>CLAUDE.md</code> in project root</td><td>file_write</td></tr>
             <tr><td>Claude.ai (web)</td><td>Project Instructions field</td><td>paste</td></tr>
+            <tr><td>MCP (any client)</td><td>connect <code>https://agent-tune.com/mcp</code>, then call <code>get_tuning</code></td><td>mcp_tools</td></tr>
             <tr><td>ChatGPT</td><td>Settings → Personalization → Custom Instructions</td><td>paste</td></tr>
             <tr><td>ChatGPT Projects</td><td>Project Instructions field</td><td>paste</td></tr>
             <tr><td>OpenAI Codex CLI</td><td><code>AGENTS.md</code> in project root</td><td>file_write</td></tr>

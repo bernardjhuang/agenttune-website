@@ -18,15 +18,14 @@ export async function onRequestPost(ctx) {
 
   // Coarse per-IP throttle: 10 drafts/hour. KV increments aren't atomic, but
   // for a human-driven form this stops scripted abuse without extra infra.
-  // (Each accepted request refreshes the TTL, so a sustained flood stays
-  // throttled until it actually stops for an hour.)
+  // Checked before any work; counted only after validation passes, so junk
+  // requests are rejected for free and a user's typos don't burn their quota.
   const ip = ctx.request.headers.get("cf-connecting-ip") || "unknown";
   const rlKey = `rl:draft:${ip}`;
-  const seen = parseInt((await kv(ctx).get(rlKey)) || "0", 10);
+  const seen = parseInt((await kv(ctx).get(rlKey)) || "0", 10) || 0;
   if (seen >= 10) {
     return err("Too many requests from this address — try again in an hour", 429);
   }
-  await kv(ctx).put(rlKey, String(seen + 1), { expirationTtl: 60 * 60 });
 
   const { email, results, agentfit } = body || {};
 
@@ -40,6 +39,8 @@ export async function onRequestPost(ctx) {
   if (!agentfit || typeof agentfit !== "object") {
     return err("agentfit object required", 400);
   }
+
+  await kv(ctx).put(rlKey, String(seen + 1), { expirationTtl: 60 * 60 });
 
   const draft_id = draftId();
   const summary = {
