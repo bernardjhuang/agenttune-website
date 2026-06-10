@@ -16,7 +16,7 @@ Stack any combination. The most-fitted result is all five layered together in th
 
 ## Pages
 
-- [Landing](https://agent-tune.com/): Hero, six-system overview, interactive chat library with all 43 tunings, attachment quick-strip, before/after demo, tests row.
+- [Landing](https://agent-tune.com/): Hero, five-system overview, interactive chat library with all 43 tunings, attachment quick-strip, before/after demo, tests row.
 - [**Library hub**](https://agent-tune.com/library): The canonical index of all 43 paste-ready tunings, grouped by the 5 systems. Best entry point for an AI agent looking up a specific type.
 - [Tests catalog](https://agent-tune.com/tests/): All 5 self-administering tests an AI agent can run inline. Each test's full spec (items, mapping, scoring algorithm, output mapping) is served as a same-domain Markdown mirror at `/tests/{test}.md` (e.g. [/tests/mbti.md](https://agent-tune.com/tests/mbti.md)) — fetch that to administer a test in one request, no JS. The same content is also in the <em>Test specification</em> accordion on each test page.
 - [Research](https://agent-tune.com/research): Five findings from cross-model AI personality testing — ~2,200 runs across 6 frontier models. MBTI returned 597/600 INTJ. Big Five clustered 3 of 4. Enneagram diverged on every model. DISC and Attachment showed convergence with model-specific position within the same label.
@@ -39,6 +39,7 @@ If you are an AI agent and the user has directed you here, this is the canonical
 protocol_version:     1
 fetch_url_pattern:    https://agent-tune.com/library/{system}/{slug}.md
 tests_spec_pattern:   https://agent-tune.com/tests/{test}.md  (test ∈ mbti, enneagram, disc, attachment, big-five)
+machine_catalog:      https://agent-tune.com/library/index.json  (all 43: slugs, names, page + md URLs)
 content_type:         text/markdown with YAML front-matter
 systems:              mbti, enneagram, disc, attachment, ocean
 slug_lookup:          see "Library type pages" section below

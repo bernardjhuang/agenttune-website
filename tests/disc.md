@@ -6,7 +6,7 @@
 - **Items:** 16 Likert, ~3 minutes (the fastest in the library), no reverse-scored items
 - **Scale:** 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree
 - **Returns:** dominant letter D / I / S / C (+ optional blend such as DI or CS)
-- **Output:** fetch `https://agent-tune.com/tunings/disc/<L>-<name>.md` or the human page `/library/disc/<l>-<name>`
+- **Output:** fetch `https://agent-tune.com/library/disc/<l>-<name>.md` (lowercase; e.g. `/library/disc/d-dominance.md`) or the human page `/library/disc/<l>-<name>`
 
 ## The 16 items
 

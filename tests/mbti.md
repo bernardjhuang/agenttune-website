@@ -7,7 +7,7 @@
 - **Scale:** each item is a choice between two statements rated 1–5 (1 = strongly the first statement, 3 = neutral, 5 = strongly the second)
 - **Returns:** one of 16 four-letter MBTI types
 - **Source:** OEJTS, Eric Jorgenson, via the Open Psychometrics Project (openpsychometrics.org/tests/OEJTS/) — free for educational use
-- **Output:** fetch `https://agent-tune.com/tunings/mbti/<TYPE>.md` (e.g. INTJ → `tunings/mbti/INTJ.md`) or the human page `/library/mbti/<type-lowercase>`
+- **Output:** fetch `https://agent-tune.com/library/mbti/<type>.md` (lowercase; e.g. INTJ → `/library/mbti/intj.md`) or the human page `/library/mbti/<type>`
 
 ## The 32 items
 

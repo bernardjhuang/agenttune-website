@@ -7,7 +7,7 @@
 - **Reverse-scored:** 14 items (marked ✓ below) — compute `scored = 8 − raw`
 - **Subscales:** items 1–18 = anxiety, items 19–36 = avoidance
 - **Returns:** Secure / Anxious / Avoidant / Disorganized
-- **Output:** fetch `https://agent-tune.com/tunings/attachment/<style>.md` or the human page `/library/attachment/<style>`
+- **Output:** fetch `https://agent-tune.com/library/attachment/<style>.md` (e.g. `/library/attachment/secure.md`) or the human page `/library/attachment/<style>`
 - **Note:** items reference a romantic partner; for users without one, adapt to "closest current relationship."
 
 ## The 36 items
