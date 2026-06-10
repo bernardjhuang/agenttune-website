@@ -6,7 +6,7 @@
 - **Items:** 50, ~7 minutes, 1–5 Likert (1 = Very Inaccurate, 5 = Very Accurate). Each statement carries an implicit leading "I …" (e.g. "Am the life of the party" → "I am the life of the party").
 - **Reverse-scored:** 20 items (marked ✓ below) — compute `scored = 6 − raw`
 - **Returns:** 5 continuous trait scores → `ocean/<dim>-{high,low}.md` for every dimension where `|z| > 0.5`
-- **Output:** fetch `https://agent-tune.com/tunings/ocean/<L>-{high,low}.md` or the human page `/library/ocean/<dimension>-{high,low}`
+- **Output:** fetch `https://agent-tune.com/library/ocean/<dimension>-{high,low}.md` (e.g. `/library/ocean/openness-high.md`) or the human page `/library/ocean/<dimension>-{high,low}`
 
 ## The 50 items
 

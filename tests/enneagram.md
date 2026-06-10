@@ -6,7 +6,7 @@
 - **Items:** 36 Likert, ~5 minutes, no reverse-scored items
 - **Scale:** 1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree
 - **Returns:** dominant type 1–9 (+ optional wing)
-- **Output:** fetch `https://agent-tune.com/tunings/enneagram/<N>-<name>.md` or the human page `/library/enneagram/<N>-<name>`
+- **Output:** fetch `https://agent-tune.com/library/enneagram/<N>-<name>.md` (e.g. `/library/enneagram/5-investigator.md`) or the human page `/library/enneagram/<N>-<name>`
 
 ## The 36 items
 

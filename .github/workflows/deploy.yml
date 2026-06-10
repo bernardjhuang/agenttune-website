@@ -33,3 +33,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy . --project-name=agent-tune --commit-dirty=true
+
+      # Tell Bing & friends (the index behind ChatGPT search / Copilot) what
+      # changed — submits every sitemap URL via the IndexNow protocol.
+      - name: Ping IndexNow
+        run: node tools/ping-indexnow.js

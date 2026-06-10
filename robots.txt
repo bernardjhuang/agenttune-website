@@ -18,13 +18,15 @@ User-agent: OAI-SearchBot
 Allow: /
 
 # --- Anthropic ---
+# (Claude-Web / anthropic-ai removed 2026-06: deprecated, no longer in
+# Anthropic's published crawler list.)
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-User
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-SearchBot
 Allow: /
 
 # --- Google (Gemini / AI Overviews training opt-in) ---
@@ -50,6 +52,15 @@ User-agent: Amazonbot
 Allow: /
 
 User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: MistralAI-User
 Allow: /
 
 User-agent: Bytespider
