@@ -28,8 +28,7 @@
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy"}]}</script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+  <script defer src="/consent.js"></script>
 
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -51,6 +50,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="/">
@@ -71,6 +71,8 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <span class="crumb-current" aria-current="page">Privacy Policy</span>
     </nav>
+
+    <div id="main" tabindex="-1"></div>
 
     <section class="hero" style="padding-bottom: 8px;">
       <h1 class="h-hero h-research-hero">Privacy Policy</h1>
@@ -113,7 +115,8 @@
       <p>Each provider processes data under its own privacy terms.</p>
 
       <h2>5. Analytics &amp; cookies</h2>
-      <p>We use Google Analytics to measure traffic (pages viewed, approximate location, device/browser). This sets cookies and collects your IP address. We do not run advertising or cross-site ad-tracking. You can opt out with your browser’s cookie controls or Google’s <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">opt-out browser add-on</a>.</p>
+      <p>We use Google Analytics to measure traffic (pages viewed, approximate location, device/browser). <strong>It only loads if you allow it</strong>: the first time you visit, a small banner asks; until you choose “Allow analytics,” no analytics script runs and no analytics cookies are set. Declining is remembered and nothing is loaded. We do not run advertising or cross-site ad-tracking.</p>
+      <p>You can change your choice any time: <a href="#" onclick="window.atConsentReset&amp;&amp;atConsentReset();return false">Analytics preferences</a> (re-opens the consent banner). Google also offers an <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">opt-out browser add-on</a>.</p>
 
       <h2>6. How long we keep it</h2>
       <ul>

@@ -81,13 +81,7 @@
   }
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5MYEW2MEE1');
-  </script>
+  <script defer src="/consent.js"></script>
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -95,6 +89,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 <body class="hp2">
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="page">
     <nav class="nav" aria-label="Primary">
@@ -113,7 +108,7 @@
   </div>
 
   <!-- HERO -->
-  <section class="hp2-hero" aria-labelledby="hp2-hero-h1">
+  <section class="hp2-hero" id="main" tabindex="-1" aria-labelledby="hp2-hero-h1">
     <h1 class="hp2-hero-h1" id="hp2-hero-h1">
       Personalize your AI agent to <em>work with you better.</em>
     </h1>

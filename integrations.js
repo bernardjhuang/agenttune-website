@@ -3,7 +3,7 @@
  * Single source of truth for "Add it to your agent" cards on every test
  * result screen. Each test page calls window.renderIntegrations(tuning,
  * containerEl) after computing the user's tuning markdown — this builds
- * 12 paste-ready cards (CLI snippets, chat preambles, API examples).
+ * 13 paste-ready cards (CLI snippets, chat preambles, API examples).
  *
  * Each snippet contains the literal placeholder [TUNING_PLACEHOLDER]
  * which is substituted with the user's actual tuning content at render
@@ -62,6 +62,34 @@ AGENTTUNE_EOF`
         {
           kind: "text",
           body: "Every chat created inside that project will now reply through your tuning."
+        }
+      ]
+    },
+    {
+      id: "mcp",
+      name: "MCP connector (any agent)",
+      sub: "agent-tune.com/mcp — live tools, no pasting. Claude, Cursor, anything MCP.",
+      badge: "MCP",
+      lang: "bash",
+      steps: [
+        {
+          kind: "text",
+          body:
+            "AgentTune runs a public MCP server. Connect it once and your agent fetches tunings and tests itself — tools: <code>list_tunings</code>, <code>get_tuning</code>, <code>get_test_spec</code>. No auth."
+        },
+        {
+          kind: "snippet",
+          body: `# Claude Code
+claude mcp add --transport http agenttune https://agent-tune.com/mcp`
+        },
+        {
+          kind: "text",
+          body:
+            "Claude.ai / Desktop: <strong>Settings → Connectors → Add custom connector</strong> → <code>https://agent-tune.com/mcp</code>. Cursor: <strong>Settings → MCP → Add server</strong> with the same URL."
+        },
+        {
+          kind: "text",
+          body: "Then just ask: <em>“Load my tuning from AgentTune and apply it for this session.”</em>"
         }
       ]
     },

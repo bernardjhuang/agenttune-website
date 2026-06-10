@@ -121,6 +121,14 @@ function escHtml(s) {
 
 function escAttr(s) { return escHtml(s); }
 
+// JSON destined for inline <script> bodies. Escaping "<" (→ <) keeps a
+// literal "</script>" or "<!--" inside any value from terminating the block —
+// prerequisite for ever flowing non-founder-authored content (e.g. Voices)
+// through this generator.
+function jsonInline(v) {
+  return JSON.stringify(v).replace(/</g, "\\u003c");
+}
+
 // ---------- Tuning markdown parsing ----------
 
 /**
@@ -557,11 +565,10 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
   <link rel="alternate" type="text/markdown" title="Tuning file" href="https://agent-tune.com${route}.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">${JSON.stringify(schema)}</script>
-  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+  <script type="application/ld+json">${jsonInline(schema)}</script>
+  <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+  <script defer src="/consent.js"></script>
 
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='${encodeURIComponent(accent)}'/%3E%3C/svg%3E" />
@@ -722,6 +729,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
   </style>
 </head>
 <body class="lib-page">
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="page" style="padding-bottom: 0;">
     <nav class="nav" aria-label="Primary">
@@ -739,7 +747,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
     </nav>
   </div>
 
-  <div class="lib-wrap">
+  <div class="lib-wrap" id="main" tabindex="-1">
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -816,10 +824,17 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
       <div class="lib-v2-jump-grid">
         <button class="lib-v2-jump-btn" data-target="claude-code" type="button"><span class="lib-v2-jump-name">Claude Code</span><span class="lib-v2-jump-tag">CLI</span></button>
         <button class="lib-v2-jump-btn" data-target="claude-ai" type="button"><span class="lib-v2-jump-name">Claude.ai</span><span class="lib-v2-jump-tag">Web</span></button>
+        <button class="lib-v2-jump-btn" data-target="mcp" type="button"><span class="lib-v2-jump-name">MCP connector</span><span class="lib-v2-jump-tag">MCP</span></button>
         <button class="lib-v2-jump-btn" data-target="chatgpt-custom" type="button"><span class="lib-v2-jump-name">ChatGPT</span><span class="lib-v2-jump-tag">Web</span></button>
+        <button class="lib-v2-jump-btn" data-target="chatgpt-projects" type="button"><span class="lib-v2-jump-name">ChatGPT Projects</span><span class="lib-v2-jump-tag">Web</span></button>
+        <button class="lib-v2-jump-btn" data-target="codex-cli" type="button"><span class="lib-v2-jump-name">Codex CLI</span><span class="lib-v2-jump-tag">CLI</span></button>
         <button class="lib-v2-jump-btn" data-target="cursor" type="button"><span class="lib-v2-jump-name">Cursor</span><span class="lib-v2-jump-tag">IDE</span></button>
         <button class="lib-v2-jump-btn" data-target="gemini-gems" type="button"><span class="lib-v2-jump-name">Gemini Gems</span><span class="lib-v2-jump-tag">Web</span></button>
-        <button class="lib-v2-jump-btn" data-target="codex-cli" type="button"><span class="lib-v2-jump-name">Codex CLI</span><span class="lib-v2-jump-tag">CLI</span></button>
+        <button class="lib-v2-jump-btn" data-target="gemini-code-assist" type="button"><span class="lib-v2-jump-name">Gemini Code Assist</span><span class="lib-v2-jump-tag">IDE</span></button>
+        <button class="lib-v2-jump-btn" data-target="hermes" type="button"><span class="lib-v2-jump-name">Hermes</span><span class="lib-v2-jump-tag">CLI</span></button>
+        <button class="lib-v2-jump-btn" data-target="openclaw" type="button"><span class="lib-v2-jump-name">OpenClaw</span><span class="lib-v2-jump-tag">CLI</span></button>
+        <button class="lib-v2-jump-btn" data-target="api" type="button"><span class="lib-v2-jump-name">Any API</span><span class="lib-v2-jump-tag">API</span></button>
+        <button class="lib-v2-jump-btn" data-target="anywhere" type="button"><span class="lib-v2-jump-name">Anywhere else</span><span class="lib-v2-jump-tag">Chat</span></button>
       </div>
     </section>
 
@@ -901,6 +916,7 @@ ${summaryLis}
           <tbody>
             <tr><td>Claude Code (CLI)</td><td><code>CLAUDE.md</code> in project root</td><td>file_write</td></tr>
             <tr><td>Claude.ai (web)</td><td>Project Instructions field</td><td>paste</td></tr>
+            <tr><td>MCP (any client)</td><td>connect <code>https://agent-tune.com/mcp</code>, then call <code>get_tuning</code></td><td>mcp_tools</td></tr>
             <tr><td>ChatGPT</td><td>Settings → Personalization → Custom Instructions</td><td>paste</td></tr>
             <tr><td>ChatGPT Projects</td><td>Project Instructions field</td><td>paste</td></tr>
             <tr><td>OpenAI Codex CLI</td><td><code>AGENTS.md</code> in project root</td><td>file_write</td></tr>
@@ -937,10 +953,10 @@ ${summaryLis}
   <script src="/integrations.js"></script>
   <script>
     (function () {
-      const TUNING = ${JSON.stringify(tuning)};
-      const FILENAME = ${JSON.stringify(downloadFilename)};
-      const TYPE_ID = ${JSON.stringify(c.id)};
-      const SYSTEM = ${JSON.stringify(c.system)};
+      const TUNING = ${jsonInline(tuning)};
+      const FILENAME = ${jsonInline(downloadFilename)};
+      const TYPE_ID = ${jsonInline(c.id)};
+      const SYSTEM = ${jsonInline(c.system)};
 
       const toast = document.getElementById("lib-toast");
       function showToast(m) { toast.textContent = m; toast.classList.add("is-visible"); setTimeout(function () { toast.classList.remove("is-visible"); }, 1600); }
@@ -1154,8 +1170,8 @@ function buildHub(contacts) {
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
   <link rel="alternate" type="application/json" title="Machine catalog" href="https://agent-tune.com/library/index.json" />
 
-  <script type="application/ld+json">${JSON.stringify(schema)}</script>
-  <script type="application/ld+json">${JSON.stringify({
+  <script type="application/ld+json">${jsonInline(schema)}</script>
+  <script type="application/ld+json">${jsonInline({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
@@ -1164,13 +1180,13 @@ function buildHub(contacts) {
     ]
   })}</script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MYEW2MEE1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-5MYEW2MEE1');</script>
+  <script defer src="/consent.js"></script>
 
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
 
     <nav class="nav" aria-label="Primary">
@@ -1192,6 +1208,8 @@ function buildHub(contacts) {
       <span class="crumb-sep" aria-hidden="true">›</span>
       <span class="crumb-current" aria-current="page">Library</span>
     </nav>
+
+    <div id="main" tabindex="-1"></div>
 
     <!-- HERO -->
     <section class="hero">

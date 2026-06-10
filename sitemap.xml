@@ -6,7 +6,7 @@
     <loc>https://agent-tune.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <!-- Research synthesis -->
@@ -22,7 +22,7 @@
     <loc>https://agent-tune.com/tests/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <!-- Pricing -->
@@ -38,14 +38,14 @@
     <loc>https://agent-tune.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <!-- Individual test pages -->
@@ -53,35 +53,35 @@
     <loc>https://agent-tune.com/tests/mbti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/enneagram</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/disc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/attachment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/big-five</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-10</lastmod>
   </url>
 
   <!-- Library hub -->
