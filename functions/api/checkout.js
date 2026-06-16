@@ -1,6 +1,6 @@
 /* POST /api/checkout
  *
- * Creates a Stripe Checkout Session for $9 USD one-time payment.
+ * Creates a Stripe Checkout Session for the selected one-time product.
  * The draft_id flows through as metadata so the unlock flow can find the
  * user's assessment after they pay.
  *
@@ -25,8 +25,22 @@ export async function onRequestPost(ctx) {
   const draftRaw = await kv(ctx).get(`draft:${draft_id}`);
   if (!draftRaw) return err("Draft not found or expired", 404);
 
-  const priceId = ctx.env.STRIPE_PRICE_ID;
-  if (!priceId) return err("STRIPE_PRICE_ID env var not set", 500);
+  let draft;
+  try {
+    draft = JSON.parse(draftRaw);
+  } catch {
+    return err("Draft is corrupted", 500);
+  }
+
+  const product = draft.product || "pro";
+  let priceId;
+  if (product === "developer_pack") {
+    priceId = ctx.env.STRIPE_PRICE_ID_DEV_PACK;
+    if (!priceId) return err("STRIPE_PRICE_ID_DEV_PACK env var not set", 500);
+  } else {
+    priceId = ctx.env.STRIPE_PRICE_ID_PRO || ctx.env.STRIPE_PRICE_ID;
+    if (!priceId) return err("STRIPE_PRICE_ID env var not set", 500);
+  }
 
   const siteUrl = ctx.env.SITE_URL || "https://agent-tune.com";
 
@@ -40,7 +54,8 @@ export async function onRequestPost(ctx) {
         "line_items[0][quantity]": "1",
         "customer_email": email,
         "success_url": `${siteUrl}/api/unlock?session_id={CHECKOUT_SESSION_ID}`,
-        "cancel_url": `${siteUrl}/pro/preview`,
+        "cancel_url": `${siteUrl}${product === "developer_pack" ? "/dev/preview" : "/pro/preview"}`,
+        "metadata[product]": product,
         "metadata[draft_id]": draft_id,
         "metadata[email]": email,
         "allow_promotion_codes": "true",
@@ -52,6 +67,7 @@ export async function onRequestPost(ctx) {
     await kv(ctx).put(
       `checkout:${session.id}`,
       JSON.stringify({
+        product,
         draft_id,
         email,
         session_id: session.id,

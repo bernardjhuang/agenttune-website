@@ -13,6 +13,7 @@
  */
 import { json, err, uuid, kv, sleep, stripeFetch, sendEmail } from "../_shared.js";
 import { synthesize } from "../_synthesis.js";
+import { generateDevPack } from "../_devpack.js";
 
 export async function onRequest(ctx) {
   const url = new URL(ctx.request.url);
@@ -59,10 +60,11 @@ export async function onRequest(ctx) {
   if (!draftRaw) return err(`Draft not found: ${draft_id}. Reach out to hello@agent-tune.com — we have your payment.`, 500);
   const draft = JSON.parse(draftRaw);
 
-  // ---------- Synthesize via Gemini ----------
+  // ---------- Generate product deliverable ----------
+  const product = draft.product || (session.metadata && session.metadata.product) || (checkout && checkout.product) || "pro";
   let soul;
   try {
-    soul = await synthesize(ctx.env, draft);
+    soul = product === "developer_pack" ? generateDevPack(draft) : await synthesize(ctx.env, draft);
   } catch (e) {
     return err(`Synthesis failed: ${e.message}. Your payment is safe — reach out to hello@agent-tune.com.`, 502);
   }
@@ -72,7 +74,8 @@ export async function onRequest(ctx) {
   const soulRecord = {
     ...soul,
     soul_uuid,
-    profile: { results: draft.results, agentfit: draft.agentfit },  // keep for retune in v1.1
+    product,
+    profile: product === "developer_pack" ? { devfit: draft.devfit, personality_optional: draft.personality_optional } : { results: draft.results, agentfit: draft.agentfit },  // keep for retune in v1.1
     stripe_session_id: session_id,
     email,
     created_at: new Date().toISOString(),
@@ -99,19 +102,29 @@ export async function onRequest(ctx) {
   // ---------- Send "your file is ready" email ----------
   try {
     const permalink = `${siteUrl}/me/${soul_uuid}`;
+    const isDevPack = product === "developer_pack";
+    const emailTitle = isDevPack ? "Your Developer Pack is ready" : "Your master tuning is ready";
+    const emailDescription = isDevPack
+      ? "Here's your AgentTune Developer Pack — bookmark this link, it's yours forever:"
+      : "Here's your AgentTune Pro file — bookmark this link, it's yours forever:";
+    const emailCta = isDevPack ? "Open your Developer Pack →" : "Open your tuning →";
+    const emailBody = isDevPack
+      ? "From there you can copy or download your CLAUDE.md, AGENTS.md, Cursor rules, ChatGPT instructions, Gemini Gem instructions, Copilot instructions, and install README."
+      : "From there you can copy the short prompt, download the full Markdown, and grab paste-ready snippets for Claude, ChatGPT, Cursor, Gemini, Codex, or any API.";
+    const profileId = soul.profile_code || soul.profile_name || "AgentTune";
     await sendEmail(ctx.env, {
       to: email,
-      subject: "Your AgentTune Pro master tuning is ready",
+      subject: isDevPack ? "Your AgentTune Developer Pack is ready" : "Your AgentTune Pro master tuning is ready",
       html: `<!DOCTYPE html>
 <html><body style="font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin: 40px auto; padding: 0 20px; color: #1a1a17;">
-  <h1 style="font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.01em;">Your master tuning is ready</h1>
-  <p style="font-size: 16px; line-height: 1.55;">Here's your AgentTune Pro file — bookmark this link, it's yours forever:</p>
-  <p style="margin: 24px 0;"><a href="${permalink}" style="display: inline-block; background: #a8482a; color: #fafaf7; padding: 14px 28px; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 4px;">Open your tuning →</a></p>
-  <p style="font-size: 15px; line-height: 1.55; color: #4a4538;">From there you can copy the short prompt, download the full Markdown, and grab paste-ready snippets for Claude, ChatGPT, Cursor, Gemini, Codex, or any API.</p>
+  <h1 style="font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.01em;">${emailTitle}</h1>
+  <p style="font-size: 16px; line-height: 1.55;">${emailDescription}</p>
+  <p style="margin: 24px 0;"><a href="${permalink}" style="display: inline-block; background: #a8482a; color: #fafaf7; padding: 14px 28px; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 4px;">${emailCta}</a></p>
+  <p style="font-size: 15px; line-height: 1.55; color: #4a4538;">${emailBody}</p>
   <p style="font-size: 14px; line-height: 1.55; color: #6e6a5e; margin-top: 32px;">If it feels generic, reply within 30 days and I'll refund. No questions.</p>
-  <p style="font-size: 12px; color: #6e6a5e; margin-top: 32px; padding-top: 16px; border-top: 1px solid #dad3c0;">Profile: ${soul.profile_code} · Generated ${new Date(soul.generated_at).toLocaleString()}</p>
+  <p style="font-size: 12px; color: #6e6a5e; margin-top: 32px; padding-top: 16px; border-top: 1px solid #dad3c0;">Profile: ${profileId} · Generated ${new Date(soul.generated_at).toLocaleString()}</p>
 </body></html>`,
-      text: `Your master tuning is ready.\n\nHere's your AgentTune Pro file — bookmark this link, it's yours forever:\n\n${permalink}\n\nFrom there you can copy the short prompt, download the full Markdown, and grab paste-ready snippets for Claude, ChatGPT, Cursor, Gemini, Codex, or any API.\n\nIf it feels generic, reply within 30 days and I'll refund. No questions.\n\n---\nProfile: ${soul.profile_code}\nGenerated: ${new Date(soul.generated_at).toLocaleString()}`,
+      text: `${emailTitle}.\n\n${emailDescription}\n\n${permalink}\n\n${emailBody}\n\nIf it feels generic, reply within 30 days and I'll refund. No questions.\n\n---\nProfile: ${profileId}\nGenerated: ${new Date(soul.generated_at).toLocaleString()}`,
     });
   } catch (e) {
     // Don't fail the whole flow if email send fails — user still gets the redirect

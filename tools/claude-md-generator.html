@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free CLAUDE.md Generator — AgentTune</title>
+  <meta name="description" content="Generate a simple CLAUDE.md for Claude Code in your browser. Free, no signup, no repo access." />
+  <link rel="canonical" href="https://agent-tune.com/tools/claude-md-generator" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>body{background:#faf7ef;color:#171612}.tool{max-width:980px;margin:0 auto;padding:32px 20px 80px}.tool h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,78px);line-height:.95;letter-spacing:-.045em}.grid{display:grid;grid-template-columns:360px 1fr;gap:20px}.card{background:#fffdf7;border:1px solid #ded4bd;border-radius:20px;padding:22px}.field{margin-bottom:18px}.field label{display:block;font-weight:800;margin-bottom:8px}.field select,.field input{width:100%;padding:12px;border:1px solid #bfb49d;border-radius:12px;background:#fffaf1}.btn{border:1px solid #171612;background:#171612;color:#faf7ef;border-radius:999px;padding:12px 16px;font-weight:800;cursor:pointer}.ghost{background:transparent;color:#171612;text-decoration:none;display:inline-block}.code{background:#171612;color:#faf7ef;border-radius:16px;padding:18px;white-space:pre-wrap;line-height:1.55;min-height:420px;overflow:auto}@media(max-width:820px){.grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+  <main class="tool">
+    <nav class="nav"><a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a><div class="nav-links"><a href="/developers">Developers</a><a href="/library/">Library</a></div></nav>
+    <h1>Free CLAUDE.md generator.</h1>
+    <p>Answer three questions and get a basic Claude Code instruction file. For deeper multi-tool configs, use the <a href="/developers">Developer Pack</a>.</p>
+    <div class="grid">
+      <section class="card">
+        <div class="field"><label for="tests">Testing style</label><select id="tests"><option value="strict">Write/update tests before implementation</option><option value="regression">Regression tests for bugs</option><option value="pragmatic">Targeted tests for risky changes</option></select></div>
+        <div class="field"><label for="scope">Diff scope</label><select id="scope"><option value="minimal">Minimal diffs</option><option value="current">Current file only unless asked</option><option value="cleanup">Adjacent cleanup allowed</option></select></div>
+        <div class="field"><label for="deps">Dependencies</label><select id="deps"><option value="ask">Ask before adding packages</option><option value="native">Prefer native APIs/existing utilities</option><option value="common">Common packages allowed with rationale</option></select></div>
+        <button class="btn" id="copy">Copy CLAUDE.md</button>
+        <a class="btn ghost" href="/dev/assessment">Generate full Developer Pack →</a>
+      </section>
+      <section><pre class="code" id="out"></pre></section>
+    </div>
+  </main>
+<script>
+function md(){
+ const tests=document.getElementById('tests').value, scope=document.getElementById('scope').value, deps=document.getElementById('deps').value;
+ const testRule=tests==='strict'?'Write or update tests before implementation for bugs and non-trivial features. Verify the failing test before changing production code.':tests==='regression'?'For bugs, add a regression test that fails before implementation. For features, add targeted tests around changed behavior.':'Run the smallest useful verification for the risk level and report exactly what ran.';
+ const scopeRule=scope==='minimal'?'Make the smallest correct change. Do not rewrite unrelated code, rename broadly, or reformat files unless asked.':scope==='current'?'Keep changes in the current file unless the user explicitly approves wider edits.':'Adjacent cleanup is allowed only when it directly reduces complexity and does not distract from the requested task.';
+ const depRule=deps==='ask'?'Do not add npm, pip, brew, or system dependencies without asking first.':deps==='native'?'Prefer native APIs and existing project utilities before proposing third-party packages.':'Common dependencies are acceptable when they clearly reduce risk or complexity; explain the tradeoff first.';
+ return `# Agent Instructions\n\nYou are working in a repository configured for Claude Code. Follow these rules before editing.\n\n## Rules\n- ${testRule}\n- ${scopeRule}\n- ${depRule}\n- Inspect enough context to avoid guessing.\n- Never claim tests passed unless you actually ran them.\n- End with files changed, commands run, and remaining risks.\n\n<!-- Configured via AgentTune.com/dev -->`;
+}
+function render(){document.getElementById('out').textContent=md();}
+document.querySelectorAll('select').forEach(s=>s.addEventListener('change',render));
+document.getElementById('copy').addEventListener('click',async()=>{await navigator.clipboard.writeText(md()); const b=document.getElementById('copy'); b.textContent='Copied'; setTimeout(()=>b.textContent='Copy CLAUDE.md',1200);});render();
+</script>
+</body>
+</html>
