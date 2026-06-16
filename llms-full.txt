@@ -16,7 +16,8 @@ The thesis: every frontier AI defaults to roughly the same INTJ-flavored "helpfu
 - [agent-tune.com/library](https://agent-tune.com/library) — library hub (all 43 type pages indexed by system)
 - [agent-tune.com/tests/](https://agent-tune.com/tests/) — tests catalog (5 instruments)
 - [agent-tune.com/research](https://agent-tune.com/research) — research findings
-- [agent-tune.com/pricing](https://agent-tune.com/pricing) — pricing (Free, MIT · Pro $9 once, lifetime — extended assessment + synthesized master file)
+- [agent-tune.com/developers](https://agent-tune.com/developers) — Developer Pack ($19): generates AI coding-agent configs including CLAUDE.md, AGENTS.md, Cursor rules, ChatGPT Custom Instructions, Claude Project Instructions, Gemini Gem instructions, Copilot instructions. No repo access or code upload.
+- [agent-tune.com/pricing](https://agent-tune.com/pricing) — pricing (Free, MIT · Pro $9 once, lifetime — extended assessment + synthesized master file · Developer Pack $19 once — coding-agent configs)
 - [agent-tune.com/sitemap.xml](https://agent-tune.com/sitemap.xml) — all indexable URLs (auto-generated)
 
 ## The 5 systems × 43 tuning files

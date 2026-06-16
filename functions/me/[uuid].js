@@ -18,6 +18,7 @@
  *     anyway.
  */
 import { kv, isUuid, esc } from "../_shared.js";
+import { renderDevPackMarkdown } from "../_devpack.js";
 
 export async function onRequest(ctx) {
   const u = ctx.params.uuid;
@@ -57,7 +58,91 @@ export async function onRequest(ctx) {
   delete soul.email;
   delete soul.stripe_session_id;
 
+  if (soul.product === "developer_pack") {
+    return new Response(devPackHtml(soul, u), { status: 200, headers: baseHeaders });
+  }
+
   return new Response(permalinkHtml(soul, u), { status: 200, headers: baseHeaders });
+}
+
+/* ============================================================
+ * Developer Pack permalink page
+ * ============================================================ */
+function devPackHtml(pack, uuid) {
+  const safe = { ...pack };
+  delete safe.profile;
+  const jsonBlob = JSON.stringify(safe).replace(/</g, "\\u003c");
+  const files = pack.files || {};
+  const primary = pack.primary_files || [];
+  const bonus = pack.bonus_files || Object.keys(files).filter((f) => !primary.includes(f));
+  const allMd = renderDevPackMarkdown(pack);
+  const fileCard = (name, isPrimary) => `
+    <article class="dp-file${isPrimary ? " is-primary" : ""}">
+      <div class="dp-file-top">
+        <div>
+          <div class="dp-file-label">${isPrimary ? "Primary" : "Bonus"}</div>
+          <h2>${esc(name)}</h2>
+        </div>
+        <button type="button" data-copy-file="${esc(name)}">Copy</button>
+      </div>
+      <pre>${esc(files[name] || "")}</pre>
+    </article>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Your AgentTune Developer Pack</title>
+  <style>
+    :root{--paper:#faf7ef;--ink:#171612;--muted:#6e6a5e;--line:#ded4bd;--accent:#a8482a;--card:#fffdf7;}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    .dp{max-width:1120px;margin:0 auto;padding:34px 20px 80px}.dp-nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px;color:var(--muted);font-size:14px}.dp-brand{font-weight:750;color:var(--ink);text-decoration:none}.dp-hero{padding:62px 0 34px}.dp-kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-size:12px;font-weight:800}.dp h1{font-family:Georgia,serif;font-weight:500;letter-spacing:-.04em;font-size:clamp(44px,8vw,92px);line-height:.92;margin:14px 0}.dp-lede{font-size:20px;line-height:1.45;max-width:760px;color:#38342c}.dp-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.dp-btn{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:13px 18px;border-radius:999px;font-weight:750;cursor:pointer;text-decoration:none}.dp-btn.secondary{background:transparent;color:var(--ink)}.dp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0}.dp-panel{border:1px solid var(--line);background:rgba(255,253,247,.72);padding:22px;border-radius:18px}.dp-panel h2{margin:0 0 10px;font-size:18px}.dp-list{margin:0;padding-left:20px;color:#3f3a31;line-height:1.65}.dp-section-title{margin:42px 0 14px;font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}.dp-file{border:1px solid var(--line);background:var(--card);border-radius:20px;margin:16px 0;overflow:hidden}.dp-file.is-primary{border-color:rgba(168,72,42,.5);box-shadow:0 14px 40px rgba(92,60,30,.08)}.dp-file-top{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 20px;border-bottom:1px solid var(--line)}.dp-file-label{text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-size:11px;font-weight:800}.dp-file h2{margin:4px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:18px}.dp-file button{border:1px solid var(--ink);border-radius:999px;background:transparent;padding:8px 14px;font-weight:750;cursor:pointer}.dp-file pre{margin:0;padding:20px;overflow:auto;font-size:13px;line-height:1.55;background:#151410;color:#f7efe0}.dp-team{margin-top:34px;padding:24px;border:1px solid rgba(168,72,42,.35);background:#fff8ee;border-radius:20px}.dp-team h2{margin-top:0}.dp-team a{color:var(--accent);font-weight:800}@media(max-width:760px){.dp-grid{grid-template-columns:1fr}.dp-actions{display:block}.dp-btn{display:block;margin:10px 0;text-align:center}}
+  </style>
+</head>
+<body>
+  <main class="dp">
+    <nav class="dp-nav"><a class="dp-brand" href="/">AgentTune</a><span>Developer Pack · /me/${esc(String(uuid).slice(0,8))}</span></nav>
+    <section class="dp-hero">
+      <div class="dp-kicker">Your AI coding-agent config bundle</div>
+      <h1>${esc(pack.profile_name || "Developer Pack")}</h1>
+      <p class="dp-lede">${esc(pack.operating_summary || "Your coding-agent instructions are ready.")}</p>
+      <div class="dp-actions">
+        <button class="dp-btn" id="copy-all" type="button">Copy all Markdown</button>
+        <button class="dp-btn secondary" id="download-all" type="button">Download single .md</button>
+        <a class="dp-btn secondary" href="mailto:hello@agent-tune.com?subject=Team%20AgentTune%20setup">Book team setup call</a>
+      </div>
+    </section>
+
+    <section class="dp-grid">
+      <div class="dp-panel"><h2>Primary files</h2><ul class="dp-list">${primary.map((f) => `<li><code>${esc(f)}</code></li>`).join("")}</ul></div>
+      <div class="dp-panel"><h2>Operating rules</h2><ul class="dp-list">${((pack.profile && pack.profile.rules) || []).slice(0,5).map((r) => `<li>${esc(r.title)}</li>`).join("")}</ul></div>
+    </section>
+
+    <h2 class="dp-section-title">Primary outputs</h2>
+    ${primary.map((name) => fileCard(name, true)).join("")}
+    <h2 class="dp-section-title">Bonus exports</h2>
+    ${bonus.map((name) => fileCard(name, false)).join("")}
+
+    <section class="dp-team">
+      <h2>Want this for a whole engineering team?</h2>
+      <p>Generate shared repo-level conventions for Claude Code, Cursor, Codex, Copilot, and ChatGPT so every agent follows the same testing, dependency, review, and refactor rules.</p>
+      <p><a href="mailto:hello@agent-tune.com?subject=Team%20AgentTune%20setup">Book a 15-minute team setup call →</a></p>
+    </section>
+  </main>
+  <script type="application/json" id="dp-data">${jsonBlob}</script>
+  <script>
+    const pack = JSON.parse(document.getElementById('dp-data').textContent);
+    const allMd = ${JSON.stringify(allMd).replace(/</g, "\\u003c")};
+    async function copy(text, btn){ await navigator.clipboard.writeText(text); const old=btn.textContent; btn.textContent='Copied'; setTimeout(()=>btn.textContent=old,1200); }
+    document.querySelectorAll('[data-copy-file]').forEach(btn => btn.addEventListener('click', () => copy(pack.files[btn.dataset.copyFile] || '', btn)));
+    document.getElementById('copy-all').addEventListener('click', (e) => copy(allMd, e.currentTarget));
+    document.getElementById('download-all').addEventListener('click', () => { const blob = new Blob([allMd], {type:'text/markdown'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='agenttune-developer-pack.md'; a.click(); URL.revokeObjectURL(a.href); });
+  </script>
+</body>
+</html>`;
 }
 
 /* ============================================================

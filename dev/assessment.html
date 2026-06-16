@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Developer Pack — AgentTune</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{background:#faf7ef;color:#171612}.devq{max-width:980px;margin:0 auto;padding:28px 20px 80px}.devq h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,76px);line-height:.95;letter-spacing:-.045em;margin:44px 0 14px}.devq-lede{font-size:20px;color:#4a4538;line-height:1.5;max-width:760px}.devq-grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:30px}.devq-card,.devq-preview{background:#fffdf7;border:1px solid #ded4bd;border-radius:20px;padding:22px}.devq-field{margin:0 0 24px}.devq-field legend{font-weight:800;margin-bottom:10px}.devq-options{display:grid;gap:9px}.devq-option{display:block;border:1px solid #ded4bd;border-radius:14px;padding:12px 14px;cursor:pointer;background:#fffaf1}.devq-option:has(input:checked){border-color:#a8482a;background:#fff2df}.devq-tools{display:grid;grid-template-columns:1fr 1fr;gap:9px}.devq input[type=email]{width:100%;padding:13px 14px;border:1px solid #bfb49d;border-radius:12px;background:#fffdf7;font-size:16px}.devq-btn{border:1px solid #171612;background:#171612;color:#faf7ef;border-radius:999px;padding:13px 18px;font-weight:800;cursor:pointer}.devq-btn.secondary{background:transparent;color:#171612}.devq-preview{position:sticky;top:20px;align-self:start}.devq-preview h2{margin-top:0}.devq-preview ul{padding-left:20px;line-height:1.55}.devq-code{background:#171612;color:#faf7ef;border-radius:14px;padding:14px;white-space:pre-wrap;font-size:12px;line-height:1.5;max-height:280px;overflow:auto}.devq-error{color:#9a2d20;font-weight:700;margin-top:12px}.devq-note{font-size:13px;color:#6e6a5e;line-height:1.45}.hidden{display:none}@media(max-width:860px){.devq-grid{grid-template-columns:1fr}.devq-preview{position:static}.devq-tools{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="devq">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links"><a href="/developers">Developers</a><a href="/library/">Library</a><a href="/pricing">Premium</a></div>
+    </nav>
+
+    <h1>Build your AI coding-agent config.</h1>
+    <p class="devq-lede">Answer operational workflow questions. Preview your config anonymously. Pay only if the generated rules look useful.</p>
+
+    <div class="devq-grid">
+      <form class="devq-card" id="dev-form">
+        <fieldset class="devq-field">
+          <legend>Primary tools — select up to 3</legend>
+          <div class="devq-tools" id="tool-options">
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="claude_code" checked> Claude Code</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="cursor" checked> Cursor</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="codex_cli" checked> Codex / AGENTS.md</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="chatgpt"> ChatGPT</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="gemini"> Gemini</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="copilot"> Copilot</label>
+          </div>
+        </fieldset>
+
+        <div id="questions"></div>
+
+        <fieldset class="devq-field">
+          <legend>Email for checkout and delivery</legend>
+          <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+          <p class="devq-note">No repo access. No code upload. Your preview is generated before email is required.</p>
+        </fieldset>
+
+        <button class="devq-btn" type="submit">Unlock full Developer Pack — $19</button>
+        <a class="devq-btn secondary" href="mailto:hello@agent-tune.com?subject=Team%20AgentTune%20setup">Book team setup call</a>
+        <div class="devq-error" id="error" role="alert"></div>
+      </form>
+
+      <aside class="devq-preview" aria-live="polite">
+        <h2>Live preview</h2>
+        <p id="summary"></p>
+        <h3>Sample rules</h3>
+        <ul id="sample-rules"></ul>
+        <h3>CLAUDE.md excerpt</h3>
+        <pre class="devq-code" id="excerpt"></pre>
+      </aside>
+    </div>
+  </div>
+
+<script>
+const QUESTIONS = [
+  {key:'autonomy', label:'When a task is clear, should the agent...', opts:[['act_when_clear','Act immediately and ask only when blocked'],['plan_first','Propose a plan first'],['ask_before_edits','Ask before changing files']]},
+  {key:'planning', label:'Planning threshold', opts:[['plan_for_multi_file','Plan before multi-file/risky work'],['plan_every_task','Plan before every task'],['skip_plan_for_small','Skip ceremony for tiny fixes']]},
+  {key:'tests', label:'Testing default', opts:[['strict_tdd','Strict TDD for bugs and non-trivial features'],['regression_first','Regression tests first for bugs'],['targeted_after','Targeted tests after implementation'],['pragmatic','Tests for risky paths only']]},
+  {key:'refactor_scope', label:'Refactor scope', opts:[['minimal_diff','Minimal diffs'],['current_file_only','Current-file-only unless asked'],['cleanup_ok','Adjacent cleanup is OK'],['broad_ok_with_plan','Broad refactors OK with a plan']]},
+  {key:'dependencies', label:'Dependency policy', opts:[['ask_first','Ask before adding dependencies'],['stdlib_first','Prefer native APIs / existing utilities'],['allowed_if_common','Common dependencies allowed with rationale']]},
+  {key:'architecture', label:'Architecture style', opts:[['simple_first','Simplest working design first'],['extensible','Design for likely extension'],['challenge_assumptions','Challenge architecture assumptions']]},
+  {key:'explanation_depth', label:'Explanation depth', opts:[['terse','Terse'],['concise_after','Concise explanation after code'],['explain_tradeoffs','Explain tradeoffs'],['teach_me','Teach while implementing']]},
+  {key:'output_format', label:'Final output format', opts:[['patch_plus_summary','Patch/files plus concise summary'],['diff_first','Diff first'],['full_files','Full files when useful'],['checklist','Final checklist']]},
+  {key:'ambiguity', label:'When requirements are ambiguous', opts:[['ask_when_blocked','Ask if ambiguity changes behavior'],['make_reasonable_default','State assumption and proceed if safe']]},
+  {key:'code_review', label:'Code review tone', opts:[['direct_correctness_first','Direct; correctness first'],['ranked_suggestions','Separate blockers from suggestions']]}
+];
+
+function renderQuestions(){
+  const root=document.getElementById('questions');
+  root.innerHTML=QUESTIONS.map((q,i)=>`<fieldset class="devq-field"><legend>${q.label}</legend><div class="devq-options">${q.opts.map((o,j)=>`<label class="devq-option"><input type="radio" name="${q.key}" value="${o[0]}" ${j===0?'checked':''}> ${o[1]}</label>`).join('')}</div></fieldset>`).join('');
+}
+function collect(){
+  const fd=new FormData(document.getElementById('dev-form'));
+  const devfit={};
+  for(const q of QUESTIONS) devfit[q.key]=fd.get(q.key);
+  devfit.primary_tools=[...document.querySelectorAll('input[name="primary_tools"]:checked')].slice(0,3).map(i=>i.value);
+  devfit.generated_footer=true;
+  return devfit;
+}
+function preview(devfit){
+  const bits=[];
+  if(devfit.tests==='strict_tdd') bits.push('TDD');
+  if(devfit.refactor_scope==='minimal_diff'||devfit.refactor_scope==='current_file_only') bits.push('minimal-diff');
+  if(devfit.architecture==='simple_first') bits.push('simple-first');
+  if(devfit.dependencies==='ask_first') bits.push('dependency-cautious');
+  const name=(bits.length?bits.join(' '):'pragmatic')+' engineer';
+  const rules=[];
+  rules.push(devfit.tests==='strict_tdd'?'Write the failing test before implementation for bugs and non-trivial features.':'Make verification visible and report exactly what ran.');
+  rules.push(devfit.refactor_scope==='minimal_diff'?'Make the smallest change that solves the task; do not rewrite unrelated code.':'Respect the requested refactor scope and explain broad changes first.');
+  rules.push(devfit.dependencies==='ask_first'?'Ask before adding npm, pip, brew, or system dependencies.':'Prefer existing utilities and justify new dependencies.');
+  document.getElementById('summary').textContent=`Configure agents as a ${name}: verify changes, keep scope controlled, ask before risky moves, and report concrete results.`;
+  document.getElementById('sample-rules').innerHTML=rules.map(r=>`<li>${r}</li>`).join('');
+  document.getElementById('excerpt').textContent=`# Agent Instructions\n\nYou are working with a ${name}.\n\n## Rules\n- ${rules.join('\n- ')}\n\n<!-- Configured via AgentTune.com/dev -->`;
+}
+function bind(){
+  document.getElementById('dev-form').addEventListener('change',()=>preview(collect()));
+  document.querySelectorAll('input[name="primary_tools"]').forEach(cb=>cb.addEventListener('change',()=>{const checked=[...document.querySelectorAll('input[name="primary_tools"]:checked')]; if(checked.length>3) cb.checked=false;}));
+  document.getElementById('dev-form').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const error=document.getElementById('error'); error.textContent='';
+    const email=document.getElementById('email').value.trim();
+    if(!email || !email.includes('@')) { error.textContent='Enter an email before checkout.'; return; }
+    const btn=e.submitter; btn.disabled=true; btn.textContent='Creating checkout…';
+    try{
+      const draftRes=await fetch('/api/draft',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({product:'developer_pack',email,devfit:collect()})});
+      const draft=await draftRes.json(); if(!draftRes.ok) throw new Error(draft.error||'Draft failed');
+      const checkoutRes=await fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({draft_id:draft.draft_id,email})});
+      const checkout=await checkoutRes.json(); if(!checkoutRes.ok) throw new Error(checkout.error||'Checkout failed');
+      location.href=checkout.url;
+    }catch(err){ error.textContent=err.message; btn.disabled=false; btn.textContent='Unlock full Developer Pack — $19'; }
+  });
+}
+renderQuestions(); bind(); preview(collect());
+</script>
+</body>
+</html>

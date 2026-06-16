@@ -44,6 +44,7 @@ export async function onRequestPost(ctx) {
   record = {
     ...record,
     session_id: session.id,
+    product: record.product || (session.metadata && session.metadata.product) || "pro",
     draft_id: record.draft_id || (session.metadata && session.metadata.draft_id),
     email: record.email || session.customer_email || (session.metadata && session.metadata.email),
     payment_intent: session.payment_intent,

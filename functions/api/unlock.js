@@ -13,6 +13,7 @@
  */
 import { json, err, uuid, kv, sleep, stripeFetch, sendEmail } from "../_shared.js";
 import { synthesize } from "../_synthesis.js";
+import { generateDevPack } from "../_devpack.js";
 
 export async function onRequest(ctx) {
   const url = new URL(ctx.request.url);
@@ -59,10 +60,11 @@ export async function onRequest(ctx) {
   if (!draftRaw) return err(`Draft not found: ${draft_id}. Reach out to hello@agent-tune.com — we have your payment.`, 500);
   const draft = JSON.parse(draftRaw);
 
-  // ---------- Synthesize via Gemini ----------
+  // ---------- Generate product deliverable ----------
+  const product = draft.product || (session.metadata && session.metadata.product) || (checkout && checkout.product) || "pro";
   let soul;
   try {
-    soul = await synthesize(ctx.env, draft);
+    soul = product === "developer_pack" ? generateDevPack(draft) : await synthesize(ctx.env, draft);
   } catch (e) {
     return err(`Synthesis failed: ${e.message}. Your payment is safe — reach out to hello@agent-tune.com.`, 502);
   }
@@ -72,7 +74,8 @@ export async function onRequest(ctx) {
   const soulRecord = {
     ...soul,
     soul_uuid,
-    profile: { results: draft.results, agentfit: draft.agentfit },  // keep for retune in v1.1
+    product,
+    profile: product === "developer_pack" ? { devfit: draft.devfit, personality_optional: draft.personality_optional } : { results: draft.results, agentfit: draft.agentfit },  // keep for retune in v1.1
     stripe_session_id: session_id,
     email,
     created_at: new Date().toISOString(),
@@ -101,7 +104,7 @@ export async function onRequest(ctx) {
     const permalink = `${siteUrl}/me/${soul_uuid}`;
     await sendEmail(ctx.env, {
       to: email,
-      subject: "Your AgentTune Pro master tuning is ready",
+      subject: product === "developer_pack" ? "Your AgentTune Developer Pack is ready" : "Your AgentTune Pro master tuning is ready",
       html: `<!DOCTYPE html>
 <html><body style="font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin: 40px auto; padding: 0 20px; color: #1a1a17;">
   <h1 style="font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.01em;">Your master tuning is ready</h1>

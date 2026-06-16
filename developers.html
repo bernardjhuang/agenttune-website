@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentTune for Developers — AI Coding Agent Configs</title>
+  <meta name="description" content="Generate CLAUDE.md, AGENTS.md, Cursor rules, and custom instructions for AI coding agents based on how you work. One-time $19 Developer Pack." />
+  <meta property="og:title" content="AgentTune for Developers" />
+  <meta property="og:description" content="Stop re-explaining how you want AI agents to code. Generate configs for Claude Code, Cursor, Codex, ChatGPT, Gemini, and Copilot." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/developers" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://agent-tune.com/developers" />
+  <link rel="alternate" type="text/markdown" title="AgentTune for Developers" href="https://agent-tune.com/developers.md" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"AgentTune Developer Pack",
+    "description":"Generates portable AI coding-agent configuration files including CLAUDE.md, AGENTS.md, Cursor rules, ChatGPT Custom Instructions, Gemini Gem instructions, and Copilot instructions.",
+    "brand":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"},
+    "offers":{"@type":"Offer","price":"19","priceCurrency":"USD","url":"https://agent-tune.com/developers","availability":"https://schema.org/InStock"}
+  }
+  </script>
+  <style>
+    .dev-wrap{max-width:1160px;margin:0 auto;padding:26px 20px 80px}.dev-hero{padding:72px 0 54px}.dev-kicker{color:#a8482a;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800}.dev-h1{font-family:Georgia,serif;font-size:clamp(48px,8vw,96px);line-height:.92;letter-spacing:-.05em;margin:16px 0 20px;color:#171612}.dev-lede{font-size:22px;line-height:1.45;max-width:800px;color:#3f3a31}.dev-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}.dev-btn{display:inline-block;border:1px solid #171612;background:#171612;color:#faf7ef;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:800}.dev-btn.secondary{background:transparent;color:#171612}.dev-note{color:#6e6a5e;font-size:14px}.dev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.dev-card{background:#fffdf7;border:1px solid #ded4bd;border-radius:20px;padding:22px}.dev-card h2{font-size:19px;margin:0 0 10px}.dev-card p,.dev-card li{color:#4a4538;line-height:1.58}.dev-card code{background:#eee5d2;padding:2px 5px;border-radius:5px}.dev-section{margin-top:54px}.dev-section h2{font-family:Georgia,serif;font-size:42px;letter-spacing:-.03em;margin:0 0 14px}.dev-files{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.dev-file{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#171612;color:#faf7ef;border-radius:14px;padding:16px;min-height:86px}.dev-ba{display:grid;grid-template-columns:1fr 1fr;gap:18px}.dev-code{background:#171612;color:#faf7ef;border-radius:18px;padding:20px;white-space:pre-wrap;line-height:1.55;font-size:13px}.dev-team{border:1px solid rgba(168,72,42,.35);background:#fff8ee;border-radius:22px;padding:28px}.nav .active{color:#a8482a}@media(max-width:800px){.dev-grid,.dev-files,.dev-ba{grid-template-columns:1fr}.dev-actions{display:block}.dev-btn{display:block;text-align:center;margin:10px 0}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="dev-wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/developers" class="active">Developers</a>
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/pricing">Premium</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section class="dev-hero">
+        <div class="dev-kicker">AgentTune for Developers</div>
+        <h1 class="dev-h1">Stop re-explaining how you want AI agents to code.</h1>
+        <p class="dev-lede">Generate personal config files for Claude Code, Cursor, Codex, ChatGPT, Gemini, and Copilot — based on your engineering workflow, not a generic prompt template.</p>
+        <div class="dev-actions">
+          <a class="dev-btn" href="/dev/assessment">Build my agent config →</a>
+          <a class="dev-btn secondary" href="/tools/claude-md-generator">Try free CLAUDE.md generator</a>
+          <a class="dev-btn secondary" href="#examples">See example outputs</a>
+        </div>
+        <p class="dev-note">One-time $19. No repo access. No code upload. Editable Markdown files, yours forever.</p>
+      </section>
+
+      <section class="dev-grid" aria-label="Problems this solves">
+        <article class="dev-card"><h2>Agents overreach</h2><p>Stop broad rewrites, surprise dependencies, and architecture changes when you wanted a surgical patch.</p></article>
+        <article class="dev-card"><h2>Agents skip verification</h2><p>Set your default test protocol: strict TDD, regression-first bug fixes, or pragmatic targeted checks.</p></article>
+        <article class="dev-card"><h2>Agents forget your style</h2><p>Put your preferences in durable files the tools already read instead of repeating them every chat.</p></article>
+      </section>
+
+      <section class="dev-section">
+        <h2>What you get</h2>
+        <div class="dev-files">
+          <div class="dev-file">CLAUDE.md</div>
+          <div class="dev-file">AGENTS.md</div>
+          <div class="dev-file">.cursor/rules/agenttune.mdc</div>
+          <div class="dev-file">ChatGPT Custom Instructions</div>
+          <div class="dev-file">Claude Project Instructions</div>
+          <div class="dev-file">Gemini Gem Instructions</div>
+          <div class="dev-file">Copilot Instructions</div>
+          <div class="dev-file">README install guide</div>
+        </div>
+      </section>
+
+      <section class="dev-section" id="examples">
+        <h2>Same task, different agent behavior</h2>
+        <div class="dev-ba">
+          <div><h3>Generic coding agent</h3><pre class="dev-code">Refactors the whole file.
+Adds a package without asking.
+Explains the plan for six paragraphs.
+Does not run tests.
+Ends with "should work".</pre></div>
+          <div><h3>With AgentTune config</h3><pre class="dev-code">Checks existing conventions first.
+Asks before adding dependencies.
+Writes/updates the regression test.
+Keeps the diff minimal.
+Reports exact commands and results.</pre></div>
+        </div>
+      </section>
+
+      <section class="dev-section dev-grid">
+        <article class="dev-card"><h2>Hardcore questionnaire</h2><p>Autonomy, TDD, diff scope, dependencies, output format, architecture pushback, code review tone, ambiguity handling.</p></article>
+        <article class="dev-card"><h2>Deterministic templates</h2><p>The product separates preference logic from file formatting, so Cursor frontmatter and agent-file syntax stay stable.</p></article>
+        <article class="dev-card"><h2>Primary tools first</h2><p>Select up to 3 tools. Your unlocked page highlights those first and keeps other exports as bonuses.</p></article>
+      </section>
+
+      <section class="dev-section dev-team">
+        <h2>Need this for an engineering team?</h2>
+        <p>Generate shared repo-level conventions so every developer’s AI agent follows the same testing, dependency, review, and refactor rules.</p>
+        <a class="dev-btn" href="mailto:hello@agent-tune.com?subject=Team%20AgentTune%20setup">Book a team setup call →</a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

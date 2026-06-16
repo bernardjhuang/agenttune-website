@@ -25,6 +25,21 @@
     <lastmod>2026-06-10</lastmod>
   </url>
 
+  <!-- Developers -->
+  <url>
+    <loc>https://agent-tune.com/developers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/tools/claude-md-generator</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-06-16</lastmod>
+  </url>
+
   <!-- Pricing -->
   <url>
     <loc>https://agent-tune.com/pricing</loc>
