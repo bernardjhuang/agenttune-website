@@ -33,10 +33,14 @@ export async function onRequestPost(ctx) {
   }
 
   const product = draft.product || "pro";
-  const priceId = product === "developer_pack"
-    ? (ctx.env.STRIPE_PRICE_ID_DEV_PACK || ctx.env.STRIPE_PRICE_ID)
-    : (ctx.env.STRIPE_PRICE_ID_PRO || ctx.env.STRIPE_PRICE_ID);
-  if (!priceId) return err(product === "developer_pack" ? "STRIPE_PRICE_ID_DEV_PACK env var not set" : "STRIPE_PRICE_ID env var not set", 500);
+  let priceId;
+  if (product === "developer_pack") {
+    priceId = ctx.env.STRIPE_PRICE_ID_DEV_PACK;
+    if (!priceId) return err("STRIPE_PRICE_ID_DEV_PACK env var not set", 500);
+  } else {
+    priceId = ctx.env.STRIPE_PRICE_ID_PRO || ctx.env.STRIPE_PRICE_ID;
+    if (!priceId) return err("STRIPE_PRICE_ID env var not set", 500);
+  }
 
   const siteUrl = ctx.env.SITE_URL || "https://agent-tune.com";
 

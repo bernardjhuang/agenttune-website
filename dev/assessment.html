@@ -26,6 +26,7 @@
           <legend>Primary tools — select up to 3</legend>
           <div class="devq-tools" id="tool-options">
             <label class="devq-option"><input type="checkbox" name="primary_tools" value="claude_code" checked> Claude Code</label>
+            <label class="devq-option"><input type="checkbox" name="primary_tools" value="claude_ai"> Claude Projects</label>
             <label class="devq-option"><input type="checkbox" name="primary_tools" value="cursor" checked> Cursor</label>
             <label class="devq-option"><input type="checkbox" name="primary_tools" value="codex_cli" checked> Codex / AGENTS.md</label>
             <label class="devq-option"><input type="checkbox" name="primary_tools" value="chatgpt"> ChatGPT</label>
@@ -99,9 +100,14 @@ function preview(devfit){
   document.getElementById('sample-rules').innerHTML=rules.map(r=>`<li>${r}</li>`).join('');
   document.getElementById('excerpt').textContent=`# Agent Instructions\n\nYou are working with a ${name}.\n\n## Rules\n- ${rules.join('\n- ')}\n\n<!-- Configured via AgentTune.com/dev -->`;
 }
+function updateToolLimit(){
+  const boxes=[...document.querySelectorAll('input[name="primary_tools"]')];
+  const checked=boxes.filter(i=>i.checked);
+  boxes.forEach(i=>{ i.disabled = !i.checked && checked.length >= 3; });
+}
 function bind(){
-  document.getElementById('dev-form').addEventListener('change',()=>preview(collect()));
-  document.querySelectorAll('input[name="primary_tools"]').forEach(cb=>cb.addEventListener('change',()=>{const checked=[...document.querySelectorAll('input[name="primary_tools"]:checked')]; if(checked.length>3) cb.checked=false;}));
+  document.getElementById('dev-form').addEventListener('change',()=>{ updateToolLimit(); preview(collect()); });
+  document.querySelectorAll('input[name="primary_tools"]').forEach(cb=>cb.addEventListener('change',()=>{const checked=[...document.querySelectorAll('input[name="primary_tools"]:checked')]; if(checked.length>3) cb.checked=false; updateToolLimit();}));
   document.getElementById('dev-form').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const error=document.getElementById('error'); error.textContent='';
@@ -117,7 +123,7 @@ function bind(){
     }catch(err){ error.textContent=err.message; btn.disabled=false; btn.textContent='Unlock full Developer Pack — $19'; }
   });
 }
-renderQuestions(); bind(); preview(collect());
+renderQuestions(); bind(); updateToolLimit(); preview(collect());
 </script>
 </body>
 </html>

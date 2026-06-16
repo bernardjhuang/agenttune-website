@@ -38,7 +38,7 @@ const sampleDraft = {
   product: "developer_pack",
   email: "dev@example.com",
   devfit: {
-    primary_tools: ["claude_code", "cursor", "codex_cli"],
+    primary_tools: ["claude_code", "claude_ai", "cursor"],
     autonomy: "act_when_clear",
     planning: "plan_for_multi_file",
     tests: "strict_tdd",
@@ -70,7 +70,7 @@ test("generateDevPack emits deterministic files for selected primary tools first
   assert.ok(pack.files["CLAUDE.md"].includes("Write or update tests before implementation"));
   assert.ok(pack.files["AGENTS.md"].includes("Ask before adding dependencies"));
   assert.ok(pack.files[".cursor/rules/agenttune.mdc"].startsWith("---\nalwaysApply: true\n---"));
-  assert.deepEqual(pack.primary_files.slice(0, 3), ["CLAUDE.md", ".cursor/rules/agenttune.mdc", "AGENTS.md"]);
+  assert.deepEqual(pack.primary_files.slice(0, 3), ["CLAUDE.md", "claude-project-instructions.md", ".cursor/rules/agenttune.mdc"]);
   assert.ok(pack.bonus_files.includes("chatgpt-custom-instructions.md"));
 });
 
@@ -81,4 +81,18 @@ test("renderDevPackMarkdown creates a single portable artifact", () => {
   assert.ok(md.includes("## CLAUDE.md"));
   assert.ok(md.includes("## .cursor/rules/agenttune.mdc"));
   assert.ok(md.includes("Configured via AgentTune.com/dev"));
+});
+
+test("checkout requires a dedicated Developer Pack Stripe price", () => {
+  const checkoutSrc = fs.readFileSync(path.join(ROOT, "functions", "api", "checkout.js"), "utf8");
+  assert.ok(checkoutSrc.includes('product === "developer_pack"'));
+  assert.ok(checkoutSrc.includes('priceId = ctx.env.STRIPE_PRICE_ID_DEV_PACK'));
+  assert.ok(!checkoutSrc.includes('ctx.env.STRIPE_PRICE_ID_DEV_PACK || ctx.env.STRIPE_PRICE_ID'));
+});
+
+test("unlock email uses Developer Pack copy and profile_name fallback", () => {
+  const unlockSrc = fs.readFileSync(path.join(ROOT, "functions", "api", "unlock.js"), "utf8");
+  assert.ok(unlockSrc.includes('const isDevPack = product === "developer_pack"'));
+  assert.ok(unlockSrc.includes('Your Developer Pack is ready'));
+  assert.ok(unlockSrc.includes('soul.profile_code || soul.profile_name'));
 });
