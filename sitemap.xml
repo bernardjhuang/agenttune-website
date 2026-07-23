@@ -17,6 +17,14 @@
     <lastmod>2026-06-10</lastmod>
   </url>
 
+  <!-- Research articles -->
+  <url>
+    <loc>https://agent-tune.com/research/i-took-the-mbti-100-times</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
   <!-- Tests catalog -->
   <url>
     <loc>https://agent-tune.com/tests/</loc>

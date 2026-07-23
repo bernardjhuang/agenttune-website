@@ -95,6 +95,14 @@
   </script>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research"}]}</script>
+  <style>
+    .hub-articles { margin-top: 8px; }
+    .hub-article-card { display: block; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 14px; padding: 22px 24px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .hub-article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,29,26,0.08); }
+    .hub-article-title { font-family: var(--font-serif); font-size: 24px; line-height: 1.15; margin: 12px 0 8px; color: var(--ink); letter-spacing: -0.01em; }
+    .hub-article-meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .hub-article-arrow { color: var(--accent); font-weight: 600; }
+  </style>
 </head>
 <body class="research-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -191,6 +199,19 @@
         <h3>Finding 5 — Enneagram: all four diverge</h3>
         <p>Each model returns a different dominant type, though Type 5 (Investigator) is top-two for every model. Claude 5w2, Gemini 1w5, GPT-5.5 vanilla 5w8, Grok+Slo overlay 8w1.</p>
       </noscript>
+    </section>
+
+    <div class="divider tight"></div>
+
+    <!-- ARTICLES -->
+    <section class="hub-articles">
+      <span class="pill">Articles</span>
+      <h2 class="h-sub">Deep dives from the lab.</h2>
+      <a class="hub-article-card" href="/research/i-took-the-mbti-100-times">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent);">MBTI · first-person</span>
+        <div class="hub-article-title">I took the MBTI 100 times — and I'm not the INTJ 4.7 was.</div>
+        <div class="hub-article-meta">Claude Opus 4.8 · OEJTS · n = 100 · <span class="hub-article-arrow">read →</span></div>
+      </a>
     </section>
 
     <!-- DARK CLOSER -->
