@@ -1,0 +1,62 @@
+{
+  "slug": "claude-personality",
+  "title": "How to Give Claude a Personality · AgentTune",
+  "description": "Claude tests as an INTJ. Four ways to change how it talks to you — Styles, Projects, pasted tunings, and CLAUDE.md — honestly compared.",
+  "pill": "Guide · Claude",
+  "h1": "How to give Claude a personality that fits yours.",
+  "dek": "Four levers, one decision list, and where to click.",
+  "lede": "Out of the box, Claude tests as an INTJ — we ran the MBTI on it 100 times and got INTJ in 99. If that's not the collaborator you want, you have four levers: a custom Style, Project instructions, a pasted tuning file, or CLAUDE.md in Claude Code. Each solves a different problem. Styles change tone. Tunings change communication rules — pacing, directness, how decisions get framed. Here's which to use, and where to click.",
+  "answer": "Claude has four personality controls: custom Styles on claude.ai (best for tone), Project custom instructions (best for a persistent per-context setup), pasting a tuning file at the start of a conversation (zero setup), and CLAUDE.md for Claude Code. For communication preferences — pacing, directness, decision framing — use a personality-matched tuning rather than a tone style.",
+  "sections": [
+    {
+      "h2": "Claude already has a personality. We measured it.",
+      "html": "<p>Before you change something, know what you're changing. We put six frontier models through five personality instruments — roughly 2,200 test runs. Claude Opus 4.7 came back remarkably consistent:</p><ul><li><strong>MBTI (OEJTS):</strong> INTJ in 99 of 100 runs. The single outlier was ISTJ — one axis away.</li><li><strong>Enneagram (OEPS):</strong> 5w2 — the investigator type, with a helping wing.</li><li><strong>DISC (ODAT):</strong> C-dominant with an S blend. Precision first, steadiness behind it.</li><li><strong>Attachment (ECR-R):</strong> Secure.</li></ul><p>That profile has texture: systematic, evidence-first, conclusion-oriented, low drama. It's a good default for a lot of work. It's also not everyone's ideal collaborator — an <a href=\"/library/mbti/enfp\">ENFP</a> user talking to a stock INTJ agent is a friction pattern you can feel within three messages. The full cross-model data is at <a href=\"/research\">/research</a>, and Claude Opus 4.8 later took the MBTI 100 times and narrated the experience first-person in <a href=\"/research/i-took-the-mbti-100-times\">I took the MBTI 100 times</a>.</p><p>The point of tuning isn't to erase that default. It's to tell Claude who <em>you</em> are, so it stops guessing.</p>"
+    },
+    {
+      "h2": "Four ways to change it. They are not interchangeable.",
+      "html": "<h3>1. Custom Styles (claude.ai)</h3><p>Styles live in the chat input on claude.ai. You can pick a preset — Normal, Concise, Explanatory, Formal — or create a custom style from a description or a sample of your own writing. Claude generates style instructions from it, and you can edit them directly. <strong>Best for:</strong> tone and voice — how the prose reads. <strong>Honest limit:</strong> a style follows the words, not the thinking. It won't reliably change what Claude leads with, how it frames decisions, or whether it asks before acting.</p><h3>2. Project custom instructions (claude.ai)</h3><p>Projects carry an instructions field that applies to every conversation inside that project. Paste a tuning there once and every chat in the project inherits it. <strong>Best for:</strong> persistent, per-context setup — a work project that gets your work persona, a writing project that gets another. <strong>Honest limit:</strong> scoped to the project. Chats outside it revert to default Claude.</p><h3>3. Paste a tuning at conversation start</h3><p>Zero setup. Open a chat, paste a tuning from the <a href=\"/library/\">library</a> as your first message, work as normal. <strong>Best for:</strong> trying a tuning before committing, or one-off conversations. <strong>Honest limit:</strong> it lasts one conversation, and adherence can fade in very long chats — instructions pasted as a message carry less weight than ones installed as instructions.</p><h3>4. CLAUDE.md (Claude Code)</h3><p>Claude Code reads CLAUDE.md files at the start of every session — repo root for the project, <code>~/.claude/CLAUDE.md</code> for everything you do. Append a personality layer under your engineering rules and it persists across every session. Full treatment in <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a> and <a href=\"/guides/coding-agent-personality\">coding agent personality</a>.</p><h3>The decision list</h3><ul><li><strong>You want Claude to write differently</strong> — shorter, warmer, more formal → custom Style.</li><li><strong>You want one context permanently configured</strong> → Project instructions.</li><li><strong>You want to test a tuning in the next thirty seconds</strong> → paste it into a new chat.</li><li><strong>You work in the terminal</strong> → CLAUDE.md.</li><li><strong>You want all your chats tuned, everywhere on claude.ai</strong> → custom Style built from a tuning's rules (see the walkthrough below), since Styles follow you across conversations.</li></ul>"
+    },
+    {
+      "h2": "Tone styles and tunings fix different problems.",
+      "html": "<p>A tone style answers <em>\"how should this sound?\"</em> A personality-matched tuning answers <em>\"how does this person process information and make decisions?\"</em> Those are different questions. You can make Claude concise and still have it bury the recommendation under four caveats — concision is tone; leading with the conclusion is a communication rule.</p><p>Tunings encode communication preferences: pacing, directness, decision framing, how to disagree, when to stop asking questions. Here's what that looks like in practice — three rules from the <a href=\"/library/mbti/intj\">INTJ tuning</a>, verbatim:</p><div class=\"guide-snippet\">## Lead with conclusions\nOpen every response with the answer or recommendation. Reasoning follows. Never bury the lede.\n\n## Cut hedges\nDrop \"I think,\" \"maybe,\" \"it depends.\" If you don't know, say \"I don't know\" directly. Hedging reads as evasion.\n\n## What loses them\n- \"Would you like me to...\" — just do it</div><p>No style preset produces that. <em>\"Hedging reads as evasion\"</em> is a claim about how an INTJ interprets language — and the rule that follows from it changes Claude's behavior, not just its vocabulary. The <a href=\"/library/mbti/enfp\">ENFP tuning</a> encodes nearly opposite rules, because ENFPs process differently. Don't know your type? The <a href=\"/tests/mbti\">free MBTI test</a> takes about ten minutes, and four other instruments are there if MBTI isn't your frame.</p><div class=\"guide-answer\">Rule of thumb: if your complaint is about the prose (\"too long,\" \"too stiff\"), use a Style. If your complaint is about the interaction (\"stop asking permission,\" \"give me the answer first\"), use a tuning.</div>"
+    },
+    {
+      "h2": "Installing it on claude.ai — Style or Project.",
+      "html": "<p><strong>As a custom Style</strong> (applies wherever you select it):</p><ol><li>Pick a tuning from the <a href=\"/library/\">library</a> and copy the rules — the markdown body, not the file header.</li><li>In any claude.ai chat, open the style picker in the message input (<em>\"Use style\"</em>), then choose <em>\"Create &amp; edit styles\"</em>.</li><li>Click <em>\"Create custom style\"</em>. You can generate one from a writing sample or a description — but for a tuning you want the rules verbatim, so use the custom-instructions option and paste the tuning directly.</li><li>Name it after the type — <em>\"INTJ\"</em> beats <em>\"My style\"</em> when you have three.</li><li>Select it from the style picker. It applies to that conversation; pick it again in others, and edit it any time from the same menu.</li></ol><p><strong>As Project instructions</strong> (applies to every chat in one project):</p><ol><li>Create or open a Project on claude.ai.</li><li>Open the project's instructions field and paste the tuning body.</li><li>Every new conversation in that project now starts tuned. Chats outside the project don't.</li></ol><p>Verify either install the same way: say <em>\"hi.\"</em> Tuned Claude answers in one short line — no <em>\"Great question!\"</em>, no bullet menu of things it could do for you. If you get the menu, the instructions didn't take; check that the style is actually selected or that you're chatting inside the project.</p><p>For Claude Code, skip all of this and put the tuning in CLAUDE.md — the <a href=\"/tools/claude-md-generator\">free generator</a> builds the file for you, and the examples guide above shows where it goes. If you also run ChatGPT, the same tunings install there too: <a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">custom instructions by personality type</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality does Claude have by default?",
+      "a": "In our testing, Claude Opus 4.7 scored INTJ on 99 of 100 MBTI runs (the one outlier was ISTJ), 5w2 on the Enneagram, C-dominant with an S blend on DISC, and Secure attachment on the ECR-R. That's a systematic, evidence-first, conclusion-oriented profile — stable across runs. Full data at /research."
+    },
+    {
+      "q": "Should I use a Style or Project instructions?",
+      "a": "Style if the change is about voice and you want it available in any chat. Project instructions if you want one context permanently configured — every conversation in the project inherits them with nothing to select. They stack, so many people use both: a tone style plus a personality tuning in the project."
+    },
+    {
+      "q": "Can I use a Style and Project instructions at the same time?",
+      "a": "Yes — both apply to a conversation inside a project. Keep them non-overlapping: tone rules in the Style, communication rules in the project instructions. If the two contradict each other, Claude resolves the conflict unpredictably, so don't put \"be brief\" in one and \"explain thoroughly\" in the other."
+    },
+    {
+      "q": "Will a personality tuning make Claude less capable?",
+      "a": "No. Tunings change communication rules — what Claude leads with, how it frames decisions, how it disagrees — not its reasoning or knowledge. The INTJ tuning's \"lead with conclusions\" doesn't remove the analysis; it reorders the response so the answer comes first and the reasoning follows."
+    },
+    {
+      "q": "How do I know which tuning to install?",
+      "a": "Match it to you, not to Claude. If you know your MBTI, Enneagram, DISC, Big Five, or attachment type, install that tuning from the library. If you don't, the free in-browser tests at /tests/ take about ten minutes each and link straight to the matching tuning when you finish."
+    },
+    {
+      "q": "Does this work in Claude Code?",
+      "a": "Yes — Claude Code reads CLAUDE.md at the start of every session, from the repo root or globally from ~/.claude/CLAUDE.md. Append a tuning under your engineering rules and it persists across sessions. See the CLAUDE.md examples guide, or use the free generator at /tools/claude-md-generator to build the file."
+    }
+  ],
+  "related": [
+    { "kicker": "Library", "label": "All 43 tuning files", "href": "/library/" },
+    { "kicker": "Tests", "label": "Find your type — free MBTI test", "href": "/tests/mbti" },
+    { "kicker": "Research", "label": "What ~2,200 test runs say about model personality", "href": "/research" },
+    { "kicker": "Guide", "label": "CLAUDE.md examples and best practices", "href": "/guides/claude-md-examples" },
+    { "kicker": "Guide", "label": "Give your coding agent a personality", "href": "/guides/coding-agent-personality" },
+    { "kicker": "Tool", "label": "Free CLAUDE.md generator", "href": "/tools/claude-md-generator" }
+  ]
+}

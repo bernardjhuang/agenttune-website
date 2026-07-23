@@ -3,7 +3,6 @@
    Warm cream + terracotta. Chat-interface conceit. Geist typography.
    =================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 
 /* Keyboard users: first tabbable element on every page */
 .skip-link {
@@ -5532,3 +5531,135 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
   .c-gutter { padding: 18px 8px 18px 12px; font-size: 11px; }
   .c-code { padding: 18px 16px; font-size: 12px; }
 }
+
+/* ===================================================================
+   Library H1 keyword sub-line (under the big type code)
+   =================================================================== */
+
+.lib-code-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ===================================================================
+   Guides — long-form instructional pages (/guides/*)
+   =================================================================== */
+
+.guide-prose { max-width: 720px; }
+.guide-prose h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 52px 0 14px;
+}
+.guide-prose h3 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 34px 0 10px;
+}
+.guide-prose p, .guide-prose li { font-size: 16.5px; line-height: 1.65; color: var(--ink); }
+.guide-prose p { margin: 0 0 16px; }
+.guide-prose ul, .guide-prose ol { margin: 0 0 18px; padding-left: 22px; }
+.guide-prose li { margin-bottom: 8px; }
+.guide-prose a { color: var(--accent, #a8482a); text-underline-offset: 3px; }
+.guide-answer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent, #a8482a);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 0 0 26px;
+  font-size: 16.5px;
+  line-height: 1.6;
+}
+.guide-snippet {
+  position: relative;
+  background: #1e1d1a;
+  color: #f5f1e8;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 18px 0 26px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+.guide-snippet-copy {
+  position: absolute;
+  top: 10px; right: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: transparent;
+  color: #f5f1e8;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  cursor: pointer;
+}
+.guide-snippet-copy:hover { background: rgba(255,255,255,0.12); }
+.guide-faq { margin: 8px 0 26px; }
+.guide-faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.guide-faq summary {
+  font-weight: 600;
+  font-size: 16.5px;
+  cursor: pointer;
+  list-style: none;
+}
+.guide-faq summary::after { content: " +"; color: var(--accent, #a8482a); }
+.guide-faq details[open] summary::after { content: " –"; }
+.guide-faq details p { margin: 10px 0 0; }
+.guide-related {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.guide-related a {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent, #a8482a);
+  border-radius: 12px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.35;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.guide-related a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,29,26,0.08); }
+.guide-related .guide-related-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* ===================================================================
+   Hub article cards (research hub, guides hub)
+   =================================================================== */
+
+.hub-articles { margin-top: 8px; }
+.hub-article-card { display: block; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent, #a8482a); border-radius: 14px; padding: 22px 24px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.hub-article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,29,26,0.08); }
+.hub-article-title { font-family: var(--font-serif); font-size: 24px; line-height: 1.15; margin: 12px 0 8px; color: var(--ink); letter-spacing: -0.01em; }
+.hub-article-meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.hub-article-arrow { color: var(--accent, #a8482a); font-weight: 600; }

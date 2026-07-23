@@ -6,7 +6,7 @@
     <loc>https://agent-tune.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <!-- Research synthesis -->
@@ -29,7 +29,7 @@
     <loc>https://agent-tune.com/tests/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <!-- Legal -->
@@ -37,14 +37,14 @@
     <loc>https://agent-tune.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <!-- Individual test pages -->
@@ -52,35 +52,122 @@
     <loc>https://agent-tune.com/tests/mbti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/enneagram</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/disc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/attachment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/big-five</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/what-personality-type-is-chatgpt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <!-- Guides hub -->
+  <url>
+    <loc>https://agent-tune.com/guides/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <!-- Guides -->
+  <url>
+    <loc>https://agent-tune.com/guides/how-to-give-your-ai-a-personality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/claude-personality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/claude-md-examples</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/coding-agent-personality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/make-chatgpt-sound-like-you</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/enneagram-ai-prompts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/mbti-vs-big-five-for-ai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <!-- Free tools -->
+  <url>
+    <loc>https://agent-tune.com/tools/claude-md-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/tools/custom-instructions-generator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <!-- Library hub -->
@@ -188,7 +275,7 @@
     <loc>https://agent-tune.com/library/mbti/estp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>

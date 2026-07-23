@@ -1,0 +1,58 @@
+{
+  "slug": "mbti-vs-big-five-for-ai",
+  "title": "MBTI vs Big Five: Which Works Better for AI? · AgentTune",
+  "description": "MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data.",
+  "pill": "Guide · Frameworks",
+  "h1": "MBTI vs Big Five for AI: crisp switches or calibrated dials.",
+  "dek": "One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.",
+  "lede": "For personalizing an AI, start with MBTI — its binary axes convert directly into instructions a model can follow — then layer Big Five on top for calibration. For measuring humans, Big Five has the stronger scientific standing, and we won't pretend otherwise. We ran ~2,200 personality-test runs across six frontier models, and the results explain why both statements are true at once: binary instruments converge, continuous ones discriminate.",
+  "answer": "For AI personalization: start with MBTI, because its binary axes convert directly into prompt instructions, then layer Big Five for calibration and nuance. For measuring humans, Big Five has the stronger scientific standing — MBTI's dichotomies and retest variability are real criticisms. Use the sorter for instructions, the measure for accuracy.",
+  "sections": [
+    {
+      "h2": "One sorts. One measures.",
+      "html": "<p>MBTI assigns you one side of four binary axes — introversion or extraversion (I/E), sensing or intuition (S/N), thinking or feeling (T/F), judging or perceiving (J/P) — and the four letters compose into one of 16 types. It's a sorter. Every axis is a fork; you go left or right.</p><p>Big Five (OCEAN) measures five continuous dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — and scores you somewhere along each one. No types, no forks. Dials.</p><p>Notice what each hands you at the end. MBTI: four letters. Big Five: five numbers. Hold that difference — it's the entire argument below.</p><p>The scientific standing is not symmetric. Psychometricians have two standing complaints about MBTI: it dichotomizes what the data says is continuous — a person at 55% thinking and a person at 95% get the same T — and people near an axis midline can flip letters on retest. Big Five came out of decades of factor analysis, is the standard instrument in academic personality research, and holds up better on retest reliability. If the question is <em>which measures humans better</em>, Big Five wins, and it isn't close.</p><p>But that's the measurement question. Prompting an AI raises a different one: which kind of output converts into instructions an agent can actually follow?</p>"
+    },
+    {
+      "h2": "The simpler the instrument, the more six models agreed.",
+      "html": "<p>We ran ~2,200 personality-test runs across six frontier models — Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, MiniMax 2.7 — on five instruments. The results form a ladder:</p><ul><li><strong>MBTI (four binary axes):</strong> 597 of 600 runs came back INTJ — Claude 99 of 100, GLM 98, and GPT-5.5, Gemini, Grok, and MiniMax a perfect 100 each. The three outliers — one ISTJ, two INTP — were each a single axis away.</li><li><strong>DISC (four styles):</strong> total convergence. Every model C-dominant with an S-blend.</li><li><strong>Attachment (two dials):</strong> 397 of 400 runs Secure — but the dials start separating models. Gemini sits deep in the quadrant (anxiety 1.86 / avoidance 1.62); Grok is near the doorway (2.84 / 3.05).</li><li><strong>Big Five (five dials):</strong> real separation. Claude, GPT-5.5, and Gemini land within ~3 points of each other on every dimension; Grok scores 5–8 points lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism — with 2–5× wider variance.</li><li><strong>Enneagram (nine motivations):</strong> full divergence. Each model shows a different dominant type — Claude 5w2, Gemini 1w5, GPT-5.5 5w8, Grok 8w1 — with Type 5 in the top two for all.</li></ul><p>The pattern: the more binary the instrument, the more the models agree. Read as measurement, that's MBTI's weakness on display — binary axes compress away real differences that Big Five's dials catch. Read as prompting, the same compression is the feature: a fork produces an unambiguous behavioral setting. Full data lives at <a href=\"/research\">the research hub</a>; for the strangest cut of it, <a href=\"/research/i-took-the-mbti-100-times\">Claude took the MBTI 100 times and narrated the experience</a>.</p>"
+    },
+    {
+      "h2": "Types write instructions. Traits tune them.",
+      "html": "<p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>\"lead with the recommendation, then the reasoning\"</em>; P becomes <em>\"keep options open — don't force a decision early.\"</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class=\"guide-answer\">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href=\"/library/mbti/intj\">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href=\"/library/ocean/openness-high\">high Openness</a> or <a href=\"/library/ocean/neuroticism-low\">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href=\"/library/\">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class=\"guide-snippet\">## Personality layer (INTJ + Big Five calibration)\n\n# Switches — from type\n- Lead with the recommendation, then the reasoning.\n- Disagree directly: \"I disagree because X.\n  Here's what I'd do instead.\"\n- Skip the warmup. No option menus when one answer is right.\n\n# Dials — from traits\n- Detail: terse by default; expand on request. (low E)\n- Structure: number the steps, no loose narrative. (high C)\n- Alternatives: offer one, not five. (moderate O)</div><p>The switches came straight off the type — no interpretation. The dials took the trait scores and turned them into settings. Neither half is sufficient alone: switches without dials give you the right shape at the wrong volume; dials without switches give you calibrated ambiguity.</p>"
+    },
+    {
+      "h2": "Take both. It's ten minutes.",
+      "html": "<p>Both tests are free, in-browser, and take about five minutes each — <a href=\"/tests/mbti\">MBTI (OEJTS)</a> and <a href=\"/tests/big-five\">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — the same OEJTS and IPIP-50 we ran ~2,200 times across the six models above, so your scores and the research sit on the same scale.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>, or jump to <a href=\"/guides/coding-agent-personality\">the coding-agent version</a> if your agent lives in a terminal.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is MBTI scientifically valid?",
+      "a": "It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."
+    },
+    {
+      "q": "Which is better for prompting an AI — MBTI or Big Five?",
+      "a": "Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."
+    },
+    {
+      "q": "Why did all six models test as INTJ?",
+      "a": "597 of 600 runs returned INTJ, and the three outliers were each one axis away. Binary instruments compress: assistant training pushes every frontier model to the same side of each fork — introverted, abstract, analytical, structured. Instruments with continuous or motivational scoring, like Big Five and Enneagram, recover the differences the forks hide."
+    },
+    {
+      "q": "Can I use both frameworks in one prompt?",
+      "a": "Yes, and it works better than either alone. Let the type set the defaults — reporting order, decisiveness, tangent policy — and let trait scores adjust the dials, like verbosity and hedging. Keep it short: ten to twenty lines of concrete rules beats a personality essay."
+    },
+    {
+      "q": "What about DISC and the Enneagram?",
+      "a": "They anchor the two ends of the ladder. DISC converged completely in our runs — every model C-dominant with an S-blend — while the Enneagram fully diverged, each model showing a different dominant type. Motivational instruments discriminate hardest. If the Enneagram is your framework, we built tunings for all nine types."
+    }
+  ],
+  "related": [
+    { "kicker": "Tests", "label": "MBTI test (OEJTS) — free, ~5 min", "href": "/tests/mbti" },
+    { "kicker": "Tests", "label": "Big Five test (IPIP-50) — free, ~5 min", "href": "/tests/big-five" },
+    { "kicker": "Research", "label": "I took the MBTI 100 times", "href": "/research/i-took-the-mbti-100-times" },
+    { "kicker": "Library", "label": "INTJ tuning file", "href": "/library/mbti/intj" },
+    { "kicker": "Library", "label": "High Openness tuning file", "href": "/library/ocean/openness-high" },
+    { "kicker": "Guide", "label": "Coding agent personality", "href": "/guides/coding-agent-personality" }
+  ]
+}

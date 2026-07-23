@@ -1,0 +1,58 @@
+{
+  "slug": "coding-agent-personality",
+  "title": "AGENTS.md & Cursor Rules: Add a Personality · AgentTune",
+  "description": "CLAUDE.md, AGENTS.md, Cursor rules, and Copilot instructions cover code style. Here is the personality layer they all miss, with copyable examples.",
+  "pill": "Guide · Coding agents",
+  "h1": "Coding agent personality: the layer your AGENTS.md is missing.",
+  "dek": "Code conventions tell the agent what to write. A personality layer tells it how to talk to you.",
+  "lede": "Every coding agent now reads an instruction file — CLAUDE.md, AGENTS.md, .cursor/rules, copilot-instructions.md. Almost all of them say the same things: run these commands, follow this style, don't touch that directory. Useful — and incomplete. None of it tells the agent how to communicate with the person reading its output. That's the personality layer: how to report, how much reasoning to show, when to push back. This guide covers all four file conventions, then the section they're all missing.",
+  "answer": "Coding agents read instruction files — CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.",
+  "sections": [
+    {
+      "h2": "Four files, one job.",
+      "html": "<p>Every major coding agent reads a Markdown instruction file from your repo. The conventions differ in name and loading rules, but they converge on the same content: commands, code style, boundaries.</p><h3>CLAUDE.md — Claude Code</h3><p>Claude Code loads <code>CLAUDE.md</code> from the repo root at session start, plus <code>~/.claude/CLAUDE.md</code> for preferences that follow you across projects. Plain Markdown, no schema. A typical one reads like a terse operations manual:</p><div class=\"guide-snippet\"># CLAUDE.md\n\n## Commands\n- npm run dev — start the dev server\n- npm test — run the vitest suite before any commit\n\n## Conventions\n- TypeScript strict mode; no any types\n- Named exports only\n- Server code never imports from /client</div><h3>AGENTS.md — the cross-agent standard</h3><p>AGENTS.md is an open spec (agents.md) for a single instruction file any agent can read — stewarded by the Agentic AI Foundation under the Linux Foundation since December 2025. OpenAI's Codex reads it natively, from <code>~/.codex/AGENTS.md</code> globally, the repo root, and the working directory, most specific last. Cursor documents it as a plain-Markdown alternative to <code>.cursor/rules</code>, with nested files taking precedence. GitHub Copilot's coding agent, Gemini CLI, and Zed read it too.</p><div class=\"guide-snippet\"># AGENTS.md\n\n## Setup\npnpm install\npnpm dev — local server on :3000\n\n## Testing\npnpm test must pass before you commit.\n\n## Style\nPrettier owns formatting. Don't hand-format.</div><h3>.cursor/rules/*.mdc — Cursor</h3><p>Cursor's project rules live in <code>.cursor/rules/</code> as <code>.mdc</code> files — Markdown with a YAML frontmatter block that controls when each rule loads: a <code>description</code>, optional <code>globs</code>, and an <code>alwaysApply</code> flag.</p><div class=\"guide-snippet\">---\ndescription: API route conventions\nglobs: [\"src/api/**/*.ts\"]\nalwaysApply: false\n---\n\n- Validate input with zod at the route boundary.\n- Return typed error objects, never bare strings.</div><h3>.github/copilot-instructions.md — GitHub Copilot</h3><p>One repo-wide Markdown file added to Copilot's context. No frontmatter, no scoping — a good reason to keep it short.</p><div class=\"guide-snippet\">We use Rails 8 with RSpec.\nPrefer service objects over fat models.\nAll timestamps are UTC. All money is integer cents.</div><p>Four conventions, one pattern — and one gap. Read a stack of real examples (<a href=\"/guides/claude-md-examples\">we collected them</a>) and you'll notice what almost none of them mention: the person reading the agent's output.</p>"
+    },
+    {
+      "h2": "Code conventions constrain the diff. Nothing constrains the conversation.",
+      "html": "<p>Your instruction file tells the agent what code to write. It says nothing about how to work with you — and that's the half you actually experience, message by message. The personality layer covers communication, not style:</p><ul><li><strong>How to report.</strong> Result first, or reasoning first? <em>\"Lead with what changed, then why.\"</em></li><li><strong>How much context.</strong> One line per file touched, or a full walkthrough?</li><li><strong>When to push back.</strong> <em>\"If my approach is worse, say so before implementing it.\"</em></li><li><strong>What to do when unsure.</strong> Guess and flag it, or stop and ask?</li></ul><p>The difference shows up on the first bad day. Untuned, the agent buries a failed migration under six paragraphs of cheerful narration. Tuned, it opens with the failure, states its assumption about the cause, and gives you a confidence level. Same model, same code — different file.</p><p>These preferences differ by person, and they map surprisingly well to personality type. Here's a condensed, dev-flavored version of our <a href=\"/library/mbti/intp\">INTP tuning</a>:</p><div class=\"guide-snippet\">## Working with me (INTP)\n\n- Show the reasoning, not just the diff. A fix with no\n  traceable logic looks like a coincidence.\n- Calibrate confidence. \"This should fix it — 70% sure\"\n  beats \"Fixed!\" when the tests haven't run.\n- State assumptions before acting on them.\n  \"Assuming the race is in the cache layer, then...\"\n- Edge cases are the interesting part. When I ask\n  \"but what about...\", pursue it — that's the direction.\n- Don't force closure. If I'm still comparing approaches,\n  don't push for a decision.\n- Don't compress nuance into bullets to save time.</div><p>There are 43 of these — every MBTI type, Enneagram type, DISC style, attachment style, and Big Five pole — free and MIT-licensed in <a href=\"/library/\">the library</a>. Don't know your type? <a href=\"/tests/mbti\">The test</a> takes five minutes, in-browser, no email.</p>"
+    },
+    {
+      "h2": "Where the layer goes, file by file.",
+      "html": "<ul><li><strong>Claude Code:</strong> append a <code>## Working with me</code> section to your project CLAUDE.md — or put it in <code>~/.claude/CLAUDE.md</code> once and it applies to every repo. The <a href=\"/tools/claude-md-generator\">CLAUDE.md generator</a> emits a ready-to-paste block from your type.</li><li><strong>AGENTS.md:</strong> add it as its own section in the root file. Because the file is a shared standard, the same section reaches Codex, Cursor, and everything else that reads it — write it once.</li><li><strong>Cursor:</strong> give it its own file — <code>.cursor/rules/personality.mdc</code> with <code>alwaysApply: true</code> and no globs. Communication preferences apply to every file; keep glob-scoped code rules separate.</li><li><strong>Copilot:</strong> a short block inside <code>.github/copilot-instructions.md</code>. The whole file rides along on requests, so keep the layer to ten lines or fewer.</li></ul><p>Precedence works in your favor here. Communication style is a person-level preference, not a project-level one — so the global file (<code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>) is its natural home, and project files stay about the project. Set it once, get it everywhere.</p><p>Every tuning in the library ships as raw Markdown too — <a href=\"/library/mbti/intp.md\">intp.md</a>, for example — so you can pull one straight into any of these files.</p>"
+    },
+    {
+      "h2": "What to leave out.",
+      "html": "<ul><li><strong>Secrets.</strong> API keys, tokens, connection strings. Instruction files get committed, forked, and pasted into bug reports.</li><li><strong>Anything a tool already enforces.</strong> If Prettier formats it or ESLint blocks it, prose about it is dead weight — the config is the rule, and the prose version drifts.</li><li><strong>Novel-length context.</strong> Every line competes for the agent's attention on every request. Architecture docs belong in the repo; link them, don't inline them.</li><li><strong>Personality theater.</strong> <em>\"You are a sarcastic pirate\"</em> is a costume, and costumes decay over a long session. Concrete communication rules — <em>\"state assumptions before acting\"</em> — persist, because the agent can check itself against them.</li></ul><p>For the deeper case on rules versus costumes, start with <a href=\"/guides/how-to-give-your-ai-a-personality\">how to give your AI a personality</a>. And if you're wondering which framework the rules should come from, we compared MBTI and Big Five <a href=\"/guides/mbti-vs-big-five-for-ai\">against cross-model data</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is AGENTS.md replacing CLAUDE.md and Cursor rules?",
+      "a": "Converging, not replacing. AGENTS.md is the portable common denominator — Codex reads it natively, and Cursor documents it as an alternative to .cursor/rules — but Claude Code's native file is still CLAUDE.md, and Cursor's .mdc rules do things AGENTS.md can't, like glob scoping. Many repos keep both, with one file pointing at the other."
+    },
+    {
+      "q": "Can I use the identical personality section in all four files?",
+      "a": "Yes. The personality layer is plain Markdown prose, and all four conventions accept plain Markdown. The only format difference is Cursor's .mdc frontmatter — three YAML lines at the top. Write the section once, paste it everywhere, and set alwaysApply: true in the Cursor copy so it loads in every chat."
+    },
+    {
+      "q": "How long should the personality section be?",
+      "a": "Ten to twenty lines. Instruction files compete for the agent's attention on every request, so each rule should earn its place. Concrete beats comprehensive: six rules the agent can check itself against outperform two paragraphs describing what kind of person you are."
+    },
+    {
+      "q": "Will personality tuning change the code the agent writes?",
+      "a": "Mostly no — code conventions still govern the diff. What changes is everything around the diff: whether the agent leads with the result or the reasoning, how it flags uncertainty, whether it pushes back on a bad approach before implementing it. That's the part you experience message by message."
+    },
+    {
+      "q": "What if I don't know my personality type?",
+      "a": "Take the free in-browser MBTI test at agent-tune.com — about five minutes, no email. Or skip typology entirely and handwrite three rules: how you want results reported, how much context you want, and when you want pushback. A personality type is a shortcut to those answers, not a prerequisite."
+    }
+  ],
+  "related": [
+    { "kicker": "Guide", "label": "CLAUDE.md examples that actually work", "href": "/guides/claude-md-examples" },
+    { "kicker": "Tool", "label": "CLAUDE.md generator", "href": "/tools/claude-md-generator" },
+    { "kicker": "Library", "label": "All 43 tuning files", "href": "/library/" },
+    { "kicker": "Tests", "label": "MBTI test — free, ~5 min", "href": "/tests/mbti" },
+    { "kicker": "Guide", "label": "MBTI vs Big Five for AI", "href": "/guides/mbti-vs-big-five-for-ai" },
+    { "kicker": "Guide", "label": "How to give your AI a personality", "href": "/guides/how-to-give-your-ai-a-personality" }
+  ]
+}

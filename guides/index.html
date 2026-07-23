@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Personality Tuning Guides — ChatGPT, Claude · AgentTune</title>
+  <meta name="description" content="Practical guides to personality-tuning your AI: ChatGPT custom instructions, Claude styles, CLAUDE.md, AGENTS.md, and coding agents. All free." />
+
+  <meta property="og:title" content="AgentTune Guides — personality tuning for every AI agent" />
+  <meta property="og:description" content="ChatGPT custom instructions by type, Claude personality setup, CLAUDE.md examples, coding-agent instruction files. Free, practical, no fluff." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/guides/" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune guides" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AgentTune Guides" />
+  <meta name="twitter:description" content="Personality tuning for ChatGPT, Claude, Cursor, and every other agent you talk to." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AgentTune Guides","url":"https://agent-tune.com/guides/","description":"Practical guides to personality-tuning AI agents: ChatGPT custom instructions, Claude styles and projects, CLAUDE.md, AGENTS.md, Cursor rules.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://agent-tune.com/guides/how-to-give-your-ai-a-personality","name":"How to give your AI a personality"},{"@type":"ListItem","position":2,"url":"https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type","name":"ChatGPT custom instructions by personality type"},{"@type":"ListItem","position":3,"url":"https://agent-tune.com/guides/claude-personality","name":"Give Claude a personality"},{"@type":"ListItem","position":4,"url":"https://agent-tune.com/guides/claude-md-examples","name":"CLAUDE.md examples and best practices"},{"@type":"ListItem","position":5,"url":"https://agent-tune.com/guides/coding-agent-personality","name":"Personality for coding agents"},{"@type":"ListItem","position":6,"url":"https://agent-tune.com/guides/make-chatgpt-sound-like-you","name":"Make ChatGPT sound like you"},{"@type":"ListItem","position":7,"url":"https://agent-tune.com/guides/enneagram-ai-prompts","name":"Enneagram AI prompts for all 9 types"},{"@type":"ListItem","position":8,"url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","name":"MBTI vs Big Five for AI personalization"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides"}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+  <style>
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 28px; }
+    .guides-grid .hub-article-card { border-top-width: 3px; }
+    .guides-section-label { margin-top: 44px; }
+  </style>
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Guides</span>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guides · all free</span>
+        <h1 class="h-hero h-research-hero">Personality tuning, agent by agent.</h1>
+        <p class="lede" style="margin-top: 16px; max-width: 720px;">
+          Practical walkthroughs for installing a personality tuning wherever you talk to an AI — ChatGPT's custom instructions, Claude's styles and projects, and the instruction files your coding agents read. Start with the pillar guide if you're new; jump straight to your agent if you're not.
+        </p>
+      </section>
+
+      <span class="pill guides-section-label">Start here</span>
+      <div class="guides-grid">
+        <a class="hub-article-card" href="/guides/how-to-give-your-ai-a-personality">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Pillar</span>
+          <div class="hub-article-title">How to give your AI a personality.</div>
+          <div class="hub-article-meta">The method: test → tuning → install · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-chatgpt">
+          <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research</span>
+          <div class="hub-article-title">What personality type is ChatGPT?</div>
+          <div class="hub-article-meta">Answered with 2,200 test runs · <span class="hub-article-arrow">read →</span></div>
+        </a>
+      </div>
+
+      <span class="pill guides-section-label">By agent</span>
+      <div class="guides-grid">
+        <a class="hub-article-card" href="/guides/chatgpt-custom-instructions-by-personality-type">
+          <span class="pill">ChatGPT</span>
+          <div class="hub-article-title">Custom instructions for all 16 MBTI types.</div>
+          <div class="hub-article-meta">Paste-ready blocks, under the 1,500-char limit · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/guides/make-chatgpt-sound-like-you">
+          <span class="pill">ChatGPT</span>
+          <div class="hub-article-title">Make ChatGPT sound like you.</div>
+          <div class="hub-article-meta">Personality-first vs corpus-first, honestly · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/guides/claude-personality">
+          <span class="pill">Claude</span>
+          <div class="hub-article-title">Give Claude a personality.</div>
+          <div class="hub-article-meta">Styles vs Projects vs paste vs CLAUDE.md · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/guides/claude-md-examples">
+          <span class="pill">Claude Code</span>
+          <div class="hub-article-title">CLAUDE.md examples that actually work.</div>
+          <div class="hub-article-meta">Four annotated files + the principles · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/guides/coding-agent-personality">
+          <span class="pill">Coding agents</span>
+          <div class="hub-article-title">The personality layer your AGENTS.md is missing.</div>
+          <div class="hub-article-meta">CLAUDE.md, Cursor rules, Copilot instructions · <span class="hub-article-arrow">read →</span></div>
+        </a>
+      </div>
+
+      <span class="pill guides-section-label">By system</span>
+      <div class="guides-grid">
+        <a class="hub-article-card" href="/guides/enneagram-ai-prompts">
+          <span class="pill">Enneagram</span>
+          <div class="hub-article-title">Enneagram AI prompts for all 9 types.</div>
+          <div class="hub-article-meta">Motivation-first tuning blocks · <span class="hub-article-arrow">read →</span></div>
+        </a>
+        <a class="hub-article-card" href="/guides/mbti-vs-big-five-for-ai">
+          <span class="pill">Comparison</span>
+          <div class="hub-article-title">MBTI vs Big Five, for AI purposes.</div>
+          <div class="hub-article-meta">The only comparison backed by cross-model data · <span class="hub-article-arrow">read →</span></div>
+        </a>
+      </div>
+
+      <span class="pill guides-section-label">Free tools</span>
+      <div class="guides-grid">
+        <a class="hub-article-card" href="/tools/custom-instructions-generator">
+          <span class="pill">Tool</span>
+          <div class="hub-article-title">Custom instructions generator.</div>
+          <div class="hub-article-meta">Your type + your agent → paste-ready block · <span class="hub-article-arrow">open →</span></div>
+        </a>
+        <a class="hub-article-card" href="/tools/claude-md-generator">
+          <span class="pill">Tool</span>
+          <div class="hub-article-title">CLAUDE.md generator.</div>
+          <div class="hub-article-meta">Three questions → a working starter file · <span class="hub-article-arrow">open →</span></div>
+        </a>
+      </div>
+    </main>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</body>
+</html>

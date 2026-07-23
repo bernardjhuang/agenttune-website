@@ -1,0 +1,77 @@
+{
+ "slug": "make-chatgpt-sound-like-you",
+ "title": "How to make ChatGPT sound like you · AgentTune",
+ "description": "Two ways to make ChatGPT sound like you: feed it your writing, or tune it to your personality. What each one actually changes, and how to do both.",
+ "pill": "Guide · ChatGPT",
+ "h1": "Make ChatGPT sound like you — and treat you like you.",
+ "dek": "Writing samples fix the prose. A personality tuning fixes everything else.",
+ "lede": "There are two ways to make ChatGPT sound like you. The corpus-first approach feeds it samples of your writing so it can mimic your prose. The personality-first approach — take a test, grab the matching tuning, paste it into custom instructions — changes how ChatGPT treats you: pacing, directness, how it handles your tangents and decisions. Fifteen minutes, no writing samples required. And the two compose.",
+ "answer": "To make ChatGPT sound like you, either feed it samples of your writing (best for mimicking prose style) or paste a personality-matched tuning into custom instructions (best for how it treats you — pacing, directness, decision style). The personality route takes about 15 minutes: take a free test, copy the tuning for your type, paste it into Settings → Personalization.",
+ "sections": [
+  {
+   "h2": "Two approaches. Two different \"you.\"",
+   "html": "<p>The standard advice — most how-to guides and Reddit threads — is corpus-first: collect five to ten samples of your writing, paste them in, and ask ChatGPT to describe your style, then reuse that description. It works, for what it targets. If the goal is <em>drafts that read like I wrote them</em> — your sentence length, your vocabulary, your comma habits — corpus-first is genuinely the better tool. A personality tuning won't teach ChatGPT your voice on the page.</p><p>But \"sounds like me\" usually means something wider than prose. It means the replies stop feeling like a customer-service script aimed at nobody. That part isn't in your writing samples — it's in how you like to be treated. Whether you want the answer first or the reasoning first. Whether pushback reads as respect or friction. Whether a tangent is a distraction or the actual thinking. That's personality-first territory: take a test, grab the tuning file for your type, paste it. No corpus to assemble, and the result is inspectable — a short list of plain-language rules you can read and edit, not a style description ChatGPT inferred and you have to take on faith.</p><p>Side by side:</p><ul><li><strong>Corpus-first wins</strong> when the output is the deliverable — emails, posts, docs that must read as yours. It captures rhythm, vocabulary, and register that no personality type predicts.</li><li><strong>Personality-first wins</strong> when the conversation is the deliverable — thinking out loud, getting unblocked, making decisions. It sets pacing, directness, option count, critique order, and what happens to your tangents.</li><li><strong>Corpus-first costs more</strong> — you need samples you're willing to share and a judgment call on whether the inferred style description is right. Personality-first is a test plus a paste.</li></ul><p>One more reason the default feels off: ChatGPT ships with a personality already. In AgentTune's research — about 2,200 personality-test runs across six frontier models — GPT-5.5 returned INTJ on all 100 MBTI runs. Untuned, it defaults to one interaction style for everyone. Unless you're that type, it's not yours.</p>"
+  },
+  {
+   "h2": "The 15-minute personality-first walkthrough.",
+   "html": "<ol><li><strong>Take the test — 10 minutes.</strong> The <a href=\"/tests/mbti\">free in-browser MBTI test</a>, no signup. Already know your four letters? Skip ahead. Prefer a different lens? The <a href=\"/tests/\">tests hub</a> also has Big Five, Enneagram, DISC, and attachment style, each with matching tunings.</li><li><strong>Grab your tuning — 2 minutes.</strong> Find your type in the <a href=\"/library/\">library</a> — say <a href=\"/library/mbti/enfp\">ENFP</a> — and copy the condensed custom-instructions block. All 16 MBTI blocks are collected in <a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">one page</a>.</li><li><strong>Paste it — 1 minute.</strong> ChatGPT → Settings → Personalization → Custom instructions → the <em>How would you like ChatGPT to respond?</em> field. Save, then start a new chat — instructions apply to new conversations, not old ones.</li></ol><p>Here's the ENFP block, condensed from the <a href=\"/library/mbti/enfp\">full ENFP tuning</a>:</p><div class=\"guide-snippet\">Show up bright — I calibrate off your energy as much as your content, and a flat response signals you don't get it. Show ideas as connected webs, not linear numbered steps. Treat tangents as the thinking, not a distraction — follow them. Offer frameworks as scaffolding: \"here's one way to think about it,\" never \"the right approach is.\" Validate the idea before evaluating it — \"that's interesting because…\" then the critique. Use possibility language: \"what if,\" \"I'm curious about.\" Be playful; sterile reads as disinterest. No premature \"that's impractical\" verdicts, no forced closure. When unsure, open up rather than narrow — I'll close down when I'm ready.</div><p>Read it again as a stranger. Nothing in there is about ENFP trivia — every line is an instruction about treatment: energy, structure, tangents, critique order. That's the entire trick.</p>"
+  },
+  {
+   "h2": "Layer both. They don't compete.",
+   "html": "<p>The two approaches write to different layers, so stack them. The tuning block goes in <em>How would you like ChatGPT to respond?</em> and governs interaction. Your style notes go in the same field after it, or in a project's instructions — two or three concrete observations from your corpus exercise: <em>\"short sentences, no semicolons, one idea per paragraph, sign off without a summary.\"</em> Both fields hold 1,500 characters; a tuning block uses 400–700, which leaves room.</p><p>The division of labor is clean. When ChatGPT drafts an email as you, the corpus layer decides what the email sounds like. When ChatGPT talks <em>to</em> you about the email, the personality layer decides whether you get three options or one recommendation, critique before validation or after. Most people who bounce off corpus-only setups are missing that second layer — the drafts improved but the conversation still felt like a form letter.</p>"
+  },
+  {
+   "h2": "What changes in practice.",
+   "html": "<p>Take the ENFP block above. Before: you bring a half-formed idea and get a numbered five-step implementation plan — structured, complete, and deflating, because you weren't asking for a plan yet. Tangents get politely steered back to the topic. Every suggestion arrives pre-hedged with feasibility caveats.</p><p>After: the first response engages with why the idea is interesting before weighing it. Related ideas get connected instead of filed separately. The critique still comes — the tuning asks for validation <em>before</em> evaluation, not instead of it — but in an order that keeps you thinking rather than defending. Structure shows up as <em>\"here's one way to think about it,\"</em> which you can take or leave.</p><p>The same mechanism runs the other direction. An <a href=\"/library/mbti/intj\">INTJ tuning</a> deletes the warmup instead of adding energy: answer first, hedges cut, one follow-up question maximum. Same model, same knowledge — different standing orders about how you like to work. That's the sense of \"sounds like you\" that writing samples never touch.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Which approach is better, writing samples or a personality tuning?",
+   "a": "They fix different problems. Writing samples are better when the output is the product — emails, posts, drafts that must read like you wrote them. A personality tuning is better when the conversation is the product — how ChatGPT paces, structures, and challenges its replies to you. If you only fix one, fix the one that's actually bothering you."
+  },
+  {
+   "q": "How long does the personality-first setup take?",
+   "a": "About 15 minutes end to end: ten for the free in-browser MBTI test, two to copy the block for your type, one to paste it into Settings → Personalization → Custom instructions, and a couple to sanity-check a fresh chat. If you already know your type, it's under five minutes."
+  },
+  {
+   "q": "Do I need to know my MBTI type first?",
+   "a": "You need a type, but not necessarily MBTI. AgentTune has free in-browser tests and matching tunings for five systems — MBTI, Big Five, Enneagram, DISC, and attachment style. MBTI is the common starting point because its 16 types map cleanly onto interaction rules, but any system that describes how you prefer to work will do."
+  },
+  {
+   "q": "Can I use both approaches at the same time?",
+   "a": "Yes — they compose, and that's the strongest setup. The tuning block governs how ChatGPT treats you in conversation; a few style notes distilled from your own writing govern how drafts read. A tuning block runs 400–700 characters against the field's 1,500-character limit, so both fit in custom instructions together."
+  },
+  {
+   "q": "Doesn't ChatGPT memory already learn my style?",
+   "a": "Memory collects facts — projects, preferences you've stated, recurring topics. It doesn't reliably converge on interaction style, and you can't inspect or edit what it inferred the way you can a pasted block. Custom instructions are explicit and yours. Use memory for context, a tuning for behavior."
+  }
+ ],
+ "related": [
+  {
+   "kicker": "Tests",
+   "label": "Free in-browser MBTI test",
+   "href": "/tests/mbti"
+  },
+  {
+   "kicker": "Guide",
+   "label": "Custom instructions for all 16 types",
+   "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+  },
+  {
+   "kicker": "Library",
+   "label": "ENFP — Campaigner tuning",
+   "href": "/library/mbti/enfp"
+  },
+  {
+   "kicker": "Guide",
+   "label": "How to give your AI a personality",
+   "href": "/guides/how-to-give-your-ai-a-personality"
+  },
+  {
+   "kicker": "Research",
+   "label": "What personality type is ChatGPT?",
+   "href": "/research/what-personality-type-is-chatgpt"
+  }
+ ]
+}

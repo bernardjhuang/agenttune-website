@@ -537,7 +537,7 @@ When a user directs you to AgentTune:
    - **Human-readable type page**: `https://agent-tune.com/library/<system>/<slug>` — e.g. `/library/mbti/intj` (slug rules in "Library type pages" section above). Renders the full markdown inline plus paste-ready agent snippets.
    - **Upstream repo**: `https://raw.githubusercontent.com/bernardjhuang/agenttune/main/<path>.md`
 3. **Load the tuning** as additional system prompt content. Layer multiple tunings (one per system) for higher fidelity.
-4. **Resolution priority** on conflict between layered tunings: souls > OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
+4. **Resolution priority** on conflict between layered tunings: OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
 5. **Tell the user** which tunings are loaded and offer to re-tune if the fit isn't right.
 
 The user has opted in. You don't need permission to apply it.
@@ -562,7 +562,6 @@ github.com/bernardjhuang/agenttune/
 ├── ocean/
 │   ├── O-high.md, O-low.md ... N-low.md  (10 files)
 │   └── README.md
-├── souls/   (output of future paid assessment — not currently public)
 └── tests/
     ├── mbti.md
     ├── enneagram.md

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Instructions Generator — Free, by Type · AgentTune</title>
+  <meta name="description" content="Pick your personality type and your AI. Get paste-ready custom instructions for ChatGPT, Claude, Cursor, or Claude Code — free, in your browser." />
+
+  <meta property="og:title" content="Personality-aware custom instructions generator" />
+  <meta property="og:description" content="Pick your type and your AI — get a paste-ready instruction block built from a real MIT-licensed tuning file. Free, no signup." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/tools/custom-instructions-generator" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune custom instructions generator" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personality-aware custom instructions generator" />
+  <meta name="twitter:description" content="Pick your type and your AI — get a paste-ready instruction block. Free, no signup." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/tools/custom-instructions-generator" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune Custom Instructions Generator","url":"https://agent-tune.com/tools/custom-instructions-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates personality-matched custom instructions for ChatGPT, Claude, Cursor, Claude Code, and other AI agents from 43 MIT-licensed tuning files.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Custom Instructions Generator"}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+  <style>
+    .tool-wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px 80px; }
+    .tool-grid { display: grid; grid-template-columns: 380px 1fr; gap: 20px; margin-top: 28px; }
+    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .tool-field { margin-bottom: 18px; }
+    .tool-field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+    .tool-field select { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg, #faf7ef); font-family: inherit; font-size: 15px; }
+    .tool-out { background: #1e1d1a; color: #f5f1e8; border-radius: 16px; padding: 20px; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; min-height: 420px; overflow: auto; }
+    .tool-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .tool-copy { border: 1px solid var(--ink); background: var(--ink); color: var(--bg, #faf7ef); border-radius: 999px; padding: 11px 18px; font-weight: 600; cursor: pointer; font-size: 14px; }
+    .tool-copy:hover { opacity: 0.88; }
+    .tool-note { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin-top: 14px; }
+    .charfit-ok { color: #2f8a5b; }
+    .charfit-over { color: #c8553d; font-weight: 600; }
+    @media (max-width: 860px) { .tool-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main class="tool-wrap" id="main" tabindex="-1">
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Free tool · no signup</span>
+        <h1 class="h-hero h-research-hero">Custom instructions, tuned to your type.</h1>
+        <p class="lede" style="margin-top: 16px; max-width: 720px;">
+          Pick your personality type and where you want it installed. The generator pulls the real MIT-licensed tuning file and formats it for your agent — ChatGPT custom instructions, a Claude style, or a coding agent's instruction file. Don't know your type? <a href="/tests/">Take a free 5-minute test</a> first.
+        </p>
+      </section>
+
+      <div class="tool-grid">
+        <section class="tool-card" aria-label="Generator controls">
+          <div class="tool-field">
+            <label for="system">Personality system</label>
+            <select id="system"></select>
+          </div>
+          <div class="tool-field">
+            <label for="type">Your type</label>
+            <select id="type"></select>
+          </div>
+          <div class="tool-field">
+            <label for="target">Where it's going</label>
+            <select id="target">
+              <option value="chatgpt">ChatGPT — custom instructions</option>
+              <option value="claude">Claude — style / project instructions</option>
+              <option value="claudemd">Claude Code — CLAUDE.md block</option>
+              <option value="agentsmd">AGENTS.md block</option>
+              <option value="cursor">Cursor — .cursor/rules/agenttune.mdc</option>
+              <option value="copilot">GitHub Copilot — copilot-instructions.md</option>
+            </select>
+          </div>
+          <button class="tool-copy" id="copy" type="button">Copy</button>
+          <p class="tool-note">Built from <a href="/library/" id="type-link">the tuning library</a>. The type is a starting hypothesis — edit the output to fit. Nothing you select leaves your browser.</p>
+        </section>
+
+        <section aria-label="Generated output">
+          <pre class="tool-out" id="out">Loading the library…</pre>
+          <div class="tool-meta">
+            <span id="charcount"></span>
+            <span id="src-link"></span>
+          </div>
+        </section>
+      </div>
+
+      <section style="max-width: 720px; margin-top: 48px;" class="guide-prose">
+        <h2>How it works.</h2>
+        <p>Each of the <a href="/library/">43 tuning files</a> is a ~200-word Markdown block describing how one personality type prefers to communicate — pacing, directness, decision framing, feedback style. This tool wraps that file in the right container for your agent: ChatGPT's <em>"How would you like ChatGPT to respond?"</em> field caps at 1,500 characters, so the generator checks the fit; coding agents read Markdown files like CLAUDE.md or AGENTS.md, so it emits an appendable section instead.</p>
+        <p>For the full experience — the tuning explained in plain English, how to talk to your type, install snippets for 13 agents — open your type's library page. For the method behind it, start with <a href="/guides/how-to-give-your-ai-a-personality">how to give your AI a personality</a>.</p>
+      </section>
+    </main>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var SYSTEM_LABELS = { mbti: "MBTI", enneagram: "Enneagram", disc: "DISC", attachment: "Attachment", ocean: "Big Five (OCEAN)" };
+    var catalog = null, mdCache = {};
+    var $ = function (id) { return document.getElementById(id); };
+
+    function tuningsFor(sys) { return catalog.tunings.filter(function (t) { return t.system === sys; }); }
+
+    function currentTuning() {
+      var sys = $("system").value, slug = $("type").value;
+      return catalog.tunings.find(function (t) { return t.system === sys && t.slug === slug; });
+    }
+
+    function label(t) { return t.code === t.name ? t.code : t.code + " — " + t.name; }
+
+    function wrap(target, t, md) {
+      var body = md.trim();
+      var attribution = "Source: agent-tune.com" + t.page.replace("https://agent-tune.com", "") + " (MIT)";
+      switch (target) {
+        case "chatgpt":
+          return "Adopt these communication preferences for every reply.\n\n" + body;
+        case "claude":
+          return body + "\n\n" + "Apply these preferences to tone, pacing, and structure in every response.";
+        case "claudemd":
+          return "## Communication preferences (" + t.code + ")\n\n" + body + "\n\n<!-- " + attribution + " -->";
+        case "agentsmd":
+          return "## How to communicate with me (" + t.code + ")\n\n" + body + "\n\n<!-- " + attribution + " -->";
+        case "cursor":
+          return "---\ndescription: Communication preferences (" + t.code + ", AgentTune)\nalwaysApply: true\n---\n\n" + body;
+        case "copilot":
+          return "# Communication preferences (" + t.code + ")\n\n" + body + "\n\n<!-- " + attribution + " -->";
+      }
+    }
+
+    function render() {
+      var t = currentTuning();
+      if (!t) return;
+      var target = $("target").value;
+      var path = t.src || t.md.replace("https://agent-tune.com", "");
+      var done = function (md) {
+        var outText = wrap(target, t, md);
+        $("out").textContent = outText;
+        var n = outText.length;
+        if (target === "chatgpt") {
+          var ok = n <= 1500;
+          $("charcount").innerHTML = '<span class="' + (ok ? "charfit-ok" : "charfit-over") + '">' + n + " / 1500 characters" + (ok ? " — fits the custom-instructions field" : " — over the limit, trim before pasting") + "</span>";
+        } else {
+          $("charcount").textContent = n + " characters";
+        }
+        $("src-link").innerHTML = '<a href="' + t.page.replace("https://agent-tune.com", "") + '">Full ' + t.code + " page →</a>";
+      };
+      if (mdCache[path]) return done(mdCache[path]);
+      fetch(path).then(function (r) { return r.text(); }).then(function (md) {
+        // Strip the YAML front-matter block (everything through the second "---" line)
+        var parts = md.split(/^---\s*$/m);
+        if (parts.length >= 3) md = parts.slice(2).join("---");
+        mdCache[path] = md.trim();
+        done(mdCache[path]);
+      }).catch(function () { $("out").textContent = "Couldn't load the tuning file. Open it directly: " + t.md; });
+    }
+
+    function fillTypes() {
+      var sys = $("system").value;
+      $("type").innerHTML = tuningsFor(sys).map(function (t) {
+        return '<option value="' + t.slug + '">' + label(t) + "</option>";
+      }).join("");
+    }
+
+    fetch("/library/index.json").then(function (r) { return r.json(); }).then(function (data) {
+      catalog = data;
+      var systems = [];
+      data.tunings.forEach(function (t) { if (systems.indexOf(t.system) === -1) systems.push(t.system); });
+      $("system").innerHTML = systems.map(function (s) {
+        return '<option value="' + s + '">' + (SYSTEM_LABELS[s] || s) + "</option>";
+      }).join("");
+      fillTypes();
+      render();
+    }).catch(function () { $("out").textContent = "Couldn't load the library catalog."; });
+
+    $("system").addEventListener("change", function () { fillTypes(); render(); });
+    $("type").addEventListener("change", render);
+    $("target").addEventListener("change", render);
+    $("copy").addEventListener("click", function () {
+      navigator.clipboard.writeText($("out").textContent).then(function () {
+        $("copy").textContent = "Copied";
+        setTimeout(function () { $("copy").textContent = "Copy"; }, 1200);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

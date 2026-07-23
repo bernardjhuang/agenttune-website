@@ -24,6 +24,9 @@ Everything on the site is free — the paid Premium/Developer Pack products were
 │   ├── enneagram/...
 │   ├── disc/, attachment/, ocean/
 ├── tests/                      5 personality tests (MBTI, Big Five, etc.)
+├── guides/                     Instructional pages (built from guides/src/*.json
+│                               by tools/build-guides.js)
+├── research/                   Research articles
 ├── functions/                  Cloudflare Pages Functions
 │   └── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
 │                               tools: list_tunings, get_tuning, get_test_spec —
@@ -31,6 +34,7 @@ Everything on the site is free — the paid Premium/Developer Pack products were
 ├── tunings/                    Markdown source of truth (mirrored from
 │                               bernardjhuang/agenttune — DO NOT EDIT HERE)
 ├── tools/
+│   ├── build-guides.js         Builds /guides pages from guides/src specs
 │   ├── generate-library.js     Builds the 43 /library pages from /tunings
 │   └── v2-content.js           Per-type human content (humanContexts, outward)
 ├── data.js                     Browser-side: AT_CONTACTS, AT_RESEARCH, etc.

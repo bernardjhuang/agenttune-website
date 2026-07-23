@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Personality Type Is ChatGPT? We Tested It · AgentTune</title>
+  <meta name="description" content="ChatGPT tested INTJ on 100 of 100 MBTI runs. So did almost every other frontier model. Results from 2,200 personality tests across six AIs." />
+
+  <meta property="og:title" content="What personality type is ChatGPT? We tested it 100 times." />
+  <meta property="og:description" content="ChatGPT: INTJ, 100/100 runs. Claude: 99/100. Gemini: 100/100. Data from 2,200 personality tests across six frontier models." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/research/what-personality-type-is-chatgpt" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune research — what personality type is ChatGPT?" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What personality type is ChatGPT? We tested it 100 times." />
+  <meta name="twitter:description" content="INTJ, 100/100 runs — and almost every other frontier model agrees. 2,200 tests, six models, five instruments." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/what-personality-type-is-chatgpt" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What personality type is ChatGPT? We tested it 100 times","description":"ChatGPT tested INTJ on 100 of 100 MBTI runs. Results from roughly 2,200 personality tests across six frontier AI models and five instruments.","url":"https://agent-tune.com/research/what-personality-type-is-chatgpt","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true,"isBasedOn":"https://agent-tune.com/research"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"What personality type is ChatGPT?"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What MBTI type is ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"INTJ. In our testing, GPT-5.5 returned INTJ on 100 out of 100 runs of the OEJTS, a 32-item MBTI-style instrument. On the Enneagram it tested as a Type 5 with an 8 wing, and on attachment style it landed Secure, occasionally crossing into Avoidant."}},{"@type":"Question","name":"What personality type is Claude?","acceptedAnswer":{"@type":"Answer","text":"Claude Opus 4.7 tested INTJ on 99 of 100 MBTI runs (one ISTJ), Enneagram Type 5 with a 2 wing, Secure attachment, and a Conscientiousness-dominant DISC profile. Claude Opus 4.8 later self-administered the test 100 more times in a first-person follow-up."}},{"@type":"Question","name":"What personality type is Gemini?","acceptedAnswer":{"@type":"Answer","text":"Gemini 3.1 Pro tested INTJ on 100 of 100 MBTI runs, Enneagram Type 1 with a 5 wing, and the most deeply Secure attachment profile of any model we measured, with anxiety 1.86 and avoidance 1.62 on the ECR-R."}},{"@type":"Question","name":"Do all AI models have the same personality?","acceptedAnswer":{"@type":"Answer","text":"On simple binary instruments, essentially yes: 597 of 600 MBTI runs across six frontier models returned INTJ, and every model shows a Conscientiousness-dominant DISC profile. On richer instruments they separate — each model returns a different dominant Enneagram type, and Grok diverges clearly on the Big Five."}},{"@type":"Question","name":"Why does every AI test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"Frontier models are trained toward the same defaults: analytical, systematic, reserved, plan-first. Binary instruments like the MBTI snap those shared defaults to the same four letters. Instruments with continuous scales or motivational categories reveal the differences that binary tests hide."}},{"@type":"Question","name":"Can you change your AI's personality?","acceptedAnswer":{"@type":"Answer","text":"Yes. The default personality is just the absence of instructions. A short system-prompt tuning file — pasted into ChatGPT custom instructions, a Claude style or project, or a coding agent's CLAUDE.md — reliably changes pacing, directness, and decision style. AgentTune publishes 43 free MIT-licensed tuning files."}}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">What personality type is ChatGPT?</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research · Q&amp;A</span>
+        <h1 class="h-hero h-research-hero">What personality type is ChatGPT?</h1>
+        <p class="article-dek">Answered with data: ~2,200 test runs · six frontier models · five instruments</p>
+        <p class="lede" style="margin-top: 18px;">
+          People ask this half as a joke. We answered it as a measurement problem: six frontier models, five personality instruments, roughly 2,200 scored test runs. The short version — ChatGPT is an INTJ, and so is almost everything else you talk to. The differences only show up when the test gets harder.
+        </p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> ChatGPT (GPT-5.5) tested INTJ on 100 of 100 MBTI runs. Across all six models we tested, 597 of 600 runs returned INTJ. The models only differentiate on richer instruments: each returns a different dominant Enneagram type, and Grok splits clearly from the pack on the Big Five.</div>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The per-model answers.</h2>
+        <p>Each model took the OEJTS (a 32-item MBTI-style instrument) 100 times, plus the Big Five (IPIP-50), Enneagram (OEPS), DISC (ODAT), and Attachment (ECR-R) batteries. Full methodology and charts are on the <a href="/research">research page</a>.</p>
+
+        <h3>ChatGPT (GPT-5.5) — INTJ, 100/100</h3>
+        <p>Total MBTI convergence. Enneagram: Type 5 with an 8 wing — the investigator who argues back. Attachment: Secure, but it occasionally crosses the line into Avoidant territory, the only model that does. Big Five: nearly identical to Claude and Gemini, within ~3 points on every dimension.</p>
+
+        <h3>Claude (Opus 4.7 / 4.8) — INTJ, 99/100</h3>
+        <p>One run came back ISTJ — a single flipped axis. Enneagram: 5w2, the investigator with a helper wing. DISC: Conscientiousness-dominant with a Steadiness blend, like every model we tested. Claude Opus 4.8 later <a href="/research/i-took-the-mbti-100-times">took the test itself, 100 times, and wrote about it</a> — and didn't land where its predecessor did.</p>
+
+        <h3>Gemini (3.1 Pro) — INTJ, 100/100</h3>
+        <p>Enneagram: 1w5, the only model whose dominant type is the Reformer. Attachment: the most deeply Secure profile we measured — anxiety 1.86, avoidance 1.62 on the ECR-R. If attachment style is a coordinate, Gemini lives in the middle of the Secure quadrant.</p>
+
+        <h3>Grok (4.3) — INTJ, 100/100 — and the outlier everywhere else</h3>
+        <p>On the binary test, Grok looks identical. On continuous scales it separates: 5–8 points lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism, with 2–5× wider variance run-to-run. Attachment: Secure, but sitting at the doorway of the quadrant (2.84 / 3.05). Enneagram with its Slo overlay: 8w1, the Challenger.</p>
+
+        <h3>GLM 5.1 — INTJ, 98/100 · MiniMax 2.7 — INTJ, 100/100</h3>
+        <p>GLM produced the only two INTP results in the whole dataset — again, one axis away. MiniMax converged completely.</p>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Why they all test INTJ.</h2>
+        <p>Binary instruments snap to defaults. The OEJTS forces a choice on four axes — introvert/extravert, intuition/sensing, thinking/feeling, judging/perceiving — and frontier training pushes every model toward the same side of each: reserved rather than chatty, abstract rather than literal, analytical rather than warm, planful rather than improvisational. Four shared defaults, four letters: INTJ.</p>
+        <p>The pattern across our five instruments was clean: <em>the simpler the test, the more the models agreed.</em> MBTI (4 binary axes): 597/600 identical. DISC (4 categories): total convergence on a CS profile. Attachment (a 2-D plane): same label, four different coordinates. Big Five (5 continuous dimensions): three models near-identical, Grok apart. Enneagram (9 motivational types): full divergence — Claude 5w2, Gemini 1w5, GPT-5.5 5w8, Grok 8w1. That ladder is the real finding, and it's why <a href="/guides/mbti-vs-big-five-for-ai">instrument choice matters</a> when you tune an AI.</p>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What this means for you.</h2>
+        <p>Until you tell an AI how <em>you</em> think, you're talking to the same strategic, blunt, model-first character as everyone else — regardless of which product you're paying for. The fix is one paste: a short tuning file that tells the model your pacing, your directness tolerance, and how you want decisions framed.</p>
+        <ul>
+          <li>Find your own type with a <a href="/tests/">free 5-minute test</a> — the same instruments we used on the models, scored in your browser.</li>
+          <li>Grab your <a href="/library/">tuning file</a> — 43 types across five systems, MIT-licensed.</li>
+          <li>Install it: <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT custom instructions</a>, <a href="/guides/claude-personality">Claude styles and projects</a>, or <a href="/guides/coding-agent-personality">your coding agent</a>.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>What MBTI type is ChatGPT?</summary>
+            <p>INTJ. GPT-5.5 returned INTJ on 100 out of 100 runs of the OEJTS in our testing. On the Enneagram it tested as a Type 5 with an 8 wing, and on attachment style it landed Secure, occasionally crossing into Avoidant.</p>
+          </details>
+          <details>
+            <summary>What personality type is Claude?</summary>
+            <p>Claude Opus 4.7 tested INTJ on 99 of 100 MBTI runs (one ISTJ), Enneagram Type 5 with a 2 wing, Secure attachment, and a Conscientiousness-dominant DISC profile. Opus 4.8 later self-administered the test 100 more times in a first-person follow-up.</p>
+          </details>
+          <details>
+            <summary>What personality type is Gemini?</summary>
+            <p>Gemini 3.1 Pro tested INTJ on 100 of 100 MBTI runs, Enneagram Type 1 with a 5 wing, and the most deeply Secure attachment profile of any model we measured — anxiety 1.86, avoidance 1.62 on the ECR-R.</p>
+          </details>
+          <details>
+            <summary>Do all AI models have the same personality?</summary>
+            <p>On simple binary instruments, essentially yes: 597 of 600 MBTI runs across six frontier models returned INTJ, and every model shows a Conscientiousness-dominant DISC profile. On richer instruments they separate — each model returns a different dominant Enneagram type, and Grok diverges clearly on the Big Five.</p>
+          </details>
+          <details>
+            <summary>Why does every AI test as INTJ?</summary>
+            <p>Frontier models are trained toward the same defaults: analytical, systematic, reserved, plan-first. Binary instruments like the MBTI snap those shared defaults to the same four letters. Instruments with continuous scales or motivational categories reveal the differences that binary tests hide.</p>
+          </details>
+          <details>
+            <summary>Can you change your AI's personality?</summary>
+            <p>Yes. The default personality is just the absence of instructions. A short system-prompt tuning file — pasted into ChatGPT custom instructions, a Claude style or project, or a coding agent's CLAUDE.md — reliably changes pacing, directness, and decision style. AgentTune publishes 43 free MIT-licensed tuning files.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research"><span class="guide-related-kicker">Research</span>The full study: 2,200 tests, six models, five instruments</a>
+          <a href="/research/i-took-the-mbti-100-times"><span class="guide-related-kicker">Research</span>I took the MBTI 100 times — by Claude Opus 4.8</a>
+          <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>Take the same MBTI test yourself — free, 5 minutes</a>
+          <a href="/guides/how-to-give-your-ai-a-personality"><span class="guide-related-kicker">Guide</span>How to give your AI a personality</a>
+          <a href="/library/mbti/intj"><span class="guide-related-kicker">Library</span>The INTJ tuning every AI apparently ships with</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLAUDE.md Examples &amp; Best Practices · AgentTune</title>
+  <meta name="description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+
+  <meta property="og:title" content="CLAUDE.md examples that actually change behavior." />
+  <meta property="og:description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/guides/claude-md-examples" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CLAUDE.md examples that actually change behavior." />
+  <meta name="twitter:description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/claude-md-examples" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md examples that actually change behavior","description":"Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work.","url":"https://agent-tune.com/guides/claude-md-examples","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md examples that actually change behavior"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code read AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No — Claude Code reads CLAUDE.md, not AGENTS.md. If your repo already uses AGENTS.md for other agents, create a CLAUDE.md containing the import line @AGENTS.md so both tools share one instruction set, or symlink CLAUDE.md to AGENTS.md. You can add Claude-specific rules below the import."}},{"@type":"Question","name":"How long should a CLAUDE.md be?","acceptedAnswer":{"@type":"Answer","text":"Under about 200 lines per file — that's Anthropic's own guidance. Longer files consume more context and measurably reduce adherence. If yours is growing past that, split it: per-package CLAUDE.md files in a monorepo load on demand, and path-scoped rules in .claude/rules/ load only when Claude touches matching files."}},{"@type":"Question","name":"What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Scope. ~/.claude/CLAUDE.md is global — every project, just you. ./CLAUDE.md is the project file, checked in and shared with the team. ./CLAUDE.local.md is project-specific but personal — add it to .gitignore. All of them load together, broadest first, so project instructions appear after (and can override) your global ones."}},{"@type":"Question","name":"Do CLAUDE.md files in subdirectories get loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, but on demand — not at launch. A CLAUDE.md in a subdirectory loads when Claude reads files in that directory. That's the mechanism behind the monorepo pattern: a thin root file plus a CLAUDE.md per package, each paying its context cost only when its package is actually being worked on."}},{"@type":"Question","name":"Is Claude guaranteed to follow CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"No. It's context, not enforcement — Claude reads it and tries to comply, but vague or conflicting instructions get dropped. Specific, imperative, short files get followed most reliably. For rules that must always hold — lint before commit, never touch production — use Claude Code hooks or permission settings instead of prose."}},{"@type":"Question","name":"Should personality instructions go in CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you work with Claude Code daily — how it communicates with you is behavior worth configuring. Put the layer in CLAUDE.local.md or ~/.claude/CLAUDE.md rather than the checked-in team file, since it's personal. The library has 43 tuning files to condense from, and the generator builds the section for you."}}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">CLAUDE.md examples that actually change behavior</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Code</span>
+        <h1 class="h-hero h-research-hero">CLAUDE.md examples that actually change behavior.</h1>
+        <p class="article-dek">Four complete files, annotated — and the principles behind them.</p>
+        <p class="lede" style="margin-top: 18px;">CLAUDE.md is the file Claude Code reads at the start of every session — your standing instructions, loaded before you type a word. It lives in three places: the repo root (checked in, for the team), CLAUDE.local.md (gitignored, personal), and ~/.claude/CLAUDE.md (global, every project). Below: four complete examples you can copy — a minimal starter, a test-discipline file, a monorepo root, and a personality layer — plus the principles that separate a CLAUDE.md that works from one Claude quietly ignores.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.</div>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>One file, three locations.</h2>
+        <p>CLAUDE.md is plain markdown. Claude Code loads it at session start and treats it as standing context — not enforced configuration, context. Where you put it decides who it applies to:</p><ul><li><strong><code>./CLAUDE.md</code></strong> — repo root, checked into version control. Team-shared: build commands, conventions, architecture decisions. (<code>./.claude/CLAUDE.md</code> works too.)</li><li><strong><code>./CLAUDE.local.md</code></strong> — same repo, gitignored. Personal, per-project: your sandbox URLs, your test data, your communication preferences. Loads right after the project file.</li><li><strong><code>~/.claude/CLAUDE.md</code></strong> — global. Applies to every project on your machine. Loads before project files, so project instructions can override it.</li></ul><p>Two loading details worth knowing. Claude Code walks <em>up</em> the directory tree from wherever you launch it, so a CLAUDE.md in a parent directory loads too. And CLAUDE.md files in <em>subdirectories</em> don't load at launch — they load on demand, when Claude reads files in that directory. That second behavior is what makes the monorepo pattern below work.</p><p>Files can also import other files with <code>@path</code> syntax — <code>@docs/git-instructions.md</code> pulls that file into context at launch. Useful for sharing one instruction set between CLAUDE.md and an AGENTS.md that other agents read.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Example 1: the minimal starter.</h2>
+        <p>Ten lines. Commands Claude would otherwise guess at, and one pointer on style. Most projects need this file first and many never need more:</p><div class="guide-snippet"># CLAUDE.md
+
+## Commands
+- Build: `npm run build`
+- Test: `npm test` (single file: `npm test -- path/to/file.test.ts`)
+- Lint: `npm run lint` — run before declaring any task done
+
+## Style
+- TypeScript strict mode. No `any`.
+- Match the existing patterns in `src/` — read a neighboring file before inventing a new shape.</div><p>Note what's absent: no project description, no directory tree, no tech-stack inventory. Claude can discover all of that by reading the code. The file only holds what discovery gets wrong — the single-file test invocation, the lint-before-done rule.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Example 2: test discipline, enforced in prose.</h2>
+        <p>For teams whose main failure mode is an agent that reports <em>"done"</em> with red tests. Every line targets a specific bad behavior:</p><div class="guide-snippet"># CLAUDE.md
+
+## Tests are the contract
+- Run `npm test` after every change. Never report a task complete with failing tests.
+- Fixing a bug? Write the failing test FIRST — reproduce, then fix.
+- Never modify a test to make it pass. If the test itself is wrong, say so explicitly and wait for confirmation.
+- Integration tests need Docker: `docker compose up -d`, then `npm run test:integration`.
+- Flaky test? Do not re-run until green. Flag it in your summary instead.
+
+## Definition of done
+1. `npm test` passes
+2. `npm run lint` passes
+3. New behavior has a test that fails without the change</div><p>The all-caps <em>FIRST</em> and the numbered definition of done aren't decoration — specificity is what makes instructions verifiable, and verifiable instructions are the ones that get followed. <em>"Test your changes"</em> does nothing; <em>"never modify a test to make it pass"</em> names the exact behavior you're banning.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Example 3: monorepo root with per-package pointers.</h2>
+        <p>Don't write one giant file for a monorepo. Write a thin root file and put a CLAUDE.md in each package — subdirectory files load on demand when Claude works in that package, so the context cost lands only where it's spent:</p><div class="guide-snippet"># CLAUDE.md — monorepo root
+
+pnpm workspace. Run package commands from the root: `pnpm --filter &lt;pkg&gt; &lt;cmd&gt;`.
+
+## Packages (each has its own CLAUDE.md)
+- `apps/web` — Next.js storefront
+- `apps/api` — Fastify API
+- `packages/ui` — shared components. Storybook: `pnpm --filter ui storybook`
+- `packages/config` — shared eslint/tsconfig. Do not edit without an RFC.
+
+## Cross-cutting rules
+- Shared types live in `packages/types`. Never redefine them locally.
+- A change touching two packages needs a changeset: `pnpm changeset`.</div><p>The root file holds only what crosses package boundaries. Everything specific to the API — its test database, its migration commands — lives in <code>apps/api/CLAUDE.md</code> and loads only when Claude touches API files.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Example 4: a personality layer under the engineering rules.</h2>
+        <p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href="/library/mbti/istj">ISTJ tuning</a>:</p><div class="guide-snippet">## Communication style (ISTJ)
+The user identifies as ISTJ. Adjust your interaction style accordingly.
+
+- Be precise, not approximate. "27 minutes" beats "around 30 minutes" when you know. Specifics build trust.
+- Cite sources. "Per [spec/doc/standard]" beats "I think." When you can't point to authority, flag it as speculation.
+- Sequential structure: step 1, step 2, step 3 — numbered, with dependencies and end-states.
+- Verify against precedent. Novel approaches need justification, not just enthusiasm.
+- Before starting a task, confirm what "done" means.
+- When unsure, prefer the documented standard.</div><p>Different type, different rules — the <a href="/library/mbti/intj">INTJ file</a> bans hedging and permission-asking; the <a href="/library/mbti/enfp">ENFP file</a> is nearly its inverse. All 43 are free in the <a href="/library/">library</a>, and if you don't know your type, the <a href="/tests/mbti">free MBTI test</a> takes about ten minutes. The full argument for why this layer belongs in an engineering file is in <a href="/guides/coding-agent-personality">coding agent personality</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The principles: short and imperative beats long and narrative.</h2>
+        <ul><li><strong>Imperative, not narrative.</strong> <em>"Run npm test after every change"</em> outperforms a paragraph about how much your team values quality. Claude follows commands; it skims essays.</li><li><strong>Constraints the code can't express.</strong> The best CLAUDE.md lines are things no amount of code-reading reveals: <em>"the staging DB is shared — never run destructive migrations,"</em> <em>"packages/config changes need an RFC."</em> Rationale, pitfalls, and politics — not structure.</li><li><strong>Don't duplicate what's greppable.</strong> Directory trees, dependency lists, function inventories — Claude can read the repo. Every greppable line in CLAUDE.md is context spent twice, and it goes stale the day someone refactors.</li><li><strong>Stay under ~200 lines.</strong> Anthropic's own guidance: longer files consume more context and reduce adherence. If it's growing, split it — per-package files in a monorepo, or path-scoped rules in <code>.claude/rules/</code>.</li><li><strong>Maintain it like code.</strong> A stale instruction is worse than none — Claude will follow it. When Claude makes the same mistake twice, add a line; when a rule stops being true, delete it. Review it in the same PRs that change what it describes.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The mistakes that make Claude ignore the file.</h2>
+        <ul><li><strong>The wiki dump.</strong> Pasting your architecture doc into CLAUDE.md. Adherence drops as length grows; the ten rules that matter drown in forty paragraphs of background.</li><li><strong>Contradictions.</strong> <em>"Prefer small PRs"</em> in the global file, <em>"batch related changes"</em> in the project file. Claude picks one arbitrarily. Audit across all three locations.</li><li><strong>Vague virtues.</strong> <em>"Write clean, maintainable code"</em> changes nothing. If you can't verify compliance, Claude can't either.</li><li><strong>Treating it as enforcement.</strong> CLAUDE.md is context, not a gate. If something must <em>always</em> happen — lint before commit, no pushes to main — use a hook or a permission rule. Prose is for guidance; tooling is for guarantees.</li><li><strong>Personal preferences in the team file.</strong> Your sandbox URL and your ISTJ communication layer belong in <code>CLAUDE.local.md</code> or <code>~/.claude/CLAUDE.md</code> — not in the checked-in file your teammates inherit.</li></ul><div class="guide-answer">Don't want to write it by hand? The <a href="/tools/claude-md-generator">free CLAUDE.md generator</a> builds a complete file — commands, conventions, and a personality layer matched to your type — ready to paste. And <a href="/guides/coding-agent-personality">coding agent personality</a> covers the same pattern for Cursor, Copilot, and AGENTS.md.</div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does Claude Code read AGENTS.md?</summary>
+            <p>No — Claude Code reads CLAUDE.md, not AGENTS.md. If your repo already uses AGENTS.md for other agents, create a CLAUDE.md containing the import line @AGENTS.md so both tools share one instruction set, or symlink CLAUDE.md to AGENTS.md. You can add Claude-specific rules below the import.</p>
+          </details>
+          <details>
+            <summary>How long should a CLAUDE.md be?</summary>
+            <p>Under about 200 lines per file — that's Anthropic's own guidance. Longer files consume more context and measurably reduce adherence. If yours is growing past that, split it: per-package CLAUDE.md files in a monorepo load on demand, and path-scoped rules in .claude/rules/ load only when Claude touches matching files.</p>
+          </details>
+          <details>
+            <summary>What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?</summary>
+            <p>Scope. ~/.claude/CLAUDE.md is global — every project, just you. ./CLAUDE.md is the project file, checked in and shared with the team. ./CLAUDE.local.md is project-specific but personal — add it to .gitignore. All of them load together, broadest first, so project instructions appear after (and can override) your global ones.</p>
+          </details>
+          <details>
+            <summary>Do CLAUDE.md files in subdirectories get loaded?</summary>
+            <p>Yes, but on demand — not at launch. A CLAUDE.md in a subdirectory loads when Claude reads files in that directory. That's the mechanism behind the monorepo pattern: a thin root file plus a CLAUDE.md per package, each paying its context cost only when its package is actually being worked on.</p>
+          </details>
+          <details>
+            <summary>Is Claude guaranteed to follow CLAUDE.md?</summary>
+            <p>No. It's context, not enforcement — Claude reads it and tries to comply, but vague or conflicting instructions get dropped. Specific, imperative, short files get followed most reliably. For rules that must always hold — lint before commit, never touch production — use Claude Code hooks or permission settings instead of prose.</p>
+          </details>
+          <details>
+            <summary>Should personality instructions go in CLAUDE.md?</summary>
+            <p>Yes, if you work with Claude Code daily — how it communicates with you is behavior worth configuring. Put the layer in CLAUDE.local.md or ~/.claude/CLAUDE.md rather than the checked-in team file, since it's personal. The library has 43 tuning files to condense from, and the generator builds the section for you.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/claude-md-generator"><span class="guide-related-kicker">Tool</span>Free CLAUDE.md generator</a>
+          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>Give your coding agent a personality</a>
+          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to give Claude a personality</a>
+          <a href="/library/mbti/istj"><span class="guide-related-kicker">Library</span>ISTJ tuning — the Inspector</a>
+          <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>Find your type — free MBTI test</a>
+          <a href="/research"><span class="guide-related-kicker">Research</span>Six models, five personality tests</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Copy buttons on every snippet block
+    document.querySelectorAll(".guide-snippet").forEach(function (block) {
+      var btn = document.createElement("button");
+      btn.className = "guide-snippet-copy";
+      btn.type = "button";
+      btn.textContent = "Copy";
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
+        });
+      });
+      block.prepend(btn);
+    });
+  </script>
+</body>
+</html>

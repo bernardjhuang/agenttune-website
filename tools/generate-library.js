@@ -439,7 +439,8 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
           ? `DISC ${c.code} System Prompt for AI Agents · AgentTune`
           : `${c.code} System Prompt for AI Agents — Claude, GPT · AgentTune`;
 
-  const metaDesc = `${c.blurb} A ${sysFull} tuning file for your AI agent — paste it into Claude, ChatGPT, Cursor, or any modern agent.`;
+  const clamp160 = (t) => (t.length <= 158 ? t : t.slice(0, 155).replace(/\s+\S*$/, "") + "\u2026");
+  const metaDesc = clamp160(`${c.blurb} A ${sysFull} tuning file — paste it into Claude, ChatGPT, or Cursor.`);
 
   // Per-type V2 content (humanContexts + outward + demoWhy + optional bullets)
   const v2 = V2[c.id] || {};
@@ -517,6 +518,24 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
     ]
   };
 
+  // FAQPage schema — mirrors the visible § III "How to talk to" cards
+  const stripTags = (t) => t.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+  const faqQuestions = [
+    { q: `How do you handle conflict with ${grammar.article} ${grammar.label}?`, a: hc.conflict },
+    { q: `How do you give feedback to ${grammar.article} ${grammar.label}?`, a: hc.feedback },
+    { q: `How do you help ${grammar.article} ${grammar.label} make decisions?`, a: hc.decisions },
+    { q: `How do you brainstorm with ${grammar.article} ${grammar.label}?`, a: hc.brainstorming }
+  ].filter((x) => x.a);
+  const faqSchema = faqQuestions.length === 4 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqQuestions.map((x) => ({
+      "@type": "Question",
+      name: x.q,
+      acceptedAnswer: { "@type": "Answer", text: stripTags(x.a) }
+    }))
+  } : null;
+
   // Editor filename (matches what the user would save it as)
   const editorFilename = `~/.agenttune/${(filename.split("/").pop().replace(/\.md$/, ""))}.md`;
   const downloadFilename = filename.split("/").pop();
@@ -566,10 +585,13 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">${jsonInline(schema)}</script>
-  <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>
+  <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>${faqSchema ? `\n  <script type="application/ld+json">${jsonInline(faqSchema)}</script>` : ""}
 
   <script defer src="/consent.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='${encodeURIComponent(accent)}'/%3E%3C/svg%3E" />
 
@@ -741,6 +763,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
         <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/guides/">Guides</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -762,7 +785,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
     <header class="lib-header">
       <div class="lib-avatar">${escHtml(avatarChars)}</div>
       <div class="lib-header-text">
-        <h1 class="lib-code">${escHtml(displayCode)}</h1>
+        <h1 class="lib-code">${escHtml(displayCode)}<span class="lib-code-sub">system prompt</span></h1>
         <div class="lib-name">${namePrefix}<em>${escHtml(displayName)}</em></div>
       </div>
     </header>
@@ -1150,7 +1173,7 @@ function buildHub(contacts) {
   <meta property="og:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
   <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://agent-tune.com/library" />
+  <meta property="og:url" content="https://agent-tune.com/library/" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
   <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
@@ -1181,6 +1204,9 @@ function buildHub(contacts) {
 
   <script defer src="/consent.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
 </head>
@@ -1197,6 +1223,7 @@ function buildHub(contacts) {
         <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/guides/">Guides</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -1297,6 +1324,18 @@ const STATIC_PAGES = [
   { route: "/tests/disc", file: "tests/disc.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tests/attachment", file: "tests/attachment.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tests/big-five", file: "tests/big-five.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/what-personality-type-is-chatgpt", file: "research/what-personality-type-is-chatgpt.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/", file: "guides/index.html", changefreq: "weekly", priority: "0.9", comment: "Guides hub" },
+  { route: "/guides/how-to-give-your-ai-a-personality", file: "guides/how-to-give-your-ai-a-personality.html", changefreq: "monthly", priority: "0.8", comment: "Guides" },
+  { route: "/guides/chatgpt-custom-instructions-by-personality-type", file: "guides/chatgpt-custom-instructions-by-personality-type.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-personality", file: "guides/claude-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-md-examples", file: "guides/claude-md-examples.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/coding-agent-personality", file: "guides/coding-agent-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/make-chatgpt-sound-like-you", file: "guides/make-chatgpt-sound-like-you.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/enneagram-ai-prompts", file: "guides/enneagram-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/mbti-vs-big-five-for-ai", file: "guides/mbti-vs-big-five-for-ai.html", changefreq: "monthly", priority: "0.7" },
+  { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
+  { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },
   { route: "/library/", file: "library/index.html", changefreq: "weekly", priority: "0.9", comment: "Library hub" }
 ];
 
