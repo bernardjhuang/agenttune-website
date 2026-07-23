@@ -11,16 +11,15 @@
 </head>
 <body>
   <main class="tool">
-    <nav class="nav"><a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a><div class="nav-links"><a href="/developers">Developers</a><a href="/library/">Library</a></div></nav>
+    <nav class="nav"><a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a><div class="nav-links"><a href="/library/">Library</a></div></nav>
     <h1>Free CLAUDE.md generator.</h1>
-    <p>Answer three questions and get a basic Claude Code instruction file. For deeper multi-tool configs, use the <a href="/developers">Developer Pack</a>.</p>
+    <p>Answer three questions and get a basic Claude Code instruction file.</p>
     <div class="grid">
       <section class="card">
         <div class="field"><label for="tests">Testing style</label><select id="tests"><option value="strict">Write/update tests before implementation</option><option value="regression">Regression tests for bugs</option><option value="pragmatic">Targeted tests for risky changes</option></select></div>
         <div class="field"><label for="scope">Diff scope</label><select id="scope"><option value="minimal">Minimal diffs</option><option value="current">Current file only unless asked</option><option value="cleanup">Adjacent cleanup allowed</option></select></div>
         <div class="field"><label for="deps">Dependencies</label><select id="deps"><option value="ask">Ask before adding packages</option><option value="native">Prefer native APIs/existing utilities</option><option value="common">Common packages allowed with rationale</option></select></div>
         <button class="btn" id="copy">Copy CLAUDE.md</button>
-        <a class="btn ghost" href="/dev/assessment">Generate full Developer Pack →</a>
       </section>
       <section><pre class="code" id="out"></pre></section>
     </div>

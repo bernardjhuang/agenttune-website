@@ -741,7 +741,6 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
         <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
-        <a href="/pricing">Premium</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -1198,7 +1197,6 @@ function buildHub(contacts) {
         <a href="/library/" class="active">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
-        <a href="/pricing">Premium</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -1290,8 +1288,8 @@ function gitLastmod(relPath) {
 const STATIC_PAGES = [
   { route: "/", file: "index.html", changefreq: "weekly", priority: "1.0", comment: "Landing" },
   { route: "/research", file: "research.html", changefreq: "weekly", priority: "0.9", comment: "Research synthesis" },
+  { route: "/research/i-took-the-mbti-100-times", file: "research/i-took-the-mbti-100-times.html", changefreq: "monthly", priority: "0.7" },
   { route: "/tests/", file: "tests/index.html", changefreq: "weekly", priority: "0.9", comment: "Tests catalog" },
-  { route: "/pricing", file: "pricing.html", changefreq: "weekly", priority: "0.9", comment: "Pricing" },
   { route: "/privacy", file: "privacy.html", changefreq: "yearly", priority: "0.3", comment: "Legal" },
   { route: "/terms", file: "terms.html", changefreq: "yearly", priority: "0.3" },
   { route: "/tests/mbti", file: "tests/mbti.html", changefreq: "monthly", priority: "0.8", comment: "Individual test pages" },
@@ -1449,7 +1447,9 @@ function main() {
   // precedence over `/*`, so this only fires on genuinely missing paths —
   // turning the soft-404 (index.html, 200) into a real 404. Overrides any
   // Cloudflare Pages "single-page-application" not_found_handling setting.
-  const fallback = "\n# Catch-all: real 404 for unknown paths (must stay last)\n/*  /404.html  404\n";
+  // Retired paid-product routes (Premium + Developer Pack, removed 2026-07) — permanent redirects home.
+  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n";
+  const fallback = retired + "\n# Catch-all: real 404 for unknown paths (must stay last)\n/*  /404.html  404\n";
   const body = header + redirects.join("\n") + "\n" + fallback;
   fs.writeFileSync(redirectsPath, body);
   console.log(`_redirects → ${redirectsPath} (${redirects.length} rules + 404 catch-all)`);

@@ -6,7 +6,7 @@
     <loc>https://agent-tune.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-16</lastmod>
   </url>
 
   <!-- Research synthesis -->
@@ -14,10 +14,9 @@
     <loc>https://agent-tune.com/research</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
-  <!-- Research articles -->
   <url>
     <loc>https://agent-tune.com/research/i-took-the-mbti-100-times</loc>
     <changefreq>monthly</changefreq>
@@ -28,29 +27,6 @@
   <!-- Tests catalog -->
   <url>
     <loc>https://agent-tune.com/tests/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-
-  <!-- Developers -->
-  <url>
-    <loc>https://agent-tune.com/developers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <lastmod>2026-06-16</lastmod>
-  </url>
-
-  <url>
-    <loc>https://agent-tune.com/tools/claude-md-generator</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-16</lastmod>
-  </url>
-
-  <!-- Pricing -->
-  <url>
-    <loc>https://agent-tune.com/pricing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-06-10</lastmod>
@@ -112,7 +88,7 @@
     <loc>https://agent-tune.com/library/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <!-- Library type pages — 43 standalone tunings -->
@@ -121,91 +97,91 @@
     <loc>https://agent-tune.com/library/mbti/intj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/intp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/infj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/infp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/istj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/istp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/isfj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/isfp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/entj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/entp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/enfj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/enfp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/estj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
@@ -219,203 +195,203 @@
     <loc>https://agent-tune.com/library/mbti/esfj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/esfp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/1-reformer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/2-helper</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/3-achiever</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/4-individualist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/5-investigator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/6-loyalist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/7-enthusiast</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/8-challenger</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/enneagram/9-peacemaker</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/disc/d-dominance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/disc/i-influence</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/disc/s-steadiness</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/disc/c-conscientiousness</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/attachment/secure</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/attachment/anxious</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/attachment/avoidant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/attachment/disorganized</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/openness-high</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/openness-low</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/conscientiousness-high</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/conscientiousness-low</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/extraversion-high</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/extraversion-low</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/agreeableness-high</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/agreeableness-low</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/neuroticism-high</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/ocean/neuroticism-low</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-23</lastmod>
   </url>
 
 </urlset>

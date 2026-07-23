@@ -2,7 +2,7 @@
   "name": "AgentTune tuning library",
   "description": "Machine catalog of all AgentTune personality tuning files. Fetch a tuning's `md` URL (text/markdown, CORS-enabled) and install per its YAML front-matter. Full agent protocol: /llms.txt.",
   "protocol_version": 1,
-  "generated": "2026-06-10",
+  "generated": "2026-07-23",
   "license": "MIT",
   "site": "https://agent-tune.com",
   "upstream": "https://github.com/bernardjhuang/agenttune",

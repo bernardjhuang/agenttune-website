@@ -44,5 +44,13 @@
 /library/ocean/neuroticism-high.md  /tunings/ocean/N-high.md  200
 /library/ocean/neuroticism-low.md  /tunings/ocean/N-low.md  200
 
+# Retired paid-product routes → home (301)
+/pricing  /  301
+/developers  /  301
+/developers.md  /  301
+/pro/*  /  301
+/dev/*  /  301
+/me/*  /  301
+
 # Catch-all: real 404 for unknown paths (must stay last)
 /*  /404.html  404

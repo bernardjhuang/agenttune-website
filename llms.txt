@@ -20,9 +20,8 @@ Stack any combination. The most-fitted result is all five layered together in th
 - [**Library hub**](https://agent-tune.com/library): The canonical index of all 43 paste-ready tunings, grouped by the 5 systems. Best entry point for an AI agent looking up a specific type.
 - [Tests catalog](https://agent-tune.com/tests/): All 5 self-administering tests an AI agent can run inline. Each test's full spec (items, mapping, scoring algorithm, output mapping) is served as a same-domain Markdown mirror at `/tests/{test}.md` (e.g. [/tests/mbti.md](https://agent-tune.com/tests/mbti.md)) — fetch that to administer a test in one request, no JS. The same content is also in the <em>Test specification</em> accordion on each test page.
 - [Research](https://agent-tune.com/research): Five findings from cross-model AI personality testing — ~2,200 runs across 6 frontier models. MBTI returned 597/600 INTJ. Big Five clustered 3 of 4. Enneagram diverged on every model. DISC and Attachment showed convergence with model-specific position within the same label.
-- [**Developer Pack**](https://agent-tune.com/developers): $19 one-time AI coding-agent config generator. Outputs `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/agenttune.mdc`, ChatGPT Custom Instructions, Claude Project Instructions, Gemini Gem instructions, Copilot instructions, and README install guide. No repo access; no code upload. Markdown mirror: [/developers.md](https://agent-tune.com/developers.md).
-- [Free CLAUDE.md Generator](https://agent-tune.com/tools/claude-md-generator): Browser-only 3-question generator for a basic Claude Code instruction file. No signup. Upsells to Developer Pack.
-- [Pricing](https://agent-tune.com/pricing): Free is the entire 43-file library + 5 tests, MIT licensed. Pro ($9 once, lifetime) adds a synthesized master tuning file plus deeper integration guides.
+- [Free CLAUDE.md Generator](https://agent-tune.com/tools/claude-md-generator): Browser-only 3-question generator for a basic Claude Code instruction file. No signup.
+- Pricing: everything is free — the entire 43-file library + 5 tests, MIT licensed.
 - **Type library — 43 standalone tuning pages** (one per type, paste-ready): see "Library type pages" section below.
 
 ## Tests (administer to user, score, fetch tuning file)

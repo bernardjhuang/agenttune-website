@@ -1,25 +1,22 @@
 # agent-tune.com — website
 
-The marketing + commerce site for [AgentTune](https://github.com/bernardjhuang/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
+The website for [AgentTune](https://github.com/bernardjhuang/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
 
-The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo is **private** because it contains Premium / Stripe / Cloudflare KV plumbing that shouldn't be public.
+The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo holds the site itself (pages, generator tooling, MCP server).
 
 ## Stack
 
 - **Static HTML + CSS + vanilla JS** — no framework, no build step
-- **Cloudflare Pages** for hosting (with Cloudflare Pages Functions for API routes)
-- **Cloudflare KV** for Premium synthesis state
-- **Stripe Checkout** for the $9 Premium upgrade
-- **Resend** for transactional email
-- **Google Gemini Flash** for Premium synthesis
+- **Cloudflare Pages** for hosting (one Pages Function: the MCP server at `/mcp`)
 - Domain `agent-tune.com` registered through Cloudflare
+
+Everything on the site is free — the paid Premium/Developer Pack products were removed in July 2026.
 
 ## Project layout
 
 ```
 .
 ├── index.html                  Homepage
-├── pricing.html                Premium pricing
 ├── research.html               Research page (every AI = INTJ)
 ├── library/                    Generated library pages (43 type pages + hub)
 │   ├── index.html              /library hub
@@ -27,16 +24,10 @@ The tuning library itself (43 personality tuning markdown files) is in the publi
 │   ├── enneagram/...
 │   ├── disc/, attachment/, ocean/
 ├── tests/                      5 personality tests (MBTI, Big Five, etc.)
-├── pro/                        Premium assessment + preview flow
-├── me/                         Permalink pages for Premium users
 ├── functions/                  Cloudflare Pages Functions
-│   ├── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
-│   │                           tools: list_tunings, get_tuning, get_test_spec —
-│   │                           reads the deployed static assets via env.ASSETS)
-│   ├── api/draft.js            POST: queue synthesis + send email
-│   ├── api/checkout.js         POST: create Stripe Checkout session
-│   ├── webhook/stripe.js       Stripe webhook handler
-│   └── _synthesis.js, _shared.js
+│   └── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
+│                               tools: list_tunings, get_tuning, get_test_spec —
+│                               reads the deployed static assets via env.ASSETS)
 ├── tunings/                    Markdown source of truth (mirrored from
 │                               bernardjhuang/agenttune — DO NOT EDIT HERE)
 ├── tools/
@@ -55,18 +46,9 @@ npm install
 npm run dev          # serves at http://localhost:3000
 ```
 
-Test pages and library pages render fully client-side. To exercise the Pages Functions (`/api/*`), use `npx wrangler pages dev .` instead of `npm run dev`.
+Test pages and library pages render fully client-side. To exercise the MCP server (`/mcp`), use `npx wrangler pages dev .` instead of `npm run dev`.
 
-## Required environment variables (Cloudflare Pages → Settings → Environment variables)
-
-| Var | Where it's used |
-|---|---|
-| `STRIPE_SECRET_KEY` | `functions/_shared.js`, checkout flow |
-| `STRIPE_WEBHOOK_SECRET` | `functions/webhook/stripe.js` |
-| `GEMINI_API_KEY` | `functions/_synthesis.js` for Premium synthesis |
-| `RESEND_API_KEY` | transactional email |
-
-Plus the KV binding `AGENTTUNE_KV` for storing Premium assessment state.
+No environment variables, secrets, or KV bindings are required.
 
 ## Regenerating the library pages
 
