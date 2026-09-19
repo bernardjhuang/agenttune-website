@@ -89,6 +89,26 @@
         </section>
         <section aria-label="Generated output"><pre class="tool-out" id="out"></pre></section>
       </div>
+
+      <section class="guide-prose" style="margin-top: 56px;">
+        <h2>What CLAUDE.md is for.</h2>
+        <p>Claude Code reads CLAUDE.md at the start of every session. It is where the project's facts live: how to run the tests, what the conventions are, what never to touch. The three questions above cover the rules that cause the most friction when they are missing, which are how much to test, how far a diff may reach, and when a new dependency is allowed.</p>
+        <p>The file is loaded, not enforced. Claude Code's docs say it arrives as a message after the system prompt and that compliance is not guaranteed. Short, specific rules hold up. Long files get skimmed. The docs suggest keeping each one under 200 lines.</p>
+
+        <h2>Where the file goes.</h2>
+        <p>Claude Code looks in four places and concatenates what it finds. None of them overrides another.</p>
+        <ul>
+          <li>A managed policy file, if your organization sets one.</li>
+          <li><code>~/.claude/CLAUDE.md</code>, which is yours and applies to every project.</li>
+          <li><code>./CLAUDE.md</code> or <code>./.claude/CLAUDE.md</code>, the project's file, shared with your team.</li>
+          <li><code>./CLAUDE.local.md</code>, which is yours for this project only.</li>
+        </ul>
+        <p>Run <code>/memory</code> to open them for editing and <code>/context</code> to see what actually loaded. One file can import another with <code>@path</code>.</p>
+
+        <h2>What it is not for.</h2>
+        <p>How Claude Code talks to you is a different layer. Whether it leads with the answer, how it disagrees, when it stops asking questions: Claude Code's docs give that job to an <strong>output style</strong>, which is sent on every turn, and leave CLAUDE.md for project conventions. Your teammates should not inherit your temperament from the repo.</p>
+        <p>We publish all 43 personality tunings as ready-made output styles. The walkthrough is in <a href="/guides/claude-code-personality">how to change Claude Code's personality</a>. For annotated examples of the project file itself, see <a href="/guides/claude-md-examples">CLAUDE.md examples and best practices</a>.</p>
+      </section>
     </main>
 
     <div class="footer">

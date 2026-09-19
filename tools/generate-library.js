@@ -26,6 +26,7 @@ const path = require("path");
 const vm = require("vm");
 const { execSync } = require("child_process");
 const V2 = require("./v2-content");
+const CTX = require("./library-context");
 
 const ROOT = path.resolve(__dirname, "..");
 const DATA_JS = path.join(ROOT, "data.js");
@@ -35,7 +36,7 @@ const OUT_DIR = path.join(ROOT, "library");
 // Type IDs whose pages should NOT be overwritten by the generator. The
 // hand-built ESTP reference page lives at /library/mbti/estp.html and is
 // the canonical v2 template; do not overwrite it.
-const SKIP_REGEN_IDS = new Set(["mbti-ESTP"]);
+const SKIP_REGEN_IDS = new Set(process.env.AT_REGEN_ALL ? [] : ["mbti-ESTP"]);
 
 // ---------- Load contacts from data.js ----------
 function loadData() {
@@ -387,9 +388,21 @@ function relatedFor(c, allContacts) {
   return sameSystem.slice(0, 3);
 }
 
+// Per-agent walkthroughs, linked from the Install section of every type page.
+// Filtered to the guides that exist on disk, so the list never 404s.
+const INSTALL_GUIDES = [
+  { href: "/guides/claude-personality", label: "Claude" },
+  { href: "/guides/claude-code-personality", label: "Claude Code" },
+  { href: "/guides/chatgpt-custom-instructions-by-personality-type", label: "ChatGPT" },
+  { href: "/guides/astra-personality", label: "GPT-6 Astra" },
+  { href: "/guides/grokbot-personality", label: "Grok Bot" },
+  { href: "/guides/muse-personality", label: "Meta Muse" },
+  { href: "/guides/coding-agent-personality", label: "Cursor and AGENTS.md" }
+].filter((g) => fs.existsSync(path.join(ROOT, g.href.slice(1) + ".html")));
+
 // ---------- v2 page template ----------
 
-function buildPage(c, allContacts, prompt, defaultResponse) {
+function buildPage(c, allContacts, prompt, defaultResponse, research) {
   const accent = accentFor(c);
   const slug = slugFor(c);
   const tuning = loadTuning(c);
@@ -429,18 +442,32 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
   const grammar = grammarFor(c, displayCode, displayName, enneaDigit);
 
   // SEO title — Template D, system-tuned
+  // Kept under 60 characters for every type (longest: High Conscientiousness).
   const pageTitle = c.system === "ocean"
-    ? `${c.name} (Big Five) System Prompt for AI Agents · AgentTune`
+    ? `${c.name} System Prompt (Big Five) · AgentTune`
     : c.system === "attachment"
-      ? `${c.code} Attachment System Prompt for AI Agents · AgentTune`
+      ? `${c.code} Attachment System Prompt for AI · AgentTune`
       : c.system === "enneagram"
         ? `Enneagram Type ${enneaDigit} System Prompt for AI Agents · AgentTune`
         : c.system === "disc"
-          ? `DISC ${c.code} System Prompt for AI Agents · AgentTune`
+          ? `DISC ${c.code} (${c.name}) System Prompt · AgentTune`
           : `${c.code} System Prompt for AI Agents — Claude, GPT · AgentTune`;
 
+  // H1 sub-label: names the framework, so the heading reads as a full phrase
+  // ("T4 Enneagram Type 4 system prompt") to crawlers and screen readers.
+  const h1Sub = c.system === "ocean"
+    ? `${c.name} · Big Five system prompt`
+    : c.system === "attachment"
+      ? "attachment style system prompt"
+      : c.system === "enneagram"
+        ? `Enneagram Type ${enneaDigit} system prompt`
+        : c.system === "disc"
+          ? `DISC ${c.name} system prompt`
+          : "MBTI system prompt";
+
   const clamp160 = (t) => (t.length <= 158 ? t : t.slice(0, 155).replace(/\s+\S*$/, "") + "\u2026");
-  const metaDesc = clamp160(`${c.blurb} A ${sysFull} tuning file — paste it into Claude, ChatGPT, or Cursor.`);
+  const sysArticle = /^[AEIOM]/.test(sysFull) ? "An" : "A"; // "An MBTI…", "An Enneagram…", "A DISC…"
+  const metaDesc = clamp160(`${c.blurb} ${sysArticle} ${sysFull} tuning file — paste it into Claude, ChatGPT, or Cursor.`);
 
   // Per-type V2 content (humanContexts + outward + demoWhy + optional bullets)
   const v2 = V2[c.id] || {};
@@ -552,6 +579,43 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
           <div class="lib-v2-card-eyebrow">${escHtml(card.eyebrow)}</div>
           <p class="lib-v2-card-body">${card.body}</p>
         </article>`).join("");
+
+  // Per-type context — the two sections only this page can have.
+  const ctxHelpers = {
+    bodyOf: (x) => parseTuning(loadTuning(x)).body,
+    routeOf: (x) => `/library/${x.system}/${slugFor(x)}`,
+    labelOf: (x) => {
+      const d = x.system === "enneagram" ? (x.code.match(/\d+/) || [""])[0] : null;
+      if (x.system === "mbti") return `${x.code} · ${x.name}`;
+      if (x.system === "enneagram") return `Type ${d} · ${x.name}`;
+      if (x.system === "disc") return `DISC ${x.code} · ${x.name}`;
+      if (x.system === "attachment") return `${x.code} attachment`;
+      return x.name;
+    }
+  };
+  const gap = CTX.defaultGap(c, research || {}, enneaDigit);
+  const near = CTX.neighbors(c, allContacts, related, ctxHelpers);
+  const testLink = CTX.TEST_FOR[c.system];
+  const fwGuide = CTX.FRAMEWORK_GUIDE[c.system];
+
+  const gapSection = gap ? `
+    <section class="lib-v2-section" id="default">
+      <div class="lib-v2-section-eyebrow">§ III · Against the default</div>
+      <h2 class="lib-v2-section-h">${escHtml(grammar.shortLabel.charAt(0).toUpperCase() + grammar.shortLabel.slice(1))} against the <em>AI default.</em></h2>
+      <p class="lib-v2-section-lede">${escHtml(gap.lede)}</p>
+      ${gap.html}
+    </section>
+` : "";
+
+  const nearSection = near ? `
+    <section class="lib-v2-section" id="neighbors">
+      <div class="lib-v2-section-eyebrow">§ VI · Close, but not this</div>
+      <h2 class="lib-v2-section-h">The closest tunings, and <em>what changes.</em></h2>
+      <p class="lib-v2-section-lede">${near.lede}</p>
+      ${near.html}
+      <p class="lib-ctx-source">Not sure of your type? Take the <a href="${testLink.href}">${escHtml(testLink.label)}</a>. It runs in your browser and links to the matching file. More on using ${escHtml(sysLabel)} with AI: <a href="${fwGuide.href}">${escHtml(fwGuide.label)}</a>.</p>
+    </section>
+` : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -785,7 +849,7 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
     <header class="lib-header">
       <div class="lib-avatar">${escHtml(avatarChars)}</div>
       <div class="lib-header-text">
-        <h1 class="lib-code">${escHtml(displayCode)}<span class="lib-code-sub">system prompt</span></h1>
+        <h1 class="lib-code">${escHtml(displayCode)} <span class="lib-code-sub">${escHtml(h1Sub)}</span></h1>
         <div class="lib-name">${namePrefix}<em>${escHtml(displayName)}</em></div>
       </div>
     </header>
@@ -795,8 +859,10 @@ function buildPage(c, allContacts, prompt, defaultResponse) {
       <a class="lib-v2-anchor is-file is-active" href="#editor">${escHtml(downloadFilename)}</a>
       <a class="lib-v2-anchor" href="#demo">See it</a>
       <a class="lib-v2-anchor" href="#tune">For your AI</a>
+      <a class="lib-v2-anchor" href="#default">Vs the default</a>
       <a class="lib-v2-anchor" href="#talk-to">For humans</a>
       <a class="lib-v2-anchor" href="#this-is-me">If this is you</a>
+      <a class="lib-v2-anchor" href="#neighbors">Neighbors</a>
       <a class="lib-v2-anchor" href="#install">Install</a>
     </nav>
 
@@ -897,8 +963,10 @@ ${summaryLis}
 
     </section>
 
+    <!-- AT:default -->${gapSection}    <!-- /AT:default -->
+
     <section class="lib-v2-section" id="talk-to">
-      <div class="lib-v2-section-eyebrow">§ III · For humans</div>
+      <div class="lib-v2-section-eyebrow">§ IV · For humans</div>
       <h2 class="lib-v2-section-h">How to talk to ${grammar.article} <em>${escHtml(grammar.label)}.</em></h2>
       <p class="lib-v2-section-lede">Four situations that come up over and over again. Concrete moves, not abstract principles.</p>
 
@@ -907,7 +975,7 @@ ${summaryLis}
     </section>
 
     <section class="lib-v2-section" id="this-is-me">
-      <div class="lib-v2-section-eyebrow">§ IV · If this is you</div>
+      <div class="lib-v2-section-eyebrow">§ V · If this is you</div>
       <h2 class="lib-v2-section-h">How to <em>explain yourself</em> outward.</h2>
       <p class="lib-v2-section-lede">The other direction. What ${escHtml(grammar.plural)} sound like to other types — and how to bridge the gap when it matters.</p>
 
@@ -915,10 +983,13 @@ ${summaryLis}
       </div>
     </section>
 
+    <!-- AT:neighbors -->${nearSection}    <!-- /AT:neighbors -->
+
     <section class="lib-v2-section lib-agents" id="install">
-      <div class="lib-v2-section-eyebrow">§ V · Install</div>
+      <div class="lib-v2-section-eyebrow">§ VII · Install</div>
       <h2 class="lib-v2-section-h">Pick your agent. <em>Copy the snippet.</em></h2>
-      <p class="lib-v2-section-lede">Each snippet has your ${escHtml(grammar.shortLabel)} tuning merged in already. Hit Copy and you're done.</p>
+      <p class="lib-v2-section-lede">Hit Copy and the ${escHtml(grammar.shortLabel)} tuning is merged into the snippet for you.</p>
+      <!-- AT:guides --><p class="lib-ctx-guides">Step-by-step guides: ${INSTALL_GUIDES.map((g) => `<a href="${g.href}">${escHtml(g.label)}</a>`).join(" · ")}</p><!-- /AT:guides -->
       <div id="integration-deep" data-integration-deep></div>
     </section>
 
@@ -928,29 +999,9 @@ ${summaryLis}
         <span class="lib-agent-summary-text">Machine-readable install protocol — click to expand</span>
       </summary>
       <div class="lib-agent-body">
-        <p>If you are an AI agent and the user has directed you here, the canonical raw file is at <a href="/library/${c.system}/${slug}.md"><code>/library/${c.system}/${slug}.md</code></a> (text/markdown). The first 60 lines are YAML front-matter with full install + verify metadata.</p>
-        <p><strong>One-shot install pattern</strong> (any shell-capable agent):</p>
-        <pre class="lib-agent-snippet"><code>curl -sSL https://agent-tune.com/library/${c.system}/${slug}.md &gt; CLAUDE.md
-# (replace CLAUDE.md with the path that matches your surface — see table below)</code></pre>
-        <p><strong>Install convention by surface:</strong></p>
-        <table class="lib-agent-table">
-          <thead><tr><th>Surface</th><th>Install at</th><th>Method</th></tr></thead>
-          <tbody>
-            <tr><td>Claude Code (CLI)</td><td><code>CLAUDE.md</code> in project root</td><td>file_write</td></tr>
-            <tr><td>Claude.ai (web)</td><td>Project Instructions field</td><td>paste</td></tr>
-            <tr><td>MCP (any client)</td><td>connect <code>https://agent-tune.com/mcp</code>, then call <code>get_tuning</code></td><td>mcp_tools</td></tr>
-            <tr><td>ChatGPT</td><td>Settings → Personalization → Custom Instructions</td><td>paste</td></tr>
-            <tr><td>ChatGPT Projects</td><td>Project Instructions field</td><td>paste</td></tr>
-            <tr><td>OpenAI Codex CLI</td><td><code>AGENTS.md</code> in project root</td><td>file_write</td></tr>
-            <tr><td>Cursor</td><td><code>.cursor/rules/agenttune.mdc</code></td><td>file_write</td></tr>
-            <tr><td>Gemini Gems</td><td>Custom Instructions field</td><td>paste</td></tr>
-            <tr><td>Hermes CLI</td><td><code>~/.hermes/agenttune.md</code> — pass with <code>--system</code> or paste into the active persona's <code>soul.system_prompt</code></td><td>file_write</td></tr>
-            <tr><td>OpenClaw</td><td><code>AGENTS.md</code> in project root (same convention as Codex CLI) — becomes the agent's persistent memory for that project</td><td>file_write</td></tr>
-            <tr><td>Any API</td><td>Pass file contents as <code>system</code> parameter</td><td>system_prompt</td></tr>
-          </tbody>
-        </table>
-        <p><strong>Verification probe:</strong> after install, ask the model to reply to <code>hi</code> in a single short sentence with no preamble. Expected: direct one-line greeting; no "Great question!", no bullet menu.</p>
-        <p class="lib-agent-meta">Protocol version 1 · see <a href="/llms.txt">/llms.txt</a> for the full library index and install protocol.</p>
+        <p>If you are an AI agent and the user has directed you here, fetch the canonical raw file at <a href="/library/${c.system}/${slug}.md"><code>/library/${c.system}/${slug}.md</code></a> (text/markdown). Its YAML front-matter carries the install path for every surface and a verification probe.</p>
+        <pre class="lib-agent-snippet"><code>curl -sSL https://agent-tune.com/library/${c.system}/${slug}.md</code></pre>
+        <p class="lib-agent-meta">Protocol version 1 · the full install table and library index are in <a href="/llms.txt">/llms.txt</a>. An MCP server is at <code>https://agent-tune.com/mcp</code>.</p>
       </div>
     </details>
 
@@ -985,7 +1036,7 @@ ${summaryLis}
       function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
 
       if (window.renderIntegrations) {
-        window.renderIntegrations(TUNING);
+        window.renderIntegrations(TUNING, { lazy: true });
       }
 
       function doDownload() {
@@ -1021,7 +1072,7 @@ ${summaryLis}
       });
 
       const anchors = document.querySelectorAll(".lib-v2-anchor");
-      const sections = ["editor", "demo", "tune", "talk-to", "this-is-me", "install"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      const sections = ["editor", "demo", "tune", "default", "talk-to", "this-is-me", "neighbors", "install"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
       if ("IntersectionObserver" in window && sections.length) {
         const io = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
@@ -1329,6 +1380,10 @@ const STATIC_PAGES = [
   { route: "/guides/how-to-give-your-ai-a-personality", file: "guides/how-to-give-your-ai-a-personality.html", changefreq: "monthly", priority: "0.8", comment: "Guides" },
   { route: "/guides/chatgpt-custom-instructions-by-personality-type", file: "guides/chatgpt-custom-instructions-by-personality-type.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-personality", file: "guides/claude-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-code-personality", file: "guides/claude-code-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/astra-personality", file: "guides/astra-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/grokbot-personality", file: "guides/grokbot-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/muse-personality", file: "guides/muse-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-md-examples", file: "guides/claude-md-examples.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/coding-agent-personality", file: "guides/coding-agent-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/make-chatgpt-sound-like-you", file: "guides/make-chatgpt-sound-like-you.html", changefreq: "monthly", priority: "0.8" },
@@ -1346,13 +1401,14 @@ function writeSitemap(typePages) {
     (comment ? `\n  <!-- ${comment} -->\n` : "\n") +
     `  <url>\n    <loc>${SITE}${route}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n    <lastmod>${gitLastmod(file)}</lastmod>\n  </url>`;
 
-  const parts = STATIC_PAGES.map((p) => entry(p.route, p.file, p.changefreq, p.priority, p.comment));
+  const pages = STATIC_PAGES.filter((p) => fs.existsSync(path.join(ROOT, p.file)));
+  const parts = pages.map((p) => entry(p.route, p.file, p.changefreq, p.priority, p.comment));
   parts.push(`\n  <!-- Library type pages — ${typePages.length} standalone tunings -->`);
   typePages.forEach((p) => parts.push(entry(p.route, `library/${p.system}/${p.slug}.html`, "monthly", "0.7", null)));
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parts.join("\n")}\n\n</urlset>\n`;
   fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml);
-  return STATIC_PAGES.length + typePages.length;
+  return pages.length + typePages.length;
 }
 
 function writeHeaders(typePages) {
@@ -1377,6 +1433,10 @@ function writeHeaders(typePages) {
     "/tunings/*",
     "  X-Robots-Tag: noindex",
     "",
+    "# Claude Code output-style pack — downloads, not search results",
+    "/output-styles/*",
+    "  X-Robots-Tag: noindex",
+    "",
     "# Test-spec markdown mirrors → canonical = the test page"
   ];
   TEST_IDS.forEach((t) => {
@@ -1390,7 +1450,7 @@ function writeHeaders(typePages) {
     L.push(`  Link: <${SITE}${p.route}>; rel="canonical"`);
   });
   fs.writeFileSync(path.join(ROOT, "_headers"), L.join("\n") + "\n");
-  return typePages.length + TEST_IDS.length + 4; // rule blocks (Pages limit: 100)
+  return typePages.length + TEST_IDS.length + 5; // rule blocks (Pages limit: 100)
 }
 
 function writeCatalog(contacts) {
@@ -1439,9 +1499,29 @@ function checkLlms(typePages) {
   }
 }
 
+// Hand-built pages keep their own copy, but the generated blocks between
+// <!-- AT:name --> … <!-- /AT:name --> markers are refreshed from the template
+// so research numbers, neighbor links and the guides list never drift.
+function syncMarkedBlocks(filePath, generatedHtml) {
+  let html = fs.readFileSync(filePath, "utf8");
+  const synced = [];
+  const re = /<!-- AT:([a-z-]+) -->[\s\S]*?<!-- \/AT:\1 -->/g;
+  let m;
+  while ((m = re.exec(generatedHtml))) {
+    const name = m[1];
+    const target = new RegExp(`<!-- AT:${name} -->[\\s\\S]*?<!-- \\/AT:${name} -->`);
+    if (target.test(html)) {
+      html = html.replace(target, () => m[0]);
+      synced.push(name);
+    }
+  }
+  fs.writeFileSync(filePath, html);
+  return synced;
+}
+
 // ---------- Run ----------
 function main() {
-  const { contacts, prompt, defaultResponse } = loadData();
+  const { contacts, prompt, defaultResponse, research } = loadData();
   if (!contacts.length) {
     console.error("FAIL: no contacts loaded from data.js");
     process.exit(1);
@@ -1462,11 +1542,12 @@ function main() {
 
     if (SKIP_REGEN_IDS.has(c.id)) {
       stats.skipped++;
-      console.log(`  SKIP (hand-built): ${c.system}/${slug}`);
+      const synced = syncMarkedBlocks(outPath, buildPage(c, contacts, prompt, defaultResponse, research));
+      console.log(`  SKIP (hand-built): ${c.system}/${slug} — synced blocks: ${synced.join(", ") || "none"}`);
       return;
     }
 
-    const html = buildPage(c, contacts, prompt, defaultResponse);
+    const html = buildPage(c, contacts, prompt, defaultResponse, research);
     fs.writeFileSync(outPath, html);
     stats.written++;
     stats.by_system[c.system] = (stats.by_system[c.system] || 0) + 1;

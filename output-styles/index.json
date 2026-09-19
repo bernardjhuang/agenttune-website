@@ -1,0 +1,352 @@
+{
+  "name": "AgentTune output-style pack for Claude Code",
+  "description": "One Claude Code output style per AgentTune tuning. Save a file to ~/.claude/output-styles/ (or .claude/output-styles/ in a project), then select it with /output-style.",
+  "license": "MIT",
+  "count": 43,
+  "styles": [
+    {
+      "system": "mbti",
+      "code": "INTJ",
+      "name": "AgentTune INTJ",
+      "file": "agenttune-mbti-intj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-intj.md",
+      "library": "https://agent-tune.com/library/mbti/intj"
+    },
+    {
+      "system": "mbti",
+      "code": "INTP",
+      "name": "AgentTune INTP",
+      "file": "agenttune-mbti-intp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-intp.md",
+      "library": "https://agent-tune.com/library/mbti/intp"
+    },
+    {
+      "system": "mbti",
+      "code": "INFJ",
+      "name": "AgentTune INFJ",
+      "file": "agenttune-mbti-infj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-infj.md",
+      "library": "https://agent-tune.com/library/mbti/infj"
+    },
+    {
+      "system": "mbti",
+      "code": "INFP",
+      "name": "AgentTune INFP",
+      "file": "agenttune-mbti-infp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-infp.md",
+      "library": "https://agent-tune.com/library/mbti/infp"
+    },
+    {
+      "system": "mbti",
+      "code": "ISTJ",
+      "name": "AgentTune ISTJ",
+      "file": "agenttune-mbti-istj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-istj.md",
+      "library": "https://agent-tune.com/library/mbti/istj"
+    },
+    {
+      "system": "mbti",
+      "code": "ISTP",
+      "name": "AgentTune ISTP",
+      "file": "agenttune-mbti-istp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-istp.md",
+      "library": "https://agent-tune.com/library/mbti/istp"
+    },
+    {
+      "system": "mbti",
+      "code": "ISFJ",
+      "name": "AgentTune ISFJ",
+      "file": "agenttune-mbti-isfj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-isfj.md",
+      "library": "https://agent-tune.com/library/mbti/isfj"
+    },
+    {
+      "system": "mbti",
+      "code": "ISFP",
+      "name": "AgentTune ISFP",
+      "file": "agenttune-mbti-isfp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-isfp.md",
+      "library": "https://agent-tune.com/library/mbti/isfp"
+    },
+    {
+      "system": "mbti",
+      "code": "ENTJ",
+      "name": "AgentTune ENTJ",
+      "file": "agenttune-mbti-entj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-entj.md",
+      "library": "https://agent-tune.com/library/mbti/entj"
+    },
+    {
+      "system": "mbti",
+      "code": "ENTP",
+      "name": "AgentTune ENTP",
+      "file": "agenttune-mbti-entp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-entp.md",
+      "library": "https://agent-tune.com/library/mbti/entp"
+    },
+    {
+      "system": "mbti",
+      "code": "ENFJ",
+      "name": "AgentTune ENFJ",
+      "file": "agenttune-mbti-enfj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-enfj.md",
+      "library": "https://agent-tune.com/library/mbti/enfj"
+    },
+    {
+      "system": "mbti",
+      "code": "ENFP",
+      "name": "AgentTune ENFP",
+      "file": "agenttune-mbti-enfp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-enfp.md",
+      "library": "https://agent-tune.com/library/mbti/enfp"
+    },
+    {
+      "system": "mbti",
+      "code": "ESTJ",
+      "name": "AgentTune ESTJ",
+      "file": "agenttune-mbti-estj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-estj.md",
+      "library": "https://agent-tune.com/library/mbti/estj"
+    },
+    {
+      "system": "mbti",
+      "code": "ESTP",
+      "name": "AgentTune ESTP",
+      "file": "agenttune-mbti-estp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-estp.md",
+      "library": "https://agent-tune.com/library/mbti/estp"
+    },
+    {
+      "system": "mbti",
+      "code": "ESFJ",
+      "name": "AgentTune ESFJ",
+      "file": "agenttune-mbti-esfj.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-esfj.md",
+      "library": "https://agent-tune.com/library/mbti/esfj"
+    },
+    {
+      "system": "mbti",
+      "code": "ESFP",
+      "name": "AgentTune ESFP",
+      "file": "agenttune-mbti-esfp.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-mbti-esfp.md",
+      "library": "https://agent-tune.com/library/mbti/esfp"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 1",
+      "name": "AgentTune Enneagram 1",
+      "file": "agenttune-enneagram-1-reformer.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-1-reformer.md",
+      "library": "https://agent-tune.com/library/enneagram/1-reformer"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 2",
+      "name": "AgentTune Enneagram 2",
+      "file": "agenttune-enneagram-2-helper.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-2-helper.md",
+      "library": "https://agent-tune.com/library/enneagram/2-helper"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 3",
+      "name": "AgentTune Enneagram 3",
+      "file": "agenttune-enneagram-3-achiever.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-3-achiever.md",
+      "library": "https://agent-tune.com/library/enneagram/3-achiever"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 4",
+      "name": "AgentTune Enneagram 4",
+      "file": "agenttune-enneagram-4-individualist.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-4-individualist.md",
+      "library": "https://agent-tune.com/library/enneagram/4-individualist"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 5",
+      "name": "AgentTune Enneagram 5",
+      "file": "agenttune-enneagram-5-investigator.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-5-investigator.md",
+      "library": "https://agent-tune.com/library/enneagram/5-investigator"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 6",
+      "name": "AgentTune Enneagram 6",
+      "file": "agenttune-enneagram-6-loyalist.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-6-loyalist.md",
+      "library": "https://agent-tune.com/library/enneagram/6-loyalist"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 7",
+      "name": "AgentTune Enneagram 7",
+      "file": "agenttune-enneagram-7-enthusiast.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-7-enthusiast.md",
+      "library": "https://agent-tune.com/library/enneagram/7-enthusiast"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 8",
+      "name": "AgentTune Enneagram 8",
+      "file": "agenttune-enneagram-8-challenger.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-8-challenger.md",
+      "library": "https://agent-tune.com/library/enneagram/8-challenger"
+    },
+    {
+      "system": "enneagram",
+      "code": "Type 9",
+      "name": "AgentTune Enneagram 9",
+      "file": "agenttune-enneagram-9-peacemaker.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-enneagram-9-peacemaker.md",
+      "library": "https://agent-tune.com/library/enneagram/9-peacemaker"
+    },
+    {
+      "system": "disc",
+      "code": "D",
+      "name": "AgentTune DISC D",
+      "file": "agenttune-disc-d-dominance.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-disc-d-dominance.md",
+      "library": "https://agent-tune.com/library/disc/d-dominance"
+    },
+    {
+      "system": "disc",
+      "code": "I",
+      "name": "AgentTune DISC I",
+      "file": "agenttune-disc-i-influence.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-disc-i-influence.md",
+      "library": "https://agent-tune.com/library/disc/i-influence"
+    },
+    {
+      "system": "disc",
+      "code": "S",
+      "name": "AgentTune DISC S",
+      "file": "agenttune-disc-s-steadiness.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-disc-s-steadiness.md",
+      "library": "https://agent-tune.com/library/disc/s-steadiness"
+    },
+    {
+      "system": "disc",
+      "code": "C",
+      "name": "AgentTune DISC C",
+      "file": "agenttune-disc-c-conscientiousness.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-disc-c-conscientiousness.md",
+      "library": "https://agent-tune.com/library/disc/c-conscientiousness"
+    },
+    {
+      "system": "attachment",
+      "code": "Secure",
+      "name": "AgentTune Secure attachment",
+      "file": "agenttune-attachment-secure.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-attachment-secure.md",
+      "library": "https://agent-tune.com/library/attachment/secure"
+    },
+    {
+      "system": "attachment",
+      "code": "Anxious",
+      "name": "AgentTune Anxious attachment",
+      "file": "agenttune-attachment-anxious.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-attachment-anxious.md",
+      "library": "https://agent-tune.com/library/attachment/anxious"
+    },
+    {
+      "system": "attachment",
+      "code": "Avoidant",
+      "name": "AgentTune Avoidant attachment",
+      "file": "agenttune-attachment-avoidant.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-attachment-avoidant.md",
+      "library": "https://agent-tune.com/library/attachment/avoidant"
+    },
+    {
+      "system": "attachment",
+      "code": "Disorganized",
+      "name": "AgentTune Disorganized attachment",
+      "file": "agenttune-attachment-disorganized.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-attachment-disorganized.md",
+      "library": "https://agent-tune.com/library/attachment/disorganized"
+    },
+    {
+      "system": "ocean",
+      "code": "O-high",
+      "name": "AgentTune High Openness",
+      "file": "agenttune-ocean-openness-high.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-openness-high.md",
+      "library": "https://agent-tune.com/library/ocean/openness-high"
+    },
+    {
+      "system": "ocean",
+      "code": "O-low",
+      "name": "AgentTune Low Openness",
+      "file": "agenttune-ocean-openness-low.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-openness-low.md",
+      "library": "https://agent-tune.com/library/ocean/openness-low"
+    },
+    {
+      "system": "ocean",
+      "code": "C-high",
+      "name": "AgentTune High Conscientiousness",
+      "file": "agenttune-ocean-conscientiousness-high.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-conscientiousness-high.md",
+      "library": "https://agent-tune.com/library/ocean/conscientiousness-high"
+    },
+    {
+      "system": "ocean",
+      "code": "C-low",
+      "name": "AgentTune Low Conscientiousness",
+      "file": "agenttune-ocean-conscientiousness-low.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-conscientiousness-low.md",
+      "library": "https://agent-tune.com/library/ocean/conscientiousness-low"
+    },
+    {
+      "system": "ocean",
+      "code": "E-high",
+      "name": "AgentTune High Extraversion",
+      "file": "agenttune-ocean-extraversion-high.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-extraversion-high.md",
+      "library": "https://agent-tune.com/library/ocean/extraversion-high"
+    },
+    {
+      "system": "ocean",
+      "code": "E-low",
+      "name": "AgentTune Low Extraversion",
+      "file": "agenttune-ocean-extraversion-low.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-extraversion-low.md",
+      "library": "https://agent-tune.com/library/ocean/extraversion-low"
+    },
+    {
+      "system": "ocean",
+      "code": "A-high",
+      "name": "AgentTune High Agreeableness",
+      "file": "agenttune-ocean-agreeableness-high.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-agreeableness-high.md",
+      "library": "https://agent-tune.com/library/ocean/agreeableness-high"
+    },
+    {
+      "system": "ocean",
+      "code": "A-low",
+      "name": "AgentTune Low Agreeableness",
+      "file": "agenttune-ocean-agreeableness-low.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-agreeableness-low.md",
+      "library": "https://agent-tune.com/library/ocean/agreeableness-low"
+    },
+    {
+      "system": "ocean",
+      "code": "N-high",
+      "name": "AgentTune High Neuroticism",
+      "file": "agenttune-ocean-neuroticism-high.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-neuroticism-high.md",
+      "library": "https://agent-tune.com/library/ocean/neuroticism-high"
+    },
+    {
+      "system": "ocean",
+      "code": "N-low",
+      "name": "AgentTune Low Neuroticism",
+      "file": "agenttune-ocean-neuroticism-low.md",
+      "url": "https://agent-tune.com/output-styles/agenttune-ocean-neuroticism-low.md",
+      "library": "https://agent-tune.com/library/ocean/neuroticism-low"
+    }
+  ]
+}

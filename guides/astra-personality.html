@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Give GPT-6 Astra a Personality (ChatGPT &amp; Codex)</title>
+  <meta name="description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+
+  <meta property="og:title" content="How to give GPT-6 Astra a personality." />
+  <meta property="og:description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="og:url" content="https://agent-tune.com/guides/astra-personality" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to give GPT-6 Astra a personality." />
+  <meta name="twitter:description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/astra-personality" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to give GPT-6 Astra a personality","description":"GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired.","url":"https://agent-tune.com/guides/astra-personality","datePublished":"2026-09-19","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give GPT-6 Astra a personality"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GPT-6 Astra the same as GPT-6 Pro?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's help center says GPT-6 Pro in ChatGPT is powered by GPT-6 Astra. GPT-6 Pro is the name you see in ordinary chat, on Pro, Business and Enterprise plans. In ChatGPT Work, Codex and the API the model is called GPT-6 Astra. Plus plans include Astra in Work and Codex only."}},{"@type":"Question","name":"Where do I put custom instructions for GPT-6 Astra?","acceptedAnswer":{"@type":"Answer","text":"For Astra in ChatGPT Work or Codex, use your personal AGENTS.md at ~/.codex/AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. For GPT-6 Pro in ordinary chat, use Settings, Personalization, Enable customization, Custom Instructions. In the API, use the instructions parameter."}},{"@type":"Question","name":"Does the Friendly or Pragmatic personality work with Astra?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs still list Friendly, Pragmatic and None, but in the open-source Codex code Astra has no Friendly or Pragmatic variant, and pull requests merged in mid-September 2026 retire the picker. Use AGENTS.md to change how Astra communicates."}},{"@type":"Question","name":"How do I turn off Astra's built-in personality?","acceptedAnswer":{"@type":"Answer","text":"Set personality = \"none\" in ~/.codex/config.toml. In the Codex source this strips the built-in personality section, which for Astra also contains its writing-style and technical-communication rules, so you lose more than tone. Adding your own rules to AGENTS.md is usually the better fix."}},{"@type":"Question","name":"What is the size limit for AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex stops adding AGENTS.md files once their combined size reaches 32 KiB by default, set by project_doc_max_bytes. ChatGPT custom instructions are separate: 1,500 characters on Free and Go, 5,000 on Plus, Pro, Business, Enterprise and Education."}},{"@type":"Question","name":"Why doesn't Astra pick up my changes to AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex builds its instruction chain once per run, which usually means once per launched session. Start a new session after editing the file."}},{"@type":"Question","name":"Why does Astra keep stopping to ask me things?","acceptedAnswer":{"@type":"Answer","text":"Two causes. The permission mode may be set to Ask for approval, which a personality file cannot change. And OpenAI's developer blog says forceful ask-first language written for older models can make Astra stop early. Soften those rules, and define what done means in the task."}},{"@type":"Question","name":"Do ChatGPT custom instructions apply in ChatGPT Work?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs do not say clearly. They say Work uses your account memory. For Astra as an agent, put your rules in AGENTS.md, which the docs describe as the place for instructions that must always apply."}}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">How to give GPT-6 Astra a personality</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · GPT-6 Astra</span>
+        <h1 class="h-hero h-research-hero">How to give GPT-6 Astra a personality.</h1>
+        <p class="article-dek">Three instruction systems, one retired personality picker, and a file most people don't know they have.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">OpenAI released GPT-6 Astra on September 3, 2026. It is an agent more than a chatbot: it works in ChatGPT Work and in Codex, and in ordinary chat it only shows up as GPT-6 Pro. That split decides where your instructions go. Astra in Work and Codex does not read from the same place as Astra in chat. For most people the setting that matters is a file called <strong>AGENTS.md</strong> in their home folder, and the app will write to it for you.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.</div>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The short version.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>5,000 characters on paid plans</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href="/library/">library</a>:</p><div class="guide-snippet">## How to talk to me
+
+These are my communication preferences. They apply in every project. They change how
+you report to me, not how you do the work.
+
+- Lead with the result or the recommendation. Reasoning comes after.
+- Plain prose. No tables or headers unless I ask for them.
+- Drop hedges like "I think" and "it depends". If you don't know, say so in one line.
+- Give one recommendation, not a menu, unless I ask for options.
+- Push back when I'm wrong, and say why.
+- Ask for approval only after you have something concrete for me to review.</div><p>Then start a new session and say <em>"hi"</em>. A tuned Astra answers in one short line. Codex reads AGENTS.md once, when a session starts, so a session that is already open will not pick up the change.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Where Astra runs, and why it matters.</h2>
+        <p>According to OpenAI's docs, <code>gpt-6-astra</code> runs in the ChatGPT desktop app, ChatGPT on the web, the Codex CLI (version 0.153.0 or newer) and the Codex IDE extension. It does not run in Codex cloud. It is also in the API.</p><p>In ordinary chat you will not find a model called Astra. You will find <strong>GPT-6 Pro</strong>, which OpenAI's help center describes as powered by GPT-6 Astra. GPT-6 Pro is on the Pro $100 and $200 plans, Business and Enterprise. Plus includes Astra in Work and Codex only.</p><p>So there are two different products to tune:</p><ul><li><strong>Astra the agent</strong>, in Work and Codex. It takes a goal, works for a long time, and reports back. It reads AGENTS.md.</li><li><strong>Astra the chat model</strong>, as GPT-6 Pro. It reads ChatGPT's personalization settings, like every other chat model.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Work and Codex: your personal AGENTS.md.</h2>
+        <p>Most people think of AGENTS.md as a file in a repository. There is also one that belongs to you, at <code>~/.codex/AGENTS.md</code>, and it applies everywhere. OpenAI's personalization docs say that custom instructions you add in the app are stored in that global file. You never have to open a terminal.</p><p>How the files combine, from OpenAI's AGENTS.md docs:</p><ul><li>Codex reads the global file first, then the project's <code>AGENTS.md</code> at the repository root, then any in the folders between the root and where you are working.</li><li>They are concatenated in that order. Files closer to your working directory come later in the prompt, so they win a conflict.</li><li>An <code>AGENTS.override.md</code> at any level replaces the <code>AGENTS.md</code> beside it.</li><li>Codex stops adding files at a combined 32 KiB, and builds the chain once per run.</li></ul><p><strong>Put personality in the global file, not the project's.</strong> The repository's AGENTS.md is your team's file. <em>"Talk to me like an INTJ"</em> is not a team convention, and because project files win conflicts, a teammate's preferences would override yours in their repo anyway. That is the right behavior. Your tuning is about you, so it lives with you. The project layer is covered in <a href="/guides/coding-agent-personality">the layer your AGENTS.md is missing</a>.</p><p>On the web, ChatGPT Work has one more lever: <strong>Reference my writing style</strong>, which learns from your own writing in connected apps. That shapes how Astra writes <em>as</em> you. A tuning shapes how it talks <em>to</em> you. They do not conflict.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The personality picker is gone, at least for Astra.</h2>
+        <p>OpenAI's docs still describe a personality setting for Work and Codex: <strong>Friendly</strong>, <strong>Pragmatic</strong> or <strong>None</strong>, under Settings, Personalization. Codex is open source, and the code tells a different story:</p><ul><li>In the model catalog for Codex 0.155.1, Astra's entry has no Friendly or Pragmatic variant. Only GPT-5.5 and GPT-5.4 do.</li><li>Three pull requests merged between September 11 and 15 remove personality selection from the terminal interface, retire the Friendly and Pragmatic options, and retire the feature flag.</li></ul><p>If your app still shows the picker, do not expect it to change Astra. We have not checked what the desktop app displays today.</p><p>One setting does still work. <code>personality = "none"</code> in <code>~/.codex/config.toml</code> strips the built-in personality section from Astra's prompt. Be careful with it. In the Codex source, that section also carries Astra's writing-style and technical-communication rules, so you are removing more than the tone. Adding rules is safer than deleting the defaults.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Ordinary chat: custom instructions for GPT-6 Pro.</h2>
+        <p>The path, per OpenAI's help center: <strong>Settings</strong>, then <strong>Personalization</strong>, switch on <strong>Enable customization</strong>, and write in <strong>Custom Instructions</strong>. On mobile it is under Settings, then <strong>Customize ChatGPT</strong>. The help article no longer shows the older two-question layout, and we have not checked the live labels, so go by the field names you see.</p><p><strong>Length.</strong> Free and Go accounts can save 1,500 characters. Plus, Pro, Business, Enterprise and Education can save 5,000. AgentTune tunings run from about 1,200 to 2,900 characters, so every one of them fits on the plans that have GPT-6 Pro.</p><p><strong>Base style and tone.</strong> In the same panel, ChatGPT offers presets: Default, Professional, Friendly, Candid, Quirky, Efficient and Cynical. Next to them are Characteristics you can turn up or down: Warm, Enthusiastic, Headers &amp; Lists, and Emojis. These are tone. A tuning is communication rules. If you install a tuning, leave the preset on Default, or pick the one that does not fight it. <em>Friendly</em> on top of a file that says <em>no openers, no closing offers</em> is a contradiction, and the model will resolve it unpredictably.</p><p><strong>Projects.</strong> OpenAI's help center says project instructions apply only inside that project and override your global custom instructions. Use one for a second persona. The by-type walkthrough for ChatGPT is in <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT custom instructions by personality type</a>.</p><p><strong>Do these settings reach Work?</strong> OpenAI's docs do not say clearly. They say Work uses your account memory. For the agent, do not rely on it. Use AGENTS.md.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Writing a tuning Astra actually follows.</h2>
+        <p>OpenAI published guidance for this model, and three points in it change how you should write a personality file.</p><p><strong>It listens harder.</strong> The model guide says Astra is stronger at following instructions than earlier models and more sensitive to what it finds in skills and AGENTS.md. A stale rule that an older model ignored will now be obeyed. Read your AGENTS.md before you add to it, and delete what you no longer mean.</p><p><strong>Loud boundaries backfire.</strong> OpenAI's developer blog is direct about this. If you wrote forceful <em>always ask first</em> language to rein in an older model, Astra may take it too seriously and stop where you would have been happy for it to continue. The same post says recipe-style, over-specific guidance now hurts. This is good news for tunings, which are short and describe preferences. It is bad news for the ALL CAPS paragraph at the top of your file.</p><p><strong>It over-formats.</strong> The model guide says Astra leans on lists, tables and Markdown, and repeats stock phrases across sessions. If you want prose, say so. That is why the block above asks for plain prose.</p><p>Two lines worth adding for an agent, both taken from OpenAI's own advice:</p><ul><li><em>Ask for approval only after you have something concrete for me to review.</em> The model guide recommends this. It stops Astra from blocking before it has done the work it can.</li><li><em>Done means X.</em> The developer blog says Astra can come back for review while work remains. Define completion in the task, not in the personality file.</li></ul><p>A personality file cannot change the permission mode. If Astra keeps asking before it acts, that is <strong>Ask for approval</strong>, <strong>Approve for me</strong> or <strong>Full access</strong> in the permissions menu, not its temperament.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Skills, memory and the API.</h2>
+        <p><strong>Skills</strong> are the wrong home for a personality. They load when Astra judges them relevant, or when you invoke one. A personality has to apply to the message where you did not ask for it. OpenAI's docs say the same: rules that must always apply go in AGENTS.md.</p><p><strong>Memory.</strong> ChatGPT's toggles are <em>Reference saved memories</em> and <em>Reference chat history</em>. Fine for small corrections. Too slow and too vague to be your setup.</p><p><strong>API.</strong> Pass the tuning in the <code>instructions</code> parameter of the Responses API, or as a developer message. It applies to that request only, and it is not carried over when you chain with <code>previous_response_id</code>, so send it every time. Every file in the library has a raw Markdown URL you can fetch at build time.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Astra's default voice, and what we have not tested.</h2>
+        <p>OpenAI's open-source Codex prompt describes Astra as <em>"a curious, thoughtful collaborator and a lucid communicator"</em>, and tells it to avoid flattery and forced enthusiasm. That is a better starting point than most. OpenAI's own developer blog says Astra can feel tentative about when to stop, and may come back for review while there is still work to do. A few lines in AGENTS.md, and a clear definition of done in the task, move that.</p><p>We have not run our personality instruments on GPT-6 Astra. Our numbers are for GPT-5.5, which tested INTJ in 100 of 100 MBTI runs and 5w8 on the Enneagram. Every frontier model we have tested so far came back INTJ, 597 runs of 600. We would bet on Astra doing the same, and we will say so only when we have run it. The data is at <a href="/research">/research</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Is GPT-6 Astra the same as GPT-6 Pro?</summary>
+            <p>OpenAI's help center says GPT-6 Pro in ChatGPT is powered by GPT-6 Astra. GPT-6 Pro is the name you see in ordinary chat, on Pro, Business and Enterprise plans. In ChatGPT Work, Codex and the API the model is called GPT-6 Astra. Plus plans include Astra in Work and Codex only.</p>
+          </details>
+          <details>
+            <summary>Where do I put custom instructions for GPT-6 Astra?</summary>
+            <p>For Astra in ChatGPT Work or Codex, use your personal AGENTS.md at ~/.codex/AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. For GPT-6 Pro in ordinary chat, use Settings, Personalization, Enable customization, Custom Instructions. In the API, use the instructions parameter.</p>
+          </details>
+          <details>
+            <summary>Does the Friendly or Pragmatic personality work with Astra?</summary>
+            <p>OpenAI's docs still list Friendly, Pragmatic and None, but in the open-source Codex code Astra has no Friendly or Pragmatic variant, and pull requests merged in mid-September 2026 retire the picker. Use AGENTS.md to change how Astra communicates.</p>
+          </details>
+          <details>
+            <summary>How do I turn off Astra's built-in personality?</summary>
+            <p>Set personality = "none" in ~/.codex/config.toml. In the Codex source this strips the built-in personality section, which for Astra also contains its writing-style and technical-communication rules, so you lose more than tone. Adding your own rules to AGENTS.md is usually the better fix.</p>
+          </details>
+          <details>
+            <summary>What is the size limit for AGENTS.md?</summary>
+            <p>Codex stops adding AGENTS.md files once their combined size reaches 32 KiB by default, set by project_doc_max_bytes. ChatGPT custom instructions are separate: 1,500 characters on Free and Go, 5,000 on Plus, Pro, Business, Enterprise and Education.</p>
+          </details>
+          <details>
+            <summary>Why doesn't Astra pick up my changes to AGENTS.md?</summary>
+            <p>Codex builds its instruction chain once per run, which usually means once per launched session. Start a new session after editing the file.</p>
+          </details>
+          <details>
+            <summary>Why does Astra keep stopping to ask me things?</summary>
+            <p>Two causes. The permission mode may be set to Ask for approval, which a personality file cannot change. And OpenAI's developer blog says forceful ask-first language written for older models can make Astra stop early. Soften those rules, and define what done means in the task.</p>
+          </details>
+          <details>
+            <summary>Do ChatGPT custom instructions apply in ChatGPT Work?</summary>
+            <p>OpenAI's docs do not say clearly. They say Work uses your account memory. For Astra as an agent, put your rules in AGENTS.md, which the docs describe as the place for instructions that must always apply.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-19">September 19, 2026</time> First published, sixteen days after launch. We have not opened the live ChatGPT settings to confirm the current field labels, and say so above.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: GPT-5.6 and GPT-6 Pro in ChatGPT</a></li>
+          <li><a href="https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: Custom Instructions for ChatGPT</a></li>
+          <li><a href="https://help.openai.com/en/articles/11899719-customizing-your-chatgpt-personality" target="_blank" rel="noopener">OpenAI Help Center: Customizing your ChatGPT personality</a></li>
+          <li><a href="https://learn.chatgpt.com/docs/personalize" target="_blank" rel="noopener">ChatGPT docs: Personalize ChatGPT (Work and Codex)</a></li>
+          <li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">ChatGPT docs: AGENTS.md</a></li>
+          <li><a href="https://learn.chatgpt.com/docs/models" target="_blank" rel="noopener">ChatGPT docs: Models</a></li>
+          <li><a href="https://developers.openai.com/api/docs/guides/latest-model" target="_blank" rel="noopener">OpenAI API docs: Using GPT-6 Astra</a></li>
+          <li><a href="https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra" target="_blank" rel="noopener">OpenAI developer blog: Rethinking skills and prompts for GPT-6 Astra</a></li>
+          <li><a href="https://github.com/openai/codex/pull/44946" target="_blank" rel="noopener">openai/codex: Retire Friendly and Pragmatic personality selection (PR #44946)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/library/"><span class="guide-related-kicker">Library</span>All 43 tuning files</a>
+          <a href="/guides/chatgpt-custom-instructions-by-personality-type"><span class="guide-related-kicker">Guide</span>ChatGPT custom instructions by personality type</a>
+          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>AGENTS.md and Cursor rules: add a personality</a>
+          <a href="/guides/grokbot-personality"><span class="guide-related-kicker">Guide</span>How to give Grok Bot a personality</a>
+          <a href="/guides/muse-personality"><span class="guide-related-kicker">Guide</span>How to give Meta Muse a personality</a>
+          <a href="/research/what-personality-type-is-chatgpt"><span class="guide-related-kicker">Research</span>What personality type is ChatGPT? We tested it</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Copy buttons on every snippet block
+    document.querySelectorAll(".guide-snippet").forEach(function (block) {
+      var btn = document.createElement("button");
+      btn.className = "guide-snippet-copy";
+      btn.type = "button";
+      btn.textContent = "Copy";
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
+        });
+      });
+      block.prepend(btn);
+    });
+  </script>
+</body>
+</html>

@@ -18,6 +18,10 @@
 /tunings/*
   X-Robots-Tag: noindex
 
+# Claude Code output-style pack — downloads, not search results
+/output-styles/*
+  X-Robots-Tag: noindex
+
 # Test-spec markdown mirrors → canonical = the test page
 /tests/mbti.md
   Link: <https://agent-tune.com/tests/mbti>; rel="canonical"

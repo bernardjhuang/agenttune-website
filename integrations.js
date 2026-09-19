@@ -347,6 +347,15 @@ print(resp.content[0].text)`
       </article>`;
   }
 
+  // Full paste-ready text for one snippet: template + tuning body. In lazy
+  // mode the visible <pre> only shows a marker, so never read textContent.
+  function fullSnippetText(container, pre) {
+    const tmpl = pre.dataset.tmpl;
+    const body = container.__atTuningBody;
+    if (tmpl && typeof body === "string") return tmpl.replace(/\[TUNING_PLACEHOLDER\]/g, body);
+    return pre.textContent || "";
+  }
+
   function bindCopies(container) {
     container.querySelectorAll(".snippet-copy").forEach((btn) => {
       if (btn.dataset.bound === "1") return;
@@ -355,7 +364,7 @@ print(resp.content[0].text)`
         const id = btn.getAttribute("data-copy-for");
         const pre = container.querySelector(`[data-snippet="${CSS.escape(id)}"]`);
         if (!pre) return;
-        const text = pre.textContent || "";
+        const text = fullSnippetText(container, pre);
         try {
           await navigator.clipboard.writeText(text);
           const orig = btn.textContent;
@@ -392,15 +401,32 @@ print(resp.content[0].text)`
   // Cache + substitute template in every snippet inside `container`.
   // Substitutes the body-only (front-matter stripped) tuning so the
   // paste-ready snippets stay focused on the actual rules.
-  function applyTuning(container, tuning) {
+  //
+  // Lazy mode (library type pages): the tuning is already shown once in the
+  // editor at the top of the page, so the 13 install cards show a one-line
+  // marker instead of 13 more copies of it. Copy still yields the full merged
+  // text; clicking the marker expands that one snippet in place.
+  function applyTuning(container, tuning, lazy) {
     const full = String(tuning || "").trim();
     const body = stripFrontMatter(full).trim();
+    container.__atTuningBody = body;
+    const lineCount = body ? body.split("\n").length : 0;
+    const marker = `[ your tuning goes here: ${lineCount} lines, merged in when you copy. Click to show. ]`;
     container.querySelectorAll(".snippet").forEach((pre) => {
       const code = pre.querySelector("code") || pre;
       if (!pre.dataset.tmpl) {
         pre.dataset.tmpl = code.textContent;
       }
-      code.textContent = pre.dataset.tmpl.replace(/\[TUNING_PLACEHOLDER\]/g, body);
+      const expanded = pre.dataset.expanded === "1";
+      code.textContent = pre.dataset.tmpl.replace(/\[TUNING_PLACEHOLDER\]/g, lazy && !expanded ? marker : body);
+      if (lazy && !pre.dataset.lazyBound) {
+        pre.dataset.lazyBound = "1";
+        pre.addEventListener("click", () => {
+          if (pre.dataset.expanded === "1") return;
+          pre.dataset.expanded = "1";
+          code.textContent = fullSnippetText(container, pre);
+        });
+      }
     });
   }
 
@@ -413,16 +439,18 @@ print(resp.content[0].text)`
    *
    * @param {string} tuning - the markdown tuning text
    * @param {HTMLElement|object} [containerOrOpts] - container element, or
-   *   options object: { container?: HTMLElement, only?: string[] }
+   *   options object: { container?: HTMLElement, only?: string[], lazy?: boolean }
    */
   window.renderIntegrations = function (tuning, containerOrOpts) {
     let container = null;
     let onlyIds = null;
+    let lazy = false;
     if (containerOrOpts && containerOrOpts.nodeType === 1) {
       container = containerOrOpts;
     } else if (containerOrOpts && typeof containerOrOpts === "object") {
       container = containerOrOpts.container || null;
       onlyIds = Array.isArray(containerOrOpts.only) ? containerOrOpts.only : null;
+      lazy = containerOrOpts.lazy === true;
     }
 
     const root =
@@ -438,7 +466,7 @@ print(resp.content[0].text)`
       bindCopies(root);
       root.dataset.built = "1";
     }
-    applyTuning(root, tuning);
+    applyTuning(root, tuning, lazy);
   };
 
   window.AT_INTEGRATIONS = INTEGRATIONS;

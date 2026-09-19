@@ -48,11 +48,41 @@
     }
   ],
   "related": [
-    { "kicker": "Guide", "label": "CLAUDE.md examples that actually work", "href": "/guides/claude-md-examples" },
-    { "kicker": "Tool", "label": "CLAUDE.md generator", "href": "/tools/claude-md-generator" },
-    { "kicker": "Library", "label": "All 43 tuning files", "href": "/library/" },
-    { "kicker": "Tests", "label": "MBTI test — free, ~5 min", "href": "/tests/mbti" },
-    { "kicker": "Guide", "label": "MBTI vs Big Five for AI", "href": "/guides/mbti-vs-big-five-for-ai" },
-    { "kicker": "Guide", "label": "How to give your AI a personality", "href": "/guides/how-to-give-your-ai-a-personality" }
-  ]
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude Code's personality (output styles)",
+      "href": "/guides/claude-code-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "CLAUDE.md examples that actually work",
+      "href": "/guides/claude-md-examples"
+    },
+    {
+      "kicker": "Tool",
+      "label": "CLAUDE.md generator",
+      "href": "/tools/claude-md-generator"
+    },
+    {
+      "kicker": "Library",
+      "label": "All 43 tuning files",
+      "href": "/library/"
+    },
+    {
+      "kicker": "Tests",
+      "label": "MBTI test — free, ~5 min",
+      "href": "/tests/mbti"
+    },
+    {
+      "kicker": "Guide",
+      "label": "MBTI vs Big Five for AI",
+      "href": "/guides/mbti-vs-big-five-for-ai"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give your AI a personality",
+      "href": "/guides/how-to-give-your-ai-a-personality"
+    }
+  ],
+  "published": "2026-07-23"
 }

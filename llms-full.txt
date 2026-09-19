@@ -16,6 +16,8 @@ The thesis: every frontier AI defaults to roughly the same INTJ-flavored "helpfu
 - [agent-tune.com/library](https://agent-tune.com/library) — library hub (all 43 type pages indexed by system)
 - [agent-tune.com/tests/](https://agent-tune.com/tests/) — tests catalog (5 instruments)
 - [agent-tune.com/research](https://agent-tune.com/research) — research findings
+- [agent-tune.com/guides/](https://agent-tune.com/guides/) — install guides per agent: [Claude](https://agent-tune.com/guides/claude-personality), [Claude Code](https://agent-tune.com/guides/claude-code-personality), [ChatGPT](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type), [GPT-6 Astra](https://agent-tune.com/guides/astra-personality), [Grok Bot](https://agent-tune.com/guides/grokbot-personality), [Meta Muse](https://agent-tune.com/guides/muse-personality), [Cursor and AGENTS.md](https://agent-tune.com/guides/coding-agent-personality)
+- [agent-tune.com/output-styles/index.json](https://agent-tune.com/output-styles/index.json) — all 43 tunings as Claude Code output styles
 - [agent-tune.com/sitemap.xml](https://agent-tune.com/sitemap.xml) — all indexable URLs (auto-generated)
 
 ## The 5 systems × 43 tuning files

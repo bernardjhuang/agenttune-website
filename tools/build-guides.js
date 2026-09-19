@@ -3,6 +3,9 @@
  *
  * Each spec: { slug, title, description, pill, h1, dek, lede, answer,
  *              sections: [{h2, html}], faq: [{q, a}], related: [{kicker, label, href}] }
+ * Optional:  published / updated ("YYYY-MM-DD"; default to the spec file's first
+ *            and last commit dates, or today while it has uncommitted edits),
+ *            changelog: [{date, note}], sources: [{label, href}]
  *
  * Emits a full page (head + schema + nav + hero + prose + FAQ + related + footer)
  * consistent with the research-page layout. Run after editing any spec:
@@ -14,6 +17,7 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
 const SRC = path.join(ROOT, "guides", "src");
@@ -24,6 +28,29 @@ const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").re
 const escAttr = (s) => escHtml(s).replace(/"/g, "&quot;");
 const jsonInline = (o) => JSON.stringify(o).replace(/</g, "\\u003c");
 const stripTags = (t) => String(t).replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+
+// ---------- Dates ----------
+// Guides cover products that change monthly, so every page carries a visible
+// "Updated" line plus datePublished / dateModified in its Article schema.
+const todayISO = () => new Date().toISOString().slice(0, 10);
+function git(args) {
+  try {
+    return execSync(`git ${args}`, { cwd: ROOT, stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
+  } catch {
+    return "";
+  }
+}
+function datesFor(spec, relPath) {
+  const dirty = !!git(`status --porcelain -- "${relPath}"`);
+  const first = git(`log --diff-filter=A --follow --format=%cs -- "${relPath}"`).split("\n").pop();
+  const last = git(`log -1 --format=%cs -- "${relPath}"`);
+  return {
+    published: spec.published || first || todayISO(),
+    updated: spec.updated || (dirty ? todayISO() : last || todayISO())
+  };
+}
+const longDate = (iso) =>
+  new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
 const FONT_BLOCK = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +69,7 @@ function navHtml() {
     </nav>`;
 }
 
-function buildPage(spec) {
+function buildPage(spec, dates) {
   const route = `/guides/${spec.slug}`;
   const url = `${SITE}${route}`;
 
@@ -52,6 +79,8 @@ function buildPage(spec) {
     headline: stripTags(spec.h1).replace(/\.$/, ""),
     description: spec.description,
     url,
+    datePublished: dates.published,
+    dateModified: dates.updated,
     author: { "@type": "Person", name: "Bernard Huang", url: "https://github.com/bernardjhuang" },
     publisher: { "@type": "Organization", name: "AgentTune", url: SITE },
     inLanguage: "en",
@@ -94,6 +123,24 @@ ${spec.faq.map((f) => `          <details>
         </div>
       </section>` : "";
 
+  const changelogHtml = spec.changelog && spec.changelog.length ? `
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+${spec.changelog.map((c) => `          <li><time datetime="${escAttr(c.date)}">${escHtml(longDate(c.date))}</time> ${c.note}</li>`).join("\n")}
+        </ul>
+      </section>` : "";
+
+  const sourcesHtml = spec.sources && spec.sources.length ? `
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+${spec.sources.map((x) => `          <li><a href="${escAttr(x.href)}" target="_blank" rel="noopener">${escHtml(x.label)}</a></li>`).join("\n")}
+        </ul>
+      </section>` : "";
+
   const relatedHtml = spec.related && spec.related.length ? `
       <div class="divider tight"></div>
       <section>
@@ -114,6 +161,8 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <meta property="og:title" content="${escAttr(stripTags(spec.h1))}" />
   <meta property="og:description" content="${escAttr(spec.description)}" />
   <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="${dates.published}" />
+  <meta property="article:modified_time" content="${dates.updated}" />
   <meta property="og:url" content="${url}" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="${SITE}/og/og-card.png" />
@@ -158,6 +207,7 @@ ${navHtml()}
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">${escHtml(spec.pill)}</span>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>${spec.dek ? `\n        <p class="article-dek">${spec.dek}</p>` : ""}
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
         <p class="lede" style="margin-top: 18px;">${spec.lede}</p>
       </section>
 
@@ -165,6 +215,8 @@ ${spec.answer ? `      <div class="guide-answer"><strong>The short answer.</stro
       <div class="divider tight"></div>
 ${sectionsHtml}
 ${faqHtml}
+${changelogHtml}
+${sourcesHtml}
 ${relatedHtml}
 
     </article>
@@ -199,7 +251,7 @@ ${relatedHtml}
 const specs = fs.readdirSync(SRC).filter((f) => f.endsWith(".json"));
 for (const f of specs) {
   const spec = JSON.parse(fs.readFileSync(path.join(SRC, f), "utf8"));
-  const html = buildPage(spec);
+  const html = buildPage(spec, datesFor(spec, path.join("guides", "src", f)));
   fs.writeFileSync(path.join(OUT, `${spec.slug}.html`), html);
   console.log(`guides/${spec.slug}.html ← ${f}`);
 }

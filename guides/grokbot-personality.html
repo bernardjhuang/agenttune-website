@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Give Grok Bot a Personality (2026 Guide)</title>
+  <meta name="description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
+
+  <meta property="og:title" content="How to give Grok Bot a personality." />
+  <meta property="og:description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="og:url" content="https://agent-tune.com/guides/grokbot-personality" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to give Grok Bot a personality." />
+  <meta name="twitter:description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/grokbot-personality" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to give Grok Bot a personality","description":"Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats.","url":"https://agent-tune.com/guides/grokbot-personality","datePublished":"2026-09-19","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give Grok Bot a personality"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Grok Bot have custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Not as a separate setting. Each Bot has a Description on its profile, and xAI's docs say to use the Description for rules that should remain true and messages for task-specific instructions. Open the Bot menu and choose Edit Profile, or go to View conversation details, then Bot settings."}},{"@type":"Question","name":"Is Grok Bot the same as Grok?","acceptedAnswer":{"@type":"Answer","text":"No. Grok is the chatbot on grok.com and in X. Grok Bot is a separate app, in beta since August 11, 2026, for persistent AI teammates that each work on a cloud computer. It is a joint product with Cursor, and you sign in with a Cursor account. xAI's FAQ describes them as different products."}},{"@type":"Question","name":"Is it Grokbot or Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"xAI writes it as two words, Grok Bot. Most people type Grokbot. Same product."}},{"@type":"Question","name":"Is there a character limit on a Bot's Description?","acceptedAnswer":{"@type":"Answer","text":"xAI's documentation does not state one. AgentTune tuning files run from about 1,200 to 2,900 characters, alongside a short job description and boundaries."}},{"@type":"Question","name":"What does a Bot remember?","acceptedAnswer":{"@type":"Answer","text":"xAI's docs say a Bot can retain stable working preferences, important facts and summaries from its work, separately from your other Bots. Memory is learned and is not copied when you duplicate a Bot, so put anything that must persist in the Description."}},{"@type":"Question","name":"How do I stop a Bot losing its personality in a long chat?","acceptedAnswer":{"@type":"Answer","text":"Keep the rules in the Description, not in chat. A Cursor staff member has said every reply re-reads the whole conversation and auto-summary happens only near the model's limit. Their suggested fix is to ask for a handoff summary, right-click the Bot, choose Duplicate, and paste the summary into the copy."}},{"@type":"Question","name":"Can I share a tuned Bot?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open the Share menu, choose Create template, then Copy link. A template copies the Bot's identity, description, skills and routines to the recipient's account. It does not include your conversation history, logins or computer access."}},{"@type":"Question","name":"Which model powers Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"xAI's docs say Cursor manages model selection and there is no model picker. They do not name a default model."}}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">How to give Grok Bot a personality</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Grok Bot</span>
+        <h1 class="h-hero h-research-hero">How to give Grok Bot a personality.</h1>
+        <p class="article-dek">There is no personality setting. There is a Description field, and it does the job.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Grok Bot, which most people type as Grokbot, is xAI's app for keeping named AI teammates around. Each Bot has a job, a memory and its own cloud computer. It has no personality picker and no system-prompt box. What it has is a <strong>Description</strong> on every Bot's profile, and xAI's docs say to use it for the rules that should stay true. That is where a tuning goes.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> Open the Bot, choose Edit Profile, and write your communication rules into the Description, after the Bot's job and its boundaries. The Description persists across conversations, and it is what a duplicated Bot or a shared template carries with it. Rules typed into chat do not survive a long conversation. Rules in the Description do.</div>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The short version.</h2>
+        <ol><li>Open the Bot. From the Bot menu choose <strong>Edit Profile</strong>. The same fields are under <strong>View conversation details</strong>, then <strong>Bot settings</strong>.</li><li>In <strong>Description</strong>, keep the job and the boundaries, then add a section on how to talk to you. The example below shows the shape.</li><li>Message the Bot <em>"hi"</em>. A tuned Bot answers in one short line.</li></ol><div class="guide-snippet">JOB
+Inbox triage. Sort new mail each morning, draft replies for anything that needs one, and flag what needs me.
+
+BOUNDARIES
+Never send external messages without approval. Never delete mail.
+
+HOW TO TALK TO ME
+- Lead with the answer or the recommendation. Reasoning comes after.
+- Drop hedges like "I think" and "it depends". If you don't know, say so in one line.
+- Give one recommendation, not a menu, unless I ask for options.
+- Push back when I'm wrong, and say why.
+- No openers like "Great question", no recap of what I just said, no closing offers.
+- When you need a yes from me: the decision, the cost, and your recommendation, in three lines.</div><p>The last six lines are a short version of the <a href="/library/mbti/intj">INTJ tuning</a>, plus one line written for agents. Swap in the file for your own type from the <a href="/library/">library</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Grok Bot is not Grok.</h2>
+        <p>Three products share the name, and their settings are in different places.</p><div class="guide-table-wrap"><table><thead><tr><th>Product</th><th>What it is</th><th>Where its instructions live</th></tr></thead><tbody><tr><td><strong>Grok Bot</strong></td><td>Persistent AI teammates, each on a cloud computer with a browser, a filesystem and a terminal. In beta since August 11, 2026. This guide.</td><td>Each Bot's <strong>Description</strong></td></tr><tr><td><strong>Grok</strong></td><td>The chatbot on grok.com and in X</td><td>Its own customization settings. xAI's FAQ calls Grok Bot a different product.</td></tr><tr><td><strong>Grok Build</strong></td><td>xAI's coding agent for the terminal</td><td><code>AGENTS.md</code> project rules</td></tr></tbody></table></div><p>Grok Bot is a joint product with Cursor. You sign in with a Cursor account, and the Bots' computers run in Cursor's cloud. It comes with every paid individual Cursor plan and with Cursor Teams, or you can link a SuperGrok subscription. It runs on macOS, Windows, Linux, iOS and Android.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Where personality lives: the Description.</h2>
+        <p>A Bot's profile has four fields: <strong>Name</strong>, <strong>Label (optional)</strong>, <strong>Description</strong> and an avatar. xAI's docs draw the line clearly. The Description is for rules that should remain true. Messages are for the task in front of you.</p><p>xAI's own example is a Bot called Piper. Its Description gives the job, says how to report (<em>a short summary with the highest-impact issue first</em>), and ends on a boundary: never change production settings. Notice what xAI put in there without calling it personality. <em>Highest-impact issue first</em> is a communication rule. It is the same kind of rule a tuning is made of.</p><p>So a good Description has three parts, in this order:</p><ul><li><strong>The job.</strong> One primary job. xAI's docs say focused Bots build more useful context than one catch-all Bot.</li><li><strong>The boundaries.</strong> What it must never do without asking. Pair these with narrow <strong>Ask first</strong> rules for sending, publishing, deleting and purchasing.</li><li><strong>How to talk to you.</strong> Your tuning.</li></ul><p>Don't count on the name. <em>Blunt Bob</em> is not a rule a Bot can follow.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Pasting a tuning, step by step.</h2>
+        <p><strong>A new Bot, on desktop.</strong> Choose <strong>New</strong> in the sidebar, or press Cmd or Ctrl plus N. In <strong>New chat</strong>, select <strong>Create new Bot</strong>. Grok Bot opens a Bot named New Bot. Open the Bot menu, choose <strong>Edit Profile</strong>, and fill in the name, the label and the Description.</p><p><strong>A Bot you already have.</strong> Open it, choose <strong>View conversation details</strong>, then <strong>Bot settings</strong>, and edit the Description. You can also ask the Bot in chat to update its own profile. If you do, read the Description afterwards.</p><p><strong>On mobile.</strong> Tap <strong>+</strong>, then <strong>New Bot</strong>. xAI's mobile docs say profiles can be edited, but they do not give the tap path.</p><p><strong>Will it fit?</strong> xAI's docs state no character limit for the Description. AgentTune tunings run from about 1,200 to 2,900 characters. If a paste is refused, cut the <em>What loses them</em> list at the bottom first. The rules above it do most of the work.</p><p>Which tuning? Match it to you, not to the Bot. If you don't know your type, the <a href="/tests/mbti">free MBTI test</a> takes about ten minutes and links to the matching file.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Keeping it through long conversations.</h2>
+        <p>This is the part that bites people. A Cursor staff member explained on the Cursor forum that every reply re-reads the entire conversation, and that Grok Bot only summarizes automatically near the model's limit. There is no manual compact yet. A rule you typed in message three is, by message eighty, a small thing in a very large pile. It also costs you tokens every turn.</p><p>The fix staff recommended:</p><ol><li>Ask the Bot for a handoff summary.</li><li>Right-click the Bot in the sidebar and choose <strong>Duplicate</strong>.</li><li>Paste the summary as the first message to the copy.</li><li>Keep core instructions in <strong>Edit Profile</strong>, not in chat, so they carry across.</li></ol><p>xAI's docs say a duplicate carries the profile, settings, enabled skills, routines and avatar. It does not carry conversation history, learned memory or chat attachments. Your tuning survives because it is in the profile. Anything the Bot had only <em>learned</em> about how you like to work does not.</p><p>That is the argument for writing it down. A Bot's memory can retain stable working preferences, but memory is learned, invisible and not copied. The Description is written, visible and copied.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Routines, and what we could not confirm.</h2>
+        <p>A routine tells one Bot to run a workflow on a schedule. Each routine has its own instruction, and you manage them under <strong>View conversation details</strong>, then <strong>Routines</strong>.</p><p><strong>What xAI does not say</strong> is whether the Description applies when a routine runs in the background. The docs imply it: standing boundaries are supposed to live in the Description, and one Bot owns each routine. In DataCamp's hands-on tutorial a routine did inherit the profile's blocked actions. That is one test, not documentation.</p><p>Check it yourself with <strong>Test run</strong> after creating a routine, and read the report it sends back. xAI warns that a test run performs real work, so point it at something harmless.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>One personality, many Bots.</h2>
+        <p>The job changes from Bot to Bot. You don't. The <em>how to talk to me</em> section is about the person reading the reports, so the same block belongs in every Bot you own. Write it once and paste it under each job.</p><p>To hand a tuned Bot to someone else, open the <strong>Share menu</strong> and choose <strong>Create template</strong>. xAI's docs say a template copies the Bot's identity, description, skills and routines to the recipient's account, and leaves out your conversation history, logins and computer. If you share one, remember the tuning in it describes you. The other person should swap in their own.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What Grok tests as.</h2>
+        <p>xAI introduced Grok as a model that answers with <em>"a bit of wit and has a rebellious streak."</em> We measured it. Grok 4.3 was one of six frontier models we put through about 2,200 personality tests:</p><ul><li><strong>MBTI:</strong> INTJ in 100 of 100 runs, the same as every other model we tested. Its answers were identical run to run.</li><li><strong>Enneagram:</strong> 8w1, the challenger. The only model of the four that was not a 5 or a 1 at its core.</li><li><strong>DISC:</strong> Conscientiousness first and Steadiness second, like the rest.</li><li><strong>Big Five:</strong> the outlier. Lower on Conscientiousness, Agreeableness and Openness than Claude, GPT and Gemini, higher on Neuroticism, and with two to five times the run-to-run variance.</li></ul><p>The caveat matters. Those are numbers for Grok 4.3, the model. xAI's security docs say Cursor manages model selection for Grok Bot, with no picker, so we can't tell you which model your Bot is running today. The full data is at <a href="/research">/research</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does Grok Bot have custom instructions?</summary>
+            <p>Not as a separate setting. Each Bot has a Description on its profile, and xAI's docs say to use the Description for rules that should remain true and messages for task-specific instructions. Open the Bot menu and choose Edit Profile, or go to View conversation details, then Bot settings.</p>
+          </details>
+          <details>
+            <summary>Is Grok Bot the same as Grok?</summary>
+            <p>No. Grok is the chatbot on grok.com and in X. Grok Bot is a separate app, in beta since August 11, 2026, for persistent AI teammates that each work on a cloud computer. It is a joint product with Cursor, and you sign in with a Cursor account. xAI's FAQ describes them as different products.</p>
+          </details>
+          <details>
+            <summary>Is it Grokbot or Grok Bot?</summary>
+            <p>xAI writes it as two words, Grok Bot. Most people type Grokbot. Same product.</p>
+          </details>
+          <details>
+            <summary>Is there a character limit on a Bot's Description?</summary>
+            <p>xAI's documentation does not state one. AgentTune tuning files run from about 1,200 to 2,900 characters, alongside a short job description and boundaries.</p>
+          </details>
+          <details>
+            <summary>What does a Bot remember?</summary>
+            <p>xAI's docs say a Bot can retain stable working preferences, important facts and summaries from its work, separately from your other Bots. Memory is learned and is not copied when you duplicate a Bot, so put anything that must persist in the Description.</p>
+          </details>
+          <details>
+            <summary>How do I stop a Bot losing its personality in a long chat?</summary>
+            <p>Keep the rules in the Description, not in chat. A Cursor staff member has said every reply re-reads the whole conversation and auto-summary happens only near the model's limit. Their suggested fix is to ask for a handoff summary, right-click the Bot, choose Duplicate, and paste the summary into the copy.</p>
+          </details>
+          <details>
+            <summary>Can I share a tuned Bot?</summary>
+            <p>Yes. Open the Share menu, choose Create template, then Copy link. A template copies the Bot's identity, description, skills and routines to the recipient's account. It does not include your conversation history, logins or computer access.</p>
+          </details>
+          <details>
+            <summary>Which model powers Grok Bot?</summary>
+            <p>xAI's docs say Cursor manages model selection and there is no model picker. They do not name a default model.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-19">September 19, 2026</time> First published. Menu labels are from docs.x.ai. We could not confirm a Description length limit or how routines treat the Description, and say so above.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://docs.x.ai/grok-bot/bots" target="_blank" rel="noopener">xAI docs: Create and manage Bots</a></li>
+          <li><a href="https://docs.x.ai/grok-bot/get-started" target="_blank" rel="noopener">xAI docs: Get started with Grok Bot</a></li>
+          <li><a href="https://docs.x.ai/grok-bot/settings-and-notifications" target="_blank" rel="noopener">xAI docs: Settings and notifications</a></li>
+          <li><a href="https://docs.x.ai/grok-bot/skills-routines-and-automations" target="_blank" rel="noopener">xAI docs: Skills and routines</a></li>
+          <li><a href="https://docs.x.ai/grok-bot/faq" target="_blank" rel="noopener">xAI docs: Grok Bot FAQ</a></li>
+          <li><a href="https://forum.cursor.com/t/171540" target="_blank" rel="noopener">Cursor forum: staff answer on conversation length and Duplicate</a></li>
+          <li><a href="https://cursor.com/help/grok-bot/plans" target="_blank" rel="noopener">Cursor Help: Grok Bot plans</a></li>
+          <li><a href="https://www.datacamp.com/tutorial/grok-bot-tutorial" target="_blank" rel="noopener">DataCamp: Grok Bot tutorial (hands-on)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/library/"><span class="guide-related-kicker">Library</span>All 43 tuning files</a>
+          <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>Find your type — free MBTI test</a>
+          <a href="/guides/astra-personality"><span class="guide-related-kicker">Guide</span>How to give GPT-6 Astra a personality</a>
+          <a href="/guides/muse-personality"><span class="guide-related-kicker">Guide</span>How to give Meta Muse a personality</a>
+          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>Give your coding agent a personality</a>
+          <a href="/research"><span class="guide-related-kicker">Research</span>Every frontier AI we tested is INTJ</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Copy buttons on every snippet block
+    document.querySelectorAll(".guide-snippet").forEach(function (block) {
+      var btn = document.createElement("button");
+      btn.className = "guide-snippet-copy";
+      btn.type = "button";
+      btn.textContent = "Copy";
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
+        });
+      });
+      block.prepend(btn);
+    });
+  </script>
+</body>
+</html>

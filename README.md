@@ -33,9 +33,15 @@ Everything on the site is free — the paid Premium/Developer Pack products were
 │                               reads the deployed static assets via env.ASSETS)
 ├── tunings/                    Markdown source of truth (mirrored from
 │                               bernardjhuang/agenttune — DO NOT EDIT HERE)
+├── output-styles/              Generated: every tuning as a Claude Code output
+│                               style (+ index.json). Served noindex.
 ├── tools/
 │   ├── build-guides.js         Builds /guides pages from guides/src specs
+│   │                           (dates, changelog and sources come from the spec)
+│   ├── build-output-styles.js  Builds /output-styles from /tunings
 │   ├── generate-library.js     Builds the 43 /library pages from /tunings
+│   ├── library-context.js      Per-type "against the AI default" + "closest
+│   │                           tunings" sections; numbers read from AT_RESEARCH
 │   └── v2-content.js           Per-type human content (humanContexts, outward)
 ├── data.js                     Browser-side: AT_CONTACTS, AT_RESEARCH, etc.
 ├── integrations.js             Per-agent paste-ready install snippets
@@ -62,7 +68,17 @@ Whenever a tuning markdown file in `tunings/` changes, regenerate the 43 HTML pa
 node tools/generate-library.js
 ```
 
-The ESTP page at `library/mbti/estp.html` is **hand-built** and intentionally skipped by the generator — it's the canonical v2 template reference. To regenerate it, remove its entry from `SKIP_REGEN_IDS` at the top of the generator script.
+The ESTP page at `library/mbti/estp.html` is **hand-built** and intentionally skipped by the generator — it's the canonical v2 template reference. The generator still refreshes the blocks between `<!-- AT:name -->` … `<!-- /AT:name -->` markers in it (the default-gap section, the neighbors section and the guides line), so research numbers and links don't drift. To regenerate the whole page, run with `AT_REGEN_ALL=1`.
+
+After changing a tuning, also rebuild the output-style pack:
+
+```sh
+node tools/build-output-styles.js
+```
+
+## Guides
+
+Each guide is a JSON spec in `guides/src/`. Edit the spec, then run `node tools/build-guides.js`. Optional spec fields: `published` and `updated` (default to the spec file's first and last commit dates, or today while it has uncommitted edits), `changelog: [{date, note}]`, and `sources: [{label, href}]`. The guides hub (`guides/index.html`), `llms.txt` and the `STATIC_PAGES` list in `tools/generate-library.js` are hand-maintained: add new guides to all three.
 
 ## Deploying
 

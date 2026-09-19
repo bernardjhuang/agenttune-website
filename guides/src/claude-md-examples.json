@@ -64,11 +64,41 @@
     }
   ],
   "related": [
-    { "kicker": "Tool", "label": "Free CLAUDE.md generator", "href": "/tools/claude-md-generator" },
-    { "kicker": "Guide", "label": "Give your coding agent a personality", "href": "/guides/coding-agent-personality" },
-    { "kicker": "Guide", "label": "How to give Claude a personality", "href": "/guides/claude-personality" },
-    { "kicker": "Library", "label": "ISTJ tuning — the Inspector", "href": "/library/mbti/istj" },
-    { "kicker": "Tests", "label": "Find your type — free MBTI test", "href": "/tests/mbti" },
-    { "kicker": "Research", "label": "Six models, five personality tests", "href": "/research" }
-  ]
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude Code's personality (output styles)",
+      "href": "/guides/claude-code-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Free CLAUDE.md generator",
+      "href": "/tools/claude-md-generator"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Give your coding agent a personality",
+      "href": "/guides/coding-agent-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude's personality",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Library",
+      "label": "ISTJ tuning — the Inspector",
+      "href": "/library/mbti/istj"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Find your type — free MBTI test",
+      "href": "/tests/mbti"
+    },
+    {
+      "kicker": "Research",
+      "label": "Six models, five personality tests",
+      "href": "/research"
+    }
+  ],
+  "published": "2026-07-23"
 }

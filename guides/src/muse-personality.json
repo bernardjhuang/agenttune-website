@@ -1,0 +1,151 @@
+{
+  "slug": "muse-personality",
+  "published": "2026-09-19",
+  "title": "How to Give Meta Muse a Personality (Soul.md Guide)",
+  "description": "Muse has no custom-instructions box. Its personality lives in a Soul.md file you can edit. The tap path, what to paste, how to test it, how to reset it.",
+  "pill": "Guide · Meta Muse",
+  "h1": "How to give Muse a personality.",
+  "dek": "Soul.md, Identity.md and Memory.md: which file does what, and what to paste.",
+  "lede": "Muse is Meta's personal AI agent, launched September 8, 2026. It has no custom-instructions box. Its personality lives in a file called <strong>Soul.md</strong>, and Meta lets you open it and edit it. There are two ways to change how Muse talks to you: tell it in chat, or paste a tuning into the file yourself. The second is the one that holds up.",
+  "answer": "Tap the Assistant icon, then Identity, then Soul. That opens Soul.md, the file that holds who your Muse is: core truths, boundaries and personality. Add your communication rules there. You can also just ask Muse in chat to change its tone or style, and it saves the change. To undo everything, say \"Go back to your default personality.\"",
+  "sections": [
+    {
+      "h2": "The short version.",
+      "html": "<ol><li>In the Muse app, tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Add a section at the end of the file and paste the block below, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Go back to chat and say <em>\"hi\"</em>. A tuned Muse answers in one short line. If you get a cheerful paragraph and a list of things it could do for you, the rules did not take.</li></ol><div class=\"guide-snippet\"># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say <em>tap</em>, so they describe the mobile app. Meta does not document the path on muse.ai or the Mac app.</p>"
+    },
+    {
+      "h2": "Muse is not Meta AI, and it is not Muse Code.",
+      "html": "<p>Search for Muse settings and you will land on the wrong product. For the record:</p><ul><li><strong>Muse</strong> is the personal agent this guide is about. It runs on its own cloud computer, which Meta calls Muse Secure VM, and it acts for you: it sends email, books things, runs tasks while the app is closed. It is on iOS, Android, muse.ai and WhatsApp, with a Mac app added in mid-September.</li><li><strong>Muse Spark</strong> is the model underneath it.</li><li><strong>Meta AI</strong> is the older assistant inside Instagram, WhatsApp and Messenger. Different product, different settings.</li></ul><p>At launch Muse is available in the United States to adults. There is a free tier with a usage limit that refreshes, a Power plan at $20 a month (500M Muse tokens a week) and a Maximum plan at $100 a month (3B a week). Meta's docs put none of the personality controls behind a paid plan.</p>"
+    },
+    {
+      "h2": "Three files, three jobs.",
+      "html": "<p>Muse keeps what it knows in Markdown files you can open. Three of them shape how it treats you. All three are under the Assistant icon, then Identity.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>File</th><th>What Meta says it holds</th><th>How to open it</th><th>What goes in it</th></tr></thead><tbody><tr><td><strong>Soul.md</strong></td><td>Who your Muse is: core truths, boundaries, personality</td><td>Identity, then <strong>Soul</strong></td><td>Your tuning. How it should talk to you.</td></tr><tr><td><strong>Identity.md</strong></td><td>Its name, creature, vibe and tagline</td><td>Identity, then <strong>Edit</strong></td><td>The name and the avatar's character. Cosmetic.</td></tr><tr><td><strong>Memory.md</strong></td><td>Facts about you that it has saved</td><td>Identity, then <strong>Memory</strong></td><td>Your name, time zone, interests. Facts, not voice.</td></tr></tbody></table></div><p>People put personality in the wrong file. <em>\"I'm a product manager in Austin\"</em> is a fact, and it belongs in Memory.md. <em>\"Lead with the answer\"</em> is a rule about behavior, and it belongs in Soul.md. Giving your Muse a name and a vibe in Identity.md changes what it is called. It does not change whether it buries the recommendation under four caveats.</p>"
+    },
+    {
+      "h2": "Option one: tell it in chat.",
+      "html": "<p>This is the route Meta documents first. You ask Muse to change, and it saves the change so it carries between conversations. Meta's list of what you can change this way: its name, its personality and tone, its communication style, what it remembers about you, and its avatar and tagline. Meta's own examples of a nudge are <em>\"too long\"</em> and <em>\"be more casual\"</em>.</p><p><strong>Honest limit.</strong> <em>\"Be more casual\"</em> is an adjective. Muse will agree, write something into its files, and you will not know what unless you open them. Adjectives also do not touch the things that actually annoy people: what it leads with, whether it asks before it acts, how it tells you that you are wrong.</p><p>The better way to use chat is to hand it the rules and then check its work:</p><div class=\"guide-snippet\">Add these rules to your Soul file, under a heading called \"How to talk to me\". Don't change anything else in the file. Then show me what you added.\n\n[paste a tuning here]</div><p>Then open Soul.md and read it. It is your file.</p>"
+    },
+    {
+      "h2": "Option two: paste a tuning into Soul.md.",
+      "html": "<p>Slower by thirty seconds, and you know exactly what is in the file.</p><ol><li>Pick a tuning from the <a href=\"/library/\">library</a> and copy the rules. You want the Markdown body: everything below the settings header, which is the block between the two <code>---</code> lines at the top of the file.</li><li>Tap the Assistant icon, then Identity, then Soul.</li><li>Paste at the end of the file, under its own heading.</li><li>Save, and test in chat.</li></ol><p>Meta does not publish a length limit for Soul.md. AgentTune tunings run from about 1,200 to 2,900 characters, which is short for a file like this.</p><p>Which tuning? Match it to you, not to Muse. If you know your MBTI, Enneagram, DISC, Big Five or attachment type, install that file. If you don't, the <a href=\"/tests/mbti\">free MBTI test</a> takes about ten minutes and links to the matching file when you finish.</p>"
+    },
+    {
+      "h2": "An agent's personality shows up where a chatbot's doesn't.",
+      "html": "<p>A chatbot's personality is how it answers. Muse does things, so its personality is also how it <em>reports</em>. It messages you without being asked. It comes back for approval before it sends an email or spends money. It tells you what it got done overnight. A tuning that says <em>\"lead with the result, one line, no recap\"</em> earns more here than in any chat window, because you will read a great many of those reports.</p><p>Two things worth writing into your rules for an agent:</p><ul><li><strong>How to ask for approval.</strong> <em>\"When you need a yes from me, give me the decision, the cost and your recommendation in three lines.\"</em></li><li><strong>When to interrupt.</strong> Meta's design team says you can tell Muse to turn its proactive messages off, down or up. Say which you want.</li></ul><p><strong>What Meta does not document:</strong> whether Soul.md governs background tasks, the sub-agents Muse starts, or the emails it drafts in your name. Test it on something that does not matter before you rely on it.</p>"
+    },
+    {
+      "h2": "Does it stick? Test it, and reset it.",
+      "html": "<p>Test with <em>\"hi\"</em> right after the edit, and again a day later. Meta says customizations carry over between conversations.</p><p>To undo a change, Meta's documented phrase is <em>\"Go back to your default personality.\"</em> Muse confirms what it reset. To undo one rule, delete that line from Soul.md.</p><p>Forgetting is best-effort. Meta's help page says the forget skill removes information <em>to the best of its ability</em>, so treat deletion as likely, not guaranteed. A full reset is under Settings, Data Controls, Reset. It returns Muse to its original state and permanently deletes your chat history, files and active tasks.</p>"
+    },
+    {
+      "h2": "Privacy, briefly.",
+      "html": "<p>A personality file says a lot about you. Two facts from Meta's help pages:</p><ul><li>The setting that lets Meta use your interactions to train its models is <strong>on when you first use Muse</strong>. It is under Settings, Data controls, <em>Help improve our AI models</em>. Meta says it removes certain identifiers and that you can switch it off at any time.</li><li>If you import memory from another assistant (Settings, Data Controls, Import memory), everything in that export becomes material Muse can use.</li></ul>"
+    },
+    {
+      "h2": "What we have not tested.",
+      "html": "<p>We have run about 2,200 personality tests on six frontier models, and every one came back INTJ on the MBTI. The data is at <a href=\"/research\">/research</a>. Muse Spark is not one of the six. We don't know what Muse tests as, and nobody else has published it either.</p><p>What Meta has said: the first line of Muse's system prompt is <em>\"Your purpose is to make your user's life better.\"</em> Its design team treats the avatar, the name and a distinct style as core to the product. Meta's AI chief, Alexandr Wang, told CNBC the app was designed so that it <em>\"feels very approachable and friendly\"</em>. If approachable and friendly is not the collaborator you want, that is what Soul.md is for.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does Muse have custom instructions?",
+      "a": "Not under that name. Meta's help center has no custom-instructions box for Muse. The equivalent is Soul.md, a file that holds who your Muse is, including its personality. Tap the Assistant icon, then Identity, then Soul to open and edit it. You can also ask Muse in chat to change its tone or style."
+    },
+    {
+      "q": "Where is Soul.md in the Muse app?",
+      "a": "Tap the Assistant icon, which is your Muse's avatar, then Identity, then Soul. Meta's help article on managing Muse data says you can edit and delete information in the Soul.md file directly. Meta documents this path for the mobile app only."
+    },
+    {
+      "q": "What is the difference between Soul.md, Identity.md and Memory.md?",
+      "a": "Soul.md holds who your Muse is: core truths, boundaries and personality. Identity.md holds its name, creature, vibe and tagline. Memory.md holds facts about you, such as your name, time zone and interests. Communication rules belong in Soul.md."
+    },
+    {
+      "q": "How do I reset Muse's personality?",
+      "a": "Say \"Go back to your default personality.\" Meta documents that phrase, and Muse confirms what it reset. To remove one rule, delete it from Soul.md. A full reset under Settings, Data Controls, Reset wipes chat history, files and active tasks as well."
+    },
+    {
+      "q": "Can I change Muse's name and avatar?",
+      "a": "Yes. Ask in chat, or tap the Assistant icon, then Identity, then Edit to change Identity.md, which holds the name, creature, vibe and tagline. This changes what Muse is called, not how it communicates."
+    },
+    {
+      "q": "Do the changes work in WhatsApp?",
+      "a": "Meta says customizations are saved and carry over between conversations, and you can message the same Muse from WhatsApp. Meta does not document whether the Identity editor is available inside WhatsApp, so make file edits in the Muse app, or ask for the change in chat."
+    },
+    {
+      "q": "Is Muse the same as Meta AI?",
+      "a": "No. Meta AI is the assistant inside Instagram, WhatsApp and Messenger. Muse is a separate personal agent with its own app, launched September 8, 2026. It runs on a dedicated cloud computer and takes actions for you. It is powered by the Muse Spark model."
+    },
+    {
+      "q": "Does Meta train on what I write in Soul.md?",
+      "a": "Meta's help page says the setting that allows your interactions with Muse to be used for training is on when you first use Muse. You can turn it off under Settings, Data controls, Help improve our AI models. Meta does not say specifically how the identity files are treated."
+    },
+    {
+      "q": "Is Muse free?",
+      "a": "There is a free tier with a usage limit that refreshes. Paid plans are Power at $20 a month with 500M Muse tokens a week, and Maximum at $100 a month with 3B a week. At launch Muse is available in the United States to adults."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-09-19",
+      "note": "First published, eleven days after Muse launched. Click paths are from Meta's help center. We will update this as Meta documents the web and Mac apps."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta Help Center: How to customize Muse's personality and memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    },
+    {
+      "label": "Meta Help Center: Manage your Muse data (Soul.md, Identity.md, Memory.md)",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    },
+    {
+      "label": "Meta Help Center: Muse privacy, safety and security",
+      "href": "https://www.meta.com/help/artificial-intelligence/1047255454427887/"
+    },
+    {
+      "label": "Meta Help Center: Muse subscriptions",
+      "href": "https://www.meta.com/help/subscriptions/1021145227643680/"
+    },
+    {
+      "label": "Meta Newsroom: Introducing Muse",
+      "href": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+    },
+    {
+      "label": "Meta: How we designed Muse",
+      "href": "https://introducing.muse.ai/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Library",
+      "label": "All 43 tuning files",
+      "href": "/library/"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Find your type — free MBTI test",
+      "href": "/tests/mbti"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give Grokbot a personality",
+      "href": "/guides/grokbot-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give GPT-6 Astra a personality",
+      "href": "/guides/astra-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude's personality",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "Every frontier AI we tested is INTJ",
+      "href": "/research"
+    }
+  ]
+}

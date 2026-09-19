@@ -22,7 +22,7 @@
     },
     {
       "h2": "Four steps. About ten minutes.",
-      "html": "<ol><li><strong>Take a test.</strong> Five minutes, free, in-browser, no email wall: <a href=\"/tests/\">the tests hub</a> has all five instruments. Already know your type? Skip ahead.</li><li><strong>Grab your tuning.</strong> Every type page in the <a href=\"/library/\">library</a> has a Markdown tuning file — MIT-licensed, copy-paste, no account. It's a set of interaction rules written for agents, not a horoscope. The <a href=\"/library/mbti/intj\">INTJ file</a>, for instance, tells the agent to lead with disagreement and skip the softeners.</li><li><strong>Install it per agent.</strong> ChatGPT: Settings → Personalization → Custom instructions — the <em>\"How would you like ChatGPT to respond?\"</em> field, 1,500-character limit (<a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">full walkthrough by type</a>). Claude: a custom Style, Project instructions, or paste at conversation start (<a href=\"/guides/claude-personality\">the Claude guide</a>). Coding agents: CLAUDE.md for Claude Code, .cursor/rules for Cursor, AGENTS.md for the rest (<a href=\"/guides/coding-agent-personality\">the coding-agent guide</a>, with <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a>). Or generate a ready file with the <a href=\"/tools/claude-md-generator\">CLAUDE.md generator</a>.</li><li><strong>Edit it.</strong> This is the step people skip and shouldn't. Your type is a starting hypothesis — the Markdown is yours. Delete the rules that don't sound like you. Sharpen the ones that do. An INTJ who happens to love small talk should strike that line; the file doesn't get to overrule you.</li></ol><p>One caution on step 3: keep one tuning per agent, not three stacked systems fighting each other. If you want to layer two — say MBTI for information format plus <a href=\"/guides/enneagram-ai-prompts\">Enneagram for emotional register</a> — paste both, then delete every line that conflicts. Contradictory instructions don't average out; the model just picks one unpredictably, and you're back to the default with extra steps.</p>"
+      "html": "<ol><li><strong>Take a test.</strong> Five minutes, free, in-browser, no email wall: <a href=\"/tests/\">the tests hub</a> has all five instruments. Already know your type? Skip ahead.</li><li><strong>Grab your tuning.</strong> Every type page in the <a href=\"/library/\">library</a> has a Markdown tuning file — MIT-licensed, copy-paste, no account. It's a set of interaction rules written for agents, not a horoscope. The <a href=\"/library/mbti/intj\">INTJ file</a>, for instance, tells the agent to lead with disagreement and skip the softeners.</li><li><strong>Install it per agent.</strong> ChatGPT: Settings → Personalization → Custom Instructions, 1,500 characters on Free and Go and 5,000 on paid plans (<a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">full walkthrough by type</a>). Claude: Instructions for Claude in Settings, Project instructions, or paste at conversation start (<a href=\"/guides/claude-personality\">the Claude guide</a>; Claude's Styles are being retired). The new agents each keep it somewhere different: <a href=\"/guides/astra-personality\">GPT-6 Astra</a> reads your personal AGENTS.md, <a href=\"/guides/grokbot-personality\">Grok Bot</a> reads each Bot's Description, and <a href=\"/guides/muse-personality\">Meta Muse</a> keeps it in a file called Soul.md. Coding agents: an <a href=\"/guides/claude-code-personality\">output style</a> for Claude Code, .cursor/rules for Cursor, AGENTS.md for the rest (<a href=\"/guides/coding-agent-personality\">the coding-agent guide</a>, with <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a>). Or generate a ready file with the <a href=\"/tools/claude-md-generator\">CLAUDE.md generator</a>.</li><li><strong>Edit it.</strong> This is the step people skip and shouldn't. Your type is a starting hypothesis — the Markdown is yours. Delete the rules that don't sound like you. Sharpen the ones that do. An INTJ who happens to love small talk should strike that line; the file doesn't get to overrule you.</li></ol><p>One caution on step 3: keep one tuning per agent, not three stacked systems fighting each other. If you want to layer two — say MBTI for information format plus <a href=\"/guides/enneagram-ai-prompts\">Enneagram for emotional register</a> — paste both, then delete every line that conflicts. Contradictory instructions don't average out; the model just picks one unpredictably, and you're back to the default with extra steps.</p>"
     },
     {
       "h2": "What actually changes.",
@@ -56,11 +56,36 @@
     }
   ],
   "related": [
-    { "kicker": "Research", "label": "Six frontier models, five personality tests, one personality", "href": "/research" },
-    { "kicker": "Tests", "label": "Take a free five-minute personality test", "href": "/tests/" },
-    { "kicker": "Library", "label": "All 43 tuning files, MIT-licensed", "href": "/library/" },
-    { "kicker": "Guide", "label": "ChatGPT custom instructions by personality type", "href": "/guides/chatgpt-custom-instructions-by-personality-type" },
-    { "kicker": "Guide", "label": "Give Claude a personality", "href": "/guides/claude-personality" },
-    { "kicker": "Guide", "label": "Tune your coding agent", "href": "/guides/coding-agent-personality" }
-  ]
+    {
+      "kicker": "Research",
+      "label": "Six frontier models, five personality tests, one personality",
+      "href": "/research"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Take a free five-minute personality test",
+      "href": "/tests/"
+    },
+    {
+      "kicker": "Library",
+      "label": "All 43 tuning files, MIT-licensed",
+      "href": "/library/"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT custom instructions by personality type",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude's personality",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Tune your coding agent",
+      "href": "/guides/coding-agent-personality"
+    }
+  ],
+  "published": "2026-07-23"
 }
