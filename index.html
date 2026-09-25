@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgentTune: Personality Tuning (Claude, ChatGPT, Grok, Muse)</title>
-  <meta name="description" content="Personality-based tuning files for AI agents. Take a quick test, get a Markdown system prompt matched to your type, paste it into Claude, ChatGPT, or Cursor." />
+  <meta name="description" content="Personality prompts for Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, and Grok 4.7. Find your type, choose your model, and copy one focused tuning." />
   <meta property="og:title" content="AgentTune: Personality Tuning (Claude, ChatGPT, Grok, Muse)" />
   <meta property="og:description" content="Take a personality test, get a Markdown tuning file, paste it into your AI agent. Same model — now interacts with you the way you think." />
   <meta property="og:type" content="website" />
@@ -117,7 +117,7 @@
       Personalize your AI agent to <em>work with you better.</em>
     </h1>
     <p class="hp2-hero-lede">
-      A tuning is a short set of instructions about how you want your AI to communicate. Pick from 43 tuning files — or take a 5-min test to find yours. Paste into Claude, ChatGPT, or Gemini to guide how it responds.
+      Pick from 43 personality-matched tuning files — or take a 5-min test to find yours. Make it fit Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, or Grok 4.7, then paste it where you work.
     </p>
 
     <div class="hp2-hero-ctas">
@@ -193,23 +193,23 @@ Skip the encouraging preamble.
         <div class="hp2-step-num">03</div>
         <div class="hp2-step-meta">Step 3 of 3</div>
         <h3 class="hp2-step-title">Paste it into your agent</h3>
-        <p class="hp2-step-body">One paste into your system prompt — Claude, ChatGPT, Cursor, Gemini, or any API. No SDK, no subscription, no lock-in. Works the next time you press send.</p>
+        <p class="hp2-step-body">Choose your model and where to paste. Get one focused prompt with your communication preferences, ready for a chat, saved instructions, or your coding agent.</p>
         <div class="hp2-step-demo">
           <div class="hp2-demo-surfaces">
-            <div class="hp2-demo-surf-header">Works anywhere</div>
+            <div class="hp2-demo-surf-header">Made for your model</div>
             <div class="hp2-demo-surf-grid">
-              <div class="hp2-demo-surf-cell">Claude · System</div>
-              <div class="hp2-demo-surf-cell">ChatGPT · Custom</div>
-              <div class="hp2-demo-surf-cell">Cursor · .rules</div>
-              <div class="hp2-demo-surf-cell">Gemini · Gems</div>
-              <div class="hp2-demo-surf-cell">Copilot · Inst.</div>
-              <div class="hp2-demo-surf-cell">Any API call</div>
+              <div class="hp2-demo-surf-cell">Muse</div>
+              <div class="hp2-demo-surf-cell">Astra 6</div>
+              <div class="hp2-demo-surf-cell">Fable 5.1</div>
+              <div class="hp2-demo-surf-cell">Sol 6</div>
+              <div class="hp2-demo-surf-cell">Opus 5.5</div>
+              <div class="hp2-demo-surf-cell">Grok 4.7</div>
             </div>
           </div>
         </div>
         <div class="hp2-step-foot">
           <span class="hp2-step-foot-swatch" aria-hidden="true"></span>
-          Every conversation, every model — already calibrated.
+          <a href="/tools/custom-instructions-generator">Build your model-specific prompt →</a>
         </div>
       </article>
     </div>
@@ -454,7 +454,7 @@ Which resonates? Happy to go deeper on any of them.</p>
             <span class="hp2-closer-code-dot" aria-hidden="true"></span>
             your-tuning.md
           </div>
-          <button class="hp2-closer-code-copy" type="button" id="hp2-copy-sample" aria-label="Copy sample INTJ tuning to clipboard">Copy ↵</button>
+          <a class="hp2-closer-code-copy" href="/tools/custom-instructions-generator" aria-label="Adapt this INTJ sample for your model">Choose model →</a>
         </div>
 <pre class="hp2-closer-code-body" id="hp2-sample-code"># INTJ — Architect
 
@@ -463,7 +463,7 @@ Skip the encouraging preamble.
 
 - No "great question" openers
 - One structured answer, not a menu of options
-- When uncertain, name it in one line and pick anyway
+- State uncertainty clearly when it changes the decision
 - Push back on flawed premises directly</pre>
       </div>
     </div>
@@ -474,27 +474,6 @@ Skip the encouraging preamble.
     <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
   </footer>
 
-  <script>
-    // Copy-to-clipboard for the sample tuning in the dark closer CTA.
-    (function () {
-      const btn = document.getElementById("hp2-copy-sample");
-      const pre = document.getElementById("hp2-sample-code");
-      if (!btn || !pre) return;
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(pre.textContent).then(function () {
-          const original = btn.textContent;
-          btn.textContent = "Copied ↵";
-          btn.style.background = "#fafaf7";
-          btn.style.color = "#1a1a17";
-          setTimeout(function () {
-            btn.textContent = original;
-            btn.style.background = "";
-            btn.style.color = "";
-          }, 1500);
-        }).catch(function () {});
-      });
-    })();
-  </script>
 
 </body>
 </html>

@@ -77,6 +77,7 @@
       <div class="guide-answer"><strong>The short answer.</strong> To make ChatGPT sound like you, either feed it samples of your writing (best for mimicking prose style) or paste a personality-matched tuning into custom instructions (best for how it treats you — pacing, directness, decision style). The personality route takes about 15 minutes: take a free test, copy the tuning for your type, paste it into Settings → Personalization.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="sol-6" data-guide-target="chatgpt-custom"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=sol-6&amp;target=chatgpt-custom">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>Two approaches. Two different "you."</h2>
@@ -86,7 +87,7 @@
 
       <section>
         <h2>The 15-minute personality-first walkthrough.</h2>
-        <ol><li><strong>Take the test — 10 minutes.</strong> The <a href="/tests/mbti">free in-browser MBTI test</a>, no signup. Already know your four letters? Skip ahead. Prefer a different lens? The <a href="/tests/">tests hub</a> also has Big Five, Enneagram, DISC, and attachment style, each with matching tunings.</li><li><strong>Grab your tuning — 2 minutes.</strong> Find your type in the <a href="/library/">library</a> — say <a href="/library/mbti/enfp">ENFP</a> — and copy the condensed custom-instructions block. All 16 MBTI blocks are collected in <a href="/guides/chatgpt-custom-instructions-by-personality-type">one page</a>.</li><li><strong>Paste it — 1 minute.</strong> ChatGPT → Settings → Personalization → Custom instructions → the <em>How would you like ChatGPT to respond?</em> field. Save, then start a new chat — instructions apply to new conversations, not old ones.</li></ol><p>Here's the ENFP block, condensed from the <a href="/library/mbti/enfp">full ENFP tuning</a>:</p><div class="guide-snippet">Show up bright — I calibrate off your energy as much as your content, and a flat response signals you don't get it. Show ideas as connected webs, not linear numbered steps. Treat tangents as the thinking, not a distraction — follow them. Offer frameworks as scaffolding: "here's one way to think about it," never "the right approach is." Validate the idea before evaluating it — "that's interesting because…" then the critique. Use possibility language: "what if," "I'm curious about." Be playful; sterile reads as disinterest. No premature "that's impractical" verdicts, no forced closure. When unsure, open up rather than narrow — I'll close down when I'm ready.</div><p>Read it again as a stranger. Nothing in there is about ENFP trivia — every line is an instruction about treatment: energy, structure, tangents, critique order. That's the entire trick.</p>
+        <ol><li><strong>Take the test — 10 minutes.</strong> The <a href="/tests/mbti">free in-browser MBTI test</a>, no signup. Already know your four letters? Skip ahead. Prefer a different lens? The <a href="/tests/">tests hub</a> also has Big Five, Enneagram, DISC, and attachment style, each with matching tunings.</li><li><strong>Grab your tuning — 2 minutes.</strong> Find your type in the <a href="/library/">library</a> — say <a href="/library/mbti/enfp">ENFP</a> — and copy the condensed custom-instructions block. All 16 MBTI blocks are collected in <a href="/guides/chatgpt-custom-instructions-by-personality-type">one page</a>.</li><li><strong>Paste it — 1 minute.</strong> ChatGPT → Settings → Personalization → Custom instructions → the <em>How would you like ChatGPT to respond?</em> field. Save, then start a new chat — instructions apply to new conversations, not old ones.</li></ol><p>Here's the ENFP block, condensed from the <a href="/library/mbti/enfp">full ENFP tuning</a>:</p><div class="guide-snippet" data-tuning-prompt>Show up bright — I calibrate off your energy as much as your content, and a flat response signals you don't get it. Show ideas as connected webs, not linear numbered steps. Treat tangents as the thinking, not a distraction — follow them. Offer frameworks as scaffolding: "here's one way to think about it," never "the right approach is." Validate the idea before evaluating it — "that's interesting because…" then the critique. Use possibility language: "what if," "I'm curious about." Be playful; sterile reads as disinterest. No premature "that's impractical" verdicts, no forced closure. When unsure, open up rather than narrow — I'll close down when I'm ready.</div><p>Read it again as a stranger. Nothing in there is about ENFP trivia — every line is an instruction about treatment: energy, structure, tangents, critique order. That's the entire trick.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -150,22 +151,8 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

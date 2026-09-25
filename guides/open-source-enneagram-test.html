@@ -78,6 +78,7 @@
 
       <div class="divider tight"></div>
 
+
       <section>
         <h2>Download the developer files.</h2>
         <p>The scorer has no dependencies and supports Node CommonJS and a browser script tag. Download the files to a directory you choose.</p><div class="guide-table-wrap"><table><thead><tr><th scope="col">File</th><th scope="col">Contents</th></tr></thead><tbody><tr><td><a href="/resources/enneagram/score.js" download>score.js</a></td><td>Input validation, all nine totals and explicit ties. MIT code.</td></tr><tr><td><a href="/resources/enneagram/questions.json" download>questions.json</a></td><td>36 item IDs, wording, type keys, scale and provenance.</td></tr><tr><td><a href="/resources/enneagram/README.md" download>README.md</a></td><td>Integration examples and the input/output contract.</td></tr><tr><td><a href="/resources/enneagram/LICENSE-code.txt" download>LICENSE-code.txt</a></td><td>License for the JavaScript implementation.</td></tr></tbody></table></div><p><a href="https://github.com/bernardjhuang/agenttune-website/tree/main/resources/enneagram">Browse the implementation on GitHub</a> · <a href="https://github.com/bernardjhuang/agenttune/blob/main/tests/enneagram.md">View the library’s questionnaire specification</a> · <a href="/tests/enneagram">Take the interactive test</a>.</p>
@@ -190,22 +191,8 @@ console.log(score(answers));
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

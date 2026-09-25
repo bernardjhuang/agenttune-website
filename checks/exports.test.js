@@ -8,7 +8,7 @@ const { spawnSync } = require('node:child_process');
 const compact = require('../compact-tunings');
 const { fixture, ROOT } = require('./browser-fixture.cjs');
 const catalog = require('../library/index.json');
-const f = fixture(); f.run('data.js'); f.run('integrations.js');
+const f = fixture(); f.run('data.js'); f.run('compact-tunings.js'); f.run('integrations.js');
 
 test('every catalog tuning has a compact export under 1500 characters, from both rich and fallback Markdown', () => {
   assert.equal(catalog.tunings.length, 43);
@@ -35,51 +35,63 @@ test('all 243 OCEAN pole combinations fit, including neutral and all five traits
     }
     const out = compact.fromMarkdown('# Your OCEAN profile\n' + files.join('\n'));
     assert.ok(out && out.length <= 1500 && !out.includes('undefined'), 'combination ' + n);
+    for (const model of ['any','astra-6','sol-6']) {
+      const wrapped = f.ctx.AT_PROMPTS.snippet('# Your OCEAN profile\n' + files.join('\n'),model,'chatgpt-custom');
+      assert.ok(wrapped.length > 150 && wrapped.length <= 1500, 'wrapped combination ' + n + ' / ' + model);
+    }
   }
 });
 
-test('generator copy stays disabled while loading, ignores stale fetches, and rejects HTTP failures', async () => {
+function pickerFixture(html = '') {
+  const g = fixture(html);
+  const root = g.ids.get('integration-deep') || g.document.createElement('div');
+  root.id = 'integration-deep'; root.nodeType = 1;
+  root.queries = { '[data-model]': g.document.createElement('select'), '[data-target]': g.document.createElement('select') };
+  g.run('data.js'); g.run('compact-tunings.js'); g.run('integrations.js');
+  return { ...g, root, field: sel => root.querySelector(sel) };
+}
+
+test('generator disables old output during loads, ignores stale responses, and rejects failed fetches', async () => {
   const html = fs.readFileSync(ROOT+'/tools/custom-instructions-generator.html','utf8');
-  const g = fixture(html); g.run('compact-tunings.js'); g.ids.get('target').value = 'chatgpt';
-  const pending = new Map();
+  const g = pickerFixture(html), pending = new Map();
   g.ctx.fetch = url => url === '/library/index.json' ? Promise.resolve({ok:true,json:async()=>catalog}) : new Promise(resolve=>pending.set(url,resolve));
-  const code = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(m=>m[1].includes('var SYSTEM_LABELS'))[1];
+  const code = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(m=>m[1].includes('const labels ='))[1];
   const flush = () => new Promise(resolve=>setImmediate(resolve));
   vm.runInContext(code,g.ctx); await flush();
-  assert.equal(g.ids.get('copy').disabled,false);
-  g.ids.get('target').value='agentsmd'; g.ids.get('target').fire('change');
-  assert.equal(g.ids.get('copy').disabled,true);
+  assert.equal(g.root.hidden,true);
   const first = [...pending.values()][0];
-  g.ids.get('target').value='chatgpt'; g.ids.get('target').fire('change');
-  const compactText = g.ids.get('out').textContent;
-  first({ok:true,text:async()=>'OUTDATED FULL TUNING'}); await flush();
-  assert.equal(g.ids.get('out').textContent,compactText);
-  g.ids.get('type').value='infp'; g.ids.get('target').value='agentsmd'; g.ids.get('target').fire('change');
-  const failed = [...pending.values()].at(-1); failed({ok:false,status:503}); await flush();
-  assert.equal(g.ids.get('copy').disabled,true);
-  assert.match(g.ids.get('out').textContent,/Couldn't load/);
+  g.ids.get('type').value='infp'; g.ids.get('type').fire('change');
+  const second = pending.get('/tunings/mbti/INFP.md');
+  second({ok:true,text:async()=>'# Current tuning'}); await flush();
+  assert.equal(g.root.hidden,false);
+  assert.equal(g.field('[data-copy]').disabled,false);
+  assert.match(g.field('.snippet').textContent,/# Current tuning/);
+  first({ok:true,text:async()=>'OUTDATED TUNING'}); await flush();
+  assert.doesNotMatch(g.field('.snippet').textContent,/OUTDATED/);
+  g.ids.get('type').value='entp'; g.ids.get('type').fire('change');
+  assert.equal(g.root.hidden,true);
+  assert.equal(g.field('[data-copy]').disabled,true);
+  pending.get('/tunings/mbti/ENTP.md')({ok:false}); await flush();
+  assert.equal(g.root.hidden,true);
+  assert.match(g.ids.get('load-status').textContent,/Couldn't load/);
 });
 
-test('shared integration displays and copies the compact text, while unrestricted cards retain the full body', async () => {
-  const local = fixture(); local.run('data.js'); local.run('compact-tunings.js'); local.run('integrations.js');
-  let clipboard = ''; local.ctx.navigator.clipboard.writeText = async text => { clipboard = text; };
-  local.ctx.CSS = { escape: s => s };
-  const body = fs.readFileSync(path.join(ROOT, 'tunings/attachment/anxious.md'),'utf8');
-  const compactPre = { dataset:{tmpl:'[CHATGPT_PLACEHOLDER]'}, querySelector: () => compactCode, parentElement:{querySelector:()=>copy}, addEventListener() {} };
-  const fullPre = { dataset:{tmpl:'Preamble\n[TUNING_PLACEHOLDER]'}, querySelector:()=>fullCode, addEventListener(){} };
-  const copy = local.document.createElement('button'), compactCode = {}, fullCode = {};
-  copy.setAttribute('data-copy-for','chatgpt');
-  const root = { nodeType:1, dataset:{}, querySelector:()=>compactPre,
-    querySelectorAll: selector => selector === '.snippet-copy' ? [copy] : [compactPre,fullPre] };
-  local.ctx.renderIntegrations(body, root);
-  assert.equal(compactCode.textContent, compact.get('attachment','anxious'));
-  assert.equal(copy.disabled,false);
-  copy.click(); await Promise.resolve();
-  assert.equal(clipboard, compact.get('attachment','anxious'));
-  assert.ok(fullCode.textContent.length > 1500);
-  assert.match(fullCode.textContent, /Preamble\n# /);
-  local.ctx.renderIntegrations('# Unknown',root);
-  assert.equal(copy.disabled,true);
+test('picker copies compact ChatGPT exports and retains full text in other destinations', async () => {
+  const g = pickerFixture(); let clipboard = '';
+  g.ctx.navigator.clipboard.writeText = async text => { clipboard = text; };
+  const body = fs.readFileSync(path.join(ROOT,'tunings/attachment/anxious.md'),'utf8');
+  g.ctx.renderIntegrations(body,{container:g.root,model:'sol-6',target:'chatgpt-custom'});
+  const expected = g.ctx.AT_PROMPTS.snippet(body,'sol-6','chatgpt-custom');
+  assert.equal(g.field('.snippet').textContent,expected);
+  assert.ok(expected.length <= 1500);
+  g.field('[data-copy]').click(); await Promise.resolve(); assert.equal(clipboard,expected);
+  g.root.__atPicker.selectTarget('anywhere');
+  assert.ok(g.field('.snippet').textContent.length > 1500);
+  assert.ok(g.field('.snippet').textContent.endsWith(g.ctx.AT_PROMPTS.stripFrontMatter(body)));
+  g.root.__atPicker.selectTarget('chatgpt-custom');
+  g.root.__atPicker.setTuning('Unknown custom text '.repeat(100));
+  assert.equal(g.field('[data-copy]').disabled,true);
+  assert.match(g.field('[data-status]').textContent,/No compact version/);
 });
 
 test('documented downloads are safe to repeat and HTTP failures preserve existing instructions and styles', () => {
@@ -104,24 +116,13 @@ test('documented downloads are safe to repeat and HTTP failures preserve existin
   } finally { fs.rmSync(dir,{recursive:true,force:true}); }
 });
 
-test('CLI install recipes refuse overwrites and preserve existing project instructions', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(),'agenttune-install-check-'));
-  try {
-    const original = '# Project rules\nKeep my unique instructions.\n';
-    for (const item of f.ctx.AT_INTEGRATIONS.filter(i => ['claude-code','codex-cli','openclaw','cursor','hermes'].includes(i.id))) {
-      const cwd = path.join(dir,item.id); fs.mkdirSync(cwd);
-      fs.writeFileSync(path.join(cwd,'CLAUDE.md'),original); fs.writeFileSync(path.join(cwd,'AGENTS.md'),original);
-      // Keep the Hermes fixture in the test directory, without changing HOME.
-      const snippet = item.steps.find(s => s.kind === 'snippet').body.replaceAll('~/.hermes','./.hermes').replace('[TUNING_PLACEHOLDER]','# Preferences\nBe concise.');
-      const run = () => spawnSync('sh',['-c',snippet],{cwd,encoding:'utf8'});
-      assert.equal(run().status,0,item.id);
-      const dest = item.id === 'cursor' ? '.cursor/rules/agenttune.mdc' : item.id === 'hermes' ? '.hermes/agenttune.md' : 'agenttune-preferences.md';
-      fs.writeFileSync(path.join(cwd,dest),'Do not replace this earlier tuning.');
-      assert.notEqual(run().status,0,item.id+' must refuse overwrite');
-      assert.equal(fs.readFileSync(path.join(cwd,dest),'utf8'),'Do not replace this earlier tuning.');
-      for (const file of ['CLAUDE.md','AGENTS.md']) assert.equal(fs.readFileSync(path.join(cwd,file),'utf8'),original);
-    }
-  } finally { fs.rmSync(dir,{recursive:true,force:true}); }
+test('picker file destinations emit reviewable text and never destructive install commands', () => {
+  for (const id of ['claude-code','codex-cli','openclaw','cursor','hermes','copilot','gemini-code-assist']) {
+    const item = f.ctx.AT_INTEGRATIONS.find(i => i.id === id);
+    const text = f.ctx.AT_PROMPTS.snippet('# Preferences\nBe concise.','any',id);
+    assert.doesNotMatch(text, /cat\s*>|curl|rm\s/);
+    assert.match(item.steps, /[Pp]reserv|[Mm]erge|alongside|Keep existing/);
+  }
 });
 
 test('inline scripts and structured data parse; every integration and quiz loads its shared dependencies', () => {
@@ -129,6 +130,10 @@ test('inline scripts and structured data parse; every integration and quiz loads
   const files = walk(ROOT).filter(p => p.endsWith('.html'));
   for (const file of files) {
     const html = fs.readFileSync(file,'utf8');
+    for (const [,src] of html.matchAll(/<script[^>]+src="(\/[^"]+)"/g)) {
+      assert.ok(require('../tools/build-public').isPublic(src.slice(1)), 'Required script omitted from public build: ' + src);
+      assert.ok(fs.existsSync(path.join(ROOT,src)), 'Missing script: ' + src);
+    }
     for (const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
       if (m[1].includes('application/ld+json')) JSON.parse(m[2]);
       else if (m[2].trim()) new vm.Script(m[2],{filename:file});

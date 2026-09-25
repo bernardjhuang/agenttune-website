@@ -77,6 +77,7 @@
       <div class="guide-answer"><strong>The short answer.</strong> Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>One sorts. One measures.</h2>
@@ -92,7 +93,7 @@
 
       <section>
         <h2>Types write instructions. Traits tune them.</h2>
-        <p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>"lead with the recommendation, then the reasoning"</em>; P becomes <em>"keep options open — don't force a decision early."</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class="guide-answer">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href="/library/mbti/intj">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href="/library/ocean/openness-high">high Openness</a> or <a href="/library/ocean/neuroticism-low">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href="/library/">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class="guide-snippet">## Personality layer (INTJ + Big Five calibration)
+        <p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>"lead with the recommendation, then the reasoning"</em>; P becomes <em>"keep options open — don't force a decision early."</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class="guide-answer">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href="/library/mbti/intj">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href="/library/ocean/openness-high">high Openness</a> or <a href="/library/ocean/neuroticism-low">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href="/library/">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class="guide-snippet" data-tuning-prompt>## Personality layer (INTJ + Big Five calibration)
 
 # Switches — from type
 - Lead with the recommendation, then the reasoning.
@@ -162,22 +163,8 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

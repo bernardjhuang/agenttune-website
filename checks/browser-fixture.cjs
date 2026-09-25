@@ -23,8 +23,9 @@ function fixture(html = '') {
     addEventListener(k, fn) { (this.events[k] ||= []).push(fn); }
     fire(k, e = {}) { if (this.disabled) return; for (const f of this.events[k] || []) f.call(this, { detail: 1, preventDefault() {}, ...e }); }
     click() { this.fire('click'); }
-    appendChild(e) { this.children.push(e); e.parentElement = this; return e; }
-    replaceChildren(...els) { this.children = els; }
+    appendChild(e) { this.children.push(e); e.parentElement = this; if (this.tagName === "SELECT" && this.children.length === 1) this.value = e.value; return e; }
+    append(...els) { els.forEach(e => this.appendChild(e)); }
+    replaceChildren(...els) { this.children = []; this.append(...els); }
     remove() { if (this.id) ids.delete(this.id); }
     querySelector(sel) { this.queries ||= {}; return this.queries[sel] ||= new Element('button'); }
   }
@@ -46,7 +47,7 @@ function fixture(html = '') {
   };
   const storage = new Map();
   const ctx = {
-    document, console, location: { hostname: 'agent-tune.com' },
+    document, console, URLSearchParams, location: { hostname: 'agent-tune.com', pathname: '/', search: '' },
     scrollTo() {}, addEventListener: document.addEventListener,
     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v), removeItem: k => storage.delete(k) },
     setTimeout: (fn, delay) => { timers.set(++serial, { fn, at: now + delay }); return serial; },

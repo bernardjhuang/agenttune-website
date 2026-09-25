@@ -77,6 +77,7 @@
       <div class="guide-answer"><strong>The short answer.</strong> Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>The twenty-second version.</h2>
@@ -96,7 +97,7 @@
 
       <section>
         <h2>Output styles, and the flag that matters.</h2>
-        <p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class="guide-snippet">---
+        <p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class="guide-snippet" data-tuning-prompt data-prompt-target="claude-code">---
 name: Straight answers
 description: Conclusion first, no hedging, one recommendation.
 keep-coding-instructions: true
@@ -132,7 +133,7 @@ How to talk to the person you are working with:
 
       <section>
         <h2>What a personality file should not touch.</h2>
-        <p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>"be decisive"</em> being read as <em>"skip the tests"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class="guide-snippet">These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href="/guides/coding-agent-personality">the layer your AGENTS.md is missing</a>.</p>
+        <p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>"be decisive"</em> being read as <em>"skip the tests"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class="guide-snippet" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href="/guides/coding-agent-personality">the layer your AGENTS.md is missing</a>.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -212,22 +213,8 @@ How to talk to the person you are working with:
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>
