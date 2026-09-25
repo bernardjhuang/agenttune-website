@@ -60,6 +60,8 @@ function loadData() {
 const OCEAN_DIM_NAMES = { O: "openness", C: "conscientiousness", E: "extraversion", A: "agreeableness", N: "neuroticism" };
 
 // System-level accent colors (per design handoff)
+// Darker shades of the system accents that pass 4.5:1 as small text on the tinted backgrounds.
+const TEXT_SAFE = {"#2f8a5b": "#246f48", "#3a72c4": "#3160a7", "#5b4dc0": "#5b4dc0", "#7a4ac8": "#7346be", "#a8482a": "#9f4427", "#d99632": "#855b1c", "#e07a8a": "#914d59"};
 const SYSTEM_ACCENTS = {
   mbti: "#5b4dc0",
   enneagram: "#2f8a5b",
@@ -413,14 +415,14 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     enneagram: "Enneagram",
     disc: "DISC",
     attachment: "Attachment",
-    ocean: "OCEAN"
+    ocean: "Big Five"
   };
   const SYSTEM_FULL_LABELS = {
     mbti: "MBTI Personality Type",
     enneagram: "Enneagram Type",
     disc: "DISC Profile",
     attachment: "Attachment Style",
-    ocean: "OCEAN / Big Five Dimension"
+    ocean: "Big Five Dimension"
   };
   const SYSTEM_COUNTS = {
     mbti: 16,
@@ -655,20 +657,21 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='${encodeURIComponent(accent)}'/%3E%3C/svg%3E" />
 
   <style>
     :root {
       --lib-accent: ${accent};
+      --lib-accent-text: ${TEXT_SAFE[accent.toLowerCase()] || accent};
       --lib-accent-22: ${hexToRgba(accent, 0.13)};
       --lib-accent-55: ${hexToRgba(accent, 0.34)};
       --lib-accent-66: ${hexToRgba(accent, 0.4)};
     }
 
     /* v2 reference styles */
-    .lib-v2-positioning { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--lib-accent); letter-spacing: -0.005em; margin: 32px 0 14px; }
+    .lib-v2-positioning { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--lib-accent-text); letter-spacing: -0.005em; margin: 32px 0 14px; }
     .lib-v2-trust { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--muted); padding: 16px 20px; border-left: 3px solid var(--lib-accent-55); background: var(--lib-accent-22); border-radius: 0 4px 4px 0; margin: 18px 0 0; }
     .lib-v2-trust strong { color: var(--ink); font-weight: 500; }
 
@@ -682,14 +685,14 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     }
     .lib-v2-anchor { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.12s ease, border-color 0.12s ease; }
     .lib-v2-anchor:hover { color: var(--ink); }
-    .lib-v2-anchor.is-active { color: var(--lib-accent); border-bottom-color: var(--lib-accent); }
+    .lib-v2-anchor.is-active { color: var(--lib-accent-text); border-bottom-color: var(--lib-accent-text); }
     .lib-v2-anchor.is-file { text-transform: none; letter-spacing: 0.02em; font-weight: 600; }
-    .lib-v2-anchor.is-file::before { content: "●"; color: var(--lib-accent); margin-right: 6px; font-size: 8px; vertical-align: middle; }
+    .lib-v2-anchor.is-file::before { content: "●"; color: var(--lib-accent-text); margin-right: 6px; font-size: 8px; vertical-align: middle; }
 
     .lib-v2-section { margin-top: 56px; scroll-margin-top: 80px; }
-    .lib-v2-section-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); margin-bottom: 8px; }
+    .lib-v2-section-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); margin-bottom: 8px; }
     .lib-v2-section-h { font-family: var(--font-serif); font-size: 32px; font-weight: 500; letter-spacing: -0.012em; line-height: 1.1; color: var(--ink); margin: 0 0 8px; }
-    .lib-v2-section-h em { color: var(--lib-accent); font-style: italic; }
+    .lib-v2-section-h em { color: var(--lib-accent-text); font-style: italic; }
     .lib-v2-section-lede { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--muted); line-height: 1.55; margin: 0 0 28px; max-width: 680px; }
 
     .lib-v2-demo { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -701,7 +704,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .lib-v2-demo-panel + .lib-v2-demo-panel { border-left: 1px solid var(--border); }
     .lib-v2-demo-panel-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
     .lib-v2-demo-panel.is-generic .lib-v2-demo-panel-label { color: var(--muted); }
-    .lib-v2-demo-panel.is-tuned   .lib-v2-demo-panel-label { color: var(--lib-accent); font-weight: 600; }
+    .lib-v2-demo-panel.is-tuned   .lib-v2-demo-panel-label { color: var(--lib-accent-text); font-weight: 600; }
     .lib-v2-demo-response { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--ink); white-space: pre-wrap; margin: 0; }
     .lib-v2-demo-panel.is-generic .lib-v2-demo-response { color: var(--muted); }
     .lib-v2-demo-why { padding: 16px 28px; border-top: 1px solid var(--border); font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); background: var(--surface); }
@@ -721,7 +724,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--lib-accent);
+      color: var(--lib-accent-text);
       font-family: var(--font-serif);
       font-weight: 500;
       font-size: 17px;
@@ -731,14 +734,14 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
 
     .lib-v2-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .lib-v2-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; }
-    .lib-v2-card-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); font-weight: 600; margin-bottom: 10px; }
+    .lib-v2-card-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); font-weight: 600; margin-bottom: 10px; }
     .lib-v2-card-h { font-family: var(--font-serif); font-size: 18px; font-weight: 500; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 10px; }
     .lib-v2-card-body { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--inkSoft, #4a4538); margin: 0; }
     .lib-v2-card-body em { font-style: italic; color: var(--ink); background: var(--lib-accent-22); padding: 0 4px; border-radius: 2px; }
 
     /* Agent jump-link buttons — sit between trust block and § I */
     .lib-v2-jump { margin-top: 28px; }
-    .lib-v2-jump-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); font-weight: 600; margin-bottom: 14px; }
+    .lib-v2-jump-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); font-weight: 600; margin-bottom: 14px; }
     .lib-v2-jump-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .lib-v2-jump-btn {
       background: #fff;
@@ -753,7 +756,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       font-family: inherit;
     }
     .lib-v2-jump-btn:hover {
-      border-color: var(--lib-accent);
+      border-color: var(--lib-accent-text);
       background: var(--lib-accent-22);
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(91,77,192,0.10);
@@ -761,7 +764,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .lib-v2-jump-name { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ink); }
     .lib-v2-jump-tag {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--lib-accent);
+      text-transform: uppercase; color: var(--lib-accent-text);
       background: var(--lib-accent-22);
       padding: 3px 8px; border-radius: 3px;
       font-weight: 600;
@@ -788,7 +791,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .c-editor-body { display: grid; grid-template-columns: 56px 1fr; max-height: 320px; overflow-y: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.75; }
     .c-editor-body::-webkit-scrollbar { width: 8px; }
     .c-editor-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
-    .c-gutter { padding: 22px 12px 22px 16px; text-align: right; color: rgba(255,255,255,0.28); background: #1e1b18; user-select: none; border-right: 1px solid #2d2925; }
+    .c-gutter { padding: 22px 12px 22px 16px; text-align: right; color: rgba(255,255,255,0.55); background: #1e1b18; user-select: none; border-right: 1px solid #2d2925; }
     .c-gutter span { display: block; }
     .c-code { padding: 22px 24px; white-space: pre-wrap; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
@@ -798,7 +801,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .c-statusbar-actions { display: flex; gap: 8px; }
     .c-status-btn { background: rgba(255,255,255,0.18); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
     .c-status-btn:hover { background: rgba(255,255,255,0.30); }
-    .c-status-btn.is-strong { background: #fff; color: var(--lib-accent); }
+    .c-status-btn.is-strong { background: #fff; color: var(--lib-accent-text); }
 
     @media (max-width: 720px) {
       .c-editor-body { grid-template-columns: 36px 1fr; }
@@ -834,7 +837,8 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     </nav>
   </div>
 
-  <div class="lib-wrap" id="main" tabindex="-1">
+  <div class="lib-wrap">
+  <main id="main" tabindex="-1">
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -887,7 +891,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
           <span class="c-tab-close">×</span>
         </div>
       </div>
-      <div class="c-editor-body">
+      <div class="c-editor-body" tabindex="0" aria-label="Tuning file">
         <div class="c-gutter" aria-hidden="true">
           ${gutter}
         </div>
@@ -1007,6 +1011,7 @@ ${summaryLis}
       </div>
     </section>
 
+  </main>
     <footer class="lib-footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span>43 standalone tunings · pasteable everywhere</span>
@@ -1089,7 +1094,7 @@ function buildHub(contacts) {
       key: "enneagram",
       label: "Enneagram",
       pillBg: "rgba(47,138,91,0.12)",
-      pillColor: "#2f8a5b",
+      pillColor: "#246f48",
       sub: "9 core motivations",
       desc: "What you're protecting. What you're seeking.",
       gridCols: 3,
@@ -1099,7 +1104,7 @@ function buildHub(contacts) {
       key: "disc",
       label: "DISC",
       pillBg: "rgba(217,150,50,0.12)",
-      pillColor: "#d99632",
+      pillColor: "#855b1c",
       sub: "4 workplace modes",
       desc: "How you behave in teams and under pressure.",
       gridCols: 4,
@@ -1109,7 +1114,7 @@ function buildHub(contacts) {
       key: "attachment",
       label: "Attachment",
       pillBg: "rgba(224,122,138,0.14)",
-      pillColor: "#e07a8a",
+      pillColor: "#914d59",
       sub: "4 relational patterns",
       desc: "How you want closeness, distance, reassurance.",
       gridCols: 4,
@@ -1119,7 +1124,7 @@ function buildHub(contacts) {
       key: "ocean",
       label: "OCEAN",
       pillBg: "rgba(58,114,196,0.12)",
-      pillColor: "#3a72c4",
+      pillColor: "#3160a7",
       sub: "10 trait dimensions",
       desc: "Continuous Big Five scores, loaded compositionally.",
       gridCols: 5,
@@ -1137,10 +1142,10 @@ function buildHub(contacts) {
       const tintBg = hexToRgba(accent, 0.10);
       let meta = "";
       if (c.system === "mbti") {
-        meta = `<div class="type-card-meta"><span style="color: ${accent}; font-weight: 600;">${c.group}</span></div>`;
+        meta = `<div class="type-card-meta"><span style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent}; font-weight: 600;">${c.group}</span></div>`;
       } else if (c.system === "ocean") {
         const isHigh = c.code.endsWith("high");
-        meta = `<div class="type-card-meta"><span style="color: ${accent}; font-weight: 600;">${isHigh ? "high" : "low"}</span></div>`;
+        meta = `<div class="type-card-meta"><span style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent}; font-weight: 600;">${isHigh ? "high" : "low"}</span></div>`;
       } else if (c.system === "attachment") {
         const map = {
           Secure: { anxiety: "low", avoidance: "low" },
@@ -1149,11 +1154,11 @@ function buildHub(contacts) {
           Disorganized: { anxiety: "high", avoidance: "high" }
         };
         const m = map[c.code];
-        if (m) meta = `<div class="type-card-meta">anxiety <span style="color: ${accent}; font-weight: 600;">${m.anxiety}</span>&nbsp;&nbsp;avoidance <span style="color: ${accent}; font-weight: 600;">${m.avoidance}</span></div>`;
+        if (m) meta = `<div class="type-card-meta">anxiety <span style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent}; font-weight: 600;">${m.anxiety}</span>&nbsp;&nbsp;avoidance <span style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent}; font-weight: 600;">${m.avoidance}</span></div>`;
       }
       return `
         <a class="type-card card-accent" href="${url}" style="border-top-color: ${accent};" aria-label="${escAttr(c.displayTitle)} — view tuning">
-          <span class="type-card-pill" style="background: ${tintBg}; color: ${accent};">${escHtml(c.code)}</span>
+          <span class="type-card-pill" style="background: ${tintBg}; color: ${TEXT_SAFE[accent.toLowerCase()] || accent};">${escHtml(c.code)}</span>
           <div class="type-card-name">${escHtml(c.name)}</div>
           ${meta}
           <div class="type-card-blurb">${escHtml(c.blurb)}</div>
@@ -1200,7 +1205,7 @@ function buildHub(contacts) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>43 Free Personality System Prompts for Claude & ChatGPT</title>
-  <meta name="description" content="The full AgentTune library. 43 Markdown tuning files matched to every personality type across MBTI, Enneagram, DISC, Attachment, and OCEAN. Paste any one into your AI agent's system prompt." />
+  <meta name="description" content="43 AgentTune tuning files: Markdown communication rules for every MBTI, Enneagram, DISC, attachment and Big Five type. Paste one into your AI&#39;s instructions." />
 
   <meta property="og:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
@@ -1238,7 +1243,7 @@ function buildHub(contacts) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
 </head>
@@ -1267,7 +1272,7 @@ function buildHub(contacts) {
       <span class="crumb-current" aria-current="page">Library</span>
     </nav>
 
-    <div id="main" tabindex="-1"></div>
+    <main id="main" tabindex="-1">
 
     <!-- HERO -->
     <section class="hero">
@@ -1313,10 +1318,11 @@ function buildHub(contacts) {
       </div>
     </section>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span>43 standalone tunings · pasteable everywhere</span>
-    </div>
+    </footer>
 
   </div>
 </body>

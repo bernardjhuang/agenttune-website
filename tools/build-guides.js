@@ -54,7 +54,7 @@ const longDate = (iso) =>
 
 const FONT_BLOCK = `  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />`;
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />`;
 
 function navHtml() {
   return `    <nav class="nav" aria-label="Primary">
@@ -205,10 +205,10 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
       <span class="crumb-current" aria-current="page">${escHtml(stripTags(spec.h1).replace(/\.$/, ""))}</span>
     </nav>
 
-    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">${escHtml(spec.pill)}</span>
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">${escHtml(spec.pill)}</span>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>${spec.dek ? `\n        <p class="article-dek">${spec.dek}</p>` : ""}
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
         <p class="lede" style="margin-top: 18px;">${spec.lede}</p>
@@ -223,12 +223,12 @@ ${changelogHtml}
 ${sourcesHtml}
 ${relatedHtml}
 
-    </article>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
       <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
-    </div>
+    </footer>
   </div>
 
   <script src="/compact-tunings.js"></script>

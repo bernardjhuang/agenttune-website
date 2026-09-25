@@ -40,7 +40,7 @@
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23e07a8a'/%3E%3C/svg%3E" />
   <style>:root { --lib-accent: #e07a8a; --lib-accent-22: rgba(224,122,138,0.13); --lib-accent-55: rgba(224,122,138,0.34); }</style>
@@ -70,7 +70,7 @@
       <span class="crumb-current" aria-current="page">Attachment</span>
     </nav>
 
-    <div id="main" tabindex="-1"></div>
+    <main id="main" tabindex="-1">
 
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">5-min test · 36 questions · 1–7 scale</span>
@@ -86,16 +86,16 @@
       </div>
 
       <div class="cta-row">
-        <button class="btn btn-primary" id="quiz-start" style="background: #e07a8a; border-color: #e07a8a;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #e07a8a; border-color: #e07a8a;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> through <kbd>7</kbd> keys for fast input. Items reference romantic relationships; if you don't have one, answer about your closest current relationship.</p>
 
       <!-- WHAT ATTACHMENT MEASURES -->
       <div class="quiz-intro-chart">
-        <h3 class="quiz-intro-chart-h">What Attachment measures</h3>
+        <h2 class="quiz-intro-chart-h">What Attachment measures</h2>
         <p class="quiz-intro-chart-sub">Anxiety × avoidance. Where you land defines the style. About 55% of adults score Secure.</p>
-        <svg viewBox="0 0 500 500" style="width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 500 500" style="width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);">
           <g stroke="#efe9df" stroke-width="0.5">
             <line x1="60" y1="100" x2="460" y2="100"/><line x1="60" y1="167" x2="460" y2="167"/>
             <line x1="60" y1="233" x2="460" y2="233"/><line x1="60" y1="300" x2="460" y2="300"/>
@@ -141,18 +141,18 @@
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
         <div class="quiz-likert quiz-likert-7" role="radiogroup">
-          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
-          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
-          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
-          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
-          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
-          <button class="quiz-likert-btn" data-value="6"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
-          <button class="quiz-likert-btn" data-value="7"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="6"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="7"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
           <div class="quiz-nav-hint">Press 1–7 or click · auto-advances</div>
-          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
         </div>
       </div>
     </section>
@@ -223,7 +223,7 @@
       </div>
 
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
-        <button class="btn btn-secondary" id="quiz-restart">Retake Attachment test</button>
+        <button type="button" class="btn btn-secondary" id="quiz-restart">Retake Attachment test</button>
       </div>
     </section>
 
@@ -321,10 +321,11 @@
       </div>
     </details>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
-    </div>
+    </footer>
 
   </div>
 

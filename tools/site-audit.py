@@ -210,6 +210,9 @@ def analyse(rel, html, all_ids_cache):
     else:
         p["fk_grade"] = None
     p["stale"] = {k: len(rx.findall(text)) for k, rx in STALE_TERMS.items() if rx.search(text)}
+    rep = Counter(x for x in sents if len(x.split()) >= 6)
+    p["repeated_in_page"] = sorted(((n, x) for x, n in rep.items() if n >= 2), reverse=True)[:8]
+    p["repeated_in_page_words"] = sum((n - 1) * len(x.split()) for x, n in rep.items() if n >= 2)
     p["faq_items"] = len(soup.select(".guide-faq details, .faq details, details.faq-item")) or sum(1 for d in soup.find_all("details") if d.find("summary") and d.find("summary").get_text(strip=True).endswith("?"))
     p["_sents"] = sents
     return p
@@ -355,6 +358,7 @@ def main():
         "biggest_pages_bytes": sorted(((p["bytes"], p["rel"]) for p in pages), reverse=True)[:12],
         "longest_pages_words": sorted(((p["words"], p["rel"]) for p in pages), reverse=True)[:15],
         "caveat_heavy": sorted(((p["caveat_sentences"], p["sentences"], p["rel"]) for p in pages), reverse=True)[:15],
+        "repeated_in_page_top": sorted(((p["repeated_in_page_words"], p["rel"], p["repeated_in_page"][:3]) for p in pages if p["repeated_in_page_words"]), reverse=True)[:15],
         "em_dash_pages": sorted(((p["em_dashes"], p["rel"]) for p in pages if p["em_dashes"]), reverse=True)[:20],
         "em_dash_total": sum(p["em_dashes"] for p in pages),
         "long_sentence_pages": sorted(((p["long_sentences"], p["rel"]) for p in pages if p["long_sentences"]), reverse=True)[:15],

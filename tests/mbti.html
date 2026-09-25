@@ -55,7 +55,7 @@
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%235b4dc0'/%3E%3C/svg%3E" />
   <style>
@@ -91,7 +91,7 @@
       <span class="crumb-current" aria-current="page">MBTI</span>
     </nav>
 
-    <div id="main" tabindex="-1"></div>
+    <main id="main" tabindex="-1">
 
     <!-- INTRO (shown before test starts) -->
     <section class="quiz-intro" id="quiz-intro">
@@ -110,16 +110,16 @@
       </div>
 
       <div class="cta-row">
-        <button class="btn btn-primary quiz-start-btn" id="quiz-start" style="background: #5b4dc0; border-color: #5b4dc0;">Start the test →</button>
+        <button type="button" class="btn btn-primary quiz-start-btn" id="quiz-start" style="background: #5b4dc0; border-color: #5b4dc0;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys on your keyboard for fast input.</p>
 
       <!-- WHAT MBTI MEASURES (signature chart) -->
       <div class="quiz-intro-chart">
-        <h3 class="quiz-intro-chart-h">What MBTI measures</h3>
+        <h2 class="quiz-intro-chart-h">What MBTI measures</h2>
         <p class="quiz-intro-chart-sub">Four bipolar dimensions. One letter from each. Sixteen possible four-letter types.</p>
-        <svg viewBox="0 0 700 320" style="width: 100%; max-width: 700px; height: auto; font-family: var(--font-sans); display: block; margin: 0 auto;">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 700 320" style="width: 100%; max-width: 700px; height: auto; font-family: var(--font-sans); display: block; margin: 0 auto;">
           <g transform="translate(0, 36)">
             <text x="30" y="-4" font-size="13" font-weight="600" fill="#5b4dc0">E · Extraversion</text>
             <text x="670" y="-4" font-size="13" font-weight="600" fill="#5b4dc0" text-anchor="end">Introversion · I</text>
@@ -192,32 +192,32 @@
         </div>
 
         <div class="quiz-likert" role="radiogroup" aria-label="Rate how much you identify with each statement">
-          <button class="quiz-likert-btn" data-value="1" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="1" role="radio" aria-checked="false">
             <span class="quiz-likert-num">1</span>
             <span class="quiz-likert-label">Strongly first</span>
           </button>
-          <button class="quiz-likert-btn" data-value="2" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="2" role="radio" aria-checked="false">
             <span class="quiz-likert-num">2</span>
             <span class="quiz-likert-label">Lean first</span>
           </button>
-          <button class="quiz-likert-btn" data-value="3" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="3" role="radio" aria-checked="false">
             <span class="quiz-likert-num">3</span>
             <span class="quiz-likert-label">Neutral</span>
           </button>
-          <button class="quiz-likert-btn" data-value="4" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="4" role="radio" aria-checked="false">
             <span class="quiz-likert-num">4</span>
             <span class="quiz-likert-label">Lean second</span>
           </button>
-          <button class="quiz-likert-btn" data-value="5" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="5" role="radio" aria-checked="false">
             <span class="quiz-likert-num">5</span>
             <span class="quiz-likert-label">Strongly second</span>
           </button>
         </div>
 
         <div class="quiz-nav">
-          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
           <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
-          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
         </div>
       </div>
     </section>
@@ -311,7 +311,7 @@
       </div>
 
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
-        <button class="btn btn-secondary" id="quiz-restart">Retake MBTI test</button>
+        <button type="button" class="btn btn-secondary" id="quiz-restart">Retake MBTI test</button>
       </div>
     </section>
 
@@ -381,10 +381,11 @@
       </div>
     </details>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
-    </div>
+    </footer>
 
   </div>
 

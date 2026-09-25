@@ -23,7 +23,7 @@
     },
     {
       "h2": "Pasting a tuning, step by step.",
-      "html": "<p><strong>A new Bot, on desktop.</strong> Choose <strong>New</strong> in the sidebar, or press Cmd or Ctrl plus N. In <strong>New chat</strong>, select <strong>Create new Bot</strong>. Grok Bot opens a Bot named New Bot. Open the Bot menu, choose <strong>Edit Profile</strong>, and fill in the name, the label and the Description.</p><p><strong>A Bot you already have.</strong> Open it, choose <strong>View conversation details</strong>, then <strong>Bot settings</strong>, and edit the Description. You can also ask the Bot in chat to update its own profile. If you do, read the Description afterwards.</p><p><strong>On mobile.</strong> Tap <strong>+</strong>, then <strong>New Bot</strong>. xAI's mobile docs say profiles can be edited, but they do not give the tap path.</p><p><strong>Will it fit?</strong> xAI's docs state no character limit for the Description. AgentTune tunings run from about 1,200 to 2,900 characters. If a paste is refused, cut the <em>What loses them</em> list at the bottom first. The rules above it do most of the work.</p><p>Which tuning? Match it to you, not to the Bot. If you don't know your type, the <a href=\"/tests/mbti\">free MBTI test</a> takes about five minutes and links to the matching file.</p>"
+      "html": "<p><strong>A new Bot, on desktop.</strong> Choose <strong>New</strong> in the sidebar, or press Cmd or Ctrl plus N. In <strong>New chat</strong>, select <strong>Create new Bot</strong>. Grok Bot opens a Bot named New Bot. Open the Bot menu, choose <strong>Edit Profile</strong>, and fill in the name, the label and the Description.</p><p><strong>A Bot you already have.</strong> Open it, choose <strong>View conversation details</strong>, then <strong>Bot settings</strong>, and edit the Description. You can also ask the Bot in chat to update its own profile. If you do, read the Description afterwards.</p><p><strong>On mobile.</strong> Tap <strong>+</strong>, then <strong>New Bot</strong>. xAI's mobile docs say profiles can be edited, but they do not give the tap path.</p><p><strong>Will it fit?</strong> xAI's docs state no character limit for the Description. AgentTune tunings run from about 2,100 to 3,800 characters. If a paste is refused, cut the <em>What loses them</em> list at the bottom first. The rules above it do most of the work.</p><p>Which tuning? Match it to you, not to the Bot. If you don't know your type, the <a href=\"/tests/mbti\">free MBTI test</a> takes about five minutes and links to the matching file.</p>"
     },
     {
       "h2": "Keeping it through long conversations.",
@@ -65,7 +65,7 @@
     },
     {
       "q": "Is there a character limit on a Bot's Description?",
-      "a": "xAI's documentation does not state one. AgentTune tuning files run from about 1,200 to 2,900 characters, alongside a short job description and boundaries."
+      "a": "xAI's documentation does not state one. AgentTune tuning files run from about 2,100 to 3,800 characters, alongside a short job description and boundaries."
     },
     {
       "q": "What does a Bot remember?",

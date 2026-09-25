@@ -37,20 +37,21 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23d99632'/%3E%3C/svg%3E" />
 
   <style>
     :root {
       --lib-accent: #d99632;
+      --lib-accent-text: #855b1c;
       --lib-accent-22: rgba(217,150,50,0.13);
       --lib-accent-55: rgba(217,150,50,0.34);
       --lib-accent-66: rgba(217,150,50,0.4);
     }
 
     /* v2 reference styles */
-    .lib-v2-positioning { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--lib-accent); letter-spacing: -0.005em; margin: 32px 0 14px; }
+    .lib-v2-positioning { font-family: var(--font-serif); font-style: italic; font-size: 19px; line-height: 1.45; color: var(--lib-accent-text); letter-spacing: -0.005em; margin: 32px 0 14px; }
     .lib-v2-trust { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--muted); padding: 16px 20px; border-left: 3px solid var(--lib-accent-55); background: var(--lib-accent-22); border-radius: 0 4px 4px 0; margin: 18px 0 0; }
     .lib-v2-trust strong { color: var(--ink); font-weight: 500; }
 
@@ -64,14 +65,14 @@
     }
     .lib-v2-anchor { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.12s ease, border-color 0.12s ease; }
     .lib-v2-anchor:hover { color: var(--ink); }
-    .lib-v2-anchor.is-active { color: var(--lib-accent); border-bottom-color: var(--lib-accent); }
+    .lib-v2-anchor.is-active { color: var(--lib-accent-text); border-bottom-color: var(--lib-accent-text); }
     .lib-v2-anchor.is-file { text-transform: none; letter-spacing: 0.02em; font-weight: 600; }
-    .lib-v2-anchor.is-file::before { content: "●"; color: var(--lib-accent); margin-right: 6px; font-size: 8px; vertical-align: middle; }
+    .lib-v2-anchor.is-file::before { content: "●"; color: var(--lib-accent-text); margin-right: 6px; font-size: 8px; vertical-align: middle; }
 
     .lib-v2-section { margin-top: 56px; scroll-margin-top: 80px; }
-    .lib-v2-section-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); margin-bottom: 8px; }
+    .lib-v2-section-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); margin-bottom: 8px; }
     .lib-v2-section-h { font-family: var(--font-serif); font-size: 32px; font-weight: 500; letter-spacing: -0.012em; line-height: 1.1; color: var(--ink); margin: 0 0 8px; }
-    .lib-v2-section-h em { color: var(--lib-accent); font-style: italic; }
+    .lib-v2-section-h em { color: var(--lib-accent-text); font-style: italic; }
     .lib-v2-section-lede { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--muted); line-height: 1.55; margin: 0 0 28px; max-width: 680px; }
 
     .lib-v2-demo { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -83,7 +84,7 @@
     .lib-v2-demo-panel + .lib-v2-demo-panel { border-left: 1px solid var(--border); }
     .lib-v2-demo-panel-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
     .lib-v2-demo-panel.is-generic .lib-v2-demo-panel-label { color: var(--muted); }
-    .lib-v2-demo-panel.is-tuned   .lib-v2-demo-panel-label { color: var(--lib-accent); font-weight: 600; }
+    .lib-v2-demo-panel.is-tuned   .lib-v2-demo-panel-label { color: var(--lib-accent-text); font-weight: 600; }
     .lib-v2-demo-response { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--ink); white-space: pre-wrap; margin: 0; }
     .lib-v2-demo-panel.is-generic .lib-v2-demo-response { color: var(--muted); }
     .lib-v2-demo-why { padding: 16px 28px; border-top: 1px solid var(--border); font-family: var(--font-serif); font-style: italic; font-size: 14px; color: var(--muted); background: var(--surface); }
@@ -103,7 +104,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--lib-accent);
+      color: var(--lib-accent-text);
       font-family: var(--font-serif);
       font-weight: 500;
       font-size: 17px;
@@ -113,14 +114,14 @@
 
     .lib-v2-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .lib-v2-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; }
-    .lib-v2-card-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); font-weight: 600; margin-bottom: 10px; }
+    .lib-v2-card-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); font-weight: 600; margin-bottom: 10px; }
     .lib-v2-card-h { font-family: var(--font-serif); font-size: 18px; font-weight: 500; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 10px; }
     .lib-v2-card-body { font-family: var(--font-serif); font-size: 15px; line-height: 1.6; color: var(--inkSoft, #4a4538); margin: 0; }
     .lib-v2-card-body em { font-style: italic; color: var(--ink); background: var(--lib-accent-22); padding: 0 4px; border-radius: 2px; }
 
     /* Agent jump-link buttons — sit between trust block and § I */
     .lib-v2-jump { margin-top: 28px; }
-    .lib-v2-jump-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent); font-weight: 600; margin-bottom: 14px; }
+    .lib-v2-jump-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lib-accent-text); font-weight: 600; margin-bottom: 14px; }
     .lib-v2-jump-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .lib-v2-jump-btn {
       background: #fff;
@@ -135,7 +136,7 @@
       font-family: inherit;
     }
     .lib-v2-jump-btn:hover {
-      border-color: var(--lib-accent);
+      border-color: var(--lib-accent-text);
       background: var(--lib-accent-22);
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(91,77,192,0.10);
@@ -143,7 +144,7 @@
     .lib-v2-jump-name { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ink); }
     .lib-v2-jump-tag {
       font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--lib-accent);
+      text-transform: uppercase; color: var(--lib-accent-text);
       background: var(--lib-accent-22);
       padding: 3px 8px; border-radius: 3px;
       font-weight: 600;
@@ -170,7 +171,7 @@
     .c-editor-body { display: grid; grid-template-columns: 56px 1fr; max-height: 320px; overflow-y: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.75; }
     .c-editor-body::-webkit-scrollbar { width: 8px; }
     .c-editor-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
-    .c-gutter { padding: 22px 12px 22px 16px; text-align: right; color: rgba(255,255,255,0.28); background: #1e1b18; user-select: none; border-right: 1px solid #2d2925; }
+    .c-gutter { padding: 22px 12px 22px 16px; text-align: right; color: rgba(255,255,255,0.55); background: #1e1b18; user-select: none; border-right: 1px solid #2d2925; }
     .c-gutter span { display: block; }
     .c-code { padding: 22px 24px; white-space: pre-wrap; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
@@ -180,7 +181,7 @@
     .c-statusbar-actions { display: flex; gap: 8px; }
     .c-status-btn { background: rgba(255,255,255,0.18); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
     .c-status-btn:hover { background: rgba(255,255,255,0.30); }
-    .c-status-btn.is-strong { background: #fff; color: var(--lib-accent); }
+    .c-status-btn.is-strong { background: #fff; color: var(--lib-accent-text); }
 
     @media (max-width: 720px) {
       .c-editor-body { grid-template-columns: 36px 1fr; }
@@ -216,7 +217,8 @@
     </nav>
   </div>
 
-  <div class="lib-wrap" id="main" tabindex="-1">
+  <div class="lib-wrap">
+  <main id="main" tabindex="-1">
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
@@ -269,7 +271,7 @@
           <span class="c-tab-close">×</span>
         </div>
       </div>
-      <div class="c-editor-body">
+      <div class="c-editor-body" tabindex="0" aria-label="Tuning file">
         <div class="c-gutter" aria-hidden="true">
           <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span>
         </div>
@@ -494,6 +496,7 @@ Pick the one that doesn&#39;t feel like work. The unblock for you is almost alwa
       </div>
     </section>
 
+  </main>
     <footer class="lib-footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span>43 standalone tunings · pasteable everywhere</span>

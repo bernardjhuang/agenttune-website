@@ -41,7 +41,7 @@
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%232f8a5b'/%3E%3C/svg%3E" />
   <style>:root { --lib-accent: #2f8a5b; --lib-accent-22: rgba(47,138,91,0.13); --lib-accent-55: rgba(47,138,91,0.34); }</style>
@@ -71,7 +71,7 @@
       <span class="crumb-current" aria-current="page">Enneagram</span>
     </nav>
 
-    <div id="main" tabindex="-1"></div>
+    <main id="main" tabindex="-1">
 
     <!-- INTRO -->
     <section class="quiz-intro" id="quiz-intro">
@@ -90,14 +90,14 @@
       </div>
 
       <div class="cta-row">
-        <button class="btn btn-primary" id="quiz-start" style="background: #2f8a5b; border-color: #2f8a5b;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #2f8a5b; border-color: #2f8a5b;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
 
       <!-- WHAT ENNEAGRAM MEASURES -->
       <div class="quiz-intro-chart">
-        <h3 class="quiz-intro-chart-h">What the Enneagram measures</h3>
+        <h2 class="quiz-intro-chart-h">What the Enneagram measures</h2>
         <p class="quiz-intro-chart-sub">Nine motivational archetypes arranged on a circle. Internal lines map the directions types move under stress and growth.</p>
         <!--
           Enneagram figure: 9 types evenly spaced on a circle (40° apart, T9 at 12 o'clock,
@@ -176,16 +176,16 @@
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
         <div class="quiz-likert" role="radiogroup">
-          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
-          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
-          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
-          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
-          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
           <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
-          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
         </div>
       </div>
     </section>
@@ -261,7 +261,7 @@
       </div>
 
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
-        <button class="btn btn-secondary" id="quiz-restart">Retake Enneagram test</button>
+        <button type="button" class="btn btn-secondary" id="quiz-restart">Retake Enneagram test</button>
       </div>
     </section>
 
@@ -365,10 +365,11 @@
       </div>
     </details>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
-    </div>
+    </footer>
 
   </div>
 
