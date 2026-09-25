@@ -97,6 +97,8 @@ ${rows}
 - **Returns:** dominant type 1–9 (+ optional wing)
 - **Output:** fetch \`https://agent-tune.com/library/enneagram/<N>-<name>.md\` (e.g. \`/library/enneagram/5-investigator.md\`) or the human page \`/library/enneagram/<N>-<name>\`
 
+AgentTune uses a 36-item adaptation; the upstream live OEPS has 54 items. See https://agent-tune.com/guides/open-source-enneagram-test for provenance, question JSON and a reusable scorer.
+
 ## The 36 items
 
 Four items per type, in type order (items 1–4 → Type 1, 5–8 → Type 2, … 33–36 → Type 9).
