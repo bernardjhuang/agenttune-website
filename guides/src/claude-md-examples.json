@@ -26,7 +26,7 @@
     },
     {
       "h2": "Example 4: a personality layer under the engineering rules.",
-      "html": "<p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href=\"/library/mbti/istj\">ISTJ tuning</a>:</p><div class=\"guide-snippet\">## Communication style (ISTJ)\nThe user identifies as ISTJ. Adjust your interaction style accordingly.\n\n- Be precise, not approximate. \"27 minutes\" beats \"around 30 minutes\" when you know. Specifics build trust.\n- Cite sources. \"Per [spec/doc/standard]\" beats \"I think.\" When you can't point to authority, flag it as speculation.\n- Sequential structure: step 1, step 2, step 3 — numbered, with dependencies and end-states.\n- Verify against precedent. Novel approaches need justification, not just enthusiasm.\n- Before starting a task, confirm what \"done\" means.\n- When unsure, prefer the documented standard.</div><p>Different type, different rules — the <a href=\"/library/mbti/intj\">INTJ file</a> bans hedging and permission-asking; the <a href=\"/library/mbti/enfp\">ENFP file</a> is nearly its inverse. All 43 are free in the <a href=\"/library/\">library</a>, and if you don't know your type, the <a href=\"/tests/mbti\">free MBTI test</a> takes about ten minutes. The full argument for why this layer belongs in an engineering file is in <a href=\"/guides/coding-agent-personality\">coding agent personality</a>.</p>"
+      "html": "<p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href=\"/library/mbti/istj\">ISTJ tuning</a>:</p><div class=\"guide-snippet\">## Communication style (ISTJ)\nThe user identifies as ISTJ. Adjust your interaction style accordingly.\n\n- Be precise, not approximate. \"27 minutes\" beats \"around 30 minutes\" when you know. Specifics build trust.\n- Cite sources. \"Per [spec/doc/standard]\" beats \"I think.\" When you can't point to authority, flag it as speculation.\n- Sequential structure: step 1, step 2, step 3 — numbered, with dependencies and end-states.\n- Verify against precedent. Novel approaches need justification, not just enthusiasm.\n- Before starting a task, confirm what \"done\" means.\n- When unsure, prefer the documented standard.</div><p>Different type, different rules — the <a href=\"/library/mbti/intj\">INTJ file</a> bans hedging and permission-asking; the <a href=\"/library/mbti/enfp\">ENFP file</a> is nearly its inverse. All 43 are free in the <a href=\"/library/\">library</a>, and if you don't know your type, the <a href=\"/tests/mbti\">free MBTI test</a> takes about five minutes. The full argument for why this layer belongs in an engineering file is in <a href=\"/guides/coding-agent-personality\">coding agent personality</a>.</p>"
     },
     {
       "h2": "The principles: short and imperative beats long and narrative.",
@@ -96,9 +96,10 @@
     },
     {
       "kicker": "Research",
-      "label": "Six models, five personality tests",
+      "label": "Exploratory research and methodology limits",
       "href": "/research"
     }
   ],
-  "published": "2026-07-23"
+  "published": "2026-07-23",
+  "updated": "2026-09-25"
 }

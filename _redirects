@@ -51,6 +51,3 @@
 /pro/*  /  301
 /dev/*  /  301
 /me/*  /  301
-
-# Catch-all: real 404 for unknown paths (must stay last)
-/*  /404.html  404

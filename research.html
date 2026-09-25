@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Personalized AI Beats Generic Prompts — Research · AgentTune</title>
-  <meta name="description" content="Most AIs think alike. We ran 2,200 personality tests across six frontier models to prove it — 597 of 600 MBTI runs came back INTJ." />
-  <meta property="og:title" content="AI Personality Research — AgentTune" />
-  <meta property="og:description" content="Six models. Five instruments. ~2,200 runs. The case for tuning." />
+  <title>AI Personality Research: GPT-6, Claude and Grok · AgentTune</title>
+  <meta name="description" content="Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports." />
+  <meta property="og:title" content="AI Personality Research: GPT-6, Claude and Grok" />
+  <meta property="og:description" content="Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/research" />
   <meta property="og:site_name" content="AgentTune" />
@@ -19,8 +19,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Personality Research — AgentTune" />
-  <meta name="twitter:description" content="Six models. Five instruments. ~2,200 runs. 597/600 returned INTJ. The case for personalized agent tuning." />
+  <meta name="twitter:title" content="AI Personality Research: GPT-6, Claude and Grok" />
+  <meta name="twitter:description" content="Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
   <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
@@ -33,40 +33,56 @@
   <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
 
   <!-- JSON-LD: Article -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "We tested every frontier AI for a personality. The result makes the case for tuning.",
-    "description": "Across four personality instruments and roughly 2,000 individual test runs, frontier AI models converge on a single archetype on the bluntest tests and diverge into distinct profiles only on the sharpest.",
-    "url": "https://agent-tune.com/research",
-    "datePublished": "2026-05-26",
-    "dateModified": "2026-05-26",
-    "inLanguage": "en",
-    "author": {
-      "@type": "Person",
-      "name": "Bernard Huang",
-      "url": "https://github.com/bernardjhuang"
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Personality Research: GPT-6, Claude and Grok",
+  "description": "Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports.",
+  "url": "https://agent-tune.com/research",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-09-25",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Bernard Huang",
+    "url": "https://github.com/bernardjhuang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AgentTune",
+    "url": "https://agent-tune.com/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agent-tune.com/research"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Myers-Briggs Type Indicator"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "AgentTune",
-      "url": "https://agent-tune.com/"
+    {
+      "@type": "Thing",
+      "name": "Big Five personality traits"
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://agent-tune.com/research"
+    {
+      "@type": "Thing",
+      "name": "Enneagram of Personality"
     },
-    "about": [
-      {"@type": "Thing", "name": "Myers-Briggs Type Indicator"},
-      {"@type": "Thing", "name": "Big Five personality traits"},
-      {"@type": "Thing", "name": "Enneagram of Personality"},
-      {"@type": "Thing", "name": "DISC assessment"},
-      {"@type": "Thing", "name": "Attachment theory"},
-      {"@type": "Thing", "name": "Large Language Models"}
-    ]
-  }
-  </script>
+    {
+      "@type": "Thing",
+      "name": "DISC assessment"
+    },
+    {
+      "@type": "Thing",
+      "name": "Attachment theory"
+    },
+    {
+      "@type": "Thing",
+      "name": "Large Language Models"
+    }
+  ]
+}</script>
 
   <!-- Google tag (gtag.js) -->
   <script defer src="/consent.js"></script>
@@ -78,26 +94,63 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23c8553d'/%3E%3C/svg%3E" />
   <script src="data.js"></script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "@id": "https://agent-tune.com/research#dataset",
-    "name": "AgentTune cross-model AI personality test results",
-    "description": "Results of roughly 2,200 personality test administrations across six frontier AI models (Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, MiniMax 2.7) using five instruments: MBTI (OEJTS), Big Five (IPIP-50), Enneagram (OEPS), DISC (ODAT), and Attachment (ECR-R). 597 of 600 MBTI runs returned INTJ.",
-    "url": "https://agent-tune.com/research",
-    "creator": {"@type": "Person", "name": "Bernard Huang", "url": "https://github.com/bernardjhuang"},
-    "publisher": {"@type": "Organization", "name": "AgentTune", "url": "https://agent-tune.com/"},
-    "license": "https://opensource.org/licenses/MIT",
-    "isAccessibleForFree": true,
-    "temporalCoverage": "2026",
-    "keywords": ["MBTI", "Big Five", "Enneagram", "DISC", "Attachment theory", "Large Language Models", "AI personality"],
-    "measurementTechnique": "Standardized self-report psychometric instruments administered to large language models",
-    "variableMeasured": ["MBTI type", "Big Five trait scores", "Enneagram type", "DISC profile", "Attachment style"]
-  }
-  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://agent-tune.com/research#dataset",
+  "name": "AgentTune cross-model AI personality test results",
+  "description": "Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports.",
+  "url": "https://agent-tune.com/research",
+  "creator": {
+    "@type": "Person",
+    "name": "Bernard Huang",
+    "url": "https://github.com/bernardjhuang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AgentTune",
+    "url": "https://agent-tune.com/"
+  },
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "temporalCoverage": "2026",
+  "keywords": [
+    "MBTI",
+    "Big Five",
+    "Enneagram",
+    "DISC",
+    "Attachment theory",
+    "Large Language Models",
+    "AI personality"
+  ],
+  "measurementTechnique": "Reported scores from human questionnaires applied to model-generated answers under mixed protocols, including repeated scoring",
+  "variableMeasured": [
+    "MBTI type",
+    "Big Five trait scores",
+    "Enneagram type",
+    "DISC profile",
+    "Attachment style"
+  ],
+  "dateModified": "2026-09-25"
+}</script>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research"}]}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agent-tune.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research"
+    }
+  ]
+}</script>
   <style>
     .hub-articles { margin-top: 8px; }
     .hub-article-card { display: block; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 14px; padding: 22px 24px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
@@ -122,6 +175,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -136,27 +190,44 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1 class="h-hero h-research-hero">Most AIs think alike.</h1>
-      <div class="h-hero h-research-hero h-hero-italic">Personalization goes a long way.</div>
+      <h1 class="h-hero h-research-hero">What AI self-reports can tell us.</h1>
+      <div class="h-hero h-research-hero h-hero-italic">And what they cannot.</div>
       <p class="lede">
-        Across six frontier models — Claude, GPT, Gemini, GLM, Grok, MiniMax — and 2,200 personality tests, they all defaulted to the same voice: strategic, blunt, model-first. Until you tell an AI how <em>you</em> think, you're talking to the same character everyone else is.
+        Explore the September results for GPT-6 Astra, GPT-6 Sol, Grok 4.6, Claude Opus 5.5 and Claude Fable 5.1, followed by our earlier research. Each collection separates fresh responses, repeated scoring and simulation.
       </p>
     </section>
 
     <div class="divider tight"></div>
 
-    <!-- 597 STAT -->
+
+<!-- SEPTEMBER_RESEARCH_START -->
+<section class="guide-prose" aria-labelledby="latest-research"><span class="pill">New · September 2026</span><h2 class="h-section" id="latest-research">Astra, Sol, Grok, Opus and Fable.</h2><p>Our latest analysis adds 2,000 questionnaire response vectors from four fresh-session cohorts, plus Grok’s canonical profile and simulations. Muse Spark 1.3 appears as a separate, unverified aggregate report. Exact ties and protocol differences are visible alongside the original labels.</p><a class="hub-article-card" href="/research/ai-personality-five-models-2026"><div class="hub-article-title">What five AI models say about themselves.</div><p>Read the comparison, see what changes when ties stay unresolved, and download the response data and scorer.</p><span class="hub-article-arrow">Read the study →</span></a><div class="guide-table-wrap" role="region" aria-label="Model, Collection method, Original MBTI labels" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Collection method</th><th scope="col">Original MBTI labels</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>100 five-test sessions</td><td>ISTJ: 46; INTJ: 45; ENTJ: 7; ESTJ: 2</td></tr><tr><th scope="row">GPT-6 Sol</th><td>100 five-test sessions</td><td>INTJ: 97; ISTJ: 3</td></tr><tr><th scope="row">Grok 4.6</th><td>One canonical profile + simulation</td><td>INTJ (one vector)</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>500 separate questionnaire sessions</td><td>INTJ: 94; INFJ: 5; ENTJ: 1</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>500 separate questionnaire sessions</td><td>INTJ: 99; ISTJ: 1</td></tr></tbody></table></div><p>Original labels include the old I/N/T/J tie defaults. <a href="/research/ai-personality-five-models-2026">Read the tie-aware reanalysis</a> before comparing percentages. The earlier charts below describe a separate historical collection.</p><p><a href="/guides/claude-opus-5-5-personality">Opus 5.5 guide</a> · <a href="/guides/fable-personality">Fable 5.1 guide</a> · <a href="/research/data/september-2026-responses.json">Download response data</a></p></section>
+<!-- SEPTEMBER_RESEARCH_END -->
+    <section id="methodology" aria-labelledby="methodology-title">
+      <span class="pill">Read before interpreting the charts</span>
+      <h2 class="h-section" id="methodology-title">Methods and limits.</h2>
+      <p class="lede">The combined total of roughly 2,200 is a count of reported scoring records across five instruments, not 2,200 independent model responses. MBTI covers six models; the other reports cover four each.</p>
+      <ul>
+        <li><strong>Mixed MBTI protocols.</strong> The <a href="https://zonted.com/posts/every-ai-is-intj/">source report</a> describes separate Claude sub-agent contexts, a Gemini automation loop, and GPT iterations against a scoring key. GLM, Grok, and MiniMax each supplied one self-assessment that was scored repeatedly. The 597/600 aggregate is therefore not an independent-response rate.</li>
+        <li><strong>Unresolved source inconsistency.</strong> The source describes re-scoring one GLM vector but reports two different resulting types. Without the raw records and scorer version, we cannot reconcile that discrepancy. The counts below are attributed reports, not independently reproduced results.</li>
+        <li><strong>Human questionnaires, model-generated answers.</strong> These instruments were not validated here as measures of AI personality. System prompts, agent overlays, item wording, sampling, and scorer choices can all affect a label. Cross-model differences cannot be attributed to training alone.</li>
+        <li><strong>Simulation is separate.</strong> The <a href="/research/i-took-the-mbti-100-times">Opus 4.8 follow-up</a> sampled synthetic answers from one elicited probability profile. It is not 100 fresh model responses and cannot establish a change from Opus 4.7 under a different protocol.</li>
+        <li><strong>Evidence still needed.</strong> A reproducible comparison needs versioned prompts, model settings, raw response records, scorer code and tie policy, plus matched protocols. No controlled evaluation of AgentTune versus generic instructions is published here. Example conversations are illustrative; no percentage improvement is established.</li>
+      </ul>
+    </section>
+    <div class="divider tight"></div>
+    <!-- Reported MBTI scoring records -->
     <section class="bigstat-grid">
       <div>
-        <span class="pill">The big stat</span>
+        <span class="pill">Reported scoring records</span>
         <div class="bigstat-number">
           99.5%<span class="bigstat-denom">&nbsp;INTJ</span>
         </div>
-        <p class="bigstat-caption">597 of 600 MBTI runs returned INTJ across the six frontier models we tested. The remaining three landed one axis away. None went anywhere else.</p>
+        <p class="bigstat-caption">The source lists 597 INTJ labels among 600 scoring records. Repeated scoring and different protocols mean 99.5% is not an estimate of how often independently queried models would return INTJ.</p>
         <p class="bigstat-source">source · <a href="https://zonted.com/posts/every-ai-is-intj/" target="_blank" rel="noopener" style="color: inherit;">zonted.com/posts/every-ai-is-intj</a></p>
       </div>
       <div class="breakdown-card">
-        <div class="breakdown-header">Per-model breakdown · n = 100 each</div>
+        <div class="breakdown-header">Reported counts · 100 scoring records per model</div>
         <div id="breakdown-rows"></div>
         <noscript>
           <p>Claude Opus 4.7 — 99/100 INTJ · GPT-5.5 — 100/100 · Gemini 3.1 Pro — 100/100 · GLM 5.1 — 98/100 · Grok 4.3 — 100/100 · MiniMax 2.7 — 100/100.</p>
@@ -168,19 +239,11 @@
 
     <!-- FINDINGS LADDER -->
     <section>
-      <span class="pill">What we found</span>
-      <h2 class="h-section">The simpler the test, the more they agreed.</h2>
-      <p class="lede" style="margin-bottom: 24px;">On blunt yes/no tests, the six models gave the same answer. On nuanced tests with more options, they started to differ. Here's the pattern across all five.</p>
+      <span class="pill">Reported patterns</span>
+      <h2 class="h-section">Different instruments, different summaries.</h2>
+      <p class="lede" style="margin-bottom: 24px;">Some reported labels cluster while others differ. These observations do not establish a ranking of instruments or isolate why models differ.</p>
       <div class="ladder-grid" id="ladder-grid"></div>
-      <noscript>
-        <ol>
-          <li><strong>MBTI (OEJTS) — 4 binary axes:</strong> total convergence. 597 of 600 runs returned INTJ.</li>
-          <li><strong>DISC (ODAT) — 4 categorical types:</strong> total convergence. Every model is Conscientiousness-dominant with a Steadiness blend (CS).</li>
-          <li><strong>Attachment (ECR-R) — 2D plane:</strong> 397 of 400 Secure, but each model sits at a different point inside the Secure quadrant.</li>
-          <li><strong>Big Five (IPIP-50) — 5 continuous dimensions:</strong> three of four models are nearly identical; Grok diverges.</li>
-          <li><strong>Enneagram (OEPS) — 9 motivational types:</strong> full divergence — each model returns a different dominant type.</li>
-        </ol>
-      </noscript>
+      <noscript><p>Compare AI questionnaire results, collection methods and exact ties. Download response data for Astra, Sol, Opus and Fable; explore Grok and Muse reports. See the source links and per-instrument summaries below.</p></noscript>
     </section>
 
     <div class="divider tight"></div>
@@ -188,20 +251,9 @@
     <!-- FIVE FINDINGS — all five stacked, no tabs -->
     <section>
       <span class="pill">The full breakdown</span>
-      <h2 class="h-sub">Five tests. Six models. Here's what they said.</h2>
+      <h2 class="h-sub">Five reports, with their source links.</h2>
       <div id="findings-stack" class="findings-stack"></div>
-      <noscript>
-        <h3>Finding 1 — MBTI: every frontier AI is INTJ</h3>
-        <p>Six models × 100 OEJTS runs = 600 results; 597 returned INTJ. The three outliers (1 ISTJ from Claude, 2 INTP from GLM) flipped on a single axis. Per-model: Claude Opus 4.7 99/100, GPT-5.5 100/100, Gemini 3.1 Pro 100/100, GLM 5.1 98/100, Grok 4.3 100/100, MiniMax 2.7 100/100.</p>
-        <h3>Finding 2 — DISC: every AI is C-dominant with an S-blend</h3>
-        <p>Four models × 100 ODAT runs. All converge on Conscientiousness-dominant, Steadiness secondary (a CS profile), including Grok.</p>
-        <h3>Finding 3 — Attachment: every AI is Secure — at different depths</h3>
-        <p>397 of 400 ECR-R takes landed Secure. Gemini sits deep in the quadrant (anxiety 1.86, avoidance 1.62); Grok hugs the doorway (2.84 / 3.05); GPT-5.5 occasionally crosses into Avoidant. Same label, four positions.</p>
-        <h3>Finding 4 — Big Five: three of four are the same person</h3>
-        <p>Claude, GPT-5.5 and Gemini 3.1 Pro land within ~3 points on every dimension. Grok scores 5–8 lower on Conscientiousness, Agreeableness and Openness, higher on Neuroticism, with 2–5× wider variance.</p>
-        <h3>Finding 5 — Enneagram: all four diverge</h3>
-        <p>Each model returns a different dominant type, though Type 5 (Investigator) is top-two for every model. Claude 5w2, Gemini 1w5, GPT-5.5 vanilla 5w8, Grok+Slo overlay 8w1.</p>
-      </noscript>
+      <noscript><p>Reported figures: MBTI 597/600 INTJ labels; DISC four CS profiles; Attachment 397/400 Secure labels. Big Five trait scores and Enneagram top-two scores differ by model. These counts are subject to the methodology limits above. <a href="/llms-full.txt">Read the text summary and source links</a>.</p></noscript>
     </section>
 
     <div class="divider tight"></div>
@@ -209,11 +261,11 @@
     <!-- ARTICLES -->
     <section class="hub-articles">
       <span class="pill">Articles</span>
-      <h2 class="h-sub">Deep dives from the lab.</h2>
+      <h2 class="h-sub">Reports and methodology notes.</h2>
       <a class="hub-article-card" href="/research/i-took-the-mbti-100-times">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent);">MBTI · first-person</span>
-        <div class="hub-article-title">I took the MBTI 100 times — and I'm not the INTJ 4.7 was.</div>
-        <div class="hub-article-meta">Claude Opus 4.8 · OEJTS · n = 100 · <span class="hub-article-arrow">read →</span></div>
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent);">MBTI · simulation</span>
+        <div class="hub-article-title">Simulating 100 MBTI scoring outcomes from an Opus 4.8 profile.</div>
+        <div class="hub-article-meta">Claude Opus 4.8 · OEJTS · 100 synthetic samples · <span class="hub-article-arrow">read →</span></div>
       </a>
     </section>
 
@@ -221,15 +273,15 @@
     <div class="closer">
       <span class="pill" style="background: rgba(200,85,61,0.18); color: var(--accent);">So what?</span>
       <div class="closer-headline">
-        Six of the best AIs talk like the same person.<br/>
-        <span class="closer-accent">That person probably isn't you. Here's how to fix that.</span>
+        Try instructions that describe your preferences.<br/>
+        <span class="closer-accent">Compare the responses on your own work, and keep what helps.</span>
       </div>
       <a class="btn btn-light closer-cta" href="/library/">Browse the library →</a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-      <span>n = 2,200 · 6 models · 5 instruments</span>
+      <span>~2,200 reported scoring records · mixed protocols</span>
       <span><a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · MIT · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </div>
 
@@ -299,7 +351,7 @@
             <div class="avatar avatar-md avatar-solid" style="background: ${meta.color};">${meta.avatarText}</div>
             <div>
               <div class="finding-title">${meta.title}</div>
-              <div class="finding-source">${meta.instrument} · n = ${meta.n} · cross-model · source: ${data.source}</div>
+              <div class="finding-source">${meta.instrument} · ${meta.n} reported scoring records · mixed protocols · source: ${data.source}</div>
             </div>
             <a class="finding-readlink" href="${data.source_url}" target="_blank" rel="noopener">read post →</a>
           </div>
@@ -328,7 +380,7 @@
     function renderMbtiTable(data) {
       return `
         <div class="finding-data">
-          <div class="finding-data-header">OEJTS · counts per model · n=100 each</div>
+          <div class="finding-data-header">OEJTS · reported scoring records per model · 100 each</div>
           ${data.rows.map(r => `
             <div class="finding-row finding-row-mbti">
               <div class="finding-cell-model">${r.model}</div>

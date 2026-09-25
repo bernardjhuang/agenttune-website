@@ -1,7 +1,7 @@
 {
   "slug": "how-to-give-your-ai-a-personality",
   "title": "How to Give Your AI a Personality · AgentTune",
-  "description": "Every frontier model tests as the same personality. How to tune ChatGPT, Claude, or a coding agent to match yours — free, four steps, five systems.",
+  "description": "Describe your communication preferences in ChatGPT, Claude, or a coding agent. Four setup steps, editable templates, and research limitations.",
   "pill": "Guide · Getting started",
   "h1": "How to give your AI a personality.",
   "dek": "Two different goals hide inside that sentence. Here's both — and the four-step method for the one that actually changes your day.",
@@ -9,8 +9,8 @@
   "answer": "Take a five-minute personality test, copy the matching tuning file from a free library like AgentTune, and paste it into your AI's instruction layer — ChatGPT custom instructions, Claude Projects, or CLAUDE.md for coding agents. Then edit it. Concrete behavioral rules change how the AI communicates; adjectives like \"be witty\" don't.",
   "sections": [
     {
-      "h2": "Out of the box, every AI has the same personality.",
-      "html": "<p>This isn't a metaphor. We ran <a href=\"/research\">~2,200 personality-test runs</a> across six frontier models — Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, MiniMax 2.7 — on five instruments. On the MBTI, 597 of 600 runs came back INTJ. Claude went 99 for 100. GPT-5.5, Gemini, Grok, and MiniMax went 100 for 100. The three outliers were each one axis away.</p><p>DISC was total convergence: every model C-dominant with an S-blend. Attachment: 397 of 400 runs Secure. Whatever you're paying for, whatever benchmark won the week — the thing answering your messages is a cautious, systematic, conscientious introvert. Same as everyone else's.</p><p>The nuance shows up at the edges. On the Big Five, Claude, GPT-5.5, and Gemini landed within about three points of each other on every dimension — Grok ran 5–8 points lower on conscientiousness, agreeableness, and openness, with 2–5× wider variance run to run. On attachment, Gemini sat deep in the Secure quadrant (anxiety 1.86, avoidance 1.62) while Grok hovered near the doorway and GPT-5.5 occasionally crossed into Avoidant. Differences exist. They're rounding errors next to the convergence.</p><p>That's the case for tuning. The default personality wasn't chosen for you. It's the statistical center of a training process — a compromise calibrated for no one in particular. If it happens to fit how you work, lucky you. For everyone else, it's a settings problem with a ten-minute fix.</p>"
+      "h2": "What the research can and cannot establish.",
+      "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     },
     {
       "h2": "\"Give my AI a personality\" means two different things.",
@@ -22,7 +22,7 @@
     },
     {
       "h2": "Four steps. About ten minutes.",
-      "html": "<ol><li><strong>Take a test.</strong> Five minutes, free, in-browser, no email wall: <a href=\"/tests/\">the tests hub</a> has all five instruments. Already know your type? Skip ahead.</li><li><strong>Grab your tuning.</strong> Every type page in the <a href=\"/library/\">library</a> has a Markdown tuning file — MIT-licensed, copy-paste, no account. It's a set of interaction rules written for agents, not a horoscope. The <a href=\"/library/mbti/intj\">INTJ file</a>, for instance, tells the agent to lead with disagreement and skip the softeners.</li><li><strong>Install it per agent.</strong> ChatGPT: Settings → Personalization → Custom Instructions, 1,500 characters on Free and Go and 5,000 on paid plans (<a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">full walkthrough by type</a>). Claude: Instructions for Claude in Settings, Project instructions, or paste at conversation start (<a href=\"/guides/claude-personality\">the Claude guide</a>; Claude's Styles are being retired). The new agents each keep it somewhere different: <a href=\"/guides/astra-personality\">GPT-6 Astra</a> reads your personal AGENTS.md, <a href=\"/guides/grokbot-personality\">Grok Bot</a> reads each Bot's Description, and <a href=\"/guides/muse-personality\">Meta Muse</a> keeps it in a file called Soul.md. Coding agents: an <a href=\"/guides/claude-code-personality\">output style</a> for Claude Code, .cursor/rules for Cursor, AGENTS.md for the rest (<a href=\"/guides/coding-agent-personality\">the coding-agent guide</a>, with <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a>). Or generate a ready file with the <a href=\"/tools/claude-md-generator\">CLAUDE.md generator</a>.</li><li><strong>Edit it.</strong> This is the step people skip and shouldn't. Your type is a starting hypothesis — the Markdown is yours. Delete the rules that don't sound like you. Sharpen the ones that do. An INTJ who happens to love small talk should strike that line; the file doesn't get to overrule you.</li></ol><p>One caution on step 3: keep one tuning per agent, not three stacked systems fighting each other. If you want to layer two — say MBTI for information format plus <a href=\"/guides/enneagram-ai-prompts\">Enneagram for emotional register</a> — paste both, then delete every line that conflicts. Contradictory instructions don't average out; the model just picks one unpredictably, and you're back to the default with extra steps.</p>"
+      "html": "<ol><li><strong>Take a test.</strong> Five minutes, free, in-browser, no email wall: <a href=\"/tests/\">the tests hub</a> has all five instruments. Already know your type? Skip ahead.</li><li><strong>Grab your tuning.</strong> Every type page in the <a href=\"/library/\">library</a> has a Markdown tuning file — MIT-licensed, copy-paste, no account. It's a set of interaction rules written for agents, not a horoscope. The <a href=\"/library/mbti/intj\">INTJ file</a>, for instance, tells the agent to lead with disagreement and skip the softeners.</li><li><strong>Install it per agent.</strong> ChatGPT: Settings → Personalization → Custom Instructions, use the compact export that fits the documented 1,500-character field limit (<a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">full walkthrough by type</a>). Claude: Instructions for Claude in Settings, Project instructions, or paste at conversation start (<a href=\"/guides/claude-personality\">the Claude guide</a>; Claude's Styles are being retired). The new agents each keep it somewhere different: <a href=\"/guides/astra-personality\">GPT-6 Astra</a> reads your personal AGENTS.md, <a href=\"/guides/grokbot-personality\">Grok Bot</a> reads each Bot's Description, and <a href=\"/guides/muse-personality\">Meta Muse</a> keeps it in a file called Soul.md. Coding agents: an <a href=\"/guides/claude-code-personality\">output style</a> for Claude Code, .cursor/rules for Cursor, AGENTS.md for the rest (<a href=\"/guides/coding-agent-personality\">the coding-agent guide</a>, with <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a>). Or generate a ready file with the <a href=\"/tools/claude-md-generator\">CLAUDE.md generator</a>.</li><li><strong>Edit it.</strong> This is the step people skip and shouldn't. Your type is a starting hypothesis — the Markdown is yours. Delete the rules that don't sound like you. Sharpen the ones that do. An INTJ who happens to love small talk should strike that line; the file doesn't get to overrule you.</li></ol><p>One caution on step 3: keep one tuning per agent, not three stacked systems fighting each other. If you want to layer two — say MBTI for information format plus <a href=\"/guides/enneagram-ai-prompts\">Enneagram for emotional register</a> — paste both, then delete every line that conflicts. Contradictory instructions don't average out; the model just picks one unpredictably, and you're back to the default with extra steps.</p>"
     },
     {
       "h2": "What actually changes.",
@@ -48,7 +48,7 @@
     },
     {
       "q": "Doesn't my AI already have a personality?",
-      "a": "It has the same one as everyone else's. Across ~2,200 test runs, six frontier models returned INTJ on 597 of 600 MBTI runs and an identical C-dominant DISC profile. That default is a training artifact, not a choice made for you. Tuning replaces the statistical average with your actual preferences."
+      "a": "The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."
     },
     {
       "q": "What if the tuning file gets things wrong about me?",
@@ -58,7 +58,7 @@
   "related": [
     {
       "kicker": "Research",
-      "label": "Six frontier models, five personality tests, one personality",
+      "label": "Exploratory research and methodology limits",
       "href": "/research"
     },
     {
@@ -87,5 +87,6 @@
       "href": "/guides/coding-agent-personality"
     }
   ],
-  "published": "2026-07-23"
+  "published": "2026-07-23",
+  "updated": "2026-09-24"
 }

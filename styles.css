@@ -2976,9 +2976,9 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
   .bigstat-number { font-size: 72px; }
   .bigstat-denom { font-size: 32px; }
   .nav-links { gap: 12px; font-size: 12px; }
-  .nav-links a:not(.active):not(.github) {
-    display: none;
-  }
+  .nav { flex-wrap: wrap; gap: 14px; }
+  .nav-links { flex-basis: 100%; flex-wrap: wrap; gap: 2px 14px; }
+  .nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
   .demo-card, .finding-card, .breakdown-card, .closer {
     padding: 18px;
   }
@@ -5698,3 +5698,15 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
 .hp2-guides-line { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 28px 0 0; }
 .hp2-guides-line a { color: var(--ink); text-underline-offset: 3px; }
 .guide-table-wrap table { min-width: 540px; }
+
+/* Questionnaire ties and research data remain readable on small screens. */
+.quiz-tie-links { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+.quiz-tie-links a { padding:10px 14px; border:1px solid var(--border); border-radius:8px; }
+.research-chart { width:100%; height:auto; display:block; }
+
+@media (max-width: 480px) {
+  .finding-header { flex-wrap: wrap; }
+  .finding-header > div:nth-child(3) { flex: 1 1 120px; min-width: 0; }
+  .finding-source { overflow-wrap: anywhere; }
+  .finding-readlink { white-space: nowrap; }
+}

@@ -36,7 +36,9 @@
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -56,6 +58,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -204,6 +207,8 @@
         <h3 class="quiz-result-section-h">All nine type scores</h3>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
+        <div id="quiz-tie-links" class="quiz-tie-links" hidden></div>
+        <div id="quiz-export-panel">
         <h3 class="quiz-result-section-h">Your tuning file</h3>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
@@ -240,6 +245,7 @@
         <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
         <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your tuning is already merged into each one. Hit Copy and you're done.</p>
         <div id="integration-deep" data-integration-deep></div>
+        </div>
       </div>
 
 
@@ -329,7 +335,7 @@
           </tbody>
         </table>
 
-        <h3>Scoring algorithm</h3>
+        <h3>Scoring algorithm</h3><p>Equal highest scores are reported together, without choosing a dominant type or automatically exporting a tuning. Choose a style explicitly from the linked library pages. Enneagram wings apply only to a unique dominant type.</p>
         <ol class="steps-list">
           <li>For each of the 9 types, initialize a running total = 0.</li>
           <li>For each of the 4 items in that type, add the user's 1–5 response directly (no reverse-scoring).</li>
@@ -433,10 +439,12 @@
       5: "5-investigator", 6: "6-loyalist", 7: "7-enthusiast", 8: "8-challenger", 9: "9-peacemaker"
     };
 
-    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "" };
+    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
+      if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true;
       $("quiz-runner").hidden = false;
       state.currentIndex = 0;
@@ -445,6 +453,7 @@
     });
 
     function renderQuestion() {
+      advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
       $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
@@ -459,32 +468,32 @@
     }
 
     function selectAnswer(value) {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      })) return;
       state.answers[state.currentIndex] = value;
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-checked", selected ? "true" : "false");
       });
-      setTimeout(() => {
-        if (state.currentIndex < ITEMS.length - 1) {
-          state.currentIndex++;
-          renderQuestion();
-        } else {
-          showResult();
-        }
-      }, 220);
     }
 
     document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
     });
-    $("quiz-back").addEventListener("click", () => {
+    $("quiz-back").addEventListener("click", () => { advance.cancel();
       if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
     });
-    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden) return;
+      if ($("quiz-runner").hidden || e.repeat) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault();
+        advance.cancel();
         if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
       }
     });
@@ -501,9 +510,32 @@
     }
 
     function showResult() {
+      if (!state.completionTracked) {
+        if (window.atTrack) window.atTrack("quiz_complete");
+        state.completionTracked = true;
+      }
+      const version = ++state.resultVersion;
       $("quiz-runner").hidden = true;
       $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
+
+      const maximum = Math.max(...Object.values(r.scores));
+      const tied = Object.keys(r.scores).filter(k => r.scores[k] === maximum);
+      $("quiz-export-panel").hidden = tied.length > 1;
+      $("quiz-tie-links").hidden = tied.length < 2;
+      $("quiz-copy-tuning").disabled = tied.length > 1;
+      $("quiz-download-tuning").disabled = tied.length > 1;
+      if (tied.length > 1) {
+        state.currentTuning = "";
+        $("quiz-result-code").textContent = tied.join(" / ");
+        $("quiz-result-name").textContent = "Equal top scores";
+        $("quiz-result-avatar").textContent = "=";
+        $("quiz-result-blurb").textContent = "These scores are tied. There is no measured dominant type. Compare the linked tunings and choose the communication style you prefer, or retake the test.";
+        $("quiz-result-scores").innerHTML = Object.entries(r.scores).map(([k,v]) => `<p>${TYPE_META[k].name}: ${v}/20${tied.includes(k) ? " · tied highest" : ""}</p>`).join("");
+        $("quiz-tie-links").innerHTML = tied.map(k => `<a href="/library/enneagram/${FILE_NAMES[k]}">${TYPE_META[k].name} tuning</a>`).join("");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       const meta = TYPE_META[r.dominant];
 
       $("quiz-result-code").textContent = r.profile;
@@ -539,7 +571,7 @@
       // Async — swap in the rich GitHub-mirrored file when it lands.
       if (window.fetchTuning) {
         window.fetchTuning(`enneagram/${FILE_NAMES[r.dominant]}.md`).then((rich) => {
-          if (!rich || rich === state.currentTuning) return;
+          if (version !== state.resultVersion || !rich || rich === state.currentTuning) return;
           state.currentTuning = rich;
           renderTuningPreview(rich, fileName);
           if (window.renderIntegrations) window.renderIntegrations(rich);
@@ -589,23 +621,25 @@
     }
 
     $("quiz-copy-tuning").addEventListener("click", function() {
+      if (!state.currentTuning) return;
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.dominant);
       navigator.clipboard.writeText(content).then(() => {
         const original = this.textContent;
-        this.textContent = "Copied ✓";
+        this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
         setTimeout(() => { this.textContent = original; }, 2000);
       });
     });
 
     $("quiz-download-tuning").addEventListener("click", function() {
+      if (!state.currentTuning) return;
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.dominant);
       const blob = new Blob([content], { type: "text/markdown" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url; a.download = `${FILE_NAMES[r.dominant]}.md`;
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      document.body.appendChild(a); a.click(); if (window.atTrack) window.atTrack("tuning_download"); document.body.removeChild(a);
       URL.revokeObjectURL(url);
       const original = this.textContent;
       this.textContent = "Downloaded ✓";
@@ -613,6 +647,10 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      state.resultVersion++;
+      state.completionTracked = false;
+      state.currentTuning = "";
+      advance.cancel();
       state.currentIndex = 0;
       state.answers = new Array(36).fill(null);
       $("quiz-result").hidden = true;

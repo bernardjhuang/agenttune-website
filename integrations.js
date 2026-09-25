@@ -14,7 +14,7 @@
   // -------- Reusable chat preamble (used by web chat surfaces) --------
   const CHAT_PREAMBLE = `# How to respond to me
 
-The Markdown below is my personality tuning, generated from a validated personality test on AgentTune. Read it as operating instructions for how I think and how I want you to respond. Apply it across every reply in this {{SCOPE}}.
+The Markdown below is my personality tuning, chosen from AgentTune’s preference templates. Read it as operating instructions for how I think and how I want you to respond. Apply it across every reply in this {{SCOPE}}.
 
 ---
 
@@ -31,17 +31,19 @@ The Markdown below is my personality tuning, generated from a validated personal
       badge: "CLI",
       lang: "bash",
       steps: [
-        { kind: "text", body: "From your project root, run:" },
+        { kind: "text", body: "From your project root, save this separate preferences file (the command refuses to overwrite an existing file):" },
         {
           kind: "snippet",
-          body: `cat > CLAUDE.md << 'AGENTTUNE_EOF'
+          body: `(set -C
+cat > agenttune-preferences.md << 'AGENTTUNE_EOF'
 [TUNING_PLACEHOLDER]
-AGENTTUNE_EOF`
+AGENTTUNE_EOF
+)`
         },
         {
           kind: "text",
           body:
-            "Start <code>claude</code> in that directory — it ingests <code>CLAUDE.md</code> on every session. For global rules, use <code>~/.claude/CLAUDE.md</code> instead."
+            "Review <code>agenttune-preferences.md</code>, then merge its content into a communication-preferences section in your existing <code>CLAUDE.md</code>. Preserve the project’s other instructions. Start a new Claude session after saving."
         }
       ]
     },
@@ -108,9 +110,9 @@ claude mcp add --transport http agenttune https://agent-tune.com/mcp`
         {
           kind: "text",
           body:
-            'Paste this block into the <em>"How would you like ChatGPT to respond?"</em> field:'
+            'Paste this block into the <em>"How would you like ChatGPT to respond?"</em> field (compact version, under 1,500 characters):'
         },
-        { kind: "snippet", body: chat("conversation we have") }
+        { kind: "snippet", body: "[CHATGPT_PLACEHOLDER]" }
       ]
     },
     {
@@ -136,17 +138,19 @@ claude mcp add --transport http agenttune https://agent-tune.com/mcp`
       badge: "CLI",
       lang: "bash",
       steps: [
-        { kind: "text", body: "From your project root, run:" },
+        { kind: "text", body: "From your project root, save this separate preferences file (the command refuses to overwrite an existing file):" },
         {
           kind: "snippet",
-          body: `cat > AGENTS.md << 'AGENTTUNE_EOF'
+          body: `(set -C
+cat > agenttune-preferences.md << 'AGENTTUNE_EOF'
 [TUNING_PLACEHOLDER]
-AGENTTUNE_EOF`
+AGENTTUNE_EOF
+)`
         },
         {
           kind: "text",
           body:
-            "Codex picks up <code>AGENTS.md</code> automatically. For rules that apply across every project, save to <code>~/.codex/AGENTS.md</code> instead."
+            "Review <code>agenttune-preferences.md</code>, then merge its content into your existing <code>AGENTS.md</code>, preserving project instructions. Codex reads that file on a new session."
         }
       ]
     },
@@ -157,17 +161,19 @@ AGENTTUNE_EOF`
       badge: "IDE",
       lang: "bash",
       steps: [
-        { kind: "text", body: "From your project root, run:" },
+        { kind: "text", body: "From your project root, save this separate preferences file (the command refuses to overwrite an existing file):" },
         {
           kind: "snippet",
-          body: `mkdir -p .cursor/rules && cat > .cursor/rules/agenttune.mdc << 'AGENTTUNE_EOF'
+          body: `mkdir -p .cursor/rules && (set -C
+cat > .cursor/rules/agenttune.mdc << 'AGENTTUNE_EOF'
 ---
 description: AgentTune personality tuning
 alwaysApply: true
 ---
 
 [TUNING_PLACEHOLDER]
-AGENTTUNE_EOF`
+AGENTTUNE_EOF
+)`
         },
         {
           kind: "text",
@@ -219,9 +225,11 @@ AGENTTUNE_EOF`
         { kind: "text", body: "Save the tuning to a file in your Hermes config dir:" },
         {
           kind: "snippet",
-          body: `mkdir -p ~/.hermes && cat > ~/.hermes/agenttune.md << 'AGENTTUNE_EOF'
+          body: `mkdir -p ~/.hermes && (set -C
+cat > ~/.hermes/agenttune.md << 'AGENTTUNE_EOF'
 [TUNING_PLACEHOLDER]
-AGENTTUNE_EOF`
+AGENTTUNE_EOF
+)`
         },
         {
           kind: "text",
@@ -237,17 +245,19 @@ AGENTTUNE_EOF`
       badge: "CLI",
       lang: "bash",
       steps: [
-        { kind: "text", body: "From your project root, run:" },
+        { kind: "text", body: "From your project root, save this separate preferences file (the command refuses to overwrite an existing file):" },
         {
           kind: "snippet",
-          body: `cat > AGENTS.md << 'AGENTTUNE_EOF'
+          body: `(set -C
+cat > agenttune-preferences.md << 'AGENTTUNE_EOF'
 [TUNING_PLACEHOLDER]
-AGENTTUNE_EOF`
+AGENTTUNE_EOF
+)`
         },
         {
           kind: "text",
           body:
-            "OpenClaw ingests <code>AGENTS.md</code> the same way Codex CLI does — automatically on each session."
+            "Review <code>agenttune-preferences.md</code>, then merge its content into your existing <code>AGENTS.md</code>. Preserve all other project instructions before starting a new session."
         }
       ]
     },
@@ -352,6 +362,7 @@ print(resp.content[0].text)`
   function fullSnippetText(container, pre) {
     const tmpl = pre.dataset.tmpl;
     const body = container.__atTuningBody;
+    if (tmpl && tmpl.includes("[CHATGPT_PLACEHOLDER]")) return container.__atCompact || "";
     if (tmpl && typeof body === "string") return tmpl.replace(/\[TUNING_PLACEHOLDER\]/g, body);
     return pre.textContent || "";
   }
@@ -365,10 +376,11 @@ print(resp.content[0].text)`
         const pre = container.querySelector(`[data-snippet="${CSS.escape(id)}"]`);
         if (!pre) return;
         const text = fullSnippetText(container, pre);
+        if (!text) return;
         try {
           await navigator.clipboard.writeText(text);
           const orig = btn.textContent;
-          btn.textContent = "Copied ✓";
+          btn.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("integration_copy");
           btn.classList.add("is-copied");
           setTimeout(() => {
             btn.textContent = orig;
@@ -410,12 +422,19 @@ print(resp.content[0].text)`
     const full = String(tuning || "").trim();
     const body = stripFrontMatter(full).trim();
     container.__atTuningBody = body;
+    container.__atCompact = window.ATCompact.fromMarkdown(full, window.AT_CONTACTS || []);
     const lineCount = body ? body.split("\n").length : 0;
     const marker = `[ your tuning goes here: ${lineCount} lines, merged in when you copy. Click to show. ]`;
     container.querySelectorAll(".snippet").forEach((pre) => {
       const code = pre.querySelector("code") || pre;
       if (!pre.dataset.tmpl) {
         pre.dataset.tmpl = code.textContent;
+      }
+      if (pre.dataset.tmpl.includes("[CHATGPT_PLACEHOLDER]")) {
+        code.textContent = container.__atCompact || "Choose a compact tuning at agent-tune.com/tools/custom-instructions-generator.";
+        const copy = pre.parentElement.querySelector(".snippet-copy");
+        if (copy) copy.disabled = !container.__atCompact || container.__atCompact.length > 1500;
+        return;
       }
       const expanded = pre.dataset.expanded === "1";
       code.textContent = pre.dataset.tmpl.replace(/\[TUNING_PLACEHOLDER\]/g, lazy && !expanded ? marker : body);

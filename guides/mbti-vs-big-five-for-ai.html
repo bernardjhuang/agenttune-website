@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MBTI vs Big Five: Which Works Better for AI? · AgentTune</title>
-  <meta name="description" content="MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data." />
+  <meta name="description" content="Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you." />
 
   <meta property="og:title" content="MBTI vs Big Five for AI: crisp switches or calibrated dials." />
-  <meta property="og:description" content="MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data." />
+  <meta property="og:description" content="Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-07-23" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -20,16 +20,17 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MBTI vs Big Five for AI: crisp switches or calibrated dials." />
-  <meta name="twitter:description" content="MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data." />
+  <meta name="twitter:description" content="Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"MBTI vs Big Five for AI: crisp switches or calibrated dials"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"597 of 600 runs returned INTJ, and the three outliers were each one axis away. Binary instruments compress: assistant training pushes every frontier model to the same side of each fork — introverted, abstract, analytical, structured. Instruments with continuous or motivational scoring, like Big Five and Enneagram, recover the differences the forks hide."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it works better than either alone. Let the type set the defaults — reporting order, decisiveness, tangent policy — and let trait scores adjust the dials, like verbosity and hedging. Keep it short: ten to twenty lines of concrete rules beats a personality essay."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"They anchor the two ends of the ladder. DISC converged completely in our runs — every model C-dominant with an S-blend — while the Enneagram fully diverged, each model showing a different dominant type. Motivational instruments discriminate hardest. If the Enneagram is your framework, we built tunings for all nine types."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}}]}</script>
+
 
   <script defer src="/consent.js"></script>
 
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -68,11 +70,11 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Frameworks</span>
         <h1 class="h-hero h-research-hero">MBTI vs Big Five for AI: crisp switches or calibrated dials.</h1>
         <p class="article-dek">One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-07-23">July 23, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">For personalizing an AI, start with MBTI — its binary axes convert directly into instructions a model can follow — then layer Big Five on top for calibration. For measuring humans, Big Five has the stronger scientific standing, and we won't pretend otherwise. We ran ~2,200 personality-test runs across six frontier models, and the results explain why both statements are true at once: binary instruments converge, continuous ones discriminate.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">MBTI organizes preferences into types; Big Five describes continuous traits. Either can help you draft communication instructions, but our exploratory reports do not establish which works better for AI personalization. Start with the preferences you can state clearly and test the resulting prompt on your own tasks.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> For AI personalization: start with MBTI, because its binary axes convert directly into prompt instructions, then layer Big Five for calibration and nuance. For measuring humans, Big Five has the stronger scientific standing — MBTI's dichotomies and retest variability are real criticisms. Use the sorter for instructions, the measure for accuracy.</div>
+      <div class="guide-answer"><strong>The short answer.</strong> Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.</div>
 
       <div class="divider tight"></div>
 
@@ -83,8 +85,8 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>The simpler the instrument, the more six models agreed.</h2>
-        <p>We ran ~2,200 personality-test runs across six frontier models — Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, MiniMax 2.7 — on five instruments. The results form a ladder:</p><ul><li><strong>MBTI (four binary axes):</strong> 597 of 600 runs came back INTJ — Claude 99 of 100, GLM 98, and GPT-5.5, Gemini, Grok, and MiniMax a perfect 100 each. The three outliers — one ISTJ, two INTP — were each a single axis away.</li><li><strong>DISC (four styles):</strong> total convergence. Every model C-dominant with an S-blend.</li><li><strong>Attachment (two dials):</strong> 397 of 400 runs Secure — but the dials start separating models. Gemini sits deep in the quadrant (anxiety 1.86 / avoidance 1.62); Grok is near the doorway (2.84 / 3.05).</li><li><strong>Big Five (five dials):</strong> real separation. Claude, GPT-5.5, and Gemini land within ~3 points of each other on every dimension; Grok scores 5–8 points lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism — with 2–5× wider variance.</li><li><strong>Enneagram (nine motivations):</strong> full divergence. Each model shows a different dominant type — Claude 5w2, Gemini 1w5, GPT-5.5 5w8, Grok 8w1 — with Type 5 in the top two for all.</li></ul><p>The pattern: the more binary the instrument, the more the models agree. Read as measurement, that's MBTI's weakness on display — binary axes compress away real differences that Big Five's dials catch. Read as prompting, the same compression is the feature: a fork produces an unambiguous behavioral setting. Full data lives at <a href="/research">the research hub</a>; for the strangest cut of it, <a href="/research/i-took-the-mbti-100-times">Claude took the MBTI 100 times and narrated the experience</a>.</p>
+        <h2>What the research can and cannot establish.</h2>
+        <p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href="/research#methodology">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -107,7 +109,7 @@
 
       <section>
         <h2>Take both. It's ten minutes.</h2>
-        <p>Both tests are free, in-browser, and take about five minutes each — <a href="/tests/mbti">MBTI (OEJTS)</a> and <a href="/tests/big-five">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — the same OEJTS and IPIP-50 we ran ~2,200 times across the six models above, so your scores and the research sit on the same scale.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href="/guides/how-to-give-your-ai-a-personality">the setup guide</a>, or jump to <a href="/guides/coding-agent-personality">the coding-agent version</a> if your agent lives in a terminal.</p>
+        <p>Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — <a href="/tests/mbti">MBTI (OEJTS)</a> and <a href="/tests/big-five">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href="/guides/how-to-give-your-ai-a-personality">the setup guide</a>, or jump to <a href="/guides/coding-agent-personality">the coding-agent version</a> if your agent lives in a terminal.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -124,15 +126,15 @@
           </details>
           <details>
             <summary>Why did all six models test as INTJ?</summary>
-            <p>597 of 600 runs returned INTJ, and the three outliers were each one axis away. Binary instruments compress: assistant training pushes every frontier model to the same side of each fork — introverted, abstract, analytical, structured. Instruments with continuous or motivational scoring, like Big Five and Enneagram, recover the differences the forks hide.</p>
+            <p>The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.</p>
           </details>
           <details>
             <summary>Can I use both frameworks in one prompt?</summary>
-            <p>Yes, and it works better than either alone. Let the type set the defaults — reporting order, decisiveness, tangent policy — and let trait scores adjust the dials, like verbosity and hedging. Keep it short: ten to twenty lines of concrete rules beats a personality essay.</p>
+            <p>The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.</p>
           </details>
           <details>
             <summary>What about DISC and the Enneagram?</summary>
-            <p>They anchor the two ends of the ladder. DISC converged completely in our runs — every model C-dominant with an S-blend — while the Enneagram fully diverged, each model showing a different dominant type. Motivational instruments discriminate hardest. If the Enneagram is your framework, we built tunings for all nine types.</p>
+            <p>The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.</p>
           </details>
         </div>
       </section>
@@ -145,7 +147,7 @@
         <div class="guide-related">
           <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>MBTI test (OEJTS) — free, ~5 min</a>
           <a href="/tests/big-five"><span class="guide-related-kicker">Tests</span>Big Five test (IPIP-50) — free, ~5 min</a>
-          <a href="/research/i-took-the-mbti-100-times"><span class="guide-related-kicker">Research</span>I took the MBTI 100 times</a>
+          <a href="/research/i-took-the-mbti-100-times"><span class="guide-related-kicker">Research</span>Opus 4.8 MBTI simulation: methods and limits</a>
           <a href="/library/mbti/intj"><span class="guide-related-kicker">Library</span>INTJ tuning file</a>
           <a href="/library/ocean/openness-high"><span class="guide-related-kicker">Library</span>High Openness tuning file</a>
           <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>Coding agent personality</a>
@@ -163,13 +165,14 @@
   <script>
     // Copy buttons on every snippet block
     document.querySelectorAll(".guide-snippet").forEach(function (block) {
+      var snippet = block.textContent.trim();
       var btn = document.createElement("button");
       btn.className = "guide-snippet-copy";
       btn.type = "button";
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+        navigator.clipboard.writeText(snippet).then(function () {
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

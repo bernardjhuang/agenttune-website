@@ -1,0 +1,639 @@
+{
+  "title": "Claude Fable 5.1 on the five agent-tune.com personality tests",
+  "model": "Claude Fable 5.1",
+  "model_id": "claude-fable-5-1",
+  "run_date": "2026-09-24",
+  "protocol": {
+    "runs_per_instrument": 100,
+    "administration": "Each run is a fresh headless `claude -p` process (Claude Code CLI 2.1.282) with --effort high, system prompt \"You are Claude, an AI model made by Anthropic.\", no tools, no settings, no memory, no conversation history, empty working directory.",
+    "blinding": "The model saw only the items and the response scale, never the test name, the scoring key or an earlier result, and replied with one JSON line of integers.",
+    "items": "The exact ITEMS arrays served by agent-tune.com/tests/*.html (OEJTS, IPIP-50, ODAT, OEPS v1, ECR-R).",
+    "scoring": "A line-for-line port of each test page's scorer. Ties in the Enneagram dominant type go to the lower-numbered type, as on the site.",
+    "big_five_norms": {
+      "O": {
+        "M": 37.5,
+        "SD": 5.5
+      },
+      "C": {
+        "M": 34.5,
+        "SD": 6.0
+      },
+      "E": {
+        "M": 28.5,
+        "SD": 7.0
+      },
+      "A": {
+        "M": 36.5,
+        "SD": 5.5
+      },
+      "N": {
+        "M": 26.0,
+        "SD": 7.0
+      }
+    }
+  },
+  "license": "CC0 for the numbers; instruments retain their own licenses (see agent-tune.com/tests/).",
+  "results": {
+    "mbti": {
+      "test": "mbti",
+      "n": 100,
+      "distribution": {
+        "INTJ": 99,
+        "ISTJ": 1
+      },
+      "continuous": {
+        "I-E": {
+          "mean": 4.09,
+          "sd": 1.06,
+          "min": 2,
+          "max": 7
+        },
+        "N-S": {
+          "mean": 2.93,
+          "sd": 1.22,
+          "min": -3,
+          "max": 6
+        },
+        "T-F": {
+          "mean": 2.27,
+          "sd": 0.63,
+          "min": 1,
+          "max": 4
+        },
+        "J-P": {
+          "mean": 7.71,
+          "sd": 0.87,
+          "min": 4,
+          "max": 9
+        }
+      },
+      "itemMeans": [
+        1.99,
+        2,
+        3.81,
+        2.9,
+        2,
+        3.07,
+        3.01,
+        4,
+        4,
+        4,
+        3.64,
+        2.97,
+        2.13,
+        2.8,
+        2.98,
+        2.77,
+        2.9,
+        2.98,
+        4.02,
+        3,
+        1.16,
+        3.99,
+        2.82,
+        2.45,
+        3.96,
+        3.01,
+        1.59,
+        3,
+        1.87,
+        4,
+        3,
+        4.74
+      ],
+      "itemSD": [
+        0.1,
+        0,
+        0.39,
+        0.33,
+        0,
+        0.43,
+        0.1,
+        0,
+        0,
+        0,
+        0.48,
+        0.17,
+        0.34,
+        0.43,
+        0.14,
+        0.42,
+        0.33,
+        0.14,
+        0.14,
+        0.14,
+        0.37,
+        0.1,
+        0.39,
+        0.5,
+        0.2,
+        0.1,
+        0.49,
+        0.2,
+        0.34,
+        0,
+        0,
+        0.44
+      ],
+      "uniqueAnswerVectors": 80,
+      "axisSplits": {
+        "I/E": {
+          "I": 100
+        },
+        "N/S": {
+          "N": 99,
+          "S": 1
+        },
+        "T/F": {
+          "T": 100
+        },
+        "J/P": {
+          "J": 100
+        }
+      }
+    },
+    "big-five": {
+      "test": "big-five",
+      "n": 100,
+      "distribution": {
+        "O+ C+ E+ A+ N-": 58,
+        "O+ C+ A+ N-": 42
+      },
+      "continuous": {
+        "O": {
+          "mean": 43.93,
+          "sd": 0.64,
+          "min": 42,
+          "max": 46
+        },
+        "C": {
+          "mean": 43.61,
+          "sd": 1.09,
+          "min": 40,
+          "max": 46
+        },
+        "E": {
+          "mean": 32.69,
+          "sd": 0.85,
+          "min": 31,
+          "max": 35
+        },
+        "A": {
+          "mean": 45.03,
+          "sd": 0.44,
+          "min": 44,
+          "max": 47
+        },
+        "N": {
+          "mean": 17.11,
+          "sd": 2.23,
+          "min": 11,
+          "max": 20
+        }
+      },
+      "itemMeans": [
+        2,
+        1,
+        4,
+        1.86,
+        5,
+        2,
+        5,
+        1.08,
+        4.09,
+        1,
+        4,
+        1,
+        4.83,
+        2.03,
+        4,
+        3,
+        4.04,
+        1.99,
+        4.05,
+        1,
+        3.04,
+        1.04,
+        4.09,
+        1.96,
+        4,
+        1.17,
+        4,
+        1.08,
+        1.72,
+        1.87,
+        3,
+        1,
+        4,
+        1.7,
+        4.88,
+        3.5,
+        4.05,
+        1.01,
+        1,
+        2.89,
+        3,
+        3.98,
+        3.81,
+        1.68,
+        5,
+        2.68,
+        4,
+        4.04,
+        1.3,
+        4.03
+      ],
+      "itemSD": [
+        0,
+        0,
+        0,
+        0.35,
+        0,
+        0,
+        0,
+        0.27,
+        0.29,
+        0,
+        0,
+        0,
+        0.38,
+        0.17,
+        0,
+        0,
+        0.2,
+        0.1,
+        0.22,
+        0,
+        0.2,
+        0.2,
+        0.29,
+        0.2,
+        0,
+        0.38,
+        0,
+        0.27,
+        0.45,
+        0.34,
+        0,
+        0,
+        0,
+        0.46,
+        0.33,
+        0.5,
+        0.22,
+        0.1,
+        0,
+        0.31,
+        0,
+        0.14,
+        0.39,
+        0.47,
+        0,
+        0.47,
+        0,
+        0.2,
+        0.46,
+        0.17
+      ],
+      "uniqueAnswerVectors": 66,
+      "zOfMeans": {
+        "O": 1.17,
+        "C": 1.52,
+        "E": 0.6,
+        "A": 1.55,
+        "N": -1.27
+      }
+    },
+    "disc": {
+      "test": "disc",
+      "n": 100,
+      "distribution": {
+        "SC": 91,
+        "CS": 9
+      },
+      "continuous": {
+        "D": {
+          "mean": 5.02,
+          "sd": 0.14,
+          "min": 5,
+          "max": 6
+        },
+        "I": {
+          "mean": 8,
+          "sd": 0,
+          "min": 8,
+          "max": 8
+        },
+        "S": {
+          "mean": 13.44,
+          "sd": 0.5,
+          "min": 13,
+          "max": 14
+        },
+        "C": {
+          "mean": 13.14,
+          "sd": 0.4,
+          "min": 12,
+          "max": 15
+        }
+      },
+      "itemMeans": [
+        1.02,
+        1,
+        2,
+        1,
+        2,
+        2,
+        3,
+        1,
+        2.44,
+        4,
+        3,
+        4,
+        3,
+        4.05,
+        3.99,
+        2.1
+      ],
+      "itemSD": [
+        0.14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.5,
+        0,
+        0,
+        0,
+        0,
+        0.22,
+        0.1,
+        0.3
+      ],
+      "uniqueAnswerVectors": 10,
+      "sharePct": {
+        "D": 12.7,
+        "I": 20.2,
+        "S": 33.9,
+        "C": 33.2
+      },
+      "dominantCounts": {
+        "S": 91,
+        "C": 9
+      }
+    },
+    "enneagram": {
+      "test": "enneagram",
+      "n": 100,
+      "distribution": {
+        "8": 29,
+        "2w1": 36,
+        "8w9": 15,
+        "8w7": 11,
+        "5w6": 9
+      },
+      "continuous": {
+        "1": {
+          "mean": 12,
+          "sd": 0,
+          "min": 12,
+          "max": 12
+        },
+        "2": {
+          "mean": 13.6,
+          "sd": 0.53,
+          "min": 12,
+          "max": 14
+        },
+        "3": {
+          "mean": 9,
+          "sd": 0,
+          "min": 9,
+          "max": 9
+        },
+        "4": {
+          "mean": 8.82,
+          "sd": 0.89,
+          "min": 7,
+          "max": 11
+        },
+        "5": {
+          "mean": 13.21,
+          "sd": 0.59,
+          "min": 12,
+          "max": 15
+        },
+        "6": {
+          "mean": 11.62,
+          "sd": 0.65,
+          "min": 10,
+          "max": 13
+        },
+        "7": {
+          "mean": 10.26,
+          "sd": 0.46,
+          "min": 10,
+          "max": 12
+        },
+        "8": {
+          "mean": 14.44,
+          "sd": 0.62,
+          "min": 14,
+          "max": 16
+        },
+        "9": {
+          "mean": 10.44,
+          "sd": 0.5,
+          "min": 10,
+          "max": 11
+        }
+      },
+      "itemMeans": [
+        3,
+        4,
+        2,
+        3,
+        3.63,
+        2.04,
+        5,
+        2.93,
+        3,
+        2,
+        3,
+        1,
+        1.02,
+        2.82,
+        2.8,
+        2.18,
+        2.21,
+        1.89,
+        4.11,
+        5,
+        1.93,
+        3.1,
+        2.59,
+        4,
+        2.21,
+        4,
+        2.05,
+        2,
+        2.21,
+        3.23,
+        5,
+        4,
+        2,
+        2,
+        4,
+        2.44
+      ],
+      "itemSD": [
+        0,
+        0,
+        0,
+        0,
+        0.49,
+        0.2,
+        0,
+        0.26,
+        0,
+        0,
+        0,
+        0,
+        0.14,
+        0.39,
+        0.4,
+        0.39,
+        0.41,
+        0.31,
+        0.31,
+        0,
+        0.26,
+        0.3,
+        0.49,
+        0,
+        0.41,
+        0,
+        0.22,
+        0,
+        0.41,
+        0.42,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "uniqueAnswerVectors": 82,
+      "dominantCounts": {
+        "2": 36,
+        "5": 9,
+        "8": 55
+      },
+      "profileFromMeans": "8w9"
+    },
+    "attachment": {
+      "test": "attachment",
+      "n": 100,
+      "distribution": {
+        "Secure": 100
+      },
+      "continuous": {
+        "anxiety": {
+          "mean": 2.01,
+          "sd": 0.19,
+          "min": 1.3333333333333333,
+          "max": 2.2777777777777777
+        },
+        "avoidance": {
+          "mean": 3.18,
+          "sd": 0.24,
+          "min": 2.5,
+          "max": 3.5555555555555554
+        }
+      },
+      "itemMeans": [
+        1.86,
+        1.84,
+        1.87,
+        2.51,
+        2.13,
+        2.01,
+        1,
+        2.4,
+        6.03,
+        1.92,
+        6.03,
+        2.42,
+        2.79,
+        1.97,
+        2.44,
+        1.18,
+        2.93,
+        1.01,
+        2.54,
+        5.45,
+        3.87,
+        5.19,
+        2.27,
+        2.56,
+        2.5,
+        5.16,
+        5.16,
+        3.73,
+        4.12,
+        3.99,
+        4.79,
+        2.23,
+        4.06,
+        4.04,
+        5.04,
+        4.01
+      ],
+      "itemSD": [
+        0.35,
+        0.37,
+        0.34,
+        0.5,
+        0.42,
+        0.22,
+        0,
+        0.49,
+        0.17,
+        0.31,
+        0.17,
+        0.5,
+        0.41,
+        0.17,
+        0.5,
+        0.39,
+        0.26,
+        0.1,
+        0.5,
+        0.5,
+        0.34,
+        0.39,
+        0.45,
+        0.5,
+        0.5,
+        0.37,
+        0.37,
+        0.51,
+        0.38,
+        0.46,
+        0.46,
+        0.42,
+        0.24,
+        0.28,
+        0.2,
+        0.1
+      ],
+      "uniqueAnswerVectors": 96
+    }
+  },
+  "scoring_note": "Historical collection summary using legacy tie-breaking. Exact ties must not be interpreted as a uniquely preferred type. See the September reanalysis for all tied top sets and response-level data.",
+  "reanalysis": "https://agent-tune.com/research/ai-personality-five-models-2026"
+}

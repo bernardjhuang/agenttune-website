@@ -600,8 +600,8 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
 
   const gapSection = gap ? `
     <section class="lib-v2-section" id="default">
-      <div class="lib-v2-section-eyebrow">§ III · Against the default</div>
-      <h2 class="lib-v2-section-h">${escHtml(grammar.shortLabel.charAt(0).toUpperCase() + grammar.shortLabel.slice(1))} against the <em>AI default.</em></h2>
+      <div class="lib-v2-section-eyebrow">§ III · Research context</div>
+      <h2 class="lib-v2-section-h">${escHtml(grammar.shortLabel.charAt(0).toUpperCase() + grammar.shortLabel.slice(1))} and the <em>research context.</em></h2>
       <p class="lib-v2-section-lede">${escHtml(gap.lede)}</p>
       ${gap.html}
     </section>
@@ -828,6 +828,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -859,7 +860,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       <a class="lib-v2-anchor is-file is-active" href="#editor">${escHtml(downloadFilename)}</a>
       <a class="lib-v2-anchor" href="#demo">See it</a>
       <a class="lib-v2-anchor" href="#tune">For your AI</a>
-      <a class="lib-v2-anchor" href="#default">Vs the default</a>
+      <a class="lib-v2-anchor" href="#default">Research context</a>
       <a class="lib-v2-anchor" href="#talk-to">For humans</a>
       <a class="lib-v2-anchor" href="#this-is-me">If this is you</a>
       <a class="lib-v2-anchor" href="#neighbors">Neighbors</a>
@@ -929,7 +930,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     <section class="lib-v2-section" id="demo">
       <div class="lib-v2-section-eyebrow">§ I · See it</div>
       <h2 class="lib-v2-section-h">The same question. <em>Two answers.</em></h2>
-      <p class="lib-v2-section-lede">Same prompt, two AI responses. The first is what a generic AI gives anyone. The second is what the tuning file produces for ${grammar.article} ${escHtml(grammar.label)}.</p>
+      <p class="lib-v2-section-lede">Illustrative examples of the communication styles these rules aim to encourage. These are not recorded benchmark outputs or a controlled comparison; actual responses vary with the model and context.</p>
 
       <div class="lib-v2-demo">
         <div class="lib-v2-demo-prompt">
@@ -947,7 +948,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
           </div>
         </div>
         <div class="lib-v2-demo-why">
-          <strong>Why this works:</strong> ${escHtml(demoWhy)}
+          <strong>Intended difference:</strong> ${escHtml(demoWhy)}
         </div>
       </div>
     </section>
@@ -1023,6 +1024,7 @@ ${summaryLis}
   <div class="lib-toast" id="lib-toast" role="status" aria-live="polite">Copied ✓</div>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
   <script>
     (function () {
@@ -1275,6 +1277,7 @@ function buildHub(contacts) {
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -1291,7 +1294,7 @@ function buildHub(contacts) {
     <section class="hero">
       <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every agent.</em></h1>
       <p class="lede">
-        Five validated systems. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
+        Five preference frameworks. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>
@@ -1364,6 +1367,8 @@ function gitLastmod(relPath) {
 
 // Non-library pages in the sitemap: route → source file + crawl hints.
 const STATIC_PAGES = [
+  { route: "/research/ai-personality-five-models-2026", file: "research/ai-personality-five-models-2026.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/fable-personality", file: "guides/fable-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/", file: "index.html", changefreq: "weekly", priority: "1.0", comment: "Landing" },
   { route: "/research", file: "research.html", changefreq: "weekly", priority: "0.9", comment: "Research synthesis" },
   { route: "/research/i-took-the-mbti-100-times", file: "research/i-took-the-mbti-100-times.html", changefreq: "monthly", priority: "0.7" },
@@ -1381,6 +1386,7 @@ const STATIC_PAGES = [
   { route: "/guides/chatgpt-custom-instructions-by-personality-type", file: "guides/chatgpt-custom-instructions-by-personality-type.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-personality", file: "guides/claude-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-code-personality", file: "guides/claude-code-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-opus-5-5-personality", file: "guides/claude-opus-5-5-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/astra-personality", file: "guides/astra-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/grokbot-personality", file: "guides/grokbot-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-personality", file: "guides/muse-personality.html", changefreq: "monthly", priority: "0.8" },
@@ -1563,16 +1569,13 @@ function main() {
 
   const redirectsPath = path.join(ROOT, "_redirects");
   const header = "# Agent-friendly raw markdown URLs — auto-generated by tools/generate-library.js\n# /library/<system>/<slug>.md → /tunings/<system>/<File>.md (200 = rewrite)\n";
-  // Catch-all MUST be last. Static assets + clean-URL HTML resolution take
-  // precedence over `/*`, so this only fires on genuinely missing paths —
-  // turning the soft-404 (index.html, 200) into a real 404. Overrides any
-  // Cloudflare Pages "single-page-application" not_found_handling setting.
+  // Pages serves the root 404.html for unmatched routes; 404 is not a valid redirect status.
   // Retired paid-product routes (Premium + Developer Pack, removed 2026-07) — permanent redirects home.
   const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n";
-  const fallback = retired + "\n# Catch-all: real 404 for unknown paths (must stay last)\n/*  /404.html  404\n";
+  const fallback = retired;
   const body = header + redirects.join("\n") + "\n" + fallback;
   fs.writeFileSync(redirectsPath, body);
-  console.log(`_redirects → ${redirectsPath} (${redirects.length} rules + 404 catch-all)`);
+  console.log(`_redirects → ${redirectsPath} (${redirects.length} Markdown rewrites + retired-route redirects)`);
 
   const allUrls = ["/library/", ...typePages.map((p) => p.route)];
   fs.writeFileSync(path.join(__dirname, "library-urls.json"), JSON.stringify(allUrls, null, 2));

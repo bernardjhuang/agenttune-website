@@ -13,6 +13,15 @@
 (function () {
   var KEY = "at_consent"; // "granted" | "denied"
   var GA_ID = "G-5MYEW2MEE1";
+  var DISABLE_KEY = "ga-disable-" + GA_ID;
+  var allowed = false;
+  var started = false;
+  window[DISABLE_KEY] = true;
+
+  window.atTrack = function (event) {
+    if (!allowed || !["quiz_start", "quiz_complete", "tuning_copy", "tuning_download", "generator_copy", "guide_copy", "integration_copy"].includes(event)) return;
+    window.gtag("event", event);
+  };
 
   function getChoice() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
@@ -22,15 +31,40 @@
   }
 
   function loadGA() {
-    if (window.gtag) return;
+    allowed = true;
+    window[DISABLE_KEY] = false;
+    if (started) return;
+    started = true;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag = function () {
+      if (allowed) window.dataLayer.push(arguments);
+    };
     gtag("js", new Date());
     gtag("config", GA_ID, { anonymize_ip: true });
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
     document.head.appendChild(s);
+  }
+
+  function disableGA() {
+    allowed = false;
+    // Google's opt-out flag also stops events from an already-loaded tag.
+    window[DISABLE_KEY] = true;
+    const cookies = document.cookie.split(";").map(function (cookie) {
+      return cookie.trim().split("=")[0];
+    }).filter(function (name) { return /^_ga(?:_|$)|^_gid$|^_gat/.test(name); });
+    const parts = window.location.hostname.split(".");
+    const domains = [""];
+    for (let i = 0; i < parts.length - 1; i++) {
+      domains.push(parts.slice(i).join("."));
+      domains.push("." + parts.slice(i).join("."));
+    }
+    cookies.forEach(function (name) {
+      domains.forEach(function (domain) {
+        document.cookie = name + "=; Max-Age=0; path=/" + (domain ? "; domain=" + domain : "");
+      });
+    });
   }
 
   function removeBanner() {
@@ -64,6 +98,7 @@
     });
     el.querySelector(".at-decline").addEventListener("click", function () {
       setChoice("denied");
+      disableGA();
       removeBanner();
     });
 
@@ -90,14 +125,25 @@
 
   // /privacy links here so visitors can change their mind later.
   window.atConsentReset = function () {
+    disableGA();
     try { localStorage.removeItem(KEY); } catch (e) {}
     showBanner();
   };
 
+  // A withdrawal in another tab must also stop this tab's analytics.
+  window.addEventListener("storage", function (event) {
+    if (event.key !== KEY && event.key !== null) return;
+    if (getChoice() === "granted") loadGA();
+    else disableGA();
+  });
+
   function init() {
     var c = getChoice();
     if (c === "granted") loadGA();
-    else if (c !== "denied") showBanner();
+    else {
+      disableGA();
+      if (c !== "denied") showBanner();
+    }
   }
 
   if (document.readyState === "loading") {

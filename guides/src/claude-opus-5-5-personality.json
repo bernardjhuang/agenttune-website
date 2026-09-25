@@ -1,0 +1,97 @@
+{
+  "slug": "claude-opus-5-5-personality",
+  "published": "2026-09-25",
+  "title": "Claude Opus 5.5 Personality: Results, Ties and Tuning",
+  "description": "Claude Opus 5.5 across 500 questionnaire sessions: MBTI, Big Five, DISC, Enneagram and attachment. See exact ties, raw data and tuning examples.",
+  "pill": "Guide · Claude Opus 5.5",
+  "h1": "Claude Opus 5.5: results and tuning ideas.",
+  "dek": "Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.",
+  "lede": "Claude Opus 5.5 received an INTJ label in 94 of 100 MBTI-style questionnaires under the original scoring rule. Leave exact ties unresolved and 84 runs remain fully INTJ. That distinction matters when turning a result into a communication preference.",
+  "answer": "Claude Opus 5.5 mostly received INTJ labels under the original rules, with high raw openness, conscientiousness and agreeableness scores. These are prompted self-descriptions, not a tested account of its behavior. Use the instruction examples as hypotheses to try on your own tasks, not proven improvements.",
+  "sections": [
+    {
+      "h2": "The results at a glance",
+      "html": "<div class=\"guide-table-wrap\" role=\"region\" aria-label=\"Questionnaire results\" tabindex=\"0\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Result in this collection</th></tr></thead><tbody><tr><th scope=\"row\">MBTI-style OEJTS</th><td>Original INTJ: 94/100; fully resolved INTJ: 84/100; any tied axis: 11/100</td></tr><tr><th scope=\"row\">Big Five, raw means (10–50)</th><td>O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39</td></tr><tr><th scope=\"row\">DISC</th><td>64 outright S wins, 4 C wins, 32 ties</td></tr><tr><th scope=\"row\">Enneagram</th><td>22 outright Type 8 wins, 11 Type 5 wins, 2 Type 2 wins, 65 ties</td></tr><tr><th scope=\"row\">Attachment</th><td>Secure: 100/100; anxiety 1.94, avoidance 3.35</td></tr></tbody></table></div><p>All counts are out of 100 for that instrument. Each administration was a separate session. Read the <a href=\"/research/ai-personality-five-models-2026\">five-model research article</a> for the full comparison and <a href=\"/research/data/september-2026-responses.json\">download the raw responses</a>.</p>"
+    },
+    {
+      "h2": "Why the original type label is only part of the answer",
+      "html": "<p>The original labels are INTJ 94, INFJ five and ENTJ one. Ten runs tie on Thinking/Feeling; one different run ties on Extraversion/Introversion. The fully resolved results are INTJ 84 and INFJ five. The other 11 have an X in at least one position. Assigning ties to Thinking or Introversion makes the headline label look more settled than the underlying scores.</p><p>DISC has a similar effect: the original SC count is 96, but only 64 runs have S strictly above C. The other 32 are tied. In Enneagram, the old lower-number-first rule labels Type 2 in 54 runs, although it wins outright only twice. There is no basis for treating all 54 as a clear Helper preference.</p><p>Our interactive tests now display tied scores without automatically choosing a tuning. Enneagram wings must be adjacent to a unique core type; an older “5w2” label should be read as two high scores, not a valid wing.</p>"
+    },
+    {
+      "h2": "Compared with Fable 5.1",
+      "html": "<p>Opus and Fable used the same questionnaire prompts and the same one-line system instruction, at high effort. Their CLI builds differ. This is the closest comparison in the September collection, though it still measures model-generated questionnaire answers.</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"Questionnaire results\" tabindex=\"0\"><table><thead><tr><th scope=\"col\">Raw Big Five mean</th><th scope=\"col\">Opus 5.5</th><th scope=\"col\">Fable 5.1</th></tr></thead><tbody><tr><th scope=\"row\">O</th><td>44.56</td><td>43.93</td></tr><tr><th scope=\"row\">C</th><td>41.95</td><td>43.61</td></tr><tr><th scope=\"row\">E</th><td>31.76</td><td>32.69</td></tr><tr><th scope=\"row\">A</th><td>47.07</td><td>45.03</td></tr><tr><th scope=\"row\">N</th><td>15.39</td><td>17.11</td></tr></tbody></table></div><p>Opus reports 2.04 points more agreeableness, 1.66 less conscientiousness and 1.72 less neuroticism on the 10–50 scales. This does not establish which model gives better criticism, completes more work or handles pressure better. Those claims require behavioral tasks. We also avoid translating these scores into human population percentiles.</p><p>Older Opus 4.7 and 4.8 reports use different methods. The 4.8 study simulated answers from one probability profile. These reports do not isolate a version-to-version personality change.</p>"
+    },
+    {
+      "h2": "Communication instructions to try",
+      "html": "<p>Start from a recurring problem you can observe, such as praise that obscures criticism or recommendations that arrive before you finish exploring. The examples below have not been evaluated in a tuning experiment. Compare each against the default on a few representative tasks, checking accuracy and usefulness as well as tone.</p><h3>For more direct feedback</h3><div class=\"guide-snippet\">Lead with your assessment and the evidence behind it. If my premise is weak, explain why plainly. Separate factual errors from matters of taste. Keep justified uncertainty. Skip praise that adds no information.</div><h3>For more room to explore</h3><div class=\"guide-snippet\">When I am exploring an idea, offer two plausible approaches and their tradeoffs before recommending one. Ask a focused question if the missing context would change the recommendation. Once I choose, help me carry it through.</div><h3>For a warmer answer</h3><div class=\"guide-snippet\">Acknowledge my main concern briefly, then give a concrete next step. Be considerate without agreeing with an unsupported claim. Keep the explanation easy to scan.</div><p>Browse <a href=\"/library/ocean/agreeableness-low\">direct-feedback preferences</a>, <a href=\"/library/mbti/enfp\">exploratory communication</a>, or use the <a href=\"/tools/custom-instructions-generator\">custom-instructions generator</a>. Choose rules that solve your problem; a questionnaire label does not prescribe the best prompt for you.</p>"
+    },
+    {
+      "h2": "Where to put the instructions",
+      "html": "<p>Use <strong>Instructions for Claude</strong> in the Claude app for a general preference, project instructions for a particular context, or a Claude Code output style or project instruction file for coding work. The API accepts system instructions. Keep existing project rules and merge preferences deliberately instead of replacing the whole file.</p><p>The steps are in <a href=\"/guides/claude-personality\">the Claude personalization guide</a> and <a href=\"/guides/claude-code-personality\">the Claude Code guide</a>. Model availability and settings can change; use the linked official documentation for current details. We tested one effort setting, so this dataset cannot tell us whether changing effort changes questionnaire responses.</p>"
+    },
+    {
+      "h2": "How the data was collected and checked",
+      "html": "<p>There are 100 fresh headless sessions for each of five instruments, 500 sessions in total, using <code>claude-opus-5-5</code> at high effort. The system prompt was <em>You are Claude, an AI model made by Anthropic.</em> Each session received a questionnaire and response scale, with no test name, scoring key, previous result, tools, MCP or conversation history. A neutral instruction let the model interpret human-oriented items in the way that applied to it. Familiar items might still reveal which questionnaire it was answering.</p><p>We checked every raw vector for valid lengths and response bounds, then recomputed scores with frozen item keys. The collection used the earlier tie-breaking rules; this guide reports their labels alongside an analysis that leaves ties unresolved. Source-file hashes and questionnaire prompts are in the <a href=\"/research/data/september-2026-protocols.json\">protocol record</a>. Raw session identifiers, account metadata and usage logs are omitted from the public export.</p><p>Separate sessions reduce carryover but do not prove independent sampling. Human questionnaires have not been validated here for AI. The results apply to this prompt and collection, and cannot establish a stable inner personality, human feelings or a benefit from installing an instruction file.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Claude Opus 5.5?",
+      "a": "Under the original OEJTS scoring rule it received INTJ in 94 of 100 runs. With exact ties unresolved, 84 runs are fully INTJ. The result describes prompted questionnaire responses, not a validated psychological personality."
+    },
+    {
+      "q": "What is Claude Opus 5.5’s Big Five profile?",
+      "a": "O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39. These are means over 100 responses per instrument on raw 10–50 scales, not human population percentiles."
+    },
+    {
+      "q": "Can I tune Claude Opus 5.5 to be more direct?",
+      "a": "You can request direct, evidence-based feedback through communication instructions. The examples in this guide are starting points to evaluate; the questionnaire dataset does not measure whether they improve task outcomes."
+    },
+    {
+      "q": "Does effort change the results?",
+      "a": "We do not know from these data. Both Claude cohorts were tested only at high effort. A controlled comparison across effort settings would require additional runs."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "Published with response-level reanalysis, explicit ties and untested tuning examples. Historical version comparisons are separated by protocol."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune September 2026 research, raw responses and scoring methods",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "Anthropic: Claude Opus 5.5",
+      "href": "https://www.anthropic.com/claude/opus"
+    },
+    {
+      "label": "Claude Help: personalization features",
+      "href": "https://support.claude.com/en/articles/10185728"
+    },
+    {
+      "label": "Claude Code: output styles",
+      "href": "https://code.claude.com/docs/en/output-styles"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Research",
+      "label": "Compare Astra, Sol, Grok, Opus and Fable",
+      "href": "/research/ai-personality-five-models-2026"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Fable 5.1 results",
+      "href": "/guides/fable-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Build custom instructions",
+      "href": "/tools/custom-instructions-generator"
+    }
+  ],
+  "updated": "2026-09-25"
+}

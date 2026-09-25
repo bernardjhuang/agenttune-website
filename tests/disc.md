@@ -34,5 +34,5 @@ Four items per letter, in letter order (items 1–4 → D, 5–8 → I, 9–12 �
 ## Scoring algorithm
 
 1. For each letter D/I/S/C, sum the user's raw 1–5 responses to that letter's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant** letter.
-3. If a second letter is within a few points, report it as a **blend** (e.g. DI, CS).
+2. A unique highest total is the **dominant** letter. If letters tie for highest, report them equally, without a dominant letter or automatic tuning; offer their library pages.
+3. With a unique dominant letter, if the second letter is within 2 points, report a **blend** (e.g. DI, CS).

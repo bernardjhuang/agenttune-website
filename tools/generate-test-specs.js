@@ -59,7 +59,7 @@ const TESTS = {
 - **Instrument:** Open Extended Jungian Type Scales (OEJTS)
 - **Items:** 32 bipolar, ~5 minutes
 - **Scale:** each item is a choice between two statements rated 1–5 (1 = strongly the first statement, 3 = neutral, 5 = strongly the second)
-- **Returns:** one of 16 four-letter MBTI types
+- **Returns:** a four-letter MBTI type when all axes are resolved, otherwise an undetermined result
 - **Source:** OEJTS, Eric Jorgenson, via the Open Psychometrics Project (openpsychometrics.org/tests/OEJTS/) — free for educational use
 - **Output:** fetch \`https://agent-tune.com/library/mbti/<type>.md\` (lowercase; e.g. INTJ → \`/library/mbti/intj.md\`) or the human page \`/library/mbti/<type>\`
 
@@ -75,8 +75,8 @@ ${rows}
 
 1. For each axis (E/I, S/N, T/F, J/P), start both letters at 0.
 2. For each of that axis's 8 items, score the response: 1 → +2 to the **←1** letter; 2 → +1 to it; 3 → 0 (neutral); 4 → +1 to the **5→** letter; 5 → +2 to it.
-3. The higher total wins the letter. On a tie, default to **I, N, T, J** (more common in adults).
-4. Concatenate the winners in order E/I, S/N, T/F, J/P → the 4-letter type.
+3. The higher total wins the letter. A tied axis is undetermined; never default to a letter. Offer a follow-up preference question for that axis. If the user is still unsure, leave it unresolved.
+4. Only concatenate a four-letter type when every axis is resolved and all 32 valid responses are present. Otherwise report an undetermined result (X for unresolved axes) without fetching a type-specific tuning. Label follow-up choices as stated preferences, not measured test points.
 `;
     },
     rows(items) {
@@ -108,7 +108,7 @@ ${rows}
 ## Scoring algorithm
 
 1. For each type 1–9, sum the user's raw 1–5 responses to that type's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant type**.
+2. A unique highest total is the **dominant type**. If several types tie, report all of them without a dominant type or automatic tuning; offer their library pages for an explicit preference.
 3. The higher-scoring of the two adjacent types (the wings) is the optional **wing**.
 4. Resolve the slug from the dominant type (e.g. 5 → \`5-investigator\`).
 `;
@@ -142,8 +142,8 @@ ${rows}
 ## Scoring algorithm
 
 1. For each letter D/I/S/C, sum the user's raw 1–5 responses to that letter's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant** letter.
-3. If a second letter is within a few points, report it as a **blend** (e.g. DI, CS).
+2. A unique highest total is the **dominant** letter. If letters tie for highest, report them equally, without a dominant letter or automatic tuning; offer their library pages.
+3. With a unique dominant letter, if the second letter is within 2 points, report a **blend** (e.g. DI, CS).
 `;
     },
     rows(items) {
