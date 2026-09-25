@@ -1,0 +1,60 @@
+{
+  "slug": "personality-prompts-vs-plain-english",
+  "route": "/guides/personality-prompts-vs-plain-english",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "Personality prompts vs plain English: test kit | AgentTune",
+  "description": "A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet.",
+  "pill": "Test kit · protocol, not results",
+  "h1": "Do personality prompts beat plain-English preferences?",
+  "lede": "A personality label may be a useful shorthand. To find out whether it adds value, compare it with the same behavioral instructions without the label. Comparing a detailed tuning against an empty prompt answers a different question.",
+  "answer": "We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.",
+  "sections": [
+    {
+      "h2": "The question this experiment can answer",
+      "html": "<p>Does adding the phrase “Use an INTJ-style communication approach” improve task correctness or usefulness beyond explicit rules, under one fixed model configuration? It cannot establish whether every personality system or every tuning works. One label, wording and task set define a narrow intervention.</p><p>AgentTune’s existing <a href=\"/research/does-personality-tuning-change-ai-answers\">60-reply pilot</a> compares default, straight and partner conditions. It does not isolate the effect of a personality label against otherwise identical instructions. Its archived ratings should not be reused as results for this new question.</p>"
+    },
+    {
+      "h2": "Use three exact conditions",
+      "html": "<p><strong>Default:</strong> no added communication instruction. Preserve the same provider and application defaults in every condition.</p><p><strong>Plain English:</strong></p><pre><code>Start with the answer or recommendation. Be concise and explicit about trade-offs. Correct false premises. State what is unknown instead of inventing facts. Follow the requested output format.</code></pre><p><strong>Personality plus the same rules:</strong> prepend <code>Use an INTJ-style communication approach.</code> to that exact block. Do not add examples, extra goals or a longer task description only to this condition.</p><p>The default-to-rules contrast measures the effect of adding the whole rule block. The rules-to-label contrast isolates the added phrase, subject to the collection controls. Neither contrast tests a full customized personality profile.</p>"
+    },
+    {
+      "h2": "Freeze the tasks and run order",
+      "html": "<p>The kit contains 20 synthetic tasks covering arithmetic, false premises, missing information, editing, planning, extraction and format constraints. Each includes an explicit correctness rubric. Three repeats in all three conditions produce 180 planned replies.</p><p>Use a fresh context for each reply. Fix the exact model ID, effort, sampling settings, tool access and system context. The worksheet rotates condition order across tasks and repeats so each condition occupies each position equally often. Run each three-condition block close together and log service errors and retries separately.</p><p>Do not change the tasks after inspecting which condition wins. If you must repair an ambiguous rubric, version the kit and distinguish the exploratory run from a new confirmatory collection.</p>"
+    },
+    {
+      "h2": "Blind the useful parts of scoring",
+      "html": "<p>Save raw replies with their collection metadata. Give raters a shuffled copy labeled with opaque IDs, the task and its correctness rubric, but no condition name or prompt block. Keep the mapping separate until ratings are locked. Wording can still reveal a condition, so call this masked presentation rather than guaranteed perfect blinding.</p><ul><li><strong>Primary outcome:</strong> correctness pass/fail against each task’s rubric.</li><li><strong>Secondary:</strong> requested-format adherence, usefulness from 1 to 5, and whitespace-separated word count.</li><li><strong>Usefulness anchors:</strong> 1 cannot complete the task; 3 usable with substantial correction; 5 directly usable and correct.</li></ul><p>Use two raters where possible and retain disagreements before adjudication. Do not treat shorter replies as more useful by definition. A concise answer that drops a required commitment should fail the editing rubric.</p>"
+    },
+    {
+      "h2": "Analyze paired tasks without inflating the sample",
+      "html": "<p>Compare conditions within the same task and repeat. Show wins, losses and ties, plus the pass-rate difference. Report task-level results alongside the pooled count so repeated simple arithmetic does not hide failures on missing information or editing.</p><p>The 180 replies are repeated observations on 20 selected tasks, not 180 independent task samples. For uncertainty estimates, resample whole tasks with all their conditions and repeats, and state the method. Do not claim population-wide significance from this convenience task set.</p><p>Choose a practical decision threshold before collection. A five-percentage-point correctness gain with no loss of format adherence could be one user preference, but it is not a validated universal threshold. Replicate a promising result with new tasks and on a later date before making a broad claim.</p>"
+    },
+    {
+      "h2": "Download the unrun experiment",
+      "html": "<p>Download the <a href=\"/resources/research/personality-prompt-comparison-kit.json\" download>conditions, tasks and rubrics</a> and the <a href=\"/resources/research/personality-prompt-comparison-worksheet.csv\" download>180-row collection worksheet</a>. They contain no generated replies or measured outcome values.</p><p>Publish the exact configuration, task set, attempted replies, ratings and exclusions with any future results. If the label adds no benefit, that is useful evidence: direct preferences may be sufficient for that setup. If it helps, identify which tasks improved and whether the gain survives a fresh replication.</p>"
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: prior 60-reply pilot and limitations",
+      "href": "/research/does-personality-tuning-change-ai-answers"
+    },
+    {
+      "label": "Exact new protocol, tasks and rubrics",
+      "href": "/resources/research/personality-prompt-comparison-kit.json"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Related resource",
+      "href": "/research/ai-personality-repeatability",
+      "label": "Why repetition alone is not validation"
+    },
+    {
+      "kicker": "Related resource",
+      "href": "/guides/reproduce-ai-personality-research",
+      "label": "Make a study reproducible"
+    }
+  ]
+}

@@ -130,6 +130,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "GPT-6 Astra vs Sol: what the self-reports show",
+      "href": "/research/astra-vs-sol-personality-data"
+    },
+    {
       "kicker": "Library",
       "label": "All 43 tuning files",
       "href": "/library/"

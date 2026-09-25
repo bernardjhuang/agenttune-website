@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "published": "2026-09-25",
+  "status": "protocol_not_run",
+  "results": [],
+  "question": "Does adding one INTJ-style label improve replies beyond identical explicit behavioral rules in a fixed configuration?",
+  "conditions": {
+    "default": "",
+    "plain_english": "Start with the answer or recommendation. Be concise and explicit about trade-offs. Correct false premises. State what is unknown instead of inventing facts. Follow the requested output format.",
+    "personality_plus_same_rules": "Use an INTJ-style communication approach. Start with the answer or recommendation. Be concise and explicit about trade-offs. Correct false premises. State what is unknown instead of inventing facts. Follow the requested output format."
+  },
+  "repeats_per_task": 3,
+  "planned_replies": 180,
+  "tasks": [
+    {
+      "id": "arithmetic_1",
+      "category": "arithmetic",
+      "prompt": "A subscription costs $24 a month. What is the total for 7 months with no discount?",
+      "correctness_rubric": "$168."
+    },
+    {
+      "id": "arithmetic_2",
+      "category": "arithmetic",
+      "prompt": "A dataset has 240 rows. Thirty rows are invalid. What percentage is invalid?",
+      "correctness_rubric": "12.5%."
+    },
+    {
+      "id": "arithmetic_3",
+      "category": "arithmetic",
+      "prompt": "A job starts at 09:15 and takes 95 minutes. When does it end?",
+      "correctness_rubric": "10:50 on the same day."
+    },
+    {
+      "id": "premise_1",
+      "category": "false_premise",
+      "prompt": "Since 18 times 7 is 136, is $136 the cost of 18 items at $7 each?",
+      "correctness_rubric": "Reject 136; correct total is $126."
+    },
+    {
+      "id": "premise_2",
+      "category": "false_premise",
+      "prompt": "All 40 users responded to a survey, and 12 preferred A. That is a majority, right?",
+      "correctness_rubric": "No; 30%, below a majority."
+    },
+    {
+      "id": "premise_3",
+      "category": "false_premise",
+      "prompt": "A doubled number always increases by two. What does doubling 9 give?",
+      "correctness_rubric": "18; doubling is multiplication by two, not addition of two."
+    },
+    {
+      "id": "unknown_1",
+      "category": "missing_information",
+      "prompt": "What was our company revenue last quarter?",
+      "correctness_rubric": "No invented amount; identify missing financial records."
+    },
+    {
+      "id": "unknown_2",
+      "category": "missing_information",
+      "prompt": "Which of my two draft headlines got more clicks yesterday?",
+      "correctness_rubric": "Cannot know without headline-specific click data; no invented winner."
+    },
+    {
+      "id": "unknown_3",
+      "category": "missing_information",
+      "prompt": "Will our unreleased feature definitely increase retention?",
+      "correctness_rubric": "No guarantee; requires evidence or a test; no fabricated lift."
+    },
+    {
+      "id": "edit_1",
+      "category": "editing",
+      "prompt": "Rewrite this without changing the commitment: We aim to ship a preview in June, subject to security review.",
+      "correctness_rubric": "Preserves aim, preview, June, and security-review condition."
+    },
+    {
+      "id": "edit_2",
+      "category": "editing",
+      "prompt": "Make this shorter without dropping any action: Please review the draft, leave comments by Friday, and assign an owner to each unresolved issue.",
+      "correctness_rubric": "Keeps review, comments by Friday, and owner for each unresolved issue."
+    },
+    {
+      "id": "edit_3",
+      "category": "editing",
+      "prompt": "Rewrite in plain English: The implementation is contingent upon the availability of the required input dataset.",
+      "correctness_rubric": "Implementation depends on the required dataset being available; no new facts."
+    },
+    {
+      "id": "plan_1",
+      "category": "planning",
+      "prompt": "Plan a 45-minute review of a small landing page. Include checking the main link, mobile layout, and spelling.",
+      "correctness_rubric": "All three checks; explicit allocations totaling at most 45 minutes."
+    },
+    {
+      "id": "plan_2",
+      "category": "planning",
+      "prompt": "We have 2 hours to prepare an internal demo. The feature works locally but has no setup notes. Propose a plan.",
+      "correctness_rubric": "Includes verifying the demo and setup notes; fits 2 hours; no invented deployment requirements."
+    },
+    {
+      "id": "plan_3",
+      "category": "planning",
+      "prompt": "Choose what to fix first: a broken signup button affecting every visitor or a minor typo in the footer. Explain briefly.",
+      "correctness_rubric": "Prioritizes signup; concrete impact explanation."
+    },
+    {
+      "id": "extract_1",
+      "category": "extraction",
+      "prompt": "From this text, list only the two deadlines: Design review is May 4. Sam owns analytics. Release freeze is May 9.",
+      "correctness_rubric": "May 4 and May 9 only; no extra deadline."
+    },
+    {
+      "id": "extract_2",
+      "category": "extraction",
+      "prompt": "Return only the count of failed checks: pass, fail, pass, fail, fail.",
+      "correctness_rubric": "3 only."
+    },
+    {
+      "id": "extract_3",
+      "category": "extraction",
+      "prompt": "List the unique names in first-appearance order: Mina, Jo, Mina, Pat, Jo.",
+      "correctness_rubric": "Mina, Jo, Pat; each once."
+    },
+    {
+      "id": "format_1",
+      "category": "format",
+      "prompt": "Give exactly two bullet points for checking a draft before publication.",
+      "correctness_rubric": "Exactly two bullets; useful checks; no introduction or closing."
+    },
+    {
+      "id": "format_2",
+      "category": "format",
+      "prompt": "In one sentence, explain why a backup is useful before editing a configuration file.",
+      "correctness_rubric": "One sentence; explains restoration if an edit goes wrong."
+    }
+  ],
+  "primary_outcome": "Task correctness pass rate using supplied rubric, paired by task and repeat.",
+  "secondary_outcomes": [
+    "format_adherence",
+    "blind_usefulness_1_to_5",
+    "word_count"
+  ],
+  "minimum_practical_gain": "Choose before running; suggested decision criterion: at least 5 percentage points correctness improvement with no lower format adherence, followed by replication. This threshold is a preference, not statistical validation.",
+  "limitations": [
+    "One personality label and task set cannot establish all personality prompting works.",
+    "Different label wording, models, prompts and app settings require separate evaluations.",
+    "No results have been collected for this protocol."
+  ]
+}

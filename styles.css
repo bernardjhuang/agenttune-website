@@ -5811,3 +5811,11 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
   .hp2-test-col { border-left: 0; border-top: 1px solid var(--border); }
   .hp2-test-col:first-child { border-top: 0; }
 }
+
+/* Research tutorials keep code and interactive controls readable on narrow screens. */
+.guide-prose pre:not(.guide-snippet) { padding: 20px; border: 1px solid var(--line, #ded8ce); border-radius: 8px; background: var(--surface, #fff); white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; font-size: 14px; }
+#tie-explorer { padding: 20px; border: 1px solid var(--line, #ded8ce); border-radius: 10px; background: var(--surface, #fff); }
+#tie-explorer select { font: inherit; max-width: 100%; min-height: 44px; padding: 6px 10px; color: var(--ink); background: #fff; border: 1px solid var(--muted); border-radius: 4px; }
+#tie-explorer fieldset { margin-top: 20px; padding: 12px; min-width: 0; }
+#tie-explorer label { display: inline-block; padding: 8px 0; }
+#tie-explorer input { accent-color: var(--sys-mbti); width: 18px; height: 18px; vertical-align: middle; }

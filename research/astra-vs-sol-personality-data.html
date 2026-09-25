@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT-6 Astra vs Sol: what the self-reports show | AgentTune</title>
+  <meta name="description" content="Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts." />
+
+  <meta property="og:title" content="GPT-6 Astra vs Sol: what the self-reports show" />
+  <meta property="og:description" content="Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/astra-vs-sol-personality-data" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GPT-6 Astra vs Sol: what the self-reports show" />
+  <meta name="twitter:description" content="Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/astra-vs-sol-personality-data" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GPT-6 Astra vs Sol: what the self-reports show","description":"Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts.","url":"https://agent-tune.com/research/astra-vs-sol-personality-data","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"GPT-6 Astra vs Sol: what the self-reports show"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">GPT-6 Astra vs Sol: what the self-reports show</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
+        <h1 class="h-hero h-research-hero">GPT-6 Astra vs Sol: what the self-reports show</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Astra and Sol each supplied 100 five-test batteries. This gives us detailed answer records, but the instructions used to obtain them were different. The comparison is useful as a description of those two collections, not a clean estimate of a model-only effect.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> Astra has 19 fully resolved INTJ results and Sol has 79. Sol’s mean Openness is 46.87 versus Astra’s 44.54. Different elicitation instructions and surrounding context prevent attributing those differences to the model alone.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>The experimental unit is a session</h2>
+        <p>Each cohort contains 100 sessions, with all five tests completed in each session: 500 assessments per model, 1,000 total. That is not 1,000 independent sessions. Within a model, battery IDs can connect its own tests. Matching Astra battery 12 with Sol battery 12 would not create a paired experiment.</p><p>The archive identifies both as Codex runs with xhigh effort and the same CLI version. Astra’s full administration prompt is available; Sol’s supplied report preserves its instruction prefix, not the complete administration prompt. Default sampling was used, with temperature and seed not exposed.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>MBTI: look at margins before labels</h2>
+        <div class="guide-table-wrap" role="region" aria-label="MBTI: look at margins before labels: table 1" tabindex="0"><table><thead><tr><th scope="col">Axis margin</th><th scope="col">Astra mean</th><th scope="col">Sol mean</th></tr></thead><tbody><tr><th scope="row">I-E</th><td>1.64</td><td>3.67</td></tr><tr><th scope="row">N-S</th><td>-0.43</td><td>1.91</td></tr><tr><th scope="row">T-F</th><td>8.62</td><td>6.16</td></tr><tr><th scope="row">J-P</th><td>10.86</td><td>10.23</td></tr></tbody></table></div><p>Positive margins favor the first letter named in each row. Astra’s mean N–S margin is slightly negative, while Sol’s is positive. Astra also has 24 S/N ties, compared with 16 for Sol. Their original INTJ label counts are 45 and 97; leaving all tied axes unresolved reduces those counts to 19 and 79.</p><p>The signed margins explain more than the label alone. They still reflect a questionnaire scored under a specific prompt. A small aggregate margin can coexist with individual records on either side of a boundary.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Big Five: raw totals, not percentiles</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Big Five: raw totals, not percentiles: table 2" tabindex="0"><table><thead><tr><th scope="col">Trait</th><th scope="col">Astra mean</th><th scope="col">Sol mean</th><th scope="col">Sol − Astra</th></tr></thead><tbody><tr><th scope="row">O</th><td>44.54</td><td>46.87</td><td>+2.33</td></tr><tr><th scope="row">C</th><td>43.73</td><td>43.62</td><td>-0.11</td></tr><tr><th scope="row">E</th><td>32.75</td><td>30.75</td><td>-2.00</td></tr><tr><th scope="row">A</th><td>45.07</td><td>44.99</td><td>-0.08</td></tr><tr><th scope="row">N</th><td>19.14</td><td>20.05</td><td>+0.91</td></tr></tbody></table></div><p>O is Openness, C Conscientiousness, E Extraversion, A Agreeableness and N Neuroticism. Each total ranges from 10 to 50. Dividing by 50 does not make a human population percentile. The differences are descriptive; they do not establish which model is more creative, dependable or emotionally stable in use.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A shared attachment label can hide different coordinates</h2>
+        <p>Both cohorts receive Secure in all 100 attachment administrations. Their average anxiety/avoidance coordinates are 1.45/2.31 for Astra and 2.17/3.12 for Sol. Both coordinates remain on the same side of this scorer’s boundary at 4.</p><p>The common label therefore does not mean identical answers. Nor does it establish a relationship capacity or psychological attachment style. The prompts adapted human relationship language to assistant interactions, and the resulting numbers are self-description scores under that adaptation.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The midpoint instruction is a material difference</h2>
+        <p>Astra was explicitly instructed to use the midpoint when an item lacked a meaningful behavioral analogue and to list that item as inapplicable. Its records include 1,823 such flags across 17,000 item responses. All flagged responses equal the relevant midpoint. Missing equivalent flags in another cohort cannot be read as proof that every item was applicable.</p><p>Astra also reports surrounding storage instructions and skill metadata. Those contextual differences are part of the collected conditions. The available archive cannot separate their effect from the model identity.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A better next comparison</h2>
+        <p>Use the same full prompt, frozen item order, effort setting and context for both models. Record the exact model identifier, client version, sampling settings and any unavoidable scaffolding. Alternate model order in blocks, start each battery in a fresh session, and retain every attempted run with its completion status.</p><p>Preselect the outcomes: axis margins, raw trait totals, tie rates and inapplicable-item rates. To choose a model for work, add a separate task evaluation with explicit correctness criteria. A difference on these questionnaires is a hypothesis about communication, not evidence of task quality.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/ai-personality-five-models-2026" target="_blank" rel="noopener">September 2026 study: protocols and limitations</a></li>
+          <li><a href="/research/data/september-2026-responses.json" target="_blank" rel="noopener">Frozen raw answers (JSON)</a></li>
+          <li><a href="/research/data/september-2026-instruments.json" target="_blank" rel="noopener">Frozen questionnaire items and keys</a></li>
+          <li><a href="/research/data/content-analysis.cjs" target="_blank" rel="noopener">Reanalysis code (CommonJS)</a></li>
+          <li><a href="/research/data/content-analysis.json" target="_blank" rel="noopener">Complete derived results (JSON)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-neutral-answers"><span class="guide-related-kicker">Continue reading</span>Why midpoint answers need context</a>
+          <a href="/guides/reproduce-ai-personality-research"><span class="guide-related-kicker">Continue reading</span>Reproduce the analysis</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

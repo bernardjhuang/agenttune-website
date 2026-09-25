@@ -586,3 +586,16 @@ Anyone can fork, modify, ship in their own product, or submit PRs. License: MIT.
 - [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) and [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality): original labels, exact ties and untested communication instructions.
 
 Exact ties are unresolved, not evidence of a preferred type. These self-reports are not validated AI psychological traits, a performance ranking, or a demonstrated benefit from tuning.
+
+## New resources · September 25, 2026
+
+- [Build an Enneagram test in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript): Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved.
+- [Are AI models really INTJ? The tie-breaking effect](https://agent-tune.com/research/ai-mbti-tie-breaking): 335 INTJ labels become 280 fully resolved results when tied axes stay unresolved. Explore the scoring policy in 400 frozen MBTI records.
+- [Opus 5.5 vs Fable 5.1: which answers differ?](https://agent-tune.com/research/opus-vs-fable-question-level): Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.
+- [GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data): Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts.
+- [What does “neutral” mean when an AI takes a test?](https://agent-tune.com/research/ai-neutral-answers): Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.
+- [Does a stable result mean a stable AI personality?](https://agent-tune.com/research/ai-personality-repeatability): Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.
+- [How to reproduce AgentTune’s AI self-report research](https://agent-tune.com/guides/reproduce-ai-personality-research): Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.
+- [When does Claude follow your preferences? A test kit](https://agent-tune.com/guides/claude-preferences-test): Test Claude account and project instructions with 36 planned replies, fixed prompts, pass/fail criteria and a downloadable worksheet. Protocol only.
+- [Does Muse remember Soul.md changes? A persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test): Check a Muse Soul.md preference across new chats, a later day and restoration. Includes exact probes and a 45-row worksheet; no measured results yet.
+- [Do personality prompts beat plain-English preferences?](https://agent-tune.com/guides/personality-prompts-vs-plain-english): A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet.

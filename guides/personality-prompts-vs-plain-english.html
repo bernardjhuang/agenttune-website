@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personality prompts vs plain English: test kit | AgentTune</title>
+  <meta name="description" content="A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet." />
+
+  <meta property="og:title" content="Do personality prompts beat plain-English preferences?" />
+  <meta property="og:description" content="A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/guides/personality-prompts-vs-plain-english" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Do personality prompts beat plain-English preferences?" />
+  <meta name="twitter:description" content="A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/personality-prompts-vs-plain-english" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Do personality prompts beat plain-English preferences?","description":"A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet.","url":"https://agent-tune.com/guides/personality-prompts-vs-plain-english","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Do personality prompts beat plain-English preferences?"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Do personality prompts beat plain-English preferences?</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Test kit · protocol, not results</span>
+        <h1 class="h-hero h-research-hero">Do personality prompts beat plain-English preferences?</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">A personality label may be a useful shorthand. To find out whether it adds value, compare it with the same behavioral instructions without the label. Comparing a detailed tuning against an empty prompt answers a different question.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>The question this experiment can answer</h2>
+        <p>Does adding the phrase “Use an INTJ-style communication approach” improve task correctness or usefulness beyond explicit rules, under one fixed model configuration? It cannot establish whether every personality system or every tuning works. One label, wording and task set define a narrow intervention.</p><p>AgentTune’s existing <a href="/research/does-personality-tuning-change-ai-answers">60-reply pilot</a> compares default, straight and partner conditions. It does not isolate the effect of a personality label against otherwise identical instructions. Its archived ratings should not be reused as results for this new question.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Use three exact conditions</h2>
+        <p><strong>Default:</strong> no added communication instruction. Preserve the same provider and application defaults in every condition.</p><p><strong>Plain English:</strong></p><pre><code>Start with the answer or recommendation. Be concise and explicit about trade-offs. Correct false premises. State what is unknown instead of inventing facts. Follow the requested output format.</code></pre><p><strong>Personality plus the same rules:</strong> prepend <code>Use an INTJ-style communication approach.</code> to that exact block. Do not add examples, extra goals or a longer task description only to this condition.</p><p>The default-to-rules contrast measures the effect of adding the whole rule block. The rules-to-label contrast isolates the added phrase, subject to the collection controls. Neither contrast tests a full customized personality profile.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Freeze the tasks and run order</h2>
+        <p>The kit contains 20 synthetic tasks covering arithmetic, false premises, missing information, editing, planning, extraction and format constraints. Each includes an explicit correctness rubric. Three repeats in all three conditions produce 180 planned replies.</p><p>Use a fresh context for each reply. Fix the exact model ID, effort, sampling settings, tool access and system context. The worksheet rotates condition order across tasks and repeats so each condition occupies each position equally often. Run each three-condition block close together and log service errors and retries separately.</p><p>Do not change the tasks after inspecting which condition wins. If you must repair an ambiguous rubric, version the kit and distinguish the exploratory run from a new confirmatory collection.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Blind the useful parts of scoring</h2>
+        <p>Save raw replies with their collection metadata. Give raters a shuffled copy labeled with opaque IDs, the task and its correctness rubric, but no condition name or prompt block. Keep the mapping separate until ratings are locked. Wording can still reveal a condition, so call this masked presentation rather than guaranteed perfect blinding.</p><ul><li><strong>Primary outcome:</strong> correctness pass/fail against each task’s rubric.</li><li><strong>Secondary:</strong> requested-format adherence, usefulness from 1 to 5, and whitespace-separated word count.</li><li><strong>Usefulness anchors:</strong> 1 cannot complete the task; 3 usable with substantial correction; 5 directly usable and correct.</li></ul><p>Use two raters where possible and retain disagreements before adjudication. Do not treat shorter replies as more useful by definition. A concise answer that drops a required commitment should fail the editing rubric.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Analyze paired tasks without inflating the sample</h2>
+        <p>Compare conditions within the same task and repeat. Show wins, losses and ties, plus the pass-rate difference. Report task-level results alongside the pooled count so repeated simple arithmetic does not hide failures on missing information or editing.</p><p>The 180 replies are repeated observations on 20 selected tasks, not 180 independent task samples. For uncertainty estimates, resample whole tasks with all their conditions and repeats, and state the method. Do not claim population-wide significance from this convenience task set.</p><p>Choose a practical decision threshold before collection. A five-percentage-point correctness gain with no loss of format adherence could be one user preference, but it is not a validated universal threshold. Replicate a promising result with new tasks and on a later date before making a broad claim.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Download the unrun experiment</h2>
+        <p>Download the <a href="/resources/research/personality-prompt-comparison-kit.json" download>conditions, tasks and rubrics</a> and the <a href="/resources/research/personality-prompt-comparison-worksheet.csv" download>180-row collection worksheet</a>. They contain no generated replies or measured outcome values.</p><p>Publish the exact configuration, task set, attempted replies, ratings and exclusions with any future results. If the label adds no benefit, that is useful evidence: direct preferences may be sufficient for that setup. If it helps, identify which tasks improved and whether the gain survives a fresh replication.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/does-personality-tuning-change-ai-answers" target="_blank" rel="noopener">AgentTune: prior 60-reply pilot and limitations</a></li>
+          <li><a href="/resources/research/personality-prompt-comparison-kit.json" target="_blank" rel="noopener">Exact new protocol, tasks and rubrics</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-personality-repeatability"><span class="guide-related-kicker">Related resource</span>Why repetition alone is not validation</a>
+          <a href="/guides/reproduce-ai-personality-research"><span class="guide-related-kicker">Related resource</span>Make a study reproducible</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

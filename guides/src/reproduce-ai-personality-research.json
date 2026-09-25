@@ -1,0 +1,72 @@
+{
+  "slug": "reproduce-ai-personality-research",
+  "route": "/guides/reproduce-ai-personality-research",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "Reproduce AI self-report research | AgentTune",
+  "description": "Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.",
+  "pill": "Developer guide · reproducibility",
+  "h1": "How to reproduce AgentTune’s AI self-report research",
+  "lede": "You can recompute the published September scores without an API key or a model subscription. This guide walks through the frozen files, the scoring conventions and the checks needed before interpreting the output.",
+  "answer": "Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.",
+  "sections": [
+    {
+      "h2": "Download a self-contained scoring folder",
+      "html": "<p>Save these files together without renaming them: <a href=\"/research/data/september-2026-responses.json\" download>responses</a>, <a href=\"/research/data/september-2026-instruments.json\" download>instruments</a>, <a href=\"/research/data/september-2026-score.cjs\" download>original scorer</a>, <a href=\"/research/data/content-analysis.cjs\" download>extended analysis</a>, and <a href=\"/research/data/september-2026-protocols.json\" download>protocols</a>. Node.js runs the CommonJS scripts with no npm dependencies.</p><pre><code>node september-2026-score.cjs &gt; my-summary.json\nnode content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare the parsed JSON with the published <a href=\"/research/data/september-2026-summary.json\">summary</a> and <a href=\"/research/data/content-analysis.json\">extended results</a>. Object-key order is not a research difference. Numeric values should agree; the scripts retain unrounded numbers while article tables round for display.</p>"
+    },
+    {
+      "h2": "Understand what one row represents",
+      "html": "<p>A raw record contains <code>model</code>, <code>administration</code>, <code>test</code> and an ordered <code>answers</code> array. Some records also include <code>inapplicable_items</code>, using one-based item numbers. The answer arrays use the item order in the frozen instrument file.</p><p>The full archive has 2,003 records: 2,000 fresh-session assessments from four models, plus three canonical Grok answer vectors. The extended analysis filters to the four fresh cohorts. Muse has a supplied aggregate report, but no raw vectors in this dataset.</p><p>Astra and Sol each use 100 five-test sessions. Opus and Fable each use 500 one-test sessions. Across instruments, a Claude administration number is not a shared session identifier. Keep that distinction if you compute correlations or resample records.</p>"
+    },
+    {
+      "h2": "Check the scoring contract",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Items / response range</th><th scope=\"col\">Published score</th></tr></thead><tbody><tr><th scope=\"row\">MBTI</th><td>32 / 1–5</td><td>Four signed margins; original label and X for ties</td></tr><tr><th scope=\"row\">Big Five</th><td>50 / 1–5</td><td>Five raw totals, 10–50; 18 frozen reverse items</td></tr><tr><th scope=\"row\">DISC</th><td>16 / 1–5</td><td>Four totals, 4–20; all top ties retained</td></tr><tr><th scope=\"row\">Enneagram</th><td>36 / 1–5</td><td>Nine totals, 4–20; all top ties retained</td></tr><tr><th scope=\"row\">Attachment</th><td>36 / 1–7</td><td>Two means, 1–7; low side includes 4</td></tr></tbody></table></div><p>The instruments are specific implementations, not interchangeable with every questionnaire that uses the same framework name. The frozen Big Five key reverses 18 items. Enneagram legacy labels include a wing heuristic, while the developer resource deliberately returns tied leaders without claiming a validated wing result.</p>"
+    },
+    {
+      "h2": "Verify provenance before changing a file",
+      "html": "<p>The protocol file records source-report hashes and collection details. These identify the supplied artifacts; they are not cryptographic proof that every described model session occurred as claimed. Preserve the original files and create a separate derived output for corrections or alternate scoring.</p><p>In the website repository, <code>node tools/build-content-analysis.js</code> regenerates the JSON and CSV derivatives. The checks verify cohort sizes, distribution totals, tie counts, neutral flags and the reconciliation of item contributions with aggregate score differences.</p>"
+    },
+    {
+      "h2": "Make a result table others can interpret",
+      "html": "<p>Every table should name its model cohort, instrument version, denominator, units, tie policy and rounding. Distinguish an assessment from a session and a simulated draw from a fresh response. Report missing or malformed runs explicitly rather than hiding them in a smaller denominator.</p><p>A statement such as “100 of 100 scored Secure under this attachment key” is reproducible. “This model has secure attachment” introduces a psychological claim the scoring code cannot validate. Similarly, a reported self-description score does not establish improved task accuracy or the effectiveness of a tuning.</p>"
+    },
+    {
+      "h2": "Design an extension that can answer a new question",
+      "html": "<p>Freeze the prompt and analysis plan before collecting new responses. Record exact model IDs, client versions, effort and sampling settings, context and tool access. Save raw outputs before parsing. Track retries as separate attempts and explain any exclusion policy.</p><p>For a comparison, change the factor you intend to study while holding others steady. For a claim about usefulness, add tasks with external correctness criteria and blinded ratings. Start with the <a href=\"/guides/personality-prompts-vs-plain-english\">prompt-comparison test kit</a> if your question is whether a personality label adds anything beyond explicit behavioral preferences.</p>"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Continue reading",
+      "label": "Read the original study",
+      "href": "/research/ai-personality-five-models-2026"
+    },
+    {
+      "kicker": "Continue reading",
+      "label": "Interpret repeated answers",
+      "href": "/research/ai-personality-repeatability"
+    }
+  ],
+  "sources": [
+    {
+      "label": "September 2026 study: protocols and limitations",
+      "href": "/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "Frozen raw answers (JSON)",
+      "href": "/research/data/september-2026-responses.json"
+    },
+    {
+      "label": "Frozen questionnaire items and keys",
+      "href": "/research/data/september-2026-instruments.json"
+    },
+    {
+      "label": "Reanalysis code (CommonJS)",
+      "href": "/research/data/content-analysis.cjs"
+    },
+    {
+      "label": "Complete derived results (JSON)",
+      "href": "/research/data/content-analysis.json"
+    }
+  ]
+}

@@ -79,6 +79,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Opus 5.5 vs Fable 5.1: which answers differ?",
+      "href": "/research/opus-vs-fable-question-level"
+    },
+    {
       "kicker": "Research",
       "label": "Compare Astra, Sol, Grok, Opus and Fable",
       "href": "/research/ai-personality-five-models-2026"

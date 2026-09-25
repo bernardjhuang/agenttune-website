@@ -134,6 +134,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Does Muse remember Soul.md changes? A persistence test kit",
+      "href": "/guides/muse-soul-md-persistence-test"
+    },
+    {
       "kicker": "Library",
       "label": "All 43 tuning files",
       "href": "/library/"
