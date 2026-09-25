@@ -56,5 +56,12 @@ const hub=require('./research-hub').buildHub(summary,protocols);
 const hp=path.join(ROOT,'research.html');let h=fs.readFileSync(hp,'utf8');
 if(h.includes('<!-- SEPTEMBER_RESEARCH_START -->'))h=h.replace(/<!-- SEPTEMBER_RESEARCH_START -->[\s\S]*?<!-- SEPTEMBER_RESEARCH_END -->/,()=>hub);
 else h=h.replace('    <section id="methodology"',hub+'\n    <section id="methodology"');
+const legacy = require('./research-legacy').buildLegacy();
+for (const [key, markup] of Object.entries(legacy)) {
+  const marker = 'MAY_' + key.toUpperCase();
+  const pattern = new RegExp('<!-- ' + marker + '_START -->[\\s\\S]*?<!-- ' + marker + '_END -->');
+  if (!pattern.test(h)) throw new Error('Missing research marker: ' + marker);
+  h = h.replace(pattern, () => '<!-- ' + marker + '_START -->' + markup + '<!-- ' + marker + '_END -->');
+}
 fs.writeFileSync(hp,h);
 console.log('Built five-model research article, dataset summaries and research hub.');

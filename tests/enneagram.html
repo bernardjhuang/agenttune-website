@@ -72,12 +72,13 @@
     </nav>
 
     <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free Enneagram test.</h1>
 
     <!-- INTRO -->
     <section class="quiz-intro" id="quiz-intro">
-      <span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">5-min test · 36 questions</span>
-      <h1 class="h-hero h-research-hero">Free Enneagram test.</h1>
-      <div class="h-hero h-research-hero h-hero-italic" style="color: #2f8a5b;">Instant results, then your tuning file.</div>
+      <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">5-min test · 36 questions</span>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free Enneagram test.</div>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #246f48;">Instant results, then your tuning file.</div>
       <p class="lede">
         Answer 36 quick Likert questions. We'll score it client-side and hand you a Markdown tuning file matched to your dominant motivation, ready to paste into any AI agent's system prompt.
       </p>
@@ -90,7 +91,7 @@
       </div>
 
       <div class="cta-row">
-        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #2f8a5b; border-color: #2f8a5b;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #246f48; border-color: #2f8a5b;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
@@ -170,17 +171,18 @@
         <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #2f8a5b;"></div></div>
         <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 36</div>
       </div>
-      <div class="quiz-card">
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
         <div class="quiz-card-prompt">
-          <div class="avatar avatar-md avatar-solid" style="background: #2f8a5b;" aria-hidden="true">E</div>
+          <div class="avatar avatar-md avatar-solid" style="background: #246f48;" aria-hidden="true">E</div>
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
-        <div class="quiz-likert" role="radiogroup">
-          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
+        <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -192,24 +194,24 @@
 
     <!-- RESULT -->
     <section class="quiz-result" id="quiz-result" hidden>
-      <span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Done · here's your result</span>
+      <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Done · here's your result</span>
       <div class="quiz-result-card" style="border-top-color: #2f8a5b;">
         <div class="quiz-result-headline">
-          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #2f8a5b;">T</div>
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #246f48;">T</div>
           <div>
             <div class="quiz-result-label">Your Enneagram profile</div>
-            <div class="quiz-result-code" id="quiz-result-code" style="color: #2f8a5b;">5w4</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #246f48;">5w4</div>
             <div class="quiz-result-name" id="quiz-result-name">The Investigator</div>
           </div>
         </div>
         <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
 
-        <h3 class="quiz-result-section-h">All nine type scores</h3>
+        <h2 class="quiz-result-section-h">All nine type scores</h2>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
         <div id="quiz-tie-links" class="quiz-tie-links" hidden></div>
         <div id="quiz-export-panel">
-        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <h2 class="quiz-result-section-h">Your tuning file</h2>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
             <div class="c-dots"><span></span><span></span><span></span></div>
@@ -223,7 +225,7 @@
               <span class="c-tab-close">×</span>
             </div>
           </div>
-          <div class="c-editor-body">
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
             <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
             <pre class="c-code" id="quiz-editor-code"></pre>
           </div>
@@ -242,7 +244,7 @@
           <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
         </div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
         <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
@@ -250,13 +252,13 @@
 
 
       <div class="quiz-result-next">
-        <h3>Stack another system for higher fidelity</h3>
+        <h2>Stack another system for higher fidelity</h2>
         <p class="muted">Take another test and layer a second tuning onto your agent.</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
-          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
-          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
         </div>
       </div>
 
@@ -277,7 +279,7 @@
 
         <h3>The 36 items</h3>
         <p>Four items per Enneagram type, presented in type order (items 1–4 are Type 1, 5–8 are Type 2, …, 33–36 are Type 9). User rates each statement on a 1–5 Likert scale: <strong>1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree</strong>. No reverse-scored items.</p>
-        <table class="items-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 1" tabindex="0"><table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Type</th></tr></thead>
           <tbody id="quiz-spec-items">
           <tr><td class="num-col">1</td><td>I am a perfectionist.</td><td class="num-col">1</td></tr>
@@ -317,11 +319,11 @@
           <tr><td class="num-col">35</td><td>I am very accepting and flexible.</td><td class="num-col">9</td></tr>
           <tr><td class="num-col">36</td><td>I avoid confrontation.</td><td class="num-col">9</td></tr>
         </tbody>
-        </table>
+        </table></div>
 
         <h3>Item → type mapping</h3>
         <p>Each item awards points to exactly one type. There are no reverse-scored items — the user's raw 1–5 response is the item's contribution to that type's total.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 2" tabindex="0"><table class="score-table">
           <thead><tr><th>Type</th><th>Item numbers</th><th>Awards score to</th></tr></thead>
           <tbody>
             <tr><td class="mono">T1</td><td class="mono">1, 2, 3, 4</td><td>Type 1 total</td></tr>
@@ -334,7 +336,7 @@
             <tr><td class="mono">T8</td><td class="mono">29, 30, 31, 32</td><td>Type 8 total</td></tr>
             <tr><td class="mono">T9</td><td class="mono">33, 34, 35, 36</td><td>Type 9 total</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>Scoring algorithm</h3><p>Equal highest scores are reported together, without choosing a dominant type or automatically exporting a tuning. Choose a style explicitly from the linked library pages. Enneagram wings apply only to a unique dominant type.</p>
         <ol class="steps-list">
@@ -348,7 +350,7 @@
 
         <h3>Output mapping</h3>
         <p>Fetch the file matching the dominant type from <code>enneagram/&lt;N&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 3" tabindex="0"><table class="score-table">
           <thead><tr><th>Type</th><th>Name</th><th>Core motivation</th><th>File</th></tr></thead>
           <tbody>
             <tr><td class="mono">T1</td><td>Reformer</td><td>Wants it right. Loads precision and improvement.</td><td class="mono">enneagram/1-reformer.md</td></tr>
@@ -361,7 +363,7 @@
             <tr><td class="mono">T8</td><td>Challenger</td><td>Wants control and impact. Loads directness.</td><td class="mono">enneagram/8-challenger.md</td></tr>
             <tr><td class="mono">T9</td><td>Peacemaker</td><td>Wants ease and integration. Loads gentle pacing.</td><td class="mono">enneagram/9-peacemaker.md</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </details>
 
@@ -451,7 +453,7 @@
       $("quiz-runner").hidden = false;
       state.currentIndex = 0;
       renderQuestion();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     function renderQuestion() {
@@ -464,9 +466,10 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const isSel = parseInt(btn.dataset.value) === existing;
         btn.classList.toggle("selected", isSel);
-        btn.setAttribute("aria-checked", isSel ? "true" : "false");
+        btn.setAttribute("aria-pressed", isSel ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
     }
 
     function selectAnswer(value) {
@@ -479,7 +482,7 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
-        btn.setAttribute("aria-checked", selected ? "true" : "false");
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
       });
     }
 
@@ -491,7 +494,7 @@
     });
     $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden || e.repeat) return;
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault();
@@ -535,7 +538,7 @@
         $("quiz-result-blurb").textContent = "These scores are tied. There is no measured dominant type. Compare the linked tunings and choose the communication style you prefer, or retake the test.";
         $("quiz-result-scores").innerHTML = Object.entries(r.scores).map(([k,v]) => `<p>${TYPE_META[k].name}: ${v}/20${tied.includes(k) ? " · tied highest" : ""}</p>`).join("");
         $("quiz-tie-links").innerHTML = tied.map(k => `<a href="/library/enneagram/${FILE_NAMES[k]}">${TYPE_META[k].name} tuning</a>`).join("");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.ATQuiz.focusScreen(document);
         return;
       }
       const meta = TYPE_META[r.dominant];
@@ -555,7 +558,7 @@
         return `
           <div class="quiz-axis">
             <div class="quiz-axis-letters">
-              <span class="quiz-axis-letter ${isWinner ? "winner" : ""}" style="${isWinner ? "color: #2f8a5b;" : ""}">T${t} ${TYPE_META[t].name.replace("The ", "")}</span>
+              <span class="quiz-axis-letter ${isWinner ? "winner" : ""}" style="${isWinner ? "color: #246f48;" : ""}">T${t} ${TYPE_META[t].name.replace("The ", "")}</span>
               <span class="quiz-axis-counts">${score}/20${isWinner ? " · dom" : isWing ? " · wing" : ""}</span>
             </div>
             <div class="quiz-axis-bar"><div class="quiz-axis-fill" style="width: ${pct}%; background: ${isWinner ? "#2f8a5b" : isWing ? "#7a9a85" : "#bdb6a4"};"></div></div>
@@ -580,7 +583,7 @@
         });
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     function renderTuningPreview(tuning, filename) {
@@ -626,11 +629,7 @@
       if (!state.currentTuning) return;
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.dominant);
-      navigator.clipboard.writeText(content).then(() => {
-        const original = this.textContent;
-        this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
-        setTimeout(() => { this.textContent = original; }, 2000);
-      });
+      window.ATQuiz.copyTuning(content, $("quiz-copy-tuning"));
     });
 
     $("quiz-download-tuning").addEventListener("click", function() {
@@ -657,7 +656,7 @@
       state.answers = new Array(36).fill(null);
       $("quiz-result").hidden = true;
       $("quiz-intro").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     // Populate spec items table (for AI agents reading the spec)

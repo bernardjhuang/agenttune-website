@@ -71,11 +71,12 @@
     </nav>
 
     <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free attachment style test.</h1>
 
     <section class="quiz-intro" id="quiz-intro">
-      <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">5-min test · 36 questions · 1–7 scale</span>
-      <h1 class="h-hero h-research-hero">Free attachment style test.</h1>
-      <div class="h-hero h-research-hero h-hero-italic" style="color: #e07a8a;">Instant results, then your tuning file.</div>
+      <span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">5-min test · 36 questions · 1–7 scale</span>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free attachment style test.</div>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #914d59;">Instant results, then your tuning file.</div>
       <p class="lede">Answer 36 questions on a 1–7 Likert scale. We'll score it client-side (handling the 14 reverse-scored items) and hand you a Markdown tuning file matched to your attachment style.</p>
 
       <div class="quiz-intro-meta">
@@ -86,7 +87,7 @@
       </div>
 
       <div class="cta-row">
-        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #e07a8a; border-color: #e07a8a;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #914d59; border-color: #e07a8a;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> through <kbd>7</kbd> keys for fast input. Items reference romantic relationships; if you don't have one, answer about your closest current relationship.</p>
@@ -135,19 +136,20 @@
         <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #e07a8a;"></div></div>
         <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 36</div>
       </div>
-      <div class="quiz-card">
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
         <div class="quiz-card-prompt">
-          <div class="avatar avatar-md avatar-solid" style="background: #e07a8a;" aria-hidden="true">At</div>
+          <div class="avatar avatar-md avatar-solid" style="background: #914d59;" aria-hidden="true">At</div>
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
-        <div class="quiz-likert quiz-likert-7" role="radiogroup">
-          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="6"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="7"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
+        <div class="quiz-likert quiz-likert-7" role="group">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Strongly disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Slightly disagree"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Neutral"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Slightly agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="6" aria-label="6 — Agree"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="7" aria-label="7 — Strongly agree"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -158,22 +160,22 @@
     </section>
 
     <section class="quiz-result" id="quiz-result" hidden>
-      <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Done · here's your result</span>
+      <span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Done · here's your result</span>
       <div class="quiz-result-card" style="border-top-color: #e07a8a;">
         <div class="quiz-result-headline">
-          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #e07a8a;">Se</div>
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #914d59;">Se</div>
           <div>
             <div class="quiz-result-label">Your attachment style</div>
-            <div class="quiz-result-code" id="quiz-result-code" style="color: #e07a8a;">Secure</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #914d59;">Secure</div>
             <div class="quiz-result-name" id="quiz-result-name"></div>
           </div>
         </div>
         <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
 
-        <h3 class="quiz-result-section-h">Your position on the plane</h3>
+        <h2 class="quiz-result-section-h">Your position on the plane</h2>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
-        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <h2 class="quiz-result-section-h">Your tuning file</h2>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
             <div class="c-dots"><span></span><span></span><span></span></div>
@@ -187,7 +189,7 @@
               <span class="c-tab-close">×</span>
             </div>
           </div>
-          <div class="c-editor-body">
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
             <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
             <pre class="c-code" id="quiz-editor-code"></pre>
           </div>
@@ -206,7 +208,7 @@
           <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
         </div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
         <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
       </div>
@@ -216,9 +218,9 @@
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
-          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
-          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
         </div>
       </div>
 
@@ -239,7 +241,7 @@
 
         <h3>The 36 items</h3>
         <p>18 anxiety items (items 1–18) and 18 avoidance items (items 19–36). User rates each statement on a <strong>1–7 Likert scale</strong> (not 1–5): <strong>1 = Strongly Disagree, 4 = Neutral, 7 = Strongly Agree</strong>. <strong>14 of the 36 items are reverse-scored</strong> — see the <em>Rev?</em> column below.</p>
-        <table class="items-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Attachment specification table 1" tabindex="0"><table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Subscale</th><th class="num-col">Rev?</th></tr></thead>
           <tbody id="quiz-spec-items">
           <tr><td class="num-col">1</td><td>I&#39;m afraid that I will lose my partner&#39;s love.</td><td class="num-col">Anxiety</td><td class="num-col">—</td></tr>
@@ -279,17 +281,17 @@
           <tr><td class="num-col">35</td><td>It&#39;s easy for me to be affectionate with my partner.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
           <tr><td class="num-col">36</td><td>My partner really understands me and my needs.</td><td class="num-col">Avoidance</td><td class="num-col">✓</td></tr>
         </tbody>
-        </table>
+        </table></div>
 
         <h3>Subscale mapping + reverse-scored items</h3>
         <p>Each item belongs to exactly one of two subscales — <strong>anxiety</strong> (fear of abandonment) or <strong>avoidance</strong> (discomfort with closeness). Items marked <em>reverse-scored</em> have their values flipped on the 1–7 scale before being averaged: <code>scored = 8 − raw</code>.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Attachment specification table 2" tabindex="0"><table class="score-table">
           <thead><tr><th>Subscale</th><th>Item range</th><th>Reverse-scored items</th></tr></thead>
           <tbody>
             <tr><td class="mono">Anxiety</td><td class="mono">1–18 (18 items)</td><td class="mono">9, 11</td></tr>
             <tr><td class="mono">Avoidance</td><td class="mono">19–36 (18 items)</td><td class="mono">20, 22, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>Scoring algorithm</h3>
         <ol class="steps-list">
@@ -309,7 +311,7 @@
 
         <h3>Output mapping</h3>
         <p>Fetch the file matching the resulting quadrant from <code>attachment/&lt;style&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Attachment specification table 3" tabindex="0"><table class="score-table">
           <thead><tr><th>Style</th><th>Anxiety</th><th>Avoidance</th><th>One-line</th><th>File</th></tr></thead>
           <tbody>
             <tr><td class="mono">Secure</td><td class="mono">low (≤4)</td><td class="mono">low (≤4)</td><td>Direct without cushioning. Peer register. ~55% of adults.</td><td class="mono">attachment/secure.md</td></tr>
@@ -317,7 +319,7 @@
             <tr><td class="mono">Avoidant</td><td class="mono">low (≤4)</td><td class="mono">high (&gt;4)</td><td>Give them space. No performative warmth they didn't ask for.</td><td class="mono">attachment/avoidant.md</td></tr>
             <tr><td class="mono">Disorganized</td><td class="mono">high (&gt;4)</td><td class="mono">high (&gt;4)</td><td>Tolerate inconsistency. Predictability over warmth.</td><td class="mono">attachment/disorganized.md</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </details>
 
@@ -375,9 +377,9 @@
     ];
 
     const STYLE_META = {
-      secure:       { name: "Secure",       avatar: "Se", color: "#2f8a5b", file: "secure",       blurb: "Direct without cushioning. Peer register. ~55% of adults score Secure." },
-      anxious:      { name: "Anxious",      avatar: "An", color: "#e07a8a", file: "anxious",      blurb: "Reassure with decisiveness. Warmth AND clarity together — no caveats undercutting." },
-      avoidant:     { name: "Avoidant",     avatar: "Av", color: "#3a72c4", file: "avoidant",     blurb: "Give them space. No performative warmth they didn't ask for." },
+      secure:       { name: "Secure",       avatar: "Se", color: "#246f48", file: "secure",       blurb: "Direct without cushioning. Peer register. ~55% of adults score Secure." },
+      anxious:      { name: "Anxious",      avatar: "An", color: "#914d59", file: "anxious",      blurb: "Reassure with decisiveness. Warmth AND clarity together — no caveats undercutting." },
+      avoidant:     { name: "Avoidant",     avatar: "Av", color: "#3160a7", file: "avoidant",     blurb: "Give them space. No performative warmth they didn't ask for." },
       disorganized: { name: "Disorganized", avatar: "Di", color: "#7a4ac8", file: "disorganized", blurb: "Tolerate inconsistency. Predictability over warmth." }
     };
 
@@ -389,7 +391,7 @@
       if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
       state.currentIndex = 0; renderQuestion();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     function renderQuestion() {
@@ -401,9 +403,10 @@
       const existing = state.answers[state.currentIndex];
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
-        btn.setAttribute("aria-checked", parseInt(btn.dataset.value) === existing ? "true" : "false");
+        btn.setAttribute("aria-pressed", parseInt(btn.dataset.value) === existing ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
     }
 
     function selectAnswer(value) {
@@ -416,7 +419,7 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
-        btn.setAttribute("aria-checked", selected ? "true" : "false");
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
       });
     }
 
@@ -426,7 +429,7 @@
     $("quiz-back").addEventListener("click", () => { advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
     $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(4); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden || e.repeat) return;
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
       if (["1","2","3","4","5","6","7"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault(); advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
@@ -505,7 +508,7 @@
         });
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     function renderTuningPreview(tuning, filename) {
@@ -549,10 +552,7 @@
     $("quiz-copy-tuning").addEventListener("click", function() {
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.style);
-      navigator.clipboard.writeText(content).then(() => {
-        const o = this.textContent; this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
-        setTimeout(() => { this.textContent = o; }, 2000);
-      });
+      window.ATQuiz.copyTuning(content, $("quiz-copy-tuning"));
     });
 
     $("quiz-download-tuning").addEventListener("click", function() {
@@ -575,7 +575,7 @@
       advance.cancel();
       state.currentIndex = 0; state.answers = new Array(36).fill(null);
       $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     // Populate spec items table (for AI agents reading the spec)

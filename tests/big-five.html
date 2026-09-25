@@ -71,11 +71,12 @@
     </nav>
 
     <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free Big Five personality test.</h1>
 
     <section class="quiz-intro" id="quiz-intro">
-      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">7-min test · 50 questions · 1–5 scale</span>
-      <h1 class="h-hero h-research-hero">Free Big Five personality test.</h1>
-      <div class="h-hero h-research-hero h-hero-italic" style="color: #3a72c4;">Instant results, then your tuning file.</div>
+      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">7-min test · 50 questions · 1–5 scale</span>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free Big Five personality test.</div>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #3160a7;">Instant results, then your tuning file.</div>
       <p class="lede">Answer 50 quick questions on a 1–5 Likert scale. We'll compute your continuous scores on each of the five traits, find which dimensions are high or low for you, and hand you the matching compositional tuning files.</p>
 
       <div class="quiz-intro-meta">
@@ -153,17 +154,18 @@
         <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #3a72c4;"></div></div>
         <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 50</div>
       </div>
-      <div class="quiz-card">
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
         <div class="quiz-card-prompt">
-          <div class="avatar avatar-md avatar-solid" style="background: #3a72c4;" aria-hidden="true">B5</div>
+          <div class="avatar avatar-md avatar-solid" style="background: #3160a7;" aria-hidden="true">B5</div>
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
-        <div class="quiz-likert" role="radiogroup">
-          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
+        <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -174,25 +176,25 @@
     </section>
 
     <section class="quiz-result" id="quiz-result" hidden>
-      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">Done · here's your result</span>
+      <span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">Done · here's your result</span>
       <div class="quiz-result-card" style="border-top-color: #3a72c4;">
         <div class="quiz-result-headline">
-          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #3a72c4;">B5</div>
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #3160a7;">B5</div>
           <div>
             <div class="quiz-result-label">Your OCEAN profile</div>
-            <div class="quiz-result-code" id="quiz-result-code" style="color: #3a72c4; font-size: 22px;">Continuous trait profile</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #3160a7; font-size: 22px;">Continuous trait profile</div>
             <div class="quiz-result-name" id="quiz-result-name">5 dimensions, compositional</div>
           </div>
         </div>
         <div class="quiz-result-blurb" id="quiz-result-blurb">The Big Five doesn't return a single type — it returns continuous scores. We load tuning files only for dimensions where you score meaningfully high or low (|z| &gt; 0.5). Average dimensions are skipped; the model's default handles them.</div>
 
-        <h3 class="quiz-result-section-h">Your five trait z-scores</h3>
+        <h2 class="quiz-result-section-h">Your five trait z-scores</h2>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
-        <h3 class="quiz-result-section-h">Tuning files to load</h3>
+        <h2 class="quiz-result-section-h">Tuning files to load</h2>
         <div class="quiz-result-files" id="quiz-result-files"></div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 28px;">Your bundled tuning</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 28px;">Your bundled tuning</h2>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
             <div class="c-dots"><span></span><span></span><span></span></div>
@@ -206,7 +208,7 @@
               <span class="c-tab-close">×</span>
             </div>
           </div>
-          <div class="c-editor-body">
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
             <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
             <pre class="c-code" id="quiz-editor-code"></pre>
           </div>
@@ -225,7 +227,7 @@
           <a class="btn btn-secondary" id="quiz-github-link" href="https://github.com/bernardjhuang/agenttune/tree/main/ocean" target="_blank" rel="noopener">View all OCEAN files</a>
         </div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
         <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
       </div>
@@ -235,9 +237,9 @@
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
-          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
-          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
         </div>
       </div>
 
@@ -258,7 +260,7 @@
 
         <h3>The 50 items</h3>
         <p>Ten items per OCEAN dimension (O / C / E / A / N), <strong>interleaved</strong> in a fixed rotation (item 1 = E, 2 = A, 3 = C, 4 = N, 5 = O, 6 = E, …). Each statement begins with an implicit "I …" (e.g. "Am the life of the party" → "I am the life of the party"). User rates each on a <strong>1–5 Likert scale</strong>: <strong>1 = Very Inaccurate, 5 = Very Accurate</strong>. <strong>18 of the 50 items are reverse-scored</strong> — see the <em>Rev?</em> column.</p>
-        <table class="items-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Big Five specification table 1" tabindex="0"><table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement (implicit "I…")</th><th class="num-col">Dim</th><th class="num-col">Rev?</th></tr></thead>
           <tbody id="quiz-spec-items">
           <tr><td class="num-col">1</td><td>Am the life of the party.</td><td class="num-col">E</td><td class="num-col">—</td></tr>
@@ -312,11 +314,11 @@
           <tr><td class="num-col">49</td><td>Often feel blue.</td><td class="num-col">N</td><td class="num-col">—</td></tr>
           <tr><td class="num-col">50</td><td>Am full of ideas.</td><td class="num-col">O</td><td class="num-col">—</td></tr>
         </tbody>
-        </table>
+        </table></div>
 
         <h3>Dimension mapping</h3>
         <p>Each item belongs to exactly one dimension. Reverse-scored items have their raw value flipped before being summed: <code>scored = 6 − raw</code>.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Big Five specification table 2" tabindex="0"><table class="score-table">
           <thead><tr><th>Dim</th><th>Name</th><th>Item numbers</th><th>Population mean (M)</th><th>SD</th></tr></thead>
           <tbody>
             <tr><td class="mono">O</td><td>Openness</td><td class="mono">5, 10, 15, 20, 25, 30, 35, 40, 45, 50</td><td class="mono">37.5</td><td class="mono">5.5</td></tr>
@@ -325,7 +327,7 @@
             <tr><td class="mono">A</td><td>Agreeableness</td><td class="mono">2, 7, 12, 17, 22, 27, 32, 37, 42, 47</td><td class="mono">36.5</td><td class="mono">5.5</td></tr>
             <tr><td class="mono">N</td><td>Neuroticism</td><td class="mono">4, 9, 14, 19, 24, 29, 34, 39, 44, 49</td><td class="mono">26.0</td><td class="mono">7.0</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>Scoring algorithm</h3>
         <ol class="steps-list">
@@ -345,7 +347,7 @@
 
         <h3>Output mapping</h3>
         <p>Fetch each crossing dimension's file from <code>ocean/&lt;LETTER&gt;-&lt;high|low&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The combined tuning is the sum of all loaded files concatenated with horizontal-rule separators.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Big Five specification table 3" tabindex="0"><table class="score-table">
           <thead><tr><th>Dim</th><th>High file</th><th>High one-line</th><th>Low file</th><th>Low one-line</th></tr></thead>
           <tbody>
             <tr>
@@ -374,7 +376,7 @@
               <td class="mono">ocean/N-low.md</td><td>Plain-faced risk discussion. Skepticism without dressing.</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </details>
 
@@ -446,10 +448,10 @@
     // Population norms (M, SD)
     const NORMS = {
       O: { M: 37.5, SD: 5.5, name: "Openness",          color: "#5b4dc0" },
-      C: { M: 34.5, SD: 6.0, name: "Conscientiousness", color: "#3a72c4" },
-      E: { M: 28.5, SD: 7.0, name: "Extraversion",      color: "#d99632" },
-      A: { M: 36.5, SD: 5.5, name: "Agreeableness",     color: "#2f8a5b" },
-      N: { M: 26.0, SD: 7.0, name: "Neuroticism",       color: "#c8553d" }
+      C: { M: 34.5, SD: 6.0, name: "Conscientiousness", color: "#3160a7" },
+      E: { M: 28.5, SD: 7.0, name: "Extraversion",      color: "#855b1c" },
+      A: { M: 36.5, SD: 5.5, name: "Agreeableness",     color: "#246f48" },
+      N: { M: 26.0, SD: 7.0, name: "Neuroticism",       color: "#9f4427" }
     };
 
     const state = { currentIndex: 0, answers: new Array(50).fill(null), currentTuning: "", resultVersion: 0 };
@@ -460,7 +462,7 @@
       if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
       state.currentIndex = 0; renderQuestion();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     function renderQuestion() {
@@ -475,9 +477,10 @@
       const existing = state.answers[state.currentIndex];
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
-        btn.setAttribute("aria-checked", parseInt(btn.dataset.value) === existing ? "true" : "false");
+        btn.setAttribute("aria-pressed", parseInt(btn.dataset.value) === existing ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
     }
 
     function selectAnswer(value) {
@@ -490,7 +493,7 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
-        btn.setAttribute("aria-checked", selected ? "true" : "false");
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
       });
     }
 
@@ -500,7 +503,7 @@
     $("quiz-back").addEventListener("click", () => { advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
     $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden || e.repeat) return;
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault(); advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
@@ -609,7 +612,7 @@
         });
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     function renderTuningPreview(tuning, filename) {
@@ -679,10 +682,7 @@
     $("quiz-copy-tuning").addEventListener("click", function() {
       const r = computeResult(state.answers);
       const content = state.currentTuning || buildCombinedTuning(r.files);
-      navigator.clipboard.writeText(content).then(() => {
-        const o = this.textContent; this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
-        setTimeout(() => { this.textContent = o; }, 2000);
-      });
+      window.ATQuiz.copyTuning(content, $("quiz-copy-tuning"));
     });
 
     $("quiz-download-tuning").addEventListener("click", function() {
@@ -705,7 +705,7 @@
       advance.cancel();
       state.currentIndex = 0; state.answers = new Array(50).fill(null);
       $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     // Populate spec items table (for AI agents reading the spec)

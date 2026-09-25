@@ -485,7 +485,7 @@ Sometimes &quot;stuck&quot; means you&#39;ve been carrying it alone, and the pro
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/enneagram/1-reformer" style="color: #2f8a5b;">T1 Reformer →</a><a class="lib-related-pill" href="/library/enneagram/3-achiever" style="color: #2f8a5b;">T3 Achiever →</a><a class="lib-related-pill" href="/library/enneagram/9-peacemaker" style="color: #2f8a5b;">T9 Peacemaker →</a><a class="lib-related-pill" href="/library/enneagram/4-individualist" style="color: #2f8a5b;">T4 Individualist →</a>
+        <a class="lib-related-pill" href="/library/enneagram/1-reformer" style="color: #246f48;">T1 Reformer →</a><a class="lib-related-pill" href="/library/enneagram/3-achiever" style="color: #246f48;">T3 Achiever →</a><a class="lib-related-pill" href="/library/enneagram/9-peacemaker" style="color: #246f48;">T9 Peacemaker →</a><a class="lib-related-pill" href="/library/enneagram/4-individualist" style="color: #246f48;">T4 Individualist →</a>
         <a class="lib-related-pill is-all" href="/library/#enneagram">All 9 Enneagram types →</a>
       </div>
     </section>
@@ -530,8 +530,16 @@ Sometimes &quot;stuck&quot; means you&#39;ve been carrying it alone, and the pro
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

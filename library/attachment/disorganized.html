@@ -492,7 +492,7 @@ Either is fine — what&#39;s not fine is staying in the in-between. Which feels
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/attachment/secure" style="color: #7a4ac8;">Secure →</a><a class="lib-related-pill" href="/library/attachment/anxious" style="color: #7a4ac8;">Anxious →</a><a class="lib-related-pill" href="/library/attachment/avoidant" style="color: #7a4ac8;">Avoidant →</a>
+        <a class="lib-related-pill" href="/library/attachment/secure" style="color: #7346be;">Secure →</a><a class="lib-related-pill" href="/library/attachment/anxious" style="color: #7346be;">Anxious →</a><a class="lib-related-pill" href="/library/attachment/avoidant" style="color: #7346be;">Avoidant →</a>
         <a class="lib-related-pill is-all" href="/library/#attachment">All 4 Attachment styles →</a>
       </div>
     </section>
@@ -537,8 +537,16 @@ Either is fine — what&#39;s not fine is staying in the in-between. Which feels
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

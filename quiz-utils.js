@@ -50,5 +50,43 @@
     return { type: unresolved.length ? null : pattern, pattern, axes, tied, incomplete, unresolved };
   }
 
-  return { transition, scoreMbti };
+  // Answer buttons advance immediately, so they are buttons rather than a radio group.
+  function focusQuestion(doc, index, total) {
+    const card = doc.getElementById("quiz-card");
+    const text = id => doc.getElementById(id)?.textContent || "";
+    const prompt = text("quiz-item-statement") || "First statement: " + text("quiz-statement-first") + ". Second statement: " + text("quiz-statement-second");
+    const label = `Question ${index + 1} of ${total}. ${prompt}`;
+    doc.getElementById("quiz-announcement").textContent = doc.activeElement === card ? label : "";
+    card.setAttribute("aria-label", label);
+    card.focus({ preventScroll: true });
+  }
+  function focusScreen(doc) {
+    const result = doc.getElementById("quiz-result");
+    const target = !result.hidden ? doc.getElementById("quiz-result-code") :
+      !doc.getElementById("quiz-intro").hidden ? doc.getElementById("quiz-start") : doc.getElementById("quiz-card");
+    target.setAttribute("tabindex", target.tagName === "BUTTON" ? "0" : "-1");
+    target.focus({ preventScroll: true });
+    globalThis.scrollTo({ top: 0, behavior: "auto" });
+  }
+  function ignoreShortcut(e) {
+    return e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey ||
+      /^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName || "") || e.target?.isContentEditable ||
+      (e.target?.closest && !!e.target.closest('[role="dialog"]'));
+  }
+  async function copyTuning(text, button) {
+    const original = button.dataset.copyLabel || button.textContent;
+    button.dataset.copyLabel = original;
+    button.setAttribute("aria-live", "polite");
+    try {
+      await globalThis.navigator.clipboard.writeText(text);
+      button.textContent = "Copied ✓";
+      if (globalThis.atTrack) globalThis.atTrack("tuning_copy");
+      globalThis.setTimeout(() => { button.textContent = original; }, 2000);
+      return true;
+    } catch {
+      button.textContent = "Copy unavailable — select the text or download";
+      return false;
+    }
+  }
+  return { transition, scoreMbti, focusQuestion, focusScreen, ignoreShortcut, copyTuning };
 });
