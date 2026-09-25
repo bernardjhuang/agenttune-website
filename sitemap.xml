@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>https://agent-tune.com/guides/enneagram-test-react-typescript</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-mbti-tie-breaking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/opus-vs-fable-question-level</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/astra-vs-sol-personality-data</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-neutral-answers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-personality-repeatability</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/reproduce-ai-personality-research</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/claude-preferences-test</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/muse-soul-md-persistence-test</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/personality-prompts-vs-plain-english</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
     <loc>https://agent-tune.com/research/ai-personality-five-models-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

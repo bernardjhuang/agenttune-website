@@ -73,6 +73,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Does Muse remember Soul.md changes? A persistence test kit",
+      "href": "/guides/muse-soul-md-persistence-test"
+    },
+    {
       "kicker": "Setup",
       "label": "Where Muse personality settings live",
       "href": "/guides/muse-personality"

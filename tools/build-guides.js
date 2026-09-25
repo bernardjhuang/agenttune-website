@@ -236,7 +236,7 @@ ${relatedHtml}
 
   <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/guide-prompts.js"></script>${(spec.scripts || []).map(src => `\n  <script defer src="${escAttr(src)}"></script>`).join("")}
 </body>
 </html>
 `;

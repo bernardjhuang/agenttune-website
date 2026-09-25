@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "enneagram-test-react-typescript",
+    "route": "/guides/enneagram-test-react-typescript",
+    "description": "Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved.",
+    "pill": "Developer resource · runnable starter",
+    "title": "Build an Enneagram test in React + TypeScript"
+  },
+  {
+    "slug": "ai-mbti-tie-breaking",
+    "route": "/research/ai-mbti-tie-breaking",
+    "title": "Are AI models really INTJ? The tie-breaking effect",
+    "description": "335 INTJ labels become 280 fully resolved results when tied axes stay unresolved. Explore the scoring policy in 400 frozen MBTI records.",
+    "pill": "Research · descriptive reanalysis"
+  },
+  {
+    "slug": "opus-vs-fable-question-level",
+    "route": "/research/opus-vs-fable-question-level",
+    "title": "Opus 5.5 vs Fable 5.1: which answers differ?",
+    "description": "Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.",
+    "pill": "Research · descriptive reanalysis"
+  },
+  {
+    "slug": "astra-vs-sol-personality-data",
+    "route": "/research/astra-vs-sol-personality-data",
+    "title": "GPT-6 Astra vs Sol: what the self-reports show",
+    "description": "Astra and Sol differ on MBTI margins, Big Five means and DISC scores. Compare 1,000 assessments while accounting for different prompts.",
+    "pill": "Research · descriptive reanalysis"
+  },
+  {
+    "slug": "ai-neutral-answers",
+    "route": "/research/ai-neutral-answers",
+    "title": "What does “neutral” mean when an AI takes a test?",
+    "description": "Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.",
+    "pill": "Research · descriptive reanalysis"
+  },
+  {
+    "slug": "ai-personality-repeatability",
+    "route": "/research/ai-personality-repeatability",
+    "title": "Does a stable result mean a stable AI personality?",
+    "description": "Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.",
+    "pill": "Research · descriptive reanalysis"
+  },
+  {
+    "slug": "reproduce-ai-personality-research",
+    "route": "/guides/reproduce-ai-personality-research",
+    "title": "How to reproduce AgentTune’s AI self-report research",
+    "description": "Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.",
+    "pill": "Developer guide · reproducibility"
+  },
+  {
+    "slug": "claude-preferences-test",
+    "route": "/guides/claude-preferences-test",
+    "description": "Test Claude account and project instructions with 36 planned replies, fixed prompts, pass/fail criteria and a downloadable worksheet. Protocol only.",
+    "pill": "Test kit · protocol, not results",
+    "title": "When does Claude follow your preferences? A test kit"
+  },
+  {
+    "slug": "muse-soul-md-persistence-test",
+    "route": "/guides/muse-soul-md-persistence-test",
+    "description": "Check a Muse Soul.md preference across new chats, a later day and restoration. Includes exact probes and a 45-row worksheet; no measured results yet.",
+    "pill": "Test kit · protocol, not results",
+    "title": "Does Muse remember Soul.md changes? A persistence test kit"
+  },
+  {
+    "slug": "personality-prompts-vs-plain-english",
+    "route": "/guides/personality-prompts-vs-plain-english",
+    "description": "A controlled 180-reply protocol compares default prompting, explicit rules and the same rules plus an INTJ label. Includes tasks, rubrics and a worksheet.",
+    "pill": "Test kit · protocol, not results",
+    "title": "Do personality prompts beat plain-English preferences?"
+  }
+]

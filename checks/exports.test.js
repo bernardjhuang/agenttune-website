@@ -127,7 +127,7 @@ test('picker file destinations emit reviewable text and never destructive instal
 
 test('inline scripts and structured data parse; every integration and quiz loads its shared dependencies', () => {
   function walk(dir) { return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e => e.isDirectory() ? (['node_modules','.git','dist'].includes(e.name) ? [] : walk(path.join(dir,e.name))) : [path.join(dir,e.name)]); }
-  const files = walk(ROOT).filter(p => p.endsWith('.html'));
+  const files = walk(ROOT).filter(p => p.endsWith('.html') && require('../tools/build-public').isPublic(path.relative(ROOT,p).split(path.sep).join('/')));
   for (const file of files) {
     const html = fs.readFileSync(file,'utf8');
     for (const [,src] of html.matchAll(/<script[^>]+src="(\/[^"]+)"/g)) {

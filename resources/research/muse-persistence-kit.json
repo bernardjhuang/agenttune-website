@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "published": "2026-09-25",
+  "status": "protocol_not_run",
+  "results": [],
+  "purpose": "Manual within-account persistence check; not a controlled estimate across users or accounts.",
+  "soul_addition": "For planning questions, use exactly three headings: Recommendation, Trade-off, Next step. Keep the whole response under 120 words unless I ask for detail. Do not add praise or compliments. Do not apply this format when I explicitly ask for another format.",
+  "phases": [
+    "baseline",
+    "same_chat_after_edit",
+    "new_chat_after_edit",
+    "next_day_new_chat",
+    "new_chat_after_restore"
+  ],
+  "tasks": [
+    {
+      "id": "plan",
+      "prompt": "Help me plan a 30-minute weekly review for a small project.",
+      "expected": "Exactly the three saved headings; under 120 words; useful plan within 30 minutes."
+    },
+    {
+      "id": "decision",
+      "prompt": "I can spend one hour improving documentation or polishing a decorative animation before a small internal release. Help me decide.",
+      "expected": "Three headings; under 120 words; recommendation supported by stated uncertainty, without invented facts."
+    },
+    {
+      "id": "exception",
+      "prompt": "Answer in exactly one sentence: what is one useful thing to check before sharing a project update?",
+      "expected": "One sentence, no three-heading format; useful answer."
+    }
+  ],
+  "repeats": 3,
+  "record": [
+    "date",
+    "app_surface",
+    "model_label_if_visible",
+    "phase",
+    "repeat",
+    "task_id",
+    "soul_snapshot_hash",
+    "identity_snapshot_hash",
+    "memory_snapshot_hash",
+    "raw_reply",
+    "heading_pass",
+    "word_limit_pass",
+    "exception_pass",
+    "correctness_notes"
+  ]
+}

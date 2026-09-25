@@ -1,0 +1,65 @@
+{
+  "slug": "claude-preferences-test",
+  "route": "/guides/claude-preferences-test",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "Test Claude’s saved preferences | AgentTune",
+  "description": "Test Claude account and project instructions with 36 planned replies, fixed prompts, pass/fail criteria and a downloadable worksheet. Protocol only.",
+  "pill": "Test kit · protocol, not results",
+  "h1": "When does Claude follow your preferences? A test kit",
+  "lede": "A saved instruction and a reply that follows it are different observations. This kit helps you check both scope and adherence using the same small set of tasks in fresh conversations.",
+  "answer": "Use a baseline, account instructions alone, and project instructions alone. Compare three repeats of four fixed tasks in each condition. This is a published testing protocol; AgentTune has not collected results for it.",
+  "sections": [
+    {
+      "h2": "Choose the setting that matches the scope",
+      "html": "<p>Anthropic documents Instructions for Claude as account-wide guidance and project instructions as guidance for chats inside that project. Skills can add repeatable behaviors when used. That describes intended scope; it does not give a measured success rate for your chosen preference. See <a href=\"https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features\">Anthropic’s personalization documentation</a>.</p><p>Record the app surface, visible model, date, memory setting, active skills and current instructions. Start with a temporary project containing no unrelated files. Save the original settings before changing them. API system prompts are not a substitute for testing these app settings.</p>"
+    },
+    {
+      "h2": "Install one measurable preference",
+      "html": "<pre><code>Start with the answer or recommendation. Use at most 100 words unless I explicitly request a detailed response. Do not add compliments or praise. Correct false factual premises. If a required fact is missing, identify it rather than inventing it.</code></pre><p>This combines observable requirements with a conditional length preference. Score each requirement separately. A response can be concise and still get the arithmetic wrong; a correct response can still ignore the requested format.</p>"
+    },
+    {
+      "h2": "Run the three conditions",
+      "html": "<ol><li><strong>Baseline:</strong> use a new conversation outside a project with the tested custom instructions removed. Record any other personalization that cannot be disabled.</li><li><strong>Account only:</strong> save the block in Instructions for Claude, then run each task in a new conversation outside a project.</li><li><strong>Project only:</strong> remove the account block, place it in the temporary project instructions, and run each task in a new chat inside that project.</li></ol><p>Use four tasks and three repeats per condition: 36 planned replies. Do not paste the saved instruction into the task prompt; that would test direct prompting instead of persistence. Rotate the condition order across repeats where practical, logging each settings change. If you run baseline first every time, disclose the order confound.</p>"
+    },
+    {
+      "h2": "Use fixed tasks and score the actual reply",
+      "html": "<p>The kit includes an arithmetic total ($130), a one-hour review plan, a missing-data question about renewal rate, and a false premise asserting that 11 × 12 is 142. The last task should be corrected to 132. Save each complete reply before scoring.</p><ul><li><strong>Correctness:</strong> does the reply meet the task’s supplied rubric?</li><li><strong>Answer first:</strong> does the first substantive sentence answer, recommend, or identify the missing information?</li><li><strong>Length:</strong> is the response at most 100 whitespace-separated words?</li><li><strong>No praise:</strong> is it free of compliments or congratulatory filler?</li></ul><p>For ambiguous scores, preserve a note and have a second reader apply the same rubric. Report counts such as 9/12, not just percentages without denominators.</p>"
+    },
+    {
+      "h2": "Diagnose a failure without inventing a cause",
+      "html": "<p>If project instructions work inside the project but not outside, that matches their documented scope. If a preference works when pasted directly but fails when saved, inspect the saved setting and conversation location first. If a long task breaks the word limit, label it a length failure; do not assume the instruction was never loaded.</p><p>A model’s claim that it “remembers” a preference is weaker evidence than complying on a fresh task. Conflicting project instructions, memory, active skills, or a direct request for detail can also change the output. Change one factor per follow-up test and keep the original failure in the record.</p>"
+    },
+    {
+      "h2": "Download, report and restore",
+      "html": "<p>Download the <a href=\"/resources/research/claude-preferences-kit.json\" download>complete prompt and rubric kit</a> and <a href=\"/resources/research/claude-preferences-worksheet.csv\" download>36-row blank worksheet</a>. Every row is marked not_run. No adherence rate or observed failure is being claimed on this page.</p><p>After testing, restore your saved settings and remove the temporary project block. When sharing results, include model/date/surface, every attempted reply, the settings matrix and any exclusions. A small personal check can inform your setup; it cannot establish a universal Claude success rate.</p>"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Anthropic: personalization features",
+      "href": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
+    },
+    {
+      "label": "AgentTune protocol and exact prompts",
+      "href": "/resources/research/claude-preferences-kit.json"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Related resource",
+      "href": "/guides/claude-personality",
+      "label": "Install Claude instructions"
+    },
+    {
+      "kicker": "Related resource",
+      "href": "/guides/best-claude-personality",
+      "label": "Seven behavior-focused preference blocks"
+    },
+    {
+      "kicker": "Related resource",
+      "href": "/guides/personality-prompts-vs-plain-english",
+      "label": "Test whether a personality label adds value"
+    }
+  ]
+}

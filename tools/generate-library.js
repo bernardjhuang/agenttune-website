@@ -1360,6 +1360,16 @@ function gitLastmod(relPath) {
 
 // Non-library pages in the sitemap: route → source file + crawl hints.
 const STATIC_PAGES = [
+  { route: "/guides/enneagram-test-react-typescript", file: "guides/enneagram-test-react-typescript.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-mbti-tie-breaking", file: "research/ai-mbti-tie-breaking.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/opus-vs-fable-question-level", file: "research/opus-vs-fable-question-level.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/astra-vs-sol-personality-data", file: "research/astra-vs-sol-personality-data.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-neutral-answers", file: "research/ai-neutral-answers.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-personality-repeatability", file: "research/ai-personality-repeatability.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/reproduce-ai-personality-research", file: "guides/reproduce-ai-personality-research.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-preferences-test", file: "guides/claude-preferences-test.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/muse-soul-md-persistence-test", file: "guides/muse-soul-md-persistence-test.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/personality-prompts-vs-plain-english", file: "guides/personality-prompts-vs-plain-english.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-personality-five-models-2026", file: "research/ai-personality-five-models-2026.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/fable-personality", file: "guides/fable-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/", file: "index.html", changefreq: "weekly", priority: "1.0", comment: "Landing" },

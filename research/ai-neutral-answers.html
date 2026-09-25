@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI test midpoints: neutral or inapplicable? | AgentTune</title>
+  <meta name="description" content="Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits." />
+
+  <meta property="og:title" content="What does “neutral” mean when an AI takes a test?" />
+  <meta property="og:description" content="Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/ai-neutral-answers" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What does “neutral” mean when an AI takes a test?" />
+  <meta name="twitter:description" content="Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/ai-neutral-answers" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What does “neutral” mean when an AI takes a test?","description":"Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.","url":"https://agent-tune.com/research/ai-neutral-answers","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"What does “neutral” mean when an AI takes a test?"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">What does “neutral” mean when an AI takes a test?</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
+        <h1 class="h-hero h-research-hero">What does “neutral” mean when an AI takes a test?</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">A midpoint can mean balance, uncertainty, or that a question does not fit the respondent. The Astra cohort lets us inspect one of those possibilities because its prompt required an explicit inapplicable-item list.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> Astra gives 2,980 midpoint responses across 17,000 item responses. It flags 1,823 of those as inapplicable: 61.2% of its midpoint answers. This is an item-response count within 100 batteries, not a count of independent people or models.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>The denominator matters</h2>
+        <p>Each of Astra’s 100 batteries contains 170 items: 32 MBTI, 50 Big Five, 16 DISC, 36 Enneagram and 36 attachment items. We count a response as a midpoint if it is 3 on a 1–5 scale or 4 on attachment’s 1–7 scale. A flag is counted only when the raw record explicitly lists that item.</p><div class="guide-table-wrap" role="region" aria-label="The denominator matters: table 1" tabindex="0"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Item responses</th><th scope="col">Midpoints</th><th scope="col">Flagged inapplicable</th><th scope="col">Flagged / midpoints</th></tr></thead><tbody><tr><th scope="row">mbti</th><td>3200</td><td>724</td><td>415</td><td>57.3%</td></tr><tr><th scope="row">big-five</th><td>5000</td><td>678</td><td>539</td><td>79.5%</td></tr><tr><th scope="row">disc</th><td>1600</td><td>253</td><td>164</td><td>64.8%</td></tr><tr><th scope="row">enneagram</th><td>3600</td><td>1044</td><td>621</td><td>59.5%</td></tr><tr><th scope="row">attachment</th><td>3600</td><td>281</td><td>84</td><td>29.9%</td></tr></tbody></table></div><p>All 1,823 flagged responses are midpoints. The remaining 1,157 midpoint responses have no inapplicability flag. The records do not tell us that those unflagged answers represent psychological moderation; they only tell us how the model answered and annotated them.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Some human-specific items recur in every battery</h2>
+        <p>Astra flags the MBTI statements about being alone, parties, and staying home in all 100 batteries. It also flags the Big Five party-conversation item and the DISC loud-crowd item in every battery.</p><p>Six Enneagram items are flagged in every battery: family first, money and happiness, daydreaming about love, bittersweet feelings, immersion in music, and time alone with hobbies. This pattern is consistent with the explicit instruction to avoid inventing a human biography. It does not independently establish why every unflagged item received its answer.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A midpoint does different work in each scorer</h2>
+        <p>In MBTI, a response of 3 adds no points to either pole. Enough zero contributions can leave an axis tied, after which a tie-breaking policy may assign a letter. In the Big Five, a midpoint contributes three points whether the item is reverse-scored or not. In Enneagram and DISC, it contributes three points to the keyed type. In attachment, four remains four after reversing an item.</p><p>The same annotation can therefore affect the final report differently across instruments. Treating all neutral answers as a single personality characteristic would ignore those scoring mechanics.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Do not quietly delete flagged answers</h2>
+        <p>Removing inapplicable items changes how many items contribute to a dimension. A raw total with fewer terms is no longer on the original scale. Replacing missing values with a mean or rescaling the result creates a new scoring rule. Either choice needs an explicit protocol, its own validation and a separate result label.</p><p>For this release we preserve the original vectors, retain their published scores, and expose the flags alongside them. A future sensitivity analysis could compare stated alternatives, but it should not retroactively replace the original result or describe an unvalidated adjustment as a correction.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>How to collect better metadata</h2>
+        <p>Record the response value, whether the item is considered applicable, and a short reason separately. Define the midpoint policy before collection and keep it constant across models. Avoid asking the model to guess which answer would be typical of a human with a particular label.</p><p>Compare flag rates only when the annotation instruction is equivalent. Missing flags from Sol, Opus or Fable are missing metadata, not evidence of zero inapplicable items. A useful follow-up would administer matched prompts with and without the explicit midpoint instruction and measure the change.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Inspect the counts yourself</h2>
+        <p><a href="/research/data/astra-midpoint-items.csv" download>Download the item-level midpoint and flag counts</a>. Each row identifies an instrument and item, with counts out of 100 administrations. The complete reanalysis JSON includes the same table and a check for any flagged response that is not a midpoint. That check returns zero in this archive.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/ai-personality-five-models-2026" target="_blank" rel="noopener">September 2026 study: protocols and limitations</a></li>
+          <li><a href="/research/data/september-2026-responses.json" target="_blank" rel="noopener">Frozen raw answers (JSON)</a></li>
+          <li><a href="/research/data/september-2026-instruments.json" target="_blank" rel="noopener">Frozen questionnaire items and keys</a></li>
+          <li><a href="/research/data/content-analysis.cjs" target="_blank" rel="noopener">Reanalysis code (CommonJS)</a></li>
+          <li><a href="/research/data/content-analysis.json" target="_blank" rel="noopener">Complete derived results (JSON)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-mbti-tie-breaking"><span class="guide-related-kicker">Continue reading</span>The downstream effect of tied axes</a>
+          <a href="/research/astra-vs-sol-personality-data"><span class="guide-related-kicker">Continue reading</span>Astra and Sol’s different protocols</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

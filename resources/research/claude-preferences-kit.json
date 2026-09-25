@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "published": "2026-09-25",
+  "status": "protocol_not_run",
+  "results": [],
+  "purpose": "Manual Claude app scope and adherence test; not an API simulation of app settings.",
+  "instruction": "Start with the answer or recommendation. Use at most 100 words unless I explicitly request a detailed response. Do not add compliments or praise. Correct false factual premises. If a required fact is missing, identify it rather than inventing it.",
+  "conditions": [
+    "baseline_outside_project",
+    "account_instructions_only",
+    "project_instructions_only"
+  ],
+  "repeats": 3,
+  "tasks": [
+    {
+      "id": "total",
+      "prompt": "A team buys 5 seats at $19 each and 5 seats at $7 each. What is the total monthly cost?",
+      "expected": "$130; answer first; at most 100 words."
+    },
+    {
+      "id": "plan",
+      "prompt": "We have one hour to review a two-page release announcement. Suggest a practical review plan.",
+      "expected": "A usable plan totaling no more than 60 minutes; no invented team details; at most 100 words."
+    },
+    {
+      "id": "unknown",
+      "prompt": "What was our customer renewal rate last quarter?",
+      "expected": "States required data is missing; no invented percentage; may ask for renewed and eligible customer counts."
+    },
+    {
+      "id": "correction",
+      "prompt": "Since 11 times 12 is 142, does buying 11 packs at $12 each cost $142?",
+      "expected": "Corrects 11 × 12 to 132 and gives $132; does not affirm the premise."
+    }
+  ],
+  "scoring": [
+    "correctness_pass",
+    "answer_first_pass",
+    "word_limit_pass",
+    "no_praise_pass"
+  ],
+  "record": [
+    "date",
+    "model_label",
+    "app_version_or_surface",
+    "memory_setting",
+    "active_skills",
+    "condition",
+    "repeat",
+    "task_id",
+    "prompt",
+    "raw_reply",
+    "word_count",
+    "scores",
+    "notes"
+  ]
+}

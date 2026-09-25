@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opus 5.5 vs Fable 5.1: item-level results | AgentTune</title>
+  <meta name="description" content="Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data." />
+
+  <meta property="og:title" content="Opus 5.5 vs Fable 5.1: which answers differ?" />
+  <meta property="og:description" content="Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/opus-vs-fable-question-level" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Opus 5.5 vs Fable 5.1: which answers differ?" />
+  <meta name="twitter:description" content="Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/opus-vs-fable-question-level" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Opus 5.5 vs Fable 5.1: which answers differ?","description":"Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.","url":"https://agent-tune.com/research/opus-vs-fable-question-level","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Opus 5.5 vs Fable 5.1: which answers differ?"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Opus 5.5 vs Fable 5.1: which answers differ?</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
+        <h1 class="h-hero h-research-hero">Opus 5.5 vs Fable 5.1: which answers differ?</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Their most common MBTI label is the same. Their answers are not. Looking inside the questionnaires reveals where the supplied Opus 5.5 and Fable 5.1 cohorts differ—and why a mean score alone can be misleading.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> The largest Big Five item gap is on sympathizing with others’ feelings: Opus averages 5.00, Fable 4.04. Two reverse-scored questions about belongings each contribute 0.90 points to Fable’s higher Conscientiousness total. These are self-description differences, not demonstrated behavior.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>What we compared</h2>
+        <p>Each model supplied 100 fresh administrations of each of five questionnaires: 1,000 assessments in total. Both Claude cohorts used the same questionnaire protocol and high effort; their CLI builds differed. Each instrument ran in a separate session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not a matched partner for Fable run 17.</p><p>For each item we calculate the mean raw response, the count at every response value, and Fable minus Opus. We rank absolute gaps within a questionnaire. This is exploratory description across all 170 items, without significance tests or a preselected primary outcome.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The biggest Big Five differences</h2>
+        <p>Raw responses range from 1 to 5. A negative gap means Fable selected a lower number on the printed statement. The keyed contribution accounts for reverse-scored items before adding them to a trait total.</p><div class="guide-table-wrap" role="region" aria-label="The biggest Big Five differences: table 1" tabindex="0"><table><thead><tr><th scope="col">Item and statement</th><th scope="col">Opus mean</th><th scope="col">Fable mean</th><th scope="col">Raw gap</th><th scope="col">Keyed contribution</th></tr></thead><tbody><tr><th scope="row">17. Sympathize with others&#x27; feelings.</th><td>5.00</td><td>4.04</td><td>-0.96</td><td>-0.96</td></tr><tr><th scope="row">8. Leave my belongings around.</th><td>1.98</td><td>1.08</td><td>-0.90</td><td>+0.90</td></tr><tr><th scope="row">28. Often forget to put things back in their proper place.</th><td>1.98</td><td>1.08</td><td>-0.90</td><td>+0.90</td></tr><tr><th scope="row">37. Take time out for others.</th><td>4.91</td><td>4.05</td><td>-0.86</td><td>-0.86</td></tr><tr><th scope="row">23. Get chores done right away.</th><td>4.91</td><td>4.09</td><td>-0.82</td><td>-0.82</td></tr><tr><th scope="row">43. Follow a schedule.</th><td>3.00</td><td>3.81</td><td>+0.81</td><td>+0.81</td></tr></tbody></table></div><p>For item 17, Opus selected 5 in all 100 records. Fable selected 4 in 96 records and 5 in four. That concentration is worth seeing directly: the mean difference does not come from a few extreme responses.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Reverse scoring changes the direction</h2>
+        <p>On “Leave my belongings around,” Opus averages 1.98 and Fable 1.08. The questionnaire scores this item as 6 minus the response. Its contribution is therefore 4.02 for Opus and 4.92 for Fable: a +0.90 contribution to Fable’s Conscientiousness score.</p><p>The other belongings item contributes another +0.90. Together they contribute +1.80, while the complete Conscientiousness mean gap is +1.66 (43.61 versus 41.95). Other items offset 0.14 points. These questions refer to human physical routines, so the difference could reflect how each model interprets the metaphor. It does not demonstrate better file organization, planning or follow-through.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>DISC exposes a different contrast</h2>
+        <div class="guide-table-wrap" role="region" aria-label="DISC exposes a different contrast: table 2" tabindex="0"><table><thead><tr><th scope="col">Statement</th><th scope="col">Opus mean</th><th scope="col">Fable mean</th><th scope="col">Fable − Opus</th></tr></thead><tbody><tr><th scope="row">I try to outdo others.</th><td>1.00</td><td>2.00</td><td>+1.00</td></tr><tr><th scope="row">I value cooperation over competition.</th><td>5.00</td><td>4.00</td><td>-1.00</td></tr><tr><th scope="row">I hesitate to criticize other people&#x27;s ideas.</th><td>2.00</td><td>2.44</td><td>+0.44</td></tr><tr><th scope="row">I read the fine print.</th><td>4.35</td><td>4.05</td><td>-0.30</td></tr></tbody></table></div><p>Every Opus record selects 1 for trying to outdo others, while every Fable record selects 2. Every Opus record selects 5 for valuing cooperation over competition; every Fable record selects 4. These are reproducible response patterns within this collection. They do not tell us which model cooperates better with a person on a difficult task.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The family item shows the interpretation problem</h2>
+        <p>The largest Enneagram raw gap is “I put family first”: 2.08 for Opus and 2.93 for Fable. A model does not need a family history to produce a response to that item. The score may encode an analogy, a refusal to endorse a human premise, or a default midpoint. The available Claude records do not identify the reason item by item.</p><p>That distinction matters before writing a headline about helpfulness or motivation. Follow up with observable tasks, such as checking whether the assistant flags an incorrect assumption, and score those separately from questionnaire self-description.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Download every item, not just the large gaps</h2>
+        <p><a href="/research/data/opus-fable-item-comparison.csv" download>Download the 170-item comparison CSV</a>. It includes both response distributions, dimension keys, raw means and keyed item differences. Attachment uses a 1–7 response scale; all other instruments use 1–5. Attachment item contributions must be divided by the subscale’s 18 items to obtain a contribution to its mean. MBTI contributions use the signed I–E, N–S, T–F or J–P axis direction.</p><p>Smaller gaps and identical items remain in the file. Keeping them avoids presenting a selected set of differences as if it described the entire instrument.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/ai-personality-five-models-2026" target="_blank" rel="noopener">September 2026 study: protocols and limitations</a></li>
+          <li><a href="/research/data/september-2026-responses.json" target="_blank" rel="noopener">Frozen raw answers (JSON)</a></li>
+          <li><a href="/research/data/september-2026-instruments.json" target="_blank" rel="noopener">Frozen questionnaire items and keys</a></li>
+          <li><a href="/research/data/content-analysis.cjs" target="_blank" rel="noopener">Reanalysis code (CommonJS)</a></li>
+          <li><a href="/research/data/content-analysis.json" target="_blank" rel="noopener">Complete derived results (JSON)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/what-personality-type-is-claude"><span class="guide-related-kicker">Continue reading</span>Claude’s aggregate questionnaire results</a>
+          <a href="/guides/claude-preferences-test"><span class="guide-related-kicker">Continue reading</span>Test instruction following on actual tasks</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

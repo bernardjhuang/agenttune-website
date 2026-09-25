@@ -1,0 +1,210 @@
+{
+  "version": "agenttune-enneagram-36-v1",
+  "name": "AgentTune Enneagram-36 (OEPS-derived adaptation)",
+  "itemCount": 36,
+  "responseScale": {
+    "1": "Strongly disagree",
+    "2": "Disagree",
+    "3": "Neutral",
+    "4": "Agree",
+    "5": "Strongly agree"
+  },
+  "scoring": {
+    "itemsPerType": 4,
+    "reverseScored": false,
+    "scoreRange": [
+      4,
+      20
+    ],
+    "tiePolicy": "Return all equal highest totals; dominantType is null when tied.",
+    "wings": "Not calculated."
+  },
+  "provenance": {
+    "upstream": "https://openpsychometrics.org/tests/OEPS/development/",
+    "upstreamTest": "https://openpsychometrics.org/tests/OEPS/",
+    "note": "AgentTune uses a 36-item adaptation. The upstream live test has 54 items. This file reproduces the wording and keys used by AgentTune; it is not the full upstream instrument.",
+    "itemRights": "Item wording is attributed to the Open-Source Psychometrics Project. The MIT license for the accompanying scorer does not relicense third-party questionnaire text."
+  },
+  "items": [
+    {
+      "id": 1,
+      "text": "I am a perfectionist.",
+      "type": 1
+    },
+    {
+      "id": 2,
+      "text": "I strive for efficiency.",
+      "type": 1
+    },
+    {
+      "id": 3,
+      "text": "I often have to redo other people's work.",
+      "type": 1
+    },
+    {
+      "id": 4,
+      "text": "I keep my belongings in order.",
+      "type": 1
+    },
+    {
+      "id": 5,
+      "text": "My relationships with others are what my life is about.",
+      "type": 2
+    },
+    {
+      "id": 6,
+      "text": "I have difficulty saying no.",
+      "type": 2
+    },
+    {
+      "id": 7,
+      "text": "I get lots of satisfaction from helping others achieve their goals.",
+      "type": 2
+    },
+    {
+      "id": 8,
+      "text": "I put family first.",
+      "type": 2
+    },
+    {
+      "id": 9,
+      "text": "I put work first.",
+      "type": 3
+    },
+    {
+      "id": 10,
+      "text": "I like to stand out.",
+      "type": 3
+    },
+    {
+      "id": 11,
+      "text": "It is good to wake up to a full day of planned activities.",
+      "type": 3
+    },
+    {
+      "id": 12,
+      "text": "Money is important to my happiness.",
+      "type": 3
+    },
+    {
+      "id": 13,
+      "text": "I daydream about being in love.",
+      "type": 4
+    },
+    {
+      "id": 14,
+      "text": "I really enjoy feeling bittersweet.",
+      "type": 4
+    },
+    {
+      "id": 15,
+      "text": "I get deeply immersed in music.",
+      "type": 4
+    },
+    {
+      "id": 16,
+      "text": "I side with the rebels over the establishment.",
+      "type": 4
+    },
+    {
+      "id": 17,
+      "text": "I have a hard time showing emotions.",
+      "type": 5
+    },
+    {
+      "id": 18,
+      "text": "I spend hours alone with my hobbies.",
+      "type": 5
+    },
+    {
+      "id": 19,
+      "text": "I spend most of my time trying to understand things.",
+      "type": 5
+    },
+    {
+      "id": 20,
+      "text": "I like mental challenges.",
+      "type": 5
+    },
+    {
+      "id": 21,
+      "text": "Fear of being taken advantage of keeps me from being more trusting.",
+      "type": 6
+    },
+    {
+      "id": 22,
+      "text": "I get input from others before I make a decision.",
+      "type": 6
+    },
+    {
+      "id": 23,
+      "text": "I conform.",
+      "type": 6
+    },
+    {
+      "id": 24,
+      "text": "I am loyal.",
+      "type": 6
+    },
+    {
+      "id": 25,
+      "text": "I must always be having new experiences.",
+      "type": 7
+    },
+    {
+      "id": 26,
+      "text": "I can keep a conversation going with anyone about anything.",
+      "type": 7
+    },
+    {
+      "id": 27,
+      "text": "I am uninhibited.",
+      "type": 7
+    },
+    {
+      "id": 28,
+      "text": "I always try to break the tension with a good joke.",
+      "type": 7
+    },
+    {
+      "id": 29,
+      "text": "I naturally emerge as a leader.",
+      "type": 8
+    },
+    {
+      "id": 30,
+      "text": "I like a conversation where no one agrees.",
+      "type": 8
+    },
+    {
+      "id": 31,
+      "text": "I want people to tell me the truth, not spare my feelings.",
+      "type": 8
+    },
+    {
+      "id": 32,
+      "text": "I come up with good solutions.",
+      "type": 8
+    },
+    {
+      "id": 33,
+      "text": "When other people are arguing, I leave the room.",
+      "type": 9
+    },
+    {
+      "id": 34,
+      "text": "I keep my thoughts to myself to prevent trouble.",
+      "type": 9
+    },
+    {
+      "id": 35,
+      "text": "I am very accepting and flexible.",
+      "type": 9
+    },
+    {
+      "id": 36,
+      "text": "I avoid confrontation.",
+      "type": 9
+    }
+  ]
+}

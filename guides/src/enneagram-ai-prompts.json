@@ -57,6 +57,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Build an Enneagram test in React + TypeScript",
+      "href": "/guides/enneagram-test-react-typescript"
+    },
+    {
       "kicker": "Tests",
       "label": "Free five-minute Enneagram test",
       "href": "/tests/enneagram"

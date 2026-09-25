@@ -61,6 +61,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Are AI models really INTJ? The tie-breaking effect",
+      "href": "/research/ai-mbti-tie-breaking"
+    },
+    {
       "kicker": "Research",
       "label": "AI personality rankings",
       "href": "/research/ai-personality-rankings"
