@@ -96,9 +96,10 @@
     },
     {
       "kicker": "Research",
-      "label": "Six models, five personality tests",
+      "label": "Exploratory research and methodology limits",
       "href": "/research"
     }
   ],
-  "published": "2026-07-23"
+  "published": "2026-07-23",
+  "updated": "2026-09-24"
 }

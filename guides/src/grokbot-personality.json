@@ -38,8 +38,8 @@
       "html": "<p>The job changes from Bot to Bot. You don't. The <em>how to talk to me</em> section is about the person reading the reports, so the same block belongs in every Bot you own. Write it once and paste it under each job.</p><p>To hand a tuned Bot to someone else, open the <strong>Share menu</strong> and choose <strong>Create template</strong>. xAI's docs say a template copies the Bot's identity, description, skills and routines to the recipient's account, and leaves out your conversation history, logins and computer. If you share one, remember the tuning in it describes you. The other person should swap in their own.</p>"
     },
     {
-      "h2": "What Grok tests as.",
-      "html": "<p>xAI introduced Grok as a model that answers with <em>\"a bit of wit and has a rebellious streak.\"</em> We measured it. Grok 4.3 was one of six frontier models we put through about 2,200 personality tests:</p><ul><li><strong>MBTI:</strong> INTJ in 100 of 100 runs, the same as every other model we tested. Its answers were identical run to run.</li><li><strong>Enneagram:</strong> 8w1, the challenger. The only model of the four that was not a 5 or a 1 at its core.</li><li><strong>DISC:</strong> Conscientiousness first and Steadiness second, like the rest.</li><li><strong>Big Five:</strong> the outlier. Lower on Conscientiousness, Agreeableness and Openness than Claude, GPT and Gemini, higher on Neuroticism, and with two to five times the run-to-run variance.</li></ul><p>The caveat matters. Those are numbers for Grok 4.3, the model. xAI's security docs say Cursor manages model selection for Grok Bot, with no picker, so we can't tell you which model your Bot is running today. The full data is at <a href=\"/research\">/research</a>.</p>"
+      "h2": "What the research can and cannot establish.",
+      "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     }
   ],
   "faq": [
@@ -144,8 +144,9 @@
     },
     {
       "kicker": "Research",
-      "label": "Every frontier AI we tested is INTJ",
+      "label": "Exploratory research and methodology limits",
       "href": "/research"
     }
-  ]
+  ],
+  "updated": "2026-09-24"
 }

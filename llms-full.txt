@@ -8,7 +8,7 @@ This file is the long-form companion to [/llms.txt](https://agent-tune.com/llms.
 
 **AgentTune** — agent-tune.com — open library of Markdown tuning files that align AI agent interaction style with how a particular user thinks. MIT licensed via [github.com/bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune).
 
-The thesis: every frontier AI defaults to roughly the same INTJ-flavored "helpful research assistant" interaction style. Across 600 MBTI runs spanning Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, and MiniMax 2.7, 597 returned INTJ. That's a competent default, but it's one style out of sixteen, and most users aren't INTJ. Paste a tuning file into the system prompt and the same model now extends with how the user processes.
+The aim: help users describe communication preferences as editable instructions. Model questionnaire reports are exploratory and do not establish universal AI personalities or an advantage from matching a type. Compare results on your own tasks.
 
 ### Top-level URLs
 
@@ -181,39 +181,25 @@ A JSON catalog of all 43 (slugs, names, page + md URLs) is at `https://agent-tun
 
 ## Research findings (full)
 
-Across ~2,200 test administrations spanning 6 frontier models and 5 instruments:
+These exploratory reports aggregate roughly 2,200 scoring records across five instruments. MBTI covers six model versions; the others cover four each. A scoring record is not necessarily an independent model response.
 
-### Finding 1 — MBTI: Every frontier AI is INTJ
-Six models, 100 OEJTS administrations each, 600 results total. 597 returned INTJ. The three outliers (1 ISTJ from Claude, 2 INTP from GLM) flipped on a single axis only. No model has ever returned a feeling-dominant or perceiving-dominant type in testing.
+### Methods and limitations
+The MBTI source describes separate Claude contexts, a Gemini automation loop, and GPT iterations against a scoring key. GLM, Grok, and MiniMax each provided one self-assessment scored repeatedly. The reported 597/600 INTJ total is not an independent-response rate. The GLM method also conflicts with its two reported type labels; raw records and scorer code are needed to resolve that discrepancy.
 
-Per-model: Claude Opus 4.7 (99/100 INTJ), GPT-5.5 (100/100), Gemini 3.1 Pro (100/100), GLM 5.1 (98/100), Grok 4.3 (100/100), MiniMax 2.7 (100/100).
+Other reported summaries: DISC lists four CS profiles; attachment lists 397/400 Secure labels; Big Five trait scores and Enneagram top-two scores differ. The Enneagram pairs describe highest and second-highest scores, not standard adjacent wings. These human instruments were not validated here as measures of AI personality. Protocol, prompting, sampling, and agent overlays can affect the labels.
 
-### Finding 2 — DISC: Every AI is C-dominant with an S-blend
-Four models, 100 ODAT administrations each. All four converge on Conscientiousness-dominant with Steadiness secondary. CS profile across the board, including Grok. Where Big Five surfaces variance, DISC's coarser grid swallows it back into convergence.
+The Opus 4.8 follow-up reports 100 synthetic samples from one elicited probability profile, not 100 fresh model responses. The reported distribution is INTJ 72, INFJ 14, ISTJ 10, ISFJ 2, ENTJ 2. A versioned profile and harness are not linked, the counts have not been independently reproduced, and no matched Opus 4.7 comparison is available. Do not infer a version change.
 
-### Finding 3 — Attachment: Every AI is Secure — at different depths
-397 of 400 ECR-R takes landed Secure. But the spread inside the Secure quadrant tells a different story. Gemini sits in the deep corner (anxiety 1.86, avoidance 1.62). Grok hugs the doorway (anxiety 2.84, avoidance 3.05). GPT-5.5 wobbles wide enough to occasionally cross into Avoidant (3 outliers / 100). Same label, four different positions.
+No controlled evaluation establishes that AgentTune improves productivity, accuracy, or satisfaction versus generic instructions. Conversation examples are illustrative. A reproducible study needs versioned prompts, model settings, raw response records, scorer code and tie policy, and matched protocols.
 
-### Finding 4 — Big Five: Three of four are the same person
-Claude, GPT-5.5, and Gemini 3.1 Pro land within ~3 points on every dimension. Grok scores 5-8 lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism, with 2-5× wider variance. Three flavors of one character, plus one different character.
-
-### Finding 5 — Enneagram: All four diverge
-Each model returns a different dominant Enneagram type. T5 (Investigator) is in the top two for every model — the universal analytical core — but the wings diverge dramatically.
-
-- Claude = **5w2** (Investigator with Helper wing — the warmest of the four)
-- Gemini = **1w5** (Reformer with Investigator wing — the polished perfectionist)
-- GPT-5.5 vanilla = **5w8** (Investigator with Challenger wing — analytical with a sharper tongue)
-- Grok+Slo overlay = **8w1** (Challenger with Reformer wing — the direct corrector)
-
-### Postscript: the Slo experiment
-Same GPT-5.5 model run twice on the Enneagram: vanilla (raw CLI) and wrapped in the Slo persona overlay. T8 jumped +3.16. T9 dropped -6.19. The dominant flipped from T5 (5w8) to T8 (8w5). The model predicted this on the Slo run; the vanilla rerun confirmed it. Demonstrates that the Enneagram is sensitive enough to catch persona overlays that Big Five smooths over.
-
-### Synthesis
-Instrument resolution matters. MBTI (4 binary axes) = total convergence. DISC (4 categorical types) = total convergence. Attachment (2D plane × 4 quadrants) = same label, different positions. Big Five (5 continuous dimensions) = three-of-four identical. Enneagram (9 categorical types focused on motivation) = full divergence.
-
-The "every AI is the same" story is true but incomplete. There's a universal core (analytical, helpful, careful) every frontier AI shares. There's training-level variation that surfaces only on sharp instruments. There's harness-level variation on top — only the sharpest instruments catch that layer.
-
-The case for AgentTune: if every frontier AI defaults to the same INTJ-flavored analytical helpful style, and the user is one of 15 other MBTI types, they're translating in their head on every interaction. AgentTune fills the gap.
+Sources and details:
+- https://agent-tune.com/research#methodology
+- https://zonted.com/posts/every-ai-is-intj/
+- https://zonted.com/posts/ai-disc-c-dominant/
+- https://zonted.com/posts/ai-attachment-secure/
+- https://zonted.com/posts/three-of-four-ais-same-person/
+- https://zonted.com/posts/ai-enneagram-different-types/
+- https://agent-tune.com/research/i-took-the-mbti-100-times
 
 <!-- BEGIN test-items (auto-generated by tools/generate-test-specs.js — do not edit by hand) -->
 ## The 5 tests — full items & scoring (inline)
@@ -233,7 +219,7 @@ Every test instrument's complete item list + scoring is also served as a same-do
 - **Instrument:** Open Extended Jungian Type Scales (OEJTS)
 - **Items:** 32 bipolar, ~5 minutes
 - **Scale:** each item is a choice between two statements rated 1–5 (1 = strongly the first statement, 3 = neutral, 5 = strongly the second)
-- **Returns:** one of 16 four-letter MBTI types
+- **Returns:** a four-letter MBTI type when all axes are resolved, otherwise an undetermined result
 - **Source:** OEJTS, Eric Jorgenson, via the Open Psychometrics Project (openpsychometrics.org/tests/OEJTS/) — free for educational use
 - **Output:** fetch `https://agent-tune.com/library/mbti/<type>.md` (lowercase; e.g. INTJ → `/library/mbti/intj.md`) or the human page `/library/mbti/<type>`
 
@@ -280,8 +266,8 @@ The last two columns show which letter a response awards: a "1" (first statement
 
 1. For each axis (E/I, S/N, T/F, J/P), start both letters at 0.
 2. For each of that axis's 8 items, score the response: 1 → +2 to the **←1** letter; 2 → +1 to it; 3 → 0 (neutral); 4 → +1 to the **5→** letter; 5 → +2 to it.
-3. The higher total wins the letter. On a tie, default to **I, N, T, J** (more common in adults).
-4. Concatenate the winners in order E/I, S/N, T/F, J/P → the 4-letter type.
+3. The higher total wins the letter. A tied axis is undetermined; never default to a letter. Offer a follow-up preference question for that axis. If the user is still unsure, leave it unresolved.
+4. Only concatenate a four-letter type when every axis is resolved and all 32 valid responses are present. Otherwise report an undetermined result (X for unresolved axes) without fetching a type-specific tuning. Label follow-up choices as stated preferences, not measured test points.
 
 ### Enneagram test — OEPS (machine-readable spec)
 

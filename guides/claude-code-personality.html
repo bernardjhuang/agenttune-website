@@ -10,7 +10,7 @@
   <meta property="og:description" content="Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-19" />
-  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-24" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-code-personality" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/claude-code-personality" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude Code's personality","description":"Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles.","url":"https://agent-tune.com/guides/claude-code-personality","datePublished":"2026-09-19","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude Code's personality","description":"Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles.","url":"https://agent-tune.com/guides/claude-code-personality","datePublished":"2026-09-19","dateModified":"2026-09-24","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to change Claude Code's personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code have a personality setting?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is called an output style. Claude Code ships five built-in styles (Default, Proactive, Concise, Explanatory and Learning), and you can add your own as Markdown files in ~/.claude/output-styles/. Switch with /output-style or under /config."}},{"@type":"Question","name":"What is the difference between an output style and CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"An output style changes the default instructions Claude Code works from and is sent on every turn. CLAUDE.md arrives as a message after the system prompt, and the docs say compliance is not guaranteed. Use an output style for role and tone, and CLAUDE.md for project conventions, commands and architecture."}},{"@type":"Question","name":"Why did my custom output style make Claude Code worse at coding?","acceptedAnswer":{"@type":"Answer","text":"Custom styles drop Claude Code's built-in software-engineering instructions unless the file sets keep-coding-instructions: true. The default is false. Add that line to the front-matter and restart Claude Code."}},{"@type":"Question","name":"Is /output-style deprecated?","acceptedAnswer":{"@type":"Answer","text":"It was deprecated in March 2026 and brought back in Claude Code 2.1.269 on September 11, 2026, according to the changelog. On older versions, set the style under /config, or put an outputStyle key in a settings file."}},{"@type":"Question","name":"Do output styles apply to subagents?","acceptedAnswer":{"@type":"Answer","text":"A style reaches the main conversation and its forks. Other subagents do not receive it, and they do not get Claude Code's default system prompt either. A subagent's own file body is its system prompt."}},{"@type":"Question","name":"Can I share an output style with my team?","acceptedAnswer":{"@type":"Answer","text":"Yes. Commit it to .claude/output-styles/ in the repo, or ship it in a plugin's output-styles folder. A personality style is usually personal, though, so most people keep it in ~/.claude/output-styles/."}},{"@type":"Question","name":"Where do custom output styles live?","acceptedAnswer":{"@type":"Answer","text":"In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside one project. The nearest one wins. Restart Claude Code after adding or editing a file."}}]}</script>
 
@@ -68,7 +68,7 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">How to change Claude Code's personality.</h1>
         <p class="article-dek">Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Most people put their preferences in CLAUDE.md, because it is the file they already have. Claude Code's docs point somewhere else. CLAUDE.md is for what the project needs. How Claude Code talks to <em>you</em>, its role and its tone, is what an <strong>output style</strong> is for. It is one Markdown file, and one line in it decides whether Claude Code stays good at engineering.</p>
       </section>
 
@@ -78,9 +78,11 @@
 
       <section>
         <h2>The twenty-second version.</h2>
-        <p>Download a ready-made style, then pick it:</p><div class="guide-snippet">mkdir -p ~/.claude/output-styles
-curl -sSL https://agent-tune.com/output-styles/agenttune-mbti-intj.md \
-  -o ~/.claude/output-styles/agenttune-mbti-intj.md</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>"hi"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>
+        <p>Download a ready-made style, preserving any existing customized file, then pick it:</p><div class="guide-snippet">tuning_dir=$(mktemp -d ./agenttune.XXXXXX) &&\
+  curl --fail --show-error --location https://agent-tune.com/output-styles/agenttune-mbti-intj.md \
+  --output "$tuning_dir/style.md" &&\
+  mkdir -p ~/.claude/output-styles &&\
+  (set -C; cat "$tuning_dir/style.md" > ~/.claude/output-styles/agenttune-mbti-intj.md)</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>"hi"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>
       </section>
       <div class="divider tight"></div>
 

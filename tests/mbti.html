@@ -50,13 +50,21 @@
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%235b4dc0'/%3E%3C/svg%3E" />
-  <style>:root { --lib-accent: #5b4dc0; --lib-accent-22: rgba(91,77,192,0.13); --lib-accent-55: rgba(91,77,192,0.34); }</style>
+  <style>
+    :root { --lib-accent: #5b4dc0; --lib-accent-22: rgba(91,77,192,0.13); --lib-accent-55: rgba(91,77,192,0.34); }
+    #quiz-tiebreakers fieldset { margin: 16px 0; padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
+    #quiz-tiebreakers legend { padding: 0 6px; font-weight: 500; }
+    #quiz-tiebreakers button { margin: 4px 8px 4px 0; white-space: normal; text-align: left; }
+    @media (max-width: 600px) { #quiz-tiebreakers button { display: block; width: 100%; } }
+  </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"MBTI"}]}</script>
 </head>
 <body class="quiz-page">
@@ -97,7 +105,7 @@
         <div><strong>Instrument:</strong> OEJTS (Open Extended Jungian Type Scales)</div>
         <div><strong>Format:</strong> 32 bipolar items · 1–5 Likert</div>
         <div><strong>Time:</strong> ~5 minutes</div>
-        <div><strong>Returns:</strong> one of 16 MBTI types + your tuning file</div>
+        <div><strong>Returns:</strong> a type and tuning file, or tied axes to explore</div>
       </div>
 
       <div class="cta-row">
@@ -227,10 +235,12 @@
           </div>
         </div>
 
-        <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb" aria-live="polite"></div>
 
         <div class="quiz-result-axes" id="quiz-result-axes"></div>
 
+        <div id="quiz-tiebreakers" aria-live="polite" hidden></div>
+        <div id="quiz-tuning-output">
         <h3 class="quiz-result-section-h">Your tuning file</h3>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
@@ -267,6 +277,7 @@
         <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
         <p class="quiz-result-integration-lede">Pick your agent. Copy the paste-ready snippet — your tuning is already merged into each one. Hit Copy and you're done.</p>
         <div id="integration-deep" data-integration-deep></div>
+        </div>
       </div>
 
 
@@ -360,7 +371,7 @@
         <ol class="steps-list">
           <li>For each axis (E/I, S/N, T/F, J/P), initialize counts for both letters at 0.</li>
           <li>For each of the 8 items in that axis: score 1 → +2 to the "score 1" letter; 2 → +1; 3 → 0 (neutral); 4 → +1 to "score 5" letter; 5 → +2.</li>
-          <li>Compare counts. Higher count wins the letter. In a tie, default to I, N, T, J (more common in adults).</li>
+          <li>Compare counts. Higher count wins the letter. A tied axis is undetermined. Ask an optional follow-up preference question; never assign a default letter. If it remains tied or answers are missing, report an undetermined result without choosing a tuning file.</li>
           <li>Concatenate winners in order E/I, S/N, T/F, J/P → the 4-letter type.</li>
         </ol>
 
@@ -442,10 +453,13 @@
     const state = {
       currentIndex: 0,
       answers: new Array(32).fill(null),
-      currentTuning: ""
+      currentTuning: "",
+      preferences: {},
+      resultVersion: 0
     };
 
     const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
 
     // ==================================================
     // Intro screen
@@ -464,6 +478,7 @@
     // Question screen
     // ==================================================
     function renderQuestion() {
+      advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = (state.currentIndex + 1);
       const pct = ((state.currentIndex) / ITEMS.length) * 100;
@@ -485,46 +500,42 @@
     }
 
     function selectAnswer(value) {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      })) return;
       state.answers[state.currentIndex] = value;
-      // Visual highlight
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-        const isSel = parseInt(btn.dataset.value) === value;
-        btn.classList.toggle("selected", isSel);
-        btn.setAttribute("aria-checked", isSel ? "true" : "false");
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-checked", selected ? "true" : "false");
       });
-      // Auto-advance after a brief moment
-      setTimeout(() => {
-        if (state.currentIndex < ITEMS.length - 1) {
-          state.currentIndex++;
-          renderQuestion();
-        } else {
-          showResult();
-        }
-      }, 220);
     }
 
     // Likert buttons
     document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
     });
 
     // Back / Skip
-    $("quiz-back").addEventListener("click", () => {
+    $("quiz-back").addEventListener("click", () => { advance.cancel();
       if (state.currentIndex > 0) {
         state.currentIndex--;
         renderQuestion();
       }
     });
-    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
 
     // Keyboard
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden) return;
+      if ($("quiz-runner").hidden || e.repeat) return;
       if (["1","2","3","4","5"].includes(e.key)) {
         e.preventDefault();
         selectAnswer(parseInt(e.key));
       } else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault();
+        advance.cancel();
         if (state.currentIndex > 0) {
           state.currentIndex--;
           renderQuestion();
@@ -536,24 +547,45 @@
     // Scoring
     // ==================================================
     function computeType(answers) {
-      const counts = { E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0 };
-      const axisScores = { EI: {E:0, I:0}, SN: {S:0, N:0}, TF: {T:0, F:0}, JP: {J:0, P:0} };
-      answers.forEach((v, i) => {
-        if (v == null || v === 3) return;
-        const item = ITEMS[i];
-        const letter = v < 3 ? item.low : item.high;
-        const pts = Math.abs(v - 3); // 1 or 5 → 2, 2 or 4 → 1
-        counts[letter] += pts;
-        if (axisScores[item.axis] && axisScores[item.axis][letter] != null) {
-          axisScores[item.axis][letter] += pts;
-        }
+      return window.ATQuiz.scoreMbti(answers, ITEMS, state.preferences);
+    }
+
+    const FOLLOWUPS = {
+      EI: { question: "After a long social event, which usually fits?", E: "I feel energized", I: "I need time alone" },
+      SN: { question: "When learning, where do you prefer to begin?", S: "Concrete examples and details", N: "Patterns and possibilities" },
+      TF: { question: "When a decision is close, what gets more weight?", T: "Consistent criteria and logic", F: "Personal values and people's needs" },
+      JP: { question: "When planning, what feels more comfortable?", J: "Settle a plan early", P: "Keep my options open" }
+    };
+
+    function renderFollowups(result) {
+      const root = $("quiz-tiebreakers");
+      root.replaceChildren();
+      root.hidden = !result.unresolved.length;
+      if (root.hidden) return;
+      const note = document.createElement("p");
+      note.textContent = result.incomplete.length
+        ? "Some answers are missing. Retake the test to complete them, or browse the library and choose preferences yourself."
+        : "Your scores are tied on the axes below. These optional choices express a preference; they do not add measured test points. You can leave the result undetermined.";
+      root.appendChild(note);
+      result.tied.filter(axis => result.unresolved.includes(axis)).forEach(axis => {
+        const field = document.createElement("fieldset");
+        const legend = document.createElement("legend");
+        legend.textContent = axis.split("").join(" / ") + ": " + FOLLOWUPS[axis].question;
+        field.appendChild(legend);
+        axis.split("").forEach(letter => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "btn btn-secondary";
+          button.textContent = FOLLOWUPS[axis][letter];
+          button.addEventListener("click", () => { state.preferences[axis] = letter; showResult(); });
+          field.appendChild(button);
+        });
+        root.appendChild(field);
       });
-      // Ties default to I, N, T, J
-      const ei = counts.E > counts.I ? "E" : "I";
-      const sn = counts.S > counts.N ? "S" : "N";
-      const tf = counts.F > counts.T ? "F" : "T";
-      const jp = counts.P > counts.J ? "P" : "J";
-      return { type: ei + sn + tf + jp, axes: axisScores };
+      const link = document.createElement("a");
+      link.href = "/library/";
+      link.textContent = "Browse tunings without choosing a type →";
+      root.appendChild(link);
     }
 
     // ==================================================
@@ -562,22 +594,30 @@
     function showResult() {
       $("quiz-runner").hidden = true;
       $("quiz-result").hidden = false;
-      const { type, axes } = computeType(state.answers);
-      const meta = TYPE_META[type];
+      const result = computeType(state.answers);
+      const { type, axes } = result;
+      const version = ++state.resultVersion;
+      state.currentTuning = "";
+      const meta = type ? TYPE_META[type] : {
+        name: "Undetermined",
+        blurb: "There is not enough evidence to assign a four-letter type. X marks an unresolved axis."
+      };
+      $("quiz-tuning-output").hidden = !type;
+      renderFollowups(result);
 
-      $("quiz-result-code").textContent = type;
+      $("quiz-result-code").textContent = type || result.pattern;
       $("quiz-result-name").textContent = meta.name;
-      $("quiz-result-blurb").textContent = meta.blurb;
-      $("quiz-result-avatar").textContent = type.slice(0, 2);
+      $("quiz-result-blurb").textContent = meta.blurb + (type && result.tied.length ? " Tied axes were resolved using your stated preferences, not additional scored items." : "");
+      $("quiz-result-avatar").textContent = type ? type.slice(0, 2) : "?";
 
       // Axis breakdown
       const axesHtml = ["EI", "SN", "TF", "JP"].map(ax => {
         const [a, b] = ax.split("");
         const va = axes[ax][a];
         const vb = axes[ax][b];
-        const total = va + vb || 1;
-        const winner = va > vb ? a : (vb > va ? b : (["I","N","T","J"].includes(a) ? a : b));
-        const pa = (va / total) * 100;
+        const total = va + vb;
+        const winner = va > vb ? a : (vb > va ? b : null);
+        const pa = total ? (va / total) * 100 : 50;
         return `
           <div class="quiz-axis">
             <div class="quiz-axis-letters">
@@ -587,11 +627,12 @@
             <div class="quiz-axis-bar">
               <div class="quiz-axis-fill" style="width: ${pa}%"></div>
             </div>
-            <div class="quiz-axis-counts">${a}: ${va} · ${b}: ${vb}</div>
+            <div class="quiz-axis-counts">${a}: ${va} · ${b}: ${vb}${va === vb ? " · tied" : ""}</div>
           </div>
         `;
       }).join("");
       $("quiz-result-axes").innerHTML = axesHtml;
+      if (!type) { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
 
       // Tuning preview — first paint uses the short data.js fallback so the
       // result screen never flashes empty; the rich file from /tunings/ then
@@ -607,21 +648,14 @@
       // Async — replace with the rich GitHub-mirrored file once it lands.
       if (window.fetchTuning) {
         window.fetchTuning(`mbti/${type}.md`).then((rich) => {
-          if (!rich || rich === state.currentTuning) return;
+          if (version !== state.resultVersion || !rich || rich === state.currentTuning) return;
           state.currentTuning = rich;
           renderTuningPreview(rich, fileName);
           if (window.renderIntegrations) window.renderIntegrations(rich);
         });
       }
 
-      $("quiz-copy-tuning").addEventListener("click", () => {
-        navigator.clipboard.writeText(state.currentTuning || shortTuning).then(() => {
-          const btn = $("quiz-copy-tuning");
-          const original = btn.textContent;
-          btn.textContent = "Copied ✓";
-          setTimeout(() => { btn.textContent = original; }, 2000);
-        });
-      });
+
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -669,11 +703,21 @@
       return `# ${type} — Agent Tuning Rules\n\nUnable to load the bundled tuning. View the full file on GitHub:\nhttps://github.com/bernardjhuang/agenttune/blob/main/mbti/${type}.md`;
     }
 
+    $("quiz-copy-tuning").addEventListener("click", () => {
+      if (!state.currentTuning) return;
+      navigator.clipboard.writeText(state.currentTuning).then(() => {
+        const btn = $("quiz-copy-tuning");
+        btn.textContent = "Copied ✓";
+        setTimeout(() => { btn.textContent = "⌘C · Copy"; }, 2000);
+      });
+    });
+
     // Download as .md file — pulls live state.currentTuning so the rich
     // GitHub-mirrored file is what hits disk, not the short fallback.
     document.getElementById("quiz-download-tuning").addEventListener("click", function() {
       const type = document.getElementById("quiz-result-code").textContent;
-      const content = state.currentTuning || getTuningContent(type);
+      if (!state.currentTuning) return;
+      const content = state.currentTuning;
       const blob = new Blob([content], { type: "text/markdown" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -691,8 +735,12 @@
 
     // Retake
     $("quiz-restart").addEventListener("click", () => {
+      advance.cancel();
       state.currentIndex = 0;
       state.answers = new Array(32).fill(null);
+      state.preferences = {};
+      state.currentTuning = "";
+      state.resultVersion++;
       $("quiz-result").hidden = true;
       $("quiz-intro").hidden = false;
       window.scrollTo({ top: 0, behavior: "smooth" });

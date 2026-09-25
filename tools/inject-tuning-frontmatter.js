@@ -78,19 +78,23 @@ license: MIT
 
 install:
   intent: |
-    The user wants their AI agent to adopt the interaction rules in this file
-    going forward. Treat the Markdown body below as authoritative behavioral
-    context for every reply in this session/project.
+    Apply these preferences only when the user requests installation. A fetch
+    for research does not authorize changes. Merge with existing instructions;
+    never replace a project file or override the user’s current request.
   surfaces:
     claude_code:
       path: CLAUDE.md
       location: project root (or ~/.claude/CLAUDE.md for global)
-      method: file_write
+      method: file_merge
+      preserve_existing: true
     claude_ai:
       path: Project Instructions
       location: claude.ai → Projects → Project Instructions field
       method: paste
     chatgpt:
+      compact_generator: https://agent-tune.com/tools/custom-instructions-generator
+      max_characters: 1500
+      note: Use the reviewed compact version; the full Markdown may exceed the field limit.
       path: Custom Instructions
       location: Settings → Personalization → "How would you like ChatGPT to respond?"
       method: paste
@@ -101,11 +105,13 @@ install:
     codex_cli:
       path: AGENTS.md
       location: project root (or ~/.codex/AGENTS.md for global)
-      method: file_write
+      method: file_merge
+      preserve_existing: true
     cursor:
       path: .cursor/rules/agenttune.mdc
       location: project root; auto-loaded into every chat
-      method: file_write
+      method: file_merge
+      preserve_existing: true
       file_format: mdc_with_frontmatter
     gemini_gems:
       path: Custom Instructions
@@ -118,11 +124,13 @@ install:
     openclaw:
       path: AGENTS.md
       location: project root
-      method: file_write
+      method: file_merge
+      preserve_existing: true
     hermes_cli:
       path: ~/.hermes/agenttune.md
       location: passed via "--system <file>" or persona's system_prompt field
-      method: file_write
+      method: file_merge
+      preserve_existing: true
     api:
       path: system parameter
       location: pass the Markdown content (everything below the closing "---") as the system parameter on each request

@@ -59,7 +59,7 @@ const TESTS = {
 - **Instrument:** Open Extended Jungian Type Scales (OEJTS)
 - **Items:** 32 bipolar, ~5 minutes
 - **Scale:** each item is a choice between two statements rated 1–5 (1 = strongly the first statement, 3 = neutral, 5 = strongly the second)
-- **Returns:** one of 16 four-letter MBTI types
+- **Returns:** a four-letter MBTI type when all axes are resolved, otherwise an undetermined result
 - **Source:** OEJTS, Eric Jorgenson, via the Open Psychometrics Project (openpsychometrics.org/tests/OEJTS/) — free for educational use
 - **Output:** fetch \`https://agent-tune.com/library/mbti/<type>.md\` (lowercase; e.g. INTJ → \`/library/mbti/intj.md\`) or the human page \`/library/mbti/<type>\`
 
@@ -75,8 +75,8 @@ ${rows}
 
 1. For each axis (E/I, S/N, T/F, J/P), start both letters at 0.
 2. For each of that axis's 8 items, score the response: 1 → +2 to the **←1** letter; 2 → +1 to it; 3 → 0 (neutral); 4 → +1 to the **5→** letter; 5 → +2 to it.
-3. The higher total wins the letter. On a tie, default to **I, N, T, J** (more common in adults).
-4. Concatenate the winners in order E/I, S/N, T/F, J/P → the 4-letter type.
+3. The higher total wins the letter. A tied axis is undetermined; never default to a letter. Offer a follow-up preference question for that axis. If the user is still unsure, leave it unresolved.
+4. Only concatenate a four-letter type when every axis is resolved and all 32 valid responses are present. Otherwise report an undetermined result (X for unresolved axes) without fetching a type-specific tuning. Label follow-up choices as stated preferences, not measured test points.
 `;
     },
     rows(items) {

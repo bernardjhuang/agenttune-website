@@ -35,7 +35,9 @@
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -448,8 +450,9 @@
       N: { M: 26.0, SD: 7.0, name: "Neuroticism",       color: "#c8553d" }
     };
 
-    const state = { currentIndex: 0, answers: new Array(50).fill(null), currentTuning: "" };
+    const state = { currentIndex: 0, answers: new Array(50).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
@@ -458,6 +461,7 @@
     });
 
     function renderQuestion() {
+      advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
       $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
@@ -468,31 +472,35 @@
       const existing = state.answers[state.currentIndex];
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
+        btn.setAttribute("aria-checked", parseInt(btn.dataset.value) === existing ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
     }
 
     function selectAnswer(value) {
-      state.answers[state.currentIndex] = value;
-      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
-      });
-      setTimeout(() => {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
         if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
         else showResult();
-      }, 220);
+      })) return;
+      state.answers[state.currentIndex] = value;
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-checked", selected ? "true" : "false");
+      });
     }
 
     document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
     });
-    $("quiz-back").addEventListener("click", () => { if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
-    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    $("quiz-back").addEventListener("click", () => { advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden) return;
+      if ($("quiz-runner").hidden || e.repeat) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
-        e.preventDefault(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+        e.preventDefault(); advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
       }
     });
 
@@ -523,6 +531,7 @@
     }
 
     function showResult() {
+      const version = ++state.resultVersion;
       $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
 
@@ -553,7 +562,7 @@
 
       // Files to load
       if (r.files.length === 0) {
-        $("quiz-result-files").innerHTML = `<p style="font-family: var(--font-serif); font-size: 17px; color: var(--muted); line-height: 1.55;">All five of your traits are within the average range. The model's default handles you well — no specific OCEAN files needed. Consider taking MBTI or Enneagram for a different angle.</p>`;
+        $("quiz-result-files").innerHTML = `<p style="font-family: var(--font-serif); font-size: 17px; color: var(--muted); line-height: 1.55;">All five of your traits are within the average range. No high or low OCEAN preferences were selected by these thresholds; you can still edit the instructions to fit your needs. Consider taking MBTI or Enneagram for a different angle.</p>`;
       } else {
         $("quiz-result-files").innerHTML = `
           <div class="integration-grid" style="margin-top: 8px;">
@@ -584,7 +593,7 @@
           r.files.map((f) => window.fetchTuning(`ocean/${f.dim}-${f.level}.md`).then((rich) => ({ f, rich })))
         ).then((parts) => {
           // Bail if any file failed — stick with the short combined version
-          if (parts.some((p) => !p.rich)) return;
+          if (version !== state.resultVersion || parts.some((p) => !p.rich)) return;
           const richCombined = buildCombinedTuningFromTexts(r.files, parts);
           if (richCombined === state.currentTuning) return;
           state.currentTuning = richCombined;
@@ -634,7 +643,7 @@
 
     function buildCombinedTuning(files) {
       if (files.length === 0) {
-        return `# Your OCEAN profile\n\nAll five traits within average range. The model's default works well for you.`;
+        return `# Your OCEAN profile\n\nAll five traits within average range. No high or low OCEAN preferences selected; adapt to my feedback.`;
       }
       const contacts = (window.AT_CONTACTS || []);
       let combined = buildCombinedHeader(files.length);
@@ -683,6 +692,9 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      state.resultVersion++;
+      state.currentTuning = "";
+      advance.cancel();
       state.currentIndex = 0; state.answers = new Array(50).fill(null);
       $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -13,8 +13,8 @@
       "html": "<p>MBTI describes how you process. DISC describes how you work. The Enneagram describes <strong>why</strong> — what you're avoiding, what you're seeking, what your attention snags on before you've noticed. That makes it the odd one out among the <a href=\"/library/\">five systems AgentTune covers</a>, and unusually useful for AI tuning.</p><p>Because most AI friction isn't informational — it's motivational. A Type 6 asking <em>\"is this plan safe?\"</em> doesn't need a cheerful <em>\"you've got this!\"</em> — that's the one answer that confirms the risks weren't considered. A Type 1 hearing <em>\"just ship it\"</em> doesn't hear efficiency; they hear that you don't take quality seriously. A Type 4 getting the same advice everyone gets concludes you never saw them at all. Same model, same facts — the wrong register for the motivation reads as wrong, full stop.</p><p>An Enneagram tuning encodes that register: what reassurance you need, what challenge you'll accept, what well-meant phrasing quietly loses you. It's the difference between an AI that formats answers your way and one that stops stepping on the exact rake your type carries around. If MBTI answers <em>\"how should this be structured?\"</em>, the Enneagram answers <em>\"how should this be said?\"</em> — and for most day-to-day friction, the second question is the live one.</p>"
     },
     {
-      "h2": "It's also the one test the models couldn't agree on.",
-      "html": "<p>Across <a href=\"/research\">~2,200 personality-test runs</a>, six frontier models converged almost everywhere — 597 of 600 MBTI runs came back INTJ, and every model produced the identical C-dominant DISC profile. The Enneagram broke the pattern. Full divergence: each model landed on a different dominant type. Claude tested 5w2, Gemini 1w5, GPT-5.5 5w8, Grok 8w1.</p><p>One constant survived: Type 5, the Investigator, placed top-two for every model. The withdrawn knowledge-hoarder is the industry's center of gravity. But the instrument that measures motivation is the only one that found daylight between the models — which fits the pattern in the data: the simpler and more binary the test, the more the models agree. Motivation is where the defaults stop being uniform, and where your own tuning does the most work.</p>"
+      "h2": "What the research can and cannot establish.",
+      "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     },
     {
       "h2": "The nine prompts.",
@@ -36,7 +36,7 @@
     },
     {
       "q": "Which Enneagram type are AI models themselves?",
-      "a": "It varies — the Enneagram is the only instrument where six frontier models diverged in AgentTune's ~2,200-run study. Claude tested 5w2, Gemini 1w5, GPT-5.5 5w8, and Grok 8w1. Type 5, the Investigator, placed top-two for every model, making the withdrawn knowledge-collector the closest thing to an industry default."
+      "a": "The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."
     },
     {
       "q": "Will one of these prompts fit in ChatGPT's custom instructions?",
@@ -52,11 +52,37 @@
     }
   ],
   "related": [
-    { "kicker": "Tests", "label": "Free five-minute Enneagram test", "href": "/tests/enneagram" },
-    { "kicker": "Library", "label": "Full Enneagram tuning files, all nine types", "href": "/library/" },
-    { "kicker": "Research", "label": "The one test six frontier models couldn't agree on", "href": "/research" },
-    { "kicker": "Guide", "label": "How to give your AI a personality", "href": "/guides/how-to-give-your-ai-a-personality" },
-    { "kicker": "Guide", "label": "ChatGPT custom instructions by personality type", "href": "/guides/chatgpt-custom-instructions-by-personality-type" },
-    { "kicker": "Guide", "label": "Give Claude a personality", "href": "/guides/claude-personality" }
-  ]
+    {
+      "kicker": "Tests",
+      "label": "Free five-minute Enneagram test",
+      "href": "/tests/enneagram"
+    },
+    {
+      "kicker": "Library",
+      "label": "Full Enneagram tuning files, all nine types",
+      "href": "/library/"
+    },
+    {
+      "kicker": "Research",
+      "label": "Exploratory research and methodology limits",
+      "href": "/research"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give your AI a personality",
+      "href": "/guides/how-to-give-your-ai-a-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT custom instructions by personality type",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Give Claude a personality",
+      "href": "/guides/claude-personality"
+    }
+  ],
+  "published": "2026-07-23",
+  "updated": "2026-09-24"
 }

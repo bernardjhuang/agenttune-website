@@ -600,8 +600,8 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
 
   const gapSection = gap ? `
     <section class="lib-v2-section" id="default">
-      <div class="lib-v2-section-eyebrow">§ III · Against the default</div>
-      <h2 class="lib-v2-section-h">${escHtml(grammar.shortLabel.charAt(0).toUpperCase() + grammar.shortLabel.slice(1))} against the <em>AI default.</em></h2>
+      <div class="lib-v2-section-eyebrow">§ III · Research context</div>
+      <h2 class="lib-v2-section-h">${escHtml(grammar.shortLabel.charAt(0).toUpperCase() + grammar.shortLabel.slice(1))} and the <em>research context.</em></h2>
       <p class="lib-v2-section-lede">${escHtml(gap.lede)}</p>
       ${gap.html}
     </section>
@@ -859,7 +859,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       <a class="lib-v2-anchor is-file is-active" href="#editor">${escHtml(downloadFilename)}</a>
       <a class="lib-v2-anchor" href="#demo">See it</a>
       <a class="lib-v2-anchor" href="#tune">For your AI</a>
-      <a class="lib-v2-anchor" href="#default">Vs the default</a>
+      <a class="lib-v2-anchor" href="#default">Research context</a>
       <a class="lib-v2-anchor" href="#talk-to">For humans</a>
       <a class="lib-v2-anchor" href="#this-is-me">If this is you</a>
       <a class="lib-v2-anchor" href="#neighbors">Neighbors</a>
@@ -929,7 +929,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     <section class="lib-v2-section" id="demo">
       <div class="lib-v2-section-eyebrow">§ I · See it</div>
       <h2 class="lib-v2-section-h">The same question. <em>Two answers.</em></h2>
-      <p class="lib-v2-section-lede">Same prompt, two AI responses. The first is what a generic AI gives anyone. The second is what the tuning file produces for ${grammar.article} ${escHtml(grammar.label)}.</p>
+      <p class="lib-v2-section-lede">Illustrative examples of the communication styles these rules aim to encourage. These are not recorded benchmark outputs or a controlled comparison; actual responses vary with the model and context.</p>
 
       <div class="lib-v2-demo">
         <div class="lib-v2-demo-prompt">
@@ -947,7 +947,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
           </div>
         </div>
         <div class="lib-v2-demo-why">
-          <strong>Why this works:</strong> ${escHtml(demoWhy)}
+          <strong>Intended difference:</strong> ${escHtml(demoWhy)}
         </div>
       </div>
     </section>
@@ -1023,6 +1023,7 @@ ${summaryLis}
   <div class="lib-toast" id="lib-toast" role="status" aria-live="polite">Copied ✓</div>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
   <script>
     (function () {
@@ -1291,7 +1292,7 @@ function buildHub(contacts) {
     <section class="hero">
       <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every agent.</em></h1>
       <p class="lede">
-        Five validated systems. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
+        Five preference frameworks. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>

@@ -11,7 +11,7 @@
   "sections": [
     {
       "h2": "The twenty-second version.",
-      "html": "<p>Download a ready-made style, then pick it:</p><div class=\"guide-snippet\">mkdir -p ~/.claude/output-styles\ncurl -sSL https://agent-tune.com/output-styles/agenttune-mbti-intj.md \\\n  -o ~/.claude/output-styles/agenttune-mbti-intj.md</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>\"hi\"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>"
+      "html": "<p>Download a ready-made style, preserving any existing customized file, then pick it:</p><div class=\"guide-snippet\">tuning_dir=$(mktemp -d ./agenttune.XXXXXX) &&\\\n  curl --fail --show-error --location https://agent-tune.com/output-styles/agenttune-mbti-intj.md \\\n  --output \"$tuning_dir/style.md\" &&\\\n  mkdir -p ~/.claude/output-styles &&\\\n  (set -C; cat \"$tuning_dir/style.md\" > ~/.claude/output-styles/agenttune-mbti-intj.md)</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>\"hi\"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>"
     },
     {
       "h2": "Four places to put it. They do different jobs.",
@@ -131,5 +131,6 @@
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
     }
-  ]
+  ],
+  "updated": "2026-09-24"
 }

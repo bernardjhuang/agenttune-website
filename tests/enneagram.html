@@ -36,7 +36,9 @@
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -433,8 +435,9 @@
       5: "5-investigator", 6: "6-loyalist", 7: "7-enthusiast", 8: "8-challenger", 9: "9-peacemaker"
     };
 
-    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "" };
+    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
       $("quiz-intro").hidden = true;
@@ -445,6 +448,7 @@
     });
 
     function renderQuestion() {
+      advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
       $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
@@ -459,32 +463,32 @@
     }
 
     function selectAnswer(value) {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      })) return;
       state.answers[state.currentIndex] = value;
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-checked", selected ? "true" : "false");
       });
-      setTimeout(() => {
-        if (state.currentIndex < ITEMS.length - 1) {
-          state.currentIndex++;
-          renderQuestion();
-        } else {
-          showResult();
-        }
-      }, 220);
     }
 
     document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
     });
-    $("quiz-back").addEventListener("click", () => {
+    $("quiz-back").addEventListener("click", () => { advance.cancel();
       if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
     });
-    $("quiz-skip").addEventListener("click", () => selectAnswer(3));
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden) return;
+      if ($("quiz-runner").hidden || e.repeat) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault();
+        advance.cancel();
         if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
       }
     });
@@ -501,6 +505,7 @@
     }
 
     function showResult() {
+      const version = ++state.resultVersion;
       $("quiz-runner").hidden = true;
       $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
@@ -539,7 +544,7 @@
       // Async — swap in the rich GitHub-mirrored file when it lands.
       if (window.fetchTuning) {
         window.fetchTuning(`enneagram/${FILE_NAMES[r.dominant]}.md`).then((rich) => {
-          if (!rich || rich === state.currentTuning) return;
+          if (version !== state.resultVersion || !rich || rich === state.currentTuning) return;
           state.currentTuning = rich;
           renderTuningPreview(rich, fileName);
           if (window.renderIntegrations) window.renderIntegrations(rich);
@@ -613,6 +618,9 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      state.resultVersion++;
+      state.currentTuning = "";
+      advance.cancel();
       state.currentIndex = 0;
       state.answers = new Array(36).fill(null);
       $("quiz-result").hidden = true;

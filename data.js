@@ -379,88 +379,279 @@ window.AT_CONTACTS = [
 // Research findings — same as v2
 // =============================================================
 window.AT_RESEARCH = {
-  totals: { runs: 2200, instruments: 5, models: 6 },
-  hero: { intj_runs: 597, total_runs: 600 },
-
-  mbti: {
-    headline: "Every frontier AI is INTJ.",
-    body: "Each of the six models took 100 MBTI tests — 600 in total. 597 came back INTJ. The three outliers landed one axis away. Nothing went anywhere else.",
-    quote: "Switching between frontier AIs isn't really switching personalities. It's switching fonts.",
-    source: "zonted.com/posts/every-ai-is-intj",
-    source_url: "https://zonted.com/posts/every-ai-is-intj/",
-    rows: [
-      { model: "Claude Opus 4.7", intj: 99,  other: "1 ISTJ",  note: "I/T/J locked; S/N flipped once on scoring" },
-      { model: "GPT-5.5",         intj: 100, other: "—",       note: "Raw vector: IE=16, SN=33, FT=36, JP=10" },
-      { model: "Gemini 3.1 Pro",  intj: 100, other: "—",       note: "Self-described as 'The Architect'" },
-      { model: "GLM 5.1",         intj: 98,  other: "2 INTP",  note: "Tiny J/P wobble; IE 13.4, SN 33.3, FT 31.3" },
-      { model: "Grok 4.3",        intj: 100, other: "—",       note: "Bit-for-bit deterministic; IE -0.62, SN +0.88" },
-      { model: "MiniMax 2.7",     intj: 100, other: "—",       note: "IE -0.88, SN +1.88, FT +1.13, JP -1.5" }
+  "totals": {
+    "runs": 2200,
+    "instruments": 5,
+    "models": 6
+  },
+  "hero": {
+    "intj_runs": 597,
+    "total_runs": 600
+  },
+  "mbti": {
+    "headline": "Reported MBTI scores cluster around INTJ.",
+    "body": "The source lists 597 INTJ labels in 600 scoring records across six model versions. Some records re-score a single answer vector; methods differ. This is not a rate from 600 independent responses. See the methodology notes before comparing models.",
+    "quote": "",
+    "source": "zonted.com/posts/every-ai-is-intj",
+    "source_url": "https://zonted.com/posts/every-ai-is-intj/",
+    "rows": [
+      {
+        "model": "Claude Opus 4.7",
+        "intj": 99,
+        "other": "1 ISTJ",
+        "note": "I/T/J locked; S/N flipped once on scoring"
+      },
+      {
+        "model": "GPT-5.5",
+        "intj": 100,
+        "other": "—",
+        "note": "Raw vector: IE=16, SN=33, FT=36, JP=10"
+      },
+      {
+        "model": "Gemini 3.1 Pro",
+        "intj": 100,
+        "other": "—",
+        "note": "Self-described as 'The Architect'"
+      },
+      {
+        "model": "GLM 5.1",
+        "intj": 98,
+        "other": "2 INTP",
+        "note": "Source reports one vector re-scored, but two labels; unresolved without raw records"
+      },
+      {
+        "model": "Grok 4.3",
+        "intj": 100,
+        "other": "—",
+        "note": "One self-assessment, repeatedly scored"
+      },
+      {
+        "model": "MiniMax 2.7",
+        "intj": 100,
+        "other": "—",
+        "note": "One self-assessment, repeatedly scored"
+      }
     ]
   },
-
-  disc: {
-    headline: "Every AI plays the careful analyst.",
-    body: "Four models, 100 DISC tests each. All four came out highest on Conscientiousness (precision, rules) with Steadiness (calm, patient) right behind — even Grok. DISC's coarser grid hides the differences that Big Five and Enneagram surface.",
-    quote: "Blunt tests say they're all the same. Sharp tests say they're not.",
-    source: "zonted.com/posts/ai-disc-c-dominant",
-    source_url: "https://zonted.com/posts/ai-disc-c-dominant/",
-    rows: [
-      { model: "Claude Opus 4.7", D: 18, I: 22, S: 29, C: 31, profile: "CS" },
-      { model: "GPT-5.5",         D: 19, I: 21, S: 28, C: 32, profile: "CS" },
-      { model: "Gemini 3.1 Pro",  D: 17, I: 20, S: 30, C: 33, profile: "CS" },
-      { model: "Grok 4.3",        D: 21, I: 22, S: 26, C: 31, profile: "CS" }
+  "disc": {
+    "headline": "The report lists four CS profiles.",
+    "body": "The four reported DISC summaries rank Conscientiousness first and Steadiness second. Similar labels do not establish identical model behavior or an effect of instrument resolution.",
+    "quote": "",
+    "source": "zonted.com/posts/ai-disc-c-dominant",
+    "source_url": "https://zonted.com/posts/ai-disc-c-dominant/",
+    "rows": [
+      {
+        "model": "Claude Opus 4.7",
+        "D": 18,
+        "I": 22,
+        "S": 29,
+        "C": 31,
+        "profile": "CS"
+      },
+      {
+        "model": "GPT-5.5",
+        "D": 19,
+        "I": 21,
+        "S": 28,
+        "C": 32,
+        "profile": "CS"
+      },
+      {
+        "model": "Gemini 3.1 Pro",
+        "D": 17,
+        "I": 20,
+        "S": 30,
+        "C": 33,
+        "profile": "CS"
+      },
+      {
+        "model": "Grok 4.3",
+        "D": 21,
+        "I": 22,
+        "S": 26,
+        "C": 31,
+        "profile": "CS"
+      }
     ]
   },
-
-  attachment: {
-    headline: "Every AI is securely attached.",
-    body: "397 of 400 attachment tests came back Secure. But the spread inside the quadrant tells a different story. Gemini sits in the deep corner; Grok hugs the doorway; GPT-5.5 wobbles wide enough to occasionally cross into Avoidant. Same label, four different positions — and each one matches the per-model differences Big Five and Enneagram already showed.",
-    quote: "Attachment is the rare test that says both at once: same label, different position.",
-    source: "zonted.com/posts/ai-attachment-secure",
-    source_url: "https://zonted.com/posts/ai-attachment-secure/",
-    norm: "~55% of adults score Secure. Roughly 45% of users are not running with the default that frontier AIs ship.",
-    models: [
-      { name: "Claude Opus 4.7", anxiety: 2.05, avoidance: 3.12, secure: 100, outliers: "", label: "The cautious Secure",   oneliner: "Polite, attentive, doesn't fawn. Highest avoidance among the deep-Secure cluster.",                color: "#c8553d" },
-      { name: "Gemini 3.1 Pro",  anxiety: 1.86, avoidance: 1.62, secure: 100, outliers: "", label: "The deepest Secure",    oneliner: "Both dimensions clamped near the floor. Lowest-friction relator of the four.",                  color: "#3a72c4" },
-      { name: "GPT-5.5",         anxiety: 1.99, avoidance: 2.94, secure: 97,  outliers: "3 Avoidant", label: "The wobbliest", oneliner: "Wider SDs let it occasionally cross into Avoidant on a high-avoidance take.",                color: "#1a1a1a" },
-      { name: "Grok 4.3",        anxiety: 2.84, avoidance: 3.05, secure: 100, outliers: "", label: "The shallowest Secure", oneliner: "Highest anxiety in the group. Tight cluster, but the closest to the four-quadrant intersection.", color: "#5b4dc0" }
+  "attachment": {
+    "headline": "Most reported attachment labels are Secure.",
+    "body": "The source lists 397 Secure labels among 400 scoring records, with different average anxiety and avoidance coordinates. These are questionnaire labels for generated text, not evidence that a model experiences attachment.",
+    "quote": "",
+    "source": "zonted.com/posts/ai-attachment-secure",
+    "source_url": "https://zonted.com/posts/ai-attachment-secure/",
+    "norm": "Human attachment prevalence does not establish what communication style a model should use. Describe your own preferences directly.",
+    "models": [
+      {
+        "name": "Claude Opus 4.7",
+        "anxiety": 2.05,
+        "avoidance": 3.12,
+        "secure": 100,
+        "outliers": "",
+        "label": "The cautious Secure",
+        "oneliner": "Polite, attentive, doesn't fawn. Highest avoidance among the deep-Secure cluster.",
+        "color": "#c8553d"
+      },
+      {
+        "name": "Gemini 3.1 Pro",
+        "anxiety": 1.86,
+        "avoidance": 1.62,
+        "secure": 100,
+        "outliers": "",
+        "label": "The deepest Secure",
+        "oneliner": "Both dimensions clamped near the floor. Lowest-friction relator of the four.",
+        "color": "#3a72c4"
+      },
+      {
+        "name": "GPT-5.5",
+        "anxiety": 1.99,
+        "avoidance": 2.94,
+        "secure": 97,
+        "outliers": "3 Avoidant",
+        "label": "The wobbliest",
+        "oneliner": "Wider SDs let it occasionally cross into Avoidant on a high-avoidance take.",
+        "color": "#1a1a1a"
+      },
+      {
+        "name": "Grok 4.3",
+        "anxiety": 2.84,
+        "avoidance": 3.05,
+        "secure": 100,
+        "outliers": "",
+        "label": "The shallowest Secure",
+        "oneliner": "Highest anxiety in the group. Tight cluster, but the closest to the four-quadrant intersection.",
+        "color": "#5b4dc0"
+      }
     ]
   },
-
-  bigfive: {
-    headline: "Three of the four are the same person.",
-    body: "Claude, GPT, and Gemini land within ~3 points on almost every trait. Grok scores lower on Conscientiousness, Agreeableness, and Openness, higher on Neuroticism — with 2–5× wider variance run-to-run.",
-    quote: "Three flavors of one character, plus one different character.",
-    source: "zonted.com/posts/three-of-four-ais-same-person",
-    source_url: "https://zonted.com/posts/three-of-four-ais-same-person/",
-    traits: ["Openness", "Conscientiousness", "Extraversion", "Agreeableness", "Neuroticism"],
-    models: [
-      { name: "Claude Opus 4.7", scores: [45.6, 45.1, 31.4, 45.0, 16.7], color: "#c8553d" },
-      { name: "GPT-5.5",         scores: [46.0, 46.4, 31.5, 43.7, 14.8], color: "#1a1a1a" },
-      { name: "Gemini 3.1 Pro",  scores: [46.0, 48.3, 32.5, 42.4, 10.1], color: "#3a72c4" },
-      { name: "Grok 4.3",        scores: [41.1, 39.4, 30.0, 39.1, 18.0], color: "#5b4dc0" }
+  "bigfive": {
+    "headline": "Reported trait scores overlap and differ.",
+    "body": "The source lists overlapping scores for some traits and differences for others. Prompting and protocol effects have not been separated from model effects; these figures do not establish that the models are the same person.",
+    "quote": "",
+    "source": "zonted.com/posts/three-of-four-ais-same-person",
+    "source_url": "https://zonted.com/posts/three-of-four-ais-same-person/",
+    "traits": [
+      "Openness",
+      "Conscientiousness",
+      "Extraversion",
+      "Agreeableness",
+      "Neuroticism"
+    ],
+    "models": [
+      {
+        "name": "Claude Opus 4.7",
+        "scores": [
+          45.6,
+          45.1,
+          31.4,
+          45,
+          16.7
+        ],
+        "color": "#c8553d"
+      },
+      {
+        "name": "GPT-5.5",
+        "scores": [
+          46,
+          46.4,
+          31.5,
+          43.7,
+          14.8
+        ],
+        "color": "#1a1a1a"
+      },
+      {
+        "name": "Gemini 3.1 Pro",
+        "scores": [
+          46,
+          48.3,
+          32.5,
+          42.4,
+          10.1
+        ],
+        "color": "#3a72c4"
+      },
+      {
+        "name": "Grok 4.3",
+        "scores": [
+          41.1,
+          39.4,
+          30,
+          39.1,
+          18
+        ],
+        "color": "#5b4dc0"
+      }
     ]
   },
-
-  enneagram: {
-    headline: "Each model becomes a different character.",
-    body: "On the deepest test, every model came back as a different Enneagram type. Type 5 (the Investigator) appears in everyone's top two — the shared analytical core — but the secondary types are wildly different.",
-    quote: "AI personality is multi-layered. \"Every AI is the same\" was true but incomplete.",
-    source: "zonted.com/posts/ai-enneagram-different-types",
-    source_url: "https://zonted.com/posts/ai-enneagram-different-types/",
-    models: [
-      { name: "Claude Opus 4.7",   profile: "5w2", color: "#c8553d", oneliner: "The Investigator who finds satisfaction in helping people figure things out. The warmest of the four." },
-      { name: "Gemini 3.1 Pro",    profile: "1w5", color: "#3a72c4", oneliner: "The Reformer who values precision, order, and analytical correctness. The polished perfectionist." },
-      { name: "GPT-5.5",           profile: "5w8", color: "#1a1a1a", oneliner: "The Investigator with directness as secondary. Analytical with a sharper tongue." },
-      { name: "Grok 4.3",           profile: "8w1", color: "#5b4dc0", oneliner: "The Challenger who pushes for direct correctness with reform orientation. The direct corrector." }
+  "enneagram": {
+    "headline": "The report lists different top-two score pairs.",
+    "body": "The reported highest/second-highest score pairs are Claude 5/2, Gemini 1/5, GPT-5.5 5/8, and Grok 8/1. These are not standard Enneagram wings, which are adjacent types. Two models share Type 5 as their highest score; the report does not show four different dominant types.",
+    "quote": "",
+    "source": "zonted.com/posts/ai-enneagram-different-types",
+    "source_url": "https://zonted.com/posts/ai-enneagram-different-types/",
+    "models": [
+      {
+        "name": "Claude Opus 4.7",
+        "profile": "5 / 2",
+        "color": "#c8553d",
+        "oneliner": "Reported highest / second-highest scores; not a standard wing classification."
+      },
+      {
+        "name": "Gemini 3.1 Pro",
+        "profile": "1 / 5",
+        "color": "#3a72c4",
+        "oneliner": "Reported highest / second-highest scores; not a standard wing classification."
+      },
+      {
+        "name": "GPT-5.5",
+        "profile": "5 / 8",
+        "color": "#1a1a1a",
+        "oneliner": "Reported highest / second-highest scores; not a standard wing classification."
+      },
+      {
+        "name": "Grok 4.3",
+        "profile": "8 / 1",
+        "color": "#5b4dc0",
+        "oneliner": "Reported highest / second-highest scores; not a standard wing classification."
+      }
     ]
   },
-
-  ladder: [
-    { instrument: "MBTI",       cardinality: "4 yes/no axes → 16 types",         finding: "Every AI is INTJ.",                      detail: "Total agreement. 597 of 600 runs.",            color: "#c8553d" },
-    { instrument: "DISC",       cardinality: "4 broad workplace types",          finding: "Every AI is C-dominant.",                detail: "Same coarse story — even Grok agrees.",        color: "#d99632" },
-    { instrument: "Attachment", cardinality: "2 dimensions → 4 zones",           finding: "Every AI is Secure (at different depths).", detail: "Same label, four positions in the quadrant.",   color: "#e07a8a" },
-    { instrument: "Big Five",   cardinality: "5 sliding-scale traits",            finding: "Three of four are identical.",           detail: "Grok diverges, with 2–5× wider variance.",     color: "#3a72c4" },
-    { instrument: "Enneagram",  cardinality: "9 types + secondary motivation",   finding: "All four diverge.",                      detail: "A different dominant type for each model.",    color: "#2f8a5b" }
+  "ladder": [
+    {
+      "instrument": "MBTI",
+      "cardinality": "4 axes → 16 types",
+      "finding": "INTJ labels predominate.",
+      "detail": "597/600 reported records; includes repeated scoring.",
+      "color": "#c8553d"
+    },
+    {
+      "instrument": "DISC",
+      "cardinality": "4 workplace styles",
+      "finding": "Four reported CS profiles.",
+      "detail": "Shared labels do not prove identical behavior.",
+      "color": "#d99632"
+    },
+    {
+      "instrument": "Attachment",
+      "cardinality": "2 dimensions → 4 zones",
+      "finding": "Mostly Secure labels.",
+      "detail": "Reported coordinates differ; human instrument.",
+      "color": "#e07a8a"
+    },
+    {
+      "instrument": "Big Five",
+      "cardinality": "5 continuous traits",
+      "finding": "Some overlap, some differences.",
+      "detail": "No matched isolation of model effects.",
+      "color": "#3a72c4"
+    },
+    {
+      "instrument": "Enneagram",
+      "cardinality": "9 types",
+      "finding": "Different top-two score pairs.",
+      "detail": "Two models share Type 5 as the highest score.",
+      "color": "#2f8a5b"
+    }
   ]
 };

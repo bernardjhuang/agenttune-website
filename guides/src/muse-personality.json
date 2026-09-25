@@ -42,8 +42,8 @@
       "html": "<p>A personality file says a lot about you. Two facts from Meta's help pages:</p><ul><li>The setting that lets Meta use your interactions to train its models is <strong>on when you first use Muse</strong>. It is under Settings, Data controls, <em>Help improve our AI models</em>. Meta says it removes certain identifiers and that you can switch it off at any time.</li><li>If you import memory from another assistant (Settings, Data Controls, Import memory), everything in that export becomes material Muse can use.</li></ul>"
     },
     {
-      "h2": "What we have not tested.",
-      "html": "<p>We have run about 2,200 personality tests on six frontier models, and every one came back INTJ on the MBTI. The data is at <a href=\"/research\">/research</a>. Muse Spark is not one of the six. We don't know what Muse tests as, and nobody else has published it either.</p><p>What Meta has said: the first line of Muse's system prompt is <em>\"Your purpose is to make your user's life better.\"</em> Its design team treats the avatar, the name and a distinct style as core to the product. Meta's AI chief, Alexandr Wang, told CNBC the app was designed so that it <em>\"feels very approachable and friendly\"</em>. If approachable and friendly is not the collaborator you want, that is what Soul.md is for.</p>"
+      "h2": "What the research can and cannot establish.",
+      "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     }
   ],
   "faq": [
@@ -144,8 +144,9 @@
     },
     {
       "kicker": "Research",
-      "label": "Every frontier AI we tested is INTJ",
+      "label": "Exploratory research and methodology limits",
       "href": "/research"
     }
-  ]
+  ],
+  "updated": "2026-09-24"
 }

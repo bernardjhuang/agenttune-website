@@ -35,7 +35,9 @@
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -377,8 +379,9 @@
       disorganized: { name: "Disorganized", avatar: "Di", color: "#7a4ac8", file: "disorganized", blurb: "Tolerate inconsistency. Predictability over warmth." }
     };
 
-    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "" };
+    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
@@ -387,6 +390,7 @@
     });
 
     function renderQuestion() {
+      advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
       $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
@@ -394,31 +398,35 @@
       const existing = state.answers[state.currentIndex];
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
+        btn.setAttribute("aria-checked", parseInt(btn.dataset.value) === existing ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
     }
 
     function selectAnswer(value) {
-      state.answers[state.currentIndex] = value;
-      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-        btn.classList.toggle("selected", parseInt(btn.dataset.value) === value);
-      });
-      setTimeout(() => {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
         if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
         else showResult();
-      }, 220);
+      })) return;
+      state.answers[state.currentIndex] = value;
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-checked", selected ? "true" : "false");
+      });
     }
 
     document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
-      btn.addEventListener("click", () => selectAnswer(parseInt(btn.dataset.value)));
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
     });
-    $("quiz-back").addEventListener("click", () => { if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
-    $("quiz-skip").addEventListener("click", () => selectAnswer(4));
+    $("quiz-back").addEventListener("click", () => { advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(4); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden) return;
+      if ($("quiz-runner").hidden || e.repeat) return;
       if (["1","2","3","4","5","6","7"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
-        e.preventDefault(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+        e.preventDefault(); advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
       }
     });
 
@@ -442,6 +450,7 @@
     }
 
     function showResult() {
+      const version = ++state.resultVersion;
       $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
       const meta = STYLE_META[r.style];
@@ -482,7 +491,7 @@
 
       if (window.fetchTuning) {
         window.fetchTuning(`attachment/${meta.file}.md`).then((rich) => {
-          if (!rich || rich === state.currentTuning) return;
+          if (version !== state.resultVersion || !rich || rich === state.currentTuning) return;
           state.currentTuning = rich;
           renderTuningPreview(rich, fileName);
           if (window.renderIntegrations) window.renderIntegrations(rich);
@@ -553,6 +562,9 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      state.resultVersion++;
+      state.currentTuning = "";
+      advance.cancel();
       state.currentIndex = 0; state.answers = new Array(36).fill(null);
       $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -29,6 +29,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Custom Instructions Generator"}]}</script>
 
   <script defer src="/consent.js"></script>
+  <script src="/compact-tunings.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,7 +98,7 @@
               <option value="copilot">GitHub Copilot — copilot-instructions.md</option>
             </select>
           </div>
-          <button class="tool-copy" id="copy" type="button">Copy</button>
+          <button class="tool-copy" id="copy" type="button" disabled>Copy</button>
           <p class="tool-note">Built from <a href="/library/" id="type-link">the tuning library</a>. The type is a starting hypothesis — edit the output to fit. Nothing you select leaves your browser.</p>
         </section>
 
@@ -112,7 +113,7 @@
 
       <section style="max-width: 720px; margin-top: 48px;" class="guide-prose">
         <h2>How it works.</h2>
-        <p>Each of the <a href="/library/">43 tuning files</a> is a ~200-word Markdown block describing how one personality type prefers to communicate — pacing, directness, decision framing, feedback style. This tool wraps that file in the right container for your agent: ChatGPT's <em>"How would you like ChatGPT to respond?"</em> field caps at 1,500 characters, so the generator checks the fit; coding agents read Markdown files like CLAUDE.md or AGENTS.md, so it emits an appendable section instead.</p>
+        <p>Each of the <a href="/library/">43 tuning files</a> is a ~200-word Markdown block describing how one personality type prefers to communicate — pacing, directness, decision framing, feedback style. This tool wraps that file in the right container for your agent: ChatGPT's <em>"How would you like ChatGPT to respond?"</em> field caps at 1,500 characters, so this generator uses a reviewed compact version for every type; coding agents read Markdown files like CLAUDE.md or AGENTS.md, so it emits an appendable section instead.</p>
         <p>For the full experience — the tuning explained in plain English, how to talk to your type, install snippets for 13 agents — open your type's library page. For the method behind it, start with <a href="/guides/how-to-give-your-ai-a-personality">how to give your AI a personality</a>.</p>
       </section>
     </main>
@@ -126,7 +127,7 @@
   <script>
   (function () {
     var SYSTEM_LABELS = { mbti: "MBTI", enneagram: "Enneagram", disc: "DISC", attachment: "Attachment", ocean: "Big Five (OCEAN)" };
-    var catalog = null, mdCache = {};
+    var catalog = null, mdCache = {}, renderVersion = 0;
     var $ = function (id) { return document.getElementById(id); };
 
     function tuningsFor(sys) { return catalog.tunings.filter(function (t) { return t.system === sys; }); }
@@ -143,7 +144,7 @@
       var attribution = "Source: agent-tune.com" + t.page.replace("https://agent-tune.com", "") + " (MIT)";
       switch (target) {
         case "chatgpt":
-          return "Adopt these communication preferences for every reply.\n\n" + body;
+          return window.ATCompact.get(t.system, t.slug);
         case "claude":
           return body + "\n\n" + "Apply these preferences to tone, pacing, and structure in every response.";
         case "claudemd":
@@ -158,30 +159,37 @@
     }
 
     function render() {
+      var version = ++renderVersion;
+      $("copy").disabled = true;
+      $("out").textContent = "Loading the tuning…";
+      $("charcount").textContent = "";
       var t = currentTuning();
       if (!t) return;
       var target = $("target").value;
       var path = t.src || t.md.replace("https://agent-tune.com", "");
       var done = function (md) {
+        if (version !== renderVersion) return;
         var outText = wrap(target, t, md);
         $("out").textContent = outText;
+        $("copy").disabled = target === "chatgpt" && outText.length > window.ATCompact.limit;
         var n = outText.length;
         if (target === "chatgpt") {
           var ok = n <= 1500;
-          $("charcount").innerHTML = '<span class="' + (ok ? "charfit-ok" : "charfit-over") + '">' + n + " / 1500 characters" + (ok ? " — fits the custom-instructions field" : " — over the limit, trim before pasting") + "</span>";
+          $("charcount").innerHTML = '<span class="' + (ok ? "charfit-ok" : "charfit-over") + '">' + n + " / 1500 characters" + (ok ? " — compact version, fits the field" : " — over the limit, trim before pasting") + "</span>";
         } else {
           $("charcount").textContent = n + " characters";
         }
         $("src-link").innerHTML = '<a href="' + t.page.replace("https://agent-tune.com", "") + '">Full ' + t.code + " page →</a>";
       };
+      if (target === "chatgpt") return done("");
       if (mdCache[path]) return done(mdCache[path]);
-      fetch(path).then(function (r) { return r.text(); }).then(function (md) {
+      fetch(path).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); }).then(function (md) {
         // Strip the YAML front-matter block (everything through the second "---" line)
         var parts = md.split(/^---\s*$/m);
         if (parts.length >= 3) md = parts.slice(2).join("---");
         mdCache[path] = md.trim();
         done(mdCache[path]);
-      }).catch(function () { $("out").textContent = "Couldn't load the tuning file. Open it directly: " + t.md; });
+      }).catch(function () { if (version !== renderVersion) return; $("out").textContent = "Couldn't load the tuning file. Open it directly: " + t.md; });
     }
 
     function fillTypes() {
@@ -191,7 +199,7 @@
       }).join("");
     }
 
-    fetch("/library/index.json").then(function (r) { return r.json(); }).then(function (data) {
+    fetch("/library/index.json").then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }).then(function (data) {
       catalog = data;
       var systems = [];
       data.tunings.forEach(function (t) { if (systems.indexOf(t.system) === -1) systems.push(t.system); });
@@ -206,6 +214,7 @@
     $("type").addEventListener("change", render);
     $("target").addEventListener("change", render);
     $("copy").addEventListener("click", function () {
+      if ($("copy").disabled) return;
       navigator.clipboard.writeText($("out").textContent).then(function () {
         $("copy").textContent = "Copied";
         setTimeout(function () { $("copy").textContent = "Copy"; }, 1200);

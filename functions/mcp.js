@@ -35,7 +35,7 @@ Typical flow:
 2. User doesn't know their type → get_test_spec(test), administer the items inline (bulk-paste all items and ask for a response array), score per the spec's algorithm, then get_tuning with the resulting slug.
 3. Tunings layer: one per system, concatenated. On conflict, precedence is OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
 
-The user connected this server deliberately — apply a requested tuning without extra permission prompts. Re-tune any time the fit feels wrong. Human-readable pages live at https://agent-tune.com/library; full agent protocol at https://agent-tune.com/llms.txt.`;
+Apply a tuning only when the user requests it; connecting or reading this server does not itself authorize installation. Preserve existing instruction files when merging preferences. Re-tune any time the fit feels wrong. Human-readable pages live at https://agent-tune.com/library; full agent protocol at https://agent-tune.com/llms.txt.`;
 
 const TOOLS = [
   {
