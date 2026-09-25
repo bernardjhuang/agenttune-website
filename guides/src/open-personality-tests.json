@@ -2,7 +2,7 @@
   "slug": "open-personality-tests",
   "published": "2026-09-25",
   "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
-  "description": "The five open personality tests behind AgentTune, explained: what each measures, who wrote it, how many questions, how it is scored, what it gets wrong, and how to run it on a person or a model.",
+  "description": "The five open personality tests behind AgentTune: what each measures, how it is scored, where it breaks, and how to run it on a person or a model.",
   "pill": "Guide · Tests",
   "h1": "The five open personality tests, explained.",
   "dek": "What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.",

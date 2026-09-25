@@ -262,7 +262,7 @@ ${enneagram}
   <h2 class="h-sub" id="september-methods">Three kinds of evidence, kept apart.</h2>
   ${methods}
   <a class="hub-article-card" href="/research/ai-personality-five-models-2026" style="margin-top: 22px;">
-    <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent);">Research · September 2026</span>
+    <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · September 2026</span>
     <div class="hub-article-title">What five AI models say about themselves.</div>
     <div class="hub-article-meta">Astra · Sol · Grok 4.6 · Opus 5.5 · Fable 5.1 · every tie shown · downloadable data and scorer · <span class="hub-article-arrow">read the study →</span></div>
   </a>

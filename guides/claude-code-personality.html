@@ -36,7 +36,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
 </head>
@@ -64,10 +64,10 @@
       <span class="crumb-current" aria-current="page">How to change Claude Code's personality</span>
     </nav>
 
-    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Code</span>
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">How to change Claude Code's personality.</h1>
         <p class="article-dek">Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
@@ -85,7 +85,7 @@
   curl --fail --show-error --location https://agent-tune.com/output-styles/agenttune-mbti-intj.md \
   --output "$tuning_dir/style.md" &&\
   mkdir -p ~/.claude/output-styles &&\
-  (set -C; cat "$tuning_dir/style.md" > ~/.claude/output-styles/agenttune-mbti-intj.md)</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>"hi"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>
+  (set -C; cat "$tuning_dir/style.md" &gt; ~/.claude/output-styles/agenttune-mbti-intj.md)</div><ol><li>Restart Claude Code. The docs say custom style files are read at startup.</li><li>Run <code>/output-style</code> and choose <strong>AgentTune INTJ</strong>, or open <code>/config</code> and set <strong>Output style</strong>.</li><li>Say <em>"hi"</em>. A tuned session answers in one short line.</li></ol><p>That is the INTJ file. There are 43, one per type, listed further down. They are plain Markdown and MIT licensed, so edit them.</p><p>If <code>/output-style</code> is not recognized, update Claude Code. The command was deprecated in March 2026 and brought back in version 2.1.269, on September 11. <code>/config</code> works either way.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -205,12 +205,12 @@ How to talk to the person you are working with:
         </div>
       </section>
 
-    </article>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
       <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
-    </div>
+    </footer>
   </div>
 
   <script src="/compact-tunings.js"></script>

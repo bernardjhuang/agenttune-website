@@ -1,0 +1,90 @@
+rel	template	words	sentences	avg_sentence_words	long_sentences	long_paragraphs	boilerplate_share	caveat_sentences	em_dashes	fk_grade	title_len	description_len	h1	inbound	bytes	inline_style_attrs
+404.html	404	25	3	8.3	0	0	0.0	0	1	1.3	32	128	This page slipped the tuning.	0	2725	4
+guides/ai-personality-glossary.html	guide	1565	153	10.2	0	0	0.005	3	0	6.2	55	155	An AI personality glossary.	1	20505	3
+guides/astra-personality.html	guide	2553	224	11.4	1	1	0.027	3	0	6.0	55	154	How to give GPT-6 Astra a personality.	52	31588	3
+guides/best-claude-personality.html	guide	803	104	7.7	0	0	0.01	1	0	5.7	49	148	The best Claude personality setups.	5	19509	3
+guides/chatgpt-custom-instructions-by-personality-type.html	guide	1206	127	9.5	1	0	0.024	0	40	5.4	49	152	ChatGPT custom instructions for every MBTI personality type.	74	32333	3
+guides/chatgpt-custom-instructions-examples.html	guide	675	116	5.8	0	0	0.012	3	0	5.6	56	147	ChatGPT custom instructions examples, by what you do.	1	23074	3
+guides/claude-code-personality.html	guide	1670	171	9.8	4	0	0.017	0	0	5.4	54	156	How to change Claude Code's personality.	58	29909	3
+guides/claude-md-examples.html	guide	1344	110	12.2	1	0	0.022	0	34	7.3	47	143	CLAUDE.md examples that actually change behavior.	10	23535	3
+guides/claude-opus-5-5-personality.html	guide	1118	112	10.0	0	0	0.007	4	0	5.9	58	144	Claude Opus 5.5: results and tuning ideas.	12	18740	3
+guides/claude-personality.html	guide	1540	192	8.0	0	0	0.019	7	0	6.4	58	159	How to change Claude’s personality.	58	26521	3
+guides/coding-agent-personality.html	guide	1272	107	11.9	1	0	0.017	0	28	7.3	55	147	Coding agent personality: the layer your AGENTS.md is missing.	58	21271	3
+guides/enneagram-ai-prompts.html	guide	1350	109	12.4	1	2	0.138	3	30	6.9	55	144	Enneagram AI prompts for all nine types.	13	25397	3
+guides/fable-personality.html	guide	1092	111	9.8	0	0	0.007	4	0	5.9	59	145	Claude Fable 5.1: results and tuning ideas.	10	18599	3
+guides/grokbot-personality.html	guide	2150	204	10.5	2	1	0.083	9	0	5.4	54	150	Give a Grok Bot its character: the Description guide.	52	28259	3
+guides/how-to-give-your-ai-a-personality.html	guide	1806	138	13.1	2	3	0.091	3	33	8.0	59	142	How to give your AI a personality.	22	23717	3
+guides/index.html	guides-hub	59	3	19.7	1	0	0.0	0	1	10.7	57	148	Personality tuning, agent by agent.	0	21597	5
+guides/make-chatgpt-sound-like-you.html	guide	1241	99	12.5	2	1	0.058	1	30	7.1	46	146	Make ChatGPT sound like you — and treat you like you.	3	19719	3
+guides/make-claude-more-direct.html	guide	745	95	7.8	0	0	0.011	3	0	5.6	50	134	How to make Claude more direct.	6	17002	3
+guides/mbti-vs-big-five-for-ai.html	guide	1059	90	11.8	3	0	0.264	7	18	7.8	56	142	MBTI vs Big Five for AI: crisp switches or calibrated dials.	17	18354	3
+guides/meta-muse-characters.html	guide	1243	124	10.0	0	0	0.025	4	0	6.3	54	156	Meta Muse characters, explained.	3	21227	3
+guides/muse-personality.html	guide	2387	216	11.1	0	1	0.075	4	0	5.5	52	152	Give Meta Muse a character: the Soul.md guide.	52	29869	3
+guides/muse-soul-md-templates.html	guide	896	111	8.1	0	0	0.009	2	0	6.9	48	151	Meta Muse Soul.md templates.	5	20427	3
+guides/open-personality-tests.html	guide	1461	140	10.4	2	0	0.005	1	0	5.5	57	146	The five open personality tests, explained.	3	20165	3
+guides/open-source-enneagram-test.html	guide	1248	170	7.3	0	0	0.006	1	0	4.8	57	152	An open-source Enneagram test on GitHub.	6	21711	3
+index.html	home	865	101	8.6	0	0	0.059	1	11	4.9	59	144	Personalize your AI agent to work with you better.	1	25269	26
+library/attachment/anxious.html	library	1555	147	10.6	4	0	0.262	1	22	6.9	53	158	Anxious attachment style system prompt	8	47321	8
+library/attachment/avoidant.html	library	1517	151	10.0	2	0	0.27	1	11	7.1	54	136	Avoidant attachment style system prompt	8	47277	8
+library/attachment/disorganized.html	library	1686	151	11.2	6	0	0.243	1	21	6.6	58	127	Disorganized attachment style system prompt	8	48609	8
+library/attachment/secure.html	library	1426	147	9.7	1	0	0.287	1	13	6.8	52	133	Secure attachment style system prompt	8	45736	8
+library/disc/c-conscientiousness.html	library	1455	145	10.0	2	0	0.267	1	14	6.4	59	124	C DISC Conscientiousness system prompt	8	45933	8
+library/disc/d-dominance.html	library	1358	152	8.9	1	0	0.286	1	16	5.3	51	128	D DISC Dominance system prompt	8	44684	8
+library/disc/i-influence.html	library	1440	146	9.9	4	0	0.269	1	18	5.9	51	120	I DISC Influence system prompt	8	45490	8
+library/disc/s-steadiness.html	library	1479	143	10.3	4	0	0.261	1	8	6.1	52	120	S DISC Steadiness system prompt	8	46195	8
+library/enneagram/1-reformer.html	library	1416	134	10.6	2	0	0.259	1	12	6.0	51	122	T1 Enneagram Type 1 system prompt	9	45761	9
+library/enneagram/2-helper.html	library	1387	132	10.5	2	0	0.265	1	13	5.8	51	126	T2 Enneagram Type 2 system prompt	9	45121	9
+library/enneagram/3-achiever.html	library	1307	141	9.3	1	0	0.281	1	11	5.9	51	118	T3 Enneagram Type 3 system prompt	9	44645	9
+library/enneagram/4-individualist.html	library	1308	137	9.5	1	0	0.281	1	10	5.7	51	126	T4 Enneagram Type 4 system prompt	9	44877	9
+library/enneagram/5-investigator.html	library	1346	143	9.4	1	0	0.273	1	13	5.9	51	125	T5 Enneagram Type 5 system prompt	9	44914	9
+library/enneagram/6-loyalist.html	library	1314	130	10.1	2	0	0.279	1	10	5.8	51	123	T6 Enneagram Type 6 system prompt	9	44639	9
+library/enneagram/7-enthusiast.html	library	1323	136	9.7	1	0	0.277	1	11	5.5	51	117	T7 Enneagram Type 7 system prompt	9	44634	9
+library/enneagram/8-challenger.html	library	1293	144	9.0	1	0	0.284	3	10	5.5	51	117	T8 Enneagram Type 8 system prompt	9	44483	9
+library/enneagram/9-peacemaker.html	library	1375	136	10.1	1	0	0.267	1	14	5.4	51	122	T9 Enneagram Type 9 system prompt	9	44830	9
+library/index.html	library-hub	91	17	5.4	0	0	0.0	0	1	5.4	55	157	Paste-ready personality tunings for every agent.	78	38598	132
+library/mbti/enfj.html	library	1355	131	10.3	2	0	0.296	0	11	6.3	60	125	ENFJ MBTI system prompt	11	44749	8
+library/mbti/enfp.html	library	1351	142	9.5	2	0	0.302	0	10	5.7	60	126	ENFP MBTI system prompt	17	44677	8
+library/mbti/entj.html	library	1340	137	9.8	1	0	0.307	0	14	5.9	60	121	ENTJ MBTI system prompt	11	44482	8
+library/mbti/entp.html	library	1360	144	9.4	1	0	0.302	0	12	6.0	60	131	ENTP MBTI system prompt	11	44633	8
+library/mbti/esfj.html	library	1328	143	9.3	1	0	0.306	0	15	5.9	60	122	ESFJ MBTI system prompt	11	44591	8
+library/mbti/esfp.html	library	1296	140	9.3	1	0	0.307	0	12	5.6	60	120	ESFP MBTI system prompt	11	44140	8
+library/mbti/estj.html	library	1257	139	9.0	1	0	0.32	0	13	5.7	60	124	ESTJ MBTI system prompt	11	44230	8
+library/mbti/estp.html	library	1333	142	9.4	0	0	0.299	0	16	5.3	60	148	ESTP MBTI system prompt	11	42063	8
+library/mbti/infj.html	library	1316	132	10.0	3	0	0.313	0	16	5.9	60	130	INFJ MBTI system prompt	11	44319	8
+library/mbti/infp.html	library	1297	130	10.0	1	0	0.315	0	11	5.8	60	140	INFP MBTI system prompt	11	44213	8
+library/mbti/intj.html	library	1346	137	9.8	1	0	0.311	0	11	5.9	60	144	INTJ MBTI system prompt	17	44686	8
+library/mbti/intp.html	library	1374	144	9.5	2	0	0.306	0	12	6.1	60	135	INTP MBTI system prompt	12	45029	8
+library/mbti/isfj.html	library	1316	140	9.4	1	0	0.303	0	15	5.8	60	121	ISFJ MBTI system prompt	11	44187	8
+library/mbti/isfp.html	library	1258	139	9.1	1	0	0.326	0	11	5.3	60	121	ISFP MBTI system prompt	11	43825	8
+library/mbti/istj.html	library	1255	143	8.8	1	0	0.329	0	8	5.9	60	125	ISTJ MBTI system prompt	13	43983	8
+library/mbti/istp.html	library	1238	135	9.2	1	0	0.335	0	11	5.6	60	131	ISTP MBTI system prompt	11	43545	8
+library/ocean/agreeableness-high.html	library	1332	129	10.3	2	0	0.289	0	16	7.0	53	147	A-high High Agreeableness · Big Five system prompt	8	45320	10
+library/ocean/agreeableness-low.html	library	1281	140	9.2	1	0	0.306	0	16	6.1	52	147	A-low Low Agreeableness · Big Five system prompt	10	44728	10
+library/ocean/conscientiousness-high.html	library	1291	136	9.5	2	0	0.308	0	7	5.8	57	158	C-high High Conscientiousness · Big Five system prompt	12	44682	10
+library/ocean/conscientiousness-low.html	library	1308	132	9.9	1	0	0.308	0	11	5.9	56	152	C-low Low Conscientiousness · Big Five system prompt	12	44648	10
+library/ocean/extraversion-high.html	library	1303	136	9.6	1	0	0.302	0	15	5.9	52	151	E-high High Extraversion · Big Five system prompt	10	44563	10
+library/ocean/extraversion-low.html	library	1280	137	9.3	1	0	0.313	0	9	6.1	51	150	E-low Low Extraversion · Big Five system prompt	10	44456	10
+library/ocean/neuroticism-high.html	library	1461	156	9.4	3	0	0.264	0	16	6.2	51	154	N-high High Neuroticism · Big Five system prompt	8	46599	10
+library/ocean/neuroticism-low.html	library	1384	141	9.8	2	0	0.29	0	14	6.0	50	152	N-low Low Neuroticism · Big Five system prompt	9	45493	10
+library/ocean/openness-high.html	library	1321	130	10.2	3	0	0.295	0	9	6.8	48	156	O-high High Openness · Big Five system prompt	14	44834	10
+library/ocean/openness-low.html	library	1294	139	9.3	1	0	0.312	0	4	6.3	47	151	O-low Low Openness · Big Five system prompt	12	44499	10
+privacy.html	legal	540	64	8.4	0	1	0.0	0	4	6.6	26	142	Privacy Policy	1	9716	1
+research.html	research-hub	1687	292	5.8	1	0	0.014	11	0	-0.9	58	154	AI questionnaire results, compared.	85	64614	47
+research/ai-personality-five-models-2026.html	research	1979	234	8.5	0	1	0.004	6	0	5.1	57	143	What five AI models say about themselves.	35	27368	3
+research/ai-personality-rankings.html	research	1136	333	3.4	0	0	0.014	5	0	-0.4	48	160	AI personality scores, with the evidence beside them.	5	23181	3
+research/does-personality-tuning-change-ai-answers.html	research	961	108	8.9	0	0	0.008	3	0	6.3	59	158	Does personality tuning change AI answers?	10	18579	3
+research/first-ai-that-is-not-an-intj.html	research	574	66	8.7	0	0	0.056	2	0	5.8	49	152	Is every AI an INTJ?	3	13379	3
+research/i-took-the-mbti-100-times.html	research	336	35	9.6	0	0	0.0	2	0	8.9	53	157	100 simulated MBTI outcomes.	5	11639	0
+research/what-personality-type-is-chatgpt.html	research	1404	128	11.0	2	2	0.011	5	0	3.7	53	148	What personality type is ChatGPT?	10	20042	0
+research/what-personality-type-is-claude.html	research	1029	114	9.0	2	0	0.055	3	0	3.0	60	154	What personality type is Claude?	7	17097	3
+research/what-personality-type-is-gemini.html	research	759	75	10.1	0	0	0.053	6	0	5.6	53	160	What personality type is Gemini?	2	15387	3
+research/what-personality-type-is-grok.html	research	855	79	10.8	1	1	0.067	4	2	4.7	58	155	What personality type is Grok?	2	15678	3
+terms.html	legal	370	41	9.0	1	0	0.0	0	2	7.1	28	145	Terms of Service	1	8290	1
+tests/attachment.html	test	985	175	5.6	1	0	0.046	0	29	4.0	52	101	Free attachment style test.	12	43318	22
+tests/big-five.html	test	1001	191	5.2	2	1	0.05	0	37	1.9	57	136	Free Big Five personality test.	21	46922	23
+tests/disc.html	test	660	93	7.1	0	0	0.076	0	6	3.8	53	115	Free DISC personality test.	12	35651	22
+tests/enneagram.html	test	951	183	5.2	0	0	0.053	0	4	2.3	56	140	Free Enneagram test.	22	42823	22
+tests/index.html	tests-hub	263	24	11.0	0	0	0.0	0	5	6.3	55	149	Free personality tests, built for AI tuning.	22	10194	17
+tests/mbti.html	test	650	118	5.5	0	0	0.058	0	4	1.9	56	143	Free MBTI test.	41	45398	18
+tools/claude-md-generator.html	tool	375	33	11.4	1	0	0.0	0	2	5.5	48	128	Free CLAUDE.md generator.	7	12537	4
+tools/custom-instructions-generator.html	tool	171	18	9.5	0	0	0.0	0	2	5.6	50	140	Free ChatGPT custom instructions generator.	28	10035	4

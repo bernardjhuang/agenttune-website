@@ -40,7 +40,7 @@
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%233a72c4'/%3E%3C/svg%3E" />
   <style>:root { --lib-accent: #3a72c4; --lib-accent-22: rgba(58,114,196,0.13); --lib-accent-55: rgba(58,114,196,0.34); }</style>
@@ -70,7 +70,7 @@
       <span class="crumb-current" aria-current="page">Big Five</span>
     </nav>
 
-    <div id="main" tabindex="-1"></div>
+    <main id="main" tabindex="-1">
 
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">7-min test · 50 questions · 1–5 scale</span>
@@ -86,15 +86,15 @@
       </div>
 
       <div class="cta-row">
-        <button class="btn btn-primary" id="quiz-start" style="background: #3a72c4; border-color: #3a72c4;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #3a72c4; border-color: #3a72c4;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
 
       <!-- WHAT BIG FIVE MEASURES -->
       <div class="quiz-intro-chart">
-        <h3 class="quiz-intro-chart-h">What Big Five measures</h3>
-        <p class="quiz-intro-chart-sub">Five continuous dimensions. Your profile is a polygon. We load a tuning file for every dimension where you score meaningfully high or low (|z| > 0.5).</p>
+        <h2 class="quiz-intro-chart-h">What Big Five measures</h2>
+        <p class="quiz-intro-chart-sub">Five continuous dimensions. Your profile is a polygon. We load a tuning file for every dimension where you score meaningfully high or low (|z| &gt; 0.5).</p>
         <!--
           Big Five radar — pentagon with 5 axes (O, C, E, A, N) at 72° intervals.
           Center (250, 230), outer radius 156, viewBox padded ±60px horizontally to
@@ -159,16 +159,16 @@
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
         <div class="quiz-likert" role="radiogroup">
-          <button class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
-          <button class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
-          <button class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
-          <button class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
-          <button class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
           <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
-          <button class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
+          <button type="button" class="quiz-nav-btn" id="quiz-skip">Skip (neutral) →</button>
         </div>
       </div>
     </section>
@@ -184,7 +184,7 @@
             <div class="quiz-result-name" id="quiz-result-name">5 dimensions, compositional</div>
           </div>
         </div>
-        <div class="quiz-result-blurb" id="quiz-result-blurb">OCEAN doesn't return a single type — it returns continuous scores. We load tuning files only for dimensions where you score meaningfully high or low (|z| > 0.5). Average dimensions are skipped; the model's default handles them.</div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb">The Big Five doesn't return a single type — it returns continuous scores. We load tuning files only for dimensions where you score meaningfully high or low (|z| &gt; 0.5). Average dimensions are skipped; the model's default handles them.</div>
 
         <h3 class="quiz-result-section-h">Your five trait z-scores</h3>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
@@ -242,7 +242,7 @@
       </div>
 
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
-        <button class="btn btn-secondary" id="quiz-restart">Retake Big Five test</button>
+        <button type="button" class="btn btn-secondary" id="quiz-restart">Retake Big Five test</button>
       </div>
     </section>
 
@@ -378,10 +378,11 @@
       </div>
     </details>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
       <span><a href="/tests/">← all five tests</a></span>
-    </div>
+    </footer>
 
   </div>
 
