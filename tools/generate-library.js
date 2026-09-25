@@ -517,7 +517,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       : r.system === "enneagram" ? `T${rDigit} ${r.name}`
       : r.system === "ocean" ? r.code
       : r.code;
-    return `<a class="lib-related-pill" href="${rUrl}" style="color: ${accent};">${escHtml(label)} →</a>`;
+    return `<a class="lib-related-pill" href="${rUrl}" style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent};">${escHtml(label)} →</a>`;
   }).join("");
 
   const relatedAllUrl = `/library/#${c.system}`;
@@ -1051,8 +1051,16 @@ ${summaryLis}
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

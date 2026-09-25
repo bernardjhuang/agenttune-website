@@ -72,11 +72,12 @@
     </nav>
 
     <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free DISC personality test.</h1>
 
     <section class="quiz-intro" id="quiz-intro">
-      <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">3-min test · 16 questions</span>
-      <h1 class="h-hero h-research-hero">Free DISC personality test.</h1>
-      <div class="h-hero h-research-hero h-hero-italic" style="color: #d99632;">Instant results, then your tuning file.</div>
+      <span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">3-min test · 16 questions</span>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free DISC personality test.</div>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #855b1c;">Instant results, then your tuning file.</div>
       <p class="lede">Answer 16 quick questions — the fastest test in the library. We'll score it client-side and hand you a Markdown tuning file matched to your DISC workplace style.</p>
 
       <div class="quiz-intro-meta">
@@ -87,7 +88,7 @@
       </div>
 
       <div class="cta-row">
-        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #d99632; border-color: #d99632;">Start the test →</button>
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #855b1c; border-color: #d99632;">Start the test →</button>
       </div>
 
       <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
@@ -128,17 +129,18 @@
         <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #d99632;"></div></div>
         <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 16</div>
       </div>
-      <div class="quiz-card">
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
         <div class="quiz-card-prompt">
-          <div class="avatar avatar-md avatar-solid" style="background: #d99632;" aria-hidden="true">D</div>
+          <div class="avatar avatar-md avatar-solid" style="background: #855b1c;" aria-hidden="true">D</div>
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
-        <div class="quiz-likert" role="radiogroup">
-          <button type="button" class="quiz-likert-btn" data-value="1"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
+        <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -149,24 +151,24 @@
     </section>
 
     <section class="quiz-result" id="quiz-result" hidden>
-      <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">Done · here's your result</span>
+      <span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">Done · here's your result</span>
       <div class="quiz-result-card" style="border-top-color: #d99632;">
         <div class="quiz-result-headline">
-          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #d99632;">CS</div>
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #855b1c;">CS</div>
           <div>
             <div class="quiz-result-label">Your DISC profile</div>
-            <div class="quiz-result-code" id="quiz-result-code" style="color: #d99632;">CS</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #855b1c;">CS</div>
             <div class="quiz-result-name" id="quiz-result-name">Conscientiousness with Steadiness blend</div>
           </div>
         </div>
         <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
 
-        <h3 class="quiz-result-section-h">All four type scores</h3>
+        <h2 class="quiz-result-section-h">All four type scores</h2>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
         <div id="quiz-tie-links" class="quiz-tie-links" hidden></div>
         <div id="quiz-export-panel">
-        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <h2 class="quiz-result-section-h">Your tuning file</h2>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
             <div class="c-dots"><span></span><span></span><span></span></div>
@@ -180,7 +182,7 @@
               <span class="c-tab-close">×</span>
             </div>
           </div>
-          <div class="c-editor-body">
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
             <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
             <pre class="c-code" id="quiz-editor-code"></pre>
           </div>
@@ -199,7 +201,7 @@
           <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
         </div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
         <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
@@ -210,9 +212,9 @@
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
-          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
-          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
         </div>
       </div>
 
@@ -233,7 +235,7 @@
 
         <h3>The 16 items</h3>
         <p>Four items per DISC letter (D / I / S / C), presented in letter order (items 1–4 are D, 5–8 are I, 9–12 are S, 13–16 are C). User rates each statement on a 1–5 Likert scale: <strong>1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree</strong>. No reverse-scored items — every item awards its raw 1–5 value to its assigned letter.</p>
-        <table class="items-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Disc specification table 1" tabindex="0"><table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Letter</th></tr></thead>
           <tbody id="quiz-spec-items">
           <tr><td class="num-col">1</td><td>I put people under pressure.</td><td class="num-col">D</td></tr>
@@ -253,11 +255,11 @@
           <tr><td class="num-col">15</td><td>I love order and regularity.</td><td class="num-col">C</td></tr>
           <tr><td class="num-col">16</td><td>My first reaction to an idea is to see its flaws.</td><td class="num-col">C</td></tr>
         </tbody>
-        </table>
+        </table></div>
 
         <h3>Item → letter mapping</h3>
         <p>Each of the 16 items contributes to exactly one of D / I / S / C. Items are grouped in blocks of four.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Disc specification table 2" tabindex="0"><table class="score-table">
           <thead><tr><th>Letter</th><th>Item numbers</th><th>Awards score to</th></tr></thead>
           <tbody>
             <tr><td class="mono">D</td><td class="mono">1, 2, 3, 4</td><td>D (Dominance) total</td></tr>
@@ -265,7 +267,7 @@
             <tr><td class="mono">S</td><td class="mono">9, 10, 11, 12</td><td>S (Steadiness) total</td></tr>
             <tr><td class="mono">C</td><td class="mono">13, 14, 15, 16</td><td>C (Conscientiousness) total</td></tr>
           </tbody>
-        </table>
+        </table></div>
 
         <h3>Scoring algorithm</h3><p>Equal highest scores are reported together, without choosing a dominant type or automatically exporting a tuning. Choose a style explicitly from the linked library pages. Enneagram wings apply only to a unique dominant type.</p>
         <ol class="steps-list">
@@ -279,7 +281,7 @@
 
         <h3>Output mapping</h3>
         <p>Fetch the file matching the dominant letter from <code>disc/&lt;LETTER&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>. The blend (if any) is a fidelity signal — you can optionally stack the blend's file as a secondary layer.</p>
-        <table class="score-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Disc specification table 3" tabindex="0"><table class="score-table">
           <thead><tr><th>Letter</th><th>Name</th><th>One-line</th><th>File</th></tr></thead>
           <tbody>
             <tr><td class="mono">D</td><td>Dominance</td><td>Direct, results-focused, decisive. Wants the bottom line.</td><td class="mono">disc/D-dominance.md</td></tr>
@@ -287,7 +289,7 @@
             <tr><td class="mono">S</td><td>Steadiness</td><td>Patient, supportive, methodical. Wants stability.</td><td class="mono">disc/S-steadiness.md</td></tr>
             <tr><td class="mono">C</td><td>Conscientiousness</td><td>Analytical, precise, evidence-driven. Wants the data.</td><td class="mono">disc/C-conscientiousness.md</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </details>
 
@@ -325,10 +327,10 @@
     ];
 
     const TYPE_META = {
-      D: { name: "Dominance",         color: "#c8553d", file: "D-dominance",         blurb: "Direct, results-focused, decisive. Wants the bottom line." },
-      I: { name: "Influence",         color: "#d99632", file: "I-influence",         blurb: "Outgoing, persuasive, energetic. Thinks out loud." },
-      S: { name: "Steadiness",        color: "#2f8a5b", file: "S-steadiness",        blurb: "Patient, supportive, methodical. Wants stability." },
-      C: { name: "Conscientiousness", color: "#3a72c4", file: "C-conscientiousness", blurb: "Analytical, precise, evidence-driven. Wants the data." }
+      D: { name: "Dominance",         color: "#9f4427", file: "D-dominance",         blurb: "Direct, results-focused, decisive. Wants the bottom line." },
+      I: { name: "Influence",         color: "#855b1c", file: "I-influence",         blurb: "Outgoing, persuasive, energetic. Thinks out loud." },
+      S: { name: "Steadiness",        color: "#246f48", file: "S-steadiness",        blurb: "Patient, supportive, methodical. Wants stability." },
+      C: { name: "Conscientiousness", color: "#3160a7", file: "C-conscientiousness", blurb: "Analytical, precise, evidence-driven. Wants the data." }
     };
 
     const state = { currentIndex: 0, answers: new Array(16).fill(null), currentTuning: "", resultVersion: 0 };
@@ -339,7 +341,7 @@
       if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
       state.currentIndex = 0; renderQuestion();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     function renderQuestion() {
@@ -351,9 +353,10 @@
       const existing = state.answers[state.currentIndex];
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         btn.classList.toggle("selected", parseInt(btn.dataset.value) === existing);
-        btn.setAttribute("aria-checked", parseInt(btn.dataset.value) === existing ? "true" : "false");
+        btn.setAttribute("aria-pressed", parseInt(btn.dataset.value) === existing ? "true" : "false");
       });
       $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
     }
 
     function selectAnswer(value) {
@@ -366,7 +369,7 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
-        btn.setAttribute("aria-checked", selected ? "true" : "false");
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
       });
     }
 
@@ -376,7 +379,7 @@
     $("quiz-back").addEventListener("click", () => { advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); } });
     $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden || e.repeat) return;
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
       if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
       else if (e.key === "ArrowLeft" || e.key === "Backspace") {
         e.preventDefault(); advance.cancel(); if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
@@ -417,7 +420,7 @@
         $("quiz-result-blurb").textContent = "These scores are tied. There is no measured dominant type. Compare the linked tunings and choose the communication style you prefer, or retake the test.";
         $("quiz-result-scores").innerHTML = Object.entries(r.scores).map(([k,v]) => `<p>${TYPE_META[k].name}: ${v}/20${tied.includes(k) ? " · tied highest" : ""}</p>`).join("");
         $("quiz-tie-links").innerHTML = tied.map(k => `<a href="/library/disc/${TYPE_META[k].file.toLowerCase()}">${TYPE_META[k].name} tuning</a>`).join("");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.ATQuiz.focusScreen(document);
         return;
       }
       const meta = TYPE_META[r.dominant];
@@ -463,7 +466,7 @@
         });
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     function renderTuningPreview(tuning, filename) {
@@ -509,10 +512,7 @@
       if (!state.currentTuning) return;
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.dominant);
-      navigator.clipboard.writeText(content).then(() => {
-        const o = this.textContent; this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
-        setTimeout(() => { this.textContent = o; }, 2000);
-      });
+      window.ATQuiz.copyTuning(content, $("quiz-copy-tuning"));
     });
 
     $("quiz-download-tuning").addEventListener("click", function() {
@@ -536,7 +536,7 @@
       advance.cancel();
       state.currentIndex = 0; state.answers = new Array(16).fill(null);
       $("quiz-result").hidden = true; $("quiz-intro").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     // Populate spec items table (for AI agents reading the spec)

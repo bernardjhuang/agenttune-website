@@ -6,7 +6,7 @@ The tuning library itself (43 personality tuning markdown files) is in the publi
 
 ## Stack
 
-- **Static HTML + CSS + vanilla JS** — no framework, no build step
+- **Static HTML + CSS + vanilla JS** — content generators plus a public-only deployment build
 - **Cloudflare Pages** for hosting (one Pages Function: the MCP server at `/mcp`)
 - Domain `agent-tune.com` registered through Cloudflare
 
@@ -17,7 +17,7 @@ Everything on the site is free — the paid Premium/Developer Pack products were
 ```
 .
 ├── index.html                  Homepage
-├── research.html               Research page (every AI = INTJ)
+├── research.html               Research collections, methods and downloadable data
 ├── library/                    Generated library pages (43 type pages + hub)
 │   ├── index.html              /library hub
 │   ├── mbti/<type>.html        e.g. /library/mbti/intj
@@ -56,9 +56,9 @@ npm install
 npm run dev          # serves at http://localhost:3000
 ```
 
-Test pages and library pages render fully client-side. To exercise the MCP server (`/mcp`), use `npm run build && npx wrangler pages dev dist` instead of `npm run dev`.
+Library and research content is pre-rendered; interactive quizzes run in the browser. To exercise the MCP server (`/mcp`), use `npm run build && npx wrangler pages dev dist` instead of `npm run dev`.
 
-No environment variables, secrets, or KV bindings are required.
+No secrets or KV bindings are required for the site or MCP endpoint. MCP accepts JSON requests up to 64 KiB. Server-to-server clients need no Origin header. Browser Origins are restricted to the deployment origin, agent-tune.com, claude.ai, chatgpt.com and chat.openai.com. To support another browser client, set the optional Pages environment variable `MCP_ALLOWED_ORIGINS` to a comma-separated list of exact origins. Unsupported protocol-version headers receive HTTP 400; malformed requests do not reach the asset tools.
 
 ## Regenerating the library pages
 
@@ -82,7 +82,9 @@ Each guide is a JSON spec in `guides/src/`. Edit the spec, then run `node tools/
 
 ## Deploying
 
-**The primary deploy path is `git push`.** A GitHub Action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) runs `wrangler pages deploy` on every push to `main`, so a normal commit-and-push deploys the site automatically.
+**Current deployment status (September 25, 2026):** GitHub’s Cloudflare API token is invalid. The owner has chosen direct local deployment until that secret is replaced. A merge alone does not publish the site; run the verified local deployment and check production. Do not copy local OAuth credentials into CI.
+
+**The configured automated deploy path is `git push`.** A GitHub Action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) runs `wrangler pages deploy` on every push to `main`, so a normal commit-and-push deploys the site automatically.
 
 ```sh
 git add .

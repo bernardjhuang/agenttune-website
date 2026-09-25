@@ -490,7 +490,7 @@ The right next move depends entirely on which. If it&#39;s data, the move is exe
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/disc/d-dominance" style="color: #d99632;">D →</a><a class="lib-related-pill" href="/library/disc/i-influence" style="color: #d99632;">I →</a><a class="lib-related-pill" href="/library/disc/s-steadiness" style="color: #d99632;">S →</a>
+        <a class="lib-related-pill" href="/library/disc/d-dominance" style="color: #855b1c;">D →</a><a class="lib-related-pill" href="/library/disc/i-influence" style="color: #855b1c;">I →</a><a class="lib-related-pill" href="/library/disc/s-steadiness" style="color: #855b1c;">S →</a>
         <a class="lib-related-pill is-all" href="/library/#disc">All 4 DISC types →</a>
       </div>
     </section>
@@ -535,8 +535,16 @@ The right next move depends entirely on which. If it&#39;s data, the move is exe
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

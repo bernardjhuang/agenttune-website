@@ -48,3 +48,15 @@ test('all six chart images have distinct accessible names, descriptions, and fin
     for (const [,dimension] of svg.matchAll(/\b(?:width|height|r)="(-?[0-9.]+)"/g)) assert.ok(Number(dimension)>=0, id);
   }
 });
+
+test('the research hub includes the archived figures without browser JavaScript and keeps build output reproducible',()=>{
+  const {buildLegacy}=require('../tools/research-legacy');
+  const legacy=buildLegacy(), hub=fs.readFileSync(path.join(__dirname,'../research.html'),'utf8');
+  for(const [key,markup] of Object.entries(legacy))assert.ok(hub.includes('<!-- MAY_'+key.toUpperCase()+'_START -->'+markup+'<!-- MAY_'+key.toUpperCase()+'_END -->'));
+  assert.ok(legacy.breakdown.includes('breakdown-model'));
+  assert.equal((legacy.findings.match(/class="finding-card"/g)||[]).length,5);
+  assert.doesNotMatch(hub,/<script src="\/?data.js|window.AT_RESEARCH|r="1[34]"/);
+  for(const [,svg] of hub.matchAll(/(<svg class="research-chart"[\s\S]*?<\/svg>)/g)) {
+    assert.match(svg,/<title /);assert.match(svg,/<desc /);assert.doesNotMatch(svg,/NaN|undefined/);
+  }
+});

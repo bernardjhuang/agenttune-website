@@ -92,11 +92,12 @@
     </nav>
 
     <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free MBTI test.</h1>
 
     <!-- INTRO (shown before test starts) -->
     <section class="quiz-intro" id="quiz-intro">
       <span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">5-min test · 32 questions</span>
-      <h1 class="h-hero h-research-hero">Free MBTI test.</h1>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free MBTI test.</div>
       <div class="h-hero h-research-hero h-hero-italic" style="color: #5b4dc0;">Instant results, then your tuning file.</div>
       <p class="lede">
         Answer 32 quick questions — each is a choice between two statements, rated 1 to 5. We'll score it client-side and hand you a Markdown tuning file matched to your MBTI type, ready to paste into any AI agent's system prompt.
@@ -173,7 +174,8 @@
         <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 32</div>
       </div>
 
-      <div class="quiz-card" id="quiz-card">
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
         <div class="quiz-card-prompt">
           <div class="avatar avatar-md avatar-solid" style="background: #5b4dc0;">M</div>
           <div class="quiz-card-prompt-text">Which feels more like you?</div>
@@ -191,24 +193,24 @@
           </div>
         </div>
 
-        <div class="quiz-likert" role="radiogroup" aria-label="Rate how much you identify with each statement">
-          <button type="button" class="quiz-likert-btn" data-value="1" role="radio" aria-checked="false">
+        <div class="quiz-likert" role="group" aria-label="Rate how much you identify with each statement">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Strongly first statement" aria-pressed="false">
             <span class="quiz-likert-num">1</span>
             <span class="quiz-likert-label">Strongly first</span>
           </button>
-          <button type="button" class="quiz-likert-btn" data-value="2" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Lean first statement" aria-pressed="false">
             <span class="quiz-likert-num">2</span>
             <span class="quiz-likert-label">Lean first</span>
           </button>
-          <button type="button" class="quiz-likert-btn" data-value="3" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral" aria-pressed="false">
             <span class="quiz-likert-num">3</span>
             <span class="quiz-likert-label">Neutral</span>
           </button>
-          <button type="button" class="quiz-likert-btn" data-value="4" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Lean second statement" aria-pressed="false">
             <span class="quiz-likert-num">4</span>
             <span class="quiz-likert-label">Lean second</span>
           </button>
-          <button type="button" class="quiz-likert-btn" data-value="5" role="radio" aria-checked="false">
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Strongly second statement" aria-pressed="false">
             <span class="quiz-likert-num">5</span>
             <span class="quiz-likert-label">Strongly second</span>
           </button>
@@ -242,7 +244,7 @@
 
         <div id="quiz-tiebreakers" aria-live="polite" hidden></div>
         <div id="quiz-tuning-output">
-        <h3 class="quiz-result-section-h">Your tuning file</h3>
+        <h2 class="quiz-result-section-h">Your tuning file</h2>
         <article class="c-editor" id="quiz-result-editor">
           <div class="c-titlebar">
             <div class="c-dots"><span></span><span></span><span></span></div>
@@ -256,7 +258,7 @@
               <span class="c-tab-close">×</span>
             </div>
           </div>
-          <div class="c-editor-body">
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
             <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
             <pre class="c-code" id="quiz-editor-code"></pre>
           </div>
@@ -275,7 +277,7 @@
           <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
         </div>
 
-        <h3 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h3>
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
         <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
@@ -284,26 +286,26 @@
 
       <!-- Next steps -->
       <div class="quiz-result-next">
-        <h3>Stack another system for higher fidelity</h3>
+        <h2>Stack another system for higher fidelity</h2>
         <p class="muted">Tuning files layer cleanly. Take another test and add a second tuning to your agent.</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;">
-            <span class="pill" style="background: rgba(47,138,91,0.12); color: #2f8a5b;">Enneagram</span>
+            <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span>
             <div class="quiz-next-card-name">Get your Enneagram tuning</div>
             <div class="quiz-next-card-meta">5-min OEPS test →</div>
           </a>
           <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;">
-            <span class="pill" style="background: rgba(217,150,50,0.12); color: #d99632;">DISC</span>
+            <span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span>
             <div class="quiz-next-card-name">Get your DISC tuning</div>
             <div class="quiz-next-card-meta">3-min ODAT test →</div>
           </a>
           <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;">
-            <span class="pill" style="background: rgba(224,122,138,0.14); color: #e07a8a;">Attachment</span>
+            <span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span>
             <div class="quiz-next-card-name">Get your Attachment tuning</div>
             <div class="quiz-next-card-meta">5-min ECR-R test →</div>
           </a>
           <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;">
-            <span class="pill" style="background: rgba(58,114,196,0.12); color: #3a72c4;">OCEAN</span>
+            <span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span>
             <div class="quiz-next-card-name">Get your OCEAN tuning</div>
             <div class="quiz-next-card-meta">7-min IPIP-50 test →</div>
           </a>
@@ -326,7 +328,7 @@
         <p>Open Extended Jungian Type Scales (OEJTS), Eric Jorgenson via <a href="https://openpsychometrics.org/tests/OEJTS/" target="_blank" rel="noopener">Open Psychometrics Project</a>. Free for educational use.</p>
 
         <h3>The 32 items</h3>
-        <table class="items-table">
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Mbti specification table 1" tabindex="0"><table class="items-table">
           <thead><tr><th class="num-col">#</th><th>First statement</th><th>Second statement</th></tr></thead>
           <tbody id="quiz-spec-items">
           <tr><td class="num-col">1</td><td>I make lists</td><td>I just put stuff wherever</td></tr>
@@ -362,11 +364,11 @@
           <tr><td class="num-col">31</td><td>I like to perform in front of people</td><td>I avoid public speaking</td></tr>
           <tr><td class="num-col">32</td><td>I like to know &quot;who, what, when&quot;</td><td>I like to know &quot;why&quot;</td></tr>
         </tbody>
-        </table>
+        </table></div>
 
         <h3>Item → axis mapping</h3>
         <p>Each item belongs to one of four axes (E/I, S/N, T/F, J/P) and awards points to one letter depending on the user's 1–5 response.</p>
-        <table class="score-table" id="quiz-spec-scoring"></table>
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Mbti specification table 2" tabindex="0"><table class="score-table" id="quiz-spec-scoring"></table></div>
 
         <h3>Scoring algorithm</h3>
         <ol class="steps-list">
@@ -474,7 +476,7 @@
       $("quiz-runner").hidden = false;
       state.currentIndex = 0;
       renderQuestion();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     // ==================================================
@@ -496,10 +498,11 @@
         const v = parseInt(btn.dataset.value);
         const isSel = v === existing;
         btn.classList.toggle("selected", isSel);
-        btn.setAttribute("aria-checked", isSel ? "true" : "false");
+        btn.setAttribute("aria-pressed", isSel ? "true" : "false");
       });
 
       $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
     }
 
     function selectAnswer(value) {
@@ -512,7 +515,7 @@
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
-        btn.setAttribute("aria-checked", selected ? "true" : "false");
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
       });
     }
 
@@ -532,7 +535,7 @@
 
     // Keyboard
     document.addEventListener("keydown", e => {
-      if ($("quiz-runner").hidden || e.repeat) return;
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
       if (["1","2","3","4","5"].includes(e.key)) {
         e.preventDefault();
         selectAnswer(parseInt(e.key));
@@ -639,7 +642,7 @@
         `;
       }).join("");
       $("quiz-result-axes").innerHTML = axesHtml;
-      if (!type) { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+      if (!type) { window.ATQuiz.focusScreen(document); return; }
 
       // Tuning preview — first paint uses the short data.js fallback so the
       // result screen never flashes empty; the rich file from /tunings/ then
@@ -664,7 +667,7 @@
 
 
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     }
 
     function escapeHtml(s) {
@@ -712,11 +715,7 @@
 
     $("quiz-copy-tuning").addEventListener("click", () => {
       if (!state.currentTuning) return;
-      navigator.clipboard.writeText(state.currentTuning).then(() => {
-        const btn = $("quiz-copy-tuning");
-        btn.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
-        setTimeout(() => { btn.textContent = "⌘C · Copy"; }, 2000);
-      });
+      window.ATQuiz.copyTuning(state.currentTuning, $("quiz-copy-tuning"));
     });
 
     // Download as .md file — pulls live state.currentTuning so the rich
@@ -751,7 +750,7 @@
       state.completionTracked = false;
       $("quiz-result").hidden = true;
       $("quiz-intro").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.ATQuiz.focusScreen(document);
     });
 
     // ==================================================

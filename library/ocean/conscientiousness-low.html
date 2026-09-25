@@ -483,7 +483,7 @@ The unblock for you is usually a context change, not more discipline. If 30 minu
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/ocean/conscientiousness-high" style="color: #3a72c4;">C-high →</a><a class="lib-related-pill" href="/library/ocean/openness-low" style="color: #3a72c4;">O-low →</a><a class="lib-related-pill" href="/library/ocean/extraversion-low" style="color: #3a72c4;">E-low →</a><a class="lib-related-pill" href="/library/ocean/agreeableness-low" style="color: #3a72c4;">A-low →</a><a class="lib-related-pill" href="/library/ocean/neuroticism-low" style="color: #3a72c4;">N-low →</a>
+        <a class="lib-related-pill" href="/library/ocean/conscientiousness-high" style="color: #3160a7;">C-high →</a><a class="lib-related-pill" href="/library/ocean/openness-low" style="color: #3160a7;">O-low →</a><a class="lib-related-pill" href="/library/ocean/extraversion-low" style="color: #3160a7;">E-low →</a><a class="lib-related-pill" href="/library/ocean/agreeableness-low" style="color: #3160a7;">A-low →</a><a class="lib-related-pill" href="/library/ocean/neuroticism-low" style="color: #3160a7;">N-low →</a>
         <a class="lib-related-pill is-all" href="/library/#ocean">All 10 Big Five poles →</a>
       </div>
     </section>
@@ -528,8 +528,16 @@ The unblock for you is usually a context change, not more discipline. If 30 minu
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 
