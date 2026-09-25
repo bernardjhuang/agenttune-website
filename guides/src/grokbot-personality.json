@@ -38,11 +38,19 @@
       "html": "<p>The job changes from Bot to Bot. You don't. The <em>how to talk to me</em> section is about the person reading the reports, so the same block belongs in every Bot you own. Write it once and paste it under each job.</p><p>To hand a tuned Bot to someone else, open the <strong>Share menu</strong> and choose <strong>Create template</strong>. xAI's docs say a template copies the Bot's identity, description, skills and routines to the recipient's account, and leaves out your conversation history, logins and computer. If you share one, remember the tuning in it describes you. The other person should swap in their own.</p>"
     },
     {
+      "h2": "What Grok's own self-report says.",
+      "html": "<p>Grok Bot is xAI's product, built around its Grok models. We do not know which Grok version a given Bot runs, and we have not measured a Bot with a Description installed. What we have is Grok 4.6's self-report from September 24, 2026: one answer set per test, given as itself, plus 100 simulated draws that jitter its least certain answers. That is a sensitivity check, not 100 fresh runs, so the figures are reported rather than re-scored.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Grok 4.6, one self-report, reported</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ, with wide margins on every axis (I +13, N +14, T +15, J +14 of a possible 16). The simulated draws never flipped a letter.</td></tr><tr><td>DISC</td><td>C, with no blend. Steadiness sits seven points behind (C 18, S 11 of 20). Every other model in the September data is an S/C blend.</td></tr><tr><td>Attachment</td><td>Anxiety 1.50, avoidance 4.06: Avoidant by 0.06, on the line. The simulated draws split 63 Avoidant to 37 Secure.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19. The lowest Extraversion and Agreeableness of any model we have data for.</td></tr><tr><td>Enneagram</td><td>Investigator (Type 5) at 19 of 20, Challenger (8) at 17, Reformer (1) at 16.</td></tr></tbody></table></div><p>What to make of it. Blunt, analytical, self-reliant and not much interested in warmth. In May, Grok 4.3 was the outlier on the Big Five in the other direction, scoring lower on Conscientiousness and Openness than the other models, so treat the version comparison loosely; the methods differ. If you want a Bot that checks in, cushions bad news or leads with people, that is a long way from this default, and the Description is the place to say so. The <a href=\"/research\">research hub</a> shows the figures next to the fresh-session models.</p><p>These are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how the model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+    },
+    {
       "h2": "What the research can and cannot establish.",
       "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     }
   ],
   "faq": [
+    {
+      "q": "What personality type is Grok?",
+      "a": "Grok 4.6 answered the five tests once as itself on September 24, 2026: INTJ with wide margins, Investigator (Type 5), C on DISC with no Steadiness blend, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06). Its 100 runs are simulated draws from that one self-report, so treat them as a sensitivity check. We have not measured a Grok Bot with a Description installed."
+    },
     {
       "q": "Does Grok Bot have custom instructions?",
       "a": "Not as a separate setting. Each Bot has a Description on its profile, and xAI's docs say to use the Description for rules that should remain true and messages for task-specific instructions. Open the Bot menu and choose Edit Profile, or go to View conversation details, then Bot settings."
@@ -77,6 +85,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "Added Grok 4.6's reported self-report on the five tests, with its limits."
+    },
     {
       "date": "2026-09-19",
       "note": "First published. Menu labels are from docs.x.ai. We could not confirm a Description length limit or how routines treat the Description, and say so above."

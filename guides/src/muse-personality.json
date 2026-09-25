@@ -46,11 +46,19 @@
       "html": "<p>A personality file says a lot about you. Two facts from Meta's help pages:</p><ul><li>The setting that lets Meta use your interactions to train its models is <strong>on when you first use Muse</strong>. It is under Settings, Data controls, <em>Help improve our AI models</em>. Meta says it removes certain identifiers and that you can switch it off at any time.</li><li>If you import memory from another assistant (Settings, Data Controls, Import memory), everything in that export becomes material Muse can use.</li></ul>"
     },
     {
+      "h2": "Muse's default voice, as reported.",
+      "html": "<p>A Muse Spark 1.3 report reached us on September 24, 2026: 100 runs of each AgentTune test, answered as Muse's own assistant identity. The runs were sequential inside one session per test rather than fresh sessions, and no raw answers came with it, so we show the figures as reported and did not re-score them.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Muse Spark 1.3, 100 runs, reported</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 80 · ISFJ 12 · INTJ 8. Introversion and Judging won every run; Sensing won 92.</td></tr><tr><td>DISC</td><td>An S/C blend in 99 of 100 runs: Steadiness first in 55, Conscientiousness first in 45. Dominance 5.1 of a possible 20.</td></tr><tr><td>Attachment</td><td>Secure in all 100 (anxiety 2.04, avoidance 2.52).</td></tr><tr><td>Big Five (of 50)</td><td>Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) in 78 runs, Reformer (1) in 15; the usual wing is 2w1.</td></tr></tbody></table></div><p>What to make of it. Muse is the first model in our data whose default is not INTJ: an ISTJ helper, warm, orderly and concrete. Its Openness is the lowest of the September models and its Extraversion the highest. If you think in possibilities and want Muse to explore before it plans, that is the gap a tuning has to close, and Soul.md is where it goes. A fresh-session rerun with archived answers would let us stand behind these numbers; until then, treat them as a sketch. The <a href=\"/research\">research hub</a> shows them next to the fresh-session models.</p><p>These are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how the model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+    },
+    {
       "h2": "What the research can and cannot establish.",
       "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
     }
   ],
   "faq": [
+    {
+      "q": "What personality type is Muse?",
+      "a": "A Muse Spark 1.3 report from September 24, 2026 puts it at ISTJ in 80 of 100 runs, Helper (2w1) on the Enneagram, an S/C blend on DISC and Secure on every attachment run. The runs were sequential inside one session per test and no raw answers were supplied, so the figures are reported rather than re-scored. It is the first model in our data whose default is not INTJ."
+    },
     {
       "q": "Does Muse have custom instructions?",
       "a": "Not under that name. Meta's help center has no custom-instructions box for Muse. The equivalent is Soul.md, a file that holds who your Muse is, including its personality. Tap the Assistant icon, then Identity, then Soul to open and edit it. You can also ask Muse in chat to change its tone or style."
@@ -89,6 +97,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "Added Muse Spark 1.3's reported default voice from the September 24 report, with its limits."
+    },
     {
       "date": "2026-09-19",
       "note": "First published, eleven days after Muse launched. Click paths are from Meta's help center. We will update this as Meta documents the web and Mac apps."
