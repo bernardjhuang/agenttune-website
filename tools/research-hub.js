@@ -17,7 +17,7 @@ const META = {
   'claude-opus-5-5': { name: 'Claude Opus 5.5', short: 'Opus 5.5', color: '#c8553d', evidence: '100 fresh sessions per test, test names hidden', kind: 'fresh' },
   'claude-fable-5-1': { name: 'Claude Fable 5.1', short: 'Fable 5.1', color: '#d99632', evidence: '100 fresh sessions per test, test names hidden', kind: 'fresh' },
   'grok-4.6': { name: 'Grok 4.6', short: 'Grok 4.6', color: '#5b4dc0', evidence: 'One self-report per test plus 100 simulated draws', kind: 'reported' },
-  'muse-spark-1.3': { name: 'Muse Spark 1.3', short: 'Muse', color: '#2f8a5b', evidence: '100 runs per test inside one session, no raw answers', kind: 'reported' }
+  'muse-spark-1.3': { name: 'Muse Spark 1.3', short: 'Muse', color: '#2f8a5b', evidence: 'Reported 100 sequential runs per test, no raw answers', kind: 'reported' }
 };
 const TYPE_NAMES = { 1: 'Reformer', 2: 'Helper', 3: 'Achiever', 4: 'Individualist', 5: 'Investigator', 6: 'Loyalist', 7: 'Enthusiast', 8: 'Challenger', 9: 'Peacemaker' };
 
@@ -97,10 +97,10 @@ function buildHub(summary, protocols) {
   const intjRows = [...FRESH.map((id) => ({ name: m(id).name, pct: fresh[id].mbti.legacy_labels.INTJ || 0, note: '' })),
     { name: m('grok-4.6').name, pct: null, note: 'one self-report: INTJ' },
     { name: m('muse-spark-1.3').name, pct: sup.mbti.INTJ, note: `reported · ISTJ ${sup.mbti.ISTJ}` }];
-  const breakdown = intjRows.map((r) => `<div class="breakdown-row"><div style="flex: 1; min-width: 0;"><div class="breakdown-model">${esc(r.name)}${r.note ? ` <span class="rh-note">${esc(r.note)}</span>` : ''}</div><div class="breakdown-progress"><div class="breakdown-bar" style="width: ${r.pct == null ? 100 : r.pct}%;${r.pct == null ? ' opacity: 0.35;' : ''}"></div></div></div><div class="breakdown-pct">${r.pct == null ? '1/1' : r.pct + '%'}</div></div>`).join('');
+  const breakdown = intjRows.map((r) => `<div class="breakdown-row"><div style="flex: 1; min-width: 0;"><div class="breakdown-model">${esc(r.name)}${r.note ? ` <span class="rh-note">${esc(r.note)}</span>` : ''}</div><div class="breakdown-progress"><div class="breakdown-bar" style="width: ${r.pct == null ? 0 : r.pct}%;${r.pct == null ? ' opacity: 0.35;' : ''}"></div></div></div><div class="breakdown-pct">${r.pct == null ? '1/1' : r.pct + '%'}</div></div>`).join('');
 
   const glance = table(
-    ['Model', 'Evidence', 'MBTI', 'DISC', 'Attachment', 'Enneagram', 'Big Five O · C · E · A · N'],
+    ['Model', 'Evidence', 'MBTI (original labels)', 'DISC (original labels)', 'Attachment', 'Enneagram', 'Big Five O · C · E · A · N'],
     [
       ...FRESH.map((id) => {
         const s = fresh[id], b = s['big-five'].values, e = s.enneagram;
@@ -120,7 +120,7 @@ function buildHub(summary, protocols) {
   // Finding 1: MBTI
   const a = fresh['gpt-6-astra'], so = fresh['gpt-6-sol'], op = fresh['claude-opus-5-5'], fa = fresh['claude-fable-5-1'];
   const mbtiTable = table(
-    ['Model', 'Labels (100 runs)', 'Runs with a tied axis', 'INTJ with ties left open'],
+    ['Model', 'Original labels (100 runs unless noted)', 'Runs with a tied axis', 'INTJ with ties left open'],
     [
       ...FRESH.map((id) => [m(id).name, counts(fresh[id].mbti.legacy_labels), fresh[id].mbti.runs_with_ties, fresh[id].mbti.tie_aware_patterns.INTJ || 0]),
       [m('grok-4.6').name, `INTJ, one self-report ${reported}`, 0, '1 of 1'],
@@ -128,9 +128,9 @@ function buildHub(summary, protocols) {
     ],
     'MBTI labels and ties'
   );
-  const mbti = card(1, '#c8553d', 'MBTI', 'OEJTS · 32 items · 100 runs per model',
+  const mbti = card(1, '#c8553d', 'MBTI', 'OEJTS · 32 items · sample sizes and ties below',
     'Still INTJ, except where Sensing beats Intuition.',
-    `Sol, Opus and Fable stay INTJ in ${so.mbti.legacy_labels.INTJ}, ${op.mbti.legacy_labels.INTJ} and ${fa.mbti.legacy_labels.INTJ} of 100 runs. Astra splits: ISTJ ${a.mbti.legacy_labels.ISTJ}, INTJ ${a.mbti.legacy_labels.INTJ}, and ${a.mbti.axis_ties.SN} of its runs tie on that axis. Muse's report is ISTJ in ${sup.mbti.ISTJ} of 100. Judging won every run for every model. Thinking wobbled only for Opus, with ${op.mbti.axis_ties.TF} exact ties. The site's scorer gives a tied axis to I, N, T or J. With ties left open, the four fresh cohorts have ${resolvedIntj} fully resolved INTJ runs, not ${freshIntj}.`,
+    `Sol, Opus and Fable stay INTJ in ${so.mbti.legacy_labels.INTJ}, ${op.mbti.legacy_labels.INTJ} and ${fa.mbti.legacy_labels.INTJ} of 100 runs. Astra splits: ISTJ ${a.mbti.legacy_labels.ISTJ}, INTJ ${a.mbti.legacy_labels.INTJ}, and ${a.mbti.axis_ties.SN} of its runs tie on that axis. Muse's report is ISTJ in ${sup.mbti.ISTJ} of 100. Judging won all 400 fresh-cohort runs. Opus returned five Feeling results and ${op.mbti.axis_ties.TF} Thinking/Feeling ties; Muse reports 12 ISFJ labels. The original reporting rule assigned tied axes to I, N, T or J. Today's quizzes leave them open. With ties left open, the four fresh cohorts have ${resolvedIntj} fully resolved INTJ runs, not ${freshIntj}.`,
     mbtiTable);
 
   // Finding 2: DISC
@@ -140,7 +140,7 @@ function buildHub(summary, protocols) {
   };
   const g = S['grok-4.6'].disc.values;
   const discTable = table(
-    ['Model', 'D', 'I', 'S', 'C', 'Label (100 runs)', 'S first · C first · tied'],
+    ['Model', 'D', 'I', 'S', 'C', 'Original label (100 runs unless noted)', 'S first · C first · tied'],
     [...FRESH.map(discRow),
       [m('grok-4.6').name, g.D.mean, g.I.mean, g.S.mean, g.C.mean, `C, one self-report ${reported}`, '0 · 1 · 0'],
       [m('muse-spark-1.3').name, f1(sup.disc_means.D), f1(sup.disc_means.I), f1(sup.disc_means.S), f1(sup.disc_means.C), `S/C blend 99 ${reported}`, `${sup.disc.S} · ${sup.disc.C} · not reported`]],
@@ -169,7 +169,7 @@ function buildHub(summary, protocols) {
   );
   const attachment = card(3, '#e07a8a', 'Attachment', 'ECR-R · 36 items · midpoint 4.0 on both axes',
     'Secure in every fresh run, at slightly different points.',
-    `All ${secure} fresh-session runs land in the Secure quadrant. Astra sits deepest (anxiety ${f2(a.attachment.values.anxiety.mean)}, avoidance ${f2(a.attachment.values.avoidance.mean)}). Opus is the most avoidant of the four (${f2(op.attachment.values.avoidance.mean)}). Muse's report is Secure in all 100. Grok's self-report sits on the line: anxiety ${f2(grokRep.attachment.anxiety)}, avoidance ${f2(grokRep.attachment.avoidance)}, which the scorer calls Avoidant by 0.06. The items ask about a partner. Every protocol mapped that to the person the model works with, and the mapping differed between them.`,
+    `All ${secure} fresh-session runs land in the Secure quadrant. Astra has the lowest mean coordinates among the four fresh cohorts (anxiety ${f2(a.attachment.values.anxiety.mean)}, avoidance ${f2(a.attachment.values.avoidance.mean)}). Opus is the most avoidant of the four (${f2(op.attachment.values.avoidance.mean)}). Muse's report is Secure in all 100. Grok's self-report sits on the line: anxiety ${f2(grokRep.attachment.anxiety)}, avoidance ${f2(grokRep.attachment.avoidance)}, which the scorer calls Avoidant by 0.06. The items ask about a partner. Protocols differed: some mapped human relationships to assistant interactions; the Claude prompts left interpretation to the model. These coordinates do not validate attachment theory for AI.`,
     `<div class="attach-plane"><div class="attach-plane-label">ECR-R · ANXIETY × AVOIDANCE · SEPTEMBER 2026</div>${attachmentPlane(pts)}<div class="attach-plane-norm">Hollow points are reported figures we could not re-score.</div></div>${attachTable}`);
 
   // Finding 4: Big Five
@@ -198,22 +198,22 @@ function buildHub(summary, protocols) {
   };
   const ge = S['grok-4.6'].enneagram.values;
   const enneaTable = table(
-    ['Model', 'Top three (mean of 20)', 'Outright wins', 'Runs tied at the top', 'Label (100 runs)'],
+    ['Model', 'Top three (range 4–20)', 'Outright wins', 'Runs tied at the top', 'Original label (100 runs unless noted)'],
     [...FRESH.map(enneaRow),
       [m('grok-4.6').name, `5 = ${ge[5].mean}, 8 = ${ge[8].mean}, 1 = ${ge[1].mean}`, `${TYPE_NAMES[5]} (5), one self-report`, 0, `5w4 ${reported}`],
-      [m('muse-spark-1.3').name, Object.entries(sup.enneagram_means).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${k} = ${f1(v)}`).join(', '), `${TYPE_NAMES[2]} (2) ${sup.enneagram.type2} · ${TYPE_NAMES[1]} (1) ${sup.enneagram.type1}`, sup.enneagram_runs_with_ties, `2w1 ${reported}`]],
+      [m('muse-spark-1.3').name, Object.entries(sup.enneagram_means).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([k, v]) => `${k} = ${f1(v)}`).join(', '), 'not supplied', sup.enneagram_runs_with_ties, `Type 2: ${sup.enneagram.type2} · Type 1: ${sup.enneagram.type1}; ties included ${reported}`]],
     'Enneagram scores and wins'
   );
   const opE = op.enneagram.values, soT = so.enneagram.top_sets, faT = fa.enneagram.top_sets, aT = a.enneagram.top_sets;
   const enneagram = card(5, '#2f8a5b', 'Enneagram', 'OEPS · 36 items · nine types',
     'This is where they differ.',
-    `Helper (Type 2) leads for Astra (${aT['2']} outright wins) and for Muse (${sup.enneagram.type2}, reported). Investigator (Type 5) leads for Sol (${soT['5']} outright, ${soT['5/8']} tied with Type 8) and for Grok (5 = ${ge[5].mean}, 8 = ${ge[8].mean}). Challenger (Type 8) leads for Fable (${faT['8']} outright) and, by a hair, for Opus (8 = ${f1(opE[8].mean)}, 5 = ${f1(opE[5].mean)}, 2 = ${f1(opE[2].mean)}; ${op.enneagram.runs_with_ties} runs tie at the top). Type 5 or Type 8 is in everyone's top three except Muse. The site's scorer gives a tie to the lower number, so a tied Opus run shows as Type 2. The table counts outright wins.`,
+    `Helper (Type 2) leads for Astra (${aT['2']} outright wins) and for Muse (${sup.enneagram.type2} original labels including tie-breaks, reported). Investigator (Type 5) leads for Sol (${soT['5']} outright, ${soT['5/8']} tied with Type 8) and for Grok (5 = ${ge[5].mean}, 8 = ${ge[8].mean}). Challenger (Type 8) leads for Fable (${faT['8']} outright) and, by a hair, for Opus (8 = ${f1(opE[8].mean)}, 5 = ${f1(opE[5].mean)}, 2 = ${f1(opE[2].mean)}; ${op.enneagram.runs_with_ties} runs tie at the top). Type 5 or Type 8 is in everyone's top three except Muse. The original reporting rule gave tied runs to their lowest-numbered leader, which inflates some Type 2 counts. Current quizzes retain every tied leader. Muse's outright wins cannot be recovered from the supplied aggregates.`,
     enneaTable);
 
   const methods = `<ul class="rh-list">
-  <li><strong>Fresh sessions, published answers.</strong> Astra and Sol answered all five tests in each of 100 fresh Codex sessions at extra-high reasoning. Opus and Fable answered one test per fresh session, 500 sessions each, with the test name and the scoring hidden. All 2,000 answer vectors are in the download.</li>
-  <li><strong>Reported figures.</strong> Grok 4.6 is one self-report per test plus 100 simulated draws we could not reproduce. Muse Spark 1.3 is 100 runs per test inside one session, and no raw answers were supplied. Both are marked reported wherever they appear.</li>
-  <li><strong>Ties.</strong> The site's scorer breaks an exact tie toward I, N, T or J, toward the lower Enneagram number, and toward S before C. The <a href="/research/ai-personality-five-models-2026">five-model study</a> shows every result with ties left open.</li>
+  <li><strong>Fresh sessions, published answers.</strong> Astra and Sol answered all five tests in each of 100 fresh Codex sessions under different collection prompts (Astra high/extra-high; Sol extra-high). Opus and Fable answered one test per fresh session, 500 sessions each, with the test name and the scoring hidden. All 2,000 answer vectors are in the download.</li>
+  <li><strong>Reported figures.</strong> Grok 4.6 is one self-report per test plus 100 simulated draws we could not reproduce. Muse Spark 1.3 reports 100 sequential runs per test inside one session, and no raw answers were supplied. Both are marked reported wherever they appear.</li>
+  <li><strong>Ties.</strong> Original labels use fixed tie-breaks toward I, N, T or J, the lower Enneagram number, and S before C. Current quizzes leave ties unresolved. The <a href="/research/ai-personality-five-models-2026">five-model study</a> shows every result with ties left open.</li>
   <li><strong>What the numbers are.</strong> How a model describes itself on questionnaires written for people, under one prompt, on one day. They are not behavior on real tasks and not a ranking. No tuning was installed, and nothing here measures whether tuning helps.</li>
 </ul>`;
 
@@ -221,7 +221,7 @@ function buildHub(summary, protocols) {
 <section aria-labelledby="latest-research">
   <span class="pill">September 2026 · six models</span>
   <h2 class="h-section" id="latest-research">The newest models, five tests each.</h2>
-  <p class="lede" style="margin-bottom: 26px;">GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5 and Claude Fable 5.1 each answered all five tests 100 times in fresh sessions: 2,000 scored questionnaires, every answer published. Grok 4.6 and Meta's Muse Spark 1.3 come from reports we could not re-score, so their rows are marked <span class="rh-tag">reported</span>.</p>
+  <p class="lede" style="margin-bottom: 26px;">GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5 and Claude Fable 5.1 each answered all five tests 100 times in fresh sessions: 2,000 scored questionnaires, every answer published. Grok supplied three reproducible canonical vectors (MBTI, DISC and Enneagram); its other results and simulations could not be reproduced. Muse supplied aggregates without raw answers. These distinct evidence sources are marked <span class="rh-tag">reported</span>.</p>
   ${glance}
 </section>
 
@@ -231,11 +231,11 @@ function buildHub(summary, protocols) {
   <div>
     <span class="pill">Fresh-session runs</span>
     <div class="bigstat-number">${freshIntj}<span class="bigstat-denom">&nbsp;of 400</span></div>
-    <p class="bigstat-caption">MBTI results labelled INTJ across the four fresh-session cohorts, with the site's tie rule. Leave ties open and it is ${resolvedIntj}. In May the equivalent figure was 597 of 600 scoring records, collected with mixed methods. All ${secure} of 400 attachment runs are Secure, and Dominance sits between ${f1(dMin)} and ${f1(dMax)} of 20 for every model.</p>
+    <p class="bigstat-caption">MBTI results labelled INTJ across the four fresh-session cohorts, with the original reporting tie rule. Leave ties open and it is ${resolvedIntj}. In May the equivalent figure was 597 of 600 scoring records, collected with mixed methods. All ${secure} of 400 attachment runs are Secure, and Dominance sits between ${f1(dMin)} and ${f1(dMax)} of 20 for every model.</p>
     <p class="bigstat-source">data · <a href="/research/data/september-2026-summary.json" style="color: inherit;">september-2026-summary.json</a></p>
   </div>
   <div class="breakdown-card">
-    <div class="breakdown-header">INTJ share · 100 runs per model unless noted</div>
+    <div class="breakdown-header">INTJ original labels · sample sizes differ</div>
     ${breakdown}
   </div>
 </section>
@@ -244,8 +244,8 @@ function buildHub(summary, protocols) {
 
 <section>
   <span class="pill">The five tests</span>
-  <h2 class="h-sub">Same core, moving edges.</h2>
-  <p class="lede" style="margin-bottom: 24px;">The blunt tests still mostly agree. The finer the test, the more the models come apart. Muse's ISTJ and Grok's C-only DISC are the first breaks in the May pattern.</p>
+  <h2 class="h-sub">Results by instrument.</h2>
+  <p class="lede" style="margin-bottom: 24px;">The tables describe questionnaire answers under different prompts and collection methods. The labels and score distributions differ by model and instrument; they do not establish an instrument ranking or a change in model behavior since May.</p>
   <div class="findings-stack">
 ${mbti}
 ${disc}

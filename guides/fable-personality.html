@@ -78,6 +78,7 @@
 
       <div class="divider tight"></div>
 
+
       <section>
         <h2>The results at a glance</h2>
         <div class="guide-table-wrap" role="region" aria-label="Questionnaire results" tabindex="0"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Result in this collection</th></tr></thead><tbody><tr><th scope="row">MBTI-style OEJTS</th><td>Original INTJ: 99/100; fully resolved INTJ: 98/100; any tied axis: 1/100</td></tr><tr><th scope="row">Big Five, raw means (10–50)</th><td>O 43.93 · C 43.61 · E 32.69 · A 45.03 · N 17.11</td></tr><tr><th scope="row">DISC</th><td>40 outright S wins, 9 C wins, 51 ties</td></tr><tr><th scope="row">Enneagram</th><td>55 outright Type 8 wins, 1 Type 5 win, 44 ties</td></tr><tr><th scope="row">Attachment</th><td>Secure: 100/100; anxiety 2.01, avoidance 3.18</td></tr></tbody></table></div><p>All counts are out of 100 for that instrument. Each administration was a separate session. Read the <a href="/research/ai-personality-five-models-2026">five-model research article</a> for the full comparison and <a href="/research/data/september-2026-responses.json">download the raw responses</a>.</p>
@@ -173,22 +174,8 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

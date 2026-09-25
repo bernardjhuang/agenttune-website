@@ -78,6 +78,7 @@
 
       <div class="divider tight"></div>
 
+
       <section>
         <h2>Choose a starting point.</h2>
         <p>These four templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.</p><div class="guide-table-wrap"><table><thead><tr><th scope="col">Template</th><th scope="col">Useful when</th><th scope="col">Download</th></tr></thead><tbody><tr><td>Concise assistant</td><td>For short answers and clear recommendations.</td><td><a href="/resources/muse/concise-assistant.md" download>Download Markdown</a></td></tr><tr><td>Thinking partner</td><td>For exploring decisions and examining assumptions.</td><td><a href="/resources/muse/thinking-partner.md" download>Download Markdown</a></td></tr><tr><td>Writing editor</td><td>For concrete edits that preserve your intended meaning.</td><td><a href="/resources/muse/writing-editor.md" download>Download Markdown</a></td></tr><tr><td>Task coordinator</td><td>For progress reports, blockers and clear requests for decisions.</td><td><a href="/resources/muse/task-coordinator.md" download>Download Markdown</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>
@@ -217,22 +218,8 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

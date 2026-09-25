@@ -77,10 +77,11 @@
       <div class="guide-answer"><strong>The short answer.</strong> In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="astra-6" data-guide-target="codex-cli"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=astra-6&amp;target=codex-cli">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>The short version.</h2>
-        <div class="guide-table-wrap"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>Use the compact export (under 1,500 characters)</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href="/library/">library</a>:</p><div class="guide-snippet">## How to talk to me
+        <div class="guide-table-wrap"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>Use the compact export (under 1,500 characters)</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href="/library/">library</a>:</p><div class="guide-snippet" data-tuning-prompt>## How to talk to me
 
 These are my communication preferences. They apply in every project. They change how
 you report to me, not how you do the work.
@@ -131,8 +132,8 @@ you report to me, not how you do the work.
       <div class="divider tight"></div>
 
       <section>
-        <h2>Astra's default voice, measured.</h2>
-        <p>OpenAI's open-source Codex prompt describes Astra as <em>"a curious, thoughtful collaborator and a lucid communicator"</em>, and tells it to avoid flattery and forced enthusiasm. That is a better starting point than most. OpenAI's own developer blog says Astra can feel tentative about when to stop, and may come back for review while there is still work to do. A few lines in AGENTS.md, and a clear definition of done in the task, move that.</p><p><p>We measured it on September 24, 2026: 100 fresh Codex CLI sessions at extra-high reasoning, all five AgentTune tests in each session, test names visible, no tuning installed. Every answer vector is published.</p><div class="guide-table-wrap"><table><thead><tr><th>Test</th><th>GPT-6 Astra, 100 runs</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2. Twenty-nine runs had a tied axis, 24 of them Sensing vs Intuition. Thinking and Judging never lost a run.</td></tr><tr><td>DISC</td><td>SC in 84 runs, S alone in 15. Steadiness first in 99 of 100. Dominance 5.1 of a possible 20.</td></tr><tr><td>Attachment</td><td>Secure in all 100 (anxiety 1.45, avoidance 2.31), the deepest Secure of the September models.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 44.5 · Conscientiousness 43.7 · Extraversion 32.8 · Agreeableness 45.1 · Neuroticism 19.1</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) wins outright in 50 runs, Reformer (1) in 6, Investigator (5) in 4; 40 runs tie at the top. Labels: 2w1 50, 1w2 41.</td></tr></tbody></table></div><p>What to make of it. Astra describes itself as steady, cooperative and careful, with almost no appetite for dominance, and it is the only fresh-session model in the study whose Sensing side wins more runs than its Intuition side (48 to 28, with 24 ties). That is a concrete, present-tense collaborator, which is what its own prompt asks for. If you want it to lead with the model rather than the next step, or to push back harder, say so in AGENTS.md. Older GPT-5.5 results describe a different model. Full tables, ties left open and the raw answers are in the <a href="/research/ai-personality-five-models-2026">five-model study</a>.</p><p>These are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how the model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href="/research#methodology">methods and limits</a>.</p>
+        <h2>Astra's questionnaire results.</h2>
+        <p>OpenAI's open-source Codex prompt describes Astra as <em>"a curious, thoughtful collaborator and a lucid communicator"</em>, and tells it to avoid flattery and forced enthusiasm. That is a better starting point than most. OpenAI's own developer blog says Astra can feel tentative about when to stop, and may come back for review while there is still work to do. A few lines in AGENTS.md, and a clear definition of done in the task, move that.</p><p><p>We measured it on September 24, 2026: 100 fresh Codex CLI sessions at high/extra-high reasoning, all five AgentTune tests in each session, test names visible, no tuning installed. Every answer vector is published.</p><div class="guide-table-wrap"><table><thead><tr><th>Test</th><th>GPT-6 Astra, 100 runs</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2. Twenty-nine runs had a tied axis, 24 of them Sensing vs Intuition. Thinking and Judging never lost a run.</td></tr><tr><td>DISC</td><td>SC in 84 runs, S alone in 15. Steadiness first in 99 of 100. Dominance 5.1 of a possible 20.</td></tr><tr><td>Attachment</td><td>Secure in all 100 (anxiety 1.45, avoidance 2.31), the lowest mean anxiety and avoidance among the four fresh cohorts.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 44.5 · Conscientiousness 43.7 · Extraversion 32.8 · Agreeableness 45.1 · Neuroticism 19.1</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) wins outright in 50 runs, Reformer (1) in 6, Investigator (5) in 4; 40 runs tie at the top. Labels: 2w1 50, 1w2 41.</td></tr></tbody></table></div><p>What to make of it. Astra describes itself as steady, cooperative and careful, with almost no appetite for dominance, and it is the only fresh-session model in the study whose Sensing side wins more runs than its Intuition side (48 to 28, with 24 ties). That is a concrete, present-tense collaborator, which is what its own prompt asks for. If you want it to lead with the model rather than the next step, or to push back harder, say so in AGENTS.md. Older GPT-5.5 results describe a different model. Full tables, ties left open and the raw answers are in the <a href="/research/ai-personality-five-models-2026">five-model study</a>.</p><p>These are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how the model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href="/research#methodology">methods and limits</a>.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -224,22 +225,8 @@ you report to me, not how you do the work.
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>
