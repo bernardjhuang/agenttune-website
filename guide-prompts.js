@@ -28,7 +28,8 @@
     if (block.hasAttribute("data-tuning-prompt")) {
       preview.className = "guide-prompt-preview";
       const summary = document.createElement("summary");
-      summary.textContent = "Preview the full prompt";
+      summary.textContent = "Full prompt";
+      preview.open = true;
       preview.append(summary, content);
       block.replaceChildren(copy, preview, status);
     } else {
