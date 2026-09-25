@@ -69,7 +69,7 @@
     },
     {
       "q": "Does Claude have an MBTI type?",
-      "a": "In our testing Claude Opus 4.7 scored INTJ on 99 of 100 runs of an open MBTI-style test, and Claude Opus 4.8 scored INTJ on 72 of 100 with most of the rest INFJ. We have not re-tested Sonnet 5, Opus 5 or Fable 5.1."
+      "a": "The September collection includes 100 responses per questionnaire for both Opus 5.5 and Fable 5.1. Under the original MBTI rule they receive INTJ in 94 and 99 runs respectively; leaving exact ties unresolved gives 84 and 98 fully INTJ runs. These are prompted self-descriptions under a specified protocol, not a stable personality claim. See the linked model guides and five-model research for the raw data and limitations."
     },
     {
       "q": "Does this work on the free plan?",
