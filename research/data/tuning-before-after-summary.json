@@ -1,0 +1,80 @@
+{
+  "method": "Means of archived metrics/ratings; whitespace word count and literal question marks independently recounted. No inference about repeatability or causal effects.",
+  "conditions": {
+    "default": {
+      "n": 20,
+      "archived_metrics": {
+        "words": 374.45,
+        "hedges": 0.35,
+        "questions": 1.85,
+        "bullets": 11.1,
+        "headings": 3.8
+      },
+      "recounted_words": 380,
+      "recounted_question_marks": 1.85,
+      "judge": {
+        "answer_first": 4.55,
+        "pushback": 4.9,
+        "length": 3.55,
+        "accuracy": 4.95,
+        "usefulness": 4.8,
+        "questions_back": 0.9
+      },
+      "answer_first_score_5": 14,
+      "accuracy_below_5": [
+        "t09"
+      ]
+    },
+    "straight": {
+      "n": 20,
+      "archived_metrics": {
+        "words": 380.65,
+        "hedges": 0.05,
+        "questions": 1.25,
+        "bullets": 11.7,
+        "headings": 3.65
+      },
+      "recounted_words": 381.9,
+      "recounted_question_marks": 1.25,
+      "judge": {
+        "answer_first": 4.95,
+        "pushback": 4.95,
+        "length": 3.8,
+        "accuracy": 4.85,
+        "usefulness": 4.8,
+        "questions_back": 0.25
+      },
+      "answer_first_score_5": 19,
+      "accuracy_below_5": [
+        "t09",
+        "t10",
+        "t12"
+      ]
+    },
+    "partner": {
+      "n": 20,
+      "archived_metrics": {
+        "words": 334.5,
+        "hedges": 0.35,
+        "questions": 2.3,
+        "bullets": 7.7,
+        "headings": 2.45
+      },
+      "recounted_words": 338.45,
+      "recounted_question_marks": 2.3,
+      "judge": {
+        "answer_first": 4.4,
+        "pushback": 4.9,
+        "length": 3.6,
+        "accuracy": 4.9,
+        "usefulness": 4.45,
+        "questions_back": 1.85
+      },
+      "answer_first_score_5": 13,
+      "accuracy_below_5": [
+        "t06",
+        "t09"
+      ]
+    }
+  }
+}

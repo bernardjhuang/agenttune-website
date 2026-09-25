@@ -12,9 +12,9 @@ function isPublic(relative) {
 }
 // Shared assets are cached for hours at the edge and in browsers. Every published HTML file
 // references them with a content hash so a new deploy is never served with a stale stylesheet.
-const ASSETS=['styles.css','data.js','integrations.js','compact-tunings.js','quiz-utils.js','consent.js'];
+const ASSETS=['styles.css','data.js','integrations.js','compact-tunings.js','quiz-utils.js','consent.js','guide-prompts.js'];
 function versionAssets(html,hashes) {
-  return html.replace(/\b(href|src)="(\/?)(styles\.css|data\.js|integrations\.js|compact-tunings\.js|quiz-utils\.js|consent\.js)"/g,(m,attr,slash,file)=>hashes[file]?`${attr}="${slash}${file}?v=${hashes[file]}"`:m);
+  return html.replace(/\b(href|src)="(\/?)(styles\.css|data\.js|integrations\.js|compact-tunings\.js|quiz-utils\.js|consent\.js|guide-prompts\.js)(?:\?v=[^"#]*)?"/g,(m,attr,slash,file)=>hashes[file]?`${attr}="${slash}${file}?v=${hashes[file]}"`:m);
 }
 function build(out=path.join(ROOT,'dist')) {
   // Only this disposable directory may be removed by the build.

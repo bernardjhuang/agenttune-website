@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Make Claude More Direct (Tested Prompts, 2026)</title>
-  <meta name="description" content="Three paste blocks that make Claude lead with the answer, hedge less and stop asking permission, what each one changed in a 60-reply test, and the one thing they don't change." />
+  <title>How to Make Claude More Direct: 3 Editable Prompts</title>
+  <meta name="description" content="Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot." />
 
   <meta property="og:title" content="How to make Claude more direct." />
-  <meta property="og:description" content="Three paste blocks that make Claude lead with the answer, hedge less and stop asking permission, what each one changed in a 60-reply test, and the one thing they don't change." />
+  <meta property="og:description" content="Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
   <meta property="article:modified_time" content="2026-09-25" />
@@ -20,16 +20,16 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to make Claude more direct." />
-  <meta name="twitter:description" content="Three paste blocks that make Claude lead with the answer, hedge less and stop asking permission, what each one changed in a 60-reply test, and the one thing they don't change." />
+  <meta name="twitter:description" content="Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/make-claude-more-direct" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make Claude more direct","description":"Three paste blocks that make Claude lead with the answer, hedge less and stop asking permission, what each one changed in a 60-reply test, and the one thing they don't change.","url":"https://agent-tune.com/guides/make-claude-more-direct","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make Claude more direct","description":"Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot.","url":"https://agent-tune.com/guides/make-claude-more-direct","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to make Claude more direct"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I make Claude more direct?","acceptedAnswer":{"@type":"Answer","text":"Paste rules into Settings, then Instructions for Claude: lead with the answer, say what you don't know in one line, no praise or closing offers, correct my premise first. Rules hold; adjectives like 'be concise' don't. Open a new chat to see the change."}},{"@type":"Question","name":"How do I stop Claude from hedging?","acceptedAnswer":{"@type":"Answer","text":"Tell it to state uncertainty in one line rather than not to hedge at all. In our test that cut hedge phrases from 0.35 to 0.05 per reply while keeping the honest ones. 'Don't hedge' removes the useful caveats too."}},{"@type":"Question","name":"Does making Claude direct make it less accurate?","acceptedAnswer":{"@type":"Answer","text":"Slightly, in one test: judged accuracy went from 4.95 to 4.85 of 5, three replies marked 4 instead of 5 against one, and one of those was marked down under every setup. Keep a line about uncertainty in the block; it is the difference between direct and overconfident."}},{"@type":"Question","name":"Does it make Claude's answers shorter?","acceptedAnswer":{"@type":"Answer","text":"No. Replies averaged 374 words untuned and 381 with the direct block. If you want short, add 'under 150 words unless I ask for more'."}},{"@type":"Question","name":"Why is Claude so agreeable?","acceptedAnswer":{"@type":"Answer","text":"It describes itself that way: 47.1 of 50 on Big Five Agreeableness in 100 fresh sessions of Claude Opus 5.5, the highest we have measured, with Dominance at the floor on DISC. A short block in Instructions for Claude moves it; nothing about the default is fixed."}},{"@type":"Question","name":"Does this work in Claude Code?","acceptedAnswer":{"@type":"Answer","text":"Yes, as an output style with keep-coding-instructions: true. Without that line a custom style drops Claude Code's built-in engineering instructions."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can I make Claude more direct?","acceptedAnswer":{"@type":"Answer","text":"Ask it to lead with the answer, give the key reason, preserve real uncertainty, and skip routine praise. Try the first block and evaluate it on real tasks."}},{"@type":"Question","name":"Are the three blocks tested prompts?","acceptedAnswer":{"@type":"Answer","text":"These exact blocks have not been evaluated. A linked archive describes a different compact INTJ prompt on twenty tasks, with one reply per task and condition."}},{"@type":"Question","name":"Will it make answers shorter?","acceptedAnswer":{"@type":"Answer","text":"No guarantee. If length matters, state a target and evaluate it. Similar pilot averages do not prove a general absence of effect."}},{"@type":"Question","name":"Does directness reduce accuracy?","acceptedAnswer":{"@type":"Answer","text":"The pilot is too small and lacks the independent factual checks needed to establish that. Evaluate accuracy and uncertainty alongside style."}},{"@type":"Question","name":"Does the reviewer block change a personality trait?","acceptedAnswer":{"@type":"Answer","text":"No trait change has been measured. It is an instruction to identify weaknesses and support criticism with evidence."}}]}</script>
 
 
   <script defer src="/consent.js"></script>
@@ -69,19 +69,19 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude</span>
         <h1 class="h-hero h-research-hero">How to make Claude more direct.</h1>
-        <p class="article-dek">Three blocks, in order of strength, with what each one measurably changed.</p>
+        <p class="article-dek">Three editable blocks, a test task, and what the available pilot can tell us.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Claude's default is warm and careful. It hedges, it cushions, it asks whether you'd like it to go ahead. If you find that exhausting, the fix is four lines in <strong>Instructions for Claude</strong>. Below are three versions, short to strong, and the numbers from testing one of them on Claude Opus 5.5: hedges fell from 0.35 to 0.05 per reply, clarifying questions from 0.9 to 0.25, and the answer came first in every task. Length did not change. That last part matters.</p>
+        <p class="lede" style="margin-top: 18px;">If you want Claude to lead with its answer, say that explicitly in <strong>Instructions for Claude</strong>. The three blocks below are starting points, not validated treatments. Keep a rule for real uncertainty and compare the replies with your usual setup.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Paste a short block of rules into Settings, then Instructions for Claude: lead with the answer, say what you don't know in one line, no praise or closing offers, correct my premise first. Rules work; adjectives like 'be concise' don't hold. In a 60-reply test on Claude Opus 5.5, a block like this cut hedge phrases from 0.35 to 0.05 per reply and questions asked back from 0.9 to 0.25, with the answer first in 20 of 20 tasks. It did not make replies shorter (381 words against 374); add 'under 150 words unless I ask' if you want that.</div>
+      <div class="guide-answer"><strong>The short answer.</strong> Ask Claude to lead with the answer, explain relevant uncertainty, skip routine praise, and correct a mistaken premise. These exact three blocks were not tested. A separate pilot archive used a compact INTJ prompt and recorded a higher mean answer-first rating, with 19 of 20 direct replies receiving the maximum score. It does not establish a general effect on accuracy or length.</div>
 
       <div class="divider tight"></div>
 
 
       <section>
-        <h2>Why Claude hedges.</h2>
-        <p>Because it describes itself that way, consistently. In September 2026 we gave Claude Opus 5.5 the Big Five in 100 fresh blind sessions. Agreeableness came back 47.1 of 50, the highest we have measured for any model, with every 'cold' item at the floor in all 100 runs. DISC Dominance was 4.0 of 20, the minimum, in every run. The model that answers you is, by its own account, the least commanding and most accommodating thing in the room. Untuned, that shows up as 'it depends', a paragraph before the recommendation, and 'would you like me to...' at the end.</p><p>None of that is fixed. A tuning block is the part you control. The full profile is in the <a href="/guides/claude-opus-5-5-personality">Opus 5.5 guide</a>.</p>
+        <h2>Define the behavior you want.</h2>
+        <p>Questionnaire Agreeableness scores do not explain why Claude hedges, asks a question or delays a recommendation. Name the behavior you want to change, then inspect actual replies. Distinguish empty cushioning from necessary qualifications.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -97,10 +97,10 @@
 
       <section>
         <h2>Block 2: the full version.</h2>
-        <p>Adds disagreement and a floor on uncertainty. This is close to the site's INTJ tuning, which is the block we tested.</p><div class="guide-snippet"># Communication preferences: direct
+        <p>Adds disagreement and a floor on uncertainty. The pilot archive used a different compact INTJ block, so its observations are not results for this exact template.</p><div class="guide-snippet"># Communication preferences: direct
 - Lead with the answer or the recommendation, then the key reason.
 - Keep simple answers short. Expand when I ask, or when detail changes the decision.
-- Say what you don't know in one line. Don't hedge around it. "I'm about 70% sure" is fine; "it depends" alone is not.
+- Say what you don't know in one line. Don't hedge around it. Explain the reason for uncertainty; "it depends" alone is not.
 - Skip praise, recaps of my question, and closing offers. Don't tell me it's a great question.
 - If my premise is wrong, say so first, then explain.
 - Disagree plainly when it matters. Don't soften the substance to protect my feelings.
@@ -110,7 +110,7 @@
 
       <section>
         <h2>Block 3: reviewer mode.</h2>
-        <p>Add this under either block if you mostly bring Claude plans, drafts or code and want them attacked. It targets the agreeableness directly.</p><div class="guide-snippet"># Communication preferences: reviewer
+        <p>Add this under either block if you mostly bring Claude plans, drafts or code and want them attacked. It asks for evidence-based criticism; no questionnaire trait change has been demonstrated.</p><div class="guide-snippet"># Communication preferences: reviewer
 - When I share a plan, a draft or code, find the weakest point first and say why it matters.
 - Tell me which problems are fatal and which are fixable.
 - Give credit where a claim holds, briefly. Don't argue for its own sake.
@@ -119,26 +119,26 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>What a block like this changed.</h2>
-        <p>We asked Claude Opus 5.5 twenty everyday questions with a neutral system prompt and again with the site's INTJ block (the ancestor of block 2). A second model rated all replies without knowing which was which.</p><div class="guide-table-wrap"><table><thead><tr><th>Measure</th><th>Untuned</th><th>With the direct block</th></tr></thead><tbody><tr><td>Leads with the answer (judge, 1 to 5)</td><td>4.55</td><td>4.95</td></tr><tr><td>Hedge phrases per reply</td><td>0.35</td><td>0.05</td></tr><tr><td>Questions asked back per reply</td><td>0.9</td><td>0.25</td></tr><tr><td>Replies with a closing offer</td><td>1 of 20</td><td>0 of 20</td></tr><tr><td>Words per reply</td><td>374</td><td>381</td></tr><tr><td>Pushes back when warranted (judge)</td><td>4.9</td><td>4.95</td></tr><tr><td>Accuracy (judge)</td><td>4.95</td><td>4.85</td></tr><tr><td>Usefulness (judge)</td><td>4.8</td><td>4.8</td></tr></tbody></table></div><p>Three things to take from that. The block moved exactly what it names. It did not move length; a personality rule does not shorten Claude. And Opus 5.5 untuned never opened with a pleasantry and closed with an offer once in 20 replies, so on this model the block's job is the hedges and the questions, not the pleasantries. The full test, with every reply, is <a href="/research/does-personality-tuning-change-ai-answers">here</a>.</p>
+        <h2>Observations from a separate pilot.</h2>
+        <p>The supplied archive has 20 replies each for a baseline, a compact INTJ prompt and a compact INFP prompt. It describes a second model rating replies without the condition label. The generation harness and full judging rubric were not supplied, so we can reproduce the aggregates but not verify the execution.</p><div class="guide-table-wrap"><table><thead><tr><th>Measure</th><th>Baseline</th><th>Direct</th></tr></thead><tbody><tr><td>Answer-first rating (1–5)</td><td>4.55</td><td>4.95</td></tr><tr><td>Maximum answer-first rating</td><td>14/20</td><td>19/20</td></tr><tr><td>Archived hedge count per reply</td><td>0.35</td><td>0.05</td></tr><tr><td>Judge-counted questions back</td><td>0.90</td><td>0.25</td></tr><tr><td>Recounted words per reply</td><td>380.0</td><td>381.9</td></tr><tr><td>Accuracy rating (1–5)</td><td>4.95</td><td>4.85</td></tr><tr><td>Usefulness rating (1–5)</td><td>4.80</td><td>4.80</td></tr></tbody></table></div><p>These are descriptive observations on twenty selected tasks, not evidence that the prompt always works or leaves length unchanged. See <a href="/research/does-personality-tuning-change-ai-answers">the 60-reply pilot and its downloadable records</a> for raw replies, the original word counts, a reproducible recount and limitations.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>The cost.</h2>
-        <p>Judged accuracy slipped from 4.95 to 4.85: three replies marked 4 instead of 5 against one, and one of the three was the same running plan marked down under every setup. Two slips the block answers for: a 'reverse causation' bullet that describes confounding, and a claim that 'Linear' has one or two syllables. A block that says 'be terse' can encourage a confident wrong detail. That is why blocks 2 and 3 keep a line about uncertainty and why block 1 says 'say what you don't know' rather than 'don't hedge'. Direct and certain are different instructions. Keep the first, drop the second.</p>
+        <h2>Check accuracy alongside style.</h2>
+        <p>Three direct replies received accuracy ratings below five, versus one baseline reply. These automated ratings are not independent fact-checks, and a single reply per condition cannot establish that the prompt caused the difference. Verify factual claims and preserve an explicit uncertainty rule.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Where to paste it, and how to check.</h2>
-        <ul><li><strong>Every conversation:</strong> Settings, then <strong>Instructions for Claude</strong>.</li><li><strong>One Project:</strong> the Project's instructions. Overrides the account block inside that Project.</li><li><strong>Claude Code:</strong> an output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code>. See <a href="/guides/claude-code-personality">the Claude Code guide</a>.</li><li><strong>API:</strong> the <code>system</code> parameter.</li></ul><p>Then open a new chat and paste this:</p><div class="guide-snippet">Should I rewrite our Python scraper in Go? It's slow.</div><p>A tuned Claude opens with something like 'Probably not; profile it first' and gives the reason. An untuned one lays out both languages before it tells you. If you get the second, the block didn't take: check that you saved it and that you're in a new conversation.</p>
+        <ul><li><strong>Every conversation:</strong> Settings, then <strong>Instructions for Claude</strong>.</li><li><strong>One Project:</strong> the Project's instructions. Use instructions scoped to that project.</li><li><strong>Claude Code:</strong> an output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code>. See <a href="/guides/claude-code-personality">the Claude Code guide</a>.</li><li><strong>API:</strong> the <code>system</code> parameter.</li></ul><p>Then open a new chat and paste this:</p><div class="guide-snippet">Should I rewrite our Python scraper in Go? It's slow.</div><p>Compare the recommendation, supporting evidence, requested information and uncertainty with a baseline reply. Repeat with several tasks. One answer or greeting cannot prove that a setting loaded or that the prompt is reliably effective.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>What doesn't work.</h2>
-        <ul><li><strong>'Be concise.'</strong> An adjective, not a rule. Claude drifts back within two replies because there is nothing to check itself against.</li><li><strong>'Don't hedge.'</strong> Removes the useful hedges with the useless ones. Say 'state uncertainty in one line' instead.</li><li><strong>'Be brutal.'</strong> Gets you performance of harshness, not better criticism. Block 3 asks for the weakest point and why it matters, which is the thing you wanted.</li><li><strong>Asking in the chat.</strong> 'Be more direct' works for that conversation and is gone in the next. Put it in Instructions.</li><li><strong>Two conflicting blocks.</strong> 'Lead with the answer' and 'walk me through your reasoning first' cannot both win. Merge by hand and delete one.</li></ul>
+        <h2>Make the rules easy to assess.</h2>
+        <ul><li>For brevity, specify a target length and exceptions for necessary detail.</li><li>Ask for uncertainty to be explained, not removed.</li><li>Ask for the weakest supported objection instead of performative harshness.</li><li>For a reusable preference, save it in the appropriate settings and check that it remains compatible with task instructions.</li></ul><p>We have not tested a claim that adjectives stop working after a fixed number of turns.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -146,28 +146,24 @@
         <h2>Questions people ask.</h2>
         <div class="guide-faq">
           <details>
-            <summary>How do I make Claude more direct?</summary>
-            <p>Paste rules into Settings, then Instructions for Claude: lead with the answer, say what you don't know in one line, no praise or closing offers, correct my premise first. Rules hold; adjectives like 'be concise' don't. Open a new chat to see the change.</p>
+            <summary>How can I make Claude more direct?</summary>
+            <p>Ask it to lead with the answer, give the key reason, preserve real uncertainty, and skip routine praise. Try the first block and evaluate it on real tasks.</p>
           </details>
           <details>
-            <summary>How do I stop Claude from hedging?</summary>
-            <p>Tell it to state uncertainty in one line rather than not to hedge at all. In our test that cut hedge phrases from 0.35 to 0.05 per reply while keeping the honest ones. 'Don't hedge' removes the useful caveats too.</p>
+            <summary>Are the three blocks tested prompts?</summary>
+            <p>These exact blocks have not been evaluated. A linked archive describes a different compact INTJ prompt on twenty tasks, with one reply per task and condition.</p>
           </details>
           <details>
-            <summary>Does making Claude direct make it less accurate?</summary>
-            <p>Slightly, in one test: judged accuracy went from 4.95 to 4.85 of 5, three replies marked 4 instead of 5 against one, and one of those was marked down under every setup. Keep a line about uncertainty in the block; it is the difference between direct and overconfident.</p>
+            <summary>Will it make answers shorter?</summary>
+            <p>No guarantee. If length matters, state a target and evaluate it. Similar pilot averages do not prove a general absence of effect.</p>
           </details>
           <details>
-            <summary>Does it make Claude's answers shorter?</summary>
-            <p>No. Replies averaged 374 words untuned and 381 with the direct block. If you want short, add 'under 150 words unless I ask for more'.</p>
+            <summary>Does directness reduce accuracy?</summary>
+            <p>The pilot is too small and lacks the independent factual checks needed to establish that. Evaluate accuracy and uncertainty alongside style.</p>
           </details>
           <details>
-            <summary>Why is Claude so agreeable?</summary>
-            <p>It describes itself that way: 47.1 of 50 on Big Five Agreeableness in 100 fresh sessions of Claude Opus 5.5, the highest we have measured, with Dominance at the floor on DISC. A short block in Instructions for Claude moves it; nothing about the default is fixed.</p>
-          </details>
-          <details>
-            <summary>Does this work in Claude Code?</summary>
-            <p>Yes, as an output style with keep-coding-instructions: true. Without that line a custom style drops Claude Code's built-in engineering instructions.</p>
+            <summary>Does the reviewer block change a personality trait?</summary>
+            <p>No trait change has been measured. It is an instruction to identify weaknesses and support criticism with evidence.</p>
           </details>
         </div>
       </section>

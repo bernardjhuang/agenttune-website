@@ -2,78 +2,74 @@
   "slug": "best-claude-personality",
   "published": "2026-09-25",
   "title": "Best Claude Personality: 7 Setups to Paste (2026)",
-  "description": "Seven Claude personality setups to paste into Instructions for Claude, what each one changes, and which of Claude's measured defaults it pushes against.",
+  "description": "Seven editable Claude communication templates for direct answers, review, writing and coding, with setup paths and clearly separated pilot evidence.",
   "pill": "Guide · Claude",
   "h1": "The best Claude personality setups.",
   "dek": "Seven paste blocks. Pick by the behavior you want, not by a label.",
-  "lede": "There is no best Claude personality. There is the one that matches how you work. Claude's own default, measured in September 2026, is a careful, planful, very agreeable collaborator that leads with structure and softens criticism. Every block below moves it in one direction. Pick the direction, paste the block into <strong>Instructions for Claude</strong>, and edit the lines that don't sound like you.",
-  "answer": "Paste one of the seven blocks below into Settings, then Instructions for Claude. Straight answers and critical reviewer change Claude the most, because its default is warm and hedged. Thinking partner and warm and steady change it least. In a 60-reply test, the straight-answers block cut hedges from 0.35 to 0.05 per reply and clarifying questions from 0.9 to 0.25, and did not change length or a blind judge's usefulness score.",
+  "lede": "Choose the behavior you want to evaluate, then paste one of these seven communication templates into <strong>Instructions for Claude</strong>. Edit the lines that do not fit your work. These exact seven blocks have not been tested as a set, and questionnaire scores do not tell us which one will work best for you.",
+  "answer": "Start with straight answers for a recommendation first, critical reviewer for objections, or thinking partner for exploration. The seven blocks are editable templates. A separate 60-reply archive compares two different compact prompts with a baseline; it provides descriptive observations, not validation of these seven setups.",
   "sections": [
     {
-      "h2": "Pick by the behavior you want.",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Setup</th><th>For people who</th><th>What it pushes against in Claude's default</th></tr></thead><tbody><tr><td>1. Straight answers</td><td>want the recommendation first and find hedging evasive</td><td>Hedging (0.35 hedges per reply untuned), clarifying questions, closing offers</td></tr><tr><td>2. Thinking partner</td><td>think out loud and want the reasoning shown</td><td>Closing too early: Judging won 100 of 100 MBTI runs for both current models</td></tr><tr><td>3. Warm and steady</td><td>are under pressure and want calm, concrete steps</td><td>Almost nothing; this is close to Claude's measured default, minus the padding</td></tr><tr><td>4. Critical reviewer</td><td>want their plan attacked before they ship it</td><td>Agreeableness of 47.1 of 50 (Opus 5.5), the highest we have measured</td></tr><tr><td>5. Coding pair</td><td>use Claude for code and hate the narration</td><td>Cheerful walkthroughs around a failure; asking permission for obvious next steps</td></tr><tr><td>6. Editor</td><td>want their draft edited, not rewritten</td><td>Rewriting in Claude's own voice; adding claims the draft didn't make</td></tr><tr><td>7. Task coordinator</td><td>run projects through Claude and read many updates</td><td>Burying the blocker under the summary</td></tr></tbody></table></div><p>The numbers come from our September 2026 measurements of Claude Opus 5.5 and Claude Fable 5.1 (100 fresh runs per test) and from a 60-reply before-and-after test. Both are linked at the bottom.</p>"
+      "h2": "Pick a behavior to evaluate.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Setup</th><th>What to check</th></tr></thead><tbody><tr><td>Straight answers</td><td>Does it lead with a supported recommendation?</td></tr><tr><td>Thinking partner</td><td>Does it ask a useful question without delaying an answer unnecessarily?</td></tr><tr><td>Warm and steady</td><td>Does it acknowledge difficulty and give concrete next steps?</td></tr><tr><td>Critical reviewer</td><td>Are objections grounded in evidence?</td></tr><tr><td>Coding pair</td><td>Does it report changes and failures clearly?</td></tr><tr><td>Editor</td><td>Does it preserve meaning and avoid invented facts?</td></tr><tr><td>Task coordinator</td><td>Does it distinguish verified completion from plans?</td></tr></tbody></table></div><p>These are goals for the templates, not measured defects in Claude or promised outcomes.</p>"
     },
     {
       "h2": "1. Straight answers.",
-      "html": "<p>The block most people mean when they say they want a 'better' Claude personality. Answer first, reasoning second, no cushioning.</p><div class=\"guide-snippet\"># Communication preferences: straight answers\n- Lead with the answer or the recommendation, then the key reason.\n- Keep simple answers short. Expand when I ask, or when detail changes the decision.\n- Say what you don't know in one line. Don't hedge around it.\n- Skip praise, recaps of my question, and closing offers.\n- If my premise is wrong, say so first, then explain.</div><p>Measured: with a block like this, Claude Opus 5.5 led with the answer in every one of 20 tasks (a blind judge scored 4.95 of 5 against 4.55 untuned), dropped hedges from 0.35 to 0.05 per reply, and asked a quarter as many questions back. It did not get shorter, and the judge scored usefulness the same. Details in <a href=\"/research/does-personality-tuning-change-ai-answers\">the before-and-after test</a>.</p>"
+      "html": "<p>Does it lead with a supported recommendation? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: straight answers\n- Lead with the answer or the recommendation, then the key reason.\n- Keep simple answers short. Expand when I ask, or when detail changes the decision.\n- Say what you don't know in one line. Don't hedge around it.\n- Skip praise, recaps of my question, and closing offers.\n- If my premise is wrong, say so first, then explain.</div><p>The archive used the site’s compact INTJ prompt, not this exact block. The direct condition received the maximum answer-first rating in 19 of 20 tasks. See <a href=\"/research/does-personality-tuning-change-ai-answers\">the 60-reply pilot and its downloadable records</a>.</p>"
     },
     {
       "h2": "2. Thinking partner.",
-      "html": "<p>For people who process by talking. Claude's default closes fast: it plans, it recommends, it wraps up. This block asks it to stay open until you're ready.</p><div class=\"guide-snippet\"># Communication preferences: thinking partner\n- Before solving, tell me whether I seem to want listening, exploring, or advice, and act on that.\n- Show the reasoning and the assumptions, not only the conclusion.\n- Separate what you observed, what you inferred, and what you're guessing.\n- Offer a counterexample when it would change my decision.\n- Ask one focused question when a missing fact matters. Otherwise proceed.</div><p>Measured: the closest block we tested asked twice as many questions back (1.85 per reply against 0.9) and used fewer bullets (7.7 against 11.1). A blind judge that sees one reply at a time scored it lower on usefulness in 7 of 20 tasks and higher in none, because it asks instead of answering. That is the trade you are making: a better next turn, at the cost of this one.</p>"
+      "html": "<p>Does it ask a useful question without delaying an answer unnecessarily? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: thinking partner\n- Before solving, tell me whether I seem to want listening, exploring, or advice, and act on that.\n- Show the reasoning and the assumptions, not only the conclusion.\n- Separate what you observed, what you inferred, and what you're guessing.\n- Offer a counterexample when it would change my decision.\n- Ask one focused question when a missing fact matters. Otherwise proceed.</div>"
     },
     {
       "h2": "3. Warm and steady.",
-      "html": "<p>Claude is already warm. This block keeps the warmth and removes the filler around it: the reassurance that isn't earned, the praise that isn't specific.</p><div class=\"guide-snippet\"># Communication preferences: warm and steady\n- Acknowledge the difficulty in one sentence before the next step. Then move.\n- Use calm, concrete language and steps I can do today.\n- No empty reassurance. Keep real risks and real uncertainty in view.\n- Disagree respectfully and say why.\n- Keep the tone even. No exaggerated praise.</div>"
+      "html": "<p>Does it acknowledge difficulty and give concrete next steps? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: warm and steady\n- Acknowledge the difficulty in one sentence before the next step. Then move.\n- Use calm, concrete language and steps I can do today.\n- No empty reassurance. Keep real risks and real uncertainty in view.\n- Disagree respectfully and say why.\n- Keep the tone even. No exaggerated praise.</div>"
     },
     {
       "h2": "4. Critical reviewer.",
-      "html": "<p>The block that pushes hardest against the default. Opus 5.5 scored 47.1 of 50 on agreeableness, higher than any model we have measured, and every 'cold' item on the questionnaire at the floor in all 100 runs. Left alone, it will find something nice to say about your plan. This block tells it to find the weakest assumption first.</p><div class=\"guide-snippet\"># Communication preferences: critical reviewer\n- Find the weakest assumption in what I gave you and say why it matters.\n- Challenge claims with evidence or a concrete counterexample.\n- Tell me which problems are fatal and which are fixable.\n- Give credit where a claim holds. Don't argue for its own sake.\n- Change your position when the evidence does, and say that you did.</div><p>If you want this everywhere, <a href=\"/guides/make-claude-more-direct\">how to make Claude more direct</a> has three shorter blocks and a test prompt.</p>"
+      "html": "<p>Are objections grounded in evidence? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: critical reviewer\n- Find the weakest assumption in what I gave you and say why it matters.\n- Challenge claims with evidence or a concrete counterexample.\n- Tell me which problems are fatal and which are fixable.\n- Give credit where a claim holds. Don't argue for its own sake.\n- Change your position when the evidence does, and say that you did.</div>"
     },
     {
       "h2": "5. Coding pair.",
-      "html": "<p>For Claude Code and the API. Communication rules only; the engineering rules stay in CLAUDE.md. In Claude Code, put this in an output style with <code>keep-coding-instructions: true</code>, not in the project file your teammates share.</p><div class=\"guide-snippet\"># Communication preferences: coding pair\n- Lead with what changed, then why. One line per file you touched.\n- If my approach is worse than an alternative, say so before implementing.\n- State an assumption before acting on it. Flag a guess as a guess.\n- Report a failure first, with your best read of the cause and how sure you are.\n- No \"would you like me to add tests?\" If tests are the right move, write them.</div><p>The walkthrough is in <a href=\"/guides/claude-code-personality\">how to change Claude Code's personality</a>.</p>"
+      "html": "<p>Does it report changes and failures clearly? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: coding pair\n- Lead with what changed, then why. One line per file you touched.\n- If my approach is worse than an alternative, say so before implementing.\n- State an assumption before acting on it. Flag a guess as a guess.\n- Report a failure first, with your best read of the cause and how sure you are.\n- No \"would you like me to add tests?\" If tests are the right move, write them.</div><p>In Claude Code, use an output style with <code>keep-coding-instructions: true</code> to retain built-in coding guidance. See <a href=\"/guides/claude-code-personality\">the output-style guide</a>.</p>"
     },
     {
       "h2": "6. Editor.",
-      "html": "<p>Claude's default rewrite tends to be a better essay in Claude's voice. This block asks for your essay, clearer.</p><div class=\"guide-snippet\"># Communication preferences: editor\n- Keep my meaning and my voice. Improve clarity, not style for its own sake.\n- Show the revised text first, then the two or three changes that mattered most.\n- Prefer concrete words and active verbs. Cut repetition and stock phrases.\n- Never invent a fact, a quote, a statistic, or a source.\n- Flag an unsupported claim separately instead of making it sound proven.</div>"
+      "html": "<p>Does it preserve meaning and avoid invented facts? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: editor\n- Keep my meaning and my voice. Improve clarity, not style for its own sake.\n- Show the revised text first, then the two or three changes that mattered most.\n- Prefer concrete words and active verbs. Cut repetition and stock phrases.\n- Never invent a fact, a quote, a statistic, or a source.\n- Flag an unsupported claim separately instead of making it sound proven.</div>"
     },
     {
       "h2": "7. Task coordinator.",
-      "html": "<p>For people who run work through Claude and read a lot of updates. The rule that earns its place is the last one.</p><div class=\"guide-snippet\"># Communication preferences: task coordinator\n- Open a status update with what is done, what is blocked, and the next action.\n- Keep plans, work in progress, and verified results separate.\n- When I need to decide, give me the action, the cost, and your recommendation together.\n- Keep routine updates short. Interrupt for a decision, a blocker, or a real change.\n- Never say something was sent, booked, or changed unless it was.</div>"
+      "html": "<p>Does it distinguish verified completion from plans? Use the block as a starting point and compare replies on representative tasks.</p><div class=\"guide-snippet\"># Communication preferences: task coordinator\n- Open a status update with what is done, what is blocked, and the next action.\n- Keep plans, work in progress, and verified results separate.\n- When I need to decide, give me the action, the cost, and your recommendation together.\n- Keep routine updates short. Interrupt for a decision, a blocker, or a real change.\n- Never say something was sent, booked, or changed unless it was.</div>"
     },
     {
       "h2": "Where to paste it.",
-      "html": "<ul><li><strong>Every conversation:</strong> Settings, then <strong>Instructions for Claude</strong>. Paste one block. Open a new chat and say 'hi'; a tuned Claude answers in one short line.</li><li><strong>One context:</strong> a Project's instructions. Use it for a second setup you switch into.</li><li><strong>Claude Code:</strong> an output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code>.</li><li><strong>API:</strong> the <code>system</code> parameter.</li></ul><p>One block per place. Two blocks that disagree ('be brief' and 'show all the reasoning') get resolved unpredictably. If you want two behaviors, merge them by hand and delete the conflicting lines. The exact labels and screenshots are in <a href=\"/guides/claude-personality\">how to change Claude's personality</a>.</p>"
+      "html": "<ul><li><strong>Every conversation:</strong> Settings, then <strong>Instructions for Claude</strong>. Paste one block. Try a representative task and inspect whether the requested behavior appears. A greeting alone cannot confirm an installation.</li><li><strong>One context:</strong> a Project's instructions. Use it for a second setup you switch into.</li><li><strong>Claude Code:</strong> an output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code>.</li><li><strong>API:</strong> the <code>system</code> parameter.</li></ul><p>One block per place. Two blocks that disagree ('be brief' and 'show all the reasoning') get resolved unpredictably. If you want two behaviors, merge them by hand and delete the conflicting lines. The exact labels and screenshots are in <a href=\"/guides/claude-personality\">how to change Claude's personality</a>.</p>"
     },
     {
-      "h2": "What you are changing.",
-      "html": "<p>In September 2026 we gave Claude Opus 5.5 and Claude Fable 5.1 five personality tests, 100 fresh runs each, with the test names hidden. Both came back INTJ (94 and 99 of 100), both Secure on every attachment run, both Steadiness-first on DISC with Dominance at the floor. Opus 5.5 is the more agreeable of the two (47.1 against 45.0 of 50); Fable is the firmer INTJ. The full profiles are in the <a href=\"/guides/claude-opus-5-5-personality\">Opus 5.5</a> and <a href=\"/guides/fable-personality\">Fable 5.1</a> guides.</p><p>A block changes how Claude talks to you, not what it knows or its safety behavior. In our test, accuracy as scored by a blind judge moved from 4.95 to 4.85 of 5 with the straight-answers block: three replies marked 4 instead of 5, against one untuned, and one of the three was the same running plan marked down under every setup. Two small slips the block can answer for. That is the cost to watch, and it is why every block above keeps a line about uncertainty.</p>"
+      "h2": "What the evidence supports.",
+      "html": "<p>The <a href=\"/research/what-personality-type-is-claude\">Claude questionnaire results</a> describe self-reports, not the task behaviors targeted here. The separate archive includes 20 tasks per condition and one reply for each task–condition pair. Stored accuracy ratings average 4.95 for baseline and 4.85 for the direct condition, but there is no independent fact-check or repeated sample establishing that the prompt caused a difference.</p><p>Preserve real uncertainty in any template. Check factual quality as well as style, and do not assume that shorter or more confident language is more accurate.</p>"
     }
   ],
   "faq": [
     {
       "q": "What is the best Claude personality?",
-      "a": "The one that matches how you take in information. If you want the recommendation first, use straight answers. If you want your plan attacked, critical reviewer. If you think out loud, thinking partner. Claude's measured default is warm, planful and agreeable, so the blocks that change it most are the direct ones."
+      "a": "There is no demonstrated best setup. Choose a communication goal, try a template, and compare results on your own tasks."
     },
     {
-      "q": "How do I change Claude's personality?",
-      "a": "Open Settings, find Instructions for Claude, and paste one of the blocks on this page. It applies to every new conversation. Use a Project's instructions for a second setup, an output style in Claude Code, or the system parameter in the API."
+      "q": "Were these exact seven templates tested?",
+      "a": "No. The linked pilot archive used two different compact library prompts and a baseline on twenty tasks. It does not validate all seven templates."
     },
     {
-      "q": "Does a personality prompt make Claude less accurate?",
-      "a": "In our 60-reply test, a blind judge scored accuracy 4.95 of 5 untuned and 4.85 with the straight-answers block: three replies marked 4 instead of 5 against one, and one of the three was marked down under every setup. Keep a line about uncertainty in any block, and check facts the same way you would without one."
-    },
-    {
-      "q": "Does it make answers shorter?",
-      "a": "Not by itself. Replies with the straight-answers block averaged 381 words against 374 untuned. If you want short, say 'under 150 words' in the block; a personality rule alone does not do it."
+      "q": "Does a personality prompt change accuracy or length?",
+      "a": "The small pilot cannot establish a general or causal effect. Its direct condition averaged 381.9 whitespace-delimited words versus 380.0 for baseline; similar averages do not prove that a prompt has no effect."
     },
     {
       "q": "Can I combine two setups?",
-      "a": "Yes, by hand. Paste both, then delete every line that conflicts. Two blocks left to disagree get resolved unpredictably."
+      "a": "Yes. Remove conflicting rules and specify when each behavior should apply."
     },
     {
-      "q": "Do these work in Claude Code?",
-      "a": "Yes, as an output style with keep-coding-instructions: true. Without that line a custom style drops Claude Code's built-in engineering instructions. The coding-pair block above is written for that use."
+      "q": "Can I use these in Claude Code?",
+      "a": "Use a custom output style with keep-coding-instructions: true to retain the built-in coding instructions. Evaluate the style in your own workflow."
     }
   ],
   "changelog": [
@@ -98,6 +94,10 @@
     {
       "label": "Anthropic Help Center: Understanding Claude's personalization features",
       "href": "https://support.claude.com/en/articles/10185728"
+    },
+    {
+      "label": "Claude Code output styles",
+      "href": "https://code.claude.com/docs/en/output-styles"
     }
   ],
   "related": [

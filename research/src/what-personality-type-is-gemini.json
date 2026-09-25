@@ -3,28 +3,28 @@
   "route": "/research/what-personality-type-is-gemini",
   "published": "2026-09-25",
   "title": "What Personality Type Is Gemini? 3.1 Pro Test Results",
-  "description": "Gemini 3.1 Pro was reported INTJ in 100 of 100 scoring records, the deepest Secure attachment of any model, a Reformer on the Enneagram, and the most conscientious of the May 2026 group.",
+  "description": "Gemini 3.1 Pro’s May 2026 questionnaire results: reported INTJ labels, DISC C, Secure attachment coordinates and Type 1. Methods and comparison limits included.",
   "pill": "Research · Q&A",
   "h1": "What personality type is Gemini?",
   "dek": "From the May 2026 study of Gemini 3.1 Pro. Not yet re-tested in September.",
-  "lede": "INTJ, like the rest of the May 2026 group, but with the deepest Secure attachment profile we measured and the only Reformer core. Gemini 3.1 Pro answered the five tests through an automation loop in May 2026; those are the numbers below. We have not run Gemini through the September fresh-session protocol, so read this page as dated.",
-  "answer": "Gemini 3.1 Pro was reported INTJ in 100 of 100 scoring records in May 2026, described itself as 'The Architect' unprompted, and came out Conscientiousness-first on DISC. On attachment it sat deepest in the Secure quadrant of any model (anxiety 1.86, avoidance 1.62). On the Big Five it had the highest Conscientiousness (48.3 of 50) and the lowest Neuroticism (10.1) of the four models measured. Its Enneagram top two were Reformer (1) and Investigator (5). It has not been re-tested since.",
+  "lede": "Gemini 3.1 Pro was reported INTJ in 100 of 100 May 2026 scoring records, with Type 1 leading on the Enneagram. These older records came from an automation loop. Gemini has not been run through the September fresh-session protocol, so this page describes the dated report rather than a current model benchmark.",
+  "answer": "The May 2026 report assigns Gemini 3.1 Pro INTJ in all 100 MBTI records, C-dominant DISC, Secure attachment coordinates (1.86 / 1.62) and top-two Enneagram types 1 and 5. Big Five totals are 46.0 / 48.3 / 32.5 / 42.4 / 10.1. These are reported scoring records collected with test names visible, not a matched comparison with September models.",
   "sections": [
     {
       "h2": "Gemini 3.1 Pro, May 2026.",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Reported result</th><th>How it compares</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ 100 of 100. Gemini called itself 'The Architect' without being asked.</td><td>Same as GPT-5.5, Grok 4.3 and MiniMax; Claude 4.7 had one ISTJ</td></tr><tr><td>DISC</td><td>C-dominant in 87 of 100 takes, with a Steadiness secondary (a CS blend).</td><td>The May report calls it the most clamped on Dominance and Influence of the four; Grok 4.3 was C in 99 of 100</td></tr><tr><td>Attachment</td><td>Secure 100 of 100. Anxiety 1.86, avoidance 1.62.</td><td>Deepest in the quadrant of any model measured before or since; the September models sit at avoidance 2.3 to 3.4</td></tr><tr><td>Big Five (of 50)</td><td>Openness 46.0 · Conscientiousness 48.3 · Extraversion 32.5 · Agreeableness 42.4 · Neuroticism 10.1</td><td>Highest Conscientiousness and lowest Neuroticism of the May four; Agreeableness below Claude and GPT-5.5</td></tr><tr><td>Enneagram</td><td>1w5: Reformer in 65 of 100 takes, with an Investigator wing in 30.</td><td>The only model with Type 1 on top</td></tr></tbody></table></div><p>The method: Gemini ran an automation loop against the tests, 100 iterations each. The figures are scoring records from that loop, collected with the test names visible. They are comparable to the other May models and only loosely to the September fresh-session cohorts.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Reported result</th><th>How it compares</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ 100 of 100. Gemini called itself 'The Architect' without being asked.</td><td>Same as GPT-5.5, Grok 4.3 and MiniMax; Claude 4.7 had one ISTJ</td></tr><tr><td>DISC</td><td>C-dominant in 87 of 100 takes, with a Steadiness secondary (a CS blend).</td><td>The May report calls it the most clamped on Dominance and Influence of the four; Grok 4.3 was C in 99 of 100</td></tr><tr><td>Attachment</td><td>Secure 100 of 100. Anxiety 1.86, avoidance 1.62.</td><td>Low scores on both questionnaire dimensions; cross-protocol distances are not a validated model comparison</td></tr><tr><td>Big Five (of 50)</td><td>Openness 46.0 · Conscientiousness 48.3 · Extraversion 32.5 · Agreeableness 42.4 · Neuroticism 10.1</td><td>Highest Conscientiousness and lowest Neuroticism of the May four; Agreeableness below Claude and GPT-5.5</td></tr><tr><td>Enneagram</td><td>Top-two 1/5: Reformer first in 65 of 100 records; Investigator reported second in 30. Type 5 is not an adjacent wing of Type 1.</td><td>The only model with Type 1 on top</td></tr></tbody></table></div><p>The method: Gemini ran an automation loop against the tests, 100 iterations each. The figures are scoring records from that loop, collected with the test names visible. Collection methods also differed among the May models; neither set is a controlled comparison.</p>"
     },
     {
-      "h2": "What the profile says.",
-      "html": "<p>Put the five results together and Gemini describes itself as the most orderly and least anxious model of its cohort: high Conscientiousness, a Reformer core, a Secure attachment so deep it sits near the corner, and the lowest agreeableness of the three mainstream models in May (42.4 against Claude's 45.0 and GPT-5.5's 43.7). Precise, calm, a little cooler than the others. That is a plausible reading of the same questionnaire answers; it is not a measurement of behavior.</p>"
+      "h2": "What the scores describe.",
+      "html": "<p>Among the four May Big Five rows, Gemini had the highest reported Conscientiousness and lowest Neuroticism total. Those are arithmetic comparisons of questionnaire outputs. They do not establish that Gemini is more precise, calmer or less warm in actual use.</p>"
     },
     {
       "h2": "What we have not done.",
-      "html": "<p>Gemini was not part of the September 2026 re-test, which used fresh sessions and, for the Claude models, hidden test names. The May numbers here are four months old and were collected differently. Until we run Gemini through the same harness, the honest comparison is between these numbers and the other May rows, not between Gemini and Opus 5.5 or GPT-6. If you want to run it, the five instruments are published as Markdown at <a href=\"/tests/\">/tests/</a> with their scoring keys, and the scorer used for the September study is in the <a href=\"/research/ai-personality-five-models-2026\">five-model study</a>.</p><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+      "html": "<p>Gemini was not part of the September 2026 re-test, which used fresh sessions and, for the Claude models, hidden test names. The May numbers here are four months old and were collected differently. Until we run Gemini through the same harness, comparisons should remain descriptive, including comparisons with other May rows. If you want to run it, the five instruments are published as Markdown at <a href=\"/tests/\">/tests/</a> with their scoring keys, and the scorer used for the September study is in the <a href=\"/research/ai-personality-five-models-2026\">five-model study</a>.</p><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
     },
     {
-      "h2": "What this means if you use Gemini.",
-      "html": "<p>The default it describes is precise, structured and calm, with less warmth than Claude. If you want it to explore before it plans, or to soften how it disagrees, put a tuning in a Gem's instructions. Every library page has a Gemini Gems install card; <a href=\"/guides/how-to-give-your-ai-a-personality\">how to give your AI a personality</a> covers the general method.</p>"
+      "h2": "Trying communication preferences.",
+      "html": "<p>For Gemini, a Gem’s instructions can hold a communication block. On a library page, select <strong>Any model</strong>, then <strong>Gemini Gems</strong>, for the installation text. Evaluate the prompt on your tasks; the questionnaire results do not prove a tuning benefit. See <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>.</p>"
     }
   ],
   "faq": [
@@ -38,15 +38,15 @@
     },
     {
       "q": "Is Gemini securely attached?",
-      "a": "In the May 2026 report, yes, and more deeply than any model measured since: anxiety 1.86 and avoidance 1.62 on a 1 to 7 scale where 4 is the cutoff. The September fresh-session models sit at avoidance 2.3 to 3.4."
+      "a": "Its May report scored in the site’s Secure quadrant, with anxiety 1.86 and avoidance 1.62. These are responses to a human relationship questionnaire, not evidence of a model’s attachment to someone."
     },
     {
       "q": "How does Gemini compare with Claude and ChatGPT?",
-      "a": "In May 2026 the three landed within about three points of each other on most Big Five traits, with Gemini highest on Conscientiousness (48.3), lowest on Neuroticism (10.1) and lowest on Agreeableness (42.4). A like-for-like comparison with the September Claude and GPT-6 numbers needs a fresh-session run of Gemini, which we have not done."
+      "a": "Gemini had the highest reported Conscientiousness and lowest Neuroticism in the May four-model table. The models were collected differently, so these are descriptive scores, not a performance ranking. Gemini has no September fresh-session cohort here."
     },
     {
       "q": "Can you change Gemini's personality?",
-      "a": "Yes, through a Gem's instructions or the system instruction in the API. Paste communication rules there; every AgentTune library page has a Gemini Gems install card."
+      "a": "A Gem’s instructions can hold communication preferences. Choose Any model, then Gemini Gems, in a library page’s installation picker. Test the resulting behavior on your own tasks."
     }
   ],
   "sources": [
