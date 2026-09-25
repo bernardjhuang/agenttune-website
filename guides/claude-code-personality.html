@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How to Change Claude Code's Personality: 4 Ways (2026)</title>
-  <meta name="description" content="Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles." />
+  <meta name="description" content="Create a Claude Code output style for Fable 5.1 or Opus 5.5. Copy model-specific communication preferences while keeping coding instructions enabled." />
 
   <meta property="og:title" content="How to change Claude Code's personality." />
-  <meta property="og:description" content="Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles." />
+  <meta property="og:description" content="Create a Claude Code output style for Fable 5.1 or Opus 5.5. Copy model-specific communication preferences while keeping coding instructions enabled." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-19" />
-  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-code-personality" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -20,14 +20,14 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to change Claude Code's personality." />
-  <meta name="twitter:description" content="Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles." />
+  <meta name="twitter:description" content="Create a Claude Code output style for Fable 5.1 or Opus 5.5. Copy model-specific communication preferences while keeping coding instructions enabled." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/claude-code-personality" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude Code's personality","description":"Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles.","url":"https://agent-tune.com/guides/claude-code-personality","datePublished":"2026-09-19","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude Code's personality","description":"Create a Claude Code output style for Fable 5.1 or Opus 5.5. Copy model-specific communication preferences while keeping coding instructions enabled.","url":"https://agent-tune.com/guides/claude-code-personality","datePublished":"2026-09-19","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to change Claude Code's personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code have a personality setting?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is called an output style. Claude Code ships five built-in styles (Default, Proactive, Concise, Explanatory and Learning), and you can add your own as Markdown files in ~/.claude/output-styles/. Switch with /output-style or under /config."}},{"@type":"Question","name":"What is the difference between an output style and CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"An output style changes the default instructions Claude Code works from and is sent on every turn. CLAUDE.md arrives as a message after the system prompt, and the docs say compliance is not guaranteed. Use an output style for role and tone, and CLAUDE.md for project conventions, commands and architecture."}},{"@type":"Question","name":"Why did my custom output style make Claude Code worse at coding?","acceptedAnswer":{"@type":"Answer","text":"Custom styles drop Claude Code's built-in software-engineering instructions unless the file sets keep-coding-instructions: true. The default is false. Add that line to the front-matter and restart Claude Code."}},{"@type":"Question","name":"Is /output-style deprecated?","acceptedAnswer":{"@type":"Answer","text":"It was deprecated in March 2026 and brought back in Claude Code 2.1.269 on September 11, 2026, according to the changelog. On older versions, set the style under /config, or put an outputStyle key in a settings file."}},{"@type":"Question","name":"Do output styles apply to subagents?","acceptedAnswer":{"@type":"Answer","text":"A style reaches the main conversation and its forks. Other subagents do not receive it, and they do not get Claude Code's default system prompt either. A subagent's own file body is its system prompt."}},{"@type":"Question","name":"Can I share an output style with my team?","acceptedAnswer":{"@type":"Answer","text":"Yes. Commit it to .claude/output-styles/ in the repo, or ship it in a plugin's output-styles folder. A personality style is usually personal, though, so most people keep it in ~/.claude/output-styles/."}},{"@type":"Question","name":"Where do custom output styles live?","acceptedAnswer":{"@type":"Answer","text":"In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside one project. The nearest one wins. Restart Claude Code after adding or editing a file."}}]}</script>
 
@@ -67,14 +67,15 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">How to change Claude Code's personality.</h1>
-        <p class="article-dek">Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="article-dek">Fable 5.1 and Opus 5.5 communication prompts, packaged as reusable Claude Code output styles.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Most people put their preferences in CLAUDE.md, because it is the file they already have. Claude Code's docs point somewhere else. CLAUDE.md is for what the project needs. How Claude Code talks to <em>you</em>, its role and its tone, is what an <strong>output style</strong> is for. It is one Markdown file, and one line in it decides whether Claude Code stays good at engineering.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>The twenty-second version.</h2>
@@ -92,7 +93,7 @@ curl -sSL https://agent-tune.com/output-styles/agenttune-mbti-intj.md \
 
       <section>
         <h2>Output styles, and the flag that matters.</h2>
-        <p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class="guide-snippet">---
+        <p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class="guide-snippet" data-tuning-prompt data-prompt-target="claude-code">---
 name: Straight answers
 description: Conclusion first, no hedging, one recommendation.
 keep-coding-instructions: true
@@ -128,7 +129,7 @@ How to talk to the person you are working with:
 
       <section>
         <h2>What a personality file should not touch.</h2>
-        <p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>"be decisive"</em> being read as <em>"skip the tests"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class="guide-snippet">These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href="/guides/coding-agent-personality">the layer your AGENTS.md is missing</a>.</p>
+        <p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>"be decisive"</em> being read as <em>"skip the tests"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class="guide-snippet" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href="/guides/coding-agent-personality">the layer your AGENTS.md is missing</a>.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -170,6 +171,7 @@ How to talk to the person you are working with:
       <section>
         <h2>What changed.</h2>
         <ul class="guide-changelog">
+          <li><time datetime="2026-09-24">September 24, 2026</time> Communication prompts now adapt to Fable 5.1 and Opus 5.5, with a compact model selector and expandable previews.</li>
           <li><time datetime="2026-09-19">September 19, 2026</time> First published, with the 43-style pack. Checked against Claude Code 2.1.278.</li>
         </ul>
       </section>
@@ -208,21 +210,7 @@ How to talk to the person you are working with:
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

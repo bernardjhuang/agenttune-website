@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How to Give GPT-6 Astra a Personality (ChatGPT &amp; Codex)</title>
-  <meta name="description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+  <meta name="description" content="Create communication prompts for Astra 6 and Sol 6. Learn where ChatGPT, Codex, and API instructions belong, with editable model-specific examples." />
 
   <meta property="og:title" content="How to give GPT-6 Astra a personality." />
-  <meta property="og:description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+  <meta property="og:description" content="Create communication prompts for Astra 6 and Sol 6. Learn where ChatGPT, Codex, and API instructions belong, with editable model-specific examples." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-19" />
-  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/astra-personality" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -20,14 +20,14 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to give GPT-6 Astra a personality." />
-  <meta name="twitter:description" content="GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired." />
+  <meta name="twitter:description" content="Create communication prompts for Astra 6 and Sol 6. Learn where ChatGPT, Codex, and API instructions belong, with editable model-specific examples." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/astra-personality" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to give GPT-6 Astra a personality","description":"GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired.","url":"https://agent-tune.com/guides/astra-personality","datePublished":"2026-09-19","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to give GPT-6 Astra a personality","description":"Create communication prompts for Astra 6 and Sol 6. Learn where ChatGPT, Codex, and API instructions belong, with editable model-specific examples.","url":"https://agent-tune.com/guides/astra-personality","datePublished":"2026-09-19","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give GPT-6 Astra a personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GPT-6 Astra the same as GPT-6 Pro?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's help center says GPT-6 Pro in ChatGPT is powered by GPT-6 Astra. GPT-6 Pro is the name you see in ordinary chat, on Pro, Business and Enterprise plans. In ChatGPT Work, Codex and the API the model is called GPT-6 Astra. Plus plans include Astra in Work and Codex only."}},{"@type":"Question","name":"Where do I put custom instructions for GPT-6 Astra?","acceptedAnswer":{"@type":"Answer","text":"For Astra in ChatGPT Work or Codex, use your personal AGENTS.md at ~/.codex/AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. For GPT-6 Pro in ordinary chat, use Settings, Personalization, Enable customization, Custom Instructions. In the API, use the instructions parameter."}},{"@type":"Question","name":"Does the Friendly or Pragmatic personality work with Astra?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs still list Friendly, Pragmatic and None, but in the open-source Codex code Astra has no Friendly or Pragmatic variant, and pull requests merged in mid-September 2026 retire the picker. Use AGENTS.md to change how Astra communicates."}},{"@type":"Question","name":"How do I turn off Astra's built-in personality?","acceptedAnswer":{"@type":"Answer","text":"Set personality = \"none\" in ~/.codex/config.toml. In the Codex source this strips the built-in personality section, which for Astra also contains its writing-style and technical-communication rules, so you lose more than tone. Adding your own rules to AGENTS.md is usually the better fix."}},{"@type":"Question","name":"What is the size limit for AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex stops adding AGENTS.md files once their combined size reaches 32 KiB by default, set by project_doc_max_bytes. ChatGPT custom instructions are separate: 1,500 characters on Free and Go, 5,000 on Plus, Pro, Business, Enterprise and Education."}},{"@type":"Question","name":"Why doesn't Astra pick up my changes to AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex builds its instruction chain once per run, which usually means once per launched session. Start a new session after editing the file."}},{"@type":"Question","name":"Why does Astra keep stopping to ask me things?","acceptedAnswer":{"@type":"Answer","text":"Two causes. The permission mode may be set to Ask for approval, which a personality file cannot change. And OpenAI's developer blog says forceful ask-first language written for older models can make Astra stop early. Soften those rules, and define what done means in the task."}},{"@type":"Question","name":"Do ChatGPT custom instructions apply in ChatGPT Work?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs do not say clearly. They say Work uses your account memory. For Astra as an agent, put your rules in AGENTS.md, which the docs describe as the place for instructions that must always apply."}}]}</script>
 
@@ -67,18 +67,19 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · GPT-6 Astra</span>
         <h1 class="h-hero h-research-hero">How to give GPT-6 Astra a personality.</h1>
-        <p class="article-dek">Three instruction systems, one retired personality picker, and a file most people don't know they have.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="article-dek">Astra 6 and Sol 6 communication prompts, with the right home in ChatGPT, Codex, or your API.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">OpenAI released GPT-6 Astra on September 3, 2026. It is an agent more than a chatbot: it works in ChatGPT Work and in Codex, and in ordinary chat it only shows up as GPT-6 Pro. That split decides where your instructions go. Astra in Work and Codex does not read from the same place as Astra in chat. For most people the setting that matters is a file called <strong>AGENTS.md</strong> in their home folder, and the app will write to it for you.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="astra-6" data-guide-target="codex-cli"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=astra-6&amp;target=codex-cli">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>The short version.</h2>
-        <div class="guide-table-wrap"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>5,000 characters on paid plans</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href="/library/">library</a>:</p><div class="guide-snippet">## How to talk to me
+        <p>The examples below can be adapted for <strong>Astra 6 or Sol 6</strong> with the model selector. Give the model a clear goal, constraints, and expected deliverable; use these preferences to shape how it reports back. Choose the model separately in your app.</p><div class="guide-table-wrap"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>5,000 characters on paid plans</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href="/library/">library</a>:</p><div class="guide-snippet" data-tuning-prompt>## How to talk to me
 
 These are my communication preferences. They apply in every project. They change how
 you report to me, not how you do the work.
@@ -176,6 +177,7 @@ you report to me, not how you do the work.
       <section>
         <h2>What changed.</h2>
         <ul class="guide-changelog">
+          <li><time datetime="2026-09-24">September 24, 2026</time> Communication prompts now adapt to Astra 6 and Sol 6, with a compact model selector and expandable previews.</li>
           <li><time datetime="2026-09-19">September 19, 2026</time> First published, sixteen days after launch. We have not opened the live ChatGPT settings to confirm the current field labels, and say so above.</li>
         </ul>
       </section>
@@ -217,21 +219,7 @@ you report to me, not how you do the work.
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

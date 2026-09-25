@@ -2,16 +2,16 @@
   "slug": "grokbot-personality",
   "published": "2026-09-19",
   "title": "How to Give Grok Bot a Personality (2026 Guide)",
-  "description": "Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats.",
+  "description": "Tune Grok 4.7 with focused communication prompts. Give a Grok Bot a clear job and boundaries, then add the way you want it to report back.",
   "pill": "Guide · Grok Bot",
   "h1": "How to give Grok Bot a personality.",
-  "dek": "There is no personality setting. There is a Description field, and it does the job.",
+  "dek": "Grok 4.7 prompts with a clear job, explicit boundaries, and communication preferences you can edit.",
   "lede": "Grok Bot, which most people type as Grokbot, is xAI's app for keeping named AI teammates around. Each Bot has a job, a memory and its own cloud computer. It has no personality picker and no system-prompt box. What it has is a <strong>Description</strong> on every Bot's profile, and xAI's docs say to use it for the rules that should stay true. That is where a tuning goes.",
   "answer": "Open the Bot, choose Edit Profile, and write your communication rules into the Description, after the Bot's job and its boundaries. The Description persists across conversations, and it is what a duplicated Bot or a shared template carries with it. Rules typed into chat do not survive a long conversation. Rules in the Description do.",
   "sections": [
     {
       "h2": "The short version.",
-      "html": "<ol><li>Open the Bot. From the Bot menu choose <strong>Edit Profile</strong>. The same fields are under <strong>View conversation details</strong>, then <strong>Bot settings</strong>.</li><li>In <strong>Description</strong>, keep the job and the boundaries, then add a section on how to talk to you. The example below shows the shape.</li><li>Message the Bot <em>\"hi\"</em>. A tuned Bot answers in one short line.</li></ol><div class=\"guide-snippet\">JOB\nInbox triage. Sort new mail each morning, draft replies for anything that needs one, and flag what needs me.\n\nBOUNDARIES\nNever send external messages without approval. Never delete mail.\n\nHOW TO TALK TO ME\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.\n- When you need a yes from me: the decision, the cost, and your recommendation, in three lines.</div><p>The last six lines are a short version of the <a href=\"/library/mbti/intj\">INTJ tuning</a>, plus one line written for agents. Swap in the file for your own type from the <a href=\"/library/\">library</a>.</p>"
+      "html": "<ol><li>Open the Bot. From the Bot menu choose <strong>Edit Profile</strong>. The same fields are under <strong>View conversation details</strong>, then <strong>Bot settings</strong>.</li><li>In <strong>Description</strong>, keep the job and the boundaries, then add a section on how to talk to you. The example below shows the shape.</li><li>Message the Bot <em>\"hi\"</em>. A tuned Bot answers in one short line.</li></ol><div class=\"guide-snippet\" data-tuning-prompt>JOB\nInbox triage. Sort new mail each morning, draft replies for anything that needs one, and flag what needs me.\n\nBOUNDARIES\nNever send external messages without approval. Never delete mail.\n\nHOW TO TALK TO ME\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.\n- When you need a yes from me: the decision, the cost, and your recommendation, in three lines.</div><p>The last six lines are a short version of the <a href=\"/library/mbti/intj\">INTJ tuning</a>, plus one line written for agents. Swap in the file for your own type from the <a href=\"/library/\">library</a>.</p>"
     },
     {
       "h2": "Grok Bot is not Grok.",
@@ -77,6 +77,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-24",
+      "note": "Communication prompts now adapt to Grok 4.7, with a compact model selector and expandable previews."
+    },
     {
       "date": "2026-09-19",
       "note": "First published. Menu labels are from docs.x.ai. We could not confirm a Description length limit or how routines treat the Description, and say so above."
@@ -147,5 +151,7 @@
       "label": "Every frontier AI we tested is INTJ",
       "href": "/research"
     }
-  ]
+  ],
+  "promptDestination": "grok",
+  "promptModel": "grok-4-7"
 }

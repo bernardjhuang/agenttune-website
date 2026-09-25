@@ -5698,3 +5698,41 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
 .hp2-guides-line { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 28px 0 0; }
 .hp2-guides-line a { color: var(--ink); text-underline-offset: 3px; }
 .guide-table-wrap table { min-width: 540px; }
+
+/* One focused installation prompt across results, the library, and tools. */
+.prompt-picker { scroll-margin-top: 24px; min-width: 0; }
+.prompt-picker-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.prompt-picker-controls label { display: block; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.prompt-picker-controls select { display: block; width: 100%; min-width: 0; margin-top: 8px; padding: 12px 32px 12px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface, #faf7ef); color: var(--ink); font: inherit; }
+.prompt-picker-hint { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 12px 0 18px; }
+.prompt-picker .prompt-picker-card { display: flex; flex-direction: column; gap: 14px; padding: 24px; min-width: 0; }
+.prompt-picker-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.prompt-picker-heading h3 { font-size: 20px; line-height: 1.3; margin: 0; }
+.prompt-picker .prompt-picker-sub { margin: -6px 0 0; color: var(--muted); font-size: 13px; }
+.prompt-picker .prompt-model-note { margin: 0; font-size: 15px; line-height: 1.6; }
+.prompt-picker-steps { font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.prompt-picker-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.prompt-copy { border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--surface, #faf7ef); padding: 11px 18px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.prompt-copy:hover { opacity: .85; }
+.prompt-copy:disabled { opacity: .45; cursor: default; }
+.prompt-picker [data-status] { flex: 1 1 160px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.prompt-preview { border-top: 1px solid var(--border); padding-top: 14px; }
+.prompt-preview summary { cursor: pointer; font-size: 13px; font-weight: 500; }
+.prompt-picker .snippet { display: block; margin: 14px 0 0; padding: 18px; max-height: 320px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #1e1d1a; color: #f5f1e8; border-radius: 10px; font: 12px/1.65 var(--font-mono, monospace); }
+.prompt-picker :focus-visible { outline: 2px solid var(--accent, #a8482a); outline-offset: 3px; }
+.model-compatibility { margin: 24px 0; padding: 18px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 14px; line-height: 1.7; }
+.model-compatibility p { margin: 0; }
+@media (max-width: 600px) {
+  .prompt-picker-controls { grid-template-columns: 1fr; gap: 12px; }
+  .prompt-picker .prompt-picker-card { padding: 18px; }
+  .prompt-picker-heading { align-items: start; }
+}
+
+
+.guide-copy-status { display: block; white-space: normal; color: inherit; font: 12px/1.5 var(--font-sans, sans-serif); margin-top: 8px; }
+.model-compatibility .prompt-picker-controls { grid-template-columns: minmax(0, 360px); margin-bottom: 12px; }
+
+.guide-snippet:has(.guide-snippet-copy) { padding-top: 48px; }
+
+.guide-prompt-preview summary { cursor: pointer; font: 14px/1.5 var(--font-sans, sans-serif); }
+.guide-prompt-preview .guide-snippet-content { display: block; margin-top: 14px; max-height: 340px; overflow: auto; white-space: pre-wrap; }

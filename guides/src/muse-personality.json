@@ -11,7 +11,7 @@
   "sections": [
     {
       "h2": "The short version.",
-      "html": "<ol><li>In the Muse app, tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Add a section at the end of the file and paste the block below, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Go back to chat and say <em>\"hi\"</em>. A tuned Muse answers in one short line. If you get a cheerful paragraph and a list of things it could do for you, the rules did not take.</li></ol><div class=\"guide-snippet\"># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say <em>tap</em>, so they describe the mobile app. Meta does not document the path on muse.ai or the Mac app.</p>"
+      "html": "<ol><li>In the Muse app, tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Add a section at the end of the file and paste the block below, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Go back to chat and say <em>\"hi\"</em>. A tuned Muse answers in one short line. If you get a cheerful paragraph and a list of things it could do for you, the rules did not take.</li></ol><div class=\"guide-snippet\" data-tuning-prompt># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say <em>tap</em>, so they describe the mobile app. Meta does not document the path on muse.ai or the Mac app.</p>"
     },
     {
       "h2": "Muse is not Meta AI, and it is not Muse Code.",
@@ -23,7 +23,7 @@
     },
     {
       "h2": "Option one: tell it in chat.",
-      "html": "<p>This is the route Meta documents first. You ask Muse to change, and it saves the change so it carries between conversations. Meta's list of what you can change this way: its name, its personality and tone, its communication style, what it remembers about you, and its avatar and tagline. Meta's own examples of a nudge are <em>\"too long\"</em> and <em>\"be more casual\"</em>.</p><p><strong>Honest limit.</strong> <em>\"Be more casual\"</em> is an adjective. Muse will agree, write something into its files, and you will not know what unless you open them. Adjectives also do not touch the things that actually annoy people: what it leads with, whether it asks before it acts, how it tells you that you are wrong.</p><p>The better way to use chat is to hand it the rules and then check its work:</p><div class=\"guide-snippet\">Add these rules to your Soul file, under a heading called \"How to talk to me\". Don't change anything else in the file. Then show me what you added.\n\n[paste a tuning here]</div><p>Then open Soul.md and read it. It is your file.</p>"
+      "html": "<p>This is the route Meta documents first. You ask Muse to change, and it saves the change so it carries between conversations. Meta's list of what you can change this way: its name, its personality and tone, its communication style, what it remembers about you, and its avatar and tagline. Meta's own examples of a nudge are <em>\"too long\"</em> and <em>\"be more casual\"</em>.</p><p><strong>Honest limit.</strong> <em>\"Be more casual\"</em> is an adjective. Muse will agree, write something into its files, and you will not know what unless you open them. Adjectives also do not touch the things that actually annoy people: what it leads with, whether it asks before it acts, how it tells you that you are wrong.</p><p>The better way to use chat is to hand it the rules and then check its work:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"muse\"># How to work with me\n- Lead with the useful answer, then the reasons that matter.\n- Keep the tone warm and direct. Skip praise and routine closing offers.\n- Ask about missing details only when they change the outcome.\n- State uncertainty clearly and disagree when the evidence calls for it.</div><p>Then open Soul.md and read it. It is your file.</p>"
     },
     {
       "h2": "Option two: paste a tuning into Soul.md.",
@@ -86,6 +86,10 @@
   ],
   "changelog": [
     {
+      "date": "2026-09-24",
+      "note": "Communication prompts now adapt to Muse, with a compact model selector and expandable previews."
+    },
+    {
       "date": "2026-09-19",
       "note": "First published, eleven days after Muse launched. Click paths are from Meta's help center. We will update this as Meta documents the web and Mac apps."
     }
@@ -147,5 +151,7 @@
       "label": "Every frontier AI we tested is INTJ",
       "href": "/research"
     }
-  ]
+  ],
+  "promptDestination": "muse",
+  "promptModel": "muse"
 }

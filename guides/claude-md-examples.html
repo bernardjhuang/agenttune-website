@@ -10,7 +10,7 @@
   <meta property="og:description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-09-19" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-md-examples" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/claude-md-examples" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md examples that actually change behavior","description":"Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work.","url":"https://agent-tune.com/guides/claude-md-examples","datePublished":"2026-07-23","dateModified":"2026-09-19","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md examples that actually change behavior","description":"Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work.","url":"https://agent-tune.com/guides/claude-md-examples","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md examples that actually change behavior"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code read AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No — Claude Code reads CLAUDE.md, not AGENTS.md. If your repo already uses AGENTS.md for other agents, create a CLAUDE.md containing the import line @AGENTS.md so both tools share one instruction set, or symlink CLAUDE.md to AGENTS.md. You can add Claude-specific rules below the import."}},{"@type":"Question","name":"How long should a CLAUDE.md be?","acceptedAnswer":{"@type":"Answer","text":"Under about 200 lines per file — that's Anthropic's own guidance. Longer files consume more context and measurably reduce adherence. If yours is growing past that, split it: per-package CLAUDE.md files in a monorepo load on demand, and path-scoped rules in .claude/rules/ load only when Claude touches matching files."}},{"@type":"Question","name":"What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Scope. ~/.claude/CLAUDE.md is global — every project, just you. ./CLAUDE.md is the project file, checked in and shared with the team. ./CLAUDE.local.md is project-specific but personal — add it to .gitignore. All of them load together, broadest first, so project instructions appear after (and can override) your global ones."}},{"@type":"Question","name":"Do CLAUDE.md files in subdirectories get loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, but on demand — not at launch. A CLAUDE.md in a subdirectory loads when Claude reads files in that directory. That's the mechanism behind the monorepo pattern: a thin root file plus a CLAUDE.md per package, each paying its context cost only when its package is actually being worked on."}},{"@type":"Question","name":"Is Claude guaranteed to follow CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"No. It's context, not enforcement — Claude reads it and tries to comply, but vague or conflicting instructions get dropped. Specific, imperative, short files get followed most reliably. For rules that must always hold — lint before commit, never touch production — use Claude Code hooks or permission settings instead of prose."}},{"@type":"Question","name":"Should personality instructions go in CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you work with Claude Code daily — how it communicates with you is behavior worth configuring. Put the layer in CLAUDE.local.md or ~/.claude/CLAUDE.md rather than the checked-in team file, since it's personal. The library has 43 tuning files to condense from, and the generator builds the section for you."}}]}</script>
 
@@ -68,13 +68,14 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">CLAUDE.md examples that actually change behavior.</h1>
         <p class="article-dek">Four complete files, annotated — and the principles behind them.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-19">September 19, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">CLAUDE.md is the file Claude Code reads at the start of every session — your standing instructions, loaded before you type a word. It lives in three places: the repo root (checked in, for the team), CLAUDE.local.md (gitignored, personal), and ~/.claude/CLAUDE.md (global, every project). Below: four complete examples you can copy — a minimal starter, a test-discipline file, a monorepo root, and a personality layer — plus the principles that separate a CLAUDE.md that works from one Claude quietly ignores.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>One file, three locations.</h2>
@@ -135,7 +136,7 @@ pnpm workspace. Run package commands from the root: `pnpm --filter &lt;pkg&gt; &
 
       <section>
         <h2>Example 4: a personality layer under the engineering rules.</h2>
-        <p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href="/library/mbti/istj">ISTJ tuning</a>:</p><div class="guide-snippet">## Communication style (ISTJ)
+        <p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href="/library/mbti/istj">ISTJ tuning</a>:</p><div class="guide-snippet" data-tuning-prompt>## Communication style (ISTJ)
 The user identifies as ISTJ. Adjust your interaction style accordingly.
 
 - Be precise, not approximate. "27 minutes" beats "around 30 minutes" when you know. Specifics build trust.
@@ -189,6 +190,13 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
         </div>
       </section>
 
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-24">September 24, 2026</time> Communication prompts now adapt to Fable 5.1 and Opus 5.5, with a compact model selector and expandable previews.</li>
+        </ul>
+      </section>
 
 
       <div class="divider tight"></div>
@@ -213,21 +221,7 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

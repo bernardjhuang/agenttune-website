@@ -76,6 +76,7 @@
 
       <div class="divider tight"></div>
 
+
       <section>
         <h2>Out of the box, every AI has the same personality.</h2>
         <p>This isn't a metaphor. We ran <a href="/research">~2,200 personality-test runs</a> across six frontier models — Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3, MiniMax 2.7 — on five instruments. On the MBTI, 597 of 600 runs came back INTJ. Claude went 99 for 100. GPT-5.5, Gemini, Grok, and MiniMax went 100 for 100. The three outliers were each one axis away.</p><p>DISC was total convergence: every model C-dominant with an S-blend. Attachment: 397 of 400 runs Secure. Whatever you're paying for, whatever benchmark won the week — the thing answering your messages is a cautious, systematic, conscientious introvert. Same as everyone else's.</p><p>The nuance shows up at the edges. On the Big Five, Claude, GPT-5.5, and Gemini landed within about three points of each other on every dimension — Grok ran 5–8 points lower on conscientiousness, agreeableness, and openness, with 2–5× wider variance run to run. On attachment, Gemini sat deep in the Secure quadrant (anxiety 1.86, avoidance 1.62) while Grok hovered near the doorway and GPT-5.5 occasionally crossed into Avoidant. Differences exist. They're rounding errors next to the convergence.</p><p>That's the case for tuning. The default personality wasn't chosen for you. It's the statistical center of a training process — a compromise calibrated for no one in particular. If it happens to fit how you work, lucky you. For everyone else, it's a settings problem with a ten-minute fix.</p>
@@ -159,21 +160,7 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

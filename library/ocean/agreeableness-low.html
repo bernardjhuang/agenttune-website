@@ -311,31 +311,24 @@ Edge is welcome. Hedging reads as either evasion or insecurity. They&#39;ll trus
         </div>
         <div class="c-statusbar-actions">
           <button class="c-status-btn" id="c-dl" type="button">↓ Download</button>
-          <button class="c-status-btn is-strong" id="c-copy" type="button">⌘C · Copy</button>
+          <button class="c-status-btn is-strong" id="c-copy" type="button">⌘C · Copy base tuning</button>
         </div>
       </div>
     </article>
 
     <p class="lib-v2-trust"><strong>What this is, what it isn't.</strong> An editable communication preference file — not a diagnosis. Based on public personality frameworks + editorial synthesis. Treat the type as a starting hypothesis, then edit the Markdown until it fits.</p>
 
-    <!-- Jump-links to each agent's install card down in § V -->
-    <section class="lib-v2-jump" aria-label="Jump to install instructions">
-      <div class="lib-v2-jump-eyebrow">Jump to your agent ↓</div>
+    <section class="lib-v2-jump" aria-label="Choose a model for your prompt">
+      <div class="lib-v2-jump-eyebrow">Make it fit your model ↓</div>
       <div class="lib-v2-jump-grid">
-        <button class="lib-v2-jump-btn" data-target="claude-code" type="button"><span class="lib-v2-jump-name">Claude Code</span><span class="lib-v2-jump-tag">CLI</span></button>
-        <button class="lib-v2-jump-btn" data-target="claude-ai" type="button"><span class="lib-v2-jump-name">Claude.ai</span><span class="lib-v2-jump-tag">Web</span></button>
-        <button class="lib-v2-jump-btn" data-target="mcp" type="button"><span class="lib-v2-jump-name">MCP connector</span><span class="lib-v2-jump-tag">MCP</span></button>
-        <button class="lib-v2-jump-btn" data-target="chatgpt-custom" type="button"><span class="lib-v2-jump-name">ChatGPT</span><span class="lib-v2-jump-tag">Web</span></button>
-        <button class="lib-v2-jump-btn" data-target="chatgpt-projects" type="button"><span class="lib-v2-jump-name">ChatGPT Projects</span><span class="lib-v2-jump-tag">Web</span></button>
-        <button class="lib-v2-jump-btn" data-target="codex-cli" type="button"><span class="lib-v2-jump-name">Codex CLI</span><span class="lib-v2-jump-tag">CLI</span></button>
-        <button class="lib-v2-jump-btn" data-target="cursor" type="button"><span class="lib-v2-jump-name">Cursor</span><span class="lib-v2-jump-tag">IDE</span></button>
-        <button class="lib-v2-jump-btn" data-target="gemini-gems" type="button"><span class="lib-v2-jump-name">Gemini Gems</span><span class="lib-v2-jump-tag">Web</span></button>
-        <button class="lib-v2-jump-btn" data-target="gemini-code-assist" type="button"><span class="lib-v2-jump-name">Gemini Code Assist</span><span class="lib-v2-jump-tag">IDE</span></button>
-        <button class="lib-v2-jump-btn" data-target="hermes" type="button"><span class="lib-v2-jump-name">Hermes</span><span class="lib-v2-jump-tag">CLI</span></button>
-        <button class="lib-v2-jump-btn" data-target="openclaw" type="button"><span class="lib-v2-jump-name">OpenClaw</span><span class="lib-v2-jump-tag">CLI</span></button>
-        <button class="lib-v2-jump-btn" data-target="api" type="button"><span class="lib-v2-jump-name">Any API</span><span class="lib-v2-jump-tag">API</span></button>
-        <button class="lib-v2-jump-btn" data-target="anywhere" type="button"><span class="lib-v2-jump-name">Anywhere else</span><span class="lib-v2-jump-tag">Chat</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="muse" type="button"><span class="lib-v2-jump-name">Muse</span><span class="lib-v2-jump-tag">Prompt</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="astra-6" type="button"><span class="lib-v2-jump-name">Astra 6</span><span class="lib-v2-jump-tag">Prompt</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="fable-5-1" type="button"><span class="lib-v2-jump-name">Fable 5.1</span><span class="lib-v2-jump-tag">Prompt</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="sol-6" type="button"><span class="lib-v2-jump-name">Sol 6</span><span class="lib-v2-jump-tag">Prompt</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="opus-5-5" type="button"><span class="lib-v2-jump-name">Opus 5.5</span><span class="lib-v2-jump-tag">Prompt</span></button>
+        <button class="lib-v2-jump-btn" data-prompt-model="grok-4-7" type="button"><span class="lib-v2-jump-name">Grok 4.7</span><span class="lib-v2-jump-tag">Prompt</span></button>
       </div>
+      <p class="lib-ctx-guides"><a href="#install">Other models, apps, and APIs →</a></p>
     </section>
 
     <section class="lib-v2-section" id="demo">
@@ -467,8 +460,8 @@ Once you can name what&#39;s broken in concrete terms, the move is usually obvio
 
     <section class="lib-v2-section lib-agents" id="install">
       <div class="lib-v2-section-eyebrow">§ VII · Install</div>
-      <h2 class="lib-v2-section-h">Pick your agent. <em>Copy the snippet.</em></h2>
-      <p class="lib-v2-section-lede">Hit Copy and the low-Agreeableness tuning is merged into the snippet for you.</p>
+      <h2 class="lib-v2-section-h">Pick your model. <em>Make it yours.</em></h2>
+      <p class="lib-v2-section-lede">Choose where to paste. Copy one prompt with your tuning and a short set of model-specific instructions.</p>
       <!-- AT:guides --><p class="lib-ctx-guides">Step-by-step guides: <a href="/guides/claude-personality">Claude</a> · <a href="/guides/claude-code-personality">Claude Code</a> · <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT</a> · <a href="/guides/astra-personality">GPT-6 Astra</a> · <a href="/guides/grokbot-personality">Grok Bot</a> · <a href="/guides/muse-personality">Meta Muse</a> · <a href="/guides/coding-agent-personality">Cursor and AGENTS.md</a></p><!-- /AT:guides -->
       <div id="integration-deep" data-integration-deep></div>
     </section>
@@ -528,7 +521,7 @@ Once you can name what&#39;s broken in concrete terms, the move is usually obvio
         showToast("Downloaded ✓"); track("download_md");
       }
 
-      // Editor card (top of page) — the only place to copy / download
+      // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
       if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
@@ -536,21 +529,7 @@ Once you can name what&#39;s broken in concrete terms, the move is usually obvio
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 
-      // Jump-link buttons → smooth-scroll to the matching install card in § V
-      document.querySelectorAll(".lib-v2-jump-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          const targetId = btn.getAttribute("data-target");
-          const card = document.querySelector('.integration-deep-card[data-agent="' + targetId + '"]');
-          if (card) {
-            card.scrollIntoView({ behavior: "smooth", block: "start" });
-            card.style.transition = "box-shadow 0.4s ease";
-            card.style.boxShadow = "0 0 0 3px var(--lib-accent-55)";
-            setTimeout(function () { card.style.boxShadow = ""; }, 1200);
-            track("jump_to_agent", { target: targetId });
-          }
-        });
-      });
-
+      // Model shortcuts are handled by the shared prompt picker.
       const anchors = document.querySelectorAll(".lib-v2-anchor");
       const sections = ["editor", "demo", "tune", "default", "talk-to", "this-is-me", "neighbors", "install"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
       if ("IntersectionObserver" in window && sections.length) {

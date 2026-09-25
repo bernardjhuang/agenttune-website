@@ -2,10 +2,10 @@
   "slug": "claude-code-personality",
   "published": "2026-09-19",
   "title": "How to Change Claude Code's Personality: 4 Ways (2026)",
-  "description": "Claude Code has a personality setting, and it is not CLAUDE.md. How output styles work, the one flag that keeps it good at coding, and 43 ready-made styles.",
+  "description": "Create a Claude Code output style for Fable 5.1 or Opus 5.5. Copy model-specific communication preferences while keeping coding instructions enabled.",
   "pill": "Guide · Claude Code",
   "h1": "How to change Claude Code's personality.",
-  "dek": "Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.",
+  "dek": "Fable 5.1 and Opus 5.5 communication prompts, packaged as reusable Claude Code output styles.",
   "lede": "Most people put their preferences in CLAUDE.md, because it is the file they already have. Claude Code's docs point somewhere else. CLAUDE.md is for what the project needs. How Claude Code talks to <em>you</em>, its role and its tone, is what an <strong>output style</strong> is for. It is one Markdown file, and one line in it decides whether Claude Code stays good at engineering.",
   "answer": "Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.",
   "sections": [
@@ -19,7 +19,7 @@
     },
     {
       "h2": "Output styles, and the flag that matters.",
-      "html": "<p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class=\"guide-snippet\">---\nname: Straight answers\ndescription: Conclusion first, no hedging, one recommendation.\nkeep-coding-instructions: true\n---\n\nHow to talk to the person you are working with:\n\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless asked for options.\n- Push back when they are wrong, and say why.\n- No openers, no recap of what they just said, no closing offers.</div><p>People who find their custom style made Claude Code worse at coding have usually hit exactly this. Every file in our pack sets the flag to true, and opens by telling Claude Code that the rules change how it talks, not how it engineers.</p><p>You can also set the style without the menu, by putting <code>\"outputStyle\": \"AgentTune INTJ\"</code> in a settings file. The menus save your choice to <code>.claude/settings.local.json</code>. One limit: a style reaches the main conversation and its forks. Other subagents do not get it.</p>"
+      "html": "<p>Claude Code ships five: <strong>Default</strong>, <strong>Proactive</strong> (acts and assumes instead of asking), <strong>Concise</strong> (result first, short), <strong>Explanatory</strong> (adds educational insights) and <strong>Learning</strong> (leaves <code>TODO(human)</code> markers for you to implement). If one of those is the change you wanted, you are done. Run <code>/output-style Concise</code>.</p><p>A custom style is a Markdown file in <code>~/.claude/output-styles/</code> for all your work, or <code>.claude/output-styles/</code> inside one project. The nearest one wins. The front-matter takes four keys:</p><ul><li><code>name</code>: what appears in the picker. Defaults to the file name.</li><li><code>description</code>: shown next to it.</li><li><code>keep-coding-instructions</code>: <strong>default false</strong>.</li><li><code>force-for-plugin</code>: for plugins only.</li></ul><p><strong>That third key is the trap.</strong> A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"claude-code\">---\nname: Straight answers\ndescription: Conclusion first, no hedging, one recommendation.\nkeep-coding-instructions: true\n---\n\nHow to talk to the person you are working with:\n\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless asked for options.\n- Push back when they are wrong, and say why.\n- No openers, no recap of what they just said, no closing offers.</div><p>People who find their custom style made Claude Code worse at coding have usually hit exactly this. Every file in our pack sets the flag to true, and opens by telling Claude Code that the rules change how it talks, not how it engineers.</p><p>You can also set the style without the menu, by putting <code>\"outputStyle\": \"AgentTune INTJ\"</code> in a settings file. The menus save your choice to <code>.claude/settings.local.json</code>. One limit: a style reaches the main conversation and its forks. Other subagents do not get it.</p>"
     },
     {
       "h2": "The 43-style pack.",
@@ -35,7 +35,7 @@
     },
     {
       "h2": "What a personality file should not touch.",
-      "html": "<p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>\"be decisive\"</em> being read as <em>\"skip the tests\"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class=\"guide-snippet\">These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href=\"/guides/coding-agent-personality\">the layer your AGENTS.md is missing</a>.</p>"
+      "html": "<p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>\"be decisive\"</em> being read as <em>\"skip the tests\"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class=\"guide-snippet\" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href=\"/guides/coding-agent-personality\">the layer your AGENTS.md is missing</a>.</p>"
     }
   ],
   "faq": [
@@ -69,6 +69,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-24",
+      "note": "Communication prompts now adapt to Fable 5.1 and Opus 5.5, with a compact model selector and expandable previews."
+    },
     {
       "date": "2026-09-19",
       "note": "First published, with the 43-style pack. Checked against Claude Code 2.1.278."
@@ -131,5 +135,7 @@
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
     }
-  ]
+  ],
+  "promptDestination": "claude-code",
+  "promptModel": "fable-5-1"
 }

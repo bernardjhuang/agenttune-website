@@ -213,6 +213,7 @@ ${navHtml()}
 
 ${spec.answer ? `      <div class="guide-answer"><strong>The short answer.</strong> ${escHtml(spec.answer)}</div>\n` : ""}
       <div class="divider tight"></div>
+${spec.promptModel ? `      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="${escAttr(spec.promptModel)}" data-guide-target="${escAttr(spec.promptDestination || "anywhere")}"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=${escAttr(spec.promptModel)}&amp;target=${escAttr(spec.promptDestination || "anywhere")}">open the prompt generator →</a></p></aside>` : ""}
 ${sectionsHtml}
 ${faqHtml}
 ${changelogHtml}
@@ -227,22 +228,8 @@ ${relatedHtml}
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\\s*Copy\\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>
 `;

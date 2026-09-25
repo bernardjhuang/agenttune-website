@@ -2,16 +2,16 @@
   "slug": "astra-personality",
   "published": "2026-09-19",
   "title": "How to Give GPT-6 Astra a Personality (ChatGPT & Codex)",
-  "description": "GPT-6 Astra reads instructions from three places: ChatGPT custom instructions, your personal AGENTS.md and the API. Exact paths, limits, what was retired.",
+  "description": "Create communication prompts for Astra 6 and Sol 6. Learn where ChatGPT, Codex, and API instructions belong, with editable model-specific examples.",
   "pill": "Guide · GPT-6 Astra",
   "h1": "How to give GPT-6 Astra a personality.",
-  "dek": "Three instruction systems, one retired personality picker, and a file most people don't know they have.",
+  "dek": "Astra 6 and Sol 6 communication prompts, with the right home in ChatGPT, Codex, or your API.",
   "lede": "OpenAI released GPT-6 Astra on September 3, 2026. It is an agent more than a chatbot: it works in ChatGPT Work and in Codex, and in ordinary chat it only shows up as GPT-6 Pro. That split decides where your instructions go. Astra in Work and Codex does not read from the same place as Astra in chat. For most people the setting that matters is a file called <strong>AGENTS.md</strong> in their home folder, and the app will write to it for you.",
   "answer": "In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.",
   "sections": [
     {
       "h2": "The short version.",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>5,000 characters on paid plans</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href=\"/library/\">library</a>:</p><div class=\"guide-snippet\">## How to talk to me\n\nThese are my communication preferences. They apply in every project. They change how\nyou report to me, not how you do the work.\n\n- Lead with the result or the recommendation. Reasoning comes after.\n- Plain prose. No tables or headers unless I ask for them.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- Ask for approval only after you have something concrete for me to review.</div><p>Then start a new session and say <em>\"hi\"</em>. A tuned Astra answers in one short line. Codex reads AGENTS.md once, when a session starts, so a session that is already open will not pick up the change.</p>"
+      "html": "<p>The examples below can be adapted for <strong>Astra 6 or Sol 6</strong> with the model selector. Give the model a clear goal, constraints, and expected deliverable; use these preferences to shape how it reports back. Choose the model separately in your app.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Where you use Astra</th><th>Where the rules go</th><th>Limit</th></tr></thead><tbody><tr><td><strong>ChatGPT Work, the desktop app, Codex CLI, the IDE extension</strong></td><td>Your personal <code>~/.codex/AGENTS.md</code>. In the app: <strong>Settings</strong>, then <strong>Personalization</strong>, then custom instructions.</td><td>32 KiB across all AGENTS.md files</td></tr><tr><td><strong>Ordinary chat</strong> (as GPT-6 Pro)</td><td><strong>Settings</strong>, <strong>Personalization</strong>, turn on <strong>Enable customization</strong>, then <strong>Custom Instructions</strong></td><td>5,000 characters on paid plans</td></tr><tr><td><strong>The API</strong></td><td>The <code>instructions</code> parameter of the Responses API</td><td>Sent with each request</td></tr></tbody></table></div><p>Paste this, or the file for your own type from the <a href=\"/library/\">library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to talk to me\n\nThese are my communication preferences. They apply in every project. They change how\nyou report to me, not how you do the work.\n\n- Lead with the result or the recommendation. Reasoning comes after.\n- Plain prose. No tables or headers unless I ask for them.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- Ask for approval only after you have something concrete for me to review.</div><p>Then start a new session and say <em>\"hi\"</em>. A tuned Astra answers in one short line. Codex reads AGENTS.md once, when a session starts, so a session that is already open will not pick up the change.</p>"
     },
     {
       "h2": "Where Astra runs, and why it matters.",
@@ -77,6 +77,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-24",
+      "note": "Communication prompts now adapt to Astra 6 and Sol 6, with a compact model selector and expandable previews."
+    },
     {
       "date": "2026-09-19",
       "note": "First published, sixteen days after launch. We have not opened the live ChatGPT settings to confirm the current field labels, and say so above."
@@ -151,5 +155,7 @@
       "label": "What personality type is ChatGPT? We tested it",
       "href": "/research/what-personality-type-is-chatgpt"
     }
-  ]
+  ],
+  "promptDestination": "codex-cli",
+  "promptModel": "astra-6"
 }

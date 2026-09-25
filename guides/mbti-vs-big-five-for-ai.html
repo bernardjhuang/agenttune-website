@@ -10,7 +10,7 @@
   <meta property="og:description" content="MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-07-23" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"MBTI's binary axes make crisp prompt instructions; Big Five's continuous traits add calibration. The only comparison grounded in cross-model data.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"MBTI vs Big Five for AI: crisp switches or calibrated dials"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"597 of 600 runs returned INTJ, and the three outliers were each one axis away. Binary instruments compress: assistant training pushes every frontier model to the same side of each fork — introverted, abstract, analytical, structured. Instruments with continuous or motivational scoring, like Big Five and Enneagram, recover the differences the forks hide."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it works better than either alone. Let the type set the defaults — reporting order, decisiveness, tangent policy — and let trait scores adjust the dials, like verbosity and hedging. Keep it short: ten to twenty lines of concrete rules beats a personality essay."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"They anchor the two ends of the ladder. DISC converged completely in our runs — every model C-dominant with an S-blend — while the Enneagram fully diverged, each model showing a different dominant type. Motivational instruments discriminate hardest. If the Enneagram is your framework, we built tunings for all nine types."}}]}</script>
 
@@ -68,13 +68,14 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Frameworks</span>
         <h1 class="h-hero h-research-hero">MBTI vs Big Five for AI: crisp switches or calibrated dials.</h1>
         <p class="article-dek">One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-07-23">July 23, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">For personalizing an AI, start with MBTI — its binary axes convert directly into instructions a model can follow — then layer Big Five on top for calibration. For measuring humans, Big Five has the stronger scientific standing, and we won't pretend otherwise. We ran ~2,200 personality-test runs across six frontier models, and the results explain why both statements are true at once: binary instruments converge, continuous ones discriminate.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> For AI personalization: start with MBTI, because its binary axes convert directly into prompt instructions, then layer Big Five for calibration and nuance. For measuring humans, Big Five has the stronger scientific standing — MBTI's dichotomies and retest variability are real criticisms. Use the sorter for instructions, the measure for accuracy.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>One sorts. One measures.</h2>
@@ -90,7 +91,7 @@
 
       <section>
         <h2>Types write instructions. Traits tune them.</h2>
-        <p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>"lead with the recommendation, then the reasoning"</em>; P becomes <em>"keep options open — don't force a decision early."</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class="guide-answer">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href="/library/mbti/intj">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href="/library/ocean/openness-high">high Openness</a> or <a href="/library/ocean/neuroticism-low">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href="/library/">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class="guide-snippet">## Personality layer (INTJ + Big Five calibration)
+        <p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>"lead with the recommendation, then the reasoning"</em>; P becomes <em>"keep options open — don't force a decision early."</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class="guide-answer">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href="/library/mbti/intj">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href="/library/ocean/openness-high">high Openness</a> or <a href="/library/ocean/neuroticism-low">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href="/library/">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class="guide-snippet" data-tuning-prompt>## Personality layer (INTJ + Big Five calibration)
 
 # Switches — from type
 - Lead with the recommendation, then the reasoning.
@@ -137,6 +138,13 @@
         </div>
       </section>
 
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-24">September 24, 2026</time> Communication prompts now adapt to Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, and Grok 4.7, with a compact model selector and expandable previews.</li>
+        </ul>
+      </section>
 
 
       <div class="divider tight"></div>
@@ -160,21 +168,7 @@
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

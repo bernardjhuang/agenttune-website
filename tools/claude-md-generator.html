@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free CLAUDE.md Generator — No Signup · AgentTune</title>
-  <meta name="description" content="Generate a working CLAUDE.md for Claude Code in your browser. Three questions, one paste-ready file. Free, no signup, no repo access." />
+  <meta name="description" content="Generate a focused CLAUDE.md for Claude Code with Fable 5.1 or Opus 5.5. Three questions, one editable starter. Free, no signup." />
 
   <meta property="og:title" content="Free CLAUDE.md generator" />
   <meta property="og:description" content="Three questions → a working CLAUDE.md starter for Claude Code. Free, in your browser, no signup." />
@@ -75,7 +75,7 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Free tool · no signup</span>
         <h1 class="h-hero h-research-hero">Free CLAUDE.md generator.</h1>
         <p class="lede" style="margin-top: 16px; max-width: 720px;">
-          Answer three questions and get a working starter file for Claude Code. For what makes a CLAUDE.md actually stick, read the <a href="/guides/claude-md-examples">annotated examples guide</a> — and to add how the agent should communicate with you, layer in a <a href="/tools/custom-instructions-generator">personality tuning</a>.
+          Answer three questions and get a focused starter file for Claude Code with Fable 5.1 or Opus 5.5. For what makes a CLAUDE.md actually stick, read the <a href="/guides/claude-md-examples">annotated examples guide</a> — and to add how the agent should communicate with you, layer in a <a href="/tools/custom-instructions-generator">personality tuning</a>.
         </p>
       </section>
 
@@ -85,9 +85,9 @@
           <div class="tool-field"><label for="scope">Diff scope</label><select id="scope"><option value="minimal">Minimal diffs</option><option value="current">Current file only unless asked</option><option value="cleanup">Adjacent cleanup allowed</option></select></div>
           <div class="tool-field"><label for="deps">Dependencies</label><select id="deps"><option value="ask">Ask before adding packages</option><option value="native">Prefer native APIs/existing utilities</option><option value="common">Common packages allowed with rationale</option></select></div>
           <button class="tool-copy" id="copy" type="button">Copy CLAUDE.md</button>
-          <p class="tool-note">Save the output as <code>CLAUDE.md</code> in your repo root. It's a starting point — <a href="/guides/claude-md-examples">edit it like code</a>.</p>
+          <p class="tool-note">Merge the output into <code>CLAUDE.md</code> in your repo root, preserving existing project instructions. It's a starting point — <a href="/guides/claude-md-examples">edit it like code</a>.</p>
         </section>
-        <section aria-label="Generated output"><pre class="tool-out" id="out"></pre></section>
+        <section aria-label="Generated output"><pre class="tool-out" id="out" tabindex="0"></pre><p id="copy-status" role="status" aria-live="polite"></p></section>
       </div>
 
       <section class="guide-prose" style="margin-top: 56px;">
@@ -123,11 +123,11 @@ function md(){
  const testRule=tests==='strict'?'Write or update tests before implementation for bugs and non-trivial features. Verify the failing test before changing production code.':tests==='regression'?'For bugs, add a regression test that fails before implementation. For features, add targeted tests around changed behavior.':'Run the smallest useful verification for the risk level and report exactly what ran.';
  const scopeRule=scope==='minimal'?'Make the smallest correct change. Do not rewrite unrelated code, rename broadly, or reformat files unless asked.':scope==='current'?'Keep changes in the current file unless the user explicitly approves wider edits.':'Adjacent cleanup is allowed only when it directly reduces complexity and does not distract from the requested task.';
  const depRule=deps==='ask'?'Do not add npm, pip, brew, or system dependencies without asking first.':deps==='native'?'Prefer native APIs and existing project utilities before proposing third-party packages.':'Common dependencies are acceptable when they clearly reduce risk or complexity; explain the tradeoff first.';
- return `# Agent Instructions\n\nYou are working in a repository configured for Claude Code. Follow these rules before editing.\n\n## Rules\n- ${testRule}\n- ${scopeRule}\n- ${depRule}\n- Inspect enough context to avoid guessing.\n- Never claim tests passed unless you actually ran them.\n- End with files changed, commands run, and remaining risks.\n\n<!-- Generated with agent-tune.com/tools/claude-md-generator -->`;
+ return `# Agent Instructions\n\nYou are working in a repository configured for Claude Code with Fable 5.1 or Opus 5.5. Follow the requested scope and output format, alongside these project rules.\n\n## Rules\n- ${testRule}\n- ${scopeRule}\n- ${depRule}\n- Inspect enough context to avoid guessing. Ask about gaps that materially change the result.\n- For long tasks, share brief updates at meaningful checkpoints.\n- Never claim tests passed unless you actually ran them.\n- End with files changed, commands run, and remaining risks.\n\n<!-- Generated with agent-tune.com/tools/claude-md-generator -->`;
 }
 function render(){document.getElementById('out').textContent=md();}
 document.querySelectorAll('select').forEach(s=>s.addEventListener('change',render));
-document.getElementById('copy').addEventListener('click',async()=>{await navigator.clipboard.writeText(md()); const b=document.getElementById('copy'); b.textContent='Copied'; setTimeout(()=>b.textContent='Copy CLAUDE.md',1200);});render();
+document.getElementById('copy').addEventListener('click',async()=>{try {await navigator.clipboard.writeText(md()); document.getElementById('copy-status').textContent='Copied';} catch (_) {document.getElementById('copy-status').textContent='Clipboard unavailable. Select and copy the text in the preview.'; document.getElementById('out').focus();}});render();
 </script>
 </body>
 </html>
