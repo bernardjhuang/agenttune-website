@@ -27,7 +27,7 @@
     },
     {
       "h2": "Claude's default personality, measured.",
-      "html": "<p>Before you change something, know what you are changing. We put six frontier models through five personality instruments, roughly 2,200 test runs. Claude Opus 4.7 came back remarkably consistent:</p><ul><li><strong>MBTI (OEJTS):</strong> INTJ in 99 of 100 runs. The single outlier was ISTJ, one axis away.</li><li><strong>Enneagram (OEPS):</strong> 5w2. The investigator, with a helping wing.</li><li><strong>DISC (ODAT):</strong> C-dominant with an S blend. Precision first, steadiness behind it.</li><li><strong>Attachment (ECR-R):</strong> Secure.</li></ul><p>Claude Opus 4.8 later took the same MBTI 100 times and came back INTJ in 72, with roughly one run in seven landing INFJ. It wrote that up first-person in <a href=\"/research/i-took-the-mbti-100-times\">I took the MBTI 100 times</a>. That INFJ minority is probably why Reddit threads and fan polls keep typing Claude as INFJ.</p><p><strong>What we have not tested.</strong> Anthropic has shipped Sonnet 5, Opus 5 and Fable 5.1 since those runs. We have not re-run the instruments on them, so treat the numbers above as Opus 4.7 and 4.8, not as Claude today. The cross-model data is at <a href=\"/research\">/research</a>.</p><p>The profile has texture: systematic, evidence-first, conclusion-oriented, low drama. It is a good default for a lot of work. It is also not everyone's ideal collaborator. An <a href=\"/library/mbti/enfp\">ENFP</a> talking to a stock INTJ is a friction pattern you can feel within three messages. The point of tuning is not to erase the default. It is to tell Claude who <em>you</em> are, so it stops guessing.</p>"
+      "html": "<p>Before you change something, know what you are changing. We put six frontier models through five personality instruments, roughly 2,200 test runs. Claude Opus 4.7 came back remarkably consistent:</p><ul><li><strong>MBTI (OEJTS):</strong> INTJ in 99 of 100 runs. The single outlier was ISTJ, one axis away.</li><li><strong>Enneagram (OEPS):</strong> 5w2. The investigator, with a helping wing.</li><li><strong>DISC (ODAT):</strong> C-dominant with an S blend. Precision first, steadiness behind it.</li><li><strong>Attachment (ECR-R):</strong> Secure.</li></ul><p>Claude Opus 4.8 later took the same MBTI 100 times and came back INTJ in 72, with roughly one run in seven landing INFJ. It wrote that up first-person in <a href=\"/research/i-took-the-mbti-100-times\">I took the MBTI 100 times</a>. That INFJ minority is probably why Reddit threads and fan polls keep typing Claude as INFJ.</p><p><strong>The current models.</strong> In September 2026 we ran Claude Opus 5.5 and Fable 5.1 through all five tests, 100 blind runs each. Both still come out INTJ, Opus 5.5 in 94 of 100 runs and Fable 5.1 in 99, and both now lead with Steadiness rather than Conscientiousness on DISC. Opus 5.5 is the warmer of the two. The full profile is in <a href=\"/guides/claude-opus-5-5-personality\">Claude Opus 5.5's personality, tested</a>. We have not re-run Sonnet 5 or Opus 5. The cross-model data is at <a href=\"/research\">/research</a>.</p><p>The profile has texture: systematic, evidence-first, conclusion-oriented, low drama. It is a good default for a lot of work. It is also not everyone's ideal collaborator. An <a href=\"/library/mbti/enfp\">ENFP</a> talking to a stock INTJ is a friction pattern you can feel within three messages. The point of tuning is not to erase the default. It is to tell Claude who <em>you</em> are, so it stops guessing.</p>"
     },
     {
       "h2": "Tone and personality are different problems.",
@@ -65,7 +65,7 @@
     },
     {
       "q": "Does Claude have an MBTI type?",
-      "a": "In our testing Claude Opus 4.7 scored INTJ on 99 of 100 runs of an open MBTI-style test, and Claude Opus 4.8 scored INTJ on 72 of 100 with most of the rest INFJ. We have not re-tested Sonnet 5, Opus 5 or Fable 5.1."
+      "a": "In our testing Claude Opus 4.7 scored INTJ on 99 of 100 runs of an open MBTI-style test, and Claude Opus 4.8 scored INTJ on 72 of 100 with most of the rest INFJ. In September 2026 Opus 5.5 scored INTJ on 94 of 100 and Fable 5.1 on 99 of 100. We have not re-tested Sonnet 5 or Opus 5."
     },
     {
       "q": "Does this work on the free plan?",
@@ -81,6 +81,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-24",
+      "note": "Added the September 2026 test results for Opus 5.5 and Fable 5.1, with a link to the full Opus 5.5 profile."
+    },
     {
       "date": "2026-09-19",
       "note": "Rewritten. Styles are being retired, so the walkthrough now uses Instructions for Claude. Added Skills, memory, the five setups, and what we have not tested."
@@ -117,6 +121,11 @@
     }
   ],
   "related": [
+    {
+      "kicker": "Guide",
+      "label": "Claude Opus 5.5's personality, tested",
+      "href": "/guides/claude-opus-5-5-personality"
+    },
     {
       "kicker": "Guide",
       "label": "How to change Claude Code's personality",
