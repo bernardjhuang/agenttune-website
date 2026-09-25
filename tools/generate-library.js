@@ -1381,6 +1381,7 @@ const STATIC_PAGES = [
   { route: "/guides/chatgpt-custom-instructions-by-personality-type", file: "guides/chatgpt-custom-instructions-by-personality-type.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-personality", file: "guides/claude-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-code-personality", file: "guides/claude-code-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/fable-personality", file: "guides/fable-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/astra-personality", file: "guides/astra-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/grokbot-personality", file: "guides/grokbot-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-personality", file: "guides/muse-personality.html", changefreq: "monthly", priority: "0.8" },
