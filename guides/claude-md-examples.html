@@ -77,6 +77,7 @@
       <div class="guide-answer"><strong>The short answer.</strong> CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.</div>
 
       <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
 
       <section>
         <h2>One file, three locations.</h2>
@@ -137,7 +138,7 @@ pnpm workspace. Run package commands from the root: `pnpm --filter &lt;pkg&gt; &
 
       <section>
         <h2>Example 4: a personality layer under the engineering rules.</h2>
-        <p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href="/library/mbti/istj">ISTJ tuning</a>:</p><div class="guide-snippet">## Communication style (ISTJ)
+        <p>CLAUDE.md configures behavior, and how Claude communicates with you is behavior. Append a personality-matched section after your engineering rules — this one is condensed from the <a href="/library/mbti/istj">ISTJ tuning</a>:</p><div class="guide-snippet" data-tuning-prompt>## Communication style (ISTJ)
 The user identifies as ISTJ. Adjust your interaction style accordingly.
 
 - Be precise, not approximate. "27 minutes" beats "around 30 minutes" when you know. Specifics build trust.
@@ -215,22 +216,8 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
     </div>
   </div>
 
-  <script>
-    // Copy buttons on every snippet block
-    document.querySelectorAll(".guide-snippet").forEach(function (block) {
-      var snippet = block.textContent.trim();
-      var btn = document.createElement("button");
-      btn.className = "guide-snippet-copy";
-      btn.type = "button";
-      btn.textContent = "Copy";
-      btn.addEventListener("click", function () {
-        navigator.clipboard.writeText(snippet).then(function () {
-          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
-          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
-        });
-      });
-      block.prepend(btn);
-    });
-  </script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
 </body>
 </html>

@@ -1117,9 +1117,31 @@
       "C": 45
     },
     "enneagram": {
-      "type2": 78
+      "type2": 78,
+      "type1": 15,
+      "wing": "2w1"
     },
-    "source_sha256": "39a53a160219bf7ac00669ea5c12efb88e6359f4a186356985af4e3e05fab1c9"
+    "source_sha256": "39a53a160219bf7ac00669ea5c12efb88e6359f4a186356985af4e3e05fab1c9",
+    "disc_means": {
+      "D": 5.1,
+      "I": 10.9,
+      "S": 15.2,
+      "C": 15.6
+    },
+    "enneagram_means": {
+      "1": 14.7,
+      "2": 16.8,
+      "3": 12.1,
+      "4": 7.2,
+      "5": 12.9,
+      "6": 12.8,
+      "7": 13.9,
+      "8": 13.9,
+      "9": 12.0
+    },
+    "mbti_runs_with_ties": 21,
+    "enneagram_runs_with_ties": 20,
+    "figures_note": "All figures above are transcribed from the supplied report; none were recomputed."
   },
   "grok_reported": {
     "big_five": {
