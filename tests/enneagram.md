@@ -54,6 +54,6 @@ Four items per type, in type order (items 1–4 → Type 1, 5–8 → Type 2, �
 ## Scoring algorithm
 
 1. For each type 1–9, sum the user's raw 1–5 responses to that type's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant type**.
+2. A unique highest total is the **dominant type**. If several types tie, report all of them without a dominant type or automatic tuning; offer their library pages for an explicit preference.
 3. The higher-scoring of the two adjacent types (the wings) is the optional **wing**.
 4. Resolve the slug from the dominant type (e.g. 5 → `5-investigator`).

@@ -31,6 +31,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give GPT-6 Astra a personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GPT-6 Astra the same as GPT-6 Pro?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's help center says GPT-6 Pro in ChatGPT is powered by GPT-6 Astra. GPT-6 Pro is the name you see in ordinary chat, on Pro, Business and Enterprise plans. In ChatGPT Work, Codex and the API the model is called GPT-6 Astra. Plus plans include Astra in Work and Codex only."}},{"@type":"Question","name":"Where do I put custom instructions for GPT-6 Astra?","acceptedAnswer":{"@type":"Answer","text":"For Astra in ChatGPT Work or Codex, use your personal AGENTS.md at ~/.codex/AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. For GPT-6 Pro in ordinary chat, use Settings, Personalization, Enable customization, Custom Instructions. In the API, use the instructions parameter."}},{"@type":"Question","name":"Does the Friendly or Pragmatic personality work with Astra?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs still list Friendly, Pragmatic and None, but in the open-source Codex code Astra has no Friendly or Pragmatic variant, and pull requests merged in mid-September 2026 retire the picker. Use AGENTS.md to change how Astra communicates."}},{"@type":"Question","name":"How do I turn off Astra's built-in personality?","acceptedAnswer":{"@type":"Answer","text":"Set personality = \"none\" in ~/.codex/config.toml. In the Codex source this strips the built-in personality section, which for Astra also contains its writing-style and technical-communication rules, so you lose more than tone. Adding your own rules to AGENTS.md is usually the better fix."}},{"@type":"Question","name":"What is the size limit for AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex stops adding AGENTS.md files once their combined size reaches 32 KiB by default, set by project_doc_max_bytes. ChatGPT custom instructions are separate. Use the reviewed compact export for its documented 1,500-character longer fields, and follow the limit displayed in your account."}},{"@type":"Question","name":"Why doesn't Astra pick up my changes to AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex builds its instruction chain once per run, which usually means once per launched session. Start a new session after editing the file."}},{"@type":"Question","name":"Why does Astra keep stopping to ask me things?","acceptedAnswer":{"@type":"Answer","text":"Two causes. The permission mode may be set to Ask for approval, which a personality file cannot change. And OpenAI's developer blog says forceful ask-first language written for older models can make Astra stop early. Soften those rules, and define what done means in the task."}},{"@type":"Question","name":"Do ChatGPT custom instructions apply in ChatGPT Work?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's docs do not say clearly. They say Work uses your account memory. For Astra as an agent, put your rules in AGENTS.md, which the docs describe as the place for instructions that must always apply."}}]}</script>
 
+
   <script defer src="/consent.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -226,7 +228,7 @@ you report to me, not how you do the work.
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

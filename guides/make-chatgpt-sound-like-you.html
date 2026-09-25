@@ -31,6 +31,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Make ChatGPT sound like you — and treat you like you"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which approach is better, writing samples or a personality tuning?","acceptedAnswer":{"@type":"Answer","text":"They fix different problems. Writing samples are better when the output is the product — emails, posts, drafts that must read like you wrote them. A personality tuning is better when the conversation is the product — how ChatGPT paces, structures, and challenges its replies to you. If you only fix one, fix the one that's actually bothering you."}},{"@type":"Question","name":"How long does the personality-first setup take?","acceptedAnswer":{"@type":"Answer","text":"About 15 minutes end to end: ten for the free in-browser MBTI test, two to copy the block for your type, one to paste it into Settings → Personalization → Custom instructions, and a couple to sanity-check a fresh chat. If you already know your type, it's under five minutes."}},{"@type":"Question","name":"Do I need to know my MBTI type first?","acceptedAnswer":{"@type":"Answer","text":"You need a type, but not necessarily MBTI. AgentTune has free in-browser tests and matching tunings for five systems — MBTI, Big Five, Enneagram, DISC, and attachment style. MBTI is the common starting point because its 16 types map cleanly onto interaction rules, but any system that describes how you prefer to work will do."}},{"@type":"Question","name":"Can I use both approaches at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes — they compose, and that's the strongest setup. The tuning block governs how ChatGPT treats you in conversation; a few style notes distilled from your own writing govern how drafts read. A tuning block runs 400–700 characters against the field's 1,500-character limit, so both fit in custom instructions together."}},{"@type":"Question","name":"Doesn't ChatGPT memory already learn my style?","acceptedAnswer":{"@type":"Answer","text":"Memory collects facts — projects, preferences you've stated, recurring topics. It doesn't reliably converge on interaction style, and you can't inspect or edit what it inferred the way you can a pasted block. Custom instructions are explicit and yours. Use memory for context, a tuning for behavior."}}]}</script>
 
+
   <script defer src="/consent.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -157,7 +159,7 @@
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

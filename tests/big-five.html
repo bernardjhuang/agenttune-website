@@ -57,6 +57,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -256,7 +257,7 @@
         <p>International Personality Item Pool, 50-item version (IPIP-50), <a href="https://ipip.ori.org/" target="_blank" rel="noopener">Goldberg et al. (1999)</a>. Public domain; widely used in published Big Five / OCEAN research.</p>
 
         <h3>The 50 items</h3>
-        <p>Ten items per OCEAN dimension (O / C / E / A / N), <strong>interleaved</strong> in a fixed rotation (item 1 = E, 2 = A, 3 = C, 4 = N, 5 = O, 6 = E, …). Each statement begins with an implicit "I …" (e.g. "Am the life of the party" → "I am the life of the party"). User rates each on a <strong>1–5 Likert scale</strong>: <strong>1 = Very Inaccurate, 5 = Very Accurate</strong>. <strong>20 of the 50 items are reverse-scored</strong> — see the <em>Rev?</em> column.</p>
+        <p>Ten items per OCEAN dimension (O / C / E / A / N), <strong>interleaved</strong> in a fixed rotation (item 1 = E, 2 = A, 3 = C, 4 = N, 5 = O, 6 = E, …). Each statement begins with an implicit "I …" (e.g. "Am the life of the party" → "I am the life of the party"). User rates each on a <strong>1–5 Likert scale</strong>: <strong>1 = Very Inaccurate, 5 = Very Accurate</strong>. <strong>18 of the 50 items are reverse-scored</strong> — see the <em>Rev?</em> column.</p>
         <table class="items-table">
           <thead><tr><th class="num-col">#</th><th>Statement (implicit "I…")</th><th class="num-col">Dim</th><th class="num-col">Rev?</th></tr></thead>
           <tbody id="quiz-spec-items">
@@ -455,6 +456,7 @@
     const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
+      if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
       state.currentIndex = 0; renderQuestion();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -531,6 +533,10 @@
     }
 
     function showResult() {
+      if (!state.completionTracked) {
+        if (window.atTrack) window.atTrack("quiz_complete");
+        state.completionTracked = true;
+      }
       const version = ++state.resultVersion;
       $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
@@ -673,7 +679,7 @@
       const r = computeResult(state.answers);
       const content = state.currentTuning || buildCombinedTuning(r.files);
       navigator.clipboard.writeText(content).then(() => {
-        const o = this.textContent; this.textContent = "Copied ✓";
+        const o = this.textContent; this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
         setTimeout(() => { this.textContent = o; }, 2000);
       });
     });
@@ -685,7 +691,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url; a.download = `ocean-tuning.md`;
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      document.body.appendChild(a); a.click(); if (window.atTrack) window.atTrack("tuning_download"); document.body.removeChild(a);
       URL.revokeObjectURL(url);
       const o = this.textContent; this.textContent = "Downloaded ✓";
       setTimeout(() => { this.textContent = o; }, 2000);
@@ -693,6 +699,7 @@
 
     $("quiz-restart").addEventListener("click", () => {
       state.resultVersion++;
+      state.completionTracked = false;
       state.currentTuning = "";
       advance.cancel();
       state.currentIndex = 0; state.answers = new Array(50).fill(null);

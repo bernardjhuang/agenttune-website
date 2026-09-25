@@ -64,6 +64,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -91,7 +92,7 @@
             <label for="target">Where it's going</label>
             <select id="target">
               <option value="chatgpt">ChatGPT — custom instructions</option>
-              <option value="claude">Claude — style / project instructions</option>
+              <option value="claude">Claude — account / project instructions</option>
               <option value="claudemd">Claude Code — CLAUDE.md block</option>
               <option value="agentsmd">AGENTS.md block</option>
               <option value="cursor">Cursor — .cursor/rules/agenttune.mdc</option>
@@ -216,7 +217,7 @@
     $("copy").addEventListener("click", function () {
       if ($("copy").disabled) return;
       navigator.clipboard.writeText($("out").textContent).then(function () {
-        $("copy").textContent = "Copied";
+        $("copy").textContent = "Copied"; if (window.atTrack) window.atTrack("generator_copy");
         setTimeout(function () { $("copy").textContent = "Copy"; }, 1200);
       });
     });

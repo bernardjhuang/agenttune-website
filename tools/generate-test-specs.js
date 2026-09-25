@@ -108,7 +108,7 @@ ${rows}
 ## Scoring algorithm
 
 1. For each type 1–9, sum the user's raw 1–5 responses to that type's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant type**.
+2. A unique highest total is the **dominant type**. If several types tie, report all of them without a dominant type or automatic tuning; offer their library pages for an explicit preference.
 3. The higher-scoring of the two adjacent types (the wings) is the optional **wing**.
 4. Resolve the slug from the dominant type (e.g. 5 → \`5-investigator\`).
 `;
@@ -142,8 +142,8 @@ ${rows}
 ## Scoring algorithm
 
 1. For each letter D/I/S/C, sum the user's raw 1–5 responses to that letter's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant** letter.
-3. If a second letter is within a few points, report it as a **blend** (e.g. DI, CS).
+2. A unique highest total is the **dominant** letter. If letters tie for highest, report them equally, without a dominant letter or automatic tuning; offer their library pages.
+3. With a unique dominant letter, if the second letter is within 2 points, report a **blend** (e.g. DI, CS).
 `;
     },
     rows(items) {

@@ -64,7 +64,7 @@ test('shared integration displays and copies the compact text, while unrestricte
   const local = fixture(); local.run('data.js'); local.run('compact-tunings.js'); local.run('integrations.js');
   let clipboard = ''; local.ctx.navigator.clipboard.writeText = async text => { clipboard = text; };
   local.ctx.CSS = { escape: s => s };
-  const body = fs.readFileSync(path.join(ROOT, 'tunings/attachment/Anxious.md'),'utf8');
+  const body = fs.readFileSync(path.join(ROOT, 'tunings/attachment/anxious.md'),'utf8');
   const compactPre = { dataset:{tmpl:'[CHATGPT_PLACEHOLDER]'}, querySelector: () => compactCode, parentElement:{querySelector:()=>copy}, addEventListener() {} };
   const fullPre = { dataset:{tmpl:'Preamble\n[TUNING_PLACEHOLDER]'}, querySelector:()=>fullCode, addEventListener(){} };
   const copy = local.document.createElement('button'), compactCode = {}, fullCode = {};
@@ -125,7 +125,7 @@ test('CLI install recipes refuse overwrites and preserve existing project instru
 });
 
 test('inline scripts and structured data parse; every integration and quiz loads its shared dependencies', () => {
-  function walk(dir) { return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e => e.isDirectory() ? (['node_modules','.git'].includes(e.name) ? [] : walk(path.join(dir,e.name))) : [path.join(dir,e.name)]); }
+  function walk(dir) { return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e => e.isDirectory() ? (['node_modules','.git','dist'].includes(e.name) ? [] : walk(path.join(dir,e.name))) : [path.join(dir,e.name)]); }
   const files = walk(ROOT).filter(p => p.endsWith('.html'));
   for (const file of files) {
     const html = fs.readFileSync(file,'utf8');

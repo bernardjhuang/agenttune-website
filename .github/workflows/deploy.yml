@@ -35,12 +35,15 @@ jobs:
       - name: Check quizzes, exports, and consent
         run: npm test
 
+      - name: Build public assets
+        run: npm run build
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=agent-tune --commit-dirty=true
+          command: pages deploy dist --project-name=agent-tune --branch=main
 
       # Tell Bing & friends (the index behind ChatGPT search / Copilot) what
       # changed — submits every sitemap URL via the IndexNow protocol.

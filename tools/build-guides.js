@@ -64,13 +64,15 @@ function navHtml() {
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>`;
 }
 
 function buildPage(spec, dates) {
-  const route = `/guides/${spec.slug}`;
+  const route = spec.route || `/guides/${spec.slug}`;
+  const research = route.startsWith("/research/");
   const url = `${SITE}${route}`;
 
   const articleSchema = {
@@ -91,7 +93,7 @@ function buildPage(spec, dates) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-      { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE}/guides/` },
+      { "@type": "ListItem", position: 2, name: research ? "Research" : "Guides", item: research ? `${SITE}/research` : `${SITE}/guides/` },
       { "@type": "ListItem", position: 3, name: stripTags(spec.h1).replace(/\.$/, "") }
     ]
   };
@@ -182,6 +184,7 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <script type="application/ld+json">${jsonInline(articleSchema)}</script>
   <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>${faqSchema ? `\n  <script type="application/ld+json">${jsonInline(faqSchema)}</script>` : ""}
 
+${spec.dataset ? `<script type="application/ld+json">${jsonInline(spec.dataset)}</script>` : ""}
   <script defer src="/consent.js"></script>
 
 ${FONT_BLOCK}
@@ -192,12 +195,12 @@ ${FONT_BLOCK}
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
 
-${navHtml()}
+${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/"').replace('href="/research"', 'href="/research" class="active"') : navHtml()}
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="/">Home</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <a href="/guides/">Guides</a>
+      <a href="${research ? "/research" : "/guides/"}">${research ? "Research" : "Guides"}</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
       <span class="crumb-current" aria-current="page">${escHtml(stripTags(spec.h1).replace(/\.$/, ""))}</span>
     </nav>
@@ -236,7 +239,7 @@ ${relatedHtml}
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\\s*Copy\\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });
@@ -248,7 +251,10 @@ ${relatedHtml}
 `;
 }
 
-const specs = fs.readdirSync(SRC).filter((f) => f.endsWith(".json"));
+module.exports = { buildPage };
+if (require.main === module) {
+const selected = process.argv.slice(2);
+const specs = fs.readdirSync(SRC).filter((f) => f.endsWith(".json") && (!selected.length || selected.includes(f.replace(/\.json$/, ""))));
 for (const f of specs) {
   const spec = JSON.parse(fs.readFileSync(path.join(SRC, f), "utf8"));
   const html = buildPage(spec, datesFor(spec, path.join("guides", "src", f)));
@@ -256,3 +262,5 @@ for (const f of specs) {
   console.log(`guides/${spec.slug}.html ← ${f}`);
 }
 console.log(`${specs.length} guide pages built.`);
+
+}

@@ -1,5 +1,7 @@
 # agent-tune.com copy audit
 
+> Review note (September 25): this is a historical audit and a set of editorial proposals. The release fixes navigation, generator discovery, consent-gated funnel events, score ties, inconsistent test durations and outdated Claude setting labels. Research reanalysis supersedes the claim that Fable is a clear Type 8 or consistently S-first: it has 44 Enneagram ties and 51 DISC ties. Suggested copy that promises every reply will fit the user is not a validated outcome. The public build now excludes docs and tooling. Broader stylistic rewrites remain editorial follow-ups.
+
 *2026-09-24. Read every page type in the working tree (36 pages, incl. 7 of the 43 templated library pages), plus the copy that lives in JS (`data.js`, `tools/v2-content.js`, `tools/library-context.js`, `integrations.js`). Metrics from `tools/copy-metrics.py`; re-run it after each pass.*
 
 ## The short version
@@ -179,4 +181,4 @@ Targets to check against after each step: zero em dashes on customer-facing page
 - `tools/copy-metrics.py` extracts the visible copy from every page type and scores it (`python3 tools/copy-metrics.py`; writes the per-page text and `metrics.tsv` to a temp folder and prints the table).
 - `docs/copy-audit-2026-09-24-metrics.tsv` is the baseline from the night of the audit, to diff against after each pass.
 
-Note: everything in this repo is deployed as a static asset, so once merged this file is readable at `/docs/copy-audit-2026-09-24.md`. Move it out or add a `_redirects` rule (via `generate-library.js`) if that matters.
+Publication note: the release builds a public-only `dist/` directory. This audit and its measurement script are excluded.

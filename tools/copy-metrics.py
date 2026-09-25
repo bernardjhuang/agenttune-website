@@ -55,7 +55,7 @@ class Ex(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag in SKIP or a.get("hidden") is not None or a.get("aria-hidden") == "true" or "sr-only" in (a.get("class") or ""):
+        if tag in SKIP or "hidden" in a or a.get("aria-hidden") == "true" or "sr-only" in (a.get("class") or ""):
             self.skip += 1
             self.stack.append((tag, True))
             return

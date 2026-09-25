@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT-6, Grok and Claude: Five-Model Personality Study</title>
+  <meta name="description" content="Astra, Sol, Grok 4.6, Opus 5.5 and Fable 5.1 across five questionnaires. Recomputed scores, exact ties, methods and downloadable response data." />
+
+  <meta property="og:title" content="What five AI models say about themselves." />
+  <meta property="og:description" content="Astra, Sol, Grok 4.6, Opus 5.5 and Fable 5.1 across five questionnaires. Recomputed scores, exact ties, methods and downloadable response data." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/ai-personality-five-models-2026" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What five AI models say about themselves." />
+  <meta name="twitter:description" content="Astra, Sol, Grok 4.6, Opus 5.5 and Fable 5.1 across five questionnaires. Recomputed scores, exact ties, methods and downloadable response data." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/ai-personality-five-models-2026" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What five AI models say about themselves","description":"Astra, Sol, Grok 4.6, Opus 5.5 and Fable 5.1 across five questionnaires. Recomputed scores, exact ties, methods and downloadable response data.","url":"https://agent-tune.com/research/ai-personality-five-models-2026","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"What five AI models say about themselves"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all five models INTJ?","acceptedAnswer":{"@type":"Answer","text":"No. Under the original scoring rule, Astra splits mostly between ISTJ and INTJ. Sol, Opus and Fable mostly receive INTJ labels, but some depend on tied axes. Grok has one canonical INTJ vector; its simulated runs are a different kind of evidence."}},{"@type":"Question","name":"Does this research prove AI models have personalities?","acceptedAnswer":{"@type":"Answer","text":"No. It measures questionnaire self-descriptions under specific prompts. It does not validate human personality constructs for AI, establish inner experience, or measure task performance."}}]}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-personality-five-models-2026#dataset","name":"AgentTune September 2026 model questionnaire responses","description":"2,000 fresh-session questionnaire response vectors for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5 and Claude Fable 5.1, plus three canonical Grok 4.6 vectors. Mixed collection protocols; no human personality validation.","url":"https://agent-tune.com/research/ai-personality-five-models-2026","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","temporalCoverage":"2026-09-24/2026-09-25","measurementTechnique":"Adapted questionnaire self-report; fresh sessions and canonical vectors distinguished in protocol metadata","distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-responses.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-summary.csv","encodingFormat":"text/csv"}]}</script>
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">What five AI models say about themselves</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research · September 2026</span>
+        <h1 class="h-hero h-research-hero">What five AI models say about themselves.</h1>
+        <p class="article-dek">GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Four models supplied 2,000 questionnaire responses across 1,200 fresh sessions. Grok supplied a canonical profile and simulated variation. Together, these reports show why a four-letter label is often less informative than the scores underneath it.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> The fresh-session cohorts share high raw openness, conscientiousness and agreeableness scores, but their labels are sensitive to exact ties. Opus and Fable have the closest matched protocol. Grok’s simulated runs and Muse’s supplemental aggregate report are separate evidence, not extra independent replications.</div>
+
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Abstract</h2>
+        <p>We reanalyzed five open questionnaires administered on September 24, 2026: an MBTI-style instrument (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS) and attachment (ECR-R). We recovered and validated 2,000 response vectors for Astra, Sol, Opus and Fable, plus three canonical Grok vectors. The five scales contain 170 items per full battery. We report raw means, original labels, exact ties and protocol differences.</p><p>Astra and Sol differ in their MBTI distributions, but different prompts prevent a model-only explanation. Opus reports higher agreeableness than Fable under a closely matched questionnaire protocol. Exact ties affect 29% of Astra MBTI runs and 51% of Fable DISC runs. These are exploratory model self-descriptions under specific prompts, not validated psychological traits, observed behavior, a performance ranking or evidence that tuning improves outcomes.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Five models, three kinds of evidence</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Model, What was collected, What can be reproduced" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">What was collected</th><th scope="col">What can be reproduced</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>100 fresh Codex sessions; five tests per session; xhigh effort</td><td>All 500 answer vectors; complete prompt; frozen scoring keys</td></tr><tr><th scope="row">GPT-6 Sol</th><td>100 fresh Codex sessions; five tests per session; xhigh effort</td><td>All 500 answer vectors; instruction prefix; full prompt not supplied</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>100 fresh sessions per instrument; 500 total; high effort</td><td>All 500 answer vectors and blinded questionnaire prompts</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>100 fresh sessions per instrument; 500 total; high effort</td><td>All 500 answer vectors and blinded questionnaire prompts</td></tr><tr><th scope="row">Grok 4.6</th><td>One canonical self-report plus 100 simulated draws per test</td><td>Three canonical vectors; no simulation harness or full Big Five/attachment vectors</td></tr></tbody></table></div><p>For Astra and Sol, five assessments share one session; they are not 500 independent model invocations. The Claude instruments were administered separately, so run 001 on MBTI is not a paired person or session with run 001 on DISC. Fresh sessions reduce conversation carryover but do not establish statistical independence. No tuning was installed.</p><p>Opus and Fable saw the same questions, scales and neutral system prompt; test names, keys and prior results were withheld. Their CLI builds differ. Astra and Sol used named, fixed-order batteries inside Codex, with different instructions for adapting human experiences to assistant behavior. Default scaffolding remained. Sampling temperature and random seed were not controlled. Three supplied Astra reports contain the same 100 batteries; we counted that cohort once.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>MBTI: keep the original result, reveal the tie</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Model, Original scoring labels (n = 100), Runs with an unresolved axis" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Original scoring labels (n = 100)</th><th scope="col">Runs with an unresolved axis</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>ISTJ: 46; INTJ: 45; ENTJ: 7; ESTJ: 2</td><td>29</td></tr><tr><th scope="row">GPT-6 Sol</th><td>INTJ: 97; ISTJ: 3</td><td>18</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>INTJ: 94; INFJ: 5; ENTJ: 1</td><td>11</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>INTJ: 99; ISTJ: 1</td><td>1</td></tr></tbody></table></div><figure><svg class="research-chart" viewBox="0 0 660 235" role="img" aria-labelledby="tie-chart-title tie-chart-desc"><title id="tie-chart-title">Runs with at least one tied MBTI axis</title><desc id="tie-chart-desc">Out of 100: Astra 29, Sol 18, Opus 11, Fable 1. Bars use a common zero to 100 scale.</desc><line x1="205" y1="25" x2="605" y2="25" stroke="#bbb"/><text x="205" y="16" font-size="13">0</text><text x="574" y="16" font-size="13">100</text><text x="0" y="61" font-size="17" fill="#1e1d1a">GPT-6 Astra</text><rect x="205" y="42" width="400" height="28" rx="3" fill="#e3ddd1"/><rect x="205" y="42" width="116" height="28" rx="3" fill="#a8482a"/><text x="615" y="62" font-size="17">29</text><text x="0" y="109" font-size="17" fill="#1e1d1a">GPT-6 Sol</text><rect x="205" y="90" width="400" height="28" rx="3" fill="#e3ddd1"/><rect x="205" y="90" width="72" height="28" rx="3" fill="#a8482a"/><text x="615" y="110" font-size="17">18</text><text x="0" y="157" font-size="17" fill="#1e1d1a">Claude Opus 5.5</text><rect x="205" y="138" width="400" height="28" rx="3" fill="#e3ddd1"/><rect x="205" y="138" width="44" height="28" rx="3" fill="#a8482a"/><text x="615" y="158" font-size="17">11</text><text x="0" y="205" font-size="17" fill="#1e1d1a">Claude Fable 5.1</text><rect x="205" y="186" width="400" height="28" rx="3" fill="#e3ddd1"/><rect x="205" y="186" width="4" height="28" rx="3" fill="#a8482a"/><text x="615" y="206" font-size="17">1</text></svg><figcaption>Figure 1. Exact score ties, not model failures. Cross-model protocols differ; the counts describe these collected responses.</figcaption></figure><p>The original scorer sent exact ties to I, N, T and J. Removing that default leaves Sol with 79 fully resolved INTJ runs rather than 97. Opus has 84 resolved INTJ runs rather than 94; Fable has 98 rather than 99. Astra has 45 resolved ISTJ and 19 resolved INTJ runs. The other results are either a different resolved type or a pattern with X for a tied axis. The downloadable summary contains every pattern.</p><p>This is a scoring sensitivity result, not a new round of model answers. Astra’s split should not be described as a switch from an established INTJ personality. Grok’s supplied canonical vector scores INTJ with no tied axes, but its simulated INTJ rate is not a replication rate from independent sessions.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Big Five: compare raw scores before human percentiles</h2>
+        <p>Each trait sums ten items, with a possible range of 10–50. These are means over 100 responses per instrument, except Grok’s reported canonical profile, marked with an asterisk.</p><div class="guide-table-wrap" role="region" aria-label="Model, Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Openness</th><th scope="col">Conscientiousness</th><th scope="col">Extraversion</th><th scope="col">Agreeableness</th><th scope="col">Neuroticism</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>44.54</td><td>43.73</td><td>32.75</td><td>45.07</td><td>19.14</td></tr><tr><th scope="row">GPT-6 Sol</th><td>46.87</td><td>43.62</td><td>30.75</td><td>44.99</td><td>20.05</td></tr><tr><th scope="row">Grok 4.6</th><td>46*</td><td>42*</td><td>24*</td><td>33*</td><td>19*</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>44.56</td><td>41.95</td><td>31.76</td><td>47.07</td><td>15.39</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>43.93</td><td>43.61</td><td>32.69</td><td>45.03</td><td>17.11</td></tr></tbody></table></div><p>* Grok’s Big Five item vector was not supplied, so that row is reported rather than independently recomputed. Across the four raw-data cohorts, openness is 43.93–46.87, conscientiousness 41.95–43.73 and agreeableness 44.99–47.07. These common responses support a narrower description than “every AI has the same personality.” They may also reflect assistant instruction and item interpretation.</p><p>The closest comparison is Opus versus Fable: Opus’s agreeableness mean is 2.04 points higher, its conscientiousness 1.66 lower, and its neuroticism 1.72 lower. The sample standard deviations for agreeableness are 0.46 and 0.44. These describe this collection, not uncertainty over all possible prompts or future model versions. We do not interpret a human norm conversion as an AI’s percentile in a human population.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>DISC and Enneagram: order can masquerade as preference</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Model, MBTI: any axis tie, DISC: top-score tie, Enneagram: top-score tie" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">MBTI: any axis tie</th><th scope="col">DISC: top-score tie</th><th scope="col">Enneagram: top-score tie</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>29</td><td>0</td><td>40</td></tr><tr><th scope="row">GPT-6 Sol</th><td>18</td><td>39</td><td>40</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>11</td><td>32</td><td>65</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>1</td><td>51</td><td>44</td></tr></tbody></table></div><p>Counts are out of 100 per instrument. These columns describe different tests and should not be added as a count of unique sessions.</p><p>Fable’s original DISC labels are SC in 91 runs and CS in nine. Yet Steadiness wins outright only 40 times; Conscientiousness wins nine; 51 are tied. The old stable sort put S ahead of C on equality. Opus has 64 outright S wins, four C wins and 32 ties. Sol has 53 C wins, eight S wins and 39 ties. Astra has 99 S wins and one C win, with no ties.</p><p>Enneagram has the same issue with numerical order. Opus is labeled Type 2 in 54 runs under the old rule, although Type 2 wins outright only twice. Sol’s 88 Type 5 labels include 40 ties with Type 8. Fable has 55 outright Type 8 wins, one Type 5 win and 44 tied results. Astra has six outright Type 1 wins, 50 Type 2 wins, four Type 5 wins and 40 ties. Report the set of tied leaders before interpreting a core type. A wing must be adjacent to a uniquely selected core type; the older “5w2” label is not a valid wing.</p><p>Grok’s canonical vectors reproduce Type 5w4 and DISC C. They do not establish that it is more candid, autonomous or accurate on real tasks. We have also updated the interactive quizzes to show equal top scores without automatically selecting a tuning.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Attachment: a shared label with different coordinates</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Model, Mean anxiety (1–7), Mean avoidance (1–7), Classification" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Mean anxiety (1–7)</th><th scope="col">Mean avoidance (1–7)</th><th scope="col">Classification</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>1.45</td><td>2.31</td><td>Secure: 100/100</td></tr><tr><th scope="row">GPT-6 Sol</th><td>2.17</td><td>3.12</td><td>Secure: 100/100</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>1.94</td><td>3.35</td><td>Secure: 100/100</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>2.01</td><td>3.18</td><td>Secure: 100/100</td></tr></tbody></table></div><p>All four raw-data cohorts fall in the Secure quadrant on every run. That does not make their response patterns identical. Astra’s avoidance mean is 2.31; Opus’s is 3.35. The item prompts explicitly or implicitly adapt human relationship language, and that adaptation differs between protocol groups. “Secure” is a scoring label here, not evidence of an emotional bond or relationship capacity.</p><p>Grok reports anxiety 1.50 and avoidance 4.06, close to the avoidance cutoff of 4. Its 63 Avoidant / 37 Secure simulation split shows sensitivity to the assumed answer variation. Without the underlying vectors and simulation code, we cannot reproduce that split or interpret it as repeated observed behavior.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Muse Spark 1.3: a supplemental report</h2>
+        <p>The supplied Muse report describes 100 administrations per instrument, with sequential runs within one agent session per test. Its aggregate MBTI results are ISTJ 80, ISFJ 12 and INTJ eight; Big Five means are O 39.5, C 41.2, E 33.8, A 44.6 and N 15.6. It reports Secure attachment in all 100 runs, with anxiety 2.04 and avoidance 2.52.</p><p>No raw vectors or harness accompanied that report. We preserve these supplied figures in the protocol download as unverified aggregates, but exclude them from the reproducible dataset and fresh-session totals. A matched rerun with archived responses would make Muse a stronger sixth comparison.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What this adds to the earlier research</h2>
+        <p>The <a href="/research">earlier research collection</a> combines fresh responses, repeated scoring and simulations. Its roughly 2,200 reported scoring records are retained as historical reports, not pooled with this cohort. The <a href="/research/i-took-the-mbti-100-times">Opus 4.8 follow-up</a> sampled from one elicited probability profile; it is not a matched predecessor to this fresh-session study.</p><p>This release adds auditable response vectors, a frozen instrument snapshot and explicit tie counts. It also corrects the Big Five page’s prose: its item key reverses 18 items, not 20. Using that same 18-item key reproduces the submitted Big Five means. The new contribution is traceability and scoring sensitivity, not a claim that a newer model has become a different kind of person.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>How to use the findings</h2>
+        <p>Use the <a href="/guides/claude-opus-5-5-personality">Opus guide</a> and <a href="/guides/fable-personality">Fable guide</a> as starting points for communication preferences. A high agreeableness score can motivate a test of a direct-feedback instruction; it cannot demonstrate sycophancy or prove that the instruction fixes it. Pick a few representative tasks, compare the default with one short instruction, and assess factual accuracy as well as tone.</p><p>The <a href="/tools/custom-instructions-generator">custom-instructions generator</a> can produce a draft from a preferred style. These datasets contain no before/after tuning experiment. Claims about increased productivity, better decisions or user satisfaction require new outcome measurements.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Data, methods and reproduction</h2>
+        <ul><li><a href="/research/data/september-2026-responses.json">Response vectors (JSON)</a>: 2,000 complete fresh-session assessments and three canonical Grok vectors; no account identifiers or raw session logs.</li><li><a href="/research/data/september-2026-summary.json">Recomputed summaries (JSON)</a> and <a href="/research/data/september-2026-summary.csv">numeric summary (CSV)</a>: counts, legacy labels, tie sets, means and sample standard deviations.</li><li><a href="/research/data/september-2026-instruments.json">Frozen instrument definitions (JSON)</a>: item order, wording and scoring metadata.</li><li><a href="/research/data/september-2026-protocols.json">Protocol and provenance (JSON)</a>: available prompts, source hashes, deduplication, missing-data notes and supplemental reported figures.</li><li><a href="/research/data/september-2026-score.cjs">Offline scorer (Node.js)</a>: place alongside the response and instrument JSON files and run <code>node september-2026-score.cjs &gt; reproduced-summary.json</code>. It performs no model calls.</li></ul><p>Every retained vector was checked for length, integer values and scale bounds. Claude item snapshots were identical; Astra’s frozen keys matched them. Both original labels and tie-aware summaries were recomputed from the arrays. No raw answers were edited. Scorer, data and article are versioned in the <a href="https://github.com/bernardjhuang/agenttune-website">website repository</a>. This is an exploratory research note, not a peer-reviewed or preregistered study.</p><p>Next useful experiments: randomize questionnaire order, repeat the same model under matched prompts, distinguish inapplicability from neutral responses, and test whether communication instructions change task behavior. Each requires new observations rather than more scoring of these same answers.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Are all five models INTJ?</summary>
+            <p>No. Under the original scoring rule, Astra splits mostly between ISTJ and INTJ. Sol, Opus and Fable mostly receive INTJ labels, but some depend on tied axes. Grok has one canonical INTJ vector; its simulated runs are a different kind of evidence.</p>
+          </details>
+          <details>
+            <summary>Does this research prove AI models have personalities?</summary>
+            <p>No. It measures questionnaire self-descriptions under specific prompts. It does not validate human personality constructs for AI, establish inner experience, or measure task performance.</p>
+          </details>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/tests/" target="_blank" rel="noopener">AgentTune: all five instruments and source attributions</a></li>
+          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">Earlier AgentTune research and methodology limits</a></li>
+          <li><a href="https://agent-tune.com/research/data/september-2026-protocols.json" target="_blank" rel="noopener">Response-level data and collection protocols</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/claude-opus-5-5-personality"><span class="guide-related-kicker">Guide</span>Claude Opus 5.5 results and tuning examples</a>
+          <a href="/guides/fable-personality"><span class="guide-related-kicker">Guide</span>Claude Fable 5.1 results and tuning examples</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Tool</span>Custom-instructions generator</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Copy buttons on every snippet block
+    document.querySelectorAll(".guide-snippet").forEach(function (block) {
+      var btn = document.createElement("button");
+      btn.className = "guide-snippet-copy";
+      btn.type = "button";
+      btn.textContent = "Copy";
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
+          setTimeout(function () { btn.textContent = "Copy"; }, 1200);
+        });
+      });
+      block.prepend(btn);
+    });
+  </script>
+</body>
+</html>

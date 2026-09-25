@@ -31,6 +31,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Coding agent personality: the layer your AGENTS.md is missing"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is AGENTS.md replacing CLAUDE.md and Cursor rules?","acceptedAnswer":{"@type":"Answer","text":"Converging, not replacing. AGENTS.md is the portable common denominator — Codex reads it natively, and Cursor documents it as an alternative to .cursor/rules — but Claude Code's native file is still CLAUDE.md, and Cursor's .mdc rules do things AGENTS.md can't, like glob scoping. Many repos keep both, with one file pointing at the other."}},{"@type":"Question","name":"Can I use the identical personality section in all four files?","acceptedAnswer":{"@type":"Answer","text":"Yes. The personality layer is plain Markdown prose, and all four conventions accept plain Markdown. The only format difference is Cursor's .mdc frontmatter — three YAML lines at the top. Write the section once, paste it everywhere, and set alwaysApply: true in the Cursor copy so it loads in every chat."}},{"@type":"Question","name":"How long should the personality section be?","acceptedAnswer":{"@type":"Answer","text":"Ten to twenty lines. Instruction files compete for the agent's attention on every request, so each rule should earn its place. Concrete beats comprehensive: six rules the agent can check itself against outperform two paragraphs describing what kind of person you are."}},{"@type":"Question","name":"Will personality tuning change the code the agent writes?","acceptedAnswer":{"@type":"Answer","text":"Mostly no — code conventions still govern the diff. What changes is everything around the diff: whether the agent leads with the result or the reasoning, how it flags uncertainty, whether it pushes back on a bad approach before implementing it. That's the part you experience message by message."}},{"@type":"Question","name":"What if I don't know my personality type?","acceptedAnswer":{"@type":"Answer","text":"Take the free in-browser MBTI test at agent-tune.com — about five minutes, no email. Or skip typology entirely and handwrite three rules: how you want results reported, how much context you want, and when you want pushback. A personality type is a shortcut to those answers, not a prerequisite."}}]}</script>
 
+
   <script defer src="/consent.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -199,7 +201,7 @@ All timestamps are UTC. All money is integer cents.</div><p>Four conventions, on
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

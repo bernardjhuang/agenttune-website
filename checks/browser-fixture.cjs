@@ -67,7 +67,8 @@ function quiz(name) {
   const html = fs.readFileSync(path.join(ROOT, 'tests', name + '.html'), 'utf8');
   const f = fixture(html); f.run('quiz-utils.js'); f.run('data.js');
   const code = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].find(m => m[1].includes('const ITEMS ='))[1];
-  vm.runInContext(code, f.ctx, { filename: name + '.html' });
+  const exposed = code.replace('const advance = window.ATQuiz.transition();', 'window.__quiz = {items:ITEMS,state,showResult,compute:' + (name === 'mbti' ? 'computeType' : 'computeResult') + '}; const advance = window.ATQuiz.transition();');
+  vm.runInContext(exposed, f.ctx, { filename: name + '.html' });
   f.ids.get('quiz-start').click();
   return f;
 }

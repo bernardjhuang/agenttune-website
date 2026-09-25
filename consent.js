@@ -18,6 +18,11 @@
   var started = false;
   window[DISABLE_KEY] = true;
 
+  window.atTrack = function (event) {
+    if (!allowed || !["quiz_start", "quiz_complete", "tuning_copy", "tuning_download", "generator_copy", "guide_copy", "integration_copy"].includes(event)) return;
+    window.gtag("event", event);
+  };
+
   function getChoice() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
   }

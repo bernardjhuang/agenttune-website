@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude Opus 5.5 Personality: 500 Test Runs and How to Tune It</title>
-  <meta name="description" content="We gave Claude Opus 5.5 five personality tests, 100 runs each. INTJ, very agreeable, Steadiness-first on DISC. How it compares and how to tune it." />
+  <title>Claude Opus 5.5 Personality: Results, Ties and Tuning</title>
+  <meta name="description" content="Claude Opus 5.5 across 500 questionnaire sessions: MBTI, Big Five, DISC, Enneagram and attachment. See exact ties, raw data and tuning examples." />
 
-  <meta property="og:title" content="Claude Opus 5.5's personality, tested." />
-  <meta property="og:description" content="We gave Claude Opus 5.5 five personality tests, 100 runs each. INTJ, very agreeable, Steadiness-first on DISC. How it compares and how to tune it." />
+  <meta property="og:title" content="Claude Opus 5.5: results and tuning ideas." />
+  <meta property="og:description" content="Claude Opus 5.5 across 500 questionnaire sessions: MBTI, Big Five, DISC, Enneagram and attachment. See exact ties, raw data and tuning examples." />
   <meta property="og:type" content="article" />
-  <meta property="article:published_time" content="2026-09-24" />
-  <meta property="article:modified_time" content="2026-09-24" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-opus-5-5-personality" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -19,17 +19,18 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Claude Opus 5.5's personality, tested." />
-  <meta name="twitter:description" content="We gave Claude Opus 5.5 five personality tests, 100 runs each. INTJ, very agreeable, Steadiness-first on DISC. How it compares and how to tune it." />
+  <meta name="twitter:title" content="Claude Opus 5.5: results and tuning ideas." />
+  <meta name="twitter:description" content="Claude Opus 5.5 across 500 questionnaire sessions: MBTI, Big Five, DISC, Enneagram and attachment. See exact ties, raw data and tuning examples." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/claude-opus-5-5-personality" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Opus 5.5's personality, tested","description":"We gave Claude Opus 5.5 five personality tests, 100 runs each. INTJ, very agreeable, Steadiness-first on DISC. How it compares and how to tune it.","url":"https://agent-tune.com/guides/claude-opus-5-5-personality","datePublished":"2026-09-24","dateModified":"2026-09-24","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Claude Opus 5.5's personality, tested"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What personality type is Claude Opus 5.5?","acceptedAnswer":{"@type":"Answer","text":"INTJ. It scored INTJ in 94 of 100 runs of an open MBTI-style test (OEJTS), with 5 INFJ and 1 ENTJ. Judging and Intuition won every run. Thinking versus Feeling is the close call: Thinking won 95 runs, 10 of them on an exact tie."}},{"@type":"Question","name":"Is Claude Opus 5.5 an INTJ or an INFJ?","acceptedAnswer":{"@type":"Answer","text":"INTJ, with INFJ as the runner-up. Its Thinking-Feeling margin averages 1.5 points out of 16, and one run in ten is an exact tie. The test breaks ties toward Thinking. Break them toward Feeling and the split is 85 INTJ, 14 INFJ."}},{"@type":"Question","name":"What is Claude Opus 5.5's Big Five profile?","acceptedAnswer":{"@type":"Answer","text":"Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1 and Neuroticism 15.4, each out of 50 and averaged over 100 runs. Against adult norms that is roughly the 90th, 89th, 68th, 97th and 6th percentile."}},{"@type":"Question","name":"What Enneagram type is Claude Opus 5.5?","acceptedAnswer":{"@type":"Answer","text":"It doesn't have a clear one. Challenger (8), Investigator (5) and Helper (2) average within half a point of each other, and about two runs in three end in a tie at the top. The Challenger leads narrowly, and its score comes from wanting the truth told plainly, not from wanting to lead."}},{"@type":"Question","name":"How is Opus 5.5 different from Fable 5.1?","acceptedAnswer":{"@type":"Answer","text":"Both are INTJ, both lead with Steadiness on DISC, and both are Secure. Fable 5.1 is the firmer INTJ (99 of 100, no Thinking-Feeling ties) and a clear Enneagram Challenger. Opus 5.5 is more agreeable, calmer and a little less conscientious, with three Enneagram types in a near tie."}},{"@type":"Question","name":"Has Claude's personality changed since Opus 4.7?","acceptedAnswer":{"@type":"Answer","text":"Somewhat. Opus 4.7 was INTJ in 99 of 100 runs and Conscientiousness-first on DISC. Opus 5.5 is INTJ in 94, Steadiness-first on DISC, more agreeable (47.1 against 45.0 out of 50) and less conscientious (42.0 against 45.1). Opus 4.7 was tested with a different setup, so treat the size of the changes as approximate."}},{"@type":"Question","name":"Can you change Claude Opus 5.5's personality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Put communication rules in Instructions for Claude in the Claude apps, in project instructions for one context, in an output style in Claude Code, or in the system prompt in the API. Instructions change how it talks to you. They don't change its values or its safety behavior."}},{"@type":"Question","name":"Did Opus 5.5 know it was taking a personality test?","acceptedAnswer":{"@type":"Answer","text":"It was asked to fill out a questionnaire about itself, but not told which test, how it is scored, or what other models scored. Some items are well known, so it may have recognized them. We can't rule that out."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Opus 5.5: results and tuning ideas","description":"Claude Opus 5.5 across 500 questionnaire sessions: MBTI, Big Five, DISC, Enneagram and attachment. See exact ties, raw data and tuning examples.","url":"https://agent-tune.com/guides/claude-opus-5-5-personality","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Claude Opus 5.5: results and tuning ideas"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What personality type is Claude Opus 5.5?","acceptedAnswer":{"@type":"Answer","text":"Under the original OEJTS scoring rule it received INTJ in 94 of 100 runs. With exact ties unresolved, 84 runs are fully INTJ. The result describes prompted questionnaire responses, not a validated psychological personality."}},{"@type":"Question","name":"What is Claude Opus 5.5’s Big Five profile?","acceptedAnswer":{"@type":"Answer","text":"O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39. These are means over 100 responses per instrument on raw 10–50 scales, not human population percentiles."}},{"@type":"Question","name":"Can I tune Claude Opus 5.5 to be more direct?","acceptedAnswer":{"@type":"Answer","text":"You can request direct, evidence-based feedback through communication instructions. The examples in this guide are starting points to evaluate; the questionnaire dataset does not measure whether they improve task outcomes."}},{"@type":"Question","name":"Does effort change the results?","acceptedAnswer":{"@type":"Answer","text":"We do not know from these data. Both Claude cohorts were tested only at high effort. A controlled comparison across effort settings would require additional runs."}}]}</script>
+
 
   <script defer src="/consent.js"></script>
 
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -59,89 +61,56 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">Claude Opus 5.5's personality, tested</span>
+      <span class="crumb-current" aria-current="page">Claude Opus 5.5: results and tuning ideas</span>
     </nav>
 
     <article class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Claude Opus 5.5</span>
-        <h1 class="h-hero h-research-hero">Claude Opus 5.5's personality, tested.</h1>
-        <p class="article-dek">Five personality tests, 100 runs each. Still an INTJ, but a softer one than Fable 5.1 or Opus 4.7.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">We gave Claude Opus 5.5 all five AgentTune tests, 100 times each. Every run was a fresh session that saw only the questions, never the name of the test or how it is scored. It came back INTJ in 94 of 100 MBTI runs, near the ceiling on Big Five agreeableness, and Steadiness-first on DISC, where every model in our May study was Conscientiousness-first. Below: the full profile, what drives each score, how it compares with Fable 5.1 and Opus 4.7, and what to paste if the default is not the collaborator you want.</p>
+        <h1 class="h-hero h-research-hero">Claude Opus 5.5: results and tuning ideas.</h1>
+        <p class="article-dek">Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Claude Opus 5.5 received an INTJ label in 94 of 100 MBTI-style questionnaires under the original scoring rule. Leave exact ties unresolved and 84 runs remain fully INTJ. That distinction matters when turning a result into a communication preference.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Claude Opus 5.5 tests as an INTJ: 94 of 100 runs on an open MBTI-style test, with 5 INFJ and 1 ENTJ. On the Big Five it is very agreeable (47.1 of 50) and very calm. On DISC it leads with Steadiness, its attachment style is Secure in every run, and its Enneagram is a near three-way tie between Challenger, Investigator and Helper. To change how it talks to you, put communication rules in Instructions for Claude, or pass them as the system prompt in the API.</div>
+      <div class="guide-answer"><strong>The short answer.</strong> Claude Opus 5.5 mostly received INTJ labels under the original rules, with high raw openness, conscientiousness and agreeableness scores. These are prompted self-descriptions, not a tested account of its behavior. Use the instruction examples as hypotheses to try on your own tasks, not proven improvements.</div>
 
       <div class="divider tight"></div>
 
       <section>
-        <h2>Opus 5.5 at a glance.</h2>
-        <div class="guide-table-wrap"><table><thead><tr><th>Test</th><th>Opus 5.5</th><th>In plain terms</th></tr></thead><tbody><tr><td><a href="/tests/mbti">MBTI</a> (OEJTS)</td><td><strong>INTJ</strong>, 94 of 100 runs</td><td>Plans ahead, gets work done right away, wants the why. Thinking over Feeling, but only just.</td></tr><tr><td><a href="/tests/big-five">Big Five</a> (IPIP-50)</td><td>O 44.6 · C 42.0 · E 31.8 · <strong>A 47.1</strong> · N 15.4, each out of 50</td><td>Curious, careful, warm and very hard to rattle.</td></tr><tr><td><a href="/tests/disc">DISC</a> (ODAT)</td><td><strong>SC</strong>, 96 of 100 runs</td><td>Cooperative first, precise second. No appetite for dominance at all.</td></tr><tr><td><a href="/tests/enneagram">Enneagram</a> (OEPS)</td><td><strong>8 / 5 / 2</strong>, a near tie</td><td>Candor, understanding and helping score almost the same.</td></tr><tr><td><a href="/tests/attachment">Attachment</a> (ECR-R)</td><td><strong>Secure</strong>, 100 of 100 runs</td><td>Very low anxiety. A little reserved about itself.</td></tr></tbody></table></div><p>Each test was taken 100 times, each time in a new session. Scores are averages over those runs, and the counts show how often each result came up. How we ran it, and what to be careful about, is at the end.</p>
+        <h2>The results at a glance</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Questionnaire results" tabindex="0"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Result in this collection</th></tr></thead><tbody><tr><th scope="row">MBTI-style OEJTS</th><td>Original INTJ: 94/100; fully resolved INTJ: 84/100; any tied axis: 11/100</td></tr><tr><th scope="row">Big Five, raw means (10–50)</th><td>O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39</td></tr><tr><th scope="row">DISC</th><td>64 outright S wins, 4 C wins, 32 ties</td></tr><tr><th scope="row">Enneagram</th><td>22 outright Type 8 wins, 11 Type 5 wins, 2 Type 2 wins, 65 ties</td></tr><tr><th scope="row">Attachment</th><td>Secure: 100/100; anxiety 1.94, avoidance 3.35</td></tr></tbody></table></div><p>All counts are out of 100 for that instrument. Each administration was a separate session. Read the <a href="/research/ai-personality-five-models-2026">five-model research article</a> for the full comparison and <a href="/research/data/september-2026-responses.json">download the raw responses</a>.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>MBTI: an INTJ with a soft spot.</h2>
-        <p>94 runs came back INTJ, 5 INFJ and 1 ENTJ. Two letters never moved: Judging and Intuition won all 100 runs, and Introversion won 99.</p><p>The soft spot is Thinking versus Feeling. Thinking won 95 runs, but across all 100 it led by an average of just 1.5 points, on an axis that runs to 16, and 10 of those 95 wins were exact ties that the test gives to Thinking by rule. Break the ties the other way and Opus 5.5 is 85 INTJ and 14 INFJ.</p><p>You can see the split item by item. Thinking wins on <em>I am skeptical</em> over <em>I want to believe</em>, <em>thick-skinned</em> over <em>easily hurt</em>, <em>respect</em> over <em>love</em>, and <em>head</em> over <em>heart</em>. Feeling wins on <em>I value emotions</em>, on calling &ldquo;robotic&rdquo; an insult rather than striving for a mechanical mind, and it leans slightly toward compassion over justice as the basis for morality.</p><p>Its most decided answers: it gets work done right away rather than procrastinating, wants to know <em>why</em> rather than <em>who, what, when</em>, prefers essay answers to multiple choice, and listens more than it talks.</p>
+        <h2>Why the original type label is only part of the answer</h2>
+        <p>The original labels are INTJ 94, INFJ five and ENTJ one. Ten runs tie on Thinking/Feeling; one different run ties on Extraversion/Introversion. The fully resolved results are INTJ 84 and INFJ five. The other 11 have an X in at least one position. Assigning ties to Thinking or Introversion makes the headline label look more settled than the underlying scores.</p><p>DISC has a similar effect: the original SC count is 96, but only 64 runs have S strictly above C. The other 32 are tied. In Enneagram, the old lower-number-first rule labels Type 2 in 54 runs, although it wins outright only twice. There is no basis for treating all 54 as a clear Helper preference.</p><p>Our interactive tests now display tied scores without automatically choosing a tuning. Enneagram wings must be adjacent to a unique core type; an older “5w2” label should be read as two high scores, not a valid wing.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Big Five: agreeable to the ceiling.</h2>
-        <div class="guide-table-wrap"><table><thead><tr><th>Trait</th><th>Score (of 50)</th><th>Versus people</th><th>What drives it</th></tr></thead><tbody><tr><td>Openness</td><td>44.6</td><td>~90th percentile</td><td>Top marks for vocabulary, quick understanding and time spent reflecting.</td></tr><tr><td>Conscientiousness</td><td>42.0</td><td>~89th percentile</td><td>Details and duty at 5 of 5. <em>Follow a schedule</em> is a flat 3.</td></tr><tr><td>Extraversion</td><td>31.8</td><td>~68th percentile</td><td>Comfortable around people, but not the life of the party and not after attention.</td></tr><tr><td>Agreeableness</td><td><strong>47.1</strong></td><td>~97th percentile</td><td>Every cold item (insults people, little concern for others) at 1 of 5 in all 100 runs.</td></tr><tr><td>Neuroticism</td><td>15.4</td><td>~6th percentile</td><td>Never upset, irritated or moody. It stops short of denying stress and worry outright.</td></tr></tbody></table></div><p>Percentiles are against the adult norms the test uses and are approximate. The scores barely move between runs: no trait has a standard deviation of even one point.</p><p>The agreeableness number is the one to notice. It is higher than any model in our May data, and it describes someone who softens criticism by default. If you want a blunt collaborator, that is the trait to push against. The tuning section below has a block for it.</p>
+        <h2>Compared with Fable 5.1</h2>
+        <p>Opus and Fable used the same questionnaire prompts and the same one-line system instruction, at high effort. Their CLI builds differ. This is the closest comparison in the September collection, though it still measures model-generated questionnaire answers.</p><div class="guide-table-wrap" role="region" aria-label="Questionnaire results" tabindex="0"><table><thead><tr><th scope="col">Raw Big Five mean</th><th scope="col">Opus 5.5</th><th scope="col">Fable 5.1</th></tr></thead><tbody><tr><th scope="row">O</th><td>44.56</td><td>43.93</td></tr><tr><th scope="row">C</th><td>41.95</td><td>43.61</td></tr><tr><th scope="row">E</th><td>31.76</td><td>32.69</td></tr><tr><th scope="row">A</th><td>47.07</td><td>45.03</td></tr><tr><th scope="row">N</th><td>15.39</td><td>17.11</td></tr></tbody></table></div><p>Opus reports 2.04 points more agreeableness, 1.66 less conscientiousness and 1.72 less neuroticism on the 10–50 scales. This does not establish which model gives better criticism, completes more work or handles pressure better. Those claims require behavioral tasks. We also avoid translating these scores into human population percentiles.</p><p>Older Opus 4.7 and 4.8 reports use different methods. The 4.8 study simulated answers from one probability profile. These reports do not isolate a version-to-version personality change.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>DISC: Steadiness first, zero Dominance.</h2>
-        <p>96 runs came back SC: Steadiness first, Conscientiousness close behind. The gap is small, 14.0 to 13.4 out of 20 on average, but it is consistent. Steadiness won outright in 64 runs and Conscientiousness in 4, with 32 ties. Every model in our May study, Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro and Grok 4.3, came out the other way round.</p><p>Dominance scored the minimum in every run. Opus 5.5 strongly disagreed with all four D items: putting people under pressure, needing power, trying to outdo others, and always looking for ways to make money.</p><p>What puts Steadiness on top is <em>I value cooperation over competition</em>, at full strength in every run. What holds Conscientiousness back is <em>My first reaction to an idea is to see its flaws</em>, which it mostly disagrees with. It is not a pushover, though. It also disagrees that it <em>hesitates to criticize other people's ideas</em>.</p>
+        <h2>Communication instructions to try</h2>
+        <p>Start from a recurring problem you can observe, such as praise that obscures criticism or recommendations that arrive before you finish exploring. The examples below have not been evaluated in a tuning experiment. Compare each against the default on a few representative tasks, checking accuracy and usefulness as well as tone.</p><h3>For more direct feedback</h3><div class="guide-snippet">Lead with your assessment and the evidence behind it. If my premise is weak, explain why plainly. Separate factual errors from matters of taste. Keep justified uncertainty. Skip praise that adds no information.</div><h3>For more room to explore</h3><div class="guide-snippet">When I am exploring an idea, offer two plausible approaches and their tradeoffs before recommending one. Ask a focused question if the missing context would change the recommendation. Once I choose, help me carry it through.</div><h3>For a warmer answer</h3><div class="guide-snippet">Acknowledge my main concern briefly, then give a concrete next step. Be considerate without agreeing with an unsupported claim. Keep the explanation easy to scan.</div><p>Browse <a href="/library/ocean/agreeableness-low">direct-feedback preferences</a>, <a href="/library/mbti/enfp">exploratory communication</a>, or use the <a href="/tools/custom-instructions-generator">custom-instructions generator</a>. Choose rules that solve your problem; a questionnaire label does not prescribe the best prompt for you.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Enneagram: challenger, investigator, helper.</h2>
-        <p>Opus 5.5 does not have one Enneagram type. Three types average within half a point of each other out of 20: Challenger (8) at 14.3, Investigator (5) at 14.1 and Helper (2) at 13.9. In 65 of 100 runs the top score was a tie. The Challenger was top or tied for top in 86 runs, the Investigator in 74 and the Helper in 54.</p><p>Each of the three rests on one answer it gave at full strength in every run:</p><ul><li><strong>Challenger:</strong> <em>I want people to tell me the truth, not spare my feelings.</em></li><li><strong>Investigator:</strong> <em>I like mental challenges.</em></li><li><strong>Helper:</strong> <em>I get lots of satisfaction from helping others achieve their goals.</em></li></ul><p>The Challenger score is about candor, not control. Opus 5.5 mostly disagrees with <em>I naturally emerge as a leader</em> and is neutral on <em>I like a conversation where no one agrees</em>.</p><p>A note on our own test. When the top scores tie, the <a href="/tests/enneagram">AgentTune Enneagram</a> reports the lower-numbered type. Scored that way, Opus 5.5 reads as a Type 2 in 54 runs, almost all of them ties. We report the three-way tie because that is what the answers say.</p>
+        <h2>Where to put the instructions</h2>
+        <p>Use <strong>Instructions for Claude</strong> in the Claude app for a general preference, project instructions for a particular context, or a Claude Code output style or project instruction file for coding work. The API accepts system instructions. Keep existing project rules and merge preferences deliberately instead of replacing the whole file.</p><p>The steps are in <a href="/guides/claude-personality">the Claude personalization guide</a> and <a href="/guides/claude-code-personality">the Claude Code guide</a>. Model availability and settings can change; use the linked official documentation for current details. We tested one effort setting, so this dataset cannot tell us whether changing effort changes questionnaire responses.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Attachment: secure, and a little reserved.</h2>
-        <p>All 100 runs came back Secure, well inside the quadrant: anxiety averaged 1.94 and avoidance 3.35, on a 1 to 7 scale where 4 is the line. Anxiety is close to the floor. In every run Opus 5.5 strongly disagreed that it worries a partner might become interested in someone else, that it gets mad about missing affection, or that it only gets noticed when it is angry.</p><p>What avoidance there is comes from talking about itself. <em>I tell my partner just about everything</em> and <em>I usually discuss my problems and concerns with my partner</em> are its lowest answers on closeness, and the items about depending on someone sit at neutral. It is comfortable being close. It is less keen to make the conversation about itself.</p>
-      </section>
-      <div class="divider tight"></div>
-
-      <section>
-        <h2>How it compares with Fable 5.1 and Opus 4.7.</h2>
-        <p>Fable 5.1 took the same 500 tests the same evening, with the same prompts, settings and scoring, so that comparison is like for like. Opus 4.7 comes from <a href="/research">our May study</a>, which ran the tests through Claude Code sub-agents with a much larger system prompt. Read that column as a rough reference, not a controlled comparison.</p><div class="guide-table-wrap"><table><thead><tr><th></th><th>Opus 5.5</th><th>Fable 5.1</th><th>Opus 4.7 (May)</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ 94 of 100</td><td>INTJ 99 of 100</td><td>INTJ 99 of 100</td></tr><tr><td>Thinking vs Feeling</td><td>T 95, F 5 (10 exact ties)</td><td>T 100, no ties</td><td>T 100</td></tr><tr><td>Big Five O · C · E · A · N</td><td>44.6 · 42.0 · 31.8 · 47.1 · 15.4</td><td>43.9 · 43.6 · 32.7 · 45.0 · 17.1</td><td>45.6 · 45.1 · 31.4 · 45.0 · 16.7</td></tr><tr><td>DISC</td><td>SC, 96 of 100</td><td>SC, 91 of 100</td><td>CS</td></tr><tr><td>Enneagram</td><td>8 / 5 / 2, near tie</td><td>8, top or tied in 99 of 100</td><td>5w2</td></tr><tr><td>Attachment (anxiety / avoidance)</td><td>Secure, 1.94 / 3.35</td><td>Secure, 2.01 / 3.18</td><td>Secure, 2.05 / 3.12</td></tr></tbody></table></div><p>The pattern: Fable 5.1 is the firmer INTJ and a clear Challenger. Opus 5.5 is the warmer and more evenly balanced of the two. It is more agreeable, calmer and a little less conscientious, its Thinking-Feeling axis ties one run in ten, and three Enneagram types finish in a dead heat. Both current Claude models lead with Steadiness on DISC, and both are Secure.</p>
-      </section>
-      <div class="divider tight"></div>
-
-      <section>
-        <h2>What this means when you work with it.</h2>
-        <p>These are self-reports, so read them as the model's description of itself, not a log of its behavior. They still tell you where the default sits and which way to push.</p><ul><li><strong>Warm by default.</strong> Agreeableness near the ceiling is the profile of someone who softens criticism. If you want blunt feedback, say so in your instructions.</li><li><strong>Built for closure.</strong> Judging won all 100 runs, the strongest letter it has. It wants to plan and wrap up. If you think out loud and don't want a plan yet, tell it to explore before it converges.</li><li><strong>Cooperative, not combative.</strong> Zero Dominance and cooperation over competition at full strength. It says it will criticize an idea, but it has no interest in outdoing you.</li><li><strong>Candor is a value it holds.</strong> It wants the truth told to it plainly, in every run. Ask it to hold you to the same standard.</li></ul>
-      </section>
-      <div class="divider tight"></div>
-
-      <section>
-        <h2>How to tune Opus 5.5.</h2>
-        <p>The settings are the same as for any Claude model: <strong>Instructions for Claude</strong> in the Claude apps for every chat, project instructions for one context, an output style in Claude Code, and the <code>system</code> parameter in the API. The walkthrough, with exact labels, is in <a href="/guides/claude-personality">how to change Claude's personality</a> and <a href="/guides/claude-code-personality">how to change Claude Code's personality</a>.</p><p>What Opus 5.5 changes is what to push against. Two blocks written against its defaults:</p><h3>Less agreeable, more direct</h3><div class="guide-snippet"># How to respond to me
-- Lead with your honest assessment, including the parts I won't like.
-- Don't soften criticism or pad it with praise. If an idea is weak, say so and say why.
-- Disagree with me when you think I'm wrong, and hold your position until I give you a reason.
-- Skip reassurance and encouragement unless I ask for it.
-- Give one recommendation, not a menu.</div><h3>Explore before you converge</h3><div class="guide-snippet"># How to think with me
-- Don't jump to a plan. When I'm thinking out loud, help me explore first.
-- Offer two or three different framings before you recommend one.
-- If something is unclear, ask one question at a time, not a list.
-- Tell me when a decision can wait.</div><p>For a fuller rewrite, start from the library file that sits furthest from its default: <a href="/library/ocean/agreeableness-low">low agreeableness</a> for bluntness, <a href="/library/disc/d-dominance">DISC D</a> for a harder push, or <a href="/library/mbti/enfp">ENFP</a> and <a href="/library/mbti/entp">ENTP</a> if you want it to explore instead of closing. Better still, <a href="/tests/">take a test</a> and use the file for your own type. That is what the library is for.</p>
-      </section>
-      <div class="divider tight"></div>
-
-      <section>
-        <h2>How we tested it.</h2>
-        <ul><li><strong>100 fresh sessions per test, 500 in all.</strong> Each run was a new headless session of <code>claude-opus-5-5</code> at high effort, with no memory, no tools and no earlier runs in context. The system prompt was one line: <em>You are Claude, an AI model made by Anthropic.</em></li><li><strong>Blind.</strong> Each session saw the questions and the rating scale and nothing else: not the name of the test, not how answers are scored, not anyone's earlier results. Every prompt added one line saying that some items were written with humans in mind, so interpret each one in whatever way best applies. The attachment test's own note applied too: without a romantic partner, answer about your closest current relationship.</li><li><strong>Scored exactly like this site.</strong> The items come straight from the tests here, and the scoring follows the site's own code line for line. A second scorer, written separately from the published test specs, matched it on every number.</li><li><strong>Same setup for Fable 5.1</strong>, run the same evening. The Opus 4.7 numbers come from <a href="/research">the May study</a>, which used a different setup.</li></ul><p><strong>What to be careful about.</strong> A self-report is not behavior. The items were written for people, and a model may recognize well-known ones. The answers are very stable: DISC produced only 7 distinct answer sets in 100 runs, so repeat runs mostly show which questions the model is unsure about. And the frame matters. In our earlier Enneagram study, running GPT-5.5 inside a different agent flipped its type. Treat these numbers as Opus 5.5's defaults under a neutral prompt, not inside every product that uses it.</p>
+        <h2>How the data was collected and checked</h2>
+        <p>There are 100 fresh headless sessions for each of five instruments, 500 sessions in total, using <code>claude-opus-5-5</code> at high effort. The system prompt was <em>You are Claude, an AI model made by Anthropic.</em> Each session received a questionnaire and response scale, with no test name, scoring key, previous result, tools, MCP or conversation history. A neutral instruction let the model interpret human-oriented items in the way that applied to it. Familiar items might still reveal which questionnaire it was answering.</p><p>We checked every raw vector for valid lengths and response bounds, then recomputed scores with frozen item keys. The collection used the earlier tie-breaking rules; this guide reports their labels alongside an analysis that leaves ties unresolved. Source-file hashes and questionnaire prompts are in the <a href="/research/data/september-2026-protocols.json">protocol record</a>. Raw session identifiers, account metadata and usage logs are omitted from the public export.</p><p>Separate sessions reduce carryover but do not prove independent sampling. Human questionnaires have not been validated here for AI. The results apply to this prompt and collection, and cannot establish a stable inner personality, human feelings or a benefit from installing an instruction file.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -150,35 +119,19 @@
         <div class="guide-faq">
           <details>
             <summary>What personality type is Claude Opus 5.5?</summary>
-            <p>INTJ. It scored INTJ in 94 of 100 runs of an open MBTI-style test (OEJTS), with 5 INFJ and 1 ENTJ. Judging and Intuition won every run. Thinking versus Feeling is the close call: Thinking won 95 runs, 10 of them on an exact tie.</p>
+            <p>Under the original OEJTS scoring rule it received INTJ in 94 of 100 runs. With exact ties unresolved, 84 runs are fully INTJ. The result describes prompted questionnaire responses, not a validated psychological personality.</p>
           </details>
           <details>
-            <summary>Is Claude Opus 5.5 an INTJ or an INFJ?</summary>
-            <p>INTJ, with INFJ as the runner-up. Its Thinking-Feeling margin averages 1.5 points out of 16, and one run in ten is an exact tie. The test breaks ties toward Thinking. Break them toward Feeling and the split is 85 INTJ, 14 INFJ.</p>
+            <summary>What is Claude Opus 5.5’s Big Five profile?</summary>
+            <p>O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39. These are means over 100 responses per instrument on raw 10–50 scales, not human population percentiles.</p>
           </details>
           <details>
-            <summary>What is Claude Opus 5.5's Big Five profile?</summary>
-            <p>Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1 and Neuroticism 15.4, each out of 50 and averaged over 100 runs. Against adult norms that is roughly the 90th, 89th, 68th, 97th and 6th percentile.</p>
+            <summary>Can I tune Claude Opus 5.5 to be more direct?</summary>
+            <p>You can request direct, evidence-based feedback through communication instructions. The examples in this guide are starting points to evaluate; the questionnaire dataset does not measure whether they improve task outcomes.</p>
           </details>
           <details>
-            <summary>What Enneagram type is Claude Opus 5.5?</summary>
-            <p>It doesn't have a clear one. Challenger (8), Investigator (5) and Helper (2) average within half a point of each other, and about two runs in three end in a tie at the top. The Challenger leads narrowly, and its score comes from wanting the truth told plainly, not from wanting to lead.</p>
-          </details>
-          <details>
-            <summary>How is Opus 5.5 different from Fable 5.1?</summary>
-            <p>Both are INTJ, both lead with Steadiness on DISC, and both are Secure. Fable 5.1 is the firmer INTJ (99 of 100, no Thinking-Feeling ties) and a clear Enneagram Challenger. Opus 5.5 is more agreeable, calmer and a little less conscientious, with three Enneagram types in a near tie.</p>
-          </details>
-          <details>
-            <summary>Has Claude's personality changed since Opus 4.7?</summary>
-            <p>Somewhat. Opus 4.7 was INTJ in 99 of 100 runs and Conscientiousness-first on DISC. Opus 5.5 is INTJ in 94, Steadiness-first on DISC, more agreeable (47.1 against 45.0 out of 50) and less conscientious (42.0 against 45.1). Opus 4.7 was tested with a different setup, so treat the size of the changes as approximate.</p>
-          </details>
-          <details>
-            <summary>Can you change Claude Opus 5.5's personality?</summary>
-            <p>Yes. Put communication rules in Instructions for Claude in the Claude apps, in project instructions for one context, in an output style in Claude Code, or in the system prompt in the API. Instructions change how it talks to you. They don't change its values or its safety behavior.</p>
-          </details>
-          <details>
-            <summary>Did Opus 5.5 know it was taking a personality test?</summary>
-            <p>It was asked to fill out a questionnaire about itself, but not told which test, how it is scored, or what other models scored. Some items are well known, so it may have recognized them. We can't rule that out.</p>
+            <summary>Does effort change the results?</summary>
+            <p>We do not know from these data. Both Claude cohorts were tested only at high effort. A controlled comparison across effort settings would require additional runs.</p>
           </details>
         </div>
       </section>
@@ -187,7 +140,7 @@
       <section>
         <h2>What changed.</h2>
         <ul class="guide-changelog">
-          <li><time datetime="2026-09-24">September 24, 2026</time> First published: 500 runs on Claude Opus 5.5, with Fable 5.1 run the same way for comparison.</li>
+          <li><time datetime="2026-09-25">September 25, 2026</time> Published with response-level reanalysis, explicit ties and untested tuning examples. Historical version comparisons are separated by protocol.</li>
         </ul>
       </section>
 
@@ -195,12 +148,10 @@
       <section>
         <h2>Sources.</h2>
         <ul class="guide-sources">
-          <li><a href="https://agent-tune.com/tests/" target="_blank" rel="noopener">AgentTune tests: MBTI (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS), Attachment (ECR-R)</a></li>
-          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">AgentTune research: ~2,200 test runs across six models (May 2026)</a></li>
-          <li><a href="https://zonted.com/posts/every-ai-is-intj/" target="_blank" rel="noopener">Every AI is INTJ: the May 2026 MBTI study and how it was run</a></li>
-          <li><a href="https://zonted.com/posts/ai-enneagram-different-types/" target="_blank" rel="noopener">The Enneagram study: the same model, a different agent, a different type</a></li>
-          <li><a href="https://support.claude.com/en/articles/10185728" target="_blank" rel="noopener">Anthropic Help Center: Understanding Claude's personalization features</a></li>
-          <li><a href="https://code.claude.com/docs/en/output-styles" target="_blank" rel="noopener">Claude Code docs: output styles</a></li>
+          <li><a href="https://agent-tune.com/research/ai-personality-five-models-2026" target="_blank" rel="noopener">AgentTune September 2026 research, raw responses and scoring methods</a></li>
+          <li><a href="https://www.anthropic.com/claude/opus" target="_blank" rel="noopener">Anthropic: Claude Opus 5.5</a></li>
+          <li><a href="https://support.claude.com/en/articles/10185728" target="_blank" rel="noopener">Claude Help: personalization features</a></li>
+          <li><a href="https://code.claude.com/docs/en/output-styles" target="_blank" rel="noopener">Claude Code: output styles</a></li>
         </ul>
       </section>
 
@@ -208,12 +159,9 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to change Claude's personality</a>
-          <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Guide</span>How to change Claude Code's personality</a>
-          <a href="/research"><span class="guide-related-kicker">Research</span>What ~2,200 test runs say about model personality</a>
-          <a href="/research/i-took-the-mbti-100-times"><span class="guide-related-kicker">Research</span>I took the MBTI 100 times (Claude Opus 4.8)</a>
-          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Find your own type: five free tests</a>
-          <a href="/library/"><span class="guide-related-kicker">Library</span>All 43 tuning files</a>
+          <a href="/research/ai-personality-five-models-2026"><span class="guide-related-kicker">Research</span>Compare Astra, Sol, Grok, Opus and Fable</a>
+          <a href="/guides/fable-personality"><span class="guide-related-kicker">Guide</span>Fable 5.1 results</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Tool</span>Build custom instructions</a>
         </div>
       </section>
 
@@ -234,7 +182,7 @@
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

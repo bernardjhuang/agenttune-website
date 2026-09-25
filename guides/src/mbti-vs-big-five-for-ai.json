@@ -22,7 +22,7 @@
     },
     {
       "h2": "Take both. It's ten minutes.",
-      "html": "<p>Both tests are free, in-browser, and take about five minutes each — <a href=\"/tests/mbti\">MBTI (OEJTS)</a> and <a href=\"/tests/big-five\">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>, or jump to <a href=\"/guides/coding-agent-personality\">the coding-agent version</a> if your agent lives in a terminal.</p>"
+      "html": "<p>Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — <a href=\"/tests/mbti\">MBTI (OEJTS)</a> and <a href=\"/tests/big-five\">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>, or jump to <a href=\"/guides/coding-agent-personality\">the coding-agent version</a> if your agent lives in a terminal.</p>"
     }
   ],
   "faq": [
@@ -80,5 +80,5 @@
     }
   ],
   "published": "2026-07-23",
-  "updated": "2026-09-24"
+  "updated": "2026-09-25"
 }

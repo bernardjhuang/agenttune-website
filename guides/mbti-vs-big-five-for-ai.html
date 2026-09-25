@@ -10,7 +10,7 @@
   <meta property="og:description" content="Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-09-24" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,9 +27,10 @@
   <link rel="canonical" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-24","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"MBTI vs Big Five for AI: crisp switches or calibrated dials"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}}]}</script>
+
 
   <script defer src="/consent.js"></script>
 
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -68,7 +70,7 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Frameworks</span>
         <h1 class="h-hero h-research-hero">MBTI vs Big Five for AI: crisp switches or calibrated dials.</h1>
         <p class="article-dek">One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">MBTI organizes preferences into types; Big Five describes continuous traits. Either can help you draft communication instructions, but our exploratory reports do not establish which works better for AI personalization. Start with the preferences you can state clearly and test the resulting prompt on your own tasks.</p>
       </section>
 
@@ -107,7 +109,7 @@
 
       <section>
         <h2>Take both. It's ten minutes.</h2>
-        <p>Both tests are free, in-browser, and take about five minutes each — <a href="/tests/mbti">MBTI (OEJTS)</a> and <a href="/tests/big-five">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href="/guides/how-to-give-your-ai-a-personality">the setup guide</a>, or jump to <a href="/guides/coding-agent-personality">the coding-agent version</a> if your agent lives in a terminal.</p>
+        <p>Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — <a href="/tests/mbti">MBTI (OEJTS)</a> and <a href="/tests/big-five">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href="/guides/how-to-give-your-ai-a-personality">the setup guide</a>, or jump to <a href="/guides/coding-agent-personality">the coding-agent version</a> if your agent lives in a terminal.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -169,7 +171,7 @@
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

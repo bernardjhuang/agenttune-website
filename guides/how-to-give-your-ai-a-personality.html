@@ -31,6 +31,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give your AI a personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I really give ChatGPT a personality?","acceptedAnswer":{"@type":"Answer","text":"Yes — through custom instructions (Settings → Personalization). Paste behavioral rules into the \"How would you like ChatGPT to respond?\" field, up to 1,500 characters. Concrete rules like \"lead with the recommendation\" hold up across conversations; adjectives like \"be witty\" fade within a few replies. Custom instructions are separate from ChatGPT's memory feature."}},{"@type":"Question","name":"What's the difference between a persona prompt and a tuning file?","acceptedAnswer":{"@type":"Answer","text":"A persona prompt gives the AI a character — a role it performs for you. A tuning file adjusts the AI to your communication preferences — how it delivers disagreement, how many options it offers, how often it checks in. Personas are entertainment; tunings compound, because they change every answer in every domain."}},{"@type":"Question","name":"Which personality test should I use for AI tuning?","acceptedAnswer":{"@type":"Answer","text":"Whichever you already know your type in. Otherwise: MBTI for the broadest starting point, Big Five if you prefer dimensions over type boxes, Enneagram if your friction is emotional register rather than information format, DISC for work contexts, Attachment if the issue is reassurance and checking-in. All five tests are free and take about five minutes."}},{"@type":"Question","name":"Do personality prompts actually change AI behavior?","acceptedAnswer":{"@type":"Answer","text":"Behavioral rules do; personality adjectives mostly don't. \"Never open with a softener\" is checkable, so the model holds it for a whole conversation. \"Be confident\" isn't, so it drifts. Every AgentTune tuning file is written as checkable rules, plus a verification probe you can run after installing to confirm the behavior changed."}},{"@type":"Question","name":"Doesn't my AI already have a personality?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"What if the tuning file gets things wrong about me?","acceptedAnswer":{"@type":"Answer","text":"Edit it — that's the design. The type is a starting hypothesis and the file is plain Markdown under an MIT license. Delete rules that don't sound like you, sharpen the ones that do, add what's missing. A tuning you've edited for ten minutes beats any unedited type match."}}]}</script>
 
+
   <script defer src="/consent.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -168,7 +170,7 @@
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

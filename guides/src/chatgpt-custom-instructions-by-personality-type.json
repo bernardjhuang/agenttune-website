@@ -5,7 +5,7 @@
   "pill": "Guide · ChatGPT",
   "h1": "ChatGPT custom instructions for every MBTI personality type.",
   "dek": "Sixteen paste-ready blocks. Pick yours, paste it, done.",
-  "lede": "Below are paste-ready custom-instructions blocks for all 16 MBTI types — condensed from AgentTune's free, MIT-licensed tuning files. Find your type, copy the block, and paste it into ChatGPT's <em>How would you like ChatGPT to respond?</em> field under Settings → Personalization. Each block runs 400–700 characters, comfortably under the field's 1,500-character limit. If you don't know your type, the free test takes about ten minutes.",
+  "lede": "Below are paste-ready custom-instructions blocks for all 16 MBTI types — condensed from AgentTune's free, MIT-licensed tuning files. Find your type, copy the block, and paste it into ChatGPT's <em>How would you like ChatGPT to respond?</em> field under Settings → Personalization. Each block runs 400–700 characters, comfortably under the field's 1,500-character limit. If you don't know your type, the free test takes about five minutes.",
   "answer": "Open ChatGPT's Settings → Personalization → Custom instructions and paste a personality-matched block into the \"How would you like ChatGPT to respond?\" field. This page has paste-ready blocks for all 16 MBTI types — INTJ through ESFP — each condensed from AgentTune's free tuning files to fit the character limit.",
   "sections": [
     {
@@ -94,5 +94,6 @@
       "label": "What personality type is ChatGPT?",
       "href": "/research/what-personality-type-is-chatgpt"
     }
-  ]
+  ],
+  "updated": "2026-09-25"
 }

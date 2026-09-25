@@ -10,7 +10,7 @@
   <meta property="og:description" content="Paste-ready ChatGPT custom instructions for all 16 MBTI types, condensed from free MIT-licensed tuning files. Each block fits the 1,500-character limit." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-07-23" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,9 +27,10 @@
   <link rel="canonical" href="https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT custom instructions for every MBTI personality type","description":"Paste-ready ChatGPT custom instructions for all 16 MBTI types, condensed from free MIT-licensed tuning files. Each block fits the 1,500-character limit.","url":"https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type","datePublished":"2026-07-23","dateModified":"2026-07-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT custom instructions for every MBTI personality type","description":"Paste-ready ChatGPT custom instructions for all 16 MBTI types, condensed from free MIT-licensed tuning files. Each block fits the 1,500-character limit.","url":"https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"ChatGPT custom instructions for every MBTI personality type"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do these blocks fit ChatGPT's character limit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every block on this page runs 400–700 characters against a 1,500-character field limit, so each fits with roughly half the field left over. That's deliberate — you can append your own lines (preferred formats, topics to avoid, your field's jargon) without trimming the personality rules."}},{"@type":"Question","name":"Which field do I paste the block into?","acceptedAnswer":{"@type":"Answer","text":"The second one: \"How would you like ChatGPT to respond?\" These blocks are behavioral rules, and that field governs behavior. The first field — \"What would you like ChatGPT to know about you?\" — is for facts: your role, your work, your context. One or two lines there is plenty."}},{"@type":"Question","name":"Is this the same as ChatGPT memory?","acceptedAnswer":{"@type":"Answer","text":"No. Memory is ChatGPT accumulating facts about you across conversations on its own. Custom instructions are standing orders you write once and control completely. They coexist — memory learns what you're working on, while your pasted block dictates how ChatGPT should treat you. Neither replaces the other."}},{"@type":"Question","name":"Can I combine blocks from two types?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it's a common move for people who sit between types. Take the block that fits better as the base, then swap in the two or three rules you recognize from the other type. Just watch for contradictions — \"lead with the answer\" and \"show all the reasoning first\" can't both win."}},{"@type":"Question","name":"Will this change conversations I already have?","acceptedAnswer":{"@type":"Answer","text":"No. Custom instructions apply to new conversations from the point you save them. Existing chats keep the behavior they started with. If you want the new personality in an old thread, start a fresh conversation — it also gives you a cleaner read on whether the tuning took."}},{"@type":"Question","name":"What if the block for my type doesn't feel right?","acceptedAnswer":{"@type":"Answer","text":"Trust the feeling, not the letters. The blocks describe interaction preferences, and you're the authority on yours. Read the neighboring types — one axis flipped — and take whichever block you'd actually want enforced. A mistyped block still beats no block, but the right one is usually one door over."}}]}</script>
+
 
   <script defer src="/consent.js"></script>
 
@@ -50,6 +51,7 @@
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -68,8 +70,8 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · ChatGPT</span>
         <h1 class="h-hero h-research-hero">ChatGPT custom instructions for every MBTI personality type.</h1>
         <p class="article-dek">Sixteen paste-ready blocks. Pick yours, paste it, done.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-07-23">July 23, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Below are paste-ready custom-instructions blocks for all 16 MBTI types — condensed from AgentTune's free, MIT-licensed tuning files. Find your type, copy the block, and paste it into ChatGPT's <em>How would you like ChatGPT to respond?</em> field under Settings → Personalization. Each block runs 400–700 characters, comfortably under the field's 1,500-character limit. If you don't know your type, the free test takes about ten minutes.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Below are paste-ready custom-instructions blocks for all 16 MBTI types — condensed from AgentTune's free, MIT-licensed tuning files. Find your type, copy the block, and paste it into ChatGPT's <em>How would you like ChatGPT to respond?</em> field under Settings → Personalization. Each block runs 400–700 characters, comfortably under the field's 1,500-character limit. If you don't know your type, the free test takes about five minutes.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> Open ChatGPT's Settings → Personalization → Custom instructions and paste a personality-matched block into the "How would you like ChatGPT to respond?" field. This page has paste-ready blocks for all 16 MBTI types — INTJ through ESFP — each condensed from AgentTune's free tuning files to fit the character limit.</div>
@@ -180,7 +182,7 @@
       btn.textContent = "Copy";
       btn.addEventListener("click", function () {
         navigator.clipboard.writeText(block.textContent.replace(/^\s*Copy\s*/, "").trim()).then(function () {
-          btn.textContent = "Copied";
+          btn.textContent = "Copied"; if (window.atTrack) window.atTrack("guide_copy");
           setTimeout(function () { btn.textContent = "Copy"; }, 1200);
         });
       });

@@ -380,7 +380,7 @@ print(resp.content[0].text)`
         try {
           await navigator.clipboard.writeText(text);
           const orig = btn.textContent;
-          btn.textContent = "Copied ✓";
+          btn.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("integration_copy");
           btn.classList.add("is-copied");
           setTimeout(() => {
             btn.textContent = orig;

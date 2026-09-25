@@ -5,8 +5,10 @@
   "private": true,
   "scripts": {
     "test": "node --test checks/*.test.js",
-    "deploy": "wrangler pages deploy . --project-name=agent-tune --commit-dirty=true",
-    "dev": "npx serve ."
+    "deploy": "npm test && npm run build && wrangler pages deploy dist --project-name=agent-tune --branch=main",
+    "dev": "npx serve .",
+    "build": "node tools/build-public.js",
+    "build:research": "node tools/build-research.js"
   },
   "devDependencies": {
     "wrangler": "^4.94.0"

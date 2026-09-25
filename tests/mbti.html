@@ -78,6 +78,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -467,6 +468,7 @@
     $("quiz-start").addEventListener("click", startQuiz);
 
     function startQuiz() {
+      if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true;
       $("quiz-runner").hidden = false;
       state.currentIndex = 0;
@@ -592,6 +594,10 @@
     // Result screen
     // ==================================================
     function showResult() {
+      if (!state.completionTracked) {
+        if (window.atTrack) window.atTrack("quiz_complete");
+        state.completionTracked = true;
+      }
       $("quiz-runner").hidden = true;
       $("quiz-result").hidden = false;
       const result = computeType(state.answers);
@@ -707,7 +713,7 @@
       if (!state.currentTuning) return;
       navigator.clipboard.writeText(state.currentTuning).then(() => {
         const btn = $("quiz-copy-tuning");
-        btn.textContent = "Copied ✓";
+        btn.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
         setTimeout(() => { btn.textContent = "⌘C · Copy"; }, 2000);
       });
     });
@@ -724,7 +730,7 @@
       a.href = url;
       a.download = `${type}.md`;
       document.body.appendChild(a);
-      a.click();
+      a.click(); if (window.atTrack) window.atTrack("tuning_download");
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       const btn = this;
@@ -741,6 +747,7 @@
       state.preferences = {};
       state.currentTuning = "";
       state.resultVersion++;
+      state.completionTracked = false;
       $("quiz-result").hidden = true;
       $("quiz-intro").hidden = false;
       window.scrollTo({ top: 0, behavior: "smooth" });

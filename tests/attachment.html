@@ -57,6 +57,7 @@
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
         <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </nav>
@@ -384,6 +385,7 @@
     const advance = window.ATQuiz.transition();
 
     $("quiz-start").addEventListener("click", () => {
+      if (window.atTrack) window.atTrack("quiz_start");
       $("quiz-intro").hidden = true; $("quiz-runner").hidden = false;
       state.currentIndex = 0; renderQuestion();
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -450,6 +452,10 @@
     }
 
     function showResult() {
+      if (!state.completionTracked) {
+        if (window.atTrack) window.atTrack("quiz_complete");
+        state.completionTracked = true;
+      }
       const version = ++state.resultVersion;
       $("quiz-runner").hidden = true; $("quiz-result").hidden = false;
       const r = computeResult(state.answers);
@@ -543,7 +549,7 @@
       const r = computeResult(state.answers);
       const content = state.currentTuning || getTuningContent(r.style);
       navigator.clipboard.writeText(content).then(() => {
-        const o = this.textContent; this.textContent = "Copied ✓";
+        const o = this.textContent; this.textContent = "Copied ✓"; if (window.atTrack) window.atTrack("tuning_copy");
         setTimeout(() => { this.textContent = o; }, 2000);
       });
     });
@@ -555,7 +561,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url; a.download = `${STYLE_META[r.style].file}.md`;
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      document.body.appendChild(a); a.click(); if (window.atTrack) window.atTrack("tuning_download"); document.body.removeChild(a);
       URL.revokeObjectURL(url);
       const o = this.textContent; this.textContent = "Downloaded ✓";
       setTimeout(() => { this.textContent = o; }, 2000);
@@ -563,6 +569,7 @@
 
     $("quiz-restart").addEventListener("click", () => {
       state.resultVersion++;
+      state.completionTracked = false;
       state.currentTuning = "";
       advance.cancel();
       state.currentIndex = 0; state.answers = new Array(36).fill(null);

@@ -325,7 +325,7 @@ Four items per type, in type order (items 1–4 → Type 1, 5–8 → Type 2, �
 #### Scoring algorithm
 
 1. For each type 1–9, sum the user's raw 1–5 responses to that type's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant type**.
+2. A unique highest total is the **dominant type**. If several types tie, report all of them without a dominant type or automatic tuning; offer their library pages for an explicit preference.
 3. The higher-scoring of the two adjacent types (the wings) is the optional **wing**.
 4. Resolve the slug from the dominant type (e.g. 5 → `5-investigator`).
 
@@ -365,8 +365,8 @@ Four items per letter, in letter order (items 1–4 → D, 5–8 → I, 9–12 �
 #### Scoring algorithm
 
 1. For each letter D/I/S/C, sum the user's raw 1–5 responses to that letter's four items (range 4–20). No reverse-scoring.
-2. The highest total is the **dominant** letter.
-3. If a second letter is within a few points, report it as a **blend** (e.g. DI, CS).
+2. A unique highest total is the **dominant** letter. If letters tie for highest, report them equally, without a dominant letter or automatic tuning; offer their library pages.
+3. With a unique dominant letter, if the second letter is within 2 points, report a **blend** (e.g. DI, CS).
 
 ### Attachment test — ECR-R (machine-readable spec)
 
@@ -559,3 +559,12 @@ github.com/bernardjhuang/agenttune/
 ```
 
 Anyone can fork, modify, ship in their own product, or submit PRs. License: MIT.
+
+## September 2026 research update
+
+- [Five-model personality study](https://agent-tune.com/research/ai-personality-five-models-2026): GPT-6 Astra, GPT-6 Sol, Grok 4.6, Claude Opus 5.5 and Claude Fable 5.1. Four fresh-session cohorts yield 2,000 assessments across 1,200 sessions. Grok simulation and the supplemental Muse Spark 1.3 aggregate report are separate evidence.
+- [Raw response data](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 fresh-session vectors plus three canonical Grok vectors.
+- [Protocol and provenance](https://agent-tune.com/research/data/september-2026-protocols.json): prompts, hashes, duplicate handling and missing-data limitations.
+- [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) and [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality): original labels, exact ties and untested communication instructions.
+
+Exact ties are unresolved, not evidence of a preferred type. These self-reports are not validated AI psychological traits, a performance ranking, or a demonstrated benefit from tuning.
