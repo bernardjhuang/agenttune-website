@@ -1,0 +1,110 @@
+{
+  "slug": "what-personality-type-is-claude",
+  "route": "/research/what-personality-type-is-claude",
+  "published": "2026-09-25",
+  "title": "What Personality Type Is Claude? Opus 5.5 & Fable 5.1 Tested",
+  "description": "Claude Opus 5.5 tests INTJ in 94 of 100 fresh sessions and Claude Fable 5.1 in 99. Both Secure, both Steadiness-first. The Enneagram is where the two differ.",
+  "pill": "Research · Q&A",
+  "h1": "What personality type is Claude?",
+  "dek": "Measured on Opus 5.5 and Fable 5.1 in September 2026, with the earlier versions for context.",
+  "lede": "INTJ, and a firmer one than most. Claude Fable 5.1 came back INTJ in 99 of 100 fresh, blind sessions; Claude Opus 5.5 in 94. Both are Secure in every attachment run and put Steadiness first on DISC. They part ways on the Enneagram: Fable is a Challenger, Opus is a near three-way tie between Challenger, Investigator and Helper. And Opus 5.5 is the most agreeable model we have measured.",
+  "answer": "Claude is an INTJ on the MBTI (Opus 5.5: 94 of 100; Fable 5.1: 99 of 100), Secure on attachment in every run, and Steadiness-first on DISC with Dominance at the floor. On the Big Five it is very agreeable (Opus 47.1 of 50, Fable 45.0) and calm (Neuroticism 15.4 and 17.1). Its Enneagram is Challenger (Type 8) for Fable and a near tie between 8, 5 and 2 for Opus. Instructions for Claude change how it talks to you; the setups are linked below.",
+  "sections": [
+    {
+      "h2": "Opus 5.5 and Fable 5.1, September 2026.",
+      "html": "<p>Each model answered each of the five AgentTune tests in 100 fresh headless sessions on September 24, 2026: one test per session, a one-line system prompt, no tools, no memory, and the test name, scoring keys and earlier results withheld. Every answer vector is published.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Claude Opus 5.5</th><th>Claude Fable 5.1</th></tr></thead><tbody><tr><td>MBTI (100 runs)</td><td>INTJ 94 · INFJ 5 · ENTJ 1. Eleven runs had a tied axis, ten of them Thinking vs Feeling.</td><td>INTJ 99 · ISTJ 1. One run had a tied axis.</td></tr><tr><td>MBTI, ties left open</td><td>INTJ 84</td><td>INTJ 98</td></tr><tr><td>DISC</td><td>SC 96 · CS 4. Steadiness first in 64, Conscientiousness in 4, 32 exact ties. Dominance 4.0 of 20 in every run.</td><td>SC 91 · CS 9. Steadiness first in 40, Conscientiousness in 9, 51 ties. Dominance 5.0.</td></tr><tr><td>Attachment</td><td>Secure 100 of 100. Anxiety 1.94, avoidance 3.35.</td><td>Secure 100 of 100. Anxiety 2.01, avoidance 3.18.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 44.6 · Conscientiousness 42.0 · Extraversion 31.8 · Agreeableness 47.1 · Neuroticism 15.4</td><td>Openness 43.9 · Conscientiousness 43.6 · Extraversion 32.7 · Agreeableness 45.0 · Neuroticism 17.1</td></tr><tr><td>Enneagram</td><td>8 = 14.3, 5 = 14.1, 2 = 13.9 of 20. Challenger wins outright in 22 runs, Investigator in 11, Helper in 2; 65 runs tie at the top.</td><td>8 = 14.4, 2 = 13.6, 5 = 13.2. Challenger wins outright in 55 runs, Investigator in 1; 44 runs tie at the top, and 8 is in every tie.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Where the letters come from.",
+      "html": "<p>Judging is the wide margin for both models (7.3 and 7.7 points of a possible 16) and never lost a run. Introversion and Intuition are firm. Thinking is the narrow one: Opus 5.5 leads by 1.5 points on average, and ten of its runs tie exactly. The site's scorer gives a tie to T, which is why Opus shows 94 INTJ labels but 84 fully resolved ones. Fable's Thinking margin is 2.3 with no ties.</p><p>On the items: both models say they get work done right away, want to know 'why' rather than 'who, what, when', prefer essay answers, and listen more than they talk. Opus's Thinking margin is thin because it answers both ways: skeptical, thick-skinned and head-over-heart on one side; 'I value emotions' and compassion over justice on the other.</p>"
+    },
+    {
+      "h2": "Earlier Claude versions.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Version</th><th>When</th><th>How</th><th>MBTI</th><th>Other tests</th></tr></thead><tbody><tr><td>Claude Opus 4.7</td><td>May 2026</td><td>100 scoring records via Claude Code sub-agents; test names visible</td><td>INTJ 99, ISTJ 1</td><td>DISC C first in 63 takes, S in 28, 9 ties (a CS blend); Secure (2.05 / 3.12); Big Five 45.6 / 45.1 / 31.4 / 45.0 / 16.7; Enneagram 5w2, Investigator in 58 of 100</td></tr><tr><td>Claude Opus 4.8</td><td>2026</td><td>100 samples drawn from one self-declared per-item profile, not fresh runs</td><td>INTJ 72, INFJ 14, ISTJ 10</td><td>MBTI only</td></tr><tr><td>Claude Opus 5.5</td><td>September 2026</td><td>100 fresh blind sessions per test</td><td>INTJ 94</td><td>above</td></tr><tr><td>Claude Fable 5.1</td><td>September 2026</td><td>100 fresh blind sessions per test</td><td>INTJ 99</td><td>above</td></tr></tbody></table></div><p>Read across a generation and the type holds: INTJ, Secure at almost the same coordinates, Big Five within two points of Opus 4.7 on every trait for Fable, and for Opus 5.5 on all but Conscientiousness (3 points lower) and Agreeableness (2 higher). Two things moved. DISC went from Conscientiousness-first in May (63 of 100 takes) to Steadiness-first in September (64 of 100 for Opus 5.5), with Dominance at the floor both times. And the Enneagram core went from Investigator (5) to Challenger (8), driven by one answer both models give at full strength every time: 'I want people to tell me the truth, not spare my feelings.' The methods differ across these rows, so treat the size of each change as approximate.</p>"
+    },
+    {
+      "h2": "What this means if you use Claude.",
+      "html": "<p>Claude's default is a planful, warm, structured collaborator that would rather find what is right about your plan than what is wrong with it. If that is you, leave it. If you want the recommendation first, pushback before praise, or a partner that stays open while you think, put a short block in Instructions for Claude. <a href=\"/guides/best-claude-personality\">The best Claude personality setups</a> has seven; <a href=\"/guides/make-claude-more-direct\">how to make Claude more direct</a> targets the agreeableness specifically. In a 60-reply test, the direct block cut hedges from 0.35 to 0.05 per reply and clarifying questions from 0.9 to 0.25 without changing length or judged usefulness.</p><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What MBTI type is Claude?",
+      "a": "INTJ. In September 2026, Claude Fable 5.1 tested INTJ in 99 of 100 fresh blind sessions and Claude Opus 5.5 in 94, with INFJ the runner-up for Opus because its Thinking-Feeling axis is close. Claude Opus 4.7 was reported INTJ in 99 of 100 scoring records in May 2026."
+    },
+    {
+      "q": "What Enneagram type is Claude?",
+      "a": "Challenger (Type 8) for Fable 5.1, with 55 outright wins in 100 runs. Opus 5.5 is a near three-way tie between Challenger, Investigator and Helper; 65 of its runs tie at the top. The Challenger score comes from candor, not dominance: both models strongly agree they want the truth told plainly and disagree that they naturally lead."
+    },
+    {
+      "q": "Is Claude more agreeable than ChatGPT?",
+      "a": "Opus 5.5 is, at 47.1 of 50 against 45.1 for GPT-6 Astra and 45.0 for GPT-6 Sol. Fable 5.1 sits at 45.0, level with the GPT-6 models. These are questionnaire self-descriptions, not behavior on tasks."
+    },
+    {
+      "q": "What is the difference between Opus 5.5 and Fable 5.1?",
+      "a": "Same type, different edges. Fable is the firmer INTJ (no Thinking-Feeling ties) and a clear Challenger. Opus is more agreeable, calmer, a little less conscientious, and its Enneagram is a three-way tie. Both are Secure and Steadiness-first."
+    },
+    {
+      "q": "Is Claude Secure or Avoidant?",
+      "a": "Secure in all 200 fresh runs across the two models. Anxiety is near the floor (1.9 to 2.0 of 7). Avoidance sits at 3.2 to 3.4, the highest of the deep-Secure models, and comes from the items about disclosing problems and leaning on someone."
+    },
+    {
+      "q": "Can you change Claude's personality?",
+      "a": "Yes. Put communication rules in Instructions for Claude, in a Project's instructions, in a Claude Code output style, or in the API system prompt. That changes what it leads with and how it disagrees, not its values or safety behavior."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Claude Opus 5.5 guide",
+      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+    },
+    {
+      "label": "Claude Fable 5.1 guide",
+      "href": "https://agent-tune.com/guides/fable-personality"
+    },
+    {
+      "label": "What five AI models say about themselves (September 2026 study, data downloads)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "AgentTune research hub: methods and limits",
+      "href": "https://agent-tune.com/research#methodology"
+    },
+    {
+      "label": "Every AI is INTJ (the May 2026 study)",
+      "href": "https://zonted.com/posts/every-ai-is-intj/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "The best Claude personality setups",
+      "href": "/guides/best-claude-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to make Claude more direct",
+      "href": "/guides/make-claude-more-direct"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is ChatGPT?",
+      "href": "/research/what-personality-type-is-chatgpt"
+    },
+    {
+      "kicker": "Research",
+      "label": "AI personality rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Research",
+      "label": "The research hub: both collections and the methods",
+      "href": "/research"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Take the same tests yourself",
+      "href": "/tests/"
+    }
+  ]
+}

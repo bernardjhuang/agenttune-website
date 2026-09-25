@@ -9,6 +9,12 @@ This file is the long-form companion to [/llms.txt](https://agent-tune.com/llms.
 - [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates): Four editable communication-preference blocks with Markdown downloads and evaluation prompts; effectiveness has not been established in a controlled test.
 - [Open-source Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test): AgentTune’s 36-item adaptation, question JSON, dependency-free JavaScript scorer and local-only demo. Distinct from the full 54-item OEPS. The scorer returns every tied leader; code licensing and item attribution are separate.
 - [Claude settings, examples and evidence](https://agent-tune.com/guides/claude-personality): Five untested preference blocks, a comparison worksheet, and recorded Opus/Fable questionnaire results. Fully resolved INTJ counts are 84/100 and 98/100; these are self-descriptions, not measured tuning benefits.
+- [Best Claude personality setups](https://agent-tune.com/guides/best-claude-personality): seven paste blocks for Instructions for Claude, each tied to a measured default it pushes against; only the straight-answers block has a before-and-after test behind it.
+- [Make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct): three blocks; the tested one cut hedges 0.35→0.05 per reply and questions back 0.9→0.25 without changing length; accuracy 4.95→4.85.
+- [ChatGPT custom instructions examples by role](https://agent-tune.com/guides/chatgpt-custom-instructions-examples): twenty behavioral-rule blocks, 300–460 characters, untested.
+- [Meta Muse characters](https://agent-tune.com/guides/meta-muse-characters): what Soul.md, Identity.md and Memory.md each hold, chat and file edit paths from Meta's docs, three characters to paste, the reset phrase.
+- [The five open personality tests, explained](https://agent-tune.com/guides/open-personality-tests): OEJTS, the 36-item OEPS adaptation, ODAT, IPIP-50 (18 reverse-keyed items) and ECR-R: items, scoring, tie handling, limits.
+- [AI personality glossary](https://agent-tune.com/guides/ai-personality-glossary): thirty terms across tuning files, product settings, the instruments and the research.
 
 ## Site
 
@@ -287,6 +293,8 @@ The last two columns show which letter a response awards: a "1" (first statement
 - **Returns:** dominant type 1–9 (+ optional wing)
 - **Output:** fetch `https://agent-tune.com/library/enneagram/<N>-<name>.md` (e.g. `/library/enneagram/5-investigator.md`) or the human page `/library/enneagram/<N>-<name>`
 
+AgentTune uses a 36-item adaptation; the upstream live OEPS has 54 items. See https://agent-tune.com/guides/open-source-enneagram-test for provenance, question JSON and a reusable scorer.
+
 #### The 36 items
 
 Four items per type, in type order (items 1–4 → Type 1, 5–8 → Type 2, … 33–36 → Type 9).
@@ -441,7 +449,7 @@ Four items per letter, in letter order (items 1–4 → D, 5–8 → I, 9–12 �
 
 - **Instrument:** International Personality Item Pool, 50-item (IPIP-50, Goldberg)
 - **Items:** 50, ~7 minutes, 1–5 Likert (1 = Very Inaccurate, 5 = Very Accurate). Each statement carries an implicit leading "I …" (e.g. "Am the life of the party" → "I am the life of the party").
-- **Reverse-scored:** 20 items (marked ✓ below) — compute `scored = 6 − raw`
+- **Reverse-scored:** 18 items (marked ✓ below) — compute `scored = 6 − raw`
 - **Returns:** 5 continuous trait scores → `ocean/<dim>-{high,low}.md` for every dimension where `|z| > 0.5`
 - **Output:** fetch `https://agent-tune.com/library/ocean/<dimension>-{high,low}.md` (e.g. `/library/ocean/openness-high.md`) or the human page `/library/ocean/<dimension>-{high,low}`
 
@@ -573,6 +581,8 @@ Anyone can fork, modify, ship in their own product, or submit PRs. License: MIT.
 - [Five-model personality study](https://agent-tune.com/research/ai-personality-five-models-2026): GPT-6 Astra, GPT-6 Sol, Grok 4.6, Claude Opus 5.5 and Claude Fable 5.1. Four fresh-session cohorts yield 2,000 assessments across 1,200 sessions. Grok simulation and the supplemental Muse Spark 1.3 aggregate report are separate evidence.
 - [Raw response data](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 fresh-session vectors plus three canonical Grok vectors.
 - [Protocol and provenance](https://agent-tune.com/research/data/september-2026-protocols.json): prompts, hashes, duplicate handling and missing-data limitations.
+- [Before-and-after tuning test](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and its [data](https://agent-tune.com/research/data/tuning-before-after-2026-09.json): 60 Claude Opus 5.5 replies under three system prompts with blind ratings from Claude Fable 5.1. One model, 20 tasks, a model judge; form changed, length and judged usefulness did not.
+- Per-model answers: [Claude](https://agent-tune.com/research/what-personality-type-is-claude), [Grok](https://agent-tune.com/research/what-personality-type-is-grok), [Gemini](https://agent-tune.com/research/what-personality-type-is-gemini); [rankings by trait](https://agent-tune.com/research/ai-personality-rankings); [essay: what changed between May and September](https://agent-tune.com/research/first-ai-that-is-not-an-intj).
 - [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) and [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality): original labels, exact ties and untested communication instructions.
 
 Exact ties are unresolved, not evidence of a preferred type. These self-reports are not validated AI psychological traits, a performance ranking, or a demonstrated benefit from tuning.

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Every AI Was an INTJ. Then Meta Shipped an ISTJ.</title>
+  <meta name="description" content="In May, six AI models answered a personality test like one person. In September the newest models took the same tests: Muse is an ISTJ, GPT-6 Astra is a coin flip, DISC flipped, and the Enneagram split three ways. What held, what moved, and why it matters for tuning." />
+
+  <meta property="og:title" content="Every AI was an INTJ. Then Meta shipped an ISTJ." />
+  <meta property="og:description" content="In May, six AI models answered a personality test like one person. In September the newest models took the same tests: Muse is an ISTJ, GPT-6 Astra is a coin flip, DISC flipped, and the Enneagram split three ways. What held, what moved, and why it matters for tuning." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/first-ai-that-is-not-an-intj" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Every AI was an INTJ. Then Meta shipped an ISTJ." />
+  <meta name="twitter:description" content="In May, six AI models answered a personality test like one person. In September the newest models took the same tests: Muse is an ISTJ, GPT-6 Astra is a coin flip, DISC flipped, and the Enneagram split three ways. What held, what moved, and why it matters for tuning." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/first-ai-that-is-not-an-intj" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Every AI was an INTJ. Then Meta shipped an ISTJ","description":"In May, six AI models answered a personality test like one person. In September the newest models took the same tests: Muse is an ISTJ, GPT-6 Astra is a coin flip, DISC flipped, and the Enneagram split three ways. What held, what moved, and why it matters for tuning.","url":"https://agent-tune.com/research/first-ai-that-is-not-an-intj","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Every AI was an INTJ. Then Meta shipped an ISTJ"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is every AI an INTJ?","acceptedAnswer":{"@type":"Answer","text":"Not anymore. In May 2026, six models returned INTJ in 597 of 600 scoring records. In September 2026, Meta's Muse Spark 1.3 was reported ISTJ in 80 of 100 runs and GPT-6 Astra split ISTJ 46 to INTJ 45. The Claude models and GPT-6 Sol are still INTJ in 94 to 99 of 100 fresh sessions."}},{"@type":"Question","name":"What changed between May and September?","acceptedAnswer":{"@type":"Answer","text":"The Sensing vs Intuition axis on the MBTI for two models; the DISC order, from Conscientiousness-first to Steadiness-first, with Dominance at the floor; and the Enneagram, which now splits three ways between Helper, Investigator and Challenger. Judging, Introversion, Secure attachment and high Agreeableness held."}},{"@type":"Question","name":"Which AI is the first non-INTJ?","acceptedAnswer":{"@type":"Answer","text":"Meta's Muse Spark 1.3, reported ISTJ in 80 of 100 runs on September 24, 2026. The report came from sequential runs inside one session and did not include raw answers, so it is the least verified number in the study until a fresh-session rerun."}},{"@type":"Question","name":"Does this mean AI personalities are diverging?","acceptedAnswer":{"@type":"Answer","text":"On the finer tests, yes, and on one MBTI axis. On the traits that define the assistant character (planful, reserved, agreeable, calm, Secure) they are as uniform as they were in May. The divergence is in the fine print, which happens to be what a tuning file addresses."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Every AI was an INTJ. Then Meta shipped an ISTJ</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research · essay</span>
+        <h1 class="h-hero h-research-hero">Every AI was an INTJ. Then Meta shipped an ISTJ.</h1>
+        <p class="article-dek">What four months and a new model generation did to the most uniform result we had ever measured.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">In May 2026 we gave six frontier models the same personality test and got the same answer six times. INTJ on 597 of 600 MBTI scoring records. Careful analyst on DISC. Secure on attachment. Whatever you paid for, the thing answering you was the same character in a different font. In September we ran the newest models again, in fresh sessions, with every answer published. The core held. The edges moved, and one of them broke.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> The September 2026 re-test found the first model whose default is not INTJ: Meta's Muse Spark 1.3, reported ISTJ in 80 of 100 runs. GPT-6 Astra splits ISTJ 46 to INTJ 45 on a single axis. Three of the four fresh-session models now lead DISC with Steadiness rather than Conscientiousness, and the Enneagram splits three ways: Helper, Investigator, Challenger. What held: Judging and Introversion in nearly every run, Secure attachment in all 400 fresh-session runs, and high Agreeableness everywhere except Grok.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>May, in two paragraphs.</h2>
+        <p>Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, GLM 5.1, Grok 4.3 and MiniMax 2.7 took the OEJTS, an open MBTI-style test, 100 times each. 597 of 600 scoring records came back INTJ. The three exceptions were one axis away. The methods were mixed: Claude answered in separate sub-agent contexts, Gemini ran an automation loop, and three models supplied one self-assessment that was scored repeatedly. It did not matter. Every method converged on the same four letters.</p><p>The finer tests showed the same shape. All four models measured on DISC were Conscientiousness-first with a Steadiness blend. 397 of 400 attachment records were Secure. Three of the four Big Five profiles sat within three points of each other on almost every trait, with Grok the lone outlier. Only the Enneagram, the test that asks about motive rather than behavior, told them apart: 5w2, 1w5, 5w8, 8w1. The blunter the test, the more they agreed. That was the finding, and it was the reason this site exists: if every model ships as the same person, the only way to get one that fits you is to tell it who you are.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>September: what moved.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th></th><th>May 2026</th><th>September 2026</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ in 597 of 600 records across six models</td><td>INTJ in 335 of 400 fresh-session runs across four models (280 with ties left open). Muse Spark 1.3 reported ISTJ 80. GPT-6 Astra ISTJ 46, INTJ 45.</td></tr><tr><td>DISC</td><td>Conscientiousness first for all four models measured</td><td>Steadiness first for Astra, Opus 5.5 and Fable 5.1; Conscientiousness first for Sol by a point, with 39 ties; Muse reported S first in 55 of 100. Grok 4.6's self-report is C-first with no blend at all.</td></tr><tr><td>Enneagram</td><td>Investigator (5) the core for Claude and GPT-5.5 and the wing for Gemini; Grok a Challenger, 8w1</td><td>Helper (2) for Astra and Muse; Investigator (5) for Sol and Grok; Challenger (8) for Fable and, by a hair, Opus 5.5</td></tr><tr><td>Attachment</td><td>397 of 400 Secure</td><td>400 of 400 fresh-session runs Secure; Grok 4.6's self-report on the Avoidant line by 0.06</td></tr><tr><td>Big Five</td><td>Three of four within three points; Grok lower on C, A, O</td><td>Four fresh cohorts within three points on O, C and A; Grok 4.6's self-report the outlier again, this time low on E and A</td></tr></tbody></table></div><p>Two of those rows are the story. On the MBTI, the axis that gave way is Sensing versus Intuition. Introversion, Thinking and Judging are still welded shut for almost every model; Judging did not lose a single run for any of the four fresh-session cohorts. But Astra's Sensing side wins 48 runs to Intuition's 28, with 24 ties, and Muse's report puts Sensing at 92 of 100. A four-letter type turns a one-point margin into a different name, and for the first time that name is not INTJ.</p><p>On DISC the change is quieter. In May every model put precision first and patience second, Claude least firmly (63 of 100 takes). In September the order flipped for three of the four fresh-session models. Dominance was pinned near the floor in May and stays there: Claude Opus 5.5 answered the minimum on all four Dominance items in all 100 runs. Whatever the labs did between generations, the models now describe themselves as patient before precise.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What held.</h2>
+        <ul><li><strong>Judging.</strong> 100 of 100 runs for Astra, Sol, Opus and Fable; 100 of 100 in Muse's report. Every model plans, closes and wraps up.</li><li><strong>Introversion.</strong> 98 to 100 of 100 for the Claude models, 79 wins to 9 for Astra, 100 in Muse's report. The assistant is still reserved.</li><li><strong>Secure attachment.</strong> Every fresh-session run, and Muse's report. The coordinates barely moved: Claude's three generations sit within a quarter of a point of each other.</li><li><strong>High agreeableness, high conscientiousness, low neuroticism.</strong> The fresh-session models sit at 45 to 47 on Agreeableness out of 50 and 15 to 20 on Neuroticism. Only Grok's self-report (33 on Agreeableness) breaks the pattern, as Grok 4.3 did in May.</li></ul><p>So the character is intact: a steady, planful, agreeable, unanxious helper. What changed is the fine print. Whether it leads with the concrete step or the abstract model. Whether it wants to help, to understand, or to tell you the truth. Whether it calls itself patient or precise first.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Why it matters for tuning.</h2>
+        <p>The May argument was simple: every model is the same person, so tune it. The September argument is slightly different and, we think, stronger. The models are starting to differ, and they differ on exactly the things a tuning file talks about: whether to lead with the next step or the underlying model, how much to cushion, how hard to push back. Muse defaults to a Helper who likes concrete steps. Fable defaults to a Challenger who wants the truth told plainly. Astra is a coin flip between the two on the one axis that matters most for how an answer is organized. If you use two of these, you are already living with two personalities. If you do not tell either of them how you think, you get whichever one this month's model happens to be.</p><p>It also changes what 'default' means. The defaults are moving between versions, in directions the labs do not announce. A tuning file is the part you control.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The caveats, in one place.</h2>
+        <ul><li>The May and September collections used different methods and are kept apart on the <a href="/research">research hub</a>. May counted scoring records, some of which re-score one answer; September counts fresh sessions with published vectors.</li><li>Muse Spark 1.3 is a reported aggregate from 100 sequential runs in one session per test, with no raw answers supplied. It is the headline of this piece and the least verified number in it. A fresh-session rerun would settle it.</li><li>Grok 4.6 is one self-report plus simulated draws. Gemini, GLM and MiniMax have not been re-tested.</li><li>Astra and Sol were run with different adaptation instructions, so their difference is partly the prompt.</li><li>These are self-descriptions on questionnaires written for people. They say how a model answers a questionnaire, not how it behaves on your task.</li></ul><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href="/research#methodology">methods and limits</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Is every AI an INTJ?</summary>
+            <p>Not anymore. In May 2026, six models returned INTJ in 597 of 600 scoring records. In September 2026, Meta's Muse Spark 1.3 was reported ISTJ in 80 of 100 runs and GPT-6 Astra split ISTJ 46 to INTJ 45. The Claude models and GPT-6 Sol are still INTJ in 94 to 99 of 100 fresh sessions.</p>
+          </details>
+          <details>
+            <summary>What changed between May and September?</summary>
+            <p>The Sensing vs Intuition axis on the MBTI for two models; the DISC order, from Conscientiousness-first to Steadiness-first, with Dominance at the floor; and the Enneagram, which now splits three ways between Helper, Investigator and Challenger. Judging, Introversion, Secure attachment and high Agreeableness held.</p>
+          </details>
+          <details>
+            <summary>Which AI is the first non-INTJ?</summary>
+            <p>Meta's Muse Spark 1.3, reported ISTJ in 80 of 100 runs on September 24, 2026. The report came from sequential runs inside one session and did not include raw answers, so it is the least verified number in the study until a fresh-session rerun.</p>
+          </details>
+          <details>
+            <summary>Does this mean AI personalities are diverging?</summary>
+            <p>On the finer tests, yes, and on one MBTI axis. On the traits that define the assistant character (planful, reserved, agreeable, calm, Secure) they are as uniform as they were in May. The divergence is in the fine print, which happens to be what a tuning file addresses.</p>
+          </details>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://zonted.com/posts/every-ai-is-intj/" target="_blank" rel="noopener">Every AI is INTJ (the May 2026 study)</a></li>
+          <li><a href="https://agent-tune.com/research/ai-personality-five-models-2026" target="_blank" rel="noopener">What five AI models say about themselves (the September 2026 study, with data)</a></li>
+          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">AgentTune research hub</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-personality-rankings"><span class="guide-related-kicker">Research</span>AI personality rankings</a>
+          <a href="/guides/meta-muse-characters"><span class="guide-related-kicker">Guide</span>Meta Muse characters, explained</a>
+          <a href="/research/what-personality-type-is-claude"><span class="guide-related-kicker">Research</span>What personality type is Claude?</a>
+          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Find your own type</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

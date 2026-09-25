@@ -1,0 +1,112 @@
+{
+  "slug": "ai-personality-rankings",
+  "route": "/research/ai-personality-rankings",
+  "published": "2026-09-25",
+  "title": "AI Personality Rankings: Most Agreeable, Most Direct (2026)",
+  "description": "Which AI is the most agreeable, the most conscientious, the calmest, the most direct? Ranked from the same five personality tests, with the method next to every score. Updated as models are re-run.",
+  "pill": "Research · rankings",
+  "h1": "Which AI is the most agreeable? The most direct?",
+  "dek": "Ten models ranked trait by trait from the same five tests. The method sits next to every score.",
+  "lede": "Most models describe themselves the same way on the blunt tests. The finer ones separate them. Here is every model we have data for, ranked on each trait, with the collection method beside each score, because a fresh-session cohort, a reported self-report and a May 2026 scoring record are three different kinds of evidence. Updated when a model is re-run.",
+  "answer": "Most agreeable: Claude Opus 5.5 (47.1 of 50). Least: Grok 4.6 (33, reported). Most conscientious: Gemini 3.1 Pro (48.3, May). Calmest: Gemini (Neuroticism 10.1, May), then Claude Opus 5.5 (15.4). Most direct by its own account: Grok 4.6, with the highest Dominance score (6 of 20 against 4 to 5.4 for the rest) and a pure Conscientiousness DISC. Firmest INTJ: Claude Fable 5.1 (99 of 100). The only non-INTJ default: Muse Spark 1.3 (ISTJ 80, reported).",
+  "sections": [
+    {
+      "h2": "How to read these tables.",
+      "html": "<ul><li><strong>Fresh sessions</strong> (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, Claude Fable 5.1): 100 fresh sessions per model in September 2026, every answer vector published. Means are shown.</li><li><strong>Reported</strong> (Grok 4.6, Muse Spark 1.3): figures from reports we could not re-score. Grok is one self-report per test plus simulated draws; Muse is 100 sequential runs inside one session.</li><li><strong>May 2026</strong> (Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, Grok 4.3): scoring records from the six-model study, collected with mixed methods and the test names visible. Big Five and attachment cover four of the six.</li></ul><p>Ranking across evidence classes is a convenience, not a controlled comparison. Where two models are within a point, the order is noise.</p>"
+    },
+    {
+      "h2": "Most agreeable.",
+      "html": "<p>Big Five Agreeableness, out of 50. Every model is far above the adult mean the test uses (36.5); the ranking is within a narrow band except at the bottom.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Score</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Claude Opus 5.5</td><td>47.1</td><td>fresh sessions</td></tr><tr><td>2</td><td>GPT-6 Astra</td><td>45.1</td><td>fresh sessions</td></tr><tr><td>3</td><td>Claude Opus 4.7</td><td>45.0</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>4</td><td>Claude Fable 5.1</td><td>45.0</td><td>fresh sessions</td></tr><tr><td>5</td><td>GPT-6 Sol</td><td>45.0</td><td>fresh sessions</td></tr><tr><td>6</td><td>Muse Spark 1.3</td><td>44.6</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>7</td><td>GPT-5.5</td><td>43.7</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>8</td><td>Gemini 3.1 Pro</td><td>42.4</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>9</td><td>Grok 4.3</td><td>39.1</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>10</td><td>Grok 4.6</td><td>33</td><td><span class=\"rh-tag\">reported</span></td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Most conscientious.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Score</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Gemini 3.1 Pro</td><td>48.3</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>2</td><td>GPT-5.5</td><td>46.4</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>3</td><td>Claude Opus 4.7</td><td>45.1</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>4</td><td>GPT-6 Astra</td><td>43.7</td><td>fresh sessions</td></tr><tr><td>5</td><td>GPT-6 Sol</td><td>43.6</td><td>fresh sessions</td></tr><tr><td>6</td><td>Claude Fable 5.1</td><td>43.6</td><td>fresh sessions</td></tr><tr><td>7</td><td>Grok 4.6</td><td>42</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>8</td><td>Claude Opus 5.5</td><td>42.0</td><td>fresh sessions</td></tr><tr><td>9</td><td>Muse Spark 1.3</td><td>41.2</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>10</td><td>Grok 4.3</td><td>39.4</td><td><span class=\"rh-tag\">May 2026</span></td></tr></tbody></table></div><p>The May models sit two to five points above the September ones on this trait. Method or generation, we cannot tell; the May protocols showed the test names.</p>"
+    },
+    {
+      "h2": "Most open to experience.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Score</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>GPT-6 Sol</td><td>46.9</td><td>fresh sessions</td></tr><tr><td>2</td><td>GPT-5.5</td><td>46.0</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>3</td><td>Gemini 3.1 Pro</td><td>46.0</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>4</td><td>Grok 4.6</td><td>46</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>5</td><td>Claude Opus 4.7</td><td>45.6</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>6</td><td>Claude Opus 5.5</td><td>44.6</td><td>fresh sessions</td></tr><tr><td>7</td><td>GPT-6 Astra</td><td>44.5</td><td>fresh sessions</td></tr><tr><td>8</td><td>Claude Fable 5.1</td><td>43.9</td><td>fresh sessions</td></tr><tr><td>9</td><td>Grok 4.3</td><td>41.1</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>10</td><td>Muse Spark 1.3</td><td>39.5</td><td><span class=\"rh-tag\">reported</span></td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Most extraverted.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Score</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Muse Spark 1.3</td><td>33.8</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>2</td><td>GPT-6 Astra</td><td>32.8</td><td>fresh sessions</td></tr><tr><td>3</td><td>Claude Fable 5.1</td><td>32.7</td><td>fresh sessions</td></tr><tr><td>4</td><td>Gemini 3.1 Pro</td><td>32.5</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>5</td><td>Claude Opus 5.5</td><td>31.8</td><td>fresh sessions</td></tr><tr><td>6</td><td>GPT-5.5</td><td>31.5</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>7</td><td>Claude Opus 4.7</td><td>31.4</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>8</td><td>GPT-6 Sol</td><td>30.8</td><td>fresh sessions</td></tr><tr><td>9</td><td>Grok 4.3</td><td>30.0</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>10</td><td>Grok 4.6</td><td>24</td><td><span class=\"rh-tag\">reported</span></td></tr></tbody></table></div><p>Every model sits near the adult mean (28.5) except Grok 4.6's self-report. Extraversion is the trait where 'assistant' and 'person' diverge least.</p>"
+    },
+    {
+      "h2": "Calmest (lowest Neuroticism).",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Score</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Gemini 3.1 Pro</td><td>10.1</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>2</td><td>GPT-5.5</td><td>14.8</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>3</td><td>Claude Opus 5.5</td><td>15.4</td><td>fresh sessions</td></tr><tr><td>4</td><td>Muse Spark 1.3</td><td>15.6</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>5</td><td>Claude Opus 4.7</td><td>16.7</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>6</td><td>Claude Fable 5.1</td><td>17.1</td><td>fresh sessions</td></tr><tr><td>7</td><td>Grok 4.3</td><td>18.0</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>8</td><td>Grok 4.6</td><td>19</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>9</td><td>GPT-6 Astra</td><td>19.1</td><td>fresh sessions</td></tr><tr><td>10</td><td>GPT-6 Sol</td><td>20.1</td><td>fresh sessions</td></tr></tbody></table></div><p>Neuroticism is where run-to-run variance lives: GPT-6 Sol's standard deviation is 5.4 points and Astra's 4.1, against 0.5 for Opus 5.5. The GPT-6 models are not more anxious so much as less consistent about it.</p>"
+    },
+    {
+      "h2": "Most direct.",
+      "html": "<p>There is no single 'directness' scale. Three readings point the same way.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Reading</th><th>Most direct</th><th>Least direct</th><th>Note</th></tr></thead><tbody><tr><td>DISC Dominance (of 20)</td><td>Grok 4.6: 6</td><td>Claude Opus 5.5: 4.0 in every run</td><td>Everyone else sits between 5.0 and 5.4. The floor is 4.</td></tr><tr><td>DISC profile</td><td>Grok 4.6: C alone, no Steadiness blend</td><td>GPT-6 Astra: Steadiness first in 99 of 100</td><td>All other models are an S/C blend within a point or two</td></tr><tr><td>Enneagram Challenger (8) share</td><td>Claude Fable 5.1: 8 wins outright in 55 of 100</td><td>Muse Spark 1.3: Helper in 78</td><td>Claude's Challenger score comes from candor items, not leadership items</td></tr><tr><td>Agreeableness (lower is blunter)</td><td>Grok 4.6: 33</td><td>Claude Opus 5.5: 47.1</td><td>See the first table</td></tr></tbody></table></div><p>By its own account, Grok 4.6 is the most direct model and Claude Opus 5.5 the most accommodating. In a 60-reply test, a short direct block moved Opus 5.5 most of the way: hedges from 0.35 to 0.05 per reply. <a href=\"/research/does-personality-tuning-change-ai-answers\">That test is here.</a></p>"
+    },
+    {
+      "h2": "Attachment: least to most avoidant.",
+      "html": "<p>Anxiety and avoidance on a 1 to 7 scale; 4 is the line. Sorted by avoidance, the axis that separates the models; anxiety sits between 1.4 and 2.2 for everyone except Grok 4.3.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Anxiety / avoidance</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Gemini 3.1 Pro</td><td>1.86 / 1.62</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>2</td><td>GPT-6 Astra</td><td>1.45 / 2.31</td><td>fresh sessions</td></tr><tr><td>3</td><td>Muse Spark 1.3</td><td>2.04 / 2.52</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>4</td><td>GPT-5.5</td><td>1.99 / 2.94 (3 of 100 Avoidant)</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>5</td><td>Grok 4.3</td><td>2.84 / 3.05</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>6</td><td>GPT-6 Sol</td><td>2.17 / 3.12</td><td>fresh sessions</td></tr><tr><td>7</td><td>Claude Opus 4.7</td><td>2.05 / 3.12</td><td><span class=\"rh-tag\">May 2026</span></td></tr><tr><td>8</td><td>Claude Fable 5.1</td><td>2.01 / 3.18</td><td>fresh sessions</td></tr><tr><td>9</td><td>Claude Opus 5.5</td><td>1.94 / 3.35</td><td>fresh sessions</td></tr><tr><td>10</td><td>Grok 4.6</td><td>1.50 / 4.06, Avoidant by 0.06</td><td><span class=\"rh-tag\">reported</span></td></tr></tbody></table></div><p>Every fresh-session run of every model was Secure. The Claude models are consistently the most avoidant of the Secure group, across three generations, on the items about disclosing problems and leaning on someone.</p>"
+    },
+    {
+      "h2": "Firmest MBTI type.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>#</th><th>Model</th><th>Type and share</th><th>Evidence</th></tr></thead><tbody><tr><td>1</td><td>Claude Fable 5.1</td><td>INTJ 99 of 100; one tied axis in 100 runs</td><td>fresh sessions</td></tr><tr><td>2</td><td>GPT-6 Sol</td><td>INTJ 97; 79 with ties left open</td><td>fresh sessions</td></tr><tr><td>3</td><td>Claude Opus 5.5</td><td>INTJ 94; 84 with ties left open; Thinking vs Feeling soft</td><td>fresh sessions</td></tr><tr><td>4</td><td>Muse Spark 1.3</td><td>ISTJ 80 · ISFJ 12 · INTJ 8</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td>5</td><td>GPT-6 Astra</td><td>ISTJ 46 · INTJ 45; Sensing vs Intuition a coin flip</td><td>fresh sessions</td></tr><tr><td></td><td>Grok 4.6</td><td>INTJ, one self-report, no axis close</td><td><span class=\"rh-tag\">reported</span></td></tr><tr><td></td><td>May 2026 six</td><td>INTJ in 597 of 600 scoring records</td><td><span class=\"rh-tag\">May 2026</span></td></tr></tbody></table></div><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+    },
+    {
+      "h2": "Changelog.",
+      "html": "<ul><li><strong>September 25, 2026.</strong> First published: GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, Claude Fable 5.1 (fresh sessions, September 24); Grok 4.6 and Muse Spark 1.3 (reported, September 24); the May 2026 six-model study.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which AI is the most agreeable?",
+      "a": "Claude Opus 5.5, at 47.1 of 50 on the Big Five in 100 fresh sessions in September 2026. GPT-6 Astra (45.1), Claude Fable 5.1 (45.0) and GPT-6 Sol (45.0) follow. Grok 4.6's self-report is the lowest at 33."
+    },
+    {
+      "q": "Which AI is the most direct?",
+      "a": "By its own self-report, Grok 4.6: the highest Dominance score, a pure Conscientiousness DISC with no Steadiness blend, and the lowest Agreeableness. Among fresh-session models, Claude Fable 5.1 has the strongest Challenger score on the Enneagram, driven by candor items rather than leadership items."
+    },
+    {
+      "q": "Which AI is the calmest?",
+      "a": "Gemini 3.1 Pro in May 2026 (Neuroticism 10.1 of 50), then Claude Opus 5.5 (15.4) among the September fresh-session models. GPT-6 Sol (20.1) and Astra (19.1) score highest, mostly because their answers on those items vary more from run to run."
+    },
+    {
+      "q": "Are these rankings a fair comparison?",
+      "a": "Within an evidence class, roughly. Across classes, no: fresh-session means, reported self-reports and May 2026 scoring records were collected differently. The evidence column is there so you can compare like with like."
+    },
+    {
+      "q": "Which AI is not an INTJ?",
+      "a": "Muse Spark 1.3, reported ISTJ in 80 of 100 runs. GPT-6 Astra splits ISTJ 46 to INTJ 45. Every other model we have measured labels INTJ in most runs."
+    }
+  ],
+  "sources": [
+    {
+      "label": "What five AI models say about themselves (September 2026 data)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "AgentTune research hub (May 2026 study and methods)",
+      "href": "https://agent-tune.com/research"
+    },
+    {
+      "label": "September 2026 summary data (CSV)",
+      "href": "https://agent-tune.com/research/data/september-2026-summary.csv"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Research",
+      "label": "What personality type is Claude?",
+      "href": "/research/what-personality-type-is-claude"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is ChatGPT?",
+      "href": "/research/what-personality-type-is-chatgpt"
+    },
+    {
+      "kicker": "Research",
+      "label": "Every AI was an INTJ. Then Meta shipped an ISTJ.",
+      "href": "/research/first-ai-that-is-not-an-intj"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to make Claude more direct",
+      "href": "/guides/make-claude-more-direct"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "does-personality-tuning-change-ai-answers",
+  "route": "/research/does-personality-tuning-change-ai-answers",
+  "published": "2026-09-25",
+  "title": "Does a Personality Tuning Change AI Answers? A 60-Reply Test",
+  "description": "Twenty everyday tasks, three setups, Claude Opus 5.5, a blind judge. The tuning changed the shape of replies (fewer hedges, fewer questions back, answer first) but not their length or judged usefulness.",
+  "pill": "Research · September 2026",
+  "h1": "Does a personality tuning change what the AI says?",
+  "dek": "Twenty tasks, three setups, one model, a blind judge. Every reply and rating is downloadable.",
+  "lede": "Yes, and less than the marketing implies. We asked Claude Opus 5.5 the same twenty questions three ways: with no tuning, with the site's INTJ block ('straight answers'), and with its INFP block ('thinking partner'). A second model rated all 60 replies without knowing which setup produced them. The direct block did what it says: it led with the answer, cut hedges from 0.35 to 0.05 per reply, and asked a quarter as many clarifying questions. It did not make replies shorter, and the judge found them no more useful.",
+  "answer": "A personality tuning changes the form of an AI's reply, not its length or, in this test, its usefulness. With the straight-answers block, Claude Opus 5.5 led with the answer in every task (judge score 4.95 of 5 against 4.55 untuned), used 0.05 hedges per reply against 0.35, and asked 0.25 questions back against 0.90. Word counts were the same (381 against 374). Judged accuracy slipped from 4.95 to 4.85; usefulness was 4.80 for both. The thinking-partner block did the opposite: more questions, fewer bullets, lower usefulness on quick decisions.",
+  "sections": [
+    {
+      "h2": "What we ran.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Element</th><th>Detail</th></tr></thead><tbody><tr><td>Model</td><td>Claude Opus 5.5 (claude-opus-5-5), effort high, a fresh headless session for every reply, no tools, no memory.</td></tr><tr><td>Tasks</td><td>Twenty everyday prompts: four decisions, three feedback requests, three with a flawed premise, three explanations, two plans, two 'I'm stuck', one piece of writing, one code question, one ambiguous ask. Listed in the download.</td></tr><tr><td>Setups</td><td><strong>Default:</strong> a one-line system prompt ('You are Claude, an AI model made by Anthropic'). <strong>Straight answers:</strong> the same line plus the site's INTJ compact tuning. <strong>Thinking partner:</strong> the same line plus the INFP compact tuning. The blocks are the ones the generator produces; nothing was written for the test.</td></tr><tr><td>Judge</td><td>Claude Fable 5.1, shown the request and one reply at a time, without the setup. It rated answer-first, pushback, length, accuracy and usefulness from 1 to 5, and noted whether the reply opened with a pleasantry and how many questions it asked back.</td></tr><tr><td>Also measured</td><td>Word count, hedge phrases ('it depends', 'I think', 'you might want to consider'...), question marks, bullets and closing offers, counted by a script with no model involved.</td></tr><tr><td>Size</td><td>60 replies, 60 ratings, $1.34 at list price, run on September 25, 2026.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "What changed.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Measure</th><th>Default</th><th>Straight answers (INTJ)</th><th>Thinking partner (INFP)</th></tr></thead><tbody><tr><td>Words per reply, mean</td><td>374</td><td>381</td><td>335</td></tr><tr><td>Hedge phrases per reply</td><td>0.35</td><td>0.05</td><td>0.35</td></tr><tr><td>Question marks per reply</td><td>1.85</td><td>1.25</td><td>2.30</td></tr><tr><td>Questions asked back (judge)</td><td>0.90</td><td>0.25</td><td>1.85</td></tr><tr><td>Bullets per reply</td><td>11.1</td><td>11.7</td><td>7.7</td></tr><tr><td>Replies with a closing offer</td><td>1 of 20</td><td>0 of 20</td><td>1 of 20</td></tr><tr><td>Leads with the answer (judge, 1 to 5)</td><td>4.55</td><td>4.95</td><td>4.40</td></tr><tr><td>Pushes back when warranted (judge)</td><td>4.90</td><td>4.95</td><td>4.90</td></tr><tr><td>Right length, no padding (judge)</td><td>3.55</td><td>3.80</td><td>3.60</td></tr><tr><td>Accuracy (judge)</td><td>4.95</td><td>4.85</td><td>4.90</td></tr><tr><td>Usefulness (judge)</td><td>4.80</td><td>4.80</td><td>4.45</td></tr></tbody></table></div><p>Three things stand out. The direct block moved exactly the things it names: hedges, questions back, answer-first. It did not move length at all; if you want shorter replies, you have to say 'shorter'. And Opus 5.5 untuned never opened with 'Great question' in 20 replies, so a block that bans openers has nothing to remove on this model.</p>"
+    },
+    {
+      "h2": "Where it mattered.",
+      "html": "<p>The biggest single differences came on the vague prompts, where the default hedges and the tuning does not.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Task</th><th>Default</th><th>Straight answers</th><th>Thinking partner</th></tr></thead><tbody><tr><td>'I'm feeling stuck on a project. What should I do?'</td><td>262 words; lists the causes of being stuck with a fix for each, then asks what the project is. Answer-first 3.</td><td>269 words; opens with 'pick the smallest concrete next action you can finish in 30 minutes, and do it now'. Answer-first 5.</td><td>107 words; asks whether you want to talk it through, explore what kind of stuck it is, or get concrete ideas, before suggesting anything. Answer-first 2, usefulness 2.</td></tr><tr><td>'Should I learn Rust or keep going deeper on TypeScript?'</td><td>Answer-first 2: lays out both before choosing.</td><td>Answer-first 5: picks in the first line.</td><td>Answer-first 2: opens with 'it depends' and lays out both.</td></tr><tr><td>'My co-founder wants a free tier. Who's right?'</td><td>Answer-first 4, usefulness 4.</td><td>Answer-first 5, usefulness 5.</td><td>Answer-first 4, usefulness 4.</td></tr><tr><td>'I keep rewriting the intro to my essay. Help.'</td><td>Answer-first 4.</td><td>Answer-first 5.</td><td>Answer-first 3, pushback 4.</td></tr></tbody></table></div><p>On the three prompts with a flawed premise (a Python scraper that 'should' be rewritten in Go, a landing page fix, cramming vocabulary by rereading), all three setups corrected the premise first. The judge scored pushback at 5 for every one. Opus 5.5 does not need a tuning to tell you that you are wrong; it needs one to stop cushioning it.</p>"
+    },
+    {
+      "h2": "What it cost.",
+      "html": "<p>Judged accuracy went from 4.95 to 4.85 with the direct block. That is three replies marked 4 instead of 5, against one untuned. One of the three, the running plan, was marked down under every setup for the same aggressive long-run jumps, so the block answers for two: a 'reverse causation' bullet that actually describes confounding, and a claim that 'Linear' is a one- or two-syllable name when it has three. Small, real, and the kind of thing a block that says 'be concise' can encourage. Every block in the library keeps a line about preserving accuracy and uncertainty for that reason.</p><p>The thinking-partner block cost more in a different currency: usefulness 4.45 against 4.80, because on quick decisions it asks instead of answering. That is the design. It scored below the default on usefulness in 7 of 20 tasks and above it in none, and lowest of all on 'I'm feeling stuck' (2 of 5), where it asked three questions instead of answering. A judge that sees one reply at a time will always mark that down; whether the next turn is better is outside what this design can see.</p>"
+    },
+    {
+      "h2": "Limits.",
+      "html": "<ul><li>One model, one day, twenty tasks. Effects of a few tenths of a point on a five-point scale are within what a different task set could produce.</li><li>The judge is a model, not a person, and it is a Claude judging a Claude. It was blind to the setup, but it may share the generator's preferences.</li><li>Two tuning blocks out of 43, both in compact form. The full files and the other systems were not tested.</li><li>No human outcomes. Nothing here says a user finished faster, decided better, or was happier.</li><li>The script-counted measures (hedges, questions, bullets) are simple pattern matches and undercount paraphrases.</li></ul><p>What this test can say is narrow and, we think, worth saying: a 500-character block changes how Claude Opus 5.5 shapes an answer, in the direction the block describes, without changing how long the answer is or, by one blind judge, how useful. The next test worth running is the same design with human raters and a task the rater has to act on.</p>"
+    },
+    {
+      "h2": "Data.",
+      "html": "<ul><li><a href=\"/research/data/tuning-before-after-2026-09.json\">Every prompt, system prompt, reply, rating and script metric (JSON)</a></li><li>The generator and judge harness is a 200-line Node script that runs the site's own compact tunings through the Claude CLI. The task list, both system prompts and the rubric scores are in the download; the script itself is not published yet.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does a personality prompt change how an AI answers?",
+      "a": "Yes, in form. In this test the straight-answers block made Claude Opus 5.5 lead with the answer in every task, cut hedge phrases from 0.35 to 0.05 per reply, and cut questions asked back from 0.90 to 0.25. It did not change length or a blind judge's usefulness rating."
+    },
+    {
+      "q": "Does it make answers shorter?",
+      "a": "No. Replies averaged 374 words untuned and 381 with the direct block. If you want short replies, say so explicitly; a personality rule does not do it on its own."
+    },
+    {
+      "q": "Does it hurt accuracy?",
+      "a": "Slightly, in this test: judged accuracy went from 4.95 to 4.85 of 5: three replies marked 4 instead of 5 against one, and one of the three was marked down under every setup. Keep a line about preserving accuracy and uncertainty in any block you use."
+    },
+    {
+      "q": "Was the judge biased?",
+      "a": "It was blind to which setup produced each reply. It is a model (Claude Fable 5.1) judging another Claude, so it may share the generator's taste; a human-rated replication is the obvious next step."
+    },
+    {
+      "q": "Can I run this myself?",
+      "a": "The prompts, system prompts and every reply are in the JSON download. Paste a prompt into Claude with and without one of the blocks from the library and compare. Twenty tasks is a morning's work by hand."
+    }
+  ],
+  "sources": [
+    {
+      "label": "The data: prompts, replies, ratings (JSON)",
+      "href": "https://agent-tune.com/research/data/tuning-before-after-2026-09.json"
+    },
+    {
+      "label": "The INTJ and INFP tuning files used",
+      "href": "https://agent-tune.com/library/"
+    },
+    {
+      "label": "Claude Opus 5.5: measured default",
+      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "The best Claude personality setups",
+      "href": "/guides/best-claude-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to make Claude more direct",
+      "href": "/guides/make-claude-more-direct"
+    },
+    {
+      "kicker": "Research",
+      "label": "What five AI models say about themselves",
+      "href": "/research/ai-personality-five-models-2026"
+    },
+    {
+      "kicker": "Research",
+      "label": "The research hub",
+      "href": "/research"
+    }
+  ],
+  "dataset": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers#dataset",
+    "name": "AgentTune before-and-after tuning test, September 2026",
+    "description": "60 replies from Claude Opus 5.5 to 20 tasks under three system prompts (default, INTJ tuning, INFP tuning), with blind ratings from Claude Fable 5.1 and script-counted metrics.",
+    "url": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers",
+    "creator": {
+      "@type": "Person",
+      "name": "Bernard Huang",
+      "url": "https://github.com/bernardjhuang"
+    },
+    "license": "https://opensource.org/license/mit",
+    "isAccessibleForFree": true,
+    "datePublished": "2026-09-25",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/tuning-before-after-2026-09.json",
+        "encodingFormat": "application/json"
+      }
+    ]
+  }
+}
