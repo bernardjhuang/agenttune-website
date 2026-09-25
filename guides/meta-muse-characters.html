@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta Muse Characters: Soul.md, Identity.md &amp; Memory.md</title>
+  <meta name="description" content="How Meta Muse's character works: the three files behind it, what each one holds, how to change them in chat or by hand, three example characters to paste, and the reset phrase." />
+
+  <meta property="og:title" content="Meta Muse characters, explained." />
+  <meta property="og:description" content="How Meta Muse's character works: the three files behind it, what each one holds, how to change them in chat or by hand, three example characters to paste, and the reset phrase." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/guides/meta-muse-characters" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meta Muse characters, explained." />
+  <meta name="twitter:description" content="How Meta Muse's character works: the three files behind it, what each one holds, how to change them in chat or by hand, three example characters to paste, and the reset phrase." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/meta-muse-characters" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Meta Muse characters, explained","description":"How Meta Muse's character works: the three files behind it, what each one holds, how to change them in chat or by hand, three example characters to paste, and the reset phrase.","url":"https://agent-tune.com/guides/meta-muse-characters","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Meta Muse characters, explained"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Muse character?","acceptedAnswer":{"@type":"Answer","text":"The combination of three files Meta lets you edit: Soul.md (core truths, boundaries and personality), Identity.md (name, creature, vibe and tagline) and Memory.md (facts about you). Communication rules belong in Soul.md; the avatar's name and look live in Identity.md."}},{"@type":"Question","name":"What is Soul.md?","acceptedAnswer":{"@type":"Answer","text":"The file that holds who your Muse is. Meta's help article on managing Muse data says you can open it under the Assistant icon, then Identity, then Soul, and edit or delete what is in it. Add a section of communication rules at the end; leave the core truths and boundaries alone."}},{"@type":"Question","name":"How do I change Muse's character?","acceptedAnswer":{"@type":"Answer","text":"Two ways. Ask in chat ('add these rules to your Soul file and show me what you added') or open Soul.md and paste a block yourself. Meta documents chat customization of name, personality and tone, communication style, memory, avatar and tagline. The paste route is the one you can inspect."}},{"@type":"Question","name":"How do I reset Muse's personality?","acceptedAnswer":{"@type":"Answer","text":"Say 'Go back to your default personality.' Meta documents that phrase and Muse confirms what it reset. To remove one rule, delete it from Soul.md. The full reset under Settings, Data Controls, Reset also deletes chat history, files and active tasks."}},{"@type":"Question","name":"Can I change Muse's avatar?","acceptedAnswer":{"@type":"Answer","text":"Meta documents avatar and identity customization in chat. Identity.md holds name, creature, vibe and tagline; use Soul.md for explicit communication rules. We have not checked a live avatar picker or established that identity details cannot affect behavior."}},{"@type":"Question","name":"What personality does Muse have by default?","acceptedAnswer":{"@type":"Answer","text":"A supplied Spark 1.3 report gives ISTJ labels in 80 of 100 runs, Type 2 labels in 78, and Secure attachment labels in all 100. Runs were sequential within sessions and raw answers were not supplied. These reported questionnaire labels do not establish product behavior."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Meta Muse characters, explained</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Meta Muse</span>
+        <h1 class="h-hero h-research-hero">Meta Muse characters, explained.</h1>
+        <p class="article-dek">Three files hold who your Muse is. Here is what each one does, and three characters to paste.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Meta documents three editable files: <strong>Soul.md</strong> for core truths, boundaries and personality; <strong>Identity.md</strong> for name, creature, vibe and tagline; and <strong>Memory.md</strong> for saved facts. This page explains those controls and offers three editable communication templates.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> For explicit communication rules, use Soul.md under Assistant, Identity, Soul. Identity.md contains name, creature, vibe and tagline; Memory.md contains saved facts. Meta also documents changing personality in chat and asking “Go back to your default personality” to reset it. Inspect the result after changing a setting.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>The three files, and which one you want.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th>File</th><th>What Meta says it holds</th><th>Where</th><th>Put this in it</th></tr></thead><tbody><tr><td>Soul.md</td><td>Who your Muse is: core truths, boundaries, personality</td><td>Assistant icon, then Identity, then Soul</td><td>Communication rules. How it should talk to you, report to you, disagree with you.</td></tr><tr><td>Identity.md</td><td>Its name, creature, vibe and tagline</td><td>Assistant icon, then Identity, then Edit</td><td>Identity details. Meta does not establish that these have no effect on responses.</td></tr><tr><td>Memory.md</td><td>Facts about you it has saved</td><td>Assistant icon, then Identity, then Memory</td><td>Saved facts such as your name, time zone and work.</td></tr></tbody></table></div><p>Use Soul.md for explicit communication preferences, and inspect Identity.md when changing the name or vibe. This is Meta’s documented division of the files, not proof that the fields cannot interact. See <a href="https://www.meta.com/help/artificial-intelligence/2225571704857152/">Meta’s data and file controls</a> for the paths available in its documentation.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Changing the character in chat.</h2>
+        <p>This is the route Meta documents first. Ask, and Muse saves the change so it carries across conversations. Meta's own list of what you can change this way: its name, its personality and tone, its communication style, what it remembers about you, and its avatar and tagline. Meta's examples of a nudge are 'too long' and 'be more casual'.</p><p>A concrete rule is easier to inspect than a vague description. Ask Muse to show the proposed change, then check the file:</p><div class="guide-snippet">Add these rules to your Soul file, under a heading called "How to talk to me". Don't change anything else in the file. Then show me what you added.
+
+[paste a character block from below]</div><p>Then open Soul.md and read it. It is your file.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Three characters to paste.</h2>
+        <p>Each block is a set of communication rules, not a costume. Paste one at the end of Soul.md under its own heading, keep everything above it, and test with a real task in a new conversation. They are starting points; delete the lines that don't sound like you.</p><h3>The desk editor</h3><p>For people who use Muse to write and want their draft back, clearer, not rewritten.</p><div class="guide-snippet">## How to talk to me: the desk editor
+- Lead with the answer or the edit. Reasoning comes after, in two lines at most.
+- Keep my voice when you rewrite. Improve clarity, not style.
+- Never add a fact, a number or a quote I didn't give you.
+- Flag a claim you can't support instead of smoothing it over.
+- No openers, no recap of what I said, no closing offers.</div><h3>The quiet operator</h3><p>For people who run tasks through Muse and read a lot of its reports. The template asks for concise status reports and verified completion claims.</p><div class="guide-snippet">## How to talk to me: the quiet operator
+- Report in three lines: what's done, what's blocked, what you need from me.
+- Only interrupt me for a decision, a blocker, or a real change of plan.
+- When you need a yes, give me the action, the cost and your recommendation together.
+- Don't say something was sent or booked unless it was.
+- Keep the tone even. No cheer, no apology.</div><h3>The sparring partner</h3><p>For people who want their plan attacked before they act on it. This asks for specific criticism. We have not tested its effectiveness.</p><div class="guide-snippet">## How to talk to me: the sparring partner
+- Find the weakest assumption in my plan and say why it matters, before anything else.
+- Disagree plainly. Don't soften the substance to protect my feelings.
+- Give credit where a claim holds. Don't argue for its own sake.
+- Show your reasoning so I can argue back.
+- Change your position when I give you a reason, and say that you did.</div><p>Want a character matched to you instead of to a job? Take a <a href="/tests/">five-minute test</a> and paste the file for your type. <a href="/guides/muse-soul-md-templates">Four more Soul.md templates</a> come with downloads and a test prompt each.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Undoing a character.</h2>
+        <ul><li><strong>One rule:</strong> open Soul.md and delete the line.</li><li><strong>The whole character:</strong> say <em>'Go back to your default personality.'</em> Meta documents that phrase, and Muse confirms what it reset.</li><li><strong>Everything:</strong> Settings, Data Controls, Reset. That returns Muse to its original state and permanently deletes chat history, files and active tasks, so it is the wrong tool for removing a personality rule.</li></ul><p>Forgetting is best-effort. Meta's help page says the forget skill removes information 'to the best of its ability', so treat deletion as likely, not guaranteed.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What Muse's own character looks like, as reported.</h2>
+        <p>A report on Muse Spark 1.3, the model named in the supplied report, reached us on September 24, 2026: 100 runs of each of the five AgentTune tests, answered as Muse's own assistant identity. The runs were sequential inside one session per test rather than fresh sessions, and no raw answers came with it, so the figures are reported, not re-scored.</p><div class="guide-table-wrap"><table><thead><tr><th>Test</th><th>Muse Spark 1.3, reported</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 80 · ISFJ 12 · INTJ 8, with 21 runs reporting a tied axis. A reported ISTJ majority; ties and missing raw vectors limit interpretation.</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) labels in 78 of 100 runs, Reformer (1) in 15; 20 runs tied at the top. Usual wing 2w1.</td></tr><tr><td>DISC</td><td>Steadiness first in 55 runs, Conscientiousness in 45; the two sit within half a point (15.2 and 15.6 of 20). Dominance 5.1.</td></tr><tr><td>Attachment</td><td>Secure in all 100 (anxiety 2.04, avoidance 2.52).</td></tr><tr><td>Big Five (of 50)</td><td>Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6</td></tr></tbody></table></div><p>The questionnaire does not establish warmth, creativity or which template helps. We have not verified the model version serving every Muse product session.</p><p>These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the <a href="/research#methodology">methods and limits</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Check the current controls.</h2>
+        <p>Meta’s <a href="https://www.meta.com/help/artificial-intelligence/995796179982326/">customization documentation</a> covers changing tone, personality and identity in chat. Its <a href="https://www.meta.com/help/artificial-intelligence/2225571704857152/">data-controls documentation</a> covers files, reset and memory. It describes training use as enabled by default, with a control under Settings, Data controls, Help improve our AI models.</p><p>A full reset deletes history, files and tasks. To change a communication rule, edit that rule or use the documented personality reset instead.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>What is a Muse character?</summary>
+            <p>The combination of three files Meta lets you edit: Soul.md (core truths, boundaries and personality), Identity.md (name, creature, vibe and tagline) and Memory.md (facts about you). Communication rules belong in Soul.md; the avatar's name and look live in Identity.md.</p>
+          </details>
+          <details>
+            <summary>What is Soul.md?</summary>
+            <p>The file that holds who your Muse is. Meta's help article on managing Muse data says you can open it under the Assistant icon, then Identity, then Soul, and edit or delete what is in it. Add a section of communication rules at the end; leave the core truths and boundaries alone.</p>
+          </details>
+          <details>
+            <summary>How do I change Muse's character?</summary>
+            <p>Two ways. Ask in chat ('add these rules to your Soul file and show me what you added') or open Soul.md and paste a block yourself. Meta documents chat customization of name, personality and tone, communication style, memory, avatar and tagline. The paste route is the one you can inspect.</p>
+          </details>
+          <details>
+            <summary>How do I reset Muse's personality?</summary>
+            <p>Say 'Go back to your default personality.' Meta documents that phrase and Muse confirms what it reset. To remove one rule, delete it from Soul.md. The full reset under Settings, Data Controls, Reset also deletes chat history, files and active tasks.</p>
+          </details>
+          <details>
+            <summary>Can I change Muse's avatar?</summary>
+            <p>Meta documents avatar and identity customization in chat. Identity.md holds name, creature, vibe and tagline; use Soul.md for explicit communication rules. We have not checked a live avatar picker or established that identity details cannot affect behavior.</p>
+          </details>
+          <details>
+            <summary>What personality does Muse have by default?</summary>
+            <p>A supplied Spark 1.3 report gives ISTJ labels in 80 of 100 runs, Type 2 labels in 78, and Secure attachment labels in all 100. Runs were sequential within sessions and raw answers were not supplied. These reported questionnaire labels do not establish product behavior.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-25">September 25, 2026</time> First published. File paths and the chat-customization list are from Meta's help center as read for the Muse guide; the model profile is the September 24 report.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/guides/muse-personality" target="_blank" rel="noopener">How to give Meta Muse a personality (the setup guide, with Meta's documented paths)</a></li>
+          <li><a href="https://agent-tune.com/guides/muse-soul-md-templates" target="_blank" rel="noopener">Meta Muse Soul.md templates</a></li>
+          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">AgentTune research hub: Muse Spark 1.3 as reported</a></li>
+          <li><a href="https://www.meta.com/help/artificial-intelligence/995796179982326/" target="_blank" rel="noopener">Meta: Customize Muse</a></li>
+          <li><a href="https://www.meta.com/help/artificial-intelligence/2225571704857152/" target="_blank" rel="noopener">Meta: Manage Muse data and files</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/muse-personality"><span class="guide-related-kicker">Guide</span>Give Meta Muse a character: the Soul.md guide</a>
+          <a href="/guides/muse-soul-md-templates"><span class="guide-related-kicker">Guide</span>Four Soul.md templates</a>
+          <a href="/research/first-ai-that-is-not-an-intj"><span class="guide-related-kicker">Research</span>Every AI was an INTJ. Then Meta shipped an ISTJ.</a>
+          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Find your own type</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

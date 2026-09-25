@@ -444,14 +444,14 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
   // SEO title — Template D, system-tuned
   // Kept under 60 characters for every type (longest: High Conscientiousness).
   const pageTitle = c.system === "ocean"
-    ? `${c.name} System Prompt (Big Five) · AgentTune`
+    ? `${c.name} System Prompt for Claude & ChatGPT`
     : c.system === "attachment"
-      ? `${c.code} Attachment System Prompt for AI · AgentTune`
+      ? `${c.code} Attachment System Prompt for Claude & ChatGPT`
       : c.system === "enneagram"
-        ? `Enneagram Type ${enneaDigit} System Prompt for AI Agents · AgentTune`
+        ? `Enneagram Type ${enneaDigit} System Prompt for Claude & ChatGPT`
         : c.system === "disc"
-          ? `DISC ${c.code} (${c.name}) System Prompt · AgentTune`
-          : `${c.code} System Prompt for AI Agents — Claude, GPT · AgentTune`;
+          ? `DISC ${c.code} ${c.name} System Prompt for Claude & ChatGPT`
+          : `${c.code} System Prompt: Custom Instructions for Claude & ChatGPT`;
 
   // H1 sub-label: names the framework, so the heading reads as a full phrase
   // ("T4 Enneagram Type 4 system prompt") to crawlers and screen readers.
@@ -1199,10 +1199,10 @@ function buildHub(contacts) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>43 Personality System Prompts for Claude & ChatGPT — AgentTune</title>
+  <title>43 Free Personality System Prompts for Claude & ChatGPT</title>
   <meta name="description" content="The full AgentTune library. 43 Markdown tuning files matched to every personality type across MBTI, Enneagram, DISC, Attachment, and OCEAN. Paste any one into your AI agent's system prompt." />
 
-  <meta property="og:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta property="og:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/library/" />
@@ -1215,7 +1215,7 @@ function buildHub(contacts) {
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta name="twitter:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta name="twitter:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
@@ -1376,6 +1376,18 @@ const STATIC_PAGES = [
   { route: "/guides/make-chatgpt-sound-like-you", file: "guides/make-chatgpt-sound-like-you.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/enneagram-ai-prompts", file: "guides/enneagram-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/mbti-vs-big-five-for-ai", file: "guides/mbti-vs-big-five-for-ai.html", changefreq: "monthly", priority: "0.7" },
+  { route: "/guides/best-claude-personality", file: "guides/best-claude-personality.html", changefreq: "monthly", priority: "0.8", comment: "September 2026 additions" },
+  { route: "/guides/make-claude-more-direct", file: "guides/make-claude-more-direct.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/meta-muse-characters", file: "guides/meta-muse-characters.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/chatgpt-custom-instructions-examples", file: "guides/chatgpt-custom-instructions-examples.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/open-personality-tests", file: "guides/open-personality-tests.html", changefreq: "monthly", priority: "0.7" },
+  { route: "/guides/ai-personality-glossary", file: "guides/ai-personality-glossary.html", changefreq: "monthly", priority: "0.6" },
+  { route: "/research/what-personality-type-is-claude", file: "research/what-personality-type-is-claude.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/what-personality-type-is-grok", file: "research/what-personality-type-is-grok.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/what-personality-type-is-gemini", file: "research/what-personality-type-is-gemini.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/does-personality-tuning-change-ai-answers", file: "research/does-personality-tuning-change-ai-answers.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-personality-rankings", file: "research/ai-personality-rankings.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/first-ai-that-is-not-an-intj", file: "research/first-ai-that-is-not-an-intj.html", changefreq: "monthly", priority: "0.7" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
   { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },
   { route: "/library/", file: "library/index.html", changefreq: "weekly", priority: "0.9", comment: "Library hub" }

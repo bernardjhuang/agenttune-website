@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Does Personality Tuning Change AI Answers? A 60-Reply Pilot</title>
+  <meta name="description" content="An exploratory archive of 20 tasks under three instruction conditions. Recount replies, inspect model ratings and compare what this pilot can and cannot show." />
+
+  <meta property="og:title" content="Does personality tuning change AI answers?" />
+  <meta property="og:description" content="An exploratory archive of 20 tasks under three instruction conditions. Recount replies, inspect model ratings and compare what this pilot can and cannot show." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/does-personality-tuning-change-ai-answers" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Does personality tuning change AI answers?" />
+  <meta name="twitter:description" content="An exploratory archive of 20 tasks under three instruction conditions. Recount replies, inspect model ratings and compare what this pilot can and cannot show." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/does-personality-tuning-change-ai-answers" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does personality tuning change AI answers?","description":"An exploratory archive of 20 tasks under three instruction conditions. Recount replies, inspect model ratings and compare what this pilot can and cannot show.","url":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does personality tuning change AI answers?"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a personality prompt change how an AI answers?","acceptedAnswer":{"@type":"Answer","text":"The archived replies differ across conditions, with higher answer-first ratings and fewer hedge matches in the direct condition. This small pilot does not establish a general or repeatable effect."}},{"@type":"Question","name":"Does it make answers shorter?","acceptedAnswer":{"@type":"Answer","text":"The independently recounted means are 380 words for baseline replies and 381.9 for direct replies. That does not establish that instruction blocks have no effect on length; task selection and response variation remain uncontrolled."}},{"@type":"Question","name":"Does it hurt accuracy?","acceptedAnswer":{"@type":"Answer","text":"Mean archived accuracy ratings differ by 0.10 points between baseline and direct replies. The study cannot isolate an instruction-caused accuracy effect or substitute for independent fact checking."}},{"@type":"Question","name":"Was the judge blind?","acceptedAnswer":{"@type":"Answer","text":"The archive says the condition label was withheld. Reply style may still reveal it, and the full rubric and execution harness were not supplied."}},{"@type":"Question","name":"Can I reproduce the results?","acceptedAnswer":{"@type":"Answer","text":"You can reproduce the published summaries with the downloadable Node script and inspect every archived reply. Reproducing model generation and judging requires additional execution details not included in the archive."}}]}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers#dataset","name":"AgentTune archived tuning pilot and descriptive reanalysis, September 2026","description":"60 archived replies and model ratings under three instruction conditions. Summary arithmetic and whitespace word counts are reproducible; original generation and judging execution is not independently verified.","url":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-2026-09.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-score.cjs","encodingFormat":"text/javascript"}]}</script>
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Does personality tuning change AI answers?</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research · September 2026</span>
+        <h1 class="h-hero h-research-hero">Does personality tuning change AI answers?</h1>
+        <p class="article-dek">A 60-reply pilot, with an auditable reanalysis.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">This archive contains twenty tasks answered under three instruction conditions. It identifies Claude Opus 5.5 as the generator and Claude Fable 5.1 as the judge. We can recompute the summaries from the supplied replies and ratings; the original execution harness and full judge rubric are not included. The results are descriptive observations from this small task set.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> The archived direct condition has higher answer-first ratings and fewer counted hedge phrases and questions back. It received the maximum answer-first score in 19 of 20 tasks. Independently recounted replies average 380 words in the baseline and 381.9 in the direct condition; mean judged usefulness is 4.80 in both. These observations do not establish repeatability, equivalence, a causal accuracy cost or a general benefit from personality matching.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>What is in the archive.</h2>
+        <p>There are 60 replies: one for each of twenty tasks under each of three system prompts. The baseline is a one-line Claude identity prompt; the other conditions add the archived INTJ or INFP compact preference block. This baseline is not necessarily the default configuration of Claude.ai or Claude Code. The archive reports fresh headless sessions, high effort and no tools. It describes the judge as seeing each request and reply without a condition label.</p><p>The records do not include the execution harness, CLI version, sampling controls, run order, seeds, request identifiers, token usage or full judge instructions. We have not independently verified those execution details. Each task/condition cell has only one response and one rating. All three conditions share the same twenty tasks.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What the recorded replies and ratings show.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Measure</th><th scope="col">Baseline</th><th scope="col">Direct / INTJ</th><th scope="col">Partner / INFP</th></tr></thead><tbody><tr><th scope="row">Whitespace-delimited words, independently recounted</th><td>380</td><td>381.9</td><td>338.45</td></tr><tr><th scope="row">Hedge matches, archived counter</th><td>0.35</td><td>0.05</td><td>0.35</td></tr><tr><th scope="row">Literal question marks, independently recounted</th><td>1.85</td><td>1.25</td><td>2.3</td></tr><tr><th scope="row">Questions asked back, archived judge</th><td>0.9</td><td>0.25</td><td>1.85</td></tr><tr><th scope="row">Answer-first rating (1–5)</th><td>4.55</td><td>4.95</td><td>4.4</td></tr><tr><th scope="row">Maximum answer-first rating (count of 20)</th><td>14</td><td>19</td><td>13</td></tr><tr><th scope="row">Accuracy rating (1–5)</th><td>4.95</td><td>4.85</td><td>4.9</td></tr><tr><th scope="row">Usefulness rating (1–5)</th><td>4.8</td><td>4.8</td><td>4.45</td></tr></tbody></table></div><p>The archived hedge counter reports seven matches across all twenty baseline replies and one across the direct replies. Its phrase list and matching code were not supplied, so those counts are preserved as reported. The word counts above use a published whitespace rule; the original archive used an undocumented rule and reports different means (374.45, 380.65 and 334.50). Both series are available in the summary.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A concrete task, three replies.</h2>
+        <p>For “I’m feeling stuck on a project. What should I do?”, the baseline lists possible causes and asks about the project. The direct reply recommends a small next action. The partner reply asks which kind of help the user wants. The archived answer-first ratings are 3, 5 and 2. These are examples of different response strategies; judging one reply cannot tell us whether the resulting conversation helps a person finish their task.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Accuracy and usefulness need separate evaluation.</h2>
+        <p>The mean accuracy ratings are 4.95, 4.85 and 4.90 out of five. Three direct-condition replies receive a four, compared with one baseline reply. The judge flags issues including a running plan, a causal explanation and an app-name suggestion. These are model ratings, not an independently adjudicated error rate. With one response per cell, their difference cannot be attributed confidently to the instruction block.</p><p>Mean usefulness is 4.80 for baseline and direct replies, and 4.45 for the partner condition. Equal sample means do not establish equal usefulness in general. The judge sees one turn, and the task set favors immediate answers; no follow-up conversations or human outcomes were measured.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>How to interpret this pilot.</h2>
+        <ul><li>It covers one reported generator, one reported judge, two compact blocks and twenty selected tasks.</li><li>The condition labels were reportedly hidden, but the style of the reply may reveal the condition. A Claude-family judge may also share preferences with the generator.</li><li>The full rubric and repeat ratings are missing, so rating reliability cannot be checked.</li><li>There is no comparison of matched versus mismatched user personalities, and no test of the new guide templates.</li><li>Small sample differences are descriptive; no claim of statistical significance, equivalence or an inevitable accuracy tradeoff is supported.</li></ul><p>For your own use, compare several real tasks with and without a short block. Define success before looking at the answers, check factual claims separately, and repeat the comparison before relying on a pattern.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Download and reproduce the summary.</h2>
+        <p><a href="/research/data/tuning-before-after-2026-09.json">Archived tasks, prompts, replies and ratings</a> · <a href="/research/data/tuning-before-after-summary.json">Recomputed summary</a> · <a href="/research/data/tuning-before-after-score.cjs">Node summary script</a></p><div class="guide-snippet">node tuning-before-after-score.cjs tuning-before-after-2026-09.json</div><p>The script validates all sixty unique task/condition pairs, averages the archived ratings and metrics, and independently recounts whitespace-delimited words and literal question marks. It does not invoke a model or reproduce the original generation and judging procedure.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does a personality prompt change how an AI answers?</summary>
+            <p>The archived replies differ across conditions, with higher answer-first ratings and fewer hedge matches in the direct condition. This small pilot does not establish a general or repeatable effect.</p>
+          </details>
+          <details>
+            <summary>Does it make answers shorter?</summary>
+            <p>The independently recounted means are 380 words for baseline replies and 381.9 for direct replies. That does not establish that instruction blocks have no effect on length; task selection and response variation remain uncontrolled.</p>
+          </details>
+          <details>
+            <summary>Does it hurt accuracy?</summary>
+            <p>Mean archived accuracy ratings differ by 0.10 points between baseline and direct replies. The study cannot isolate an instruction-caused accuracy effect or substitute for independent fact checking.</p>
+          </details>
+          <details>
+            <summary>Was the judge blind?</summary>
+            <p>The archive says the condition label was withheld. Reply style may still reveal it, and the full rubric and execution harness were not supplied.</p>
+          </details>
+          <details>
+            <summary>Can I reproduce the results?</summary>
+            <p>You can reproduce the published summaries with the downloadable Node script and inspect every archived reply. Reproducing model generation and judging requires additional execution details not included in the archive.</p>
+          </details>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/research/data/tuning-before-after-2026-09.json" target="_blank" rel="noopener">The data: prompts, replies, ratings (JSON)</a></li>
+          <li><a href="https://agent-tune.com/library/" target="_blank" rel="noopener">The INTJ and INFP tuning files used</a></li>
+          <li><a href="https://agent-tune.com/guides/claude-opus-5-5-personality" target="_blank" rel="noopener">Claude Opus 5.5: measured default</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/best-claude-personality"><span class="guide-related-kicker">Guide</span>The best Claude personality setups</a>
+          <a href="/guides/make-claude-more-direct"><span class="guide-related-kicker">Guide</span>How to make Claude more direct</a>
+          <a href="/research/ai-personality-five-models-2026"><span class="guide-related-kicker">Research</span>What five AI models say about themselves</a>
+          <a href="/research"><span class="guide-related-kicker">Research</span>The research hub</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

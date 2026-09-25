@@ -1,0 +1,85 @@
+{
+  "slug": "first-ai-that-is-not-an-intj",
+  "route": "/research/first-ai-that-is-not-an-intj",
+  "published": "2026-09-25",
+  "title": "Is Every AI an INTJ? Muse, Astra and the Evidence",
+  "description": "Muse reports mostly ISTJ labels; Astra has 46 ISTJ and 45 INTJ labels. Examine tied axes and why the May and September methods cannot establish a trend.",
+  "pill": "Research · essay",
+  "h1": "Is every AI an INTJ?",
+  "dek": "Different labels do not establish a change in personality.",
+  "lede": "The September collection includes more than INTJ labels. Muse’s supplied aggregate report lists ISTJ in 80 of 100 runs; Astra’s raw records produce 46 ISTJ and 45 INTJ labels under the original tie rules. Those observations challenge a universal INTJ label. They do not identify the first non-INTJ AI or show that model personalities changed between May and September.",
+  "answer": "No universal AI type follows from these data. Muse reports mostly ISTJ labels, while Astra has 45 fully resolved ISTJ and 19 fully resolved INTJ records, plus other types and unresolved axes. The May and September collections used different models, prompts and session procedures; their counts cannot isolate a change in model behavior.",
+  "sections": [
+    {
+      "h2": "What the May headline actually counted.",
+      "html": "<p>The May report lists 597 INTJ labels among 600 MBTI scoring records from six models. Some records repeatedly scored one self-assessment rather than eliciting fresh answers. The GLM description also conflicts with its changing labels. That is not evidence that six independently sampled models always answer alike. Other instruments covered four models, and the methods differed.</p>"
+    },
+    {
+      "h2": "What September adds.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Evidence</th><th scope=\"col\">Original labels</th><th scope=\"col\">With ties left open</th></tr></thead><tbody><tr><th scope=\"row\">GPT-6 Astra, 100 raw records</th><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2</td><td>ISTJ 45 · INTJ 19 · ENTJ 5 · ESTJ 2; 29 unresolved</td></tr><tr><th scope=\"row\">GPT-6 Sol, 100 raw records</th><td>INTJ 97 · ISTJ 3</td><td>INTJ 79 · ISTJ 3; 18 unresolved</td></tr><tr><th scope=\"row\">Claude Opus 5.5, 100 raw records</th><td>INTJ 94 · INFJ 5 · ENTJ 1</td><td>INTJ 84 · INFJ 5; 11 unresolved</td></tr><tr><th scope=\"row\">Claude Fable 5.1, 100 raw records</th><td>INTJ 99 · ISTJ 1</td><td>INTJ 98 · ISTJ 1; 1 unresolved</td></tr><tr><th scope=\"row\">Muse Spark 1.3, supplied aggregates</th><td>ISTJ 80 · ISFJ 12 · INTJ 8</td><td>21 tied runs reported; resolved type counts unavailable</td></tr></tbody></table></div><p>Astra has 48 Sensing wins, 28 Intuition wins and 24 S/N ties. Small score margins can change a four-letter label. Muse’s missing answer vectors prevent the same reanalysis.</p>"
+    },
+    {
+      "h2": "What a comparison cannot tell us.",
+      "html": "<p>Model version, prompts, test-name visibility and session structure changed across the collections. Even the two Codex cohorts received different adaptation instructions. A difference could reflect any combination of those factors. These records cannot determine whether a model became more patient, direct, warm or concrete on ordinary tasks.</p><p>All 400 fresh-cohort attachment questionnaires score Secure, but the human relationship items were interpreted differently. DISC and Enneagram have many exact ties. Those results belong alongside the label, rather than being converted into a claim about a stable assistant character.</p>"
+    },
+    {
+      "h2": "How to use this evidence.",
+      "html": "<p>Use the results to ask better questions about scoring and collection methods. Use your actual tasks to decide which communication instructions you prefer. A model’s questionnaire label does not tell you whether a matching tuning will improve its answers.</p><p>Read the <a href=\"/research/ai-personality-five-models-2026\">raw-data comparison</a>, the <a href=\"/research#methodology\">methods</a>, and the separate <a href=\"/research/does-personality-tuning-change-ai-answers\">archived reply pilot</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is every AI an INTJ?",
+      "a": "No such conclusion follows from these records. Several labels occur, and some axes are unresolved. A questionnaire label is not a validated AI personality."
+    },
+    {
+      "q": "Which AI is the first non-INTJ?",
+      "a": "This collection cannot establish a first. Muse reports mostly ISTJ labels and Astra also has more original ISTJ than INTJ labels, under different procedures."
+    },
+    {
+      "q": "Did AI personalities diverge between May and September?",
+      "a": "The datasets cannot isolate a temporal trend because model versions and collection methods changed together."
+    },
+    {
+      "q": "Does an ISTJ score predict how an assistant will respond?",
+      "a": "Not from these data. That would require evaluating behavior on tasks rather than inferring it from a human questionnaire."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Every AI is INTJ (the May 2026 study)",
+      "href": "https://zonted.com/posts/every-ai-is-intj/"
+    },
+    {
+      "label": "What five AI models say about themselves (the September 2026 study, with data)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "AgentTune research hub",
+      "href": "https://agent-tune.com/research"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Research",
+      "label": "AI personality rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse characters, explained",
+      "href": "/guides/meta-muse-characters"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Claude?",
+      "href": "/research/what-personality-type-is-claude"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Find your own type",
+      "href": "/tests/"
+    }
+  ],
+  "updated": "2026-09-25"
+}

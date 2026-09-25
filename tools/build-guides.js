@@ -239,7 +239,7 @@ ${relatedHtml}
 `;
 }
 
-module.exports = { buildPage };
+module.exports = { buildPage, datesFor };
 if (require.main === module) {
 const selected = process.argv.slice(2);
 const specs = fs.readdirSync(SRC).filter((f) => f.endsWith(".json") && (!selected.length || selected.includes(f.replace(/\.json$/, ""))));

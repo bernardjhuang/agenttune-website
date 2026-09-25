@@ -35,7 +35,7 @@
     <loc>https://agent-tune.com/research/i-took-the-mbti-100-times</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
 
   <!-- Tests catalog -->
@@ -43,7 +43,7 @@
     <loc>https://agent-tune.com/tests/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
 
   <!-- Legal -->
@@ -218,6 +218,91 @@
     <lastmod>2026-09-25</lastmod>
   </url>
 
+  <!-- September 2026 additions -->
+  <url>
+    <loc>https://agent-tune.com/guides/best-claude-personality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/make-claude-more-direct</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/meta-muse-characters</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/chatgpt-custom-instructions-examples</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/open-personality-tests</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/ai-personality-glossary</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/what-personality-type-is-claude</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/what-personality-type-is-grok</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/what-personality-type-is-gemini</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/does-personality-tuning-change-ai-answers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-personality-rankings</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/first-ai-that-is-not-an-intj</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
   <!-- Free tools -->
   <url>
     <loc>https://agent-tune.com/tools/claude-md-generator</loc>
@@ -238,7 +323,7 @@
     <loc>https://agent-tune.com/library/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
 
   <!-- Library type pages — 43 standalone tunings -->

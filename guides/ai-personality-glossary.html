@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Personality Glossary: Tuning, System Prompt, Soul.md</title>
+  <meta name="description" content="32 short definitions for the words used when people give an AI a personality: tuning file, system prompt, custom instructions, output style, Soul.md, AGENTS.md, persona, tie rule, fresh session and more." />
+
+  <meta property="og:title" content="An AI personality glossary." />
+  <meta property="og:description" content="32 short definitions for the words used when people give an AI a personality: tuning file, system prompt, custom instructions, output style, Soul.md, AGENTS.md, persona, tie rule, fresh session and more." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-personality-glossary" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="An AI personality glossary." />
+  <meta name="twitter:description" content="32 short definitions for the words used when people give an AI a personality: tuning file, system prompt, custom instructions, output style, Soul.md, AGENTS.md, persona, tie rule, fresh session and more." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-personality-glossary" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"An AI personality glossary","description":"32 short definitions for the words used when people give an AI a personality: tuning file, system prompt, custom instructions, output style, Soul.md, AGENTS.md, persona, tie rule, fresh session and more.","url":"https://agent-tune.com/guides/ai-personality-glossary","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"An AI personality glossary"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a tuning file?","acceptedAnswer":{"@type":"Answer","text":"A short Markdown file of communication rules written for one personality type: what to lead with, how direct to be, how to disagree, when to stop asking questions. You paste it into your AI's instructions and edit it. AgentTune's 43 are free under an MIT licence."}},{"@type":"Question","name":"What is the difference between a system prompt and custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Custom instructions are a user-facing setting for preferences. A system prompt is a high-priority model input. The mapping between a product setting and model messages depends on the product."}},{"@type":"Question","name":"What is the difference between a persona and a tuning?","acceptedAnswer":{"@type":"Answer","text":"A persona specifies a character; an AgentTune tuning specifies communication preferences such as pacing and directness. Neither format is guaranteed to persist or improve outcomes; evaluate the behavior you need."}},{"@type":"Question","name":"What does 'reported' mean on the research pages?","acceptedAnswer":{"@type":"Answer","text":"A figure from a report we could not re-score, because the raw answers or the harness were not supplied. Fresh-session figures, by contrast, come with every answer vector published."}},{"@type":"Question","name":"What is a tie rule?","acceptedAnswer":{"@type":"Answer","text":"What a scorer does when two scores are equal. AgentTune's original reporting rule picked a side (I, N, T or J; the lower Enneagram number; S before C). The quizzes now show the tie instead, and the research pages count ties separately."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">An AI personality glossary</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · reference</span>
+        <h1 class="h-hero h-research-hero">An AI personality glossary.</h1>
+        <p class="article-dek">32 terms, one paragraph each, with the page that uses them.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">The words around AI personality come from three places that do not talk to each other: personality psychology, prompt engineering, and each lab's product settings. This page defines the ones this site uses, in the sense this site uses them, with a link to where each one matters.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>The thing you paste.</h2>
+        <h3>Tuning (tuning file)</h3><p>A Markdown file of communication rules written for one personality type (the library contains 43, with lengths that vary): what to lead with, how direct to be, how to disagree, when to stop asking questions. AgentTune publishes 43 of them under an MIT licence. You paste one into your AI's instructions and edit the lines that don't fit. See <a href="/library/">the library</a>.</p><h3>Compact tuning</h3><p>A version of a tuning cut to under 1,500 characters so it fits even the smaller ChatGPT custom-instructions limit. The <a href="/tools/custom-instructions-generator">generator</a> produces it.</p><h3>Persona prompt</h3><p>Instructions that make an AI play a character: a pirate, a stoic mentor, a named assistant. Different from a tuning, which adjusts how the AI treats you rather than who it pretends to be. Specific rules can be easier to evaluate; this site has not demonstrated that they persist better than adjectives across long chats. See <a href="/guides/how-to-give-your-ai-a-personality">how to give your AI a personality</a>.</p><h3>Communication preferences</h3><p>What a tuning encodes: pacing, directness, decision framing, feedback style, how much reassurance. Not tone, which is how a reply sounds, and not facts about you, which belong in memory.</p><h3>Verification probe</h3><p>A one-line test message and the behavior to expect back, shipped with each tuning file so you can check the install took. A short greeting alone does not prove the instructions loaded. Use representative tasks and repeat checks.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Where it goes, product by product.</h2>
+        <h3>System prompt</h3><p>High-priority instructions supplied with a model request. API fields and hierarchy vary by provider; product settings need not map directly to one system message.</p><h3>Custom instructions (ChatGPT)</h3><p>Preferences under Settings, Personalization, Custom Instructions. OpenAI lists 1,500 characters for Free and Go and 5,000 for paid plans named in its documentation; enable customization to use them. See <a href="/guides/chatgpt-custom-instructions-by-personality-type">custom instructions by type</a>.</p><h3>Instructions for Claude</h3><p>The account-level box in Claude's settings that applies to every conversation. Formerly 'personal preferences'. See <a href="/guides/claude-personality">how to change Claude's personality</a>.</p><h3>Project instructions</h3><p>Instructions scoped to one Project in Claude or ChatGPT. Use them for context-specific preferences, and check the product’s instruction hierarchy when account and project rules conflict.</p><h3>Output style (Claude Code)</h3><p>A Markdown file in <code>~/.claude/output-styles/</code> that changes the default instructions Claude Code works from, sent on every turn. The one line that matters is <code>keep-coding-instructions: true</code>; without it a custom style drops the built-in engineering rules. See <a href="/guides/claude-code-personality">the Claude Code guide</a>.</p><h3>CLAUDE.md</h3><p>The project file Claude Code reads at the start of a session: commands, conventions, what never to touch. It arrives as a message, not as part of the system prompt, and it is shared with your team, which is why personal communication rules belong in an output style instead. See <a href="/guides/claude-md-examples">CLAUDE.md examples</a>.</p><h3>AGENTS.md</h3><p>An open, cross-agent instruction file read by Codex, Cursor and others. For GPT-6 Astra in ChatGPT Work and Codex, the personal copy at <code>~/.codex/AGENTS.md</code> is where your rules go. See <a href="/guides/astra-personality">the Astra guide</a>.</p><h3>Soul.md</h3><p>Meta Muse's file for who your Muse is: core truths, boundaries and personality. Opened under the Assistant icon, then Identity, then Soul. Communication rules go here; the name and avatar go in Identity.md; facts about you go in Memory.md. See <a href="/guides/meta-muse-characters">Muse characters, explained</a>.</p><h3>Description (Grok Bot)</h3><p>The field on a Grok Bot's profile, under Edit Profile, that xAI's docs say to use for rules that should stay true. It persists across conversations and travels with a duplicated Bot. See <a href="/guides/grokbot-personality">the Grok Bot guide</a>.</p><h3>Gem (Gemini)</h3><p>A saved Gemini configuration with its own instructions field. Paste a tuning there for a Gemini that is already tuned when you open it.</p><h3>Memory</h3><p>What an assistant saves about you across conversations: facts, projects, stated preferences. Visibility and editing controls vary by product. Inspect saved memory in the available controls; use explicit instructions for preferences you want to state directly.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The tests.</h2>
+        <h3>Instrument</h3><p>A questionnaire with a fixed set of items and a published scoring rule. AgentTune uses five open ones: OEJTS, a 36-item OEPS adaptation, ODAT, IPIP-50 and ECR-R. See <a href="/guides/open-personality-tests">the five open tests, explained</a>.</p><h3>Item</h3><p>One question on a test. The OEJTS has 32, the IPIP-50 has 50.</p><h3>Reverse-keyed item</h3><p>An item worded so that agreeing points away from the trait ('Don't talk a lot' on Extraversion). Scored as the scale maximum plus one minus the answer.</p><h3>Type</h3><p>A category a sorter puts you in: INTJ, Type 5, DISC S, Secure. Types turn a margin into a label, which is why a one-point difference can change the name.</p><h3>Trait</h3><p>A continuous score, like Big Five Agreeableness from 10 to 50. Traits keep the margin visible.</p><h3>Wing (Enneagram)</h3><p>The higher-scoring of the two types adjacent to your core type, written 5w4 or 5w6. A wing must be adjacent; 'Type 5 with an 8 overlay' is a description, not a wing.</p><h3>Blend (DISC)</h3><p>A second DISC letter within two points of the first, written SC or CS. Many recorded models have S/C blends; Grok 4.6’s canonical vector scores C without a blend.</p><h3>Tie rule</h3><p>What a scorer does when two scores are equal. AgentTune's original reporting rule sent a tied MBTI axis to I, N, T or J, a tied Enneagram to the lower-numbered type, and a tied DISC to S before C. The quizzes now show a tie instead of choosing, and the research pages report ties separately because a tie rule can turn a coin flip into a label.</p><h3>z-score</h3><p>How far a trait score sits from a reference mean, in standard deviations. AgentTune loads a high or low Big Five file when a trait is more than 0.5 SD from the reference mean configured in the site’s scorer. For a model, treat it as a scoring output, not a percentile among people.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The research.</h2>
+        <h3>Fresh session</h3><p>A new context without prior conversation history. In the September collection it used a one-line prompt, no tools and no memory. Fresh context does not itself establish statistical independence. The September 2026 studies use one fresh session per questionnaire (Claude) or per five-test battery (GPT-6).</p><h3>Scoring record</h3><p>One scored answer set, whatever produced it. The May 2026 study's 2,200 records include some that re-score a single answer vector, which is why they are counted separately from fresh sessions.</p><h3>Reported figure</h3><p>A number from a report we could not re-score, because the raw answers or the harness were not supplied. Muse Spark 1.3 and Grok 4.6’s Big Five, attachment and simulations are reported figures. Grok’s three supplied canonical vectors can be re-scored.</p><h3>Simulated draw</h3><p>A synthetic answer set sampled from one self-report by jittering its least certain items. A sensitivity check, not a fresh run. The Opus 4.8 article and the Grok 4.6 report both use them.</p><h3>Blind judge</h3><p>A rater that sees a request and one reply without knowing which setup produced it. The <a href="/research/does-personality-tuning-change-ai-answers">pilot archive</a> describes a second model in this role; the complete judging prompt and execution log were not supplied.</p><h3>Default (of a model)</h3><p>A baseline under a specified model version, system prompt, product and task configuration. There is no single context-free default established by these questionnaires. See <a href="/research">the research hub</a>.</p><h3>Answer vector</h3><p>The list of a model's numeric answers to one questionnaire, in item order. The September 2026 study publishes 2,000 of them so anyone can re-score.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>What is a tuning file?</summary>
+            <p>A short Markdown file of communication rules written for one personality type: what to lead with, how direct to be, how to disagree, when to stop asking questions. You paste it into your AI's instructions and edit it. AgentTune's 43 are free under an MIT licence.</p>
+          </details>
+          <details>
+            <summary>What is the difference between a system prompt and custom instructions?</summary>
+            <p>Custom instructions are a user-facing setting for preferences. A system prompt is a high-priority model input. The mapping between a product setting and model messages depends on the product.</p>
+          </details>
+          <details>
+            <summary>What is the difference between a persona and a tuning?</summary>
+            <p>A persona specifies a character; an AgentTune tuning specifies communication preferences such as pacing and directness. Neither format is guaranteed to persist or improve outcomes; evaluate the behavior you need.</p>
+          </details>
+          <details>
+            <summary>What does 'reported' mean on the research pages?</summary>
+            <p>A figure from a report we could not re-score, because the raw answers or the harness were not supplied. Fresh-session figures, by contrast, come with every answer vector published.</p>
+          </details>
+          <details>
+            <summary>What is a tie rule?</summary>
+            <p>What a scorer does when two scores are equal. AgentTune's original reporting rule picked a side (I, N, T or J; the lower Enneagram number; S before C). The quizzes now show the tie instead, and the research pages count ties separately.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-25">September 25, 2026</time> First published, thirty terms.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/tests/" target="_blank" rel="noopener">AgentTune tests and their scoring rules</a></li>
+          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">AgentTune research hub</a></li>
+          <li><a href="https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions" target="_blank" rel="noopener">OpenAI: ChatGPT Custom Instructions</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/how-to-give-your-ai-a-personality"><span class="guide-related-kicker">Guide</span>How to give your AI a personality</a>
+          <a href="/guides/open-personality-tests"><span class="guide-related-kicker">Guide</span>The five open personality tests, explained</a>
+          <a href="/library/"><span class="guide-related-kicker">Library</span>All 43 tuning files</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

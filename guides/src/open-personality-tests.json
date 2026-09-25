@@ -1,0 +1,113 @@
+{
+  "slug": "open-personality-tests",
+  "published": "2026-09-25",
+  "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
+  "description": "The five open personality tests behind AgentTune, explained: what each measures, who wrote it, how many questions, how it is scored, what it gets wrong, and how to run it on a person or a model.",
+  "pill": "Guide · Tests",
+  "h1": "The five open personality tests, explained.",
+  "dek": "What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.",
+  "lede": "This page documents the five questionnaires used on AgentTune: their item sources, scoring rules and limits. The items and keys are available to inspect. Scores from human respondents and model-generated answers should not be treated as equivalent psychological measurements.",
+  "answer": "AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.",
+  "sections": [
+    {
+      "h2": "At a glance.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Measures</th><th>Items · scale</th><th>Returns</th><th>Source</th></tr></thead><tbody><tr><td>OEJTS</td><td>Four MBTI-style preferences</td><td>32 · 1 to 5 between two statements</td><td>A four-letter type when all axes resolve</td><td>Open Extended Jungian Type Scales, Eric Jorgenson, via the Open Psychometrics Project</td></tr><tr><td>OEPS (36-item adaptation)</td><td>Enneagram type</td><td>36 · 1 to 5 agree</td><td>Type 1 to 9 and an optional wing</td><td>Adapted from the Open Enneagram of Personality Scales, Open Psychometrics; the full OEPS has 54 items</td></tr><tr><td>ODAT</td><td>DISC work style</td><td>16 · 1 to 5 agree</td><td>D, I, S or C, plus a blend</td><td>Open DISC Assessment Test, Open Psychometrics</td></tr><tr><td>IPIP-50</td><td>Big Five traits</td><td>50 · 1 to 5 accuracy</td><td>Five scores from 10 to 50</td><td>International Personality Item Pool, Goldberg's 50-item markers</td></tr><tr><td>ECR-R</td><td>Attachment style</td><td>36 · 1 to 7 agree</td><td>Secure, Anxious, Avoidant or Disorganized, with two coordinates</td><td>Experiences in Close Relationships, Revised; Fraley, Waller and Brennan, 2000</td></tr></tbody></table></div><p>All five run in your browser on this site and nothing you answer is sent anywhere. Each also has a Markdown mirror at <code>/tests/&lt;test&gt;.md</code> with the items and the scoring rule, which is how an AI agent takes the test in one request.</p>"
+    },
+    {
+      "h2": "OEJTS: the MBTI-style test.",
+      "html": "<p><strong>What it measures.</strong> Four preferences: Extraversion or Introversion, Sensing or Intuition, Thinking or Feeling, Judging or Perceiving. Each item is a pair of statements ('I make lists' against 'I just put stuff wherever') rated 1 to 5. Eight items per axis.</p><p><strong>Scoring.</strong> A 1 or 5 gives two points to the letter on that side, a 2 or 4 gives one, a 3 gives none. The higher letter wins the axis. AgentTune's original reporting rule sent an exact tie to I, N, T or J. The quiz now marks a tied axis X, asks one follow-up preference question, and leaves the axis open if you are still unsure; it only names a four-letter type when all four axes resolve.</p><p><strong>Limits.</strong> It is not the MBTI, which is a trademarked instrument sold by The Myers-Briggs Company; it produces the same four-letter format from open items. And like any type sorter it turns a one-point margin into a different name. In our model data, GPT-6 Astra splits ISTJ 46 to INTJ 45 because one axis sits near zero, and Claude Opus 5.5 shows 94 INTJ labels but 84 fully resolved ones. Read the margins, not only the letters.</p>"
+    },
+    {
+      "h2": "OEPS: the Enneagram test.",
+      "html": "<p><strong>What it measures.</strong> Which of nine motivational types describes you best. AgentTune's version is a 36-item adaptation of the OEPS (the full instrument has 54). Four items per type, rated 1 to 5 on agreement, in type order: items 1 to 4 are Type 1, 5 to 8 are Type 2, and so on.</p><p><strong>Scoring.</strong> Sum the four items per type (4 to 20). The highest total is your type. The wing is whichever adjacent type scores higher; if the two adjacent types tie, there is no wing. The original reporting rule sent a tie for the top type to the lower number; the quiz now reports equal top scores together and does not pick.</p><p><strong>Limits.</strong> Four items per type is a short scale, so ties are common: in our September data, 40 to 65 runs in 100 tied at the top for every one of the four fresh-session models. An identical total can arise from different answer patterns, so inspect the item responses and tied scores. The <a href=\"/guides/open-source-enneagram-test\">open-source Enneagram scorer</a> lets you run the arithmetic yourself.</p>"
+    },
+    {
+      "h2": "ODAT: the DISC test.",
+      "html": "<p><strong>What it measures.</strong> Four workplace styles: Dominance, Influence, Steadiness, Conscientiousness. Four items per letter, rated 1 to 5, no reverse-scored items.</p><p><strong>Scoring.</strong> Sum the four items per letter (4 to 20). The highest is your dominant letter. If the second letter is within two points it is reported as a blend, such as SC. The original reporting rule put S before C in a tie; the quiz now reports tied letters equally, without a dominant letter.</p><p><strong>Limits.</strong> With four items per style, small score differences and ties deserve attention. Many recorded models have S/C blends, while Grok 4.6’s canonical vector scores C without a blend.</p>"
+    },
+    {
+      "h2": "IPIP-50: the Big Five test.",
+      "html": "<p><strong>What it measures.</strong> Five continuous traits: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. Fifty short statements with an implied 'I', such as 'Am the life of the party', rated 1 (very inaccurate) to 5 (very accurate). Ten items per trait, interleaved.</p><p><strong>Scoring.</strong> Reverse-keyed items score 6 minus the answer. Sum the ten items per trait, giving 10 to 50. AgentTune then converts each sum to a z-score against the site’s configured reference means and standard deviations (for example Openness mean 37.5, SD 5.5) and loads a high or low tuning file for any trait past 0.5 SD. Eighteen items are reverse-keyed.</p><p><strong>Limits.</strong> For a model, a score of 47 on Agreeableness means 'answered the agreeable way on nearly every item', not a percentile of anything. Treat the norm conversion as a scoring output, not a claim about where a model sits among people.</p>"
+    },
+    {
+      "h2": "ECR-R: the attachment test.",
+      "html": "<p><strong>What it measures.</strong> Two dimensions of adult attachment: anxiety (fear of abandonment, items 1 to 18) and avoidance (discomfort with closeness, items 19 to 36). Rated 1 to 7. The items refer to a romantic partner; if you don't have one, answer about your closest current relationship.</p><p><strong>Scoring.</strong> Fourteen items are reverse-keyed (8 minus the answer). Each dimension is the mean of its 18 items, from 1 to 7. Both at or below 4 is Secure; high anxiety only is Anxious; high avoidance only is Avoidant; both high is Disorganized.</p><p><strong>Limits.</strong> The wording is the most human-specific of the five, so a model taking it is doing a translation, and different protocols translate 'partner' differently (the September Claude protocol left this interpretation to the model, while other reports gave analogies). Identical scoring does not make different prompts or collection methods comparable; the four labels are site scoring categories. Grok 4.6's self-report sits at avoidance 4.06, Avoidant by 0.06, which shows how little a label can rest on.</p>"
+    },
+    {
+      "h2": "Running them on a model.",
+      "html": "<p>Because the items and the scoring rules are public, the same tests can be administered to a language model and scored with the same code. That is what the <a href=\"/research\">research hub</a> reports: 100 fresh sessions per test for Opus and Fable, and 100 fresh five-test sessions each for Astra and Sol. Those cohorts publish every answer vector; other reports have partial or no raw data. The recipe is short:</p><div class=\"guide-snippet\">1. Fetch /tests/mbti.md (or any of the five). It has the items, the scale and the scoring rule.\n2. Present the items to the model with the scale and nothing else: no test name, no scoring key.\n3. Score the answers with the published rule. Keep exact ties visible.\n4. Repeat in fresh sessions if you want a distribution, not one answer.</div><p>Withholding names and scoring keys reduces explicit cues but has not been shown here to cause better measurements. Publish the exact prompts, context, model settings, session boundaries and raw responses, and count ties separately.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is the OEJTS the real MBTI?",
+      "a": "No. The MBTI is a trademarked instrument owned by The Myers-Briggs Company. The OEJTS is an open scale from the Open Psychometrics Project that produces the same four-letter type format from its own 32 items and a published scoring rule."
+    },
+    {
+      "q": "Are these tests free?",
+      "a": "All five are free to take here without an account. AgentTune’s code licence does not replace the source instruments’ terms; check the original item sources before redistributing an instrument."
+    },
+    {
+      "q": "Which test should I choose?",
+      "a": "Choose the construct and scoring format you need: continuous traits, preferences, work-style labels or attachment coordinates. Human validation does not automatically transfer to language-model self-reports, and these tests do not validate a tuning benefit."
+    },
+    {
+      "q": "Where do my answers go?",
+      "a": "Nowhere. The tests are scored in your browser and the answers are never sent to a server."
+    },
+    {
+      "q": "Can an AI agent take these tests?",
+      "a": "Yes. Each test is served as Markdown at /tests/<test>.md with the items, the scale and the scoring rule, so an agent can administer it in one request. Withhold the scoring rule while it answers, and keep ties visible when you score."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "First published."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune tests hub (items, scales and scoring rules for all five)",
+      "href": "https://agent-tune.com/tests/"
+    },
+    {
+      "label": "Open Psychometrics Project: OEJTS",
+      "href": "https://openpsychometrics.org/tests/OEJTS/"
+    },
+    {
+      "label": "IPIP: the 50-item Big Five markers",
+      "href": "https://ipip.ori.org/"
+    },
+    {
+      "label": "Fraley, Waller and Brennan (2000), the ECR-R",
+      "href": "https://doi.org/10.1037/0022-3514.78.2.350"
+    },
+    {
+      "label": "What five AI models say about themselves (how the tests were run on models)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Tests",
+      "label": "Take any of the five",
+      "href": "/tests/"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Open-source Enneagram test and scorer",
+      "href": "/guides/open-source-enneagram-test"
+    },
+    {
+      "kicker": "Guide",
+      "label": "MBTI vs Big Five for AI",
+      "href": "/guides/mbti-vs-big-five-for-ai"
+    },
+    {
+      "kicker": "Research",
+      "label": "The research hub",
+      "href": "/research"
+    }
+  ]
+}

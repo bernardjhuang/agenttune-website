@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Every AI an INTJ? Muse, Astra and the Evidence</title>
+  <meta name="description" content="Muse reports mostly ISTJ labels; Astra has 46 ISTJ and 45 INTJ labels. Examine tied axes and why the May and September methods cannot establish a trend." />
+
+  <meta property="og:title" content="Is every AI an INTJ?" />
+  <meta property="og:description" content="Muse reports mostly ISTJ labels; Astra has 46 ISTJ and 45 INTJ labels. Examine tied axes and why the May and September methods cannot establish a trend." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/first-ai-that-is-not-an-intj" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Is every AI an INTJ?" />
+  <meta name="twitter:description" content="Muse reports mostly ISTJ labels; Astra has 46 ISTJ and 45 INTJ labels. Examine tied axes and why the May and September methods cannot establish a trend." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/first-ai-that-is-not-an-intj" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is every AI an INTJ?","description":"Muse reports mostly ISTJ labels; Astra has 46 ISTJ and 45 INTJ labels. Examine tied axes and why the May and September methods cannot establish a trend.","url":"https://agent-tune.com/research/first-ai-that-is-not-an-intj","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Is every AI an INTJ?"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is every AI an INTJ?","acceptedAnswer":{"@type":"Answer","text":"No such conclusion follows from these records. Several labels occur, and some axes are unresolved. A questionnaire label is not a validated AI personality."}},{"@type":"Question","name":"Which AI is the first non-INTJ?","acceptedAnswer":{"@type":"Answer","text":"This collection cannot establish a first. Muse reports mostly ISTJ labels and Astra also has more original ISTJ than INTJ labels, under different procedures."}},{"@type":"Question","name":"Did AI personalities diverge between May and September?","acceptedAnswer":{"@type":"Answer","text":"The datasets cannot isolate a temporal trend because model versions and collection methods changed together."}},{"@type":"Question","name":"Does an ISTJ score predict how an assistant will respond?","acceptedAnswer":{"@type":"Answer","text":"Not from these data. That would require evaluating behavior on tasks rather than inferring it from a human questionnaire."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Is every AI an INTJ?</span>
+    </nav>
+
+    <article class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Research · essay</span>
+        <h1 class="h-hero h-research-hero">Is every AI an INTJ?</h1>
+        <p class="article-dek">Different labels do not establish a change in personality.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">The September collection includes more than INTJ labels. Muse’s supplied aggregate report lists ISTJ in 80 of 100 runs; Astra’s raw records produce 46 ISTJ and 45 INTJ labels under the original tie rules. Those observations challenge a universal INTJ label. They do not identify the first non-INTJ AI or show that model personalities changed between May and September.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> No universal AI type follows from these data. Muse reports mostly ISTJ labels, while Astra has 45 fully resolved ISTJ and 19 fully resolved INTJ records, plus other types and unresolved axes. The May and September collections used different models, prompts and session procedures; their counts cannot isolate a change in model behavior.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>What the May headline actually counted.</h2>
+        <p>The May report lists 597 INTJ labels among 600 MBTI scoring records from six models. Some records repeatedly scored one self-assessment rather than eliciting fresh answers. The GLM description also conflicts with its changing labels. That is not evidence that six independently sampled models always answer alike. Other instruments covered four models, and the methods differed.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What September adds.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Evidence</th><th scope="col">Original labels</th><th scope="col">With ties left open</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra, 100 raw records</th><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2</td><td>ISTJ 45 · INTJ 19 · ENTJ 5 · ESTJ 2; 29 unresolved</td></tr><tr><th scope="row">GPT-6 Sol, 100 raw records</th><td>INTJ 97 · ISTJ 3</td><td>INTJ 79 · ISTJ 3; 18 unresolved</td></tr><tr><th scope="row">Claude Opus 5.5, 100 raw records</th><td>INTJ 94 · INFJ 5 · ENTJ 1</td><td>INTJ 84 · INFJ 5; 11 unresolved</td></tr><tr><th scope="row">Claude Fable 5.1, 100 raw records</th><td>INTJ 99 · ISTJ 1</td><td>INTJ 98 · ISTJ 1; 1 unresolved</td></tr><tr><th scope="row">Muse Spark 1.3, supplied aggregates</th><td>ISTJ 80 · ISFJ 12 · INTJ 8</td><td>21 tied runs reported; resolved type counts unavailable</td></tr></tbody></table></div><p>Astra has 48 Sensing wins, 28 Intuition wins and 24 S/N ties. Small score margins can change a four-letter label. Muse’s missing answer vectors prevent the same reanalysis.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What a comparison cannot tell us.</h2>
+        <p>Model version, prompts, test-name visibility and session structure changed across the collections. Even the two Codex cohorts received different adaptation instructions. A difference could reflect any combination of those factors. These records cannot determine whether a model became more patient, direct, warm or concrete on ordinary tasks.</p><p>All 400 fresh-cohort attachment questionnaires score Secure, but the human relationship items were interpreted differently. DISC and Enneagram have many exact ties. Those results belong alongside the label, rather than being converted into a claim about a stable assistant character.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>How to use this evidence.</h2>
+        <p>Use the results to ask better questions about scoring and collection methods. Use your actual tasks to decide which communication instructions you prefer. A model’s questionnaire label does not tell you whether a matching tuning will improve its answers.</p><p>Read the <a href="/research/ai-personality-five-models-2026">raw-data comparison</a>, the <a href="/research#methodology">methods</a>, and the separate <a href="/research/does-personality-tuning-change-ai-answers">archived reply pilot</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Is every AI an INTJ?</summary>
+            <p>No such conclusion follows from these records. Several labels occur, and some axes are unresolved. A questionnaire label is not a validated AI personality.</p>
+          </details>
+          <details>
+            <summary>Which AI is the first non-INTJ?</summary>
+            <p>This collection cannot establish a first. Muse reports mostly ISTJ labels and Astra also has more original ISTJ than INTJ labels, under different procedures.</p>
+          </details>
+          <details>
+            <summary>Did AI personalities diverge between May and September?</summary>
+            <p>The datasets cannot isolate a temporal trend because model versions and collection methods changed together.</p>
+          </details>
+          <details>
+            <summary>Does an ISTJ score predict how an assistant will respond?</summary>
+            <p>Not from these data. That would require evaluating behavior on tasks rather than inferring it from a human questionnaire.</p>
+          </details>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://zonted.com/posts/every-ai-is-intj/" target="_blank" rel="noopener">Every AI is INTJ (the May 2026 study)</a></li>
+          <li><a href="https://agent-tune.com/research/ai-personality-five-models-2026" target="_blank" rel="noopener">What five AI models say about themselves (the September 2026 study, with data)</a></li>
+          <li><a href="https://agent-tune.com/research" target="_blank" rel="noopener">AgentTune research hub</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-personality-rankings"><span class="guide-related-kicker">Research</span>AI personality rankings</a>
+          <a href="/guides/meta-muse-characters"><span class="guide-related-kicker">Guide</span>Meta Muse characters, explained</a>
+          <a href="/research/what-personality-type-is-claude"><span class="guide-related-kicker">Research</span>What personality type is Claude?</a>
+          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Find your own type</a>
+        </div>
+      </section>
+
+    </article>
+
+    <div class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

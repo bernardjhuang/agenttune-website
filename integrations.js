@@ -116,8 +116,8 @@
       '<p class="prompt-picker-hint">Choose the model in your app too. These prompts adjust communication preferences; availability depends on your app and plan.</p>' +
       '<article class="integration-deep-card prompt-picker-card"><div class="prompt-picker-heading"><h3 data-title></h3><span class="integration-badge" data-badge></span></div>' +
       '<p class="prompt-picker-sub" data-sub></p><p class="prompt-model-note" data-note></p><div class="prompt-picker-steps" data-steps></div>' +
-      '<div class="prompt-picker-actions"><button type="button" class="prompt-copy" data-copy>Copy prompt</button><span role="status" aria-live="polite" data-status></span></div>' +
-      '<details class="prompt-preview"><summary>Preview and edit after pasting</summary><pre class="snippet" tabindex="0"></pre></details></article>';
+      '<div class="prompt-editor"><div class="prompt-editor-bar"><span class="prompt-editor-meta"><span class="prompt-editor-dot" aria-hidden="true"></span><span data-file>prompt</span></span><button type="button" class="prompt-copy" data-copy>Copy prompt</button></div><pre class="snippet" tabindex="0" aria-label="Generated prompt"></pre></div>' +
+      '<p class="prompt-picker-status" role="status" aria-live="polite" data-status></p></article>';
     const $ = selector => root.querySelector(selector);
     const modelSelect = $("[data-model]"), targetSelect = $("[data-target]");
     modelSelect.value = allowedModels.some(m => m.id === opts.model) ? opts.model : allowedModels[0].id;
@@ -132,6 +132,7 @@
       $("[data-sub]").textContent = target.sub;
       $("[data-note]").textContent = target.id === "mcp" ? "Connect once, then choose a tuning through your agent." : model.note;
       $("[data-steps]").innerHTML = target.steps;
+      $("[data-file]").textContent = (target.id === "mcp" ? "setup command" : "prompt") + " · " + model.name;
       $(".snippet").textContent = text;
       const copy = $("[data-copy]");
       copy.disabled = !text;
@@ -156,9 +157,8 @@
         if (atRevision === revision) $("[data-status]").textContent = "Copied. Paste it in " + INTEGRATIONS.find(item => item.id === targetSelect.value).name + ".";
       } catch (_) {
         if (atRevision !== revision) return;
-        $(".prompt-preview").open = true;
         $(".snippet").focus();
-        $("[data-status]").textContent = "Clipboard unavailable. Select and copy the full text in the preview.";
+        $("[data-status]").textContent = "Clipboard unavailable. Select and copy the full text in the editor.";
       }
     });
     root.__atPicker = {

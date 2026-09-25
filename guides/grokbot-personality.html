@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Give Grok Bot a Personality (2026 Guide)</title>
+  <title>Grok Bot Character &amp; Personality: How to Set It (2026)</title>
   <meta name="description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
 
-  <meta property="og:title" content="How to give Grok Bot a personality." />
+  <meta property="og:title" content="Give a Grok Bot its character: the Description guide." />
   <meta property="og:description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-19" />
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How to give Grok Bot a personality." />
+  <meta name="twitter:title" content="Give a Grok Bot its character: the Description guide." />
   <meta name="twitter:description" content="Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,8 +27,8 @@
   <link rel="canonical" href="https://agent-tune.com/guides/grokbot-personality" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to give Grok Bot a personality","description":"Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats.","url":"https://agent-tune.com/guides/grokbot-personality","datePublished":"2026-09-19","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to give Grok Bot a personality"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Give a Grok Bot its character: the Description guide","description":"Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats.","url":"https://agent-tune.com/guides/grokbot-personality","datePublished":"2026-09-19","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Give a Grok Bot its character: the Description guide"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What personality type is Grok?","acceptedAnswer":{"@type":"Answer","text":"Grok 4.6 answered the five tests once as itself on September 24, 2026: INTJ with wide margins, Investigator (Type 5), C on DISC with no Steadiness blend, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06). Its 100 runs are simulated draws from that one self-report, so treat them as a sensitivity check. We have not measured a Grok Bot with a Description installed."}},{"@type":"Question","name":"Does Grok Bot have custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Not as a separate setting. Each Bot has a Description on its profile, and xAI's docs say to use the Description for rules that should remain true and messages for task-specific instructions. Open the Bot menu and choose Edit Profile, or go to View conversation details, then Bot settings."}},{"@type":"Question","name":"Is Grok Bot the same as Grok?","acceptedAnswer":{"@type":"Answer","text":"No. Grok is the chatbot on grok.com and in X. Grok Bot is a separate app, in beta since August 11, 2026, for persistent AI teammates that each work on a cloud computer. It is a joint product with Cursor, and you sign in with a Cursor account. xAI's FAQ describes them as different products."}},{"@type":"Question","name":"Is it Grokbot or Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"xAI writes it as two words, Grok Bot. Most people type Grokbot. Same product."}},{"@type":"Question","name":"Is there a character limit on a Bot's Description?","acceptedAnswer":{"@type":"Answer","text":"xAI's documentation does not state one. AgentTune tuning files run from about 1,200 to 2,900 characters, alongside a short job description and boundaries."}},{"@type":"Question","name":"What does a Bot remember?","acceptedAnswer":{"@type":"Answer","text":"xAI's docs say a Bot can retain stable working preferences, important facts and summaries from its work, separately from your other Bots. Memory is learned and is not copied when you duplicate a Bot, so put anything that must persist in the Description."}},{"@type":"Question","name":"How do I stop a Bot losing its personality in a long chat?","acceptedAnswer":{"@type":"Answer","text":"Keep the rules in the Description, not in chat. A Cursor staff member has said every reply re-reads the whole conversation and auto-summary happens only near the model's limit. Their suggested fix is to ask for a handoff summary, right-click the Bot, choose Duplicate, and paste the summary into the copy."}},{"@type":"Question","name":"Can I share a tuned Bot?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open the Share menu, choose Create template, then Copy link. A template copies the Bot's identity, description, skills and routines to the recipient's account. It does not include your conversation history, logins or computer access."}},{"@type":"Question","name":"Which model powers Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"xAI's docs say Cursor manages model selection and there is no model picker. They do not name a default model."}}]}</script>
 
 
@@ -61,14 +61,14 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">How to give Grok Bot a personality</span>
+      <span class="crumb-current" aria-current="page">Give a Grok Bot its character: the Description guide</span>
     </nav>
 
     <article class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent, #a8482a);">Guide · Grok Bot</span>
-        <h1 class="h-hero h-research-hero">How to give Grok Bot a personality.</h1>
+        <h1 class="h-hero h-research-hero">Give a Grok Bot its character: the Description guide.</h1>
         <p class="article-dek">There is no personality setting. There is a Description field, and it does the job.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Grok Bot, which most people type as Grokbot, is xAI's app for keeping named AI teammates around. Each Bot has a job, a memory and its own cloud computer. It has no personality picker and no system-prompt box. What it has is a <strong>Description</strong> on every Bot's profile, and xAI's docs say to use it for the rules that should stay true. That is where a tuning goes.</p>
