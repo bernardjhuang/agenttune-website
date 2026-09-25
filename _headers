@@ -121,3 +121,7 @@
   Link: <https://agent-tune.com/library/ocean/neuroticism-high>; rel="canonical"
 /library/ocean/neuroticism-low.md
   Link: <https://agent-tune.com/library/ocean/neuroticism-low>; rel="canonical"
+
+# Resource downloads remain fetchable; discovery belongs to the guides
+/resources/*
+  X-Robots-Tag: noindex

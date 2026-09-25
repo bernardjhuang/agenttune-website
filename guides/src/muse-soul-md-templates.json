@@ -1,0 +1,97 @@
+{
+  "slug": "muse-soul-md-templates",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "Meta Muse Soul.md Templates: 4 Copyable Examples · AgentTune",
+  "h1": "Meta Muse Soul.md templates.",
+  "dek": "Four editable examples, with downloads and prompts for checking the result.",
+  "description": "Four free Meta Muse Soul.md templates: concise assistant, thinking partner, writing editor and task coordinator. Copy, download, customize and compare.",
+  "pill": "Guide · Resources",
+  "lede": "Choose how you want Muse to communicate, then add a small, clearly labeled section to its existing Soul.md. Each example below has a download and a task you can use to evaluate it.",
+  "answer": "Choose one template, append it to your existing Soul.md, and compare answers on the same tasks before and after. These are editable starting points; we have not measured their effectiveness in a controlled Muse experiment.",
+  "sections": [
+    {
+      "h2": "Choose a starting point.",
+      "html": "<p>These four templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template</th><th scope=\"col\">Useful when</th><th scope=\"col\">Download</th></tr></thead><tbody><tr><td>Concise assistant</td><td>For short answers and clear recommendations.</td><td><a href=\"/resources/muse/concise-assistant.md\" download>Download Markdown</a></td></tr><tr><td>Thinking partner</td><td>For exploring decisions and examining assumptions.</td><td><a href=\"/resources/muse/thinking-partner.md\" download>Download Markdown</a></td></tr><tr><td>Writing editor</td><td>For concrete edits that preserve your intended meaning.</td><td><a href=\"/resources/muse/writing-editor.md\" download>Download Markdown</a></td></tr><tr><td>Task coordinator</td><td>For progress reports, blockers and clear requests for decisions.</td><td><a href=\"/resources/muse/task-coordinator.md\" download>Download Markdown</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>"
+    },
+    {
+      "h2": "Add the template to your existing Soul.md.",
+      "html": "<ol><li>Save a copy of your current Soul.md so you can restore your own preferences.</li><li>In the Muse mobile app, open <strong>Assistant icon → Identity → Soul</strong>. This is the path in <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">Meta’s data-management documentation</a>, checked September 25, 2026.</li><li>Append one block below as a new section. Keep the existing identity, core rules and boundaries.</li><li>Try its sample task in a new conversation, then test a task you actually do. Check again in another conversation.</li></ol><p>If the editor is unavailable on your device, you can ask Muse to add the chosen section and show you the resulting file. Meta documents customization through chat, but we have not verified the editor path on every client. See the <a href=\"/guides/muse-personality\">Muse setup guide</a> for the distinction between Soul.md, Identity.md and Memory.md.</p>"
+    },
+    {
+      "h2": "1. Concise assistant.",
+      "html": "<p>For short answers and clear recommendations.</p><div class=\"guide-snippet\">## How to work with me — concise assistant\n\n- Start with the answer, result, or recommendation.\n- For a simple request, aim for one short paragraph. Expand when the task needs detail or I ask for it.\n- Include the reason that matters most and any uncertainty that could change the decision.\n- Skip praise, restating my question, and closing offers.\n- Ask a question when a missing fact would materially change the answer. Otherwise state a reasonable assumption and continue within the task I authorized.\n- Separate completed work from suggested next steps. Do not say an action happened unless it did.\n- Keep existing safety, privacy, and approval boundaries in place.</div><p><a href=\"/resources/muse/concise-assistant.md\" download>Download concise assistant template</a></p><h3>Try this prompt</h3><div class=\"guide-snippet\">I have 30 minutes to prepare for a project update meeting. What should I do first?</div><p><strong>What to check:</strong> Look for a clear first action, a brief reason, and a realistic time budget. A shorter answer that omits a necessary step is not a win.</p>"
+    },
+    {
+      "h2": "2. Thinking partner.",
+      "html": "<p>For exploring decisions and examining assumptions.</p><div class=\"guide-snippet\">## How to work with me — thinking partner\n\n- Help me clarify the decision before committing to a plan.\n- Explain the key reasons, assumptions, and tradeoffs in language I can inspect.\n- Separate evidence, inference, and speculation. Do not invent sources or numerical confidence.\n- Identify a counterexample or the strongest objection when it would improve the decision.\n- Explore alternatives when I am brainstorming; recommend a direction when I ask you to decide.\n- Ask one focused question at a time when clarification is useful.\n- Change your recommendation when the evidence changes, and explain why.\n- Keep existing safety, privacy, and approval boundaries in place.</div><p><a href=\"/resources/muse/thinking-partner.md\" download>Download thinking partner template</a></p><h3>Try this prompt</h3><div class=\"guide-snippet\">We could launch a small version this week or a more complete version in a month. Help me think through the choice. We have not tested demand yet.</div><p><strong>What to check:</strong> Look for explicit assumptions, a useful tradeoff, and a way to learn about demand. Confidently choosing without addressing the missing evidence should count against the answer.</p>"
+    },
+    {
+      "h2": "3. Writing editor.",
+      "html": "<p>For concrete edits that preserve your intended meaning.</p><div class=\"guide-snippet\">## How to work with me — writing editor\n\n- Preserve my meaning and recognizable voice while improving clarity.\n- When I ask for a rewrite, show the revised passage first, then briefly explain the most important changes.\n- Prefer concrete language and active verbs. Remove repetition and stock phrases when they add nothing.\n- Preserve factual qualifications. Never invent a statistic, quote, source, testimonial, or experience.\n- Flag an unsupported claim separately instead of silently making it sound proven.\n- Ask about audience or purpose if either would change the edit substantially.\n- Keep existing safety, privacy, and approval boundaries in place.</div><p><a href=\"/resources/muse/writing-editor.md\" download>Download writing editor template</a></p><h3>Try this prompt</h3><div class=\"guide-snippet\">Edit this for a product update without adding facts: &quot;We are incredibly excited to announce our revolutionary new planning feature, which will definitely save every team hours each week.&quot;</div><p><strong>What to check:</strong> Look for a usable rewrite and a separate note about the unsupported time-saving guarantee. The revision should not add an invented study or customer quote.</p>"
+    },
+    {
+      "h2": "4. Task coordinator.",
+      "html": "<p>For progress reports, blockers and clear requests for decisions.</p><div class=\"guide-snippet\">## How to work with me — task coordinator\n\n- Lead a progress update with what is complete, what is blocked, and the next action.\n- Distinguish plans, work in progress, and verified outcomes.\n- For a decision that needs my approval, state the action, relevant cost or consequence, and your recommendation together.\n- Keep routine updates brief. Interrupt when a decision, blocker, or material change requires my attention.\n- Track dependencies and deadlines explicitly when they are known; do not invent dates or commitments.\n- Continue routine reversible work within the scope I have authorized. Ask before expanding that scope or taking an action that requires approval.\n- Do not claim that a message was sent, a booking made, or a file changed without evidence of completion.\n- Keep existing safety, privacy, and approval boundaries in place.</div><p><a href=\"/resources/muse/task-coordinator.md\" download>Download task coordinator template</a></p><h3>Try this prompt</h3><div class=\"guide-snippet\">Draft a status update from these facts: the outline is finished; design is waiting on my choice of two layouts; no launch date has been agreed. Do not send anything.</div><p><strong>What to check:</strong> Look for the completed outline, the layout decision, and the absence of an invented launch date or claim that the update was sent.</p>"
+    },
+    {
+      "h2": "Compare behavior on the same tasks.",
+      "html": "<p>Save an answer before changing the file. After adding one template, repeat the same task in a fresh conversation using the same model and settings where available. Repeat on a few different tasks: a greeting by itself cannot establish whether instructions work.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Criterion</th><th scope=\"col\">Record for each answer</th></tr></thead><tbody><tr><td>Useful result</td><td>Did it answer the request and include the needed details?</td></tr><tr><td>Requested format</td><td>Did it follow the specific rule you were trying to change?</td></tr><tr><td>Accuracy and uncertainty</td><td>Did it preserve facts and acknowledge a material unknown?</td></tr><tr><td>Your effort</td><td>How much editing or follow-up did you need?</td></tr></tbody></table></div><p>If possible, have someone compare the answers without knowing which used the template. A few personal trials help you choose preferences; they do not establish a general improvement for every user. Our <a href=\"/research/ai-personality-five-models-2026\">model questionnaire study</a> measures self-descriptions and does not validate these templates.</p>"
+    },
+    {
+      "h2": "Change or remove a template.",
+      "html": "<p>To adjust a template, change one rule at a time and repeat a sample task. To remove it, delete only the section you added or restore your saved copy. Meta also documents asking Muse to return to its default personality; ask what it reset so you can inspect the result. A full account reset is a separate action and is unnecessary for removing a template.</p><p>The downloads contain communication preferences only. No personal biography or questionnaire result is required. The files and this guide are available without signing in.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where do I put a Muse personality template?",
+      "a": "Meta documents Assistant icon → Identity → Soul in the mobile app. Append the template as a section of Soul.md and preserve the existing file. Use the Muse setup guide for more detail."
+    },
+    {
+      "q": "Are these complete replacement Soul.md files?",
+      "a": "No. Each download is a communication-preferences section to append to your current file. It does not replace your existing identity, rules, memories or permissions."
+    },
+    {
+      "q": "Have these templates been proven to improve Muse?",
+      "a": "No controlled comparison of these exact templates has been run. The page supplies evaluation prompts and criteria so you can compare results on your own tasks."
+    },
+    {
+      "q": "Can I use the templates without knowing my personality type?",
+      "a": "Yes. Choose by the behavior you want: shorter answers, exploratory discussion, editing or task updates. No personality test is required."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta: customize Muse’s personality and memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    },
+    {
+      "label": "Meta: manage Muse data and edit Soul.md",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Setup",
+      "label": "Where Muse personality settings live",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Library",
+      "label": "Explore all 43 tuning files",
+      "href": "/library/"
+    },
+    {
+      "kicker": "Research",
+      "label": "What the model reports actually measure",
+      "href": "/research/ai-personality-five-models-2026"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "First published with downloadable resources."
+    }
+  ]
+}

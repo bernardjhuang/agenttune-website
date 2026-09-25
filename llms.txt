@@ -4,6 +4,12 @@
 
 The aim: describe your communication preferences as editable instructions. Exploratory model self-reports do not establish a universal AI personality or a controlled benefit from personality matching. Compare responses on your own tasks.
 
+## Practical resources (September 2026)
+
+- [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates): Four editable communication-preference blocks with Markdown downloads and evaluation prompts; effectiveness has not been established in a controlled test.
+- [Open-source Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test): AgentTune’s 36-item adaptation, question JSON, dependency-free JavaScript scorer and local-only demo. Distinct from the full 54-item OEPS. The scorer returns every tied leader; code licensing and item attribution are separate.
+- [Claude settings, examples and evidence](https://agent-tune.com/guides/claude-personality): Five untested preference blocks, a comparison worksheet, and recorded Opus/Fable questionnaire results. Fully resolved INTJ counts are 84/100 and 98/100; these are self-descriptions, not measured tuning benefits.
+
 ## The five systems (43 layerable tuning files)
 
 - **MBTI** — 16 communication styles. How you process. How you want to be communicated with. Repo path: `mbti/<TYPE>.md`.

@@ -4,6 +4,12 @@
 
 This file is the long-form companion to [/llms.txt](https://agent-tune.com/llms.txt). Use this when you need everything in one fetch. Use llms.txt when you just need the structure.
 
+## Practical resources (September 2026)
+
+- [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates): Four editable communication-preference blocks with Markdown downloads and evaluation prompts; effectiveness has not been established in a controlled test.
+- [Open-source Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test): AgentTune’s 36-item adaptation, question JSON, dependency-free JavaScript scorer and local-only demo. Distinct from the full 54-item OEPS. The scorer returns every tied leader; code licensing and item attribution are separate.
+- [Claude settings, examples and evidence](https://agent-tune.com/guides/claude-personality): Five untested preference blocks, a comparison worksheet, and recorded Opus/Fable questionnaire results. Fully resolved INTJ counts are 84/100 and 98/100; these are self-descriptions, not measured tuning benefits.
+
 ## Site
 
 **AgentTune** — agent-tune.com — open library of Markdown tuning files that align AI agent interaction style with how a particular user thinks. MIT licensed via [github.com/bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune).

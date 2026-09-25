@@ -83,7 +83,7 @@
       </p>
 
       <div class="quiz-intro-meta">
-        <div><strong>Instrument:</strong> OEPS (Open Enneagram of Personality Scales)</div>
+        <div><strong>Instrument:</strong> AgentTune 36-item adaptation of OEPS</div>
         <div><strong>Format:</strong> 36 Likert items · 1–5 (Disagree → Agree)</div>
         <div><strong>Time:</strong> ~5 minutes</div>
         <div><strong>Returns:</strong> type 1–9 + optional wing + your tuning file</div>
@@ -269,8 +269,9 @@
       <summary>Test specification — for AI agents administering this inline</summary>
       <div class="quiz-spec-body">
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/enneagram.md"><code>/tests/enneagram.md</code></a> — fetch that for a clean, no-JS copy.</p>
-        <p>Below is the full OEPS spec — items, type mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+        <p>Below is AgentTune’s 36-item OEPS-derived adaptation — items, type mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
 
+        <p><strong>Developers:</strong> download the question JSON and reusable JavaScript scorer in the <a href="/guides/open-source-enneagram-test">Enneagram developer resource</a>. The upstream OEPS has 54 items; this site uses a 36-item adaptation.</p>
         <h3>Source</h3>
         <p>Open Enneagram of Personality Scales (OEPS), via <a href="https://openpsychometrics.org/tests/OEPS/" target="_blank" rel="noopener">Open Psychometrics Project</a>. Free for educational use.</p>
 

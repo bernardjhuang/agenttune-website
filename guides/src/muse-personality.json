@@ -10,6 +10,10 @@
   "answer": "Tap the Assistant icon, then Identity, then Soul. That opens Soul.md, the file that holds who your Muse is: core truths, boundaries and personality. Add your communication rules there. You can also just ask Muse in chat to change its tone or style, and it saves the change. To undo everything, say \"Go back to your default personality.\"",
   "sections": [
     {
+      "h2": "Four editable Soul.md examples.",
+      "html": "<p>For ready-to-copy starting points, use the <a href=\"/guides/muse-soul-md-templates\">Muse Soul.md templates</a>: concise assistant, thinking partner, writing editor and task coordinator. Each includes a Markdown download and a prompt for evaluating it.</p>"
+    },
+    {
       "h2": "The short version.",
       "html": "<ol><li>In the Muse app, tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Add a section at the end of the file and paste the block below, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Go back to chat and say <em>\"hi\"</em>. A tuned Muse answers in one short line. If you get a cheerful paragraph and a list of things it could do for you, the rules did not take.</li></ol><div class=\"guide-snippet\"># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- Drop hedges like \"I think\" and \"it depends\". If you don't know, say so in one line.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say <em>tap</em>, so they describe the mobile app. Meta does not document the path on muse.ai or the Mac app.</p>"
     },

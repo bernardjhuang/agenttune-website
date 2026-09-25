@@ -2,7 +2,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
 const ROOT=path.resolve(__dirname,'..');
-const directories=new Set(['guides','library','tests','tunings','output-styles','research','og']);
+const directories=new Set(['guides','library','tests','tunings','output-styles','research','og','resources']);
 const publicRoot=new Set(['index.html','research.html','privacy.html','terms.html','404.html','styles.css','data.js','consent.js','integrations.js','quiz-utils.js','compact-tunings.js','llms.txt','llms-full.txt','robots.txt','sitemap.xml','_headers','_redirects','favicon.ico','favicon.svg','apple-touch-icon.png','3b91249899d7c5b030ddef6498ca2e78.txt']);
 function isPublic(relative) {
   const parts=relative.split('/');
