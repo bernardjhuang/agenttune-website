@@ -444,14 +444,14 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
   // SEO title — Template D, system-tuned
   // Kept under 60 characters for every type (longest: High Conscientiousness).
   const pageTitle = c.system === "ocean"
-    ? `${c.name} System Prompt (Big Five) · AgentTune`
+    ? `${c.name} System Prompt for Claude & ChatGPT`
     : c.system === "attachment"
-      ? `${c.code} Attachment System Prompt for AI · AgentTune`
+      ? `${c.code} Attachment System Prompt for Claude & ChatGPT`
       : c.system === "enneagram"
-        ? `Enneagram Type ${enneaDigit} System Prompt for AI Agents · AgentTune`
+        ? `Enneagram Type ${enneaDigit} System Prompt for Claude & ChatGPT`
         : c.system === "disc"
-          ? `DISC ${c.code} (${c.name}) System Prompt · AgentTune`
-          : `${c.code} System Prompt for AI Agents — Claude, GPT · AgentTune`;
+          ? `DISC ${c.code} ${c.name} System Prompt for Claude & ChatGPT`
+          : `${c.code} System Prompt: Custom Instructions for Claude & ChatGPT`;
 
   // H1 sub-label: names the framework, so the heading reads as a full phrase
   // ("T4 Enneagram Type 4 system prompt") to crawlers and screen readers.
@@ -1220,10 +1220,10 @@ function buildHub(contacts) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>43 Personality System Prompts for Claude & ChatGPT — AgentTune</title>
+  <title>43 Free Personality System Prompts for Claude & ChatGPT</title>
   <meta name="description" content="The full AgentTune library. 43 Markdown tuning files matched to every personality type across MBTI, Enneagram, DISC, Attachment, and OCEAN. Paste any one into your AI agent's system prompt." />
 
-  <meta property="og:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta property="og:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/library/" />
@@ -1236,7 +1236,7 @@ function buildHub(contacts) {
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="43 Personality System Prompts for Claude & ChatGPT — AgentTune" />
+  <meta name="twitter:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta name="twitter:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />

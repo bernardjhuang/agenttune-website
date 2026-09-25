@@ -1,10 +1,10 @@
 {
   "slug": "muse-personality",
   "published": "2026-09-19",
-  "title": "How to Give Meta Muse a Personality (Soul.md Guide)",
+  "title": "Meta Muse Character & Personality: The Soul.md Guide",
   "description": "Muse has no custom-instructions box. Its personality lives in a Soul.md file you can edit. The tap path, what to paste, how to test it, how to reset it.",
   "pill": "Guide · Meta Muse",
-  "h1": "How to give Muse a personality.",
+  "h1": "Give Meta Muse a character: the Soul.md guide.",
   "dek": "Soul.md, Identity.md and Memory.md: which file does what, and what to paste.",
   "lede": "Muse is Meta's personal AI agent, launched September 8, 2026. It has no custom-instructions box. Its personality lives in a file called <strong>Soul.md</strong>, and Meta lets you open it and edit it. There are two ways to change how Muse talks to you: tell it in chat, or paste a tuning into the file yourself. The second is the one that holds up.",
   "answer": "Tap the Assistant icon, then Identity, then Soul. That opens Soul.md, the file that holds who your Muse is: core truths, boundaries and personality. Add your communication rules there. You can also just ask Muse in chat to change its tone or style, and it saves the change. To undo everything, say \"Go back to your default personality.\"",
