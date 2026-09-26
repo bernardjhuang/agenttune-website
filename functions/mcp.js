@@ -84,7 +84,7 @@ const TOOLS = [
     name: "get_test_spec",
     title: "Get questionnaire availability and specification",
     description:
-      "Return questionnaire availability and a Markdown resource. Only big-five is currently available, with an exact instrument/version, all 50 IPIP items, response anchors and strict scoring instructions. Other routes return an availability notice; do not administer their historical questionnaires. Scores do not select or install preferences. Ask the user whether they want to take an available questionnaire, keep responses local, and let them choose communication preferences explicitly.",
+      "Fetch a complete questionnaire specification for mbti (32 items), enneagram (36), disc (16), attachment (36) or big-five (50). All five are available, with exact instrument/version IDs, response anchors and strict scoring instructions. The first four preserve the legacy AgentTune adaptations; instrument-specific source terms apply. Administer only when requested, keep responses local, preserve ties, and let users review any suggested communication preferences before installation.",
     inputSchema: {
       type: "object",
       properties: {

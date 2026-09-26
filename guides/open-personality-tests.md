@@ -7,13 +7,13 @@ Guide · Tests
 
         By Bernard Huang · Updated September 26, 2026
 
-        Use the IPIP Big Five adaptation for current local scoring, or choose communication preferences directly. Other framework pages explain availability and link to the original publisher. A questionnaire score is not a diagnosis, proof of an AI’s inner personality or evidence that a tuning improves performance.
+        All five tests run locally in your browser with instant results and no signup. The four restored tests preserve their previous website editions; Big Five reports raw totals and means. A questionnaire score is not a diagnosis or evidence that a tuning improves performance.
 
 ## Current availability
 
-        The [IPIP Big Five adaptation](https://agent-tune.com/tests/big-five) is available with public-domain items. [OEJTS](https://agent-tune.com/tests/mbti) and [ODAT](https://agent-tune.com/tests/disc) have noncommercial license conditions; [OEPS](https://agent-tune.com/tests/enneagram) needs exact license clarification; [ECR-R](https://agent-tune.com/tests/attachment) has research permission distinct from product and redistribution rights. Those four questionnaires are excluded from the current bundle.
+        Take the [MBTI-style](https://agent-tune.com/tests/mbti), [Enneagram](https://agent-tune.com/tests/enneagram), [DISC](https://agent-tune.com/tests/disc), [attachment](https://agent-tune.com/tests/attachment) or [Big Five](https://agent-tune.com/tests/big-five) questionnaire. Complete all items to view a score; tied results stay explicit.
 
-Read the [per-instrument rights record](https://agent-tune.com/resources/content/instrument-rights.json). A software MIT license does not relicense question text.
+Read the [per-instrument rights record](https://agent-tune.com/resources/content/instrument-rights.json) before reusing questionnaire material. Original software and template licenses do not relicense third-party question text.
 
 ## Big Five scoring
 

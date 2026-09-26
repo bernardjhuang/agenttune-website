@@ -1,1 +1,637 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Enneagram questionnaire availability | AgentTune</title><meta name="description" content="Current questionnaire availability, original sources and editable communication preferences."><link rel="canonical" href="https://agent-tune.com/tests/enneagram"><meta property="og:title" content="Enneagram questionnaire availability"><meta property="og:description" content="Current questionnaire availability, original sources and editable communication preferences."><meta property="og:type" content="website"><meta property="og:url" content="https://agent-tune.com/tests/enneagram"><meta property="og:image" content="https://agent-tune.com/og/og-card.png"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"><script defer src="/consent.js"></script><style>.quiz-page{--lib-accent:#5b4dc0}#quiz-runner{margin-top:24px}#quiz-restart{margin:24px 0}.questionnaire-copy{max-width:760px;margin:32px 0 56px}.questionnaire-copy p{font-size:18px;line-height:1.6}.questionnaire-copy h2{margin-top:32px}.questionnaire-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.questionnaire-status{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface,#fff)}.score-list{display:grid;gap:12px;padding:0;list-style:none}.score-list li{padding:16px;border:1px solid var(--border);border-radius:10px}.questionnaire-json{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.questionnaire-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}.questionnaire-card-list article{padding:24px;border:1px solid var(--border);border-radius:12px;background:white}</style></head><body class="quiz-page"><a class="skip-link" href="#main">Skip to content</a><div class="page"><nav class="nav"><a class="brand" href="/"><span class="brand-dot"></span>AgentTune</a><div class="nav-links"><a href="/library/">Library</a><a href="/tests/" class="active">Tests</a><a href="/research">Research</a><a href="/guides/">Guides</a><a href="/tools/custom-instructions-generator">Generator</a></div></nav><main id="main" tabindex="-1"><section class="questionnaire-copy"><p class="pill">Questionnaire availability</p><h1 class="h-hero">Enneagram questionnaire</h1><p class="lede">Choose how you want your assistant to respond. You do not need a test result to use a template.</p><div class="questionnaire-status"><h2>Questionnaire currently unavailable</h2><p>We have not yet verified the exact redistribution terms for the OEPS version used by AgentTune. The question text and interactive test are excluded from this release.</p><p>Your existing preferences still work. You can browse and edit the framework’s communication templates, or build instructions from the behaviors you want.</p></div><div class="questionnaire-actions"><a class="btn btn-primary" href="/tools/custom-instructions-generator">Choose my preferences →</a><a class="btn btn-secondary" href="/library/">Browse templates</a></div><h2>Sources and alternatives</h2><p><a href="https://openpsychometrics.org/development/">Read the original publisher’s documentation</a>. Its terms apply to any use there. The <a href="/tests/big-five">IPIP Big Five adaptation</a> remains available on AgentTune.</p><p>Templates are editorial communication suggestions, not diagnoses or validated performance improvements. Historical research used version-specific adaptations and has not been relabeled as a corrected instrument.</p><p><a href="/tests/enneagram.md">Availability in Markdown</a> · <a href="/resources/content/instrument-rights.json">Instrument rights record</a></p></section></main><footer class="footer"><span><a href="/resources/content/THIRD_PARTY_NOTICES.md">Licenses and questionnaire availability</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span><a href="/tests/">All questionnaires</a></footer></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Enneagram Test: Instant Results, No Email or Signup</title>
+  <meta name="description" content="Free 36-item Enneagram test, about 5 minutes, scored in your browser. Returns a tuning file matched to your core type — no signup, no email." />
+
+  <meta property="og:title" content="Free Enneagram Test: Instant Results, No Email or Signup" />
+  <meta property="og:description" content="36 items · ~5 min · returns a tuning file that tunes your AI agent to your core motivation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://agent-tune.com/tests/enneagram" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Enneagram Test: Instant Results, No Email or Signup" />
+  <meta name="twitter:description" content="36 items · 5 min · tune your AI agent to your core motivation." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <link rel="canonical" href="https://agent-tune.com/tests/enneagram" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Quiz","name":"Enneagram Test (OEPS)","description":"Interactive 36-item Enneagram of Personality test. Returns dominant type 1–9 plus optional wing.","url":"https://agent-tune.com/tests/enneagram","inLanguage":"en","numberOfQuestions":36,"timeRequired":"PT5M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
+  </script>
+
+  <script defer src="/consent.js"></script>
+
+  <script src="/data.js"></script>
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/quiz-utils.js"></script>
+  <script src="/resources/scoring/score.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%232f8a5b'/%3E%3C/svg%3E" />
+  <style>:root { --lib-accent: #2f8a5b; --lib-accent-22: rgba(47,138,91,0.13); --lib-accent-55: rgba(47,138,91,0.34); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests","item":"https://agent-tune.com/tests/"},{"@type":"ListItem","position":3,"name":"Enneagram"}]}</script>
+</head>
+<body class="quiz-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav">
+      <a class="brand" href="/"><span class="brand-dot"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/tests/">Tests</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Enneagram</span>
+    </nav>
+
+    <main id="main" tabindex="-1">
+    <h1 class="sr-only">Free Enneagram test.</h1>
+
+    <!-- INTRO -->
+    <section class="quiz-intro" id="quiz-intro">
+      <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">5-min test · 36 questions</span>
+      <div class="h-hero h-research-hero" aria-hidden="true">Free Enneagram test.</div>
+      <div class="h-hero h-research-hero h-hero-italic" style="color: #246f48;">Instant results, then your tuning file.</div>
+      <p class="lede">
+        Answer 36 questions about your preferences. We'll score it in your browser and hand you editable instructions matched to your dominant motivation, ready to paste into any AI agent's saved instructions.
+      </p>
+
+      <div class="quiz-intro-meta">
+        <div><strong>Instrument:</strong> AgentTune 36-item adaptation of OEPS</div>
+        <div><strong>Format:</strong> 36 Likert items · 1–5 (Disagree → Agree)</div>
+        <div><strong>Time:</strong> ~5 minutes</div>
+        <div><strong>Returns:</strong> type 1–9 + optional wing + your tuning file</div>
+      </div>
+
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" id="quiz-start" style="background: #246f48; border-color: #2f8a5b;">Start the test →</button>
+      </div>
+
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input.</p>
+
+      <!-- WHAT ENNEAGRAM MEASURES -->
+      <div class="quiz-intro-chart">
+        <h2 class="quiz-intro-chart-h">What the Enneagram measures</h2>
+        <p class="quiz-intro-chart-sub">Nine motivational archetypes arranged on a circle. Internal lines map the directions types move under stress and growth.</p>
+        <!--
+          Enneagram figure: 9 types evenly spaced on a circle (40° apart, T9 at 12 o'clock,
+          going clockwise). Two interior figures:
+            • Triangle  9 → 3 → 6 → 9  (the "primary triad")
+            • Hexad     1 → 4 → 2 → 8 → 5 → 7 → 1  (direction of stress / disintegration)
+          Center (250,250), radius 180. All coords derived from 250 + 180·sin θ, 250 − 180·cos θ.
+        -->
+        <svg viewBox="0 0 500 500" style="width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; font-family: var(--font-sans);" role="img" aria-label="Enneagram diagram with 9 types arranged on a circle, connected by the 369 triangle and the 1-4-2-8-5-7 hexad">
+          <!-- outer circle -->
+          <circle cx="250" cy="250" r="180" fill="none" stroke="#e3ddd1" stroke-width="2"/>
+
+          <!-- Triangle: 9 (top) → 3 (lower-right) → 6 (lower-left) → 9 -->
+          <path d="M 250 70 L 405.9 340 L 94.1 340 Z" fill="none" stroke="#2f8a5b" stroke-width="1.5" stroke-opacity="0.45"/>
+
+          <!-- Hexad: 1 → 4 → 2 → 8 → 5 → 7 → 1 -->
+          <path d="M 365.7 112.1 L 311.6 419.1 L 427.3 218.8 L 134.3 112.1 L 188.4 419.1 L 72.7 218.8 Z" fill="none" stroke="#2f8a5b" stroke-width="1.5" stroke-opacity="0.55"/>
+
+          <!-- T9 Peacemaker (top, 0°) -->
+          <circle cx="250" cy="70" r="22" fill="#5a8a6e"/>
+          <text x="250" y="76" text-anchor="middle" font-size="16" font-weight="700" fill="white">9</text>
+          <text x="250" y="38" text-anchor="middle" font-size="11" font-weight="600" fill="#1e1d1a">Peacemaker</text>
+
+          <!-- T1 Reformer (upper-right, 40°) -->
+          <circle cx="365.7" cy="112.1" r="22" fill="#8a5a2d"/>
+          <text x="365.7" y="118.1" text-anchor="middle" font-size="16" font-weight="700" fill="white">1</text>
+          <text x="395" y="100" text-anchor="start" font-size="11" font-weight="600" fill="#1e1d1a">Reformer</text>
+
+          <!-- T2 Helper (right, 80°) -->
+          <circle cx="427.3" cy="218.8" r="22" fill="#c84a82"/>
+          <text x="427.3" y="224.8" text-anchor="middle" font-size="16" font-weight="700" fill="white">2</text>
+          <text x="458" y="222" text-anchor="start" font-size="11" font-weight="600" fill="#1e1d1a">Helper</text>
+
+          <!-- T3 Achiever (lower-right, 120°) -->
+          <circle cx="405.9" cy="340" r="22" fill="#d99632"/>
+          <text x="405.9" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="white">3</text>
+          <text x="436" y="350" text-anchor="start" font-size="11" font-weight="600" fill="#1e1d1a">Achiever</text>
+
+          <!-- T4 Individualist (bottom-right, 160°) -->
+          <circle cx="311.6" cy="419.1" r="22" fill="#7a4ac8"/>
+          <text x="311.6" y="425.1" text-anchor="middle" font-size="16" font-weight="700" fill="white">4</text>
+          <text x="311.6" y="458" text-anchor="middle" font-size="11" font-weight="600" fill="#1e1d1a">Individualist</text>
+
+          <!-- T5 Investigator (bottom-left, 200°) -->
+          <circle cx="188.4" cy="419.1" r="22" fill="#3a6ec8"/>
+          <text x="188.4" y="425.1" text-anchor="middle" font-size="16" font-weight="700" fill="white">5</text>
+          <text x="188.4" y="458" text-anchor="middle" font-size="11" font-weight="600" fill="#1e1d1a">Investigator</text>
+
+          <!-- T6 Loyalist (lower-left, 240°) -->
+          <circle cx="94.1" cy="340" r="22" fill="#4a8aa8"/>
+          <text x="94.1" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="white">6</text>
+          <text x="64" y="350" text-anchor="end" font-size="11" font-weight="600" fill="#1e1d1a">Loyalist</text>
+
+          <!-- T7 Enthusiast (left, 280°) -->
+          <circle cx="72.7" cy="218.8" r="22" fill="#d9a432"/>
+          <text x="72.7" y="224.8" text-anchor="middle" font-size="16" font-weight="700" fill="white">7</text>
+          <text x="42" y="222" text-anchor="end" font-size="11" font-weight="600" fill="#1e1d1a">Enthusiast</text>
+
+          <!-- T8 Challenger (upper-left, 320°) -->
+          <circle cx="134.3" cy="112.1" r="22" fill="#c83a2a"/>
+          <text x="134.3" y="118.1" text-anchor="middle" font-size="16" font-weight="700" fill="white">8</text>
+          <text x="105" y="100" text-anchor="end" font-size="11" font-weight="600" fill="#1e1d1a">Challenger</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- RUNNER -->
+    <section class="quiz-runner" id="quiz-runner" hidden>
+      <div class="quiz-progress">
+        <div class="quiz-progress-track"><div class="quiz-progress-bar" id="quiz-progress-bar" style="background: #2f8a5b;"></div></div>
+        <div class="quiz-progress-text"><span id="quiz-progress-current">1</span> / 36</div>
+      </div>
+      <p class="sr-only" id="quiz-announcement" role="status"></p>
+      <div class="quiz-card" id="quiz-card" tabindex="-1" role="group">
+        <div class="quiz-card-prompt">
+          <div class="avatar avatar-md avatar-solid" style="background: #246f48;" aria-hidden="true">E</div>
+          <p class="quiz-item-statement" id="quiz-item-statement"></p>
+        </div>
+        <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
+        </div>
+        <div class="quiz-nav">
+          <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
+          <div class="quiz-nav-hint">Press 1–5 or click · auto-advances</div>
+          <button type="button" class="quiz-nav-btn" id="quiz-skip">Choose neutral →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="quiz-result" id="quiz-result" hidden>
+      <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Done · here's your result</span>
+      <div class="quiz-result-card" style="border-top-color: #2f8a5b;">
+        <div class="quiz-result-headline">
+          <div class="avatar quiz-result-avatar" id="quiz-result-avatar" style="background: #246f48;">T</div>
+          <div>
+            <div class="quiz-result-label">Your Enneagram profile</div>
+            <div class="quiz-result-code" id="quiz-result-code" style="color: #246f48;">5w4</div>
+            <div class="quiz-result-name" id="quiz-result-name">The Investigator</div>
+          </div>
+        </div>
+        <div class="quiz-result-blurb" id="quiz-result-blurb"></div>
+
+        <h2 class="quiz-result-section-h">All nine type scores</h2>
+        <div class="quiz-result-axes" id="quiz-result-scores"></div>
+
+        <div id="quiz-tie-links" class="quiz-tie-links" hidden></div>
+        <div id="quiz-export-panel">
+        <h2 class="quiz-result-section-h">Your tuning file</h2>
+        <article class="c-editor" id="quiz-result-editor">
+          <div class="c-titlebar">
+            <div class="c-dots"><span></span><span></span><span></span></div>
+            <div class="c-titlebar-label" id="quiz-editor-titlebar">~/.agenttune/tuning.md</div>
+            <div style="width: 50px;"></div>
+          </div>
+          <div class="c-tabs">
+            <div class="c-tab is-active">
+              <span class="c-tab-dot"></span>
+              <span id="quiz-editor-tab">tuning.md</span>
+              <span class="c-tab-close">×</span>
+            </div>
+          </div>
+          <div class="c-editor-body" tabindex="0" role="region" aria-label="Your tuning file">
+            <div class="c-gutter" id="quiz-editor-gutter" aria-hidden="true"></div>
+            <pre class="c-code" id="quiz-editor-code"></pre>
+          </div>
+          <div class="c-statusbar">
+            <div class="c-statusbar-left">
+              <span id="quiz-editor-status">● tuning.md</span>
+              <span>Markdown · UTF-8 · MIT</span>
+            </div>
+            <div class="c-statusbar-actions">
+              <button class="c-status-btn" id="quiz-download-tuning" type="button">↓ Download</button>
+              <button class="c-status-btn is-strong" id="quiz-copy-tuning" type="button">⌘C · Copy</button>
+            </div>
+          </div>
+        </article>
+        <div class="quiz-result-actions" style="margin-top: 14px;">
+          <a class="btn btn-secondary" id="quiz-github-link" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+        </div>
+
+        <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
+        <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
+        <div id="integration-deep" data-integration-deep></div>
+        </div>
+      </div>
+
+
+      <div class="quiz-result-next">
+        <h2>Stack another system for a different perspective</h2>
+        <p class="muted">Take another test and layer a second tuning onto your agent.</p>
+        <div class="quiz-result-next-grid">
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
+          <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
+          <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
+          <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
+        </div>
+      </div>
+
+      <div class="cta-row" style="justify-content: center; margin-top: 32px;">
+        <button type="button" class="btn btn-secondary" id="quiz-restart">Retake Enneagram test</button>
+      </div>
+    </section>
+
+    <details class="quiz-spec">
+      <summary>Test specification — for AI agents administering this inline</summary>
+      <div class="quiz-spec-body">
+        <p><strong>Edition:</strong> agenttune-enneagram-legacy@1.0.0. This preserves the earlier AgentTune adaptation. <a href="/tests/enneagram.md">Full questions, scoring and adaptation notes</a> · <a href="/resources/content/THIRD_PARTY_NOTICES.md">Sources and terms</a>. Results are self-reports, not diagnoses; review any suggested preferences before using them.</p>
+        <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/enneagram.md"><code>/tests/enneagram.md</code></a> — fetch that for a clean, no-JS copy.</p>
+        <p>Below is AgentTune’s 36-item OEPS-derived adaptation — items, type mapping, scoring algorithm, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+
+        <p><strong>Developers:</strong> download the question JSON and reusable JavaScript scorer in the <a href="/guides/open-source-enneagram-test">Enneagram developer resource</a>. The upstream OEPS has 54 items; this site uses a 36-item adaptation.</p>
+        <h3>Source</h3>
+        <p>Open Enneagram of Personality Scales (OEPS), via <a href="https://openpsychometrics.org/tests/OEPS/" target="_blank" rel="noopener">Open Psychometrics Project</a>. Instrument-specific source terms apply; see the notices above.</p>
+
+        <h3>The 36 items</h3>
+        <p>Four items per Enneagram type, presented in type order (items 1–4 are Type 1, 5–8 are Type 2, …, 33–36 are Type 9). User rates each statement on a 1–5 Likert scale: <strong>1 = Strongly Disagree, 2 = Disagree, 3 = Neutral, 4 = Agree, 5 = Strongly Agree</strong>. No reverse-scored items.</p>
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 1" tabindex="0"><table class="items-table">
+          <thead><tr><th class="num-col">#</th><th>Statement</th><th class="num-col">Type</th></tr></thead>
+          <tbody id="quiz-spec-items"><tr><td>1</td><td>I am a perfectionist.</td><td>1</td></tr>
+<tr><td>2</td><td>I strive for efficiency.</td><td>1</td></tr>
+<tr><td>3</td><td>I often have to redo other people&#39;s work.</td><td>1</td></tr>
+<tr><td>4</td><td>I keep my belongings in order.</td><td>1</td></tr>
+<tr><td>5</td><td>My relationships with others are what my life is about.</td><td>2</td></tr>
+<tr><td>6</td><td>I have difficulty saying no.</td><td>2</td></tr>
+<tr><td>7</td><td>I get lots of satisfaction from helping others achieve their goals.</td><td>2</td></tr>
+<tr><td>8</td><td>I put family first.</td><td>2</td></tr>
+<tr><td>9</td><td>I put work first.</td><td>3</td></tr>
+<tr><td>10</td><td>I like to stand out.</td><td>3</td></tr>
+<tr><td>11</td><td>It is good to wake up to a full day of planned activities.</td><td>3</td></tr>
+<tr><td>12</td><td>Money is important to my happiness.</td><td>3</td></tr>
+<tr><td>13</td><td>I daydream about being in love.</td><td>4</td></tr>
+<tr><td>14</td><td>I really enjoy feeling bittersweet.</td><td>4</td></tr>
+<tr><td>15</td><td>I get deeply immersed in music.</td><td>4</td></tr>
+<tr><td>16</td><td>I side with the rebels over the establishment.</td><td>4</td></tr>
+<tr><td>17</td><td>I have a hard time showing emotions.</td><td>5</td></tr>
+<tr><td>18</td><td>I spend hours alone with my hobbies.</td><td>5</td></tr>
+<tr><td>19</td><td>I spend most of my time trying to understand things.</td><td>5</td></tr>
+<tr><td>20</td><td>I like mental challenges.</td><td>5</td></tr>
+<tr><td>21</td><td>Fear of being taken advantage of keeps me from being more trusting.</td><td>6</td></tr>
+<tr><td>22</td><td>I get input from others before I make a decision.</td><td>6</td></tr>
+<tr><td>23</td><td>I conform.</td><td>6</td></tr>
+<tr><td>24</td><td>I am loyal.</td><td>6</td></tr>
+<tr><td>25</td><td>I must always be having new experiences.</td><td>7</td></tr>
+<tr><td>26</td><td>I can keep a conversation going with anyone about anything.</td><td>7</td></tr>
+<tr><td>27</td><td>I am uninhibited.</td><td>7</td></tr>
+<tr><td>28</td><td>I always try to break the tension with a good joke.</td><td>7</td></tr>
+<tr><td>29</td><td>I naturally emerge as a leader.</td><td>8</td></tr>
+<tr><td>30</td><td>I like a conversation where no one agrees.</td><td>8</td></tr>
+<tr><td>31</td><td>I want people to tell me the truth, not spare my feelings.</td><td>8</td></tr>
+<tr><td>32</td><td>I come up with good solutions.</td><td>8</td></tr>
+<tr><td>33</td><td>When other people are arguing, I leave the room.</td><td>9</td></tr>
+<tr><td>34</td><td>I keep my thoughts to myself to prevent trouble.</td><td>9</td></tr>
+<tr><td>35</td><td>I am very accepting and flexible.</td><td>9</td></tr>
+<tr><td>36</td><td>I avoid confrontation.</td><td>9</td></tr></tbody>
+        </table></div>
+
+        <h3>Item → type mapping</h3>
+        <p>Each item awards points to exactly one type. There are no reverse-scored items — the user's raw 1–5 response is the item's contribution to that type's total.</p>
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 2" tabindex="0"><table class="score-table">
+          <thead><tr><th>Type</th><th>Item numbers</th><th>Awards score to</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">T1</td><td class="mono">1, 2, 3, 4</td><td>Type 1 total</td></tr>
+            <tr><td class="mono">T2</td><td class="mono">5, 6, 7, 8</td><td>Type 2 total</td></tr>
+            <tr><td class="mono">T3</td><td class="mono">9, 10, 11, 12</td><td>Type 3 total</td></tr>
+            <tr><td class="mono">T4</td><td class="mono">13, 14, 15, 16</td><td>Type 4 total</td></tr>
+            <tr><td class="mono">T5</td><td class="mono">17, 18, 19, 20</td><td>Type 5 total</td></tr>
+            <tr><td class="mono">T6</td><td class="mono">21, 22, 23, 24</td><td>Type 6 total</td></tr>
+            <tr><td class="mono">T7</td><td class="mono">25, 26, 27, 28</td><td>Type 7 total</td></tr>
+            <tr><td class="mono">T8</td><td class="mono">29, 30, 31, 32</td><td>Type 8 total</td></tr>
+            <tr><td class="mono">T9</td><td class="mono">33, 34, 35, 36</td><td>Type 9 total</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Scoring algorithm</h3><p>Equal highest scores are reported together, without choosing a dominant type or automatically exporting a tuning. Choose a style explicitly from the linked library pages. Enneagram wings apply only to a unique dominant type.</p>
+        <ol class="steps-list">
+          <li>For each of the 9 types, initialize a running total = 0.</li>
+          <li>For each of the 4 items in that type, add the user's 1–5 response directly (no reverse-scoring).</li>
+          <li>Each type ends with a total between <strong>4</strong> (all 1s) and <strong>20</strong> (all 5s).</li>
+          <li><strong>Dominant type</strong> = the type with the highest total. In a tie, prefer the lower-numbered type (more common in adults).</li>
+          <li><strong>Wing</strong> = the adjacent type (dominant ± 1, wrapping 9↔1) with the higher total. If the two adjacent totals tie, omit the wing.</li>
+          <li>Profile code = <code>{dominant}w{wing}</code> (e.g. <code>5w4</code>, <code>8w9</code>). If no wing, just <code>{dominant}</code>.</li>
+        </ol>
+
+        <h3>Output mapping</h3>
+        <p>Fetch the file matching the dominant type from <code>enneagram/&lt;N&gt;-&lt;name&gt;.md</code> in the <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">AgentTune repo</a>.</p>
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 3" tabindex="0"><table class="score-table">
+          <thead><tr><th>Type</th><th>Name</th><th>Core motivation</th><th>File</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">T1</td><td>Reformer</td><td>Wants it right. Suggests precision and improvement.</td><td class="mono">enneagram/1-reformer.md</td></tr>
+            <tr><td class="mono">T2</td><td>Helper</td><td>Wants to matter to people. Suggests warmth and service.</td><td class="mono">enneagram/2-helper.md</td></tr>
+            <tr><td class="mono">T3</td><td>Achiever</td><td>Wants the win. Suggests efficiency and outcome.</td><td class="mono">enneagram/3-achiever.md</td></tr>
+            <tr><td class="mono">T4</td><td>Individualist</td><td>Wants depth and authenticity. Suggests emotional truth.</td><td class="mono">enneagram/4-individualist.md</td></tr>
+            <tr><td class="mono">T5</td><td>Investigator</td><td>Wants understanding. Suggests model-first explanation.</td><td class="mono">enneagram/5-investigator.md</td></tr>
+            <tr><td class="mono">T6</td><td>Loyalist</td><td>Wants safety and trust. Suggests risk-aware framing.</td><td class="mono">enneagram/6-loyalist.md</td></tr>
+            <tr><td class="mono">T7</td><td>Enthusiast</td><td>Wants possibility. Suggests divergent options.</td><td class="mono">enneagram/7-enthusiast.md</td></tr>
+            <tr><td class="mono">T8</td><td>Challenger</td><td>Wants control and impact. Suggests directness.</td><td class="mono">enneagram/8-challenger.md</td></tr>
+            <tr><td class="mono">T9</td><td>Peacemaker</td><td>Wants ease and integration. Suggests gentle pacing.</td><td class="mono">enneagram/9-peacemaker.md</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    </main>
+    <footer class="footer">
+      <span>Templates: MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span><a href="/tests/">← all five tests</a></span>
+    </footer>
+
+  </div>
+
+  <script>
+  (function() {
+    // 36 OEPS items — 4 per type, in type order (T1 = 1-4, T2 = 5-8, ..., T9 = 33-36)
+    const ITEMS = [{"text":"I am a perfectionist.","type":1},{"text":"I strive for efficiency.","type":1},{"text":"I often have to redo other people's work.","type":1},{"text":"I keep my belongings in order.","type":1},{"text":"My relationships with others are what my life is about.","type":2},{"text":"I have difficulty saying no.","type":2},{"text":"I get lots of satisfaction from helping others achieve their goals.","type":2},{"text":"I put family first.","type":2},{"text":"I put work first.","type":3},{"text":"I like to stand out.","type":3},{"text":"It is good to wake up to a full day of planned activities.","type":3},{"text":"Money is important to my happiness.","type":3},{"text":"I daydream about being in love.","type":4},{"text":"I really enjoy feeling bittersweet.","type":4},{"text":"I get deeply immersed in music.","type":4},{"text":"I side with the rebels over the establishment.","type":4},{"text":"I have a hard time showing emotions.","type":5},{"text":"I spend hours alone with my hobbies.","type":5},{"text":"I spend most of my time trying to understand things.","type":5},{"text":"I like mental challenges.","type":5},{"text":"Fear of being taken advantage of keeps me from being more trusting.","type":6},{"text":"I get input from others before I make a decision.","type":6},{"text":"I conform.","type":6},{"text":"I am loyal.","type":6},{"text":"I must always be having new experiences.","type":7},{"text":"I can keep a conversation going with anyone about anything.","type":7},{"text":"I am uninhibited.","type":7},{"text":"I always try to break the tension with a good joke.","type":7},{"text":"I naturally emerge as a leader.","type":8},{"text":"I like a conversation where no one agrees.","type":8},{"text":"I want people to tell me the truth, not spare my feelings.","type":8},{"text":"I come up with good solutions.","type":8},{"text":"When other people are arguing, I leave the room.","type":9},{"text":"I keep my thoughts to myself to prevent trouble.","type":9},{"text":"I am very accepting and flexible.","type":9},{"text":"I avoid confrontation.","type":9}];
+    const instrumentId="agenttune-enneagram-legacy", instrumentVersion="1.0.0";
+    const scoreAnswers=answers=>window.AgentTuneScoring.scoreOrdered(instrumentId,instrumentVersion,answers);
+
+    const TYPE_META = {
+      1: { name: "The Reformer",     blurb: "Wants it right. Suggests precision and improvement." },
+      2: { name: "The Helper",       blurb: "Wants to matter to people. Suggests warmth and service." },
+      3: { name: "The Achiever",     blurb: "Wants the win. Suggests efficiency and outcome." },
+      4: { name: "The Individualist",blurb: "Wants depth and authenticity. Suggests emotional truth." },
+      5: { name: "The Investigator", blurb: "Wants understanding. Suggests model-first explanation." },
+      6: { name: "The Loyalist",     blurb: "Wants safety and trust. Suggests risk-aware framing." },
+      7: { name: "The Enthusiast",   blurb: "Wants possibility. Suggests divergent options." },
+      8: { name: "The Challenger",   blurb: "Wants control and impact. Suggests directness." },
+      9: { name: "The Peacemaker",   blurb: "Wants ease and integration. Suggests gentle pacing." }
+    };
+
+    const FILE_NAMES = {
+      1: "1-reformer", 2: "2-helper", 3: "3-achiever", 4: "4-individualist",
+      5: "5-investigator", 6: "6-loyalist", 7: "7-enthusiast", 8: "8-challenger", 9: "9-peacemaker"
+    };
+
+    const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
+    const $ = id => document.getElementById(id);
+    const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 36, 5, instrumentId+'@'+instrumentVersion);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
+
+    $("quiz-start").addEventListener("click", () => {
+      if (window.atTrack) window.atTrack("quiz_start");
+      $("quiz-intro").hidden = true;
+      $("quiz-runner").hidden = false;
+      state.currentIndex = 0;
+      renderQuestion();
+      window.ATQuiz.focusScreen(document);
+    });
+
+    function renderQuestion() {
+      draft.save();
+      advance.cancel();
+      const item = ITEMS[state.currentIndex];
+      $("quiz-progress-current").textContent = state.currentIndex + 1;
+      $("quiz-progress-bar").style.width = (state.currentIndex / ITEMS.length) * 100 + "%";
+      $("quiz-item-statement").textContent = item.text;
+      const existing = state.answers[state.currentIndex];
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const isSel = parseInt(btn.dataset.value) === existing;
+        btn.classList.toggle("selected", isSel);
+        btn.setAttribute("aria-pressed", isSel ? "true" : "false");
+      });
+      $("quiz-back").disabled = state.currentIndex === 0;
+      window.ATQuiz.focusQuestion(document, state.currentIndex, ITEMS.length);
+    }
+
+    function selectAnswer(value) {
+      if ($("quiz-runner").hidden) return;
+      if (!advance.schedule(() => {
+        if (state.currentIndex < ITEMS.length - 1) { state.currentIndex++; renderQuestion(); }
+        else showResult();
+      })) return;
+      state.answers[state.currentIndex] = value;
+      draft.save();
+      document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+        const selected = parseInt(btn.dataset.value) === value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
+    }
+
+    document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
+      btn.addEventListener("click", e => { if (e.detail < 2) selectAnswer(parseInt(btn.dataset.value)); });
+    });
+    $("quiz-back").addEventListener("click", () => { advance.cancel();
+      if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+    });
+    $("quiz-skip").addEventListener("click", e => { if (e.detail < 2) selectAnswer(3); });
+    document.addEventListener("keydown", e => {
+      if ($("quiz-runner").hidden || window.ATQuiz.ignoreShortcut(e)) return;
+      if (["1","2","3","4","5"].includes(e.key)) { e.preventDefault(); selectAnswer(parseInt(e.key)); }
+      else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+        e.preventDefault();
+        advance.cancel();
+        if (state.currentIndex > 0) { state.currentIndex--; renderQuestion(); }
+      }
+    });
+
+    function computeResult(answers) {
+      const result=scoreAnswers(answers);if(result.status!=='complete')return result;
+      const scores=result.values,dom=result.type?Number(result.type):null;
+      const a=dom===1?9:dom-1,b=dom===9?1:dom+1;
+      const wing=dom?(scores[a]>scores[b]?a:scores[b]>scores[a]?b:null):null;
+      return {...result,dominant:dom,wing,scores,profile:dom?(wing?dom+'w'+wing:String(dom)):null};
+    }
+
+    function showResult() {
+      if(scoreAnswers(state.answers).status!=='complete')return;
+      draft.clear();
+      if (!state.completionTracked) {
+        if (window.atTrack) window.atTrack("quiz_complete");
+        state.completionTracked = true;
+      }
+      const version = ++state.resultVersion;
+      $("quiz-runner").hidden = true;
+      $("quiz-result").hidden = false;
+      const r = computeResult(state.answers);
+
+      const maximum = Math.max(...Object.values(r.scores));
+      const tied = Object.keys(r.scores).filter(k => r.scores[k] === maximum);
+      $("quiz-export-panel").hidden = tied.length > 1;
+      $("quiz-tie-links").hidden = tied.length < 2;
+      $("quiz-copy-tuning").disabled = tied.length > 1;
+      $("quiz-download-tuning").disabled = tied.length > 1;
+      if (tied.length > 1) {
+        state.currentTuning = "";
+        $("quiz-result-code").textContent = tied.join(" / ");
+        $("quiz-result-name").textContent = "Equal top scores";
+        $("quiz-result-avatar").textContent = "=";
+        $("quiz-result-blurb").textContent = "These scores are tied. There is no measured dominant type. Compare the linked tunings and choose the communication style you prefer, or retake the test.";
+        $("quiz-result-scores").innerHTML = Object.entries(r.scores).map(([k,v]) => `<p>${TYPE_META[k].name}: ${v}/20${tied.includes(k) ? " · tied highest" : ""}</p>`).join("");
+        $("quiz-tie-links").innerHTML = tied.map(k => `<a href="/library/enneagram/${FILE_NAMES[k]}">${TYPE_META[k].name} tuning</a>`).join("");
+        window.ATQuiz.focusScreen(document);
+        return;
+      }
+      const meta = TYPE_META[r.dominant];
+
+      $("quiz-result-code").textContent = r.profile;
+      $("quiz-result-name").textContent = meta.name;
+      $("quiz-result-blurb").textContent = meta.blurb;
+      $("quiz-result-avatar").textContent = "T" + r.dominant;
+
+      // Score breakdown for all 9 types
+      const maxScore = 20;
+      $("quiz-result-scores").innerHTML = [1,2,3,4,5,6,7,8,9].map(t => {
+        const score = r.scores[t];
+        const pct = (score / maxScore) * 100;
+        const isWinner = t === r.dominant;
+        const isWing = t === r.wing;
+        return `
+          <div class="quiz-axis">
+            <div class="quiz-axis-letters">
+              <span class="quiz-axis-letter ${isWinner ? "winner" : ""}" style="${isWinner ? "color: #246f48;" : ""}">T${t} ${TYPE_META[t].name.replace("The ", "")}</span>
+              <span class="quiz-axis-counts">${score}/20${isWinner ? " · dom" : isWing ? " · wing" : ""}</span>
+            </div>
+            <div class="quiz-axis-bar"><div class="quiz-axis-fill" style="width: ${pct}%; background: ${isWinner ? "#2f8a5b" : isWing ? "#7a9a85" : "#bdb6a4"};"></div></div>
+          </div>
+        `;
+      }).join("");
+
+      const shortTuning = getTuningContent(r.dominant);
+      const fileName = `${FILE_NAMES[r.dominant]}.md`;
+      state.currentTuning = shortTuning;
+      renderTuningPreview(shortTuning, fileName);
+      if (window.renderIntegrations) window.renderIntegrations(shortTuning);
+      $("quiz-github-link").href = `https://github.com/bernardjhuang/agenttune/blob/main/enneagram/${FILE_NAMES[r.dominant]}.md`;
+
+      // Async — swap in the rich GitHub-mirrored file when it lands.
+      if (window.fetchTuning) {
+        window.fetchTuning(`enneagram/${FILE_NAMES[r.dominant]}.md`).then((rich) => {
+          if (version !== state.resultVersion || !rich || rich === state.currentTuning) return;
+          state.currentTuning = rich;
+          renderTuningPreview(rich, fileName);
+          if (window.renderIntegrations) window.renderIntegrations(rich);
+        });
+      }
+
+      window.ATQuiz.focusScreen(document);
+    }
+
+    function renderTuningPreview(tuning, filename) {
+      // Strip YAML front-matter for editor display
+      const allLines = tuning.split("\n");
+      let bodyStart = 0;
+      if (allLines[0] && allLines[0].trim() === "---") {
+        for (let i = 1; i < allLines.length; i++) {
+          if (allLines[i].trim() === "---") { bodyStart = i + 1; break; }
+        }
+      }
+      while (bodyStart < allLines.length && allLines[bodyStart].trim() === "") bodyStart++;
+      const bodyLines = allLines.slice(bodyStart);
+      while (bodyLines.length && bodyLines[bodyLines.length - 1].trim() === "") bodyLines.pop();
+
+      const gutter = bodyLines.map((_, i) => `<span>${i + 1}</span>`).join("");
+      const code = bodyLines.map((line) => {
+        if (line.startsWith("# ")) return `<span class="c-h1">${escapeHtml(line)}</span>`;
+        if (line.startsWith("## ")) return `<span class="c-h2">${escapeHtml(line)}</span>`;
+        return escapeHtml(line);
+      }).join("\n");
+
+      $("quiz-editor-gutter").innerHTML = gutter;
+      $("quiz-editor-code").innerHTML = code;
+
+      const baseName = (filename || "tuning.md").split("/").pop();
+      $("quiz-editor-titlebar").textContent = `~/.agenttune/${baseName}`;
+      $("quiz-editor-tab").textContent = baseName;
+      $("quiz-editor-status").textContent = `● ${baseName}`;
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+    }
+
+    function getTuningContent(dom) {
+      const contacts = (window.AT_CONTACTS || []);
+      const c = contacts.find(x => x.id === `ennea-${dom}`);
+      return (c && c.tuning) || `# Type ${dom} tuning\n\nView on GitHub: https://github.com/bernardjhuang/agenttune/blob/main/enneagram/${FILE_NAMES[dom]}.md`;
+    }
+
+    $("quiz-copy-tuning").addEventListener("click", function() {
+      if (!state.currentTuning) return;
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.dominant);
+      window.ATQuiz.copyTuning(content, $("quiz-copy-tuning"));
+    });
+
+    $("quiz-download-tuning").addEventListener("click", function() {
+      if (!state.currentTuning) return;
+      const r = computeResult(state.answers);
+      const content = state.currentTuning || getTuningContent(r.dominant);
+      const blob = new Blob([content], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `${FILE_NAMES[r.dominant]}.md`;
+      document.body.appendChild(a); a.click(); if (window.atTrack) window.atTrack("tuning_download"); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      const original = this.textContent;
+      this.textContent = "Downloaded ✓";
+      setTimeout(() => { this.textContent = original; }, 2000);
+    });
+
+    $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
+      state.resultVersion++;
+      state.completionTracked = false;
+      state.currentTuning = "";
+      advance.cancel();
+      state.currentIndex = 0;
+      state.answers = new Array(36).fill(null);
+      $("quiz-result").hidden = true;
+      $("quiz-intro").hidden = false;
+      window.ATQuiz.focusScreen(document);
+    });
+
+    // Populate spec items table (for AI agents reading the spec)
+    const specItems = document.getElementById("quiz-spec-items");
+    if (specItems) {
+      specItems.innerHTML = ITEMS.map((it, i) => `
+        <tr>
+          <td class="num-col">${i + 1}</td>
+          <td>${escapeHtml(it.text)}</td>
+          <td class="num-col mono">T${it.type}</td>
+        </tr>
+      `).join("");
+    }
+  })();
+  </script>
+</body>
+</html>

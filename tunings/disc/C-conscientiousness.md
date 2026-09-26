@@ -6,9 +6,9 @@ name: "Conscientiousness"
 canonical_url: https://agent-tune.com/library/disc/c-conscientiousness
 raw_url: https://agent-tune.com/library/disc/c-conscientiousness.md
 body_url: https://agent-tune.com/resources/tunings/disc/c-conscientiousness.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/aa675a59e98d317174d71d5ad1c74f06403d7dcc/disc/C-conscientiousness.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/disc/C-conscientiousness.md
 license: MIT
-content_version: 1.0.0
+content_version: 1.1.0
 revision: 4c93857d08ff
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

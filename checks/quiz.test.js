@@ -31,7 +31,7 @@ test('all 16 clear score patterns map correctly; optional preferences resolve on
   assert.equal(scoreMbti(Array(32).fill(3), items, { EI:'T' }).pattern, 'XXXX');
 });
 
-for (const name of ['big-five']) {
+for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
   test(`${name}: rapid clicks, double-click across a transition, and keyboard repeat cannot skip questions`, () => {
     const f = quiz(name), progress = f.ids.get('quiz-progress-current');
     f.buttons[0].click(); f.buttons[0].click(); f.tick(220);
@@ -54,15 +54,15 @@ for (const name of ['big-five']) {
   });
 }
 
-test('withdrawn questionnaires expose availability and alternatives, with no runner or question payload',()=>{
- for(const name of ['mbti','enneagram','disc','attachment']){
+test('all five questionnaires expose functional runners and versioned specifications',()=>{
+ for(const name of ['mbti','enneagram','disc','attachment','big-five']){
   const html=fs.readFileSync(ROOT+'/tests/'+name+'.html','utf8');
-  assert.match(html,/Questionnaire currently unavailable/);assert.match(html,/custom-instructions-generator/);assert.doesNotMatch(html,/const ITEMS|id="quiz-start"|"@type":"Quiz"/);
-  assert.match(fs.readFileSync(ROOT+'/tests/'+name+'.md','utf8'),/unavailable_pending_rights/);
+  assert.match(html,/id="quiz-start"/);assert.match(html,/const ITEMS/);assert.doesNotMatch(html,/Questionnaire currently unavailable/);
+  assert.match(fs.readFileSync(ROOT+'/tests/'+name+'.md','utf8'),/Instrument: `agenttune-/);
  }
 });
 
-for (const name of ['big-five']) {
+for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
   test(`${name}: focus follows quiz screens and shortcuts leave browser/form keys alone`, () => {
     const f=quiz(name), card=f.ids.get('quiz-card'), progress=f.ids.get('quiz-progress-current');
     assert.equal(f.document.activeElement,card);

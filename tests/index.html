@@ -1,1 +1,164 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Personality questionnaires and availability | AgentTune</title><meta name="description" content="Take the available IPIP Big Five adaptation or choose communication preferences directly. Review availability and terms for other questionnaires."><link rel="canonical" href="https://agent-tune.com/tests/"><meta property="og:title" content="Personality questionnaires and availability"><meta property="og:description" content="Take the available IPIP Big Five adaptation or choose communication preferences directly. Review availability and terms for other questionnaires."><meta property="og:type" content="website"><meta property="og:url" content="https://agent-tune.com/tests/"><meta property="og:image" content="https://agent-tune.com/og/og-card.png"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css"><script defer src="/consent.js"></script><style>.quiz-page{--lib-accent:#5b4dc0}#quiz-runner{margin-top:24px}#quiz-restart{margin:24px 0}.questionnaire-copy{max-width:760px;margin:32px 0 56px}.questionnaire-copy p{font-size:18px;line-height:1.6}.questionnaire-copy h2{margin-top:32px}.questionnaire-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.questionnaire-status{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface,#fff)}.score-list{display:grid;gap:12px;padding:0;list-style:none}.score-list li{padding:16px;border:1px solid var(--border);border-radius:10px}.questionnaire-json{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.questionnaire-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}.questionnaire-card-list article{padding:24px;border:1px solid var(--border);border-radius:12px;background:white}</style></head><body class="quiz-page"><a class="skip-link" href="#main">Skip to content</a><div class="page"><nav class="nav"><a class="brand" href="/"><span class="brand-dot"></span>AgentTune</a><div class="nav-links"><a href="/library/">Library</a><a href="/tests/" class="active">Tests</a><a href="/research">Research</a><a href="/guides/">Guides</a><a href="/tools/custom-instructions-generator">Generator</a></div></nav><main id="main" tabindex="-1"><section class="questionnaire-copy"><h1 class="h-hero">Start with your preferences.</h1><p class="lede">A questionnaire can help you reflect. You can also choose the tone, detail and structure you want without a test.</p><a class="btn btn-primary" href="/tools/custom-instructions-generator">Build my instructions →</a><h2>Questionnaires</h2><p>Big Five is currently available. Other questionnaires are paused while we verify rights for their distribution; their communication templates remain available.</p></section><div class="questionnaire-card-list"><article><p class="pill">Available · public-domain items</p><h2><a href="/tests/big-five">Big Five test</a></h2><p>50 questions. Raw totals and item averages; no population percentiles.</p><a href="/tests/big-five">Take the test →</a></article><article><p class="pill">Questionnaire unavailable</p><h2><a href="/tests/mbti">MBTI-style questionnaire</a></h2><p>Read the availability note, find the original publisher and choose a communication template.</p><a href="/tests/mbti">View availability →</a></article><article><p class="pill">Questionnaire unavailable</p><h2><a href="/tests/disc">DISC questionnaire</a></h2><p>Read the availability note, find the original publisher and choose a communication template.</p><a href="/tests/disc">View availability →</a></article><article><p class="pill">Questionnaire unavailable</p><h2><a href="/tests/enneagram">Enneagram questionnaire</a></h2><p>Read the availability note, find the original publisher and choose a communication template.</p><a href="/tests/enneagram">View availability →</a></article><article><p class="pill">Questionnaire unavailable</p><h2><a href="/tests/attachment">Attachment questionnaire</a></h2><p>Read the availability note, find the original publisher and choose a communication template.</p><a href="/tests/attachment">View availability →</a></article></div><section class="questionnaire-copy"><p><a href="/resources/content/instrument-rights.json">Instrument rights</a> · <a href="/resources/content/CHANGELOG.md">Version and migration notes</a></p></section></main><footer class="footer"><span><a href="/resources/content/THIRD_PARTY_NOTICES.md">Licenses and questionnaire availability</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span><a href="/tests/">All questionnaires</a></footer></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Personality Tests: MBTI, Enneagram, Big Five, DISC</title>
+  <meta name="description" content="Five free personality tests — MBTI, Big Five, Enneagram, DISC, Attachment. Each returns a tuning file for your AI. Scored in your browser, no signup." />
+  <meta property="og:title" content="Free Personality Tests: MBTI, Enneagram, Big Five, DISC" />
+  <meta property="og:description" content="Five tests. Each returns a tuning file for your AI agent. Same model, now tuned to how you think." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/tests/" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:secure_url" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Personality Tests: MBTI, Enneagram, Big Five, DISC" />
+  <meta name="twitter:description" content="Five tests. Each returns a tuning file for your AI agent." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://agent-tune.com/tests/" />
+
+  <!-- AI-content discovery -->
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
+
+  <!-- JSON-LD: ItemList of 5 tests -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AgentTune Tests",
+    "url": "https://agent-tune.com/tests/",
+    "description": "Five self-contained personality tests an AI agent can administer to a user inline. MBTI, Enneagram, DISC, Attachment, Big Five.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "url": "https://agent-tune.com/tests/mbti",       "name": "MBTI (OEJTS)"},
+        {"@type": "ListItem", "position": 2, "url": "https://agent-tune.com/tests/enneagram",  "name": "Enneagram (OEPS)"},
+        {"@type": "ListItem", "position": 3, "url": "https://agent-tune.com/tests/disc",       "name": "DISC (ODAT)"},
+        {"@type": "ListItem", "position": 4, "url": "https://agent-tune.com/tests/attachment", "name": "Attachment (ECR-R)"},
+        {"@type": "ListItem", "position": 5, "url": "https://agent-tune.com/tests/big-five",   "name": "Big Five (IPIP-50)"}
+      ]
+    }
+  }
+  </script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23c8553d'/%3E%3C/svg%3E" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Tests"}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/" class="active">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Tests</span>
+    </nav>
+
+    <main id="main" tabindex="-1">
+
+    <section class="hero">
+      <h1 class="h-hero h-research-hero">Free personality tests, built for AI tuning.</h1>
+      <div class="h-hero h-research-hero h-hero-italic">Tune your agent.</div>
+      <p class="lede">
+        Explore your preferences with a 3–7 minute questionnaire. Use the result as a starting point for editable instructions, not a diagnosis. You can also <a href="/tools/custom-instructions-generator">start with your preferences directly</a>.
+      </p>
+    </section>
+
+    <div class="test-catalog-grid">
+      <a href="/tests/mbti" class="test-catalog-card" style="border-top-color: #5b4dc0;">
+        <span class="test-catalog-source" style="color: #5b4dc0;">Communication · 5 min</span>
+        <div class="test-catalog-name">MBTI tuning</div>
+        <div class="test-catalog-stats">Communication style · 16 possible files</div>
+        <p class="test-catalog-desc">Tells your agent how you process information and how you want to be communicated with. 32 bipolar items, four scored axes.</p>
+        <span class="test-catalog-link" style="color: #5b4dc0;">Get your MBTI tuning →</span>
+      </a>
+
+      <a href="/tests/enneagram" class="test-catalog-card" style="border-top-color: #246f48;">
+        <span class="test-catalog-source" style="color: #246f48;">Motivation · 5 min</span>
+        <div class="test-catalog-name">Enneagram tuning</div>
+        <div class="test-catalog-stats">Core motivation · 9 possible files</div>
+        <p class="test-catalog-desc">Tells your agent what you're protecting and what you're seeking. 36 Likert items, returns one of 9 types plus optional wing.</p>
+        <span class="test-catalog-link" style="color: #246f48;">Get your Enneagram tuning →</span>
+      </a>
+
+      <a href="/tests/disc" class="test-catalog-card" style="border-top-color: #855b1c;">
+        <span class="test-catalog-source" style="color: #855b1c;">Work style · 3 min</span>
+        <div class="test-catalog-name">DISC tuning</div>
+        <div class="test-catalog-stats">Workplace style · 4 possible files</div>
+        <p class="test-catalog-desc">Tells your agent how you behave under pressure and in teams. 16 items — the fastest tuning in the library.</p>
+        <span class="test-catalog-link" style="color: #855b1c;">Get your DISC tuning →</span>
+      </a>
+
+      <a href="/tests/attachment" class="test-catalog-card" style="border-top-color: #914d59;">
+        <span class="test-catalog-source" style="color: #914d59;">Relationships · 5 min</span>
+        <div class="test-catalog-name">Attachment tuning</div>
+        <div class="test-catalog-stats">Relational patterns · 4 possible files</div>
+        <p class="test-catalog-desc">Tells your agent how you want closeness, distance, and reassurance. 36 items, returns Secure / Anxious / Avoidant / Disorganized.</p>
+        <span class="test-catalog-link" style="color: #914d59;">Get your Attachment tuning →</span>
+      </a>
+
+      <a href="/tests/big-five" class="test-catalog-card" style="border-top-color: #3160a7;">
+        <span class="test-catalog-source" style="color: #3160a7;">Five traits · 7 min</span>
+        <div class="test-catalog-name">OCEAN tuning</div>
+        <div class="test-catalog-stats">Trait dimensions · 10 optional templates</div>
+        <p class="test-catalog-desc">Tells your agent your continuous Big Five trait profile — an editable set of communication preferences. 50 items, returns 5 reference indices.</p>
+        <span class="test-catalog-link" style="color: #3160a7;">Get your OCEAN tuning →</span>
+      </a>
+    </div>
+
+    <section style="margin-top: 56px;">
+      <span class="pill">Workflow for agents</span>
+      <h2 class="h-sub">How to use these pages.</h2>
+      <ol class="steps-list" style="font-size: 16px; line-height: 1.6; max-width: 760px;">
+        <li><strong>Ask your user</strong> whether they want a questionnaire or prefer to choose communication preferences directly. Do not infer a type.</li>
+        <li><strong>Open the matching test page</strong> on this site (or fetch the equivalent Markdown from <code>tests/&lt;test&gt;.md</code> in the GitHub repo).</li>
+        <li><strong>Present the items to your user.</strong> Default to bulk-paste delivery — show all items at once and ask for the response numbers in one reply.</li>
+        <li><strong>Use the <a href="/resources/scoring/README.md">local scorer</a> or scoring algorithm</strong> on the test page. Don't reveal scoring while administering — it biases responses.</li>
+        <li><strong>Fetch the matching tuning file</strong> from the repo using the path indicated in the test's output section.</li>
+        <li><strong>Apply the tuning</strong> only when the user requests installation. Preserve existing instructions and permissions. Follow the <a href="/resources/install-protocol.md">installation protocol</a>; explicit preferences resolve conflicts.</li>
+      </ol>
+    </section>
+
+    <p class="quiz-source">All five questionnaires are available. These self-report exercises are not diagnoses. <a href="/resources/content/THIRD_PARTY_NOTICES.md">Instrument-specific sources and terms</a> apply separately from template licenses.</p>
+</main>
+    <footer class="footer">
+      <span>Templates: MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span>Five tests · 43 tunings · five systems.</span>
+    </footer>
+
+  </div>
+</body>
+</html>

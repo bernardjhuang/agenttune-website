@@ -6,9 +6,9 @@ name: "Debater"
 canonical_url: https://agent-tune.com/library/mbti/entp
 raw_url: https://agent-tune.com/library/mbti/entp.md
 body_url: https://agent-tune.com/resources/tunings/mbti/entp.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/aa675a59e98d317174d71d5ad1c74f06403d7dcc/mbti/ENTP.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/mbti/ENTP.md
 license: MIT
-content_version: 1.0.0
+content_version: 1.1.0
 revision: 607a246148f0
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

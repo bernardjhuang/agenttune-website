@@ -6,9 +6,9 @@ name: "Virtuoso"
 canonical_url: https://agent-tune.com/library/mbti/istp
 raw_url: https://agent-tune.com/library/mbti/istp.md
 body_url: https://agent-tune.com/resources/tunings/mbti/istp.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/aa675a59e98d317174d71d5ad1c74f06403d7dcc/mbti/ISTP.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/mbti/ISTP.md
 license: MIT
-content_version: 1.0.0
+content_version: 1.1.0
 revision: 8a6a63c834b2
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

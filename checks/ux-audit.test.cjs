@@ -6,7 +6,7 @@ const vectors=require('../research/data/september-2026-responses.json').records;
 const historic=require('../research/data/september-2026-score.cjs');
 const catalog=require('../library/index.json'),registry=require('../platforms');
 const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
-test('versioned scoring rejects unavailable instruments and incomplete positional data',()=>{
+test('versioned scoring rejects unversioned route aliases and incomplete positional data',()=>{
  for(const id of ['mbti','disc','enneagram','attachment'])assert.equal(scoring.score({instrumentId:id,instrumentVersion:'1.0.0',responses:[]}).status,'invalid');
  for(const a of [null,Array(50),Array(49).fill(3),Array(50).fill('3'),Array(50).fill(3.2),Array(50).fill(8)])assert.equal(scoring.scoreOrdered('agenttune-ipip50','1.0.0',a).status,'invalid');
  const out=scoring.score({instrumentId:'agenttune-ipip50',instrumentVersion:'1.0.0',responses:[]});assert.equal(out.status,'incomplete');assert.equal(out.values,undefined);
