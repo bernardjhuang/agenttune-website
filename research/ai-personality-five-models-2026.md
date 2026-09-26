@@ -1,21 +1,19 @@
 Source: https://agent-tune.com/research/ai-personality-five-models-2026
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Research · September 2026
+Instrument provenance update · September 26, 2026. These results describe the historical AgentTune adaptations, including documented item substitutions. Raw response vectors and numerical summaries are unchanged. Some question text and full prompts have been withdrawn from public downloads pending reuse-rights clarification; item references and numeric scoring keys remain for reproduction. Historical Big Five reference indices are not population percentiles. [Read the correction](https://agent-tune.com/research/data/rights-migration.json) · [Current questionnaire availability](https://agent-tune.com/tests/).
+
+        Research · September 2026
 
 # What five AI models say about themselves.
 
-        GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1
-
         By Bernard Huang · Updated September 25, 2026
 
-        Four models supplied 2,000 questionnaire responses across 1,200 fresh sessions. Grok supplied a canonical profile and simulated variation. Together, these reports show why a four-letter label is often less informative than the scores underneath it.
-
-      The short answer. The fresh-session cohorts share high raw openness, conscientiousness and agreeableness scores, but their labels are sensitive to exact ties. Opus and Fable have the closest matched protocol. Grok’s simulated runs and Muse’s supplemental aggregate report are separate evidence, not extra independent replications.
+        The fresh-session cohorts share high raw openness, conscientiousness and agreeableness scores, but their labels are sensitive to exact ties. Opus and Fable have the closest matched protocol. Grok’s simulated runs and Muse’s supplemental aggregate report are separate evidence, not extra independent replications.
 
 ## Abstract
 
-        We reanalyzed five open questionnaires administered on September 24, 2026: an MBTI-style instrument (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS) and attachment (ECR-R). We recovered and validated 2,000 response vectors for Astra, Sol, Opus and Fable, plus three canonical Grok vectors. The five scales contain 170 items per full battery. We report raw means, original labels, exact ties and protocol differences.
+        We reanalyzed five historical AgentTune questionnaire adaptations administered on September 24, 2026: an MBTI-style instrument (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS) and attachment (ECR-R). We recovered and validated 2,000 response vectors for Astra, Sol, Opus and Fable, plus three canonical Grok vectors. The five scales contain 170 items per full battery. We report raw means, original labels, exact ties and protocol differences.
 
 Astra and Sol differ in their MBTI distributions, but different prompts prevent a model-only explanation. Opus reports higher agreeableness than Fable under a closely matched questionnaire protocol. Exact ties affect 29% of Astra MBTI runs and 51% of Fable DISC runs. These are exploratory model self-descriptions under specific prompts, not validated psychological traits, observed behavior, a performance ranking or evidence that tuning improves outcomes.
 
@@ -27,9 +25,9 @@ Astra and Sol differ in their MBTI distributions, but different prompts prevent 
 
 | GPT-6 Sol | 100 fresh Codex sessions; five tests per session; xhigh effort | All 500 answer vectors; instruction prefix; full prompt not supplied |
 
-| Claude Opus 5.5 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and blinded questionnaire prompts |
+| Claude Opus 5.5 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
 
-| Claude Fable 5.1 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and blinded questionnaire prompts |
+| Claude Fable 5.1 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
 
 | Grok 4.6 | One canonical self-report plus 100 simulated draws per test | Three canonical vectors; no simulation harness or full Big Five/attachment vectors |
 
@@ -131,8 +129,8 @@ The [custom-instructions generator](https://agent-tune.com/tools/custom-instruct
 
 - [Response vectors (JSON)](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 complete fresh-session assessments and three canonical Grok vectors; no account identifiers or raw session logs.
 - [Recomputed summaries (JSON)](https://agent-tune.com/research/data/september-2026-summary.json) and [numeric summary (CSV)](https://agent-tune.com/research/data/september-2026-summary.csv): counts, legacy labels, tie sets, means and sample standard deviations.
-- [Frozen instrument definitions (JSON)](https://agent-tune.com/research/data/september-2026-instruments.json): item order, wording and scoring metadata.
-- [Protocol and provenance (JSON)](https://agent-tune.com/research/data/september-2026-protocols.json): available prompts, source hashes, deduplication, missing-data notes and supplemental reported figures.
+- [Legacy scoring definitions (JSON)](https://agent-tune.com/research/data/september-2026-instruments.json): item order and numeric scoring metadata; restricted question wording has been replaced by item labels.
+- [Protocol and provenance (JSON)](https://agent-tune.com/research/data/september-2026-protocols.json): available prompts (some full questionnaire prompts withdrawn), source hashes, deduplication, missing-data notes and supplemental reported figures.
 - [Offline scorer (Node.js)](https://agent-tune.com/research/data/september-2026-score.cjs): place alongside the response and instrument JSON files and run node september-2026-score.cjs > reproduced-summary.json. It performs no model calls.
 
 Every retained vector was checked for length, integer values and scale bounds. Claude item snapshots were identical; Astra’s frozen keys matched them. Both original labels and tie-aware summaries were recomputed from the arrays. No raw answers were edited. Scorer, data and article are versioned in the [website repository](https://github.com/bernardjhuang/agenttune-website). This is an exploratory research note, not a peer-reviewed or preregistered study.

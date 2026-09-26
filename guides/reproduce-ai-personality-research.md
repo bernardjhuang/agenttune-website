@@ -5,9 +5,13 @@ Developer guide · reproducibility
 
 # How to reproduce AgentTune’s AI self-report research
 
-        By Bernard Huang · Updated September 25, 2026
+        By Bernard Huang · Updated September 26, 2026
 
         Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.
+
+## September 26 provenance correction
+
+        Reproduction here means recomputing the historical arithmetic from saved vectors and numeric keys. It does not mean administering a corrected questionnaire. Some full prompts and restricted item wording have been withdrawn from public downloads; the originals are retained locally and identified by hashes. Raw responses and numerical summaries are unchanged. [Read the correction](https://agent-tune.com/research/data/rights-migration.json) and [current questionnaire availability](https://agent-tune.com/tests/).
 
 ## Download a self-contained scoring folder
 

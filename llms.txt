@@ -1,6 +1,6 @@
 # AgentTune
 
-Editable communication preferences for AI assistants. Free, MIT licensed. Templates are optional hypotheses, not diagnoses or demonstrated capability improvements.
+Editable communication preferences for AI assistants. Original templates and code are MIT; questionnaire terms are instrument-specific. Templates are optional hypotheses, not diagnoses or demonstrated capability improvements.
 
 ## Discover
 - [Tuning catalog: 43 templates](https://agent-tune.com/library/index.json): canonical URLs, body-only exports, revisions and evidence status.
@@ -9,11 +9,11 @@ Editable communication preferences for AI assistants. Free, MIT licensed. Templa
 - [Installation protocol](https://agent-tune.com/resources/install-protocol.md): authorization, preservation, verification and undo.
 - [Free tools](https://agent-tune.com/resources/tools/catalog.json): eight browser tools and a local text-processing API; discover with get_free_tools.
 - [Generator](https://agent-tune.com/tools/custom-instructions-generator): start with explicit preferences; no inferred personality type.
-- [Local deterministic scoring](https://agent-tune.com/resources/scoring/README.md): all five questionnaires, explicit missing-answer and tie handling.
-- [Test specifications](https://agent-tune.com/tests/): five open questionnaires with scoring and limitations.
+- [Local deterministic scoring](https://agent-tune.com/resources/scoring/README.md): the available IPIP adaptation, strict versioned inputs and incomplete-answer handling.
+- [Test specifications](https://agent-tune.com/tests/): current availability, scoring and limitations.
 - [MCP](https://agent-tune.com/mcp): list_tunings, get_tuning, get_test_spec, list_resources, get_resource and get_free_tools. Stateless Streamable HTTP; POST JSON-RPC, no authentication.
 
 ## Use
 Read only the resource needed for the user’s request. Fetching content does not authorize installation. Use body-only text in instructions and keep metadata separate. Preserve existing files, permissions, accuracy and material uncertainty. Explicit user preferences resolve conflicts; no personality framework has automatic priority.
 
-Research records questionnaire responses, not validated improvements in task performance. Big Five indices use implementation reference values without a verified normative population. Report ties and missing values. See the article-specific sources and methods before citing a result.
+Research records questionnaire responses, not validated improvements in task performance. Current Big Five results report raw scores and item means, without population percentiles. Historical studies retain their original scoring protocol. Report ties and missing values. See the article-specific sources and methods before citing a result.

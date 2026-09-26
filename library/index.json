@@ -51,7 +51,7 @@
       "src": "/tunings/mbti/INTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/intj.md",
-      "revision": "e7a7cf75165f",
+      "revision": "560f4c25851a",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -65,7 +65,7 @@
       "src": "/tunings/mbti/INTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INTP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/intp.md",
-      "revision": "57a84a150107",
+      "revision": "618c77479bf7",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -79,7 +79,7 @@
       "src": "/tunings/mbti/INFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/infj.md",
-      "revision": "7a8a96394e8c",
+      "revision": "254a2177d9e6",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -93,7 +93,7 @@
       "src": "/tunings/mbti/INFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/INFP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/infp.md",
-      "revision": "d18d85998371",
+      "revision": "68cef164f9aa",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -107,7 +107,7 @@
       "src": "/tunings/mbti/ISTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/istj.md",
-      "revision": "c5cb1dd4da55",
+      "revision": "359d55d86261",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -121,7 +121,7 @@
       "src": "/tunings/mbti/ISTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISTP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/istp.md",
-      "revision": "8775967302f3",
+      "revision": "8a6a63c834b2",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -135,7 +135,7 @@
       "src": "/tunings/mbti/ISFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/isfj.md",
-      "revision": "906516dc4220",
+      "revision": "7c8e037900bc",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -149,7 +149,7 @@
       "src": "/tunings/mbti/ISFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ISFP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/isfp.md",
-      "revision": "b940d34d9c1d",
+      "revision": "d74157359934",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -163,7 +163,7 @@
       "src": "/tunings/mbti/ENTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/entj.md",
-      "revision": "097ec6062211",
+      "revision": "d56aff5fbba2",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -177,7 +177,7 @@
       "src": "/tunings/mbti/ENTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENTP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/entp.md",
-      "revision": "f4cc93baa83e",
+      "revision": "607a246148f0",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -191,7 +191,7 @@
       "src": "/tunings/mbti/ENFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/enfj.md",
-      "revision": "14be735e7dc2",
+      "revision": "6e626e8beb3b",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -205,7 +205,7 @@
       "src": "/tunings/mbti/ENFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ENFP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/enfp.md",
-      "revision": "84be3c8872ad",
+      "revision": "d7943d7e918c",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -219,7 +219,7 @@
       "src": "/tunings/mbti/ESTJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/estj.md",
-      "revision": "79dceacbb39a",
+      "revision": "7ba08efdef34",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -233,7 +233,7 @@
       "src": "/tunings/mbti/ESTP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/estp.md",
-      "revision": "de64729e3ebe",
+      "revision": "58e674f0b8d3",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -247,7 +247,7 @@
       "src": "/tunings/mbti/ESFJ.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFJ.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/esfj.md",
-      "revision": "c59f2125fdb7",
+      "revision": "c05e0aab56da",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -261,7 +261,7 @@
       "src": "/tunings/mbti/ESFP.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESFP.md",
       "body": "https://agent-tune.com/resources/tunings/mbti/esfp.md",
-      "revision": "90dd0a4f5db2",
+      "revision": "302069a951ac",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -275,7 +275,7 @@
       "src": "/tunings/enneagram/1-reformer.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/1-reformer.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/1-reformer.md",
-      "revision": "aeb363bd2304",
+      "revision": "cc9de2cee325",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -289,7 +289,7 @@
       "src": "/tunings/enneagram/2-helper.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/2-helper.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/2-helper.md",
-      "revision": "fbfce81ac292",
+      "revision": "a35bffba20d8",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -303,7 +303,7 @@
       "src": "/tunings/enneagram/3-achiever.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/3-achiever.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/3-achiever.md",
-      "revision": "12be1e154dde",
+      "revision": "cf7e904a0d18",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -317,7 +317,7 @@
       "src": "/tunings/enneagram/4-individualist.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/4-individualist.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/4-individualist.md",
-      "revision": "35e4e1fb4fbe",
+      "revision": "64eb556899d0",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -331,7 +331,7 @@
       "src": "/tunings/enneagram/5-investigator.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/5-investigator.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/5-investigator.md",
-      "revision": "5238caa9ef43",
+      "revision": "312ebc52a825",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -345,7 +345,7 @@
       "src": "/tunings/enneagram/6-loyalist.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/6-loyalist.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/6-loyalist.md",
-      "revision": "2084c984df5d",
+      "revision": "4986e8afd73f",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -359,7 +359,7 @@
       "src": "/tunings/enneagram/7-enthusiast.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/7-enthusiast.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/7-enthusiast.md",
-      "revision": "3edb5ba9a502",
+      "revision": "2b4f367d8b12",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -373,7 +373,7 @@
       "src": "/tunings/enneagram/8-challenger.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/8-challenger.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/8-challenger.md",
-      "revision": "082f4bf21a81",
+      "revision": "7340b8dd1ff4",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -387,7 +387,7 @@
       "src": "/tunings/enneagram/9-peacemaker.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/enneagram/9-peacemaker.md",
       "body": "https://agent-tune.com/resources/tunings/enneagram/9-peacemaker.md",
-      "revision": "964b64522a0d",
+      "revision": "31b24819a489",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -401,7 +401,7 @@
       "src": "/tunings/disc/D-dominance.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/D-dominance.md",
       "body": "https://agent-tune.com/resources/tunings/disc/d-dominance.md",
-      "revision": "847816082e92",
+      "revision": "eb97f01b5753",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -415,7 +415,7 @@
       "src": "/tunings/disc/I-influence.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/I-influence.md",
       "body": "https://agent-tune.com/resources/tunings/disc/i-influence.md",
-      "revision": "5f8fd575a09f",
+      "revision": "114df6dd84ef",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -429,7 +429,7 @@
       "src": "/tunings/disc/S-steadiness.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/S-steadiness.md",
       "body": "https://agent-tune.com/resources/tunings/disc/s-steadiness.md",
-      "revision": "c6e56e7f319d",
+      "revision": "d78f6fa93e50",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -443,7 +443,7 @@
       "src": "/tunings/disc/C-conscientiousness.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/disc/C-conscientiousness.md",
       "body": "https://agent-tune.com/resources/tunings/disc/c-conscientiousness.md",
-      "revision": "0069a9efbf51",
+      "revision": "4c93857d08ff",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -457,7 +457,7 @@
       "src": "/tunings/attachment/secure.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/secure.md",
       "body": "https://agent-tune.com/resources/tunings/attachment/secure.md",
-      "revision": "ad135bb6b44c",
+      "revision": "5cea33ed809e",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -471,7 +471,7 @@
       "src": "/tunings/attachment/anxious.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/anxious.md",
       "body": "https://agent-tune.com/resources/tunings/attachment/anxious.md",
-      "revision": "bbabd1e6c136",
+      "revision": "fcfa8601a097",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -485,7 +485,7 @@
       "src": "/tunings/attachment/avoidant.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/avoidant.md",
       "body": "https://agent-tune.com/resources/tunings/attachment/avoidant.md",
-      "revision": "a5ca0563b5bd",
+      "revision": "52e84ca5b531",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -499,7 +499,7 @@
       "src": "/tunings/attachment/disorganized.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/attachment/disorganized.md",
       "body": "https://agent-tune.com/resources/tunings/attachment/disorganized.md",
-      "revision": "2712fa113d4b",
+      "revision": "584cf08c12c6",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -513,7 +513,7 @@
       "src": "/tunings/ocean/O-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-high.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/openness-high.md",
-      "revision": "8a2f70f00e16",
+      "revision": "53c8256f66c2",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -527,7 +527,7 @@
       "src": "/tunings/ocean/O-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/O-low.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/openness-low.md",
-      "revision": "3e0488f623f5",
+      "revision": "898333dc1797",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -541,7 +541,7 @@
       "src": "/tunings/ocean/C-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-high.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/conscientiousness-high.md",
-      "revision": "ccaa4571fcd2",
+      "revision": "523d8999bba9",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -555,7 +555,7 @@
       "src": "/tunings/ocean/C-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/C-low.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/conscientiousness-low.md",
-      "revision": "f27b6fa836ed",
+      "revision": "e3573f66db78",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -569,7 +569,7 @@
       "src": "/tunings/ocean/E-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/E-high.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/extraversion-high.md",
-      "revision": "bd4b58a0fbc8",
+      "revision": "5ef476613c64",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -583,7 +583,7 @@
       "src": "/tunings/ocean/E-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/E-low.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/extraversion-low.md",
-      "revision": "5e7d60bf3437",
+      "revision": "52f2d04c351b",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -597,7 +597,7 @@
       "src": "/tunings/ocean/A-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-high.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/agreeableness-high.md",
-      "revision": "909594e562a0",
+      "revision": "a9a5774d8ba8",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -611,7 +611,7 @@
       "src": "/tunings/ocean/A-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/A-low.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/agreeableness-low.md",
-      "revision": "a9ca8b74ef4a",
+      "revision": "c4972fc329a0",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -625,7 +625,7 @@
       "src": "/tunings/ocean/N-high.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/N-high.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/neuroticism-high.md",
-      "revision": "b3da69f3dca0",
+      "revision": "5304f1a033a3",
       "evidence_status": "editorial_preferences_not_validated"
     },
     {
@@ -639,7 +639,7 @@
       "src": "/tunings/ocean/N-low.md",
       "upstream_md": "https://raw.githubusercontent.com/bernardjhuang/agenttune/main/ocean/N-low.md",
       "body": "https://agent-tune.com/resources/tunings/ocean/neuroticism-low.md",
-      "revision": "3339a5348990",
+      "revision": "b0660731f5e7",
       "evidence_status": "editorial_preferences_not_validated"
     }
   ],

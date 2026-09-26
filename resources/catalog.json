@@ -117,19 +117,19 @@
       "title": "Enneagram AI Prompts for All 9 Types (ChatGPT & Claude)",
       "url": "https://agent-tune.com/guides/enneagram-ai-prompts",
       "markdown": "https://agent-tune.com/guides/enneagram-ai-prompts.md",
-      "revision": "5abe9a33cbcc",
+      "revision": "3caf5c12194a",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
     {
       "id": "enneagram-test-react-typescript",
       "kind": "guide",
-      "title": "Build an Enneagram test in React + TypeScript | AgentTune",
+      "title": "Enneagram developer resources: licensing and a scoring demo",
       "url": "https://agent-tune.com/guides/enneagram-test-react-typescript",
       "markdown": "https://agent-tune.com/guides/enneagram-test-react-typescript.md",
-      "revision": "c33c283b4045",
+      "revision": "5a345951cd37",
       "evidence_status": "practical_guidance",
-      "updated": "2026-09-25"
+      "updated": "2026-09-26"
     },
     {
       "id": "fable-personality",
@@ -157,7 +157,7 @@
       "title": "How to Give Your AI a Personality: ChatGPT, Claude & Cursor",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "20d27a7f2c79",
+      "revision": "ee0c17f1896b",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -187,9 +187,9 @@
       "title": "MBTI vs Big Five: Which Works Better for AI? · AgentTune",
       "url": "https://agent-tune.com/guides/mbti-vs-big-five-for-ai",
       "markdown": "https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md",
-      "revision": "bcaa836ca393",
+      "revision": "d7a18db2d609",
       "evidence_status": "practical_guidance",
-      "updated": "2026-09-25"
+      "updated": "2026-09-26"
     },
     {
       "id": "meta-muse-characters",
@@ -244,22 +244,22 @@
     {
       "id": "open-personality-tests",
       "kind": "guide",
-      "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
+      "title": "Personality questionnaires: scoring, limitations and reuse rights",
       "url": "https://agent-tune.com/guides/open-personality-tests",
       "markdown": "https://agent-tune.com/guides/open-personality-tests.md",
-      "revision": "314793c45499",
+      "revision": "af691664f51e",
       "evidence_status": "practical_guidance",
-      "updated": null
+      "updated": "2026-09-26"
     },
     {
       "id": "open-source-enneagram-test",
       "kind": "guide",
-      "title": "Open-Source Enneagram Test on GitHub: Free Items & Scorer",
+      "title": "Enneagram developer resources: licensing and a scoring demo",
       "url": "https://agent-tune.com/guides/open-source-enneagram-test",
       "markdown": "https://agent-tune.com/guides/open-source-enneagram-test.md",
-      "revision": "a4af76cb49f0",
+      "revision": "c7c96e84f128",
       "evidence_status": "practical_guidance",
-      "updated": "2026-09-25"
+      "updated": "2026-09-26"
     },
     {
       "id": "personality-prompts-vs-plain-english",
@@ -277,9 +277,9 @@
       "title": "Reproduce AI self-report research | AgentTune",
       "url": "https://agent-tune.com/guides/reproduce-ai-personality-research",
       "markdown": "https://agent-tune.com/guides/reproduce-ai-personality-research.md",
-      "revision": "d3811598c37e",
+      "revision": "52b987a6ad3b",
       "evidence_status": "practical_guidance",
-      "updated": "2026-09-25"
+      "updated": "2026-09-26"
     },
     {
       "id": "what-is-meta-muse",
@@ -418,7 +418,7 @@
       "url": "https://agent-tune.com/research/ai-personality-five-models-2026",
       "markdown": "https://agent-tune.com/research/ai-personality-five-models-2026.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "eab48ca7a040"
+      "revision": "986d954c3892"
     },
     {
       "id": "i-took-the-mbti-100-times",

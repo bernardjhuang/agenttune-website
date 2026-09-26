@@ -5,7 +5,7 @@ Guide · Frameworks
 
 # MBTI vs Big Five for AI: crisp switches or calibrated dials.
 
-        By Bernard Huang · Updated September 25, 2026
+        By Bernard Huang · Updated September 26, 2026
 
         Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 
@@ -33,32 +33,11 @@ Use a type or trait as a starting hypothesis for your preferences. The reports d
 
 ## Types write instructions. Traits tune them.
 
-        Watch what happens when each kind of output meets a prompt.
+        Neither a type letter nor a trait score directly determines the best instruction. Use either as a conversation starter, then choose the behavior you want: concise or detailed, exploratory or structured, gentle or direct.
 
-A binary preference converts directly. J becomes "lead with the recommendation, then the reasoning"; P becomes "keep options open — don't force a decision early." The letter already is the instruction. No translation step.
+AgentTune’s current Big Five adaptation reports raw totals and means, not population percentiles. Type templates and OCEAN templates are editorial suggestions; they do not establish a hierarchy. Explicit preferences resolve conflicts.
 
-A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: how much, not just which way.
-
-Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.
-
-Our tuning files pair the two for exactly this reason. The 16 [MBTI tunings](https://agent-tune.com/library/mbti/intj) set the switches; the OCEAN pole tunings — high and low for each trait, like [high Openness](https://agent-tune.com/library/ocean/openness-high) or [low Neuroticism](https://agent-tune.com/library/ocean/neuroticism-low) — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in [the library](https://agent-tune.com/library/).
-
-Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:
-
-## Personality layer (INTJ + Big Five calibration)
-
-# Switches — from type
-- Lead with the recommendation, then the reasoning.
-- Disagree directly: "I disagree because X.
-  Here's what I'd do instead."
-- Skip the warmup. No option menus when one answer is right.
-
-# Dials — from traits
-- Detail: terse by default; expand on request. (low E)
-- Structure: number the steps, no loose narrative. (high C)
-- Alternatives: offer one, not five. (moderate O)
-
-The switches came straight off the type — no interpretation. The dials took the trait scores and turned them into settings. Neither half is sufficient alone: switches without dials give you the right shape at the wrong volume; dials without switches give you calibrated ambiguity.
+Try a concrete instruction such as “Lead with a recommendation, then give the evidence. State uncertainty when it could change the decision.” Compare outputs on real tasks before deciding whether it helps.
 
 ## Take both. It's ten minutes.
 

@@ -1,0 +1,9 @@
+const fs=require('node:fs'),path=require('node:path'),content=require('./content-bundle.cjs')();
+const write=(p,s)=>{p=path.join(content.root,p);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,s);};
+for(const file of [...Object.keys(content.manifest.files),'manifest.json'])write('resources/content/'+file,content.read(file));
+write('compact-tunings.js',content.read('compact-tunings.js'));
+write('resources/scoring/score.js',content.read('score.js'));
+write('resources/scoring/questions.json',content.read('instruments.json'));
+write('resources/scoring/README.md',`# Local questionnaire scoring\n\nContent ${content.lock.version}; scorer 1.0.0. Original code is MIT; questionnaire terms are instrument-specific.\n\nDownload [score.js](https://agent-tune.com/resources/scoring/score.js) and [definitions](https://agent-tune.com/resources/scoring/questions.json). Node uses require('./score.js'); browsers expose AgentTuneScoring.\n\nCall score({instrumentId:'agenttune-ipip50',instrumentVersion:'1.0.0',responses:[{itemId:'ipip50-01',value:3}]}). Valid subsets return status incomplete, with missing IDs and no score. Duplicate/unknown IDs and invalid values return invalid. Complete answers return raw totals, item means, exact instrument/scorer versions and definition hash. scoreOrdered(id,version,answers) requires all 50 answers in the pinned definition order. No coercion, imputation, percentiles or automatic tuning selection.\n\nOnly the IPIP adaptation is currently available. [Other instruments and terms](https://agent-tune.com/resources/content/instrument-rights.json). [Release manifest](https://agent-tune.com/resources/content/manifest.json). Historical research has its own versioned scorer and is not a current questionnaire API.\n`);
+for(const r of content.rights.instruments)write('tests/'+r.route+'.md',content.read('tests/'+r.route+'.md'));
+console.log('Verified and synchronized AgentTune content '+content.lock.version);

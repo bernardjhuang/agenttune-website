@@ -10,10 +10,10 @@ const raw = require('../research/data/september-2026-responses.json');
 const questions = require('../resources/enneagram/questions.json');
 const instruments = require('../research/data/september-2026-instruments.json');
 
-test('developer scorer reproduces every recorded Enneagram total and tied leader', () => {
+test('synthetic demo arithmetic still reproduces historical group sums without questionnaire wording', () => {
   const records = raw.records.filter(r => r.test === 'enneagram');
   assert.equal(records.length, 401);
-  assert.deepEqual(questions.items.map(({id,...item}) => item), instruments.enneagram.items);
+  assert.equal(questions.status,'synthetic_demo_only');assert.ok(questions.items.every(i=>i.text.startsWith('Demo input ')));assert.deepEqual(questions.items.map(i=>i.type),instruments.enneagram.items.map(i=>i.type));
   for (const record of records) {
     const actual = scorer.score(record.answers);
     const reference = researchScore('enneagram',record.answers);

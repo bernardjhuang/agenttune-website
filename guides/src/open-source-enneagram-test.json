@@ -1,64 +1,40 @@
 {
   "slug": "open-source-enneagram-test",
   "published": "2026-09-25",
-  "updated": "2026-09-25",
-  "title": "Open-Source Enneagram Test on GitHub: Free Items & Scorer",
-  "h1": "An open-source Enneagram test on GitHub.",
-  "dek": "A reusable scorer, question data and a live demo of AgentTune’s 36-item adaptation.",
-  "description": "Download an Enneagram JavaScript scorer and 36-item question JSON. Node and browser examples, explicit ties, source attribution and an interactive demo.",
+  "updated": "2026-09-26",
+  "title": "Enneagram developer resources: licensing and a scoring demo",
+  "h1": "Build the interface. Verify the instrument.",
+  "dek": "A working software starter with synthetic inputs; questionnaire rights reviewed separately.",
+  "description": "Use an original React and JavaScript scoring demo, understand OEPS availability and version a licensed questionnaire correctly.",
   "pill": "Guide · Resources",
-  "lede": "Build with the same question order and scoring rules used by AgentTune. Get a dependency-free JavaScript scorer, structured question data, and examples that handle incomplete responses and equal scores explicitly.",
-  "answer": "Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals and all tied leaders. This is AgentTune’s 36-item adaptation, not the full 54-item OEPS.",
+  "lede": "The developer example remains available with original synthetic controls. It does not include OEPS questions or produce a personality assessment.",
+  "answer": "Download the synthetic starter to test form state, strict numeric input and tied scores. AgentTune’s OEPS-derived questionnaire is currently excluded while its exact reuse terms are verified. The MIT code license does not grant rights to third-party test items.",
   "sections": [
     {
-      "h2": "Download the developer files.",
-      "html": "<p>The scorer has no dependencies and supports Node CommonJS and a browser script tag. Download the files to a directory you choose.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">File</th><th scope=\"col\">Contents</th></tr></thead><tbody><tr><td><a href=\"/resources/enneagram/score.js\" download>score.js</a></td><td>Input validation, all nine totals and explicit ties. MIT code.</td></tr><tr><td><a href=\"/resources/enneagram/questions.json\" download>questions.json</a></td><td>36 item IDs, wording, type keys, scale and provenance.</td></tr><tr><td><a href=\"/resources/enneagram/README.md\" download>README.md</a></td><td>Integration examples and the input/output contract.</td></tr><tr><td><a href=\"/resources/enneagram/LICENSE-code.txt\" download>LICENSE-code.txt</a></td><td>License for the JavaScript implementation.</td></tr></tbody></table></div><p><a href=\"https://github.com/bernardjhuang/agenttune-website/tree/main/resources/enneagram\">Browse the implementation on GitHub</a> · <a href=\"https://github.com/bernardjhuang/agenttune/blob/main/tests/enneagram.md\">View the library’s questionnaire specification</a> · <a href=\"/tests/enneagram\">Take the interactive test</a>.</p>"
+      "h2": "Try the software example",
+      "html": "<p><a href=\"/tools/enneagram-scoring-playground\">Open the scoring demo</a> or <a href=\"/resources/enneagram/enneagram-react-typescript.zip\">download the React + TypeScript starter</a>. It includes 36 synthetic controls in nine groups. The values test the interface and arithmetic; they measure no personality traits.</p><p>Run <code>npm ci</code>, then <code>npm run dev</code>. Use <code>npm run build</code> for the production build. Responses stay in page memory.</p>"
     },
     {
-      "h2": "Try the scorer in your browser.",
-      "html": "<p>Edit the example array or load a preset. This demo parses and scores the numbers locally; it does not send or store your answers. General site analytics are subject to your consent and do not receive this form’s values.</p><form id=\"enneagram-demo\" class=\"resource-demo\"><label for=\"enneagram-answers\"><strong>Answers in item order (JSON array)</strong></label><p id=\"enneagram-input-help\">Exactly 36 whole numbers from 1 to 5. The examples are synthetic, not participant data.</p><textarea id=\"enneagram-answers\" rows=\"5\" spellcheck=\"false\" aria-describedby=\"enneagram-input-help enneagram-message\">[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]</textarea><div class=\"resource-actions\"><button type=\"submit\">Score answers</button><button type=\"button\" data-sample=\"neutral\">All neutral</button><button type=\"button\" data-sample=\"five\">Type 5 example</button><button type=\"button\" data-sample=\"tie\">Types 1 + 5 tie</button></div><p id=\"enneagram-message\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></p><pre id=\"enneagram-output\" tabindex=\"0\" aria-label=\"Scoring result\"></pre></form><noscript><p>Enable JavaScript to try the demo, or download the scorer and run it in Node. All questions and documentation remain readable below.</p></noscript><script defer src=\"/resources/enneagram/score.js\"></script><script defer src=\"/resources/enneagram/demo.js\"></script>"
+      "h2": "What you can reuse",
+      "html": "<p>The original <a href=\"/resources/enneagram/score.js\">JavaScript arithmetic</a>, <a href=\"/resources/enneagram/questions.json\">synthetic inputs</a> and starter code are MIT licensed. The old paths and <code>AgentTuneEnneagram</code> global are compatibility names, not a claim that the demo administers a test.</p><p>Each group sums four integers from 1 to 5. Invalid or missing values are rejected. Equal highest totals remain tied; no wing is inferred.</p>"
     },
     {
-      "h2": "Use the scorer in Node or a browser.",
-      "html": "<p>Save <code>score.js</code>, then run this from the same directory in a CommonJS script or the Node console:</p><div class=\"guide-snippet\">const { score } = require(&#x27;./score.js&#x27;);\nconst answers = Array(36).fill(3);\nanswers.fill(5, 16, 20); // example: type 5 items, IDs 17–20\nconsole.log(score(answers));\n// leaders: [5], dominantType: 5, topScore: 20</div><p>For a project with <code>\"type\": \"module\"</code>, save the file as <code>score.cjs</code> and import its CommonJS default. In a browser, load the file before calling its global:</p><div class=\"guide-snippet\">&lt;script src=&quot;./score.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  const result = AgentTuneEnneagram.score(Array(36).fill(3));\n  console.log(result.leaders); // all nine types tie\n&lt;/script&gt;</div><p>If you randomize display order, store the response against its item ID and reconstruct IDs 1–36 before calling <code>score</code>. The scorer accepts a plain array, not an object keyed by question text.</p>"
+      "h2": "Before adding a real questionnaire",
+      "html": "<p>Identify its exact version and applicable rights, including modification and public redistribution. Store stable item IDs, wording, scale anchors, scoring keys and presentation order. Require a complete valid response set; keep measured scores separate from a user’s preference choices.</p><p><a href=\"/tests/enneagram\">Current Enneagram availability</a> · <a href=\"/resources/content/instrument-rights.json\">Rights record</a> · <a href=\"/tests/big-five\">Available IPIP Big Five adaptation</a>.</p>"
     },
     {
-      "h2": "The scoring contract.",
-      "html": "<p>Each type has four items scored from 1 to 5. Sum the four responses; there are no reversed items in this adaptation. A type total ranges from 4 to 20.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Output</th><th scope=\"col\">Meaning</th></tr></thead><tbody><tr><td>version</td><td><code>agenttune-enneagram-36-v1</code>: identify the item order and rules.</td></tr><tr><td>scores</td><td>Raw totals keyed by type number 1–9.</td></tr><tr><td>topScore</td><td>The greatest of the nine raw totals.</td></tr><tr><td>leaders</td><td>Every type that has that total, in ascending numeric order.</td></tr><tr><td>tied</td><td>True when more than one type shares the highest total.</td></tr><tr><td>dominantType</td><td>The unique leader, or <code>null</code> for a tie.</td></tr></tbody></table></div><p>The scorer rejects incomplete arrays, sparse arrays, strings, fractions and values outside 1–5. Do not turn a skipped answer into a neutral response. A score is not a probability, percentile or confidence estimate. This module does not calculate wings; the second-highest type is not automatically a wing.</p>"
-    },
-    {
-      "h2": "Why equal scores stay equal.",
-      "html": "<p>All-neutral answers give each type 12 points. Assigning Type 1 because it appears first would manufacture a result. Show all nine totals and let the user inspect the tied types instead.</p><p>This also matters in our <a href=\"/research/ai-personality-five-models-2026\">model questionnaire study</a>: 65 of 100 Opus 5.5 Enneagram assessments and 44 of 100 Fable 5.1 assessments had tied top scores. Those are exploratory model self-reports, not validation of the questionnaire for AI. The downloadable scorer is checked against every saved Enneagram answer vector in that dataset.</p>"
-    },
-    {
-      "h2": "All 36 questions and their keys.",
-      "html": "<p>The wording and order below match the version used by the AgentTune test and September 2026 response dataset. Record answers on this scale: 1 strongly disagree, 2 disagree, 3 neutral, 4 agree, 5 strongly agree.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">ID</th><th scope=\"col\">Statement</th><th scope=\"col\">Type</th></tr></thead><tbody><tr><td>1</td><td>I am a perfectionist.</td><td>1</td></tr><tr><td>2</td><td>I strive for efficiency.</td><td>1</td></tr><tr><td>3</td><td>I often have to redo other people&#x27;s work.</td><td>1</td></tr><tr><td>4</td><td>I keep my belongings in order.</td><td>1</td></tr><tr><td>5</td><td>My relationships with others are what my life is about.</td><td>2</td></tr><tr><td>6</td><td>I have difficulty saying no.</td><td>2</td></tr><tr><td>7</td><td>I get lots of satisfaction from helping others achieve their goals.</td><td>2</td></tr><tr><td>8</td><td>I put family first.</td><td>2</td></tr><tr><td>9</td><td>I put work first.</td><td>3</td></tr><tr><td>10</td><td>I like to stand out.</td><td>3</td></tr><tr><td>11</td><td>It is good to wake up to a full day of planned activities.</td><td>3</td></tr><tr><td>12</td><td>Money is important to my happiness.</td><td>3</td></tr><tr><td>13</td><td>I daydream about being in love.</td><td>4</td></tr><tr><td>14</td><td>I really enjoy feeling bittersweet.</td><td>4</td></tr><tr><td>15</td><td>I get deeply immersed in music.</td><td>4</td></tr><tr><td>16</td><td>I side with the rebels over the establishment.</td><td>4</td></tr><tr><td>17</td><td>I have a hard time showing emotions.</td><td>5</td></tr><tr><td>18</td><td>I spend hours alone with my hobbies.</td><td>5</td></tr><tr><td>19</td><td>I spend most of my time trying to understand things.</td><td>5</td></tr><tr><td>20</td><td>I like mental challenges.</td><td>5</td></tr><tr><td>21</td><td>Fear of being taken advantage of keeps me from being more trusting.</td><td>6</td></tr><tr><td>22</td><td>I get input from others before I make a decision.</td><td>6</td></tr><tr><td>23</td><td>I conform.</td><td>6</td></tr><tr><td>24</td><td>I am loyal.</td><td>6</td></tr><tr><td>25</td><td>I must always be having new experiences.</td><td>7</td></tr><tr><td>26</td><td>I can keep a conversation going with anyone about anything.</td><td>7</td></tr><tr><td>27</td><td>I am uninhibited.</td><td>7</td></tr><tr><td>28</td><td>I always try to break the tension with a good joke.</td><td>7</td></tr><tr><td>29</td><td>I naturally emerge as a leader.</td><td>8</td></tr><tr><td>30</td><td>I like a conversation where no one agrees.</td><td>8</td></tr><tr><td>31</td><td>I want people to tell me the truth, not spare my feelings.</td><td>8</td></tr><tr><td>32</td><td>I come up with good solutions.</td><td>8</td></tr><tr><td>33</td><td>When other people are arguing, I leave the room.</td><td>9</td></tr><tr><td>34</td><td>I keep my thoughts to myself to prevent trouble.</td><td>9</td></tr><tr><td>35</td><td>I am very accepting and flexible.</td><td>9</td></tr><tr><td>36</td><td>I avoid confrontation.</td><td>9</td></tr></tbody></table></div>"
-    },
-    {
-      "h2": "Provenance, scope and licensing.",
-      "html": "<p>AgentTune uses a <strong>36-item adaptation</strong> of material attributed to the Open-Source Psychometrics Project’s OEPS. The upstream live test currently specifies <strong>54 items</strong>. This resource reproduces AgentTune’s existing item set; it is not the complete upstream assessment. We have not established psychometric validity for this shortened selection.</p><p>The JavaScript implementation is MIT licensed. The questionnaire wording retains its upstream terms; our code license does not relicense third-party text. Keep the attribution and version with the question data, and consult the <a href=\"https://openpsychometrics.org/tests/OEPS/development/\">upstream development documentation</a> for its source. This is not the proprietary RHETI test.</p><p>Use the results as an educational prompt for reflection. Do not present them as a diagnosis, hiring assessment or proof that an AI has a human personality. For a user-facing integration, explain where answers go, make every question keyboard accessible, and show tied results explicitly.</p>"
+      "h2": "Historical adaptation",
+      "html": "<p>The former AgentTune 36-item adaptation reordered OEPS v1 and changed two statements. Published responses remain attached to that legacy version. Do not call the synthetic example OEPS, and do not reinterpret old answers as answers to corrected items. <a href=\"/research/data/rights-migration.json\">Read the provenance correction</a>.</p>"
     }
   ],
   "faq": [
     {
-      "q": "Where is the Enneagram test source code on GitHub?",
-      "a": "The developer files live in bernardjhuang/agenttune-website under resources/enneagram. The separate bernardjhuang/agenttune library includes tests/enneagram.md with the questionnaire specification."
+      "q": "Does the starter include OEPS questions?",
+      "a": "No. It contains original synthetic controls solely for software testing. Verify instrument rights before adding real questions."
     },
     {
-      "q": "Does the scorer work without a server?",
-      "a": "Yes. Load score.js in a browser and call AgentTuneEnneagram.score(answers), or require it in Node. The scorer makes no network requests and stores no responses."
-    },
-    {
-      "q": "Is this the full OEPS test?",
-      "a": "No. It reproduces the 36-item adaptation already used by AgentTune. The upstream live OEPS has 54 items. Results from these versions should not be treated as interchangeable."
-    },
-    {
-      "q": "What happens when two Enneagram types tie?",
-      "a": "Both remain in leaders and dominantType is null. Show the tied scores; do not silently choose the first type or automatically export one tuning."
-    },
-    {
-      "q": "Is everything in the download MIT licensed?",
-      "a": "The AgentTune JavaScript implementation is MIT licensed. The question wording is attributed to the Open-Source Psychometrics Project and retains its upstream terms. The code license does not relicense third-party questionnaire text."
+      "q": "Can I still choose an Enneagram-style template?",
+      "a": "Yes. Communication templates and the preference builder remain available without a questionnaire."
     }
   ],
   "sources": [
@@ -99,8 +75,8 @@
   ],
   "changelog": [
     {
-      "date": "2026-09-25",
-      "note": "First published with downloadable resources."
+      "date": "2026-09-26",
+      "note": "Replaced questionnaire payloads with synthetic developer inputs and clarified licensing and legacy provenance."
     }
   ]
 }

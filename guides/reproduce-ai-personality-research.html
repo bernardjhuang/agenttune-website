@@ -10,7 +10,7 @@
   <meta property="og:description" content="Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-26" />
   <meta property="og:url" content="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to reproduce AgentTune’s AI self-report research"}]}</script>
 
 
@@ -68,13 +68,19 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Developer guide · reproducibility</span>
         <h1 class="h-hero h-research-hero">How to reproduce AgentTune’s AI self-report research</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.</p>
       </section>
 
 
       <div class="divider tight"></div>
 
+
+      <section>
+        <h2>September 26 provenance correction</h2>
+        <p>Reproduction here means recomputing the historical arithmetic from saved vectors and numeric keys. It does not mean administering a corrected questionnaire. Some full prompts and restricted item wording have been withdrawn from public downloads; the originals are retained locally and identified by hashes. Raw responses and numerical summaries are unchanged. <a href="/research/data/rights-migration.json">Read the correction</a> and <a href="/tests/">current questionnaire availability</a>.</p>
+      </section>
+      <div class="divider tight"></div>
 
       <section>
         <h2>Download a self-contained scoring folder</h2>

@@ -1,8 +1,8 @@
 {
   "slug": "mbti-vs-big-five-for-ai",
-  "title": "MBTI vs Big Five: Which Works Better for AI? · AgentTune",
+  "title": "MBTI vs Big Five: Which Works Better for AI? \u00b7 AgentTune",
   "description": "Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.",
-  "pill": "Guide · Frameworks",
+  "pill": "Guide \u00b7 Frameworks",
   "h1": "MBTI vs Big Five for AI: crisp switches or calibrated dials.",
   "dek": "One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.",
   "lede": "MBTI organizes preferences into types; Big Five describes continuous traits. Either can help you draft communication instructions, but our exploratory reports do not establish which works better for AI personalization. Start with the preferences you can state clearly and test the resulting prompt on your own tasks.",
@@ -10,7 +10,7 @@
   "sections": [
     {
       "h2": "One sorts. One measures.",
-      "html": "<p>MBTI assigns you one side of four binary axes — introversion or extraversion (I/E), sensing or intuition (S/N), thinking or feeling (T/F), judging or perceiving (J/P) — and the four letters compose into one of 16 types. It's a sorter. Every axis is a fork; you go left or right.</p><p>Big Five (OCEAN) measures five continuous dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — and scores you somewhere along each one. No types, no forks. Dials.</p><p>Notice what each hands you at the end. MBTI: four letters. Big Five: five numbers. Hold that difference — it's the entire argument below.</p><p>The scientific standing is not symmetric. Psychometricians have two standing complaints about MBTI: it dichotomizes what the data says is continuous — a person at 55% thinking and a person at 95% get the same T — and people near an axis midline can flip letters on retest. Big Five came out of decades of factor analysis, is the standard instrument in academic personality research, and holds up better on retest reliability. If the question is <em>which measures humans better</em>, Big Five wins, and it isn't close.</p><p>But that's the measurement question. Prompting an AI raises a different one: which kind of output converts into instructions an agent can actually follow?</p>"
+      "html": "<p>MBTI assigns you one side of four binary axes \u2014 introversion or extraversion (I/E), sensing or intuition (S/N), thinking or feeling (T/F), judging or perceiving (J/P) \u2014 and the four letters compose into one of 16 types. It's a sorter. Every axis is a fork; you go left or right.</p><p>Big Five (OCEAN) measures five continuous dimensions \u2014 Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism \u2014 and scores you somewhere along each one. No types, no forks. Dials.</p><p>Notice what each hands you at the end. MBTI: four letters. Big Five: five numbers. Hold that difference \u2014 it's the entire argument below.</p><p>The scientific standing is not symmetric. Psychometricians have two standing complaints about MBTI: it dichotomizes what the data says is continuous \u2014 a person at 55% thinking and a person at 95% get the same T \u2014 and people near an axis midline can flip letters on retest. Big Five came out of decades of factor analysis, is the standard instrument in academic personality research, and holds up better on retest reliability. If the question is <em>which measures humans better</em>, Big Five wins, and it isn't close.</p><p>But that's the measurement question. Prompting an AI raises a different one: which kind of output converts into instructions an agent can actually follow?</p>"
     },
     {
       "h2": "What the research can and cannot establish.",
@@ -18,21 +18,21 @@
     },
     {
       "h2": "Types write instructions. Traits tune them.",
-      "html": "<p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>\"lead with the recommendation, then the reasoning\"</em>; P becomes <em>\"keep options open — don't force a decision early.\"</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class=\"guide-answer\">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href=\"/library/mbti/intj\">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href=\"/library/ocean/openness-high\">high Openness</a> or <a href=\"/library/ocean/neuroticism-low\">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href=\"/library/\">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class=\"guide-snippet\" data-tuning-prompt>## Personality layer (INTJ + Big Five calibration)\n\n# Switches — from type\n- Lead with the recommendation, then the reasoning.\n- Disagree directly: \"I disagree because X.\n  Here's what I'd do instead.\"\n- Skip the warmup. No option menus when one answer is right.\n\n# Dials — from traits\n- Detail: terse by default; expand on request. (low E)\n- Structure: number the steps, no loose narrative. (high C)\n- Alternatives: offer one, not five. (moderate O)</div><p>The switches came straight off the type — no interpretation. The dials took the trait scores and turned them into settings. Neither half is sufficient alone: switches without dials give you the right shape at the wrong volume; dials without switches give you calibrated ambiguity.</p>"
+      "html": "<p>Neither a type letter nor a trait score directly determines the best instruction. Use either as a conversation starter, then choose the behavior you want: concise or detailed, exploratory or structured, gentle or direct.</p><p>AgentTune\u2019s current Big Five adaptation reports raw totals and means, not population percentiles. Type templates and OCEAN templates are editorial suggestions; they do not establish a hierarchy. Explicit preferences resolve conflicts.</p><p>Try a concrete instruction such as \u201cLead with a recommendation, then give the evidence. State uncertainty when it could change the decision.\u201d Compare outputs on real tasks before deciding whether it helps.</p>"
     },
     {
       "h2": "Take both. It's ten minutes.",
-      "html": "<p>Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — <a href=\"/tests/mbti\">MBTI (OEJTS)</a> and <a href=\"/tests/big-five\">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>, or jump to <a href=\"/guides/coding-agent-personality\">the coding-agent version</a> if your agent lives in a terminal.</p>"
+      "html": "<p>Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five \u2014 <a href=\"/tests/mbti\">MBTI (OEJTS)</a> and <a href=\"/tests/big-five\">Big Five (IPIP-50)</a>. No email, no paywall on results. Both use open instruments rather than proprietary clones \u2014 OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.</p><p>If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file \u2014 start with <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>, or jump to <a href=\"/guides/coding-agent-personality\">the coding-agent version</a> if your agent lives in a terminal.</p>"
     }
   ],
   "faq": [
     {
       "q": "Is MBTI scientifically valid?",
-      "a": "It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."
+      "a": "It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower \u2014 binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."
     },
     {
-      "q": "Which is better for prompting an AI — MBTI or Big Five?",
-      "a": "Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."
+      "q": "Which is better for prompting an AI \u2014 MBTI or Big Five?",
+      "a": "Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration \u2014 how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."
     },
     {
       "q": "Why did all six models test as INTJ?",
@@ -50,12 +50,12 @@
   "related": [
     {
       "kicker": "Tests",
-      "label": "MBTI test (OEJTS) — free, ~5 min",
+      "label": "MBTI test (OEJTS) \u2014 free, ~5 min",
       "href": "/tests/mbti"
     },
     {
       "kicker": "Tests",
-      "label": "Big Five test (IPIP-50) — free, ~5 min",
+      "label": "Big Five test (IPIP-50) \u2014 free, ~5 min",
       "href": "/tests/big-five"
     },
     {
@@ -80,6 +80,6 @@
     }
   ],
   "published": "2026-07-23",
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "promptModel": "any"
 }

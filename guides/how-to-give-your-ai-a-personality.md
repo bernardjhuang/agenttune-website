@@ -80,7 +80,7 @@ The test is a shortcut, not an identity. The point isn't that you are an INTJ or
 
             Which personality test should I use for AI tuning?
 
-            Whichever you already know your type in. Otherwise: MBTI for the broadest starting point, Big Five if you prefer dimensions over type boxes, Enneagram if your friction is emotional register rather than information format, DISC for work contexts, Attachment if the issue is reassurance and checking-in. All five tests are free and take about five minutes.
+            Start with the communication behavior you want; a test is optional. The IPIP Big Five adaptation is currently available and reports raw totals and means. Other questionnaires are unavailable while distribution rights are reviewed. Templates from all five frameworks remain available to read, edit and try.
 
             Do personality prompts actually change AI behavior?
 

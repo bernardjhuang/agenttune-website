@@ -1,209 +1,206 @@
 {
-  "version": "agenttune-enneagram-36-v1",
-  "name": "AgentTune Enneagram-36 (OEPS-derived adaptation)",
+  "version": "agenttune-nine-group-demo-1",
+  "name": "Synthetic nine-group scoring demo — not a personality questionnaire",
+  "status": "synthetic_demo_only",
   "itemCount": 36,
   "responseScale": {
-    "1": "Strongly disagree",
-    "2": "Disagree",
-    "3": "Neutral",
-    "4": "Agree",
-    "5": "Strongly agree"
+    "1": "Demo value 1",
+    "2": "Demo value 2",
+    "3": "Demo value 3",
+    "4": "Demo value 4",
+    "5": "Demo value 5"
   },
   "scoring": {
     "itemsPerType": 4,
-    "reverseScored": false,
     "scoreRange": [
       4,
       20
     ],
-    "tiePolicy": "Return all equal highest totals; dominantType is null when tied.",
-    "wings": "Not calculated."
+    "tiePolicy": "Keep all equal highest totals."
   },
   "provenance": {
-    "upstream": "https://openpsychometrics.org/tests/OEPS/development/",
-    "upstreamTest": "https://openpsychometrics.org/tests/OEPS/",
-    "note": "AgentTune uses a 36-item adaptation. The upstream live test has 54 items. This file reproduces the wording and keys used by AgentTune; it is not the full upstream instrument.",
-    "itemRights": "Item wording is attributed to the Open-Source Psychometrics Project. The MIT license for the accompanying scorer does not relicense third-party questionnaire text."
+    "license": "MIT",
+    "note": "Original placeholder controls for testing software. These items measure no personality trait and must not be described as OEPS."
   },
   "items": [
     {
       "id": 1,
-      "text": "I am a perfectionist.",
+      "text": "Demo input 1. Select a value to test group 1.",
       "type": 1
     },
     {
       "id": 2,
-      "text": "I strive for efficiency.",
+      "text": "Demo input 2. Select a value to test group 1.",
       "type": 1
     },
     {
       "id": 3,
-      "text": "I often have to redo other people's work.",
+      "text": "Demo input 3. Select a value to test group 1.",
       "type": 1
     },
     {
       "id": 4,
-      "text": "I keep my belongings in order.",
+      "text": "Demo input 4. Select a value to test group 1.",
       "type": 1
     },
     {
       "id": 5,
-      "text": "My relationships with others are what my life is about.",
+      "text": "Demo input 5. Select a value to test group 2.",
       "type": 2
     },
     {
       "id": 6,
-      "text": "I have difficulty saying no.",
+      "text": "Demo input 6. Select a value to test group 2.",
       "type": 2
     },
     {
       "id": 7,
-      "text": "I get lots of satisfaction from helping others achieve their goals.",
+      "text": "Demo input 7. Select a value to test group 2.",
       "type": 2
     },
     {
       "id": 8,
-      "text": "I put family first.",
+      "text": "Demo input 8. Select a value to test group 2.",
       "type": 2
     },
     {
       "id": 9,
-      "text": "I put work first.",
+      "text": "Demo input 9. Select a value to test group 3.",
       "type": 3
     },
     {
       "id": 10,
-      "text": "I like to stand out.",
+      "text": "Demo input 10. Select a value to test group 3.",
       "type": 3
     },
     {
       "id": 11,
-      "text": "It is good to wake up to a full day of planned activities.",
+      "text": "Demo input 11. Select a value to test group 3.",
       "type": 3
     },
     {
       "id": 12,
-      "text": "Money is important to my happiness.",
+      "text": "Demo input 12. Select a value to test group 3.",
       "type": 3
     },
     {
       "id": 13,
-      "text": "I daydream about being in love.",
+      "text": "Demo input 13. Select a value to test group 4.",
       "type": 4
     },
     {
       "id": 14,
-      "text": "I really enjoy feeling bittersweet.",
+      "text": "Demo input 14. Select a value to test group 4.",
       "type": 4
     },
     {
       "id": 15,
-      "text": "I get deeply immersed in music.",
+      "text": "Demo input 15. Select a value to test group 4.",
       "type": 4
     },
     {
       "id": 16,
-      "text": "I side with the rebels over the establishment.",
+      "text": "Demo input 16. Select a value to test group 4.",
       "type": 4
     },
     {
       "id": 17,
-      "text": "I have a hard time showing emotions.",
+      "text": "Demo input 17. Select a value to test group 5.",
       "type": 5
     },
     {
       "id": 18,
-      "text": "I spend hours alone with my hobbies.",
+      "text": "Demo input 18. Select a value to test group 5.",
       "type": 5
     },
     {
       "id": 19,
-      "text": "I spend most of my time trying to understand things.",
+      "text": "Demo input 19. Select a value to test group 5.",
       "type": 5
     },
     {
       "id": 20,
-      "text": "I like mental challenges.",
+      "text": "Demo input 20. Select a value to test group 5.",
       "type": 5
     },
     {
       "id": 21,
-      "text": "Fear of being taken advantage of keeps me from being more trusting.",
+      "text": "Demo input 21. Select a value to test group 6.",
       "type": 6
     },
     {
       "id": 22,
-      "text": "I get input from others before I make a decision.",
+      "text": "Demo input 22. Select a value to test group 6.",
       "type": 6
     },
     {
       "id": 23,
-      "text": "I conform.",
+      "text": "Demo input 23. Select a value to test group 6.",
       "type": 6
     },
     {
       "id": 24,
-      "text": "I am loyal.",
+      "text": "Demo input 24. Select a value to test group 6.",
       "type": 6
     },
     {
       "id": 25,
-      "text": "I must always be having new experiences.",
+      "text": "Demo input 25. Select a value to test group 7.",
       "type": 7
     },
     {
       "id": 26,
-      "text": "I can keep a conversation going with anyone about anything.",
+      "text": "Demo input 26. Select a value to test group 7.",
       "type": 7
     },
     {
       "id": 27,
-      "text": "I am uninhibited.",
+      "text": "Demo input 27. Select a value to test group 7.",
       "type": 7
     },
     {
       "id": 28,
-      "text": "I always try to break the tension with a good joke.",
+      "text": "Demo input 28. Select a value to test group 7.",
       "type": 7
     },
     {
       "id": 29,
-      "text": "I naturally emerge as a leader.",
+      "text": "Demo input 29. Select a value to test group 8.",
       "type": 8
     },
     {
       "id": 30,
-      "text": "I like a conversation where no one agrees.",
+      "text": "Demo input 30. Select a value to test group 8.",
       "type": 8
     },
     {
       "id": 31,
-      "text": "I want people to tell me the truth, not spare my feelings.",
+      "text": "Demo input 31. Select a value to test group 8.",
       "type": 8
     },
     {
       "id": 32,
-      "text": "I come up with good solutions.",
+      "text": "Demo input 32. Select a value to test group 8.",
       "type": 8
     },
     {
       "id": 33,
-      "text": "When other people are arguing, I leave the room.",
+      "text": "Demo input 33. Select a value to test group 9.",
       "type": 9
     },
     {
       "id": 34,
-      "text": "I keep my thoughts to myself to prevent trouble.",
+      "text": "Demo input 34. Select a value to test group 9.",
       "type": 9
     },
     {
       "id": 35,
-      "text": "I am very accepting and flexible.",
+      "text": "Demo input 35. Select a value to test group 9.",
       "type": 9
     },
     {
       "id": 36,
-      "text": "I avoid confrontation.",
+      "text": "Demo input 36. Select a value to test group 9.",
       "type": 9
     }
   ]

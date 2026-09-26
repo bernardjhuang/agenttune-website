@@ -27,3 +27,6 @@ build/
 # Local notes / scratch
 *.local.md
 NOTES.md
+
+# Local bounded dependency cache
+.cache/

@@ -69,7 +69,7 @@ function fixture(html = '') {
 
 function quiz(name) {
   const html = fs.readFileSync(path.join(ROOT, 'tests', name + '.html'), 'utf8');
-  const f = fixture(html); f.run('quiz-utils.js'); f.run('data.js');
+  const f = fixture(html); f.run('quiz-utils.js'); f.run('data.js'); if(html.includes('/resources/scoring/score.js')) f.run('resources/scoring/score.js');
   const code = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].find(m => m[1].includes('const ITEMS ='))[1];
   const exposed = code.replace('const advance = window.ATQuiz.transition();', 'window.__quiz = {items:ITEMS,state,showResult,compute:' + (name === 'mbti' ? 'computeType' : 'computeResult') + '}; const advance = window.ATQuiz.transition();');
   vm.runInContext(exposed, f.ctx, { filename: name + '.html' });

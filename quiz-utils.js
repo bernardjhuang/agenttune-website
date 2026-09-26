@@ -88,8 +88,8 @@
       return false;
     }
   }
-  function draft(doc, state, count, max = 5) {
-    const key = 'at_quiz_v1:' + globalThis.location.pathname;
+  function draft(doc, state, count, max = 5, instrumentVersion = '') {
+    const key = 'at_quiz_v1:' + globalThis.location.pathname + (instrumentVersion ? ':' + instrumentVersion : '');
     const ttl = 7 * 24 * 60 * 60 * 1000;
     const read = () => {
       try {

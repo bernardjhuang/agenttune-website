@@ -15,36 +15,12 @@ test('all 2,003 supplied vectors validate and reproduce the published summaries'
  assert.equal(published['claude-fable-5-1'].enneagram.runs_with_ties,44);
  assert.throws(()=>score('disc',Array(16).fill(6)),/Invalid/);
 });
-test('the independent research scorer agrees with the website item keys and continuous scoring',()=>{
- for(const name of Object.keys(frozen)){
-  const f=quiz(name);
-  const current=JSON.parse(JSON.stringify(f.ctx.__quiz.items));
-  for(let i=0;i<current.length;i++)for(const [k,v] of Object.entries(frozen[name].items[i]))assert.deepEqual(current[i][k],v,`${name} item ${i} ${k}`);
-  for(const r of raw.records.filter(r=>r.test===name)){
-   const actual=JSON.parse(JSON.stringify(f.ctx.__quiz.compute(r.answers)));
-   const expected=score(name,r.answers);
-   if(name==='mbti')assert.equal(actual.pattern,expected.pattern);
-   if(name==='disc'||name==='enneagram')assert.deepEqual(actual.scores,expected.values);
-   if(name==='big-five')for(const k of 'OCEAN')assert.ok(Math.abs(actual.raw[k]-expected.values[k])<1e-10);
-   if(name==='attachment'){assert.equal(actual.anxiety,expected.values.anxiety);assert.equal(actual.avoidance,expected.values.avoidance);}
-  }
+test('the current IPIP scorer preserves raw arithmetic for historical Big Five answers, without relabeling their version',()=>{
+ const f=quiz('big-five');
+ for(const r of raw.records.filter(r=>r.test==='big-five')){
+  const actual=JSON.parse(JSON.stringify(f.ctx.__quiz.compute(r.answers))),expected=score('big-five',r.answers);
+  assert.equal(actual.status,'complete');assert.deepEqual(actual.values,expected.values);assert.equal(actual.instrumentId,'agenttune-ipip50');assert.equal(actual.indices,undefined);
  }
-});
-for(const name of ['disc','enneagram'])test(`${name}: neutral responses show equal scores and cannot copy a fabricated winner`,async()=>{
- const f=quiz(name);let copies=0;f.ctx.navigator.clipboard.writeText=async()=>{copies++};
- f.ctx.__quiz.state.answers=f.ctx.__quiz.items.map(()=>3); f.ctx.__quiz.showResult();
- assert.equal(f.ids.get('quiz-result-name').textContent,'Equal top scores');
- assert.equal(f.ids.get('quiz-export-panel').hidden,true);
- assert.equal(f.ids.get('quiz-tie-links').hidden,false);
- assert.equal(f.ids.get('quiz-copy-tuning').disabled,true);
- assert.equal(f.ids.get('quiz-download-tuning').disabled,true);
- assert.equal(f.ctx.__quiz.state.currentTuning,'');
- f.ids.get('quiz-copy-tuning').click();await Promise.resolve();assert.equal(copies,0);
- f.ctx.__quiz.state.answers=f.ctx.__quiz.items.map((it,i)=>i<4?5:1); f.ctx.__quiz.showResult();
- assert.equal(f.ids.get('quiz-export-panel').hidden,false);
- assert.equal(f.ids.get('quiz-tie-links').hidden,true);
- assert.equal(f.ids.get('quiz-copy-tuning').disabled,false);
- assert.ok(f.ctx.__quiz.state.currentTuning.length>0);
 });
 test('funnel tracking is consent gated, allowlisted, payload free, and stops on withdrawal',()=>{
  const f=fixture();f.run('consent.js');f.ctx.atTrack('quiz_start',{answer:5});assert.equal(f.ctx.dataLayer,undefined);

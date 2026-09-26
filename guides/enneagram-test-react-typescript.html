@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build an Enneagram test in React + TypeScript | AgentTune</title>
-  <meta name="description" content="Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved." />
+  <title>Enneagram developer resources: licensing and a scoring demo</title>
+  <meta name="description" content="Use an original React and JavaScript scoring demo, understand OEPS availability and version a licensed questionnaire correctly." />
 
-  <meta property="og:title" content="Build an Enneagram test in React + TypeScript" />
-  <meta property="og:description" content="Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved." />
+  <meta property="og:title" content="Build the interface. Verify the instrument." />
+  <meta property="og:description" content="Use an original React and JavaScript scoring demo, understand OEPS availability and version a licensed questionnaire correctly." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-26" />
   <meta property="og:url" content="https://agent-tune.com/guides/enneagram-test-react-typescript" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -19,16 +19,17 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Build an Enneagram test in React + TypeScript" />
-  <meta name="twitter:description" content="Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved." />
+  <meta name="twitter:title" content="Build the interface. Verify the instrument." />
+  <meta name="twitter:description" content="Use an original React and JavaScript scoring demo, understand OEPS availability and version a licensed questionnaire correctly." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/enneagram-test-react-typescript" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build an Enneagram test in React + TypeScript","description":"Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved.","url":"https://agent-tune.com/guides/enneagram-test-react-typescript","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Build an Enneagram test in React + TypeScript"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Build the interface. Verify the instrument","description":"Use an original React and JavaScript scoring demo, understand OEPS availability and version a licensed questionnaire correctly.","url":"https://agent-tune.com/guides/enneagram-test-react-typescript","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Build the interface. Verify the instrument"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the starter include OEPS questions?","acceptedAnswer":{"@type":"Answer","text":"No. It contains original synthetic controls solely for software testing. Verify instrument rights before adding real questions."}},{"@type":"Question","name":"Can I still choose an Enneagram-style template?","acceptedAnswer":{"@type":"Answer","text":"Yes. Communication templates and the preference builder remain available without a questionnaire."}}]}</script>
 
 
   <script defer src="/consent.js"></script>
@@ -60,16 +61,16 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">Build an Enneagram test in React + TypeScript</span>
+      <span class="crumb-current" aria-current="page">Build the interface. Verify the instrument</span>
     </nav>
 
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Developer resource · runnable starter</span>
-        <h1 class="h-hero h-research-hero">Build an Enneagram test in React + TypeScript</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">The downloadable app uses 36 questions, four per type, and returns all types tied for the highest score. It includes six-page navigation, native radio groups, explicit validation, keyboard focus management and a result table. Answers stay in browser memory.</p>
+        <h1 class="h-hero h-research-hero">Build the interface. Verify the instrument.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Download the synthetic starter to test form state, strict numeric input and tied scores. AgentTune’s OEPS-derived questionnaire is currently excluded while its exact reuse terms are verified. The MIT code license does not grant rights to third-party test items.</p>
       </section>
 
 
@@ -77,50 +78,50 @@
 
 
       <section>
-        <h2>Download and run the complete app</h2>
-        <p><a href="/resources/enneagram/enneagram-react-typescript.zip" download>Download the React + TypeScript starter ZIP</a>. Extract it into a local development folder. Use a supported Node.js release satisfying 22.12 or newer, then run:</p><pre><code>cd enneagram-react-typescript
-npm ci
-npm run dev</code></pre><p>Open the local address printed by Vite. For a production build, run <code>npm run build</code>, then <code>npm run preview</code> to inspect it. Publish the generated <code>dist/</code> folder with a static host. Serve the app over HTTP rather than opening its index file directly.</p><p>The archive includes pinned React, TypeScript and Vite dependencies plus a lockfile. There is no backend, authentication or answer submission. Installation fetches development packages; using the questionnaire does not send answers to AgentTune.</p>
+        <h2>Try the software example</h2>
+        <p><a href="/tools/enneagram-scoring-playground">Open the scoring demo</a> or <a href="/resources/enneagram/enneagram-react-typescript.zip">download the React + TypeScript starter</a>. It includes 36 synthetic controls in nine groups. The values test the interface and arithmetic; they measure no personality traits.</p><p>Run <code>npm ci</code>, then <code>npm run dev</code>. Use <code>npm run build</code> for the production build. Responses stay in page memory.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>One scorer, with a TypeScript boundary</h2>
-        <p>The app loads the unchanged canonical <code>public/score.js</code> file before its React entry. The TypeScript wrapper describes the result and calls that scorer; it does not maintain a second copy of the scoring algorithm.</p><pre><code>interface Score {
-  version: string;
-  scores: Record&lt;string, number&gt;;
-  topScore: number;
-  leaders: number[];
-  tied: boolean;
-  dominantType: number | null;
-}</code></pre><p>The scorer requires exactly 36 integer responses from 1 to 5, in the supplied item order. It rejects missing values, sparse arrays, strings and out-of-range numbers. TypeScript helps the UI use the contract, while the runtime checks protect the actual scoring call.</p>
+        <h2>What you can reuse</h2>
+        <p>The original <a href="/resources/enneagram/score.js">JavaScript arithmetic</a>, <a href="/resources/enneagram/questions.json">synthetic inputs</a> and starter code are MIT licensed. The old paths and <code>AgentTuneEnneagram</code> global are compatibility names, not a claim that the demo administers a test.</p><p>Each group sums four integers from 1 to 5. Invalid or missing values are rejected. Equal highest totals remain tied; no wing is inferred.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Preserve uncertainty in the result</h2>
-        <p>Each type has four questions and a raw score from 4 to 20. A result of 16/20 is a raw questionnaire total, not an 80th percentile or an 80% probability of being that type. The questions are not reverse-scored.</p><p>When two or more types share the maximum, the app lists every leader and leaves <code>dominantType</code> null. Answering Neutral to all 36 items gives all nine types 12 points. The result screen explicitly calls that a tie and displays all nine totals. It does not choose the first key or infer a wing.</p><p>This choice matters in the AI archive: Opus has 65 tied Enneagram administrations out of 100, and Fable has 44. A single winner would conceal information in many of those records. The starter is also a self-reflection aid, not a diagnosis or a validated personality measure for an AI.</p>
+        <h2>Before adding a real questionnaire</h2>
+        <p>Identify its exact version and applicable rights, including modification and public redistribution. Store stable item IDs, wording, scale anchors, scoring keys and presentation order. Require a complete valid response set; keep measured scores separate from a user’s preference choices.</p><p><a href="/tests/enneagram">Current Enneagram availability</a> · <a href="/resources/content/instrument-rights.json">Rights record</a> · <a href="/tests/big-five">Available IPIP Big Five adaptation</a>.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Make the questionnaire usable with a keyboard</h2>
-        <p>Each statement is the legend of a native fieldset. Each response has a visible label and a radio button, so keyboard users can move through groups and change options with standard controls. The app shows six questions per page and preserves answers when moving back.</p><p>Submitting an incomplete page identifies the first missing question and moves focus to its first radio. Moving to another page or the result focuses the new section heading. Error messages use an alert region; result tables use row and column headers. These behaviors are included in the source and should be retained when restyling.</p><p>The app intentionally keeps answers only in component state. Reloading starts over. If you add persistent profiles or a server, explain the changed data handling and design the storage separately.</p>
+        <h2>Historical adaptation</h2>
+        <p>The former AgentTune 36-item adaptation reordered OEPS v1 and changed two statements. Published responses remain attached to that legacy version. Do not call the synthetic example OEPS, and do not reinterpret old answers as answers to corrected items. <a href="/research/data/rights-migration.json">Read the provenance correction</a>.</p>
       </section>
+
       <div class="divider tight"></div>
-
       <section>
-        <h2>Know which files to change</h2>
-        <ul><li><code>src/App.tsx</code> controls pagination, selection, validation and results.</li><li><code>src/styles.css</code> controls layout, contrast and focus indicators.</li><li><code>src/questions.json</code> contains the frozen items, type keys and provenance.</li><li><code>src/scorer.ts</code> describes and calls the canonical scorer.</li><li><code>public/score.js</code> contains the scoring implementation.</li></ul><p>If you reorder questions, update the scorer’s mapping as well. Its current contract groups four consecutive items per type. Changing wording or item count creates a different instrument and should receive a new version, rather than silently retaining the existing score label.</p>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does the starter include OEPS questions?</summary>
+            <p>No. It contains original synthetic controls solely for software testing. Verify instrument rights before adding real questions.</p>
+          </details>
+          <details>
+            <summary>Can I still choose an Enneagram-style template?</summary>
+            <p>Yes. Communication templates and the preference builder remain available without a questionnaire.</p>
+          </details>
+        </div>
       </section>
+
       <div class="divider tight"></div>
-
       <section>
-        <h2>Questionnaire provenance and reuse</h2>
-        <p>The code is MIT licensed. That license does not relicense third-party question text. The included metadata points to the Open-Source Enneagram of Personality Scales development material. Its current live test has 54 items; this frozen AgentTune implementation has 36, so their keys and totals are not interchangeable. Review upstream rights for your intended use.</p><p>Before publishing an adaptation, test a blank page, keyboard navigation, back navigation, an all-neutral result, a unique winner and resetting the form. Keep ties visible. For the standalone JavaScript scorer and its complete item contract, see the <a href="/guides/open-source-enneagram-test">Enneagram developer resource</a>.</p>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-26">September 26, 2026</time> Replaced questionnaire payloads with synthetic developer inputs and clarified licensing and legacy provenance.</li>
+        </ul>
       </section>
-
-
 
       <div class="divider tight"></div>
       <section>

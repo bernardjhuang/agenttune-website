@@ -1,7 +1,9 @@
 Source: https://agent-tune.com/research/opus-vs-fable-question-level
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Research · descriptive reanalysis
+Instrument provenance update · September 26, 2026. These results describe the historical AgentTune adaptations, including documented item substitutions. Raw response vectors and numerical summaries are unchanged. Some question text and full prompts have been withdrawn from public downloads pending reuse-rights clarification; item references and numeric scoring keys remain for reproduction. Historical Big Five reference indices are not population percentiles. [Read the correction](https://agent-tune.com/research/data/rights-migration.json) · [Current questionnaire availability](https://agent-tune.com/tests/).
+
+        Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
