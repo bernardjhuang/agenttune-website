@@ -7,8 +7,10 @@
     "test": "node --test checks/*.test.js checks/*.test.cjs",
     "deploy": "npm test && npm run build && wrangler pages deploy dist --project-name=agent-tune --branch=main",
     "dev": "npx serve .",
-    "build": "node tools/build-public.js",
-    "build:research": "node tools/build-research.js"
+    "build": "node tools/sync-platforms.js && node tools/build-tools.js && node tools/build-agent-resources.js && node tools/build-public.js",
+    "build:research": "node tools/build-research.js",
+    "build:tools": "node tools/build-tools.js",
+    "build:content": "node tools/build-scorers.js && node tools/build-guides.js && node tools/build-agent-resources.js && node tools/generate-library.js && node tools/build-agent-resources.js && node tools/build-output-styles.js"
   },
   "devDependencies": {
     "wrangler": "^4.94.0"

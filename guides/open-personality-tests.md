@@ -5,7 +5,7 @@ Guide · Tests
 
 # The five open personality tests, explained.
 
-        By Bernard Huang · Updated September 26, 2026
+        By Bernard Huang · Updated September 25, 2026
 
         AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.
 

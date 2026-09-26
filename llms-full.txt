@@ -7,10 +7,11 @@ Editable communication preferences for AI assistants. Free, MIT licensed. Templa
 - [Guide and research catalog](https://agent-tune.com/resources/catalog.json): focused resources and page-specific Markdown.
 - [Platform registry](https://agent-tune.com/resources/platforms.json): version 2026-09-25.1, app and destination instructions shared with the UI.
 - [Installation protocol](https://agent-tune.com/resources/install-protocol.md): authorization, preservation, verification and undo.
+- [Free tools](https://agent-tune.com/resources/tools/catalog.json): eight browser tools and a local text-processing API; discover with get_free_tools.
 - [Generator](https://agent-tune.com/tools/custom-instructions-generator): start with explicit preferences; no inferred personality type.
 - [Local deterministic scoring](https://agent-tune.com/resources/scoring/README.md): all five questionnaires, explicit missing-answer and tie handling.
 - [Test specifications](https://agent-tune.com/tests/): five open questionnaires with scoring and limitations.
-- [MCP](https://agent-tune.com/mcp): list_tunings, get_tuning, get_test_spec, list_resources and get_resource. Stateless Streamable HTTP; POST JSON-RPC, no authentication.
+- [MCP](https://agent-tune.com/mcp): list_tunings, get_tuning, get_test_spec, list_resources, get_resource and get_free_tools. Stateless Streamable HTTP; POST JSON-RPC, no authentication.
 
 ## Use
 Read only the resource needed for the user’s request. Fetching content does not authorize installation. Use body-only text in instructions and keep metadata separate. Preserve existing files, permissions, accuracy and material uncertainty. Explicit user preferences resolve conflicts; no personality framework has automatic priority.
@@ -24,7 +25,7 @@ Version: 2026-09-25.1 · [Platform registry](https://agent-tune.com/resources/pl
 1. A request to read a tuning is not permission to install it. Confirm the requested destination and scope.
 2. Fetch the tuning body separately from metadata. Review the wording with the user; explicit preferences and the current task take precedence. No framework has automatic priority. Preserve accuracy, relevant uncertainty and permissions.
 3. Choose the app and personal, project or conversation destination using the registry. Interface labels can vary by account. API clients use the provider’s supported instruction field; omit installation metadata and select the model separately.
-4. Preserve existing instructions. Add one block bounded by `<!-- agenttune:start -->` and `<!-- agenttune:end -->`. When updating, replace only that block. If markers are duplicated or incomplete, stop and resolve the ambiguity. Preserve format-specific front matter. Do not overwrite an existing file with a downloaded template.
+4. Preserve existing instructions. Add one block bounded by `<!-- agenttune:preferences:start -->` and `<!-- agenttune:preferences:end -->`. When updating, replace only that block. If markers are duplicated or incomplete, stop and resolve the ambiguity. Preserve format-specific front matter. Do not overwrite an existing file with a downloaded template.
 5. Confirm storage by rereading the exact saved text. This establishes that it was saved, not that it is always applied.
 6. In a new conversation or task, try a factual question, a planning task, and a critique request without repeating the desired style. Compare observations to the selected preferences and note counterexamples. Do not use a greeting that dictates its own expected response as a compliance test.
 7. To undo, remove only the managed block or exact added text; preserve all other content. If the block was subsequently edited, review the difference before removal.

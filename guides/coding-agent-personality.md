@@ -5,7 +5,7 @@ Guide · Coding agents
 
 # Coding agent personality: the layer your AGENTS.md is missing.
 
-        By Bernard Huang · Updated September 24, 2026
+        By Bernard Huang · Updated September 26, 2026
 
         Coding agents read instruction files — CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.
 
@@ -148,6 +148,7 @@ For the deeper case on rules versus costumes, start with [how to give your AI a 
 
 ## Keep going.
 
+          [Free browser toolConvert and merge your own instructions](https://agent-tune.com/tools/instruction-converter)
           [GuideHow to change Claude Code's personality (output styles)](https://agent-tune.com/guides/claude-code-personality)
           [GuideCLAUDE.md examples that actually work](https://agent-tune.com/guides/claude-md-examples)
           [ToolCLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)

@@ -7,7 +7,7 @@
       "title": "AI Personality Glossary: Tuning, System Prompt, Soul.md",
       "url": "https://agent-tune.com/guides/ai-personality-glossary",
       "markdown": "https://agent-tune.com/guides/ai-personality-glossary.md",
-      "revision": "aaed34f68829",
+      "revision": "a917f42de09a",
       "evidence_status": "practical_guidance",
       "updated": null
     },
@@ -47,7 +47,7 @@
       "title": "ChatGPT Custom Instructions Examples by Role (20 Blocks)",
       "url": "https://agent-tune.com/guides/chatgpt-custom-instructions-examples",
       "markdown": "https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md",
-      "revision": "bf6c245f5064",
+      "revision": "7c277f1e0e23",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -97,7 +97,7 @@
       "title": "Test Claude’s saved preferences | AgentTune",
       "url": "https://agent-tune.com/guides/claude-preferences-test",
       "markdown": "https://agent-tune.com/guides/claude-preferences-test.md",
-      "revision": "78688a82045c",
+      "revision": "be97abc9a40a",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -107,7 +107,7 @@
       "title": "AGENTS.md & Cursor Rules: Add a Personality · AgentTune",
       "url": "https://agent-tune.com/guides/coding-agent-personality",
       "markdown": "https://agent-tune.com/guides/coding-agent-personality.md",
-      "revision": "d6ec9b06b0b5",
+      "revision": "b8d8638ddc8f",
       "evidence_status": "practical_guidance",
       "updated": null
     },
@@ -127,7 +127,7 @@
       "title": "Build an Enneagram test in React + TypeScript | AgentTune",
       "url": "https://agent-tune.com/guides/enneagram-test-react-typescript",
       "markdown": "https://agent-tune.com/guides/enneagram-test-react-typescript.md",
-      "revision": "07f2db511af0",
+      "revision": "c33c283b4045",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -157,7 +157,7 @@
       "title": "How to Give Your AI a Personality: ChatGPT, Claude & Cursor",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "bd3b4085b02c",
+      "revision": "20d27a7f2c79",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -207,7 +207,7 @@
       "title": "Meta Muse Character & Personality: The Soul.md Guide",
       "url": "https://agent-tune.com/guides/muse-personality",
       "markdown": "https://agent-tune.com/guides/muse-personality.md",
-      "revision": "69739b757597",
+      "revision": "c877298a6c16",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -227,7 +227,7 @@
       "title": "Meta Muse Soul.md Templates: 20 Copyable Examples",
       "url": "https://agent-tune.com/guides/muse-soul-md-templates",
       "markdown": "https://agent-tune.com/guides/muse-soul-md-templates.md",
-      "revision": "372fb248d2a6",
+      "revision": "85b5dfd8d1a7",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -247,7 +247,7 @@
       "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
       "url": "https://agent-tune.com/guides/open-personality-tests",
       "markdown": "https://agent-tune.com/guides/open-personality-tests.md",
-      "revision": "08951d53678b",
+      "revision": "314793c45499",
       "evidence_status": "practical_guidance",
       "updated": null
     },
@@ -267,7 +267,7 @@
       "title": "Personality prompts vs plain English: test kit | AgentTune",
       "url": "https://agent-tune.com/guides/personality-prompts-vs-plain-english",
       "markdown": "https://agent-tune.com/guides/personality-prompts-vs-plain-english.md",
-      "revision": "860f62ab5e48",
+      "revision": "6b3c304276a4",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },

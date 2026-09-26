@@ -33,7 +33,7 @@ test("all 43 tunings retain their complete body across supported model/destinati
           assert.ok(result.length > 150 && result.length <= 1500, tuning.code + " compact " + model.id);
           continue;
         }
-        assert.ok(result.includes(body + "\n<!-- agenttune:end -->"), tuning.code + " / " + model.id + " / " + target.id);
+        assert.ok(result.includes(body + "\n<!-- agenttune:preferences:end -->"), tuning.code + " / " + model.id + " / " + target.id);
         assert.ok(result.includes(model.fullName));
         assert.ok(result.includes("My current task and explicit corrections take precedence."));
         assert.doesNotMatch(result, /TUNING_PLACEHOLDER|cat > (?:CLAUDE|AGENTS)\.md/);

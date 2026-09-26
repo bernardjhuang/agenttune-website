@@ -24,7 +24,7 @@
       const adapted = prompt(source, modelId);
       return adapted.length <= 1500 ? adapted : source.length <= 1500 ? source : "";
     }
-    const body = "<!-- agenttune:start -->\n" + prompt(tuning, modelId) + "\n<!-- agenttune:end -->";
+    const body = "<!-- agenttune:preferences:start -->\n" + prompt(tuning, modelId) + "\n<!-- agenttune:preferences:end -->";
     if (!stripFrontMatter(tuning)) return "";
     if (targetId === "muse") return 'Update only the "How to work with me" section in Soul.md with the communication preferences below. Preserve all other content and existing permissions. Show me the resulting section.\n\n' + body;
     if (targetId === "claude-code") return "---\nname: AgentTune\ndescription: Personal communication preferences from AgentTune\nkeep-coding-instructions: true\n---\n\n" + body;
@@ -58,7 +58,7 @@
       '<label for="'+uid+'-edit">3. Review and edit your instructions</label><textarea id="'+uid+'-edit" class="prompt-edit snippet" data-edit spellcheck="false"></textarea>' +
       '<div class="prompt-actions"><button type="button" class="btn btn-primary" data-copy>Copy instructions</button><button type="button" class="btn btn-secondary" data-reset>Reset edits</button></div>' +
       '<p class="prompt-picker-status" role="status" aria-live="polite" data-status></p>' +
-      '<details><summary>4. Check the fit after pasting</summary><p>Reopen the saved settings or file and confirm the text is present. In a new conversation, try a factual question, a planning task, and a critique request without repeating the desired style. Compare the replies with your preferences; one matching reply does not prove persistent compliance.</p><p>To undo, remove only the section between <code>agenttune:start</code> and <code>agenttune:end</code>, or the exact text you added. Preserve the rest of the file.</p><div class="prompt-actions"><button type="button" class="btn btn-secondary" data-useful>Fits my preferences</button><button type="button" class="btn btn-secondary" data-improve>Needs adjustment</button></div></details></article>';
+      '<details><summary>4. Check the fit after pasting</summary><p>Reopen the saved settings or file and confirm the text is present. In a new conversation, try a factual question, a planning task, and a critique request without repeating the desired style. Compare the replies with your preferences; one matching reply does not prove persistent compliance.</p><p>To undo, remove only the section between <code>agenttune:preferences:start</code> and <code>agenttune:preferences:end</code>, or the exact text you added. Preserve the rest of the file.</p><div class="prompt-actions"><button type="button" class="btn btn-secondary" data-useful>Fits my preferences</button><button type="button" class="btn btn-secondary" data-improve>Needs adjustment</button></div></details></article>';
     const $ = selector => root.querySelector(selector);
     const appSelect = $('[data-app]'), modelSelect = $('[data-model]'), targetSelect = $('[data-target]'), editor = $('[data-edit]');
     const appForTarget = id => APPS.find(a=>a.targets.includes(id) && id!=='anywhere');

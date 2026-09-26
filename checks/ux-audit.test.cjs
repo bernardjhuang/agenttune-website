@@ -20,7 +20,7 @@ test('quiz drafts validate responses, expire, resume explicitly and clear withou
  for(const bad of [{answers:[9,null],updated:Date.now()},{answers:[4,null],updated:0},{answers:[4],updated:Date.now()}]){f.storage.set(key,JSON.stringify(bad));f.ctx.ATQuiz.draft(f.document,state,2);assert.equal(f.storage.has(key),false);}
 });
 test('all tuning exports use the shared registry and the separate verification contract',()=>{
- const published=JSON.parse(read('resources/platforms.json'));assert.deepEqual(published,registry);
+ const published=JSON.parse(read('resources/platforms.json'));assert.deepEqual(published,registry);assert.deepEqual(require("../resources/tools/core").destinations,registry.fileDestinations);
  for(const t of catalog.tunings){const md=read(t.src),body=read(new URL(t.body).pathname);assert.ok(md.endsWith(body));assert.match(md,/agenttune_version: 2/);assert.ok(md.includes('platform_registry_version: '+registry.version));assert.match(md,/"muse":/);assert.match(md,/saved_text:/);assert.doesNotMatch(md,/verify\.probe|expected_behavior|user identifies as|OCEAN \(measured\) >/);assert.match(body,/material uncertainty/);assert.match(body,/authorized scope/);assert.ok(t.revision&&t.evidence_status);}
 });
 test('all type pages place setup before raw content and keep secondary sections crawlable',()=>{

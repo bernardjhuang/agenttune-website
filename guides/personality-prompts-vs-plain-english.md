@@ -69,5 +69,6 @@ Publish the exact configuration, task set, attempted replies, ratings and exclus
 
 ## Keep going.
 
+          [Free browser toolCheck your instructions for repetition and conflicts](https://agent-tune.com/tools/instruction-checker)
           [Related resourceWhy repetition alone is not validation](https://agent-tune.com/research/ai-personality-repeatability)
           [Related resourceMake a study reproducible](https://agent-tune.com/guides/reproduce-ai-personality-research)

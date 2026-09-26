@@ -182,6 +182,7 @@ Use a type or trait as a starting hypothesis for your preferences. The reports d
 
 ## Keep going.
 
+          [Free browser toolReview a memory export locally](https://agent-tune.com/tools/ai-memory-reviewer)
           [GuideMeta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
           [GuideTwenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
           [GuideMuse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)

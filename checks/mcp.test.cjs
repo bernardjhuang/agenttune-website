@@ -66,3 +66,10 @@ test('MCP structured results match advertised schemas and retain readable text',
  }
  const bad=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'../../package.json'}}))).json()).result;assert.equal(bad.isError,true);
 });
+
+test('MCP free tools discovery returns the public catalog in both structured and text form without accepting personal input',async()=>{
+  const list=await (await call(rpc('tools/list'))).json();
+  const spec=list.result.tools.find(t=>t.name==='get_free_tools');assert.ok(spec.outputSchema);assert.equal(spec.annotations.readOnlyHint,true);
+  const r=await (await call(rpc('tools/call',{name:'get_free_tools'}))).json();assert.equal(r.result.structuredContent.tools.length,8);assert.deepEqual(JSON.parse(r.result.content[0].text),r.result.structuredContent);
+  const old=reads;const bad=await (await call(rpc('tools/call',{name:'get_free_tools',arguments:{text:'private'}}))).json();assert.equal(bad.error.code,-32602);assert.equal(reads,old);
+});

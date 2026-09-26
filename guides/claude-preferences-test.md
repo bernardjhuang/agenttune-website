@@ -62,6 +62,7 @@ After testing, restore your saved settings and remove the temporary project bloc
 
 ## Keep going.
 
+          [Free browser toolCompare your own answers in the free test bench](https://agent-tune.com/tools/instruction-test-bench)
           [Related resourceInstall Claude instructions](https://agent-tune.com/guides/claude-personality)
           [Related resourceSeven behavior-focused preference blocks](https://agent-tune.com/guides/best-claude-personality)
           [Related resourceTest whether a personality label adds value](https://agent-tune.com/guides/personality-prompts-vs-plain-english)

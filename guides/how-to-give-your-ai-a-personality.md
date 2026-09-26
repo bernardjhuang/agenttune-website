@@ -96,6 +96,7 @@ The test is a shortcut, not an identity. The point isn't that you are an INTJ or
 
 ## Keep going.
 
+          [Free browser toolBuild your how-to-work-with-me card](https://agent-tune.com/tools/how-to-work-with-me)
           [ResearchExploratory research and methodology limits](https://agent-tune.com/research)
           [TestsTake a free five-minute personality test](https://agent-tune.com/tests/)
           [LibraryAll 43 tuning files, MIT-licensed](https://agent-tune.com/library/)

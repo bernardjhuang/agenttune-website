@@ -5,7 +5,7 @@ Guide · reference
 
 # An AI personality glossary.
 
-        By Bernard Huang · Updated September 25, 2026
+        By Bernard Huang · Updated September 26, 2026
 
         A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.
 
@@ -39,7 +39,7 @@ High-priority instructions supplied with a model request. API fields and hierarc
 
 ### Custom instructions (ChatGPT)
 
-Preferences under Settings, Personalization, Custom Instructions. OpenAI lists 1,500 characters for Free and Go and 5,000 for paid plans named in its documentation; enable customization to use them. See [custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
+Preferences under Settings, Personalization, Custom Instructions. Available controls and limits vary by client. Use the limit shown in your app; AgentTune’s compact export budget is 1,500 characters. See [custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
 
 ### Instructions for Claude
 
@@ -59,7 +59,7 @@ The project file Claude Code reads at the start of a session: commands, conventi
 
 ### AGENTS.md
 
-An open, cross-agent instruction file read by Codex, Cursor and others. For GPT-6 Astra in ChatGPT Work and Codex, the personal copy at ~/.codex/AGENTS.md is where your rules go. See [the Astra guide](https://agent-tune.com/guides/astra-personality).
+An open, cross-agent instruction file read by Codex, Cursor and others. In local Codex, the personal copy at ~/.codex/AGENTS.md is where your rules go. See [the Astra guide](https://agent-tune.com/guides/astra-personality).
 
 ### Soul.md
 

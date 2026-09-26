@@ -47,6 +47,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Check your instructions for repetition and conflicts",
+      "href": "/tools/instruction-checker"
+    },
+    {
       "kicker": "Related resource",
       "href": "/research/ai-personality-repeatability",
       "label": "Why repetition alone is not validation"

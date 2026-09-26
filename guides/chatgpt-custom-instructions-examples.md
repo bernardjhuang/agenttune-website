@@ -188,6 +188,7 @@ Lead with the answer or the recommendation, then the key reason. Keep simple ans
 
 ## Keep going.
 
+          [Free browser toolBuild your own communication preferences](https://agent-tune.com/tools/communication-preferences-builder)
           [GuideChatGPT custom instructions for all 16 MBTI types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
           [ToolFree ChatGPT custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
           [GuideHow to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)

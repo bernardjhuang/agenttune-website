@@ -24,7 +24,16 @@ Scope: all four high-priority and fifteen medium-priority findings in the Septem
 
 ## Validation record
 
-Record final automated and browser verification before merge. Automated interaction checks are not observed human usability sessions.
+Verified against the release integrated with PR #26’s eight tools:
+
+- 86 automated tests pass, including all 2,003 retained scoring vectors, draft validation, install metadata, structured MCP responses and the existing tools regressions.
+- 111 built HTML pages pass internal link, anchor and asset checks.
+- All 111 pages pass axe accessibility checks and horizontal-overflow checks at 390 × 844 and 1280 × 900. Automated scans do not establish complete accessibility conformance.
+- Answer labels are visible on all five questionnaires at 320, 390 and 480 pixels; manually checked resume, copy/edit persistence, app selection, filters and setup focus.
+- Build produces 402 public files. Enneagram React starter archive matches the source files.
+- The eight tools’ destination snapshot is generated from the shared platform registry; source and generated content remain reproducible through `npm run build:content` and `npm run build`.
+
+Automated interaction checks are not observed human usability sessions. The study below remains unrun.
 
 ## Five-person usability study — prepared, not run
 

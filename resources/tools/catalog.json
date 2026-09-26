@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "name": "AgentTune free tools",
+  "privacy": "Tool inputs are processed in the browser tab, without model calls, accounts, or automatic persistence. Explicit downloads and card share links contain user-selected content.",
+  "tools": [
+    {
+      "id": "preferences",
+      "name": "Communication preferences builder",
+      "url": "https://agent-tune.com/tools/communication-preferences-builder",
+      "description": "Build custom AI instructions from your preferred tone, detail, feedback and format. No personality test or signup. Edit and export locally.",
+      "guide": "https://agent-tune.com/guides/chatgpt-custom-instructions-examples"
+    },
+    {
+      "id": "checker",
+      "name": "Instruction checker",
+      "url": "https://agent-tune.com/tools/instruction-checker",
+      "description": "Check custom instructions for duplicate lines, absolute rules and possible conflicts. Review specific suggestions and choose which duplicates to remove.",
+      "guide": "https://agent-tune.com/guides/personality-prompts-vs-plain-english"
+    },
+    {
+      "id": "soul",
+      "name": "Muse Soul.md editor",
+      "url": "https://agent-tune.com/tools/muse-soul-md-editor",
+      "description": "Edit Muse Soul.md with a merge preview, original-file backup and undo. Preserve existing preferences and add an editable communication template.",
+      "guide": "https://agent-tune.com/guides/muse-soul-md-templates"
+    },
+    {
+      "id": "converter",
+      "name": "Instruction converter & merger",
+      "url": "https://agent-tune.com/tools/instruction-converter",
+      "description": "Format your own instructions for ChatGPT, Claude, Muse, CLAUDE.md, AGENTS.md or an API. Preview merges without replacing existing project context.",
+      "guide": "https://agent-tune.com/guides/coding-agent-personality"
+    },
+    {
+      "id": "bench",
+      "name": "Instruction test bench",
+      "url": "https://agent-tune.com/tools/instruction-test-bench",
+      "description": "Compare AI answers before and after changing instructions. Use fixed probes, randomized A/B labels, word counts and your own ratings. Export results.",
+      "guide": "https://agent-tune.com/guides/claude-preferences-test"
+    },
+    {
+      "id": "enneagram",
+      "name": "Enneagram scoring playground",
+      "url": "https://agent-tune.com/tools/enneagram-scoring-playground",
+      "description": "Explore the 36-item Enneagram scorer: enter answers, see nine totals and ties, export JSON, and use the JavaScript scorer or React TypeScript starter.",
+      "guide": "https://agent-tune.com/guides/enneagram-test-react-typescript"
+    },
+    {
+      "id": "memory",
+      "name": "AI memory export reviewer",
+      "url": "https://agent-tune.com/tools/ai-memory-reviewer",
+      "description": "Review AI memory exports locally. Edit entries, remove exact duplicates, flag sensitive details, redact common patterns and export selected memories.",
+      "guide": "https://agent-tune.com/guides/muse-personality"
+    },
+    {
+      "id": "card",
+      "name": "How to work with me card",
+      "url": "https://agent-tune.com/tools/how-to-work-with-me",
+      "description": "Create an editable how-to-work-with-me card for teammates or AI assistants. Choose what to share, export Markdown or create an optional share link.",
+      "guide": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality"
+    }
+  ],
+  "local_library": "https://agent-tune.com/resources/tools/core.js",
+  "documentation": "https://agent-tune.com/resources/tools/README.md",
+  "destinations": [
+    {
+      "id": "plain",
+      "name": "Any chat · this conversation",
+      "filename": "preferences.md",
+      "help": "Paste into a chat when you want these preferences used. This does not create saved memory."
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT · custom instructions",
+      "filename": "custom-instructions.md",
+      "help": "Review in Settings → Personalization → Custom instructions. Controls and limits can vary by client."
+    },
+    {
+      "id": "claude",
+      "name": "Claude · account instructions",
+      "filename": "claude-instructions.md",
+      "help": "Review in Claude’s account instructions. Use project instructions instead for project-specific context."
+    },
+    {
+      "id": "project",
+      "name": "ChatGPT or Claude · project instructions",
+      "filename": "project-instructions.md",
+      "help": "Add to the selected project’s instructions. Preserve the project’s existing context and requirements."
+    },
+    {
+      "id": "muse",
+      "name": "Muse · Soul.md",
+      "filename": "Soul.md",
+      "help": "Review in Muse’s Assistant Identity settings. Soul.md describes communication style; keep personal facts in Memory.md."
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code · CLAUDE.md",
+      "filename": "CLAUDE.md",
+      "help": "Merge into the intended project’s CLAUDE.md. Keep existing repository instructions. Review scope before saving."
+    },
+    {
+      "id": "codex",
+      "name": "Codex · AGENTS.md",
+      "filename": "AGENTS.md",
+      "help": "Merge into AGENTS.md at the intended scope. A project file and personal instructions have different reach."
+    },
+    {
+      "id": "api",
+      "name": "API · JSON instruction payload",
+      "filename": "instructions.json",
+      "help": "Generic JSON with an instructions field. Adapt to your provider’s documented request schema; this is not a complete API request."
+    }
+  ]
+}

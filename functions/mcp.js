@@ -22,17 +22,26 @@ const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 const SERVER_INFO = {
   name: "agenttune",
   title: "AgentTune — personality tunings for AI agents",
-  version: "1.1.0"
+  version: "1.2.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
 const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
 
-const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use list_resources and get_resource for focused guides and research; get_test_spec returns scoring instructions. Keep answers local and report ties or missing responses explicitly.
+const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for eight browser tools and local processing functions. Use list_resources and get_resource for focused guides and research; get_test_spec returns scoring instructions. Keep answers local and report ties or missing responses explicitly.
 
-When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:start and agenttune:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
+When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:preferences:start and agenttune:preferences:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
 
 const TOOLS = [
+  {
+    name: "get_free_tools",
+    title: "Discover AgentTune’s eight free tools",
+    description: "Return the free browser tools catalog, destination registry, and local JavaScript API documentation. No personal data is accepted. Download the functions to process instructions locally; this call does not run models or install preferences.",
+    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+    outputSchema: { type: "object", properties: {version: {type:"string"}, tools: {type:"array",items:{type:"object"}}}, required:["version","tools"] },
+    annotations: { readOnlyHint: true, openWorldHint: false }
+  },
+
   {
     name: "list_tunings",
     title: "List all personality tunings",
@@ -99,7 +108,7 @@ const schemas={
  list_resources:{version:{type:'string'},resources:{type:'array',items:{type:'object',properties:{id:{type:'string'},kind:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['id','kind','url','markdown','revision','evidence_status']}}},
  get_resource:{id:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'}}
 };
-for(const tool of TOOLS) tool.outputSchema={type:'object',properties:schemas[tool.name],required:Object.keys(schemas[tool.name])};
+for(const tool of TOOLS.filter(t=>schemas[t.name])) tool.outputSchema={type:'object',properties:schemas[tool.name],required:Object.keys(schemas[tool.name])};
 function structured(data,text){return {content:[{type:'text',text:text || JSON.stringify(data,null,2)}],structuredContent:data};}
 async function resourceCatalog(env,request){return (await asset(env,request,'/resources/catalog.json')).json();}
 async function listResources(env,request,args){const cat=await resourceCatalog(env,request), query=(args.query||'').toLowerCase().slice(0,200);return structured({version:cat.version,resources:cat.resources.filter(r=>(!args.kind||r.kind===args.kind)&&(!query||(r.title+' '+r.id).toLowerCase().includes(query)))});}
@@ -229,6 +238,7 @@ async function handleRpc(msg, env, request) {
         if (name === "list_tunings") result = await listTunings(env, request, args);
         else if (name === "get_tuning") result = await getTuning(env, request, args);
         else if (name === "get_test_spec") result = await getTestSpec(env, request, args);
+        else if (name === 'get_free_tools') result = structured(await (await asset(env,request,'/resources/tools/catalog.json')).json());
         else if (name === "list_resources") result = await listResources(env, request, args);
         else if (name === "get_resource") result = await getResource(env, request, args);
         else return rpcError(id, -32602, `Unknown tool "${name}". Available: ${TOOLS.map((t) => t.name).join(", ")}.`);

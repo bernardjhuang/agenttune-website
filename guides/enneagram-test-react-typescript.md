@@ -86,6 +86,7 @@ Before publishing an adaptation, test a blank page, keyboard navigation, back na
 
 ## Keep going.
 
+          [Free browser toolTry the Enneagram scoring playground](https://agent-tune.com/tools/enneagram-scoring-playground)
           [Developer resourceUse the standalone JavaScript scorer](https://agent-tune.com/guides/open-source-enneagram-test)
           [ResearchReproduce the raw questionnaire results](https://agent-tune.com/guides/reproduce-ai-personality-research)
           [Prompt libraryEnneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)

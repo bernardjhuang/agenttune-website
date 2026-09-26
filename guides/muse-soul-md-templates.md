@@ -326,6 +326,7 @@ The downloads contain communication preferences only. No personal biography or q
 
 ## Keep going.
 
+          [Free browser toolEdit and merge your Muse Soul.md](https://agent-tune.com/tools/muse-soul-md-editor)
           [GuideMeta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
           [GuideGive Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
           [GuideMuse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)

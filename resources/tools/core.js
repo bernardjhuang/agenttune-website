@@ -1,0 +1,84 @@
+/* AgentTune free tools v1.0 — MIT. Pure functions, no network or storage. */
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.AgentTuneTools=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){
+'use strict';
+const version='1.0.0';
+const destinations=[
+  {
+    "id": "plain",
+    "name": "Any chat · this conversation",
+    "filename": "preferences.md",
+    "help": "Paste into a chat when you want these preferences used. This does not create saved memory."
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT · custom instructions",
+    "filename": "custom-instructions.md",
+    "help": "Review in Settings → Personalization → Custom instructions. Controls and limits can vary by client."
+  },
+  {
+    "id": "claude",
+    "name": "Claude · account instructions",
+    "filename": "claude-instructions.md",
+    "help": "Review in Claude’s account instructions. Use project instructions instead for project-specific context."
+  },
+  {
+    "id": "project",
+    "name": "ChatGPT or Claude · project instructions",
+    "filename": "project-instructions.md",
+    "help": "Add to the selected project’s instructions. Preserve the project’s existing context and requirements."
+  },
+  {
+    "id": "muse",
+    "name": "Muse · Soul.md",
+    "filename": "Soul.md",
+    "help": "Review in Muse’s Assistant Identity settings. Soul.md describes communication style; keep personal facts in Memory.md."
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code · CLAUDE.md",
+    "filename": "CLAUDE.md",
+    "help": "Merge into the intended project’s CLAUDE.md. Keep existing repository instructions. Review scope before saving."
+  },
+  {
+    "id": "codex",
+    "name": "Codex · AGENTS.md",
+    "filename": "AGENTS.md",
+    "help": "Merge into AGENTS.md at the intended scope. A project file and personal instructions have different reach."
+  },
+  {
+    "id": "api",
+    "name": "API · JSON instruction payload",
+    "filename": "instructions.json",
+    "help": "Generic JSON with an instructions field. Adapt to your provider’s documented request schema; this is not a complete API request."
+  }
+];
+const choices={
+length:{concise:'Start with the answer. Keep routine replies brief; expand when the task needs explanation.',balanced:'Give the answer and enough reasoning to act on it. Offer more detail when useful.',detailed:'Explain the reasoning, assumptions, and a worked example when they help.'},
+tone:{direct:'Use plain, direct language and specific feedback.',warm:'Use a warm, calm tone without exaggerated praise.',neutral:'Use a neutral, professional tone.'},
+format:{prose:'Prefer short paragraphs. Use lists only when they make information easier to compare.',bullets:'Use short bullets for parallel points and clear steps for procedures.',adaptive:'Choose paragraphs, lists, or tables to suit the task.'},
+challenge:{candid:'Point out weak assumptions and explain disagreements with evidence.',gentle:'Raise concerns respectfully and offer a practical alternative.',balanced:'Flag material tradeoffs and recommend a path when the evidence supports it.'},
+questions:{minimal:'Ask a question when missing information could materially change the result; otherwise state a reasonable assumption.',early:'Clarify the most important ambiguity before starting dependent work.'}
+};
+function text(value,max=100000){if(typeof value!=='string'||value.length>max)throw Error('Use text of at most '+max.toLocaleString()+' characters.');return value;}
+function preferences(values){const lines=[];for(const [key,options]of Object.entries(choices)){if(!Object.hasOwn(options,values[key]))throw Error('Choose a valid '+key+' preference.');lines.push(options[values[key]]);}if(values.context&&text(values.context,2000).trim())lines.push(values.context.trim());return '# Communication preferences\n\n'+lines.map(x=>'- '+x).join('\n')+'\n\nAdapt to the task and my explicit requests. Be clear about uncertainty and preserve relevant safety, privacy, and project requirements.\n';}
+const START='<!-- agenttune:preferences:start -->',END='<!-- agenttune:preferences:end -->';
+function merge(existing,addition){text(existing);text(addition,20000);if(!addition.trim())throw Error('Add some preferences first.');if(addition.includes(START)||addition.includes(END))throw Error('New preferences must not contain managed-block markers.');const a=existing.split(START).length-1,b=existing.split(END).length-1;if(a!==b||a>1||(a&&existing.indexOf(END)<existing.indexOf(START)))throw Error('Existing managed-block markers are incomplete or duplicated. Repair them before merging.');const block=START+'\n'+addition.trim()+'\n'+END;if(a)return existing.slice(0,existing.indexOf(START))+block+existing.slice(existing.indexOf(END)+END.length);return existing+(existing?existing.endsWith('\n\n')?'':existing.endsWith('\n')?'\n':'\n\n':'')+block+'\n';}
+function convert(source,id,existing=''){text(source,20000);if(!source.trim())throw Error('Paste instructions first.');const d=destinations.find(x=>x.id===id);if(!d)throw Error('Choose a supported destination.');if(id==='api'){if(existing.trim())throw Error('API JSON does not merge existing files. Clear the existing-file field or choose a Markdown destination.');return JSON.stringify({instructions:source.trim()},null,2);}return existing?merge(existing,source):source.trim()+'\n';}
+function check(source){text(source,20000);const out=[],seen=new Map(),lines=source.split(/\r?\n/);const add=(line,code,message,replacement)=>out.push({line,code,message,...(replacement===undefined?{}:{replacement})});
+lines.forEach((line,i)=>{const s=line.trim(),key=s.toLowerCase().replace(/^[-*]\s*/,'');if(s.length>12&&!/^#|^```|^<!--/.test(s)){if(seen.has(key))add(i+1,'duplicate','Repeats line '+seen.get(key)+'. Review before removing.', '');else seen.set(key,i+1);}
+if(/\b(always|never)\b/i.test(s))add(i+1,'absolute','Absolute rule: check whether this needs a task-specific exception.');
+if(/\b(ignore|override|bypass)\b.{0,40}\b(safety|security|system|polic(?:y|ies))\b/i.test(s))add(i+1,'priority','This wording attempts to override safeguards or higher-priority instructions. Rewrite the intended preference.');
+if(/\b(don.t|never|do not)\b.{0,25}\b(uncertain|uncertainty|limitations|caveats)\b/i.test(s))add(i+1,'uncertainty','This may hide useful uncertainty. Ask for concise, relevant caveats instead.');
+if(s.length>400)add(i+1,'long-line','Long paragraph: consider splitting it into focused preferences.');});
+const lower=source.toLowerCase();if(/\b(concise|brief|short)\b/.test(lower)&&/\b(exhaustive|comprehensive|every detail)\b/.test(lower))add(0,'possible-conflict','Contains both brevity and exhaustive-detail requests. They may be compatible if each has a clear scope.');
+return {version,characters:source.length,words:source.trim()?source.trim().split(/\s+/u).length:0,findings:out,limitation:'Rule-based suggestions, not a complete semantic or security audit. No findings does not prove effectiveness.'};}
+function removeDuplicates(source,selected){const findings=check(source).findings.filter(x=>x.code==='duplicate'&&selected.includes(x.line));const remove=new Set(findings.map(x=>x.line));return source.split(/\r?\n/).filter((_,i)=>!remove.has(i+1)).join('\n');}
+function memoryRows(source){text(source,500000);if(!source.trim())throw Error('Paste or import a text, Markdown, or JSON memory export.');let rows=[];if(/^[\[{]/.test(source.trim())){let data;try{data=JSON.parse(source);}catch{throw Error('This looks like JSON but is invalid. Correct the JSON or use plain text.');}let count=0;const visit=(v,path,depth)=>{if(depth>30)throw Error('JSON is nested too deeply. Export a smaller memory-only file.');if(typeof v==='string'||typeof v==='number'||typeof v==='boolean'){if(String(v).trim())rows.push({source:path,text:String(v)});}else if(v&&typeof v==='object')for(const k of Object.keys(v)){if(++count>5000)throw Error('Too many JSON fields. Export a smaller memory-only file.');visit(v[k],path+(Array.isArray(v)?'['+k+']':'.'+k),depth+1);}};visit(data,'$',0);}else rows=source.split(/\r?\n/).map((x,i)=>({source:'line '+(i+1),text:x.trim()})).filter(x=>x.text);
+if(rows.length>500)throw Error('Use at most 500 memory entries at a time.');return rows.map((r,i)=>({...r,id:i+1,category:classify(r.text),keep:true}));}
+function classify(s){if(/\b(password|api[_ -]?key|secret|token|ssn|social security|diagnos|medication)\b|[\w.+-]+@[\w.-]+\.[a-z]{2,}/i.test(s))return 'Sensitive — review';if(/\b(prefer|please|respond|reply|tone|concise|bullets)\b/i.test(s))return 'Communication preference';return 'Context — review';}
+function redact(s){return text(s).replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi,'[email removed]').replace(/\b(?:sk-|ghp_|github_pat_)[A-Za-z0-9_-]{12,}\b/g,'[key removed]').replace(/\b(?:\+?\d[\d ().-]{7,}\d)\b/g,'[number removed]');}
+function dedupe(rows){const seen=new Set();return rows.map(r=>{const key=r.text.trim().toLowerCase().replace(/\s+/g,' ');if(!r.keep)return {...r};const duplicate=seen.has(key);seen.add(key);return {...r,keep:!duplicate};});}
+function metrics(s){text(s,20000);return {characters:s.length,words:s.trim()?s.trim().split(/\s+/u).length:0,bullets:s.split(/\r?\n/).filter(x=>/^\s*(?:[-*]|\d+[.)])\s/.test(x)).length};}
+function card(values){return '# How to work with '+(text(values.name||'me',80).trim()||'me')+'\n\n'+[['Communication',values.communication],['Feedback',values.feedback],['Decisions',values.decisions],['When I am stuck',values.support]].filter(([,v])=>v&&text(v,600).trim()).map(([label,v])=>'## '+label+'\n'+v.trim()).join('\n\n')+'\n';}
+return Object.freeze({version,destinations,choices,preferences,merge,convert,check,removeDuplicates,memoryRows,classify,redact,dedupe,metrics,card});
+});

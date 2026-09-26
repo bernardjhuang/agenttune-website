@@ -77,6 +77,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Edit and merge your Muse Soul.md",
+      "href": "/tools/muse-soul-md-editor"
+    },
+    {
       "kicker": "Guide",
       "label": "Meta Muse, explained",
       "href": "/guides/what-is-meta-muse"
