@@ -1,4 +1,51 @@
 /* Progressive enhancements: all links and article content remain in HTML. */
+(function () {
+  // Keep editable instructions fully readable, including after programmatic updates.
+  const observed = new WeakSet(), widths = new WeakMap();
+  let pending = false;
+  function resize(editor) {
+    if (!editor || editor.tagName !== 'TEXTAREA' || !editor.getBoundingClientRect().width) return;
+    const style = getComputedStyle(editor);
+    const border = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+    editor.style.height = 'auto';
+    editor.style.height = Math.ceil(editor.scrollHeight + border) + 'px';
+    editor.style.overflowY = 'hidden';
+    editor.style.resize = 'none';
+  }
+  function refresh() {
+    pending = false;
+    document.querySelectorAll('textarea').forEach(editor => {
+      if (!observed.has(editor)) {
+        observed.add(editor);
+        observer?.observe(editor);
+      }
+      resize(editor);
+    });
+  }
+  function schedule() {
+    if (!pending) { pending = true; requestAnimationFrame(refresh); }
+  }
+  const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(entries => {
+    for (const {target, contentRect} of entries) {
+      if (widths.get(target) !== contentRect.width) {
+        widths.set(target, contentRect.width);
+        schedule();
+      }
+    }
+  }) : null;
+  window.ATTextareas = { resize, refresh: schedule };
+  document.addEventListener('input', event => resize(event.target));
+  document.addEventListener('toggle', schedule, true);
+  window.addEventListener('resize', schedule);
+  new MutationObserver(schedule).observe(document.body, {
+    childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'open']
+  });
+  if (document.fonts) {
+    document.fonts.ready.then(schedule);
+    document.fonts.addEventListener('loadingdone', schedule);
+  }
+  refresh();
+})();
 (function(){
  const form=document.querySelector('[data-resource-filter]');
  if(form){
