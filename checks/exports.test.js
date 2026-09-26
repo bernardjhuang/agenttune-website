@@ -8,7 +8,7 @@ const { spawnSync } = require('node:child_process');
 const compact = require('../compact-tunings');
 const { fixture, ROOT } = require('./browser-fixture.cjs');
 const catalog = require('../library/index.json');
-const f = fixture(); f.run('data.js'); f.run('compact-tunings.js'); f.run('integrations.js');
+const f = fixture(); f.run('data.js'); f.run('compact-tunings.js'); f.run('platforms.js'); f.run('integrations.js');
 
 test('every catalog tuning has a compact export under 1500 characters, from both rich and fallback Markdown', () => {
   assert.equal(catalog.tunings.length, 43);
@@ -46,34 +46,27 @@ function pickerFixture(html = '') {
   const g = fixture(html);
   const root = g.ids.get('integration-deep') || g.document.createElement('div');
   root.id = 'integration-deep'; root.nodeType = 1;
-  root.queries = { '[data-model]': g.document.createElement('select'), '[data-target]': g.document.createElement('select') };
-  g.run('data.js'); g.run('compact-tunings.js'); g.run('integrations.js');
+  root.queries = { '[data-app]': g.document.createElement('select'), '[data-model]': g.document.createElement('select'), '[data-target]': g.document.createElement('select') };
+  g.run('data.js'); g.run('compact-tunings.js'); g.run('platforms.js'); g.run('integrations.js');
   return { ...g, root, field: sel => root.querySelector(sel) };
 }
 
-test('generator disables old output during loads, ignores stale responses, and rejects failed fetches', async () => {
-  const html = fs.readFileSync(ROOT+'/tools/custom-instructions-generator.html','utf8');
-  const g = pickerFixture(html), pending = new Map();
-  g.ctx.fetch = url => url === '/library/index.json' ? Promise.resolve({ok:true,json:async()=>catalog}) : new Promise(resolve=>pending.set(url,resolve));
-  const code = [...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(m=>m[1].includes('const labels ='))[1];
-  const flush = () => new Promise(resolve=>setImmediate(resolve));
-  vm.runInContext(code,g.ctx); await flush();
-  assert.equal(g.root.hidden,true);
-  const first = [...pending.values()][0];
-  g.ids.get('type').value='infp'; g.ids.get('type').fire('change');
-  const second = pending.get('/tunings/mbti/INFP.md');
-  second({ok:true,text:async()=>'# Current tuning'}); await flush();
-  assert.equal(g.root.hidden,false);
-  assert.equal(g.field('[data-copy]').disabled,false);
-  assert.match(g.field('.snippet').textContent,/# Current tuning/);
-  first({ok:true,text:async()=>'OUTDATED TUNING'}); await flush();
-  assert.doesNotMatch(g.field('.snippet').textContent,/OUTDATED/);
-  g.ids.get('type').value='entp'; g.ids.get('type').fire('change');
-  assert.equal(g.root.hidden,true);
-  assert.equal(g.field('[data-copy]').disabled,true);
-  pending.get('/tunings/mbti/ENTP.md')({ok:false}); await flush();
-  assert.equal(g.root.hidden,true);
-  assert.match(g.ids.get('load-status').textContent,/Couldn't load/);
+test('generator starts unselected, disables stale output during loads, and ignores out-of-order fetches', async () => {
+  const html=fs.readFileSync(ROOT+'/tools/custom-instructions-generator.html','utf8');
+  const g=pickerFixture(html),pending=new Map();g.ctx.fetch=url=>url==='/library/index.json'?Promise.resolve({ok:true,json:async()=>catalog}):new Promise(resolve=>pending.set(url,resolve));
+  const code=[...html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].find(m=>m[1].includes('const labels='))[1];
+  const flush=()=>new Promise(resolve=>setImmediate(resolve));
+  g.ids.get('approach').value='preferences';g.ids.get('preferences').querySelectorAll=()=>[];
+  vm.runInContext(code,g.ctx);await flush();
+  assert.equal(g.field('[data-copy]').disabled,true);assert.equal(pending.size,0);
+  g.ids.get('approach').value='template';g.ids.get('type').value='entp';g.ids.get('type').fire('change');
+  const first=pending.get('/tunings/mbti/ENTP.md');assert.equal(g.field('[data-copy]').disabled,true);
+  g.ids.get('type').value='infp';g.ids.get('type').fire('change');
+  pending.get('/tunings/mbti/INFP.md')({ok:true,text:async()=>'# Current tuning'});await flush();
+  assert.equal(g.field('[data-copy]').disabled,false);assert.match(g.field('[data-edit]').value,/# Current tuning/);
+  first({ok:true,text:async()=>'OUTDATED TUNING'});await flush();assert.doesNotMatch(g.field('[data-edit]').value,/OUTDATED/);
+  g.ids.get('type').value='intp';g.ids.get('type').fire('change');assert.equal(g.field('[data-copy]').disabled,true);
+  pending.get('/tunings/mbti/INTP.md')({ok:false});await flush();assert.equal(g.field('[data-copy]').disabled,true);assert.match(g.ids.get('load-status').textContent,/Could not load/);
 });
 
 test('picker copies compact ChatGPT exports and retains full text in other destinations', async () => {
@@ -82,38 +75,23 @@ test('picker copies compact ChatGPT exports and retains full text in other desti
   const body = fs.readFileSync(path.join(ROOT,'tunings/attachment/anxious.md'),'utf8');
   g.ctx.renderIntegrations(body,{container:g.root,model:'sol-6',target:'chatgpt-custom'});
   const expected = g.ctx.AT_PROMPTS.snippet(body,'sol-6','chatgpt-custom');
-  assert.equal(g.field('.snippet').textContent,expected);
+  assert.equal(g.field('[data-edit]').value,expected);
   assert.ok(expected.length <= 1500);
   g.field('[data-copy]').click(); await Promise.resolve(); assert.equal(clipboard,expected);
   g.root.__atPicker.selectTarget('anywhere');
-  assert.ok(g.field('.snippet').textContent.length > 1500);
-  assert.ok(g.field('.snippet').textContent.endsWith(g.ctx.AT_PROMPTS.stripFrontMatter(body)));
+  assert.ok(g.field('[data-edit]').value.length > expected.length);
+  assert.ok(g.field('[data-edit]').value.includes(g.ctx.AT_PROMPTS.stripFrontMatter(body)));
   g.root.__atPicker.selectTarget('chatgpt-custom');
   g.root.__atPicker.setTuning('Unknown custom text '.repeat(100));
   assert.equal(g.field('[data-copy]').disabled,true);
-  assert.match(g.field('[data-status]').textContent,/No compact version/);
+  assert.match(g.field('[data-status]').textContent,/Choose preferences/);
 });
 
-test('documented downloads are safe to repeat and HTTP failures preserve existing instructions and styles', () => {
-  const llms = fs.readFileSync(ROOT+'/llms.txt','utf8');
-  const recipes = [...llms.matchAll(/```[^\n]*\n([\s\S]*?)```/g)].map(m=>m[1]).filter(s=>s.includes('tuning_dir=$(mktemp'));
-  assert.equal(recipes.length,3);
-  const mock = 'curl() { if [ "$MOCK_FAIL" = "1" ]; then return 22; fi; while [ "$1" != "--output" ]; do shift; done; shift; printf "%s\\n" "# Downloaded tuning" > "$1"; }\n';
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(),'agenttune-download-check-'));
-  try {
-    for (const [i, recipe] of recipes.entries()) {
-      const cwd=path.join(dir,String(i)); fs.mkdirSync(cwd);
-      fs.mkdirSync(path.join(cwd,'.claude/output-styles'),{recursive:true});
-      const paths=['CLAUDE.md','AGENTS.md','.claude/output-styles/agenttune-mbti-estp.md'];
-      for(const p of paths)fs.writeFileSync(path.join(cwd,p),'Existing custom rules.');
-      for(const fail of ['0','1']) {
-        const cmd=mock+recipe.replaceAll('~/.claude','./.claude');
-        const run=spawnSync('sh',['-c',cmd],{cwd,encoding:'utf8',env:{...process.env,MOCK_FAIL:fail}});
-        if(fail==='1')assert.notEqual(run.status,0);
-        for(const p of paths)assert.equal(fs.readFileSync(path.join(cwd,p),'utf8'),'Existing custom rules.');
-      }
-    }
-  } finally { fs.rmSync(dir,{recursive:true,force:true}); }
+test('installation protocol separates storage from behavior and preserves existing content',()=>{
+ const protocol=fs.readFileSync(ROOT+'/resources/install-protocol.md','utf8');
+ assert.match(protocol,/replace only that block/);assert.match(protocol,/markers are duplicated or incomplete/);
+ assert.match(protocol,/not that it is always applied/);assert.match(protocol,/remove only the managed block/);
+ assert.doesNotMatch(protocol,/curl[^\n]*[>]\s*(CLAUDE|AGENTS)/);
 });
 
 test('picker file destinations emit reviewable text and never destructive install commands', () => {

@@ -8,6 +8,7 @@ const source = fs.readFileSync(path.join(root, "integrations.js"), "utf8");
 function load(fetch = async () => { throw new Error("Unexpected fetch"); }) {
   const context = { window: {}, document: { addEventListener() {} }, fetch };
   vm.runInNewContext(fs.readFileSync(path.join(root, "compact-tunings.js"), "utf8"), context);
+  vm.runInNewContext(fs.readFileSync(path.join(root, "platforms.js"), "utf8"), context);
   vm.runInNewContext(source, context);
   return context.window;
 }
@@ -32,7 +33,7 @@ test("all 43 tunings retain their complete body across supported model/destinati
           assert.ok(result.length > 150 && result.length <= 1500, tuning.code + " compact " + model.id);
           continue;
         }
-        assert.ok(result.endsWith(body), tuning.code + " / " + model.id + " / " + target.id);
+        assert.ok(result.includes(body + "\n<!-- agenttune:end -->"), tuning.code + " / " + model.id + " / " + target.id);
         assert.ok(result.includes(model.fullName));
         assert.ok(result.includes("My current task and explicit corrections take precedence."));
         assert.doesNotMatch(result, /TUNING_PLACEHOLDER|cat > (?:CLAUDE|AGENTS)\.md/);

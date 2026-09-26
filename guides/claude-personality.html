@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude</span>
         <h1 class="h-hero h-research-hero">How to change Claude’s personality.</h1>
-        <p class="article-dek">Current settings, five editable setups, and what 1,000 recorded assessments can tell us.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Start with the communication behavior you want: shorter answers, clearer disagreement, more exploration or better progress updates. This guide pairs practical settings with recorded Opus and Fable questionnaire results and a way to evaluate your own instructions.</p>
+        <p class="lede" style="margin-top: 18px;">Open Settings → Instructions for Claude and add a short communication-preferences block. Use project instructions for a particular project and Skills for reusable tasks. Test the result on real work; questionnaire scores do not prove that a tuning improves behavior.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Open Settings → Instructions for Claude and add a short communication-preferences block. Use project instructions for a particular project and Skills for reusable tasks. Test the result on real work; questionnaire scores do not prove that a tuning improves behavior.</div>
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="opus-5-5" data-guide-target="claude-ai"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=opus-5-5&amp;target=claude-ai">open the prompt generator →</a></p></aside>
@@ -217,6 +215,7 @@
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

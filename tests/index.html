@@ -93,13 +93,13 @@
       <h1 class="h-hero h-research-hero">Free personality tests, built for AI tuning.</h1>
       <div class="h-hero h-research-hero h-hero-italic">Tune your agent.</div>
       <p class="lede">
-        Each test takes 3–7 minutes and returns a Markdown tuning file matched to your personality. Paste it into your AI agent's system prompt — same model, now extends with how <em>you</em> think. Five tests, five different angles on who you are.
+        Explore your preferences with a 3–7 minute questionnaire. Use the result as a starting point for editable instructions, not a diagnosis. You can also <a href="/tools/custom-instructions-generator">start with your preferences directly</a>.
       </p>
     </section>
 
     <div class="test-catalog-grid">
       <a href="/tests/mbti" class="test-catalog-card" style="border-top-color: #5b4dc0;">
-        <span class="test-catalog-source" style="color: #5b4dc0;">OEJTS · 5 min</span>
+        <span class="test-catalog-source" style="color: #5b4dc0;">Communication · 5 min</span>
         <div class="test-catalog-name">MBTI tuning</div>
         <div class="test-catalog-stats">Communication style · 16 possible files</div>
         <p class="test-catalog-desc">Tells your agent how you process information and how you want to be communicated with. 32 bipolar items, four scored axes.</p>
@@ -107,7 +107,7 @@
       </a>
 
       <a href="/tests/enneagram" class="test-catalog-card" style="border-top-color: #246f48;">
-        <span class="test-catalog-source" style="color: #246f48;">OEPS · 5 min</span>
+        <span class="test-catalog-source" style="color: #246f48;">Motivation · 5 min</span>
         <div class="test-catalog-name">Enneagram tuning</div>
         <div class="test-catalog-stats">Core motivation · 9 possible files</div>
         <p class="test-catalog-desc">Tells your agent what you're protecting and what you're seeking. 36 Likert items, returns one of 9 types plus optional wing.</p>
@@ -115,7 +115,7 @@
       </a>
 
       <a href="/tests/disc" class="test-catalog-card" style="border-top-color: #855b1c;">
-        <span class="test-catalog-source" style="color: #855b1c;">ODAT · 3 min</span>
+        <span class="test-catalog-source" style="color: #855b1c;">Work style · 3 min</span>
         <div class="test-catalog-name">DISC tuning</div>
         <div class="test-catalog-stats">Workplace style · 4 possible files</div>
         <p class="test-catalog-desc">Tells your agent how you behave under pressure and in teams. 16 items — the fastest tuning in the library.</p>
@@ -123,7 +123,7 @@
       </a>
 
       <a href="/tests/attachment" class="test-catalog-card" style="border-top-color: #914d59;">
-        <span class="test-catalog-source" style="color: #914d59;">ECR-R · 5 min</span>
+        <span class="test-catalog-source" style="color: #914d59;">Relationships · 5 min</span>
         <div class="test-catalog-name">Attachment tuning</div>
         <div class="test-catalog-stats">Relational patterns · 4 possible files</div>
         <p class="test-catalog-desc">Tells your agent how you want closeness, distance, and reassurance. 36 items, returns Secure / Anxious / Avoidant / Disorganized.</p>
@@ -131,10 +131,10 @@
       </a>
 
       <a href="/tests/big-five" class="test-catalog-card" style="border-top-color: #3160a7;">
-        <span class="test-catalog-source" style="color: #3160a7;">IPIP-50 · 7 min</span>
+        <span class="test-catalog-source" style="color: #3160a7;">Five traits · 7 min</span>
         <div class="test-catalog-name">OCEAN tuning</div>
-        <div class="test-catalog-stats">Trait dimensions · 10 compositional files</div>
-        <p class="test-catalog-desc">Tells your agent your continuous Big Five trait profile — the most empirically validated tuning. 50 items, returns 5 z-scores.</p>
+        <div class="test-catalog-stats">Trait dimensions · 10 optional templates</div>
+        <p class="test-catalog-desc">Tells your agent your continuous Big Five trait profile — an editable set of communication preferences. 50 items, returns 5 reference indices.</p>
         <span class="test-catalog-link" style="color: #3160a7;">Get your OCEAN tuning →</span>
       </a>
     </div>
@@ -143,12 +143,12 @@
       <span class="pill">Workflow for agents</span>
       <h2 class="h-sub">How to use these pages.</h2>
       <ol class="steps-list" style="font-size: 16px; line-height: 1.6; max-width: 760px;">
-        <li><strong>Ask your user</strong> which test they want to take, or default to MBTI as a starting point.</li>
+        <li><strong>Ask your user</strong> whether they want a questionnaire or prefer to choose communication preferences directly. Do not infer a type.</li>
         <li><strong>Open the matching test page</strong> on this site (or fetch the equivalent Markdown from <code>tests/&lt;test&gt;.md</code> in the GitHub repo).</li>
         <li><strong>Present the items to your user.</strong> Default to bulk-paste delivery — show all items at once and ask for the response numbers in one reply.</li>
-        <li><strong>Apply the scoring algorithm</strong> on the test page. Don't reveal scoring while administering — it biases responses.</li>
+        <li><strong>Use the <a href="/resources/scoring/README.md">local scorer</a> or scoring algorithm</strong> on the test page. Don't reveal scoring while administering — it biases responses.</li>
         <li><strong>Fetch the matching tuning file</strong> from the repo using the path indicated in the test's output section.</li>
-        <li><strong>Apply the tuning</strong> to your system prompt going forward. Optionally layer additional tunings from other systems.</li>
+        <li><strong>Apply the tuning</strong> only when the user requests installation. Preserve existing instructions and permissions. Follow the <a href="/resources/install-protocol.md">installation protocol</a>; explicit preferences resolve conflicts.</li>
       </ol>
     </section>
 

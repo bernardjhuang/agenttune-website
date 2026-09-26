@@ -22,20 +22,15 @@ const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 const SERVER_INFO = {
   name: "agenttune",
   title: "AgentTune — personality tunings for AI agents",
-  version: "1.0.1"
+  version: "1.1.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
 const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
 
-const INSTRUCTIONS = `AgentTune is an open (MIT) library of 43 personality tuning files that align an AI agent's interaction style with how a specific user thinks — five systems: MBTI (16), Enneagram (9), DISC (4), Attachment (4), OCEAN/Big Five (10 compositional high/low files).
+const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use list_resources and get_resource for focused guides and research; get_test_spec returns scoring instructions. Keep answers local and report ties or missing responses explicitly.
 
-Typical flow:
-1. User knows their type → get_tuning(system, slug). Apply the returned Markdown as system-prompt content for the session/project (CLAUDE.md, AGENTS.md, custom instructions, or the API system parameter — the file's YAML front-matter lists exact per-surface install paths under install.surfaces and a verification probe under verify.probe).
-2. User doesn't know their type → get_test_spec(test), administer the items inline (bulk-paste all items and ask for a response array), score per the spec's algorithm, then get_tuning with the resulting slug.
-3. Tunings layer: one per system, concatenated. On conflict, precedence is OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
-
-Apply a tuning only when the user requests it; connecting or reading this server does not itself authorize installation. Preserve existing instruction files when merging preferences. Re-tune any time the fit feels wrong. Human-readable pages live at https://agent-tune.com/library; full agent protocol at https://agent-tune.com/llms.txt.`;
+When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:start and agenttune:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
 
 const TOOLS = [
   {
@@ -60,7 +55,7 @@ const TOOLS = [
     name: "get_tuning",
     title: "Get a tuning file (paste-ready Markdown)",
     description:
-      "Fetch one tuning file as Markdown with YAML front-matter. The front-matter is machine-readable install metadata (install.surfaces = where to write it per agent surface, verify.probe = how to confirm it took effect); the body is the behavioral tuning to load as system-prompt content. MIT licensed.",
+      "Fetch one tuning file as Markdown with YAML front-matter. The front-matter links to the shared platform registry and installation protocol. structuredContent.body is the preference text; metadata stays separate. Confirmation of saved text is distinct from evaluation of behavior. MIT licensed.",
     inputSchema: {
       type: "object",
       properties: {
@@ -92,6 +87,23 @@ const TOOLS = [
     annotations: { readOnlyHint: true, openWorldHint: false }
   }
 ];
+
+TOOLS.push(
+  {name:'list_resources', title:'Find guides and research', description:'Search the versioned catalog of setup guides, templates, protocols and research. Returns canonical URLs, Markdown URLs, revisions and evidence status.', inputSchema:{type:'object',properties:{kind:{type:'string',enum:['guide','research']},query:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
+  {name:'get_resource', title:'Read a guide or research article',description:'Retrieve one page-specific Markdown resource by the exact ID from list_resources; includes provenance and evidence status.',inputSchema:{type:'object',properties:{id:{type:'string'}},required:['id'],additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}}
+);
+const schemas={
+ list_tunings:{count:{type:'integer'},license:{type:'string'},next_step:{type:'string'},tunings:{type:'array',items:{type:'object',properties:{system:{type:'string'},slug:{type:'string'},code:{type:'string'},name:{type:'string'},blurb:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['system','slug','canonical_url','body_url','revision','evidence_status']}}},
+ get_tuning:{system:{type:'string'},slug:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'},metadata_markdown:{type:'string'},install_protocol:{type:'string'}},
+ get_test_spec:{test:{type:'string'},canonical_url:{type:'string'},markdown_url:{type:'string'},body:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},
+ list_resources:{version:{type:'string'},resources:{type:'array',items:{type:'object',properties:{id:{type:'string'},kind:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['id','kind','url','markdown','revision','evidence_status']}}},
+ get_resource:{id:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'}}
+};
+for(const tool of TOOLS) tool.outputSchema={type:'object',properties:schemas[tool.name],required:Object.keys(schemas[tool.name])};
+function structured(data,text){return {content:[{type:'text',text:text || JSON.stringify(data,null,2)}],structuredContent:data};}
+async function resourceCatalog(env,request){return (await asset(env,request,'/resources/catalog.json')).json();}
+async function listResources(env,request,args){const cat=await resourceCatalog(env,request), query=(args.query||'').toLowerCase().slice(0,200);return structured({version:cat.version,resources:cat.resources.filter(r=>(!args.kind||r.kind===args.kind)&&(!query||(r.title+' '+r.id).toLowerCase().includes(query)))});}
+async function getResource(env,request,args){const cat=await resourceCatalog(env,request),row=cat.resources.find(r=>r.id===args.id);if(!row)return toolText('Unknown resource ID. Use list_resources.',true);const body=await (await asset(env,request,new URL(row.markdown).pathname)).text();return structured({...row,body});}
 
 const BASE_HEADERS = {
   "access-control-allow-methods": "POST, GET, DELETE, OPTIONS",
@@ -144,19 +156,8 @@ async function listTunings(env, request, args) {
   const cat = await loadCatalog(env, request);
   const rows = cat.tunings
     .filter((t) => !system || t.system === system)
-    .map((t) => ({ system: t.system, slug: t.slug, code: t.code, name: t.name, blurb: t.blurb }));
-  return toolText(
-    JSON.stringify(
-      {
-        count: rows.length,
-        license: "MIT",
-        next_step: "Call get_tuning(system, slug) for the paste-ready file.",
-        tunings: rows
-      },
-      null,
-      2
-    )
-  );
+    .map((t) => ({ system: t.system, slug: t.slug, code: t.code, name: t.name, blurb: t.blurb, canonical_url:t.page, body_url:t.body, revision:t.revision, evidence_status:t.evidence_status }));
+  return structured({count:rows.length,license:'MIT',next_step:'Call get_tuning(system, slug); apply only its body when installation is requested.',tunings:rows});
 }
 
 async function getTuning(env, request, args) {
@@ -175,7 +176,8 @@ async function getTuning(env, request, args) {
     );
   }
   const md = await (await asset(env, request, entry.src)).text();
-  return toolText(md);
+  const body=md.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/,'').trim();
+  return structured({system,slug,canonical_url:entry.page,body_url:entry.body,revision:entry.revision,evidence_status:entry.evidence_status,body,metadata_markdown:md.slice(0,md.indexOf(body)),install_protocol:'https://agent-tune.com/resources/install-protocol.md'},md);
 }
 
 async function getTestSpec(env, request, args) {
@@ -184,7 +186,7 @@ async function getTestSpec(env, request, args) {
     return toolText(`Unknown test "${test}". Valid tests: ${TESTS.join(", ")}.`, true);
   }
   const md = await (await asset(env, request, `/tests/${test}.md`)).text();
-  return toolText(md);
+  return structured({test,canonical_url:'https://agent-tune.com/tests/'+test,markdown_url:'https://agent-tune.com/tests/'+test+'.md',body:md,revision:'2026-09-25.1',evidence_status:'questionnaire_specification_not_diagnostic'},md);
 }
 
 /* ---------- JSON-RPC dispatch ---------- */
@@ -227,6 +229,8 @@ async function handleRpc(msg, env, request) {
         if (name === "list_tunings") result = await listTunings(env, request, args);
         else if (name === "get_tuning") result = await getTuning(env, request, args);
         else if (name === "get_test_spec") result = await getTestSpec(env, request, args);
+        else if (name === "list_resources") result = await listResources(env, request, args);
+        else if (name === "get_resource") result = await getResource(env, request, args);
         else return rpcError(id, -32602, `Unknown tool "${name}". Available: ${TOOLS.map((t) => t.name).join(", ")}.`);
         return { jsonrpc: "2.0", id, result };
       } catch (e) {

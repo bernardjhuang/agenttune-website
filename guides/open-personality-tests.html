@@ -10,7 +10,7 @@
   <meta property="og:description" content="The five open personality tests behind AgentTune: what each measures, how it is scored, where it breaks, and how to run it on a person or a model." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-26" />
   <meta property="og:url" content="https://agent-tune.com/guides/open-personality-tests" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/open-personality-tests" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The five open personality tests, explained","description":"The five open personality tests behind AgentTune: what each measures, how it is scored, where it breaks, and how to run it on a person or a model.","url":"https://agent-tune.com/guides/open-personality-tests","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The five open personality tests, explained","description":"The five open personality tests behind AgentTune: what each measures, how it is scored, where it breaks, and how to run it on a person or a model.","url":"https://agent-tune.com/guides/open-personality-tests","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"The five open personality tests, explained"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the OEJTS the real MBTI?","acceptedAnswer":{"@type":"Answer","text":"No. The MBTI is a trademarked instrument owned by The Myers-Briggs Company. The OEJTS is an open scale from the Open Psychometrics Project that produces the same four-letter type format from its own 32 items and a published scoring rule."}},{"@type":"Question","name":"Are these tests free?","acceptedAnswer":{"@type":"Answer","text":"All five are free to take here without an account. AgentTune’s code licence does not replace the source instruments’ terms; check the original item sources before redistributing an instrument."}},{"@type":"Question","name":"Which test should I choose?","acceptedAnswer":{"@type":"Answer","text":"Choose the construct and scoring format you need: continuous traits, preferences, work-style labels or attachment coordinates. Human validation does not automatically transfer to language-model self-reports, and these tests do not validate a tuning benefit."}},{"@type":"Question","name":"Where do my answers go?","acceptedAnswer":{"@type":"Answer","text":"Nowhere. The tests are scored in your browser and the answers are never sent to a server."}},{"@type":"Question","name":"Can an AI agent take these tests?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each test is served as Markdown at /tests/\u003ctest>.md with the items, the scale and the scoring rule, so an agent can administer it in one request. Withhold the scoring rule while it answers, and keep ties visible when you score."}}]}</script>
 
@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Tests</span>
         <h1 class="h-hero h-research-hero">The five open personality tests, explained.</h1>
-        <p class="article-dek">What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">This page documents the five questionnaires used on AgentTune: their item sources, scoring rules and limits. The items and keys are available to inspect. Scores from human respondents and model-generated answers should not be treated as equivalent psychological measurements.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.</div>
 
       <div class="divider tight"></div>
 
@@ -105,7 +103,7 @@
 
       <section>
         <h2>IPIP-50: the Big Five test.</h2>
-        <p><strong>What it measures.</strong> Five continuous traits: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. Fifty short statements with an implied 'I', such as 'Am the life of the party', rated 1 (very inaccurate) to 5 (very accurate). Ten items per trait, interleaved.</p><p><strong>Scoring.</strong> Reverse-keyed items score 6 minus the answer. Sum the ten items per trait, giving 10 to 50. AgentTune then converts each sum to a z-score against the site’s configured reference means and standard deviations (for example Openness mean 37.5, SD 5.5) and loads a high or low tuning file for any trait past 0.5 SD. Eighteen items are reverse-keyed.</p><p><strong>Limits.</strong> For a model, a score of 47 on Agreeableness means 'answered the agreeable way on nearly every item', not a percentile of anything. Treat the norm conversion as a scoring output, not a claim about where a model sits among people.</p>
+        <p><strong>What it measures.</strong> Five continuous traits: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. Fifty short statements with an implied 'I', such as 'Am the life of the party', rated 1 (very inaccurate) to 5 (very accurate). Ten items per trait, interleaved.</p><p><strong>Scoring.</strong> Reverse-keyed items score 6 minus the answer. Sum the ten items per trait, giving 10 to 50. AgentTune then converts each sum to an index using implementation reference centers and scales (for example Openness mean 37.5, SD 5.5) and loads a high or low tuning file for any trait past the heuristic threshold of ±0.5. Eighteen items are reverse-keyed.</p><p><strong>Limits.</strong> For a model, a score of 47 on Agreeableness means 'answered the agreeable way on nearly every item', not a percentile of anything. The reference constants have no verified normative population. The index is not a population z-score or percentile, for either people or models; high/low template thresholds are heuristic.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -190,6 +188,7 @@
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

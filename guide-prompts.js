@@ -15,6 +15,9 @@
   const blocks = [...document.querySelectorAll(".guide-snippet")].map(block => {
     // Capture the source before adding controls, so repeated copies never include button text.
     const original = block.textContent.trim();
+    const headings=Array.from(document.querySelectorAll('h2,h3,h4'));
+    const heading=headings.filter(h=>h.compareDocumentPosition(block)&Node.DOCUMENT_POSITION_FOLLOWING).pop();
+    const copyName=(heading?.textContent || 'example').trim()+ ' · example '+(Array.from(document.querySelectorAll('.guide-snippet')).indexOf(block)+1);
     const content = document.createElement("span");
     content.className = "guide-snippet-content";
     const copy = document.createElement("button");
@@ -42,7 +45,7 @@
       text = adapted ? prompts.snippet(original, selector.value, block.dataset.promptTarget || "anywhere") : original;
       content.textContent = text;
       copy.textContent = "Copy";
-      copy.setAttribute("aria-label", adapted ? "Copy prompt for " + prompts.modelFor(selector.value).name : "Copy example");
+      copy.setAttribute("aria-label", "Copy " + copyName + (adapted ? " for " + prompts.modelFor(selector.value).name : ""));
       status.textContent = adapted ? text.length.toLocaleString() + " characters · edit after pasting" : "";
     }
     copy.addEventListener("click", async () => {

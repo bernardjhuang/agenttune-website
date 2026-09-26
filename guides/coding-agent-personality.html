@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Coding agents</span>
         <h1 class="h-hero h-research-hero">Coding agent personality: the layer your AGENTS.md is missing.</h1>
-        <p class="article-dek">Code conventions tell the agent what to write. A personality layer tells it how to talk to you.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Every coding agent now reads an instruction file — CLAUDE.md, AGENTS.md, .cursor/rules, copilot-instructions.md. Almost all of them say the same things: run these commands, follow this style, don't touch that directory. Useful — and incomplete. None of it tells the agent how to communicate with the person reading its output. That's the personality layer: how to report, how much reasoning to show, when to push back. This guide covers all four file conventions, then the section they're all missing.</p>
+        <p class="lede" style="margin-top: 18px;">Coding agents read instruction files — CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Coding agents read instruction files — CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.</div>
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
@@ -201,6 +199,7 @@ All timestamps are UTC. All money is integer cents.</div><p>Four conventions, on
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

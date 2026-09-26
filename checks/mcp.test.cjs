@@ -53,3 +53,16 @@ test('MCP allows trusted browser origins and backend clients, rejects untrusted 
   }
   assert.equal((await call(rpc('ping'))).status,200);
 });
+function conforms(schema,value){
+ if(schema.type==='object'){assert.ok(value&&typeof value==='object'&&!Array.isArray(value));for(const key of schema.required||[])assert.ok(Object.hasOwn(value,key),key);for(const [key,s]of Object.entries(schema.properties||{}))if(Object.hasOwn(value,key))conforms(s,value[key]);}
+ else if(schema.type==='array'){assert.ok(Array.isArray(value));value.forEach(v=>conforms(schema.items,v));}
+ else if(schema.type==='integer')assert.ok(Number.isInteger(value));else assert.equal(typeof value,schema.type);
+}
+test('MCP structured results match advertised schemas and retain readable text',async()=>{
+ const tools=(await(await call(rpc('tools/list'))).json()).result.tools;
+ for(const [name,args]of [['list_tunings',{}],['get_tuning',{system:'mbti',slug:'entp'}],['get_test_spec',{test:'big-five'}],['list_resources',{query:'Claude'}],['get_resource',{id:'claude-personality'}]]){
+  const r=(await(await call(rpc('tools/call',{name,arguments:args}))).json()).result;assert.ok(!r.isError,name);assert.ok(r.content[0].text.length);conforms(tools.find(t=>t.name===name).outputSchema,r.structuredContent);
+  if(name==='get_tuning'){assert.match(r.structuredContent.body,/^# ENTP/);assert.doesNotMatch(r.structuredContent.body,/install:/);assert.match(r.structuredContent.metadata_markdown,/install:/);}
+ }
+ const bad=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'../../package.json'}}))).json()).result;assert.equal(bad.isError,true);
+});

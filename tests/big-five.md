@@ -69,12 +69,14 @@ Ten items per OCEAN dimension, interleaved.
 
 1. For each reverse-scored item (✓), compute `scored = 6 − raw`; otherwise `scored = raw`.
 2. Sum the 10 scored items per dimension (range 10–50).
-3. Convert to a z-score using the population norms below: `z = (raw_sum − M) / SD`.
-4. For every dimension with `z > 0.5` load the `-high` file; with `z < −0.5` load the `-low` file; otherwise skip it (the model's default handles average dimensions).
+3. Convert to a reference index using the implementation reference values below: `z = (raw_sum − M) / SD`.
+4. For every dimension with `z > 0.5` load the `-high` file; with `z < −0.5` load the `-low` file; otherwise skip it (no preference is selected for that dimension).
 
-### Population norms
+### Implementation reference values
 
-| Dim | Name | Mean (M) | SD |
+These constants have no verified reference population. Indices are not population z-scores or percentiles. The ±0.5 template-selection thresholds are heuristic, not validated cutoffs. Do not interpret them as meaningful high/low population standings. Require all 50 responses for a complete profile.
+
+| Dim | Name | Reference center (M) | Reference scale (SD) |
 |---|---|---|---|
 | O | Openness | 37.5 | 5.5 |
 | C | Conscientiousness | 34.5 | 6 |

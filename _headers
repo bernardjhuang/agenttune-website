@@ -26,6 +26,10 @@
 /resources/*
   X-Robots-Tag: noindex
 
+/guides/*.md
+  X-Robots-Tag: noindex
+/research/*.md
+  X-Robots-Tag: noindex
 # Test-spec markdown mirrors → canonical = the test page
 /tests/mbti.md
   Link: <https://agent-tune.com/tests/mbti>; rel="canonical"

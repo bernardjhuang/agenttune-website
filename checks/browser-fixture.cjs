@@ -10,7 +10,7 @@ function fixture(html = '') {
   class Element {
     constructor(tag = 'div') {
       this.tagName = tag.toUpperCase(); this.children = []; this.dataset = {}; this.style = {};
-      this.events = {}; this.attributes = {}; this.hidden = false; this.disabled = false; this.textContent = '';
+      this.events = {}; this.attributes = {}; this.hidden = false; this.disabled = false; this.textContent = ''; this.value = '';
       const classes = new Set();
       this.classList = { add: c => classes.add(c), remove: c => classes.delete(c), toggle: (c, on) => on ? classes.add(c) : classes.delete(c), contains: c => classes.has(c) };
     }
@@ -18,6 +18,8 @@ function fixture(html = '') {
     get id() { return this._id; }
     set innerHTML(v) { this._html = v; if (this.tagName === 'SELECT') this.value = /<option value="([^"]+)"/.exec(v)?.[1] || ''; }
     get innerHTML() { return this._html || ''; }
+    select() {}
+    querySelectorAll() {return [];}
     focus() { document.activeElement = this; }
     setAttribute(k, v) { this.attributes[k] = v; }
     getAttribute(k) { return this.attributes[k]; }

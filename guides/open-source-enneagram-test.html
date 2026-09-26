@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Resources</span>
         <h1 class="h-hero h-research-hero">An open-source Enneagram test on GitHub.</h1>
-        <p class="article-dek">A reusable scorer, question data and a live demo of AgentTune’s 36-item adaptation.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Build with the same question order and scoring rules used by AgentTune. Get a dependency-free JavaScript scorer, structured question data, and examples that handle incomplete responses and equal scores explicitly.</p>
+        <p class="lede" style="margin-top: 18px;">Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals and all tied leaders. This is AgentTune’s 36-item adaptation, not the full 54-item OEPS.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals and all tied leaders. This is AgentTune’s 36-item adaptation, not the full 54-item OEPS.</div>
 
       <div class="divider tight"></div>
 
@@ -193,6 +191,7 @@ console.log(score(answers));
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

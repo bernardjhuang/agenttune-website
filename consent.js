@@ -19,7 +19,7 @@
   window[DISABLE_KEY] = true;
 
   window.atTrack = function (event) {
-    if (!allowed || !["quiz_start", "quiz_complete", "tuning_copy", "tuning_download", "generator_copy", "guide_copy", "integration_copy"].includes(event)) return;
+    if (!allowed || !["quiz_start", "quiz_complete", "tuning_copy", "tuning_download", "generator_copy", "guide_copy", "integration_copy", "setup_select", "copy_error", "quiz_resume", "setup_useful", "setup_needs_work", "resource_search"].includes(event)) return;
     window.gtag("event", event);
   };
 
@@ -40,7 +40,7 @@
       if (allowed) window.dataLayer.push(arguments);
     };
     gtag("js", new Date());
-    gtag("config", GA_ID, { anonymize_ip: true });
+    gtag("config", GA_ID, { anonymize_ip: true, page_location: location.origin + location.pathname, page_referrer: "", send_page_view: true });
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;

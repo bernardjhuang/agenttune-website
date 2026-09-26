@@ -88,5 +88,31 @@
       return false;
     }
   }
-  return { transition, scoreMbti, focusQuestion, focusScreen, ignoreShortcut, copyTuning };
+  function draft(doc, state, count, max = 5) {
+    const key = 'at_quiz_v1:' + globalThis.location.pathname;
+    const ttl = 7 * 24 * 60 * 60 * 1000;
+    const read = () => {
+      try {
+        const saved = JSON.parse(globalThis.localStorage.getItem(key));
+        if (!saved || !Number.isFinite(saved.updated) || Date.now() - saved.updated > ttl || !Array.isArray(saved.answers) || saved.answers.length !== count ||
+          saved.answers.some(v => v !== null && (!Number.isInteger(v) || v < 1 || v > max))) { globalThis.localStorage.removeItem(key); return null; }
+        return saved;
+      } catch { return null; }
+    };
+    const clear = () => { try { globalThis.localStorage.removeItem(key); } catch {} };
+    const intro = doc.getElementById('quiz-intro');
+    const row = doc.createElement('div'); row.className = 'local-progress';
+    const notice = doc.createElement('p'); notice.textContent = 'Progress stays in this browser for up to 7 days. Finished answers are cleared. Use Clear saved progress on a shared device.';
+    const resume = doc.createElement('button'); resume.type = 'button'; resume.className = 'btn btn-secondary'; resume.textContent = 'Resume saved test';
+    const reset = doc.createElement('button'); reset.type = 'button'; reset.className = 'btn btn-secondary'; reset.textContent = 'Clear saved progress';
+    row.append(notice, resume, reset); intro.append(row);
+    resume.hidden = !read();
+    reset.addEventListener('click', () => { clear(); resume.hidden = true; notice.textContent = 'Saved progress cleared.'; });
+    return {
+      bind(start) { resume.addEventListener('click', () => { const saved = read(); if (!saved) { resume.hidden = true; return; } state.answers = saved.answers; state.currentIndex = Math.min(count - 1, Math.max(0, Number(saved.index) || 0)); start(); if (globalThis.atTrack) globalThis.atTrack('quiz_resume'); }); },
+      save() { try { globalThis.localStorage.setItem(key, JSON.stringify({ answers: state.answers, index: state.currentIndex, updated: Date.now() })); } catch {} },
+      clear() { clear(); resume.hidden = true; }
+    };
+  }
+  return { draft, transition, scoreMbti, focusQuestion, focusScreen, ignoreShortcut, copyTuning };
 });

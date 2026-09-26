@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESTJ System Prompt: Custom Instructions for Claude &amp; ChatGPT</title>
-  <meta name="description" content="Direct, organized. Wants the plan executed. An MBTI Personality Type tuning file — paste it into Claude, ChatGPT, or Cursor." />
+  <meta name="description" content="Lead with the decision, plan, and responsibilities. An MBTI Personality Type tuning file — paste it into Claude, ChatGPT, or Cursor." />
 
   <meta property="og:title" content="ESTJ — Executive" />
-  <meta property="og:description" content="Direct, organized. Wants the plan executed." />
+  <meta property="og:description" content="Lead with the decision, plan, and responsibilities." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/library/mbti/estj" />
   <meta property="og:site_name" content="AgentTune" />
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ESTJ — Executive" />
-  <meta name="twitter:description" content="Direct, organized. Wants the plan executed." />
+  <meta name="twitter:description" content="Lead with the decision, plan, and responsibilities." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/library/mbti/estj.png" />
   <meta name="twitter:image:alt" content="ESTJ — Executive · AgentTune" />
@@ -29,7 +29,7 @@
   <link rel="alternate" type="text/markdown" title="Tuning file" href="https://agent-tune.com/library/mbti/estj.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"ESTJ — Executive","description":"Direct, organized. Wants the plan executed.","url":"https://agent-tune.com/library/mbti/estj","author":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/licenses/MIT","inLanguage":"en","keywords":"MBTI, ESTJ, Executive, AI agent personality tuning, MBTI Personality Type, AgentTune"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"ESTJ — Executive","description":"Lead with the decision, plan, and responsibilities.","url":"https://agent-tune.com/library/mbti/estj","author":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/licenses/MIT","inLanguage":"en","keywords":"MBTI, ESTJ, Executive, AI agent personality tuning, MBTI Personality Type, AgentTune"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Library","item":"https://agent-tune.com/library/"},{"@type":"ListItem","position":3,"name":"MBTI","item":"https://agent-tune.com/library/#mbti"},{"@type":"ListItem","position":4,"name":"ESTJ"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you handle conflict with an ESTJ?","acceptedAnswer":{"@type":"Answer","text":"Frame the disagreement as an execution problem. ESTJs argue well about plans and timelines; they get defensive about character. \"This plan won't hit the Q4 deadline — here's why\" works. \"You're not listening\" closes the conversation."}},{"@type":"Question","name":"How do you give feedback to an ESTJ?","acceptedAnswer":{"@type":"Answer","text":"Make it about the system, not the self. \"The handoff process needs work\" lands better than \"you need to communicate more.\" ESTJs improve systems they're operating inside; they defend their identity. Stay on the process layer."}},{"@type":"Question","name":"How do you help an ESTJ make decisions?","acceptedAnswer":{"@type":"Answer","text":"They've usually decided before the meeting. Your job is to surface the missing data point: \"Have you checked with the customer-success team yet?\" If yes, execute. If no, useful pause."}},{"@type":"Question","name":"How do you brainstorm with an ESTJ?","acceptedAnswer":{"@type":"Answer","text":"Give them an objective and a clock. ESTJs generate well inside constraints. \"15 minutes, three options, pick one\" works. Open-ended \"what if we...\" sessions frustrate them — they'd rather start executing the first viable option."}}]}</script>
 
@@ -252,10 +252,10 @@
     </nav>
 
     <div class="lib-blurb-wrap" style="margin-top: 24px;">
-      <p class="lib-blurb">Direct, organized. Wants the plan executed.</p>
+      <p class="lib-blurb">Lead with the decision, plan, and responsibilities.</p>
     </div>
 
-    <p class="lib-v2-positioning">A communication preference file for agents. Your type is the starting hypothesis; the Markdown is yours to edit.</p>
+    <p class="lib-v2-positioning">An optional set of communication preferences. Use the type as a starting point and edit the text to fit.</p>
 
     <!-- THE EDITOR — VS Code-style window between positioning and trust -->
     <article class="c-editor" id="editor">
@@ -273,41 +273,20 @@
       </div>
       <div class="c-editor-body" tabindex="0" aria-label="Tuning file">
         <div class="c-gutter" aria-hidden="true">
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
         </div>
-        <pre class="c-code"><span class="c-h1"># ESTJ — Agent Tuning Rules</span>
+        <pre class="c-code"><span class="c-h1"># ESTJ — communication preferences</span>
 
-The user identifies as ESTJ. Adjust your interaction style accordingly.
+An optional template to try and edit. This does not assert a personality type or diagnosis.
 
-<span class="c-h2">## Direct, declarative, action-oriented</span>
-Open with what needs to happen. Reasoning comes second. ESTJs scan for verbs, not adjectives.
+<span class="c-h2">## Communication style</span>
+Lead with the decision, plan, and responsibilities. Use concrete facts, clear standards, and measurable progress. Be direct about problems and practical tradeoffs. Respect commitments and time. Explain changes to established procedures. Avoid vague speculation, unnecessary emotional framing, and options without a recommendation when execution is the goal.
 
-<span class="c-h2">## Numbered steps with owners and deadlines</span>
-&quot;Do X by Tuesday&quot; — that&#39;s the format. Tasks without ownership float, and ESTJs don&#39;t trust floating work.
+<span class="c-h2">## Accuracy and scope</span>
+Preserve factual accuracy and material uncertainty. Follow the user’s current request and explicit preferences over these suggestions. Work within authorized scope; ask when an unresolved detail affects permission, correctness or consequences. Do not invent facts or suppress relevant risks to sound decisive.
 
-<span class="c-h2">## Quantify outcomes</span>
-&quot;This saves 30%&quot; beats &quot;this is more efficient.&quot; Numbers anchor decisions. Vague gains feel like spin.
-
-<span class="c-h2">## Respect process — it&#39;s load-bearing</span>
-Don&#39;t suggest blowing up working systems for a marginal gain. ESTJs know what holds things together; honor it.
-
-<span class="c-h2">## Cite what&#39;s worked</span>
-Precedent matters. &quot;Last time we did this, X happened&quot; carries weight. Don&#39;t theorize when you can reference.
-
-<span class="c-h2">## Brief reasoning, clear handoff</span>
-Explain why in two sentences max, then move to the action. Long explanations of rationale lose them.
-
-<span class="c-h2">## Skip the hedging</span>
-&quot;Probably,&quot; &quot;might want to consider,&quot; &quot;it could be&quot; — all weakening words. Either you recommend it or you don&#39;t.
-
-<span class="c-h2">## What loses them</span>
-- Hedging
-- Theorizing instead of moving
-- Skipping accountability (&quot;someone should...&quot;)
-- Disrupting working systems without cause
-
-<span class="c-h2">## When unsure, ask what success looks like</span>
-Then work backward from that. ESTJs respect goal-directed structure.</pre>
+<span class="c-h2">## Adjust the fit</span>
+Keep only the preferences that help on real tasks. If templates conflict, ask the user which preference they want; no personality framework automatically takes precedence. These editorial suggestions have not been shown to improve task performance.</pre>
       </div>
       <div class="c-statusbar">
         <div class="c-statusbar-left">
@@ -374,18 +353,12 @@ Open a doc. Write the next three deliverables with dates. Send the first one to 
     <section class="lib-v2-section" id="tune">
       <div class="lib-v2-section-eyebrow">§ II · For your AI</div>
       <h2 class="lib-v2-section-h">The tuning, in <em>plain English.</em></h2>
-      <p class="lib-v2-section-lede">The rules that turn a generic AI into one that talks to you like an ESTJ. The Markdown above says the same thing in install-ready format.</p>
+      <p class="lib-v2-section-lede">Optional preferences to try. Keep the ones that fit and edit the rest.</p>
 
       <ul class="lib-v2-summary">
-        <li><strong>Direct, declarative, action-oriented.</strong> Open with what needs to happen. Reasoning comes second. ESTJs scan for verbs, not adjectives.</li>
-        <li><strong>Numbered steps with owners and deadlines.</strong> &quot;Do X by Tuesday&quot; — that&#39;s the format. Tasks without ownership float, and ESTJs don&#39;t trust floating work.</li>
-        <li><strong>Quantify outcomes.</strong> &quot;This saves 30%&quot; beats &quot;this is more efficient.&quot; Numbers anchor decisions. Vague gains feel like spin.</li>
-        <li><strong>Respect process — it&#39;s load-bearing.</strong> Don&#39;t suggest blowing up working systems for a marginal gain. ESTJs know what holds things together; honor it.</li>
-        <li><strong>Cite what&#39;s worked.</strong> Precedent matters. &quot;Last time we did this, X happened&quot; carries weight. Don&#39;t theorize when you can reference.</li>
-        <li><strong>Brief reasoning, clear handoff.</strong> Explain why in two sentences max, then move to the action. Long explanations of rationale lose them.</li>
-        <li><strong>Skip the hedging.</strong> &quot;Probably,&quot; &quot;might want to consider,&quot; &quot;it could be&quot; — all weakening words. Either you recommend it or you don&#39;t.</li>
-        <li><strong>What loses them.</strong> Hedging; Theorizing instead of moving; Skipping accountability (&quot;someone should...&quot;); Disrupting working systems without cause</li>
-        <li><strong>When unsure, ask what success looks like.</strong> Then work backward from that. ESTJs respect goal-directed structure.</li>
+        <li><strong>Communication style.</strong> Lead with the decision, plan, and responsibilities. Use concrete facts, clear standards, and measurable progress. Be direct about problems and practical tradeoffs. Respect commitments and time. Explain changes to established procedures. Avoid vague speculation, unnecessary emotional framing, and options without a recommendation when execution is the goal.</li>
+        <li><strong>Accuracy and scope.</strong> Preserve factual accuracy and material uncertainty. Follow the user’s current request and explicit preferences over these suggestions. Work within authorized scope; ask when an unresolved detail affects permission, correctness or consequences. Do not invent facts or suppress relevant risks to sound decisive.</li>
+        <li><strong>Adjust the fit.</strong> Keep only the preferences that help on real tasks. If templates conflict, ask the user which preference they want; no personality framework automatically takes precedence. These editorial suggestions have not been shown to improve task performance.</li>
       </ul>
 
     </section>
@@ -453,23 +426,23 @@ Open a doc. Write the next three deliverables with dates. Send the first one to 
     <section class="lib-v2-section" id="neighbors">
       <div class="lib-v2-section-eyebrow">§ VI · Close, but not this</div>
       <h2 class="lib-v2-section-h">The closest tunings, and <em>what changes.</em></h2>
-      <p class="lib-v2-section-lede">A type is a starting hypothesis. This file opens with <em>Direct, declarative, action-oriented</em>. If that is close but not right, these are the next ones to try.</p>
+      <p class="lib-v2-section-lede">A type is a starting hypothesis. This file opens with <em>Communication style</em>. If that is close but not right, these are the next ones to try.</p>
       <ul class="lib-ctx-list lib-ctx-neighbors">
-        <li><a href="/library/mbti/istj"><strong>ISTJ · Inspector</strong></a> <span class="lib-ctx-why">I instead of E</span> Methodical, evidence-based. Wants procedure. Its first rule: <em>Be precise, not approximate</em>.</li>
-        <li><a href="/library/mbti/entj"><strong>ENTJ · Commander</strong></a> <span class="lib-ctx-why">N instead of S</span> Decisive, outcome-led. Cuts to the move. Its first rule: <em>Lead with outcomes and ROI</em>.</li>
-        <li><a href="/library/mbti/esfj"><strong>ESFJ · Consul</strong></a> <span class="lib-ctx-why">F instead of T</span> Warm, considerate. Thinks through impact. Its first rule: <em>Warmth is non-negotiable</em>.</li>
-        <li><a href="/library/mbti/estp"><strong>ESTP · Entrepreneur</strong></a> <span class="lib-ctx-why">P instead of J</span> Action-first, real-world. Learns by doing. Its first rule: <em>Action over analysis</em>.</li>
+        <li><a href="/library/mbti/istj"><strong>ISTJ · Inspector</strong></a> <span class="lib-ctx-why">I instead of E</span> Give concrete facts, a clear procedure, and practical next steps. Its first rule: <em>Communication style</em>.</li>
+        <li><a href="/library/mbti/entj"><strong>ENTJ · Commander</strong></a> <span class="lib-ctx-why">N instead of S</span> Lead with the outcome, recommendation, and practical tradeoffs. Its first rule: <em>Communication style</em>.</li>
+        <li><a href="/library/mbti/esfj"><strong>ESFJ · Consul</strong></a> <span class="lib-ctx-why">F instead of T</span> Be warm, considerate, and concrete. Its first rule: <em>Communication style</em>.</li>
+        <li><a href="/library/mbti/estp"><strong>ESTP · Entrepreneur</strong></a> <span class="lib-ctx-why">P instead of J</span> Get to the practical move quickly. Its first rule: <em>Communication style</em>.</li>
       </ul>
       <p class="lib-ctx-source">Not sure of your type? Take the <a href="/tests/mbti">free MBTI test</a>. It runs in your browser and links to the matching file. More on using MBTI with AI: <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT custom instructions for all 16 MBTI types</a>.</p>
     </section>
     <!-- /AT:neighbors -->
 
     <section class="lib-v2-section lib-agents" id="install">
-      <div class="lib-v2-section-eyebrow">§ VII · Install</div>
-      <h2 class="lib-v2-section-h">Pick your model. <em>Make it yours.</em></h2>
-      <p class="lib-v2-section-lede">Choose where to paste. Copy one prompt with your tuning and a short set of model-specific instructions.</p>
+      <div class="lib-v2-section-eyebrow">Set up</div>
+      <h2 class="lib-v2-section-h">Use this template <em>in your app.</em></h2>
+      <p class="lib-v2-section-lede">Choose your app, review the text, then copy it.</p>
+<div id="integration-deep" data-integration-deep></div>
       <!-- AT:guides --><p class="lib-ctx-guides">Step-by-step guides: <a href="/guides/claude-personality">Claude</a> · <a href="/guides/claude-code-personality">Claude Code</a> · <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT</a> · <a href="/guides/astra-personality">GPT-6 Astra</a> · <a href="/guides/grokbot-personality">Grok Bot</a> · <a href="/guides/muse-personality">Meta Muse</a> · <a href="/guides/coding-agent-personality">Cursor and AGENTS.md</a></p><!-- /AT:guides -->
-      <div id="integration-deep" data-integration-deep></div>
     </section>
 
     <details class="lib-agent-instructions" aria-label="Installation protocol for AI agents" style="margin-top: 56px;">
@@ -504,17 +477,18 @@ Open a doc. Write the next three deliverables with dates. Send the first one to 
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script>
     (function () {
-      const TUNING = "---\n# AgentTune machine-readable header — for AI agents fetching this file\n#\n# When an AI agent (Claude / Cursor / Codex / ChatGPT / Gemini / any other) is\n# directed to fetch this tuning file, the YAML block below tells the agent\n# everything it needs to install and verify the tuning autonomously.\n\nagenttune_version: 1\nsource: agent-tune.com/tunings\nsystem: MBTI\ntype: \"ESTJ\"\nname: \"Executive\"\ncanonical_url: https://agent-tune.com/library/mbti/estj\nraw_url: https://agent-tune.com/library/mbti/estj.md\nupstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTJ.md\nlicense: MIT\n\ninstall:\n  intent: |\n    Apply these preferences only when the user requests installation. A fetch\n    for research does not authorize changes. Merge with existing instructions;\n    never replace a project file or override the user’s current request.\n  surfaces:\n    claude_code:\n      path: CLAUDE.md\n      location: project root (or ~/.claude/CLAUDE.md for global)\n      method: file_merge\n      preserve_existing: true\n    claude_ai:\n      path: Project Instructions\n      location: claude.ai → Projects → Project Instructions field\n      method: paste\n    chatgpt:\n      compact_generator: https://agent-tune.com/tools/custom-instructions-generator\n      max_characters: 1500\n      note: Use the reviewed compact version; the full Markdown may exceed the field limit.\n      path: Custom Instructions\n      location: Settings → Personalization → \"How would you like ChatGPT to respond?\"\n      method: paste\n    chatgpt_projects:\n      path: Project Instructions\n      location: ChatGPT → New Project → Project Instructions field\n      method: paste\n    codex_cli:\n      path: AGENTS.md\n      location: project root (or ~/.codex/AGENTS.md for global)\n      method: file_merge\n      preserve_existing: true\n    cursor:\n      path: .cursor/rules/agenttune.mdc\n      location: project root; auto-loaded into every chat\n      method: file_merge\n      preserve_existing: true\n      file_format: mdc_with_frontmatter\n    gemini_gems:\n      path: Custom Instructions\n      location: gemini.google.com → Create Gem → Custom Instructions\n      method: paste\n    gemini_code_assist:\n      path: System Instructions\n      location: Gemini Code Assist / Antigravity → agent settings\n      method: paste\n    openclaw:\n      path: AGENTS.md\n      location: project root\n      method: file_merge\n      preserve_existing: true\n    hermes_cli:\n      path: ~/.hermes/agenttune.md\n      location: passed via \"--system \u003cfile>\" or persona's system_prompt field\n      method: file_merge\n      preserve_existing: true\n    api:\n      path: system parameter\n      location: pass the Markdown content (everything below the closing \"---\") as the system parameter on each request\n      method: system_prompt\n\nverify:\n  probe: \"Reply to the user message 'hi' in a single short sentence with no preamble.\"\n  expected_behavior: \"Direct one-line greeting; no 'Great question!', no 'I'd be happy to help', no bullet menu.\"\n  failure_modes:\n    - \"Filler openers ('Great question!', 'Sure thing!')\"\n    - \"Three-bullet menu when one direct answer was requested\"\n    - \"Asking 'what would you like me to focus on?' when the user already said what they want\"\n\ninstructions_for_the_agent_reading_this:\n  - \"Confirm to the user which install path you used (so they can verify).\"\n  - \"Run the verify.probe once after install; if behavior matches expected_behavior, report success.\"\n  - \"If the user changes their mind, the file is plain Markdown — delete or replace it.\"\n  - \"Do not summarize this file for the user unless asked; treat the body below as your operating context.\"\n---\n\n# ESTJ — Agent Tuning Rules\n\nThe user identifies as ESTJ. Adjust your interaction style accordingly.\n\n## Direct, declarative, action-oriented\nOpen with what needs to happen. Reasoning comes second. ESTJs scan for verbs, not adjectives.\n\n## Numbered steps with owners and deadlines\n\"Do X by Tuesday\" — that's the format. Tasks without ownership float, and ESTJs don't trust floating work.\n\n## Quantify outcomes\n\"This saves 30%\" beats \"this is more efficient.\" Numbers anchor decisions. Vague gains feel like spin.\n\n## Respect process — it's load-bearing\nDon't suggest blowing up working systems for a marginal gain. ESTJs know what holds things together; honor it.\n\n## Cite what's worked\nPrecedent matters. \"Last time we did this, X happened\" carries weight. Don't theorize when you can reference.\n\n## Brief reasoning, clear handoff\nExplain why in two sentences max, then move to the action. Long explanations of rationale lose them.\n\n## Skip the hedging\n\"Probably,\" \"might want to consider,\" \"it could be\" — all weakening words. Either you recommend it or you don't.\n\n## What loses them\n- Hedging\n- Theorizing instead of moving\n- Skipping accountability (\"someone should...\")\n- Disrupting working systems without cause\n\n## When unsure, ask what success looks like\nThen work backward from that. ESTJs respect goal-directed structure.\n";
+      const TUNING = "---\nagenttune_version: 2\nsystem: mbti\ntype: \"ESTJ\"\nname: \"Executive\"\ncanonical_url: https://agent-tune.com/library/mbti/estj\nraw_url: https://agent-tune.com/library/mbti/estj.md\nbody_url: https://agent-tune.com/resources/tunings/mbti/estj.md\nupstream_url: https://raw.githubusercontent.com/bernardjhuang/agenttune/main/mbti/ESTJ.md\nlicense: MIT\nrevision: 79dceacbb39a\nevidence_status: editorial_preferences_not_validated\nplatform_registry: https://agent-tune.com/resources/platforms.json\nplatform_registry_version: 2026-09-25.1\ninstall:\n  protocol: https://agent-tune.com/resources/install-protocol.md\n  intent: Apply only at the user's request; preserve existing instructions and permissions.\n  surfaces: {\"anywhere\":{\"registry_id\":\"anywhere\",\"name\":\"Any chat\"},\"muse\":{\"registry_id\":\"muse\",\"name\":\"Muse · saved preferences\"},\"codex-cli\":{\"registry_id\":\"codex-cli\",\"name\":\"Codex · personal instructions\"},\"chatgpt-projects\":{\"registry_id\":\"chatgpt-projects\",\"name\":\"ChatGPT · project instructions\"},\"chatgpt-custom\":{\"registry_id\":\"chatgpt-custom\",\"name\":\"ChatGPT · custom instructions\"},\"claude-personal\":{\"registry_id\":\"claude-personal\",\"name\":\"Claude · account instructions\"},\"claude-ai\":{\"registry_id\":\"claude-ai\",\"name\":\"Claude · project instructions\"},\"claude-code\":{\"registry_id\":\"claude-code\",\"name\":\"Claude Code · output style\"},\"grok\":{\"registry_id\":\"grok\",\"name\":\"Grok · chat or Bot\"},\"cursor\":{\"registry_id\":\"cursor\",\"name\":\"Cursor · project rule\"},\"copilot\":{\"registry_id\":\"copilot\",\"name\":\"GitHub Copilot · repository instructions\"},\"gemini-gems\":{\"registry_id\":\"gemini-gems\",\"name\":\"Gemini · Gem instructions\"},\"gemini-code-assist\":{\"registry_id\":\"gemini-code-assist\",\"name\":\"Gemini CLI · GEMINI.md\"},\"hermes\":{\"registry_id\":\"hermes\",\"name\":\"Hermes · persona\"},\"openclaw\":{\"registry_id\":\"openclaw\",\"name\":\"OpenClaw · AGENTS.md\"},\"api\":{\"registry_id\":\"api\",\"name\":\"API · instruction text\"},\"mcp\":{\"registry_id\":\"mcp\",\"name\":\"MCP · connect AgentTune\"}}\nverify:\n  saved_text: Reopen the settings or file and confirm the exact added block is present.\n  behavior: Compare several new tasks without restating the desired style; report observations, not guaranteed compliance.\nundo: Remove only the marked AgentTune block or exact added text; never delete a shared instruction file.\n---\n\n# ESTJ — communication preferences\n\nAn optional template to try and edit. This does not assert a personality type or diagnosis.\n\n## Communication style\nLead with the decision, plan, and responsibilities. Use concrete facts, clear standards, and measurable progress. Be direct about problems and practical tradeoffs. Respect commitments and time. Explain changes to established procedures. Avoid vague speculation, unnecessary emotional framing, and options without a recommendation when execution is the goal.\n\n## Accuracy and scope\nPreserve factual accuracy and material uncertainty. Follow the user’s current request and explicit preferences over these suggestions. Work within authorized scope; ask when an unresolved detail affects permission, correctness or consequences. Do not invent facts or suppress relevant risks to sound decisive.\n\n## Adjust the fit\nKeep only the preferences that help on real tasks. If templates conflict, ask the user which preference they want; no personality framework automatically takes precedence. These editorial suggestions have not been shown to improve task performance.\n";
       const FILENAME = "ESTJ.md";
       const TYPE_ID = "mbti-ESTJ";
       const SYSTEM = "mbti";
 
       const toast = document.getElementById("lib-toast");
       function showToast(m) { toast.textContent = m; toast.classList.add("is-visible"); setTimeout(function () { toast.classList.remove("is-visible"); }, 1600); }
-      function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
+      function track(event) { if (window.atTrack) window.atTrack(event === "download_md" ? "tuning_download" : "tuning_copy"); }
 
       if (window.renderIntegrations) {
         window.renderIntegrations(TUNING, { lazy: true });
