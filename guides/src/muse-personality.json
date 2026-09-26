@@ -10,8 +10,8 @@
   "answer": "Tap the Assistant icon, then Identity, then Soul. That opens Soul.md, the file that holds who your Muse is: core truths, boundaries and personality. Add your communication rules there. You can also just ask Muse in chat to change its tone or style, and it saves the change. To undo everything, say \"Go back to your default personality.\"",
   "sections": [
     {
-      "h2": "Four editable Soul.md examples.",
-      "html": "<p>For ready-to-copy starting points, use the <a href=\"/guides/muse-soul-md-templates\">Muse Soul.md templates</a>: concise assistant, thinking partner, writing editor and task coordinator. Each includes a Markdown download and a prompt for evaluating it.</p>"
+      "h2": "Twenty editable Soul.md examples.",
+      "html": "<p>For ready-to-copy starting points, use the <a href=\"/guides/muse-soul-md-templates\">Muse Soul.md templates</a>: four with Markdown downloads (concise assistant, thinking partner, writing editor, task coordinator) and sixteen by role, from founder to inbox triage. Each is a block to paste at the end of Soul.md and edit.</p>"
     },
     {
       "h2": "The short version.",
@@ -134,6 +134,31 @@
   ],
   "related": [
     {
+      "kicker": "Guide",
+      "label": "Meta Muse, explained",
+      "href": "/guides/what-is-meta-muse"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Twenty Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
+      "href": "/guides/meta-muse-characters"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse vs ChatGPT vs Claude: where the personality lives",
+      "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Muse?",
+      "href": "/research/what-personality-type-is-muse"
+    },
+    {
       "kicker": "Library",
       "label": "All 43 tuning files",
       "href": "/library/"
@@ -142,26 +167,6 @@
       "kicker": "Tests",
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
-    },
-    {
-      "kicker": "Guide",
-      "label": "How to give Grokbot a personality",
-      "href": "/guides/grokbot-personality"
-    },
-    {
-      "kicker": "Guide",
-      "label": "How to give GPT-6 Astra a personality",
-      "href": "/guides/astra-personality"
-    },
-    {
-      "kicker": "Guide",
-      "label": "How to change Claude's personality",
-      "href": "/guides/claude-personality"
-    },
-    {
-      "kicker": "Research",
-      "label": "Exploratory research and methodology limits",
-      "href": "/research"
     }
   ],
   "updated": "2026-09-25",

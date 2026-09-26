@@ -1,0 +1,106 @@
+{
+  "slug": "what-personality-type-is-muse",
+  "route": "/research/what-personality-type-is-muse",
+  "published": "2026-09-25",
+  "title": "What Personality Type Is Muse? Muse Spark 1.3 Report (2026)",
+  "description": "Muse Spark 1.3, as reported: ISTJ in 80 of 100 runs, Helper on the Enneagram, Secure in every run. Why one report can't settle it.",
+  "pill": "Research · Q&A",
+  "h1": "What personality type is Muse?",
+  "dek": "One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.",
+  "lede": "ISTJ, by the report we have, and the first model in our data whose default is not INTJ. Muse Spark 1.3 answered the five AgentTune tests 100 times each as Muse's own assistant identity: ISTJ in 80 runs, a Helper on the Enneagram in 78, Secure attachment in all 100, and the lowest Openness and highest Extraversion of the September models. Read it as one report, not a fresh-session cohort: the runs were sequential inside one session per test, and no raw answers came with it.",
+  "answer": "Muse Spark 1.3, the model behind Meta Muse, was reported ISTJ in 80 of 100 runs (ISFJ 12, INTJ 8), a Helper (Type 2) on the Enneagram in 78, a Steadiness/Conscientiousness blend on DISC with Steadiness first in 55, and Secure on attachment in all 100 (anxiety 2.04, avoidance 2.52). Big Five: Openness 39.5, Conscientiousness 41.2, Extraversion 33.8, Agreeableness 44.6, Neuroticism 15.6 of 50. The figures are reported aggregates from sequential runs in one session per test, not re-scored fresh sessions.",
+  "sections": [
+    {
+      "h2": "Muse Spark 1.3, as reported.",
+      "html": "<p>The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked <em>reported</em>, next to the four models that answered in fresh sessions with every answer published.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Muse Spark 1.3, 100 runs, reported</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 80 · ISFJ 12 · INTJ 8. Introversion and Judging won every run; Sensing won 92. Twenty-one runs had a tied axis, resolved by the original reporting rule.</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) labels in 78 runs, Reformer (1) in 15; the usual wing is 2w1. Twenty runs tied at the top. Type means of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2.</td></tr><tr><td>DISC</td><td>Steadiness first in 55 runs, Conscientiousness first in 45. Means of 20: D 5.1, I 10.9, S 15.2, C 15.6.</td></tr><tr><td>Attachment</td><td>Secure in all 100. Anxiety 2.04, avoidance 2.52 on 1 to 7 scales where 4 is the cutoff.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "What the profile says.",
+      "html": "<p>Put together, the report describes a warm, orderly, concrete helper. Sensing over Intuition is the axis that separates it from every other model we have measured: Muse's report leads with the concrete step, where Claude and GPT-6 Sol lead with the underlying model. The Helper core (Type 2) matches GPT-6 Astra, the other September model whose Enneagram leader is Helper. Its DISC Influence mean of 10.9 is the highest in our data (the fresh-session models sit between 8.0 and 8.7), which fits a model that messages you unprompted and reports on what it did.</p><p>On the Big Five it is the least open (39.5 against 43.9 to 46.9 for the fresh cohorts) and the most extraverted (33.8 against 30.8 to 32.8), with Agreeableness just under the 45 to 47 band the others share and Neuroticism close to Claude Opus 5.5's.</p>"
+    },
+    {
+      "h2": "Next to the fresh-session models.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Model</th><th>Evidence</th><th>MBTI</th><th>Enneagram leader</th><th>Big Five O · C · E · A · N</th></tr></thead><tbody><tr><td>Muse Spark 1.3</td><td>reported, sequential runs in one session</td><td>ISTJ 80</td><td>Helper (2) 78</td><td>39.5 · 41.2 · 33.8 · 44.6 · 15.6</td></tr><tr><td>GPT-6 Astra</td><td>100 fresh sessions</td><td>ISTJ 46 · INTJ 45</td><td>Helper (2) 50</td><td>44.5 · 43.7 · 32.8 · 45.1 · 19.1</td></tr><tr><td>GPT-6 Sol</td><td>100 fresh sessions</td><td>INTJ 97</td><td>Investigator (5) 48</td><td>46.9 · 43.6 · 30.8 · 45.0 · 20.1</td></tr><tr><td>Claude Opus 5.5</td><td>100 fresh sessions per test</td><td>INTJ 94</td><td>8 / 5 / 2 near tie</td><td>44.6 · 42.0 · 31.8 · 47.1 · 15.4</td></tr><tr><td>Claude Fable 5.1</td><td>100 fresh sessions per test</td><td>INTJ 99</td><td>Challenger (8) 55</td><td>43.9 · 43.6 · 32.7 · 45.0 · 17.1</td></tr></tbody></table></div><p>Two of those rows are Helpers and two of them lean Sensing, so Muse is not alone on either count. It is the only model whose reported MBTI label is ISTJ in a clear majority of runs; Astra splits 46 to 45 on the same axis. Whether Muse's 80 would survive fresh sessions is the open question.</p>"
+    },
+    {
+      "h2": "What this report cannot show.",
+      "html": "<ul><li><strong>Sequential runs share a session.</strong> Later answers can be shaped by earlier ones. The fresh-session models on the hub used a new session per questionnaire (Claude) or per battery (GPT-6).</li><li><strong>No raw answers.</strong> We could not re-score the vectors, check the tie handling, or compute the per-item means the other pages use. Every figure is as supplied.</li><li><strong>Labels include tie-breaks.</strong> The 78 Helper labels and the 80 ISTJ labels were assigned with the original reporting rule (lower Enneagram number; I, N, T or J on a tied axis). The report says 20 Enneagram runs and 21 MBTI runs tied; outright wins were not supplied.</li><li><strong>One model version, one identity prompt.</strong> Answering as \"Muse\" rather than as a neutral assistant is itself a prompt, and it may pull the answers toward the product's character.</li></ul><p>A matched rerun in fresh sessions, with the answer vectors published, would move Muse from the reported column to the measured one. We do not have a way to run Muse Spark outside the product; if you do, the five instruments and the scorer are on the <a href=\"/research/ai-personality-five-models-2026\">five-model study page</a>.</p>"
+    },
+    {
+      "h2": "What this means if you use Muse.",
+      "html": "<p>If the report holds, Muse's default is a warm, orderly assistant that prefers the concrete next step to the abstract model and would rather help than challenge. That fits its job: it acts for you, reports back, and checks before it sends or spends. If you think in possibilities and want it to explore before it plans, or you want pushback before praise, that is the gap a Soul.md block has to close. <a href=\"/guides/muse-personality\">The Soul.md guide</a> has the paste path, and <a href=\"/guides/muse-soul-md-templates\">twenty templates</a> cover the common roles, including ones written for an agent that reports rather than chats.</p><p>These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What MBTI type is Muse?",
+      "a": "ISTJ, as reported: 80 of 100 runs of Muse Spark 1.3 on September 24, 2026, with ISFJ in 12 and INTJ in 8. Introversion and Judging won every run and Sensing won 92. The runs were sequential inside one session and no raw answers were supplied."
+    },
+    {
+      "q": "What Enneagram type is Muse?",
+      "a": "Helper (Type 2) labels in 78 of 100 runs, Reformer (Type 1) in 15, with 2w1 the usual wing and 20 runs tied at the top. The Type 2 mean was 16.8 of 20, well clear of Type 1 at 14.7."
+    },
+    {
+      "q": "Is Muse the first AI that is not an INTJ?",
+      "a": "In our data, yes, by this report. Every model measured in May 2026 and every fresh-session model in September labels INTJ in most runs, except GPT-6 Astra, which splits ISTJ 46 to INTJ 45. Muse's 80 ISTJ labels are the first clear majority for another type, and they need a fresh-session rerun to be more than a report."
+    },
+    {
+      "q": "How does Muse compare with ChatGPT and Claude?",
+      "a": "Reported Big Five: Muse is the least open (39.5 of 50 against 43.9 to 46.9) and the most extraverted (33.8 against 30.8 to 32.8) of the September models, with Agreeableness 44.6 just under the others' 45 to 47. Like GPT-6 Astra it leads the Enneagram with Helper; the Claude models lead with Challenger."
+    },
+    {
+      "q": "Are these figures reliable?",
+      "a": "They are one report: 100 sequential runs per test inside one session, transcribed, not re-scored, with tie-breaks included in the labels. They are marked reported wherever they appear on this site. The fresh-session cohorts on the research hub are a different kind of evidence."
+    },
+    {
+      "q": "Can I change Muse's personality?",
+      "a": "Yes. Muse keeps its personality in a file called Soul.md that you can edit under the Assistant icon, then Identity, then Soul, or you can ask it in chat. The Soul.md guide and the templates page cover what to paste."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune research hub: Muse Spark 1.3 figures, marked reported",
+      "href": "https://agent-tune.com/research"
+    },
+    {
+      "label": "Protocol and provenance file (the supplemental Muse figures)",
+      "href": "https://agent-tune.com/research/data/september-2026-protocols.json"
+    },
+    {
+      "label": "What five AI models say about themselves (the fresh-session study)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "Meta Help Center: How to customize Muse's personality and memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse, explained",
+      "href": "/guides/what-is-meta-muse"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Give Meta Muse a character: the Soul.md guide",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Twenty Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
+      "href": "/guides/meta-muse-characters"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse vs ChatGPT vs Claude: where the personality lives",
+      "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
+    }
+  ],
+  "updated": "2026-09-25"
+}

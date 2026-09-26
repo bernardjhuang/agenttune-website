@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is Meta Muse? The Agent, Its Files and Plans (2026)</title>
+  <meta name="description" content="Meta's personal AI agent, explained: what it does, where it runs, what it costs, the three files that make it yours, and how it differs from Meta AI." />
+
+  <meta property="og:title" content="Meta Muse, explained." />
+  <meta property="og:description" content="Meta's personal AI agent, explained: what it does, where it runs, what it costs, the three files that make it yours, and how it differs from Meta AI." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/guides/what-is-meta-muse" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meta Muse, explained." />
+  <meta name="twitter:description" content="Meta's personal AI agent, explained: what it does, where it runs, what it costs, the three files that make it yours, and how it differs from Meta AI." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/what-is-meta-muse" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Meta Muse, explained","description":"Meta's personal AI agent, explained: what it does, where it runs, what it costs, the three files that make it yours, and how it differs from Meta AI.","url":"https://agent-tune.com/guides/what-is-meta-muse","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Meta Muse, explained"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Meta Muse?","acceptedAnswer":{"@type":"Answer","text":"Meta's personal AI agent, launched September 8, 2026. In Meta's words, an agent that can take actions and help get things done with your direction, and can be connected with other apps and services. It runs on its own cloud virtual machine, asks before important actions, and keeps its identity and what it knows about you in editable files."}},{"@type":"Question","name":"Is Muse the same as Meta AI?","acceptedAnswer":{"@type":"Answer","text":"No. Meta AI is the assistant inside Instagram, WhatsApp and Messenger. Muse is a separate product with its own app, its own virtual machine and its own settings."}},{"@type":"Question","name":"Is Muse free?","acceptedAnswer":{"@type":"Answer","text":"There is a free tier with a weekly usage limit that refreshes. Power is $20 a month for 500M Muse tokens a week; Maximum is $100 a month for 3B. The personality and memory controls are not behind a paid plan."}},{"@type":"Question","name":"What model does Muse use?","acceptedAnswer":{"@type":"Answer","text":"Muse Spark. Meta's help pages do not name a version; the September 24 personality report we received names Muse Spark 1.3."}},{"@type":"Question","name":"Can Muse send emails or buy things?","acceptedAnswer":{"@type":"Answer","text":"Yes, through Connectors, and Meta says it is designed to ask you to confirm before important actions such as sending an email or making a purchase. Many of those checks run outside the model. You can review Muse's activity at any time."}},{"@type":"Question","name":"Where does Muse keep what it knows about me?","acceptedAnswer":{"@type":"Answer","text":"In files on its virtual machine, including Memory.md (facts about you), Soul.md (who your Muse is) and Identity.md (its name and look), plus your chats, artifacts and system files. Open them under the Assistant icon, then Identity, or the Library tab."}},{"@type":"Question","name":"Can I stop Meta from training on my Muse chats?","acceptedAnswer":{"@type":"Answer","text":"Yes. The setting is on by default. Go to Settings, then Data controls, and toggle off Help improve our AI models. Meta says the change also applies to previous interactions."}},{"@type":"Question","name":"Can I move my ChatGPT or Claude history into Muse?","acceptedAnswer":{"@type":"Answer","text":"Meta documents an import: Settings, then Data Controls, then Import memory, then upload the .zip export from your previous assistant. Read the export first; everything in it becomes material Muse can use."}},{"@type":"Question","name":"Is Muse available outside the United States?","acceptedAnswer":{"@type":"Answer","text":"Meta's subscriptions page says Muse is in limited testing and not available in all locations yet. At launch it was available in the United States to adults."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Meta Muse, explained</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Meta Muse</span>
+        <h1 class="h-hero h-research-hero">Meta Muse, explained.</h1>
+        <p class="article-dek">What it is, where it runs, what it costs, and the three files that make it yours. Checked against Meta's help center on September 25, 2026.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Muse is Meta's personal AI agent, launched September 8, 2026. Meta's own description: an agent that <em>can take actions and help get things done with your direction, and can be connected with other apps and services</em>. It reads your email and calendar once you connect them, drafts and sends on your approval, tracks goals, runs reminders on a schedule, and keeps what it knows about you in Markdown files you can open and edit. It runs on a cloud computer of its own, one per user. It is not Meta AI, the assistant inside Instagram, WhatsApp and Messenger.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> Meta Muse is a personal AI agent from Meta, launched September 8, 2026, on iOS, Android, muse.ai and WhatsApp, with a Mac app added in mid-September. It takes actions for you through connected apps (email, calendar and others), asks before important actions like sending an email or making a purchase, and stores its identity and what it knows about you in three editable files: Soul.md, Identity.md and Memory.md. Free with a weekly usage limit; Power is $20 a month and Maximum $100. Meta calls it a limited test and it is not available everywhere yet.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>What Muse is.</h2>
+        <p>Muse is an agent, not a chat window. The difference shows up in what Meta's help pages describe: Connectors that give it access to services (connecting your email lets it search your email; calendar Connectors can update it when your schedule changes), permission checks before it sends an email or makes a purchase, a Goals tab where it tracks progress and sends check-ins, reminders and scheduled tasks it delivers on time, side chats to organize work, and a Library of artifacts it creates (documents, images, videos, podcasts and other files).</p><p>The model behind it is Muse Spark. Meta's help pages do not name a version; the personality report we received on September 24 names Muse Spark 1.3. Meta's pages describe the product, so this page does too; nothing here is a benchmark of the model.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Where it runs.</h2>
+        <p>Every Muse user gets an isolated virtual machine in the cloud, with backups. That VM is where Muse keeps what you share and what you create together. Meta says a Muse Confidential VM is coming, designed to keep information private even from Meta. Muse does not share conversations or VM data with Meta's ad systems, even if your Accounts Center includes other Meta products.</p><p>When you connect a service, the login goes into a Secure Credentials Store, so Muse can complete an authorized action without the model seeing your password. Meta lists protections against prompt injection (instructions hidden in websites, emails and files) and says the important permission and security checks run separately from the model, so they do not depend on Muse noticing that an instruction is malicious.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Muse is not Meta AI.</h2>
+        <p>Search for Muse settings and you will land on Meta AI pages. Meta AI is the older assistant inside Instagram, WhatsApp and Messenger. Muse is a separate product with its own app, its own VM and its own files. The personality and memory controls on this page are Muse's; they do not apply to Meta AI.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>The three files.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th>File</th><th>What Meta says it holds</th><th>Where to open it</th><th>What to put in it</th></tr></thead><tbody><tr><td>Soul.md</td><td>Who your Muse is: core truths, boundaries and personality</td><td>Assistant icon, then Identity, then Soul</td><td>Communication rules: how it should talk to you, report to you, disagree with you</td></tr><tr><td>Identity.md</td><td>Its name, creature, vibe and tagline</td><td>Assistant icon, then Identity, then Edit</td><td>The character's name and look</td></tr><tr><td>Memory.md</td><td>Facts about you that it has saved</td><td>Assistant icon, then Identity, then Memory</td><td>Facts: your name, time zone, interests, preferences</td></tr></tbody></table></div><p>You can edit and delete all three directly, or ask Muse in chat to change its name, personality and tone, communication style, memories, avatar and tagline; Meta says customizations carry over between conversations. To undo, say <em>"Go back to your default personality"</em> and Muse confirms what it reset. <a href="/guides/muse-personality">The Soul.md guide</a> covers what to paste; <a href="/guides/meta-muse-characters">Muse characters, explained</a> covers which file does what.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Memory: what it collects and how to control it.</h2>
+        <p>Meta says Muse builds its understanding of you from four sources: information you share directly, preferences and patterns it observes, context from Connectors, and its file-based memory system. You can ask it at any time what it has saved, or open Memory.md.</p><ul><li><strong>Edit or delete a memory:</strong> Assistant icon, then Identity, then Memory, and edit the file. Or ask in chat.</li><li><strong>Forget a topic:</strong> ask Muse to forget a person, topic or set of interactions. Meta says it removes the information from its memories and supporting files <em>to the best of its ability</em>, and that after you delete something Muse may still remember what it learned from it.</li><li><strong>Delete messages and side chats:</strong> tap and hold a message, or open the side chat's menu. Deleting the main thread means resetting Muse.</li><li><strong>Reset Muse:</strong> Settings, then Data Controls, then Reset Muse. It returns Muse to its original state and permanently deletes chat history, files and active tasks. It cannot be undone.</li><li><strong>Download your data:</strong> Settings, then Data controls, then Download your Muse data.</li><li><strong>Import memory from another assistant:</strong> Settings, then Data Controls, then Import memory. Export your chats from the other assistant and upload the .zip. Everything in that export becomes material Muse can use.</li><li><strong>Training:</strong> the setting that lets Meta use your interactions to train its models is on when you first use Muse. Settings, then Data controls, then toggle off Help improve our AI models. Meta says it removes categories of personal information such as names, email addresses and phone numbers, disassociates the interactions from your account, and that turning it off also applies to past interactions.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Plans and availability.</h2>
+        <div class="guide-table-wrap"><table><thead><tr><th>Plan</th><th>Price</th><th>Weekly allowance</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>A usage limit that refreshes; upgrade or wait when you reach it</td></tr><tr><td>Power</td><td>$20 a month</td><td>500M Muse tokens</td></tr><tr><td>Maximum</td><td>$100 a month</td><td>3B Muse tokens</td></tr></tbody></table></div><p>Subscriptions run through the mobile app or muse.ai with a Meta account, renew monthly, and require being 18 or the age of majority in your country. Meta's page says Muse and its subscriptions are in limited testing and not available in all locations; at launch it was available in the United States to adults. None of the personality or memory controls sit behind a paid plan.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Muse's default personality, as reported.</h2>
+        <p>A report on Muse Spark 1.3 reached us on September 24: 100 runs of each of the five AgentTune tests, answered as Muse's own assistant identity. The runs were sequential inside one session per test and no raw answers came with it, so the figures are reported, not re-scored. Headlines: ISTJ in 80 of 100 runs (the first model in our data whose default is not INTJ), Helper on the Enneagram in 78, Secure attachment in all 100, and the lowest Openness and highest Extraversion of the September models. The full profile and its limits are on <a href="/research/what-personality-type-is-muse">What personality type is Muse?</a></p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Give it a character.</h2>
+        <p>Because Muse acts for you, its personality is also how it reports: what it leads with, when it interrupts, how it asks for approval. Paste a block of communication rules at the end of Soul.md under your own heading and keep the rest of the file. <a href="/guides/muse-soul-md-templates">Twenty Soul.md templates</a> cover the common roles; <a href="/guides/muse-vs-chatgpt-vs-claude-personality">the comparison with ChatGPT and Claude</a> shows where the same rules go in each product.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Changelog.</h2>
+        <ul><li><strong>September 8, 2026.</strong> Muse launches on iOS, Android, muse.ai and WhatsApp, in the United States, for adults.</li><li><strong>Mid-September 2026.</strong> Mac app added.</li><li><strong>September 24, 2026.</strong> Muse Spark 1.3 personality report received; figures published as reported on the research hub.</li><li><strong>September 25, 2026.</strong> This page, checked against Meta's help center: personality and memories, data management, privacy and security, subscriptions.</li></ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>What is Meta Muse?</summary>
+            <p>Meta's personal AI agent, launched September 8, 2026. In Meta's words, an agent that can take actions and help get things done with your direction, and can be connected with other apps and services. It runs on its own cloud virtual machine, asks before important actions, and keeps its identity and what it knows about you in editable files.</p>
+          </details>
+          <details>
+            <summary>Is Muse the same as Meta AI?</summary>
+            <p>No. Meta AI is the assistant inside Instagram, WhatsApp and Messenger. Muse is a separate product with its own app, its own virtual machine and its own settings.</p>
+          </details>
+          <details>
+            <summary>Is Muse free?</summary>
+            <p>There is a free tier with a weekly usage limit that refreshes. Power is $20 a month for 500M Muse tokens a week; Maximum is $100 a month for 3B. The personality and memory controls are not behind a paid plan.</p>
+          </details>
+          <details>
+            <summary>What model does Muse use?</summary>
+            <p>Muse Spark. Meta's help pages do not name a version; the September 24 personality report we received names Muse Spark 1.3.</p>
+          </details>
+          <details>
+            <summary>Can Muse send emails or buy things?</summary>
+            <p>Yes, through Connectors, and Meta says it is designed to ask you to confirm before important actions such as sending an email or making a purchase. Many of those checks run outside the model. You can review Muse's activity at any time.</p>
+          </details>
+          <details>
+            <summary>Where does Muse keep what it knows about me?</summary>
+            <p>In files on its virtual machine, including Memory.md (facts about you), Soul.md (who your Muse is) and Identity.md (its name and look), plus your chats, artifacts and system files. Open them under the Assistant icon, then Identity, or the Library tab.</p>
+          </details>
+          <details>
+            <summary>Can I stop Meta from training on my Muse chats?</summary>
+            <p>Yes. The setting is on by default. Go to Settings, then Data controls, and toggle off Help improve our AI models. Meta says the change also applies to previous interactions.</p>
+          </details>
+          <details>
+            <summary>Can I move my ChatGPT or Claude history into Muse?</summary>
+            <p>Meta documents an import: Settings, then Data Controls, then Import memory, then upload the .zip export from your previous assistant. Read the export first; everything in it becomes material Muse can use.</p>
+          </details>
+          <details>
+            <summary>Is Muse available outside the United States?</summary>
+            <p>Meta's subscriptions page says Muse is in limited testing and not available in all locations yet. At launch it was available in the United States to adults.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-25">September 25, 2026</time> First published, checked against Meta's help center on September 25, 2026.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://www.meta.com/help/artificial-intelligence/995796179982326/" target="_blank" rel="noopener">Meta Help Center: How to customize Muse's personality and memories</a></li>
+          <li><a href="https://www.meta.com/help/artificial-intelligence/2225571704857152/" target="_blank" rel="noopener">Meta Help Center: How to manage your Muse data</a></li>
+          <li><a href="https://www.meta.com/help/artificial-intelligence/1047255454427887/" target="_blank" rel="noopener">Meta Help Center: How Muse handles your privacy, safety and security</a></li>
+          <li><a href="https://www.meta.com/help/subscriptions/1021145227643680/" target="_blank" rel="noopener">Meta Help Center: About Muse subscriptions</a></li>
+          <li><a href="https://agent-tune.com/guides/muse-personality" target="_blank" rel="noopener">Give Meta Muse a character: the Soul.md guide</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/muse-personality"><span class="guide-related-kicker">Guide</span>Give Meta Muse a character: the Soul.md guide</a>
+          <a href="/guides/muse-soul-md-templates"><span class="guide-related-kicker">Guide</span>Twenty Soul.md templates</a>
+          <a href="/guides/meta-muse-characters"><span class="guide-related-kicker">Guide</span>Muse characters: Soul.md, Identity.md and Memory.md</a>
+          <a href="/guides/muse-vs-chatgpt-vs-claude-personality"><span class="guide-related-kicker">Guide</span>Muse vs ChatGPT vs Claude: where the personality lives</a>
+          <a href="/research/what-personality-type-is-muse"><span class="guide-related-kicker">Research</span>What personality type is Muse?</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

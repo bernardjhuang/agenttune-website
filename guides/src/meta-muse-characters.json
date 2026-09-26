@@ -91,13 +91,28 @@
   "related": [
     {
       "kicker": "Guide",
+      "label": "Meta Muse, explained",
+      "href": "/guides/what-is-meta-muse"
+    },
+    {
+      "kicker": "Guide",
       "label": "Give Meta Muse a character: the Soul.md guide",
       "href": "/guides/muse-personality"
     },
     {
       "kicker": "Guide",
-      "label": "Four Soul.md templates",
+      "label": "Twenty Soul.md templates",
       "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse vs ChatGPT vs Claude: where the personality lives",
+      "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Muse?",
+      "href": "/research/what-personality-type-is-muse"
     },
     {
       "kicker": "Research",
@@ -109,5 +124,6 @@
       "label": "Find your own type",
       "href": "/tests/"
     }
-  ]
+  ],
+  "updated": "2026-09-25"
 }
