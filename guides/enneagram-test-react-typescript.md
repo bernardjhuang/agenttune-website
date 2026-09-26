@@ -7,7 +7,7 @@ Developer resource · runnable starter
 
         By Bernard Huang · Updated September 26, 2026
 
-        Download the synthetic starter to test form state, strict numeric input and tied scores. AgentTune’s OEPS-derived questionnaire is currently excluded while its exact reuse terms are verified. The MIT code license does not grant rights to third-party test items.
+        Download the synthetic starter to test form state, strict numeric input and tied scores. The live Enneagram questionnaire is available separately at /tests/enneagram, with its source and adaptation terms. The MIT code license does not grant rights to third-party test items.
 
 ## Try the software example
 

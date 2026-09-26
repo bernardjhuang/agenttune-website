@@ -3,23 +3,23 @@
   "published": "2026-09-25",
   "title": "Personality questionnaires: scoring, limitations and reuse rights",
   "description": "Understand the five frameworks in AgentTune research, current questionnaire availability, scoring and instrument-specific reuse rights.",
-  "pill": "Guide \u00b7 Tests",
+  "pill": "Guide · Tests",
   "h1": "Questionnaires, scores and their limits.",
-  "dek": "Historical frameworks and current availability are different things.",
-  "lede": "AgentTune research has used five questionnaire adaptations. The current product includes a versioned IPIP Big Five adaptation; other questionnaire payloads are excluded while reuse rights are reviewed. All 43 communication templates remain available.",
-  "answer": "Use the IPIP Big Five adaptation for current local scoring, or choose communication preferences directly. Other framework pages explain availability and link to the original publisher. A questionnaire score is not a diagnosis, proof of an AI\u2019s inner personality or evidence that a tuning improves performance.",
+  "dek": "Choose a questionnaire, understand its score, and review the source terms.",
+  "lede": "Take any of AgentTune’s five questionnaire adaptations: MBTI-style, Enneagram, DISC, attachment or Big Five. All 43 communication templates remain available. Questionnaires are optional; you can choose preferences directly.",
+  "answer": "All five tests run locally in your browser with instant results and no signup. The four restored tests preserve their previous website editions; Big Five reports raw totals and means. A questionnaire score is not a diagnosis or evidence that a tuning improves performance.",
   "sections": [
     {
       "h2": "Current availability",
-      "html": "<p>The <a href=\"/tests/big-five\">IPIP Big Five adaptation</a> is available with public-domain items. <a href=\"/tests/mbti\">OEJTS</a> and <a href=\"/tests/disc\">ODAT</a> have noncommercial license conditions; <a href=\"/tests/enneagram\">OEPS</a> needs exact license clarification; <a href=\"/tests/attachment\">ECR-R</a> has research permission distinct from product and redistribution rights. Those four questionnaires are excluded from the current bundle.</p><p>Read the <a href=\"/resources/content/instrument-rights.json\">per-instrument rights record</a>. A software MIT license does not relicense question text.</p>"
+      "html": "<p>Take the <a href=\"/tests/mbti\">MBTI-style</a>, <a href=\"/tests/enneagram\">Enneagram</a>, <a href=\"/tests/disc\">DISC</a>, <a href=\"/tests/attachment\">attachment</a> or <a href=\"/tests/big-five\">Big Five</a> questionnaire. Complete all items to view a score; tied results stay explicit.</p><p>Read the <a href=\"/resources/content/instrument-rights.json\">per-instrument rights record</a> before reusing questionnaire material. Original software and template licenses do not relicense third-party question text.</p>"
     },
     {
       "h2": "Big Five scoring",
-      "html": "<p>Complete all 50 items using the versioned response scale. Reverse keyed items use 6 minus the response. Each dimension sums ten scored items (10\u201350); its average is the total divided by ten (1\u20135). Invalid values are rejected and missing responses produce no final score.</p><p>Current results contain no population percentiles, reference indices or automatic template selection. Neuroticism reverses the direction of IPIP Emotional Stability; Openness corresponds to Intellect/Imagination. The <a href=\"/tests/big-five.md\">specification</a> records the adaptation.</p>"
+      "html": "<p>Complete all 50 items using the versioned response scale. Reverse keyed items use 6 minus the response. Each dimension sums ten scored items (10–50); its average is the total divided by ten (1–5). Invalid values are rejected and missing responses produce no final score.</p><p>Current results contain no population percentiles, reference indices or automatic template selection. Neuroticism reverses the direction of IPIP Emotional Stability; Openness corresponds to Intellect/Imagination. The <a href=\"/tests/big-five.md\">specification</a> records the adaptation.</p>"
     },
     {
       "h2": "Historical research scoring",
-      "html": "<p>Published studies used legacy adaptations and, in some cases, deterministic tie-break labels. MBTI item 1 and two Enneagram items had undocumented substitutions. Preserve those edition identities when interpreting the results. Raw vectors and numerical results remain unchanged; restricted item wording in public downloads is replaced by stable item labels.</p><p><a href=\"/research/data/rights-migration.json\">Correction and source hashes</a> \u00b7 <a href=\"/guides/reproduce-ai-personality-research\">Reproduce the arithmetic</a>.</p>"
+      "html": "<p>Published studies used legacy adaptations and, in some cases, deterministic tie-break labels. MBTI item 1 and two Enneagram items had undocumented substitutions. Preserve those edition identities when interpreting the results. Raw vectors and numerical results remain unchanged; restricted item wording in public downloads is replaced by stable item labels.</p><p><a href=\"/research/data/rights-migration.json\">Correction and source hashes</a> · <a href=\"/guides/reproduce-ai-personality-research\">Reproduce the arithmetic</a>.</p>"
     },
     {
       "h2": "Choose behavior explicitly",

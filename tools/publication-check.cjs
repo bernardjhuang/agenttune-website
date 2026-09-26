@@ -9,7 +9,8 @@ module.exports=function(out){
   assert.match(read('tests/'+p.route+'.md'),/unavailable_pending_rights/);
   assert.doesNotMatch(read('tests/'+p.route+'.html'),/const ITEMS|id="quiz-start"/);
  }
- assert.deepEqual(JSON.parse(read('resources/scoring/questions.json')).map(d=>d.id),['agenttune-ipip50']);
+ assert.deepEqual(JSON.parse(read('resources/scoring/questions.json')).map(d=>d.id),content.definitions.map(d=>d.id));
+ for(const p of content.rights.instruments.filter(r=>r.available)){assert.match(read('tests/'+p.route+'.html'),/id="quiz-start"/);assert.match(read('tests/'+p.route+'.html'),/const ITEMS/);assert.ok(read('tests/'+p.route+'.md').includes(p.instrumentId+'@'+p.instrumentVersion));}
  const demo=JSON.parse(read('resources/enneagram/questions.json'));assert.equal(demo.status,'synthetic_demo_only');assert.ok(demo.items.every(i=>i.text.startsWith('Demo input ')));
  const historical=JSON.parse(read('research/data/september-2026-instruments.json'));
  for(const name of ['mbti','disc','enneagram','attachment'])for(const item of historical[name].items)for(const key of ['text','first','second'])if(item[key])assert.ok(item[key].startsWith(name+' legacy item '),'Historical question payload');

@@ -95,7 +95,7 @@ Two edits worth making after install. First, cut anything that doesn't sound lik
 
 ## Don't know your type?
 
-        You do not need a type to choose a communication preference. Read the blocks above, keep rules that fit your tasks, and remove the rest. The [Enneagram questionnaire is currently unavailable](https://agent-tune.com/tests/enneagram) while redistribution rights are reviewed. These templates are editorial suggestions, not evidence about your underlying motivations.
+        You do not need a type to choose a communication preference. Read the blocks above, keep rules that fit your tasks, and remove the rest. The [Enneagram questionnaire is available](https://agent-tune.com/tests/enneagram) with its original questions, scores and optional tuning suggestions. These templates are editorial suggestions, not evidence about your underlying motivations.
 
 ## Building an Enneagram integration?
 
