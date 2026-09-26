@@ -3,7 +3,7 @@ const C=window.AgentTuneTools,root=document.querySelector('[data-free-tool]');if
 const node=(tag,txt,attrs={})=>{const el=document.createElement(tag);if(txt!==null)el.textContent=txt;for(const[k,v]of Object.entries(attrs))el.setAttribute(k,v);return el;};
 function status(message,error=false){$('tool-status').textContent=message;$('tool-status').dataset.error=String(error);}
 function run(fn){try{fn();}catch(e){status(e.message,true);}}
-function output(value,name){$('tool-output').value=value;if(name)fileName=name;$('output-count').textContent=value.length.toLocaleString()+' characters · edit before copying';}
+function output(value,name){$('tool-output').value=value;window.ATTextareas?.resize($('tool-output'));if(name)fileName=name;$('output-count').textContent=value.length.toLocaleString()+' characters · edit before copying';}
 function download(value,name,type='text/plain'){const url=URL.createObjectURL(new Blob([value],{type})),a=node('a',null,{href:url,download:name});document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 async function copy(value){if(!value.trim())return status('Create or enter some output first.',true);try{await navigator.clipboard.writeText(value);status('Copied. Review the destination before pasting.');}catch{if($('tool-output')){$('tool-output').focus();$('tool-output').select();}status('Clipboard unavailable. Select the text and copy it manually.',true);}}
 function lockBench(locked){for(const id of ['probe','task-prompt','criterion','model-version','tested-instructions'])if($(id))$(id).disabled=locked;}

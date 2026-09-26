@@ -73,7 +73,7 @@
       $('[data-title]').textContent = target.name; $('[data-badge]').textContent = target.badge;
       $('[data-sub]').textContent = target.sub; $('[data-note]').textContent = model.note;
       $('[data-steps]').innerHTML = target.steps;
-      editor.value = text; $('[data-copy]').disabled = !text;
+      editor.value = text; window.ATTextareas?.resize(editor); $('[data-copy]').disabled = !text;
       $('[data-copy]').textContent = target.id === 'mcp' ? 'Copy setup command' : 'Copy instructions';
       $('[data-status]').textContent = text ? text.length.toLocaleString() + ' characters · review before copying' : 'Choose preferences or a template to create instructions.';
     }
@@ -102,7 +102,7 @@
     root.__atPicker = {
       setTuning(value) {currentTuning=value; updatePanel();},
       getState() {return {app:appSelect.value, model:modelSelect.value, target:targetSelect.value, edited:editor.value};},
-      setEdited(text) {if(typeof text==='string' && text.length<=30000) {editor.value=text; $('[data-copy]').disabled=!text.trim(); $('[data-status]').textContent=text.length.toLocaleString()+' characters · restored draft';}},
+      setEdited(text) {if(typeof text==='string' && text.length<=30000) {editor.value=text; window.ATTextareas?.resize(editor); $('[data-copy]').disabled=!text.trim(); $('[data-status]').textContent=text.length.toLocaleString()+' characters · restored draft';}},
       selectModel(id) {const model=modelFor(id); appSelect.value=appForTarget(model.preferred)?.id || 'any'; updateTargets(model.preferred,id);},
       selectTarget(id) {if(!INTEGRATIONS.some(t=>t.id===id)) return; appSelect.value=appForTarget(id)?.id || 'any'; updateTargets(id,modelSelect.value);}
     };

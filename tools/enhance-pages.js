@@ -13,7 +13,6 @@ function enhance(html,file){
     html=html.replace(/<div class="c-titlebar-label">/g,'<div class="c-titlebar-label">Read-only template · ');
     const install=/<section class="lib-v2-section lib-agents" id="install">[\s\S]*?<\/section>/.exec(html)?.[0];
     if(install){html=html.replace(install,'');html=html.replace('    <!-- THE EDITOR',install+'\n    <!-- THE EDITOR');}
-    html=html.replace(/<article class="c-editor" id="editor">([\s\S]*?)<\/article>/, '<details class="lib-disclosure" id="editor"><summary>View or download the base template</summary><article class="c-editor">$1</article></details>');
     for(const [id,label] of Object.entries({demo:'Illustrative examples',tune:'Preferences explained',default:'Research context','talk-to':'Interpersonal examples','this-is-me':'Explaining your preferences',neighbors:'Related templates'})){
       const re=new RegExp('<section class="lib-v2-section" id="'+id+'">([\\s\\S]*?)</section>');
       html=html.replace(re,`<details class="lib-disclosure" id="${id}"><summary>${label}</summary><section class="lib-v2-section">$1</section></details>`);
