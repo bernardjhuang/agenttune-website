@@ -134,6 +134,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Review a memory export locally",
+      "href": "/tools/ai-memory-reviewer"
+    },
+    {
       "kicker": "Guide",
       "label": "Meta Muse, explained",
       "href": "/guides/what-is-meta-muse"

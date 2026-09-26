@@ -1360,6 +1360,8 @@ function gitLastmod(relPath) {
 
 // Non-library pages in the sitemap: route → source file + crawl hints.
 const STATIC_PAGES = [
+  { route: "/tools/", file: "tools/index.html", changefreq: "monthly", priority: "0.9" },
+  ...require("./build-tools").specs.map(s => ({ route: "/tools/" + s.slug, file: "tools/" + s.slug + ".html", changefreq: "monthly", priority: "0.8" })),
   { route: "/guides/enneagram-test-react-typescript", file: "guides/enneagram-test-react-typescript.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-mbti-tie-breaking", file: "research/ai-mbti-tie-breaking.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/opus-vs-fable-question-level", file: "research/opus-vs-fable-question-level.html", changefreq: "monthly", priority: "0.8" },

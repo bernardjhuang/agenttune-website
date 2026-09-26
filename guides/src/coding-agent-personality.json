@@ -49,6 +49,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Convert and merge your own instructions",
+      "href": "/tools/instruction-converter"
+    },
+    {
       "kicker": "Guide",
       "label": "How to change Claude Code's personality (output styles)",
       "href": "/guides/claude-code-personality"

@@ -70,6 +70,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Build your own communication preferences",
+      "href": "/tools/communication-preferences-builder"
+    },
+    {
       "kicker": "Guide",
       "label": "ChatGPT custom instructions for all 16 MBTI types",
       "href": "/guides/chatgpt-custom-instructions-by-personality-type"
