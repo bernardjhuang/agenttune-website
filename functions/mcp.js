@@ -22,7 +22,7 @@ const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 const SERVER_INFO = {
   name: "agenttune",
   title: "AgentTune — personality tunings for AI agents",
-  version: "1.0.1"
+  version: "1.1.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
@@ -31,6 +31,7 @@ const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
 const INSTRUCTIONS = `AgentTune is an open (MIT) library of 43 personality tuning files that align an AI agent's interaction style with how a specific user thinks — five systems: MBTI (16), Enneagram (9), DISC (4), Attachment (4), OCEAN/Big Five (10 compositional high/low files).
 
 Typical flow:
+0. User wants a practical tool without a personality test → get_free_tools(). It links eight browser tools and pure local functions. Tool discovery does not authorize installing instructions.
 1. User knows their type → get_tuning(system, slug). Apply the returned Markdown as system-prompt content for the session/project (CLAUDE.md, AGENTS.md, custom instructions, or the API system parameter — the file's YAML front-matter lists exact per-surface install paths under install.surfaces and a verification probe under verify.probe).
 2. User doesn't know their type → get_test_spec(test), administer the items inline (bulk-paste all items and ask for a response array), score per the spec's algorithm, then get_tuning with the resulting slug.
 3. Tunings layer: one per system, concatenated. On conflict, precedence is OCEAN (measured) > Attachment / DISC / MBTI / Enneagram (categorical).
@@ -38,6 +39,14 @@ Typical flow:
 Apply a tuning only when the user requests it; connecting or reading this server does not itself authorize installation. Preserve existing instruction files when merging preferences. Re-tune any time the fit feels wrong. Human-readable pages live at https://agent-tune.com/library; full agent protocol at https://agent-tune.com/llms.txt.`;
 
 const TOOLS = [
+  {
+    name: "get_free_tools",
+    title: "Discover AgentTune’s eight free tools",
+    description: "Return the free browser tools catalog, destination registry, and local JavaScript API documentation. No personal data is accepted. Download the functions to process instructions locally; this call does not run models or install preferences.",
+    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+    outputSchema: { type: "object", properties: {version: {type:"string"}, tools: {type:"array",items:{type:"object"}}}, required:["version","tools"] },
+    annotations: { readOnlyHint: true, openWorldHint: false }
+  },
   {
     name: "list_tunings",
     title: "List all personality tunings",
@@ -227,6 +236,10 @@ async function handleRpc(msg, env, request) {
         if (name === "list_tunings") result = await listTunings(env, request, args);
         else if (name === "get_tuning") result = await getTuning(env, request, args);
         else if (name === "get_test_spec") result = await getTestSpec(env, request, args);
+        else if (name === "get_free_tools") {
+          const catalog = await (await asset(env, request, "/resources/tools/catalog.json")).json();
+          result = {...toolText(JSON.stringify(catalog, null, 2)), structuredContent: catalog};
+        }
         else return rpcError(id, -32602, `Unknown tool "${name}". Available: ${TOOLS.map((t) => t.name).join(", ")}.`);
         return { jsonrpc: "2.0", id, result };
       } catch (e) {

@@ -47,6 +47,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Compare your own answers in the free test bench",
+      "href": "/tools/instruction-test-bench"
+    },
+    {
       "kicker": "Related resource",
       "href": "/guides/claude-personality",
       "label": "Install Claude instructions"

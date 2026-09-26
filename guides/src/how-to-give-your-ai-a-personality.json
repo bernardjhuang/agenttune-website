@@ -57,6 +57,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Build your how-to-work-with-me card",
+      "href": "/tools/how-to-work-with-me"
+    },
+    {
       "kicker": "Research",
       "label": "Exploratory research and methodology limits",
       "href": "/research"

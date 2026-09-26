@@ -59,6 +59,11 @@
   ],
   "related": [
     {
+      "kicker": "Free browser tool",
+      "label": "Try the Enneagram scoring playground",
+      "href": "/tools/enneagram-scoring-playground"
+    },
+    {
       "kicker": "Developer resource",
       "label": "Use the standalone JavaScript scorer",
       "href": "/guides/open-source-enneagram-test"
