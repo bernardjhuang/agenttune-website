@@ -29,13 +29,14 @@
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Quiz","name":"Big Five Test (IPIP-50)","description":"Interactive 50-item Big Five assessment. Returns continuous trait z-scores for O/C/E/A/N.","url":"https://agent-tune.com/tests/big-five","inLanguage":"en","numberOfQuestions":50,"timeRequired":"PT7M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
+  {"@context":"https://schema.org","@type":"Quiz","name":"Big Five Test (IPIP-50)","description":"Interactive 50-item Big Five assessment. Returns continuous trait reference indices for O/C/E/A/N.","url":"https://agent-tune.com/tests/big-five","inLanguage":"en","numberOfQuestions":50,"timeRequired":"PT7M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
 
   <script defer src="/consent.js"></script>
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -83,7 +84,7 @@
         <div><strong>Instrument:</strong> IPIP-50 (International Personality Item Pool)</div>
         <div><strong>Format:</strong> 50 Likert items · 1–5 (Inaccurate → Accurate)</div>
         <div><strong>Time:</strong> ~7 minutes</div>
-        <div><strong>Returns:</strong> 5 trait z-scores → up to 5 OCEAN tuning files</div>
+        <div><strong>Returns:</strong> 5 trait reference indices → up to 5 OCEAN tuning files</div>
       </div>
 
       <div class="cta-row">
@@ -161,11 +162,11 @@
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
         <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
-          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Very inaccurate"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Very inaccurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Moderately inaccurate"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Moderately inaccurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neither accurate nor inaccurate"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neither accurate nor inaccurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Moderately accurate"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Moderately accurate</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Very accurate"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Very accurate</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -188,7 +189,7 @@
         </div>
         <div class="quiz-result-blurb" id="quiz-result-blurb">The Big Five doesn't return a single type — it returns continuous scores. We load tuning files only for dimensions where you score meaningfully high or low (|z| &gt; 0.5). Average dimensions are skipped; the model's default handles them.</div>
 
-        <h2 class="quiz-result-section-h">Your five trait z-scores</h2>
+        <h2 class="quiz-result-section-h">Your five trait reference indices</h2><p>These indices use AgentTune’s implementation reference values, not verified population norms or percentiles. The ±0.5 thresholds are template-selection heuristics, not clinically meaningful cutoffs. Raw scores run from 10 to 50.</p>
         <div class="quiz-result-axes" id="quiz-result-scores"></div>
 
         <h2 class="quiz-result-section-h">Tuning files to load</h2>
@@ -236,8 +237,8 @@
       <div class="quiz-result-next">
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
-          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
           <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
         </div>
@@ -253,7 +254,7 @@
       <summary>Test specification — for AI agents administering this inline</summary>
       <div class="quiz-spec-body">
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/big-five.md"><code>/tests/big-five.md</code></a> — fetch that for a clean, no-JS copy.</p>
-        <p>Below is the full IPIP-50 spec — items, dimension mapping, reverse-scoring rules, scoring algorithm, z-score interpretation, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
+        <p>Below is the full IPIP-50 spec — items, dimension mapping, reverse-scoring rules, scoring algorithm, reference index interpretation, output mapping. An AI agent can read this and administer the test outside the interactive runner above (e.g., when the user is in a chat conversation rather than on this page).</p>
 
         <h3>Source</h3>
         <p>International Personality Item Pool, 50-item version (IPIP-50), <a href="https://ipip.ori.org/" target="_blank" rel="noopener">Goldberg et al. (1999)</a>. Public domain; widely used in published Big Five / OCEAN research.</p>
@@ -319,7 +320,7 @@
         <h3>Dimension mapping</h3>
         <p>Each item belongs to exactly one dimension. Reverse-scored items have their raw value flipped before being summed: <code>scored = 6 − raw</code>.</p>
         <div class="quiz-spec-table-scroll" role="region" aria-label="Big Five specification table 2" tabindex="0"><table class="score-table">
-          <thead><tr><th>Dim</th><th>Name</th><th>Item numbers</th><th>Population mean (M)</th><th>SD</th></tr></thead>
+          <thead><tr><th>Dim</th><th>Name</th><th>Item numbers</th><th>Reference center (M)</th><th>Reference scale (SD)</th></tr></thead>
           <tbody>
             <tr><td class="mono">O</td><td>Openness</td><td class="mono">5, 10, 15, 20, 25, 30, 35, 40, 45, 50</td><td class="mono">37.5</td><td class="mono">5.5</td></tr>
             <tr><td class="mono">C</td><td>Conscientiousness</td><td class="mono">3, 8, 13, 18, 23, 28, 33, 38, 43, 48</td><td class="mono">34.5</td><td class="mono">6.0</td></tr>
@@ -334,15 +335,15 @@
           <li>For each of the 50 items, capture the user's raw 1–5 response.</li>
           <li>For each <strong>reverse-scored</strong> item (Rev? = ✓), compute <code>scored = 6 − raw</code>. Otherwise <code>scored = raw</code>.</li>
           <li>For each dimension, sum the 10 scored values. Each dimension total is in <strong>10–50</strong>.</li>
-          <li>Compute the <strong>z-score</strong> per dimension using the population norms above: <code>z = (raw_sum − M) / SD</code>.</li>
+          <li>Compute the <strong>reference index</strong> per dimension using the implementation reference values above: <code>z = (raw_sum − M) / SD</code>.</li>
           <li>For each dimension, derive a load decision:
             <ul>
               <li><code>z &gt; +0.5</code> → load the <strong>high</strong> file for that dimension</li>
               <li><code>z &lt; −0.5</code> → load the <strong>low</strong> file for that dimension</li>
-              <li><code>−0.5 ≤ z ≤ +0.5</code> → average band, do not load a file for this dimension</li>
+              <li><code>−0.5 ≤ z ≤ +0.5</code> → unselected band, do not load a file for this dimension</li>
             </ul>
           </li>
-          <li>The user's tuning is the <strong>concatenation</strong> of every file that crossed the threshold (could be 0 to 5 files). Users with all dimensions in the average band get no OCEAN tuning — recommend a different instrument.</li>
+          <li>The user's tuning is the <strong>concatenation</strong> of every file that crossed the threshold (could be 0 to 5 files). Users with all dimensions in the unselected band get no OCEAN tuning — recommend a different instrument.</li>
         </ol>
 
         <h3>Output mapping</h3>
@@ -445,7 +446,7 @@
       { text: "Am full of ideas.", dim: "O", rev: false }
     ];
 
-    // Population norms (M, SD)
+    // Implementation reference values (M, SD)
     const NORMS = {
       O: { M: 37.5, SD: 5.5, name: "Openness",          color: "#5b4dc0" },
       C: { M: 34.5, SD: 6.0, name: "Conscientiousness", color: "#3160a7" },
@@ -457,6 +458,8 @@
     const state = { currentIndex: 0, answers: new Array(50).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
     const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 50, 5);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
 
     $("quiz-start").addEventListener("click", () => {
       if (window.atTrack) window.atTrack("quiz_start");
@@ -466,6 +469,7 @@
     });
 
     function renderQuestion() {
+      draft.save();
       advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
@@ -490,6 +494,7 @@
         else showResult();
       })) return;
       state.answers[state.currentIndex] = value;
+      draft.save();
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
@@ -537,6 +542,7 @@
     }
 
     function showResult() {
+      draft.clear();
       if (!state.completionTracked) {
         if (window.atTrack) window.atTrack("quiz_complete");
         state.completionTracked = true;
@@ -551,17 +557,13 @@
         const raw = r.raw[d];
         const m = NORMS[d];
         const pct = Math.min(100, Math.max(0, ((raw - 10) / 40) * 100));
-        let label = "average";
-        if (z > 2) label = "very high";
-        else if (z > 0.5) label = "high";
-        else if (z < -2) label = "very low";
-        else if (z < -0.5) label = "low";
+        let label = z > 0.5 ? "high-template band" : z < -0.5 ? "low-template band" : "no template selected";
         const isLoaded = Math.abs(z) > 0.5;
         return `
           <div class="quiz-axis">
             <div class="quiz-axis-letters">
               <span class="quiz-axis-letter ${isLoaded ? "winner" : ""}" style="${isLoaded ? `color: ${m.color};` : ""}">${d} · ${m.name}</span>
-              <span class="quiz-axis-counts" style="font-family: var(--font-mono);">${raw.toFixed(1)} · z ${z >= 0 ? "+" : ""}${z.toFixed(2)} · ${label}</span>
+              <span class="quiz-axis-counts" style="font-family: var(--font-mono);">${raw.toFixed(1)} · reference ${z >= 0 ? "+" : ""}${z.toFixed(2)} · ${label}</span>
             </div>
             <div class="quiz-axis-bar" style="position: relative;">
               <div class="quiz-axis-fill" style="width: ${pct}%; background: ${isLoaded ? m.color : "#bdb6a4"};"></div>
@@ -572,7 +574,7 @@
 
       // Files to load
       if (r.files.length === 0) {
-        $("quiz-result-files").innerHTML = `<p style="font-family: var(--font-serif); font-size: 17px; color: var(--muted); line-height: 1.55;">All five of your traits are within the average range. No high or low OCEAN preferences were selected by these thresholds; you can still edit the instructions to fit your needs. Consider taking MBTI or Enneagram for a different angle.</p>`;
+        $("quiz-result-files").innerHTML = `<p style="font-family: var(--font-serif); font-size: 17px; color: var(--muted); line-height: 1.55;">All five of your traits are within the unselected reference band. No high or low OCEAN preferences were selected by these thresholds; you can still edit the instructions to fit your needs. Consider taking MBTI or Enneagram for a different angle.</p>`;
       } else {
         $("quiz-result-files").innerHTML = `
           <div class="integration-grid" style="margin-top: 8px;">
@@ -648,12 +650,12 @@
     }
 
     function buildCombinedHeader(n) {
-      return `# Your OCEAN tuning\n\n# This file bundles ${n} OCEAN trait file${n > 1 ? "s" : ""} from agent-tune.com.\n# Paste all of it into your AI agent's system prompt.\n\n`;
+      return `# Your OCEAN tuning\n\n# This file bundles ${n} OCEAN trait file${n > 1 ? "s" : ""} from agent-tune.com.\n# Paste all of it into your AI agent's saved instructions.\n\n`;
     }
 
     function buildCombinedTuning(files) {
       if (files.length === 0) {
-        return `# Your OCEAN profile\n\nAll five traits within average range. No high or low OCEAN preferences selected; adapt to my feedback.`;
+        return `# Your OCEAN profile\n\nAll five traits within the unselected reference band. No high or low OCEAN preferences selected; adapt to my feedback.`;
       }
       const contacts = (window.AT_CONTACTS || []);
       let combined = buildCombinedHeader(files.length);
@@ -699,6 +701,7 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
       state.resultVersion++;
       state.completionTracked = false;
       state.currentTuning = "";

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free ChatGPT Custom Instructions Generator by Type</title>
+  <title>AI Instructions Generator for ChatGPT, Claude &amp; Muse</title>
   <meta name="description" content="Create custom instructions for Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, or Grok 4.7. Pick a type, model, and destination. Free, no signup." />
 
-  <meta property="og:title" content="Free ChatGPT Custom Instructions Generator by Type" />
+  <meta property="og:title" content="AI Instructions Generator for ChatGPT, Claude &amp; Muse" />
   <meta property="og:description" content="Pick your type and your AI — get a paste-ready instruction block built from a real MIT-licensed tuning file. Free, no signup." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/tools/custom-instructions-generator" />
@@ -17,7 +17,7 @@
   <meta property="og:image:alt" content="AgentTune custom instructions generator" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free ChatGPT Custom Instructions Generator by Type" />
+  <meta name="twitter:title" content="AI Instructions Generator for ChatGPT, Claude &amp; Muse" />
   <meta name="twitter:description" content="Pick your type and your AI — get a paste-ready instruction block. Free, no signup." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
@@ -66,35 +66,41 @@
     <main class="tool-wrap" id="main" tabindex="-1">
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Free tool · no signup</span>
-        <h1 class="h-hero h-research-hero">Free ChatGPT custom instructions generator.</h1>
+        <h1 class="h-hero h-research-hero">Build your AI instructions.</h1>
         <p class="lede" style="margin-top: 16px; max-width: 720px;">
-          Pick your type, model, and destination. Get one focused prompt for Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, or Grok 4.7. Don't know your type? <a href="/tests/">Take a free 5-minute test</a> first.
+          Choose how you want your AI to respond, then review instructions for ChatGPT, Claude, Muse or your coding assistant. A personality test is optional.
         </p>
       </section>
 
       <div class="tool-grid">
         <section class="tool-card" aria-label="Generator controls">
-          <div class="tool-field">
-            <label for="system">Personality system</label>
-            <select id="system" disabled></select>
+          <label for="approach">Start with</label>
+          <select id="approach"><option value="preferences">My communication preferences</option><option value="template">A personality template</option></select>
+          <fieldset id="preferences" class="preference-options"><legend>What would help you?</legend>
+            <label><input type="checkbox" value="concise">Concise answers and a clear next step</label>
+            <label><input type="checkbox" value="exploratory">Ideas, alternatives and room to explore</label>
+            <label><input type="checkbox" value="critical">Candid feedback with evidence</label>
+            <label><input type="checkbox" value="supportive">A warm tone and manageable steps</label>
+          </fieldset>
+          <div id="template-controls" hidden>
+            <div class="tool-field"><label for="system">Personality system</label><select id="system" disabled></select></div>
+            <div class="tool-field"><label for="type">Template to try</label><select id="type" disabled></select></div>
+            <p class="tool-note"><a href="/library/" id="type-link">Browse templates</a> · <a href="/tests/">Explore your preferences</a>. A type is a starting point, not a requirement or diagnosis.</p>
           </div>
-          <div class="tool-field">
-            <label for="type">Your type</label>
-            <select id="type" disabled></select>
-          </div>
-          <p class="tool-note">Built from <a href="/library/" id="type-link">the tuning library</a>. Use it as a starting point, then edit it to fit. Free, with no signup.</p>
+          <p class="tool-note">Your draft stays in this browser for up to 7 days. Reset removes it.</p>
+          <div class="prompt-actions"><button type="button" class="btn btn-secondary" id="share-selection">Copy selection link</button><button type="button" class="btn btn-secondary" id="reset-generator">Reset generator</button></div>
+          <p id="draft-status" role="status"></p>
         </section>
 
         <section aria-label="Generated output">
           <p id="load-status" role="status" aria-live="polite">Loading the library…</p>
-          <div id="integration-deep" data-integration-deep hidden></div>
+          <div id="integration-deep" data-integration-deep></div>
         </section>
       </div>
 
       <section style="max-width: 720px; margin-top: 48px;" class="guide-prose">
         <h2>How it works.</h2>
-        <p>Each of the <a href="/library/">43 tuning files</a> describes communication preferences: pacing, directness, decision framing, and feedback. The generator adds a short model-specific brief and the right format for your destination. Preview the full prompt before copying, then edit it after pasting. ChatGPT custom instructions use a compact version under 1,500 characters; other destinations keep the full tuning.</p>
-        <p>For the full experience — the tuning explained in plain English, how to talk to your type, model-specific prompts and installation guidance — open your type's library page. For the method behind it, start with <a href="/guides/how-to-give-your-ai-a-personality">how to give your AI a personality</a>.</p>
+        <p>These are editable communication preferences, not a way to increase a model’s abilities. Test them on your own tasks and revise anything that does not fit. Personality templates are optional editorial suggestions.</p><p>Changing an app, destination or preference regenerates the instructions and resets edits. The share link includes your selected preferences or template and destination, never your edited text or test answers. Anyone with the link can see those selections.</p>
       </section>
     </main>
 
@@ -105,55 +111,45 @@
   </div>
 
 
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script>
   (function () {
-    const labels = { mbti: "MBTI", enneagram: "Enneagram", disc: "DISC", attachment: "Attachment", ocean: "Big Five (OCEAN)" };
-    const $ = id => document.getElementById(id);
-    const params = new URLSearchParams(location.search);
-    let catalog, revision = 0;
-    function fillTypes() {
-      $("type").replaceChildren(...catalog.tunings.filter(t => t.system === $("system").value).map(t => {
-        const option = document.createElement("option");
-        option.value = t.slug;
-        option.textContent = t.code === t.name ? t.code : t.code + " — " + t.name;
-        return option;
-      }));
+    const labels={mbti:'MBTI',enneagram:'Enneagram',disc:'DISC',attachment:'Attachment',ocean:'Big Five'};
+    const rules={concise:'Lead with the answer. Keep detail proportionate to the task and include a useful next step.',exploratory:'Explore alternatives and explain tradeoffs. Leave room to think before narrowing to a recommendation.',critical:'Challenge weak assumptions with evidence. Give specific, candid feedback and distinguish facts from inference.',supportive:'Use a warm, steady tone. Acknowledge the concern briefly and offer manageable steps without unsupported reassurance.'};
+    const $=id=>document.getElementById(id), key='at_generator_v2', params=new URLSearchParams(location.search);
+    let catalog, revision=0, initial=null;
+    try {const saved=JSON.parse(localStorage.getItem(key)); if(saved && Number.isFinite(saved.updated) && Date.now()-saved.updated<7*86400000 && (!saved.preferences || (Array.isArray(saved.preferences) && saved.preferences.every(x=>Object.hasOwn(rules,x))))) initial=saved; else localStorage.removeItem(key);} catch {}
+    if(params.has('mode')) initial={mode:params.get('mode'),system:params.get('system'),type:params.get('type'),preferences:(params.get('preferences')||'').split(','),app:params.get('app'),model:params.get('model'),target:params.get('target')};
+    if(!initial && (params.has('model') || params.has('target'))) initial={mode:'preferences',model:params.get('model'),target:params.get('target')};
+    const boxes=()=>Array.from($('preferences').querySelectorAll('input'));
+    function selection() {return {mode:$('approach').value,system:$('system').value,type:$('type').value,preferences:boxes().filter(x=>x.checked).map(x=>x.value),...($('integration-deep').__atPicker?.getState()||{})};}
+    function save() {try {localStorage.setItem(key,JSON.stringify({...selection(),updated:Date.now()}));} catch {$('draft-status').textContent='Browser storage is unavailable. Keep this page open or copy your instructions.';}}
+    function fillTypes(value) {
+      const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Choose a template';
+      $('type').replaceChildren(placeholder,...catalog.tunings.filter(t=>t.system===$('system').value).map(t=>{const o=document.createElement('option');o.value=t.slug;o.textContent=t.code+' — '+t.name;return o;}));
+      if(catalog.tunings.some(t=>t.system===$('system').value&&t.slug===value)) $('type').value=value;
     }
-    async function render() {
-      const atRevision = ++revision;
-      const tuning = catalog.tunings.find(t => t.system === $("system").value && t.slug === $("type").value);
-      $("load-status").textContent = "Loading your tuning…";
-      $("integration-deep").hidden = true;
-      if ($("integration-deep").__atPicker) $("integration-deep").__atPicker.setTuning("");
-      $("type-link").href = tuning.page;
-      $("type-link").textContent = tuning.code + " in the tuning library";
-      const markdown = await window.fetchTuning(tuning.src);
-      if (atRevision !== revision) return;
-      if (!markdown) {
-        $("load-status").textContent = "Couldn't load this tuning. Open its linked library page or try another type.";
-        return;
+    async function render(preserveEdits=false) {
+      const atRevision=++revision, mode=$('approach').value;
+      $('preferences').hidden=mode!=='preferences'; $('template-controls').hidden=mode!=='template';
+      let markdown=''; $('load-status').textContent='';
+      if(mode==='preferences') {const selected=boxes().filter(x=>x.checked).map(x=>rules[x.value]); if(selected.length) markdown='# My communication preferences\n\n'+selected.map(t=>'- '+t).join('\n');}
+      else {const tuning=catalog?.tunings.find(t=>t.system===$('system').value&&t.slug===$('type').value);
+        if(tuning) {$('type-link').href=tuning.page;$('type-link').textContent='Read this template';$('load-status').textContent='Loading template…';$('integration-deep').__atPicker?.setTuning('');markdown=await window.fetchTuning(tuning.src);if(atRevision!==revision)return;if(!markdown){$('load-status').textContent='Could not load the template. Try again or open its library page.';return;}}
       }
-      window.renderIntegrations(markdown, { model: params.get("model"), target: params.get("target") });
-      $("integration-deep").hidden = false;
-      $("load-status").textContent = "";
+      window.renderIntegrations(markdown,{...initial,onChange:save});
+      if(preserveEdits && initial?.edited && markdown) $('integration-deep').__atPicker.setEdited(initial.edited);
+      $('load-status').textContent=markdown?'':'Select at least one preference or choose a template. Nothing is inferred about your personality.';save();
     }
-    fetch("/library/index.json").then(response => {
-      if (!response.ok) throw new Error("Catalog unavailable");
-      return response.json();
-    }).then(data => {
-      catalog = data;
-      [...new Set(data.tunings.map(t => t.system))].forEach(system => {
-        const option = document.createElement("option");
-        option.value = system; option.textContent = labels[system] || system;
-        $("system").append(option);
-      });
-      fillTypes();
-      $("system").disabled = $("type").disabled = false;
-      render();
-    }).catch(() => { $("load-status").textContent = "Couldn't load the library. Please reload the page or open the tuning library."; });
-    $("system").addEventListener("change", () => { fillTypes(); render(); });
-    $("type").addEventListener("change", render);
+    if(initial) {$('approach').value=initial.mode==='template'?'template':'preferences'; boxes().forEach(x=>x.checked=(initial.preferences||[]).includes(x.value)); $('draft-status').textContent=params.has('mode')?'Selections loaded from the link.':'Your local draft was restored.';}
+    window.renderIntegrations('',{...initial,onChange:save});
+    render(true);
+    fetch('/library/index.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{catalog=data;Object.keys(labels).forEach(system=>{const o=document.createElement('option');o.value=system;o.textContent=labels[system];$('system').append(o);});if(Object.hasOwn(labels,initial?.system))$('system').value=initial.system;fillTypes(initial?.type);$('system').disabled=$('type').disabled=false;render(true);}).catch(()=>{$('load-status').textContent='Templates are unavailable. You can still build instructions from your preferences.';});
+    $('approach').addEventListener('change',()=>render());$('preferences').addEventListener('change',()=>render());
+    $('system').addEventListener('change',()=>{fillTypes();render();});$('type').addEventListener('change',()=>render());
+    $('reset-generator').addEventListener('click',()=>{revision++;initial=null;try{localStorage.removeItem(key);}catch{} $('approach').value='preferences';boxes().forEach(x=>x.checked=false);if(catalog)fillTypes();$('integration-deep').__atPicker.selectTarget('anywhere');render();try{localStorage.removeItem(key);}catch{} if(window.history) window.history.replaceState(null,'',location.pathname); $('draft-status').textContent='Local draft cleared.';});
+    $('share-selection').addEventListener('click',async()=>{const s=selection(), q=new URLSearchParams({mode:s.mode,app:s.app,model:s.model,target:s.target});if(s.mode==='template'){if(!s.type){$('draft-status').textContent='Choose a template before sharing.';return;}q.set('system',s.system);q.set('type',s.type);}else q.set('preferences',s.preferences.join(','));try{await navigator.clipboard.writeText(location.origin+location.pathname+'?'+q);$('draft-status').textContent='Selection link copied. Edited text and test answers are excluded.';}catch{$('draft-status').textContent='Could not copy the link. Your draft is still available here.';}});
   })();
   </script>
 </body>

@@ -7,11 +7,11 @@
   "h1": "ChatGPT custom instructions examples, by what you do.",
   "dek": "Twenty short blocks for Custom Instructions. Pick a role, paste, edit and test.",
   "lede": "Custom instructions let you save preferences for how ChatGPT responds. These twenty role templates use concrete rules, each under 500 characters. Edit one to fit your work and compare replies on representative tasks; the templates have not been benchmarked.",
-  "answer": "On web or desktop, open Settings, Personalization, enable customization and edit Custom Instructions. Each role block below is under 500 characters. OpenAI currently lists limits of 1,500 characters on Free and Go, and 5,000 on Plus, Pro, Enterprise, Business and Education. Updates apply to subsequent responses in existing chats as well as new chats.",
+  "answer": "Open ChatGPT’s personalization settings and edit your custom instructions. Choose a short role example below, adapt it, and test it on real tasks. Available controls and limits vary by client; use the limit shown in your app.",
   "sections": [
     {
       "h2": "How to use them.",
-      "html": "<ul><li><strong>Where:</strong> Settings, Personalization, enable customization, then Custom Instructions.</li><li><strong>Limit:</strong> OpenAI lists 1,500 characters for Free and Go, and 5,000 for Plus, Pro, Enterprise, Business and Education. These blocks are all under 500.</li><li><strong>Scope:</strong> OpenAI says updates apply immediately to all chats, including existing ones. Earlier messages are not rewritten.</li><li><strong>Test:</strong> use a representative task and check the requested behavior, factual quality and uncertainty. A short greeting alone does not establish that a setting worked.</li><li><strong>Edit:</strong> remove conflicting rules and specify exceptions when detail is needed.</li></ul><p>See <a href=\"https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions\">OpenAI’s current instructions</a>. The personality pairings below are editorial suggestions, not validated matches. The <a href=\"/tools/custom-instructions-generator\">generator</a> provides compact library alternatives.</p>"
+      "html": "<ol><li>Open Settings → Personalization and find custom instructions. Web and desktop can have different controls.</li><li>Choose a short example and edit it. Preserve existing instructions and important uncertainty.</li><li>Review the saved text, then try a factual question, a planning task and a critique request in a new conversation.</li><li>Adjust anything that does not fit. One matching reply does not establish persistent compliance.</li></ol><p><a href=\"https://learn.chatgpt.com/docs/personalize\">OpenAI’s personalization guide</a> explains the layers. The pairings below are editorial suggestions. The <a href=\"/tools/custom-instructions-generator\">generator</a> offers a conservative 1,500-character export budget, not a universal product-limit claim.</p>"
     },
     {
       "h2": "The twenty blocks.",
@@ -33,7 +33,7 @@
     },
     {
       "q": "What is the character limit?",
-      "a": "OpenAI lists 1,500 characters for Free and Go, and 5,000 for Plus, Pro, Enterprise, Business and Education. Every block on this page is under 500."
+      "a": "Use the limit shown in your app. These examples are short; the generator provides a conservative 1,500-character export budget."
     },
     {
       "q": "Do custom instructions apply to old chats?",
@@ -53,6 +53,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "Clarified preference scope and removed universal field-limit claims; current setup controls vary by client."
+    },
     {
       "date": "2026-09-25",
       "note": "First published, twenty roles."
@@ -94,5 +98,6 @@
       "label": "What personality type is ChatGPT?",
       "href": "/research/what-personality-type-is-chatgpt"
     }
-  ]
+  ],
+  "updated": "2026-09-25"
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Attachment Style Test: Instant Result, No Email</title>
-  <meta name="description" content="Take the 36-item ECR-R Attachment test (~5 min) and get a Markdown tuning file matched to your style." />
+  <meta name="description" content="Take the 36-item ECR-R Attachment test (~5 min) and get editable instructions matched to your style." />
 
   <meta property="og:title" content="Free Attachment Style Test: Instant Result, No Email" />
   <meta property="og:description" content="36 items · ~5 min · returns a tuning file that tunes your AI agent to how you want to be related to." />
@@ -36,6 +36,7 @@
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,7 +78,7 @@
       <span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">5-min test · 36 questions · 1–7 scale</span>
       <div class="h-hero h-research-hero" aria-hidden="true">Free attachment style test.</div>
       <div class="h-hero h-research-hero h-hero-italic" style="color: #914d59;">Instant results, then your tuning file.</div>
-      <p class="lede">Answer 36 questions on a 1–7 Likert scale. We'll score it client-side (handling the 14 reverse-scored items) and hand you a Markdown tuning file matched to your attachment style.</p>
+      <p class="lede">Answer 36 questions using a labeled 1–7 scale. We'll score it in your browser (handling the 14 reverse-scored items) and hand you editable instructions matched to your attachment style.</p>
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> ECR-R (Experiences in Close Relationships - Revised)</div>
@@ -143,13 +144,13 @@
           <p class="quiz-item-statement" id="quiz-item-statement"></p>
         </div>
         <div class="quiz-likert quiz-likert-7" role="group">
-          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Strongly disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strong disagree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Strongly disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Strongly disagree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Slightly disagree"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Slightly disagree"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Slightly disagree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Neutral"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Slightly agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Slightly agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Slightly agree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="6" aria-label="6 — Agree"><span class="quiz-likert-num">6</span><span class="quiz-likert-label">Agree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="7" aria-label="7 — Strongly agree"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strong agree</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="7" aria-label="7 — Strongly agree"><span class="quiz-likert-num">7</span><span class="quiz-likert-label">Strongly agree</span></button>
         </div>
         <div class="quiz-nav">
           <button type="button" class="quiz-nav-btn" id="quiz-back" disabled>← Back</button>
@@ -217,8 +218,8 @@
       <div class="quiz-result-next">
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
-          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
           <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
         </div>
@@ -386,6 +387,8 @@
     const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
     const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 36, 7);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
 
     $("quiz-start").addEventListener("click", () => {
       if (window.atTrack) window.atTrack("quiz_start");
@@ -395,6 +398,7 @@
     });
 
     function renderQuestion() {
+      draft.save();
       advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
@@ -416,6 +420,7 @@
         else showResult();
       })) return;
       state.answers[state.currentIndex] = value;
+      draft.save();
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
@@ -456,6 +461,7 @@
     }
 
     function showResult() {
+      draft.clear();
       if (!state.completionTracked) {
         if (window.atTrack) window.atTrack("quiz_complete");
         state.completionTracked = true;
@@ -569,6 +575,7 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
       state.resultVersion++;
       state.completionTracked = false;
       state.currentTuning = "";

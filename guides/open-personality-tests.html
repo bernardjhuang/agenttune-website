@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Tests</span>
         <h1 class="h-hero h-research-hero">The five open personality tests, explained.</h1>
-        <p class="article-dek">What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">This page documents the five questionnaires used on AgentTune: their item sources, scoring rules and limits. The items and keys are available to inspect. Scores from human respondents and model-generated answers should not be treated as equivalent psychological measurements.</p>
+        <p class="lede" style="margin-top: 18px;">AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> AgentTune publishes the items and scoring for OEJTS (32 items), a 36-item OEPS adaptation, ODAT (16), IPIP-50 (50) and ECR-R (36). You can take them free in the browser or read their Markdown mirrors at /tests/. Check the original instrument terms before reuse. Identical arithmetic does not make human and model scores psychologically equivalent.</div>
 
       <div class="divider tight"></div>
 
@@ -105,7 +103,7 @@
 
       <section>
         <h2>IPIP-50: the Big Five test.</h2>
-        <p><strong>What it measures.</strong> Five continuous traits: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. Fifty short statements with an implied 'I', such as 'Am the life of the party', rated 1 (very inaccurate) to 5 (very accurate). Ten items per trait, interleaved.</p><p><strong>Scoring.</strong> Reverse-keyed items score 6 minus the answer. Sum the ten items per trait, giving 10 to 50. AgentTune then converts each sum to a z-score against the site’s configured reference means and standard deviations (for example Openness mean 37.5, SD 5.5) and loads a high or low tuning file for any trait past 0.5 SD. Eighteen items are reverse-keyed.</p><p><strong>Limits.</strong> For a model, a score of 47 on Agreeableness means 'answered the agreeable way on nearly every item', not a percentile of anything. Treat the norm conversion as a scoring output, not a claim about where a model sits among people.</p>
+        <p><strong>What it measures.</strong> Five continuous traits: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. Fifty short statements with an implied 'I', such as 'Am the life of the party', rated 1 (very inaccurate) to 5 (very accurate). Ten items per trait, interleaved.</p><p><strong>Scoring.</strong> Reverse-keyed items score 6 minus the answer. Sum the ten items per trait, giving 10 to 50. AgentTune then converts each sum to an index using implementation reference centers and scales (for example Openness mean 37.5, SD 5.5) and loads a high or low tuning file for any trait past the heuristic threshold of ±0.5. Eighteen items are reverse-keyed.</p><p><strong>Limits.</strong> For a model, a score of 47 on Agreeableness means 'answered the agreeable way on nearly every item', not a percentile of anything. The reference constants have no verified normative population. The index is not a population z-score or percentile, for either people or models; high/low template thresholds are heuristic.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -190,6 +188,7 @@
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

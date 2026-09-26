@@ -10,7 +10,7 @@
   <meta property="og:description" content="Two ways to make ChatGPT sound like you: feed it your writing, or tune it to your personality. What each one actually changes, and how to do both." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-09-24" />
+  <meta property="article:modified_time" content="2026-09-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/make-chatgpt-sound-like-you" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,9 +27,9 @@
   <link rel="canonical" href="https://agent-tune.com/guides/make-chatgpt-sound-like-you" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Make ChatGPT sound like you — and treat you like you","description":"Two ways to make ChatGPT sound like you: feed it your writing, or tune it to your personality. What each one actually changes, and how to do both.","url":"https://agent-tune.com/guides/make-chatgpt-sound-like-you","datePublished":"2026-07-23","dateModified":"2026-09-24","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Make ChatGPT sound like you — and treat you like you","description":"Two ways to make ChatGPT sound like you: feed it your writing, or tune it to your personality. What each one actually changes, and how to do both.","url":"https://agent-tune.com/guides/make-chatgpt-sound-like-you","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Make ChatGPT sound like you — and treat you like you"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which approach is better, writing samples or a personality tuning?","acceptedAnswer":{"@type":"Answer","text":"They fix different problems. Writing samples are better when the output is the product — emails, posts, drafts that must read like you wrote them. A personality tuning is better when the conversation is the product — how ChatGPT paces, structures, and challenges its replies to you. If you only fix one, fix the one that's actually bothering you."}},{"@type":"Question","name":"How long does the personality-first setup take?","acceptedAnswer":{"@type":"Answer","text":"About 15 minutes end to end: ten for the free in-browser MBTI test, two to copy the block for your type, one to paste it into Settings → Personalization → Custom instructions, and a couple to sanity-check a fresh chat. If you already know your type, it's under five minutes."}},{"@type":"Question","name":"Do I need to know my MBTI type first?","acceptedAnswer":{"@type":"Answer","text":"You need a type, but not necessarily MBTI. AgentTune has free in-browser tests and matching tunings for five systems — MBTI, Big Five, Enneagram, DISC, and attachment style. MBTI is the common starting point because its 16 types map cleanly onto interaction rules, but any system that describes how you prefer to work will do."}},{"@type":"Question","name":"Can I use both approaches at the same time?","acceptedAnswer":{"@type":"Answer","text":"Yes — they compose, and that's the strongest setup. The tuning block governs how ChatGPT treats you in conversation; a few style notes distilled from your own writing govern how drafts read. A tuning block runs 400–700 characters against the field's 1,500-character limit, so both fit in custom instructions together."}},{"@type":"Question","name":"Doesn't ChatGPT memory already learn my style?","acceptedAnswer":{"@type":"Answer","text":"Memory collects facts — projects, preferences you've stated, recurring topics. It doesn't reliably converge on interaction style, and you can't inspect or edit what it inferred the way you can a pasted block. Custom instructions are explicit and yours. Use memory for context, a tuning for behavior."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which approach is better, writing samples or a personality tuning?","acceptedAnswer":{"@type":"Answer","text":"They fix different problems. Writing samples are better when the output is the product — emails, posts, drafts that must read like you wrote them. A personality tuning is better when the conversation is the product — how ChatGPT paces, structures, and challenges its replies to you. If you only fix one, fix the one that's actually bothering you."}},{"@type":"Question","name":"How long does the personality-first setup take?","acceptedAnswer":{"@type":"Answer","text":"About 15 minutes end to end: ten for the free in-browser MBTI test, two to copy the block for your type, one to paste it into Settings → Personalization → Custom instructions, and a couple to sanity-check a fresh chat. If you already know your type, it's under five minutes."}},{"@type":"Question","name":"Do I need to know my MBTI type first?","acceptedAnswer":{"@type":"Answer","text":"You need a type, but not necessarily MBTI. AgentTune has free in-browser tests and matching tunings for five systems — MBTI, Big Five, Enneagram, DISC, and attachment style. MBTI is the common starting point because its 16 types map cleanly onto interaction rules, but any system that describes how you prefer to work will do."}},{"@type":"Question","name":"Can I use both approaches at the same time?","acceptedAnswer":{"@type":"Answer","text":"You can combine conversation preferences with writing-style notes. Keep the rules distinct, check your app’s field limit and compare the results on your own tasks."}},{"@type":"Question","name":"Doesn't ChatGPT memory already learn my style?","acceptedAnswer":{"@type":"Answer","text":"Memory collects facts — projects, preferences you've stated, recurring topics. It doesn't reliably converge on interaction style, and you can't inspect or edit what it inferred the way you can a pasted block. Custom instructions are explicit and yours. Use memory for context, a tuning for behavior."}}]}</script>
 
 
   <script defer src="/consent.js"></script>
@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · ChatGPT</span>
         <h1 class="h-hero h-research-hero">Make ChatGPT sound like you — and treat you like you.</h1>
-        <p class="article-dek">Writing samples fix the prose. A personality tuning fixes everything else.</p>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-24">September 24, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">There are two ways to make ChatGPT sound like you. The corpus-first approach feeds it samples of your writing so it can mimic your prose. The personality-first approach — take a test, grab the matching tuning, paste it into custom instructions — changes how ChatGPT treats you: pacing, directness, how it handles your tangents and decisions. Fifteen minutes, no writing samples required. And the two compose.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">To make ChatGPT sound like you, either feed it samples of your writing (best for mimicking prose style) or paste a personality-matched tuning into custom instructions (best for how it treats you — pacing, directness, decision style). The personality route takes about 15 minutes: take a free test, copy the tuning for your type, paste it into Settings → Personalization.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> To make ChatGPT sound like you, either feed it samples of your writing (best for mimicking prose style) or paste a personality-matched tuning into custom instructions (best for how it treats you — pacing, directness, decision style). The personality route takes about 15 minutes: take a free test, copy the tuning for your type, paste it into Settings → Personalization.</div>
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="sol-6" data-guide-target="chatgpt-custom"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=sol-6&amp;target=chatgpt-custom">open the prompt generator →</a></p></aside>
@@ -93,7 +91,7 @@
 
       <section>
         <h2>Layer both. They don't compete.</h2>
-        <p>The two approaches write to different layers, so stack them. The tuning block goes in <em>How would you like ChatGPT to respond?</em> and governs interaction. Your style notes go in the same field after it, or in a project's instructions — two or three concrete observations from your corpus exercise: <em>"short sentences, no semicolons, one idea per paragraph, sign off without a summary."</em> Both fields hold 1,500 characters; a tuning block uses 400–700, which leaves room.</p><p>The division of labor is clean. When ChatGPT drafts an email as you, the corpus layer decides what the email sounds like. When ChatGPT talks <em>to</em> you about the email, the personality layer decides whether you get three options or one recommendation, critique before validation or after. Most people who bounce off corpus-only setups are missing that second layer — the drafts improved but the conversation still felt like a form letter.</p>
+        <p>Keep communication preferences and writing-style notes clear and specific. For example: “When advising me, lead with a recommendation. When drafting as me, use short sentences and one idea per paragraph.” Add this to your available custom-instructions or project-instructions field and check the limit shown there.</p><p>On ChatGPT Work web, OpenAI also documents a writing-style setup using connected writing sources. That is a separate feature. A few examples of your writing can guide a draft without making personality claims.</p><p>Compare several drafts and conversations before deciding whether the combination helps. Neither approach is a guaranteed improvement.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -120,7 +118,7 @@
           </details>
           <details>
             <summary>Can I use both approaches at the same time?</summary>
-            <p>Yes — they compose, and that's the strongest setup. The tuning block governs how ChatGPT treats you in conversation; a few style notes distilled from your own writing govern how drafts read. A tuning block runs 400–700 characters against the field's 1,500-character limit, so both fit in custom instructions together.</p>
+            <p>You can combine conversation preferences with writing-style notes. Keep the rules distinct, check your app’s field limit and compare the results on your own tasks.</p>
           </details>
           <details>
             <summary>Doesn't ChatGPT memory already learn my style?</summary>
@@ -129,6 +127,13 @@
         </div>
       </section>
 
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-09-25">September 25, 2026</time> Clarified preference scope and removed universal field-limit claims; current setup controls vary by client.</li>
+        </ul>
+      </section>
 
 
       <div class="divider tight"></div>
@@ -152,6 +157,7 @@
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

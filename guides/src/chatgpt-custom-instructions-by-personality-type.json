@@ -1,16 +1,16 @@
 {
   "slug": "chatgpt-custom-instructions-by-personality-type",
   "title": "ChatGPT Custom Instructions for All 16 MBTI Types",
-  "description": "Paste-ready ChatGPT custom instructions for all 16 MBTI types, condensed from free MIT-licensed tuning files. Each block fits the 1,500-character limit.",
+  "description": "Editable ChatGPT custom instructions for 16 MBTI templates. Choose preferences that fit, preview the text and adapt it in the free generator.",
   "pill": "Guide · ChatGPT",
   "h1": "ChatGPT custom instructions for every MBTI personality type.",
   "dek": "Sixteen paste-ready blocks. Pick yours, paste it, done.",
-  "lede": "Below are paste-ready custom-instructions blocks for all 16 MBTI types — condensed from AgentTune's free, MIT-licensed tuning files. Find your type, copy the block, and paste it into ChatGPT's <em>How would you like ChatGPT to respond?</em> field under Settings → Personalization. Each block runs 400–700 characters, comfortably under the field's 1,500-character limit. If you don't know your type, the free test takes about five minutes.",
+  "lede": "Choose an optional template below, then edit it to match your preferences. Use ChatGPT’s customization controls or the generator for a compact export. No personality test is required.",
   "answer": "Open ChatGPT's Settings → Personalization → Custom instructions and paste a personality-matched block into the \"How would you like ChatGPT to respond?\" field. This page has paste-ready blocks for all 16 MBTI types — INTJ through ESFP — each condensed from AgentTune's free tuning files to fit the character limit.",
   "sections": [
     {
       "h2": "How custom instructions work.",
-      "html": "<p>ChatGPT's custom instructions live under Settings → Personalization → Custom instructions. Two fields: <em>What would you like ChatGPT to know about you?</em> and <em>How would you like ChatGPT to respond?</em> Each holds up to 1,500 characters, and they apply to new conversations from then on. They're separate from ChatGPT's memory — memory accumulates facts about you over time; custom instructions are standing orders you write once.</p><p>The blocks below go in the second field. They're behavioral rules — pacing, directness, structure, tone — not biography. Every block on this page is 400–700 characters, so it fits with room to spare for your own additions. If you want the first field too, one or two lines is enough: your role, your field, what you're usually working on.</p>"
+      "html": "<p>Open ChatGPT’s Settings → Personalization and look for custom instructions. Available controls differ between web and desktop. Use them for communication preferences you want to reuse across chats, or choose project instructions for one project.</p><p>The blocks below are deliberately short. AgentTune’s generator uses a conservative 1,500-character export budget; this is not a universal product limit. Follow the limit shown by your app. Keep existing instructions, review conflicts and test the result on a few real tasks.</p><p><a href=\"https://learn.chatgpt.com/docs/personalize\">OpenAI’s personalization documentation</a> describes the available layers. These templates are editorial starting points, not validated matches.</p>"
     },
     {
       "h2": "Don't know your type? Ten minutes fixes that.",
@@ -40,7 +40,7 @@
   "faq": [
     {
       "q": "Do these blocks fit ChatGPT's character limit?",
-      "a": "Yes. Every block on this page runs 400–700 characters against a 1,500-character field limit, so each fits with roughly half the field left over. That's deliberate — you can append your own lines (preferred formats, topics to avoid, your field's jargon) without trimming the personality rules."
+      "a": "These examples are deliberately short. Use the limit shown in your app; the generator offers a conservative 1,500-character export budget. Review your combined instructions after adding preferences."
     },
     {
       "q": "Which field do I paste the block into?",
@@ -97,5 +97,11 @@
   ],
   "updated": "2026-09-25",
   "promptModel": "sol-6",
-  "promptDestination": "chatgpt-custom"
+  "promptDestination": "chatgpt-custom",
+  "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "Clarified preference scope and removed universal field-limit claims; current setup controls vary by client."
+    }
+  ]
 }

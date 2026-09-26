@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">How to change Claude Code's personality.</h1>
-        <p class="article-dek">Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Most people put their preferences in CLAUDE.md, because it is the file they already have. Claude Code's docs point somewhere else. CLAUDE.md is for what the project needs. How Claude Code talks to <em>you</em>, its role and its tone, is what an <strong>output style</strong> is for. It is one Markdown file, and one line in it decides whether Claude Code stays good at engineering.</p>
+        <p class="lede" style="margin-top: 18px;">Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.</div>
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
@@ -214,6 +212,7 @@ How to talk to the person you are working with:
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

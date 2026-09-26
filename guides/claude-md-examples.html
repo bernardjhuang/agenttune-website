@@ -69,12 +69,10 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Code</span>
         <h1 class="h-hero h-research-hero">CLAUDE.md examples that actually change behavior.</h1>
-        <p class="article-dek">Four complete files, annotated — and the principles behind them.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">CLAUDE.md is the file Claude Code reads at the start of every session — your standing instructions, loaded before you type a word. It lives in three places: the repo root (checked in, for the team), CLAUDE.local.md (gitignored, personal), and ~/.claude/CLAUDE.md (global, every project). Below: four complete examples you can copy — a minimal starter, a test-discipline file, a monorepo root, and a personality layer — plus the principles that separate a CLAUDE.md that works from one Claude quietly ignores.</p>
+        <p class="lede" style="margin-top: 18px;">CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.</div>
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
@@ -217,6 +215,7 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

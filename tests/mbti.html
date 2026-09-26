@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free MBTI Test (OEJTS): Instant Type, No Email or Signup</title>
-  <meta name="description" content="Free 32-question MBTI test, about 5 minutes, scored in your browser. Returns a Markdown tuning file matched to your type — no signup, no email." />
+  <meta name="description" content="Free 32-question MBTI test, about 5 minutes, scored in your browser. Returns editable instructions matched to your type — no signup, no email." />
 
   <meta property="og:title" content="Free MBTI Test (OEJTS): Instant Type, No Email or Signup" />
   <meta property="og:description" content="32 questions · ~5 min · returns a tuning file that improves how your AI agent talks to you." />
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "Quiz",
     "name": "MBTI Test (OEJTS)",
-    "description": "Interactive 32-item Jungian type assessment. Returns one of 16 four-letter MBTI types plus a Markdown tuning file for the user's AI agent.",
+    "description": "Interactive 32-item Jungian type assessment. Returns one of 16 four-letter MBTI types plus editable instructions for the user's AI agent.",
     "url": "https://agent-tune.com/tests/mbti",
     "inLanguage": "en",
     "numberOfQuestions": 32,
@@ -51,6 +51,7 @@
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -100,7 +101,7 @@
       <div class="h-hero h-research-hero" aria-hidden="true">Free MBTI test.</div>
       <div class="h-hero h-research-hero h-hero-italic" style="color: #5b4dc0;">Instant results, then your tuning file.</div>
       <p class="lede">
-        Answer 32 quick questions — each is a choice between two statements, rated 1 to 5. We'll score it client-side and hand you a Markdown tuning file matched to your MBTI type, ready to paste into any AI agent's system prompt.
+        Answer 32 quick questions — each is a choice between two statements, rated 1 to 5. We'll score it in your browser and hand you editable instructions matched to your MBTI type, ready to paste into any AI agent's saved instructions.
       </p>
 
       <div class="quiz-intro-meta">
@@ -196,11 +197,11 @@
         <div class="quiz-likert" role="group" aria-label="Rate how much you identify with each statement">
           <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Strongly first statement" aria-pressed="false">
             <span class="quiz-likert-num">1</span>
-            <span class="quiz-likert-label">Strongly first</span>
+            <span class="quiz-likert-label">Strongly first statement</span>
           </button>
           <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Lean first statement" aria-pressed="false">
             <span class="quiz-likert-num">2</span>
-            <span class="quiz-likert-label">Lean first</span>
+            <span class="quiz-likert-label">Lean first statement</span>
           </button>
           <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral" aria-pressed="false">
             <span class="quiz-likert-num">3</span>
@@ -208,11 +209,11 @@
           </button>
           <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Lean second statement" aria-pressed="false">
             <span class="quiz-likert-num">4</span>
-            <span class="quiz-likert-label">Lean second</span>
+            <span class="quiz-likert-label">Lean second statement</span>
           </button>
           <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Strongly second statement" aria-pressed="false">
             <span class="quiz-likert-num">5</span>
-            <span class="quiz-likert-label">Strongly second</span>
+            <span class="quiz-likert-label">Strongly second statement</span>
           </button>
         </div>
 
@@ -286,13 +287,13 @@
 
       <!-- Next steps -->
       <div class="quiz-result-next">
-        <h2>Stack another system for higher fidelity</h2>
+        <h2>Stack another system for a different perspective</h2>
         <p class="muted">Tuning files layer cleanly. Take another test and add a second tuning to your agent.</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;">
             <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span>
             <div class="quiz-next-card-name">Get your Enneagram tuning</div>
-            <div class="quiz-next-card-meta">5-min OEPS test →</div>
+            <div class="quiz-next-card-meta">5-minute questionnaire →</div>
           </a>
           <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;">
             <span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span>
@@ -464,6 +465,8 @@
 
     const $ = id => document.getElementById(id);
     const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 32, 5);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
 
     // ==================================================
     // Intro screen
@@ -483,6 +486,7 @@
     // Question screen
     // ==================================================
     function renderQuestion() {
+      draft.save();
       advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = (state.currentIndex + 1);
@@ -512,6 +516,7 @@
         else showResult();
       })) return;
       state.answers[state.currentIndex] = value;
+      draft.save();
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
@@ -598,6 +603,7 @@
     // Result screen
     // ==================================================
     function showResult() {
+      draft.clear();
       if (!state.completionTracked) {
         if (window.atTrack) window.atTrack("quiz_complete");
         state.completionTracked = true;
@@ -741,6 +747,7 @@
 
     // Retake
     $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
       advance.cancel();
       state.currentIndex = 0;
       state.answers = new Array(32).fill(null);

@@ -212,12 +212,12 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">${escHtml(spec.pill)}</span>
-        <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>${spec.dek ? `\n        <p class="article-dek">${spec.dek}</p>` : ""}
+        <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
-        <p class="lede" style="margin-top: 18px;">${spec.lede}</p>
+        <p class="lede" style="margin-top: 18px;">${spec.answer ? escHtml(spec.answer) : spec.lede}</p>
       </section>
 
-${spec.answer ? `      <div class="guide-answer"><strong>The short answer.</strong> ${escHtml(spec.answer)}</div>\n` : ""}
+
       <div class="divider tight"></div>
 ${spec.promptModel ? `      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="${escAttr(spec.promptModel)}" data-guide-target="${escAttr(spec.promptDestination || "anywhere")}"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=${escAttr(spec.promptModel)}&amp;target=${escAttr(spec.promptDestination || "anywhere")}">open the prompt generator →</a></p></aside>` : ""}
 ${sectionsHtml}
@@ -235,6 +235,7 @@ ${relatedHtml}
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>${(spec.scripts || []).map(src => `\n  <script defer src="${escAttr(src)}"></script>`).join("")}
 </body>

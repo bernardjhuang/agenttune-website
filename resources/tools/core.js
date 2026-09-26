@@ -3,14 +3,54 @@
 'use strict';
 const version='1.0.0';
 const destinations=[
-{id:'plain',name:'Any chat · this conversation',filename:'preferences.md',help:'Paste into a chat when you want these preferences used. This does not create saved memory.'},
-{id:'chatgpt',name:'ChatGPT · custom instructions',filename:'custom-instructions.md',help:'Review in Settings → Personalization → Custom instructions. Controls and limits can vary by client.'},
-{id:'claude',name:'Claude · account instructions',filename:'claude-instructions.md',help:'Review in Claude’s account instructions. Use project instructions instead for project-specific context.'},
-{id:'project',name:'ChatGPT or Claude · project instructions',filename:'project-instructions.md',help:'Add to the selected project’s instructions. Preserve the project’s existing context and requirements.'},
-{id:'muse',name:'Muse · Soul.md',filename:'Soul.md',help:'Review in Muse’s Assistant Identity settings. Soul.md describes communication style; keep personal facts in Memory.md.'},
-{id:'claude-code',name:'Claude Code · CLAUDE.md',filename:'CLAUDE.md',help:'Merge into the intended project’s CLAUDE.md. Keep existing repository instructions. Review scope before saving.'},
-{id:'codex',name:'Codex · AGENTS.md',filename:'AGENTS.md',help:'Merge into AGENTS.md at the intended scope. A project file and personal instructions have different reach.'},
-{id:'api',name:'API · JSON instruction payload',filename:'instructions.json',help:'Generic JSON with an instructions field. Adapt to your provider’s documented request schema; this is not a complete API request.'}
+  {
+    "id": "plain",
+    "name": "Any chat · this conversation",
+    "filename": "preferences.md",
+    "help": "Paste into a chat when you want these preferences used. This does not create saved memory."
+  },
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT · custom instructions",
+    "filename": "custom-instructions.md",
+    "help": "Review in Settings → Personalization → Custom instructions. Controls and limits can vary by client."
+  },
+  {
+    "id": "claude",
+    "name": "Claude · account instructions",
+    "filename": "claude-instructions.md",
+    "help": "Review in Claude’s account instructions. Use project instructions instead for project-specific context."
+  },
+  {
+    "id": "project",
+    "name": "ChatGPT or Claude · project instructions",
+    "filename": "project-instructions.md",
+    "help": "Add to the selected project’s instructions. Preserve the project’s existing context and requirements."
+  },
+  {
+    "id": "muse",
+    "name": "Muse · Soul.md",
+    "filename": "Soul.md",
+    "help": "Review in Muse’s Assistant Identity settings. Soul.md describes communication style; keep personal facts in Memory.md."
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code · CLAUDE.md",
+    "filename": "CLAUDE.md",
+    "help": "Merge into the intended project’s CLAUDE.md. Keep existing repository instructions. Review scope before saving."
+  },
+  {
+    "id": "codex",
+    "name": "Codex · AGENTS.md",
+    "filename": "AGENTS.md",
+    "help": "Merge into AGENTS.md at the intended scope. A project file and personal instructions have different reach."
+  },
+  {
+    "id": "api",
+    "name": "API · JSON instruction payload",
+    "filename": "instructions.json",
+    "help": "Generic JSON with an instructions field. Adapt to your provider’s documented request schema; this is not a complete API request."
+  }
 ];
 const choices={
 length:{concise:'Start with the answer. Keep routine replies brief; expand when the task needs explanation.',balanced:'Give the answer and enough reasoning to act on it. Offer more detail when useful.',detailed:'Explain the reasoning, assumptions, and a worked example when they help.'},

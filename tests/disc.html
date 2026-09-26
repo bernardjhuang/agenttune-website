@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free DISC Personality Test: Instant Results, No Email</title>
-  <meta name="description" content="Take 16 quick questions (~3 min, fastest in the library) and get a Markdown tuning file matched to your DISC style." />
+  <meta name="description" content="Take 16 quick questions (~3 min, fastest in the library) and get editable instructions matched to your DISC style." />
 
   <meta property="og:title" content="Free DISC Personality Test: Instant Results, No Email" />
   <meta property="og:description" content="16 items · 3 min · returns a tuning file that tunes your AI agent to your workplace style." />
@@ -37,6 +37,7 @@
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,7 +79,7 @@
       <span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">3-min test · 16 questions</span>
       <div class="h-hero h-research-hero" aria-hidden="true">Free DISC personality test.</div>
       <div class="h-hero h-research-hero h-hero-italic" style="color: #855b1c;">Instant results, then your tuning file.</div>
-      <p class="lede">Answer 16 quick questions — the fastest test in the library. We'll score it client-side and hand you a Markdown tuning file matched to your DISC workplace style.</p>
+      <p class="lede">Answer 16 quick questions — the fastest test in the library. We'll score it in your browser and hand you editable instructions matched to your DISC workplace style.</p>
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> ODAT (Open DISC Assessment Test)</div>
@@ -137,9 +138,9 @@
         </div>
         <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
           <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly disagree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly agree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
         </div>
         <div class="quiz-nav">
@@ -211,8 +212,8 @@
       <div class="quiz-result-next">
         <h3>Stack another system</h3>
         <div class="quiz-result-next-grid">
-          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
-          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-min OEPS test →</div></a>
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
+          <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
           <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
         </div>
@@ -336,6 +337,8 @@
     const state = { currentIndex: 0, answers: new Array(16).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
     const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 16, 5);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
 
     $("quiz-start").addEventListener("click", () => {
       if (window.atTrack) window.atTrack("quiz_start");
@@ -345,6 +348,7 @@
     });
 
     function renderQuestion() {
+      draft.save();
       advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
@@ -366,6 +370,7 @@
         else showResult();
       })) return;
       state.answers[state.currentIndex] = value;
+      draft.save();
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
@@ -398,6 +403,7 @@
     }
 
     function showResult() {
+      draft.clear();
       if (!state.completionTracked) {
         if (window.atTrack) window.atTrack("quiz_complete");
         state.completionTracked = true;
@@ -530,6 +536,7 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
       state.resultVersion++;
       state.completionTracked = false;
       state.currentTuning = "";

@@ -69,10 +69,9 @@
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Developer guide · reproducibility</span>
         <h1 class="h-hero h-research-hero">How to reproduce AgentTune’s AI self-report research</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">You can recompute the published September scores without an API key or a model subscription. This guide walks through the frozen files, the scoring conventions and the checks needed before interpreting the output.</p>
+        <p class="lede" style="margin-top: 18px;">Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.</p>
       </section>
 
-      <div class="guide-answer"><strong>The short answer.</strong> Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.</div>
 
       <div class="divider tight"></div>
 
@@ -145,6 +144,7 @@ node content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare the parse
   </div>
 
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/guide-prompts.js"></script>
 </body>

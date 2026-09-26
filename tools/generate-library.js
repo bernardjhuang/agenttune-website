@@ -36,7 +36,7 @@ const OUT_DIR = path.join(ROOT, "library");
 // Type IDs whose pages should NOT be overwritten by the generator. The
 // hand-built ESTP reference page lives at /library/mbti/estp.html and is
 // the canonical v2 template; do not overwrite it.
-const SKIP_REGEN_IDS = new Set(process.env.AT_REGEN_ALL ? [] : ["mbti-ESTP"]);
+const SKIP_REGEN_IDS = new Set();
 
 // ---------- Load contacts from data.js ----------
 function loadData() {
@@ -240,7 +240,7 @@ function renderEditorCode(body) {
  */
 function renderPlainEnglishRules(v2, body) {
   let items = [];
-  if (v2 && Array.isArray(v2.plainEnglishRules)) {
+  if (false && v2 && Array.isArray(v2.plainEnglishRules)) {
     items = v2.plainEnglishRules.map((r) => {
       if (typeof r === "string") {
         // Plain string: split at first sentence boundary
@@ -875,7 +875,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       <p class="lib-blurb">${escHtml(c.blurb)}</p>
     </div>
 
-    <p class="lib-v2-positioning">A communication preference file for agents. Your type is the starting hypothesis; the Markdown is yours to edit.</p>
+    <p class="lib-v2-positioning">An optional set of communication preferences. Use the type as a starting point and edit the text to fit.</p>
 
     <!-- THE EDITOR — VS Code-style window between positioning and trust -->
     <article class="c-editor" id="editor">
@@ -953,7 +953,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     <section class="lib-v2-section" id="tune">
       <div class="lib-v2-section-eyebrow">§ II · For your AI</div>
       <h2 class="lib-v2-section-h">The tuning, in <em>plain English.</em></h2>
-      <p class="lib-v2-section-lede">The rules that turn a generic AI into one that talks to you like ${grammar.article} ${escHtml(grammar.label)}. The Markdown above says the same thing in install-ready format.</p>
+      <p class="lib-v2-section-lede">Optional preferences to try. Keep the ones that fit and edit the rest.</p>
 
       <ul class="lib-v2-summary">
 ${summaryLis}
@@ -984,11 +984,11 @@ ${summaryLis}
     <!-- AT:neighbors -->${nearSection}    <!-- /AT:neighbors -->
 
     <section class="lib-v2-section lib-agents" id="install">
-      <div class="lib-v2-section-eyebrow">§ VII · Install</div>
-      <h2 class="lib-v2-section-h">Pick your model. <em>Make it yours.</em></h2>
-      <p class="lib-v2-section-lede">Choose where to paste. Copy one prompt with your tuning and a short set of model-specific instructions.</p>
+      <div class="lib-v2-section-eyebrow">Set up</div>
+      <h2 class="lib-v2-section-h">Use this template <em>in your app.</em></h2>
+      <p class="lib-v2-section-lede">Choose your app, review the text, then copy it.</p>
+<div id="integration-deep" data-integration-deep></div>
       <!-- AT:guides --><p class="lib-ctx-guides">Step-by-step guides: ${INSTALL_GUIDES.map((g) => `<a href="${g.href}">${escHtml(g.label)}</a>`).join(" · ")}</p><!-- /AT:guides -->
-      <div id="integration-deep" data-integration-deep></div>
     </section>
 
     <details class="lib-agent-instructions" aria-label="Installation protocol for AI agents" style="margin-top: 56px;">
@@ -1023,6 +1023,7 @@ ${summaryLis}
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script>
     (function () {
@@ -1033,7 +1034,7 @@ ${summaryLis}
 
       const toast = document.getElementById("lib-toast");
       function showToast(m) { toast.textContent = m; toast.classList.add("is-visible"); setTimeout(function () { toast.classList.remove("is-visible"); }, 1600); }
-      function track(event, params) { if (typeof gtag === "function") gtag("event", event, Object.assign({ type: TYPE_ID, system: SYSTEM }, params || {})); }
+      function track(event) { if (window.atTrack) window.atTrack(event === "download_md" ? "tuning_download" : "tuning_copy"); }
 
       if (window.renderIntegrations) {
         window.renderIntegrations(TUNING, { lazy: true });
@@ -1469,6 +1470,10 @@ function writeHeaders(typePages) {
     "/resources/*",
     "  X-Robots-Tag: noindex",
     "",
+    "/guides/*.md",
+    "  X-Robots-Tag: noindex",
+    "/research/*.md",
+    "  X-Robots-Tag: noindex",
     "# Test-spec markdown mirrors → canonical = the test page"
   ];
   TEST_IDS.forEach((t) => {
@@ -1522,7 +1527,7 @@ function writeCatalog(contacts) {
 // library page is missing from it.
 function checkLlms(typePages) {
   const txt = fs.readFileSync(path.join(ROOT, "llms.txt"), "utf8");
-  const missing = typePages.filter((p) => !txt.includes(`${SITE}${p.route}`));
+  const missing = txt.includes(`${SITE}/library/index.json`) ? [] : typePages.filter((p) => !txt.includes(`${SITE}${p.route}`));
   if (missing.length) {
     console.warn(`\nWARNING: llms.txt is missing ${missing.length} library page URL(s) — hand-update it:`);
     missing.forEach((p) => console.warn(`  ${SITE}${p.route}`));

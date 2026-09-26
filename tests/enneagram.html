@@ -37,6 +37,7 @@
 
   <script src="/data.js"></script>
   <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
   <script src="/integrations.js"></script>
   <script src="/quiz-utils.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,7 +81,7 @@
       <div class="h-hero h-research-hero" aria-hidden="true">Free Enneagram test.</div>
       <div class="h-hero h-research-hero h-hero-italic" style="color: #246f48;">Instant results, then your tuning file.</div>
       <p class="lede">
-        Answer 36 quick Likert questions. We'll score it client-side and hand you a Markdown tuning file matched to your dominant motivation, ready to paste into any AI agent's system prompt.
+        Answer 36 questions about your preferences. We'll score it in your browser and hand you editable instructions matched to your dominant motivation, ready to paste into any AI agent's saved instructions.
       </p>
 
       <div class="quiz-intro-meta">
@@ -179,9 +180,9 @@
         </div>
         <div class="quiz-likert" role="group" aria-label="Choose an answer; advances to the next question">
           <button type="button" class="quiz-likert-btn" data-value="1" aria-label="1 — Disagree"><span class="quiz-likert-num">1</span><span class="quiz-likert-label">Disagree</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="2" aria-label="2 — Slightly disagree"><span class="quiz-likert-num">2</span><span class="quiz-likert-label">Slightly disagree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="3" aria-label="3 — Neutral"><span class="quiz-likert-num">3</span><span class="quiz-likert-label">Neutral</span></button>
-          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly</span></button>
+          <button type="button" class="quiz-likert-btn" data-value="4" aria-label="4 — Slightly agree"><span class="quiz-likert-num">4</span><span class="quiz-likert-label">Slightly agree</span></button>
           <button type="button" class="quiz-likert-btn" data-value="5" aria-label="5 — Agree"><span class="quiz-likert-num">5</span><span class="quiz-likert-label">Agree</span></button>
         </div>
         <div class="quiz-nav">
@@ -252,10 +253,10 @@
 
 
       <div class="quiz-result-next">
-        <h2>Stack another system for higher fidelity</h2>
+        <h2>Stack another system for a different perspective</h2>
         <p class="muted">Take another test and layer a second tuning onto your agent.</p>
         <div class="quiz-result-next-grid">
-          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-min OEJTS test →</div></a>
+          <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/disc" style="border-top-color: #d99632;"><span class="pill" style="background: rgba(217,150,50,0.12); color: #855b1c;">DISC</span><div class="quiz-next-card-name">Get your DISC tuning</div><div class="quiz-next-card-meta">3-min ODAT test →</div></a>
           <a class="quiz-next-card" href="/tests/attachment" style="border-top-color: #e07a8a;"><span class="pill" style="background: rgba(224,122,138,0.14); color: #914d59;">Attachment</span><div class="quiz-next-card-name">Get your Attachment tuning</div><div class="quiz-next-card-meta">5-min ECR-R test →</div></a>
           <a class="quiz-next-card" href="/tests/big-five" style="border-top-color: #3a72c4;"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">OCEAN</span><div class="quiz-next-card-name">Get your OCEAN tuning</div><div class="quiz-next-card-meta">7-min IPIP-50 test →</div></a>
@@ -353,15 +354,15 @@
         <div class="quiz-spec-table-scroll" role="region" aria-label="Enneagram specification table 3" tabindex="0"><table class="score-table">
           <thead><tr><th>Type</th><th>Name</th><th>Core motivation</th><th>File</th></tr></thead>
           <tbody>
-            <tr><td class="mono">T1</td><td>Reformer</td><td>Wants it right. Loads precision and improvement.</td><td class="mono">enneagram/1-reformer.md</td></tr>
-            <tr><td class="mono">T2</td><td>Helper</td><td>Wants to matter to people. Loads warmth and service.</td><td class="mono">enneagram/2-helper.md</td></tr>
-            <tr><td class="mono">T3</td><td>Achiever</td><td>Wants the win. Loads efficiency and outcome.</td><td class="mono">enneagram/3-achiever.md</td></tr>
-            <tr><td class="mono">T4</td><td>Individualist</td><td>Wants depth and authenticity. Loads emotional truth.</td><td class="mono">enneagram/4-individualist.md</td></tr>
-            <tr><td class="mono">T5</td><td>Investigator</td><td>Wants understanding. Loads model-first explanation.</td><td class="mono">enneagram/5-investigator.md</td></tr>
-            <tr><td class="mono">T6</td><td>Loyalist</td><td>Wants safety and trust. Loads risk-aware framing.</td><td class="mono">enneagram/6-loyalist.md</td></tr>
-            <tr><td class="mono">T7</td><td>Enthusiast</td><td>Wants possibility. Loads divergent options.</td><td class="mono">enneagram/7-enthusiast.md</td></tr>
-            <tr><td class="mono">T8</td><td>Challenger</td><td>Wants control and impact. Loads directness.</td><td class="mono">enneagram/8-challenger.md</td></tr>
-            <tr><td class="mono">T9</td><td>Peacemaker</td><td>Wants ease and integration. Loads gentle pacing.</td><td class="mono">enneagram/9-peacemaker.md</td></tr>
+            <tr><td class="mono">T1</td><td>Reformer</td><td>Wants it right. Suggests precision and improvement.</td><td class="mono">enneagram/1-reformer.md</td></tr>
+            <tr><td class="mono">T2</td><td>Helper</td><td>Wants to matter to people. Suggests warmth and service.</td><td class="mono">enneagram/2-helper.md</td></tr>
+            <tr><td class="mono">T3</td><td>Achiever</td><td>Wants the win. Suggests efficiency and outcome.</td><td class="mono">enneagram/3-achiever.md</td></tr>
+            <tr><td class="mono">T4</td><td>Individualist</td><td>Wants depth and authenticity. Suggests emotional truth.</td><td class="mono">enneagram/4-individualist.md</td></tr>
+            <tr><td class="mono">T5</td><td>Investigator</td><td>Wants understanding. Suggests model-first explanation.</td><td class="mono">enneagram/5-investigator.md</td></tr>
+            <tr><td class="mono">T6</td><td>Loyalist</td><td>Wants safety and trust. Suggests risk-aware framing.</td><td class="mono">enneagram/6-loyalist.md</td></tr>
+            <tr><td class="mono">T7</td><td>Enthusiast</td><td>Wants possibility. Suggests divergent options.</td><td class="mono">enneagram/7-enthusiast.md</td></tr>
+            <tr><td class="mono">T8</td><td>Challenger</td><td>Wants control and impact. Suggests directness.</td><td class="mono">enneagram/8-challenger.md</td></tr>
+            <tr><td class="mono">T9</td><td>Peacemaker</td><td>Wants ease and integration. Suggests gentle pacing.</td><td class="mono">enneagram/9-peacemaker.md</td></tr>
           </tbody>
         </table></div>
       </div>
@@ -427,15 +428,15 @@
     ];
 
     const TYPE_META = {
-      1: { name: "The Reformer",     blurb: "Wants it right. Loads precision and improvement." },
-      2: { name: "The Helper",       blurb: "Wants to matter to people. Loads warmth and service." },
-      3: { name: "The Achiever",     blurb: "Wants the win. Loads efficiency and outcome." },
-      4: { name: "The Individualist",blurb: "Wants depth and authenticity. Loads emotional truth." },
-      5: { name: "The Investigator", blurb: "Wants understanding. Loads model-first explanation." },
-      6: { name: "The Loyalist",     blurb: "Wants safety and trust. Loads risk-aware framing." },
-      7: { name: "The Enthusiast",   blurb: "Wants possibility. Loads divergent options." },
-      8: { name: "The Challenger",   blurb: "Wants control and impact. Loads directness." },
-      9: { name: "The Peacemaker",   blurb: "Wants ease and integration. Loads gentle pacing." }
+      1: { name: "The Reformer",     blurb: "Wants it right. Suggests precision and improvement." },
+      2: { name: "The Helper",       blurb: "Wants to matter to people. Suggests warmth and service." },
+      3: { name: "The Achiever",     blurb: "Wants the win. Suggests efficiency and outcome." },
+      4: { name: "The Individualist",blurb: "Wants depth and authenticity. Suggests emotional truth." },
+      5: { name: "The Investigator", blurb: "Wants understanding. Suggests model-first explanation." },
+      6: { name: "The Loyalist",     blurb: "Wants safety and trust. Suggests risk-aware framing." },
+      7: { name: "The Enthusiast",   blurb: "Wants possibility. Suggests divergent options." },
+      8: { name: "The Challenger",   blurb: "Wants control and impact. Suggests directness." },
+      9: { name: "The Peacemaker",   blurb: "Wants ease and integration. Suggests gentle pacing." }
     };
 
     const FILE_NAMES = {
@@ -446,6 +447,8 @@
     const state = { currentIndex: 0, answers: new Array(36).fill(null), currentTuning: "", resultVersion: 0 };
     const $ = id => document.getElementById(id);
     const advance = window.ATQuiz.transition();
+    const draft = window.ATQuiz.draft(document, state, 36, 5);
+    draft.bind(() => { $("quiz-intro").hidden = true; $("quiz-runner").hidden = false; renderQuestion(); window.ATQuiz.focusScreen(document); });
 
     $("quiz-start").addEventListener("click", () => {
       if (window.atTrack) window.atTrack("quiz_start");
@@ -457,6 +460,7 @@
     });
 
     function renderQuestion() {
+      draft.save();
       advance.cancel();
       const item = ITEMS[state.currentIndex];
       $("quiz-progress-current").textContent = state.currentIndex + 1;
@@ -479,6 +483,7 @@
         else showResult();
       })) return;
       state.answers[state.currentIndex] = value;
+      draft.save();
       document.querySelectorAll(".quiz-likert-btn").forEach(btn => {
         const selected = parseInt(btn.dataset.value) === value;
         btn.classList.toggle("selected", selected);
@@ -515,6 +520,7 @@
     }
 
     function showResult() {
+      draft.clear();
       if (!state.completionTracked) {
         if (window.atTrack) window.atTrack("quiz_complete");
         state.completionTracked = true;
@@ -648,6 +654,7 @@
     });
 
     $("quiz-restart").addEventListener("click", () => {
+      draft.clear();
       state.resultVersion++;
       state.completionTracked = false;
       state.currentTuning = "";
