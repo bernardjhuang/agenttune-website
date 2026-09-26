@@ -28,7 +28,7 @@ const SERVER_INFO = {
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
 const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
 
-const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for eight browser tools and local processing functions. Use list_resources and get_resource for focused guides and research; get_test_spec returns scoring instructions. Keep answers local and report ties or missing responses explicitly.
+const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for eight browser tools and local processing functions. Use list_resources and get_resource for focused guides and research; get_test_spec returns current availability and, only for an available instrument, its versioned scoring instructions. Keep answers local and report ties or missing responses explicitly.
 
 When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:preferences:start and agenttune:preferences:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
 
@@ -82,9 +82,9 @@ const TOOLS = [
   },
   {
     name: "get_test_spec",
-    title: "Get a personality test spec (administer inline)",
+    title: "Get questionnaire availability and specification",
     description:
-      "Fetch a complete, self-contained test specification as Markdown: full item list, response scale, scoring algorithm, and the mapping from result to tuning slug. Administer the items to the user inline (bulk-paste is fine), score per the algorithm, then call get_tuning. Tests: mbti (OEJTS, 32 items, ~5 min), enneagram (OEPS, 36, ~5 min), disc (ODAT, 16, ~3 min), attachment (ECR-R, 36, ~5 min), big-five (IPIP-50, 50, ~7 min → maps to ocean files).",
+      "Return questionnaire availability and a Markdown resource. Only big-five is currently available, with an exact instrument/version, all 50 IPIP items, response anchors and strict scoring instructions. Other routes return an availability notice; do not administer their historical questionnaires. Scores do not select or install preferences. Ask the user whether they want to take an available questionnaire, keep responses local, and let them choose communication preferences explicitly.",
     inputSchema: {
       type: "object",
       properties: {
@@ -104,7 +104,7 @@ TOOLS.push(
 const schemas={
  list_tunings:{count:{type:'integer'},license:{type:'string'},next_step:{type:'string'},tunings:{type:'array',items:{type:'object',properties:{system:{type:'string'},slug:{type:'string'},code:{type:'string'},name:{type:'string'},blurb:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['system','slug','canonical_url','body_url','revision','evidence_status']}}},
  get_tuning:{system:{type:'string'},slug:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'},metadata_markdown:{type:'string'},install_protocol:{type:'string'}},
- get_test_spec:{test:{type:'string'},canonical_url:{type:'string'},markdown_url:{type:'string'},body:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},
+ get_test_spec:{status:{type:'string'},available:{type:'boolean'},instrument_id:{type:['string','null']},instrument_version:{type:['string','null']},test:{type:'string'},canonical_url:{type:'string'},markdown_url:{type:'string'},body:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},
  list_resources:{version:{type:'string'},resources:{type:'array',items:{type:'object',properties:{id:{type:'string'},kind:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['id','kind','url','markdown','revision','evidence_status']}}},
  get_resource:{id:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'}}
 };
@@ -194,8 +194,12 @@ async function getTestSpec(env, request, args) {
   if (!TESTS.includes(test)) {
     return toolText(`Unknown test "${test}". Valid tests: ${TESTS.join(", ")}.`, true);
   }
+  const rightsResponse=await asset(env,request,'/resources/content/instrument-rights.json');
+  if(!rightsResponse.ok)return toolText('Questionnaire availability could not be verified.',true);
+  const rights=await rightsResponse.json(),policy=rights.instruments.find(p=>p.route===test);
+  if(!policy)return toolText('Questionnaire availability could not be verified.',true);
   const md = await (await asset(env, request, `/tests/${test}.md`)).text();
-  return structured({test,canonical_url:'https://agent-tune.com/tests/'+test,markdown_url:'https://agent-tune.com/tests/'+test+'.md',body:md,revision:'2026-09-25.1',evidence_status:'questionnaire_specification_not_diagnostic'},md);
+  return structured({test,status:policy.status,available:policy.available,instrument_id:policy.instrumentId,instrument_version:policy.instrumentVersion,canonical_url:'https://agent-tune.com/tests/'+test,markdown_url:'https://agent-tune.com/tests/'+test+'.md',body:md,revision:rights.version,evidence_status:policy.available?'questionnaire_specification_not_diagnostic':'unavailable_pending_rights'},md);
 }
 
 /* ---------- JSON-RPC dispatch ---------- */

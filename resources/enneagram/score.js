@@ -1,15 +1,12 @@
-/* AgentTune Enneagram-36 scorer v1.0.0 — MIT (see LICENSE-code.txt).
- * This scores AgentTune's 36-item adaptation, not the full 54-item OEPS.
- * Input order: four items for each type 1 through 9. No reverse scoring.
- * Browser: AgentTuneEnneagram.score(answers). Node: require('./score.js').score(answers).
- */
+/* Original nine-group arithmetic demo. MIT. Not an administered personality test.
+ * The AgentTuneEnneagram global remains as a compatibility alias. No third-party wording is included. */
 (function (root, factory) {
   'use strict';
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.AgentTuneEnneagram = factory();
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
-  const version = 'agenttune-enneagram-36-v1';
+  const version = 'agenttune-nine-group-demo-1';
   function score(answers) {
     if (!Array.isArray(answers) || answers.length !== 36) {
       throw new TypeError('Provide exactly 36 answers in item order.');
@@ -24,7 +21,7 @@
     }
     const topScore = Math.max(...Object.values(scores));
     const leaders = Object.keys(scores).map(Number).filter(type => scores[type] === topScore);
-    return {version, scores, topScore, leaders, tied: leaders.length > 1, dominantType: leaders.length === 1 ? leaders[0] : null};
+    return {version, status: 'synthetic_demo_only', scores, topScore, leaders, tied: leaders.length > 1, dominantType: leaders.length === 1 ? leaders[0] : null};
   }
   return Object.freeze({version, score});
 });

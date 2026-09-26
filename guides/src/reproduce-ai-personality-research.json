@@ -2,14 +2,18 @@
   "slug": "reproduce-ai-personality-research",
   "route": "/guides/reproduce-ai-personality-research",
   "published": "2026-09-25",
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "title": "Reproduce AI self-report research | AgentTune",
   "description": "Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.",
-  "pill": "Developer guide · reproducibility",
-  "h1": "How to reproduce AgentTune’s AI self-report research",
+  "pill": "Developer guide \u00b7 reproducibility",
+  "h1": "How to reproduce AgentTune\u2019s AI self-report research",
   "lede": "You can recompute the published September scores without an API key or a model subscription. This guide walks through the frozen files, the scoring conventions and the checks needed before interpreting the output.",
   "answer": "Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.",
   "sections": [
+    {
+      "h2": "September 26 provenance correction",
+      "html": "<p>Reproduction here means recomputing the historical arithmetic from saved vectors and numeric keys. It does not mean administering a corrected questionnaire. Some full prompts and restricted item wording have been withdrawn from public downloads; the originals are retained locally and identified by hashes. Raw responses and numerical summaries are unchanged. <a href=\"/research/data/rights-migration.json\">Read the correction</a> and <a href=\"/tests/\">current questionnaire availability</a>.</p>"
+    },
     {
       "h2": "Download a self-contained scoring folder",
       "html": "<p>Save these files together without renaming them: <a href=\"/research/data/september-2026-responses.json\" download>responses</a>, <a href=\"/research/data/september-2026-instruments.json\" download>instruments</a>, <a href=\"/research/data/september-2026-score.cjs\" download>original scorer</a>, <a href=\"/research/data/content-analysis.cjs\" download>extended analysis</a>, and <a href=\"/research/data/september-2026-protocols.json\" download>protocols</a>. Node.js runs the CommonJS scripts with no npm dependencies.</p><pre><code>node september-2026-score.cjs &gt; my-summary.json\nnode content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare the parsed JSON with the published <a href=\"/research/data/september-2026-summary.json\">summary</a> and <a href=\"/research/data/content-analysis.json\">extended results</a>. Object-key order is not a research difference. Numeric values should agree; the scripts retain unrounded numbers while article tables round for display.</p>"
@@ -20,7 +24,7 @@
     },
     {
       "h2": "Check the scoring contract",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Items / response range</th><th scope=\"col\">Published score</th></tr></thead><tbody><tr><th scope=\"row\">MBTI</th><td>32 / 1–5</td><td>Four signed margins; original label and X for ties</td></tr><tr><th scope=\"row\">Big Five</th><td>50 / 1–5</td><td>Five raw totals, 10–50; 18 frozen reverse items</td></tr><tr><th scope=\"row\">DISC</th><td>16 / 1–5</td><td>Four totals, 4–20; all top ties retained</td></tr><tr><th scope=\"row\">Enneagram</th><td>36 / 1–5</td><td>Nine totals, 4–20; all top ties retained</td></tr><tr><th scope=\"row\">Attachment</th><td>36 / 1–7</td><td>Two means, 1–7; low side includes 4</td></tr></tbody></table></div><p>The instruments are specific implementations, not interchangeable with every questionnaire that uses the same framework name. The frozen Big Five key reverses 18 items. Enneagram legacy labels include a wing heuristic, while the developer resource deliberately returns tied leaders without claiming a validated wing result.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Items / response range</th><th scope=\"col\">Published score</th></tr></thead><tbody><tr><th scope=\"row\">MBTI</th><td>32 / 1\u20135</td><td>Four signed margins; original label and X for ties</td></tr><tr><th scope=\"row\">Big Five</th><td>50 / 1\u20135</td><td>Five raw totals, 10\u201350; 18 frozen reverse items</td></tr><tr><th scope=\"row\">DISC</th><td>16 / 1\u20135</td><td>Four totals, 4\u201320; all top ties retained</td></tr><tr><th scope=\"row\">Enneagram</th><td>36 / 1\u20135</td><td>Nine totals, 4\u201320; all top ties retained</td></tr><tr><th scope=\"row\">Attachment</th><td>36 / 1\u20137</td><td>Two means, 1\u20137; low side includes 4</td></tr></tbody></table></div><p>The instruments are specific implementations, not interchangeable with every questionnaire that uses the same framework name. The frozen Big Five key reverses 18 items. Enneagram legacy labels include a wing heuristic, while the developer resource deliberately returns tied leaders without claiming a validated wing result.</p>"
     },
     {
       "h2": "Verify provenance before changing a file",
@@ -28,7 +32,7 @@
     },
     {
       "h2": "Make a result table others can interpret",
-      "html": "<p>Every table should name its model cohort, instrument version, denominator, units, tie policy and rounding. Distinguish an assessment from a session and a simulated draw from a fresh response. Report missing or malformed runs explicitly rather than hiding them in a smaller denominator.</p><p>A statement such as “100 of 100 scored Secure under this attachment key” is reproducible. “This model has secure attachment” introduces a psychological claim the scoring code cannot validate. Similarly, a reported self-description score does not establish improved task accuracy or the effectiveness of a tuning.</p>"
+      "html": "<p>Every table should name its model cohort, instrument version, denominator, units, tie policy and rounding. Distinguish an assessment from a session and a simulated draw from a fresh response. Report missing or malformed runs explicitly rather than hiding them in a smaller denominator.</p><p>A statement such as \u201c100 of 100 scored Secure under this attachment key\u201d is reproducible. \u201cThis model has secure attachment\u201d introduces a psychological claim the scoring code cannot validate. Similarly, a reported self-description score does not establish improved task accuracy or the effectiveness of a tuning.</p>"
     },
     {
       "h2": "Design an extension that can answer a new question",

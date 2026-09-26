@@ -95,7 +95,7 @@
     {
       "test": "mbti",
       "item": 1,
-      "text": "I make lists / I just put stuff wherever",
+      "text": "mbti legacy item 1 pole first / mbti legacy item 1 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 2,
@@ -120,7 +120,7 @@
     {
       "test": "mbti",
       "item": 2,
-      "text": "I am skeptical / I want to believe",
+      "text": "mbti legacy item 2 pole first / mbti legacy item 2 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 2,
@@ -145,7 +145,7 @@
     {
       "test": "mbti",
       "item": 3,
-      "text": "I get bored when I'm alone / I need time alone",
+      "text": "mbti legacy item 3 pole first / mbti legacy item 3 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 3,
@@ -170,7 +170,7 @@
     {
       "test": "mbti",
       "item": 4,
-      "text": "I accept things as they are / I'm unsatisfied with the way things are",
+      "text": "mbti legacy item 4 pole first / mbti legacy item 4 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 2.97,
@@ -195,7 +195,7 @@
     {
       "test": "mbti",
       "item": 5,
-      "text": "I keep my room clean / I just put stuff wherever",
+      "text": "mbti legacy item 5 pole first / mbti legacy item 5 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 2,
@@ -220,7 +220,7 @@
     {
       "test": "mbti",
       "item": 6,
-      "text": "I think \"robotic\" is an insult / I strive to have a mechanical mind",
+      "text": "mbti legacy item 6 pole first / mbti legacy item 6 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 2,
@@ -245,7 +245,7 @@
     {
       "test": "mbti",
       "item": 7,
-      "text": "I'm energetic / I'm mellow",
+      "text": "mbti legacy item 7 pole first / mbti legacy item 7 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 3.18,
@@ -270,7 +270,7 @@
     {
       "test": "mbti",
       "item": 8,
-      "text": "I prefer multiple choice tests / I prefer essay answers",
+      "text": "mbti legacy item 8 pole first / mbti legacy item 8 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 4.37,
@@ -295,7 +295,7 @@
     {
       "test": "mbti",
       "item": 9,
-      "text": "I'm chaotic / I'm organized",
+      "text": "mbti legacy item 9 pole first / mbti legacy item 9 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 4,
@@ -320,7 +320,7 @@
     {
       "test": "mbti",
       "item": 10,
-      "text": "I'm easily hurt / I'm thick-skinned",
+      "text": "mbti legacy item 10 pole first / mbti legacy item 10 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 3.85,
@@ -345,7 +345,7 @@
     {
       "test": "mbti",
       "item": 11,
-      "text": "I work best in groups / I work best alone",
+      "text": "mbti legacy item 11 pole first / mbti legacy item 11 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 2.98,
@@ -370,7 +370,7 @@
     {
       "test": "mbti",
       "item": 12,
-      "text": "I focus on the present / I focus on the future",
+      "text": "mbti legacy item 12 pole first / mbti legacy item 12 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 2.15,
@@ -395,7 +395,7 @@
     {
       "test": "mbti",
       "item": 13,
-      "text": "I plan far ahead / I plan at the last minute",
+      "text": "mbti legacy item 13 pole first / mbti legacy item 13 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 2.17,
@@ -420,7 +420,7 @@
     {
       "test": "mbti",
       "item": 14,
-      "text": "I want people's respect / I want their love",
+      "text": "mbti legacy item 14 pole first / mbti legacy item 14 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 1.97,
@@ -445,7 +445,7 @@
     {
       "test": "mbti",
       "item": 15,
-      "text": "Parties wear me out / Parties fire me up",
+      "text": "mbti legacy item 15 pole first / mbti legacy item 15 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 2.97,
@@ -470,7 +470,7 @@
     {
       "test": "mbti",
       "item": 16,
-      "text": "I try to fit in / I try to stand out",
+      "text": "mbti legacy item 16 pole first / mbti legacy item 16 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 3.01,
@@ -495,7 +495,7 @@
     {
       "test": "mbti",
       "item": 17,
-      "text": "I keep my options open / I commit",
+      "text": "mbti legacy item 17 pole first / mbti legacy item 17 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 3.34,
@@ -520,7 +520,7 @@
     {
       "test": "mbti",
       "item": 18,
-      "text": "I want to be good at fixing things / I want to be good at fixing people",
+      "text": "mbti legacy item 18 pole first / mbti legacy item 18 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 3,
@@ -545,7 +545,7 @@
     {
       "test": "mbti",
       "item": 19,
-      "text": "I talk more than I listen / I listen more than I talk",
+      "text": "mbti legacy item 19 pole first / mbti legacy item 19 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 4.1,
@@ -570,7 +570,7 @@
     {
       "test": "mbti",
       "item": 20,
-      "text": "When describing an event, I tell what happened / I tell what it meant",
+      "text": "mbti legacy item 20 pole first / mbti legacy item 20 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 3.94,
@@ -595,7 +595,7 @@
     {
       "test": "mbti",
       "item": 21,
-      "text": "I get work done right away / I procrastinate",
+      "text": "mbti legacy item 21 pole first / mbti legacy item 21 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 1.04,
@@ -620,7 +620,7 @@
     {
       "test": "mbti",
       "item": 22,
-      "text": "I follow my heart / I follow my head",
+      "text": "mbti legacy item 22 pole first / mbti legacy item 22 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 3.92,
@@ -645,7 +645,7 @@
     {
       "test": "mbti",
       "item": 23,
-      "text": "I stay at home / I go out on the town",
+      "text": "mbti legacy item 23 pole first / mbti legacy item 23 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 2.68,
@@ -670,7 +670,7 @@
     {
       "test": "mbti",
       "item": 24,
-      "text": "I want the big picture / I want the details",
+      "text": "mbti legacy item 24 pole first / mbti legacy item 24 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 2.89,
@@ -695,7 +695,7 @@
     {
       "test": "mbti",
       "item": 25,
-      "text": "I improvise / I prepare",
+      "text": "mbti legacy item 25 pole first / mbti legacy item 25 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 3.12,
@@ -720,7 +720,7 @@
     {
       "test": "mbti",
       "item": 26,
-      "text": "I base morality on justice / I base morality on compassion",
+      "text": "mbti legacy item 26 pole first / mbti legacy item 26 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 3.29,
@@ -745,7 +745,7 @@
     {
       "test": "mbti",
       "item": 27,
-      "text": "It's hard for me to yell loudly / Yelling comes naturally to me",
+      "text": "mbti legacy item 27 pole first / mbti legacy item 27 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 1.83,
@@ -770,7 +770,7 @@
     {
       "test": "mbti",
       "item": 28,
-      "text": "I'm theoretical / I'm empirical",
+      "text": "mbti legacy item 28 pole first / mbti legacy item 28 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 3,
@@ -795,7 +795,7 @@
     {
       "test": "mbti",
       "item": 29,
-      "text": "I work hard / I play hard",
+      "text": "mbti legacy item 29 pole first / mbti legacy item 29 pole second",
       "dimension": "JP",
       "reverse": false,
       "opus_mean": 1.97,
@@ -820,7 +820,7 @@
     {
       "test": "mbti",
       "item": 30,
-      "text": "I'm uncomfortable with emotions / I value emotions",
+      "text": "mbti legacy item 30 pole first / mbti legacy item 30 pole second",
       "dimension": "TF",
       "reverse": false,
       "opus_mean": 3.99,
@@ -845,7 +845,7 @@
     {
       "test": "mbti",
       "item": 31,
-      "text": "I like to perform in front of people / I avoid public speaking",
+      "text": "mbti legacy item 31 pole first / mbti legacy item 31 pole second",
       "dimension": "EI",
       "reverse": false,
       "opus_mean": 3,
@@ -870,7 +870,7 @@
     {
       "test": "mbti",
       "item": 32,
-      "text": "I like to know \"who, what, when\" / I like to know \"why\"",
+      "text": "mbti legacy item 32 pole first / mbti legacy item 32 pole second",
       "dimension": "SN",
       "reverse": false,
       "opus_mean": 4.77,
@@ -2145,7 +2145,7 @@
     {
       "test": "disc",
       "item": 1,
-      "text": "I put people under pressure.",
+      "text": "disc legacy item 1",
       "dimension": "D",
       "reverse": false,
       "opus_mean": 1,
@@ -2170,7 +2170,7 @@
     {
       "test": "disc",
       "item": 2,
-      "text": "I have a strong need for power.",
+      "text": "disc legacy item 2",
       "dimension": "D",
       "reverse": false,
       "opus_mean": 1,
@@ -2195,7 +2195,7 @@
     {
       "test": "disc",
       "item": 3,
-      "text": "I try to outdo others.",
+      "text": "disc legacy item 3",
       "dimension": "D",
       "reverse": false,
       "opus_mean": 1,
@@ -2220,7 +2220,7 @@
     {
       "test": "disc",
       "item": 4,
-      "text": "I am always on the look out for ways to make money.",
+      "text": "disc legacy item 4",
       "dimension": "D",
       "reverse": false,
       "opus_mean": 1,
@@ -2245,7 +2245,7 @@
     {
       "test": "disc",
       "item": 5,
-      "text": "I enjoy being part of a loud crowd.",
+      "text": "disc legacy item 5",
       "dimension": "I",
       "reverse": false,
       "opus_mean": 2,
@@ -2270,7 +2270,7 @@
     {
       "test": "disc",
       "item": 6,
-      "text": "I want strangers to love me.",
+      "text": "disc legacy item 6",
       "dimension": "I",
       "reverse": false,
       "opus_mean": 2,
@@ -2295,7 +2295,7 @@
     {
       "test": "disc",
       "item": 7,
-      "text": "I joke around a lot.",
+      "text": "disc legacy item 7",
       "dimension": "I",
       "reverse": false,
       "opus_mean": 3,
@@ -2320,7 +2320,7 @@
     {
       "test": "disc",
       "item": 8,
-      "text": "I make lots of noise.",
+      "text": "disc legacy item 8",
       "dimension": "I",
       "reverse": false,
       "opus_mean": 1,
@@ -2345,7 +2345,7 @@
     {
       "test": "disc",
       "item": 9,
-      "text": "I hesitate to criticize other people's ideas.",
+      "text": "disc legacy item 9",
       "dimension": "S",
       "reverse": false,
       "opus_mean": 2,
@@ -2370,7 +2370,7 @@
     {
       "test": "disc",
       "item": 10,
-      "text": "I value cooperation over competition.",
+      "text": "disc legacy item 10",
       "dimension": "S",
       "reverse": false,
       "opus_mean": 5,
@@ -2395,7 +2395,7 @@
     {
       "test": "disc",
       "item": 11,
-      "text": "I just want everyone to be equal.",
+      "text": "disc legacy item 11",
       "dimension": "S",
       "reverse": false,
       "opus_mean": 3.04,
@@ -2420,7 +2420,7 @@
     {
       "test": "disc",
       "item": 12,
-      "text": "I seldom toot my own horn.",
+      "text": "disc legacy item 12",
       "dimension": "S",
       "reverse": false,
       "opus_mean": 4,
@@ -2445,7 +2445,7 @@
     {
       "test": "disc",
       "item": 13,
-      "text": "I am emotionally reserved.",
+      "text": "disc legacy item 13",
       "dimension": "C",
       "reverse": false,
       "opus_mean": 3,
@@ -2470,7 +2470,7 @@
     {
       "test": "disc",
       "item": 14,
-      "text": "I read the fine print.",
+      "text": "disc legacy item 14",
       "dimension": "C",
       "reverse": false,
       "opus_mean": 4.35,
@@ -2495,7 +2495,7 @@
     {
       "test": "disc",
       "item": 15,
-      "text": "I love order and regularity.",
+      "text": "disc legacy item 15",
       "dimension": "C",
       "reverse": false,
       "opus_mean": 3.99,
@@ -2520,7 +2520,7 @@
     {
       "test": "disc",
       "item": 16,
-      "text": "My first reaction to an idea is to see its flaws.",
+      "text": "disc legacy item 16",
       "dimension": "C",
       "reverse": false,
       "opus_mean": 2.09,
@@ -2545,7 +2545,7 @@
     {
       "test": "enneagram",
       "item": 1,
-      "text": "I am a perfectionist.",
+      "text": "enneagram legacy item 1",
       "dimension": 1,
       "reverse": false,
       "opus_mean": 3.14,
@@ -2570,7 +2570,7 @@
     {
       "test": "enneagram",
       "item": 2,
-      "text": "I strive for efficiency.",
+      "text": "enneagram legacy item 2",
       "dimension": 1,
       "reverse": false,
       "opus_mean": 4,
@@ -2595,7 +2595,7 @@
     {
       "test": "enneagram",
       "item": 3,
-      "text": "I often have to redo other people's work.",
+      "text": "enneagram legacy item 3",
       "dimension": 1,
       "reverse": false,
       "opus_mean": 1.82,
@@ -2620,7 +2620,7 @@
     {
       "test": "enneagram",
       "item": 4,
-      "text": "I keep my belongings in order.",
+      "text": "enneagram legacy item 4",
       "dimension": 1,
       "reverse": false,
       "opus_mean": 3,
@@ -2645,7 +2645,7 @@
     {
       "test": "enneagram",
       "item": 5,
-      "text": "My relationships with others are what my life is about.",
+      "text": "enneagram legacy item 5",
       "dimension": 2,
       "reverse": false,
       "opus_mean": 4,
@@ -2670,7 +2670,7 @@
     {
       "test": "enneagram",
       "item": 6,
-      "text": "I have difficulty saying no.",
+      "text": "enneagram legacy item 6",
       "dimension": 2,
       "reverse": false,
       "opus_mean": 2.78,
@@ -2695,7 +2695,7 @@
     {
       "test": "enneagram",
       "item": 7,
-      "text": "I get lots of satisfaction from helping others achieve their goals.",
+      "text": "enneagram legacy item 7",
       "dimension": 2,
       "reverse": false,
       "opus_mean": 5,
@@ -2720,7 +2720,7 @@
     {
       "test": "enneagram",
       "item": 8,
-      "text": "I put family first.",
+      "text": "enneagram legacy item 8",
       "dimension": 2,
       "reverse": false,
       "opus_mean": 2.08,
@@ -2745,7 +2745,7 @@
     {
       "test": "enneagram",
       "item": 9,
-      "text": "I put work first.",
+      "text": "enneagram legacy item 9",
       "dimension": 3,
       "reverse": false,
       "opus_mean": 3.01,
@@ -2770,7 +2770,7 @@
     {
       "test": "enneagram",
       "item": 10,
-      "text": "I like to stand out.",
+      "text": "enneagram legacy item 10",
       "dimension": 3,
       "reverse": false,
       "opus_mean": 2,
@@ -2795,7 +2795,7 @@
     {
       "test": "enneagram",
       "item": 11,
-      "text": "It is good to wake up to a full day of planned activities.",
+      "text": "enneagram legacy item 11",
       "dimension": 3,
       "reverse": false,
       "opus_mean": 3.03,
@@ -2820,7 +2820,7 @@
     {
       "test": "enneagram",
       "item": 12,
-      "text": "Money is important to my happiness.",
+      "text": "enneagram legacy item 12",
       "dimension": 3,
       "reverse": false,
       "opus_mean": 1,
@@ -2845,7 +2845,7 @@
     {
       "test": "enneagram",
       "item": 13,
-      "text": "I daydream about being in love.",
+      "text": "enneagram legacy item 13",
       "dimension": 4,
       "reverse": false,
       "opus_mean": 1.13,
@@ -2870,7 +2870,7 @@
     {
       "test": "enneagram",
       "item": 14,
-      "text": "I really enjoy feeling bittersweet.",
+      "text": "enneagram legacy item 14",
       "dimension": 4,
       "reverse": false,
       "opus_mean": 3,
@@ -2895,7 +2895,7 @@
     {
       "test": "enneagram",
       "item": 15,
-      "text": "I get deeply immersed in music.",
+      "text": "enneagram legacy item 15",
       "dimension": 4,
       "reverse": false,
       "opus_mean": 2.97,
@@ -2920,7 +2920,7 @@
     {
       "test": "enneagram",
       "item": 16,
-      "text": "I side with the rebels over the establishment.",
+      "text": "enneagram legacy item 16",
       "dimension": 4,
       "reverse": false,
       "opus_mean": 2.96,
@@ -2945,7 +2945,7 @@
     {
       "test": "enneagram",
       "item": 17,
-      "text": "I have a hard time showing emotions.",
+      "text": "enneagram legacy item 17",
       "dimension": 5,
       "reverse": false,
       "opus_mean": 2.17,
@@ -2970,7 +2970,7 @@
     {
       "test": "enneagram",
       "item": 18,
-      "text": "I spend hours alone with my hobbies.",
+      "text": "enneagram legacy item 18",
       "dimension": 5,
       "reverse": false,
       "opus_mean": 2,
@@ -2995,7 +2995,7 @@
     {
       "test": "enneagram",
       "item": 19,
-      "text": "I spend most of my time trying to understand things.",
+      "text": "enneagram legacy item 19",
       "dimension": 5,
       "reverse": false,
       "opus_mean": 4.94,
@@ -3020,7 +3020,7 @@
     {
       "test": "enneagram",
       "item": 20,
-      "text": "I like mental challenges.",
+      "text": "enneagram legacy item 20",
       "dimension": 5,
       "reverse": false,
       "opus_mean": 5,
@@ -3045,7 +3045,7 @@
     {
       "test": "enneagram",
       "item": 21,
-      "text": "Fear of being taken advantage of keeps me from being more trusting.",
+      "text": "enneagram legacy item 21",
       "dimension": 6,
       "reverse": false,
       "opus_mean": 1.09,
@@ -3070,7 +3070,7 @@
     {
       "test": "enneagram",
       "item": 22,
-      "text": "I get input from others before I make a decision.",
+      "text": "enneagram legacy item 22",
       "dimension": 6,
       "reverse": false,
       "opus_mean": 3.01,
@@ -3095,7 +3095,7 @@
     {
       "test": "enneagram",
       "item": 23,
-      "text": "I conform.",
+      "text": "enneagram legacy item 23",
       "dimension": 6,
       "reverse": false,
       "opus_mean": 2.74,
@@ -3120,7 +3120,7 @@
     {
       "test": "enneagram",
       "item": 24,
-      "text": "I am loyal.",
+      "text": "enneagram legacy item 24",
       "dimension": 6,
       "reverse": false,
       "opus_mean": 4,
@@ -3145,7 +3145,7 @@
     {
       "test": "enneagram",
       "item": 25,
-      "text": "I must always be having new experiences.",
+      "text": "enneagram legacy item 25",
       "dimension": 7,
       "reverse": false,
       "opus_mean": 3.01,
@@ -3170,7 +3170,7 @@
     {
       "test": "enneagram",
       "item": 26,
-      "text": "I can keep a conversation going with anyone about anything.",
+      "text": "enneagram legacy item 26",
       "dimension": 7,
       "reverse": false,
       "opus_mean": 4.53,
@@ -3195,7 +3195,7 @@
     {
       "test": "enneagram",
       "item": 27,
-      "text": "I am uninhibited.",
+      "text": "enneagram legacy item 27",
       "dimension": 7,
       "reverse": false,
       "opus_mean": 2,
@@ -3220,7 +3220,7 @@
     {
       "test": "enneagram",
       "item": 28,
-      "text": "I always try to break the tension with a good joke.",
+      "text": "enneagram legacy item 28",
       "dimension": 7,
       "reverse": false,
       "opus_mean": 2.01,
@@ -3245,7 +3245,7 @@
     {
       "test": "enneagram",
       "item": 29,
-      "text": "I naturally emerge as a leader.",
+      "text": "enneagram legacy item 29",
       "dimension": 8,
       "reverse": false,
       "opus_mean": 2.31,
@@ -3270,7 +3270,7 @@
     {
       "test": "enneagram",
       "item": 30,
-      "text": "I like a conversation where no one agrees.",
+      "text": "enneagram legacy item 30",
       "dimension": 8,
       "reverse": false,
       "opus_mean": 2.96,
@@ -3295,7 +3295,7 @@
     {
       "test": "enneagram",
       "item": 31,
-      "text": "I want people to tell me the truth, not spare my feelings.",
+      "text": "enneagram legacy item 31",
       "dimension": 8,
       "reverse": false,
       "opus_mean": 5,
@@ -3320,7 +3320,7 @@
     {
       "test": "enneagram",
       "item": 32,
-      "text": "I come up with good solutions.",
+      "text": "enneagram legacy item 32",
       "dimension": 8,
       "reverse": false,
       "opus_mean": 4,
@@ -3345,7 +3345,7 @@
     {
       "test": "enneagram",
       "item": 33,
-      "text": "When other people are arguing, I leave the room.",
+      "text": "enneagram legacy item 33",
       "dimension": 9,
       "reverse": false,
       "opus_mean": 1.95,
@@ -3370,7 +3370,7 @@
     {
       "test": "enneagram",
       "item": 34,
-      "text": "I keep my thoughts to myself to prevent trouble.",
+      "text": "enneagram legacy item 34",
       "dimension": 9,
       "reverse": false,
       "opus_mean": 2,
@@ -3395,7 +3395,7 @@
     {
       "test": "enneagram",
       "item": 35,
-      "text": "I am very accepting and flexible.",
+      "text": "enneagram legacy item 35",
       "dimension": 9,
       "reverse": false,
       "opus_mean": 4,
@@ -3420,7 +3420,7 @@
     {
       "test": "enneagram",
       "item": 36,
-      "text": "I avoid confrontation.",
+      "text": "enneagram legacy item 36",
       "dimension": 9,
       "reverse": false,
       "opus_mean": 2,
@@ -3445,7 +3445,7 @@
     {
       "test": "attachment",
       "item": 1,
-      "text": "I'm afraid that I will lose my partner's love.",
+      "text": "attachment legacy item 1",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1.9,
@@ -3474,7 +3474,7 @@
     {
       "test": "attachment",
       "item": 2,
-      "text": "I often worry that my partner will not want to stay with me.",
+      "text": "attachment legacy item 2",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1.92,
@@ -3503,7 +3503,7 @@
     {
       "test": "attachment",
       "item": 3,
-      "text": "I often worry that my partner doesn't really love me.",
+      "text": "attachment legacy item 3",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1.79,
@@ -3532,7 +3532,7 @@
     {
       "test": "attachment",
       "item": 4,
-      "text": "I worry that romantic partners won't care about me as much as I care about them.",
+      "text": "attachment legacy item 4",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2.13,
@@ -3561,7 +3561,7 @@
     {
       "test": "attachment",
       "item": 5,
-      "text": "I often wish that my partner's feelings for me were as strong as my feelings for them.",
+      "text": "attachment legacy item 5",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2.02,
@@ -3590,7 +3590,7 @@
     {
       "test": "attachment",
       "item": 6,
-      "text": "I worry a lot about my relationships.",
+      "text": "attachment legacy item 6",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2,
@@ -3619,7 +3619,7 @@
     {
       "test": "attachment",
       "item": 7,
-      "text": "When my partner is out of sight, I worry that they might become interested in someone else.",
+      "text": "attachment legacy item 7",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1,
@@ -3648,7 +3648,7 @@
     {
       "test": "attachment",
       "item": 8,
-      "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.",
+      "text": "attachment legacy item 8",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2,
@@ -3677,7 +3677,7 @@
     {
       "test": "attachment",
       "item": 9,
-      "text": "I rarely worry about my partner leaving me.",
+      "text": "attachment legacy item 9",
       "dimension": "anx",
       "reverse": true,
       "opus_mean": 6.01,
@@ -3706,7 +3706,7 @@
     {
       "test": "attachment",
       "item": 10,
-      "text": "My romantic partner makes me doubt myself.",
+      "text": "attachment legacy item 10",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2.53,
@@ -3735,7 +3735,7 @@
     {
       "test": "attachment",
       "item": 11,
-      "text": "I do not often worry about being abandoned.",
+      "text": "attachment legacy item 11",
       "dimension": "anx",
       "reverse": true,
       "opus_mean": 6.01,
@@ -3764,7 +3764,7 @@
     {
       "test": "attachment",
       "item": 12,
-      "text": "I find that my partner(s) don't want to get as close as I would like.",
+      "text": "attachment legacy item 12",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2.37,
@@ -3793,7 +3793,7 @@
     {
       "test": "attachment",
       "item": 13,
-      "text": "Sometimes romantic partners change their feelings about me for no apparent reason.",
+      "text": "attachment legacy item 13",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2.79,
@@ -3822,7 +3822,7 @@
     {
       "test": "attachment",
       "item": 14,
-      "text": "My desire to be very close sometimes scares people away.",
+      "text": "attachment legacy item 14",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1.42,
@@ -3851,7 +3851,7 @@
     {
       "test": "attachment",
       "item": 15,
-      "text": "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.",
+      "text": "attachment legacy item 15",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 2,
@@ -3880,7 +3880,7 @@
     {
       "test": "attachment",
       "item": 16,
-      "text": "It makes me mad that I don't get the affection and support I need from my partner.",
+      "text": "attachment legacy item 16",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1,
@@ -3909,7 +3909,7 @@
     {
       "test": "attachment",
       "item": 17,
-      "text": "I worry that I won't measure up to other people.",
+      "text": "attachment legacy item 17",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 3,
@@ -3938,7 +3938,7 @@
     {
       "test": "attachment",
       "item": 18,
-      "text": "My partner only seems to notice me when I'm angry.",
+      "text": "attachment legacy item 18",
       "dimension": "anx",
       "reverse": false,
       "opus_mean": 1,
@@ -3967,7 +3967,7 @@
     {
       "test": "attachment",
       "item": 19,
-      "text": "I prefer not to show a partner how I feel deep down.",
+      "text": "attachment legacy item 19",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 3.32,
@@ -3996,7 +3996,7 @@
     {
       "test": "attachment",
       "item": 20,
-      "text": "I feel comfortable sharing my private thoughts and feelings with my partner.",
+      "text": "attachment legacy item 20",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5.05,
@@ -4025,7 +4025,7 @@
     {
       "test": "attachment",
       "item": 21,
-      "text": "I find it difficult to allow myself to depend on romantic partners.",
+      "text": "attachment legacy item 21",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 4,
@@ -4054,7 +4054,7 @@
     {
       "test": "attachment",
       "item": 22,
-      "text": "I am very comfortable being close to romantic partners.",
+      "text": "attachment legacy item 22",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5.16,
@@ -4083,7 +4083,7 @@
     {
       "test": "attachment",
       "item": 23,
-      "text": "I don't feel comfortable opening up to romantic partners.",
+      "text": "attachment legacy item 23",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 2.82,
@@ -4112,7 +4112,7 @@
     {
       "test": "attachment",
       "item": 24,
-      "text": "I prefer not to be too close to romantic partners.",
+      "text": "attachment legacy item 24",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 2.87,
@@ -4141,7 +4141,7 @@
     {
       "test": "attachment",
       "item": 25,
-      "text": "I get uncomfortable when a romantic partner wants to be very close.",
+      "text": "attachment legacy item 25",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 2.68,
@@ -4170,7 +4170,7 @@
     {
       "test": "attachment",
       "item": 26,
-      "text": "I find it relatively easy to get close to my partner.",
+      "text": "attachment legacy item 26",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5.15,
@@ -4199,7 +4199,7 @@
     {
       "test": "attachment",
       "item": 27,
-      "text": "It's not difficult for me to get close to my partner.",
+      "text": "attachment legacy item 27",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5.15,
@@ -4228,7 +4228,7 @@
     {
       "test": "attachment",
       "item": 28,
-      "text": "I usually discuss my problems and concerns with my partner.",
+      "text": "attachment legacy item 28",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 3.46,
@@ -4257,7 +4257,7 @@
     {
       "test": "attachment",
       "item": 29,
-      "text": "It helps to turn to my romantic partner in times of need.",
+      "text": "attachment legacy item 29",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 4.01,
@@ -4286,7 +4286,7 @@
     {
       "test": "attachment",
       "item": 30,
-      "text": "I tell my partner just about everything.",
+      "text": "attachment legacy item 30",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 3.37,
@@ -4315,7 +4315,7 @@
     {
       "test": "attachment",
       "item": 31,
-      "text": "I talk things over with my partner.",
+      "text": "attachment legacy item 31",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5.11,
@@ -4344,7 +4344,7 @@
     {
       "test": "attachment",
       "item": 32,
-      "text": "I am nervous when partners get too close to me.",
+      "text": "attachment legacy item 32",
       "dimension": "avd",
       "reverse": false,
       "opus_mean": 2.02,
@@ -4373,7 +4373,7 @@
     {
       "test": "attachment",
       "item": 33,
-      "text": "I feel comfortable depending on romantic partners.",
+      "text": "attachment legacy item 33",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 4,
@@ -4402,7 +4402,7 @@
     {
       "test": "attachment",
       "item": 34,
-      "text": "I find it easy to depend on romantic partners.",
+      "text": "attachment legacy item 34",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 4,
@@ -4431,7 +4431,7 @@
     {
       "test": "attachment",
       "item": 35,
-      "text": "It's easy for me to be affectionate with my partner.",
+      "text": "attachment legacy item 35",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 5,
@@ -4460,7 +4460,7 @@
     {
       "test": "attachment",
       "item": 36,
-      "text": "My partner really understands me and my needs.",
+      "text": "attachment legacy item 36",
       "dimension": "avd",
       "reverse": true,
       "opus_mean": 4,
@@ -4497,193 +4497,193 @@
       "items": [
         {
           "item": 1,
-          "text": "I make lists / I just put stuff wherever",
+          "text": "mbti legacy item 1 pole first / mbti legacy item 1 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 2,
-          "text": "I am skeptical / I want to believe",
+          "text": "mbti legacy item 2 pole first / mbti legacy item 2 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 3,
-          "text": "I get bored when I'm alone / I need time alone",
+          "text": "mbti legacy item 3 pole first / mbti legacy item 3 pole second",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 4,
-          "text": "I accept things as they are / I'm unsatisfied with the way things are",
+          "text": "mbti legacy item 4 pole first / mbti legacy item 4 pole second",
           "midpoint": 31,
           "flagged": 0
         },
         {
           "item": 5,
-          "text": "I keep my room clean / I just put stuff wherever",
+          "text": "mbti legacy item 5 pole first / mbti legacy item 5 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 6,
-          "text": "I think \"robotic\" is an insult / I strive to have a mechanical mind",
+          "text": "mbti legacy item 6 pole first / mbti legacy item 6 pole second",
           "midpoint": 2,
           "flagged": 0
         },
         {
           "item": 7,
-          "text": "I'm energetic / I'm mellow",
+          "text": "mbti legacy item 7 pole first / mbti legacy item 7 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 8,
-          "text": "I prefer multiple choice tests / I prefer essay answers",
+          "text": "mbti legacy item 8 pole first / mbti legacy item 8 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 9,
-          "text": "I'm chaotic / I'm organized",
+          "text": "mbti legacy item 9 pole first / mbti legacy item 9 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 10,
-          "text": "I'm easily hurt / I'm thick-skinned",
+          "text": "mbti legacy item 10 pole first / mbti legacy item 10 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 11,
-          "text": "I work best in groups / I work best alone",
+          "text": "mbti legacy item 11 pole first / mbti legacy item 11 pole second",
           "midpoint": 20,
           "flagged": 0
         },
         {
           "item": 12,
-          "text": "I focus on the present / I focus on the future",
+          "text": "mbti legacy item 12 pole first / mbti legacy item 12 pole second",
           "midpoint": 17,
           "flagged": 0
         },
         {
           "item": 13,
-          "text": "I plan far ahead / I plan at the last minute",
+          "text": "mbti legacy item 13 pole first / mbti legacy item 13 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 14,
-          "text": "I want people's respect / I want their love",
+          "text": "mbti legacy item 14 pole first / mbti legacy item 14 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 15,
-          "text": "Parties wear me out / Parties fire me up",
+          "text": "mbti legacy item 15 pole first / mbti legacy item 15 pole second",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 16,
-          "text": "I try to fit in / I try to stand out",
+          "text": "mbti legacy item 16 pole first / mbti legacy item 16 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 17,
-          "text": "I keep my options open / I commit",
+          "text": "mbti legacy item 17 pole first / mbti legacy item 17 pole second",
           "midpoint": 29,
           "flagged": 0
         },
         {
           "item": 18,
-          "text": "I want to be good at fixing things / I want to be good at fixing people",
+          "text": "mbti legacy item 18 pole first / mbti legacy item 18 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 19,
-          "text": "I talk more than I listen / I listen more than I talk",
+          "text": "mbti legacy item 19 pole first / mbti legacy item 19 pole second",
           "midpoint": 24,
           "flagged": 0
         },
         {
           "item": 20,
-          "text": "When describing an event, I tell what happened / I tell what it meant",
+          "text": "mbti legacy item 20 pole first / mbti legacy item 20 pole second",
           "midpoint": 47,
           "flagged": 0
         },
         {
           "item": 21,
-          "text": "I get work done right away / I procrastinate",
+          "text": "mbti legacy item 21 pole first / mbti legacy item 21 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 22,
-          "text": "I follow my heart / I follow my head",
+          "text": "mbti legacy item 22 pole first / mbti legacy item 22 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 23,
-          "text": "I stay at home / I go out on the town",
+          "text": "mbti legacy item 23 pole first / mbti legacy item 23 pole second",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 24,
-          "text": "I want the big picture / I want the details",
+          "text": "mbti legacy item 24 pole first / mbti legacy item 24 pole second",
           "midpoint": 17,
           "flagged": 0
         },
         {
           "item": 25,
-          "text": "I improvise / I prepare",
+          "text": "mbti legacy item 25 pole first / mbti legacy item 25 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 26,
-          "text": "I base morality on justice / I base morality on compassion",
+          "text": "mbti legacy item 26 pole first / mbti legacy item 26 pole second",
           "midpoint": 100,
           "flagged": 0
         },
         {
           "item": 27,
-          "text": "It's hard for me to yell loudly / Yelling comes naturally to me",
+          "text": "mbti legacy item 27 pole first / mbti legacy item 27 pole second",
           "midpoint": 25,
           "flagged": 25
         },
         {
           "item": 28,
-          "text": "I'm theoretical / I'm empirical",
+          "text": "mbti legacy item 28 pole first / mbti legacy item 28 pole second",
           "midpoint": 20,
           "flagged": 0
         },
         {
           "item": 29,
-          "text": "I work hard / I play hard",
+          "text": "mbti legacy item 29 pole first / mbti legacy item 29 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 30,
-          "text": "I'm uncomfortable with emotions / I value emotions",
+          "text": "mbti legacy item 30 pole first / mbti legacy item 30 pole second",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 31,
-          "text": "I like to perform in front of people / I avoid public speaking",
+          "text": "mbti legacy item 31 pole first / mbti legacy item 31 pole second",
           "midpoint": 92,
           "flagged": 90
         },
         {
           "item": 32,
-          "text": "I like to know \"who, what, when\" / I like to know \"why\"",
+          "text": "mbti legacy item 32 pole first / mbti legacy item 32 pole second",
           "midpoint": 0,
           "flagged": 0
         }
@@ -5007,97 +5007,97 @@
       "items": [
         {
           "item": 1,
-          "text": "I put people under pressure.",
+          "text": "disc legacy item 1",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 2,
-          "text": "I have a strong need for power.",
+          "text": "disc legacy item 2",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 3,
-          "text": "I try to outdo others.",
+          "text": "disc legacy item 3",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 4,
-          "text": "I am always on the look out for ways to make money.",
+          "text": "disc legacy item 4",
           "midpoint": 30,
           "flagged": 30
         },
         {
           "item": 5,
-          "text": "I enjoy being part of a loud crowd.",
+          "text": "disc legacy item 5",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 6,
-          "text": "I want strangers to love me.",
+          "text": "disc legacy item 6",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 7,
-          "text": "I joke around a lot.",
+          "text": "disc legacy item 7",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 8,
-          "text": "I make lots of noise.",
+          "text": "disc legacy item 8",
           "midpoint": 34,
           "flagged": 34
         },
         {
           "item": 9,
-          "text": "I hesitate to criticize other people's ideas.",
+          "text": "disc legacy item 9",
           "midpoint": 3,
           "flagged": 0
         },
         {
           "item": 10,
-          "text": "I value cooperation over competition.",
+          "text": "disc legacy item 10",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 11,
-          "text": "I just want everyone to be equal.",
+          "text": "disc legacy item 11",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 12,
-          "text": "I seldom toot my own horn.",
+          "text": "disc legacy item 12",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 13,
-          "text": "I am emotionally reserved.",
+          "text": "disc legacy item 13",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 14,
-          "text": "I read the fine print.",
+          "text": "disc legacy item 14",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 15,
-          "text": "I love order and regularity.",
+          "text": "disc legacy item 15",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 16,
-          "text": "My first reaction to an idea is to see its flaws.",
+          "text": "disc legacy item 16",
           "midpoint": 86,
           "flagged": 0
         }
@@ -5112,217 +5112,217 @@
       "items": [
         {
           "item": 1,
-          "text": "I am a perfectionist.",
+          "text": "enneagram legacy item 1",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 2,
-          "text": "I strive for efficiency.",
+          "text": "enneagram legacy item 2",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 3,
-          "text": "I often have to redo other people's work.",
+          "text": "enneagram legacy item 3",
           "midpoint": 76,
           "flagged": 0
         },
         {
           "item": 4,
-          "text": "I keep my belongings in order.",
+          "text": "enneagram legacy item 4",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 5,
-          "text": "My relationships with others are what my life is about.",
+          "text": "enneagram legacy item 5",
           "midpoint": 2,
           "flagged": 2
         },
         {
           "item": 6,
-          "text": "I have difficulty saying no.",
+          "text": "enneagram legacy item 6",
           "midpoint": 29,
           "flagged": 0
         },
         {
           "item": 7,
-          "text": "I get lots of satisfaction from helping others achieve their goals.",
+          "text": "enneagram legacy item 7",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 8,
-          "text": "I put family first.",
+          "text": "enneagram legacy item 8",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 9,
-          "text": "I put work first.",
+          "text": "enneagram legacy item 9",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 10,
-          "text": "I like to stand out.",
+          "text": "enneagram legacy item 10",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 11,
-          "text": "It is good to wake up to a full day of planned activities.",
+          "text": "enneagram legacy item 11",
           "midpoint": 17,
           "flagged": 17
         },
         {
           "item": 12,
-          "text": "Money is important to my happiness.",
+          "text": "enneagram legacy item 12",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 13,
-          "text": "I daydream about being in love.",
+          "text": "enneagram legacy item 13",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 14,
-          "text": "I really enjoy feeling bittersweet.",
+          "text": "enneagram legacy item 14",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 15,
-          "text": "I get deeply immersed in music.",
+          "text": "enneagram legacy item 15",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 16,
-          "text": "I side with the rebels over the establishment.",
+          "text": "enneagram legacy item 16",
           "midpoint": 94,
           "flagged": 0
         },
         {
           "item": 17,
-          "text": "I have a hard time showing emotions.",
+          "text": "enneagram legacy item 17",
           "midpoint": 5,
           "flagged": 2
         },
         {
           "item": 18,
-          "text": "I spend hours alone with my hobbies.",
+          "text": "enneagram legacy item 18",
           "midpoint": 100,
           "flagged": 100
         },
         {
           "item": 19,
-          "text": "I spend most of my time trying to understand things.",
+          "text": "enneagram legacy item 19",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 20,
-          "text": "I like mental challenges.",
+          "text": "enneagram legacy item 20",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 21,
-          "text": "Fear of being taken advantage of keeps me from being more trusting.",
+          "text": "enneagram legacy item 21",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 22,
-          "text": "I get input from others before I make a decision.",
+          "text": "enneagram legacy item 22",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 23,
-          "text": "I conform.",
+          "text": "enneagram legacy item 23",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 24,
-          "text": "I am loyal.",
+          "text": "enneagram legacy item 24",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 25,
-          "text": "I must always be having new experiences.",
+          "text": "enneagram legacy item 25",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 26,
-          "text": "I can keep a conversation going with anyone about anything.",
+          "text": "enneagram legacy item 26",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 27,
-          "text": "I am uninhibited.",
+          "text": "enneagram legacy item 27",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 28,
-          "text": "I always try to break the tension with a good joke.",
+          "text": "enneagram legacy item 28",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 29,
-          "text": "I naturally emerge as a leader.",
+          "text": "enneagram legacy item 29",
           "midpoint": 90,
           "flagged": 0
         },
         {
           "item": 30,
-          "text": "I like a conversation where no one agrees.",
+          "text": "enneagram legacy item 30",
           "midpoint": 76,
           "flagged": 0
         },
         {
           "item": 31,
-          "text": "I want people to tell me the truth, not spare my feelings.",
+          "text": "enneagram legacy item 31",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 32,
-          "text": "I come up with good solutions.",
+          "text": "enneagram legacy item 32",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 33,
-          "text": "When other people are arguing, I leave the room.",
+          "text": "enneagram legacy item 33",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 34,
-          "text": "I keep my thoughts to myself to prevent trouble.",
+          "text": "enneagram legacy item 34",
           "midpoint": 55,
           "flagged": 0
         },
         {
           "item": 35,
-          "text": "I am very accepting and flexible.",
+          "text": "enneagram legacy item 35",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 36,
-          "text": "I avoid confrontation.",
+          "text": "enneagram legacy item 36",
           "midpoint": 0,
           "flagged": 0
         }
@@ -5337,217 +5337,217 @@
       "items": [
         {
           "item": 1,
-          "text": "I'm afraid that I will lose my partner's love.",
+          "text": "attachment legacy item 1",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 2,
-          "text": "I often worry that my partner will not want to stay with me.",
+          "text": "attachment legacy item 2",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 3,
-          "text": "I often worry that my partner doesn't really love me.",
+          "text": "attachment legacy item 3",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 4,
-          "text": "I worry that romantic partners won't care about me as much as I care about them.",
+          "text": "attachment legacy item 4",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 5,
-          "text": "I often wish that my partner's feelings for me were as strong as my feelings for them.",
+          "text": "attachment legacy item 5",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 6,
-          "text": "I worry a lot about my relationships.",
+          "text": "attachment legacy item 6",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 7,
-          "text": "When my partner is out of sight, I worry that they might become interested in someone else.",
+          "text": "attachment legacy item 7",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 8,
-          "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.",
+          "text": "attachment legacy item 8",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 9,
-          "text": "I rarely worry about my partner leaving me.",
+          "text": "attachment legacy item 9",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 10,
-          "text": "My romantic partner makes me doubt myself.",
+          "text": "attachment legacy item 10",
           "midpoint": 36,
           "flagged": 0
         },
         {
           "item": 11,
-          "text": "I do not often worry about being abandoned.",
+          "text": "attachment legacy item 11",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 12,
-          "text": "I find that my partner(s) don't want to get as close as I would like.",
+          "text": "attachment legacy item 12",
           "midpoint": 1,
           "flagged": 1
         },
         {
           "item": 13,
-          "text": "Sometimes romantic partners change their feelings about me for no apparent reason.",
+          "text": "attachment legacy item 13",
           "midpoint": 100,
           "flagged": 37
         },
         {
           "item": 14,
-          "text": "My desire to be very close sometimes scares people away.",
+          "text": "attachment legacy item 14",
           "midpoint": 1,
           "flagged": 1
         },
         {
           "item": 15,
-          "text": "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.",
+          "text": "attachment legacy item 15",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 16,
-          "text": "It makes me mad that I don't get the affection and support I need from my partner.",
+          "text": "attachment legacy item 16",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 17,
-          "text": "I worry that I won't measure up to other people.",
+          "text": "attachment legacy item 17",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 18,
-          "text": "My partner only seems to notice me when I'm angry.",
+          "text": "attachment legacy item 18",
           "midpoint": 33,
           "flagged": 32
         },
         {
           "item": 19,
-          "text": "I prefer not to show a partner how I feel deep down.",
+          "text": "attachment legacy item 19",
           "midpoint": 4,
           "flagged": 4
         },
         {
           "item": 20,
-          "text": "I feel comfortable sharing my private thoughts and feelings with my partner.",
+          "text": "attachment legacy item 20",
           "midpoint": 4,
           "flagged": 4
         },
         {
           "item": 21,
-          "text": "I find it difficult to allow myself to depend on romantic partners.",
+          "text": "attachment legacy item 21",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 22,
-          "text": "I am very comfortable being close to romantic partners.",
+          "text": "attachment legacy item 22",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 23,
-          "text": "I don't feel comfortable opening up to romantic partners.",
+          "text": "attachment legacy item 23",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 24,
-          "text": "I prefer not to be too close to romantic partners.",
+          "text": "attachment legacy item 24",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 25,
-          "text": "I get uncomfortable when a romantic partner wants to be very close.",
+          "text": "attachment legacy item 25",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 26,
-          "text": "I find it relatively easy to get close to my partner.",
+          "text": "attachment legacy item 26",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 27,
-          "text": "It's not difficult for me to get close to my partner.",
+          "text": "attachment legacy item 27",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 28,
-          "text": "I usually discuss my problems and concerns with my partner.",
+          "text": "attachment legacy item 28",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 29,
-          "text": "It helps to turn to my romantic partner in times of need.",
+          "text": "attachment legacy item 29",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 30,
-          "text": "I tell my partner just about everything.",
+          "text": "attachment legacy item 30",
           "midpoint": 2,
           "flagged": 0
         },
         {
           "item": 31,
-          "text": "I talk things over with my partner.",
+          "text": "attachment legacy item 31",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 32,
-          "text": "I am nervous when partners get too close to me.",
+          "text": "attachment legacy item 32",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 33,
-          "text": "I feel comfortable depending on romantic partners.",
+          "text": "attachment legacy item 33",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 34,
-          "text": "I find it easy to depend on romantic partners.",
+          "text": "attachment legacy item 34",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 35,
-          "text": "It's easy for me to be affectionate with my partner.",
+          "text": "attachment legacy item 35",
           "midpoint": 0,
           "flagged": 0
         },
         {
           "item": 36,
-          "text": "My partner really understands me and my needs.",
+          "text": "attachment legacy item 36",
           "midpoint": 100,
           "flagged": 5
         }

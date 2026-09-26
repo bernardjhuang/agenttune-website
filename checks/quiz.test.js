@@ -4,8 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const { quiz, ROOT } = require('./browser-fixture.cjs');
 const { scoreMbti } = require('../quiz-utils');
-const html = fs.readFileSync(ROOT + '/tests/mbti.html', 'utf8');
-const items = vm.runInNewContext(/const ITEMS = (\[[\s\S]*?\n    \]);/.exec(html)[1]);
+const items = require('../research/data/september-2026-instruments.json').mbti.items;
 
 test('neutral, missing, invalid, and balanced answers never silently become INTJ', () => {
   for (const v of [3, null, undefined, 0, 6, NaN]) {
@@ -32,7 +31,7 @@ test('all 16 clear score patterns map correctly; optional preferences resolve on
   assert.equal(scoreMbti(Array(32).fill(3), items, { EI:'T' }).pattern, 'XXXX');
 });
 
-for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
+for (const name of ['big-five']) {
   test(`${name}: rapid clicks, double-click across a transition, and keyboard repeat cannot skip questions`, () => {
     const f = quiz(name), progress = f.ids.get('quiz-progress-current');
     f.buttons[0].click(); f.buttons[0].click(); f.tick(220);
@@ -55,31 +54,15 @@ for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
   });
 }
 
-test('MBTI neutral UI stays undetermined until four explicit preferences; retake drops a late fetch', async () => {
-  const f = quiz('mbti'); let resolveFetch;
-  f.ctx.fetchTuning = () => new Promise(resolve => { resolveFetch = resolve; });
-  for (let i = 0; i < 32; i++) { f.buttons[2].click(); f.tick(220); }
-  assert.equal(f.ids.get('quiz-result-code').textContent, 'XXXX');
-  assert.equal(f.ids.get('quiz-result-name').textContent, 'Undetermined');
-  assert.equal(f.ids.get('quiz-tuning-output').hidden, true);
-  assert.equal(resolveFetch, undefined);
-  for (const index of [1,1,0,0]) {
-    const field = f.ids.get('quiz-tiebreakers').children.find(e => e.tagName === 'FIELDSET');
-    field.children[index + 1].click();
-  }
-  assert.equal(f.ids.get('quiz-result-code').textContent, 'INTJ');
-  assert.match(f.ids.get('quiz-result-blurb').textContent, /stated preferences/);
-  assert.equal(f.ids.get('quiz-tuning-output').hidden, false);
-  f.ids.get('quiz-restart').click();
-  const preview = f.ids.get('quiz-editor-code').innerHTML;
-  resolveFetch('WRONG STALE RESULT'); await Promise.resolve();
-  assert.equal(f.ids.get('quiz-editor-code').innerHTML, preview);
-  f.ids.get('quiz-start').click();
-  for (let i = 0; i < 32; i++) { f.buttons[2].click(); f.tick(220); }
-  assert.equal(f.ids.get('quiz-result-code').textContent, 'XXXX');
+test('withdrawn questionnaires expose availability and alternatives, with no runner or question payload',()=>{
+ for(const name of ['mbti','enneagram','disc','attachment']){
+  const html=fs.readFileSync(ROOT+'/tests/'+name+'.html','utf8');
+  assert.match(html,/Questionnaire currently unavailable/);assert.match(html,/custom-instructions-generator/);assert.doesNotMatch(html,/const ITEMS|id="quiz-start"|"@type":"Quiz"/);
+  assert.match(fs.readFileSync(ROOT+'/tests/'+name+'.md','utf8'),/unavailable_pending_rights/);
+ }
 });
 
-for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
+for (const name of ['big-five']) {
   test(`${name}: focus follows quiz screens and shortcuts leave browser/form keys alone`, () => {
     const f=quiz(name), card=f.ids.get('quiz-card'), progress=f.ids.get('quiz-progress-current');
     assert.equal(f.document.activeElement,card);

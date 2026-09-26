@@ -10,7 +10,7 @@
   <meta property="og:description" content="Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-26" />
   <meta property="og:url" content="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"MBTI vs Big Five for AI: crisp switches or calibrated dials"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}}]}</script>
 
@@ -69,7 +69,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Frameworks</span>
         <h1 class="h-hero h-research-hero">MBTI vs Big Five for AI: crisp switches or calibrated dials.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.</p>
       </section>
 
@@ -91,18 +91,7 @@
 
       <section>
         <h2>Types write instructions. Traits tune them.</h2>
-        <p>Watch what happens when each kind of output meets a prompt.</p><p>A binary preference converts directly. J becomes <em>"lead with the recommendation, then the reasoning"</em>; P becomes <em>"keep options open — don't force a decision early."</em> The letter already is the instruction. No translation step.</p><p>A percentile needs interpreting. 78th-percentile Openness means — how many alternative framings per answer? How much tangent tolerance? Someone has to convert the number into behavior before an agent can act on it. That's real work, but it buys the thing MBTI threw away: <em>how much</em>, not just <em>which way</em>.</p><div class="guide-answer">Rule of thumb: if the preference fits in an if-statement, source it from MBTI. If it needs a volume knob — detail level, hedging, warmth — source it from Big Five.</div><p>Our tuning files pair the two for exactly this reason. The 16 <a href="/library/mbti/intj">MBTI tunings</a> set the switches; the OCEAN pole tunings — high and low for each trait, like <a href="/library/ocean/openness-high">high Openness</a> or <a href="/library/ocean/neuroticism-low">low Neuroticism</a> — pre-translate each dial into concrete rules so you don't have to. All free, all MIT-licensed, all in <a href="/library/">the library</a>.</p><p>Here's what the pairing looks like in practice. Say your results come back INTJ, with Big Five showing high Conscientiousness, low Extraversion, moderate Openness:</p><div class="guide-snippet" data-tuning-prompt>## Personality layer (INTJ + Big Five calibration)
-
-# Switches — from type
-- Lead with the recommendation, then the reasoning.
-- Disagree directly: "I disagree because X.
-  Here's what I'd do instead."
-- Skip the warmup. No option menus when one answer is right.
-
-# Dials — from traits
-- Detail: terse by default; expand on request. (low E)
-- Structure: number the steps, no loose narrative. (high C)
-- Alternatives: offer one, not five. (moderate O)</div><p>The switches came straight off the type — no interpretation. The dials took the trait scores and turned them into settings. Neither half is sufficient alone: switches without dials give you the right shape at the wrong volume; dials without switches give you calibrated ambiguity.</p>
+        <p>Neither a type letter nor a trait score directly determines the best instruction. Use either as a conversation starter, then choose the behavior you want: concise or detailed, exploratory or structured, gentle or direct.</p><p>AgentTune’s current Big Five adaptation reports raw totals and means, not population percentiles. Type templates and OCEAN templates are editorial suggestions; they do not establish a hierarchy. Explicit preferences resolve conflicts.</p><p>Try a concrete instruction such as “Lead with a recommendation, then give the evidence. State uncertainty when it could change the decision.” Compare outputs on real tasks before deciding whether it helps.</p>
       </section>
       <div class="divider tight"></div>
 

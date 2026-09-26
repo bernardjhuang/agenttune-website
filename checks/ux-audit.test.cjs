@@ -6,10 +6,10 @@ const vectors=require('../research/data/september-2026-responses.json').records;
 const historic=require('../research/data/september-2026-score.cjs');
 const catalog=require('../library/index.json'),registry=require('../platforms');
 const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
-test('five-questionnaire local scoring reproduces all retained raw scores and preserves unresolved ties',()=>{
- for(const r of vectors){const out=scoring.score(r.test,r.answers),old=historic.score(r.test,r.answers);if(r.test==='mbti'){assert.equal(out.pattern,old.pattern);assert.equal(out.type,out.tied.length?null:out.pattern);}else {assert.deepEqual(out.values,old.values);if(out.leaders)assert.deepEqual(out.leaders.slice().sort(),old.winners.slice().sort());}}
- for(const [id,n] of [['mbti',32],['disc',16],['enneagram',36],['attachment',36],['big-five',50]])for(const a of [null,Array(n),Array(n-1).fill(3),Array(n).fill('3'),Array(n).fill(3.2),Array(n).fill(8)])assert.throws(()=>scoring.score(id,a),TypeError);
- assert.equal(scoring.score('mbti',Array(32).fill(3)).type,null);assert.equal(scoring.score('disc',Array(16).fill(3)).leaders.length,4);assert.equal(scoring.score('enneagram',Array(36).fill(3)).leaders.length,9);
+test('versioned scoring rejects unavailable instruments and incomplete positional data',()=>{
+ for(const id of ['mbti','disc','enneagram','attachment'])assert.equal(scoring.score({instrumentId:id,instrumentVersion:'1.0.0',responses:[]}).status,'invalid');
+ for(const a of [null,Array(50),Array(49).fill(3),Array(50).fill('3'),Array(50).fill(3.2),Array(50).fill(8)])assert.equal(scoring.scoreOrdered('agenttune-ipip50','1.0.0',a).status,'invalid');
+ const out=scoring.score({instrumentId:'agenttune-ipip50',instrumentVersion:'1.0.0',responses:[]});assert.equal(out.status,'incomplete');assert.equal(out.values,undefined);
 });
 test('quiz drafts validate responses, expire, resume explicitly and clear without touching other storage',()=>{
  const f=fixture('<section id="quiz-intro"></section>');f.run('quiz-utils.js');f.ctx.location.pathname='/tests/disc';

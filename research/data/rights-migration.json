@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-26",
+  "status": "historical_provenance_correction",
+  "original_instruments_sha256": "e9c7c05fcae2c9c00c4a9994f09eca6d00be1d0c63b55ad9cf6db3efca9fd333",
+  "original_protocols_sha256": "f2e77320df046f18536357364a9aa7c43dea01decd0822533d2af9460b9b2c2e",
+  "response_vectors_unchanged": true,
+  "numeric_scoring_keys_unchanged": true,
+  "question_text": "Restricted item wording replaced by stable legacy item labels in public research definitions and derived tables. Original bytes retained in a local research archive. Numeric keys are retained to reproduce historical arithmetic, not for administering a new questionnaire.",
+  "adaptations": [
+    "OEJTS-derived item 1 used a substituted second pole.",
+    "OEPS-derived items 15 and 32 substituted upstream items 22 and 35; presentation order was changed.",
+    "Questionnaire wording, anchors, model prompts and historical tie-break labels limit cross-model comparisons."
+  ],
+  "big_five": "Historical reference constants had no verified normative sample. Current API returns raw scores and means only."
+}

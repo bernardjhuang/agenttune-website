@@ -40,9 +40,9 @@
     },
     {
       "id": "enneagram",
-      "name": "Enneagram scoring playground",
+      "name": "Nine-group scoring demo",
       "url": "https://agent-tune.com/tools/enneagram-scoring-playground",
-      "description": "Explore the 36-item Enneagram scorer: enter answers, see nine totals and ties, export JSON, and use the JavaScript scorer or React TypeScript starter.",
+      "description": "Test a nine-group scoring interface using synthetic inputs. No personality questionnaire is included.",
       "guide": "https://agent-tune.com/guides/enneagram-test-react-typescript"
     },
     {

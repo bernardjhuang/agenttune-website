@@ -2,230 +2,232 @@
   "mbti": {
     "items": [
       {
-        "first": "I make lists",
-        "second": "I just put stuff wherever",
+        "first": "mbti legacy item 1 pole first",
+        "second": "mbti legacy item 1 pole second",
         "axis": "JP",
         "low": "J",
         "high": "P"
       },
       {
-        "first": "I am skeptical",
-        "second": "I want to believe",
+        "first": "mbti legacy item 2 pole first",
+        "second": "mbti legacy item 2 pole second",
         "axis": "TF",
         "low": "T",
         "high": "F"
       },
       {
-        "first": "I get bored when I'm alone",
-        "second": "I need time alone",
+        "first": "mbti legacy item 3 pole first",
+        "second": "mbti legacy item 3 pole second",
         "axis": "EI",
         "low": "E",
         "high": "I"
       },
       {
-        "first": "I accept things as they are",
-        "second": "I'm unsatisfied with the way things are",
+        "first": "mbti legacy item 4 pole first",
+        "second": "mbti legacy item 4 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       },
       {
-        "first": "I keep my room clean",
-        "second": "I just put stuff wherever",
+        "first": "mbti legacy item 5 pole first",
+        "second": "mbti legacy item 5 pole second",
         "axis": "JP",
         "low": "J",
         "high": "P"
       },
       {
-        "first": "I think \"robotic\" is an insult",
-        "second": "I strive to have a mechanical mind",
+        "first": "mbti legacy item 6 pole first",
+        "second": "mbti legacy item 6 pole second",
         "axis": "TF",
         "low": "F",
         "high": "T"
       },
       {
-        "first": "I'm energetic",
-        "second": "I'm mellow",
+        "first": "mbti legacy item 7 pole first",
+        "second": "mbti legacy item 7 pole second",
         "axis": "EI",
         "low": "E",
         "high": "I"
       },
       {
-        "first": "I prefer multiple choice tests",
-        "second": "I prefer essay answers",
+        "first": "mbti legacy item 8 pole first",
+        "second": "mbti legacy item 8 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       },
       {
-        "first": "I'm chaotic",
-        "second": "I'm organized",
+        "first": "mbti legacy item 9 pole first",
+        "second": "mbti legacy item 9 pole second",
         "axis": "JP",
         "low": "P",
         "high": "J"
       },
       {
-        "first": "I'm easily hurt",
-        "second": "I'm thick-skinned",
+        "first": "mbti legacy item 10 pole first",
+        "second": "mbti legacy item 10 pole second",
         "axis": "TF",
         "low": "F",
         "high": "T"
       },
       {
-        "first": "I work best in groups",
-        "second": "I work best alone",
+        "first": "mbti legacy item 11 pole first",
+        "second": "mbti legacy item 11 pole second",
         "axis": "EI",
         "low": "E",
         "high": "I"
       },
       {
-        "first": "I focus on the present",
-        "second": "I focus on the future",
+        "first": "mbti legacy item 12 pole first",
+        "second": "mbti legacy item 12 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       },
       {
-        "first": "I plan far ahead",
-        "second": "I plan at the last minute",
+        "first": "mbti legacy item 13 pole first",
+        "second": "mbti legacy item 13 pole second",
         "axis": "JP",
         "low": "J",
         "high": "P"
       },
       {
-        "first": "I want people's respect",
-        "second": "I want their love",
+        "first": "mbti legacy item 14 pole first",
+        "second": "mbti legacy item 14 pole second",
         "axis": "TF",
         "low": "T",
         "high": "F"
       },
       {
-        "first": "Parties wear me out",
-        "second": "Parties fire me up",
+        "first": "mbti legacy item 15 pole first",
+        "second": "mbti legacy item 15 pole second",
         "axis": "EI",
         "low": "I",
         "high": "E"
       },
       {
-        "first": "I try to fit in",
-        "second": "I try to stand out",
+        "first": "mbti legacy item 16 pole first",
+        "second": "mbti legacy item 16 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       },
       {
-        "first": "I keep my options open",
-        "second": "I commit",
+        "first": "mbti legacy item 17 pole first",
+        "second": "mbti legacy item 17 pole second",
         "axis": "JP",
         "low": "P",
         "high": "J"
       },
       {
-        "first": "I want to be good at fixing things",
-        "second": "I want to be good at fixing people",
+        "first": "mbti legacy item 18 pole first",
+        "second": "mbti legacy item 18 pole second",
         "axis": "TF",
         "low": "T",
         "high": "F"
       },
       {
-        "first": "I talk more than I listen",
-        "second": "I listen more than I talk",
+        "first": "mbti legacy item 19 pole first",
+        "second": "mbti legacy item 19 pole second",
         "axis": "EI",
         "low": "E",
         "high": "I"
       },
       {
-        "first": "When describing an event, I tell what happened",
-        "second": "I tell what it meant",
+        "first": "mbti legacy item 20 pole first",
+        "second": "mbti legacy item 20 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       },
       {
-        "first": "I get work done right away",
-        "second": "I procrastinate",
+        "first": "mbti legacy item 21 pole first",
+        "second": "mbti legacy item 21 pole second",
         "axis": "JP",
         "low": "J",
         "high": "P"
       },
       {
-        "first": "I follow my heart",
-        "second": "I follow my head",
+        "first": "mbti legacy item 22 pole first",
+        "second": "mbti legacy item 22 pole second",
         "axis": "TF",
         "low": "F",
         "high": "T"
       },
       {
-        "first": "I stay at home",
-        "second": "I go out on the town",
+        "first": "mbti legacy item 23 pole first",
+        "second": "mbti legacy item 23 pole second",
         "axis": "EI",
         "low": "I",
         "high": "E"
       },
       {
-        "first": "I want the big picture",
-        "second": "I want the details",
+        "first": "mbti legacy item 24 pole first",
+        "second": "mbti legacy item 24 pole second",
         "axis": "SN",
         "low": "N",
         "high": "S"
       },
       {
-        "first": "I improvise",
-        "second": "I prepare",
+        "first": "mbti legacy item 25 pole first",
+        "second": "mbti legacy item 25 pole second",
         "axis": "JP",
         "low": "P",
         "high": "J"
       },
       {
-        "first": "I base morality on justice",
-        "second": "I base morality on compassion",
+        "first": "mbti legacy item 26 pole first",
+        "second": "mbti legacy item 26 pole second",
         "axis": "TF",
         "low": "T",
         "high": "F"
       },
       {
-        "first": "It's hard for me to yell loudly",
-        "second": "Yelling comes naturally to me",
+        "first": "mbti legacy item 27 pole first",
+        "second": "mbti legacy item 27 pole second",
         "axis": "EI",
         "low": "I",
         "high": "E"
       },
       {
-        "first": "I'm theoretical",
-        "second": "I'm empirical",
+        "first": "mbti legacy item 28 pole first",
+        "second": "mbti legacy item 28 pole second",
         "axis": "SN",
         "low": "N",
         "high": "S"
       },
       {
-        "first": "I work hard",
-        "second": "I play hard",
+        "first": "mbti legacy item 29 pole first",
+        "second": "mbti legacy item 29 pole second",
         "axis": "JP",
         "low": "J",
         "high": "P"
       },
       {
-        "first": "I'm uncomfortable with emotions",
-        "second": "I value emotions",
+        "first": "mbti legacy item 30 pole first",
+        "second": "mbti legacy item 30 pole second",
         "axis": "TF",
         "low": "T",
         "high": "F"
       },
       {
-        "first": "I like to perform in front of people",
-        "second": "I avoid public speaking",
+        "first": "mbti legacy item 31 pole first",
+        "second": "mbti legacy item 31 pole second",
         "axis": "EI",
         "low": "E",
         "high": "I"
       },
       {
-        "first": "I like to know \"who, what, when\"",
-        "second": "I like to know \"why\"",
+        "first": "mbti legacy item 32 pole first",
+        "second": "mbti legacy item 32 pole second",
         "axis": "SN",
         "low": "S",
         "high": "N"
       }
-    ]
+    ],
+    "instrumentId": "agenttune-mbti-legacy-september-2026",
+    "administrationStatus": "historical_only_not_for_new_administration"
   },
   "big-five": {
     "items": [
@@ -511,406 +513,414 @@
         "name": "Neuroticism",
         "color": "#c8553d"
       }
-    }
+    },
+    "instrumentId": "agenttune-big-five-legacy-september-2026",
+    "administrationStatus": "historical_only_not_for_new_administration"
   },
   "disc": {
     "items": [
       {
-        "text": "I put people under pressure.",
+        "text": "disc legacy item 1",
         "type": "D"
       },
       {
-        "text": "I have a strong need for power.",
+        "text": "disc legacy item 2",
         "type": "D"
       },
       {
-        "text": "I try to outdo others.",
+        "text": "disc legacy item 3",
         "type": "D"
       },
       {
-        "text": "I am always on the look out for ways to make money.",
+        "text": "disc legacy item 4",
         "type": "D"
       },
       {
-        "text": "I enjoy being part of a loud crowd.",
+        "text": "disc legacy item 5",
         "type": "I"
       },
       {
-        "text": "I want strangers to love me.",
+        "text": "disc legacy item 6",
         "type": "I"
       },
       {
-        "text": "I joke around a lot.",
+        "text": "disc legacy item 7",
         "type": "I"
       },
       {
-        "text": "I make lots of noise.",
+        "text": "disc legacy item 8",
         "type": "I"
       },
       {
-        "text": "I hesitate to criticize other people's ideas.",
+        "text": "disc legacy item 9",
         "type": "S"
       },
       {
-        "text": "I value cooperation over competition.",
+        "text": "disc legacy item 10",
         "type": "S"
       },
       {
-        "text": "I just want everyone to be equal.",
+        "text": "disc legacy item 11",
         "type": "S"
       },
       {
-        "text": "I seldom toot my own horn.",
+        "text": "disc legacy item 12",
         "type": "S"
       },
       {
-        "text": "I am emotionally reserved.",
+        "text": "disc legacy item 13",
         "type": "C"
       },
       {
-        "text": "I read the fine print.",
+        "text": "disc legacy item 14",
         "type": "C"
       },
       {
-        "text": "I love order and regularity.",
+        "text": "disc legacy item 15",
         "type": "C"
       },
       {
-        "text": "My first reaction to an idea is to see its flaws.",
+        "text": "disc legacy item 16",
         "type": "C"
       }
-    ]
+    ],
+    "instrumentId": "agenttune-disc-legacy-september-2026",
+    "administrationStatus": "historical_only_not_for_new_administration"
   },
   "enneagram": {
     "items": [
       {
-        "text": "I am a perfectionist.",
+        "text": "enneagram legacy item 1",
         "type": 1
       },
       {
-        "text": "I strive for efficiency.",
+        "text": "enneagram legacy item 2",
         "type": 1
       },
       {
-        "text": "I often have to redo other people's work.",
+        "text": "enneagram legacy item 3",
         "type": 1
       },
       {
-        "text": "I keep my belongings in order.",
+        "text": "enneagram legacy item 4",
         "type": 1
       },
       {
-        "text": "My relationships with others are what my life is about.",
+        "text": "enneagram legacy item 5",
         "type": 2
       },
       {
-        "text": "I have difficulty saying no.",
+        "text": "enneagram legacy item 6",
         "type": 2
       },
       {
-        "text": "I get lots of satisfaction from helping others achieve their goals.",
+        "text": "enneagram legacy item 7",
         "type": 2
       },
       {
-        "text": "I put family first.",
+        "text": "enneagram legacy item 8",
         "type": 2
       },
       {
-        "text": "I put work first.",
+        "text": "enneagram legacy item 9",
         "type": 3
       },
       {
-        "text": "I like to stand out.",
+        "text": "enneagram legacy item 10",
         "type": 3
       },
       {
-        "text": "It is good to wake up to a full day of planned activities.",
+        "text": "enneagram legacy item 11",
         "type": 3
       },
       {
-        "text": "Money is important to my happiness.",
+        "text": "enneagram legacy item 12",
         "type": 3
       },
       {
-        "text": "I daydream about being in love.",
+        "text": "enneagram legacy item 13",
         "type": 4
       },
       {
-        "text": "I really enjoy feeling bittersweet.",
+        "text": "enneagram legacy item 14",
         "type": 4
       },
       {
-        "text": "I get deeply immersed in music.",
+        "text": "enneagram legacy item 15",
         "type": 4
       },
       {
-        "text": "I side with the rebels over the establishment.",
+        "text": "enneagram legacy item 16",
         "type": 4
       },
       {
-        "text": "I have a hard time showing emotions.",
+        "text": "enneagram legacy item 17",
         "type": 5
       },
       {
-        "text": "I spend hours alone with my hobbies.",
+        "text": "enneagram legacy item 18",
         "type": 5
       },
       {
-        "text": "I spend most of my time trying to understand things.",
+        "text": "enneagram legacy item 19",
         "type": 5
       },
       {
-        "text": "I like mental challenges.",
+        "text": "enneagram legacy item 20",
         "type": 5
       },
       {
-        "text": "Fear of being taken advantage of keeps me from being more trusting.",
+        "text": "enneagram legacy item 21",
         "type": 6
       },
       {
-        "text": "I get input from others before I make a decision.",
+        "text": "enneagram legacy item 22",
         "type": 6
       },
       {
-        "text": "I conform.",
+        "text": "enneagram legacy item 23",
         "type": 6
       },
       {
-        "text": "I am loyal.",
+        "text": "enneagram legacy item 24",
         "type": 6
       },
       {
-        "text": "I must always be having new experiences.",
+        "text": "enneagram legacy item 25",
         "type": 7
       },
       {
-        "text": "I can keep a conversation going with anyone about anything.",
+        "text": "enneagram legacy item 26",
         "type": 7
       },
       {
-        "text": "I am uninhibited.",
+        "text": "enneagram legacy item 27",
         "type": 7
       },
       {
-        "text": "I always try to break the tension with a good joke.",
+        "text": "enneagram legacy item 28",
         "type": 7
       },
       {
-        "text": "I naturally emerge as a leader.",
+        "text": "enneagram legacy item 29",
         "type": 8
       },
       {
-        "text": "I like a conversation where no one agrees.",
+        "text": "enneagram legacy item 30",
         "type": 8
       },
       {
-        "text": "I want people to tell me the truth, not spare my feelings.",
+        "text": "enneagram legacy item 31",
         "type": 8
       },
       {
-        "text": "I come up with good solutions.",
+        "text": "enneagram legacy item 32",
         "type": 8
       },
       {
-        "text": "When other people are arguing, I leave the room.",
+        "text": "enneagram legacy item 33",
         "type": 9
       },
       {
-        "text": "I keep my thoughts to myself to prevent trouble.",
+        "text": "enneagram legacy item 34",
         "type": 9
       },
       {
-        "text": "I am very accepting and flexible.",
+        "text": "enneagram legacy item 35",
         "type": 9
       },
       {
-        "text": "I avoid confrontation.",
+        "text": "enneagram legacy item 36",
         "type": 9
       }
-    ]
+    ],
+    "instrumentId": "agenttune-enneagram-legacy-september-2026",
+    "administrationStatus": "historical_only_not_for_new_administration"
   },
   "attachment": {
     "items": [
       {
-        "text": "I'm afraid that I will lose my partner's love.",
+        "text": "attachment legacy item 1",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I often worry that my partner will not want to stay with me.",
+        "text": "attachment legacy item 2",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I often worry that my partner doesn't really love me.",
+        "text": "attachment legacy item 3",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I worry that romantic partners won't care about me as much as I care about them.",
+        "text": "attachment legacy item 4",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I often wish that my partner's feelings for me were as strong as my feelings for them.",
+        "text": "attachment legacy item 5",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I worry a lot about my relationships.",
+        "text": "attachment legacy item 6",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "When my partner is out of sight, I worry that they might become interested in someone else.",
+        "text": "attachment legacy item 7",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.",
+        "text": "attachment legacy item 8",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I rarely worry about my partner leaving me.",
-        "sub": "anx",
-        "rev": true
-      },
-      {
-        "text": "My romantic partner makes me doubt myself.",
-        "sub": "anx",
-        "rev": false
-      },
-      {
-        "text": "I do not often worry about being abandoned.",
+        "text": "attachment legacy item 9",
         "sub": "anx",
         "rev": true
       },
       {
-        "text": "I find that my partner(s) don't want to get as close as I would like.",
+        "text": "attachment legacy item 10",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "Sometimes romantic partners change their feelings about me for no apparent reason.",
+        "text": "attachment legacy item 11",
+        "sub": "anx",
+        "rev": true
+      },
+      {
+        "text": "attachment legacy item 12",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "My desire to be very close sometimes scares people away.",
+        "text": "attachment legacy item 13",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.",
+        "text": "attachment legacy item 14",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "It makes me mad that I don't get the affection and support I need from my partner.",
+        "text": "attachment legacy item 15",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I worry that I won't measure up to other people.",
+        "text": "attachment legacy item 16",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "My partner only seems to notice me when I'm angry.",
+        "text": "attachment legacy item 17",
         "sub": "anx",
         "rev": false
       },
       {
-        "text": "I prefer not to show a partner how I feel deep down.",
+        "text": "attachment legacy item 18",
+        "sub": "anx",
+        "rev": false
+      },
+      {
+        "text": "attachment legacy item 19",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I feel comfortable sharing my private thoughts and feelings with my partner.",
+        "text": "attachment legacy item 20",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I find it difficult to allow myself to depend on romantic partners.",
+        "text": "attachment legacy item 21",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I am very comfortable being close to romantic partners.",
+        "text": "attachment legacy item 22",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I don't feel comfortable opening up to romantic partners.",
+        "text": "attachment legacy item 23",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I prefer not to be too close to romantic partners.",
+        "text": "attachment legacy item 24",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I get uncomfortable when a romantic partner wants to be very close.",
+        "text": "attachment legacy item 25",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I find it relatively easy to get close to my partner.",
+        "text": "attachment legacy item 26",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "It's not difficult for me to get close to my partner.",
+        "text": "attachment legacy item 27",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I usually discuss my problems and concerns with my partner.",
+        "text": "attachment legacy item 28",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "It helps to turn to my romantic partner in times of need.",
+        "text": "attachment legacy item 29",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I tell my partner just about everything.",
+        "text": "attachment legacy item 30",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I talk things over with my partner.",
+        "text": "attachment legacy item 31",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I am nervous when partners get too close to me.",
+        "text": "attachment legacy item 32",
         "sub": "avd",
         "rev": false
       },
       {
-        "text": "I feel comfortable depending on romantic partners.",
+        "text": "attachment legacy item 33",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "I find it easy to depend on romantic partners.",
+        "text": "attachment legacy item 34",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "It's easy for me to be affectionate with my partner.",
+        "text": "attachment legacy item 35",
         "sub": "avd",
         "rev": true
       },
       {
-        "text": "My partner really understands me and my needs.",
+        "text": "attachment legacy item 36",
         "sub": "avd",
         "rev": true
       }
-    ]
+    ],
+    "instrumentId": "agenttune-attachment-legacy-september-2026",
+    "administrationStatus": "historical_only_not_for_new_administration"
   }
 }

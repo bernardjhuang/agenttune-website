@@ -95,11 +95,11 @@ Two edits worth making after install. First, cut anything that doesn't sound lik
 
 ## Don't know your type?
 
-        Take the [free Enneagram test](https://agent-tune.com/tests/enneagram) — about five minutes, in-browser, no email wall. If two types score close, read both blocks above and install the one that makes you exhale. Mistyping is common in the Enneagram precisely because it measures motivation, not behavior — two types can act identically for opposite reasons. The block that names what you're avoiding is yours.
+        You do not need a type to choose a communication preference. Read the blocks above, keep rules that fit your tasks, and remove the rest. The [Enneagram questionnaire is currently unavailable](https://agent-tune.com/tests/enneagram) while redistribution rights are reviewed. These templates are editorial suggestions, not evidence about your underlying motivations.
 
 ## Building an Enneagram integration?
 
-        The [open-source Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test) includes AgentTune’s 36-item question data, a reusable JavaScript scorer, a live demo and explicit handling of tied results.
+        The [Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test) includes a JavaScript scorer, a synthetic nine-group demo, a React starter and guidance on questionnaire rights. The starter contains no personality questionnaire.
 
 ## Questions people ask.
 
@@ -121,7 +121,7 @@ Two edits worth making after install. First, cut anything that doesn't sound lik
 
             What if I'm not sure of my type or scored close on two?
 
-            Install the block whose "what loses them" list stings the most — the Enneagram is about what you avoid, so the accurate type is usually the uncomfortable one. Or run both for a week each and keep the one you stopped noticing. The free test at /tests/enneagram takes about five minutes if you want a starting score.
+            Choose by the actual communication rules you want. Try a few on representative tasks and revise them using what helps. You do not need a definitive type or a questionnaire score to use a preference template.
 
 ## Keep going.
 
