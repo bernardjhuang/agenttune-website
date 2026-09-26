@@ -5,7 +5,7 @@ Guide · reference
 
 # An AI personality glossary.
 
-        By Bernard Huang · Updated September 26, 2026
+        By Bernard Huang · Updated September 25, 2026
 
         A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.
 
