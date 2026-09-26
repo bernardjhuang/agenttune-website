@@ -5,6 +5,7 @@ Usage: python3 tools/check-external-links.py docs/site-audit-out/site-audit.json
 Writes a JSON map url -> {status, final_url, error, pages}. HEAD first, GET on 405/403/error.
 """
 import json, sys, ssl, time, argparse
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -40,7 +41,9 @@ def main():
         for url, res in zip(urls, ex.map(fetch, urls)):
             res["pages"] = ext[url]; out[url] = res
     bad = {u: r for u, r in out.items() if not (r.get("status") and 200 <= r["status"] < 400)}
-    path = a.out or a.audit.replace("site-audit.json", "external-links.json")
+    path = Path(a.out) if a.out else Path(a.audit).with_name("external-links.json")
+    if path.resolve() == Path(a.audit).resolve():
+        ap.error("Output must differ from the input audit file")
     json.dump(out, open(path, "w"), indent=1)
     print(f"{len(urls)} external URLs checked in {time.time()-t0:.0f}s; {len(bad)} not 2xx/3xx:")
     for u, r in sorted(bad.items()):

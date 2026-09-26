@@ -18,6 +18,7 @@ function fixture(html = '') {
     get id() { return this._id; }
     set innerHTML(v) { this._html = v; if (this.tagName === 'SELECT') this.value = /<option value="([^"]+)"/.exec(v)?.[1] || ''; }
     get innerHTML() { return this._html || ''; }
+    focus() { document.activeElement = this; }
     setAttribute(k, v) { this.attributes[k] = v; }
     getAttribute(k) { return this.attributes[k]; }
     addEventListener(k, fn) { (this.events[k] ||= []).push(fn); }

@@ -8,7 +8,7 @@ function isPublic(relative) {
   const parts=relative.split('/');
   if(parts.length===1)return publicRoot.has(relative);
   if(['tools/custom-instructions-generator.html','tools/claude-md-generator.html'].includes(relative))return true;
-  return directories.has(parts[0]) && !parts.some(p=>p.startsWith('.')||p==='src') && /\.(html|css|js|cjs|json|md|csv|png|svg|webp|jpg|ico|txt)$/.test(relative);
+  return directories.has(parts[0]) && !parts.some(p=>p.startsWith('.')||p==='src') && /\.(html|css|js|cjs|json|md|csv|png|svg|webp|jpg|ico|txt|zip)$/.test(relative);
 }
 // Shared assets are cached for hours at the edge and in browsers. Every published HTML file
 // references them with a content hash so a new deploy is never served with a stale stylesheet.

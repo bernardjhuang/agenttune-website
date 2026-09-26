@@ -176,11 +176,11 @@
     .c-code { padding: 22px 24px; white-space: pre-wrap; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
     .c-code .c-h2 { color: #b4a7ff; font-weight: 600; }
-    .c-statusbar { background: var(--lib-accent); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
+    .c-statusbar { background: var(--lib-accent-text, #9f4427); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
     .c-statusbar-left { display: flex; align-items: center; gap: 16px; }
     .c-statusbar-actions { display: flex; gap: 8px; }
-    .c-status-btn { background: rgba(255,255,255,0.18); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
-    .c-status-btn:hover { background: rgba(255,255,255,0.30); }
+    .c-status-btn { background: rgba(0,0,0,0.12); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
+    .c-status-btn:hover { background: rgba(0,0,0,0.22); }
     .c-status-btn.is-strong { background: #fff; color: var(--lib-accent-text); }
 
     @media (max-width: 720px) {
@@ -489,7 +489,7 @@ Pick one specific thing to do in the next 30 minutes that moves the project forw
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/attachment/secure" style="color: #e07a8a;">Secure →</a><a class="lib-related-pill" href="/library/attachment/avoidant" style="color: #e07a8a;">Avoidant →</a><a class="lib-related-pill" href="/library/attachment/disorganized" style="color: #e07a8a;">Disorganized →</a>
+        <a class="lib-related-pill" href="/library/attachment/secure" style="color: #914d59;">Secure →</a><a class="lib-related-pill" href="/library/attachment/avoidant" style="color: #914d59;">Avoidant →</a><a class="lib-related-pill" href="/library/attachment/disorganized" style="color: #914d59;">Disorganized →</a>
         <a class="lib-related-pill is-all" href="/library/#attachment">All 4 Attachment styles →</a>
       </div>
     </section>
@@ -534,8 +534,16 @@ Pick one specific thing to do in the next 30 minutes that moves the project forw
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI personality: labels vs repeatability | AgentTune</title>
+  <meta name="description" content="Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers." />
+
+  <meta property="og:title" content="Does a stable result mean a stable AI personality?" />
+  <meta property="og:description" content="Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="og:url" content="https://agent-tune.com/research/ai-personality-repeatability" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Does a stable result mean a stable AI personality?" />
+  <meta name="twitter:description" content="Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/ai-personality-repeatability" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a stable result mean a stable AI personality?","description":"Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.","url":"https://agent-tune.com/research/ai-personality-repeatability","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does a stable result mean a stable AI personality?"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Does a stable result mean a stable AI personality?</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
+        <h1 class="h-hero h-research-hero">Does a stable result mean a stable AI personality?</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">A result can repeat while the underlying answers change. Conversely, identical answers can reflect a constrained prompt rather than an enduring trait. The September archive lets us separate answer repetition, score variation and label stability.</p>
+      </section>
+
+      <div class="guide-answer"><strong>The short answer.</strong> All 400 attachment records receive Secure, yet the four cohorts contain 90, 100, 79 and 96 unique attachment answer vectors. A stable category is not proof of stable answers—or of a validated personality construct.</div>
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>Three different meanings of repeatable</h2>
+        <p><strong>Vector repetition</strong> asks whether every response in an instrument is identical to another administration. <strong>Score stability</strong> asks how much the derived numbers vary. <strong>Label stability</strong> asks how often a category repeats. A coarse label can stay fixed while dozens of underlying answers change.</p><p>We counted all supplied fresh-session records, including identical vectors. A duplicate answer vector is not automatically a duplicate collection event. Removing repeats would bias a study whose question is precisely how often answers repeat. The separate duplicated Astra source reports were already deduplicated during ingestion; these are different issues.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>How many answer vectors were distinct?</h2>
+        <div class="guide-table-wrap" role="region" aria-label="How many answer vectors were distinct?: table 1" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">MBTI</th><th scope="col">Big Five</th><th scope="col">DISC</th><th scope="col">Enneagram</th><th scope="col">Attachment</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>99</td><td>100</td><td>58</td><td>93</td><td>90</td></tr><tr><th scope="row">GPT-6 Sol</th><td>100</td><td>100</td><td>66</td><td>100</td><td>100</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>76</td><td>38</td><td>7</td><td>54</td><td>79</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>80</td><td>66</td><td>10</td><td>82</td><td>96</td></tr></tbody></table></div><p>Each cell is the number of distinct complete answer arrays among 100 administrations of that instrument. Instruments have different lengths and item structures, so a 16-item DISC vector has fewer opportunities to differ than a 50-item Big Five vector. Do not turn this table into a model reliability ranking.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Seven DISC vectors, but one appears 60 times</h2>
+        <p>Opus has seven distinct DISC answer vectors; its most frequent vector appears in 60 of 100 administrations. Fable has 10 distinct DISC vectors, with its most frequent appearing 45 times. Sol has 66, with its most frequent appearing eight times.</p><p>Those differences describe the collected answer distributions. Claude’s per-instrument sessions and the Codex five-test batteries differ in context, prompts and orchestration. Fresh sessions reduce conversation carryover, but do not establish statistical independence or a cause for the amount of variation.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A constant label can conceal substantial variation</h2>
+        <p>All attachment records in these four cohorts receive Secure under this implementation. Yet Sol has a different attachment vector in every administration. Astra has 90 unique vectors, Opus 79 and Fable 96. The Secure category covers a range of coordinates below or equal to the scorer’s anxiety and avoidance thresholds.</p><p>For MBTI, we report tie-preserving patterns instead of silently assigning a side. Fable’s most frequent pattern is INTJ in 98 records; Astra’s is ISTJ in 45. A comparison using legacy tie-broken labels would give different stability counts even though the answers were unchanged.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Score variation needs units</h2>
+        <p>Sol’s Neuroticism raw total has a sample standard deviation of 5.35 points on a 10–50 scale. Its Agreeableness standard deviation is 1.01 points on the same scale. A score’s mean alone hides this difference in variation.</p><p>Standard deviation describes dispersion of the recorded totals; it is not a margin of error for a population claim. This collection did not establish the assumptions needed to generalize to every future session, product update or prompting context.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What would establish behavioral consistency?</h2>
+        <p>Repeat a set of real tasks under a fixed configuration, define observable outcomes before collecting replies, and retain failures as well as successes. For example, measure factual correctness, whether an unsupported premise is challenged, and whether a requested length limit is respected. Evaluate those outcomes separately.</p><p>Then change one factor at a time: model version, prompt wording, context length or installed preference. Replicate on a later date. Questionnaire repetition can motivate that experiment, but cannot substitute for it. <a href="/research/data/ai-repeatability.csv" download>Download the 20-row repeatability table</a> for the counts and modal patterns used here.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/ai-personality-five-models-2026" target="_blank" rel="noopener">September 2026 study: protocols and limitations</a></li>
+          <li><a href="/research/data/september-2026-responses.json" target="_blank" rel="noopener">Frozen raw answers (JSON)</a></li>
+          <li><a href="/research/data/september-2026-instruments.json" target="_blank" rel="noopener">Frozen questionnaire items and keys</a></li>
+          <li><a href="/research/data/content-analysis.cjs" target="_blank" rel="noopener">Reanalysis code (CommonJS)</a></li>
+          <li><a href="/research/data/content-analysis.json" target="_blank" rel="noopener">Complete derived results (JSON)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/personality-prompts-vs-plain-english"><span class="guide-related-kicker">Continue reading</span>A controlled prompt-comparison protocol</a>
+          <a href="/research/opus-vs-fable-question-level"><span class="guide-related-kicker">Continue reading</span>Where Claude’s answers differ</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

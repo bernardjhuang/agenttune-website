@@ -1,14 +1,14 @@
 # agent-tune.com site audit: technical, verboseness, copy
 
-*September 25, 2026. Run against `main` after PRs #14 to #18 merged (89 pages, 106,400 words). The mechanical fixes are in the same PR as this document; everything else is a recommendation with the evidence next to it. Re-run the numbers with `npm run build && python3 tools/site-audit.py`. Per-page figures: `docs/site-audit-2026-09-25-pages.tsv`.*
+*September 25, 2026. Run against `main` after PRs #14 to #17 merged (89 pages, 106,400 words). The measurements below are the original audit snapshot. Review corrections for PRs #18–20 are noted where they change a finding; remaining proposals are recommendations, not release blockers. Re-run the numbers with `npm run build && python3 tools/site-audit.py`. Per-page figures: `docs/site-audit-2026-09-25-pages.tsv`.*
 
 ## The short version
 
 1. **Nothing is broken for a reader.** 0 broken internal links, 0 broken anchors, 0 orphan pages, 88 of 88 sitemap URLs exist, valid JSON-LD on every content page, every title under 60 characters, all 50 external links load in a browser.
-2. **Production is behind `main`.** The live sitemap has 76 URLs; `main` has 88. The live home title is the pre-#14 one. The GitHub Actions deploy token is still dead, so nothing merged today is live. `npm run deploy && node tools/ping-indexnow.js` from the laptop, then fix the token.
+2. **Direct deployment is working; automated deployment still needs a token repair.** The previous release at `3dc26cf` was deployed directly to Cloudflare Pages and its 88 sitemap routes were verified live. GitHub Actions still has an invalid deployment token; a failed Actions deploy alone does not establish that production is behind.
 3. **Accessibility basics were missing on 86 of 89 pages.** No `<main>` landmark (the skip link pointed at an empty `<div>`), accent text on pills at 3.5 to 3.9:1, test pages with untyped buttons and an h1 to h3 jump. Fixed here; a new test keeps it fixed.
 4. **The site carries a lot of dead weight.** 39% of `styles.css` never matches a page (retired commerce UI). Every library page ships 10.5 KB of inline CSS and 7.8 KB of inline script that is identical across 43 pages. Two font weights were requested and never used (removed here).
-5. **The site says the same things many times.** Thirty-plus sentences appear on all 43 library pages. 130 sentences across the site are caveats about what the research does not show. One guide now repeats "Use the block as a starting point and compare replies on representative tasks" seven times. The three agent guides run 2,150 to 2,550 words each.
+5. **The site says the same things many times.** Thirty-plus sentences appear on all 43 library pages. 130 sentences across the site are caveats about what the research does not show. The original snapshot found one guide repeating "Use the block as a starting point and compare replies on representative tasks" seven times; the integration review replaces those repetitions with descriptions of who each prompt suits. The three agent guides run 2,150 to 2,550 words each.
 6. **Two voices, plus a third.** The July copy (library, older guides, tests) still carries 835 of the site's 866 em dashes and the "not X, it's Y" cadence. The September research pages are plain. The #17 rewrite added a fourth register: a cautious, questionnaire-style voice that reads generated. Model names differ between the home page and the research ("Astra 6", "Grok 4.7" versus "GPT-6 Astra", "Grok 4.6").
 
 ## Method
@@ -25,15 +25,11 @@ Reading grade and sentence counts treat table cells and list items as sentences,
 
 ## 1. Technical
 
-### 1.1 Deploy gap (P0, not in this PR)
+### 1.1 Deployment status (corrected during review)
 
-| | Live | `main` |
-|---|---|---|
-| Sitemap URLs | 76 | 88 |
-| Home title | "AI System Prompts for Your Personality Type — AgentTune" | "AgentTune: Personality Tuning (Claude, ChatGPT, Grok, Muse)" |
-| Research hub title | "…Grok and Muse · AgentTune" (old) | "…Grok & Muse Tested" |
+The original 76-URL live check was stale. Release `3dc26cf` was deployed using the authenticated local Wrangler CLI to https://3fae1d05.agent-tune.pages.dev and `https://agent-tune.com`. The release verification covered 110 URLs, including all 88 sitemap routes, and IndexNow accepted all 88 routes.
 
-Everything merged on September 25 (titles, generator editor, twelve articles, prompt blocks) is unreachable until someone runs `npm run deploy`. The README already says the token is invalid; this is the second day it has cost a release.
+GitHub Actions' Cloudflare token still fails authentication. Until its credential is repaired, releases require a direct deploy followed by checks against the custom domain. Do not infer the live release from the failed Actions job alone.
 
 ### 1.2 Links, sitemap, metadata: clean
 
@@ -59,13 +55,13 @@ axe-core before this PR, on every template except the two tools and the guides h
 | Library editor | line numbers at 2:1, scroll region not keyboard reachable, 20px link target | 0.55 alpha, `tabindex="0"`, 24px target |
 | `research/i-took-the-mbti-100-times`, `404` | no skip link | added |
 
-Still failing axe after this PR (small, listed so nobody re-audits them): the large decorative numerals on the home page (`.hp2-win-num`, 13 nodes), one pill on the library hub with a hand-set color, the editor status bar text on library pages (`.c-statusbar-left`, 9 nodes), the May breakdown rows on the research hub (`.breakdown-row .b`, 60 nodes, rendered by the legacy client script), and `link-in-text-block` (links distinguished by color only) inside the guide asides. The 375px pass found no horizontal overflow on any page; tables scroll inside their wrappers.
+The original post-change axe pass still identified home-page numerals, the library hub pill, editor status text, research breakdown percentages and links inside guide asides. The integration review adds darker text/status colors and underlined aside links. New research figures preserve their readable width inside keyboard-focusable horizontal scroll regions on narrow screens. These corrections also live in the relevant generators. The original 375px pass found no page-level overflow; tables scroll inside their wrappers.
 
 ### 1.4 HTML validity
 
 html-validate 8, standard preset: **before** 3 errors (raw `>` in a shell snippet and in two Big Five blurbs) and 52 warnings (47 untyped buttons, 5 heading levels); **after** clean on all 89 pages. The macOS `tidy` binary is from 2006 and reports HTML5 elements as unknown; do not use it on this site.
 
-`checks/site-structure.test.js` (new) fails the build if any page loses its `<main>`, its skip link, its single `<h1>`, gets a description over 160 characters, or requests an unused font weight. The suite is now 46 tests.
+`checks/site-structure.test.js` (new) fails the build if any page loses its `<main>`, its skip link, its single `<h1>`, gets a description over 160 characters, or requests an unused font weight. This PR adds two structural tests; the integration review also checks the research charts against the published data.
 
 ### 1.5 Weight and dead code (recommendations)
 
@@ -80,7 +76,7 @@ html-validate 8, standard preset: **before** 3 errors (raw `>` in a shell snippe
 ### 1.6 Consistency and stale facts
 
 - **Model names.** Home page and generator: "Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, or Grok 4.7" (from the picker list in `integrations.js`; 55 pages mention "Grok 4.7"). Research pages: "GPT-6 Astra", "GPT-6 Sol", "Grok 4.6". Pick one form for the whole site. Verify that Grok 4.7 exists; the research measured 4.6 yesterday.
-- **Tuning length.** The Grok Bot and Muse guides said tunings run "1,200 to 2,900 characters". The library files are 2,100 to 3,800 characters of rules plus a machine-readable header (measured over all 43). Fixed.
+- **Tuning length (review correction).** Across 43 tunings, the Markdown rule bodies contain 1,203–2,881 characters after removing the metadata header. The original audit incorrectly counted the header as rules. The guides now explicitly say about 1,200–2,900 characters excluding that header; the checker no longer flags the accurate range as stale.
 - **"OCEAN".** The system label said "OCEAN" and "OCEAN / Big Five Dimension" on the hub and ten library pages while every other page says "Big Five". Now "Big Five"; the two remaining mentions explain the acronym (MBTI vs Big Five guide, Big Five test), which is right.
 - **Big Five reverse-keyed items.** The test spec said 20, the table and scorer use 18. Fixed in #16.
 - **"Where did Claude Styles go?"** in the Claude guide is a retirement note and correct. `TODO(human)` in the Claude Code guide describes Claude Code's own Learning style and is correct.

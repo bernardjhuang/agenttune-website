@@ -14,7 +14,7 @@ function walk(dir) {
     return e.name.endsWith('.html') ? [path.join(dir, e.name)] : [];
   });
 }
-const pages = walk(ROOT);
+const pages = walk(ROOT).filter(file => require('../tools/build-public').isPublic(path.relative(ROOT,file).split(path.sep).join('/')));
 
 test('every page has one <main> landmark that the skip link targets', () => {
   for (const file of pages) {

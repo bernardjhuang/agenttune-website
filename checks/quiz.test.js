@@ -51,7 +51,7 @@ for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
     assert.equal(Number(progress.textContent), 1);
     f.buttons[0].click(); f.ids.get('quiz-restart').click(); f.ids.get('quiz-start').click(); f.tick(220);
     assert.equal(Number(progress.textContent), 1);
-    assert.ok(f.buttons.every(b => b.attributes['aria-checked'] === 'false'));
+    assert.ok(f.buttons.every(b => b.attributes['aria-pressed'] === 'false'));
   });
 }
 
@@ -78,3 +78,31 @@ test('MBTI neutral UI stays undetermined until four explicit preferences; retake
   for (let i = 0; i < 32; i++) { f.buttons[2].click(); f.tick(220); }
   assert.equal(f.ids.get('quiz-result-code').textContent, 'XXXX');
 });
+
+for (const name of ['mbti','enneagram','disc','attachment','big-five']) {
+  test(`${name}: focus follows quiz screens and shortcuts leave browser/form keys alone`, () => {
+    const f=quiz(name), card=f.ids.get('quiz-card'), progress=f.ids.get('quiz-progress-current');
+    assert.equal(f.document.activeElement,card);
+    assert.match(card.getAttribute('aria-label'),/^Question 1 of /);
+    for(const event of [{key:'1',ctrlKey:true},{key:'1',metaKey:true},{key:'1',altKey:true},{key:'1',target:{tagName:'INPUT'}},{key:'Backspace',target:{isContentEditable:true}}]) {f.dispatch('keydown',event);f.tick(220);}
+    assert.equal(Number(progress.textContent),1);
+    f.dispatch('keydown',{key:'3'});f.tick(220);
+    assert.equal(Number(progress.textContent),2);
+    assert.match(f.ids.get('quiz-announcement').textContent,/Question 2 of /);
+    const neutral=name==='attachment'?4:3;
+    for(let i=1;i<f.ctx.__quiz.items.length;i++){f.buttons[neutral-1].click();f.tick(220);}
+    assert.equal(f.document.activeElement,f.ids.get('quiz-result-code'));
+    f.ids.get('quiz-restart').click();assert.equal(f.document.activeElement,f.ids.get('quiz-start'));
+  });
+  test(`${name}: clipboard failures are visible, recoverable, and never report success`, async()=>{
+    const f=quiz(name), button=f.ids.get('quiz-copy-tuning');
+    f.ctx.navigator.clipboard.writeText=async()=>{throw new Error('Permission denied');};
+    assert.equal(await f.ctx.ATQuiz.copyTuning('Example',button),false);
+    assert.match(button.textContent,/Copy unavailable/);
+    delete f.ctx.navigator.clipboard;
+    assert.equal(await f.ctx.ATQuiz.copyTuning('Example',button),false);
+    f.ctx.navigator.clipboard={writeText:async()=>{}};
+    assert.equal(await f.ctx.ATQuiz.copyTuning('Example',button),true);
+    assert.equal(button.textContent,'Copied ✓');
+  });
+}

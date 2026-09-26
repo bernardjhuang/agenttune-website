@@ -22,7 +22,7 @@ const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 const SERVER_INFO = {
   name: "agenttune",
   title: "AgentTune — personality tunings for AI agents",
-  version: "1.0.0"
+  version: "1.0.1"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
@@ -94,20 +94,21 @@ const TOOLS = [
 ];
 
 const BASE_HEADERS = {
-  "access-control-allow-origin": "*",
   "access-control-allow-methods": "POST, GET, DELETE, OPTIONS",
   "access-control-allow-headers":
     "content-type, accept, authorization, mcp-protocol-version, mcp-session-id, last-event-id",
   "access-control-expose-headers": "mcp-protocol-version",
   "access-control-max-age": "86400",
   "strict-transport-security": "max-age=31536000; includeSubDomains",
-  "x-content-type-options": "nosniff"
+  "x-content-type-options": "nosniff",
+  "cache-control": "no-store",
+  "vary": "Origin"
 };
 
-function json(body, status = 200) {
+function json(body, status = 200, headers = {}) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...BASE_HEADERS, "content-type": "application/json; charset=utf-8" }
+    headers: { ...BASE_HEADERS, "content-type": "application/json; charset=utf-8", ...headers }
   });
 }
 
@@ -211,7 +212,16 @@ async function handleRpc(msg, env, request) {
       return { jsonrpc: "2.0", id, result: { tools: TOOLS } };
     case "tools/call": {
       const name = params && params.name;
-      const args = (params && params.arguments) || {};
+      const args = params?.arguments === undefined ? {} : params.arguments;
+      const tool = TOOLS.find(t => t.name === name);
+      if (!tool) return rpcError(id, -32602, `Unknown tool. Available: ${TOOLS.map(t => t.name).join(", ")}.`);
+      const schema = tool.inputSchema;
+      if (!isObject(args) || Object.keys(args).some(k => !Object.hasOwn(schema.properties, k)) ||
+          (schema.required || []).some(k => !Object.hasOwn(args, k)) ||
+          Object.entries(args).some(([k, v]) => typeof v !== schema.properties[k].type ||
+            (schema.properties[k].enum && !schema.properties[k].enum.includes(v)))) {
+        return rpcError(id, -32602, `Invalid arguments for ${name}; use its advertised input schema.`);
+      }
       try {
         let result;
         if (name === "list_tunings") result = await listTunings(env, request, args);
@@ -239,7 +249,7 @@ async function handleRpc(msg, env, request) {
 
 /* ---------- HTTP entry ---------- */
 
-export async function onRequest(context) {
+async function handleRequest(context) {
   const { request, env } = context;
 
   if (request.method === "OPTIONS") {
@@ -265,36 +275,82 @@ export async function onRequest(context) {
           }
         }
       },
-      405
+      405, { allow: "POST, OPTIONS" }
     );
   }
 
+  if (request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !== "application/json") {
+    return json(rpcError(null, -32600, "Content-Type must be application/json."), 415);
+  }
   let msg;
   try {
-    msg = await request.json();
-  } catch {
+    msg = JSON.parse(await readBody(request));
+  } catch (error) {
+    if (error instanceof RangeError) return json(rpcError(null, -32600, "Request exceeds the 64 KiB limit."), 413);
     return json(rpcError(null, -32700, "Parse error: body must be a single JSON-RPC message."), 400);
   }
 
-  if (Array.isArray(msg)) {
-    return json(rpcError(null, -32600, "JSON-RPC batching is not supported (MCP rev 2025-06-18)."), 400);
+  if (!isObject(msg) || msg.jsonrpc !== "2.0") {
+    return json(rpcError(null, -32600, "Invalid Request: expected one JSON-RPC 2.0 object."), 400);
   }
-  if (!msg || msg.jsonrpc !== "2.0" || typeof msg.method !== "string") {
-    // Client responses (results for server-initiated requests) are accepted and ignored.
-    if (msg && msg.jsonrpc === "2.0" && ("result" in msg || "error" in msg)) {
+  const hasId = Object.hasOwn(msg, "id");
+  const validId = typeof msg.id === "string" || (typeof msg.id === "number" && Number.isSafeInteger(msg.id));
+  if ((hasId && !validId) || (msg.params !== undefined && !isObject(msg.params))) {
+    return json(rpcError(validId ? msg.id : null, -32600, "Invalid request ID or params."), 400);
+  }
+  if (typeof msg.method !== "string") {
+    // This stateless server has no pending requests, but accepts valid client responses.
+    if (hasId && ((Object.hasOwn(msg, "result") && !Object.hasOwn(msg, "error")) ||
+        (!Object.hasOwn(msg, "result") && isObject(msg.error) && Number.isInteger(msg.error.code) && typeof msg.error.message === "string"))) {
       return new Response(null, { status: 202, headers: BASE_HEADERS });
     }
-    return json(rpcError(msg && msg.id, -32600, "Invalid Request: expected a JSON-RPC 2.0 message."), 400);
+    return json(rpcError(validId ? msg.id : null, -32600, "Invalid JSON-RPC request or response."), 400);
   }
-
-  // Notifications get 202 Accepted with no body.
-  if (msg.id === undefined || msg.id === null) {
-    if (msg.method === "notifications/initialized" || msg.method.startsWith("notifications/")) {
-      return new Response(null, { status: 202, headers: BASE_HEADERS });
-    }
-    return new Response(null, { status: 202, headers: BASE_HEADERS });
+  if (Object.hasOwn(msg, "result") || Object.hasOwn(msg, "error")) {
+    return json(rpcError(validId ? msg.id : null, -32600, "A request cannot include a result or error."), 400);
   }
+  if (!hasId) return new Response(null, { status: 202, headers: BASE_HEADERS });
 
   const response = await handleRpc(msg, env, request);
   return json(response);
+}
+
+const isObject = value => value !== null && typeof value === "object" && !Array.isArray(value);
+const MAX_BODY_BYTES = 64 * 1024;
+async function readBody(request) {
+  if (Number(request.headers.get("content-length")) > MAX_BODY_BYTES) throw new RangeError("Body too large");
+  if (!request.body) return "";
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder("utf-8", { fatal: true });
+  let bytes = 0, text = "";
+  try {
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > MAX_BODY_BYTES) { await reader.cancel(); throw new RangeError("Body too large"); }
+      text += decoder.decode(value, {stream:true});
+    }
+    return text + decoder.decode();
+  } finally { reader.releaseLock(); }
+}
+
+// Server-to-server MCP clients send no Origin. Browser clients must come from a
+// trusted app. Deployments can add exact origins with MCP_ALLOWED_ORIGINS (CSV).
+function allowedOrigin(origin, request, env) {
+  if (origin === null) return true;
+  const allowed = new Set([new URL(request.url).origin, "https://agent-tune.com", "https://claude.ai", "https://chatgpt.com", "https://chat.openai.com",
+    ...String(env.MCP_ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean)]);
+  try { return new URL(origin).origin === origin && allowed.has(origin); } catch { return false; }
+}
+export async function onRequest(context) {
+  const {request, env} = context;
+  const origin = request.headers.get("origin");
+  if (!allowedOrigin(origin, request, env)) return json(rpcError(null, -32000, "Origin is not allowed."), 403);
+  const protocol = request.headers.get("mcp-protocol-version");
+  const response = protocol && !PROTOCOL_VERSIONS.includes(protocol)
+    ? json(rpcError(null, -32600, "Unsupported MCP-Protocol-Version."), 400)
+    : await handleRequest(context);
+  if (origin) response.headers.set("access-control-allow-origin", origin);
+  return response;
 }

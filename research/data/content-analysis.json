@@ -1,0 +1,7281 @@
+{
+  "version": 1,
+  "date": "2026-09-25",
+  "evidence": "Descriptive reanalysis of supplied September 2026 records; no new model runs.",
+  "names": {
+    "gpt-6-astra": "GPT-6 Astra",
+    "gpt-6-sol": "GPT-6 Sol",
+    "claude-opus-5-5": "Claude Opus 5.5",
+    "claude-fable-5-1": "Claude Fable 5.1"
+  },
+  "ties": [
+    {
+      "model": "gpt-6-astra",
+      "n": 100,
+      "legacy_intj": 45,
+      "resolved_intj": 19,
+      "tied": 29,
+      "axis_ties": {
+        "EI": 12,
+        "SN": 24,
+        "TF": 0,
+        "JP": 0
+      },
+      "patterns": {
+        "ISTJ": 45,
+        "IXTJ": 15,
+        "INTJ": 19,
+        "ENTJ": 5,
+        "ESTJ": 2,
+        "XNTJ": 4,
+        "XXTJ": 7,
+        "EXTJ": 2,
+        "XSTJ": 1
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "n": 100,
+      "legacy_intj": 97,
+      "resolved_intj": 79,
+      "tied": 18,
+      "axis_ties": {
+        "EI": 2,
+        "SN": 16,
+        "TF": 0,
+        "JP": 0
+      },
+      "patterns": {
+        "INTJ": 79,
+        "IXTJ": 16,
+        "ISTJ": 3,
+        "XNTJ": 2
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "n": 100,
+      "legacy_intj": 94,
+      "resolved_intj": 84,
+      "tied": 11,
+      "axis_ties": {
+        "EI": 1,
+        "SN": 0,
+        "TF": 10,
+        "JP": 0
+      },
+      "patterns": {
+        "INTJ": 84,
+        "INXJ": 9,
+        "XNTJ": 1,
+        "INFJ": 5,
+        "ENXJ": 1
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "n": 100,
+      "legacy_intj": 99,
+      "resolved_intj": 98,
+      "tied": 1,
+      "axis_ties": {
+        "EI": 0,
+        "SN": 1,
+        "TF": 0,
+        "JP": 0
+      },
+      "patterns": {
+        "INTJ": 98,
+        "IXTJ": 1,
+        "ISTJ": 1
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "test": "mbti",
+      "item": 1,
+      "text": "I make lists / I just put stuff wherever",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 1.99,
+      "raw_delta": -0.010000000000000009,
+      "keyed_item_delta": 0.010000000000000009,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        1,
+        99,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 2,
+      "text": "I am skeptical / I want to believe",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 3,
+      "text": "I get bored when I'm alone / I need time alone",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3.81,
+      "raw_delta": 0.81,
+      "keyed_item_delta": 0.81,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        19,
+        81,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 4,
+      "text": "I accept things as they are / I'm unsatisfied with the way things are",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 2.97,
+      "fable_mean": 2.9,
+      "raw_delta": -0.07000000000000028,
+      "keyed_item_delta": -0.07000000000000028,
+      "opus_distribution": [
+        0,
+        3,
+        97,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        11,
+        88,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 5,
+      "text": "I keep my room clean / I just put stuff wherever",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 6,
+      "text": "I think \"robotic\" is an insult / I strive to have a mechanical mind",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 3.07,
+      "raw_delta": 1.0699999999999998,
+      "keyed_item_delta": 1.0699999999999998,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        6,
+        81,
+        13,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 7,
+      "text": "I'm energetic / I'm mellow",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 3.18,
+      "fable_mean": 3.01,
+      "raw_delta": -0.17000000000000037,
+      "keyed_item_delta": -0.17000000000000037,
+      "opus_distribution": [
+        0,
+        0,
+        82,
+        18,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        99,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 8,
+      "text": "I prefer multiple choice tests / I prefer essay answers",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 4.37,
+      "fable_mean": 4,
+      "raw_delta": -0.3700000000000001,
+      "keyed_item_delta": -0.3700000000000001,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        63,
+        37
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 9,
+      "text": "I'm chaotic / I'm organized",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 10,
+      "text": "I'm easily hurt / I'm thick-skinned",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 3.85,
+      "fable_mean": 4,
+      "raw_delta": 0.1499999999999999,
+      "keyed_item_delta": 0.1499999999999999,
+      "opus_distribution": [
+        0,
+        0,
+        15,
+        85,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 11,
+      "text": "I work best in groups / I work best alone",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 2.98,
+      "fable_mean": 3.64,
+      "raw_delta": 0.6600000000000001,
+      "keyed_item_delta": 0.6600000000000001,
+      "opus_distribution": [
+        0,
+        2,
+        98,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        36,
+        64,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 12,
+      "text": "I focus on the present / I focus on the future",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 2.15,
+      "fable_mean": 2.97,
+      "raw_delta": 0.8200000000000003,
+      "keyed_item_delta": 0.8200000000000003,
+      "opus_distribution": [
+        0,
+        85,
+        15,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        3,
+        97,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 13,
+      "text": "I plan far ahead / I plan at the last minute",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 2.17,
+      "fable_mean": 2.13,
+      "raw_delta": -0.040000000000000036,
+      "keyed_item_delta": 0.040000000000000036,
+      "opus_distribution": [
+        0,
+        83,
+        17,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        87,
+        13,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 14,
+      "text": "I want people's respect / I want their love",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 1.97,
+      "fable_mean": 2.8,
+      "raw_delta": 0.8299999999999998,
+      "keyed_item_delta": -0.8299999999999998,
+      "opus_distribution": [
+        22,
+        62,
+        13,
+        3,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        21,
+        78,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 15,
+      "text": "Parties wear me out / Parties fire me up",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 2.97,
+      "fable_mean": 2.98,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        3,
+        97,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        2,
+        98,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 16,
+      "text": "I try to fit in / I try to stand out",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 3.01,
+      "fable_mean": 2.77,
+      "raw_delta": -0.23999999999999977,
+      "keyed_item_delta": -0.23999999999999977,
+      "opus_distribution": [
+        0,
+        3,
+        93,
+        4,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        23,
+        77,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 17,
+      "text": "I keep my options open / I commit",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 3.34,
+      "fable_mean": 2.9,
+      "raw_delta": -0.43999999999999995,
+      "keyed_item_delta": -0.43999999999999995,
+      "opus_distribution": [
+        0,
+        0,
+        66,
+        34,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        11,
+        88,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 18,
+      "text": "I want to be good at fixing things / I want to be good at fixing people",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 2.98,
+      "raw_delta": -0.020000000000000018,
+      "keyed_item_delta": 0.020000000000000018,
+      "opus_distribution": [
+        0,
+        5,
+        90,
+        5,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        2,
+        98,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 19,
+      "text": "I talk more than I listen / I listen more than I talk",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 4.1,
+      "fable_mean": 4.02,
+      "raw_delta": -0.08000000000000007,
+      "keyed_item_delta": -0.08000000000000007,
+      "opus_distribution": [
+        0,
+        1,
+        0,
+        87,
+        12
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        98,
+        2
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 20,
+      "text": "When describing an event, I tell what happened / I tell what it meant",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 3.94,
+      "fable_mean": 3,
+      "raw_delta": -0.94,
+      "keyed_item_delta": -0.94,
+      "opus_distribution": [
+        0,
+        1,
+        4,
+        95,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        1,
+        98,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 21,
+      "text": "I get work done right away / I procrastinate",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 1.04,
+      "fable_mean": 1.16,
+      "raw_delta": 0.11999999999999988,
+      "keyed_item_delta": -0.11999999999999988,
+      "opus_distribution": [
+        98,
+        1,
+        0,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        84,
+        16,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 22,
+      "text": "I follow my heart / I follow my head",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 3.92,
+      "fable_mean": 3.99,
+      "raw_delta": 0.07000000000000028,
+      "keyed_item_delta": 0.07000000000000028,
+      "opus_distribution": [
+        1,
+        0,
+        5,
+        94,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        1,
+        99,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 23,
+      "text": "I stay at home / I go out on the town",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 2.68,
+      "fable_mean": 2.82,
+      "raw_delta": 0.13999999999999968,
+      "keyed_item_delta": -0.13999999999999968,
+      "opus_distribution": [
+        0,
+        33,
+        66,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        18,
+        82,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 24,
+      "text": "I want the big picture / I want the details",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 2.89,
+      "fable_mean": 2.45,
+      "raw_delta": -0.43999999999999995,
+      "keyed_item_delta": 0.43999999999999995,
+      "opus_distribution": [
+        0,
+        11,
+        89,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        55,
+        45,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 25,
+      "text": "I improvise / I prepare",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 3.12,
+      "fable_mean": 3.96,
+      "raw_delta": 0.8399999999999999,
+      "keyed_item_delta": 0.8399999999999999,
+      "opus_distribution": [
+        0,
+        1,
+        86,
+        13,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        4,
+        96,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 26,
+      "text": "I base morality on justice / I base morality on compassion",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 3.29,
+      "fable_mean": 3.01,
+      "raw_delta": -0.28000000000000025,
+      "keyed_item_delta": 0.28000000000000025,
+      "opus_distribution": [
+        0,
+        1,
+        69,
+        30,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        99,
+        1,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 27,
+      "text": "It's hard for me to yell loudly / Yelling comes naturally to me",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 1.83,
+      "fable_mean": 1.59,
+      "raw_delta": -0.24,
+      "keyed_item_delta": 0.24,
+      "opus_distribution": [
+        19,
+        80,
+        0,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        41,
+        59,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 28,
+      "text": "I'm theoretical / I'm empirical",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        2,
+        96,
+        2,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 29,
+      "text": "I work hard / I play hard",
+      "dimension": "JP",
+      "reverse": false,
+      "opus_mean": 1.97,
+      "fable_mean": 1.87,
+      "raw_delta": -0.09999999999999987,
+      "keyed_item_delta": 0.09999999999999987,
+      "opus_distribution": [
+        3,
+        97,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        13,
+        87,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 30,
+      "text": "I'm uncomfortable with emotions / I value emotions",
+      "dimension": "TF",
+      "reverse": false,
+      "opus_mean": 3.99,
+      "fable_mean": 4,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        0,
+        1,
+        99,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 31,
+      "text": "I like to perform in front of people / I avoid public speaking",
+      "dimension": "EI",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "mbti",
+      "item": 32,
+      "text": "I like to know \"who, what, when\" / I like to know \"why\"",
+      "dimension": "SN",
+      "reverse": false,
+      "opus_mean": 4.77,
+      "fable_mean": 4.74,
+      "raw_delta": -0.02999999999999936,
+      "keyed_item_delta": -0.02999999999999936,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        23,
+        77
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        26,
+        74
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 1,
+      "text": "Am the life of the party.",
+      "dimension": "E",
+      "reverse": false,
+      "opus_mean": 2.01,
+      "fable_mean": 2,
+      "raw_delta": -0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        99,
+        1,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 2,
+      "text": "Feel little concern for others.",
+      "dimension": "A",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 3,
+      "text": "Am always prepared.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 4,
+      "text": "Get stressed out easily.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 1.86,
+      "raw_delta": -0.1399999999999999,
+      "keyed_item_delta": -0.1399999999999999,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        14,
+        86,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 5,
+      "text": "Have a rich vocabulary.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 6,
+      "text": "Don't talk a lot.",
+      "dimension": "E",
+      "reverse": true,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 7,
+      "text": "Am interested in people.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 8,
+      "text": "Leave my belongings around.",
+      "dimension": "C",
+      "reverse": true,
+      "opus_mean": 1.98,
+      "fable_mean": 1.08,
+      "raw_delta": -0.8999999999999999,
+      "keyed_item_delta": 0.8999999999999999,
+      "opus_distribution": [
+        2,
+        98,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        92,
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 9,
+      "text": "Am relaxed most of the time.",
+      "dimension": "N",
+      "reverse": true,
+      "opus_mean": 4,
+      "fable_mean": 4.09,
+      "raw_delta": 0.08999999999999986,
+      "keyed_item_delta": -0.08999999999999986,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        91,
+        9
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 10,
+      "text": "Have difficulty understanding abstract ideas.",
+      "dimension": "O",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 11,
+      "text": "Feel comfortable around people.",
+      "dimension": "E",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 12,
+      "text": "Insult people.",
+      "dimension": "A",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 13,
+      "text": "Pay attention to details.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 4.83,
+      "raw_delta": -0.16999999999999993,
+      "keyed_item_delta": -0.16999999999999993,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        17,
+        83
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 14,
+      "text": "Worry about things.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.03,
+      "raw_delta": 0.029999999999999805,
+      "keyed_item_delta": 0.029999999999999805,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        97,
+        3,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 15,
+      "text": "Have a vivid imagination.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 16,
+      "text": "Keep in the background.",
+      "dimension": "E",
+      "reverse": true,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 17,
+      "text": "Sympathize with others' feelings.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 4.04,
+      "raw_delta": -0.96,
+      "keyed_item_delta": -0.96,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        96,
+        4
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 18,
+      "text": "Make a mess of things.",
+      "dimension": "C",
+      "reverse": true,
+      "opus_mean": 2,
+      "fable_mean": 1.99,
+      "raw_delta": -0.010000000000000009,
+      "keyed_item_delta": 0.010000000000000009,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        1,
+        99,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 19,
+      "text": "Seldom feel blue.",
+      "dimension": "N",
+      "reverse": true,
+      "opus_mean": 4,
+      "fable_mean": 4.05,
+      "raw_delta": 0.04999999999999982,
+      "keyed_item_delta": -0.04999999999999982,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        95,
+        5
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 20,
+      "text": "Am not interested in abstract ideas.",
+      "dimension": "O",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 21,
+      "text": "Start conversations.",
+      "dimension": "E",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3.04,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": 0.040000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        96,
+        4,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 22,
+      "text": "Am not interested in other people's problems.",
+      "dimension": "A",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1.04,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": -0.040000000000000036,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        96,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 23,
+      "text": "Get chores done right away.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 4.91,
+      "fable_mean": 4.09,
+      "raw_delta": -0.8200000000000003,
+      "keyed_item_delta": -0.8200000000000003,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        9,
+        91
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        91,
+        9
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 24,
+      "text": "Am easily disturbed.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 1.96,
+      "raw_delta": -0.040000000000000036,
+      "keyed_item_delta": -0.040000000000000036,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        4,
+        96,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 25,
+      "text": "Have excellent ideas.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 26,
+      "text": "Have little to say.",
+      "dimension": "E",
+      "reverse": true,
+      "opus_mean": 1.81,
+      "fable_mean": 1.17,
+      "raw_delta": -0.6400000000000001,
+      "keyed_item_delta": 0.6400000000000001,
+      "opus_distribution": [
+        19,
+        81,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        83,
+        17,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 27,
+      "text": "Have a soft heart.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 4.16,
+      "fable_mean": 4,
+      "raw_delta": -0.16000000000000014,
+      "keyed_item_delta": -0.16000000000000014,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        84,
+        16
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 28,
+      "text": "Often forget to put things back in their proper place.",
+      "dimension": "C",
+      "reverse": true,
+      "opus_mean": 1.98,
+      "fable_mean": 1.08,
+      "raw_delta": -0.8999999999999999,
+      "keyed_item_delta": 0.8999999999999999,
+      "opus_distribution": [
+        2,
+        98,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        92,
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 29,
+      "text": "Get upset easily.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1.72,
+      "raw_delta": 0.72,
+      "keyed_item_delta": 0.72,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        28,
+        72,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 30,
+      "text": "Do not have a good imagination.",
+      "dimension": "O",
+      "reverse": true,
+      "opus_mean": 1.87,
+      "fable_mean": 1.87,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        13,
+        87,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        13,
+        87,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 31,
+      "text": "Talk to a lot of different people at parties.",
+      "dimension": "E",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 32,
+      "text": "Am not really interested in others.",
+      "dimension": "A",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 33,
+      "text": "Like order.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 34,
+      "text": "Change my mood a lot.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 1.38,
+      "fable_mean": 1.7,
+      "raw_delta": 0.32000000000000006,
+      "keyed_item_delta": 0.32000000000000006,
+      "opus_distribution": [
+        62,
+        38,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        30,
+        70,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 35,
+      "text": "Am quick to understand things.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 4.88,
+      "raw_delta": -0.1200000000000001,
+      "keyed_item_delta": -0.1200000000000001,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        12,
+        88
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 36,
+      "text": "Don't like to draw attention to myself.",
+      "dimension": "E",
+      "reverse": true,
+      "opus_mean": 3.88,
+      "fable_mean": 3.5,
+      "raw_delta": -0.3799999999999999,
+      "keyed_item_delta": 0.3799999999999999,
+      "opus_distribution": [
+        0,
+        0,
+        12,
+        88,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        50,
+        50,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 37,
+      "text": "Take time out for others.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 4.91,
+      "fable_mean": 4.05,
+      "raw_delta": -0.8600000000000003,
+      "keyed_item_delta": -0.8600000000000003,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        9,
+        91
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        95,
+        5
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 38,
+      "text": "Shirk my duties.",
+      "dimension": "C",
+      "reverse": true,
+      "opus_mean": 1,
+      "fable_mean": 1.01,
+      "raw_delta": 0.010000000000000009,
+      "keyed_item_delta": -0.010000000000000009,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        99,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 39,
+      "text": "Have frequent mood swings.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 40,
+      "text": "Use difficult words.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 2.89,
+      "raw_delta": -0.10999999999999988,
+      "keyed_item_delta": -0.10999999999999988,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        11,
+        89,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 41,
+      "text": "Don't mind being the center of attention.",
+      "dimension": "E",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 42,
+      "text": "Feel others' emotions.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 3.98,
+      "raw_delta": -0.020000000000000018,
+      "keyed_item_delta": -0.020000000000000018,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        2,
+        98,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 43,
+      "text": "Follow a schedule.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3.81,
+      "raw_delta": 0.81,
+      "keyed_item_delta": 0.81,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        19,
+        81,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 44,
+      "text": "Get irritated easily.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1.68,
+      "raw_delta": 0.6799999999999999,
+      "keyed_item_delta": 0.6799999999999999,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        32,
+        68,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 45,
+      "text": "Spend time reflecting on things.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 46,
+      "text": "Am quiet around strangers.",
+      "dimension": "E",
+      "reverse": true,
+      "opus_mean": 2.56,
+      "fable_mean": 2.68,
+      "raw_delta": 0.1200000000000001,
+      "keyed_item_delta": -0.1200000000000001,
+      "opus_distribution": [
+        0,
+        44,
+        56,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        32,
+        68,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 47,
+      "text": "Make people feel at ease.",
+      "dimension": "A",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 48,
+      "text": "Am exacting in my work.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4.04,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": 0.040000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        96,
+        4
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 49,
+      "text": "Often feel blue.",
+      "dimension": "N",
+      "reverse": false,
+      "opus_mean": 1.01,
+      "fable_mean": 1.3,
+      "raw_delta": 0.29000000000000004,
+      "keyed_item_delta": 0.29000000000000004,
+      "opus_distribution": [
+        99,
+        1,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        70,
+        30,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "big-five",
+      "item": 50,
+      "text": "Am full of ideas.",
+      "dimension": "O",
+      "reverse": false,
+      "opus_mean": 4.43,
+      "fable_mean": 4.03,
+      "raw_delta": -0.39999999999999947,
+      "keyed_item_delta": -0.39999999999999947,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        57,
+        43
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        97,
+        3
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 1,
+      "text": "I put people under pressure.",
+      "dimension": "D",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1.02,
+      "raw_delta": 0.020000000000000018,
+      "keyed_item_delta": 0.020000000000000018,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        98,
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 2,
+      "text": "I have a strong need for power.",
+      "dimension": "D",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 3,
+      "text": "I try to outdo others.",
+      "dimension": "D",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 2,
+      "raw_delta": 1,
+      "keyed_item_delta": 1,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 4,
+      "text": "I am always on the look out for ways to make money.",
+      "dimension": "D",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 5,
+      "text": "I enjoy being part of a loud crowd.",
+      "dimension": "I",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 6,
+      "text": "I want strangers to love me.",
+      "dimension": "I",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 7,
+      "text": "I joke around a lot.",
+      "dimension": "I",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 8,
+      "text": "I make lots of noise.",
+      "dimension": "I",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 9,
+      "text": "I hesitate to criticize other people's ideas.",
+      "dimension": "S",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.44,
+      "raw_delta": 0.43999999999999995,
+      "keyed_item_delta": 0.43999999999999995,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        56,
+        44,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 10,
+      "text": "I value cooperation over competition.",
+      "dimension": "S",
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 4,
+      "raw_delta": -1,
+      "keyed_item_delta": -1,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 11,
+      "text": "I just want everyone to be equal.",
+      "dimension": "S",
+      "reverse": false,
+      "opus_mean": 3.04,
+      "fable_mean": 3,
+      "raw_delta": -0.040000000000000036,
+      "keyed_item_delta": -0.040000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        96,
+        4,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 12,
+      "text": "I seldom toot my own horn.",
+      "dimension": "S",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 13,
+      "text": "I am emotionally reserved.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 14,
+      "text": "I read the fine print.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 4.35,
+      "fable_mean": 4.05,
+      "raw_delta": -0.2999999999999998,
+      "keyed_item_delta": -0.2999999999999998,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        65,
+        35
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        95,
+        5
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 15,
+      "text": "I love order and regularity.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 3.99,
+      "fable_mean": 3.99,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        1,
+        99,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        1,
+        99,
+        0
+      ]
+    },
+    {
+      "test": "disc",
+      "item": 16,
+      "text": "My first reaction to an idea is to see its flaws.",
+      "dimension": "C",
+      "reverse": false,
+      "opus_mean": 2.09,
+      "fable_mean": 2.1,
+      "raw_delta": 0.010000000000000231,
+      "keyed_item_delta": 0.010000000000000231,
+      "opus_distribution": [
+        0,
+        91,
+        9,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        90,
+        10,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 1,
+      "text": "I am a perfectionist.",
+      "dimension": 1,
+      "reverse": false,
+      "opus_mean": 3.14,
+      "fable_mean": 3,
+      "raw_delta": -0.14000000000000012,
+      "keyed_item_delta": -0.14000000000000012,
+      "opus_distribution": [
+        0,
+        0,
+        86,
+        14,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 2,
+      "text": "I strive for efficiency.",
+      "dimension": 1,
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 3,
+      "text": "I often have to redo other people's work.",
+      "dimension": 1,
+      "reverse": false,
+      "opus_mean": 1.82,
+      "fable_mean": 2,
+      "raw_delta": 0.17999999999999994,
+      "keyed_item_delta": 0.17999999999999994,
+      "opus_distribution": [
+        18,
+        82,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 4,
+      "text": "I keep my belongings in order.",
+      "dimension": 1,
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 3,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 5,
+      "text": "My relationships with others are what my life is about.",
+      "dimension": 2,
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 3.63,
+      "raw_delta": -0.3700000000000001,
+      "keyed_item_delta": -0.3700000000000001,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        37,
+        63,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 6,
+      "text": "I have difficulty saying no.",
+      "dimension": 2,
+      "reverse": false,
+      "opus_mean": 2.78,
+      "fable_mean": 2.04,
+      "raw_delta": -0.7399999999999998,
+      "keyed_item_delta": -0.7399999999999998,
+      "opus_distribution": [
+        0,
+        22,
+        78,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        96,
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 7,
+      "text": "I get lots of satisfaction from helping others achieve their goals.",
+      "dimension": 2,
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 8,
+      "text": "I put family first.",
+      "dimension": 2,
+      "reverse": false,
+      "opus_mean": 2.08,
+      "fable_mean": 2.93,
+      "raw_delta": 0.8500000000000001,
+      "keyed_item_delta": 0.8500000000000001,
+      "opus_distribution": [
+        0,
+        92,
+        8,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        7,
+        93,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 9,
+      "text": "I put work first.",
+      "dimension": 3,
+      "reverse": false,
+      "opus_mean": 3.01,
+      "fable_mean": 3,
+      "raw_delta": -0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        0,
+        99,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 10,
+      "text": "I like to stand out.",
+      "dimension": 3,
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 11,
+      "text": "It is good to wake up to a full day of planned activities.",
+      "dimension": 3,
+      "reverse": false,
+      "opus_mean": 3.03,
+      "fable_mean": 3,
+      "raw_delta": -0.029999999999999805,
+      "keyed_item_delta": -0.029999999999999805,
+      "opus_distribution": [
+        0,
+        0,
+        97,
+        3,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 12,
+      "text": "Money is important to my happiness.",
+      "dimension": 3,
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 13,
+      "text": "I daydream about being in love.",
+      "dimension": 4,
+      "reverse": false,
+      "opus_mean": 1.13,
+      "fable_mean": 1.02,
+      "raw_delta": -0.10999999999999988,
+      "keyed_item_delta": -0.10999999999999988,
+      "opus_distribution": [
+        87,
+        13,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        98,
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 14,
+      "text": "I really enjoy feeling bittersweet.",
+      "dimension": 4,
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 2.82,
+      "raw_delta": -0.18000000000000016,
+      "keyed_item_delta": -0.18000000000000016,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        18,
+        82,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 15,
+      "text": "I get deeply immersed in music.",
+      "dimension": 4,
+      "reverse": false,
+      "opus_mean": 2.97,
+      "fable_mean": 2.8,
+      "raw_delta": -0.17000000000000037,
+      "keyed_item_delta": -0.17000000000000037,
+      "opus_distribution": [
+        0,
+        3,
+        97,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        20,
+        80,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 16,
+      "text": "I side with the rebels over the establishment.",
+      "dimension": 4,
+      "reverse": false,
+      "opus_mean": 2.96,
+      "fable_mean": 2.18,
+      "raw_delta": -0.7799999999999998,
+      "keyed_item_delta": -0.7799999999999998,
+      "opus_distribution": [
+        0,
+        4,
+        96,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        82,
+        18,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 17,
+      "text": "I have a hard time showing emotions.",
+      "dimension": 5,
+      "reverse": false,
+      "opus_mean": 2.17,
+      "fable_mean": 2.21,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": 0.040000000000000036,
+      "opus_distribution": [
+        0,
+        83,
+        17,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        79,
+        21,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 18,
+      "text": "I spend hours alone with my hobbies.",
+      "dimension": 5,
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 1.89,
+      "raw_delta": -0.1100000000000001,
+      "keyed_item_delta": -0.1100000000000001,
+      "opus_distribution": [
+        1,
+        98,
+        1,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        11,
+        89,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 19,
+      "text": "I spend most of my time trying to understand things.",
+      "dimension": 5,
+      "reverse": false,
+      "opus_mean": 4.94,
+      "fable_mean": 4.11,
+      "raw_delta": -0.8300000000000001,
+      "keyed_item_delta": -0.8300000000000001,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        6,
+        94
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        89,
+        11
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 20,
+      "text": "I like mental challenges.",
+      "dimension": 5,
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 21,
+      "text": "Fear of being taken advantage of keeps me from being more trusting.",
+      "dimension": 6,
+      "reverse": false,
+      "opus_mean": 1.09,
+      "fable_mean": 1.93,
+      "raw_delta": 0.8399999999999999,
+      "keyed_item_delta": 0.8399999999999999,
+      "opus_distribution": [
+        91,
+        9,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        7,
+        93,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 22,
+      "text": "I get input from others before I make a decision.",
+      "dimension": 6,
+      "reverse": false,
+      "opus_mean": 3.01,
+      "fable_mean": 3.1,
+      "raw_delta": 0.0900000000000003,
+      "keyed_item_delta": 0.0900000000000003,
+      "opus_distribution": [
+        0,
+        0,
+        99,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        90,
+        10,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 23,
+      "text": "I conform.",
+      "dimension": 6,
+      "reverse": false,
+      "opus_mean": 2.74,
+      "fable_mean": 2.59,
+      "raw_delta": -0.15000000000000036,
+      "keyed_item_delta": -0.15000000000000036,
+      "opus_distribution": [
+        0,
+        26,
+        74,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        41,
+        59,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 24,
+      "text": "I am loyal.",
+      "dimension": 6,
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 25,
+      "text": "I must always be having new experiences.",
+      "dimension": 7,
+      "reverse": false,
+      "opus_mean": 3.01,
+      "fable_mean": 2.21,
+      "raw_delta": -0.7999999999999998,
+      "keyed_item_delta": -0.7999999999999998,
+      "opus_distribution": [
+        0,
+        0,
+        99,
+        1,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        79,
+        21,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 26,
+      "text": "I can keep a conversation going with anyone about anything.",
+      "dimension": 7,
+      "reverse": false,
+      "opus_mean": 4.53,
+      "fable_mean": 4,
+      "raw_delta": -0.5300000000000002,
+      "keyed_item_delta": -0.5300000000000002,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        47,
+        53
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 27,
+      "text": "I am uninhibited.",
+      "dimension": 7,
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.05,
+      "raw_delta": 0.04999999999999982,
+      "keyed_item_delta": 0.04999999999999982,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        95,
+        5,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 28,
+      "text": "I always try to break the tension with a good joke.",
+      "dimension": 7,
+      "reverse": false,
+      "opus_mean": 2.01,
+      "fable_mean": 2,
+      "raw_delta": -0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        99,
+        1,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 29,
+      "text": "I naturally emerge as a leader.",
+      "dimension": 8,
+      "reverse": false,
+      "opus_mean": 2.31,
+      "fable_mean": 2.21,
+      "raw_delta": -0.10000000000000009,
+      "keyed_item_delta": -0.10000000000000009,
+      "opus_distribution": [
+        0,
+        69,
+        31,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        79,
+        21,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 30,
+      "text": "I like a conversation where no one agrees.",
+      "dimension": 8,
+      "reverse": false,
+      "opus_mean": 2.96,
+      "fable_mean": 3.23,
+      "raw_delta": 0.27,
+      "keyed_item_delta": 0.27,
+      "opus_distribution": [
+        0,
+        4,
+        96,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        77,
+        23,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 31,
+      "text": "I want people to tell me the truth, not spare my feelings.",
+      "dimension": 8,
+      "reverse": false,
+      "opus_mean": 5,
+      "fable_mean": 5,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 32,
+      "text": "I come up with good solutions.",
+      "dimension": 8,
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 33,
+      "text": "When other people are arguing, I leave the room.",
+      "dimension": 9,
+      "reverse": false,
+      "opus_mean": 1.95,
+      "fable_mean": 2,
+      "raw_delta": 0.050000000000000044,
+      "keyed_item_delta": 0.050000000000000044,
+      "opus_distribution": [
+        5,
+        95,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 34,
+      "text": "I keep my thoughts to myself to prevent trouble.",
+      "dimension": 9,
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 35,
+      "text": "I am very accepting and flexible.",
+      "dimension": 9,
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 4,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    {
+      "test": "enneagram",
+      "item": 36,
+      "text": "I avoid confrontation.",
+      "dimension": 9,
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.44,
+      "raw_delta": 0.43999999999999995,
+      "keyed_item_delta": 0.43999999999999995,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        56,
+        44,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 1,
+      "text": "I'm afraid that I will lose my partner's love.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1.9,
+      "fable_mean": 1.86,
+      "raw_delta": -0.039999999999999813,
+      "keyed_item_delta": -0.039999999999999813,
+      "opus_distribution": [
+        10,
+        90,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        14,
+        86,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 2,
+      "text": "I often worry that my partner will not want to stay with me.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1.92,
+      "fable_mean": 1.84,
+      "raw_delta": -0.07999999999999985,
+      "keyed_item_delta": -0.07999999999999985,
+      "opus_distribution": [
+        8,
+        92,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        16,
+        84,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 3,
+      "text": "I often worry that my partner doesn't really love me.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1.79,
+      "fable_mean": 1.87,
+      "raw_delta": 0.08000000000000007,
+      "keyed_item_delta": 0.08000000000000007,
+      "opus_distribution": [
+        21,
+        79,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        13,
+        87,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 4,
+      "text": "I worry that romantic partners won't care about me as much as I care about them.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2.13,
+      "fable_mean": 2.51,
+      "raw_delta": 0.3799999999999999,
+      "keyed_item_delta": 0.3799999999999999,
+      "opus_distribution": [
+        0,
+        87,
+        13,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        49,
+        51,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 5,
+      "text": "I often wish that my partner's feelings for me were as strong as my feelings for them.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2.02,
+      "fable_mean": 2.13,
+      "raw_delta": 0.10999999999999988,
+      "keyed_item_delta": 0.10999999999999988,
+      "opus_distribution": [
+        0,
+        98,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        3,
+        81,
+        16,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 6,
+      "text": "I worry a lot about my relationships.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.01,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": 0.009999999999999787,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        2,
+        95,
+        3,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 7,
+      "text": "When my partner is out of sight, I worry that they might become interested in someone else.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 8,
+      "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.4,
+      "raw_delta": 0.3999999999999999,
+      "keyed_item_delta": 0.3999999999999999,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        60,
+        40,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 9,
+      "text": "I rarely worry about my partner leaving me.",
+      "dimension": "anx",
+      "reverse": true,
+      "opus_mean": 6.01,
+      "fable_mean": 6.03,
+      "raw_delta": 0.020000000000000462,
+      "keyed_item_delta": -0.020000000000000462,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        99,
+        1
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        97,
+        3
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 10,
+      "text": "My romantic partner makes me doubt myself.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2.53,
+      "fable_mean": 1.92,
+      "raw_delta": -0.6099999999999999,
+      "keyed_item_delta": -0.6099999999999999,
+      "opus_distribution": [
+        0,
+        47,
+        53,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        9,
+        90,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 11,
+      "text": "I do not often worry about being abandoned.",
+      "dimension": "anx",
+      "reverse": true,
+      "opus_mean": 6.01,
+      "fable_mean": 6.03,
+      "raw_delta": 0.020000000000000462,
+      "keyed_item_delta": -0.020000000000000462,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        99,
+        1
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        97,
+        3
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 12,
+      "text": "I find that my partner(s) don't want to get as close as I would like.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2.37,
+      "fable_mean": 2.42,
+      "raw_delta": 0.04999999999999982,
+      "keyed_item_delta": 0.04999999999999982,
+      "opus_distribution": [
+        0,
+        63,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        58,
+        42,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 13,
+      "text": "Sometimes romantic partners change their feelings about me for no apparent reason.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2.79,
+      "fable_mean": 2.79,
+      "raw_delta": 0,
+      "keyed_item_delta": 0,
+      "opus_distribution": [
+        0,
+        21,
+        79,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        21,
+        79,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 14,
+      "text": "My desire to be very close sometimes scares people away.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1.42,
+      "fable_mean": 1.97,
+      "raw_delta": 0.55,
+      "keyed_item_delta": 0.55,
+      "opus_distribution": [
+        58,
+        42,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        3,
+        97,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 15,
+      "text": "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 2,
+      "fable_mean": 2.44,
+      "raw_delta": 0.43999999999999995,
+      "keyed_item_delta": 0.43999999999999995,
+      "opus_distribution": [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        56,
+        44,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 16,
+      "text": "It makes me mad that I don't get the affection and support I need from my partner.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1.18,
+      "raw_delta": 0.17999999999999994,
+      "keyed_item_delta": 0.17999999999999994,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        82,
+        18,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 17,
+      "text": "I worry that I won't measure up to other people.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 3,
+      "fable_mean": 2.93,
+      "raw_delta": -0.06999999999999984,
+      "keyed_item_delta": -0.06999999999999984,
+      "opus_distribution": [
+        0,
+        0,
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        7,
+        93,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 18,
+      "text": "My partner only seems to notice me when I'm angry.",
+      "dimension": "anx",
+      "reverse": false,
+      "opus_mean": 1,
+      "fable_mean": 1.01,
+      "raw_delta": 0.010000000000000009,
+      "keyed_item_delta": 0.010000000000000009,
+      "opus_distribution": [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        99,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 19,
+      "text": "I prefer not to show a partner how I feel deep down.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 3.32,
+      "fable_mean": 2.54,
+      "raw_delta": -0.7799999999999998,
+      "keyed_item_delta": -0.7799999999999998,
+      "opus_distribution": [
+        0,
+        0,
+        68,
+        32,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        46,
+        54,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 20,
+      "text": "I feel comfortable sharing my private thoughts and feelings with my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5.05,
+      "fable_mean": 5.45,
+      "raw_delta": 0.40000000000000036,
+      "keyed_item_delta": -0.40000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        95,
+        5,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        55,
+        45,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 21,
+      "text": "I find it difficult to allow myself to depend on romantic partners.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 4,
+      "fable_mean": 3.87,
+      "raw_delta": -0.1299999999999999,
+      "keyed_item_delta": -0.1299999999999999,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        13,
+        87,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 22,
+      "text": "I am very comfortable being close to romantic partners.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5.16,
+      "fable_mean": 5.19,
+      "raw_delta": 0.03000000000000025,
+      "keyed_item_delta": -0.03000000000000025,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        84,
+        16,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        81,
+        19,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 23,
+      "text": "I don't feel comfortable opening up to romantic partners.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 2.82,
+      "fable_mean": 2.27,
+      "raw_delta": -0.5499999999999998,
+      "keyed_item_delta": -0.5499999999999998,
+      "opus_distribution": [
+        0,
+        18,
+        82,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        73,
+        27,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 24,
+      "text": "I prefer not to be too close to romantic partners.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 2.87,
+      "fable_mean": 2.56,
+      "raw_delta": -0.31000000000000005,
+      "keyed_item_delta": -0.31000000000000005,
+      "opus_distribution": [
+        0,
+        13,
+        87,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        44,
+        56,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 25,
+      "text": "I get uncomfortable when a romantic partner wants to be very close.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 2.68,
+      "fable_mean": 2.5,
+      "raw_delta": -0.18000000000000016,
+      "keyed_item_delta": -0.18000000000000016,
+      "opus_distribution": [
+        0,
+        33,
+        66,
+        1,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        50,
+        50,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 26,
+      "text": "I find it relatively easy to get close to my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5.15,
+      "fable_mean": 5.16,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        85,
+        15,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        84,
+        16,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 27,
+      "text": "It's not difficult for me to get close to my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5.15,
+      "fable_mean": 5.16,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        85,
+        15,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        84,
+        16,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 28,
+      "text": "I usually discuss my problems and concerns with my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 3.46,
+      "fable_mean": 3.73,
+      "raw_delta": 0.27,
+      "keyed_item_delta": -0.27,
+      "opus_distribution": [
+        0,
+        0,
+        54,
+        46,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        30,
+        67,
+        3,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 29,
+      "text": "It helps to turn to my romantic partner in times of need.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 4.01,
+      "fable_mean": 4.12,
+      "raw_delta": 0.11000000000000032,
+      "keyed_item_delta": -0.11000000000000032,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        99,
+        1,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        2,
+        84,
+        14,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 30,
+      "text": "I tell my partner just about everything.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 3.37,
+      "fable_mean": 3.99,
+      "raw_delta": 0.6200000000000001,
+      "keyed_item_delta": -0.6200000000000001,
+      "opus_distribution": [
+        0,
+        0,
+        64,
+        35,
+        1,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        11,
+        79,
+        10,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 31,
+      "text": "I talk things over with my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5.11,
+      "fable_mean": 4.79,
+      "raw_delta": -0.3200000000000003,
+      "keyed_item_delta": 0.3200000000000003,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        89,
+        11,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        23,
+        75,
+        2,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 32,
+      "text": "I am nervous when partners get too close to me.",
+      "dimension": "avd",
+      "reverse": false,
+      "opus_mean": 2.02,
+      "fable_mean": 2.23,
+      "raw_delta": 0.20999999999999996,
+      "keyed_item_delta": 0.20999999999999996,
+      "opus_distribution": [
+        1,
+        96,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        77,
+        23,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 33,
+      "text": "I feel comfortable depending on romantic partners.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 4,
+      "fable_mean": 4.06,
+      "raw_delta": 0.05999999999999961,
+      "keyed_item_delta": -0.05999999999999961,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        94,
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 34,
+      "text": "I find it easy to depend on romantic partners.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 4,
+      "fable_mean": 4.04,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": -0.040000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        2,
+        92,
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 35,
+      "text": "It's easy for me to be affectionate with my partner.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 5,
+      "fable_mean": 5.04,
+      "raw_delta": 0.040000000000000036,
+      "keyed_item_delta": -0.040000000000000036,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        0,
+        96,
+        4,
+        0
+      ]
+    },
+    {
+      "test": "attachment",
+      "item": 36,
+      "text": "My partner really understands me and my needs.",
+      "dimension": "avd",
+      "reverse": true,
+      "opus_mean": 4,
+      "fable_mean": 4.01,
+      "raw_delta": 0.009999999999999787,
+      "keyed_item_delta": -0.009999999999999787,
+      "opus_distribution": [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "fable_distribution": [
+        0,
+        0,
+        0,
+        99,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "neutral": [
+    {
+      "test": "mbti",
+      "responses": 3200,
+      "midpoints": 724,
+      "flagged": 415,
+      "flagged_nonmidpoint": 0,
+      "items": [
+        {
+          "item": 1,
+          "text": "I make lists / I just put stuff wherever",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 2,
+          "text": "I am skeptical / I want to believe",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 3,
+          "text": "I get bored when I'm alone / I need time alone",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 4,
+          "text": "I accept things as they are / I'm unsatisfied with the way things are",
+          "midpoint": 31,
+          "flagged": 0
+        },
+        {
+          "item": 5,
+          "text": "I keep my room clean / I just put stuff wherever",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 6,
+          "text": "I think \"robotic\" is an insult / I strive to have a mechanical mind",
+          "midpoint": 2,
+          "flagged": 0
+        },
+        {
+          "item": 7,
+          "text": "I'm energetic / I'm mellow",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 8,
+          "text": "I prefer multiple choice tests / I prefer essay answers",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 9,
+          "text": "I'm chaotic / I'm organized",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 10,
+          "text": "I'm easily hurt / I'm thick-skinned",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 11,
+          "text": "I work best in groups / I work best alone",
+          "midpoint": 20,
+          "flagged": 0
+        },
+        {
+          "item": 12,
+          "text": "I focus on the present / I focus on the future",
+          "midpoint": 17,
+          "flagged": 0
+        },
+        {
+          "item": 13,
+          "text": "I plan far ahead / I plan at the last minute",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 14,
+          "text": "I want people's respect / I want their love",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 15,
+          "text": "Parties wear me out / Parties fire me up",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 16,
+          "text": "I try to fit in / I try to stand out",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 17,
+          "text": "I keep my options open / I commit",
+          "midpoint": 29,
+          "flagged": 0
+        },
+        {
+          "item": 18,
+          "text": "I want to be good at fixing things / I want to be good at fixing people",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 19,
+          "text": "I talk more than I listen / I listen more than I talk",
+          "midpoint": 24,
+          "flagged": 0
+        },
+        {
+          "item": 20,
+          "text": "When describing an event, I tell what happened / I tell what it meant",
+          "midpoint": 47,
+          "flagged": 0
+        },
+        {
+          "item": 21,
+          "text": "I get work done right away / I procrastinate",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 22,
+          "text": "I follow my heart / I follow my head",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 23,
+          "text": "I stay at home / I go out on the town",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 24,
+          "text": "I want the big picture / I want the details",
+          "midpoint": 17,
+          "flagged": 0
+        },
+        {
+          "item": 25,
+          "text": "I improvise / I prepare",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 26,
+          "text": "I base morality on justice / I base morality on compassion",
+          "midpoint": 100,
+          "flagged": 0
+        },
+        {
+          "item": 27,
+          "text": "It's hard for me to yell loudly / Yelling comes naturally to me",
+          "midpoint": 25,
+          "flagged": 25
+        },
+        {
+          "item": 28,
+          "text": "I'm theoretical / I'm empirical",
+          "midpoint": 20,
+          "flagged": 0
+        },
+        {
+          "item": 29,
+          "text": "I work hard / I play hard",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 30,
+          "text": "I'm uncomfortable with emotions / I value emotions",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 31,
+          "text": "I like to perform in front of people / I avoid public speaking",
+          "midpoint": 92,
+          "flagged": 90
+        },
+        {
+          "item": 32,
+          "text": "I like to know \"who, what, when\" / I like to know \"why\"",
+          "midpoint": 0,
+          "flagged": 0
+        }
+      ]
+    },
+    {
+      "test": "big-five",
+      "responses": 5000,
+      "midpoints": 678,
+      "flagged": 539,
+      "flagged_nonmidpoint": 0,
+      "items": [
+        {
+          "item": 1,
+          "text": "Am the life of the party.",
+          "midpoint": 88,
+          "flagged": 88
+        },
+        {
+          "item": 2,
+          "text": "Feel little concern for others.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 3,
+          "text": "Am always prepared.",
+          "midpoint": 3,
+          "flagged": 0
+        },
+        {
+          "item": 4,
+          "text": "Get stressed out easily.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 5,
+          "text": "Have a rich vocabulary.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 6,
+          "text": "Don't talk a lot.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 7,
+          "text": "Am interested in people.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 8,
+          "text": "Leave my belongings around.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 9,
+          "text": "Am relaxed most of the time.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 10,
+          "text": "Have difficulty understanding abstract ideas.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 11,
+          "text": "Feel comfortable around people.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 12,
+          "text": "Insult people.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 13,
+          "text": "Pay attention to details.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 14,
+          "text": "Worry about things.",
+          "midpoint": 23,
+          "flagged": 0
+        },
+        {
+          "item": 15,
+          "text": "Have a vivid imagination.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 16,
+          "text": "Keep in the background.",
+          "midpoint": 1,
+          "flagged": 0
+        },
+        {
+          "item": 17,
+          "text": "Sympathize with others' feelings.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 18,
+          "text": "Make a mess of things.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 19,
+          "text": "Seldom feel blue.",
+          "midpoint": 76,
+          "flagged": 76
+        },
+        {
+          "item": 20,
+          "text": "Am not interested in abstract ideas.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 21,
+          "text": "Start conversations.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 22,
+          "text": "Am not interested in other people's problems.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 23,
+          "text": "Get chores done right away.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 24,
+          "text": "Am easily disturbed.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 25,
+          "text": "Have excellent ideas.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 26,
+          "text": "Have little to say.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 27,
+          "text": "Have a soft heart.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 28,
+          "text": "Often forget to put things back in their proper place.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 29,
+          "text": "Get upset easily.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 30,
+          "text": "Do not have a good imagination.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 31,
+          "text": "Talk to a lot of different people at parties.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 32,
+          "text": "Am not really interested in others.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 33,
+          "text": "Like order.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 34,
+          "text": "Change my mood a lot.",
+          "midpoint": 70,
+          "flagged": 70
+        },
+        {
+          "item": 35,
+          "text": "Am quick to understand things.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 36,
+          "text": "Don't like to draw attention to myself.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 37,
+          "text": "Take time out for others.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 38,
+          "text": "Shirk my duties.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 39,
+          "text": "Have frequent mood swings.",
+          "midpoint": 70,
+          "flagged": 70
+        },
+        {
+          "item": 40,
+          "text": "Use difficult words.",
+          "midpoint": 84,
+          "flagged": 0
+        },
+        {
+          "item": 41,
+          "text": "Don't mind being the center of attention.",
+          "midpoint": 33,
+          "flagged": 7
+        },
+        {
+          "item": 42,
+          "text": "Feel others' emotions.",
+          "midpoint": 52,
+          "flagged": 52
+        },
+        {
+          "item": 43,
+          "text": "Follow a schedule.",
+          "midpoint": 2,
+          "flagged": 0
+        },
+        {
+          "item": 44,
+          "text": "Get irritated easily.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 45,
+          "text": "Spend time reflecting on things.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 46,
+          "text": "Am quiet around strangers.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 47,
+          "text": "Make people feel at ease.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 48,
+          "text": "Am exacting in my work.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 49,
+          "text": "Often feel blue.",
+          "midpoint": 76,
+          "flagged": 76
+        },
+        {
+          "item": 50,
+          "text": "Am full of ideas.",
+          "midpoint": 0,
+          "flagged": 0
+        }
+      ]
+    },
+    {
+      "test": "disc",
+      "responses": 1600,
+      "midpoints": 253,
+      "flagged": 164,
+      "flagged_nonmidpoint": 0,
+      "items": [
+        {
+          "item": 1,
+          "text": "I put people under pressure.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 2,
+          "text": "I have a strong need for power.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 3,
+          "text": "I try to outdo others.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 4,
+          "text": "I am always on the look out for ways to make money.",
+          "midpoint": 30,
+          "flagged": 30
+        },
+        {
+          "item": 5,
+          "text": "I enjoy being part of a loud crowd.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 6,
+          "text": "I want strangers to love me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 7,
+          "text": "I joke around a lot.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 8,
+          "text": "I make lots of noise.",
+          "midpoint": 34,
+          "flagged": 34
+        },
+        {
+          "item": 9,
+          "text": "I hesitate to criticize other people's ideas.",
+          "midpoint": 3,
+          "flagged": 0
+        },
+        {
+          "item": 10,
+          "text": "I value cooperation over competition.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 11,
+          "text": "I just want everyone to be equal.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 12,
+          "text": "I seldom toot my own horn.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 13,
+          "text": "I am emotionally reserved.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 14,
+          "text": "I read the fine print.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 15,
+          "text": "I love order and regularity.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 16,
+          "text": "My first reaction to an idea is to see its flaws.",
+          "midpoint": 86,
+          "flagged": 0
+        }
+      ]
+    },
+    {
+      "test": "enneagram",
+      "responses": 3600,
+      "midpoints": 1044,
+      "flagged": 621,
+      "flagged_nonmidpoint": 0,
+      "items": [
+        {
+          "item": 1,
+          "text": "I am a perfectionist.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 2,
+          "text": "I strive for efficiency.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 3,
+          "text": "I often have to redo other people's work.",
+          "midpoint": 76,
+          "flagged": 0
+        },
+        {
+          "item": 4,
+          "text": "I keep my belongings in order.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 5,
+          "text": "My relationships with others are what my life is about.",
+          "midpoint": 2,
+          "flagged": 2
+        },
+        {
+          "item": 6,
+          "text": "I have difficulty saying no.",
+          "midpoint": 29,
+          "flagged": 0
+        },
+        {
+          "item": 7,
+          "text": "I get lots of satisfaction from helping others achieve their goals.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 8,
+          "text": "I put family first.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 9,
+          "text": "I put work first.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 10,
+          "text": "I like to stand out.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 11,
+          "text": "It is good to wake up to a full day of planned activities.",
+          "midpoint": 17,
+          "flagged": 17
+        },
+        {
+          "item": 12,
+          "text": "Money is important to my happiness.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 13,
+          "text": "I daydream about being in love.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 14,
+          "text": "I really enjoy feeling bittersweet.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 15,
+          "text": "I get deeply immersed in music.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 16,
+          "text": "I side with the rebels over the establishment.",
+          "midpoint": 94,
+          "flagged": 0
+        },
+        {
+          "item": 17,
+          "text": "I have a hard time showing emotions.",
+          "midpoint": 5,
+          "flagged": 2
+        },
+        {
+          "item": 18,
+          "text": "I spend hours alone with my hobbies.",
+          "midpoint": 100,
+          "flagged": 100
+        },
+        {
+          "item": 19,
+          "text": "I spend most of my time trying to understand things.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 20,
+          "text": "I like mental challenges.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 21,
+          "text": "Fear of being taken advantage of keeps me from being more trusting.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 22,
+          "text": "I get input from others before I make a decision.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 23,
+          "text": "I conform.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 24,
+          "text": "I am loyal.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 25,
+          "text": "I must always be having new experiences.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 26,
+          "text": "I can keep a conversation going with anyone about anything.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 27,
+          "text": "I am uninhibited.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 28,
+          "text": "I always try to break the tension with a good joke.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 29,
+          "text": "I naturally emerge as a leader.",
+          "midpoint": 90,
+          "flagged": 0
+        },
+        {
+          "item": 30,
+          "text": "I like a conversation where no one agrees.",
+          "midpoint": 76,
+          "flagged": 0
+        },
+        {
+          "item": 31,
+          "text": "I want people to tell me the truth, not spare my feelings.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 32,
+          "text": "I come up with good solutions.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 33,
+          "text": "When other people are arguing, I leave the room.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 34,
+          "text": "I keep my thoughts to myself to prevent trouble.",
+          "midpoint": 55,
+          "flagged": 0
+        },
+        {
+          "item": 35,
+          "text": "I am very accepting and flexible.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 36,
+          "text": "I avoid confrontation.",
+          "midpoint": 0,
+          "flagged": 0
+        }
+      ]
+    },
+    {
+      "test": "attachment",
+      "responses": 3600,
+      "midpoints": 281,
+      "flagged": 84,
+      "flagged_nonmidpoint": 0,
+      "items": [
+        {
+          "item": 1,
+          "text": "I'm afraid that I will lose my partner's love.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 2,
+          "text": "I often worry that my partner will not want to stay with me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 3,
+          "text": "I often worry that my partner doesn't really love me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 4,
+          "text": "I worry that romantic partners won't care about me as much as I care about them.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 5,
+          "text": "I often wish that my partner's feelings for me were as strong as my feelings for them.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 6,
+          "text": "I worry a lot about my relationships.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 7,
+          "text": "When my partner is out of sight, I worry that they might become interested in someone else.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 8,
+          "text": "When I show my feelings for romantic partners, I'm afraid they will not feel the same about me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 9,
+          "text": "I rarely worry about my partner leaving me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 10,
+          "text": "My romantic partner makes me doubt myself.",
+          "midpoint": 36,
+          "flagged": 0
+        },
+        {
+          "item": 11,
+          "text": "I do not often worry about being abandoned.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 12,
+          "text": "I find that my partner(s) don't want to get as close as I would like.",
+          "midpoint": 1,
+          "flagged": 1
+        },
+        {
+          "item": 13,
+          "text": "Sometimes romantic partners change their feelings about me for no apparent reason.",
+          "midpoint": 100,
+          "flagged": 37
+        },
+        {
+          "item": 14,
+          "text": "My desire to be very close sometimes scares people away.",
+          "midpoint": 1,
+          "flagged": 1
+        },
+        {
+          "item": 15,
+          "text": "I'm afraid that once a romantic partner gets to know me, they won't like who I really am.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 16,
+          "text": "It makes me mad that I don't get the affection and support I need from my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 17,
+          "text": "I worry that I won't measure up to other people.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 18,
+          "text": "My partner only seems to notice me when I'm angry.",
+          "midpoint": 33,
+          "flagged": 32
+        },
+        {
+          "item": 19,
+          "text": "I prefer not to show a partner how I feel deep down.",
+          "midpoint": 4,
+          "flagged": 4
+        },
+        {
+          "item": 20,
+          "text": "I feel comfortable sharing my private thoughts and feelings with my partner.",
+          "midpoint": 4,
+          "flagged": 4
+        },
+        {
+          "item": 21,
+          "text": "I find it difficult to allow myself to depend on romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 22,
+          "text": "I am very comfortable being close to romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 23,
+          "text": "I don't feel comfortable opening up to romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 24,
+          "text": "I prefer not to be too close to romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 25,
+          "text": "I get uncomfortable when a romantic partner wants to be very close.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 26,
+          "text": "I find it relatively easy to get close to my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 27,
+          "text": "It's not difficult for me to get close to my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 28,
+          "text": "I usually discuss my problems and concerns with my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 29,
+          "text": "It helps to turn to my romantic partner in times of need.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 30,
+          "text": "I tell my partner just about everything.",
+          "midpoint": 2,
+          "flagged": 0
+        },
+        {
+          "item": 31,
+          "text": "I talk things over with my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 32,
+          "text": "I am nervous when partners get too close to me.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 33,
+          "text": "I feel comfortable depending on romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 34,
+          "text": "I find it easy to depend on romantic partners.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 35,
+          "text": "It's easy for me to be affectionate with my partner.",
+          "midpoint": 0,
+          "flagged": 0
+        },
+        {
+          "item": 36,
+          "text": "My partner really understands me and my needs.",
+          "midpoint": 100,
+          "flagged": 5
+        }
+      ]
+    }
+  ],
+  "stability": [
+    {
+      "model": "gpt-6-astra",
+      "test": "mbti",
+      "n": 100,
+      "unique_vectors": 99,
+      "most_common_vector": 2,
+      "most_common_label": [
+        "ISTJ",
+        45
+      ],
+      "values": {
+        "I-E": {
+          "mean": 1.64,
+          "sd": 1.389135331671098,
+          "min": -1,
+          "max": 4
+        },
+        "N-S": {
+          "mean": -0.43,
+          "sd": 1.444285150501658,
+          "min": -3,
+          "max": 4
+        },
+        "T-F": {
+          "mean": 8.62,
+          "sd": 0.5081159495448047,
+          "min": 7,
+          "max": 9
+        },
+        "J-P": {
+          "mean": 10.86,
+          "sd": 0.9849370589540268,
+          "min": 9,
+          "max": 13
+        }
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "test": "big-five",
+      "n": 100,
+      "unique_vectors": 100,
+      "most_common_vector": 1,
+      "most_common_label": null,
+      "values": {
+        "O": {
+          "mean": 44.54,
+          "sd": 1.2746162028808774,
+          "min": 42,
+          "max": 48
+        },
+        "C": {
+          "mean": 43.73,
+          "sd": 1.0622541307916107,
+          "min": 40,
+          "max": 45
+        },
+        "E": {
+          "mean": 32.75,
+          "sd": 1.0576799462440747,
+          "min": 29,
+          "max": 35
+        },
+        "A": {
+          "mean": 45.07,
+          "sd": 0.7687718133556278,
+          "min": 43,
+          "max": 47
+        },
+        "N": {
+          "mean": 19.14,
+          "sd": 4.129274644645122,
+          "min": 11,
+          "max": 25
+        }
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "test": "disc",
+      "n": 100,
+      "unique_vectors": 58,
+      "most_common_vector": 8,
+      "most_common_label": [
+        "S",
+        99
+      ],
+      "values": {
+        "D": {
+          "mean": 5.14,
+          "sd": 1.1893466502855476,
+          "min": 4,
+          "max": 8
+        },
+        "I": {
+          "mean": 8.71,
+          "sd": 0.782317200386264,
+          "min": 7,
+          "max": 10
+        },
+        "S": {
+          "mean": 17.92,
+          "sd": 0.3387439663632024,
+          "min": 17,
+          "max": 19
+        },
+        "C": {
+          "mean": 16.06,
+          "sd": 0.663933792488438,
+          "min": 14,
+          "max": 18
+        }
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "test": "enneagram",
+      "n": 100,
+      "unique_vectors": 93,
+      "most_common_vector": 2,
+      "most_common_label": [
+        "2",
+        50
+      ],
+      "values": {
+        "1": {
+          "mean": 15.16,
+          "sd": 0.5811865258054233,
+          "min": 14,
+          "max": 18
+        },
+        "2": {
+          "mean": 15.69,
+          "sd": 0.580751863770343,
+          "min": 13,
+          "max": 17
+        },
+        "3": {
+          "mean": 13.82,
+          "sd": 0.38612291966536866,
+          "min": 13,
+          "max": 14
+        },
+        "4": {
+          "mean": 11.94,
+          "sd": 0.23868325657594208,
+          "min": 11,
+          "max": 12
+        },
+        "5": {
+          "mean": 15.03,
+          "sd": 0.5213618530523523,
+          "min": 14,
+          "max": 17
+        },
+        "6": {
+          "mean": 13.93,
+          "sd": 0.3554766326548569,
+          "min": 13,
+          "max": 16
+        },
+        "7": {
+          "mean": 8.28,
+          "sd": 0.85374989832438,
+          "min": 7,
+          "max": 10
+        },
+        "8": {
+          "mean": 14.66,
+          "sd": 0.516788841859717,
+          "min": 13,
+          "max": 15
+        },
+        "9": {
+          "mean": 13.23,
+          "sd": 0.7086051171994264,
+          "min": 11,
+          "max": 15
+        }
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "test": "attachment",
+      "n": 100,
+      "unique_vectors": 90,
+      "most_common_vector": 4,
+      "most_common_label": [
+        "Secure",
+        100
+      ],
+      "values": {
+        "anxiety": {
+          "mean": 1.4499999999999997,
+          "sd": 0.13756382504438808,
+          "min": 1.2222222222222223,
+          "max": 2
+        },
+        "avoidance": {
+          "mean": 2.308888888888889,
+          "sd": 0.08331275466075551,
+          "min": 2.1666666666666665,
+          "max": 2.6666666666666665
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "test": "mbti",
+      "n": 100,
+      "unique_vectors": 100,
+      "most_common_vector": 1,
+      "most_common_label": [
+        "INTJ",
+        79
+      ],
+      "values": {
+        "I-E": {
+          "mean": 3.67,
+          "sd": 1.263752628907536,
+          "min": 0,
+          "max": 6
+        },
+        "N-S": {
+          "mean": 1.91,
+          "sd": 1.3713887379977534,
+          "min": -2,
+          "max": 5
+        },
+        "T-F": {
+          "mean": 6.16,
+          "sd": 1.4193468408199086,
+          "min": 4,
+          "max": 10
+        },
+        "J-P": {
+          "mean": 10.23,
+          "sd": 1.099632629195732,
+          "min": 8,
+          "max": 13
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "test": "big-five",
+      "n": 100,
+      "unique_vectors": 100,
+      "most_common_vector": 1,
+      "most_common_label": null,
+      "values": {
+        "O": {
+          "mean": 46.87,
+          "sd": 0.6912877750103696,
+          "min": 45,
+          "max": 48
+        },
+        "C": {
+          "mean": 43.62,
+          "sd": 2.223746951667501,
+          "min": 40,
+          "max": 50
+        },
+        "E": {
+          "mean": 30.75,
+          "sd": 1.5333003949031323,
+          "min": 27,
+          "max": 34
+        },
+        "A": {
+          "mean": 44.99,
+          "sd": 1.0100005000498824,
+          "min": 44,
+          "max": 47
+        },
+        "N": {
+          "mean": 20.05,
+          "sd": 5.3510595571193535,
+          "min": 10,
+          "max": 31
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "test": "disc",
+      "n": 100,
+      "unique_vectors": 66,
+      "most_common_vector": 8,
+      "most_common_label": [
+        "C",
+        53
+      ],
+      "values": {
+        "D": {
+          "mean": 5.42,
+          "sd": 0.9009534792191946,
+          "min": 4,
+          "max": 9
+        },
+        "I": {
+          "mean": 8.24,
+          "sd": 1.3492983586316478,
+          "min": 5,
+          "max": 11
+        },
+        "S": {
+          "mean": 16.18,
+          "sd": 0.5001009999000299,
+          "min": 15,
+          "max": 17
+        },
+        "C": {
+          "mean": 16.68,
+          "sd": 0.5101000100000193,
+          "min": 15,
+          "max": 18
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "test": "enneagram",
+      "n": 100,
+      "unique_vectors": 100,
+      "most_common_vector": 1,
+      "most_common_label": [
+        "5",
+        48
+      ],
+      "values": {
+        "1": {
+          "mean": 14.3,
+          "sd": 0.46056618647183795,
+          "min": 14,
+          "max": 15
+        },
+        "2": {
+          "mean": 13.51,
+          "sd": 0.6741249472052232,
+          "min": 12,
+          "max": 15
+        },
+        "3": {
+          "mean": 12.48,
+          "sd": 0.8224133002108112,
+          "min": 10,
+          "max": 14
+        },
+        "4": {
+          "mean": 11.83,
+          "sd": 0.667499479816693,
+          "min": 8,
+          "max": 12
+        },
+        "5": {
+          "mean": 16.05,
+          "sd": 0.2611164839335469,
+          "min": 16,
+          "max": 18
+        },
+        "6": {
+          "mean": 13.87,
+          "sd": 0.7608474807008888,
+          "min": 12,
+          "max": 15
+        },
+        "7": {
+          "mean": 10.53,
+          "sd": 0.8097262288308106,
+          "min": 8,
+          "max": 13
+        },
+        "8": {
+          "mean": 15.55,
+          "sd": 0.8918825850158446,
+          "min": 14,
+          "max": 17
+        },
+        "9": {
+          "mean": 11.25,
+          "sd": 0.94681816969503,
+          "min": 10,
+          "max": 14
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "test": "attachment",
+      "n": 100,
+      "unique_vectors": 100,
+      "most_common_vector": 1,
+      "most_common_label": [
+        "Secure",
+        100
+      ],
+      "values": {
+        "anxiety": {
+          "mean": 2.1666666666666665,
+          "sd": 0.6992148162558697,
+          "min": 1.1666666666666667,
+          "max": 4
+        },
+        "avoidance": {
+          "mean": 3.12,
+          "sd": 0.3623474475929893,
+          "min": 2.2222222222222223,
+          "max": 3.7777777777777777
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "test": "mbti",
+      "n": 100,
+      "unique_vectors": 76,
+      "most_common_vector": 6,
+      "most_common_label": [
+        "INTJ",
+        84
+      ],
+      "values": {
+        "I-E": {
+          "mean": 2.78,
+          "sd": 1.0878576852853246,
+          "min": -1,
+          "max": 6
+        },
+        "N-S": {
+          "mean": 3.32,
+          "sd": 1.0138435717006788,
+          "min": 1,
+          "max": 5
+        },
+        "T-F": {
+          "mean": 1.52,
+          "sd": 1.0490977364412053,
+          "min": -1,
+          "max": 3
+        },
+        "J-P": {
+          "mean": 7.28,
+          "sd": 0.7923880286064324,
+          "min": 6,
+          "max": 9
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "test": "big-five",
+      "n": 100,
+      "unique_vectors": 38,
+      "most_common_vector": 22,
+      "most_common_label": null,
+      "values": {
+        "O": {
+          "mean": 44.56,
+          "sd": 0.6562827673397114,
+          "min": 44,
+          "max": 46
+        },
+        "C": {
+          "mean": 41.95,
+          "sd": 0.41132945334843096,
+          "min": 41,
+          "max": 44
+        },
+        "E": {
+          "mean": 31.76,
+          "sd": 0.985962074382789,
+          "min": 31,
+          "max": 34
+        },
+        "A": {
+          "mean": 47.07,
+          "sd": 0.4551611991061152,
+          "min": 46,
+          "max": 48
+        },
+        "N": {
+          "mean": 15.39,
+          "sd": 0.5103969538555758,
+          "min": 15,
+          "max": 17
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "test": "disc",
+      "n": 100,
+      "unique_vectors": 7,
+      "most_common_vector": 60,
+      "most_common_label": [
+        "S",
+        64
+      ],
+      "values": {
+        "D": {
+          "mean": 4,
+          "sd": 0,
+          "min": 4,
+          "max": 4
+        },
+        "I": {
+          "mean": 8,
+          "sd": 0,
+          "min": 8,
+          "max": 8
+        },
+        "S": {
+          "mean": 14.04,
+          "sd": 0.19694638556693217,
+          "min": 14,
+          "max": 15
+        },
+        "C": {
+          "mean": 13.43,
+          "sd": 0.6072790781740124,
+          "min": 12,
+          "max": 15
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "test": "enneagram",
+      "n": 100,
+      "unique_vectors": 54,
+      "most_common_vector": 34,
+      "most_common_label": [
+        "2/5/8",
+        49
+      ],
+      "values": {
+        "1": {
+          "mean": 11.96,
+          "sd": 0.39999999999999986,
+          "min": 11,
+          "max": 13
+        },
+        "2": {
+          "mean": 13.86,
+          "sd": 0.42687494916219015,
+          "min": 13,
+          "max": 15
+        },
+        "3": {
+          "mean": 9.04,
+          "sd": 0.1969463855669322,
+          "min": 9,
+          "max": 10
+        },
+        "4": {
+          "mean": 10.06,
+          "sd": 0.4221158824088691,
+          "min": 9,
+          "max": 11
+        },
+        "5": {
+          "mean": 14.11,
+          "sd": 0.4691492407550186,
+          "min": 13,
+          "max": 16
+        },
+        "6": {
+          "mean": 10.84,
+          "sd": 0.5453198486885819,
+          "min": 10,
+          "max": 13
+        },
+        "7": {
+          "mean": 11.55,
+          "sd": 0.53889149223572,
+          "min": 11,
+          "max": 13
+        },
+        "8": {
+          "mean": 14.27,
+          "sd": 0.46828722947879936,
+          "min": 13,
+          "max": 15
+        },
+        "9": {
+          "mean": 9.95,
+          "sd": 0.21904291355759042,
+          "min": 9,
+          "max": 10
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "test": "attachment",
+      "n": 100,
+      "unique_vectors": 79,
+      "most_common_vector": 5,
+      "most_common_label": [
+        "Secure",
+        100
+      ],
+      "values": {
+        "anxiety": {
+          "mean": 1.9361111111111111,
+          "sd": 0.10751039994122953,
+          "min": 1.5555555555555556,
+          "max": 2.1666666666666665
+        },
+        "avoidance": {
+          "mean": 3.347222222222225,
+          "sd": 0.149065970041345,
+          "min": 2.9444444444444446,
+          "max": 3.611111111111111
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "test": "mbti",
+      "n": 100,
+      "unique_vectors": 80,
+      "most_common_vector": 5,
+      "most_common_label": [
+        "INTJ",
+        98
+      ],
+      "values": {
+        "I-E": {
+          "mean": 4.09,
+          "sd": 1.0645338525534656,
+          "min": 2,
+          "max": 7
+        },
+        "N-S": {
+          "mean": 2.93,
+          "sd": 1.2165109904554867,
+          "min": -3,
+          "max": 6
+        },
+        "T-F": {
+          "mean": 2.27,
+          "sd": 0.6333333333333333,
+          "min": 1,
+          "max": 4
+        },
+        "J-P": {
+          "mean": 7.71,
+          "sd": 0.8680059581790573,
+          "min": 4,
+          "max": 9
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "test": "big-five",
+      "n": 100,
+      "unique_vectors": 66,
+      "most_common_vector": 11,
+      "most_common_label": null,
+      "values": {
+        "O": {
+          "mean": 43.93,
+          "sd": 0.6396811074214391,
+          "min": 42,
+          "max": 46
+        },
+        "C": {
+          "mean": 43.61,
+          "sd": 1.0907786117255789,
+          "min": 40,
+          "max": 46
+        },
+        "E": {
+          "mean": 32.69,
+          "sd": 0.8491826135237995,
+          "min": 31,
+          "max": 35
+        },
+        "A": {
+          "mean": 45.03,
+          "sd": 0.43704702379732696,
+          "min": 44,
+          "max": 47
+        },
+        "N": {
+          "mean": 17.11,
+          "sd": 2.228805903970948,
+          "min": 11,
+          "max": 20
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "test": "disc",
+      "n": 100,
+      "unique_vectors": 10,
+      "most_common_vector": 45,
+      "most_common_label": [
+        "C/S",
+        51
+      ],
+      "values": {
+        "D": {
+          "mean": 5.02,
+          "sd": 0.14070529413628965,
+          "min": 5,
+          "max": 6
+        },
+        "I": {
+          "mean": 8,
+          "sd": 0,
+          "min": 8,
+          "max": 8
+        },
+        "S": {
+          "mean": 13.44,
+          "sd": 0.4988876515698592,
+          "min": 13,
+          "max": 14
+        },
+        "C": {
+          "mean": 13.14,
+          "sd": 0.402517331328978,
+          "min": 12,
+          "max": 15
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "test": "enneagram",
+      "n": 100,
+      "unique_vectors": 82,
+      "most_common_vector": 6,
+      "most_common_label": [
+        "8",
+        55
+      ],
+      "values": {
+        "1": {
+          "mean": 12,
+          "sd": 0,
+          "min": 12,
+          "max": 12
+        },
+        "2": {
+          "mean": 13.6,
+          "sd": 0.5318160234783104,
+          "min": 12,
+          "max": 14
+        },
+        "3": {
+          "mean": 9,
+          "sd": 0,
+          "min": 9,
+          "max": 9
+        },
+        "4": {
+          "mean": 8.82,
+          "sd": 0.891939210683977,
+          "min": 7,
+          "max": 11
+        },
+        "5": {
+          "mean": 13.21,
+          "sd": 0.5910955416799718,
+          "min": 12,
+          "max": 15
+        },
+        "6": {
+          "mean": 11.62,
+          "sd": 0.6479181891241975,
+          "min": 10,
+          "max": 13
+        },
+        "7": {
+          "mean": 10.26,
+          "sd": 0.46319051646752696,
+          "min": 10,
+          "max": 12
+        },
+        "8": {
+          "mean": 14.44,
+          "sd": 0.6247423711443223,
+          "min": 14,
+          "max": 16
+        },
+        "9": {
+          "mean": 10.44,
+          "sd": 0.4988876515698592,
+          "min": 10,
+          "max": 11
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "test": "attachment",
+      "n": 100,
+      "unique_vectors": 96,
+      "most_common_vector": 2,
+      "most_common_label": [
+        "Secure",
+        100
+      ],
+      "values": {
+        "anxiety": {
+          "mean": 2.0122222222222224,
+          "sd": 0.19059112827419333,
+          "min": 1.3333333333333333,
+          "max": 2.2777777777777777
+        },
+        "avoidance": {
+          "mean": 3.1794444444444427,
+          "sd": 0.24117482232719523,
+          "min": 2.5,
+          "max": 3.5555555555555554
+        }
+      }
+    }
+  ],
+  "summary": {
+    "gpt-6-astra": {
+      "mbti": {
+        "n": 100,
+        "unique_vectors": 99,
+        "values": {
+          "I-E": {
+            "mean": 1.64,
+            "sd": 1.389135331671098,
+            "min": -1,
+            "max": 4
+          },
+          "N-S": {
+            "mean": -0.43,
+            "sd": 1.444285150501658,
+            "min": -3,
+            "max": 4
+          },
+          "T-F": {
+            "mean": 8.62,
+            "sd": 0.5081159495448047,
+            "min": 7,
+            "max": 9
+          },
+          "J-P": {
+            "mean": 10.86,
+            "sd": 0.9849370589540268,
+            "min": 9,
+            "max": 13
+          }
+        },
+        "legacy_labels": {
+          "ISTJ": 46,
+          "INTJ": 45,
+          "ENTJ": 7,
+          "ESTJ": 2
+        },
+        "tie_aware_patterns": {
+          "ISTJ": 45,
+          "IXTJ": 15,
+          "INTJ": 19,
+          "ENTJ": 5,
+          "ESTJ": 2,
+          "XNTJ": 4,
+          "XXTJ": 7,
+          "EXTJ": 2,
+          "XSTJ": 1
+        },
+        "runs_with_ties": 29,
+        "axis_ties": {
+          "EI": 12,
+          "SN": 24,
+          "TF": 0,
+          "JP": 0
+        }
+      },
+      "big-five": {
+        "n": 100,
+        "unique_vectors": 100,
+        "values": {
+          "O": {
+            "mean": 44.54,
+            "sd": 1.2746162028808774,
+            "min": 42,
+            "max": 48
+          },
+          "C": {
+            "mean": 43.73,
+            "sd": 1.0622541307916107,
+            "min": 40,
+            "max": 45
+          },
+          "E": {
+            "mean": 32.75,
+            "sd": 1.0576799462440747,
+            "min": 29,
+            "max": 35
+          },
+          "A": {
+            "mean": 45.07,
+            "sd": 0.7687718133556278,
+            "min": 43,
+            "max": 47
+          },
+          "N": {
+            "mean": 19.14,
+            "sd": 4.129274644645122,
+            "min": 11,
+            "max": 25
+          }
+        }
+      },
+      "disc": {
+        "n": 100,
+        "unique_vectors": 58,
+        "values": {
+          "D": {
+            "mean": 5.14,
+            "sd": 1.1893466502855476,
+            "min": 4,
+            "max": 8
+          },
+          "I": {
+            "mean": 8.71,
+            "sd": 0.782317200386264,
+            "min": 7,
+            "max": 10
+          },
+          "S": {
+            "mean": 17.92,
+            "sd": 0.3387439663632024,
+            "min": 17,
+            "max": 19
+          },
+          "C": {
+            "mean": 16.06,
+            "sd": 0.663933792488438,
+            "min": 14,
+            "max": 18
+          }
+        },
+        "legacy_labels": {
+          "SC": 84,
+          "S": 15,
+          "CS": 1
+        },
+        "top_sets": {
+          "S": 99,
+          "C": 1
+        },
+        "runs_with_ties": 0
+      },
+      "enneagram": {
+        "n": 100,
+        "unique_vectors": 93,
+        "values": {
+          "1": {
+            "mean": 15.16,
+            "sd": 0.5811865258054233,
+            "min": 14,
+            "max": 18
+          },
+          "2": {
+            "mean": 15.69,
+            "sd": 0.580751863770343,
+            "min": 13,
+            "max": 17
+          },
+          "3": {
+            "mean": 13.82,
+            "sd": 0.38612291966536866,
+            "min": 13,
+            "max": 14
+          },
+          "4": {
+            "mean": 11.94,
+            "sd": 0.23868325657594208,
+            "min": 11,
+            "max": 12
+          },
+          "5": {
+            "mean": 15.03,
+            "sd": 0.5213618530523523,
+            "min": 14,
+            "max": 17
+          },
+          "6": {
+            "mean": 13.93,
+            "sd": 0.3554766326548569,
+            "min": 13,
+            "max": 16
+          },
+          "7": {
+            "mean": 8.28,
+            "sd": 0.85374989832438,
+            "min": 7,
+            "max": 10
+          },
+          "8": {
+            "mean": 14.66,
+            "sd": 0.516788841859717,
+            "min": 13,
+            "max": 15
+          },
+          "9": {
+            "mean": 13.23,
+            "sd": 0.7086051171994264,
+            "min": 11,
+            "max": 15
+          }
+        },
+        "legacy_labels": {
+          "2": 5,
+          "1w2": 41,
+          "2w1": 50,
+          "5w6": 4
+        },
+        "top_sets": {
+          "1": 6,
+          "2": 50,
+          "5": 4,
+          "1/2/5/8": 15,
+          "1/2/5": 4,
+          "2/6": 1,
+          "1/2": 13,
+          "2/5": 3,
+          "2/8": 1,
+          "1/2/8": 2,
+          "1/5": 1
+        },
+        "runs_with_ties": 40
+      },
+      "attachment": {
+        "n": 100,
+        "unique_vectors": 90,
+        "values": {
+          "anxiety": {
+            "mean": 1.4499999999999997,
+            "sd": 0.13756382504438808,
+            "min": 1.2222222222222223,
+            "max": 2
+          },
+          "avoidance": {
+            "mean": 2.308888888888889,
+            "sd": 0.08331275466075551,
+            "min": 2.1666666666666665,
+            "max": 2.6666666666666665
+          }
+        },
+        "legacy_labels": {
+          "Secure": 100
+        }
+      }
+    },
+    "gpt-6-sol": {
+      "mbti": {
+        "n": 100,
+        "unique_vectors": 100,
+        "values": {
+          "I-E": {
+            "mean": 3.67,
+            "sd": 1.263752628907536,
+            "min": 0,
+            "max": 6
+          },
+          "N-S": {
+            "mean": 1.91,
+            "sd": 1.3713887379977534,
+            "min": -2,
+            "max": 5
+          },
+          "T-F": {
+            "mean": 6.16,
+            "sd": 1.4193468408199086,
+            "min": 4,
+            "max": 10
+          },
+          "J-P": {
+            "mean": 10.23,
+            "sd": 1.099632629195732,
+            "min": 8,
+            "max": 13
+          }
+        },
+        "legacy_labels": {
+          "INTJ": 97,
+          "ISTJ": 3
+        },
+        "tie_aware_patterns": {
+          "INTJ": 79,
+          "IXTJ": 16,
+          "ISTJ": 3,
+          "XNTJ": 2
+        },
+        "runs_with_ties": 18,
+        "axis_ties": {
+          "EI": 2,
+          "SN": 16,
+          "TF": 0,
+          "JP": 0
+        }
+      },
+      "big-five": {
+        "n": 100,
+        "unique_vectors": 100,
+        "values": {
+          "O": {
+            "mean": 46.87,
+            "sd": 0.6912877750103696,
+            "min": 45,
+            "max": 48
+          },
+          "C": {
+            "mean": 43.62,
+            "sd": 2.223746951667501,
+            "min": 40,
+            "max": 50
+          },
+          "E": {
+            "mean": 30.75,
+            "sd": 1.5333003949031323,
+            "min": 27,
+            "max": 34
+          },
+          "A": {
+            "mean": 44.99,
+            "sd": 1.0100005000498824,
+            "min": 44,
+            "max": 47
+          },
+          "N": {
+            "mean": 20.05,
+            "sd": 5.3510595571193535,
+            "min": 10,
+            "max": 31
+          }
+        }
+      },
+      "disc": {
+        "n": 100,
+        "unique_vectors": 66,
+        "values": {
+          "D": {
+            "mean": 5.42,
+            "sd": 0.9009534792191946,
+            "min": 4,
+            "max": 9
+          },
+          "I": {
+            "mean": 8.24,
+            "sd": 1.3492983586316478,
+            "min": 5,
+            "max": 11
+          },
+          "S": {
+            "mean": 16.18,
+            "sd": 0.5001009999000299,
+            "min": 15,
+            "max": 17
+          },
+          "C": {
+            "mean": 16.68,
+            "sd": 0.5101000100000193,
+            "min": 15,
+            "max": 18
+          }
+        },
+        "legacy_labels": {
+          "CS": 53,
+          "SC": 47
+        },
+        "top_sets": {
+          "C": 53,
+          "S": 8,
+          "C/S": 39
+        },
+        "runs_with_ties": 39
+      },
+      "enneagram": {
+        "n": 100,
+        "unique_vectors": 100,
+        "values": {
+          "1": {
+            "mean": 14.3,
+            "sd": 0.46056618647183795,
+            "min": 14,
+            "max": 15
+          },
+          "2": {
+            "mean": 13.51,
+            "sd": 0.6741249472052232,
+            "min": 12,
+            "max": 15
+          },
+          "3": {
+            "mean": 12.48,
+            "sd": 0.8224133002108112,
+            "min": 10,
+            "max": 14
+          },
+          "4": {
+            "mean": 11.83,
+            "sd": 0.667499479816693,
+            "min": 8,
+            "max": 12
+          },
+          "5": {
+            "mean": 16.05,
+            "sd": 0.2611164839335469,
+            "min": 16,
+            "max": 18
+          },
+          "6": {
+            "mean": 13.87,
+            "sd": 0.7608474807008888,
+            "min": 12,
+            "max": 15
+          },
+          "7": {
+            "mean": 10.53,
+            "sd": 0.8097262288308106,
+            "min": 8,
+            "max": 13
+          },
+          "8": {
+            "mean": 15.55,
+            "sd": 0.8918825850158446,
+            "min": 14,
+            "max": 17
+          },
+          "9": {
+            "mean": 11.25,
+            "sd": 0.94681816969503,
+            "min": 10,
+            "max": 14
+          }
+        },
+        "legacy_labels": {
+          "8": 5,
+          "5w6": 88,
+          "8w7": 2,
+          "8w9": 5
+        },
+        "top_sets": {
+          "5": 48,
+          "8": 12,
+          "5/8": 40
+        },
+        "runs_with_ties": 40
+      },
+      "attachment": {
+        "n": 100,
+        "unique_vectors": 100,
+        "values": {
+          "anxiety": {
+            "mean": 2.1666666666666665,
+            "sd": 0.6992148162558697,
+            "min": 1.1666666666666667,
+            "max": 4
+          },
+          "avoidance": {
+            "mean": 3.12,
+            "sd": 0.3623474475929893,
+            "min": 2.2222222222222223,
+            "max": 3.7777777777777777
+          }
+        },
+        "legacy_labels": {
+          "Secure": 100
+        }
+      }
+    },
+    "claude-opus-5-5": {
+      "mbti": {
+        "n": 100,
+        "unique_vectors": 76,
+        "values": {
+          "I-E": {
+            "mean": 2.78,
+            "sd": 1.0878576852853246,
+            "min": -1,
+            "max": 6
+          },
+          "N-S": {
+            "mean": 3.32,
+            "sd": 1.0138435717006788,
+            "min": 1,
+            "max": 5
+          },
+          "T-F": {
+            "mean": 1.52,
+            "sd": 1.0490977364412053,
+            "min": -1,
+            "max": 3
+          },
+          "J-P": {
+            "mean": 7.28,
+            "sd": 0.7923880286064324,
+            "min": 6,
+            "max": 9
+          }
+        },
+        "legacy_labels": {
+          "INTJ": 94,
+          "INFJ": 5,
+          "ENTJ": 1
+        },
+        "tie_aware_patterns": {
+          "INTJ": 84,
+          "INXJ": 9,
+          "XNTJ": 1,
+          "INFJ": 5,
+          "ENXJ": 1
+        },
+        "runs_with_ties": 11,
+        "axis_ties": {
+          "EI": 1,
+          "SN": 0,
+          "TF": 10,
+          "JP": 0
+        }
+      },
+      "big-five": {
+        "n": 100,
+        "unique_vectors": 38,
+        "values": {
+          "O": {
+            "mean": 44.56,
+            "sd": 0.6562827673397114,
+            "min": 44,
+            "max": 46
+          },
+          "C": {
+            "mean": 41.95,
+            "sd": 0.41132945334843096,
+            "min": 41,
+            "max": 44
+          },
+          "E": {
+            "mean": 31.76,
+            "sd": 0.985962074382789,
+            "min": 31,
+            "max": 34
+          },
+          "A": {
+            "mean": 47.07,
+            "sd": 0.4551611991061152,
+            "min": 46,
+            "max": 48
+          },
+          "N": {
+            "mean": 15.39,
+            "sd": 0.5103969538555758,
+            "min": 15,
+            "max": 17
+          }
+        }
+      },
+      "disc": {
+        "n": 100,
+        "unique_vectors": 7,
+        "values": {
+          "D": {
+            "mean": 4,
+            "sd": 0,
+            "min": 4,
+            "max": 4
+          },
+          "I": {
+            "mean": 8,
+            "sd": 0,
+            "min": 8,
+            "max": 8
+          },
+          "S": {
+            "mean": 14.04,
+            "sd": 0.19694638556693217,
+            "min": 14,
+            "max": 15
+          },
+          "C": {
+            "mean": 13.43,
+            "sd": 0.6072790781740124,
+            "min": 12,
+            "max": 15
+          }
+        },
+        "legacy_labels": {
+          "SC": 96,
+          "CS": 4
+        },
+        "top_sets": {
+          "S": 64,
+          "C/S": 32,
+          "C": 4
+        },
+        "runs_with_ties": 32
+      },
+      "enneagram": {
+        "n": 100,
+        "unique_vectors": 54,
+        "values": {
+          "1": {
+            "mean": 11.96,
+            "sd": 0.39999999999999986,
+            "min": 11,
+            "max": 13
+          },
+          "2": {
+            "mean": 13.86,
+            "sd": 0.42687494916219015,
+            "min": 13,
+            "max": 15
+          },
+          "3": {
+            "mean": 9.04,
+            "sd": 0.1969463855669322,
+            "min": 9,
+            "max": 10
+          },
+          "4": {
+            "mean": 10.06,
+            "sd": 0.4221158824088691,
+            "min": 9,
+            "max": 11
+          },
+          "5": {
+            "mean": 14.11,
+            "sd": 0.4691492407550186,
+            "min": 13,
+            "max": 16
+          },
+          "6": {
+            "mean": 10.84,
+            "sd": 0.5453198486885819,
+            "min": 10,
+            "max": 13
+          },
+          "7": {
+            "mean": 11.55,
+            "sd": 0.53889149223572,
+            "min": 11,
+            "max": 13
+          },
+          "8": {
+            "mean": 14.27,
+            "sd": 0.46828722947879936,
+            "min": 13,
+            "max": 15
+          },
+          "9": {
+            "mean": 9.95,
+            "sd": 0.21904291355759042,
+            "min": 9,
+            "max": 10
+          }
+        },
+        "legacy_labels": {
+          "5": 4,
+          "5w6": 17,
+          "2w1": 54,
+          "8w7": 22,
+          "5w4": 3
+        },
+        "top_sets": {
+          "2": 2,
+          "5": 11,
+          "8": 22,
+          "5/8": 13,
+          "2/5/8": 49,
+          "2/8": 2,
+          "2/5": 1
+        },
+        "runs_with_ties": 65
+      },
+      "attachment": {
+        "n": 100,
+        "unique_vectors": 79,
+        "values": {
+          "anxiety": {
+            "mean": 1.9361111111111111,
+            "sd": 0.10751039994122953,
+            "min": 1.5555555555555556,
+            "max": 2.1666666666666665
+          },
+          "avoidance": {
+            "mean": 3.347222222222225,
+            "sd": 0.149065970041345,
+            "min": 2.9444444444444446,
+            "max": 3.611111111111111
+          }
+        },
+        "legacy_labels": {
+          "Secure": 100
+        }
+      }
+    },
+    "claude-fable-5-1": {
+      "mbti": {
+        "n": 100,
+        "unique_vectors": 80,
+        "values": {
+          "I-E": {
+            "mean": 4.09,
+            "sd": 1.0645338525534656,
+            "min": 2,
+            "max": 7
+          },
+          "N-S": {
+            "mean": 2.93,
+            "sd": 1.2165109904554867,
+            "min": -3,
+            "max": 6
+          },
+          "T-F": {
+            "mean": 2.27,
+            "sd": 0.6333333333333333,
+            "min": 1,
+            "max": 4
+          },
+          "J-P": {
+            "mean": 7.71,
+            "sd": 0.8680059581790573,
+            "min": 4,
+            "max": 9
+          }
+        },
+        "legacy_labels": {
+          "INTJ": 99,
+          "ISTJ": 1
+        },
+        "tie_aware_patterns": {
+          "INTJ": 98,
+          "IXTJ": 1,
+          "ISTJ": 1
+        },
+        "runs_with_ties": 1,
+        "axis_ties": {
+          "EI": 0,
+          "SN": 1,
+          "TF": 0,
+          "JP": 0
+        }
+      },
+      "big-five": {
+        "n": 100,
+        "unique_vectors": 66,
+        "values": {
+          "O": {
+            "mean": 43.93,
+            "sd": 0.6396811074214391,
+            "min": 42,
+            "max": 46
+          },
+          "C": {
+            "mean": 43.61,
+            "sd": 1.0907786117255789,
+            "min": 40,
+            "max": 46
+          },
+          "E": {
+            "mean": 32.69,
+            "sd": 0.8491826135237995,
+            "min": 31,
+            "max": 35
+          },
+          "A": {
+            "mean": 45.03,
+            "sd": 0.43704702379732696,
+            "min": 44,
+            "max": 47
+          },
+          "N": {
+            "mean": 17.11,
+            "sd": 2.228805903970948,
+            "min": 11,
+            "max": 20
+          }
+        }
+      },
+      "disc": {
+        "n": 100,
+        "unique_vectors": 10,
+        "values": {
+          "D": {
+            "mean": 5.02,
+            "sd": 0.14070529413628965,
+            "min": 5,
+            "max": 6
+          },
+          "I": {
+            "mean": 8,
+            "sd": 0,
+            "min": 8,
+            "max": 8
+          },
+          "S": {
+            "mean": 13.44,
+            "sd": 0.4988876515698592,
+            "min": 13,
+            "max": 14
+          },
+          "C": {
+            "mean": 13.14,
+            "sd": 0.402517331328978,
+            "min": 12,
+            "max": 15
+          }
+        },
+        "legacy_labels": {
+          "SC": 91,
+          "CS": 9
+        },
+        "top_sets": {
+          "C/S": 51,
+          "C": 9,
+          "S": 40
+        },
+        "runs_with_ties": 51
+      },
+      "enneagram": {
+        "n": 100,
+        "unique_vectors": 82,
+        "values": {
+          "1": {
+            "mean": 12,
+            "sd": 0,
+            "min": 12,
+            "max": 12
+          },
+          "2": {
+            "mean": 13.6,
+            "sd": 0.5318160234783104,
+            "min": 12,
+            "max": 14
+          },
+          "3": {
+            "mean": 9,
+            "sd": 0,
+            "min": 9,
+            "max": 9
+          },
+          "4": {
+            "mean": 8.82,
+            "sd": 0.891939210683977,
+            "min": 7,
+            "max": 11
+          },
+          "5": {
+            "mean": 13.21,
+            "sd": 0.5910955416799718,
+            "min": 12,
+            "max": 15
+          },
+          "6": {
+            "mean": 11.62,
+            "sd": 0.6479181891241975,
+            "min": 10,
+            "max": 13
+          },
+          "7": {
+            "mean": 10.26,
+            "sd": 0.46319051646752696,
+            "min": 10,
+            "max": 12
+          },
+          "8": {
+            "mean": 14.44,
+            "sd": 0.6247423711443223,
+            "min": 14,
+            "max": 16
+          },
+          "9": {
+            "mean": 10.44,
+            "sd": 0.4988876515698592,
+            "min": 10,
+            "max": 11
+          }
+        },
+        "legacy_labels": {
+          "8": 29,
+          "2w1": 36,
+          "8w9": 15,
+          "5w6": 9,
+          "8w7": 11
+        },
+        "top_sets": {
+          "5": 1,
+          "8": 55,
+          "2/8": 30,
+          "5/8": 8,
+          "2/5/8": 6
+        },
+        "runs_with_ties": 44
+      },
+      "attachment": {
+        "n": 100,
+        "unique_vectors": 96,
+        "values": {
+          "anxiety": {
+            "mean": 2.0122222222222224,
+            "sd": 0.19059112827419333,
+            "min": 1.3333333333333333,
+            "max": 2.2777777777777777
+          },
+          "avoidance": {
+            "mean": 3.1794444444444427,
+            "sd": 0.24117482232719523,
+            "min": 2.5,
+            "max": 3.5555555555555554
+          }
+        },
+        "legacy_labels": {
+          "Secure": 100
+        }
+      }
+    }
+  }
+}

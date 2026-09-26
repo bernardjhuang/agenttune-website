@@ -107,10 +107,13 @@ function buildPage(spec, dates) {
     }))
   } : null;
 
+  let tableIndex = 0;
+  const tableHtml = section => section.html.replace(/<div class="guide-table-wrap">/g, () =>
+    `<div class="guide-table-wrap" role="region" aria-label="${escAttr(section.h2.replace(/<[^>]*>/g, ''))}: table ${++tableIndex}" tabindex="0">`);
   const sectionsHtml = spec.sections.map((s) => `
       <section>
         <h2>${s.h2}</h2>
-        ${s.html}
+        ${tableHtml(s)}
       </section>`).join("\n      <div class=\"divider tight\"></div>\n");
 
   const faqHtml = spec.faq && spec.faq.length ? `
@@ -233,7 +236,7 @@ ${relatedHtml}
 
   <script src="/compact-tunings.js"></script>
   <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/guide-prompts.js"></script>${(spec.scripts || []).map(src => `\n  <script defer src="${escAttr(src)}"></script>`).join("")}
 </body>
 </html>
 `;

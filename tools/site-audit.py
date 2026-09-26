@@ -30,7 +30,6 @@ STALE_TERMS = {
     "ten-minute-mbti": re.compile(r"MBTI[^.]{0,80}\bten minutes\b|\bten minutes\b[^.]{0,80}MBTI", re.I),
     "ocean-name": re.compile(r"\bOCEAN\b"),
     "grokbot-one-word": re.compile(r"\bGrokBot\b"),
-    "tuning-length-old": re.compile(r"1,200 to 2,900"),
     "draft-placeholder": re.compile(r"Draft placeholder|TODO|lorem ipsum", re.I),
     "superpower": re.compile(r"\bsuperpower", re.I),
 }

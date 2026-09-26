@@ -517,7 +517,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       : r.system === "enneagram" ? `T${rDigit} ${r.name}`
       : r.system === "ocean" ? r.code
       : r.code;
-    return `<a class="lib-related-pill" href="${rUrl}" style="color: ${accent};">${escHtml(label)} →</a>`;
+    return `<a class="lib-related-pill" href="${rUrl}" style="color: ${TEXT_SAFE[accent.toLowerCase()] || accent};">${escHtml(label)} →</a>`;
   }).join("");
 
   const relatedAllUrl = `/library/#${c.system}`;
@@ -796,11 +796,11 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .c-code { padding: 22px 24px; white-space: pre-wrap; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
     .c-code .c-h2 { color: #b4a7ff; font-weight: 600; }
-    .c-statusbar { background: var(--lib-accent); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
+    .c-statusbar { background: var(--lib-accent-text, #9f4427); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
     .c-statusbar-left { display: flex; align-items: center; gap: 16px; }
     .c-statusbar-actions { display: flex; gap: 8px; }
-    .c-status-btn { background: rgba(255,255,255,0.18); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
-    .c-status-btn:hover { background: rgba(255,255,255,0.30); }
+    .c-status-btn { background: rgba(0,0,0,0.12); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
+    .c-status-btn:hover { background: rgba(0,0,0,0.22); }
     .c-status-btn.is-strong { background: #fff; color: var(--lib-accent-text); }
 
     @media (max-width: 720px) {
@@ -1051,8 +1051,16 @@ ${summaryLis}
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 
@@ -1122,7 +1130,7 @@ function buildHub(contacts) {
     },
     {
       key: "ocean",
-      label: "OCEAN",
+      label: "Big Five",
       pillBg: "rgba(58,114,196,0.12)",
       pillColor: "#3160a7",
       sub: "10 trait dimensions",
@@ -1352,6 +1360,16 @@ function gitLastmod(relPath) {
 
 // Non-library pages in the sitemap: route → source file + crawl hints.
 const STATIC_PAGES = [
+  { route: "/guides/enneagram-test-react-typescript", file: "guides/enneagram-test-react-typescript.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-mbti-tie-breaking", file: "research/ai-mbti-tie-breaking.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/opus-vs-fable-question-level", file: "research/opus-vs-fable-question-level.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/astra-vs-sol-personality-data", file: "research/astra-vs-sol-personality-data.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-neutral-answers", file: "research/ai-neutral-answers.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-personality-repeatability", file: "research/ai-personality-repeatability.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/reproduce-ai-personality-research", file: "guides/reproduce-ai-personality-research.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-preferences-test", file: "guides/claude-preferences-test.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/muse-soul-md-persistence-test", file: "guides/muse-soul-md-persistence-test.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/personality-prompts-vs-plain-english", file: "guides/personality-prompts-vs-plain-english.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-personality-five-models-2026", file: "research/ai-personality-five-models-2026.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/fable-personality", file: "guides/fable-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/", file: "index.html", changefreq: "weekly", priority: "1.0", comment: "Landing" },

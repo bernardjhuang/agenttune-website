@@ -1,0 +1,77 @@
+{
+  "slug": "enneagram-test-react-typescript",
+  "route": "/guides/enneagram-test-react-typescript",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "Build an Enneagram test in React + TypeScript | AgentTune",
+  "description": "Download a runnable React and TypeScript Enneagram starter: 36 questions, accessible radio groups, strict input validation and all tied leaders preserved.",
+  "pill": "Developer resource · runnable starter",
+  "h1": "Build an Enneagram test in React + TypeScript",
+  "lede": "Start with a complete local app instead of rebuilding the scoring rules. This starter wraps AgentTune’s existing Enneagram scorer in a typed React interface and includes the frozen questions, source code and dependency lockfile.",
+  "answer": "The downloadable app uses 36 questions, four per type, and returns all types tied for the highest score. It includes six-page navigation, native radio groups, explicit validation, keyboard focus management and a result table. Answers stay in browser memory.",
+  "sections": [
+    {
+      "h2": "Download and run the complete app",
+      "html": "<p><a href=\"/resources/enneagram/enneagram-react-typescript.zip\" download>Download the React + TypeScript starter ZIP</a>. Extract it into a local development folder. Use a supported Node.js release satisfying 22.12 or newer, then run:</p><pre><code>cd enneagram-react-typescript\nnpm ci\nnpm run dev</code></pre><p>Open the local address printed by Vite. For a production build, run <code>npm run build</code>, then <code>npm run preview</code> to inspect it. Publish the generated <code>dist/</code> folder with a static host. Serve the app over HTTP rather than opening its index file directly.</p><p>The archive includes pinned React, TypeScript and Vite dependencies plus a lockfile. There is no backend, authentication or answer submission. Installation fetches development packages; using the questionnaire does not send answers to AgentTune.</p>"
+    },
+    {
+      "h2": "One scorer, with a TypeScript boundary",
+      "html": "<p>The app loads the unchanged canonical <code>public/score.js</code> file before its React entry. The TypeScript wrapper describes the result and calls that scorer; it does not maintain a second copy of the scoring algorithm.</p><pre><code>interface Score {\n  version: string;\n  scores: Record&lt;string, number&gt;;\n  topScore: number;\n  leaders: number[];\n  tied: boolean;\n  dominantType: number | null;\n}</code></pre><p>The scorer requires exactly 36 integer responses from 1 to 5, in the supplied item order. It rejects missing values, sparse arrays, strings and out-of-range numbers. TypeScript helps the UI use the contract, while the runtime checks protect the actual scoring call.</p>"
+    },
+    {
+      "h2": "Preserve uncertainty in the result",
+      "html": "<p>Each type has four questions and a raw score from 4 to 20. A result of 16/20 is a raw questionnaire total, not an 80th percentile or an 80% probability of being that type. The questions are not reverse-scored.</p><p>When two or more types share the maximum, the app lists every leader and leaves <code>dominantType</code> null. Answering Neutral to all 36 items gives all nine types 12 points. The result screen explicitly calls that a tie and displays all nine totals. It does not choose the first key or infer a wing.</p><p>This choice matters in the AI archive: Opus has 65 tied Enneagram administrations out of 100, and Fable has 44. A single winner would conceal information in many of those records. The starter is also a self-reflection aid, not a diagnosis or a validated personality measure for an AI.</p>"
+    },
+    {
+      "h2": "Make the questionnaire usable with a keyboard",
+      "html": "<p>Each statement is the legend of a native fieldset. Each response has a visible label and a radio button, so keyboard users can move through groups and change options with standard controls. The app shows six questions per page and preserves answers when moving back.</p><p>Submitting an incomplete page identifies the first missing question and moves focus to its first radio. Moving to another page or the result focuses the new section heading. Error messages use an alert region; result tables use row and column headers. These behaviors are included in the source and should be retained when restyling.</p><p>The app intentionally keeps answers only in component state. Reloading starts over. If you add persistent profiles or a server, explain the changed data handling and design the storage separately.</p>"
+    },
+    {
+      "h2": "Know which files to change",
+      "html": "<ul><li><code>src/App.tsx</code> controls pagination, selection, validation and results.</li><li><code>src/styles.css</code> controls layout, contrast and focus indicators.</li><li><code>src/questions.json</code> contains the frozen items, type keys and provenance.</li><li><code>src/scorer.ts</code> describes and calls the canonical scorer.</li><li><code>public/score.js</code> contains the scoring implementation.</li></ul><p>If you reorder questions, update the scorer’s mapping as well. Its current contract groups four consecutive items per type. Changing wording or item count creates a different instrument and should receive a new version, rather than silently retaining the existing score label.</p>"
+    },
+    {
+      "h2": "Questionnaire provenance and reuse",
+      "html": "<p>The code is MIT licensed. That license does not relicense third-party question text. The included metadata points to the Open-Source Enneagram of Personality Scales development material. Its current live test has 54 items; this frozen AgentTune implementation has 36, so their keys and totals are not interchangeable. Review upstream rights for your intended use.</p><p>Before publishing an adaptation, test a blank page, keyboard navigation, back navigation, an all-neutral result, a unique winner and resetting the form. Keep ties visible. For the standalone JavaScript scorer and its complete item contract, see the <a href=\"/guides/open-source-enneagram-test\">Enneagram developer resource</a>.</p>"
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: canonical scorer, questions and provenance",
+      "href": "/guides/open-source-enneagram-test"
+    },
+    {
+      "label": "React: using TypeScript",
+      "href": "https://react.dev/learn/typescript"
+    },
+    {
+      "label": "Vite: getting started",
+      "href": "https://vite.dev/guide/"
+    },
+    {
+      "label": "OpenPsychometrics: OEPS development",
+      "href": "https://openpsychometrics.org/tests/OEPS/development/"
+    },
+    {
+      "label": "September research: tied Enneagram results",
+      "href": "/research/ai-personality-five-models-2026"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Developer resource",
+      "label": "Use the standalone JavaScript scorer",
+      "href": "/guides/open-source-enneagram-test"
+    },
+    {
+      "kicker": "Research",
+      "label": "Reproduce the raw questionnaire results",
+      "href": "/guides/reproduce-ai-personality-research"
+    },
+    {
+      "kicker": "Prompt library",
+      "label": "Enneagram prompts for all nine types",
+      "href": "/guides/enneagram-ai-prompts"
+    }
+  ]
+}

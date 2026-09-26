@@ -53,31 +53,19 @@ function card(n, color, title, source, headline, body, data) {
 // ---------- figures ----------
 // The plot shows 1–5 on both axes: every model sits below 4.1, and a full 1–7
 // plane squeezes the six points into one corner. The midpoint lines stay at 4.
+const charts = require('./research-charts');
 function attachmentPlane(points) {
-  const W = 600, H = 380, padL = 50, padR = 20, padT = 14, padB = 30, lo = 1, hi = 5;
-  const plotW = W - padL - padR, plotH = H - padT - padB;
-  const x = (v) => padL + ((v - lo) / (hi - lo)) * plotW;
-  const y = (v) => padT + (1 - (v - lo) / (hi - lo)) * plotH;
-  const grid = [1, 2, 3, 4, 5].map((v) => `<line x1="${x(v)}" y1="${padT}" x2="${x(v)}" y2="${padT + plotH}" stroke="#efe9df" stroke-width="0.5"/><line x1="${padL}" y1="${y(v)}" x2="${padL + plotW}" y2="${y(v)}" stroke="#efe9df" stroke-width="0.5"/><text x="${x(v)}" y="${padT + plotH + 12}" font-size="9" fill="#7a7468" text-anchor="middle">${v}</text><text x="${padL - 6}" y="${y(v) + 3}" font-size="9" fill="#7a7468" text-anchor="end">${v}</text>`).join('');
-  const dots = points.map((p) => `<circle cx="${x(p.anx).toFixed(1)}" cy="${y(p.avd).toFixed(1)}" r="13" fill="${p.color}20" stroke="${p.color}66" stroke-width="1"/><circle cx="${x(p.anx).toFixed(1)}" cy="${y(p.avd).toFixed(1)}" r="${p.kind === 'reported' ? 4 : 5}" fill="${p.kind === 'reported' ? '#ffffff' : p.color}" stroke="${p.color}" stroke-width="2"/><text x="${(x(p.anx) + p.dx).toFixed(1)}" y="${(y(p.avd) + p.dy).toFixed(1)}" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="${p.anchor || 'start'}">${esc(p.label)}</text>`).join('');
-  const desc = points.map((p) => `${p.label}: anxiety ${f2(p.anx)}, avoidance ${f2(p.avd)}`).join('; ');
-  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="rh-plane-title rh-plane-desc"><title id="rh-plane-title">Attachment plane, September 2026</title><desc id="rh-plane-desc">${esc(desc)}. Both axes run 1 to 7; the plot shows 1 to 5. The dashed lines mark the midpoint of 4 on each axis.</desc>${grid}<line x1="${x(4)}" y1="${padT}" x2="${x(4)}" y2="${padT + plotH}" stroke="#7a7468" stroke-width="1" stroke-dasharray="4 4"/><line x1="${padL}" y1="${y(4)}" x2="${padL + plotW}" y2="${y(4)}" stroke="#7a7468" stroke-width="1" stroke-dasharray="4 4"/><text x="${x(2.5)}" y="${y(4.7)}" font-size="10" fill="#7a7468" text-anchor="middle">Avoidant</text><text x="${x(4.5)}" y="${y(4.7)}" font-size="10" fill="#7a7468" text-anchor="middle">Disorganized</text><text x="${x(3.2)}" y="${y(1.3)}" font-size="10" fill="#2f8a5b" text-anchor="middle" font-weight="600">Secure</text><text x="${x(4.5)}" y="${y(1.3)}" font-size="10" fill="#7a7468" text-anchor="middle">Anxious</text><text x="${padL + plotW / 2}" y="${H - 4}" font-size="11" fill="#1e1d1a" text-anchor="middle">Anxiety (scale 1 → 7, showing 1 → 5)</text><text x="12" y="${padT + plotH / 2}" font-size="11" fill="#1e1d1a" text-anchor="middle" transform="rotate(-90 12 ${padT + plotH / 2})">Avoidance (scale 1 → 7, showing 1 → 5)</text>${dots}</svg>`;
+  return charts.figure(charts.plane({id:'rh-plane', title:'Attachment plane, September 2026',
+    desc:'Aggregate coordinates, not uncertainty intervals. Both scales run from 1 to 7; the plot shows 1 to 5.',
+    xLabel:'Anxiety (scale 1 to 7, showing 1 to 5)', yLabel:'Avoidance (scale 1 to 7, showing 1 to 5)',
+    points:points.map(p=>({label:p.label.replace(' (reported)',''),color:p.color,x:p.anx,y:p.avd,
+      reported:p.kind==='reported',dx:p.dx,dy:p.dy,anchor:p.anchor}))
+  }), 'Points show cohort means or supplied aggregates. Outlined points are reported profiles; the table below gives the coordinates.');
 }
-
 function groupedBars(traits, series) {
-  const W = 660, H = 210, top = 18, bottom = 40, plotH = H - top - bottom, max = 50;
-  const groupW = W / traits.length, innerW = groupW - 22, gap = 5;
-  const barW = (innerW - gap * (series.length - 1)) / series.length;
-  const groups = traits.map((t, gi) => {
-    const tx = gi * groupW + 11;
-    const bars = series.map((s, si) => {
-      const v = s.scores[gi], h = (v / max) * plotH;
-      return `<rect x="${(si * (barW + gap)).toFixed(1)}" y="${(top + plotH - h).toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" fill="${s.color}" rx="2"/><text x="${(si * (barW + gap) + barW / 2).toFixed(1)}" y="${(top + plotH - h - 4).toFixed(1)}" font-size="9.5" fill="#1e1d1a" text-anchor="middle">${f1(v)}</text>`;
-    }).join('');
-    return `<g transform="translate(${tx}, 0)">${bars}<text x="${innerW / 2}" y="${H - 14}" font-size="11" fill="#1e1d1a" text-anchor="middle">${t}</text></g>`;
-  }).join('');
-  const desc = series.map((s) => `${s.name}: ${traits.map((t, i) => `${t} ${f1(s.scores[i])}`).join(', ')}`).join('; ');
-  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="rh-bars-title rh-bars-desc"><title id="rh-bars-title">Big Five means, four fresh-session cohorts</title><desc id="rh-bars-desc">Scores out of 50. ${esc(desc)}.</desc><line x1="0" x2="${W}" y1="${top + plotH}" y2="${top + plotH}" stroke="#e3ddd1" stroke-width="1"/>${groups}</svg>`;
+  return charts.figure(charts.groupedBars({id:'rh-bars', title:'Big Five means, four fresh-session cohorts',
+    desc:'Raw means out of 50.', categories:traits,series:series.map(s=>({name:s.name,color:s.color,values:s.scores})),max:50,height:240
+  }), 'September 2026 fresh-session means, with the full trait scores in the table below.');
 }
 
 // ---------- the section ----------

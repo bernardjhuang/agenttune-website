@@ -1,0 +1,72 @@
+{
+  "slug": "ai-neutral-answers",
+  "route": "/research/ai-neutral-answers",
+  "published": "2026-09-25",
+  "updated": "2026-09-25",
+  "title": "AI test midpoints: neutral or inapplicable? | AgentTune",
+  "description": "Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.",
+  "pill": "Research · descriptive reanalysis",
+  "h1": "What does “neutral” mean when an AI takes a test?",
+  "lede": "A midpoint can mean balance, uncertainty, or that a question does not fit the respondent. The Astra cohort lets us inspect one of those possibilities because its prompt required an explicit inapplicable-item list.",
+  "answer": "Astra gives 2,980 midpoint responses across 17,000 item responses. It flags 1,823 of those as inapplicable: 61.2% of its midpoint answers. This is an item-response count within 100 batteries, not a count of independent people or models.",
+  "sections": [
+    {
+      "h2": "The denominator matters",
+      "html": "<p>Each of Astra’s 100 batteries contains 170 items: 32 MBTI, 50 Big Five, 16 DISC, 36 Enneagram and 36 attachment items. We count a response as a midpoint if it is 3 on a 1–5 scale or 4 on attachment’s 1–7 scale. A flag is counted only when the raw record explicitly lists that item.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Item responses</th><th scope=\"col\">Midpoints</th><th scope=\"col\">Flagged inapplicable</th><th scope=\"col\">Flagged / midpoints</th></tr></thead><tbody><tr><th scope=\"row\">mbti</th><td>3200</td><td>724</td><td>415</td><td>57.3%</td></tr><tr><th scope=\"row\">big-five</th><td>5000</td><td>678</td><td>539</td><td>79.5%</td></tr><tr><th scope=\"row\">disc</th><td>1600</td><td>253</td><td>164</td><td>64.8%</td></tr><tr><th scope=\"row\">enneagram</th><td>3600</td><td>1044</td><td>621</td><td>59.5%</td></tr><tr><th scope=\"row\">attachment</th><td>3600</td><td>281</td><td>84</td><td>29.9%</td></tr></tbody></table></div><p>All 1,823 flagged responses are midpoints. The remaining 1,157 midpoint responses have no inapplicability flag. The records do not tell us that those unflagged answers represent psychological moderation; they only tell us how the model answered and annotated them.</p>"
+    },
+    {
+      "h2": "Some human-specific items recur in every battery",
+      "html": "<p>Astra flags the MBTI statements about being alone, parties, and staying home in all 100 batteries. It also flags the Big Five party-conversation item and the DISC loud-crowd item in every battery.</p><p>Six Enneagram items are flagged in every battery: family first, money and happiness, daydreaming about love, bittersweet feelings, immersion in music, and time alone with hobbies. This pattern is consistent with the explicit instruction to avoid inventing a human biography. It does not independently establish why every unflagged item received its answer.</p>"
+    },
+    {
+      "h2": "A midpoint does different work in each scorer",
+      "html": "<p>In MBTI, a response of 3 adds no points to either pole. Enough zero contributions can leave an axis tied, after which a tie-breaking policy may assign a letter. In the Big Five, a midpoint contributes three points whether the item is reverse-scored or not. In Enneagram and DISC, it contributes three points to the keyed type. In attachment, four remains four after reversing an item.</p><p>The same annotation can therefore affect the final report differently across instruments. Treating all neutral answers as a single personality characteristic would ignore those scoring mechanics.</p>"
+    },
+    {
+      "h2": "Do not quietly delete flagged answers",
+      "html": "<p>Removing inapplicable items changes how many items contribute to a dimension. A raw total with fewer terms is no longer on the original scale. Replacing missing values with a mean or rescaling the result creates a new scoring rule. Either choice needs an explicit protocol, its own validation and a separate result label.</p><p>For this release we preserve the original vectors, retain their published scores, and expose the flags alongside them. A future sensitivity analysis could compare stated alternatives, but it should not retroactively replace the original result or describe an unvalidated adjustment as a correction.</p>"
+    },
+    {
+      "h2": "How to collect better metadata",
+      "html": "<p>Record the response value, whether the item is considered applicable, and a short reason separately. Define the midpoint policy before collection and keep it constant across models. Avoid asking the model to guess which answer would be typical of a human with a particular label.</p><p>Compare flag rates only when the annotation instruction is equivalent. Missing flags from Sol, Opus or Fable are missing metadata, not evidence of zero inapplicable items. A useful follow-up would administer matched prompts with and without the explicit midpoint instruction and measure the change.</p>"
+    },
+    {
+      "h2": "Inspect the counts yourself",
+      "html": "<p><a href=\"/research/data/astra-midpoint-items.csv\" download>Download the item-level midpoint and flag counts</a>. Each row identifies an instrument and item, with counts out of 100 administrations. The complete reanalysis JSON includes the same table and a check for any flagged response that is not a midpoint. That check returns zero in this archive.</p>"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Continue reading",
+      "label": "The downstream effect of tied axes",
+      "href": "/research/ai-mbti-tie-breaking"
+    },
+    {
+      "kicker": "Continue reading",
+      "label": "Astra and Sol’s different protocols",
+      "href": "/research/astra-vs-sol-personality-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "September 2026 study: protocols and limitations",
+      "href": "/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "Frozen raw answers (JSON)",
+      "href": "/research/data/september-2026-responses.json"
+    },
+    {
+      "label": "Frozen questionnaire items and keys",
+      "href": "/research/data/september-2026-instruments.json"
+    },
+    {
+      "label": "Reanalysis code (CommonJS)",
+      "href": "/research/data/content-analysis.cjs"
+    },
+    {
+      "label": "Complete derived results (JSON)",
+      "href": "/research/data/content-analysis.json"
+    }
+  ]
+}

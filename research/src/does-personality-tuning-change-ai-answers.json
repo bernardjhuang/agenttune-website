@@ -73,6 +73,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "Do personality prompts beat plain-English preferences?",
+      "href": "/guides/personality-prompts-vs-plain-english"
+    },
+    {
       "kicker": "Guide",
       "label": "The best Claude personality setups",
       "href": "/guides/best-claude-personality"

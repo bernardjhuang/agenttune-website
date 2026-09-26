@@ -85,6 +85,11 @@
   ],
   "related": [
     {
+      "kicker": "New resource",
+      "label": "When does Claude follow your preferences? A test kit",
+      "href": "/guides/claude-preferences-test"
+    },
+    {
       "kicker": "Research",
       "label": "The five-model questionnaire study",
       "href": "/research/ai-personality-five-models-2026"

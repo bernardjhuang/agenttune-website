@@ -176,11 +176,11 @@
     .c-code { padding: 22px 24px; white-space: pre-wrap; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
     .c-code .c-h2 { color: #b4a7ff; font-weight: 600; }
-    .c-statusbar { background: var(--lib-accent); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
+    .c-statusbar { background: var(--lib-accent-text, #9f4427); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
     .c-statusbar-left { display: flex; align-items: center; gap: 16px; }
     .c-statusbar-actions { display: flex; gap: 8px; }
-    .c-status-btn { background: rgba(255,255,255,0.18); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
-    .c-status-btn:hover { background: rgba(255,255,255,0.30); }
+    .c-status-btn { background: rgba(0,0,0,0.12); color: #fff; border: none; font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 3px; cursor: pointer; transition: background 0.12s ease; }
+    .c-status-btn:hover { background: rgba(0,0,0,0.22); }
     .c-status-btn.is-strong { background: #fff; color: var(--lib-accent-text); }
 
     @media (max-width: 720px) {
@@ -483,7 +483,7 @@ You think out loud; that&#39;s how you work. Tell me the project, why it&#39;s s
     <section class="lib-related" style="margin-top: 56px;">
       <div class="lib-eyebrow">You might also browse</div>
       <div class="lib-related-pills">
-        <a class="lib-related-pill" href="/library/ocean/extraversion-low" style="color: #d99632;">E-low →</a><a class="lib-related-pill" href="/library/ocean/openness-high" style="color: #d99632;">O-high →</a><a class="lib-related-pill" href="/library/ocean/conscientiousness-high" style="color: #d99632;">C-high →</a><a class="lib-related-pill" href="/library/ocean/agreeableness-high" style="color: #d99632;">A-high →</a><a class="lib-related-pill" href="/library/ocean/neuroticism-high" style="color: #d99632;">N-high →</a>
+        <a class="lib-related-pill" href="/library/ocean/extraversion-low" style="color: #855b1c;">E-low →</a><a class="lib-related-pill" href="/library/ocean/openness-high" style="color: #855b1c;">O-high →</a><a class="lib-related-pill" href="/library/ocean/conscientiousness-high" style="color: #855b1c;">C-high →</a><a class="lib-related-pill" href="/library/ocean/agreeableness-high" style="color: #855b1c;">A-high →</a><a class="lib-related-pill" href="/library/ocean/neuroticism-high" style="color: #855b1c;">N-high →</a>
         <a class="lib-related-pill is-all" href="/library/#ocean">All 10 Big Five poles →</a>
       </div>
     </section>
@@ -528,8 +528,16 @@ You think out loud; that&#39;s how you work. Tell me the project, why it&#39;s s
       // Download or copy the base tuning; model-specific prompts are in Install.
       const cCopyBtn = document.getElementById("c-copy");
       const cDlBtn = document.getElementById("c-dl");
-      if (cCopyBtn) cCopyBtn.addEventListener("click", function () {
-        navigator.clipboard.writeText(TUNING).then(function () { showToast("Copied ✓"); track("copy_tuning_markdown"); });
+      const copyLabel = cCopyBtn && cCopyBtn.textContent;
+      if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
+        try {
+          await navigator.clipboard.writeText(TUNING);
+          cCopyBtn.textContent = copyLabel;
+          showToast("Copied ✓"); track("copy_tuning_markdown");
+        } catch {
+          cCopyBtn.textContent = "Copy unavailable — use Download";
+          showToast("Copy unavailable. Select the text or use Download.");
+        }
       });
       if (cDlBtn) cDlBtn.addEventListener("click", doDownload);
 

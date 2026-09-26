@@ -110,3 +110,15 @@ test("inline JavaScript in touched entry points and generated pages parses", () 
     }
   }
 });
+
+test('every setup link inserted by the prompt picker resolves to a published page',()=>{
+  const p=load().AT_PROMPTS;
+  const {isPublic}=require('../tools/build-public');
+  const links=new Set();
+  for(const model of p.models)for(const destination of p.destinations(model.id))for(const [,href] of destination.steps.matchAll(/href="(\/[^"#]+)(?:#[^"]*)?"/g))links.add(href);
+  assert.ok(links.size>0);
+  for(const href of links){
+    const route=href.replace(/^\//,'');
+    assert.ok([route,route+'.html',route.replace(/\/$/,'')+'/index.html'].some(file=>isPublic(file)&&fs.existsSync(path.join(root,file))),href);
+  }
+});

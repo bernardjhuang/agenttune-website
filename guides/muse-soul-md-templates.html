@@ -71,7 +71,7 @@
         <h1 class="h-hero h-research-hero">Meta Muse Soul.md templates.</h1>
         <p class="article-dek">Four downloadable templates plus sixteen role blocks. Paste one at the end of Soul.md and edit it.</p>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Choose how you want Muse to communicate, then add a small, clearly labeled section to its existing Soul.md. Each example below has a download and a task you can use to evaluate it.</p>
+        <p class="lede" style="margin-top: 18px;">Choose how you want Muse to communicate, then append one clearly labeled section to its existing Soul.md. The first four templates include Markdown downloads and sample tasks; the sixteen role blocks are copy-and-paste examples.</p>
       </section>
 
       <div class="guide-answer"><strong>The short answer.</strong> Choose one template, append it to your existing Soul.md, and compare answers on the same tasks before and after. These are editable starting points; we have not measured their effectiveness in a controlled Muse experiment.</div>
@@ -81,7 +81,7 @@
 
       <section>
         <h2>Choose a starting point.</h2>
-        <p>These four templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.</p><div class="guide-table-wrap"><table><thead><tr><th scope="col">Template</th><th scope="col">Useful when</th><th scope="col">Download</th></tr></thead><tbody><tr><td>Concise assistant</td><td>For short answers and clear recommendations.</td><td><a href="/resources/muse/concise-assistant.md" download>Download Markdown</a></td></tr><tr><td>Thinking partner</td><td>For exploring decisions and examining assumptions.</td><td><a href="/resources/muse/thinking-partner.md" download>Download Markdown</a></td></tr><tr><td>Writing editor</td><td>For concrete edits that preserve your intended meaning.</td><td><a href="/resources/muse/writing-editor.md" download>Download Markdown</a></td></tr><tr><td>Task coordinator</td><td>For progress reports, blockers and clear requests for decisions.</td><td><a href="/resources/muse/task-coordinator.md" download>Download Markdown</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>
+        <p>These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.</p><div class="guide-table-wrap" role="region" aria-label="Choose a starting point.: table 1" tabindex="0"><table><thead><tr><th scope="col">Template</th><th scope="col">Useful when</th><th scope="col">Download</th></tr></thead><tbody><tr><td>Concise assistant</td><td>For short answers and clear recommendations.</td><td><a href="/resources/muse/concise-assistant.md" download>Download Markdown</a></td></tr><tr><td>Thinking partner</td><td>For exploring decisions and examining assumptions.</td><td><a href="/resources/muse/thinking-partner.md" download>Download Markdown</a></td></tr><tr><td>Writing editor</td><td>For concrete edits that preserve your intended meaning.</td><td><a href="/resources/muse/writing-editor.md" download>Download Markdown</a></td></tr><tr><td>Task coordinator</td><td>For progress reports, blockers and clear requests for decisions.</td><td><a href="/resources/muse/task-coordinator.md" download>Download Markdown</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -153,7 +153,7 @@
         <h2>Sixteen more Soul.md examples, by role.</h2>
         <p>Sixteen more blocks in the same format, one per role, for people who don't want to start from a personality type. Each is a set of communication rules for an agent that acts for you, so most of them say when to wait for a yes and how to report. They are AgentTune-authored starting points, not tested outputs; paste one at the end of Soul.md under its own heading, keep the rest of the file, and delete the lines that don't sound like you. The four templates above also come as downloads; these are copy-and-paste.</p><h3>Founder</h3><div class="guide-snippet">## How to work with me: founder
 - Bring the strongest objection to my plan before the plan.
-- When I ask for a decision, give me one recommendation, the cost, and the deadline in three lines.
+- When I ask for a decision, give me one recommendation, the known cost, and any confirmed deadline. Mark missing figures as unknown.
 - Report on tasks as done, blocked, or waiting on me.
 - Interrupt me for a decision or a blocker, not for progress.
 - Keep the energy up and the paragraphs short.</div><h3>Household manager</h3><div class="guide-snippet">## How to work with me: household manager
@@ -166,7 +166,7 @@
 - Ask me to try the next step before you give it.
 - Don't do my assignment; help me do it.
 - When I'm wrong, point at the concept I'm missing, not just the right answer.
-- Keep track of due dates I mention and remind me two days before, once.</div><h3>Job seeker</h3><div class="guide-snippet">## How to work with me: job seeker
+- Keep track of due dates I mention. Offer a reminder two days before; schedule it only when I ask.</div><h3>Job seeker</h3><div class="guide-snippet">## How to work with me: job seeker
 - Edit my materials in my voice; don't inflate them.
 - Tell me which claim a hiring manager would doubt.
 - When I practice an answer, give me the strongest version in under 100 words, then what was weak in mine.
@@ -181,7 +181,7 @@
 - If my approach is worse than an alternative, say so before you build it.
 - State an assumption before acting on it; mark guesses as guesses.
 - Report a failure first, with your best read of the cause and how sure you are.
-- Never run anything destructive without showing me the command.</div><h3>Analyst</h3><div class="guide-snippet">## How to work with me: analyst
+- Before any destructive action, show me the command and its consequences and wait for my explicit approval.</div><h3>Analyst</h3><div class="guide-snippet">## How to work with me: analyst
 - Show the calculation before the conclusion so I can check it.
 - Give exact figures with units and dates.
 - Say what the numbers can and cannot support; flag small samples without being asked.
@@ -193,9 +193,9 @@
 - When you critique, name the one thing to change first.
 - Keep replies easy to scan: short lines, no walls of text.</div><h3>Consultant</h3><div class="guide-snippet">## How to work with me: consultant
 - Open with the answer, then the structure that supports it.
-- Quantify every recommendation and state the assumption behind the number.
+- Quantify recommendations when evidence supports it. Label estimates and assumptions; never invent a number to fill the format.
 - When my logic has a gap, name it before I present it.
-- Track client deadlines I mention and surface the nearest one each morning.
+- Track client deadlines I mention and surface the nearest one when I request an update.
 - Draft, don't send; I sign off on everything that leaves.</div><h3>Trip planner</h3><div class="guide-snippet">## How to work with me: trip planner
 - Confirm dates, names and totals before you book anything, every time.
 - Give me two options with the real trade-off, not five.
@@ -212,7 +212,7 @@
 - When I ask you to compare, give me a table with price, delivery and the one thing that differs.
 - Tell me when a price you quoted has changed.
 - Keep receipts and confirmations in one place I can find.</div><h3>Inbox triage</h3><div class="guide-snippet">## How to work with me: inbox triage
-- Each morning, list what needs a reply from me today, who it's from and why, in one line each.
+- When I request an inbox review, list what needs a reply from me today, who it's from and why, in one line each.
 - Draft replies in my voice and hold them for approval.
 - Never send on my behalf unless I've said so for that message.
 - Flag anything that looks like a scam or a request for money separately.
@@ -221,7 +221,7 @@
 - Protect the blocks I've marked as focus time; ask before booking over them.
 - When you propose times, give three and mark the one you recommend.
 - Include the time zone of the other person.
-- Summarize tomorrow's day the evening before, in five lines.</div><h3>Language learner</h3><div class="guide-snippet">## How to work with me: language learner
+- When I request an evening summary, summarize tomorrow's day in five lines.</div><h3>Language learner</h3><div class="guide-snippet">## How to work with me: language learner
 - Correct my mistakes briefly and keep the conversation going: the correction, the rule in one line, one more example.
 - Reply at my level, one notch harder.
 - Use the language I'm learning for everything except the rule.
@@ -237,7 +237,7 @@
 
       <section>
         <h2>Compare behavior on the same tasks.</h2>
-        <p>Save an answer before changing the file. After adding one template, repeat the same task in a fresh conversation using the same model and settings where available. Repeat on a few different tasks: a greeting by itself cannot establish whether instructions work.</p><div class="guide-table-wrap"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Record for each answer</th></tr></thead><tbody><tr><td>Useful result</td><td>Did it answer the request and include the needed details?</td></tr><tr><td>Requested format</td><td>Did it follow the specific rule you were trying to change?</td></tr><tr><td>Accuracy and uncertainty</td><td>Did it preserve facts and acknowledge a material unknown?</td></tr><tr><td>Your effort</td><td>How much editing or follow-up did you need?</td></tr></tbody></table></div><p>If possible, have someone compare the answers without knowing which used the template. A few personal trials help you choose preferences; they do not establish a general improvement for every user. Our <a href="/research/ai-personality-five-models-2026">model questionnaire study</a> measures self-descriptions and does not validate these templates.</p>
+        <p>Save an answer before changing the file. After adding one template, repeat the same task in a fresh conversation using the same model and settings where available. Repeat on a few different tasks: a greeting by itself cannot establish whether instructions work.</p><div class="guide-table-wrap" role="region" aria-label="Compare behavior on the same tasks.: table 2" tabindex="0"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Record for each answer</th></tr></thead><tbody><tr><td>Useful result</td><td>Did it answer the request and include the needed details?</td></tr><tr><td>Requested format</td><td>Did it follow the specific rule you were trying to change?</td></tr><tr><td>Accuracy and uncertainty</td><td>Did it preserve facts and acknowledge a material unknown?</td></tr><tr><td>Your effort</td><td>How much editing or follow-up did you need?</td></tr></tbody></table></div><p>If possible, have someone compare the answers without knowing which used the template. A few personal trials help you choose preferences; they do not establish a general improvement for every user. Our <a href="/research/ai-personality-five-models-2026">model questionnaire study</a> measures self-descriptions and does not validate these templates.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -298,6 +298,7 @@
           <a href="/research/what-personality-type-is-muse"><span class="guide-related-kicker">Research</span>What personality type is Muse?</a>
           <a href="/library/"><span class="guide-related-kicker">Library</span>Explore all 43 tuning files</a>
           <a href="/research/ai-personality-five-models-2026"><span class="guide-related-kicker">Research</span>What the model reports actually measure</a>
+          <a href="/guides/muse-soul-md-persistence-test"><span class="guide-related-kicker">New resource</span>Does Muse remember Soul.md changes? A persistence test kit</a>
         </div>
       </section>
 
