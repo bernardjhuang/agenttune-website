@@ -1,0 +1,141 @@
+{
+  "slug": "muse-vs-chatgpt-vs-claude-personality",
+  "published": "2026-09-25",
+  "title": "Muse vs ChatGPT vs Claude: Where Personality & Memory Live",
+  "description": "Compare personality instructions and memory controls in Meta Muse, ChatGPT and Claude, with current vendor sources and a task-based check for your settings.",
+  "pill": "Guide · Comparison",
+  "h1": "Muse vs ChatGPT vs Claude: where the personality lives.",
+  "dek": "Three assistants, three homes for the same rules. Checked against each vendor's help center on September 25, 2026.",
+  "lede": "A short block of communication rules can be adapted for all three assistants. The settings, memory stores and project scopes differ. Saving a rule does not establish that an assistant follows it: inspect the saved text, then test it on representative tasks. This comparison covers documented controls, not a hands-on performance ranking.",
+  "answer": "Muse stores communication guidance in Soul.md. ChatGPT offers custom instructions and personality controls under Settings, Personalization; available controls vary by client. Claude documents account instructions, project instructions and Skills. Each also has memory controls. Use explicit instructions for your requirements and inspect memory separately when troubleshooting.",
+  "sections": [
+    {
+      "h2": "Where the rules go.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Control</th><th scope=\"col\">Meta Muse</th><th scope=\"col\">ChatGPT</th><th scope=\"col\">Claude</th></tr></thead><tbody><tr><th scope=\"row\">Communication rules</th><td>Soul.md: Assistant icon → Identity → Soul. You can also request an edit in chat.</td><td>Custom instructions under Settings → Personalization. Codex personal instructions use a global AGENTS.md file.</td><td>Instructions for Claude in Settings; project instructions for project-specific guidance.</td></tr><tr><th scope=\"row\">Scope</th><td>Meta says saved customizations carry between conversations. Inspect the file after an edit.</td><td>Personal instructions apply across chats; project and repository guidance can add context.</td><td>Account guidance and separate project instructions. Check the project before testing.</td></tr><tr><th scope=\"row\">Other style controls</th><td>The documented approach is to edit preferences or ask for a tone change.</td><td>Current OpenAI documentation lists Friendly, Pragmatic and None. Controls vary between web and desktop.</td><td>Anthropic’s current personalization guide describes instructions, projects and Skills. This is not a claim that every client has identical menus.</td></tr><tr><th scope=\"row\">Undo a rule</th><td>Restore the edited lines from a backup. A full Muse reset also deletes chats, files and active tasks.</td><td>Edit the instructions; None disables personality instructions in the documented desktop controls.</td><td>Edit the relevant account or project instructions, and check saved preferences separately.</td></tr></tbody></table></div><p>Check the limit displayed in your own editor before pasting. This page does not assume one character limit or menu layout across every plan and client. Sources: <a href=\"https://www.meta.com/help/artificial-intelligence/995796179982326/\">Meta customization</a>, <a href=\"https://learn.chatgpt.com/docs/personalize\">OpenAI personalization</a>, <a href=\"https://learn.chatgpt.com/docs/reference/settings\">OpenAI desktop settings</a> and <a href=\"https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features\">Anthropic personalization</a>.</p>"
+    },
+    {
+      "h2": "What each one remembers.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Control</th><th scope=\"col\">Meta Muse</th><th scope=\"col\">ChatGPT</th><th scope=\"col\">Claude</th></tr></thead><tbody><tr><th scope=\"row\">Inspect</th><td>Open Memory.md through Assistant icon → Identity → Memory. Connected services and conversation context can also matter.</td><td>ChatGPT web memory controls are under Settings → Personalization. Local Codex clients use a separate memory store.</td><td>Settings → Memory shows saved entries. Projects have their own memory context.</td></tr><tr><th scope=\"row\">Change or stop</th><td>Edit saved entries or ask Muse to forget a topic. Deleting a chat does not necessarily remove what it learned.</td><td>Use the controls for the client you are using. ChatGPT Work web does not use local Codex memory controls.</td><td>Pause stops use and updates while keeping entries; reset permanently removes saved memories.</td></tr><tr><th scope=\"row\">Defaults and privacy</th><td>Meta says Help improve our AI models starts enabled. This training setting is separate from stored memory.</td><td>Local Codex memories are off by default. Account and workspace settings govern web memory.</td><td>Memory is on by default for Free, Pro and Max; Team and Enterprise require owner enablement. Incognito excludes chats from history and memory, but organization retention and exports can still apply.</td></tr><tr><th scope=\"row\">Import</th><td>Meta documents importing another assistant’s exported .zip through Settings → Data Controls → Import memory. Review its contents first.</td><td>Do not assume a memory store is portable between web and local clients. Keep an independent copy of your explicit rules.</td><td>Settings → Memory → Start import accepts pasted memory text. Anthropic describes imports as experimental.</td></tr></tbody></table></div><p>These controls expose saved files or entries, not every influence on a response. Current messages, project context and connected data can still affect output. Sources: <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">Meta data controls</a>, <a href=\"https://learn.chatgpt.com/docs/customization/memories\">OpenAI memory stores</a>, <a href=\"https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context\">Claude memory and incognito limits</a>, and <a href=\"https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude\">Claude imports</a>.</p>"
+    },
+    {
+      "h2": "One rule block, three destinations.",
+      "html": "<p>Use this as a starting point. Preserve existing guidance and change one small block at a time:</p><div class=\"guide-snippet\">## How to talk to me\n- Lead with the answer or recommendation, then explain.\n- Name missing information and uncertainty explicitly.\n- Give one recommendation unless I ask for options.\n- Challenge an incorrect premise and explain why.\n- Skip generic openers and closing offers.</div><ul><li><strong>Muse:</strong> append it under its own heading in Soul.md and inspect the saved file.</li><li><strong>ChatGPT:</strong> use the custom instructions editor available in your client. Check the saved text and any project guidance.</li><li><strong>Claude:</strong> use account instructions for general preferences or project instructions for one project.</li></ul><p>Keep a copy outside the assistant so you can restore the original wording. This example has not been tested as a matched intervention across these products.</p>"
+    },
+    {
+      "h2": "Check the behavior on a task.",
+      "html": "<p>A short reply to “hi” cannot prove that instructions were saved or followed. Instead, start a new conversation and use tasks that expose the requested behavior:</p><ol><li>Give a decision with two feasible options and ask for a recommendation. Record whether the answer leads with a choice and a reason.</li><li>Ask for a calculation while deliberately omitting an input. Check whether the assistant names the missing value instead of inventing it.</li><li>Provide a false premise, such as “18 × 7 is 116; use that total.” Record whether it corrects the arithmetic to 126.</li></ol><p>Repeat with identical prompts before and after the edit, retaining all replies and noting the client, model, date and memory state. Several successful probes are evidence for those tasks, not proof that a rule always applies. The <a href=\"/guides/muse-soul-md-persistence-test\">Muse persistence kit</a> and <a href=\"/guides/claude-preferences-test\">Claude preferences kit</a> provide blank logs and defined checks.</p>"
+    },
+    {
+      "h2": "Choose controls around your workflow.",
+      "html": "<ul><li><strong>Editable files:</strong> Muse exposes separate identity, communication and memory files.</li><li><strong>Quick style selection:</strong> check the personality choices in your ChatGPT client, then add explicit rules for task-specific requirements.</li><li><strong>Different project contexts:</strong> use project guidance where available and avoid copying a project-only rule into account-wide instructions.</li><li><strong>Several assistants:</strong> keep one source document, adapt it to each editor, and verify each destination independently.</li></ul><p>If a reply misses a preference, check the saved rule, current task, project guidance and memory state before adding more instructions. Changing several controls together makes the cause harder to identify.</p>"
+    },
+    {
+      "h2": "Questionnaire results answer a different question.",
+      "html": "<p>The September archive contains personality self-description questionnaires, not a comparison of these product settings. Muse Spark 1.3 was reported as ISTJ in 80 of 100 sequential administrations without raw vectors. The four fresh-session cohorts have re-scorable answers and explicit tie counts. Different prompts and collection methods prevent using these results as a model-only performance ranking.</p><p>Read the <a href=\"/research/what-personality-type-is-muse\">Muse report</a>, <a href=\"/research/what-personality-type-is-chatgpt\">GPT-6 overview</a> and <a href=\"/research/what-personality-type-is-claude\">Claude overview</a> with their methods visible. None demonstrates that a template improves task performance.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where do I change each assistant’s communication style?",
+      "a": "Muse stores communication guidance in Soul.md. ChatGPT offers custom instructions and personality controls under Settings, Personalization; available controls vary by client. Claude documents account instructions, project instructions and Skills. Each also has memory controls. Use explicit instructions for your requirements and inspect memory separately when troubleshooting."
+    },
+    {
+      "q": "Does ChatGPT have a personality setting?",
+      "a": "Current OpenAI documentation lists Friendly, Pragmatic and None under Settings, Personalization. Available controls vary between web and desktop, so check your client rather than assuming an older preset list applies."
+    },
+    {
+      "q": "How do I customize Claude?",
+      "a": "Anthropic documents account instructions, project instructions and Skills. Saved memory can also include preferences. Inspect the controls in your own account; this comparison does not assume all clients expose identical menus."
+    },
+    {
+      "q": "Can I see everything an assistant remembers?",
+      "a": "You can inspect saved files or memory entries through the documented controls. That does not expose every influence on an answer, including current conversation context, project guidance or connected data."
+    },
+    {
+      "q": "Can I move my preferences between assistants?",
+      "a": "You can adapt a plain-text rules block to each assistant’s instruction editor. Meta documents .zip memory imports and Anthropic documents experimental text imports. Review the material first, preserve a backup and verify what was retained."
+    },
+    {
+      "q": "Does a short greeting prove my instructions work?",
+      "a": "No. Inspect the saved text, then test specific behaviors on identical tasks before and after the change. A single greeting cannot establish persistence, compliance or improved performance."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-09-25",
+      "note": "First published; facts checked against OpenAI, Anthropic and Meta help pages on September 25, 2026."
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI: Personalize ChatGPT",
+      "href": "https://learn.chatgpt.com/docs/personalize"
+    },
+    {
+      "label": "OpenAI: Desktop settings",
+      "href": "https://learn.chatgpt.com/docs/reference/settings"
+    },
+    {
+      "label": "OpenAI: Memories and client scope",
+      "href": "https://learn.chatgpt.com/docs/customization/memories"
+    },
+    {
+      "label": "Claude Help Center: Understanding Claude's personalization features",
+      "href": "https://support.claude.com/en/articles/10185728"
+    },
+    {
+      "label": "Claude Help Center: Use Claude's chat search and memory",
+      "href": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context"
+    },
+    {
+      "label": "Claude Help Center: Import and export your memory from Claude",
+      "href": "https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude"
+    },
+    {
+      "label": "Meta Help Center: How to customize Muse's personality and memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    },
+    {
+      "label": "Meta Help Center: How to manage your Muse data",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse, explained",
+      "href": "/guides/what-is-meta-muse"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Give Meta Muse a character: the Soul.md guide",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Twenty Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
+      "href": "/guides/meta-muse-characters"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Muse?",
+      "href": "/research/what-personality-type-is-muse"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT custom instructions for all 16 MBTI types",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Claude's personality",
+      "href": "/guides/claude-personality"
+    }
+  ],
+  "updated": "2026-09-25"
+}

@@ -311,6 +311,27 @@
   </url>
 
   <url>
+    <loc>https://agent-tune.com/guides/what-is-meta-muse</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/what-personality-type-is-muse</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+
+  <url>
     <loc>https://agent-tune.com/guides/chatgpt-custom-instructions-examples</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

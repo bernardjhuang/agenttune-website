@@ -1,0 +1,102 @@
+{
+  "slug": "what-personality-type-is-muse",
+  "route": "/research/what-personality-type-is-muse",
+  "published": "2026-09-25",
+  "title": "What Personality Type Is Muse? Muse Spark 1.3 Report (2026)",
+  "description": "Muse Spark 1.3, as reported: ISTJ in 80 of 100 runs, Helper on the Enneagram, Secure in every run. Why one report can't settle it.",
+  "pill": "Research · Q&A",
+  "h1": "What personality type is Muse?",
+  "dek": "One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.",
+  "lede": "The supplied Muse Spark 1.3 report lists ISTJ in 80 of 100 MBTI administrations. These are reported labels from sequential runs in one session per test, without raw answers. They do not establish Muse’s default personality or a change relative to other AI systems.",
+  "answer": "Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.",
+  "sections": [
+    {
+      "h2": "Muse Spark 1.3, as reported.",
+      "html": "<p>The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked <em>reported</em>, next to the four models that answered in fresh sessions with every answer published.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Muse Spark 1.3, 100 runs, reported</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label contains I and J; 92 contain S. These letter counts include tied-axis assignments. Twenty-one runs had a tied axis, resolved by the original reporting rule.</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) labels in 78 runs, Reformer (1) in 15; the report describes 2w1 as its usual wing. Twenty runs reportedly tied at the top; the supplied Type 2 and Type 1 counts do not account for the other seven labels. Type means of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2.</td></tr><tr><td>DISC</td><td>Steadiness first in 55 runs, Conscientiousness first in 45. Means of 20: D 5.1, I 10.9, S 15.2, C 15.6.</td></tr><tr><td>Attachment</td><td>Secure in all 100. Anxiety 2.04, avoidance 2.52 on 1 to 7 scales where 4 is the cutoff.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "What the scores describe.",
+      "html": "<p>The reported Big Five totals are O 39.5, C 41.2, E 33.8, A 44.6 and N 15.6, on this implementation’s 10–50 scale. They are questionnaire scores, not percentiles or observations of creativity, sociability or emotional stability.</p><p>Muse’s reported O total is lower and E total higher than the means of the four September fresh-session cohorts. Different collection methods and prompts prevent treating that numerical contrast as a behavioral ranking. Its reported DISC Influence mean is 10.9; the four fresh-cohort means range from 8.00 to 8.71. Neither comparison explains whether Muse proactively messages a user or follows a saved rule.</p>"
+    },
+    {
+      "h2": "Reported aggregates beside reproducible records.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Model</th><th scope=\"col\">Evidence</th><th scope=\"col\">MBTI, out of 100</th><th scope=\"col\">Enneagram, out of 100</th><th scope=\"col\">Big Five O · C · E · A · N</th></tr></thead><tbody><tr><th scope=\"row\">Muse Spark 1.3</th><td>Reported sequential administrations; no raw vectors</td><td>ISTJ 80; tie-preserving count unavailable</td><td>Type 2 labels 78; 20 top ties reported</td><td>39.5 · 41.2 · 33.8 · 44.6 · 15.6</td></tr><tr><th scope=\"row\">GPT-6 Astra</th><td>100 fresh sessions per five-test battery</td><td>INTJ 19 fully resolved</td><td>Type 2 sole leader 50; 40 top ties</td><td>44.5 · 43.7 · 32.8 · 45.1 · 19.1</td></tr><tr><th scope=\"row\">GPT-6 Sol</th><td>100 fresh sessions per five-test battery</td><td>INTJ 79 fully resolved</td><td>Type 5 sole leader 48; 40 top ties</td><td>46.9 · 43.6 · 30.8 · 45.0 · 20.1</td></tr><tr><th scope=\"row\">Claude Opus 5.5</th><td>100 fresh sessions per test</td><td>INTJ 84 fully resolved</td><td>2/5/8 top tie in 49; 65 top ties</td><td>44.6 · 42.0 · 31.8 · 47.1 · 15.4</td></tr><tr><th scope=\"row\">Claude Fable 5.1</th><td>100 fresh sessions per test</td><td>INTJ 98 fully resolved</td><td>Type 8 sole leader 55; 44 top ties</td><td>43.9 · 43.6 · 32.7 · 45.0 · 17.1</td></tr></tbody></table></div><p>These columns use different evidence types. Muse’s legacy labels include tie-breaks; the fresh cohorts show fully resolved INTJ patterns and sole Enneagram leaders or explicit top ties. The figures are placed together to show their provenance, not to rank comparable performances. Astra’s most common fully resolved MBTI pattern is ISTJ in 45 runs.</p>"
+    },
+    {
+      "h2": "What this report cannot show.",
+      "html": "<ul><li><strong>Sequential runs share a session.</strong> Later answers can be shaped by earlier ones. The fresh-session models on the hub used a new session per questionnaire (Claude) or per battery (GPT-6).</li><li><strong>No raw answers.</strong> We could not re-score the vectors, check the tie handling, or compute the per-item means the other pages use. Every figure is as supplied.</li><li><strong>Labels include tie-breaks.</strong> The 78 Helper labels and the 80 ISTJ labels were assigned with the original reporting rule (lower Enneagram number; I, N, T or J on a tied axis). The report says 20 Enneagram runs and 21 MBTI runs tied; outright wins were not supplied.</li><li><strong>One model version, one identity prompt.</strong> Answering as \"Muse\" rather than as a neutral assistant is itself a prompt, and it may pull the answers toward the product's character.</li></ul><p>A matched rerun in fresh sessions, with the answer vectors published, would make the scoring independently reproducible. To design a comparable collection, the five instruments and the scorer are on the <a href=\"/research/ai-personality-five-models-2026\">five-model study page</a>.</p>"
+    },
+    {
+      "h2": "How to use the report.",
+      "html": "<p>Use the results to form questions for a task evaluation, not to assume a communication deficit. For example, test whether Muse challenges a false premise, names missing information, or follows your preferred progress-report format. Save replies and score those observations separately from self-description totals.</p><p>The <a href=\"/guides/muse-soul-md-templates\">twenty templates</a> are editable starting points; their benefit has not been established by this report. The <a href=\"/guides/muse-soul-md-persistence-test\">persistence test kit</a> supplies fixed probes and a blank log. No before/after results are implied.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What MBTI type is Muse?",
+      "a": "Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them."
+    },
+    {
+      "q": "What Enneagram type is Muse?",
+      "a": "The report lists Type 2 labels in 78 administrations and Type 1 in 15, with 20 top ties. The remaining seven labels are not specified in the available aggregate summary. We cannot reconstruct sole winners or validate the reported wing without raw answers."
+    },
+    {
+      "q": "Is Muse the first AI that is not INTJ?",
+      "a": "The archive does not establish that claim. Muse’s supplied report has a majority of ISTJ labels, while Astra’s fresh-session cohort has more original ISTJ labels than INTJ labels (46 versus 45). Different prompts, tie policies and collection methods prevent a chronology or trend claim."
+    },
+    {
+      "q": "Can these results rank Muse against Claude or GPT-6?",
+      "a": "No. Muse’s sequential aggregate report and the other models’ raw fresh-session cohorts are different evidence types. Their numbers can be described together with methods visible, but they do not establish a model-only effect or task-performance ranking."
+    },
+    {
+      "q": "Does changing Soul.md improve Muse’s answers?",
+      "a": "This report did not test Soul.md changes. The templates and persistence kit provide a way to explore preferences; a separate controlled evaluation is needed to measure benefit."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune research hub: Muse Spark 1.3 figures, marked reported",
+      "href": "https://agent-tune.com/research"
+    },
+    {
+      "label": "Protocol and provenance file (the supplemental Muse figures)",
+      "href": "https://agent-tune.com/research/data/september-2026-protocols.json"
+    },
+    {
+      "label": "What five AI models say about themselves (the fresh-session study)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "Meta Help Center: How to customize Muse's personality and memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse, explained",
+      "href": "/guides/what-is-meta-muse"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Give Meta Muse a character: the Soul.md guide",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Twenty Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
+      "href": "/guides/meta-muse-characters"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse vs ChatGPT vs Claude: where the personality lives",
+      "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
+    }
+  ],
+  "updated": "2026-09-25"
+}
