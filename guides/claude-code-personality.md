@@ -5,23 +5,21 @@ Guide · Claude Code
 
 # How to change Claude Code's personality.
 
-        By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated September 25, 2026
 
-        Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.
-
-      Adapt the communication prompts
-
-Choose your model to update the communication prompts below. For a full tuning and installation steps, [open the prompt generator →](https://agent-tune.com/tools/custom-instructions-generator?model=fable-5-1&target=claude-code)
+Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.
 
 ## The twenty-second version.
 
-        Download a ready-made style, preserving any existing customized file, then pick it:
+Download a ready-made style, preserving any existing customized file, then pick it:
 
+```markdown
 tuning_dir=$(mktemp -d ./agenttune.XXXXXX) &&\
   curl --fail --show-error --location https://agent-tune.com/output-styles/agenttune-mbti-intj.md \
   --output "$tuning_dir/style.md" &&\
   mkdir -p ~/.claude/output-styles &&\
   (set -C; cat "$tuning_dir/style.md" > ~/.claude/output-styles/agenttune-mbti-intj.md)
+```
 
 - Restart Claude Code. The docs say custom style files are read at startup.
 - Run /output-style and choose AgentTune INTJ, or open /config and set Output style.
@@ -33,23 +31,20 @@ If /output-style is not recognized, update Claude Code. The command was deprecat
 
 ## Four places to put it. They do different jobs.
 
-        This is the comparison Claude Code's own docs draw, in our words.
+This is the comparison Claude Code's own docs draw, in our words.
 
 | Where | What it does | Loads | Use it for |
-
+| --- | --- | --- | --- |
 | Output style | Changes the default instructions Claude Code works from | Every turn | Role and tone. Your personality file. |
-
 | CLAUDE.md | Arrives as a message after the system prompt | Every session | Project conventions, commands, architecture |
-
 | --append-system-prompt | Appends text to the system prompt at launch. Removes nothing. | That launch | A one-off, or a script |
-
 | --agent | Runs the whole session as a subagent with its own prompt, model and tools | That session | Replacing who Claude Code is |
 
 Two details in there decide it. CLAUDE.md is not part of the system prompt, and the docs say plainly that compliance with it is not guaranteed. An output style is sent with every request, with reminders during the conversation. If you want a rule followed at turn ninety, that is the difference.
 
 ## Output styles, and the flag that matters.
 
-        Claude Code ships five: Default, Proactive (acts and assumes instead of asking), Concise (result first, short), Explanatory (adds educational insights) and Learning (leaves TODO(human) markers for you to implement). If one of those is the change you wanted, you are done. Run /output-style Concise.
+Claude Code ships five: Default, Proactive (acts and assumes instead of asking), Concise (result first, short), Explanatory (adds educational insights) and Learning (leaves TODO(human) markers for you to implement). If one of those is the change you wanted, you are done. Run /output-style Concise.
 
 A custom style is a Markdown file in ~/.claude/output-styles/ for all your work, or .claude/output-styles/ inside one project. The nearest one wins. The front-matter takes four keys:
 
@@ -60,6 +55,7 @@ A custom style is a Markdown file in ~/.claude/output-styles/ for all your work,
 
 That third key is the trap. A custom style, by default, drops Claude Code's built-in software-engineering instructions. That is deliberate. Output styles were designed so people could turn Claude Code into something that is not a coding agent at all. If what you wanted was the same engineer with better manners, you have to say so:
 
+```markdown
 ---
 name: Straight answers
 description: Conclusion first, no hedging, one recommendation.
@@ -73,6 +69,7 @@ How to talk to the person you are working with:
 - Give one recommendation, not a menu, unless asked for options.
 - Push back when they are wrong, and say why.
 - No openers, no recap of what they just said, no closing offers.
+```
 
 People who find their custom style made Claude Code worse at coding have usually hit exactly this. Every file in our pack sets the flag to true, and opens by telling Claude Code that the rules change how it talks, not how it engineers.
 
@@ -80,7 +77,7 @@ You can also set the style without the menu, by putting "outputStyle": "AgentTun
 
 ## The 43-style pack.
 
-        One output style per tuning. Each name links to the type's page, which shows the rules in plain English and a before-and-after. File is the download. The install command is the one at the top of this page with the file name swapped. A machine-readable list is at [/output-styles/index.json](https://agent-tune.com/output-styles/index.json).
+One output style per tuning. Each name links to the type's page, which shows the rules in plain English and a before-and-after. File is the download. The install command is the one at the top of this page with the file name swapped. A machine-readable list is at [/output-styles/index.json](https://agent-tune.com/output-styles/index.json).
 
 - MBTI. [INTJ](https://agent-tune.com/library/mbti/intj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-intj.md)) · [INTP](https://agent-tune.com/library/mbti/intp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-intp.md)) · [INFJ](https://agent-tune.com/library/mbti/infj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-infj.md)) · [INFP](https://agent-tune.com/library/mbti/infp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-infp.md)) · [ISTJ](https://agent-tune.com/library/mbti/istj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-istj.md)) · [ISTP](https://agent-tune.com/library/mbti/istp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-istp.md)) · [ISFJ](https://agent-tune.com/library/mbti/isfj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-isfj.md)) · [ISFP](https://agent-tune.com/library/mbti/isfp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-isfp.md)) · [ENTJ](https://agent-tune.com/library/mbti/entj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-entj.md)) · [ENTP](https://agent-tune.com/library/mbti/entp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-entp.md)) · [ENFJ](https://agent-tune.com/library/mbti/enfj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-enfj.md)) · [ENFP](https://agent-tune.com/library/mbti/enfp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-enfp.md)) · [ESTJ](https://agent-tune.com/library/mbti/estj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-estj.md)) · [ESTP](https://agent-tune.com/library/mbti/estp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-estp.md)) · [ESFJ](https://agent-tune.com/library/mbti/esfj) ([file](https://agent-tune.com/output-styles/agenttune-mbti-esfj.md)) · [ESFP](https://agent-tune.com/library/mbti/esfp) ([file](https://agent-tune.com/output-styles/agenttune-mbti-esfp.md))
 - Enneagram. [Enneagram 1](https://agent-tune.com/library/enneagram/1-reformer) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-1-reformer.md)) · [Enneagram 2](https://agent-tune.com/library/enneagram/2-helper) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-2-helper.md)) · [Enneagram 3](https://agent-tune.com/library/enneagram/3-achiever) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-3-achiever.md)) · [Enneagram 4](https://agent-tune.com/library/enneagram/4-individualist) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-4-individualist.md)) · [Enneagram 5](https://agent-tune.com/library/enneagram/5-investigator) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-5-investigator.md)) · [Enneagram 6](https://agent-tune.com/library/enneagram/6-loyalist) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-6-loyalist.md)) · [Enneagram 7](https://agent-tune.com/library/enneagram/7-enthusiast) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-7-enthusiast.md)) · [Enneagram 8](https://agent-tune.com/library/enneagram/8-challenger) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-8-challenger.md)) · [Enneagram 9](https://agent-tune.com/library/enneagram/9-peacemaker) ([file](https://agent-tune.com/output-styles/agenttune-enneagram-9-peacemaker.md))
@@ -92,7 +89,7 @@ Don't know your type? The [free MBTI test](https://agent-tune.com/tests/mbti) ta
 
 ## CLAUDE.md: right for the project, wrong for you.
 
-        CLAUDE.md still matters. It is just answering a different question. The docs give the load order: a managed policy file, then ~/.claude/CLAUDE.md, then ./CLAUDE.md or ./.claude/CLAUDE.md, then ./CLAUDE.local.md. The files are concatenated, none overrides another, and the docs suggest keeping each under 200 lines.
+CLAUDE.md still matters. It is just answering a different question. The docs give the load order: a managed policy file, then ~/.claude/CLAUDE.md, then ./CLAUDE.md or ./.claude/CLAUDE.md, then ./CLAUDE.local.md. The files are concatenated, none overrides another, and the docs suggest keeping each under 200 lines.
 
 Three reasons your personality does not belong in the project's CLAUDE.md:
 
@@ -104,9 +101,11 @@ If you want it in a CLAUDE.md anyway, use ~/.claude/CLAUDE.md or CLAUDE.local.md
 
 ## Flags and agents: for one-offs and full replacements.
 
-        --append-system-prompt and --append-system-prompt-file add text to the system prompt and remove nothing. They work in interactive and non-interactive mode. Good for a script, or for trying a tuning once:
+--append-system-prompt and --append-system-prompt-file add text to the system prompt and remove nothing. They work in interactive and non-interactive mode. Good for a script, or for trying a tuning once:
 
+```markdown
 claude --append-system-prompt-file ~/.claude/output-styles/agenttune-mbti-intj.md
+```
 
 --system-prompt and --system-prompt-file replace the whole system prompt. That is almost never what you want for a personality. One catch from the docs: the prompt is recorded at a conversation's first request, so changing these flags on --resume or --continue only takes effect after compaction or in a new conversation.
 
@@ -116,43 +115,45 @@ For a team, a plugin can ship output styles in an output-styles/ folder at its r
 
 ## What a personality file should not touch.
 
-        Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says "be decisive" being read as "skip the tests".
+Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says "be decisive" being read as "skip the tests".
 
 The line we put at the top of every file in the pack:
 
+```markdown
 These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.
+```
 
 The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/coding-agent-personality).
 
 ## Questions people ask.
 
-            Does Claude Code have a personality setting?
+Does Claude Code have a personality setting?
 
-            Yes. It is called an output style. Claude Code ships five built-in styles (Default, Proactive, Concise, Explanatory and Learning), and you can add your own as Markdown files in ~/.claude/output-styles/. Switch with /output-style or under /config.
+Yes. It is called an output style. Claude Code ships five built-in styles (Default, Proactive, Concise, Explanatory and Learning), and you can add your own as Markdown files in ~/.claude/output-styles/. Switch with /output-style or under /config.
 
-            What is the difference between an output style and CLAUDE.md?
+What is the difference between an output style and CLAUDE.md?
 
-            An output style changes the default instructions Claude Code works from and is sent on every turn. CLAUDE.md arrives as a message after the system prompt, and the docs say compliance is not guaranteed. Use an output style for role and tone, and CLAUDE.md for project conventions, commands and architecture.
+An output style changes the default instructions Claude Code works from and is sent on every turn. CLAUDE.md arrives as a message after the system prompt, and the docs say compliance is not guaranteed. Use an output style for role and tone, and CLAUDE.md for project conventions, commands and architecture.
 
-            Why did my custom output style make Claude Code worse at coding?
+Why did my custom output style make Claude Code worse at coding?
 
-            Custom styles drop Claude Code's built-in software-engineering instructions unless the file sets keep-coding-instructions: true. The default is false. Add that line to the front-matter and restart Claude Code.
+Custom styles drop Claude Code's built-in software-engineering instructions unless the file sets keep-coding-instructions: true. The default is false. Add that line to the front-matter and restart Claude Code.
 
-            Is /output-style deprecated?
+Is /output-style deprecated?
 
-            It was deprecated in March 2026 and brought back in Claude Code 2.1.269 on September 11, 2026, according to the changelog. On older versions, set the style under /config, or put an outputStyle key in a settings file.
+It was deprecated in March 2026 and brought back in Claude Code 2.1.269 on September 11, 2026, according to the changelog. On older versions, set the style under /config, or put an outputStyle key in a settings file.
 
-            Do output styles apply to subagents?
+Do output styles apply to subagents?
 
-            A style reaches the main conversation and its forks. Other subagents do not receive it, and they do not get Claude Code's default system prompt either. A subagent's own file body is its system prompt.
+A style reaches the main conversation and its forks. Other subagents do not receive it, and they do not get Claude Code's default system prompt either. A subagent's own file body is its system prompt.
 
-            Can I share an output style with my team?
+Can I share an output style with my team?
 
-            Yes. Commit it to .claude/output-styles/ in the repo, or ship it in a plugin's output-styles folder. A personality style is usually personal, though, so most people keep it in ~/.claude/output-styles/.
+Yes. Commit it to .claude/output-styles/ in the repo, or ship it in a plugin's output-styles folder. A personality style is usually personal, though, so most people keep it in ~/.claude/output-styles/.
 
-            Where do custom output styles live?
+Where do custom output styles live?
 
-            In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside one project. The nearest one wins. Restart Claude Code after adding or editing a file.
+In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside one project. The nearest one wins. Restart Claude Code after adding or editing a file.
 
 ## What changed.
 
@@ -174,9 +175,9 @@ The same separation applies to Cursor rules, AGENTS.md and Copilot instructions.
 
 ## Keep going.
 
-          [GuideHow to change Claude's personality](https://agent-tune.com/guides/claude-personality)
-          [GuideCLAUDE.md examples and best practices](https://agent-tune.com/guides/claude-md-examples)
-          [GuideAGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/coding-agent-personality)
-          [ToolFree CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
-          [LibraryAll 43 tuning files](https://agent-tune.com/library/)
-          [TestsFind your type — free MBTI test](https://agent-tune.com/tests/mbti)
+- [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
+- [Guide: CLAUDE.md examples and best practices](https://agent-tune.com/guides/claude-md-examples)
+- [Guide: AGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Tool: Free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
+- [Library: All 43 tuning files](https://agent-tune.com/library/)
+- [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)

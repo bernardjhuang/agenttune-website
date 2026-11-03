@@ -3,47 +3,107 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Resources
 
-# Build the interface. Verify the instrument.
+# Open-source Enneagram scorer and 9-type calculator.
 
-        By Bernard Huang · Updated September 26, 2026
+By Bernard Huang · Updated September 26, 2026
 
-        Download the synthetic starter to test form state, strict numeric input and tied scores. The live Enneagram questionnaire is available separately at /tests/enneagram, with its source and adaptation terms. The MIT code license does not grant rights to third-party test items.
+Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals (4 to 20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT licensed; the live 36-item questionnaire at /tests/enneagram carries separate upstream item terms.
 
-## Try the software example
+## Download the developer files.
 
-        [Open the scoring demo](https://agent-tune.com/tools/enneagram-scoring-playground) or [download the React + TypeScript starter](https://agent-tune.com/resources/enneagram/enneagram-react-typescript.zip). It includes 36 synthetic controls in nine groups. The values test the interface and arithmetic; they measure no personality traits.
+The scorer has no dependencies and supports Node CommonJS and a browser script tag. Download the files to a directory you choose.
 
-Run npm ci, then npm run dev. Use npm run build for the production build. Responses stay in page memory.
+| File | Contents |
+| --- | --- |
+| [score.js](https://agent-tune.com/resources/enneagram/score.js) | Input validation, all nine group totals and explicit ties. MIT code. |
+| [questions.json](https://agent-tune.com/resources/enneagram/questions.json) | 36 synthetic demo inputs, type keys (4 per type) and scale metadata. |
+| [README.md](https://agent-tune.com/resources/enneagram/README.md) | Integration examples and the input/output contract. |
+| [LICENSE-code.txt](https://agent-tune.com/resources/enneagram/LICENSE-code.txt) | MIT license for the JavaScript implementation and synthetic inputs. |
 
-## What you can reuse
+[Open the interactive scoring playground](https://agent-tune.com/tools/enneagram-scoring-playground) · [View the 36-item questionnaire specification](https://agent-tune.com/tests/enneagram.md) · [Take the interactive Enneagram test](https://agent-tune.com/tests/enneagram).
 
-        The original [JavaScript arithmetic](https://agent-tune.com/resources/enneagram/score.js), [synthetic inputs](https://agent-tune.com/resources/enneagram/questions.json) and starter code are MIT licensed. The old paths and AgentTuneEnneagram global are compatibility names, not a claim that the demo administers a test.
+## Try the scorer in your browser.
 
-Each group sums four integers from 1 to 5. Invalid or missing values are rejected. Equal highest totals remain tied; no wing is inferred.
+Edit the example array or load a preset. This demo parses and scores the numbers locally; it does not send or store your answers. General site analytics are subject to your consent and do not receive this form’s values.
 
-## Before adding a real questionnaire
+Answers in item order (JSON array)Exactly 36 whole numbers from 1 to 5. The examples are synthetic, not participant data.
 
-        Identify its exact version and applicable rights, including modification and public redistribution. Store stable item IDs, wording, scale anchors, scoring keys and presentation order. Require a complete valid response set; keep measured scores separate from a user’s preference choices.
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]Score answersAll neutralType 5 exampleTypes 1 + 5 tie
 
-[Current Enneagram availability](https://agent-tune.com/tests/enneagram) · [Rights record](https://agent-tune.com/resources/content/instrument-rights.json) · [Available IPIP Big Five adaptation](https://agent-tune.com/tests/big-five).
+```
 
-## Historical adaptation
+```
 
-        The former AgentTune 36-item adaptation reordered OEPS v1 and changed two statements. Published responses remain attached to that legacy version. Do not call the synthetic example OEPS, and do not reinterpret old answers as answers to corrected items. [Read the provenance correction](https://agent-tune.com/research/data/rights-migration.json).
+Enable JavaScript to try the demo, or download the scorer and run it in Node. All documentation remains readable below.
+
+## Use the scorer in Node or a browser.
+
+Save score.js, then run this from the same directory in a CommonJS script or the Node console:
+
+```markdown
+const { score } = require(&#x27;./score.js&#x27;);
+const answers = Array(36).fill(3);
+answers.fill(5, 16, 20); // example: type 5 items, IDs 17–20
+console.log(score(answers));
+// leaders: [5], dominantType: 5, topScore: 20
+```
+
+For a project with "type": "module", save the file as score.cjs and import its CommonJS default. In a browser, load the file before calling its global:
+
+```markdown
+<script src="./score.js"></script>
+<script>
+  const result = AgentTuneEnneagram.score(Array(36).fill(3));
+  console.log(result.leaders); // all nine types tie
+</script>
+```
+
+If you randomize display order, store the response against its item ID and reconstruct IDs 1–36 before calling score. The scorer accepts a plain 36-element array, not an object keyed by question text.
+
+## The scoring contract.
+
+Each type has four items scored from 1 to 5. Sum the four responses; there are no reversed items in this nine-group structure. A type total ranges from 4 to 20.
+
+| Output | Meaning |
+| --- | --- |
+| version | agenttune-enneagram-36-v1: identifies the 36-input nine-group rules. |
+| scores | Raw totals keyed by type number 1–9. |
+| topScore | The greatest of the nine raw totals. |
+| leaders | Every type that shares the highest total, in ascending numeric order. |
+| tied | True when more than one type shares the highest total. |
+| dominantType | The unique leader, or null for a tie. |
+
+The scorer rejects incomplete arrays, sparse arrays, strings, fractions and values outside 1–5. Do not turn a skipped answer into a neutral response. A score is not a probability, percentile or confidence estimate. This module does not calculate wings; the second-highest type is not automatically a wing.
+
+## Why equal scores stay equal.
+
+All-neutral answers give each type 12 points. Assigning Type 1 because it appears first in key order would manufacture a result. Show all nine totals and let the user inspect the tied types instead.
+
+This also matters in our [model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026): 65 of 100 Opus 5.5 Enneagram assessments and 44 of 100 Fable 5.1 assessments had tied top scores. Those are exploratory model self-reports, not validation of the questionnaire for AI. The downloadable scorer is verified against every saved Enneagram answer vector in that dataset.
+
+## Provenance, scope and licensing.
+
+The developer bundle in /resources/enneagram/ provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
+
+The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) and [the historical provenance record](https://agent-tune.com/research/data/rights-migration.json) before redistributing questionnaire text.
 
 ## Questions people ask.
 
-            Does the starter include OEPS questions?
+Does the developer bundle include OEPS question wording?
 
-            No. It contains original synthetic controls solely for software testing. Verify instrument rights before adding real questions.
+The /resources/enneagram/questions.json file uses synthetic demo labels for software testing. The live 36-item questionnaire is available at /tests/enneagram and /tests/enneagram.md under its upstream source terms.
 
-            Can I still choose an Enneagram-style template?
+How does the scorer handle ties and wings?
 
-            Yes. Communication templates and the preference builder remain available without a questionnaire.
+When two or more types share the highest 4–20 total, leaders lists every tied type, tied is true, and dominantType is null. No wing is inferred automatically.
+
+Can I use this scorer in commercial or open-source projects?
+
+Yes. The JavaScript scorer (score.js) and synthetic inputs are MIT licensed. If you supply third-party questionnaire items, verify their separate reuse terms.
 
 ## What changed.
 
-- September 26, 2026 Replaced questionnaire payloads with synthetic developer inputs and clarified licensing and legacy provenance.
+- September 26, 2026 Clarified the boundary between MIT-licensed synthetic developer inputs and upstream questionnaire terms.
 
 ## Sources.
 
@@ -55,7 +115,7 @@ Each group sums four integers from 1 to 5. Invalid or missing values are rejecte
 
 ## Keep going.
 
-          [New resourceBuild an Enneagram test in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript)
-          [Try itTake the 36-item Enneagram test](https://agent-tune.com/tests/enneagram)
-          [Apply itEnneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)
-          [ResearchWhy ties matter in model reports](https://agent-tune.com/research/ai-personality-five-models-2026)
+- [Starter app: Build an Enneagram test in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript)
+- [Try it: Take the 36-item Enneagram test](https://agent-tune.com/tests/enneagram)
+- [Apply it: Enneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)
+- [Research: Why ties matter in model reports](https://agent-tune.com/research/ai-personality-five-models-2026)

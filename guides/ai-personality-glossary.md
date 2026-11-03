@@ -5,9 +5,9 @@ Guide · reference
 
 # An AI personality glossary.
 
-        By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated September 25, 2026
 
-        A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.
+A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.
 
 ## The thing you paste.
 
@@ -147,25 +147,25 @@ The list of a model's numeric answers to one questionnaire, in item order. The S
 
 ## Questions people ask.
 
-            What is a tuning file?
+What is a tuning file?
 
-            A short Markdown file of communication rules written for one personality type: what to lead with, how direct to be, how to disagree, when to stop asking questions. You paste it into your AI's instructions and edit it. AgentTune's 43 are free under an MIT licence.
+A short Markdown file of communication rules written for one personality type: what to lead with, how direct to be, how to disagree, when to stop asking questions. You paste it into your AI's instructions and edit it. AgentTune's 43 are free under an MIT licence.
 
-            What is the difference between a system prompt and custom instructions?
+What is the difference between a system prompt and custom instructions?
 
-            Custom instructions are a user-facing setting for preferences. A system prompt is a high-priority model input. The mapping between a product setting and model messages depends on the product.
+Custom instructions are a user-facing setting for preferences. A system prompt is a high-priority model input. The mapping between a product setting and model messages depends on the product.
 
-            What is the difference between a persona and a tuning?
+What is the difference between a persona and a tuning?
 
-            A persona specifies a character; an AgentTune tuning specifies communication preferences such as pacing and directness. Neither format is guaranteed to persist or improve outcomes; evaluate the behavior you need.
+A persona specifies a character; an AgentTune tuning specifies communication preferences such as pacing and directness. Neither format is guaranteed to persist or improve outcomes; evaluate the behavior you need.
 
-            What does 'reported' mean on the research pages?
+What does 'reported' mean on the research pages?
 
-            A figure from a report we could not re-score, because the raw answers or the harness were not supplied. Fresh-session figures, by contrast, come with every answer vector published.
+A figure from a report we could not re-score, because the raw answers or the harness were not supplied. Fresh-session figures, by contrast, come with every answer vector published.
 
-            What is a tie rule?
+What is a tie rule?
 
-            What a scorer does when two scores are equal. AgentTune's original reporting rule picked a side (I, N, T or J; the lower Enneagram number; S before C). The quizzes now show the tie instead, and the research pages count ties separately.
+What a scorer does when two scores are equal. AgentTune's original reporting rule picked a side (I, N, T or J; the lower Enneagram number; S before C). The quizzes now show the tie instead, and the research pages count ties separately.
 
 ## What changed.
 
@@ -181,6 +181,6 @@ The list of a model's numeric answers to one questionnaire, in item order. The S
 
 ## Keep going.
 
-          [GuideHow to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
-          [GuideThe five open personality tests, explained](https://agent-tune.com/guides/open-personality-tests)
-          [LibraryAll 43 tuning files](https://agent-tune.com/library/)
+- [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
+- [Guide: The five open personality tests, explained](https://agent-tune.com/guides/open-personality-tests)
+- [Library: All 43 tuning files](https://agent-tune.com/library/)

@@ -37,7 +37,7 @@
       "title": "ChatGPT Custom Instructions for All 16 MBTI Types",
       "url": "https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type",
       "markdown": "https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md",
-      "revision": "84765fd4232c",
+      "revision": "eb5abc1e9146",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -67,7 +67,7 @@
       "title": "CLAUDE.md Examples & Best Practices · AgentTune",
       "url": "https://agent-tune.com/guides/claude-md-examples",
       "markdown": "https://agent-tune.com/guides/claude-md-examples.md",
-      "revision": "5c229dcd5872",
+      "revision": "b1ca58d18c21",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -107,7 +107,7 @@
       "title": "AGENTS.md & Cursor Rules: Add a Personality · AgentTune",
       "url": "https://agent-tune.com/guides/coding-agent-personality",
       "markdown": "https://agent-tune.com/guides/coding-agent-personality.md",
-      "revision": "6aa1e9ad3c6b",
+      "revision": "751c48a5a5b2",
       "evidence_status": "practical_guidance",
       "updated": null
     },
@@ -117,17 +117,17 @@
       "title": "Enneagram AI Prompts for All 9 Types (ChatGPT & Claude)",
       "url": "https://agent-tune.com/guides/enneagram-ai-prompts",
       "markdown": "https://agent-tune.com/guides/enneagram-ai-prompts.md",
-      "revision": "2a23bdd6ad48",
+      "revision": "95556bfb927e",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
     {
       "id": "enneagram-test-react-typescript",
       "kind": "guide",
-      "title": "Enneagram developer resources: licensing and a scoring demo",
+      "title": "Build an Enneagram Test in React + TypeScript | AgentTune",
       "url": "https://agent-tune.com/guides/enneagram-test-react-typescript",
       "markdown": "https://agent-tune.com/guides/enneagram-test-react-typescript.md",
-      "revision": "cbd8a4f97ea1",
+      "revision": "346e5d38d1ff",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-26"
     },
@@ -157,7 +157,7 @@
       "title": "How to Give Your AI a Personality: ChatGPT, Claude & Cursor",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "0b8363fc2a3a",
+      "revision": "221254470811",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -167,7 +167,7 @@
       "title": "How to make ChatGPT sound like you · AgentTune",
       "url": "https://agent-tune.com/guides/make-chatgpt-sound-like-you",
       "markdown": "https://agent-tune.com/guides/make-chatgpt-sound-like-you.md",
-      "revision": "50c08f376d84",
+      "revision": "c657e6ca21ec",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-25"
     },
@@ -244,20 +244,20 @@
     {
       "id": "open-personality-tests",
       "kind": "guide",
-      "title": "Personality questionnaires: scoring, limitations and reuse rights",
+      "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
       "url": "https://agent-tune.com/guides/open-personality-tests",
       "markdown": "https://agent-tune.com/guides/open-personality-tests.md",
-      "revision": "ea4d88a64bc6",
+      "revision": "280e1fb88c6f",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-26"
     },
     {
       "id": "open-source-enneagram-test",
       "kind": "guide",
-      "title": "Enneagram developer resources: licensing and a scoring demo",
+      "title": "Open-Source Enneagram Scorer in JavaScript | AgentTune",
       "url": "https://agent-tune.com/guides/open-source-enneagram-test",
       "markdown": "https://agent-tune.com/guides/open-source-enneagram-test.md",
-      "revision": "9fd171c1ad03",
+      "revision": "7fa6d0b0bef0",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-26"
     },

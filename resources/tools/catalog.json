@@ -40,9 +40,9 @@
     },
     {
       "id": "enneagram",
-      "name": "Nine-group scoring demo",
+      "name": "Enneagram scoring playground",
       "url": "https://agent-tune.com/tools/enneagram-scoring-playground",
-      "description": "Test a nine-group scoring interface using synthetic inputs. No personality questionnaire is included.",
+      "description": "Inspect the 9-type Enneagram scoring algorithm with synthetic inputs, test tie-breaking rules, export JSON, and download the React TypeScript starter.",
       "guide": "https://agent-tune.com/guides/enneagram-test-react-typescript"
     },
     {

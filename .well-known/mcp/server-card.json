@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.agent-tune/agenttune",
-  "description": "Personality tuning files for AI agents: 43 MIT-licensed tunings + 5 inline personality tests.",
-  "version": "1.0.0",
+  "description": "Communication preference templates, personality questionnaires, research datasets, and 8 free browser tools for AI agents: 43 MIT-licensed tunings, 5 questionnaires, and 6 read-only MCP tools.",
+  "version": "1.2.0",
   "websiteUrl": "https://agent-tune.com",
   "repository": {
     "url": "https://github.com/bernardjhuang/agenttune",

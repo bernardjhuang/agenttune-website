@@ -115,25 +115,119 @@
   <main id="main" tabindex="-1">
     <section class="hp2-hero" aria-labelledby="hp2-hero-h1">
       <h1 class="hp2-hero-h1" id="hp2-hero-h1">Make your AI <em>easier to work with.</em></h1>
-      <p class="hp2-hero-lede">Choose how you want it to respond. Get editable instructions for ChatGPT, Claude, Muse or your coding assistant. Start with your preferences or use a personality template.</p>
-      <div class="hp2-hero-ctas"><a class="hp2-btn is-primary" href="/tests/">Take tests →</a><a class="hp2-btn is-ghost" href="/library/">Browse templates</a><a class="hp2-btn is-ghost" href="/tools/custom-instructions-generator">Build my instructions</a><span class="hp2-reassure">Free. No account needed.</span></div>
+      <p class="hp2-hero-lede">Choose how you want it to respond. Get editable instructions for ChatGPT, Claude, Grok, Meta Muse, or your coding assistant. Start with plain-English preferences, take a 5-minute personality test, or browse 43 MIT-licensed templates.</p>
+      <div class="hp2-hero-ctas"><a class="hp2-btn is-primary" href="/tests/">Take tests →</a><a class="hp2-btn is-ghost" href="/library/">Browse 43 templates</a><a class="hp2-btn is-ghost" href="/tools/custom-instructions-generator">Build my instructions</a><span class="hp2-reassure">Free. Client-side. No account needed.</span></div>
     </section>
+
     <section class="hp2-section" aria-labelledby="how-it-works"><h2 class="hp2-h2" id="how-it-works">From a preference <em>to a useful instruction.</em></h2>
       <div class="hp2-three-step">
-        <article class="hp2-step-card" style="--step-accent:#2f8a5b"><div class="hp2-step-num">01</div><h3 class="hp2-step-title">Choose what helps</h3><p class="hp2-step-body">Prefer concise answers, more exploration, candid feedback or a warmer tone? Start there. The 43 templates and five optional questionnaires can help you explore other preferences.</p><div class="hp2-step-foot">No personality label required.</div></article>
-        <article class="hp2-step-card" style="--step-accent:#5b4dc0"><div class="hp2-step-num">02</div><h3 class="hp2-step-title">Review your instructions</h3><p class="hp2-step-body">Choose your app and where to save the text. Edit the wording before copying. Keep only the preferences you want, alongside your existing instructions.</p><div class="hp2-step-foot">Plain text you can change or remove.</div></article>
-        <article class="hp2-step-card" style="--step-accent:#a8482a"><div class="hp2-step-num">03</div><h3 class="hp2-step-title">Try it on real work</h3><p class="hp2-step-body">Paste it using the setup steps, then try a few familiar tasks. Compare the replies and adjust what does not fit. Results depend on your app, model and context.</p><div class="hp2-step-foot">A saved preference is a starting point.</div></article>
+        <article class="hp2-step-card" style="--step-accent:#2f8a5b"><div class="hp2-step-num">01</div><h3 class="hp2-step-title">Choose what helps</h3><p class="hp2-step-body">Prefer concise answers, deeper trade-off analysis, candid pushback, or a warmer tone? Start there, or use one of the five open questionnaires and 43 templates to explore what fits.</p><div class="hp2-step-foot">No personality label required.</div></article>
+        <article class="hp2-step-card" style="--step-accent:#5b4dc0"><div class="hp2-step-num">02</div><h3 class="hp2-step-title">Review your instructions</h3><p class="hp2-step-body">Choose your app and destination: ChatGPT custom instructions, Claude profile preferences, Grok, Meta Muse <code>Soul.md</code>, or <code>CLAUDE.md</code> and <code>AGENTS.md</code>. Edit the wording before copying.</p><div class="hp2-step-foot">Plain text you can change or remove.</div></article>
+        <article class="hp2-step-card" style="--step-accent:#a8482a"><div class="hp2-step-num">03</div><h3 class="hp2-step-title">Try it on real work</h3><p class="hp2-step-body">Paste the bounded preference block alongside your existing instructions, then compare replies on real tasks. Keep what helps and delete any rule that gets in the way.</p><div class="hp2-step-foot">A saved preference is a starting point.</div></article>
       </div>
     </section>
-    <section class="hp2-section" aria-labelledby="sample"><h2 class="hp2-h2" id="sample">Start with <em>one clear request.</em></h2><div class="hp2-why-grid"><div><p class="hp2-why-body">“Be more direct” can mean several things. Write down what you want to change: where the answer starts, how much detail you need, and when you want alternatives.</p><p class="hp2-why-body">For example, ask for a recommendation followed by the evidence. Keep uncertainty visible when it affects the decision. You can request a different style in any later task.</p><a href="/tools/custom-instructions-generator">Make this fit my preferences →</a></div><div class="hp2-demo-code"><div class="hp2-demo-code-meta">Example instructions · editable in the generator</div><pre class="hp2-demo-code-pre">Lead with your recommendation.
+
+    <section class="hp2-section" aria-labelledby="sample"><h2 class="hp2-h2" id="sample">Start with <em>one clear request.</em></h2>
+      <div class="hp2-why-grid">
+        <div>
+          <p class="hp2-why-body">“Be more direct” can mean several things. Write down what you actually want to change: where the answer starts, how much detail you need, and when you want alternatives or pushback.</p>
+          <p class="hp2-why-body">For example, ask for a recommendation followed by the main trade-offs, and keep material uncertainty visible when it affects the decision. Your current prompt always overrides saved defaults.</p>
+          <p><a href="/tools/custom-instructions-generator">Customize in the generator →</a> · <a href="/tools/communication-preferences-builder">Use the 6-choice preferences builder →</a></p>
+        </div>
+        <div class="hp2-demo-code">
+          <div class="hp2-demo-code-meta">Example instructions · editable in the generator</div>
+<pre class="hp2-demo-code-pre">Lead with your recommendation.
 Explain the main reason and practical tradeoffs.
 Use a short list when it makes the answer clearer.
 State important uncertainty and relevant risks.
 Challenge a weak assumption with evidence.
-Follow my current request when it differs.</pre></div></div></section>
-    <section class="hp2-section" aria-labelledby="start-with-app"><h2 class="hp2-h2" id="start-with-app">Set up the app <em>you already use.</em></h2><div class="hp2-uses-grid"><a class="hp2-use-card" href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT instructions →</a><a class="hp2-use-card" href="/guides/claude-personality">Claude preferences →</a><a class="hp2-use-card" href="/guides/muse-soul-md-templates">Muse Soul.md templates →</a><a class="hp2-use-card" href="/tools/claude-md-generator">Coding assistant instructions →</a></div></section>
-    <section class="hp2-section" aria-labelledby="evidence"><h2 class="hp2-h2" id="evidence">What the research <em>can tell you.</em></h2><p class="hp2-section-lede">Our research examines AI responses to personality questionnaires. It does not prove that AI has a human personality or that a template improves performance. The articles publish methods, data and limitations so you can assess the evidence.</p><p><a href="/research">Read the research →</a> · <a href="/guides/personality-prompts-vs-plain-english">Compare templates with plain-English preferences →</a></p></section>
-    <section class="hp2-section" aria-labelledby="your-data"><h2 class="hp2-h2" id="your-data">Open templates. <em>Your choices.</em></h2><p class="hp2-section-lede">Test answers and drafts stay in your browser. You can clear them at any time. Templates are MIT licensed: save, edit and reuse them. Agents can retrieve focused Markdown, scoring specifications and installation guidance through the public catalog or MCP.</p><p><a href="/privacy">Privacy details</a> · <a href="/llms.txt">Resources for AI agents</a> · <a href="/guides/">All guides</a></p></section>
+Follow my current request when it differs.</pre>
+        </div>
+      </div>
+
+      <div class="hp2-prompt-bar" style="margin-top: 36px;">
+        <span class="hp2-prompt-avatar" aria-hidden="true">Q</span>
+        <span class="hp2-prompt-text">“I'm feeling stuck on a project. What should I do?” — illustrative comparison of default vs. direct preference rules</span>
+      </div>
+      <div class="hp2-ba-grid">
+        <article class="hp2-ba-card is-before">
+          <header class="hp2-ba-head">
+            <span class="hp2-ba-pill is-before">Default reply</span>
+            <span class="hp2-ba-tag is-before">Broad menu + preamble</span>
+          </header>
+          <p class="hp2-ba-body">That's completely normal! Everyone hits a wall sometimes. Here are a few approaches you might try:
+
+1. Break the project into smaller, manageable steps
+2. Take a short break and come back with fresh eyes
+3. Talk it through with a colleague
+4. Identify what specifically feels stuck
+
+Which of these resonates most? Happy to explore any of them!</p>
+        </article>
+        <article class="hp2-ba-card is-after">
+          <header class="hp2-ba-head">
+            <span class="hp2-ba-pill is-after">With answer-first + structure rules</span>
+            <span class="hp2-ba-tag is-after">Direct diagnosis</span>
+          </header>
+          <p class="hp2-ba-body">List the project's next three deliverables and mark which one has an unresolved input or decision.
+
+Being stuck is usually an unmapped dependency or an unmade trade-off rather than a lack of effort. Reply with the deliverable you are avoiding and what makes it ambiguous; we will isolate the blocker and pick one next action.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="hp2-section" aria-labelledby="hp2-tests-h2">
+      <h2 class="hp2-h2" id="hp2-tests-h2">Five open questionnaires. <em>Scored in your browser.</em></h2>
+      <p class="hp2-section-lede">Not sure which communication rules you prefer? Take any of the five open self-report questionnaires to explore matching templates, or compare all five instruments on the <a href="/tests/">Tests hub</a>.</p>
+      <div class="hp2-tests-grid">
+        <a class="hp2-test-col" href="/tests/mbti" style="--test-color: #5b4dc0; --test-tint: rgba(91,77,192,0.06);">
+          <span class="hp2-test-pill">OEJTS 1.2</span>
+          <h3 class="hp2-test-name">MBTI</h3>
+          <div class="hp2-test-meta">32 items · ~5 min</div>
+          <span class="hp2-test-path">16 type templates →</span>
+        </a>
+        <a class="hp2-test-col" href="/tests/enneagram" style="--test-color: #246f48; --test-tint: rgba(47,138,91,0.06);">
+          <span class="hp2-test-pill">OEPS</span>
+          <h3 class="hp2-test-name">Enneagram</h3>
+          <div class="hp2-test-meta">36 items · ~5 min</div>
+          <span class="hp2-test-path">9 type templates →</span>
+        </a>
+        <a class="hp2-test-col" href="/tests/disc" style="--test-color: #855b1c; --test-tint: rgba(217,150,50,0.06);">
+          <span class="hp2-test-pill">ODAT</span>
+          <h3 class="hp2-test-name">DISC</h3>
+          <div class="hp2-test-meta">16 items · ~3 min</div>
+          <span class="hp2-test-path">4 style templates →</span>
+        </a>
+        <a class="hp2-test-col" href="/tests/attachment" style="--test-color: #914d59; --test-tint: rgba(224,122,138,0.08);">
+          <span class="hp2-test-pill">ECR-R</span>
+          <h3 class="hp2-test-name">Attachment</h3>
+          <div class="hp2-test-meta">36 items · ~5 min</div>
+          <span class="hp2-test-path">4 style templates →</span>
+        </a>
+        <a class="hp2-test-col" href="/tests/big-five" style="--test-color: #3160a7; --test-tint: rgba(58,114,196,0.06);">
+          <span class="hp2-test-pill">IPIP-50</span>
+          <h3 class="hp2-test-name">Big Five</h3>
+          <div class="hp2-test-meta">50 items · ~7 min</div>
+          <span class="hp2-test-path">10 trait pole templates →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hp2-section" aria-labelledby="start-with-app"><h2 class="hp2-h2" id="start-with-app">Set up the app <em>you already use.</em></h2>
+      <p class="hp2-section-lede">Use the same preference block across chat apps and coding agents, formatted for each platform's character limits and file conventions.</p>
+      <div class="hp2-uses-grid">
+        <a class="hp2-use-card" href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT custom instructions →</a>
+        <a class="hp2-use-card" href="/guides/claude-personality">Claude profile preferences →</a>
+        <a class="hp2-use-card" href="/guides/muse-soul-md-templates">Meta Muse Soul.md templates →</a>
+        <a class="hp2-use-card" href="/tools/claude-md-generator">CLAUDE.md &amp; AGENTS.md generator →</a>
+      </div>
+      <p class="hp2-guides-line">Platform guides: <a href="/guides/claude-personality">Claude</a> · <a href="/guides/claude-code-personality">Claude Code</a> · <a href="/guides/chatgpt-custom-instructions-by-personality-type">ChatGPT</a> · <a href="/guides/astra-personality">GPT-6 Astra</a> · <a href="/guides/fable-personality">Claude Fable 5.1</a> · <a href="/guides/grokbot-personality">Grok</a> · <a href="/guides/muse-personality">Meta Muse</a> · <a href="/guides/coding-agent-personality">Cursor &amp; Codex</a></p>
+      <p class="hp2-guides-line">Free browser utilities: <a href="/tools/communication-preferences-builder">Preferences builder</a> · <a href="/tools/instruction-checker">Instruction conflict checker</a> · <a href="/tools/instruction-converter">Format converter</a> · <a href="/tools/instruction-test-bench">A/B test bench</a> · <a href="/tools/ai-memory-reviewer">Memory export reviewer</a> · <a href="/tools/">All 8 tools →</a></p>
+    </section>
+
+    <section class="hp2-section" aria-labelledby="evidence"><h2 class="hp2-h2" id="evidence">What the research <em>can tell you.</em></h2><p class="hp2-section-lede">Our empirical studies examine 2,000+ scored AI questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code, plus a 180-response controlled before/after tuning study. They do not prove that AI has a human personality or that a template guarantees better task accuracy. Every article publishes its raw response vectors, scoring scripts, and limitations.</p><p><a href="/research">Explore all research studies →</a> · <a href="/research/ai-personality-five-models-2026">Five-model benchmark (2,000+ runs) →</a> · <a href="/research/does-personality-tuning-change-ai-answers">Before/after tuning study →</a> · <a href="/guides/personality-prompts-vs-plain-english">Templates vs. plain-English rules →</a></p></section>
+
+    <section class="hp2-section" aria-labelledby="your-data"><h2 class="hp2-h2" id="your-data">Open templates. <em>Your choices.</em></h2><p class="hp2-section-lede">Questionnaire answers and instruction drafts stay in your browser and can be cleared at any time. Original templates and code are MIT-licensed. AI agents can retrieve focused Markdown, deterministic scoring specs, and non-destructive installation guidance via <a href="/llms.txt">/llms.txt</a> or the stateless MCP server at <code>https://agent-tune.com/mcp</code>.</p><p><a href="/privacy">Privacy details</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a> · <a href="/guides/">All guides</a></p></section>
   </main>
   <footer class="hp2-footer">
     <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">bernardjhuang/agenttune</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>

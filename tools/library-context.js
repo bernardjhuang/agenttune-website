@@ -39,9 +39,18 @@ function defaultGap(c, research) {
 }
 
 // ---------- Neighbors ----------
+function styleSentences(tuningBody) {
+  const m = tuningBody.match(/^## Communication style\s*\n+([^\n]+)/m);
+  if (!m) return [];
+  return m[1].trim().split(/(?<=\.)\s+/).map((s) => s.trim().replace(/\.$/, "")).filter(Boolean);
+}
+
 function firstRule(tuningBody) {
-  const m = tuningBody.match(/^## (.+)$/m);
-  return m ? m[1].trim().replace(/\*/g, "") : "";
+  return styleSentences(tuningBody)[0] || "";
+}
+
+function secondRule(tuningBody) {
+  return styleSentences(tuningBody)[1] || "";
 }
 
 function mbtiNeighbors(c, contacts) {
@@ -68,9 +77,9 @@ function neighbors(c, contacts, related, helpers) {
   if (!list.length) return null;
   const own = firstRule(helpers.bodyOf(c));
   const items = list.map(({ c: n, why }) => {
-    const rule = firstRule(helpers.bodyOf(n));
+    const extra = secondRule(helpers.bodyOf(n));
     const label = helpers.labelOf(n);
-    return `        <li><a href="${helpers.routeOf(n)}"><strong>${esc(label)}</strong></a>${why ? ` <span class="lib-ctx-why">${esc(why)}</span>` : "."} ${esc(n.blurb)}${rule ? ` Its first rule: <em>${esc(rule)}</em>.` : ""}</li>`;
+    return `        <li><a href="${helpers.routeOf(n)}"><strong>${esc(label)}</strong></a>${why ? ` <span class="lib-ctx-why">${esc(why)}</span>` : "."} ${esc(n.blurb)}${extra ? ` Also: <em>${esc(extra)}</em>.` : ""}</li>`;
   }).join("\n");
   return {
     lede: `A type is a starting hypothesis. This file opens with <em>${esc(own)}</em>. If that is close but not right, these are the next ones to try.`,

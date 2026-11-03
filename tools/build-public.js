@@ -6,7 +6,7 @@ const ROOT=path.resolve(__dirname,'..');
 const {applyNavigation}=require('./navigation');
 const {specs}=require('./build-tools');
 const toolPages=new Set(['tools/index.html',...specs.map(s=>'tools/'+s.slug+'.html')]);
-const directories=new Set(['guides','library','tests','tunings','output-styles','research','og','resources']);
+const directories=new Set(['.well-known','guides','library','tests','tunings','output-styles','research','og','resources']);
 const publicRoot=new Set(['index.html','research.html','privacy.html','terms.html','404.html','styles.css','data.js','consent.js','integrations.js', 'guide-prompts.js','platforms.js','site-ui.js','quiz-utils.js','compact-tunings.js','llms.txt','llms-full.txt','robots.txt','sitemap.xml','_headers','_redirects','favicon.ico','favicon.svg','apple-touch-icon.png','3b91249899d7c5b030ddef6498ca2e78.txt']);
 const approved=new Set(require('../public-assets.json').files);
 function isPublic(relative) { return approved.has(relative); }

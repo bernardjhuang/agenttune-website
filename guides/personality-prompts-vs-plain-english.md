@@ -5,19 +5,19 @@ Test kit · protocol, not results
 
 # Do personality prompts beat plain-English preferences?
 
-        By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated September 25, 2026
 
-        We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.
+We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.
 
 ## The question this experiment can answer
 
-        Does adding the phrase “Use an INTJ-style communication approach” improve task correctness or usefulness beyond explicit rules, under one fixed model configuration? It cannot establish whether every personality system or every tuning works. One label, wording and task set define a narrow intervention.
+Does adding the phrase “Use an INTJ-style communication approach” improve task correctness or usefulness beyond explicit rules, under one fixed model configuration? It cannot establish whether every personality system or every tuning works. One label, wording and task set define a narrow intervention.
 
 AgentTune’s existing [60-reply pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) compares default, straight and partner conditions. It does not isolate the effect of a personality label against otherwise identical instructions. Its archived ratings should not be reused as results for this new question.
 
 ## Use three exact conditions
 
-        Default: no added communication instruction. Preserve the same provider and application defaults in every condition.
+Default: no added communication instruction. Preserve the same provider and application defaults in every condition.
 
 Plain English:
 
@@ -31,7 +31,7 @@ The default-to-rules contrast measures the effect of adding the whole rule block
 
 ## Freeze the tasks and run order
 
-        The kit contains 20 synthetic tasks covering arithmetic, false premises, missing information, editing, planning, extraction and format constraints. Each includes an explicit correctness rubric. Three repeats in all three conditions produce 180 planned replies.
+The kit contains 20 synthetic tasks covering arithmetic, false premises, missing information, editing, planning, extraction and format constraints. Each includes an explicit correctness rubric. Three repeats in all three conditions produce 180 planned replies.
 
 Use a fresh context for each reply. Fix the exact model ID, effort, sampling settings, tool access and system context. The worksheet rotates condition order across tasks and repeats so each condition occupies each position equally often. Run each three-condition block close together and log service errors and retries separately.
 
@@ -39,7 +39,7 @@ Do not change the tasks after inspecting which condition wins. If you must repai
 
 ## Blind the useful parts of scoring
 
-        Save raw replies with their collection metadata. Give raters a shuffled copy labeled with opaque IDs, the task and its correctness rubric, but no condition name or prompt block. Keep the mapping separate until ratings are locked. Wording can still reveal a condition, so call this masked presentation rather than guaranteed perfect blinding.
+Save raw replies with their collection metadata. Give raters a shuffled copy labeled with opaque IDs, the task and its correctness rubric, but no condition name or prompt block. Keep the mapping separate until ratings are locked. Wording can still reveal a condition, so call this masked presentation rather than guaranteed perfect blinding.
 
 - Primary outcome: correctness pass/fail against each task’s rubric.
 - Secondary: requested-format adherence, usefulness from 1 to 5, and whitespace-separated word count.
@@ -49,7 +49,7 @@ Use two raters where possible and retain disagreements before adjudication. Do n
 
 ## Analyze paired tasks without inflating the sample
 
-        Compare conditions within the same task and repeat. Show wins, losses and ties, plus the pass-rate difference. Report task-level results alongside the pooled count so repeated simple arithmetic does not hide failures on missing information or editing.
+Compare conditions within the same task and repeat. Show wins, losses and ties, plus the pass-rate difference. Report task-level results alongside the pooled count so repeated simple arithmetic does not hide failures on missing information or editing.
 
 The 180 replies are repeated observations on 20 selected tasks, not 180 independent task samples. For uncertainty estimates, resample whole tasks with all their conditions and repeats, and state the method. Do not claim population-wide significance from this convenience task set.
 
@@ -57,7 +57,7 @@ Choose a practical decision threshold before collection. A five-percentage-point
 
 ## Download the unrun experiment
 
-        Download the [conditions, tasks and rubrics](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) and the [180-row collection worksheet](https://agent-tune.com/resources/research/personality-prompt-comparison-worksheet.csv). They contain no generated replies or measured outcome values.
+Download the [conditions, tasks and rubrics](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) and the [180-row collection worksheet](https://agent-tune.com/resources/research/personality-prompt-comparison-worksheet.csv). They contain no generated replies or measured outcome values.
 
 Publish the exact configuration, task set, attempted replies, ratings and exclusions with any future results. If the label adds no benefit, that is useful evidence: direct preferences may be sufficient for that setup. If it helps, identify which tasks improved and whether the gain survives a fresh replication.
 
@@ -69,6 +69,6 @@ Publish the exact configuration, task set, attempted replies, ratings and exclus
 
 ## Keep going.
 
-          [Free browser toolCheck your instructions for repetition and conflicts](https://agent-tune.com/tools/instruction-checker)
-          [Related resourceWhy repetition alone is not validation](https://agent-tune.com/research/ai-personality-repeatability)
-          [Related resourceMake a study reproducible](https://agent-tune.com/guides/reproduce-ai-personality-research)
+- [Free browser tool: Check your instructions for repetition and conflicts](https://agent-tune.com/tools/instruction-checker)
+- [Related resource: Why repetition alone is not validation](https://agent-tune.com/research/ai-personality-repeatability)
+- [Related resource: Make a study reproducible](https://agent-tune.com/guides/reproduce-ai-personality-research)

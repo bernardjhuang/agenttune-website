@@ -2,6 +2,9 @@
   "version": 1,
   "note": "Reviewed publication allowlist. Add new assets explicitly; content artifacts must also match their pinned manifest.",
   "files": [
+    ".well-known/mcp-registry-auth",
+    ".well-known/mcp/server-card.json",
+    ".well-known/security.txt",
     "3b91249899d7c5b030ddef6498ca2e78.txt",
     "404.html",
     "_headers",

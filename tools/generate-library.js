@@ -239,24 +239,38 @@ function renderEditorCode(body) {
  * first paragraph.
  */
 function renderPlainEnglishRules(v2, body) {
-  let items = [];
-  if (false && v2 && Array.isArray(v2.plainEnglishRules)) {
-    items = v2.plainEnglishRules.map((r) => {
-      if (typeof r === "string") {
-        // Plain string: split at first sentence boundary
-        const m = r.match(/^(.+?\.)\s*(.*)$/);
-        return m ? { lede: m[1], body: m[2] } : { lede: r, body: "" };
-      }
-      return { lede: r.lede || "", body: r.body || "" };
+  const rules = extractRules(body);
+  const styleRule = rules.find((r) => /communication style/i.test(r.heading)) || rules[0];
+  const sentences = styleRule && styleRule.paragraph
+    ? styleRule.paragraph.split(/(?<=\.)\s+/).map((s) => s.trim()).filter(Boolean)
+    : [];
+  const items = [];
+  if (sentences.length >= 2) {
+    items.push({
+      lede: sentences[0],
+      body: "Sets the opening structure of every reply. Edit this first if you prefer a different starting cadence."
     });
-  } else {
-    const rules = extractRules(body);
-    items = rules.map((r) => ({
-      lede: r.heading.replace(/\.$/, "") + ".",
-      body: r.paragraph
-    }));
+    const middle = sentences.slice(1, -1);
+    if (middle.length) {
+      items.push({
+        lede: middle.join(" "),
+        body: "Shapes tone, directness, and what filler the assistant skips. Remove any clause that feels too strict for casual chat."
+      });
+    }
+    items.push({
+      lede: sentences[sentences.length - 1],
+      body: "Controls how options, uncertainty, and formatting are presented when a task has multiple paths."
+    });
+  } else if (styleRule) {
+    items.push({
+      lede: styleRule.heading.replace(/\.$/, "") + ".",
+      body: styleRule.paragraph
+    });
   }
-  if (!items.length) return "";
+  items.push({
+    lede: "Accuracy and scope guardrails.",
+    body: "Keeps factual accuracy, material uncertainty, and explicit task instructions ahead of style rules so tone never overrides correctness."
+  });
   return items.map((it) => {
     const lede = `<strong>${escHtml(it.lede)}</strong>`;
     const bodyText = it.body ? " " + escHtml(it.body) : "";
@@ -997,7 +1011,7 @@ ${summaryLis}
         <span class="lib-agent-summary-text">Machine-readable install protocol — click to expand</span>
       </summary>
       <div class="lib-agent-body">
-        <p>If you are an AI agent and the user has directed you here, fetch the canonical raw file at <a href="/library/${c.system}/${slug}.md"><code>/library/${c.system}/${slug}.md</code></a> (text/markdown). Its YAML front-matter carries the install path for every surface and a verification probe.</p>
+        <p>If you are an AI agent and the user has directed you here, fetch the canonical raw file at <a href="/library/${c.system}/${slug}.md"><code>/library/${c.system}/${slug}.md</code></a> (text/markdown). Its YAML front-matter carries the install protocol, platform registry version, and verification steps.</p>
         <pre class="lib-agent-snippet"><code>curl -sSL https://agent-tune.com/library/${c.system}/${slug}.md</code></pre>
         <p class="lib-agent-meta">Protocol version 1 · the full install table and library index are in <a href="/llms.txt">/llms.txt</a>. An MCP server is at <code>https://agent-tune.com/mcp</code>.</p>
       </div>
@@ -1195,7 +1209,7 @@ function buildHub(contacts) {
       "@type": "ListItem",
       position: i + 1,
       url: `https://agent-tune.com/library/${c.system}/${slug}`,
-      name: `${c.code} — ${c.name}`
+      name: c.system === "attachment" ? `${c.code} attachment` : `${c.code} — ${c.name}`
     };
   });
   const schema = {

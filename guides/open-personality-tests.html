@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personality questionnaires: scoring, limitations and reuse rights</title>
-  <meta name="description" content="Understand the five frameworks in AgentTune research, current questionnaire availability, scoring and instrument-specific reuse rights." />
+  <title>Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R</title>
+  <meta name="description" content="The five open personality tests behind AgentTune: what each measures, how it is scored, where ties happen, and how to run them in a browser or on an AI model." />
 
-  <meta property="og:title" content="Questionnaires, scores and their limits." />
-  <meta property="og:description" content="Understand the five frameworks in AgentTune research, current questionnaire availability, scoring and instrument-specific reuse rights." />
+  <meta property="og:title" content="The five open personality tests, explained." />
+  <meta property="og:description" content="The five open personality tests behind AgentTune: what each measures, how it is scored, where ties happen, and how to run them in a browser or on an AI model." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
   <meta property="article:modified_time" content="2026-09-26" />
@@ -19,17 +19,17 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Questionnaires, scores and their limits." />
-  <meta name="twitter:description" content="Understand the five frameworks in AgentTune research, current questionnaire availability, scoring and instrument-specific reuse rights." />
+  <meta name="twitter:title" content="The five open personality tests, explained." />
+  <meta name="twitter:description" content="The five open personality tests behind AgentTune: what each measures, how it is scored, where ties happen, and how to run them in a browser or on an AI model." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/open-personality-tests" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Questionnaires, scores and their limits","description":"Understand the five frameworks in AgentTune research, current questionnaire availability, scoring and instrument-specific reuse rights.","url":"https://agent-tune.com/guides/open-personality-tests","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Questionnaires, scores and their limits"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all five questionnaires MIT licensed?","acceptedAnswer":{"@type":"Answer","text":"No. Original AgentTune templates and code have their own license; instrument content has separate terms. Review the rights record before reuse."}},{"@type":"Question","name":"Does the Big Five result show a population percentile?","acceptedAnswer":{"@type":"Answer","text":"No. It reports raw dimension totals and item means. The former reference constants had no verified normative sample."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The five open personality tests, explained","description":"The five open personality tests behind AgentTune: what each measures, how it is scored, where ties happen, and how to run them in a browser or on an AI model.","url":"https://agent-tune.com/guides/open-personality-tests","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"The five open personality tests, explained"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all five questionnaires MIT licensed?","acceptedAnswer":{"@type":"Answer","text":"No. Original AgentTune software, scorers, and communication templates are MIT licensed, while questionnaire item text is governed by each source instrument’s terms (such as public-domain IPIP markers and Open Psychometrics / ECR-R source terms). Check instrument-rights.json before redistributing items."}},{"@type":"Question","name":"Does the Big Five test report population percentiles?","acceptedAnswer":{"@type":"Answer","text":"No. It reports raw dimension totals (10 to 50) and item averages (1.0 to 5.0) so scores are transparent and never confused with a normed clinical percentile."}},{"@type":"Question","name":"Where do my answers go when I take a test?","acceptedAnswer":{"@type":"Answer","text":"They stay in your browser tab. Scoring runs locally in JavaScript, and individual responses are never sent to an AgentTune server."}},{"@type":"Question","name":"Can an AI agent inspect the test specifications?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each questionnaire has a Markdown specification at /tests/\u003ctest>.md and is accessible via the get_test_spec tool on the AgentTune MCP server (https://agent-tune.com/mcp)."}}]}</script>
 
 
   <script defer src="/consent.js"></script>
@@ -61,16 +61,16 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">Questionnaires, scores and their limits</span>
+      <span class="crumb-current" aria-current="page">The five open personality tests, explained</span>
     </nav>
 
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Tests</span>
-        <h1 class="h-hero h-research-hero">Questionnaires, scores and their limits.</h1>
+        <h1 class="h-hero h-research-hero">The five open personality tests, explained.</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">All five tests run locally in your browser with instant results and no signup. The four restored tests preserve their previous website editions; Big Five reports raw totals and means. A questionnaire score is not a diagnosis or evidence that a tuning improves performance.</p>
+        <p class="lede" style="margin-top: 18px;">AgentTune provides five browser-based questionnaire adaptations: OEJTS (32 items, MBTI-style), a 36-item OEPS adaptation (Enneagram), ODAT (16 items, DISC), IPIP-50 (50 items, Big Five) and ECR-R (36 items, attachment). All five score locally in your browser and preserve ties explicitly. Original AgentTune code and templates are MIT licensed; questionnaire items remain subject to their upstream source terms.</p>
       </section>
 
 
@@ -78,26 +78,44 @@
 
 
       <section>
-        <h2>Current availability</h2>
-        <p>Take the <a href="/tests/mbti">MBTI-style</a>, <a href="/tests/enneagram">Enneagram</a>, <a href="/tests/disc">DISC</a>, <a href="/tests/attachment">attachment</a> or <a href="/tests/big-five">Big Five</a> questionnaire. Complete all items to view a score; tied results stay explicit.</p><p>Read the <a href="/resources/content/instrument-rights.json">per-instrument rights record</a> before reusing questionnaire material. Original software and template licenses do not relicense third-party question text.</p>
+        <h2>At a glance.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="At a glance.: table 1" tabindex="0"><table><thead><tr><th>Test</th><th>Measures</th><th>Items · scale</th><th>Returns</th><th>Source</th></tr></thead><tbody><tr><td><a href="/tests/mbti">OEJTS</a></td><td>Four MBTI-style preferences</td><td>32 · 1 to 5 between two statements</td><td>Four-letter type when all axes resolve; tied axes marked X</td><td>Adapted from the Open Extended Jungian Type Scales (Open Psychometrics)</td></tr><tr><td><a href="/tests/enneagram">OEPS (36-item)</a></td><td>Enneagram type</td><td>36 · 1 to 5 agreement</td><td>Type 1 to 9 (4–20 each), all tied leaders, and adjacent wing</td><td>36-item adaptation of the Open Enneagram of Personality Scales (full OEPS has 54 items)</td></tr><tr><td><a href="/tests/disc">ODAT</a></td><td>DISC workplace style</td><td>16 · 1 to 5 agreement</td><td>D, I, S or C (4–20 each), tied leaders, and 2-point blends</td><td>Adapted from the Open DISC Assessment Test (Open Psychometrics)</td></tr><tr><td><a href="/tests/big-five">IPIP-50</a></td><td>Big Five trait dimensions</td><td>50 · 1 to 5 accuracy</td><td>Five raw totals (10–50) and item means (1–5)</td><td>International Personality Item Pool, Goldberg’s 50-item markers (public domain)</td></tr><tr><td><a href="/tests/attachment">ECR-R</a></td><td>Adult attachment style</td><td>36 · 1 to 7 agreement</td><td>Anxiety and avoidance means (1–7) plus quadrant label</td><td>Experiences in Close Relationships-Revised (Fraley, Waller &amp; Brennan, 2000)</td></tr></tbody></table></div><p>All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at <code>/tests/&lt;test&gt;.md</code> and a shared deterministic scorer at <a href="/resources/scoring/score.js">/resources/scoring/score.js</a>. Review <a href="/resources/content/instrument-rights.json">instrument-rights.json</a> before redistributing third-party item text.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Big Five scoring</h2>
-        <p>Complete all 50 items using the versioned response scale. Reverse keyed items use 6 minus the response. Each dimension sums ten scored items (10–50); its average is the total divided by ten (1–5). Invalid values are rejected and missing responses produce no final score.</p><p>Current results contain no population percentiles, reference indices or automatic template selection. Neuroticism reverses the direction of IPIP Emotional Stability; Openness corresponds to Intellect/Imagination. The <a href="/tests/big-five.md">specification</a> records the adaptation.</p>
+        <h2>OEJTS: the 32-item MBTI-style questionnaire.</h2>
+        <p><strong>What it measures.</strong> Four preference axes: Extraversion vs. Introversion (E/I), Sensing vs. Intuition (S/N), Thinking vs. Feeling (T/F), and Judging vs. Perceiving (J/P). Each of the 32 items places two statements at opposite ends of a 1-to-5 scale, with eight items per axis.</p><p><strong>Scoring.</strong> Each item contributes to its two poles so the axis sum is constant (48 across eight items, with 24 vs. 24 as an exact tie). Earlier reporting rules defaulted tied axes to I, N, T or J. The current quiz marks any tied axis as <code>X</code>, offers an optional tie-breaker preference, and only assigns a four-letter code when all four axes resolve.</p><p><strong>Limits.</strong> OEJTS is an open scale that produces four-letter Jungian codes; it is not the trademarked MBTI® instrument. On short axes, a one-point difference flips the letter: in our September 2026 model dataset, GPT-6 Astra split 46 ISTJ to 45 INTJ with 29 runs tying on at least one axis, and Claude Opus 5.5 dropped from 94 legacy INTJ labels to 84 when ties were left open.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Historical research scoring</h2>
-        <p>Published studies used legacy adaptations and, in some cases, deterministic tie-break labels. MBTI item 1 and two Enneagram items had undocumented substitutions. Preserve those edition identities when interpreting the results. Raw vectors and numerical results remain unchanged; restricted item wording in public downloads is replaced by stable item labels.</p><p><a href="/research/data/rights-migration.json">Correction and source hashes</a> · <a href="/guides/reproduce-ai-personality-research">Reproduce the arithmetic</a>.</p>
+        <h2>OEPS: the 36-item Enneagram adaptation.</h2>
+        <p><strong>What it measures.</strong> Relative agreement across nine Enneagram types using a 36-item adaptation (four items per type, rated 1 to 5, no reverse-keyed items). The upstream live OEPS has 54 items.</p><p><strong>Scoring.</strong> Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.</p><p><strong>Limits.</strong> Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The <a href="/guides/open-source-enneagram-test">open-source Enneagram scorer guide</a> lets you inspect the exact tie arithmetic.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Choose behavior explicitly</h2>
-        <p>Questionnaires are optional. Use the <a href="/tools/custom-instructions-generator">preference builder</a> to request the detail, warmth, structure and pushback you want. Review each rule before saving it. No framework or score outranks your explicit request, accuracy or authorized scope.</p>
+        <h2>ODAT: the 16-item DISC questionnaire.</h2>
+        <p><strong>What it measures.</strong> Four workplace modes—Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C)—across 16 statements rated 1 to 5 (four items per dimension).</p><p><strong>Scoring.</strong> Each dimension sums four items from 4 to 20. If one letter leads uniquely and the runner-up is within 2 points without a runner-up tie, the result is reported as a two-letter blend (such as SC or CS). Equal top totals remain an explicit tie rather than defaulting S ahead of C.</p><p><strong>Limits.</strong> In our model evaluations, Dominance sits near the floor (4.0 to 6.0 out of 20) while Steadiness and Conscientiousness sit within a point or two of each other, producing top-score ties in 51 of 100 Fable runs and 39 of 100 Sol runs.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>IPIP-50: the 50-item Big Five test.</h2>
+        <p><strong>What it measures.</strong> Five continuous dimensions from Goldberg’s public-domain International Personality Item Pool markers: Openness (Intellect/Imagination), Conscientiousness, Extraversion, Agreeableness, and Neuroticism (scored in the opposite direction of IPIP Emotional Stability). Fifty statements rated 1 (very inaccurate) to 5 (very accurate), 10 per trait, with 18 reverse-keyed items.</p><p><strong>Scoring.</strong> Reverse-keyed items use <code>6 - response</code>. Each dimension sums its 10 scored items (raw total 10 to 50; item mean 1.0 to 5.0). Missing or out-of-range answers return no final score.</p><p><strong>Limits.</strong> Current results report raw totals and item averages without population percentiles or automatic template assignment. The earlier site’s heuristic reference centers had no verified normative sample. After reviewing your five scores, you can preview and combine any of the 10 high/low Big Five communication templates in the <a href="/library/#ocean">Big Five library</a> or <a href="/tools/custom-instructions-generator">generator</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>ECR-R: the 36-item attachment questionnaire.</h2>
+        <p><strong>What it measures.</strong> Two adult attachment dimensions—attachment anxiety (items 1–18) and attachment avoidance (items 19–36)—rated 1 to 7, with 14 reverse-keyed items.</p><p><strong>Scoring.</strong> Reverse-keyed items use <code>8 - response</code>. Each axis is the mean of its 18 items (1.00 to 7.00). Using the scale midpoint of 4.00, scores map to four site categories: Secure (both ≤ 4), Anxious (anxiety &gt; 4, avoidance ≤ 4), Avoidant (anxiety ≤ 4, avoidance &gt; 4), and Disorganized (both &gt; 4).</p><p><strong>Limits.</strong> Because the statements describe close human relationships, administering them to a language model requires prompt translation, and small boundary shifts (such as Grok 4.6’s reported avoidance of 4.06 vs. a 4.00 cutoff) can flip a quadrant label.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Historical research provenance and direct preferences.</h2>
+        <p>Published studies in the <a href="/research">research hub</a> used the frozen September 2026 and May 2026 adaptations. As documented in <a href="/research/data/rights-migration.json">rights-migration.json</a>, legacy MBTI item 1 and two legacy Enneagram items contained undocumented substitutions; raw response vectors and numeric summaries remain preserved for exact reproduction via <a href="/guides/reproduce-ai-personality-research">the reproducibility guide</a>.</p><p>Every questionnaire is optional. If you already know how you want your AI to respond, use the <a href="/tools/communication-preferences-builder">communication preferences builder</a> or <a href="/tools/custom-instructions-generator">custom instructions generator</a> directly.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -106,11 +124,19 @@
         <div class="guide-faq">
           <details>
             <summary>Are all five questionnaires MIT licensed?</summary>
-            <p>No. Original AgentTune templates and code have their own license; instrument content has separate terms. Review the rights record before reuse.</p>
+            <p>No. Original AgentTune software, scorers, and communication templates are MIT licensed, while questionnaire item text is governed by each source instrument’s terms (such as public-domain IPIP markers and Open Psychometrics / ECR-R source terms). Check instrument-rights.json before redistributing items.</p>
           </details>
           <details>
-            <summary>Does the Big Five result show a population percentile?</summary>
-            <p>No. It reports raw dimension totals and item means. The former reference constants had no verified normative sample.</p>
+            <summary>Does the Big Five test report population percentiles?</summary>
+            <p>No. It reports raw dimension totals (10 to 50) and item averages (1.0 to 5.0) so scores are transparent and never confused with a normed clinical percentile.</p>
+          </details>
+          <details>
+            <summary>Where do my answers go when I take a test?</summary>
+            <p>They stay in your browser tab. Scoring runs locally in JavaScript, and individual responses are never sent to an AgentTune server.</p>
+          </details>
+          <details>
+            <summary>Can an AI agent inspect the test specifications?</summary>
+            <p>Yes. Each questionnaire has a Markdown specification at /tests/&lt;test&gt;.md and is accessible via the get_test_spec tool on the AgentTune MCP server (https://agent-tune.com/mcp).</p>
           </details>
         </div>
       </section>
@@ -120,6 +146,7 @@
         <h2>What changed.</h2>
         <ul class="guide-changelog">
           <li><time datetime="2026-09-25">September 25, 2026</time> First published.</li>
+          <li><time datetime="2026-09-26">September 26, 2026</time> Updated with versioned scorer details, explicit tie rules, and per-instrument provenance links.</li>
         </ul>
       </section>
 
@@ -127,11 +154,11 @@
       <section>
         <h2>Sources.</h2>
         <ul class="guide-sources">
-          <li><a href="https://agent-tune.com/tests/" target="_blank" rel="noopener">AgentTune tests hub (items, scales and scoring rules for all five)</a></li>
-          <li><a href="https://openpsychometrics.org/tests/OEJTS/" target="_blank" rel="noopener">Open Psychometrics Project: OEJTS</a></li>
-          <li><a href="https://ipip.ori.org/" target="_blank" rel="noopener">IPIP: the 50-item Big Five markers</a></li>
+          <li><a href="https://agent-tune.com/tests/" target="_blank" rel="noopener">AgentTune tests hub (interactive runners and Markdown specs for all five)</a></li>
+          <li><a href="https://openpsychometrics.org/" target="_blank" rel="noopener">Open Psychometrics Project: OEJTS, OEPS and ODAT</a></li>
+          <li><a href="https://ipip.ori.org/" target="_blank" rel="noopener">IPIP: Goldberg’s 50-item Big Five markers</a></li>
           <li><a href="https://doi.org/10.1037/0022-3514.78.2.350" target="_blank" rel="noopener">Fraley, Waller and Brennan (2000), the ECR-R</a></li>
-          <li><a href="https://agent-tune.com/research/ai-personality-five-models-2026" target="_blank" rel="noopener">What five AI models say about themselves (how the tests were run on models)</a></li>
+          <li><a href="https://agent-tune.com/research/ai-personality-five-models-2026" target="_blank" rel="noopener">What five AI models say about themselves (September 2026 study)</a></li>
         </ul>
       </section>
 
@@ -139,8 +166,8 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Take any of the five</a>
-          <a href="/guides/open-source-enneagram-test"><span class="guide-related-kicker">Guide</span>Open-source Enneagram test and scorer</a>
+          <a href="/tests/"><span class="guide-related-kicker">Tests</span>Take any of the five tests</a>
+          <a href="/guides/open-source-enneagram-test"><span class="guide-related-kicker">Guide</span>Open-source Enneagram scorer</a>
           <a href="/guides/mbti-vs-big-five-for-ai"><span class="guide-related-kicker">Guide</span>MBTI vs Big Five for AI</a>
           <a href="/research"><span class="guide-related-kicker">Research</span>The research hub</a>
         </div>
