@@ -5,15 +5,11 @@ Research · essay
 
 # Is every AI an INTJ?
 
-Different labels do not establish a change in personality.
-
 By Bernard Huang · Updated September 25, 2026
 
-The September collection includes more than INTJ labels. Muse’s supplied aggregate report lists ISTJ in 80 of 100 runs; Astra’s raw records produce 46 ISTJ and 45 INTJ labels under the original tie rules. Those observations challenge a universal INTJ label. They do not identify the first non-INTJ AI or show that model personalities changed between May and September.
+No universal AI type follows from these data. Muse reports mostly ISTJ labels, while Astra has 45 fully resolved ISTJ and 19 fully resolved INTJ records, plus other types and unresolved axes. The May and September collections used different models, prompts and session procedures; their counts cannot isolate a change in model behavior.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. No universal AI type follows from these data. Muse reports mostly ISTJ labels, while Astra has 45 fully resolved ISTJ and 19 fully resolved INTJ records, plus other types and unresolved axes. The May and September collections used different models, prompts and session procedures; their counts cannot isolate a change in model behavior.
 
 ## What the May headline actually counted.
 

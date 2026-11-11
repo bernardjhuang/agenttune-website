@@ -1,7 +1,8 @@
 {
   "slug": "coding-agent-personality",
-  "title": "AGENTS.md & Cursor Rules: Add a Personality · AgentTune",
-  "description": "CLAUDE.md, AGENTS.md, Cursor rules, and Copilot instructions cover code style. Here is the personality layer they all miss, with copyable examples.",
+  "updated": "2026-11-11",
+  "title": "AGENTS.md, CLAUDE.md & Cursor Rules: Add AI Personality",
+  "description": "CLAUDE.md, AGENTS.md, Cursor rules, and Copilot instructions cover code style. Add a 10-line communication layer so your coding agent reports clearly.",
   "pill": "Guide · Coding agents",
   "h1": "Coding agent personality: the layer your AGENTS.md is missing.",
   "dek": "Code conventions tell the agent what to write. A personality layer tells it how to talk to you.",
@@ -92,8 +93,12 @@
   "published": "2026-07-23",
   "changelog": [
     {
+      "date": "2026-11-11",
+      "note": "Added cross-agent MCP preference portability notes and updated current model names."
+    },
+    {
       "date": "2026-09-24",
-      "note": "Communication prompts now adapt to Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, and Grok 4.7, with a compact model selector and expandable previews."
+      "note": "Communication prompts now adapt to Meta Muse, GPT-6 Astra, Claude Fable 5.1, GPT-6 Sol, Claude Opus 5.5, and Grok 4.6, with a compact model selector and expandable previews."
     }
   ],
   "promptModel": "any"

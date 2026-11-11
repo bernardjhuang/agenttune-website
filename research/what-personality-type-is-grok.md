@@ -5,15 +5,11 @@ Research · Q&A
 
 # What personality type is Grok?
 
-One self-report from Grok 4.6 in September 2026, with the May 2026 Grok 4.3 records for context.
-
 By Bernard Huang · Updated September 25, 2026
 
-Grok 4.6’s supplied self-report scores INTJ with wide margins. The report also describes 100 simulated draws over uncertain answers. Three canonical vectors—MBTI, Enneagram and DISC—can be re-scored; Big Five, attachment and the simulation distribution remain reported figures. This is not a cohort of 100 fresh model sessions.
+Grok 4.6’s canonical vectors score INTJ, Enneagram Type 5 and DISC C. The report gives attachment coordinates 1.50 / 4.06, just over the site’s Avoidant threshold, and Big Five totals 46 / 42 / 24 / 33 / 19. Raw Big Five and attachment vectors were not supplied. Its reported simulation is a different evidence source from the fresh-session cohorts.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Grok 4.6’s canonical vectors score INTJ, Enneagram Type 5 and DISC C. The report gives attachment coordinates 1.50 / 4.06, just over the site’s Avoidant threshold, and Big Five totals 46 / 42 / 24 / 33 / 19. Raw Big Five and attachment vectors were not supplied. Its reported simulation is a different evidence source from the fresh-session cohorts.
 
 ## Grok 4.6, September 2026, as reported.
 

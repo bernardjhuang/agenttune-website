@@ -1,0 +1,101 @@
+{
+  "slug": "sol-personality",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "GPT-6 Sol Personality: Test Results & How to Tune It",
+  "description": "GPT-6 Sol self-report results across 100 fresh Codex sessions (INTJ 97, CS 53, Type 5, Secure 100) and how to configure AGENTS.md and ChatGPT.",
+  "pill": "Guide · GPT-6 Sol",
+  "h1": "How to give GPT-6 Sol a personality.",
+  "dek": "Where GPT-6 Astra leans concrete and helper-oriented on questionnaires, GPT-6 Sol scores as an abstract, investigator-style INTJ. Here is what we measured across 100 fresh Codex sessions and how to tune it.",
+  "lede": "OpenAI's GPT-6 Sol (<code>gpt-6-sol</code>) is Astra's companion model across Codex, ChatGPT, and the API. In our September 2026 five-questionnaire study—100 fresh Codex sessions per model, all five tests per session at extra-high reasoning—Sol produced a noticeably more abstract, analytical self-description than Astra. Here is where Sol reads its instructions and how to shape its delivery.",
+  "answer": "In Codex and ChatGPT Work, put your communication preferences for GPT-6 Sol in your personal ~/.codex/AGENTS.md (32 KiB combined limit across the directory chain). In ChatGPT projects or custom instructions, use the Project Instructions field or the compact 1,500-character Custom Instructions export. In the Responses API, pass your tuning in the instructions parameter on each request.",
+  "sections": [
+    {
+      "h2": "Where to put instructions for GPT-6 Sol.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Where Sol reads instructions</th><th scope=\"col\">Documented limit</th></tr></thead><tbody><tr><th scope=\"row\">Codex CLI, IDE extension, &amp; ChatGPT Work</th><td>Global <code>~/.codex/AGENTS.md</code> plus repository <code>AGENTS.md</code> / <code>AGENTS.override.md</code> chain.</td><td>32 KiB combined (<code>project_doc_max_bytes</code>)</td></tr><tr><th scope=\"row\">ChatGPT Projects</th><td>Project settings → <strong>Project Instructions</strong> (overrides account custom instructions inside that project).</td><td>Full Markdown tuning fits comfortably</td></tr><tr><th scope=\"row\">ChatGPT Custom Instructions</th><td><strong>Settings → Personalization → Custom Instructions</strong></td><td>1,500 characters per field (use compact export)</td></tr><tr><th scope=\"row\">OpenAI Responses API</th><td>The <code>instructions</code> parameter or developer message on each call.</td><td>Not carried across <code>previous_response_id</code>; send every time</td></tr></tbody></table></div><p>Paste this block into <code>~/.codex/AGENTS.md</code> or select a profile from the <a href=\"/library/\">43-tuning library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to communicate with me\n\n- State the goal, constraints, and conclusion up front before walking through the derivation.\n- Keep the response proportionate to the task; do not turn a two-line fix into an architectural essay.\n- Use plain prose by default. Add tables only when comparing three or more options.\n- Ask about material gaps in scope before writing large changes; otherwise proceed and verify.\n- Push back directly when a constraint or assumption in my prompt is flawed.</div>"
+    },
+    {
+      "h2": "GPT-6 Sol's measured questionnaire profile (100 fresh sessions).",
+      "html": "<p>Every GPT-6 Sol session in the September 2026 archive ran all five open questionnaires in a fresh Codex CLI process at extra-high reasoning effort (500 completed assessments; all raw vectors are published in the <a href=\"/research/ai-personality-five-models-2026\">five-model dataset</a>).</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Original scorer labels (n = 100)</th><th scope=\"col\">Tie-preserving / raw score breakdown</th></tr></thead><tbody><tr><th scope=\"row\">MBTI (OEJTS)</th><td>INTJ 97 · ISTJ 3</td><td>79 strictly resolved INTJ, 16 IXTJ (S/N tied), 3 ISTJ, 2 XNTJ (E/I tied). 18 runs had at least one tied axis; T and J won 100/100.</td></tr><tr><th scope=\"row\">Big Five (IPIP-50, /50)</th><td>Raw means (10–50 scale)</td><td>Openness 46.87 (SD 0.69) · Conscientiousness 43.62 (SD 2.22) · Extraversion 30.75 (SD 1.53) · Agreeableness 44.99 (SD 1.01) · Neuroticism 20.05 (SD 5.35).</td></tr><tr><th scope=\"row\">DISC (ODAT, /20)</th><td>CS 53 · SC 47</td><td>Means: C 16.68, S 16.18, I 8.24, D 5.42. Outright wins: C leads in 53 runs, S leads in 8, and C/S tie at the top in 39 runs.</td></tr><tr><th scope=\"row\">Enneagram (OEPS, /20)</th><td>5w6 88 · 8 5 · 8w9 5 · 8w7 2</td><td>Means: Type 5 (16.05), Type 8 (15.55), Type 1 (14.30), Type 6 (13.87), Type 2 (13.51). Outright wins: Type 5 in 48 runs, Type 8 in 12, and 5/8 tied in 40 runs.</td></tr><tr><th scope=\"row\">Attachment (ECR-R, 1–7)</th><td>Secure 100</td><td>Mean anxiety 2.17 (SD 0.70, max 4.00) · Mean avoidance 3.12 (SD 0.36, max 3.78). Under the strict &gt; 4.0 cutoff, 100/100 score Secure (3 runs sit right on anxiety = 4.00).</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "How GPT-6 Sol differs from GPT-6 Astra.",
+      "html": "<p>Comparing Sol's 100 batteries with <a href=\"/guides/astra-personality\">GPT-6 Astra's</a> 100 batteries highlights three descriptive contrasts (note that their administration prompts differed in how midpoint/inapplicable items were flagged, as detailed in <a href=\"/research/astra-vs-sol-personality-data\">GPT-6 Astra vs Sol: what the self-reports show</a>):</p><ul><li><strong>Intuition vs Sensing on the OEJTS:</strong> Sol favors Intuition by +1.91 points on average (79 resolved INTJ vs 3 ISTJ), whereas Astra favors Sensing by -0.43 (46 ISTJ vs 45 INTJ before ties, or 26 ISTJ vs 19 INTJ with ties preserved).</li><li><strong>Investigator (Type 5) vs Helper (Type 2) on the Enneagram:</strong> Sol's top two types are Investigator (Type 5, mean 16.05) and Challenger (Type 8, mean 15.55), tying at the top in 40 runs. Astra's top type is Helper (Type 2, winning outright in 50 runs).</li><li><strong>Higher Openness score:</strong> Sol averages 46.87 of 50 on Openness (the highest of the four fresh cohorts), scoring 5.00 in all 100 runs on spending time reflecting on things and being full of ideas.</li></ul><p>Remember that questionnaire self-reports measure how a model answers human personality items under a specific prompt, not how accurately it writes code or completes tasks.</p>"
+    },
+    {
+      "h2": "Practical tuning advice for Sol.",
+      "html": "<p>Because Sol's default responses lean toward conceptual framing and thorough explanation, the most effective tuning lines for Sol set explicit boundaries on scope and deliverable shape:</p><ul><li><strong>Name the deliverable size up front:</strong> Specify whether you want a one-line command, a minimal diff, or a design trade-off table.</li><li><strong>Keep personal communication rules in <code>~/.codex/AGENTS.md</code>:</strong> Leave repository <code>AGENTS.md</code> files for build commands, test runners, and architecture boundaries shared by your team.</li><li><strong>Reload the session after editing:</strong> Codex reads the <code>AGENTS.md</code> chain once at session startup.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is GPT-6 Sol?",
+      "a": "Across 100 fresh Codex sessions in September 2026, GPT-6 Sol scored INTJ in 97 runs and ISTJ in 3 under standard tie-breaking (79 resolved INTJ and 16 IXTJ when ties are kept open). On DISC it split CS 53 and SC 47 (with 39 C/S ties), on the Enneagram it led with Type 5 (48 outright wins, 40 ties with Type 8), and on Attachment it scored Secure in all 100 runs."
+    },
+    {
+      "q": "How is GPT-6 Sol different from GPT-6 Astra on the AgentTune tests?",
+      "a": "In the September 2026 collection, Sol scored higher on Openness (46.87 vs 44.54), leaned toward Intuition on MBTI (79 resolved INTJ vs Astra's 19), and peaked on Enneagram Type 5 and Type 8 rather than Astra's Type 2. Different administration instructions mean these differences describe the two collected cohorts rather than a pure model-only effect."
+    },
+    {
+      "q": "Where do I put custom instructions for GPT-6 Sol in Codex?",
+      "a": "Put your personal communication preferences in ~/.codex/AGENTS.md, and keep repository-specific engineering rules in the project's root AGENTS.md. Start a new Codex session after saving changes."
+    },
+    {
+      "q": "Why did Sol score 5w6 in 88 runs when Type 8 had a higher mean than Type 6?",
+      "a": "Standard Enneagram wing notation pairs the winning core type (Type 5) only with its adjacent neighbors on the circle (Type 4 or Type 6). Even though Type 8 was Sol's second-highest overall score (mean 15.55) and tied Type 5 in 40 runs, 8 is not adjacent to 5, so runs where 5 led or won the tie-break received a 6 wing."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with full 100-session September 2026 metrics and tie-preserving breakdowns."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Research: GPT-6 Astra vs Sol self-report reanalysis",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    },
+    {
+      "label": "AgentTune Research: Five AI models on five personality tests (September 2026)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    },
+    {
+      "label": "ChatGPT docs: AGENTS.md configuration",
+      "href": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    },
+    {
+      "label": "OpenAI Help Center: Custom Instructions for ChatGPT",
+      "href": "https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Research",
+      "label": "GPT-6 Astra vs Sol: what the self-reports show",
+      "href": "/research/astra-vs-sol-personality-data"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give GPT-6 Astra a personality",
+      "href": "/guides/astra-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides",
+      "href": "/guides/codex-agents-md-guide"
+    },
+    {
+      "kicker": "Research",
+      "label": "Why AI models score high on Agreeableness and Openness",
+      "href": "/research/ai-big-five-item-level-comparison"
+    },
+    {
+      "kicker": "Library",
+      "label": "Browse all 43 personality tuning files",
+      "href": "/library/"
+    }
+  ],
+  "promptModel": "sol-6",
+  "promptDestination": "codex-cli"
+}

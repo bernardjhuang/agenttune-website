@@ -1,0 +1,93 @@
+{
+  "slug": "grok-personality-settings",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "How to Change Grok's Personality on X & grok.com (2026)",
+  "description": "How to customize Grok 4.6 in everyday chats on X and grok.com, how account instructions differ from a custom Grok Bot, and copy-paste tone prompts.",
+  "pill": "Guide · xAI Grok",
+  "h1": "How to change Grok's personality on X and grok.com.",
+  "dek": "You do not have to build a custom Grok Bot just to change how Grok talks to you in everyday threads.",
+  "lede": "Many people searching for Grok personality settings want to adjust regular Grok chats on X or <code>grok.com</code> rather than publish a standalone custom bot. xAI gives you three ways to steer Grok 4.6 and current Grok releases: custom conversation instructions in your account settings or thread, reusable custom <strong>Grok Bots</strong> with a dedicated Description field, and the <code>system</code> message in the xAI API.",
+  "answer": "To change how Grok responds in ordinary chat on grok.com or X, paste a compact communication block at the start of your thread or in your custom response preferences under Settings. If you want a named specialist persona you can reopen anytime, create a Grok Bot and paste your tuning into its Description field alongside its task.",
+  "sections": [
+    {
+      "h2": "Three ways to control Grok's voice.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Where the rules go</th><th scope=\"col\">Best when you want...</th></tr></thead><tbody><tr><th scope=\"row\">Ordinary chat on <code>grok.com</code> or X</th><td>Account response instructions in Settings, or pasted at the top of a new conversation.</td><td>Direct, low-filler answers in everyday search and analysis threads.</td></tr><tr><th scope=\"row\">Custom Grok Bot</th><td>The Bot's <strong>Description</strong> field (see the <a href=\"/guides/grokbot-personality\">Grok Bot guide</a>).</td><td>A dedicated specialist role (for example, a code auditor or devil's advocate) with its own chat history.</td></tr><tr><th scope=\"row\">xAI API</th><td>The <code>system</code> message sent with each request.</td><td>Programmatic pipelines where model version and sampling temperature are pinned.</td></tr></tbody></table></div><p>Paste this block into Grok or select any of the 43 profiles in the <a href=\"/library/\">tuning library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences\n\n- Lead with the direct conclusion or answer in the first sentence.\n- Separate verified facts and primary sources from inference or speculation.\n- Keep tone dry, clear, and matter-of-fact; skip forced banter, slang, and throat-clearing intros.\n- Use plain prose by default. Add tables only when comparing three or more options.\n- Challenge weak assumptions in my question directly and explain why.</div>"
+    },
+    {
+      "h2": "Why Grok's default self-report looks different from Claude and ChatGPT.",
+      "html": "<p>In the September 2026 supplied self-report for Grok 4.6 (<a href=\"/research/what-personality-type-is-grok\">What personality type is Grok?</a>), its canonical answer vectors scored <strong>INTJ on the OEJTS</strong> (with wide margins of +13 to +15 out of 16), <strong>Investigator (Type 5) on the Enneagram</strong> (19 of 20, followed by Type 8 Challenger at 17), and a <strong>pure Conscientiousness (C) profile on DISC</strong> (C 18 vs Steadiness 11).</p><p>Unlike the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, which all scored 44.5 to 45.1 on Agreeableness and Secure on Attachment), Grok 4.6 reported <strong>Agreeableness at 33 of 50</strong>, <strong>Extraversion at 24 of 50</strong>, and <strong>Attachment avoidance at 4.06</strong> (just 0.06 above the 4.0 Avoidant cutoff; see our <a href=\"/research/grok-attachment-cutoff-simulation\">Grok attachment cutoff sensitivity analysis</a>). Because the Grok 4.6 report consisted of one canonical self-report plus 100 simulated draws rather than 100 independent sessions, we keep it strictly separated from the fresh-session cohorts.</p>"
+    },
+    {
+      "h2": "Dialing down edgy banter or dialing up warmth.",
+      "html": "<p>In practice, users tune Grok in one of two opposite directions:</p><ul><li><strong>Cutting performative snark:</strong> If Grok's default replies feel overly sarcastic or informal for technical work, add a single rule: <em>\"Write in plain, neutral technical prose. Do not use jokes, sarcasm, or slang.\"</em> Pairing that with an <a href=\"/library/mbti/istj\">ISTJ</a> or <a href=\"/library/disc/c-conscientiousness\">DISC Conscientiousness</a> tuning keeps answers focused on evidence and citations.</li><li><strong>Adding structured warmth for brainstorming or coaching:</strong> If Grok feels too blunt or detached, use an <a href=\"/library/mbti/enfj\">ENFJ</a>, <a href=\"/library/disc/s-steadiness\">DISC Steadiness</a>, or <a href=\"/library/attachment/secure\">Secure attachment</a> tuning so it checks context before jumping to critique.</li></ul><p>If you decide to package your rules into a reusable custom bot, follow our step-by-step <a href=\"/guides/grokbot-personality\">Grok Bot personality guide</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I change Grok's personality without creating a Grok Bot?",
+      "a": "Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread."
+    },
+    {
+      "q": "What is the difference between Grok chat settings and a Grok Bot?",
+      "a": "Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job."
+    },
+    {
+      "q": "How do I make Grok stop using slang or sarcasm?",
+      "a": "Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'"
+    },
+    {
+      "q": "Why did Grok 4.6 score Avoidant on the AgentTune attachment test?",
+      "a": "In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published covering ordinary Grok chat settings on X and grok.com vs custom Grok Bots."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: How to give a Grok Bot a personality",
+      "href": "https://agent-tune.com/guides/grokbot-personality"
+    },
+    {
+      "label": "AgentTune Research: What personality type is Grok?",
+      "href": "https://agent-tune.com/research/what-personality-type-is-grok"
+    },
+    {
+      "label": "AgentTune Research: Grok 4.6 and the attachment cutoff",
+      "href": "https://agent-tune.com/research/grok-attachment-cutoff-simulation"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to give a Grok Bot a personality",
+      "href": "/guides/grokbot-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Grok? (Grok 4.6 & 4.3 data)",
+      "href": "/research/what-personality-type-is-grok"
+    },
+    {
+      "kicker": "Research",
+      "label": "Grok 4.6 and the attachment cutoff: a sensitivity analysis",
+      "href": "/research/grok-attachment-cutoff-simulation"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to make AI push back and stop agreeing with you",
+      "href": "/guides/stop-ai-sycophancy-make-ai-push-back"
+    },
+    {
+      "kicker": "Library",
+      "label": "Browse all 43 personality tuning files",
+      "href": "/library/"
+    }
+  ],
+  "promptModel": "grok-4-7",
+  "promptDestination": "grok"
+}

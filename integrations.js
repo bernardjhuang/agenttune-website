@@ -37,8 +37,14 @@
   }
 
   let instanceCount = 0;
+  const MODIFIERS = [
+    { id: "concise", label: "+ Concise (<150w)", rule: "- **Length:** Keep replies under 150 words by default; skip preamble and recaps." },
+    { id: "pushback", label: "+ Harder pushback", rule: "- **Pushback:** Challenge weak assumptions, confirmation bias, and blind spots before agreeing." },
+    { id: "code", label: "+ Code & examples first", rule: "- **Format:** Lead with working code, concrete examples, or schemas before prose explanations." },
+    { id: "no-questions", label: "+ No follow-up questions", rule: "- **Questions:** Do not end replies with follow-up questions unless a missing detail blocks execution." }
+  ];
   window.AT_INTEGRATIONS = INTEGRATIONS;
-  window.AT_PROMPTS = { models: MODELS, modelFor, prompt, snippet, stripFrontMatter, destinations };
+  window.AT_PROMPTS = { models: MODELS, modelFor, prompt, snippet, stripFrontMatter, destinations, modifiers: MODIFIERS };
   window.renderIntegrations = function (tuning, containerOrOpts) {
     const opts = containerOrOpts && containerOrOpts.nodeType ? { container: containerOrOpts } : (containerOrOpts || {});
     const root = opts.container || document.getElementById("integration-deep") || document.querySelector("[data-integration-deep]");
@@ -46,6 +52,7 @@
     if (root.__atPicker) { root.__atPicker.setTuning(tuning); return; }
     const uid = "at-prompt-" + (++instanceCount);
     let currentTuning = tuning, revision = 0;
+    const activeMods = new Set();
     const allowedModels = MODELS.filter(model => destinations(model.id, opts.only).length);
     if (!allowedModels.length) { root.textContent = "No destinations are available."; return; }
     root.classList.add("prompt-picker");
@@ -55,27 +62,42 @@
       '<details><summary>Optional model guidance</summary><label for="'+uid+'-model">Model<select id="'+uid+'-model" data-model></select></label><p>A prompt cannot switch models. Choose the model in your app separately.</p></details>' +
       '<article class="integration-deep-card prompt-picker-card"><div class="prompt-picker-heading"><h2 data-title></h2><span class="integration-badge" data-badge></span></div>' +
       '<p class="prompt-picker-sub" data-sub></p><p class="prompt-model-note" data-note></p><div class="prompt-picker-steps" data-steps></div>' +
+      '<div class="prompt-modifiers" data-modifiers role="group" aria-label="Optional style modifiers"><span class="prompt-modifiers-label">Quick modifiers (optional):</span>' +
+      MODIFIERS.map(m => '<button type="button" class="btn btn-secondary prompt-mod-btn" data-mod="' + m.id + '" aria-pressed="false">' + escapeHtml(m.label) + '</button>').join('') +
+      '</div>' +
       '<label for="'+uid+'-edit">3. Review and edit your instructions</label><textarea id="'+uid+'-edit" class="prompt-edit snippet" data-edit spellcheck="false"></textarea>' +
       '<div class="prompt-actions"><button type="button" class="btn btn-primary" data-copy>Copy instructions</button><button type="button" class="btn btn-secondary" data-reset>Reset edits</button></div>' +
       '<p class="prompt-picker-status" role="status" aria-live="polite" data-status></p>' +
       '<details><summary>4. Check the fit after pasting</summary><p>Reopen the saved settings or file and confirm the text is present. In a new conversation, try a factual question, a planning task, and a critique request without repeating the desired style. Compare the replies with your preferences; one matching reply does not prove persistent compliance.</p><p>To undo, remove only the section between <code>agenttune:preferences:start</code> and <code>agenttune:preferences:end</code>, or the exact text you added. Preserve the rest of the file.</p><div class="prompt-actions"><button type="button" class="btn btn-secondary" data-useful>Fits my preferences</button><button type="button" class="btn btn-secondary" data-improve>Needs adjustment</button></div></details></article>';
     const $ = selector => root.querySelector(selector);
-    const appSelect = $('[data-app]'), modelSelect = $('[data-model]'), targetSelect = $('[data-target]'), editor = $('[data-edit]');
+    const appSelect = $('[data-app]'), modelSelect = $('[data-model]'), targetSelect = $('[data-target]'), editor = $('[data-edit]'), modWrap = $('[data-modifiers]');
     const appForTarget = id => APPS.find(a=>a.targets.includes(id) && id!=='anywhere');
     const preferredTarget = opts.target || (opts.model && modelFor(opts.model).preferred);
     appSelect.value = APPS.some(a=>a.id===opts.app) ? opts.app : (appForTarget(preferredTarget)?.id || 'any');
+    function applyMods(baseText, targetId) {
+      if (!baseText || !activeMods.size || targetId === 'mcp') return baseText;
+      const lines = MODIFIERS.filter(m => activeMods.has(m.id)).map(m => m.rule).join('\n');
+      const block = '\n\n## Custom modifiers\n' + lines;
+      if (baseText.includes('\n<!-- agenttune:preferences:end -->')) {
+        return baseText.replace('\n<!-- agenttune:preferences:end -->', block + '\n<!-- agenttune:preferences:end -->');
+      }
+      const combined = baseText + block;
+      return targetId === 'chatgpt-custom' && combined.length > 1500 ? baseText : combined;
+    }
     function notifyChange() { if (window.atTrack) window.atTrack('setup_select'); if (opts.onChange) opts.onChange(root.__atPicker.getState()); }
     function updatePanel() {
       revision++;
       const model = modelFor(modelSelect.value), target = INTEGRATIONS.find(item => item.id === targetSelect.value);
       if (!target) return;
-      const text = snippet(currentTuning, model.id, target.id);
+      const baseText = snippet(currentTuning, model.id, target.id);
+      const text = applyMods(baseText, target.id);
+      if (modWrap) modWrap.hidden = target.id === 'mcp';
       $('[data-title]').textContent = target.name; $('[data-badge]').textContent = target.badge;
       $('[data-sub]').textContent = target.sub; $('[data-note]').textContent = model.note;
       $('[data-steps]').innerHTML = target.steps;
       editor.value = text; window.ATTextareas?.resize(editor); $('[data-copy]').disabled = !text;
       $('[data-copy]').textContent = target.id === 'mcp' ? 'Copy setup command' : 'Copy instructions';
-      $('[data-status]').textContent = text ? text.length.toLocaleString() + ' characters · review before copying' : 'Choose preferences or a template to create instructions.';
+      $('[data-status]').textContent = text ? text.length.toLocaleString() + ' characters' + (activeMods.size ? ' · ' + activeMods.size + ' modifier' + (activeMods.size > 1 ? 's' : '') + ' active' : ' · review before copying') : 'Choose preferences or a template to create instructions.';
     }
     function updateTargets(preferred, model) {
       const app = APPS.find(a=>a.id===appSelect.value) || APPS[0];
@@ -89,8 +111,22 @@
     appSelect.addEventListener('change',()=>{updateTargets(); notifyChange();});
     modelSelect.addEventListener('change',()=>{updatePanel(); notifyChange();});
     targetSelect.addEventListener('change',()=>{updatePanel(); notifyChange();});
+    if (modWrap) modWrap.addEventListener('click', e => {
+      const btn = e.target && e.target.closest ? e.target.closest('[data-mod]') : null;
+      if (!btn) return;
+      const id = btn.getAttribute('data-mod');
+      if (activeMods.has(id)) activeMods.delete(id); else activeMods.add(id);
+      const on = activeMods.has(id);
+      btn.setAttribute('aria-pressed', String(on));
+      btn.classList.toggle('is-active', on);
+      updatePanel(); notifyChange();
+    });
     editor.addEventListener('input',()=>{revision++; $('[data-copy]').disabled=!editor.value.trim(); $('[data-status]').textContent=editor.value.length.toLocaleString()+' characters · edited'; if(opts.onChange) opts.onChange(root.__atPicker.getState());});
-    $('[data-reset]').addEventListener('click',()=>{updatePanel(); if(opts.onChange) opts.onChange(root.__atPicker.getState());});
+    $('[data-reset]').addEventListener('click',()=>{
+      activeMods.clear();
+      if (root.querySelectorAll) root.querySelectorAll('[data-mod]').forEach(b => { b.setAttribute('aria-pressed', 'false'); b.classList.remove('is-active'); });
+      updatePanel(); if(opts.onChange) opts.onChange(root.__atPicker.getState());
+    });
     $('[data-useful]').addEventListener('click',()=>{if(window.atTrack) window.atTrack('setup_useful'); $('[data-status]').textContent='Thanks. Keep checking the fit on different tasks.';});
     $('[data-improve]').addEventListener('click',()=>{if(window.atTrack) window.atTrack('setup_needs_work'); $('[data-status]').textContent='Edit one preference above, paste the updated block, and compare the same tasks.'; editor.focus();});
     $('[data-copy]').addEventListener('click',async()=>{

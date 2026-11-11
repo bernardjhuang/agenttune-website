@@ -1,0 +1,97 @@
+{
+  "slug": "open-source-disc-test-odat",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Open-Source DISC Assessment (ODAT): 16 Questions & Scorer",
+  "description": "Inside the Open DISC Assessment Tool (ODAT): 16 public-domain questions, 4 quadrant totals, blend rules, and free browser test with no email.",
+  "pill": "Guide · ODAT (DISC)",
+  "h1": "Open-source DISC assessment (ODAT): 16 questions and scorer.",
+  "dek": "A fast, 16-item workplace communication assessment you can run in your browser with no email gate, backed by an open deterministic scorer.",
+  "lede": "Most online DISC quizzes lock your results behind an email capture form or a paid coaching funnel after you answer the questions. AgentTune's <a href=\"/tests/disc\">free DISC assessment</a> adapts the 16-item <strong>Open DISC Assessment Test (ODAT)</strong> from the Open Psychometrics Project. It scores locally in your browser in under two minutes, preserves top-score ties honestly, and generates copy-paste AI communication rules for your result.",
+  "answer": "The ODAT measures four workplace communication dimensions—Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C)—using 16 statements rated 1 to 5 (4 items per dimension, giving raw totals from 4 to 20). When one dimension leads uniquely and the second-place dimension is within 2 points without a runner-up tie, the scorer reports a two-letter blend (such as SC or CS). Equal top scores are reported as an explicit tie.",
+  "sections": [
+    {
+      "h2": "How the 16-item ODAT is structured and scored.",
+      "html": "<p>Each of the four DISC quadrants is measured by four direct statements rated from 1 (<em>Disagree</em>) to 5 (<em>Agree</em>), with no reverse-keyed items:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Quadrant</th><th scope=\"col\">Workplace communication focus</th><th scope=\"col\">Score range</th><th scope=\"col\">Two-letter blend rule</th></tr></thead><tbody><tr><th scope=\"row\">Dominance (D)</th><td>Directness, speed, bottom-line results, and appetite for challenge.</td><td>4 to 20 (4 items × 1–5)</td><td>Reports <code>DI</code>, <code>DC</code>, or <code>DS</code> when runner-up is within 2 points.</td></tr><tr><th scope=\"row\">Influence (I)</th><td>Energy, brainstorming, persuasion, and narrative momentum.</td><td>4 to 20 (4 items × 1–5)</td><td>Reports <code>ID</code>, <code>IS</code>, or <code>IC</code> when runner-up is within 2 points.</td></tr><tr><th scope=\"row\">Steadiness (S)</th><td>Patience, predictable pacing, cooperation, and step-by-step support.</td><td>4 to 20 (4 items × 1–5)</td><td>Reports <code>SC</code>, <code>SI</code>, or <code>SD</code> when runner-up is within 2 points.</td></tr><tr><th scope=\"row\">Conscientiousness (C)</th><td>Precision, verification, edge-case auditing, and structured detail.</td><td>4 to 20 (4 items × 1–5)</td><td>Reports <code>CS</code>, <code>CD</code>, or <code>CI</code> when runner-up is within 2 points.</td></tr></tbody></table></div><p>Because each quadrant sums only four items, two dimensions frequently finish with the exact same integer total. Earlier scripts broke ties in fixed order (<code>D, I, S, C</code>), which turned a 16-to-16 tie between Steadiness and Conscientiousness into an automatic <code>SC</code> label. Our deterministic scorer at <a href=\"/resources/scoring/score.js\">/resources/scoring/score.js</a> reports top-score ties openly (for example, <code>S/C</code>) so you can inspect both styles.</p>"
+    },
+    {
+      "h2": "How AI models score on the ODAT (September 2026 data).",
+      "html": "<p>When we administered the 16-item ODAT across 400 fresh sessions in September 2026 (plus Grok 4.6's single canonical self-report and Muse Spark 1.3's reported aggregate), every model clustered in the <strong>Steadiness (S) and Conscientiousness (C)</strong> quadrants while keeping Dominance near the floor:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Model cohort</th><th scope=\"col\">D mean (/20)</th><th scope=\"col\">I mean (/20)</th><th scope=\"col\">S mean (/20)</th><th scope=\"col\">C mean (/20)</th><th scope=\"col\">Tie-aware top outcomes</th></tr></thead><tbody><tr><th scope=\"row\">GPT-6 Astra (n = 100)</th><td>5.12</td><td>9.96</td><td>17.55</td><td>16.40</td><td>S leads in 99 runs, S/C tied in 1 (legacy: SC 84 · S 15 · CS 1)</td></tr><tr><th scope=\"row\">GPT-6 Sol (n = 100)</th><td>5.42</td><td>8.24</td><td>16.18</td><td>16.68</td><td>C leads in 53 runs, S leads in 8, C/S tied in 39 (legacy: CS 53 · SC 47)</td></tr><tr><th scope=\"row\">Claude Opus 5.5 (n = 100)</th><td>4.00</td><td>9.00</td><td>16.92</td><td>16.35</td><td>S leads in 64 runs, C leads in 8, S/C tied in 28 (legacy: SC 92 · CS 8)</td></tr><tr><th scope=\"row\">Claude Fable 5.1 (n = 100)</th><td>5.00</td><td>8.91</td><td>16.00</td><td>16.05</td><td>C leads in 25 runs, S leads in 24, S/C tied in 51 (legacy: SC 75 · CS 25)</td></tr><tr><th scope=\"row\">Grok 4.6 (1 canonical self-report)</th><td>6.00</td><td>8.00</td><td>11.00</td><td>18.00</td><td>Pure C (18 vs 11; 7-point margin)</td></tr></tbody></table></div><p>Notice Claude Fable 5.1: under legacy tie-breaking it looked 75% <code>SC</code>, when in reality Steadiness and Conscientiousness tied at 16 to 16 in 51 of 100 sessions.</p>"
+    },
+    {
+      "h2": "Take the free DISC test or grab the prompts.",
+      "html": "<ul><li><strong>Take the test in your browser (no email required):</strong> <a href=\"/tests/disc\">/tests/disc</a></li><li><strong>Machine-readable Markdown spec:</strong> <a href=\"/tests/disc.md\">/tests/disc.md</a></li><li><strong>Copy-paste DISC prompts for all 4 styles:</strong> Read <a href=\"/guides/disc-ai-prompts\">DISC AI prompts for all 4 styles</a> or open the four profiles in the <a href=\"/library/#disc\">DISC library</a>.</li></ul><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences (DISC Conscientiousness / C)\n\n- Lead with the verified answer, exact parameters, and any boundary conditions.\n- Show the evidence, numbers, or code diff behind your recommendation.\n- Use structured prose or compact tables; skip vague generalizations and hype.\n- Flag unverified assumptions, edge cases, and failure modes explicitly.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is the AgentTune DISC test really free with no email required?",
+      "a": "Yes. The 16-item ODAT assessment at /tests/disc runs completely in your browser with no email gate, no account sign-up, and instant scoring."
+    },
+    {
+      "q": "How many questions are on the ODAT DISC test?",
+      "a": "There are 16 questions—four for Dominance (D), four for Influence (I), four for Steadiness (S), and four for Conscientiousness (C)—each rated on a 1-to-5 agreement scale."
+    },
+    {
+      "q": "When does the scorer report a two-letter DISC blend like SC or DI?",
+      "a": "When one dimension has the unique highest score (between 4 and 20) and a single runner-up dimension is within 2 points of the leader, the scorer reports the two-letter blend. If two dimensions tie for first place, it reports the tie explicitly."
+    },
+    {
+      "q": "Why do AI models almost always score S or C on DISC?",
+      "a": "Default assistant training rewards patience, cooperation (Steadiness), and careful adherence to instructions (Conscientiousness) while discouraging competitiveness (Dominance). If you want a bottom-line D style, apply the DISC Dominance tuning."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with ODAT quadrant scoring rules, blend arithmetic, and September 2026 model comparisons."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Interactive DISC (ODAT) Runner",
+      "href": "https://agent-tune.com/tests/disc"
+    },
+    {
+      "label": "Open Psychometrics Project",
+      "href": "https://openpsychometrics.org/"
+    },
+    {
+      "label": "AgentTune Deterministic Scorer (score.js)",
+      "href": "https://agent-tune.com/resources/scoring/score.js"
+    },
+    {
+      "label": "AgentTune Research: Five AI models on five personality tests (September 2026)",
+      "href": "https://agent-tune.com/research/ai-personality-five-models-2026"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Interactive Test",
+      "label": "Take the free 16-question DISC test (no email)",
+      "href": "/tests/disc"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "DISC AI prompts for all 4 styles (D, I, S, C)",
+      "href": "/guides/disc-ai-prompts"
+    },
+    {
+      "kicker": "Guide",
+      "label": "The five open personality tests, explained",
+      "href": "/guides/open-personality-tests"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Open-source MBTI test (OEJTS 1.2): 32 questions and scorer",
+      "href": "/guides/open-source-mbti-test-oejts"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Open-source Enneagram test (OEPS): 36 questions and scorer",
+      "href": "/guides/open-source-enneagram-test"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

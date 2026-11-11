@@ -3,11 +3,11 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · ChatGPT
 
-# ChatGPT custom instructions examples, by what you do.
+# 20 ChatGPT custom instructions examples, by role.
 
 By Bernard Huang · Updated September 25, 2026
 
-Open ChatGPT’s personalization settings and edit your custom instructions. Choose a short role example below, adapt it, and test it on real tasks. Available controls and limits vary by client; use the limit shown in your app.
+On web or desktop, open Settings → Personalization → Custom Instructions (on iOS/Android: Settings → Customize ChatGPT) and paste one of the sub-500-character role blocks below into 'How would you like ChatGPT to respond?'. Need role rules for just one workspace? Put them in ChatGPT Project Instructions instead so they override global defaults cleanly.
 
 ## How to use them.
 

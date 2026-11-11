@@ -1,0 +1,93 @@
+{
+  "slug": "meta-ai-vs-meta-muse-personality",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Meta AI vs Meta Muse: How to Change Personality & Tone",
+  "description": "Meta AI and Meta Muse do not share the same settings. Compare Meta Muse's Soul.md, Identity.md, and Memory.md with Meta AI custom prompts.",
+  "pill": "Guide · Meta Muse & Meta AI",
+  "h1": "Meta AI vs Meta Muse: how to change personality and tone.",
+  "dek": "Many people search for Meta AI personality settings when they are actually using Meta Muse, or vice versa. Here is how the two surfaces differ and how to tune each one.",
+  "lede": "Meta offers assistant experiences across several surfaces: the standalone <strong>Meta Muse</strong> assistant (powered by Muse Spark models with editable Markdown files) and <strong>Meta AI</strong> inside WhatsApp, Instagram, Messenger, Facebook, Ray-Ban Meta glasses, and the web. Because both carry the Meta name, guides often mix their menus together. Knowing which surface you are in decides how your communication rules stick.",
+  "answer": "In Meta Muse, open Settings, then Personalization, then Assistant Identity to edit Soul.md (communication style), Identity.md (name, avatar, voice), and Memory.md (facts about you). In Meta AI inside WhatsApp, Instagram, Messenger, or web chat where Soul.md is not exposed, paste a compact communication block at the start of the thread or save concise preferences in your account memory settings.",
+  "sections": [
+    {
+      "h2": "Side-by-side comparison: Meta Muse vs Meta AI surfaces.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">Meta Muse (Assistant Identity)</th><th scope=\"col\">Meta AI in social &amp; messaging apps</th></tr></thead><tbody><tr><th scope=\"row\">Persistent style file</th><td>Yes: editable <code>Soul.md</code> under Personalization, Assistant Identity.</td><td>No <code>Soul.md</code> file in messaging threads; relies on chat-level prompts or saved memory facts.</td></tr><tr><th scope=\"row\">Custom name &amp; avatar file</th><td>Yes: editable <code>Identity.md</code> for name, avatar, and voice.</td><td>Fixed Meta AI identity or preset character voices where offered.</td></tr><tr><th scope=\"row\">Editable memory notebook</th><td>Yes: <code>Memory.md</code> viewable and editable as Markdown.</td><td>Account memory items managed through app settings where enabled.</td></tr><tr><th scope=\"row\">Best AgentTune export</th><td><strong>Muse · saved preferences</strong> (updates <code>Soul.md</code>).</td><td><strong>Any chat</strong> prompt block or compact 1,500-character preferences.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "If you are using Meta Muse: use Soul.md.",
+      "html": "<p>If your settings menu includes <strong>Personalization</strong> and <strong>Assistant Identity</strong> with <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code>, you are in Meta Muse. That gives you the cleanest separation of any consumer assistant:</p><ul><li>Put tone, brevity, structure, and pushback rules in the <em>How to work with me</em> section of <a href=\"/guides/muse-soul-md-templates\">Soul.md</a>.</li><li>Put the assistant's display name, voice, and avatar in <a href=\"/guides/muse-identity-md-avatar-name\">Identity.md</a>.</li><li>Keep your personal background and active projects in <a href=\"/guides/muse-memory-md-privacy-reset\">Memory.md</a>.</li></ul><p>See the complete walkthrough in the <a href=\"/guides/muse-personality\">Meta Muse personality guide</a>.</p>"
+    },
+    {
+      "h2": "If you are using Meta AI in WhatsApp, Instagram, or web chat.",
+      "html": "<p>When you message Meta AI inside WhatsApp, Messenger, Instagram, or a standard web thread without the Assistant Identity Markdown files, asking it to \"update Soul.md\" will only role-play a confirmation inside that single thread. Instead, paste a direct conversation rule block at the top of your thread:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to answer me in this chat\n\n- Start every reply with the direct answer or recommendation.\n- Keep responses under 150 words unless I ask for a full draft or deep breakdown.\n- Use plain prose by default; use bullet points only for checklists or step-by-step instructions.\n- Skip filler intros, flattery, and closing offers.\n- If my premise is mistaken, correct it plainly before answering.</div><p>In surfaces that support saving memory facts across chats, you can also ask Meta AI to remember a one-line communication rule, such as: <em>\"Remember that I prefer concise, direct answers that start with the conclusion and skip small talk.\"</em> Verify in your app's memory settings that the rule was stored as a preference.</p>"
+    },
+    {
+      "h2": "What Muse's self-report data says about its default tone.",
+      "html": "<p>In the user-supplied Muse Spark 1.3 aggregate report (100 sequential runs per questionnaire within a single session; raw item vectors were not archived, so we treat it separately from our four 100-session fresh cohorts), Muse scored <strong>ISTJ in 80 of 100 runs</strong> on the OEJTS, <strong>Steadiness (55) and Conscientiousness (45)</strong> on DISC, and <strong>Helper (2w1)</strong> on the Enneagram, with Agreeableness at <strong>44.6 of 50</strong> on the Big Five. That matches a warm, orderly, service-oriented default voice. If you want faster pushback or less warmth on either Meta Muse or Meta AI, state that rule explicitly.</p><p>Read the full evidence notes and limits in <a href=\"/research/what-personality-type-is-muse\">What personality type is Meta Muse?</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why can't I find Soul.md in Meta AI on WhatsApp or Instagram?",
+      "a": "Soul.md, Identity.md, and Memory.md belong to Meta Muse's Assistant Identity settings. Messaging integrations like WhatsApp and Instagram use standard chat threads and account memory rather than the three Markdown files."
+    },
+    {
+      "q": "Can I use the same AgentTune personality profile on both Meta Muse and Meta AI?",
+      "a": "Yes. In Meta Muse, use the Muse destination so the tuning is written into the How to work with me section of Soul.md. In Meta AI messaging threads, choose the Any chat destination and paste the communication block at the start of your conversation."
+    },
+    {
+      "q": "Does changing my voice preset in Meta AI change how it structures written answers?",
+      "a": "No. Selecting a spoken voice preset changes audio playback and surface tone, not how the assistant organizes arguments, tables, or critique in written replies. Use explicit communication rules for written structure."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published comparing Meta Muse Assistant Identity files with Meta AI messaging and web surfaces."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta Help Center: Personalize your assistant in Meta Muse",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    },
+    {
+      "label": "AgentTune: How to give Meta Muse a personality",
+      "href": "https://agent-tune.com/guides/muse-personality"
+    },
+    {
+      "label": "AgentTune Research: What personality type is Meta Muse?",
+      "href": "https://agent-tune.com/research/what-personality-type-is-muse"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to give Meta Muse a personality",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse avatar and name: the Identity.md guide",
+      "href": "/guides/muse-identity-md-avatar-name"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse Memory.md, privacy, and how to reset safely",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Templates",
+      "label": "Meta Muse Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "AI custom instructions character limits (2026 cheat sheet)",
+      "href": "/guides/ai-custom-instructions-character-limits"
+    }
+  ],
+  "promptModel": "muse",
+  "promptDestination": "muse"
+}

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open-Source Enneagram Scorer in JavaScript | AgentTune</title>
-  <meta name="description" content="Download an MIT-licensed Enneagram JavaScript scorer and synthetic test inputs. Node and browser examples, explicit ties, and an interactive JSON demo." />
+  <title>Open-Source Enneagram Test on GitHub: JS Scorer &amp; 36 Items</title>
+  <meta name="description" content="Download an open-source Enneagram test scorer on GitHub (MIT JavaScript, zero dependencies). Score 36 OEPS items locally in Node or browser with ties." />
 
-  <meta property="og:title" content="Open-source Enneagram scorer and 9-type calculator." />
-  <meta property="og:description" content="Download an MIT-licensed Enneagram JavaScript scorer and synthetic test inputs. Node and browser examples, explicit ties, and an interactive JSON demo." />
+  <meta property="og:title" content="Open-source Enneagram test on GitHub: JS scorer and 36 items." />
+  <meta property="og:description" content="Download an open-source Enneagram test scorer on GitHub (MIT JavaScript, zero dependencies). Score 36 OEPS items locally in Node or browser with ties." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-26" />
+  <meta property="article:modified_time" content="2026-11-11" />
   <meta property="og:url" content="https://agent-tune.com/guides/open-source-enneagram-test" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -19,16 +19,16 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Open-source Enneagram scorer and 9-type calculator." />
-  <meta name="twitter:description" content="Download an MIT-licensed Enneagram JavaScript scorer and synthetic test inputs. Node and browser examples, explicit ties, and an interactive JSON demo." />
+  <meta name="twitter:title" content="Open-source Enneagram test on GitHub: JS scorer and 36 items." />
+  <meta name="twitter:description" content="Download an open-source Enneagram test scorer on GitHub (MIT JavaScript, zero dependencies). Score 36 OEPS items locally in Node or browser with ties." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/open-source-enneagram-test" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Open-source Enneagram scorer and 9-type calculator","description":"Download an MIT-licensed Enneagram JavaScript scorer and synthetic test inputs. Node and browser examples, explicit ties, and an interactive JSON demo.","url":"https://agent-tune.com/guides/open-source-enneagram-test","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Open-source Enneagram scorer and 9-type calculator"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Open-source Enneagram test on GitHub: JS scorer and 36 items","description":"Download an open-source Enneagram test scorer on GitHub (MIT JavaScript, zero dependencies). Score 36 OEPS items locally in Node or browser with ties.","url":"https://agent-tune.com/guides/open-source-enneagram-test","datePublished":"2026-09-25","dateModified":"2026-11-11","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Open-source Enneagram test on GitHub: JS scorer and 36 items"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the developer bundle include OEPS question wording?","acceptedAnswer":{"@type":"Answer","text":"The /resources/enneagram/questions.json file uses synthetic demo labels for software testing. The live 36-item questionnaire is available at /tests/enneagram and /tests/enneagram.md under its upstream source terms."}},{"@type":"Question","name":"How does the scorer handle ties and wings?","acceptedAnswer":{"@type":"Answer","text":"When two or more types share the highest 4–20 total, leaders lists every tied type, tied is true, and dominantType is null. No wing is inferred automatically."}},{"@type":"Question","name":"Can I use this scorer in commercial or open-source projects?","acceptedAnswer":{"@type":"Answer","text":"Yes. The JavaScript scorer (score.js) and synthetic inputs are MIT licensed. If you supply third-party questionnaire items, verify their separate reuse terms."}}]}</script>
 
 
@@ -61,15 +61,15 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">Open-source Enneagram scorer and 9-type calculator</span>
+      <span class="crumb-current" aria-current="page">Open-source Enneagram test on GitHub: JS scorer and 36 items</span>
     </nav>
 
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Resources</span>
-        <h1 class="h-hero h-research-hero">Open-source Enneagram scorer and 9-type calculator.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
+        <h1 class="h-hero h-research-hero">Open-source Enneagram test on GitHub: JS scorer and 36 items.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-11">November 11, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals (4 to 20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT licensed; the live 36-item questionnaire at /tests/enneagram carries separate upstream item terms.</p>
       </section>
 

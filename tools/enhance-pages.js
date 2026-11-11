@@ -13,7 +13,8 @@ function enhance(html,file){
     if(install){html=html.replace(install,'');html=html.replace('    <!-- THE EDITOR',install+'\n    <!-- THE EDITOR');}
     for(const [id,label] of Object.entries({demo:'Illustrative examples',tune:'Preferences explained',default:'Research context','talk-to':'Interpersonal examples','this-is-me':'Explaining your preferences',neighbors:'Related templates'})){
       const re=new RegExp('<section class="lib-v2-section" id="'+id+'">([\\s\\S]*?)</section>');
-      html=html.replace(re,`<details class="lib-disclosure" id="${id}"><summary>${label}</summary><section class="lib-v2-section">$1</section></details>`);
+      const openAttr=(id==='demo'||id==='tune')?' open':'';
+      html=html.replace(re,`<details class="lib-disclosure" id="${id}"${openAttr}><summary>${label}</summary><section class="lib-v2-section">$1</section></details>`);
     }
     html=html.replace(/<section class="lib-v2-jump"([\s\S]*?)<\/section>/,'<details class="lib-disclosure"><summary>Optional model shortcuts</summary><section class="lib-v2-jump"$1</section></details>');
     html=html.replace(/<a class="lib-v2-anchor" href="#install">Install<\/a>/,'').replace('<nav class="lib-v2-anchors" aria-label="Sections">','<nav class="lib-v2-anchors" aria-label="Sections"><a class="lib-v2-anchor is-active" href="#install">Use this template</a>');

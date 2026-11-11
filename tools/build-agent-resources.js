@@ -54,41 +54,47 @@ const tuningSections=Object.entries(systemTitles).map(([sys,label])=>{
 const guideLines=resources.filter(r=>r.kind==='guide').map(r=>`- [${r.title.replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlights=[
   ['https://agent-tune.com/research/ai-personality-five-models-2026','Five AI Models, Five Personality Tests (September 2026): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).'],
-  ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? A 180-response controlled before/after pilot (20 tasks × 3 conditions × 3 models) showing answer-first ratings rising from 2/20 (default) to 19/20 (plain-English direct rules) and 17/20 (personality template).'],
+  ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? A 60-reply controlled before/after pilot (20 tasks × 3 conditions) showing 5/5 answer-first openings rising from 14/20 (default) to 19/20 (explicit straight rules), hedges dropping from 0.35 to 0.05 per reply, and trailing questions dropping from 0.90 to 0.25.'],
   ['https://agent-tune.com/research/ai-mbti-tie-breaking','How Tie-Breaking Changes AI MBTI Results: 59 of 400 four-model OEJTS sessions contain at least one tied axis; strict `<` tie-breaking inflates apparent INTJ share from 280/400 (70.0%) to 335/400 (83.8%).'],
   ['https://agent-tune.com/research/opus-vs-fable-question-level','Claude Opus 5.5 vs. Fable 5.1 Question-Level Analysis: 170 item-by-item comparisons across all 5 instruments reconcile every aggregate dimension gap.'],
   ['https://agent-tune.com/research/astra-vs-sol-personality-data','GPT-6 Astra vs. GPT-6 Sol Personality Data: 1,000-session comparison across OEJTS, IPIP-50, ODAT, OEPS, and ECR-R.'],
   ['https://agent-tune.com/research/ai-neutral-answers','When AI Chooses the Midpoint on Human Questionnaires: Across 17,000 item responses, models selected the exact scale midpoint 2,980 times (17.5%) and explicitly flagged 1,823 responses (10.7%) as inapplicable to non-human systems.'],
   ['https://agent-tune.com/research/ai-personality-repeatability','AI Personality Test Repeatability: Within-model standard deviations, item flip rates, and run-to-run stability across 20 model-by-test cohorts (n = 100 each).'],
+  ['https://agent-tune.com/research/grok-attachment-cutoff-simulation','Grok 4.6 and the Attachment Cutoff: Sensitivity analysis of Grok 4.6 reported avoidance (4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R vectors.'],
+  ['https://agent-tune.com/research/ai-big-five-item-level-comparison','Why AI Models Score High on Agreeableness and Openness: Item-level reanalysis of 20,000 IPIP-50 Big Five responses across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.'],
   ['https://agent-tune.com/research/i-took-the-mbti-100-times','I Took the MBTI 100 Times (Claude Code baseline): 100 independent sessions across all 5 instruments (93% INTJ, 97% Type 5, 100% C-Conscientiousness, 100% Secure).']
-].map(([u,desc])=>`- [${desc.split(':')[0]}](${u}) ([Markdown](${u}.md)):${desc.slice(desc.indexOf(':')+1)}`).join('\n');
+];
+const highlightedUrls=new Set(researchHighlights.map(([u])=>u));
+const extraResearchLines=resources.filter(r=>r.kind==='research'&&!highlightedUrls.has(r.url)).map(r=>`- [${r.title.replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
+const researchHighlightsText=researchHighlights.map(([u,desc])=>`- [${desc.split(':')[0]}](${u}) ([Markdown](${u}.md)):${desc.slice(desc.indexOf(':')+1)}`).join('\n');
 
 const llmsTxt=`# AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), 5 open personality questionnaires, 8 free browser tools, and empirical AI personality research (2,000+ scored sessions) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, and Meta Muse.
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), and empirical AI personality research (2,000+ scored sessions) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, and Meta Muse.
 
 Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
 
 ## Machine & MCP Endpoints
+- [Agent Skill Manifest (SKILL.md)](https://agent-tune.com/SKILL.md): Concise agent workflow instructions, exact local scoring instrument IDs, MCP setup, and bounded-marker merge rules.
 - [MCP Server (Streamable HTTP)](https://agent-tune.com/mcp): Stateless JSON-RPC 2.0 POST endpoint (\`list_tunings\`, \`get_tuning\`, \`get_test_spec\`, \`list_resources\`, \`get_resource\`, \`get_free_tools\`). No authentication required.
 - [MCP Server Card](https://agent-tune.com/.well-known/mcp/server-card.json): Machine-readable MCP server discovery metadata and tool capability declarations.
 - [Tuning Catalog (43 templates)](https://agent-tune.com/library/index.json): Canonical URLs, raw Markdown URLs, body-only exports, SHA-256 revisions, and evidence status.
 - [Guides & Research Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides and empirical research articles with Markdown mirror URLs.
 - [Platform Destination Registry](https://agent-tune.com/resources/platforms.json): Version ${registry.version} app and file destination instructions shared with the UI.
 - [Installation Protocol](https://agent-tune.com/resources/install-protocol.md): Non-destructive bounded-block (\`<!-- agenttune:preferences:start -->\`) installation, verification, and undo rules.
-- [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight browser-only utilities and local \`window.AgentTuneTools\` text-processing API.
+- [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight local \`window.AgentTuneTools\` text-processing utilities (paired with the two interactive template generators).
 - [Deterministic Local Scoring API](https://agent-tune.com/resources/scoring/README.md): Versioned scoring rules, tie handling, and incomplete-response validation for all five questionnaires.
 
 ## Interactive Questionnaires & Specifications
 - [Personality Tests Hub](https://agent-tune.com/tests/): Overview of all five interactive browser-scored questionnaires and their licensing/provenance boundaries.
-- [MBTI Style Test — 32 OEJTS Questions](https://agent-tune.com/tests/mbti) ([Spec .md](https://agent-tune.com/tests/mbti.md)): Open Extended Jungian Type Scales 1.2 (\`agenttune-oejts32@1.0.0\`, CC BY-NC-SA 4.0) with explicit axis tie reporting.
-- [Enneagram Test — 36 OEPS Questions](https://agent-tune.com/tests/enneagram) ([Spec .md](https://agent-tune.com/tests/enneagram.md)): Open Enneagram of Personality Scales (\`agenttune-oeps36@1.0.0\`, CC BY-NC-SA 4.0) across Types 1–9.
-- [DISC Style Test — 16 ODAT Questions](https://agent-tune.com/tests/disc) ([Spec .md](https://agent-tune.com/tests/disc.md)): Open DISC Assessment Tool (\`agenttune-odat16@1.0.0\`, CC BY-NC-SA 4.0) across Dominance, Influence, Steadiness, and Conscientiousness.
-- [Attachment Style Test — 36 ECR-R Questions](https://agent-tune.com/tests/attachment) ([Spec .md](https://agent-tune.com/tests/attachment.md)): Experiences in Close Relationships-Revised (\`agenttune-ecrr36@1.0.0\`, 1–7 scale) measuring Anxiety and Avoidance means.
+- [MBTI Style Test — 32 OEJTS Questions](https://agent-tune.com/tests/mbti) ([Spec .md](https://agent-tune.com/tests/mbti.md)): Open Extended Jungian Type Scales 1.2 (\`agenttune-mbti-legacy@1.0.0\`, source terms apply) with explicit axis tie reporting.
+- [Enneagram Test — 36 OEPS Questions](https://agent-tune.com/tests/enneagram) ([Spec .md](https://agent-tune.com/tests/enneagram.md)): Open Enneagram of Personality Scales (\`agenttune-enneagram-legacy@1.0.0\`, source terms apply) across Types 1–9.
+- [DISC Style Test — 16 ODAT Questions](https://agent-tune.com/tests/disc) ([Spec .md](https://agent-tune.com/tests/disc.md)): Open DISC Assessment Test (\`agenttune-disc-legacy@1.0.0\`, source terms apply) across Dominance, Influence, Steadiness, and Conscientiousness.
+- [Attachment Style Test — 36 ECR-R Questions](https://agent-tune.com/tests/attachment) ([Spec .md](https://agent-tune.com/tests/attachment.md)): Experiences in Close Relationships-Revised (\`agenttune-attachment-legacy@1.0.0\`, 1–7 scale) measuring Anxiety and Avoidance means.
 - [Big Five (OCEAN) Test — 50 IPIP Questions](https://agent-tune.com/tests/big-five) ([Spec .md](https://agent-tune.com/tests/big-five.md)): Public-domain 50-item IPIP Big-Five Factor Markers (\`agenttune-ipip50@1.0.0\`, raw totals 10–50 and item means 1.0–5.0).
 
 ## Free Browser Tools
-- [All Free AI Tools](https://agent-tune.com/tools/): Eight browser-based utilities for drafting, linting, converting, and testing AI instructions locally.
+- [All Free AI Tools](https://agent-tune.com/tools/): Ten client-side browser tools (8 local text utilities + 2 template generators) for drafting, linting, converting, and testing AI instructions locally.
 - [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator): Build instructions from plain-English preferences or any of the 43 templates with compact ChatGPT (≤1,500 chars) and file exports.
 - [CLAUDE.md & AGENTS.md Generator](https://agent-tune.com/tools/claude-md-generator): Generate project instruction files for Claude Code, Codex CLI, Cursor, Windsurf, Copilot, and Gemini Code Assist.
 - [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder): Turn six explicit preference choices (length, tone, format, pushback, questions, context) into copyable instructions.
@@ -101,11 +107,13 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer): Inspect, deduplicate, and redact emails/keys/phones from exported AI memory lists in the browser.
 
 ## Key Empirical Research Findings
-${researchHighlights}
-- [Claude Opus 5.5 Personality Profile](https://agent-tune.com/research/claude-opus-5-5-personality) ([Markdown](https://agent-tune.com/research/claude-opus-5-5-personality.md)): 500-session breakdown for Claude Opus 5.5.
-- [Claude Fable 5.1 Personality Profile](https://agent-tune.com/research/claude-fable-5-1-personality) ([Markdown](https://agent-tune.com/research/claude-fable-5-1-personality.md)): 500-session breakdown for Claude Fable 5.1.
-- [GPT-6 Astra Personality Profile](https://agent-tune.com/research/gpt-6-astra-personality) ([Markdown](https://agent-tune.com/research/gpt-6-astra-personality.md)): 500-session breakdown for GPT-6 Astra.
-- [GPT-6 Sol Personality Profile](https://agent-tune.com/research/gpt-6-sol-personality) ([Markdown](https://agent-tune.com/research/gpt-6-sol-personality.md)): 500-session breakdown for GPT-6 Sol.
+- [Research Synthesis Hub](https://agent-tune.com/research): Full cross-model dataset, methodology, and May/September 2026 self-report archives.
+${researchHighlightsText}
+${extraResearchLines}
+- [Claude Opus 5.5 Personality Profile](https://agent-tune.com/guides/claude-opus-5-5-personality) ([Markdown](https://agent-tune.com/guides/claude-opus-5-5-personality.md)): 500-session breakdown for Claude Opus 5.5.
+- [Claude Fable 5.1 Personality Profile](https://agent-tune.com/guides/fable-personality) ([Markdown](https://agent-tune.com/guides/fable-personality.md)): 500-session breakdown for Claude Fable 5.1.
+- [GPT-6 Astra Personality Profile](https://agent-tune.com/guides/astra-personality) ([Markdown](https://agent-tune.com/guides/astra-personality.md)): 500-session breakdown for GPT-6 Astra.
+- [GPT-6 Sol Personality Profile](https://agent-tune.com/guides/sol-personality) ([Markdown](https://agent-tune.com/guides/sol-personality.md)): 500-session breakdown for GPT-6 Sol.
 
 ## Setup & Platform Guides
 ${guideLines}
@@ -116,7 +124,7 @@ ${tuningSections}
 ## Optional
 - [Full LLM Documentation & All 43 Template Bodies](https://agent-tune.com/llms-full.txt): Complete installation protocol, platform steps, and all 43 Markdown preference templates in one file.
 - [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
-- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 180-response tuning evaluation study.
+- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot (plus see the 180-reply cross-model test kit at \`/resources/research/personality-prompt-comparison-kit.json\`).
 - [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save \`.claude/output-styles/*.md\` files with \`keep-coding-instructions: true\`.
 `;
 write('llms.txt',llmsTxt);

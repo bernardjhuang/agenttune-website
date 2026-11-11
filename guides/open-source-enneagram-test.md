@@ -3,9 +3,9 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Resources
 
-# Open-source Enneagram scorer and 9-type calculator.
+# Open-source Enneagram test on GitHub: JS scorer and 36 items.
 
-By Bernard Huang · Updated September 26, 2026
+By Bernard Huang · Updated November 11, 2026
 
 Download score.js and questions.json. Pass 36 integers from 1 to 5 in item order to score(). It returns nine raw totals (4 to 20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT licensed; the live 36-item questionnaire at /tests/enneagram carries separate upstream item terms.
 

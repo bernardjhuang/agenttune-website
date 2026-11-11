@@ -7,11 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated September 25, 2026
 
-The headline depends partly on the scoring rule. We rescored the same 400 MBTI answer vectors with ties left visible, then compared that result with the original labels. No model was asked a new question.
+The original scorer labels 335 of 400 records INTJ. Only 280 of 400 have all four axes resolved as INTJ. Fifty-nine records have at least one tied axis; 55 of those were labeled INTJ by the original rule.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. The original scorer labels 335 of 400 records INTJ. Only 280 of 400 have all four axes resolved as INTJ. Fifty-nine records have at least one tied axis; 55 of those were labeled INTJ by the original rule.
 
 ## The same answers, two reporting policies
 

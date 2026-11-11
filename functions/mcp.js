@@ -16,13 +16,13 @@
  */
 "use strict";
 
-const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26"];
+const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 
 const SERVER_INFO = {
   name: "agenttune",
-  title: "AgentTune — personality tunings for AI agents",
-  version: "1.2.0"
+  title: "AgentTune — portable communication preferences for AI agents",
+  version: "1.3.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
@@ -288,6 +288,7 @@ async function handleRequest(context) {
           data: {
             connect_url: "https://agent-tune.com/mcp",
             tools: TOOLS.map((t) => t.name),
+            skill: "https://agent-tune.com/SKILL.md",
             docs: "https://agent-tune.com/llms.txt",
             site: "https://agent-tune.com"
           }
@@ -357,7 +358,7 @@ async function readBody(request) {
 // trusted app. Deployments can add exact origins with MCP_ALLOWED_ORIGINS (CSV).
 function allowedOrigin(origin, request, env) {
   if (origin === null) return true;
-  const allowed = new Set([new URL(request.url).origin, "https://agent-tune.com", "https://claude.ai", "https://chatgpt.com", "https://chat.openai.com",
+  const allowed = new Set([new URL(request.url).origin, "https://agent-tune.com", "https://claude.ai", "https://chatgpt.com", "https://chat.openai.com", "https://cursor.com", "https://muse.ai", "https://www.muse.ai", "https://grok.com", "https://x.com", "https://gemini.google.com",
     ...String(env.MCP_ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean)]);
   try { return new URL(origin).origin === origin && allowed.has(origin); } catch { return false; }
 }

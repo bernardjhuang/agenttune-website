@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free DISC Personality Test: Instant Results, No Email</title>
-  <meta name="description" content="Take 16 quick questions (~3 min, fastest in the library) and get editable instructions matched to your DISC style." />
+  <meta name="description" content="Free 16-question DISC personality test (~3 min, ODAT). Instant D/I/S/C + blend score in your browser with no email or signup, plus AI instructions." />
 
   <meta property="og:title" content="Free DISC Personality Test: Instant Results, No Email" />
-  <meta property="og:description" content="16 items · 3 min · returns a tuning file that tunes your AI agent to your workplace style." />
+  <meta property="og:description" content="16 items · 3 min · instant D/I/S/C + blend score in your browser with no email, plus editable AI instructions." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/tests/disc" />
   <meta property="og:site_name" content="AgentTune" />
@@ -32,15 +32,9 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Quiz","name":"DISC Test (ODAT)","description":"Interactive 16-item DISC assessment. Returns D/I/S/C plus optional blend.","url":"https://agent-tune.com/tests/disc","inLanguage":"en","numberOfQuestions":16,"timeRequired":"PT3M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this DISC personality test completely free with no email required?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 16 questions are scored locally in your browser with zero email gate, signup wall, or server upload, and you receive your primary D/I/S/C style, optional 2-letter blend, and MIT-licensed AI communication rules immediately."}},{"@type":"Question","name":"How does a 2-letter DISC blend like DC, DI, or CS work?","acceptedAnswer":{"@type":"Answer","text":"Each letter (Dominance, Influence, Steadiness, Conscientiousness) is scored from 4 to 20 across four items. If your second-highest score is within 2 points of your top score, it is reported as a blend (such as DC or CS). If two top scores tie exactly, both styles are shown without forcing a winner."}},{"@type":"Question","name":"How can I use my DISC score with ChatGPT, Claude, or a team README?","acceptedAnswer":{"@type":"Answer","text":"Copy your generated DISC tuning file straight into ChatGPT Custom Instructions, Claude Profile Preferences, Meta Muse Soul.md, or a workplace 'How to work with me' card so both teammates and AI assistants match your pacing and detail level."}}]}</script>
 
-  <script defer src="/consent.js"></script>
-
-  <script src="/data.js"></script>
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/quiz-utils.js"></script>
-  <script src="/resources/scoring/score.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -204,7 +198,7 @@
         </div>
 
         <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
-        <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
+        <p class="quiz-result-integration-lede">Choose ChatGPT, Claude, Meta Muse, Grok, Gemini, or a coding agent. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
       </div>
@@ -223,6 +217,22 @@
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
         <button type="button" class="btn btn-secondary" id="quiz-restart">Retake DISC test</button>
       </div>
+    </section>
+
+    <section class="guide-prose" style="max-width: 760px; margin: 48px 0 24px;">
+      <h2>Common questions about the free DISC test.</h2>
+      <details class="lib-disclosure" open>
+        <summary>Is this DISC personality test completely free with no email required?</summary>
+        <p>Yes. All 16 ODAT questions are scored locally in your browser with zero email gate, signup form, or server upload. You see your full D/I/S/C breakdown immediately, plus an optional MIT-licensed instruction block for your AI assistant.</p>
+      </details>
+      <details class="lib-disclosure">
+        <summary>How does a 2-letter DISC blend like DC, DI, or CS work?</summary>
+        <p>Each quadrant (Dominance, Influence, Steadiness, Conscientiousness) runs from 4 to 20 points. When your runner-up score sits within 2 points of your highest score, the scorer reports a two-letter blend such as <code>DC</code> or <code>CS</code> (<a href="/guides/free-disc-assessment-guide-work-ai">read the full 4-style &amp; 12-blend guide</a>). Exact ties are shown transparently rather than broken arbitrarily.</p>
+      </details>
+      <details class="lib-disclosure">
+        <summary>How do I use my DISC style with ChatGPT, Claude, or teammates?</summary>
+        <p>Paste your DISC rules into ChatGPT Custom Instructions, Claude Profile Preferences, Meta Muse <code>Soul.md</code>, or <code>AGENTS.md</code> (<a href="/guides/disc-ai-prompts">see all four DISC AI prompts</a>), or turn them into a team card in our <a href="/tools/how-to-work-with-me">How to Work With Me builder</a>.</p>
+      </details>
     </section>
 
     <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
@@ -287,6 +297,12 @@
 
   </div>
 
+  <script src="/data.js" fetchpriority="low"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/quiz-utils.js" fetchpriority="low"></script>
+  <script src="/resources/scoring/score.js" fetchpriority="low"></script>
   <script>
   (function() {
     const ITEMS = __ITEMS__;

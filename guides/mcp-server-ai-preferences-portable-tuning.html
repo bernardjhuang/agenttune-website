@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentTune MCP &amp; Portable AI Preferences Across Every Agent</title>
+  <meta name="description" content="Connect https://agent-tune.com/mcp, SKILL.md, and llms.txt to Claude, Claude Code, Cursor, and Codex to fetch and apply portable AI communication rules." />
+
+  <meta property="og:title" content="AgentTune MCP &amp; portable AI preferences across every agent." />
+  <meta property="og:description" content="Connect https://agent-tune.com/mcp, SKILL.md, and llms.txt to Claude, Claude Code, Cursor, and Codex to fetch and apply portable AI communication rules." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-11" />
+  <meta property="article:modified_time" content="2026-11-11" />
+  <meta property="og:url" content="https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AgentTune MCP &amp; portable AI preferences across every agent." />
+  <meta name="twitter:description" content="Connect https://agent-tune.com/mcp, SKILL.md, and llms.txt to Claude, Claude Code, Cursor, and Codex to fetch and apply portable AI communication rules." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AgentTune MCP & portable AI preferences across every agent","description":"Connect https://agent-tune.com/mcp, SKILL.md, and llms.txt to Claude, Claude Code, Cursor, and Codex to fetch and apply portable AI communication rules.","url":"https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning","datePublished":"2026-11-11","dateModified":"2026-11-11","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"AgentTune MCP & portable AI preferences across every agent"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the AgentTune MCP server require an API key, signup, or payment?","acceptedAnswer":{"@type":"Answer","text":"No. https://agent-tune.com/mcp is completely free, stateless, and requires zero API keys or authentication."}},{"@type":"Question","name":"Does AgentTune MCP store my conversations, code, or questionnaire answers?","acceptedAnswer":{"@type":"Answer","text":"No. By design, the MCP endpoint is strictly read-only and never accepts personal text or questionnaire answers over the network: get_test_spec returns the public scoring specification so your agent scores answers locally in your session."}},{"@type":"Question","name":"What if my AI tool doesn't support remote MCP servers yet?","acceptedAnswer":{"@type":"Answer","text":"Point any web-capable agent at https://agent-tune.com/SKILL.md or https://agent-tune.com/llms.txt, or copy a bounded Markdown block manually from agent-tune.com/tools/instruction-converter."}},{"@type":"Question","name":"Will applying an AgentTune profile overwrite my existing CLAUDE.md or AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No—when merged inside \u003c!-- agenttune:preferences:start --> and \u003c!-- agenttune:preferences:end --> markers, only the communication block between the markers is added or updated, preserving every existing build, lint, and architecture instruction byte-for-byte."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">AgentTune MCP &amp; portable AI preferences across every agent</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · MCP &amp; Agent-First</span>
+        <h1 class="h-hero h-research-hero">AgentTune MCP &amp; portable AI preferences across every agent.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-11">November 11, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Add https://agent-tune.com/mcp as a remote Streamable HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account required. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, administer open questionnaires locally, and merge bounded preference blocks into CLAUDE.md or AGENTS.md safely.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="mcp"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=mcp">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>One-command setup across Claude Code, Claude Web, Cursor, and Codex.</h2>
+        <p>The AgentTune MCP endpoint at <code>https://agent-tune.com/mcp</code> is stateless, read-only, CORS-enabled for trusted AI origins, and requires <strong>zero API keys or login</strong> (protocol versions <code>2025-06-18</code>, <code>2025-03-26</code>, and <code>2024-11-05</code>).</p><div class="guide-table-wrap" role="region" aria-label="One-command setup across Claude Code, Claude Web, Cursor, and Codex.: table 1" tabindex="0"><table><thead><tr><th scope="col">Client / Agent</th><th scope="col">Exact connection command or config</th></tr></thead><tbody><tr><th scope="row">Claude Code CLI</th><td><code>claude mcp add --transport http agenttune https://agent-tune.com/mcp</code></td></tr><tr><th scope="row">Claude Web &amp; Desktop Connectors</th><td><strong>Settings → Connectors → Add custom connector</strong> → URL: <code>https://agent-tune.com/mcp</code></td></tr><tr><th scope="row">Cursor (<code>.cursor/mcp.json</code>)</th><td><code>{"mcpServers":{"agenttune":{"url":"https://agent-tune.com/mcp"}}}</code></td></tr><tr><th scope="row">OpenAI Codex CLI / MCP clients</th><td>Point Streamable HTTP client at <code>https://agent-tune.com/mcp</code>, or tell the agent to read <code>https://agent-tune.com/SKILL.md</code>.</td></tr><tr><th scope="row">Any web-fetching agent (no MCP needed)</th><td>Read <a href="/SKILL.md"><code>/SKILL.md</code></a>, <a href="/llms.txt"><code>/llms.txt</code></a>, or fetch any raw tuning at <code>/library/{system}/{slug}.md</code>.</td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What the 6 MCP tools and machine endpoints expose.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="What the 6 MCP tools and machine endpoints expose.: table 2" tabindex="0"><table><thead><tr><th scope="col">MCP tool</th><th scope="col">Inputs</th><th scope="col">What it returns</th></tr></thead><tbody><tr><th scope="row"><code>list_tunings</code></th><td>Optional <code>system</code> (<code>mbti</code>, <code>enneagram</code>, <code>disc</code>, <code>attachment</code>, <code>ocean</code>)</td><td>All 43 MIT-licensed profiles with slugs, codes, one-line blurbs, SHA-256 revisions, and raw Markdown URLs.</td></tr><tr><th scope="row"><code>get_tuning</code></th><td><code>system</code> + <code>slug</code> (e.g. <code>mbti</code> / <code>intj</code>, <code>disc</code> / <code>d-dominance</code>)</td><td>Clean Markdown communication rules in <code>structuredContent.body</code> separated cleanly from install metadata.</td></tr><tr><th scope="row"><code>get_test_spec</code></th><td><code>test</code> (<code>mbti</code>, <code>enneagram</code>, <code>disc</code>, <code>attachment</code>, or <code>big-five</code>)</td><td>Versioned questionnaire items, anchors, and deterministic local scoring rules—so answers stay 100% local and never cross the network.</td></tr><tr><th scope="row"><code>list_resources</code></th><td>Optional <code>kind</code> (<code>guide</code> or <code>research</code>) and <code>query</code></td><td>Searchable index of all setup guides and empirical AI personality studies.</td></tr><tr><th scope="row"><code>get_resource</code></th><td><code>id</code> (e.g. <code>claude-personality</code>, <code>ai-personality-five-models-2026</code>)</td><td>Full Markdown mirror and provenance metadata for any guide or research article.</td></tr><tr><th scope="row"><code>get_free_tools</code></th><td>None (zero personal input accepted)</td><td>Catalog of local browser utilities and the <code>window.AgentTuneTools</code> JavaScript text-processing API.</td></tr></tbody></table></div><p>Machine-readable discovery cards live alongside the MCP endpoint at <code>/.well-known/mcp/server-card.json</code>, <a href="/SKILL.md"><code>/SKILL.md</code></a>, <a href="/llms.txt"><code>/llms.txt</code></a>, and <a href="/library/index.json"><code>/library/index.json</code></a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Safe, non-destructive installation with bounded markers.</h2>
+        <p>Handing an autonomous coding agent a raw system prompt and saying <em>"update my CLAUDE.md"</em> risks overwriting build commands or repo rules. AgentTune enforces two strict safety guardrails across every tuning file and tool:</p><ol><li><strong>Explicit user confirmation:</strong> Every tuning file carries <code>does not authorize installation</code> in its contract—fetching a file never grants write permission to <code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>Soul.md</code> unless you explicitly ask the agent to write it and approve the diff.</li><li><strong>Bounded HTML markers:</strong> Preferences sit inside <code>&lt;!-- agenttune:preferences:start --&gt;</code> and <code>&lt;!-- agenttune:preferences:end --&gt;</code> markers (the exact lossless merge contract tested in our <a href="/tools/instruction-converter">Instruction Converter</a>). Updating or removing your communication style never touches a single byte of surrounding project setup.</li></ol><div class="guide-snippet">&lt;!-- agenttune:preferences:start --&gt;
+## Working with me
+
+- Lead with what changed or the direct answer, then explain why.
+- State assumptions before acting on reversible steps; ask when missing details materially affect scope or risk.
+- Flag material uncertainty explicitly rather than guessing.
+- Keep these rules within my authorized scope; explicit prompts override these defaults.
+&lt;!-- agenttune:preferences:end --&gt;</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Three prompts to run right after connecting AgentTune MCP.</h2>
+        <div class="guide-snippet" data-tuning-prompt>Use the agenttune MCP server (get_tuning) to fetch the mbti/intj (or disc/d-dominance) communication tuning, show me the proposed diff inside &lt;!-- agenttune:preferences:start --&gt; markers for ~/.claude/CLAUDE.md, and wait for my approval before writing.</div><p>Or ask your agent to administer the fastest 16-item assessment inline while keeping your answers local:</p><div class="guide-snippet">Call get_test_spec for "disc" on the agenttune MCP server, ask me the 16 ODAT questions four at a time, score my answers locally using the spec's exact 4-to-20 quadrant rules (preserving ties), and then fetch my matching tuning with get_tuning.</div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does the AgentTune MCP server require an API key, signup, or payment?</summary>
+            <p>No. https://agent-tune.com/mcp is completely free, stateless, and requires zero API keys or authentication.</p>
+          </details>
+          <details>
+            <summary>Does AgentTune MCP store my conversations, code, or questionnaire answers?</summary>
+            <p>No. By design, the MCP endpoint is strictly read-only and never accepts personal text or questionnaire answers over the network: get_test_spec returns the public scoring specification so your agent scores answers locally in your session.</p>
+          </details>
+          <details>
+            <summary>What if my AI tool doesn't support remote MCP servers yet?</summary>
+            <p>Point any web-capable agent at https://agent-tune.com/SKILL.md or https://agent-tune.com/llms.txt, or copy a bounded Markdown block manually from agent-tune.com/tools/instruction-converter.</p>
+          </details>
+          <details>
+            <summary>Will applying an AgentTune profile overwrite my existing CLAUDE.md or AGENTS.md?</summary>
+            <p>No—when merged inside &lt;!-- agenttune:preferences:start --&gt; and &lt;!-- agenttune:preferences:end --&gt; markers, only the communication block between the markers is added or updated, preserving every existing build, lint, and architecture instruction byte-for-byte.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-11">November 11, 2026</time> Published covering remote Streamable HTTP MCP setup (v1.3.0), SKILL.md discovery, and bounded marker merges.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://modelcontextprotocol.io/specification/" target="_blank" rel="noopener">Model Context Protocol (MCP) Specification</a></li>
+          <li><a href="https://agent-tune.com/SKILL.md" target="_blank" rel="noopener">AgentTune Agent Skill Manifest: /SKILL.md</a></li>
+          <li><a href="https://agent-tune.com/llms.txt" target="_blank" rel="noopener">AgentTune Machine Index: /llms.txt</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/instruction-converter"><span class="guide-related-kicker">Free browser tool</span>Instruction Converter — bounded marker merges across 7 formats</a>
+          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>AGENTS.md, CLAUDE.md &amp; Cursor rules: add AI personality</a>
+          <a href="/guides/codex-agents-md-guide"><span class="guide-related-kicker">Guide</span>OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides</a>
+          <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Guide</span>How to change Claude Code's personality (/output-style)</a>
+          <a href="/library/"><span class="guide-related-kicker">Library</span>Browse all 43 MIT-licensed personality tuning files</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

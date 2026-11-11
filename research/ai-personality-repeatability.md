@@ -7,11 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated September 25, 2026
 
-A result can repeat while the underlying answers change. Conversely, identical answers can reflect a constrained prompt rather than an enduring trait. The September archive lets us separate answer repetition, score variation and label stability.
+All 400 attachment records receive Secure, yet the four cohorts contain 90, 100, 79 and 96 unique attachment answer vectors. A stable category is not proof of stable answers—or of a validated personality construct.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. All 400 attachment records receive Secure, yet the four cohorts contain 90, 100, 79 and 96 unique attachment answer vectors. A stable category is not proof of stable answers—or of a validated personality construct.
 
 ## Three different meanings of repeatable
 

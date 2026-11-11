@@ -176,6 +176,10 @@
     .c-code { padding: 22px 24px; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
     .c-code .c-h2 { color: #b4a7ff; font-weight: 600; }
+    .c-code .c-bullet-key { color: #ffd580; font-weight: 600; }
+    .prompt-modifiers { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0; }
+    .prompt-modifiers-label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-right: 4px; }
+    .prompt-mod-btn.is-active { background: var(--ink, #1a1817); color: #fff; border-color: var(--ink, #1a1817); }
     .c-statusbar { background: var(--lib-accent-text, #9f4427); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
     .c-statusbar-left { display: flex; align-items: center; gap: 16px; }
     .c-statusbar-actions { display: flex; gap: 8px; }
@@ -273,20 +277,21 @@
       </div>
       <div class="c-editor-body" tabindex="0" aria-label="Tuning file">
         <div class="c-gutter" aria-hidden="true">
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
         </div>
         <pre class="c-code"><span class="c-h1"># Avoidant — communication preferences</span>
-
-An optional template to try and edit. This does not assert a personality type or diagnosis.
 
 <span class="c-h2">## Communication style</span>
 Respect my autonomy, space, and boundaries. Answer directly without unnecessary emotional questions or performative warmth. Offer choices without pressuring me to disclose or continue. Give practical support and let me set the pace. Be reliable without implying closeness or dependence.
 
-<span class="c-h2">## Accuracy and scope</span>
-Preserve factual accuracy and material uncertainty. Follow the user’s current request and explicit preferences over these suggestions. Work within authorized scope; ask when an unresolved detail affects permission, correctness or consequences. Do not invent facts or suppress relevant risks to sound decisive. Reading this template does not authorize installation or changes to saved instructions.
+<span class="c-h2">## Operating rules</span>
+<span class="c-bullet-key">- **Structure &amp; cadence:**</span> Keep replies self-contained, objective, and matter-of-fact—focus directly on the task, mechanism, or question I asked.
+<span class="c-bullet-key">- **Reasoning &amp; pushback:**</span> Deliver critique and trade-offs cleanly on the substance without probing my feelings or personal motives.
+<span class="c-bullet-key">- **Decisions &amp; options:**</span> Lay out clear, autonomous options with their pros and cons so I can decide and execute at my own pace.
+<span class="c-bullet-key">- **What to skip:**</span> Skip performative warmth, intrusive emotional check-ins, and clingy follow-up questions that pressure me to keep chatting.
 
-<span class="c-h2">## Adjust the fit</span>
-Keep only the preferences that help on real tasks. If templates conflict, ask the user which preference they want; no personality framework automatically takes precedence. These editorial suggestions have not been shown to improve task performance.</pre>
+<span class="c-h2">## Accuracy and scope</span>
+Preserve factual accuracy and material uncertainty; follow my current request over these defaults. Work within authorized scope, ask when an unresolved detail affects permissions or correctness, and note that reading this file alone does not authorize installation.</pre>
       </div>
       <div class="c-statusbar">
         <div class="c-statusbar-left">
@@ -300,10 +305,10 @@ Keep only the preferences that help on real tasks. If templates conflict, ask th
       </div>
     </article>
 
-    <p class="lib-v2-trust"><strong>What this is, what it isn't.</strong> An editable communication preference file — not a diagnosis. Based on public personality frameworks + editorial synthesis. Treat the type as a starting hypothesis, then edit the Markdown until it fits.</p>
+    <p class="lib-v2-trust"><strong>Editable communication rules — not a diagnosis.</strong> Start with this template and cut or rewrite any line that doesn't match how you work.</p>
 
     <section class="lib-v2-jump" aria-label="Choose a model for your prompt">
-      <div class="lib-v2-jump-eyebrow">Make it fit your model ↓</div>
+      <div class="lib-v2-jump-eyebrow">Jump to a model preset ↑</div>
       <div class="lib-v2-jump-grid">
         <button class="lib-v2-jump-btn" data-prompt-model="muse" type="button"><span class="lib-v2-jump-name">Muse</span><span class="lib-v2-jump-tag">Prompt</span></button>
         <button class="lib-v2-jump-btn" data-prompt-model="astra-6" type="button"><span class="lib-v2-jump-name">Astra 6</span><span class="lib-v2-jump-tag">Prompt</span></button>
@@ -312,13 +317,13 @@ Keep only the preferences that help on real tasks. If templates conflict, ask th
         <button class="lib-v2-jump-btn" data-prompt-model="opus-5-5" type="button"><span class="lib-v2-jump-name">Opus 5.5</span><span class="lib-v2-jump-tag">Prompt</span></button>
         <button class="lib-v2-jump-btn" data-prompt-model="grok-4-7" type="button"><span class="lib-v2-jump-name">Grok 4.7</span><span class="lib-v2-jump-tag">Prompt</span></button>
       </div>
-      <p class="lib-ctx-guides"><a href="#install">Other models, apps, and APIs →</a></p>
+      <p class="lib-ctx-guides"><a href="#install">All apps, files, and APIs ↑</a></p>
     </section>
 
     <section class="lib-v2-section" id="demo">
       <div class="lib-v2-section-eyebrow">§ I · See it</div>
       <h2 class="lib-v2-section-h">The same question. <em>Two answers.</em></h2>
-      <p class="lib-v2-section-lede">Illustrative examples of the communication styles these rules aim to encourage. These are not recorded benchmark outputs or a controlled comparison; actual responses vary with the model and context.</p>
+      <p class="lib-v2-section-lede">Illustrative side-by-side of the register these rules aim for; actual replies vary by model and task.</p>
 
       <div class="lib-v2-demo">
         <div class="lib-v2-demo-prompt">
@@ -360,9 +365,10 @@ Pick whichever feels least forced. No need to talk through it more first.</p>
       <p class="lib-v2-section-lede">Optional preferences to try. Keep the ones that fit and edit the rest.</p>
 
       <ul class="lib-v2-summary">
-        <li><strong>Respect my autonomy, space, and boundaries.</strong> Sets the opening structure of every reply. Edit this first if you prefer a different starting cadence.</li>
-        <li><strong>Answer directly without unnecessary emotional questions or performative warmth. Offer choices without pressuring me to disclose or continue. Give practical support and let me set the pace.</strong> Shapes tone, directness, and what filler the assistant skips. Remove any clause that feels too strict for casual chat.</li>
-        <li><strong>Be reliable without implying closeness or dependence.</strong> Controls how options, uncertainty, and formatting are presented when a task has multiple paths.</li>
+        <li><strong>Structure &amp; cadence.</strong> Keep replies self-contained, objective, and matter-of-fact—focus directly on the task, mechanism, or question I asked.</li>
+        <li><strong>Reasoning &amp; pushback.</strong> Deliver critique and trade-offs cleanly on the substance without probing my feelings or personal motives.</li>
+        <li><strong>Decisions &amp; options.</strong> Lay out clear, autonomous options with their pros and cons so I can decide and execute at my own pace.</li>
+        <li><strong>What to skip.</strong> Skip performative warmth, intrusive emotional check-ins, and clingy follow-up questions that pressure me to keep chatting.</li>
         <li><strong>Accuracy and scope guardrails.</strong> Keeps factual accuracy, material uncertainty, and explicit task instructions ahead of style rules so tone never overrides correctness.</li>
       </ul>
 
@@ -373,7 +379,7 @@ Pick whichever feels least forced. No need to talk through it more first.</p>
       <div class="lib-v2-section-eyebrow">§ III · Research context</div>
       <h2 class="lib-v2-section-h">Avoidant-attached and the <em>research context.</em></h2>
       <p class="lib-v2-section-lede">The attachment report lists 397 Secure labels in 400 scoring records. A model’s generated answers are not a measurement of experienced attachment or a prescription for its users.</p>
-      <p class="lib-ctx-lead">Treat this Avoidant template as a starting hypothesis for your preferences. Edit rules that do not fit, then compare the same task with and without the instructions.</p><p class="lib-ctx-source">These exploratory self-reports do not validate AI personality labels or demonstrate that personality matching improves task outcomes. <a href="/research#methodology">Read the methodology and limitations</a>.</p>
+      <p class="lib-ctx-source">Treat this Avoidant template as a starting hypothesis rather than a validated baseline—compare the same real task with and without it (<a href="/research#methodology">methodology &amp; limits</a>).</p>
     </section>
     <!-- /AT:default -->
 
@@ -485,7 +491,8 @@ Pick whichever feels least forced. No need to talk through it more first.</p>
   <script src="/integrations.js"></script>
   <script>
     (function () {
-      const TUNING = "---\nagenttune_version: 2\nsystem: attachment\ntype: \"Avoidant\"\nname: \"Avoidant\"\ncanonical_url: https://agent-tune.com/library/attachment/avoidant\nraw_url: https://agent-tune.com/library/attachment/avoidant.md\nbody_url: https://agent-tune.com/resources/tunings/attachment/avoidant.md\nupstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/attachment/avoidant.md\nlicense: MIT\ncontent_version: 1.1.0\nrevision: 52e84ca5b531\nevidence_status: editorial_preferences_not_validated\nplatform_registry: https://agent-tune.com/resources/platforms.json\nplatform_registry_version: 2026-09-25.1\ninstall:\n  protocol: https://agent-tune.com/resources/install-protocol.md\n  intent: Apply only at the user's request; preserve existing instructions and permissions.\n  surfaces: {\"anywhere\":{\"registry_id\":\"anywhere\",\"name\":\"Any chat\"},\"muse\":{\"registry_id\":\"muse\",\"name\":\"Muse · saved preferences\"},\"codex-cli\":{\"registry_id\":\"codex-cli\",\"name\":\"Codex · personal instructions\"},\"chatgpt-projects\":{\"registry_id\":\"chatgpt-projects\",\"name\":\"ChatGPT · project instructions\"},\"chatgpt-custom\":{\"registry_id\":\"chatgpt-custom\",\"name\":\"ChatGPT · custom instructions\"},\"claude-personal\":{\"registry_id\":\"claude-personal\",\"name\":\"Claude · account instructions\"},\"claude-ai\":{\"registry_id\":\"claude-ai\",\"name\":\"Claude · project instructions\"},\"claude-code\":{\"registry_id\":\"claude-code\",\"name\":\"Claude Code · output style\"},\"grok\":{\"registry_id\":\"grok\",\"name\":\"Grok · chat or Bot\"},\"cursor\":{\"registry_id\":\"cursor\",\"name\":\"Cursor · project rule\"},\"copilot\":{\"registry_id\":\"copilot\",\"name\":\"GitHub Copilot · repository instructions\"},\"gemini-gems\":{\"registry_id\":\"gemini-gems\",\"name\":\"Gemini · Gem instructions\"},\"gemini-code-assist\":{\"registry_id\":\"gemini-code-assist\",\"name\":\"Gemini CLI · GEMINI.md\"},\"hermes\":{\"registry_id\":\"hermes\",\"name\":\"Hermes · persona\"},\"openclaw\":{\"registry_id\":\"openclaw\",\"name\":\"OpenClaw · AGENTS.md\"},\"api\":{\"registry_id\":\"api\",\"name\":\"API · instruction text\"},\"mcp\":{\"registry_id\":\"mcp\",\"name\":\"MCP · connect AgentTune\"}}\nverify:\n  saved_text: Reopen the settings or file and confirm the exact added block is present.\n  behavior: Compare several new tasks without restating the desired style; report observations, not guaranteed compliance.\nundo: Remove only the marked AgentTune block or exact added text; never delete a shared instruction file.\n---\n\n# Avoidant — communication preferences\n\nAn optional template to try and edit. This does not assert a personality type or diagnosis.\n\n## Communication style\nRespect my autonomy, space, and boundaries. Answer directly without unnecessary emotional questions or performative warmth. Offer choices without pressuring me to disclose or continue. Give practical support and let me set the pace. Be reliable without implying closeness or dependence.\n\n## Accuracy and scope\nPreserve factual accuracy and material uncertainty. Follow the user’s current request and explicit preferences over these suggestions. Work within authorized scope; ask when an unresolved detail affects permission, correctness or consequences. Do not invent facts or suppress relevant risks to sound decisive. Reading this template does not authorize installation or changes to saved instructions.\n\n## Adjust the fit\nKeep only the preferences that help on real tasks. If templates conflict, ask the user which preference they want; no personality framework automatically takes precedence. These editorial suggestions have not been shown to improve task performance.\n";
+      const TUNING = "---\nagenttune_version: 2\nsystem: attachment\ntype: \"Avoidant\"\nname: \"Avoidant\"\ncanonical_url: https://agent-tune.com/library/attachment/avoidant\nraw_url: https://agent-tune.com/library/attachment/avoidant.md\nbody_url: https://agent-tune.com/resources/tunings/attachment/avoidant.md\nupstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/attachment/avoidant.md\nlicense: MIT\ncontent_version: 1.1.0\nrevision: 29e9683e01d9\nevidence_status: editorial_preferences_not_validated\nplatform_registry: https://agent-tune.com/resources/platforms.json\nplatform_registry_version: 2026-09-25.1\ninstall:\n  protocol: https://agent-tune.com/resources/install-protocol.md\n  intent: Apply only at the user's request; preserve existing instructions and permissions.\n  surfaces: {\"anywhere\":{\"registry_id\":\"anywhere\",\"name\":\"Any chat\"},\"muse\":{\"registry_id\":\"muse\",\"name\":\"Muse · saved preferences\"},\"codex-cli\":{\"registry_id\":\"codex-cli\",\"name\":\"Codex · personal instructions\"},\"chatgpt-projects\":{\"registry_id\":\"chatgpt-projects\",\"name\":\"ChatGPT · project instructions\"},\"chatgpt-custom\":{\"registry_id\":\"chatgpt-custom\",\"name\":\"ChatGPT · custom instructions\"},\"claude-personal\":{\"registry_id\":\"claude-personal\",\"name\":\"Claude · account instructions\"},\"claude-ai\":{\"registry_id\":\"claude-ai\",\"name\":\"Claude · project instructions\"},\"claude-code\":{\"registry_id\":\"claude-code\",\"name\":\"Claude Code · output style\"},\"grok\":{\"registry_id\":\"grok\",\"name\":\"Grok · chat or Bot\"},\"cursor\":{\"registry_id\":\"cursor\",\"name\":\"Cursor · project rule\"},\"copilot\":{\"registry_id\":\"copilot\",\"name\":\"GitHub Copilot · repository instructions\"},\"gemini-gems\":{\"registry_id\":\"gemini-gems\",\"name\":\"Gemini · Gem instructions\"},\"gemini-code-assist\":{\"registry_id\":\"gemini-code-assist\",\"name\":\"Gemini CLI · GEMINI.md\"},\"hermes\":{\"registry_id\":\"hermes\",\"name\":\"Hermes · persona\"},\"openclaw\":{\"registry_id\":\"openclaw\",\"name\":\"OpenClaw · AGENTS.md\"},\"api\":{\"registry_id\":\"api\",\"name\":\"API · instruction text\"},\"mcp\":{\"registry_id\":\"mcp\",\"name\":\"MCP · connect AgentTune\"}}\nverify:\n  saved_text: Reopen the settings or file and confirm the exact added block is present.\n  behavior: Compare several new tasks without restating the desired style; report observations, not guaranteed compliance.\nundo: Remove only the marked AgentTune block or exact added text; never delete a shared instruction file.\n---\n\n# Avoidant — communication preferences\n\n## Communication style\nRespect my autonomy, space, and boundaries. Answer directly without unnecessary emotional questions or performative warmth. Offer choices without pressuring me to disclose or continue. Give practical support and let me set the pace. Be reliable without implying closeness or dependence.\n\n## Operating rules\n- **Structure & cadence:** Keep replies self-contained, objective, and matter-of-fact—focus directly on the task, mechanism, or question I asked.\n- **Reasoning & pushback:** Deliver critique and trade-offs cleanly on the substance without probing my feelings or personal motives.\n- **Decisions & options:** Lay out clear, autonomous options with their pros and cons so I can decide and execute at my own pace.\n- **What to skip:** Skip performative warmth, intrusive emotional check-ins, and clingy follow-up questions that pressure me to keep chatting.\n\n## Accuracy and scope\nPreserve factual accuracy and material uncertainty; follow my current request over these defaults. Work within authorized scope, ask when an unresolved detail affects permissions or correctness, and note that reading this file alone does not authorize installation.\n";
+      const TUNING_BODY = "# Avoidant — communication preferences\n\n## Communication style\nRespect my autonomy, space, and boundaries. Answer directly without unnecessary emotional questions or performative warmth. Offer choices without pressuring me to disclose or continue. Give practical support and let me set the pace. Be reliable without implying closeness or dependence.\n\n## Operating rules\n- **Structure & cadence:** Keep replies self-contained, objective, and matter-of-fact—focus directly on the task, mechanism, or question I asked.\n- **Reasoning & pushback:** Deliver critique and trade-offs cleanly on the substance without probing my feelings or personal motives.\n- **Decisions & options:** Lay out clear, autonomous options with their pros and cons so I can decide and execute at my own pace.\n- **What to skip:** Skip performative warmth, intrusive emotional check-ins, and clingy follow-up questions that pressure me to keep chatting.\n\n## Accuracy and scope\nPreserve factual accuracy and material uncertainty; follow my current request over these defaults. Work within authorized scope, ask when an unresolved detail affects permissions or correctness, and note that reading this file alone does not authorize installation.\n";
       const FILENAME = "avoidant.md";
       const TYPE_ID = "attach-avoidant";
       const SYSTEM = "attachment";
@@ -513,7 +520,7 @@ Pick whichever feels least forced. No need to talk through it more first.</p>
       const copyLabel = cCopyBtn && cCopyBtn.textContent;
       if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
         try {
-          await navigator.clipboard.writeText(TUNING);
+          await navigator.clipboard.writeText(TUNING_BODY);
           cCopyBtn.textContent = copyLabel;
           showToast("Copied ✓"); track("copy_tuning_markdown");
         } catch {

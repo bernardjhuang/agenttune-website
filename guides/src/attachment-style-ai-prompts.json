@@ -1,0 +1,93 @@
+{
+  "slug": "attachment-style-ai-prompts",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Attachment Style AI Prompts: Secure, Anxious & Avoidant",
+  "description": "How attachment style tunings (Secure, Anxious, Avoidant, Fearful-Avoidant) shape AI collaboration pacing, check-ins, and autonomy boundaries.",
+  "pill": "Guide · Attachment Prompts",
+  "h1": "Attachment style AI prompts: Secure, Anxious, and Avoidant.",
+  "dek": "Translated into working rules for an AI assistant, adult attachment styles control two practical levers: how often the agent stops to check in with you, and how much autonomy it takes before asking.",
+  "lede": "At first glance, an adult attachment questionnaire (<a href=\"/tests/attachment\">ECR-R</a>) sounds like an odd tool for configuring software. In practice, our <a href=\"/library/attachment/avoidant\">Avoidant attachment tuning</a> is one of the most visited library pages on AgentTune—because the two ECR-R axes map cleanly onto the biggest friction point in agentic workflows: <strong>check-in frequency</strong> (anxiety) versus <strong>autonomous execution</strong> (avoidance).",
+  "answer": "In AI agent tuning, the four attachment profiles set collaboration boundaries: Secure balances autonomous execution with brief check-ins when scope changes; Avoidant maximizes independent execution with minimal chatter and zero hand-holding; Anxious requests frequent checkpoints and explicit confirmation before changes; and Fearful-Avoidant (Disorganized) pairs high caution on irreversible actions with concise, low-intimacy reporting.",
+  "sections": [
+    {
+      "h2": "How the four attachment quadrants translate into AI agent rules.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Attachment quadrant</th><th scope=\"col\">Library profile</th><th scope=\"col\">Autonomy vs check-in balance</th><th scope=\"col\">Best when you want the AI to...</th></tr></thead><tbody><tr><th scope=\"row\">Secure</th><td><a href=\"/library/attachment/secure\">Secure tuning</a></td><td>Low anxiety, low avoidance: steady collaboration with proportional check-ins.</td><td>Carry tasks forward, state assumptions clearly, and ask only when a choice changes the outcome.</td></tr><tr><th scope=\"row\">Avoidant (Dismissive)</th><td><a href=\"/library/attachment/avoidant\">Avoidant tuning</a></td><td>Low anxiety, high avoidance: maximum autonomy, zero emotional framing or small talk.</td><td>Execute the task end-to-end, return the artifact or diff, and skip check-ins and pleasantries.</td></tr><tr><th scope=\"row\">Anxious (Preoccupied)</th><td><a href=\"/library/attachment/anxious\">Anxious tuning</a></td><td>High anxiety, low avoidance: high alignment checks and explicit confirmation before acting.</td><td>Confirm understanding first, walk through options step by step, and verify before editing files.</td></tr><tr><th scope=\"row\">Fearful-Avoidant (Disorganized)</th><td><a href=\"/library/attachment/disorganized\">Fearful-Avoidant tuning</a></td><td>High caution on scope and risk paired with terse, formal boundaries.</td><td>Audit ambiguous or high-risk changes carefully without warm or informal banter.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "1. Avoidant tuning: autonomous execution, zero hand-holding.",
+      "html": "<p>If you use coding agents like GPT-6 Astra, GPT-6 Sol, or Claude Code and get frustrated when the assistant stops every thirty seconds to ask for reassurance, the <a href=\"/library/attachment/avoidant\">Avoidant profile</a> sets a strict autonomy boundary:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences — Autonomous &amp; Self-Contained (Avoidant style)\n\n- Work independently through the complete task before reporting back; do not stop for mid-task reassurance.\n- Lead with the finished output, diff, or answer. Keep surrounding narration to a minimum.\n- Resolve minor ambiguities using standard conventions and state the assumption in one line at the end.\n- Never use emotional language, rapport-building openers, or \"I'm here for you\" sign-offs.\n- Ask a question only when a missing requirement would cause data loss or break a public contract.</div>"
+    },
+    {
+      "h2": "2. Secure tuning: balanced collaboration and clear checkpoints.",
+      "html": "<p>Across all 400 fresh sessions in our September 2026 study, GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 scored in the <strong>Secure quadrant (100 of 100 each under the &gt; 4.0 cutoff)</strong>. The <a href=\"/library/attachment/secure\">Secure profile</a> sharpens that baseline by removing filler while keeping collaborative checkpoints clean:</p><div class=\"guide-snippet\">## Communication preferences — Balanced Collaborator (Secure style)\n\n- Lead with the direct answer or deliverable, then note any key trade-off in plain prose.\n- Carry authorized work through to a reviewable checkpoint before asking for feedback.\n- When requirements are ambiguous, state your recommended default and ask one focused question.\n- Disagree plainly and constructively when an assumption in my prompt does not hold up.</div>"
+    },
+    {
+      "h2": "3. Anxious & Fearful-Avoidant tunings: high-checkpoint alignment.",
+      "html": "<p>When you are working in an unfamiliar codebase, learning a new subject, or auditing production infrastructure where an unannounced assumption is expensive, use the <a href=\"/library/attachment/anxious\">Anxious profile</a> (frequent alignment check-ins) or <a href=\"/library/attachment/disorganized\">Fearful-Avoidant profile</a> (strict risk boundaries):</p><div class=\"guide-snippet\">## Communication preferences — Checkpoint-First Alignment (Anxious style)\n\n- Before making multi-file edits or irreversible changes, summarize your understanding of the goal and wait for confirmation.\n- Work in small, reviewable increments and show what changed after each step.\n- Surface any ambiguity in my instructions immediately rather than guessing silently.</div><p>Curious why Grok 4.6 was the only model in our September 2026 archive whose reported self-assessment crossed into the Avoidant quadrant (avoidance 4.06 vs the 4.00 cutoff)? Read our new sensitivity analysis: <a href=\"/research/grok-attachment-cutoff-simulation\">Grok 4.6 and the attachment cutoff</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does an attachment style prompt actually change in an AI assistant?",
+      "a": "It does not give the AI emotions; instead, it translates the two attachment dimensions into collaboration rules: how frequently the assistant pauses for check-ins and confirmation (anxiety) versus how independently and concisely it executes tasks on its own (avoidance)."
+    },
+    {
+      "q": "Why is the Avoidant tuning so popular for coding agents?",
+      "a": "Coding agents often over-ask for permission or pad diffs with conversational commentary. The Avoidant tuning tells the agent to resolve minor ambiguities on its own, finish the authorized work, and return the result with minimal prose."
+    },
+    {
+      "q": "How do AI models score on the 36-item ECR-R attachment test?",
+      "a": "In our September 2026 study of 100 fresh sessions per model, GPT-6 Astra (1.45 / 2.31), GPT-6 Sol (2.17 / 3.12), Claude Opus 5.5 (1.94 / 3.35), and Claude Fable 5.1 (2.01 / 3.18) all scored Secure in 100 of 100 runs under the strict > 4.0 cutoff. Grok 4.6's single reported self-assessment scored 1.50 anxiety and 4.06 avoidance (Avoidant by 0.06)."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published mapping the four ECR-R quadrants to agent check-in and autonomy rules."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Interactive Attachment Style Test (ECR-R)",
+      "href": "https://agent-tune.com/tests/attachment"
+    },
+    {
+      "label": "AgentTune Library: Attachment style tunings",
+      "href": "https://agent-tune.com/library/#attachment"
+    },
+    {
+      "label": "AgentTune Research: Grok 4.6 and the attachment cutoff",
+      "href": "https://agent-tune.com/research/grok-attachment-cutoff-simulation"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Interactive Test",
+      "label": "Take the free 36-item attachment style test (ECR-R)",
+      "href": "/tests/attachment"
+    },
+    {
+      "kicker": "Research",
+      "label": "Grok 4.6 and the attachment cutoff: a sensitivity analysis",
+      "href": "/research/grok-attachment-cutoff-simulation"
+    },
+    {
+      "kicker": "Library",
+      "label": "Avoidant attachment tuning file",
+      "href": "/library/attachment/avoidant"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "DISC AI prompts for all 4 styles (D, I, S, C)",
+      "href": "/guides/disc-ai-prompts"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "Big Five AI system prompts: all 10 high and low trait poles",
+      "href": "/guides/big-five-ai-prompts"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

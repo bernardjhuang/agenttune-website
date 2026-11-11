@@ -5,15 +5,11 @@ Research · September 2026
 
 # Does personality tuning change AI answers?
 
-A 60-reply pilot, with an auditable reanalysis.
-
 By Bernard Huang · Updated September 25, 2026
 
-This archive contains twenty tasks answered under three instruction conditions. It identifies Claude Opus 5.5 as the generator and Claude Fable 5.1 as the judge. We can recompute the summaries from the supplied replies and ratings; the original execution harness and full judge rubric are not included. The results are descriptive observations from this small task set.
+The archived direct condition has higher answer-first ratings and fewer counted hedge phrases and questions back. It received the maximum answer-first score in 19 of 20 tasks. Independently recounted replies average 380 words in the baseline and 381.9 in the direct condition; mean judged usefulness is 4.80 in both. These observations do not establish repeatability, equivalence, a causal accuracy cost or a general benefit from personality matching.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. The archived direct condition has higher answer-first ratings and fewer counted hedge phrases and questions back. It received the maximum answer-first score in 19 of 20 tasks. Independently recounted replies average 380 words in the baseline and 381.9 in the direct condition; mean judged usefulness is 4.80 in both. These observations do not establish repeatability, equivalence, a causal accuracy cost or a general benefit from personality matching.
 
 ## What is in the archive.
 

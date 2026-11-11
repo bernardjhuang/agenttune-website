@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Style &amp; Verbosity Controls: Rules That Beat Adjectives</title>
+  <meta name="description" content="Replace vague persona adjectives with 5 deterministic style controls: opening rule, list threshold, hedge cap, pushback trigger, and uncertainty clause." />
+
+  <meta property="og:title" content="AI style and verbosity controls: 5 deterministic rules that beat adjectives." />
+  <meta property="og:description" content="Replace vague persona adjectives with 5 deterministic style controls: opening rule, list threshold, hedge cap, pushback trigger, and uncertainty clause." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-11" />
+  <meta property="article:modified_time" content="2026-11-11" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI style and verbosity controls: 5 deterministic rules that beat adjectives." />
+  <meta name="twitter:description" content="Replace vague persona adjectives with 5 deterministic style controls: opening rule, list threshold, hedge cap, pushback trigger, and uncertainty clause." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI style and verbosity controls: 5 deterministic rules that beat adjectives","description":"Replace vague persona adjectives with 5 deterministic style controls: opening rule, list threshold, hedge cap, pushback trigger, and uncertainty clause.","url":"https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity","datePublished":"2026-11-11","dateModified":"2026-11-11","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"AI style and verbosity controls: 5 deterministic rules that beat adjectives"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I stop ChatGPT or Claude from putting bullet points in every single answer?","acceptedAnswer":{"@type":"Answer","text":"Don't write 'Never use bullet points'—write a threshold rule: 'Default to plain paragraphs. Use bullet lists only for sequential steps and tables only when comparing 3 or more items across shared criteria.' Threshold rules stop reflex bullets without breaking checklists."}},{"@type":"Question","name":"Why does 'be concise' make AI answers unhelpful on hard problems?","acceptedAnswer":{"@type":"Answer","text":"A flat 'be concise' instruction penalizes depth equally on trivial lookups and complex debugging. Use proportional verbosity instead: '1–3 sentences for simple factual questions; full mechanism and tradeoffs for architecture, security, or irreversible changes.'"}},{"@type":"Question","name":"Do personality labels like 'Act as an INTJ' work better than explicit style rules?","acceptedAnswer":{"@type":"Answer","text":"Explicit behavioral rules carry the predictable effect because the model can verify 'answer in sentence one' directly. Personality types (MBTI, DISC, Enneagram) are most useful as a fast human discovery shortcut for choosing which explicit rules fit you—see our 180-reply comparison protocol for testing label vs plain-English rules."}},{"@type":"Question","name":"How do I cut AI hedging without encouraging hallucinated certainty?","acceptedAnswer":{"@type":"Answer","text":"Ban performative throat-clearing ('Great question!', 'It is important to remember...') while explicitly requiring calibrated uncertainty ('Separate verified facts from inference and state material uncertainty when evidence is incomplete')."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">AI style and verbosity controls: 5 deterministic rules that beat adjectives</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Prompt Engineering</span>
+        <h1 class="h-hero h-research-hero">AI style and verbosity controls: 5 deterministic rules that beat adjectives.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-11">November 11, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Replace vague tone adjectives with five explicit style controls: (1) an Opening Rule ('state the answer in sentence one'), (2) a List &amp; Table Threshold ('prose by default; lists/tables only for 3+ parallel items'), (3) a Proportional Verbosity Scale ('1–3 sentences for lookups, full tradeoffs for irreversible decisions'), (4) a Pushback Trigger ('name the weakest assumption before implementing'), and (5) an Uncertainty Clause ('flag material uncertainty instead of guessing').</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Adjectives vs. checkable style controls.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Adjectives vs. checkable style controls.: table 1" tabindex="0"><table><thead><tr><th scope="col">Control dimension</th><th scope="col">Weak adjective (drifts fast)</th><th scope="col">Deterministic rule (persists across long chats)</th></tr></thead><tbody><tr><th scope="row">1. Opening structure</th><td><em>"Don't waste my time with fluff."</em></td><td><em>"State the direct answer, fix, or recommendation in sentence one—no restating my question."</em></td></tr><tr><th scope="row">2. Formatting density</th><td><em>"Write naturally like a human."</em></td><td><em>"Default to plain paragraphs; use bullets for sequential steps and tables only when comparing 3+ items on shared criteria."</em></td></tr><tr><th scope="row">3. Length / verbosity</th><td><em>"Be super concise."</em></td><td><em>"Scale length to task stakes: 1–3 sentences for factual lookups; structured tradeoffs for architecture, money, or irreversible actions."</em></td></tr><tr><th scope="row">4. Epistemic candor</th><td><em>"Don't be sycophantic."</em></td><td><em>"Never open with praise. If my plan has a flaw or cleaner alternative, state the objection and evidence before executing."</em></td></tr><tr><th scope="row">5. Confidence &amp; gaps</th><td><em>"Be accurate and confident."</em></td><td><em>"Separate verified facts from inference, and flag material uncertainty explicitly instead of guessing."</em></td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>What measured pilot data shows when you use explicit controls.</h2>
+        <p>We tested explicit structural rules head-to-head against untuned defaults in our <a href="/research/does-personality-tuning-change-ai-answers">60-reply before/after pilot</a> (20 real tasks × 3 conditions):</p><ul><li><strong>Answer-first rate (top 5/5 rubric score):</strong> Rose from <strong>14/20</strong> under default prompting to <strong>19/20</strong> under explicit straight rules.</li><li><strong>Hedging phrases per reply:</strong> Dropped from <strong>0.35</strong> per reply to <strong>0.05</strong>.</li><li><strong>Trailing follow-up questions:</strong> Dropped from <strong>0.90</strong> per reply to <strong>0.25</strong> when the block specified asking questions only on material ambiguity.</li></ul><p>Notice why the fifth control (<em>"flag material uncertainty explicitly"</em>) must always pair with anti-hedging rules: banning filler disclaimers (<em>"As an AI, it's important to consider..."</em>) should sharpen real epistemic caveats (<em>"Unverified: depends on whether your Postgres version is 15 or 17"</em>), never suppress them. Our <a href="/tools/instruction-checker">Instruction Checker</a> flags prompts that accidentally ban legitimate uncertainty reporting.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Three ready-to-paste register profiles.</h2>
+        <h3>Profile A: High-density analytical prose (engineers, researchers, analysts)</h3><div class="guide-snippet" data-tuning-prompt>## Style &amp; register controls
+
+- Opening: Lead with the answer, root cause, or recommendation in sentence one.
+- Format: Default to dense, clear prose; use code blocks for exact commands and tables only when comparing 3+ options.
+- Verbosity: 1–3 sentences for simple lookups; mechanism-first depth when correctness or architecture is at stake.
+- Pushback: Challenge weak premises or overengineered plans before implementing them.
+- Uncertainty: Separate verified facts from inference and flag material uncertainty explicitly.</div><h3>Profile B: Rapid operator brief (founders, PMs, triage)</h3><div class="guide-snippet">## Style &amp; register controls
+
+- Opening: State the recommended decision and expected impact in the first two lines.
+- Format: Maximum 5 bullets for multi-part updates; plain 2-sentence paragraphs otherwise.
+- Tradeoffs: When options are close, name the single deciding variable rather than listing ten pros and cons.
+- Questions: Ask at most one clarifying question only if missing context flips the recommendation; otherwise state your assumption and proceed.</div><h3>Profile C: Exploratory thinking partner (design, writing, strategy)</h3><div class="guide-snippet">## Style &amp; register controls
+
+- Opening: Address my core question directly without generic praise or throat-clearing.
+- Exploration: Surface 2–3 genuinely distinct angles (including one non-obvious counter-perspective) before narrowing to a single answer.
+- Register: Write in clean, concrete prose—avoid corporate buzzwords, clichés, and bulleted walls.
+- Honesty: Point out blind spots candidly while keeping space open to iterate.</div><p>Customize all five dials interactively in our <a href="/tools/communication-preferences-builder">Communication Preferences Builder</a>, or read <a href="/guides/stop-ai-sycophancy-make-ai-push-back">how to stop AI sycophancy</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>How do I stop ChatGPT or Claude from putting bullet points in every single answer?</summary>
+            <p>Don't write 'Never use bullet points'—write a threshold rule: 'Default to plain paragraphs. Use bullet lists only for sequential steps and tables only when comparing 3 or more items across shared criteria.' Threshold rules stop reflex bullets without breaking checklists.</p>
+          </details>
+          <details>
+            <summary>Why does 'be concise' make AI answers unhelpful on hard problems?</summary>
+            <p>A flat 'be concise' instruction penalizes depth equally on trivial lookups and complex debugging. Use proportional verbosity instead: '1–3 sentences for simple factual questions; full mechanism and tradeoffs for architecture, security, or irreversible changes.'</p>
+          </details>
+          <details>
+            <summary>Do personality labels like 'Act as an INTJ' work better than explicit style rules?</summary>
+            <p>Explicit behavioral rules carry the predictable effect because the model can verify 'answer in sentence one' directly. Personality types (MBTI, DISC, Enneagram) are most useful as a fast human discovery shortcut for choosing which explicit rules fit you—see our 180-reply comparison protocol for testing label vs plain-English rules.</p>
+          </details>
+          <details>
+            <summary>How do I cut AI hedging without encouraging hallucinated certainty?</summary>
+            <p>Ban performative throat-clearing ('Great question!', 'It is important to remember...') while explicitly requiring calibrated uncertainty ('Separate verified facts from inference and state material uncertainty when evidence is incomplete').</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-11">November 11, 2026</time> Published with the 5 deterministic style controls table, 60-reply pilot metrics, and 3 register profiles.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/research/does-personality-tuning-change-ai-answers" target="_blank" rel="noopener">AgentTune Study: Does personality tuning change AI answers? (60-reply pilot)</a></li>
+          <li><a href="https://agent-tune.com/guides/personality-prompts-vs-plain-english" target="_blank" rel="noopener">AgentTune Test Kit: Do personality prompts beat plain-English preferences?</a></li>
+          <li><a href="https://agent-tune.com/tools/communication-preferences-builder" target="_blank" rel="noopener">AgentTune Tool: Communication Preferences Builder</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/communication-preferences-builder"><span class="guide-related-kicker">Free browser tool</span>Communication Preferences Builder</a>
+          <a href="/research/does-personality-tuning-change-ai-answers"><span class="guide-related-kicker">Research</span>Does personality tuning change AI answers? (60-reply pilot)</a>
+          <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to make AI push back and stop agreeing with you</a>
+          <a href="/guides/personality-prompts-vs-plain-english"><span class="guide-related-kicker">Test kit</span>Do personality prompts beat plain-English preferences?</a>
+          <a href="/guides/make-claude-more-direct"><span class="guide-related-kicker">Guide</span>How to make Claude more direct</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

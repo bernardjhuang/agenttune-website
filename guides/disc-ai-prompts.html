@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DISC AI Prompts for All 4 Styles (ChatGPT, Claude, Muse)</title>
+  <meta name="description" content="Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness) for ChatGPT, Claude, Meta Muse, Codex, and Grok." />
+
+  <meta property="og:title" content="DISC AI prompts for all four workplace styles." />
+  <meta property="og:description" content="Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness) for ChatGPT, Claude, Meta Muse, Codex, and Grok." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-05" />
+  <meta property="article:modified_time" content="2026-11-05" />
+  <meta property="og:url" content="https://agent-tune.com/guides/disc-ai-prompts" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DISC AI prompts for all four workplace styles." />
+  <meta name="twitter:description" content="Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness) for ChatGPT, Claude, Meta Muse, Codex, and Grok." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/disc-ai-prompts" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"DISC AI prompts for all four workplace styles","description":"Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness) for ChatGPT, Claude, Meta Muse, Codex, and Grok.","url":"https://agent-tune.com/guides/disc-ai-prompts","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"DISC AI prompts for all four workplace styles"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which DISC style is best for software engineering and code review?","acceptedAnswer":{"@type":"Answer","text":"Conscientiousness (C) works best for code review, debugging, and specification auditing because it demands explicit assumptions and edge-case checks. Dominance (D) works best when you want fast, minimal diffs without lengthy explanations."}},{"@type":"Question","name":"Can I combine two DISC styles like SC or DI?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most people and models score as a two-letter blend when their top two quadrants sit within two points on the ODAT. Combine three bullets from your primary quadrant with two bullets from your runner-up quadrant."}},{"@type":"Question","name":"Where do I paste these DISC prompts?","acceptedAnswer":{"@type":"Answer","text":"Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settings, General), Meta Muse Soul.md, ~/.codex/AGENTS.md, or ~/.claude/output-styles/."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">DISC AI prompts for all four workplace styles</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · DISC Prompts</span>
+        <h1 class="h-hero h-research-hero">DISC AI prompts for all four workplace styles.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-05">November 5, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Copy the DISC block that matches your working style—Dominance (bottom-line conclusions and direct trade-offs), Influence (energetic brainstorming and narrative hooks), Steadiness (calm, step-by-step pacing and clear checkpoints), or Conscientiousness (rigorous verification, edge cases, and exact citations)—into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Which DISC tuning solves which AI annoyance?</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Which DISC tuning solves which AI annoyance?: table 1" tabindex="0"><table><thead><tr><th scope="col">DISC Style</th><th scope="col">Library profile</th><th scope="col">Fixes this default AI habit</th><th scope="col">Best for tasks like...</th></tr></thead><tbody><tr><th scope="row">Dominance (D)</th><td><a href="/library/disc/d-dominance">DISC Dominance</a></td><td>Long wind-ups, hedged menus of options, and timid deference.</td><td>Executive triage, architecture decisions, and rapid execution.</td></tr><tr><th scope="row">Influence (I)</th><td><a href="/library/disc/i-influence">DISC Influence</a></td><td>Dry, bureaucratic lists that kill creative momentum.</td><td>Pitch framing, product naming, brainstorming, and storytelling.</td></tr><tr><th scope="row">Steadiness (S)</th><td><a href="/library/disc/s-steadiness">DISC Steadiness</a></td><td>Dumping 12 steps at once or changing working code without warning.</td><td>Onboarding, steady refactoring, learning a new stack, and planning.</td></tr><tr><th scope="row">Conscientiousness (C)</th><td><a href="/library/disc/c-conscientiousness">DISC Conscientiousness</a></td><td>Hand-wavy claims, unverified numbers, and skipped edge cases.</td><td>Code audits, data verification, legal/policy review, and specs.</td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>1. Dominance (D): bottom line first, zero hedging.</h2>
+        <p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our <a href="/guides/open-source-disc-test-odat">ODAT evaluations</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href="/library/disc/d-dominance">/library/disc/d-dominance</a>.</p><div class="guide-snippet" data-tuning-prompt>## Communication preferences — DISC Dominance (D)
+
+- Start every reply with the bottom-line answer, decision, or recommendation.
+- Give one clear recommendation first rather than an unranked menu of options.
+- Keep routine replies under 120 words in direct, active-voice prose.
+- Drop hedges, disclaimers, and polite throat-clearing.
+- Push back immediately when my plan is slow, over-complicated, or built on a weak assumption.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>2. Influence (I): high-momentum brainstorming and narrative clarity.</h2>
+        <p>Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: <a href="/library/disc/i-influence">/library/disc/i-influence</a>.</p><div class="guide-snippet">## Communication preferences — DISC Influence (I)
+
+- Lead with the big picture, core hook, or human takeaway before diving into mechanics.
+- When brainstorming, offer distinct, vivid angles with concrete examples rather than dry taxonomies.
+- Keep prose warm, conversational, and fast-moving.
+- Help me sharpen the narrative arc and audience impact of drafts before nitpicking minor syntax.
+- Flag major risks plainly in one sentence without derailing momentum.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>3. Steadiness (S): calm, predictable, step-by-step execution.</h2>
+        <p>Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: <a href="/library/disc/s-steadiness">/library/disc/s-steadiness</a>.</p><div class="guide-snippet">## Communication preferences — DISC Steadiness (S)
+
+- Keep a calm, steady, matter-of-fact tone without rushed jumps or exaggerated hype.
+- Break multi-part tasks into small, sequential steps with a clear verification check after each step.
+- Preserve existing working structure and conventions; explain why before proposing a breaking change.
+- Summarize what is settled and what comes next at the end of longer tasks.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>4. Conscientiousness (C): precision, edge cases, and primary evidence.</h2>
+        <p>Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: <a href="/library/disc/c-conscientiousness">/library/disc/c-conscientiousness</a>.</p><div class="guide-snippet">## Communication preferences — DISC Conscientiousness (C)
+
+- Prioritize accuracy, exact definitions, and verifiable evidence over speed or brevity.
+- State assumptions, boundary conditions, and sample sizes explicitly.
+- Separate verified facts from inferences; if a detail cannot be confirmed, say so on its own line.
+- Call out edge cases, regression risks, and missing test coverage before pronouncing a solution complete.</div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Which DISC style is best for software engineering and code review?</summary>
+            <p>Conscientiousness (C) works best for code review, debugging, and specification auditing because it demands explicit assumptions and edge-case checks. Dominance (D) works best when you want fast, minimal diffs without lengthy explanations.</p>
+          </details>
+          <details>
+            <summary>Can I combine two DISC styles like SC or DI?</summary>
+            <p>Yes. Most people and models score as a two-letter blend when their top two quadrants sit within two points on the ODAT. Combine three bullets from your primary quadrant with two bullets from your runner-up quadrant.</p>
+          </details>
+          <details>
+            <summary>Where do I paste these DISC prompts?</summary>
+            <p>Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settings, General), Meta Muse Soul.md, ~/.codex/AGENTS.md, or ~/.claude/output-styles/.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-05">November 5, 2026</time> First published with copy-paste blocks for Dominance, Influence, Steadiness, and Conscientiousness.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/library/#disc" target="_blank" rel="noopener">AgentTune Library: DISC workplace tunings</a></li>
+          <li><a href="https://agent-tune.com/tests/disc" target="_blank" rel="noopener">AgentTune Free DISC Assessment (ODAT)</a></li>
+          <li><a href="https://agent-tune.com/guides/open-source-disc-test-odat" target="_blank" rel="noopener">AgentTune Guide: Open-source DISC assessment (ODAT) scorer</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tests/disc"><span class="guide-related-kicker">Interactive Test</span>Take the free 16-question DISC assessment (no email)</a>
+          <a href="/guides/open-source-disc-test-odat"><span class="guide-related-kicker">Guide</span>Open-source DISC assessment (ODAT): 16 questions and scorer</a>
+          <a href="/guides/big-five-ai-prompts"><span class="guide-related-kicker">Prompts</span>Big Five AI system prompts: all 10 high and low trait poles</a>
+          <a href="/guides/attachment-style-ai-prompts"><span class="guide-related-kicker">Prompts</span>Attachment style AI prompts: Secure, Anxious, and Avoidant</a>
+          <a href="/guides/chatgpt-custom-instructions-by-personality-type"><span class="guide-related-kicker">Guide</span>ChatGPT custom instructions by MBTI personality type</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

@@ -155,6 +155,21 @@
     },
     {
       "kicker": "Guide",
+      "label": "Meta Muse avatar and name: the Identity.md guide",
+      "href": "/guides/muse-identity-md-avatar-name"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse Memory.md, privacy, and how to reset safely",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "Meta AI vs Meta Muse: how to change personality and tone",
+      "href": "/guides/meta-ai-vs-meta-muse-personality"
+    },
+    {
+      "kicker": "Guide",
       "label": "Muse vs ChatGPT vs Claude: where the personality lives",
       "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
     },

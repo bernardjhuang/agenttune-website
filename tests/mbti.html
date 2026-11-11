@@ -47,14 +47,7 @@
   }
   </script>
 
-  <script defer src="/consent.js"></script>
-
-  <script src="/data.js"></script>
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/quiz-utils.js"></script>
-  <script src="/resources/scoring/score.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -280,7 +273,7 @@
         </div>
 
         <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
-        <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
+        <p class="quiz-result-integration-lede">Choose ChatGPT, Claude, Meta Muse, Grok, Gemini, or a coding agent. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
       </div>
@@ -392,6 +385,12 @@
 
   </div>
 
+  <script src="/data.js" fetchpriority="low"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/quiz-utils.js" fetchpriority="low"></script>
+  <script src="/resources/scoring/score.js" fetchpriority="low"></script>
   <script>
   (function() {
     // ==================================================

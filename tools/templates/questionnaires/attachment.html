@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Attachment Style Test: Instant Result, No Email</title>
-  <meta name="description" content="Take the 36-item ECR-R Attachment test (~5 min) and get editable instructions matched to your style." />
+  <meta name="description" content="Free 36-question ECR-R attachment style test (~5 min). Instant Secure, Anxious, Avoidant, or Disorganized result in your browser — no email or signup." />
 
   <meta property="og:title" content="Free Attachment Style Test: Instant Result, No Email" />
   <meta property="og:description" content="36 items · ~5 min · returns a tuning file that tunes your AI agent to how you want to be related to." />
@@ -32,14 +32,7 @@
   {"@context":"https://schema.org","@type":"Quiz","name":"Attachment Test (ECR-R)","description":"Interactive 36-item adult attachment assessment. Returns Secure / Anxious / Avoidant / Disorganized.","url":"https://agent-tune.com/tests/attachment","inLanguage":"en","numberOfQuestions":36,"timeRequired":"PT5M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
 
-  <script defer src="/consent.js"></script>
-
-  <script src="/data.js"></script>
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/quiz-utils.js"></script>
-  <script src="/resources/scoring/score.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -211,7 +204,7 @@
         </div>
 
         <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
-        <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
+        <p class="quiz-result-integration-lede">Choose ChatGPT, Claude, Meta Muse, Grok, Gemini, or a coding agent. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
       </div>
 
@@ -297,6 +290,12 @@
 
   </div>
 
+  <script src="/data.js" fetchpriority="low"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/quiz-utils.js" fetchpriority="low"></script>
+  <script src="/resources/scoring/score.js" fetchpriority="low"></script>
   <script>
   (function() {
     // 36 ECR-R items — 18 anxiety + 18 avoidance, with reverse-score flags

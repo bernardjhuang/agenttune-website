@@ -7,11 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated September 25, 2026
 
-Astra and Sol each supplied 100 five-test batteries. This gives us detailed answer records, but the instructions used to obtain them were different. The comparison is useful as a description of those two collections, not a clean estimate of a model-only effect.
+Astra has 19 fully resolved INTJ results and Sol has 79. Sol’s mean Openness is 46.87 versus Astra’s 44.54. Different elicitation instructions and surrounding context prevent attributing those differences to the model alone.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Astra has 19 fully resolved INTJ results and Sol has 79. Sol’s mean Openness is 46.87 versus Astra’s 44.54. Different elicitation instructions and surrounding context prevent attributing those differences to the model alone.
 
 ## The experimental unit is a session
 

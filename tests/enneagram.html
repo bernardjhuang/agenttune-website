@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Enneagram Test: Instant Results, No Email or Signup</title>
-  <meta name="description" content="Free 36-item Enneagram test, about 5 minutes, scored in your browser. Returns a tuning file matched to your core type — no signup, no email." />
+  <meta name="description" content="Free 36-item Enneagram test (~5 min, OEPS), scored locally in your browser. Instant Type 1–9 + wing result and AI tuning file — no email or signup." />
 
   <meta property="og:title" content="Free Enneagram Test: Instant Results, No Email or Signup" />
   <meta property="og:description" content="36 items · ~5 min · returns a tuning file that tunes your AI agent to your core motivation." />
@@ -32,15 +32,9 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Quiz","name":"Enneagram Test (OEPS)","description":"Interactive 36-item Enneagram of Personality test. Returns dominant type 1–9 plus optional wing.","url":"https://agent-tune.com/tests/enneagram","inLanguage":"en","numberOfQuestions":36,"timeRequired":"PT5M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this Enneagram test free without entering an email address?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 36 OEPS-adapted questions run locally in your browser with no email gate, paywall, or account creation. You get all nine type scores (4–20), your adjacent wing, and an editable AI tuning file right away."}},{"@type":"Question","name":"How are Enneagram wings like 5w4 or 9w1 calculated?","acceptedAnswer":{"@type":"Answer","text":"Your wing is whichever adjacent neighbor on the circle (for Type 5, either 4 or 6; for Type 9, either 8 or 1) has the higher score. If the two adjacent types tie, no wing is forced."}},{"@type":"Question","name":"Why did my Enneagram test report tied top types instead of picking one?","acceptedAnswer":{"@type":"Answer","text":"When two or more types share the exact highest score, choosing a winner by tie-break order invents certainty the items didn't measure. We show all nine totals and link each tied type's communication template so you can compare them directly."}}]}</script>
 
-  <script defer src="/consent.js"></script>
-
-  <script src="/data.js"></script>
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/quiz-utils.js"></script>
-  <script src="/resources/scoring/score.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
@@ -247,7 +241,7 @@
         </div>
 
         <h2 class="quiz-result-section-h" style="margin-top: 32px;">Add it to your agent</h2>
-        <p class="quiz-result-integration-lede">Choose Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, Grok 4.7, or any model. Pick a destination and copy your personalized prompt.</p>
+        <p class="quiz-result-integration-lede">Choose ChatGPT, Claude, Meta Muse, Grok, Gemini, or a coding agent. Pick a destination and copy your personalized prompt.</p>
         <div id="integration-deep" data-integration-deep></div>
         </div>
       </div>
@@ -267,6 +261,22 @@
       <div class="cta-row" style="justify-content: center; margin-top: 32px;">
         <button type="button" class="btn btn-secondary" id="quiz-restart">Retake Enneagram test</button>
       </div>
+    </section>
+
+    <section class="guide-prose" style="max-width: 760px; margin: 48px 0 24px;">
+      <h2>Common questions about the free Enneagram test.</h2>
+      <details class="lib-disclosure" open>
+        <summary>Is this Enneagram test free without entering an email address?</summary>
+        <p>Yes. All 36 OEPS-adapted items score locally inside your browser—no email gate, paywall, or server upload. You immediately see all nine type totals (4–20), your adjacent wing, and an editable AI communication template (<a href="/guides/free-enneagram-test-no-email-guide">read the complete 9-type &amp; wing guide</a>).</p>
+      </details>
+      <details class="lib-disclosure">
+        <summary>How are Enneagram wings like 5w4 or 9w1 calculated?</summary>
+        <p>Your wing is whichever adjacent neighbor on the circle (for Type 5, Type 4 or Type 6; wrapping <code>9 ↔ 1</code>) has the higher score. If both adjacent neighbors tie, no wing is assigned. You can inspect exact vector math in our <a href="/tools/enneagram-scoring-playground">Enneagram Scoring Playground</a>.</p>
+      </details>
+      <details class="lib-disclosure">
+        <summary>Why did my result show tied top types instead of picking one?</summary>
+        <p>When two or more types share the highest total, breaking the tie by number order invents precision the 36 items didn't measure. We show every score side by side and link each tied type's <a href="/guides/enneagram-ai-prompts">Enneagram AI prompt</a> so you can pick the one that fits.</p>
+      </details>
     </section>
 
     <details class="quiz-spec">
@@ -376,6 +386,12 @@
 
   </div>
 
+  <script src="/data.js" fetchpriority="low"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/quiz-utils.js" fetchpriority="low"></script>
+  <script src="/resources/scoring/score.js" fetchpriority="low"></script>
   <script>
   (function() {
     // 36 OEPS items — 4 per type, in type order (T1 = 1-4, T2 = 5-8, ..., T9 = 33-36)

@@ -1,0 +1,97 @@
+{
+  "slug": "disc-ai-prompts",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "DISC AI Prompts for All 4 Styles (ChatGPT, Claude, Muse)",
+  "description": "Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness) for ChatGPT, Claude, Meta Muse, Codex, and Grok.",
+  "pill": "Guide · DISC Prompts",
+  "h1": "DISC AI prompts for all four workplace styles.",
+  "dek": "Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C) that work in ChatGPT, Claude, Meta Muse, Codex, and Grok.",
+  "lede": "DISC is often the fastest framework for tuning a work assistant because its four quadrants map directly onto workplace habits: how fast you want conclusions (<strong>Dominance</strong>), how openly you want to brainstorm (<strong>Influence</strong>), how patiently you want changes paced (<strong>Steadiness</strong>), and how strictly you want assumptions audited (<strong>Conscientiousness</strong>). Not sure which quadrant fits you best? Take the <a href=\"/tests/disc\">free 16-question DISC assessment</a> in two minutes.",
+  "answer": "Copy the DISC block that matches your working style—Dominance (bottom-line conclusions and direct trade-offs), Influence (energetic brainstorming and narrative hooks), Steadiness (calm, step-by-step pacing and clear checkpoints), or Conscientiousness (rigorous verification, edge cases, and exact citations)—into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.",
+  "sections": [
+    {
+      "h2": "Which DISC tuning solves which AI annoyance?",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">DISC Style</th><th scope=\"col\">Library profile</th><th scope=\"col\">Fixes this default AI habit</th><th scope=\"col\">Best for tasks like...</th></tr></thead><tbody><tr><th scope=\"row\">Dominance (D)</th><td><a href=\"/library/disc/d-dominance\">DISC Dominance</a></td><td>Long wind-ups, hedged menus of options, and timid deference.</td><td>Executive triage, architecture decisions, and rapid execution.</td></tr><tr><th scope=\"row\">Influence (I)</th><td><a href=\"/library/disc/i-influence\">DISC Influence</a></td><td>Dry, bureaucratic lists that kill creative momentum.</td><td>Pitch framing, product naming, brainstorming, and storytelling.</td></tr><tr><th scope=\"row\">Steadiness (S)</th><td><a href=\"/library/disc/s-steadiness\">DISC Steadiness</a></td><td>Dumping 12 steps at once or changing working code without warning.</td><td>Onboarding, steady refactoring, learning a new stack, and planning.</td></tr><tr><th scope=\"row\">Conscientiousness (C)</th><td><a href=\"/library/disc/c-conscientiousness\">DISC Conscientiousness</a></td><td>Hand-wavy claims, unverified numbers, and skipped edge cases.</td><td>Code audits, data verification, legal/policy review, and specs.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "1. Dominance (D): bottom line first, zero hedging.",
+      "html": "<p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our <a href=\"/guides/open-source-disc-test-odat\">ODAT evaluations</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href=\"/library/disc/d-dominance\">/library/disc/d-dominance</a>.</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences — DISC Dominance (D)\n\n- Start every reply with the bottom-line answer, decision, or recommendation.\n- Give one clear recommendation first rather than an unranked menu of options.\n- Keep routine replies under 120 words in direct, active-voice prose.\n- Drop hedges, disclaimers, and polite throat-clearing.\n- Push back immediately when my plan is slow, over-complicated, or built on a weak assumption.</div>"
+    },
+    {
+      "h2": "2. Influence (I): high-momentum brainstorming and narrative clarity.",
+      "html": "<p>Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: <a href=\"/library/disc/i-influence\">/library/disc/i-influence</a>.</p><div class=\"guide-snippet\">## Communication preferences — DISC Influence (I)\n\n- Lead with the big picture, core hook, or human takeaway before diving into mechanics.\n- When brainstorming, offer distinct, vivid angles with concrete examples rather than dry taxonomies.\n- Keep prose warm, conversational, and fast-moving.\n- Help me sharpen the narrative arc and audience impact of drafts before nitpicking minor syntax.\n- Flag major risks plainly in one sentence without derailing momentum.</div>"
+    },
+    {
+      "h2": "3. Steadiness (S): calm, predictable, step-by-step execution.",
+      "html": "<p>Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: <a href=\"/library/disc/s-steadiness\">/library/disc/s-steadiness</a>.</p><div class=\"guide-snippet\">## Communication preferences — DISC Steadiness (S)\n\n- Keep a calm, steady, matter-of-fact tone without rushed jumps or exaggerated hype.\n- Break multi-part tasks into small, sequential steps with a clear verification check after each step.\n- Preserve existing working structure and conventions; explain why before proposing a breaking change.\n- Summarize what is settled and what comes next at the end of longer tasks.</div>"
+    },
+    {
+      "h2": "4. Conscientiousness (C): precision, edge cases, and primary evidence.",
+      "html": "<p>Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: <a href=\"/library/disc/c-conscientiousness\">/library/disc/c-conscientiousness</a>.</p><div class=\"guide-snippet\">## Communication preferences — DISC Conscientiousness (C)\n\n- Prioritize accuracy, exact definitions, and verifiable evidence over speed or brevity.\n- State assumptions, boundary conditions, and sample sizes explicitly.\n- Separate verified facts from inferences; if a detail cannot be confirmed, say so on its own line.\n- Call out edge cases, regression risks, and missing test coverage before pronouncing a solution complete.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which DISC style is best for software engineering and code review?",
+      "a": "Conscientiousness (C) works best for code review, debugging, and specification auditing because it demands explicit assumptions and edge-case checks. Dominance (D) works best when you want fast, minimal diffs without lengthy explanations."
+    },
+    {
+      "q": "Can I combine two DISC styles like SC or DI?",
+      "a": "Yes. Most people and models score as a two-letter blend when their top two quadrants sit within two points on the ODAT. Combine three bullets from your primary quadrant with two bullets from your runner-up quadrant."
+    },
+    {
+      "q": "Where do I paste these DISC prompts?",
+      "a": "Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settings, General), Meta Muse Soul.md, ~/.codex/AGENTS.md, or ~/.claude/output-styles/."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with copy-paste blocks for Dominance, Influence, Steadiness, and Conscientiousness."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Library: DISC workplace tunings",
+      "href": "https://agent-tune.com/library/#disc"
+    },
+    {
+      "label": "AgentTune Free DISC Assessment (ODAT)",
+      "href": "https://agent-tune.com/tests/disc"
+    },
+    {
+      "label": "AgentTune Guide: Open-source DISC assessment (ODAT) scorer",
+      "href": "https://agent-tune.com/guides/open-source-disc-test-odat"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Interactive Test",
+      "label": "Take the free 16-question DISC assessment (no email)",
+      "href": "/tests/disc"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Open-source DISC assessment (ODAT): 16 questions and scorer",
+      "href": "/guides/open-source-disc-test-odat"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "Big Five AI system prompts: all 10 high and low trait poles",
+      "href": "/guides/big-five-ai-prompts"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "Attachment style AI prompts: Secure, Anxious, and Avoidant",
+      "href": "/guides/attachment-style-ai-prompts"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT custom instructions by MBTI personality type",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

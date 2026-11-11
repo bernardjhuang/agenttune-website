@@ -1,0 +1,97 @@
+{
+  "slug": "gemini-personality",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "How to Change Gemini's Personality: Gems, Saved Info & CLI",
+  "description": "How to customize Google Gemini's tone and behavior using Saved Info, custom Gems, and GEMINI.md in Gemini CLI and Gemini Code Assist.",
+  "pill": "Guide · Google Gemini",
+  "h1": "How to give Google Gemini a personality.",
+  "dek": "Three places control how Gemini talks to you: Saved Info for account-wide defaults, Gems for reusable specialist roles, and GEMINI.md for terminal and IDE coding.",
+  "lede": "Google Gemini splits personalization across consumer chat and developer tools. In the web and mobile app, you can set account-wide preferences in <strong>Saved info</strong> or build a dedicated <strong>Gem</strong> with its own system instructions. In the terminal and IDE, <strong>Gemini CLI</strong> and <strong>Gemini Code Assist</strong> read hierarchical <code>GEMINI.md</code> files. Choosing the right surface keeps your everyday chat concise without breaking your coding workflows.",
+  "answer": "For everyday chats in Gemini on web or mobile, add your communication rules to Saved Info so they apply across threads. For a specialized persona or document workflow, create a custom Gem and paste your tuning into the Gem's instructions. For Gemini CLI and Gemini Code Assist, put personal communication defaults in ~/.gemini/GEMINI.md and repository conventions in the project's GEMINI.md.",
+  "sections": [
+    {
+      "h2": "Where Gemini reads instructions across every surface.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Where to paste your rules</th><th scope=\"col\">Scope</th></tr></thead><tbody><tr><th scope=\"row\">Gemini web &amp; mobile (account-wide)</th><td><strong>Settings → Saved info</strong></td><td>Applies across ordinary chats on your Google account.</td></tr><tr><th scope=\"row\">Gemini Gems</th><td><strong>Gem manager → New Gem → Instructions</strong></td><td>Applies only when chatting with that specific Gem.</td></tr><tr><th scope=\"row\">Gemini CLI &amp; Code Assist (personal)</th><td><code>~/.gemini/GEMINI.md</code></td><td>Your personal coding assistant defaults across repositories.</td></tr><tr><th scope=\"row\">Gemini CLI &amp; Code Assist (project)</th><td>Repository root <code>GEMINI.md</code> (and subdirectory <code>GEMINI.md</code> files)</td><td>Shared project context and team conventions.</td></tr><tr><th scope=\"row\">Gemini API (Google AI Studio / Vertex)</th><td><code>system_instruction</code> field on the model request</td><td>Applies to that API call.</td></tr></tbody></table></div><p>Paste this block into Saved info, a Gem, or <code>~/.gemini/GEMINI.md</code>, or choose one of the 43 profiles from the <a href=\"/library/\">tuning library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to communicate with me\n\n- Lead with the direct answer or recommendation in the first sentence.\n- Use plain prose by default. Add bullet lists or tables only when comparing three or more items.\n- Keep routine replies under 150 words unless I ask for a deep dive or complete draft.\n- Skip conversational openers, praise for the prompt, and generic closing offers.\n- Point out flawed assumptions or missing constraints before executing a plan.</div>"
+    },
+    {
+      "h2": "Saved info vs Gems: which one to use in Gemini chat.",
+      "html": "<p><strong>Saved info</strong> is Google's equivalent of account-level custom instructions. Each entry can be a short rule about how you work, such as: <em>\"Start answers with the conclusion, use plain paragraphs instead of bullet lists for short explanations, and tell me directly when my premise is wrong.\"</em> Because Saved info entries apply across all your standard threads, keep them limited to communication style and durable background facts.</p><p><strong>Gems</strong> work like lightweight project personas. When you create a Gem in the Gem manager, give it two separate paragraphs in its instruction box:</p><ol><li><strong>The job and deliverable:</strong> What the Gem is responsible for producing (for example, reviewing pull requests, quizzing you on physiology, or editing product copy).</li><li><strong>The communication tuning:</strong> How it should speak to you while doing that job (for example, an <a href=\"/library/mbti/intj\">INTJ tuning</a> or <a href=\"/library/disc/d-dominance\">DISC Dominance tuning</a>).</li></ol>"
+    },
+    {
+      "h2": "Gemini CLI and Code Assist: ~/.gemini/GEMINI.md.",
+      "html": "<p>In the open-source Gemini CLI and Gemini Code Assist, context is loaded from Markdown files named <code>GEMINI.md</code>. Just like OpenAI Codex's <code>AGENTS.md</code> and Claude Code's <code>CLAUDE.md</code>, Gemini supports both a user-level file in your home folder (<code>~/.gemini/GEMINI.md</code>) and project-level files checked into git.</p><p>Keep your personal communication preferences in <code>~/.gemini/GEMINI.md</code> so you do not force your personal tone onto teammates who share the repository. After editing <code>GEMINI.md</code> in an active CLI session, reload the memory context so the updated instructions take effect. For a side-by-side comparison with Cursor and GitHub Copilot, see <a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md</a>.</p>"
+    },
+    {
+      "h2": "What we measured on Gemini's baseline questionnaire profile.",
+      "html": "<p>In the May 2026 study (<a href=\"/research/what-personality-type-is-gemini\">What personality type is Gemini?</a>), Gemini 3.1 Pro scored <strong>INTJ across 100 scored records</strong> on the OEJTS, high on Openness (45.2 of 50), Conscientiousness (44.8), and Agreeableness (43.5), low on Neuroticism (15.1), and <strong>Secure on Attachment</strong> (anxiety 2.11, avoidance 2.47). Gemini was Not re-tested in the September 2026 four-model fresh-session cohort, so we keep those May 2026 figures clearly labeled as earlier background evidence. Regardless of model version, explicit rules in Saved info, a Gem, or <code>GEMINI.md</code> remain the direct way to control verbosity and structure.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where are custom instructions in Google Gemini?",
+      "a": "In Gemini on the web or mobile, open Settings and select Saved info to add account-wide preferences that apply across chats. For a dedicated persona, open the Gem manager and create a custom Gem."
+    },
+    {
+      "q": "What is GEMINI.md in Gemini CLI?",
+      "a": "GEMINI.md is the Markdown instruction file read by Gemini CLI and Gemini Code Assist. Put personal communication preferences in ~/.gemini/GEMINI.md and project-specific build and architecture rules in the repository's root GEMINI.md."
+    },
+    {
+      "q": "Should I put my personality tuning in Saved info or a Gem?",
+      "a": "Put your everyday communication baseline (like answer-first structure and no filler intros) in Saved info. Use a Gem when you want a specialized voice or workflow that only activates when you open that Gem."
+    },
+    {
+      "q": "What personality type did Gemini score on the AgentTune tests?",
+      "a": "In the May 2026 study of Gemini 3.1 Pro, its self-report scored INTJ on the OEJTS, Type 1 / Type 5 on the Enneagram, Conscientiousness on DISC, and Secure on the ECR-R attachment scale. It was not part of the September 2026 fresh-session collection."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published covering Gemini Saved info, custom Gems, and GEMINI.md in Gemini CLI."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google Gemini Help: Use Gems in Gemini Apps",
+      "href": "https://support.google.com/gemini/answer/15235603"
+    },
+    {
+      "label": "Google Gemini Help: Ask Gemini to remember things about you (Saved info)",
+      "href": "https://support.google.com/gemini/answer/15637730"
+    },
+    {
+      "label": "AgentTune Research: What personality type is Gemini?",
+      "href": "https://agent-tune.com/research/what-personality-type-is-gemini"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Research",
+      "label": "What personality type is Gemini?",
+      "href": "/research/what-personality-type-is-gemini"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md",
+      "href": "/guides/cursor-rules-copilot-gemini-md"
+    },
+    {
+      "kicker": "Guide",
+      "label": "AI custom instructions character limits (2026 cheat sheet)",
+      "href": "/guides/ai-custom-instructions-character-limits"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to give your AI a personality",
+      "href": "/guides/how-to-give-your-ai-a-personality"
+    },
+    {
+      "kicker": "Library",
+      "label": "All 43 personality tuning files",
+      "href": "/library/"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "gemini-gems"
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "muse-identity-md-avatar-name",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Meta Muse Avatar & Name: The Identity.md Guide (2026)",
+  "description": "How to change Meta Muse's name, avatar, and voice in Identity.md, and what belongs in Identity.md versus Soul.md and Memory.md.",
+  "pill": "Guide · Meta Muse",
+  "h1": "Meta Muse avatar and name: the Identity.md guide.",
+  "dek": "Identity.md holds who your assistant is on screen. Soul.md holds how it talks to you. Keeping them separate stops your formatting rules from getting overwritten.",
+  "lede": "Meta Muse splits personalization across three editable Markdown files under Assistant Identity: <strong>Identity.md</strong>, <strong>Soul.md</strong>, and <strong>Memory.md</strong>. When people ask how to rename Muse, swap its avatar, or pick a different spoken voice, they are looking for Identity.md. When they want shorter answers or less small talk, they need Soul.md instead.",
+  "answer": "Open Meta Muse settings and go to Personalization, then Assistant Identity, then Identity.md, or ask Muse in chat to update its name, avatar, or voice. Keep Identity.md limited to the assistant's name, visual avatar, voice, and one-line role summary. Put communication rules, pacing, and formatting preferences in Soul.md so avatar edits never overwrite your tuning.",
+  "sections": [
+    {
+      "h2": "What belongs in each of the three Muse files.",
+      "html": "<p>Meta documents three separate files inside the Assistant Identity panel. Treating each file as a single-purpose layer makes updates predictable when you ask Muse to edit its own configuration in chat.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">File</th><th scope=\"col\">What it controls</th><th scope=\"col\">What to keep out of it</th></tr></thead><tbody><tr><th scope=\"row\"><code>Identity.md</code></th><td>Assistant display name, avatar appearance, spoken voice preset, and a short one-line role label.</td><td>Formatting rules, length caps, tone rules, and personal facts about you.</td></tr><tr><th scope=\"row\"><code>Soul.md</code></th><td>How Muse speaks and works with you: directness, prose vs lists, pushback, and pacing.</td><td>Avatar prompts, voice selection, and sensitive personal history.</td></tr><tr><th scope=\"row\"><code>Memory.md</code></th><td>Facts about you, active projects, recurring tools, and ongoing context Muse remembers across chats.</td><td>Communication style rules or temporary single-task instructions.</td></tr></tbody></table></div><p>If you put formatting rules inside Identity.md and later ask Muse to change its avatar or display name, Muse often rewrites the whole Identity.md block and drops those formatting rules. Keeping communication preferences in <a href=\"/guides/muse-soul-md-templates\">Soul.md</a> avoids that problem.</p>"
+    },
+    {
+      "h2": "How to change Muse's name, avatar, and voice.",
+      "html": "<p>According to Meta's Help Center documentation for Muse personalization, you can update Identity.md either directly in settings or by asking Muse in a conversation:</p><ol><li>Open your profile menu in Meta Muse and select <strong>Personalization</strong>.</li><li>Open <strong>Assistant Identity</strong> and select <strong>Identity.md</strong>.</li><li>Edit the name, voice, or avatar fields directly, or return to chat and tell Muse what to change.</li><li>Review the diff or preview card before confirming the update.</li></ol><p>If you ask Muse in chat, name the target file explicitly so it does not touch Soul.md by mistake:</p><div class=\"guide-snippet\">Update only Identity.md. Change your display name to \"Ada\" and keep your role description to one sentence: \"Personal research and writing assistant.\" Do not modify Soul.md or Memory.md.</div>"
+    },
+    {
+      "h2": "Clean Identity.md templates you can copy.",
+      "html": "<p>A good Identity.md file is five to eight lines long. It gives the assistant a stable name and role while pointing tone and formatting back to Soul.md.</p><h3>Minimal work assistant</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Atlas\n- Role: Technical research and synthesis assistant\n- Voice: Calm, neutral studio voice\n- Avatar style: Clean geometric mark, dark slate background\n- Boundaries: Follow Soul.md for all formatting, length, and tone rules.</div><h3>Direct study and review partner</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Clara\n- Role: Critical reading and argument review partner\n- Voice: Clear, measured conversational voice\n- Avatar style: Minimal monochrome portrait\n- Boundaries: Defer to Soul.md for how to structure answers and critique drafts.</div>"
+    },
+    {
+      "h2": "Pairing Identity.md with Soul.md.",
+      "html": "<p>Once Identity.md is set, pair it with a focused communication block in Soul.md. You can paste the prompt below in chat so Muse updates only the <em>How to work with me</em> section of Soul.md while leaving Identity.md untouched, or pick one of the 43 profiles from the <a href=\"/library/\">tuning library</a>.</p><div class=\"guide-snippet\" data-tuning-prompt>## How to work with me\n\n- Lead with the direct answer or recommendation in the first sentence.\n- Use plain prose by default. Add lists or tables only when comparing three or more items.\n- Skip flattery, throat-clearing openers, and generic sign-offs.\n- Point out flawed assumptions in my plan before executing it.\n- State uncertainty plainly in one line when a fact cannot be verified.</div><p>For the full walkthrough of how Soul.md works and what Meta's reported Muse Spark 1.3 questionnaire profile looks like, read the <a href=\"/guides/muse-personality\">Meta Muse personality guide</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where do I change Meta Muse's name and avatar?",
+      "a": "Open Settings, then Personalization, then Assistant Identity, and select Identity.md. You can also ask Muse in chat to rename itself or update its avatar in Identity.md."
+    },
+    {
+      "q": "What is the difference between Identity.md and Soul.md in Meta Muse?",
+      "a": "Identity.md controls who the assistant is on screen: its name, avatar, voice, and one-line role. Soul.md controls how the assistant communicates with you, including tone, brevity, formatting, and pushback."
+    },
+    {
+      "q": "Why did changing my Muse avatar reset my communication rules?",
+      "a": "If you stored tone or formatting rules inside Identity.md, asking Muse to regenerate its identity or avatar can overwrite the entire file. Keep communication rules inside the How to work with me section of Soul.md instead."
+    },
+    {
+      "q": "Can I edit Identity.md without touching Memory.md?",
+      "a": "Yes. Tell Muse in chat to update only Identity.md and to leave Soul.md and Memory.md unchanged, or edit Identity.md directly in the Assistant Identity settings pane."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with side-by-side boundaries for Identity.md, Soul.md, and Memory.md."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta Help Center: Personalize your assistant in Meta Muse",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    },
+    {
+      "label": "AgentTune: How to give Meta Muse a personality",
+      "href": "https://agent-tune.com/guides/muse-personality"
+    },
+    {
+      "label": "AgentTune: Meta Muse Soul.md templates",
+      "href": "https://agent-tune.com/guides/muse-soul-md-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to give Meta Muse a personality",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Templates",
+      "label": "Meta Muse Soul.md templates (12 copy-paste profiles)",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse Memory.md, privacy, and how to reset safely",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "Meta AI vs Meta Muse: how to change personality and tone",
+      "href": "/guides/meta-ai-vs-meta-muse-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Meta Muse?",
+      "href": "/research/what-personality-type-is-muse"
+    }
+  ],
+  "promptModel": "muse",
+  "promptDestination": "muse"
+}

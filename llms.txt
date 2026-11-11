@@ -1,29 +1,30 @@
 # AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), 5 open personality questionnaires, 8 free browser tools, and empirical AI personality research (2,000+ scored sessions) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, and Meta Muse.
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), and empirical AI personality research (2,000+ scored sessions) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, and Meta Muse.
 
 Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
 
 ## Machine & MCP Endpoints
+- [Agent Skill Manifest (SKILL.md)](https://agent-tune.com/SKILL.md): Concise agent workflow instructions, exact local scoring instrument IDs, MCP setup, and bounded-marker merge rules.
 - [MCP Server (Streamable HTTP)](https://agent-tune.com/mcp): Stateless JSON-RPC 2.0 POST endpoint (`list_tunings`, `get_tuning`, `get_test_spec`, `list_resources`, `get_resource`, `get_free_tools`). No authentication required.
 - [MCP Server Card](https://agent-tune.com/.well-known/mcp/server-card.json): Machine-readable MCP server discovery metadata and tool capability declarations.
 - [Tuning Catalog (43 templates)](https://agent-tune.com/library/index.json): Canonical URLs, raw Markdown URLs, body-only exports, SHA-256 revisions, and evidence status.
 - [Guides & Research Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides and empirical research articles with Markdown mirror URLs.
 - [Platform Destination Registry](https://agent-tune.com/resources/platforms.json): Version 2026-09-25.1 app and file destination instructions shared with the UI.
 - [Installation Protocol](https://agent-tune.com/resources/install-protocol.md): Non-destructive bounded-block (`<!-- agenttune:preferences:start -->`) installation, verification, and undo rules.
-- [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight browser-only utilities and local `window.AgentTuneTools` text-processing API.
+- [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight local `window.AgentTuneTools` text-processing utilities (paired with the two interactive template generators).
 - [Deterministic Local Scoring API](https://agent-tune.com/resources/scoring/README.md): Versioned scoring rules, tie handling, and incomplete-response validation for all five questionnaires.
 
 ## Interactive Questionnaires & Specifications
 - [Personality Tests Hub](https://agent-tune.com/tests/): Overview of all five interactive browser-scored questionnaires and their licensing/provenance boundaries.
-- [MBTI Style Test — 32 OEJTS Questions](https://agent-tune.com/tests/mbti) ([Spec .md](https://agent-tune.com/tests/mbti.md)): Open Extended Jungian Type Scales 1.2 (`agenttune-oejts32@1.0.0`, CC BY-NC-SA 4.0) with explicit axis tie reporting.
-- [Enneagram Test — 36 OEPS Questions](https://agent-tune.com/tests/enneagram) ([Spec .md](https://agent-tune.com/tests/enneagram.md)): Open Enneagram of Personality Scales (`agenttune-oeps36@1.0.0`, CC BY-NC-SA 4.0) across Types 1–9.
-- [DISC Style Test — 16 ODAT Questions](https://agent-tune.com/tests/disc) ([Spec .md](https://agent-tune.com/tests/disc.md)): Open DISC Assessment Tool (`agenttune-odat16@1.0.0`, CC BY-NC-SA 4.0) across Dominance, Influence, Steadiness, and Conscientiousness.
-- [Attachment Style Test — 36 ECR-R Questions](https://agent-tune.com/tests/attachment) ([Spec .md](https://agent-tune.com/tests/attachment.md)): Experiences in Close Relationships-Revised (`agenttune-ecrr36@1.0.0`, 1–7 scale) measuring Anxiety and Avoidance means.
+- [MBTI Style Test — 32 OEJTS Questions](https://agent-tune.com/tests/mbti) ([Spec .md](https://agent-tune.com/tests/mbti.md)): Open Extended Jungian Type Scales 1.2 (`agenttune-mbti-legacy@1.0.0`, source terms apply) with explicit axis tie reporting.
+- [Enneagram Test — 36 OEPS Questions](https://agent-tune.com/tests/enneagram) ([Spec .md](https://agent-tune.com/tests/enneagram.md)): Open Enneagram of Personality Scales (`agenttune-enneagram-legacy@1.0.0`, source terms apply) across Types 1–9.
+- [DISC Style Test — 16 ODAT Questions](https://agent-tune.com/tests/disc) ([Spec .md](https://agent-tune.com/tests/disc.md)): Open DISC Assessment Test (`agenttune-disc-legacy@1.0.0`, source terms apply) across Dominance, Influence, Steadiness, and Conscientiousness.
+- [Attachment Style Test — 36 ECR-R Questions](https://agent-tune.com/tests/attachment) ([Spec .md](https://agent-tune.com/tests/attachment.md)): Experiences in Close Relationships-Revised (`agenttune-attachment-legacy@1.0.0`, 1–7 scale) measuring Anxiety and Avoidance means.
 - [Big Five (OCEAN) Test — 50 IPIP Questions](https://agent-tune.com/tests/big-five) ([Spec .md](https://agent-tune.com/tests/big-five.md)): Public-domain 50-item IPIP Big-Five Factor Markers (`agenttune-ipip50@1.0.0`, raw totals 10–50 and item means 1.0–5.0).
 
 ## Free Browser Tools
-- [All Free AI Tools](https://agent-tune.com/tools/): Eight browser-based utilities for drafting, linting, converting, and testing AI instructions locally.
+- [All Free AI Tools](https://agent-tune.com/tools/): Ten client-side browser tools (8 local text utilities + 2 template generators) for drafting, linting, converting, and testing AI instructions locally.
 - [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator): Build instructions from plain-English preferences or any of the 43 templates with compact ChatGPT (≤1,500 chars) and file exports.
 - [CLAUDE.md & AGENTS.md Generator](https://agent-tune.com/tools/claude-md-generator): Generate project instruction files for Claude Code, Codex CLI, Cursor, Windsurf, Copilot, and Gemini Code Assist.
 - [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder): Turn six explicit preference choices (length, tone, format, pushback, questions, context) into copyable instructions.
@@ -36,49 +37,87 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer): Inspect, deduplicate, and redact emails/keys/phones from exported AI memory lists in the browser.
 
 ## Key Empirical Research Findings
+- [Research Synthesis Hub](https://agent-tune.com/research): Full cross-model dataset, methodology, and May/September 2026 self-report archives.
 - [Five AI Models, Five Personality Tests (September 2026)](https://agent-tune.com/research/ai-personality-five-models-2026) ([Markdown](https://agent-tune.com/research/ai-personality-five-models-2026.md)): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).
-- [Does Personality Tuning Change AI Answers? A 180-response controlled before/after pilot (20 tasks × 3 conditions × 3 models) showing answer-first ratings rising from 2/20 (default) to 19/20 (plain-English direct rules) and 17/20 (personality template).](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) ([Markdown](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)):Does Personality Tuning Change AI Answers? A 180-response controlled before/after pilot (20 tasks × 3 conditions × 3 models) showing answer-first ratings rising from 2/20 (default) to 19/20 (plain-English direct rules) and 17/20 (personality template).
+- [Does Personality Tuning Change AI Answers? A 60-reply controlled before/after pilot (20 tasks × 3 conditions) showing 5/5 answer-first openings rising from 14/20 (default) to 19/20 (explicit straight rules), hedges dropping from 0.35 to 0.05 per reply, and trailing questions dropping from 0.90 to 0.25.](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) ([Markdown](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)):Does Personality Tuning Change AI Answers? A 60-reply controlled before/after pilot (20 tasks × 3 conditions) showing 5/5 answer-first openings rising from 14/20 (default) to 19/20 (explicit straight rules), hedges dropping from 0.35 to 0.05 per reply, and trailing questions dropping from 0.90 to 0.25.
 - [How Tie-Breaking Changes AI MBTI Results](https://agent-tune.com/research/ai-mbti-tie-breaking) ([Markdown](https://agent-tune.com/research/ai-mbti-tie-breaking.md)): 59 of 400 four-model OEJTS sessions contain at least one tied axis; strict `<` tie-breaking inflates apparent INTJ share from 280/400 (70.0%) to 335/400 (83.8%).
 - [Claude Opus 5.5 vs. Fable 5.1 Question-Level Analysis](https://agent-tune.com/research/opus-vs-fable-question-level) ([Markdown](https://agent-tune.com/research/opus-vs-fable-question-level.md)): 170 item-by-item comparisons across all 5 instruments reconcile every aggregate dimension gap.
 - [GPT-6 Astra vs. GPT-6 Sol Personality Data](https://agent-tune.com/research/astra-vs-sol-personality-data) ([Markdown](https://agent-tune.com/research/astra-vs-sol-personality-data.md)): 1,000-session comparison across OEJTS, IPIP-50, ODAT, OEPS, and ECR-R.
 - [When AI Chooses the Midpoint on Human Questionnaires](https://agent-tune.com/research/ai-neutral-answers) ([Markdown](https://agent-tune.com/research/ai-neutral-answers.md)): Across 17,000 item responses, models selected the exact scale midpoint 2,980 times (17.5%) and explicitly flagged 1,823 responses (10.7%) as inapplicable to non-human systems.
 - [AI Personality Test Repeatability](https://agent-tune.com/research/ai-personality-repeatability) ([Markdown](https://agent-tune.com/research/ai-personality-repeatability.md)): Within-model standard deviations, item flip rates, and run-to-run stability across 20 model-by-test cohorts (n = 100 each).
+- [Grok 4.6 and the Attachment Cutoff](https://agent-tune.com/research/grok-attachment-cutoff-simulation) ([Markdown](https://agent-tune.com/research/grok-attachment-cutoff-simulation.md)): Sensitivity analysis of Grok 4.6 reported avoidance (4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R vectors.
+- [Why AI Models Score High on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison) ([Markdown](https://agent-tune.com/research/ai-big-five-item-level-comparison.md)): Item-level reanalysis of 20,000 IPIP-50 Big Five responses across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.
 - [I Took the MBTI 100 Times (Claude Code baseline)](https://agent-tune.com/research/i-took-the-mbti-100-times) ([Markdown](https://agent-tune.com/research/i-took-the-mbti-100-times.md)): 100 independent sessions across all 5 instruments (93% INTJ, 97% Type 5, 100% C-Conscientiousness, 100% Secure).
-- [Claude Opus 5.5 Personality Profile](https://agent-tune.com/research/claude-opus-5-5-personality) ([Markdown](https://agent-tune.com/research/claude-opus-5-5-personality.md)): 500-session breakdown for Claude Opus 5.5.
-- [Claude Fable 5.1 Personality Profile](https://agent-tune.com/research/claude-fable-5-1-personality) ([Markdown](https://agent-tune.com/research/claude-fable-5-1-personality.md)): 500-session breakdown for Claude Fable 5.1.
-- [GPT-6 Astra Personality Profile](https://agent-tune.com/research/gpt-6-astra-personality) ([Markdown](https://agent-tune.com/research/gpt-6-astra-personality.md)): 500-session breakdown for GPT-6 Astra.
-- [GPT-6 Sol Personality Profile](https://agent-tune.com/research/gpt-6-sol-personality) ([Markdown](https://agent-tune.com/research/gpt-6-sol-personality.md)): 500-session breakdown for GPT-6 Sol.
+- [AI Personality Rankings: Scores, Ties and Limits](https://agent-tune.com/research/ai-personality-rankings) ([Markdown](https://agent-tune.com/research/ai-personality-rankings.md))
+- [Is Every AI an INTJ? Muse, Astra and the Evidence](https://agent-tune.com/research/first-ai-that-is-not-an-intj) ([Markdown](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md))
+- [What Personality Type Is Claude? Opus 5.5 & Fable 5.1 Tested](https://agent-tune.com/research/what-personality-type-is-claude) ([Markdown](https://agent-tune.com/research/what-personality-type-is-claude.md))
+- [What Personality Type Is Gemini? MBTI, DISC & Big 5 Data](https://agent-tune.com/research/what-personality-type-is-gemini) ([Markdown](https://agent-tune.com/research/what-personality-type-is-gemini.md))
+- [What Personality Type Is Grok? Grok 4.6 Self-Report (2026)](https://agent-tune.com/research/what-personality-type-is-grok) ([Markdown](https://agent-tune.com/research/what-personality-type-is-grok.md))
+- [What Personality Type Is Muse? Muse Spark 1.3 Report (2026)](https://agent-tune.com/research/what-personality-type-is-muse) ([Markdown](https://agent-tune.com/research/what-personality-type-is-muse.md))
+- [What Personality Type Is ChatGPT? GPT-6 Tested (2026)](https://agent-tune.com/research/what-personality-type-is-chatgpt) ([Markdown](https://agent-tune.com/research/what-personality-type-is-chatgpt.md))
+- [Claude Opus 5.5 Personality Profile](https://agent-tune.com/guides/claude-opus-5-5-personality) ([Markdown](https://agent-tune.com/guides/claude-opus-5-5-personality.md)): 500-session breakdown for Claude Opus 5.5.
+- [Claude Fable 5.1 Personality Profile](https://agent-tune.com/guides/fable-personality) ([Markdown](https://agent-tune.com/guides/fable-personality.md)): 500-session breakdown for Claude Fable 5.1.
+- [GPT-6 Astra Personality Profile](https://agent-tune.com/guides/astra-personality) ([Markdown](https://agent-tune.com/guides/astra-personality.md)): 500-session breakdown for GPT-6 Astra.
+- [GPT-6 Sol Personality Profile](https://agent-tune.com/guides/sol-personality) ([Markdown](https://agent-tune.com/guides/sol-personality.md)): 500-session breakdown for GPT-6 Sol.
 
 ## Setup & Platform Guides
+- [AI Custom Instructions Character Limits (2026 Cheat Sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits) ([Markdown](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md))
+- [Project vs Account Instructions: What Overrides What in AI](https://agent-tune.com/guides/ai-instruction-precedence-overrides) ([Markdown](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md))
+- [AI Style & Verbosity Controls: Rules That Beat Adjectives](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity) ([Markdown](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity.md))
 - [AI Personality Glossary: Tuning, System Prompt, Soul.md](https://agent-tune.com/guides/ai-personality-glossary) ([Markdown](https://agent-tune.com/guides/ai-personality-glossary.md))
-- [How to Give GPT-6 Astra a Personality (ChatGPT & Codex)](https://agent-tune.com/guides/astra-personality) ([Markdown](https://agent-tune.com/guides/astra-personality.md))
+- [GPT-6 Astra Personality: ChatGPT & Codex AGENTS.md Setup](https://agent-tune.com/guides/astra-personality) ([Markdown](https://agent-tune.com/guides/astra-personality.md))
+- [Attachment Style AI Prompts: Secure, Anxious & Avoidant](https://agent-tune.com/guides/attachment-style-ai-prompts) ([Markdown](https://agent-tune.com/guides/attachment-style-ai-prompts.md))
+- [Why AI Ignores Custom Instructions: Conflict & Memory Audit](https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions) ([Markdown](https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions.md))
 - [Best Claude Personality: 7 Setups to Paste (2026)](https://agent-tune.com/guides/best-claude-personality) ([Markdown](https://agent-tune.com/guides/best-claude-personality.md))
+- [Big Five AI System Prompts: All 10 High & Low Trait Poles](https://agent-tune.com/guides/big-five-ai-prompts) ([Markdown](https://agent-tune.com/guides/big-five-ai-prompts.md))
 - [ChatGPT Custom Instructions for All 16 MBTI Types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type) ([Markdown](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md))
-- [ChatGPT Custom Instructions Examples by Role (20 Blocks)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) ([Markdown](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md))
+- [20 Best ChatGPT Custom Instructions Examples (Copy & Paste)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) ([Markdown](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md))
+- [ChatGPT Projects vs Custom Instructions: Override Guide](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions) ([Markdown](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions.md))
 - [How to Change Claude Code's Personality: 4 Ways (2026)](https://agent-tune.com/guides/claude-code-personality) ([Markdown](https://agent-tune.com/guides/claude-code-personality.md))
 - [CLAUDE.md Examples & Best Practices · AgentTune](https://agent-tune.com/guides/claude-md-examples) ([Markdown](https://agent-tune.com/guides/claude-md-examples.md))
 - [Claude Opus 5.5 Personality: Test Results & How to Tune It](https://agent-tune.com/guides/claude-opus-5-5-personality) ([Markdown](https://agent-tune.com/guides/claude-opus-5-5-personality.md))
-- [How to Change Claude's Personality: Settings & Best Setups](https://agent-tune.com/guides/claude-personality) ([Markdown](https://agent-tune.com/guides/claude-personality.md))
+- [Claude Personal Preferences: 15 Examples & Where to Paste](https://agent-tune.com/guides/claude-personal-preferences-examples) ([Markdown](https://agent-tune.com/guides/claude-personal-preferences-examples.md))
+- [How to Change Claude's Personality: Settings & 5 Setups](https://agent-tune.com/guides/claude-personality) ([Markdown](https://agent-tune.com/guides/claude-personality.md))
 - [Test Claude’s saved preferences](https://agent-tune.com/guides/claude-preferences-test) ([Markdown](https://agent-tune.com/guides/claude-preferences-test.md))
-- [AGENTS.md & Cursor Rules: Add a Personality · AgentTune](https://agent-tune.com/guides/coding-agent-personality) ([Markdown](https://agent-tune.com/guides/coding-agent-personality.md))
+- [Claude Styles Are Moving to Skills: How to Migrate (2026)](https://agent-tune.com/guides/claude-styles-to-skills-migration) ([Markdown](https://agent-tune.com/guides/claude-styles-to-skills-migration.md))
+- [How to Change Claude's Tone & Voice (iOS, Android & Web)](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web) ([Markdown](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web.md))
+- [OpenAI Codex AGENTS.md Guide: 32 KiB Limit & Overrides](https://agent-tune.com/guides/codex-agents-md-guide) ([Markdown](https://agent-tune.com/guides/codex-agents-md-guide.md))
+- [AGENTS.md, CLAUDE.md & Cursor Rules: Add AI Personality](https://agent-tune.com/guides/coding-agent-personality) ([Markdown](https://agent-tune.com/guides/coding-agent-personality.md))
+- [Cursor Rules (.mdc), copilot-instructions.md & GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md) ([Markdown](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md))
+- [DISC AI Prompts for All 4 Styles (ChatGPT, Claude, Muse)](https://agent-tune.com/guides/disc-ai-prompts) ([Markdown](https://agent-tune.com/guides/disc-ai-prompts.md))
 - [Enneagram AI Prompts for All 9 Types (ChatGPT & Claude)](https://agent-tune.com/guides/enneagram-ai-prompts) ([Markdown](https://agent-tune.com/guides/enneagram-ai-prompts.md))
-- [Build an Enneagram Test in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript) ([Markdown](https://agent-tune.com/guides/enneagram-test-react-typescript.md))
+- [Open-Source Enneagram Test in React + TypeScript (GitHub)](https://agent-tune.com/guides/enneagram-test-react-typescript) ([Markdown](https://agent-tune.com/guides/enneagram-test-react-typescript.md))
 - [Claude Fable 5.1 Personality: Test Results & How to Tune It](https://agent-tune.com/guides/fable-personality) ([Markdown](https://agent-tune.com/guides/fable-personality.md))
-- [Grok Bot Character & Personality: How to Set It (2026)](https://agent-tune.com/guides/grokbot-personality) ([Markdown](https://agent-tune.com/guides/grokbot-personality.md))
-- [How to Give Your AI a Personality: ChatGPT, Claude & Cursor](https://agent-tune.com/guides/how-to-give-your-ai-a-personality) ([Markdown](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md))
+- [Free DISC Assessment (No Email): 4 Styles & 12 Blends](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai) ([Markdown](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai.md))
+- [Free Enneagram Test (No Email): Instant 9-Type Results](https://agent-tune.com/guides/free-enneagram-test-no-email-guide) ([Markdown](https://agent-tune.com/guides/free-enneagram-test-no-email-guide.md))
+- [How to Change Gemini's Personality: Gems, Saved Info & CLI](https://agent-tune.com/guides/gemini-personality) ([Markdown](https://agent-tune.com/guides/gemini-personality.md))
+- [Can You Change Google AI Overview & Gemini Personality?](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings) ([Markdown](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md))
+- [How to Change Grok's Personality on X & grok.com (2026)](https://agent-tune.com/guides/grok-personality-settings) ([Markdown](https://agent-tune.com/guides/grok-personality-settings.md))
+- [Grok & Grok Bot Personality: Character & Custom Setup](https://agent-tune.com/guides/grokbot-personality) ([Markdown](https://agent-tune.com/guides/grokbot-personality.md))
+- [How to Give Your AI a Personality (ChatGPT, Claude, Muse)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality) ([Markdown](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md))
+- [How to Work With Me Template (For Teams & AI Agents)](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template) ([Markdown](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template.md))
 - [How to make ChatGPT sound like you · AgentTune](https://agent-tune.com/guides/make-chatgpt-sound-like-you) ([Markdown](https://agent-tune.com/guides/make-chatgpt-sound-like-you.md))
 - [How to Make Claude More Direct: 3 Editable Prompts](https://agent-tune.com/guides/make-claude-more-direct) ([Markdown](https://agent-tune.com/guides/make-claude-more-direct.md))
 - [MBTI vs Big Five: Which Works Better for AI? · AgentTune](https://agent-tune.com/guides/mbti-vs-big-five-for-ai) ([Markdown](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md))
+- [AgentTune MCP & Portable AI Preferences Across Every Agent](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) ([Markdown](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md))
+- [Meta AI vs Meta Muse: How to Change Personality & Tone](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality) ([Markdown](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md))
 - [Meta Muse Characters: Soul.md, Identity.md & Memory.md](https://agent-tune.com/guides/meta-muse-characters) ([Markdown](https://agent-tune.com/guides/meta-muse-characters.md))
+- [Meta Muse Avatar & Name: The Identity.md Guide (2026)](https://agent-tune.com/guides/muse-identity-md-avatar-name) ([Markdown](https://agent-tune.com/guides/muse-identity-md-avatar-name.md))
+- [Meta Muse Memory.md, Privacy & How to Reset Safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset) ([Markdown](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md))
 - [Meta Muse Character & Personality: The Soul.md Guide](https://agent-tune.com/guides/muse-personality) ([Markdown](https://agent-tune.com/guides/muse-personality.md))
 - [Test Muse Soul.md persistence](https://agent-tune.com/guides/muse-soul-md-persistence-test) ([Markdown](https://agent-tune.com/guides/muse-soul-md-persistence-test.md))
 - [Meta Muse Soul.md Templates: 20 Copyable Examples](https://agent-tune.com/guides/muse-soul-md-templates) ([Markdown](https://agent-tune.com/guides/muse-soul-md-templates.md))
+- [Meta Muse Mobile App, Side Chats & Refusal Fixes (2026)](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats) ([Markdown](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats.md))
 - [Muse vs ChatGPT vs Claude: Where Personality & Memory Live](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality) ([Markdown](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md))
 - [Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R](https://agent-tune.com/guides/open-personality-tests) ([Markdown](https://agent-tune.com/guides/open-personality-tests.md))
-- [Open-Source Enneagram Scorer in JavaScript](https://agent-tune.com/guides/open-source-enneagram-test) ([Markdown](https://agent-tune.com/guides/open-source-enneagram-test.md))
+- [Open-Source DISC Assessment (ODAT): 16 Questions & Scorer](https://agent-tune.com/guides/open-source-disc-test-odat) ([Markdown](https://agent-tune.com/guides/open-source-disc-test-odat.md))
+- [Open-Source Enneagram Test on GitHub: JS Scorer & 36 Items](https://agent-tune.com/guides/open-source-enneagram-test) ([Markdown](https://agent-tune.com/guides/open-source-enneagram-test.md))
+- [Open-Source MBTI Test (OEJTS 1.2): 32 Questions & Scorer](https://agent-tune.com/guides/open-source-mbti-test-oejts) ([Markdown](https://agent-tune.com/guides/open-source-mbti-test-oejts.md))
 - [Personality prompts vs plain English: test kit](https://agent-tune.com/guides/personality-prompts-vs-plain-english) ([Markdown](https://agent-tune.com/guides/personality-prompts-vs-plain-english.md))
 - [Reproduce AI self-report research](https://agent-tune.com/guides/reproduce-ai-personality-research) ([Markdown](https://agent-tune.com/guides/reproduce-ai-personality-research.md))
-- [What Is Meta Muse? The Agent, Its Files and Plans (2026)](https://agent-tune.com/guides/what-is-meta-muse) ([Markdown](https://agent-tune.com/guides/what-is-meta-muse.md))
+- [GPT-6 Sol Personality: Test Results & How to Tune It](https://agent-tune.com/guides/sol-personality) ([Markdown](https://agent-tune.com/guides/sol-personality.md))
+- [How to Make AI Push Back & Stop Agreeing With You (2026)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) ([Markdown](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md))
+- [What Is Meta Muse? Free vs $20 Plan, Files & vs Meta AI](https://agent-tune.com/guides/what-is-meta-muse) ([Markdown](https://agent-tune.com/guides/what-is-meta-muse.md))
 
 ## 43 Communication Preference Templates
 ### MBTI (16 types)
@@ -137,5 +176,5 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 ## Optional
 - [Full LLM Documentation & All 43 Template Bodies](https://agent-tune.com/llms-full.txt): Complete installation protocol, platform steps, and all 43 Markdown preference templates in one file.
 - [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
-- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 180-response tuning evaluation study.
+- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot (plus see the 180-reply cross-model test kit at `/resources/research/personality-prompt-comparison-kit.json`).
 - [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save `.claude/output-styles/*.md` files with `keep-coding-instructions: true`.

@@ -5,7 +5,7 @@ Developer resource · runnable starter
 
 # Build an Enneagram test in React + TypeScript.
 
-By Bernard Huang · Updated September 26, 2026
+By Bernard Huang · Updated November 11, 2026
 
 Download enneagram-react-typescript.zip, run npm ci and npm run dev, and inspect a six-page, 36-item React + TypeScript questionnaire flow. It uses native fieldset and radio groups, validates incomplete pages, preserves all tied top scores, and keeps answers in browser memory.
 

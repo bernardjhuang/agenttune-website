@@ -1,13 +1,14 @@
 {
   "slug": "chatgpt-custom-instructions-examples",
   "published": "2026-09-25",
-  "title": "ChatGPT Custom Instructions Examples by Role (20 Blocks)",
-  "description": "Twenty editable ChatGPT custom instruction blocks by role, each under 500 characters, with setup steps and a simple way to check whether they help.",
+  "updated": "2026-11-11",
+  "title": "20 Best ChatGPT Custom Instructions Examples (Copy & Paste)",
+  "description": "Copy 20 ready-to-paste ChatGPT custom instructions examples by role (each under 500 chars for the 1,500-char limit), with web and mobile setup steps.",
   "pill": "Guide · ChatGPT",
-  "h1": "ChatGPT custom instructions examples, by what you do.",
-  "dek": "Twenty short blocks for Custom Instructions. Pick a role, paste, edit and test.",
-  "lede": "Custom instructions let you save preferences for how ChatGPT responds. These twenty role templates use concrete rules, each under 500 characters. Edit one to fit your work and compare replies on representative tasks; the templates have not been benchmarked.",
-  "answer": "Open ChatGPT’s personalization settings and edit your custom instructions. Choose a short role example below, adapt it, and test it on real tasks. Available controls and limits vary by client; use the limit shown in your app.",
+  "h1": "20 ChatGPT custom instructions examples, by role.",
+  "dek": "Twenty copy-paste blocks under 500 characters—sized cleanly inside ChatGPT's 1,500-character Custom Instructions box.",
+  "lede": "ChatGPT's Custom Instructions let you set permanent rules for how every new chat opens, reasons, and formats answers. Each of the 20 role blocks below is under 500 characters—leaving room inside the 1,500-character limit to combine a role block with your personal communication preferences from the <a href=\"/tools/custom-instructions-generator\">generator</a>.",
+  "answer": "On web or desktop, open Settings → Personalization → Custom Instructions (on iOS/Android: Settings → Customize ChatGPT) and paste one of the sub-500-character role blocks below into 'How would you like ChatGPT to respond?'. Need role rules for just one workspace? Put them in ChatGPT Project Instructions instead so they override global defaults cleanly.",
   "sections": [
     {
       "h2": "How to use them.",

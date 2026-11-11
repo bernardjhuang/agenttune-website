@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Instructions Generator for ChatGPT, Claude &amp; Muse</title>
-  <meta name="description" content="Create custom instructions for Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, or Grok 4.7. Pick a type, model, and destination. Free, no signup." />
+  <title>Free ChatGPT Custom Instructions &amp; AI Prompt Generator</title>
+  <meta name="description" content="Build paste-ready custom instructions for ChatGPT (1,500 chars), Claude, Meta Muse Soul.md, Grok, Gemini &amp; AGENTS.md. Free, client-side, no signup." />
 
-  <meta property="og:title" content="AI Instructions Generator for ChatGPT, Claude &amp; Muse" />
-  <meta property="og:description" content="Pick your type and your AI — get a paste-ready instruction block built from a real MIT-licensed tuning file. Free, no signup." />
+  <meta property="og:title" content="Free ChatGPT Custom Instructions &amp; AI Prompt Generator" />
+  <meta property="og:description" content="Build paste-ready custom instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md. Free, local, no signup." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/tools/custom-instructions-generator" />
   <meta property="og:site_name" content="AgentTune" />
@@ -17,19 +17,19 @@
   <meta property="og:image:alt" content="AgentTune custom instructions generator" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Instructions Generator for ChatGPT, Claude &amp; Muse" />
-  <meta name="twitter:description" content="Pick your type and your AI — get a paste-ready instruction block. Free, no signup." />
+  <meta name="twitter:title" content="Free ChatGPT Custom Instructions &amp; AI Prompt Generator" />
+  <meta name="twitter:description" content="Build paste-ready custom instructions for ChatGPT, Claude, Meta Muse, Grok, Gemini &amp; coding agents. Free, no signup." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/tools/custom-instructions-generator" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune Custom Instructions Generator","url":"https://agent-tune.com/tools/custom-instructions-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates personality-matched prompts for Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, and Grok 4.7 from 43 MIT-licensed tuning files.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune Custom Instructions Generator","url":"https://agent-tune.com/tools/custom-instructions-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates editable communication instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md from direct preferences or 43 MIT-licensed personality templates.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Custom Instructions Generator"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I paste ChatGPT custom instructions on web and mobile?","acceptedAnswer":{"@type":"Answer","text":"On chatgpt.com or the ChatGPT iOS/Android app, open your Profile menu, tap Personalization (or Customize ChatGPT), enable Custom Instructions, and paste the response rules into 'How would you like ChatGPT to respond?' (1,500-character limit per box)."}},{"@type":"Question","name":"How do ChatGPT Projects interact with account-wide Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"Project-specific instructions take precedence inside that Project whenever rules conflict. Keep a compact 6-to-10 line voice block in account-wide Custom Instructions and put task or domain schemas inside each Project."}},{"@type":"Question","name":"Do I need to take a personality test to use this generator?","acceptedAnswer":{"@type":"Answer","text":"No. The default mode builds instructions directly from four concrete communication preferences (concise, exploratory, candid feedback, or warm pacing). Switching to the 43 personality templates across MBTI, Enneagram, DISC, Attachment, and Big Five is completely optional."}},{"@type":"Question","name":"Are my generated instructions or edits sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Drafts are stored only in your browser's localStorage for up to 7 days, and clicking Reset deletes them immediately. Share links encode only dropdown selections, never your custom text."}}]}</script>
 
-  <script defer src="/consent.js"></script>
-  <script src="/compact-tunings.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,10 +65,10 @@
 
     <main class="tool-wrap" id="main" tabindex="-1">
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Free tool · no signup</span>
-        <h1 class="h-hero h-research-hero">Build your AI instructions.</h1>
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Free tool · client-side · no signup</span>
+        <h1 class="h-hero h-research-hero">Free AI &amp; ChatGPT custom instructions generator.</h1>
         <p class="lede" style="margin-top: 16px; max-width: 720px;">
-          Choose how you want your AI to respond, then review instructions for ChatGPT, Claude, Muse or your coding assistant. A personality test is optional.
+          Pick how you want your AI to respond—or load one of 43 MIT-licensed personality templates—and copy a paste-ready block formatted for ChatGPT (1,500 chars), Claude, Meta Muse <code>Soul.md</code>, Grok, Gemini, or <code>AGENTS.md</code>.
         </p>
       </section>
 
@@ -98,9 +98,40 @@
         </section>
       </div>
 
-      <section style="max-width: 720px; margin-top: 48px;" class="guide-prose">
-        <h2>How it works.</h2>
-        <p>These are editable communication preferences, not a way to increase a model’s abilities. Test them on your own tasks and revise anything that does not fit. Personality templates are optional editorial suggestions.</p><p>Changing an app, destination or preference regenerates the instructions and resets edits. The share link includes your selected preferences or template and destination, never your edited text or test answers. Anyone with the link can see those selections.</p>
+      <section style="max-width: 760px; margin-top: 48px;" class="guide-prose">
+        <h2>Where to paste your generated instructions.</h2>
+        <div class="guide-table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Surface</th><th scope="col">Exact settings path (Web &amp; Mobile)</th><th scope="col">Budget / precedence note</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">ChatGPT</th><td>Profile → <strong>Personalization → Custom Instructions</strong> → <em>How would you like ChatGPT to respond?</em></td><td>1,500 chars per box. <a href="/guides/chatgpt-projects-vs-custom-instructions">Project instructions</a> override conflicting lines inside that Project.</td></tr>
+              <tr><th scope="row">Claude</th><td>Initials → <strong>Settings → Profile</strong> → <em>What personal preferences should Claude consider in responses?</em></td><td>Account-wide across web, iOS, and Android. See <a href="/guides/claude-personality">Claude personality guide</a>.</td></tr>
+              <tr><th scope="row">Meta Muse</th><td><code>muse.ai</code> or mobile app → Profile → <strong><code>Soul.md</code></strong> (voice) &amp; <strong><code>Identity.md</code></strong> (context)</td><td>Keep voice rules in <code>Soul.md</code> and facts in <code>Identity.md</code> (<a href="/guides/muse-personality">setup guide</a>).</td></tr>
+              <tr><th scope="row">Grok &amp; Gemini</th><td>Grok: <strong>Settings → Customize response</strong> or Bot <em>Description</em>. Gemini: <strong>Settings → Saved info</strong> or a Gem.</td><td>Short bullet rules hold longer than roleplay adjectives (<a href="/guides/grokbot-personality">Grok</a> · <a href="/guides/gemini-personality">Gemini</a>).</td></tr>
+              <tr><th scope="row">Coding agents</th><td><code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>.cursor/rules/personality.mdc</code></td><td>Use <a href="/tools/instruction-converter">Instruction Converter</a> to wrap in bounded <code>&lt;!-- agenttune:preferences --&gt;</code> markers.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>How it works &amp; common questions.</h2>
+        <p>These are editable communication preferences, not a way to increase a model’s underlying reasoning abilities. Changing an app, destination, or preference regenerates the output; audit existing prompts for contradictions anytime in the <a href="/tools/instruction-checker">Instruction Checker</a>.</p>
+        <details class="lib-disclosure" open>
+          <summary>Where do I paste ChatGPT custom instructions on web and mobile?</summary>
+          <p>On <code>chatgpt.com</code> or the ChatGPT iOS/Android app, open your Profile menu, tap <strong>Personalization</strong> (or <strong>Customize ChatGPT</strong>), enable Custom Instructions, and paste your generated rules into <em>“How would you like ChatGPT to respond?”</em> Each field enforces a 1,500-character limit.</p>
+        </details>
+        <details class="lib-disclosure">
+          <summary>How do ChatGPT Projects interact with account-wide Custom Instructions?</summary>
+          <p>Project-level instructions take precedence inside that Project whenever two rules conflict. Keep a compact 6–10 line communication block in global Custom Instructions and place repo, client, or schema rules inside the Project (<a href="/guides/chatgpt-projects-vs-custom-instructions">full precedence guide</a>).</p>
+        </details>
+        <details class="lib-disclosure">
+          <summary>Do I need to take a personality test to use this generator?</summary>
+          <p>No. The default <strong>My communication preferences</strong> mode builds clean rules directly from four behavioral toggles. Switching to <strong>A personality template</strong> lets you preview all 43 MIT-licensed tunings across MBTI, Enneagram, DISC, Attachment, and Big Five without taking a test.</p>
+        </details>
+        <details class="lib-disclosure">
+          <summary>Are my generated instructions or edits sent to a server?</summary>
+          <p>No. Everything runs client-side in your browser. Drafts stay in <code>localStorage</code> for up to 7 days (Reset clears them immediately), and share links encode only dropdown selections—never your edited text or test answers.</p>
+        </details>
       </section>
     </main>
 
@@ -111,8 +142,9 @@
   </div>
 
 
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
   <script>
   (function () {
     const labels={mbti:'MBTI',enneagram:'Enneagram',disc:'DISC',attachment:'Attachment',ocean:'Big Five'};

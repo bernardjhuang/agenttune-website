@@ -1,0 +1,97 @@
+{
+  "slug": "ai-instruction-precedence-overrides",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Project vs Account Instructions: What Overrides What in AI",
+  "description": "How ChatGPT, Claude, OpenAI Codex, Claude Code, and Meta Muse resolve conflicts between account custom instructions, project rules, and chat.",
+  "pill": "Reference · Precedence & Scope",
+  "h1": "Project vs account instructions: what overrides what in AI.",
+  "dek": "When your account preferences say \"use plain prose\" and your project instructions say \"reply in a Markdown table,\" which rule wins? Here is how every major platform resolves conflicts.",
+  "lede": "Modern AI assistants read instructions from up to four places at once: your account-wide preferences, your saved memory, your current project or repository folder, and the message you just typed. When those layers contradict each other, the assistant becomes erratic unless you know the exact override hierarchy.",
+  "answer": "Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, specificity wins: your current chat prompt overrides project or repository instructions, and project or repository instructions override account-wide custom instructions. In ChatGPT Projects, project instructions explicitly replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.",
+  "sections": [
+    {
+      "h2": "Precedence hierarchy across major AI platforms.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Platform</th><th scope=\"col\">Lowest priority (broadest scope)</th><th scope=\"col\">Middle priority (workspace scope)</th><th scope=\"col\">Highest priority (wins conflicts)</th></tr></thead><tbody><tr><th scope=\"row\">ChatGPT (web, desktop, mobile)</th><td>Account Memory &amp; global <strong>Custom Instructions</strong></td><td><strong>Project Instructions</strong> (overrides global Custom Instructions inside that project)</td><td>Current conversation prompt</td></tr><tr><th scope=\"row\">OpenAI Codex (Astra &amp; Sol)</th><td>Personal <code>~/.codex/AGENTS.md</code></td><td>Repo root <code>AGENTS.md</code> / <code>AGENTS.override.md</code></td><td>Subdirectory <code>AGENTS.md</code> closest to working directory, then task prompt</td></tr><tr><th scope=\"row\">Claude (web, desktop, mobile)</th><td><strong>Settings → General → Personal Preferences</strong></td><td><strong>Claude Project Instructions</strong> &amp; invoked <strong>Skills</strong></td><td>Current conversation prompt</td></tr><tr><th scope=\"row\">Claude Code (CLI)</th><td>User <code>~/.claude/CLAUDE.md</code> &amp; active <code>/output-style</code></td><td>Repository <code>CLAUDE.md</code></td><td>Subdirectory <code>CLAUDE.md</code> &amp; current CLI command</td></tr><tr><th scope=\"row\">Meta Muse</th><td><code>Identity.md</code> &amp; background facts in <code>Memory.md</code></td><td>Communication rules in <code>Soul.md</code></td><td>Explicit instructions in the current chat turn</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "1. ChatGPT: Project Instructions override global Custom Instructions.",
+      "html": "<p>OpenAI's Help Center documentation for Projects in ChatGPT states a clean rule: instructions set inside a Project apply only within that project and <strong>override your global Custom Instructions</strong>. That makes Projects the ideal way to run a second persona—for example, keeping a warm collaborator voice in your global Custom Instructions while running a strict, skeptical code-review voice inside an engineering Project.</p><p>Watch out for one common conflict inside ChatGPT's global settings: the <strong>Base style and tone</strong> dropdown (Default, Professional, Friendly, Candid, Quirky, Efficient, Cynical) and the <strong>Characteristics</strong> sliders (Warm, Enthusiastic, Headers &amp; Lists, Emojis). If you pick <em>Friendly</em> and turn up <em>Enthusiastic</em> while pasting a custom instruction that says <em>\"no openers, no exclamation marks, dry tone,\"</em> you are handing the model two opposite commands. Leave Base style on <strong>Default</strong> when using an explicit communication tuning.</p>"
+    },
+    {
+      "h2": "2. OpenAI Codex: later files in the directory chain win.",
+      "html": "<p>In OpenAI Codex, files are concatenated from outermost to innermost:</p><ol><li><code>~/.codex/AGENTS.md</code> (your personal file)</li><li><code>&lt;repo-root&gt;/AGENTS.md</code> (the team repository file)</li><li>Nested folder <code>AGENTS.md</code> down to your current working directory</li></ol><p>Because files closer to your working directory appear later in the assembled prompt, they take priority when two rules conflict. At any single folder level, placing an <code>AGENTS.override.md</code> file replaces the sibling <code>AGENTS.md</code> in that folder. See the <a href=\"/guides/codex-agents-md-guide\">OpenAI Codex AGENTS.md guide</a> for the full 32 KiB byte-cap behavior.</p>"
+    },
+    {
+      "h2": "3. Claude: Personal Preferences vs Projects and Skills.",
+      "html": "<p>In Claude, <strong>Personal Preferences</strong> under Settings, General set your baseline across all conversations. When you work inside a <strong>Claude Project</strong> or trigger a <strong>Skill</strong>, both layers are present in context. If your Personal Preferences say <em>\"keep answers under 150 words in plain prose\"</em> and a Skill says <em>\"produce a 5-section Markdown table report,\"</em> Claude can hesitate between the two unless your Personal Preferences include a clean escape hatch.</p><p>Every AgentTune prompt includes that exact precedence line at the top so your baseline never fights a specific task:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences\n\nUse these preferences for tone, pacing, and structure. My current task, project instructions, and explicit corrections take precedence.\n\n- Lead with the direct answer or recommendation.\n- Use plain prose by default; switch to tables or lists when the task or project calls for them.\n- Skip filler intros and generic closing offers.\n- Point out flawed assumptions or missing constraints before executing a plan.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do ChatGPT Project Instructions override global Custom Instructions?",
+      "a": "Yes. According to OpenAI's Help Center documentation for Projects in ChatGPT, instructions added to a Project apply only inside that project and override your account-wide Custom Instructions."
+    },
+    {
+      "q": "How do I stop my global brevity rules from breaking detailed project reports?",
+      "a": "Add one precedence sentence at the top of your account-wide instructions: 'Use these preferences as the default for tone and pacing; my current task and project instructions take precedence when they specify a different format or length.'"
+    },
+    {
+      "q": "In OpenAI Codex, does ~/.codex/AGENTS.md override the repository's AGENTS.md?",
+      "a": "No. Codex reads ~/.codex/AGENTS.md first and the repository's AGENTS.md after it, so the repository file (and any subdirectory AGENTS.md closer to your working directory) wins conflicts."
+    },
+    {
+      "q": "Why is ChatGPT ignoring my custom instructions to be concise?",
+      "a": "Check two places: first, make sure you are not inside a Project whose Project Instructions override your global settings; second, check Settings, Personalization to ensure the Base style preset or Characteristics sliders (like Warm or Headers & Lists) are not contradicting your written rules."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with cross-platform override rules for ChatGPT, Codex, Claude, Claude Code, and Meta Muse."
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI Help Center: Projects in ChatGPT",
+      "href": "https://help.openai.com/en/articles/10169521-projects-in-chatgpt"
+    },
+    {
+      "label": "ChatGPT & Codex Docs: AGENTS.md",
+      "href": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    },
+    {
+      "label": "Anthropic Help Center: Understanding Claude's personalization features",
+      "href": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Reference",
+      "label": "AI custom instructions character limits (2026 cheat sheet)",
+      "href": "/guides/ai-custom-instructions-character-limits"
+    },
+    {
+      "kicker": "Guide",
+      "label": "OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides",
+      "href": "/guides/codex-agents-md-guide"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude Personal Preferences: 15 examples and where to paste",
+      "href": "/guides/claude-personal-preferences-examples"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude Styles are moving to Skills: how to migrate",
+      "href": "/guides/claude-styles-to-skills-migration"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse Memory.md, privacy, and how to reset safely",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

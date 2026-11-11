@@ -7,11 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated September 25, 2026
 
-A midpoint can mean balance, uncertainty, or that a question does not fit the respondent. The Astra cohort lets us inspect one of those possibilities because its prompt required an explicit inapplicable-item list.
+Astra gives 2,980 midpoint responses across 17,000 item responses. It flags 1,823 of those as inapplicable: 61.2% of its midpoint answers. This is an item-response count within 100 batteries, not a count of independent people or models.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Astra gives 2,980 midpoint responses across 17,000 item responses. It flags 1,823 of those as inapplicable: 61.2% of its midpoint answers. This is an item-response count within 100 batteries, not a count of independent people or models.
 
 ## The denominator matters
 

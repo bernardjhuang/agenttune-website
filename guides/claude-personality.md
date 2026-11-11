@@ -5,39 +5,40 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 11, 2026
 
-Open Settings → Instructions for Claude and add a short communication-preferences block. Use project instructions for a particular project and Skills for reusable tasks. Test the result on real work; questionnaire scores do not prove that a tuning improves behavior.
+On web or desktop, click your initials (bottom-left) → Settings → Profile → Instructions for Claude (labeled Personal preferences on some accounts) and paste a short rules block. On the iOS or Android app, tap your profile icon (top-right or sidebar) → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable workflows (replacing retired chat Styles), and /output-style in Claude Code.
 
 ## How to change Claude’s personality settings.
 
-- Click your initials in the lower-left corner of Claude and open Settings.
-- Find Instructions for Claude. Save a copy of any preferences already there.
-- Add a short block describing what you want Claude to do. Choose one of the examples below and resolve any conflicting rules.
-- Save, then start a new chat and try a real task. Compare the result against your previous setup.
+Where you paste your rules depends on whether you want a permanent default across every chat, a single workspace override, or a coding-session style:
 
-Anthropic’s [personalization documentation](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features), checked September 25, 2026, describes these instructions as account-wide. Project instructions apply within their project. Skills provide reusable behaviors.
+- Web & desktop app: Click your initials in the lower-left corner → Settings → Profile → Instructions for Claude (shown as What personal preferences should Claude consider in responses? on some accounts).
+- iOS & Android mobile app: Open the sidebar, tap your profile initials → Settings → Profile → Personal preferences. Paste the same block; it syncs across web and mobile.
+- Paste one focused block: Copy a setup below (or build one in the [generator](https://agent-tune.com/tools/custom-instructions-generator)), save, and open a new chat to test on real work.
 
-| Use case | Where to put it | Purpose |
+Anthropic’s [personalization documentation](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) splits customization into four clean layers:
+
+| Use case | Where to put it | Scope &amp; behavior |
 | --- | --- | --- |
-| Everyday chats | Instructions for Claude in Settings | Your general communication preferences. |
-| A particular project | Project instructions | Context and rules for that project. |
-| A reusable task or voice | Skills | A behavior invoked when relevant; check that the skill is enabled. |
-| Claude Code | /output-style | Session-wide response style; see the [Code guide](https://agent-tune.com/guides/claude-code-personality). |
+| Everyday chats (web &amp; mobile) | Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
+| One client, repo, or research topic | Project instructions | Applies inside that Project and overrides conflicting general tone rules. |
+| Reusable task voice (former Styles) | Skills | Invoked when relevant or named explicitly; see the [Styles-to-Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration). |
+| Claude Code CLI | ~/.claude/output-styles/*.md (/output-style) | System-level coding session tone with keep-coding-instructions: true; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
 
-The older phrase “What personal preferences should Claude consider in responses?” refers to the same general need: instructions about how you prefer to work. Use the current label shown in your app.
+Want spoken voice controls on mobile rather than written tone? See [how to change Claude’s spoken voice vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
 
 ## Five Claude personality setups to try.
 
-Choose by the behavior you want to change. These are untested starting points, not a ranking of the best personalities. A questionnaire type is optional. Each block asks Claude to preserve accuracy, useful uncertainty and the app’s existing boundaries.
+Pick the block that fixes your main day-to-day friction—slow preambles, premature conclusions, cold phrasing, sycophancy, or vague status updates. Each block preserves factual accuracy and explicit uncertainty. Want more? Browse [15 role-specific Claude preference examples](https://agent-tune.com/guides/claude-personal-preferences-examples) or the [43-template library](https://agent-tune.com/library/).
 
-| Setup | What to evaluate |
+| Setup | Who it suits best |
 | --- | --- |
-| Straight answers | A clear recommendation with brief support. |
-| Thinking partner | Explore assumptions before deciding. |
-| Warm and steady | Acknowledge difficulty and make the next step clear. |
-| Critical reviewer | Challenge a proposal using evidence. |
-| Task coordinator | Clear progress, dependencies and decisions. |
+| Straight answers | People who want the recommendation in sentence one with zero preamble or closing offers. |
+| Thinking partner | Researchers and strategists who want assumptions unpacked before locking in a choice. |
+| Warm and steady | Anyone who wants calm, concrete steps without hollow cheerleading or alarmism. |
+| Critical reviewer | Builders who want Claude to challenge weak premises with evidence instead of agreeing. |
+| Task coordinator | Operators managing multi-step work who want blockers, dependencies, and next actions upfront. |
 
 ### Straight answers
 
@@ -94,7 +95,7 @@ Choose by the behavior you want to change. These are untested starting points, n
 - Keep required approvals in place and never claim an action succeeded without evidence.
 ```
 
-For more editable preferences, browse the [43-file tuning library](https://agent-tune.com/library/) or use the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator).
+For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and Big Five, open the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator).
 
 ## What personality type is Claude? The recorded results.
 
@@ -125,9 +126,7 @@ Big Five entries are mean raw scores on a 10–50 scale, not percentiles. For ex
 
 The [saved answer vectors](https://agent-tune.com/research/data/september-2026-responses.json), [item wording and scoring keys](https://agent-tune.com/research/data/september-2026-instruments.json), [prompts and collection protocols](https://agent-tune.com/research/data/september-2026-protocols.json), and [summary CSV](https://agent-tune.com/research/data/september-2026-summary.csv) are public. The [offline research scorer](https://agent-tune.com/research/data/september-2026-score.cjs) reproduces the summaries without calling a model.
 
-A particularly useful check is Enneagram ties. The same responses can be summarized as one type by an arbitrary tie-break or as several equal leaders. Our [developer resource](https://agent-tune.com/guides/open-source-enneagram-test) lets you inspect that scoring behavior and download a small reusable implementation.
-
-The original evidence consists of questionnaire responses. It does not include measured before-and-after results for the five instruction blocks above. We cannot infer their effectiveness from model self-descriptions.
+What about actual reply behavior after installing rules? In our separate [60-reply controlled before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 conditions), explicit "Straight answers" rules raised top answer-first scores from 14/20 (default) to 19/20, cut hedge counts from 0.35 to 0.05 per reply, and reduced follow-up questions from 0.90 to 0.25 without changing task accuracy. Test any block on your own tasks using the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Test whether the instructions help your work.
 
@@ -212,6 +211,8 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 ## Keep going.
 
 - [New resource: When does Claude follow your preferences? A test kit](https://agent-tune.com/guides/claude-preferences-test)
+- [Examples: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples)
+- [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Research: The five-model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Claude Code: Set a coding-session output style](https://agent-tune.com/guides/claude-code-personality)
 - [Tool: Build your custom instructions](https://agent-tune.com/tools/custom-instructions-generator)

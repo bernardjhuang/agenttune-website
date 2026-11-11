@@ -1,0 +1,97 @@
+{
+  "slug": "muse-memory-md-privacy-reset",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "Meta Muse Memory.md, Privacy & How to Reset Safely",
+  "description": "What Meta Muse stores in Memory.md, how to view or delete saved personal facts, and how to reset Memory.md without wiping Soul.md.",
+  "pill": "Guide · Meta Muse",
+  "h1": "Meta Muse Memory.md, privacy, and how to reset safely.",
+  "dek": "Memory.md stores facts about your work and preferences across chats. Here is how to audit it, prune stale entries, or clear it without losing your Soul.md tuning.",
+  "lede": "Meta Muse keeps ongoing personal facts in <strong>Memory.md</strong> under Assistant Identity. Over weeks of use, Memory.md can accumulate one-off project notes, outdated job details, or temporary constraints that start coloring every unrelated reply. Cleaning it up takes two minutes once you separate memory facts from communication rules.",
+  "answer": "Open Settings, then Personalization, then Assistant Identity, and select Memory.md to view, edit, or delete saved facts about you. To clear your saved facts without losing your communication style, reset only Memory.md and leave Soul.md and Identity.md untouched. Keep permanent communication rules in Soul.md so routine memory cleanups never erase your tuning.",
+  "sections": [
+    {
+      "h2": "What Muse writes to Memory.md.",
+      "html": "<p>In Meta's Assistant Identity design, Memory.md is the notebook where Muse records persistent context about you across conversations. Unlike <a href=\"/guides/muse-soul-md-templates\">Soul.md</a> (which defines how Muse speaks) and <a href=\"/guides/muse-identity-md-avatar-name\">Identity.md</a> (which defines Muse's name and avatar), Memory.md changes over time as you talk.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Belongs in Memory.md</th><th scope=\"col\">Move to Soul.md instead</th><th scope=\"col\">Delete from both</th></tr></thead><tbody><tr><td>Your role, primary programming languages, or recurring deliverables.</td><td>Rules like \"lead with the answer\" or \"use plain prose instead of bullet lists.\"</td><td>One-time trip dates, finished sprint tasks, or old debugging logs.</td></tr><tr><td>Standing domain context (for example, target audience or style guide name).</td><td>How strongly you want Muse to push back on weak arguments.</td><td>Sensitive credentials, client secrets, or private identifiers.</td></tr><tr><td>Tools and environment defaults you use every week.</td><td>Formatting defaults for code blocks, tables, and summaries.</td><td>Contradictory notes added automatically from a single brainstorm chat.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Why stale Memory.md entries make Muse feel repetitive.",
+      "html": "<p>A common frustration with persistent memory in any assistant is context bleed: you ask a quick question about a new topic, and the assistant forces a connection to a project you finished a month ago. Because Memory.md is loaded into context across sessions, a temporary constraint that got saved as a permanent fact will keep steering future answers.</p><p>When Muse starts over-referencing an old topic or assuming every task uses the same stack, inspect Memory.md before editing Soul.md. Nine times out of ten, the problem is a stale bullet in Memory.md rather than a broken tone instruction.</p>"
+    },
+    {
+      "h2": "How to audit or reset Memory.md without wiping Soul.md.",
+      "html": "<p>You can clean up Memory.md from the settings panel or directly in chat:</p><ol><li>In Meta Muse, open <strong>Settings</strong>, then <strong>Personalization</strong>, then <strong>Assistant Identity</strong>.</li><li>Select <strong>Memory.md</strong> to inspect every stored line.</li><li>Delete outdated bullets, or replace the file with a short, structured list of facts you actually want Muse to know across every chat.</li></ol><p>If you prefer to manage it from chat, use a scoped prompt so Muse does not touch your Soul.md tuning:</p><div class=\"guide-snippet\">Show me the current contents of Memory.md grouped into: (1) durable work context, (2) personal preferences, and (3) one-off task notes. Do not edit Soul.md or Identity.md.</div><p>To wipe Memory.md cleanly while keeping your voice tuning intact:</p><div class=\"guide-snippet\">Clear all project-specific and temporary entries from Memory.md, keeping only my role and primary tools. Leave Soul.md and Identity.md completely unchanged, and show me the updated Memory.md before saving.</div>"
+    },
+    {
+      "h2": "A clean Memory.md structure that stays easy to prune.",
+      "html": "<p>Keeping Memory.md divided into two short headings makes future audits effortless:</p><div class=\"guide-snippet\"># Memory\n\n## Durable context\n- Role: Product engineer working on web applications in TypeScript and Python.\n- Audience: Technical teammates; skip beginner explanations of standard library APIs.\n\n## Active projects (review monthly)\n- Current focus: Static site build tooling and search analytics.</div><p>Then keep your communication rules in Soul.md using the prompt below or a profile from the <a href=\"/library/\">43-tuning library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to work with me\n\n- Answer the question first, then give supporting detail only when needed.\n- Use saved facts from Memory.md only when they are directly relevant to the current task.\n- Do not force connections to my past projects in unrelated conversations.\n- Ask before saving temporary task constraints to Memory.md.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I see what Meta Muse remembers about me?",
+      "a": "Open Settings, then Personalization, then Assistant Identity, and select Memory.md, or ask Muse in chat to print the current contents of Memory.md."
+    },
+    {
+      "q": "Does clearing Memory.md delete my Soul.md personality tuning?",
+      "a": "No, as long as you edit or clear only Memory.md. Soul.md and Identity.md are separate files under Assistant Identity."
+    },
+    {
+      "q": "How do I stop Meta Muse from bringing up old topics in every chat?",
+      "a": "Delete finished projects and one-off notes from Memory.md, and add a line in Soul.md instructing Muse to use saved memory only when directly relevant to the current prompt."
+    },
+    {
+      "q": "Should I put formatting rules in Memory.md or Soul.md?",
+      "a": "Put formatting, tone, and length rules in Soul.md. Keep Memory.md strictly for factual context about your work, tools, and ongoing projects."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with scoped reset prompts and a two-section Memory.md template."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta Help Center: Personalize your assistant in Meta Muse",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    },
+    {
+      "label": "AgentTune: How to give Meta Muse a personality",
+      "href": "https://agent-tune.com/guides/muse-personality"
+    },
+    {
+      "label": "AgentTune: Meta Muse Soul.md templates",
+      "href": "https://agent-tune.com/guides/muse-soul-md-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to give Meta Muse a personality",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta Muse avatar and name: the Identity.md guide",
+      "href": "/guides/muse-identity-md-avatar-name"
+    },
+    {
+      "kicker": "Templates",
+      "label": "Meta Muse Soul.md templates",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "Meta AI vs Meta Muse: how to change personality and tone",
+      "href": "/guides/meta-ai-vs-meta-muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Project vs account instructions: what overrides what",
+      "href": "/guides/ai-instruction-precedence-overrides"
+    }
+  ],
+  "promptModel": "muse",
+  "promptDestination": "muse"
+}

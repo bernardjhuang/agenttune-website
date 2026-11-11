@@ -1,13 +1,13 @@
 Source: https://agent-tune.com/guides/grokbot-personality
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Guide · Grok Bot
+Guide · Grok & Grok Bot
 
-# Give a Grok Bot its character: the Description guide.
+# Give Grok or a Grok Bot its character: custom setup guide.
 
 By Bernard Huang · Updated September 25, 2026
 
-Open the Bot, choose Edit Profile, and write your communication rules into the Description, after the Bot's job and its boundaries. The Description persists across conversations, and it is what a duplicated Bot or a shared template carries with it. Rules typed into chat do not survive a long conversation. Rules in the Description do.
+For Grok Bot, open the Bot → Edit Profile → Description, and place a 'How to talk to me' rules block right below the Bot's job and boundaries so it survives long chats and Bot duplication. Using standard Grok on X or grok.com instead? Open Settings → Customize Grok (or Custom Instructions) and paste the six-line 'How to talk to me' block below—or follow our dedicated grok.com & X settings guide.
 
 ## The short version.
 
@@ -39,11 +39,11 @@ Three products share the name, and their settings are in different places.
 
 | Product | What it is | Where its instructions live |
 | --- | --- | --- |
-| Grok Bot | Persistent AI teammates, each on a cloud computer with a browser, a filesystem and a terminal. In beta since August 11, 2026. This guide. | Each Bot's Description |
-| Grok | The chatbot on grok.com and in X | Its own customization settings. xAI's FAQ calls Grok Bot a different product. |
+| Grok Bot | Persistent AI teammates, each on a cloud computer with a browser, a filesystem and a terminal. This guide. | Each Bot's Description (Edit Profile) |
+| Grok (X &amp; grok.com) | The conversational assistant on grok.com and inside X (web &amp; mobile) | Settings → Customize Grok ([full X & grok.com walkthrough](https://agent-tune.com/guides/grok-personality-settings)) |
 | Grok Build | xAI's coding agent for the terminal | AGENTS.md project rules |
 
-Grok Bot is a joint product with Cursor. You sign in with a Cursor account, and the Bots' computers run in Cursor's cloud. It comes with every paid individual Cursor plan and with Cursor Teams, or you can link a SuperGrok subscription. It runs on macOS, Windows, Linux, iOS and Android.
+Grok Bot is a joint product with Cursor. You sign in with a Cursor account, and the Bots' computers run in Cursor's cloud. It comes with paid individual Cursor plans and Cursor Teams, or you can link a SuperGrok subscription across macOS, Windows, Linux, iOS, and Android.
 
 ## Where personality lives: the Description.
 
@@ -188,6 +188,8 @@ xAI's docs say Cursor manages model selection and there is no model picker. They
 
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
+- [Guide: How to change Grok's personality on X and grok.com](https://agent-tune.com/guides/grok-personality-settings)
+- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to give Meta Muse a personality](https://agent-tune.com/guides/muse-personality)
 - [Guide: Give your coding agent a personality](https://agent-tune.com/guides/coding-agent-personality)

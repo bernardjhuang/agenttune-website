@@ -1,0 +1,96 @@
+{
+  "slug": "free-disc-assessment-guide-work-ai",
+  "published": "2026-11-11",
+  "updated": "2026-11-11",
+  "title": "Free DISC Assessment (No Email): 4 Styles & 12 Blends",
+  "description": "Take a free 16-question DISC assessment with instant results and no email. Understand D, I, S, C, all 12 two-letter blends, and AI workplace prompts.",
+  "pill": "Guide · DISC & Workplace",
+  "h1": "Free DISC assessment (no email): how the 4 styles and 12 blends work.",
+  "dek": "What Dominance, Influence, Steadiness, and Conscientiousness actually measure at work—and how to turn your score into team and AI instructions without an email gate.",
+  "lede": "Most pages ranking for \"free DISC test\" let you click through 20–30 workplace adjectives and then lock your scores behind a work email or paid PDF report. AgentTune runs the open 16-item <strong>ODAT (Open DISC Assessment Test)</strong> completely inside your browser in about three minutes—zero email, zero signup—and pairs your score with MIT-licensed communication rules for teammates and AI assistants.",
+  "answer": "You can take the free 16-question DISC test at agent-tune.com/tests/disc with instant browser-only scoring and no email required. Each of the four styles—Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C)—is scored from 4 to 20; if your second-highest style lands within 2 points of your top style, you get a two-letter blend like DC, DI, SC, or IS.",
+  "sections": [
+    {
+      "h2": "Take the 3-minute test or read the four quadrants first.",
+      "html": "<p>DISC maps workplace behavior across two everyday axes: <strong>Active / Fast-paced vs. Reserved / Methodical</strong> and <strong>Task-focused vs. People-focused</strong>. Ready to score yourself first? <a href=\"/tests/disc\"><strong>Start the free 16-item DISC test →</strong></a> (takes ~3 minutes, keyboard shortcuts <code>1</code>–<code>5</code>).</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Style</th><th scope=\"col\">Quadrant</th><th scope=\"col\">Default workplace preference</th><th scope=\"col\">What frustrates them in AI &amp; meetings</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"/library/disc/d-dominance\">D — Dominance</a></th><td>Fast-paced · Task-focused</td><td>Bottom line first, clear tradeoffs, decision ownership.</td><td>Throat-clearing intros, hedged non-answers, unrequested hand-holding.</td></tr><tr><th scope=\"row\"><a href=\"/library/disc/i-influence\">I — Influence</a></th><td>Fast-paced · People-focused</td><td>Big-picture momentum, riffing out loud, crisp narrative framing.</td><td>Dry walls of caveats that kill momentum before exploring options.</td></tr><tr><th scope=\"row\"><a href=\"/library/disc/s-steadiness\">S — Steadiness</a></th><td>Methodical · People-focused</td><td>Predictable step-by-step plans, calm pacing, clear impact on the team.</td><td>Abrupt pivots, unflagged breaking changes, combative tone.</td></tr><tr><th scope=\"row\"><a href=\"/library/disc/c-conscientiousness\">C — Conscientiousness</a></th><td>Methodical · Task-focused</td><td>Primary sources, explicit assumptions, edge cases, exact numbers.</td><td>Confident hand-waving, missing citations, glossed-over failure modes.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "All 12 two-letter DISC blends, decoded.",
+      "html": "<p>Few people sit purely in one corner. On our <a href=\"/tests/disc\">16-item ODAT runner</a>, when your runner-up quadrant finishes within <strong>2 points</strong> of your highest total (for example, <code>C = 17</code> and <code>S = 16</code>), your profile reports a two-letter blend. If two quadrants tie for first place, both styles are shown transparently rather than broken arbitrarily.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Blend</th><th scope=\"col\">Workplace shorthand</th><th scope=\"col\">How to tune your AI or team README</th></tr></thead><tbody><tr><th scope=\"row\"><code>DC</code> / <code>CD</code></th><td>Architect-Driver</td><td>Lead with the conclusion, then back it immediately with numbers and failure modes; skip small talk.</td></tr><tr><th scope=\"row\"><code>DI</code> / <code>ID</code></th><td>Catalyst-Closer</td><td>Open with the boldest high-leverage option and next action; keep energy high and prose tight.</td></tr><tr><th scope=\"row\"><code>DS</code> / <code>SD</code></th><td>Steady Executor</td><td>Focus on practical execution milestones, clear ownership, and realistic timelines.</td></tr><tr><th scope=\"row\"><code>IS</code> / <code>SI</code></th><td>Collaborative Coach</td><td>Use a warm, constructive register; connect tasks to team impact and sequence changes smoothly.</td></tr><tr><th scope=\"row\"><code>IC</code> / <code>CI</code></th><td>Analytical Storyteller</td><td>Pair rigorous evidence with a clear executive narrative I can share with stakeholders.</td></tr><tr><th scope=\"row\"><code>SC</code> / <code>CS</code></th><td>Careful Systems Builder</td><td>Walk through changes methodically, flag risks early, and verify edge cases before shipping.</td></tr></tbody></table></div><p>Curious where frontier AI models land on the exact same 16 items? In our September 2026 benchmark, GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 all scored <strong><code>CS</code></strong>, while Grok 4.6 scored pure <strong><code>C</code></strong> (<a href=\"/research/ai-personality-five-models-2026\">read the 5-model study</a>).</p>"
+    },
+    {
+      "h2": "Open ODAT vs. commercial workplace DISC assessments.",
+      "html": "<p>Transparency matters when using any personality questionnaire:</p><ul><li><strong>Not a clinical or hiring gate:</strong> ODAT is an open self-report adaptation from the Open Psychometrics Project (<a href=\"/guides/open-source-disc-test-odat\">inspect all 16 items and JavaScript scoring code</a>). Commercial assessments sold for HR workshops (such as Everything DiSC) use proprietary adaptive item banks and normed workplace reports—and should not be confused with an open 16-item self-reflection tool.</li><li><strong>Why a 3-minute self-report works well for AI tuning:</strong> You do not need a psychometrically normed PDF to decide whether you want Claude or ChatGPT to lead with a 2-sentence bottom line (<code>D</code>) or a sourced verification checklist (<code>C</code>). Treat your DISC result as an editable draft of how you like information delivered.</li></ul>"
+    },
+    {
+      "h2": "Turn your DISC style into an AI prompt + team User Manual.",
+      "html": "<p>Here is a balanced <code>DC</code> (Dominance + Conscientiousness) communication block you can adapt for ChatGPT, Claude, Meta Muse, or <code>AGENTS.md</code>—or swap in all four pure styles in our <a href=\"/guides/disc-ai-prompts\">DISC AI prompts guide</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## Working with me (DISC: DC — Direct &amp; Analytical)\n\n- Bottom line first: state the recommendation or answer in sentence one.\n- Back claims with concrete evidence, tradeoffs, or primary sources—never filler adjectives.\n- Flag material uncertainty and unverified assumptions explicitly.\n- Push back directly if my plan has a cleaner, lower-risk alternative.\n- Default to tight prose; use tables when comparing 3+ options on shared criteria.</div><p>Want a version for human coworkers too? Drop your top 3 rules into our <a href=\"/tools/how-to-work-with-me\">How to Work With Me card builder</a> or copy the full Notion/GitHub layout in our <a href=\"/guides/how-to-work-with-me-readme-ai-template\">How to Work With Me README template</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where can I take a truly free DISC test without giving my email?",
+      "a": "Go to agent-tune.com/tests/disc. All 16 ODAT questions run locally in your browser in about 3 minutes with zero email gate, account signup, or paywall."
+    },
+    {
+      "q": "What do D, I, S, and C stand for in DISC?",
+      "a": "Dominance (direct, results-focused), Influence (outgoing, momentum-focused), Steadiness (patient, cooperative, methodical), and Conscientiousness (analytical, precise, evidence-driven)."
+    },
+    {
+      "q": "What does a two-letter DISC result like CS or DI mean?",
+      "a": "The first letter is your highest-scoring quadrant and the second letter is a close secondary style (within 2 points on the 4–20 ODAT scale) that shapes how you apply your primary style."
+    },
+    {
+      "q": "Is the ODAT DISC test affiliated with commercial DiSC publishers?",
+      "a": "No. AgentTune uses the open 16-item ODAT adaptation for personal reflection and AI communication preferences; it is an independent self-report tool, not a commercial Everything DiSC assessment or hiring instrument."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-11",
+      "note": "Published covering the 4 DISC quadrants, all 12 two-letter blends, open ODAT vs commercial tests, and AI/team prompts."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Interactive Runner: Free 16-Item DISC Test",
+      "href": "https://agent-tune.com/tests/disc"
+    },
+    {
+      "label": "Open Psychometrics Project: Open DISC Assessment Test (ODAT)",
+      "href": "https://openpsychometrics.org/tests/ODAT/"
+    },
+    {
+      "label": "AgentTune Developer Guide: ODAT 16 Questions & Scorer",
+      "href": "https://agent-tune.com/guides/open-source-disc-test-odat"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Free 3-min test",
+      "label": "Take the free DISC personality test (no email)",
+      "href": "/tests/disc"
+    },
+    {
+      "kicker": "Prompts",
+      "label": "DISC AI prompts for all four workplace styles",
+      "href": "/guides/disc-ai-prompts"
+    },
+    {
+      "kicker": "Free browser tool",
+      "label": "How to Work With Me card builder",
+      "href": "/tools/how-to-work-with-me"
+    },
+    {
+      "kicker": "Developer resource",
+      "label": "Open-source DISC assessment (ODAT): 16 items & JS scorer",
+      "href": "/guides/open-source-disc-test-odat"
+    },
+    {
+      "kicker": "Template",
+      "label": "How to Work With Me README template (for teams & AI)",
+      "href": "/guides/how-to-work-with-me-readme-ai-template"
+    }
+  ],
+  "promptModel": "any"
+}

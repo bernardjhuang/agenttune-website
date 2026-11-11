@@ -1,13 +1,14 @@
 {
   "slug": "grokbot-personality",
   "published": "2026-09-19",
-  "title": "Grok Bot Character & Personality: How to Set It (2026)",
-  "description": "Grok Bot has no personality setting. The rules go in each Bot's Description, under Edit Profile. What to paste, and how to keep it through long chats.",
-  "pill": "Guide · Grok Bot",
-  "h1": "Give a Grok Bot its character: the Description guide.",
-  "dek": "There is no personality setting. There is a Description field, and it does the job.",
-  "lede": "Grok Bot, which most people type as Grokbot, is xAI's app for keeping named AI teammates around. Each Bot has a job, a memory and its own cloud computer. It has no personality picker and no system-prompt box. What it has is a <strong>Description</strong> on every Bot's profile, and xAI's docs say to use it for the rules that should stay true. That is where a tuning goes.",
-  "answer": "Open the Bot, choose Edit Profile, and write your communication rules into the Description, after the Bot's job and its boundaries. The Description persists across conversations, and it is what a duplicated Bot or a shared template carries with it. Rules typed into chat do not survive a long conversation. Rules in the Description do.",
+  "updated": "2026-11-11",
+  "title": "Grok & Grok Bot Personality: Character & Custom Setup",
+  "description": "Set a Grok Bot character Description or customize Grok 4.6 on X and grok.com. Copyable prompts, character limits, and Grok personality test results.",
+  "pill": "Guide · Grok & Grok Bot",
+  "h1": "Give Grok or a Grok Bot its character: custom setup guide.",
+  "dek": "Customize Grok on X and grok.com, or write persistent character rules into a Grok Bot's Description field.",
+  "lede": "xAI splits Grok across two main surfaces: ordinary <strong>Grok chat</strong> on X and <code>grok.com</code> (where custom instructions live under Settings → Customize Grok; see the <a href=\"/guides/grok-personality-settings\">Grok on X &amp; grok.com guide</a>), and <strong>Grok Bot</strong> (often typed <em>Grokbot</em>), xAI and Cursor's cloud-teammate app where every Bot carries a persistent <strong>Description</strong> under Edit Profile. Below is the quick setup for both.",
+  "answer": "For Grok Bot, open the Bot → Edit Profile → Description, and place a 'How to talk to me' rules block right below the Bot's job and boundaries so it survives long chats and Bot duplication. Using standard Grok on X or grok.com instead? Open Settings → Customize Grok (or Custom Instructions) and paste the six-line 'How to talk to me' block below—or follow our dedicated grok.com & X settings guide.",
   "sections": [
     {
       "h2": "The short version.",
@@ -15,7 +16,7 @@
     },
     {
       "h2": "Grok Bot is not Grok.",
-      "html": "<p>Three products share the name, and their settings are in different places.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Product</th><th>What it is</th><th>Where its instructions live</th></tr></thead><tbody><tr><td><strong>Grok Bot</strong></td><td>Persistent AI teammates, each on a cloud computer with a browser, a filesystem and a terminal. In beta since August 11, 2026. This guide.</td><td>Each Bot's <strong>Description</strong></td></tr><tr><td><strong>Grok</strong></td><td>The chatbot on grok.com and in X</td><td>Its own customization settings. xAI's FAQ calls Grok Bot a different product.</td></tr><tr><td><strong>Grok Build</strong></td><td>xAI's coding agent for the terminal</td><td><code>AGENTS.md</code> project rules</td></tr></tbody></table></div><p>Grok Bot is a joint product with Cursor. You sign in with a Cursor account, and the Bots' computers run in Cursor's cloud. It comes with every paid individual Cursor plan and with Cursor Teams, or you can link a SuperGrok subscription. It runs on macOS, Windows, Linux, iOS and Android.</p>"
+      "html": "<p>Three products share the name, and their settings are in different places.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Product</th><th>What it is</th><th>Where its instructions live</th></tr></thead><tbody><tr><td><strong>Grok Bot</strong></td><td>Persistent AI teammates, each on a cloud computer with a browser, a filesystem and a terminal. This guide.</td><td>Each Bot's <strong>Description</strong> (Edit Profile)</td></tr><tr><td><strong>Grok (X &amp; grok.com)</strong></td><td>The conversational assistant on <code>grok.com</code> and inside X (web &amp; mobile)</td><td><strong>Settings → Customize Grok</strong> (<a href=\"/guides/grok-personality-settings\">full X &amp; grok.com walkthrough</a>)</td></tr><tr><td><strong>Grok Build</strong></td><td>xAI's coding agent for the terminal</td><td><code>AGENTS.md</code> project rules</td></tr></tbody></table></div><p>Grok Bot is a joint product with Cursor. You sign in with a Cursor account, and the Bots' computers run in Cursor's cloud. It comes with paid individual Cursor plans and Cursor Teams, or you can link a SuperGrok subscription across macOS, Windows, Linux, iOS, and Android.</p>"
     },
     {
       "h2": "Where personality lives: the Description.",
@@ -138,6 +139,16 @@
       "kicker": "Tests",
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Grok's personality on X and grok.com",
+      "href": "/guides/grok-personality-settings"
+    },
+    {
+      "kicker": "Research",
+      "label": "Grok 4.6 and the attachment cutoff: a sensitivity analysis",
+      "href": "/research/grok-attachment-cutoff-simulation"
     },
     {
       "kicker": "Guide",

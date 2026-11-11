@@ -7,11 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated September 25, 2026
 
-Their most common MBTI label is the same. Their answers are not. Looking inside the questionnaires reveals where the supplied Opus 5.5 and Fable 5.1 cohorts differ—and why a mean score alone can be misleading.
+The largest Big Five item gap is on sympathizing with others’ feelings: Opus averages 5.00, Fable 4.04. Two reverse-scored questions about belongings each contribute 0.90 points to Fable’s higher Conscientiousness total. These are self-description differences, not demonstrated behavior.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. The largest Big Five item gap is on sympathizing with others’ feelings: Opus averages 5.00, Fable 4.04. Two reverse-scored questions about belongings each contribute 0.90 points to Fable’s higher Conscientiousness total. These are self-description differences, not demonstrated behavior.
 
 ## What we compared
 

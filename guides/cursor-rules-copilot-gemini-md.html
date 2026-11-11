@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursor Rules (.mdc), copilot-instructions.md &amp; GEMINI.md</title>
+  <meta name="description" content="Side-by-side guide to .cursor/rules/*.mdc frontmatter, .github/copilot-instructions.md, and GEMINI.md for coding assistant instructions." />
+
+  <meta property="og:title" content="Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md." />
+  <meta property="og:description" content="Side-by-side guide to .cursor/rules/*.mdc frontmatter, .github/copilot-instructions.md, and GEMINI.md for coding assistant instructions." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-05" />
+  <meta property="article:modified_time" content="2026-11-05" />
+  <meta property="og:url" content="https://agent-tune.com/guides/cursor-rules-copilot-gemini-md" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md." />
+  <meta name="twitter:description" content="Side-by-side guide to .cursor/rules/*.mdc frontmatter, .github/copilot-instructions.md, and GEMINI.md for coding assistant instructions." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/cursor-rules-copilot-gemini-md" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md","description":"Side-by-side guide to .cursor/rules/*.mdc frontmatter, .github/copilot-instructions.md, and GEMINI.md for coding assistant instructions.","url":"https://agent-tune.com/guides/cursor-rules-copilot-gemini-md","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Did .cursor/rules/*.mdc replace .cursorrules in Cursor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cursor uses .cursor/rules/*.mdc files with YAML frontmatter (description, globs, and alwaysApply: true/false) so projects can separate always-on rules from file-pattern rules."}},{"@type":"Question","name":"Where do I put personal communication rules so I don't commit them to a team repo?","acceptedAnswer":{"@type":"Answer","text":"Use ~/.codex/AGENTS.md in OpenAI Codex, ~/.claude/CLAUDE.md or ~/.claude/output-styles/ in Claude Code, ~/.gemini/GEMINI.md in Gemini CLI, or user-level Rules for AI in Cursor Settings."}},{"@type":"Question","name":"Can I use the same AgentTune tuning across Cursor, Copilot, Claude Code, and Codex?","acceptedAnswer":{"@type":"Answer","text":"Yes. The core bullet points are portable across all coding assistants; only the file path and YAML frontmatter (such as alwaysApply: true for Cursor or keep-coding-instructions: true for Claude Code) differ."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Coding Assistants</span>
+        <h1 class="h-hero h-research-hero">Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-05">November 5, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Put always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in the YAML frontmatter. For GitHub Copilot, append your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md (personal) or repo GEMINI.md. For Claude Code, use ~/.claude/output-styles/agenttune.md or CLAUDE.md. For OpenAI Codex, use ~/.codex/AGENTS.md.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="cursor"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=cursor">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Side-by-side comparison of coding agent instruction files.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Side-by-side comparison of coding agent instruction files.: table 1" tabindex="0"><table><thead><tr><th scope="col">Tool</th><th scope="col">Personal (user-wide) path</th><th scope="col">Project (repo-committed) path</th><th scope="col">Required header / frontmatter</th></tr></thead><tbody><tr><th scope="row">Cursor</th><td>Cursor Settings → Rules for AI</td><td><code>.cursor/rules/*.mdc</code></td><td>YAML frontmatter with <code>description</code> and <code>alwaysApply: true</code></td></tr><tr><th scope="row">GitHub Copilot</th><td>VS Code user settings / personal instructions</td><td><code>.github/copilot-instructions.md</code> (plus <code>.github/instructions/*.instructions.md</code>)</td><td>Plain Markdown (<code>applyTo</code> frontmatter optional in scoped files)</td></tr><tr><th scope="row">Gemini CLI &amp; Code Assist</th><td><code>~/.gemini/GEMINI.md</code></td><td><code>GEMINI.md</code> at repo root or subdirectories</td><td>Plain Markdown</td></tr><tr><th scope="row">Claude Code</th><td><code>~/.claude/CLAUDE.md</code> or <code>~/.claude/output-styles/*.md</code></td><td><code>CLAUDE.md</code> at repo root</td><td><code>keep-coding-instructions: true</code> in output-style files</td></tr><tr><th scope="row">OpenAI Codex</th><td><code>~/.codex/AGENTS.md</code></td><td><code>AGENTS.md</code> / <code>AGENTS.override.md</code> (32 KiB total cap)</td><td>Plain Markdown</td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>1. Cursor: .cursor/rules/agenttune.mdc with alwaysApply.</h2>
+        <p>Cursor replaced the older single <code>.cursorrules</code> file with modular <code>.mdc</code> files inside <code>.cursor/rules/</code>. Each rule file starts with a three-line YAML frontmatter block telling Cursor when to attach the file. For communication rules that should apply in every composer and chat session, set <code>alwaysApply: true</code>:</p><div class="guide-snippet" data-tuning-prompt>---
+description: Communication preferences from AgentTune
+alwaysApply: true
+---
+
+## How to communicate with me
+
+- Show the code or minimal diff first, followed by a brief note on non-obvious choices.
+- Use plain prose for explanations; skip conversational intros and closing summaries.
+- Flag breaking changes, edge cases, or missing tests in one sentence before applying edits.
+- Ask for clarification only when an ambiguity changes the public interface or data model.</div><p>remember that files inside <code>.cursor/rules/</code> are often tracked in git. If you work on a shared repository and want your personal communication rules to stay private to your machine, add <code>.cursor/rules/personal-*.mdc</code> to <code>.git/info/exclude</code> or place personal tone preferences in Cursor's user-level <strong>Rules for AI</strong> setting.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>2. GitHub Copilot: .github/copilot-instructions.md.</h2>
+        <p>GitHub Copilot in VS Code, Visual Studio, JetBrains, and on GitHub.com automatically reads <code>.github/copilot-instructions.md</code> at the root of your repository. Because that file is shared by every contributor on the repository, keep the communication section focused on team-friendly clarity rules alongside your build and test commands:</p><div class="guide-snippet">## Communication &amp; review style
+
+- Lead with the proposed fix or root cause before explaining background context.
+- Prefer small, targeted diffs over unrelated refactors.
+- State assumptions explicitly when test coverage or types are incomplete.
+- Skip filler openings and generic sign-offs in chat and pull request summaries.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>3. Gemini CLI and Code Assist: GEMINI.md.</h2>
+        <p>Gemini CLI and Gemini Code Assist read <code>~/.gemini/GEMINI.md</code> for your personal defaults and <code>GEMINI.md</code> in the repository root for project context. Putting your personal AgentTune profile in <code>~/.gemini/GEMINI.md</code> keeps your voice consistent across every project without touching git history. See our full <a href="/guides/gemini-personality">Google Gemini personality guide</a> for details on combining <code>GEMINI.md</code> with Gems and Saved info.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Exporting any of the 43 AgentTune profiles in one click.</h2>
+        <p>On every profile page in the <a href="/library/">AgentTune library</a>, choose <strong>Coding assistant</strong> in the first dropdown of the prompt picker, then pick <strong>Cursor · project rule</strong>, <strong>GitHub Copilot · repository instructions</strong>, <strong>Gemini CLI · GEMINI.md</strong>, <strong>Claude Code · output style</strong>, or <strong>Codex · personal instructions</strong>. The picker automatically wraps your selected tuning in the exact frontmatter and comments required by that tool.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Did .cursor/rules/*.mdc replace .cursorrules in Cursor?</summary>
+            <p>Yes. Cursor uses .cursor/rules/*.mdc files with YAML frontmatter (description, globs, and alwaysApply: true/false) so projects can separate always-on rules from file-pattern rules.</p>
+          </details>
+          <details>
+            <summary>Where do I put personal communication rules so I don't commit them to a team repo?</summary>
+            <p>Use ~/.codex/AGENTS.md in OpenAI Codex, ~/.claude/CLAUDE.md or ~/.claude/output-styles/ in Claude Code, ~/.gemini/GEMINI.md in Gemini CLI, or user-level Rules for AI in Cursor Settings.</p>
+          </details>
+          <details>
+            <summary>Can I use the same AgentTune tuning across Cursor, Copilot, Claude Code, and Codex?</summary>
+            <p>Yes. The core bullet points are portable across all coding assistants; only the file path and YAML frontmatter (such as alwaysApply: true for Cursor or keep-coding-instructions: true for Claude Code) differ.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-05">November 5, 2026</time> First published comparing .cursor/rules/*.mdc, .github/copilot-instructions.md, GEMINI.md, CLAUDE.md, and AGENTS.md.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot" target="_blank" rel="noopener">GitHub Docs: Adding repository custom instructions for GitHub Copilot</a></li>
+          <li><a href="https://code.claude.com/docs/en/output-styles" target="_blank" rel="noopener">Claude Code Docs: Output styles</a></li>
+          <li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">ChatGPT &amp; Codex Docs: AGENTS.md</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>The layer your AGENTS.md is missing (coding agent personality)</a>
+          <a href="/guides/codex-agents-md-guide"><span class="guide-related-kicker">Guide</span>OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides</a>
+          <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Guide</span>Claude Code personality: CLAUDE.md and /output-style</a>
+          <a href="/guides/gemini-personality"><span class="guide-related-kicker">Guide</span>How to change Gemini's personality: Gems, Saved Info, and CLI</a>
+          <a href="/library/"><span class="guide-related-kicker">Library</span>Browse all 43 personality tuning files</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

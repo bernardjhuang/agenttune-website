@@ -5,15 +5,11 @@ Research · Q&A
 
 # What personality type is Muse?
 
-One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.
-
 By Bernard Huang · Updated September 25, 2026
 
-The supplied Muse Spark 1.3 report lists ISTJ in 80 of 100 MBTI administrations. These are reported labels from sequential runs in one session per test, without raw answers. They do not establish Muse’s default personality or a change relative to other AI systems.
+Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
 
 ## Muse Spark 1.3, as reported.
 

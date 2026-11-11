@@ -33,8 +33,7 @@ function defaultGap(c, research) {
   if (!notes[c.system]) return null;
   return {
     lede: notes[c.system],
-    html: '<p class="lib-ctx-lead">Treat this ' + esc(c.code) + ' template as a starting hypothesis for your preferences. Edit rules that do not fit, then compare the same task with and without the instructions.</p>' +
-      '<p class="lib-ctx-source">These exploratory self-reports do not validate AI personality labels or demonstrate that personality matching improves task outcomes. <a href="/research#methodology">Read the methodology and limitations</a>.</p>'
+    html: '<p class="lib-ctx-source">Treat this ' + esc(c.code) + ' template as a starting hypothesis rather than a validated baseline—compare the same real task with and without it (<a href="/research#methodology">methodology &amp; limits</a>).</p>'
   };
 }
 
@@ -99,7 +98,7 @@ const FRAMEWORK_GUIDE = {
   mbti: { href: "/guides/chatgpt-custom-instructions-by-personality-type", label: "ChatGPT custom instructions for all 16 MBTI types" },
   enneagram: { href: "/guides/enneagram-ai-prompts", label: "Enneagram AI prompts for all nine types" },
   ocean: { href: "/guides/mbti-vs-big-five-for-ai", label: "MBTI vs Big Five: which works better for AI" },
-  disc: { href: "/guides/how-to-give-your-ai-a-personality", label: "How to give your AI a personality" },
+  disc: { href: "/guides/disc-ai-prompts", label: "DISC AI prompts for all four workplace styles" },
   attachment: { href: "/guides/how-to-give-your-ai-a-personality", label: "How to give your AI a personality" }
 };
 

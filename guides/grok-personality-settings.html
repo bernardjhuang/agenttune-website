@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Change Grok's Personality on X &amp; grok.com (2026)</title>
+  <meta name="description" content="How to customize Grok 4.6 in everyday chats on X and grok.com, how account instructions differ from a custom Grok Bot, and copy-paste tone prompts." />
+
+  <meta property="og:title" content="How to change Grok's personality on X and grok.com." />
+  <meta property="og:description" content="How to customize Grok 4.6 in everyday chats on X and grok.com, how account instructions differ from a custom Grok Bot, and copy-paste tone prompts." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-05" />
+  <meta property="article:modified_time" content="2026-11-05" />
+  <meta property="og:url" content="https://agent-tune.com/guides/grok-personality-settings" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to change Grok's personality on X and grok.com." />
+  <meta name="twitter:description" content="How to customize Grok 4.6 in everyday chats on X and grok.com, how account instructions differ from a custom Grok Bot, and copy-paste tone prompts." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/grok-personality-settings" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Grok's personality on X and grok.com","description":"How to customize Grok 4.6 in everyday chats on X and grok.com, how account instructions differ from a custom Grok Bot, and copy-paste tone prompts.","url":"https://agent-tune.com/guides/grok-personality-settings","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to change Grok's personality on X and grok.com"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I change Grok's personality without creating a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread."}},{"@type":"Question","name":"What is the difference between Grok chat settings and a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job."}},{"@type":"Question","name":"How do I make Grok stop using slang or sarcasm?","acceptedAnswer":{"@type":"Answer","text":"Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'"}},{"@type":"Question","name":"Why did Grok 4.6 score Avoidant on the AgentTune attachment test?","acceptedAnswer":{"@type":"Answer","text":"In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">How to change Grok's personality on X and grok.com</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · xAI Grok</span>
+        <h1 class="h-hero h-research-hero">How to change Grok's personality on X and grok.com.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-05">November 5, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">To change how Grok responds in ordinary chat on grok.com or X, paste a compact communication block at the start of your thread or in your custom response preferences under Settings. If you want a named specialist persona you can reopen anytime, create a Grok Bot and paste your tuning into its Description field alongside its task.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="grok-4-7" data-guide-target="grok"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=grok-4-7&amp;target=grok">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Three ways to control Grok's voice.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Three ways to control Grok's voice.: table 1" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Where the rules go</th><th scope="col">Best when you want...</th></tr></thead><tbody><tr><th scope="row">Ordinary chat on <code>grok.com</code> or X</th><td>Account response instructions in Settings, or pasted at the top of a new conversation.</td><td>Direct, low-filler answers in everyday search and analysis threads.</td></tr><tr><th scope="row">Custom Grok Bot</th><td>The Bot's <strong>Description</strong> field (see the <a href="/guides/grokbot-personality">Grok Bot guide</a>).</td><td>A dedicated specialist role (for example, a code auditor or devil's advocate) with its own chat history.</td></tr><tr><th scope="row">xAI API</th><td>The <code>system</code> message sent with each request.</td><td>Programmatic pipelines where model version and sampling temperature are pinned.</td></tr></tbody></table></div><p>Paste this block into Grok or select any of the 43 profiles in the <a href="/library/">tuning library</a>:</p><div class="guide-snippet" data-tuning-prompt>## Communication preferences
+
+- Lead with the direct conclusion or answer in the first sentence.
+- Separate verified facts and primary sources from inference or speculation.
+- Keep tone dry, clear, and matter-of-fact; skip forced banter, slang, and throat-clearing intros.
+- Use plain prose by default. Add tables only when comparing three or more options.
+- Challenge weak assumptions in my question directly and explain why.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Why Grok's default self-report looks different from Claude and ChatGPT.</h2>
+        <p>In the September 2026 supplied self-report for Grok 4.6 (<a href="/research/what-personality-type-is-grok">What personality type is Grok?</a>), its canonical answer vectors scored <strong>INTJ on the OEJTS</strong> (with wide margins of +13 to +15 out of 16), <strong>Investigator (Type 5) on the Enneagram</strong> (19 of 20, followed by Type 8 Challenger at 17), and a <strong>pure Conscientiousness (C) profile on DISC</strong> (C 18 vs Steadiness 11).</p><p>Unlike the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, which all scored 44.5 to 45.1 on Agreeableness and Secure on Attachment), Grok 4.6 reported <strong>Agreeableness at 33 of 50</strong>, <strong>Extraversion at 24 of 50</strong>, and <strong>Attachment avoidance at 4.06</strong> (just 0.06 above the 4.0 Avoidant cutoff; see our <a href="/research/grok-attachment-cutoff-simulation">Grok attachment cutoff sensitivity analysis</a>). Because the Grok 4.6 report consisted of one canonical self-report plus 100 simulated draws rather than 100 independent sessions, we keep it strictly separated from the fresh-session cohorts.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Dialing down edgy banter or dialing up warmth.</h2>
+        <p>In practice, users tune Grok in one of two opposite directions:</p><ul><li><strong>Cutting performative snark:</strong> If Grok's default replies feel overly sarcastic or informal for technical work, add a single rule: <em>"Write in plain, neutral technical prose. Do not use jokes, sarcasm, or slang."</em> Pairing that with an <a href="/library/mbti/istj">ISTJ</a> or <a href="/library/disc/c-conscientiousness">DISC Conscientiousness</a> tuning keeps answers focused on evidence and citations.</li><li><strong>Adding structured warmth for brainstorming or coaching:</strong> If Grok feels too blunt or detached, use an <a href="/library/mbti/enfj">ENFJ</a>, <a href="/library/disc/s-steadiness">DISC Steadiness</a>, or <a href="/library/attachment/secure">Secure attachment</a> tuning so it checks context before jumping to critique.</li></ul><p>If you decide to package your rules into a reusable custom bot, follow our step-by-step <a href="/guides/grokbot-personality">Grok Bot personality guide</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>How do I change Grok's personality without creating a Grok Bot?</summary>
+            <p>Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread.</p>
+          </details>
+          <details>
+            <summary>What is the difference between Grok chat settings and a Grok Bot?</summary>
+            <p>Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job.</p>
+          </details>
+          <details>
+            <summary>How do I make Grok stop using slang or sarcasm?</summary>
+            <p>Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'</p>
+          </details>
+          <details>
+            <summary>Why did Grok 4.6 score Avoidant on the AgentTune attachment test?</summary>
+            <p>In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-05">November 5, 2026</time> First published covering ordinary Grok chat settings on X and grok.com vs custom Grok Bots.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/guides/grokbot-personality" target="_blank" rel="noopener">AgentTune: How to give a Grok Bot a personality</a></li>
+          <li><a href="https://agent-tune.com/research/what-personality-type-is-grok" target="_blank" rel="noopener">AgentTune Research: What personality type is Grok?</a></li>
+          <li><a href="https://agent-tune.com/research/grok-attachment-cutoff-simulation" target="_blank" rel="noopener">AgentTune Research: Grok 4.6 and the attachment cutoff</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/grokbot-personality"><span class="guide-related-kicker">Guide</span>How to give a Grok Bot a personality</a>
+          <a href="/research/what-personality-type-is-grok"><span class="guide-related-kicker">Research</span>What personality type is Grok? (Grok 4.6 &amp; 4.3 data)</a>
+          <a href="/research/grok-attachment-cutoff-simulation"><span class="guide-related-kicker">Research</span>Grok 4.6 and the attachment cutoff: a sensitivity analysis</a>
+          <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to make AI push back and stop agreeing with you</a>
+          <a href="/library/"><span class="guide-related-kicker">Library</span>Browse all 43 personality tuning files</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

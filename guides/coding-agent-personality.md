@@ -5,7 +5,7 @@ Guide · Coding agents
 
 # Coding agent personality: the layer your AGENTS.md is missing.
 
-By Bernard Huang · Updated November 3, 2026
+By Bernard Huang · Updated November 11, 2026
 
 Coding agents read instruction files; CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.
 
@@ -150,7 +150,9 @@ Take the free in-browser MBTI test at agent-tune.com; about five minutes, no ema
 
 ## What changed.
 
-- September 24, 2026 Communication prompts now adapt to Muse, Astra 6, Fable 5.1, Sol 6, Opus 5.5, and Grok 4.7, with a compact model selector and expandable previews.
+- November 11, 2026 Added cross-agent MCP preference portability notes and updated current model names.
+
+- September 24, 2026 Communication prompts now adapt to Meta Muse, GPT-6 Astra, Claude Fable 5.1, GPT-6 Sol, Claude Opus 5.5, and Grok 4.6, with a compact model selector and expandable previews.
 
 ## Keep going.
 

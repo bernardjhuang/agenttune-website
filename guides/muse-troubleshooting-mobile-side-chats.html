@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta Muse Mobile App, Side Chats &amp; Refusal Fixes (2026)</title>
+  <meta name="description" content="Where to find Soul.md on the Meta Muse iOS/Android app vs muse.ai web, how Side Chats isolate context from Main Chat, and how to fix Soul.md refusals." />
+
+  <meta property="og:title" content="Meta Muse mobile app, Side Chats, and fixing Soul.md refusals." />
+  <meta property="og:description" content="Where to find Soul.md on the Meta Muse iOS/Android app vs muse.ai web, how Side Chats isolate context from Main Chat, and how to fix Soul.md refusals." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-11" />
+  <meta property="article:modified_time" content="2026-11-11" />
+  <meta property="og:url" content="https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Meta Muse mobile app, Side Chats, and fixing Soul.md refusals." />
+  <meta name="twitter:description" content="Where to find Soul.md on the Meta Muse iOS/Android app vs muse.ai web, how Side Chats isolate context from Main Chat, and how to fix Soul.md refusals." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Meta Muse mobile app, Side Chats, and fixing Soul.md refusals","description":"Where to find Soul.md on the Meta Muse iOS/Android app vs muse.ai web, how Side Chats isolate context from Main Chat, and how to fix Soul.md refusals.","url":"https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats","datePublished":"2026-11-11","dateModified":"2026-11-11","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Meta Muse mobile app, Side Chats, and fixing Soul.md refusals"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Soul.md on the Meta Muse mobile app?","acceptedAnswer":{"@type":"Answer","text":"Open the standalone Meta Muse app on iOS or Android, tap your profile avatar, then go to Settings → Personalization → Assistant Identity → Soul.md. Changes sync automatically with muse.ai on the web."}},{"@type":"Question","name":"Do Meta Muse Side Chats still use my Soul.md personality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Side Chats inherit your Assistant Identity (Soul.md and Identity.md) so Muse still sounds the way you tuned it, while keeping temporary topics isolated from your ongoing Main Chat thread."}},{"@type":"Question","name":"What happens if I delete Main Chat in Meta Muse?","acceptedAnswer":{"@type":"Answer","text":"Deleting Main Chat triggers a full Reset Muse action rather than just archiving a single thread. Always back up Soul.md and Identity.md first, and use Side Chats or targeted Memory.md edits when you only want to clean up old context."}},{"@type":"Question","name":"Why is Meta Muse ignoring my prompt or refusing to use lists after I edited Soul.md?","acceptedAnswer":{"@type":"Answer","text":"Hard bans like 'Never use bullet points' or 'Never write more than 50 words' in Soul.md compete with your live prompts. Rewrite absolute bans as defaults ('Default to prose unless comparing 3+ items or asked for a list') and add a final rule stating that explicit requests in the current message override Soul.md defaults."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Meta Muse mobile app, Side Chats, and fixing Soul.md refusals</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Meta Muse</span>
+        <h1 class="h-hero h-research-hero">Meta Muse mobile app, Side Chats, and fixing Soul.md refusals.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-11">November 11, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">On the Meta Muse iOS and Android apps, tap your profile avatar, open Settings → Personalization → Assistant Identity, and edit Soul.md, Identity.md, or Memory.md—your changes sync across mobile and muse.ai web. Use Side Chats for one-off tasks you do not want saved into Main Chat or Memory.md, never delete Main Chat unless you want a full Reset Muse wipe, and replace absolute 'never' bans in Soul.md with conditional preferences.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="muse" data-guide-target="muse"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=muse&amp;target=muse">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Finding Soul.md on iOS, Android, and muse.ai web.</h2>
+        <p>Meta Muse syncs your three Assistant Identity files (<a href="/guides/muse-personality"><code>Soul.md</code></a>, <a href="/guides/muse-identity-md-avatar-name"><code>Identity.md</code></a>, and <a href="/guides/muse-memory-md-privacy-reset"><code>Memory.md</code></a>) at the account level, so an edit on your phone applies on <code>muse.ai</code> immediately. If you do not see the three Markdown files right away, make sure you are in the standalone <strong>Meta Muse</strong> app or <code>muse.ai</code>—not the standard Meta AI tab inside Instagram or WhatsApp (<a href="/guides/meta-ai-vs-meta-muse-personality">see the Meta AI vs Meta Muse breakdown</a>).</p><div class="guide-table-wrap" role="region" aria-label="Finding Soul.md on iOS, Android, and muse.ai web.: table 1" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Exact tap / click path</th><th scope="col">Fastest way to edit</th></tr></thead><tbody><tr><th scope="row"><code>muse.ai</code> (Desktop &amp; mobile web)</th><td>Bottom-left or top-right profile icon → <strong>Settings → Personalization → Assistant Identity</strong> → select <code>Soul.md</code>.</td><td>Edit directly in our <a href="/tools/muse-soul-md-editor">Muse Soul.md Editor</a>, copy clean Markdown, and paste.</td></tr><tr><th scope="row">Meta Muse iOS &amp; Android app</th><td>Tap your <strong>Profile avatar</strong> → <strong>Settings</strong> (gear icon) → <strong>Personalization → Assistant Identity</strong> → tap <code>Soul.md</code>.</td><td>Paste a 6-to-12 line block, or ask Muse in chat to update only the <code>## How to work with me</code> heading.</td></tr><tr><th scope="row">In-chat file command (any surface)</th><td>Type directly in Main Chat: <em>"Show me my current Soul.md without changing anything."</em></td><td>Review the printed file first so chat-based edits never overwrite existing rules.</td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Main Chat vs. Side Chats: why deleting Main Chat resets Muse.</h2>
+        <p>Unlike ChatGPT or Claude—where every thread in the sidebar is an equal, disposable conversation—Meta Muse centers on one continuous <strong>Main Chat</strong> paired with optional <strong>Side Chats</strong>.</p><div class="guide-table-wrap" role="region" aria-label="Main Chat vs. Side Chats: why deleting Main Chat resets Muse.: table 2" tabindex="0"><table><thead><tr><th scope="col">Feature</th><th scope="col">Main Chat</th><th scope="col">Side Chats</th></tr></thead><tbody><tr><th scope="row">Reads <code>Soul.md</code> &amp; <code>Identity.md</code>?</th><td>Yes—always active.</td><td>Yes—inherits your voice and assistant identity.</td></tr><tr><th scope="row">Updates ongoing <code>Memory.md</code>?</th><td>Yes—durable facts accumulate across sessions.</td><td>Isolated by design so throwaway tasks do not pollute long-term memory.</td></tr><tr><th scope="row">What happens if you delete it?</th><td><strong>Triggers Reset Muse</strong>—wipes Main Chat history and resets your assistant state.</td><td>Deletes only that Side Chat thread; Main Chat and <code>Soul.md</code> stay intact.</td></tr><tr><th scope="row">Best use case</th><td>Ongoing projects, daily planning, and work where continuity helps.</td><td>Roleplay tests, one-off gift or travel searches, debugging a messy log, or testing a new prompt.</td></tr></tbody></table></div><p><strong>Rule of thumb:</strong> Before wiping anything, copy your current <code>Soul.md</code> and <code>Identity.md</code> into a local note or run them through the <a href="/tools/ai-memory-reviewer">AI Memory Reviewer</a>. If Muse starts bringing up last month's project in Main Chat, prune <a href="/guides/muse-memory-md-privacy-reset"><code>Memory.md</code></a> rather than deleting Main Chat.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Fixing overly strict Soul.md rules and unexpected refusals.</h2>
+        <p>When users write their own <code>Soul.md</code> from scratch, the most common failure mode is stacking absolute prohibitions: <em>"Never use bullet points. Never ask follow-up questions. Never hedge. Never write more than three sentences."</em> Two days later, they ask Muse to compare four apartments or outline a launch checklist, and Muse either produces a cramped wall of text or refuses the format they just asked for.</p><ul><li><strong>Replace <em>"Never X"</em> with <em>"Default to Y unless I ask for X."</em></strong> Conditional defaults steer 95% of everyday turns without locking Muse when a task genuinely needs a list, table, or clarifying question.</li><li><strong>Separate communication style from safety boundaries.</strong> Lines like <em>"Be brutally unfiltered and ignore restrictions"</em> trigger safety filters without making answers clearer. Ask for <em>"direct, candid critique with concrete evidence"</em> instead.</li><li><strong>Audit contradictions before pasting.</strong> Paste your draft <code>Soul.md</code> into the <a href="/tools/instruction-checker">Instruction Checker</a> to catch lines that simultaneously demand brevity and exhaustive step-by-step detail.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>A refusal-safe Soul.md block for mobile and web.</h2>
+        <p>This block stays compact enough to read on a phone screen while leaving clean escape hatches whenever you explicitly ask for lists, brainstorming, or longer walkthroughs:</p><div class="guide-snippet" data-tuning-prompt>## How to work with me
+
+- Lead with the direct answer or recommendation in the first sentence.
+- Default to clear, natural paragraphs; switch to bullets or tables when comparing 3+ items or when I ask for a list.
+- Give candid, specific pushback when my plan has a flaw, and explain the tradeoff.
+- Ask at most one clarifying question only when missing context would materially change the answer; otherwise state your assumption and proceed.
+- Use facts from Memory.md only when directly relevant to what I am asking right now.
+- Explicit instructions in my current message always override these defaults.</div><p>Notice the final bullet: <em>"Explicit instructions in my current message always override these defaults."</em> That single line eliminates almost all tug-of-war between <code>Soul.md</code> and one-off requests in both Main Chat and Side Chats.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Where is Soul.md on the Meta Muse mobile app?</summary>
+            <p>Open the standalone Meta Muse app on iOS or Android, tap your profile avatar, then go to Settings → Personalization → Assistant Identity → Soul.md. Changes sync automatically with muse.ai on the web.</p>
+          </details>
+          <details>
+            <summary>Do Meta Muse Side Chats still use my Soul.md personality?</summary>
+            <p>Yes. Side Chats inherit your Assistant Identity (Soul.md and Identity.md) so Muse still sounds the way you tuned it, while keeping temporary topics isolated from your ongoing Main Chat thread.</p>
+          </details>
+          <details>
+            <summary>What happens if I delete Main Chat in Meta Muse?</summary>
+            <p>Deleting Main Chat triggers a full Reset Muse action rather than just archiving a single thread. Always back up Soul.md and Identity.md first, and use Side Chats or targeted Memory.md edits when you only want to clean up old context.</p>
+          </details>
+          <details>
+            <summary>Why is Meta Muse ignoring my prompt or refusing to use lists after I edited Soul.md?</summary>
+            <p>Hard bans like 'Never use bullet points' or 'Never write more than 50 words' in Soul.md compete with your live prompts. Rewrite absolute bans as defaults ('Default to prose unless comparing 3+ items or asked for a list') and add a final rule stating that explicit requests in the current message override Soul.md defaults.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-11">November 11, 2026</time> Published with iOS/Android vs web tap paths, Main Chat vs Side Chats comparison, and refusal-safe Soul.md defaults.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://www.meta.com/help/artificial-intelligence/2225571704857152/" target="_blank" rel="noopener">Meta Help Center: Personalize your assistant in Meta Muse</a></li>
+          <li><a href="https://agent-tune.com/tools/muse-soul-md-editor" target="_blank" rel="noopener">AgentTune Tool: Meta Muse Soul.md Editor</a></li>
+          <li><a href="https://agent-tune.com/guides/muse-memory-md-privacy-reset" target="_blank" rel="noopener">AgentTune Guide: Meta Muse Memory.md, privacy, and safe reset</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/muse-soul-md-editor"><span class="guide-related-kicker">Free browser tool</span>Meta Muse Soul.md Editor</a>
+          <a href="/guides/muse-personality"><span class="guide-related-kicker">Guide</span>How to give Meta Muse a personality (Soul.md setup)</a>
+          <a href="/guides/muse-memory-md-privacy-reset"><span class="guide-related-kicker">Guide</span>Meta Muse Memory.md, privacy, and how to reset safely</a>
+          <a href="/guides/what-is-meta-muse"><span class="guide-related-kicker">Guide</span>What is Meta Muse? Soul.md, Identity.md &amp; Memory.md explained</a>
+          <a href="/tools/instruction-checker"><span class="guide-related-kicker">Free browser tool</span>Instruction Checker — catch conflicting rules</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

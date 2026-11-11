@@ -3,37 +3,40 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Meta Muse
 
-# Meta Muse, explained.
+# What is Meta Muse? Files, plans, and how it works.
 
 By Bernard Huang · Updated September 25, 2026
 
-Meta Muse is a personal AI agent available through muse.ai and its mobile app, with availability depending on location and account. It uses connected services and editable files including Soul.md, Identity.md and Memory.md. Meta lists a free usage-limited tier, Power at $20/month and Maximum at $100/month. Approval requirements depend on the action, connector and permissions you select.
+Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled reminders, side chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Meta lists a Free tier ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).
 
-## What Muse is.
+## What Muse is—and how it differs from Meta AI.
 
-Muse can use connected services, track goals, deliver scheduled reminders and create artifacts. Meta describes approval checks for certain important actions, including sending email and making purchases. Those requirements can vary with the connector and permissions you choose; an instruction file is not a replacement for reviewing those settings. [Meta’s privacy and permissions documentation](https://www.meta.com/help/artificial-intelligence/1047255454427887/) explains the distinction.
+Searchers frequently confuse Meta Muse with Meta AI. They are separate products with different interfaces, memory models, and customization controls:
 
-The supplied September personality report identifies its tested configuration as Muse Spark 1.3. We have not independently verified that every Muse account uses that exact model version.
+| Feature | Meta Muse (muse.ai &amp; Muse app) | Meta AI (WhatsApp, Instagram, web) |
+| --- | --- | --- |
+| Primary role | Persistent personal agent with cloud workspace, connectors, and scheduled tasks | General conversational assistant inside social apps and meta.ai |
+| Customization files | Editable Soul.md, Identity.md, and Memory.md | Chat prompts and basic memory toggles; no Soul.md file system |
+| Thread model | One persistent Main Chat plus disposable Side Chats | Standard multi-thread chat history |
+| Sensitive actions | Connector permissions + approval prompts for actions like email or purchases ([Meta privacy docs](https://www.meta.com/help/artificial-intelligence/1047255454427887/)) | No cloud-VM file system or Muse connector approvals |
+
+For a step-by-step comparison of customization controls across both products, see [Meta AI vs. Meta Muse: how to change personality and tone](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality).
 
 ## Where it runs.
 
-Meta says each user’s Muse runs in an isolated cloud virtual machine, with backups. The documentation describes a future Confidential VM option; it does not establish that this option is available to every account today.
+According to Meta’s documentation, each user’s Muse runs in an isolated cloud virtual machine with automated backups, a separate credential store, and external permission checks outside the model. Meta also describes an upcoming Confidential VM architecture; check your account’s security settings and [Meta’s permissions documentation](https://www.meta.com/help/artificial-intelligence/1047255454427887/) before granting connector access.
 
-Meta also describes a separate credential store and security checks outside the model. These are vendor-described protections, not a security audit by AgentTune. See [Meta’s explanation of storage, credentials and permissions](https://www.meta.com/help/artificial-intelligence/1047255454427887/).
+## The three files: Soul.md, Identity.md, and Memory.md.
 
-## Muse is not Meta AI.
+On both web (muse.ai) and the iOS/Android app, tap the Assistant icon (or Profile → Personalization) → Identity to view and edit all three files directly:
 
-Muse has its own product interface and agent settings. This guide covers Muse’s documented files and controls; do not assume they apply to Meta AI inside other apps.
-
-## The three files.
-
-| File | What Meta says it holds | Where to open it | What to put in it |
+| File | What it controls | Menu path | Dedicated guide &amp; tool |
 | --- | --- | --- | --- |
-| Soul.md | Who your Muse is: core truths, boundaries and personality | Assistant icon, then Identity, then Soul | Communication rules: how it should talk to you, report to you, disagree with you |
-| Identity.md | Its name, creature, vibe and tagline | Assistant icon, then Identity, then Edit | The character's name and look |
-| Memory.md | Facts about you that it has saved | Assistant icon, then Identity, then Memory | Facts: your name, time zone, interests, preferences |
+| Soul.md | Core truths, boundaries, tone, brevity, and pushback rules | Assistant icon → Identity → Soul | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor) |
+| Identity.md | Display name, visual avatar, spoken voice, and tagline | Assistant icon → Identity → Edit | [Avatar & Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name) |
+| Memory.md | Saved facts about you, projects, and recurring preferences | Assistant icon → Identity → Memory | [Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset) |
 
-You can edit and delete all three directly, or ask Muse in chat to change its name, personality and tone, communication style, memories, avatar and tagline; Meta says customizations carry over between conversations. To undo, say "Go back to your default personality" and Muse confirms what it reset. [The Soul.md guide](https://agent-tune.com/guides/muse-personality) covers what to paste; [Muse characters, explained](https://agent-tune.com/guides/meta-muse-characters) covers which file does what.
+Keep formatting and tone rules inside Soul.md rather than Identity.md so changing your Muse’s avatar or name never overwrites how it writes to you. Need mobile menu help or Side Chat rules? Read [Meta Muse mobile menus & Side Chats vs. Main Chat](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats).
 
 ## Memory: what it collects and how to control it.
 

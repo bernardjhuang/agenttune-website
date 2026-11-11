@@ -102,6 +102,16 @@
     },
     {
       "kicker": "Guide",
+      "label": "Open-source MBTI test (OEJTS 1.2): 32 questions and scorer",
+      "href": "/guides/open-source-mbti-test-oejts"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Open-source DISC assessment (ODAT): 16 questions and scorer",
+      "href": "/guides/open-source-disc-test-odat"
+    },
+    {
+      "kicker": "Guide",
       "label": "MBTI vs Big Five for AI",
       "href": "/guides/mbti-vs-big-five-for-ai"
     },

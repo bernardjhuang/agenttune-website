@@ -5,15 +5,11 @@ Research · rankings
 
 # AI personality scores, with the evidence beside them.
 
-Compare questionnaire records without treating them as a behavioral leaderboard.
-
 By Bernard Huang · Updated September 25, 2026
 
-People search for the most agreeable, direct or calm AI. These questionnaires do not establish those behavioral rankings. The tables below organize scores within each source group and retain the collection method. Even within the fresh-session group, prompts and session structures differ.
+Opus 5.5 has the highest mean Agreeableness score among the four September raw cohorts (47.1 of 50), and Sol has the highest mean Openness (46.9). Those are questionnaire scores under specific prompts. They do not rank helpfulness, directness, calmness or suitability for a task. Reported and historical scores are shown separately.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Opus 5.5 has the highest mean Agreeableness score among the four September raw cohorts (47.1 of 50), and Sol has the highest mean Openness (46.9). Those are questionnaire scores under specific prompts. They do not rank helpfulness, directness, calmness or suitability for a task. Reported and historical scores are shown separately.
 
 ## How to read these tables.
 

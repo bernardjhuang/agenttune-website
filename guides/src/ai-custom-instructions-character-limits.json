@@ -1,0 +1,97 @@
+{
+  "slug": "ai-custom-instructions-character-limits",
+  "published": "2026-11-05",
+  "updated": "2026-11-05",
+  "title": "AI Custom Instructions Character Limits (2026 Cheat Sheet)",
+  "description": "Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok.",
+  "pill": "Reference · Limits & Quotas",
+  "h1": "AI custom instructions character limits (2026 cheat sheet).",
+  "dek": "Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Claude, Claude Code, Meta Muse, Gemini, Cursor, and Grok.",
+  "lede": "Nothing breaks a personality tuning faster than silent truncation. ChatGPT's account custom instructions cap each longer field at <strong>1,500 characters</strong>, while OpenAI Codex caps the entire merged <code>AGENTS.md</code> chain at <strong>32 KiB (32,768 bytes)</strong> via <code>project_doc_max_bytes</code>. Here is the complete reference table of documented limits and how to fit your communication rules inside each one.",
+  "answer": "ChatGPT's longer Custom Instructions fields are documented at 1,500 characters each. OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes, set by project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code output styles, Meta Muse Soul.md, and Gemini Gems accept full multi-paragraph Markdown blocks without a 1,500-character cliff, though keeping rules under 1,200 characters improves instruction adherence.",
+  "sections": [
+    {
+      "h2": "2026 custom instructions limit & path reference table.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Platform &amp; surface</th><th scope=\"col\">Exact menu path or file location</th><th scope=\"col\">Documented cap</th><th scope=\"col\">Recommended tuning size</th></tr></thead><tbody><tr><th scope=\"row\">ChatGPT Custom Instructions</th><td><strong>Settings → Personalization → Custom Instructions</strong></td><td><strong>1,500 characters</strong> per longer field</td><td>600–1,200 chars (use our <a href=\"/tools/custom-instructions-generator\">compact generator</a>)</td></tr><tr><th scope=\"row\">ChatGPT Projects</th><td>Project → <strong>Project Instructions</strong></td><td>Multi-kilobyte Markdown (overrides account custom instructions in that project)</td><td>800–2,000 chars</td></tr><tr><th scope=\"row\">OpenAI Codex &amp; ChatGPT Work</th><td><code>~/.codex/AGENTS.md</code> + repo <code>AGENTS.md</code> / <code>AGENTS.override.md</code></td><td><strong>32 KiB (32,768 bytes)</strong> combined across all files (<code>project_doc_max_bytes</code>)</td><td>Keep personal <code>~/.codex/AGENTS.md</code> under 2 KiB</td></tr><tr><th scope=\"row\">Claude Personal Preferences</th><td><strong>Settings → General → Personal Preferences</strong></td><td>Multi-paragraph text field (no 1,500-char lock)</td><td>500–1,200 chars (6–10 bullets)</td></tr><tr><th scope=\"row\">Claude Projects</th><td>Project → <strong>Project Instructions</strong></td><td>Shared with project knowledge context window</td><td>800–2,500 chars</td></tr><tr><th scope=\"row\">Claude Code</th><td><code>~/.claude/CLAUDE.md</code> &amp; <code>~/.claude/output-styles/*.md</code></td><td>Local Markdown file loaded into session context</td><td>600–1,800 chars with <code>keep-coding-instructions: true</code></td></tr><tr><th scope=\"row\">Meta Muse</th><td><strong>Settings → Personalization → Assistant Identity → Soul.md</strong></td><td>Editable Markdown file (alongside <code>Identity.md</code> and <code>Memory.md</code>)</td><td>500–1,500 chars inside <em>How to work with me</em></td></tr><tr><th scope=\"row\">Google Gemini</th><td><strong>Settings → Saved info</strong>, <strong>Gems</strong>, or <code>~/.gemini/GEMINI.md</code></td><td>Short individual memories in Saved info; full Markdown in Gems and <code>GEMINI.md</code></td><td>1–2 sentences per Saved info item; 600–1,500 chars in Gems</td></tr><tr><th scope=\"row\">xAI Grok &amp; Grok Bot</th><td>Account response settings or Grok Bot <strong>Description</strong></td><td>Compact text box in Bot Description; full system prompt in API</td><td>500–1,200 chars</td></tr><tr><th scope=\"row\">Cursor &amp; GitHub Copilot</th><td><code>.cursor/rules/*.mdc</code> &amp; <code>.github/copilot-instructions.md</code></td><td>Local repository Markdown files</td><td>600–1,800 chars</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Why shorter tunings beat 10,000-word prompt walls.",
+      "html": "<p>Even on surfaces that accept large Markdown files, stuffing thousands of words of personality lore into your global instructions hurts performance for three reasons:</p><ol><li><strong>Instruction dilution:</strong> Every rule you add competes for attention with your actual task prompt and with the rules that matter most.</li><li><strong>Over-literal compliance in newer reasoning models:</strong> As OpenAI noted in its developer guidance for GPT-6 Astra, newer models listen much harder to system and <code>AGENTS.md</code> instructions than earlier generations did. Forceful, all-caps boundary paragraphs written for older models cause modern agents to halt early or over-apply a formatting rule where it does not belong.</li><li><strong>Silent byte-cap truncation in monorepos:</strong> In OpenAI Codex, the 32 KiB <code>project_doc_max_bytes</code> limit is shared across your global <code>~/.codex/AGENTS.md</code>, the repo root <code>AGENTS.md</code>, and any nested folder <code>AGENTS.md</code>. A compact 700-byte personal tuning leaves over 97% of the budget free for repository build and test instructions.</li></ol>"
+    },
+    {
+      "h2": "A universal 580-character tuning block that fits every platform.",
+      "html": "<p>This reviewed block is 580 characters (well under ChatGPT's 1,500-character cap and less than 2% of Codex's 32 KiB budget). Paste it anywhere:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences\n\n- Lead with the direct answer, conclusion, or recommendation in the first sentence.\n- Match length to complexity; keep routine replies under 150 words.\n- Use plain prose by default. Add bullet lists or tables only when comparing three or more items.\n- Skip throat-clearing openers, flattery, and \"let me know if you need anything else\" closers.\n- Push back directly when an assumption in my prompt is mistaken, and state why.\n- Separate verified facts from inferences and flag material uncertainty in one line.</div><p>Need a version tailored to your own personality profile? Open the <a href=\"/tools/custom-instructions-generator\">Custom Instructions Generator</a> or pick any of the 43 profiles in the <a href=\"/library/\">library</a> and select <strong>ChatGPT · custom instructions</strong> for an automatic under-1,500-character export.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the character limit for ChatGPT Custom Instructions in 2026?",
+      "a": "OpenAI documents a 1,500-character limit for the longer Custom Instructions fields under Settings, Personalization, Custom Instructions. Every profile in AgentTune includes a reviewed compact export under 1,500 characters."
+    },
+    {
+      "q": "What is the byte limit for OpenAI Codex AGENTS.md?",
+      "a": "Codex reads up to 32 KiB (32,768 bytes) combined across all AGENTS.md and AGENTS.override.md files in the directory chain, configured by project_doc_max_bytes."
+    },
+    {
+      "q": "Do ChatGPT Project Instructions have the same 1,500-character limit?",
+      "a": "No. Project Instructions inside a ChatGPT Project accept full multi-paragraph Markdown tunings and override your global Custom Instructions inside that project."
+    },
+    {
+      "q": "How many rules should I put in Claude Personal Preferences or Meta Muse Soul.md?",
+      "a": "Six to ten clear bullet points (roughly 500 to 1,200 characters) cover tone, answer order, formatting, and pushback without crowding out your task context."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-05",
+      "note": "First published with 2026 character and byte limits across ChatGPT, Codex, Claude, Muse, Gemini, Cursor, and Grok."
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI Help Center: Custom Instructions for ChatGPT",
+      "href": "https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt"
+    },
+    {
+      "label": "ChatGPT & Codex Docs: AGENTS.md configuration",
+      "href": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    },
+    {
+      "label": "Anthropic Help Center: Understanding Claude's personalization features",
+      "href": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
+    },
+    {
+      "label": "Meta Help Center: Personalize your assistant in Meta Muse",
+      "href": "https://www.meta.com/help/artificial-intelligence/2225571704857152/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "Project vs account instructions: what overrides what in AI",
+      "href": "/guides/ai-instruction-precedence-overrides"
+    },
+    {
+      "kicker": "Guide",
+      "label": "OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides",
+      "href": "/guides/codex-agents-md-guide"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Free Custom Instructions Generator (compact 1,500-char export)",
+      "href": "/tools/custom-instructions-generator"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT custom instructions by personality type",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude Personal Preferences: 15 examples and where to paste",
+      "href": "/guides/claude-personal-preferences-examples"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "chatgpt-custom"
+}

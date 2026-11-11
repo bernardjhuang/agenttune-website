@@ -226,6 +226,10 @@ function renderEditorCode(body) {
     if (line.startsWith("## ")) {
       return `<span class="c-h2">${escHtml(line)}</span>`;
     }
+    const bulletMatch = line.match(/^(-\s+\*\*[^*]+\*\*:?)([\s\S]*)$/);
+    if (bulletMatch) {
+      return `<span class="c-bullet-key">${escHtml(bulletMatch[1])}</span>${escHtml(bulletMatch[2])}`;
+    }
     return escHtml(line);
   }).join("\n");
   const gutter = lines.map((_, i) => `<span>${i + 1}</span>`).join("");
@@ -233,39 +237,48 @@ function renderEditorCode(body) {
 }
 
 /**
- * Render the § II "plain English" UL. If V2[id].plainEnglishRules is provided,
- * use it verbatim (each entry is { lede, body } or a plain string with the
- * lede + body joined by ". "). Otherwise, auto-derive from `## Heading` +
- * first paragraph.
+ * Render the § II "plain English" UL. If `## Operating rules` bullets are
+ * present in the tuning body, render those specific operational rules directly;
+ * otherwise fall back to sentence-splitting `## Communication style`.
  */
 function renderPlainEnglishRules(v2, body) {
-  const rules = extractRules(body);
-  const styleRule = rules.find((r) => /communication style/i.test(r.heading)) || rules[0];
-  const sentences = styleRule && styleRule.paragraph
-    ? styleRule.paragraph.split(/(?<=\.)\s+/).map((s) => s.trim()).filter(Boolean)
-    : [];
   const items = [];
-  if (sentences.length >= 2) {
-    items.push({
-      lede: sentences[0],
-      body: "Sets the opening structure of every reply. Edit this first if you prefer a different starting cadence."
-    });
-    const middle = sentences.slice(1, -1);
-    if (middle.length) {
+  const opMatches = [...body.matchAll(/^-\s+\*\*([^*]+?):?\*\*:?\s*(.+)$/gm)];
+  if (opMatches.length) {
+    for (const [, label, text] of opMatches) {
       items.push({
-        lede: middle.join(" "),
-        body: "Shapes tone, directness, and what filler the assistant skips. Remove any clause that feels too strict for casual chat."
+        lede: label.trim().replace(/\.$/, "") + ".",
+        body: text.trim()
       });
     }
-    items.push({
-      lede: sentences[sentences.length - 1],
-      body: "Controls how options, uncertainty, and formatting are presented when a task has multiple paths."
-    });
-  } else if (styleRule) {
-    items.push({
-      lede: styleRule.heading.replace(/\.$/, "") + ".",
-      body: styleRule.paragraph
-    });
+  } else {
+    const rules = extractRules(body);
+    const styleRule = rules.find((r) => /communication style/i.test(r.heading)) || rules[0];
+    const sentences = styleRule && styleRule.paragraph
+      ? styleRule.paragraph.split(/(?<=\.)\s+/).map((s) => s.trim()).filter(Boolean)
+      : [];
+    if (sentences.length >= 2) {
+      items.push({
+        lede: sentences[0],
+        body: "Sets the opening structure of every reply. Edit this first if you prefer a different starting cadence."
+      });
+      const middle = sentences.slice(1, -1);
+      if (middle.length) {
+        items.push({
+          lede: middle.join(" "),
+          body: "Shapes tone, directness, and what filler the assistant skips. Remove any clause that feels too strict for casual chat."
+        });
+      }
+      items.push({
+        lede: sentences[sentences.length - 1],
+        body: "Controls how options, uncertainty, and formatting are presented when a task has multiple paths."
+      });
+    } else if (styleRule) {
+      items.push({
+        lede: styleRule.heading.replace(/\.$/, "") + ".",
+        body: styleRule.paragraph
+      });
+    }
   }
   items.push({
     lede: "Accuracy and scope guardrails.",
@@ -810,6 +823,10 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     .c-code { padding: 22px 24px; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; color: rgba(255,255,255,0.88); }
     .c-code .c-h1 { color: #ff8b6d; }
     .c-code .c-h2 { color: #b4a7ff; font-weight: 600; }
+    .c-code .c-bullet-key { color: #ffd580; font-weight: 600; }
+    .prompt-modifiers { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0; }
+    .prompt-modifiers-label { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-right: 4px; }
+    .prompt-mod-btn.is-active { background: var(--ink, #1a1817); color: #fff; border-color: var(--ink, #1a1817); }
     .c-statusbar { background: var(--lib-accent-text, #9f4427); padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; }
     .c-statusbar-left { display: flex; align-items: center; gap: 16px; }
     .c-statusbar-actions { display: flex; gap: 8px; }
@@ -923,10 +940,10 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       </div>
     </article>
 
-    <p class="lib-v2-trust"><strong>What this is, what it isn't.</strong> An editable communication preference file — not a diagnosis. Based on public personality frameworks + editorial synthesis. Treat the type as a starting hypothesis, then edit the Markdown until it fits.</p>
+    <p class="lib-v2-trust"><strong>Editable communication rules — not a diagnosis.</strong> Start with this template and cut or rewrite any line that doesn't match how you work.</p>
 
     <section class="lib-v2-jump" aria-label="Choose a model for your prompt">
-      <div class="lib-v2-jump-eyebrow">Make it fit your model ↓</div>
+      <div class="lib-v2-jump-eyebrow">Jump to a model preset ↑</div>
       <div class="lib-v2-jump-grid">
         <button class="lib-v2-jump-btn" data-prompt-model="muse" type="button"><span class="lib-v2-jump-name">Muse</span><span class="lib-v2-jump-tag">Prompt</span></button>
         <button class="lib-v2-jump-btn" data-prompt-model="astra-6" type="button"><span class="lib-v2-jump-name">Astra 6</span><span class="lib-v2-jump-tag">Prompt</span></button>
@@ -935,13 +952,13 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
         <button class="lib-v2-jump-btn" data-prompt-model="opus-5-5" type="button"><span class="lib-v2-jump-name">Opus 5.5</span><span class="lib-v2-jump-tag">Prompt</span></button>
         <button class="lib-v2-jump-btn" data-prompt-model="grok-4-7" type="button"><span class="lib-v2-jump-name">Grok 4.7</span><span class="lib-v2-jump-tag">Prompt</span></button>
       </div>
-      <p class="lib-ctx-guides"><a href="#install">Other models, apps, and APIs →</a></p>
+      <p class="lib-ctx-guides"><a href="#install">All apps, files, and APIs ↑</a></p>
     </section>
 
     <section class="lib-v2-section" id="demo">
       <div class="lib-v2-section-eyebrow">§ I · See it</div>
       <h2 class="lib-v2-section-h">The same question. <em>Two answers.</em></h2>
-      <p class="lib-v2-section-lede">Illustrative examples of the communication styles these rules aim to encourage. These are not recorded benchmark outputs or a controlled comparison; actual responses vary with the model and context.</p>
+      <p class="lib-v2-section-lede">Illustrative side-by-side of the register these rules aim for; actual replies vary by model and task.</p>
 
       <div class="lib-v2-demo">
         <div class="lib-v2-demo-prompt">
@@ -1042,6 +1059,7 @@ ${summaryLis}
   <script>
     (function () {
       const TUNING = ${jsonInline(tuning)};
+      const TUNING_BODY = ${jsonInline(tuningBody)};
       const FILENAME = ${jsonInline(downloadFilename)};
       const TYPE_ID = ${jsonInline(c.id)};
       const SYSTEM = ${jsonInline(c.system)};
@@ -1069,7 +1087,7 @@ ${summaryLis}
       const copyLabel = cCopyBtn && cCopyBtn.textContent;
       if (cCopyBtn) cCopyBtn.addEventListener("click", async function () {
         try {
-          await navigator.clipboard.writeText(TUNING);
+          await navigator.clipboard.writeText(TUNING_BODY);
           cCopyBtn.textContent = copyLabel;
           showToast("Copied ✓"); track("copy_tuning_markdown");
         } catch {
@@ -1432,6 +1450,36 @@ const STATIC_PAGES = [
   { route: "/research/does-personality-tuning-change-ai-answers", file: "research/does-personality-tuning-change-ai-answers.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-personality-rankings", file: "research/ai-personality-rankings.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/first-ai-that-is-not-an-intj", file: "research/first-ai-that-is-not-an-intj.html", changefreq: "monthly", priority: "0.7" },
+  { route: "/guides/muse-identity-md-avatar-name", file: "guides/muse-identity-md-avatar-name.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 additions" },
+  { route: "/guides/muse-memory-md-privacy-reset", file: "guides/muse-memory-md-privacy-reset.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/meta-ai-vs-meta-muse-personality", file: "guides/meta-ai-vs-meta-muse-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-personal-preferences-examples", file: "guides/claude-personal-preferences-examples.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-styles-to-skills-migration", file: "guides/claude-styles-to-skills-migration.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/sol-personality", file: "guides/sol-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/gemini-personality", file: "guides/gemini-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/grok-personality-settings", file: "guides/grok-personality-settings.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/codex-agents-md-guide", file: "guides/codex-agents-md-guide.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/cursor-rules-copilot-gemini-md", file: "guides/cursor-rules-copilot-gemini-md.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-custom-instructions-character-limits", file: "guides/ai-custom-instructions-character-limits.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-instruction-precedence-overrides", file: "guides/ai-instruction-precedence-overrides.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/stop-ai-sycophancy-make-ai-push-back", file: "guides/stop-ai-sycophancy-make-ai-push-back.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/open-source-mbti-test-oejts", file: "guides/open-source-mbti-test-oejts.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/open-source-disc-test-odat", file: "guides/open-source-disc-test-odat.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/disc-ai-prompts", file: "guides/disc-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/big-five-ai-prompts", file: "guides/big-five-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/attachment-style-ai-prompts", file: "guides/attachment-style-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/muse-troubleshooting-mobile-side-chats", file: "guides/muse-troubleshooting-mobile-side-chats.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 GSC topic-gap guides" },
+  { route: "/guides/chatgpt-projects-vs-custom-instructions", file: "guides/chatgpt-projects-vs-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/free-disc-assessment-guide-work-ai", file: "guides/free-disc-assessment-guide-work-ai.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/free-enneagram-test-no-email-guide", file: "guides/free-enneagram-test-no-email-guide.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/google-ai-overview-gemini-tone-settings", file: "guides/google-ai-overview-gemini-tone-settings.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-voice-tone-settings-mobile-web", file: "guides/claude-voice-tone-settings-mobile-web.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/audit-fix-conflicting-ai-instructions", file: "guides/audit-fix-conflicting-ai-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/how-to-work-with-me-readme-ai-template", file: "guides/how-to-work-with-me-readme-ai-template.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-persona-style-controls-register-verbosity", file: "guides/ai-persona-style-controls-register-verbosity.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/mcp-server-ai-preferences-portable-tuning", file: "guides/mcp-server-ai-preferences-portable-tuning.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/grok-attachment-cutoff-simulation", file: "research/grok-attachment-cutoff-simulation.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/ai-big-five-item-level-comparison", file: "research/ai-big-five-item-level-comparison.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
   { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },
   { route: "/library/", file: "library/index.html", changefreq: "weekly", priority: "0.9", comment: "Library hub" }
@@ -1464,11 +1512,15 @@ function writeHeaders(typePages) {
     "/*",
     "  Strict-Transport-Security: max-age=31536000; includeSubDomains",
     "  X-Frame-Options: SAMEORIGIN",
+    `  Link: <${SITE}/llms.txt>; rel="describedby"`,
     "",
-    "# LLM index files — for agents to fetch, not for search result pages",
+    "# LLM index & skill files — for agents to fetch, not for search result pages",
     "/llms.txt",
     "  X-Robots-Tag: noindex",
     "/llms-full.txt",
+    "  X-Robots-Tag: noindex",
+    "/SKILL.md",
+    "  Content-Type: text/markdown; charset=utf-8",
     "  X-Robots-Tag: noindex",
     "",
     "# Raw upstream mirror — fetchable, but keep out of indexes; the canonical",
@@ -1616,7 +1668,7 @@ function main() {
   const header = "# Agent-friendly raw markdown URLs — auto-generated by tools/generate-library.js\n# /library/<system>/<slug>.md → /tunings/<system>/<File>.md (200 = rewrite)\n";
   // Pages serves the root 404.html for unmatched routes; 404 is not a valid redirect status.
   // Retired paid-product routes (Premium + Developer Pack, removed 2026-07) — permanent redirects home.
-  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n";
+  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n\n# Legacy model profile URLs → canonical guide URLs (301)\n/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301\n/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301\n/research/claude-fable-5-1-personality  /guides/fable-personality  301\n/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301\n/research/gpt-6-astra-personality  /guides/astra-personality  301\n/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301\n/research/gpt-6-sol-personality  /guides/sol-personality  301\n/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301\n";
   const fallback = retired;
   const body = header + redirects.join("\n") + "\n" + fallback;
   fs.writeFileSync(redirectsPath, body);

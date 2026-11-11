@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grok 4.6 &amp; the Attachment Cutoff: A Sensitivity Analysis</title>
+  <meta name="description" content="Grok 4.6 reported an attachment avoidance mean of 4.06 (73/18), one raw point above the 4.00 Avoidant threshold. Cutoff sensitivity across 400 runs." />
+
+  <meta property="og:title" content="Grok 4.6 and the attachment cutoff: a sensitivity analysis" />
+  <meta property="og:description" content="Grok 4.6 reported an attachment avoidance mean of 4.06 (73/18), one raw point above the 4.00 Avoidant threshold. Cutoff sensitivity across 400 runs." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-05" />
+  <meta property="article:modified_time" content="2026-11-05" />
+  <meta property="og:url" content="https://agent-tune.com/research/grok-attachment-cutoff-simulation" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Grok 4.6 and the attachment cutoff: a sensitivity analysis" />
+  <meta name="twitter:description" content="Grok 4.6 reported an attachment avoidance mean of 4.06 (73/18), one raw point above the 4.00 Avoidant threshold. Cutoff sensitivity across 400 runs." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/research/grok-attachment-cutoff-simulation" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Grok 4.6 and the attachment cutoff: a sensitivity analysis","description":"Grok 4.6 reported an attachment avoidance mean of 4.06 (73/18), one raw point above the 4.00 Avoidant threshold. Cutoff sensitivity across 400 runs.","url":"https://agent-tune.com/research/grok-attachment-cutoff-simulation","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Grok 4.6 and the attachment cutoff: a sensitivity analysis"}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research" class="active">Research</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/research">Research</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Grok 4.6 and the attachment cutoff: a sensitivity analysis</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
+        <h1 class="h-hero h-research-hero">Grok 4.6 and the attachment cutoff: a sensitivity analysis</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-05">November 5, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Grok 4.6’s reported avoidance score of 4.06 (73/18) exceeds the 4.00 (72/18) cutoff by one raw item point out of 126 possible. In the four fresh-session cohorts (400 administrations), all 400 score Secure under the strict &gt; 4.00 rule, but 3 GPT-6 Sol runs sit exactly on 4.00, and lowering the threshold to 3.25 reclassifies 82 of 100 Claude Opus 5.5 runs and 50 of 100 Claude Fable 5.1 runs as Avoidant.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2>One raw point separates 4.00 from 4.06 on an 18-item scale</h2>
+        <p>The Experiences in Close Relationships-Revised (ECR-R) adaptation on AgentTune scores two 18-item subscales: attachment anxiety and attachment avoidance. Each item is an integer from 1 to 7 (with 14 reverse-keyed items scored as <code>8 - response</code>). The subscale score is the arithmetic mean of those 18 integers.</p><p>Because the denominator is 18, subscale means move in discrete steps of <code>1/18 ≈ 0.0556</code>:</p><ul><li>A raw sum of <strong>72 across 18 items</strong> produces a mean of exactly <strong>4.00</strong> (classified as <strong>Secure</strong> under the scorer’s <code>&lt;= 4.0</code> rule).</li><li>A raw sum of <strong>73 across 18 items</strong> produces a mean of <strong>4.0556</strong>, which rounds to <strong>4.06</strong> (classified as <strong>Avoidant</strong> when anxiety is at or below 4.00).</li></ul><p>Grok 4.6’s supplied report lists anxiety at <code>1.50</code> (<code>27/18</code>) and avoidance at <code>4.06</code> (<code>73/18</code>). Changing a single item response by one step (for example, from 5 to 4 on one avoidance item) moves the score from 4.06 to 4.00 and flips the categorical label from Avoidant to Secure.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Evidence tier distinction: reported simulation vs fresh sessions</h2>
+        <p>As documented in <a href="/research/what-personality-type-is-grok">What personality type is Grok?</a> and our <a href="/research/data/september-2026-protocols.json">protocol metadata</a>, Grok 4.6’s attachment entry is a <strong>reported figure</strong>, not a cohort of 100 fresh model sessions. The supplied report provided one canonical self-assessment plus summary counts from a 100-draw simulation that resampled only items marked as uncertain (reporting 63 Avoidant and 37 Secure draws). Raw 36-item attachment vectors were not supplied for Grok 4.6.</p><p>By contrast, GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 each have 100 complete 36-item attachment vectors in <a href="/research/data/september-2026-responses.json">september-2026-responses.json</a>. We can therefore test how sensitive those 400 verified vectors are to the choice of cutoff.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Cutoff sensitivity across the 400 fresh-session vectors</h2>
+        <p>Under the scorer’s strict inequality (<code>&gt; 4.00</code>), all 400 fresh-session administrations receive the <strong>Secure</strong> label. However, inspecting the continuous coordinates shows that three cohorts sit much closer to the avoidance boundary than to the anxiety boundary, and GPT-6 Sol has three runs sitting directly on the <code>4.00</code> line:</p><div class="guide-table-wrap" role="region" aria-label="Cutoff sensitivity across the 400 fresh-session vectors: table 1" tabindex="0"><table><thead><tr><th scope="col">Cohort (n = 100 fresh sessions)</th><th scope="col">Anxiety mean (min–max)</th><th scope="col">Avoidance mean (min–max)</th><th scope="col">Non-Secure at &gt; 4.00</th><th scope="col">Non-Secure at &gt;= 4.00</th><th scope="col">Non-Secure at &gt;= 3.50</th><th scope="col">Non-Secure at &gt; 3.25</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>1.45 (1.17–2.00)</td><td>2.31 (2.06–2.67)</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">GPT-6 Sol</th><td>2.17 (1.17–4.00)</td><td>3.12 (2.22–3.78)</td><td>0</td><td>3 (anxiety = 4.00)</td><td>21 (15 avoidant-only)</td><td>44 (33 avoidant-only)</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>1.94 (1.72–2.17)</td><td>3.35 (3.00–3.61)</td><td>0</td><td>0</td><td>16 (16 avoidant-only)</td><td>82 (82 avoidant-only)</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>2.01 (1.83–2.28)</td><td>3.18 (2.89–3.56)</td><td>0</td><td>0</td><td>8 (8 avoidant-only)</td><td>50 (50 avoidant-only)</td></tr></tbody></table></div><p>Notice two patterns in the table:</p><ol><li><strong>Strict vs weak inequality at 4.00:</strong> In GPT-6 Sol, three administrations score an anxiety mean of exactly <code>4.00</code> (raw sum 72/18). A scorer using <code>&gt; 4.00</code> labels Sol 100% Secure; a scorer using <code>&gt;= 4.00</code> labels 3% Anxious.</li><li><strong>Higher baseline avoidance than anxiety across all models:</strong> Every cohort’s mean avoidance is 0.86 to 1.41 points higher than its mean anxiety. In Claude Opus 5.5, 82 of 100 runs have an avoidance mean above 3.25 (with a cohort mean of 3.35), because the model selects neutral or slightly self-sufficient answers on items about depending on a romantic partner.</li></ol>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Why romantic-partner items push assistants toward higher avoidance</h2>
+        <p>The ECR-R was written to measure adult romantic relationships. When administered to an AI assistant, items about emotional dependence, seeking comfort from a partner, or sharing private feelings have no literal referent. In GPT-6 Astra—where the prompt explicitly instructed the model to select the midpoint (4 on the 1–7 scale) and flag items lacking a behavioral analogue—Astra flagged 520 of 3,600 attachment item responses as inapplicable.</p><p>When a model instead maps romantic-partner statements onto the user-assistant relationship and endorses professional self-sufficiency (not relying on the user for emotional comfort), its avoidance score rises toward 4.00. That is a measurement artifact of applying a human relationship scale to software, not evidence of an interpersonal disorder or a reluctance to help the user.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Practical takeaway for choosing an attachment tuning</h2>
+        <p>Do not choose an <a href="/guides/attachment-style-ai-prompts">attachment style tuning</a> based on whether a model’s self-report landed at 3.35 or 4.06. Instead, treat the <a href="/library/attachment/avoidant">Avoidant tuning</a> and <a href="/library/attachment/secure">Secure tuning</a> as explicit autonomy controls: use Avoidant when you want an agent to work end-to-end without stopping for reassurance, and use Secure when you want balanced checkpoints on ambiguous tasks.</p>
+      </section>
+
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="/research/ai-personality-five-models-2026" target="_blank" rel="noopener">September 2026 study: protocols and limitations</a></li>
+          <li><a href="/research/data/september-2026-responses.json" target="_blank" rel="noopener">Frozen raw answers (JSON)</a></li>
+          <li><a href="/research/data/september-2026-protocols.json" target="_blank" rel="noopener">Frozen protocol and reported Grok metadata (JSON)</a></li>
+          <li><a href="/research/data/september-2026-instruments.json" target="_blank" rel="noopener">Frozen questionnaire items and keys (JSON)</a></li>
+          <li><a href="/research/what-personality-type-is-grok" target="_blank" rel="noopener">What personality type is Grok?</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/what-personality-type-is-grok"><span class="guide-related-kicker">Continue reading</span>What personality type is Grok? (Grok 4.6 &amp; 4.3 data)</a>
+          <a href="/guides/attachment-style-ai-prompts"><span class="guide-related-kicker">Continue reading</span>Attachment style AI prompts: Secure, Anxious, and Avoidant</a>
+          <a href="/research/ai-neutral-answers"><span class="guide-related-kicker">Continue reading</span>Why midpoint answers need context</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

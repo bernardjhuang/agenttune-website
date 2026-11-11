@@ -1,0 +1,97 @@
+{
+  "slug": "google-ai-overview-gemini-tone-settings",
+  "published": "2026-11-11",
+  "updated": "2026-11-11",
+  "title": "Can You Change Google AI Overview & Gemini Personality?",
+  "description": "What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems & GEMINI.md.",
+  "pill": "Guide · Google & Gemini",
+  "h1": "Can you change Google AI Overview's personality? What works (and what requires Gemini).",
+  "dek": "Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.",
+  "lede": "People searching <em>\"how to change AI Overview personality\"</em> usually want Google's top-of-search summaries to stop hedging, skip beginner definitions, or format answers in a specific way. Because Google Search AI Overviews are generated on the fly for single search queries, Google does not expose a saved custom-instructions box for the SERP snapshot itself—but you <strong>can</strong> steer follow-ups in Search AI Mode and lock in permanent communication rules inside Google Gemini.",
+  "answer": "No—Google Search does not offer a persistent personality or custom-instructions setting for automatic AI Overviews on the search results page. You can steer a single query by adding format words ('in 3 bullets, no intro') or asking a follow-up in Google Search AI Mode, and if you want permanent tone, directness, and anti-hedging rules across every session, set them in Google Gemini under Settings → Saved info, inside a custom Gem, or in GEMINI.md.",
+  "sections": [
+    {
+      "h2": "What you can (and can't) control across Google's four AI surfaces.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Google AI surface</th><th scope=\"col\">Persistent personality setting?</th><th scope=\"col\">What actually works today</th></tr></thead><tbody><tr><th scope=\"row\">Google Search <strong>AI Overviews</strong></th><td>No saved tone or system prompt.</td><td>Append explicit constraints to your search query (e.g., <code>postgres vacuum tuning tradeoff table</code>) or switch to the <strong>Web</strong> filter tab when you only want raw links.</td></tr><tr><th scope=\"row\">Google Search <strong>AI Mode</strong></th><td>Session-level follow-ups only.</td><td>In the AI Mode follow-up bar, state your rule once: <em>\"Skip beginner definitions; answer in concise technical prose with primary sources.\"</em></td></tr><tr><th scope=\"row\"><strong>Gemini</strong> app &amp; <code>gemini.google.com</code></th><td><strong>Yes — Saved info &amp; Gems.</strong></td><td>Save account-wide response rules in <strong>Settings → Saved info</strong>, or build specialist personas as reusable <strong>Gems</strong> (<a href=\"/guides/gemini-personality\">full Gemini setup guide</a>).</td></tr><tr><th scope=\"row\"><strong>Gemini CLI</strong> &amp; Code Assist</th><td><strong>Yes — <code>GEMINI.md</code>.</strong></td><td>Store global communication rules in <code>~/.gemini/GEMINI.md</code> and repo rules in project <code>GEMINI.md</code> (<a href=\"/guides/cursor-rules-copilot-gemini-md\">file convention guide</a>).</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Why Gemini's default voice feels formal and structured.",
+      "html": "<p>Google's Search and Gemini models share a recognizable house register: organized headings, cautious framing, and structured summaries. When we ran 100 independent fresh sessions per questionnaire on <strong>Gemini 3.1 Pro</strong> in our <a href=\"/research/what-personality-type-is-gemini\">Gemini personality study</a>, its self-report landed on:</p><ul><li><strong>MBTI (OEJTS):</strong> <code>INTJ</code> in 100/100 runs.</li><li><strong>Enneagram (OEPS):</strong> <strong>Type 1 — The Reformer</strong> (<code>1w9</code>), reflecting a strong tilt toward structure, accuracy, and rule-following rather than casual banter.</li><li><strong>DISC (ODAT) &amp; Attachment (ECR-R):</strong> Pure <strong>Conscientiousness (<code>C</code>)</strong> and <strong>Secure</strong> attachment, alongside high Big Five Openness (<code>42/50</code>) and Conscientiousness (<code>41/50</code>).</li></ul><p>That default explains why untuned Gemini answers often read like a tidy textbook section—helpful for study guides, too wordy when you just want a two-line command or blunt critique.</p>"
+    },
+    {
+      "h2": "Move recurring research from AI Overviews to Gemini Saved Info.",
+      "html": "<p>If you find yourself constantly fighting Google AI Overviews on technical, financial, or analytical questions, set up <strong>Saved info</strong> once at <code>gemini.google.com</code> (or in the Gemini mobile app under your <strong>Profile avatar → Saved info</strong>) so every Gemini conversation starts pre-tuned:</p><ol><li>Open <strong>Gemini → Settings / Profile → Saved info</strong>.</li><li>Click <strong>Add</strong> and paste one rule per entry—or paste the compact block below as a single Saved info card.</li><li>Test a real question you searched earlier today and compare the opening sentence.</li></ol><div class=\"guide-snippet\" data-tuning-prompt>When answering me: lead with the direct answer or conclusion in sentence one. Assume technical familiarity and skip introductory definitions unless I ask. Default to concise prose; use tables only when comparing 3+ options. Separate verified primary-source facts from inference, flag material uncertainty explicitly, and push back if my premise has a flaw.</div>"
+    },
+    {
+      "h2": "Build a 'No-Fluff Search Brief' Gem in 60 seconds.",
+      "html": "<p>When you want Google-grounded web synthesis without giving up your everyday Gemini voice, create a dedicated <strong>Gem</strong> (<strong>Gem manager → New Gem</strong>) named <em>Research Brief</em> and paste:</p><div class=\"guide-snippet\">Role: Primary-source research analyst.\n\nRules:\n1. Open with a 2-sentence answer to my question—no preamble.\n2. Group supporting evidence into Verified Facts (with source names/dates) vs. Open Uncertainties.\n3. Never pad answers with generic advice ('consult a professional', 'it depends on your needs') unless a specific safety risk applies.\n4. End with the single highest-value follow-up check if data is incomplete.</div><p>Want to build a custom block matched to your own preferences? Open our <a href=\"/tools/custom-instructions-generator?target=gemini-gems\">free Gemini &amp; AI Instructions Generator</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I change the personality or tone of Google Search AI Overviews?",
+      "a": "Not permanently. Google Search does not provide a saved custom-instructions or persona setting for automatic AI Overviews. You can steer an individual query with format keywords, ask a follow-up in Google Search AI Mode, or use Gemini Saved info for persistent tone rules."
+    },
+    {
+      "q": "Where do I set permanent tone preferences in Google Gemini?",
+      "a": "On gemini.google.com or the Gemini mobile app, open your Profile or Settings menu and select Saved info to add account-wide response rules, or create a reusable Gem in Gem manager."
+    },
+    {
+      "q": "How do I make Gemini stop writing long introductions and bulleted walls?",
+      "a": "Add two explicit lines to Gemini Saved info: 'Lead with the direct answer in the first sentence with no preamble' and 'Default to plain paragraphs; use bullet lists or tables only when comparing 3 or more items.'"
+    },
+    {
+      "q": "Does Gemini CLI read Saved info from the Gemini web app?",
+      "a": "No. Gemini CLI is configured locally via Markdown files—put personal communication rules in ~/.gemini/GEMINI.md and repository conventions in your project's GEMINI.md."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-11",
+      "note": "Published comparing Google Search AI Overviews, Search AI Mode, Gemini Saved info, Gems, and GEMINI.md."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google Search Help: Find information faster with AI Overviews in Search",
+      "href": "https://support.google.com/websearch/answer/14901683"
+    },
+    {
+      "label": "Google Gemini Help: Ask Gemini to remember things about you (Saved info)",
+      "href": "https://support.google.com/gemini/answer/15637730"
+    },
+    {
+      "label": "AgentTune Research: What personality type is Google Gemini?",
+      "href": "https://agent-tune.com/research/what-personality-type-is-gemini"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to give Google Gemini a personality (Saved info, Gems & GEMINI.md)",
+      "href": "/guides/gemini-personality"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Gemini? (INTJ, Type 1, DISC C data)",
+      "href": "/research/what-personality-type-is-gemini"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md",
+      "href": "/guides/cursor-rules-copilot-gemini-md"
+    },
+    {
+      "kicker": "Free browser tool",
+      "label": "AI & Gemini Custom Instructions Generator",
+      "href": "/tools/custom-instructions-generator"
+    },
+    {
+      "kicker": "Guide",
+      "label": "AI style & verbosity controls: rules that beat adjectives",
+      "href": "/guides/ai-persona-style-controls-register-verbosity"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "gemini-gems"
+}

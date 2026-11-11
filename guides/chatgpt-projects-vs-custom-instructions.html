@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT Projects vs Custom Instructions: Override Guide</title>
+  <meta name="description" content="How ChatGPT Project Instructions override account-wide Custom Instructions, and how to split a 1,500-char global voice from project-specific specs." />
+
+  <meta property="og:title" content="ChatGPT Projects vs. Custom Instructions: what overrides what." />
+  <meta property="og:description" content="How ChatGPT Project Instructions override account-wide Custom Instructions, and how to split a 1,500-char global voice from project-specific specs." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-11" />
+  <meta property="article:modified_time" content="2026-11-11" />
+  <meta property="og:url" content="https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChatGPT Projects vs. Custom Instructions: what overrides what." />
+  <meta name="twitter:description" content="How ChatGPT Project Instructions override account-wide Custom Instructions, and how to split a 1,500-char global voice from project-specific specs." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT Projects vs. Custom Instructions: what overrides what","description":"How ChatGPT Project Instructions override account-wide Custom Instructions, and how to split a 1,500-char global voice from project-specific specs.","url":"https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions","datePublished":"2026-11-11","dateModified":"2026-11-11","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"ChatGPT Projects vs. Custom Instructions: what overrides what"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do ChatGPT Custom Instructions still apply inside a ChatGPT Project?","acceptedAnswer":{"@type":"Answer","text":"Yes, account-wide Custom Instructions remain part of the background context unless disabled, but the Project's own instructions take priority whenever the two conflict."}},{"@type":"Question","name":"What is the character limit for ChatGPT Custom Instructions vs Projects?","acceptedAnswer":{"@type":"Answer","text":"Account-wide Custom Instructions cap each of the two text boxes at 1,500 characters. Project Instructions support much longer multi-paragraph briefs plus attached reference files."}},{"@type":"Question","name":"How do I stop my global brevity rule from ruining long drafts inside a Project?","acceptedAnswer":{"@type":"Answer","text":"Add one explicit precedence line at the bottom of your global Custom Instructions ('Project instructions and explicit requests in my current prompt override these defaults') and specify the target length or template inside that Project's instructions."}},{"@type":"Question","name":"Do Custom GPTs use my Custom Instructions or Project Instructions?","acceptedAnswer":{"@type":"Answer","text":"Custom GPTs run their builder's system instructions independently and generally do not inherit your personal Custom Instructions in the same way standard chats and Projects do."}}]}</script>
+
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">ChatGPT Projects vs. Custom Instructions: what overrides what</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · ChatGPT</span>
+        <h1 class="h-hero h-research-hero">ChatGPT Projects vs. Custom Instructions: what overrides what.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-11">November 11, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">ChatGPT loads both your account-wide Custom Instructions and the active Project's instructions into context, but Project Instructions take precedence inside that Project whenever two rules conflict. Keep a compact 6-to-10 line communication block (tone, opening rule, pushback, uncertainty) in account-wide Custom Instructions, and put domain context, output schemas, and reference files inside each Project.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="chatgpt-projects"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=chatgpt-projects">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2>Side-by-side: Custom Instructions vs. Project Instructions.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Side-by-side: Custom Instructions vs. Project Instructions.: table 1" tabindex="0"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Account-wide Custom Instructions</th><th scope="col">ChatGPT Project Instructions</th></tr></thead><tbody><tr><th scope="row">Where to find it (Web &amp; Mobile)</th><td>Profile → <strong>Personalization → Custom Instructions</strong></td><td>Open a Project folder → <strong>Project instructions</strong></td></tr><tr><th scope="row">Scope</th><td>Every new standard chat across web, iOS, Android, and macOS/Windows apps.</td><td>Only chats started inside or moved into that specific Project.</td></tr><tr><th scope="row">Character budget</th><td><strong>1,500 characters</strong> per field (two fields: context + response style).</td><td>Generous multi-paragraph project prompt plus uploaded Project files.</td></tr><tr><th scope="row">Precedence on conflict</th><td>Baseline default; yields to Project rules and live chat prompts.</td><td><strong>Overrides</strong> conflicting account-wide Custom Instructions inside the Project.</td></tr><tr><th scope="row">What belongs here</th><td>Your durable voice preferences: answer-first, prose vs bullets, pushback, confidence calibration.</td><td>Tech stack, audience, deliverable templates, style guides, and repo constraints.</td></tr></tbody></table></div><p>For character budgets across Claude, Codex <code>AGENTS.md</code>, Meta Muse, and Grok alongside ChatGPT, see our <a href="/guides/ai-custom-instructions-character-limits">2026 character limits cheat sheet</a> and <a href="/guides/ai-instruction-precedence-overrides">cross-app precedence guide</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Why putting everything in Custom Instructions breaks Projects.</h2>
+        <p>Two mistakes waste the 1,500-character Custom Instructions box and degrade Project chats:</p><ol><li><strong>Hardcoding one job's format globally.</strong> If your global Custom Instructions say <em>"Format every answer as TypeScript code with zero prose,"</em> ChatGPT has to fight that rule every time you open a writing, hiring, or tax-prep Project.</li><li><strong>Duplicating your bio in every Project.</strong> Copying the same 15 lines of personal preferences into six Projects means six places to update when you tweak a rule—and subtle drift when one Project still holds last quarter's version.</li></ol><p>Use our <a href="/tools/instruction-checker">Instruction Checker</a> to catch duplicate lines and bloated paragraphs, keeping your global Custom Instructions under 600–900 characters.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Copy-paste split: Global voice + Project task layer.</h2>
+        <p><strong>Layer 1 — Paste into account-wide Custom Instructions</strong> (<em>"How would you like ChatGPT to respond?"</em> — ~480 characters, well inside the 1,500-character cap):</p><div class="guide-snippet" data-tuning-prompt>- Lead with the answer or recommendation in the first sentence.
+- Match length to complexity: 1–3 sentences for simple lookups, structured depth for architecture or tradeoffs.
+- Default to clear prose; use bullets or tables only when comparing 3+ items or listing steps.
+- Challenge weak assumptions in my prompt directly and cite concrete tradeoffs.
+- Flag material uncertainty explicitly instead of guessing.
+- Project instructions and explicit requests in the current chat override these defaults.</div><p><strong>Layer 2 — Paste into a specific ChatGPT Project's instructions</strong> (example for a product engineering project):</p><div class="guide-snippet"># Project: Checkout Service v2
+
+## Stack &amp; constraints
+- Next.js App Router, TypeScript strict mode, Postgres (Drizzle ORM), Stripe webhooks.
+- Idempotency keys are mandatory on all payment mutations.
+
+## Deliverable format in this Project
+- For schema or API changes, include: (1) migration risk, (2) exact diff, and (3) one test case covering webhook retries.
+- Reference uploaded architecture notes before proposing new queues or tables.</div><p>Notice how cleanly the two layers compose: your global block governs <em>how ChatGPT talks to you</em>, while the Project block governs <em>what good work looks like in Checkout Service v2</em>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Don't forget ChatGPT Saved Memories (the hidden third layer).</h2>
+        <p>If you split Custom Instructions and Project Instructions cleanly and ChatGPT <em>still</em> injects weird formatting or brings up an unrelated stack, check <strong>Profile → Personalization → Memory → Manage memories</strong>. Saved Memories persist across standard chats and can quietly contradict your written instructions. Export or paste your memory list into our local <a href="/tools/ai-memory-reviewer">AI Memory Reviewer</a> to spot and prune stale entries in 60 seconds, or read <a href="/guides/audit-fix-conflicting-ai-instructions">how to diagnose ignored AI instructions</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Do ChatGPT Custom Instructions still apply inside a ChatGPT Project?</summary>
+            <p>Yes, account-wide Custom Instructions remain part of the background context unless disabled, but the Project's own instructions take priority whenever the two conflict.</p>
+          </details>
+          <details>
+            <summary>What is the character limit for ChatGPT Custom Instructions vs Projects?</summary>
+            <p>Account-wide Custom Instructions cap each of the two text boxes at 1,500 characters. Project Instructions support much longer multi-paragraph briefs plus attached reference files.</p>
+          </details>
+          <details>
+            <summary>How do I stop my global brevity rule from ruining long drafts inside a Project?</summary>
+            <p>Add one explicit precedence line at the bottom of your global Custom Instructions ('Project instructions and explicit requests in my current prompt override these defaults') and specify the target length or template inside that Project's instructions.</p>
+          </details>
+          <details>
+            <summary>Do Custom GPTs use my Custom Instructions or Project Instructions?</summary>
+            <p>Custom GPTs run their builder's system instructions independently and generally do not inherit your personal Custom Instructions in the same way standard chats and Projects do.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-11">November 11, 2026</time> Published with the two-layer Global Voice vs Project Spec pattern and Saved Memory conflict check.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: Custom Instructions for ChatGPT</a></li>
+          <li><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: Projects in ChatGPT</a></li>
+          <li><a href="https://agent-tune.com/guides/ai-instruction-precedence-overrides" target="_blank" rel="noopener">AgentTune Guide: Project vs account instructions across AI apps</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Free browser tool</span>ChatGPT Custom Instructions &amp; AI Prompt Generator</a>
+          <a href="/guides/chatgpt-custom-instructions-examples"><span class="guide-related-kicker">Guide</span>20 ChatGPT custom instructions examples by role</a>
+          <a href="/guides/ai-instruction-precedence-overrides"><span class="guide-related-kicker">Guide</span>Project vs account instructions: what overrides what</a>
+          <a href="/tools/instruction-checker"><span class="guide-related-kicker">Free browser tool</span>Instruction Checker — catch conflicts &amp; duplicate lines</a>
+          <a href="/guides/audit-fix-conflicting-ai-instructions"><span class="guide-related-kicker">Guide</span>Why AI ignores custom instructions: conflict &amp; memory audit</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js"></script>
+  <script src="/platforms.js"></script>
+  <script src="/integrations.js"></script>
+  <script src="/guide-prompts.js"></script>
+</body>
+</html>

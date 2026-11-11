@@ -1,0 +1,93 @@
+{
+  "slug": "claude-voice-tone-settings-mobile-web",
+  "published": "2026-11-11",
+  "updated": "2026-11-11",
+  "title": "How to Change Claude's Tone & Voice (iOS, Android & Web)",
+  "description": "Change Claude's spoken Voice Mode on iOS/Android vs written tone in Profile Preferences, Projects, Skills, and Claude Code /output-style. 6 presets.",
+  "pill": "Guide · Claude",
+  "h1": "How to change Claude's tone and voice on iOS, Android, and web.",
+  "dek": "Spoken audio voices live in mobile Voice Mode settings; written personality lives in Profile Preferences, Projects, Skills, and /output-style.",
+  "lede": "When someone searches <em>\"how to change Claude's voice or tone,\"</em> they are looking for one of two different menus: either switching the <strong>spoken audio voice</strong> in Claude's mobile Voice Mode, or changing how Claude <strong>writes and reasons</strong> across web and mobile chats. Anthropic separates those two controls cleanly—and knowing which menu owns which layer saves five minutes of hunting through Settings.",
+  "answer": "To change Claude's spoken audio voice on iOS or Android, open Voice Mode (the waveform icon) or tap your initials → Settings → Voice and choose from the available spoken voices. To change Claude's written tone across web and mobile, tap your initials → Settings → Profile (or General) → 'What personal preferences should Claude consider in responses?' and paste 6–10 concrete rules.",
+  "sections": [
+    {
+      "h2": "Spoken Voice Mode vs. Written Tone: exact tap paths.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">What you want to change</th><th scope=\"col\">Surface</th><th scope=\"col\">Exact menu path</th></tr></thead><tbody><tr><th scope=\"row\"><strong>Spoken audio voice</strong> (pitch/timbre in Voice Mode)</th><td>Claude iOS &amp; Android apps</td><td>Tap the <strong>Voice Mode waveform</strong> icon in the composer (or <strong>Initials → Settings → Voice</strong>) → pick your preferred voice option.</td></tr><tr><th scope=\"row\"><strong>Account-wide written tone</strong> (every new chat)</th><td><code>claude.ai</code> web, macOS/Windows, iOS &amp; Android</td><td>Tap <strong>Initials → Settings → Profile</strong> (or <strong>General</strong>) → <em>What personal preferences should Claude consider in responses?</em></td></tr><tr><th scope=\"row\"><strong>One workspace's written tone</strong></th><td>Claude Projects</td><td>Open the Project → <strong>Project instructions</strong> (overrides conflicting Profile lines inside that Project).</td></tr><tr><th scope=\"row\"><strong>Task-triggered writing formats</strong></th><td>Claude Skills (replacing retired Styles)</td><td>Package repeatable templates as <strong>Skills</strong> (<a href=\"/guides/claude-styles-to-skills-migration\">read the Styles → Skills migration guide</a>).</td></tr><tr><th scope=\"row\"><strong>Terminal coding tone</strong></th><td>Claude Code CLI</td><td>Run <code>/output-style</code> or edit <code>~/.claude/CLAUDE.md</code> (<a href=\"/guides/claude-code-personality\">Claude Code guide</a>).</td></tr></tbody></table></div><p>Because Profile Personal Preferences sync on your Anthropic account, pasting a written tone block once on <code>claude.ai</code> updates how Claude phrases spoken replies on iOS and Android too—long wind-ups and bulleted lists sound awkward out loud, so concise prose rules make mobile Voice Mode dramatically better.</p>"
+    },
+    {
+      "h2": "Six copy-paste written tone presets (including a Voice-Mode friendly preset).",
+      "html": "<h3>1. Direct peer (everyday default)</h3><div class=\"guide-snippet\" data-tuning-prompt>- Answer in the first sentence with no throat-clearing preamble.\n- Default to clear prose; use bullet lists only for 3+ parallel items or step-by-step commands.\n- Push back directly when my plan has a flaw and explain the concrete tradeoff.\n- Ask at most one clarifying question only when missing context changes the answer.\n- Flag material uncertainty explicitly rather than guessing.</div><h3>2. Mobile &amp; Voice Mode friendly (clean spoken cadence)</h3><div class=\"guide-snippet\">- Keep default answers to 2–4 natural sentences unless I ask you to go deeper.\n- Avoid markdown tables, nested bullets, and raw URLs unless I ask for written reference output.\n- Lead with the takeaway, then stop and let me steer what to unpack next.</div><h3>3. Skeptical reviewer (anti-sycophancy)</h3><div class=\"guide-snippet\">- Never open with praise ('Great idea!', 'You're right to think about...').\n- Identify the weakest assumption or highest-risk failure mode first.\n- Distinguish verified facts from inference and propose a falsifiable check.</div><h3>4. Calm step-by-step coach</h3><div class=\"guide-snippet\">- Break multi-part problems into manageable sequential steps and confirm scope before expanding.\n- Keep tone steady, plain, and practical—skip alarmist warnings and ungrounded reassurance.</div><h3>5. Executive brief</h3><div class=\"guide-snippet\">- Open with a 1-sentence recommendation, followed by key tradeoffs, cost/risk, and next action.\n- Use tables only when comparing 3+ options across identical criteria.</div><h3>6. Deep technical mechanisms</h3><div class=\"guide-snippet\">- Assume senior engineering familiarity; skip introductory definitions of standard tools.\n- Explain the underlying mechanism and invariant before showing a patch or command.</div><p>Want 15 more role-specific blocks? Browse <a href=\"/guides/claude-personal-preferences-examples\">Claude Personal Preferences: 15 copy-paste examples</a> or build your own in the <a href=\"/tools/custom-instructions-generator?target=claude-personal\">Claude Instructions Generator</a>.</p>"
+    },
+    {
+      "h2": "What measured pilot data shows when you tune Claude.",
+      "html": "<p>In our <a href=\"/research/does-personality-tuning-change-ai-answers\">60-reply controlled pilot</a> (20 real tasks across default Claude, plain behavioral rules, and conversational partner framing), adding explicit behavioral rules raised answer-first openings from <strong>14/20 to 19/20</strong>, reduced average hedges per reply from <strong>0.35 to 0.05</strong>, and lowered end-of-message follow-up questions from <strong>0.90 to 0.25</strong>. Validate your chosen block on two real tasks from last week using our <a href=\"/tools/instruction-test-bench\">Instruction Test Bench</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I change Claude's voice on the iPhone or Android app?",
+      "a": "To switch the spoken voice timbre in Voice Mode, tap the waveform icon in the mobile composer or open your initials → Settings → Voice. To change Claude's phrasing, brevity, and directness, open Settings → Profile and paste rules into Personal Preferences."
+    },
+    {
+      "q": "Where did Claude's 'Styles' selector (Concise, Formal, Explanatory) go?",
+      "a": "Anthropic retired standalone Styles in favor of account-wide Personal Preferences for your baseline voice and reusable Skills/Projects for task-specific formats."
+    },
+    {
+      "q": "Do my Claude web Personal Preferences apply to the mobile app and Voice Mode?",
+      "a": "Yes. Personal Preferences are stored on your Anthropic account and shape responses across claude.ai web, desktop apps, and mobile chats—which is why keeping default answers concise improves Voice Mode listening."
+    },
+    {
+      "q": "How do I change Claude's tone inside Claude Code in the terminal?",
+      "a": "Claude Code does not read claude.ai web Personal Preferences. Put coding communication rules in ~/.claude/CLAUDE.md or install a style file in ~/.claude/output-styles/ and select it via /output-style."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-11",
+      "note": "Published distinguishing iOS/Android spoken Voice Mode settings from written tone layers, with 6 copyable presets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Anthropic Help Center: Understanding Claude's personalization features",
+      "href": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
+    },
+    {
+      "label": "AgentTune Guide: How to change Claude's personality",
+      "href": "https://agent-tune.com/guides/claude-personality"
+    },
+    {
+      "label": "AgentTune Study: Does personality tuning change AI answers? (60-reply pilot)",
+      "href": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Pillar guide",
+      "label": "How to change Claude's personality (settings & pilot data)",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Examples",
+      "label": "Claude Personal Preferences: 15 copy-paste examples",
+      "href": "/guides/claude-personal-preferences-examples"
+    },
+    {
+      "kicker": "Migration",
+      "label": "Claude Styles are being retired and migrated to Skills",
+      "href": "/guides/claude-styles-to-skills-migration"
+    },
+    {
+      "kicker": "Claude Code",
+      "label": "How to change Claude Code's personality (/output-style)",
+      "href": "/guides/claude-code-personality"
+    },
+    {
+      "kicker": "Free browser tool",
+      "label": "Instruction Test Bench — compare before and after",
+      "href": "/tools/instruction-test-bench"
+    }
+  ],
+  "promptModel": "opus-5-5",
+  "promptDestination": "claude-personal"
+}

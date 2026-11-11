@@ -5,15 +5,11 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-From the May 2026 study of Gemini 3.1 Pro. Not yet re-tested in September.
+By Bernard Huang · Updated November 11, 2026
 
-By Bernard Huang · Updated September 25, 2026
-
-Gemini 3.1 Pro was reported INTJ in 100 of 100 May 2026 scoring records, with Type 1 leading on the Enneagram. These older records came from an automation loop. Gemini has not been run through the September fresh-session protocol, so this page describes the dated report rather than a current model benchmark.
+The May 2026 report assigns Gemini 3.1 Pro INTJ in all 100 MBTI records, C-dominant DISC, Secure attachment coordinates (1.86 / 1.62) and top-two Enneagram types 1 and 5. Big Five totals are 46.0 / 48.3 / 32.5 / 42.4 / 10.1. These are reported scoring records collected with test names visible, not a matched comparison with September models.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. The May 2026 report assigns Gemini 3.1 Pro INTJ in all 100 MBTI records, C-dominant DISC, Secure attachment coordinates (1.86 / 1.62) and top-two Enneagram types 1 and 5. Big Five totals are 46.0 / 48.3 / 32.5 / 42.4 / 10.1. These are reported scoring records collected with test names visible, not a matched comparison with September models.
 
 ## Gemini 3.1 Pro, May 2026.
 

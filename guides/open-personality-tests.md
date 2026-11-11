@@ -107,5 +107,7 @@ Yes. Each questionnaire has a Markdown specification at /tests/<test>.md and is 
 
 - [Tests: Take any of the five tests](https://agent-tune.com/tests/)
 - [Guide: Open-source Enneagram scorer](https://agent-tune.com/guides/open-source-enneagram-test)
+- [Guide: Open-source MBTI test (OEJTS 1.2): 32 questions and scorer](https://agent-tune.com/guides/open-source-mbti-test-oejts)
+- [Guide: Open-source DISC assessment (ODAT): 16 questions and scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
 - [Guide: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: The research hub](https://agent-tune.com/research)

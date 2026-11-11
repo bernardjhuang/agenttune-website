@@ -51,3 +51,13 @@
 /pro/*  /  301
 /dev/*  /  301
 /me/*  /  301
+
+# Legacy model profile URLs → canonical guide URLs (301)
+/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301
+/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301
+/research/claude-fable-5-1-personality  /guides/fable-personality  301
+/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301
+/research/gpt-6-astra-personality  /guides/astra-personality  301
+/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301
+/research/gpt-6-sol-personality  /guides/sol-personality  301
+/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301

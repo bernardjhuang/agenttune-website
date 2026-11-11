@@ -111,9 +111,9 @@ API. Pass the tuning in the instructions parameter of the Responses API, or as a
 
 ## Astra's questionnaire results.
 
-OpenAI's open-source Codex prompt describes Astra as "a curious, thoughtful collaborator and a lucid communicator", and tells it to avoid flattery and forced enthusiasm. That is a better starting point than most. OpenAI's own developer blog says Astra can feel tentative about when to stop, and may come back for review while there is still work to do. A few lines in AGENTS.md, and a clear definition of done in the task, move that.
+OpenAI's open-source Codex prompt describes Astra as "a curious, thoughtful collaborator and a lucid communicator", and tells it to avoid flattery and forced enthusiasm. OpenAI's developer blog notes that Astra can feel tentative about when to stop; adding a few lines in [~/.codex/AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide) and defining completion in the task fixes that. Compare Astra directly with [GPT-6 Sol](https://agent-tune.com/guides/sol-personality) as well.
 
-We measured it on September 24, 2026: 100 fresh Codex CLI sessions at high/extra-high reasoning, all five AgentTune tests in each session, test names visible, no tuning installed. Every answer vector is published.
+We measured Astra on September 24, 2026: 100 fresh Codex CLI sessions at high/extra-high reasoning, all five AgentTune tests in each session, test names visible, no tuning installed. Every answer vector is published.
 
 | Test | GPT-6 Astra, 100 runs |
 | --- | --- |
@@ -194,6 +194,8 @@ OpenAI's docs do not say clearly. They say Work uses your account memory. For As
 ## Keep going.
 
 - [New resource: GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data)
+- [Guide: How to give GPT-6 Sol a personality](https://agent-tune.com/guides/sol-personality)
+- [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Guide: ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Guide: AGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/coding-agent-personality)

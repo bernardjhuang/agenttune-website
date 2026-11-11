@@ -5,15 +5,11 @@ Research · Q&A
 
 # What personality type is Claude?
 
-Measured on Opus 5.5 and Fable 5.1 in September 2026, with the earlier versions for context.
-
 By Bernard Huang · Updated September 25, 2026
 
-INTJ was the most common reported label for both models in September 2026: 94 of 100 for Opus 5.5 and 99 for Fable 5.1. Leaving tied axes unresolved reduces those counts to 84 and 98. Both scored in the Secure attachment quadrant; on DISC, many runs tied Steadiness with Conscientiousness. These are questionnaire outputs, not evidence of how Claude handles your work.
+Under the original reporting rule, Claude Opus 5.5 received 94 INTJ labels and Fable 5.1 received 99 in 100 MBTI runs each. With ties left open, 84 and 98 runs fully resolve to INTJ. Both scored Secure in all attachment runs. Fable had 55 outright Enneagram Type 8 wins; Opus had 65 ties at the top. Big Five Agreeableness means were 47.1 and 45.0 of 50.
 
 Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
-
-The short answer. Under the original reporting rule, Claude Opus 5.5 received 94 INTJ labels and Fable 5.1 received 99 in 100 MBTI runs each. With ties left open, 84 and 98 runs fully resolve to INTJ. Both scored Secure in all attachment runs. Fable had 55 outright Enneagram Type 8 wins; Opus had 65 ties at the top. Big Five Agreeableness means were 47.1 and 45.0 of 50.
 
 ## Opus 5.5 and Fable 5.1, September 2026.
 
