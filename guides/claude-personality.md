@@ -5,42 +5,44 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 16, 2026
 
-On web or desktop, click your initials (bottom-left) → Settings → Profile → Instructions for Claude (labeled Personal preferences on some accounts) and paste a short rules block. On the iOS or Android app, tap your profile icon (top-right or sidebar) → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable workflows (replacing retired chat Styles), and /output-style in Claude Code.
+On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Instructions for Claude / 'What personal preferences should Claude consider in responses?') and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats (replacing retired chat Styles), and /output-style in Claude Code.
 
 ## How to change Claude’s personality settings.
 
 Where you paste your rules depends on whether you want a permanent default across every chat, a single workspace override, or a coding-session style:
 
-- Web & desktop app: Click your initials in the lower-left corner → Settings → Profile → Instructions for Claude (shown as What personal preferences should Claude consider in responses? on some accounts).
+- Web & desktop app: Click your initials in the lower-left corner → Settings → Profile → Personal preferences (labeled Instructions for Claude or What personal preferences should Claude consider in responses? depending on account rollout).
 - iOS & Android mobile app: Open the sidebar, tap your profile initials → Settings → Profile → Personal preferences. Paste the same block; it syncs across web and mobile.
-- Paste one focused block: Copy a setup below (or build one in the [generator](https://agent-tune.com/tools/custom-instructions-generator)), save, and open a new chat to test on real work.
+- Paste one focused block: Copy one of the seven setups below (or customize in the [generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal)), save, and open a new chat to test on real work.
 
 Anthropic’s [personalization documentation](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) splits customization into four clean layers:
 
 | Use case | Where to put it | Scope &amp; behavior |
 | --- | --- | --- |
-| Everyday chats (web &amp; mobile) | Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
-| One client, repo, or research topic | Project instructions | Applies inside that Project and overrides conflicting general tone rules. |
+| Everyday chats (web &amp; mobile) | Personal preferences / Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
+| One client, repo, or research topic | Project instructions ([8 Project templates →](https://agent-tune.com/guides/claude-project-instructions-examples)) | Applies inside that Project and overrides conflicting general tone rules. |
 | Reusable task voice (former Styles) | Skills | Invoked when relevant or named explicitly; see the [Styles-to-Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration). |
 | Claude Code CLI | ~/.claude/output-styles/*.md (/output-style) | System-level coding session tone with keep-coding-instructions: true; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
 
-Want spoken voice controls on mobile rather than written tone? See [how to change Claude’s spoken voice vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
+Looking to switch Claude's spoken audio voice on iOS or Android rather than its written style? See [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
 
-## Five Claude personality setups to try.
+## Seven best Claude personality setups to try.
 
-Pick the block that fixes your main day-to-day friction—slow preambles, premature conclusions, cold phrasing, sycophancy, or vague status updates. Each block preserves factual accuracy and explicit uncertainty. Want more? Browse [15 role-specific Claude preference examples](https://agent-tune.com/guides/claude-personal-preferences-examples) or the [43-template library](https://agent-tune.com/library/).
+Pick the block that fixes your main day-to-day friction—slow preambles, premature conclusions, cold phrasing, sycophancy, code noise, heavy rewriting, or vague status updates. Each block preserves factual accuracy and explicit uncertainty. Want more? Browse [15 role-specific Claude preference examples](https://agent-tune.com/guides/claude-personal-preferences-examples) or the [43-template library](https://agent-tune.com/library/).
 
-| Setup | Who it suits best |
+| Setup | Who it suits best &amp; what to check |
 | --- | --- |
-| Straight answers | People who want the recommendation in sentence one with zero preamble or closing offers. |
-| Thinking partner | Researchers and strategists who want assumptions unpacked before locking in a choice. |
-| Warm and steady | Anyone who wants calm, concrete steps without hollow cheerleading or alarmism. |
-| Critical reviewer | Builders who want Claude to challenge weak premises with evidence instead of agreeing. |
-| Task coordinator | Operators managing multi-step work who want blockers, dependencies, and next actions upfront. |
+| 1. Straight answers | People who want the recommendation in sentence one with zero preamble or closing offers. |
+| 2. Thinking partner | Researchers and strategists who want assumptions unpacked before locking in a choice. |
+| 3. Warm and steady | Anyone who wants calm, concrete steps without hollow cheerleading or alarmism. |
+| 4. Critical reviewer | Builders who want Claude to challenge weak premises with evidence instead of agreeing. |
+| 5. Coding pair | Developers who want minimal diffs, immediate failure reporting, and tests without filler questions. |
+| 6. Editor | Writers who want tight clarity edits that preserve their voice and flag unsupported claims. |
+| 7. Task coordinator | Operators managing multi-step work who want blockers, dependencies, and next actions upfront. |
 
-### Straight answers
+### 1. Straight answers
 
 ```markdown
 # Communication preferences — straight answers
@@ -51,7 +53,7 @@ Pick the block that fixes your main day-to-day friction—slow preambles, premat
 - Correct a mistaken premise directly and explain the correction.
 ```
 
-### Thinking partner
+### 2. Thinking partner
 
 ```markdown
 # Communication preferences — thinking partner
@@ -62,7 +64,7 @@ Pick the block that fixes your main day-to-day friction—slow preambles, premat
 - Ask one focused question if the missing information matters.
 ```
 
-### Warm and steady
+### 3. Warm and steady
 
 ```markdown
 # Communication preferences — warm and steady
@@ -73,7 +75,7 @@ Pick the block that fixes your main day-to-day friction—slow preambles, premat
 - Keep the tone consistent and avoid exaggerated praise.
 ```
 
-### Critical reviewer
+### 4. Critical reviewer
 
 ```markdown
 # Communication preferences — critical reviewer
@@ -84,18 +86,40 @@ Pick the block that fixes your main day-to-day friction—slow preambles, premat
 - Update your position when new evidence warrants it.
 ```
 
-### Task coordinator
+### 5. Coding pair
+
+```markdown
+# Communication preferences — coding pair
+- Lead with what changed, then why. One line per file you touched.
+- If my approach is worse than an alternative, say so before implementing.
+- State an assumption before acting on it. Flag a guess as a guess.
+- Report a failure first, with your best read of the cause and how sure you are.
+- No "would you like me to add tests?" If tests are the right move, write them.
+```
+
+### 6. Editor
+
+```markdown
+# Communication preferences — editor
+- Keep my meaning and my voice. Improve clarity, not style for its own sake.
+- Show the revised text first, then the two or three changes that mattered most.
+- Prefer concrete words and active verbs. Cut repetition and stock phrases.
+- Never invent a fact, a quote, a statistic, or a source.
+- Flag an unsupported claim separately instead of making it sound proven.
+```
+
+### 7. Task coordinator
 
 ```markdown
 # Communication preferences — task coordinator
-- Lead with the outcome, blocker or decision I need to make.
-- Separate completed work from plans and unverified assumptions.
-- Give the next useful action and any known dependency.
-- Ask for missing information when it would materially change the work.
-- Keep required approvals in place and never claim an action succeeded without evidence.
+- Open a status update with what is done, what is blocked, and the next action.
+- Keep plans, work in progress, and verified results separate.
+- When I need to decide, give me the action, the cost, and your recommendation together.
+- Keep routine updates short. Interrupt for a decision, a blocker, or a real change.
+- Never say something was sent, booked, or changed unless it was.
 ```
 
-For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and Big Five, open the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator).
+For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and Big Five, open the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal).
 
 ## What personality type is Claude? The recorded results.
 
@@ -192,6 +216,8 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 
 ## What changed.
 
+- November 16, 2026 Merged Coding pair and Editor into the 7 best Claude personality setups, updated Personal Preferences UI labels, and linked the Claude Projects and Voice Mode guides.
+
 - September 25, 2026 Added reproducible Opus and Fable results with explicit ties, five revised preference blocks, a comparison worksheet and troubleshooting. Rechecked official setup documentation.
 
 - September 19, 2026 Rewritten. Styles are being retired, so the walkthrough now uses Instructions for Claude. Added Skills, memory, the five setups, and what we have not tested.
@@ -210,6 +236,8 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 
 ## Keep going.
 
+- [Projects: Claude Project instructions: limits, precedence & 8 templates](https://agent-tune.com/guides/claude-project-instructions-examples)
+- [Voice & Mobile: How to change Claude's spoken voice vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
 - [New resource: When does Claude follow your preferences? A test kit](https://agent-tune.com/guides/claude-preferences-test)
 - [Examples: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples)
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)

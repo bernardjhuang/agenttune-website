@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MBTI scientifically valid?","acceptedAnswer":{"@type":"Answer","text":"It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument."}},{"@type":"Question","name":"Which is better for prompting an AI — MBTI or Big Five?","acceptedAnswer":{"@type":"Answer","text":"Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."}},{"@type":"Question","name":"Why did all six models test as INTJ?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"Can I use both frameworks in one prompt?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"What about DISC and the Enneagram?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -150,9 +150,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

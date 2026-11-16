@@ -20,7 +20,7 @@ Copy the DISC block that matches your working style—Dominance (bottom-line con
 
 ## 1. Dominance (D): bottom line first, zero hedging.
 
-Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our [ODAT evaluations](https://agent-tune.com/guides/open-source-disc-test-odat), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
+Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our [ODAT evaluations](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
 
 ```markdown
 ## Communication preferences — DISC Dominance (D)
@@ -96,12 +96,12 @@ Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settin
 
 - [AgentTune Free DISC Assessment (ODAT)](https://agent-tune.com/tests/disc)
 
-- [AgentTune Guide: Open-source DISC assessment (ODAT) scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [AgentTune Guide: Free DISC assessment (ODAT) & 12 blends](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
 
 ## Keep going.
 
 - [Interactive Test: Take the free 16-question DISC assessment (no email)](https://agent-tune.com/tests/disc)
-- [Guide: Open-source DISC assessment (ODAT): 16 questions and scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [Guide: Free DISC assessment (ODAT): 4 styles, 12 blends & scorer](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
 - [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
 - [Prompts: Attachment style AI prompts: Secure, Anxious, and Avoidant](https://agent-tune.com/guides/attachment-style-ai-prompts)
 - [Guide: ChatGPT custom instructions by MBTI personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

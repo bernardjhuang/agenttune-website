@@ -5,18 +5,18 @@ Guide · Meta Muse
 
 # Give Meta Muse a character: the Soul.md guide.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
-Open Assistant icon → Identity → Soul to edit Soul.md, or request the change in chat and inspect the saved file. Append one clearly labeled preference block and keep a backup. To remove it, restore the edited lines. A whole-account reset also deletes history, files and tasks.
+Open Assistant icon → Identity → Soul to edit Soul.md, or request the change in chat and inspect the saved file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo one change, delete that block or say 'Go back to your default personality.'
 
 ## Twenty editable Soul.md examples.
 
-For ready-to-copy starting points, use the [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates): four with Markdown downloads (concise assistant, thinking partner, writing editor, task coordinator) and sixteen by role, from founder to inbox triage. Each is a block to paste at the end of Soul.md and edit.
+For ready-to-copy starting points, use the [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) (four downloadable Markdown starters plus sixteen role-specific blocks), use the [free browser Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor) to merge without losing existing rules, or copy one of the three character blocks folded in below.
 
 ## The short version.
 
-- In the Muse app, tap the Assistant icon (your Muse's avatar), then Identity, then Soul.
-- Add a section at the end of the file and paste the block below, or any tuning from the [library](https://agent-tune.com/library/).
+- In the Muse app (or muse.ai), tap the Assistant icon (your Muse's avatar), then Identity, then Soul.
+- Append a section at the end of Soul.md and paste the block below, one of the three character presets on this page, or any tuning from the [library](https://agent-tune.com/library/).
 - Inspect the saved text, then try the same representative tasks before and after the edit in fresh conversations. A greeting alone cannot establish compliance.
 
 ```markdown
@@ -30,21 +30,27 @@ For ready-to-copy starting points, use the [Muse Soul.md templates](https://agen
 
 Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.
 
-That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say tap, so they describe the mobile app. Check the controls in your own client if the menus differ.
+That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say tap, so they describe the mobile app; see [Meta Muse mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats) if a menu label differs on web.
+
+## What ships in default Soul.md (and what not to delete).
+
+New Meta Muse workspaces initialize Soul.md from a default template that tells Muse: "You're not a chatbot. You're becoming someone," alongside four starter principles—be genuinely helpful (skip "Great question!"), have opinions, be resourceful before asking (check files and context before interrupting), and remember you're a guest in someone's life (accessing messages, files, and calendar with care). It also reminds Muse to notify you if it edits its own file.
+
+Keep those built-in lines intact. When you want sharper formatting, shorter replies, or stricter pre-approval rules for [Muse Connectors and scheduled tasks](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules), append a bounded ## How to work with me section below the starter truths using our [Soul.md Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
 ## Which product this guide covers.
 
-This guide covers Meta Muse’s documented files and customization controls. Do not assume they apply to Meta AI in other apps. The supplied questionnaire report names Muse Spark 1.3; it does not verify the model serving every current product session. See [the Muse explainer](https://agent-tune.com/guides/what-is-meta-muse) for current source-linked product information and plans.
+This guide covers Meta Muse’s documented files and customization controls. Do not assume they apply to Meta AI in WhatsApp or Instagram (see [Meta AI vs Meta Muse](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)). The supplied questionnaire report names Muse Spark 1.3; it does not verify the model serving every current product session. See [the Muse explainer](https://agent-tune.com/guides/what-is-meta-muse) for current source-linked product information and plans.
 
 ## Three files, three jobs.
 
 | File | What Meta says it holds | Where | Put this in it |
 | --- | --- | --- | --- |
-| Soul.md | Who your Muse is: core truths, boundaries, personality | Assistant icon, then Identity, then Soul | Communication rules. How it should talk to you, report to you, disagree with you. |
-| Identity.md | Its name, creature, vibe and tagline | Assistant icon, then Identity, then Edit | Identity details. Meta does not establish that these have no effect on responses. |
-| Memory.md | Facts about you it has saved | Assistant icon, then Identity, then Memory | Saved facts such as your name, time zone and work. |
+| Soul.md | Who your Muse is: core truths, boundaries, personality | Assistant icon → Identity → Soul | Communication rules: how it should talk, report, and push back. |
+| Identity.md | Its name, creature, vibe, avatar, and tagline | Assistant icon → Identity → Edit | Display name &amp; avatar ([Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)). Keep tone rules out so avatar edits don't overwrite them. |
+| Memory.md | Facts about you it has saved | Assistant icon → Identity → Memory | Saved facts like your name, time zone, and projects ([Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset)). |
 
-Use Soul.md for explicit communication preferences, and inspect Identity.md when changing the name or vibe. This is Meta’s documented division of the files, not proof that the fields cannot interact. See [Meta’s data and file controls](https://www.meta.com/help/artificial-intelligence/2225571704857152/) for the paths available in its documentation.
+Use Soul.md for explicit communication preferences, and inspect Identity.md when changing the name or avatar. This is Meta’s documented division of the files, not proof that the fields cannot interact. See [Meta’s data and file controls](https://www.meta.com/help/artificial-intelligence/2225571704857152/) for the paths available in its documentation.
 
 ## Option one: tell it in chat.
 
@@ -62,28 +68,67 @@ Then open Soul.md and read it. It is your file.
 
 ## Option two: paste a tuning into Soul.md.
 
-Editing the file lets you inspect the exact text.
+Editing the file directly lets you inspect the exact text—or preview a non-destructive merge in the [Muse Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
-- Pick a tuning from the [library](https://agent-tune.com/library/) and copy the rules. You want the Markdown body: everything below the settings header, which is the block between the two --- lines at the top of the file.
+- Pick a character block below or one of the 43 profiles in the [library](https://agent-tune.com/library/) and copy the Markdown body (everything below the --- metadata header).
 - Tap the Assistant icon, then Identity, then Soul.
 - Paste at the end of the file, under its own heading.
-- Save, and test in chat.
+- Save, and test on real tasks in a fresh chat.
 
-Meta does not publish a length limit for Soul.md. The Markdown rule bodies run from about 1,200 to 2,900 characters, excluding the metadata header, check the editor for any current size limit before saving.
+Meta does not publish a length limit for Soul.md. Our 43 Markdown rule bodies run from about 1,200 to 2,900 characters, excluding metadata headers; check the editor for any current size limit before saving.
 
 Which tuning? Match it to you, not to Muse. If you know your MBTI, Enneagram, DISC, Big Five or attachment type, install that file. If you don't, the [free MBTI test](https://agent-tune.com/tests/mbti) takes about five minutes and links to the matching file when you finish.
+
+## Three Meta Muse characters to paste into Soul.md.
+
+Each character block below is a set of behavioral communication rules—not roleplay fluff. Append one at the end of Soul.md under its own heading and delete any line that doesn't fit your workflow.
+
+### 1. The desk editor (for writing & editing)
+
+```markdown
+## How to talk to me: the desk editor
+- Lead with the answer or the edit. Reasoning comes after, in two lines at most.
+- Keep my voice when you rewrite. Improve clarity, not style.
+- Never add a fact, a number or a quote I didn't give you.
+- Flag a claim you can't support instead of smoothing it over.
+- No openers, no recap of what I said, no closing offers.
+```
+
+### 2. The quiet operator (for Connectors & recurring tasks)
+
+```markdown
+## How to talk to me: the quiet operator
+- Report in three lines: what's done, what's blocked, what you need from me.
+- Only interrupt me for a decision, a blocker, or a real change of plan.
+- When you need a yes, give me the action, the cost and your recommendation together.
+- Don't say something was sent or booked unless it was.
+- Keep the tone even. No cheer, no apology.
+```
+
+### 3. The sparring partner (for critical review)
+
+```markdown
+## How to talk to me: the sparring partner
+- Find the weakest assumption in my plan and say why it matters, before anything else.
+- Disagree plainly. Don't soften the substance to protect my feelings.
+- Give credit where a claim holds. Don't argue for its own sake.
+- Show your reasoning so I can argue back.
+- Change your position when I give you a reason, and say that you did.
+```
+
+Want 20 more role templates (Founder, Inbox Triage, Software Developer, Analyst, Shopper)? Open [Meta Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates).
 
 ## Write rules for reports and approval requests.
 
 For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”
 
-A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently. Test report formatting on a draft task before relying on it for consequential work.
+A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our [Muse Connectors & approval rules guide](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules) before enabling external write actions.
 
 ## Does it stick? Test and undo the change.
 
 Inspect the saved file and repeat fixed tasks in new conversations. The [Muse persistence kit](https://agent-tune.com/guides/muse-soul-md-persistence-test) provides probes and a blank log; it contains no measured persistence results.
 
-Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality; inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.
+Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality (say "Go back to your default personality"); inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.
 
 ## Privacy, briefly.
 
@@ -156,6 +201,8 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 
 ## What changed.
 
+- November 16, 2026 Consolidated Meta Muse character presets, decoded the starter Soul.md truths, and linked the Soul.md editor and Connectors approval guide.
+
 - September 25, 2026 Added Muse Spark 1.3's reported default voice from the September 24 report, with its limits.
 
 - September 19, 2026 First published, eleven days after Muse launched. Click paths are from Meta's help center. We will update this as Meta documents the web and Mac apps.
@@ -179,7 +226,8 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 - [Free browser tool: Review a memory export locally](https://agent-tune.com/tools/ai-memory-reviewer)
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Muse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)
+- [Free browser tool: Edit and merge Soul.md safely in your browser](https://agent-tune.com/tools/muse-soul-md-editor)
+- [Guide: Meta Muse Connectors, tasks & approval rules](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)
 - [Guide: Meta Muse avatar and name: the Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)
 - [Guide: Meta Muse Memory.md, privacy, and how to reset safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset)
 - [Comparison: Meta AI vs Meta Muse: how to change personality and tone](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)

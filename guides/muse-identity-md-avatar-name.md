@@ -3,11 +3,27 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Meta Muse
 
-# Meta Muse avatar and name: the Identity.md guide.
+# How to change Meta Muse’s avatar, name, and Identity.md.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 16, 2026
 
-Open Meta Muse settings and go to Personalization, then Assistant Identity, then Identity.md, or ask Muse in chat to update its name, avatar, or voice. Keep Identity.md limited to the assistant's name, visual avatar, voice, and one-line role summary. Put communication rules, pacing, and formatting preferences in Soul.md so avatar edits never overwrite your tuning.
+To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (your Muse's current avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep formatting and tone rules inside Soul.md so visual identity changes never overwrite your communication preferences.
+
+## Avatar Picker vs. Identity.md text editor (iOS, Android & muse.ai).
+
+Meta documents two ways to update Muse's appearance and display name—either via the visual Assistant Identity sheet or directly by editing Identity.md (or asking Muse in chat):
+
+| Method | Where to tap / type | What it changes &amp; gotcha to avoid |
+| --- | --- | --- |
+| Visual Avatar &amp; Identity sheet (iOS, Android, muse.ai) | Tap the Assistant icon (Muse's avatar at top of chat or sidebar) → Identity → Edit | Lets you swap Muse's visual avatar, edit its display name, tagline, and voice preset directly without touching Soul.md. |
+| Direct Identity.md edit | Assistant icon → Identity → Edit (Markdown view) | Stores Name, Creature/Role, Vibe, Avatar style, and Tagline in plain Markdown. Always keep a backup before editing. |
+| Chat command (safest quick rename) | In Main Chat: name Identity.md explicitly and forbid editing Soul.md or Memory.md. | Muse updates the file and shows a confirmation diff. Inspect Identity.md afterward to confirm no extra lines were dropped. |
+
+If you ask Muse in chat to change its avatar or rename itself, scope the request explicitly so it never rewrites Soul.md:
+
+```markdown
+Update only Identity.md. Change your display name to "Ada", update your avatar vibe to "clean monochrome geometric mark", and keep your role description to one sentence: "Personal research and writing assistant." Do not modify Soul.md or Memory.md.
+```
 
 ## What belongs in each of the three Muse files.
 
@@ -99,6 +115,8 @@ Can I edit Identity.md without touching Memory.md?
 Yes. Tell Muse in chat to update only Identity.md and to leave Soul.md and Memory.md unchanged, or edit Identity.md directly in the Assistant Identity settings pane.
 
 ## What changed.
+
+- November 16, 2026 Added visual Avatar Picker vs Identity.md editor comparison table and exact iOS/Android/muse.ai tap paths at the top.
 
 - November 5, 2026 First published with side-by-side boundaries for Identity.md, Soul.md, and Memory.md.
 

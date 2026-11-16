@@ -5,7 +5,7 @@ Developer guide · reproducibility
 
 # How to reproduce AgentTune’s AI self-report research
 
-By Bernard Huang · Updated September 26, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.
 

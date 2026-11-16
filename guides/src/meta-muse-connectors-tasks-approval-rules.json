@@ -1,0 +1,87 @@
+{
+  "slug": "meta-muse-connectors-tasks-approval-rules",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "Meta Muse Connectors & Tasks: Soul.md Approval Rules",
+  "description": "Configure Meta Muse Connectors, scheduled Tasks, and external tool confirmation gates inside Soul.md without cluttering Identity.md or Memory.md.",
+  "pill": "Guide · Meta Muse Connectors & Tasks",
+  "h1": "Meta Muse Connectors & Tasks: writing clean approval rules in Soul.md.",
+  "dek": "Once Muse has access to mail, calendar, or scheduled recurring Tasks, your Soul.md needs explicit read-vs-write confirmation gates.",
+  "lede": "Most <code>Soul.md</code> templates only tune conversational tone. Once you enable Meta Muse <strong>Connectors</strong> (calendar, messaging, docs, or workspace integrations) or recurring background <strong>Tasks</strong>, vague instructions like &ldquo;be proactive&rdquo; become a liability. Keeping autonomy boundaries inside <code>Soul.md</code> while keeping identity metadata in <code>Identity.md</code> and facts in <code>Memory.md</code> lets you use Muse automation safely.",
+  "answer": "In Meta Muse, store tone, epistemic honesty, and read-vs-write Connector confirmation gates in Soul.md; store agent role, name, and visual persona in Identity.md; and store user facts or timezone context in Memory.md. Require explicit human approval before Muse sends external messages, modifies shared events, or deletes items during scheduled Tasks.",
+  "promptModel": "muse",
+  "promptDestination": "muse",
+  "sections": [
+    {
+      "id": "muse-three-files-plus-actions",
+      "h2": "Which file governs Connectors, Tasks, and persona?",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Muse surface / file</th><th scope=\"col\">What belongs here</th><th scope=\"col\">What happens when misplaced</th></tr></thead><tbody><tr><th scope=\"row\"><code>Soul.md</code> (Personality &amp; Behavior)</th><td>Voice rules, truthfulness gates, tool confirmation boundaries, draft-before-send defaults</td><td>Putting schedule facts here causes drift; omitting approval rules leaves side effects vague (<a href=\"/guides/muse-soul-md-templates\">Soul.md templates →</a>)</td></tr><tr><th scope=\"row\"><code>Identity.md</code> (Avatar &amp; Card)</th><td>Name, avatar vibe, one-line role description, surface greeting (<a href=\"/guides/muse-identity-md-avatar-name\">setup guide →</a>)</td><td>Stuffing procedural approval matrices here crowds identity card limits</td></tr><tr><th scope=\"row\"><code>Memory.md</code> (Facts &amp; Context)</th><td>Working hours, preferred recipients, formatting constants, standing context (<a href=\"/guides/muse-memory-md-privacy-reset\">privacy guide →</a>)</td><td>Storing behavioral prohibitions as memories makes them fragile when you prune memory entries</td></tr><tr><th scope=\"row\">Scheduled Tasks / Connectors</th><td>Recurrence timing, permitted external integrations, per-task prompt scope</td><td>Asking a Task to &ldquo;handle my inbox&rdquo; without dry-run limits leads to premature sends</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "copyable-soul-md-approval-block",
+      "h2": "Copy-paste Soul.md autonomy & Connector approval block.",
+      "html": "<p>Merge this section into your existing <code>Soul.md</code> safely using the <a href=\"/tools/muse-soul-md-editor\">Muse Soul.md Editor &amp; Merge Tool</a> (it wraps your rules in reversible markers and downloads an original backup first):</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"muse\">## Connectors &amp; Scheduled Tasks\n\n- Treat reading calendars, messages, and notes as read-only synthesis unless I explicitly approve an external action.\n- Always prepare a clickable summary, diff, or exact message draft first before creating events, replying to people, sending invites, or modifying external records.\n- When running a scheduled recurring Task: report verified inputs, state any failed Connector lookup explicitly, and stop at a reviewable shortlist rather than taking irreversible side effects silently.\n- Never fabricate missing Connector outputs or invent calendar slots when a tool call returns empty or errors out.</div>"
+    },
+    {
+      "id": "read-prepare-confirm-matrix",
+      "h2": "Practical read / draft / execute boundaries for everyday workflows.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Workflow</th><th scope=\"col\">Safe automatic step</th><th scope=\"col\">Require confirmation gate</th></tr></thead><tbody><tr><th scope=\"row\">Morning brief (Scheduled Task)</th><td>Aggregate upcoming events, deadlines, and unread highlights with exact timestamps</td><td>Declining invitations, rescheduling meetings, or messaging attendees</td></tr><tr><th scope=\"row\">Email / message triage</th><td>Cluster threads by urgency and write editable reply drafts</td><td>Hitting send on any external thread or forwarding sensitive attachments</td></tr><tr><th scope=\"row\">Research &amp; side chats</th><td>Fork long tangents into Muse Side Chats while keeping the main log clean (<a href=\"/guides/muse-troubleshooting-mobile-side-chats\">troubleshooting guide →</a>)</td><td>Overwriting permanent workspace docs or appending unverified claims to shared notes</td></tr></tbody></table></div><p>Want to test Muse behavior alongside ChatGPT and Claude first? Compare all three platforms in <a href=\"/guides/muse-vs-chatgpt-vs-claude-personality\">Muse vs ChatGPT vs Claude</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Should Connector approval rules go in Soul.md or Memory.md?",
+      "a": "Put durable confirmation gates and draft-first defaults in Soul.md because Soul.md governs behavior across conversations and Tasks. Keep mutable context (like your work hours or VIP contacts) in Memory.md."
+    },
+    {
+      "q": "Can Soul.md overwrite existing customizations if I paste an approval block directly?",
+      "a": "Replacing all of Soul.md manually will erase existing persona traits unless you merge carefully. Use our Muse Soul.md Editor to preview the merge inside labeled markers and save an original backup first."
+    },
+    {
+      "q": "How should a Meta Muse scheduled Task report failed lookups?",
+      "a": "Add an explicit rule telling Muse to quote tool failures verbatim and leave missing slots blank instead of inferring or smoothing over skipped Connector reads."
+    },
+    {
+      "q": "Where do I inspect or pause saved facts Muse learned from Connectors?",
+      "a": "Inspect and trim Memory.md regularly under Assistant Identity / Memory settings, or audit an export locally with the AgentTune AI Memory Export Reviewer."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published covering Soul.md vs Identity.md vs Memory.md separation and Connector/Task confirmation gates."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta Help Center: Customize Meta Muse personality files & memories",
+      "href": "https://www.meta.com/help/artificial-intelligence/995796179982326/"
+    },
+    {
+      "label": "AgentTune: Muse Personality Hub (Soul.md, Identity.md & Memory.md)",
+      "href": "https://agent-tune.com/guides/muse-personality"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Tool",
+      "label": "Muse Soul.md Editor & Safe Merge Tool",
+      "href": "/tools/muse-soul-md-editor"
+    },
+    {
+      "kicker": "Hub",
+      "label": "Meta Muse personality guide (Soul.md & characters)",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse Memory.md privacy, review & reset",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Troubleshooting",
+      "label": "Muse troubleshooting: mobile sync, Side Chats & Tasks",
+      "href": "/guides/muse-troubleshooting-mobile-side-chats"
+    }
+  ]
+}

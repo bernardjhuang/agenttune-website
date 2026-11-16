@@ -1,0 +1,97 @@
+{
+  "slug": "ai-personality-frameworks-comparison-matcher",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "MBTI vs Enneagram vs DISC vs Big Five for AI (Matcher)",
+  "description": "Compare MBTI, Enneagram, DISC, Big Five (OCEAN), and Attachment for tuning AI assistants—plus an interactive 20-second matcher by workflow friction.",
+  "pill": "Interactive Matcher · All 5 Systems",
+  "h1": "Which personality system should you use to tune your AI?",
+  "dek": "MBTI, Enneagram, DISC, Big Five (OCEAN), and Attachment control different layers of AI behavior—pick the exact template family in 20 seconds.",
+  "lede": "AgentTune hosts 43 MIT-licensed tuning templates across five personality systems, plus five free self-report questionnaires. You do not need to take all five tests—or even any test—to pick a strong system prompt. Each framework excels at solving a different AI communication problem, from cutting preamble (<strong>MBTI / DISC</strong>) to calibrating bluntness and reassurance (<strong>Enneagram / Attachment</strong>) or adjusting one dimension cleanly (<strong>Big Five OCEAN</strong>).",
+  "answer": "Pick DISC or MBTI when you want sharper structure and faster bottom-line delivery; pick Big Five (OCEAN) when you want a single trait lever (such as High Openness or Low Extraversion) without a full persona archetype; pick Enneagram or Attachment when your main friction is how candidly the assistant pushes back or cushions critical feedback.",
+  "scripts": [
+    "/resources/tools/friction-matcher.js"
+  ],
+  "sections": [
+    {
+      "id": "interactive-20-second-matcher",
+      "h2": "Interactive 20-second matcher: match your AI annoyance to the right templates.",
+      "html": "<p>Select what annoys you most about unprompted AI replies and where you want to install your rules. The recommendations below update immediately and open pre-configured in the <a href=\"/tools/custom-instructions-generator\">Custom Instructions Generator</a>:</p><form id=\"at-friction-matcher\" class=\"matcher-box\"><fieldset><legend>1. What bothers you most about default AI answers?</legend><div class=\"matcher-options\"><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"verdict-first\" checked><span><strong>Buries the lead:</strong> Too much intro throat-clearing before the actual answer.</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"push-back\"><span><strong>Sycophantic agreement:</strong> Validates weak ideas instead of challenging flaws.</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"step-by-step\"><span><strong>Jumps ahead:</strong> Skips foundations or sounds impatient when teaching.</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"creative-explore\"><span><strong>Generic &amp; safe:</strong> Gives obvious boilerplate instead of non-obvious angles.</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"coding-diffs\"><span><strong>Chatty coding edits:</strong> Writes long essays instead of minimal diffs and checks.</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"friction\" value=\"tone-comfort\"><span><strong>Overwhelming or harsh:</strong> Blunt dumps or giant lists feel stressful.</span></label></div></fieldset><fieldset><legend>2. Where will you paste the instructions?</legend><div class=\"matcher-options\"><label class=\"matcher-option\"><input type=\"radio\" name=\"scope\" value=\"chatgpt-custom\" checked><span>ChatGPT Custom Instructions (1,500-char box)</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"scope\" value=\"claude-personal\"><span>Claude Profile Preferences</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"scope\" value=\"muse\"><span>Meta Muse <code>Soul.md</code></span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"scope\" value=\"codex-cli\"><span>Coding agent (<code>CLAUDE.md</code> / <code>AGENTS.md</code>)</span></label><label class=\"matcher-option\"><input type=\"radio\" name=\"scope\" value=\"anywhere\"><span>Portable Markdown (Perplexity, Gemini, API)</span></label></div></fieldset><div id=\"matcher-results\" aria-live=\"polite\"><div class=\"matcher-summary\"><h3>Lead with the answer &amp; stop over-explaining</h3><p>Best when defaults bury the conclusion behind three paragraphs of preamble and qualifiers. MBTI T/J, Enneagram Type 5/8, and DISC D/C profiles explicitly penalize throat-clearing and force a bottom-line-first reply structure.</p></div><div class=\"matcher-results-grid\"><div class=\"matcher-card\"><div class=\"matcher-card-sys\">MBTI</div><div class=\"matcher-card-title\">INTJ · Strategist</div><p class=\"matcher-card-rule\">Answer first, numbered structure, zero flattery.</p><div class=\"matcher-card-links\"><a href=\"/tools/custom-instructions-generator?mode=template&amp;system=mbti&amp;type=intj&amp;target=chatgpt-custom\">Open in generator →</a><a href=\"/library/mbti/intj\">View template</a></div></div><div class=\"matcher-card\"><div class=\"matcher-card-sys\">DISC</div><div class=\"matcher-card-title\">D · Dominance</div><p class=\"matcher-card-rule\">Shortest reliable rule set when you want speed and crisp options.</p><div class=\"matcher-card-links\"><a href=\"/tools/custom-instructions-generator?mode=template&amp;system=disc&amp;type=d-dominance&amp;target=chatgpt-custom\">Open in generator →</a><a href=\"/library/disc/d-dominance\">View template</a></div></div><div class=\"matcher-card\"><div class=\"matcher-card-sys\">Enneagram</div><div class=\"matcher-card-title\">Type 5 · Investigator</div><p class=\"matcher-card-rule\">Concise reasoning with clear limits and no filler.</p><div class=\"matcher-card-links\"><a href=\"/tools/custom-instructions-generator?mode=template&amp;system=enneagram&amp;type=5-investigator&amp;target=chatgpt-custom\">Open in generator →</a><a href=\"/library/enneagram/5-investigator\">View template</a></div></div><div class=\"matcher-card\"><div class=\"matcher-card-sys\">Big Five</div><div class=\"matcher-card-title\">High Conscientiousness</div><p class=\"matcher-card-rule\">Ordered checklist output without changing warmth.</p><div class=\"matcher-card-links\"><a href=\"/tools/custom-instructions-generator?mode=template&amp;system=ocean&amp;type=conscientiousness-high&amp;target=chatgpt-custom\">Open in generator →</a><a href=\"/library/ocean/conscientiousness-high\">View template</a></div></div></div></div></form>"
+    },
+    {
+      "id": "five-framework-crosswalk",
+      "h2": "All 5 personality frameworks compared side by side.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">System</th><th scope=\"col\">What it captures best</th><th scope=\"col\">Template count</th><th scope=\"col\">Fastest test &amp; instrument</th><th scope=\"col\">Best use case &amp; deep dive</th></tr></thead><tbody><tr><th scope=\"row\">DISC</th><td>Directness, urgency, people vs. task focus</td><td>4 types (D, I, S, C)</td><td><a href=\"/tests/disc\">16 items (~3 min, ODAT)</a></td><td>Fastest workplace/decision tuning (<a href=\"/guides/disc-ai-prompts\">DISC guide →</a>)</td></tr><tr><th scope=\"row\">Big Five (OCEAN)</th><td>Single continuous communication traits without stereotyping</td><td>10 extreme bands (High/Low &times; 5)</td><td><a href=\"/tests/big-five\">50 items (~6 min, IPIP-50)</a></td><td>Surgical adjustments like Openness or Extraversion (<a href=\"/guides/big-five-ai-prompts\">OCEAN guide →</a>)</td></tr><tr><th scope=\"row\">MBTI (OEJTS)</th><td>Big-picture vs concrete steps, blunt logic vs human impact</td><td>16 types</td><td><a href=\"/tests/mbti\">32 pairs (~5 min, OEJTS 1.2)</a></td><td>Mental model framing &amp; explanation style (<a href=\"/guides/mbti-vs-big-five-for-ai\">MBTI vs Big Five →</a>)</td></tr><tr><th scope=\"row\">Enneagram</th><td>Core defensive triggers, critique directness, motivational framing</td><td>9 types (1–9)</td><td><a href=\"/tests/enneagram\">36 items (~5 min, OEPS)</a></td><td>Anti-sycophancy pushback &amp; coaching tone (<a href=\"/guides/enneagram-ai-prompts\">Enneagram guide →</a>)</td></tr><tr><th scope=\"row\">Attachment</th><td>Feedback cushioning, check-in cadence, emotional steadiness</td><td>4 styles (Secure, Anxious, Avoidant, Disorganized)</td><td><a href=\"/tests/attachment\">36 items (~5 min, ECR-R)</a></td><td>Preventing harsh critique or needy over-apologies (<a href=\"/guides/attachment-style-ai-prompts\">Attachment guide →</a>)</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "empirical-data-and-limits",
+      "h2": "What our September 2026 benchmark data says about choosing between systems.",
+      "html": "<ul><li><strong>Models share tight default habits regardless of framework:</strong> Across 2,000 fresh September 2026 sessions covering GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, Big Five Agreeableness clustered from <strong>44.99 to 47.07 / 50</strong> while DISC Dominance sat at a floor of <strong>4.00 to 5.42 / 20</strong>. That explains why out-of-the-box defaults almost never feel sharp until you override them with behavioral rules.</li><li><strong>Watch out for artificial tie-breaking in binary type quizzes:</strong> On OEJTS MBTI, <strong>59 of 400 fresh sessions</strong> tied on at least one axis; silent <code>&lt;</code> tie-breaking inflated apparent <code>INTJ</code> rates from <strong>280/400 (70.0%) to 335/400 (83.8%)</strong>. AgentTune&rsquo;s interactive tests report exact ties rather than guessing a letter.</li><li><strong>Instructions move the needle far more than framework labels:</strong> Our 60-reply controlled pilot raised answer-first openings from <strong>14/20 to 19/20</strong> and cut hedges per reply from <strong>0.35 to 0.05</strong> using concrete behavioral rules. Pick whichever system vocabulary makes those behavioral tradeoffs clearest for you—or skip personality tests altogether in the <a href=\"/tools/communication-preferences-builder\">Communication Preferences Builder</a>.</li></ul>"
+    },
+    {
+      "id": "combining-two-systems-safely",
+      "h2": "How to combine two frameworks without writing contradictory instructions.",
+      "html": "<p>If you like aspects of two frameworks—for example, <strong>DISC D</strong> for brevity plus <strong>Enneagram Type 8</strong> or <strong>Big Five High Openness</strong> for pushback—do not paste two full 80-line templates into the same settings box. Instead:</p><ol><li>Choose one <strong>structural driver</strong> (DISC, MBTI, or OCEAN) to control answer order, length, and formatting.</li><li>Borrow only 2–3 targeted rules for <strong>critique or tone</strong> from Enneagram or Attachment.</li><li>Paste your combined draft into the <a href=\"/tools/instruction-checker\">Instruction Checker</a> to catch accidental contradictions (&ldquo;always concise&rdquo; vs &ldquo;explain everything in detail&rdquo;), then run two quick before/after prompts in the <a href=\"/tools/instruction-test-bench\">Test Bench</a>.</li></ol>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which personality system is most scientifically validated for communication preferences?",
+      "a": "Among the five public instruments here, the Big Five (measured via IPIP-50) has the strongest consensus support in personality psychology as continuous trait dimensions rather than discrete categories, making it ideal when you want to tune one habit at a time."
+    },
+    {
+      "q": "Do I have to take a personality test to generate AgentTune custom instructions?",
+      "a": "No. Use the 20-second friction matcher above, browse the 43-file library directly by communication trait, or use the test-free Communication Preferences Builder."
+    },
+    {
+      "q": "What is the fastest test if I want an AI tuning file in three minutes?",
+      "a": "Our free 16-item DISC assessment (ODAT) takes roughly three minutes in your browser with no email required, and gives you an instant primary style, optional blend, and paste-ready AI rules."
+    },
+    {
+      "q": "Should I tell ChatGPT or Claude 'act as an INTJ' instead of pasting a full template?",
+      "a": "No. Bare four-letter labels push models toward caricatures or clichés. Concrete behavioral rules (putting conclusions first, omitting filler praise, naming unverified assumptions) work reliably across models."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published with interactive 20-second workflow friction matcher, 5-framework crosswalk table, and September 2026 empirical caveats."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Research: AI Personality Rankings & Benchmarks (Sept 2026)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "AgentTune Guide: MBTI vs Big Five for AI Instructions",
+      "href": "https://agent-tune.com/guides/mbti-vs-big-five-for-ai"
+    },
+    {
+      "label": "AgentTune Tests Hub (5 Free Open Instruments)",
+      "href": "https://agent-tune.com/tests/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Tool",
+      "label": "Communication Preferences Builder (no personality test)",
+      "href": "/tools/communication-preferences-builder"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Custom Instructions Generator (all 43 templates)",
+      "href": "/tools/custom-instructions-generator"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "MBTI vs Big Five for AI",
+      "href": "/guides/mbti-vs-big-five-for-ai"
+    },
+    {
+      "kicker": "Tests",
+      "label": "Compare all 5 free public-domain personality tests",
+      "href": "/tests/"
+    }
+  ]
+}

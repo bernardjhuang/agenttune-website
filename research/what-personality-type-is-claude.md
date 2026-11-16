@@ -43,7 +43,7 @@ The methods differ substantially. The May figures are scoring records; Opus 4.8 
 
 ## Using these results.
 
-Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The [seven Claude setups](https://agent-tune.com/guides/best-claude-personality) and [directness guide](https://agent-tune.com/guides/make-claude-more-direct) offer editable starting points; questionnaire scores do not validate them.
+Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The [seven Claude setups](https://agent-tune.com/guides/claude-personality#five-claude-personality-setups-to-try) and [directness guide](https://agent-tune.com/guides/make-claude-more-direct) offer editable starting points; questionnaire scores do not validate them.
 
 A separate archive compares two compact prompts with a baseline on twenty tasks. See [the 60-reply pilot and its downloadable records](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) for descriptive ratings and the missing reproduction details. It does not test all seven setups.
 
@@ -86,7 +86,7 @@ Write specific communication preferences in Instructions for Claude, Project ins
 ## Keep going.
 
 - [New resource: Opus 5.5 vs Fable 5.1: which answers differ?](https://agent-tune.com/research/opus-vs-fable-question-level)
-- [Guide: The best Claude personality setups](https://agent-tune.com/guides/best-claude-personality)
+- [Guide: How to change Claude's personality (7 setups & settings)](https://agent-tune.com/guides/claude-personality)
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)

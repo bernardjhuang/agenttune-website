@@ -1,18 +1,19 @@
 {
   "slug": "muse-soul-md-templates",
   "published": "2026-09-25",
-  "updated": "2026-09-25",
-  "title": "Meta Muse Soul.md Templates: 20 Copyable Examples",
+  "updated": "2026-11-16",
+  "title": "Best Meta Muse Soul.md Templates: 20 Copy-Paste Examples",
   "h1": "Meta Muse Soul.md templates.",
-  "dek": "Four downloadable templates plus sixteen role blocks. Paste one at the end of Soul.md and edit it.",
-  "description": "Twenty Meta Muse Soul.md templates: four with downloads and sixteen by role, written for an agent that reports and asks before it acts. Copy, paste, edit.",
+  "dek": "Four downloadable starter files plus sixteen role blocks. Preview and merge non-destructively into Soul.md.",
+  "description": "20 copy-paste Meta Muse Soul.md templates: the 4 best starter files (with .md downloads) plus 16 role prompts for founders, coding, editing & inbox triage.",
   "pill": "Guide · Resources",
-  "lede": "Choose how you want Muse to communicate, then append one clearly labeled section to its existing Soul.md. The first four templates include Markdown downloads and sample tasks; the sixteen role blocks are copy-and-paste examples.",
-  "answer": "Choose one template, append it to your existing Soul.md, and compare answers on the same tasks before and after. These are editable starting points; we have not measured their effectiveness in a controlled Muse experiment.",
+  "lede": "Choose how you want Muse to communicate, then append one clearly labeled section to its existing Soul.md. The first four templates include Markdown downloads and sample tasks; the sixteen role blocks are copy-and-paste examples—or merge any template directly in our free Soul.md editor.",
+  "answer": "Pick one of the four core Soul.md downloads (Concise assistant, Thinking partner, Writing editor, Task coordinator) or sixteen role-specific examples below, append it to Soul.md (or use /tools/muse-soul-md-editor to keep a backup), and compare answers on identical tasks before and after.",
   "sections": [
     {
+      "id": "choose-a-starting-point",
       "h2": "Choose a starting point.",
-      "html": "<p>These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template</th><th scope=\"col\">Useful when</th><th scope=\"col\">Download</th></tr></thead><tbody><tr><td>Concise assistant</td><td>For short answers and clear recommendations.</td><td><a href=\"/resources/muse/concise-assistant.md\" download>Download Markdown</a></td></tr><tr><td>Thinking partner</td><td>For exploring decisions and examining assumptions.</td><td><a href=\"/resources/muse/thinking-partner.md\" download>Download Markdown</a></td></tr><tr><td>Writing editor</td><td>For concrete edits that preserve your intended meaning.</td><td><a href=\"/resources/muse/writing-editor.md\" download>Download Markdown</a></td></tr><tr><td>Task coordinator</td><td>For progress reports, blockers and clear requests for decisions.</td><td><a href=\"/resources/muse/task-coordinator.md\" download>Download Markdown</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>"
+      "html": "<p>These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. Need to keep your existing core truths intact? Use our <a href=\"/tools/muse-soul-md-editor\">browser Soul.md merge editor</a> to append a template with automatic backup and diff preview.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template</th><th scope=\"col\">Best for</th><th scope=\"col\">Quick jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">Concise assistant</th><td>Short, answer-first replies without filler</td><td><a href=\"#1-concise-assistant\">View prompt</a> · <a href=\"/resources/muse/concise-assistant.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Thinking partner</th><td>Decisions, tradeoffs, and checking assumptions</td><td><a href=\"#2-thinking-partner\">View prompt</a> · <a href=\"/resources/muse/thinking-partner.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Writing editor</th><td>Tight prose edits that keep your voice &amp; facts</td><td><a href=\"#3-writing-editor\">View prompt</a> · <a href=\"/resources/muse/writing-editor.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Task coordinator</th><td>Status briefs, blockers, and Connector approval cards</td><td><a href=\"#4-task-coordinator\">View prompt</a> · <a href=\"/resources/muse/task-coordinator.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">16 role blocks</th><td>Founder, Developer, Analyst, Inbox Triage, Shopper, Student &amp; 10 more</td><td><a href=\"#sixteen-more-soul-md-examples-by-role\">Jump to 16 roles ↓</a></td></tr></tbody></table></div><p>Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.</p>"
     },
     {
       "h2": "Add the template to your existing Soul.md.",
@@ -93,8 +94,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
-      "href": "/guides/meta-muse-characters"
+      "label": "Meta Muse Connectors, tasks & approval rules",
+      "href": "/guides/meta-muse-connectors-tasks-approval-rules"
     },
     {
       "kicker": "Guide",
@@ -123,6 +124,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "Added a quick-pick role jump table and direct merge links to the browser Soul.md editor."
+    },
     {
       "date": "2026-09-25",
       "note": "First published with downloadable resources."

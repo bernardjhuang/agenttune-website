@@ -5,20 +5,21 @@ Guide · Meta Muse
 
 # What is Meta Muse? Files, plans, and how it works.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled reminders, side chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Meta lists a Free tier ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).
 
 ## What Muse is—and how it differs from Meta AI.
 
-Searchers frequently confuse Meta Muse with Meta AI. They are separate products with different interfaces, memory models, and customization controls:
+Searchers frequently confuse Meta Muse with Meta AI. Below is the at-a-glance spec sheet comparing both products:
 
 | Feature | Meta Muse (muse.ai &amp; Muse app) | Meta AI (WhatsApp, Instagram, web) |
 | --- | --- | --- |
-| Primary role | Persistent personal agent with cloud workspace, connectors, and scheduled tasks | General conversational assistant inside social apps and meta.ai |
+| Primary role | Persistent personal agent with isolated cloud workspace, Connectors, and scheduled tasks | General conversational assistant inside social apps and meta.ai |
+| Pricing &amp; allowances | Free ($0, refreshing limit), Power ($20/mo, 500M tokens/wk), Maximum ($100/mo, 3B/wk) | Included free in Meta social apps &amp; meta.ai |
 | Customization files | Editable Soul.md, Identity.md, and Memory.md | Chat prompts and basic memory toggles; no Soul.md file system |
 | Thread model | One persistent Main Chat plus disposable Side Chats | Standard multi-thread chat history |
-| Sensitive actions | Connector permissions + approval prompts for actions like email or purchases ([Meta privacy docs](https://www.meta.com/help/artificial-intelligence/1047255454427887/)) | No cloud-VM file system or Muse connector approvals |
+| Sensitive actions | Connector permissions + approval prompts for actions like email or purchases ([Connector approval guide](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)) | No cloud-VM file system or Muse connector approvals |
 
 For a step-by-step comparison of customization controls across both products, see [Meta AI vs. Meta Muse: how to change personality and tone](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality).
 
@@ -116,6 +117,6 @@ Meta says Help improve our AI models is on initially. You can turn it off under 
 
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Muse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)
+- [Guide: Meta Muse Connectors, scheduled tasks & Soul.md approval rules](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)

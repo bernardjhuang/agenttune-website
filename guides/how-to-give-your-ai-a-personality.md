@@ -5,9 +5,9 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
-Write six to eight concrete behavioral rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent instruction slot: ChatGPT Custom Instructions (1,500 chars), Claude Profile Preferences, Meta Muse Soul.md, Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents. Use the free generator or a 5-minute no-email test if you want a structured starting point.
+Write six to eight concrete behavioral rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent instruction slot: ChatGPT Custom Instructions (1,500 chars) or Personality Traits, Claude Profile Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
 ## "Give my AI a personality" means two different things.
 
@@ -30,24 +30,25 @@ In both directions, observable rules beat adjectives. "Be concise and candid" is
 
 ## Four steps. About ten minutes.
 
-- Pick your preferences (or take a 5-minute test). Toggle six plain-English choices in the [preferences builder](https://agent-tune.com/tools/communication-preferences-builder), or take one of the five free, no-email questionnaires on the [tests hub](https://agent-tune.com/tests/).
+- Pick your preferences (or take a 5-minute test). Toggle six plain-English choices in the [preferences builder](https://agent-tune.com/tools/communication-preferences-builder), or use the interactive [5-system friction matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher) or five no-email tests on the [tests hub](https://agent-tune.com/tests/).
 - Grab a clean template. Browse all [43 MIT-licensed tuning files](https://agent-tune.com/library/) across MBTI, Enneagram, DISC, Attachment, and Big Five—or build a custom export in the [generator](https://agent-tune.com/tools/custom-instructions-generator).
 - Paste it into your app's persistent slot (web & mobile):
 
 | App / Agent | Where to paste (Web &amp; Mobile) | Walkthrough |
 | --- | --- | --- |
-| ChatGPT | Settings → Personalization → Custom Instructions (≤1,500 chars) or Project Instructions | [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) · [Projects vs. Global](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions) |
-| Claude | Initials / Profile icon → Settings → Profile → Instructions for Claude (or Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web) |
+| ChatGPT | Settings → Personalization → Personality presets &amp; Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
+| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web) |
 | Meta Muse | Assistant icon → Identity → Soul.md (keep avatar/name in Identity.md) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
+| Perplexity | Perplexity Spaces → Space Settings → Custom Instructions (4,000 chars) or AI Profile | [Perplexity Spaces guide](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) |
 | Grok &amp; Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
 | Google Gemini | Settings → Saved info, custom Gems, or ~/.gemini/GEMINI.md | [Gemini guide](https://agent-tune.com/guides/gemini-personality) |
-| Claude Code &amp; Codex | ~/.claude/output-styles/*.md, CLAUDE.md, or ~/.codex/AGENTS.md (32 KiB cap) | [Claude Code](https://agent-tune.com/guides/claude-code-personality) · [Codex AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide) |
+| Coding Agents | ~/.claude/output-styles/*.md, CLAUDE.md, ~/.codex/AGENTS.md (32 KiB), .cursor/rules/*.mdc | [All coding rules files](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) |
 
 Step 4 — Edit and lint for conflicts: Delete any line that doesn't sound like you, and run stacked rules through the [instruction conflict checker](https://agent-tune.com/tools/instruction-checker) so contradictory lines (like "be brief" plus "explain every edge case") don't cancel each other out.
 
 ## Five systems you can tune from.
 
-A tuning file needs a starting description of you. Any of the five major personality frameworks works; they just capture different layers. Pick the one you already know your type in, or the one whose layer matters most to you.
+A tuning file needs a starting description of you. Any of the five major personality frameworks works; they just capture different layers. Pick the one you already know your type in, or the one whose layer matters most to you (or compare all five side by side in our [5-system framework matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)).
 
 ### MBTI — cognitive style
 
@@ -109,4 +110,6 @@ Edit it; that's the design. The type is a starting hypothesis and the file is pl
 - [Library: All 43 tuning files, MIT-licensed](https://agent-tune.com/library/)
 - [Guide: ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
+- [ChatGPT: How to change ChatGPT's personality (presets & rules)](https://agent-tune.com/guides/chatgpt-personality-settings)
+- [Matcher: Which AI personality template fits you? 5-system matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
 - [Guide: Tune your coding agent](https://agent-tune.com/guides/coding-agent-personality)

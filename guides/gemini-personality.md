@@ -3,17 +3,21 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Google Gemini
 
-# How to give Google Gemini a personality.
+# How to change Google Gemini’s personality.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 16, 2026
 
-For everyday chats in Gemini on web or mobile, add your communication rules to Saved Info so they apply across threads. For a specialized persona or document workflow, create a custom Gem and paste your tuning into the Gem's instructions. For Gemini CLI and Gemini Code Assist, put personal communication defaults in ~/.gemini/GEMINI.md and repository conventions in the project's GEMINI.md.
+To change Google Gemini's personality on Android, iOS, or gemini.google.com, open your Profile icon → Settings → Saved info and add short behavioral rules that apply across all standard chats—or open Gem manager → New Gem → Instructions for a dedicated persona. For Gemini CLI and Gemini Code Assist, put personal communication defaults in ~/.gemini/GEMINI.md.
 
-## Where Gemini reads instructions across every surface.
+## Exact tap paths on Gemini mobile (iOS/Android) and web.
+
+- Account-wide personality (Saved info): On gemini.google.com or the Gemini iOS/Android app, tap your Profile picture → Settings → Saved info → Add. Paste 1–5 concrete rules (e.g., "Lead with the direct answer, skip filler praise, and point out flawed assumptions first."). Toggle Saved info on if paused.
+- Custom role or persona (Gems): Open Explore Gems → New Gem, give it a clear role and communication block under Instructions, save, and chat inside that Gem whenever you want that persona.
+- Terminal & IDE (GEMINI.md): Put personal tone rules in ~/.gemini/GEMINI.md and shared repo conventions in the project root GEMINI.md.
 
 | Surface | Where to paste your rules | Scope |
 | --- | --- | --- |
-| Gemini web &amp; mobile (account-wide) | Settings → Saved info | Applies across ordinary chats on your Google account. |
+| Gemini web &amp; mobile (account-wide) | Profile → Settings → Saved info | Applies across ordinary chats on your Google account. |
 | Gemini Gems | Gem manager → New Gem → Instructions | Applies only when chatting with that specific Gem. |
 | Gemini CLI &amp; Code Assist (personal) | ~/.gemini/GEMINI.md | Your personal coding assistant defaults across repositories. |
 | Gemini CLI &amp; Code Assist (project) | Repository root GEMINI.md (and subdirectory GEMINI.md files) | Shared project context and team conventions. |
@@ -69,6 +73,8 @@ What personality type did Gemini score on the AgentTune tests?
 In the May 2026 study of Gemini 3.1 Pro, its self-report scored INTJ on the OEJTS, Type 1 / Type 5 on the Enneagram, Conscientiousness on DISC, and Secure on the ECR-R attachment scale. It was not part of the September 2026 fresh-session collection.
 
 ## What changed.
+
+- November 16, 2026 Put iOS, Android, and web Saved Info + Gems tap paths first to match mobile/consumer Gemini customization searches.
 
 - November 5, 2026 First published covering Gemini Saved info, custom Gems, and GEMINI.md in Gemini CLI.
 

@@ -2,22 +2,26 @@
   "slug": "enneagram-test-react-typescript",
   "route": "/guides/enneagram-test-react-typescript",
   "published": "2026-09-25",
-  "updated": "2026-11-11",
-  "title": "Open-Source Enneagram Test in React + TypeScript (GitHub)",
-  "description": "Download a free MIT-licensed React + TypeScript Enneagram starter: 36 items, accessible radio groups, strict validation, and tie-preserving JS scorer.",
-  "pill": "Developer resource · runnable starter",
-  "h1": "Build an Enneagram test in React + TypeScript.",
-  "dek": "A complete Vite + React + TypeScript starter with accessible pagination, strict validation, and explicit tie handling.",
-  "lede": "Start with a working local React application instead of rebuilding pagination, focus management, and scoring logic. This starter wraps AgentTune’s nine-group Enneagram scorer in a typed React interface with synthetic demo controls and a lockfile.",
-  "answer": "Download enneagram-react-typescript.zip, run npm ci and npm run dev, and inspect a six-page, 36-item React + TypeScript questionnaire flow. It uses native fieldset and radio groups, validates incomplete pages, preserves all tied top scores, and keeps answers in browser memory.",
+  "updated": "2026-11-16",
+  "title": "Open-Source Enneagram Scorer & React App (GitHub, MIT)",
+  "description": "Free MIT-licensed JavaScript Enneagram scorer (score.js) and React + TypeScript starter app: 36 items, live browser scorer demo, and tie-preserving rules.",
+  "pill": "Developer resource · runnable starter & JS scorer",
+  "h1": "Open-source Enneagram test & scorer (React + TypeScript + JS).",
+  "dek": "Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.",
+  "lede": "Build an Enneagram assessment locally without rewriting pagination, keyboard accessibility, or tie-preserving scoring arithmetic. Below you get both the complete MIT-licensed React + TypeScript starter project and the standalone zero-dependency JavaScript scorer (<code>score.js</code>) for Node or browsers—plus an interactive scoring widget right on this page.",
+  "answer": "Download score.js + questions.json for a standalone Node/browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a complete 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.",
   "sections": [
     {
-      "h2": "Download and run the complete app.",
-      "html": "<p><a href=\"/resources/enneagram/enneagram-react-typescript.zip\" download>Download the React + TypeScript starter ZIP</a>. Extract it into a local development folder. Use a supported Node.js release (22.12 or newer), then run:</p><pre><code>cd enneagram-react-typescript\nnpm ci\nnpm run dev</code></pre><p>Open the local address printed by Vite. For a production build, run <code>npm run build</code>, then <code>npm run preview</code> to inspect it. Publish the generated <code>dist/</code> folder with any static host. Serve the app over HTTP rather than opening its index file directly.</p><p>The archive includes pinned React, TypeScript and Vite dependencies plus a lockfile. There is no backend, authentication or external answer submission.</p>"
+      "h2": "Download the standalone JS scorer or full React + TypeScript starter.",
+      "html": "<p>Pick either the full React + TypeScript starter ZIP or the dependency-free CommonJS/browser files:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Download</th><th scope=\"col\">What it includes</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"/resources/enneagram/enneagram-react-typescript.zip\" download>enneagram-react-typescript.zip</a></th><td>Full Vite + React + TypeScript starter with accessible fieldsets, validation, lockfile, and <code>public/score.js</code>.</td></tr><tr><th scope=\"row\"><a href=\"/resources/enneagram/score.js\" download>score.js</a></th><td>Zero-dependency MIT JavaScript scorer for Node and browsers: strict input validation, 9 totals (4–20), and explicit tie reporting.</td></tr><tr><th scope=\"row\"><a href=\"/resources/enneagram/questions.json\" download>questions.json</a></th><td>36 synthetic demo inputs, type keys (4 per type), and scale metadata.</td></tr><tr><th scope=\"row\"><a href=\"/resources/enneagram/README.md\" download>README.md</a> &amp; <a href=\"/resources/enneagram/LICENSE-code.txt\" download>LICENSE-code.txt</a></th><td>Integration examples, API contract, and MIT license boundary.</td></tr></tbody></table></div><p>To run the React starter locally with Node.js 22.12+, extract the archive and run:</p><pre><code>cd enneagram-react-typescript\nnpm ci\nnpm run dev</code></pre><p>Serve the built <code>dist/</code> folder over HTTP (never open the raw HTML file over <code>file://</code>). Want to take the live 36-question OEPS test without code? Visit <a href=\"/tests/enneagram\">/tests/enneagram</a>.</p>"
     },
     {
-      "h2": "One scorer, with a TypeScript boundary.",
-      "html": "<p>The app loads the canonical <code>public/score.js</code> file before its React entry. The TypeScript wrapper describes the result contract and calls that scorer directly rather than maintaining a second copy of the scoring algorithm.</p><pre><code>interface Score {\n  version: string;\n  scores: Record&lt;string, number&gt;;\n  topScore: number;\n  leaders: number[];\n  tied: boolean;\n  dominantType: number | null;\n}</code></pre><p>The scorer requires exactly 36 integer responses from 1 to 5 in item order. It rejects missing values, sparse arrays, strings and out-of-range numbers. TypeScript enforces the UI contract at compile time, while runtime validation guards the scoring call.</p>"
+      "h2": "Try the JavaScript scorer live in your browser.",
+      "html": "<p>Edit the 36-item array or load a preset below. This widget parses and scores numbers locally using <code>score.js</code> without sending or storing answers.</p><form id=\"enneagram-demo\" class=\"resource-demo\"><label for=\"enneagram-answers\"><strong>Answers in item order (JSON array)</strong></label><p id=\"enneagram-input-help\">Exactly 36 whole numbers from 1 to 5. Examples are synthetic test inputs.</p><textarea id=\"enneagram-answers\" rows=\"5\" spellcheck=\"false\" aria-describedby=\"enneagram-input-help enneagram-message\">[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]</textarea><div class=\"resource-actions\"><button type=\"submit\">Score answers</button><button type=\"button\" data-sample=\"neutral\">All neutral</button><button type=\"button\" data-sample=\"five\">Type 5 example</button><button type=\"button\" data-sample=\"tie\">Types 1 + 5 tie</button></div><p id=\"enneagram-message\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\"></p><pre id=\"enneagram-output\" tabindex=\"0\" aria-label=\"Scoring result\"></pre></form><noscript><p>Enable JavaScript to test the live scoring widget, or download <code>score.js</code> to run in Node.</p></noscript>"
+    },
+    {
+      "h2": "Use the scorer in Node or a browser (with a TypeScript boundary).",
+      "html": "<p>In Node CommonJS, load <code>score.js</code> directly:</p><div class=\"guide-snippet\">const { score } = require('./score.js');\nconst answers = Array(36).fill(3);\nanswers.fill(5, 16, 20); // Type 5 items (indices 16-19)\nconsole.log(score(answers));\n// leaders: [5], dominantType: 5, topScore: 20</div><p>In the React + TypeScript starter, <code>public/score.js</code> loads once and <code>src/scorer.ts</code> wraps the single canonical implementation:</p><pre><code>interface Score {\n  version: string;\n  scores: Record&lt;string, number&gt;;\n  topScore: number;\n  leaders: number[];\n  tied: boolean;\n  dominantType: number | null;\n}</code></pre><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Contract</th></tr></thead><tbody><tr><th scope=\"row\"><code>version</code></th><td><code>agenttune-enneagram-36-v1</code> identifying the 36-input 9-group contract.</td></tr><tr><th scope=\"row\"><code>scores</code></th><td>Raw integer totals (4–20) keyed by Enneagram type <code>1</code>–<code>9</code> (no reversed items).</td></tr><tr><th scope=\"row\"><code>topScore</code></th><td>Highest raw integer total across the nine groups.</td></tr><tr><th scope=\"row\"><code>leaders</code></th><td>Sorted array of every type sharing <code>topScore</code>.</td></tr><tr><th scope=\"row\"><code>tied</code></th><td><code>true</code> whenever two or more types share <code>topScore</code>.</td></tr><tr><th scope=\"row\"><code>dominantType</code></th><td>Unique leader integer <code>1</code>–<code>9</code>, or <code>null</code> when tied.</td></tr></tbody></table></div><p>The scorer rejects incomplete or sparse arrays, strings, fractions, and values outside 1–5 so missing responses never coerce silently to neutral.</p>"
     },
     {
       "h2": "Preserve uncertainty in the result.",
@@ -30,12 +34,20 @@
     {
       "h2": "Know which files to customize.",
       "html": "<ul><li><code>src/App.tsx</code> controls six-page pagination, radio state, validation and the result view.</li><li><code>src/styles.css</code> controls layout, color contrast and focus rings.</li><li><code>src/questions.json</code> holds the 36 synthetic demo inputs and group mapping.</li><li><code>src/scorer.ts</code> declares the TypeScript types and calls the global scorer.</li><li><code>public/score.js</code> provides the dependency-free scoring implementation.</li></ul><p>If you replace the synthetic demo controls in <code>src/questions.json</code> with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.</p>"
+    },
+    {
+      "h2": "Provenance, scope and licensing.",
+      "html": "<p>The developer bundle in <code>/resources/enneagram/</code> provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at <a href=\"/tests/enneagram\">/tests/enneagram</a> and versioned definitions in <a href=\"/resources/scoring/questions.json\">/resources/scoring/questions.json</a> use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).</p><p>The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review <a href=\"/resources/content/instrument-rights.json\">instrument-rights.json</a> and <a href=\"/research/data/rights-migration.json\">the historical provenance record</a> before redistributing questionnaire text.</p>"
     }
+  ],
+  "scripts": [
+    "/resources/enneagram/score.js",
+    "/resources/enneagram/demo.js"
   ],
   "sources": [
     {
-      "label": "AgentTune: standalone JavaScript Enneagram scorer and API contract",
-      "href": "/guides/open-source-enneagram-test"
+      "label": "AgentTune Interactive 36-Item Enneagram Test (/tests/enneagram)",
+      "href": "/tests/enneagram"
     },
     {
       "label": "React documentation: using TypeScript",
@@ -61,9 +73,14 @@
       "href": "/tools/enneagram-scoring-playground"
     },
     {
-      "kicker": "Developer resource",
-      "label": "Use the standalone JavaScript scorer",
-      "href": "/guides/open-source-enneagram-test"
+      "kicker": "Interactive test",
+      "label": "Take the free 36-item Enneagram test (no email)",
+      "href": "/tests/enneagram"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Free Enneagram test guide (9 types, wings & ties)",
+      "href": "/guides/free-enneagram-test-no-email-guide"
     },
     {
       "kicker": "Research",
@@ -87,6 +104,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "Consolidated the standalone JS scorer download table, Node/browser code examples, scoring contract, and live browser scorer widget into this page."
+    },
     {
       "date": "2026-09-26",
       "note": "Documented the React + TypeScript architecture, keyboard accessibility, and synthetic demo inputs."

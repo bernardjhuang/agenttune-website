@@ -112,7 +112,7 @@ function buildPage(spec, dates) {
     `<div class="guide-table-wrap" role="region" aria-label="${escAttr(section.h2.replace(/<[^>]*>/g, ''))}: table ${++tableIndex}" tabindex="0">`);
   const sectionsHtml = spec.sections.map((s) => `
       <section>
-        <h2>${s.h2}</h2>
+        <h2${s.id ? ` id="${escAttr(s.id)}"` : ""}>${s.h2}</h2>
         ${tableHtml(s)}
       </section>`).join("\n      <div class=\"divider tight\"></div>\n");
 
@@ -188,7 +188,7 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>${faqSchema ? `\n  <script type="application/ld+json">${jsonInline(faqSchema)}</script>` : ""}
 
 ${spec.dataset ? `<script type="application/ld+json">${jsonInline(spec.dataset)}</script>` : ""}
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
 ${FONT_BLOCK}
   <link rel="stylesheet" href="/styles.css" />
@@ -234,10 +234,10 @@ ${relatedHtml}
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>${(spec.scripts || []).map(src => `\n  <script defer src="${escAttr(src)}"></script>`).join("")}
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>${(spec.scripts || []).map(src => `\n  <script defer src="${escAttr(src)}" fetchpriority="low"></script>`).join("")}
 </body>
 </html>
 `;

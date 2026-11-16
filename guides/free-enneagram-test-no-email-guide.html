@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the AgentTune Enneagram test completely free with no email required?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 36 questions are scored locally in your web browser in about 5 minutes with no email address, account creation, or paid unlock."}},{"@type":"Question","name":"How many questions are on this free Enneagram test?","acceptedAnswer":{"@type":"Answer","text":"36 Likert-scale questions (4 items for each of the 9 Enneagram types, rated 1 to 5 from Disagree to Agree), adapted from the Open Enneagram of Personality Scales (OEPS)."}},{"@type":"Question","name":"What if my top two Enneagram types tie?","acceptedAnswer":{"@type":"Answer","text":"Instead of secretly picking one type by tie-breaker order, the test reports all nine totals (4–20) and links the communication guides for every tied leader so you can decide which motivation actually fits you."}},{"@type":"Question","name":"Can I use this Enneagram test to diagnose mental health or screen job applicants?","acceptedAnswer":{"@type":"Answer","text":"No. Like all open personality questionnaires on AgentTune, it is an educational self-reflection tool for exploring personal communication preferences—never a clinical diagnosis or employment screening test."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,7 +91,7 @@
 
       <section>
         <h2>Open-source transparency: inspect every item and line of code.</h2>
-        <p>Nothing in the test is hidden on a backend server:</p><ul><li><strong>Browser-only privacy:</strong> Answers live temporarily in your tab's memory (and optional <code>localStorage</code> draft while in progress) and are cleared on completion.</li><li><strong>Auditable spec &amp; developer starter:</strong> You can read all 36 items in plain Markdown at <a href="/tests/enneagram.md"><code>/tests/enneagram.md</code></a>, review licensing and provenance in <a href="/guides/open-source-enneagram-test">our open-source Enneagram developer guide</a>, or download a runnable nine-group scorer in <a href="/guides/enneagram-test-react-typescript">React + TypeScript</a>.</li></ul>
+        <p>Nothing in the test is hidden on a backend server:</p><ul><li><strong>Browser-only privacy:</strong> Answers live temporarily in your tab's memory (and optional <code>localStorage</code> draft while in progress) and are cleared on completion.</li><li><strong>Auditable spec &amp; developer starter:</strong> You can read all 36 items in plain Markdown at <a href="/tests/enneagram.md"><code>/tests/enneagram.md</code></a>, review licensing, standalone JS scoring, and a runnable nine-group demo in <a href="/guides/enneagram-test-react-typescript">our open-source Enneagram scorer &amp; React + TypeScript guide</a>.</li></ul>
       </section>
       <div class="divider tight"></div>
 
@@ -154,7 +154,7 @@
           <a href="/tests/enneagram"><span class="guide-related-kicker">Free 5-min test</span>Take the free 36-item Enneagram test (no email)</a>
           <a href="/guides/enneagram-ai-prompts"><span class="guide-related-kicker">Prompts</span>Enneagram AI prompts for all 9 types</a>
           <a href="/tools/enneagram-scoring-playground"><span class="guide-related-kicker">Free browser tool</span>Enneagram Scoring Playground — test wings &amp; ties</a>
-          <a href="/guides/open-source-enneagram-test"><span class="guide-related-kicker">Developer resource</span>Open-source Enneagram test on GitHub (36 items &amp; JS)</a>
+          <a href="/tests/enneagram"><span class="guide-related-kicker">Interactive test</span>Take the free 36-item Enneagram test (no email)</a>
           <a href="/guides/enneagram-test-react-typescript"><span class="guide-related-kicker">Developer starter</span>Open-source Enneagram scorer in React + TypeScript</a>
         </div>
       </section>
@@ -167,9 +167,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

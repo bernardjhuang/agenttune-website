@@ -62,7 +62,7 @@ const researchHighlights=[
   ['https://agent-tune.com/research/ai-personality-repeatability','AI Personality Test Repeatability: Within-model standard deviations, item flip rates, and run-to-run stability across 20 model-by-test cohorts (n = 100 each).'],
   ['https://agent-tune.com/research/grok-attachment-cutoff-simulation','Grok 4.6 and the Attachment Cutoff: Sensitivity analysis of Grok 4.6 reported avoidance (4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R vectors.'],
   ['https://agent-tune.com/research/ai-big-five-item-level-comparison','Why AI Models Score High on Agreeableness and Openness: Item-level reanalysis of 20,000 IPIP-50 Big Five responses across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.'],
-  ['https://agent-tune.com/research/i-took-the-mbti-100-times','I Took the MBTI 100 Times (Claude Code baseline): 100 independent sessions across all 5 instruments (93% INTJ, 97% Type 5, 100% C-Conscientiousness, 100% Secure).']
+  ['https://agent-tune.com/research/i-took-the-mbti-100-times','Simulating 100 MBTI Outcomes from an Opus 4.8 Profile: Historical May 2026 probability-profile Monte Carlo simulation (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) contrasted with September 2026 fresh-session runs.']
 ];
 const highlightedUrls=new Set(researchHighlights.map(([u])=>u));
 const extraResearchLines=resources.filter(r=>r.kind==='research'&&!highlightedUrls.has(r.url)).map(r=>`- [${r.title.replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');

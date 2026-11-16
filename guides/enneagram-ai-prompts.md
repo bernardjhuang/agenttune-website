@@ -113,7 +113,7 @@ You do not need a type to choose a communication preference. Read the blocks abo
 
 ## Building an Enneagram integration?
 
-The [Enneagram developer resource](https://agent-tune.com/guides/open-source-enneagram-test) includes a JavaScript scorer, a synthetic nine-group demo, a React starter and guidance on questionnaire rights. The starter contains no personality questionnaire.
+The [open-source Enneagram scorer & React starter guide](https://agent-tune.com/guides/enneagram-test-react-typescript) includes a JavaScript scorer, a synthetic nine-group demo, a React + TypeScript starter, and guidance on questionnaire rights.
 
 ## Questions people ask.
 

@@ -24,7 +24,7 @@
     },
     {
       "h2": "Using these results.",
-      "html": "<p>Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The <a href=\"/guides/best-claude-personality\">seven Claude setups</a> and <a href=\"/guides/make-claude-more-direct\">directness guide</a> offer editable starting points; questionnaire scores do not validate them.</p><p>A separate archive compares two compact prompts with a baseline on twenty tasks. See <a href=\"/research/does-personality-tuning-change-ai-answers\">the 60-reply pilot and its downloadable records</a> for descriptive ratings and the missing reproduction details. It does not test all seven setups.</p><p>These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
+      "html": "<p>Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The <a href=\"/guides/claude-personality#five-claude-personality-setups-to-try\">seven Claude setups</a> and <a href=\"/guides/make-claude-more-direct\">directness guide</a> offer editable starting points; questionnaire scores do not validate them.</p><p>A separate archive compares two compact prompts with a baseline on twenty tasks. See <a href=\"/research/does-personality-tuning-change-ai-answers\">the 60-reply pilot and its downloadable records</a> for descriptive ratings and the missing reproduction details. It does not test all seven setups.</p><p>These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the <a href=\"/research#methodology\">methods and limits</a>.</p>"
     }
   ],
   "faq": [
@@ -79,8 +79,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "The best Claude personality setups",
-      "href": "/guides/best-claude-personality"
+      "label": "How to change Claude's personality (7 setups & settings)",
+      "href": "/guides/claude-personality"
     },
     {
       "kicker": "Guide",

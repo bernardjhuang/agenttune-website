@@ -93,5 +93,5 @@ This report did not test Soul.md changes. The templates and persistence kit prov
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Muse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)
+- [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)

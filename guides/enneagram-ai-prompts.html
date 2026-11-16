@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an Enneagram AI prompt?","acceptedAnswer":{"@type":"Answer","text":"A short instruction block, pasted into an AI's custom instructions, that tells it what your Enneagram type needs from a conversation; risks named first for a Type 6, outcomes first for a Type 3, no bright-siding for a Type 4. It tunes the AI's register to your motivation, not just its format to your preferences."}},{"@type":"Question","name":"Which Enneagram type are AI models themselves?","acceptedAnswer":{"@type":"Answer","text":"The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."}},{"@type":"Question","name":"Will one of these prompts fit in ChatGPT's custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Easily. Each condensed block is 400–600 characters, and ChatGPT's \"How would you like ChatGPT to respond?\" field allows 1,500. That leaves room to add your own edits, or to combine an Enneagram block with a note about your work context. The full-length tuning files fit better in a Claude Project or a CLAUDE.md file."}},{"@type":"Question","name":"Can I combine my Enneagram type with my MBTI type?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it works well; they cover different layers. MBTI tunes information format (architecture-first versus step-first); the Enneagram tunes emotional register (what reassurance or challenge you need). Paste both blocks and delete the lines that conflict or don't sound like you. The edit matters more than the combination."}},{"@type":"Question","name":"What if I'm not sure of my type or scored close on two?","acceptedAnswer":{"@type":"Answer","text":"Choose by the actual communication rules you want. Try a few on representative tasks and revise them using what helps. You do not need a definitive type or a questionnaire score to use a preference template."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -109,7 +109,7 @@
 
       <section>
         <h2>Building an Enneagram integration?</h2>
-        <p>The <a href="/guides/open-source-enneagram-test">Enneagram developer resource</a> includes a JavaScript scorer, a synthetic nine-group demo, a React starter and guidance on questionnaire rights. The starter contains no personality questionnaire.</p>
+        <p>The <a href="/guides/enneagram-test-react-typescript">open-source Enneagram scorer &amp; React starter guide</a> includes a JavaScript scorer, a synthetic nine-group demo, a React + TypeScript starter, and guidance on questionnaire rights.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -163,9 +163,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

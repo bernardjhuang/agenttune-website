@@ -1,9 +1,9 @@
 {
   "slug": "what-is-meta-muse",
   "published": "2026-09-25",
-  "updated": "2026-11-11",
-  "title": "What Is Meta Muse? Free vs $20 Plan, Files & vs Meta AI",
-  "description": "Meta Muse explained: how muse.ai differs from Meta AI, Free vs $20/$100 plans, where Soul.md, Identity.md & Memory.md live on mobile & web, and privacy.",
+  "updated": "2026-11-16",
+  "title": "What Is Meta Muse (muse.ai)? Plans, Soul.md & vs Meta AI",
+  "description": "Meta Muse explained: how muse.ai differs from Meta AI, Free vs $20/$100 plans, Soul.md, Identity.md and Memory.md files, Connectors and privacy controls.",
   "pill": "Guide · Meta Muse",
   "h1": "What is Meta Muse? Files, plans, and how it works.",
   "dek": "How Meta's standalone personal AI agent (muse.ai) differs from Meta AI, what Free vs. $20 Power plans include, and how Soul.md, Identity.md, and Memory.md work.",
@@ -11,8 +11,9 @@
   "answer": "Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled reminders, side chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Meta lists a Free tier ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).",
   "sections": [
     {
+      "id": "what-muse-is",
       "h2": "What Muse is—and how it differs from Meta AI.",
-      "html": "<p>Searchers frequently confuse <strong>Meta Muse</strong> with <strong>Meta AI</strong>. They are separate products with different interfaces, memory models, and customization controls:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">Meta Muse (<code>muse.ai</code> &amp; Muse app)</th><th scope=\"col\">Meta AI (WhatsApp, Instagram, web)</th></tr></thead><tbody><tr><td>Primary role</td><td>Persistent personal agent with cloud workspace, connectors, and scheduled tasks</td><td>General conversational assistant inside social apps and meta.ai</td></tr><tr><td>Customization files</td><td>Editable <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code></td><td>Chat prompts and basic memory toggles; no <code>Soul.md</code> file system</td></tr><tr><td>Thread model</td><td>One persistent <strong>Main Chat</strong> plus disposable <strong>Side Chats</strong></td><td>Standard multi-thread chat history</td></tr><tr><td>Sensitive actions</td><td>Connector permissions + approval prompts for actions like email or purchases (<a href=\"https://www.meta.com/help/artificial-intelligence/1047255454427887/\">Meta privacy docs</a>)</td><td>No cloud-VM file system or Muse connector approvals</td></tr></tbody></table></div><p>For a step-by-step comparison of customization controls across both products, see <a href=\"/guides/meta-ai-vs-meta-muse-personality\">Meta AI vs. Meta Muse: how to change personality and tone</a>.</p>"
+      "html": "<p>Searchers frequently confuse <strong>Meta Muse</strong> with <strong>Meta AI</strong>. Below is the at-a-glance spec sheet comparing both products:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">Meta Muse (<code>muse.ai</code> &amp; Muse app)</th><th scope=\"col\">Meta AI (WhatsApp, Instagram, web)</th></tr></thead><tbody><tr><th scope=\"row\">Primary role</th><td>Persistent personal agent with isolated cloud workspace, Connectors, and scheduled tasks</td><td>General conversational assistant inside social apps and meta.ai</td></tr><tr><th scope=\"row\">Pricing &amp; allowances</th><td>Free ($0, refreshing limit), Power ($20/mo, 500M tokens/wk), Maximum ($100/mo, 3B/wk)</td><td>Included free in Meta social apps &amp; meta.ai</td></tr><tr><th scope=\"row\">Customization files</th><td>Editable <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code></td><td>Chat prompts and basic memory toggles; no <code>Soul.md</code> file system</td></tr><tr><th scope=\"row\">Thread model</th><td>One persistent <strong>Main Chat</strong> plus disposable <strong>Side Chats</strong></td><td>Standard multi-thread chat history</td></tr><tr><th scope=\"row\">Sensitive actions</th><td>Connector permissions + approval prompts for actions like email or purchases (<a href=\"/guides/meta-muse-connectors-tasks-approval-rules\">Connector approval guide</a>)</td><td>No cloud-VM file system or Muse connector approvals</td></tr></tbody></table></div><p>For a step-by-step comparison of customization controls across both products, see <a href=\"/guides/meta-ai-vs-meta-muse-personality\">Meta AI vs. Meta Muse: how to change personality and tone</a>.</p>"
     },
     {
       "h2": "Where it runs.",
@@ -106,8 +107,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
-      "href": "/guides/meta-muse-characters"
+      "label": "Meta Muse Connectors, scheduled tasks & Soul.md approval rules",
+      "href": "/guides/meta-muse-connectors-tasks-approval-rules"
     },
     {
       "kicker": "Guide",
@@ -119,6 +120,5 @@
       "label": "What personality type is Muse?",
       "href": "/research/what-personality-type-is-muse"
     }
-  ],
-  "updated": "2026-09-25"
+  ]
 }

@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 The largest Big Five item gap is on sympathizing with others’ feelings: Opus averages 5.00, Fable 4.04. Two reverse-scored questions about belongings each contribute 0.90 points to Fable’s higher Conscientiousness total. These are self-description differences, not demonstrated behavior.
 

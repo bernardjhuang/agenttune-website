@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does an attachment style prompt actually change in an AI assistant?","acceptedAnswer":{"@type":"Answer","text":"It does not give the AI emotions; instead, it translates the two attachment dimensions into collaboration rules: how frequently the assistant pauses for check-ins and confirmation (anxiety) versus how independently and concisely it executes tasks on its own (avoidance)."}},{"@type":"Question","name":"Why is the Avoidant tuning so popular for coding agents?","acceptedAnswer":{"@type":"Answer","text":"Coding agents often over-ask for permission or pad diffs with conversational commentary. The Avoidant tuning tells the agent to resolve minor ambiguities on its own, finish the authorized work, and return the result with minimal prose."}},{"@type":"Question","name":"How do AI models score on the 36-item ECR-R attachment test?","acceptedAnswer":{"@type":"Answer","text":"In our September 2026 study of 100 fresh sessions per model, GPT-6 Astra (1.45 / 2.31), GPT-6 Sol (2.17 / 3.12), Claude Opus 5.5 (1.94 / 3.35), and Claude Fable 5.1 (2.01 / 3.18) all scored Secure in 100 of 100 runs under the strict > 4.0 cutoff. Grok 4.6's single reported self-assessment scored 1.50 anxiety and 4.06 avoidance (Avoidant by 0.06)."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -172,9 +172,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

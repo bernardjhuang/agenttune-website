@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a personality prompt change how an AI answers?","acceptedAnswer":{"@type":"Answer","text":"The archived replies differ across conditions, with higher answer-first ratings and fewer hedge matches in the direct condition. This small pilot does not establish a general or repeatable effect."}},{"@type":"Question","name":"Does it make answers shorter?","acceptedAnswer":{"@type":"Answer","text":"The independently recounted means are 380 words for baseline replies and 381.9 for direct replies. That does not establish that instruction blocks have no effect on length; task selection and response variation remain uncontrolled."}},{"@type":"Question","name":"Does it hurt accuracy?","acceptedAnswer":{"@type":"Answer","text":"Mean archived accuracy ratings differ by 0.10 points between baseline and direct replies. The study cannot isolate an instruction-caused accuracy effect or substitute for independent fact checking."}},{"@type":"Question","name":"Was the judge blind?","acceptedAnswer":{"@type":"Answer","text":"The archive says the condition label was withheld. Reply style may still reveal it, and the full rubric and execution harness were not supplied."}},{"@type":"Question","name":"Can I reproduce the results?","acceptedAnswer":{"@type":"Answer","text":"You can reproduce the published summaries with the downloadable Node script and inspect every archived reply. Reproducing model generation and judging requires additional execution details not included in the archive."}}]}</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers#dataset","name":"AgentTune archived tuning pilot and descriptive reanalysis, September 2026","description":"60 archived replies and model ratings under three instruction conditions. Summary arithmetic and whitespace word counts are reproducible; original generation and judging execution is not independently verified.","url":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-2026-09.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-score.cjs","encodingFormat":"text/javascript"}]}</script>
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -155,7 +155,7 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/guides/personality-prompts-vs-plain-english"><span class="guide-related-kicker">New resource</span>Do personality prompts beat plain-English preferences?</a>
-          <a href="/guides/best-claude-personality"><span class="guide-related-kicker">Guide</span>The best Claude personality setups</a>
+          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to change Claude's personality (7 setups &amp; settings)</a>
           <a href="/guides/make-claude-more-direct"><span class="guide-related-kicker">Guide</span>How to make Claude more direct</a>
           <a href="/research/ai-personality-five-models-2026"><span class="guide-related-kicker">Research</span>What five AI models say about themselves</a>
           <a href="/research"><span class="guide-related-kicker">Research</span>The research hub</a>
@@ -170,9 +170,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
     },
     {
       "h2": "1. Dominance (D): bottom line first, zero hedging.",
-      "html": "<p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our <a href=\"/guides/open-source-disc-test-odat\">ODAT evaluations</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href=\"/library/disc/d-dominance\">/library/disc/d-dominance</a>.</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences — DISC Dominance (D)\n\n- Start every reply with the bottom-line answer, decision, or recommendation.\n- Give one clear recommendation first rather than an unranked menu of options.\n- Keep routine replies under 120 words in direct, active-voice prose.\n- Drop hedges, disclaimers, and polite throat-clearing.\n- Push back immediately when my plan is slow, over-complicated, or built on a weak assumption.</div>"
+      "html": "<p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our <a href=\"/guides/free-disc-assessment-guide-work-ai\">ODAT evaluations</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href=\"/library/disc/d-dominance\">/library/disc/d-dominance</a>.</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences — DISC Dominance (D)\n\n- Start every reply with the bottom-line answer, decision, or recommendation.\n- Give one clear recommendation first rather than an unranked menu of options.\n- Keep routine replies under 120 words in direct, active-voice prose.\n- Drop hedges, disclaimers, and polite throat-clearing.\n- Push back immediately when my plan is slow, over-complicated, or built on a weak assumption.</div>"
     },
     {
       "h2": "2. Influence (I): high-momentum brainstorming and narrative clarity.",
@@ -61,8 +61,8 @@
       "href": "https://agent-tune.com/tests/disc"
     },
     {
-      "label": "AgentTune Guide: Open-source DISC assessment (ODAT) scorer",
-      "href": "https://agent-tune.com/guides/open-source-disc-test-odat"
+      "label": "AgentTune Guide: Free DISC assessment (ODAT) & 12 blends",
+      "href": "https://agent-tune.com/guides/free-disc-assessment-guide-work-ai"
     }
   ],
   "related": [
@@ -73,8 +73,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "Open-source DISC assessment (ODAT): 16 questions and scorer",
-      "href": "/guides/open-source-disc-test-odat"
+      "label": "Free DISC assessment (ODAT): 4 styles, 12 blends & scorer",
+      "href": "/guides/free-disc-assessment-guide-work-ai"
     },
     {
       "kicker": "Prompts",

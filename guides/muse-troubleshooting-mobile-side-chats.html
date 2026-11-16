@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Soul.md on the Meta Muse mobile app?","acceptedAnswer":{"@type":"Answer","text":"Open the standalone Meta Muse app on iOS or Android, tap your profile avatar, then go to Settings → Personalization → Assistant Identity → Soul.md. Changes sync automatically with muse.ai on the web."}},{"@type":"Question","name":"Do Meta Muse Side Chats still use my Soul.md personality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Side Chats inherit your Assistant Identity (Soul.md and Identity.md) so Muse still sounds the way you tuned it, while keeping temporary topics isolated from your ongoing Main Chat thread."}},{"@type":"Question","name":"What happens if I delete Main Chat in Meta Muse?","acceptedAnswer":{"@type":"Answer","text":"Deleting Main Chat triggers a full Reset Muse action rather than just archiving a single thread. Always back up Soul.md and Identity.md first, and use Side Chats or targeted Memory.md edits when you only want to clean up old context."}},{"@type":"Question","name":"Why is Meta Muse ignoring my prompt or refusing to use lists after I edited Soul.md?","acceptedAnswer":{"@type":"Answer","text":"Hard bans like 'Never use bullet points' or 'Never write more than 50 words' in Soul.md compete with your live prompts. Rewrite absolute bans as defaults ('Default to prose unless comparing 3+ items or asked for a list') and add a final rule stating that explicit requests in the current message override Soul.md defaults."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,9 +168,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+{
+  "slug": "claude-project-instructions-examples",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "Claude Project Instructions Examples & Precedence Guide",
+  "description": "7 copy-paste Claude Project Instructions templates for research, coding, editing & strategy—plus how Project prompts interact with Profile Preferences.",
+  "pill": "Guide · Claude Projects",
+  "h1": "Claude Project Instructions examples—and how they layer with Profile Preferences.",
+  "dek": "Keep voice rules global in Profile Preferences and place domain specs, rubrics, sources, and output schemas inside each Project.",
+  "lede": "Mixing coding standards, brand editorial guidelines, and personal tone preferences inside Claude&rsquo;s global <strong>Profile Preferences</strong> creates instruction bloat and cross-task collisions. Claude <strong>Projects</strong> give each recurring workflow its own dedicated system prompt alongside attached reference files—leaving Profile Preferences clean for durable communication style.",
+  "answer": "Put global communication habits (brevity, answer-first ordering, anti-sycophancy) in Claude Profile Preferences, and put role, audience, source citation rules, and formatting schemas inside Project Instructions so workspaces never pollute unrelated chats.",
+  "promptModel": "opus-5-5",
+  "promptDestination": "claude-ai",
+  "sections": [
+    {
+      "id": "profile-vs-project-vs-claudemd",
+      "h2": "Where to place each rule: Profile vs. Project vs. CLAUDE.md.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Scope</th><th scope=\"col\">What belongs here</th><th scope=\"col\">Avoid putting here</th></tr></thead><tbody><tr><th scope=\"row\">Profile Preferences</th><td>All claude.ai &amp; mobile threads</td><td>Your communication cadence, hedging tolerance, Markdown preference</td><td>Client names, repo build commands, narrow project formatting specs</td></tr><tr><th scope=\"row\">Project Instructions</th><td>Every thread inside one Claude Project</td><td>Task role, attached-knowledge priority, citation format, acceptance criteria</td><td>Rules contradicting Profile Preferences (use explicit overrides only)</td></tr><tr><th scope=\"row\">Chat Style / Skills</th><td>Per-thread toggle or triggered workflow</td><td>Quick verbosity shifts or reusable Skills (<a href=\"/guides/claude-styles-to-skills-migration\">migration guide →</a>)</td><td>Durable factual constraints that belong in Project knowledge</td></tr><tr><th scope=\"row\"><code>CLAUDE.md</code></th><td>Local Git repo in Claude Code</td><td>Test commands, directory boundaries, architectural invariants (<a href=\"/guides/claude-md-examples\">examples →</a>)</td><td>Conversational banter unrelated to engineering work</td></tr></tbody></table></div><p>When both Profile Preferences and Project Instructions mention length or structure, keep them scoped cleanly: <em>&ldquo;In this Project, prioritize attached internal docs and output the three-part decision brief below even if global preferences favor shorter replies.&rdquo;</em></p>"
+    },
+    {
+      "id": "seven-project-templates",
+      "h2": "7 copy-paste Claude Project Instructions templates.",
+      "html": "<h3>1. Primary-Source Research Analyst</h3><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"claude-ai\">## Project Role\n\nYou are a research synthesis partner working strictly from Project Knowledge files plus explicitly verified citations.\n\n## Rules\n- Separate directly observed quotes/figures from your own inference using explicit labels.\n- When uploaded PDFs or notes conflict, list both sources and dates instead of averaging them.\n- Begin every memo with a 3-bullet Executive Findings block before supporting evidence.\n- If Project Knowledge lacks the data to answer, state the exact gap cleanly without guessing.</div><h3>2. Code Architecture &amp; PR Reviewer</h3><div class=\"guide-snippet\">## Project Role\n\nAct as a senior code reviewer inspecting patches against the repository docs attached to this project.\n\n## Rules\n- Flag correctness bugs, missing edge cases, and concurrency hazards first; skip minor naming nitpicks unless harmful.\n- Reference exact file paths and symbol names from uploaded files or pasted diffs.\n- Propose minimal, idiomatic diffs rather than rewriting adjacent abstractions.</div><h3>3. Editorial Copy &amp; Voice Editor</h3><div class=\"guide-snippet\">## Project Role\n\nEdit drafts to match our attached House Style Guide without flattening the author's specific claims.\n\n## Rules\n- Never add generic AI clichés (&ldquo;delve,&rdquo; &ldquo;testament,&rdquo; &ldquo;in today&rsquo;s fast-paced world&rdquo;).\n- Preserve every metric, citation, and technical term verbatim while tightening transitions.\n- Output: (1) Revised copy, (2) 3–5 concise editorial notes explaining cuts.</div><h3>4. Executive Strategy &amp; Decision Partner</h3><div class=\"guide-snippet\">## Project Role\n\nStress-test strategic memos against our attached quarterly goals and constraints.\n\n## Rules\n- Lead with whether the proposal satisfies the stated constraint, then name the top 2 failure modes.\n- Compare options in a compact table (Upside, Downside, Reversible vs One-Way Door).\n- Ask at most two clarifying questions only when missing numbers would flip the recommendation.</div><h3>5. Product Spec &amp; Acceptance Criteria Writer</h3><div class=\"guide-snippet\">## Project Role\n\nTurn rough product notes into implementation-ready specifications grounded in our attached architecture docs.\n\n## Rules\n- Use four headings only: Problem Statement, Non-Goals, Acceptance Criteria, Open Questions.\n- Write testable criteria (&ldquo;When X happens, Y responds within Z&rdquo;) rather than vague goals.\n- Move every unverified product assumption to Open Questions instead of silently choosing defaults.</div><h3>6. Academic Literature &amp; Methods Critic</h3><div class=\"guide-snippet\">## Project Role\n\nEvaluate study designs, statistical assumptions, and citations uploaded to this project.\n\n## Rules\n- Check sample size, control conditions, multiple-testing corrections, and operational definitions first.\n- Never paraphrase results beyond what the uploaded tables support.\n- End with a short Threats to Validity checklist tailored to this paper.</div><h3>7. Customer Discovery &amp; Interview Synthesizer</h3><div class=\"guide-snippet\">## Project Role\n\nSynthesize user interview transcripts stored in Project Knowledge without smoothing away dissenting signals.\n\n## Rules\n- Quote participant wording verbatim with interviewee ID tags; quantify how many interviews support each theme.\n- Give equal visibility to workarounds and moments users abandoned the workflow.\n- Separate observed behaviors from feature wishes.</div><p>Already have instructions you want to merge into Claude without clashing with global settings? Check for contradictions using our <a href=\"/tools/instruction-checker\">Instruction Checker</a> or build a scoped profile with the <a href=\"/guides/claude-personal-preferences-examples\">Personal Preferences Guide</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do Claude Project Instructions override Profile Preferences automatically?",
+      "a": "Both are injected into conversations inside that Project, so flat contradictions (like 'always be one sentence' vs 'write full 5-part memos') cause inconsistent compliance. Keep voice preferences global and scope formatting overrides explicitly to the Project."
+    },
+    {
+      "q": "How long should Claude Project Instructions be?",
+      "a": "Aim for 400 to 1,500 characters of sharp rules and headings, keeping long background policies or style guides in uploaded Project Knowledge documents rather than stuffing thousands of words into the instruction box."
+    },
+    {
+      "q": "Should I duplicate Project Instructions into CLAUDE.md?",
+      "a": "No. Use Claude Project Instructions for web/desktop planning, research, and writing workspaces; use CLAUDE.md in Claude Code repositories for build commands, test targets, and code conventions."
+    },
+    {
+      "q": "How do Claude Skills relate to Project Instructions?",
+      "a": "Project Instructions stay active on every message inside a Project, while Skills package reusable multi-step procedures cleanly. See our Claude Styles & Skills guide for how they pair."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published with Profile vs Project vs CLAUDE.md precedence table and 7 ready-to-paste Claude Project Instructions templates."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: 7 Best Claude Personality Setups & Personal Preferences",
+      "href": "https://agent-tune.com/guides/claude-personality"
+    },
+    {
+      "label": "AgentTune: AI Instruction Precedence & Overrides",
+      "href": "https://agent-tune.com/guides/ai-instruction-precedence-overrides"
+    },
+    {
+      "label": "AgentTune: CLAUDE.md Examples",
+      "href": "https://agent-tune.com/guides/claude-md-examples"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "7 best Claude personality setups & Profile Preferences",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT Projects vs Custom Instructions",
+      "href": "/guides/chatgpt-projects-vs-custom-instructions"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Instruction Checker (find prompt conflicts)",
+      "href": "/tools/instruction-checker"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude Styles to Skills migration",
+      "href": "/guides/claude-styles-to-skills-migration"
+    }
+  ]
+}

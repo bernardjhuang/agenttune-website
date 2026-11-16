@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Assistant Personality &amp; Tone Design Guidelines</title>
+  <meta name="description" content="Design production AI assistant personas using behavioral constraints, epistemic honesty rules, and API eval checks instead of vague tone adjectives." />
+
+  <meta property="og:title" content="AI assistant personality &amp; tone guidelines: moving from vague adjectives to testable system prompts." />
+  <meta property="og:description" content="Design production AI assistant personas using behavioral constraints, epistemic honesty rules, and API eval checks instead of vague tone adjectives." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI assistant personality &amp; tone guidelines: moving from vague adjectives to testable system prompts." />
+  <meta name="twitter:description" content="Design production AI assistant personas using behavioral constraints, epistemic honesty rules, and API eval checks instead of vague tone adjectives." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI assistant personality & tone guidelines: moving from vague adjectives to testable system prompts","description":"Design production AI assistant personas using behavioral constraints, epistemic honesty rules, and API eval checks instead of vague tone adjectives.","url":"https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"AI assistant personality & tone guidelines: moving from vague adjectives to testable system prompts"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should a production system prompt reference MBTI or Enneagram labels directly?","acceptedAnswer":{"@type":"Answer","text":"Generally no for end-user products: type acronyms are shorthand for humans browsing templates. Extract the concrete behavioral rules (directness, hedging limits, table thresholds, critique framing) rather than telling a production chatbot 'You are an INTJ'."}},{"@type":"Question","name":"Do all models follow negative tone rules ('never say Great question') equally well?","acceptedAnswer":{"@type":"Answer","text":"Small positive behavioral instructions paired with specific banned phrases work significantly better across both OpenAI and Anthropic models than purely abstract style adjectives—especially when placed near the top of the system prompt."}},{"@type":"Question","name":"How does AgentTune license its templates for commercial or internal agent apps?","acceptedAnswer":{"@type":"Answer","text":"All 43 AgentTune communication templates and client-side utilities (core.js, enneagram/score.js) are MIT-licensed and free to adapt inside proprietary or open-source software. Note that third-party psychological questionnaires themselves keep their upstream licensing rules."}},{"@type":"Question","name":"How do I prevent tone guidelines from overriding JSON schema or tool-call contracts?","acceptedAnswer":{"@type":"Answer","text":"Separate schema/tool constraints into a dedicated strict output section placed after conversational style rules, and include an explicit override rule: 'Structured tool calls and JSON schemas always take precedence over prose style preferences.'"}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">AI assistant personality &amp; tone guidelines: moving from vague adjectives to testable system prompts</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Engineering · Voice &amp; Tone Design</span>
+        <h1 class="h-hero h-research-hero">AI assistant personality &amp; tone guidelines: moving from vague adjectives to testable system prompts.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Replace vague tone adjectives in API system prompts with four concrete specs: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing data or conflicting facts are surfaced), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions)—and verify changes with blind A/B evals.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="api"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=api">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="vague-adjectives-vs-behavioral-specs">Why behavioral rules beat adjective lists in empirical testing.</h2>
+        <p>Across our 60-reply controlled pilot testing default prompts against explicit communication constraints (<a href="/research/does-personality-tuning-change-ai-answers">tuning evaluation study →</a>), plain behavioral constraints lifted answer-first openings from <strong>14/20 to 19/20</strong>, cut unsolicited hedges per reply from <strong>0.35 to 0.05</strong>, and dropped trailing conversational questions from <strong>0.90 to 0.25</strong>—while keeping accuracy unchanged.</p><div class="guide-table-wrap" role="region" aria-label="Why behavioral rules beat adjective lists in empirical testing.: table 1" tabindex="0"><table><thead><tr><th scope="col">Weak adjective prompt</th><th scope="col">Why it drifts in production</th><th scope="col">Testable behavioral replacement</th></tr></thead><tbody><tr><th scope="row">&ldquo;Be concise and clear.&rdquo;</th><td>Models still emit polite preambles and &ldquo;Let me know if...&rdquo; trailers.</td><td>&ldquo;State the recommendation or direct answer in sentence 1; omit introductory restatement and closing question menus.&rdquo;</td></tr><tr><th scope="row">&ldquo;Be honest and objective.&rdquo;</th><td>Agreeable defaults smooth over bad user premises to sound supportive.</td><td>&ldquo;Before solving, check the premise. If a constraint makes the goal impossible or slower, state the flaw in 1–2 sentences.&rdquo;</td></tr><tr><th scope="row">&ldquo;Sound warm and empathetic.&rdquo;</th><td>Overcorrects into therapy-speak apologies and exclamation marks.</td><td>&ldquo;Acknowledge blockers neutrally in one phrase, skip scripted apologies (&lsquo;I understand how frustrating&rsquo;), and provide the fastest next action.&rdquo;</td></tr><tr><th scope="row">&ldquo;Adapt to technical users.&rdquo;</th><td>Unpredictably swings between beginner tutorials and unexplained jargon.</td><td>&ldquo;Assume fluency in HTTP, SQL, and Git; explain domain-specific quirks briefly only when first introduced.&rdquo;</td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="four-layer-api-system-contract">A 4-layer system prompt contract for API & agent builders.</h2>
+        <p>Structure production assistant personas into four non-overlapping blocks so product engineers can iterate safely without breaking tool execution:</p><div class="guide-snippet" data-tuning-prompt data-prompt-target="api"># Persona Contract
+
+## 1. Opening Move &amp; Layout
+- Answer the core question or give the decision in the first two sentences.
+- Use short paragraphs by default; switch to numbered steps for workflows and tables for >=3 comparisons.
+
+## 2. Epistemic Calibration
+- Distinguish verified observations from assumptions.
+- State &ldquo;Not verified in available context&rdquo; cleanly when required values are absent rather than interpolating plausible guesses.
+
+## 3. Disagreement &amp; Pushback
+- Do not mirror flawed premises cleanly to avoid friction; name the single highest-leverage correction upfront with evidence.
+
+## 4. Phrasing Boundaries
+- No empty validation (&ldquo;Great question!&rdquo;), self-referential filler, or trailing &ldquo;Would you like me to...&rdquo; follow-up suggestions.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="measuring-tone-regressions">How to evaluate tone changes without fooling yourself.</h2>
+        <ul><li><strong>Use blind pairwise scoring:</strong> Human reviewers consciously or unconsciously favor prompts they wrote. Compare baseline vs. edited system messages blindly using our <a href="/tools/instruction-test-bench">Instruction A/B Test Bench</a> (or JSON report exports for team review).</li><li><strong>Control verbosity explicitly:</strong> Shorter answers can omit critical caveats just as easily as longer ones waste time. Pair register/verbosity controls (<a href="/guides/ai-persona-style-controls-register-verbosity">style controls guide →</a>) with an accuracy checklist.</li><li><strong>Borrow starter patterns from 5 frameworks:</strong> Our MIT-licensed <a href="/library/">43 tuning files</a> map tested communication patterns across MBTI, Enneagram, DISC, Big Five, and Attachment so teams don&rsquo;t invent voice specs from a blank page.</li></ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Should a production system prompt reference MBTI or Enneagram labels directly?</summary>
+            <p>Generally no for end-user products: type acronyms are shorthand for humans browsing templates. Extract the concrete behavioral rules (directness, hedging limits, table thresholds, critique framing) rather than telling a production chatbot 'You are an INTJ'.</p>
+          </details>
+          <details>
+            <summary>Do all models follow negative tone rules ('never say Great question') equally well?</summary>
+            <p>Small positive behavioral instructions paired with specific banned phrases work significantly better across both OpenAI and Anthropic models than purely abstract style adjectives—especially when placed near the top of the system prompt.</p>
+          </details>
+          <details>
+            <summary>How does AgentTune license its templates for commercial or internal agent apps?</summary>
+            <p>All 43 AgentTune communication templates and client-side utilities (core.js, enneagram/score.js) are MIT-licensed and free to adapt inside proprietary or open-source software. Note that third-party psychological questionnaires themselves keep their upstream licensing rules.</p>
+          </details>
+          <details>
+            <summary>How do I prevent tone guidelines from overriding JSON schema or tool-call contracts?</summary>
+            <p>Separate schema/tool constraints into a dedicated strict output section placed after conversational style rules, and include an explicit override rule: 'Structured tool calls and JSON schemas always take precedence over prose style preferences.'</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-16">November 16, 2026</time> First published covering the 4-layer API persona contract, adjective-to-behavior table, and blind A/B verification workflow.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/research/does-personality-tuning-change-ai-answers" target="_blank" rel="noopener">AgentTune Research: Does personality tuning change AI answers?</a></li>
+          <li><a href="https://agent-tune.com/guides/personality-prompts-vs-plain-english" target="_blank" rel="noopener">AgentTune Guide: Personality prompts vs plain English</a></li>
+          <li><a href="https://agent-tune.com/tools/instruction-test-bench" target="_blank" rel="noopener">AgentTune Tool: Blind Instruction A/B Test Bench</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/ai-personality-frameworks-comparison-matcher"><span class="guide-related-kicker">Comparison</span>5 Personality Frameworks Compared + Interactive Matcher</a>
+          <a href="/guides/ai-persona-style-controls-register-verbosity"><span class="guide-related-kicker">Guide</span>AI persona style controls: register &amp; verbosity</a>
+          <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to stop AI sycophancy &amp; make AI push back</a>
+          <a href="/tools/instruction-checker"><span class="guide-related-kicker">Tool</span>Instruction Checker &amp; Test Bench</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+</body>
+</html>

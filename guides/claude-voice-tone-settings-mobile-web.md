@@ -1,25 +1,42 @@
 Source: https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Guide · Claude
+Guide · Claude Voice & Tone
 
-# How to change Claude's tone and voice on iOS, Android, and web.
+# How to change Claude’s voice and tone on iOS, Android, and web.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 16, 2026
 
-To change Claude's spoken audio voice on iOS or Android, open Voice Mode (the waveform icon) or tap your initials → Settings → Voice and choose from the available spoken voices. To change Claude's written tone across web and mobile, tap your initials → Settings → Profile (or General) → 'What personal preferences should Claude consider in responses?' and paste 6–10 concrete rules.
+To change Claude's spoken voice on iOS or Android, open Voice Mode by tapping the waveform icon in the chat box (or go to Profile initials → Settings → Voice) and choose from the five spoken voice presets (Airy, Mellow, Buttery, Glassy, or Rounded, spanning female/male registers and accents). To change Claude's written tone and spoken pacing across all devices, paste short rules into Settings → Profile → Personal preferences.
 
-## Spoken Voice Mode vs. Written Tone: exact tap paths.
+## How to change Claude's spoken voice in Voice Mode (iOS & Android).
+
+Spoken Voice Mode is available in the Claude iOS and Android mobile apps (not as a two-way audio voice selector on standard web chats). Here is how to preview and switch voices:
+
+- From the chat composer: Tap the Voice Mode waveform icon next to the text input, then tap the Settings / Voice picker inside the active voice sheet.
+- From account Settings: Tap your initials / profile icon → Settings → Voice → preview each preset and tap to save.
+
+| Voice preset | Spoken character &amp; register | Best paired with |
+| --- | --- | --- |
+| Buttery | Warm, smooth, conversational cadence (female-leaning register) | Everyday thinking out loud and coaching sessions |
+| Airy | Light, brisk, neutral-crisp delivery (female-leaning register) | Quick Q&amp;A and concise factual lookups on the move |
+| Mellow | Calm, measured, lower-pitch conversational voice (male-leaning register) | Longer planning discussions and steady step-by-step pacing |
+| Glassy | Clear, poised, slightly brighter articulation | Reading summaries and technical explanations cleanly |
+| Rounded | Full, grounded regional-accented cadence (British-style inflection) | Editorial feedback and natural spoken dialogue |
+
+Note: Available Voice Mode presets and regional accents vary by app version and locale; tap each sample inside Settings → Voice in your Claude mobile app to verify the voices currently rolled out to your account.
+
+## Spoken Voice Mode vs. written tone: where every setting lives.
 
 | What you want to change | Surface | Exact menu path |
 | --- | --- | --- |
-| Spoken audio voice (pitch/timbre in Voice Mode) | Claude iOS &amp; Android apps | Tap the Voice Mode waveform icon in the composer (or Initials → Settings → Voice) → pick your preferred voice option. |
-| Account-wide written tone (every new chat) | claude.ai web, macOS/Windows, iOS &amp; Android | Tap Initials → Settings → Profile (or General) → What personal preferences should Claude consider in responses? |
-| One workspace's written tone | Claude Projects | Open the Project → Project instructions (overrides conflicting Profile lines inside that Project). |
-| Task-triggered writing formats | Claude Skills (replacing retired Styles) | Package repeatable templates as Skills ([read the Styles → Skills migration guide](https://agent-tune.com/guides/claude-styles-to-skills-migration)). |
+| Spoken audio voice (pitch/timbre in Voice Mode) | Claude iOS &amp; Android apps | Tap the Voice Mode waveform icon in the composer (or Initials → Settings → Voice) → pick a voice preset. |
+| Account-wide written tone (and spoken pacing) | claude.ai web, macOS/Windows, iOS &amp; Android | Tap Initials → Settings → Profile (or General) → Personal preferences (What personal preferences should Claude consider in responses?). |
+| One workspace's written tone | Claude Projects | Open the Project → Project instructions ([8 Project templates →](https://agent-tune.com/guides/claude-project-instructions-examples)). |
+| Task-triggered writing formats | Claude Skills (replacing retired Styles) | Package repeatable formats as Skills ([Styles → Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration)). |
 | Terminal coding tone | Claude Code CLI | Run /output-style or edit ~/.claude/CLAUDE.md ([Claude Code guide](https://agent-tune.com/guides/claude-code-personality)). |
 
-Because Profile Personal Preferences sync on your Anthropic account, pasting a written tone block once on claude.ai updates how Claude phrases spoken replies on iOS and Android too—long wind-ups and bulleted lists sound awkward out loud, so concise prose rules make mobile Voice Mode dramatically better.
+Because Profile Personal Preferences sync across your Anthropic account, pasting concise written rules on claude.ai also stops Voice Mode from reading out 90-second bulleted lists and markdown tables.
 
 ## Six copy-paste written tone presets (including a Voice-Mode friendly preset).
 
@@ -78,6 +95,10 @@ In our [60-reply controlled pilot](https://agent-tune.com/research/does-personal
 
 ## Questions people ask.
 
+Can I change Claude's voice to female or male, or switch accents?
+
+Yes. Open the Claude iOS or Android app and go to Settings → Voice (or tap the Voice Mode waveform icon) to preview and select from Anthropic's voice presets (such as Buttery, Airy, Mellow, Glassy, and Rounded), which cover warmer female-leaning, calmer male-leaning, and regional-accented speech options.
+
 How do I change Claude's voice on the iPhone or Android app?
 
 To switch the spoken voice timbre in Voice Mode, tap the waveform icon in the mobile composer or open your initials → Settings → Voice. To change Claude's phrasing, brevity, and directness, open Settings → Profile and paste rules into Personal Preferences.
@@ -95,6 +116,8 @@ How do I change Claude's tone inside Claude Code in the terminal?
 Claude Code does not read claude.ai web Personal Preferences. Put coding communication rules in ~/.claude/CLAUDE.md or install a style file in ~/.claude/output-styles/ and select it via /output-style.
 
 ## What changed.
+
+- November 16, 2026 Reordered Spoken Voice Mode presets (Airy, Mellow, Buttery, Glassy, Rounded) above written tone settings and added female/male/accent voice FAQ.
 
 - November 11, 2026 Published distinguishing iOS/Android spoken Voice Mode settings from written tone layers, with 6 copyable presets.
 

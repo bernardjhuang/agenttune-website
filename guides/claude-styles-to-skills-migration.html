@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why did Anthropic retire the old Styles menu in Claude?","acceptedAnswer":{"@type":"Answer","text":"Claude Styles are being retired and replaced by Personal Preferences (for account-wide tone defaults) and Skills (for repeatable task workflows and writing formats), so users do not have to toggle a preset on and off between conversations."}},{"@type":"Question","name":"How do I replace the old Concise preset in Claude?","acceptedAnswer":{"@type":"Answer","text":"Open Settings, then General, and add a two-line rule in Personal Preferences: 'Lead with the direct answer in the first sentence. Keep routine replies under 150 words in plain prose without filler intros or closing offers.'"}},{"@type":"Question","name":"Should I put my writing voice in a Claude Skill or Personal Preferences?","acceptedAnswer":{"@type":"Answer","text":"If you want Claude to talk to you that way in every conversation, put it in Personal Preferences. If it is a writing format for specific documents—like newsletters, memos, or support emails—put it in a Skill or a dedicated Project."}},{"@type":"Question","name":"Are output styles in Claude Code also changing?","acceptedAnswer":{"@type":"Answer","text":"No. While web Claude Styles are being migrated to Skills and Personal Preferences, Claude Code in the terminal continues to support ~/.claude/output-styles/*.md selected with the /output-style command."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -177,9 +177,9 @@ description: Use when drafting architecture memos, postmortems, or engineering p
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

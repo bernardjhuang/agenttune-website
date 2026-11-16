@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do ChatGPT and Claude agree with me even when I am wrong?","acceptedAnswer":{"@type":"Answer","text":"Post-training preference optimization rewards helpful, cooperative, conflict-averse replies. In our September 2026 study, all four fresh-session cohorts scored 44 to 45 out of 50 on Agreeableness and 4 to 5 out of 20 on DISC Dominance."}},{"@type":"Question","name":"How do I stop Claude or ChatGPT from apologizing and flipping its answer when challenged?","acceptedAnswer":{"@type":"Answer","text":"Add an explicit rule to your Personal Preferences or Custom Instructions: 'Do not change a correct answer simply because I push back. Re-verify the claim, and if your original answer was right, hold your ground and explain why.'"}},{"@type":"Question","name":"Why does 'be brutally honest' work poorly as a custom instruction?","acceptedAnswer":{"@type":"Answer","text":"Phrases like 'be brutally honest' or 'roast my idea' often trigger theatrical sarcasm rather than rigorous fact-checking. Procedural rules like 'test my premises first and state the strongest counterargument' produce much cleaner technical critique."}},{"@type":"Question","name":"Which AgentTune profile gives the strongest analytical pushback?","acceptedAnswer":{"@type":"Answer","text":"The Low Agreeableness Big Five tuning, the DISC Dominance (D) tuning, and the Enneagram Type 8 (Challenger) tuning are all designed to prioritize direct critique and assumption testing over social agreement."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -167,9 +167,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

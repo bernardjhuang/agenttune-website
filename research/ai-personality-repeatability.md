@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Does a stable result mean a stable AI personality?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 All 400 attachment records receive Secure, yet the four cohorts contain 90, 100, 79 and 96 unique attachment answer vectors. A stable category is not proof of stable answers—or of a validated personality construct.
 

@@ -69,6 +69,6 @@ Not from these data. That would require evaluating behavior on tasks rather than
 
 - [New resource: Are AI models really INTJ? The tie-breaking effect](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
-- [Guide: Meta Muse characters, explained](https://agent-tune.com/guides/meta-muse-characters)
+- [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
 - [Tests: Find your own type](https://agent-tune.com/tests/)

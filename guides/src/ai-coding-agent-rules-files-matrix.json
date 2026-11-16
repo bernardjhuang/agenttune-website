@@ -1,0 +1,91 @@
+{
+  "slug": "ai-coding-agent-rules-files-matrix",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "CLAUDE.md vs AGENTS.md vs .cursorrules: Complete Matrix",
+  "description": "Compare CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, and GEMINI.md: file paths, size limits, overrides & a shared single-source layout.",
+  "pill": "Reference · Coding Agent Rules",
+  "h1": "CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup.",
+  "dek": "A side-by-side matrix of every major coding agent instruction file so your repo never drifts across Claude Code, Codex, Cursor, Copilot, and Gemini CLI.",
+  "lede": "Modern engineering teams often mix Claude Code, OpenAI Codex CLI, Cursor, GitHub Copilot, and Gemini Code Assist inside the same codebase. Maintaining five separate instruction files by hand guarantees contradictions within a week. Keep canonical repository rules in one file (often <code>AGENTS.md</code>), understand exact discovery paths and byte caps, and point or merge tool-specific adapters cleanly.",
+  "answer": "Use AGENTS.md for cross-tool open standards (Codex CLI and compatible agents; 32 KiB default project_doc_max_bytes cap), CLAUDE.md and .claude/rules/*.md for Claude Code, .cursor/rules/*.mdc for Cursor, .github/copilot-instructions.md for GitHub Copilot, and GEMINI.md for Gemini Code Assist. Maintain one single source of truth and import or merge preferences cleanly.",
+  "promptModel": "astra-6",
+  "promptDestination": "codex-cli",
+  "sections": [
+    {
+      "id": "complete-rules-matrix",
+      "h2": "Complete repository rules matrix across 5 coding agents.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Coding agent</th><th scope=\"col\">Primary repo file(s)</th><th scope=\"col\">User / global scope</th><th scope=\"col\">Size / load notes</th><th scope=\"col\">Deep-dive guide</th></tr></thead><tbody><tr><th scope=\"row\">Claude Code</th><td><code>CLAUDE.md</code>, <code>CLAUDE.local.md</code>, <code>.claude/rules/*.md</code></td><td><code>~/.claude/CLAUDE.md</code></td><td>Supports modular <code>@path</code> imports; nested dir loading on read</td><td><a href=\"/guides/claude-md-examples\">CLAUDE.md examples →</a></td></tr><tr><th scope=\"row\">OpenAI Codex CLI</th><td><code>AGENTS.md</code>, <code>AGENTS.override.md</code></td><td><code>~/.codex/AGENTS.md</code> (<code>~/.codex/config.toml</code>)</td><td>Default <code>project_doc_max_bytes</code> = 32 KiB combined</td><td><a href=\"/guides/codex-agents-md-guide\">AGENTS.md guide →</a></td></tr><tr><th scope=\"row\">Cursor</th><td><code>.cursor/rules/*.mdc</code> (legacy <code>.cursorrules</code>)</td><td>Cursor Rules for AI user settings</td><td>Supports Always, Auto-Attached globs, Agent Requested descriptions</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope=\"row\">GitHub Copilot</th><td><code>.github/copilot-instructions.md</code> &amp; <code>.github/instructions/*.instructions.md</code></td><td>IDE user instructions</td><td>Path-scoped frontmatter via <code>applyTo</code> globs</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope=\"row\">Gemini Code Assist / CLI</th><td><code>GEMINI.md</code> (project root &amp; subdirs)</td><td><code>~/.gemini/GEMINI.md</code></td><td>Hierarchical context loading along working tree</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor/Copilot/Gemini →</a></td></tr></tbody></table></div>"
+    },
+    {
+      "id": "single-source-of-truth-pattern",
+      "h2": "How to keep one single source of truth across tools without drift.",
+      "html": "<p>Two simple repository patterns prevent conflicting build or tone rules across tools:</p><ol><li><strong>Put shared architectural facts in <code>AGENTS.md</code>:</strong> Build commands, test runners, protected directories, and commit rules stay canonical in <code>AGENTS.md</code>. Keep <code>CLAUDE.md</code> ultra-short with an explicit pointer (for example <code>@AGENTS.md</code> plus Claude-only slash-workflow notes).</li><li><strong>Keep personal tone in user-global files, not committed repo files:</strong> Don&rsquo;t force teammates into your personal banter or verbosity rules via Git. Put personal working style in <code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>CLAUDE.local.md</code>.</li></ol><p>Starter communication block ideal for personal global coding-agent files (~360 characters):</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"codex-cli\">## Personal Engineering Communication Style\n\n- Give root cause, exact file paths, and minimal diff or command first.\n- Keep prose under 4 sentences unless I ask for architectural walkthroughs.\n- Never extrapolate test outputs or claim checks passed unless executed after the final edit.\n- Ask before refactoring unrelated files or changing public APIs.</div>"
+    },
+    {
+      "id": "avoiding-silent-truncation",
+      "h2": "Why oversized rules files silently drop instructions.",
+      "html": "<p>In OpenAI Codex CLI, combining root and nested <code>AGENTS.md</code> files stops reading once the combined size hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>; see our <a href=\"/guides/astra-personality\">GPT-6 Astra setup guide</a>). In all coding agents, dumping entire style encyclopedias into top-level rules dilutes signal on build commands and error constraints. Keep root instructions tight (~100–250 lines), split topic-specific patterns into glob-matched files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>*.instructions.md</code>), and safely append personal tone using our <a href=\"/tools/instruction-converter\">Instruction Converter &amp; Merger</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does Cursor read AGENTS.md or only .cursor/rules?",
+      "a": "Cursor natively uses .cursor/rules/*.mdc (and legacy .cursorrules) for project rules alongside AGENTS.md compatibility in newer agent workflows. Keeping AGENTS.md canonical and referencing or syncing concise Cursor rules prevents drift."
+    },
+    {
+      "q": "Should personal personality instructions be committed into repo AGENTS.md?",
+      "a": "Keep repo-committed AGENTS.md and CLAUDE.md focused on build commands, code style, security constraints, and tests. Place personal communication preferences in global user files (~/.claude/CLAUDE.md, ~/.codex/AGENTS.md) or gitignored CLAUDE.local.md."
+    },
+    {
+      "q": "What happens if AGENTS.md exceeds 32 KiB in Codex CLI?",
+      "a": "Codex CLI stops loading additional AGENTS.md bytes past project_doc_max_bytes (default 32 KiB), which can silently cut off nested directory rules unless split cleanly or raised intentionally in ~/.codex/config.toml."
+    },
+    {
+      "q": "How do I merge my AgentTune style into an existing CLAUDE.md without deleting repo commands?",
+      "a": "Use the AgentTune Instruction Converter & Merger: it wraps your communication preferences in labeled HTML comment markers and preserves every existing line outside those markers."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published with side-by-side matrix covering CLAUDE.md, AGENTS.md, .cursorrules/.mdc, copilot-instructions.md, and GEMINI.md."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: Codex CLI AGENTS.md Guide",
+      "href": "https://agent-tune.com/guides/codex-agents-md-guide"
+    },
+    {
+      "label": "AgentTune: Cursor Rules, Copilot & GEMINI.md Guide",
+      "href": "https://agent-tune.com/guides/cursor-rules-copilot-gemini-md"
+    },
+    {
+      "label": "AgentTune: Coding Agent Personality Overview",
+      "href": "https://agent-tune.com/guides/coding-agent-personality"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Tool",
+      "label": "Instruction Converter & Merger (preserves repo rules)",
+      "href": "/tools/instruction-converter"
+    },
+    {
+      "kicker": "Examples",
+      "label": "CLAUDE.md examples by stack & team workflow",
+      "href": "/guides/claude-md-examples"
+    },
+    {
+      "kicker": "Guide",
+      "label": "OpenAI Codex AGENTS.md & config.toml limits",
+      "href": "/guides/codex-agents-md-guide"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Cursor .mdc, Copilot & GEMINI.md rules",
+      "href": "/guides/cursor-rules-copilot-gemini-md"
+    }
+  ]
+}

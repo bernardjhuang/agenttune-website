@@ -132,6 +132,32 @@
           <summary>Are my generated instructions or edits sent to a server?</summary>
           <p>No. Everything runs client-side in your browser. Drafts stay in <code>localStorage</code> for up to 7 days (Reset clears them immediately), and share links encode only dropdown selections—never your edited text or test answers.</p>
         </details>
+        <h3 style="margin-top:20px">Compact ChatGPT vs Full Markdown output.</h3>
+        <p>ChatGPT Personalization caps each box at 1,500 characters, so selecting ChatGPT above automatically outputs compact behavioral rules (~300–900 characters) instead of a full Markdown file. Selecting Claude, Codex, Cursor, or Markdown gives the complete rule set with headings and boundary clauses.</p>
+        <div class="guide-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Instruction style</th>
+                <th scope="col">Example phrase</th>
+                <th scope="col">Observed effect on model behavior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Vague adjective</th>
+                <td>“Be helpful, concise, and smart.”</td>
+                <td>Defaults stay intact: hedges and trailing follow-up questions persist.</td>
+              </tr>
+              <tr>
+                <th scope="row">Behavioral constraint</th>
+                <td>“Lead with the recommendation. Skip disclaimers. No trailing questions.”</td>
+                <td>Enforces format directly (our 60-reply pilot lifted answer-first openings from 14/20 to 19/20 and cut hedges from 0.35 to 0.05 per reply).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-project-instructions-examples">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
       </section>
     </main>
 

@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the OEJTS 1.2 personality test?","acceptedAnswer":{"@type":"Answer","text":"The Open Extended Jungian Type Scales (OEJTS 1.2) is a 32-item open-science questionnaire developed by the Open Psychometrics Project to measure four Jungian preference axes (E/I, S/N, T/F, and J/P) on a 1-to-5 bipolar scale."}},{"@type":"Question","name":"How does OEJTS 1.2 handle tied scores?","acceptedAnswer":{"@type":"Answer","text":"Each of the four axes has 8 items whose two poles sum to 48, making 24 vs 24 an exact tie. AgentTune's scorer reports tied axes explicitly with an X (such as IXTJ) rather than silently forcing a tie-break toward I, N, T, or J."}},{"@type":"Question","name":"Is the AgentTune OEJTS test free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes. The test at /tests/mbti runs entirely in your browser tab with no email capture, no account creation, and no server upload of your individual answers."}},{"@type":"Question","name":"Can I use the OEJTS specification to test an LLM?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can fetch the Markdown specification at /tests/mbti.md, score responses deterministically with /resources/scoring/score.js, and compare against our frozen 400-session dataset in the research hub."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -155,7 +155,7 @@
           <a href="/tests/mbti"><span class="guide-related-kicker">Interactive Test</span>Take the free 32-item OEJTS test in your browser</a>
           <a href="/research/ai-mbti-tie-breaking"><span class="guide-related-kicker">Research</span>How tie-breaking changes AI MBTI results</a>
           <a href="/guides/open-personality-tests"><span class="guide-related-kicker">Guide</span>The five open personality tests, explained</a>
-          <a href="/guides/open-source-disc-test-odat"><span class="guide-related-kicker">Guide</span>Open-source DISC assessment (ODAT): 16 questions and scorer</a>
+          <a href="/guides/free-disc-assessment-guide-work-ai"><span class="guide-related-kicker">Guide</span>Free DISC assessment (no email): 4 styles, 12 blends &amp; ODAT scorer</a>
           <a href="/guides/chatgpt-custom-instructions-by-personality-type"><span class="guide-related-kicker">Prompts</span>ChatGPT custom instructions by MBTI personality type</a>
         </div>
       </section>
@@ -168,9 +168,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

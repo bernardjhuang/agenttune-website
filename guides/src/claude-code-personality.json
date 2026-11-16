@@ -1,9 +1,9 @@
 {
   "slug": "claude-code-personality",
   "published": "2026-09-19",
-  "updated": "2026-11-11",
-  "title": "How to Change Claude Code's Personality: 4 Ways (2026)",
-  "description": "Change Claude Code's personality via ~/.claude/output-styles (keep-coding-instructions: true), CLAUDE.md, or flags. Includes 43 ready-to-save styles.",
+  "updated": "2026-11-16",
+  "title": "Claude Code Personality: /output-style & CLAUDE.md Guide",
+  "description": "Customize Claude Code's personality via ~/.claude/output-styles (/output-style with keep-coding-instructions: true) or CLAUDE.md. 43 downloadable styles.",
   "pill": "Guide · Claude Code",
   "h1": "How to change Claude Code's personality.",
   "dek": "Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.",
@@ -71,6 +71,10 @@
   ],
   "changelog": [
     {
+      "date": "2026-11-16",
+      "note": "Removed duplicate updated key and sharpened search title for /output-style and CLAUDE.md."
+    },
+    {
       "date": "2026-09-19",
       "note": "First published, with the 43-style pack. Checked against Claude Code 2.1.278."
     }
@@ -133,7 +137,6 @@
       "href": "/tests/mbti"
     }
   ],
-  "updated": "2026-09-25",
   "promptModel": "fable-5-1",
   "promptDestination": "claude-code"
 }

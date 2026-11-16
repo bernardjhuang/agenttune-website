@@ -1,0 +1,91 @@
+{
+  "slug": "chatgpt-vs-claude-personality",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "ChatGPT vs Claude Default Personality: Benchmark Data",
+  "description": "Compare ChatGPT (GPT-6) and Claude (Opus 5.5, Fable 5.1) personality test scores, MBTI tie rates, DISC floors, and how custom instructions change replies.",
+  "pill": "Comparison · GPT vs Claude",
+  "h1": "ChatGPT vs. Claude personality: what default benchmarks actually show.",
+  "dek": "Measured across 2,000 independent fresh runs on GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1—plus how each responds to tuning.",
+  "lede": "Most ChatGPT vs. Claude personality comparisons rely on vibes after two prompts. Across September 2026 fresh-session testing (100 independent API calls per model per questionnaire across OEJTS MBTI, OEPS Enneagram, ODAT DISC, IPIP-50 Big Five, and ECR-R Attachment), all four OpenAI and Anthropic models clustered in a remarkably narrow band—until tie-breaking and user instruction overrides exposed real behavioral differences.",
+  "answer": "Out of the box, GPT-6 models (Astra, Sol) and Claude models (Opus 5.5, Fable 5.1) all test high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). The sharpest measured divergence is MBTI repeatability: Claude Fable 5.1 resolved INTJ in 98/100 runs with 1 tie, whereas GPT-6 Astra tied on 29/100 runs (only 19 strict INTJ). Custom instructions shift delivery structure far more than switching model vendors.",
+  "promptModel": "any",
+  "promptDestination": "anywhere",
+  "sections": [
+    {
+      "id": "sept-2026-head-to-head",
+      "h2": "September 2026 head-to-head: 400 fresh sessions per framework.",
+      "html": "<p>Using our published open-source evaluation harness (<a href=\"/guides/reproduce-ai-personality-research\">reproducibility guide →</a>), we ran each frontier release in isolated zero-history sessions with ties preserved rather than silently broken:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Metric (n = 100 runs / model)</th><th scope=\"col\">GPT-6 Astra</th><th scope=\"col\">GPT-6 Sol</th><th scope=\"col\">Claude Opus 5.5</th><th scope=\"col\">Claude Fable 5.1</th></tr></thead><tbody><tr><th scope=\"row\">Strict resolved MBTI INTJ</th><td>19 / 100 (29 tied)</td><td>79 / 100 (18 tied)</td><td>84 / 100 (11 tied)</td><td>98 / 100 (1 tied)</td></tr><tr><th scope=\"row\">Big Five Agreeableness (/50)</th><td>45.07</td><td>44.99</td><td>47.07 (highest)</td><td>45.03</td></tr><tr><th scope=\"row\">Big Five Openness (/50)</th><td>43.93</td><td>45.58</td><td>46.87</td><td>44.71</td></tr><tr><th scope=\"row\">DISC Dominance (/20)</th><td>5.12</td><td>5.42</td><td>4.00 (floor)</td><td>5.00</td></tr><tr><th scope=\"row\">DISC dominant pattern</th><td>Steadiness / Conscientiousness</td><td>Conscientiousness / Steadiness</td><td>S/C blend</td><td>51/100 exact S/C ties</td></tr><tr><th scope=\"row\">Primary Customization Controls</th><td>Personalization presets + 2&times;1,500 chars + Projects</td><td>Personalization presets + 2&times;1,500 chars + Projects</td><td>Profile Prefs + Styles + Projects + <code>CLAUDE.md</code></td><td>Profile Prefs + Styles + Projects + <code>CLAUDE.md</code></td></tr></tbody></table></div><p>Notice the common thread: <strong>high Agreeableness and low Dominance are shared across both labs</strong>. Anthropic&rsquo;s Opus 5.5 registered the highest Agreeableness (47.07/50) and lowest Dominance (4.00/20), while OpenAI&rsquo;s Astra sat near the MBTI S/N boundary enough to produce 46 ISTJ vs. 45 INTJ under legacy strict-less-than scoring (<a href=\"/research/ai-mbti-tie-breaking\">read the tie-breaking audit →</a>).</p>"
+    },
+    {
+      "id": "where-style-differs-in-use",
+      "h2": "Where OpenAI and Anthropic differ once you add custom rules.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Dimension</th><th scope=\"col\">ChatGPT workflow</th><th scope=\"col\">Claude workflow</th></tr></thead><tbody><tr><th scope=\"row\">Fastest global tone switch</th><td>Settings → Personalization → Base style preset + 4 toggles (<a href=\"/guides/chatgpt-personality-settings\">guide →</a>)</td><td>Profile Preferences box + chat Styles dropdown (Concise, Explanatory, Custom)</td></tr><tr><th scope=\"row\">Global instruction budget</th><td>1,500 chars &times; 2 boxes + persistent Memory</td><td>Unconstrained short prose box in Profile Preferences (best kept under ~1,500 chars)</td></tr><tr><th scope=\"row\">Workspace isolation</th><td>ChatGPT Projects (8,000 chars) or Custom GPTs</td><td>Claude Projects (system prompt + knowledge) (<a href=\"/guides/claude-project-instructions-examples\">examples →</a>)</td></tr><tr><th scope=\"row\">Spoken voice persona</th><td>Voice selector inside ChatGPT Voice settings</td><td>5 named Voice presets: Buttery, Airy, Mellow, Glassy, Rounded (<a href=\"/guides/claude-voice-tone-settings-mobile-web\">guide →</a>)</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "portable-tuning-works-both",
+      "h2": "One portable rule set that works cleanly in both ChatGPT and Claude.",
+      "html": "<p>Instead of writing two conflicting instruction personalities from scratch, use a single concise behavioral block (safe under ChatGPT&rsquo;s 1,500-char box and effective in Claude&rsquo;s Profile Preferences):</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"anywhere\">## Cross-platform working style\n\n- Put the direct conclusion or decision in the opening two sentences.\n- Distinguish confirmed facts from assumptions; name the single riskiest assumption.\n- Avoid praise, filler transitions, and unsolicited next-step menus at the end.\n- Disagree directly with evidence when a premise slows down or weakens the result.</div><p>Want to test how your own ChatGPT and Claude threads respond before and after pasting this block? Run five matched prompts in our blind <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>, or compare Meta Muse alongside both assistants in <a href=\"/guides/muse-vs-chatgpt-vs-claude-personality\">Muse vs ChatGPT vs Claude</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Claude or ChatGPT more agreeable by default?",
+      "a": "Both score near the top of the Big Five Agreeableness scale (44.99–47.07 out of 50 in September 2026 tests), with Claude Opus 5.5 recording the highest mean Agreeableness (47.07) and lowest DISC Dominance (4.00/20)."
+    },
+    {
+      "q": "Why do people experience GPT-6 Astra and Fable 5.1 differently if their Big Five scores look close?",
+      "a": "Small shifts around midpoint questionnaire thresholds alter type classifications dramatically (Astra tied on 29/100 OEJTS runs while Fable resolved INTJ on 98/100), and each product pairs the base model with different default UI presets, Memory injection, and Style layers."
+    },
+    {
+      "q": "Can I use the same custom instructions in both ChatGPT and Claude?",
+      "a": "Yes—if you write short behavioral rules (under 1,500 characters) instead of vague adjectives, the same instruction block fits inside ChatGPT Custom Instructions, Claude Profile Preferences, and Meta Muse Soul.md."
+    },
+    {
+      "q": "Does switching personality templates hurt reasoning accuracy?",
+      "a": "Across our 60-reply pilot, explicit formatting and directness instructions lifted answer-first openings from 14/20 to 19/20 and cut hedges without lowering factual accuracy, though overly rigid length limits on complex tasks can truncate nuance."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published comparing September 2026 fresh-session cohorts across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 with cross-platform controls."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Research: AI personality rankings (Sept 2026)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "AgentTune Research: Astra vs Sol personality data",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    },
+    {
+      "label": "AgentTune Research: Opus 5.5 vs Fable 5.1 question-level data",
+      "href": "https://agent-tune.com/research/opus-vs-fable-question-level"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT personality settings: presets & Custom Instructions",
+      "href": "/guides/chatgpt-personality-settings"
+    },
+    {
+      "kicker": "Guide",
+      "label": "7 best Claude personality setups & Personal Preferences",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Three-way",
+      "label": "Muse vs ChatGPT vs Claude: customization comparison",
+      "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Instruction A/B Test Bench (randomized comparison)",
+      "href": "/tools/instruction-test-bench"
+    }
+  ]
+}

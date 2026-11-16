@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # GPT-6 Astra vs Sol: what the self-reports show
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Astra has 19 fully resolved INTJ results and Sol has 79. Sol’s mean Openness is 46.87 versus Astra’s 44.54. Different elicitation instructions and surrounding context prevent attributing those differences to the model alone.
 

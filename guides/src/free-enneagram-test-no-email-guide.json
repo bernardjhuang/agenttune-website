@@ -20,7 +20,7 @@
     },
     {
       "h2": "Open-source transparency: inspect every item and line of code.",
-      "html": "<p>Nothing in the test is hidden on a backend server:</p><ul><li><strong>Browser-only privacy:</strong> Answers live temporarily in your tab's memory (and optional <code>localStorage</code> draft while in progress) and are cleared on completion.</li><li><strong>Auditable spec &amp; developer starter:</strong> You can read all 36 items in plain Markdown at <a href=\"/tests/enneagram.md\"><code>/tests/enneagram.md</code></a>, review licensing and provenance in <a href=\"/guides/open-source-enneagram-test\">our open-source Enneagram developer guide</a>, or download a runnable nine-group scorer in <a href=\"/guides/enneagram-test-react-typescript\">React + TypeScript</a>.</li></ul>"
+      "html": "<p>Nothing in the test is hidden on a backend server:</p><ul><li><strong>Browser-only privacy:</strong> Answers live temporarily in your tab's memory (and optional <code>localStorage</code> draft while in progress) and are cleared on completion.</li><li><strong>Auditable spec &amp; developer starter:</strong> You can read all 36 items in plain Markdown at <a href=\"/tests/enneagram.md\"><code>/tests/enneagram.md</code></a>, review licensing, standalone JS scoring, and a runnable nine-group demo in <a href=\"/guides/enneagram-test-react-typescript\">our open-source Enneagram scorer &amp; React + TypeScript guide</a>.</li></ul>"
     },
     {
       "h2": "Try an Enneagram-informed AI communication block.",
@@ -82,9 +82,9 @@
       "href": "/tools/enneagram-scoring-playground"
     },
     {
-      "kicker": "Developer resource",
-      "label": "Open-source Enneagram test on GitHub (36 items & JS)",
-      "href": "/guides/open-source-enneagram-test"
+      "kicker": "Interactive test",
+      "label": "Take the free 36-item Enneagram test (no email)",
+      "href": "/tests/enneagram"
     },
     {
       "kicker": "Developer starter",

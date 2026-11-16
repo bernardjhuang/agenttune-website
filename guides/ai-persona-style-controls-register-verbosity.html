@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I stop ChatGPT or Claude from putting bullet points in every single answer?","acceptedAnswer":{"@type":"Answer","text":"Don't write 'Never use bullet points'—write a threshold rule: 'Default to plain paragraphs. Use bullet lists only for sequential steps and tables only when comparing 3 or more items across shared criteria.' Threshold rules stop reflex bullets without breaking checklists."}},{"@type":"Question","name":"Why does 'be concise' make AI answers unhelpful on hard problems?","acceptedAnswer":{"@type":"Answer","text":"A flat 'be concise' instruction penalizes depth equally on trivial lookups and complex debugging. Use proportional verbosity instead: '1–3 sentences for simple factual questions; full mechanism and tradeoffs for architecture, security, or irreversible changes.'"}},{"@type":"Question","name":"Do personality labels like 'Act as an INTJ' work better than explicit style rules?","acceptedAnswer":{"@type":"Answer","text":"Explicit behavioral rules carry the predictable effect because the model can verify 'answer in sentence one' directly. Personality types (MBTI, DISC, Enneagram) are most useful as a fast human discovery shortcut for choosing which explicit rules fit you—see our 180-reply comparison protocol for testing label vs plain-English rules."}},{"@type":"Question","name":"How do I cut AI hedging without encouraging hallucinated certainty?","acceptedAnswer":{"@type":"Answer","text":"Ban performative throat-clearing ('Great question!', 'It is important to remember...') while explicitly requiring calibrated uncertainty ('Separate verified facts from inference and state material uncertainty when evidence is incomplete')."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -171,9 +171,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

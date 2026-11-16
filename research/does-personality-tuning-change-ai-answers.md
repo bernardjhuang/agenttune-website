@@ -95,7 +95,7 @@ You can reproduce the published summaries with the downloadable Node script and 
 ## Keep going.
 
 - [New resource: Do personality prompts beat plain-English preferences?](https://agent-tune.com/guides/personality-prompts-vs-plain-english)
-- [Guide: The best Claude personality setups](https://agent-tune.com/guides/best-claude-personality)
+- [Guide: How to change Claude's personality (7 setups & settings)](https://agent-tune.com/guides/claude-personality)
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Research: What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Research: The research hub](https://agent-tune.com/research)

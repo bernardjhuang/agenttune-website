@@ -5,18 +5,18 @@ Guide · ChatGPT
 
 # 20 ChatGPT custom instructions examples, by role.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
-On web or desktop, open Settings → Personalization → Custom Instructions (on iOS/Android: Settings → Customize ChatGPT) and paste one of the sub-500-character role blocks below into 'How would you like ChatGPT to respond?'. Need role rules for just one workspace? Put them in ChatGPT Project Instructions instead so they override global defaults cleanly.
+On web or desktop, open Settings → Personalization → Custom Instructions (on iOS/Android: Settings → Customize ChatGPT) and paste one of the sub-500-character role blocks below into 'How would you like ChatGPT to respond?' (Box 2), keeping background context in Box 1. For settings presets (Traits) or workspace overrides, see our ChatGPT personality settings guide or Projects vs. Custom Instructions.
 
-## How to use them.
+## How to use them (Box 1 vs. Box 2).
 
-- Open Settings → Personalization and find custom instructions. Web and desktop can have different controls.
-- Choose a short example and edit it. Preserve existing instructions and important uncertainty.
+- Open Settings → Personalization → Custom Instructions (web/desktop) or Customize ChatGPT (iOS/Android). Put your role, stack, and domain background in Box 1 (What would you like ChatGPT to know about you?) and paste one response style block below into Box 2 (How would you like ChatGPT to respond?).
+- Edit lines to match your own work. Preserve existing instructions and important uncertainty.
 - Review the saved text, then try a factual question, a planning task and a critique request in a new conversation.
 - Adjust anything that does not fit. One matching reply does not establish persistent compliance.
 
-[OpenAI’s personalization guide](https://learn.chatgpt.com/docs/personalize) explains the layers. The pairings below are editorial suggestions. The [generator](https://agent-tune.com/tools/custom-instructions-generator) offers a conservative 1,500-character export budget, not a universal product-limit claim.
+[OpenAI’s personalization guide](https://learn.chatgpt.com/docs/personalize) explains the layers, and our [ChatGPT personality settings guide](https://agent-tune.com/guides/chatgpt-personality-settings) covers how Base Style presets interact with Custom Instructions. Each box enforces a 1,500-character limit in standard ChatGPT; our [generator](https://agent-tune.com/tools/custom-instructions-generator) enforces that 1,500-character budget automatically.
 
 ## The twenty blocks.
 
@@ -216,6 +216,8 @@ No. They are editable editorial suggestions. Evaluate the instructions on tasks 
 
 ## What changed.
 
+- November 16, 2026 Added Box 1 vs Box 2 placement guidance, removed duplicate updated key, and linked the ChatGPT personality settings guide.
+
 - September 25, 2026 Clarified preference scope and removed universal field-limit claims; current setup controls vary by client.
 
 - September 25, 2026 First published, twenty roles.
@@ -232,4 +234,6 @@ No. They are editable editorial suggestions. Evaluate the instructions on tasks 
 - [Guide: ChatGPT custom instructions for all 16 MBTI types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Tool: Free ChatGPT custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
+- [ChatGPT Settings: How to change ChatGPT's personality (presets & traits)](https://agent-tune.com/guides/chatgpt-personality-settings)
+- [Comparison: ChatGPT Projects vs Custom Instructions: what overrides what](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)

@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the AgentTune MCP server require an API key, signup, or payment?","acceptedAnswer":{"@type":"Answer","text":"No. https://agent-tune.com/mcp is completely free, stateless, and requires zero API keys or authentication."}},{"@type":"Question","name":"Does AgentTune MCP store my conversations, code, or questionnaire answers?","acceptedAnswer":{"@type":"Answer","text":"No. By design, the MCP endpoint is strictly read-only and never accepts personal text or questionnaire answers over the network: get_test_spec returns the public scoring specification so your agent scores answers locally in your session."}},{"@type":"Question","name":"What if my AI tool doesn't support remote MCP servers yet?","acceptedAnswer":{"@type":"Answer","text":"Point any web-capable agent at https://agent-tune.com/SKILL.md or https://agent-tune.com/llms.txt, or copy a bounded Markdown block manually from agent-tune.com/tools/instruction-converter."}},{"@type":"Question","name":"Will applying an AgentTune profile overwrite my existing CLAUDE.md or AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No—when merged inside \u003c!-- agenttune:preferences:start --> and \u003c!-- agenttune:preferences:end --> markers, only the communication block between the markers is added or updated, preserving every existing build, lint, and architecture instruction byte-for-byte."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,9 +168,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

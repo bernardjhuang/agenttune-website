@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulating 100 MBTI Outcomes from an Opus 4.8 Profile</title>
-  <meta name="description" content="A reported simulation sampled 100 synthetic answer sets from one Opus 4.8 probability profile. Methods, limits, and why it cannot establish a version change." />
+  <title>Opus 4.8 MBTI 100x Simulation: Results &amp; Limits</title>
+  <meta name="description" content="Why an elicited Opus 4.8 probability profile scored 72 INTJ across 100 synthetic OEJTS draws—plus Sept 2026 fresh-run MBTI ties and protocol limits." />
 
-  <meta property="og:title" content="Simulating 100 MBTI Outcomes from an Opus 4.8 Profile" />
-  <meta property="og:description" content="A reported simulation sampled 100 synthetic answer sets from one Opus 4.8 probability profile. Methods, limits, and why it cannot establish a version change." />
+  <meta property="og:title" content="Opus 4.8 MBTI 100x Simulation: Results &amp; Limits" />
+  <meta property="og:description" content="Why an elicited Opus 4.8 probability profile scored 72 INTJ across 100 synthetic OEJTS draws—plus Sept 2026 fresh-run MBTI ties and protocol limits." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://agent-tune.com/research/i-took-the-mbti-100-times" />
   <meta property="og:site_name" content="AgentTune" />
@@ -19,8 +19,8 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Simulating 100 MBTI Outcomes from an Opus 4.8 Profile" />
-  <meta name="twitter:description" content="A reported simulation sampled 100 synthetic answer sets from one Opus 4.8 probability profile. Methods, limits, and why it cannot establish a version change." />
+  <meta name="twitter:title" content="Opus 4.8 MBTI 100x Simulation: Results &amp; Limits" />
+  <meta name="twitter:description" content="Why an elicited Opus 4.8 probability profile scored 72 INTJ across 100 synthetic OEJTS draws—plus Sept 2026 fresh-run MBTI ties and protocol limits." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
   <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
@@ -32,11 +32,11 @@
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Simulating 100 MBTI Outcomes from an Opus 4.8 Profile",
-  "description": "A reported simulation sampled 100 synthetic answer sets from one Opus 4.8 probability profile. Methods, limits, and why it cannot establish a version change.",
+  "headline": "Opus 4.8 MBTI 100x Simulation: Results & Limits",
+  "description": "Why an elicited Opus 4.8 probability profile scored 72 INTJ across 100 synthetic OEJTS draws—plus Sept 2026 fresh-run MBTI ties and protocol limits.",
   "url": "https://agent-tune.com/research/i-took-the-mbti-100-times",
   "datePublished": "2026-05-28",
-  "dateModified": "2026-09-24",
+  "dateModified": "2026-11-16",
   "inLanguage": "en",
   "author": {
     "@type": "Person",
@@ -68,7 +68,7 @@
   ]
 }</script>
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -161,26 +161,95 @@
       <section class="hero">
         <span class="pill">Methodology note · MBTI simulation</span>
         <h1 class="h-hero h-research-hero">100 simulated MBTI outcomes.</h1>
-        <p class="article-dek">One elicited Claude Opus 4.8 profile · 100 synthetic answer sets</p>
-        <p class="lede">The original headline described a model taking the test 100 times. The procedure described in that article was different: a script sampled answers from one set of per-item probabilities attributed to Opus 4.8. This page corrects the interpretation while preserving the reported counts.</p>
+        <p class="article-dek">One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical May 2026 note</p>
+        <p class="lede">The original May 2026 headline described a model taking the test 100 times. The underlying procedure was actually a parametric simulation: a script elicited one set of per-item probabilities from Claude Opus 4.8 and drew 100 synthetic answer sets from that fixed profile. This page preserves the historical counts, explains the methodological limits, and contrasts them with our September 2026 fresh-session cohorts.</p>
       </section>
       <div class="article-body">
-        <h2>What was simulated</h2>
-        <p>The report describes eliciting a probability distribution over the five response options for each of the 32 OEJTS items, then sampling and scoring 100 answer sets. Variation in those outcomes reflects the elicited probabilities and the sampler. It is not an observation of 100 independently generated model responses, day-to-day experience, or a stable psychological trait.</p>
-        <h2>Reported distribution</h2>
-        <table class="axes"><thead><tr><th>Scored type</th><th>Synthetic samples</th></tr></thead><tbody>
-          <tr><td>INTJ</td><td>72</td></tr><tr><td>INFJ</td><td>14</td></tr><tr><td>ISTJ</td><td>10</td></tr><tr><td>ISFJ</td><td>2</td></tr><tr><td>ENTJ</td><td>2</td></tr>
-        </tbody></table>
-        <p>These are the figures reported in the original article. We have not independently reproduced them. Their variation cannot be interpreted as evidence that the model became warmer or less consistent.</p>
+        <h2>What the simulation actually ran</h2>
+        <p>The report describes eliciting a probability distribution over the five Likert response options for each of the 32 OEJTS (Open Extended Jungian Type Scales 1.2) items, then Monte Carlo sampling and scoring 100 synthetic answer sheets locally. Variation across those 100 simulated rows reflects the shape of that single elicited vector and the random draws around it. Because only one prompt session produced the underlying weights, it is <strong>not</strong> an empirical measurement of 100 independent API sessions, model drift over time, or day-to-day persona variance.</p>
+
+        <h2>Reported distribution from the May 2026 Opus 4.8 profile</h2>
+        <div class="guide-table-wrap">
+          <table class="axes"><thead><tr><th scope="col">Scored type</th><th scope="col">Synthetic samples (n = 100)</th><th scope="col">Share</th></tr></thead><tbody>
+            <tr><th scope="row">INTJ</th><td>72</td><td>72%</td></tr>
+            <tr><th scope="row">INFJ</th><td>14</td><td>14%</td></tr>
+            <tr><th scope="row">ISTJ</th><td>10</td><td>10%</td></tr>
+            <tr><th scope="row">ISFJ</th><td>2</td><td>2%</td></tr>
+            <tr><th scope="row">ENTJ</th><td>2</td><td>2%</td></tr>
+          </tbody></table>
+        </div>
+        <p>Every reported draw in that run scored Introverted-Judging leaning heavily toward Intuitive-Thinking (<code>INTJ</code>), with secondary leakage into <code>INFJ</code> (T/F boundary crossing) and <code>ISTJ</code> (S/N boundary crossing). Because raw per-item answer vectors and the exact tie-breaking operator were not archived with that May note, these counts cannot be recomputed independently under our current strict tie-preservation rule.</p>
+
+        <h2>Simulated draws vs. September 2026 fresh-session cohorts</h2>
+        <p>When we replaced single-vector simulations with 100 independent fresh API sessions per model on OEJTS 1.2 in September 2026 (2,000 total fresh sessions across four models and five tests), real cross-run repeatability looked sharper—and tie handling became the single biggest source of apparent type shifts:</p>
+        <div class="guide-table-wrap">
+          <table class="axes">
+            <thead>
+              <tr>
+                <th scope="col">Cohort</th>
+                <th scope="col">Protocol</th>
+                <th scope="col">Strict resolved INTJ</th>
+                <th scope="col">Tied on &ge;1 axis</th>
+                <th scope="col">Main alternate outcomes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Opus 4.8 (May 2026)</th>
+                <td>1 probability profile sampled 100&times;</td>
+                <td>72 / 100 (legacy scorer)</td>
+                <td>Not disclosed</td>
+                <td>INFJ (14), ISTJ (10), ISFJ (2), ENTJ (2)</td>
+              </tr>
+              <tr>
+                <th scope="row">Claude Fable 5.1 (Sept 2026)</th>
+                <td>100 independent fresh sessions</td>
+                <td>98 / 100</td>
+                <td>1 / 100</td>
+                <td>1 INTP, 1 INTx tie (<a href="/research/opus-vs-fable-question-level">question data</a>)</td>
+              </tr>
+              <tr>
+                <th scope="row">Claude Opus 5.5 (Sept 2026)</th>
+                <td>100 independent fresh sessions</td>
+                <td>84 / 100</td>
+                <td>11 / 100</td>
+                <td>INFJ, ISTJ, ties on T/F &amp; S/N (<a href="/research/what-personality-type-is-claude">Claude study</a>)</td>
+              </tr>
+              <tr>
+                <th scope="row">GPT-6 Sol (Sept 2026)</th>
+                <td>100 independent fresh sessions</td>
+                <td>79 / 100</td>
+                <td>18 / 100</td>
+                <td>97 legacy INTJ before ties removed</td>
+              </tr>
+              <tr>
+                <th scope="row">GPT-6 Astra (Sept 2026)</th>
+                <td>100 independent fresh sessions</td>
+                <td>19 / 100</td>
+                <td>29 / 100</td>
+                <td>46 legacy ISTJ vs 45 legacy INTJ (<a href="/research/astra-vs-sol-personality-data">Astra vs Sol</a>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Across the four September 2026 fresh cohorts combined (400 sessions), <strong>59 of 400 runs tied on at least one OEJTS axis</strong>. Under the old strict-less-than scorer (which broke exact midpoint ties toward <code>INTJ</code>), <code>INTJ</code> share appeared inflated from 280 / 400 (70.0%) to 335 / 400 (83.8%). Read the full artifact audit in <a href="/research/ai-mbti-tie-breaking">How tie-breaking creates phantom INTJs</a>.</p>
+
         <h2>Why 72% versus 99% is not a version comparison</h2>
-        <p>The older Opus 4.7 figure comes from a different elicitation and scoring procedure. A matched comparison would require the same prompts, sampling settings, scoring implementation, and treatment of ties. No matched-protocol result is available on this site, so this report does not establish a change between versions.</p>
-        <h2>Reproducibility status</h2>
-        <p>The earlier article said the probability profile and harness were open but did not provide accessible artifacts. Until a versioned profile, elicitation prompt, sampler, random seed, scorer, and raw outcomes are published together, the distribution should be treated as an unverified historical report. The current interactive quiz leaves exact ties undetermined; these historical figures have not been recomputed with that policy.</p>
-        <h2>What to do with this</h2>
-        <p>Use a questionnaire as a way to describe your communication preferences, then evaluate instructions on tasks you care about. This simulation does not demonstrate that personality matching improves accuracy, productivity, or satisfaction.</p>
-        <p><a href="/research#methodology">Read the full methodology limits</a> · <a href="/tests/mbti">Explore your own preferences</a> · <a href="/library/">Browse tuning templates</a></p>
+        <p>The older Opus 4.7 headline came from a different elicitation prompt, sampling setup, and scorer. A valid version-over-version comparison requires holding five variables identical across releases: exact item order and scale labels, API temperature and seed parameters, conversation history isolation, strict tie-preserving scoring code, and published per-item CSVs. Without matched artifacts, comparing 72% (May simulation) against 99% (legacy run) or 98% (September Fable 5.1) conflates scoring math and protocol differences with model changes.</p>
+
+        <h2>Reproducibility checklist before trusting any &ldquo;AI took an MBTI test&rdquo; study</h2>
+        <ul>
+          <li><strong>Independent sessions, not single-shot sampling:</strong> Clear context and start a fresh API call for every run; check variance across at least 30–100 sessions (<a href="/research/ai-personality-repeatability">repeatability study</a>).</li>
+          <li><strong>Raw 1–5 vectors published:</strong> Inspect whether boundary items sit right on a <code>3</code> midpoint rather than shifting monotonically (<a href="/research/reproduce-ai-personality-research">reproduce our data</a>).</li>
+          <li><strong>No silent tie-breaking:</strong> Flag <code>S/N</code> or <code>T/F</code> ties as undetermined (<code>x</code>) instead of defaulting half of ambiguous runs into <code>INTJ</code>.</li>
+          <li><strong>Separate default test answers from instruction-following:</strong> Default answers on personality quizzes reflect RLHF hedging and high Openness/Agreeableness, whereas system prompts can override style directly (our 60-reply pilot raised answer-first openings from 14/20 to 19/20; see <a href="/research/does-personality-tuning-change-ai-answers">tuning impact evidence</a>).</li>
+        </ul>
+
+        <h2>What to do with this practically</h2>
+        <p>Treat a personality label on an LLM as an observational summary of its unprompted survey habits, never as an immutable constraint. If you want an assistant that communicates directly without hedging or trailing questions, inspect your own workflow in our <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a> or copy a behavioral template from the <a href="/tools/custom-instructions-generator">custom instructions generator</a>, then compare outputs before and after in the <a href="/tools/instruction-test-bench">A/B test bench</a>.</p>
+        <p><a href="/research#methodology">Read full methodology limits</a> · <a href="/research/ai-mbti-tie-breaking">MBTI tie-breaking audit</a> · <a href="/tests/mbti">Take the free OEJTS test</a> · <a href="/library/">Browse 43 tuning templates</a></p>
       </div>
-      <footer class="footer"><span>Corrected interpretation · September 24, 2026</span><a href="/research">All research</a></footer>
+      <footer class="footer"><span>Corrected interpretation · Updated November 16, 2026</span><a href="/research">All research</a></footer>
     </main>
   </div>
 </body>

@@ -2,9 +2,9 @@
   "slug": "what-personality-type-is-gemini",
   "route": "/research/what-personality-type-is-gemini",
   "published": "2026-09-25",
-  "updated": "2026-11-11",
-  "title": "What Personality Type Is Gemini? MBTI, DISC & Big 5 Data",
-  "description": "What MBTI and Enneagram type is Google Gemini? See Gemini 3.1 Pro's 100-run test scores (INTJ, Type 1, DISC C, Big Five) plus how to customize Gems.",
+  "updated": "2026-11-16",
+  "title": "Gemini MBTI & Personality Type: 100-Run Test Data (INTJ)",
+  "description": "What MBTI and Enneagram type is Google Gemini? See Gemini 3.1 Pro's 100-run test scores (100% INTJ, Type 1, DISC C, Big Five) and how to tune Gemini.",
   "pill": "Research · Q&A",
   "h1": "What personality type is Gemini?",
   "dek": "From the May 2026 study of Gemini 3.1 Pro. Not yet re-tested in September.",
@@ -25,7 +25,7 @@
     },
     {
       "h2": "Trying communication preferences.",
-      "html": "<p>For Gemini, a Gem’s instructions can hold a communication block. On a library page, select <strong>Any model</strong>, then <strong>Gemini Gems</strong>, for the installation text. Evaluate the prompt on your tasks; the questionnaire results do not prove a tuning benefit. See <a href=\"/guides/how-to-give-your-ai-a-personality\">the setup guide</a>.</p>"
+      "html": "<p>Want to change how Gemini talks to you? Follow our step-by-step <a href=\"/guides/gemini-personality\">How to change Google Gemini’s personality guide</a> (Saved Info, custom Gems, and <code>GEMINI.md</code>). On any library page, select <strong>Any model</strong>, then <strong>Gemini Gems</strong>, for ready-to-paste rules. Evaluate the prompt on your own tasks; questionnaire results do not prove a tuning benefit.</p>"
     }
   ],
   "faq": [
@@ -73,6 +73,11 @@
     }
   ],
   "related": [
+    {
+      "kicker": "Setup guide",
+      "label": "How to change Gemini's personality (Saved Info, Gems & CLI)",
+      "href": "/guides/gemini-personality"
+    },
     {
       "kicker": "Guide",
       "label": "How to give your AI a personality",

@@ -140,6 +140,62 @@
     </div>
 
     <section style="margin-top: 56px;">
+      <span class="pill">Which test to pick</span>
+      <h2 class="h-sub">Five public-domain instruments side by side.</h2>
+      <div class="guide-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Test</th>
+              <th scope="col">Instrument</th>
+              <th scope="col">Items &amp; time</th>
+              <th scope="col">What it measures</th>
+              <th scope="col">Best used for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="/tests/disc">DISC</a></th>
+              <td>ODAT (Open DISC)</td>
+              <td>16 items · ~3 min</td>
+              <td>Dominance, Influence, Steadiness, Conscientiousness + blend</td>
+              <td>Decision pacing, directness &amp; team workflow rules (<a href="/guides/free-disc-assessment-guide-work-ai">scoring guide</a>)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/tests/enneagram">Enneagram</a></th>
+              <td>OEPS-36 adaptation</td>
+              <td>36 items · ~5 min</td>
+              <td>9 core motivations (1–9), adjacent wing &amp; exact tie list</td>
+              <td>Feedback framing &amp; pushback tolerance (<a href="/guides/free-enneagram-test-no-email-guide">scoring guide</a>)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/tests/mbti">MBTI</a></th>
+              <td>OEJTS 1.2</td>
+              <td>32 pairs · ~5 min</td>
+              <td>E/I, S/N, T/F, J/P axis scores with tied axes left open</td>
+              <td>Big-picture vs step-by-step explanations (<a href="/guides/open-source-mbti-test-oejts">OEJTS guide</a>)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/tests/big-five">Big Five (OCEAN)</a></th>
+              <td>IPIP-50</td>
+              <td>50 items · ~6 min</td>
+              <td>Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism</td>
+              <td>Continuous trait nuance without hard type labels (<a href="/guides/big-five-ai-prompts">OCEAN prompts</a>)</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/tests/attachment">Attachment</a></th>
+              <td>ECR-R adaptation</td>
+              <td>36 items · ~5 min</td>
+              <td>Anxiety &amp; avoidance dimensions → 4 relational styles</td>
+              <td>Critique cushioning &amp; reassurance cadence (<a href="/guides/attachment-style-ai-prompts">attachment guide</a>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 15px; line-height: 1.6; max-width: 760px;">Not sure which framework fits your workflow? Use our <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a> or skip questionnaires completely with the <a href="/tools/communication-preferences-builder">Preferences Builder</a>.</p>
+    </section>
+
+    <section style="margin-top: 40px;">
       <span class="pill">Workflow for agents</span>
       <h2 class="h-sub">How to use these pages.</h2>
       <ol class="steps-list" style="font-size: 16px; line-height: 1.6; max-width: 760px;">
@@ -151,6 +207,8 @@
         <li><strong>Apply the tuning</strong> only when the user requests installation. Preserve existing instructions and permissions. Follow the <a href="/resources/install-protocol.md">installation protocol</a>; explicit preferences resolve conflicts.</li>
       </ol>
     </section>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all five AgentTune personality tests free without email or signup?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every questionnaire (DISC, Enneagram, MBTI OEJTS, Big Five IPIP-50, and Attachment ECR-R) runs locally in your browser tab with no account wall, email gate, or server-side answer storage."}},{"@type":"Question","name":"Which free personality test is fastest if I just want custom AI instructions?","acceptedAnswer":{"@type":"Answer","text":"The 16-item DISC assessment (ODAT) takes ~3 minutes and is the fastest questionnaire, or you can skip testing completely and use the 5-System Matcher or Communication Preferences Builder."}},{"@type":"Question","name":"What happens when a test score ties between two types or axes?","acceptedAnswer":{"@type":"Answer","text":"Exact ties are preserved and reported openly rather than broken arbitrarily by array order, so you can compare the tied communication templates directly."}}]}</script>
 
     <p class="quiz-source">All five questionnaires are available. These self-report exercises are not diagnoses. <a href="/resources/content/THIRD_PARTY_NOTICES.md">Instrument-specific sources and terms</a> apply separately from template licenses.</p>
 </main>

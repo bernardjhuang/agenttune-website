@@ -5,20 +5,21 @@ Guide · Resources
 
 # Meta Muse Soul.md templates.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
-Choose one template, append it to your existing Soul.md, and compare answers on the same tasks before and after. These are editable starting points; we have not measured their effectiveness in a controlled Muse experiment.
+Pick one of the four core Soul.md downloads (Concise assistant, Thinking partner, Writing editor, Task coordinator) or sixteen role-specific examples below, append it to Soul.md (or use /tools/muse-soul-md-editor to keep a backup), and compare answers on identical tasks before and after.
 
 ## Choose a starting point.
 
-These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. The checks below describe what to look for; they are not reported model outputs.
+These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. Need to keep your existing core truths intact? Use our [browser Soul.md merge editor](https://agent-tune.com/tools/muse-soul-md-editor) to append a template with automatic backup and diff preview.
 
-| Template | Useful when | Download |
+| Template | Best for | Quick jump / Download |
 | --- | --- | --- |
-| Concise assistant | For short answers and clear recommendations. | [Download Markdown](https://agent-tune.com/resources/muse/concise-assistant.md) |
-| Thinking partner | For exploring decisions and examining assumptions. | [Download Markdown](https://agent-tune.com/resources/muse/thinking-partner.md) |
-| Writing editor | For concrete edits that preserve your intended meaning. | [Download Markdown](https://agent-tune.com/resources/muse/writing-editor.md) |
-| Task coordinator | For progress reports, blockers and clear requests for decisions. | [Download Markdown](https://agent-tune.com/resources/muse/task-coordinator.md) |
+| Concise assistant | Short, answer-first replies without filler | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#1-concise-assistant) · [Download .md](https://agent-tune.com/resources/muse/concise-assistant.md) |
+| Thinking partner | Decisions, tradeoffs, and checking assumptions | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#2-thinking-partner) · [Download .md](https://agent-tune.com/resources/muse/thinking-partner.md) |
+| Writing editor | Tight prose edits that keep your voice &amp; facts | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#3-writing-editor) · [Download .md](https://agent-tune.com/resources/muse/writing-editor.md) |
+| Task coordinator | Status briefs, blockers, and Connector approval cards | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#4-task-coordinator) · [Download .md](https://agent-tune.com/resources/muse/task-coordinator.md) |
+| 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper, Student &amp; 10 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
 
 Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.
 
@@ -356,6 +357,8 @@ Yes. Choose by the behavior you want: shorter answers, exploratory discussion, e
 
 ## What changed.
 
+- November 16, 2026 Added a quick-pick role jump table and direct merge links to the browser Soul.md editor.
+
 - September 25, 2026 First published with downloadable resources.
 
 - September 25, 2026 Added sixteen role templates (copy-and-paste, no downloads) and links to the rest of the Muse pages.
@@ -371,7 +374,7 @@ Yes. Choose by the behavior you want: shorter answers, exploratory discussion, e
 - [Free browser tool: Edit and merge your Muse Soul.md](https://agent-tune.com/tools/muse-soul-md-editor)
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
-- [Guide: Muse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)
+- [Guide: Meta Muse Connectors, tasks & approval rules](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Library: Explore all 43 tuning files](https://agent-tune.com/library/)

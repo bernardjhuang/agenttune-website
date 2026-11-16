@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the character limit for ChatGPT Custom Instructions in 2026?","acceptedAnswer":{"@type":"Answer","text":"OpenAI documents a 1,500-character limit for the longer Custom Instructions fields under Settings, Personalization, Custom Instructions. Every profile in AgentTune includes a reviewed compact export under 1,500 characters."}},{"@type":"Question","name":"What is the byte limit for OpenAI Codex AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex reads up to 32 KiB (32,768 bytes) combined across all AGENTS.md and AGENTS.override.md files in the directory chain, configured by project_doc_max_bytes."}},{"@type":"Question","name":"Do ChatGPT Project Instructions have the same 1,500-character limit?","acceptedAnswer":{"@type":"Answer","text":"No. Project Instructions inside a ChatGPT Project accept full multi-paragraph Markdown tunings and override your global Custom Instructions inside that project."}},{"@type":"Question","name":"How many rules should I put in Claude Personal Preferences or Meta Muse Soul.md?","acceptedAnswer":{"@type":"Answer","text":"Six to ten clear bullet points (roughly 500 to 1,200 characters) cover tone, answer order, formatting, and pushback without crowding out your task context."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -163,9 +163,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

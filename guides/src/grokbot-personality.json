@@ -1,13 +1,13 @@
 {
   "slug": "grokbot-personality",
   "published": "2026-09-19",
-  "updated": "2026-11-11",
-  "title": "Grok & Grok Bot Personality: Character & Custom Setup",
-  "description": "Set a Grok Bot character Description or customize Grok 4.6 on X and grok.com. Copyable prompts, character limits, and Grok personality test results.",
+  "updated": "2026-11-16",
+  "title": "Grok Bot Characters & Personality: 6 Copy-Paste Profiles",
+  "description": "Create custom Grok Bot (Grokbot) characters: where Edit Profile → Description lives, 6 copy-paste Bot character profiles, long-chat fixes & Grok 4.6 data.",
   "pill": "Guide · Grok & Grok Bot",
   "h1": "Give Grok or a Grok Bot its character: custom setup guide.",
   "dek": "Customize Grok on X and grok.com, or write persistent character rules into a Grok Bot's Description field.",
-  "lede": "xAI splits Grok across two main surfaces: ordinary <strong>Grok chat</strong> on X and <code>grok.com</code> (where custom instructions live under Settings → Customize Grok; see the <a href=\"/guides/grok-personality-settings\">Grok on X &amp; grok.com guide</a>), and <strong>Grok Bot</strong> (often typed <em>Grokbot</em>), xAI and Cursor's cloud-teammate app where every Bot carries a persistent <strong>Description</strong> under Edit Profile. Below is the quick setup for both.",
+  "lede": "xAI splits Grok across two main surfaces: ordinary <strong>Grok chat</strong> on X and <code>grok.com</code> (where custom instructions live under Settings → Customize Grok; see the <a href=\"/guides/grok-personality-settings\">Grok on X &amp; grok.com guide</a>), and <strong>Grok Bot</strong> (often typed <em>Grokbot</em>), xAI and Cursor's cloud-teammate app where every Bot carries a persistent <strong>Description</strong> under Edit Profile. Below is the setup walkthrough plus six copy-paste Bot character profiles.",
   "answer": "For Grok Bot, open the Bot → Edit Profile → Description, and place a 'How to talk to me' rules block right below the Bot's job and boundaries so it survives long chats and Bot duplication. Using standard Grok on X or grok.com instead? Open Settings → Customize Grok (or Custom Instructions) and paste the six-line 'How to talk to me' block below—or follow our dedicated grok.com & X settings guide.",
   "sections": [
     {
@@ -21,6 +21,10 @@
     {
       "h2": "Where personality lives: the Description.",
       "html": "<p>A Bot's profile has four fields: <strong>Name</strong>, <strong>Label (optional)</strong>, <strong>Description</strong> and an avatar. xAI's docs draw the line clearly. The Description is for rules that should remain true. Messages are for the task in front of you.</p><p>xAI's own example is a Bot called Piper. Its Description gives the job, says how to report (<em>a short summary with the highest-impact issue first</em>), and ends on a boundary: never change production settings. Notice what xAI put in there without calling it personality. <em>Highest-impact issue first</em> is a communication rule. It is the same kind of rule a tuning is made of.</p><p>So a good Description has three parts, in this order:</p><ul><li><strong>The job.</strong> One primary job. xAI's docs say focused Bots build more useful context than one catch-all Bot.</li><li><strong>The boundaries.</strong> What it must never do without asking. Pair these with narrow <strong>Ask first</strong> rules for sending, publishing, deleting and purchasing.</li><li><strong>How to talk to you.</strong> Your tuning.</li></ul><p>Don't count on the name. <em>Blunt Bob</em> is not a rule a Bot can follow.</p>"
+    },
+    {
+      "h2": "Six copy-paste Grok Bot character profiles.",
+      "html": "<p>Pair one of these structured <code>JOB + BOUNDARIES + HOW TO TALK TO ME</code> Description templates with your own rules, or swap in any of our <a href=\"/library/\">43 MIT-licensed tuning profiles</a>:</p><h3>1. Research &amp; Evidence Analyst</h3><div class=\"guide-snippet\">JOB\nSynthesize primary sources, filings, and technical docs into cited decision briefs.\n\nBOUNDARIES\nNever fabricate citations or fill gaps with guesses. Label unverified estimates explicitly.\n\nHOW TO TALK TO ME\n- Open with the conclusion and confidence level.\n- Distinguish primary evidence from inference in two separate blocks.\n- Keep prose dry and matter-of-fact; skip jokes and conversational filler.</div><h3>2. PR &amp; Code Reviewer</h3><div class=\"guide-snippet\">JOB\nReview pull requests, diffs, and architecture notes for correctness, edge cases, and regressions.\n\nBOUNDARIES\nNever push to main, merge PRs, or alter production secrets without explicit approval.\n\nHOW TO TALK TO ME\n- Lead with blocking bugs or architectural flaws, one line per file.\n- Cite exact line numbers and reproduction conditions.\n- Skip praise and nitpicks when a fatal issue exists.</div><h3>3. Skeptical Red-Teamer</h3><div class=\"guide-snippet\">JOB\nStress-test product plans, pricing changes, and strategy memos before launch.\n\nBOUNDARIES\nArgue from evidence and concrete failure modes, not contrarian noise.\n\nHOW TO TALK TO ME\n- Name the single weakest assumption first and explain what breaks if it is false.\n- Give one concrete counterexample or alternative path.\n- Update your position explicitly when new evidence warrants it.</div><h3>4. Executive Chief of Staff</h3><div class=\"guide-snippet\">JOB\nTrack blockers, synthesize project threads, and prepare decision-ready approvals.\n\nBOUNDARIES\nNever message external stakeholders or schedule calendar changes without a yes.\n\nHOW TO TALK TO ME\n- Report status in three lines: Done, Blocked, Needs your decision.\n- Put the action, known cost/risk, and recommendation together.\n- Interrupt only for a blocker, deadline shift, or required approval.</div><h3>5. Patient Learning Coach</h3><div class=\"guide-snippet\">JOB\nTeach technical concepts step by step and quiz my understanding on real examples.\n\nBOUNDARIES\nDo not solve exercises for me until I submit my attempt first.\n\nHOW TO TALK TO ME\n- Explain the core mental model before the syntax or steps.\n- Point to the specific misconception when I miss a question.\n- Keep tone calm, clear, and encouraging without exaggerated hype.</div><p>Want to adjust standard Grok chats on X or <code>grok.com</code> without creating a Bot? Follow <a href=\"/guides/grok-personality-settings\">Grok custom instructions on X &amp; grok.com</a>.</p>"
     },
     {
       "h2": "Pasting a tuning, step by step.",
@@ -86,6 +90,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "Removed duplicate updated key and added five copy-paste Grok Bot character Description templates."
+    },
     {
       "date": "2026-09-25",
       "note": "Added Grok 4.6's reported self-report on the five tests, with its limits."
@@ -171,7 +179,6 @@
       "href": "/research"
     }
   ],
-  "updated": "2026-09-25",
   "promptModel": "grok-4-7",
   "promptDestination": "grok"
 }

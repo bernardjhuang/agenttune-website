@@ -12,7 +12,7 @@ const approved=new Set(require('../public-assets.json').files);
 function isPublic(relative) { return approved.has(relative); }
 // Shared assets are cached for hours at the edge and in browsers. Every published HTML file
 // references them with a content hash so a new deploy is never served with a stale stylesheet.
-const ASSETS=['resources/scoring/score.js','styles.css','data.js','integrations.js','compact-tunings.js','quiz-utils.js','consent.js','guide-prompts.js','platforms.js','site-ui.js','resources/tools/core.js','resources/tools/app.js','resources/tools/tools.css','resources/tools/navigation.js','resources/tools/navigation.css','resources/enneagram/score.js'];
+const ASSETS=['resources/scoring/score.js','styles.css','data.js','integrations.js','compact-tunings.js','quiz-utils.js','consent.js','guide-prompts.js','platforms.js','site-ui.js','resources/tools/core.js','resources/tools/app.js','resources/tools/tools.css','resources/tools/navigation.js','resources/tools/navigation.css','resources/enneagram/score.js','resources/tools/friction-matcher.js'];
 function versionAssets(html,hashes) {
   return html.replace(/\b(href|src)="([^"?#]+)(?:\?v=[^"#]*)?"/g,(m,attr,url)=>{const file=url.replace(/^\//,'');return hashes[file]?`${attr}="${url}?v=${hashes[file]}"`:m;});
 }

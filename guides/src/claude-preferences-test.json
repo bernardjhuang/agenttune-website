@@ -2,8 +2,8 @@
   "slug": "claude-preferences-test",
   "route": "/guides/claude-preferences-test",
   "published": "2026-09-25",
-  "updated": "2026-09-25",
-  "title": "Test Claude’s saved preferences | AgentTune",
+  "updated": "2026-11-16",
+  "title": "When Does Claude Follow Preferences? 36-Reply Test Kit",
   "description": "Test Claude account and project instructions with 36 planned replies, fixed prompts, pass/fail criteria and a downloadable worksheet. Protocol only.",
   "pill": "Test kit · protocol, not results",
   "h1": "When does Claude follow your preferences? A test kit",
@@ -58,8 +58,8 @@
     },
     {
       "kicker": "Related resource",
-      "href": "/guides/best-claude-personality",
-      "label": "Seven behavior-focused preference blocks"
+      "href": "/guides/claude-personality#five-claude-personality-setups-to-try",
+      "label": "Seven behavior-focused Claude setups"
     },
     {
       "kicker": "Related resource",

@@ -1,0 +1,87 @@
+{
+  "slug": "migrate-ai-memory-custom-instructions",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "Migrate ChatGPT & Claude Memory Into Custom Instructions",
+  "description": "Move saved AI memories safely across ChatGPT, Claude, Meta Muse Memory.md, and Gemini: separate durable tone rules from facts and scrub PII first.",
+  "pill": "Workflow · Cross-Platform Memory",
+  "h1": "How to migrate AI memory into portable custom instructions without leaking secrets.",
+  "dek": "Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract clean behavioral rules and scrub PII before pasting.",
+  "lede": "Every major assistant stores preference fragments differently: OpenAI keeps <strong>Saved Memories</strong> separate from Custom Instructions, Anthropic uses <strong>Claude Memory</strong> alongside Profile Preferences, Google uses <strong>Gemini Saved Info</strong>, and Meta Muse splits files cleanly into <code>Memory.md</code> and <code>Soul.md</code>. Dumping an entire raw chat archive or bloated memory JSON into a new assistant hits character limits immediately—and leaks outdated habits or private keys.",
+  "answer": "Do not paste raw chat exports across AI apps. Instead, export memory-only text, audit entries locally in our browser AI Memory Export Reviewer to delete duplicates and secrets, split stable style rules from editable facts, and install each piece into the matching destination box.",
+  "promptModel": "any",
+  "promptDestination": "anywhere",
+  "sections": [
+    {
+      "id": "five-step-migration-checklist",
+      "h2": "Five-step memory & preference migration workflow.",
+      "html": "<ol><li><strong>Export memories, not full transcripts:</strong> Grab your Saved Memories / custom instructions / <code>Memory.md</code> text (not giant multi-megabyte conversation ZIPs).</li><li><strong>Audit locally in your browser:</strong> Paste or load up to 500 entries into the <a href=\"/tools/ai-memory-reviewer\">AI Memory Export Reviewer</a>. It stays inside your browser tab, unchecks exact duplicates, and flags emails, phone-like strings, and API key patterns for redaction.</li><li><strong>Split Tone from Facts:</strong> Move &ldquo;how to answer&rdquo; rules (brevity, answer-first framing, pushback expectations) into Custom Instructions / <code>Soul.md</code> / Profile Preferences; move static role and timezone facts into Box 1 / Saved Info / <code>Memory.md</code>.</li><li><strong>Prune stale experiments:</strong> Delete old one-off persona tricks (&ldquo;always talk like a pirate for project X&rdquo;) that silently ruin daily work.</li><li><strong>Convert and check for conflicts:</strong> Reformat via the <a href=\"/tools/instruction-converter\">Instruction Converter</a> and run a quick pass in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li></ol>"
+    },
+    {
+      "id": "destination-mapping-table",
+      "h2": "Where each migrated category belongs across ChatGPT, Claude, Muse, and Gemini.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Information type</th><th scope=\"col\">ChatGPT</th><th scope=\"col\">Claude</th><th scope=\"col\">Meta Muse</th><th scope=\"col\">Gemini</th></tr></thead><tbody><tr><th scope=\"row\">Durable tone &amp; formatting rules</th><td>Personalization → Custom Instructions (Box 2)</td><td>Profile Preferences (and <a href=\"/guides/claude-project-instructions-examples\">Projects</a>)</td><td><code>Soul.md</code> (<a href=\"/tools/muse-soul-md-editor\">safe merge →</a>)</td><td>Saved Info + Gems instructions</td></tr><tr><th scope=\"row\">User role, stack, workflow facts</th><td>Personalization Box 1 or Saved Memories</td><td>Memory / Profile intro</td><td><code>Memory.md</code> (<a href=\"/guides/muse-memory-md-privacy-reset\">guide →</a>)</td><td>Saved Info facts</td></tr><tr><th scope=\"row\">Project-specific specs &amp; docs</th><td>ChatGPT Project (8,000 chars + files)</td><td>Claude Project Knowledge</td><td>Task context / uploaded notes</td><td>Custom Gem Knowledge</td></tr><tr><th scope=\"row\">Secrets, credentials, raw PII</th><td>Remove everywhere before pasting</td><td>Remove everywhere before pasting</td><td>Remove everywhere before pasting</td><td>Remove everywhere before pasting</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "compact-portable-seed",
+      "h2": "Clean portable seed template (under 500 characters).",
+      "html": "<p>Once you extract the keeper rules from an older account, use this tight structure as your destination seed:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"anywhere\">## Durable Communication Preferences\n\n- Put direct recommendations first, followed by key reasoning and concrete tradeoffs.\n- Default to concise structured prose; save long explanations or tables for complex choices.\n- Push back with evidence if my assumptions contain gaps or errors.\n- Separate confirmed facts from estimates; do not guess missing numbers or close with filler follow-ups.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I import a full ChatGPT conversations.json archive directly into Claude or Muse?",
+      "a": "Uploading giant JSON transcripts rarely works well: it blows through instruction character limits and mixes transient debates with durable facts. Extract memory notes and durable preferences first using a local reviewer."
+    },
+    {
+      "q": "Does AgentTune upload or inspect my AI memory export?",
+      "a": "No. Both the AI Memory Export Reviewer and the Instruction Converter run completely inside your browser tab without calling a model or sending pasted memory entries to a server."
+    },
+    {
+      "q": "Why should I separate Memory.md or Saved Memories from Custom Instructions?",
+      "a": "Facts change over time (jobs, current tools, projects), whereas communication standards (directness, anti-sycophancy, structure) remain stable. Keeping them separate avoids deleting your core voice rules when cleaning old memories."
+    },
+    {
+      "q": "Can an automated redactor catch 100% of sensitive details in an export?",
+      "a": "No. Regex checks flag common patterns like emails, API tokens, and long number sequences, but you should always scan the reviewed list manually before downloading or pasting into another service."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published covering cross-platform migration from ChatGPT, Claude, Gemini, and Meta Muse Memory.md using local PII review."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Tool: AI Memory Export Reviewer",
+      "href": "https://agent-tune.com/tools/ai-memory-reviewer"
+    },
+    {
+      "label": "AgentTune: Muse Memory.md Privacy, Review & Reset",
+      "href": "https://agent-tune.com/guides/muse-memory-md-privacy-reset"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Tool",
+      "label": "AI Memory Export Reviewer (local deduplication & redaction)",
+      "href": "/tools/ai-memory-reviewer"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Instruction Converter & Merger",
+      "href": "/tools/instruction-converter"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse Memory.md privacy, review & reset",
+      "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT personality settings (2026)",
+      "href": "/guides/chatgpt-personality-settings"
+    }
+  ]
+}

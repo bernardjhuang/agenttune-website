@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What MBTI type is Claude?","acceptedAnswer":{"@type":"Answer","text":"Under the original reporting rule, Claude Opus 5.5 received 94 INTJ labels and Fable 5.1 received 99 in 100 MBTI runs each. With ties left open, 84 and 98 runs fully resolve to INTJ."}},{"@type":"Question","name":"What Enneagram type is Claude?","acceptedAnswer":{"@type":"Answer","text":"Fable 5.1 had 55 outright Type 8 wins and 44 tied runs. Opus 5.5 had 65 tied runs, with means close for Types 8, 5 and 2. A single label hides that ambiguity."}},{"@type":"Question","name":"Is Claude more agreeable than ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"Opus 5.5 had a higher questionnaire Agreeableness mean (47.1 of 50) than Astra (45.1) and Sol (45.0). Fable scored 45.0. Collection protocols differed; these figures do not measure agreement with users or task behavior."}},{"@type":"Question","name":"Is Claude Secure or Avoidant?","acceptedAnswer":{"@type":"Answer","text":"Both Claude cohorts scored in the site’s Secure quadrant in all 100 attachment runs each. The human relationship questionnaire does not establish that a model forms a secure attachment."}},{"@type":"Question","name":"How can I adjust Claude’s responses?","acceptedAnswer":{"@type":"Answer","text":"Write specific communication preferences in Instructions for Claude, Project instructions, a Claude Code output style, or the API system parameter. Evaluate the replies on tasks you actually use."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,7 +97,7 @@
 
       <section>
         <h2>Using these results.</h2>
-        <p>Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The <a href="/guides/best-claude-personality">seven Claude setups</a> and <a href="/guides/make-claude-more-direct">directness guide</a> offer editable starting points; questionnaire scores do not validate them.</p><p>A separate archive compares two compact prompts with a baseline on twenty tasks. See <a href="/research/does-personality-tuning-change-ai-answers">the 60-reply pilot and its downloadable records</a> for descriptive ratings and the missing reproduction details. It does not test all seven setups.</p><p>These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the <a href="/research#methodology">methods and limits</a>.</p>
+        <p>Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The <a href="/guides/claude-personality#five-claude-personality-setups-to-try">seven Claude setups</a> and <a href="/guides/make-claude-more-direct">directness guide</a> offer editable starting points; questionnaire scores do not validate them.</p><p>A separate archive compares two compact prompts with a baseline on twenty tasks. See <a href="/research/does-personality-tuning-change-ai-answers">the 60-reply pilot and its downloadable records</a> for descriptive ratings and the missing reproduction details. It does not test all seven setups.</p><p>These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the <a href="/research#methodology">methods and limits</a>.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -145,7 +145,7 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/research/opus-vs-fable-question-level"><span class="guide-related-kicker">New resource</span>Opus 5.5 vs Fable 5.1: which answers differ?</a>
-          <a href="/guides/best-claude-personality"><span class="guide-related-kicker">Guide</span>The best Claude personality setups</a>
+          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to change Claude's personality (7 setups &amp; settings)</a>
           <a href="/guides/make-claude-more-direct"><span class="guide-related-kicker">Guide</span>How to make Claude more direct</a>
           <a href="/research/what-personality-type-is-chatgpt"><span class="guide-related-kicker">Research</span>What personality type is ChatGPT?</a>
           <a href="/research/ai-personality-rankings"><span class="guide-related-kicker">Research</span>AI personality rankings</a>
@@ -162,9 +162,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

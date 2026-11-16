@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code read AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No; Claude Code reads CLAUDE.md, not AGENTS.md. If your repo already uses AGENTS.md for other agents, create a CLAUDE.md containing the import line @AGENTS.md so both tools share one instruction set, or symlink CLAUDE.md to AGENTS.md. You can add Claude-specific rules below the import."}},{"@type":"Question","name":"How long should a CLAUDE.md be?","acceptedAnswer":{"@type":"Answer","text":"Under about 200 lines per file; that's Anthropic's own guidance. Longer files consume more context and measurably reduce adherence. If yours is growing past that, split it: per-package CLAUDE.md files in a monorepo load on demand, and path-scoped rules in .claude/rules/ load only when Claude touches matching files."}},{"@type":"Question","name":"What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Scope. ~/.claude/CLAUDE.md is global; every project, just you. ./CLAUDE.md is the project file, checked in and shared with the team. ./CLAUDE.local.md is project-specific but personal; add it to .gitignore. All of them load together, broadest first, so project instructions appear after (and can override) your global ones."}},{"@type":"Question","name":"Do CLAUDE.md files in subdirectories get loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, but on demand; not at launch. A CLAUDE.md in a subdirectory loads when Claude reads files in that directory. That's the mechanism behind the monorepo pattern: a thin root file plus a CLAUDE.md per package, each paying its context cost only when its package is actually being worked on."}},{"@type":"Question","name":"Is Claude guaranteed to follow CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"No. It's context, not enforcement; Claude reads it and tries to comply, but vague or conflicting instructions get dropped. Specific, imperative, short files get followed most reliably. For rules that must always hold (lint before commit, never touch production) use Claude Code hooks or permission settings instead of prose."}},{"@type":"Question","name":"Should personality instructions go in CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you work with Claude Code daily; how it communicates with you is behavior worth configuring. Put the layer in CLAUDE.local.md or ~/.claude/CLAUDE.md rather than the checked-in team file, since it's personal. The library has 43 tuning files to condense from, and the generator builds the section for you."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -214,9 +214,9 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

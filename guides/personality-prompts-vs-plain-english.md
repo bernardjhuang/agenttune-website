@@ -5,7 +5,7 @@ Test kit · protocol, not results
 
 # Do personality prompts beat plain-English preferences?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.
 

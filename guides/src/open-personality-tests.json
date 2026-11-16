@@ -20,7 +20,7 @@
     },
     {
       "h2": "OEPS: the 36-item Enneagram adaptation.",
-      "html": "<p><strong>What it measures.</strong> Relative agreement across nine Enneagram types using a 36-item adaptation (four items per type, rated 1 to 5, no reverse-keyed items). The upstream live OEPS has 54 items.</p><p><strong>Scoring.</strong> Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.</p><p><strong>Limits.</strong> Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The <a href=\"/guides/open-source-enneagram-test\">open-source Enneagram scorer guide</a> lets you inspect the exact tie arithmetic.</p>"
+      "html": "<p><strong>What it measures.</strong> Relative agreement across nine Enneagram types using a 36-item adaptation (four items per type, rated 1 to 5, no reverse-keyed items). The upstream live OEPS has 54 items.</p><p><strong>Scoring.</strong> Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.</p><p><strong>Limits.</strong> Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The <a href=\"/guides/enneagram-test-react-typescript\">open-source Enneagram scorer &amp; React starter guide</a> lets you inspect the exact tie arithmetic.</p>"
     },
     {
       "h2": "ODAT: the 16-item DISC questionnaire.",
@@ -97,8 +97,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "Open-source Enneagram scorer",
-      "href": "/guides/open-source-enneagram-test"
+      "label": "Open-source Enneagram scorer & React starter",
+      "href": "/guides/enneagram-test-react-typescript"
     },
     {
       "kicker": "Guide",
@@ -107,8 +107,8 @@
     },
     {
       "kicker": "Guide",
-      "label": "Open-source DISC assessment (ODAT): 16 questions and scorer",
-      "href": "/guides/open-source-disc-test-odat"
+      "label": "Free DISC assessment (ODAT): 16 questions, 12 blends & scorer",
+      "href": "/guides/free-disc-assessment-guide-work-ai"
     },
     {
       "kicker": "Guide",

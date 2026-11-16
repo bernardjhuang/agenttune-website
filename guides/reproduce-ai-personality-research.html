@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reproduce AI self-report research | AgentTune</title>
+  <title>Reproduce AgentTune's 2,000-Session AI Personality Research</title>
   <meta name="description" content="Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis." />
 
   <meta property="og:title" content="How to reproduce AgentTune’s AI self-report research" />
   <meta property="og:description" content="Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-26" />
+  <meta property="article:modified_time" content="2026-11-16" />
   <meta property="og:url" content="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,11 +27,11 @@
   <link rel="canonical" href="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-09-26","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to reproduce AgentTune’s AI self-report research"}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,7 +68,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Developer guide · reproducibility</span>
         <h1 class="h-hero h-research-hero">How to reproduce AgentTune’s AI self-report research</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-26">September 26, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.</p>
       </section>
 
@@ -149,9 +149,9 @@ node content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare the parse
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

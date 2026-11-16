@@ -1,7 +1,9 @@
 {
   "slug": "make-chatgpt-sound-like-you",
-  "title": "How to make ChatGPT sound like you · AgentTune",
-  "description": "Two ways to make ChatGPT sound like you: feed it your writing, or tune it to your personality. What each one actually changes, and how to do both.",
+  "published": "2026-07-23",
+  "updated": "2026-11-16",
+  "title": "How to Make ChatGPT Sound Like You: Writing Samples + Rules",
+  "description": "Two ways to make ChatGPT sound like you: feed it writing samples, or tune it with custom instructions. What each changes and how to layer both cleanly.",
   "pill": "Guide · ChatGPT",
   "h1": "Make ChatGPT sound like you — and treat you like you.",
   "dek": "Writing samples fix the prose. A personality tuning fixes everything else.",
@@ -69,13 +71,16 @@
       "href": "/guides/how-to-give-your-ai-a-personality"
     },
     {
+      "kicker": "ChatGPT Settings",
+      "label": "How to change ChatGPT's personality (presets & rules)",
+      "href": "/guides/chatgpt-personality-settings"
+    },
+    {
       "kicker": "Research",
       "label": "What personality type is ChatGPT?",
       "href": "/research/what-personality-type-is-chatgpt"
     }
   ],
-  "published": "2026-07-23",
-  "updated": "2026-09-25",
   "promptModel": "sol-6",
   "promptDestination": "chatgpt-custom",
   "changelog": [

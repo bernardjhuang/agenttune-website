@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all five questionnaires MIT licensed?","acceptedAnswer":{"@type":"Answer","text":"No. Original AgentTune software, scorers, and communication templates are MIT licensed, while questionnaire item text is governed by each source instrument’s terms (such as public-domain IPIP markers and Open Psychometrics / ECR-R source terms). Check instrument-rights.json before redistributing items."}},{"@type":"Question","name":"Does the Big Five test report population percentiles?","acceptedAnswer":{"@type":"Answer","text":"No. It reports raw dimension totals (10 to 50) and item averages (1.0 to 5.0) so scores are transparent and never confused with a normed clinical percentile."}},{"@type":"Question","name":"Where do my answers go when I take a test?","acceptedAnswer":{"@type":"Answer","text":"They stay in your browser tab. Scoring runs locally in JavaScript, and individual responses are never sent to an AgentTune server."}},{"@type":"Question","name":"Can an AI agent inspect the test specifications?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each questionnaire has a Markdown specification at /tests/\u003ctest>.md and is accessible via the get_test_spec tool on the AgentTune MCP server (https://agent-tune.com/mcp)."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,7 +91,7 @@
 
       <section>
         <h2>OEPS: the 36-item Enneagram adaptation.</h2>
-        <p><strong>What it measures.</strong> Relative agreement across nine Enneagram types using a 36-item adaptation (four items per type, rated 1 to 5, no reverse-keyed items). The upstream live OEPS has 54 items.</p><p><strong>Scoring.</strong> Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.</p><p><strong>Limits.</strong> Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The <a href="/guides/open-source-enneagram-test">open-source Enneagram scorer guide</a> lets you inspect the exact tie arithmetic.</p>
+        <p><strong>What it measures.</strong> Relative agreement across nine Enneagram types using a 36-item adaptation (four items per type, rated 1 to 5, no reverse-keyed items). The upstream live OEPS has 54 items.</p><p><strong>Scoring.</strong> Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.</p><p><strong>Limits.</strong> Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The <a href="/guides/enneagram-test-react-typescript">open-source Enneagram scorer &amp; React starter guide</a> lets you inspect the exact tie arithmetic.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -167,9 +167,9 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/tests/"><span class="guide-related-kicker">Tests</span>Take any of the five tests</a>
-          <a href="/guides/open-source-enneagram-test"><span class="guide-related-kicker">Guide</span>Open-source Enneagram scorer</a>
+          <a href="/guides/enneagram-test-react-typescript"><span class="guide-related-kicker">Guide</span>Open-source Enneagram scorer &amp; React starter</a>
           <a href="/guides/open-source-mbti-test-oejts"><span class="guide-related-kicker">Guide</span>Open-source MBTI test (OEJTS 1.2): 32 questions and scorer</a>
-          <a href="/guides/open-source-disc-test-odat"><span class="guide-related-kicker">Guide</span>Open-source DISC assessment (ODAT): 16 questions and scorer</a>
+          <a href="/guides/free-disc-assessment-guide-work-ai"><span class="guide-related-kicker">Guide</span>Free DISC assessment (ODAT): 16 questions, 12 blends &amp; scorer</a>
           <a href="/guides/mbti-vs-big-five-for-ai"><span class="guide-related-kicker">Guide</span>MBTI vs Big Five for AI</a>
           <a href="/research"><span class="guide-related-kicker">Research</span>The research hub</a>
         </div>
@@ -183,9 +183,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

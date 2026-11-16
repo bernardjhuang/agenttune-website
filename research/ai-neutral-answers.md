@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # What does “neutral” mean when an AI takes a test?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Astra gives 2,980 midpoint responses across 17,000 item responses. It flags 1,823 of those as inapplicable: 61.2% of its midpoint answers. This is an item-response count within 100 batteries, not a count of independent people or models.
 

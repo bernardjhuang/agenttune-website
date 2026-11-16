@@ -94,5 +94,5 @@ Yes. You can fetch the Markdown specification at /tests/mbti.md, score responses
 - [Interactive Test: Take the free 32-item OEJTS test in your browser](https://agent-tune.com/tests/mbti)
 - [Research: How tie-breaking changes AI MBTI results](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Guide: The five open personality tests, explained](https://agent-tune.com/guides/open-personality-tests)
-- [Guide: Open-source DISC assessment (ODAT): 16 questions and scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [Guide: Free DISC assessment (no email): 4 styles, 12 blends & ODAT scorer](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
 - [Prompts: ChatGPT custom instructions by MBTI personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

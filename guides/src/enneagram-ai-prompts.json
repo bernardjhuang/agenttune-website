@@ -30,7 +30,7 @@
     },
     {
       "h2": "Building an Enneagram integration?",
-      "html": "<p>The <a href=\"/guides/open-source-enneagram-test\">Enneagram developer resource</a> includes a JavaScript scorer, a synthetic nine-group demo, a React starter and guidance on questionnaire rights. The starter contains no personality questionnaire.</p>"
+      "html": "<p>The <a href=\"/guides/enneagram-test-react-typescript\">open-source Enneagram scorer &amp; React starter guide</a> includes a JavaScript scorer, a synthetic nine-group demo, a React + TypeScript starter, and guidance on questionnaire rights.</p>"
     }
   ],
   "faq": [

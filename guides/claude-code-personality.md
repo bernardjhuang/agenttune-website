@@ -5,7 +5,7 @@ Guide · Claude Code
 
 # How to change Claude Code's personality.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Save a Markdown file to ~/.claude/output-styles/ with name and description front-matter and your communication rules as the body. Add keep-coding-instructions: true, or a custom style drops Claude Code's built-in software-engineering instructions. Select it with /output-style or under /config. AgentTune ships all 43 personality tunings as ready-made styles.
 
@@ -156,6 +156,8 @@ Where do custom output styles live?
 In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside one project. The nearest one wins. Restart Claude Code after adding or editing a file.
 
 ## What changed.
+
+- November 16, 2026 Removed duplicate updated key and sharpened search title for /output-style and CLAUDE.md.
 
 - September 19, 2026 First published, with the 43-style pack. Checked against Claude Code 2.1.278.
 

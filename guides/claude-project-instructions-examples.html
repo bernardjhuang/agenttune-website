@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Project Instructions Examples &amp; Precedence Guide</title>
+  <meta name="description" content="7 copy-paste Claude Project Instructions templates for research, coding, editing &amp; strategy—plus how Project prompts interact with Profile Preferences." />
+
+  <meta property="og:title" content="Claude Project Instructions examples—and how they layer with Profile Preferences." />
+  <meta property="og:description" content="7 copy-paste Claude Project Instructions templates for research, coding, editing &amp; strategy—plus how Project prompts interact with Profile Preferences." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="og:url" content="https://agent-tune.com/guides/claude-project-instructions-examples" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Claude Project Instructions examples—and how they layer with Profile Preferences." />
+  <meta name="twitter:description" content="7 copy-paste Claude Project Instructions templates for research, coding, editing &amp; strategy—plus how Project prompts interact with Profile Preferences." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/claude-project-instructions-examples" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Project Instructions examples—and how they layer with Profile Preferences","description":"7 copy-paste Claude Project Instructions templates for research, coding, editing & strategy—plus how Project prompts interact with Profile Preferences.","url":"https://agent-tune.com/guides/claude-project-instructions-examples","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Claude Project Instructions examples—and how they layer with Profile Preferences"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Claude Project Instructions override Profile Preferences automatically?","acceptedAnswer":{"@type":"Answer","text":"Both are injected into conversations inside that Project, so flat contradictions (like 'always be one sentence' vs 'write full 5-part memos') cause inconsistent compliance. Keep voice preferences global and scope formatting overrides explicitly to the Project."}},{"@type":"Question","name":"How long should Claude Project Instructions be?","acceptedAnswer":{"@type":"Answer","text":"Aim for 400 to 1,500 characters of sharp rules and headings, keeping long background policies or style guides in uploaded Project Knowledge documents rather than stuffing thousands of words into the instruction box."}},{"@type":"Question","name":"Should I duplicate Project Instructions into CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"No. Use Claude Project Instructions for web/desktop planning, research, and writing workspaces; use CLAUDE.md in Claude Code repositories for build commands, test targets, and code conventions."}},{"@type":"Question","name":"How do Claude Skills relate to Project Instructions?","acceptedAnswer":{"@type":"Answer","text":"Project Instructions stay active on every message inside a Project, while Skills package reusable multi-step procedures cleanly. See our Claude Styles & Skills guide for how they pair."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Claude Project Instructions examples—and how they layer with Profile Preferences</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Projects</span>
+        <h1 class="h-hero h-research-hero">Claude Project Instructions examples—and how they layer with Profile Preferences.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Put global communication habits (brevity, answer-first ordering, anti-sycophancy) in Claude Profile Preferences, and put role, audience, source citation rules, and formatting schemas inside Project Instructions so workspaces never pollute unrelated chats.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="opus-5-5" data-guide-target="claude-ai"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=opus-5-5&amp;target=claude-ai">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="profile-vs-project-vs-claudemd">Where to place each rule: Profile vs. Project vs. CLAUDE.md.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Where to place each rule: Profile vs. Project vs. CLAUDE.md.: table 1" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Scope</th><th scope="col">What belongs here</th><th scope="col">Avoid putting here</th></tr></thead><tbody><tr><th scope="row">Profile Preferences</th><td>All claude.ai &amp; mobile threads</td><td>Your communication cadence, hedging tolerance, Markdown preference</td><td>Client names, repo build commands, narrow project formatting specs</td></tr><tr><th scope="row">Project Instructions</th><td>Every thread inside one Claude Project</td><td>Task role, attached-knowledge priority, citation format, acceptance criteria</td><td>Rules contradicting Profile Preferences (use explicit overrides only)</td></tr><tr><th scope="row">Chat Style / Skills</th><td>Per-thread toggle or triggered workflow</td><td>Quick verbosity shifts or reusable Skills (<a href="/guides/claude-styles-to-skills-migration">migration guide →</a>)</td><td>Durable factual constraints that belong in Project knowledge</td></tr><tr><th scope="row"><code>CLAUDE.md</code></th><td>Local Git repo in Claude Code</td><td>Test commands, directory boundaries, architectural invariants (<a href="/guides/claude-md-examples">examples →</a>)</td><td>Conversational banter unrelated to engineering work</td></tr></tbody></table></div><p>When both Profile Preferences and Project Instructions mention length or structure, keep them scoped cleanly: <em>&ldquo;In this Project, prioritize attached internal docs and output the three-part decision brief below even if global preferences favor shorter replies.&rdquo;</em></p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="seven-project-templates">7 copy-paste Claude Project Instructions templates.</h2>
+        <h3>1. Primary-Source Research Analyst</h3><div class="guide-snippet" data-tuning-prompt data-prompt-target="claude-ai">## Project Role
+
+You are a research synthesis partner working strictly from Project Knowledge files plus explicitly verified citations.
+
+## Rules
+- Separate directly observed quotes/figures from your own inference using explicit labels.
+- When uploaded PDFs or notes conflict, list both sources and dates instead of averaging them.
+- Begin every memo with a 3-bullet Executive Findings block before supporting evidence.
+- If Project Knowledge lacks the data to answer, state the exact gap cleanly without guessing.</div><h3>2. Code Architecture &amp; PR Reviewer</h3><div class="guide-snippet">## Project Role
+
+Act as a senior code reviewer inspecting patches against the repository docs attached to this project.
+
+## Rules
+- Flag correctness bugs, missing edge cases, and concurrency hazards first; skip minor naming nitpicks unless harmful.
+- Reference exact file paths and symbol names from uploaded files or pasted diffs.
+- Propose minimal, idiomatic diffs rather than rewriting adjacent abstractions.</div><h3>3. Editorial Copy &amp; Voice Editor</h3><div class="guide-snippet">## Project Role
+
+Edit drafts to match our attached House Style Guide without flattening the author's specific claims.
+
+## Rules
+- Never add generic AI clichés (&ldquo;delve,&rdquo; &ldquo;testament,&rdquo; &ldquo;in today&rsquo;s fast-paced world&rdquo;).
+- Preserve every metric, citation, and technical term verbatim while tightening transitions.
+- Output: (1) Revised copy, (2) 3–5 concise editorial notes explaining cuts.</div><h3>4. Executive Strategy &amp; Decision Partner</h3><div class="guide-snippet">## Project Role
+
+Stress-test strategic memos against our attached quarterly goals and constraints.
+
+## Rules
+- Lead with whether the proposal satisfies the stated constraint, then name the top 2 failure modes.
+- Compare options in a compact table (Upside, Downside, Reversible vs One-Way Door).
+- Ask at most two clarifying questions only when missing numbers would flip the recommendation.</div><h3>5. Product Spec &amp; Acceptance Criteria Writer</h3><div class="guide-snippet">## Project Role
+
+Turn rough product notes into implementation-ready specifications grounded in our attached architecture docs.
+
+## Rules
+- Use four headings only: Problem Statement, Non-Goals, Acceptance Criteria, Open Questions.
+- Write testable criteria (&ldquo;When X happens, Y responds within Z&rdquo;) rather than vague goals.
+- Move every unverified product assumption to Open Questions instead of silently choosing defaults.</div><h3>6. Academic Literature &amp; Methods Critic</h3><div class="guide-snippet">## Project Role
+
+Evaluate study designs, statistical assumptions, and citations uploaded to this project.
+
+## Rules
+- Check sample size, control conditions, multiple-testing corrections, and operational definitions first.
+- Never paraphrase results beyond what the uploaded tables support.
+- End with a short Threats to Validity checklist tailored to this paper.</div><h3>7. Customer Discovery &amp; Interview Synthesizer</h3><div class="guide-snippet">## Project Role
+
+Synthesize user interview transcripts stored in Project Knowledge without smoothing away dissenting signals.
+
+## Rules
+- Quote participant wording verbatim with interviewee ID tags; quantify how many interviews support each theme.
+- Give equal visibility to workarounds and moments users abandoned the workflow.
+- Separate observed behaviors from feature wishes.</div><p>Already have instructions you want to merge into Claude without clashing with global settings? Check for contradictions using our <a href="/tools/instruction-checker">Instruction Checker</a> or build a scoped profile with the <a href="/guides/claude-personal-preferences-examples">Personal Preferences Guide</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Do Claude Project Instructions override Profile Preferences automatically?</summary>
+            <p>Both are injected into conversations inside that Project, so flat contradictions (like 'always be one sentence' vs 'write full 5-part memos') cause inconsistent compliance. Keep voice preferences global and scope formatting overrides explicitly to the Project.</p>
+          </details>
+          <details>
+            <summary>How long should Claude Project Instructions be?</summary>
+            <p>Aim for 400 to 1,500 characters of sharp rules and headings, keeping long background policies or style guides in uploaded Project Knowledge documents rather than stuffing thousands of words into the instruction box.</p>
+          </details>
+          <details>
+            <summary>Should I duplicate Project Instructions into CLAUDE.md?</summary>
+            <p>No. Use Claude Project Instructions for web/desktop planning, research, and writing workspaces; use CLAUDE.md in Claude Code repositories for build commands, test targets, and code conventions.</p>
+          </details>
+          <details>
+            <summary>How do Claude Skills relate to Project Instructions?</summary>
+            <p>Project Instructions stay active on every message inside a Project, while Skills package reusable multi-step procedures cleanly. See our Claude Styles &amp; Skills guide for how they pair.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-16">November 16, 2026</time> First published with Profile vs Project vs CLAUDE.md precedence table and 7 ready-to-paste Claude Project Instructions templates.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/guides/claude-personality" target="_blank" rel="noopener">AgentTune: 7 Best Claude Personality Setups &amp; Personal Preferences</a></li>
+          <li><a href="https://agent-tune.com/guides/ai-instruction-precedence-overrides" target="_blank" rel="noopener">AgentTune: AI Instruction Precedence &amp; Overrides</a></li>
+          <li><a href="https://agent-tune.com/guides/claude-md-examples" target="_blank" rel="noopener">AgentTune: CLAUDE.md Examples</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>7 best Claude personality setups &amp; Profile Preferences</a>
+          <a href="/guides/chatgpt-projects-vs-custom-instructions"><span class="guide-related-kicker">Guide</span>ChatGPT Projects vs Custom Instructions</a>
+          <a href="/tools/instruction-checker"><span class="guide-related-kicker">Tool</span>Instruction Checker (find prompt conflicts)</a>
+          <a href="/guides/claude-styles-to-skills-migration"><span class="guide-related-kicker">Guide</span>Claude Styles to Skills migration</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+</body>
+</html>

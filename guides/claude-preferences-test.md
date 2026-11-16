@@ -5,7 +5,7 @@ Test kit · protocol, not results
 
 # When does Claude follow your preferences? A test kit
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Use a baseline, account instructions alone, and project instructions alone. Compare three repeats of four fixed tasks in each condition. This is a published testing protocol; AgentTune has not collected results for it.
 
@@ -64,5 +64,5 @@ After testing, restore your saved settings and remove the temporary project bloc
 
 - [Free browser tool: Compare your own answers in the free test bench](https://agent-tune.com/tools/instruction-test-bench)
 - [Related resource: Install Claude instructions](https://agent-tune.com/guides/claude-personality)
-- [Related resource: Seven behavior-focused preference blocks](https://agent-tune.com/guides/best-claude-personality)
+- [Related resource: Seven behavior-focused Claude setups](https://agent-tune.com/guides/claude-personality#five-claude-personality-setups-to-try)
 - [Related resource: Test whether a personality label adds value](https://agent-tune.com/guides/personality-prompts-vs-plain-english)

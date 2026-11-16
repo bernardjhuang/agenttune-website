@@ -5,7 +5,7 @@ Guide · GPT-6 Astra
 
 # How to give GPT-6 Astra a personality.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.
 
@@ -55,7 +55,7 @@ How the files combine, from OpenAI's AGENTS.md docs:
 - Codex reads the global file first, then the project's AGENTS.md at the repository root, then any in the folders between the root and where you are working.
 - They are concatenated in that order. Files closer to your working directory come later in the prompt, so they win a conflict.
 - An AGENTS.override.md at any level replaces the AGENTS.md beside it.
-- Codex stops adding files at a combined 32 KiB, and builds the chain once per run.
+- Codex stops adding files once combined size reaches project_doc_max_bytes (default 32 KiB in ~/.codex/config.toml), and builds the chain once per run. You can also inspect or point to custom prompt overrides via model_instructions_file in config.toml (see our [Codex AGENTS.md & config.toml guide](https://agent-tune.com/guides/codex-agents-md-guide)).
 
 Put personality in the global file, not the project's. The repository's AGENTS.md is your team's file. "Talk to me like an INTJ" is not a team convention, and because project files win conflicts, a teammate's preferences would override yours in their repo anyway. That is the right behavior. Your tuning is about you, so it lives with you. The project layer is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/coding-agent-personality).
 
@@ -74,7 +74,7 @@ One setting does still work. personality = "none" in ~/.codex/config.toml strips
 
 ## Ordinary chat: custom instructions for GPT-6 Pro.
 
-The path, per OpenAI's help center: Settings, then Personalization, switch on Enable customization, and write in Custom Instructions. On mobile it is under Settings, then Customize ChatGPT. The help article no longer shows the older two-question layout, and we have not checked the live labels, so go by the field names you see.
+The path, per OpenAI's help center: Settings, then Personalization, switch on Enable customization, and write in Custom Instructions. On mobile it is under Settings, then Customize ChatGPT. See our full [ChatGPT personality settings & presets guide](https://agent-tune.com/guides/chatgpt-personality-settings) for web and mobile comparisons.
 
 Length. OpenAI documents a 1,500-character limit for the longer custom-instruction fields. Use the reviewed compact version from the [generator](https://agent-tune.com/tools/custom-instructions-generator), and follow any limit shown in your account. Full Markdown files may exceed the field limit; use them in an unrestricted instruction file or project instead.
 

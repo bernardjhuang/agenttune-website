@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why did ChatGPT stop following my Custom Instructions in new chats?","acceptedAnswer":{"@type":"Answer","text":"First check that 'Enable for new chats' is toggled on under Profile → Personalization → Custom Instructions. Next, inspect Profile → Personalization → Memory → Manage memories—stale saved memories and Project-level instructions frequently override global Custom Instructions."}},{"@type":"Question","name":"How many rules can an AI reliably follow in custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Six to twelve concrete, non-overlapping behavioral rules hold reliably across long conversations. Once a personal preference block exceeds ~25–30 rules, rules begin competing with each other and with live task instructions."}},{"@type":"Question","name":"Why does Codex or Claude Code ignore rules at the bottom of AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"OpenAI Codex enforces a 32 KiB default byte budget (project_doc_max_bytes) across merged AGENTS.md files, and nested directory AGENTS.override.md files take priority over root rules. Keep root instruction files lean and move deep architecture docs into linked reference files."}},{"@type":"Question","name":"How can I check my instructions for hidden conflicts automatically?","acceptedAnswer":{"@type":"Answer","text":"Paste your current instructions into agent-tune.com/tools/instruction-checker. It runs locally in your browser to flag duplicate lines, verbosity contradictions, absolute 'never mention uncertainty' traps, and character-budget overruns."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,9 +168,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

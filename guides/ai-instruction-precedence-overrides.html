@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do ChatGPT Project Instructions override global Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"Yes. According to OpenAI's Help Center documentation for Projects in ChatGPT, instructions added to a Project apply only inside that project and override your account-wide Custom Instructions."}},{"@type":"Question","name":"How do I stop my global brevity rules from breaking detailed project reports?","acceptedAnswer":{"@type":"Answer","text":"Add one precedence sentence at the top of your account-wide instructions: 'Use these preferences as the default for tone and pacing; my current task and project instructions take precedence when they specify a different format or length.'"}},{"@type":"Question","name":"In OpenAI Codex, does ~/.codex/AGENTS.md override the repository's AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No. Codex reads ~/.codex/AGENTS.md first and the repository's AGENTS.md after it, so the repository file (and any subdirectory AGENTS.md closer to your working directory) wins conflicts."}},{"@type":"Question","name":"Why is ChatGPT ignoring my custom instructions to be concise?","acceptedAnswer":{"@type":"Answer","text":"Check two places: first, make sure you are not inside a Project whose Project Instructions override your global settings; second, check Settings, Personalization to ensure the Base style preset or Characteristics sliders (like Warm or Headers & Lists) are not contradicting your written rules."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,9 +168,9 @@ Use these preferences for tone, pacing, and structure. My current task, project 
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

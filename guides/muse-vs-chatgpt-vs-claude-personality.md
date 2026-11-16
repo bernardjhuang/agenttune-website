@@ -128,7 +128,7 @@ No. Inspect the saved text, then test specific behaviors on identical tasks befo
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Muse characters: Soul.md, Identity.md and Memory.md](https://agent-tune.com/guides/meta-muse-characters)
+- [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Guide: ChatGPT custom instructions for all 16 MBTI types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)

@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Did .cursor/rules/*.mdc replace .cursorrules in Cursor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cursor uses .cursor/rules/*.mdc files with YAML frontmatter (description, globs, and alwaysApply: true/false) so projects can separate always-on rules from file-pattern rules."}},{"@type":"Question","name":"Where do I put personal communication rules so I don't commit them to a team repo?","acceptedAnswer":{"@type":"Answer","text":"Use ~/.codex/AGENTS.md in OpenAI Codex, ~/.claude/CLAUDE.md or ~/.claude/output-styles/ in Claude Code, ~/.gemini/GEMINI.md in Gemini CLI, or user-level Rules for AI in Cursor Settings."}},{"@type":"Question","name":"Can I use the same AgentTune tuning across Cursor, Copilot, Claude Code, and Codex?","acceptedAnswer":{"@type":"Answer","text":"Yes. The core bullet points are portable across all coding assistants; only the file path and YAML frontmatter (such as alwaysApply: true for Cursor or keep-coding-instructions: true for Claude Code) differ."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -178,9 +178,9 @@ alwaysApply: true
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

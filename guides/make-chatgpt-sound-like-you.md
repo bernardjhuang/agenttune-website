@@ -5,7 +5,7 @@ Guide · ChatGPT
 
 # Make ChatGPT sound like you — and treat you like you.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 To make ChatGPT sound like you, either feed it samples of your writing (best for mimicking prose style) or paste a personality-matched tuning into custom instructions (best for how it treats you; pacing, directness, decision style). The personality route takes about 15 minutes: take a free test, copy the tuning for your type, paste it into Settings → Personalization.
 
@@ -85,4 +85,5 @@ Memory collects facts; projects, preferences you've stated, recurring topics. It
 - [Guide: Custom instructions for all 16 types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Library: ENFP — Campaigner tuning](https://agent-tune.com/library/mbti/enfp)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
+- [ChatGPT Settings: How to change ChatGPT's personality (presets & rules)](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)

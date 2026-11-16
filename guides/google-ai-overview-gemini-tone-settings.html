@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I change the personality or tone of Google Search AI Overviews?","acceptedAnswer":{"@type":"Answer","text":"Not permanently. Google Search does not provide a saved custom-instructions or persona setting for automatic AI Overviews. You can steer an individual query with format keywords, ask a follow-up in Google Search AI Mode, or use Gemini Saved info for persistent tone rules."}},{"@type":"Question","name":"Where do I set permanent tone preferences in Google Gemini?","acceptedAnswer":{"@type":"Answer","text":"On gemini.google.com or the Gemini mobile app, open your Profile or Settings menu and select Saved info to add account-wide response rules, or create a reusable Gem in Gem manager."}},{"@type":"Question","name":"How do I make Gemini stop writing long introductions and bulleted walls?","acceptedAnswer":{"@type":"Answer","text":"Add two explicit lines to Gemini Saved info: 'Lead with the direct answer in the first sentence with no preamble' and 'Default to plain paragraphs; use bullet lists or tables only when comparing 3 or more items.'"}},{"@type":"Question","name":"Does Gemini CLI read Saved info from the Gemini web app?","acceptedAnswer":{"@type":"Answer","text":"No. Gemini CLI is configured locally via Markdown files—put personal communication rules in ~/.gemini/GEMINI.md and repository conventions in your project's GEMINI.md."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -167,9 +167,9 @@ Rules:
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where are Personal Preferences in Claude?","acceptedAnswer":{"@type":"Answer","text":"Open your profile menu in Claude, select Settings, and stay on the General tab. Paste your communication rules into the Personal Preferences (or Instructions for Claude) text box."}},{"@type":"Question","name":"Do Claude Personal Preferences apply inside Claude Projects?","acceptedAnswer":{"@type":"Answer","text":"Personal Preferences act as your account-wide baseline, while Project instructions add context and rules for that specific project. When the two conflict, the Project instruction or your current chat prompt takes priority."}},{"@type":"Question","name":"Do Claude web Personal Preferences carry over to Claude Code?","acceptedAnswer":{"@type":"Answer","text":"No. Claude Code reads terminal configuration files (~/.claude/CLAUDE.md, project CLAUDE.md, and ~/.claude/output-styles/). Use the Claude Code destination in AgentTune to generate an output-style file for the CLI."}},{"@type":"Question","name":"How long should Claude Personal Preferences be?","acceptedAnswer":{"@type":"Answer","text":"Six to ten concise bullet points (around 400 to 1,200 characters) work best. Long, repetitive paragraphs dilute the rules you care about most and consume context on every turn."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -186,9 +186,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

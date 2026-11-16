@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLAUDE.md vs AGENTS.md vs .cursorrules: Complete Matrix</title>
+  <meta name="description" content="Compare CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, and GEMINI.md: file paths, size limits, overrides &amp; a shared single-source layout." />
+
+  <meta property="og:title" content="CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup." />
+  <meta property="og:description" content="Compare CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, and GEMINI.md: file paths, size limits, overrides &amp; a shared single-source layout." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup." />
+  <meta name="twitter:description" content="Compare CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, and GEMINI.md: file paths, size limits, overrides &amp; a shared single-source layout." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup","description":"Compare CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, and GEMINI.md: file paths, size limits, overrides & a shared single-source layout.","url":"https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Cursor read AGENTS.md or only .cursor/rules?","acceptedAnswer":{"@type":"Answer","text":"Cursor natively uses .cursor/rules/*.mdc (and legacy .cursorrules) for project rules alongside AGENTS.md compatibility in newer agent workflows. Keeping AGENTS.md canonical and referencing or syncing concise Cursor rules prevents drift."}},{"@type":"Question","name":"Should personal personality instructions be committed into repo AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Keep repo-committed AGENTS.md and CLAUDE.md focused on build commands, code style, security constraints, and tests. Place personal communication preferences in global user files (~/.claude/CLAUDE.md, ~/.codex/AGENTS.md) or gitignored CLAUDE.local.md."}},{"@type":"Question","name":"What happens if AGENTS.md exceeds 32 KiB in Codex CLI?","acceptedAnswer":{"@type":"Answer","text":"Codex CLI stops loading additional AGENTS.md bytes past project_doc_max_bytes (default 32 KiB), which can silently cut off nested directory rules unless split cleanly or raised intentionally in ~/.codex/config.toml."}},{"@type":"Question","name":"How do I merge my AgentTune style into an existing CLAUDE.md without deleting repo commands?","acceptedAnswer":{"@type":"Answer","text":"Use the AgentTune Instruction Converter & Merger: it wraps your communication preferences in labeled HTML comment markers and preserves every existing line outside those markers."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Reference · Coding Agent Rules</span>
+        <h1 class="h-hero h-research-hero">CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Use AGENTS.md for cross-tool open standards (Codex CLI and compatible agents; 32 KiB default project_doc_max_bytes cap), CLAUDE.md and .claude/rules/*.md for Claude Code, .cursor/rules/*.mdc for Cursor, .github/copilot-instructions.md for GitHub Copilot, and GEMINI.md for Gemini Code Assist. Maintain one single source of truth and import or merge preferences cleanly.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="astra-6" data-guide-target="codex-cli"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=astra-6&amp;target=codex-cli">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="complete-rules-matrix">Complete repository rules matrix across 5 coding agents.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Complete repository rules matrix across 5 coding agents.: table 1" tabindex="0"><table><thead><tr><th scope="col">Coding agent</th><th scope="col">Primary repo file(s)</th><th scope="col">User / global scope</th><th scope="col">Size / load notes</th><th scope="col">Deep-dive guide</th></tr></thead><tbody><tr><th scope="row">Claude Code</th><td><code>CLAUDE.md</code>, <code>CLAUDE.local.md</code>, <code>.claude/rules/*.md</code></td><td><code>~/.claude/CLAUDE.md</code></td><td>Supports modular <code>@path</code> imports; nested dir loading on read</td><td><a href="/guides/claude-md-examples">CLAUDE.md examples →</a></td></tr><tr><th scope="row">OpenAI Codex CLI</th><td><code>AGENTS.md</code>, <code>AGENTS.override.md</code></td><td><code>~/.codex/AGENTS.md</code> (<code>~/.codex/config.toml</code>)</td><td>Default <code>project_doc_max_bytes</code> = 32 KiB combined</td><td><a href="/guides/codex-agents-md-guide">AGENTS.md guide →</a></td></tr><tr><th scope="row">Cursor</th><td><code>.cursor/rules/*.mdc</code> (legacy <code>.cursorrules</code>)</td><td>Cursor Rules for AI user settings</td><td>Supports Always, Auto-Attached globs, Agent Requested descriptions</td><td><a href="/guides/cursor-rules-copilot-gemini-md">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope="row">GitHub Copilot</th><td><code>.github/copilot-instructions.md</code> &amp; <code>.github/instructions/*.instructions.md</code></td><td>IDE user instructions</td><td>Path-scoped frontmatter via <code>applyTo</code> globs</td><td><a href="/guides/cursor-rules-copilot-gemini-md">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope="row">Gemini Code Assist / CLI</th><td><code>GEMINI.md</code> (project root &amp; subdirs)</td><td><code>~/.gemini/GEMINI.md</code></td><td>Hierarchical context loading along working tree</td><td><a href="/guides/cursor-rules-copilot-gemini-md">Cursor/Copilot/Gemini →</a></td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="single-source-of-truth-pattern">How to keep one single source of truth across tools without drift.</h2>
+        <p>Two simple repository patterns prevent conflicting build or tone rules across tools:</p><ol><li><strong>Put shared architectural facts in <code>AGENTS.md</code>:</strong> Build commands, test runners, protected directories, and commit rules stay canonical in <code>AGENTS.md</code>. Keep <code>CLAUDE.md</code> ultra-short with an explicit pointer (for example <code>@AGENTS.md</code> plus Claude-only slash-workflow notes).</li><li><strong>Keep personal tone in user-global files, not committed repo files:</strong> Don&rsquo;t force teammates into your personal banter or verbosity rules via Git. Put personal working style in <code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>CLAUDE.local.md</code>.</li></ol><p>Starter communication block ideal for personal global coding-agent files (~360 characters):</p><div class="guide-snippet" data-tuning-prompt data-prompt-target="codex-cli">## Personal Engineering Communication Style
+
+- Give root cause, exact file paths, and minimal diff or command first.
+- Keep prose under 4 sentences unless I ask for architectural walkthroughs.
+- Never extrapolate test outputs or claim checks passed unless executed after the final edit.
+- Ask before refactoring unrelated files or changing public APIs.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="avoiding-silent-truncation">Why oversized rules files silently drop instructions.</h2>
+        <p>In OpenAI Codex CLI, combining root and nested <code>AGENTS.md</code> files stops reading once the combined size hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>; see our <a href="/guides/astra-personality">GPT-6 Astra setup guide</a>). In all coding agents, dumping entire style encyclopedias into top-level rules dilutes signal on build commands and error constraints. Keep root instructions tight (~100–250 lines), split topic-specific patterns into glob-matched files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>*.instructions.md</code>), and safely append personal tone using our <a href="/tools/instruction-converter">Instruction Converter &amp; Merger</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Does Cursor read AGENTS.md or only .cursor/rules?</summary>
+            <p>Cursor natively uses .cursor/rules/*.mdc (and legacy .cursorrules) for project rules alongside AGENTS.md compatibility in newer agent workflows. Keeping AGENTS.md canonical and referencing or syncing concise Cursor rules prevents drift.</p>
+          </details>
+          <details>
+            <summary>Should personal personality instructions be committed into repo AGENTS.md?</summary>
+            <p>Keep repo-committed AGENTS.md and CLAUDE.md focused on build commands, code style, security constraints, and tests. Place personal communication preferences in global user files (~/.claude/CLAUDE.md, ~/.codex/AGENTS.md) or gitignored CLAUDE.local.md.</p>
+          </details>
+          <details>
+            <summary>What happens if AGENTS.md exceeds 32 KiB in Codex CLI?</summary>
+            <p>Codex CLI stops loading additional AGENTS.md bytes past project_doc_max_bytes (default 32 KiB), which can silently cut off nested directory rules unless split cleanly or raised intentionally in ~/.codex/config.toml.</p>
+          </details>
+          <details>
+            <summary>How do I merge my AgentTune style into an existing CLAUDE.md without deleting repo commands?</summary>
+            <p>Use the AgentTune Instruction Converter &amp; Merger: it wraps your communication preferences in labeled HTML comment markers and preserves every existing line outside those markers.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-16">November 16, 2026</time> First published with side-by-side matrix covering CLAUDE.md, AGENTS.md, .cursorrules/.mdc, copilot-instructions.md, and GEMINI.md.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/guides/codex-agents-md-guide" target="_blank" rel="noopener">AgentTune: Codex CLI AGENTS.md Guide</a></li>
+          <li><a href="https://agent-tune.com/guides/cursor-rules-copilot-gemini-md" target="_blank" rel="noopener">AgentTune: Cursor Rules, Copilot &amp; GEMINI.md Guide</a></li>
+          <li><a href="https://agent-tune.com/guides/coding-agent-personality" target="_blank" rel="noopener">AgentTune: Coding Agent Personality Overview</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/instruction-converter"><span class="guide-related-kicker">Tool</span>Instruction Converter &amp; Merger (preserves repo rules)</a>
+          <a href="/guides/claude-md-examples"><span class="guide-related-kicker">Examples</span>CLAUDE.md examples by stack &amp; team workflow</a>
+          <a href="/guides/codex-agents-md-guide"><span class="guide-related-kicker">Guide</span>OpenAI Codex AGENTS.md &amp; config.toml limits</a>
+          <a href="/guides/cursor-rules-copilot-gemini-md"><span class="guide-related-kicker">Guide</span>Cursor .mdc, Copilot &amp; GEMINI.md rules</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+</body>
+</html>

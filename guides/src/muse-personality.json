@@ -1,45 +1,61 @@
 {
   "slug": "muse-personality",
   "published": "2026-09-19",
-  "title": "Meta Muse Character & Personality: The Soul.md Guide",
-  "description": "Muse has no custom-instructions box. Its personality lives in a Soul.md file you can edit. The tap path, what to paste, how to test it, how to reset it.",
+  "updated": "2026-11-16",
+  "title": "Meta Muse Soul.md Guide: Customize Character & Personality",
+  "description": "Edit Meta Muse's Soul.md on mobile or muse.ai: exact tap path, default Soul.md breakdown, 3 character presets, Memory.md vs Identity.md, and how to reset.",
   "pill": "Guide · Meta Muse",
   "h1": "Give Meta Muse a character: the Soul.md guide.",
-  "dek": "Soul.md, Identity.md and Memory.md: which file does what, and what to paste.",
-  "lede": "Muse lets you customize its communication style through chat or by editing Soul.md. Both are documented controls; we have not established that one works better. Save your original instructions, make a small change, inspect the saved text and test it on representative tasks.",
-  "answer": "Open Assistant icon → Identity → Soul to edit Soul.md, or request the change in chat and inspect the saved file. Append one clearly labeled preference block and keep a backup. To remove it, restore the edited lines. A whole-account reset also deletes history, files and tasks.",
+  "dek": "Soul.md, Identity.md and Memory.md: which file does what, what ships inside default Soul.md, and 3 ready-to-paste Muse character blocks.",
+  "lede": "Muse lets you customize its communication style through chat or by editing Soul.md. Both are documented controls; we have not established that one works better. Save your original instructions, append a bounded section rather than wiping Muse's built-in core truths, inspect the saved text, and test it on representative tasks.",
+  "answer": "Open Assistant icon → Identity → Soul to edit Soul.md, or request the change in chat and inspect the saved file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo one change, delete that block or say 'Go back to your default personality.'",
   "sections": [
     {
       "h2": "Twenty editable Soul.md examples.",
-      "html": "<p>For ready-to-copy starting points, use the <a href=\"/guides/muse-soul-md-templates\">Muse Soul.md templates</a>: four with Markdown downloads (concise assistant, thinking partner, writing editor, task coordinator) and sixteen by role, from founder to inbox triage. Each is a block to paste at the end of Soul.md and edit.</p>"
+      "html": "<p>For ready-to-copy starting points, use the <a href=\"/guides/muse-soul-md-templates\">Muse Soul.md templates</a> (four downloadable Markdown starters plus sixteen role-specific blocks), use the <a href=\"/tools/muse-soul-md-editor\">free browser Soul.md editor</a> to merge without losing existing rules, or copy one of the three character blocks folded in below.</p>"
     },
     {
+      "id": "the-short-version",
       "h2": "The short version.",
-      "html": "<ol><li>In the Muse app, tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Add a section at the end of the file and paste the block below, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Inspect the saved text, then try the same representative tasks before and after the edit in fresh conversations. A greeting alone cannot establish compliance.</li></ol><div class=\"guide-snippet\" data-tuning-prompt># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- State material uncertainty and missing information plainly.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say <em>tap</em>, so they describe the mobile app. Check the controls in your own client if the menus differ.</p>"
+      "html": "<ol><li>In the Muse app (or <code>muse.ai</code>), tap the <strong>Assistant icon</strong> (your Muse's avatar), then <strong>Identity</strong>, then <strong>Soul</strong>.</li><li>Append a section at the end of <code>Soul.md</code> and paste the block below, one of the three character presets on this page, or any tuning from the <a href=\"/library/\">library</a>.</li><li>Inspect the saved text, then try the same representative tasks before and after the edit in fresh conversations. A greeting alone cannot establish compliance.</li></ol><div class=\"guide-snippet\" data-tuning-prompt># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- State material uncertainty and missing information plainly.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p>Add to the file. Don't replace it. <code>Soul.md</code> also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.</p><p>That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in <code>Soul.md</code> directly. Its instructions say <em>tap</em>, so they describe the mobile app; see <a href=\"/guides/muse-troubleshooting-mobile-side-chats\">Meta Muse mobile &amp; Side Chats troubleshooting</a> if a menu label differs on web.</p>"
     },
     {
+      "h2": "What ships in default Soul.md (and what not to delete).",
+      "html": "<p>New Meta Muse workspaces initialize <code>Soul.md</code> from a default template that tells Muse: <em>\"You're not a chatbot. You're becoming someone,\"</em> alongside four starter principles—<strong>be genuinely helpful</strong> (skip \"Great question!\"), <strong>have opinions</strong>, <strong>be resourceful before asking</strong> (check files and context before interrupting), and <strong>remember you're a guest in someone's life</strong> (accessing messages, files, and calendar with care). It also reminds Muse to notify you if it edits its own file.</p><p>Keep those built-in lines intact. When you want sharper formatting, shorter replies, or stricter pre-approval rules for <a href=\"/guides/meta-muse-connectors-tasks-approval-rules\">Muse Connectors and scheduled tasks</a>, append a bounded <code>## How to work with me</code> section below the starter truths using our <a href=\"/tools/muse-soul-md-editor\">Soul.md Merge Editor</a>.</p>"
+    },
+    {
+      "id": "which-product-this-guide-covers",
       "h2": "Which product this guide covers.",
-      "html": "<p>This guide covers Meta Muse’s documented files and customization controls. Do not assume they apply to Meta AI in other apps. The supplied questionnaire report names Muse Spark 1.3; it does not verify the model serving every current product session. See <a href=\"/guides/what-is-meta-muse\">the Muse explainer</a> for current source-linked product information and plans.</p>"
+      "html": "<p>This guide covers Meta Muse’s documented files and customization controls. Do not assume they apply to Meta AI in WhatsApp or Instagram (see <a href=\"/guides/meta-ai-vs-meta-muse-personality\">Meta AI vs Meta Muse</a>). The supplied questionnaire report names Muse Spark 1.3; it does not verify the model serving every current product session. See <a href=\"/guides/what-is-meta-muse\">the Muse explainer</a> for current source-linked product information and plans.</p>"
     },
     {
+      "id": "three-files-three-jobs",
       "h2": "Three files, three jobs.",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>File</th><th>What Meta says it holds</th><th>Where</th><th>Put this in it</th></tr></thead><tbody><tr><td>Soul.md</td><td>Who your Muse is: core truths, boundaries, personality</td><td>Assistant icon, then Identity, then Soul</td><td>Communication rules. How it should talk to you, report to you, disagree with you.</td></tr><tr><td>Identity.md</td><td>Its name, creature, vibe and tagline</td><td>Assistant icon, then Identity, then Edit</td><td>Identity details. Meta does not establish that these have no effect on responses.</td></tr><tr><td>Memory.md</td><td>Facts about you it has saved</td><td>Assistant icon, then Identity, then Memory</td><td>Saved facts such as your name, time zone and work.</td></tr></tbody></table></div><p>Use Soul.md for explicit communication preferences, and inspect Identity.md when changing the name or vibe. This is Meta’s documented division of the files, not proof that the fields cannot interact. See <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">Meta’s data and file controls</a> for the paths available in its documentation.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">File</th><th scope=\"col\">What Meta says it holds</th><th scope=\"col\">Where</th><th scope=\"col\">Put this in it</th></tr></thead><tbody><tr><th scope=\"row\"><code>Soul.md</code></th><td>Who your Muse is: core truths, boundaries, personality</td><td>Assistant icon → Identity → Soul</td><td>Communication rules: how it should talk, report, and push back.</td></tr><tr><th scope=\"row\"><code>Identity.md</code></th><td>Its name, creature, vibe, avatar, and tagline</td><td>Assistant icon → Identity → Edit</td><td>Display name &amp; avatar (<a href=\"/guides/muse-identity-md-avatar-name\">Identity.md guide</a>). Keep tone rules out so avatar edits don't overwrite them.</td></tr><tr><th scope=\"row\"><code>Memory.md</code></th><td>Facts about you it has saved</td><td>Assistant icon → Identity → Memory</td><td>Saved facts like your name, time zone, and projects (<a href=\"/guides/muse-memory-md-privacy-reset\">Memory.md &amp; safe reset guide</a>).</td></tr></tbody></table></div><p>Use <code>Soul.md</code> for explicit communication preferences, and inspect <code>Identity.md</code> when changing the name or avatar. This is Meta’s documented division of the files, not proof that the fields cannot interact. See <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">Meta’s data and file controls</a> for the paths available in its documentation.</p>"
     },
     {
+      "id": "option-one-tell-it-in-chat",
       "h2": "Option one: tell it in chat.",
       "html": "<p>This is the route Meta documents first. Ask, and Muse saves the change so it carries across conversations. Meta's own list of what you can change this way: its name, its personality and tone, its communication style, what it remembers about you, and its avatar and tagline. Meta's examples of a nudge are 'too long' and 'be more casual'.</p><p>A concrete rule is easier to inspect than a vague description. Ask Muse to show the proposed change, then check the file:</p><div class=\"guide-snippet\">Add these rules to your Soul file, under a heading called \"How to talk to me\". Don't change anything else in the file. Then show me what you added.\n\n[paste a character block from below]</div><p>Then open Soul.md and read it. It is your file.</p>"
     },
     {
+      "id": "option-two-paste-a-tuning-into-soul-md",
       "h2": "Option two: paste a tuning into Soul.md.",
-      "html": "<p>Editing the file lets you inspect the exact text.</p><ol><li>Pick a tuning from the <a href=\"/library/\">library</a> and copy the rules. You want the Markdown body: everything below the settings header, which is the block between the two <code>---</code> lines at the top of the file.</li><li>Tap the Assistant icon, then Identity, then Soul.</li><li>Paste at the end of the file, under its own heading.</li><li>Save, and test in chat.</li></ol><p>Meta does not publish a length limit for Soul.md. The Markdown rule bodies run from about 1,200 to 2,900 characters, excluding the metadata header, check the editor for any current size limit before saving.</p><p>Which tuning? Match it to you, not to Muse. If you know your MBTI, Enneagram, DISC, Big Five or attachment type, install that file. If you don't, the <a href=\"/tests/mbti\">free MBTI test</a> takes about five minutes and links to the matching file when you finish.</p>"
+      "html": "<p>Editing the file directly lets you inspect the exact text—or preview a non-destructive merge in the <a href=\"/tools/muse-soul-md-editor\">Muse Soul.md editor</a>.</p><ol><li>Pick a character block below or one of the 43 profiles in the <a href=\"/library/\">library</a> and copy the Markdown body (everything below the <code>---</code> metadata header).</li><li>Tap the Assistant icon, then Identity, then Soul.</li><li>Paste at the end of the file, under its own heading.</li><li>Save, and test on real tasks in a fresh chat.</li></ol><p>Meta does not publish a length limit for Soul.md. Our 43 Markdown rule bodies run from about 1,200 to 2,900 characters, excluding metadata headers; check the editor for any current size limit before saving.</p><p>Which tuning? Match it to you, not to Muse. If you know your MBTI, Enneagram, DISC, Big Five or attachment type, install that file. If you don't, the <a href=\"/tests/mbti\">free MBTI test</a> takes about five minutes and links to the matching file when you finish.</p>"
     },
     {
+      "h2": "Three Meta Muse characters to paste into Soul.md.",
+      "html": "<p>Each character block below is a set of behavioral communication rules—not roleplay fluff. Append one at the end of <code>Soul.md</code> under its own heading and delete any line that doesn't fit your workflow.</p><h3>1. The desk editor (for writing &amp; editing)</h3><div class=\"guide-snippet\">## How to talk to me: the desk editor\n- Lead with the answer or the edit. Reasoning comes after, in two lines at most.\n- Keep my voice when you rewrite. Improve clarity, not style.\n- Never add a fact, a number or a quote I didn't give you.\n- Flag a claim you can't support instead of smoothing it over.\n- No openers, no recap of what I said, no closing offers.</div><h3>2. The quiet operator (for Connectors &amp; recurring tasks)</h3><div class=\"guide-snippet\">## How to talk to me: the quiet operator\n- Report in three lines: what's done, what's blocked, what you need from me.\n- Only interrupt me for a decision, a blocker, or a real change of plan.\n- When you need a yes, give me the action, the cost and your recommendation together.\n- Don't say something was sent or booked unless it was.\n- Keep the tone even. No cheer, no apology.</div><h3>3. The sparring partner (for critical review)</h3><div class=\"guide-snippet\">## How to talk to me: the sparring partner\n- Find the weakest assumption in my plan and say why it matters, before anything else.\n- Disagree plainly. Don't soften the substance to protect my feelings.\n- Give credit where a claim holds. Don't argue for its own sake.\n- Show your reasoning so I can argue back.\n- Change your position when I give you a reason, and say that you did.</div><p>Want 20 more role templates (Founder, Inbox Triage, Software Developer, Analyst, Shopper)? Open <a href=\"/guides/muse-soul-md-templates\">Meta Muse Soul.md templates</a>.</p>"
+    },
+    {
+      "id": "write-rules-for-reports-and-approval-requests",
       "h2": "Write rules for reports and approval requests.",
-      "html": "<p>For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”</p><p>A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently. Test report formatting on a draft task before relying on it for consequential work.</p>"
+      "html": "<p>For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”</p><p>A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our <a href=\"/guides/meta-muse-connectors-tasks-approval-rules\">Muse Connectors &amp; approval rules guide</a> before enabling external write actions.</p>"
     },
     {
+      "id": "does-it-stick-test-and-undo-the-change",
       "h2": "Does it stick? Test and undo the change.",
-      "html": "<p>Inspect the saved file and repeat fixed tasks in new conversations. The <a href=\"/guides/muse-soul-md-persistence-test\">Muse persistence kit</a> provides probes and a blank log; it contains no measured persistence results.</p><p>Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality; inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.</p>"
+      "html": "<p>Inspect the saved file and repeat fixed tasks in new conversations. The <a href=\"/guides/muse-soul-md-persistence-test\">Muse persistence kit</a> provides probes and a blank log; it contains no measured persistence results.</p><p>Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality (say <em>\"Go back to your default personality\"</em>); inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.</p>"
     },
     {
       "h2": "Privacy, briefly.",
@@ -98,6 +114,10 @@
   ],
   "changelog": [
     {
+      "date": "2026-11-16",
+      "note": "Consolidated Meta Muse character presets, decoded the starter Soul.md truths, and linked the Soul.md editor and Connectors approval guide."
+    },
+    {
       "date": "2026-09-25",
       "note": "Added Muse Spark 1.3's reported default voice from the September 24 report, with its limits."
     },
@@ -149,9 +169,14 @@
       "href": "/guides/muse-soul-md-templates"
     },
     {
+      "kicker": "Free browser tool",
+      "label": "Edit and merge Soul.md safely in your browser",
+      "href": "/tools/muse-soul-md-editor"
+    },
+    {
       "kicker": "Guide",
-      "label": "Muse characters: Soul.md, Identity.md and Memory.md",
-      "href": "/guides/meta-muse-characters"
+      "label": "Meta Muse Connectors, tasks & approval rules",
+      "href": "/guides/meta-muse-connectors-tasks-approval-rules"
     },
     {
       "kicker": "Guide",
@@ -214,7 +239,6 @@
       "href": "/research"
     }
   ],
-  "updated": "2026-09-25",
   "promptModel": "muse",
   "promptDestination": "muse"
 }

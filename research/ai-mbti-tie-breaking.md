@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Are AI models really INTJ? The tie-breaking effect
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 The original scorer labels 335 of 400 records INTJ. Only 280 of 400 have all four axes resolved as INTJ. Fifty-nine records have at least one tied axis; 55 of those were labeled INTJ by the original rule.
 

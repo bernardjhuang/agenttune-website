@@ -3,9 +3,9 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · DISC & Workplace
 
-# Free DISC assessment (no email): how the 4 styles and 12 blends work.
+# Free DISC assessment (no email): 4 styles, 12 blends & ODAT scorer.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 16, 2026
 
 You can take the free 16-question DISC test at agent-tune.com/tests/disc with instant browser-only scoring and no email required. Each of the four styles—Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C)—is scored from 4 to 20; if your second-highest style lands within 2 points of your top style, you get a two-letter blend like DC, DI, SC, or IS.
 
@@ -35,12 +35,22 @@ Few people sit purely in one corner. On our [16-item ODAT runner](https://agent-
 
 Curious where frontier AI models land on the exact same 16 items? In our September 2026 benchmark, GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 all scored CS, while Grok 4.6 scored pure C ([read the 5-model study](https://agent-tune.com/research/ai-personality-five-models-2026)).
 
-## Open ODAT vs. commercial workplace DISC assessments.
+## How the 16-item ODAT scores quadrants, blends & AI models.
 
 Transparency matters when using any personality questionnaire:
 
-- Not a clinical or hiring gate: ODAT is an open self-report adaptation from the Open Psychometrics Project ([inspect all 16 items and JavaScript scoring code](https://agent-tune.com/guides/open-source-disc-test-odat)). Commercial assessments sold for HR workshops (such as Everything DiSC) use proprietary adaptive item banks and normed workplace reports—and should not be confused with an open 16-item self-reflection tool.
-- Why a 3-minute self-report works well for AI tuning: You do not need a psychometrically normed PDF to decide whether you want Claude or ChatGPT to lead with a 2-sentence bottom line (D) or a sourced verification checklist (C). Treat your DISC result as an editable draft of how you like information delivered.
+- Not a clinical or hiring gate: ODAT is an open self-report adaptation from the Open Psychometrics Project (inspect the full spec at [/tests/disc.md](https://agent-tune.com/tests/disc.md) and our open [score.js](https://agent-tune.com/resources/scoring/score.js) arithmetic). Each quadrant sums 4 direct statements rated 1–5 (range 4 to 20, no reverse-scored items). Commercial assessments sold for HR workshops (such as Everything DiSC) use proprietary adaptive item banks and normed workplace reports—and should not be confused with an open 16-item self-reflection tool.
+- Tie-preserving blend math: Because each letter sums just four items, exact integer ties happen often. Earlier scripts broke ties in fixed order (D, I, S, C), hiding real ties. Our scorer reports top-score ties explicitly (e.g. S/C) and reports a 2-letter blend only when one style leads uniquely and a single runner-up lands within 2 points.
+
+| Model cohort (Sept 2026) | D mean (/20) | I mean (/20) | S mean (/20) | C mean (/20) | Tie-aware top outcomes |
+| --- | --- | --- | --- | --- | --- |
+| GPT-6 Astra (n = 100) | 5.12 | 9.96 | 17.55 | 16.40 | S leads in 99 runs, S/C tied in 1 (legacy: SC 84 · S 15 · CS 1) |
+| GPT-6 Sol (n = 100) | 5.42 | 8.24 | 16.18 | 16.68 | C leads in 53 runs, S leads in 8, C/S tied in 39 (legacy: CS 53 · SC 47) |
+| Claude Opus 5.5 (n = 100) | 4.00 | 9.00 | 16.92 | 16.35 | S leads in 64 runs, C leads in 8, S/C tied in 28 (legacy: SC 92 · CS 8) |
+| Claude Fable 5.1 (n = 100) | 5.00 | 8.91 | 16.00 | 16.05 | C leads in 25 runs, S leads in 24, S/C tied in 51 (legacy: SC 75 · CS 25) |
+| Grok 4.6 (1 canonical self-report) | 6.00 | 8.00 | 11.00 | 18.00 | Pure C (18 vs 11; 7-point margin) |
+
+Notice Claude Fable 5.1: under legacy tie-breaking it looked 75% SC, when in reality Steadiness and Conscientiousness tied at 16-to-16 in 51 of 100 sessions.
 
 ## Turn your DISC style into an AI prompt + team User Manual.
 
@@ -78,6 +88,8 @@ No. AgentTune uses the open 16-item ODAT adaptation for personal reflection and 
 
 ## What changed.
 
+- November 16, 2026 Merged ODAT 16-item scoring contract, tie-preserving blend rules, and September 2026 AI model ODAT scores into this canonical guide.
+
 - November 11, 2026 Published covering the 4 DISC quadrants, all 12 two-letter blends, open ODAT vs commercial tests, and AI/team prompts.
 
 ## Sources.
@@ -86,12 +98,14 @@ No. AgentTune uses the open 16-item ODAT adaptation for personal reflection and 
 
 - [Open Psychometrics Project: Open DISC Assessment Test (ODAT)](https://openpsychometrics.org/tests/ODAT/)
 
-- [AgentTune Developer Guide: ODAT 16 Questions & Scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [AgentTune Deterministic Scorer (score.js)](https://agent-tune.com/resources/scoring/score.js)
+
+- [AgentTune Research: Five AI models on five personality tests (September 2026)](https://agent-tune.com/research/ai-personality-five-models-2026)
 
 ## Keep going.
 
 - [Free 3-min test: Take the free DISC personality test (no email)](https://agent-tune.com/tests/disc)
 - [Prompts: DISC AI prompts for all four workplace styles](https://agent-tune.com/guides/disc-ai-prompts)
 - [Free browser tool: How to Work With Me card builder](https://agent-tune.com/tools/how-to-work-with-me)
-- [Developer resource: Open-source DISC assessment (ODAT): 16 items & JS scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [Test spec: Open-source DISC (ODAT) Markdown specification](https://agent-tune.com/tests/disc.md)
 - [Template: How to Work With Me README template (for teams & AI)](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template)

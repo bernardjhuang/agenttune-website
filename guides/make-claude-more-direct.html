@@ -10,7 +10,7 @@
   <meta property="og:description" content="Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-09-25" />
+  <meta property="article:modified_time" content="2026-11-16" />
   <meta property="og:url" content="https://agent-tune.com/guides/make-claude-more-direct" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,12 +27,12 @@
   <link rel="canonical" href="https://agent-tune.com/guides/make-claude-more-direct" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make Claude more direct","description":"Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot.","url":"https://agent-tune.com/guides/make-claude-more-direct","datePublished":"2026-09-25","dateModified":"2026-09-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make Claude more direct","description":"Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot.","url":"https://agent-tune.com/guides/make-claude-more-direct","datePublished":"2026-09-25","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to make Claude more direct"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can I make Claude more direct?","acceptedAnswer":{"@type":"Answer","text":"Ask it to lead with the answer, give the key reason, preserve real uncertainty, and skip routine praise. Try the first block and evaluate it on real tasks."}},{"@type":"Question","name":"Are the three blocks tested prompts?","acceptedAnswer":{"@type":"Answer","text":"These exact blocks have not been evaluated. A linked archive describes a different compact INTJ prompt on twenty tasks, with one reply per task and condition."}},{"@type":"Question","name":"Will it make answers shorter?","acceptedAnswer":{"@type":"Answer","text":"No guarantee. If length matters, state a target and evaluate it. Similar pilot averages do not prove a general absence of effect."}},{"@type":"Question","name":"Does directness reduce accuracy?","acceptedAnswer":{"@type":"Answer","text":"The pilot is too small and lacks the independent factual checks needed to establish that. Evaluate accuracy and uncertainty alongside style."}},{"@type":"Question","name":"Does the reviewer block change a personality trait?","acceptedAnswer":{"@type":"Answer","text":"No trait change has been measured. It is an instruction to identify weaknesses and support criticism with evidence."}}]}</script>
 
 
-  <script defer src="/consent.js"></script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,7 +69,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude</span>
         <h1 class="h-hero h-research-hero">How to make Claude more direct.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-09-25">September 25, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
         <p class="lede" style="margin-top: 18px;">Ask Claude to lead with the answer, explain relevant uncertainty, skip routine praise, and correct a mistaken premise. These exact three blocks were not tested. A separate pilot archive used a compact INTJ prompt and recorded a higher mean answer-first rating, with 19 of 20 direct replies receiving the maximum score. It does not establish a general effect on accuracy or length.</p>
       </section>
 
@@ -188,7 +188,7 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/guides/best-claude-personality"><span class="guide-related-kicker">Guide</span>The best Claude personality setups</a>
+          <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>Seven best Claude personality setups &amp; settings</a>
           <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to change Claude's personality</a>
           <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Guide</span>Change Claude Code's personality</a>
           <a href="/research/what-personality-type-is-claude"><span class="guide-related-kicker">Research</span>What personality type is Claude?</a>
@@ -203,9 +203,9 @@
     </footer>
   </div>
 
-  <script src="/compact-tunings.js"></script>
-  <script src="/platforms.js"></script>
-  <script src="/integrations.js"></script>
-  <script src="/guide-prompts.js"></script>
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
 </body>
 </html>

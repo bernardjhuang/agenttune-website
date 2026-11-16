@@ -37,7 +37,7 @@ Two scoring details separate transparent open instruments from black-box persona
 Nothing in the test is hidden on a backend server:
 
 - Browser-only privacy: Answers live temporarily in your tab's memory (and optional localStorage draft while in progress) and are cleared on completion.
-- Auditable spec & developer starter: You can read all 36 items in plain Markdown at [/tests/enneagram.md](https://agent-tune.com/tests/enneagram.md), review licensing and provenance in [our open-source Enneagram developer guide](https://agent-tune.com/guides/open-source-enneagram-test), or download a runnable nine-group scorer in [React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript).
+- Auditable spec & developer starter: You can read all 36 items in plain Markdown at [/tests/enneagram.md](https://agent-tune.com/tests/enneagram.md), review licensing, standalone JS scoring, and a runnable nine-group demo in [our open-source Enneagram scorer & React + TypeScript guide](https://agent-tune.com/guides/enneagram-test-react-typescript).
 
 ## Try an Enneagram-informed AI communication block.
 
@@ -88,5 +88,5 @@ No. Like all open personality questionnaires on AgentTune, it is an educational 
 - [Free 5-min test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
 - [Prompts: Enneagram AI prompts for all 9 types](https://agent-tune.com/guides/enneagram-ai-prompts)
 - [Free browser tool: Enneagram Scoring Playground — test wings & ties](https://agent-tune.com/tools/enneagram-scoring-playground)
-- [Developer resource: Open-source Enneagram test on GitHub (36 items & JS)](https://agent-tune.com/guides/open-source-enneagram-test)
+- [Interactive test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
 - [Developer starter: Open-source Enneagram scorer in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript)

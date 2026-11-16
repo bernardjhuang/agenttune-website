@@ -35,7 +35,7 @@ What it measures. Relative agreement across nine Enneagram types using a 36-item
 
 Scoring. Sum the four items for each type (range 4 to 20). When one type has the unique highest total, its higher-scoring adjacent neighbor is reported as the wing (or no wing if the two adjacent types tie). When two or more types share the highest score, all tied leaders are reported together without forcing a winner.
 
-Limits. Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The [open-source Enneagram scorer guide](https://agent-tune.com/guides/open-source-enneagram-test) lets you inspect the exact tie arithmetic.
+Limits. Four items per type is a compact scale, so top-score ties are frequent: 40 to 65 of 100 runs tied at the top across all four fresh-session AI cohorts in September 2026. The [open-source Enneagram scorer & React starter guide](https://agent-tune.com/guides/enneagram-test-react-typescript) lets you inspect the exact tie arithmetic.
 
 ## ODAT: the 16-item DISC questionnaire.
 
@@ -106,8 +106,8 @@ Yes. Each questionnaire has a Markdown specification at /tests/<test>.md and is 
 ## Keep going.
 
 - [Tests: Take any of the five tests](https://agent-tune.com/tests/)
-- [Guide: Open-source Enneagram scorer](https://agent-tune.com/guides/open-source-enneagram-test)
+- [Guide: Open-source Enneagram scorer & React starter](https://agent-tune.com/guides/enneagram-test-react-typescript)
 - [Guide: Open-source MBTI test (OEJTS 1.2): 32 questions and scorer](https://agent-tune.com/guides/open-source-mbti-test-oejts)
-- [Guide: Open-source DISC assessment (ODAT): 16 questions and scorer](https://agent-tune.com/guides/open-source-disc-test-odat)
+- [Guide: Free DISC assessment (ODAT): 16 questions, 12 blends & scorer](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
 - [Guide: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: The research hub](https://agent-tune.com/research)

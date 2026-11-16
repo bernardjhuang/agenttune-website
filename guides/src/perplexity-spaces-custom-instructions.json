@@ -1,0 +1,87 @@
+{
+  "slug": "perplexity-spaces-custom-instructions",
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "title": "Perplexity Spaces Custom Instructions: Prompts & Setup",
+  "description": "Compare Perplexity Profile Bio vs Space AI Prompt custom instructions with 5 copy-paste Space templates for academic synthesis, citations & tech review.",
+  "pill": "Guide · Perplexity Spaces",
+  "h1": "Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.",
+  "dek": "Tune how Perplexity searches, weighs primary sources, and structures answers globally in Profile AI or per workspace inside Spaces.",
+  "lede": "Unlike pure chat models, Perplexity interleaves live web retrieval and uploaded files with synthesis. Leaving Perplexity unconfigured often yields listicle summaries over primary docs or padded executive prose. Perplexity gives you two instruction scopes: your global <strong>AI Profile</strong> (background & response rules across new searches) and per-workspace <strong>Space Custom Instructions</strong>.",
+  "answer": "Configure durable voice and answer formatting in Perplexity Profile → AI Profile, and configure search-domain constraints (primary docs first, publication dates, conflict reporting, and table structure) inside each Space's Custom Instructions settings.",
+  "promptModel": "any",
+  "promptDestination": "anywhere",
+  "sections": [
+    {
+      "id": "profile-vs-spaces",
+      "h2": "Global AI Profile vs. Perplexity Spaces instructions.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Setting location</th><th scope=\"col\">Where to find it</th><th scope=\"col\">Scope</th><th scope=\"col\">What works best here</th></tr></thead><tbody><tr><th scope=\"row\">Global AI Profile</th><td><strong>Settings → AI Profile</strong> (Introduce yourself + response preferences)</td><td>Account-wide across general searches</td><td>Role context, plain prose preference, citation density, banned hype language</td></tr><tr><th scope=\"row\">Space Custom Instructions</th><td><strong>Spaces → [Your Space] → Instructions</strong></td><td>Threads &amp; files inside that specific Space</td><td>Source authority rules, date recency filters, exact comparison schemas</td></tr><tr><th scope=\"row\">Space Knowledge Files + Web toggle</th><td>Space sidebar (Files &amp; Web Search toggles)</td><td>Retrieval mix inside that Space</td><td>Restricting answers strictly to uploaded PDFs/notes or combining with web</td></tr></tbody></table></div><p>Because Perplexity retrieves web snippets dynamically, telling it <em>how to handle contradictory or thin search results</em> improves reliability more than purely stylistic adjectives.</p>"
+    },
+    {
+      "id": "five-space-templates",
+      "h2": "5 copy-paste Perplexity Space Custom Instructions templates.",
+      "html": "<h3>1. Verified Evidence &amp; Citation-First Baseline (Great for General Profile too)</h3><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"anywhere\">## Search &amp; Synthesis Rules\n\n- Prioritize primary documentation, peer-reviewed papers, standards bodies, and official changelogs over blog rewrites or SEO listicles.\n- Always include publication or last-updated dates next to time-sensitive claims.\n- Lead with a 2-sentence direct verdict, then show key evidence with inline citations.\n- When sources disagree or evidence is missing, summarize the conflict explicitly instead of forcing consensus.</div><h3>2. Technical Documentation &amp; API Verifier</h3><div class=\"guide-snippet\">## Scope: Software &amp; APIs\n\n- Restrict syntax, CLI flags, and SDK recommendations to current official docs; ignore deprecated snippets.\n- Cite the exact doc page and version number for every command or configuration key.\n- Highlight breaking changes or platform-specific caveats (macOS vs Linux, client vs server) upfront.</div><h3>3. Competitive Market &amp; Pricing Matrix Builder</h3><div class=\"guide-snippet\">## Output Schema: Product Comparison\n\n- Summarize differences in a comparison table first (Vendor, Model/Tier, Current Price, Hard Limits, Verified Date).\n- Flag any unverified or behind-sales-wall pricing as &ldquo;Not publicly listed&rdquo; rather than estimating.\n- Keep qualitative commentary strictly proportional to cited user or benchmark evidence.</div><h3>4. Peer-Reviewed Clinical &amp; Science Reader</h3><div class=\"guide-snippet\">## Scientific Rigor Rules\n\n- Distinguish randomized controlled trials, observational cohorts, preprints, and press releases in every summary.\n- State sample size (n), comparator group, and major limitations alongside headline effect sizes.\n- Never extrapolate animal or in-vitro findings into human clinical advice.</div><h3>5. Local Code &amp; File-Grounded Space</h3><div class=\"guide-snippet\">## File-First Grounding\n\n- Check uploaded Space files before pulling external web context.\n- Quote file names or headings when referencing internal policies, briefs, or research exports.\n- Ask for clarification before assuming missing figures across uploaded tables.</div>"
+    },
+    {
+      "id": "reducing-retrieval-drift",
+      "h2": "Three tweaks that cut Perplexity fluff and stale citations.",
+      "html": "<ul><li><strong>Explicitly ban ungrounded extrapolation:</strong> Search models tend to stitch half-relevant blog snippets into confident answers. Add: <em>&ldquo;If no authoritative source confirms a specific number or date, write &lsquo;Not verified in retrieved sources&rsquo;.&rdquo;</em></li><li><strong>Ask for conflict surfacing by default:</strong> Adding <em>&ldquo;List unresolved disagreements among retrieved sources&rdquo;</em> aligns with our <a href=\"/guides/stop-ai-sycophancy-make-ai-push-back\">anti-sycophancy guidelines</a>.</li><li><strong>Convert existing Claude/ChatGPT rules cleanly:</strong> Reuse your core tone profile via the <a href=\"/tools/instruction-converter\">Instruction Converter</a> or match a style in the <a href=\"/library/\">43-template library</a>.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where do I put custom instructions in Perplexity Spaces?",
+      "a": "Open any Space, select its Instructions box in the Space setup/panel, and paste your search-scoping, source-priority, and output-formatting rules. Those rules automatically apply to new threads started inside that Space."
+    },
+    {
+      "q": "Do Space instructions override Perplexity AI Profile settings?",
+      "a": "Space instructions narrow the task and retrieval behavior inside that workspace, while your global AI Profile sets overall user background and general preferences across threads."
+    },
+    {
+      "q": "How do I stop Perplexity from citing weak SEO listicles?",
+      "a": "Add a source hierarchy rule directly in Space Instructions prioritizing official docs, primary standards, SEC/government filings, and peer-reviewed journals over secondary blogs, and require publication dates next to claims."
+    },
+    {
+      "q": "Can I use MBTI, DISC, or Enneagram tunings in Perplexity?",
+      "a": "Yes—copy any communication style rule set from our library and combine it with Space-specific citation rules so you control both epistemic rigor and writing cadence."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-16",
+      "note": "First published covering Perplexity Profile AI vs Space Custom Instructions and 5 templates tuned for primary-source retrieval."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune: Turn Working Preferences Into AI Instructions",
+      "href": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality"
+    },
+    {
+      "label": "AgentTune Tool: Instruction Converter & Merger",
+      "href": "https://agent-tune.com/tools/instruction-converter"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "AI instruction precedence & overrides",
+      "href": "/guides/ai-instruction-precedence-overrides"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Instruction Converter & Merger",
+      "href": "/tools/instruction-converter"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to stop AI sycophancy & make AI push back",
+      "href": "/guides/stop-ai-sycophancy-make-ai-push-back"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "ChatGPT vs Claude personality benchmarks",
+      "href": "/guides/chatgpt-vs-claude-personality"
+    }
+  ]
+}

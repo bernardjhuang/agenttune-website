@@ -5,7 +5,7 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 16, 2026
 
 The May 2026 report assigns Gemini 3.1 Pro INTJ in all 100 MBTI records, C-dominant DISC, Secure attachment coordinates (1.86 / 1.62) and top-two Enneagram types 1 and 5. Big Five totals are 46.0 / 48.3 / 32.5 / 42.4 / 10.1. These are reported scoring records collected with test names visible, not a matched comparison with September models.
 
@@ -35,7 +35,7 @@ These figures are self-descriptions on questionnaires written for people, under 
 
 ## Trying communication preferences.
 
-For Gemini, a Gem’s instructions can hold a communication block. On a library page, select Any model, then Gemini Gems, for the installation text. Evaluate the prompt on your tasks; the questionnaire results do not prove a tuning benefit. See [the setup guide](https://agent-tune.com/guides/how-to-give-your-ai-a-personality).
+Want to change how Gemini talks to you? Follow our step-by-step [How to change Google Gemini’s personality guide](https://agent-tune.com/guides/gemini-personality) (Saved Info, custom Gems, and GEMINI.md). On any library page, select Any model, then Gemini Gems, for ready-to-paste rules. Evaluate the prompt on your own tasks; questionnaire results do not prove a tuning benefit.
 
 ## Questions people ask.
 
@@ -73,6 +73,7 @@ A Gem’s instructions can hold communication preferences. Choose Any model, the
 
 ## Keep going.
 
+- [Setup guide: How to change Gemini's personality (Saved Info, Gems & CLI)](https://agent-tune.com/guides/gemini-personality)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)

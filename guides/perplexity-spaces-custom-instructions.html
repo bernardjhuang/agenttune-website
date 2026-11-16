@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perplexity Spaces Custom Instructions: Prompts &amp; Setup</title>
+  <meta name="description" content="Compare Perplexity Profile Bio vs Space AI Prompt custom instructions with 5 copy-paste Space templates for academic synthesis, citations &amp; tech review." />
+
+  <meta property="og:title" content="Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates." />
+  <meta property="og:description" content="Compare Perplexity Profile Bio vs Space AI Prompt custom instructions with 5 copy-paste Space templates for academic synthesis, citations &amp; tech review." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="og:url" content="https://agent-tune.com/guides/perplexity-spaces-custom-instructions" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates." />
+  <meta name="twitter:description" content="Compare Perplexity Profile Bio vs Space AI Prompt custom instructions with 5 copy-paste Space templates for academic synthesis, citations &amp; tech review." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/perplexity-spaces-custom-instructions" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates","description":"Compare Perplexity Profile Bio vs Space AI Prompt custom instructions with 5 copy-paste Space templates for academic synthesis, citations & tech review.","url":"https://agent-tune.com/guides/perplexity-spaces-custom-instructions","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I put custom instructions in Perplexity Spaces?","acceptedAnswer":{"@type":"Answer","text":"Open any Space, select its Instructions box in the Space setup/panel, and paste your search-scoping, source-priority, and output-formatting rules. Those rules automatically apply to new threads started inside that Space."}},{"@type":"Question","name":"Do Space instructions override Perplexity AI Profile settings?","acceptedAnswer":{"@type":"Answer","text":"Space instructions narrow the task and retrieval behavior inside that workspace, while your global AI Profile sets overall user background and general preferences across threads."}},{"@type":"Question","name":"How do I stop Perplexity from citing weak SEO listicles?","acceptedAnswer":{"@type":"Answer","text":"Add a source hierarchy rule directly in Space Instructions prioritizing official docs, primary standards, SEC/government filings, and peer-reviewed journals over secondary blogs, and require publication dates next to claims."}},{"@type":"Question","name":"Can I use MBTI, DISC, or Enneagram tunings in Perplexity?","acceptedAnswer":{"@type":"Answer","text":"Yes—copy any communication style rule set from our library and combine it with Space-specific citation rules so you control both epistemic rigor and writing cadence."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Perplexity Spaces</span>
+        <h1 class="h-hero h-research-hero">Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
+        <p class="lede" style="margin-top: 18px;">Configure durable voice and answer formatting in Perplexity Profile → AI Profile, and configure search-domain constraints (primary docs first, publication dates, conflict reporting, and table structure) inside each Space's Custom Instructions settings.</p>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="profile-vs-spaces">Global AI Profile vs. Perplexity Spaces instructions.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Global AI Profile vs. Perplexity Spaces instructions.: table 1" tabindex="0"><table><thead><tr><th scope="col">Setting location</th><th scope="col">Where to find it</th><th scope="col">Scope</th><th scope="col">What works best here</th></tr></thead><tbody><tr><th scope="row">Global AI Profile</th><td><strong>Settings → AI Profile</strong> (Introduce yourself + response preferences)</td><td>Account-wide across general searches</td><td>Role context, plain prose preference, citation density, banned hype language</td></tr><tr><th scope="row">Space Custom Instructions</th><td><strong>Spaces → [Your Space] → Instructions</strong></td><td>Threads &amp; files inside that specific Space</td><td>Source authority rules, date recency filters, exact comparison schemas</td></tr><tr><th scope="row">Space Knowledge Files + Web toggle</th><td>Space sidebar (Files &amp; Web Search toggles)</td><td>Retrieval mix inside that Space</td><td>Restricting answers strictly to uploaded PDFs/notes or combining with web</td></tr></tbody></table></div><p>Because Perplexity retrieves web snippets dynamically, telling it <em>how to handle contradictory or thin search results</em> improves reliability more than purely stylistic adjectives.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="five-space-templates">5 copy-paste Perplexity Space Custom Instructions templates.</h2>
+        <h3>1. Verified Evidence &amp; Citation-First Baseline (Great for General Profile too)</h3><div class="guide-snippet" data-tuning-prompt data-prompt-target="anywhere">## Search &amp; Synthesis Rules
+
+- Prioritize primary documentation, peer-reviewed papers, standards bodies, and official changelogs over blog rewrites or SEO listicles.
+- Always include publication or last-updated dates next to time-sensitive claims.
+- Lead with a 2-sentence direct verdict, then show key evidence with inline citations.
+- When sources disagree or evidence is missing, summarize the conflict explicitly instead of forcing consensus.</div><h3>2. Technical Documentation &amp; API Verifier</h3><div class="guide-snippet">## Scope: Software &amp; APIs
+
+- Restrict syntax, CLI flags, and SDK recommendations to current official docs; ignore deprecated snippets.
+- Cite the exact doc page and version number for every command or configuration key.
+- Highlight breaking changes or platform-specific caveats (macOS vs Linux, client vs server) upfront.</div><h3>3. Competitive Market &amp; Pricing Matrix Builder</h3><div class="guide-snippet">## Output Schema: Product Comparison
+
+- Summarize differences in a comparison table first (Vendor, Model/Tier, Current Price, Hard Limits, Verified Date).
+- Flag any unverified or behind-sales-wall pricing as &ldquo;Not publicly listed&rdquo; rather than estimating.
+- Keep qualitative commentary strictly proportional to cited user or benchmark evidence.</div><h3>4. Peer-Reviewed Clinical &amp; Science Reader</h3><div class="guide-snippet">## Scientific Rigor Rules
+
+- Distinguish randomized controlled trials, observational cohorts, preprints, and press releases in every summary.
+- State sample size (n), comparator group, and major limitations alongside headline effect sizes.
+- Never extrapolate animal or in-vitro findings into human clinical advice.</div><h3>5. Local Code &amp; File-Grounded Space</h3><div class="guide-snippet">## File-First Grounding
+
+- Check uploaded Space files before pulling external web context.
+- Quote file names or headings when referencing internal policies, briefs, or research exports.
+- Ask for clarification before assuming missing figures across uploaded tables.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="reducing-retrieval-drift">Three tweaks that cut Perplexity fluff and stale citations.</h2>
+        <ul><li><strong>Explicitly ban ungrounded extrapolation:</strong> Search models tend to stitch half-relevant blog snippets into confident answers. Add: <em>&ldquo;If no authoritative source confirms a specific number or date, write &lsquo;Not verified in retrieved sources&rsquo;.&rdquo;</em></li><li><strong>Ask for conflict surfacing by default:</strong> Adding <em>&ldquo;List unresolved disagreements among retrieved sources&rdquo;</em> aligns with our <a href="/guides/stop-ai-sycophancy-make-ai-push-back">anti-sycophancy guidelines</a>.</li><li><strong>Convert existing Claude/ChatGPT rules cleanly:</strong> Reuse your core tone profile via the <a href="/tools/instruction-converter">Instruction Converter</a> or match a style in the <a href="/library/">43-template library</a>.</li></ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Where do I put custom instructions in Perplexity Spaces?</summary>
+            <p>Open any Space, select its Instructions box in the Space setup/panel, and paste your search-scoping, source-priority, and output-formatting rules. Those rules automatically apply to new threads started inside that Space.</p>
+          </details>
+          <details>
+            <summary>Do Space instructions override Perplexity AI Profile settings?</summary>
+            <p>Space instructions narrow the task and retrieval behavior inside that workspace, while your global AI Profile sets overall user background and general preferences across threads.</p>
+          </details>
+          <details>
+            <summary>How do I stop Perplexity from citing weak SEO listicles?</summary>
+            <p>Add a source hierarchy rule directly in Space Instructions prioritizing official docs, primary standards, SEC/government filings, and peer-reviewed journals over secondary blogs, and require publication dates next to claims.</p>
+          </details>
+          <details>
+            <summary>Can I use MBTI, DISC, or Enneagram tunings in Perplexity?</summary>
+            <p>Yes—copy any communication style rule set from our library and combine it with Space-specific citation rules so you control both epistemic rigor and writing cadence.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-16">November 16, 2026</time> First published covering Perplexity Profile AI vs Space Custom Instructions and 5 templates tuned for primary-source retrieval.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/guides/how-to-give-your-ai-a-personality" target="_blank" rel="noopener">AgentTune: Turn Working Preferences Into AI Instructions</a></li>
+          <li><a href="https://agent-tune.com/tools/instruction-converter" target="_blank" rel="noopener">AgentTune Tool: Instruction Converter &amp; Merger</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/ai-instruction-precedence-overrides"><span class="guide-related-kicker">Guide</span>AI instruction precedence &amp; overrides</a>
+          <a href="/tools/instruction-converter"><span class="guide-related-kicker">Tool</span>Instruction Converter &amp; Merger</a>
+          <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to stop AI sycophancy &amp; make AI push back</a>
+          <a href="/guides/chatgpt-vs-claude-personality"><span class="guide-related-kicker">Comparison</span>ChatGPT vs Claude personality benchmarks</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+</body>
+</html>

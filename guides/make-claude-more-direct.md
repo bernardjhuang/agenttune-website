@@ -5,7 +5,7 @@ Guide · Claude
 
 # How to make Claude more direct.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 16, 2026
 
 Ask Claude to lead with the answer, explain relevant uncertainty, skip routine praise, and correct a mistaken premise. These exact three blocks were not tested. A separate pilot archive used a compact INTJ prompt and recorded a higher mean answer-first rating, with 19 of 20 direct replies receiving the maximum score. It does not establish a general effect on accuracy or length.
 
@@ -132,7 +132,7 @@ No trait change has been measured. It is an instruction to identify weaknesses a
 
 ## Keep going.
 
-- [Guide: The best Claude personality setups](https://agent-tune.com/guides/best-claude-personality)
+- [Guide: Seven best Claude personality setups & settings](https://agent-tune.com/guides/claude-personality)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
 - [Guide: Change Claude Code's personality](https://agent-tune.com/guides/claude-code-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)

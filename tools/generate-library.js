@@ -494,9 +494,18 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
           ? `DISC ${c.name} system prompt`
           : "MBTI system prompt";
 
+  const promptLabel = c.system === "ocean"
+    ? c.name
+    : c.system === "attachment"
+      ? `${c.code} Attachment`
+      : c.system === "enneagram"
+        ? `Enneagram Type ${enneaDigit}`
+        : c.system === "disc"
+          ? `DISC ${c.code} (${c.name})`
+          : c.code;
+
   const clamp160 = (t) => (t.length <= 158 ? t : t.slice(0, 155).replace(/\s+\S*$/, "") + "\u2026");
-  const sysArticle = /^[AEIOM]/.test(sysFull) ? "An" : "A"; // "An MBTI…", "An Enneagram…", "A DISC…"
-  const metaDesc = clamp160(`${c.blurb} ${sysArticle} ${sysFull} tuning file — paste it into Claude, ChatGPT, or Cursor.`);
+  const metaDesc = clamp160(`${c.blurb} Copy-paste ${promptLabel} system prompt for ChatGPT, Claude & Soul.md.`);
 
   // Per-type V2 content (humanContexts + outward + demoWhy + optional bullets)
   const v2 = V2[c.id] || {};
@@ -1246,7 +1255,7 @@ function buildHub(contacts) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>43 Free Personality System Prompts for Claude & ChatGPT</title>
-  <meta name="description" content="43 AgentTune tuning files: Markdown communication rules for every MBTI, Enneagram, DISC, attachment and Big Five type. Paste one into your AI&#39;s instructions." />
+  <meta name="description" content="43 free, copy-paste AI system prompts across MBTI, Enneagram, DISC, Attachment & Big Five. Works in ChatGPT, Claude, Meta Muse Soul.md & AGENTS.md." />
 
   <meta property="og:title" content="43 Free Personality System Prompts for Claude & ChatGPT" />
   <meta property="og:description" content="Five systems. 43 type-matched Markdown files. Pick your type, copy the tuning, paste it into your AI agent." />
@@ -1428,16 +1437,13 @@ const STATIC_PAGES = [
   { route: "/guides/astra-personality", file: "guides/astra-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/grokbot-personality", file: "guides/grokbot-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-soul-md-templates", file: "guides/muse-soul-md-templates.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/open-source-enneagram-test", file: "guides/open-source-enneagram-test.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-personality", file: "guides/muse-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-md-examples", file: "guides/claude-md-examples.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/coding-agent-personality", file: "guides/coding-agent-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/make-chatgpt-sound-like-you", file: "guides/make-chatgpt-sound-like-you.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/enneagram-ai-prompts", file: "guides/enneagram-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/mbti-vs-big-five-for-ai", file: "guides/mbti-vs-big-five-for-ai.html", changefreq: "monthly", priority: "0.7" },
-  { route: "/guides/best-claude-personality", file: "guides/best-claude-personality.html", changefreq: "monthly", priority: "0.8", comment: "September 2026 additions" },
   { route: "/guides/make-claude-more-direct", file: "guides/make-claude-more-direct.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/meta-muse-characters", file: "guides/meta-muse-characters.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/what-is-meta-muse", file: "guides/what-is-meta-muse.html", changefreq: "weekly", priority: "0.8" },
   { route: "/guides/muse-vs-chatgpt-vs-claude-personality", file: "guides/muse-vs-chatgpt-vs-claude-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/what-personality-type-is-muse", file: "research/what-personality-type-is-muse.html", changefreq: "monthly", priority: "0.8" },
@@ -1464,7 +1470,6 @@ const STATIC_PAGES = [
   { route: "/guides/ai-instruction-precedence-overrides", file: "guides/ai-instruction-precedence-overrides.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/stop-ai-sycophancy-make-ai-push-back", file: "guides/stop-ai-sycophancy-make-ai-push-back.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/open-source-mbti-test-oejts", file: "guides/open-source-mbti-test-oejts.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/open-source-disc-test-odat", file: "guides/open-source-disc-test-odat.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/disc-ai-prompts", file: "guides/disc-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/big-five-ai-prompts", file: "guides/big-five-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/attachment-style-ai-prompts", file: "guides/attachment-style-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
@@ -1478,6 +1483,16 @@ const STATIC_PAGES = [
   { route: "/guides/how-to-work-with-me-readme-ai-template", file: "guides/how-to-work-with-me-readme-ai-template.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/ai-persona-style-controls-register-verbosity", file: "guides/ai-persona-style-controls-register-verbosity.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/mcp-server-ai-preferences-portable-tuning", file: "guides/mcp-server-ai-preferences-portable-tuning.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/chatgpt-personality-settings", file: "guides/chatgpt-personality-settings.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 topical gap E-E-A-T guides" },
+  { route: "/guides/chatgpt-vs-claude-personality", file: "guides/chatgpt-vs-claude-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/claude-project-instructions-examples", file: "guides/claude-project-instructions-examples.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/custom-gpt-instructions-template-limit", file: "guides/custom-gpt-instructions-template-limit.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/perplexity-spaces-custom-instructions", file: "guides/perplexity-spaces-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/meta-muse-connectors-tasks-approval-rules", file: "guides/meta-muse-connectors-tasks-approval-rules.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/migrate-ai-memory-custom-instructions", file: "guides/migrate-ai-memory-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-coding-agent-rules-files-matrix", file: "guides/ai-coding-agent-rules-files-matrix.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-assistant-personality-tone-guidelines", file: "guides/ai-assistant-personality-tone-guidelines.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-personality-frameworks-comparison-matcher", file: "guides/ai-personality-frameworks-comparison-matcher.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/grok-attachment-cutoff-simulation", file: "research/grok-attachment-cutoff-simulation.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-big-five-item-level-comparison", file: "research/ai-big-five-item-level-comparison.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
@@ -1668,7 +1683,7 @@ function main() {
   const header = "# Agent-friendly raw markdown URLs — auto-generated by tools/generate-library.js\n# /library/<system>/<slug>.md → /tunings/<system>/<File>.md (200 = rewrite)\n";
   // Pages serves the root 404.html for unmatched routes; 404 is not a valid redirect status.
   // Retired paid-product routes (Premium + Developer Pack, removed 2026-07) — permanent redirects home.
-  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n\n# Legacy model profile URLs → canonical guide URLs (301)\n/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301\n/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301\n/research/claude-fable-5-1-personality  /guides/fable-personality  301\n/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301\n/research/gpt-6-astra-personality  /guides/astra-personality  301\n/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301\n/research/gpt-6-sol-personality  /guides/sol-personality  301\n/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301\n";
+  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n\n# Legacy model profile URLs → canonical guide URLs (301)\n/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301\n/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301\n/research/claude-fable-5-1-personality  /guides/fable-personality  301\n/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301\n/research/gpt-6-astra-personality  /guides/astra-personality  301\n/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301\n/research/gpt-6-sol-personality  /guides/sol-personality  301\n/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301\n\n# Consolidated cannibalizing guide routes (2026-11-16) → canonical guides (301)\n/guides/meta-muse-characters  /guides/muse-personality  301\n/guides/meta-muse-characters.md  /guides/muse-personality.md  301\n/guides/best-claude-personality  /guides/claude-personality  301\n/guides/best-claude-personality.md  /guides/claude-personality.md  301\n/guides/open-source-enneagram-test  /guides/enneagram-test-react-typescript  301\n/guides/open-source-enneagram-test.md  /guides/enneagram-test-react-typescript.md  301\n/guides/open-source-disc-test-odat  /guides/free-disc-assessment-guide-work-ai  301\n/guides/open-source-disc-test-odat.md  /guides/free-disc-assessment-guide-work-ai.md  301\n";
   const fallback = retired;
   const body = header + redirects.join("\n") + "\n" + fallback;
   fs.writeFileSync(redirectsPath, body);

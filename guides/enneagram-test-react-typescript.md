@@ -1,17 +1,26 @@
 Source: https://agent-tune.com/guides/enneagram-test-react-typescript
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Developer resource · runnable starter
+Developer resource · runnable starter & JS scorer
 
-# Build an Enneagram test in React + TypeScript.
+# Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 16, 2026
 
-Download enneagram-react-typescript.zip, run npm ci and npm run dev, and inspect a six-page, 36-item React + TypeScript questionnaire flow. It uses native fieldset and radio groups, validates incomplete pages, preserves all tied top scores, and keeps answers in browser memory.
+Download score.js + questions.json for a standalone Node/browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a complete 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
 
-## Download and run the complete app.
+## Download the standalone JS scorer or full React + TypeScript starter.
 
-[Download the React + TypeScript starter ZIP](https://agent-tune.com/resources/enneagram/enneagram-react-typescript.zip). Extract it into a local development folder. Use a supported Node.js release (22.12 or newer), then run:
+Pick either the full React + TypeScript starter ZIP or the dependency-free CommonJS/browser files:
+
+| Download | What it includes |
+| --- | --- |
+| [enneagram-react-typescript.zip](https://agent-tune.com/resources/enneagram/enneagram-react-typescript.zip) | Full Vite + React + TypeScript starter with accessible fieldsets, validation, lockfile, and public/score.js. |
+| [score.js](https://agent-tune.com/resources/enneagram/score.js) | Zero-dependency MIT JavaScript scorer for Node and browsers: strict input validation, 9 totals (4–20), and explicit tie reporting. |
+| [questions.json](https://agent-tune.com/resources/enneagram/questions.json) | 36 synthetic demo inputs, type keys (4 per type), and scale metadata. |
+| [README.md](https://agent-tune.com/resources/enneagram/README.md) &amp; [LICENSE-code.txt](https://agent-tune.com/resources/enneagram/LICENSE-code.txt) | Integration examples, API contract, and MIT license boundary. |
+
+To run the React starter locally with Node.js 22.12+, extract the archive and run:
 
 ```
 cd enneagram-react-typescript
@@ -19,13 +28,35 @@ npm ci
 npm run dev
 ```
 
-Open the local address printed by Vite. For a production build, run npm run build, then npm run preview to inspect it. Publish the generated dist/ folder with any static host. Serve the app over HTTP rather than opening its index file directly.
+Serve the built dist/ folder over HTTP (never open the raw HTML file over file://). Want to take the live 36-question OEPS test without code? Visit [/tests/enneagram](https://agent-tune.com/tests/enneagram).
 
-The archive includes pinned React, TypeScript and Vite dependencies plus a lockfile. There is no backend, authentication or external answer submission.
+## Try the JavaScript scorer live in your browser.
 
-## One scorer, with a TypeScript boundary.
+Edit the 36-item array or load a preset below. This widget parses and scores numbers locally using score.js without sending or storing answers.
 
-The app loads the canonical public/score.js file before its React entry. The TypeScript wrapper describes the result contract and calls that scorer directly rather than maintaining a second copy of the scoring algorithm.
+Answers in item order (JSON array)Exactly 36 whole numbers from 1 to 5. Examples are synthetic test inputs.
+
+[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]Score answersAll neutralType 5 exampleTypes 1 + 5 tie
+
+```
+
+```
+
+Enable JavaScript to test the live scoring widget, or download score.js to run in Node.
+
+## Use the scorer in Node or a browser (with a TypeScript boundary).
+
+In Node CommonJS, load score.js directly:
+
+```markdown
+const { score } = require('./score.js');
+const answers = Array(36).fill(3);
+answers.fill(5, 16, 20); // Type 5 items (indices 16-19)
+console.log(score(answers));
+// leaders: [5], dominantType: 5, topScore: 20
+```
+
+In the React + TypeScript starter, public/score.js loads once and src/scorer.ts wraps the single canonical implementation:
 
 ```
 interface Score {
@@ -38,7 +69,16 @@ interface Score {
 }
 ```
 
-The scorer requires exactly 36 integer responses from 1 to 5 in item order. It rejects missing values, sparse arrays, strings and out-of-range numbers. TypeScript enforces the UI contract at compile time, while runtime validation guards the scoring call.
+| Field | Contract |
+| --- | --- |
+| version | agenttune-enneagram-36-v1 identifying the 36-input 9-group contract. |
+| scores | Raw integer totals (4–20) keyed by Enneagram type 1–9 (no reversed items). |
+| topScore | Highest raw integer total across the nine groups. |
+| leaders | Sorted array of every type sharing topScore. |
+| tied | true whenever two or more types share topScore. |
+| dominantType | Unique leader integer 1–9, or null when tied. |
+
+The scorer rejects incomplete or sparse arrays, strings, fractions, and values outside 1–5 so missing responses never coerce silently to neutral.
 
 ## Preserve uncertainty in the result.
 
@@ -64,6 +104,12 @@ Submitting an incomplete page identifies the first unanswered item and moves foc
 
 If you replace the synthetic demo controls in src/questions.json with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.
 
+## Provenance, scope and licensing.
+
+The developer bundle in /resources/enneagram/ provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
+
+The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) and [the historical provenance record](https://agent-tune.com/research/data/rights-migration.json) before redistributing questionnaire text.
+
 ## Questions people ask.
 
 Does the starter ZIP include OEPS question text?
@@ -76,11 +122,13 @@ Take the 36-item Enneagram questionnaire directly in your browser at /tests/enne
 
 ## What changed.
 
+- November 16, 2026 Consolidated the standalone JS scorer download table, Node/browser code examples, scoring contract, and live browser scorer widget into this page.
+
 - September 26, 2026 Documented the React + TypeScript architecture, keyboard accessibility, and synthetic demo inputs.
 
 ## Sources.
 
-- [AgentTune: standalone JavaScript Enneagram scorer and API contract](https://agent-tune.com/guides/open-source-enneagram-test)
+- [AgentTune Interactive 36-Item Enneagram Test (/tests/enneagram)](https://agent-tune.com/tests/enneagram)
 
 - [React documentation: using TypeScript](https://react.dev/learn/typescript)
 
@@ -93,6 +141,7 @@ Take the 36-item Enneagram questionnaire directly in your browser at /tests/enne
 ## Keep going.
 
 - [Free browser tool: Try the Enneagram scoring playground](https://agent-tune.com/tools/enneagram-scoring-playground)
-- [Developer resource: Use the standalone JavaScript scorer](https://agent-tune.com/guides/open-source-enneagram-test)
+- [Interactive test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
+- [Guide: Free Enneagram test guide (9 types, wings & ties)](https://agent-tune.com/guides/free-enneagram-test-no-email-guide)
 - [Research: Reproduce the raw questionnaire results](https://agent-tune.com/guides/reproduce-ai-personality-research)
 - [Prompt library: Enneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)
