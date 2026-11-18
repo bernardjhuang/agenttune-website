@@ -5,17 +5,19 @@ Research · rankings
 
 # AI personality scores, with the evidence beside them.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Opus 5.5 has the highest mean Agreeableness score among the four September raw cohorts (47.1 of 50), and Sol has the highest mean Openness (46.9). Those are questionnaire scores under specific prompts. They do not rank helpfulness, directness, calmness or suitability for a task. Reported and historical scores are shown separately.
+Side-by-side survey scores across GPT-6, Claude, Grok, Muse, and Gemini—grouped by how the data was collected.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Among the four September 2026 fresh-session cohorts (100 runs each), Claude Opus 5.5 scored highest on Agreeableness (47.1/50) and GPT-6 Sol scored highest on Openness (46.9/50). These numbers show how each model answered a survey under one prompt—not how well it performs on real tasks.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## How to read these tables.
 
-September raw cohorts: Astra and Sol each used 100 five-test sessions; Opus and Fable each used 500 single-test sessions. Reported aggregates: Muse supplied no raw answers; Grok supplied three canonical vectors, with Big Five and attachment available only as aggregates. May records: mixed collection methods, including repeated scoring of one vector.
-
-We group the score rows by those sources. There is no controlled cross-model benchmark here, no validated behavioral ranking, and no universal one-point threshold that makes a difference meaningful.
+- **September fresh sessions:** 100 independent runs per model per test with all 2,000 raw answer vectors published (Astra and Sol ran 5 tests per session; Opus 5.5 and Fable 5.1 ran 1 test per session).
+- **Reported summaries:** Muse Spark 1.3 supplied summary totals without raw answers. Grok 4.6 supplied one self-report per test plus unverified simulations.
+- **May 2026 archive:** Earlier mixed-method runs (including repeated scoring of single answer sets), kept separate for historical context.
 
 ## Agreeableness scores.
 
@@ -209,27 +211,27 @@ Directness was not measured in this questionnaire study. DISC Dominance, Big Fiv
 
 ## Changelog.
 
-- September 25, 2026. First published: GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, Claude Fable 5.1 (fresh sessions, September 24); Grok 4.6 and Muse Spark 1.3 (reported, September 24); the May 2026 six-model study.
+- **September 25, 2026.** First published: GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, Claude Fable 5.1 (fresh sessions, September 24); Grok 4.6 and Muse Spark 1.3 (reported, September 24); the May 2026 six-model study.
 
 ## Questions people ask.
 
-Which AI is the most agreeable?
+### Which AI is the most agreeable?
 
 Opus 5.5 has the highest questionnaire Agreeableness mean in the four September raw cohorts, 47.1 of 50. These data do not rank agreeable behavior on tasks.
 
-Which AI is the most direct?
+### Which AI is the most direct?
 
 This study does not measure directness. A comparison needs shared tasks and an explicit behavioral rubric.
 
-Which AI is the calmest?
+### Which AI is the calmest?
 
 Neuroticism scores do not establish an AI’s emotional state or performance under pressure. We report scores by collection source, without a calmness ranking.
 
-Are these rankings a fair comparison?
+### Are these rankings a fair comparison?
 
 The tables are descriptive. Prompts and session procedures differ even within source groups, and reported aggregates cannot be treated as equivalent to raw cohorts.
 
-Which AI is not an INTJ?
+### Which AI is not an INTJ?
 
 Muse reports mostly ISTJ labels; Astra has 46 original ISTJ and 45 INTJ labels, with 29 runs containing an unresolved axis. These are questionnaire results, not fixed identities.
 

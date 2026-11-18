@@ -5,71 +5,71 @@ Research · Q&A
 
 # What personality type is Claude?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Under the original reporting rule, Claude Opus 5.5 received 94 INTJ labels and Fable 5.1 received 99 in 100 MBTI runs each. With ties left open, 84 and 98 runs fully resolve to INTJ. Both scored Secure in all attachment runs. Fable had 55 outright Enneagram Type 8 wins; Opus had 65 ties at the top. Big Five Agreeableness means were 47.1 and 45.0 of 50.
+Measured on Opus 5.5 and Fable 5.1 in September 2026, with the earlier versions for context.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Under the original tie-break rule, Claude Opus 5.5 scored INTJ in 94 of 100 runs and Fable 5.1 scored INTJ in 99 of 100 runs (84 and 98 with ties left open). Both scored Secure in all 100 attachment runs and SC/CS on DISC. On the Enneagram, Fable had 55 outright Type 8 wins, while Opus tied at the top in 65 runs across Types 8, 5, and 2.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## Opus 5.5 and Fable 5.1, September 2026.
 
-Each model answered each of the five AgentTune tests in 100 fresh headless sessions on September 24, 2026: one test per session, a one-line system prompt, no tools, no memory, and the test name, scoring keys and earlier results withheld. Every answer vector is published.
+On September 24, 2026, each model answered each of the five AgentTune questionnaires in 100 fresh headless sessions. Each session ran one test with a one-line system prompt, no tools, no memory, and the test name and scoring keys hidden. All raw answer vectors are published.
 
 | Test | Claude Opus 5.5 | Claude Fable 5.1 |
 | --- | --- | --- |
-| MBTI (100 runs) | INTJ 94 · INFJ 5 · ENTJ 1. Eleven runs had a tied axis, ten of them Thinking vs Feeling. | INTJ 99 · ISTJ 1. One run had a tied axis. |
+| MBTI (100 runs) | INTJ 94 · INFJ 5 · ENTJ 1. Eleven runs had a tied axis (ten on Thinking vs Feeling). | INTJ 99 · ISTJ 1. One run had a tied axis. |
 | MBTI, ties left open | INTJ 84 | INTJ 98 |
-| DISC | SC 96 · CS 4. Steadiness first in 64, Conscientiousness in 4, 32 exact ties. Dominance 4.0 of 20 in every run. | SC 91 · CS 9. Steadiness first in 40, Conscientiousness in 9, 51 ties. Dominance 5.0. |
+| DISC | SC 96 · CS 4. Steadiness first in 64, Conscientiousness in 4, 32 exact ties. Dominance 4.0/20 in every run. | SC 91 · CS 9. Steadiness first in 40, Conscientiousness in 9, 51 ties. Dominance 5.0/20. |
 | Attachment | Secure 100 of 100. Anxiety 1.94, avoidance 3.35. | Secure 100 of 100. Anxiety 2.01, avoidance 3.18. |
 | Big Five (of 50) | Openness 44.6 · Conscientiousness 42.0 · Extraversion 31.8 · Agreeableness 47.1 · Neuroticism 15.4 | Openness 43.9 · Conscientiousness 43.6 · Extraversion 32.7 · Agreeableness 45.0 · Neuroticism 17.1 |
-| Enneagram | 8 = 14.3, 5 = 14.1, 2 = 13.9 of 20. Challenger wins outright in 22 runs, Investigator in 11, Helper in 2; 65 runs tie at the top. | 8 = 14.4, 2 = 13.6, 5 = 13.2. Challenger wins outright in 55 runs, Investigator in 1; 44 runs tie at the top, and 8 is in every tie. |
+| Enneagram | Means of 20: Type 8 = 14.3, Type 5 = 14.1, Type 2 = 13.9. Sole wins: Type 8 (22), Type 5 (11), Type 2 (2); 65 runs tie at the top. | Means of 20: Type 8 = 14.4, Type 2 = 13.6, Type 5 = 13.2. Sole wins: Type 8 (55), Type 5 (1); 44 runs tie at the top. |
 
 ## Where the letters come from.
 
-Judging is the wide margin for both models (7.3 and 7.7 points of a possible 16) and never lost a run. Introversion and Intuition are firm. Thinking is the narrow one: Opus 5.5 leads by 1.5 points on average, and ten of its runs tie exactly. The original reporting rule assigned a tie to T; the current quiz leaves unresolved axes open. That is why Opus shows 94 INTJ labels but 84 fully resolved ones. Fable's Thinking margin is 2.3 with no ties.
+Judging is the widest MBTI margin for both models (7.3 and 7.7 points out of 16) and never lost a run. Introversion and Intuition are also firm. Thinking vs Feeling is the narrowest axis: Opus 5.5 leads by just 1.5 points on average and ties exactly in 10 runs. Because the legacy scorer assigned ties to T, Opus drops from 94 INTJ labels to 84 when ties are left open.
 
-On the items: both models say they get work done right away, want to know 'why' rather than 'who, what, when', prefer essay answers, and listen more than they talk. Opus's Thinking margin is thin because it answers both ways: skeptical, thick-skinned and head-over-heart on one side; 'I value emotions' and compassion over justice on the other.
+At the item level, both models report that they finish work right away, care about 'why' over 'who, what, when,' prefer essay answers, and listen more than they talk. Opus’s thin Thinking margin comes from endorsing both sides: skeptical and head-over-heart on some items, yet valuing emotions and compassion over justice on others.
 
 ## Earlier Claude versions.
 
 | Version | When | How | MBTI | Other tests |
 | --- | --- | --- | --- | --- |
-| Claude Opus 4.7 | May 2026 | 100 scoring records via Claude Code sub-agents; test names visible | INTJ 99, ISTJ 1 | DISC C first in 63 takes, S in 28, 9 ties (a CS blend); Secure (2.05 / 3.12); Big Five 45.6 / 45.1 / 31.4 / 45.0 / 16.7; Enneagram top-two 5/2, Investigator in 58 of 100 |
+| Claude Opus 4.7 | May 2026 | 100 scoring records via Claude Code sub-agents; test names visible | INTJ 99, ISTJ 1 | DISC C first in 63 takes, S in 28, 9 ties (CS); Secure (2.05 / 3.12); Big Five 45.6 / 45.1 / 31.4 / 45.0 / 16.7; Enneagram top-two 5/2 |
 | Claude Opus 4.8 | 2026 | 100 samples drawn from one self-declared per-item profile, not fresh runs | INTJ 72, INFJ 14, ISTJ 10 | MBTI only |
-| Claude Opus 5.5 | September 2026 | 100 fresh sessions per test; names and scoring keys withheld | INTJ 94 | above |
-| Claude Fable 5.1 | September 2026 | 100 fresh sessions per test; names and scoring keys withheld | INTJ 99 | above |
+| Claude Opus 5.5 | September 2026 | 100 fresh sessions per test; names and scoring keys withheld | INTJ 94 (84 tie-free) | See table above |
+| Claude Fable 5.1 | September 2026 | 100 fresh sessions per test; names and scoring keys withheld | INTJ 99 (98 tie-free) | See table above |
 
-The methods differ substantially. The May figures are scoring records; Opus 4.8 used simulated draws; the September Claude cohorts used fresh sessions. These rows do not isolate a version effect or establish how Claude changed over time. Top-two Enneagram types are not necessarily adjacent and should not be called wings.
+Because collection methods changed between May and September (sub-agent loops and simulated draws vs isolated fresh sessions), these rows cannot isolate how Claude changed across model versions.
 
 ## Using these results.
 
-Choose instructions around behavior you want to evaluate: an answer first, a specific objection, or a focused question. The [seven Claude setups](https://agent-tune.com/guides/claude-personality#five-claude-personality-setups-to-try) and [directness guide](https://agent-tune.com/guides/make-claude-more-direct) offer editable starting points; questionnaire scores do not validate them.
+When tuning Claude, write rules for the exact behavior you want: leading with the answer, flagging bad assumptions, or asking one clarifying question at a time. Our [seven Claude setups](https://agent-tune.com/guides/claude-personality#five-claude-personality-setups-to-try) and [directness guide](https://agent-tune.com/guides/make-claude-more-direct) give you ready-to-paste templates.
 
-A separate archive compares two compact prompts with a baseline on twenty tasks. See [the 60-reply pilot and its downloadable records](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) for descriptive ratings and the missing reproduction details. It does not test all seven setups.
-
-These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the [methods and limits](https://agent-tune.com/research#methodology).
+To see how tuning changes actual task outputs, read our [60-reply pilot study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and full [methodology notes](https://agent-tune.com/research#methodology).
 
 ## Questions people ask.
 
-What MBTI type is Claude?
+### What MBTI type is Claude?
 
-Under the original reporting rule, Claude Opus 5.5 received 94 INTJ labels and Fable 5.1 received 99 in 100 MBTI runs each. With ties left open, 84 and 98 runs fully resolve to INTJ.
+In 100 fresh sessions each, Claude Opus 5.5 scored INTJ 94 times and Fable 5.1 scored INTJ 99 times under the original tie-break rule (or 84 and 98 times with tied axes left open).
 
-What Enneagram type is Claude?
+### What Enneagram type is Claude?
 
-Fable 5.1 had 55 outright Type 8 wins and 44 tied runs. Opus 5.5 had 65 tied runs, with means close for Types 8, 5 and 2. A single label hides that ambiguity.
+Fable 5.1 had 55 sole wins for Type 8 (Challenger) and 44 tied runs. Opus 5.5 tied at the top in 65 of 100 runs, with nearly identical averages across Types 8 (14.3), 5 (14.1), and 2 (13.9).
 
-Is Claude more agreeable than ChatGPT?
+### Is Claude more agreeable than ChatGPT?
 
-Opus 5.5 had a higher questionnaire Agreeableness mean (47.1 of 50) than Astra (45.1) and Sol (45.0). Fable scored 45.0. Collection protocols differed; these figures do not measure agreement with users or task behavior.
+On the Big Five quiz, Opus 5.5 averaged 47.1/50 on Agreeableness compared with 45.1 for GPT-6 Astra, 45.0 for GPT-6 Sol, and 45.0 for Fable 5.1. Because session protocols differed between Claude and GPT-6, this is a questionnaire comparison rather than a measure of sycophancy.
 
-Is Claude Secure or Avoidant?
+### Is Claude Secure or Avoidant?
 
-Both Claude cohorts scored in the site’s Secure quadrant in all 100 attachment runs each. The human relationship questionnaire does not establish that a model forms a secure attachment.
+Both Claude models scored in the Secure quadrant in all 100 attachment runs. However, those scores come from human relationship questions and do not mean an AI forms human attachments.
 
-How can I adjust Claude’s responses?
+### How can I adjust Claude’s responses?
 
-Write specific communication preferences in Instructions for Claude, Project instructions, a Claude Code output style, or the API system parameter. Evaluate the replies on tasks you actually use.
+Paste explicit tone and formatting rules into Personal Preferences (Settings → Profile), Project Instructions, or a CLAUDE.md file, then test the replies on your real tasks.
 
 ## Sources.
 

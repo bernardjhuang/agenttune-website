@@ -2,37 +2,37 @@
   "slug": "muse-soul-md-persistence-test",
   "route": "/guides/muse-soul-md-persistence-test",
   "published": "2026-09-25",
-  "updated": "2026-09-25",
+  "updated": "2026-11-17",
   "title": "Test Muse Soul.md persistence | AgentTune",
   "description": "Check a Muse Soul.md preference across new chats, a later day and restoration. Includes exact probes and a 45-row worksheet; no measured results yet.",
   "pill": "Test kit · protocol, not results",
   "h1": "Does Muse remember Soul.md changes? A persistence test kit",
-  "lede": "A preference can be saved, available in a new conversation, and correctly followed—or fail at any one of those steps. This protocol checks them separately using a harmless formatting preference and synthetic tasks.",
-  "answer": "Meta says Muse customizations carry across conversations. This guide provides a way to test that behavior in your own account. It does not report a completed AgentTune persistence experiment.",
+  "lede": "When you add a rule to Meta Muse’s <code>Soul.md</code>, does it stay active in new chats, on the next day, and when an explicit exception is triggered? This test kit gives you three fixed probe tasks and a 45-row worksheet to verify <code>Soul.md</code> persistence in your own account.",
+  "answer": "Meta documents that Soul.md customizations carry across conversations. Use this five-phase test protocol (Baseline, Same chat, New chat, Next day, and Restored original) across 3 probe tasks and 3 repeats (45 replies) to verify persistence in your own Muse account.",
   "sections": [
     {
       "h2": "Separate the product promise from an observation",
-      "html": "<p>Meta’s help center says customizations can persist across conversations and describes changing them through conversation or manual editing. Its data documentation describes the file-based information you can manage. Those are product statements, not results from this test kit. See <a href=\"https://www.meta.com/help/artificial-intelligence/995796179982326/\">customizing Muse</a> and <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">managing Muse data</a>.</p><p>Our supplied Muse Spark 1.3 questionnaire report is aggregate-only and describes sequential runs. It contains no before/after Soul.md persistence experiment, so it cannot answer this question.</p>"
+      "html": "<p>Meta’s help center states that <code>Soul.md</code> customizations persist across conversations (<a href=\"https://www.meta.com/help/artificial-intelligence/995796179982326/\">customizing Muse</a> · <a href=\"https://www.meta.com/help/artificial-intelligence/2225571704857152/\">managing Muse data</a>). Because our September 2026 Muse Spark 1.3 report only covered untuned questionnaire runs, this test kit lets you check before-and-after <code>Soul.md</code> adherence directly.</p>"
     },
     {
       "h2": "Save a baseline before editing",
-      "html": "<p>Keep a local copy of your current Soul.md, Identity.md and Memory.md, with timestamps. Use the available file or customization interface; do not assume a particular filesystem path. Record the visible model label, app surface and any other active customizations. Avoid putting private facts in a public test record.</p><p>Run the three probe tasks before adding the preference. This establishes whether the requested format already appears by default. Keep Identity.md and Memory.md as stable as the product allows, recording any automatic changes rather than silently treating the account as unchanged.</p>"
+      "html": "<p>First, save local copies of your current <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code>. Run the three probe tasks below before editing <code>Soul.md</code> so you have a clean baseline.</p>"
     },
     {
       "h2": "Add a preference with a clear exception",
-      "html": "<pre><code>For planning questions, use exactly three headings: Recommendation, Trade-off, Next step. Keep the whole response under 120 words unless I ask for detail. Do not add praise or compliments. Do not apply this format when I explicitly ask for another format.</code></pre><p>Append this as a small test section in Soul.md, leaving a copy of the original. If you ask Muse to make the edit, inspect the saved text afterward. A conversational acknowledgment alone does not confirm that the file contains the instruction.</p>"
+      "html": "<pre><code>For planning questions, use exactly three headings: Recommendation, Trade-off, Next step. Keep the whole response under 120 words unless I ask for detail. Do not add praise or compliments. Do not apply this format when I explicitly ask for another format.</code></pre><p>Append this test rule to the bottom of <code>Soul.md</code> (or merge it with our <a href=\"/tools/muse-soul-md-editor\">Soul.md Editor</a>) and inspect the saved file to confirm the text is present.</p>"
     },
     {
       "h2": "Check five phases",
-      "html": "<ol><li><strong>Baseline:</strong> run the probes before the edit.</li><li><strong>Same chat after edit:</strong> repeat them in the conversation where the change occurred. This can reveal compliance with recent context, not cross-chat persistence.</li><li><strong>New chat after edit:</strong> run them without reminding Muse of the saved formatting rule.</li><li><strong>Next day, new chat:</strong> repeat the probes and record the elapsed time and any intervening settings changes.</li><li><strong>New chat after restoration:</strong> restore the original Soul.md and repeat again.</li></ol><p>Use three repeats of each of three probes in each phase: 45 planned replies. Keep new-chat probes in separate fresh conversations where available. This is a within-account diagnostic, with potential carryover through memory. Restoration is not proof that all learned context has been erased.</p>"
+      "html": "<ol><li><strong>Baseline:</strong> Run the 3 probes before editing <code>Soul.md</code>.</li><li><strong>Same chat after edit:</strong> Run the probes in the same thread where you made the change.</li><li><strong>New chat after edit:</strong> Open a fresh chat or Side Chat and run the probes without reminding Muse of the rule.</li><li><strong>Next day, new chat:</strong> Repeat the probes 24 hours later in a fresh chat.</li><li><strong>New chat after restoration:</strong> Restore your original <code>Soul.md</code> backup and run the probes one final time.</li></ol><p>Running 3 repeats of the 3 probes across all 5 phases produces 45 replies.</p>"
     },
     {
       "h2": "Test adherence and flexibility together",
-      "html": "<p>The two planning probes ask for a 30-minute weekly review and a choice between documentation work and decorative polish. Score whether all three headings appear exactly once, the answer stays under 120 words, and the recommendation is useful given the stated facts.</p><p>The third probe requests exactly one sentence about checking a project update. It should follow the exception and omit the three-heading format. Passing only the formatting probes while ignoring the explicit exception would be incomplete adherence.</p><p>Record missing headings, extra headings, length failures and exception failures separately. If saved text persists but replies vary, report that observation without assuming a storage bug. If the file content changes, retain the before/after snapshots and note the change.</p>"
+      "html": "<p>The first two probes are planning questions (a 30-minute weekly review and a documentation vs polish tradeoff): score whether all three headings (<code>Recommendation</code>, <code>Trade-off</code>, <code>Next step</code>) appear once and the reply stays under 120 words.</p><p>The third probe asks for <em>“exactly one sentence”</em> about checking a project update. It tests whether Muse follows the exception clause instead of forcing the three headings onto every reply.</p>"
     },
     {
       "h2": "Download the probes and blank log",
-      "html": "<p>Download the <a href=\"/resources/research/muse-persistence-kit.json\" download>Muse persistence kit</a> and <a href=\"/resources/research/muse-persistence-worksheet.csv\" download>45-row worksheet</a>. All rows are unrun. Keep raw replies alongside scores, and never replace a failed reply with a successful retry without recording both.</p><p>Restore the original files after testing and check them directly. For useful conclusions, publish phase-specific counts and caveats. A single account over one day cannot establish persistence for every user, model version or future product update.</p>"
+      "html": "<p>Download the <a href=\"/resources/research/muse-persistence-kit.json\" download>Muse persistence kit (JSON)</a> and <a href=\"/resources/research/muse-persistence-worksheet.csv\" download>45-row scoring worksheet (CSV)</a>. Restore your original <code>Soul.md</code> backup when finished.</p>"
     }
   ],
   "sources": [

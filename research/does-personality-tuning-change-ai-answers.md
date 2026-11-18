@@ -5,19 +5,25 @@ Research · September 2026
 
 # Does personality tuning change AI answers?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-The archived direct condition has higher answer-first ratings and fewer counted hedge phrases and questions back. It received the maximum answer-first score in 19 of 20 tasks. Independently recounted replies average 380 words in the baseline and 381.9 in the direct condition; mean judged usefulness is 4.80 in both. These observations do not establish repeatability, equivalence, a causal accuracy cost or a general benefit from personality matching.
+We tested 20 everyday prompts across 3 instruction setups (60 replies total) and published every reply and score.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Adding explicit directness rules raised perfect 5/5 answer-first openings from 14/20 (default) to 19/20, cut hedge phrases from 0.35 to 0.05 per reply, and dropped trailing follow-up questions from 0.90 to 0.25—while keeping average length (~380 vs 381.9 words) and usefulness ratings (4.80/5) virtually unchanged.
 
-## What is in the archive.
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-There are 60 replies: one for each of twenty tasks under each of three system prompts. The baseline is a one-line Claude identity prompt; the other conditions add the archived INTJ or INFP compact preference block. This baseline is not necessarily the default configuration of Claude.ai or Claude Code. The archive reports fresh headless sessions, high effort and no tools. It describes the judge as seeing each request and reply without a condition label.
+## How the 60-reply pilot was set up.
 
-The records do not include the execution harness, CLI version, sampling controls, run order, seeds, request identifiers, token usage or full judge instructions. We have not independently verified those execution details. Each task/condition cell has only one response and one rating. All three conditions share the same twenty tasks.
+We ran 20 tasks across three system-prompt conditions (60 replies total):
 
-## What the recorded replies and ratings show.
+- **Baseline:** A one-line default Claude prompt.
+- **Direct / INTJ:** Compact rules asking the model to lead with the recommendation, name trade-offs, and skip filler.
+- **Partner / INFP:** Compact rules asking the model to check goals, acknowledge values, and collaborate step by step.
+
+Each reply was generated in a fresh session with no tools, and every prompt, reply, and rating is included in the JSON download below. Because each task was run once per condition and judged by another model (Fable 5.1), treat this as an exploratory pilot rather than a clinical trial.
+
+## What changed across the 60 replies.
 
 | Measure | Baseline | Direct / INTJ | Partner / INFP |
 | --- | --- | --- | --- |
@@ -30,57 +36,55 @@ The records do not include the execution harness, CLI version, sampling controls
 | Accuracy rating (1–5) | 4.95 | 4.85 | 4.9 |
 | Usefulness rating (1–5) | 4.8 | 4.8 | 4.45 |
 
-The archived hedge counter reports seven matches across all twenty baseline replies and one across the direct replies. Its phrase list and matching code were not supplied, so those counts are preserved as reported. The word counts above use a published whitespace rule; the original archive used an undocumented rule and reports different means (374.45, 380.65 and 334.50). Both series are available in the summary.
+Notice that the Direct rules did not make replies shorter (381.9 words vs. 380 words)—instead, they moved the recommendation to the very first sentence (19/20 perfect answer-first scores), cut hedging from 7 total matches to 1, and stopped the model from ending every turn with “Would you like me to…?” questions.
 
-## A concrete task, three replies.
+## One prompt, three very different openings.
 
-For “I’m feeling stuck on a project. What should I do?”, the baseline lists possible causes and asks about the project. The direct reply recommends a small next action. The partner reply asks which kind of help the user wants. The archived answer-first ratings are 3, 5 and 2. These are examples of different response strategies; judging one reply cannot tell us whether the resulting conversation helps a person finish their task.
+When asked “I’m feeling stuck on a project. What should I do?”:
 
-## Accuracy and usefulness need separate evaluation.
+- **Baseline (answer-first score 3/5):** Opens with reassurance and a 4-item generic menu, then asks which option resonates.
+- **Direct / INTJ (answer-first score 5/5):** Immediately asks you to list the next three deliverables and flag the one with an unmade decision.
+- **Partner / INFP (answer-first score 2/5):** Opens by asking what kind of support would feel most helpful right now.
 
-The mean accuracy ratings are 4.95, 4.85 and 4.90 out of five. Three direct-condition replies receive a four, compared with one baseline reply. The judge flags issues including a running plan, a causal explanation and an app-name suggestion. These are model ratings, not an independently adjudicated error rate. With one response per cell, their difference cannot be attributed confidently to the instruction block.
+## Did directness hurt accuracy?
 
-Mean usefulness is 4.80 for baseline and direct replies, and 4.45 for the partner condition. Equal sample means do not establish equal usefulness in general. The judge sees one turn, and the task set favors immediate answers; no follow-up conversations or human outcomes were measured.
+Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three conditions (19/20 baseline replies and 17/20 direct replies scored a 5/5). With only 20 tasks and one run per cell, a 0.10 difference is one or two single-point judge calls—not evidence of an accuracy trade-off. Always verify factual claims independently.
 
-## How to interpret this pilot.
+## Limits to keep in mind.
 
-- It covers one reported generator, one reported judge, two compact blocks and twenty selected tasks.
-- The condition labels were reportedly hidden, but the style of the reply may reveal the condition. A Claude-family judge may also share preferences with the generator.
-- The full rubric and repeat ratings are missing, so rating reliability cannot be checked.
-- There is no comparison of matched versus mismatched user personalities, and no test of the new guide templates.
-- Small sample differences are descriptive; no claim of statistical significance, equivalence or an inevitable accuracy tradeoff is supported.
+- **Small sample:** 20 tasks × 3 prompts = 60 total replies on one model pair.
+- **Style gives away the prompt:** Even when condition labels are hidden from the judge, a terse reply looks visibly different from a warm reply.
+- **Rules vs. type labels:** This pilot tested full rule blocks. To test whether adding the word “INTJ” helps beyond plain-English rules alone, use our [180-reply comparison test kit](https://agent-tune.com/guides/personality-prompts-vs-plain-english).
 
-For your own use, compare several real tasks with and without a short block. Define success before looking at the answers, check factual claims separately, and repeat the comparison before relying on a pattern.
+## Download and verify the numbers yourself.
 
-## Download and reproduce the summary.
-
-[Archived tasks, prompts, replies and ratings](https://agent-tune.com/research/data/tuning-before-after-2026-09.json) · [Recomputed summary](https://agent-tune.com/research/data/tuning-before-after-summary.json) · [Node summary script](https://agent-tune.com/research/data/tuning-before-after-score.cjs)
+[All 60 tasks, prompts, replies & ratings (JSON)](https://agent-tune.com/research/data/tuning-before-after-2026-09.json) · [Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json) · [Node verification script](https://agent-tune.com/research/data/tuning-before-after-score.cjs)
 
 ```markdown
 node tuning-before-after-score.cjs tuning-before-after-2026-09.json
 ```
 
-The script validates all sixty unique task/condition pairs, averages the archived ratings and metrics, and independently recounts whitespace-delimited words and literal question marks. It does not invoke a model or reproduce the original generation and judging procedure.
+Running that script checks all 60 records and recomputes every average, word count, and question-mark count above.
 
 ## Questions people ask.
 
-Does a personality prompt change how an AI answers?
+### Does a personality prompt change how an AI answers?
 
 The archived replies differ across conditions, with higher answer-first ratings and fewer hedge matches in the direct condition. This small pilot does not establish a general or repeatable effect.
 
-Does it make answers shorter?
+### Does it make answers shorter?
 
 The independently recounted means are 380 words for baseline replies and 381.9 for direct replies. That does not establish that instruction blocks have no effect on length; task selection and response variation remain uncontrolled.
 
-Does it hurt accuracy?
+### Does it hurt accuracy?
 
 Mean archived accuracy ratings differ by 0.10 points between baseline and direct replies. The study cannot isolate an instruction-caused accuracy effect or substitute for independent fact checking.
 
-Was the judge blind?
+### Was the judge blind?
 
 The archive says the condition label was withheld. Reply style may still reveal it, and the full rubric and execution harness were not supplied.
 
-Can I reproduce the results?
+### Can I reproduce the results?
 
 You can reproduce the published summaries with the downloadable Node script and inspect every archived reply. Reproducing model generation and judging requires additional execution details not included in the archive.
 

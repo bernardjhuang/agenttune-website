@@ -5,9 +5,11 @@ Guide · Prompt Engineering
 
 # AI style and verbosity controls: 5 deterministic rules that beat adjectives.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Replace vague tone adjectives with five explicit style controls: (1) an Opening Rule ('state the answer in sentence one'), (2) a List & Table Threshold ('prose by default; lists/tables only for 3+ parallel items'), (3) a Proportional Verbosity Scale ('1–3 sentences for lookups, full tradeoffs for irreversible decisions'), (4) a Pushback Trigger ('name the weakest assumption before implementing'), and (5) an Uncertainty Clause ('flag material uncertainty instead of guessing').
+Telling an LLM to 'be concise, smart, and natural' barely moves output structure. Giving it five checkable structural triggers changes every reply.
+
+**Quick answer:** Replace vague tone adjectives with five checkable rules: (1) Opening Rule ('state the answer in sentence one'), (2) List & Table Threshold ('prose by default; lists or tables only for 3+ items'), (3) Proportional Verbosity ('1–3 sentences for lookups, full tradeoffs for high-stakes decisions'), (4) Pushback Trigger ('name the weakest assumption before implementing'), and (5) Uncertainty Clause ('flag material uncertainty instead of guessing').
 
 ## Adjectives vs. checkable style controls.
 
@@ -21,13 +23,13 @@ Replace vague tone adjectives with five explicit style controls: (1) an Opening 
 
 ## What measured pilot data shows when you use explicit controls.
 
-We tested explicit structural rules head-to-head against untuned defaults in our [60-reply before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 real tasks × 3 conditions):
+We tested explicit structural rules against untuned defaults in our [60-reply before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 real tasks × 3 setups):
 
-- Answer-first rate (top 5/5 rubric score): Rose from 14/20 under default prompting to 19/20 under explicit straight rules.
-- Hedging phrases per reply: Dropped from 0.35 per reply to 0.05.
-- Trailing follow-up questions: Dropped from 0.90 per reply to 0.25 when the block specified asking questions only on material ambiguity.
+- **Answer-first rate (5/5 rubric score):** Rose from **14/20** on default prompts to **19/20** with explicit rules.
+- **Hedging phrases per reply:** Dropped from **0.35** to **0.05**.
+- **Trailing follow-up questions:** Dropped from **0.90** to **0.25** when the prompt limited questions to real blockers.
 
-Notice why the fifth control ("flag material uncertainty explicitly") must always pair with anti-hedging rules: banning filler disclaimers ("As an AI, it's important to consider...") should sharpen real epistemic caveats ("Unverified: depends on whether your Postgres version is 15 or 17"), never suppress them. Our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) flags prompts that accidentally ban legitimate uncertainty reporting.
+Always pair anti-hedging rules with rule #5 (“flag material uncertainty explicitly”). Banning filler disclaimers (“As an AI...”) should sharpen real technical caveats—never force the model to guess when facts are missing. Our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) flags prompts that accidentally ban honest uncertainty.
 
 ## Three ready-to-paste register profiles.
 
@@ -65,23 +67,23 @@ Notice why the fifth control ("flag material uncertainty explicitly") must alway
 - Honesty: Point out blind spots candidly while keeping space open to iterate.
 ```
 
-Customize all five dials interactively in our [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder), or read [how to stop AI sycophancy](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back).
+Tune all five controls interactively in our [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder), or see [how to stop AI sycophancy](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back).
 
 ## Questions people ask.
 
-How do I stop ChatGPT or Claude from putting bullet points in every single answer?
+### How do I stop ChatGPT or Claude from putting bullet points in every single answer?
 
 Don't write 'Never use bullet points'—write a threshold rule: 'Default to plain paragraphs. Use bullet lists only for sequential steps and tables only when comparing 3 or more items across shared criteria.' Threshold rules stop reflex bullets without breaking checklists.
 
-Why does 'be concise' make AI answers unhelpful on hard problems?
+### Why does 'be concise' make AI answers unhelpful on hard problems?
 
 A flat 'be concise' instruction penalizes depth equally on trivial lookups and complex debugging. Use proportional verbosity instead: '1–3 sentences for simple factual questions; full mechanism and tradeoffs for architecture, security, or irreversible changes.'
 
-Do personality labels like 'Act as an INTJ' work better than explicit style rules?
+### Do personality labels like 'Act as an INTJ' work better than explicit style rules?
 
 Explicit behavioral rules carry the predictable effect because the model can verify 'answer in sentence one' directly. Personality types (MBTI, DISC, Enneagram) are most useful as a fast human discovery shortcut for choosing which explicit rules fit you—see our 180-reply comparison protocol for testing label vs plain-English rules.
 
-How do I cut AI hedging without encouraging hallucinated certainty?
+### How do I cut AI hedging without encouraging hallucinated certainty?
 
 Ban performative throat-clearing ('Great question!', 'It is important to remember...') while explicitly requiring calibrated uncertainty ('Separate verified facts from inference and state material uncertainty when evidence is incomplete').
 

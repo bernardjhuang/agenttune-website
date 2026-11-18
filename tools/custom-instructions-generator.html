@@ -115,25 +115,25 @@
           </table>
         </div>
         <h2>How it works &amp; common questions.</h2>
-        <p>These are editable communication preferences, not a way to increase a model’s underlying reasoning abilities. Changing an app, destination, or preference regenerates the output; audit existing prompts for contradictions anytime in the <a href="/tools/instruction-checker">Instruction Checker</a>.</p>
+        <p>These rules change how an AI structures and delivers replies—they don’t change its base reasoning power. Pick your app or preference above to update the text, or paste your current prompt into the <a href="/tools/instruction-checker">Instruction Checker</a> to spot conflicts.</p>
         <details class="lib-disclosure" open>
           <summary>Where do I paste ChatGPT custom instructions on web and mobile?</summary>
-          <p>On <code>chatgpt.com</code> or the ChatGPT iOS/Android app, open your Profile menu, tap <strong>Personalization</strong> (or <strong>Customize ChatGPT</strong>), enable Custom Instructions, and paste your generated rules into <em>“How would you like ChatGPT to respond?”</em> Each field enforces a 1,500-character limit.</p>
+          <p>Open <code>chatgpt.com</code> or the ChatGPT mobile app, go to <strong>Settings → Personalization → Custom Instructions</strong>, and paste your rules into <em>“How would you like ChatGPT to respond?”</em> Each box holds up to 1,500 characters.</p>
         </details>
         <details class="lib-disclosure">
           <summary>How do ChatGPT Projects interact with account-wide Custom Instructions?</summary>
-          <p>Project-level instructions take precedence inside that Project whenever two rules conflict. Keep a compact 6–10 line communication block in global Custom Instructions and place repo, client, or schema rules inside the Project (<a href="/guides/chatgpt-projects-vs-custom-instructions">full precedence guide</a>).</p>
+          <p>Inside a ChatGPT Project, Project Instructions override your account-wide Custom Instructions whenever two rules conflict. Keep a short 6–10 line voice block in global settings and put project-specific schemas or repo rules inside the Project (<a href="/guides/chatgpt-projects-vs-custom-instructions">full precedence guide</a>).</p>
         </details>
         <details class="lib-disclosure">
           <summary>Do I need to take a personality test to use this generator?</summary>
-          <p>No. The default <strong>My communication preferences</strong> mode builds clean rules directly from four behavioral toggles. Switching to <strong>A personality template</strong> lets you preview all 43 MIT-licensed tunings across MBTI, Enneagram, DISC, Attachment, and Big Five without taking a test.</p>
+          <p>No. The default <strong>My communication preferences</strong> mode builds rules directly from four simple checkboxes. Or switch to <strong>A personality template</strong> to preview all 43 MIT templates across MBTI, Enneagram, DISC, Attachment, and Big Five without taking a test.</p>
         </details>
         <details class="lib-disclosure">
           <summary>Are my generated instructions or edits sent to a server?</summary>
-          <p>No. Everything runs client-side in your browser. Drafts stay in <code>localStorage</code> for up to 7 days (Reset clears them immediately), and share links encode only dropdown selections—never your edited text or test answers.</p>
+          <p>No. Everything runs in your browser tab. Drafts stay in <code>localStorage</code> for up to 7 days (click Reset to clear them), and share links only save your dropdown picks—never your edited text or quiz answers.</p>
         </details>
         <h3 style="margin-top:20px">Compact ChatGPT vs Full Markdown output.</h3>
-        <p>ChatGPT Personalization caps each box at 1,500 characters, so selecting ChatGPT above automatically outputs compact behavioral rules (~300–900 characters) instead of a full Markdown file. Selecting Claude, Codex, Cursor, or Markdown gives the complete rule set with headings and boundary clauses.</p>
+        <p>ChatGPT Personalization caps each box at 1,500 characters. When you pick ChatGPT above, the generator outputs a compact rule block (~300–900 characters) that fits cleanly. Picking Claude, Codex, Cursor, or Markdown gives you the full rule set with headings and safety boundaries.</p>
         <div class="guide-table-wrap">
           <table>
             <thead>

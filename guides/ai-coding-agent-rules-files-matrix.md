@@ -5,9 +5,11 @@ Reference · Coding Agent Rules
 
 # CLAUDE.md vs. AGENTS.md vs. .cursorrules: file locations, limits, and shared setup.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Use AGENTS.md for cross-tool open standards (Codex CLI and compatible agents; 32 KiB default project_doc_max_bytes cap), CLAUDE.md and .claude/rules/*.md for Claude Code, .cursor/rules/*.mdc for Cursor, .github/copilot-instructions.md for GitHub Copilot, and GEMINI.md for Gemini Code Assist. Maintain one single source of truth and import or merge preferences cleanly.
+A side-by-side matrix of every major coding agent instruction file so your repo never drifts across Claude Code, Codex, Cursor, Copilot, and Gemini CLI.
+
+**Quick answer:** Use AGENTS.md for cross-tool repo rules (Codex CLI and compatible agents; 32 KiB default cap), CLAUDE.md and .claude/rules/*.md for Claude Code, .cursor/rules/*.mdc for Cursor, .github/copilot-instructions.md for GitHub Copilot, and GEMINI.md for Gemini Code Assist. Keep repo build rules in one file and store personal communication style in user-global configs.
 
 ## Complete repository rules matrix across 5 coding agents.
 
@@ -21,12 +23,12 @@ Use AGENTS.md for cross-tool open standards (Codex CLI and compatible agents; 32
 
 ## How to keep one single source of truth across tools without drift.
 
-Two simple repository patterns prevent conflicting build or tone rules across tools:
+Two simple habits prevent conflicting rules across coding agents:
 
-- Put shared architectural facts in AGENTS.md: Build commands, test runners, protected directories, and commit rules stay canonical in AGENTS.md. Keep CLAUDE.md ultra-short with an explicit pointer (for example @AGENTS.md plus Claude-only slash-workflow notes).
-- Keep personal tone in user-global files, not committed repo files: Don&rsquo;t force teammates into your personal banter or verbosity rules via Git. Put personal working style in ~/.claude/CLAUDE.md, ~/.codex/AGENTS.md, or CLAUDE.local.md.
+- **Keep shared repo rules in `AGENTS.md`:** Put build commands, test runners, protected directories, and commit rules in `AGENTS.md`. Keep `CLAUDE.md` short with an `@AGENTS.md` import plus any Claude-specific notes.
+- **Keep personal tone in user-global files:** Do not commit personal verbosity or tone preferences to the team repo. Save personal style in `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, or a gitignored `CLAUDE.local.md`.
 
-Starter communication block ideal for personal global coding-agent files (~360 characters):
+Starter communication block for personal global coding-agent files (~360 characters):
 
 ```markdown
 ## Personal Engineering Communication Style
@@ -39,23 +41,23 @@ Starter communication block ideal for personal global coding-agent files (~360 c
 
 ## Why oversized rules files silently drop instructions.
 
-In OpenAI Codex CLI, combining root and nested AGENTS.md files stops reading once the combined size hits project_doc_max_bytes (32 KiB default in ~/.codex/config.toml; see our [GPT-6 Astra setup guide](https://agent-tune.com/guides/astra-personality)). In all coding agents, dumping entire style encyclopedias into top-level rules dilutes signal on build commands and error constraints. Keep root instructions tight (~100–250 lines), split topic-specific patterns into glob-matched files (.cursor/rules/*.mdc, .claude/rules/*.md, *.instructions.md), and safely append personal tone using our [Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter).
+OpenAI Codex CLI stops reading `AGENTS.md` files once the combined chain hits `project_doc_max_bytes` (32 KiB default in `~/.codex/config.toml`; see our [GPT-6 Astra guide](https://agent-tune.com/guides/astra-personality)). Across all coding agents, giant root instruction files drown out critical build and test commands. Keep root files under 100–250 lines, move file-specific rules into glob files (`.cursor/rules/*.mdc`, `.claude/rules/*.md`, `*.instructions.md`), and merge personal rules safely with our [Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter).
 
 ## Questions people ask.
 
-Does Cursor read AGENTS.md or only .cursor/rules?
+### Does Cursor read AGENTS.md or only .cursor/rules?
 
 Cursor natively uses .cursor/rules/*.mdc (and legacy .cursorrules) for project rules alongside AGENTS.md compatibility in newer agent workflows. Keeping AGENTS.md canonical and referencing or syncing concise Cursor rules prevents drift.
 
-Should personal personality instructions be committed into repo AGENTS.md?
+### Should personal personality instructions be committed into repo AGENTS.md?
 
 Keep repo-committed AGENTS.md and CLAUDE.md focused on build commands, code style, security constraints, and tests. Place personal communication preferences in global user files (~/.claude/CLAUDE.md, ~/.codex/AGENTS.md) or gitignored CLAUDE.local.md.
 
-What happens if AGENTS.md exceeds 32 KiB in Codex CLI?
+### What happens if AGENTS.md exceeds 32 KiB in Codex CLI?
 
 Codex CLI stops loading additional AGENTS.md bytes past project_doc_max_bytes (default 32 KiB), which can silently cut off nested directory rules unless split cleanly or raised intentionally in ~/.codex/config.toml.
 
-How do I merge my AgentTune style into an existing CLAUDE.md without deleting repo commands?
+### How do I merge my AgentTune style into an existing CLAUDE.md without deleting repo commands?
 
 Use the AgentTune Instruction Converter & Merger: it wraps your communication preferences in labeled HTML comment markers and preserves every existing line outside those markers.
 

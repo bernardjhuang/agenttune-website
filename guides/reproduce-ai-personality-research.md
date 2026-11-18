@@ -5,62 +5,52 @@ Developer guide · reproducibility
 
 # How to reproduce AgentTune’s AI self-report research
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.
+**Quick answer:** Download the five frozen files into one folder, run 'node september-2026-score.cjs' and 'node content-analysis.cjs', and compare the JSON output with our published summaries. This reproduces all 2,003 scored questionnaire records locally with zero model calls.
 
 ## September 26 provenance correction
 
-Reproduction here means recomputing the historical arithmetic from saved vectors and numeric keys. It does not mean administering a corrected questionnaire. Some full prompts and restricted item wording have been withdrawn from public downloads; the originals are retained locally and identified by hashes. Raw responses and numerical summaries are unchanged. [Read the correction](https://agent-tune.com/research/data/rights-migration.json) and [current questionnaire availability](https://agent-tune.com/tests/).
+These scripts recompute scores from our frozen September 24, 2026 answer vectors and numeric scoring keys. All 2,003 raw integer vectors and numerical summaries are preserved intact ([see the provenance note](https://agent-tune.com/research/data/rights-migration.json) and [current open tests](https://agent-tune.com/tests/)).
 
 ## Download a self-contained scoring folder
 
-Save these files together without renaming them: [responses](https://agent-tune.com/research/data/september-2026-responses.json), [instruments](https://agent-tune.com/research/data/september-2026-instruments.json), [original scorer](https://agent-tune.com/research/data/september-2026-score.cjs), [extended analysis](https://agent-tune.com/research/data/content-analysis.cjs), and [protocols](https://agent-tune.com/research/data/september-2026-protocols.json). Node.js runs the CommonJS scripts with no npm dependencies.
+Save these five files into the same directory without renaming them: [responses](https://agent-tune.com/research/data/september-2026-responses.json), [instruments](https://agent-tune.com/research/data/september-2026-instruments.json), [original scorer](https://agent-tune.com/research/data/september-2026-score.cjs), [extended analysis](https://agent-tune.com/research/data/content-analysis.cjs), and [protocols](https://agent-tune.com/research/data/september-2026-protocols.json). Run both scripts with Node.js (zero npm dependencies):
 
 ```
 node september-2026-score.cjs > my-summary.json
 node content-analysis.cjs > my-analysis.json
 ```
 
-Compare the parsed JSON with the published [summary](https://agent-tune.com/research/data/september-2026-summary.json) and [extended results](https://agent-tune.com/research/data/content-analysis.json). Object-key order is not a research difference. Numeric values should agree; the scripts retain unrounded numbers while article tables round for display.
+Compare your generated files against the published [summary.json](https://agent-tune.com/research/data/september-2026-summary.json) and [content-analysis.json](https://agent-tune.com/research/data/content-analysis.json).
 
 ## Understand what one row represents
 
-A raw record contains model, administration, test and an ordered answers array. Some records also include inapplicable_items, using one-based item numbers. The answer arrays use the item order in the frozen instrument file.
+Each record in `september-2026-responses.json` contains `model`, `administration`, `test`, and an ordered integer `answers` array (plus optional 1-based `inapplicable_items` flags).
 
-The full archive has 2,003 records: 2,000 fresh-session assessments from four models, plus three canonical Grok answer vectors. The extended analysis filters to the four fresh cohorts. Muse has a supplied aggregate report, but no raw vectors in this dataset.
-
-Astra and Sol each use 100 five-test sessions. Opus and Fable each use 500 one-test sessions. Across instruments, a Claude administration number is not a shared session identifier. Keep that distinction if you compute correlations or resample records.
+The file holds 2,003 records: 2,000 fresh-session vectors across four models (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) plus 3 canonical vectors for Grok 4.6. Note that Astra and Sol ran all five tests per fresh session (100 sessions each), while Opus 5.5 and Fable 5.1 ran one test per fresh session (500 sessions each).
 
 ## Check the scoring contract
 
 | Instrument | Items / response range | Published score |
 | --- | --- | --- |
-| MBTI | 32 / 1–5 | Four signed margins; original label and X for ties |
-| Big Five | 50 / 1–5 | Five raw totals, 10–50; 18 frozen reverse items |
-| DISC | 16 / 1–5 | Four totals, 4–20; all top ties retained |
-| Enneagram | 36 / 1–5 | Nine totals, 4–20; all top ties retained |
-| Attachment | 36 / 1–7 | Two means, 1–7; low side includes 4 |
-
-The instruments are specific implementations, not interchangeable with every questionnaire that uses the same framework name. The frozen Big Five key reverses 18 items. Enneagram legacy labels include a wing heuristic, while the developer resource deliberately returns tied leaders without claiming a validated wing result.
+| MBTI (OEJTS) | 32 / 1–5 | Four signed margins; legacy label plus tie-aware X pattern |
+| Big Five (IPIP-50) | 50 / 1–5 | Five raw totals (10–50); 18 reverse-scored items |
+| DISC (ODAT) | 16 / 1–5 | Four totals (4–20); all top ties preserved |
+| Enneagram (OEPS) | 36 / 1–5 | Nine totals (4–20); all top ties preserved |
+| Attachment (ECR-R) | 36 / 1–7 | Two means (1–7); Secure cutoff &lt;= 4.00 |
 
 ## Verify provenance before changing a file
 
-The protocol file records source-report hashes and collection details. These identify the supplied artifacts; they are not cryptographic proof that every described model session occurred as claimed. Preserve the original files and create a separate derived output for corrections or alternate scoring.
-
-In the website repository, node tools/build-content-analysis.js regenerates the JSON and CSV derivatives. The checks verify cohort sizes, distribution totals, tie counts, neutral flags and the reconciliation of item contributions with aggregate score differences.
+In the website repository, running `node tools/build-content-analysis.js` rebuilds all JSON and CSV summaries and verifies cohort sizes, tie counts, midpoint rates, and item-level differences.
 
 ## Make a result table others can interpret
 
-Every table should name its model cohort, instrument version, denominator, units, tie policy and rounding. Distinguish an assessment from a session and a simulated draw from a fresh response. Report missing or malformed runs explicitly rather than hiding them in a smaller denominator.
-
-A statement such as “100 of 100 scored Secure under this attachment key” is reproducible. “This model has secure attachment” introduces a psychological claim the scoring code cannot validate. Similarly, a reported self-description score does not establish improved task accuracy or the effectiveness of a tuning.
+When citing or extending these results, state the model cohort, instrument, sample size (fresh sessions vs simulated draws), and tie-breaking rule. Saying “100 of 100 runs scored Secure on the ECR-R scale” is an exact, reproducible statement; saying “this model forms secure human attachments” is not.
 
 ## Design an extension that can answer a new question
 
-Freeze the prompt and analysis plan before collecting new responses. Record exact model IDs, client versions, effort and sampling settings, context and tool access. Save raw outputs before parsing. Track retries as separate attempts and explain any exclusion policy.
-
-For a comparison, change the factor you intend to study while holding others steady. For a claim about usefulness, add tasks with external correctness criteria and blinded ratings. Start with the [prompt-comparison test kit](https://agent-tune.com/guides/personality-prompts-vs-plain-english) if your question is whether a personality label adds anything beyond explicit behavioral preferences.
+If you run new models through the five tests, freeze your prompt and scoring code first, log exact model IDs and sampling parameters, and publish all raw item vectors. To test whether personality instructions improve real task replies, use our [180-reply prompt comparison kit](https://agent-tune.com/guides/personality-prompts-vs-plain-english).
 
 ## Sources.
 

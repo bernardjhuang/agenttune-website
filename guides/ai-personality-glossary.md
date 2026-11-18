@@ -5,165 +5,167 @@ Guide · reference
 
 # An AI personality glossary.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-A tuning is a short text file of communication rules you paste into an AI's settings so it talks to you the way you think. The place it goes has a different name in every product: custom instructions in ChatGPT, Instructions for Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot's Description in Grok Bot, AGENTS.md in Codex. The rest of this page defines those and the research terms behind the numbers.
+32 terms, one paragraph each, with the page that uses them.
+
+**Quick answer:** A tuning file is a short Markdown list of communication rules you paste into an AI’s settings so it matches how you work. Every product names that setting differently: Custom Instructions in ChatGPT, Personal Preferences in Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot Description in Grok, and AGENTS.md in Codex.
 
 ## The thing you paste.
 
 ### Tuning (tuning file)
 
-A Markdown file of communication rules written for one personality type (the library contains 43, with lengths that vary): what to lead with, how direct to be, how to disagree, when to stop asking questions. AgentTune publishes 43 of them under an MIT licence. You paste one into your AI's instructions and edit the lines that don't fit. See [the library](https://agent-tune.com/library/).
+A Markdown file of communication rules matched to a personality profile: what to lead with, how direct to be, how to disagree, and when to ask questions. AgentTune publishes 43 MIT-licensed tuning files in [the library](https://agent-tune.com/library/).
 
 ### Compact tuning
 
-A version of a tuning cut to under 1,500 characters so it fits even the smaller ChatGPT custom-instructions limit. The [generator](https://agent-tune.com/tools/custom-instructions-generator) produces it.
+A condensed version of a tuning file kept under 1,500 characters so it fits inside ChatGPT’s Custom Instructions box. Built automatically by the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator).
 
 ### Persona prompt
 
-Instructions that make an AI play a character: a pirate, a stoic mentor, a named assistant. Different from a tuning, which adjusts how the AI treats you rather than who it pretends to be. Specific rules can be easier to evaluate; this site has not demonstrated that they persist better than adjectives across long chats. See [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality).
+Instructions that ask an AI to role-play a character (like a pirate or a fictional mentor). A tuning file, by contrast, sets practical working rules for how the AI communicates with you. See [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality).
 
 ### Communication preferences
 
-What a tuning encodes: pacing, directness, decision framing, feedback style, how much reassurance. Not tone, which is how a reply sounds, and not facts about you, which belong in memory.
+The working habits inside a tuning file: answer order, length, formatting, critique style, and check-in frequency. Personal facts about you belong in memory instead.
 
 ### Verification probe
 
-A one-line test message and the behavior to expect back, shipped with each tuning file so you can check the install took. A short greeting alone does not prove the instructions loaded. Use representative tasks and repeat checks.
+A test prompt and checklist used to verify that your instructions actually changed the model’s reply structure.
 
 ## Where it goes, product by product.
 
 ### System prompt
 
-High-priority instructions supplied with a model request. API fields and hierarchy vary by provider; product settings need not map directly to one system message.
+Developer-level instructions sent to a model via an API request before the user conversation begins.
 
 ### Custom instructions (ChatGPT)
 
-Preferences under Settings, Personalization, Custom Instructions. Available controls and limits vary by client. Use the limit shown in your app; AgentTune’s compact export budget is 1,500 characters. See [custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
+Account-wide preferences under Settings → Personalization → Custom Instructions (1,500-character cap per longer field). See [ChatGPT custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
 
-### Instructions for Claude
+### Personal Preferences (Instructions for Claude)
 
-The account-level box in Claude's settings that applies to every conversation. Formerly 'personal preferences'. See [how to change Claude's personality](https://agent-tune.com/guides/claude-personality).
+The account-level settings box in Claude (Settings → Profile / General) that applies across all chats. See [how to change Claude’s personality](https://agent-tune.com/guides/claude-personality).
 
 ### Project instructions
 
-Instructions scoped to one Project in Claude or ChatGPT. Use them for context-specific preferences, and check the product’s instruction hierarchy when account and project rules conflict.
+Instructions scoped to one Project in Claude or ChatGPT. Inside a ChatGPT Project, Project Instructions override your global Custom Instructions.
 
 ### Output style (Claude Code)
 
-A Markdown file in ~/.claude/output-styles/ that changes the default instructions Claude Code works from, sent on every turn. The one line that matters is keep-coding-instructions: true; without it a custom style drops the built-in engineering rules. See [the Claude Code guide](https://agent-tune.com/guides/claude-code-personality).
+A Markdown file in `~/.claude/output-styles/` that sets how Claude Code communicates. Always include `keep-coding-instructions: true` in frontmatter so built-in coding rules stay active. See [the Claude Code guide](https://agent-tune.com/guides/claude-code-personality).
 
 ### CLAUDE.md
 
-The project file Claude Code reads at the start of a session: commands, conventions, what never to touch. It arrives as a message, not as part of the system prompt, and it is shared with your team, which is why personal communication rules belong in an output style instead. See [CLAUDE.md examples](https://agent-tune.com/guides/claude-md-examples).
+The project or user file Claude Code reads at session startup for build commands and conventions. Keep team build rules in repo `CLAUDE.md` and personal tone in `~/.claude/CLAUDE.md` or an output style. See [CLAUDE.md examples](https://agent-tune.com/guides/claude-md-examples).
 
 ### AGENTS.md
 
-An open, cross-agent instruction file read by Codex, Cursor and others. In local Codex, the personal copy at ~/.codex/AGENTS.md is where your rules go. See [the Astra guide](https://agent-tune.com/guides/astra-personality).
+An open instruction file read by OpenAI Codex, Cursor, and compatible coding agents. Personal preferences belong in `~/.codex/AGENTS.md`. See [the Astra guide](https://agent-tune.com/guides/astra-personality).
 
 ### Soul.md
 
-Meta Muse's file for who your Muse is: core truths, boundaries and personality. Opened under the Assistant icon, then Identity, then Soul. Communication rules go here; the name and avatar go in Identity.md; facts about you go in Memory.md. See [the Meta Muse Soul.md guide](https://agent-tune.com/guides/muse-personality).
+Meta Muse’s Markdown file for tone, boundaries, and communication rules (Settings → Personalization → Assistant Identity → Soul). Name and avatar live in `Identity.md`; personal facts live in `Memory.md`. See [the Meta Muse Soul.md guide](https://agent-tune.com/guides/muse-personality).
 
 ### Description (Grok Bot)
 
-The field on a Grok Bot's profile, under Edit Profile, that xAI's docs say to use for rules that should stay true. It persists across conversations and travels with a duplicated Bot. See [the Grok Bot guide](https://agent-tune.com/guides/grokbot-personality).
+The persistent instructions box on a custom Grok Bot profile. See [the Grok Bot guide](https://agent-tune.com/guides/grokbot-personality).
 
 ### Gem (Gemini)
 
-A saved Gemini configuration with its own instructions field. Paste a tuning there for a Gemini that is already tuned when you open it.
+A saved Google Gemini assistant with its own persistent instructions field. See [the Gemini personality guide](https://agent-tune.com/guides/gemini-personality).
 
 ### Memory
 
-What an assistant saves about you across conversations: facts, projects, stated preferences. Visibility and editing controls vary by product. Inspect saved memory in the available controls; use explicit instructions for preferences you want to state directly.
+Facts and preferences an assistant saves about you across chats. Audit or clean saved memories locally with our [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer).
 
 ## The tests.
 
 ### Instrument
 
-A questionnaire with a fixed set of items and a published scoring rule. AgentTune uses five open ones: OEJTS, a 36-item OEPS adaptation, ODAT, IPIP-50 and ECR-R. See [the five open tests, explained](https://agent-tune.com/guides/open-personality-tests).
+A psychological questionnaire with fixed items and a published scoring key. AgentTune uses five open instruments: OEJTS (MBTI), a 36-item OEPS adaptation (Enneagram), ODAT (DISC), IPIP-50 (Big Five), and ECR-R (Attachment). See [the five open tests, explained](https://agent-tune.com/guides/open-personality-tests).
 
 ### Item
 
-One question on a test. The OEJTS has 32, the IPIP-50 has 50.
+A single question on a questionnaire (for example, 32 items on OEJTS or 50 on IPIP-50).
 
 ### Reverse-keyed item
 
-An item worded so that agreeing points away from the trait ('Don't talk a lot' on Extraversion). Scored as the scale maximum plus one minus the answer.
+A question worded in the opposite direction of the trait (such as “Don’t talk a lot” for Extraversion), scored as `(scale max + 1) - response`.
 
 ### Type
 
-A category a sorter puts you in: INTJ, Type 5, DISC S, Secure. Types turn a margin into a label, which is why a one-point difference can change the name.
+A discrete category label (such as INTJ, Type 5, DISC S, or Secure) assigned from underlying continuous scores.
 
 ### Trait
 
-A continuous score, like Big Five Agreeableness from 10 to 50. Traits keep the margin visible.
+A continuous dimension score, such as Big Five Agreeableness from 10 to 50.
 
 ### Wing (Enneagram)
 
-The higher-scoring of the two types adjacent to your core type, written 5w4 or 5w6. A wing must be adjacent; 'Type 5 with an 8 overlay' is a description, not a wing.
+The higher-scoring of the two numbers adjacent to a single winning Enneagram type (such as 5w4 or 5w6).
 
 ### Blend (DISC)
 
-A second DISC letter within two points of the first, written SC or CS. Many recorded models have S/C blends; Grok 4.6’s canonical vector scores C without a blend.
+A two-letter DISC code (such as SC or DI) assigned when the second-highest score sits within 2 points of the top score.
 
 ### Tie rule
 
-What a scorer does when two scores are equal. AgentTune's original reporting rule sent a tied MBTI axis to I, N, T or J, a tied Enneagram to the lower-numbered type, and a tied DISC to S before C. The quizzes now show a tie instead of choosing, and the research pages report ties separately because a tie rule can turn a coin flip into a label.
+How a scorer handles equal top scores. Legacy scorers forced a single winner (defaulting to I/N/T/J, the lowest Enneagram number, or S before C). Our current quizzes display all tied leaders openly.
 
 ### z-score
 
-How far a trait score sits from a reference mean, in standard deviations. AgentTune loads a high or low Big Five file when a trait is more than 0.5 SD from the reference mean configured in the site’s scorer. For a model, treat it as a scoring output, not a percentile among people.
+How many standard deviations a score sits above or below a reference mean. On our Big Five quiz, a trait more than 0.5 SD from the reference mean selects its High or Low tuning file.
 
 ## The research.
 
 ### Fresh session
 
-A new context without prior conversation history. In the September collection it used a one-line prompt, no tools and no memory. Fresh context does not itself establish statistical independence. The September 2026 studies use one fresh session per questionnaire (Claude) or per five-test battery (GPT-6).
+An isolated model call with zero prior chat history, tools, or saved memory. Our September 2026 study ran 2,000 questionnaires across 1,200 fresh sessions.
 
 ### Scoring record
 
-One scored answer set, whatever produced it. The May 2026 study's 2,200 records include some that re-score a single answer vector, which is why they are counted separately from fresh sessions.
+One scored questionnaire row. In the May 2026 study, some models had a single self-assessment scored 100 times, which is why we separate May scoring records from September fresh sessions.
 
 ### Reported figure
 
-A number from a report we could not re-score, because the raw answers or the harness were not supplied. Muse Spark 1.3 and Grok 4.6’s Big Five, attachment and simulations are reported figures. Grok’s three supplied canonical vectors can be re-scored.
+A summary score submitted without raw per-item answer vectors (such as Muse Spark 1.3 or Grok 4.6’s Big Five and attachment rows).
 
 ### Simulated draw
 
-A synthetic answer set sampled from one self-report by jittering its least certain items. A sensitivity check, not a fresh run. The Opus 4.8 article and the Grok 4.6 report both use them.
+A synthetic answer sheet sampled around one profile’s uncertain items—useful for sensitivity checks, but not equivalent to 100 fresh sessions.
 
 ### Blind judge
 
-A rater that sees a request and one reply without knowing which setup produced it. The [pilot archive](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) describes a second model in this role; the complete judging prompt and execution log were not supplied.
+A human or model rater scoring replies without knowing which prompt produced them. Try blind side-by-side rating in our [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ### Default (of a model)
 
-A baseline under a specified model version, system prompt, product and task configuration. There is no single context-free default established by these questionnaires. See [the research hub](https://agent-tune.com/research).
+How a specific model version responds before custom instructions are added.
 
 ### Answer vector
 
-The list of a model's numeric answers to one questionnaire, in item order. The September 2026 study publishes 2,000 of them so anyone can re-score.
+The ordered array of integer answers to a questionnaire (all 2,000 fresh-session vectors are published in JSON).
 
 ## Questions people ask.
 
-What is a tuning file?
+### What is a tuning file?
 
 A short Markdown file of communication rules written for one personality type: what to lead with, how direct to be, how to disagree, when to stop asking questions. You paste it into your AI's instructions and edit it. AgentTune's 43 are free under an MIT licence.
 
-What is the difference between a system prompt and custom instructions?
+### What is the difference between a system prompt and custom instructions?
 
 Custom instructions are a user-facing setting for preferences. A system prompt is a high-priority model input. The mapping between a product setting and model messages depends on the product.
 
-What is the difference between a persona and a tuning?
+### What is the difference between a persona and a tuning?
 
 A persona specifies a character; an AgentTune tuning specifies communication preferences such as pacing and directness. Neither format is guaranteed to persist or improve outcomes; evaluate the behavior you need.
 
-What does 'reported' mean on the research pages?
+### What does 'reported' mean on the research pages?
 
 A figure from a report we could not re-score, because the raw answers or the harness were not supplied. Fresh-session figures, by contrast, come with every answer vector published.
 
-What is a tie rule?
+### What is a tie rule?
 
 What a scorer does when two scores are equal. AgentTune's original reporting rule picked a side (I, N, T or J; the lower Enneagram number; S before C). The quizzes now show the tie instead, and the research pages count ties separately.
 

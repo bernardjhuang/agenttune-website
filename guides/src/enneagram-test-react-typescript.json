@@ -8,8 +8,8 @@
   "pill": "Developer resource · runnable starter & JS scorer",
   "h1": "Open-source Enneagram test & scorer (React + TypeScript + JS).",
   "dek": "Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.",
-  "lede": "Build an Enneagram assessment locally without rewriting pagination, keyboard accessibility, or tie-preserving scoring arithmetic. Below you get both the complete MIT-licensed React + TypeScript starter project and the standalone zero-dependency JavaScript scorer (<code>score.js</code>) for Node or browsers—plus an interactive scoring widget right on this page.",
-  "answer": "Download score.js + questions.json for a standalone Node/browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a complete 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.",
+  "lede": "Build an Enneagram assessment locally without rewriting pagination, keyboard accessibility, or tie-preserving scoring math. Below you get both the complete MIT-licensed React + TypeScript starter project and the standalone zero-dependency JavaScript scorer (<code>score.js</code>) for Node or browsers—plus a live scoring widget right on this page.",
+  "answer": "Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.",
   "sections": [
     {
       "h2": "Download the standalone JS scorer or full React + TypeScript starter.",

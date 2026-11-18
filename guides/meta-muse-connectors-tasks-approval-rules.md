@@ -5,9 +5,11 @@ Guide · Meta Muse Connectors & Tasks
 
 # Meta Muse Connectors & Tasks: writing clean approval rules in Soul.md.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-In Meta Muse, store tone, epistemic honesty, and read-vs-write Connector confirmation gates in Soul.md; store agent role, name, and visual persona in Identity.md; and store user facts or timezone context in Memory.md. Require explicit human approval before Muse sends external messages, modifies shared events, or deletes items during scheduled Tasks.
+Once Muse has access to mail, calendar, or scheduled recurring Tasks, your Soul.md needs explicit read-vs-write confirmation gates.
+
+**Quick answer:** In Meta Muse, keep tone, honesty rules, and Connector confirmation gates in Soul.md; keep name, role, and avatar in Identity.md; and keep personal facts and timezones in Memory.md. Require explicit approval before Muse sends external messages, edits shared calendar events, or deletes items during scheduled Tasks.
 
 ## Which file governs Connectors, Tasks, and persona?
 
@@ -20,7 +22,7 @@ In Meta Muse, store tone, epistemic honesty, and read-vs-write Connector confirm
 
 ## Copy-paste Soul.md autonomy & Connector approval block.
 
-Merge this section into your existing Soul.md safely using the [Muse Soul.md Editor & Merge Tool](https://agent-tune.com/tools/muse-soul-md-editor) (it wraps your rules in reversible markers and downloads an original backup first):
+Merge this block into your existing `Soul.md` using the [Muse Soul.md Editor](https://agent-tune.com/tools/muse-soul-md-editor) (it wraps your rules in reversible markers and lets you download a backup first):
 
 ```markdown
 ## Connectors & Scheduled Tasks
@@ -39,23 +41,23 @@ Merge this section into your existing Soul.md safely using the [Muse Soul.md Edi
 | Email / message triage | Cluster threads by urgency and write editable reply drafts | Hitting send on any external thread or forwarding sensitive attachments |
 | Research &amp; side chats | Fork long tangents into Muse Side Chats while keeping the main log clean ([troubleshooting guide →](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats)) | Overwriting permanent workspace docs or appending unverified claims to shared notes |
 
-Want to test Muse behavior alongside ChatGPT and Claude first? Compare all three platforms in [Muse vs ChatGPT vs Claude](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality).
+Want to compare Muse’s file setup with ChatGPT and Claude? Read [Muse vs ChatGPT vs Claude](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality).
 
 ## Questions people ask.
 
-Should Connector approval rules go in Soul.md or Memory.md?
+### Should Connector approval rules go in Soul.md or Memory.md?
 
 Put durable confirmation gates and draft-first defaults in Soul.md because Soul.md governs behavior across conversations and Tasks. Keep mutable context (like your work hours or VIP contacts) in Memory.md.
 
-Can Soul.md overwrite existing customizations if I paste an approval block directly?
+### Can Soul.md overwrite existing customizations if I paste an approval block directly?
 
 Replacing all of Soul.md manually will erase existing persona traits unless you merge carefully. Use our Muse Soul.md Editor to preview the merge inside labeled markers and save an original backup first.
 
-How should a Meta Muse scheduled Task report failed lookups?
+### How should a Meta Muse scheduled Task report failed lookups?
 
 Add an explicit rule telling Muse to quote tool failures verbatim and leave missing slots blank instead of inferring or smoothing over skipped Connector reads.
 
-Where do I inspect or pause saved facts Muse learned from Connectors?
+### Where do I inspect or pause saved facts Muse learned from Connectors?
 
 Inspect and trim Memory.md regularly under Assistant Identity / Memory settings, or audit an export locally with the AgentTune AI Memory Export Reviewer.
 

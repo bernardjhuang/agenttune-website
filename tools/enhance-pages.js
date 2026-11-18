@@ -43,7 +43,7 @@ function enhance(html,file){
     if(headings.length>=4){const toc='<details class="article-toc" open><summary>On this page</summary><nav aria-label="On this page"><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+esc(h.text)+'</a></li>').join('')+'</ol></nav></details>';html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+toc);}
   }
   if((file.startsWith('research/')||file==='research.html')&&!html.includes('id="instrument-correction"')){
-    const note='<section id="instrument-correction" class="questionnaire-status" style="margin:24px 0;padding:20px;border:1px solid var(--border);border-radius:12px"><p><strong>Instrument provenance note · September 26, 2026.</strong> These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on <a href="/tests/">Tests</a>; historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
+    const note='<section id="instrument-correction" class="questionnaire-status" style="margin:24px 0;padding:20px;border:1px solid var(--border);border-radius:12px"><p><strong>Data note (September 26, 2026):</strong> These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on <a href="/tests/">Tests</a>, and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
     html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+note);
   }
   return html.includes('src="/site-ui.js"')?html:html.replace('</body>','<script defer src="/site-ui.js"></script>\n</body>');
@@ -75,6 +75,9 @@ function markdown(html,url){
     return stash(caption+[pad(rows[0]),sep,...rows.slice(1).map(pad)].join('\n'));
   })
   .replace(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/g,(_,n,t)=>'\n\n'+'#'.repeat(+n)+' '+plain(t)+'\n\n')
+  .replace(/<summary[^>]*>([\s\S]*?)<\/summary>/g,(_,t)=>'\n\n### '+plain(t)+'\n\n')
+  .replace(/<code[^>]*>([\s\S]*?)<\/code>/g,(_,t)=>'`'+plain(t)+'`')
+  .replace(/<strong[^>]*>([\s\S]*?)<\/strong>/g,(_,t)=>'**'+plain(t)+'**')
   .replace(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g,(_,href,t)=>'['+plain(t)+']('+new URL(href.replace(/&amp;/g,'&'),url).href+')')
   .replace(/<li[^>]*>/g,'\n- ')
   .replace(/<\/(?:p|section|div|ul|ol|summary|figure|figcaption|header|aside|article|details)>/g,'\n\n')

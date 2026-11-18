@@ -214,7 +214,8 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">${escHtml(spec.pill)}</span>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
-        <p class="lede" style="margin-top: 18px;">${spec.answer ? escHtml(spec.answer) : spec.lede}</p>
+        ${spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
       </section>
 
 

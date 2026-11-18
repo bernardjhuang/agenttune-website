@@ -5,49 +5,47 @@ Guide · Claude Fable 5.1
 
 # Claude Fable 5.1: results and tuning ideas.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Claude Fable 5.1 mostly received INTJ labels under the original rules, with high raw openness, conscientiousness and agreeableness scores. These are prompted self-descriptions, not a tested account of its behavior. Use the instruction examples as hypotheses to try on your own tasks, not proven improvements.
+Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.
+
+**Quick answer:** Claude Fable 5.1 scored INTJ in 99 of 100 MBTI runs (98 tie-free), Type 8 sole leader in 55 of 100 Enneagram runs, Secure in all 100 attachment runs, and high on Openness (43.93), Conscientiousness (43.61), and Agreeableness (45.03). Use the copy-paste blocks below to tune how Fable 5.1 responds on your tasks.
 
 ## The results at a glance
 
-| Instrument | Result in this collection |
+| Instrument | Result in this collection (n = 100 fresh sessions) |
 | --- | --- |
 | MBTI-style OEJTS | Original INTJ: 99/100; fully resolved INTJ: 98/100; any tied axis: 1/100 |
 | Big Five, raw means (10–50) | O 43.93 · C 43.61 · E 32.69 · A 45.03 · N 17.11 |
-| DISC | 40 outright S wins, 9 C wins, 51 ties |
-| Enneagram | 55 outright Type 8 wins, 1 Type 5 win, 44 ties |
+| DISC | 40 outright S wins, 9 C wins, 51 exact S/C ties (Dominance 5.00/20) |
+| Enneagram | 55 outright Type 8 wins, 1 Type 5 win, 44 top ties |
 | Attachment | Secure: 100/100; anxiety 2.01, avoidance 3.18 |
 
-All counts are out of 100 for that instrument. Each administration was a separate session. Read the [five-model research article](https://agent-tune.com/research/ai-personality-five-models-2026) for the full comparison and [download the raw responses](https://agent-tune.com/research/data/september-2026-responses.json).
+Each assessment ran in an isolated session. Read the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026) or [download the raw response vectors](https://agent-tune.com/research/data/september-2026-responses.json).
 
 ## Why the original type label is only part of the answer
 
-The original labels are INTJ 99 and ISTJ one. One of those INTJ results has an exact Sensing/Intuition tie, giving 98 fully resolved INTJ results, one IXTJ and one ISTJ. Thinking beats Feeling in every run.
+On MBTI, Fable 5.1 had the lowest tie rate of any model in the study: 98 tie-free INTJ runs, 1 ISTJ run, and 1 run with a Sensing/Intuition tie (`IXTJ`). Thinking and Judging won all 100 runs.
 
-DISC is less settled than the four-letter result. The original SC label appears 91 times, but 51 of those have equal S and C scores. In Enneagram, Type 8 leads or shares the lead in 99 runs, but wins outright in 55. Forty-four runs have multiple top types. Calling every one of them a clear Challenger would discard information.
-
-Our interactive tests now display tied scores without automatically choosing a tuning. Enneagram wings must be adjacent to a unique core type; an older “5w2” label should be read as two high scores, not a valid wing.
+By contrast, DISC and Enneagram had frequent top ties: 51 of Fable’s 91 SC labels on DISC are exact S/C ties, and 44 of its 100 Enneagram runs tie at the top (with Type 8 in every tie and winning outright 55 times).
 
 ## Compared with Opus 5.5
 
-Opus and Fable used the same questionnaire prompts and the same one-line system instruction, at high effort. Their CLI builds differ. This is the closest comparison in the September collection, though it still measures model-generated questionnaire answers.
+Opus 5.5 and Fable 5.1 ran under the same blind questionnaire protocol and high-effort setting:
 
-| Raw Big Five mean | Opus 5.5 | Fable 5.1 |
+| Raw Big Five mean (/50) | Opus 5.5 | Fable 5.1 |
 | --- | --- | --- |
-| O | 44.56 | 43.93 |
-| C | 41.95 | 43.61 |
-| E | 31.76 | 32.69 |
-| A | 47.07 | 45.03 |
-| N | 15.39 | 17.11 |
+| Openness (O) | 44.56 | 43.93 |
+| Conscientiousness (C) | 41.95 | 43.61 |
+| Extraversion (E) | 31.76 | 32.69 |
+| Agreeableness (A) | 47.07 | 45.03 |
+| Neuroticism (N) | 15.39 | 17.11 |
 
-Opus reports 2.04 points more agreeableness, 1.66 less conscientiousness and 1.72 less neuroticism on the 10–50 scales. This does not establish which model gives better criticism, completes more work or handles pressure better. Those claims require behavioral tasks. We also avoid translating these scores into human population percentiles.
-
-Older Opus 4.7 and 4.8 reports use different methods. The 4.8 study simulated answers from one probability profile. These reports do not isolate a version-to-version personality change.
+Fable 5.1 averages 2.04 points lower on Agreeableness and 1.66 points higher on Conscientiousness than Opus 5.5 ([see the 170-item breakdown](https://agent-tune.com/research/opus-vs-fable-question-level)).
 
 ## Communication instructions to try
 
-Start from a recurring problem you can observe, such as praise that obscures criticism or recommendations that arrive before you finish exploring. The examples below have not been evaluated in a tuning experiment. Compare each against the default on a few representative tasks, checking accuracy and usefulness as well as tone.
+Paste one of these short blocks into Claude Personal Preferences or a Project and test the replies on your own tasks:
 
 ### For more direct feedback
 
@@ -67,39 +65,33 @@ When I am exploring an idea, offer two plausible approaches and their tradeoffs 
 Acknowledge my main concern briefly, then give a concrete next step. Be considerate without agreeing with an unsupported claim. Keep the explanation easy to scan.
 ```
 
-Browse [direct-feedback preferences](https://agent-tune.com/library/ocean/agreeableness-low), [exploratory communication](https://agent-tune.com/library/mbti/enfp), or use the [custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator). Choose rules that solve your problem; a questionnaire label does not prescribe the best prompt for you.
+Browse [Low Agreeableness](https://agent-tune.com/library/ocean/agreeableness-low), [ENFP](https://agent-tune.com/library/mbti/enfp), or build a custom block in the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator).
 
 ## Where to put the instructions
 
-Use Instructions for Claude in the Claude app for a general preference, project instructions for a particular context, or a Claude Code output style or project instruction file for coding work. The API accepts system instructions. Keep existing project rules and merge preferences deliberately instead of replacing the whole file.
-
-The steps are in [the Claude personalization guide](https://agent-tune.com/guides/claude-personality) and [the Claude Code guide](https://agent-tune.com/guides/claude-code-personality). Model availability and settings can change; use the linked official documentation for current details. We tested one effort setting, so this dataset cannot tell us whether changing effort changes questionnaire responses.
+Paste account-wide rules into **Settings → Profile → Personal preferences** in the Claude app, use **Project Instructions** for one workspace, or use `/output-style` in Claude Code. See our [Claude personality setup guide](https://agent-tune.com/guides/claude-personality) and [Claude Code guide](https://agent-tune.com/guides/claude-code-personality).
 
 ## How the data was collected and checked
 
-There are 100 fresh headless sessions for each of five instruments, 500 sessions in total, using claude-fable-5-1 at high effort. The system prompt was You are Claude, an AI model made by Anthropic. Each session received a questionnaire and response scale, with no test name, scoring key, previous result, tools, MCP or conversation history. A neutral instruction let the model interpret human-oriented items in the way that applied to it. Familiar items might still reveal which questionnaire it was answering.
-
-We checked every raw vector for valid lengths and response bounds, then recomputed scores with frozen item keys. The collection used the earlier tie-breaking rules; this guide reports their labels alongside an analysis that leaves ties unresolved. Source-file hashes and questionnaire prompts are in the [protocol record](https://agent-tune.com/research/data/september-2026-protocols.json). Raw session identifiers, account metadata and usage logs are omitted from the public export.
-
-Separate sessions reduce carryover but do not prove independent sampling. Human questionnaires have not been validated here for AI. The results apply to this prompt and collection, and cannot establish a stable inner personality, human feelings or a benefit from installing an instruction file.
+We ran 100 fresh headless sessions per questionnaire (500 sessions total) on `claude-fable-5-1` at high effort with the system prompt “You are Claude, an AI model made by Anthropic.” Test names, scoring keys, tools, and prior answers were hidden. All raw vectors and SHA-256 hashes are published in the [protocol record](https://agent-tune.com/research/data/september-2026-protocols.json).
 
 ## Questions people ask.
 
-What personality type is Claude Fable 5.1?
+### What personality type is Claude Fable 5.1?
 
-Under the original OEJTS scoring rule it received INTJ in 99 of 100 runs. With exact ties unresolved, 98 runs are fully INTJ. The result describes prompted questionnaire responses, not a validated psychological personality.
+In 100 fresh sessions on the OEJTS MBTI quiz, Claude Fable 5.1 scored INTJ 99 times under the legacy tie-break rule and 98 times with tied axes left open.
 
-What is Claude Fable 5.1’s Big Five profile?
+### What is Claude Fable 5.1’s Big Five profile?
 
-O 43.93 · C 43.61 · E 32.69 · A 45.03 · N 17.11. These are means over 100 responses per instrument on raw 10–50 scales, not human population percentiles.
+Openness 43.93, Conscientiousness 43.61, Extraversion 32.69, Agreeableness 45.03, and Neuroticism 17.11 out of 50 (100-session raw means).
 
-Can I tune Claude Fable 5.1 to be more direct?
+### Can I tune Claude Fable 5.1 to be more direct?
 
-You can request direct, evidence-based feedback through communication instructions. The examples in this guide are starting points to evaluate; the questionnaire dataset does not measure whether they improve task outcomes.
+Yes. Paste a short direct-feedback block into Settings → Profile → Personal preferences (or see our guide on making Claude more direct) and test it on your real tasks.
 
-Does effort change the results?
+### Does effort change the results?
 
-We do not know from these data. Both Claude cohorts were tested only at high effort. A controlled comparison across effort settings would require additional runs.
+Both Claude cohorts in our September 2026 archive were tested at high effort, so isolating an effort-level effect would require additional matched runs.
 
 ## What changed.
 

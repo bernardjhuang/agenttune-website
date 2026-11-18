@@ -7,19 +7,19 @@ Guide · Frameworks
 
 By Bernard Huang · Updated September 26, 2026
 
-Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
+One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.
+
+**Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 
 ## One sorts. One measures.
 
-MBTI assigns you one side of four binary axes — introversion or extraversion (I/E), sensing or intuition (S/N), thinking or feeling (T/F), judging or perceiving (J/P) — and the four letters compose into one of 16 types. It's a sorter. Every axis is a fork; you go left or right.
+MBTI assigns you one side of four binary axes: Introversion or Extraversion (I/E), Sensing or Intuition (S/N), Thinking or Feeling (T/F), and Judging or Perceiving (J/P). Those four letters combine into one of 16 types. Every axis is a binary fork.
 
-Big Five (OCEAN) measures five continuous dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — and scores you somewhere along each one. No types, no forks. Dials.
+Big Five (OCEAN) measures five continuous dimensions: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Instead of sorting you into a box, it scores you along five continuous dials.
 
-Notice what each hands you at the end. MBTI: four letters. Big Five: five numbers. Hold that difference — it's the entire argument below.
+In academic personality research, Big Five is the gold standard because traits are continuous in human data and hold up better on retest reliability. On MBTI, a person at 52% Thinking and a person at 95% Thinking both get the letter `T`, and scores near the midpoint can flip letters on retest.
 
-The scientific standing is not symmetric. Psychometricians have two standing complaints about MBTI: it dichotomizes what the data says is continuous — a person at 55% thinking and a person at 95% get the same T — and people near an axis midline can flip letters on retest. Big Five came out of decades of factor analysis, is the standard instrument in academic personality research, and holds up better on retest reliability. If the question is which measures humans better, Big Five wins, and it isn't close.
-
-But that's the measurement question. Prompting an AI raises a different one: which kind of output converts into instructions an agent can actually follow?
+Prompting an AI raises a practical engineering question: do you want a bundled four-letter template or five independent trait dials you can mix and match?
 
 ## What the research can and cannot establish.
 
@@ -43,25 +43,25 @@ If you only take one: take Big Five if you want the more defensible self-measure
 
 ## Questions people ask.
 
-Is MBTI scientifically valid?
+### Is MBTI scientifically valid?
 
 It's criticized on two real grounds: it splits continuous traits into binaries, and people near an axis midline can flip letters on retest. Big Five is the standard in academic research and holds up better psychometrically. Our claim is narrower — binary axes happen to convert cleanly into prompt instructions. That's a convenience argument, not a validity argument.
 
-Which is better for prompting an AI — MBTI or Big Five?
+### Which is better for prompting an AI — MBTI or Big Five?
 
 Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose.
 
-Why did all six models test as INTJ?
+### Why did several AI models score as INTJ or ISTJ in your studies?
 
-The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.
+In our exploratory self-report benchmarks, instruction-tuned assistants regularly rate themselves as quiet (I), analytical (T), and structured (J). However, S/N and T/F margins are often narrow or tied, and the May 2026 and September 2026 cohorts used mixed protocols—so those scores describe questionnaire self-reports, not fixed model personalities.
 
-Can I use both frameworks in one prompt?
+### Can I use both MBTI and Big Five in one prompt?
 
-The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.
+Yes. A common pattern is starting with an MBTI profile for overall information structure and adding one or two Big Five rules (such as Low Agreeableness for blunt pushback). Delete any overlapping or conflicting lines so the model gets one coherent instruction list.
 
-What about DISC and the Enneagram?
+### What about DISC and the Enneagram?
 
-The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.
+DISC tunes workplace pace and action bias (Dominance, Influence, Steadiness, Conscientiousness), while the Enneagram tunes core motivation and stress triggers. Compare all five systems side by side in our AI personality frameworks guide.
 
 ## Keep going.
 

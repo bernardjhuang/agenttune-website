@@ -5680,7 +5680,11 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
 /* Install cards in lazy mode: the marker line expands to the full tuning on click */
 .snippet[data-lazy-bound="1"]:not([data-expanded="1"]) { cursor: pointer; }
 
-/* ---------- Guides: dateline, changelog, sources ---------- */
+/* ---------- Guides: dateline, changelog, sources & readability ---------- */
+h1, h2, h3, h4, .h-hero, .h-sub, .hp2-h2, .hub-article-title, .lib-v2-section-h { text-wrap: balance; }
+p, blockquote, li, .lede, .hp2-hero-lede, .hp2-section-lede, .guide-tldr { text-wrap: pretty; }
+.guide-tldr { background: var(--surface, #fff); border: 1px solid var(--border); border-left: 3px solid var(--accent, #c8553d); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 16px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--ink); }
+.guide-tldr strong { color: var(--accent-text, #a8482a); font-weight: 600; }
 .guide-prose .hero p.guide-dateline, .guide-dateline { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 14px 0 0; }
 .guide-changelog, .guide-sources { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.7; color: var(--inkSoft, #4a4538); }
 .guide-changelog time { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-right: 8px; }

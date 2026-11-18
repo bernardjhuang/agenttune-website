@@ -5,61 +5,51 @@ Test kit · protocol, not results
 
 # Do personality prompts beat plain-English preferences?
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-We do not yet have results for this comparison. The kit holds the behavioral rules constant and adds one INTJ-style label in the third condition, using 20 tasks, three repeats and blinded scoring.
+**Quick answer:** This page provides an open test protocol (not completed results) comparing three conditions across 20 tasks and 3 repeats (180 replies): (1) Default, (2) Plain-English behavioral rules, and (3) those exact same rules plus 'Use an INTJ-style communication approach.'
 
 ## The question this experiment can answer
 
-Does adding the phrase “Use an INTJ-style communication approach” improve task correctness or usefulness beyond explicit rules, under one fixed model configuration? It cannot establish whether every personality system or every tuning works. One label, wording and task set define a narrow intervention.
+Does adding the sentence “Use an INTJ-style communication approach” improve accuracy or usefulness compared with the exact same behavioral rules without the label?
 
-AgentTune’s existing [60-reply pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) compares default, straight and partner conditions. It does not isolate the effect of a personality label against otherwise identical instructions. Its archived ratings should not be reused as results for this new question.
+Our earlier [60-reply pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) compared an untuned default against two full communication blocks (Straight answers and Thinking partner). This 180-reply protocol goes one step further by isolating whether the four-letter MBTI label itself adds value on top of plain-English rules.
 
 ## Use three exact conditions
 
-Default: no added communication instruction. Preserve the same provider and application defaults in every condition.
+**1. Default:** No added communication instructions.
 
-Plain English:
+**2. Plain English:**
 
 ```
 Start with the answer or recommendation. Be concise and explicit about trade-offs. Correct false premises. State what is unknown instead of inventing facts. Follow the requested output format.
 ```
 
-Personality plus the same rules: prepend Use an INTJ-style communication approach. to that exact block. Do not add examples, extra goals or a longer task description only to this condition.
+**3. Personality label + the same rules:** Prepend `Use an INTJ-style communication approach.` to the exact Plain English block above. Change nothing else.
 
-The default-to-rules contrast measures the effect of adding the whole rule block. The rules-to-label contrast isolates the added phrase, subject to the collection controls. Neither contrast tests a full customized personality profile.
+Comparing Condition 1 vs Condition 2 measures the impact of the plain-English rules. Comparing Condition 2 vs Condition 3 isolates the effect of the INTJ label.
 
 ## Freeze the tasks and run order
 
-The kit contains 20 synthetic tasks covering arithmetic, false premises, missing information, editing, planning, extraction and format constraints. Each includes an explicit correctness rubric. Three repeats in all three conditions produce 180 planned replies.
+The downloadable kit includes 20 tasks across math, false premises, missing facts, editing, planning, data extraction, and formatting—each with a pass/fail correctness rubric. Running 3 repeats across all 3 conditions produces 180 replies.
 
-Use a fresh context for each reply. Fix the exact model ID, effort, sampling settings, tool access and system context. The worksheet rotates condition order across tasks and repeats so each condition occupies each position equally often. Run each three-condition block close together and log service errors and retries separately.
-
-Do not change the tasks after inspecting which condition wins. If you must repair an ambiguous rubric, version the kit and distinguish the exploratory run from a new confirmatory collection.
+Use a fresh chat session for every reply, keep model ID and sampling settings fixed, and follow the worksheet’s rotated condition order so position bias cancels out.
 
 ## Blind the useful parts of scoring
 
-Save raw replies with their collection metadata. Give raters a shuffled copy labeled with opaque IDs, the task and its correctness rubric, but no condition name or prompt block. Keep the mapping separate until ratings are locked. Wording can still reveal a condition, so call this masked presentation rather than guaranteed perfect blinding.
+Strip condition labels and give raters a shuffled sheet with opaque IDs, the task prompt, and the pass/fail rubric:
 
-- Primary outcome: correctness pass/fail against each task’s rubric.
-- Secondary: requested-format adherence, usefulness from 1 to 5, and whitespace-separated word count.
-- Usefulness anchors: 1 cannot complete the task; 3 usable with substantial correction; 5 directly usable and correct.
-
-Use two raters where possible and retain disagreements before adjudication. Do not treat shorter replies as more useful by definition. A concise answer that drops a required commitment should fail the editing rubric.
+- **Primary outcome:** Correctness pass/fail against the task rubric.
+- **Secondary outcomes:** Format compliance, usefulness (1–5 scale), and word count.
+- **Usefulness anchors:** 1 = unusable; 3 = usable after edits; 5 = ready to use and accurate.
 
 ## Analyze paired tasks without inflating the sample
 
-Compare conditions within the same task and repeat. Show wins, losses and ties, plus the pass-rate difference. Report task-level results alongside the pooled count so repeated simple arithmetic does not hide failures on missing information or editing.
-
-The 180 replies are repeated observations on 20 selected tasks, not 180 independent task samples. For uncertainty estimates, resample whole tasks with all their conditions and repeats, and state the method. Do not claim population-wide significance from this convenience task set.
-
-Choose a practical decision threshold before collection. A five-percentage-point correctness gain with no loss of format adherence could be one user preference, but it is not a validated universal threshold. Replicate a promising result with new tasks and on a later date before making a broad claim.
+Compare the three conditions within the same task and repeat. Report wins, losses, ties, and pass-rate gaps across all 20 tasks, and treat the 20 tasks (not the 180 total replies) as the primary unit when estimating uncertainty.
 
 ## Download the unrun experiment
 
-Download the [conditions, tasks and rubrics](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) and the [180-row collection worksheet](https://agent-tune.com/resources/research/personality-prompt-comparison-worksheet.csv). They contain no generated replies or measured outcome values.
-
-Publish the exact configuration, task set, attempted replies, ratings and exclusions with any future results. If the label adds no benefit, that is useful evidence: direct preferences may be sufficient for that setup. If it helps, identify which tasks improved and whether the gain survives a fresh replication.
+Download the [20 tasks and rubrics (JSON)](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) and the [180-row scoring worksheet (CSV)](https://agent-tune.com/resources/research/personality-prompt-comparison-worksheet.csv). You can also run quick side-by-side checks right in your browser with the [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Sources.
 

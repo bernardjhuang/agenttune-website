@@ -7,8 +7,8 @@
   "pill": "Guide · Enneagram",
   "h1": "Free Enneagram test with instant results (and no email wall).",
   "dek": "Take 36 open questions in five minutes, see all nine type scores and your adjacent wing in your browser, and skip the bait-and-switch paywall.",
-  "lede": "Search for a \"free Enneagram test\" and almost every top result asks you to spend 10 minutes answering 100+ questions—only to blur your type behind an email capture form or a \\$19 report fee. Our 36-item adaptation of the <strong>Open Enneagram of Personality Scales (OEPS)</strong> scores locally in your browser in five minutes with zero account, zero email, and transparent math.",
-  "answer": "Take the free 36-question Enneagram test at agent-tune.com/tests/enneagram for instant browser-scored results with no email or signup. You get raw totals (4–20) across all nine Enneagram types, your adjacent wing (such as 5w4 or 9w1), transparent tie reporting when top scores match, and an optional MIT-licensed prompt to tune ChatGPT, Claude, or Meta Muse.",
+  "lede": "Search for a \"free Enneagram test\" and almost every top result asks you to spend 10 minutes answering 100+ questions, only to blur your score behind an email wall or a \\$19 report fee. Our 36-item adaptation of the <strong>Open Enneagram of Personality Scales (OEPS)</strong> scores locally in your browser in five minutes with no account, no email, and transparent math.",
+  "answer": "Take the free 36-question Enneagram test at agent-tune.com/tests/enneagram for instant browser-scored results with no email or signup. You get raw totals (4–20) across all nine Enneagram types, your adjacent wing (such as 5w4 or 9w1), and explicit tie reporting when top scores match. You can also copy an optional MIT-licensed prompt for ChatGPT, Claude, or Meta Muse.",
   "sections": [
     {
       "h2": "All nine Enneagram types at a glance (plus how they steer AI).",
@@ -80,11 +80,6 @@
       "kicker": "Free browser tool",
       "label": "Enneagram Scoring Playground — test wings & ties",
       "href": "/tools/enneagram-scoring-playground"
-    },
-    {
-      "kicker": "Interactive test",
-      "label": "Take the free 36-item Enneagram test (no email)",
-      "href": "/tests/enneagram"
     },
     {
       "kicker": "Developer starter",

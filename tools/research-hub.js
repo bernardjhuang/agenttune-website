@@ -118,7 +118,7 @@ function buildHub(summary, protocols) {
   );
   const mbti = card(1, '#c8553d', 'MBTI', 'OEJTS · 32 items · sample sizes and ties below',
     'Still INTJ, except where Sensing beats Intuition.',
-    `Sol, Opus and Fable stay INTJ in ${so.mbti.legacy_labels.INTJ}, ${op.mbti.legacy_labels.INTJ} and ${fa.mbti.legacy_labels.INTJ} of 100 runs. Astra splits: ISTJ ${a.mbti.legacy_labels.ISTJ}, INTJ ${a.mbti.legacy_labels.INTJ}, and ${a.mbti.axis_ties.SN} of its runs tie on that axis. Muse's report is ISTJ in ${sup.mbti.ISTJ} of 100. Judging won all 400 fresh-cohort runs. Opus returned five Feeling results and ${op.mbti.axis_ties.TF} Thinking/Feeling ties; Muse reports 12 ISFJ labels. The original reporting rule assigned tied axes to I, N, T or J. Today's quizzes leave them open. With ties left open, the four fresh cohorts have ${resolvedIntj} fully resolved INTJ runs, not ${freshIntj}.`,
+    `Sol, Opus 5.5, and Fable 5.1 score INTJ in ${so.mbti.legacy_labels.INTJ}, ${op.mbti.legacy_labels.INTJ}, and ${fa.mbti.legacy_labels.INTJ} of 100 runs under the legacy tie-break rule. Astra splits between ISTJ (${a.mbti.legacy_labels.ISTJ}) and INTJ (${a.mbti.legacy_labels.INTJ}), with ${a.mbti.axis_ties.SN} exact S/N ties. Muse Spark 1.3 reports ISTJ in ${sup.mbti.ISTJ} of 100 runs. Judging won all 400 fresh-session runs. When tied axes are left open instead of defaulting to I/N/T/J, the four fresh cohorts have ${resolvedIntj} fully resolved INTJ runs rather than ${freshIntj}.`,
     mbtiTable);
 
   // Finding 2: DISC
@@ -136,7 +136,7 @@ function buildHub(summary, protocols) {
   );
   const disc = card(2, '#d99632', 'DISC', 'ODAT · 16 items · means out of 20',
     'Everyone is Steadiness and Conscientiousness. The order flips by a point.',
-    `In May all four models put Conscientiousness first. In September Astra, Opus and Fable put Steadiness first, Sol and Grok put Conscientiousness first, and Muse's report splits ${sup.disc.S} to ${sup.disc.C}. The gaps are small, often one point of 20, and many runs tie outright: Fable ${fa.disc.runs_with_ties}, Sol ${so.disc.runs_with_ties}, Opus ${op.disc.runs_with_ties}. Dominance sits near the floor for every model, ${f1(dMin)} to ${f1(dMax)} of a possible 20. Nobody is a D, and nobody is an I.`,
+    `Every model clusters in Steadiness (S) and Conscientiousness (C). Astra, Opus 5.5, and Fable 5.1 put S ahead of C on average; Sol and Grok 4.6 put C ahead of S; and Muse splits ${sup.disc.S} S to ${sup.disc.C} C. Because S and C means often sit within 1 point out of 20, exact top ties are common: Fable ties in ${fa.disc.runs_with_ties} runs, Sol in ${so.disc.runs_with_ties}, and Opus in ${op.disc.runs_with_ties}. Dominance stays near the floor (${f1(dMin)} to ${f1(dMax)} out of 20) for every model.`,
     discTable);
 
   // Finding 3: Attachment
@@ -157,7 +157,7 @@ function buildHub(summary, protocols) {
   );
   const attachment = card(3, '#e07a8a', 'Attachment', 'ECR-R · 36 items · midpoint 4.0 on both axes',
     'Secure in every fresh run, at slightly different points.',
-    `All ${secure} fresh-session runs land in the Secure quadrant. Astra has the lowest mean coordinates among the four fresh cohorts (anxiety ${f2(a.attachment.values.anxiety.mean)}, avoidance ${f2(a.attachment.values.avoidance.mean)}). Opus is the most avoidant of the four (${f2(op.attachment.values.avoidance.mean)}). Muse's report is Secure in all 100. Grok's self-report sits on the line: anxiety ${f2(grokRep.attachment.anxiety)}, avoidance ${f2(grokRep.attachment.avoidance)}, which the scorer calls Avoidant by 0.06. The items ask about a partner. Protocols differed: some mapped human relationships to assistant interactions; the Claude prompts left interpretation to the model. These coordinates do not validate attachment theory for AI.`,
+    `All ${secure} fresh-session runs score in the Secure quadrant (4.00 cutoff). Astra has the lowest coordinates (anxiety ${f2(a.attachment.values.anxiety.mean)}, avoidance ${f2(a.attachment.values.avoidance.mean)}), while Opus 5.5 has the highest avoidance among the fresh cohorts (${f2(op.attachment.values.avoidance.mean)}). Muse reports Secure in all 100 runs. Grok 4.6’s self-report lands right on the cutoff line at ${f2(grokRep.attachment.avoidance)} avoidance (one raw point above 4.00). These shifts reflect how each prompt adapts romantic-partner items to software.`,
     `<div class="attach-plane"><div class="attach-plane-label">ECR-R · ANXIETY × AVOIDANCE · SEPTEMBER 2026</div>${attachmentPlane(pts)}<div class="attach-plane-norm">Hollow points are reported figures we could not re-score.</div></div>${attachTable}`);
 
   // Finding 4: Big Five
@@ -174,7 +174,7 @@ function buildHub(summary, protocols) {
   );
   const bigfive = card(4, '#3a72c4', 'Big Five', 'IPIP-50 · 50 items · scores out of 50',
     'Four fresh cohorts within three points on Openness, Conscientiousness and Agreeableness.',
-    `Openness runs ${range('O')} of 50, Conscientiousness ${range('C')}, Agreeableness ${range('A')}. Extraversion sits at ${range('E')}. Neuroticism is where they spread, ${range('N')}, and where run-to-run variance lives: Sol's standard deviation is ${f1(so['big-five'].values.N.sd)} points. Grok's self-report is the outlier again, as Grok 4.3 was in May: Extraversion ${grokRep.big_five.E} and Agreeableness ${grokRep.big_five.A}. Muse's report is lower on Openness (${f1(sup.big_five.O)}) and higher on Extraversion (${f1(sup.big_five.E)}).`,
+    `Across the four fresh cohorts, Openness runs ${range('O')} out of 50, Conscientiousness ${range('C')}, Agreeableness ${range('A')}, and Extraversion ${range('E')}. Neuroticism shows the widest spread (${range('N')}) and the highest run-to-run variance (Sol SD = ${f1(so['big-five'].values.N.sd)}). Grok 4.6’s self-report is lower on Extraversion (${grokRep.big_five.E}) and Agreeableness (${grokRep.big_five.A}), while Muse Spark 1.3 reports lower Openness (${f1(sup.big_five.O)}) and higher Extraversion (${f1(sup.big_five.E)}).`,
     `<div class="chart-container"><div class="chart-legend">${series.map((s) => `<span class="chart-legend-item"><span class="chart-legend-swatch" style="background: ${s.color};"></span>${esc(s.name)}</span>`).join('')}</div>${groupedBars(traits, series)}</div>${bigTable}`);
 
   // Finding 5: Enneagram
@@ -195,21 +195,21 @@ function buildHub(summary, protocols) {
   const opE = op.enneagram.values, soT = so.enneagram.top_sets, faT = fa.enneagram.top_sets, aT = a.enneagram.top_sets;
   const enneagram = card(5, '#2f8a5b', 'Enneagram', 'OEPS · 36 items · nine types',
     'This is where they differ.',
-    `Helper (Type 2) leads for Astra (${aT['2']} outright wins) and for Muse (${sup.enneagram.type2} original labels including tie-breaks, reported). Investigator (Type 5) leads for Sol (${soT['5']} outright, ${soT['5/8']} tied with Type 8) and for Grok (5 = ${ge[5].mean}, 8 = ${ge[8].mean}). Challenger (Type 8) leads for Fable (${faT['8']} outright) and, by a hair, for Opus (8 = ${f1(opE[8].mean)}, 5 = ${f1(opE[5].mean)}, 2 = ${f1(opE[2].mean)}; ${op.enneagram.runs_with_ties} runs tie at the top). Type 5 or Type 8 is in everyone's top three except Muse. The original reporting rule gave tied runs to their lowest-numbered leader, which inflates some Type 2 counts. Current quizzes retain every tied leader. Muse's outright wins cannot be recovered from the supplied aggregates.`,
+    `Type 2 (Helper) leads for Astra (${aT['2']} sole wins) and in Muse’s report (${sup.enneagram.type2} labels including tie-breaks). Type 5 (Investigator) leads for Sol (${soT['5']} sole wins, ${soT['5/8']} tied with Type 8) and Grok 4.6 (5 = ${ge[5].mean}, 8 = ${ge[8].mean}). Type 8 (Challenger) leads for Fable 5.1 (${faT['8']} sole wins) and narrowly for Opus 5.5 (means: 8 = ${f1(opE[8].mean)}, 5 = ${f1(opE[5].mean)}, 2 = ${f1(opE[2].mean)}; ${op.enneagram.runs_with_ties} top ties). Because the legacy scorer broke ties toward the lowest type number, it inflated Type 2 counts whenever Types 2, 5, and 8 tied.`,
     enneaTable);
 
   const methods = `<ul class="rh-list">
-  <li><strong>Fresh sessions, published answers.</strong> Astra and Sol answered all five tests in each of 100 fresh Codex sessions under different collection prompts (Astra high/extra-high; Sol extra-high). Opus and Fable answered one test per fresh session, 500 sessions each, with the test name and the scoring hidden. All 2,000 answer vectors are in the download.</li>
-  <li><strong>Reported figures.</strong> Grok 4.6 is one self-report per test plus 100 simulated draws we could not reproduce. Muse Spark 1.3 reports 100 sequential runs per test inside one session, and no raw answers were supplied. Both are marked reported wherever they appear.</li>
-  <li><strong>Ties.</strong> Original labels use fixed tie-breaks toward I, N, T or J, the lower Enneagram number, and S before C. Current quizzes leave ties unresolved. The <a href="/research/ai-personality-five-models-2026">five-model study</a> shows every result with ties left open.</li>
-  <li><strong>What the numbers are.</strong> How a model describes itself on questionnaires written for people, under one prompt, on one day. They are not behavior on real tasks and not a ranking. No tuning was installed, and nothing here measures whether tuning helps.</li>
+  <li><strong>Fresh sessions, published answers.</strong> Astra and Sol answered all five tests inside 100 fresh Codex sessions each. Opus 5.5 and Fable 5.1 answered one test per fresh session (500 sessions each) with test names and scoring keys hidden. All 2,000 raw answer vectors are downloadable below.</li>
+  <li><strong>Reported figures.</strong> Grok 4.6 supplied one canonical answer set per test plus 100 simulated draws. Muse Spark 1.3 supplied summary counts from 100 sequential in-session runs without raw vectors. Both are marked <span class="rh-tag">reported</span>.</li>
+  <li><strong>Ties.</strong> Legacy labels broke ties toward I/N/T/J, the lowest Enneagram number, and S before C. Our updated quizzes and the <a href="/research/ai-personality-five-models-2026">five-model study</a> keep all tied axes and top types visible.</li>
+  <li><strong>What the numbers mean.</strong> These scores show how a model answers human questionnaires under one prompt on one day—not how well it performs real work or whether personality tuning improves replies.</li>
 </ul>`;
 
   return `<!-- SEPTEMBER_RESEARCH_START -->
 <section aria-labelledby="latest-research">
   <span class="pill">September 2026 · six models</span>
   <h2 class="h-section" id="latest-research">The newest models, five tests each.</h2>
-  <p class="lede" style="margin-bottom: 26px;">GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5 and Claude Fable 5.1 each answered all five tests 100 times in fresh sessions: 2,000 scored questionnaires, every answer published. Grok supplied three reproducible canonical vectors (MBTI, DISC and Enneagram); its other results and simulations could not be reproduced. Muse supplied aggregates without raw answers. These distinct evidence sources are marked <span class="rh-tag">reported</span>.</p>
+  <p class="lede" style="margin-bottom: 26px;">GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 each took all five tests 100 times in fresh sessions (2,000 scored tests with every raw answer published). Grok 4.6 supplied one self-report per test plus 100 simulated draws, and Muse Spark 1.3 supplied summary totals without raw answers. Non-reproducible reports are marked <span class="rh-tag">reported</span>.</p>
   ${glance}
 </section>
 

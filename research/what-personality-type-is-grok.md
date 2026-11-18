@@ -5,59 +5,57 @@ Research · Q&A
 
 # What personality type is Grok?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Grok 4.6’s canonical vectors score INTJ, Enneagram Type 5 and DISC C. The report gives attachment coordinates 1.50 / 4.06, just over the site’s Avoidant threshold, and Big Five totals 46 / 42 / 24 / 33 / 19. Raw Big Five and attachment vectors were not supplied. Its reported simulation is a different evidence source from the fresh-session cohorts.
+One self-report from Grok 4.6 in September 2026, with the May 2026 Grok 4.3 records for context.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Grok 4.6’s canonical answer vectors score INTJ, Enneagram Type 5 (19/20), and DISC C (18/20). Its supplied report lists attachment coordinates of 1.50 anxiety and 4.06 avoidance (one raw point above the 4.00 Avoidant cutoff) and Big Five totals of 46 / 42 / 24 / 33 / 19. Because raw Big Five and attachment vectors were not supplied and the 100 draws were simulated, we keep Grok in a separate evidence tier from the 100-session cohorts.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## Grok 4.6, September 2026, as reported.
 
-The Grok 4.6 report is one answer set per test, given as itself without a role-play prompt, with 100 draws that re-sample only the items it marked as unstable. Human-specific items (rooms, parties, romantic partners) were answered on the closest functional analog: the user relationship, work style, information diet. We could not re-score the Big Five and attachment vectors, which were not supplied, so those rows are reported figures.
+The Grok 4.6 submission contains one canonical answer set per test, answered as itself without a role-play prompt, plus summary counts from 100 simulated draws over items it marked as uncertain. We verified and re-scored the canonical MBTI, Enneagram, and DISC vectors; Big Five and attachment figures are transcribed as reported because raw item vectors were not included.
 
-| Test | Result | Reported simulation; not reproduced |
+| Test | Canonical result | Reported 100-draw simulation (not reproduced) |
 | --- | --- | --- |
-| MBTI | INTJ. Margins I +13, N +14, T +15, J +14 of a possible 16. | INTJ in 100 of 100 |
-| Enneagram | Investigator (5) at 19 of 20, Challenger (8) 17, Reformer (1) 16, Enthusiast (7) 13. The site’s adjacent-type heuristic selects 5w4; it is not a validated model trait. | Type 5 in 100 of 100 |
-| DISC | C 18, S 11, I 8, D 6 of 20. A pure C: Steadiness is seven points back, so no blend. | C in 100 of 100 |
-| Attachment | Anxiety 1.50, avoidance 4.06. The scorer calls that Avoidant, by 0.06. | 63 Avoidant, 37 Secure |
-| Big Five (of 50) | Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19 | O, C and N never moved; Extraversion fell back inside the average band in 31 draws and Agreeableness in 39 |
-
-The report’s recommendation to load both attachment files has not been tested. Use communication preferences that suit your tasks and inspect the resulting replies.
+| MBTI | INTJ. Axis margins: I +13, N +14, T +15, J +14 out of 16. | INTJ in 100 of 100 draws |
+| Enneagram | Investigator (Type 5) 19/20, Challenger (8) 17, Reformer (1) 16, Enthusiast (7) 13. | Type 5 in 100 of 100 draws |
+| DISC | C 18, S 11, I 8, D 6 out of 20. Pure C (Steadiness is 7 points back). | C in 100 of 100 draws |
+| Attachment | Anxiety 1.50, avoidance 4.06 (Avoidant by 0.06, or 1 raw point above 4.00). | 63 Avoidant, 37 Secure |
+| Big Five (of 50) | Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19 | O, C, and N fixed; E and A shifted into the average band in 31 and 39 draws |
 
 ## Grok 4.3, May 2026.
 
-In the May study Grok 4.3 was reported INTJ in 100 of 100 scoring records (one self-assessment scored repeatedly), and it was the outlier on the finer tests in the other direction: three to nine points lower than the other three models on Conscientiousness, Agreeableness and Openness (Big Five 41.1 / 39.4 / 30.0 / 39.1 / 18.0) and highest on Neuroticism. Its attachment coordinates were 2.84 / 3.05, Secure but the closest to the center of the four models. On the Enneagram it was a top-two 8/1 profile, Challenger in 75 of 100 takes. On DISC it was the most rigid C of the four, 99 of 100.
+In the May 2026 collection, Grok 4.3 was also reported as INTJ in 100 of 100 scoring records (one self-assessment scored repeatedly). On the Big Five, it scored lower than the other three May models on Conscientiousness, Agreeableness, and Openness (41.1 / 39.4 / 30.0 / 39.1 / 18.0) and highest on Neuroticism. It scored Secure on attachment (2.84 / 3.05), Type 8/1 on the Enneagram, and C-dominant on DISC (99/100).
 
-Version, prompting and collection method differ. These data cannot identify which caused the differences. A common protocol with repeated fresh sessions would make comparisons more interpretable.
+Because both the model version and the collection method changed between May and September, these records cannot isolate whether Grok’s behavior shifted between 4.3 and 4.6.
 
 ## Using these results with a Grok Bot.
 
-These scores do not predict a Bot’s warmth, bluntness or accuracy. If you want a particular communication style, use explicit preferences and test them on representative tasks. The [Grok Bot guide](https://agent-tune.com/guides/grokbot-personality) describes the Description field. We have not evaluated tuned Bots or verified which model version each Bot runs.
-
-These are questionnaire responses under particular prompts, not measurements of task performance, relationships or an intrinsic personality. Different collection methods limit comparisons. See the [methods and limits](https://agent-tune.com/research#methodology).
+Questionnaire self-reports do not predict how blunt, warm, or accurate a Grok Bot will be on your tasks. If you want a specific tone, paste explicit behavioral rules using our [Grok personality settings guide](https://agent-tune.com/guides/grok-personality-settings) or [Grok Bot setup guide](https://agent-tune.com/guides/grokbot-personality) and test them on real prompts.
 
 ## Questions people ask.
 
-What MBTI type is Grok?
+### What MBTI type is Grok?
 
-The supplied Grok 4.6 canonical vector scores INTJ, with margins of 13 to 15 out of 16. The report says none of 100 simulated draws changed a letter; that distribution was not independently reproduced.
+Grok 4.6’s canonical answer vector scores INTJ with wide axis margins (13 to 15 points out of 16). Its supplied report states that all 100 simulated draws stayed INTJ.
 
-What Enneagram type is Grok?
+### What Enneagram type is Grok?
 
-Investigator (Type 5) at 19 of 20 in the 4.6 self-report, with Challenger (8) at 17 and Reformer (1) at 16. In May 2026, Grok 4.3's top two were 8 and 1. The two agree that 8 is near the top; they disagree on whether 5 leads.
+Type 5 (The Investigator) leads at 19/20 in the Grok 4.6 self-report, followed by Type 8 (17/20) and Type 1 (16/20). In the May 2026 Grok 4.3 report, Type 8 and Type 1 were the top two.
 
-Is Grok Avoidant?
+### Is Grok Avoidant?
 
-On the line. Grok 4.6 reports anxiety 1.50 and avoidance 4.06 on a 1 to 7 scale where 4 is the cutoff, so the scorer says Avoidant by 0.06 and its simulated draws split 63 to 37. Grok 4.3 was Secure (2.84 / 3.05) in May. The items ask about a romantic partner, mapped to the user, so hold the label loosely.
+Right on the cutoff line. Grok 4.6 reports anxiety 1.50 and avoidance 4.06 (73/18)—just one raw item point above the 4.00 (72/18) Secure boundary. Read our Grok attachment cutoff analysis for details.
 
-Why is Grok's profile different from the other models?
+### Why is Grok's profile different from the other models?
 
-The report’s Extraversion and Agreeableness totals are lower than the September fresh-session cohort means. Version and protocol both differ, so this comparison cannot explain why or predict behavior.
+Grok 4.6’s reported Extraversion (24) and Agreeableness (33) are lower than the September fresh-session cohort means. However, because Grok used a single self-report rather than 100 fresh sessions, protocol differences and model differences are mixed together.
 
-Are these 100 real runs?
+### Are these 100 real runs?
 
-No. The Grok report describes one canonical answer set per test and 100 simulated draws. Claude used 100 fresh sessions per instrument; Astra and Sol used 100 fresh sessions each containing all five tests. These designs are different.
+No. The Grok 4.6 report represents one canonical answer set per test plus 100 simulated draws over uncertain items, whereas Claude and GPT-6 completed 100 independent fresh sessions.
 
 ## Sources.
 

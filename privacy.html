@@ -85,57 +85,41 @@
 
     <div class="legal">
       <div class="legal-summary">
-        <strong>The short version.</strong> AgentTune is built to need as little of your data as possible. The five personality tests run entirely in your browser — your answers never reach our servers. We use privacy-respecting analytics to understand traffic. We never sell your data or use it to train our own models.
+        <strong>The short version:</strong> AgentTune needs almost none of your data. All five personality tests and all ten browser tools run inside your browser tab—your answers and pasted instructions never reach our servers. Optional analytics only load if you click Allow, and we never sell data or train models on it.
       </div>
 
       <h2>1. Who we are</h2>
-      <p>AgentTune (“AgentTune”, “we”, “us”) operates the website at <a href="/">agent-tune.com</a> and the related open-source tuning library. You can reach us at <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->.</p>
+      <p>AgentTune (“we”, “us”) runs <a href="/">agent-tune.com</a> and the open-source AgentTune template library. Contact us anytime at <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->.</p>
 
-      <h2>2. What we collect</h2>
-      <p><strong>Instruction, memory, and comparison tools.</strong> The eight tools at <a href="/tools/">Free tools</a> process text and imported files in your browser tab. Their contents are not sent to AgentTune or a model, and are not automatically saved. Downloads include the output you choose to export. Clear the tool or close the tab when finished.</p>
-      <p><strong>Working-preference share links.</strong> If you choose to create a card link, its reviewed text is encoded in the URL fragment. Anyone with that link can read the card. It is not stored in an AgentTune account and cannot be centrally revoked. The card page removes the fragment from its address before analytics load. Do not put secrets or sensitive facts in a shared card.</p>
-      <p><strong>Browsing &amp; the free tools.</strong> You can use AgentTune with no account and no sign-up. The five personality tests are scored entirely in your browser — the individual answers you select are never transmitted to us. We collect standard analytics about page visits (see “Analytics &amp; cookies” below).</p>
-      <h2>3. How we use it</h2>
+      <h2>2. What stays in your browser</h2>
+      <p><strong>Tests and browser tools:</strong> All 5 personality tests (<a href="/tests/">Tests</a>) and all 10 tools (<a href="/tools/">Free tools</a>) score and process text locally in your browser tab. Your quiz answers, memory exports, and custom instructions are never uploaded to AgentTune or sent to an AI model.</p>
+      <p><strong>Local 7-day drafts:</strong> Unfinished quiz answers and generator drafts stay in your browser’s <code>localStorage</code> for up to 7 days so you can resume where you left off. Finishing a test, clicking Reset/Clear, or clearing browser storage deletes them immediately.</p>
+      <p><strong>Share links:</strong> If you create a share link in the How to Work With Me card tool, the card text is placed in the URL’s <code>#card=...</code> hash fragment. That text is never stored on our servers, and the page strips the hash from the URL before any analytics script can see it. Because anyone with the link can read it, never put passwords or private keys in a shared card.</p>
+
+      <h2>3. How we use aggregate data</h2>
       <ul>
-        <li>to respond to support requests;</li>
-        <li>to understand, in aggregate, how the site is used so we can improve it.</li>
+        <li>To reply when you email us;</li>
+        <li>To see which pages and tools are useful in aggregate so we can improve them.</li>
       </ul>
 
-      <h2>4. Who processes your data</h2>
-      <p>We don’t sell your personal information, and we don’t use it to train our own models. We rely on a small set of trusted providers to run the service:</p>
+      <h2>4. Service providers</h2>
+      <p>We do not sell personal data or train AI models on visitor data. We use two infrastructure providers:</p>
       <ul>
-        <li><strong>Cloudflare</strong> — website hosting (Cloudflare Pages).</li>
-        <li><strong>Google</strong> — Google Analytics (usage measurement).</li>
+        <li><strong>Cloudflare</strong> — hosts the static site (Cloudflare Pages) and provides cookieless aggregate web traffic counts.</li>
+        <li><strong>Google Analytics</strong> — optional, consent-gated usage counts (only loaded if you click “Allow analytics”).</li>
       </ul>
-      <p>Each provider processes data under its own privacy terms.</p>
 
       <h2>5. Analytics &amp; cookies</h2>
-      <p>We use Google Analytics to measure traffic (pages viewed, approximate location, device/browser). <strong>It only loads if you allow it</strong>: the first time you visit, a small banner asks; until you choose “Allow analytics,” no Google Analytics script runs and no Google Analytics cookies are set. Declining is remembered and Google Analytics is not loaded. Withdrawing consent disables further Google Analytics events in the current tab and clears its first-party analytics cookies. Cloudflare also provides aggregate traffic and performance measurements through its cookieless Web Analytics beacon. That is separate from the consent-gated Google Analytics tag. We do not run advertising or cross-site ad-tracking.</p>
-      <p>You can change your choice any time: <a href="#" onclick="window.atConsentReset&amp;&amp;atConsentReset();return false">Analytics preferences</a> (re-opens the consent banner). Google also offers an <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">opt-out browser add-on</a>.</p>
+      <p>Google Analytics is <strong>off by default</strong>. No Google Analytics script runs and no analytics cookies are set unless you click “Allow analytics” on the consent banner. If you allow analytics, we count high-level actions (like test starts, completions, and copy clicks) without ever sending your quiz answers, personality scores, search queries, or custom instruction text. Page query strings and URL fragments are excluded.</p>
+      <p>You can change or withdraw your choice anytime via <a href="#" onclick="window.atConsentReset&amp;&amp;atConsentReset();return false">Analytics preferences</a>, which disables tracking immediately and clears first-party <code>_ga</code> cookies. Google also provides a <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">browser opt-out add-on</a>.</p>
 
-      <h2>6. How long we keep it</h2>
-      <p>We don’t store your test answers or results at all — they never leave your browser. Analytics data follows Google Analytics’ standard retention settings. If you’ve emailed us, we keep that correspondence only as long as needed to help you.</p>
+      <h2>6. Retention &amp; your rights</h2>
+      <p>We never store your quiz answers or tool inputs. If you email us, we keep the thread only as long as needed to help you. You can ask to access, export, or delete any correspondence we hold by emailing <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->. We honor GDPR, CCPA, and equivalent privacy rights for all visitors regardless of location.</p>
 
-      <h2>7. Your rights</h2>
-      <p>You can ask us to access, correct, export, or delete any personal data we hold about you (in practice, just email correspondence). Email <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off--> and we’ll action it. Depending on where you live you may have additional rights under laws such as the GDPR or CCPA; we honor those requests regardless of location.</p>
-
-      <h2>8. Security</h2>
-      <p>All traffic is served over HTTPS. No system is perfectly secure, but we minimize what we collect so there’s little to expose.</p>
-
-      <h2>9. Children</h2>
-      <p>AgentTune isn’t directed to children under 13 (or the minimum age in your country), and we don’t knowingly collect their data.</p>
-
-      <h2>10. International users</h2>
-      <p>AgentTune is operated from the United States and uses globally-distributed infrastructure. By using the site you understand your information may be processed in the US and other countries.</p>
-
-      <h2>11. Changes to this policy</h2>
-      <p>We’ll update this page when our practices change and revise the effective date above. </p>
-
-      <h2>12. Contact</h2>
-      <p>Questions or requests: <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->. See also our <a href="/terms">Terms of Service</a>.</p>
+      <h2>7. Security, children &amp; updates</h2>
+      <p>All pages are served over HTTPS. AgentTune is not directed to children under 13. When we update this policy, we will update the date at the top of the page. Questions? Email <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off--> or read our <a href="/terms">Terms of Service</a>.</p>
     </div>
-
-    <p>With analytics allowed, we count test starts, completions, successful copies and downloads, without sending questionnaire answers, personality results or copied instruction text. Withdrawal stops these events.</p><section class="guide-prose"><h2>Local drafts and setup feedback</h2><p>Unfinished test answers stay only in this browser for up to 7 days, with an explicit Resume button. Finishing or clearing a test removes its saved answers. Generator selections and edited instructions stay in this browser for up to 7 days; Reset clears them. Expiry is checked when you return; closed browsers may retain expired data until that check or until you clear browser storage. Anyone using this browser may see saved drafts. Browser storage controls can remove them too.</p><p>Share links include only the preferences or template, app and destination you explicitly choose to share. They exclude test answers and edited instruction text. With analytics consent, we count setup choices, resume, copying errors, resource searches and whether you mark a setup useful. We do not send answer values, personality types, search text or instruction content in those events. Page query strings and referrers are excluded from our analytics configuration.</p></section></main>
+    </main>
     <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
       <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>

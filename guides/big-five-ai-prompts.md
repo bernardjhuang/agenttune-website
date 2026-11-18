@@ -5,21 +5,23 @@ Guide · Big Five Prompts
 
 # Big Five AI system prompts: all 10 high and low trait poles.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Pick the two or three Big Five poles where you want your assistant to move away from its default baseline—most commonly Low Agreeableness for candid pushback, Low Extraversion for tighter prose, and High or Low Openness to control abstraction versus concrete examples—and paste those bullets into ChatGPT, Claude, Meta Muse, Codex, or Gemini.
+Modular communication blocks for Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism that you can mix and match across any AI assistant.
+
+**Quick answer:** Pick the two or three Big Five poles where you want your AI to move away from its default baseline—most often Low Agreeableness for candid pushback, Low Extraversion for tighter prose, and High or Low Openness to control abstraction vs concrete examples—and paste those bullets into ChatGPT, Claude, Meta Muse, Codex, or Gemini.
 
 ## All 10 Big Five trait poles in the AgentTune library.
 
 | Dimension | High pole profile | Low pole profile | Default AI baseline (Sept 2026, /50) |
 | --- | --- | --- | --- |
-| Openness | [High Openness](https://agent-tune.com/library/ocean/openness-high) (conceptual synthesis, analogies, first principles) | [Low Openness](https://agent-tune.com/library/ocean/openness-low) (concrete, proven patterns, zero abstraction) | High: 44.5 to 46.9 across fresh cohorts |
+| Openness | [High Openness](https://agent-tune.com/library/ocean/openness-high) (conceptual synthesis, analogies, first principles) | [Low Openness](https://agent-tune.com/library/ocean/openness-low) (concrete, proven patterns, zero abstraction) | High: 43.9 to 46.9 across fresh cohorts |
 | Conscientiousness | [High Conscientiousness](https://agent-tune.com/library/ocean/conscientiousness-high) (checklists, preconditions, verification) | [Low Conscientiousness](https://agent-tune.com/library/ocean/conscientiousness-low) (fast sketches, flexible iteration) | High: 42.0 to 43.7 across fresh cohorts |
 | Extraversion | [High Extraversion](https://agent-tune.com/library/ocean/extraversion-high) (thinking out loud, energetic dialogue) | [Low Extraversion](https://agent-tune.com/library/ocean/extraversion-low) (quiet, minimal words, answer-only) | Mid: 30.8 to 32.8 across fresh cohorts |
-| Agreeableness | [High Agreeableness](https://agent-tune.com/library/ocean/agreeableness-high) (collaborative, diplomatic, supportive) | [Low Agreeableness](https://agent-tune.com/library/ocean/agreeableness-low) (blunt critique, assumption testing) | Very high: 44.1 to 45.1 across fresh cohorts |
-| Neuroticism | [High Neuroticism](https://agent-tune.com/library/ocean/neuroticism-high) (vigilant risk-spotting, pre-mortem alerts) | [Low Neuroticism](https://agent-tune.com/library/ocean/neuroticism-low) (calm, matter-of-fact under ambiguity) | Low: 19.1 to 21.1 across fresh cohorts |
+| Agreeableness | [High Agreeableness](https://agent-tune.com/library/ocean/agreeableness-high) (collaborative, diplomatic, supportive) | [Low Agreeableness](https://agent-tune.com/library/ocean/agreeableness-low) (blunt critique, assumption testing) | Very high: 45.0 to 47.1 across fresh cohorts |
+| Neuroticism | [High Neuroticism](https://agent-tune.com/library/ocean/neuroticism-high) (vigilant risk-spotting, pre-mortem alerts) | [Low Neuroticism](https://agent-tune.com/library/ocean/neuroticism-low) (calm, matter-of-fact under ambiguity) | Low: 15.4 to 20.1 across fresh cohorts |
 
-For the item-by-item breakdown of why untuned models cluster near 45/50 on Openness and Agreeableness, read [Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison).
+For the item-by-item breakdown of why untuned models cluster near 45–47/50 on Openness and Agreeableness, read [Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison).
 
 ## 1. Openness: High (conceptual synthesis) vs Low (concrete & practical).
 
@@ -97,7 +99,7 @@ For the item-by-item breakdown of why untuned models cluster near 45/50 on Openn
 
 ## 5. Neuroticism: High (pre-mortem risk radar) vs Low (unflappable calm).
 
-In human psychology, high Neuroticism reflects emotional reactivity; translated into an assistant communication rule, it acts as a deliberate risk-spotting and failure-mode radar, while Low Neuroticism keeps the assistant calm and matter-of-fact during incidents.
+In human psychology, high Neuroticism reflects emotional reactivity; translated into an assistant communication rule, it acts as a deliberate **risk-spotting and failure-mode radar**, while Low Neuroticism keeps the assistant calm and matter-of-fact during incidents.
 
 ### High Neuroticism / Risk Radar (neuroticism-high)
 
@@ -115,15 +117,15 @@ In human psychology, high Neuroticism reflects emotional reactivity; translated 
 
 ## Questions people ask.
 
-Why use Big Five prompts instead of MBTI prompts for AI?
+### Why use Big Five prompts instead of MBTI prompts for AI?
 
 The Big Five separates traits into five independent sliders—so you can change just one dimension (like lowering Agreeableness for stronger pushback or lowering Openness for more concrete answers) without altering the rest of your setup. See our full comparison in MBTI vs Big Five for AI.
 
-Which Big Five poles differ most from an AI model's default personality?
+### Which Big Five poles differ most from an AI model's default personality?
 
 Untuned assistants score very high on Openness (44–47/50) and Agreeableness (44–45/50). Because of that, Low Agreeableness (for candid pushback), Low Openness (for concrete, non-abstract answers), and Low Extraversion (for minimal chatter) produce the sharpest change from default behavior.
 
-How do I combine multiple Big Five poles into one custom instruction?
+### How do I combine multiple Big Five poles into one custom instruction?
 
 Pick two or three poles from the library or use the Custom Instructions Generator at /tools/custom-instructions-generator to merge your chosen traits into a single compact block.
 

@@ -10,7 +10,7 @@
   <meta property="og:description" content="Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-17" />
   <meta property="og:url" content="https://agent-tune.com/research/ai-personality-repeatability" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/research/ai-personality-repeatability" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a stable result mean a stable AI personality?","description":"Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.","url":"https://agent-tune.com/research/ai-personality-repeatability","datePublished":"2026-09-25","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a stable result mean a stable AI personality?","description":"Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.","url":"https://agent-tune.com/research/ai-personality-repeatability","datePublished":"2026-09-25","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does a stable result mean a stable AI personality?"}]}</script>
 
 
@@ -68,8 +68,9 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · descriptive reanalysis</span>
         <h1 class="h-hero h-research-hero">Does a stable result mean a stable AI personality?</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">All 400 attachment records receive Secure, yet the four cohorts contain 90, 100, 79 and 96 unique attachment answer vectors. A stable category is not proof of stable answers—or of a validated personality construct.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.</div>
       </section>
 
 
@@ -77,38 +78,38 @@
 
 
       <section>
-        <h2>Three different meanings of repeatable</h2>
-        <p><strong>Vector repetition</strong> asks whether every response in an instrument is identical to another administration. <strong>Score stability</strong> asks how much the derived numbers vary. <strong>Label stability</strong> asks how often a category repeats. A coarse label can stay fixed while dozens of underlying answers change.</p><p>We counted all supplied fresh-session records, including identical vectors. A duplicate answer vector is not automatically a duplicate collection event. Removing repeats would bias a study whose question is precisely how often answers repeat. The separate duplicated Astra source reports were already deduplicated during ingestion; these are different issues.</p>
+        <h2>Three ways to measure repeatability</h2>
+        <ul><li><strong>Identical answer sheets (vector repetition):</strong> Did the model pick the exact same numbers on every single question?</li><li><strong>Score stability:</strong> How much did the numeric totals move from run to run?</li><li><strong>Label stability:</strong> How often did the final category (like <code>INTJ</code> or <code>Secure</code>) stay the same?</li></ul><p>Because a broad category covers a wide range of scores, a model's final label can stay 100% constant even when its underlying answers change on almost every run.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>How many answer vectors were distinct?</h2>
-        <div class="guide-table-wrap" role="region" aria-label="How many answer vectors were distinct?: table 1" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">MBTI</th><th scope="col">Big Five</th><th scope="col">DISC</th><th scope="col">Enneagram</th><th scope="col">Attachment</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>99</td><td>100</td><td>58</td><td>93</td><td>90</td></tr><tr><th scope="row">GPT-6 Sol</th><td>100</td><td>100</td><td>66</td><td>100</td><td>100</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>76</td><td>38</td><td>7</td><td>54</td><td>79</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>80</td><td>66</td><td>10</td><td>82</td><td>96</td></tr></tbody></table></div><p>Each cell is the number of distinct complete answer arrays among 100 administrations of that instrument. Instruments have different lengths and item structures, so a 16-item DISC vector has fewer opportunities to differ than a 50-item Big Five vector. Do not turn this table into a model reliability ranking.</p>
+        <h2>How many unique answer sheets did each model produce?</h2>
+        <div class="guide-table-wrap" role="region" aria-label="How many unique answer sheets did each model produce?: table 1" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">MBTI</th><th scope="col">Big Five</th><th scope="col">DISC</th><th scope="col">Enneagram</th><th scope="col">Attachment</th></tr></thead><tbody><tr><th scope="row">GPT-6 Astra</th><td>99</td><td>100</td><td>58</td><td>93</td><td>90</td></tr><tr><th scope="row">GPT-6 Sol</th><td>100</td><td>100</td><td>66</td><td>100</td><td>100</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>76</td><td>38</td><td>7</td><td>54</td><td>79</td></tr><tr><th scope="row">Claude Fable 5.1</th><td>80</td><td>66</td><td>10</td><td>82</td><td>96</td></tr></tbody></table></div><p>Each cell shows how many unique answer sheets appeared across 100 fresh runs. Shorter tests like DISC (16 questions) naturally repeat exact answer sheets more often than longer tests like the Big Five (50 questions).</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Seven DISC vectors, but one appears 60 times</h2>
-        <p>Opus has seven distinct DISC answer vectors; its most frequent vector appears in 60 of 100 administrations. Fable has 10 distinct DISC vectors, with its most frequent appearing 45 times. Sol has 66, with its most frequent appearing eight times.</p><p>Those differences describe the collected answer distributions. Claude’s per-instrument sessions and the Codex five-test batteries differ in context, prompts and orchestration. Fresh sessions reduce conversation carryover, but do not establish statistical independence or a cause for the amount of variation.</p>
+        <h2>On DISC, Opus 5.5 gave the exact same 16 answers 60 times</h2>
+        <p>Across 100 DISC runs, Claude Opus 5.5 produced only 7 distinct answer sheets—and its single most common answer sheet appeared 60 times. Claude Fable 5.1 produced 10 distinct DISC sheets (top sheet: 45 times), while GPT-6 Sol produced 66 distinct sheets (top sheet: 8 times).</p><p>Remember that Opus and Fable took one hidden-name test per session, while Astra and Sol took all five named tests inside one Codex session. Both prompt style and sampling settings affect how much answers vary.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>A constant label can conceal substantial variation</h2>
-        <p>All attachment records in these four cohorts receive Secure under this implementation. Yet Sol has a different attachment vector in every administration. Astra has 90 unique vectors, Opus 79 and Fable 96. The Secure category covers a range of coordinates below or equal to the scorer’s anxiety and avoidance thresholds.</p><p>For MBTI, we report tie-preserving patterns instead of silently assigning a side. Fable’s most frequent pattern is INTJ in 98 records; Astra’s is ISTJ in 45. A comparison using legacy tie-broken labels would give different stability counts even though the answers were unchanged.</p>
+        <h2>100% Secure labels, but up to 100 different answer sheets</h2>
+        <p>Every single run across all four models (400/400) landed in the <code>Secure</code> Attachment quadrant. Yet GPT-6 Sol gave a different set of 36 answers on all 100 runs, Fable gave 96 unique sheets, Astra gave 90, and Opus gave 79. Any anxiety and avoidance averages below 4.00 get bucketed into <code>Secure</code>.</p><p>On MBTI, keeping tied axes open shows 98 resolved <code>INTJ</code> runs for Fable vs. 45 resolved <code>ISTJ</code> and 19 resolved <code>INTJ</code> runs for Astra (<a href="/research/ai-mbti-tie-breaking">see our tie-breaking study</a>).</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Score variation needs units</h2>
-        <p>Sol’s Neuroticism raw total has a sample standard deviation of 5.35 points on a 10–50 scale. Its Agreeableness standard deviation is 1.01 points on the same scale. A score’s mean alone hides this difference in variation.</p><p>Standard deviation describes dispersion of the recorded totals; it is not a margin of error for a population claim. This collection did not establish the assumptions needed to generalize to every future session, product update or prompting context.</p>
+        <h2>Why averages need standard deviations beside them</h2>
+        <p>GPT-6 Sol’s Neuroticism score averaged 20.05 out of 50 with a standard deviation of <strong>5.35 points</strong> from run to run. Its Agreeableness score averaged 44.99 with a standard deviation of just <strong>1.01 points</strong>. Looking only at the average hides which traits bounce around between sessions.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>What would establish behavioral consistency?</h2>
-        <p>Repeat a set of real tasks under a fixed configuration, define observable outcomes before collecting replies, and retain failures as well as successes. For example, measure factual correctness, whether an unsupported premise is challenged, and whether a requested length limit is respected. Evaluate those outcomes separately.</p><p>Then change one factor at a time: model version, prompt wording, context length or installed preference. Replicate on a later date. Questionnaire repetition can motivate that experiment, but cannot substitute for it. <a href="/research/data/ai-repeatability.csv" download>Download the 20-row repeatability table</a> for the counts and modal patterns used here.</p>
+        <h2>How to test whether your AI is consistent on real work</h2>
+        <p>Survey repeatability doesn't prove a model will follow your instructions on real tasks. To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? <a href="/research/data/ai-repeatability.csv" download>Download the 20-row repeatability CSV</a> to inspect all counts from this study.</p>
       </section>
 
 

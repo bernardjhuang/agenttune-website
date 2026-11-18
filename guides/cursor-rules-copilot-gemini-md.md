@@ -5,9 +5,11 @@ Guide · Coding Assistants
 
 # Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Put always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in the YAML frontmatter. For GitHub Copilot, append your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md (personal) or repo GEMINI.md. For Claude Code, use ~/.claude/output-styles/agenttune.md or CLAUDE.md. For OpenAI Codex, use ~/.codex/AGENTS.md.
+Every IDE and terminal agent has its own instruction file path and frontmatter syntax. Here is the exact format for Cursor, GitHub Copilot, Gemini CLI, Claude Code, and OpenAI Codex.
+
+**Quick answer:** Save always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in YAML frontmatter (or in Cursor's user Rules for AI). For GitHub Copilot, add your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md or repo GEMINI.md. For Claude Code, use ~/.claude/CLAUDE.md or ~/.claude/output-styles/agenttune.md. For OpenAI Codex, use ~/.codex/AGENTS.md.
 
 ## Side-by-side comparison of coding agent instruction files.
 
@@ -21,7 +23,7 @@ Put always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alw
 
 ## 1. Cursor: .cursor/rules/agenttune.mdc with alwaysApply.
 
-Cursor replaced the older single .cursorrules file with modular .mdc files inside .cursor/rules/. Each rule file starts with a three-line YAML frontmatter block telling Cursor when to attach the file. For communication rules that should apply in every composer and chat session, set alwaysApply: true:
+Cursor uses modular `.mdc` files inside `.cursor/rules/` rather than a single legacy `.cursorrules` file. Each file starts with a short YAML frontmatter block. Set `alwaysApply: true` for communication rules that should apply in every chat and Composer session:
 
 ```markdown
 ---
@@ -37,11 +39,11 @@ alwaysApply: true
 - Ask for clarification only when an ambiguity changes the public interface or data model.
 ```
 
-remember that files inside .cursor/rules/ are often tracked in git. If you work on a shared repository and want your personal communication rules to stay private to your machine, add .cursor/rules/personal-*.mdc to .git/info/exclude or place personal tone preferences in Cursor's user-level Rules for AI setting.
+Because `.cursor/rules/` is usually tracked in git, keep personal tone private to your machine by adding `.cursor/rules/personal-*.mdc` to `.git/info/exclude` or using Cursor’s user-level **Rules for AI** box.
 
 ## 2. GitHub Copilot: .github/copilot-instructions.md.
 
-GitHub Copilot in VS Code, Visual Studio, JetBrains, and on GitHub.com automatically reads .github/copilot-instructions.md at the root of your repository. Because that file is shared by every contributor on the repository, keep the communication section focused on team-friendly clarity rules alongside your build and test commands:
+GitHub Copilot in VS Code, Visual Studio, JetBrains, and GitHub.com reads `.github/copilot-instructions.md` from your repo root. Because every contributor shares that file, keep its communication section concise and team-friendly:
 
 ```markdown
 ## Communication & review style
@@ -54,23 +56,23 @@ GitHub Copilot in VS Code, Visual Studio, JetBrains, and on GitHub.com automatic
 
 ## 3. Gemini CLI and Code Assist: GEMINI.md.
 
-Gemini CLI and Gemini Code Assist read ~/.gemini/GEMINI.md for your personal defaults and GEMINI.md in the repository root for project context. Putting your personal AgentTune profile in ~/.gemini/GEMINI.md keeps your voice consistent across every project without touching git history. See our full [Google Gemini personality guide](https://agent-tune.com/guides/gemini-personality) for details on combining GEMINI.md with Gems and Saved info.
+Gemini CLI and Gemini Code Assist read `~/.gemini/GEMINI.md` for personal defaults and `GEMINI.md` in the repo root for project rules. Saving your personal AgentTune profile in `~/.gemini/GEMINI.md` applies your style across every repo without touching git. See our [Google Gemini personality guide](https://agent-tune.com/guides/gemini-personality) for Gems and Saved Info setup.
 
 ## Exporting any of the 43 AgentTune profiles in one click.
 
-On every profile page in the [AgentTune library](https://agent-tune.com/library/), choose Coding assistant in the first dropdown of the prompt picker, then pick Cursor · project rule, GitHub Copilot · repository instructions, Gemini CLI · GEMINI.md, Claude Code · output style, or Codex · personal instructions. The picker automatically wraps your selected tuning in the exact frontmatter and comments required by that tool.
+On any profile page in the [AgentTune library](https://agent-tune.com/library/), select **Coding assistant** in the first dropdown, then choose **Cursor · project rule**, **GitHub Copilot · repository instructions**, **Gemini CLI · GEMINI.md**, **Claude Code · output style**, or **Codex · personal instructions**. Or merge into an existing file with our [Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter).
 
 ## Questions people ask.
 
-Did .cursor/rules/*.mdc replace .cursorrules in Cursor?
+### Did .cursor/rules/*.mdc replace .cursorrules in Cursor?
 
 Yes. Cursor uses .cursor/rules/*.mdc files with YAML frontmatter (description, globs, and alwaysApply: true/false) so projects can separate always-on rules from file-pattern rules.
 
-Where do I put personal communication rules so I don't commit them to a team repo?
+### Where do I put personal communication rules so I don't commit them to a team repo?
 
 Use ~/.codex/AGENTS.md in OpenAI Codex, ~/.claude/CLAUDE.md or ~/.claude/output-styles/ in Claude Code, ~/.gemini/GEMINI.md in Gemini CLI, or user-level Rules for AI in Cursor Settings.
 
-Can I use the same AgentTune tuning across Cursor, Copilot, Claude Code, and Codex?
+### Can I use the same AgentTune tuning across Cursor, Copilot, Claude Code, and Codex?
 
 Yes. The core bullet points are portable across all coding assistants; only the file path and YAML frontmatter (such as alwaysApply: true for Cursor or keep-coding-instructions: true for Claude Code) differ.
 

@@ -5,9 +5,11 @@ Reference · Precedence & Scope
 
 # Project vs account instructions: what overrides what in AI.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, specificity wins: your current chat prompt overrides project or repository instructions, and project or repository instructions override account-wide custom instructions. In ChatGPT Projects, project instructions explicitly replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
+When your account preferences say "use plain prose" and your project instructions say "reply in a Markdown table," which rule wins? Here is how every major platform resolves conflicts.
+
+**Quick answer:** Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
 
 ## Precedence hierarchy across major AI platforms.
 
@@ -21,25 +23,25 @@ Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, specificity wi
 
 ## 1. ChatGPT: Project Instructions override global Custom Instructions.
 
-OpenAI's Help Center documentation for Projects in ChatGPT states a clean rule: instructions set inside a Project apply only within that project and override your global Custom Instructions. That makes Projects the ideal way to run a second persona—for example, keeping a warm collaborator voice in your global Custom Instructions while running a strict, skeptical code-review voice inside an engineering Project.
+In ChatGPT, instructions added inside a Project apply only to that project and **override your global Custom Instructions**. That makes Projects ideal when you want a different persona for a specific workflow—such as keeping a warm collaborator tone globally while using a strict code-review checklist inside an engineering Project.
 
-Watch out for one common conflict inside ChatGPT's global settings: the Base style and tone dropdown (Default, Professional, Friendly, Candid, Quirky, Efficient, Cynical) and the Characteristics sliders (Warm, Enthusiastic, Headers & Lists, Emojis). If you pick Friendly and turn up Enthusiastic while pasting a custom instruction that says "no openers, no exclamation marks, dry tone," you are handing the model two opposite commands. Leave Base style on Default when using an explicit communication tuning.
+Watch out for one hidden conflict in ChatGPT’s global settings: the **Base style and tone** preset and the **Characteristics** sliders (Warm, Enthusiastic, Headers & Lists, Emojis). If you select Friendly and turn up Enthusiastic while your text box says “no openers, no exclamation marks, dry tone,” the two controls fight each other. Leave Base style on **Default** when using written custom instructions.
 
 ## 2. OpenAI Codex: later files in the directory chain win.
 
-In OpenAI Codex, files are concatenated from outermost to innermost:
+OpenAI Codex concatenates instruction files from outermost to innermost:
 
-- ~/.codex/AGENTS.md (your personal file)
-- <repo-root>/AGENTS.md (the team repository file)
-- Nested folder AGENTS.md down to your current working directory
+- `~/.codex/AGENTS.md` (your personal global file)
+- `/AGENTS.md` (the team repository file)
+- Nested folder `AGENTS.md` down to your current working directory
 
-Because files closer to your working directory appear later in the assembled prompt, they take priority when two rules conflict. At any single folder level, placing an AGENTS.override.md file replaces the sibling AGENTS.md in that folder. See the [OpenAI Codex AGENTS.md guide](https://agent-tune.com/guides/codex-agents-md-guide) for the full 32 KiB byte-cap behavior.
+Because files closer to your current folder appear later in the prompt, they win whenever two rules conflict. In any folder, an `AGENTS.override.md` file replaces the sibling `AGENTS.md` in that folder. See the [OpenAI Codex AGENTS.md guide](https://agent-tune.com/guides/codex-agents-md-guide) for full details on the 32 KiB limit.
 
 ## 3. Claude: Personal Preferences vs Projects and Skills.
 
-In Claude, Personal Preferences under Settings, General set your baseline across all conversations. When you work inside a Claude Project or trigger a Skill, both layers are present in context. If your Personal Preferences say "keep answers under 150 words in plain prose" and a Skill says "produce a 5-section Markdown table report," Claude can hesitate between the two unless your Personal Preferences include a clean escape hatch.
+In Claude, **Personal Preferences** (Settings → General) set your account-wide baseline. When you work inside a **Claude Project** or invoke a **Skill**, both layers load together. If your Personal Preferences say “keep answers under 150 words in plain prose” and a Skill asks for a “5-section Markdown table report,” Claude can hesitate unless your account rules include an explicit override line.
 
-Every AgentTune prompt includes that exact precedence line at the top so your baseline never fights a specific task:
+Every AgentTune prompt includes that override line at the top so your baseline never blocks a task:
 
 ```markdown
 ## Communication preferences
@@ -54,19 +56,19 @@ Use these preferences for tone, pacing, and structure. My current task, project 
 
 ## Questions people ask.
 
-Do ChatGPT Project Instructions override global Custom Instructions?
+### Do ChatGPT Project Instructions override global Custom Instructions?
 
 Yes. According to OpenAI's Help Center documentation for Projects in ChatGPT, instructions added to a Project apply only inside that project and override your account-wide Custom Instructions.
 
-How do I stop my global brevity rules from breaking detailed project reports?
+### How do I stop my global brevity rules from breaking detailed project reports?
 
 Add one precedence sentence at the top of your account-wide instructions: 'Use these preferences as the default for tone and pacing; my current task and project instructions take precedence when they specify a different format or length.'
 
-In OpenAI Codex, does ~/.codex/AGENTS.md override the repository's AGENTS.md?
+### In OpenAI Codex, does ~/.codex/AGENTS.md override the repository's AGENTS.md?
 
 No. Codex reads ~/.codex/AGENTS.md first and the repository's AGENTS.md after it, so the repository file (and any subdirectory AGENTS.md closer to your working directory) wins conflicts.
 
-Why is ChatGPT ignoring my custom instructions to be concise?
+### Why is ChatGPT ignoring my custom instructions to be concise?
 
 Check two places: first, make sure you are not inside a Project whose Project Instructions override your global settings; second, check Settings, Personalization to ensure the Base style preset or Characteristics sliders (like Warm or Headers & Lists) are not contradicting your written rules.
 

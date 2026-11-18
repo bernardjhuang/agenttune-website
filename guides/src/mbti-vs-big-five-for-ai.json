@@ -10,7 +10,7 @@
   "sections": [
     {
       "h2": "One sorts. One measures.",
-      "html": "<p>MBTI assigns you one side of four binary axes \u2014 introversion or extraversion (I/E), sensing or intuition (S/N), thinking or feeling (T/F), judging or perceiving (J/P) \u2014 and the four letters compose into one of 16 types. It's a sorter. Every axis is a fork; you go left or right.</p><p>Big Five (OCEAN) measures five continuous dimensions \u2014 Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism \u2014 and scores you somewhere along each one. No types, no forks. Dials.</p><p>Notice what each hands you at the end. MBTI: four letters. Big Five: five numbers. Hold that difference \u2014 it's the entire argument below.</p><p>The scientific standing is not symmetric. Psychometricians have two standing complaints about MBTI: it dichotomizes what the data says is continuous \u2014 a person at 55% thinking and a person at 95% get the same T \u2014 and people near an axis midline can flip letters on retest. Big Five came out of decades of factor analysis, is the standard instrument in academic personality research, and holds up better on retest reliability. If the question is <em>which measures humans better</em>, Big Five wins, and it isn't close.</p><p>But that's the measurement question. Prompting an AI raises a different one: which kind of output converts into instructions an agent can actually follow?</p>"
+      "html": "<p>MBTI assigns you one side of four binary axes: Introversion or Extraversion (I/E), Sensing or Intuition (S/N), Thinking or Feeling (T/F), and Judging or Perceiving (J/P). Those four letters combine into one of 16 types. Every axis is a binary fork.</p><p>Big Five (OCEAN) measures five continuous dimensions: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Instead of sorting you into a box, it scores you along five continuous dials.</p><p>In academic personality research, Big Five is the gold standard because traits are continuous in human data and hold up better on retest reliability. On MBTI, a person at 52% Thinking and a person at 95% Thinking both get the letter <code>T</code>, and scores near the midpoint can flip letters on retest.</p><p>Prompting an AI raises a practical engineering question: do you want a bundled four-letter template or five independent trait dials you can mix and match?</p>"
     },
     {
       "h2": "What the research can and cannot establish.",
@@ -35,16 +35,16 @@
       "a": "Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration \u2014 how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose."
     },
     {
-      "q": "Why did all six models test as INTJ?",
-      "a": "The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."
+      "q": "Why did several AI models score as INTJ or ISTJ in your studies?",
+      "a": "In our exploratory self-report benchmarks, instruction-tuned assistants regularly rate themselves as quiet (I), analytical (T), and structured (J). However, S/N and T/F margins are often narrow or tied, and the May 2026 and September 2026 cohorts used mixed protocols—so those scores describe questionnaire self-reports, not fixed model personalities."
     },
     {
-      "q": "Can I use both frameworks in one prompt?",
-      "a": "The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."
+      "q": "Can I use both MBTI and Big Five in one prompt?",
+      "a": "Yes. A common pattern is starting with an MBTI profile for overall information structure and adding one or two Big Five rules (such as Low Agreeableness for blunt pushback). Delete any overlapping or conflicting lines so the model gets one coherent instruction list."
     },
     {
       "q": "What about DISC and the Enneagram?",
-      "a": "The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits."
+      "a": "DISC tunes workplace pace and action bias (Dominance, Influence, Steadiness, Conscientiousness), while the Enneagram tunes core motivation and stress triggers. Compare all five systems side by side in our AI personality frameworks guide."
     }
   ],
   "related": [

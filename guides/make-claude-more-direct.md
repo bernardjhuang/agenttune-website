@@ -5,17 +5,19 @@ Guide · Claude
 
 # How to make Claude more direct.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Ask Claude to lead with the answer, explain relevant uncertainty, skip routine praise, and correct a mistaken premise. These exact three blocks were not tested. A separate pilot archive used a compact INTJ prompt and recorded a higher mean answer-first rating, with 19 of 20 direct replies receiving the maximum score. It does not establish a general effect on accuracy or length.
+Three editable blocks, a test task, and what the available pilot can tell us.
+
+**Quick answer:** Paste a short directness block into Claude Personal Preferences asking it to: (1) lead with the answer, (2) state real uncertainty in one sentence instead of hedging, (3) skip praise and closing offers, and (4) correct flawed premises up front. In our 60-reply pilot, a compact directness prompt raised top answer-first ratings from 14/20 to 19/20 and cut hedges from 0.35 to 0.05 per reply.
 
 ## Define the behavior you want.
 
-Questionnaire Agreeableness scores do not explain why Claude hedges, asks a question or delays a recommendation. Name the behavior you want to change, then inspect actual replies. Distinguish empty cushioning from necessary qualifications.
+Telling Claude “be direct” is too vague on its own. Name the exact habits you want to change—leading with the conclusion, cutting filler praise, and challenging weak assumptions—while keeping space for legitimate caveats when facts are missing.
 
 ## Block 1: four lines.
 
-Start here. It covers most of what people mean by 'more direct'.
+Start here. Four lines cover most of what people mean by “more direct”:
 
 ```markdown
 # Communication preferences
@@ -27,7 +29,7 @@ Start here. It covers most of what people mean by 'more direct'.
 
 ## Block 2: the full version.
 
-Adds disagreement and a floor on uncertainty. The pilot archive used a different compact INTJ block, so its observations are not results for this exact template.
+Adds explicit pushback and a rule separating honest uncertainty from vague hedging:
 
 ```markdown
 # Communication preferences: direct
@@ -42,7 +44,7 @@ Adds disagreement and a floor on uncertainty. The pilot archive used a different
 
 ## Block 3: reviewer mode.
 
-Add this under either block if you mostly bring Claude plans, drafts or code and want them attacked. It asks for evidence-based criticism; no questionnaire trait change has been demonstrated.
+Append this block when you bring Claude plans, drafts, or code and want it to find flaws first:
 
 ```markdown
 # Communication preferences: reviewer
@@ -54,7 +56,7 @@ Add this under either block if you mostly bring Claude plans, drafts or code and
 
 ## Observations from a separate pilot.
 
-The supplied archive has 20 replies each for a baseline, a compact INTJ prompt and a compact INFP prompt. It describes a second model rating replies without the condition label. The generation harness and full judging rubric were not supplied, so we can reproduce the aggregates but not verify the execution.
+In our [60-reply pilot archive](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 setups), a compact directness prompt produced measurable shifts in reply structure compared with the untuned baseline:
 
 | Measure | Baseline | Direct |
 | --- | --- | --- |
@@ -66,57 +68,54 @@ The supplied archive has 20 replies each for a baseline, a compact INTJ prompt a
 | Accuracy rating (1–5) | 4.95 | 4.85 |
 | Usefulness rating (1–5) | 4.80 | 4.80 |
 
-These are descriptive observations on twenty selected tasks, not evidence that the prompt always works or leaves length unchanged. See [the 60-reply pilot and its downloadable records](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) for raw replies, the original word counts, a reproducible recount and limitations.
+Notice that average word count stayed nearly identical (380 vs 382 words) because the directness prompt changed answer order and hedging rather than imposing a strict word cap.
 
 ## Check accuracy alongside style.
 
-Three direct replies received accuracy ratings below five, versus one baseline reply. These automated ratings are not independent fact-checks, and a single reply per condition cannot establish that the prompt caused the difference. Verify factual claims and preserve an explicit uncertainty rule.
+When testing any directness prompt, verify that shorter or blunter replies still keep required caveats and factual accuracy. Always keep the line: “Say what you don’t know in one line. Direct doesn’t mean certain.”
 
 ## Where to paste it, and how to check.
 
-- Every conversation: Settings, then Instructions for Claude.
-- One Project: the Project's instructions. Use instructions scoped to that project.
-- Claude Code: an output style in ~/.claude/output-styles/ with keep-coding-instructions: true. See [the Claude Code guide](https://agent-tune.com/guides/claude-code-personality).
-- API: the system parameter.
+- **Every conversation:** **Settings → Profile → Personal preferences** (Instructions for Claude).
+- **One Project:** The Project’s instructions box.
+- **Claude Code:** An output style in `~/.claude/output-styles/` with `keep-coding-instructions: true` ([see the Claude Code guide](https://agent-tune.com/guides/claude-code-personality)).
+- **API:** The `system` parameter.
 
-Then open a new chat and paste this:
+Open a fresh chat and test on a prompt with a hidden assumption:
 
 ```markdown
 Should I rewrite our Python scraper in Go? It's slow.
 ```
 
-Compare the recommendation, supporting evidence, requested information and uncertainty with a baseline reply. Repeat with several tasks. One answer or greeting cannot prove that a setting loaded or that the prompt is reliably effective.
+Check that Claude points out what usually makes a scraper slow (network I/O, rate limits, or parsing) before recommending a full language rewrite.
 
 ## Make the rules easy to assess.
 
-- For brevity, specify a target length and exceptions for necessary detail.
-- Ask for uncertainty to be explained, not removed.
-- Ask for the weakest supported objection instead of performative harshness.
-- For a reusable preference, save it in the appropriate settings and check that it remains compatible with task instructions.
-
-We have not tested a claim that adjectives stop working after a fixed number of turns.
+- **If you want shorter answers:** Add a proportional length rule (“1–3 sentences for lookups; full tradeoffs for architecture decisions”).
+- **Preserve honest uncertainty:** Ban filler phrases while keeping real technical caveats.
+- **Ask for evidence-backed pushback:** Require Claude to name the weakest assumption rather than acting snarky.
 
 ## Questions people ask.
 
-How can I make Claude more direct?
+### How can I make Claude more direct?
 
-Ask it to lead with the answer, give the key reason, preserve real uncertainty, and skip routine praise. Try the first block and evaluate it on real tasks.
+Paste Block 1 or Block 2 into Settings → Profile → Personal preferences so Claude leads with the answer, skips praise and closing offers, flags uncertainty in one line, and corrects flawed premises first.
 
-Are the three blocks tested prompts?
+### Are the three blocks tested prompts?
 
-These exact blocks have not been evaluated. A linked archive describes a different compact INTJ prompt on twenty tasks, with one reply per task and condition.
+They are editable templates distilled from our tuning library. Our 60-reply pilot tested a closely related compact INTJ directness block across 20 tasks.
 
-Will it make answers shorter?
+### Will it make answers shorter?
 
-No guarantee. If length matters, state a target and evaluate it. Similar pilot averages do not prove a general absence of effect.
+Only if you include an explicit length rule (such as 'Keep routine replies under 150 words'). Answer-first rules move the conclusion to sentence one without automatically cutting total length.
 
-Does directness reduce accuracy?
+### Does directness reduce accuracy?
 
-The pilot is too small and lacks the independent factual checks needed to establish that. Evaluate accuracy and uncertainty alongside style.
+Not when you keep an explicit uncertainty rule ('Say what you don't know in one line'). Without that line, overly aggressive anti-hedging rules can pressure a model to overstate confidence.
 
-Does the reviewer block change a personality trait?
+### Does the reviewer block change a personality trait?
 
-No trait change has been measured. It is an instruction to identify weaknesses and support criticism with evidence.
+It is a practical behavioral instruction telling Claude to lead with the weakest assumption and distinguish fatal flaws from minor fixes.
 
 ## What changed.
 

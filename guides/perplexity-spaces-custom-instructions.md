@@ -5,19 +5,21 @@ Guide · Perplexity Spaces
 
 # Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Configure durable voice and answer formatting in Perplexity Profile → AI Profile, and configure search-domain constraints (primary docs first, publication dates, conflict reporting, and table structure) inside each Space's Custom Instructions settings.
+Tune how Perplexity searches, weighs primary sources, and structures answers globally in Profile AI or per workspace inside Spaces.
+
+**Quick answer:** Set your everyday tone and formatting rules in Perplexity Settings → AI Profile, and set source-quality rules (primary docs first, publication dates, conflict reporting, and table schemas) inside each Space's Custom Instructions box.
 
 ## Global AI Profile vs. Perplexity Spaces instructions.
 
 | Setting location | Where to find it | Scope | What works best here |
 | --- | --- | --- | --- |
-| Global AI Profile | Settings → AI Profile (Introduce yourself + response preferences) | Account-wide across general searches | Role context, plain prose preference, citation density, banned hype language |
-| Space Custom Instructions | Spaces → [Your Space] → Instructions | Threads &amp; files inside that specific Space | Source authority rules, date recency filters, exact comparison schemas |
-| Space Knowledge Files + Web toggle | Space sidebar (Files &amp; Web Search toggles) | Retrieval mix inside that Space | Restricting answers strictly to uploaded PDFs/notes or combining with web |
+| Global AI Profile | Settings → AI Profile | Account-wide across general searches | Role context, plain prose preference, citation density, and no filler intros |
+| Space Custom Instructions | Spaces → [Your Space] → Instructions | Threads &amp; files inside that Space | Source authority rules, date filters, and comparison table schemas |
+| Space Knowledge Files + Web toggle | Space sidebar (Files &amp; Web Search toggles) | Retrieval mix inside that Space | Restricting answers to uploaded PDFs/notes or combining them with live web search |
 
-Because Perplexity retrieves web snippets dynamically, telling it how to handle contradictory or thin search results improves reliability more than purely stylistic adjectives.
+Because Perplexity synthesizes live search snippets, rules that tell it how to handle conflicting or missing sources improve answers far more than vague tone adjectives.
 
 ## 5 copy-paste Perplexity Space Custom Instructions templates.
 
@@ -74,25 +76,25 @@ Because Perplexity retrieves web snippets dynamically, telling it how to handle 
 
 ## Three tweaks that cut Perplexity fluff and stale citations.
 
-- Explicitly ban ungrounded extrapolation: Search models tend to stitch half-relevant blog snippets into confident answers. Add: &ldquo;If no authoritative source confirms a specific number or date, write &lsquo;Not verified in retrieved sources&rsquo;.&rdquo;
-- Ask for conflict surfacing by default: Adding &ldquo;List unresolved disagreements among retrieved sources&rdquo; aligns with our [anti-sycophancy guidelines](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back).
-- Convert existing Claude/ChatGPT rules cleanly: Reuse your core tone profile via the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) or match a style in the [43-template library](https://agent-tune.com/library/).
+- **Ban unverified extrapolation:** Add “If no authoritative source confirms a number or date, write ‘Not verified in retrieved sources.’”
+- **Surface disagreements between sources:** Require Perplexity to list conflicts rather than smoothing them over ([see anti-sycophancy rules](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)).
+- **Reuse your ChatGPT or Claude tone rules:** Convert your existing prompt via the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) or pick a profile from the [43-template library](https://agent-tune.com/library/).
 
 ## Questions people ask.
 
-Where do I put custom instructions in Perplexity Spaces?
+### Where do I put custom instructions in Perplexity Spaces?
 
 Open any Space, select its Instructions box in the Space setup/panel, and paste your search-scoping, source-priority, and output-formatting rules. Those rules automatically apply to new threads started inside that Space.
 
-Do Space instructions override Perplexity AI Profile settings?
+### Do Space instructions override Perplexity AI Profile settings?
 
 Space instructions narrow the task and retrieval behavior inside that workspace, while your global AI Profile sets overall user background and general preferences across threads.
 
-How do I stop Perplexity from citing weak SEO listicles?
+### How do I stop Perplexity from citing weak SEO listicles?
 
 Add a source hierarchy rule directly in Space Instructions prioritizing official docs, primary standards, SEC/government filings, and peer-reviewed journals over secondary blogs, and require publication dates next to claims.
 
-Can I use MBTI, DISC, or Enneagram tunings in Perplexity?
+### Can I use MBTI, DISC, or Enneagram tunings in Perplexity?
 
 Yes—copy any communication style rule set from our library and combine it with Space-specific citation rules so you control both epistemic rigor and writing cadence.
 

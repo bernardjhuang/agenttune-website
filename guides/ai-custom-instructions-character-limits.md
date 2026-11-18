@@ -5,9 +5,11 @@ Reference · Limits & Quotas
 
 # AI custom instructions character limits (2026 cheat sheet).
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-ChatGPT's longer Custom Instructions fields are documented at 1,500 characters each. OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes, set by project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code output styles, Meta Muse Soul.md, and Gemini Gems accept full multi-paragraph Markdown blocks without a 1,500-character cliff, though keeping rules under 1,200 characters improves instruction adherence.
+Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Claude, Claude Code, Meta Muse, Gemini, Cursor, and Grok.
+
+**Quick answer:** ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.
 
 ## 2026 custom instructions limit & path reference table.
 
@@ -26,15 +28,15 @@ ChatGPT's longer Custom Instructions fields are documented at 1,500 characters e
 
 ## Why shorter tunings beat 10,000-word prompt walls.
 
-Even on surfaces that accept large Markdown files, stuffing thousands of words of personality lore into your global instructions hurts performance for three reasons:
+Even when an app accepts large Markdown files, pasting thousands of words into global instructions hurts reply quality for three reasons:
 
-- Instruction dilution: Every rule you add competes for attention with your actual task prompt and with the rules that matter most.
-- Over-literal compliance in newer reasoning models: As OpenAI noted in its developer guidance for GPT-6 Astra, newer models listen much harder to system and AGENTS.md instructions than earlier generations did. Forceful, all-caps boundary paragraphs written for older models cause modern agents to halt early or over-apply a formatting rule where it does not belong.
-- Silent byte-cap truncation in monorepos: In OpenAI Codex, the 32 KiB project_doc_max_bytes limit is shared across your global ~/.codex/AGENTS.md, the repo root AGENTS.md, and any nested folder AGENTS.md. A compact 700-byte personal tuning leaves over 97% of the budget free for repository build and test instructions.
+- **Instruction dilution:** Every extra rule competes for attention with your live task prompt.
+- **Over-literal compliance:** Newer reasoning models (like GPT-6 Astra and Claude Opus 5.5) follow system and `AGENTS.md` rules much more literally than older models did. All-caps“NEVER/ALWAYS” walls often cause agents to stop early or force a rigid format onto the wrong task.
+- **Shared monorepo byte caps:** In OpenAI Codex, the 32 KiB `project_doc_max_bytes` budget is shared across `~/.codex/AGENTS.md`, the repo root `AGENTS.md`, and nested folder `AGENTS.md` files. Keeping your personal file under 1 KiB leaves 97% of the budget for repo build and test commands.
 
 ## A universal 580-character tuning block that fits every platform.
 
-This reviewed block is 580 characters (well under ChatGPT's 1,500-character cap and less than 2% of Codex's 32 KiB budget). Paste it anywhere:
+This 580-character block fits comfortably inside ChatGPT’s 1,500-character box and takes less than 2% of Codex’s 32 KiB budget:
 
 ```markdown
 ## Communication preferences
@@ -47,23 +49,23 @@ This reviewed block is 580 characters (well under ChatGPT's 1,500-character cap 
 - Separate verified facts from inferences and flag material uncertainty in one line.
 ```
 
-Need a version tailored to your own personality profile? Open the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator) or pick any of the 43 profiles in the [library](https://agent-tune.com/library/) and select ChatGPT · custom instructions for an automatic under-1,500-character export.
+Want a version matched to your own personality profile? Open the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator) or pick any of the 43 profiles in the [library](https://agent-tune.com/library/) and select **ChatGPT · custom instructions** for a ready-to-paste compact block.
 
 ## Questions people ask.
 
-What is the character limit for ChatGPT Custom Instructions in 2026?
+### What is the character limit for ChatGPT Custom Instructions in 2026?
 
 OpenAI documents a 1,500-character limit for the longer Custom Instructions fields under Settings, Personalization, Custom Instructions. Every profile in AgentTune includes a reviewed compact export under 1,500 characters.
 
-What is the byte limit for OpenAI Codex AGENTS.md?
+### What is the byte limit for OpenAI Codex AGENTS.md?
 
 Codex reads up to 32 KiB (32,768 bytes) combined across all AGENTS.md and AGENTS.override.md files in the directory chain, configured by project_doc_max_bytes.
 
-Do ChatGPT Project Instructions have the same 1,500-character limit?
+### Do ChatGPT Project Instructions have the same 1,500-character limit?
 
 No. Project Instructions inside a ChatGPT Project accept full multi-paragraph Markdown tunings and override your global Custom Instructions inside that project.
 
-How many rules should I put in Claude Personal Preferences or Meta Muse Soul.md?
+### How many rules should I put in Claude Personal Preferences or Meta Muse Soul.md?
 
 Six to ten clear bullet points (roughly 500 to 1,200 characters) cover tone, answer order, formatting, and pushback without crowding out your task context.
 

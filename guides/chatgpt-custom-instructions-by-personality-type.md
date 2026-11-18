@@ -5,21 +5,21 @@ Guide · ChatGPT
 
 # ChatGPT custom instructions for every MBTI personality type.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Open ChatGPT's Settings → Personalization → Custom instructions and paste a personality-matched block into the "How would you like ChatGPT to respond?" field. This page has paste-ready blocks for all 16 MBTI types (INTJ through ESFP) each condensed from AgentTune's free tuning files to fit the character limit.
+Sixteen paste-ready blocks. Pick yours, paste it, done.
+
+**Quick answer:** Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.
 
 ## How custom instructions work.
 
-Open ChatGPT’s Settings → Personalization and look for custom instructions. Available controls differ between web and desktop. Use them for communication preferences you want to reuse across chats, or choose project instructions for one project.
+Open **Settings → Personalization → Custom Instructions** in ChatGPT (or **Customize ChatGPT** on mobile). Paste your chosen block into the second field (How would you like ChatGPT to respond?), and keep role or project facts in the first field.
 
-The blocks below are deliberately short. AgentTune’s generator uses a conservative 1,500-character export budget; this is not a universal product limit. Follow the limit shown by your app. Keep existing instructions, review conflicts and test the result on a few real tasks.
+Every block below sits well inside ChatGPT’s 1,500-character limit. Edit any line in your own words, then test the setup on two or three real tasks.
 
-[OpenAI’s personalization documentation](https://learn.chatgpt.com/docs/personalize) describes the available layers. These templates are editorial starting points, not validated matches.
+## Don't know your type? Five minutes fixes that.
 
-## Don't know your type? Ten minutes fixes that.
-
-Take the [free in-browser MBTI test](https://agent-tune.com/tests/mbti); no signup, no email, results on the spot. If you already know your four letters, skip straight to your block below. And if you're between two types, read both blocks and take the one that makes you think finally; the blocks describe how you want to be treated, and you're the authority on that.
+Take our [free in-browser MBTI test](https://agent-tune.com/tests/mbti) (32 questions, ~5 minutes, no email). If you are torn between two types, read both blocks below and pick the one whose rules you actually want enforced—or use our 20-second [5-System Matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher).
 
 ## Analysts: the NT types.
 
@@ -167,33 +167,33 @@ Bring energy and life to your responses; flat, sterile replies kill my momentum.
 
 ## How to go deeper.
 
-Each block above is a condensation. The full tuning files in the [library](https://agent-tune.com/library/) carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, CLAUDE.md for Claude Code, Cursor rules, AGENTS.md, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at /library/mbti/<type>.md.
+Each block above is a condensation. The full tuning files in the [library](https://agent-tune.com/library/) carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, `CLAUDE.md` for Claude Code, Cursor rules, `AGENTS.md`, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at `/library/mbti/.md`.
 
 MBTI is one lens of five. If your type never quite fit, try the [Enneagram](https://agent-tune.com/tests/enneagram) or [Big Five](https://agent-tune.com/tests/big-five) tests and their matching tunings; the [MBTI vs Big Five guide](https://agent-tune.com/guides/mbti-vs-big-five-for-ai) covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality). And if you want ChatGPT to match more than your type (your pacing, your priorities) see [make ChatGPT sound like you](https://agent-tune.com/guides/make-chatgpt-sound-like-you).
 
 ## Questions people ask.
 
-Do these blocks fit ChatGPT's character limit?
+### Do these blocks fit ChatGPT's character limit?
 
 These examples are deliberately short. Use the limit shown in your app; the generator offers a conservative 1,500-character export budget. Review your combined instructions after adding preferences.
 
-Which field do I paste the block into?
+### Which field do I paste the block into?
 
 The second one: "How would you like ChatGPT to respond?" These blocks are behavioral rules, and that field governs behavior. The first field ("What would you like ChatGPT to know about you?") is for facts: your role, your work, your context. One or two lines there is plenty.
 
-Is this the same as ChatGPT memory?
+### Is this the same as ChatGPT memory?
 
 No. Memory is ChatGPT accumulating facts about you across conversations on its own. Custom instructions are standing orders you write once and control completely. They coexist; memory learns what you're working on, while your pasted block dictates how ChatGPT should treat you. Neither replaces the other.
 
-Can I combine blocks from two types?
+### Can I combine blocks from two types?
 
 Yes, and it's a common move for people who sit between types. Take the block that fits better as the base, then swap in the two or three rules you recognize from the other type. Just watch for contradictions; "lead with the answer" and "show all the reasoning first" can't both win.
 
-Will this change conversations I already have?
+### Will this change conversations I already have?
 
 No. Custom instructions apply to new conversations from the point you save them. Existing chats keep the behavior they started with. If you want the new personality in an old thread, start a fresh conversation; it also gives you a cleaner read on whether the tuning took.
 
-What if the block for my type doesn't feel right?
+### What if the block for my type doesn't feel right?
 
 Trust the feeling, not the letters. The blocks describe interaction preferences, and you're the authority on yours. Read the neighboring types (one axis flipped) and take whichever block you'd actually want enforced. A mistyped block still beats no block, but the right one is usually one door over.
 

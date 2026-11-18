@@ -5,17 +5,19 @@ Workflow · Cross-Platform Memory
 
 # How to migrate AI memory into portable custom instructions without leaking secrets.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Do not paste raw chat exports across AI apps. Instead, export memory-only text, audit entries locally in our browser AI Memory Export Reviewer to delete duplicates and secrets, split stable style rules from editable facts, and install each piece into the matching destination box.
+Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract clean behavioral rules and scrub PII before pasting.
+
+**Quick answer:** Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.
 
 ## Five-step memory & preference migration workflow.
 
-- Export memories, not full transcripts: Grab your Saved Memories / custom instructions / Memory.md text (not giant multi-megabyte conversation ZIPs).
-- Audit locally in your browser: Paste or load up to 500 entries into the [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer). It stays inside your browser tab, unchecks exact duplicates, and flags emails, phone-like strings, and API key patterns for redaction.
-- Split Tone from Facts: Move &ldquo;how to answer&rdquo; rules (brevity, answer-first framing, pushback expectations) into Custom Instructions / Soul.md / Profile Preferences; move static role and timezone facts into Box 1 / Saved Info / Memory.md.
-- Prune stale experiments: Delete old one-off persona tricks (&ldquo;always talk like a pirate for project X&rdquo;) that silently ruin daily work.
-- Convert and check for conflicts: Reformat via the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) and run a quick pass in the [Instruction Checker](https://agent-tune.com/tools/instruction-checker).
+- **Export memory notes, not full chat logs:** Copy your Saved Memories, Custom Instructions, or `Memory.md` text rather than a multi-megabyte conversation ZIP.
+- **Audit locally in your browser:** Paste up to 500 entries into the [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer). It runs inside your browser tab, unchecks exact duplicates, and flags emails, phone numbers, and API keys for redaction.
+- **Separate Tone from Facts:** Put “how to answer” rules (brevity, answer-first order, pushback) into Custom Instructions, Personal Preferences, or `Soul.md`. Put role, stack, and timezone facts into Saved Memory, Saved Info, or `Memory.md`.
+- **Delete stale one-off notes:** Uncheck temporary project notes or old persona experiments.
+- **Format and check for conflicts:** Convert for your target app in the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) and run a quick check in the [Instruction Checker](https://agent-tune.com/tools/instruction-checker).
 
 ## Where each migrated category belongs across ChatGPT, Claude, Muse, and Gemini.
 
@@ -28,7 +30,7 @@ Do not paste raw chat exports across AI apps. Instead, export memory-only text, 
 
 ## Clean portable seed template (under 500 characters).
 
-Once you extract the keeper rules from an older account, use this tight structure as your destination seed:
+After pruning your old memory export, use this compact block as your new communication baseline:
 
 ```markdown
 ## Durable Communication Preferences
@@ -41,19 +43,19 @@ Once you extract the keeper rules from an older account, use this tight structur
 
 ## Questions people ask.
 
-Can I import a full ChatGPT conversations.json archive directly into Claude or Muse?
+### Can I import a full ChatGPT conversations.json archive directly into Claude or Muse?
 
 Uploading giant JSON transcripts rarely works well: it blows through instruction character limits and mixes transient debates with durable facts. Extract memory notes and durable preferences first using a local reviewer.
 
-Does AgentTune upload or inspect my AI memory export?
+### Does AgentTune upload or inspect my AI memory export?
 
 No. Both the AI Memory Export Reviewer and the Instruction Converter run completely inside your browser tab without calling a model or sending pasted memory entries to a server.
 
-Why should I separate Memory.md or Saved Memories from Custom Instructions?
+### Why should I separate Memory.md or Saved Memories from Custom Instructions?
 
 Facts change over time (jobs, current tools, projects), whereas communication standards (directness, anti-sycophancy, structure) remain stable. Keeping them separate avoids deleting your core voice rules when cleaning old memories.
 
-Can an automated redactor catch 100% of sensitive details in an export?
+### Can an automated redactor catch 100% of sensitive details in an export?
 
 No. Regex checks flag common patterns like emails, API tokens, and long number sequences, but you should always scan the reviewed list manually before downloading or pasting into another service.
 

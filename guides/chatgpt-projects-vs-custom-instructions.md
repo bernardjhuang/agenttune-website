@@ -5,34 +5,36 @@ Guide · ChatGPT
 
 # ChatGPT Projects vs. Custom Instructions: what overrides what.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-ChatGPT loads both your account-wide Custom Instructions and the active Project's instructions into context, but Project Instructions take precedence inside that Project whenever two rules conflict. Keep a compact 6-to-10 line communication block (tone, opening rule, pushback, uncertainty) in account-wide Custom Instructions, and put domain context, output schemas, and reference files inside each Project.
+Put how you think in account-wide Custom Instructions. Put what you are building inside each Project.
+
+**Quick answer:** Inside a ChatGPT Project, Project Instructions override your account-wide Custom Instructions whenever two rules conflict. Keep a compact 6–10 line communication block (tone, answer-first order, pushback, and uncertainty) in global Custom Instructions, and put tech stack details, deliverable templates, and reference files inside each Project.
 
 ## Side-by-side: Custom Instructions vs. Project Instructions.
 
 | Dimension | Account-wide Custom Instructions | ChatGPT Project Instructions |
 | --- | --- | --- |
 | Where to find it (Web &amp; Mobile) | Profile → Personalization → Custom Instructions | Open a Project folder → Project instructions |
-| Scope | Every new standard chat across web, iOS, Android, and macOS/Windows apps. | Only chats started inside or moved into that specific Project. |
-| Character budget | 1,500 characters per field (two fields: context + response style). | Generous multi-paragraph project prompt plus uploaded Project files. |
+| Scope | Every new standard chat across web, iOS, Android, and desktop apps. | Only chats inside that specific Project. |
+| Character budget | 1,500 characters per field (two fields: context + response style). | Up to 8,000 characters plus uploaded Project files. |
 | Precedence on conflict | Baseline default; yields to Project rules and live chat prompts. | Overrides conflicting account-wide Custom Instructions inside the Project. |
-| What belongs here | Your durable voice preferences: answer-first, prose vs bullets, pushback, confidence calibration. | Tech stack, audience, deliverable templates, style guides, and repo constraints. |
+| What belongs here | Your durable communication habits: answer-first, prose vs bullets, pushback, and uncertainty calibration. | Tech stack, audience, deliverable templates, style guides, and repo constraints. |
 
-For character budgets across Claude, Codex AGENTS.md, Meta Muse, and Grok alongside ChatGPT, see our [2026 character limits cheat sheet](https://agent-tune.com/guides/ai-custom-instructions-character-limits) and [cross-app precedence guide](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+For character limits across Claude, Codex `AGENTS.md`, Meta Muse, and Grok, see our [2026 character limits cheat sheet](https://agent-tune.com/guides/ai-custom-instructions-character-limits) and [precedence guide](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
 
 ## Why putting everything in Custom Instructions breaks Projects.
 
-Two mistakes waste the 1,500-character Custom Instructions box and degrade Project chats:
+Two common mistakes cause conflicts between global settings and Projects:
 
-- Hardcoding one job's format globally. If your global Custom Instructions say "Format every answer as TypeScript code with zero prose," ChatGPT has to fight that rule every time you open a writing, hiring, or tax-prep Project.
-- Duplicating your bio in every Project. Copying the same 15 lines of personal preferences into six Projects means six places to update when you tweak a rule—and subtle drift when one Project still holds last quarter's version.
+- **Hardcoding one job’s format globally:** Putting “Format every answer as TypeScript code with zero prose” in global Custom Instructions breaks every writing, strategy, or research chat outside that repo.
+- **Pasting your personal bio into every Project:** Copying the same 15 tone lines into six Projects means six places to update later.
 
-Use our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to catch duplicate lines and bloated paragraphs, keeping your global Custom Instructions under 600–900 characters.
+Run your rules through our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to remove duplicates and keep your global Box 2 under 600–900 characters.
 
 ## Copy-paste split: Global voice + Project task layer.
 
-Layer 1 — Paste into account-wide Custom Instructions ("How would you like ChatGPT to respond?" — ~480 characters, well inside the 1,500-character cap):
+**Layer 1 — Paste into account-wide Custom Instructions** (Box 2: “How would you like ChatGPT to respond?” — ~480 characters):
 
 ```markdown
 - Lead with the answer or recommendation in the first sentence.
@@ -43,7 +45,7 @@ Layer 1 — Paste into account-wide Custom Instructions ("How would you like Cha
 - Project instructions and explicit requests in the current chat override these defaults.
 ```
 
-Layer 2 — Paste into a specific ChatGPT Project's instructions (example for a product engineering project):
+**Layer 2 — Paste into a specific ChatGPT Project’s instructions:**
 
 ```markdown
 # Project: Checkout Service v2
@@ -57,27 +59,25 @@ Layer 2 — Paste into a specific ChatGPT Project's instructions (example for a 
 - Reference uploaded architecture notes before proposing new queues or tables.
 ```
 
-Notice how cleanly the two layers compose: your global block governs how ChatGPT talks to you, while the Project block governs what good work looks like in Checkout Service v2.
-
 ## Don't forget ChatGPT Saved Memories (the hidden third layer).
 
-If you split Custom Instructions and Project Instructions cleanly and ChatGPT still injects weird formatting or brings up an unrelated stack, check Profile → Personalization → Memory → Manage memories. Saved Memories persist across standard chats and can quietly contradict your written instructions. Export or paste your memory list into our local [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer) to spot and prune stale entries in 60 seconds, or read [how to diagnose ignored AI instructions](https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions).
+If ChatGPT still brings up an old tech stack or ignored format, check **Profile → Personalization → Memory → Manage memories**. Stale saved memories can quietly override your written instructions. Paste your memory list into our local [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer) to prune outdated entries in 60 seconds, or read [how to fix ignored AI instructions](https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions).
 
 ## Questions people ask.
 
-Do ChatGPT Custom Instructions still apply inside a ChatGPT Project?
+### Do ChatGPT Custom Instructions still apply inside a ChatGPT Project?
 
 Yes, account-wide Custom Instructions remain part of the background context unless disabled, but the Project's own instructions take priority whenever the two conflict.
 
-What is the character limit for ChatGPT Custom Instructions vs Projects?
+### What is the character limit for ChatGPT Custom Instructions vs Projects?
 
 Account-wide Custom Instructions cap each of the two text boxes at 1,500 characters. Project Instructions support much longer multi-paragraph briefs plus attached reference files.
 
-How do I stop my global brevity rule from ruining long drafts inside a Project?
+### How do I stop my global brevity rule from ruining long drafts inside a Project?
 
 Add one explicit precedence line at the bottom of your global Custom Instructions ('Project instructions and explicit requests in my current prompt override these defaults') and specify the target length or template inside that Project's instructions.
 
-Do Custom GPTs use my Custom Instructions or Project Instructions?
+### Do Custom GPTs use my Custom Instructions or Project Instructions?
 
 Custom GPTs run their builder's system instructions independently and generally do not inherit your personal Custom Instructions in the same way standard chats and Projects do.
 

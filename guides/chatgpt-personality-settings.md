@@ -5,22 +5,24 @@ Guide · OpenAI ChatGPT
 
 # ChatGPT personality settings: presets, warmth controls, and custom instructions.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Open Settings → Personalization in ChatGPT to pick a Base style and tone preset (such as Candid, Efficient, Professional, or Cynic), adjust characteristic sliders (Warmth, Enthusiastic, Headers & Lists, Emoji), and paste durable formatting rules into Custom instructions (1,500 characters per box).
+Settings → Personalization gives you Base style and tone presets, four characteristic sliders, and two 1,500-character instruction boxes.
+
+**Quick answer:** Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).
 
 ## All three tone layers inside Settings → Personalization.
 
-Rather than hunting through system prompts, ChatGPT exposes three stacked customization mechanisms in Personalization, plus workspace-level instructions inside ChatGPT Projects and Custom GPTs:
+ChatGPT stacks three account-wide personalization controls alongside workspace-specific Projects and Custom GPTs:
 
 | Layer | Where to find it | Limit &amp; scope | Best controlled here |
 | --- | --- | --- | --- |
-| Base style &amp; tone presets | Settings → Personalization → Base style and tone | One global preset per account | Broad voice baseline (e.g., Efficient, Candid, Friendly, Professional, Cynic, Robot) |
-| Characteristic controls | Settings → Personalization → Characteristics (Warm, Enthusiastic, Headers &amp; Lists, Emoji) | More / Default / Less toggles | Dialing warmth, excitement, markdown density, and emoji frequency up or down |
-| Custom instructions (Box 1 &amp; Box 2) | Settings → Personalization → Custom instructions | 1,500 chars per box · new chats | Behavioral constraints: answer-first ordering, no trailing questions, evidence standards |
-| ChatGPT Projects &amp; Custom GPTs | Project sidebar / Explore GPTs → Configure | Up to 8,000 chars · scoped to project/GPT | Domain workflows, repo rules, multi-file rubrics ([8,000-char guide →](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)) |
+| Base style &amp; tone presets | Settings → Personalization → Base style and tone | One global preset per account | Broad voice flavor (Efficient, Candid, Friendly, Professional, Cynic, Robot) |
+| Characteristic controls | Settings → Personalization → Characteristics (Warm, Enthusiastic, Headers &amp; Lists, Emoji) | More / Default / Less toggles | Dialing warmth, excitement, markdown headers, and emoji up or down |
+| Custom instructions (Box 1 &amp; Box 2) | Settings → Personalization → Custom instructions | 1,500 chars per box · new chats | Checkable rules: answer-first order, pushback, and no trailing questions |
+| ChatGPT Projects &amp; Custom GPTs | Project sidebar / Explore GPTs → Configure | Up to 8,000 chars · scoped to project/GPT | Domain workflows, repo rules, and multi-file rubrics ([8,000-char guide →](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)) |
 
-Start with this concise tested block in the What traits should ChatGPT have? / How would you like ChatGPT to respond? field (under 500 characters so it leaves room for personal context):
+Paste this starter block into Box 2 (**How would you like ChatGPT to respond?** — under 500 characters):
 
 ```markdown
 ## Response rules
@@ -33,15 +35,15 @@ Start with this concise tested block in the What traits should ChatGPT have? / H
 
 ## Why presets alone rarely stop sycophancy or trailing follow-ups.
 
-Base styles like Candid or Efficient nudge surface phrasing, but our controlled before/after tests show that structural habits come from explicit behavioral prohibitions. Across our September 2026 baseline cohorts, unprompted GPT-6 Astra scored 45.07 / 50 and GPT-6 Sol scored 44.99 / 50 on Big Five Agreeableness, with DISC Dominance floored at 5.12–5.42 / 20—meaning out-of-the-box defaults strongly favor agreeable cushioning and polite closing questions.
+Presets like Candid or Efficient adjust surface tone, but they rarely stop sycophantic agreement or trailing follow-up menus on their own. In our September 2026 study (100 fresh sessions per model), unprompted GPT-6 Astra scored **45.07 / 50** and GPT-6 Sol scored **44.99 / 50** on Big Five Agreeableness, while DISC Dominance sat at **5.12–5.42 / 20**.
 
-In our 60-reply controlled pilot (20 matched prompts across default vs. explicit directness instructions), explicit behavioral constraints raised answer-first openings from 14/20 to 19/20, cut unsolicited hedges from 0.35 to 0.05 per reply, and reduced trailing follow-up offers from 0.90 to 0.25 without reducing accuracy. Use the Base style selector for broad flavor, then pin exact opening and pushback rules in Custom Instructions ([see anti-sycophancy rules →](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)).
+In our 60-reply pilot, adding explicit behavioral rules raised answer-first openings from **14/20 to 19/20**, cut hedges from **0.35 to 0.05 per reply**, and reduced trailing questions from **0.90 to 0.25** without hurting accuracy. Use the preset for flavor, and put your concrete opening and pushback rules in Custom Instructions ([see anti-sycophancy rules →](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)).
 
 ## How settings sync across web, iOS/Android, and ChatGPT desktop.
 
-- Account-wide sync: Changes in Personalization propagate to new conversations across web, iOS, Android, and macOS/Windows desktop, though mobile clients sometimes take an app relaunch to fetch updated presets.
-- Existing threads keep older context: Toggling Base style or Custom Instructions applies reliably only when you open a fresh conversation thread.
-- Memory interacts with tone: Saved Memories live separately under Personalization → Memory. If ChatGPT remembers a stale preference like &ldquo;always respond like a cheerful coach,&rdquo; audit and prune it ([memory audit guide →](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions)).
+- **Account-wide sync:** Changes in **Personalization** sync across web, iOS, Android, and desktop apps (mobile apps may need a quick relaunch).
+- **Test in a fresh chat:** Always start a new thread after editing presets or Custom Instructions so older messages in the thread don’t anchor the style.
+- **Check Saved Memories for conflicts:** If ChatGPT still uses an old tone, inspect **Personalization → Memory** and delete stale style entries ([memory audit guide →](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions)).
 
 ## Three ready-to-paste ChatGPT setups under 600 characters.
 
@@ -69,23 +71,23 @@ In our 60-reply controlled pilot (20 matched prompts across default vs. explicit
 - Wait for confirmation before expanding scope across unrelated modules.
 ```
 
-Want a template tuned to your working style and automatically compacted under ChatGPT&rsquo;s 1,500-character limit? Launch the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=chatgpt-custom) or browse all 43 MIT profiles in the [Tuning Library](https://agent-tune.com/library/).
+Want a template matched to your working style and automatically sized under 1,500 characters? Open the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=chatgpt-custom) or browse all 43 profiles in the [Tuning Library](https://agent-tune.com/library/).
 
 ## Questions people ask.
 
-Where did Custom Instructions move in the newer ChatGPT Personalization menu?
+### Where did Custom Instructions move in the newer ChatGPT Personalization menu?
 
 Custom Instructions now live inside Settings → Personalization alongside Base style and tone presets and the Characteristic sliders, keeping the same two 1,500-character boxes for context about you and how ChatGPT should respond.
 
-Can I combine a ChatGPT Personality preset like Robot or Cynic with Custom Instructions?
+### Can I combine a ChatGPT Personality preset like Robot or Cynic with Custom Instructions?
 
 Yes. The Base style preset sets default conversational flavor, while Custom Instructions override formatting, critique style, and length rules when the two are specific and non-contradictory.
 
-Does turning off Reference Saved Memories erase Custom Instructions?
+### Does turning off Reference Saved Memories erase Custom Instructions?
 
 No. Personalization toggles for Memory and Custom Instructions are independent; Custom Instructions remain active in every new chat unless toggled off or overridden inside a Project or Custom GPT.
 
-Why does ChatGPT still end answers with follow-up questions even on Efficient mode?
+### Why does ChatGPT still end answers with follow-up questions even on Efficient mode?
 
 Preset modes adjust phrasing gently but rarely suppress RLHF closing habits on their own. Add an explicit negative rule in Custom Instructions such as 'End immediately after answering; do not add follow-up prompts or menu offers.'
 

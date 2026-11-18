@@ -5,18 +5,20 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Write six to eight concrete behavioral rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent instruction slot: ChatGPT Custom Instructions (1,500 chars) or Personality Traits, Claude Profile Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
+Two different goals hide inside that sentence. Here is how to set up both across ChatGPT, Claude, Meta Muse, Perplexity, Grok, Gemini, and coding agents.
+
+**Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
 ## "Give my AI a personality" means two different things.
 
-People type that phrase wanting one of two outcomes, and most guides mix them up:
+People use that phrase for two distinct goals:
 
-- Direction A — Match how you work (communication tuning): Control whether the AI leads with the conclusion, challenges weak premises, skips cheerleading preambles, or checks in before acting. This compounds across every task you run.
-- Direction B — Play a character (persona prompt): Give the assistant a named role, voice, or backstory (for example in Meta Muse Identity.md, a Gemini Gem, or a Grok Bot).
+- **Direction A — Match how you work (communication tuning):** Control whether the AI leads with the answer, challenges weak assumptions, skips cheerleading intros, or checks in before acting.
+- **Direction B — Play a character (persona prompt):** Give the assistant a named role, voice, or backstory (such as in Meta Muse `Identity.md`, a Gemini Gem, or a Grok Bot).
 
-In both directions, observable rules beat adjectives. "Be concise and candid" is a subjective grade; "Open with your recommendation in sentence one, keep routine answers under 150 words, and name the weakest assumption in my plan" is a rule the model can verify on every turn. Copy this starter block right now or customize it in the [instructions generator](https://agent-tune.com/tools/custom-instructions-generator):
+In both cases, **checkable rules beat adjectives**. “Be concise and candid” is vague; “Lead with your recommendation in sentence one, keep routine replies under 150 words, and name the weakest assumption in my plan” is easy for a model to follow on every turn. Copy this starter block or customize it in the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator):
 
 ```markdown
 # How to work with me
@@ -30,9 +32,9 @@ In both directions, observable rules beat adjectives. "Be concise and candid" is
 
 ## Four steps. About ten minutes.
 
-- Pick your preferences (or take a 5-minute test). Toggle six plain-English choices in the [preferences builder](https://agent-tune.com/tools/communication-preferences-builder), or use the interactive [5-system friction matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher) or five no-email tests on the [tests hub](https://agent-tune.com/tests/).
-- Grab a clean template. Browse all [43 MIT-licensed tuning files](https://agent-tune.com/library/) across MBTI, Enneagram, DISC, Attachment, and Big Five—or build a custom export in the [generator](https://agent-tune.com/tools/custom-instructions-generator).
-- Paste it into your app's persistent slot (web & mobile):
+- **Pick your preferences (or take a 5-minute test):** Toggle six plain-English sliders in the [Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder), use the 20-second [5-System Matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher), or take a free quiz on the [Tests Hub](https://agent-tune.com/tests/).
+- **Grab a template:** Browse all [43 MIT-licensed tuning files](https://agent-tune.com/library/) or build a custom export in the [generator](https://agent-tune.com/tools/custom-instructions-generator).
+- **Paste it into your app’s settings box (web & mobile):**
 
 | App / Agent | Where to paste (Web &amp; Mobile) | Walkthrough |
 | --- | --- | --- |
@@ -44,61 +46,61 @@ In both directions, observable rules beat adjectives. "Be concise and candid" is
 | Google Gemini | Settings → Saved info, custom Gems, or ~/.gemini/GEMINI.md | [Gemini guide](https://agent-tune.com/guides/gemini-personality) |
 | Coding Agents | ~/.claude/output-styles/*.md, CLAUDE.md, ~/.codex/AGENTS.md (32 KiB), .cursor/rules/*.mdc | [All coding rules files](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) |
 
-Step 4 — Edit and lint for conflicts: Delete any line that doesn't sound like you, and run stacked rules through the [instruction conflict checker](https://agent-tune.com/tools/instruction-checker) so contradictory lines (like "be brief" plus "explain every edge case") don't cancel each other out.
+**Step 4 — Check for conflicts:** Delete any line that doesn’t fit your work, and paste your rules into the [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to catch contradictions.
 
 ## Five systems you can tune from.
 
-A tuning file needs a starting description of you. Any of the five major personality frameworks works; they just capture different layers. Pick the one you already know your type in, or the one whose layer matters most to you (or compare all five side by side in our [5-system framework matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)).
+You can pick a tuning file using any of our five personality frameworks—each one focuses on a different communication layer (compare all five in our [5-system matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)):
 
-### MBTI — cognitive style
+### MBTI — cognitive framing (16 types)
 
-Sixteen types built from four binary axes: where you get energy, how you take in information, how you decide, how you like things settled. It's the most searchable system and maps cleanly onto AI behavior; an INTJ tuning tells the agent to lead with the architecture; an ESFP tuning tells it to lead with the concrete next step. Test at [/tests/mbti](https://agent-tune.com/tests/mbti); all sixteen tunings are in the [library](https://agent-tune.com/library/). Best fit: you want the broadest, most recognizable starting point.
+Maps how you take in information and make decisions. For example, an INTJ tuning leads with system architecture and tradeoffs; an ESFP tuning leads with the immediate concrete action. Take the test at [/tests/mbti](https://agent-tune.com/tests/mbti).
 
-### Big Five — the research-grade dimensions
+### Big Five (OCEAN) — single-trait sliders (10 poles)
 
-Five continuous traits; openness, conscientiousness, extraversion, agreeableness, neuroticism; with the strongest scientific footing of the five systems. AgentTune covers ten pole pages (high and low per trait), so you tune from your extreme scores, not a type label. Test at [/tests/big-five](https://agent-tune.com/tests/big-five). Best fit: you distrust type boxes and want dimensions instead. (Deciding between the two? [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).)
+Five continuous dimensions—Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—with High and Low templates for each trait. Ideal when you want to adjust one specific habit without adopting a four-letter type. Take the test at [/tests/big-five](https://agent-tune.com/tests/big-five) or compare [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
 
-### Enneagram — motivation
+### Enneagram — core motivation & pushback (9 types)
 
-Nine types organized around what you're avoiding and what you're seeking; not how you act, but why. That makes it unusually good for AI tuning: what reassures a Type 6 alarms no one else, and what motivates a Type 3 bores a Type 9. The September records include Helper, Investigator and Challenger labels, with many ties. Different score scales and collection protocols prevent ranking instruments by how well they distinguish models. Test at [/tests/enneagram](https://agent-tune.com/tests/enneagram); all nine prompts are condensed in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts). Best fit: your friction with AI is emotional register, not information format.
+Focuses on what drives you and how you want critique delivered. Take the test at [/tests/enneagram](https://agent-tune.com/tests/enneagram) or browse all nine profiles in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts).
 
-### DISC — working style
+### DISC — workplace speed & structure (4 styles)
 
-Four styles (Dominance, Influence, Steadiness, Conscientiousness) built for workplace communication. It's the simplest system here, which is its virtue: a D tuning says lead with the decision, an S tuning says don't spring changes without warning. Test at [/tests/disc](https://agent-tune.com/tests/disc). Best fit: you mostly use AI for work and want the shortest path to a fit.
+Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and the fastest test on the site (16 questions, ~3 minutes at [/tests/disc](https://agent-tune.com/tests/disc)).
 
-### Attachment — the reassurance layer
+### Attachment — autonomy & check-in cadence (4 styles)
 
-Four styles (secure, anxious, avoidant, disorganized) describing how you handle closeness and uncertainty. For AI, it governs the checking-in behavior: how often the agent should confirm before acting, whether hedging reads as honesty or as abandonment, how to deliver "I'm not sure" without triggering a spiral. Test at [/tests/attachment](https://agent-tune.com/tests/attachment). Best fit: your AI frustration is about reassurance; too much or too little.
+Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the test at [/tests/attachment](https://agent-tune.com/tests/attachment).
 
 ## What actually changes (and what our data shows).
 
-Not the model's underlying intelligence—its delivery. In our [60-reply controlled before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers), adding a short "Straight answers" block raised top answer-first scores from 14/20 to 19/20, cut hedging from 0.35 to 0.05 per reply, and dropped trailing follow-up questions from 0.90 to 0.25 without changing task accuracy.
+Custom instructions change how a model delivers its work, not its raw intelligence. In our [60-reply controlled pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers), adding a short “Straight answers” tuning block raised top answer-first scores from 14/20 to 19/20, cut hedging from 0.35 to 0.05 per reply, and dropped trailing filler questions from 0.90 to 0.25 without hurting accuracy.
 
-Concretely, a tuning controls five levers: how the reply opens (conclusion-first or context-first), how disagreement lands (blunt or cushioned), how options are framed (one recommendation or an open menu), check-in frequency, and register. Treat any personality type as an optional starting hypothesis rather than a clinical label—model questionnaire scores on our [research hub](https://agent-tune.com/research#methodology) are descriptive self-reports, so keep only the rules that help on your real work.
+Treat any personality template as an editable starting draft. Keep the bullets that save you time on real tasks and delete the rest.
 
 ## Questions people ask.
 
-Can I really give ChatGPT a personality?
+### Can I really give ChatGPT a personality?
 
 Yes, via Settings → Personalization → Custom Instructions (up to 1,500 characters) or per-workspace Project Instructions. Concrete rules like "lead with the recommendation" hold up across conversations far better than vague adjectives.
 
-What's the difference between a persona prompt and a tuning file?
+### What's the difference between a persona prompt and a tuning file?
 
 A persona prompt gives the AI a character to perform. A tuning file adjusts the AI to your working preferences: how it delivers disagreement, how many options it offers, and how often it checks in.
 
-Which personality test should I use for AI tuning?
+### Which personality test should I use for AI tuning?
 
 A test is completely optional—you can pick plain-English toggles directly in the generator. If you want a questionnaire, DISC (16 items, ~3 min) is fastest for workplace habits, MBTI (32 items) maps cognitive framing, Enneagram (36 items) maps motivation, Attachment (36 items) tunes check-in cadence, and Big Five (50 IPIP items) scores five continuous traits.
 
-Do personality prompts actually change AI behavior?
+### Do personality prompts actually change AI behavior?
 
 Specific behavioral rules do; standalone type labels or adjectives mostly don't. In our 60-reply pilot, explicit rules shifted answer-first openings, hedge counts, and trailing questions measurably. Test any block on your own tasks with the free A/B test bench.
 
-Doesn't my AI already have a personality?
+### Doesn't my AI already have a personality?
 
 Yes—default assistants share a similar RLHF baseline: structured, agreeable, and cautious (scoring 44–47/50 on Agreeableness and predominantly INTJ/ISTJ in our 2,000-session questionnaire archive). A tuning tells the model where your preferences differ from the average user it was trained for.
 
-What if the tuning file gets things wrong about me?
+### What if the tuning file gets things wrong about me?
 
 Edit it; that's the design. The type is a starting hypothesis and the file is plain Markdown under an MIT license. Delete rules that don't sound like you, sharpen the ones that do, add what's missing. A tuning you've edited for ten minutes beats any unedited type match.
 

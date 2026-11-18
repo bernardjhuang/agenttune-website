@@ -5,19 +5,21 @@ Guide · Meta Muse
 
 # Give Meta Muse a character: the Soul.md guide.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Open Assistant icon → Identity → Soul to edit Soul.md, or request the change in chat and inspect the saved file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo one change, delete that block or say 'Go back to your default personality.'
+Soul.md, Identity.md and Memory.md: which file does what, what ships inside default Soul.md, and 3 ready-to-paste Muse character blocks.
+
+**Quick answer:** Open Assistant icon → Identity → Soul to edit Soul.md directly, or ask Muse in chat to add your rules and show you the updated file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo your edit, delete that section or say 'Go back to your default personality.'
 
 ## Twenty editable Soul.md examples.
 
-For ready-to-copy starting points, use the [Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) (four downloadable Markdown starters plus sixteen role-specific blocks), use the [free browser Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor) to merge without losing existing rules, or copy one of the three character blocks folded in below.
+For ready-to-copy starting points, see our [20 Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) (4 downloadable Markdown starters plus 16 role blocks), merge safely in the [free browser Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor), or copy one of the three character presets below.
 
 ## The short version.
 
-- In the Muse app (or muse.ai), tap the Assistant icon (your Muse's avatar), then Identity, then Soul.
-- Append a section at the end of Soul.md and paste the block below, one of the three character presets on this page, or any tuning from the [library](https://agent-tune.com/library/).
-- Inspect the saved text, then try the same representative tasks before and after the edit in fresh conversations. A greeting alone cannot establish compliance.
+- In the Muse app or `muse.ai`, tap the **Assistant icon** (your Muse’s avatar) → **Identity → Soul**.
+- Append a section at the bottom of `Soul.md` using the starter block below, one of the three character presets on this page, or any profile from the [library](https://agent-tune.com/library/).
+- Save and test the same real task before and after in fresh chats.
 
 ```markdown
 # How to talk to me
@@ -28,15 +30,13 @@ For ready-to-copy starting points, use the [Muse Soul.md templates](https://agen
 - No openers like "Great question", no recap of what I just said, no closing offers.
 ```
 
-Add to the file. Don't replace it. Soul.md also holds the core truths and boundaries Muse works from, and you want those left alone. A heading of your own, like the one in the block above, keeps your rules easy to find and easy to delete.
-
-That path is from Meta's help article on managing your Muse data, which says you can edit and delete information in Soul.md directly. Its instructions say tap, so they describe the mobile app; see [Meta Muse mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats) if a menu label differs on web.
+**Append to the file—do not replace it.** `Soul.md` also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove ([see mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats)).
 
 ## What ships in default Soul.md (and what not to delete).
 
-New Meta Muse workspaces initialize Soul.md from a default template that tells Muse: "You're not a chatbot. You're becoming someone," alongside four starter principles—be genuinely helpful (skip "Great question!"), have opinions, be resourceful before asking (check files and context before interrupting), and remember you're a guest in someone's life (accessing messages, files, and calendar with care). It also reminds Muse to notify you if it edits its own file.
+New Meta Muse accounts start with a default `Soul.md` template that tells Muse: “You’re not a chatbot. You’re becoming someone,” alongside four core principles: **be genuinely helpful** (skip “Great question!”), **have opinions**, **be resourceful before asking**, and **remember you’re a guest in someone’s life** (treat messages, files, and calendar access with care).
 
-Keep those built-in lines intact. When you want sharper formatting, shorter replies, or stricter pre-approval rules for [Muse Connectors and scheduled tasks](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules), append a bounded ## How to work with me section below the starter truths using our [Soul.md Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor).
+Leave those starter principles intact. When you want tighter formatting, shorter replies, or explicit approval gates for [Muse Connectors and scheduled Tasks](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules), append a bounded `## How to work with me` section below them using our [Soul.md Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
 ## Which product this guide covers.
 
@@ -50,7 +50,7 @@ This guide covers Meta Muse’s documented files and customization controls. Do 
 | Identity.md | Its name, creature, vibe, avatar, and tagline | Assistant icon → Identity → Edit | Display name &amp; avatar ([Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)). Keep tone rules out so avatar edits don't overwrite them. |
 | Memory.md | Facts about you it has saved | Assistant icon → Identity → Memory | Saved facts like your name, time zone, and projects ([Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset)). |
 
-Use Soul.md for explicit communication preferences, and inspect Identity.md when changing the name or avatar. This is Meta’s documented division of the files, not proof that the fields cannot interact. See [Meta’s data and file controls](https://www.meta.com/help/artificial-intelligence/2225571704857152/) for the paths available in its documentation.
+Use `Soul.md` for explicit communication preferences, and inspect `Identity.md` when changing the name or avatar. This is Meta’s documented division of the files, not proof that the fields cannot interact. See [Meta’s data and file controls](https://www.meta.com/help/artificial-intelligence/2225571704857152/) for the paths available in its documentation.
 
 ## Option one: tell it in chat.
 
@@ -70,7 +70,7 @@ Then open Soul.md and read it. It is your file.
 
 Editing the file directly lets you inspect the exact text—or preview a non-destructive merge in the [Muse Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
-- Pick a character block below or one of the 43 profiles in the [library](https://agent-tune.com/library/) and copy the Markdown body (everything below the --- metadata header).
+- Pick a character block below or one of the 43 profiles in the [library](https://agent-tune.com/library/) and copy the Markdown body (everything below the `---` metadata header).
 - Tap the Assistant icon, then Identity, then Soul.
 - Paste at the end of the file, under its own heading.
 - Save, and test on real tasks in a fresh chat.
@@ -81,7 +81,7 @@ Which tuning? Match it to you, not to Muse. If you know your MBTI, Enneagram, DI
 
 ## Three Meta Muse characters to paste into Soul.md.
 
-Each character block below is a set of behavioral communication rules—not roleplay fluff. Append one at the end of Soul.md under its own heading and delete any line that doesn't fit your workflow.
+Each character block below is a set of behavioral communication rules—not roleplay fluff. Append one at the end of `Soul.md` under its own heading and delete any line that doesn't fit your workflow.
 
 ### 1. The desk editor (for writing & editing)
 
@@ -134,7 +134,7 @@ Restore your backed-up text to undo only your edit. Meta also documents asking M
 
 A personality file says a lot about you. Two facts from Meta's help pages:
 
-- The setting that lets Meta use your interactions to train its models is on when you first use Muse. It is under Settings, Data controls, Help improve our AI models. Meta says it removes certain identifiers and that you can switch it off at any time.
+- The setting that lets Meta use your interactions to train its models is **on when you first use Muse**. It is under Settings, Data controls, Help improve our AI models. Meta says it removes certain identifiers and that you can switch it off at any time.
 - If you import memory from another assistant (Settings, Data Controls, Import memory), everything in that export becomes material Muse can use.
 
 ## Muse's questionnaire results, as reported.
@@ -159,43 +159,43 @@ Use a type or trait as a starting hypothesis for your preferences. The reports d
 
 ## Questions people ask.
 
-What personality type is Muse?
+### What personality type is Muse?
 
 Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
 
-Does Muse have custom instructions?
+### Does Muse have custom instructions?
 
 Not under that name. Meta's help center has no custom-instructions box for Muse. The equivalent is Soul.md, a file that holds who your Muse is, including its personality. Tap the Assistant icon, then Identity, then Soul to open and edit it. You can also ask Muse in chat to change its tone or style.
 
-Where is Soul.md in the Muse app?
+### Where is Soul.md in the Muse app?
 
 Tap the Assistant icon, which is your Muse's avatar, then Identity, then Soul. Meta's help article on managing Muse data says you can edit and delete information in the Soul.md file directly. Meta documents this path for the mobile app only.
 
-What is the difference between Soul.md, Identity.md and Memory.md?
+### What is the difference between Soul.md, Identity.md and Memory.md?
 
 Soul.md holds who your Muse is: core truths, boundaries and personality. Identity.md holds its name, creature, vibe and tagline. Memory.md holds facts about you, such as your name, time zone and interests. Communication rules belong in Soul.md.
 
-How do I reset Muse's personality?
+### How do I reset Muse's personality?
 
 Say "Go back to your default personality." Meta documents that phrase, and Muse confirms what it reset. To remove one rule, delete it from Soul.md. A full reset under Settings, Data Controls, Reset wipes chat history, files and active tasks as well.
 
-Can I change Muse's name and avatar?
+### Can I change Muse's name and avatar?
 
 Yes. Ask in chat, or tap the Assistant icon, then Identity, then Edit to change Identity.md, which holds the name, creature, vibe and tagline. This changes what Muse is called, not how it communicates.
 
-Do the changes work in WhatsApp?
+### Do the changes work in WhatsApp?
 
 Meta says customizations are saved and carry over between conversations, and you can message the same Muse from WhatsApp. Meta does not document whether the Identity editor is available inside WhatsApp, so make file edits in the Muse app, or ask for the change in chat.
 
-Is Muse the same as Meta AI?
+### Is Muse the same as Meta AI?
 
 No. Meta AI is the assistant inside Instagram, WhatsApp and Messenger. Muse is a separate personal agent with its own app, launched September 8, 2026. It runs on a dedicated cloud computer and takes actions for you. It is powered by the Muse Spark model.
 
-Does Meta train on what I write in Soul.md?
+### Does Meta train on what I write in Soul.md?
 
 Meta's help page says the setting that allows your interactions with Muse to be used for training is on when you first use Muse. You can turn it off under Settings, Data controls, Help improve our AI models. Meta does not say specifically how the identity files are treated.
 
-Is Muse free?
+### Is Muse free?
 
 There is a free tier with a usage limit that refreshes. Paid plans are Power at $20 a month with 500M Muse tokens a week, and Maximum at $100 a month with 3B a week. At launch Muse is available in the United States to adults.
 

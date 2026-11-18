@@ -5,17 +5,19 @@ Guide · Coding agents
 
 # Coding agent personality: the layer your AGENTS.md is missing.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Coding agents read instruction files; CLAUDE.md for Claude Code, AGENTS.md for Codex and other agents, .cursor/rules for Cursor, .github/copilot-instructions.md for Copilot. Most cover code conventions only. Add a personality layer: how the agent reports, how much reasoning it shows, when it pushes back. Same files, one extra section.
+Code conventions tell the agent what to write. A personality layer tells it how to talk to you.
+
+**Quick answer:** Coding agents read instruction files—CLAUDE.md for Claude Code, AGENTS.md for Codex and compatible agents, .cursor/rules/*.mdc for Cursor, and .github/copilot-instructions.md for Copilot. Beyond build and style rules, add a short communication section (preferring ~/.claude/CLAUDE.md or ~/.codex/AGENTS.md for personal tone) to control how the agent reports diffs, shows reasoning, and challenges weak approaches.
 
 ## Four files, one job.
 
-Every major coding agent reads a Markdown instruction file from your repo. The conventions differ in name and loading rules, but they converge on the same content: commands, code style, boundaries.
+Every major coding agent reads a Markdown instruction file from your repo or home folder:
 
 ### CLAUDE.md — Claude Code
 
-Claude Code loads CLAUDE.md from the repo root at session start, plus ~/.claude/CLAUDE.md for preferences that follow you across projects. Plain Markdown, no schema. A typical one reads like a terse operations manual:
+Claude Code loads `CLAUDE.md` from the repo root at session start, plus `~/.claude/CLAUDE.md` for personal rules that follow you across projects:
 
 ```markdown
 # CLAUDE.md
@@ -32,7 +34,7 @@ Claude Code loads CLAUDE.md from the repo root at session start, plus ~/.claude/
 
 ### AGENTS.md — the cross-agent standard
 
-AGENTS.md is an open spec (agents.md) for a single instruction file any agent can read; stewarded by the Agentic AI Foundation under the Linux Foundation since December 2025. OpenAI's Codex reads it natively, from ~/.codex/AGENTS.md globally, the repo root, and the working directory, most specific last. Cursor documents it as a plain-Markdown alternative to .cursor/rules, with nested files taking precedence. GitHub Copilot's coding agent, Gemini CLI, and Zed read it too.
+`AGENTS.md` is an open specification read natively by OpenAI Codex (from `~/.codex/AGENTS.md`, the repo root, and nested folders), Cursor, GitHub Copilot’s coding agent, Gemini CLI, and Zed:
 
 ```markdown
 # AGENTS.md
@@ -50,7 +52,7 @@ Prettier owns formatting. Don't hand-format.
 
 ### .cursor/rules/*.mdc — Cursor
 
-Cursor's project rules live in .cursor/rules/ as .mdc files; Markdown with a YAML frontmatter block that controls when each rule loads: a description, optional globs, and an alwaysApply flag.
+Cursor stores project rules in `.cursor/rules/*.mdc` with a short YAML frontmatter block (`description`, optional `globs`, and `alwaysApply`):
 
 ```markdown
 ---
@@ -65,7 +67,7 @@ alwaysApply: false
 
 ### .github/copilot-instructions.md — GitHub Copilot
 
-One repo-wide Markdown file added to Copilot's context. No frontmatter, no scoping; a good reason to keep it short.
+One repo-wide Markdown file loaded into Copilot’s context:
 
 ```markdown
 We use Rails 8 with RSpec.
@@ -73,20 +75,18 @@ Prefer service objects over fat models.
 All timestamps are UTC. All money is integer cents.
 ```
 
-Four conventions, one pattern; and one gap. Read a stack of real examples ([we collected them](https://agent-tune.com/guides/claude-md-examples)) and you'll notice what almost none of them mention: the person reading the agent's output.
+Across real-world examples ([see our CLAUDE.md collection](https://agent-tune.com/guides/claude-md-examples)), almost every file covers commands and code style—while leaving out how the agent should communicate with the developer.
 
 ## Code conventions constrain the diff. Nothing constrains the conversation.
 
-Your instruction file tells the agent what code to write. It says nothing about how to work with you; and that's the half you actually experience, message by message. The personality layer covers communication, not style:
+Code rules tell the agent what code to write. A communication block tells it how to report back to you on every turn:
 
-- How to report. Result first, or reasoning first? "Lead with what changed, then why."
-- How much context. One line per file touched, or a full walkthrough?
-- When to push back. "If my approach is worse, say so before implementing it."
-- What to do when unsure. Guess and flag it, or stop and ask?
+- **How to report:** Diff and root cause first, or walkthrough first?
+- **How much context:** One line per file touched, or a full trade-off breakdown?
+- **When to push back:** “If my approach has a race condition or simpler alternative, say so before coding.”
+- **How to handle uncertainty:** Flag unverified assumptions explicitly instead of guessing.
 
-The difference shows up on the first bad day. Untuned, the agent buries a failed migration under six paragraphs of cheerful narration. Tuned, it opens with the failure, states its assumption about the cause, and gives you a confidence level. Same model, same code; different file.
-
-These preferences differ by person, and they map surprisingly well to personality type. Here's a condensed, dev-flavored version of our [INTP tuning](https://agent-tune.com/library/mbti/intp):
+Here is a developer-focused communication block adapted from our [INTP tuning](https://agent-tune.com/library/mbti/intp):
 
 ```markdown
 ## Working with me (INTP)
@@ -104,47 +104,43 @@ These preferences differ by person, and they map surprisingly well to personalit
 - Don't compress nuance into bullets to save time.
 ```
 
-There are 43 of these; every MBTI type, Enneagram type, DISC style, attachment style, and Big Five pole; free and MIT-licensed in [the library](https://agent-tune.com/library/). Don't know your type? [The test](https://agent-tune.com/tests/mbti) takes five minutes, in-browser, no email.
+All 43 profiles across MBTI, Enneagram, DISC, Attachment, and Big Five are free and MIT-licensed in [the library](https://agent-tune.com/library/), or you can take the 5-minute [MBTI test](https://agent-tune.com/tests/mbti) with no email required.
 
 ## Where the layer goes, file by file.
 
-- Claude Code: append a ## Working with me section to your project CLAUDE.md; or put it in ~/.claude/CLAUDE.md once and it applies to every repo. The [CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator) emits a ready-to-paste block from your type.
-- AGENTS.md: add it as its own section in the root file. Because the file is a shared standard, the same section reaches Codex, Cursor, and everything else that reads it; write it once.
-- Cursor: give it its own file; .cursor/rules/personality.mdc with alwaysApply: true and no globs. Communication preferences apply to every file; keep glob-scoped code rules separate.
-- Copilot: a short block inside .github/copilot-instructions.md. The whole file rides along on requests, so keep the layer to ten lines or fewer.
-
-Precedence works in your favor here. Communication style is a person-level preference, not a project-level one; so the global file (~/.claude/CLAUDE.md, ~/.codex/AGENTS.md) is its natural home, and project files stay about the project. Set it once, get it everywhere.
-
-Every tuning in the library ships as raw Markdown too; [intp.md](https://agent-tune.com/library/mbti/intp.md), for example; so you can pull one straight into any of these files.
+- **Claude Code:** Put personal tone in `~/.claude/CLAUDE.md` (or an output style in `~/.claude/output-styles/`) so it applies across all repos without cluttering team git history. Use the [CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator) for a one-click export.
+- **OpenAI Codex:** Put personal communication rules in `~/.codex/AGENTS.md` and keep repo build rules in the root `AGENTS.md`.
+- **Cursor:** Save `.cursor/rules/personality.mdc` with `alwaysApply: true` (or use Cursor’s user-level Rules for AI setting).
+- **GitHub Copilot:** Add a 6–10 line communication section inside `.github/copilot-instructions.md`.
 
 ## What to leave out.
 
-- Secrets. API keys, tokens, connection strings. Instruction files get committed, forked, and pasted into bug reports.
-- Anything a tool already enforces. If Prettier formats it or ESLint blocks it, prose about it is dead weight; the config is the rule, and the prose version drifts.
-- Novel-length context. Every line competes for the agent's attention on every request. Architecture docs belong in the repo; link them, don't inline them.
-- Personality theater. "You are a sarcastic pirate" is a costume, and costumes decay over a long session. Concrete communication rules; "state assumptions before acting"; persist, because the agent can check itself against them.
+- **Secrets:** Never put API keys, tokens, or connection strings in instruction files.
+- **Rules a linter already enforces:** If Prettier or ESLint enforces it automatically, remove the prose duplicate.
+- **Novel-length docs:** Long instruction files dilute attention and can hit Codex’s 32 KiB cap. Link deep architecture docs instead of pasting them inline.
+- **Role-play costumes:** “You are a sarcastic pirate” fades quickly. Checkable rules like “state assumptions before editing files” persist across long sessions.
 
-For the deeper case on rules versus costumes, start with [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality). And if you're wondering which framework the rules should come from, we compared MBTI and Big Five [against cross-model data](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
+See our [full 5-agent rules matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) or use the [Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter) to add a communication block without touching existing repo rules.
 
 ## Questions people ask.
 
-Is AGENTS.md replacing CLAUDE.md and Cursor rules?
+### Is AGENTS.md replacing CLAUDE.md and Cursor rules?
 
 Converging, not replacing. AGENTS.md is the portable common denominator; Codex reads it natively, and Cursor documents it as an alternative to .cursor/rules; but Claude Code's native file is still CLAUDE.md, and Cursor's .mdc rules do things AGENTS.md can't, like glob scoping. Many repos keep both, with one file pointing at the other.
 
-Can I use the identical personality section in all four files?
+### Can I use the identical personality section in all four files?
 
 Yes. The personality layer is plain Markdown prose, and all four conventions accept plain Markdown. The only format difference is Cursor's .mdc frontmatter; three YAML lines at the top. Write the section once, paste it everywhere, and set alwaysApply: true in the Cursor copy so it loads in every chat.
 
-How long should the personality section be?
+### How long should the personality section be?
 
 Ten to twenty lines. Instruction files compete for the agent's attention on every request, so each rule should earn its place. Concrete beats comprehensive: six rules the agent can check itself against outperform two paragraphs describing what kind of person you are.
 
-Will personality tuning change the code the agent writes?
+### Will personality tuning change the code the agent writes?
 
 Mostly no; code conventions still govern the diff. What changes is everything around the diff: whether the agent leads with the result or the reasoning, how it flags uncertainty, whether it pushes back on a bad approach before implementing it. That's the part you experience message by message.
 
-What if I don't know my personality type?
+### What if I don't know my personality type?
 
 Take the free in-browser MBTI test at agent-tune.com; about five minutes, no email. Or skip typology entirely and handwrite three rules: how you want results reported, how much context you want, and when you want pushback. A personality type is a shortcut to those answers, not a prerequisite.
 

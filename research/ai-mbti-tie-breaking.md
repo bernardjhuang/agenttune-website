@@ -5,17 +5,19 @@ Research · descriptive reanalysis
 
 # Are AI models really INTJ? The tie-breaking effect
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-The original scorer labels 335 of 400 records INTJ. Only 280 of 400 have all four axes resolved as INTJ. Fifty-nine records have at least one tied axis; 55 of those were labeled INTJ by the original rule.
+How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
 
-## The same answers, two reporting policies
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-The original scorer resolves equal scores toward I, N, T and J. A model with equal Thinking and Feeling totals therefore receives T, even though its answers did not favor that side. Our alternative displays X for an exactly tied axis: INXJ means Introversion, Intuition and Judging are resolved, while Thinking/Feeling is not.
+## Same answers, two scoring rules
 
-These are labels from an open questionnaire, not a clinical assessment or a validated measure of an AI’s inner personality. We retain the original labels for reproducibility and report the unresolved pattern beside them.
+The legacy scorer broke exact ties toward I, N, T, and J. If a model scored 24 on Thinking and 24 on Feeling, the code labeled it T anyway. Our updated scorer marks tied axes with an `X`—for example, `INXJ` means Introversion, Intuition, and Judging won clearly, while Thinking vs. Feeling tied.
+
+Both numbers come from the same frozen answer arrays. We show the legacy counts alongside the tie-aware counts so you can compare them directly:
 
 | Model | Original INTJ / 100 | Resolved INTJ / 100 | Any tied axis / 100 |
 | --- | --- | --- | --- |
@@ -26,34 +28,34 @@ These are labels from an open questionnaire, not a clinical assessment or a vali
 
 ## Explore the effect for one model
 
-Select a cohort and scoring policy. The display uses the frozen records above; it does not generate or simulate answers.
+Pick a model and scoring rule below to inspect the exact 100-run breakdown from our frozen dataset:
 
 Model GPT-6 AstraGPT-6 SolClaude Opus 5.5Claude Fable 5.1Scoring policy Keep tied axes unresolved
 Original tie-breaking ruleGPT-6 Astra: 19 of 100 fully resolved INTJ records. The original rule labels 45 of 100 INTJ.
 
 The complete comparison is in the table above. Enable JavaScript to filter it interactively.
 
-## Why Astra changes more than Fable
+## Why Astra changes so much more than Fable
 
-Astra has 24 tied S/N axes and 12 tied E/I axes. Some records tie on both, so those counts must not be added to estimate the number of records. Its original 45 INTJ labels become 19 fully resolved INTJ results. Fable has one S/N tie: 99 original INTJ labels become 98 fully resolved results.
+GPT-6 Astra tied on the Sensing/Intuition (S/N) axis 24 times and on Extraversion/Introversion (E/I) 12 times (29 runs had at least one tie). Leaving those ties open drops Astra from 45 INTJ labels to 19 resolved INTJs. By contrast, Claude Fable 5.1 had only 1 tied axis across 100 runs, shifting from 99 to 98 INTJs.
 
-Opus shows a different boundary: 10 Thinking/Feeling ties, one E/I tie and 11 records with any tie. A pooled count alone would hide which distinction is unresolved. The download includes every cohort’s axis counts and full pattern distribution.
+Claude Opus 5.5 tied on a different axis: 10 of its 11 tied runs were on Thinking vs. Feeling (T/F).
 
-## A worked example of a tie
+## A simple example of how a tie happens
 
-Suppose a record gives Thinking and Feeling six points each, while its other axes favor I, N and J. The original rule produces INTJ. The tie-preserving report produces INXJ. Neither procedure changes the answers, and neither establishes that the model has become more or less logical.
+Each MBTI axis sums 8 questions rated 1 to 5, where 24 is the exact midpoint. If a model answers 3 (neutral) on all 8 S/N items—or balances four 2s with four 4s—the total is 24. The old rule called 24 “Intuitive (N).” The tie-preserving rule calls it a tie (`X`).
 
-A zero margin also differs from a small margin. A T–F difference of one is resolved under both policies but remains close to the boundary. For serious comparisons, retain all four signed margins alongside the label; do not silently invent a new near-tie threshold after looking at the results.
+Even a 1-point margin (like 25 vs. 24) resolves to a letter, so you should always look at the axis margins alongside the four-letter code.
 
-## What this changes when you report results
+## How to report AI personality scores clearly
 
-Publish three fields: the original label, a tie-preserving pattern, and the axis margins. State the denominator and the treatment of ties in the headline or adjacent table. “84 of 100 fully resolved INTJ results” is more precise than describing Opus as “94% INTJ” without explaining its scoring convention.
-
-The four cohorts used different administration protocols, especially across providers. Their combined 400-record count describes this archive, not the proportion of all AI systems that are INTJ. Grok simulations and Muse aggregates are excluded because they cannot supply comparable fresh raw records.
+- **Show both numbers:** Report the resolved count alongside any legacy tie-broken count.
+- **Include axis margins:** Saying “Opus 5.5 had 84 resolved INTJs and 10 T/F ties” is much clearer than “Opus is 94% INTJ.”
+- **Keep prompts in mind:** The four models were tested under two different prompt setups (Codex 5-test batteries vs. hidden-name single tests), so these 400 runs describe this dataset rather than all AI systems everywhere.
 
 ## Reproduce the comparison
 
-Download the raw records, instruments, original scorer and reanalysis code into one directory. Run node content-analysis.cjs > content-analysis.json. The ties field contains the counts used here. See the [reproduction walkthrough](https://agent-tune.com/guides/reproduce-ai-personality-research) for the exact files and checks.
+Download the raw answers, instrument keys, and reanalysis script into one folder and run `node content-analysis.cjs > content-analysis.json`. See the [reproduction guide](https://agent-tune.com/guides/reproduce-ai-personality-research) for step-by-step instructions.
 
 ## Sources.
 

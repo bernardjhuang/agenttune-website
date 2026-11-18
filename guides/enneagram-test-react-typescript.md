@@ -7,7 +7,9 @@ Developer resource · runnable starter & JS scorer
 
 By Bernard Huang · Updated November 16, 2026
 
-Download score.js + questions.json for a standalone Node/browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a complete 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
+Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.
+
+**Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
 
 ## Download the standalone JS scorer or full React + TypeScript starter.
 
@@ -28,13 +30,13 @@ npm ci
 npm run dev
 ```
 
-Serve the built dist/ folder over HTTP (never open the raw HTML file over file://). Want to take the live 36-question OEPS test without code? Visit [/tests/enneagram](https://agent-tune.com/tests/enneagram).
+Serve the built `dist/` folder over HTTP (never open the raw HTML file over `file://`). Want to take the live 36-question OEPS test without code? Visit [/tests/enneagram](https://agent-tune.com/tests/enneagram).
 
 ## Try the JavaScript scorer live in your browser.
 
-Edit the 36-item array or load a preset below. This widget parses and scores numbers locally using score.js without sending or storing answers.
+Edit the 36-item array or load a preset below. This widget parses and scores numbers locally using `score.js` without sending or storing answers.
 
-Answers in item order (JSON array)Exactly 36 whole numbers from 1 to 5. Examples are synthetic test inputs.
+**Answers in item order (JSON array)**Exactly 36 whole numbers from 1 to 5. Examples are synthetic test inputs.
 
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]Score answersAll neutralType 5 exampleTypes 1 + 5 tie
 
@@ -42,11 +44,11 @@ Answers in item order (JSON array)Exactly 36 whole numbers from 1 to 5. Examples
 
 ```
 
-Enable JavaScript to test the live scoring widget, or download score.js to run in Node.
+Enable JavaScript to test the live scoring widget, or download `score.js` to run in Node.
 
 ## Use the scorer in Node or a browser (with a TypeScript boundary).
 
-In Node CommonJS, load score.js directly:
+In Node CommonJS, load `score.js` directly:
 
 ```markdown
 const { score } = require('./score.js');
@@ -56,7 +58,7 @@ console.log(score(answers));
 // leaders: [5], dominantType: 5, topScore: 20
 ```
 
-In the React + TypeScript starter, public/score.js loads once and src/scorer.ts wraps the single canonical implementation:
+In the React + TypeScript starter, `public/score.js` loads once and `src/scorer.ts` wraps the single canonical implementation:
 
 ```
 interface Score {
@@ -84,39 +86,39 @@ The scorer rejects incomplete or sparse arrays, strings, fractions, and values o
 
 Each of the nine groups has four inputs and a raw score from 4 to 20. A result of 16/20 is a raw total, not an 80th percentile or an 80% probability of being that type. None of the 36 items are reverse-scored.
 
-When two or more groups share the maximum total, the app lists every leader and leaves dominantType set to null. Answering Neutral (3) to all 36 items gives all nine groups 12 points; the result screen explicitly reports a nine-way tie and displays all nine totals instead of picking Type 1 by array order.
+When two or more groups share the maximum total, the app lists every leader and leaves `dominantType` set to `null`. Answering Neutral (3) to all 36 items gives all nine groups 12 points; the result screen explicitly reports a nine-way tie and displays all nine totals instead of picking Type 1 by array order.
 
 This matters in empirical testing: in our September 2026 AI archive, Opus 5.5 had 65 tied Enneagram administrations out of 100 and Fable 5.1 had 44. Forcing a single winner hides real ties.
 
 ## Make the questionnaire usable with a keyboard.
 
-Each item is rendered as the <legend> of a native <fieldset>, and each response option is a labeled radio button. Keyboard users can tab between groups and arrow through options using standard browser controls. The starter displays six items per page and preserves selections when navigating back.
+Each item is rendered as the `` of a native ``, and each response option is a labeled radio button. Keyboard users can tab between groups and arrow through options using standard browser controls. The starter displays six items per page and preserves selections when navigating back.
 
 Submitting an incomplete page identifies the first unanswered item and moves focus to its first radio control. Advancing to the next page or the results view moves focus to the new section heading. Validation messages use an alert region, and the score table uses semantic row and column headers.
 
 ## Know which files to customize.
 
-- src/App.tsx controls six-page pagination, radio state, validation and the result view.
-- src/styles.css controls layout, color contrast and focus rings.
-- src/questions.json holds the 36 synthetic demo inputs and group mapping.
-- src/scorer.ts declares the TypeScript types and calls the global scorer.
-- public/score.js provides the dependency-free scoring implementation.
+- `src/App.tsx` controls six-page pagination, radio state, validation and the result view.
+- `src/styles.css` controls layout, color contrast and focus rings.
+- `src/questions.json` holds the 36 synthetic demo inputs and group mapping.
+- `src/scorer.ts` declares the TypeScript types and calls the global scorer.
+- `public/score.js` provides the dependency-free scoring implementation.
 
-If you replace the synthetic demo controls in src/questions.json with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.
+If you replace the synthetic demo controls in `src/questions.json` with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.
 
 ## Provenance, scope and licensing.
 
-The developer bundle in /resources/enneagram/ provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
+The developer bundle in `/resources/enneagram/` provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
 
 The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) and [the historical provenance record](https://agent-tune.com/research/data/rights-migration.json) before redistributing questionnaire text.
 
 ## Questions people ask.
 
-Does the starter ZIP include OEPS question text?
+### Does the starter ZIP include OEPS question text?
 
 No. The starter ships with 36 original synthetic controls in src/questions.json so you can test pagination, validation, and tie rendering under the MIT license. Verify instrument rights before adding third-party questionnaire wording.
 
-Where can I take the full interactive Enneagram test?
+### Where can I take the full interactive Enneagram test?
 
 Take the 36-item Enneagram questionnaire directly in your browser at /tests/enneagram, or choose communication preferences without a test in the generator.
 

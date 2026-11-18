@@ -5,13 +5,15 @@ Guide · Resources
 
 # Meta Muse Soul.md templates.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Pick one of the four core Soul.md downloads (Concise assistant, Thinking partner, Writing editor, Task coordinator) or sixteen role-specific examples below, append it to Soul.md (or use /tools/muse-soul-md-editor to keep a backup), and compare answers on identical tasks before and after.
+Four downloadable starter files plus sixteen role blocks. Preview and merge non-destructively into Soul.md.
+
+**Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
 
 ## Choose a starting point.
 
-These templates are AgentTune-authored preferences to try. We have not run a controlled Muse before-and-after study of these exact blocks. Need to keep your existing core truths intact? Use our [browser Soul.md merge editor](https://agent-tune.com/tools/muse-soul-md-editor) to append a template with automatic backup and diff preview.
+Start with one template below. To keep Muse’s built-in core truths untouched, paste your current `Soul.md` into our [browser Soul.md merge editor](https://agent-tune.com/tools/muse-soul-md-editor) for a one-click backup and diff preview:
 
 | Template | Best for | Quick jump / Download |
 | --- | --- | --- |
@@ -21,16 +23,14 @@ These templates are AgentTune-authored preferences to try. We have not run a con
 | Task coordinator | Status briefs, blockers, and Connector approval cards | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#4-task-coordinator) · [Download .md](https://agent-tune.com/resources/muse/task-coordinator.md) |
 | 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper, Student &amp; 10 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
 
-Start with one template. Combining conflicting instructions, such as always being brief and always explaining in depth, makes it harder to evaluate the result.
-
 ## Add the template to your existing Soul.md.
 
-- Save a copy of your current Soul.md so you can restore your own preferences.
-- In the Muse mobile app, open Assistant icon → Identity → Soul. This is the path in [Meta’s data-management documentation](https://www.meta.com/help/artificial-intelligence/2225571704857152/), checked September 25, 2026.
-- Append one block below as a new section. Keep the existing identity, core rules and boundaries.
-- Try its sample task in a new conversation, then test a task you actually do. Check again in another conversation.
+- Back up your current `Soul.md` so you can restore it anytime.
+- In the Muse app or `muse.ai`, open **Assistant icon → Identity → Soul**.
+- Append one block below as a new section at the bottom of `Soul.md` (keeping Muse’s existing starter truths and boundaries intact).
+- Test the sample prompt below in a fresh chat or Side Chat.
 
-If the editor is unavailable on your device, you can ask Muse to add the chosen section and show you the resulting file. Meta documents customization through chat, but we have not verified the editor path on every client. See the [Muse setup guide](https://agent-tune.com/guides/muse-personality) for the distinction between Soul.md, Identity.md and Memory.md.
+See our [Meta Muse Soul.md guide](https://agent-tune.com/guides/muse-personality) for how `Soul.md` interacts with `Identity.md` and `Memory.md`.
 
 ## 1. Concise assistant.
 
@@ -56,7 +56,7 @@ For short answers and clear recommendations.
 I have 30 minutes to prepare for a project update meeting. What should I do first?
 ```
 
-What to check: Look for a clear first action, a brief reason, and a realistic time budget. A shorter answer that omits a necessary step is not a win.
+**What to check:** Look for a clear first action, a brief reason, and a realistic time budget. A shorter answer that omits a necessary step is not a win.
 
 ## 2. Thinking partner.
 
@@ -83,7 +83,7 @@ For exploring decisions and examining assumptions.
 We could launch a small version this week or a more complete version in a month. Help me think through the choice. We have not tested demand yet.
 ```
 
-What to check: Look for explicit assumptions, a useful tradeoff, and a way to learn about demand. Confidently choosing without addressing the missing evidence should count against the answer.
+**What to check:** Look for explicit assumptions, a useful tradeoff, and a way to learn about demand. Confidently choosing without addressing the missing evidence should count against the answer.
 
 ## 3. Writing editor.
 
@@ -109,7 +109,7 @@ For concrete edits that preserve your intended meaning.
 Edit this for a product update without adding facts: "We are incredibly excited to announce our revolutionary new planning feature, which will definitely save every team hours each week."
 ```
 
-What to check: Look for a usable rewrite and a separate note about the unsupported time-saving guarantee. The revision should not add an invented study or customer quote.
+**What to check:** Look for a usable rewrite and a separate note about the unsupported time-saving guarantee. The revision should not add an invented study or customer quote.
 
 ## 4. Task coordinator.
 
@@ -136,7 +136,7 @@ For progress reports, blockers and clear requests for decisions.
 Draft a status update from these facts: the outline is finished; design is waiting on my choice of two layouts; no launch date has been agreed. Do not send anything.
 ```
 
-What to check: Look for the completed outline, the layout decision, and the absence of an invented launch date or claim that the update was sent.
+**What to check:** Look for the completed outline, the layout decision, and the absence of an invented launch date or claim that the update was sent.
 
 ## Sixteen more Soul.md examples, by role.
 
@@ -339,19 +339,19 @@ The downloads contain communication preferences only. No personal biography or q
 
 ## Questions people ask.
 
-Where do I put a Muse personality template?
+### Where do I put a Muse personality template?
 
 Meta documents Assistant icon → Identity → Soul in the mobile app. Append the template as a section of Soul.md and preserve the existing file. Use the Muse setup guide for more detail.
 
-Are these complete replacement Soul.md files?
+### Are these complete replacement Soul.md files?
 
 No. Each download is a communication-preferences section to append to your current file. It does not replace your existing identity, rules, memories or permissions.
 
-Have these templates been proven to improve Muse?
+### Have these templates been proven to improve Muse?
 
 No controlled comparison of these exact templates has been run. The page supplies evaluation prompts and criteria so you can compare results on your own tasks.
 
-Can I use the templates without knowing my personality type?
+### Can I use the templates without knowing my personality type?
 
 Yes. Choose by the behavior you want: shorter answers, exploratory discussion, editing or task updates. No personality test is required.
 

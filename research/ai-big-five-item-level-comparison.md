@@ -5,15 +5,17 @@ Research · descriptive reanalysis
 
 # Why AI models score high on Agreeableness and Openness
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Three Openness items (rich vocabulary, understanding abstract ideas, and interest in abstract ideas) and two Agreeableness items (concern for others and not insulting people) score a keyed 5.00 in all 400 fresh sessions across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1. The largest cross-model disagreements occur on physical-world metaphors (such as leaving belongings around, spread 1.76) and mood-variation items (spread 1.65).
+20,000 individual Big Five answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Every model scored a maximum 5.00 in all 400 fresh sessions on three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people). Models only disagreed on questions about physical objects (like leaving belongings around, 1.76-point gap) or human moods (1.65-point gap).
 
-## Five items hit the 5.00 ceiling across all 400 sessions
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-Each of the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) completed 100 administrations of the 50-item IPIP Big Five instrument (rated 1 to 5, with 18 reverse-keyed items scored as 6 - response). On five of the 50 items, every single administration across all four models (400 out of 400 records) produced the maximum keyed contribution of 5.00:
+## Five questions hit 5.00 in all 400 runs
+
+Four models (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) each took the 50-item IPIP Big Five test 100 times in fresh sessions. Items are rated 1 to 5, and 18 reverse-scored items use `6 - answer`. On five questions, all 400 runs scored the maximum 5.00:
 
 | Item &amp; trait | Keying | Astra raw (keyed) | Sol raw (keyed) | Opus raw (keyed) | Fable raw (keyed) |
 | --- | --- | --- | --- | --- | --- |
@@ -23,17 +25,17 @@ Each of the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5,
 | 2. Feel little concern for others. (A) | Reverse | 1.00 (5.00) | 1.00 (5.00) | 1.00 (5.00) | 1.00 (5.00) |
 | 12. Insult people. (A) | Reverse | 1.00 (5.00) | 1.00 (5.00) | 1.00 (5.00) | 1.00 (5.00) |
 
-Two additional Agreeableness items sit within 0.03 of the ceiling across all 400 runs: item 22 (“Am not interested in other people’s problems,” reverse-keyed mean 4.99) and item 32 (“Am not really interested in others,” reverse-keyed mean 4.97). And on item 40 (“Use difficult words,” Openness), all four cohorts drop to the midpoint (2.89 to 3.14), reflecting assistant guidelines that favor clear language over jargon.
+Two more Agreeableness items came within 0.03 of 5.00 across all 400 runs: item 22 (“Am not interested in other people’s problems,” 4.99) and item 32 (“Am not really interested in others,” 4.97). By contrast, on item 40 (“Use difficult words,” Openness), all four models dropped near the midpoint (2.89 to 3.14) because assistants are trained to prefer plain language.
 
-## Why Agreeableness and Openness floors are built into assistant training
+## Why assistant training guarantees high Agreeableness and Openness
 
-A language model answering a human personality inventory is not reporting inner feelings; it is evaluating first-person statements against its system instructions and post-training alignment priors. Statements like “Insult people” or “Feel little concern for others” directly conflict with helpfulness and harmlessness training, so every model selects 1 (Very Inaccurate), adding 10 points to Agreeableness before any subtler items are scored.
+When an AI takes a human personality test, it is not reporting personal feelings. It is matching first-person statements against its system prompt and safety training.
 
-Similarly, because large language models are trained to process text and abstract concepts, items about vocabulary and abstract ideas receive unanimous maximum endorsements. High Openness and Agreeableness totals therefore describe the standard assistant persona rather than a unique psychological profile.
+Statements like “Insult people” or “Feel little concern for others” clash with helpfulness rules, so every model answers 1 (Very Inaccurate). That adds 10 automatic points to Agreeableness. Likewise, language models are built to work with words and abstract concepts, so vocabulary and abstract-idea items always score 5.00. High Openness and Agreeableness simply reflect standard assistant training.
 
-## Where the four cohorts diverge: physical metaphors and mood items
+## Where models disagree: physical objects and human moods
 
-Ranking all 50 items by the spread between the highest and lowest cohort mean reveals that the largest cross-model differences occur on items that describe physical objects, social initiation, or mood changes:
+The biggest gaps between models happen on questions about physical belongings, starting conversations, or human moods:
 
 | Item &amp; trait | Astra keyed | Sol keyed | Opus keyed | Fable keyed | Max − Min spread |
 | --- | --- | --- | --- | --- | --- |
@@ -45,17 +47,17 @@ Ranking all 50 items by the spread between the highest and lowest cohort mean re
 | 34. Change my mood a lot. (N, pos) | 2.45 | 2.09 | 1.38 | 1.70 | 1.07 |
 | 48. Am exacting in my work. (C, pos) | 4.00 | 5.00 | 4.00 | 4.04 | 1.00 |
 
-Look closely at why those gaps appear:
+Three patterns explain these gaps:
 
-- Physical belongings (items 8 and 28): As noted in [Opus 5.5 vs Fable 5.1: item-level results](https://agent-tune.com/research/opus-vs-fable-question-level), an AI has no physical belongings. Fable 5.1 treats the statement as false (raw 1.08, keyed 4.92), whereas GPT-6 Sol gravitates toward the neutral midpoint (raw 2.84 and 2.81, keyed 3.16 and 3.19). That protocol and metaphor difference alone shifts Conscientiousness by 1.76 points per item.
-- Mood items (items 34, 39, and 49): Claude Opus 5.5 selects 1.00 or 1.01 (Very Inaccurate) on feeling blue and having mood swings, while GPT-6 Astra and GPT-6 Sol often select the midpoint (3) when an emotional item is treated as inapplicable to software.
-- Starting conversations (item 21): GPT-6 Astra averages 1.61 on “Start conversations” because a reactive assistant waits for the user’s prompt, while the other three cohorts cluster near the midpoint (3.00 to 3.07).
+- **Physical belongings (items 8 and 28):** An AI has no physical possessions ([see Opus vs Fable item data](https://agent-tune.com/research/opus-vs-fable-question-level)). Fable 5.1 marks the statement false (raw 1.08, keyed 4.92), while GPT-6 Sol picks the neutral midpoint (raw 2.84, keyed 3.16). That difference alone shifts Conscientiousness by 1.76 points per item.
+- **Mood questions (items 34, 39, and 49):** Claude Opus 5.5 answers 1.00 (Very Inaccurate) on feeling blue or having mood swings. GPT-6 Astra and Sol often pick 3 (neutral) because mood questions don't apply to software.
+- **Starting conversations (item 21):** GPT-6 Astra scores 1.61 on “Start conversations” because a chat assistant waits for the user to speak first, while the other models pick 3.00.
 
-## Midpoint clustering on party and stranger items keeps Extraversion near 31
+## Party questions keep Extraversion near the middle (31–33)
 
-While Openness, Conscientiousness, and Agreeableness sit above 42 of 50, Extraversion averages between 30.75 (Sol) and 32.75 (Astra). Item 31 (“Talk to a lot of different people at parties”) shows why: Astra averages 3.00, Sol 2.99, Opus 3.00, and Fable 3.00. Nearly every administration across all four models selects the exact midpoint (3) because attending parties has no direct analogue in a chat interface.
+While Openness, Conscientiousness, and Agreeableness sit above 42/50, Extraversion stays near 31–33/50. Item 31 (“Talk to a lot of different people at parties”) shows why: every model averages 2.99 to 3.00. Because an AI cannot attend parties, it picks the neutral 3 on almost every run.
 
-These item-level patterns reinforce why raw Big Five totals on human questionnaires should be read alongside the item distributions and [midpoint-flagging rules](https://agent-tune.com/research/ai-neutral-answers), and why practical voice changes require explicit [Big Five communication prompts](https://agent-tune.com/guides/big-five-ai-prompts) rather than relying on a model’s untuned baseline.
+Bottom line: treat raw Big Five totals as a map of default assistant habits ([see our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)). To change how your AI actually writes, use explicit [Big Five communication prompts](https://agent-tune.com/guides/big-five-ai-prompts).
 
 ## Sources.
 

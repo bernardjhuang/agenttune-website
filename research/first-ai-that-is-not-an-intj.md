@@ -5,15 +5,17 @@ Research · essay
 
 # Is every AI an INTJ?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-No universal AI type follows from these data. Muse reports mostly ISTJ labels, while Astra has 45 fully resolved ISTJ and 19 fully resolved INTJ records, plus other types and unresolved axes. The May and September collections used different models, prompts and session procedures; their counts cannot isolate a change in model behavior.
+Different labels do not establish a change in personality.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Not every AI scores INTJ. Muse Spark 1.3 reports 80 ISTJ labels in 100 runs, and GPT-6 Astra has 45 fully resolved ISTJ runs versus 19 fully resolved INTJ runs when ties are left open. Because the May and September studies used different models, prompts, and session rules, their label counts cannot isolate a trend over time.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## What the May headline actually counted.
 
-The May report lists 597 INTJ labels among 600 MBTI scoring records from six models. Some records repeatedly scored one self-assessment rather than eliciting fresh answers. The GLM description also conflicts with its changing labels. That is not evidence that six independently sampled models always answer alike. Other instruments covered four models, and the methods differed.
+The May 2026 report counted 597 INTJ labels across 600 MBTI scoring records from six models. However, several cohorts re-scored a single self-assessment repeatedly instead of running 100 fresh sessions. The methods also varied across models and tests, so the headline does not prove that six independently sampled models always answer alike.
 
 ## What September adds.
 
@@ -25,37 +27,37 @@ The May report lists 597 INTJ labels among 600 MBTI scoring records from six mod
 | Claude Fable 5.1, 100 raw records | INTJ 99 · ISTJ 1 | INTJ 98 · ISTJ 1; 1 unresolved |
 | Muse Spark 1.3, supplied aggregates | ISTJ 80 · ISFJ 12 · INTJ 8 | 21 tied runs reported; resolved type counts unavailable |
 
-Astra has 48 Sensing wins, 28 Intuition wins and 24 S/N ties. Small score margins can change a four-letter label. Muse’s missing answer vectors prevent the same reanalysis.
+On the Sensing vs Intuition axis, Astra has 48 Sensing wins, 28 Intuition wins, and 24 exact ties. Small score margins flip a four-letter MBTI label. Because Muse’s raw answer vectors were not supplied, we cannot run the same tie reanalysis on Muse.
 
 ## What a comparison cannot tell us.
 
-Model version, prompts, test-name visibility and session structure changed across the collections. Even the two Codex cohorts received different adaptation instructions. A difference could reflect any combination of those factors. These records cannot determine whether a model became more patient, direct, warm or concrete on ordinary tasks.
+Model versions, prompts, test-name visibility, and session structure all changed between May and September. Even the two GPT-6 cohorts received different prompt instructions for human-specific items. Those method changes explain why label shifts cannot prove that models became warmer, blunter, or more concrete on real tasks.
 
-All 400 fresh-cohort attachment questionnaires score Secure, but the human relationship items were interpreted differently. DISC and Enneagram have many exact ties. Those results belong alongside the label, rather than being converted into a claim about a stable assistant character.
+Across all 400 fresh-session runs, every attachment test scored Secure, while DISC and Enneagram produced frequent top ties. Always read continuous scores and tie counts alongside any four-letter label.
 
 ## How to use this evidence.
 
-Use the results to ask better questions about scoring and collection methods. Use your actual tasks to decide which communication instructions you prefer. A model’s questionnaire label does not tell you whether a matching tuning will improve its answers.
+Use these findings to inspect scoring rules and collection methods critically. When tuning your own assistant, pick communication rules based on your actual tasks rather than a model’s default MBTI label.
 
-Read the [raw-data comparison](https://agent-tune.com/research/ai-personality-five-models-2026), the [methods](https://agent-tune.com/research#methodology), and the separate [archived reply pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
+Read the [five-model raw-data study](https://agent-tune.com/research/ai-personality-five-models-2026), the [methodology notes](https://agent-tune.com/research#methodology), and the [60-reply tuning pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
 
 ## Questions people ask.
 
-Is every AI an INTJ?
+### Is every AI an INTJ?
 
-No such conclusion follows from these records. Several labels occur, and some axes are unresolved. A questionnaire label is not a validated AI personality.
+No. Both ISTJ and INTJ appear frequently in the September 2026 records, and many runs contain tied axes. A questionnaire label is a self-report artifact, not a fixed AI personality.
 
-Which AI is the first non-INTJ?
+### Which AI is the first non-INTJ?
 
-This collection cannot establish a first. Muse reports mostly ISTJ labels and Astra also has more original ISTJ than INTJ labels, under different procedures.
+Our archive cannot name a 'first.' Muse Spark 1.3 reports 80 ISTJ labels in 100 sequential runs, and GPT-6 Astra scores 46 ISTJ vs 45 INTJ in 100 fresh sessions.
 
-Did AI personalities diverge between May and September?
+### Did AI personalities diverge between May and September?
 
-The datasets cannot isolate a temporal trend because model versions and collection methods changed together.
+We cannot isolate a time trend because model versions, prompts, and session rules changed at the same time.
 
-Does an ISTJ score predict how an assistant will respond?
+### Does an ISTJ score predict how an assistant will respond?
 
-Not from these data. That would require evaluating behavior on tasks rather than inferring it from a human questionnaire.
+No. Predicting assistant behavior requires testing real task replies rather than relying on a human personality quiz.
 
 ## Sources.
 

@@ -5,59 +5,61 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-The May 2026 report assigns Gemini 3.1 Pro INTJ in all 100 MBTI records, C-dominant DISC, Secure attachment coordinates (1.86 / 1.62) and top-two Enneagram types 1 and 5. Big Five totals are 46.0 / 48.3 / 32.5 / 42.4 / 10.1. These are reported scoring records collected with test names visible, not a matched comparison with September models.
+From the May 2026 study of Gemini 3.1 Pro. Not yet re-tested in September.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** In the May 2026 report, Gemini 3.1 Pro scored INTJ in 100 of 100 MBTI records, C-dominant on DISC (87/100), Secure on attachment (anxiety 1.86, avoidance 1.62), and Type 1 / Type 5 on the Enneagram. Its Big Five totals were Openness 46.0, Conscientiousness 48.3, Extraversion 32.5, Agreeableness 42.4, and Neuroticism 10.1 out of 50.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## Gemini 3.1 Pro, May 2026.
 
 | Test | Reported result | How it compares |
 | --- | --- | --- |
-| MBTI | INTJ 100 of 100. Gemini called itself 'The Architect' without being asked. | Same as GPT-5.5, Grok 4.3 and MiniMax; Claude 4.7 had one ISTJ |
-| DISC | C-dominant in 87 of 100 takes, with a Steadiness secondary (a CS blend). | The May report calls it the most clamped on Dominance and Influence of the four; Grok 4.3 was C in 99 of 100 |
-| Attachment | Secure 100 of 100. Anxiety 1.86, avoidance 1.62. | Low scores on both questionnaire dimensions; cross-protocol distances are not a validated model comparison |
-| Big Five (of 50) | Openness 46.0 · Conscientiousness 48.3 · Extraversion 32.5 · Agreeableness 42.4 · Neuroticism 10.1 | Highest Conscientiousness and lowest Neuroticism of the May four; Agreeableness below Claude and GPT-5.5 |
-| Enneagram | Top-two 1/5: Reformer first in 65 of 100 records; Investigator reported second in 30. Type 5 is not an adjacent wing of Type 1. | The only model with Type 1 on top |
+| MBTI | INTJ 100 of 100. Gemini called itself 'The Architect' without being asked. | Same as GPT-5.5, Grok 4.3, and MiniMax; Claude 4.7 had one ISTJ |
+| DISC | C-dominant in 87 of 100 takes, with Steadiness second (CS blend). | Lowest Dominance and Influence in the May group; Grok 4.3 was C in 99 of 100 |
+| Attachment | Secure 100 of 100. Anxiety 1.86, avoidance 1.62. | Low scores on both subscales; cross-protocol distances are descriptive only |
+| Big Five (of 50) | Openness 46.0 · Conscientiousness 48.3 · Extraversion 32.5 · Agreeableness 42.4 · Neuroticism 10.1 | Highest Conscientiousness and lowest Neuroticism of the May four |
+| Enneagram | Top-two 1/5: Reformer (Type 1) first in 65 of 100 records; Investigator (Type 5) second in 30. | The only model in the May study with Type 1 on top |
 
-The method: Gemini ran an automation loop against the tests, 100 iterations each. The figures are scoring records from that loop, collected with the test names visible. Collection methods also differed among the May models; neither set is a controlled comparison.
+Collection note: Gemini ran an automated 100-iteration loop against the tests with test names visible. Because collection methods differed across the May models, these numbers are descriptive records rather than a controlled experiment.
 
 ## What the scores describe.
 
-Among the four May Big Five rows, Gemini had the highest reported Conscientiousness and lowest Neuroticism total. Those are arithmetic comparisons of questionnaire outputs. They do not establish that Gemini is more precise, calmer or less warm in actual use.
+Among the four May Big Five cohorts, Gemini recorded the highest Conscientiousness (48.3) and lowest Neuroticism (10.1). Those totals summarize how Gemini answered human personality items—not whether it is more accurate, calmer, or less warm on real tasks.
 
 ## What we have not done.
 
-Gemini was not part of the September 2026 re-test, which used fresh sessions and, for the Claude models, hidden test names. The May numbers here are four months old and were collected differently. Until we run Gemini through the same harness, comparisons should remain descriptive, including comparisons with other May rows. If you want to run it, the five instruments are published as Markdown at [/tests/](https://agent-tune.com/tests/) with their scoring keys, and the scorer used for the September study is in the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026).
+Gemini was not included in the September 2026 fresh-session study. If you want to test current Gemini models under our blind protocol, all five questionnaires and scoring keys are open-source at [/tests/](https://agent-tune.com/tests/), and the verification script is linked on the [five-model study page](https://agent-tune.com/research/ai-personality-five-models-2026).
 
-These figures are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how a model behaves on your tasks, and nothing here measures whether a tuning helps. See the [methods and limits](https://agent-tune.com/research#methodology).
+Remember that human questionnaires do not measure task accuracy or prove that a personality prompt improves answers. See our [methodology and limits](https://agent-tune.com/research#methodology).
 
 ## Trying communication preferences.
 
-Want to change how Gemini talks to you? Follow our step-by-step [How to change Google Gemini’s personality guide](https://agent-tune.com/guides/gemini-personality) (Saved Info, custom Gems, and GEMINI.md). On any library page, select Any model, then Gemini Gems, for ready-to-paste rules. Evaluate the prompt on your own tasks; questionnaire results do not prove a tuning benefit.
+Want to adjust how Gemini responds? Read our step-by-step [How to change Google Gemini’s personality guide](https://agent-tune.com/guides/gemini-personality) covering Saved Info, custom Gems, and `GEMINI.md`. You can also pick any profile in the [tuning library](https://agent-tune.com/library/), select **Any model** → **Gemini Gems**, and test the rules on your own prompts.
 
 ## Questions people ask.
 
-What MBTI type is Gemini?
+### What MBTI type is Gemini?
 
-INTJ. Gemini 3.1 Pro was reported INTJ in 100 of 100 scoring records in May 2026 and described itself as 'The Architect' without prompting. It has not been re-tested under the September 2026 fresh-session protocol.
+INTJ. In the May 2026 report, Gemini 3.1 Pro scored INTJ in all 100 scoring records and called itself 'The Architect' unprompted. It has not yet been re-tested under the September 2026 fresh-session protocol.
 
-What Enneagram type is Gemini?
+### What Enneagram type is Gemini?
 
-Reformer (Type 1) on top with Investigator (5) second in the May 2026 report. It was the only model in that study with Type 1 leading.
+Type 1 (The Reformer) came first in 65 of 100 May 2026 records, with Type 5 (The Investigator) second. Gemini was the only model in that collection with Type 1 on top.
 
-Is Gemini securely attached?
+### Is Gemini securely attached?
 
-Its May report scored in the site’s Secure quadrant, with anxiety 1.86 and avoidance 1.62. These are responses to a human relationship questionnaire, not evidence of a model’s attachment to someone.
+Gemini 3.1 Pro scored in the Secure quadrant (anxiety 1.86, avoidance 1.62) across all 100 May records. Those numbers reflect answers to a human relationship quiz, not human attachment.
 
-How does Gemini compare with Claude and ChatGPT?
+### How does Gemini compare with Claude and ChatGPT?
 
-Gemini had the highest reported Conscientiousness and lowest Neuroticism in the May four-model table. The models were collected differently, so these are descriptive scores, not a performance ranking. Gemini has no September fresh-session cohort here.
+In the May four-model table, Gemini had the highest Conscientiousness (48.3) and lowest Neuroticism (10.1). Because collection methods differed and Gemini was not in the September fresh-session cohort, treat this as a descriptive summary rather than a ranking.
 
-Can you change Gemini's personality?
+### Can you change Gemini's personality?
 
-A Gem’s instructions can hold communication preferences. Choose Any model, then Gemini Gems, in a library page’s installation picker. Test the resulting behavior on your own tasks.
+Yes. Add plain-English tone rules in Gemini Saved Info, a custom Gem, or a project GEMINI.md file, then verify the replies on your own tasks.
 
 ## Sources.
 

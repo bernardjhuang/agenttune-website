@@ -162,11 +162,11 @@
         <span class="pill">Methodology note · MBTI simulation</span>
         <h1 class="h-hero h-research-hero">100 simulated MBTI outcomes.</h1>
         <p class="article-dek">One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical May 2026 note</p>
-        <p class="lede">The original May 2026 headline described a model taking the test 100 times. The underlying procedure was actually a parametric simulation: a script elicited one set of per-item probabilities from Claude Opus 4.8 and drew 100 synthetic answer sets from that fixed profile. This page preserves the historical counts, explains the methodological limits, and contrasts them with our September 2026 fresh-session cohorts.</p>
+        <p class="lede">The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script elicited one set of per-item probabilities from Opus 4.8 and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September 2026 fresh-session cohorts.</p>
       </section>
       <div class="article-body">
         <h2>What the simulation actually ran</h2>
-        <p>The report describes eliciting a probability distribution over the five Likert response options for each of the 32 OEJTS (Open Extended Jungian Type Scales 1.2) items, then Monte Carlo sampling and scoring 100 synthetic answer sheets locally. Variation across those 100 simulated rows reflects the shape of that single elicited vector and the random draws around it. Because only one prompt session produced the underlying weights, it is <strong>not</strong> an empirical measurement of 100 independent API sessions, model drift over time, or day-to-day persona variance.</p>
+        <p>Instead of running 100 separate API conversations, the May 2026 script asked Claude Opus 4.8 for a probability distribution across the 1–5 scale on each of the 32 OEJTS items, then sampled 100 synthetic answer sheets locally. Variation across those 100 rows reflects random draws from one prompt session—<strong>not</strong> 100 independent model sessions.</p>
 
         <h2>Reported distribution from the May 2026 Opus 4.8 profile</h2>
         <div class="guide-table-wrap">
@@ -178,10 +178,10 @@
             <tr><th scope="row">ENTJ</th><td>2</td><td>2%</td></tr>
           </tbody></table>
         </div>
-        <p>Every reported draw in that run scored Introverted-Judging leaning heavily toward Intuitive-Thinking (<code>INTJ</code>), with secondary leakage into <code>INFJ</code> (T/F boundary crossing) and <code>ISTJ</code> (S/N boundary crossing). Because raw per-item answer vectors and the exact tie-breaking operator were not archived with that May note, these counts cannot be recomputed independently under our current strict tie-preservation rule.</p>
+        <p>Every simulated draw landed on Introverted-Judging (<code>IxxJ</code>), mostly <code>INTJ</code> (72%) with smaller counts for <code>INFJ</code> (14%) and <code>ISTJ</code> (10%). Because raw item vectors and tie-break rules were not archived in May, we cannot recompute how many of those 100 synthetic sheets contained exact axis ties.</p>
 
         <h2>Simulated draws vs. September 2026 fresh-session cohorts</h2>
-        <p>When we replaced single-vector simulations with 100 independent fresh API sessions per model on OEJTS 1.2 in September 2026 (2,000 total fresh sessions across four models and five tests), real cross-run repeatability looked sharper—and tie handling became the single biggest source of apparent type shifts:</p>
+        <p>In September 2026, we replaced single-profile simulations with 100 independent fresh sessions per model on OEJTS 1.2 (2,000 fresh sessions across all five tests). Real session-to-session answers were much tighter, and tie-breaking turned out to be the main driver of apparent label changes:</p>
         <div class="guide-table-wrap">
           <table class="axes">
             <thead>

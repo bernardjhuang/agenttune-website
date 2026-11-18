@@ -5,9 +5,11 @@ Guide · Claude Projects
 
 # Claude Project Instructions examples—and how they layer with Profile Preferences.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Put global communication habits (brevity, answer-first ordering, anti-sycophancy) in Claude Profile Preferences, and put role, audience, source citation rules, and formatting schemas inside Project Instructions so workspaces never pollute unrelated chats.
+Keep voice rules global in Profile Preferences and place domain specs, rubrics, sources, and output schemas inside each Project.
+
+**Quick answer:** Put global communication habits (brevity, answer-first order, and pushback) in Claude Profile Preferences, and put role, audience, source-citation rules, and output schemas inside Project Instructions so workspaces never pollute unrelated chats.
 
 ## Where to place each rule: Profile vs. Project vs. CLAUDE.md.
 
@@ -18,7 +20,7 @@ Put global communication habits (brevity, answer-first ordering, anti-sycophancy
 | Chat Style / Skills | Per-thread toggle or triggered workflow | Quick verbosity shifts or reusable Skills ([migration guide →](https://agent-tune.com/guides/claude-styles-to-skills-migration)) | Durable factual constraints that belong in Project knowledge |
 | CLAUDE.md | Local Git repo in Claude Code | Test commands, directory boundaries, architectural invariants ([examples →](https://agent-tune.com/guides/claude-md-examples)) | Conversational banter unrelated to engineering work |
 
-When both Profile Preferences and Project Instructions mention length or structure, keep them scoped cleanly: &ldquo;In this Project, prioritize attached internal docs and output the three-part decision brief below even if global preferences favor shorter replies.&rdquo;
+When both Profile Preferences and Project Instructions mention length or structure, add a clear override line in the Project: “In this Project, prioritize attached docs and use the three-part decision brief below even if global preferences favor shorter replies.”
 
 ## 7 copy-paste Claude Project Instructions templates.
 
@@ -118,19 +120,19 @@ Already have instructions you want to merge into Claude without clashing with gl
 
 ## Questions people ask.
 
-Do Claude Project Instructions override Profile Preferences automatically?
+### Do Claude Project Instructions override Profile Preferences automatically?
 
 Both are injected into conversations inside that Project, so flat contradictions (like 'always be one sentence' vs 'write full 5-part memos') cause inconsistent compliance. Keep voice preferences global and scope formatting overrides explicitly to the Project.
 
-How long should Claude Project Instructions be?
+### How long should Claude Project Instructions be?
 
 Aim for 400 to 1,500 characters of sharp rules and headings, keeping long background policies or style guides in uploaded Project Knowledge documents rather than stuffing thousands of words into the instruction box.
 
-Should I duplicate Project Instructions into CLAUDE.md?
+### Should I duplicate Project Instructions into CLAUDE.md?
 
 No. Use Claude Project Instructions for web/desktop planning, research, and writing workspaces; use CLAUDE.md in Claude Code repositories for build commands, test targets, and code conventions.
 
-How do Claude Skills relate to Project Instructions?
+### How do Claude Skills relate to Project Instructions?
 
 Project Instructions stay active on every message inside a Project, while Skills package reusable multi-step procedures cleanly. See our Claude Styles & Skills guide for how they pair.
 

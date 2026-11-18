@@ -9,9 +9,9 @@ Measured on GPT-6 in September 2026, with the May reports for context.
 
 It depends which GPT-6 you ask, and how you break ties. GPT-6 Sol came back INTJ in 97 of 100 fresh sessions. GPT-6 Astra split almost evenly between ISTJ and INTJ. Both are Secure on the attachment test, both put Steadiness and Conscientiousness on top on DISC, and they part ways on the Enneagram: Helper for Astra, Investigator for Sol.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-The short answer. In the September Codex questionnaire records, GPT-6 Sol has 97 INTJ labels and Astra has 46 ISTJ and 45 INTJ labels under the original tie rules. Leaving tied axes open gives Sol 79 fully resolved INTJ results and Astra 45 ISTJ and 19 INTJ results. These are questionnaire self-descriptions under specific prompts, not a validated personality or an evaluation of ChatGPT behavior.
+**The short answer.** In the September Codex questionnaire records, GPT-6 Sol has 97 INTJ labels and Astra has 46 ISTJ and 45 INTJ labels under the original tie rules. Leaving tied axes open gives Sol 79 fully resolved INTJ results and Astra 45 ISTJ and 19 INTJ results. These are questionnaire self-descriptions under specific prompts, not a validated personality or an evaluation of ChatGPT behavior.
 
 ## GPT-6 Astra and GPT-6 Sol, September 2026.
 
@@ -51,27 +51,27 @@ Describe the communication you want explicitly, then compare the same tasks with
 
 ## Questions people ask
 
-What MBTI type is ChatGPT?
+### What MBTI type is ChatGPT?
 
 It depends on the model and on how ties are broken. In September 2026, GPT-6 Sol tested INTJ in 97 of 100 fresh sessions and GPT-6 Astra split ISTJ 46 to INTJ 45. Thinking and Judging never lost a run for either; Sensing versus Intuition is the axis that moves. In May 2026, GPT-5.5 was reported INTJ in 100 of 100 scoring records, collected with a different method.
 
-What personality type is Claude?
+### What personality type is Claude?
 
 In September 2026, Claude Opus 5.5 tested INTJ in 94 of 100 fresh sessions with test names hidden and Claude Fable 5.1 in 99. Both score Secure on every attachment questionnaire. On DISC, Steadiness wins outright in 64 Opus and 40 Fable runs, while 32 and 51 runs respectively tie S with C. On the Enneagram, Fable is a Challenger (Type 8) and Opus is a near three-way tie between 8, 5 and 2. Claude Opus 4.7 was reported INTJ in 99 of 100 scoring records in May. Full profiles: [Opus 5.5](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable 5.1](https://agent-tune.com/guides/fable-personality).
 
-What personality type is Grok?
+### What personality type is Grok?
 
 Grok 4.6 answered the five tests once as itself in September 2026: INTJ with wide margins, Investigator (Type 5), C on DISC, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06). Its 100 runs are simulated draws from that one self-report, so treat them as a sensitivity check rather than fresh runs. Grok 4.3 was reported INTJ in 100 of 100 scoring records in May.
 
-What personality type is Meta's Muse?
+### What personality type is Meta's Muse?
 
 A Muse Spark 1.3 report puts it at ISTJ in 80 of 100 runs, Helper (2w1) on the Enneagram, an S/C blend on DISC and Secure on all 100 attachment runs. The runs were sequential inside one session per test and no raw answers were supplied, so these figures are reported rather than re-scored. ISTJ is the most frequent original label in that supplied report; tied-axis breakdowns were not supplied.
 
-Do all AI models have the same personality?
+### Do all AI models have the same personality?
 
 These data cannot establish whether AI models have personalities or whether they have become more different. They show questionnaire labels and scores under several collection protocols, with substantial ties on some instruments. These are self-descriptions on questionnaires written for people, under one prompt on one day, not measurements of behavior.
 
-Can instructions change how ChatGPT responds?
+### Can instructions change how ChatGPT responds?
 
 You can request changes to tone, detail and structure through ChatGPT custom instructions or AGENTS.md in Codex. The effect depends on the task and instructions. Treat a tuning as editable preferences and compare answers on your own tasks. No controlled benefit from personality matching is measured here.
 

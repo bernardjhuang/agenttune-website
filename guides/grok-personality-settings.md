@@ -5,20 +5,22 @@ Guide · xAI Grok
 
 # How to change Grok’s personality on X and grok.com.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-To change how Grok responds in ordinary chat on grok.com or X, open Settings → Customize Grok (or Customize response) to switch between built-in persona modes or paste persistent custom instructions (~4,000-character box). For a dedicated specialist persona with its own cloud workspace, create a Grok Bot and paste your rules into Edit Profile → Description.
+Customize standard Grok threads via Settings → Customize Grok—built-in persona modes, custom instructions, and 6 copyable tone presets.
+
+**Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
 
 ## Built-in Grok modes vs. custom instructions on X & grok.com.
 
 | Surface / Control | Where to find it | Limit &amp; behavior |
 | --- | --- | --- |
 | Ordinary chat on grok.com or X | Settings → Customize Grok (Custom Instructions) | Account-wide instructions (~4,000 chars) applied to new Grok threads. |
-| Built-in Grok persona modes / Voices | Model / Mode selector in Grok chat &amp; Voice Mode | One-tap style presets (e.g., Concise, Socratic, Unfiltered/Fun, or Voice personas) that set broad tone but cannot enforce formatting rules as reliably as explicit instructions. |
+| Built-in Grok persona modes / Voices | Model / Mode selector in Grok chat &amp; Voice Mode | One-tap style presets (Concise, Socratic, Unfiltered/Fun, or Voice personas) that set broad tone. |
 | Custom Grok Bot | Bot menu → Edit Profile → Description ([6 Grok Bot profiles →](https://agent-tune.com/guides/grokbot-personality)) | Persistent character + boundaries for a standalone cloud-teammate Bot; survives Bot duplication. |
 | xAI API | system message on each request | Deterministic per-call control where model ID and temperature are pinned. |
 
-Start with this clean baseline block in Settings → Customize Grok, or pick any of the 43 templates in the [tuning library](https://agent-tune.com/library/):
+Paste this starter block into **Settings → Customize Grok**, or pick any of the 43 profiles in the [tuning library](https://agent-tune.com/library/):
 
 ```markdown
 ## Communication preferences
@@ -32,16 +34,16 @@ Start with this clean baseline block in Settings → Customize Grok, or pick any
 
 ## Why Grok's default self-report looks different from Claude and ChatGPT.
 
-In the September 2026 supplied self-report for Grok 4.6 ([What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)), its canonical answer vectors scored INTJ on the OEJTS (with wide margins of +13 to +15 out of 16), Investigator (Type 5) on the Enneagram (19 of 20, followed by Type 8 Challenger at 17), and a pure Conscientiousness (C) profile on DISC (C 18 vs Steadiness 11).
+In its September 2026 supplied self-report ([What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)), Grok 4.6’s canonical answer vectors scored **INTJ on MBTI** (margins +13 to +15 out of 16), **Type 5 (Investigator) on the Enneagram** (19/20, with Type 8 at 17/20), and **pure C on DISC** (C 18 vs S 11).
 
-Unlike the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, which all scored 44.5 to 45.1 on Agreeableness and Secure on Attachment), Grok 4.6 reported Agreeableness at 33 of 50, Extraversion at 24 of 50, and Attachment avoidance at 4.06 (just 0.06 above the 4.0 Avoidant cutoff; see our [Grok attachment cutoff sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)). Because the Grok 4.6 report consisted of one canonical self-report plus 100 simulated draws rather than 100 independent sessions, we keep it strictly separated from the fresh-session cohorts.
+Unlike the four fresh-session cohorts (which averaged 44.99–47.07/50 on Agreeableness and 100% Secure on Attachment), Grok 4.6 reported **Agreeableness at 33/50**, **Extraversion at 24/50**, and **Attachment avoidance at 4.06**—one raw point above the 4.00 Avoidant cutoff ([see our cutoff sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)). Because Grok 4.6’s submission was one canonical self-report plus 100 simulated draws rather than 100 fresh sessions, we keep it in a separate evidence tier.
 
 ## Dialing down edgy banter or dialing up warmth (5 more presets).
 
-In practice, users tune Grok in one of two opposite directions:
+Most people tune Grok in one of two directions:
 
-- Cutting performative snark: If Grok's default replies feel overly sarcastic or informal for technical work, add a single rule: "Write in plain, neutral technical prose. Do not use jokes, sarcasm, or slang." Pairing that with an [ISTJ](https://agent-tune.com/library/mbti/istj) or [DISC Conscientiousness](https://agent-tune.com/library/disc/c-conscientiousness) tuning keeps answers focused on evidence and citations.
-- Adding structured warmth for brainstorming or coaching: If Grok feels too blunt or detached, use an [ENFJ](https://agent-tune.com/library/mbti/enfj), [DISC Steadiness](https://agent-tune.com/library/disc/s-steadiness), or [Secure attachment](https://agent-tune.com/library/attachment/secure) tuning so it checks context before jumping to critique.
+- **Cut performative snark:** Add “Write in plain, neutral technical prose. Do not use jokes, sarcasm, or slang.” Pair it with an [ISTJ](https://agent-tune.com/library/mbti/istj) or [DISC C](https://agent-tune.com/library/disc/c-conscientiousness) tuning.
+- **Add warmth and pacing:** Use an [ENFJ](https://agent-tune.com/library/mbti/enfj), [DISC S](https://agent-tune.com/library/disc/s-steadiness), or [Secure attachment](https://agent-tune.com/library/attachment/secure) tuning so Grok checks context before jumping to blunt critique.
 
 ### Preset 2: Neutral Technical Editor
 
@@ -83,23 +85,23 @@ In practice, users tune Grok in one of two opposite directions:
 - Give one clear recommendation rather than a hedge-filled menu.
 ```
 
-If you decide to package your rules into a reusable custom bot, follow our step-by-step [Grok Bot personality guide](https://agent-tune.com/guides/grokbot-personality).
+Want to package your rules into a standalone cloud bot? Read our [Grok Bot personality guide](https://agent-tune.com/guides/grokbot-personality).
 
 ## Questions people ask.
 
-How do I change Grok's personality without creating a Grok Bot?
+### How do I change Grok's personality without creating a Grok Bot?
 
 Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread.
 
-What is the difference between Grok chat settings and a Grok Bot?
+### What is the difference between Grok chat settings and a Grok Bot?
 
 Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job.
 
-How do I make Grok stop using slang or sarcasm?
+### How do I make Grok stop using slang or sarcasm?
 
 Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'
 
-Why did Grok 4.6 score Avoidant on the AgentTune attachment test?
+### Why did Grok 4.6 score Avoidant on the AgentTune attachment test?
 
 In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold.
 

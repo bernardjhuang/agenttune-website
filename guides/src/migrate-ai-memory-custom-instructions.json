@@ -1,21 +1,21 @@
 {
   "slug": "migrate-ai-memory-custom-instructions",
   "published": "2026-11-16",
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "title": "Migrate ChatGPT & Claude Memory Into Custom Instructions",
   "description": "Move saved AI memories safely across ChatGPT, Claude, Meta Muse Memory.md, and Gemini: separate durable tone rules from facts and scrub PII first.",
   "pill": "Workflow · Cross-Platform Memory",
   "h1": "How to migrate AI memory into portable custom instructions without leaking secrets.",
   "dek": "Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract clean behavioral rules and scrub PII before pasting.",
-  "lede": "Every major assistant stores preference fragments differently: OpenAI keeps <strong>Saved Memories</strong> separate from Custom Instructions, Anthropic uses <strong>Claude Memory</strong> alongside Profile Preferences, Google uses <strong>Gemini Saved Info</strong>, and Meta Muse splits files cleanly into <code>Memory.md</code> and <code>Soul.md</code>. Dumping an entire raw chat archive or bloated memory JSON into a new assistant hits character limits immediately—and leaks outdated habits or private keys.",
-  "answer": "Do not paste raw chat exports across AI apps. Instead, export memory-only text, audit entries locally in our browser AI Memory Export Reviewer to delete duplicates and secrets, split stable style rules from editable facts, and install each piece into the matching destination box.",
+  "lede": "Every AI app stores saved facts and preferences differently: ChatGPT separates <strong>Saved Memories</strong> from Custom Instructions, Claude pairs <strong>Memory</strong> with Personal Preferences, Gemini uses <strong>Saved Info</strong>, and Meta Muse splits <code>Memory.md</code> from <code>Soul.md</code>. Instead of dumping a raw chat export into a new account, clean your memory list locally, scrub private data, and separate facts from tone rules.",
+  "answer": "Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.",
   "promptModel": "any",
   "promptDestination": "anywhere",
   "sections": [
     {
       "id": "five-step-migration-checklist",
       "h2": "Five-step memory & preference migration workflow.",
-      "html": "<ol><li><strong>Export memories, not full transcripts:</strong> Grab your Saved Memories / custom instructions / <code>Memory.md</code> text (not giant multi-megabyte conversation ZIPs).</li><li><strong>Audit locally in your browser:</strong> Paste or load up to 500 entries into the <a href=\"/tools/ai-memory-reviewer\">AI Memory Export Reviewer</a>. It stays inside your browser tab, unchecks exact duplicates, and flags emails, phone-like strings, and API key patterns for redaction.</li><li><strong>Split Tone from Facts:</strong> Move &ldquo;how to answer&rdquo; rules (brevity, answer-first framing, pushback expectations) into Custom Instructions / <code>Soul.md</code> / Profile Preferences; move static role and timezone facts into Box 1 / Saved Info / <code>Memory.md</code>.</li><li><strong>Prune stale experiments:</strong> Delete old one-off persona tricks (&ldquo;always talk like a pirate for project X&rdquo;) that silently ruin daily work.</li><li><strong>Convert and check for conflicts:</strong> Reformat via the <a href=\"/tools/instruction-converter\">Instruction Converter</a> and run a quick pass in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li></ol>"
+      "html": "<ol><li><strong>Export memory notes, not full chat logs:</strong> Copy your Saved Memories, Custom Instructions, or <code>Memory.md</code> text rather than a multi-megabyte conversation ZIP.</li><li><strong>Audit locally in your browser:</strong> Paste up to 500 entries into the <a href=\"/tools/ai-memory-reviewer\">AI Memory Export Reviewer</a>. It runs inside your browser tab, unchecks exact duplicates, and flags emails, phone numbers, and API keys for redaction.</li><li><strong>Separate Tone from Facts:</strong> Put “how to answer” rules (brevity, answer-first order, pushback) into Custom Instructions, Personal Preferences, or <code>Soul.md</code>. Put role, stack, and timezone facts into Saved Memory, Saved Info, or <code>Memory.md</code>.</li><li><strong>Delete stale one-off notes:</strong> Uncheck temporary project notes or old persona experiments.</li><li><strong>Format and check for conflicts:</strong> Convert for your target app in the <a href=\"/tools/instruction-converter\">Instruction Converter</a> and run a quick check in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li></ol>"
     },
     {
       "id": "destination-mapping-table",
@@ -25,7 +25,7 @@
     {
       "id": "compact-portable-seed",
       "h2": "Clean portable seed template (under 500 characters).",
-      "html": "<p>Once you extract the keeper rules from an older account, use this tight structure as your destination seed:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"anywhere\">## Durable Communication Preferences\n\n- Put direct recommendations first, followed by key reasoning and concrete tradeoffs.\n- Default to concise structured prose; save long explanations or tables for complex choices.\n- Push back with evidence if my assumptions contain gaps or errors.\n- Separate confirmed facts from estimates; do not guess missing numbers or close with filler follow-ups.</div>"
+      "html": "<p>After pruning your old memory export, use this compact block as your new communication baseline:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"anywhere\">## Durable Communication Preferences\n\n- Put direct recommendations first, followed by key reasoning and concrete tradeoffs.\n- Default to concise structured prose; save long explanations or tables for complex choices.\n- Push back with evidence if my assumptions contain gaps or errors.\n- Separate confirmed facts from estimates; do not guess missing numbers or close with filler follow-ups.</div>"
     }
   ],
   "faq": [

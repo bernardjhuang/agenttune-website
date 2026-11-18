@@ -5,13 +5,15 @@ Guide · Workplace & AI
 
 # How to Work With Me README template (that works for humans and AI).
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-A strong 'How to Work With Me' README answers five concrete questions in under one page: (1) how you want information structured, (2) how you prefer feedback and pushback, (3) when to interrupt vs proceed asynchronously, (4) how you handle uncertainty and bad news, and (5) your default blind spots. Build yours interactively at agent-tune.com/tools/how-to-work-with-me or copy one of the dual human + AI Markdown templates below.
+Write your communication user manual once—drop the top half in Notion or Slack for teammates, and paste the bottom half into CLAUDE.md, AGENTS.md, or ChatGPT.
+
+**Quick answer:** A clear 'How to Work With Me' README answers five questions on one page: (1) how you want updates structured, (2) how you want pushback delivered, (3) when to act vs check in first, (4) how to flag uncertainty or bad news, and (5) your default habits. Build yours in 60 seconds at agent-tune.com/tools/how-to-work-with-me or copy one of the templates below.
 
 ## Why one personal README now serves two audiences.
 
-Compare what a new coworker needs on week one with what Claude Code or ChatGPT needs in session one:
+What a new teammate needs on week one matches what Claude Code or ChatGPT needs on turn one:
 
 | Section | What it tells human teammates | What it tells ChatGPT / Claude / AGENTS.md |
 | --- | --- | --- |
@@ -20,7 +22,7 @@ Compare what a new coworker needs on week one with what Claude Code or ChatGPT n
 | Autonomy vs. check-ins | "Ship reversible fixes; flag schema changes first." | "Execute reversible steps directly; ask before destructive or cross-boundary changes." |
 | Bad news &amp; uncertainty | "Surface blockers on day one, even without a fix yet." | "Flag material uncertainty and failed checks immediately instead of guessing." |
 
-Want to generate yours from structured fields in 60 seconds? Open our free client-side [How to Work With Me Card Builder →](https://agent-tune.com/tools/how-to-work-with-me) (exports clean Markdown and a privacy-safe share link).
+Want to build yours from guided prompts? Open our free [**How to Work With Me Card Builder →**](https://agent-tune.com/tools/how-to-work-with-me).
 
 ## Template 1: Engineering / IC README (GitHub, Notion & AGENTS.md).
 
@@ -59,7 +61,7 @@ Want to generate yours from structured fields in 60 seconds? Open our free clien
 
 ## Template 3: The portable AI-ready block (CLAUDE.md, AGENTS.md, Soul.md).
 
-Append this compact companion block straight into ~/.claude/CLAUDE.md, ~/.codex/AGENTS.md, ChatGPT Custom Instructions, or Meta Muse Soul.md:
+Paste this compact block into `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md`, ChatGPT Custom Instructions, or Meta Muse `Soul.md`:
 
 ```markdown
 ## Working with me
@@ -71,23 +73,23 @@ Append this compact companion block straight into ~/.claude/CLAUDE.md, ~/.codex/
 - Flag material uncertainty explicitly rather than guessing.
 ```
 
-Not sure which defaults match how you naturally operate? Take our 3-minute [free DISC workplace test](https://agent-tune.com/tests/disc) or build rule-by-rule in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
+Not sure which style fits you best? Take our 3-minute [free DISC workplace test](https://agent-tune.com/tests/disc) or build rule-by-rule in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
 
 ## Questions people ask.
 
-What should you leave out of a 'How to Work With Me' README?
+### What should you leave out of a 'How to Work With Me' README?
 
 Leave out excuses for bad behavior ('I'm blunt so don't take it personally'), rigid personality horoscope labels that box teammates in, and after-hours response expectations disguised as personal quirks. Good READMEs lower friction for collaborators rather than shifting emotional labor onto them.
 
-How long should a personal 'How to Work With Me' document be?
+### How long should a personal 'How to Work With Me' document be?
 
 Keep the human version to 150–300 words (one screen in Notion or Slack) and the AI agent version to 6–12 bullet lines so neither teammates nor language models skim past what matters.
 
-Can I generate a 'How to Work With Me' card without taking a personality test?
+### Can I generate a 'How to Work With Me' card without taking a personality test?
 
 Yes. Both agent-tune.com/tools/how-to-work-with-me and /tools/communication-preferences-builder build plain-English Markdown directly from your answers—zero personality test or email required.
 
-Where should I save the AI version of my 'How to Work With Me' rules?
+### Where should I save the AI version of my 'How to Work With Me' rules?
 
 Save personal communication defaults globally—in ChatGPT Custom Instructions, Claude Profile Preferences, Meta Muse Soul.md, ~/.claude/CLAUDE.md, or ~/.codex/AGENTS.md—so shared team repos only contain project conventions.
 

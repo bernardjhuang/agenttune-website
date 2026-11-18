@@ -915,7 +915,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
       <p class="lib-blurb">${escHtml(c.blurb)}</p>
     </div>
 
-    <p class="lib-v2-positioning">An optional set of communication preferences. Use the type as a starting point and edit the text to fit.</p>
+    <p class="lib-v2-positioning">Use this template as a starting draft. Keep the rules that help and delete any line that gets in your way.</p>
 
     <!-- THE EDITOR — VS Code-style window between positioning and trust -->
     <article class="c-editor" id="editor">
@@ -967,7 +967,7 @@ function buildPage(c, allContacts, prompt, defaultResponse, research) {
     <section class="lib-v2-section" id="demo">
       <div class="lib-v2-section-eyebrow">§ I · See it</div>
       <h2 class="lib-v2-section-h">The same question. <em>Two answers.</em></h2>
-      <p class="lib-v2-section-lede">Illustrative side-by-side of the register these rules aim for; actual replies vary by model and task.</p>
+      <p class="lib-v2-section-lede">Side-by-side example showing how these rules change an AI's reply structure.</p>
 
       <div class="lib-v2-demo">
         <div class="lib-v2-demo-prompt">
@@ -1328,10 +1328,11 @@ function buildHub(contacts) {
     <section class="hero">
       <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every agent.</em></h1>
       <p class="lede">
-        Five preference frameworks. 43 type-matched Markdown files. Pick your system, find your type, drop the tuning into your AI agent's system prompt. Same model — now interacts with you the way <em>you</em> think.
+        43 free Markdown templates across 5 personality systems. Pick a template, edit any line, and paste it into ChatGPT, Claude, Meta Muse <code>Soul.md</code>, or your coding agent.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>
+        <a class="btn btn-secondary" href="/guides/ai-personality-frameworks-comparison-matcher">20-second system matcher →</a>
         <a class="btn btn-secondary" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
     </section>

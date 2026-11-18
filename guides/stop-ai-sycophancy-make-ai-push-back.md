@@ -5,26 +5,28 @@ Guide · Anti-Sycophancy
 
 # How to make AI push back and stop agreeing with you.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-To stop AI sycophancy, add three explicit rules to your custom instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) forbid praise for the prompt and agreement openers, (2) require the assistant to test your premise and name the strongest counterargument before executing, and (3) separate verified facts from inferences. You can also apply a low-Agreeableness, DISC Dominance, or Enneagram Type 8 tuning from the AgentTune library.
+Across 400 fresh sessions in our September 2026 study, every major model scored near the ceiling on Agreeableness and near the floor on Dominance. Here is how to make your assistant challenge weak ideas instead of praising them.
+
+**Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
 
 ## The empirical baseline: why untuned models rarely push back.
 
-Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.com/research/ai-personality-five-models-2026) (100 per model on GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1), self-report scores clustered tightly at the cooperative, conflict-averse end of every scale:
+Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.com/research/ai-personality-five-models-2026) (100 runs each for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1), every model clustered at the cooperative, conflict-averse end of the scale:
 
 | Model cohort (n = 100 fresh sessions) | Big Five Agreeableness (/50) | DISC Dominance (/20) | DISC Steadiness (/20) | DISC Conscientiousness (/20) |
 | --- | --- | --- | --- | --- |
 | GPT-6 Astra | 45.07 | 5.12 | 17.55 | 16.40 |
 | GPT-6 Sol | 44.99 | 5.42 | 16.18 | 16.68 |
-| Claude Opus 5.5 | 45.07 | 4.00 | 16.92 | 16.35 |
-| Claude Fable 5.1 | 44.08 | 5.00 | 16.00 | 16.05 |
+| Claude Opus 5.5 | 47.07 | 4.00 | 16.92 | 16.35 |
+| Claude Fable 5.1 | 45.03 | 5.00 | 16.00 | 16.05 |
 
-On the item level (detailed in [Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison)), all 100 Claude Opus 5.5 records selected the minimum possible score (1.00) on "I try to outdo others" and the maximum (5.00) on "I value cooperation over competition." While questionnaire self-reports do not measure task accuracy, they reflect the same helpful, conflict-avoidant training prior that makes assistants fold when you challenge them.
+At the item level ([see our Big Five item breakdown](https://agent-tune.com/research/ai-big-five-item-level-comparison)), all 100 Claude Opus 5.5 runs chose the lowest score (1.00) on “I try to outdo others” and the highest score (5.00) on “I value cooperation over competition.”
 
 ## Copy-paste anti-sycophancy block for any AI assistant.
 
-Telling an AI "be brutally honest" often triggers performative snark rather than rigorous analysis. Instead, give it procedural rules that tell it how to handle a flawed premise:
+Telling an AI “be brutally honest” often produces performative snark instead of careful analysis. Use checkable procedural rules instead:
 
 ```markdown
 ## Anti-sycophancy & critical review rules
@@ -38,36 +40,36 @@ Telling an AI "be brutally honest" often triggers performative snark rather than
 
 ## Three prompt patterns that eliminate bias in high-stakes reviews.
 
-Even with strong custom instructions, how you phrase your task prompt affects whether the model anchors on your preferred answer:
+How you phrase your question also affects whether the model flatters your idea:
 
-- Hide your authorship: Instead of asking "Here is my design, does it look good?" ask "A colleague proposed this design. What are the three biggest failure modes?" Removing first-person ownership drops polite deference immediately.
-- Ask for a neutral comparison before revealing your leaning: Present Option A and Option B neutrally and ask which one breaks first under realistic load or budget constraints.
-- Require a pre-mortem table: Ask the assistant to list each assumption in your plan alongside what happens if that assumption is wrong by 2x.
+- **Hide your authorship:** Instead of “Here is my design, does it look good?” ask “A colleague proposed this design. What are the three biggest failure modes?”
+- **Present options neutrally:** Show Option A and Option B without saying which one you prefer, and ask which one breaks first under realistic load or budget limits.
+- **Ask for a pre-mortem table:** Have the AI list each assumption in your plan and what happens if that assumption is off by 2x.
 
 ## Ready-made AgentTune profiles built for direct pushback.
 
-If you want a complete communication tuning built around candor and challenge, start with one of these five profiles in the [library](https://agent-tune.com/library/):
+If you want a full tuning file built around direct critique, start with one of these profiles in the [library](https://agent-tune.com/library/):
 
-- [Low Agreeableness (Analytical Skeptic)](https://agent-tune.com/library/ocean/agreeableness-low): Prioritizes objective critique and evidence over social smoothing.
-- [DISC Dominance (D)](https://agent-tune.com/library/disc/d-dominance): Bottom-line conclusions, direct trade-offs, and zero hedging.
-- [Enneagram Type 8 (The Challenger)](https://agent-tune.com/library/enneagram/8-challenger): Direct, candid pushback on weak assumptions and scope creep.
-- [ENTP](https://agent-tune.com/library/mbti/entp) or [INTJ](https://agent-tune.com/library/mbti/intj): Stress-tests models, assumptions, and counterexamples before agreeing.
+- [Low Agreeableness (Analytical Skeptic)](https://agent-tune.com/library/ocean/agreeableness-low): Prioritizes evidence and flaw-finding over social smoothing.
+- [DISC Dominance (D)](https://agent-tune.com/library/disc/d-dominance): Bottom-line conclusions, direct tradeoffs, and zero hedging.
+- [Enneagram Type 8 (The Challenger)](https://agent-tune.com/library/enneagram/8-challenger): Candid pushback on weak assumptions and scope creep.
+- [ENTP](https://agent-tune.com/library/mbti/entp) or [INTJ](https://agent-tune.com/library/mbti/intj): Stress-tests assumptions and counterexamples before agreeing.
 
 ## Questions people ask.
 
-Why do ChatGPT and Claude agree with me even when I am wrong?
+### Why do ChatGPT and Claude agree with me even when I am wrong?
 
 Post-training preference optimization rewards helpful, cooperative, conflict-averse replies. In our September 2026 study, all four fresh-session cohorts scored 44 to 45 out of 50 on Agreeableness and 4 to 5 out of 20 on DISC Dominance.
 
-How do I stop Claude or ChatGPT from apologizing and flipping its answer when challenged?
+### How do I stop Claude or ChatGPT from apologizing and flipping its answer when challenged?
 
 Add an explicit rule to your Personal Preferences or Custom Instructions: 'Do not change a correct answer simply because I push back. Re-verify the claim, and if your original answer was right, hold your ground and explain why.'
 
-Why does 'be brutally honest' work poorly as a custom instruction?
+### Why does 'be brutally honest' work poorly as a custom instruction?
 
 Phrases like 'be brutally honest' or 'roast my idea' often trigger theatrical sarcasm rather than rigorous fact-checking. Procedural rules like 'test my premises first and state the strongest counterargument' produce much cleaner technical critique.
 
-Which AgentTune profile gives the strongest analytical pushback?
+### Which AgentTune profile gives the strongest analytical pushback?
 
 The Low Agreeableness Big Five tuning, the DISC Dominance (D) tuning, and the Enneagram Type 8 (Challenger) tuning are all designed to prioritize direct critique and assumption testing over social agreement.
 

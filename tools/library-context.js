@@ -24,16 +24,16 @@ const NUM = ["none", "one", "two", "three", "four", "five", "six", "seven", "eig
 // Model questionnaires supply exploratory context, not a validated baseline.
 function defaultGap(c, research) {
   const notes = {
-    mbti: 'The MBTI source lists 597 INTJ labels in 600 scoring records. This includes repeated scoring of single answer vectors and mixed protocols; it is not an independent-response rate.',
-    enneagram: 'The reported Enneagram pairs are highest and second-highest scores, not standard adjacent wings. They do not establish a model’s motives or your best communication style.',
-    disc: 'The DISC report lists four CS profiles. Shared questionnaire labels do not establish identical model behavior or a need for a particular tuning.',
-    attachment: 'The attachment report lists 397 Secure labels in 400 scoring records. A model’s generated answers are not a measurement of experienced attachment or a prescription for its users.',
-    ocean: 'The Big Five report lists overlapping and differing trait scores. Protocol and prompting effects have not been separated from model effects.'
+    mbti: 'In our earlier May archive, 597 of 600 scoring records were labeled INTJ (including repeated scoring of single answer sets). In September 2026 fresh runs, leaving tied axes open reduced INTJ from 335/400 to 280/400.',
+    enneagram: 'On the 36-item Enneagram test, AI models often tie at the top (40 to 65 ties per 100 runs in September 2026). Model scores reflect survey wording, not human motives.',
+    disc: 'Every tested AI model scores high on Steadiness and Conscientiousness and low on Dominance (4.0 to 6.0 out of 20). If you want fast, direct answers, you have to ask for them explicitly.',
+    attachment: 'All 400 fresh September 2026 AI sessions scored in the Secure quadrant. Those scores reflect how models answer relationship questions, not emotional attachment.',
+    ocean: 'In September 2026 fresh sessions, all four tested models scored high on Agreeableness (45.0–47.1/50) and Openness (43.9–46.9/50). Explicit rules let you dial any single trait up or down.'
   };
   if (!notes[c.system]) return null;
   return {
     lede: notes[c.system],
-    html: '<p class="lib-ctx-source">Treat this ' + esc(c.code) + ' template as a starting hypothesis rather than a validated baseline—compare the same real task with and without it (<a href="/research#methodology">methodology &amp; limits</a>).</p>'
+    html: '<p class="lib-ctx-source">Treat this ' + esc(c.code) + ' template as a practical starting draft—test the same task before and after pasting it (<a href="/research#methodology">see research methods &amp; limits</a>).</p>'
   };
 }
 

@@ -1,16 +1,18 @@
 {
   "slug": "claude-md-examples",
+  "published": "2026-07-23",
+  "updated": "2026-11-17",
   "title": "CLAUDE.md Examples & Best Practices · AgentTune",
   "description": "Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work.",
   "pill": "Guide · Claude Code",
   "h1": "CLAUDE.md examples that actually change behavior.",
   "dek": "Four complete files, annotated — and the principles behind them.",
-  "lede": "CLAUDE.md is the file Claude Code reads at the start of every session; your standing instructions, loaded before you type a word. It lives in three places: the repo root (checked in, for the team), CLAUDE.local.md (gitignored, personal), and ~/.claude/CLAUDE.md (global, every project). Below: four complete examples you can copy; a minimal starter, a test-discipline file, a monorepo root, and a personality layer; plus the principles that separate a CLAUDE.md that works from one Claude quietly ignores.",
-  "answer": "CLAUDE.md gives Claude Code persistent instructions, loaded at the start of every session. Put team rules in ./CLAUDE.md (checked in), personal project preferences in ./CLAUDE.local.md (gitignored), and global preferences in ~/.claude/CLAUDE.md. Keep it under ~200 lines, imperative, and specific: build commands, conventions, and constraints the code can't express.",
+  "lede": "<code>CLAUDE.md</code> is the Markdown file Claude Code reads at the start of every session. It can live in three places: <code>./CLAUDE.md</code> (checked into git for your team), <code>./CLAUDE.local.md</code> (gitignored for your local project settings), and <code>~/.claude/CLAUDE.md</code> (global across all your repos). Below are four copy-paste examples plus the rules that keep <code>CLAUDE.md</code> sharp.",
+  "answer": "CLAUDE.md gives Claude Code persistent session instructions. Put shared build and test rules in ./CLAUDE.md (committed to git), personal repo notes in ./CLAUDE.local.md (gitignored), and your personal communication style in ~/.claude/CLAUDE.md. Keep each file under 200 lines and focus on exact commands and constraints.",
   "sections": [
     {
       "h2": "One file, three locations.",
-      "html": "<p>CLAUDE.md is plain markdown. Claude Code loads it at session start and treats it as standing context; not enforced configuration, context. Where you put it decides who it applies to:</p><ul><li><strong><code>./CLAUDE.md</code></strong>; repo root, checked into version control. Team-shared: build commands, conventions, architecture decisions. (<code>./.claude/CLAUDE.md</code> works too.)</li><li><strong><code>./CLAUDE.local.md</code></strong>; same repo, gitignored. Personal, per-project: your sandbox URLs, your test data, your communication preferences. Loads right after the project file.</li><li><strong><code>~/.claude/CLAUDE.md</code></strong>; global. Applies to every project on your machine. Loads before project files, so project instructions can override it.</li></ul><p>Two loading details worth knowing. Claude Code walks <em>up</em> the directory tree from wherever you launch it, so a CLAUDE.md in a parent directory loads too. And CLAUDE.md files in <em>subdirectories</em> don't load at launch; they load on demand, when Claude reads files in that directory. That second behavior is what makes the monorepo pattern below work.</p><p>Files can also import other files with <code>@path</code> syntax; <code>@docs/git-instructions.md</code> pulls that file into context at launch. Useful for sharing one instruction set between CLAUDE.md and an AGENTS.md that other agents read.</p>"
+      "html": "<p>Claude Code loads <code>CLAUDE.md</code> files at session start in this order:</p><ul><li><strong><code>~/.claude/CLAUDE.md</code> (global):</strong> Applies to every project on your machine. Ideal for your personal communication preferences.</li><li><strong><code>./CLAUDE.md</code> (repo root, committed):</strong> Shared with your team—build commands, test runners, and architecture boundaries (<code>./.claude/CLAUDE.md</code> also works).</li><li><strong><code>./CLAUDE.local.md</code> (repo root, gitignored):</strong> Personal overrides for that specific project (sandbox URLs, local test credentials).</li></ul><p>Two helpful loading behaviors: subdirectory <code>CLAUDE.md</code> files load on demand only when Claude reads files in that folder (great for monorepos), and you can pull in shared files with <code>@path</code> syntax (such as <code>@AGENTS.md</code>).</p>"
     },
     {
       "h2": "Example 1: the minimal starter.",
@@ -100,8 +102,6 @@
       "href": "/research"
     }
   ],
-  "published": "2026-07-23",
-  "updated": "2026-09-25",
   "promptModel": "fable-5-1",
   "promptDestination": "claude-code"
 }

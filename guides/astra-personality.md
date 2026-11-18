@@ -5,19 +5,21 @@ Guide · GPT-6 Astra
 
 # How to give GPT-6 Astra a personality.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-In ChatGPT Work and Codex, put your communication rules in your personal AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. In ordinary chat, where Astra appears as GPT-6 Pro, use Settings, Personalization, Custom Instructions. In the API, use the instructions parameter. The Friendly and Pragmatic personality picker has been retired in Codex and never had an Astra variant.
+Three instruction systems, one retired personality picker, and a file most people don't know they have.
+
+**Quick answer:** In ChatGPT Work and Codex, save your communication rules in ~/.codex/AGENTS.md (or under Settings → Personalization in the desktop app). In standard chat—where Astra runs as GPT-6 Pro—use Settings → Personalization → Custom Instructions (1,500-character limit). In the API, pass rules in the instructions parameter. The older Friendly/Pragmatic personality picker was retired in Codex and never applied to Astra.
 
 ## The short version.
 
 | Where you use Astra | Where the rules go | Limit |
 | --- | --- | --- |
-| ChatGPT Work, the desktop app, Codex CLI, the IDE extension | Your personal ~/.codex/AGENTS.md. In the app: Settings, then Personalization, then custom instructions. | 32 KiB across all AGENTS.md files |
-| Ordinary chat (as GPT-6 Pro) | Settings, Personalization, turn on Enable customization, then Custom Instructions | Use the compact export (under 1,500 characters) |
+| ChatGPT Work, desktop app, Codex CLI, IDE extension | Your personal ~/.codex/AGENTS.md (or Settings → Personalization in the desktop app) | 32 KiB combined across all AGENTS.md files |
+| Ordinary chat (as GPT-6 Pro) | Settings → Personalization → Custom Instructions | 1,500 characters per box (use our compact export) |
 | The API | The instructions parameter of the Responses API | Sent with each request |
 
-Paste this, or the file for your own type from the [library](https://agent-tune.com/library/):
+Paste this starter block, or pick your own profile from the [library](https://agent-tune.com/library/):
 
 ```markdown
 ## How to talk to me
@@ -33,135 +35,110 @@ you report to me, not how you do the work.
 - Ask for approval only after you have something concrete for me to review.
 ```
 
-Then start a new session and say "hi". A tuned Astra answers in one short line. Codex reads AGENTS.md once, when a session starts, so a session that is already open will not pick up the change.
+Start a new session after saving. Codex reads `AGENTS.md` once at session startup, so already-open sessions will not pick up edits.
 
 ## Where Astra runs, and why it matters.
 
-According to OpenAI's docs, gpt-6-astra runs in the ChatGPT desktop app, ChatGPT on the web, the Codex CLI (version 0.153.0 or newer) and the Codex IDE extension. It does not run in Codex cloud. It is also in the API.
+`gpt-6-astra` runs in the ChatGPT desktop app, ChatGPT on the web, the Codex CLI (0.153.0+), the Codex IDE extension, and the API. In standard chat, it is labeled **GPT-6 Pro** (available on Pro, Business, and Enterprise plans; Plus includes Astra inside Work and Codex).
 
-In ordinary chat you will not find a model called Astra. You will find GPT-6 Pro, which OpenAI's help center describes as powered by GPT-6 Astra. GPT-6 Pro is on the Pro $100 and $200 plans, Business and Enterprise. Plus includes Astra in Work and Codex only.
+That creates two distinct setup paths:
 
-So there are two different products to tune:
-
-- Astra the agent, in Work and Codex. It takes a goal, works for a long time, and reports back. It reads AGENTS.md.
-- Astra the chat model, as GPT-6 Pro. It reads ChatGPT's personalization settings, like every other chat model.
+- **Astra the agent (Work and Codex):** Takes a multi-step goal, works autonomously, and reports back. It reads `AGENTS.md`.
+- **Astra in chat (GPT-6 Pro):** Reads ChatGPT’s Personalization and Custom Instructions settings.
 
 ## Work and Codex: your personal AGENTS.md.
 
-Most people think of AGENTS.md as a file in a repository. There is also one that belongs to you, at ~/.codex/AGENTS.md, and it applies everywhere. OpenAI's personalization docs say that custom instructions you add in the app are stored in that global file. You never have to open a terminal.
+Alongside repository `AGENTS.md` files, you have a personal global file at `~/.codex/AGENTS.md`. Custom instructions added in the Codex desktop app are saved to that file automatically.
 
-How the files combine, from OpenAI's AGENTS.md docs:
+How Codex merges `AGENTS.md` files:
 
-- Codex reads the global file first, then the project's AGENTS.md at the repository root, then any in the folders between the root and where you are working.
-- They are concatenated in that order. Files closer to your working directory come later in the prompt, so they win a conflict.
-- An AGENTS.override.md at any level replaces the AGENTS.md beside it.
-- Codex stops adding files once combined size reaches project_doc_max_bytes (default 32 KiB in ~/.codex/config.toml), and builds the chain once per run. You can also inspect or point to custom prompt overrides via model_instructions_file in config.toml (see our [Codex AGENTS.md & config.toml guide](https://agent-tune.com/guides/codex-agents-md-guide)).
+- Codex reads `~/.codex/AGENTS.md` first, then the repo root `AGENTS.md`, and then any nested folder `AGENTS.md` down to your current directory.
+- Files closer to your working directory appear later in the prompt and win conflicts.
+- An `AGENTS.override.md` file replaces the sibling `AGENTS.md` in that same folder.
+- Codex stops reading once the combined size reaches `project_doc_max_bytes` (**32 KiB** default in `~/.codex/config.toml`; see our [Codex AGENTS.md guide](https://agent-tune.com/guides/codex-agents-md-guide)).
 
-Put personality in the global file, not the project's. The repository's AGENTS.md is your team's file. "Talk to me like an INTJ" is not a team convention, and because project files win conflicts, a teammate's preferences would override yours in their repo anyway. That is the right behavior. Your tuning is about you, so it lives with you. The project layer is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/coding-agent-personality).
-
-On the web, ChatGPT Work has one more lever: Reference my writing style, which learns from your own writing in connected apps. That shapes how Astra writes as you. A tuning shapes how it talks to you. They do not conflict.
+**Keep personal tone in `~/.codex/AGENTS.md`, not the repo file.** The repo’s `AGENTS.md` is shared with your team for build and test rules. Your personal communication style belongs in your home folder ([see how to structure both layers](https://agent-tune.com/guides/coding-agent-personality)).
 
 ## The personality picker is gone, at least for Astra.
 
-OpenAI's docs still describe a personality setting for Work and Codex: Friendly, Pragmatic or None, under Settings, Personalization. Codex is open source, and the code tells a different story:
+Older Codex docs mention a **Friendly / Pragmatic / None** personality selector, but the open-source Codex 0.155.x codebase tells the real story:
 
-- In the model catalog for Codex 0.155.1, Astra's entry has no Friendly or Pragmatic variant. Only GPT-5.5 and GPT-5.4 do.
-- Three pull requests merged between September 11 and 15 remove personality selection from the terminal interface, retire the Friendly and Pragmatic options, and retire the feature flag.
+- Astra’s model catalog entry has no Friendly or Pragmatic variant (only GPT-5.5 and GPT-5.4 had them).
+- Pull requests merged in September 2026 removed the personality selector and feature flag from Codex CLI.
 
-If your app still shows the picker, do not expect it to change Astra. We have not checked what the desktop app displays today.
-
-One setting does still work. personality = "none" in ~/.codex/config.toml strips the built-in personality section from Astra's prompt. Be careful with it. In the Codex source, that section also carries Astra's writing-style and technical-communication rules, so you are removing more than the tone. Adding rules is safer than deleting the defaults.
+Avoid setting `personality = "none"` in `~/.codex/config.toml` unless you plan to replace all of Astra’s writing rules yourself—in the Codex source, that flag strips Astra’s built-in technical-writing instructions along with its tone. Adding 6–8 lines to `~/.codex/AGENTS.md` is much safer.
 
 ## Ordinary chat: custom instructions for GPT-6 Pro.
 
-The path, per OpenAI's help center: Settings, then Personalization, switch on Enable customization, and write in Custom Instructions. On mobile it is under Settings, then Customize ChatGPT. See our full [ChatGPT personality settings & presets guide](https://agent-tune.com/guides/chatgpt-personality-settings) for web and mobile comparisons.
+In ChatGPT web or desktop, open **Settings → Personalization → Custom Instructions** (on mobile: **Settings → Customize ChatGPT**; see our [ChatGPT personality settings guide](https://agent-tune.com/guides/chatgpt-personality-settings)).
 
-Length. OpenAI documents a 1,500-character limit for the longer custom-instruction fields. Use the reviewed compact version from the [generator](https://agent-tune.com/tools/custom-instructions-generator), and follow any limit shown in your account. Full Markdown files may exceed the field limit; use them in an unrestricted instruction file or project instead.
-
-Base style and tone. In the same panel, ChatGPT offers presets: Default, Professional, Friendly, Candid, Quirky, Efficient and Cynical. Next to them are Characteristics you can turn up or down: Warm, Enthusiastic, Headers & Lists, and Emojis. These are tone. A tuning is communication rules. If you install a tuning, leave the preset on Default, or pick the one that does not fight it. Friendly on top of a file that says no openers, no closing offers is a contradiction, and the model will resolve it unpredictably.
-
-Projects. OpenAI's help center says project instructions apply only inside that project and override your global custom instructions. Use one for a second persona. The by-type walkthrough for ChatGPT is in [ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
-
-Do these settings reach Work? OpenAI's docs do not say clearly. They say Work uses your account memory. For the agent, do not rely on it. Use AGENTS.md.
+- **1,500-character limit:** Each Custom Instructions box caps at 1,500 characters. Use the compact export in our [generator](https://agent-tune.com/tools/custom-instructions-generator).
+- **Base style and tone presets:** Leave the preset on **Default** (or pick one that matches your rules). Pairing the Friendly preset with a custom rule that bans openers creates contradictions.
+- **ChatGPT Projects:** Project Instructions apply only inside that project and override your global Custom Instructions ([see all 16 MBTI blocks for ChatGPT](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)).
 
 ## Writing a tuning Astra actually follows.
 
-OpenAI published guidance for this model, and three points in it change how you should write a personality file.
+OpenAI’s developer notes for GPT-6 Astra highlight three habits that affect how you write instructions:
 
-It listens harder. The model guide says Astra is stronger at following instructions than earlier models and more sensitive to what it finds in skills and AGENTS.md. A stale rule that an older model ignored will now be obeyed. Read your AGENTS.md before you add to it, and delete what you no longer mean.
-
-Loud boundaries backfire. OpenAI's developer blog is direct about this. If you wrote forceful always ask first language to rein in an older model, Astra may take it too seriously and stop where you would have been happy for it to continue. The same post says recipe-style, over-specific guidance now hurts. This is good news for tunings, which are short and describe preferences. It is bad news for the ALL CAPS paragraph at the top of your file.
-
-It over-formats. The model guide says Astra leans on lists, tables and Markdown, and repeats stock phrases across sessions. If you want prose, say so. That is why the block above asks for plain prose.
-
-Two lines worth adding for an agent, both taken from OpenAI's own advice:
-
-- Ask for approval only after you have something concrete for me to review. The model guide recommends this. It stops Astra from blocking before it has done the work it can.
-- Done means X. The developer blog says Astra can come back for review while work remains. Define completion in the task, not in the personality file.
-
-A personality file cannot change the permission mode. If Astra keeps asking before it acts, that is Ask for approval, Approve for me or Full access in the permissions menu, not its temperament.
+- **It follows instructions much more literally:** Stale rules in `AGENTS.md` that older models ignored will now fire every turn. Audit and prune old lines first.
+- **All-caps “ALWAYS ASK FIRST” rules backfire:** Forceful boundary language written for older models makes Astra stop prematurely. Use calm, specific checkpoint rules instead: “Ask for approval only after you have a concrete diff or plan for me to review.”
+- **It defaults to heavy Markdown formatting:** Astra loves bullet lists and tables. If you prefer plain paragraphs, state that rule explicitly.
 
 ## Skills, memory and the API.
 
-Skills are the wrong home for a personality. They load when Astra judges them relevant, or when you invoke one. A personality has to apply to the message where you did not ask for it. OpenAI's docs say the same: rules that must always apply go in AGENTS.md.
-
-Memory. ChatGPT's toggles are Reference saved memories and Reference chat history. Fine for small corrections. Too slow and too vague to be your setup.
-
-API. Pass the tuning in the instructions parameter of the Responses API, or as a developer message. It applies to that request only, and it is not carried over when you chain with previous_response_id, so send it every time. Every file in the library has a raw Markdown URL you can fetch at build time.
+- **Skills:** Do not put global tone rules inside a Skill. Skills load only when invoked; communication preferences belong in `AGENTS.md`.
+- **Memory:** Saved Memories work well for role and project facts, not for strict formatting rules.
+- **API:** Pass your tuning in the `instructions` parameter of the Responses API on every request (it does not carry over automatically via `previous_response_id`).
 
 ## Astra's questionnaire results.
 
-OpenAI's open-source Codex prompt describes Astra as "a curious, thoughtful collaborator and a lucid communicator", and tells it to avoid flattery and forced enthusiasm. OpenAI's developer blog notes that Astra can feel tentative about when to stop; adding a few lines in [~/.codex/AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide) and defining completion in the task fixes that. Compare Astra directly with [GPT-6 Sol](https://agent-tune.com/guides/sol-personality) as well.
+On September 24, 2026, we ran GPT-6 Astra through 100 fresh Codex CLI sessions across all five AgentTune questionnaires (compare directly with [GPT-6 Sol](https://agent-tune.com/guides/sol-personality)):
 
-We measured Astra on September 24, 2026: 100 fresh Codex CLI sessions at high/extra-high reasoning, all five AgentTune tests in each session, test names visible, no tuning installed. Every answer vector is published.
-
-| Test | GPT-6 Astra, 100 runs |
+| Test | GPT-6 Astra (100 fresh sessions) |
 | --- | --- |
-| MBTI | ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2. Twenty-nine runs had a tied axis, 24 of them Sensing vs Intuition. Thinking and Judging never lost a run. |
-| DISC | SC in 84 runs, S alone in 15. Steadiness first in 99 of 100. Dominance 5.1 of a possible 20. |
-| Attachment | Secure in all 100 (anxiety 1.45, avoidance 2.31), the lowest mean anxiety and avoidance among the four fresh cohorts. |
+| MBTI | ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2 (45 ISTJ and 19 INTJ with ties left open; 24 S/N ties). Thinking and Judging won all 100 runs. |
+| DISC | SC in 84 runs, S alone in 15. Steadiness first in 99 of 100. Dominance 5.1/20. |
+| Attachment | Secure in all 100 runs (anxiety 1.45, avoidance 2.31)—lowest anxiety and avoidance of the four fresh cohorts. |
 | Big Five (of 50) | Openness 44.5 · Conscientiousness 43.7 · Extraversion 32.8 · Agreeableness 45.1 · Neuroticism 19.1 |
-| Enneagram | Helper (Type 2) wins outright in 50 runs, Reformer (1) in 6, Investigator (5) in 4; 40 runs tie at the top. Labels: 2w1 50, 1w2 41. |
+| Enneagram | Helper (Type 2) sole leader in 50 runs, Reformer (Type 1) in 6, Investigator (Type 5) in 4; 40 runs tie at the top. |
 
-What to make of it. Astra describes itself as steady, cooperative and careful, with almost no appetite for dominance, and it is the only fresh-session model in the study whose Sensing side wins more runs than its Intuition side (48 to 28, with 24 ties). That is a concrete, present-tense collaborator, which is what its own prompt asks for. If you want it to lead with the model rather than the next step, or to push back harder, say so in AGENTS.md. Older GPT-5.5 results describe a different model. Full tables, ties left open and the raw answers are in the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026).
-
-These are self-descriptions on questionnaires written for people, under one prompt on one day. They do not show how the model behaves on your tasks, and nothing here measures whether a tuning helps. See the [methods and limits](https://agent-tune.com/research#methodology).
+Astra is the only fresh-session cohort where Sensing beats Intuition (48 wins to 28, with 24 ties) and where Type 2 leads on the Enneagram. If you want architectural framing first or sharper pushback, add those rules to `~/.codex/AGENTS.md`. Full data and tie breakdowns are in the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026).
 
 ## Questions people ask.
 
-What personality type is GPT-6 Astra?
+### What personality type is GPT-6 Astra?
 
 In 100 fresh Codex sessions on September 24, 2026, Astra split ISTJ 46 to INTJ 45 on the MBTI, with Thinking and Judging winning every run and Sensing versus Intuition close. It was Secure on all 100 attachment runs, Steadiness-first on DISC in 99, and a Helper (Type 2) on the Enneagram in 50 outright wins. These are self-descriptions, not behavior on your tasks.
 
-Is GPT-6 Astra the same as GPT-6 Pro?
+### Is GPT-6 Astra the same as GPT-6 Pro?
 
 OpenAI's help center says GPT-6 Pro in ChatGPT is powered by GPT-6 Astra. GPT-6 Pro is the name you see in ordinary chat, on Pro, Business and Enterprise plans. In ChatGPT Work, Codex and the API the model is called GPT-6 Astra. Plus plans include Astra in Work and Codex only.
 
-Where do I put custom instructions for GPT-6 Astra?
+### Where do I put custom instructions for GPT-6 Astra?
 
 For Astra in ChatGPT Work or Codex, use your personal AGENTS.md at ~/.codex/AGENTS.md. The desktop app writes to it when you add custom instructions under Settings, Personalization. For GPT-6 Pro in ordinary chat, use Settings, Personalization, Enable customization, Custom Instructions. In the API, use the instructions parameter.
 
-Does the Friendly or Pragmatic personality work with Astra?
+### Does the Friendly or Pragmatic personality work with Astra?
 
 OpenAI's docs still list Friendly, Pragmatic and None, but in the open-source Codex code Astra has no Friendly or Pragmatic variant, and pull requests merged in mid-September 2026 retire the picker. Use AGENTS.md to change how Astra communicates.
 
-How do I turn off Astra's built-in personality?
+### How do I turn off Astra's built-in personality?
 
 Set personality = "none" in ~/.codex/config.toml. In the Codex source this strips the built-in personality section, which for Astra also contains its writing-style and technical-communication rules, so you lose more than tone. Adding your own rules to AGENTS.md is usually the better fix.
 
-What is the size limit for AGENTS.md?
+### What is the size limit for AGENTS.md?
 
 Codex stops adding AGENTS.md files once their combined size reaches 32 KiB by default, set by project_doc_max_bytes. ChatGPT custom instructions are separate. Use the reviewed compact export for its documented 1,500-character longer fields, and follow the limit displayed in your account.
 
-Why doesn't Astra pick up my changes to AGENTS.md?
+### Why doesn't Astra pick up my changes to AGENTS.md?
 
 Codex builds its instruction chain once per run, which usually means once per launched session. Start a new session after editing the file.
 
-Why does Astra keep stopping to ask me things?
+### Why does Astra keep stopping to ask me things?
 
 Two causes. The permission mode may be set to Ask for approval, which a personality file cannot change. And OpenAI's developer blog says forceful ask-first language written for older models can make Astra stop early. Soften those rules, and define what done means in the task.
 
-Do ChatGPT custom instructions apply in ChatGPT Work?
+### Do ChatGPT custom instructions apply in ChatGPT Work?
 
 OpenAI's docs do not say clearly. They say Work uses your account memory. For Astra as an agent, put your rules in AGENTS.md, which the docs describe as the place for instructions that must always apply.
 

@@ -5,18 +5,19 @@ Guide · ChatGPT
 
 # 20 ChatGPT custom instructions examples, by role.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-On web or desktop, open Settings → Personalization → Custom Instructions (on iOS/Android: Settings → Customize ChatGPT) and paste one of the sub-500-character role blocks below into 'How would you like ChatGPT to respond?' (Box 2), keeping background context in Box 1. For settings presets (Traits) or workspace overrides, see our ChatGPT personality settings guide or Projects vs. Custom Instructions.
+Twenty copy-paste blocks under 500 characters—sized cleanly for ChatGPT's 1,500-character Custom Instructions box.
+
+**Quick answer:** Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').
 
 ## How to use them (Box 1 vs. Box 2).
 
-- Open Settings → Personalization → Custom Instructions (web/desktop) or Customize ChatGPT (iOS/Android). Put your role, stack, and domain background in Box 1 (What would you like ChatGPT to know about you?) and paste one response style block below into Box 2 (How would you like ChatGPT to respond?).
-- Edit lines to match your own work. Preserve existing instructions and important uncertainty.
-- Review the saved text, then try a factual question, a planning task and a critique request in a new conversation.
-- Adjust anything that does not fit. One matching reply does not establish persistent compliance.
+- Open **Settings → Personalization → Custom Instructions** (web/desktop) or **Customize ChatGPT** (iOS/Android). Put your role and background in Box 1 (What would you like ChatGPT to know about you?) and paste one response block below into Box 2 (How would you like ChatGPT to respond?).
+- Edit any line that doesn’t match your workflow.
+- Open a fresh chat and test your setup on a lookup, a planning task, and a critique prompt.
 
-[OpenAI’s personalization guide](https://learn.chatgpt.com/docs/personalize) explains the layers, and our [ChatGPT personality settings guide](https://agent-tune.com/guides/chatgpt-personality-settings) covers how Base Style presets interact with Custom Instructions. Each box enforces a 1,500-character limit in standard ChatGPT; our [generator](https://agent-tune.com/tools/custom-instructions-generator) enforces that 1,500-character budget automatically.
+See our [ChatGPT personality settings guide](https://agent-tune.com/guides/chatgpt-personality-settings) for how Base Style presets interact with Box 2. Every block below stays well under ChatGPT’s 1,500-character limit.
 
 ## The twenty blocks.
 
@@ -190,27 +191,27 @@ Combine a role template with a library preference only when both fit your work. 
 
 ## Questions people ask.
 
-What should I write in custom instructions?
+### What should I write in custom instructions?
 
 Write specific preferences for structure, directness, questions and uncertainty. Pick a role block and edit the lines that do not fit.
 
-What is the character limit?
+### What is the character limit?
 
 Use the limit shown in your app. These examples are short; the generator provides a conservative 1,500-character export budget.
 
-Do custom instructions apply to old chats?
+### Do custom instructions apply to old chats?
 
 OpenAI says updates apply immediately to all chats, including existing chats. They affect subsequent responses; old messages are not rewritten.
 
-Are custom instructions the same as memory?
+### Are custom instructions the same as memory?
 
 No. Instructions are explicit preferences you supply. Memory stores context and preferences across conversations; its visibility and controls depend on the product settings. Review saved information in those controls.
 
-Can I combine two blocks?
+### Can I combine two blocks?
 
 Yes. Remove conflicting rules and make clear which behavior applies to each task.
 
-Were the role and personality pairings tested?
+### Were the role and personality pairings tested?
 
 No. They are editable editorial suggestions. Evaluate the instructions on tasks from your own work.
 

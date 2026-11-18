@@ -1,20 +1,22 @@
 {
   "slug": "chatgpt-custom-instructions-by-personality-type",
+  "published": "2026-09-25",
+  "updated": "2026-11-17",
   "title": "ChatGPT Custom Instructions for All 16 MBTI Types",
   "description": "Editable ChatGPT custom instructions for 16 MBTI templates. Choose preferences that fit, preview the text and adapt it in the free generator.",
   "pill": "Guide · ChatGPT",
   "h1": "ChatGPT custom instructions for every MBTI personality type.",
   "dek": "Sixteen paste-ready blocks. Pick yours, paste it, done.",
-  "lede": "Choose an optional template below, then edit it to match your preferences. Use ChatGPT’s customization controls or the generator for a compact export. No personality test is required.",
-  "answer": "Open ChatGPT's Settings → Personalization → Custom instructions and paste a personality-matched block into the \"How would you like ChatGPT to respond?\" field. This page has paste-ready blocks for all 16 MBTI types (INTJ through ESFP) each condensed from AgentTune's free tuning files to fit the character limit.",
+  "lede": "Pick any of the 16 MBTI blocks below, delete any rule that doesn’t fit how you work, and paste the rest into ChatGPT’s Custom Instructions box. Every block is condensed to fit comfortably inside ChatGPT’s 1,500-character limit.",
+  "answer": "Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.",
   "sections": [
     {
       "h2": "How custom instructions work.",
-      "html": "<p>Open ChatGPT’s Settings → Personalization and look for custom instructions. Available controls differ between web and desktop. Use them for communication preferences you want to reuse across chats, or choose project instructions for one project.</p><p>The blocks below are deliberately short. AgentTune’s generator uses a conservative 1,500-character export budget; this is not a universal product limit. Follow the limit shown by your app. Keep existing instructions, review conflicts and test the result on a few real tasks.</p><p><a href=\"https://learn.chatgpt.com/docs/personalize\">OpenAI’s personalization documentation</a> describes the available layers. These templates are editorial starting points, not validated matches.</p>"
+      "html": "<p>Open <strong>Settings → Personalization → Custom Instructions</strong> in ChatGPT (or <strong>Customize ChatGPT</strong> on mobile). Paste your chosen block into the second field (<em>How would you like ChatGPT to respond?</em>), and keep role or project facts in the first field.</p><p>Every block below sits well inside ChatGPT’s 1,500-character limit. Edit any line in your own words, then test the setup on two or three real tasks.</p>"
     },
     {
-      "h2": "Don't know your type? Ten minutes fixes that.",
-      "html": "<p>Take the <a href=\"/tests/mbti\">free in-browser MBTI test</a>; no signup, no email, results on the spot. If you already know your four letters, skip straight to your block below. And if you're between two types, read both blocks and take the one that makes you think <em>finally</em>; the blocks describe how you want to be treated, and you're the authority on that.</p>"
+      "h2": "Don't know your type? Five minutes fixes that.",
+      "html": "<p>Take our <a href=\"/tests/mbti\">free in-browser MBTI test</a> (32 questions, ~5 minutes, no email). If you are torn between two types, read both blocks below and pick the one whose rules you actually want enforced—or use our 20-second <a href=\"/guides/ai-personality-frameworks-comparison-matcher\">5-System Matcher</a>.</p>"
     },
     {
       "h2": "Analysts: the NT types.",
@@ -95,7 +97,6 @@
       "href": "/research/what-personality-type-is-chatgpt"
     }
   ],
-  "updated": "2026-09-25",
   "promptModel": "sol-6",
   "promptDestination": "chatgpt-custom",
   "changelog": [

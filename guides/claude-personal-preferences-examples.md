@@ -5,26 +5,28 @@ Guide · Claude
 
 # Claude Personal Preferences: 15 copy-paste examples.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Open Settings, then General in Claude, and paste a six-to-ten-line communication block into the Personal Preferences field. Keep account-wide preferences focused on how Claude should talk to you everywhere (answer-first order, prose versus bullets, pushback, and how to handle uncertainty). Put role-specific or document-specific workflows into Project instructions or Skills so they do not clutter unrelated chats.
+Account-wide communication rules for Claude Opus 5.5 and Claude Fable 5.1, organized by job and temperament.
+
+**Quick answer:** Open Settings → Profile (or General) in Claude and paste a 6–10 line communication block into Personal Preferences. Keep account-wide rules focused on how Claude should talk to you everywhere (answer-first order, prose vs bullets, pushback, and uncertainty). Put repo or client rules inside Project Instructions or Skills.
 
 ## Where Personal Preferences fit in Claude's hierarchy.
 
-Anthropic provides four ways to shape how Claude responds, and each one has a distinct job. Putting the right rule in the right place stops your engineering instructions from leaking into a personal email draft.
+Anthropic gives you four places to shape how Claude responds. Putting each rule in the right slot stops coding rules from leaking into personal writing:
 
 | Surface | Where to find it | Best used for |
 | --- | --- | --- |
-| Personal Preferences | Settings → General | Your permanent default voice across all chats: brevity, structure, pushback, and tone. |
+| Personal Preferences | Settings → Profile / General | Your permanent default voice across all chats: brevity, structure, pushback, and tone. |
 | Project Instructions | Inside any Claude Project | Shared context, domain constraints, and output conventions for one ongoing project. |
 | Skills | Settings → Capabilities / Skills | Repeatable task workflows or deliverable formats invoked when relevant. |
 | Claude Code (CLAUDE.md &amp; /output-style) | ~/.claude/CLAUDE.md or ~/.claude/output-styles/ | Terminal coding conventions and terminal communication style. |
 
-When Personal Preferences and Project instructions disagree, the more specific Project instruction or your current chat message wins. See [Project vs account instructions: what overrides what](https://agent-tune.com/guides/ai-instruction-precedence-overrides) for the full precedence map.
+When Personal Preferences and Project Instructions disagree, the more specific Project rule or live chat prompt wins ([see our precedence guide](https://agent-tune.com/guides/ai-instruction-precedence-overrides)).
 
 ## 15 copy-paste Claude Personal Preferences examples.
 
-Both Claude Opus 5.5 and Claude Fable 5.1 follow understated, concrete rules better than all-caps commands. Pick one block below—or combine four to six bullets from different blocks—and paste it into Settings → General.
+Both Claude Opus 5.5 and Claude Fable 5.1 follow understated, concrete rules better than all-caps commands. Pick one block below—or combine four to six bullets from different blocks—and paste it into **Settings → General**.
 
 ### 1. The executive brief (answer first, zero preamble)
 
@@ -149,25 +151,25 @@ Both Claude Opus 5.5 and Claude Fable 5.1 follow understated, concrete rules bet
 
 ## Why Opus 5.5 and Fable 5.1 respond so strongly to short rules.
 
-In our September 2026 study of 100 fresh sessions per questionnaire ([What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)), both Claude Opus 5.5 and Claude Fable 5.1 scored INTJ on every single resolved MBTI run (97 and 94 before ties) and Steadiness + Conscientiousness on 100 of 100 DISC runs, with Agreeableness above 44 of 50. Their untuned baseline is already structured, polite, and cooperative.
+In our September 2026 study of 100 fresh sessions per questionnaire ([What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)), Claude Opus 5.5 and Claude Fable 5.1 scored **INTJ in 94 and 99 of 100 MBTI runs** (84 and 98 with ties left open) and **Steadiness + Conscientiousness in 100 of 100 DISC runs**, with Agreeableness means of 47.07 and 45.03 out of 50.
 
-That means you do not need to waste your Personal Preferences asking Claude to be polite or organized. Use the field to adjust the two things its baseline defaults toward: overly diplomatic agreement and thoroughness when a short answer would do. You can also test whether your preferences took effect in five minutes using the [Claude preferences verification checklist](https://agent-tune.com/guides/claude-preferences-test).
+Because Claude’s default baseline is already structured and cooperative, you do not need to waste lines asking it to be polite. Use Personal Preferences to adjust the two things its baseline defaults toward: overly diplomatic agreement and long explanations when a short answer would do. You can verify your setup with our [Claude preferences test kit](https://agent-tune.com/guides/claude-preferences-test).
 
 ## Questions people ask.
 
-Where are Personal Preferences in Claude?
+### Where are Personal Preferences in Claude?
 
 Open your profile menu in Claude, select Settings, and stay on the General tab. Paste your communication rules into the Personal Preferences (or Instructions for Claude) text box.
 
-Do Claude Personal Preferences apply inside Claude Projects?
+### Do Claude Personal Preferences apply inside Claude Projects?
 
 Personal Preferences act as your account-wide baseline, while Project instructions add context and rules for that specific project. When the two conflict, the Project instruction or your current chat prompt takes priority.
 
-Do Claude web Personal Preferences carry over to Claude Code?
+### Do Claude web Personal Preferences carry over to Claude Code?
 
 No. Claude Code reads terminal configuration files (~/.claude/CLAUDE.md, project CLAUDE.md, and ~/.claude/output-styles/). Use the Claude Code destination in AgentTune to generate an output-style file for the CLI.
 
-How long should Claude Personal Preferences be?
+### How long should Claude Personal Preferences be?
 
 Six to ten concise bullet points (around 400 to 1,200 characters) work best. Long, repetitive paragraphs dilute the rules you care about most and consume context on every turn.
 

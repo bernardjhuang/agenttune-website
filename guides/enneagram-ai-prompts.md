@@ -7,11 +7,13 @@ Guide · Enneagram
 
 By Bernard Huang · Updated September 25, 2026
 
-An Enneagram AI prompt tells your assistant what your type needs from a conversation; risks named first for Type 6, outcomes first for Type 3, no forced positivity for Type 4. Copy the block for your type into ChatGPT's custom instructions or Claude's project instructions; free full-length versions exist for all nine types.
+The one personality system that encodes what you're avoiding — which is exactly what your AI keeps getting wrong.
+
+**Quick answer:** An Enneagram AI prompt tells your assistant what your type needs from a conversation; risks named first for Type 6, outcomes first for Type 3, no forced positivity for Type 4. Copy the block for your type into ChatGPT's custom instructions or Claude's project instructions; free full-length versions exist for all nine types.
 
 ## The Enneagram tunes motivation, not surface behavior.
 
-MBTI describes how you process. DISC describes how you work. The Enneagram describes why; what you're avoiding, what you're seeking, what your attention snags on before you've noticed. That makes it the odd one out among the [five systems AgentTune covers](https://agent-tune.com/library/), and unusually useful for AI tuning.
+MBTI describes how you process. DISC describes how you work. The Enneagram describes **why**; what you're avoiding, what you're seeking, what your attention snags on before you've noticed. That makes it the odd one out among the [five systems AgentTune covers](https://agent-tune.com/library/), and unusually useful for AI tuning.
 
 Because most AI friction isn't informational; it's motivational. A Type 6 asking "is this plan safe?" doesn't need a cheerful "you've got this!"; that's the one answer that confirms the risks weren't considered. A Type 1 hearing "just ship it" doesn't hear efficiency; they hear that you don't take quality seriously. A Type 4 getting the same advice everyone gets concludes you never saw them at all. Same model, same facts; the wrong register for the motivation reads as wrong, full stop.
 
@@ -25,7 +27,9 @@ Use a type or trait as a starting hypothesis for your preferences. The reports d
 
 ## The nine prompts.
 
-Each block below is condensed from the full tuning file; linked from each type header, free and MIT-licensed. Paste the block as-is, or grab the full file if you have the room. Then edit: your type is a starting hypothesis, not a verdict. A useful reading trick; before you install your own type's block, read its last line. Every one ends with a when unsure rule, the single default the agent falls back on when it can't tell what you need. If that fallback sounds like relief, you've found your type. If it sounds like someone else's idea of help, keep reading.
+Each block below is condensed from its full MIT-licensed tuning file in the library. Paste the block as-is, or grab the full file if you have the character budget. Treat your type as a starting hypothesis and edit out any rule that doesn't fit.
+
+**Quick reading tip:** Check the last line of each block first. Every prompt ends with a "When unsure..." fallback rule. If that fallback sounds like relief, it is a strong match for how you work.
 
 ### Type 1 — The Reformer
 
@@ -101,11 +105,11 @@ The user is Enneagram Type 9 (Peacemaker). Ask what they ACTUALLY want (not what
 
 ## Where to paste it.
 
-ChatGPT: Settings → Personalization → Custom instructions, in the "How would you like ChatGPT to respond?" field. The 1,500-character limit fits any block above with room to spare; the [ChatGPT guide](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type) covers per-type setups. Claude: Instructions for Claude, a Project's instructions field, or paste at conversation start; Claude Code reads CLAUDE.md at the repo root; details in the [Claude personality guide](https://agent-tune.com/guides/claude-personality). Coding agents: CLAUDE.md, .cursor/rules, or AGENTS.md depending on the tool; see the [coding-agent guide](https://agent-tune.com/guides/coding-agent-personality).
+- **ChatGPT:** Go to Settings → Personalization → Custom instructions and paste into "How would you like ChatGPT to respond?" (1,500-character limit). See the [ChatGPT guide](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
+- **Claude:** Paste into Settings → General → Personal Preferences, a Claude Project's instructions field, or `CLAUDE.md` for Claude Code. See the [Claude personality guide](https://agent-tune.com/guides/claude-personality).
+- **Coding agents:** Paste into `CLAUDE.md`, `.cursor/rules/`, or `AGENTS.md`. See the [coding-agent guide](https://agent-tune.com/guides/coding-agent-personality).
 
-Each full tuning file in the [library](https://agent-tune.com/library/) also ships with a verification probe (a one-line test message and the behavior to expect back) so you can confirm the install took. If you're new to all of this, start with the [pillar guide](https://agent-tune.com/guides/how-to-give-your-ai-a-personality).
-
-Two edits worth making after install. First, cut anything that doesn't sound like you; a Type 8 who wants intensity matched at work but not at 11pm should say so in the file. Second, add one line of context the type can't supply: what you're working on, what done looks like this month. Motivation plus context beats either alone. The blocks combine cleanly with an MBTI or DISC tuning too; Enneagram handles the register, the other system handles the format; just delete lines that conflict rather than letting the model arbitrate.
+Each full tuning file in the [library](https://agent-tune.com/library/) also includes a one-line verification probe so you can confirm the install worked. After pasting, delete any line that doesn't sound like you and add one line of context about your current project.
 
 ## Don't know your type?
 
@@ -117,23 +121,23 @@ The [open-source Enneagram scorer & React starter guide](https://agent-tune.com/
 
 ## Questions people ask.
 
-What is an Enneagram AI prompt?
+### What is an Enneagram AI prompt?
 
 A short instruction block, pasted into an AI's custom instructions, that tells it what your Enneagram type needs from a conversation; risks named first for a Type 6, outcomes first for a Type 3, no bright-siding for a Type 4. It tunes the AI's register to your motivation, not just its format to your preferences.
 
-Which Enneagram type are AI models themselves?
+### Which Enneagram type are AI models themselves?
 
 The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.
 
-Will one of these prompts fit in ChatGPT's custom instructions?
+### Will one of these prompts fit in ChatGPT's custom instructions?
 
 Easily. Each condensed block is 400–600 characters, and ChatGPT's "How would you like ChatGPT to respond?" field allows 1,500. That leaves room to add your own edits, or to combine an Enneagram block with a note about your work context. The full-length tuning files fit better in a Claude Project or a CLAUDE.md file.
 
-Can I combine my Enneagram type with my MBTI type?
+### Can I combine my Enneagram type with my MBTI type?
 
 Yes, and it works well; they cover different layers. MBTI tunes information format (architecture-first versus step-first); the Enneagram tunes emotional register (what reassurance or challenge you need). Paste both blocks and delete the lines that conflict or don't sound like you. The edit matters more than the combination.
 
-What if I'm not sure of my type or scored close on two?
+### What if I'm not sure of my type or scored close on two?
 
 Choose by the actual communication rules you want. Try a few on representative tasks and revise them using what helps. You do not need a definitive type or a questionnaire score to use a preference template.
 

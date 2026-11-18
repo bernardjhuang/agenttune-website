@@ -7,11 +7,13 @@ Guide · Enneagram
 
 By Bernard Huang · Updated November 11, 2026
 
-Take the free 36-question Enneagram test at agent-tune.com/tests/enneagram for instant browser-scored results with no email or signup. You get raw totals (4–20) across all nine Enneagram types, your adjacent wing (such as 5w4 or 9w1), transparent tie reporting when top scores match, and an optional MIT-licensed prompt to tune ChatGPT, Claude, or Meta Muse.
+Take 36 open questions in five minutes, see all nine type scores and your adjacent wing in your browser, and skip the bait-and-switch paywall.
+
+**Quick answer:** Take the free 36-question Enneagram test at agent-tune.com/tests/enneagram for instant browser-scored results with no email or signup. You get raw totals (4–20) across all nine Enneagram types, your adjacent wing (such as 5w4 or 9w1), and explicit tie reporting when top scores match. You can also copy an optional MIT-licensed prompt for ChatGPT, Claude, or Meta Muse.
 
 ## All nine Enneagram types at a glance (plus how they steer AI).
 
-Whereas MBTI describes cognitive style and DISC describes workplace pace, the Enneagram centers on core motivation—what you optimize for and what creates friction under stress. Ready to take the assessment first? [Open the free 36-item Enneagram test →](https://agent-tune.com/tests/enneagram)
+Whereas MBTI describes cognitive style and DISC describes workplace pace, the Enneagram centers on **core motivation—what you optimize for and what creates friction under stress**. Ready to take the assessment first? [**Open the free 36-item Enneagram test →**](https://agent-tune.com/tests/enneagram)
 
 | Type | Archetype | Core focus | What the AI tuning adjusts |
 | --- | --- | --- | --- |
@@ -29,15 +31,15 @@ Whereas MBTI describes cognitive style and DISC describes workplace pace, the En
 
 Two scoring details separate transparent open instruments from black-box personality quizzes:
 
-- Adjacent wings only: In Enneagram theory, your wing is one of the two types immediately next to your core type on the circle (wrapping 9 ↔ 1). If your top score is Type 5 (18/20), our scorer compares Type 4 vs. Type 6—never a non-adjacent runner-up like Type 8. If Type 4 scores 15 and Type 6 scores 13, your profile is 5w4; if 4 and 6 tie, no wing is forced.
-- Why ties should never be hidden: With 4 Likert items (1–5) per type, two types frequently tie at the top (for example, Type 1 and Type 5 both scoring 17/20). Silently breaking ties by picking the lower number invents certainty the items didn't measure. Our [test runner](https://agent-tune.com/tests/enneagram) and [Enneagram Scoring Playground](https://agent-tune.com/tools/enneagram-scoring-playground) surface all tied leaders so you can read both profiles and choose deliberately.
+- **Adjacent wings only:** In Enneagram theory, your wing is one of the two types immediately next to your core type on the circle (wrapping `9 ↔ 1`). If your top score is Type 5 (`18/20`), our scorer compares Type 4 vs. Type 6—never a non-adjacent runner-up like Type 8. If Type 4 scores `15` and Type 6 scores `13`, your profile is `5w4`; if 4 and 6 tie, no wing is forced.
+- **Why ties should never be hidden:** With 4 Likert items (`1–5`) per type, two types frequently tie at the top (for example, Type 1 and Type 5 both scoring `17/20`). Silently breaking ties by picking the lower number invents certainty the items didn't measure. Our [test runner](https://agent-tune.com/tests/enneagram) and [Enneagram Scoring Playground](https://agent-tune.com/tools/enneagram-scoring-playground) surface all tied leaders so you can read both profiles and choose deliberately.
 
 ## Open-source transparency: inspect every item and line of code.
 
 Nothing in the test is hidden on a backend server:
 
-- Browser-only privacy: Answers live temporarily in your tab's memory (and optional localStorage draft while in progress) and are cleared on completion.
-- Auditable spec & developer starter: You can read all 36 items in plain Markdown at [/tests/enneagram.md](https://agent-tune.com/tests/enneagram.md), review licensing, standalone JS scoring, and a runnable nine-group demo in [our open-source Enneagram scorer & React + TypeScript guide](https://agent-tune.com/guides/enneagram-test-react-typescript).
+- **Browser-only privacy:** Answers live temporarily in your tab's memory (and optional `localStorage` draft while in progress) and are cleared on completion.
+- **Auditable spec & developer starter:** You can read all 36 items in plain Markdown at [`/tests/enneagram.md`](https://agent-tune.com/tests/enneagram.md), review licensing, standalone JS scoring, and a runnable nine-group demo in [our open-source Enneagram scorer & React + TypeScript guide](https://agent-tune.com/guides/enneagram-test-react-typescript).
 
 ## Try an Enneagram-informed AI communication block.
 
@@ -55,19 +57,19 @@ Here is a condensed Type 5 (Investigator) starter block—or browse copy-paste b
 
 ## Questions people ask.
 
-Is the AgentTune Enneagram test completely free with no email required?
+### Is the AgentTune Enneagram test completely free with no email required?
 
 Yes. All 36 questions are scored locally in your web browser in about 5 minutes with no email address, account creation, or paid unlock.
 
-How many questions are on this free Enneagram test?
+### How many questions are on this free Enneagram test?
 
 36 Likert-scale questions (4 items for each of the 9 Enneagram types, rated 1 to 5 from Disagree to Agree), adapted from the Open Enneagram of Personality Scales (OEPS).
 
-What if my top two Enneagram types tie?
+### What if my top two Enneagram types tie?
 
 Instead of secretly picking one type by tie-breaker order, the test reports all nine totals (4–20) and links the communication guides for every tied leader so you can decide which motivation actually fits you.
 
-Can I use this Enneagram test to diagnose mental health or screen job applicants?
+### Can I use this Enneagram test to diagnose mental health or screen job applicants?
 
 No. Like all open personality questionnaires on AgentTune, it is an educational self-reflection tool for exploring personal communication preferences—never a clinical diagnosis or employment screening test.
 
@@ -88,5 +90,4 @@ No. Like all open personality questionnaires on AgentTune, it is an educational 
 - [Free 5-min test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
 - [Prompts: Enneagram AI prompts for all 9 types](https://agent-tune.com/guides/enneagram-ai-prompts)
 - [Free browser tool: Enneagram Scoring Playground — test wings & ties](https://agent-tune.com/tools/enneagram-scoring-playground)
-- [Interactive test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
 - [Developer starter: Open-source Enneagram scorer in React + TypeScript](https://agent-tune.com/guides/enneagram-test-react-typescript)

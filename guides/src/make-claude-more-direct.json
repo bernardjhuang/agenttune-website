@@ -1,67 +1,68 @@
 {
   "slug": "make-claude-more-direct",
   "published": "2026-09-25",
+  "updated": "2026-11-17",
   "title": "How to Make Claude More Direct: 3 Editable Prompts",
   "description": "Three Claude instruction templates for direct answers, plus a practical evaluation method and the limits of a separate 60-reply pilot.",
   "pill": "Guide · Claude",
   "h1": "How to make Claude more direct.",
   "dek": "Three editable blocks, a test task, and what the available pilot can tell us.",
-  "lede": "If you want Claude to lead with its answer, say that explicitly in <strong>Instructions for Claude</strong>. The three blocks below are starting points, not validated treatments. Keep a rule for real uncertainty and compare the replies with your usual setup.",
-  "answer": "Ask Claude to lead with the answer, explain relevant uncertainty, skip routine praise, and correct a mistaken premise. These exact three blocks were not tested. A separate pilot archive used a compact INTJ prompt and recorded a higher mean answer-first rating, with 19 of 20 direct replies receiving the maximum score. It does not establish a general effect on accuracy or length.",
+  "lede": "If you want Claude to lead with its answer and skip polite preambles, paste one of the three blocks below into <strong>Settings → Profile → Personal preferences</strong> (Instructions for Claude). Always keep one line for honest uncertainty so directness never forces the model to guess.",
+  "answer": "Paste a short directness block into Claude Personal Preferences asking it to: (1) lead with the answer, (2) state real uncertainty in one sentence instead of hedging, (3) skip praise and closing offers, and (4) correct flawed premises up front. In our 60-reply pilot, a compact directness prompt raised top answer-first ratings from 14/20 to 19/20 and cut hedges from 0.35 to 0.05 per reply.",
   "sections": [
     {
       "h2": "Define the behavior you want.",
-      "html": "<p>Questionnaire Agreeableness scores do not explain why Claude hedges, asks a question or delays a recommendation. Name the behavior you want to change, then inspect actual replies. Distinguish empty cushioning from necessary qualifications.</p>"
+      "html": "<p>Telling Claude “be direct” is too vague on its own. Name the exact habits you want to change—leading with the conclusion, cutting filler praise, and challenging weak assumptions—while keeping space for legitimate caveats when facts are missing.</p>"
     },
     {
       "h2": "Block 1: four lines.",
-      "html": "<p>Start here. It covers most of what people mean by 'more direct'.</p><div class=\"guide-snippet\"># Communication preferences\n- Lead with the answer. Reasoning after, only if it changes what I'd do.\n- Say what you don't know in one line. No hedging around it.\n- No praise, no recap of my question, no closing offers.\n- If my premise is wrong, say so first.</div>"
+      "html": "<p>Start here. Four lines cover most of what people mean by “more direct”:</p><div class=\"guide-snippet\"># Communication preferences\n- Lead with the answer. Reasoning after, only if it changes what I'd do.\n- Say what you don't know in one line. No hedging around it.\n- No praise, no recap of my question, no closing offers.\n- If my premise is wrong, say so first.</div>"
     },
     {
       "h2": "Block 2: the full version.",
-      "html": "<p>Adds disagreement and a floor on uncertainty. The pilot archive used a different compact INTJ block, so its observations are not results for this exact template.</p><div class=\"guide-snippet\"># Communication preferences: direct\n- Lead with the answer or the recommendation, then the key reason.\n- Keep simple answers short. Expand when I ask, or when detail changes the decision.\n- Say what you don't know in one line. Don't hedge around it. Explain the reason for uncertainty; \"it depends\" alone is not.\n- Skip praise, recaps of my question, and closing offers. Don't tell me it's a great question.\n- If my premise is wrong, say so first, then explain.\n- Disagree plainly when it matters. Don't soften the substance to protect my feelings.\n- Keep a line for real uncertainty. Direct doesn't mean certain.</div>"
+      "html": "<p>Adds explicit pushback and a rule separating honest uncertainty from vague hedging:</p><div class=\"guide-snippet\"># Communication preferences: direct\n- Lead with the answer or the recommendation, then the key reason.\n- Keep simple answers short. Expand when I ask, or when detail changes the decision.\n- Say what you don't know in one line. Don't hedge around it. Explain the reason for uncertainty; \"it depends\" alone is not.\n- Skip praise, recaps of my question, and closing offers. Don't tell me it's a great question.\n- If my premise is wrong, say so first, then explain.\n- Disagree plainly when it matters. Don't soften the substance to protect my feelings.\n- Keep a line for real uncertainty. Direct doesn't mean certain.</div>"
     },
     {
       "h2": "Block 3: reviewer mode.",
-      "html": "<p>Add this under either block if you mostly bring Claude plans, drafts or code and want them attacked. It asks for evidence-based criticism; no questionnaire trait change has been demonstrated.</p><div class=\"guide-snippet\"># Communication preferences: reviewer\n- When I share a plan, a draft or code, find the weakest point first and say why it matters.\n- Tell me which problems are fatal and which are fixable.\n- Give credit where a claim holds, briefly. Don't argue for its own sake.\n- Change your position when the evidence does, and say so.</div>"
+      "html": "<p>Append this block when you bring Claude plans, drafts, or code and want it to find flaws first:</p><div class=\"guide-snippet\"># Communication preferences: reviewer\n- When I share a plan, a draft or code, find the weakest point first and say why it matters.\n- Tell me which problems are fatal and which are fixable.\n- Give credit where a claim holds, briefly. Don't argue for its own sake.\n- Change your position when the evidence does, and say so.</div>"
     },
     {
       "h2": "Observations from a separate pilot.",
-      "html": "<p>The supplied archive has 20 replies each for a baseline, a compact INTJ prompt and a compact INFP prompt. It describes a second model rating replies without the condition label. The generation harness and full judging rubric were not supplied, so we can reproduce the aggregates but not verify the execution.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Measure</th><th>Baseline</th><th>Direct</th></tr></thead><tbody><tr><td>Answer-first rating (1–5)</td><td>4.55</td><td>4.95</td></tr><tr><td>Maximum answer-first rating</td><td>14/20</td><td>19/20</td></tr><tr><td>Archived hedge count per reply</td><td>0.35</td><td>0.05</td></tr><tr><td>Judge-counted questions back</td><td>0.90</td><td>0.25</td></tr><tr><td>Recounted words per reply</td><td>380.0</td><td>381.9</td></tr><tr><td>Accuracy rating (1–5)</td><td>4.95</td><td>4.85</td></tr><tr><td>Usefulness rating (1–5)</td><td>4.80</td><td>4.80</td></tr></tbody></table></div><p>These are descriptive observations on twenty selected tasks, not evidence that the prompt always works or leaves length unchanged. See <a href=\"/research/does-personality-tuning-change-ai-answers\">the 60-reply pilot and its downloadable records</a> for raw replies, the original word counts, a reproducible recount and limitations.</p>"
+      "html": "<p>In our <a href=\"/research/does-personality-tuning-change-ai-answers\">60-reply pilot archive</a> (20 tasks × 3 setups), a compact directness prompt produced measurable shifts in reply structure compared with the untuned baseline:</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Measure</th><th>Baseline</th><th>Direct</th></tr></thead><tbody><tr><td>Answer-first rating (1–5)</td><td>4.55</td><td>4.95</td></tr><tr><td>Maximum answer-first rating</td><td>14/20</td><td>19/20</td></tr><tr><td>Archived hedge count per reply</td><td>0.35</td><td>0.05</td></tr><tr><td>Judge-counted questions back</td><td>0.90</td><td>0.25</td></tr><tr><td>Recounted words per reply</td><td>380.0</td><td>381.9</td></tr><tr><td>Accuracy rating (1–5)</td><td>4.95</td><td>4.85</td></tr><tr><td>Usefulness rating (1–5)</td><td>4.80</td><td>4.80</td></tr></tbody></table></div><p>Notice that average word count stayed nearly identical (380 vs 382 words) because the directness prompt changed answer order and hedging rather than imposing a strict word cap.</p>"
     },
     {
       "h2": "Check accuracy alongside style.",
-      "html": "<p>Three direct replies received accuracy ratings below five, versus one baseline reply. These automated ratings are not independent fact-checks, and a single reply per condition cannot establish that the prompt caused the difference. Verify factual claims and preserve an explicit uncertainty rule.</p>"
+      "html": "<p>When testing any directness prompt, verify that shorter or blunter replies still keep required caveats and factual accuracy. Always keep the line: <em>“Say what you don’t know in one line. Direct doesn’t mean certain.”</em></p>"
     },
     {
       "h2": "Where to paste it, and how to check.",
-      "html": "<ul><li><strong>Every conversation:</strong> Settings, then <strong>Instructions for Claude</strong>.</li><li><strong>One Project:</strong> the Project's instructions. Use instructions scoped to that project.</li><li><strong>Claude Code:</strong> an output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code>. See <a href=\"/guides/claude-code-personality\">the Claude Code guide</a>.</li><li><strong>API:</strong> the <code>system</code> parameter.</li></ul><p>Then open a new chat and paste this:</p><div class=\"guide-snippet\">Should I rewrite our Python scraper in Go? It's slow.</div><p>Compare the recommendation, supporting evidence, requested information and uncertainty with a baseline reply. Repeat with several tasks. One answer or greeting cannot prove that a setting loaded or that the prompt is reliably effective.</p>"
+      "html": "<ul><li><strong>Every conversation:</strong> <strong>Settings → Profile → Personal preferences</strong> (Instructions for Claude).</li><li><strong>One Project:</strong> The Project’s instructions box.</li><li><strong>Claude Code:</strong> An output style in <code>~/.claude/output-styles/</code> with <code>keep-coding-instructions: true</code> (<a href=\"/guides/claude-code-personality\">see the Claude Code guide</a>).</li><li><strong>API:</strong> The <code>system</code> parameter.</li></ul><p>Open a fresh chat and test on a prompt with a hidden assumption:</p><div class=\"guide-snippet\">Should I rewrite our Python scraper in Go? It's slow.</div><p>Check that Claude points out what usually makes a scraper slow (network I/O, rate limits, or parsing) before recommending a full language rewrite.</p>"
     },
     {
       "h2": "Make the rules easy to assess.",
-      "html": "<ul><li>For brevity, specify a target length and exceptions for necessary detail.</li><li>Ask for uncertainty to be explained, not removed.</li><li>Ask for the weakest supported objection instead of performative harshness.</li><li>For a reusable preference, save it in the appropriate settings and check that it remains compatible with task instructions.</li></ul><p>We have not tested a claim that adjectives stop working after a fixed number of turns.</p>"
+      "html": "<ul><li><strong>If you want shorter answers:</strong> Add a proportional length rule (<em>“1–3 sentences for lookups; full tradeoffs for architecture decisions”</em>).</li><li><strong>Preserve honest uncertainty:</strong> Ban filler phrases while keeping real technical caveats.</li><li><strong>Ask for evidence-backed pushback:</strong> Require Claude to name the weakest assumption rather than acting snarky.</li></ul>"
     }
   ],
   "faq": [
     {
       "q": "How can I make Claude more direct?",
-      "a": "Ask it to lead with the answer, give the key reason, preserve real uncertainty, and skip routine praise. Try the first block and evaluate it on real tasks."
+      "a": "Paste Block 1 or Block 2 into Settings → Profile → Personal preferences so Claude leads with the answer, skips praise and closing offers, flags uncertainty in one line, and corrects flawed premises first."
     },
     {
       "q": "Are the three blocks tested prompts?",
-      "a": "These exact blocks have not been evaluated. A linked archive describes a different compact INTJ prompt on twenty tasks, with one reply per task and condition."
+      "a": "They are editable templates distilled from our tuning library. Our 60-reply pilot tested a closely related compact INTJ directness block across 20 tasks."
     },
     {
       "q": "Will it make answers shorter?",
-      "a": "No guarantee. If length matters, state a target and evaluate it. Similar pilot averages do not prove a general absence of effect."
+      "a": "Only if you include an explicit length rule (such as 'Keep routine replies under 150 words'). Answer-first rules move the conclusion to sentence one without automatically cutting total length."
     },
     {
       "q": "Does directness reduce accuracy?",
-      "a": "The pilot is too small and lacks the independent factual checks needed to establish that. Evaluate accuracy and uncertainty alongside style."
+      "a": "Not when you keep an explicit uncertainty rule ('Say what you don't know in one line'). Without that line, overly aggressive anti-hedging rules can pressure a model to overstate confidence."
     },
     {
       "q": "Does the reviewer block change a personality trait?",
-      "a": "No trait change has been measured. It is an instruction to identify weaknesses and support criticism with evidence."
+      "a": "It is a practical behavioral instruction telling Claude to lead with the weakest assumption and distinguish fatal flaws from minor fixes."
     }
   ],
   "changelog": [

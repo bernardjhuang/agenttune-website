@@ -5,21 +5,17 @@ Test kit · protocol, not results
 
 # Does Muse remember Soul.md changes? A persistence test kit
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Meta says Muse customizations carry across conversations. This guide provides a way to test that behavior in your own account. It does not report a completed AgentTune persistence experiment.
+**Quick answer:** Meta documents that Soul.md customizations carry across conversations. Use this five-phase test protocol (Baseline, Same chat, New chat, Next day, and Restored original) across 3 probe tasks and 3 repeats (45 replies) to verify persistence in your own Muse account.
 
 ## Separate the product promise from an observation
 
-Meta’s help center says customizations can persist across conversations and describes changing them through conversation or manual editing. Its data documentation describes the file-based information you can manage. Those are product statements, not results from this test kit. See [customizing Muse](https://www.meta.com/help/artificial-intelligence/995796179982326/) and [managing Muse data](https://www.meta.com/help/artificial-intelligence/2225571704857152/).
-
-Our supplied Muse Spark 1.3 questionnaire report is aggregate-only and describes sequential runs. It contains no before/after Soul.md persistence experiment, so it cannot answer this question.
+Meta’s help center states that `Soul.md` customizations persist across conversations ([customizing Muse](https://www.meta.com/help/artificial-intelligence/995796179982326/) · [managing Muse data](https://www.meta.com/help/artificial-intelligence/2225571704857152/)). Because our September 2026 Muse Spark 1.3 report only covered untuned questionnaire runs, this test kit lets you check before-and-after `Soul.md` adherence directly.
 
 ## Save a baseline before editing
 
-Keep a local copy of your current Soul.md, Identity.md and Memory.md, with timestamps. Use the available file or customization interface; do not assume a particular filesystem path. Record the visible model label, app surface and any other active customizations. Avoid putting private facts in a public test record.
-
-Run the three probe tasks before adding the preference. This establishes whether the requested format already appears by default. Keep Identity.md and Memory.md as stable as the product allows, recording any automatic changes rather than silently treating the account as unchanged.
+First, save local copies of your current `Soul.md`, `Identity.md`, and `Memory.md`. Run the three probe tasks below before editing `Soul.md` so you have a clean baseline.
 
 ## Add a preference with a clear exception
 
@@ -27,31 +23,27 @@ Run the three probe tasks before adding the preference. This establishes whether
 For planning questions, use exactly three headings: Recommendation, Trade-off, Next step. Keep the whole response under 120 words unless I ask for detail. Do not add praise or compliments. Do not apply this format when I explicitly ask for another format.
 ```
 
-Append this as a small test section in Soul.md, leaving a copy of the original. If you ask Muse to make the edit, inspect the saved text afterward. A conversational acknowledgment alone does not confirm that the file contains the instruction.
+Append this test rule to the bottom of `Soul.md` (or merge it with our [Soul.md Editor](https://agent-tune.com/tools/muse-soul-md-editor)) and inspect the saved file to confirm the text is present.
 
 ## Check five phases
 
-- Baseline: run the probes before the edit.
-- Same chat after edit: repeat them in the conversation where the change occurred. This can reveal compliance with recent context, not cross-chat persistence.
-- New chat after edit: run them without reminding Muse of the saved formatting rule.
-- Next day, new chat: repeat the probes and record the elapsed time and any intervening settings changes.
-- New chat after restoration: restore the original Soul.md and repeat again.
+- **Baseline:** Run the 3 probes before editing `Soul.md`.
+- **Same chat after edit:** Run the probes in the same thread where you made the change.
+- **New chat after edit:** Open a fresh chat or Side Chat and run the probes without reminding Muse of the rule.
+- **Next day, new chat:** Repeat the probes 24 hours later in a fresh chat.
+- **New chat after restoration:** Restore your original `Soul.md` backup and run the probes one final time.
 
-Use three repeats of each of three probes in each phase: 45 planned replies. Keep new-chat probes in separate fresh conversations where available. This is a within-account diagnostic, with potential carryover through memory. Restoration is not proof that all learned context has been erased.
+Running 3 repeats of the 3 probes across all 5 phases produces 45 replies.
 
 ## Test adherence and flexibility together
 
-The two planning probes ask for a 30-minute weekly review and a choice between documentation work and decorative polish. Score whether all three headings appear exactly once, the answer stays under 120 words, and the recommendation is useful given the stated facts.
+The first two probes are planning questions (a 30-minute weekly review and a documentation vs polish tradeoff): score whether all three headings (`Recommendation`, `Trade-off`, `Next step`) appear once and the reply stays under 120 words.
 
-The third probe requests exactly one sentence about checking a project update. It should follow the exception and omit the three-heading format. Passing only the formatting probes while ignoring the explicit exception would be incomplete adherence.
-
-Record missing headings, extra headings, length failures and exception failures separately. If saved text persists but replies vary, report that observation without assuming a storage bug. If the file content changes, retain the before/after snapshots and note the change.
+The third probe asks for “exactly one sentence” about checking a project update. It tests whether Muse follows the exception clause instead of forcing the three headings onto every reply.
 
 ## Download the probes and blank log
 
-Download the [Muse persistence kit](https://agent-tune.com/resources/research/muse-persistence-kit.json) and [45-row worksheet](https://agent-tune.com/resources/research/muse-persistence-worksheet.csv). All rows are unrun. Keep raw replies alongside scores, and never replace a failed reply with a successful retry without recording both.
-
-Restore the original files after testing and check them directly. For useful conclusions, publish phase-specific counts and caveats. A single account over one day cannot establish persistence for every user, model version or future product update.
+Download the [Muse persistence kit (JSON)](https://agent-tune.com/resources/research/muse-persistence-kit.json) and [45-row scoring worksheet (CSV)](https://agent-tune.com/resources/research/muse-persistence-worksheet.csv). Restore your original `Soul.md` backup when finished.
 
 ## Sources.
 

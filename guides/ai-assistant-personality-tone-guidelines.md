@@ -5,13 +5,15 @@ Engineering · Voice & Tone Design
 
 # AI assistant personality & tone guidelines: moving from vague adjectives to testable system prompts.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Replace vague tone adjectives in API system prompts with four concrete specs: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing data or conflicting facts are surfaced), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions)—and verify changes with blind A/B evals.
+Practical patterns for developers writing system instructions for products, copilots, and multi-agent workflows—tested against eval baselines.
+
+**Quick answer:** Replace vague tone adjectives in API system prompts with four concrete blocks: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing or conflicting facts are flagged), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions). Verify every change with blind A/B evals.
 
 ## Why behavioral rules beat adjective lists in empirical testing.
 
-Across our 60-reply controlled pilot testing default prompts against explicit communication constraints ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral constraints lifted answer-first openings from 14/20 to 19/20, cut unsolicited hedges per reply from 0.35 to 0.05, and dropped trailing conversational questions from 0.90 to 0.25—while keeping accuracy unchanged.
+In our 60-reply controlled pilot ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral rules raised answer-first openings from **14/20 to 19/20**, cut unsolicited hedges per reply from **0.35 to 0.05**, and dropped trailing filler questions from **0.90 to 0.25**—without hurting task accuracy.
 
 | Weak adjective prompt | Why it drifts in production | Testable behavioral replacement |
 | --- | --- | --- |
@@ -22,7 +24,7 @@ Across our 60-reply controlled pilot testing default prompts against explicit co
 
 ## A 4-layer system prompt contract for API & agent builders.
 
-Structure production assistant personas into four non-overlapping blocks so product engineers can iterate safely without breaking tool execution:
+Split production assistant personas into four non-overlapping blocks so engineers can adjust voice rules without breaking tool calls:
 
 ```markdown
 # Persona Contract
@@ -44,27 +46,27 @@ Structure production assistant personas into four non-overlapping blocks so prod
 
 ## How to evaluate tone changes without fooling yourself.
 
-- Use blind pairwise scoring: Human reviewers consciously or unconsciously favor prompts they wrote. Compare baseline vs. edited system messages blindly using our [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench) (or JSON report exports for team review).
-- Control verbosity explicitly: Shorter answers can omit critical caveats just as easily as longer ones waste time. Pair register/verbosity controls ([style controls guide →](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)) with an accuracy checklist.
-- Borrow starter patterns from 5 frameworks: Our MIT-licensed [43 tuning files](https://agent-tune.com/library/) map tested communication patterns across MBTI, Enneagram, DISC, Big Five, and Attachment so teams don&rsquo;t invent voice specs from a blank page.
+- **Use blind pairwise scoring:** Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench).
+- **Scale verbosity to task risk:** Short replies can drop critical caveats if you use a flat word cap. Pair proportional verbosity rules ([style controls guide →](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)) with an accuracy check.
+- **Start from tested templates:** Our MIT-licensed [43 tuning files](https://agent-tune.com/library/) cover MBTI, Enneagram, DISC, Big Five, and Attachment so your team never starts from a blank page.
 
 ## Questions people ask.
 
-Should a production system prompt reference MBTI or Enneagram labels directly?
+### Should a production system prompt reference MBTI or Enneagram labels directly?
 
-Generally no for end-user products: type acronyms are shorthand for humans browsing templates. Extract the concrete behavioral rules (directness, hedging limits, table thresholds, critique framing) rather than telling a production chatbot 'You are an INTJ'.
+No. Type labels are a discovery shortcut for humans choosing a template. In production API prompts, paste the concrete behavioral rules (direct openings, hedge caps, table thresholds, and critique framing) rather than telling a bot 'You are an INTJ.'
 
-Do all models follow negative tone rules ('never say Great question') equally well?
+### Do all models follow negative tone rules ('never say Great question') equally well?
 
-Small positive behavioral instructions paired with specific banned phrases work significantly better across both OpenAI and Anthropic models than purely abstract style adjectives—especially when placed near the top of the system prompt.
+Pair positive behavioral rules ('Lead with the answer in sentence one') with a short banned-phrase list near the top of the system prompt. That combination holds far better across OpenAI and Anthropic models than adjectives alone.
 
-How does AgentTune license its templates for commercial or internal agent apps?
+### How does AgentTune license its templates for commercial or internal agent apps?
 
-All 43 AgentTune communication templates and client-side utilities (core.js, enneagram/score.js) are MIT-licensed and free to adapt inside proprietary or open-source software. Note that third-party psychological questionnaires themselves keep their upstream licensing rules.
+All 43 AgentTune communication templates and client-side utilities (core.js, enneagram/score.js) are MIT-licensed for commercial or open-source use. Third-party psychological questionnaires keep their own upstream licenses.
 
-How do I prevent tone guidelines from overriding JSON schema or tool-call contracts?
+### How do I prevent tone guidelines from overriding JSON schema or tool-call contracts?
 
-Separate schema/tool constraints into a dedicated strict output section placed after conversational style rules, and include an explicit override rule: 'Structured tool calls and JSON schemas always take precedence over prose style preferences.'
+Place JSON schema and tool rules in a separate section after your tone block, and add one explicit priority rule: 'Structured tool calls and JSON schemas always override prose style preferences.'
 
 ## What changed.
 

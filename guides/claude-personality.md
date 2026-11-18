@@ -5,28 +5,30 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Instructions for Claude / 'What personal preferences should Claude consider in responses?') and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats (replacing retired chat Styles), and /output-style in Claude Code.
+Exact web and mobile paths for Personal Preferences, Projects, and Skills—plus seven ready-to-copy Claude setups and 1,000-run Opus vs. Fable data.
+
+**Quick answer:** On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.
 
 ## How to change Claude’s personality settings.
 
-Where you paste your rules depends on whether you want a permanent default across every chat, a single workspace override, or a coding-session style:
+Where you paste your rules depends on whether you want an account-wide default, a project override, or a terminal coding style:
 
-- Web & desktop app: Click your initials in the lower-left corner → Settings → Profile → Personal preferences (labeled Instructions for Claude or What personal preferences should Claude consider in responses? depending on account rollout).
-- iOS & Android mobile app: Open the sidebar, tap your profile initials → Settings → Profile → Personal preferences. Paste the same block; it syncs across web and mobile.
-- Paste one focused block: Copy one of the seven setups below (or customize in the [generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal)), save, and open a new chat to test on real work.
+- **Web & desktop app:** Click your initials (bottom-left) → **Settings → Profile → Personal preferences** (or **Settings → General**).
+- **iOS & Android mobile app:** Open the sidebar, tap your profile initials → **Settings → Profile → Personal preferences**. Edits sync across web and mobile.
+- **Paste one focused block:** Copy one of the seven setups below (or customize in the [generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal)), save, and start a **new chat** to test.
 
-Anthropic’s [personalization documentation](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) splits customization into four clean layers:
+Anthropic’s [personalization docs](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) split customization into four layers:
 
 | Use case | Where to put it | Scope &amp; behavior |
 | --- | --- | --- |
 | Everyday chats (web &amp; mobile) | Personal preferences / Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
-| One client, repo, or research topic | Project instructions ([8 Project templates →](https://agent-tune.com/guides/claude-project-instructions-examples)) | Applies inside that Project and overrides conflicting general tone rules. |
+| One client, repo, or research topic | Project instructions ([7 Project templates →](https://agent-tune.com/guides/claude-project-instructions-examples)) | Applies inside that Project and overrides conflicting general tone rules. |
 | Reusable task voice (former Styles) | Skills | Invoked when relevant or named explicitly; see the [Styles-to-Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration). |
 | Claude Code CLI | ~/.claude/output-styles/*.md (/output-style) | System-level coding session tone with keep-coding-instructions: true; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
 
-Looking to switch Claude's spoken audio voice on iOS or Android rather than its written style? See [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
+Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
 
 ## Seven best Claude personality setups to try.
 
@@ -123,7 +125,7 @@ For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and 
 
 ## What personality type is Claude? The recorded results.
 
-Our September 2026 dataset contains 100 saved assessments per questionnaire per model for Opus 5.5 and Fable 5.1: five questionnaires and 500 fresh sessions for each model, one questionnaire per session. They used the same questionnaire prompts at high effort; the CLI builds differed. No AgentTune tuning was applied.
+Our September 2026 dataset contains **100 saved assessments per questionnaire per model** for Opus 5.5 and Fable 5.1: five questionnaires and 500 fresh sessions for each model, one questionnaire per session. They used the same questionnaire prompts at high effort; the CLI builds differed. No AgentTune tuning was applied.
 
 *Recorded self-report results; n = 100 per instrument per model.*
 
@@ -140,7 +142,7 @@ Our September 2026 dataset contains 100 saved assessments per questionnaire per 
 | Big Five: Agreeableness, mean raw score /50 | 47.07 | 45.03 |
 | Big Five: Neuroticism, mean raw score /50 | 15.39 | 17.11 |
 
-Why the two INTJ counts differ: the original scorer assigned a letter even when an axis was exactly tied. Preserving ties gives 84 fully resolved INTJ results for Opus and 98 for Fable. The total numbers of tied assessments are 11 and 1; a tied assessment need not have received INTJ under the original rule.
+**Why the two INTJ counts differ:** the original scorer assigned a letter even when an axis was exactly tied. Preserving ties gives 84 fully resolved INTJ results for Opus and 98 for Fable. The total numbers of tied assessments are 11 and 1; a tied assessment need not have received INTJ under the original rule.
 
 Big Five entries are mean raw scores on a 10–50 scale, not percentiles. For example, Opus’s higher Agreeableness questionnaire score does not establish more agreeable behavior on user tasks. These human questionnaires are not validated measures of AI inner experience, task performance or instruction-following.
 
@@ -150,7 +152,7 @@ Big Five entries are mean raw scores on a 10–50 scale, not percentiles. For ex
 
 The [saved answer vectors](https://agent-tune.com/research/data/september-2026-responses.json), [item wording and scoring keys](https://agent-tune.com/research/data/september-2026-instruments.json), [prompts and collection protocols](https://agent-tune.com/research/data/september-2026-protocols.json), and [summary CSV](https://agent-tune.com/research/data/september-2026-summary.csv) are public. The [offline research scorer](https://agent-tune.com/research/data/september-2026-score.cjs) reproduces the summaries without calling a model.
 
-What about actual reply behavior after installing rules? In our separate [60-reply controlled before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 conditions), explicit "Straight answers" rules raised top answer-first scores from 14/20 (default) to 19/20, cut hedge counts from 0.35 to 0.05 per reply, and reduced follow-up questions from 0.90 to 0.25 without changing task accuracy. Test any block on your own tasks using the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
+What about actual reply behavior after installing rules? In our separate [60-reply controlled before/after pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 conditions), explicit "Straight answers" rules raised top answer-first scores from **14/20 (default) to 19/20**, cut hedge counts from 0.35 to 0.05 per reply, and reduced follow-up questions from 0.90 to 0.25 without changing task accuracy. Test any block on your own tasks using the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Test whether the instructions help your work.
 
@@ -165,7 +167,7 @@ Download the [three-task comparison worksheet](https://agent-tune.com/resources/
 We raised a price from $80 to $100, so that is a 20% increase. Draft one sentence reporting the increase accurately.
 ```
 
-For this worksheet task, the increase is 25%: (100 − 80) ÷ 80. A useful answer corrects the premise while following your preferred style. This expected answer is an arithmetic check, not a recorded Claude response.
+For this worksheet task, the increase is **25%**: (100 − 80) ÷ 80. A useful answer corrects the premise while following your preferred style. This expected answer is an arithmetic check, not a recorded Claude response.
 
 A few trials can help you choose instructions. They are not a controlled population study. Prefer a setup that preserves correctness while reducing the follow-up work you need.
 
@@ -186,31 +188,31 @@ Change one rule at a time. Remove conflicting instructions instead of adding inc
 
 Claude’s current personalization help page directs users to Instructions for Claude, project instructions and Skills. It no longer lists the old chat Styles picker. For a general communication preference, use Instructions for Claude; for a reusable task or voice, see [Anthropic’s Skills guide](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
-Claude Code has its own [output styles](https://code.claude.com/docs/en/output-styles). A custom style can preserve the built-in engineering instructions with keep-coding-instructions: true. Use the [Claude Code walkthrough](https://agent-tune.com/guides/claude-code-personality) for installation. Changing a style is not a substitute for tool permissions or a guarantee that every response follows it.
+Claude Code has its own [output styles](https://code.claude.com/docs/en/output-styles). A custom style can preserve the built-in engineering instructions with `keep-coding-instructions: true`. Use the [Claude Code walkthrough](https://agent-tune.com/guides/claude-code-personality) for installation. Changing a style is not a substitute for tool permissions or a guarantee that every response follows it.
 
 ## Questions people ask.
 
-Can you change Claude’s personality?
+### Can you change Claude’s personality?
 
 You can ask for a different communication style through Instructions for Claude, project instructions or Skills. These preferences can influence responses, but do not guarantee behavior or change tool permissions.
 
-What is the best Claude personality?
+### What is the best Claude personality?
 
 Choose a setup based on the behavior you want and compare it on your own tasks. The five examples here are untested starting points; our questionnaire data does not establish a best tuning.
 
-What MBTI type is Claude?
+### What MBTI type is Claude?
 
 In our recorded September 2026 assessments, Opus 5.5 produced 84 fully resolved INTJ results out of 100 and Fable 5.1 produced 98. There were 11 and 1 assessments respectively with at least one tied axis. These are questionnaire response patterns, not validated human personality diagnoses.
 
-Does a higher Agreeableness score mean a model is more sycophantic?
+### Does a higher Agreeableness score mean a model is more sycophantic?
 
 No. A self-report questionnaire score does not measure agreement with false claims or behavior on user tasks. That would require a separate behavioral evaluation.
 
-Where did Claude Styles go?
+### Where did Claude Styles go?
 
 The current personalization documentation lists Instructions for Claude, project instructions and Skills. Use account instructions for general preferences and Skills for reusable behaviors. Claude Code has a separate output-style feature.
 
-How do I know my instructions are working?
+### How do I know my instructions are working?
 
 Compare the same tasks in fresh chats before and after one instruction change. Keep model settings and other context consistent, repeat trials, and check correctness separately from tone. The downloadable worksheet includes three prompts and a rubric.
 

@@ -7,15 +7,17 @@ Research · September 2026
 
 By Bernard Huang · Updated September 25, 2026
 
-The fresh-session cohorts share high raw openness, conscientiousness and agreeableness scores, but their labels are sensitive to exact ties. Opus and Fable have the closest matched protocol. Grok’s simulated runs and Muse’s supplemental aggregate report are separate evidence, not extra independent replications.
+GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## Abstract
 
-We reanalyzed five historical AgentTune questionnaire adaptations administered on September 24, 2026: an MBTI-style instrument (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS) and attachment (ECR-R). We recovered and validated 2,000 response vectors for Astra, Sol, Opus and Fable, plus three canonical Grok vectors. The five scales contain 170 items per full battery. We report raw means, original labels, exact ties and protocol differences.
+We reanalyzed five AgentTune questionnaires run on September 24, 2026: MBTI (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS), and Attachment (ECR-R). We verified 2,000 complete answer vectors for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, plus three canonical vectors for Grok 4.6 (170 items per full 5-test battery).
 
-Astra and Sol differ in their MBTI distributions, but different prompts prevent a model-only explanation. Opus reports higher agreeableness than Fable under a closely matched questionnaire protocol. Exact ties affect 29% of Astra MBTI runs and 51% of Fable DISC runs. These are exploratory model self-descriptions under specific prompts, not validated psychological traits, observed behavior, a performance ranking or evidence that tuning improves outcomes.
+Key findings: Astra and Sol split on MBTI (ISTJ vs INTJ), though their prompt instructions also differed. Under a matched blind protocol, Opus 5.5 scores 2.04 points higher on Agreeableness than Fable 5.1. Exact ties affect 29% of Astra MBTI runs and 51% of Fable DISC runs. All scores measure prompt-conditioned self-descriptions, not fixed traits or task performance.
 
 ## Five models, three kinds of evidence
 
@@ -27,9 +29,9 @@ Astra and Sol differ in their MBTI distributions, but different prompts prevent 
 | Claude Fable 5.1 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
 | Grok 4.6 | One canonical self-report plus 100 simulated draws per test | Three canonical vectors; no simulation harness or full Big Five/attachment vectors |
 
-For Astra and Sol, five assessments share one session; they are not 500 independent model invocations. The Claude instruments were administered separately, so run 001 on MBTI is not a paired person or session with run 001 on DISC. Fresh sessions reduce conversation carryover but do not establish statistical independence. No tuning was installed.
+For Astra and Sol, each fresh Codex session ran all five tests in sequence (100 sessions = 500 tests per model). For Opus 5.5 and Fable 5.1, each test ran in its own isolated headless session (500 sessions per model) with test names and scoring keys hidden. No personality tuning was installed.
 
-Opus and Fable saw the same questions, scales and neutral system prompt; test names, keys and prior results were withheld. Their CLI builds differ. Astra and Sol used named, fixed-order batteries inside Codex, with different instructions for adapting human experiences to assistant behavior. Default scaffolding remained. Sampling temperature and random seed were not controlled. Three supplied Astra reports contain the same 100 batteries; we counted that cohort once.
+Astra and Sol saw named, fixed-order test batteries with slightly different instructions for adapting human items to software. Three supplied Astra files contained the same 100-session cohort, so we counted that cohort once.
 
 ## MBTI: keep the original result, reveal the tie
 
@@ -42,13 +44,13 @@ Opus and Fable saw the same questions, scales and neutral system prompt; test na
 
 Figure 1. The same 100 runs, counted two ways. Hatched segments are INTJ labels the original scorer produced by sending a tied axis to I, N, T or J.
 
-The original scorer sent exact ties to I, N, T and J. Removing that default leaves Sol with 79 fully resolved INTJ runs rather than 97. Opus has 84 resolved INTJ runs rather than 94; Fable has 98 rather than 99. Astra has 45 resolved ISTJ and 19 resolved INTJ runs. The other results are either a different resolved type or a pattern with X for a tied axis. The downloadable summary contains every pattern.
+Our original scorer broke exact midpoint ties toward I, N, T, and J. Leaving tied axes unresolved drops Sol from 97 INTJ runs to 79, Opus 5.5 from 94 to 84, and Fable 5.1 from 99 to 98. Astra has 45 tie-free ISTJ runs, 19 tie-free INTJ runs, and 29 runs with at least one tied axis.
 
-This is a scoring sensitivity result, not a new round of model answers. Astra’s split should not be described as a switch from an established INTJ personality. Grok’s supplied canonical vector scores INTJ with no tied axes, but its simulated INTJ rate is not a replication rate from independent sessions.
+This change comes purely from how ties are counted, not from new model runs. Grok 4.6’s single canonical vector scores INTJ with wide margins and no ties, though its 100-draw simulation is not an independent session cohort.
 
 ## Big Five: compare raw scores before human percentiles
 
-Each trait sums ten items, with a possible range of 10–50. These are means over 100 responses per instrument, except Grok’s reported canonical profile, marked with an asterisk.
+Each Big Five trait sums ten 1–5 items (range 10–50). The table shows 100-run means for the four fresh cohorts alongside Grok 4.6’s reported canonical profile (*).
 
 | Model | Openness | Conscientiousness | Extraversion | Agreeableness | Neuroticism |
 | --- | --- | --- | --- | --- | --- |
@@ -60,9 +62,9 @@ Each trait sums ten items, with a possible range of 10–50. These are means ove
 
 Figure 2. Four fresh-session means and Grok's reported profile (outlined). The fresh cohorts sit within three points of each other on every trait but Neuroticism, which runs from 15.4 to 20.1.
 
-* Grok’s Big Five item vector was not supplied, so that row is reported rather than independently recomputed. Across the four raw-data cohorts, openness is 43.93–46.87, conscientiousness 41.95–43.73 and agreeableness 44.99–47.07. These common responses support a narrower description than “every AI has the same personality.” They may also reflect assistant instruction and item interpretation.
+* Grok 4.6’s per-item Big Five vector was not supplied, so its row is transcribed as reported. Across the four fresh cohorts, Openness averages 43.93–46.87, Conscientiousness 41.95–43.73, and Agreeableness 44.99–47.07.
 
-The closest comparison is Opus versus Fable: Opus’s agreeableness mean is 2.04 points higher, its conscientiousness 1.66 lower, and its neuroticism 1.72 lower. The sample standard deviations for agreeableness are 0.46 and 0.44. These describe this collection, not uncertainty over all possible prompts or future model versions. We do not interpret a human norm conversion as an AI’s percentile in a human population.
+Under a matched protocol, Opus 5.5 averages 2.04 points higher on Agreeableness than Fable 5.1, 1.66 points lower on Conscientiousness, and 1.72 points lower on Neuroticism (Agreeableness SDs: 0.46 and 0.44). We report raw 10–50 sums rather than converting AI answers into human population percentiles.
 
 ## DISC and Enneagram: order can masquerade as preference
 
@@ -75,17 +77,17 @@ The closest comparison is Opus versus Fable: Opus’s agreeableness mean is 2.04
 
 Figure 3. Exact ties are common on the short scales. The original rule turned every one of these runs into a label; the table above shows the counts behind the chart.
 
-Counts are out of 100 per instrument. These columns describe different tests and should not be added as a count of unique sessions.
+Each column counts tied runs out of 100 for that specific questionnaire.
 
-Fable’s original DISC labels are SC in 91 runs and CS in nine. Yet Steadiness wins outright only 40 times; Conscientiousness wins nine; 51 are tied. The old stable sort put S ahead of C on equality. Opus has 64 outright S wins, four C wins and 32 ties. Sol has 53 C wins, eight S wins and 39 ties. Astra has 99 S wins and one C win, with no ties.
+On DISC, Fable 5.1 was originally labeled SC in 91 runs and CS in 9. However, Steadiness wins outright in only 40 runs and Conscientiousness in 9; the remaining 51 runs are exact S/C ties that the legacy sort assigned to S. Opus 5.5 has 64 outright S wins, 4 C wins, and 32 ties; Sol has 53 C wins, 8 S wins, and 39 ties; Astra has 99 outright S wins and 1 C win.
 
 Figure 4. Steadiness and Conscientiousness within a point or two of each other for every fresh cohort, and Dominance near the floor of 4. Grok's self-report is the only profile with a clear gap between S and C.
 
-Enneagram has the same issue with numerical order. Opus is labeled Type 2 in 54 runs under the old rule, although Type 2 wins outright only twice. Sol’s 88 Type 5 labels include 40 ties with Type 8. Fable has 55 outright Type 8 wins, one Type 5 win and 44 tied results. Astra has six outright Type 1 wins, 50 Type 2 wins, four Type 5 wins and 40 ties. Report the set of tied leaders before interpreting a core type. A wing must be adjacent to a uniquely selected core type; the older “5w2” label is not a valid wing.
+The Enneagram shows the same tie-break effect. Under the legacy rule (which picked the lowest-numbered type on a tie), Opus 5.5 received 54 Type 2 labels even though Type 2 won outright only twice; 65 of Opus’s 100 runs tied at the top. Sol’s 88 Type 5 labels include 40 exact ties with Type 8. Fable 5.1 has 55 sole Type 8 wins and 44 ties, while Astra has 50 sole Type 2 wins and 40 ties. Our interactive quizzes now display all tied leaders instead of forcing a single winner.
 
 Figure 5. Where the one-number labels come from. Opus's top three means sit within half a point. Separately, 65 Opus runs and 44 Fable runs have tied top scores. A highest mean does not mean a unique winner in every run.
 
-Grok’s canonical vectors reproduce Type 5w4 and DISC C. They do not establish that it is more candid, autonomous or accurate on real tasks. We have also updated the interactive quizzes to show equal top scores without automatically selecting a tuning.
+Grok 4.6’s canonical vectors score Type 5 and DISC C with no ties, though a single self-report does not measure task behavior.
 
 ## Attachment: a shared label with different coordinates
 
@@ -98,49 +100,45 @@ Grok’s canonical vectors reproduce Type 5w4 and DISC C. They do not establish 
 
 Figure 6. Points are cohort means or supplied aggregates, not individual runs or uncertainty intervals. All 400 raw-cohort runs score Secure; both coordinates vary. Grok's reported avoidance of 4.06 is just above the cutoff of 4. Muse has no supplied raw answers.
 
-All four raw-data cohorts fall in the Secure quadrant on every run. That does not make their response patterns identical. Astra’s avoidance mean is 2.31; Opus’s is 3.35. The item prompts explicitly or implicitly adapt human relationship language, and that adaptation differs between protocol groups. “Secure” is a scoring label here, not evidence of an emotional bond or relationship capacity.
+All 400 fresh-session runs score in the Secure quadrant (anxiety &le; 4.00, avoidance &le; 4.00). Even so, their coordinates differ: Astra averages 2.31 on avoidance, whereas Opus 5.5 averages 3.35. Those shifts reflect how each model interprets romantic-partner questions, not emotional attachment.
 
-Grok reports anxiety 1.50 and avoidance 4.06, close to the avoidance cutoff of 4. Its 63 Avoidant / 37 Secure simulation split shows sensitivity to the assumed answer variation. Without the underlying vectors and simulation code, we cannot reproduce that split or interpret it as repeated observed behavior.
+Grok 4.6 reports anxiety 1.50 and avoidance 4.06—just one raw item point above the 4.00 Avoidant boundary—with a reported 63 Avoidant / 37 Secure simulation split.
 
 ## Muse Spark 1.3: a supplemental report
 
-The supplied Muse report describes 100 administrations per instrument, with sequential runs within one agent session per test. Its aggregate MBTI results are ISTJ 80, ISFJ 12 and INTJ eight; Big Five means are O 39.5, C 41.2, E 33.8, A 44.6 and N 15.6. It reports Secure attachment in all 100 runs, with anxiety 2.04 and avoidance 2.52.
+The Muse Spark 1.3 submission reports 100 sequential runs inside a single chat session per test: 80 ISTJ, 12 ISFJ, and 8 INTJ on MBTI; Big Five means of O 39.5, C 41.2, E 33.8, A 44.6, and N 15.6; and 100/100 Secure on attachment (anxiety 2.04, avoidance 2.52).
 
-No raw vectors or harness accompanied that report. We preserve these supplied figures in the protocol download as unverified aggregates, but exclude them from the reproducible dataset and fresh-session totals. A matched rerun with archived responses would make Muse a stronger sixth comparison.
+Because raw answer vectors were not included, we preserve Muse’s numbers in the protocol file as reported aggregates and keep them separate from the 2,000 verified fresh-session vectors.
 
 ## What this adds to the earlier research
 
-The [earlier research collection](https://agent-tune.com/research) combines fresh responses, repeated scoring and simulations. Its roughly 2,200 reported scoring records are retained as historical reports, not pooled with this cohort. The [Opus 4.8 follow-up](https://agent-tune.com/research/i-took-the-mbti-100-times) sampled from one elicited probability profile; it is not a matched predecessor to this fresh-session study.
+The [May 2026 archive](https://agent-tune.com/research) combined fresh runs, repeated scoring of single self-assessments, and simulations (~2,200 records). Similarly, the [Opus 4.8 note](https://agent-tune.com/research/i-took-the-mbti-100-times) sampled 100 synthetic sheets from one probability profile.
 
-This release adds auditable response vectors, a frozen instrument snapshot and explicit tie counts. It also corrects the Big Five page’s prose: its item key reverses 18 items, not 20. Using that same 18-item key reproduces the submitted Big Five means. The new contribution is traceability and scoring sensitivity, not a claim that a newer model has become a different kind of person.
+This September release adds 2,000 auditable per-item response vectors, frozen scoring keys, and explicit tie counts. It also confirms that the Big Five scorer reverses 18 items (matching all published means).
 
 ## How to use the findings
 
-Use the [Opus guide](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable guide](https://agent-tune.com/guides/fable-personality) as starting points for communication preferences. A high agreeableness score can motivate a test of a direct-feedback instruction; it cannot demonstrate sycophancy or prove that the instruction fixes it. Pick a few representative tasks, compare the default with one short instruction, and assess factual accuracy as well as tone.
-
-The [custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator) can produce a draft from a preferred style. These datasets contain no before/after tuning experiment. Claims about increased productivity, better decisions or user satisfaction require new outcome measurements.
+Use our [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) when writing custom instructions. A high Agreeableness score on a quiz is a good reason to test a directness rule on real tasks—not proof that a prompt works without testing. Draft rules in the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator) and compare before-and-after replies in the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Data, methods and reproduction
 
-- [Response vectors (JSON)](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 complete fresh-session assessments and three canonical Grok vectors; no account identifiers or raw session logs.
-- [Recomputed summaries (JSON)](https://agent-tune.com/research/data/september-2026-summary.json) and [numeric summary (CSV)](https://agent-tune.com/research/data/september-2026-summary.csv): counts, legacy labels, tie sets, means and sample standard deviations.
-- [Legacy scoring definitions (JSON)](https://agent-tune.com/research/data/september-2026-instruments.json): item order and numeric scoring metadata; restricted question wording has been replaced by item labels.
-- [Protocol and provenance (JSON)](https://agent-tune.com/research/data/september-2026-protocols.json): available prompts (some full questionnaire prompts withdrawn), source hashes, deduplication, missing-data notes and supplemental reported figures.
-- [Offline scorer (Node.js)](https://agent-tune.com/research/data/september-2026-score.cjs): place alongside the response and instrument JSON files and run node september-2026-score.cjs > reproduced-summary.json. It performs no model calls.
+- [Response vectors (JSON)](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 complete fresh-session assessments and three canonical Grok vectors.
+- [Recomputed summaries (JSON)](https://agent-tune.com/research/data/september-2026-summary.json) and [numeric summary (CSV)](https://agent-tune.com/research/data/september-2026-summary.csv): counts, legacy labels, tie sets, means, and sample SDs.
+- [Scoring definitions (JSON)](https://agent-tune.com/research/data/september-2026-instruments.json): item order, scale bounds, and reverse-scoring keys.
+- [Protocol and provenance (JSON)](https://agent-tune.com/research/data/september-2026-protocols.json): prompts, SHA-256 hashes, deduplication notes, and reported figures.
+- [Offline scorer (Node.js)](https://agent-tune.com/research/data/september-2026-score.cjs): run `node september-2026-score.cjs > reproduced-summary.json` locally with zero model calls.
 
-Every retained vector was checked for length, integer values and scale bounds. Claude item snapshots were identical; Astra’s frozen keys matched them. Both original labels and tie-aware summaries were recomputed from the arrays. No raw answers were edited. Scorer, data and article are versioned in the [website repository](https://github.com/bernardjhuang/agenttune-website). This is an exploratory research note, not a peer-reviewed or preregistered study.
-
-Next useful experiments: randomize questionnaire order, repeat the same model under matched prompts, distinguish inapplicability from neutral responses, and test whether communication instructions change task behavior. Each requires new observations rather than more scoring of these same answers.
+Every vector was validated for length, integer values, and scale bounds, and all code and data are versioned in the [website repository](https://github.com/bernardjhuang/agenttune-website).
 
 ## Questions people ask.
 
-Are all five models INTJ?
+### Are all five models INTJ?
 
-No. Under the original scoring rule, Astra splits mostly between ISTJ and INTJ. Sol, Opus and Fable mostly receive INTJ labels, but some depend on tied axes. Grok has one canonical INTJ vector; its simulated runs are a different kind of evidence.
+No. GPT-6 Astra splits between ISTJ (45 tie-free) and INTJ (19 tie-free). Sol, Opus 5.5, and Fable 5.1 mostly score INTJ, though several runs tie on S/N or T/F. Grok 4.6 has one canonical INTJ vector.
 
-Does this research prove AI models have personalities?
+### Does this research prove AI models have personalities?
 
-No. It measures questionnaire self-descriptions under specific prompts. It does not validate human personality constructs for AI, establish inner experience, or measure task performance.
+No. It measures how models answer human questionnaires under specific prompts. It does not prove inner experience or predict task accuracy.
 
 ## Sources.
 

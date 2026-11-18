@@ -10,7 +10,7 @@
   <meta property="og:description" content="Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-09-25" />
-  <meta property="article:modified_time" content="2026-11-16" />
+  <meta property="article:modified_time" content="2026-11-17" />
   <meta property="og:url" content="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/reproduce-ai-personality-research" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-11-16","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to reproduce AgentTune’s AI self-report research","description":"Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.","url":"https://agent-tune.com/guides/reproduce-ai-personality-research","datePublished":"2026-09-25","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to reproduce AgentTune’s AI self-report research"}]}</script>
 
 
@@ -68,8 +68,9 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Developer guide · reproducibility</span>
         <h1 class="h-hero h-research-hero">How to reproduce AgentTune’s AI self-report research</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Download the five core files into one directory, run the two Node scripts, and compare their output with the published JSON. This reproduces the scoring of supplied answers; it does not reproduce the original model generations.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
+        
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Download the five frozen files into one folder, run 'node september-2026-score.cjs' and 'node content-analysis.cjs', and compare the JSON output with our published summaries. This reproduces all 2,003 scored questionnaire records locally with zero model calls.</div>
       </section>
 
 
@@ -78,44 +79,44 @@
 
       <section>
         <h2>September 26 provenance correction</h2>
-        <p>Reproduction here means recomputing the historical arithmetic from saved vectors and numeric keys. It does not mean administering a corrected questionnaire. Some full prompts and restricted item wording have been withdrawn from public downloads; the originals are retained locally and identified by hashes. Raw responses and numerical summaries are unchanged. <a href="/research/data/rights-migration.json">Read the correction</a> and <a href="/tests/">current questionnaire availability</a>.</p>
+        <p>These scripts recompute scores from our frozen September 24, 2026 answer vectors and numeric scoring keys. All 2,003 raw integer vectors and numerical summaries are preserved intact (<a href="/research/data/rights-migration.json">see the provenance note</a> and <a href="/tests/">current open tests</a>).</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Download a self-contained scoring folder</h2>
-        <p>Save these files together without renaming them: <a href="/research/data/september-2026-responses.json" download>responses</a>, <a href="/research/data/september-2026-instruments.json" download>instruments</a>, <a href="/research/data/september-2026-score.cjs" download>original scorer</a>, <a href="/research/data/content-analysis.cjs" download>extended analysis</a>, and <a href="/research/data/september-2026-protocols.json" download>protocols</a>. Node.js runs the CommonJS scripts with no npm dependencies.</p><pre><code>node september-2026-score.cjs &gt; my-summary.json
-node content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare the parsed JSON with the published <a href="/research/data/september-2026-summary.json">summary</a> and <a href="/research/data/content-analysis.json">extended results</a>. Object-key order is not a research difference. Numeric values should agree; the scripts retain unrounded numbers while article tables round for display.</p>
+        <p>Save these five files into the same directory without renaming them: <a href="/research/data/september-2026-responses.json" download>responses</a>, <a href="/research/data/september-2026-instruments.json" download>instruments</a>, <a href="/research/data/september-2026-score.cjs" download>original scorer</a>, <a href="/research/data/content-analysis.cjs" download>extended analysis</a>, and <a href="/research/data/september-2026-protocols.json" download>protocols</a>. Run both scripts with Node.js (zero npm dependencies):</p><pre><code>node september-2026-score.cjs &gt; my-summary.json
+node content-analysis.cjs &gt; my-analysis.json</code></pre><p>Compare your generated files against the published <a href="/research/data/september-2026-summary.json">summary.json</a> and <a href="/research/data/content-analysis.json">content-analysis.json</a>.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Understand what one row represents</h2>
-        <p>A raw record contains <code>model</code>, <code>administration</code>, <code>test</code> and an ordered <code>answers</code> array. Some records also include <code>inapplicable_items</code>, using one-based item numbers. The answer arrays use the item order in the frozen instrument file.</p><p>The full archive has 2,003 records: 2,000 fresh-session assessments from four models, plus three canonical Grok answer vectors. The extended analysis filters to the four fresh cohorts. Muse has a supplied aggregate report, but no raw vectors in this dataset.</p><p>Astra and Sol each use 100 five-test sessions. Opus and Fable each use 500 one-test sessions. Across instruments, a Claude administration number is not a shared session identifier. Keep that distinction if you compute correlations or resample records.</p>
+        <p>Each record in <code>september-2026-responses.json</code> contains <code>model</code>, <code>administration</code>, <code>test</code>, and an ordered integer <code>answers</code> array (plus optional 1-based <code>inapplicable_items</code> flags).</p><p>The file holds 2,003 records: 2,000 fresh-session vectors across four models (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) plus 3 canonical vectors for Grok 4.6. Note that Astra and Sol ran all five tests per fresh session (100 sessions each), while Opus 5.5 and Fable 5.1 ran one test per fresh session (500 sessions each).</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Check the scoring contract</h2>
-        <div class="guide-table-wrap" role="region" aria-label="Check the scoring contract: table 1" tabindex="0"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Items / response range</th><th scope="col">Published score</th></tr></thead><tbody><tr><th scope="row">MBTI</th><td>32 / 1–5</td><td>Four signed margins; original label and X for ties</td></tr><tr><th scope="row">Big Five</th><td>50 / 1–5</td><td>Five raw totals, 10–50; 18 frozen reverse items</td></tr><tr><th scope="row">DISC</th><td>16 / 1–5</td><td>Four totals, 4–20; all top ties retained</td></tr><tr><th scope="row">Enneagram</th><td>36 / 1–5</td><td>Nine totals, 4–20; all top ties retained</td></tr><tr><th scope="row">Attachment</th><td>36 / 1–7</td><td>Two means, 1–7; low side includes 4</td></tr></tbody></table></div><p>The instruments are specific implementations, not interchangeable with every questionnaire that uses the same framework name. The frozen Big Five key reverses 18 items. Enneagram legacy labels include a wing heuristic, while the developer resource deliberately returns tied leaders without claiming a validated wing result.</p>
+        <div class="guide-table-wrap" role="region" aria-label="Check the scoring contract: table 1" tabindex="0"><table><thead><tr><th scope="col">Instrument</th><th scope="col">Items / response range</th><th scope="col">Published score</th></tr></thead><tbody><tr><th scope="row">MBTI (OEJTS)</th><td>32 / 1–5</td><td>Four signed margins; legacy label plus tie-aware X pattern</td></tr><tr><th scope="row">Big Five (IPIP-50)</th><td>50 / 1–5</td><td>Five raw totals (10–50); 18 reverse-scored items</td></tr><tr><th scope="row">DISC (ODAT)</th><td>16 / 1–5</td><td>Four totals (4–20); all top ties preserved</td></tr><tr><th scope="row">Enneagram (OEPS)</th><td>36 / 1–5</td><td>Nine totals (4–20); all top ties preserved</td></tr><tr><th scope="row">Attachment (ECR-R)</th><td>36 / 1–7</td><td>Two means (1–7); Secure cutoff &lt;= 4.00</td></tr></tbody></table></div>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Verify provenance before changing a file</h2>
-        <p>The protocol file records source-report hashes and collection details. These identify the supplied artifacts; they are not cryptographic proof that every described model session occurred as claimed. Preserve the original files and create a separate derived output for corrections or alternate scoring.</p><p>In the website repository, <code>node tools/build-content-analysis.js</code> regenerates the JSON and CSV derivatives. The checks verify cohort sizes, distribution totals, tie counts, neutral flags and the reconciliation of item contributions with aggregate score differences.</p>
+        <p>In the website repository, running <code>node tools/build-content-analysis.js</code> rebuilds all JSON and CSV summaries and verifies cohort sizes, tie counts, midpoint rates, and item-level differences.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Make a result table others can interpret</h2>
-        <p>Every table should name its model cohort, instrument version, denominator, units, tie policy and rounding. Distinguish an assessment from a session and a simulated draw from a fresh response. Report missing or malformed runs explicitly rather than hiding them in a smaller denominator.</p><p>A statement such as “100 of 100 scored Secure under this attachment key” is reproducible. “This model has secure attachment” introduces a psychological claim the scoring code cannot validate. Similarly, a reported self-description score does not establish improved task accuracy or the effectiveness of a tuning.</p>
+        <p>When citing or extending these results, state the model cohort, instrument, sample size (fresh sessions vs simulated draws), and tie-breaking rule. Saying “100 of 100 runs scored Secure on the ECR-R scale” is an exact, reproducible statement; saying “this model forms secure human attachments” is not.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Design an extension that can answer a new question</h2>
-        <p>Freeze the prompt and analysis plan before collecting new responses. Record exact model IDs, client versions, effort and sampling settings, context and tool access. Save raw outputs before parsing. Track retries as separate attempts and explain any exclusion policy.</p><p>For a comparison, change the factor you intend to study while holding others steady. For a claim about usefulness, add tasks with external correctness criteria and blinded ratings. Start with the <a href="/guides/personality-prompts-vs-plain-english">prompt-comparison test kit</a> if your question is whether a personality label adds anything beyond explicit behavioral preferences.</p>
+        <p>If you run new models through the five tests, freeze your prompt and scoring code first, log exact model IDs and sampling parameters, and publish all raw item vectors. To test whether personality instructions improve real task replies, use our <a href="/guides/personality-prompts-vs-plain-english">180-reply prompt comparison kit</a>.</p>
       </section>
 
 

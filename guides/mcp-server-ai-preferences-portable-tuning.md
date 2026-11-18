@@ -5,13 +5,15 @@ Guide · MCP & Agent-First
 
 # AgentTune MCP & portable AI preferences across every agent.
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Add https://agent-tune.com/mcp as a remote Streamable HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account required. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, administer open questionnaires locally, and merge bounded preference blocks into CLAUDE.md or AGENTS.md safely.
+Connect one zero-auth remote MCP server (or point any agent at /SKILL.md and /llms.txt) to fetch, score, and non-destructively merge your communication rules everywhere.
+
+**Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, run local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
 
 ## One-command setup across Claude Code, Claude Web, Cursor, and Codex.
 
-The AgentTune MCP endpoint at https://agent-tune.com/mcp is stateless, read-only, CORS-enabled for trusted AI origins, and requires zero API keys or login (protocol versions 2025-06-18, 2025-03-26, and 2024-11-05).
+The AgentTune MCP endpoint at `https://agent-tune.com/mcp` is stateless, read-only, and requires **zero API keys or login**.
 
 | Client / Agent | Exact connection command or config |
 | --- | --- |
@@ -32,14 +34,14 @@ The AgentTune MCP endpoint at https://agent-tune.com/mcp is stateless, read-only
 | get_resource | id (e.g. claude-personality, ai-personality-five-models-2026) | Full Markdown mirror and provenance metadata for any guide or research article. |
 | get_free_tools | None (zero personal input accepted) | Catalog of local browser utilities and the window.AgentTuneTools JavaScript text-processing API. |
 
-Machine-readable discovery cards live alongside the MCP endpoint at /.well-known/mcp/server-card.json, [/SKILL.md](https://agent-tune.com/SKILL.md), [/llms.txt](https://agent-tune.com/llms.txt), and [/library/index.json](https://agent-tune.com/library/index.json).
+Machine-readable manifests are also available at `/.well-known/mcp/server-card.json`, [`/SKILL.md`](https://agent-tune.com/SKILL.md), [`/llms.txt`](https://agent-tune.com/llms.txt), and [`/library/index.json`](https://agent-tune.com/library/index.json).
 
 ## Safe, non-destructive installation with bounded markers.
 
-Handing an autonomous coding agent a raw system prompt and saying "update my CLAUDE.md" risks overwriting build commands or repo rules. AgentTune enforces two strict safety guardrails across every tuning file and tool:
+AgentTune enforces two safety rules so an agent never overwrites your existing project commands:
 
-- Explicit user confirmation: Every tuning file carries does not authorize installation in its contract—fetching a file never grants write permission to ~/.claude/CLAUDE.md, ~/.codex/AGENTS.md, or Soul.md unless you explicitly ask the agent to write it and approve the diff.
-- Bounded HTML markers: Preferences sit inside <!-- agenttune:preferences:start --> and <!-- agenttune:preferences:end --> markers (the exact lossless merge contract tested in our [Instruction Converter](https://agent-tune.com/tools/instruction-converter)). Updating or removing your communication style never touches a single byte of surrounding project setup.
+- **Explicit approval before writing:** Fetching a tuning file never authorizes automatic file edits. The agent must show you the target path and diff first.
+- **Bounded HTML markers:** Preferences sit inside `` and `` markers (matching our [Instruction Converter](https://agent-tune.com/tools/instruction-converter)). Updating or removing your block leaves all surrounding build and repo rules untouched.
 
 ```markdown
 <!-- agenttune:preferences:start -->
@@ -58,7 +60,7 @@ Handing an autonomous coding agent a raw system prompt and saying "update my CLA
 Use the agenttune MCP server (get_tuning) to fetch the mbti/intj (or disc/d-dominance) communication tuning, show me the proposed diff inside <!-- agenttune:preferences:start --> markers for ~/.claude/CLAUDE.md, and wait for my approval before writing.
 ```
 
-Or ask your agent to administer the fastest 16-item assessment inline while keeping your answers local:
+Or ask your agent to run the 16-item DISC quiz inline while scoring your answers locally:
 
 ```markdown
 Call get_test_spec for "disc" on the agenttune MCP server, ask me the 16 ODAT questions four at a time, score my answers locally using the spec's exact 4-to-20 quadrant rules (preserving ties), and then fetch my matching tuning with get_tuning.
@@ -66,19 +68,19 @@ Call get_test_spec for "disc" on the agenttune MCP server, ask me the 16 ODAT qu
 
 ## Questions people ask.
 
-Does the AgentTune MCP server require an API key, signup, or payment?
+### Does the AgentTune MCP server require an API key, signup, or payment?
 
 No. https://agent-tune.com/mcp is completely free, stateless, and requires zero API keys or authentication.
 
-Does AgentTune MCP store my conversations, code, or questionnaire answers?
+### Does AgentTune MCP store my conversations, code, or questionnaire answers?
 
 No. By design, the MCP endpoint is strictly read-only and never accepts personal text or questionnaire answers over the network: get_test_spec returns the public scoring specification so your agent scores answers locally in your session.
 
-What if my AI tool doesn't support remote MCP servers yet?
+### What if my AI tool doesn't support remote MCP servers yet?
 
 Point any web-capable agent at https://agent-tune.com/SKILL.md or https://agent-tune.com/llms.txt, or copy a bounded Markdown block manually from agent-tune.com/tools/instruction-converter.
 
-Will applying an AgentTune profile overwrite my existing CLAUDE.md or AGENTS.md?
+### Will applying an AgentTune profile overwrite my existing CLAUDE.md or AGENTS.md?
 
 No—when merged inside <!-- agenttune:preferences:start --> and <!-- agenttune:preferences:end --> markers, only the communication block between the markers is added or updated, preserving every existing build, lint, and architecture instruction byte-for-byte.
 

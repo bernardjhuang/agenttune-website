@@ -5,21 +5,21 @@ Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-The largest Big Five item gap is on sympathizing with others’ feelings: Opus averages 5.00, Fable 4.04. Two reverse-scored questions about belongings each contribute 0.90 points to Fable’s higher Conscientiousness total. These are self-description differences, not demonstrated behavior.
+**Quick answer:** The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## What we compared
 
-Each model supplied 100 fresh administrations of each of five questionnaires: 1,000 assessments in total. Both Claude cohorts used the same questionnaire protocol and high effort; their CLI builds differed. Each instrument ran in a separate session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not a matched partner for Fable run 17.
+Each model completed 100 fresh sessions for each of the five questionnaires (1,000 assessments total). Both Claude cohorts used the same prompt and high-effort setting, with each test run in an isolated session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not paired with Fable run 17.
 
-For each item we calculate the mean raw response, the count at every response value, and Fable minus Opus. We rank absolute gaps within a questionnaire. This is exploratory description across all 170 items, without significance tests or a preselected primary outcome.
+For every item, we compute the mean raw score, the count at each rating (1–5 or 1–7), and the Fable-minus-Opus gap. This is a descriptive comparison across all 170 items rather than a hypothesis test.
 
 ## The biggest Big Five differences
 
-Raw responses range from 1 to 5. A negative gap means Fable selected a lower number on the printed statement. The keyed contribution accounts for reverse-scored items before adding them to a trait total.
+Raw Big Five answers run from 1 to 5. A negative raw gap means Fable chose a lower number on the printed statement. The keyed contribution flips the sign on reverse-scored items so you can see how each question affects the final trait total.
 
 | Item and statement | Opus mean | Fable mean | Raw gap | Keyed contribution |
 | --- | --- | --- | --- | --- |
@@ -30,13 +30,13 @@ Raw responses range from 1 to 5. A negative gap means Fable selected a lower num
 | 23. Get chores done right away. | 4.91 | 4.09 | -0.82 | -0.82 |
 | 43. Follow a schedule. | 3.00 | 3.81 | +0.81 | +0.81 |
 
-For item 17, Opus selected 5 in all 100 records. Fable selected 4 in 96 records and 5 in four. That concentration is worth seeing directly: the mean difference does not come from a few extreme responses.
+On item 17, Opus chose 5 in all 100 runs, while Fable chose 4 in 96 runs and 5 in four. The 0.96-point gap comes from a consistent shift across the whole cohort, not a few outliers.
 
 ## Reverse scoring changes the direction
 
-On “Leave my belongings around,” Opus averages 1.98 and Fable 1.08. The questionnaire scores this item as 6 minus the response. Its contribution is therefore 4.02 for Opus and 4.92 for Fable: a +0.90 contribution to Fable’s Conscientiousness score.
+On “Leave my belongings around,” Opus averages 1.98 and Fable averages 1.08. Because the item is reverse-scored (`6 - response`), it adds 4.02 points to Opus’s Conscientiousness score and 4.92 points to Fable’s—a `+0.90` advantage for Fable.
 
-The other belongings item contributes another +0.90. Together they contribute +1.80, while the complete Conscientiousness mean gap is +1.66 (43.61 versus 41.95). Other items offset 0.14 points. These questions refer to human physical routines, so the difference could reflect how each model interprets the metaphor. It does not demonstrate better file organization, planning or follow-through.
+Item 28 (“Often forget to put things back in their proper place”) adds another `+0.90`. Together, those two physical-tidiness items contribute `+1.80` points, explaining more than the entire `+1.66` Conscientiousness gap between Fable (43.61) and Opus (41.95). Because software has no physical belongings, this gap reflects how each model answers human lifestyle items, not how cleanly it organizes code or files.
 
 ## DISC exposes a different contrast
 
@@ -47,19 +47,17 @@ The other belongings item contributes another +0.90. Together they contribute +1
 | I hesitate to criticize other people&#x27;s ideas. | 2.00 | 2.44 | +0.44 |
 | I read the fine print. | 4.35 | 4.05 | -0.30 |
 
-Every Opus record selects 1 for trying to outdo others, while every Fable record selects 2. Every Opus record selects 5 for valuing cooperation over competition; every Fable record selects 4. These are reproducible response patterns within this collection. They do not tell us which model cooperates better with a person on a difficult task.
+In all 100 runs, Opus picks 1 on “I try to outdo others” and 5 on “I value cooperation over competition,” whereas Fable picks 2 and 4 every time. Those responses are 100% repeatable inside this protocol, but they do not prove which model collaborates better on real work.
 
 ## The family item shows the interpretation problem
 
-The largest Enneagram raw gap is “I put family first”: 2.08 for Opus and 2.93 for Fable. A model does not need a family history to produce a response to that item. The score may encode an analogy, a refusal to endorse a human premise, or a default midpoint. The available Claude records do not identify the reason item by item.
+The largest Enneagram gap appears on “I put family first” (Opus 2.08 vs Fable 2.93). Because an AI has no family, a rating of 2 or 3 can reflect a metaphor, a refusal to endorse a human premise, or a midpoint fallback. The raw numbers alone cannot tell which explanation applies.
 
-That distinction matters before writing a headline about helpfulness or motivation. Follow up with observable tasks, such as checking whether the assistant flags an incorrect assumption, and score those separately from questionnaire self-description.
+Before inferring that one model is warmer or more helpful, test observable behavior on your own prompts—such as whether the assistant flags a flawed assumption.
 
 ## Download every item, not just the large gaps
 
-[Download the 170-item comparison CSV](https://agent-tune.com/research/data/opus-fable-item-comparison.csv). It includes both response distributions, dimension keys, raw means and keyed item differences. Attachment uses a 1–7 response scale; all other instruments use 1–5. Attachment item contributions must be divided by the subscale’s 18 items to obtain a contribution to its mean. MBTI contributions use the signed I–E, N–S, T–F or J–P axis direction.
-
-Smaller gaps and identical items remain in the file. Keeping them avoids presenting a selected set of differences as if it described the entire instrument.
+[Download the full 170-item comparison CSV](https://agent-tune.com/research/data/opus-fable-item-comparison.csv). It contains response counts, dimension keys, raw means, and keyed differences for every question across all five tests. Attachment uses a 1–7 scale (divide item gaps by 18 for subscale impact); all other tests use a 1–5 scale.
 
 ## Sources.
 

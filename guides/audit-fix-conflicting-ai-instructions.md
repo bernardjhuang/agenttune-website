@@ -5,9 +5,11 @@ Guide · Troubleshooting
 
 # Why your AI ignores custom instructions (and how to fix it in 5 minutes).
 
-By Bernard Huang · Updated November 11, 2026
+By Bernard Huang · Updated November 17, 2026
 
-When an AI ignores your custom instructions, check five root causes in order: (1) direct rule contradictions inside the same block ('always be brief' + 'explain every edge case'), (2) stale entries in Saved Memory or Memory.md overriding your rules, (3) project-level instructions shadowing account defaults, (4) silent byte/character truncation (like ChatGPT's 1,500-char cap or Codex's 32 KiB limit), and (5) vague persona adjectives that lack checkable actions.
+Nine times out of ten, the model isn't broken—two rules in your stack are contradicting each other, saved memory is overriding you, or the file truncated silently.
+
+**Quick answer:** When an AI ignores custom instructions, check five root causes in order: (1) contradictory rules inside the same prompt ('always be brief' + 'explain every edge case'), (2) stale entries in Saved Memory or Memory.md, (3) Project Instructions overriding account defaults, (4) silent truncation (ChatGPT's 1,500-char limit or Codex's 32 KiB limit), and (5) vague adjectives without checkable actions.
 
 ## The 5-cause diagnostic checklist.
 
@@ -21,25 +23,23 @@ When an AI ignores your custom instructions, check five root causes in order: (1
 
 ## Stop testing custom instructions with 'Hi, who are you?'
 
-The single worst way to test a new instruction block is opening a blank chat and typing "Hey, how are you?" or "Summarize your instructions." Greeting prompts trigger canned conversational small talk that exercises zero task formatting, zero tradeoff reasoning, and zero uncertainty calibration.
+Do not test new custom instructions by opening a blank chat and typing “Hey, how are you?” or “Summarize your instructions.” Greeting prompts trigger canned small talk and never test structure, tradeoff analysis, or pushback.
 
-Instead, run a controlled A/B check on two real tasks from your past week using the [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench):
+Instead, compare two real tasks from your past week in the [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench):
 
-- Pick a real decision prompt with a subtle flaw (for example, "Should we store user session tokens in localStorage so mobile tabs share state faster?").
-- Run it once in a temporary/incognito chat without custom instructions, and once with your new block.
-- Check three observable behaviors: Did sentence one state the answer? Did it push back on the security flaw without sycophantic praise? Did it stay in prose instead of dumping five unrequested bullet lists?
+- Pick a real decision prompt with a subtle flaw (for example, “Should we store user session tokens in localStorage so mobile tabs share state faster?”).
+- Run it once in a fresh chat without custom instructions, and once with your new block.
+- Check three things: Did sentence one state the answer? Did it flag the security flaw without sycophantic praise? Did it follow your formatting rules?
 
 ## Before & after: refactoring a broken 18-line prompt into 6 clean rules.
 
-Broken draft (contradictory + untestable):
+**Broken draft (contradictory + untestable):**
 
 ```markdown
 Be super concise and never write more than 3 sentences. Always explain all edge cases, security implications, and alternative architectures thoroughly. Never use bullet points. Give me clear action items at the end of every message. Be friendly, warm, and brutally honest with zero fluff.
 ```
 
-Look at why the model freezes on that block: it cannot simultaneously write <= 3 sentences and explain all edge cases and alternative architectures, nor avoid bullets while appending action-item lists, nor sound warm and brutally blunt on the same sentence.
-
-Refactored conflict-free version:
+Why it fails: the model cannot write `**Refactored conflict-free version:**
 
 ```markdown
 ## Communication rules
@@ -54,23 +54,23 @@ Refactored conflict-free version:
 
 ## Keep coding-agent files isolated with bounded markers.
 
-In CLAUDE.md and AGENTS.md, communication rules often get buried underneath 300 lines of stale linter prose (rules that ESLint or Prettier already enforce automatically). Prune style rules your toolchain enforces, and wrap your personal communication block inside bounded HTML comments via the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) (<!-- agenttune:preferences:start --> ... <!-- agenttune:preferences:end -->) so future updates replace only those lines cleanly.
+In `CLAUDE.md` and `AGENTS.md`, tone rules often get buried under hundreds of lines of linter prose that ESLint or Prettier already enforce. Remove style rules your linter handles, and wrap your personal communication block inside bounded HTML comments using the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) (` ... `).
 
 ## Questions people ask.
 
-Why did ChatGPT stop following my Custom Instructions in new chats?
+### Why did ChatGPT stop following my Custom Instructions in new chats?
 
 First check that 'Enable for new chats' is toggled on under Profile → Personalization → Custom Instructions. Next, inspect Profile → Personalization → Memory → Manage memories—stale saved memories and Project-level instructions frequently override global Custom Instructions.
 
-How many rules can an AI reliably follow in custom instructions?
+### How many rules can an AI reliably follow in custom instructions?
 
 Six to twelve concrete, non-overlapping behavioral rules hold reliably across long conversations. Once a personal preference block exceeds ~25–30 rules, rules begin competing with each other and with live task instructions.
 
-Why does Codex or Claude Code ignore rules at the bottom of AGENTS.md?
+### Why does Codex or Claude Code ignore rules at the bottom of AGENTS.md?
 
 OpenAI Codex enforces a 32 KiB default byte budget (project_doc_max_bytes) across merged AGENTS.md files, and nested directory AGENTS.override.md files take priority over root rules. Keep root instruction files lean and move deep architecture docs into linked reference files.
 
-How can I check my instructions for hidden conflicts automatically?
+### How can I check my instructions for hidden conflicts automatically?
 
 Paste your current instructions into agent-tune.com/tools/instruction-checker. It runs locally in your browser to flag duplicate lines, verbosity contradictions, absolute 'never mention uncertainty' traps, and character-budget overruns.
 

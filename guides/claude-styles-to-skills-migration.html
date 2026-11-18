@@ -10,7 +10,7 @@
   <meta property="og:description" content="Anthropic's Claude Styles are being retired and replaced by Skills, Personal Preferences, and Claude Code output styles. Step-by-step migration guide." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-05" />
-  <meta property="article:modified_time" content="2026-11-05" />
+  <meta property="article:modified_time" content="2026-11-17" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-styles-to-skills-migration" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -27,7 +27,7 @@
   <link rel="canonical" href="https://agent-tune.com/guides/claude-styles-to-skills-migration" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Styles are moving to Skills: how to migrate","description":"Anthropic's Claude Styles are being retired and replaced by Skills, Personal Preferences, and Claude Code output styles. Step-by-step migration guide.","url":"https://agent-tune.com/guides/claude-styles-to-skills-migration","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Claude Styles are moving to Skills: how to migrate","description":"Anthropic's Claude Styles are being retired and replaced by Skills, Personal Preferences, and Claude Code output styles. Step-by-step migration guide.","url":"https://agent-tune.com/guides/claude-styles-to-skills-migration","datePublished":"2026-11-05","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Claude Styles are moving to Skills: how to migrate"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why did Anthropic retire the old Styles menu in Claude?","acceptedAnswer":{"@type":"Answer","text":"Claude Styles are being retired and replaced by Personal Preferences (for account-wide tone defaults) and Skills (for repeatable task workflows and writing formats), so users do not have to toggle a preset on and off between conversations."}},{"@type":"Question","name":"How do I replace the old Concise preset in Claude?","acceptedAnswer":{"@type":"Answer","text":"Open Settings, then General, and add a two-line rule in Personal Preferences: 'Lead with the direct answer in the first sentence. Keep routine replies under 150 words in plain prose without filler intros or closing offers.'"}},{"@type":"Question","name":"Should I put my writing voice in a Claude Skill or Personal Preferences?","acceptedAnswer":{"@type":"Answer","text":"If you want Claude to talk to you that way in every conversation, put it in Personal Preferences. If it is a writing format for specific documents—like newsletters, memos, or support emails—put it in a Skill or a dedicated Project."}},{"@type":"Question","name":"Are output styles in Claude Code also changing?","acceptedAnswer":{"@type":"Answer","text":"No. While web Claude Styles are being migrated to Skills and Personal Preferences, Claude Code in the terminal continues to support ~/.claude/output-styles/*.md selected with the /output-style command."}}]}</script>
 
@@ -69,8 +69,9 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Migration</span>
         <h1 class="h-hero h-research-hero">Claude Styles are moving to Skills: how to migrate.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-05">November 5, 2026</time></p>
-        <p class="lede" style="margin-top: 18px;">Claude Styles are being retired and replaced by three clearer tools: put always-on tone and brevity rules in Settings, General, Personal Preferences; put task-specific writing formats (like memos, changelogs, or newsletters) in Claude Skills or Project instructions; and in Claude Code, use ~/.claude/output-styles/ with the /output-style command.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">Anthropic is retiring the per-chat Styles picker in Claude. Here is where your old writing presets and custom voices belong now.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Move always-on tone and brevity rules into Settings → Profile (or General) → Personal Preferences; move task-specific writing templates (memos, changelogs, or newsletters) into Claude Skills or Project Instructions; and in Claude Code, use ~/.claude/output-styles/ with /output-style.</div>
       </section>
 
 
@@ -79,25 +80,25 @@
 
       <section>
         <h2>Why the old picker was split into Preferences and Skills.</h2>
-        <p>When Claude Styles (now being retired and replaced) launched, people used the same dropdown for two very different jobs: permanent preferences like <em>"never use filler intros"</em> and task-specific templates like <em>"write in our weekly release-note format."</em> Mixing those in one per-chat menu meant you either forgot to switch the preset off or had to re-select your preferred brevity in every new thread.</p><div class="guide-table-wrap" role="region" aria-label="Why the old picker was split into Preferences and Skills.: table 1" tabindex="0"><table><thead><tr><th scope="col">What you kept in the old preset</th><th scope="col">Where to migrate it now</th><th scope="col">Why it works better</th></tr></thead><tbody><tr><th scope="row">Everyday tone, brevity, directness, and pushback</th><td><strong>Settings → General → Personal Preferences</strong></td><td>Applies automatically in every chat without picking a preset from a dropdown.</td></tr><tr><th scope="row">Repeatable document formats, rubrics, or brand voice rules</th><td><strong>Claude Skills</strong> (<code>SKILL.md</code>)</td><td>Loads only when the task calls for that specific format, keeping ordinary chats clean.</td></tr><tr><th scope="row">Client-specific or codebase-specific instructions</th><td><strong>Claude Project Instructions</strong></td><td>Scoped to one workspace and shared with project files.</td></tr><tr><th scope="row">Terminal CLI communication style</th><td><strong>Claude Code</strong> <code>~/.claude/output-styles/</code></td><td>Keeps coding instructions intact via <code>keep-coding-instructions: true</code>.</td></tr></tbody></table></div>
+        <p>People used the old Styles dropdown for two very different jobs: permanent habits like <em>“never use filler intros”</em> and task-specific templates like <em>“write in our weekly release-note format.”</em> Splitting the two means you no longer have to toggle a preset on and off between threads:</p><div class="guide-table-wrap" role="region" aria-label="Why the old picker was split into Preferences and Skills.: table 1" tabindex="0"><table><thead><tr><th scope="col">What you kept in the old preset</th><th scope="col">Where to migrate it now</th><th scope="col">Why it works better</th></tr></thead><tbody><tr><th scope="row">Everyday tone, brevity, directness, and pushback</th><td><strong>Settings → Profile / General → Personal Preferences</strong></td><td>Applies automatically in every chat without picking from a dropdown.</td></tr><tr><th scope="row">Repeatable document formats, rubrics, or brand voice rules</th><td><strong>Claude Skills</strong> (<code>SKILL.md</code>)</td><td>Loads only when the task calls for that specific format, keeping ordinary chats clean.</td></tr><tr><th scope="row">Client-specific or codebase-specific instructions</th><td><strong>Claude Project Instructions</strong></td><td>Scoped to one workspace and shared with project files.</td></tr><tr><th scope="row">Terminal CLI communication style</th><td><strong>Claude Code</strong> <code>~/.claude/output-styles/</code></td><td>Keeps coding instructions intact via <code>keep-coding-instructions: true</code>.</td></tr></tbody></table></div>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Step 1: Move always-on tone rules to Personal Preferences.</h2>
-        <p>If you used the old Concise or Formal preset—or a custom Claude Style that is being retired—simply to stop Claude from over-explaining, copy those rules into <strong>Settings → General → Personal Preferences</strong>. They will apply across Opus 5.5 and Fable 5.1 by default.</p><div class="guide-snippet" data-tuning-prompt>## How to communicate with me
+        <p>If you used the old Concise or Formal style just to stop Claude from over-explaining, paste those rules once into <strong>Settings → Profile → Personal Preferences</strong>:</p><div class="guide-snippet" data-tuning-prompt>## How to communicate with me
 
 - Lead with the direct answer or conclusion in the first sentence.
 - Match response length to the complexity of the question; keep routine replies under 150 words.
 - Default to clear prose paragraphs. Use bullet lists or tables only when they make comparisons easier to scan.
 - Skip conversational padding, flattery, and generic closing offers.
-- Challenge flawed assumptions in my prompt before executing the request.</div><p>For 15 ready-made blocks tailored to engineering, research, editing, and strategy, see <a href="/guides/claude-personal-preferences-examples">Claude Personal Preferences: 15 examples</a>.</p>
+- Challenge flawed assumptions in my prompt before executing the request.</div><p>For 15 role-specific blocks, see <a href="/guides/claude-personal-preferences-examples">Claude Personal Preferences: 15 examples</a>.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>Step 2: Turn task-specific writing voices into a Skill.</h2>
-        <p>When a Claude Style is being migrated because it describes a specific deliverable—such as an executive memo, a customer support reply, or a technical RFC—package it as a Skill instead of putting it in global Personal Preferences. That way Claude does not format your Python debugging answers like a boardroom memo.</p><p>A clean writing-voice Skill has three parts:</p><ol><li><strong>When to trigger:</strong> One sentence naming the exact tasks where Claude should apply the voice (for example, <em>"Use when drafting external customer updates or release notes"</em>).</li><li><strong>Structure and constraints:</strong> Explicit rules on heading order, sentence length, and forbidden phrases.</li><li><strong>One short calibration example:</strong> A three-to-five-sentence before-and-after sample showing the target cadence.</li></ol><div class="guide-snippet">---
+        <p>If your old Style described a specific deliverable—like an executive memo, customer support reply, or technical RFC—turn it into a <strong>Skill</strong> so Claude doesn’t format your Python debugging answers like a boardroom memo.</p><p>Include three short parts in your Skill:</p><ol><li><strong>When to trigger:</strong> One sentence naming the exact tasks where Claude should use the Skill.</li><li><strong>Structure and rules:</strong> Heading order, paragraph length, and banned phrases.</li><li><strong>One short example:</strong> A 3–5 sentence sample showing the target style.</li></ol><div class="guide-snippet">---
 name: technical-memo-voice
 description: Use when drafting architecture memos, postmortems, or engineering proposals.
 ---
@@ -113,7 +114,7 @@ description: Use when drafting architecture memos, postmortems, or engineering p
 
       <section>
         <h2>Step 3: Use /output-style in Claude Code.</h2>
-        <p>Note that while web Claude Styles are being retired in favor of Personal Preferences and Skills, <strong>Claude Code</strong> in the terminal has its own dedicated <code>/output-style</code> command backed by Markdown files in <code>~/.claude/output-styles/</code>. In Claude Code, always keep <code>keep-coding-instructions: true</code> in the YAML frontmatter so your communication tuning does not strip Claude Code's built-in software engineering rules. Full details are in the <a href="/guides/claude-code-personality">Claude Code personality guide</a>.</p>
+        <p>While web Claude Styles are moving to Personal Preferences and Skills, <strong>Claude Code</strong> in the terminal keeps its own <code>/output-style</code> command backed by Markdown files in <code>~/.claude/output-styles/</code>. Always include <code>keep-coding-instructions: true</code> in the YAML frontmatter (<a href="/guides/claude-code-personality">see the Claude Code personality guide</a>).</p>
       </section>
 
       <div class="divider tight"></div>

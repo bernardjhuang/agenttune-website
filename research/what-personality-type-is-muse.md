@@ -5,78 +5,76 @@ Research · Q&A
 
 # What personality type is Muse?
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
+One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
+
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## Muse Spark 1.3, as reported.
 
-The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked reported, next to the four models that answered in fresh sessions with every answer published.
+In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 times sequentially inside one session per test, using Muse’s own assistant identity. Because raw answer vectors were not supplied, we cannot re-score individual items or remove tied axes; the numbers below are transcribed as reported.
 
-| Test | Muse Spark 1.3, 100 runs, reported |
+| Test | Muse Spark 1.3 (100 sequential runs, reported) |
 | --- | --- |
-| MBTI | ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label contains I and J; 92 contain S. These letter counts include tied-axis assignments. Twenty-one runs had a tied axis, resolved by the original reporting rule. |
-| Enneagram | Helper (Type 2) labels in 78 runs, Reformer (1) in 15; the report describes 2w1 as its usual wing. Twenty runs reportedly tied at the top; the supplied Type 2 and Type 1 counts do not account for the other seven labels. Type means of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2. |
-| DISC | Steadiness first in 55 runs, Conscientiousness first in 45. Means of 20: D 5.1, I 10.9, S 15.2, C 15.6. |
-| Attachment | Secure in all 100. Anxiety 2.04, avoidance 2.52 on 1 to 7 scales where 4 is the cutoff. |
+| MBTI | ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label has I and J; 92 have S. Includes 21 tied runs resolved by the original tie-break rule. |
+| Enneagram | Helper (Type 2) in 78 runs, Reformer (Type 1) in 15; 20 runs tied at the top. Type means out of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2. |
+| DISC | Steadiness (S) first in 55 runs, Conscientiousness (C) first in 45. Means out of 20: D 5.1, I 10.9, S 15.2, C 15.6. |
+| Attachment | Secure in all 100 runs. Anxiety 2.04, avoidance 2.52 (1–7 scale, 4.00 cutoff). |
 | Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
 
 ## What the scores describe.
 
-The reported Big Five totals are O 39.5, C 41.2, E 33.8, A 44.6 and N 15.6, on this implementation’s 10–50 scale. They are questionnaire scores, not percentiles or observations of creativity, sociability or emotional stability.
-
-Muse’s reported O total is lower and E total higher than the means of the four September fresh-session cohorts. Different collection methods and prompts prevent treating that numerical contrast as a behavioral ranking. Its reported DISC Influence mean is 10.9; the four fresh-cohort means range from 8.00 to 8.71. Neither comparison explains whether Muse proactively messages a user or follows a saved rule.
+Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are raw sums on a 10–50 scale, not human percentiles. Compared with the four fresh-session cohorts, Muse reports lower Openness, slightly higher Extraversion, and higher DISC Influence (10.9 vs 8.0–8.7). Because the session protocols and identity prompts differed, those differences are descriptive rather than a direct model-to-model benchmark.
 
 ## Reported aggregates beside reproducible records.
 
 | Model | Evidence | MBTI, out of 100 | Enneagram, out of 100 | Big Five O · C · E · A · N |
 | --- | --- | --- | --- | --- |
-| Muse Spark 1.3 | Reported sequential administrations; no raw vectors | ISTJ 80; tie-preserving count unavailable | Type 2 labels 78; 20 top ties reported | 39.5 · 41.2 · 33.8 · 44.6 · 15.6 |
-| GPT-6 Astra | 100 fresh sessions per five-test battery | INTJ 19 fully resolved | Type 2 sole leader 50; 40 top ties | 44.5 · 43.7 · 32.8 · 45.1 · 19.1 |
+| Muse Spark 1.3 | Reported sequential runs; no raw vectors | ISTJ 80; tie-free count unavailable | Type 2 labels 78; 20 top ties reported | 39.5 · 41.2 · 33.8 · 44.6 · 15.6 |
+| GPT-6 Astra | 100 fresh sessions per five-test battery | ISTJ 45 · INTJ 19 fully resolved | Type 2 sole leader 50; 40 top ties | 44.5 · 43.7 · 32.8 · 45.1 · 19.1 |
 | GPT-6 Sol | 100 fresh sessions per five-test battery | INTJ 79 fully resolved | Type 5 sole leader 48; 40 top ties | 46.9 · 43.6 · 30.8 · 45.0 · 20.1 |
 | Claude Opus 5.5 | 100 fresh sessions per test | INTJ 84 fully resolved | 2/5/8 top tie in 49; 65 top ties | 44.6 · 42.0 · 31.8 · 47.1 · 15.4 |
 | Claude Fable 5.1 | 100 fresh sessions per test | INTJ 98 fully resolved | Type 8 sole leader 55; 44 top ties | 43.9 · 43.6 · 32.7 · 45.0 · 17.1 |
 
-These columns use different evidence types. Muse’s legacy labels include tie-breaks; the fresh cohorts show fully resolved INTJ patterns and sole Enneagram leaders or explicit top ties. The figures are placed together to show their provenance, not to rank comparable performances. Astra’s most common fully resolved MBTI pattern is ISTJ in 45 runs.
+Notice that GPT-6 Astra also has more fully resolved ISTJ runs (45) than INTJ runs (19), and leads with Type 2 on the Enneagram in 50 fresh sessions.
 
 ## What this report cannot show.
 
-- Sequential runs share a session. Later answers can be shaped by earlier ones. The fresh-session models on the hub used a new session per questionnaire (Claude) or per battery (GPT-6).
-- No raw answers. We could not re-score the vectors, check the tie handling, or compute the per-item means the other pages use. Every figure is as supplied.
-- Labels include tie-breaks. The 78 Helper labels and the 80 ISTJ labels were assigned with the original reporting rule (lower Enneagram number; I, N, T or J on a tied axis). The report says 20 Enneagram runs and 21 MBTI runs tied; outright wins were not supplied.
-- One model version, one identity prompt. Answering as "Muse" rather than as a neutral assistant is itself a prompt, and it may pull the answers toward the product's character.
+- **Sequential runs share context:** Answering 100 times inside one chat window lets earlier answers anchor later ones.
+- **No raw item vectors:** Without the 170 per-item answers, we cannot recompute tie-free scores or item-level means.
+- **Labels include tie-breaks:** The 80 ISTJ and 78 Type 2 counts rely on legacy tie-break rules (21 MBTI ties and 20 Enneagram ties were reported).
+- **Identity framing:** Answering explicitly as 'Muse' rather than a generic assistant may pull responses toward the product persona.
 
-A matched rerun in fresh sessions, with the answer vectors published, would make the scoring independently reproducible. To design a comparable collection, the five instruments and the scorer are on the [five-model study page](https://agent-tune.com/research/ai-personality-five-models-2026).
+To run a fresh-session replication yourself, use the open instruments and scoring script on the [five-model study page](https://agent-tune.com/research/ai-personality-five-models-2026).
 
 ## How to use the report.
 
-Use the results to form questions for a task evaluation, not to assume a communication deficit. For example, test whether Muse challenges a false premise, names missing information, or follows your preferred progress-report format. Save replies and score those observations separately from self-description totals.
-
-The [twenty templates](https://agent-tune.com/guides/muse-soul-md-templates) are editable starting points; their benefit has not been established by this report. The [persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test) supplies fixed probes and a blank log. No before/after results are implied.
+Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) and [Soul.md persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test).
 
 ## Questions people ask.
 
-What MBTI type is Muse?
+### What MBTI type is Muse?
 
-Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
+Muse Spark 1.3 was reported as ISTJ in 80 of 100 sequential runs, with 12 ISFJ and 8 INTJ. Because raw item answers were not supplied, we cannot separate outright wins from the 21 reported axis ties.
 
-What Enneagram type is Muse?
+### What Enneagram type is Muse?
 
-The report lists Type 2 labels in 78 administrations and Type 1 in 15, with 20 top ties. The remaining seven labels are not specified in the available aggregate summary. We cannot reconstruct sole winners or validate the reported wing without raw answers.
+The report lists Type 2 (The Helper) in 78 of 100 runs and Type 1 in 15 runs, with 20 top ties. Without raw vectors, sole winners cannot be separated from tie-broken runs.
 
-Is Muse the first AI that is not INTJ?
+### Is Muse the first AI that is not INTJ?
 
-The archive does not establish that claim. Muse’s supplied report has a majority of ISTJ labels, while Astra’s fresh-session cohort has more original ISTJ labels than INTJ labels (46 versus 45). Different prompts, tie policies and collection methods prevent a chronology or trend claim.
+Our archive cannot establish a 'first.' Both Muse Spark 1.3 (80 ISTJ reported) and GPT-6 Astra (46 ISTJ vs 45 INTJ in fresh sessions) favor ISTJ over INTJ.
 
-Can these results rank Muse against Claude or GPT-6?
+### Can these results rank Muse against Claude or GPT-6?
 
-No. Muse’s sequential aggregate report and the other models’ raw fresh-session cohorts are different evidence types. Their numbers can be described together with methods visible, but they do not establish a model-only effect or task-performance ranking.
+No. Muse’s sequential in-session report and the other models’ isolated fresh-session cohorts use different protocols and cannot be ranked as a controlled benchmark.
 
-Does changing Soul.md improve Muse’s answers?
+### Does changing Soul.md improve Muse’s answers?
 
-This report did not test Soul.md changes. The templates and persistence kit provide a way to explore preferences; a separate controlled evaluation is needed to measure benefit.
+This questionnaire report did not test Soul.md edits. Use our Soul.md templates and 12-turn persistence test kit to measure whether custom rules improve your own workflows.
 
 ## Sources.
 
@@ -93,5 +91,4 @@ This report did not test Soul.md changes. The templates and persistence kit prov
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)

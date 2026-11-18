@@ -7,7 +7,9 @@ Guide · DISC Prompts
 
 By Bernard Huang · Updated November 5, 2026
 
-Copy the DISC block that matches your working style—Dominance (bottom-line conclusions and direct trade-offs), Influence (energetic brainstorming and narrative hooks), Steadiness (calm, step-by-step pacing and clear checkpoints), or Conscientiousness (rigorous verification, edge cases, and exact citations)—into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.
+Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C) that work in ChatGPT, Claude, Meta Muse, Codex, and Grok.
+
+**Quick answer:** Copy the DISC block that matches your working style: Dominance (bottom-line conclusions), Influence (fast brainstorming), Steadiness (step-by-step pacing), or Conscientiousness (strict verification and edge cases). Paste it into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.
 
 ## Which DISC tuning solves which AI annoyance?
 
@@ -74,15 +76,15 @@ Use the Conscientiousness block for engineering, quantitative research, and audi
 
 ## Questions people ask.
 
-Which DISC style is best for software engineering and code review?
+### Which DISC style is best for software engineering and code review?
 
 Conscientiousness (C) works best for code review, debugging, and specification auditing because it demands explicit assumptions and edge-case checks. Dominance (D) works best when you want fast, minimal diffs without lengthy explanations.
 
-Can I combine two DISC styles like SC or DI?
+### Can I combine two DISC styles like SC or DI?
 
 Yes. Most people and models score as a two-letter blend when their top two quadrants sit within two points on the ODAT. Combine three bullets from your primary quadrant with two bullets from your runner-up quadrant.
 
-Where do I paste these DISC prompts?
+### Where do I paste these DISC prompts?
 
 Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settings, General), Meta Muse Soul.md, ~/.codex/AGENTS.md, or ~/.claude/output-styles/.
 

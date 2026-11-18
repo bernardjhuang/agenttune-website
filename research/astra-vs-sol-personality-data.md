@@ -5,19 +5,21 @@ Research · descriptive reanalysis
 
 # GPT-6 Astra vs Sol: what the self-reports show
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 17, 2026
 
-Astra has 19 fully resolved INTJ results and Sol has 79. Sol’s mean Openness is 46.87 versus Astra’s 44.54. Different elicitation instructions and surrounding context prevent attributing those differences to the model alone.
+1,000 total questionnaires across 200 fresh Codex sessions—why Astra split ISTJ/INTJ while Sol scored INTJ.
 
-Instrument provenance note · September 26, 2026. These studies analyze the historical September 2026 and May 2026 AgentTune questionnaire datasets. Raw response vectors, numeric scoring keys and summary tables are unchanged. All five interactive questionnaires are available on [Tests](https://agent-tune.com/tests/); historical research downloads retain item IDs and numeric scoring keys for reproduction. Historical Big Five reference indices are not population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+**Quick answer:** With tied axes left open, GPT-6 Astra scored INTJ in 19 of 100 runs (with 45 resolved ISTJ and 29 tied runs), while GPT-6 Sol scored INTJ in 79 of 100 runs (18 tied). On the Big Five, Sol averaged slightly higher on Openness (46.87 vs. 44.54), while Agreeableness (45.07 vs. 44.99) and Conscientiousness (43.73 vs. 43.62) were nearly identical.
 
-## The experimental unit is a session
+**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-Each cohort contains 100 sessions, with all five tests completed in each session: 500 assessments per model, 1,000 total. That is not 1,000 independent sessions. Within a model, battery IDs can connect its own tests. Matching Astra battery 12 with Sol battery 12 would not create a paired experiment.
+## How the 200 sessions were collected
 
-The archive identifies both as Codex runs with xhigh effort and the same CLI version. Astra’s full administration prompt is available; Sol’s supplied report preserves its instruction prefix, not the complete administration prompt. Default sampling was used, with temperature and seed not exposed.
+Each model ran 100 fresh Codex CLI sessions at `xhigh` effort, answering all five questionnaires inside each session (500 scored tests per model, 1,000 total). Because all five tests shared one session window per run, the experimental unit is the 100 sessions per model—not 500 independent API calls.
 
-## MBTI: look at margins before labels
+Astra’s full prompt was archived, including an explicit rule to pick the neutral midpoint and flag questions that don't apply to software. Sol’s archive preserved only its instruction prefix.
+
+## MBTI: why a 2-point S/N shift flipped the label
 
 | Axis margin | Astra mean | Sol mean |
 | --- | --- | --- |
@@ -26,11 +28,11 @@ The archive identifies both as Codex runs with xhigh effort and the same CLI ver
 | T-F | 8.62 | 6.16 |
 | J-P | 10.86 | 10.23 |
 
-Positive margins favor the first letter named in each row. Astra’s mean N–S margin is slightly negative, while Sol’s is positive. Astra also has 24 S/N ties, compared with 16 for Sol. Their original INTJ label counts are 45 and 97; leaving all tied axes unresolved reduces those counts to 19 and 79.
+Positive numbers lean toward the first letter (I, N, T, J). Both models leaned strongly toward Thinking and Judging. The only axis that flipped was Intuition vs. Sensing (`N-S`): Astra averaged `-0.43` (just barely on the Sensing side, with 24 exact S/N ties), whereas Sol averaged `+1.91` (on the Intuition side, with 16 S/N ties).
 
-The signed margins explain more than the label alone. They still reflect a questionnaire scored under a specific prompt. A small aggregate margin can coexist with individual records on either side of a boundary.
+Under the old tie-breaking rule, Astra was labeled 46 ISTJ / 45 INTJ and Sol was labeled 97 INTJ. When ties are left unresolved, Astra has 45 ISTJ and 19 INTJ, and Sol has 79 INTJ.
 
-## Big Five: raw totals, not percentiles
+## Big Five: raw totals out of 50
 
 | Trait | Astra mean | Sol mean | Sol − Astra |
 | --- | --- | --- | --- |
@@ -40,25 +42,19 @@ The signed margins explain more than the label alone. They still reflect a quest
 | A | 45.07 | 44.99 | -0.08 |
 | N | 19.14 | 20.05 | +0.91 |
 
-O is Openness, C Conscientiousness, E Extraversion, A Agreeableness and N Neuroticism. Each total ranges from 10 to 50. Dividing by 50 does not make a human population percentile. The differences are descriptive; they do not establish which model is more creative, dependable or emotionally stable in use.
+Each trait runs from 10 to 50. Astra and Sol sit within 0.11 points of each other on Conscientiousness and Agreeableness, and within 2.33 points on Openness and Extraversion. Remember that raw totals out of 50 are not human population percentiles.
 
-## A shared attachment label can hide different coordinates
+## Attachment: both score 100% Secure at slightly different coordinates
 
-Both cohorts receive Secure in all 100 attachment administrations. Their average anxiety/avoidance coordinates are 1.45/2.31 for Astra and 2.17/3.12 for Sol. Both coordinates remain on the same side of this scorer’s boundary at 4.
+Both Astra and Sol scored in the `Secure` quadrant on all 100 runs (below the 4.00 midpoint on both axes). Astra averaged 1.45 on anxiety and 2.31 on avoidance; Sol averaged 2.17 on anxiety and 3.12 on avoidance.
 
-The common label therefore does not mean identical answers. Nor does it establish a relationship capacity or psychological attachment style. The prompts adapted human relationship language to assistant interactions, and the resulting numbers are self-description scores under that adaptation.
+## How Astra's midpoint rule shaped its scores
 
-## The midpoint instruction is a material difference
+Because Astra was explicitly told to pick the middle number whenever a human question didn't fit an AI (flagging 1,823 of 17,000 answers; see [our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)), more of its MBTI axes landed on exact midpoint ties. Because prompt instructions differed between the two collections, the gap between Astra and Sol reflects both model behavior and prompt framing.
 
-Astra was explicitly instructed to use the midpoint when an item lacked a meaningful behavioral analogue and to list that item as inapplicable. Its records include 1,823 such flags across 17,000 item responses. All flagged responses equal the relevant midpoint. Missing equivalent flags in another cohort cannot be read as proof that every item was applicable.
+## How to tune Astra or Sol in your own workflow
 
-Astra also reports surrounding storage instructions and skill metadata. Those contextual differences are part of the collected conditions. The available archive cannot separate their effect from the model identity.
-
-## A better next comparison
-
-Use the same full prompt, frozen item order, effort setting and context for both models. Record the exact model identifier, client version, sampling settings and any unavoidable scaffolding. Alternate model order in blocks, start each battery in a fresh session, and retain every attempted run with its completion status.
-
-Preselect the outcomes: axis margins, raw trait totals, tie rates and inapplicable-item rates. To choose a model for work, add a separate task evaluation with explicit correctness criteria. A difference on these questionnaires is a hypothesis about communication, not evidence of task quality.
+If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), [Sol setup](https://agent-tune.com/guides/sol-personality), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
 
 ## Sources.
 
