@@ -11,6 +11,13 @@ Two different goals hide inside that sentence. Here is how to set up both across
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## "Give my AI a personality" means two different things.
 
 People use that phrase for two distinct goals:

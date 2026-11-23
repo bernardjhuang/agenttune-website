@@ -11,6 +11,13 @@ Settings → Personalization gives you Base style and tone presets, four charact
 
 **Quick answer:** Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## All three tone layers inside Settings → Personalization.
 
 ChatGPT stacks three account-wide personalization controls alongside workspace-specific Projects and Custom GPTs:

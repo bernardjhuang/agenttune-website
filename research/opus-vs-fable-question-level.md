@@ -9,9 +9,30 @@ By Bernard Huang · Updated November 17, 2026
 
 **Quick answer:** The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## What we compared
+
+undefined
+
+Full Item Audit
+
+undefined
+
+Belongings Gap
+
+undefined
+
+Empathy Gap
+
+undefined
+
+Enneagram Split
 
 Each model completed 100 fresh sessions for each of the five questionnaires (1,000 assessments total). Both Claude cohorts used the same prompt and high-effort setting, with each test run in an isolated session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not paired with Fable run 17.
 
@@ -77,3 +98,5 @@ Before inferring that one model is warmer or more helpful, test observable behav
 
 - [Continue reading: Claude’s aggregate questionnaire results](https://agent-tune.com/research/what-personality-type-is-claude)
 - [Continue reading: Test instruction following on actual tasks](https://agent-tune.com/guides/claude-personality)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

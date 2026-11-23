@@ -11,9 +11,30 @@ A model can get the exact same personality label 100 times in a row while changi
 
 **Quick answer:** All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Three ways to measure repeatability
+
+undefined
+
+Audited Runs
+
+undefined
+
+GPT-6 Sol Vector
+
+undefined
+
+Opus 5.5 DISC
+
+undefined
+
+Astra Margin Flip
 
 - **Identical answer sheets (vector repetition):** Did the model pick the exact same numbers on every single question?
 - **Score stability:** How much did the numeric totals move from run to run?
@@ -70,3 +91,5 @@ Survey repeatability doesn't prove a model will follow your instructions on real
 
 - [Continue reading: A controlled prompt-comparison protocol](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [Continue reading: Where Claude’s answers differ](https://agent-tune.com/research/opus-vs-fable-question-level)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

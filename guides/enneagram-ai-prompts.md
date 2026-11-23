@@ -11,6 +11,13 @@ The one personality system that encodes what you're avoiding — which is exactl
 
 **Quick answer:** An Enneagram AI prompt tells your assistant what your type needs from a conversation; risks named first for Type 6, outcomes first for Type 3, no forced positivity for Type 4. Copy the block for your type into ChatGPT's custom instructions or Claude's project instructions; free full-length versions exist for all nine types.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/enneagram-ai-prompts.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The Enneagram tunes motivation, not surface behavior.
 
 MBTI describes how you process. DISC describes how you work. The Enneagram describes **why**; what you're avoiding, what you're seeking, what your attention snags on before you've noticed. That makes it the odd one out among the [five systems AgentTune covers](https://agent-tune.com/library/), and unusually useful for AI tuning.

@@ -11,9 +11,30 @@ How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.
 
 **Quick answer:** Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Same answers, two scoring rules
+
+undefined
+
+Resolved Drop
+
+undefined
+
+Sonnet 5.5 Ties
+
+undefined
+
+DeepSeek Flash
+
+undefined
+
+GPT-6 Astra
 
 The legacy scorer broke exact ties toward I, N, T, and J. If a model scored 24 on Thinking and 24 on Feeling, the code labeled it T anyway. Our updated scorer marks tied axes with an `X`—for example, `INXJ` means Introversion, Intuition, and Judging won clearly, while Thinking vs. Feeling tied.
 
@@ -75,3 +96,5 @@ Download the raw answers, instrument keys, and reanalysis script into one folder
 
 - [Continue reading: Stable labels and variable answers](https://agent-tune.com/research/ai-personality-repeatability)
 - [Continue reading: The wider INTJ question](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

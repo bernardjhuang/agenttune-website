@@ -11,6 +11,13 @@ Custom GPTs and ChatGPT Projects give you 8,000 characters—more than 5x Custom
 
 **Quick answer:** Custom GPTs accept up to 8,000 characters in Instructions, but prompts between 1,800 and 4,000 characters follow rules more reliably. Split your prompt into six sections—Role, Behavioral Rules, Output Format, Knowledge & Tool Boundaries, Failure Modes, and Instruction Integrity—and offload reference docs to Knowledge files.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Where each budget lives (Custom Instructions vs. Custom GPTs vs. Projects).
 
 | Surface | Instruction limit | Recommended fill | What to offload to Knowledge files |

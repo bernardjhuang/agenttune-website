@@ -11,6 +11,13 @@ Translated into working rules for an AI assistant, adult attachment styles contr
 
 **Quick answer:** In AI agent tuning, the four attachment profiles control autonomy and check-in cadence: Secure balances independent execution with brief checkpoints when scope changes; Avoidant runs end-to-end with minimal chatter and zero hand-holding; Anxious asks for frequent confirmation before editing files; and Fearful-Avoidant (Disorganized) pairs strict risk gates with terse, formal reporting.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/attachment-style-ai-prompts.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## How the four attachment quadrants translate into AI agent rules.
 
 | Attachment quadrant | Library profile | Autonomy vs check-in balance | Best when you want the AI to... |

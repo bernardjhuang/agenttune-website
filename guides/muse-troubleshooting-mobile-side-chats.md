@@ -11,6 +11,13 @@ Three common Meta Muse headaches—finding Assistant Identity on mobile, underst
 
 **Quick answer:** On the Meta Muse iOS and Android apps, tap your Assistant icon (or Profile → Settings → Personalization → Assistant Identity) to edit Soul.md, Identity.md, and Memory.md—changes sync across mobile and muse.ai. Use Side Chats for one-off tasks you do not want saved into Main Chat or Memory.md, never delete Main Chat unless you want a full Reset Muse wipe, and replace rigid 'never' bans in Soul.md with conditional defaults.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Finding Soul.md on iOS, Android, and muse.ai web.
 
 Meta Muse syncs your three Assistant Identity files ([`Soul.md`](https://agent-tune.com/guides/muse-personality), [`Identity.md`](https://agent-tune.com/guides/muse-identity-md-avatar-name), and [`Memory.md`](https://agent-tune.com/guides/muse-memory-md-privacy-reset)) across mobile and `muse.ai`. If you don’t see those three files, confirm you are in the standalone **Meta Muse** app or `muse.ai`—not Meta AI inside Instagram or WhatsApp ([see Meta AI vs Meta Muse](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)):

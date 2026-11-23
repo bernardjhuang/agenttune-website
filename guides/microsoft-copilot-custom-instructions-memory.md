@@ -11,6 +11,13 @@ Where Custom Instructions live in Copilot Chat and Microsoft 365 Copilot, how Me
 
 **Quick answer:** To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Where Copilot personalization lives (Personal, Work & GitHub Copilot).
 
 | Microsoft Copilot product | Where to paste your rules | Scope &amp; key gotcha |

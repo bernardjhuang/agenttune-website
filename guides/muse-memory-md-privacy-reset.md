@@ -11,6 +11,13 @@ Memory.md stores facts about your work and preferences across chats. Here is how
 
 **Quick answer:** Open Settings → Personalization → Assistant Identity (or tap the Assistant icon) and select Memory.md to view, edit, or delete saved facts about you. To clear old context without losing your communication style, reset only Memory.md and leave Soul.md and Identity.md untouched.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## What Muse writes to Memory.md.
 
 In Meta Muse, `Memory.md` is the notebook where Muse records ongoing facts about you. Unlike [Soul.md](https://agent-tune.com/guides/muse-soul-md-templates) (how Muse talks) and [Identity.md](https://agent-tune.com/guides/muse-identity-md-avatar-name) (Muse’s name and avatar), `Memory.md` updates over time as you chat:

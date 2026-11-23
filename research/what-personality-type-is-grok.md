@@ -11,9 +11,30 @@ Grok 4.7 tested in 100 fresh sessions (Nov 2026), compared against September’s
 
 **Quick answer:** Grok 4.7 in November 2026 (n = 100 fresh blind runs) scored INTJ 82 / ISTJ 18 (57 tie-free INTJ), Type 5w6 (78), DISC SC 75 / S 19 / CS 6, Agreeableness 44.92, and 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48). September’s single-report Grok 4.6 stood on the Avoidant cutoff (4.06, or 73/18) with lower reported Agreeableness (33).
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-grok.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Grok 4.7, November 2026 (n = 100 fresh OpenRouter sessions).
+
+undefined
+
+Grok 4.7 (Nov)
+
+undefined
+
+Avoidant Cutoff (4.6)
+
+undefined
+
+Agreeableness Shift
+
+undefined
+
+Consistent Frame
 
 To replace single-submission reliance on Grok 4.6, we administered all 170 blind questionnaire items across 100 fresh `x-ai/grok-4.7` sessions on November 23, 2026 ([download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 
@@ -109,3 +130,5 @@ No. The Grok 4.6 report represents one canonical answer set per test plus 100 si
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

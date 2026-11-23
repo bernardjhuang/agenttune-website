@@ -11,6 +11,13 @@ Four downloadable Claude .md starters plus sixteen role blocks tested against Op
 
 **Quick answer:** Open Claude → Settings → General → Personal preferences and paste one compact block (keep account preferences short and use Projects or SKILL.md files for task-specific workflows). Start with Concise Direct, Skeptical Partner, Senior Engineer, or Executive Editor below.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-personal-preferences-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Top Claude templates & .md downloads.
 
 | Template | Best for | Jump / Download |

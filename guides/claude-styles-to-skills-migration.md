@@ -11,6 +11,13 @@ Anthropic is retiring the per-chat Styles picker in Claude. Here is where your o
 
 **Quick answer:** Move always-on tone and brevity rules into Settings → Profile (or General) → Personal Preferences; move task-specific writing templates (memos, changelogs, or newsletters) into Claude Skills or Project Instructions; and in Claude Code, use ~/.claude/output-styles/ with /output-style.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Why the old picker was split into Preferences and Skills.
 
 People used the old Styles dropdown for two very different jobs: permanent habits like “never use filler intros” and task-specific templates like “write in our weekly release-note format.” Splitting the two means you no longer have to toggle a preset on and off between threads:

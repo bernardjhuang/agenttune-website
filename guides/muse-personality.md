@@ -11,6 +11,13 @@ Soul.md, Identity.md and Memory.md: which file does what, what ships inside defa
 
 **Quick answer:** Open Assistant icon → Identity → Soul to edit Soul.md directly, or ask Muse in chat to add your rules and show you the updated file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo your edit, delete that section or say 'Go back to your default personality.'
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Twenty editable Soul.md examples.
 
 For ready-to-copy starting points, see our [20 Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) (4 downloadable Markdown starters plus 16 role blocks), merge safely in the [free browser Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor), or copy one of the three character presets below.

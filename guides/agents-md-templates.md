@@ -11,6 +11,13 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Downloadable AGENTS.md templates by stack.
 
 | Stack / Role Template | Verification &amp; Guardrails | Jump / Download |

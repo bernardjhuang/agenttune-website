@@ -11,6 +11,13 @@ One sorts people into types. One measures traits on a scale. For prompting, that
 
 **Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## One sorts. One measures.
 
 MBTI assigns you one side of four binary axes: Introversion or Extraversion (I/E), Sensing or Intuition (S/N), Thinking or Feeling (T/F), and Judging or Perceiving (J/P). Those four letters combine into one of 16 types. Every axis is a binary fork.

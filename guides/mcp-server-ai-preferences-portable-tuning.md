@@ -11,6 +11,13 @@ Connect one zero-auth remote MCP server (or point any agent at /SKILL.md and /ll
 
 **Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, run local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## One-command setup across Claude Code, Claude Web, Cursor, and Codex.
 
 The AgentTune MCP endpoint at `https://agent-tune.com/mcp` is stateless, read-only, and requires **zero API keys or login**.

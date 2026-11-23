@@ -11,9 +11,30 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/astra-vs-sol-personality-data.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
+
+undefined
+
+Sept Codex Runs
+
+undefined
+
+GPT-6.2 Astra
+
+undefined
+
+GPT-6.2 Sol
+
+undefined
+
+Neuroticism Split
 
 To remove September’s midpoint-prompt confound, we ran `openai/gpt-6.2-astra` and `openai/gpt-6.2-sol` under the exact same single-turn blind OpenRouter prompt (n = 100 per model; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)). With prompt differences held constant, **both** GPT-6.2 variants landed on the Sensing side (`N-S` mean `-1.67` for Astra, `-1.19` for Sol):
 
@@ -91,3 +112,5 @@ If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on defa
 
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
 - [Continue reading: Reproduce the analysis](https://agent-tune.com/guides/reproduce-ai-personality-research)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

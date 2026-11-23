@@ -11,6 +11,13 @@ Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract
 
 **Quick answer:** Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Five-step memory & preference migration workflow.
 
 - **Export memory notes, not full chat logs:** Copy your Saved Memories, Custom Instructions, or `Memory.md` text rather than a multi-megabyte conversation ZIP.

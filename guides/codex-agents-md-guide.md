@@ -11,6 +11,13 @@ How Codex discovers, orders, and truncates ~/.codex/AGENTS.md, repo AGENTS.md, a
 
 **Quick answer:** Codex reads your personal ~/.codex/AGENTS.md first, then walks from the repo root down to your working directory, concatenating AGENTS.md files until their combined size hits 32 KiB (project_doc_max_bytes = 32768 bytes). In any folder, AGENTS.override.md replaces the sibling AGENTS.md. Files closer to your current folder appear later in the prompt and win conflicts.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/codex-agents-md-guide.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The exact AGENTS.md discovery and merge order.
 
 Codex builds its instruction chain once when a session starts:

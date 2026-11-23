@@ -11,6 +11,13 @@ Stop default Audio Overviews from sounding like generic morning-radio banter. Bu
 
 **Quick answer:** To customize a NotebookLM Audio Overview, open the Studio panel → Audio Overview → Customize and paste a 4-line directive naming the episode format, priority angle, audience level, and host banter limit. You can inspect and reuse the exact prompt tied to any saved audio file from the Studio panel menu later.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Build your NotebookLM Audio Overview steering prompt.
 
 Pick your briefing format, listener level, and host tone—plus an optional priority question—to generate a clean prompt for **Studio → Audio Overview → Customize**:

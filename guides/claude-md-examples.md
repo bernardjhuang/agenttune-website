@@ -11,6 +11,13 @@ Four complete files, annotated — and the principles behind them.
 
 **Quick answer:** CLAUDE.md gives Claude Code persistent session instructions. Put shared build and test rules in ./CLAUDE.md (committed to git), personal repo notes in ./CLAUDE.local.md (gitignored), and your personal communication style in ~/.claude/CLAUDE.md. Keep each file under 200 lines and focus on exact commands and constraints.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-md-examples.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: CLAUDE.md templates & Output Style downloads.
 
 | Template / Pack | Best for | Jump / Download |

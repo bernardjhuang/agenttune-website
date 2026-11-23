@@ -11,6 +11,13 @@ Three editable blocks, a test task, and what the available pilot can tell us.
 
 **Quick answer:** Paste a short directness block into Claude Personal Preferences asking it to: (1) lead with the answer, (2) state real uncertainty in one sentence instead of hedging, (3) skip praise and closing offers, and (4) correct flawed premises up front. In our 60-reply pilot, a compact directness prompt raised top answer-first ratings from 14/20 to 19/20 and cut hedges from 0.35 to 0.05 per reply.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/make-claude-more-direct.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Define the behavior you want.
 
 Telling Claude “be direct” is too vague on its own. Name the exact habits you want to change—leading with the conclusion, cutting filler praise, and challenging weak assumptions—while keeping space for legitimate caveats when facts are missing.

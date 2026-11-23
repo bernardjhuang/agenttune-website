@@ -11,6 +11,13 @@ Write your communication user manual once—drop the top half in Notion or Slack
 
 **Quick answer:** A clear 'How to Work With Me' README answers five questions on one page: (1) how you want updates structured, (2) how you want pushback delivered, (3) when to act vs check in first, (4) how to flag uncertainty or bad news, and (5) your default habits. Build yours in 60 seconds at agent-tune.com/tools/how-to-work-with-me or copy one of the templates below.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Why one personal README now serves two audiences.
 
 What a new teammate needs on week one matches what Claude Code or ChatGPT needs on turn one:

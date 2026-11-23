@@ -11,9 +11,30 @@ Measured across Gemini 4 Neon and Gemini 4 Argon (n = 100 each, Nov 2026), with 
 
 **Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2/1w9 (80 runs), and Conscientiousness 49.32; Gemini 4 Argon scored 66 ISTJ / 34 INTJ (34 S/N ties), Enneagram 5w6 (91 runs), and Conscientiousness 49.04. Historical May 2026 Gemini 3.1 Pro scored 100 INTJ, DISC C (87), and Type 1/5.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Gemini 4 Neon & Gemini 4 Argon, November 2026.
+
+undefined
+
+Neutral Clamp (3.5)
+
+undefined
+
+Gemini 4 Argon
+
+undefined
+
+Neuroticism Floor
+
+undefined
+
+Conscientiousness
 
 On November 23, 2026, we ran `google/gemini-4-neon` and `google/gemini-4-argon` through 100 fresh blind OpenRouter sessions each across all five questionnaires ([download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 
@@ -100,3 +121,5 @@ Yes. Add plain-English tone rules in Gemini Saved Info, a custom Gem, or a proje
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

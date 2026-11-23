@@ -9,7 +9,7 @@ One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical 
 
 The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script elicited one set of per-item probabilities from Opus 4.8 and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September 2026 fresh-session cohorts.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access[Markdown (.md)](https://agent-tune.com/research/i-took-the-mbti-100-times.md)[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)[Apply a template →](https://agent-tune.com/library/)
 
 ## What the simulation actually ran
 
@@ -41,6 +41,22 @@ In September 2026, we replaced single-profile simulations with 100 independent f
 
 Across the four September 2026 fresh cohorts combined (400 sessions), **59 of 400 runs tied on at least one OEJTS axis**. Under the old strict-less-than scorer (which broke exact midpoint ties toward `INTJ`), `INTJ` share appeared inflated from 280 / 400 (70.0%) to 335 / 400 (83.8%). Read the full artifact audit in [How tie-breaking creates phantom INTJs](https://agent-tune.com/research/ai-mbti-tie-breaking).
 
+undefined
+
+Synthetic Sample*
+
+undefined
+
+Simulated Mode
+
+undefined
+
+Fable 5.2 (Nov)
+
+undefined
+
+Sonnet 5.5 (Nov)
+
 *Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.
 
 ## Why 72% versus 99% is not a version comparison
@@ -64,3 +80,4 @@ Treat a personality label on an LLM as an observational summary of its unprompte
 [Read full methodology limits](https://agent-tune.com/research#methodology) · [MBTI tie-breaking audit](https://agent-tune.com/research/ai-mbti-tie-breaking) · [Take the free OEJTS test](https://agent-tune.com/tests/mbti) · [Browse 43 tuning templates](https://agent-tune.com/library/)
 
 Corrected interpretation · Updated November 16, 2026[All research](https://agent-tune.com/research)
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

@@ -11,6 +11,13 @@ Yes—configure Personal Intelligence (Instructions for Gemini / Saved Info), Cu
 
 **Quick answer:** Yes—you can change Gemini's personality in the Gemini app or on gemini.google.com under Settings & help → Personal Intelligence → Instructions for Gemini (Saved info), or by creating a Custom Gem. Pick a starter download below (No-Fluff Search Brief Gem, Saved Info Default, Code Reviewer, or GEMINI.md). Note that Google Search AI Overviews ignore Saved info.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: 4 downloadable Gemini & Gem templates.
 
 | Template | Where to paste &amp; use case | Download / Gallery |

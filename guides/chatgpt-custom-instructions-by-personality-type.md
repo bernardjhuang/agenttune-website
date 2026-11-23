@@ -11,6 +11,13 @@ Sixteen paste-ready blocks. Pick yours, paste it, done.
 
 **Quick answer:** Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## How custom instructions work.
 
 Open **Settings → Personalization → Custom Instructions** in ChatGPT (or **Customize ChatGPT** on mobile). Paste your chosen block into the second field (How would you like ChatGPT to respond?), and keep role or project facts in the first field.

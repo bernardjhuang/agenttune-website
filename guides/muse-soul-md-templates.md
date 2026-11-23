@@ -11,6 +11,13 @@ Four downloadable starter files, sixteen role blocks, default Soul.md restore ba
 
 **Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Choose a starting point.
 
 Start with one template below. To keep Muse’s built-in core truths untouched, paste your current `Soul.md` into our [browser Soul.md merge editor](https://agent-tune.com/tools/muse-soul-md-editor) for a one-click backup and diff preview:

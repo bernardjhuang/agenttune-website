@@ -24,27 +24,29 @@ function enhance(html,file){
   }
   if(file==='guides/index.html'&&!html.includes('data-resource-filter="guides"')){
     html=html.replace(/<span class="pill guides-section-label">([^<]+)<\/span>/g,'<h2 class="h-sub guides-section-label">$1</h2>');
-    const recent=/<!-- CONTENT EXPANSION SEPTEMBER 25 -->[\s\S]*?(?=<h2 class="h-sub guides-section-label">Start here)/.exec(html)?.[0];
-    if(recent)html=html.replace(recent,'').replace('</main>',recent+'</main>');
-    const dated=/<h2 class="h-sub guides-section-label">New in September 2026<\/h2>[\s\S]*?(?=<h2 class="h-sub guides-section-label">Templates)/.exec(html)?.[0];if(dated)html=html.replace(dated,'').replace('</main>',dated+'</main>');
-    html=html.replace(/Practical walkthroughs[\s\S]*?if you're not\./,'Find setup steps, editable templates, research and developer resources for the app you use.');
     html=html.replace(/(<\/section>)/, '$1\n'+filter(false));
   }
   if(file==='library/index.html'&&!html.includes('data-resource-filter="library"')){
     html=html.replace(/<section class="library-stats"[\s\S]*?<\/section>\s*(?:<div class="divider"><\/div>)?/,'');
     html=html.replace(/(<\/section>)/,'$1\n'+filter(true));
   }
+  if(file==='research.html'&&!html.includes('id="september-archive"'))html=html.replace('<!-- SEPTEMBER_RESEARCH_START -->','<details class="lib-disclosure" id="september-archive"><summary>Cohort archive: September 2026 5-model deep-dive &amp; methodology</summary><!-- SEPTEMBER_RESEARCH_START -->').replace('<!-- MAY 2026 ARCHIVE -->','</details><!-- MAY 2026 ARCHIVE -->');
   if(file==='research.html'&&!html.includes('id="may-archive"'))html=html.replace('<!-- MAY 2026 ARCHIVE -->','<details class="lib-disclosure" id="may-archive"><summary>May 2026 archive: earlier models and methods</summary><!-- MAY 2026 ARCHIVE -->').replace('<!-- ARTICLES -->','</details><!-- ARTICLES -->');
   if((/^(guides|research)\//.test(file) || file==='research.html') && file!=='guides/index.html' && !html.includes('class="article-toc"')){
     const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1])), headings=[];
     html=html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g,(m,attrs,text)=>{
       let id=/\bid="([^"]+)"/.exec(attrs)?.[1];if(!id){let base=slug(text)||'section';id=base;for(let n=2;ids.has(id);n++)id=base+'-'+n;ids.add(id);attrs+=' id="'+id+'"';}headings.push({id,text:plain(text)});return '<h2'+attrs+'>'+text+'</h2>';
     });
-    if(headings.length>=4){const toc='<details class="article-toc" open><summary>On this page</summary><nav aria-label="On this page"><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+esc(h.text)+'</a></li>').join('')+'</ol></nav></details>';html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+toc);}
+    if(headings.length>=4){const openAttr=file==='research.html'?'':' open';const toc='<details class="article-toc"'+openAttr+'><summary>On this page</summary><nav aria-label="On this page"><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+esc(h.text)+'</a></li>').join('')+'</ol></nav></details>';html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+toc);}
   }
   if((file.startsWith('research/')||file==='research.html')&&!html.includes('id="instrument-correction"')){
-    const note='<section id="instrument-correction" class="questionnaire-status" style="margin:24px 0;padding:20px;border:1px solid var(--border);border-radius:12px"><p><strong>Data note (September 26, 2026):</strong> These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on <a href="/tests/">Tests</a>, and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
-    html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+note);
+    const note='<section id="instrument-correction" class="questionnaire-status" style="margin:32px 0 8px;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)"><p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)"><strong style="color:var(--ink)">Provenance &amp; scoring note:</strong> These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on <a href="/tests/">Tests</a> and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
+    html=html.replace('</main>',note+'\n</main>');
+  }
+  if(file.startsWith('research/')&&!html.includes('class="article-utility-bar"')){
+    const route='/'+file.replace(/\.html$/,'');
+    const bar='<div class="article-utility-bar" aria-label="Reader and agent quick actions"><span class="article-utility-label">Open Data &amp; Agent Access</span><div class="article-utility-actions"><a class="article-utility-btn" href="'+route+'.md">Markdown (.md)</a><a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a><a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a><a class="article-utility-btn is-accent" href="/library/">Apply a template →</a></div></div>';
+    html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,m=>m.replace('</section>',bar+'\n</section>'));
   }
   return html.includes('src="/site-ui.js"')?html:html.replace('</body>','<script defer src="/site-ui.js"></script>\n</body>');
 }

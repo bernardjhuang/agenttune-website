@@ -11,6 +11,13 @@ Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built 
 
 **Quick answer:** Save a Markdown file to ~/.claude/output-styles/ with name, description, and keep-coding-instructions: true in the YAML frontmatter, followed by your communication rules. Activate it with /output-style or /config. AgentTune provides all 43 personality tunings as ready-to-download output styles.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The twenty-second version.
 
 Download a ready-made output style into `~/.claude/output-styles/` and select it:

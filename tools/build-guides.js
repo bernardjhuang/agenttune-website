@@ -182,6 +182,7 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <meta name="twitter:image" content="${SITE}/og/og-card.png" />
 
   <link rel="canonical" href="${url}" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="${SITE}/${research ? "research" : "guides"}/${spec.slug}.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="${SITE}/llms.txt" />
 
   <script type="application/ld+json">${jsonInline(articleSchema)}</script>
@@ -216,6 +217,15 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
         ${spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">${research ? "Open Data &amp; Agent Access" : "Quick Actions &amp; Agent Fetch"}</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/${research ? "research" : "guides"}/${spec.slug}.md">Markdown (.md)</a>
+            ${research ? '<a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a>' : '<a class="article-utility-btn" href="/library/index.json">Library JSON</a>'}
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="${research ? "/library/" : "/tools/custom-instructions-generator"}">${research ? "Apply a template →" : "Build instructions →"}</a>
+          </div>
+        </div>
       </section>
 
 

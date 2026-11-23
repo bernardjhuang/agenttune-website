@@ -11,6 +11,13 @@ Stop Cursor Agent from making unrequested refactors or writing essay summaries�
 
 **Quick answer:** Put repo-wide Agent Mode guardrails (testing gates, git boundaries, stack conventions) in .cursor/rules/*.mdc using YAML frontmatter—alwaysApply: true for universal rules, globs for file-type rules, or description-only for agent-requested rules. Put your personal communication style (diff-first replies, terse prose, pushback) in Cursor Settings → Rules for AI so you never pollute team git history.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/cursor-agent-mode-rules-mdc-guide.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Build a ready-to-paste .cursor/rules/*.mdc file.
 
 Generate a properly formatted `.cursor/rules/agenttune.mdc` file (with YAML frontmatter pre-configured) or switch output to `AGENTS.md`, Windsurf, or Cline:

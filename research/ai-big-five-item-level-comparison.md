@@ -11,9 +11,30 @@ By Bernard Huang · Updated November 17, 2026
 
 **Quick answer:** Every model scored a maximum 5.00 in all 400 fresh sessions on three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people). Models only disagreed on questions about physical objects (like leaving belongings around, 1.76-point gap) or human moods (1.65-point gap).
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Five questions hit 5.00 in all 400 runs
+
+undefined
+
+Item Responses
+
+undefined
+
+Ceiling Items
+
+undefined
+
+Neutral Lock
+
+undefined
+
+Opus Agreeableness
 
 Four models (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) each took the 50-item IPIP Big Five test 100 times in fresh sessions. Items are rated 1 to 5, and 18 reverse-scored items use `6 - answer`. On five questions, all 400 runs scored the maximum 5.00:
 
@@ -76,3 +97,5 @@ Bottom line: treat raw Big Five totals as a map of default assistant habits ([se
 - [Continue reading: Opus 5.5 vs Fable 5.1: item-level results](https://agent-tune.com/research/opus-vs-fable-question-level)
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
 - [Continue reading: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

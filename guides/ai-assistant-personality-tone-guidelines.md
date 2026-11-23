@@ -11,6 +11,13 @@ Practical patterns for developers writing system instructions for products, copi
 
 **Quick answer:** Replace vague tone adjectives in API system prompts with four concrete blocks: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing or conflicting facts are flagged), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions). Verify every change with blind A/B evals.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Why behavioral rules beat adjective lists in empirical testing.
 
 In our 60-reply controlled pilot ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral rules raised answer-first openings from **14/20 to 19/20**, cut unsolicited hedges per reply from **0.35 to 0.05**, and dropped trailing filler questions from **0.90 to 0.25**—without hurting task accuracy.

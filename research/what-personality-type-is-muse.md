@@ -11,9 +11,30 @@ One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session
 
 **Quick answer:** Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## Muse Spark 1.3, as reported.
+
+undefined
+
+Muse Spark 1.3*
+
+undefined
+
+Helper (Type 2)
+
+undefined
+
+Attachment
+
+undefined
+
+Editable Persona
 
 In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 times sequentially inside one session per test, using Muse’s own assistant identity. Because raw answer vectors were not supplied, we cannot re-score individual items or remove tied axes; the numbers below are transcribed as reported.
 
@@ -96,3 +117,5 @@ This questionnaire report did not test Soul.md edits. Use our Soul.md templates 
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

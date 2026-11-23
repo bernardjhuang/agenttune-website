@@ -11,6 +11,13 @@ Filter xAI’s Grok voices by register and accent, understand Expressive Mode vs
 
 **Quick answer:** Switch Grok's spoken voice inside Voice Mode on iOS, Android, or grok.com using the voice selector: Ara (warm female), Rex (direct male), Sal (smooth conversational male), Eve (upbeat British female), and Leo (authoritative male). To control how Grok actually reasons and talks—not just how it sounds—add behavioral rules under Settings → Customize Grok or inside a custom Grok Bot Description.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/grok-voice-mode-personas-companions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Filter Grok's core voices and build a Voice-Mode prompt.
 
 Pick a Grok voice and spoken cadence to generate a concise **Settings → Customize Grok** rule block:

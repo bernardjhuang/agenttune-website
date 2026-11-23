@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/research/opus-vs-fable-question-level" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/research/opus-vs-fable-question-level.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Opus 5.5 vs Fable 5.1: which answers differ?","description":"Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.","url":"https://agent-tune.com/research/opus-vs-fable-question-level","datePublished":"2026-09-25","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -71,6 +72,15 @@
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
         
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Open Data &amp; Agent Access</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/research/opus-vs-fable-question-level.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/library/">Apply a template →</a>
+          </div>
+        </div>
       </section>
 
 
@@ -79,7 +89,7 @@
 
       <section>
         <h2>What we compared</h2>
-        <p>Each model completed 100 fresh sessions for each of the five questionnaires (1,000 assessments total). Both Claude cohorts used the same prompt and high-effort setting, with each test run in an isolated session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not paired with Fable run 17.</p><p>For every item, we compute the mean raw score, the count at each rating (1–5 or 1–7), and the Fable-minus-Opus gap. This is a descriptive comparison across all 170 items rather than a hypothesis test.</p>
+        <div class="research-stat-strip" data-at-chart="opus-fable-stat-strip"><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Full Item Audit</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Belongings Gap</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Empathy Gap</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Enneagram Split</div></div></div><p>Each model completed 100 fresh sessions for each of the five questionnaires (1,000 assessments total). Both Claude cohorts used the same prompt and high-effort setting, with each test run in an isolated session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not paired with Fable run 17.</p><p>For every item, we compute the mean raw score, the count at each rating (1–5 or 1–7), and the Fable-minus-Opus gap. This is a descriptive comparison across all 170 items rather than a hypothesis test.</p>
       </section>
       <div class="divider tight"></div>
 

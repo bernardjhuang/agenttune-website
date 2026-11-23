@@ -11,6 +11,13 @@ Filter Arbor, Breeze, Cove, Ember, Juniper, Maple, Sol, Spruce, and Vale—then 
 
 **Quick answer:** To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Filter all 9 ChatGPT voices and build a Voice-Mode prompt.
 
 Filter by register or British accent, pick your voice, and copy a spoken-friendly rule block sized cleanly for ChatGPT’s 1,500-character Custom Instructions box:

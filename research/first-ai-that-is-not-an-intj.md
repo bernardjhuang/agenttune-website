@@ -11,9 +11,30 @@ Different labels do not establish a change in personality.
 
 **Quick answer:** Not every AI scores INTJ. Muse Spark 1.3 reports 80 ISTJ labels in 100 runs, and GPT-6 Astra has 45 fully resolved ISTJ runs versus 19 fully resolved INTJ runs when ties are left open. Because the May and September studies used different models, prompts, and session rules, their label counts cannot isolate a trend over time.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## What the May headline actually counted.
+
+undefined
+
+GPT-6.2 Astra
+
+undefined
+
+Mistral 2512
+
+undefined
+
+Llama 4 Maverick
+
+undefined
+
+Muse Spark 1.3*
 
 The May 2026 report counted 597 INTJ labels across 600 MBTI scoring records from six models. However, several cohorts re-scored a single self-assessment repeatedly instead of running 100 fresh sessions. The methods also varied across models and tests, so the headline does not prove that six independently sampled models always answer alike.
 
@@ -76,3 +97,5 @@ No. Predicting assistant behavior requires testing real task replies rather than
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
 - [Tests: Find your own type](https://agent-tune.com/tests/)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

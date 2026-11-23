@@ -11,6 +11,13 @@ Writing samples fix the prose. A personality tuning fixes everything else.
 
 **Quick answer:** Use writing samples when you want ChatGPT to mimic your word choice and sentence rhythm on drafts. Use a personality tuning in Settings → Personalization → Custom Instructions when you want ChatGPT to match how you think (answer-first order, direct pushback, and option framing).
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/make-chatgpt-sound-like-you.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Two approaches. Two different "you."
 
 Most guides recommend a **writing-sample approach**: paste five to ten examples of your writing and ask ChatGPT to summarize your style. That works well when the deliverable is a draft in your voice (emails, posts, or memos).

@@ -11,9 +11,30 @@ Measured across Opus 5.5, Fable 5.2, Fable 5.1, and Sonnet 5.5 (n = 100 fresh se
 
 **Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100% tie-free INTJ (5w6 73, 2w1 19), Opus 5.5 scored 100% legacy INTJ / 58 tie-free (5w6 99), and Sonnet 5.5 scored 100% legacy INTJ / 52 tie-free (1w2 66, 5w6 25)—alongside our frozen September 2026 Codex/CLI cohort for Opus 5.5 (94 INTJ, Type 8/5/2) and Fable 5.1 (99 INTJ, Type 8).
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-claude.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## November 2026 OpenRouter cohort: Opus 5.5, Fable 5.2 & Sonnet 5.5.
+
+undefined
+
+Opus & Fable
+
+undefined
+
+Peak Agreeableness
+
+undefined
+
+Sonnet 5.5 T/F
+
+undefined
+
+Claude Prefs Study
 
 On November 23, 2026, we ran all three current Anthropic models through the identical blind single-turn OpenRouter protocol (100 fresh 170-item batteries per model, scored with the published `september-2026-score.cjs` engine; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 
@@ -111,3 +132,5 @@ Paste explicit tone and formatting rules into Personal Preferences (Settings →
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

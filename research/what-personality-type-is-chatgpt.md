@@ -9,7 +9,7 @@ Measured on GPT-6.2 in November 2026 (OpenRouter) and GPT-6 in September 2026 (C
 
 It depends on the GPT-6 revision and how ties are broken. In November 2026 under matched blind single-turn OpenRouter sessions (n = 100 each), **GPT-6.2 Astra scored 100/100 tie-free ISTJ** and **GPT-6.2 Sol scored 78 ISTJ / 22 INTJ** (78 ISTJ, 16 IXTJ, 6 INTJ tie-free). By contrast, in September 2026 Codex runs, GPT-6 Sol scored 97 INTJ while Astra split 46 ISTJ / 45 INTJ.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-chatgpt.md)[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)[Apply a template →](https://agent-tune.com/library/)
 
 **The short answer.** In November 2026 blind OpenRouter runs (n = 100 each), both ChatGPT flagship revisions leaned Sensing: GPT-6.2 Astra scored 100/100 ISTJ and GPT-6.2 Sol scored 78 ISTJ / 22 INTJ (6 tie-free INTJ). In September 2026 Codex runs, GPT-6 Sol scored 97 INTJ (79 tie-free) and Astra split 46 ISTJ / 45 INTJ (45 ISTJ / 19 INTJ tie-free). Both cohorts scored 100% Secure on attachment and SC on DISC.
 
@@ -97,3 +97,5 @@ You can request changes to tone, detail and structure through ChatGPT custom ins
 ## Sources and related reading
 
 [What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026) (the September study, with ties left open and downloadable data) · [Research hub](https://agent-tune.com/research) (both collections and the methods) · [Methods and limits](https://agent-tune.com/research#methodology) · [How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality) · [ChatGPT custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type) · [Opus 4.8 simulation note](https://agent-tune.com/research/i-took-the-mbti-100-times)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

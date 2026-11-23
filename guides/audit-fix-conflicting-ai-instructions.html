@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why your AI ignores custom instructions (and how to fix it in 5 minutes)","description":"Fix ChatGPT, Claude, Meta Muse, or AGENTS.md ignoring your instructions. Diagnose rule contradictions, stale saved memories, and character truncation.","url":"https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions","datePublished":"2026-11-11","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -72,6 +73,15 @@
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">Nine times out of ten, the model isn't broken—two rules in your stack are contradicting each other, saved memory is overriding you, or the file truncated silently.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> When an AI ignores custom instructions, check five root causes in order: (1) contradictory rules inside the same prompt ('always be brief' + 'explain every edge case'), (2) stale entries in Saved Memory or Memory.md, (3) Project Instructions overriding account defaults, (4) silent truncation (ChatGPT's 1,500-char limit or Codex's 32 KiB limit), and (5) vague adjectives without checkable actions.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/guides/audit-fix-conflicting-ai-instructions.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
+          </div>
+        </div>
       </section>
 
 

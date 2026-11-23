@@ -11,6 +11,13 @@ Exact iOS, Android, web, and desktop paths to switch between Buttery, Airy, Mell
 
 **Quick answer:** On iOS or Android, open Voice Mode (waveform icon) and tap the bottom-left settings button—or go to Profile → Settings → Voice—to switch between Claude's 5 voices (Buttery, Airy, Mellow, Glassy, Rounded) and speech speed. On web/desktop, open Settings → Capabilities → Voice settings. To make Voice Mode give shorter, more direct answers, add rules in Settings → Profile → Personal preferences.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## How to change Claude's voice on mobile, web, and desktop.
 
 Claude Voice Mode includes five English voice presets plus speech speed controls (**Slow, Normal, Fast**):

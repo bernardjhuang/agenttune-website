@@ -11,6 +11,13 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** In Meta Muse, open Assistant icon → Identity to set your character name, avatar prompt, and Identity.md metadata while keeping communication rules appended safely inside Soul.md. Pick any of the 4 downloadable Identity.md starters or 16 character templates below.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Starter Identity.md files & downloads.
 
 | Character Template | Vibe &amp; Archetype | Jump / Download |

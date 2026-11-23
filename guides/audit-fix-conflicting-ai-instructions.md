@@ -11,6 +11,13 @@ Nine times out of ten, the model isn't broken—two rules in your stack are cont
 
 **Quick answer:** When an AI ignores custom instructions, check five root causes in order: (1) contradictory rules inside the same prompt ('always be brief' + 'explain every edge case'), (2) stale entries in Saved Memory or Memory.md, (3) Project Instructions overriding account defaults, (4) silent truncation (ChatGPT's 1,500-char limit or Codex's 32 KiB limit), and (5) vague adjectives without checkable actions.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/audit-fix-conflicting-ai-instructions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The 5-cause diagnostic checklist.
 
 | Failure mode | Symptom you see in chat | Fastest local fix |

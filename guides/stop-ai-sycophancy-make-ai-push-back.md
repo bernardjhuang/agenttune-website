@@ -11,6 +11,13 @@ Across 400 fresh sessions in our September 2026 study, every major model scored 
 
 **Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The empirical baseline: why untuned models rarely push back.
 
 Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.com/research/ai-personality-five-models-2026) (100 runs each for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1), every model clustered at the cooperative, conflict-averse end of the scale:

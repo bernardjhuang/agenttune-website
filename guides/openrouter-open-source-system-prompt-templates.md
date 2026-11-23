@@ -11,6 +11,13 @@ Empirically calibrated system prompts, OpenRouter API JSON payloads, and Ollama 
 
 **Quick answer:** Select your open-weight model in the interactive matcher below to get a ready-to-paste system prompt, OpenRouter API JSON payload, or Ollama Modelfile calibrated to that model's measured quirks (like Llama 4 preambles, DeepSeek verbosity, or Gemma 4 high agreeableness).
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Starter downloads for top open-weight models.
 
 | Open-Weight Model Family | OpenRouter ID &amp; License | Key Calibration Antidote | Download / Jump |

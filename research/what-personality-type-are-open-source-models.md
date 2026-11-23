@@ -11,11 +11,30 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## All 12 open-weight models side by side (n = 100 each).
 
 6,000
+
+Scored tests (12 models × n=100 fresh sessions)
+
+32.4 / 50
+
+Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
+
+93 / 100
+
+Highest MBTI tie-axis rate (Llama 4 Maverick)
+
+48%
+
+Anxious attachment runs on Llama 4 Scout (mean 3.97)
 
 Scored tests (12 models × n=100 fresh sessions)
 
@@ -146,3 +165,5 @@ Pair each model's measured trait quirks (such as Llama 4 preambles, Qwen 4 high 
 - [Rankings: AI personality scores across all 20 November 2026 & September 2026 models](https://agent-tune.com/research/ai-personality-rankings)
 - [Behavioral Study: Does personality tuning change AI answers? (60-reply + 180-reply studies)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [DeepSeek Guide: DeepSeek system prompts & custom instructions (XML templates)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

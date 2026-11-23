@@ -11,6 +11,13 @@ What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, 
 
 **Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Built-in Grok modes vs. custom instructions on X & grok.com.
 
 | Surface / Control | Where to find it | Limit &amp; behavior |

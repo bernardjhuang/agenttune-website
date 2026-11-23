@@ -11,6 +11,13 @@ Four downloadable Box 1 + Box 2 starter pairs plus sixteen sub-500-character rol
 
 **Quick answer:** Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Flagship Box 1 + Box 2 pairs & .md downloads.
 
 | Template Pair | Best for | Jump / Download |

@@ -11,6 +11,13 @@ Put how you think in account-wide Custom Instructions. Put what you are building
 
 **Quick answer:** Inside a ChatGPT Project, Project Instructions override your account-wide Custom Instructions whenever two rules conflict. Keep a compact 6–10 line communication block (tone, answer-first order, pushback, and uncertainty) in global Custom Instructions, and put tech stack details, deliverable templates, and reference files inside each Project.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Side-by-side: Custom Instructions vs. Project Instructions.
 
 | Dimension | Account-wide Custom Instructions | ChatGPT Project Instructions |

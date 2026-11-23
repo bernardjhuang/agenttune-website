@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/ai-instruction-precedence-overrides" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/ai-instruction-precedence-overrides.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Project vs account instructions: what overrides what in AI","description":"How ChatGPT, Claude, OpenAI Codex, Claude Code, and Meta Muse resolve conflicts between account custom instructions, project rules, and chat.","url":"https://agent-tune.com/guides/ai-instruction-precedence-overrides","datePublished":"2026-11-05","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -72,6 +73,15 @@
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">When your account preferences say "use plain prose" and your project instructions say "reply in a Markdown table," which rule wins? Here is how every major platform resolves conflicts.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/guides/ai-instruction-precedence-overrides.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
+          </div>
+        </div>
       </section>
 
 

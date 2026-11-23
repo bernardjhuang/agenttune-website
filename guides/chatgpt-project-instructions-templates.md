@@ -11,6 +11,13 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** Open any ChatGPT Project → Add instructions (top right / project header), paste a focused workflow template matching that project's files and output format, and leave general tone rules in account-wide Custom Instructions so Projects never fight your global settings.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-project-instructions-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Top ChatGPT Project starters.
 
 | Project Template | Best Workspace Use | Quick Jump |

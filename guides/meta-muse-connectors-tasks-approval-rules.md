@@ -11,6 +11,13 @@ Once Muse has access to mail, calendar, or scheduled recurring Tasks, your Soul.
 
 **Quick answer:** In Meta Muse, keep tone, honesty rules, and Connector confirmation gates in Soul.md; keep name, role, and avatar in Identity.md; and keep personal facts and timezones in Memory.md. Require explicit approval before Muse sends external messages, edits shared calendar events, or deletes items during scheduled Tasks.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Which file governs Connectors, Tasks, and persona?
 
 | Muse surface / file | What belongs here | What happens when misplaced |

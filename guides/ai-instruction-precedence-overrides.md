@@ -11,6 +11,13 @@ When your account preferences say "use plain prose" and your project instruction
 
 **Quick answer:** Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Precedence hierarchy across major AI platforms.
 
 | Platform | Lowest priority (broadest scope) | Middle priority (workspace scope) | Highest priority (wins conflicts) |

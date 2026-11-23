@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/research/ai-personality-repeatability" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/research/ai-personality-repeatability.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a stable result mean a stable AI personality?","description":"Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.","url":"https://agent-tune.com/research/ai-personality-repeatability","datePublished":"2026-09-25","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -71,6 +72,15 @@
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Open Data &amp; Agent Access</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/research/ai-personality-repeatability.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/library/">Apply a template →</a>
+          </div>
+        </div>
       </section>
 
 
@@ -79,7 +89,7 @@
 
       <section>
         <h2>Three ways to measure repeatability</h2>
-        <ul><li><strong>Identical answer sheets (vector repetition):</strong> Did the model pick the exact same numbers on every single question?</li><li><strong>Score stability:</strong> How much did the numeric totals move from run to run?</li><li><strong>Label stability:</strong> How often did the final category (like <code>INTJ</code> or <code>Secure</code>) stay the same?</li></ul><p>Because a broad category covers a wide range of scores, a model's final label can stay 100% constant even when its underlying answers change on almost every run.</p>
+        <div class="research-stat-strip" data-at-chart="repeatability-stat-strip"><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Audited Runs</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">GPT-6 Sol Vector</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Opus 5.5 DISC</div></div><div class="research-stat-card"><div class="research-stat-val">undefined</div><div class="research-stat-label">Astra Margin Flip</div></div></div><ul><li><strong>Identical answer sheets (vector repetition):</strong> Did the model pick the exact same numbers on every single question?</li><li><strong>Score stability:</strong> How much did the numeric totals move from run to run?</li><li><strong>Label stability:</strong> How often did the final category (like <code>INTJ</code> or <code>Secure</code>) stay the same?</li></ul><p>Because a broad category covers a wide range of scores, a model's final label can stay 100% constant even when its underlying answers change on almost every run.</p>
       </section>
       <div class="divider tight"></div>
 

@@ -11,6 +11,13 @@ Pick a Gemini voice (including female, male, and British Capella), configure Ins
 
 **Quick answer:** To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and select voices like Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Put permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Filter Gemini Live voices and copy a Personal Intelligence block.
 
 Filter Gemini’s voice lineup by register or British accent, then copy a combined Personal Intelligence block plus a 1-line Gemini Live context seeder:

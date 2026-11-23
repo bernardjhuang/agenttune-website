@@ -11,6 +11,13 @@ Use a modular 4-part boot sequence (Role, Priority, Voice, Data Map) so Notion A
 
 **Quick answer:** Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice & Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The 4-part Notion AI instruction architecture.
 
 | Instruction block | What it controls in Notion AI | Example rule |

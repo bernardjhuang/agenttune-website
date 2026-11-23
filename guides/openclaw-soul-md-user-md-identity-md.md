@@ -11,6 +11,13 @@ Generate all three OpenClaw root personality files together—SOUL.md for values
 
 **Quick answer:** Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root directory so boot hooks load them every session. Keep communication style and hard boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone, stack, and decision preferences in USER.md—then pair them with AGENTS.md for tool triggers and workflows.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Build and download your OpenClaw 3-file bundle.
 
 Pick an archetype, customize your agent name and working context, and switch between `SOUL.md`, `IDENTITY.md`, and `USER.md` to copy or download each file locally (everything runs in your browser tab):

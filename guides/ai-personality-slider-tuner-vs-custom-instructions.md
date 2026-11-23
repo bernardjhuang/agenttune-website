@@ -11,6 +11,13 @@ No app lock-in, no signup, no account needed—set Warmth, Length, Pushback, For
 
 **Quick answer:** Adjust the six interactive sliders below—Warmth vs. Directness, Response Length, Pushback & Candor, Formatting Density, Convergence vs. Brainstorming, and Clarifying Questions—pick your target AI platform, and copy the generated behavioral rules directly into Settings. Everything runs locally in your browser with zero account or paywall.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Tune your AI personality across 6 live sliders.
 
 Loading 6-slider AI personality tuner…

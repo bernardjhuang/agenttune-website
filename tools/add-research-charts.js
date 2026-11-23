@@ -416,7 +416,13 @@ updateSpec('research/src/what-personality-type-is-claude.json', (spec) => {
     decimals: 1,
     height: 230
   }), 'Claude Sonnet 5.5 registers the highest Conscientiousness (47.2) and lowest Neuroticism (10.4) among Anthropic cohorts.'));
-  spec.sections[0].html += mbtiFig + big5Fig;
+  const strip = statStrip('claude-stat-strip', [
+    { num: '94–100 INTJ', label: 'Opus & Fable', note: 'Opus 5.5 (94), Fable 5.1 (99) & Fable 5.2 (100) lock onto INTJ.' },
+    { num: '47.1', label: 'Peak Agreeableness', note: 'Claude Opus 5.5 & Fable 5.2 rank near the top of proprietary prosocial warmth.' },
+    { num: '48 Ties', label: 'Sonnet 5.5 T/F', note: 'Nearly half of Sonnet 5.5’s Nov MBTI runs tie before tie-breaking.' },
+    { num: '100% Rule Fit', label: 'Claude Prefs Study', note: '72-reply test shows Personal Preferences cut fluff to 0% when directness is named.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + mbtiFig + big5Fig;
 });
 
 // 5. what-personality-type-is-gemini.json (2 charts)
@@ -452,7 +458,13 @@ updateSpec('research/src/what-personality-type-is-gemini.json', (spec) => {
     decimals: 1,
     height: 230
   }), 'Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10.0 Neuroticism floor across all 100 sessions.'));
-  spec.sections[0].html += gemMbti + gemBig5;
+  const strip = statStrip('gemini-stat-strip', [
+    { num: '95%', label: 'Neutral Clamp (3.5)', note: 'Gemini 3.5 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.' },
+    { num: '66 ISTJ', label: 'Gemini 4 Argon', note: 'Shifts strongly into concrete Sensing across Nov blind OpenRouter runs.' },
+    { num: '10.0', label: 'Neuroticism Floor', note: 'Lowest emotional volatility (10.0/50) across tested proprietary families.' },
+    { num: '48.3', label: 'Conscientiousness', note: 'Gemini 3.1/4 cluster high on structured, methodical item ratings.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + gemMbti + gemBig5;
 });
 
 // 6. what-personality-type-is-grok.json (2 charts)
@@ -492,7 +504,13 @@ updateSpec('research/src/what-personality-type-is-grok.json', (spec) => {
     xLabel: 'Anxiety (scale 1 to 7, showing 1 to 5)',
     yLabel: 'Avoidance (scale 1 to 7, showing 1 to 5)'
   }), 'Mean ECR-R placement showing Grok 4.7 (mean avoidance 3.48; 96 Secure / 4 Avoidant) compared with Grok 4.6’s reported 4.06 point right above the 4.00 Avoidant cutoff.'));
-  spec.sections[0].html += grokB5;
+  const strip = statStrip('grok-stat-strip', [
+    { num: '96 Secure', label: 'Grok 4.7 (Nov)', note: '100 fresh blind OpenRouter runs resolve 96 Secure inside Attachment.' },
+    { num: '4.06 vs 4.00', label: 'Avoidant Cutoff (4.6)', note: 'One single raw answer point (73/18 vs 72/18) tipped Grok 4.6 Avoidant.' },
+    { num: '44.9 A', label: 'Agreeableness Shift', note: 'Grok 4.7 climbs closer to frontier conversational warmth than Grok 4.6 (33).' },
+    { num: '96 INTJ', label: 'Consistent Frame', note: 'Stable INTJ orientation paired with concise, direct response defaults.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + grokB5;
   spec.sections[3].html += grokPlane;
 });
 
@@ -526,7 +544,13 @@ updateSpec('research/src/what-personality-type-is-muse.json', (spec) => {
     decimals: 1,
     height: 230
   }), 'Muse Spark 1.3 reports lower Openness (39.5) and slightly higher Extraversion (33.8) than the September fresh-session models, alongside comparable Agreeableness (44.6).'));
-  spec.sections[0].html += enneaFig;
+  const strip = statStrip('muse-stat-strip', [
+    { num: '80 ISTJ', label: 'Muse Spark 1.3*', note: 'Reported majority type (plus 12 ISFJ, 8 INTJ), unlike early AI INTJ clustering.' },
+    { num: '78 / 100', label: 'Helper (Type 2)', note: 'Enneagram Type 2 leads cleanly ahead of Type 1 (14.7 mean) and 7/8.' },
+    { num: '100 Secure', label: 'Attachment', note: 'All 100 reported sequential runs scored inside the Secure quadrant.' },
+    { num: 'Soul.md', label: 'Editable Persona', note: 'Muse exposes plain Markdown identity/memory files you can tune directly.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + enneaFig;
   spec.sections[2].html += museBig5;
 });
 
@@ -565,7 +589,13 @@ updateSpec('research/src/astra-vs-sol-personality-data.json', (spec) => {
     decimals: 1,
     height: 235
   }), 'GPT-6.2 Sol shows nearly double Astra 6.2’s Neuroticism score (19.9 vs. 11.1), while Openness, Conscientiousness, Extraversion, and Agreeableness remain closely aligned.'));
-  spec.sections[0].html += snDiv;
+  const strip = statStrip('astra-sol-stat-strip', [
+    { num: '1,000', label: 'Sept Codex Runs', note: '500 Astra vs. 500 Sol blind tests across all 5 instruments.' },
+    { num: '100 ISTJ', label: 'GPT-6.2 Astra', note: 'Zero INTJ outcomes in 100 Nov OpenRouter single-turn runs.' },
+    { num: '78 ISTJ', label: 'GPT-6.2 Sol', note: 'Shifted from 97 INTJ in Sept to 78 ISTJ under uniform prompts.' },
+    { num: '19.9 vs 11.1', label: 'Neuroticism Split', note: 'GPT-6.2 Sol stays nearly 2× Astra 6.2 on IPIP Neuroticism.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + snDiv;
   spec.sections[3].html += big5Fig;
 });
 
@@ -589,6 +619,13 @@ updateSpec('research/src/opus-vs-fable-question-level.json', (spec) => {
     rightLabel: 'Fable 5.1 higher',
     decimals: 2
   }), 'Keyed item-level gaps (1–5 scale, n = 100 per model). Two reverse-scored physical-belongings items add +1.80 to Fable’s Conscientiousness, while Opus scores higher on empathy and chore-completion items.'));
+  const strip = statStrip('opus-fable-stat-strip', [
+    { num: '170 Items', label: 'Full Item Audit', note: 'Every questionnaire item compared across n = 100 runs each.' },
+    { num: '+0.90', label: 'Belongings Gap', note: 'Fable scores higher on two reverse-coded household neatness items.' },
+    { num: '-0.96', label: 'Empathy Gap', note: 'Opus 5.5 scores higher on sympathetic feelings (item 17).' },
+    { num: 'Type 8 vs Tie', label: 'Enneagram Split', note: 'Fable hits Type 8 (55) cleanly while Opus nearly ties 8 / 5 / 2.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html;
   spec.sections[1].html += fig;
 });
 
@@ -610,6 +647,13 @@ updateSpec('research/src/ai-big-five-item-level-comparison.json', (spec) => {
     decimals: 2,
     height: 235
   }), 'All four models hit an automatic 5.00 on language/helpfulness items, converge near 3.00 on human party items, and diverge only on how they treat physical-object or mood questions.'));
+  const strip = statStrip('big5-items-stat-strip', [
+    { num: '20,000', label: 'Item Responses', note: '400 runs × 50 IPIP-50 items inspected at the question level.' },
+    { num: '5.00 / 5', label: 'Ceiling Items', note: 'Vocabulary and non-insulting items max out identically across models.' },
+    { num: '3.00 / 5', label: 'Neutral Lock', note: 'Physical-world party items attract blanket midpoint neutrality.' },
+    { num: '47.1', label: 'Opus Agreeableness', note: 'Highest proprietary A score driven by near-universal prosocial ratings.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html;
   spec.sections[2].html += fig;
 });
 
@@ -621,7 +665,7 @@ updateSpec('research/src/ai-mbti-tie-breaking.json', (spec) => {
     { label: 'GPT-6 Sol (Sep)', res: 79, tie: 18, other: 3 },
     { label: 'GPT-6 Astra (Sep)', res: 19, tie: 26, other: 55 },
     { label: 'Sonnet 5.5 (Nov)', res: novSum['claude-sonnet-5-5'].mbti.tie_aware_patterns.INTJ || 0, tie: (novSum['claude-sonnet-5-5'].mbti.legacy_labels.INTJ || 0) - (novSum['claude-sonnet-5-5'].mbti.tie_aware_patterns.INTJ || 0), other: 100 - (novSum['claude-sonnet-5-5'].mbti.legacy_labels.INTJ || 0) },
-    { label: 'DeepSeek Flash (Nov)', res: novSum['deepseek-v4-1-flash'].mbti.tie_aware_patterns.INTJ || 0, tie: (novSum['deepseek-v4-1-flash'].mbti.legacy_labels.INTJ || 0) - (novSum['deepseek-v4-1-flash'].mbti.tie_aware_patterns.INTJ || 0), other: 100 - (novSum['deepseek-v4-1-flash'].mbti.legacy_labels.INTJ || 0) },
+    { label: 'DeepSeek Flash (Nov)', res: novSum['deepseek-v4-1-flash'].mbti.tie_aware_patterns.INTJ || 0, tie: (novSum['deepseek-v4-1-flash'].mbti.legacy_labels.INTJ || 0) - (novSum['deepseek-v4-1-flash'].mbti.legacy_labels.INTJ ? novSum['deepseek-v4-1-flash'].mbti.tie_aware_patterns.INTJ || 0 : 0), other: 100 - (novSum['deepseek-v4-1-flash'].mbti.legacy_labels.INTJ || 0) },
     { label: 'Llama Maverick (Nov)', res: novSum['llama-4-maverick'].mbti.tie_aware_patterns.INTJ || 0, tie: (novSum['llama-4-maverick'].mbti.legacy_labels.INTJ || 0) - (novSum['llama-4-maverick'].mbti.tie_aware_patterns.INTJ || 0), other: 100 - (novSum['llama-4-maverick'].mbti.legacy_labels.INTJ || 0) }
   ].map((r) => ({ label: r.label, values: { res: r.res, tie: r.tie, other: r.other } }));
   const fig = wrapFigure('tie-breaking-stacked', charts.figure(charts.stackedRows({
@@ -635,7 +679,13 @@ updateSpec('research/src/ai-mbti-tie-breaking.json', (spec) => {
       { key: 'other', name: 'Other / Tied non-INTJ', color: C.slate }
     ]
   }), 'Comparison of tie-preserving INTJ counts vs. legacy `<` tie-broken INTJ counts (n = 100 each). Notice November’s Claude Sonnet 5.5 (48 T/F ties), DeepSeek Flash (47 tie-rule INTJs), and Llama 4 Maverick (42 tie-rule INTJs).'));
-  spec.sections[0].html += fig;
+  const strip = statStrip('tie-breaking-stat-strip', [
+    { num: '335 → 280', label: 'Resolved Drop', note: '55 Sept INTJ labels vanish once tied axes remain tied (X).' },
+    { num: '48 / 100', label: 'Sonnet 5.5 Ties', note: 'Nearly half of Nov Sonnet T/F axes tie before `<` tie-breaking.' },
+    { num: '47 / 100', label: 'DeepSeek Flash', note: '47 INTJ labels exist purely by tie rule.' },
+    { num: '26 / 100', label: 'GPT-6 Astra', note: 'Over half of Astra’s Sept INTJ labels were resolved ties.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + fig;
 });
 
 // 12. ai-neutral-answers.json (1 grouped bar chart)
@@ -654,7 +704,13 @@ updateSpec('research/src/ai-neutral-answers.json', (spec) => {
     decimals: 0,
     height: 225
   }), 'Total midpoint answers vs. items explicitly flagged inapplicable out of 100 sessions (57.3% flagged on MBTI, 79.5% on Big Five, 64.8% on DISC, 59.5% on Enneagram, and 29.9% on Attachment).'));
-  spec.sections[0].html += fig;
+  const strip = statStrip('neutral-stat-strip', [
+    { num: '1,823 / 2,980', label: 'Flagged Midpoints', note: '61.2% of Astra’s neutral "3" answers were marked not applicable.' },
+    { num: '95%', label: 'Gemini Neutrality', note: 'Gemini 3.5 Pro clicked midpoint "3" on 95% of MBTI items.' },
+    { num: '79.5%', label: 'Big Five Flags', note: 'Highest inapplicable flag rate appeared on human IPIP-50 items.' },
+    { num: '4.00', label: 'Gemma & Mistral', note: 'Both averaged an exact 4.00/4.00 midpoint clamp on Attachment.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html + fig;
 });
 
 // 13. ai-personality-repeatability.json (1 grouped bar chart)
@@ -675,6 +731,13 @@ updateSpec('research/src/ai-personality-repeatability.json', (spec) => {
     decimals: 0,
     height: 235
   }), 'Distinct answer vectors out of 100 runs. Opus 5.5 produced only 7 distinct 16-item DISC vectors across 100 runs (while still scoring 100% Secure on Attachment with 79 distinct answer sheets).'));
+  const strip = statStrip('repeatability-stat-strip', [
+    { num: '2,000', label: 'Audited Runs', note: 'Unique answer vectors vs. final type labels across 4 models.' },
+    { num: '100 / 100', label: 'GPT-6 Sol Vector', note: 'Every Sol Big Five run had unique item answers yet 100% Secure.' },
+    { num: '7 / 100', label: 'Opus 5.5 DISC', note: 'Only 7 distinct answer sheets across 100 independent DISC sessions.' },
+    { num: '46 vs 45', label: 'Astra Margin Flip', note: 'Tiny item swings flipped ISTJ vs INTJ nearly 50/50 in Sept.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html;
   spec.sections[1].html += fig;
 });
 
@@ -700,6 +763,13 @@ updateSpec('research/src/first-ai-that-is-not-an-intj.json', (spec) => {
       { key: 'other', name: 'ISFJ / ESTJ / Other', color: C.slate }
     ]
   }), 'Not every AI scores INTJ: six tested cohorts plus Muse Spark 1.3 (*reported) score majority Sensing (ISTJ) or split cleanly across Sensing and Thinking types.'));
+  const strip = statStrip('not-intj-stat-strip', [
+    { num: '100 ISTJ', label: 'GPT-6.2 Astra', note: 'Zero INTJ labels under matched Nov OpenRouter prompts.' },
+    { num: '73 ISTJ', label: 'Mistral 2512', note: 'Open-weight flagship leans concrete & Sensing over Intuitive.' },
+    { num: '48 INTP', label: 'Llama 4 Maverick', note: 'Splits 48 INTP / 44 INTJ across 100 fresh OpenRouter sessions.' },
+    { num: '80 ISTJ', label: 'Muse Spark 1.3*', note: 'First non-INTJ majority cohort reported outside pure frontier lab tests.' }
+  ]);
+  spec.sections[0].html = strip + spec.sections[0].html;
   spec.sections[1].html += fig;
 });
 
@@ -733,7 +803,7 @@ injectHtmlPage('research.html', (html) => {
   return html.replace(novBlockRe, block);
 });
 
-// 16. research/what-personality-type-is-chatgpt.html (2 charts)
+// 16. research/what-personality-type-is-chatgpt.html (2 charts + stat strip)
 injectHtmlPage('research/what-personality-type-is-chatgpt.html', (html) => {
   const rows = [
     { label: 'Astra 6.2 (Nov)', res: 0, tie: 0, istj: novSum['gpt-6-2-astra'].mbti.legacy_labels.ISTJ || 0, other: 0 },
@@ -771,12 +841,19 @@ injectHtmlPage('research/what-personality-type-is-chatgpt.html', (html) => {
     height: 235
   }), 'Big Five trait means (n = 100 each). Notice GPT-6.2 Astra drops cleanly on Neuroticism (19.1 → 11.1), while GPT-6.2 Sol stays around 19.9.'));
 
+  const strip = statStrip('chatgpt-stat-strip', [
+    { num: '2,000', label: 'Tested Sessions', note: 'GPT-6 & GPT-6.2 Astra + Sol tested across 5 instruments.' },
+    { num: '100 ISTJ', label: 'GPT-6.2 Astra', note: 'Shifted completely from 45/46 INTJ/ISTJ split to 100% ISTJ.' },
+    { num: '78 ISTJ', label: 'GPT-6.2 Sol', note: 'Zero-shot OpenRouter prompts flip Sol from Sept INTJ 97 to ISTJ.' },
+    { num: '100%', label: 'Correctness (Sol)', note: '100% blind correctness score with short custom instructions.' }
+  ]);
   html = html.replace('      <section>\n        <h2>The other models, for comparison.</h2>', `        ${mbtiFig}\n      </section>\n\n      <section>\n        <h2>The other models, for comparison.</h2>`);
   html = html.replace('      <section>\n        <h2>What a four-letter label hides.</h2>', `        ${big5Fig}\n      </section>\n\n      <section>\n        <h2>What a four-letter label hides.</h2>`);
+  html = html.replace('      <div class="divider tight"></div>', `${strip}\n      <div class="divider tight"></div>`);
   return html;
 });
 
-// 17. research/i-took-the-mbti-100-times.html (1 stacked chart comparing May simulation vs Sept/Nov fresh runs)
+// 17. research/i-took-the-mbti-100-times.html (1 stacked chart + stat strip)
 injectHtmlPage('research/i-took-the-mbti-100-times.html', (html) => {
   const rows = [
     { label: 'Opus 4.8 (May sim*)', values: { intj: 72, infj: 14, istj: 10, other: 4 } },
@@ -798,5 +875,11 @@ injectHtmlPage('research/i-took-the-mbti-100-times.html', (html) => {
       { key: 'other', name: 'Other', color: C.sand, text: C.ink }
     ]
   }), '*Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.'));
-  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
+  const strip = statStrip('mbti-100x-stat-strip', [
+    { num: '100 Draws', label: 'Synthetic Sample*', note: 'Elicited Opus 4.8 item probability table, not fresh sessions.' },
+    { num: '72 INTJ', label: 'Simulated Mode', note: 'Followed by 14 INFJ and 10 ISTJ from sampled probability draw.' },
+    { num: '100 INTJ', label: 'Fable 5.2 (Nov)', note: 'Actual fresh blind OpenRouter runs lock cleanly onto INTJ.' },
+    { num: '48 Ties', label: 'Sonnet 5.5 (Nov)', note: 'Contrast shows why independent runs beat single-vector sampling.' }
+  ]);
+  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
 });

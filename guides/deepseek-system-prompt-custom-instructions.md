@@ -11,6 +11,13 @@ Why XML-tagged constraints beat loose paragraphs in DeepSeek V3/V4 and reasoning
 
 **Quick answer:** In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Why structured XML blocks work best for DeepSeek.
 
 | Surface / Model mode | Where instructions go | Key rule for reliable adherence |

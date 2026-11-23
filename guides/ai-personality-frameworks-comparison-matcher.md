@@ -11,6 +11,13 @@ MBTI, Enneagram, DISC, Big Five (OCEAN), and Attachment control different layers
 
 **Quick answer:** Use DISC or MBTI for faster bottom-line structure; use Big Five (OCEAN) to adjust a single trait (like High Openness or Low Extraversion) without adopting a full persona; and use Enneagram or Attachment to control how candidly the AI pushes back or cushions critique.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Interactive 20-second matcher: match your AI annoyance to the right templates.
 
 Pick what bothers you most about default AI replies and where you plan to paste your rules. The cards below update immediately and open in the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator):

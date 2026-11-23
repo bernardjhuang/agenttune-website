@@ -11,6 +11,13 @@ Measured across 2,000 independent fresh runs on GPT-6 Astra, GPT-6 Sol, Claude O
 
 **Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest questionnaire difference is MBTI tie rate: Claude Fable 5.1 resolved to INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (45 ISTJ vs 19 INTJ tie-free). Adding custom instructions changes reply structure much more than switching models.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## September 2026 head-to-head: 400 fresh sessions per framework.
 
 Using our open evaluation harness ([reproducibility guide →](https://agent-tune.com/guides/reproduce-ai-personality-research)), we ran each model in 100 fresh sessions per questionnaire with ties kept visible:

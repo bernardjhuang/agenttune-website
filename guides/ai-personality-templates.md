@@ -11,6 +11,13 @@ Browse tested copy-paste starters, role blocks, and downloadable .md configs acr
 
 **Quick answer:** Choose your platform in the directory table below: Meta Muse Soul.md & Identity.md (highest plug-and-play fidelity), Claude Personal Preferences & Skills, ChatGPT Custom Instructions & Projects (1,500-char limit), Grok (4,000-char limit), Gemini Gems & GEMINI.md, coding agent AGENTS.md / CLAUDE.md, or OpenRouter open-weight models.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-personality-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Template galleries by AI platform.
 
 | Platform &amp; Gallery | Exact Paste Field &amp; Limit | Templates &amp; Tools Included |

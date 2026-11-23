@@ -25,6 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/cursor-agent-mode-rules-mdc-guide" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/cursor-agent-mode-rules-mdc-guide.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cursor Agent Mode and .cursor/rules/*.mdc: frontmatter, globs, and personality rules","description":"Configure Cursor Agent Mode with .cursor/rules/*.mdc frontmatter (alwaysApply, globs, description), User Rules for AI & safe autonomous diff boundaries.","url":"https://agent-tune.com/guides/cursor-agent-mode-rules-mdc-guide","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -72,6 +73,15 @@
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">Stop Cursor Agent from making unrequested refactors or writing essay summaries—configure alwaysApply, glob-scoped .mdc rules, and User Rules cleanly.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Put repo-wide Agent Mode guardrails (testing gates, git boundaries, stack conventions) in .cursor/rules/*.mdc using YAML frontmatter—alwaysApply: true for universal rules, globs for file-type rules, or description-only for agent-requested rules. Put your personal communication style (diff-first replies, terse prose, pushback) in Cursor Settings → Rules for AI so you never pollute team git history.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/guides/cursor-agent-mode-rules-mdc-guide.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
+          </div>
+        </div>
       </section>
 
 

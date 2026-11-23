@@ -11,7 +11,12 @@ Side-by-side survey scores across 20 November 2026 OpenRouter models (8 propriet
 
 **Quick answer:** Among the 20 November 2026 OpenRouter models (n = 100 fresh sessions each), Qwen 4 Max scored highest on Agreeableness (47.6/50) while DeepSeek V4 Pro scored lowest (32.4/50), and Nemotron 3 Ultra 550B scored highest on Openness (49.2/50). In September 2026 Codex/CLI cohorts, Claude Opus 5.5 led Agreeableness (47.1/50).
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## How to read these tables.
 
@@ -283,3 +288,5 @@ Muse reports mostly ISTJ labels; Astra has 46 original ISTJ and 45 INTJ labels, 
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)
 - [Research: Every AI was an INTJ. Then Meta shipped an ISTJ.](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

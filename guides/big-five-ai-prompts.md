@@ -11,6 +11,13 @@ Modular communication blocks for Openness, Conscientiousness, Extraversion, Agre
 
 **Quick answer:** Pick the two or three Big Five poles where you want your AI to move away from its default baseline—most often Low Agreeableness for candid pushback, Low Extraversion for tighter prose, and High or Low Openness to control abstraction vs concrete examples—and paste those bullets into ChatGPT, Claude, Meta Muse, Codex, or Gemini.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/big-five-ai-prompts.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Interpret your 5 raw IPIP-50 scores (and build a matched prompt).
 
 Already finished the [**free 50-question Big Five test →**](https://agent-tune.com/tests/big-five) (no email, browser-only, 18 reverse-scored items via `6 - response`)? Plug your raw 10–50 totals below to compare against AI baseline averages and export a calibrated prompt:

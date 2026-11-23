@@ -11,6 +11,13 @@ Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Cla
 
 **Quick answer:** ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## 2026 custom instructions limit & path reference table.
 
 | Platform &amp; surface | Exact menu path or file location | Documented cap | Recommended tuning size |

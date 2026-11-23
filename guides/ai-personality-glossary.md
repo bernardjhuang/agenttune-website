@@ -11,6 +11,13 @@ By Bernard Huang · Updated November 17, 2026
 
 **Quick answer:** A tuning file is a short Markdown list of communication rules you paste into an AI’s settings so it matches how you work. Every product names that setting differently: Custom Instructions in ChatGPT, Personal Preferences in Claude, an output style in Claude Code, Soul.md in Meta Muse, a Bot Description in Grok, and AGENTS.md in Codex.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/ai-personality-glossary.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The thing you paste.
 
 ### Tuning (tuning file)

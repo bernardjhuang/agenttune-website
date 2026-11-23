@@ -11,6 +11,13 @@ Step-by-step mobile and web paths for swapping Muse's avatar, display name, and 
 
 **Quick answer:** To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep tone and formatting rules inside Soul.md so avatar updates never overwrite your communication preferences.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Avatar Picker vs. Identity.md text editor (iOS, Android & muse.ai).
 
 You can update Muse’s appearance and display name either through the visual **Assistant Identity** sheet or by editing `Identity.md` directly:

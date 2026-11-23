@@ -11,6 +11,13 @@ Three assistants, three homes for the same rules. Checked against each vendor's 
 
 **Quick answer:** Meta Muse stores communication rules in Soul.md (Assistant icon → Identity → Soul), avatar/name in Identity.md, and personal facts in Memory.md. ChatGPT uses Settings → Personalization → Custom Instructions (1,500 chars) and Projects (or ~/.codex/AGENTS.md in Codex). Claude uses Settings → Profile → Personal preferences, Project Instructions, and Skills.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Where the rules go.
 
 | Control | Meta Muse | ChatGPT | Claude |

@@ -1328,12 +1328,34 @@ function buildHub(contacts) {
     <section class="hero">
       <h1 class="h-hero">Paste-ready personality tunings <em style="color: var(--accent); font-style: italic; font-family: var(--font-serif);">for every agent.</em></h1>
       <p class="lede">
-        43 free Markdown templates across 5 personality systems. Pick a template, edit any line, and paste it into ChatGPT, Claude, Meta Muse <code>Soul.md</code>, or your coding agent.
+        43 free type-matched Markdown files across MBTI, Enneagram, DISC, Attachment &amp; Big Five — plus 120+ platform &amp; role copy-paste templates. Pick any file, tweak any rule, and paste cleanly.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/tests/">Take a test to find your type →</a>
-        <a class="btn btn-secondary" href="/guides/ai-personality-frameworks-comparison-matcher">20-second system matcher →</a>
-        <a class="btn btn-secondary" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a class="btn btn-primary" href="/guides/ai-personality-templates">Explore 120+ Role &amp; App Templates →</a>
+        <a class="btn btn-secondary" href="/tests/">Take a 5-min test to find your type →</a>
+        <a class="btn btn-secondary" href="/guides/ai-personality-frameworks-comparison-matcher">20-sec system matcher →</a>
+      </div>
+      <div class="hp2-template-strip" aria-label="Surface-specific template galleries">
+        <span class="hp2-template-strip-label">By surface:</span>
+        <a class="hp2-template-pill" href="/guides/muse-soul-md-templates">Muse Soul.md</a>
+        <a class="hp2-template-pill" href="/guides/claude-personal-preferences-templates">Claude Preferences</a>
+        <a class="hp2-template-pill" href="/guides/chatgpt-project-instructions-templates">ChatGPT Projects</a>
+        <a class="hp2-template-pill" href="/guides/gemini-gems-system-instructions-templates">Gemini Gems</a>
+        <a class="hp2-template-pill" href="/guides/grok-personality-templates">Grok</a>
+        <a class="hp2-template-pill" href="/guides/agents-md-templates">AGENTS.md</a>
+        <a class="hp2-template-pill" href="/guides/openrouter-open-source-system-prompt-templates">OpenRouter &amp; Open-Source</a>
+      </div>
+      <div class="agent-quickstart-strip" aria-label="Agent-first library access">
+        <div class="agent-quickstart-copy">
+          <div class="agent-quickstart-eyebrow">Agent-First Library API</div>
+          <p class="agent-quickstart-desc">Fetch the machine-readable catalog, download all 43 MIT tunings in one file, or query via MCP <code>get_tuning</code>.</p>
+        </div>
+        <div class="agent-quickstart-links">
+          <a class="agent-link-chip" href="/library/index.json">/library/index.json</a>
+          <a class="agent-link-chip" href="/llms-full.txt">/llms-full.txt</a>
+          <a class="agent-link-chip" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+          <a class="agent-link-chip" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
       </div>
     </section>
 

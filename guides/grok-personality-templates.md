@@ -11,6 +11,13 @@ By Bernard Huang · Updated November 23, 2026
 
 **Quick answer:** Open grok.com or the X app → Profile / Settings → Customize Grok and paste one concise rule block below (avoid sarcasm or persona adjectives unless you specifically want banter). For team workspaces, use one of the 8 Grok Bot character profiles.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/grok-personality-templates.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Quick pick: Top Grok prompts & .md downloads.
 
 | Template | Surface &amp; Goal | Jump / Download |

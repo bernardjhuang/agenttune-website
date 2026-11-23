@@ -11,6 +11,13 @@ Generate properly formatted Windsurf Cascade rules, Cline Plan/Act rules, or uni
 
 **Quick answer:** For Windsurf, store modular Markdown files in .windsurf/rules/ (replacing single-file .windsurfrules) and personal style in Windsurf Global Rules. For Cline, place workspace rules in .clinerules/ (or .cline/rules/)—Cline also auto-reads legacy .windsurfrules and .cursorrules files. To keep multi-agent repos from drifting, anchor shared build/test rules in AGENTS.md.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Generate your Windsurf, Cline, Cursor, or AGENTS.md file.
 
 Pick your coding agent target, communication posture, stack, and test command to copy or download a bounded rules file cleanly:

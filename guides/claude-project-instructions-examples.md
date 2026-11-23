@@ -11,6 +11,13 @@ Keep voice rules global in Profile Preferences and place domain specs, rubrics, 
 
 **Quick answer:** Put global communication habits (brevity, answer-first order, and pushback) in Claude Profile Preferences, and put role, audience, source-citation rules, and output schemas inside Project Instructions so workspaces never pollute unrelated chats.
 
+Quick Actions & Agent Fetch
+
+[Markdown (.md)](https://agent-tune.com/guides/claude-project-instructions-examples.md)
+[Library JSON](https://agent-tune.com/library/index.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## Where to place each rule: Profile vs. Project vs. CLAUDE.md.
 
 | Surface | Scope | What belongs here | Avoid putting here |

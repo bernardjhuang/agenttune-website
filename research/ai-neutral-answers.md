@@ -11,9 +11,30 @@ When an AI picks 3 on a 1–5 scale, it usually means the question is about huma
 
 **Quick answer:** Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## How we counted neutral and inapplicable answers
+
+undefined
+
+Flagged Midpoints
+
+undefined
+
+Gemini Neutrality
+
+undefined
+
+Big Five Flags
+
+undefined
+
+Gemma & Mistral
 
 Each of Astra’s 100 test sessions included 170 questions: 32 MBTI, 50 Big Five, 16 DISC, 36 Enneagram, and 36 Attachment items. A midpoint answer is `3` on a 1–5 scale or `4` on Attachment’s 1–7 scale.
 
@@ -72,3 +93,5 @@ If you test models on human surveys, ask the model to output three fields per it
 
 - [Continue reading: The downstream effect of tied axes](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Continue reading: Astra and Sol’s different protocols](https://agent-tune.com/research/astra-vs-sol-personality-data)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

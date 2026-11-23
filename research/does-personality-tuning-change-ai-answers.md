@@ -11,13 +11,30 @@ We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (54
 
 **Quick answer:** Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
 
-**Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+Open Data & Agent Access
+
+[Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)
+[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+[Apply a template →](https://agent-tune.com/library/)
 
 ## November 2026: 540-reply controlled study across GPT-6.2 Sol, Claude Fable 5.2 & DeepSeek V4 Pro.
 
 540
 
 Blind-judged replies across Sol, Fable 5.2 & DeepSeek V4 Pro
+
++16.7 pp
+
+DeepSeek V4 Pro correctness lift (78.3% → 95.0%)
+
+36.7% → 3.3%
+
+DeepSeek fluff collapse with plain rules + INTJ framing
+
+100%
+
+Claude Opus & Fable Blind-judged replies across Sol, Fable 5.2 & DeepSeek V4 Pro
 
 +16.7 pp
 
@@ -148,3 +165,5 @@ You can reproduce the published summaries with the downloadable Node script and 
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Research: What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Research: The research hub](https://agent-tune.com/research)
+
+**Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
