@@ -5935,3 +5935,11 @@ textarea { box-sizing: border-box; field-sizing: content; max-height: none; }
 .at-snippet-btn:hover { border-color: var(--accent, #c8553d); color: var(--accent-text, #a8482a); }
 .at-snippet-link { font-size: 13.5px; font-weight: 600; color: var(--accent-text, #a8482a); text-decoration: none; }
 .at-snippet-link:hover { text-decoration: underline; }
+
+/* Research visual stat strips and article chart cards */
+.research-stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0 24px; }
+.research-stat-card { background: var(--surface, #fff); border: 1px solid var(--border); border-top: 3px solid var(--accent, #c8553d); border-radius: 10px; padding: 14px 16px; }
+.research-stat-val { font-family: var(--font-serif); font-size: 28px; line-height: 1.1; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.research-stat-label { font-size: 12.5px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+.guide-prose .research-figure { background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 24px 0 28px; }
+.guide-prose .research-figure figcaption { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }

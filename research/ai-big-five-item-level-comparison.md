@@ -53,6 +53,8 @@ Three patterns explain these gaps:
 - **Mood questions (items 34, 39, and 49):** Claude Opus 5.5 answers 1.00 (Very Inaccurate) on feeling blue or having mood swings. GPT-6 Astra and Sol often pick 3 (neutral) because mood questions don't apply to software.
 - **Starting conversations (item 21):** GPT-6 Astra scores 1.61 on “Start conversations” because a chat assistant waits for the user to speak first, while the other models pick 3.00.
 
+All four models hit an automatic 5.00 on language/helpfulness items, converge near 3.00 on human party items, and diverge only on how they treat physical-object or mood questions.
+
 ## Party questions keep Extraversion near the middle (31–33)
 
 While Openness, Conscientiousness, and Agreeableness sit above 42/50, Extraversion stays near 31–33/50. Item 31 (“Talk to a lot of different people at parties”) shows why: every model averages 2.99 to 3.00. Because an AI cannot attend parties, it picks the neutral 3 on almost every run.

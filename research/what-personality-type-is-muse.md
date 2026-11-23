@@ -25,6 +25,8 @@ In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 time
 | Attachment | Secure in all 100 runs. Anxiety 2.04, avoidance 2.52 (1–7 scale, 4.00 cutoff). |
 | Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
 
+Muse Spark 1.3 reported Enneagram means out of 20 (outlined bars indicate reported aggregates without raw vectors).
+
 ## What the scores describe.
 
 Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are raw sums on a 10–50 scale, not human percentiles. Compared with the four fresh-session cohorts, Muse reports lower Openness, slightly higher Extraversion, and higher DISC Influence (10.9 vs 8.0–8.7). Because the session protocols and identity prompts differed, those differences are descriptive rather than a direct model-to-model benchmark.
@@ -40,6 +42,8 @@ Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are r
 | Claude Fable 5.1 | 100 fresh sessions per test | INTJ 98 fully resolved | Type 8 sole leader 55; 44 top ties | 43.9 · 43.6 · 32.7 · 45.0 · 17.1 |
 
 Notice that GPT-6 Astra also has more fully resolved ISTJ runs (45) than INTJ runs (19), and leads with Type 2 on the Enneagram in 50 fresh sessions.
+
+Muse Spark 1.3 reports lower Openness (39.5) and slightly higher Extraversion (33.8) than the September fresh-session models, alongside comparable Agreeableness (44.6).
 
 ## What this report cannot show.
 

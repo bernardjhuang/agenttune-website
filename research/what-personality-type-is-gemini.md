@@ -28,6 +28,10 @@ On November 23, 2026, we ran `google/gemini-4-neon` and `google/gemini-4-argon` 
 
 Both Gemini 4 variants hit the floor of the IPIP-50 Neuroticism scale (10.00 across 100/100 runs!) and near-ceiling Conscientiousness (49.3 and 49.0 out of 50), while splitting cleanly on MBTI Intuition vs. Sensing and Enneagram Type 1 vs. Type 5w6.
 
+Gemini 4 Neon leans Intuition (62 resolved INTJ, 20 S/N ties, 18 ISTJ), whereas Gemini 4 Argon shifts firmly to Sensing (66 ISTJ, 34 S/N ties). *Gemini 3.1 Pro from May 2026 mixed-method loop.
+
+Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10.0 Neuroticism floor across all 100 sessions.
+
 ## Gemini 3.1 Pro, May 2026.
 
 | Test | Reported result | How it compares |

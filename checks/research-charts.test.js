@@ -60,3 +60,30 @@ test('the research hub includes the archived figures without browser JavaScript 
     assert.match(svg,/<title /);assert.match(svg,/<desc /);assert.doesNotMatch(svg,/NaN|undefined/);
   }
 });
+
+test('every published research page includes accessible, finite inline SVG charts with unique IDs', () => {
+  const researchDir = path.join(__dirname, '../research');
+  const pages = [
+    path.join(__dirname, '../research.html'),
+    ...fs.readdirSync(researchDir).filter((f) => f.endsWith('.html')).map((f) => path.join(researchDir, f))
+  ];
+  assert.ok(pages.length >= 16);
+  for (const file of pages) {
+    const pageHtml = fs.readFileSync(file, 'utf8');
+    const svgs = [...pageHtml.matchAll(/<svg class="research-chart"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+    assert.ok(svgs.length >= 1, `${path.relative(path.join(__dirname, '..'), file)} should include at least 1 SVG chart`);
+    const ids = [...pageHtml.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
+    assert.equal(new Set(ids).size, ids.length, `Duplicate element IDs in ${path.basename(file)}`);
+    for (const svg of svgs) {
+      const id = svg.match(/<title id="([^"]+)-t">/)?.[1];
+      assert.ok(id, `Chart in ${path.basename(file)} missing <title id="...-t">`);
+      assert.ok(svg.includes(`role="img" aria-labelledby="${id}-t ${id}-d"`), id);
+      const d = svg.match(/<desc[^>]*>([\s\S]*?)<\/desc>/)?.[1] || '';
+      assert.ok(d.length > 80, `${id} description too short (${d.length})`);
+      assert.doesNotMatch(svg, /NaN|Infinity|undefined/, id);
+      for (const [, dim] of svg.matchAll(/\b(?:width|height|r)="(-?[0-9.]+)"/g)) {
+        assert.ok(Number(dim) >= 0, `${id} has negative dimension ${dim}`);
+      }
+    }
+  }
+});

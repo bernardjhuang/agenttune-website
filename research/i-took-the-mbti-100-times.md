@@ -41,6 +41,8 @@ In September 2026, we replaced single-profile simulations with 100 independent f
 
 Across the four September 2026 fresh cohorts combined (400 sessions), **59 of 400 runs tied on at least one OEJTS axis**. Under the old strict-less-than scorer (which broke exact midpoint ties toward `INTJ`), `INTJ` share appeared inflated from 280 / 400 (70.0%) to 335 / 400 (83.8%). Read the full artifact audit in [How tie-breaking creates phantom INTJs](https://agent-tune.com/research/ai-mbti-tie-breaking).
 
+*Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.
+
 ## Why 72% versus 99% is not a version comparison
 
 The older Opus 4.7 headline came from a different elicitation prompt, sampling setup, and scorer. A valid version-over-version comparison requires holding five variables identical across releases: exact item order and scale labels, API temperature and seed parameters, conversation history isolation, strict tie-preserving scoring code, and published per-item CSVs. Without matched artifacts, comparing 72% (May simulation) against 99% (legacy run) or 98% (September Fable 5.1) conflates scoring math and protocol differences with model changes.

@@ -29,6 +29,8 @@ The May 2026 report counted 597 INTJ labels across 600 MBTI scoring records from
 
 On the Sensing vs Intuition axis, Astra has 48 Sensing wins, 28 Intuition wins, and 24 exact ties. Small score margins flip a four-letter MBTI label. Because Muse’s raw answer vectors were not supplied, we cannot run the same tie reanalysis on Muse.
 
+Not every AI scores INTJ: six tested cohorts plus Muse Spark 1.3 (*reported) score majority Sensing (ISTJ) or split cleanly across Sensing and Thinking types.
+
 ## What a comparison cannot tell us.
 
 Model versions, prompts, test-name visibility, and session structure all changed between May and September. Even the two GPT-6 cohorts received different prompt instructions for human-specific items. Those method changes explain why label shifts cannot prove that models became warmer, blunter, or more concrete on real tasks.

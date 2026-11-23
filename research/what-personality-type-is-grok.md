@@ -27,6 +27,8 @@ To replace single-submission reliance on Grok 4.6, we administered all 170 blind
 
 Notice two clear differences on Grok 4.7’s fresh-session runs: first, Agreeableness jumped from Grok 4.6’s 33/50 to 44.9/50, aligning with proprietary peers; second, mean attachment avoidance dropped below the 4.00 line to 3.48 (though 4 individual runs still crossed into Avoidant up to 4.11). Want to configure Grok directly? See our [Grok Personality Templates gallery](https://agent-tune.com/guides/grok-personality-templates).
 
+Across 100 fresh sessions, Grok 4.7 records substantially higher Agreeableness (44.9 vs. Grok 4.6’s reported 33) and lower Neuroticism (14.8 vs. 19).
+
 ## Grok 4.6, September 2026, as reported.
 
 The Grok 4.6 submission contains one canonical answer set per test, answered as itself without a role-play prompt, plus summary counts from 100 simulated draws over items it marked as uncertain. We verified and re-scored the canonical MBTI, Enneagram, and DISC vectors; Big Five and attachment figures are transcribed as reported because raw item vectors were not included.
@@ -59,6 +61,8 @@ How close do the four 100-session cohorts sit to that same avoidance cutoff? Acr
 | Claude Fable 5.1 | 2.01 (1.83–2.28) | 3.18 (2.89–3.56) | 0 | 8 (8 avoidant) | 50 (50 avoidant) |
 
 Because romantic-partner items do not literally apply to software, models that endorse professional self-sufficiency naturally drift toward higher avoidance—a measurement artifact rather than emotional detachment.
+
+Mean ECR-R placement showing Grok 4.7 (mean avoidance 3.48; 96 Secure / 4 Avoidant) compared with Grok 4.6’s reported 4.06 point right above the 4.00 Avoidant cutoff.
 
 ## Using these results with Grok & Grok Bot.
 

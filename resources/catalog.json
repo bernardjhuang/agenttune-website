@@ -737,7 +737,7 @@
       "title": "Why AI Models Score High on Agreeableness & Openness",
       "url": "https://agent-tune.com/research/ai-big-five-item-level-comparison",
       "markdown": "https://agent-tune.com/research/ai-big-five-item-level-comparison.md",
-      "revision": "506f7bc8e18d",
+      "revision": "23109d215ad8",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -747,7 +747,7 @@
       "title": "Are AI Models Really INTJ? How Tie-Breaking Inflates Results",
       "url": "https://agent-tune.com/research/ai-mbti-tie-breaking",
       "markdown": "https://agent-tune.com/research/ai-mbti-tie-breaking.md",
-      "revision": "3c75d100f0d8",
+      "revision": "9d2b007d027d",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -757,7 +757,7 @@
       "title": "Why AI Chooses Neutral Answers: 17,000-Response Analysis",
       "url": "https://agent-tune.com/research/ai-neutral-answers",
       "markdown": "https://agent-tune.com/research/ai-neutral-answers.md",
-      "revision": "94fa14fe8e14",
+      "revision": "836dc534a1d4",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -767,7 +767,7 @@
       "title": "AI Personality Rankings: 20 Models Tested (Nov & Sept 2026 Data)",
       "url": "https://agent-tune.com/research/ai-personality-rankings",
       "markdown": "https://agent-tune.com/research/ai-personality-rankings.md",
-      "revision": "72d8a5d1767f",
+      "revision": "7a0199ed7c44",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -777,7 +777,7 @@
       "title": "AI Personality Repeatability: Labels vs Answer Variance",
       "url": "https://agent-tune.com/research/ai-personality-repeatability",
       "markdown": "https://agent-tune.com/research/ai-personality-repeatability.md",
-      "revision": "88a0e5ba442f",
+      "revision": "06b8dce1a447",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -787,7 +787,7 @@
       "title": "GPT-6 Astra vs Sol (Sept) & GPT-6.2 Astra vs Sol (Nov): 100-Run Data",
       "url": "https://agent-tune.com/research/astra-vs-sol-personality-data",
       "markdown": "https://agent-tune.com/research/astra-vs-sol-personality-data.md",
-      "revision": "06d2cc7f5e00",
+      "revision": "0354eb407079",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -797,7 +797,7 @@
       "title": "Does Personality Tuning Change AI Answers? 540-Reply Study + 60-Reply Pilot",
       "url": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers",
       "markdown": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md",
-      "revision": "b04f2a3d63eb",
+      "revision": "cc1ff554c468",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -807,7 +807,7 @@
       "title": "Is Every AI an INTJ? Muse, Astra and the Evidence",
       "url": "https://agent-tune.com/research/first-ai-that-is-not-an-intj",
       "markdown": "https://agent-tune.com/research/first-ai-that-is-not-an-intj.md",
-      "revision": "28d662bba490",
+      "revision": "cbd731fb0765",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -817,7 +817,7 @@
       "title": "Claude Opus 5.5 vs Fable 5.1: 170-Item Personality Results",
       "url": "https://agent-tune.com/research/opus-vs-fable-question-level",
       "markdown": "https://agent-tune.com/research/opus-vs-fable-question-level.md",
-      "revision": "6ad8e3d6b1a8",
+      "revision": "d412c3ddf16e",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -827,7 +827,7 @@
       "title": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
       "url": "https://agent-tune.com/research/what-personality-type-are-open-source-models",
       "markdown": "https://agent-tune.com/research/what-personality-type-are-open-source-models.md",
-      "revision": "a9e61c6c5cc1",
+      "revision": "fad7849ac4b2",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -837,7 +837,7 @@
       "title": "What Personality Type Is Claude? Opus 5.5, Fable 5.2 & Sonnet 5.5 Tested",
       "url": "https://agent-tune.com/research/what-personality-type-is-claude",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-claude.md",
-      "revision": "cb57ed367d04",
+      "revision": "fb1b878342e7",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -847,7 +847,7 @@
       "title": "Gemini MBTI & Personality Type: Gemini 4 Neon, Argon & 3.1 Pro Data",
       "url": "https://agent-tune.com/research/what-personality-type-is-gemini",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-gemini.md",
-      "revision": "e7cf55cbf812",
+      "revision": "f7ce07757170",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -857,7 +857,7 @@
       "title": "What Personality Type Is Grok? Grok 4.7 (n=100) & Grok 4.6 Data",
       "url": "https://agent-tune.com/research/what-personality-type-is-grok",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-grok.md",
-      "revision": "fb1be2d95005",
+      "revision": "eea04212e113",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -867,7 +867,7 @@
       "title": "What Personality Type Is Muse? Muse Spark 1.3 Report (2026)",
       "url": "https://agent-tune.com/research/what-personality-type-is-muse",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-muse.md",
-      "revision": "7e74d4a6e960",
+      "revision": "97fe8fcfe472",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -887,7 +887,7 @@
       "url": "https://agent-tune.com/research/i-took-the-mbti-100-times",
       "markdown": "https://agent-tune.com/research/i-took-the-mbti-100-times.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "eaac87cd8f6e"
+      "revision": "b9deab277b67"
     },
     {
       "id": "what-personality-type-is-chatgpt",
@@ -896,7 +896,7 @@
       "url": "https://agent-tune.com/research/what-personality-type-is-chatgpt",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-chatgpt.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "163c09bf2bde"
+      "revision": "d151f0f181ee"
     }
   ]
 }

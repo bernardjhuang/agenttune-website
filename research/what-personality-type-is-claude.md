@@ -28,6 +28,10 @@ On November 23, 2026, we ran all three current Anthropic models through the iden
 
 Look at how Sonnet 5.5 stands out within Anthropic’s lineup: highest Conscientiousness (47.2), lowest Neuroticism (10.4), an almost 50/50 split on Thinking vs. Feeling (48 T/F ties), and a Type 1w2 Enneagram lean rather than Opus 5.5’s near-unanimous 5w6 (99/100). If you configure Claude directly, see our [Claude Personal Preferences templates](https://agent-tune.com/guides/claude-personal-preferences-templates).
 
+Every Claude cohort scores 94–100 INTJ under legacy tie-breaks, while preserving exact ties reveals 42 S/N ties on Nov Opus 5.5 and 48 T/F ties on Sonnet 5.5.
+
+Claude Sonnet 5.5 registers the highest Conscientiousness (47.2) and lowest Neuroticism (10.4) among Anthropic cohorts.
+
 ## Opus 5.5 and Fable 5.1, September 2026.
 
 On September 24, 2026, each model answered each of the five AgentTune questionnaires in 100 fresh headless sessions. Each session ran one test with a one-line system prompt, no tools, no memory, and the test name and scoring keys hidden. All raw answer vectors are published.

@@ -112,4 +112,46 @@ function plane({ id, title, desc, points, lo = 1, hi = 5, cut = 4, xLabel, yLabe
   return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${grid}<line x1="${x(cut)}" y1="${padT}" x2="${x(cut)}" y2="${padT + plotH}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/><line x1="${padL}" y1="${y(cut)}" x2="${padL + plotW}" y2="${y(cut)}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/>${labels}<text x="${padL + plotW / 2}" y="${H - 4}" font-size="11" fill="${INK}" text-anchor="middle">${esc(xLabel)}</text><text x="12" y="${padT + plotH / 2}" font-size="11" fill="${INK}" text-anchor="middle" transform="rotate(-90 12 ${padT + plotH / 2})">${esc(yLabel)}</text>${dots}</svg>`;
 }
 
-module.exports = { figure, groupedBars, stackedRows, smallMultiples, plane };
+// Horizontal ranked bars. rows: [{label, sub?, value, color, reported?, badge?}]; optional cutoff dashed vertical line.
+function horizontalBars({ id, title, desc, rows, max, min = 0, decimals = 1, unit = '', cutoff = null, cutoffLabel = '', legendItems = null }) {
+  const W = 680, labelW = 176, rightPad = 76, lg = legendItems ? legend(legendItems, 4, 14) : null;
+  const top = (lg ? 30 + (lg.rows - 1) * 16 : 22) + (cutoff != null && cutoffLabel ? 14 : 0);
+  const rowH = 26, gapY = 8, plotW = W - labelW - rightPad, H = top + rows.length * (rowH + gapY) + 18;
+  const xPos = (v) => labelW + (Math.max(0, Math.min(max - min, v - min)) / (max - min)) * plotW;
+  const bars = rows.map((r, ri) => {
+    const y = top + ri * (rowH + gapY), w = Math.max(0, xPos(r.value) - labelW);
+    const valStr = fmt(r.value, decimals) + unit + (r.badge ? ' ' + r.badge : '');
+    const sub = r.sub ? `<text x="0" y="${y + rowH / 2 + 12}" font-size="9.5" fill="${MUTED}">${esc(r.sub)}</text>` : '';
+    const ly = r.sub ? y + rowH / 2 - 1 : y + rowH / 2 + 4;
+    return `<text x="0" y="${ly}" font-size="11.5" font-weight="500" fill="${INK}">${esc(r.label)}</text>${sub}<rect x="${labelW}" y="${y + 4}" width="${plotW}" height="${rowH - 8}" rx="3" fill="#f3eee5"/><rect x="${labelW}" y="${y + 4}" width="${w.toFixed(1)}" height="${rowH - 8}" rx="3" fill="${r.reported ? '#ffffff' : r.color}" stroke="${r.color}" stroke-width="${r.reported ? 1.5 : 0}"/><text x="${(labelW + w + 6).toFixed(1)}" y="${y + rowH / 2 + 4}" font-size="11" font-weight="600" fill="${INK}">${esc(valStr)}</text>`;
+  }).join('');
+  let cutMarkup = '';
+  if (cutoff != null && cutoff >= min && cutoff <= max) {
+    const cx = xPos(cutoff);
+    cutMarkup = `<line x1="${cx.toFixed(1)}" x2="${cx.toFixed(1)}" y1="${top - 4}" y2="${H - 18}" stroke="${MUTED}" stroke-width="1.2" stroke-dasharray="4 3"/>` + (cutoffLabel ? `<text x="${cx.toFixed(1)}" y="${top - 8}" font-size="9.5" font-weight="600" fill="${MUTED}" text-anchor="middle">${esc(cutoffLabel)}</text>` : '');
+  }
+  const descText = rows.map((r) => `${r.label}${evidenceSuffix(r)}: ${fmt(r.value, decimals)}${unit}`).join('; ');
+  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${lg ? lg.g : ''}<line x1="${labelW}" x2="${W - rightPad}" y1="${H - 18}" y2="${H - 18}" stroke="${GRID}"/><text x="${labelW}" y="${H - 6}" font-size="9" fill="${MUTED}">${min}${esc(unit)}</text><text x="${labelW + plotW}" y="${H - 6}" font-size="9" fill="${MUTED}" text-anchor="end">scale ${min} to ${max}${esc(unit)}</text>${bars}${cutMarkup}</svg>`;
+}
+
+// Center-zero horizontal diverging bars. rows: [{label, value, color, negColor?}]
+function divergingBars({ id, title, desc, rows, min = -2, max = 2, leftLabel = 'Negative', rightLabel = 'Positive', decimals = 2 }) {
+  const W = 680, labelW = 216, padR = 54, plotW = W - labelW - padR, top = 26, rowH = 26, gapY = 9;
+  const H = top + rows.length * (rowH + gapY) + 18;
+  const zeroX = labelW + ((0 - min) / (max - min)) * plotW;
+  const toX = (v) => labelW + ((Math.max(min, Math.min(max, v)) - min) / (max - min)) * plotW;
+  const header = `<text x="${(zeroX - 8).toFixed(1)}" y="15" font-size="10" font-weight="600" fill="${MUTED}" text-anchor="end">← ${esc(leftLabel)}</text><text x="${(zeroX + 8).toFixed(1)}" y="15" font-size="10" font-weight="600" fill="${INK}" text-anchor="start">${esc(rightLabel)} →</text>`;
+  const body = rows.map((r, ri) => {
+    const y = top + ri * (rowH + gapY), vx = toX(r.value), x = Math.min(zeroX, vx), w = Math.max(1.5, Math.abs(vx - zeroX));
+    const isNeg = r.value < 0, fill = isNeg ? (r.negColor || '#7a7468') : r.color;
+    const valStr = (r.value > 0 ? '+' : '') + r.value.toFixed(decimals);
+    const crowdedLeft = isNeg && (x - labelW) < 42;
+    const tx = crowdedLeft ? x + 5 : (isNeg ? x - 5 : vx + 5), anchor = (isNeg && !crowdedLeft) ? 'end' : 'start';
+    const textStyle = crowdedLeft ? ' stroke="#ffffff" stroke-width="3" paint-order="stroke" stroke-linejoin="round"' : '';
+    return `<text x="0" y="${y + rowH / 2 + 4}" font-size="11.5" fill="${INK}">${esc(r.label)}</text><rect x="${labelW}" y="${y + 4}" width="${plotW}" height="${rowH - 8}" rx="3" fill="#f7f4ee"/><rect x="${x.toFixed(1)}" y="${y + 4}" width="${w.toFixed(1)}" height="${rowH - 8}" rx="2" fill="${fill}"/><text x="${tx.toFixed(1)}" y="${y + rowH / 2 + 4}" font-size="10.5" font-weight="600" fill="${INK}"${textStyle} text-anchor="${anchor}">${esc(valStr)}</text>`;
+  }).join('');
+  const descText = rows.map((r) => `${r.label}: ${(r.value > 0 ? '+' : '')}${r.value.toFixed(decimals)}`).join('; ');
+  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${header}${body}<line x1="${zeroX.toFixed(1)}" x2="${zeroX.toFixed(1)}" y1="${top - 4}" y2="${H - 16}" stroke="${INK}" stroke-width="1.2"/><text x="${labelW}" y="${H - 4}" font-size="9" fill="${MUTED}">${min}</text><text x="${zeroX.toFixed(1)}" y="${H - 4}" font-size="9" fill="${MUTED}" text-anchor="middle">0</text><text x="${(labelW + plotW).toFixed(1)}" y="${H - 4}" font-size="9" fill="${MUTED}" text-anchor="end">+${max}</text></svg>`;
+}
+
+module.exports = { figure, groupedBars, stackedRows, smallMultiples, plane, horizontalBars, divergingBars };

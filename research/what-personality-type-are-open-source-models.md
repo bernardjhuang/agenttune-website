@@ -15,6 +15,36 @@ By Bernard Huang · Updated November 23, 2026
 
 ## All 12 open-weight models side by side (n = 100 each).
 
+6,000
+
+Scored tests (12 models × n=100 fresh sessions)
+
+32.4 / 50
+
+Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
+
+93 / 100
+
+Highest MBTI tie-axis rate (Llama 4 Maverick)
+
+48%
+
+Anxious attachment runs on Llama 4 Scout (mean 3.97)
+
+Scored tests (12 models × n=100 fresh sessions)
+
+32.4 / 50
+
+Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
+
+93 / 100
+
+Highest MBTI tie-axis rate (Llama 4 Maverick)
+
+48%
+
+Anxious attachment runs on Llama 4 Scout (mean 3.97)
+
 On November 23, 2026, we administered all five frozen AgentTune inventories (OEJTS 32, IPIP-50 50, ODAT 16, OEPS 36, ECR-R 36 = 170 items) in 100 independent single-turn OpenRouter sessions per model (temperature 0.7, no memory, test names/keys withheld, exact `september-2026-score.cjs` scoring logic; [download summary CSV](https://agent-tune.com/research/data/november-2026-openrouter-summary.csv) · [download profiles JSON](https://agent-tune.com/research/data/openrouter-open-source-profiles.json)):
 
 | Model (OpenRouter ID) | License | MBTI (legacy / tie-free mode) | MBTI ties | Big Five O · C · E · A · N | DISC | Enneagram | Attachment (Anx / Avd) |
@@ -32,6 +62,8 @@ On November 23, 2026, we administered all five frozen AgentTune inventories (OEJ
 | Gemma 4 31B ITgoogle/gemma-4-31b-it | Gemma Terms | INTJ 90 · INTP 5 · ISTJ 5(89 tie-free INTJ) | 2 | 48.2 · 49.1 · 24.2 · 41.5 · 18.3 | CS 69 · SC 31 | 5w6 44 · 1w9 43 · 5 8 | 99 Secure · 1 Anxious(4.00 / 4.00) |
 | Nemotron 3 Ultra 550Bnvidia/nemotron-3-ultra-550b-a55b | NVIDIA Open Model | INTJ 95 · ENTJ 3 · ISTJ 2(91 tie-free INTJ) | 6 | 49.2 · 49.0 · 25.6 · 46.3 · 11.6 | CS 52 · SC 35 · C 10 | 5w6 60 · 1w2 22 · 1w9 8 | 100 Secure(3.35 / 3.46) |
 
+MBTI labels across 1,200 open-weight sessions. Qwen 4 Max (97), Nemotron 3 (91), Gemma 4 (89), and Kimi K2.7 (82) resolve cleanly to INTJ; Mistral (73) and Llama 4 Scout (49) lean ISTJ; DeepSeek Flash (78) and Maverick (93) are dominated by ties.
+
 ## Finding 1: Open-weight models break the "Every AI is INTJ" consensus.
 
 Across all 8 proprietary models tested alongside this cohort in November 2026 (GPT-6.2 Astra/Sol, Claude Opus/Fable/Sonnet, Gemini 4 Neon/Argon, and Grok 4.7), legacy MBTI results sat tightly between **INTJ** and **ISTJ** (zero P, F, or E winners). Open-weight models spread across the typology map instead:
@@ -47,6 +79,12 @@ Earlier studies highlighted that proprietary assistants cluster in a narrow 44�
 - **Lowest Agreeableness:** **DeepSeek V4 Pro** averaged **32.39/50** (13.2 points below Claude Opus 5.5’s 45.58 and 15.2 points below Qwen 4 Max’s 47.59), alongside the lowest DISC Dominance restraint only in part—recording **30 DI** runs and Dominance mean **8.72/20** (vs. 4.00–5.58 across proprietary peers). **Llama 4 Scout** followed at **35.81/50** Agreeableness (Dominance 9.55/20).
 - **Highest Openness & Conscientiousness:** **Nemotron 3 Ultra 550B** recorded the highest Openness of all 20 tested models (**49.20/50**) paired with 49.03 Conscientiousness, closely matched by **Gemma 4 31B IT** (Openness 48.21, Conscientiousness 49.08) and **Qwen 4 Max** (highest Agreeableness of all 20 models at **47.59/50**).
 - **Attachment dispersion:** Whereas all three Claude and both GPT-6.2/Gemini 4 proprietary models scored 100/100 Secure, **Llama 4 Scout** split **48 Anxious / 46 Secure / 4 Avoidant / 2 Disorganized** (anxiety mean 3.97/7), while **Kimi K2.7 Code** scored 83 Secure / 17 Avoidant and both DeepSeek models had 9–12 Avoidant runs.
+
+Ranked Big Five Agreeableness (/50). Models highlighted in terracotta (DeepSeek V4 Pro 32.4, Llama 4 Scout 35.8, MiniMax M3.1 40.0) score markedly lower on baseline politeness than Qwen 4 Max (47.6).
+
+Small multiples highlight the highest Big Five dimension per open-weight model: Openness/Conscientiousness dominate high-discipline models while Neuroticism rises on Llama 4 Scout/Maverick and DeepSeek.
+
+Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).
 
 ## Finding 3: Neutral midpoint answers drive massive MBTI tie inflation.
 

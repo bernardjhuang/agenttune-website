@@ -15,7 +15,21 @@ We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (54
 
 ## November 2026: 540-reply controlled study across GPT-6.2 Sol, Claude Fable 5.2 & DeepSeek V4 Pro.
 
-Using our published 20-task protocol ([personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json): arithmetic, false-premise checks, missing-fact identification, refactoring diffs, and constrained formatting), we collected 3 independent runs per cell across three models on November 23, 2026 (540 replies total), blind-graded by `google/gemini-4-argon` ([download all 540 replies & ratings JSON](https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json)):
+540
+
+Blind-judged replies across Sol, Fable 5.2 & DeepSeek V4 Pro
+
++16.7 pp
+
+DeepSeek V4 Pro correctness lift (78.3% → 95.0%)
+
+36.7% → 3.3%
+
+DeepSeek fluff collapse with plain rules + INTJ framing
+
+100%
+
+Claude Opus & Fable Using our published 20-task protocol ([personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json): arithmetic, false-premise checks, missing-fact identification, refactoring diffs, and constrained formatting), we collected 3 independent runs per cell across three models on November 23, 2026 (540 replies total), blind-graded by `google/gemini-4-argon` ([download all 540 replies & ratings JSON](https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json)):
 
 | Model · Condition (n = 60/row) | Correctness | Format | Answer-first (/5) | Fluff rate | Mean words | Questions/reply |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -34,6 +48,12 @@ Key takeaway: on GPT-6.2 Sol and Claude Fable 5.2, default answer-first performa
 ### 72-reply Claude Preferences API conditioning check
 
 We also ran the 36-cell [Claude Preferences test kit](https://agent-tune.com/resources/research/claude-preferences-kit.json) on both `Claude Opus 5.5` and `Claude Fable 5.2` via OpenRouter system prompting (72 replies total; [download JSON](https://agent-tune.com/research/data/november-2026-claude-preferences-results.json)). Under baseline prompts, Opus 5.5 passed correctness and the 100-word limit 75% of the time (mean 123.0 words) and Fable 5.2 hit 83.3% correctness / 75% word-limit (102.6 words); with the 5-line instruction active, **both models hit 100% across correctness, answer-first,
+
+Blind-judged correctness pass rates (%) across 540 replies (n = 60 per bar). DeepSeek V4 Pro climbs +16.7 percentage points from Default (78.3%) to Plain-English rules (95.0%).
+
+Fluff rate (%) measured by blind judge Gemini 4 Argon. Both Sol and Fable 5.2 maintain 0% fluff, while DeepSeek V4 Pro drops from 36.7% at baseline to 3.3% under Rules + INTJ.
+
+System-prompt conditioning lifts both Claude Opus 5.5 and Claude Fable 5.2 to 100% correctness, 100%
 
 ## September 2026: How the 60-reply pilot was set up.
 
@@ -59,6 +79,8 @@ Each reply was generated in a fresh session with no tools, and every prompt, rep
 | Usefulness rating (1–5) | 4.8 | 4.8 | 4.45 |
 
 Notice that the Direct rules did not make replies shorter (381.9 words vs. 380 words)—instead, they moved the recommendation to the very first sentence (19/20 perfect answer-first scores), cut hedging from 7 total matches to 1, and stopped the model from ending every turn with “Would you like me to…?” questions.
+
+In the September 2026 pilot (n = 20 tasks per arm), Direct / INTJ raised 5/5 answer-first openings from 14 to 19 while cutting trailing questions from 18 to 5 and hedge matches from 7 to 1.
 
 ## One prompt, three very different openings.
 

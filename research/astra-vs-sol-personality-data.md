@@ -28,6 +28,8 @@ To remove September’s midpoint-prompt confound, we ran `openai/gpt-6.2-astra` 
 
 Notably, GPT-6.2 Sol still showed nearly double Astra’s Neuroticism score (19.94 vs. 11.14) and triple its attachment anxiety (3.57 vs. 1.22), alongside higher Enneagram Type 5 representation (55 vs. 3) and much higher response variability (94 unique MBTI vectors vs. 35).
 
+Zero-centered N−S axis margin (out of −16 to +16). Under uniform November single-turn prompts, both GPT-6.2 Sol (−1.19) and GPT-6.2 Astra (−1.67) sit cleanly on the Sensing side.
+
 ## How the September 200 sessions were collected
 
 Each model ran 100 fresh Codex CLI sessions at `xhigh` effort, answering all five questionnaires inside each session (500 scored tests per model, 1,000 total). Because all five tests shared one session window per run, the experimental unit is the 100 sessions per model—not 500 independent API calls.
@@ -58,6 +60,8 @@ Under the old tie-breaking rule, Astra was labeled 46 ISTJ / 45 INTJ and Sol was
 | N | 19.14 | 20.05 | +0.91 |
 
 Each trait runs from 10 to 50. Astra and Sol sit within 0.11 points of each other on Conscientiousness and Agreeableness, and within 2.33 points on Openness and Extraversion. Remember that raw totals out of 50 are not human population percentiles.
+
+GPT-6.2 Sol shows nearly double Astra 6.2’s Neuroticism score (19.9 vs. 11.1), while Openness, Conscientiousness, Extraversion, and Agreeableness remain closely aligned.
 
 ## Attachment: both score 100% Secure at slightly different coordinates
 

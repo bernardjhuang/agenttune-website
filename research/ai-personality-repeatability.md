@@ -32,6 +32,8 @@ Because a broad category covers a wide range of scores, a model's final label ca
 
 Each cell shows how many unique answer sheets appeared across 100 fresh runs. Shorter tests like DISC (16 questions) naturally repeat exact answer sheets more often than longer tests like the Big Five (50 questions).
 
+Distinct answer vectors out of 100 runs. Opus 5.5 produced only 7 distinct 16-item DISC vectors across 100 runs (while still scoring 100% Secure on Attachment with 79 distinct answer sheets).
+
 ## On DISC, Opus 5.5 gave the exact same 16 answers 60 times
 
 Across 100 DISC runs, Claude Opus 5.5 produced only 7 distinct answer sheets—and its single most common answer sheet appeared 60 times. Claude Fable 5.1 produced 10 distinct DISC sheets (top sheet: 45 times), while GPT-6 Sol produced 66 distinct sheets (top sheet: 8 times).

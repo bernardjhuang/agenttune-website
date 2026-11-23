@@ -26,6 +26,8 @@ Both numbers come from the same frozen answer arrays. We show the legacy counts 
 | Claude Opus 5.5 | 94 | 84 | 11 |
 | Claude Fable 5.1 | 99 | 98 | 1 |
 
+Comparison of tie-preserving INTJ counts vs. legacy `
+
 ## Explore the effect for one model
 
 Pick a model and scoring rule below to inspect the exact 100-run breakdown from our frozen dataset:

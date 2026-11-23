@@ -32,6 +32,8 @@ Raw Big Five answers run from 1 to 5. A negative raw gap means Fable chose a low
 
 On item 17, Opus chose 5 in all 100 runs, while Fable chose 4 in 96 runs and 5 in four. The 0.96-point gap comes from a consistent shift across the whole cohort, not a few outliers.
 
+Keyed item-level gaps (1–5 scale, n = 100 per model). Two reverse-scored physical-belongings items add +1.80 to Fable’s Conscientiousness, while Opus scores higher on empathy and chore-completion items.
+
 ## Reverse scoring changes the direction
 
 On “Leave my belongings around,” Opus averages 1.98 and Fable averages 1.08. Because the item is reverse-scored (`6 - response`), it adds 4.02 points to Opus’s Conscientiousness score and 4.92 points to Fable’s—a `+0.90` advantage for Fable.

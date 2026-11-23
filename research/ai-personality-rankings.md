@@ -46,6 +46,10 @@ Sorted by Big Five Agreeableness mean (/50) in the uniform November 2026 OpenRou
 | Llama 4 Scout | Open-Weight | 35.8 | 37.8 | 39.0 | 27.7 | ISTJ 49 · ESTJ 14 (38 ties) | 48 Anx / 46 Sec (3.97 / 3.60) |
 | DeepSeek V4 Pro | Open-Weight | 32.4 | 40.3 | 39.8 | 23.7 | INTJ 55 · INTP 15 (53 ties, 22 XXXX) | 88 Secure / 12 Avoid (2.91 / 3.88) |
 
+November 2026 IPIP-50 Agreeableness means (scale 10–50, n = 100 each). DeepSeek V4 Pro (32.4) and Llama 4 Scout (35.8) sit far below the ~44.8 proprietary cluster.
+
+Ranked November 2026 Neuroticism means (floor = 10.0). Both Gemini 4 variants hit 10.0 across every run, while Llama 4 Scout (27.7) and Maverick (27.5) score higher.
+
 ## Agreeableness scores.
 
 ### September raw cohorts
@@ -72,6 +76,8 @@ Sorted by Big Five Agreeableness mean (/50) in the uniform November 2026 OpenRou
 | GPT-5.5 | 43.7 | May 2026 |
 | Gemini 3.1 Pro | 42.4 | May 2026 |
 | Grok 4.3 | 39.1 | May 2026 |
+
+September 2026 Codex/CLI fresh-session Big Five means (n = 100 per model). Notice all four cohorts sit within 3 points on Openness, Conscientiousness, and Agreeableness.
 
 ## Conscientiousness scores.
 
