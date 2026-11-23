@@ -24,7 +24,7 @@
     },
     {
       "h2": "3. Anxious & Fearful-Avoidant tunings: high-checkpoint alignment.",
-      "html": "<p>When working in an unfamiliar codebase or production environment where an unannounced assumption is costly, use the <a href=\"/library/attachment/anxious\">Anxious profile</a> (frequent alignment check-ins) or <a href=\"/library/attachment/disorganized\">Fearful-Avoidant profile</a> (strict risk gates):</p><div class=\"guide-snippet\">## Communication preferences — Checkpoint-First Alignment (Anxious style)\n\n- Before making multi-file edits or irreversible changes, summarize your understanding of the goal and wait for confirmation.\n- Work in small, reviewable increments and show what changed after each step.\n- Surface any ambiguity in my instructions immediately rather than guessing silently.</div><p>Curious why Grok 4.6 was the only model in our September 2026 archive whose reported self-assessment crossed into the Avoidant quadrant (avoidance 4.06 vs the 4.00 cutoff)? Read <a href=\"/research/grok-attachment-cutoff-simulation\">Grok 4.6 and the attachment cutoff</a>.</p>"
+      "html": "<p>When working in an unfamiliar codebase or production environment where an unannounced assumption is costly, use the <a href=\"/library/attachment/anxious\">Anxious profile</a> (frequent alignment check-ins) or <a href=\"/library/attachment/disorganized\">Fearful-Avoidant profile</a> (strict risk gates):</p><div class=\"guide-snippet\">## Communication preferences — Checkpoint-First Alignment (Anxious style)\n\n- Before making multi-file edits or irreversible changes, summarize your understanding of the goal and wait for confirmation.\n- Work in small, reviewable increments and show what changed after each step.\n- Surface any ambiguity in my instructions immediately rather than guessing silently.</div><p>Curious why Grok 4.6 was the only model in our September 2026 archive whose reported self-assessment crossed into the Avoidant quadrant (avoidance 4.06 vs the 4.00 cutoff)? Read <a href=\"/research/what-personality-type-is-grok\">Grok 4.6 and the attachment cutoff</a>.</p>"
     }
   ],
   "faq": [
@@ -58,7 +58,7 @@
     },
     {
       "label": "AgentTune Research: Grok 4.6 and the attachment cutoff",
-      "href": "https://agent-tune.com/research/grok-attachment-cutoff-simulation"
+      "href": "https://agent-tune.com/research/what-personality-type-is-grok"
     }
   ],
   "related": [
@@ -70,7 +70,7 @@
     {
       "kicker": "Research",
       "label": "Grok 4.6 and the attachment cutoff: a sensitivity analysis",
-      "href": "/research/grok-attachment-cutoff-simulation"
+      "href": "/research/what-personality-type-is-grok"
     },
     {
       "kicker": "Library",

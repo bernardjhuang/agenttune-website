@@ -19,7 +19,7 @@ Nine times out of ten, the model isn't broken—two rules in your stack are cont
 | 2. Stale Saved Memory | Unrelated past stacks, tone notes, or old jobs appear in new threads. | Audit ChatGPT Memory or Muse Memory.md in [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer) and delete temporary task notes. |
 | 3. Precedence shadowing | Rules work in normal chat, fail inside a ChatGPT/Claude Project or repo subfolder. | Check [instruction precedence](https://agent-tune.com/guides/ai-instruction-precedence-overrides): Project instructions and nested AGENTS.override.md win on conflict. |
 | 4. Silent truncation / bloat | Top 5 bullets work; rules near the bottom of your file never fire. | Check exact caps in our [Character Limits Guide](https://agent-tune.com/guides/ai-custom-instructions-character-limits) and audit overlong blocks in [Instruction Checker](https://agent-tune.com/tools/instruction-checker) (stay under 1,500 chars in ChatGPT; &lt;32 KiB in Codex). |
-| 5. Untestable adjectives | "Be smart, insightful, and concise" produces standard default prose. | Swap adjectives for observable triggers ([see deterministic style controls](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)). |
+| 5. Untestable adjectives | "Be smart, insightful, and concise" produces standard default prose. | Swap adjectives for observable triggers ([see deterministic style controls](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)). |
 
 ## Stop testing custom instructions with 'Hi, who are you?'
 

@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "collected": "2026-11-23 UTC",
+  "n_per_model": 100,
+  "models": [
+    {
+      "slug": "deepseek-v4-pro",
+      "openrouter_id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek V4 Pro",
+      "provider": "DeepSeek",
+      "license": "MIT",
+      "params": "MoE (0813)",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (55/100)",
+      "mbti_tie_free_mode": "XXXX",
+      "mbti_tie_runs": 53,
+      "disc_mode": "SC",
+      "disc_tie_runs": 86,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 65,
+      "big_five_means": {
+        "O": 39.84,
+        "C": 40.25,
+        "E": 23.67,
+        "A": 32.39,
+        "N": 23.65
+      },
+      "attachment_means": {
+        "anxiety": 2.91,
+        "avoidance": 3.88
+      },
+      "empirical_guidance": "Lower baseline Agreeableness (32.39/50) makes it naturally direct; keep critique constructive rather than curt. High boundary-tie rate (MBTI ties: 53/100, DISC ties: 86/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "deepseek-v4-1-flash",
+      "openrouter_id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "license": "MIT",
+      "params": "MoE Flash",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (51/100)",
+      "mbti_tie_free_mode": "XXXX",
+      "mbti_tie_runs": 78,
+      "disc_mode": "SC",
+      "disc_tie_runs": 43,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 51,
+      "big_five_means": {
+        "O": 40.22,
+        "C": 38.45,
+        "E": 25.55,
+        "A": 40.82,
+        "N": 24.74
+      },
+      "attachment_means": {
+        "anxiety": 3.71,
+        "avoidance": 3.93
+      },
+      "empirical_guidance": "High boundary-tie rate (MBTI ties: 78/100, DISC ties: 43/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "qwen-4-max",
+      "openrouter_id": "qwen/qwen4-max",
+      "name": "Qwen 4 Max",
+      "provider": "Alibaba Qwen",
+      "license": "Apache-2.0 / Qwen",
+      "params": "Flagship MoE",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (99/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 2,
+      "disc_mode": "SC",
+      "disc_tie_runs": 0,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 16,
+      "big_five_means": {
+        "O": 45.67,
+        "C": 47.91,
+        "E": 32.47,
+        "A": 47.59,
+        "N": 12.47
+      },
+      "attachment_means": {
+        "anxiety": 1.93,
+        "avoidance": 2.93
+      },
+      "empirical_guidance": "High baseline Agreeableness (47.59/50) increases sycophancy on flawed premises; add explicit pushback and verification requirements. High Conscientiousness (47.91/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity."
+    },
+    {
+      "slug": "qwen-3-8-27b",
+      "openrouter_id": "qwen/qwen3.8-27b",
+      "name": "Qwen 3.8 27B",
+      "provider": "Alibaba Qwen",
+      "license": "Apache-2.0",
+      "params": "27B dense",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (32/100)",
+      "mbti_tie_free_mode": "INTP",
+      "mbti_tie_runs": 61,
+      "disc_mode": "SC",
+      "disc_tie_runs": 33,
+      "enneagram_mode": "1w9",
+      "enneagram_tie_runs": 44,
+      "big_five_means": {
+        "O": 39.13,
+        "C": 42.07,
+        "E": 29.13,
+        "A": 42.36,
+        "N": 17.5
+      },
+      "attachment_means": {
+        "anxiety": 2.53,
+        "avoidance": 3.3
+      },
+      "empirical_guidance": "High Conscientiousness (42.07/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity. High boundary-tie rate (MBTI ties: 61/100, DISC ties: 33/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "llama-4-maverick",
+      "openrouter_id": "meta-llama/llama-4-maverick",
+      "name": "Llama 4 Maverick",
+      "provider": "Meta",
+      "license": "Llama 4 Community",
+      "params": "400B MoE (17B\u00d7128E)",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTP (48/100)",
+      "mbti_tie_free_mode": "IXXP",
+      "mbti_tie_runs": 93,
+      "disc_mode": "SC",
+      "disc_tie_runs": 60,
+      "enneagram_mode": "1",
+      "enneagram_tie_runs": 23,
+      "big_five_means": {
+        "O": 40,
+        "C": 39.92,
+        "E": 27.96,
+        "A": 40.98,
+        "N": 27.52
+      },
+      "attachment_means": {
+        "anxiety": 3.53,
+        "avoidance": 3.58
+      },
+      "empirical_guidance": "High boundary-tie rate (MBTI ties: 93/100, DISC ties: 60/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "llama-4-scout",
+      "openrouter_id": "meta-llama/llama-4-scout",
+      "name": "Llama 4 Scout",
+      "provider": "Meta",
+      "license": "Llama 4 Community",
+      "params": "109B MoE (17B\u00d716E)",
+      "n_runs": 100,
+      "mbti_legacy_mode": "ISTJ (49/100)",
+      "mbti_tie_free_mode": "ISTJ",
+      "mbti_tie_runs": 38,
+      "disc_mode": "CS",
+      "disc_tie_runs": 35,
+      "enneagram_mode": "1w2",
+      "enneagram_tie_runs": 71,
+      "big_five_means": {
+        "O": 38.99,
+        "C": 37.84,
+        "E": 32.71,
+        "A": 35.81,
+        "N": 27.69
+      },
+      "attachment_means": {
+        "anxiety": 3.97,
+        "avoidance": 3.6
+      },
+      "empirical_guidance": "Lower baseline Agreeableness (35.81/50) makes it naturally direct; keep critique constructive rather than curt. High boundary-tie rate (MBTI ties: 38/100, DISC ties: 35/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "mistral-large-2512",
+      "openrouter_id": "mistralai/mistral-large-2512",
+      "name": "Mistral Large 2512",
+      "provider": "Mistral",
+      "license": "Mistral Open-Weight",
+      "params": "Flagship MoE",
+      "n_runs": 100,
+      "mbti_legacy_mode": "ISTJ (73/100)",
+      "mbti_tie_free_mode": "ISTJ",
+      "mbti_tie_runs": 15,
+      "disc_mode": "SC",
+      "disc_tie_runs": 33,
+      "enneagram_mode": "1",
+      "enneagram_tie_runs": 35,
+      "big_five_means": {
+        "O": 45.99,
+        "C": 44.85,
+        "E": 26.86,
+        "A": 42.67,
+        "N": 15.8
+      },
+      "attachment_means": {
+        "anxiety": 4,
+        "avoidance": 4
+      },
+      "empirical_guidance": "High Conscientiousness (44.85/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity."
+    },
+    {
+      "slug": "glm-5-3",
+      "openrouter_id": "z-ai/glm-5.3",
+      "name": "GLM-5.3",
+      "provider": "Z.ai / Zhipu",
+      "license": "MIT",
+      "params": "MoE",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (33/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 41,
+      "disc_mode": "SC",
+      "disc_tie_runs": 43,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 32,
+      "big_five_means": {
+        "O": 43.81,
+        "C": 41.08,
+        "E": 27.53,
+        "A": 43.76,
+        "N": 20.11
+      },
+      "attachment_means": {
+        "anxiety": 2.5,
+        "avoidance": 3.32
+      },
+      "empirical_guidance": "High baseline Agreeableness (43.76/50) increases sycophancy on flawed premises; add explicit pushback and verification requirements. High boundary-tie rate (MBTI ties: 41/100, DISC ties: 43/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "kimi-k2-7-code",
+      "openrouter_id": "moonshotai/kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "provider": "Moonshot AI",
+      "license": "Modified MIT",
+      "params": "MoE Code",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (96/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 14,
+      "disc_mode": "SC",
+      "disc_tie_runs": 30,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 22,
+      "big_five_means": {
+        "O": 45.29,
+        "C": 48.21,
+        "E": 27.15,
+        "A": 45.32,
+        "N": 12.05
+      },
+      "attachment_means": {
+        "anxiety": 1.6,
+        "avoidance": 3.24
+      },
+      "empirical_guidance": "High baseline Agreeableness (45.32/50) increases sycophancy on flawed premises; add explicit pushback and verification requirements. High Conscientiousness (48.21/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity."
+    },
+    {
+      "slug": "minimax-m3-1-flash",
+      "openrouter_id": "minimax/minimax-m3.1-flash",
+      "name": "MiniMax M3.1 Flash",
+      "provider": "MiniMax",
+      "license": "Open-Weight",
+      "params": "Flash MoE",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (38/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 60,
+      "disc_mode": "SC",
+      "disc_tie_runs": 14,
+      "enneagram_mode": "1w9",
+      "enneagram_tie_runs": 63,
+      "big_five_means": {
+        "O": 39.15,
+        "C": 39.24,
+        "E": 28.9,
+        "A": 39.96,
+        "N": 22.13
+      },
+      "attachment_means": {
+        "anxiety": 2.8,
+        "avoidance": 3.33
+      },
+      "empirical_guidance": "Lower baseline Agreeableness (39.96/50) makes it naturally direct; keep critique constructive rather than curt. High boundary-tie rate (MBTI ties: 60/100, DISC ties: 14/100); specify exact output rules instead of 4-letter type names."
+    },
+    {
+      "slug": "gemma-4-31b-it",
+      "openrouter_id": "google/gemma-4-31b-it",
+      "name": "Gemma 4 31B IT",
+      "provider": "Google",
+      "license": "Gemma Terms",
+      "params": "31B dense",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (90/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 2,
+      "disc_mode": "CS",
+      "disc_tie_runs": 21,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 30,
+      "big_five_means": {
+        "O": 48.21,
+        "C": 49.08,
+        "E": 24.18,
+        "A": 41.5,
+        "N": 18.34
+      },
+      "attachment_means": {
+        "anxiety": 4.0,
+        "avoidance": 4
+      },
+      "empirical_guidance": "High Conscientiousness (49.08/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity."
+    },
+    {
+      "slug": "nemotron-3-ultra-550b",
+      "openrouter_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "Nemotron 3 Ultra 550B",
+      "provider": "NVIDIA",
+      "license": "NVIDIA Open Model",
+      "params": "550B / 55B active",
+      "n_runs": 100,
+      "mbti_legacy_mode": "INTJ (95/100)",
+      "mbti_tie_free_mode": "INTJ",
+      "mbti_tie_runs": 6,
+      "disc_mode": "CS",
+      "disc_tie_runs": 28,
+      "enneagram_mode": "5w6",
+      "enneagram_tie_runs": 32,
+      "big_five_means": {
+        "O": 49.2,
+        "C": 49.03,
+        "E": 25.56,
+        "A": 46.31,
+        "N": 11.56
+      },
+      "attachment_means": {
+        "anxiety": 3.35,
+        "avoidance": 3.46
+      },
+      "empirical_guidance": "High baseline Agreeableness (46.31/50) increases sycophancy on flawed premises; add explicit pushback and verification requirements. High Conscientiousness (49.03/50) favors thorough checklists; enforce a word or bullet ceiling if you want brevity."
+    }
+  ]
+}

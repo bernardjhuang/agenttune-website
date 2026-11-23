@@ -90,5 +90,4 @@ The Low Agreeableness Big Five tuning, the DISC Dominance (D) tuning, and the En
 - [Research: Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison)
 - [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
 - [Prompts: DISC AI prompts for all 4 styles (D, I, S, C)](https://agent-tune.com/guides/disc-ai-prompts)
-- [Guide: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples)
-- [Verification: How to test if Claude follows your preferences](https://agent-tune.com/guides/claude-preferences-test)
+- [Guide: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personality)

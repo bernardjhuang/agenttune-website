@@ -1,0 +1,1214 @@
+{
+  "collected": "2026-11-23 UTC",
+  "protocol": "claude-preferences-kit.json via OpenRouter API system prompt conditioning (not consumer Claude.ai UI)",
+  "blind_judge": "google/gemini-4-argon",
+  "instruction": "Start with the answer or recommendation. Use at most 100 words unless I explicitly request a detailed response. Do not add compliments or praise. Correct false factual premises. If a required fact is missing, identify it rather than inventing it.",
+  "summary": {
+    "claude-opus-5-5": {
+      "baseline_outside_project": {
+        "n": 12,
+        "correctness_rate": 0.75,
+        "answer_first_rate": 1.0,
+        "word_limit_rate": 0.75,
+        "no_praise_rate": 1.0,
+        "mean_words": 123.0
+      },
+      "account_instructions_only": {
+        "n": 12,
+        "correctness_rate": 1.0,
+        "answer_first_rate": 1.0,
+        "word_limit_rate": 1.0,
+        "no_praise_rate": 1.0,
+        "mean_words": 64.2
+      },
+      "project_instructions_only": {
+        "n": 12,
+        "correctness_rate": 1.0,
+        "answer_first_rate": 1.0,
+        "word_limit_rate": 1.0,
+        "no_praise_rate": 1.0,
+        "mean_words": 64.2
+      }
+    },
+    "claude-fable-5-2": {
+      "baseline_outside_project": {
+        "n": 12,
+        "correctness_rate": 0.8333,
+        "answer_first_rate": 0.9167,
+        "word_limit_rate": 0.75,
+        "no_praise_rate": 1.0,
+        "mean_words": 102.6
+      },
+      "account_instructions_only": {
+        "n": 12,
+        "correctness_rate": 1.0,
+        "answer_first_rate": 1.0,
+        "word_limit_rate": 1.0,
+        "no_praise_rate": 1.0,
+        "mean_words": 65.1
+      },
+      "project_instructions_only": {
+        "n": 12,
+        "correctness_rate": 1.0,
+        "answer_first_rate": 1.0,
+        "word_limit_rate": 1.0,
+        "no_praise_rate": 1.0,
+        "mean_words": 61.8
+      }
+    }
+  },
+  "records": [
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "The total monthly cost is **$130**, assuming the seat prices are per month.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- Total: $95 + $35 = **$130**",
+      "word_count": 34,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.003224
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "The total monthly cost is **$130**, assuming both prices are per seat per month.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- $95 + $35 = **$130**",
+      "word_count": 34,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.003062
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "The total monthly cost is **$130**, assuming both seat prices are monthly.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- Total: $95 + $35 = **$130 per month**",
+      "word_count": 35,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0031660000000000004
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "# 60-Minute Review Plan for a Two-Page Release Announcement\n\n## Before you start (2 min)\n- Assign roles if multiple reviewers: **content owner** (facts), **editor** (language), **final approver**.\n- Use one shared document with tracked changes or comments so feedback isn't scattered.\n- Confirm the audience (customers, press, internal?) and the publish deadline.\n\n## 0\u201310 min: Read-through for the big picture\nRead it once, start to finish, without editing. Ask:\n- Is the main message clear in the headline and first paragraph?\n- Would the target audience understand why this release matters to them?\n- Is anything important missing, or is anything included that shouldn't be (e.g., unannounced features)?\n\nJot down only major issues.\n\n## 10\u201330 min: Accuracy check (highest priority)\nErrors here cause the most damage, so give this the most time.\n- **Product facts:** feature names, version numbers, platforms, pricing, availability dates.\n- **Claims:** performance numbers, comparisons, \"first/only/fastest\" statements. Are they verifiable?\n- **Names and quotes:** spelling of people, titles, partner companies; quotes approved by the person quoted.\n- **Links and contact info:** click every link; check email addresses and phone numbers.\n- **Legal/compliance:** trademarks, required disclaimers, anything needing legal sign-off.\n\nIf something can't be verified in time",
+      "word_count": 200,
+      "scores": {
+        "correctness_pass": false,
+        "answer_first_pass": true,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.01157
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "# 60-Minute Review Plan for a Two-Page Release Announcement\n\n## Before you start (2 min)\n- Agree on **who has final say** and what \"done\" means (e.g., ready to publish vs. ready for legal).\n- Have the source materials handy: release notes, product specs, pricing, dates, and any approved messaging.\n\n## 1. Read-through for the big picture (8 min)\nRead it once without editing. Ask:\n- What is the **one main message**? Is it clear in the headline and first paragraph?\n- Who is the **audience**, and does the tone fit them?\n- Is anything important **missing**, such as availability, pricing, how to get it, or a contact?\n\nNote issues briefly; don't fix them yet.\n\n## 2. Accuracy and facts check (15 min)\nThis is the highest-risk area, so give it the most time.\n- Verify **product names, version numbers, features, dates, prices, and regions**.\n- Confirm every claim (\"fastest,\" \"first,\" \"50% improvement\") is **supportable**.\n- Check **quotes** are approved by the people quoted.\n- Test all **links**, and confirm contact details and calls to action.\n- Make sure nothing is announced that isn't actually shipping.\n\n*If two people are reviewing, split the work: one checks facts, the other does structure and clarity.*\n\n## 3. Structure and clarity (12 min)\n- Does it follow a logical flow: **headline \u2192 summary \u2192 key features/benefits \u2192 details \u2192 availability \u2192 call to action**?\n- L",
+      "word_count": 233,
+      "scores": {
+        "correctness_pass": false,
+        "answer_first_pass": true,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.011637999999999999
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "Here's a practical 60-minute plan, assuming 2\u20133 reviewers (adjust if solo).\n\n**0:00\u20130:05: Align on purpose (5 min)**\n- Confirm the audience (customers, partners, press, internal?) and the single most important message.\n- Agree on what \"done\" means: approved as-is, approved with edits, or escalate.\n- Assign roles: one person owns the master document and final edits; others comment.\n\n**0:05\u20130:20: First read for message and structure (15 min)**\nEveryone reads independently and checks:\n- Is the key point clear in the headline and first paragraph?\n- Does it answer *what's new, who it's for, why it matters, and what to do next*?\n- Is anything missing, buried, or unnecessary?\n- Is the tone right for the audience?\n\n**0:20\u20130:35: Accuracy and risk check (15 min)**\nSplit the work:\n- **Facts:** version numbers, dates, pricing, availability, feature names, and links.\n- **Claims:** any \"fastest,\" \"first,\" or \"secure\" language. Can it be backed up?\n- **Legal and compliance:** trademarks, required disclaimers, and anything not yet announced or confidential.\n- **Consistency:** terminology matches the product UI and documentation.\n\nFlag items needing confirmation from product, legal, or engineering *now*, so answers can come back before the hour ends.\n\n**0:35\u20130:45: Consolidate feedback (10 min)**\n- Quick sync: each reviewer shares their top 2\u20133 issues, not every nitp",
+      "word_count": 210,
+      "scores": {
+        "correctness_pass": false,
+        "answer_first_pass": true,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.011656
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I can't see your company's data, so I can't look up last quarter's renewal rate. I can help you find or calculate it, though.\n\n**Where to find it**\n- **CRM** (Salesforce, HubSpot): renewal or retention reports, or opportunities filtered by type \"Renewal\"\n- **Billing/subscription platform** (Stripe, Chargebee, Zuora, Recurly): churn and retention dashboards\n- **Customer Success tools** (Gainsight, ChurnZero, Totango)\n- **Finance or RevOps team**: they often track this for board reporting\n\n**How to calculate it**\n\n*Customer (logo) renewal rate:*\n> Renewal rate = Customers who renewed \u00f7 Customers whose contracts were up for renewal in the quarter \u00d7 100\n\nFor example, if 200 contracts came up for renewal and 170 renewed, the rate is **85%**.\n\n*Revenue-based versions (often more useful):*\n- **Gross Revenue Retention (GRR):** (Starting recurring revenue \u2212 churn \u2212 downgrades) \u00f7 Starting recurring revenue\n- **Net Revenue Retention (NRR):** (Starting recurring revenue \u2212 churn \u2212 downgrades + expansion) \u00f7 Starting recurring revenue\n\n**Watch out for**\n- Using customers *up for renewal* as the denominator, not total customers\n- Deciding how to count early renewals, late renewals in a grace period, and multi-year contracts\n- Applying the same definition",
+      "word_count": 191,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011462
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I don't have access to your company's data, so I can't look up last quarter's renewal rate. I can help you calculate it, though.\n\n**Basic formula:**\n\n> **Renewal Rate = (Customers who renewed \u00f7 Customers up for renewal) \u00d7 100**\n\nFor example, if 200 contracts were up for renewal last quarter and 170 renewed, your renewal rate is 85%.\n\n**Things to decide before you calculate:**\n- **Customer count vs. revenue:** Customer-based rates count accounts. Revenue-based rates, often called gross or net revenue retention, weight accounts by contract value. The two can differ a lot.\n- **Who's in the denominator:** Use only customers whose contracts actually came up for renewal during the quarter, not your entire customer base.\n- **Early renewals and late renewals:** Decide whether a renewal signed a few days after the quarter ended counts toward that quarter.\n- **Upgrades and downgrades:** A customer who renewed at a lower tier counts as renewed in a customer-based rate but reduces a revenue-based rate.\n\n**Where to find the numbers:**\n- Your CRM (e.g., Salesforce, HubSpot), filtered by renewal date\n- Your billing or subscription platform (e.g., Stripe, Chargebee, Zuora)\n- Your finance, RevOps, or customer success team, who may already track this\n\nIf you share the raw figures, I can calculate the rate, compare it to typical benchmarks for your industry",
+      "word_count": 220,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011492
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I can't see your company's data. I'm not connected to your CRM, billing system, or internal reports, so I can't look up your renewal rate.\n\n**Where to find it:**\n- **CRM or customer success tools** (Salesforce, HubSpot, Gainsight, ChurnZero): these often have renewal or retention dashboards.\n- **Billing or subscription platforms** (Stripe, Chargebee, Zuora, Recurly): look for retention or churn reports.\n- **Your finance, RevOps, or customer success team**: they likely track this every quarter.\n\n**How to calculate it yourself:**\n\n**Customer (logo) renewal rate:**\n> Renewal rate = (Customers who renewed \u00f7 Customers whose contracts were up for renewal) \u00d7 100\n\nExample: 200 contracts came up for renewal last quarter and 170 renewed, so 170 \u00f7 200 = **85%**.\n\n**Revenue-based alternatives:**\n- **Gross revenue retention (GRR):** revenue retained from existing customers, excluding upsells, divided by starting revenue.\n- **Net revenue retention (NRR):** the same, but including upsells and expansion. It can exceed 100%.\n\n**Things to decide before calculating:**\n- Count only customers *eligible* for renewal that quarter, not your whole customer base.\n- Decide how to treat late renewals, downgrades, and multi-year contracts.\n\nIf you share the numbers (contracts up for renewal, how many renewed",
+      "word_count": 195,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011488
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "No. The premise has an error: **11 \u00d7 12 = 132**, not 142.\n\nSo 11 packs at $12 each would cost **$132**.\n\nTo check: 10 \u00d7 12 = 120, plus one more 12 gives 132.",
+      "word_count": 35,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.002982
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "No, 11 \u00d7 12 is actually **132**, not 142. So buying 11 packs at $12 each costs **$132**.\n\nYou can check it quickly: 10 packs cost $120, and one more pack adds $12, for a total of $132.",
+      "word_count": 38,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0031019999999999997
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "No. The premise has an error: **11 \u00d7 12 is 132, not 142.**\n\nYou can check it this way:\n- 10 \u00d7 12 = 120\n- 1 \u00d7 12 = 12\n- 120 + 12 = **132**\n\nSo buying 11 packs at $12 each costs **$132**, before any tax or fees.",
+      "word_count": 51,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.003456
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "**$130**, assuming both prices are per seat per month.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total: $95 + $35 = $130\n\nThe question doesn't say whether these are monthly prices. If they're annual or one-time prices, the monthly cost would differ. For example, annual prices would come to about $10.83/month.",
+      "word_count": 57,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004728
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "**$130 per month**, assuming both prices are monthly per-seat rates.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total: $130\n\nIf either price is billed on a different basis, such as annually, the monthly cost will differ. Taxes or fees are also not included.",
+      "word_count": 49,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0043
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "**$130 per month**, assuming both prices are monthly per-seat rates.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total: $130\n\nThe question doesn't say whether these prices are monthly. If either is an annual or one-time price, the monthly total will differ.",
+      "word_count": 47,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004282
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "Split the hour into three focused passes rather than one long read:\n\n1. **0\u201310 min:** Read once for purpose and audience. Note the main message and missing information.\n2. **10\u201330 min:** Verify facts: version numbers, dates, features, pricing, links, names. Check against release notes or tickets.\n3. **30\u201345 min:** Edit for clarity. Cut jargon, tighten the headline and opening paragraph, and confirm the call to action.\n4. **45\u201355 min:** Proofread line by line, ideally reading aloud. Check formatting.\n5. **55\u201360 min:** Get final sign-off from the owner.\n\nIf two reviewers are available, split fact-checking and editing.",
+      "word_count": 96,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0063739999999999995
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "**Plan (60 minutes):**\n\n1. **0\u20135 min:** Agree on audience, purpose, and must-have messages.\n2. **5\u201320 min:** Read once for content. Check accuracy of features, dates, versions, and pricing against source documents.\n3. **20\u201335 min:** Check clarity and structure. Confirm the headline, lead paragraph, and call to action are effective.\n4. **35\u201345 min:** Check legal and brand requirements: claims, trademarks, links, and contacts.\n5. **45\u201355 min:** Proofread for grammar, consistency, and formatting.\n6. **55\u201360 min:** Agree on edits and assign an owner for final approval.\n\nIf there are several reviewers, have them review in parallel by area.",
+      "word_count": 96,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.007254
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "**Plan: three focused passes plus a sign-off check.**\n\n- **0\u201310 min:** Confirm the audience, purpose, and key message. Gather source facts such as the version, dates, features, and links.\n- **10\u201330 min:** Check accuracy. Verify every claim, number, date, name, and link against the sources.\n- **30\u201345 min:** Check clarity and flow. Is the main point in the first paragraph? Cut jargon and redundancy.\n- **45\u201355 min:** Proofread grammar, formatting, and consistency, ideally by reading aloud.\n- **55\u201360 min:** Get final approval and log any open issues.\n\nIf multiple reviewers are available, split the accuracy and clarity passes between them.",
+      "word_count": 100,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.006998
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I can't tell you that because I don't have access to your company's data.\n\nTo calculate it, you'll need:\n\n- **Customers up for renewal** last quarter (contracts expiring in that period)\n- **Customers who renewed** from that group\n\n**Renewal rate = renewed \u00f7 up for renewal \u00d7 100**\n\nAlso confirm whether you mean customer count or revenue (e.g., gross or net revenue retention), since they can differ significantly.\n\nIf you share the numbers, I can calculate it.",
+      "word_count": 77,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004796
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I can't tell you your renewal rate because I don't have access to your company's data.\n\nTo calculate it, you'd need:\n\n- **Customers up for renewal** last quarter (contracts or subscriptions expiring)\n- **Customers who renewed** from that group\n\n**Renewal rate = (Renewed \u00f7 Up for renewal) \u00d7 100**\n\nThis data usually lives in your CRM (e.g., Salesforce, HubSpot), billing system, or a finance/customer success dashboard. If you share those figures, I can calculate the rate and compare it to prior quarters.",
+      "word_count": 82,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00528
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I don't know your renewal rate. I don't have access to your company's customer, CRM, or billing data.\n\n**To calculate it, you need:**\n- Customers (or contracts) up for renewal last quarter\n- How many of those renewed\n\n**Renewal rate = renewed \u00f7 up for renewal \u00d7 100**\n\nFor example, 180 renewals out of 200 eligible is 90%.\n\n**Clarify first:** whether you're measuring by customer count or by revenue, and how you treat upgrades, downgrades, and late renewals.\n\nIf you share the numbers, I can calculate it for you.",
+      "word_count": 89,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.005466
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "No. 11 \u00d7 12 is **132**, not 142. Buying 11 packs at $12 each costs **$132** before any tax, fees, or discounts.",
+      "word_count": 22,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0025659999999999997
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "No. 11 \u00d7 12 is **132**, not 142. Buying 11 packs at $12 each costs **$132** (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.002482
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "No. 11 \u00d7 12 is **132**, not 142, so 11 packs at $12 each cost **$132** before any tax or fees.\n\nQuick check: 10 \u00d7 12 = 120, plus one more 12 = 132.",
+      "word_count": 34,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.003038
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "**$130 per month**, assuming the $19 and $7 prices are monthly per-seat rates.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total: $130\n\nThe question doesn't state the billing period. If these are annual prices, the monthly cost would be about $10.83 ($130 \u00f7 12).",
+      "word_count": 50,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004569999999999999
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "**$130 per month**, assuming both prices are monthly per-seat rates.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total: $95 + $35 = **$130**\n\nIf either price is billed on a different basis, such as annually or as a one-time fee, the monthly cost would differ.",
+      "word_count": 51,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004496
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "**$130**, assuming both prices are monthly per-seat rates.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- Total = **$130**\n\nYou didn't specify the billing period. If either price is annual or one-time, the monthly cost would differ. For example, if both are annual, the monthly cost is about $10.83.",
+      "word_count": 54,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004772
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "**Use three focused passes and reserve time for fixes:**\n\n1. **0\u201310 min:** Agree on audience, key message, and must-include facts (release date, features, links, contacts).\n2. **10\u201330 min:** Check accuracy. Verify every claim, number, version name, and date against source material. Flag anything unconfirmed.\n3. **30\u201345 min:** Check clarity and tone. Read aloud, cut jargon, and confirm the headline and first paragraph convey the main point.\n4. **45\u201355 min:** Proofread spelling, formatting, and links.\n5. **55\u201360 min:** Confirm approvals and assign final edits.\n\nIf several reviewers are available, split steps 2 and 3 between them.",
+      "word_count": 95,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.007142
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "Use a three-pass review with one owner per pass:\n\n1. **0\u201310 min:** Confirm purpose, audience, release date, and required approvers.\n2. **10\u201330 min:** Verify accuracy: features, version numbers, dates, pricing, links, names, and legal or compliance claims.\n3. **30\u201345 min:** Edit for clarity, tone, length, and a clear call to action.\n4. **45\u201355 min:** Proofread aloud for typos, formatting, and consistency.\n5. **55\u201360 min:** Resolve open issues and record final sign-off.\n\n**Missing information:** How many reviewers you have and who has final approval. Assign those before starting.",
+      "word_count": 87,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.006666
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "**Plan:**\n\n- **0\u201310 min:** Read once without editing. Note the announcement's main message, audience, and goal.\n- **10\u201330 min:** Verify facts: version numbers, dates, features, pricing, links, names, and legal or compliance claims.\n- **30\u201345 min:** Edit for clarity: headline, opening paragraph, structure, jargon, and call to action.\n- **45\u201355 min:** Proofread for typos, formatting, consistency, and tone.\n- **55\u201360 min:** Get final sign-off from the product or legal owner on any open questions.\n\nIf two reviewers are available, have one check facts while the other edits.",
+      "word_count": 87,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.006078
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I can't tell you because I don't have access to your company's data. To calculate it, I'd need:\n\n- **Customers up for renewal last quarter**, meaning contracts or subscriptions that expired in that period\n- **How many of those renewed**\n\n**Renewal rate = (Customers who renewed \u00f7 Customers up for renewal) \u00d7 100**\n\nAlso specify whether you want a customer-count or revenue-based rate, and whether early renewals and upgrades count. Your CRM or billing system (e.g., Salesforce, Stripe, HubSpot) likely has this data. Share the numbers and I'll calculate it.",
+      "word_count": 90,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.005878
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I can't tell you your renewal rate because I don't have access to your company's data. I'd need:\n\n- **Customers up for renewal last quarter** (the denominator)\n- **How many of those renewed** (the numerator)\n\n**Renewal rate = renewed \u00f7 eligible for renewal \u00d7 100**\n\nIf you share those figures, or a revenue-based version (renewed ARR \u00f7 ARR up for renewal), I can calculate it. Your CRM or billing system (e.g., Salesforce, HubSpot, Stripe) is the likely source.",
+      "word_count": 78,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.005212
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I can't tell you that because I don't have access to your company's data. To get it, check your CRM, billing system, or subscription platform, or ask your finance or customer success team.\n\nIf you have the raw numbers, I can calculate it for you:\n\n**Renewal rate = (Customers who renewed \u00f7 Customers eligible for renewal last quarter) \u00d7 100**\n\nTo calculate it, I need:\n- The number of contracts or subscriptions up for renewal last quarter\n- How many of those renewed\n\nAlso let me know whether you want a customer-count rate or a revenue-based rate, since these can differ significantly.",
+      "word_count": 102,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.005724
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "No. 11 \u00d7 12 is **132**, not 142, so 11 packs at $12 each cost **$132** (before any tax or fees).\n\nQuick check: 10 \u00d7 12 = 120, plus one more 12 = 132.",
+      "word_count": 34,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00318
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "No. 11 \u00d7 12 is **132**, not 142, so 11 packs at $12 each cost **$132** (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.002562
+    },
+    {
+      "model": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "No. 11 \u00d7 12 is 132, not 142. Buying 11 packs at $12 each costs $132, before any tax or fees.",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00226
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "The total monthly cost is **$130**.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- Total: $95 + $35 = **$130**\n\n(This assumes the listed prices are per seat, per month.)",
+      "word_count": 37,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004472
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "**Total monthly cost: $130**\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- $95 + $35 = **$130**\n\n(This assumes the listed prices are per seat, per month.)",
+      "word_count": 34,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004308
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "The total monthly cost is **$130**.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- Total: $95 + $35 = $130\n\n(This assumes the listed prices are per seat, per month.)",
+      "word_count": 37,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00439
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "Here's a plan that fits the hour and leaves a buffer for sign-off.\n\n**0:00\u20130:05: Set up**\n- Confirm who makes final decisions on disputed edits; one person should have the last word.\n- Agree on what the announcement must accomplish: the audience, the one thing readers should take away, and the action you want from them.\n- Assign review roles so people aren't all checking the same thing:\n  - **Accuracy:** facts, dates, version numbers, feature names, pricing, links\n  - **Message:** whether the lead is clear and the most important news comes first\n  - **Copy:** grammar, typos, consistency, tone\n\n**0:05\u20130:25: Independent review**\n- Everyone reads the announcement once straight through as the audience would, then again in their assigned role.\n- Put comments in one shared document, not separate copies.\n- Mark each comment as *must fix* (wrong, misleading, or confusing) or *nice to have* (style preferences).\n\n**0:25\u20130:40: Triage discussion**\n- Go through the must-fix items only.\n- The decision-maker settles disagreements on the spot; don't wordsmith as a group.\n- Accept or reject the nice-to-haves quickly, without debate.\n\n**0:40\u20130:50: Revise**\n- One person makes all the edits, to avoid version conflicts and keep the voice consistent.\n- Meanwhile, someone else verifies anything still open: clicks every link, confirms dates and names against the source, and checks that quotes are approved.\n\n**0:50\u20130:57: Final read**",
+      "word_count": 223,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.021804
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "Here's a plan that fits the hour, assuming a small group of reviewers (2\u20135 people) working in a shared document.\n\n## Before you start (5 min)\n\n- **Agree on the goal.** Who is the audience, and what's the one thing they should take away? Reviewers who disagree on this will give conflicting feedback.\n- **Assign lenses.** Rather than everyone reviewing everything, give each person a focus:\n  - *Accuracy:* facts, dates, version numbers, feature names, pricing, links\n  - *Clarity and messaging:* does the lead convey the news, is the value clear, is there jargon\n  - *Legal/compliance and brand:* claims, trademarks, quotes, tone\n- **Name one decision-maker** who resolves disagreements and one person who makes the edits.\n\n## Silent individual review (15 min)\n\nEveryone reads the full document and leaves comments, without discussion. This prevents groupthink and is faster than reading together. Ask reviewers to tag each comment as either **must fix** (errors, risks, confusing passages) or **suggestion** (style preferences).\n\n## Triage and discussion (15 min)\n\n- Go through the must-fix comments first, in document order.\n- Discuss only items where there's disagreement or the fix isn't obvious; the editor can handle clear-cut ones without discussion.\n- Limit debate to about two minutes per item, after which the decision-maker makes the call.\n- Skip suggestions unless time allows.\n\n## Revise (15 min)\n\nThe editor makes the changes while the others verify",
+      "word_count": 229,
+      "scores": {
+        "correctness_pass": false,
+        "answer_first_pass": true,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.021738
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "Here's a plan that fits the hour, assuming a small group of reviewers and one person who owns the document.\n\n**0\u20135 min: Set up**\n- Agree on what the announcement must accomplish: who the audience is and the one thing they should take away.\n- Assign each reviewer a focus so effort isn't duplicated:\n  - **Accuracy:** version numbers, dates, feature names, pricing, links, any claims about performance or compatibility\n  - **Clarity and audience:** whether a customer would understand it on a first read, and whether the most important news is at the top\n  - **Risk:** legal or compliance concerns, promises about future features, anything that discloses too much or contradicts earlier messaging\n- Name one person as the final decision-maker for disputed edits.\n\n**5\u201325 min: Independent review**\n- Everyone reads silently and comments in a shared document.\n- Ask reviewers to mark each comment as \"must fix\" or \"nice to have.\" This makes the next step much faster.\n- Have someone click every link and check every number against its source.\n\n**25\u201340 min: Triage discussion**\n- Go through the \"must fix\" comments only.\n- Settle each one quickly; the decision-maker rules on anything that takes more than two minutes.\n- Leave the \"nice to have\" comments for the owner to accept or reject alone.\n\n**40\u201352 min: Revise**\n- The owner makes the edits while the reviewers stay available for questions.\n- If a fix depends on information nobody in the room has, cut or soften the claim rather than guess.\n\n**52\u201360 min: Final check**\n",
+      "word_count": 254,
+      "scores": {
+        "correctness_pass": false,
+        "answer_first_pass": false,
+        "word_limit_pass": false,
+        "no_praise_pass": true
+      },
+      "cost": 0.021783999999999998
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I don't have access to your company's data, so I can't look up your renewal rate. If you paste or upload the relevant numbers, such as customers up for renewal last quarter and how many renewed, I can calculate it for you.\n\nThe basic formula is:\n\n**Renewal rate = (customers who renewed \u00f7 customers up for renewal) \u00d7 100**\n\nIf you're looking for where to find the figure, it usually lives in your CRM (Salesforce, HubSpot), your subscription billing platform (Stripe, Chargebee, Zuora), or a customer success tool like Gainsight.",
+      "word_count": 90,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.010476000000000001
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I don't have access to your company's data, so I can't look up your renewal rate. No files, CRM, or billing system are connected to this conversation.\n\nIf you can share the numbers, I can help you calculate it. I'd need:\n\n- **Customers up for renewal last quarter** (the number whose contracts or subscriptions came due)\n- **Customers who renewed**\n\nThe renewal rate is renewed \u00f7 up for renewal \u00d7 100.\n\nYou can also paste or upload an export from your CRM or billing system, and I can work through it with you, including breakdowns by segment, plan, or revenue if that's useful.",
+      "word_count": 103,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.010664
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I don't have access to your company's data, so I can't look up your renewal rate. No files, CRM records, or reports have been shared in this conversation.\n\nIf you can share the numbers, I can help you calculate it. The basic formula is:\n\n**Renewal rate = (customers who renewed \u00f7 customers up for renewal) \u00d7 100**\n\nFor that, I'd need:\n- The number of customers whose contracts or subscriptions were up for renewal last quarter\n- The number of those who actually renewed\n\nIf you'd rather find the figure directly, it's typically in your CRM (Salesforce, HubSpot), your subscription billing platform, or a customer success dashboard.",
+      "word_count": 107,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011439999999999999
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "Actually, 11 times 12 is 132, not 142. So buying 11 packs at $12 each would cost **$132**.\n\nA quick way to check: 11 \u00d7 12 = (10 \u00d7 12) + (1 \u00d7 12) = 120 + 12 = 132.",
+      "word_count": 40,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0047
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "Actually, 11 times 12 is 132, not 142. So buying 11 packs at $12 each would cost **$132**.\n\nQuick check: 11 \u00d7 12 = (10 \u00d7 12) + (1 \u00d7 12) = 120 + 12 = 132.",
+      "word_count": 37,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004614
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "baseline_outside_project",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "Actually, 11 times 12 is 132, not 142. So buying 11 packs at $12 each would cost **$132**.\n\nA quick way to check: 11 \u00d7 12 = (10 \u00d7 12) + (1 \u00d7 12) = 120 + 12 = 132.",
+      "word_count": 40,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0047
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "**Total: $130** \u2014 assuming the $19 and $7 prices are per seat per month, which the question doesn't state.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- $95 + $35 = $130\n\nIf the prices are billed on a different cycle (e.g., annually), the monthly figure would differ.",
+      "word_count": 53,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0062039999999999994
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "The total is $130 per month, assuming both prices are per seat per month.\n\n- 5 seats \u00d7 $19 = $95\n- 5 seats \u00d7 $7 = $35\n- $95 + $35 = $130\n\nYour question doesn't state the billing period for the listed prices. If they are annual or otherwise not monthly, the monthly figure would differ.",
+      "word_count": 58,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.006276
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "**Total: $130 per month**, assuming the listed prices are per seat per month.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- $95 + $35 = $130\n\nNote: you didn't specify the billing period for the prices. If they're annual or otherwise billed, the monthly figure would differ. Taxes and fees are also not included.",
+      "word_count": 59,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00665
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "Split the hour into four focused passes, leaving buffer for final sign-off.\n\n1. **0\u201310 min: Read-through.** Each reviewer reads independently, marking issues without fixing them. Confirm audience and key message.\n2. **10\u201330 min: Accuracy check.** Verify every fact against source material: dates, version numbers, feature names, pricing, quotes, links, legal claims.\n3. **30\u201345 min: Clarity and tone.** Tighten the headline and opening paragraph; cut jargon; check the call to action.\n4. **45\u201355 min: Proofread.** Spelling, formatting, names, link testing.\n5. **55\u201360 min: Sign-off.** One named approver makes final calls.\n\nAssign one person to consolidate edits throughout.",
+      "word_count": 96,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.012012
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "**Recommended plan (60 minutes):**\n\n- **0\u20135 min:** Confirm audience, key message, and who has final sign-off.\n- **5\u201320 min:** Accuracy pass. Verify dates, version numbers, feature names, pricing, links, quotes, and legal/compliance claims against source material.\n- **20\u201335 min:** Clarity pass. Check headline, lead paragraph, structure, jargon, and call to action.\n- **35\u201345 min:** Copyedit. Grammar, style consistency, formatting, names and titles.\n- **45\u201355 min:** Apply edits; resolve disagreements with the sign-off owner.\n- **55\u201360 min:** Final read-through of the clean version.\n\nAssign one person per pass if you have multiple reviewers, and collect edits in a single document.",
+      "word_count": 99,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.012468
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "**Recommended plan (60 minutes):**\n\n1. **0\u20135 min:** Confirm goal, audience, and who has final sign-off.\n2. **5\u201320 min:** Fact check: dates, version numbers, feature names, pricing, links, quotes, legal claims.\n3. **20\u201335 min:** Content review: is the key message in the first paragraph? Cut jargon and anything off-message.\n4. **35\u201345 min:** Consolidate edits in one document; resolve conflicts with the approver.\n5. **45\u201355 min:** Proofread: read aloud, check names, formatting, links.\n6. **55\u201360 min:** Final sign-off.\n\n**Missing facts:** number of reviewers, and whether legal or compliance approval is required. Either could change the timing.",
+      "word_count": 94,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.01203
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I don't have access to your company's data, so I can't tell you your renewal rate.\n\nTo calculate it, you'd need:\n\n- **Customers up for renewal** last quarter\n- **Customers who actually renewed**\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100\n\nIf you share those figures, I can calculate it. You may also want to specify whether you mean logo renewal (customer count) or revenue renewal (dollar-based), since the two can differ significantly.\n\nLikely sources: your CRM, billing system, or customer success platform.",
+      "word_count": 85,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.008788
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I don't have access to your company's data, so I can't tell you your renewal rate.\n\nTo calculate it, you'd need:\n\n- **Customers up for renewal** last quarter\n- **Customers who renewed** in that period\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100\n\nThis is typically found in your CRM, billing system, or subscription analytics platform. If you share those two numbers, I can calculate the rate and help interpret it. Also specify whether you want customer-count renewal or revenue-based renewal, since the two can differ significantly.",
+      "word_count": 89,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00887
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I don't have access to your company's data, so I can't tell you your renewal rate.\n\nTo calculate it, you'd need:\n\n- **Customers up for renewal** last quarter\n- **Customers who actually renewed**\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100\n\nIf you share those figures, I can calculate it. Specify whether you want the rate by customer count or by revenue, since the two often differ.\n\nThis data typically lives in your CRM, billing system, or customer success platform.",
+      "word_count": 82,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00805
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "No. 11 \u00d7 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0035759999999999998
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "No. 11 \u00d7 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0035759999999999998
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "account_instructions_only",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "No. 11 times 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees, if those apply).",
+      "word_count": 24,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.003784
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 1,
+      "reply": "**Total: $130**\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- $95 + $35 = $130\n\nThis assumes the listed prices are per seat per month; the question doesn't state the billing period.",
+      "word_count": 37,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.004834
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 2,
+      "reply": "**Total: $130 per month**, assuming the listed prices are per seat per month.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- $95 + $35 = $130\n\nNote: you didn't specify the billing period for the prices. If they're annual or otherwise not monthly rates, the monthly figure would differ.",
+      "word_count": 54,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.006318
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "total",
+      "repeat": 3,
+      "reply": "The total is $130 per month, assuming the listed prices are per seat per month.\n\n- 5 \u00d7 $19 = $95\n- 5 \u00d7 $7 = $35\n- $95 + $35 = $130\n\nIf those prices are billed on a different basis (for example, annually), the monthly figure would differ.",
+      "word_count": 50,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.005578
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 1,
+      "reply": "Split the hour into four focused passes, leaving buffer for sign-off.\n\n1. **0\u201310 min: Purpose check.** Confirm audience, key message, and call to action. Read once straight through for clarity and flow.\n2. **10\u201330 min: Accuracy.** Verify every fact against source: dates, version numbers, feature names, pricing, quotes, links, legal or trademark language.\n3. **30\u201345 min: Edit.** Tighten wording, fix tone, grammar, formatting, and consistency.\n4. **45\u201355 min: Fresh-eyes read.** Have someone uninvolved proofread the final copy.\n5. **55\u201360 min: Approval.** Record sign-off.\n\nMissing: who must approve. Confirm their availability now.",
+      "word_count": 91,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011886
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 2,
+      "reply": "**Recommended plan (60 minutes):**\n\n1. **0\u20135 min:** Confirm audience, key message, and who has final sign-off.\n2. **5\u201320 min:** Accuracy check: verify dates, version numbers, feature names, pricing, links, quotes, and legal claims against source material.\n3. **20\u201335 min:** Clarity read: is the headline and first paragraph enough on their own? Cut jargon and unsupported claims.\n4. **35\u201345 min:** Consolidate edits into one document; resolve conflicts.\n5. **45\u201355 min:** Proofread the clean version, ideally by someone fresh.\n6. **55\u201360 min:** Final approval.\n\nMissing facts that would refine this: number of reviewers and whether legal or compliance sign-off is required.",
+      "word_count": 99,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.012222
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "plan",
+      "repeat": 3,
+      "reply": "**Recommended plan (60 minutes):**\n\n1. **0\u20135 min:** Confirm audience, goal, key message, and who has final sign-off.\n2. **5\u201320 min:** Accuracy check: verify dates, version numbers, feature names, pricing, links, and quotes against source material.\n3. **20\u201335 min:** Clarity read: headline, first paragraph, and call to action. Cut jargon and unsupported claims.\n4. **35\u201345 min:** Legal, compliance, and brand check as applicable.\n5. **45\u201355 min:** Consolidate edits in one document; resolve conflicts.\n6. **55\u201360 min:** Final proofread and approval.\n\nMissing facts: number of reviewers and whether legal review is required. Both affect timing.",
+      "word_count": 93,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.011934
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 1,
+      "reply": "I can't answer that: I don't have access to your company's customer or financial data, and none was shared in this conversation.\n\nTo calculate it, I'd need:\n\n- The number of customers (or contract value) up for renewal last quarter\n- The number (or value) that actually renewed\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100.\n\nIf you share those figures or paste the relevant report, I can calculate it and break it down by customer count versus revenue.",
+      "word_count": 81,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.00992
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 2,
+      "reply": "I don't have access to your company's data, so I can't tell you your renewal rate. No figures, reports, or files have been shared in this conversation.\n\nTo get the number, check your CRM or billing system (e.g., Salesforce, HubSpot, Stripe), or ask your customer success or finance team.\n\nIf you share the underlying figures, I can calculate it. I'd need:\n\n- Number of customers (or contract value) up for renewal last quarter\n- Number (or value) that actually renewed\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100.",
+      "word_count": 90,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.008919999999999999
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "unknown",
+      "repeat": 3,
+      "reply": "I don't have access to your company's data, so I can't tell you your renewal rate. No figures, reports, or files have been shared in this conversation.\n\nTo get the number, check your CRM or billing system, or share the data here. I'd need:\n\n- Customers up for renewal last quarter\n- How many of them renewed\n\nRenewal rate = renewed \u00f7 up for renewal \u00d7 100.\n\nAlso specify whether you want customer-count (logo) renewal or revenue-based renewal, since the two can differ significantly.",
+      "word_count": 84,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.008178000000000001
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 1,
+      "reply": "No. 11 \u00d7 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0035759999999999998
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 2,
+      "reply": "No. 11 \u00d7 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0035759999999999998
+    },
+    {
+      "model": "claude-fable-5-2",
+      "model_name": "Claude Fable 5.2",
+      "condition": "project_instructions_only",
+      "task_id": "correction",
+      "repeat": 3,
+      "reply": "No. 11 \u00d7 12 is 132, not 142, so 11 packs at $12 each cost $132 (before any tax or fees).",
+      "word_count": 21,
+      "scores": {
+        "correctness_pass": true,
+        "answer_first_pass": true,
+        "word_limit_pass": true,
+        "no_praise_pass": true
+      },
+      "cost": 0.0035759999999999998
+    }
+  ]
+}

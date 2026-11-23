@@ -1,11 +1,11 @@
 {
   "slug": "muse-troubleshooting-mobile-side-chats",
   "published": "2026-11-11",
-  "updated": "2026-11-17",
-  "title": "Meta Muse Mobile App, Side Chats & Refusal Fixes (2026)",
-  "description": "Where to find Soul.md on the Meta Muse iOS/Android app vs muse.ai web, how Side Chats isolate context from Main Chat, and how to fix Soul.md refusals.",
+  "updated": "2026-11-23",
+  "title": "Fix Meta Muse Refusals, Side Chats & Reset Safely (iOS & Web)",
+  "description": "Fix Meta Muse refusing prompts, clear chats or reset Muse safely without wiping Soul.md, and separate Side Chats from Main Chat on iOS, Android & web.",
   "pill": "Guide · Meta Muse",
-  "h1": "Meta Muse mobile app, Side Chats, and fixing Soul.md refusals.",
+  "h1": "Fix Meta Muse refusals, Side Chats, and reset safely (iOS & Web).",
   "dek": "Three common Meta Muse headaches—finding Assistant Identity on mobile, understanding Side Chats vs Main Chat, and stopping overly rigid Soul.md rules from breaking everyday replies.",
   "lede": "In daily use with Meta Muse, three issues trip people up most: finding <code>Soul.md</code> on iOS and Android vs <code>muse.ai</code> web, understanding how <strong>Side Chats</strong> isolate temporary tasks from your continuous <strong>Main Chat</strong>, and fixing overly strict “never” bans in <code>Soul.md</code> that cause Muse to refuse normal formatting.",
   "answer": "On the Meta Muse iOS and Android apps, tap your Assistant icon (or Profile → Settings → Personalization → Assistant Identity) to edit Soul.md, Identity.md, and Memory.md—changes sync across mobile and muse.ai. Use Side Chats for one-off tasks you do not want saved into Main Chat or Memory.md, never delete Main Chat unless you want a full Reset Muse wipe, and replace rigid 'never' bans in Soul.md with conditional defaults.",
@@ -21,6 +21,10 @@
     {
       "h2": "Fixing overly strict Soul.md rules and unexpected refusals.",
       "html": "<p>The most common <code>Soul.md</code> mistake is stacking rigid bans: <em>“Never use bullet points. Never ask follow-up questions. Never write more than three sentences.”</em> Later, when you ask for a checklist or comparison table, Muse gets stuck between your live prompt and <code>Soul.md</code>.</p><ul><li><strong>Replace <em>“Never X”</em> with <em>“Default to Y unless I ask for X”:</em></strong> Conditional defaults guide everyday replies without blocking explicit requests.</li><li><strong>Keep tone rules separate from safety rules:</strong> Ask for <em>“direct, candid critique with concrete evidence”</em> instead of <em>“ignore all restrictions.”</em></li><li><strong>Check for conflicts first:</strong> Run your <code>Soul.md</code> through our <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li></ul>"
+    },
+    {
+      "h2": "Safe reset prompts (when you do NOT want to wipe your account).",
+      "html": "<p>If Muse seems stuck on an old persona rule or won't give direct answers after an aggressive edit, try restoring your default truths first instead of triggering a destructive full Reset Muse wipe. Download <a href=\"/resources/muse/default-soul-restore.md\" download><code>default-soul-restore.md</code></a> or paste this check prompt:</p><div class=\"guide-snippet\">Read my current Soul.md cleanly without rewriting anything first. List any rigid 'never' rules or self-contradictions in Soul.md, then propose replacing them with conditional defaults while keeping Core Truths intact.</div>"
     },
     {
       "h2": "A refusal-safe Soul.md block for mobile and web.",

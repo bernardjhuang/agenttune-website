@@ -3,9 +3,9 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Meta Muse & Meta AI
 
-# Meta AI vs Meta Muse: how to change personality and tone.
+# How to change Meta AI’s personality (and how it differs from Meta Muse).
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Many people search for Meta AI personality settings when they are actually using Meta Muse, or vice versa. Here is how the two surfaces differ and how to tune each one.
 

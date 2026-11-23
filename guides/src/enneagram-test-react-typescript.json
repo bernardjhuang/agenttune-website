@@ -2,9 +2,9 @@
   "slug": "enneagram-test-react-typescript",
   "route": "/guides/enneagram-test-react-typescript",
   "published": "2026-09-25",
-  "updated": "2026-11-16",
-  "title": "Open-Source Enneagram Scorer & React App (GitHub, MIT)",
-  "description": "Free MIT-licensed JavaScript Enneagram scorer (score.js) and React + TypeScript starter app: 36 items, live browser scorer demo, and tie-preserving rules.",
+  "updated": "2026-11-20",
+  "title": "Enneagram Test Code (GitHub, MIT JS Scorer + React Starter)",
+  "description": "Copy-paste MIT JavaScript Enneagram scorer (score.js), live 36-item tie-preserving demo & runnable React + TypeScript ZIP. Zero backend or API keys.",
   "pill": "Developer resource · runnable starter & JS scorer",
   "h1": "Open-source Enneagram test & scorer (React + TypeScript + JS).",
   "dek": "Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.",
@@ -78,9 +78,9 @@
       "href": "/tests/enneagram"
     },
     {
-      "kicker": "Guide",
-      "label": "Free Enneagram test guide (9 types, wings & ties)",
-      "href": "/guides/free-enneagram-test-no-email-guide"
+      "kicker": "9-type guide",
+      "label": "Enneagram AI prompts for all 9 types, wings & ties",
+      "href": "/guides/enneagram-ai-prompts"
     },
     {
       "kicker": "Research",

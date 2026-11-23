@@ -121,7 +121,7 @@ The line we put at the top of every file in the pack:
 These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.
 ```
 
-The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/coding-agent-personality).
+The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
 
 ## Questions people ask.
 
@@ -177,7 +177,7 @@ In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside 
 
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
 - [Guide: CLAUDE.md examples and best practices](https://agent-tune.com/guides/claude-md-examples)
-- [Guide: AGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: AGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Tool: Free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)

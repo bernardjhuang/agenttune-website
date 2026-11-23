@@ -36,7 +36,7 @@
     },
     {
       "h2": "What a personality file should not touch.",
-      "html": "<p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>\"be decisive\"</em> being read as <em>\"skip the tests\"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class=\"guide-snippet\" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href=\"/guides/coding-agent-personality\">the layer your AGENTS.md is missing</a>.</p>"
+      "html": "<p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>\"be decisive\"</em> being read as <em>\"skip the tests\"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class=\"guide-snippet\" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href=\"/guides/ai-coding-agent-rules-files-matrix\">the layer your AGENTS.md is missing</a>.</p>"
     }
   ],
   "faq": [
@@ -119,7 +119,7 @@
     {
       "kicker": "Guide",
       "label": "AGENTS.md and Cursor rules: add a personality",
-      "href": "/guides/coding-agent-personality"
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
     },
     {
       "kicker": "Tool",

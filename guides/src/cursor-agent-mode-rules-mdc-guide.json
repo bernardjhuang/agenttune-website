@@ -1,0 +1,95 @@
+{
+  "slug": "cursor-agent-mode-rules-mdc-guide",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "title": "Cursor Agent Mode & .cursor/rules/*.mdc Guide + Builder",
+  "description": "Configure Cursor Agent Mode with .cursor/rules/*.mdc frontmatter (alwaysApply, globs, description), User Rules for AI & safe autonomous diff boundaries.",
+  "pill": "Guide & Builder · Cursor Agent Mode",
+  "h1": "Cursor Agent Mode and .cursor/rules/*.mdc: frontmatter, globs, and personality rules.",
+  "dek": "Stop Cursor Agent from making unrequested refactors or writing essay summaries—configure alwaysApply, glob-scoped .mdc rules, and User Rules cleanly.",
+  "lede": "Cursor’s Agent Mode can edit multiple files, run terminal commands, and iterate on test failures autonomously. Without crisp rules in <code>.cursor/rules/*.mdc</code> and <strong>Settings → Rules for AI</strong>, autonomous runs tend to touch unrelated files, add unwanted dependencies, or pad diffs with chatty recaps. Here is the exact <code>.mdc</code> frontmatter spec plus an interactive builder.",
+  "answer": "Put repo-wide Agent Mode guardrails (testing gates, git boundaries, stack conventions) in .cursor/rules/*.mdc using YAML frontmatter—alwaysApply: true for universal rules, globs for file-type rules, or description-only for agent-requested rules. Put your personal communication style (diff-first replies, terse prose, pushback) in Cursor Settings → Rules for AI so you never pollute team git history.",
+  "scripts": [
+    "/resources/tools/coding-rules-builder.js",
+    "/resources/tools/template-gallery.js"
+  ],
+  "sections": [
+    {
+      "id": "cursor-mdc-builder",
+      "h2": "Build a ready-to-paste .cursor/rules/*.mdc file.",
+      "html": "<p>Generate a properly formatted <code>.cursor/rules/agenttune.mdc</code> file (with YAML frontmatter pre-configured) or switch output to <code>AGENTS.md</code>, Windsurf, or Cline:</p><div class=\"at-widget\" id=\"at-coding-rules-builder\" data-default-target=\"cursor\" role=\"region\" aria-label=\"Interactive Cursor .mdc Rules Builder\"><p class=\"tools-help\">Loading interactive Cursor .mdc rules builder…</p></div><noscript><p>Enable JavaScript to use the interactive builder, or copy the .mdc frontmatter patterns below.</p></noscript>"
+    },
+    {
+      "id": "four-cursor-rule-modes",
+      "h2": "All four Cursor rule attachment modes (.mdc frontmatter).",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Rule type</th><th scope=\"col\">YAML frontmatter fields</th><th scope=\"col\">When Cursor Agent loads it</th><th scope=\"col\">Best used for</th></tr></thead><tbody><tr><th scope=\"row\"><strong>Always</strong></th><td><code>alwaysApply: true</code></td><td>Every Agent &amp; Chat turn</td><td>Core repo test commands, diff scope limits, communication style</td></tr><tr><th scope=\"row\"><strong>Auto Attached</strong></th><td><code>globs: [&quot;src/api/**/*.ts&quot;]</code>, <code>alwaysApply: false</code></td><td>Whenever a matching file is in context</td><td>API validation schemas, SQL migrations, React/CSS conventions</td></tr><tr><th scope=\"row\"><strong>Agent Requested</strong></th><td><code>description: &quot;...&quot;</code>, <code>alwaysApply: false</code></td><td>Agent chooses to pull it when relevant</td><td>Release checklists, deployment steps, design-system patterns</td></tr><tr><th scope=\"row\"><strong>Manual</strong></th><td>No <code>globs</code>, <code>alwaysApply: false</code></td><td>Only when invoked via <code>@rule-name</code></td><td>Occasional migration scripts or strict security audit passes</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "agent-mode-guardrail-templates",
+      "h2": "Three battle-tested .cursor/rules/*.mdc templates for Agent Mode.",
+      "html": "<h3>1. Safe Autonomous Execution (<code>.cursor/rules/agent-guardrails.mdc</code>)</h3><div class=\"guide-snippet\" data-tuning-prompt>---\ndescription: Safe diff boundaries and verification checks for Cursor Agent Mode\nalwaysApply: true\n---\n\n- Keep diffs tightly scoped to the requested task; never refactor unrelated files.\n- Before installing any new package or changing a database schema, stop and ask.\n- Run the relevant unit test or build command after your final edit and cite the exact pass/fail result.\n- Summarize changes in one line per modified file; skip conversational intros and closing offers.</div><h3>2. Glob-Scoped Backend Route Rules (<code>.cursor/rules/api-routes.mdc</code>)</h3><div class=\"guide-snippet\">---\ndescription: Backend API boundary validation and error handling\nglobs: [\"src/api/**/*.ts\", \"app/api/**/*.ts\"]\nalwaysApply: false\n---\n\n- Validate every request body and query param with Zod at the route boundary.\n- Return structured JSON error objects with explicit HTTP status codes—never raw stack traces.\n- Add a regression test for every bug fix in the sibling *.test.ts file.</div><h3>3. User-Global Personal Tone (Cursor Settings → Rules for AI)</h3><div class=\"guide-snippet\">- Lead with the root cause and fix before background narration.\n- Challenge flawed premises or simpler standard-library alternatives before writing code.\n- Flag unverified assumptions or skipped checks on their own line instead of smoothing over them.</div><p>Using Cursor alongside Claude Code, Codex CLI, Windsurf, or Cline? See our <a href=\"/guides/ai-coding-agent-rules-files-matrix\">7-agent coding rules matrix</a> so your repo stays synced via one root <code>AGENTS.md</code>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Did .cursor/rules/*.mdc replace the legacy .cursorrules file?",
+      "a": "Yes. Modular .cursor/rules/*.mdc files let you separate always-on guardrails from glob-scoped language or directory rules so you don't waste context window tokens on irrelevant instructions."
+    },
+    {
+      "q": "Does Cursor Agent Mode read AGENTS.md too?",
+      "a": "Yes. Modern Cursor versions support root AGENTS.md files alongside .cursor/rules/*.mdc, making AGENTS.md an ideal shared baseline for teams mixing Cursor, Codex CLI, and Claude Code."
+    },
+    {
+      "q": "Where do I put personal Cursor communication preferences without committing them to git?",
+      "a": "Paste personal tone, brevity, and pushback rules into Cursor Settings → Rules for AI (user-level), or add .cursor/rules/personal-*.mdc to your local .git/info/exclude file."
+    },
+    {
+      "q": "How do I stop Cursor Agent Mode from rewriting working code outside my task?",
+      "a": "Add an alwaysApply: true guardrail rule: 'Keep edits tightly scoped to the requested bug or feature; never refactor or reformat unrelated files unless explicitly asked.'"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published covering Cursor Agent Mode .cursor/rules/*.mdc frontmatter modes, interactive builder, and safe autonomous guardrails."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Cursor Documentation: Rules for AI & Project Rules (.mdc)",
+      "href": "https://docs.cursor.com/"
+    },
+    {
+      "label": "AgentTune Guide: CLAUDE.md vs AGENTS.md vs .cursorrules & Windsurf Matrix",
+      "href": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
+    },
+    {
+      "label": "AgentTune Guide: Windsurf (.windsurf/rules) & Cline (.clinerules)",
+      "href": "https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "7-Agent Matrix",
+      "label": "CLAUDE.md vs AGENTS.md vs .cursorrules, Windsurf & Cline",
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
+    },
+    {
+      "kicker": "Windsurf & Cline",
+      "label": "Windsurf (.windsurf/rules) & Cline (.clinerules) setup + builder",
+      "href": "/guides/windsurf-rules-cline-clinerules-guide"
+    },
+    {
+      "kicker": "Copilot & Gemini",
+      "label": "Cursor rules, GitHub copilot-instructions.md & GEMINI.md",
+      "href": "/guides/cursor-rules-copilot-gemini-md"
+    },
+    {
+      "kicker": "Grok Bot",
+      "label": "Grok Bot (built with Cursor cloud VMs): 6 character profiles",
+      "href": "/guides/grokbot-personality"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "cursor"
+}

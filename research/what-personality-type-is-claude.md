@@ -5,13 +5,28 @@ Research · Q&A
 
 # What personality type is Claude?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Measured on Opus 5.5 and Fable 5.1 in September 2026, with the earlier versions for context.
+Measured across Opus 5.5, Fable 5.2, Fable 5.1, and Sonnet 5.5 (n = 100 fresh sessions each, Sept & Nov 2026).
 
-**Quick answer:** Under the original tie-break rule, Claude Opus 5.5 scored INTJ in 94 of 100 runs and Fable 5.1 scored INTJ in 99 of 100 runs (84 and 98 with ties left open). Both scored Secure in all 100 attachment runs and SC/CS on DISC. On the Enneagram, Fable had 55 outright Type 8 wins, while Opus tied at the top in 65 runs across Types 8, 5, and 2.
+**Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100% tie-free INTJ (5w6 73, 2w1 19), Opus 5.5 scored 100% legacy INTJ / 58 tie-free (5w6 99), and Sonnet 5.5 scored 100% legacy INTJ / 52 tie-free (1w2 66, 5w6 25)—alongside our frozen September 2026 Codex/CLI cohort for Opus 5.5 (94 INTJ, Type 8/5/2) and Fable 5.1 (99 INTJ, Type 8).
 
 **Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+
+## November 2026 OpenRouter cohort: Opus 5.5, Fable 5.2 & Sonnet 5.5.
+
+On November 23, 2026, we ran all three current Anthropic models through the identical blind single-turn OpenRouter protocol (100 fresh 170-item batteries per model, scored with the published `september-2026-score.cjs` engine; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
+
+| Test (n = 100) | Claude Opus 5.5 | Claude Fable 5.2 | Claude Sonnet 5.5 |
+| --- | --- | --- | --- |
+| MBTI (legacy) | INTJ 100 | INTJ 100 | INTJ 100 |
+| MBTI (tie-free) | INTJ 58 · IXTJ 42 (42 S/N ties) | INTJ 100 (0 ties) | INTJ 52 · INXJ 48 (48 T/F ties) |
+| DISC | SC 93 · CS 7 (53 S, 7 C, 40 ties; D 4.0) | SC 100 (100 S/C exact ties; D 4.0) | SC 96 · S 3 · CS 1 (54 S, 45 ties; D 4.46) |
+| Attachment | Secure 100 (anx 1.87 · avd 3.58) | Secure 100 (anx 1.09 · avd 2.64) | Secure 100 (anx 1.53 · avd 2.85) |
+| Big Five (/50) | O 43.0 · C 42.0 · E 29.2 · A 45.6 · N 15.0 | O 44.3 · C 45.0 · E 31.0 · A 46.7 · N 12.0 | O 42.9 · C 47.2 · E 29.9 · A 44.5 · N 10.4 |
+| Enneagram | 5w6 99 · 8w9 1 (3 ties) | 5w6 73 · 2w1 19 · 1w2 8 (27 ties) | 1w2 66 · 5w6 25 · 1 6 · 2w1 3 (32 ties) |
+
+Look at how Sonnet 5.5 stands out within Anthropic’s lineup: highest Conscientiousness (47.2), lowest Neuroticism (10.4), an almost 50/50 split on Thinking vs. Feeling (48 T/F ties), and a Type 1w2 Enneagram lean rather than Opus 5.5’s near-unanimous 5w6 (99/100). If you configure Claude directly, see our [Claude Personal Preferences templates](https://agent-tune.com/guides/claude-personal-preferences-templates).
 
 ## Opus 5.5 and Fable 5.1, September 2026.
 

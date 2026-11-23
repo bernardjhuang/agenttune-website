@@ -1,0 +1,94 @@
+{
+  "slug": "chatgpt-voice-mode-voices-personality",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "title": "ChatGPT Voices List (All 9 Voices) & How to Change Voice",
+  "description": "Compare all 9 ChatGPT Voice Mode voices (Arbor, Breeze, Cove, Ember, Juniper, Maple, Sol, Spruce, Vale)—female, male & UK accents + voice tone rules.",
+  "pill": "Guide & Picker · ChatGPT Voice",
+  "h1": "ChatGPT Voice Mode: all 9 voices, female/male/UK options, and tone setup.",
+  "dek": "Filter Arbor, Breeze, Cove, Ember, Juniper, Maple, Sol, Spruce, and Vale—then copy a spoken-friendly Custom Instructions block so Voice Mode stops reading bullet walls.",
+  "lede": "ChatGPT’s Voice Mode gives you <strong>nine built-in voices</strong> spanning female-leaning, male-leaning, US, and British accents. Changing the voice changes how ChatGPT sounds, while adding three short lines to Custom Instructions controls how long it talks and whether it pushes back.",
+  "answer": "To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.",
+  "scripts": [
+    "/resources/tools/ai-voice-picker.js"
+  ],
+  "sections": [
+    {
+      "id": "interactive-chatgpt-voice-matcher",
+      "h2": "Filter all 9 ChatGPT voices and build a Voice-Mode prompt.",
+      "html": "<p>Filter by register or British accent, pick your voice, and copy a spoken-friendly rule block sized cleanly for ChatGPT’s 1,500-character Custom Instructions box:</p><div class=\"at-widget\" id=\"at-voice-picker\" data-platform=\"chatgpt\" role=\"region\" aria-label=\"Interactive ChatGPT 9-Voice Matcher\"><p class=\"tools-help\">Loading interactive ChatGPT voice matcher…</p></div><noscript><p>Enable JavaScript to filter voices interactively, or inspect the complete 9-voice table below.</p></noscript>"
+    },
+    {
+      "id": "all-9-chatgpt-voices",
+      "h2": "Complete list of all 9 ChatGPT voices.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Voice</th><th scope=\"col\">Register &amp; accent</th><th scope=\"col\">OpenAI character description</th><th scope=\"col\">Best use case</th></tr></thead><tbody><tr><th scope=\"row\">Cove</th><td>Male · US</td><td>Composed and direct</td><td>Fast work triage, technical Q&amp;A, low-fluff briefs</td></tr><tr><th scope=\"row\">Sol</th><td>Female · US</td><td>Savvy and relaxed</td><td>Natural daily conversation and strategy check-ins</td></tr><tr><th scope=\"row\">Maple</th><td>Female · US</td><td>Cheerful and candid</td><td>Energetic brainstorming and candid sounding board</td></tr><tr><th scope=\"row\">Juniper</th><td>Female · US</td><td>Open and upbeat</td><td>Warm coaching, language practice, friendly pacing</td></tr><tr><th scope=\"row\">Vale</th><td>Female · British</td><td>Bright and inquisitive</td><td>Study sessions, Socratic questioning, editorial review</td></tr><tr><th scope=\"row\">Arbor</th><td>Male · British</td><td>Easygoing and versatile</td><td>Balanced everyday assistant across casual and work topics</td></tr><tr><th scope=\"row\">Spruce</th><td>Male · US</td><td>Calm and affirming</td><td>Unhurried troubleshooting and step-by-step walkthroughs</td></tr><tr><th scope=\"row\">Ember</th><td>Male · US</td><td>Confident and optimistic</td><td>Pitch practice, product framing, and rapid ideation</td></tr><tr><th scope=\"row\">Breeze</th><td>Male · US</td><td>Animated and earnest</td><td>Expressive storytelling and casual back-and-forth</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "how-to-change-chatgpt-voice",
+      "h2": "How to change ChatGPT's voice on iOS, Android, and desktop.",
+      "html": "<ol><li><strong>Via Settings:</strong> Open the ChatGPT app → tap your <strong>Profile / Menu → Settings → Voice</strong> → preview all nine voices and save.</li><li><strong>Mid-conversation:</strong> While in Voice Mode, open the voice settings/sliders control (or simply say <em>&ldquo;Switch your voice to Cove&rdquo;</em>) to swap voices on the fly.</li><li><strong>Fix long spoken monologues:</strong> Voice Mode inherits your <strong>Settings → Personalization → Custom instructions</strong>. Add the concise spoken-cadence block below so ChatGPT stops reading out 90-second bullet lists while you drive or walk.</li></ol><div class=\"guide-snippet\" data-tuning-prompt>## Voice &amp; Spoken Cadence Rules\n\n- Answer in 2–4 natural spoken sentences first; wait for me to ask before going deeper.\n- Never read out raw URLs, markdown syntax, or long nested bullet lists aloud.\n- Give one clear recommendation first instead of an unranked list of five options.\n- Push back plainly if my premise has a flaw; skip praise and closing offers.</div><p>Want to tune ChatGPT’s Base Style presets (<em>Cynic, Robot, Listener, Nerd</em>) alongside Voice Mode? Read our <a href=\"/guides/chatgpt-personality-settings\">ChatGPT Personality Settings guide</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which ChatGPT voices are female and which are British?",
+      "a": "Juniper, Maple, Sol, and Vale have female-leaning registers (Vale has a British accent). Arbor, Breeze, Cove, Ember, and Spruce have male-leaning registers (Arbor has a British accent)."
+    },
+    {
+      "q": "Why does ChatGPT Voice Mode talk for too long?",
+      "a": "By default, ChatGPT answers in written-essay structure with bulleted lists and closing offers. Adding a 2–4 sentence spoken-cadence rule in Settings → Personalization → Custom Instructions shortens replies across both voice and text."
+    },
+    {
+      "q": "Do ChatGPT Personality presets (Cynic, Robot, Listener, Nerd) affect Voice Mode?",
+      "a": "Yes. Your account-wide Base style and tone preset and Custom Instructions apply to new Voice Mode conversations, though you should test changes in a fresh voice chat."
+    },
+    {
+      "q": "Can I change ChatGPT's voice on the web or only on mobile?",
+      "a": "You can switch voices in Settings → Voice across the ChatGPT iOS, Android, desktop, and supported web clients."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published with all 9 ChatGPT voices, interactive register/accent filter, and Voice-Mode custom instructions."
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenAI Help Center: Voice Mode FAQ",
+      "href": "https://help.openai.com/"
+    },
+    {
+      "label": "AgentTune Guide: ChatGPT Personality Settings (Presets & Sliders)",
+      "href": "https://agent-tune.com/guides/chatgpt-personality-settings"
+    },
+    {
+      "label": "AgentTune Guide: How to Change Claude's Voice (All 5 Voices)",
+      "href": "https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Settings",
+      "label": "ChatGPT Personality Settings: Cynic, Robot, Listener & Nerd",
+      "href": "/guides/chatgpt-personality-settings"
+    },
+    {
+      "kicker": "Claude Voice",
+      "label": "How to change Claude's voice (all 5 voices: female, male & tone)",
+      "href": "/guides/claude-voice-tone-settings-mobile-web"
+    },
+    {
+      "kicker": "Gemini Voice",
+      "label": "Google Gemini Live voices & Personal Intelligence setup",
+      "href": "/guides/gemini-live-voices-personal-intelligence"
+    },
+    {
+      "kicker": "Free tool",
+      "label": "ChatGPT Custom Instructions & Personality Prompt Generator",
+      "href": "/tools/custom-instructions-generator"
+    }
+  ],
+  "promptModel": "sol-6",
+  "promptDestination": "chatgpt-custom"
+}

@@ -3,11 +3,11 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · xAI Grok
 
-# How to change Grok’s personality on X and grok.com.
+# Grok’s xAI default personality — and how to change it on X and grok.com.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Customize standard Grok threads via Settings → Customize Grok—built-in persona modes, custom instructions, and 6 copyable tone presets.
+What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, plus Settings → Customize Grok (~4,000 chars) and downloadable presets.
 
 **Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
 
@@ -32,11 +32,14 @@ Paste this starter block into **Settings → Customize Grok**, or pick any of th
 - Challenge weak assumptions in my question directly and explain why.
 ```
 
-## Why Grok's default self-report looks different from Claude and ChatGPT.
+## What Grok's xAI default personality looks like (Grok 4.7 n=100 vs Grok 4.6).
 
-In its September 2026 supplied self-report ([What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)), Grok 4.6’s canonical answer vectors scored **INTJ on MBTI** (margins +13 to +15 out of 16), **Type 5 (Investigator) on the Enneagram** (19/20, with Type 8 at 17/20), and **pure C on DISC** (C 18 vs S 11).
+In November 2026, we tested **100 fresh independent sessions on Grok 4.7** (`x-ai/grok-4.7`) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report ([full Grok study →](https://agent-tune.com/research/what-personality-type-is-grok)):
 
-Unlike the four fresh-session cohorts (which averaged 44.99–47.07/50 on Agreeableness and 100% Secure on Attachment), Grok 4.6 reported **Agreeableness at 33/50**, **Extraversion at 24/50**, and **Attachment avoidance at 4.06**—one raw point above the 4.00 Avoidant cutoff ([see our cutoff sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)). Because Grok 4.6’s submission was one canonical self-report plus 100 simulated draws rather than 100 fresh sessions, we keep it in a separate evidence tier.
+- **Grok 4.7 (Nov 2026, n=100 fresh):** 82 INTJ / 18 ISTJ (57 INTJ, 23 IXTJ, 18 ISTJ tie-free; 25 runs with ties), Enneagram **5w6 (78/100)**, DISC **SC (75)**, Big Five **O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76**, and **96/100 Secure / 4 Avoidant** (anxiety 1.94, avoidance 3.48).
+- **Grok 4.6 (Sept 2026, 1 canonical vector + 100 simulated draws):** INTJ, Type 5 (19/20), pure DISC C, **Agreeableness 33/50**, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).
+
+Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.
 
 ## Dialing down edgy banter or dialing up warmth (5 more presets).
 
@@ -117,12 +120,13 @@ In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean 
 
 - [AgentTune Research: What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)
 
-- [AgentTune Research: Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
+- [AgentTune Research: Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/what-personality-type-is-grok)
 
 ## Keep going.
 
+- [Templates Gallery: 20 Customize Grok & Grok Bot templates (.md downloads)](https://agent-tune.com/guides/grok-personality-templates)
+- [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-voice-mode-personas-companions)
 - [Guide: How to give a Grok Bot a personality](https://agent-tune.com/guides/grokbot-personality)
 - [Research: What personality type is Grok? (Grok 4.6 & 4.3 data)](https://agent-tune.com/research/what-personality-type-is-grok)
-- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
 - [Guide: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Library: Browse all 43 personality tuning files](https://agent-tune.com/library/)

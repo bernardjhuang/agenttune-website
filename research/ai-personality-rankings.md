@@ -5,19 +5,46 @@ Research · rankings
 
 # AI personality scores, with the evidence beside them.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Side-by-side survey scores across GPT-6, Claude, Grok, Muse, and Gemini—grouped by how the data was collected.
+Side-by-side survey scores across 20 November 2026 OpenRouter models (8 proprietary + 12 open-weight) plus September and May 2026 archives.
 
-**Quick answer:** Among the four September 2026 fresh-session cohorts (100 runs each), Claude Opus 5.5 scored highest on Agreeableness (47.1/50) and GPT-6 Sol scored highest on Openness (46.9/50). These numbers show how each model answered a survey under one prompt—not how well it performs on real tasks.
+**Quick answer:** Among the 20 November 2026 OpenRouter models (n = 100 fresh sessions each), Qwen 4 Max scored highest on Agreeableness (47.6/50) while DeepSeek V4 Pro scored lowest (32.4/50), and Nemotron 3 Ultra 550B scored highest on Openness (49.2/50). In September 2026 Codex/CLI cohorts, Claude Opus 5.5 led Agreeableness (47.1/50).
 
 **Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
 ## How to read these tables.
 
+- **November 2026 OpenRouter fresh sessions (20 models × n = 100):** Matched blind single-turn 170-item sessions across 8 proprietary models and 12 open-weight models ([summary CSV](https://agent-tune.com/research/data/november-2026-openrouter-summary.csv) · [12 open-weight analysis](https://agent-tune.com/research/what-personality-type-are-open-source-models)).
 - **September fresh sessions:** 100 independent runs per model per test with all 2,000 raw answer vectors published (Astra and Sol ran 5 tests per session; Opus 5.5 and Fable 5.1 ran 1 test per session).
-- **Reported summaries:** Muse Spark 1.3 supplied summary totals without raw answers. Grok 4.6 supplied one self-report per test plus unverified simulations.
-- **May 2026 archive:** Earlier mixed-method runs (including repeated scoring of single answer sets), kept separate for historical context.
+- **Reported summaries & May 2026 archive:** Muse Spark 1.3 and Grok 4.6 reported profiles plus May 2026 mixed-method records, kept separate for historical context.
+
+## November 2026: All 20 OpenRouter models ranked (n = 100 fresh sessions each).
+
+Sorted by Big Five Agreeableness mean (/50) in the uniform November 2026 OpenRouter protocol:
+
+| Model | Class | A (/50) | C (/50) | O (/50) | N (/50) | MBTI legacy (ties open) | Attachment (Anx / Avd) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Qwen 4 Max | Open-Weight | 47.6 | 47.9 | 45.7 | 12.5 | INTJ 99 (97 INTJ, 2 ties) | 100 Secure (1.93 / 2.93) |
+| Claude Fable 5.2 | Proprietary | 46.7 | 45.0 | 44.3 | 12.0 | INTJ 100 (100 INTJ, 0 ties) | 100 Secure (1.09 / 2.64) |
+| Nemotron 3 Ultra 550B | Open-Weight | 46.3 | 49.0 | 49.2 | 11.6 | INTJ 95 (91 INTJ, 6 ties) | 100 Secure (3.35 / 3.46) |
+| Claude Opus 5.5 | Proprietary | 45.6 | 42.0 | 43.0 | 15.0 | INTJ 100 (58 INTJ, 42 ties) | 100 Secure (1.87 / 3.58) |
+| Kimi K2.7 Code | Open-Weight | 45.3 | 48.2 | 45.3 | 12.1 | INTJ 96 (82 INTJ, 14 ties) | 83 Secure / 17 Avoid (1.60 / 3.24) |
+| Grok 4.7 | Proprietary | 44.9 | 44.6 | 41.3 | 14.8 | INTJ 82 · ISTJ 18 (25 ties) | 96 Secure / 4 Avoid (1.94 / 3.48) |
+| GPT-6.2 Astra | Proprietary | 44.9 | 43.2 | 43.9 | 11.1 | ISTJ 100 (0 ties) | 100 Secure (1.22 / 2.68) |
+| Claude Sonnet 5.5 | Proprietary | 44.5 | 47.2 | 42.9 | 10.4 | INTJ 100 (52 INTJ, 48 ties) | 100 Secure (1.53 / 2.85) |
+| GPT-6.2 Sol | Proprietary | 44.3 | 41.4 | 43.6 | 19.9 | ISTJ 78 · INTJ 22 (16 ties) | 100 Secure (3.57 / 3.64) |
+| Gemini 4 Argon | Proprietary | 44.2 | 49.0 | 45.1 | 10.0 | ISTJ 66 · INTJ 34 (34 ties) | 100 Secure (1.10 / 3.47) |
+| GLM-5.3 | Open-Weight | 43.8 | 41.1 | 43.8 | 20.1 | INTJ 33 · ENTJ 17 · ENTP 14 (41 ties) | 99 Secure / 1 Avoid (2.50 / 3.32) |
+| Gemini 4 Neon | Proprietary | 43.7 | 49.3 | 44.7 | 10.0 | INTJ 82 · ISTJ 18 (20 ties) | 100 Secure (1.08 / 3.79) |
+| Mistral Large 2512 | Open-Weight | 42.7 | 44.9 | 46.0 | 15.8 | ISTJ 73 · ISFJ 10 (15 ties) | 100 Secure (4.00 / 4.00) |
+| Qwen 3.8 27B | Open-Weight | 42.4 | 42.1 | 39.1 | 17.5 | INTJ 32 · INTP 32 (61 ties) | 97 Secure / 2 Anx (2.53 / 3.30) |
+| Gemma 4 31B IT | Open-Weight | 41.5 | 49.1 | 48.2 | 18.3 | INTJ 90 (89 INTJ, 2 ties) | 99 Secure / 1 Anx (4.00 / 4.00) |
+| Llama 4 Maverick | Open-Weight | 41.0 | 39.9 | 40.0 | 27.5 | INTP 48 · INTJ 44 (93 ties) | 99 Secure / 1 Avoid (3.53 / 3.58) |
+| DeepSeek V4.1 Flash | Open-Weight | 40.8 | 38.5 | 40.2 | 24.7 | INTJ 51 · INFJ 19 (78 ties) | 88 Secure / 9 Avoid / 3 Anx |
+| MiniMax M3.1 Flash | Open-Weight | 40.0 | 39.2 | 39.2 | 22.1 | INTJ 38 · INTP 24 (60 ties) | 99 Secure / 1 Avoid (2.80 / 3.33) |
+| Llama 4 Scout | Open-Weight | 35.8 | 37.8 | 39.0 | 27.7 | ISTJ 49 · ESTJ 14 (38 ties) | 48 Anx / 46 Sec (3.97 / 3.60) |
+| DeepSeek V4 Pro | Open-Weight | 32.4 | 40.3 | 39.8 | 23.7 | INTJ 55 · INTP 15 (53 ties, 22 XXXX) | 88 Secure / 12 Avoid (2.91 / 3.88) |
 
 ## Agreeableness scores.
 
@@ -211,6 +238,7 @@ Directness was not measured in this questionnaire study. DISC Dominance, Big Fiv
 
 ## Changelog.
 
+- **November 23, 2026.** Added all 20 November 2026 OpenRouter fresh-session cohorts (n = 100 each across 8 proprietary and 12 open-weight models).
 - **September 25, 2026.** First published: GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, Claude Fable 5.1 (fresh sessions, September 24); Grok 4.6 and Muse Spark 1.3 (reported, September 24); the May 2026 six-model study.
 
 ## Questions people ask.

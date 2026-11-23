@@ -3,28 +3,32 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Claude Voice & Tone
 
-# How to change Claude’s voice and tone on iOS, Android, and web.
+# How to change Claude’s voice (all 5 voices, female/male options & tone).
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 20, 2026
 
-Switch Claude's spoken Voice Mode voice (female, male, and accent presets on iOS/Android) or tune written responses in Profile Preferences.
+Exact iOS, Android, web, and desktop paths to switch between Buttery, Airy, Mellow, Glassy, and Rounded—plus an interactive Voice Mode prompt picker.
 
-**Quick answer:** To change Claude's spoken voice on iOS or Android, tap the Voice Mode waveform icon in the chat box (or go to Profile initials → Settings → Voice) and pick from the five voice presets (Airy, Mellow, Buttery, Glassy, or Rounded). To change Claude's written tone and spoken reply length across all devices, paste short rules into Settings → Profile → Personal preferences.
+**Quick answer:** On iOS or Android, open Voice Mode (waveform icon) and tap the bottom-left settings button—or go to Profile → Settings → Voice—to switch between Claude's 5 voices (Buttery, Airy, Mellow, Glassy, Rounded) and speech speed. On web/desktop, open Settings → Capabilities → Voice settings. To make Voice Mode give shorter, more direct answers, add rules in Settings → Profile → Personal preferences.
 
-## How to change Claude's spoken voice in Voice Mode (iOS & Android).
+## How to change Claude's voice on mobile, web, and desktop.
 
-Spoken Voice Mode is available in the Claude iOS and Android mobile apps. Here is how to preview and switch voices:
+Claude Voice Mode includes five English voice presets plus speech speed controls (**Slow, Normal, Fast**):
 
-- **From the chat box:** Tap the **Voice Mode waveform icon** next to the text input, then tap the **Settings / Voice** picker inside the voice sheet.
-- **From account Settings:** Tap your **initials / profile icon → Settings → Voice**, preview each sample, and tap to save.
+- **On iOS & Android:** Tap the **Voice Mode waveform icon** next to the chat input, then tap the **Settings button** at the bottom-left of the active voice screen (or tap your initials → **Settings → Voice**) to swipe through all five voices and pick a speed.
+- **On Web (`claude.ai`) & Claude Desktop:** Click your profile initials → **Settings → Capabilities → Voice settings** (or **Settings → General** on older layouts) to preview and save your preferred voice.
 
-| Voice preset | Spoken character &amp; register | Best paired with |
+| Voice preset | Voice register (Female / Male / Accent) | Best paired with |
 | --- | --- | --- |
-| Buttery | Warm, smooth, conversational cadence (female-leaning register) | Everyday thinking out loud and coaching sessions |
-| Airy | Light, brisk, neutral-crisp delivery (female-leaning register) | Quick Q&amp;A and concise factual lookups on the move |
-| Mellow | Calm, measured, lower-pitch conversational voice (male-leaning register) | Longer planning discussions and steady step-by-step pacing |
-| Glassy | Clear, poised, slightly brighter articulation | Reading summaries and technical explanations cleanly |
-| Rounded | Full, grounded regional-accented cadence (British-style inflection) | Editorial feedback and natural spoken dialogue |
+| Buttery | Warm, smooth, conversational (female-leaning register) | Thinking out loud, brainstorming, and coaching |
+| Airy | Light, brisk, crisp and neutral (female-leaning register) | Fast Q&amp;A and concise factual lookups on the move |
+| Mellow | Calm, measured, lower-pitch (male-leaning register) | Longer planning discussions and steady step-by-step pacing |
+| Glassy | Clear, poised, slightly brighter articulation | Summaries and technical walkthroughs read aloud |
+| Rounded | Full, grounded British-accented inflection | Editorial critique and natural spoken dialogue |
+
+Loading interactive Claude voice & tone matcher…
+
+Enable JavaScript to filter Claude's 5 voices interactively, or copy any written tone preset below.
 
 ## Spoken Voice Mode vs. written tone: where every setting lives.
 
@@ -87,7 +91,7 @@ Because Profile Personal Preferences sync across your account, adding a short br
 - Explain the underlying mechanism and invariant before showing a patch or command.
 ```
 
-Want 15 more role-specific blocks? Browse [Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples) or build your own in the [Claude Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal).
+Want all 20 Personal Preferences & downloadable Claude Skills? Browse [Best Claude Personal Preferences & Skill Templates (20 Examples)](https://agent-tune.com/guides/claude-personal-preferences-templates) or build your own in the [Claude Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal).
 
 ## What measured pilot data shows when you tune Claude.
 
@@ -95,9 +99,9 @@ In our [60-reply controlled pilot](https://agent-tune.com/research/does-personal
 
 ## Questions people ask.
 
-### Can I change Claude's voice to female or male, or switch accents?
+### How do I change Claude's voice to female or male, or pick a British accent?
 
-Yes. Open the Claude iOS or Android app and go to Settings → Voice (or tap the Voice Mode waveform icon) to preview and select from Anthropic's voice presets (such as Buttery, Airy, Mellow, Glassy, and Rounded), which cover warmer female-leaning, calmer male-leaning, and regional-accented speech options.
+Open Claude Voice Mode (tap the waveform icon) and tap the bottom-left settings button on mobile—or go to Settings → Capabilities → Voice settings on web/desktop. Pick Buttery or Airy for female-leaning voices, Mellow for a calm male-leaning voice, Glassy for bright articulation, or Rounded for a British-accented cadence.
 
 ### How do I change Claude's voice on the iPhone or Android app?
 
@@ -132,7 +136,6 @@ Claude Code does not read claude.ai web Personal Preferences. Put coding communi
 ## Keep going.
 
 - [Pillar guide: How to change Claude's personality (settings & pilot data)](https://agent-tune.com/guides/claude-personality)
-- [Examples: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples)
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Claude Code: How to change Claude Code's personality (/output-style)](https://agent-tune.com/guides/claude-code-personality)
 - [Free browser tool: Instruction Test Bench — compare before and after](https://agent-tune.com/tools/instruction-test-bench)

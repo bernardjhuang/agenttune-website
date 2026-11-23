@@ -5,7 +5,7 @@ Guide · DISC Prompts
 
 # DISC AI prompts for all four workplace styles.
 
-By Bernard Huang · Updated November 5, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C) that work in ChatGPT, Claude, Meta Muse, Codex, and Grok.
 
@@ -22,7 +22,7 @@ Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S)
 
 ## 1. Dominance (D): bottom line first, zero hedging.
 
-Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our [ODAT evaluations](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
+Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our [ODAT evaluations](https://agent-tune.com/tests/disc), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
 
 ```markdown
 ## Communication preferences — DISC Dominance (D)
@@ -74,6 +74,21 @@ Use the Conscientiousness block for engineering, quantitative research, and audi
 - Call out edge cases, regression risks, and missing test coverage before pronouncing a solution complete.
 ```
 
+## All 12 two-letter DISC blends & how ODAT scores work.
+
+On our [free 16-item ODAT runner](https://agent-tune.com/tests/disc) (no email required), each style sums 4 direct statements rated 1–5 (range **4 to 20**). When a unique runner-up lands within 2 points of your top style, you get a two-letter blend:
+
+| Blend | Workplace shorthand | How to tune your AI or team README |
+| --- | --- | --- |
+| DC / CD | Architect-Driver | Lead with the conclusion, back it with numbers and failure modes; skip small talk. |
+| DI / ID | Catalyst-Closer | Open with the boldest high-leverage option and next action; keep prose tight. |
+| DS / SD | Steady Executor | Focus on practical execution milestones, clear ownership, and realistic timelines. |
+| IS / SI | Collaborative Coach | Warm, constructive register; connect changes to team impact cleanly. |
+| IC / CI | Analytical Storyteller | Pair rigorous evidence with a clear executive narrative for stakeholders. |
+| SC / CS | Careful Systems Builder | Walk through changes methodically, flag risks early, verify edge cases before shipping. |
+
+Our scorer reports exact top-score ties transparently (such as `S/C`) instead of picking S ahead of C artificially ([inspect the ODAT Markdown spec](https://agent-tune.com/tests/disc.md) · [How to Work With Me card builder](https://agent-tune.com/tools/how-to-work-with-me)).
+
 ## Questions people ask.
 
 ### Which DISC style is best for software engineering and code review?
@@ -98,12 +113,12 @@ Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settin
 
 - [AgentTune Free DISC Assessment (ODAT)](https://agent-tune.com/tests/disc)
 
-- [AgentTune Guide: Free DISC assessment (ODAT) & 12 blends](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
+- [AgentTune Open-Source DISC (ODAT) Spec](https://agent-tune.com/tests/disc.md)
 
 ## Keep going.
 
 - [Interactive Test: Take the free 16-question DISC assessment (no email)](https://agent-tune.com/tests/disc)
-- [Guide: Free DISC assessment (ODAT): 4 styles, 12 blends & scorer](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
+- [Template: How to Work With Me README template for teams & AI](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template)
 - [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
 - [Prompts: Attachment style AI prompts: Secure, Anxious, and Avoidant](https://agent-tune.com/guides/attachment-style-ai-prompts)
 - [Guide: ChatGPT custom instructions by MBTI personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

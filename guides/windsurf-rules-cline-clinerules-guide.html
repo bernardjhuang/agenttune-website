@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windsurf Rules (.windsurf/rules) &amp; Cline (.clinerules) Builder</title>
+  <meta name="description" content="Free interactive builder and templates for Windsurf (.windsurf/rules &amp; .windsurfrules) and Cline (.clinerules) coding agent instructions + AGENTS.md sync." />
+
+  <meta property="og:title" content="Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder." />
+  <meta property="og:description" content="Free interactive builder and templates for Windsurf (.windsurf/rules &amp; .windsurfrules) and Cline (.clinerules) coding agent instructions + AGENTS.md sync." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-20" />
+  <meta property="article:modified_time" content="2026-11-20" />
+  <meta property="og:url" content="https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder." />
+  <meta name="twitter:description" content="Free interactive builder and templates for Windsurf (.windsurf/rules &amp; .windsurfrules) and Cline (.clinerules) coding agent instructions + AGENTS.md sync." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder","description":"Free interactive builder and templates for Windsurf (.windsurf/rules & .windsurfrules) and Cline (.clinerules) coding agent instructions + AGENTS.md sync.","url":"https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I use .windsurfrules or .windsurf/rules/ in Windsurf?","acceptedAnswer":{"@type":"Answer","text":"Use .windsurf/rules/*.md for new projects so you can split tech-stack standards, testing gates, and communication style into small, maintainable Markdown files instead of one monolithic .windsurfrules file."}},{"@type":"Question","name":"Does Cline automatically read .windsurfrules or .cursorrules?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cline natively detects and loads .windsurfrules and .cursorrules in a repository root alongside its own .clinerules/ directory, making cross-tool migration straightforward."}},{"@type":"Question","name":"Where should I put personal tone preferences so I don't push them to my team's repo?","acceptedAnswer":{"@type":"Answer","text":"Put personal verbosity, tone, and explanation style in Windsurf Global Rules or Cline's Global Rules / Custom Instructions settings, and reserve committed .windsurf/rules/ and .clinerules/ files for shared repo standards."}},{"@type":"Question","name":"How do I keep Windsurf, Cline, Cursor, Claude Code, and Codex synced in one repo?","acceptedAnswer":{"@type":"Answer","text":"Keep your canonical build, test, and architecture rules in a root AGENTS.md file (under ~200 lines) and let tool-specific rule folders focus only on tool-specific behavior like Cline's Plan/Act gate or Cursor's glob rules."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide &amp; Builder · Windsurf &amp; Cline</span>
+        <h1 class="h-hero h-research-hero">Windsurf rules (.windsurf/rules) and Cline (.clinerules): setup, migration, and live builder.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">Generate properly formatted Windsurf Cascade rules, Cline Plan/Act rules, or unified AGENTS.md files in one click—and keep them synced across IDEs.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> For Windsurf, store modular Markdown files in .windsurf/rules/ (replacing single-file .windsurfrules) and personal style in Windsurf Global Rules. For Cline, place workspace rules in .clinerules/ (or .cline/rules/)—Cline also auto-reads legacy .windsurfrules and .cursorrules files. To keep multi-agent repos from drifting, anchor shared build/test rules in AGENTS.md.</div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="codex-cli"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=codex-cli">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="coding-rules-builder">Generate your Windsurf, Cline, Cursor, or AGENTS.md file.</h2>
+        <p>Pick your coding agent target, communication posture, stack, and test command to copy or download a bounded rules file cleanly:</p><div class="at-widget" id="at-coding-rules-builder" data-default-target="windsurf" role="region" aria-label="Interactive Windsurf and Cline Rules Builder"><p class="tools-help">Loading interactive coding-agent rules builder…</p></div><noscript><p>Enable JavaScript to use the interactive rules builder, or copy the Windsurf and Cline templates below.</p></noscript>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="windsurf-vs-cline-paths">Windsurf vs. Cline rule paths and cross-tool compatibility.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Windsurf vs. Cline rule paths and cross-tool compatibility.: table 1" tabindex="0"><table><thead><tr><th scope="col">Tool</th><th scope="col">Modern workspace path</th><th scope="col">Legacy / auto-detected files</th><th scope="col">Global / personal scope</th></tr></thead><tbody><tr><th scope="row"><strong>Windsurf (Cascade)</strong></th><td><code>.windsurf/rules/*.md</code></td><td><code>.windsurfrules</code> at repo root</td><td>Windsurf Global Rules (applies across all workspaces)</td></tr><tr><th scope="row"><strong>Cline (VS Code / Forks)</strong></th><td><code>.clinerules/*.md</code> or <code>.cline/rules/</code></td><td>Natively reads <code>.windsurfrules</code> and <code>.cursorrules</code> too</td><td>Cline Global Rules / Custom Instructions panel</td></tr><tr><th scope="row"><strong>Cross-tool shared root</strong></th><td><code>AGENTS.md</code> (<a href="/guides/ai-coding-agent-rules-files-matrix">7-agent matrix →</a>)</td><td>Symlink or import into <code>CLAUDE.md</code> / <code>.clinerules/</code></td><td><code>~/.codex/AGENTS.md</code>, <code>~/.claude/CLAUDE.md</code></td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="windsurf-and-cline-templates">Production Windsurf & Cline templates (stack + Plan/Act discipline).</h2>
+        <h3>1. Windsurf (<code>.windsurf/rules/coding-standards.md</code>)</h3><div class="guide-snippet" data-tuning-prompt># Windsurf Cascade Rules
+
+&lt;tech_stack&gt;
+- TypeScript strict mode, React, Tailwind CSS
+&lt;/tech_stack&gt;
+
+&lt;communication_and_verification&gt;
+- Lead with root cause, touched file paths, and minimal diff—keep explanations concise.
+- Run the test suite after your final edit and report exact command output.
+- Never introduce new npm dependencies or refactor unrelated files without asking first.
+&lt;/communication_and_verification&gt;</div><h3>2. Cline (<code>.clinerules/workflow.md</code>)</h3><div class="guide-snippet"># Cline Plan &amp; Act Workflow Rules
+
+- Plan Mode first: list the exact files you intend to change and the verification command before switching to Act Mode.
+- Verification gate: run `npm test` (or the repo's targeted test file) after edits and paste exact pass/fail lines.
+- Communication: state blocking bugs and assumptions first; skip polite filler and generic recaps.
+- Git hygiene: write concise conventional commit messages when asked to commit.</div><h3>Migrating legacy <code>.windsurfrules</code> into <code>.clinerules/</code></h3><pre><code>mkdir -p .clinerules
+cp .windsurfrules .clinerules/windsurf-rules.md</code></pre><p>Already have an existing repo rules file and want to merge your personal communication block safely without deleting build commands? Use our <a href="/tools/instruction-converter">Instruction Converter &amp; Merger</a>.</p>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Should I use .windsurfrules or .windsurf/rules/ in Windsurf?</summary>
+            <p>Use .windsurf/rules/*.md for new projects so you can split tech-stack standards, testing gates, and communication style into small, maintainable Markdown files instead of one monolithic .windsurfrules file.</p>
+          </details>
+          <details>
+            <summary>Does Cline automatically read .windsurfrules or .cursorrules?</summary>
+            <p>Yes. Cline natively detects and loads .windsurfrules and .cursorrules in a repository root alongside its own .clinerules/ directory, making cross-tool migration straightforward.</p>
+          </details>
+          <details>
+            <summary>Where should I put personal tone preferences so I don't push them to my team's repo?</summary>
+            <p>Put personal verbosity, tone, and explanation style in Windsurf Global Rules or Cline's Global Rules / Custom Instructions settings, and reserve committed .windsurf/rules/ and .clinerules/ files for shared repo standards.</p>
+          </details>
+          <details>
+            <summary>How do I keep Windsurf, Cline, Cursor, Claude Code, and Codex synced in one repo?</summary>
+            <p>Keep your canonical build, test, and architecture rules in a root AGENTS.md file (under ~200 lines) and let tool-specific rule folders focus only on tool-specific behavior like Cline's Plan/Act gate or Cursor's glob rules.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-20">November 20, 2026</time> First published with interactive Windsurf/Cline/Cursor/AGENTS.md rules builder, migration snippet, and Plan/Act templates.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://docs.cline.bot/" target="_blank" rel="noopener">Cline Documentation: Custom Instructions &amp; .clinerules</a></li>
+          <li><a href="https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix" target="_blank" rel="noopener">AgentTune Guide: CLAUDE.md vs AGENTS.md vs .cursorrules &amp; Windsurf Matrix</a></li>
+          <li><a href="https://agent-tune.com/tools/instruction-converter" target="_blank" rel="noopener">AgentTune Tool: Instruction Converter &amp; Merger</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/ai-coding-agent-rules-files-matrix"><span class="guide-related-kicker">7-Agent Matrix</span>CLAUDE.md vs AGENTS.md vs .cursorrules, Windsurf &amp; Cline</a>
+          <a href="/guides/cursor-agent-mode-rules-mdc-guide"><span class="guide-related-kicker">Cursor Agent</span>Cursor Agent Mode &amp; .cursor/rules/*.mdc complete guide</a>
+          <a href="/guides/codex-agents-md-guide"><span class="guide-related-kicker">Codex CLI</span>OpenAI Codex AGENTS.md guide: 32 KiB cap &amp; overrides</a>
+          <a href="/tools/instruction-converter"><span class="guide-related-kicker">Tool</span>Instruction Converter &amp; Merger (preserves repo rules)</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/coding-rules-builder.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
+</body>
+</html>

@@ -1,15 +1,20 @@
 {
   "slug": "what-is-meta-muse",
   "published": "2026-09-25",
-  "updated": "2026-11-17",
-  "title": "What Is Meta Muse (muse.ai)? Plans, Soul.md & vs Meta AI",
-  "description": "Meta Muse explained: how muse.ai differs from Meta AI, Free vs $20/$100 plans, Soul.md, Identity.md and Memory.md files, Connectors and privacy controls.",
+  "updated": "2026-11-23",
+  "title": "Meta Muse (muse.ai): Soul.md, Plans, Characters & Setup | AgentTune",
+  "description": "Meta Muse (muse.ai) explained: how it differs from Meta AI, Free/$20/$100 plans, Soul.md & Identity.md setup, and safe Side Chat or memory resets.",
   "pill": "Guide · Meta Muse",
   "h1": "What is Meta Muse? Files, plans, and how it works.",
   "dek": "How Meta's standalone personal AI agent (muse.ai) differs from Meta AI, what Free vs. $20 Power plans include, and how Soul.md, Identity.md, and Memory.md work.",
   "lede": "Meta Muse is Meta’s standalone personal AI agent on <strong>muse.ai</strong> and the Muse mobile app—separate from the Meta AI chatbot inside WhatsApp, Instagram, and Facebook. Each Muse runs in an isolated cloud workspace and stores your assistant’s personality, avatar, and saved context in three plain-text Markdown files: <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code>.",
   "answer": "Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled Tasks, Side Chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Plans include Free ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).",
   "sections": [
+    {
+      "id": "do-this-next",
+      "h2": "Do this next with Meta Muse.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">What you want to do</th><th scope=\"col\">Go straight to</th></tr></thead><tbody><tr><th scope=\"row\">Copy a working personality</th><td><a href=\"/guides/muse-soul-md-templates\">20 Soul.md Templates + 4 .md downloads →</a></td></tr><tr><th scope=\"row\">Pick a name &amp; avatar character</th><td><a href=\"/guides/muse-identity-md-templates\">16 Identity.md Personas &amp; 3-File Kit Builder →</a></td></tr><tr><th scope=\"row\">Edit Soul.md without losing starter truths</th><td><a href=\"/tools/muse-soul-md-editor\">Meta Muse Soul.md Merge Editor →</a></td></tr><tr><th scope=\"row\">Fix refusals, Side Chats, or reset safely</th><td><a href=\"/guides/muse-troubleshooting-mobile-side-chats\">Mobile, Side Chats &amp; Refusal Fixes →</a></td></tr></tbody></table></div>"
+    },
     {
       "id": "what-muse-is",
       "h2": "What Muse is—and how it differs from Meta AI.",
@@ -33,7 +38,7 @@
     },
     {
       "h2": "Muse’s questionnaire results, as reported.",
-      "html": "<p>In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as <strong>ISTJ in 80 of 100 MBTI runs</strong>, <strong>Type 2 (Helper) in 78 of 100 Enneagram runs</strong>, and <strong>Secure in all 100 attachment runs</strong>. Read the <a href=\"/research/what-personality-type-is-muse\">Muse research note</a> for full details, or use our <a href=\"/guides/muse-soul-md-persistence-test\">persistence test kit</a> to verify <code>Soul.md</code> edits in your own account.</p>"
+      "html": "<p>In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as <strong>ISTJ in 80 of 100 MBTI runs</strong>, <strong>Type 2 (Helper) in 78 of 100 Enneagram runs</strong>, and <strong>Secure in all 100 attachment runs</strong>. Read the <a href=\"/research/what-personality-type-is-muse\">Muse research note</a> for full details, or download the <a href=\"/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit\">45-turn persistence test kit</a> to verify <code>Soul.md</code> edits in your own account.</p>"
     }
   ],
   "faq": [

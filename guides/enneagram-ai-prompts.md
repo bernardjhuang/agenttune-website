@@ -5,7 +5,7 @@ Guide · Enneagram
 
 # Enneagram AI prompts for all nine types.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated November 23, 2026
 
 The one personality system that encodes what you're avoiding — which is exactly what your AI keeps getting wrong.
 
@@ -107,13 +107,29 @@ The user is Enneagram Type 9 (Peacemaker). Ask what they ACTUALLY want (not what
 
 - **ChatGPT:** Go to Settings → Personalization → Custom instructions and paste into "How would you like ChatGPT to respond?" (1,500-character limit). See the [ChatGPT guide](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type).
 - **Claude:** Paste into Settings → General → Personal Preferences, a Claude Project's instructions field, or `CLAUDE.md` for Claude Code. See the [Claude personality guide](https://agent-tune.com/guides/claude-personality).
-- **Coding agents:** Paste into `CLAUDE.md`, `.cursor/rules/`, or `AGENTS.md`. See the [coding-agent guide](https://agent-tune.com/guides/coding-agent-personality).
+- **Coding agents:** Paste into `CLAUDE.md`, `.cursor/rules/`, or `AGENTS.md`. See the [coding-agent guide](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
 
 Each full tuning file in the [library](https://agent-tune.com/library/) also includes a one-line verification probe so you can confirm the install worked. After pasting, delete any line that doesn't sound like you and add one line of context about your current project.
 
 ## Don't know your type?
 
 You do not need a type to choose a communication preference. Read the blocks above, keep rules that fit your tasks, and remove the rest. The [Enneagram questionnaire is available](https://agent-tune.com/tests/enneagram) with its original questions, scores and optional tuning suggestions. These templates are editorial suggestions, not evidence about your underlying motivations.
+
+## All nine types, adjacent wings & tied scores explained.
+
+| Type | Archetype | Core motivation | What the AI prompt adjusts |
+| --- | --- | --- | --- |
+| Type 1 | Reformer | Integrity &amp; standards | Rigorous verification, explicit criteria, zero sloppy shortcuts |
+| Type 2 | Helper | Connection &amp; usefulness | Warm register, stakeholder impact framing |
+| Type 3 | Achiever | Execution &amp; outcomes | Outcome-first briefs, crisp leverage &amp; tempo |
+| Type 4 | Individualist | Depth &amp; originality | Non-generic language, no forced positivity |
+| Type 5 | Investigator | First-principles mastery | Mechanism-first analysis, zero social padding |
+| Type 6 | Loyalist | Preparedness &amp; trust | Failure-mode analysis &amp; honest tradeoffs first |
+| Type 7 | Enthusiast | Possibility &amp; momentum | Divergent options before premature narrowing |
+| Type 8 | Challenger | Candor &amp; agency | Blunt pushback, zero soft-pedaling |
+| Type 9 | Peacemaker | Balance &amp; steady clarity | Gentle directness without forced confrontation |
+
+In our free 36-question [Enneagram test (no email)](https://agent-tune.com/tests/enneagram), adjacent wings only compare neighbors (e.g., Type 5 compares Type 4 vs. Type 6 for `5w4` or `5w6`), and exact top-score ties are reported openly rather than broken secretly. Explore tie arithmetic in the [Enneagram Scoring Playground](https://agent-tune.com/tools/enneagram-scoring-playground).
 
 ## Building an Enneagram integration?
 

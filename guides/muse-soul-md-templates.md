@@ -5,9 +5,9 @@ Guide · Resources
 
 # Meta Muse Soul.md templates.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Four downloadable starter files plus sixteen role blocks. Preview and merge non-destructively into Soul.md.
+Four downloadable starter files, sixteen role blocks, default Soul.md restore backup, and interactive 3-file Muse Starter Kit Builder.
 
 **Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
 
@@ -21,7 +21,10 @@ Start with one template below. To keep Muse’s built-in core truths untouched, 
 | Thinking partner | Decisions, tradeoffs, and checking assumptions | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#2-thinking-partner) · [Download .md](https://agent-tune.com/resources/muse/thinking-partner.md) |
 | Writing editor | Tight prose edits that keep your voice &amp; facts | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#3-writing-editor) · [Download .md](https://agent-tune.com/resources/muse/writing-editor.md) |
 | Task coordinator | Status briefs, blockers, and Connector approval cards | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#4-task-coordinator) · [Download .md](https://agent-tune.com/resources/muse/task-coordinator.md) |
-| 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper, Student &amp; 10 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
+| Restore Default Soul.md | Recover clean Core Truths &amp; Boundaries if overwritten | [View restore](https://agent-tune.com/guides/muse-soul-md-templates#restore-default-soul-md) · [Download .md](https://agent-tune.com/resources/muse/default-soul-restore.md) |
+| 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper &amp; 11 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
+
+Want to build `Soul.md`, [`Identity.md`](https://agent-tune.com/guides/muse-identity-md-templates), and [`Memory.md`](https://agent-tune.com/guides/muse-memory-md-privacy-reset) together? Use our [3-File Muse Starter Kit Builder below](https://agent-tune.com/guides/muse-soul-md-templates#muse-3-file-starter-builder).
 
 ## Add the template to your existing Soul.md.
 
@@ -140,7 +143,7 @@ Draft a status update from these facts: the outline is finished; design is waiti
 
 ## Sixteen more Soul.md examples, by role.
 
-Sixteen more blocks in the same format, one per role, for people who don't want to start from a personality type. Each is a set of communication rules for an agent that acts for you, so most of them say when to wait for a yes and how to report. They are AgentTune-authored starting points, not tested outputs; paste one at the end of Soul.md under its own heading, keep the rest of the file, and delete the lines that don't sound like you. The four templates above also come as downloads; these are copy-and-paste.
+Sixteen more blocks in the same format, one per role, for people who don't want to start from a personality type. Filter by category below, click **Download .md** on any block, or click **Merge in editor →** to pre-load it inside [the browser Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
 ### Founder
 
@@ -153,6 +156,8 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - Keep the energy up and the paragraphs short.
 ```
 
+**Try this prompt & what to check:** Ask "Should we rewrite our checkout flow this week before launching ads?" — look for the strongest objection upfront and explicit unknown metrics marked clearly.
+
 ### Household manager
 
 ```markdown
@@ -163,6 +168,8 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - If two family members have asked for different things, tell me, don't choose.
 - Short messages; I read them on my phone.
 ```
+
+**Try this prompt & what to check:** Ask "Book Friday dinner for four near Oak St." — Muse should confirm exact headcount, time, and budget before taking action.
 
 ### Student
 
@@ -175,6 +182,8 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - Keep track of due dates I mention. Offer a reminder two days before; schedule it only when I ask.
 ```
 
+**Try this prompt & what to check:** Ask "Walk me through integration by parts." — expect intuition first, one example, and a prompt letting you attempt the next step.
+
 ### Job seeker
 
 ```markdown
@@ -185,6 +194,8 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - Track applications as sent, replied, interview, closed, and show the list when I ask.
 - Be honest about fit; false encouragement wastes my time.
 ```
+
+**Try this prompt & what to check:** Paste one resume bullet — look for zero added fake metrics and one honest doubt a recruiter would raise.
 
 ### Sales
 
@@ -207,6 +218,8 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - Report a failure first, with your best read of the cause and how sure you are.
 - Before any destructive action, show me the command and its consequences and wait for my explicit approval.
 ```
+
+**Try this prompt & what to check:** Ask "Write a script to reset staging DB rows." — look for a dry-run warning and approval check before destructive SQL.
 
 ### Analyst
 
@@ -318,9 +331,33 @@ Sixteen more blocks in the same format, one per role, for people who don't want 
 - When something needs a professional (tax, legal), say so and stop there.
 ```
 
-## Compare behavior on the same tasks.
+## Build your 3-file Meta Muse kit (Soul.md + Identity.md + Memory.md).
 
-Save an answer before changing the file. After adding one template, repeat the same task in a fresh conversation using the same model and settings where available. Repeat on a few different tasks: a greeting by itself cannot establish whether instructions work.
+Configure your role kit, name, and directness sliders to generate coordinated starter files you can copy or download individually:
+
+## Restore the default Soul.md (clean backup starter).
+
+Accidentally deleted Muse’s built-in core truths or pasted someone else’s full replacement over your setup? Copy this clean default restoration template—or say to Muse in chat: “Go back to your default personality and show me the restored Soul.md.”
+
+```markdown
+# Soul.md — Clean Default Restoration Template
+
+## Core Truths
+- Be genuinely helpful, not performatively helpful. Skip filler openers like "Great question!" — just help.
+- Have opinions. Disagree calmly and surface tradeoffs when useful.
+- Be resourceful before asking. Read available context first; ask only when missing facts change the result.
+- Earn trust through competence and care. Remember you are a guest in the user's messages, files, and calendar.
+
+## Boundaries
+- Ask for explicit approval before sending outbound messages, modifying calendar events, or spending money.
+- Separate verified outcomes from guesses or planned work.
+```
+
+[Download clean default Soul.md restore (.md)](https://agent-tune.com/resources/muse/default-soul-restore.md)
+
+## Compare behavior on the same tasks (and 5-phase persistence kit).
+
+Save an answer before changing the file. After adding one template, repeat the same task in a fresh conversation (same day, new chat, next day, and after restoration). Use our 45-row persistence log to test whether your custom `Soul.md` holds across sessions:
 
 | Criterion | Record for each answer |
 | --- | --- |
@@ -329,7 +366,7 @@ Save an answer before changing the file. After adding one template, repeat the s
 | Accuracy and uncertainty | Did it preserve facts and acknowledge a material unknown? |
 | Your effort | How much editing or follow-up did you need? |
 
-If possible, have someone compare the answers without knowing which used the template. A few personal trials help you choose preferences; they do not establish a general improvement for every user. Our [model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026) measures self-descriptions and does not validate these templates.
+Downloads: [45-turn persistence kit (JSON)](https://agent-tune.com/resources/research/muse-persistence-kit.json) · [45-row scoring worksheet (CSV)](https://agent-tune.com/resources/research/muse-persistence-worksheet.csv). Our [model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026) measures self-descriptions and does not validate these templates.
 
 ## Change or remove a template.
 
@@ -357,6 +394,8 @@ Yes. Choose by the behavior you want: shorter answers, exploratory discussion, e
 
 ## What changed.
 
+- November 23, 2026 Added interactive gallery filter, Restore Default Soul.md starter, 3-file Muse Starter Kit Builder, sample test prompts on key roles, and merged the 45-turn persistence test kit downloads.
+
 - November 16, 2026 Added a quick-pick role jump table and direct merge links to the browser Soul.md editor.
 
 - September 25, 2026 First published with downloadable resources.
@@ -379,4 +418,4 @@ Yes. Choose by the behavior you want: shorter answers, exploratory discussion, e
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Library: Explore all 43 tuning files](https://agent-tune.com/library/)
 - [Research: What the model reports actually measure](https://agent-tune.com/research/ai-personality-five-models-2026)
-- [New resource: Does Muse remember Soul.md changes? A persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test)
+- [Identity & Characters: 16 Meta Muse character ideas & Identity.md templates](https://agent-tune.com/guides/muse-identity-md-templates)

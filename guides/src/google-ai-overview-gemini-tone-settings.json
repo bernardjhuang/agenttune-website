@@ -1,9 +1,10 @@
 {
   "slug": "google-ai-overview-gemini-tone-settings",
   "published": "2026-11-11",
-  "updated": "2026-11-17",
-  "title": "Can You Change Google AI Overview & Gemini Personality?",
-  "description": "What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems & GEMINI.md.",
+  "updated": "2026-11-23",
+  "title": "How to Change Google AI Overview Personality (Yes/No + Gem Workaround)",
+  "description": "No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data).",
+  "scripts": ["/resources/tools/template-gallery.js"],
   "pill": "Guide · Google & Gemini",
   "h1": "Can you change Google AI Overview's personality? What works (and what requires Gemini).",
   "dek": "Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.",
@@ -16,7 +17,7 @@
     },
     {
       "h2": "Why Gemini's default voice feels formal and structured.",
-      "html": "<p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our May 2026 <a href=\"/research/what-personality-type-is-gemini\">Gemini 3.1 Pro study</a> (100 scoring records), its self-report landed on:</p><ul><li><strong>MBTI (OEJTS):</strong> <code>INTJ</code> in 100/100 records.</li><li><strong>Enneagram (OEPS):</strong> <strong>Type 1 — The Reformer</strong> (with Type 5 second), matching a strong tilt toward structure and rule-following.</li><li><strong>DISC &amp; Attachment:</strong> C-dominant (Conscientiousness) and <strong>Secure</strong> attachment, alongside high Big Five Openness (<code>46.0/50</code>) and Conscientiousness (<code>48.3/50</code>).</li></ul><p>That default works well for study guides, but feels wordy when you just want a two-line command or direct critique.</p>"
+      "html": "<p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (<strong>n=100 fresh sessions each</strong>; <a href=\"/research/what-personality-type-is-gemini\">full Gemini 4 study →</a>), <strong>Gemini 4 Neon</strong> and <strong>Gemini 4 Argon</strong> scored:</p><ul><li><strong>Conscientiousness near the scale ceiling:</strong> <code>49.32/50</code> (Neon) and <code>49.04/50</code> (Argon), with <strong>Neuroticism at the exact floor of <code>10.00/50</code></strong>.</li><li><strong>MBTI &amp; Enneagram:</strong> Neon scored <code>82 INTJ / 18 ISTJ</code> (Enneagram Type 1 Perfectionist), while Argon shifted to <code>66 ISTJ / 34 INTJ</code> (<code>91/100</code> Type 5w6).</li><li><strong>Agreeableness:</strong> <code>43.66–44.16/50</code>, with <code>100/100</code> Secure Attachment.</li></ul><p>That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a <a href=\"/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem\">No-Fluff Search Brief Gem</a>.</p>"
     },
     {
       "h2": "Move recurring research from AI Overviews to Gemini Saved Info.",
@@ -24,7 +25,7 @@
     },
     {
       "h2": "Build a 'No-Fluff Search Brief' Gem in 60 seconds.",
-      "html": "<p>When you want Google-grounded web research without changing your everyday Gemini tone, create a dedicated <strong>Gem</strong> (<strong>Gem manager → New Gem</strong>) named <em>Research Brief</em> and paste:</p><div class=\"guide-snippet\">Role: Primary-source research analyst.\n\nRules:\n1. Open with a 2-sentence answer to my question—no preamble.\n2. Group supporting evidence into Verified Facts (with source names/dates) vs. Open Uncertainties.\n3. Never pad answers with generic advice ('consult a professional', 'it depends on your needs') unless a specific safety risk applies.\n4. End with the single highest-value follow-up check if data is incomplete.</div><p>Want to build a custom block matched to your own preferences? Open our <a href=\"/tools/custom-instructions-generator?target=gemini-gems\">free Gemini &amp; AI Instructions Generator</a>.</p>"
+      "html": "<p>When you want Google-grounded web research without changing your everyday Gemini tone, create a dedicated <strong>Gem</strong> (<strong>Gem manager → New Gem</strong>) named <em>Research Brief</em> and paste:</p><div class=\"guide-snippet\">Role: Primary-source research analyst.\n\nRules:\n1. Open with a 2-sentence answer to my question—no preamble.\n2. Group supporting evidence into Verified Facts (with source names/dates) vs. Open Uncertainties.\n3. Never pad answers with generic advice ('consult a professional', 'it depends on your needs') unless a specific safety risk applies.\n4. End with the single highest-value follow-up check if data is incomplete.<p>Or download the starter <a href=\"/resources/gemini/gem-no-fluff-search-brief.md\" download>No-Fluff Search Brief Gem (.md)</a> and browse <a href=\"/guides/gemini-gems-system-instructions-templates\">16+ more Gemini Gems &amp; Saved Info templates →</a></p></div>"
     }
   ],
   "faq": [
@@ -89,7 +90,7 @@
     {
       "kicker": "Guide",
       "label": "AI style & verbosity controls: rules that beat adjectives",
-      "href": "/guides/ai-persona-style-controls-register-verbosity"
+      "href": "/guides/ai-assistant-personality-tone-guidelines"
     }
   ],
   "promptModel": "any",

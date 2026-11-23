@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free ChatGPT Custom Instructions &amp; AI Prompt Generator</title>
-  <meta name="description" content="Build paste-ready custom instructions for ChatGPT (1,500 chars), Claude, Meta Muse Soul.md, Grok, Gemini &amp; AGENTS.md. Free, client-side, no signup." />
+  <title>Free ChatGPT Custom Instructions &amp; AI Prompt Generator (No Sign-Up)</title>
+  <meta name="description" content="Free AI &amp; ChatGPT custom instructions generator (no sign-up). Export 1,500-char ChatGPT blocks, Claude rules, Muse Soul.md, Grok, Gemini &amp; AGENTS.md." />
 
-  <meta property="og:title" content="Free ChatGPT Custom Instructions &amp; AI Prompt Generator" />
+  <meta property="og:title" content="ChatGPT Custom Instructions &amp; Personality Prompt Generator" />
   <meta property="og:description" content="Build paste-ready custom instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md. Free, local, no signup." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agent-tune.com/tools/custom-instructions-generator" />
@@ -74,6 +74,17 @@
 
       <div class="tool-grid">
         <section class="tool-card" aria-label="Generator controls">
+          <div class="tool-field" id="quick-presets-wrap">
+            <label>Quick starter presets (1 click)</label>
+            <div id="quick-presets" class="at-pill-row" style="margin-bottom:8px;">
+              <button type="button" class="at-pill-btn" data-preset="concise-analyst">Concise Analyst</button>
+              <button type="button" class="at-pill-btn" data-preset="skeptical-partner">Skeptical Partner</button>
+              <button type="button" class="at-pill-btn" data-preset="senior-engineer">Senior Engineer</button>
+              <button type="button" class="at-pill-btn" data-preset="executive-brief">Executive Brief</button>
+              <button type="button" class="at-pill-btn" data-preset="plain-english-editor">Plain-English Editor</button>
+              <button type="button" class="at-pill-btn" data-preset="study-coach">Study Coach</button>
+            </div>
+          </div>
           <label for="approach">Start with</label>
           <select id="approach"><option value="preferences">My communication preferences</option><option value="template">A personality template</option></select>
           <fieldset id="preferences" class="preference-options"><legend>What would help you?</legend>
@@ -108,9 +119,9 @@
             <tbody>
               <tr><th scope="row">ChatGPT</th><td>Profile → <strong>Personalization → Custom Instructions</strong> → <em>How would you like ChatGPT to respond?</em></td><td>1,500 chars per box. <a href="/guides/chatgpt-projects-vs-custom-instructions">Project instructions</a> override conflicting lines inside that Project.</td></tr>
               <tr><th scope="row">Claude</th><td>Initials → <strong>Settings → Profile</strong> → <em>What personal preferences should Claude consider in responses?</em></td><td>Account-wide across web, iOS, and Android. See <a href="/guides/claude-personality">Claude personality guide</a>.</td></tr>
-              <tr><th scope="row">Meta Muse</th><td><code>muse.ai</code> or mobile app → Profile → <strong><code>Soul.md</code></strong> (voice) &amp; <strong><code>Identity.md</code></strong> (context)</td><td>Keep voice rules in <code>Soul.md</code> and facts in <code>Identity.md</code> (<a href="/guides/muse-personality">setup guide</a>).</td></tr>
-              <tr><th scope="row">Grok &amp; Gemini</th><td>Grok: <strong>Settings → Customize response</strong> or Bot <em>Description</em>. Gemini: <strong>Settings → Saved info</strong> or a Gem.</td><td>Short bullet rules hold longer than roleplay adjectives (<a href="/guides/grokbot-personality">Grok</a> · <a href="/guides/gemini-personality">Gemini</a>).</td></tr>
-              <tr><th scope="row">Coding agents</th><td><code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>.cursor/rules/personality.mdc</code></td><td>Use <a href="/tools/instruction-converter">Instruction Converter</a> to wrap in bounded <code>&lt;!-- agenttune:preferences --&gt;</code> markers.</td></tr>
+              <tr><th scope="row">Meta Muse &amp; OpenClaw</th><td><code>muse.ai</code> / app → <strong><code>Soul.md</code></strong> (voice), <code>Identity.md</code> (avatar/name), <code>Memory.md</code> (facts)</td><td>Keep voice rules in <code>Soul.md</code> (<a href="/guides/muse-personality">Muse guide</a> · <a href="/guides/openclaw-soul-md-user-md-identity-md">OpenClaw 3-file builder</a>).</td></tr>
+              <tr><th scope="row">Grok, Gemini &amp; Copilot</th><td>Grok: <strong>Customize Grok</strong>. Gemini: <strong>Personal Intelligence → Instructions for Gemini</strong>. Copilot: <strong>Chat settings → Custom instructions</strong>.</td><td>Short bullet rules hold longer than roleplay adjectives (<a href="/guides/grok-personality-settings">Grok</a> · <a href="/guides/gemini-personality">Gemini</a> · <a href="/guides/microsoft-copilot-custom-instructions-memory">Copilot</a>).</td></tr>
+              <tr><th scope="row">Coding agents</th><td><code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, <code>.cursor/rules/*.mdc</code>, <code>.windsurf/rules/</code>, or <code>.clinerules/</code></td><td>Use <a href="/tools/instruction-converter">Instruction Converter</a> or <a href="/guides/windsurf-rules-cline-clinerules-guide">Coding Rules Builder</a>.</td></tr>
             </tbody>
           </table>
         </div>
@@ -157,7 +168,7 @@
             </tbody>
           </table>
         </div>
-        <p>See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-project-instructions-examples">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
+        <p>Prefer interactive sliders instead of checkboxes? Try our <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions">6-Slider AI Personality Tuner</a>. See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-project-instructions-examples">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
       </section>
     </main>
 
@@ -176,9 +187,18 @@
     const labels={mbti:'MBTI',enneagram:'Enneagram',disc:'DISC',attachment:'Attachment',ocean:'Big Five'};
     const rules={concise:'Lead with the answer. Keep detail proportionate to the task and include a useful next step.',exploratory:'Explore alternatives and explain tradeoffs. Leave room to think before narrowing to a recommendation.',critical:'Challenge weak assumptions with evidence. Give specific, candid feedback and distinguish facts from inference.',supportive:'Use a warm, steady tone. Acknowledge the concern briefly and offer manageable steps without unsupported reassurance.'};
     const $=id=>document.getElementById(id), key='at_generator_v2', params=new URLSearchParams(location.search);
+    const PRESET_MAP={
+      'concise-analyst':['concise','critical'],
+      'skeptical-partner':['critical','exploratory'],
+      'senior-engineer':['concise','critical'],
+      'executive-brief':['concise'],
+      'plain-english-editor':['concise','supportive'],
+      'study-coach':['exploratory','supportive']
+    };
     let catalog, revision=0, initial=null;
     try {const saved=JSON.parse(localStorage.getItem(key)); if(saved && Number.isFinite(saved.updated) && Date.now()-saved.updated<7*86400000 && (!saved.preferences || (Array.isArray(saved.preferences) && saved.preferences.every(x=>Object.hasOwn(rules,x))))) initial=saved; else localStorage.removeItem(key);} catch {}
     if(params.has('mode')) initial={mode:params.get('mode'),system:params.get('system'),type:params.get('type'),preferences:(params.get('preferences')||'').split(','),app:params.get('app'),model:params.get('model'),target:params.get('target')};
+    if(!initial && params.has('preset')) { const pKey=params.get('preset'); initial={mode:'preferences',preferences:PRESET_MAP[pKey]||['concise','critical'],target:params.get('target')||'chatgpt-custom'}; }
     if(!initial && (params.has('model') || params.has('target'))) initial={mode:'preferences',model:params.get('model'),target:params.get('target')};
     const boxes=()=>Array.from($('preferences').querySelectorAll('input'));
     function selection() {return {mode:$('approach').value,system:$('system').value,type:$('type').value,preferences:boxes().filter(x=>x.checked).map(x=>x.value),...($('integration-deep').__atPicker?.getState()||{})};}
@@ -206,6 +226,13 @@
     fetch('/library/index.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{catalog=data;Object.keys(labels).forEach(system=>{const o=document.createElement('option');o.value=system;o.textContent=labels[system];$('system').append(o);});if(Object.hasOwn(labels,initial?.system))$('system').value=initial.system;fillTypes(initial?.type);$('system').disabled=$('type').disabled=false;render(true);}).catch(()=>{$('load-status').textContent='Templates are unavailable. You can still build instructions from your preferences.';});
     $('approach').addEventListener('change',()=>render());$('preferences').addEventListener('change',()=>render());
     $('system').addEventListener('change',()=>{fillTypes();render();});$('type').addEventListener('change',()=>render());
+    Array.from($('quick-presets')?.querySelectorAll?.('[data-preset]')||[]).forEach(btn=>btn.addEventListener('click',()=>{
+      const chosen=PRESET_MAP[btn.dataset.preset]||['concise'];
+      $('approach').value='preferences';
+      boxes().forEach(x=>{x.checked=chosen.includes(x.value);});
+      render();
+      $('draft-status').textContent='Loaded '+btn.textContent+' preset. Switch destination on the right to export.';
+    }));
     $('reset-generator').addEventListener('click',()=>{revision++;initial=null;try{localStorage.removeItem(key);}catch{} $('approach').value='preferences';boxes().forEach(x=>x.checked=false);if(catalog)fillTypes();$('integration-deep').__atPicker.selectTarget('anywhere');render();try{localStorage.removeItem(key);}catch{} if(window.history) window.history.replaceState(null,'',location.pathname); $('draft-status').textContent='Local draft cleared.';});
     $('share-selection').addEventListener('click',async()=>{const s=selection(), q=new URLSearchParams({mode:s.mode,app:s.app,model:s.model,target:s.target});if(s.mode==='template'){if(!s.type){$('draft-status').textContent='Choose a template before sharing.';return;}q.set('system',s.system);q.set('type',s.type);}else q.set('preferences',s.preferences.join(','));try{await navigator.clipboard.writeText(location.origin+location.pathname+'?'+q);$('draft-status').textContent='Selection link copied. Edited text and test answers are excluded.';}catch{$('draft-status').textContent='Could not copy the link. Your draft is still available here.';}});
   })();

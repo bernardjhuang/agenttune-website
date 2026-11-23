@@ -90,7 +90,7 @@ Yes. The core bullet points are portable across all coding assistants; only the 
 
 ## Keep going.
 
-- [Guide: The layer your AGENTS.md is missing (coding agent personality)](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: The layer your AGENTS.md is missing (coding agent personality)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Guide: Claude Code personality: CLAUDE.md and /output-style](https://agent-tune.com/guides/claude-code-personality)
 - [Guide: How to change Gemini's personality: Gems, Saved Info, and CLI](https://agent-tune.com/guides/gemini-personality)

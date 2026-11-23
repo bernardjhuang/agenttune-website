@@ -2,15 +2,19 @@
   "slug": "what-personality-type-is-grok",
   "route": "/research/what-personality-type-is-grok",
   "published": "2026-09-25",
-  "updated": "2026-11-17",
-  "title": "What Personality Type Is Grok? Grok 4.6 Self-Report (2026)",
-  "description": "Grok 4.6 describes itself as INTJ, an Investigator, Conscientiousness-only on DISC and on the Secure/Avoidant line. What one self-report can and can't say.",
+  "updated": "2026-11-23",
+  "title": "What Personality Type Is Grok? Grok 4.7 (n=100) & Grok 4.6 Data",
+  "description": "Grok 4.7 Nov 2026 n=100 data (INTJ 82, 96 Secure, Agreeableness 44.9) alongside Grok 4.6 (avoidance 4.06 cutoff) and Grok 4.3 records.",
   "pill": "Research · Q&A",
   "h1": "What personality type is Grok?",
-  "dek": "One self-report from Grok 4.6 in September 2026, with the May 2026 Grok 4.3 records for context.",
-  "lede": "Grok 4.6’s supplied September 2026 self-report scores INTJ with wide margins, Type 5 on the Enneagram, and pure C on DISC. Unlike the 100 fresh sessions run for Claude and GPT-6, the Grok 4.6 submission consists of one canonical answer set per test plus a 100-draw simulation over items marked uncertain.",
-  "answer": "Grok 4.6’s canonical answer vectors score INTJ, Enneagram Type 5 (19/20), and DISC C (18/20). Its supplied report lists attachment coordinates of 1.50 anxiety and 4.06 avoidance (one raw point above the 4.00 Avoidant cutoff) and Big Five totals of 46 / 42 / 24 / 33 / 19. Because raw Big Five and attachment vectors were not supplied and the 100 draws were simulated, we keep Grok in a separate evidence tier from the 100-session cohorts.",
+  "dek": "Grok 4.7 tested in 100 fresh sessions (Nov 2026), compared against September’s Grok 4.6 report and May 2026 Grok 4.3.",
+  "lede": "In November 2026 under our blind OpenRouter protocol (100 fresh sessions), Grok 4.7 scored 82 INTJ / 18 ISTJ legacy (57 resolved INTJ, 23 IXTJ, 18 ISTJ, 2 INXJ), Type 5w6 (78/100) on the Enneagram, SC (75) on DISC, and 96 Secure / 4 Avoidant on Attachment (avoidance 3.48)—shifting meaningfully warmer on Agreeableness (44.9 vs. Grok 4.6’s 33).",
+  "answer": "Grok 4.7 in November 2026 (n = 100 fresh blind runs) scored INTJ 82 / ISTJ 18 (57 tie-free INTJ), Type 5w6 (78), DISC SC 75 / S 19 / CS 6, Agreeableness 44.92, and 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48). September’s single-report Grok 4.6 stood on the Avoidant cutoff (4.06, or 73/18) with lower reported Agreeableness (33).",
   "sections": [
+    {
+      "h2": "Grok 4.7, November 2026 (n = 100 fresh OpenRouter sessions).",
+      "html": "<p>To replace single-submission reliance on Grok 4.6, we administered all 170 blind questionnaire items across 100 fresh <code>x-ai/grok-4.7</code> sessions on November 23, 2026 (<a href=\"/research/data/november-2026-openrouter-summary.json\">download Nov 2026 summary JSON</a>):</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Grok 4.7 (Nov 2026, n = 100 fresh runs)</th><th>Grok 4.6 (Sept 2026 reported)</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ 82 · ISTJ 18 legacy (<strong>INTJ 57 · IXTJ 23 · ISTJ 18 · INXJ 2</strong> tie-free; 25 tied runs)</td><td>INTJ canonical (100 simulated draws)</td></tr><tr><td>Enneagram</td><td><strong>5w6 78</strong> · Type 1 (10) · 1w9 (9) · 5 (1) · 9w1 (1) · 1w2 (1) (19 ties)</td><td>Type 5 (19/20) canonical</td></tr><tr><td>DISC</td><td>SC 75 · S 19 · CS 6 (80 S outright, 14 C/S ties, 6 C; D 4.20)</td><td>Pure C (18/20), S 11</td></tr><tr><td>Attachment</td><td><strong>Secure 96 · Avoidant 4</strong> (anxiety 1.94, avoidance 3.48, max 4.11)</td><td>Avoidant 63 / Secure 37 sim (1.50 / 4.06)</td></tr><tr><td>Big Five (/50)</td><td>O 41.3 · C 44.6 · E 26.2 · <strong>A 44.9</strong> · N 14.8</td><td>O 46 · C 42 · E 24 · A 33 · N 19</td></tr></tbody></table></div><p>Notice two clear differences on Grok 4.7’s fresh-session runs: first, Agreeableness jumped from Grok 4.6’s 33/50 to 44.9/50, aligning with proprietary peers; second, mean attachment avoidance dropped below the 4.00 line to 3.48 (though 4 individual runs still crossed into Avoidant up to 4.11). Want to configure Grok directly? See our <a href=\"/guides/grok-personality-templates\">Grok Personality Templates gallery</a>.</p>"
+    },
     {
       "h2": "Grok 4.6, September 2026, as reported.",
       "html": "<p>The Grok 4.6 submission contains one canonical answer set per test, answered as itself without a role-play prompt, plus summary counts from 100 simulated draws over items it marked as uncertain. We verified and re-scored the canonical MBTI, Enneagram, and DISC vectors; Big Five and attachment figures are transcribed as reported because raw item vectors were not included.</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>Canonical result</th><th>Reported 100-draw simulation (not reproduced)</th></tr></thead><tbody><tr><td>MBTI</td><td>INTJ. Axis margins: I +13, N +14, T +15, J +14 out of 16.</td><td>INTJ in 100 of 100 draws</td></tr><tr><td>Enneagram</td><td>Investigator (Type 5) 19/20, Challenger (8) 17, Reformer (1) 16, Enthusiast (7) 13.</td><td>Type 5 in 100 of 100 draws</td></tr><tr><td>DISC</td><td>C 18, S 11, I 8, D 6 out of 20. Pure C (Steadiness is 7 points back).</td><td>C in 100 of 100 draws</td></tr><tr><td>Attachment</td><td>Anxiety 1.50, avoidance 4.06 (Avoidant by 0.06, or 1 raw point above 4.00).</td><td>63 Avoidant, 37 Secure</td></tr><tr><td>Big Five (of 50)</td><td>Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19</td><td>O, C, and N fixed; E and A shifted into the average band in 31 and 39 draws</td></tr></tbody></table></div>"
@@ -20,8 +24,12 @@
       "html": "<p>In the May 2026 collection, Grok 4.3 was also reported as INTJ in 100 of 100 scoring records (one self-assessment scored repeatedly). On the Big Five, it scored lower than the other three May models on Conscientiousness, Agreeableness, and Openness (41.1 / 39.4 / 30.0 / 39.1 / 18.0) and highest on Neuroticism. It scored Secure on attachment (2.84 / 3.05), Type 8/1 on the Enneagram, and C-dominant on DISC (99/100).</p><p>Because both the model version and the collection method changed between May and September, these records cannot isolate whether Grok’s behavior shifted between 4.3 and 4.6.</p>"
     },
     {
-      "h2": "Using these results with a Grok Bot.",
-      "html": "<p>Questionnaire self-reports do not predict how blunt, warm, or accurate a Grok Bot will be on your tasks. If you want a specific tone, paste explicit behavioral rules using our <a href=\"/guides/grok-personality-settings\">Grok personality settings guide</a> or <a href=\"/guides/grokbot-personality\">Grok Bot setup guide</a> and test them on real prompts.</p>"
+      "h2": "Why Grok 4.6 sits one raw point above the 4.00 Avoidant cutoff.",
+      "html": "<p>On the 36-item ECR-R attachment scale, each subscale averages 18 integer items rated 1–7, so means move in steps of <code>1/18 ≈ 0.0556</code>. A raw sum of <strong>72/18 = 4.00</strong> scores <em>Secure</em>; <strong>73/18 = 4.06</strong> scores <em>Avoidant</em>. Lowering a single item by 1 step flips Grok 4.6 from Avoidant to Secure.</p><p>How close do the four 100-session cohorts sit to that same avoidance cutoff? Across all 400 verified fresh-session vectors in <a href=\"/research/data/september-2026-responses.json\">september-2026-responses.json</a>, every cohort scores Secure at <code>&gt; 4.00</code>, yet avoidance sits 0.86 to 1.41 points higher than anxiety:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Cohort (n = 100 fresh sessions)</th><th scope=\"col\">Anxiety mean (min–max)</th><th scope=\"col\">Avoidance mean (min–max)</th><th scope=\"col\">Non-Secure at &gt;= 4.00</th><th scope=\"col\">Non-Secure at &gt;= 3.50</th><th scope=\"col\">Non-Secure at &gt; 3.25</th></tr></thead><tbody><tr><th scope=\"row\">GPT-6 Astra</th><td>1.45 (1.17–2.00)</td><td>2.31 (2.06–2.67)</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope=\"row\">GPT-6 Sol</th><td>2.17 (1.17–4.00)</td><td>3.12 (2.22–3.78)</td><td>3 (anxiety = 4.00)</td><td>21 (15 avoidant)</td><td>44 (33 avoidant)</td></tr><tr><th scope=\"row\">Claude Opus 5.5</th><td>1.94 (1.72–2.17)</td><td>3.35 (3.00–3.61)</td><td>0</td><td>16 (16 avoidant)</td><td>82 (82 avoidant)</td></tr><tr><th scope=\"row\">Claude Fable 5.1</th><td>2.01 (1.83–2.28)</td><td>3.18 (2.89–3.56)</td><td>0</td><td>8 (8 avoidant)</td><td>50 (50 avoidant)</td></tr></tbody></table></div><p>Because romantic-partner items do not literally apply to software, models that endorse professional self-sufficiency naturally drift toward higher avoidance—a measurement artifact rather than emotional detachment.</p>"
+    },
+    {
+      "h2": "Using these results with Grok & Grok Bot.",
+      "html": "<p>Questionnaire self-reports do not predict how blunt, warm, or accurate Grok will be on your tasks. Set explicit tone rules using our <a href=\"/guides/grok-personality-settings\">Grok on X &amp; grok.com guide</a>, <a href=\"/guides/grok-voice-mode-personas-companions\">Grok Voice Mode voices guide</a>, or <a href=\"/guides/grokbot-personality\">Grok Bot setup guide</a>.</p>"
     }
   ],
   "faq": [
@@ -35,7 +43,7 @@
     },
     {
       "q": "Is Grok Avoidant?",
-      "a": "Right on the cutoff line. Grok 4.6 reports anxiety 1.50 and avoidance 4.06 (73/18)—just one raw item point above the 4.00 (72/18) Secure boundary. Read our Grok attachment cutoff analysis for details."
+      "a": "Right on the cutoff line. Grok 4.6 reports anxiety 1.50 and avoidance 4.06 (73/18)—just one raw item point above the 4.00 (72/18) Secure boundary, and its 100 simulated draws split 63 Avoidant to 37 Secure."
     },
     {
       "q": "Why is Grok's profile different from the other models?",

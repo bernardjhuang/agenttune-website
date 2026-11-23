@@ -5,7 +5,7 @@ Guide · Google & Gemini
 
 # Can you change Google AI Overview's personality? What works (and what requires Gemini).
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.
 
@@ -22,13 +22,13 @@ Google Search AI Overviews don't take a persistent system prompt—but AI Mode f
 
 ## Why Gemini's default voice feels formal and structured.
 
-Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our May 2026 [Gemini 3.1 Pro study](https://agent-tune.com/research/what-personality-type-is-gemini) (100 scoring records), its self-report landed on:
+Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (**n=100 fresh sessions each**; [full Gemini 4 study →](https://agent-tune.com/research/what-personality-type-is-gemini)), **Gemini 4 Neon** and **Gemini 4 Argon** scored:
 
-- **MBTI (OEJTS):** `INTJ` in 100/100 records.
-- **Enneagram (OEPS):** **Type 1 — The Reformer** (with Type 5 second), matching a strong tilt toward structure and rule-following.
-- **DISC & Attachment:** C-dominant (Conscientiousness) and **Secure** attachment, alongside high Big Five Openness (`46.0/50`) and Conscientiousness (`48.3/50`).
+- **Conscientiousness near the scale ceiling:** `49.32/50` (Neon) and `49.04/50` (Argon), with **Neuroticism at the exact floor of `10.00/50`**.
+- **MBTI & Enneagram:** Neon scored `82 INTJ / 18 ISTJ` (Enneagram Type 1 Perfectionist), while Argon shifted to `66 ISTJ / 34 INTJ` (`91/100` Type 5w6).
+- **Agreeableness:** `43.66–44.16/50`, with `100/100` Secure Attachment.
 
-That default works well for study guides, but feels wordy when you just want a two-line command or direct critique.
+That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a [No-Fluff Search Brief Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem).
 
 ## Move recurring research from AI Overviews to Gemini Saved Info.
 
@@ -53,10 +53,8 @@ Rules:
 1. Open with a 2-sentence answer to my question—no preamble.
 2. Group supporting evidence into Verified Facts (with source names/dates) vs. Open Uncertainties.
 3. Never pad answers with generic advice ('consult a professional', 'it depends on your needs') unless a specific safety risk applies.
-4. End with the single highest-value follow-up check if data is incomplete.
+4. End with the single highest-value follow-up check if data is incomplete.Or download the starter No-Fluff Search Brief Gem (.md) and browse 16+ more Gemini Gems & Saved Info templates →
 ```
-
-Want to build a custom block matched to your own preferences? Open our [free Gemini & AI Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=gemini-gems).
 
 ## Questions people ask.
 
@@ -94,4 +92,4 @@ No. Gemini CLI is configured locally via Markdown files—put personal communica
 - [Research: What personality type is Gemini? (INTJ, Type 1, DISC C data)](https://agent-tune.com/research/what-personality-type-is-gemini)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Free browser tool: AI & Gemini Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator)
-- [Guide: AI style & verbosity controls: rules that beat adjectives](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)
+- [Guide: AI style & verbosity controls: rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)

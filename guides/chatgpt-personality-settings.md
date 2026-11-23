@@ -105,6 +105,8 @@ Preset modes adjust phrasing gently but rarely suppress RLHF closing habits on t
 
 ## Keep going.
 
+- [Voice Mode: ChatGPT Voice Mode voices (all 9 voices: Sol, Cove, Maple, Vale) & tone](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
 - [Comparison: ChatGPT vs Claude default personality (benchmark data)](https://agent-tune.com/guides/chatgpt-vs-claude-personality)
 - [Guide: ChatGPT Custom Instructions examples (Box 1 vs Box 2)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples)
 - [Guide: ChatGPT Projects vs Custom Instructions: precedence & limits](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions)

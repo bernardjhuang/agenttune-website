@@ -49,7 +49,7 @@ The older Opus 4.7 headline came from a different elicitation prompt, sampling s
 
 - **Independent sessions, not single-shot sampling:** Clear context and start a fresh API call for every run; check variance across at least 30–100 sessions ([repeatability study](https://agent-tune.com/research/ai-personality-repeatability)).
 
-- **Raw 1–5 vectors published:** Inspect whether boundary items sit right on a `3` midpoint rather than shifting monotonically ([reproduce our data](https://agent-tune.com/research/reproduce-ai-personality-research)).
+- **Raw 1–5 vectors published:** Inspect whether boundary items sit right on a `3` midpoint rather than shifting monotonically ([reproduce our data](https://agent-tune.com/guides/reproduce-ai-personality-research)).
 
 - **No silent tie-breaking:** Flag `S/N` or `T/F` ties as undetermined (`x`) instead of defaulting half of ambiguous runs into `INTJ`.
 

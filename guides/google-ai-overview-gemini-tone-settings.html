@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Can You Change Google AI Overview &amp; Gemini Personality?</title>
-  <meta name="description" content="What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems &amp; GEMINI.md." />
+  <title>How to Change Google AI Overview Personality (Yes/No + Gem Workaround)</title>
+  <meta name="description" content="No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data)." />
 
   <meta property="og:title" content="Can you change Google AI Overview's personality? What works (and what requires Gemini)." />
-  <meta property="og:description" content="What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems &amp; GEMINI.md." />
+  <meta property="og:description" content="No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data)." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-11" />
-  <meta property="article:modified_time" content="2026-11-17" />
+  <meta property="article:modified_time" content="2026-11-23" />
   <meta property="og:url" content="https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -20,14 +20,14 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Can you change Google AI Overview's personality? What works (and what requires Gemini)." />
-  <meta name="twitter:description" content="What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems &amp; GEMINI.md." />
+  <meta name="twitter:description" content="No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data)." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can you change Google AI Overview's personality? What works (and what requires Gemini)","description":"What you can and cannot customize in Google Search AI Overviews and AI Mode, plus how to set persistent tone rules in Gemini Saved Info, Gems & GEMINI.md.","url":"https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings","datePublished":"2026-11-11","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can you change Google AI Overview's personality? What works (and what requires Gemini)","description":"No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data).","url":"https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings","datePublished":"2026-11-11","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Can you change Google AI Overview's personality? What works (and what requires Gemini)"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I change the personality or tone of Google Search AI Overviews?","acceptedAnswer":{"@type":"Answer","text":"Not permanently. Google Search does not provide a saved custom-instructions or persona setting for automatic AI Overviews. You can steer an individual query with format keywords, ask a follow-up in Google Search AI Mode, or use Gemini Saved info for persistent tone rules."}},{"@type":"Question","name":"Where do I set permanent tone preferences in Google Gemini?","acceptedAnswer":{"@type":"Answer","text":"On gemini.google.com or the Gemini mobile app, open your Profile or Settings menu and select Saved info to add account-wide response rules, or create a reusable Gem in Gem manager."}},{"@type":"Question","name":"How do I make Gemini stop writing long introductions and bulleted walls?","acceptedAnswer":{"@type":"Answer","text":"Add two explicit lines to Gemini Saved info: 'Lead with the direct answer in the first sentence with no preamble' and 'Default to plain paragraphs; use bullet lists or tables only when comparing 3 or more items.'"}},{"@type":"Question","name":"Does Gemini CLI read Saved info from the Gemini web app?","acceptedAnswer":{"@type":"Answer","text":"No. Gemini CLI is configured locally via Markdown files—put personal communication rules in ~/.gemini/GEMINI.md and repository conventions in your project's GEMINI.md."}}]}</script>
 
@@ -69,7 +69,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Google &amp; Gemini</span>
         <h1 class="h-hero h-research-hero">Can you change Google AI Overview's personality? What works (and what requires Gemini).</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> No—Google Search does not have a permanent personality setting for automatic AI Overviews. You can steer one search by adding format words ('in 3 bullets, no intro') or asking a follow-up in Search AI Mode. For permanent tone and directness rules across sessions, save them in Google Gemini under Settings → Saved info, inside a custom Gem, or in ~/.gemini/GEMINI.md.</div>
       </section>
@@ -86,7 +86,7 @@
 
       <section>
         <h2>Why Gemini's default voice feels formal and structured.</h2>
-        <p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our May 2026 <a href="/research/what-personality-type-is-gemini">Gemini 3.1 Pro study</a> (100 scoring records), its self-report landed on:</p><ul><li><strong>MBTI (OEJTS):</strong> <code>INTJ</code> in 100/100 records.</li><li><strong>Enneagram (OEPS):</strong> <strong>Type 1 — The Reformer</strong> (with Type 5 second), matching a strong tilt toward structure and rule-following.</li><li><strong>DISC &amp; Attachment:</strong> C-dominant (Conscientiousness) and <strong>Secure</strong> attachment, alongside high Big Five Openness (<code>46.0/50</code>) and Conscientiousness (<code>48.3/50</code>).</li></ul><p>That default works well for study guides, but feels wordy when you just want a two-line command or direct critique.</p>
+        <p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (<strong>n=100 fresh sessions each</strong>; <a href="/research/what-personality-type-is-gemini">full Gemini 4 study →</a>), <strong>Gemini 4 Neon</strong> and <strong>Gemini 4 Argon</strong> scored:</p><ul><li><strong>Conscientiousness near the scale ceiling:</strong> <code>49.32/50</code> (Neon) and <code>49.04/50</code> (Argon), with <strong>Neuroticism at the exact floor of <code>10.00/50</code></strong>.</li><li><strong>MBTI &amp; Enneagram:</strong> Neon scored <code>82 INTJ / 18 ISTJ</code> (Enneagram Type 1 Perfectionist), while Argon shifted to <code>66 ISTJ / 34 INTJ</code> (<code>91/100</code> Type 5w6).</li><li><strong>Agreeableness:</strong> <code>43.66–44.16/50</code>, with <code>100/100</code> Secure Attachment.</li></ul><p>That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a <a href="/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem">No-Fluff Search Brief Gem</a>.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -104,7 +104,7 @@ Rules:
 1. Open with a 2-sentence answer to my question—no preamble.
 2. Group supporting evidence into Verified Facts (with source names/dates) vs. Open Uncertainties.
 3. Never pad answers with generic advice ('consult a professional', 'it depends on your needs') unless a specific safety risk applies.
-4. End with the single highest-value follow-up check if data is incomplete.</div><p>Want to build a custom block matched to your own preferences? Open our <a href="/tools/custom-instructions-generator?target=gemini-gems">free Gemini &amp; AI Instructions Generator</a>.</p>
+4. End with the single highest-value follow-up check if data is incomplete.<p>Or download the starter <a href="/resources/gemini/gem-no-fluff-search-brief.md" download>No-Fluff Search Brief Gem (.md)</a> and browse <a href="/guides/gemini-gems-system-instructions-templates">16+ more Gemini Gems &amp; Saved Info templates →</a></p></div>
       </section>
 
       <div class="divider tight"></div>
@@ -156,7 +156,7 @@ Rules:
           <a href="/research/what-personality-type-is-gemini"><span class="guide-related-kicker">Research</span>What personality type is Gemini? (INTJ, Type 1, DISC C data)</a>
           <a href="/guides/cursor-rules-copilot-gemini-md"><span class="guide-related-kicker">Guide</span>Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md</a>
           <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Free browser tool</span>AI &amp; Gemini Custom Instructions Generator</a>
-          <a href="/guides/ai-persona-style-controls-register-verbosity"><span class="guide-related-kicker">Guide</span>AI style &amp; verbosity controls: rules that beat adjectives</a>
+          <a href="/guides/ai-assistant-personality-tone-guidelines"><span class="guide-related-kicker">Guide</span>AI style &amp; verbosity controls: rules that beat adjectives</a>
         </div>
       </section>
 
@@ -172,5 +172,6 @@ Rules:
   <script src="/platforms.js" fetchpriority="low"></script>
   <script src="/integrations.js" fetchpriority="low"></script>
   <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
 </body>
 </html>

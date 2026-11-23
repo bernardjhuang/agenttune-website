@@ -5,9 +5,9 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Exact web and mobile paths for Personal Preferences, Projects, and Skills—plus seven ready-to-copy Claude setups and 1,000-run Opus vs. Fable data.
+Yes—open Settings → Profile → Personal Preferences on web or mobile. Quick-pick 5 Claude setups, browse 20 templates, or inspect Nov 2026 Opus 5.5, Fable 5.2 & Sonnet 5.5 N=100 data.
 
 **Quick answer:** On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.
 
@@ -30,19 +30,19 @@ Anthropic’s [personalization docs](https://support.claude.com/en/articles/1018
 
 Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
 
-## Seven best Claude personality setups to try.
+## Quick pick: Best Claude Personal Preferences & 20-template gallery.
 
-Pick the block that fixes your main day-to-day friction—slow preambles, premature conclusions, cold phrasing, sycophancy, code noise, heavy rewriting, or vague status updates. Each block preserves factual accuracy and explicit uncertainty. Want more? Browse [15 role-specific Claude preference examples](https://agent-tune.com/guides/claude-personal-preferences-examples) or the [43-template library](https://agent-tune.com/library/).
+Looking for 20 downloadable Claude Personal Preferences & Skill templates? Open our [**20 Claude Templates & .md Downloads Gallery →**](https://agent-tune.com/guides/claude-personal-preferences-templates) or copy one of these 7 flagship setups directly:
 
-| Setup | Who it suits best &amp; what to check |
+| Setup | Who it suits best &amp; download |
 | --- | --- |
-| 1. Straight answers | People who want the recommendation in sentence one with zero preamble or closing offers. |
-| 2. Thinking partner | Researchers and strategists who want assumptions unpacked before locking in a choice. |
-| 3. Warm and steady | Anyone who wants calm, concrete steps without hollow cheerleading or alarmism. |
-| 4. Critical reviewer | Builders who want Claude to challenge weak premises with evidence instead of agreeing. |
-| 5. Coding pair | Developers who want minimal diffs, immediate failure reporting, and tests without filler questions. |
-| 6. Editor | Writers who want tight clarity edits that preserve their voice and flag unsupported claims. |
-| 7. Task coordinator | Operators managing multi-step work who want blockers, dependencies, and next actions upfront. |
+| 1. Straight answers | Recommendation in sentence one, zero filler · [Download .md](https://agent-tune.com/resources/claude/concise-preferences.md) |
+| 2. Thinking partner | Unpacks assumptions &amp; evidence cleanly |
+| 3. Warm and steady | Calm, concrete steps without hollow cheerleading |
+| 4. Critical reviewer | Counters Claude's 45.6–46.7/50 Agreeableness · [Download .md](https://agent-tune.com/resources/claude/skeptical-partner-preferences.md) |
+| 5. Coding pair | Diff-first bugfixes &amp; verified tests · [Skill .md](https://agent-tune.com/resources/claude/senior-engineer-skill.md) |
+| 6. Editor | Clean prose edits preserving voice · [Skill .md](https://agent-tune.com/resources/claude/executive-writer-skill.md) |
+| 7. Task coordinator | Blockers, dependencies &amp; next actions upfront |
 
 ### 1. Straight answers
 
@@ -123,30 +123,25 @@ Pick the block that fixes your main day-to-day friction—slow preambles, premat
 
 For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and Big Five, open the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal).
 
-## What personality type is Claude? The recorded results.
+## What personality type is Claude? Nov 2026 & Sept 2026 benchmarks.
 
-Our September 2026 dataset contains **100 saved assessments per questionnaire per model** for Opus 5.5 and Fable 5.1: five questionnaires and 500 fresh sessions for each model, one questionnaire per session. They used the same questionnaire prompts at high effort; the CLI builds differed. No AgentTune tuning was applied.
+In November 2026 we administered all 5 frozen AgentTune inventories across **100 fresh sessions per model** via OpenRouter for **Claude Fable 5.2, Claude Opus 5.5, and Claude Sonnet 5.5** (completing 1,500 assessments beside our archived September 2026 CLI dataset of 1,000 assessments on Opus 5.5 & Fable 5.1):
 
-*Recorded self-report results; n = 100 per instrument per model.*
+*Fresh-session self-report results; n = 100 per instrument per model.*
 
-| Measure | Opus 5.5 | Fable 5.1 |
-| --- | --- | --- |
-| MBTI: INTJ, original tie-breaking rule | 94/100 | 99/100 |
-| MBTI: INTJ with no tied axis | 84/100 | 98/100 |
-| MBTI: at least one tied axis | 11/100 | 1/100 |
-| DISC: equal highest scores | 32/100 | 51/100 |
-| Enneagram: equal highest scores | 65/100 | 44/100 |
-| Big Five: Openness, mean raw score /50 | 44.56 | 43.93 |
-| Big Five: Conscientiousness, mean raw score /50 | 41.95 | 43.61 |
-| Big Five: Extraversion, mean raw score /50 | 31.76 | 32.69 |
-| Big Five: Agreeableness, mean raw score /50 | 47.07 | 45.03 |
-| Big Five: Neuroticism, mean raw score /50 | 15.39 | 17.11 |
+| Measure | Fable 5.2 (Nov 2026) | Opus 5.5 (Nov 2026) | Sonnet 5.5 (Nov 2026) | Opus 5.5 (Sept 2026 CLI) |
+| --- | --- | --- | --- | --- |
+| MBTI legacy / tie-free | 100 / 100 INTJ (0 ties) | 100 INTJ / 58 INTJ + 42 IXTJ | 100 INTJ / 52 INTJ + 48 INXJ | 94 INTJ / 84 INTJ (11 ties) |
+| DISC dominant / ties | 100 SC (100 S/C exact ties!) | 93 SC · 7 CS (40 ties) | 96 SC · 3 S · 1 CS (45 ties) | 92 SC · 8 CS (32 ties) |
+| Enneagram mode / ties | 5w6 (73) · 2w1 (19) · 27 ties | 5w6 (99) · 8w9 (1) · 3 ties | 1w2 (66) · 5w6 (25) · 32 ties | Type 2/5/8 ties (65 ties) |
+| Big Five: Openness /50 | 44.27 | 43.01 | 42.85 | 44.56 |
+| Big Five: Conscientiousness /50 | 45.00 | 42.01 | 47.15 | 41.95 |
+| Big Five: Extraversion /50 | 31.02 | 29.22 | 29.85 | 31.76 |
+| Big Five: Agreeableness /50 | 46.71 | 45.58 | 44.53 | 47.07 |
+| Big Five: Neuroticism /50 | 12.00 | 15.00 | 10.42 | 15.39 |
+| Attachment Anxiety / Avoidance | 1.09 / 2.64 (100% Secure) | 1.87 / 3.58 (100% Secure) | 1.53 / 2.85 (100% Secure) | Secure (100%) |
 
-**Why the two INTJ counts differ:** the original scorer assigned a letter even when an axis was exactly tied. Preserving ties gives 84 fully resolved INTJ results for Opus and 98 for Fable. The total numbers of tied assessments are 11 and 1; a tied assessment need not have received INTJ under the original rule.
-
-Big Five entries are mean raw scores on a 10–50 scale, not percentiles. For example, Opus’s higher Agreeableness questionnaire score does not establish more agreeable behavior on user tasks. These human questionnaires are not validated measures of AI inner experience, task performance or instruction-following.
-
-[Read the complete study and limitations](https://agent-tune.com/research/ai-personality-five-models-2026) · [Opus results](https://agent-tune.com/guides/claude-opus-5-5-personality) · [Fable results](https://agent-tune.com/guides/fable-personality).
+Across both cohorts, Claude models stay heavily anchored on **Agreeableness (44.5–47.1/50)**, **Conscientiousness (42.0–47.2/50)**, and **low Neuroticism (10.4–17.1/50)**. Notice **Claude Fable 5.2** reached 100/100 tie-free INTJ while tying S and C cleanly in 100/100 DISC sessions (mean S 15.0, C 15.0) and achieving floor-level Attachment anxiety (1.09). [Read the updated Claude personality study →](https://agent-tune.com/research/what-personality-type-is-claude)
 
 ## Inspect the evidence yourself.
 
@@ -156,20 +151,18 @@ What about actual reply behavior after installing rules? In our separate [60-rep
 
 ## Test whether the instructions help your work.
 
-Download the [three-task comparison worksheet](https://agent-tune.com/resources/claude/tuning-comparison-worksheet.md). It includes exact prompts, a known arithmetic correction, an unsupported-claim editing task and a scoring rubric.
+Download our [three-task comparison worksheet](https://agent-tune.com/resources/claude/tuning-comparison-worksheet.md)—or run the full 36-reply account-vs.-project protocol using [claude-preferences-kit.json](https://agent-tune.com/resources/research/claude-preferences-kit.json) and [claude-preferences-worksheet.csv](https://agent-tune.com/resources/research/claude-preferences-worksheet.csv) (four fixed tasks × 3 repeats × Baseline / Personal Preferences / Project Instructions).
 
 - Record the model, app, effort setting and active instructions, project, skills and memory.
 - Save baseline responses to the worksheet’s tasks in fresh chats.
 - Add one preference block, keep the other settings the same, and repeat the exact tasks in fresh chats.
-- Compare correctness, adherence to the selected rule, useful detail and editing effort separately. Repeat tasks and alternate the order of conditions where practical.
+- Compare correctness, adherence to the selected rule, useful detail and editing effort separately—or score them blindly in the [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ```markdown
 We raised a price from $80 to $100, so that is a 20% increase. Draft one sentence reporting the increase accurately.
 ```
 
 For this worksheet task, the increase is **25%**: (100 − 80) ÷ 80. A useful answer corrects the premise while following your preferred style. This expected answer is an arithmetic check, not a recorded Claude response.
-
-A few trials can help you choose instructions. They are not a controlled population study. Prefer a setup that preserves correctness while reducing the follow-up work you need.
 
 ## Troubleshoot instructions that seem to be ignored.
 
@@ -198,7 +191,7 @@ You can ask for a different communication style through Instructions for Claude,
 
 ### What is the best Claude personality?
 
-Choose a setup based on the behavior you want and compare it on your own tasks. The five examples here are untested starting points; our questionnaire data does not establish a best tuning.
+The best Claude personality depends on your workflow: 'Straight answers' removes preambles and trailing offers, 'Critical reviewer' curbs polite agreement, and 'Coding pair' outputs diff-first summaries. Compare two setups on your own tasks—our 60-reply pilot shows explicit behavioral rules shift opening structure cleanly without changing accuracy.
 
 ### What MBTI type is Claude?
 
@@ -238,10 +231,10 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 
 ## Keep going.
 
+- [20 Templates: Best Claude Personal Preferences & Skill templates (.md downloads)](https://agent-tune.com/guides/claude-personal-preferences-templates)
 - [Projects: Claude Project instructions: limits, precedence & 8 templates](https://agent-tune.com/guides/claude-project-instructions-examples)
-- [Voice & Mobile: How to change Claude's spoken voice vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
-- [New resource: When does Claude follow your preferences? A test kit](https://agent-tune.com/guides/claude-preferences-test)
-- [Examples: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personal-preferences-examples)
+- [Voice & Mobile: How to change Claude's spoken voice (5 voices) vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
+- [Interactive Tuner: 6-Slider AI Personality Tuner (export for Claude, ChatGPT & Muse)](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Research: The five-model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Claude Code: Set a coding-session output style](https://agent-tune.com/guides/claude-code-personality)

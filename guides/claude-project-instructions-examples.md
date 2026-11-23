@@ -116,7 +116,7 @@ Synthesize user interview transcripts stored in Project Knowledge without smooth
 - Separate observed behaviors from feature wishes.
 ```
 
-Already have instructions you want to merge into Claude without clashing with global settings? Check for contradictions using our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) or build a scoped profile with the [Personal Preferences Guide](https://agent-tune.com/guides/claude-personal-preferences-examples).
+Already have instructions you want to merge into Claude without clashing with global settings? Check for contradictions using our [Instruction Checker](https://agent-tune.com/tools/instruction-checker) or build a scoped profile with the [Personal Preferences Guide](https://agent-tune.com/guides/claude-personality).
 
 ## Questions people ask.
 

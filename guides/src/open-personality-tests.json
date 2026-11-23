@@ -16,7 +16,7 @@
     },
     {
       "h2": "OEJTS: the 32-item MBTI-style questionnaire.",
-      "html": "<p><strong>What it measures.</strong> Four preference axes: Extraversion vs. Introversion (E/I), Sensing vs. Intuition (S/N), Thinking vs. Feeling (T/F), and Judging vs. Perceiving (J/P). Each of the 32 items places two statements at opposite ends of a 1-to-5 scale, with eight items per axis.</p><p><strong>Scoring.</strong> Each item contributes to its two poles so the axis sum is always 48 across eight items (with 24 vs. 24 as an exact tie). Earlier reporting rules defaulted tied axes to I, N, T, or J. The current quiz marks any tied axis as <code>X</code>, offers an optional tie-breaker preference, and only assigns a four-letter code when all four axes resolve.</p><p><strong>Limits.</strong> OEJTS is an open scale that produces four-letter Jungian codes; it is not the trademarked MBTI® instrument. On short axes, a one-point difference flips the letter. In our September 2026 model dataset, GPT-6 Astra split 46 ISTJ to 45 INTJ under legacy tie-breaking (with 29 of 100 runs tying on at least one axis), and Claude Opus 5.5 dropped from 94 legacy INTJ labels to 84 when ties were left open.</p>"
+      "html": "<p><strong>What it measures.</strong> Four preference axes: Extraversion vs. Introversion (E/I), Sensing vs. Intuition (S/N), Thinking vs. Feeling (T/F), and Judging vs. Perceiving (J/P). Each of the 32 items places two statements at opposite ends of a 1-to-5 scale, with eight items per axis.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Axis</th><th scope=\"col\">Poles</th><th scope=\"col\">Items</th><th scope=\"col\">Sum &amp; exact tie point</th></tr></thead><tbody><tr><th scope=\"row\">E / I</th><td>Extraversion vs Introversion</td><td>8 bipolar (1–5)</td><td>Sum = 48; exact tie at 24 vs 24 (margin 0)</td></tr><tr><th scope=\"row\">S / N</th><td>Sensing vs Intuition</td><td>8 bipolar (1–5)</td><td>Sum = 48; exact tie at 24 vs 24 (margin 0)</td></tr><tr><th scope=\"row\">T / F</th><td>Thinking vs Feeling</td><td>8 bipolar (1–5)</td><td>Sum = 48; exact tie at 24 vs 24 (margin 0)</td></tr><tr><th scope=\"row\">J / P</th><td>Judging vs Perceiving</td><td>8 bipolar (1–5)</td><td>Sum = 48; exact tie at 24 vs 24 (margin 0)</td></tr></tbody></table></div><p><strong>Scoring &amp; limits.</strong> Earlier reporting rules defaulted tied axes to I, N, T, or J. Our current scorer (<a href=\"/resources/scoring/score.js\">score.js</a>) marks any tied axis as <code>X</code>, offers an optional tie-breaker, and only assigns a four-letter code when all four axes resolve. Take it locally at <a href=\"/tests/mbti\">/tests/mbti</a> or fetch <a href=\"/tests/mbti.md\">/tests/mbti.md</a>.</p>"
     },
     {
       "h2": "OEPS: the 36-item Enneagram adaptation.",
@@ -101,14 +101,14 @@
       "href": "/guides/enneagram-test-react-typescript"
     },
     {
-      "kicker": "Guide",
-      "label": "Open-source MBTI test (OEJTS 1.2): 32 questions and scorer",
-      "href": "/guides/open-source-mbti-test-oejts"
+      "kicker": "Prompts",
+      "label": "DISC AI prompts & 12 workplace blends",
+      "href": "/guides/disc-ai-prompts"
     },
     {
-      "kicker": "Guide",
-      "label": "Free DISC assessment (ODAT): 16 questions, 12 blends & scorer",
-      "href": "/guides/free-disc-assessment-guide-work-ai"
+      "kicker": "Prompts",
+      "label": "Big Five AI prompts & IPIP-50 interpreter",
+      "href": "/guides/big-five-ai-prompts"
     },
     {
       "kicker": "Guide",

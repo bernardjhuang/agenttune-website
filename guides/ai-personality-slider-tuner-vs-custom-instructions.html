@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free AI Personality Tuner: 6 Sliders → Copyable Prompt</title>
+  <meta name="description" content="Free browser-only AI personality tuner with 6 live sliders (Tone, Length, Pushback, Format, Brainstorming, Questions). Export for ChatGPT, Claude &amp; Muse." />
+
+  <meta property="og:title" content="Free AI personality tuner: dial 6 sliders into a portable system prompt." />
+  <meta property="og:description" content="Free browser-only AI personality tuner with 6 live sliders (Tone, Length, Pushback, Format, Brainstorming, Questions). Export for ChatGPT, Claude &amp; Muse." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-20" />
+  <meta property="article:modified_time" content="2026-11-20" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free AI personality tuner: dial 6 sliders into a portable system prompt." />
+  <meta name="twitter:description" content="Free browser-only AI personality tuner with 6 live sliders (Tone, Length, Pushback, Format, Brainstorming, Questions). Export for ChatGPT, Claude &amp; Muse." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Free AI personality tuner: dial 6 sliders into a portable system prompt","description":"Free browser-only AI personality tuner with 6 live sliders (Tone, Length, Pushback, Format, Brainstorming, Questions). Export for ChatGPT, Claude & Muse.","url":"https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Free AI personality tuner: dial 6 sliders into a portable system prompt"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this AI personality tuner free and private?","acceptedAnswer":{"@type":"Answer","text":"Yes. All six sliders and prompt exports run 100% locally in your browser tab—no email, no login, and nothing is sent to a server."}},{"@type":"Question","name":"Will the generated prompt fit inside ChatGPT's 1,500-character Custom Instructions limit?","acceptedAnswer":{"@type":"Answer","text":"Yes. Selecting ChatGPT Custom Instructions shows a live character counter and outputs a compact ~550–850 character block that leaves plenty of room for your own work context."}},{"@type":"Question","name":"Should I use sliders or take an MBTI / Big Five / DISC personality test?","acceptedAnswer":{"@type":"Answer","text":"If you already know how you want your AI to talk, sliders are faster. If you want to discover blind spots in your work style or communication triggers first, try our free no-email DISC (3 min), MBTI (5 min), or Big Five (7 min) tests."}},{"@type":"Question","name":"How do I know if the slider prompt actually improves replies?","acceptedAnswer":{"@type":"Answer","text":"Save your new prompt, start a fresh chat, and run two real work prompts before and after—or score the two outputs blindly in the AgentTune Instruction A/B Test Bench."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Free AI personality tuner: dial 6 sliders into a portable system prompt</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Interactive Tuner · Portable Prompts</span>
+        <h1 class="h-hero h-research-hero">Free AI personality tuner: dial 6 sliders into a portable system prompt.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">No app lock-in, no signup, no account needed—set Warmth, Length, Pushback, Format, Exploration, and Questions, then export for any AI.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Adjust the six interactive sliders below—Warmth vs. Directness, Response Length, Pushback &amp; Candor, Formatting Density, Convergence vs. Brainstorming, and Clarifying Questions—pick your target AI platform, and copy the generated behavioral rules directly into Settings. Everything runs locally in your browser with zero account or paywall.</div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="live-6-slider-tuner">Tune your AI personality across 6 live sliders.</h2>
+        <div class="at-widget" id="at-slider-tuner" role="region" aria-label="Interactive 6-Slider AI Personality Tuner"><p class="tools-help">Loading 6-slider AI personality tuner…</p></div><noscript><p>Enable JavaScript to use the 6-slider live tuner, or build rules in our <a href="/tools/custom-instructions-generator">Custom Instructions Generator</a>.</p></noscript>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="why-portable-rules-beat-app-lockin">Slider-based AI tuners vs. portable behavioral instructions.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="Slider-based AI tuners vs. portable behavioral instructions.: table 1" tabindex="0"><table><thead><tr><th scope="col">Feature</th><th scope="col">App-locked personality tuners (e.g., standalone companion apps)</th><th scope="col">Portable AgentTune slider output</th></tr></thead><tbody><tr><th scope="row"><strong>Where it works</strong></th><td>Usually limited to one journaling or chat app</td><td>Works in ChatGPT (≤1,500 chars), Claude, Meta Muse, OpenClaw, Gemini, Grok, Copilot &amp; coding agents</td></tr><tr><th scope="row"><strong>Transparency</strong></th><td>Hidden system prompt behind UI sliders</td><td>Plain-English checkable rules you can edit line by line</td></tr><tr><th scope="row"><strong>Privacy &amp; cost</strong></th><td>Requires account signup or subscription</td><td>100% client-side in your browser, MIT-licensed, zero signup</td></tr><tr><th scope="row"><strong>Verification</strong></th><td>Hard to verify what changed on real work tasks</td><td>Test before/after replies blindly in our <a href="/tools/instruction-test-bench">A/B Test Bench</a></td></tr></tbody></table></div><p>Why do checkable rules matter so much? In our <a href="/research/does-personality-tuning-change-ai-answers">60-reply controlled pilot</a>, replacing default prompting with concrete behavioral rules lifted perfect 5/5 answer-first openings from <strong>14/20 to 19/20</strong>, cut hedging phrases from <strong>0.35 to 0.05 per reply</strong>, and reduced unsolicited follow-up questions from <strong>0.90 to 0.25</strong> without hurting accuracy.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="where-to-paste-output">Where to paste your tuned prompt in 30 seconds.</h2>
+        <ul><li><strong>ChatGPT:</strong> <em>Settings → Personalization → Custom Instructions</em> → paste into Box 2 (guaranteed under 1,500 chars).</li><li><strong>Claude:</strong> <em>Settings → Profile → Personal preferences</em> (<a href="/guides/claude-personality">Claude guide</a>).</li><li><strong>Meta Muse / OpenClaw:</strong> Paste into <code>Soul.md</code> / <code>SOUL.md</code> (<a href="/guides/muse-personality">Muse</a> · <a href="/guides/openclaw-soul-md-user-md-identity-md">OpenClaw</a>).</li><li><strong>Google Gemini:</strong> <em>Settings &amp; help → Personal Intelligence → Instructions for Gemini</em> (<a href="/guides/gemini-personality">Gemini guide</a>).</li><li><strong>xAI Grok:</strong> <em>Settings → Customize Grok</em> (<a href="/guides/grok-personality-settings">Grok guide</a>).</li><li><strong>Coding Agents:</strong> <code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, or <code>.cursor/rules/</code> (<a href="/guides/ai-coding-agent-rules-files-matrix">7-agent matrix</a>).</li></ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Is this AI personality tuner free and private?</summary>
+            <p>Yes. All six sliders and prompt exports run 100% locally in your browser tab—no email, no login, and nothing is sent to a server.</p>
+          </details>
+          <details>
+            <summary>Will the generated prompt fit inside ChatGPT's 1,500-character Custom Instructions limit?</summary>
+            <p>Yes. Selecting ChatGPT Custom Instructions shows a live character counter and outputs a compact ~550–850 character block that leaves plenty of room for your own work context.</p>
+          </details>
+          <details>
+            <summary>Should I use sliders or take an MBTI / Big Five / DISC personality test?</summary>
+            <p>If you already know how you want your AI to talk, sliders are faster. If you want to discover blind spots in your work style or communication triggers first, try our free no-email DISC (3 min), MBTI (5 min), or Big Five (7 min) tests.</p>
+          </details>
+          <details>
+            <summary>How do I know if the slider prompt actually improves replies?</summary>
+            <p>Save your new prompt, start a fresh chat, and run two real work prompts before and after—or score the two outputs blindly in the AgentTune Instruction A/B Test Bench.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-20">November 20, 2026</time> First published with interactive 6-slider live AI Personality Tuner exporting to 7 major AI platforms.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/research/does-personality-tuning-change-ai-answers" target="_blank" rel="noopener">AgentTune Research: Does personality tuning change AI answers? (60-reply pilot)</a></li>
+          <li><a href="https://agent-tune.com/tools/custom-instructions-generator" target="_blank" rel="noopener">AgentTune Tool: Custom Instructions &amp; 43-Template Generator</a></li>
+          <li><a href="https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines" target="_blank" rel="noopener">AgentTune Guide: AI Personality, Tone &amp; Verbosity Controls</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Generator</span>ChatGPT Custom Instructions &amp; 43-Template Generator</a>
+          <a href="/guides/ai-assistant-personality-tone-guidelines"><span class="guide-related-kicker">Tone Design</span>AI personality, tone &amp; verbosity controls: 5 rules that beat adjectives</a>
+          <a href="/guides/ai-personality-frameworks-comparison-matcher"><span class="guide-related-kicker">Matcher</span>5 Personality Frameworks Compared + Interactive Matcher</a>
+          <a href="/tools/instruction-test-bench"><span class="guide-related-kicker">Free browser tool</span>Instruction A/B Test Bench — compare before &amp; after</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/personality-slider-tuner.js" fetchpriority="low"></script>
+</body>
+</html>

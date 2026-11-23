@@ -240,7 +240,7 @@
         <h2>Reproducibility checklist before trusting any &ldquo;AI took an MBTI test&rdquo; study</h2>
         <ul>
           <li><strong>Independent sessions, not single-shot sampling:</strong> Clear context and start a fresh API call for every run; check variance across at least 30–100 sessions (<a href="/research/ai-personality-repeatability">repeatability study</a>).</li>
-          <li><strong>Raw 1–5 vectors published:</strong> Inspect whether boundary items sit right on a <code>3</code> midpoint rather than shifting monotonically (<a href="/research/reproduce-ai-personality-research">reproduce our data</a>).</li>
+          <li><strong>Raw 1–5 vectors published:</strong> Inspect whether boundary items sit right on a <code>3</code> midpoint rather than shifting monotonically (<a href="/guides/reproduce-ai-personality-research">reproduce our data</a>).</li>
           <li><strong>No silent tie-breaking:</strong> Flag <code>S/N</code> or <code>T/F</code> ties as undetermined (<code>x</code>) instead of defaulting half of ambiguous runs into <code>INTJ</code>.</li>
           <li><strong>Separate default test answers from instruction-following:</strong> Default answers on personality quizzes reflect RLHF hedging and high Openness/Agreeableness, whereas system prompts can override style directly (our 60-reply pilot raised answer-first openings from 14/20 to 19/20; see <a href="/research/does-personality-tuning-change-ai-answers">tuning impact evidence</a>).</li>
         </ul>

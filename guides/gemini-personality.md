@@ -5,27 +5,39 @@ Guide · Google Gemini
 
 # How to change Google Gemini’s personality.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-Exact iOS, Android, and web tap paths for Saved Info and custom Gems—plus ~/.gemini/GEMINI.md for Gemini CLI and Code Assist.
+Yes—configure Personal Intelligence (Instructions for Gemini / Saved Info), Custom Gems, Gemini Live voices, or GEMINI.md using 4 starter downloads.
 
-**Quick answer:** To change Google Gemini's personality on Android, iOS, or gemini.google.com, tap your Profile icon → Settings → Saved info and add short behavioral rules for all standard chats—or open Gem manager → New Gem → Instructions for a dedicated persona. For Gemini CLI and Code Assist, save personal communication rules in ~/.gemini/GEMINI.md.
+**Quick answer:** Yes—you can change Gemini's personality in the Gemini app or on gemini.google.com under Settings & help → Personal Intelligence → Instructions for Gemini (Saved info), or by creating a Custom Gem. Pick a starter download below (No-Fluff Search Brief Gem, Saved Info Default, Code Reviewer, or GEMINI.md). Note that Google Search AI Overviews ignore Saved info.
+
+## Quick pick: 4 downloadable Gemini & Gem templates.
+
+| Template | Where to paste &amp; use case | Download / Gallery |
+| --- | --- | --- |
+| Saved Info Global Default | Personal Intelligence (global answer-first tone) | [Download .md](https://agent-tune.com/resources/gemini/saved-info-concise-default.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#1-saved-info-global-default) |
+| No-Fluff Search Brief Gem | Custom Gem (tight factual alternative to AI Overviews) | [Download .md](https://agent-tune.com/resources/gemini/gem-no-fluff-search-brief.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem) |
+| Senior Code Reviewer Gem | Custom Gem (bugs, auth flaws &amp; SQL perf first) | [Download .md](https://agent-tune.com/resources/gemini/gem-senior-code-reviewer.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#3-senior-code-reviewer-gem) |
+| Workspace GEMINI.md | ~/.gemini/GEMINI.md or repo root | [Download .md](https://agent-tune.com/resources/gemini/gemini-md-workspace.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#4-workspace-gemini-md) |
+
+Want all 20 Saved Info, Gem & CLI presets? Open our [**20 Gemini Gems & Saved Info Templates Gallery →**](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
 
 ## Exact tap paths on Gemini mobile (iOS/Android) and web.
 
-- **Account-wide personality (Saved info):** On `gemini.google.com` or the Gemini iOS/Android app, tap your **Profile picture → Settings → Saved info → Add**. Paste 1–5 short rules (for example, “Lead with the direct answer, skip filler praise, and point out flawed assumptions first.”).
+- **Account-wide personality (Personal Intelligence → Instructions for Gemini):** On `gemini.google.com` or the Gemini iOS/Android app, open **Settings & help → Personal Intelligence → Instructions for Gemini** (labeled Saved info on earlier app builds) and click **Add**. Keep the separate **Memory** toggle on if you want Gemini to learn facts from chat history automatically.
 - **Custom role or persona (Gems):** Open **Explore Gems → New Gem**, add your role and communication rules under **Instructions**, and save.
+- **Spoken voice (Gemini Live):** Tap Profile → **Settings → Gemini’s voice** to pick from Google’s voice lineup (see our [Gemini Live voices & sync fix guide](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)).
 - **Terminal & IDE (`GEMINI.md`):** Put personal tone rules in `~/.gemini/GEMINI.md` and shared repo conventions in the project root `GEMINI.md`.
 
 | Surface | Where to paste your rules | Scope |
 | --- | --- | --- |
-| Gemini web &amp; mobile (account-wide) | Profile → Settings → Saved info | Applies across ordinary chats on your Google account. |
+| Gemini web &amp; mobile (account-wide) | Settings &amp; help → Personal Intelligence → Instructions for Gemini (formerly Saved info) | Applies across ordinary chats on your personal Google Account (18+). |
 | Gemini Gems | Gem manager → New Gem → Instructions | Applies only when chatting with that specific Gem. |
+| Gemini Live spoken voice | Settings → Gemini’s voice (or 3-dot menu inside Live) | Sets app-wide spoken voice &amp; Listen playback ([voice list + sync fix →](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)). |
 | Gemini CLI &amp; Code Assist (personal) | ~/.gemini/GEMINI.md | Your personal coding assistant defaults across repositories. |
-| Gemini CLI &amp; Code Assist (project) | Repository root GEMINI.md (and subdirectory GEMINI.md files) | Shared project context and team conventions. |
 | Gemini API (Google AI Studio / Vertex) | system_instruction field on the model request | Applies to that API call. |
 
-Paste this starter block into Saved info, a Gem, or `~/.gemini/GEMINI.md`, or pick any of the 43 profiles in the [tuning library](https://agent-tune.com/library/):
+Paste this starter block into Instructions for Gemini, a Gem, or `~/.gemini/GEMINI.md`, or dial custom sliders in our [AI Personality Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions):
 
 ```markdown
 ## How to communicate with me
@@ -52,9 +64,21 @@ Gemini CLI and Gemini Code Assist load context from `GEMINI.md` files. Like Code
 
 Keep personal tone in `~/.gemini/GEMINI.md` so your team repo stays focused on build and test rules. See our side-by-side comparison in [Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md).
 
-## What we measured on Gemini's baseline questionnaire profile.
+## What we measured on Gemini 4 Neon, Argon & 3.1 Pro.
 
-In the May 2026 study ([What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)), Gemini 3.1 Pro scored **INTJ in all 100 scoring records** on the OEJTS, high on Openness (46.0/50), Conscientiousness (48.3/50), and Agreeableness (42.4/50), low on Neuroticism (10.1/50), and **Secure on Attachment** (anxiety 1.86, avoidance 1.62). Because Gemini was not re-tested in the September 2026 fresh-session study, treat those May figures as historical self-reports and test your Saved info or Gem rules directly on real tasks.
+In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Neon** and **Gemini 4 Argon** via OpenRouter, updating our May 2026 Gemini 3.1 Pro baseline ([read the full Gemini personality study →](https://agent-tune.com/research/what-personality-type-is-gemini)):
+
+| Metric | Gemini 4 Neon (Nov 2026, n=100) | Gemini 4 Argon (Nov 2026, n=100) | Gemini 3.1 Pro (May 2026 archive) |
+| --- | --- | --- | --- |
+| MBTI legacy / tie-free | 82 INTJ · 18 ISTJ (20 runs tied) | 66 ISTJ · 34 INTJ (34 runs tied) | 100 INTJ (legacy scoring) |
+| Big Five: Openness /50 | 44.71 | 45.05 | 46.00 |
+| Big Five: Conscientiousness /50 | 49.32 (highest measured!) | 49.04 | 48.30 |
+| Big Five: Agreeableness /50 | 43.66 | 44.16 | 42.40 |
+| Big Five: Neuroticism /50 | 10.00 (exact scale floor) | 10.00 | 10.10 |
+| Enneagram mode | Type 1 Perfectionist (42) · 1w2 (22) · 5w6 (20) | Type 5w6 Investigator (91/100) | Type 1 / Type 5 |
+| DISC / Attachment | 100/100 SC · 100/100 Secure (1.08 anx / 3.79 avd) | 98 SC · 100/100 Secure (1.10 anx / 3.47 avd) | DISC C · Secure (1.86 / 1.62) |
+
+Notice Gemini 4 hits near-maximum Conscientiousness (49.0–49.3/50) and exact floor Neuroticism (10.0/50)—explaining why untuned Gemini reads hyper-orderly, thorough, and textbook-calm unless you instruct it to keep routine replies compact and push back early.
 
 ## Questions people ask.
 
@@ -90,6 +114,7 @@ In the May 2026 study of Gemini 3.1 Pro, its self-report scored INTJ on the OEJT
 
 ## Keep going.
 
+- [20 Templates: Best Gemini Gems, Saved Info & GEMINI.md templates (.md downloads)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
 - [Research: What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)

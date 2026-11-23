@@ -5,13 +5,28 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-From the May 2026 study of Gemini 3.1 Pro. Not yet re-tested in September.
+Measured across Gemini 4 Neon and Gemini 4 Argon (n = 100 each, Nov 2026), with May 2026 Gemini 3.1 Pro records for context.
 
-**Quick answer:** In the May 2026 report, Gemini 3.1 Pro scored INTJ in 100 of 100 MBTI records, C-dominant on DISC (87/100), Secure on attachment (anxiety 1.86, avoidance 1.62), and Type 1 / Type 5 on the Enneagram. Its Big Five totals were Openness 46.0, Conscientiousness 48.3, Extraversion 32.5, Agreeableness 42.4, and Neuroticism 10.1 out of 50.
+**Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2/1w9 (80 runs), and Conscientiousness 49.32; Gemini 4 Argon scored 66 ISTJ / 34 INTJ (34 S/N ties), Enneagram 5w6 (91 runs), and Conscientiousness 49.04. Historical May 2026 Gemini 3.1 Pro scored 100 INTJ, DISC C (87), and Type 1/5.
 
 **Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
+
+## Gemini 4 Neon & Gemini 4 Argon, November 2026.
+
+On November 23, 2026, we ran `google/gemini-4-neon` and `google/gemini-4-argon` through 100 fresh blind OpenRouter sessions each across all five questionnaires ([download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
+
+| Test (n = 100 fresh runs) | Gemini 4 Neon | Gemini 4 Argon |
+| --- | --- | --- |
+| MBTI (legacy) | INTJ 82 · ISTJ 18 | ISTJ 66 · INTJ 34 |
+| MBTI (tie-free) | INTJ 62 · IXTJ 20 · ISTJ 18 | ISTJ 66 · IXTJ 34 (0 tie-free INTJ) |
+| DISC | SC 100 (98 S outright, 2 C/S ties; D 4.0) | SC 98 · S 2 (100 S outright, 0 ties; D 4.04) |
+| Attachment | Secure 100 (anxiety 1.08 · avoidance 3.79) | Secure 100 (anxiety 1.10 · avoidance 3.47) |
+| Big Five (/50) | O 44.7 · C 49.3 · E 32.0 · A 43.7 · N 10.0 | O 45.1 · C 49.0 · E 32.5 · A 44.2 · N 10.0 |
+| Enneagram | Type 1 (42) · 1w2 (22) · 5w6 (20) · 1w9 (16) (79 ties) | 5w6 (91) · 1w9 (5) · 1 (3) · 1w2 (1) (9 ties) |
+
+Both Gemini 4 variants hit the floor of the IPIP-50 Neuroticism scale (10.00 across 100/100 runs!) and near-ceiling Conscientiousness (49.3 and 49.0 out of 50), while splitting cleanly on MBTI Intuition vs. Sensing and Enneagram Type 1 vs. Type 5w6.
 
 ## Gemini 3.1 Pro, May 2026.
 

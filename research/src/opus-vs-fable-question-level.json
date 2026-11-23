@@ -44,7 +44,7 @@
     {
       "kicker": "Continue reading",
       "label": "Test instruction following on actual tasks",
-      "href": "/guides/claude-preferences-test"
+      "href": "/guides/claude-personality"
     }
   ],
   "sources": [

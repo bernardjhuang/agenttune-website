@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLAUDE.md Examples &amp; Best Practices · AgentTune</title>
-  <meta name="description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+  <title>12 Best CLAUDE.md Examples &amp; 43 Output Styles (.md Downloads) | AgentTune</title>
+  <meta name="description" content="12 copy-paste CLAUDE.md examples by stack (TypeScript, Python, Monorepo, PR Reviewer) plus direct downloads of 43 Claude Code /output-styles/*.md presets." />
 
-  <meta property="og:title" content="CLAUDE.md examples that actually change behavior." />
-  <meta property="og:description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+  <meta property="og:title" content="CLAUDE.md examples and downloadable output styles." />
+  <meta property="og:description" content="12 copy-paste CLAUDE.md examples by stack (TypeScript, Python, Monorepo, PR Reviewer) plus direct downloads of 43 Claude Code /output-styles/*.md presets." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-11-17" />
+  <meta property="article:modified_time" content="2026-11-23" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-md-examples" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -19,16 +19,16 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CLAUDE.md examples that actually change behavior." />
-  <meta name="twitter:description" content="Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work." />
+  <meta name="twitter:title" content="CLAUDE.md examples and downloadable output styles." />
+  <meta name="twitter:description" content="12 copy-paste CLAUDE.md examples by stack (TypeScript, Python, Monorepo, PR Reviewer) plus direct downloads of 43 Claude Code /output-styles/*.md presets." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/claude-md-examples" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md examples that actually change behavior","description":"Four complete CLAUDE.md examples — minimal starter, test-discipline, monorepo, personality layer — plus the principles that make the file work.","url":"https://agent-tune.com/guides/claude-md-examples","datePublished":"2026-07-23","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md examples that actually change behavior"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CLAUDE.md examples and downloadable output styles","description":"12 copy-paste CLAUDE.md examples by stack (TypeScript, Python, Monorepo, PR Reviewer) plus direct downloads of 43 Claude Code /output-styles/*.md presets.","url":"https://agent-tune.com/guides/claude-md-examples","datePublished":"2026-07-23","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md examples and downloadable output styles"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Claude Code read AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"No; Claude Code reads CLAUDE.md, not AGENTS.md. If your repo already uses AGENTS.md for other agents, create a CLAUDE.md containing the import line @AGENTS.md so both tools share one instruction set, or symlink CLAUDE.md to AGENTS.md. You can add Claude-specific rules below the import."}},{"@type":"Question","name":"How long should a CLAUDE.md be?","acceptedAnswer":{"@type":"Answer","text":"Under about 200 lines per file; that's Anthropic's own guidance. Longer files consume more context and measurably reduce adherence. If yours is growing past that, split it: per-package CLAUDE.md files in a monorepo load on demand, and path-scoped rules in .claude/rules/ load only when Claude touches matching files."}},{"@type":"Question","name":"What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Scope. ~/.claude/CLAUDE.md is global; every project, just you. ./CLAUDE.md is the project file, checked in and shared with the team. ./CLAUDE.local.md is project-specific but personal; add it to .gitignore. All of them load together, broadest first, so project instructions appear after (and can override) your global ones."}},{"@type":"Question","name":"Do CLAUDE.md files in subdirectories get loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, but on demand; not at launch. A CLAUDE.md in a subdirectory loads when Claude reads files in that directory. That's the mechanism behind the monorepo pattern: a thin root file plus a CLAUDE.md per package, each paying its context cost only when its package is actually being worked on."}},{"@type":"Question","name":"Is Claude guaranteed to follow CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"No. It's context, not enforcement; Claude reads it and tries to comply, but vague or conflicting instructions get dropped. Specific, imperative, short files get followed most reliably. For rules that must always hold (lint before commit, never touch production) use Claude Code hooks or permission settings instead of prose."}},{"@type":"Question","name":"Should personality instructions go in CLAUDE.md?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you work with Claude Code daily; how it communicates with you is behavior worth configuring. Put the layer in CLAUDE.local.md or ~/.claude/CLAUDE.md rather than the checked-in team file, since it's personal. The library has 43 tuning files to condense from, and the generator builds the section for you."}}]}</script>
 
 
@@ -61,15 +61,15 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">CLAUDE.md examples that actually change behavior</span>
+      <span class="crumb-current" aria-current="page">CLAUDE.md examples and downloadable output styles</span>
     </nav>
 
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude Code</span>
-        <h1 class="h-hero h-research-hero">CLAUDE.md examples that actually change behavior.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
+        <h1 class="h-hero h-research-hero">CLAUDE.md examples and downloadable output styles.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">Four complete files, annotated — and the principles behind them.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> CLAUDE.md gives Claude Code persistent session instructions. Put shared build and test rules in ./CLAUDE.md (committed to git), personal repo notes in ./CLAUDE.local.md (gitignored), and your personal communication style in ~/.claude/CLAUDE.md. Keep each file under 200 lines and focus on exact commands and constraints.</div>
       </section>
@@ -77,6 +77,12 @@
 
       <div class="divider tight"></div>
       <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="fable-5-1" data-guide-target="claude-code"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=fable-5-1&amp;target=claude-code">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="claude-md-quick-pick">Quick pick: CLAUDE.md templates & Output Style downloads.</h2>
+        <div id="at-template-gallery-meta" data-platform="coding" data-generator="/tools/claude-md-generator" hidden></div><div class="guide-table-wrap" role="region" aria-label="Quick pick: CLAUDE.md templates &amp; Output Style downloads.: table 1" tabindex="0"><table><thead><tr><th scope="col">Template / Pack</th><th scope="col">Best for</th><th scope="col">Jump / Download</th></tr></thead><tbody><tr><th scope="row">Minimal Starter</th><td>10-line build/test contract for single-repo projects</td><td><a href="#example-1-the-minimal-starter">Jump ↓</a></td></tr><tr><th scope="row">Test-Discipline Guardrail</th><td>Fail-first bugfixes &amp; strict verification before claiming done</td><td><a href="#example-2-test-discipline-enforced-in-prose">Jump ↓</a></td></tr><tr><th scope="row">TypeScript / Python / Go / Rust</th><td>8 copy-paste stack starters + <code>~/.claude/CLAUDE.md</code></td><td><a href="#eight-more-stack-specific-claude-md-templates">Jump to stack examples ↓</a></td></tr><tr><th scope="row">43 Claude Code Output Styles</th><td>MIT-licensed <code>~/.claude/output-styles/*.md</code> presets</td><td><a href="#download-claude-code-output-styles">Browse Output Styles ↓</a></td></tr><tr><th scope="row">AGENTS.md &amp; Cursor Equivs</th><td>Open cross-agent repo rules with 32 KiB meter</td><td><a href="/guides/agents-md-templates">16 AGENTS.md Templates →</a></td></tr></tbody></table></div>
+      </section>
+      <div class="divider tight"></div>
 
       <section>
         <h2>One file, three locations.</h2>
@@ -145,7 +151,40 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
 - Sequential structure: step 1, step 2, step 3; numbered, with dependencies and end-states.
 - Verify against precedent. Novel approaches need justification, not just enthusiasm.
 - Before starting a task, confirm what "done" means.
-- When unsure, prefer the documented standard.</div><p>Different type, different rules; the <a href="/library/mbti/intj">INTJ file</a> bans hedging and permission-asking; the <a href="/library/mbti/enfp">ENFP file</a> is nearly its inverse. All 43 are free in the <a href="/library/">library</a>, and if you don't know your type, the <a href="/tests/mbti">free MBTI test</a> takes about five minutes. The full argument for why this layer belongs in an engineering file is in <a href="/guides/coding-agent-personality">coding agent personality</a>.</p>
+- When unsure, prefer the documented standard.</div><p>Different type, different rules; the <a href="/library/mbti/intj">INTJ file</a> bans hedging and permission-asking; the <a href="/library/mbti/enfp">ENFP file</a> is nearly its inverse. All 43 are free in the <a href="/library/">library</a>, and if you don't know your type, the <a href="/tests/mbti">free MBTI test</a> takes about five minutes. The full argument for why this layer belongs in an engineering file is in <a href="/guides/ai-coding-agent-rules-files-matrix">coding agent personality</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="eight-more-stack-specific-claude-md-templates">Eight more stack-specific CLAUDE.md templates.</h2>
+        <h3>5. Personal Global (~/.claude/CLAUDE.md)</h3><div class="guide-snippet"># Personal Global Communication Rules
+- Lead summaries with root cause, modified files, and verified test output.
+- Never report tests or linters passing without running them after your final edit.
+- Ask before running destructive git commands or changing production configs.</div><h3>6. TypeScript &amp; React App</h3><div class="guide-snippet"># CLAUDE.md — TypeScript + React
+- Commands: `npm run typecheck &amp;&amp; npm test`.
+- Strict TS: no `any`, no silent `catch {}`, prefer semantic `&lt;button type="button"&gt;` over clickable divs.
+- Check existing components and hooks before inventing abstractions.</div><h3>7. Python FastAPI / Data Repo</h3><div class="guide-snippet"># CLAUDE.md — Python Repo
+- Environment: run tests with `uv run pytest` and lint via `uv run ruff check`.
+- Explicitly validate malformed input rows; never swallow KeyError or network timeouts.
+- Read secrets solely from environment variables.</div><h3>8. Go CLI / Service</h3><div class="guide-snippet"># CLAUDE.md — Go Service
+- Verify: `go test -race ./... &amp;&amp; go vet ./...`.
+- Wrap errors with `%w`; keep interfaces defined on consumer side.</div><h3>9. Rust Workspace</h3><div class="guide-snippet"># CLAUDE.md — Rust
+- Verify: `cargo clippy --all-targets -- -D warnings &amp;&amp; cargo test`.
+- Avoid `.unwrap()` in non-test code; document every `unsafe` invariant.</div><h3>10. Static Site &amp; Web Accessibility</h3><div class="guide-snippet"># CLAUDE.md — Web &amp; A11y
+- Verify keyboard focus rings, explicit `&lt;label for&gt;` bindings, and 44px mobile touch targets.
+- Check `<meta name="description">` lengths remain <= 160 chars after HTML entity encoding.</div><h3>11. PR Review Read-Only Mode</h3><div class="guide-snippet"># CLAUDE.md — Code Review Mode
+- Rank security flaws, race conditions, and broken invariants first with exact line ranges.
+- Skip cosmetic style notes and generic compliments.</div><h3>12. Codex + Claude Dual-Tool Bridge</h3><div class="guide-snippet"># CLAUDE.md (imports shared AGENTS.md)
+@AGENTS.md
+
+## Claude Code Specific
+- Keep sub-agent prompts tight; run repository test suite locally before handoff.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="download-claude-code-output-styles">Download ready-to-save Claude Code Output Styles (/output-styles/*.md).</h2>
+        <p>Instead of polluting a shared repo's <code>CLAUDE.md</code> with personal tone preferences, drop any of AgentTune's 43 MIT-licensed <a href="/output-styles/index.json">Claude Code Output Style files</a> directly into <code>~/.claude/output-styles/</code> (each keeps coding instructions intact via <code>keep-coding-instructions: true</code>):</p><div class="guide-table-wrap" role="region" aria-label="Download ready-to-save Claude Code Output Styles (/output-styles/*.md).: table 2" tabindex="0"><table><thead><tr><th scope="col">Popular Output Style</th><th scope="col">Tone &amp; Focus</th><th scope="col">Direct .md Download</th></tr></thead><tbody><tr><th scope="row">INTJ — Direct Strategist</th><td>First-principles, concise, anti-hedge</td><td><a href="/output-styles/agenttune-mbti-intj.md" download>Download .md</a></td></tr><tr><th scope="row">ISTJ — Exact Inspector</th><td>Precision, precedent, strict step order</td><td><a href="/output-styles/agenttune-mbti-istj.md" download>Download .md</a></td></tr><tr><th scope="row">DISC D — Dominance</th><td>Bottom-line first, rapid triage, pushback</td><td><a href="/output-styles/agenttune-disc-d-dominance.md" download>Download .md</a></td></tr><tr><th scope="row">DISC C — Conscientiousness</th><td>Edge-case checks, explicit bounds &amp; proofs</td><td><a href="/output-styles/agenttune-disc-c-conscientiousness.md" download>Download .md</a></td></tr><tr><th scope="row">OCEAN Low Agreeableness</th><td>Blunt technical critique, zero flattery</td><td><a href="/output-styles/agenttune-ocean-agreeableness-low.md" download>Download .md</a></td></tr><tr><th scope="row">OCEAN High Conscientiousness</th><td>Preconditions, checklists &amp; diffs</td><td><a href="/output-styles/agenttune-ocean-conscientiousness-high.md" download>Download .md</a></td></tr><tr><th scope="row">Full Output Styles Index (43)</th><td>Browse all MBTI, Enneagram, DISC, Attachment &amp; OCEAN files</td><td><a href="/output-styles/index.json">index.json →</a> · <a href="/guides/claude-code-personality">Setup Guide →</a></td></tr></tbody></table></div>
       </section>
       <div class="divider tight"></div>
 
@@ -157,7 +196,7 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
 
       <section>
         <h2>The mistakes that make Claude ignore the file.</h2>
-        <ul><li><strong>The wiki dump.</strong> Pasting your architecture doc into CLAUDE.md. Adherence drops as length grows; the ten rules that matter drown in forty paragraphs of background.</li><li><strong>Contradictions.</strong> <em>"Prefer small PRs"</em> in the global file, <em>"batch related changes"</em> in the project file. Claude picks one arbitrarily. Audit across all three locations.</li><li><strong>Vague virtues.</strong> <em>"Write clean, maintainable code"</em> changes nothing. If you can't verify compliance, Claude can't either.</li><li><strong>Treating it as enforcement.</strong> CLAUDE.md is context, not a gate. If something must <em>always</em> happen (lint before commit, no pushes to main) use a hook or a permission rule. Prose is for guidance; tooling is for guarantees.</li><li><strong>Personal preferences in the team file.</strong> Your sandbox URL and your ISTJ communication layer belong in <code>CLAUDE.local.md</code> or <code>~/.claude/CLAUDE.md</code>; not in the checked-in file your teammates inherit.</li></ul><div class="guide-answer">Don't want to write it by hand? The <a href="/tools/claude-md-generator">free CLAUDE.md generator</a> builds a complete file; commands, conventions, and a personality layer matched to your type; ready to paste. And <a href="/guides/coding-agent-personality">coding agent personality</a> covers the same pattern for Cursor, Copilot, and AGENTS.md.</div>
+        <ul><li><strong>The wiki dump.</strong> Pasting your architecture doc into CLAUDE.md. Adherence drops as length grows; the ten rules that matter drown in forty paragraphs of background.</li><li><strong>Contradictions.</strong> <em>"Prefer small PRs"</em> in the global file, <em>"batch related changes"</em> in the project file. Claude picks one arbitrarily. Audit across all three locations.</li><li><strong>Vague virtues.</strong> <em>"Write clean, maintainable code"</em> changes nothing. If you can't verify compliance, Claude can't either.</li><li><strong>Treating it as enforcement.</strong> CLAUDE.md is context, not a gate. If something must <em>always</em> happen (lint before commit, no pushes to main) use a hook or a permission rule. Prose is for guidance; tooling is for guarantees.</li><li><strong>Personal preferences in the team file.</strong> Your sandbox URL and your ISTJ communication layer belong in <code>CLAUDE.local.md</code> or <code>~/.claude/CLAUDE.md</code>; not in the checked-in file your teammates inherit.</li></ul><div class="guide-answer">Don't want to write it by hand? The <a href="/tools/claude-md-generator">free CLAUDE.md generator</a> builds a complete file; commands, conventions, and a personality layer matched to your type; ready to paste. And <a href="/guides/ai-coding-agent-rules-files-matrix">coding agent personality</a> covers the same pattern for Cursor, Copilot, and AGENTS.md.</div>
       </section>
 
       <div class="divider tight"></div>
@@ -199,7 +238,7 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
         <div class="guide-related">
           <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Guide</span>How to change Claude Code's personality (output styles)</a>
           <a href="/tools/claude-md-generator"><span class="guide-related-kicker">Tool</span>Free CLAUDE.md generator</a>
-          <a href="/guides/coding-agent-personality"><span class="guide-related-kicker">Guide</span>Give your coding agent a personality</a>
+          <a href="/guides/ai-coding-agent-rules-files-matrix"><span class="guide-related-kicker">Guide</span>Give your coding agent a personality</a>
           <a href="/guides/claude-personality"><span class="guide-related-kicker">Guide</span>How to change Claude's personality</a>
           <a href="/library/mbti/istj"><span class="guide-related-kicker">Library</span>ISTJ tuning — the Inspector</a>
           <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>Find your type — free MBTI test</a>
@@ -219,5 +258,6 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
   <script src="/platforms.js" fetchpriority="low"></script>
   <script src="/integrations.js" fetchpriority="low"></script>
   <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
       "name": "Instruction checker",
       "url": "https://agent-tune.com/tools/instruction-checker",
       "description": "Check ChatGPT Custom Instructions, Claude rules, CLAUDE.md or AGENTS.md for duplicate lines, contradictions and overbroad always/never prompts.",
-      "guide": "https://agent-tune.com/guides/personality-prompts-vs-plain-english"
+      "guide": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines"
     },
     {
       "id": "soul",
@@ -29,14 +29,14 @@
       "name": "Instruction converter & merger",
       "url": "https://agent-tune.com/tools/instruction-converter",
       "description": "Convert custom instructions cleanly between ChatGPT, Claude, Meta Muse Soul.md, CLAUDE.md, AGENTS.md and JSON APIs without overwriting repo rules.",
-      "guide": "https://agent-tune.com/guides/coding-agent-personality"
+      "guide": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
     },
     {
       "id": "bench",
       "name": "Instruction test bench",
       "url": "https://agent-tune.com/tools/instruction-test-bench",
       "description": "Compare AI replies before and after changing custom instructions using fixed probes, randomized A/B labels, word counts and local JSON export.",
-      "guide": "https://agent-tune.com/guides/claude-preferences-test"
+      "guide": "https://agent-tune.com/guides/claude-personality"
     },
     {
       "id": "enneagram",

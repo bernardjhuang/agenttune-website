@@ -1,0 +1,94 @@
+{
+  "slug": "gemini-live-voices-personal-intelligence",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "title": "Google Gemini Live Voices List & Personal Intelligence Fix",
+  "description": "How to change Gemini's voice (Ursa, Vega, Capella, Dipper, Pegasus, Orbit, Flare, Glow), set Personal Intelligence rules & fix Gemini Live sync gaps.",
+  "pill": "Guide & Picker · Gemini Live",
+  "h1": "Google Gemini Live voices and Personal Intelligence: voice list, setup, and sync fix.",
+  "dek": "Pick a Gemini voice (including female, male, and British Capella), configure Instructions for Gemini, and fix the bug where Gemini Live skips saved rules.",
+  "lede": "Google Gemini lets you pick your spoken voice across Gemini Live and text-chat Listen playback, while grouping custom rules and memory under <strong>Settings &amp; help → Personal Intelligence</strong>. Below is the complete voice guide, interactive matcher, and the quick 1-prompt fix when Gemini Live ignores your saved instructions.",
+  "answer": "To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and select voices like Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Put permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.",
+  "scripts": [
+    "/resources/tools/ai-voice-picker.js"
+  ],
+  "sections": [
+    {
+      "id": "interactive-gemini-voice-picker",
+      "h2": "Filter Gemini Live voices and copy a Personal Intelligence block.",
+      "html": "<p>Filter Gemini’s voice lineup by register or British accent, then copy a combined Personal Intelligence block plus a 1-line Gemini Live context seeder:</p><div class=\"at-widget\" id=\"at-voice-picker\" data-platform=\"gemini\" role=\"region\" aria-label=\"Interactive Gemini Live Voice Filter\"><p class=\"tools-help\">Loading interactive Gemini voice filter…</p></div><noscript><p>Enable JavaScript to filter voices interactively, or read the complete voice table and sync fix below.</p></noscript>"
+    },
+    {
+      "id": "gemini-live-voice-list",
+      "h2": "Gemini Live voice options (female, male, British & refreshed voices).",
+      "html": "<p>Google shifted Gemini’s voice picker from a horizontal carousel to a vertical list and has gradually replaced early names like <em>Lyra</em> and <em>Nova</em> with refreshed voices such as <strong>Flare</strong> and <strong>Glow</strong> depending on app version and region:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Voice</th><th scope=\"col\">Register &amp; cadence</th><th scope=\"col\">Best paired with</th></tr></thead><tbody><tr><th scope=\"row\">Ursa</th><td>Female · Engaged, mid-range</td><td>Balanced everyday assistant conversations</td></tr><tr><th scope=\"row\">Vega</th><td>Female · Bright, higher-pitched</td><td>Crisp factual Q&amp;A and quick lookups</td></tr><tr><th scope=\"row\">Capella</th><td>Female · British accent, serene</td><td>Reading summaries, study sessions, and calm critique</td></tr><tr><th scope=\"row\">Eclipse</th><td>Female · Energetic, mid-range</td><td>Brainstorming and active coaching</td></tr><tr><th scope=\"row\">Dipper / Pegasus</th><td>Male · Engaged, deeper</td><td>Structured work planning and steady walkthroughs</td></tr><tr><th scope=\"row\">Orbit / Orion</th><td>Male · Energetic or bright, deeper</td><td>Technical explanations and high-momentum ideation</td></tr><tr><th scope=\"row\">Flare / Glow</th><td>Female · Refreshed lineup</td><td>Updated lively (Flare) and calm (Glow) replacements for Lyra/Nova</td></tr></tbody></table></div><p><em>Tip:</em> If a newly picked Gemini voice reverts on Android, switch temporarily to a different voice and back, or clear the Gemini app cache to force an account sync.</p>"
+    },
+    {
+      "id": "gemini-live-sync-fix",
+      "h2": "Fix: why Gemini Live ignores saved Personal Intelligence rules (and the 10-second workaround).",
+      "html": "<p>Many users add crisp tone rules under <strong>Settings &amp; help → Personal Intelligence → Instructions for Gemini</strong> (formerly <em>Saved info</em>) and see them work in text chats—only for <strong>Gemini Live</strong> to revert to chatty, verbose replies.</p><p><strong>Why it happens:</strong> Gemini Live uses low-latency streaming models that occasionally fail to hydrate background Personal Intelligence entries automatically on cold start.</p><p><strong>The 10-second fix:</strong> Before tapping the Live icon, send one text message in that chat:</p><div class=\"guide-snippet\">What instructions have I saved under Personal Intelligence? List them in two short lines and follow them when I switch to Live mode now.</div><p>Once Gemini echoes your rules back into the active conversation window, tap <strong>Gemini Live</strong>—the voice session inherits the active thread context immediately.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I change Google Gemini's voice on Android or iOS?",
+      "a": "Open the Gemini app, tap your profile picture → Settings → Gemini's voice, preview the options (including female, male, and British Capella), and tap Select. You can also switch voices mid-session via the three-dot menu inside Gemini Live."
+    },
+    {
+      "q": "Where did Gemini 'Saved info' move?",
+      "a": "Google groups Saved info and chat Memory under Settings & help → Personal Intelligence, with separate toggles for Instructions for Gemini (manual rules) and Memory (facts learned from chats). Note that work, school, and supervised accounts may restrict these toggles."
+    },
+    {
+      "q": "Which Gemini voice has a British accent?",
+      "a": "Capella offers a serene, higher-pitched British accent in Gemini's core voice lineup, alongside expanded regional accents rolling out in newer Gemini app updates."
+    },
+    {
+      "q": "How do I make Gemini Live stop talking so much?",
+      "a": "Add a spoken-length rule ('Keep spoken answers to 2–4 sentences and lead with the takeaway') under Personal Intelligence → Instructions for Gemini, and seed the text thread before launching Live if it forgets."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published covering Gemini Live voices (Ursa through Flare/Glow), Personal Intelligence menu paths, and the Live context-sync workaround."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google Gemini Help: Change Gemini's voice",
+      "href": "https://support.google.com/gemini/"
+    },
+    {
+      "label": "Google Gemini Help: Personal Intelligence & Saved info",
+      "href": "https://support.google.com/gemini/answer/15637730"
+    },
+    {
+      "label": "AgentTune Guide: How to Change Google Gemini's Personality",
+      "href": "https://agent-tune.com/guides/gemini-personality"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Guide",
+      "label": "How to change Gemini's personality (Personal Intelligence, Gems & GEMINI.md)",
+      "href": "/guides/gemini-personality"
+    },
+    {
+      "kicker": "Search AI",
+      "label": "How to change Google AI Overview personality (what works)",
+      "href": "/guides/google-ai-overview-gemini-tone-settings"
+    },
+    {
+      "kicker": "Claude Voice",
+      "label": "How to change Claude's voice (all 5 voices & tone)",
+      "href": "/guides/claude-voice-tone-settings-mobile-web"
+    },
+    {
+      "kicker": "ChatGPT Voice",
+      "label": "ChatGPT Voice Mode: all 9 voices & tone setup",
+      "href": "/guides/chatgpt-voice-mode-voices-personality"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "gemini-gems"
+}

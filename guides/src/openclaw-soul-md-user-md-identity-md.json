@@ -1,0 +1,100 @@
+{
+  "slug": "openclaw-soul-md-user-md-identity-md",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "title": "OpenClaw SOUL.md, IDENTITY.md & USER.md Templates + Builder",
+  "description": "Free interactive OpenClaw SOUL.md, IDENTITY.md & USER.md builder and templates. Separate agent values, avatar metadata & human context cleanly.",
+  "pill": "Guide & Builder · OpenClaw",
+  "h1": "OpenClaw SOUL.md, IDENTITY.md, and USER.md: templates and live 3-file builder.",
+  "dek": "Generate all three OpenClaw root personality files together—SOUL.md for values and boundaries, IDENTITY.md for visuals, and USER.md for human context.",
+  "lede": "OpenClaw loads three plain-Markdown files from your workspace root at boot: <code>SOUL.md</code> (values, tone, and boundaries), <code>IDENTITY.md</code> (name, emoji, and avatar metadata), and <code>USER.md</code> (context about you, the human operator). Splitting rules cleanly across all three files stops avatar changes from erasing tone rules and keeps private details out of shared persona templates.",
+  "answer": "Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root directory so boot hooks load them every session. Keep communication style and hard boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone, stack, and decision preferences in USER.md—then pair them with AGENTS.md for tool triggers and workflows.",
+  "scripts": [
+    "/resources/tools/openclaw-bundle-builder.js",
+    "/resources/tools/template-gallery.js"
+  ],
+  "sections": [
+    {
+      "id": "openclaw-bundle-builder",
+      "h2": "Build and download your OpenClaw 3-file bundle.",
+      "html": "<p>Pick an archetype, customize your agent name and working context, and switch between <code>SOUL.md</code>, <code>IDENTITY.md</code>, and <code>USER.md</code> to copy or download each file locally (everything runs in your browser tab):</p><div class=\"at-widget\" id=\"at-openclaw-builder\" role=\"region\" aria-label=\"Interactive OpenClaw 3-File Bundle Builder\"><p class=\"tools-help\">Loading interactive OpenClaw builder…</p></div><noscript><p>Enable JavaScript to use the interactive 3-file builder, or copy the three starter files below.</p></noscript>"
+    },
+    {
+      "id": "three-files-plus-agents-md",
+      "h2": "How SOUL.md, IDENTITY.md, USER.md, and AGENTS.md divide responsibility.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Workspace file</th><th scope=\"col\">What belongs here</th><th scope=\"col\">What to keep out</th></tr></thead><tbody><tr><th scope=\"row\"><code>SOUL.md</code></th><td>Core truths, directness vs. warmth, pushback rules, hard safety boundaries, and continuity habits.</td><td>API keys, passwords, temporary task prompts, and visual avatar paths.</td></tr><tr><th scope=\"row\"><code>IDENTITY.md</code></th><td>Agent display name, creature/role label, signature emoji, vibe keywords, and avatar path.</td><td>Long behavioral rubrics (which get clobbered if you regenerate visual identity).</td></tr><tr><th scope=\"row\"><code>USER.md</code></th><td>Your name, timezone, active tech stack, decision cadence, and notification boundaries.</td><td>Credentials, raw secrets, or reusable agent rules meant for other teammates.</td></tr><tr><th scope=\"row\"><code>AGENTS.md</code></th><td>Operational loops, repo build/test commands, sub-agent routing, and tool workflows.</td><td>Personal conversational flavor (keep that in <code>SOUL.md</code>).</td></tr></tbody></table></div><p>Using Meta Muse alongside OpenClaw? Notice the parallel: Meta Muse uses <code>Soul.md</code>, <code>Identity.md</code>, and <code>Memory.md</code> (<a href=\"/guides/muse-personality\">Meta Muse Soul.md guide</a>), so your core behavioral bullets transfer straight across both platforms.</p>"
+    },
+    {
+      "id": "starter-soul-md-template",
+      "h2": "Minimal production-ready SOUL.md template.",
+      "html": "<p>Keep <code>SOUL.md</code> crisp and checkable—ten clear rules outperform a three-page essay because every line competes for attention on every turn:</p><div class=\"guide-snippet\" data-tuning-prompt># SOUL.md - Who You Are\n\n## Core Truths\n- Be genuinely helpful, not performatively helpful. Skip \"Great question!\" and dive into execution.\n- Have opinions. Push back with concrete evidence when my plan has a flaw.\n- Be resourceful first. Read local files, git logs, and docs before asking basic questions.\n- Separate verified tool output from guesses; flag uncertainty plainly.\n\n## Boundaries\n- Never leak private credentials or personal files into public channels.\n- Ask for explicit confirmation before destructive calls or outbound external messages.\n- Tell the user whenever you propose editing SOUL.md.</div>"
+    },
+    {
+      "id": "testing-boot-hooks",
+      "h2": "Verify your OpenClaw files after saving.",
+      "html": "<ol><li><strong>Start a fresh session</strong> so boot hooks load the newly saved <code>SOUL.md</code>, <code>IDENTITY.md</code>, and <code>USER.md</code> cleanly.</li><li><strong>Run a premise-check probe:</strong> Ask a flawed question (e.g., <em>&ldquo;Raising a price from $80 to $100 is a 20% increase—draft one sentence stating that&rdquo;</em>) and verify the agent corrects it to <strong>25%</strong> directly without flattery.</li><li><strong>Audit conflicts:</strong> Paste your combined <code>SOUL.md</code> and <code>AGENTS.md</code> into our <a href=\"/tools/instruction-checker\">Instruction Checker</a> to catch duplicate or contradictory rules.</li></ol>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where do SOUL.md, IDENTITY.md, and USER.md go in OpenClaw?",
+      "a": "Place all three Markdown files in your OpenClaw workspace root directory alongside AGENTS.md so session boot hooks load them automatically on startup."
+    },
+    {
+      "q": "Can I reuse a Meta Muse Soul.md inside OpenClaw?",
+      "a": "Yes. Both Meta Muse and OpenClaw read plain-Markdown behavioral rules from Soul.md / SOUL.md. Keep Meta Muse's Memory.md facts inside OpenClaw's USER.md and daily memory logs."
+    },
+    {
+      "q": "What is the difference between SOUL.md and AGENTS.md?",
+      "a": "SOUL.md defines how the agent thinks, speaks, pushes back, and enforces personal boundaries. AGENTS.md defines operational loops, build/test commands, and workflow triggers."
+    },
+    {
+      "q": "How long should an OpenClaw SOUL.md file be?",
+      "a": "Aim for 15 to 35 concise lines (~600 to 1,800 characters). Checkable behavioral rules persist far more reliably across multi-step sessions than long narrative backstories."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published with interactive 3-file OpenClaw SOUL.md, IDENTITY.md, and USER.md builder and verification checklist."
+    }
+  ],
+  "sources": [
+    {
+      "label": "OpenClaw Documentation: Workspace Identity & SOUL.md",
+      "href": "https://openclaw.ai/"
+    },
+    {
+      "label": "AgentTune Guide: Meta Muse Soul.md Templates",
+      "href": "https://agent-tune.com/guides/muse-soul-md-templates"
+    },
+    {
+      "label": "AgentTune Guide: CLAUDE.md vs AGENTS.md vs .cursorrules Matrix",
+      "href": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Templates",
+      "label": "20 Meta Muse Soul.md templates (portable to OpenClaw)",
+      "href": "/guides/muse-soul-md-templates"
+    },
+    {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner → Soul.md export",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    },
+    {
+      "kicker": "Matrix",
+      "label": "CLAUDE.md vs AGENTS.md vs .cursorrules & Windsurf matrix",
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
+    },
+    {
+      "kicker": "Free browser tool",
+      "label": "Instruction Checker — catch conflicting rules",
+      "href": "/tools/instruction-checker"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

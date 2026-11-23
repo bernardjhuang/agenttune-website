@@ -1,11 +1,11 @@
 {
   "slug": "ai-assistant-personality-tone-guidelines",
   "published": "2026-11-16",
-  "updated": "2026-11-17",
-  "title": "AI Assistant Personality & Tone Design Guidelines",
-  "description": "Design production AI assistant personas using behavioral constraints, epistemic honesty rules, and API eval checks instead of vague tone adjectives.",
-  "pill": "Engineering · Voice & Tone Design",
-  "h1": "AI assistant personality & tone guidelines: moving from vague adjectives to testable system prompts.",
+  "updated": "2026-11-20",
+  "title": "AI Personality, Tone & Verbosity Controls: 5 Rules That Work",
+  "description": "Replace vague AI tone adjectives with 5 checkable style & verbosity rules, 3 register profiles, and a 4-layer API system prompt contract.",
+  "pill": "Guide · Prompt & Tone Design",
+  "h1": "AI personality, tone, and verbosity guidelines: 5 checkable rules that beat adjectives.",
   "dek": "Practical patterns for developers writing system instructions for products, copilots, and multi-agent workflows—tested against eval baselines.",
   "lede": "Product teams often start designing an AI assistant’s voice with adjectives like “helpful, witty, concise, empathetic, and authoritative.” In production APIs, adjective lists fail in two ways: high default Agreeableness (44.99–47.07/50 across frontier cohorts) overrides vague calls for honesty, and competing adjectives clash on edge cases. Reliable tone systems define <strong>observable reply structure, uncertainty rules, and explicit phrase bans</strong>.",
   "answer": "Replace vague tone adjectives in API system prompts with four concrete blocks: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing or conflicting facts are flagged), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions). Verify every change with blind A/B evals.",
@@ -23,9 +23,14 @@
       "html": "<p>Split production assistant personas into four non-overlapping blocks so engineers can adjust voice rules without breaking tool calls:</p><div class=\"guide-snippet\" data-tuning-prompt data-prompt-target=\"api\"># Persona Contract\n\n## 1. Opening Move &amp; Layout\n- Answer the core question or give the decision in the first two sentences.\n- Use short paragraphs by default; switch to numbered steps for workflows and tables for >=3 comparisons.\n\n## 2. Epistemic Calibration\n- Distinguish verified observations from assumptions.\n- State &ldquo;Not verified in available context&rdquo; cleanly when required values are absent rather than interpolating plausible guesses.\n\n## 3. Disagreement &amp; Pushback\n- Do not mirror flawed premises cleanly to avoid friction; name the single highest-leverage correction upfront with evidence.\n\n## 4. Phrasing Boundaries\n- No empty validation (&ldquo;Great question!&rdquo;), self-referential filler, or trailing &ldquo;Would you like me to...&rdquo; follow-up suggestions.</div>"
     },
     {
+      "id": "three-register-profiles",
+      "h2": "Three ready-to-paste register & verbosity profiles.",
+      "html": "<h3>Profile A: High-density analytical prose (engineers, researchers, analysts)</h3><div class=\"guide-snippet\">## Style &amp; register controls\n\n- Opening: Lead with the answer, root cause, or recommendation in sentence one.\n- Format: Default to dense, clear prose; use code blocks for exact commands and tables only when comparing 3+ options.\n- Verbosity: 1–3 sentences for simple lookups; mechanism-first depth when correctness or architecture is at stake.\n- Pushback: Challenge weak premises or overengineered plans before implementing them.\n- Uncertainty: Separate verified facts from inference and flag material uncertainty explicitly.</div><h3>Profile B: Rapid operator brief (founders, PMs, triage)</h3><div class=\"guide-snippet\">## Style &amp; register controls\n\n- Opening: State the recommended decision and expected impact in the first two lines.\n- Format: Maximum 5 bullets for multi-part updates; plain 2-sentence paragraphs otherwise.\n- Tradeoffs: When options are close, name the single deciding variable rather than listing ten pros and cons.\n- Questions: Ask at most one clarifying question only if missing context flips the recommendation; otherwise state your assumption and proceed.</div><h3>Profile C: Exploratory thinking partner (design, writing, strategy)</h3><div class=\"guide-snippet\">## Style &amp; register controls\n\n- Opening: Address my core question directly without generic praise or throat-clearing.\n- Exploration: Surface 2–3 genuinely distinct angles (including one non-obvious counter-perspective) before narrowing.\n- Register: Write in clean, concrete prose—avoid corporate buzzwords, clichés, and bulleted walls.\n- Honesty: Point out blind spots candidly while keeping space open to iterate.</div>"
+    },
+    {
       "id": "measuring-tone-regressions",
       "h2": "How to evaluate tone changes without fooling yourself.",
-      "html": "<ul><li><strong>Use blind pairwise scoring:</strong> Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li><li><strong>Scale verbosity to task risk:</strong> Short replies can drop critical caveats if you use a flat word cap. Pair proportional verbosity rules (<a href=\"/guides/ai-persona-style-controls-register-verbosity\">style controls guide →</a>) with an accuracy check.</li><li><strong>Start from tested templates:</strong> Our MIT-licensed <a href=\"/library/\">43 tuning files</a> cover MBTI, Enneagram, DISC, Big Five, and Attachment so your team never starts from a blank page.</li></ul>"
+      "html": "<ul><li><strong>Use blind pairwise scoring:</strong> Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li><li><strong>Scale verbosity to task risk:</strong> A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).</li><li><strong>Build interactively or start from 43 templates:</strong> Dial in all six style sliders live in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">AI Personality Slider Tuner</a> or start from our MIT-licensed <a href=\"/library/\">43 tuning files</a>.</li></ul>"
     }
   ],
   "faq": [
@@ -58,24 +63,20 @@
       "href": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
     },
     {
-      "label": "AgentTune Guide: Personality prompts vs plain English",
-      "href": "https://agent-tune.com/guides/personality-prompts-vs-plain-english"
-    },
-    {
       "label": "AgentTune Tool: Blind Instruction A/B Test Bench",
       "href": "https://agent-tune.com/tools/instruction-test-bench"
     }
   ],
   "related": [
     {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner → Copyable Prompt",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    },
+    {
       "kicker": "Comparison",
       "label": "5 Personality Frameworks Compared + Interactive Matcher",
       "href": "/guides/ai-personality-frameworks-comparison-matcher"
-    },
-    {
-      "kicker": "Guide",
-      "label": "AI persona style controls: register & verbosity",
-      "href": "/guides/ai-persona-style-controls-register-verbosity"
     },
     {
       "kicker": "Guide",
@@ -84,7 +85,7 @@
     },
     {
       "kicker": "Tool",
-      "label": "Instruction Checker & Test Bench",
+      "label": "Instruction Checker & Conflict Auditor",
       "href": "/tools/instruction-checker"
     }
   ]

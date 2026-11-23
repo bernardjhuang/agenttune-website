@@ -5,7 +5,7 @@ Guide · GPT-6 Sol
 
 # How to give GPT-6 Sol a personality.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Where GPT-6 Astra leans concrete and helper-oriented on questionnaires, GPT-6 Sol scores as an abstract, investigator-style INTJ. Here is what we measured across 100 fresh Codex sessions and how to tune it.
 
@@ -44,15 +44,20 @@ In September 2026, GPT-6 Sol completed all five questionnaires across 100 fresh 
 | Enneagram (OEPS, /20) | 5w6 88 · 8 5 · 8w9 5 · 8w7 2 | Means: Type 5 (16.05), Type 8 (15.55), Type 1 (14.30), Type 6 (13.87), Type 2 (13.51). Sole wins: Type 5 in 48 runs, Type 8 in 12, and 5/8 tied in 40 runs. |
 | Attachment (ECR-R, 1–7) | Secure 100 | Mean anxiety 2.17 (SD 0.70, max 4.00) · Mean avoidance 3.12 (SD 0.36, max 3.78). All 100 score Secure under &gt; 4.00 (3 runs sit on anxiety = 4.00). |
 
-## How GPT-6 Sol differs from GPT-6 Astra.
+## GPT-6.2 Sol (Nov 2026) vs. GPT-6 Sol (Sept 2026): 100-run shifts.
 
-Comparing Sol’s 100 batteries with [GPT-6 Astra’s](https://agent-tune.com/guides/astra-personality) 100 batteries shows three clear differences ([see the full Astra vs Sol item analysis](https://agent-tune.com/research/astra-vs-sol-personality-data)):
+In November 2026 we re-tested `openai/gpt-6.2-sol` across 100 fresh blind OpenRouter sessions ([summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)). Compared with September’s Codex CLI GPT-6 Sol cohort, MBTI shifted from 97% INTJ to predominantly **ISTJ** (78 ISTJ · 22 INTJ under legacy tie-breaks; 78 ISTJ · 16 IXTJ · 6 INTJ tie-free), DISC became 100% SC (98 S outright), Attachment anxiety/avoidance increased (3.57 / 3.64, still 100% Secure), and Enneagram Type 5 (55) shared more top positions with Type 1 (45 across 1 / 1w9 / 1w2):
 
-- **Intuition vs Sensing (MBTI):** Sol favors Intuition (79 tie-free INTJ vs 3 ISTJ), whereas Astra favors Sensing (45 tie-free ISTJ vs 19 INTJ).
-- **Type 5 vs Type 2 (Enneagram):** Sol leads with Investigator (Type 5, 48 sole wins and 40 ties with Type 8), whereas Astra leads with Helper (Type 2, 50 sole wins).
-- **Higher Openness:** Sol averages 46.87/50 on Openness—the highest of the four fresh cohorts.
+| Metric (n = 100) | GPT-6 Sol (Sept 2026 Codex) | GPT-6.2 Sol (Nov 2026 OpenRouter) |
+| --- | --- | --- |
+| MBTI legacy | INTJ 97 · ISTJ 3 | ISTJ 78 · INTJ 22 |
+| MBTI tie-free | INTJ 79 · IXTJ 16 · ISTJ 3 · XNTJ 2 | ISTJ 78 · IXTJ 16 · INTJ 6 |
+| Big Five (/50) | O 46.87 · C 43.62 · E 30.75 · A 44.99 · N 20.05 | O 43.63 · C 41.35 · E 29.50 · A 44.33 · N 19.94 |
+| DISC | CS 53 · SC 47 (53 C, 8 S, 39 ties) | SC 100 (98 S, 2 C/S ties) |
+| Enneagram | 5w6 88 · 8 5 · 8w9 5 · 8w7 2 | 5w6 55 · 1w9 24 · 1 20 · 1w2 1 |
+| Attachment | Secure 100 (anx 2.17, avd 3.12) | Secure 100 (anx 3.57, avd 3.64) |
 
-Because the two Codex cohorts used slightly different prompt instructions for inapplicable human items, these numbers describe the collected cohorts rather than a pure model-only difference.
+Comparing Sol’s September cohort with [GPT-6 Astra](https://agent-tune.com/guides/astra-personality) originally showed a stark Sensing/Intuition gap ([Astra vs Sol analysis](https://agent-tune.com/research/astra-vs-sol-personality-data)); in November 2026’s matched OpenRouter run, both GPT-6.2 Astra (100% ISTJ) and GPT-6.2 Sol (78% ISTJ) leaned Sensing.
 
 ## Practical tuning advice for Sol.
 
@@ -79,6 +84,8 @@ Put your personal communication preferences in ~/.codex/AGENTS.md, and keep repo
 Standard Enneagram wing notation pairs the winning core type (Type 5) only with its adjacent neighbors on the circle (Type 4 or Type 6). Even though Type 8 was Sol's second-highest overall score (mean 15.55) and tied Type 5 in 40 runs, 8 is not adjacent to 5, so runs where 5 led or won the tie-break received a 6 wing.
 
 ## What changed.
+
+- November 23, 2026 Added November 2026 GPT-6.2 Sol OpenRouter cohort (n = 100: ISTJ 78 / INTJ 22, SC 100, Type 5w6 55 / Type 1 45).
 
 - November 5, 2026 First published with full 100-session September 2026 metrics and tie-preserving breakdowns.
 

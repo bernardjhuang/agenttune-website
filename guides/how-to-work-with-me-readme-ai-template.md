@@ -103,12 +103,12 @@ Save personal communication defaults globally—in ChatGPT Custom Instructions, 
 
 - [AgentTune Tool: Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder)
 
-- [AgentTune Guide: Coding agent personality (CLAUDE.md & AGENTS.md)](https://agent-tune.com/guides/coding-agent-personality)
+- [AgentTune Guide: Coding agent personality (CLAUDE.md & AGENTS.md)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 
 ## Keep going.
 
 - [Free browser tool: How to Work With Me card builder](https://agent-tune.com/tools/how-to-work-with-me)
 - [Free browser tool: Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder)
-- [Guide: Free DISC assessment (no email): 4 workplace styles & 12 blends](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
-- [Guide: AGENTS.md, CLAUDE.md & Cursor rules: add AI personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Prompts & blends: DISC AI prompts: 4 workplace styles & 12 blends](https://agent-tune.com/guides/disc-ai-prompts)
+- [Guide: AGENTS.md, CLAUDE.md & Cursor rules: add AI personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: AgentTune MCP & portable AI preferences across every agent](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)

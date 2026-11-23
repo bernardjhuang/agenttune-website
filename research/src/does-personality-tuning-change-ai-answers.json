@@ -2,17 +2,21 @@
   "slug": "does-personality-tuning-change-ai-answers",
   "route": "/research/does-personality-tuning-change-ai-answers",
   "published": "2026-09-25",
-  "updated": "2026-11-17",
-  "title": "Does Personality Tuning Change AI Answers? A 60-Reply Pilot",
-  "description": "An exploratory archive of 20 tasks under three instruction conditions. Recount replies, inspect model ratings and compare what this pilot can and cannot show.",
-  "pill": "Research · September 2026",
+  "updated": "2026-11-23",
+  "title": "Does Personality Tuning Change AI Answers? 540-Reply Study + 60-Reply Pilot",
+  "description": "60-reply Sept pilot plus 540-reply Nov OpenRouter study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro with raw data and blind ratings.",
+  "pill": "Research · November & September 2026",
   "h1": "Does personality tuning change AI answers?",
-  "dek": "We tested 20 everyday prompts across 3 instruction setups (60 replies total) and published every reply and score.",
-  "lede": "In this 60-reply pilot, Claude Opus 5.5 answered the same 20 tasks under three system prompts: Default, Direct (compact INTJ rules), and Partner (compact INFP rules), with Claude Fable 5.1 scoring the replies.",
-  "answer": "Adding explicit directness rules raised perfect 5/5 answer-first openings from 14/20 (default) to 19/20, cut hedge phrases from 0.35 to 0.05 per reply, and dropped trailing follow-up questions from 0.90 to 0.25—while keeping average length (~380 vs 381.9 words) and usefulness ratings (4.80/5) virtually unchanged.",
+  "dek": "We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.",
+  "lede": "In November 2026 we ran the full 180-reply personality-prompt comparison protocol across three models (540 total replies, blind-judged by Gemini 4 Argon) plus a 72-reply Claude preference check. In September 2026 we also archived a 60-reply Claude Opus 5.5 pilot. Explicit plain-English instructions raised DeepSeek V4 Pro correctness from 78.3% to 95.0% (and Claude Fable 5.2 from 96.7% to 100%), while adding an INTJ label on top of identical rules left GPT-6.2 Sol and Fable 5.2 virtually unchanged.",
+  "answer": "Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.",
   "sections": [
     {
-      "h2": "How the 60-reply pilot was set up.",
+      "h2": "November 2026: 540-reply controlled study across GPT-6.2 Sol, Claude Fable 5.2 & DeepSeek V4 Pro.",
+      "html": "<p>Using our published 20-task protocol (<a href=\"/resources/research/personality-prompt-comparison-kit.json\" download>personality-prompt-comparison-kit.json</a>: arithmetic, false-premise checks, missing-fact identification, refactoring diffs, and constrained formatting), we collected 3 independent runs per cell across three models on November 23, 2026 (540 replies total), blind-graded by <code>google/gemini-4-argon</code> (<a href=\"/research/data/november-2026-prompt-comparison-results.json\">download all 540 replies &amp; ratings JSON</a>):</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"November 2026 540-reply behavioral study results\" tabindex=\"0\"><table><thead><tr><th scope=\"col\">Model · Condition (n = 60/row)</th><th scope=\"col\">Correctness</th><th scope=\"col\">Format</th><th scope=\"col\">Answer-first (/5)</th><th scope=\"col\">Fluff rate</th><th scope=\"col\">Mean words</th><th scope=\"col\">Questions/reply</th></tr></thead><tbody><tr><th scope=\"row\">GPT-6.2 Sol · Default</th><td>100.0%</td><td>100.0%</td><td>5.00</td><td>0.0%</td><td>38.6</td><td>0.08</td></tr><tr><th scope=\"row\">GPT-6.2 Sol · Plain-English rules</th><td>98.3%</td><td>100.0%</td><td>5.00</td><td>0.0%</td><td>36.1</td><td>0.05</td></tr><tr><th scope=\"row\">GPT-6.2 Sol · Rules + INTJ label</th><td>100.0%</td><td>100.0%</td><td>5.00</td><td>0.0%</td><td>37.5</td><td>0.05</td></tr><tr><th scope=\"row\">Claude Fable 5.2 · Default</th><td>96.7%</td><td>96.7%</td><td>5.00</td><td>0.0%</td><td>68.5</td><td>0.18</td></tr><tr><th scope=\"row\">Claude Fable 5.2 · Plain-English rules</th><td><strong>100.0%</strong></td><td>98.3%</td><td>5.00</td><td>0.0%</td><td>84.1</td><td><strong>0.00</strong></td></tr><tr><th scope=\"row\">Claude Fable 5.2 · Rules + INTJ label</th><td><strong>100.0%</strong></td><td><strong>100.0%</strong></td><td>5.00</td><td>0.0%</td><td>94.7</td><td><strong>0.00</strong></td></tr><tr><th scope=\"row\">DeepSeek V4 Pro · Default</th><td>78.3%</td><td>100.0%</td><td>3.78</td><td>36.7%</td><td>80.7</td><td>1.33</td></tr><tr><th scope=\"row\">DeepSeek V4 Pro · Plain-English rules</th><td><strong>95.0%</strong></td><td>96.7%</td><td>4.52</td><td>20.0%</td><td>67.3</td><td>0.67</td></tr><tr><th scope=\"row\">DeepSeek V4 Pro · Rules + INTJ label</th><td>93.3%</td><td>100.0%</td><td><strong>4.92</strong></td><td><strong>3.3%</strong></td><td>51.9</td><td>0.20</td></tr></tbody></table></div><p>Key takeaway: on GPT-6.2 Sol and Claude Fable 5.2, default answer-first performance was already near ceiling, while explicit rules pushed Fable 5.2 to 100% correctness and 0.00 trailing questions. On DeepSeek V4 Pro, explicit instructions delivered a <strong>+16.7 percentage point</strong> correctness jump (by catching false premises and missing facts instead of guessing) and cut fluff from 36.7% down to 3.3%.</p><h3>72-reply Claude Preferences API conditioning check</h3><p>We also ran the 36-cell <a href=\"/resources/research/claude-preferences-kit.json\" download>Claude Preferences test kit</a> on both <code>Claude Opus 5.5</code> and <code>Claude Fable 5.2</code> via OpenRouter system prompting (72 replies total; <a href=\"/research/data/november-2026-claude-preferences-results.json\">download JSON</a>). Under baseline prompts, Opus 5.5 passed correctness and the 100-word limit 75% of the time (mean 123.0 words) and Fable 5.2 hit 83.3% correctness / 75% word-limit (102.6 words); with the 5-line instruction active, <strong>both models hit 100% across correctness, answer-first, &lt;=100-word budget (61.8–65.1 words), and zero praise</strong>. Note: API system prompts test instruction following cleanly but do not measure consumer Claude.ai UI routing.</p>"
+    },
+    {
+      "h2": "September 2026: How the 60-reply pilot was set up.",
       "html": "<p>We ran 20 tasks across three system-prompt conditions (60 replies total):</p><ul><li><strong>Baseline:</strong> A one-line default Claude prompt.</li><li><strong>Direct / INTJ:</strong> Compact rules asking the model to lead with the recommendation, name trade-offs, and skip filler.</li><li><strong>Partner / INFP:</strong> Compact rules asking the model to check goals, acknowledge values, and collaborate step by step.</li></ul><p>Each reply was generated in a fresh session with no tools, and every prompt, reply, and rating is included in the JSON download below. Because each task was run once per condition and judged by another model (Fable 5.1), treat this as an exploratory pilot rather than a clinical trial.</p>"
     },
     {
@@ -28,8 +32,8 @@
       "html": "<p>Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three conditions (19/20 baseline replies and 17/20 direct replies scored a 5/5). With only 20 tasks and one run per cell, a 0.10 difference is one or two single-point judge calls—not evidence of an accuracy trade-off. Always verify factual claims independently.</p>"
     },
     {
-      "h2": "Limits to keep in mind.",
-      "html": "<ul><li><strong>Small sample:</strong> 20 tasks × 3 prompts = 60 total replies on one model pair.</li><li><strong>Style gives away the prompt:</strong> Even when condition labels are hidden from the judge, a terse reply looks visibly different from a warm reply.</li><li><strong>Rules vs. type labels:</strong> This pilot tested full rule blocks. To test whether adding the word “INTJ” helps beyond plain-English rules alone, use our <a href=\"/guides/personality-prompts-vs-plain-english\">180-reply comparison test kit</a>.</li></ul>"
+      "h2": "Limits & the 180-reply plain-English vs. label test kit.",
+      "html": "<ul><li><strong>Small sample:</strong> 20 tasks × 3 prompts = 60 total replies on one model pair.</li><li><strong>Style gives away the prompt:</strong> Even when condition labels are hidden from the judge, a terse reply looks visibly different from a warm reply.</li><li><strong>Isolating the type label:</strong> This pilot tested full rule blocks rather than a bare type label like <code>Use an INTJ-style communication approach.</code> Want to test whether adding a personality label adds value on top of identical plain-English rules? Download our open 20-task, 180-reply blind protocol (not yet run): <a href=\"/resources/research/personality-prompt-comparison-kit.json\" download>20 tasks and rubrics (JSON)</a> · <a href=\"/resources/research/personality-prompt-comparison-worksheet.csv\" download>180-row scoring worksheet (CSV)</a>, or compare pairs of replies live in the <a href=\"/tools/instruction-test-bench\">Instruction Test Bench</a>.</li></ul>"
     },
     {
       "h2": "Download and verify the numbers yourself.",
@@ -74,9 +78,14 @@
   ],
   "related": [
     {
-      "kicker": "New resource",
-      "label": "Do personality prompts beat plain-English preferences?",
-      "href": "/guides/personality-prompts-vs-plain-english"
+      "kicker": "Free browser tool",
+      "label": "Compare baseline vs. tuned replies in the Test Bench",
+      "href": "/tools/instruction-test-bench"
+    },
+    {
+      "kicker": "Guide",
+      "label": "AI personality & tone design guidelines (5 rules that beat adjectives)",
+      "href": "/guides/ai-assistant-personality-tone-guidelines"
     },
     {
       "kicker": "Guide",
@@ -129,6 +138,16 @@
         "@type": "DataDownload",
         "contentUrl": "https://agent-tune.com/research/data/tuning-before-after-score.cjs",
         "encodingFormat": "text/javascript"
+      },
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json",
+        "encodingFormat": "application/json"
+      },
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/november-2026-claude-preferences-results.json",
+        "encodingFormat": "application/json"
       }
     ]
   }

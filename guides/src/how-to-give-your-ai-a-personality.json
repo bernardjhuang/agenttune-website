@@ -101,7 +101,7 @@
     {
       "kicker": "Guide",
       "label": "Tune your coding agent",
-      "href": "/guides/coding-agent-personality"
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
     }
   ],
   "promptModel": "any",

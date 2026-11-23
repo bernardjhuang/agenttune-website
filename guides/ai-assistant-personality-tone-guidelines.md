@@ -1,11 +1,11 @@
 Source: https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Engineering · Voice & Tone Design
+Guide · Prompt & Tone Design
 
-# AI assistant personality & tone guidelines: moving from vague adjectives to testable system prompts.
+# AI personality, tone, and verbosity guidelines: 5 checkable rules that beat adjectives.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 20, 2026
 
 Practical patterns for developers writing system instructions for products, copilots, and multi-agent workflows—tested against eval baselines.
 
@@ -44,11 +44,47 @@ Split production assistant personas into four non-overlapping blocks so engineer
 - No empty validation (&ldquo;Great question!&rdquo;), self-referential filler, or trailing &ldquo;Would you like me to...&rdquo; follow-up suggestions.
 ```
 
+## Three ready-to-paste register & verbosity profiles.
+
+### Profile A: High-density analytical prose (engineers, researchers, analysts)
+
+```markdown
+## Style & register controls
+
+- Opening: Lead with the answer, root cause, or recommendation in sentence one.
+- Format: Default to dense, clear prose; use code blocks for exact commands and tables only when comparing 3+ options.
+- Verbosity: 1–3 sentences for simple lookups; mechanism-first depth when correctness or architecture is at stake.
+- Pushback: Challenge weak premises or overengineered plans before implementing them.
+- Uncertainty: Separate verified facts from inference and flag material uncertainty explicitly.
+```
+
+### Profile B: Rapid operator brief (founders, PMs, triage)
+
+```markdown
+## Style & register controls
+
+- Opening: State the recommended decision and expected impact in the first two lines.
+- Format: Maximum 5 bullets for multi-part updates; plain 2-sentence paragraphs otherwise.
+- Tradeoffs: When options are close, name the single deciding variable rather than listing ten pros and cons.
+- Questions: Ask at most one clarifying question only if missing context flips the recommendation; otherwise state your assumption and proceed.
+```
+
+### Profile C: Exploratory thinking partner (design, writing, strategy)
+
+```markdown
+## Style & register controls
+
+- Opening: Address my core question directly without generic praise or throat-clearing.
+- Exploration: Surface 2–3 genuinely distinct angles (including one non-obvious counter-perspective) before narrowing.
+- Register: Write in clean, concrete prose—avoid corporate buzzwords, clichés, and bulleted walls.
+- Honesty: Point out blind spots candidly while keeping space open to iterate.
+```
+
 ## How to evaluate tone changes without fooling yourself.
 
 - **Use blind pairwise scoring:** Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench).
-- **Scale verbosity to task risk:** Short replies can drop critical caveats if you use a flat word cap. Pair proportional verbosity rules ([style controls guide →](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)) with an accuracy check.
-- **Start from tested templates:** Our MIT-licensed [43 tuning files](https://agent-tune.com/library/) cover MBTI, Enneagram, DISC, Big Five, and Attachment so your team never starts from a blank page.
+- **Scale verbosity to task risk:** A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).
+- **Build interactively or start from 43 templates:** Dial in all six style sliders live in our [AI Personality Slider Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions) or start from our MIT-licensed [43 tuning files](https://agent-tune.com/library/).
 
 ## Questions people ask.
 
@@ -76,13 +112,11 @@ Place JSON schema and tool rules in a separate section after your tone block, an
 
 - [AgentTune Research: Does personality tuning change AI answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 
-- [AgentTune Guide: Personality prompts vs plain English](https://agent-tune.com/guides/personality-prompts-vs-plain-english)
-
 - [AgentTune Tool: Blind Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench)
 
 ## Keep going.
 
+- [Interactive Tuner: 6-Slider AI Personality Tuner → Copyable Prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
 - [Comparison: 5 Personality Frameworks Compared + Interactive Matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
-- [Guide: AI persona style controls: register & verbosity](https://agent-tune.com/guides/ai-persona-style-controls-register-verbosity)
 - [Guide: How to stop AI sycophancy & make AI push back](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
-- [Tool: Instruction Checker & Test Bench](https://agent-tune.com/tools/instruction-checker)
+- [Tool: Instruction Checker & Conflict Auditor](https://agent-tune.com/tools/instruction-checker)

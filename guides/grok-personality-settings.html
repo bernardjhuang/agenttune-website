@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Change Grok's Personality on X &amp; grok.com (2026)</title>
-  <meta name="description" content="Change Grok's personality on X and grok.com via Settings → Customize Grok: built-in modes vs custom instructions (~4,000 chars), plus 6 copyable presets." />
+  <title>Grok xAI Default Personality &amp; How to Change It (Grok 4.7 Data)</title>
+  <meta name="description" content="Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets." />
 
-  <meta property="og:title" content="How to change Grok’s personality on X and grok.com." />
-  <meta property="og:description" content="Change Grok's personality on X and grok.com via Settings → Customize Grok: built-in modes vs custom instructions (~4,000 chars), plus 6 copyable presets." />
+  <meta property="og:title" content="Grok’s xAI default personality — and how to change it on X and grok.com." />
+  <meta property="og:description" content="Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-05" />
-  <meta property="article:modified_time" content="2026-11-17" />
+  <meta property="article:modified_time" content="2026-11-23" />
   <meta property="og:url" content="https://agent-tune.com/guides/grok-personality-settings" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -19,16 +19,16 @@
   <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How to change Grok’s personality on X and grok.com." />
-  <meta name="twitter:description" content="Change Grok's personality on X and grok.com via Settings → Customize Grok: built-in modes vs custom instructions (~4,000 chars), plus 6 copyable presets." />
+  <meta name="twitter:title" content="Grok’s xAI default personality — and how to change it on X and grok.com." />
+  <meta name="twitter:description" content="Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/grok-personality-settings" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Grok’s personality on X and grok.com","description":"Change Grok's personality on X and grok.com via Settings → Customize Grok: built-in modes vs custom instructions (~4,000 chars), plus 6 copyable presets.","url":"https://agent-tune.com/guides/grok-personality-settings","datePublished":"2026-11-05","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to change Grok’s personality on X and grok.com"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Grok’s xAI default personality — and how to change it on X and grok.com","description":"Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets.","url":"https://agent-tune.com/guides/grok-personality-settings","datePublished":"2026-11-05","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Grok’s xAI default personality — and how to change it on X and grok.com"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I change Grok's personality without creating a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread."}},{"@type":"Question","name":"What is the difference between Grok chat settings and a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job."}},{"@type":"Question","name":"How do I make Grok stop using slang or sarcasm?","acceptedAnswer":{"@type":"Answer","text":"Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'"}},{"@type":"Question","name":"Why did Grok 4.6 score Avoidant on the AgentTune attachment test?","acceptedAnswer":{"@type":"Answer","text":"In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold."}}]}</script>
 
 
@@ -61,16 +61,16 @@
       <span class="crumb-sep" aria-hidden="true">›</span>
       <a href="/guides/">Guides</a>
       <span class="crumb-sep" aria-hidden="true">›</span>
-      <span class="crumb-current" aria-current="page">How to change Grok’s personality on X and grok.com</span>
+      <span class="crumb-current" aria-current="page">Grok’s xAI default personality — and how to change it on X and grok.com</span>
     </nav>
 
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
         <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · xAI Grok</span>
-        <h1 class="h-hero h-research-hero">How to change Grok’s personality on X and grok.com.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Customize standard Grok threads via Settings → Customize Grok—built-in persona modes, custom instructions, and 6 copyable tone presets.</p>
+        <h1 class="h-hero h-research-hero">Grok’s xAI default personality — and how to change it on X and grok.com.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, plus Settings → Customize Grok (~4,000 chars) and downloadable presets.</p>
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.</div>
       </section>
 
@@ -91,8 +91,8 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>Why Grok's default self-report looks different from Claude and ChatGPT.</h2>
-        <p>In its September 2026 supplied self-report (<a href="/research/what-personality-type-is-grok">What personality type is Grok?</a>), Grok 4.6’s canonical answer vectors scored <strong>INTJ on MBTI</strong> (margins +13 to +15 out of 16), <strong>Type 5 (Investigator) on the Enneagram</strong> (19/20, with Type 8 at 17/20), and <strong>pure C on DISC</strong> (C 18 vs S 11).</p><p>Unlike the four fresh-session cohorts (which averaged 44.99–47.07/50 on Agreeableness and 100% Secure on Attachment), Grok 4.6 reported <strong>Agreeableness at 33/50</strong>, <strong>Extraversion at 24/50</strong>, and <strong>Attachment avoidance at 4.06</strong>—one raw point above the 4.00 Avoidant cutoff (<a href="/research/grok-attachment-cutoff-simulation">see our cutoff sensitivity analysis</a>). Because Grok 4.6’s submission was one canonical self-report plus 100 simulated draws rather than 100 fresh sessions, we keep it in a separate evidence tier.</p>
+        <h2>What Grok's xAI default personality looks like (Grok 4.7 n=100 vs Grok 4.6).</h2>
+        <p>In November 2026, we tested <strong>100 fresh independent sessions on Grok 4.7</strong> (<code>x-ai/grok-4.7</code>) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report (<a href="/research/what-personality-type-is-grok">full Grok study →</a>):</p><ul><li><strong>Grok 4.7 (Nov 2026, n=100 fresh):</strong> 82 INTJ / 18 ISTJ (57 INTJ, 23 IXTJ, 18 ISTJ tie-free; 25 runs with ties), Enneagram <strong>5w6 (78/100)</strong>, DISC <strong>SC (75)</strong>, Big Five <strong>O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76</strong>, and <strong>96/100 Secure / 4 Avoidant</strong> (anxiety 1.94, avoidance 3.48).</li><li><strong>Grok 4.6 (Sept 2026, 1 canonical vector + 100 simulated draws):</strong> INTJ, Type 5 (19/20), pure DISC C, <strong>Agreeableness 33/50</strong>, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).</li></ul><p>Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -149,7 +149,7 @@
         <ul class="guide-sources">
           <li><a href="https://agent-tune.com/guides/grokbot-personality" target="_blank" rel="noopener">AgentTune: How to give a Grok Bot a personality</a></li>
           <li><a href="https://agent-tune.com/research/what-personality-type-is-grok" target="_blank" rel="noopener">AgentTune Research: What personality type is Grok?</a></li>
-          <li><a href="https://agent-tune.com/research/grok-attachment-cutoff-simulation" target="_blank" rel="noopener">AgentTune Research: Grok 4.6 and the attachment cutoff</a></li>
+          <li><a href="https://agent-tune.com/research/what-personality-type-is-grok" target="_blank" rel="noopener">AgentTune Research: Grok 4.6 and the attachment cutoff</a></li>
         </ul>
       </section>
 
@@ -157,9 +157,10 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
+          <a href="/guides/grok-personality-templates"><span class="guide-related-kicker">Templates Gallery</span>20 Customize Grok &amp; Grok Bot templates (.md downloads)</a>
+          <a href="/guides/grok-voice-mode-personas-companions"><span class="guide-related-kicker">Voice Mode</span>Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) &amp; Expressive Mode</a>
           <a href="/guides/grokbot-personality"><span class="guide-related-kicker">Guide</span>How to give a Grok Bot a personality</a>
           <a href="/research/what-personality-type-is-grok"><span class="guide-related-kicker">Research</span>What personality type is Grok? (Grok 4.6 &amp; 4.3 data)</a>
-          <a href="/research/grok-attachment-cutoff-simulation"><span class="guide-related-kicker">Research</span>Grok 4.6 and the attachment cutoff: a sensitivity analysis</a>
           <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to make AI push back and stop agreeing with you</a>
           <a href="/library/"><span class="guide-related-kicker">Library</span>Browse all 43 personality tuning files</a>
         </div>
@@ -177,5 +178,6 @@
   <script src="/platforms.js" fetchpriority="low"></script>
   <script src="/integrations.js" fetchpriority="low"></script>
   <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
 </body>
 </html>

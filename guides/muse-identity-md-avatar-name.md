@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # How to change Meta Muse’s avatar, name, and Identity.md.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Step-by-step mobile and web paths for swapping Muse's avatar, display name, and voice—and why Identity.md must stay separate from Soul.md.
 
@@ -39,9 +39,9 @@ Give each of the three Assistant Identity files one clear job:
 
 If you put formatting rules inside `Identity.md` and later ask Muse to change its avatar, Muse can overwrite the entire file and drop your rules. Keep communication preferences in [Soul.md](https://agent-tune.com/guides/muse-soul-md-templates) instead.
 
-## Clean Identity.md templates you can copy.
+## Clean Identity.md templates you can copy (or build interactively).
 
-Keep `Identity.md` to five or six lines that set the name and role while pointing tone rules back to `Soul.md`:
+Generate a coordinated `Soul.md` + `Identity.md` + `Memory.md` starter kit right here—or browse all [16 Meta Muse character ideas & Identity.md profiles](https://agent-tune.com/guides/muse-identity-md-templates):
 
 ### Minimal work assistant
 
@@ -54,6 +54,8 @@ Keep `Identity.md` to five or six lines that set the name and role while pointin
 - Avatar style: Clean geometric mark, dark slate background
 - Boundaries: Follow Soul.md for all formatting, length, and tone rules.
 ```
+
+[Download Chief of Staff (.md)](https://agent-tune.com/resources/muse/identity-chief-of-staff.md) · [Download Coding Partner (.md)](https://agent-tune.com/resources/muse/identity-coding-partner.md)
 
 ### Direct study and review partner
 

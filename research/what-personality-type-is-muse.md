@@ -52,7 +52,7 @@ To run a fresh-session replication yourself, use the open instruments and scorin
 
 ## How to use the report.
 
-Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates) and [Soul.md persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test).
+Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates & persistence kit](https://agent-tune.com/guides/muse-soul-md-templates) and [16 Identity.md character ideas](https://agent-tune.com/guides/muse-identity-md-templates).
 
 ## Questions people ask.
 

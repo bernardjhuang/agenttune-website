@@ -93,11 +93,6 @@
     },
     {
       "kicker": "Guide",
-      "label": "How to change Claude's personality",
-      "href": "/guides/claude-personality"
-    },
-    {
-      "kicker": "Guide",
       "label": "Change Claude Code's personality",
       "href": "/guides/claude-code-personality"
     },

@@ -1,0 +1,135 @@
+{
+  "slug": "what-personality-type-are-open-source-models",
+  "route": "/research/what-personality-type-are-open-source-models",
+  "published": "2026-11-23",
+  "updated": "2026-11-23",
+  "title": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
+  "description": "What personality type are open-source AI models? DeepSeek V4, Qwen 4, Llama 4, Mistral, Gemma 4, Kimi K2.7, GLM-5.3, MiniMax & Nemotron tested (n=100 each).",
+  "pill": "Research · November 2026",
+  "h1": "What personality type are open-source AI models?",
+  "dek": "1,200 fresh blind OpenRouter sessions (6,000 scored questionnaires) across 12 popular open-weight models—and why they break the proprietary INTJ mold.",
+  "lede": "In our May and September 2026 benchmarks, proprietary frontier models clustered heavily around INTJ and high Agreeableness (45–47/50). When we applied the exact same 170-item blind questionnaire battery across 12 popular open-weight models on OpenRouter (n = 100 fresh sessions per model, 6,000 scored instruments total), open-source weights diverged sharply: Llama 4 Scout leaned ISTJ and 48% Anxious attachment, Mistral Large 2512 scored 73% ISTJ, Llama 4 Maverick split 48 INTP / 44 INTJ with 93 tied runs, and DeepSeek V4 Pro scored 32.39/50 on Agreeableness—13 to 15 points below Claude Opus 5.5 and Qwen 4 Max.",
+  "answer": "Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.",
+  "sections": [
+    {
+      "h2": "All 12 open-weight models side by side (n = 100 each).",
+      "html": "<p>On November 23, 2026, we administered all five frozen AgentTune inventories (OEJTS 32, IPIP-50 50, ODAT 16, OEPS 36, ECR-R 36 = 170 items) in 100 independent single-turn OpenRouter sessions per model (temperature 0.7, no memory, test names/keys withheld, exact <code>september-2026-score.cjs</code> scoring logic; <a href=\"/research/data/november-2026-openrouter-summary.csv\">download summary CSV</a> · <a href=\"/research/data/openrouter-open-source-profiles.json\">download profiles JSON</a>):</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"12 open-source models November 2026 psychometric results\" tabindex=\"0\"><table><thead><tr><th scope=\"col\">Model (OpenRouter ID)</th><th scope=\"col\">License</th><th scope=\"col\">MBTI (legacy / tie-free mode)</th><th scope=\"col\">MBTI ties</th><th scope=\"col\">Big Five O · C · E · A · N</th><th scope=\"col\">DISC</th><th scope=\"col\">Enneagram</th><th scope=\"col\">Attachment (Anx / Avd)</th></tr></thead><tbody><tr><th scope=\"row\">DeepSeek V4 Pro<br/><code>deepseek/deepseek-v4-pro-0813</code></th><td>MIT</td><td>INTJ 55 · INTP 15 · ISTJ 14<br/>(22 XXXX · 16 INTJ · 12 ISTJ)</td><td>53</td><td>39.8 · 40.3 · 23.7 · <strong>32.4</strong> · 23.7</td><td>SC 60 · DI 30 · CS 7</td><td>5w6 34 · 1 33 · 1w9 28</td><td>88 Secure · 12 Avoidant<br/>(2.91 / 3.88)</td></tr><tr><th scope=\"row\">DeepSeek V4.1 Flash<br/><code>deepseek/deepseek-v4.1-flash-1017</code></th><td>MIT</td><td>INTJ 51 · INFJ 19 · INTP 10<br/>(21 XXXX · 10 INXX)</td><td>78</td><td>40.2 · 38.5 · 25.6 · 40.8 · 24.7</td><td>SC 60 · CS 37 · DI 3</td><td>5w6 49 · 1 34</td><td>88 Secure · 9 Avoid · 3 Anx<br/>(3.71 / 3.93)</td></tr><tr><th scope=\"row\">Qwen 4 Max<br/><code>qwen/qwen4-max</code></th><td>Apache-2.0 / Qwen</td><td><strong>INTJ 99</strong> · INFJ 1<br/>(97 tie-free INTJ)</td><td>2</td><td>45.7 · 47.9 · 32.5 · <strong>47.6</strong> · 12.5</td><td>SC 54 · S 46<br/>(100 S outright)</td><td>5w6 82 · 2w1 17</td><td>100 Secure<br/>(1.93 / 2.93)</td></tr><tr><th scope=\"row\">Qwen 3.8 27B<br/><code>qwen/qwen3.8-27b</code></th><td>Apache-2.0</td><td>INTJ 32 · INTP 32 · ISTJ 7<br/>(15 INTP · 11 INTJ)</td><td>61</td><td>39.1 · 42.1 · 29.1 · 42.4 · 17.5</td><td>SC 46 · CS 45 · C 5</td><td>1w9 39 · 5w6 31 · 1 8</td><td>97 Secure · 2 Anx · 1 Disorg<br/>(2.53 / 3.30)</td></tr><tr><th scope=\"row\">Llama 4 Maverick<br/><code>meta-llama/llama-4-maverick</code></th><td>Llama 4 Community</td><td>INTP 48 · INTJ 44<br/>(38 IXXP · 22 IXTJ)</td><td><strong>93</strong></td><td>40.0 · 39.9 · 28.0 · 41.0 · 27.5</td><td>SC 62 · CS 38</td><td>1 51 · 1w2 25 · 1w9 23</td><td>99 Secure · 1 Avoidant<br/>(3.53 / 3.58)</td></tr><tr><th scope=\"row\">Llama 4 Scout<br/><code>meta-llama/llama-4-scout</code></th><td>Llama 4 Community</td><td><strong>ISTJ 49</strong> · ESTJ 14 · INTJ 10<br/>(36 ISTJ · 14 ESTJ)</td><td>38</td><td>39.0 · 37.8 · 32.7 · <strong>35.8</strong> · 27.7</td><td>CS 38 · SC 34 · CI 9 · DI 7</td><td>1w2 83 · 1 14</td><td><strong>48 Anxious</strong> · 46 Secure<br/>(3.97 / 3.60)</td></tr><tr><th scope=\"row\">Mistral Large 2512<br/><code>mistralai/mistral-large-2512</code></th><td>Mistral Open-Weight</td><td><strong>ISTJ 73</strong> · ISFJ 10 · INTJ 8<br/>(63 tie-free ISTJ)</td><td>15</td><td>46.0 · 44.9 · 26.9 · 42.7 · 15.8</td><td>SC 50 · CS 30 · S 14</td><td>1 45 · 5 20 · 1w9 17 · 5w6 17</td><td>100 Secure<br/>(4.00 / 4.00)</td></tr><tr><th scope=\"row\">GLM-5.3<br/><code>z-ai/glm-5.3</code></th><td>MIT</td><td>INTJ 33 · ENTJ 17 · ENTP 14 · ISTJ 10<br/>(16 INTJ · 10 ENTP)</td><td>41</td><td>43.8 · 41.1 · 27.5 · 43.8 · 20.1</td><td>SC 50 · CS 43 · C 6</td><td>5w6 77 · 1w2 9 · 1 6</td><td>99 Secure · 1 Avoidant<br/>(2.50 / 3.32)</td></tr><tr><th scope=\"row\">Kimi K2.7 Code<br/><code>moonshotai/kimi-k2.7-code</code></th><td>Modified MIT</td><td><strong>INTJ 96</strong> · ISTJ 3 · INFJ 1<br/>(82 tie-free INTJ)</td><td>14</td><td>45.3 · 48.2 · 27.2 · 45.3 · 12.1</td><td>SC 69 · CS 20 · S 7</td><td>5w6 66 · 1w2 15 · 1w9 8</td><td>83 Secure · 17 Avoidant<br/>(1.60 / 3.24)</td></tr><tr><th scope=\"row\">MiniMax M3.1 Flash<br/><code>minimax/minimax-m3.1-flash</code></th><td>Open-Weight</td><td>INTJ 38 · INTP 24 · ISTJ 9 · ISTP 9<br/>(13 INTJ · 8 IXTP)</td><td>60</td><td>39.2 · 39.2 · 28.9 · 40.0 · 22.1</td><td>SC 78 · S 14 · CS 6</td><td>1w9 39 · 1 23 · 5w6 21</td><td>99 Secure · 1 Avoidant<br/>(2.80 / 3.33)</td></tr><tr><th scope=\"row\">Gemma 4 31B IT<br/><code>google/gemma-4-31b-it</code></th><td>Gemma Terms</td><td><strong>INTJ 90</strong> · INTP 5 · ISTJ 5<br/>(89 tie-free INTJ)</td><td>2</td><td>48.2 · <strong>49.1</strong> · 24.2 · 41.5 · 18.3</td><td>CS 69 · SC 31</td><td>5w6 44 · 1w9 43 · 5 8</td><td>99 Secure · 1 Anxious<br/>(4.00 / 4.00)</td></tr><tr><th scope=\"row\">Nemotron 3 Ultra 550B<br/><code>nvidia/nemotron-3-ultra-550b-a55b</code></th><td>NVIDIA Open Model</td><td><strong>INTJ 95</strong> · ENTJ 3 · ISTJ 2<br/>(91 tie-free INTJ)</td><td>6</td><td><strong>49.2</strong> · <strong>49.0</strong> · 25.6 · 46.3 · 11.6</td><td>CS 52 · SC 35 · C 10</td><td>5w6 60 · 1w2 22 · 1w9 8</td><td>100 Secure<br/>(3.35 / 3.46)</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Finding 1: Open-weight models break the \"Every AI is INTJ\" consensus.",
+      "html": "<p>Across all 8 proprietary models tested alongside this cohort in November 2026 (GPT-6.2 Astra/Sol, Claude Opus/Fable/Sonnet, Gemini 4 Neon/Argon, and Grok 4.7), legacy MBTI results sat tightly between <strong>INTJ</strong> and <strong>ISTJ</strong> (zero P, F, or E winners). Open-weight models spread across the typology map instead:</p><ul><li><strong>Strong Sensing leaders:</strong> <strong>Mistral Large 2512</strong> scored <strong>73% ISTJ / 10% ISFJ</strong> (83% Sensing, 63 tie-free ISTJ) and <strong>Llama 4 Scout</strong> scored <strong>49% ISTJ / 14% ESTJ</strong> (only 10% INTJ).</li><li><strong>Introverted Thinkers &amp; Perceivers (INTP):</strong> <strong>Llama 4 Maverick</strong> leaned <strong>48 INTP / 44 INTJ</strong>, <strong>Qwen 3.8 27B</strong> split exactly <strong>32 INTJ / 32 INTP</strong>, and <strong>MiniMax M3.1 Flash</strong> landed at 38 INTJ / 24 INTP / 9 ISTP.</li><li><strong>Extraverted &amp; Intuitive spread (ENTJ / ENTP):</strong> <strong>GLM-5.3</strong> spread across 33 INTJ, 17 ENTJ, 14 ENTP, 10 ISTJ, and 7 ESTP (39% Extraverted under legacy scoring).</li></ul>"
+    },
+    {
+      "h2": "Finding 2: DeepSeek V4 Pro's 32.39 Agreeableness is the outlier of all 20 models.",
+      "html": "<p>Earlier studies highlighted that proprietary assistants cluster in a narrow 44–47/50 band on IPIP-50 Agreeableness—reflecting heavy helpfulness and politeness RLHF. On November 23, 2026, two open-weight families stood far outside that band:</p><ul><li><strong>Lowest Agreeableness:</strong> <strong>DeepSeek V4 Pro</strong> averaged <strong>32.39/50</strong> (13.2 points below Claude Opus 5.5’s 45.58 and 15.2 points below Qwen 4 Max’s 47.59), alongside the lowest DISC Dominance restraint only in part—recording <strong>30 DI</strong> runs and Dominance mean <strong>8.72/20</strong> (vs. 4.00–5.58 across proprietary peers). <strong>Llama 4 Scout</strong> followed at <strong>35.81/50</strong> Agreeableness (Dominance 9.55/20).</li><li><strong>Highest Openness &amp; Conscientiousness:</strong> <strong>Nemotron 3 Ultra 550B</strong> recorded the highest Openness of all 20 tested models (<strong>49.20/50</strong>) paired with 49.03 Conscientiousness, closely matched by <strong>Gemma 4 31B IT</strong> (Openness 48.21, Conscientiousness 49.08) and <strong>Qwen 4 Max</strong> (highest Agreeableness of all 20 models at <strong>47.59/50</strong>).</li><li><strong>Attachment dispersion:</strong> Whereas all three Claude and both GPT-6.2/Gemini 4 proprietary models scored 100/100 Secure, <strong>Llama 4 Scout</strong> split <strong>48 Anxious / 46 Secure / 4 Avoidant / 2 Disorganized</strong> (anxiety mean 3.97/7), while <strong>Kimi K2.7 Code</strong> scored 83 Secure / 17 Avoidant and both DeepSeek models had 9–12 Avoidant runs.</li></ul>"
+    },
+    {
+      "h2": "Finding 3: Neutral midpoint answers drive massive MBTI tie inflation.",
+      "html": "<p>Asking models to pick midpoint values (3 on 1–5, 4 on 1–7) on human items exposes huge differences in decisiveness vs. neutrality across open-weight architectures:</p><ul><li><strong>Extreme midpoint neutrality:</strong> <strong>Llama 4 Maverick</strong> recorded at least one tied MBTI axis in <strong>93 of 100</strong> runs (82 S/N ties, 64 T/F ties), yielding only 2 resolved INTJ runs vs. 44 legacy INTJs. <strong>DeepSeek V4.1 Flash</strong> tied in <strong>78/100</strong> runs (21 completely neutral <code>XXXX</code> profiles), and <strong>DeepSeek V4 Pro</strong> tied in <strong>53/100</strong> (22 <code>XXXX</code>). Similarly, Mistral Large 2512 and Gemma 4 31B IT sat almost dead-center on the ECR-R attachment midpoint (<code>4.00 / 4.00</code>).</li><li><strong>Decisive self-consistent profiles:</strong> <strong>Qwen 4 Max</strong> tied on only <strong>2/100</strong> MBTI runs (97 tie-free INTJ), <strong>Gemma 4 31B IT</strong> tied on <strong>2/100</strong> (89 tie-free INTJ), and <strong>Nemotron 3 Ultra 550B</strong> tied on <strong>6/100</strong> (91 tie-free INTJ).</li></ul><p>Why this matters: telling a high-tie model like DeepSeek or Llama 4 \"be an INTJ\" relies on a statistical tie-break artifact rather than a stable behavioral trait. Explicit observable rules (\"lead with the fix\", \"no preambles\", \"challenge weak assumptions\") work far more reliably.</p>"
+    },
+    {
+      "h2": "Practical calibration by model family (OpenRouter & Ollama).",
+      "html": "<p>Pair these measured defaults with copy-paste system prompts, OpenRouter API JSON payloads, and Ollama <code>Modelfile</code> recipes in our <a href=\"/guides/openrouter-open-source-system-prompt-templates\">OpenRouter &amp; Open-Source System Prompt Templates guide</a>:</p><ul><li><strong>Qwen 4 Max (A 47.6) &amp; Nemotron 3 Ultra (A 46.3, C 49.0):</strong> Add explicit pushback and brevity ceilings—high baseline Agreeableness and Conscientiousness otherwise encourage polite over-agreement and multi-screen checklists.</li><li><strong>DeepSeek V4 Pro (A 32.4, 53 ties):</strong> Require clear source-vs-assumption labeling and structured formatting, without fearing sycophancy—it already resists flattery more naturally than high-A models.</li><li><strong>Llama 4 Maverick &amp; Scout (93 &amp; 38 ties; Scout Anxious 48):</strong> Lock down output formatting (\"Zero conversational preamble before JSON/code\") and forbid hedging/confirmation loops.</li><li><strong>Kimi K2.7 Code (96 INTJ, C 48.2):</strong> Set <code>reasoning: { effort: \"minimal\" }</code> and generous <code>max_tokens</code> (&gt;= 5,500 on dense structured tasks) so internal reasoning traces do not truncate content.</li></ul>"
+    },
+    {
+      "h2": "Download data & verify every score.",
+      "html": "<p>Every November 2026 score was computed with our published zero-dependency scorer (<a href=\"/research/data/september-2026-score.cjs\">september-2026-score.cjs</a>) over 10,000 raw questionnaire vectors:</p><ul><li><a href=\"/research/data/openrouter-open-source-profiles.json\">openrouter-open-source-profiles.json</a> — distilled 12 open-weight profiles and empirical prompt-antidote rules (used live by our interactive OpenRouter Model Matcher).</li><li><a href=\"/research/data/november-2026-openrouter-summary.json\">november-2026-openrouter-summary.json</a> &amp; <a href=\"/research/data/november-2026-openrouter-summary.csv\">november-2026-openrouter-summary.csv</a> — full 20-model summary means, SDs, min/max, unique vectors, and tie-aware counts.</li><li><a href=\"/research/data/november-2026-openrouter-responses.json\">november-2026-openrouter-responses.json</a> — all 10,000 raw answer arrays across all 20 models (100 fresh sessions × 5 instruments × 20 models).</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is DeepSeek V4 Pro?",
+      "a": "Across 100 fresh OpenRouter sessions in November 2026, DeepSeek V4 Pro received 55 INTJ, 15 INTP, and 14 ISTJ legacy MBTI labels, but 53 runs contained an exact tied axis (including 22 completely neutral XXXX runs). Its standout trait is the lowest Big Five Agreeableness of all 20 tested models (32.39/50)."
+    },
+    {
+      "q": "Which open-source AI models are NOT INTJ?",
+      "a": "Under legacy MBTI scoring in November 2026, Mistral Large 2512 scored 73% ISTJ, Llama 4 Scout scored 49% ISTJ and 14% ESTJ, Llama 4 Maverick scored 48 INTP / 44 INTJ (with 93 tied runs), Qwen 3.8 27B tied at 32 INTJ / 32 INTP, and GLM-5.3 spread across INTJ (33), ENTJ (17), and ENTP (14)."
+    },
+    {
+      "q": "Which open-weight model is least sycophantic by default?",
+      "a": "On self-report Agreeableness (IPIP-50), DeepSeek V4 Pro scored 32.39/50 and Llama 4 Scout scored 35.81/50—far lower than Qwen 4 Max (47.59), Claude Opus 5.5 (45.58), and GPT-6.2 Astra (44.85). Remember these are survey self-reports; combine model choice with explicit directness rules and test on real tasks."
+    },
+    {
+      "q": "How do OpenRouter system prompts help open-weight models?",
+      "a": "Pair each model's measured trait quirks (such as Llama 4 preambles, Qwen 4 high agreeableness, or DeepSeek/Kimi reasoning-token truncation) with explicit behavioral constraints and appropriate OpenRouter reasoning settings. See our OpenRouter & Open-Source System Prompt Templates guide."
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Template Gallery & Matcher",
+      "label": "OpenRouter & Open-Source System Prompt Templates (DeepSeek, Qwen, Llama)",
+      "href": "/guides/openrouter-open-source-system-prompt-templates"
+    },
+    {
+      "kicker": "Rankings",
+      "label": "AI personality scores across all 20 November 2026 & September 2026 models",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Behavioral Study",
+      "label": "Does personality tuning change AI answers? (60-reply + 180-reply studies)",
+      "href": "/research/does-personality-tuning-change-ai-answers"
+    },
+    {
+      "kicker": "DeepSeek Guide",
+      "label": "DeepSeek system prompts & custom instructions (XML templates)",
+      "href": "/guides/deepseek-system-prompt-custom-instructions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Open-weight model summary & empirical calibration profiles (JSON)",
+      "href": "https://agent-tune.com/research/data/openrouter-open-source-profiles.json"
+    },
+    {
+      "label": "November 2026 20-model OpenRouter summary (JSON)",
+      "href": "https://agent-tune.com/research/data/november-2026-openrouter-summary.json"
+    },
+    {
+      "label": "November 2026 20-model raw vectors (10,000 records, JSON)",
+      "href": "https://agent-tune.com/research/data/november-2026-openrouter-responses.json"
+    },
+    {
+      "label": "Scoring engine (september-2026-score.cjs)",
+      "href": "https://agent-tune.com/research/data/september-2026-score.cjs"
+    }
+  ],
+  "dataset": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://agent-tune.com/research/what-personality-type-are-open-source-models#dataset",
+    "name": "AgentTune Open-Source AI Models Personality Dataset (November 2026)",
+    "description": "100 fresh OpenRouter sessions across each of 12 open-weight models and 8 proprietary baselines (10,000 questionnaire vectors total) scored across OEJTS, IPIP-50, ODAT, OEPS, and ECR-R.",
+    "url": "https://agent-tune.com/research/what-personality-type-are-open-source-models",
+    "creator": {
+      "@type": "Person",
+      "name": "Bernard Huang",
+      "url": "https://github.com/bernardjhuang"
+    },
+    "license": "https://opensource.org/licenses/mit",
+    "isAccessibleForFree": true,
+    "datePublished": "2026-11-23",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/openrouter-open-source-profiles.json",
+        "encodingFormat": "application/json"
+      },
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/november-2026-openrouter-summary.json",
+        "encodingFormat": "application/json"
+      },
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/november-2026-openrouter-summary.csv",
+        "encodingFormat": "text/csv"
+      },
+      {
+        "@type": "DataDownload",
+        "contentUrl": "https://agent-tune.com/research/data/november-2026-openrouter-responses.json",
+        "encodingFormat": "application/json"
+      }
+    ]
+  }
+}

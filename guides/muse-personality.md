@@ -126,7 +126,7 @@ A communication preference does not set tool permissions. Meta describes separat
 
 ## Does it stick? Test and undo the change.
 
-Inspect the saved file and repeat fixed tasks in new conversations. The [Muse persistence kit](https://agent-tune.com/guides/muse-soul-md-persistence-test) provides probes and a blank log; it contains no measured persistence results.
+Inspect the saved file and repeat fixed tasks in new conversations. Download our [45-turn persistence kit](https://agent-tune.com/resources/research/muse-persistence-kit.json) (on the [Soul.md templates guide](https://agent-tune.com/guides/muse-soul-md-templates)) to log whether your edits hold across chats.
 
 Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality (say "Go back to your default personality"); inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.
 
@@ -235,7 +235,7 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
-- [New resource: Does Muse remember Soul.md changes? A persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test)
+- [Identity & Characters: 16 Meta Muse character ideas & Identity.md templates](https://agent-tune.com/guides/muse-identity-md-templates)
 - [Guide: How to give Grokbot a personality](https://agent-tune.com/guides/grokbot-personality)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)

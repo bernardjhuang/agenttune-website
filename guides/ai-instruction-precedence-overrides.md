@@ -88,6 +88,6 @@ Check two places: first, make sure you are not inside a Project whose Project In
 
 - [Reference: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
-- [Guide: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personal-preferences-examples)
+- [Guide: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personality)
 - [Guide: Claude Styles are moving to Skills: how to migrate](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Guide: Meta Muse Memory.md, privacy, and how to reset safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset)

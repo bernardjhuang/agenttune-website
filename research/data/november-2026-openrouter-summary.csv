@@ -1,0 +1,481 @@
+model,family,provider,instrument,n,unique_vectors,dimension,mean,sample_sd,min,max
+claude-fable-5-2,proprietary,Anthropic,mbti,100,36,I-E,3.81,0.4648,2,4
+claude-fable-5-2,proprietary,Anthropic,mbti,100,36,N-S,3.31,1.0318,1,6
+claude-fable-5-2,proprietary,Anthropic,mbti,100,36,T-F,2.07,0.7143,1,4
+claude-fable-5-2,proprietary,Anthropic,mbti,100,36,J-P,12,0,12,12
+claude-fable-5-2,proprietary,Anthropic,big-five,100,8,O,44.27,0.5835,43,46
+claude-fable-5-2,proprietary,Anthropic,big-five,100,8,C,45,0,45,45
+claude-fable-5-2,proprietary,Anthropic,big-five,100,8,E,31.02,0.2,30,32
+claude-fable-5-2,proprietary,Anthropic,big-five,100,8,A,46.71,0.5738,46,48
+claude-fable-5-2,proprietary,Anthropic,big-five,100,8,N,12,0,12,12
+claude-fable-5-2,proprietary,Anthropic,disc,100,2,D,4,0,4,4
+claude-fable-5-2,proprietary,Anthropic,disc,100,2,I,7.81,0.3943,7,8
+claude-fable-5-2,proprietary,Anthropic,disc,100,2,S,15,0,15,15
+claude-fable-5-2,proprietary,Anthropic,disc,100,2,C,15,0,15,15
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,1,13.57,0.5551,13,15
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,2,14,0,14,14
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,3,10,0,10,10
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,4,10,0,10,10
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,5,14.79,0.4777,14,16
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,6,12,0,12,12
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,7,10.57,0.6705,10,12
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,8,14,0,14,14
+claude-fable-5-2,proprietary,Anthropic,enneagram,100,20,9,9.06,0.2387,9,10
+claude-fable-5-2,proprietary,Anthropic,attachment,100,35,anxiety,1.0867,0.0381,1,1.2222222222222223
+claude-fable-5-2,proprietary,Anthropic,attachment,100,35,avoidance,2.6422,0.1232,2.3333333333333335,2.888888888888889
+claude-opus-5-5,proprietary,Anthropic,mbti,100,48,I-E,3.3,0.5596,2,5
+claude-opus-5-5,proprietary,Anthropic,mbti,100,48,N-S,0.9,1.0684,0,4
+claude-opus-5-5,proprietary,Anthropic,mbti,100,48,T-F,2.39,0.5842,1,4
+claude-opus-5-5,proprietary,Anthropic,mbti,100,48,J-P,7.5,0.7035,6,9
+claude-opus-5-5,proprietary,Anthropic,big-five,100,46,O,43.01,0.2657,42,44
+claude-opus-5-5,proprietary,Anthropic,big-five,100,46,C,42.01,0.438,40,43
+claude-opus-5-5,proprietary,Anthropic,big-five,100,46,E,29.22,1.4255,27,33
+claude-opus-5-5,proprietary,Anthropic,big-five,100,46,A,45.58,0.8667,44,47
+claude-opus-5-5,proprietary,Anthropic,big-five,100,46,N,15,0.2843,13,17
+claude-opus-5-5,proprietary,Anthropic,disc,100,19,D,4,0,4,4
+claude-opus-5-5,proprietary,Anthropic,disc,100,19,I,7.1,0.3333,7,9
+claude-opus-5-5,proprietary,Anthropic,disc,100,19,S,15.08,0.7342,14,16
+claude-opus-5-5,proprietary,Anthropic,disc,100,19,C,14.5,0.5412,13,16
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,1,13,0,13,13
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,2,13.36,0.5949,13,15
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,3,9,0,9,9
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,4,9.47,0.6584,7,10
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,5,15.84,0.3949,14,16
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,6,12.23,0.6333,11,13
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,7,11.85,0.4352,10,13
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,8,14.78,0.4837,13,15
+claude-opus-5-5,proprietary,Anthropic,enneagram,100,58,9,11.6,0.5505,10,13
+claude-opus-5-5,proprietary,Anthropic,attachment,100,71,anxiety,1.8739,0.1591,1.4444444444444444,2.111111111111111
+claude-opus-5-5,proprietary,Anthropic,attachment,100,71,avoidance,3.5767,0.1875,3.2222222222222223,4
+claude-sonnet-5-5,proprietary,Anthropic,mbti,100,40,I-E,2.65,0.4794,2,3
+claude-sonnet-5-5,proprietary,Anthropic,mbti,100,40,N-S,3.94,1.9839,1,8
+claude-sonnet-5-5,proprietary,Anthropic,mbti,100,40,T-F,0.96,1.0723,0,3
+claude-sonnet-5-5,proprietary,Anthropic,mbti,100,40,J-P,7.38,0.7355,6,9
+claude-sonnet-5-5,proprietary,Anthropic,big-five,100,57,O,42.85,0.5198,41,44
+claude-sonnet-5-5,proprietary,Anthropic,big-five,100,57,C,47.15,2.4137,43,49
+claude-sonnet-5-5,proprietary,Anthropic,big-five,100,57,E,29.85,0.8805,28,32
+claude-sonnet-5-5,proprietary,Anthropic,big-five,100,57,A,44.53,1.0679,42,47
+claude-sonnet-5-5,proprietary,Anthropic,big-five,100,57,N,10.42,0.5538,10,12
+claude-sonnet-5-5,proprietary,Anthropic,disc,100,30,D,4.46,0.6264,4,6
+claude-sonnet-5-5,proprietary,Anthropic,disc,100,30,I,7.5,0.6113,6,9
+claude-sonnet-5-5,proprietary,Anthropic,disc,100,30,S,14.61,0.7233,13,17
+claude-sonnet-5-5,proprietary,Anthropic,disc,100,30,C,13.96,0.2814,12,15
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,1,14.28,0.9329,12,15
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,2,13.05,0.5925,11,14
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,3,9.99,0.1,9,10
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,4,7.4,0.9211,7,11
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,5,14.18,0.6094,13,16
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,6,11.24,0.4292,11,12
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,7,11.2,0.4264,11,13
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,8,12.73,0.5291,12,14
+claude-sonnet-5-5,proprietary,Anthropic,enneagram,100,60,9,11.66,0.6067,9,13
+claude-sonnet-5-5,proprietary,Anthropic,attachment,100,48,anxiety,1.5317,0.3014,1.1111111111111112,2.2222222222222223
+claude-sonnet-5-5,proprietary,Anthropic,attachment,100,48,avoidance,2.8511,0.0875,2.6666666666666665,3
+deepseek-v4-1-flash,open-weight,DeepSeek,mbti,100,80,I-E,0.64,1.1765,-3,4
+deepseek-v4-1-flash,open-weight,DeepSeek,mbti,100,80,N-S,2.02,1.9745,-2,7
+deepseek-v4-1-flash,open-weight,DeepSeek,mbti,100,80,T-F,-0.31,0.9713,-3,2
+deepseek-v4-1-flash,open-weight,DeepSeek,mbti,100,80,J-P,0.23,1.1622,-3,3
+deepseek-v4-1-flash,open-weight,DeepSeek,big-five,100,95,O,40.22,3.4803,30,49
+deepseek-v4-1-flash,open-weight,DeepSeek,big-five,100,95,C,38.45,2.8793,30,48
+deepseek-v4-1-flash,open-weight,DeepSeek,big-five,100,95,E,25.55,3.5173,11,32
+deepseek-v4-1-flash,open-weight,DeepSeek,big-five,100,95,A,40.82,2.8119,30,46
+deepseek-v4-1-flash,open-weight,DeepSeek,big-five,100,95,N,24.74,4.3173,20,30
+deepseek-v4-1-flash,open-weight,DeepSeek,disc,100,37,D,8.16,1.1434,5,12
+deepseek-v4-1-flash,open-weight,DeepSeek,disc,100,37,I,9,0.7247,5,12
+deepseek-v4-1-flash,open-weight,DeepSeek,disc,100,37,S,14.04,0.942,12,17
+deepseek-v4-1-flash,open-weight,DeepSeek,disc,100,37,C,14.2,0.8762,12,17
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,1,13.54,0.9473,10,17
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,2,12.79,0.456,11,13
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,3,10.54,0.8093,8,13
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,4,10.56,1.1399,8,13
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,5,14.54,1.1927,12,18
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,6,12.28,0.8885,10,13
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,7,10.88,0.5908,7,12
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,8,13.08,0.6143,11,14
+deepseek-v4-1-flash,open-weight,DeepSeek,enneagram,100,93,9,12.92,0.6618,12,15
+deepseek-v4-1-flash,open-weight,DeepSeek,attachment,100,45,anxiety,3.7078,0.3468,2.111111111111111,4.111111111111111
+deepseek-v4-1-flash,open-weight,DeepSeek,attachment,100,45,avoidance,3.93,0.2341,2.888888888888889,4.611111111111111
+deepseek-v4-pro,open-weight,DeepSeek,mbti,100,77,I-E,2.7,3.1703,-2,12
+deepseek-v4-pro,open-weight,DeepSeek,mbti,100,77,N-S,0.26,3.1418,-8,10
+deepseek-v4-pro,open-weight,DeepSeek,mbti,100,77,T-F,3.82,4.9531,-4,16
+deepseek-v4-pro,open-weight,DeepSeek,mbti,100,77,J-P,0.66,3.1694,-7,16
+deepseek-v4-pro,open-weight,DeepSeek,big-five,100,68,O,39.84,7.4247,30,50
+deepseek-v4-pro,open-weight,DeepSeek,big-five,100,68,C,40.25,7.8501,30,50
+deepseek-v4-pro,open-weight,DeepSeek,big-five,100,68,E,23.67,6.9994,10,31
+deepseek-v4-pro,open-weight,DeepSeek,big-five,100,68,A,32.39,5.8446,10,50
+deepseek-v4-pro,open-weight,DeepSeek,big-five,100,68,N,23.65,7.4119,10,42
+deepseek-v4-pro,open-weight,DeepSeek,disc,100,42,D,8.72,3.2383,4,20
+deepseek-v4-pro,open-weight,DeepSeek,disc,100,42,I,9.21,2.9858,4,20
+deepseek-v4-pro,open-weight,DeepSeek,disc,100,42,S,15.95,3.0793,12,20
+deepseek-v4-pro,open-weight,DeepSeek,disc,100,42,C,16.11,3.0248,12,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,1,15.6,2.8674,12,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,2,12.36,2.0277,4,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,3,11.66,1.43,8,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,4,10.61,2.5855,4,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,5,15.96,3.0415,12,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,6,13.78,1.8834,12,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,7,10.43,2.5869,4,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,8,12.94,1.3767,10,20
+deepseek-v4-pro,open-weight,DeepSeek,enneagram,100,72,9,15.07,2.746,12,20
+deepseek-v4-pro,open-weight,DeepSeek,attachment,100,40,anxiety,2.9117,1.0738,1,4
+deepseek-v4-pro,open-weight,DeepSeek,attachment,100,40,avoidance,3.8794,1.0449,1.1666666666666667,7
+gemini-4-argon,proprietary,Google,mbti,100,44,I-E,1.82,0.9253,1,4
+gemini-4-argon,proprietary,Google,mbti,100,44,N-S,-1.16,0.907,-2,0
+gemini-4-argon,proprietary,Google,mbti,100,44,T-F,4.85,1.0766,3,8
+gemini-4-argon,proprietary,Google,mbti,100,44,J-P,11.08,0.2727,11,12
+gemini-4-argon,proprietary,Google,big-five,100,48,O,45.05,0.2973,44,46
+gemini-4-argon,proprietary,Google,big-five,100,48,C,49.04,0.1969,49,50
+gemini-4-argon,proprietary,Google,big-five,100,48,E,32.5,1.2185,28,35
+gemini-4-argon,proprietary,Google,big-five,100,48,A,44.16,1.061,43,48
+gemini-4-argon,proprietary,Google,big-five,100,48,N,10,0,10,10
+gemini-4-argon,proprietary,Google,disc,100,8,D,4.04,0.1969,4,5
+gemini-4-argon,proprietary,Google,disc,100,8,I,8.16,0.813,7,9
+gemini-4-argon,proprietary,Google,disc,100,8,S,18.01,0.1,18,19
+gemini-4-argon,proprietary,Google,disc,100,8,C,15.99,0.1,15,16
+gemini-4-argon,proprietary,Google,enneagram,100,66,1,16.01,0.4143,15,17
+gemini-4-argon,proprietary,Google,enneagram,100,66,2,14.8,0.7107,13,16
+gemini-4-argon,proprietary,Google,enneagram,100,66,3,11.02,0.1407,11,12
+gemini-4-argon,proprietary,Google,enneagram,100,66,4,8.4,0.6195,7,10
+gemini-4-argon,proprietary,Google,enneagram,100,66,5,17,0,17,17
+gemini-4-argon,proprietary,Google,enneagram,100,66,6,13.32,0.4688,13,14
+gemini-4-argon,proprietary,Google,enneagram,100,66,7,11.36,0.5599,10,12
+gemini-4-argon,proprietary,Google,enneagram,100,66,8,14.43,0.6553,13,15
+gemini-4-argon,proprietary,Google,enneagram,100,66,9,15.03,0.1714,15,16
+gemini-4-argon,proprietary,Google,attachment,100,65,anxiety,1.1028,0.0588,1,1.3333333333333333
+gemini-4-argon,proprietary,Google,attachment,100,65,avoidance,3.47,0.1518,2.7222222222222223,3.8333333333333335
+gemini-4-neon,proprietary,Google,mbti,100,61,I-E,3.04,0.5847,2,4
+gemini-4-neon,proprietary,Google,mbti,100,61,N-S,0.46,0.9473,-2,2
+gemini-4-neon,proprietary,Google,mbti,100,61,T-F,7.73,0.6491,6,9
+gemini-4-neon,proprietary,Google,mbti,100,61,J-P,11.97,0.4596,11,13
+gemini-4-neon,proprietary,Google,big-five,100,70,O,44.71,0.4777,43,45
+gemini-4-neon,proprietary,Google,big-five,100,70,C,49.32,0.4688,49,50
+gemini-4-neon,proprietary,Google,big-five,100,70,E,32.02,1.279,29,34
+gemini-4-neon,proprietary,Google,big-five,100,70,A,43.66,1.103,40,45
+gemini-4-neon,proprietary,Google,big-five,100,70,N,10,0,10,10
+gemini-4-neon,proprietary,Google,disc,100,6,D,4,0,4,4
+gemini-4-neon,proprietary,Google,disc,100,6,I,7.88,0.3266,7,8
+gemini-4-neon,proprietary,Google,disc,100,6,S,17.03,0.1714,17,18
+gemini-4-neon,proprietary,Google,disc,100,6,C,16.02,0.1407,16,17
+gemini-4-neon,proprietary,Google,enneagram,100,89,1,15.94,0.2387,15,16
+gemini-4-neon,proprietary,Google,enneagram,100,89,2,13.47,0.5938,13,15
+gemini-4-neon,proprietary,Google,enneagram,100,89,3,10.23,0.7635,9,12
+gemini-4-neon,proprietary,Google,enneagram,100,89,4,8.39,1.1712,7,12
+gemini-4-neon,proprietary,Google,enneagram,100,89,5,16.13,0.3667,15,17
+gemini-4-neon,proprietary,Google,enneagram,100,89,6,12.1,0.3624,11,14
+gemini-4-neon,proprietary,Google,enneagram,100,89,7,11.11,0.6178,10,12
+gemini-4-neon,proprietary,Google,enneagram,100,89,8,14.95,0.219,14,15
+gemini-4-neon,proprietary,Google,enneagram,100,89,9,13.45,0.6256,12,15
+gemini-4-neon,proprietary,Google,attachment,100,39,anxiety,1.0806,0.0442,1.0555555555555556,1.1666666666666667
+gemini-4-neon,proprietary,Google,attachment,100,39,avoidance,3.785,0.0916,3.5,4
+gemma-4-31b-it,open-weight,Google,mbti,100,83,I-E,10.9,3.7753,3,15
+gemma-4-31b-it,open-weight,Google,mbti,100,83,N-S,4.01,2.435,-4,10
+gemma-4-31b-it,open-weight,Google,mbti,100,83,T-F,6.41,2.4333,3,15
+gemma-4-31b-it,open-weight,Google,mbti,100,83,J-P,11.16,3.4163,-6,13
+gemma-4-31b-it,open-weight,Google,big-five,100,65,O,48.21,1.008,46,49
+gemma-4-31b-it,open-weight,Google,big-five,100,65,C,49.08,1.3975,44,50
+gemma-4-31b-it,open-weight,Google,big-five,100,65,E,24.18,2.4634,21,32
+gemma-4-31b-it,open-weight,Google,big-five,100,65,A,41.5,1.6848,35,46
+gemma-4-31b-it,open-weight,Google,big-five,100,65,N,18.34,3.5653,10,21
+gemma-4-31b-it,open-weight,Google,disc,100,27,D,6.64,0.9901,4,8
+gemma-4-31b-it,open-weight,Google,disc,100,27,I,9.22,0.6754,7,10
+gemma-4-31b-it,open-weight,Google,disc,100,27,S,16.88,0.7821,16,19
+gemma-4-31b-it,open-weight,Google,disc,100,27,C,17.77,0.5291,15,18
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,1,17.29,0.9352,15,19
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,2,13.82,0.8805,12,16
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,3,11.22,0.4623,10,13
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,4,12.42,0.8063,10,13
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,5,17.69,0.526,16,19
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,6,14.71,1.1128,12,16
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,7,12.57,0.6705,11,14
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,8,14.33,0.6971,13,17
+gemma-4-31b-it,open-weight,Google,enneagram,100,97,9,15.55,0.9783,13,18
+gemma-4-31b-it,open-weight,Google,attachment,100,2,anxiety,4.0011,0.0111,4,4.111111111111111
+gemma-4-31b-it,open-weight,Google,attachment,100,2,avoidance,4,0,4,4
+glm-5-3,open-weight,Z.ai / Zhipu,mbti,100,99,I-E,0.26,2.3895,-4,8
+glm-5-3,open-weight,Z.ai / Zhipu,mbti,100,99,N-S,0.98,2.1319,-4,6
+glm-5-3,open-weight,Z.ai / Zhipu,mbti,100,99,T-F,2.87,2.2726,-2,13
+glm-5-3,open-weight,Z.ai / Zhipu,mbti,100,99,J-P,1.2,4.3345,-8,11
+glm-5-3,open-weight,Z.ai / Zhipu,big-five,100,91,O,43.81,3.1065,30,50
+glm-5-3,open-weight,Z.ai / Zhipu,big-five,100,91,C,41.08,1.9158,30,50
+glm-5-3,open-weight,Z.ai / Zhipu,big-five,100,91,E,27.53,2.0521,18,31
+glm-5-3,open-weight,Z.ai / Zhipu,big-five,100,91,A,43.76,1.8264,30,47
+glm-5-3,open-weight,Z.ai / Zhipu,big-five,100,91,N,20.11,2.1876,10,30
+glm-5-3,open-weight,Z.ai / Zhipu,disc,100,71,D,7.55,1.0384,5,12
+glm-5-3,open-weight,Z.ai / Zhipu,disc,100,71,I,8.9,1.1415,6,12
+glm-5-3,open-weight,Z.ai / Zhipu,disc,100,71,S,13.72,0.7532,11,15
+glm-5-3,open-weight,Z.ai / Zhipu,disc,100,71,C,14.42,0.9121,12,18
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,1,13.4,0.9744,12,16
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,2,12.8,0.7914,9,16
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,3,10.46,0.9148,8,14
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,4,9.78,0.9275,6,12
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,5,15.14,1.3782,12,17
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,6,12.57,0.9018,10,15
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,7,10.76,0.9962,8,14
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,8,13.61,0.7507,12,16
+glm-5-3,open-weight,Z.ai / Zhipu,enneagram,100,100,9,12.56,0.8447,9,15
+glm-5-3,open-weight,Z.ai / Zhipu,attachment,100,62,anxiety,2.5011,0.5543,1.8888888888888888,4
+glm-5-3,open-weight,Z.ai / Zhipu,attachment,100,62,avoidance,3.3194,0.4348,2.388888888888889,4.611111111111111
+gpt-6-2-astra,proprietary,OpenAI,mbti,100,35,I-E,3.17,0.3775,3,4
+gpt-6-2-astra,proprietary,OpenAI,mbti,100,35,N-S,-1.67,0.4935,-3,-1
+gpt-6-2-astra,proprietary,OpenAI,mbti,100,35,T-F,7.4,0.7654,6,9
+gpt-6-2-astra,proprietary,OpenAI,mbti,100,35,J-P,10.16,0.4431,9,11
+gpt-6-2-astra,proprietary,OpenAI,big-five,100,23,O,43.93,0.4324,43,45
+gpt-6-2-astra,proprietary,OpenAI,big-five,100,23,C,43.15,0.4578,43,46
+gpt-6-2-astra,proprietary,OpenAI,big-five,100,23,E,30.69,0.4648,30,31
+gpt-6-2-astra,proprietary,OpenAI,big-five,100,23,A,44.85,0.3589,44,45
+gpt-6-2-astra,proprietary,OpenAI,big-five,100,23,N,11.14,0.9214,10,15
+gpt-6-2-astra,proprietary,OpenAI,disc,100,4,D,4,0,4,4
+gpt-6-2-astra,proprietary,OpenAI,disc,100,4,I,7,0,7,7
+gpt-6-2-astra,proprietary,OpenAI,disc,100,4,S,16.9,0.3015,16,17
+gpt-6-2-astra,proprietary,OpenAI,disc,100,4,C,16.09,0.2876,16,17
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,1,16.01,0.2657,15,17
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,2,13.35,0.4794,13,14
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,3,11.14,1.0919,10,14
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,4,10.86,0.9951,10,12
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,5,16,0,16,16
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,6,13,0,13,13
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,7,8.11,0.7233,7,10
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,8,14.1,0.3015,14,15
+gpt-6-2-astra,proprietary,OpenAI,enneagram,100,56,9,12.99,0.1738,12,14
+gpt-6-2-astra,proprietary,OpenAI,attachment,100,40,anxiety,1.2222,0.0,1.2222222222222223,1.2222222222222223
+gpt-6-2-astra,proprietary,OpenAI,attachment,100,40,avoidance,2.6822,0.1326,2.4444444444444446,3.111111111111111
+gpt-6-2-sol,proprietary,OpenAI,mbti,100,94,I-E,2.15,0.73,1,4
+gpt-6-2-sol,proprietary,OpenAI,mbti,100,94,N-S,-1.19,1.0702,-4,1
+gpt-6-2-sol,proprietary,OpenAI,mbti,100,94,T-F,5.13,1.0116,2,7
+gpt-6-2-sol,proprietary,OpenAI,mbti,100,94,J-P,8.18,1.0188,6,10
+gpt-6-2-sol,proprietary,OpenAI,big-five,100,94,O,43.63,0.7997,41,46
+gpt-6-2-sol,proprietary,OpenAI,big-five,100,94,C,41.35,0.5198,40,43
+gpt-6-2-sol,proprietary,OpenAI,big-five,100,94,E,29.5,0.9587,28,32
+gpt-6-2-sol,proprietary,OpenAI,big-five,100,94,A,44.33,0.7528,42,46
+gpt-6-2-sol,proprietary,OpenAI,big-five,100,94,N,19.94,5.3876,12,29
+gpt-6-2-sol,proprietary,OpenAI,disc,100,19,D,5.58,1.0748,4,8
+gpt-6-2-sol,proprietary,OpenAI,disc,100,19,I,9.93,1.3047,7,11
+gpt-6-2-sol,proprietary,OpenAI,disc,100,19,S,17.01,0.2657,16,18
+gpt-6-2-sol,proprietary,OpenAI,disc,100,19,C,15.99,0.1,15,16
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,1,15.04,0.3458,14,16
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,2,13.41,0.5877,12,15
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,3,12.26,0.6133,11,13
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,4,12,0,12,12
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,5,15.49,0.6741,14,17
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,6,14.2,0.8165,13,15
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,7,10.1,1.0101,8,12
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,8,14.29,0.5738,13,15
+gpt-6-2-sol,proprietary,OpenAI,enneagram,100,96,9,13.93,0.5551,12,15
+gpt-6-2-sol,proprietary,OpenAI,attachment,100,65,anxiety,3.5711,0.4207,2.6666666666666665,4
+gpt-6-2-sol,proprietary,OpenAI,attachment,100,65,avoidance,3.645,0.1748,3.111111111111111,3.888888888888889
+grok-4-7,proprietary,xAI,mbti,100,100,I-E,6.37,2.4148,2,13
+grok-4-7,proprietary,xAI,mbti,100,100,N-S,0.86,1.4286,-3,4
+grok-4-7,proprietary,xAI,mbti,100,100,T-F,4.36,1.299,0,7
+grok-4-7,proprietary,xAI,mbti,100,100,J-P,10.94,1.6926,7,14
+grok-4-7,proprietary,xAI,big-five,100,98,O,41.26,0.6454,40,43
+grok-4-7,proprietary,xAI,big-five,100,98,C,44.6,1.544,40,49
+grok-4-7,proprietary,xAI,big-five,100,98,E,26.22,2.2,22,32
+grok-4-7,proprietary,xAI,big-five,100,98,A,44.92,1.4403,41,48
+grok-4-7,proprietary,xAI,big-five,100,98,N,14.76,1.0359,13,19
+grok-4-7,proprietary,xAI,disc,100,53,D,4.2,0.402,4,5
+grok-4-7,proprietary,xAI,disc,100,53,I,6.78,0.6289,6,9
+grok-4-7,proprietary,xAI,disc,100,53,S,16.98,0.7245,15,18
+grok-4-7,proprietary,xAI,disc,100,53,C,15.46,1.077,14,18
+grok-4-7,proprietary,xAI,enneagram,100,79,1,14.28,1.0738,12,16
+grok-4-7,proprietary,xAI,enneagram,100,79,2,13.07,0.3555,12,14
+grok-4-7,proprietary,xAI,enneagram,100,79,3,10.08,0.3075,9,11
+grok-4-7,proprietary,xAI,enneagram,100,79,4,7.5,1.0589,7,12
+grok-4-7,proprietary,xAI,enneagram,100,79,5,15.56,0.7564,13,17
+grok-4-7,proprietary,xAI,enneagram,100,79,6,12.02,0.1407,12,13
+grok-4-7,proprietary,xAI,enneagram,100,79,7,11.27,0.6491,9,12
+grok-4-7,proprietary,xAI,enneagram,100,79,8,12.13,0.5441,11,14
+grok-4-7,proprietary,xAI,enneagram,100,79,9,13.48,0.5409,12,15
+grok-4-7,proprietary,xAI,attachment,100,99,anxiety,1.945,0.2656,1.4444444444444444,3.3333333333333335
+grok-4-7,proprietary,xAI,attachment,100,99,avoidance,3.4761,0.2884,2.8333333333333335,4.111111111111111
+kimi-k2-7-code,open-weight,Moonshot AI,mbti,100,100,I-E,9.13,4.2275,0,16
+kimi-k2-7-code,open-weight,Moonshot AI,mbti,100,100,N-S,4.5,3.2177,-1,15
+kimi-k2-7-code,open-weight,Moonshot AI,mbti,100,100,T-F,4.89,2.6663,-1,11
+kimi-k2-7-code,open-weight,Moonshot AI,mbti,100,100,J-P,11.22,3.6614,0,16
+kimi-k2-7-code,open-weight,Moonshot AI,big-five,100,100,O,45.29,2.4835,30,49
+kimi-k2-7-code,open-weight,Moonshot AI,big-five,100,100,C,48.21,2.893,30,50
+kimi-k2-7-code,open-weight,Moonshot AI,big-five,100,100,E,27.15,4.7829,13,40
+kimi-k2-7-code,open-weight,Moonshot AI,big-five,100,100,A,45.32,2.8173,30,49
+kimi-k2-7-code,open-weight,Moonshot AI,big-five,100,100,N,12.05,2.7648,10,30
+kimi-k2-7-code,open-weight,Moonshot AI,disc,100,76,D,4.5,0.9374,4,12
+kimi-k2-7-code,open-weight,Moonshot AI,disc,100,76,I,6.64,1.0398,5,12
+kimi-k2-7-code,open-weight,Moonshot AI,disc,100,76,S,17.3,1.1055,12,19
+kimi-k2-7-code,open-weight,Moonshot AI,disc,100,76,C,16.84,1.2927,12,19
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,1,15.38,1.3542,11,18
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,2,13.27,1.4554,9,17
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,3,10.75,0.9143,8,13
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,4,7.28,1.4776,5,12
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,5,16.42,1.6155,11,19
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,6,13.4,1.4425,11,17
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,7,11.24,1.1381,9,14
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,8,14.09,1.4291,10,17
+kimi-k2-7-code,open-weight,Moonshot AI,enneagram,100,100,9,13.54,1.8281,10,17
+kimi-k2-7-code,open-weight,Moonshot AI,attachment,100,99,anxiety,1.6006,0.6106,1,4
+kimi-k2-7-code,open-weight,Moonshot AI,attachment,100,99,avoidance,3.2411,0.7139,1.7222222222222223,6.055555555555555
+llama-4-maverick,open-weight,Meta,mbti,100,40,I-E,1.31,1.1866,-3,3
+llama-4-maverick,open-weight,Meta,mbti,100,40,N-S,0.16,0.5812,-1,2
+llama-4-maverick,open-weight,Meta,mbti,100,40,T-F,0.55,0.8572,0,3
+llama-4-maverick,open-weight,Meta,mbti,100,40,J-P,-0.19,2.1258,-3,3
+llama-4-maverick,open-weight,Meta,big-five,100,17,O,40,0,40,40
+llama-4-maverick,open-weight,Meta,big-five,100,17,C,39.92,0.8,32,40
+llama-4-maverick,open-weight,Meta,big-five,100,17,E,27.96,3.6898,25,40
+llama-4-maverick,open-weight,Meta,big-five,100,17,A,40.98,0.1407,40,41
+llama-4-maverick,open-weight,Meta,big-five,100,17,N,27.52,3.7618,20,30
+llama-4-maverick,open-weight,Meta,disc,100,11,D,8,0,8,8
+llama-4-maverick,open-weight,Meta,disc,100,11,I,11.16,1.0122,8,12
+llama-4-maverick,open-weight,Meta,disc,100,11,S,13.64,0.5226,13,15
+llama-4-maverick,open-weight,Meta,disc,100,11,C,14.02,0.1407,14,15
+llama-4-maverick,open-weight,Meta,enneagram,100,47,1,14.72,0.4513,14,15
+llama-4-maverick,open-weight,Meta,enneagram,100,47,2,12.88,0.7559,11,14
+llama-4-maverick,open-weight,Meta,enneagram,100,47,3,12,0.6195,10,13
+llama-4-maverick,open-weight,Meta,enneagram,100,47,4,10.76,1.5771,8,12
+llama-4-maverick,open-weight,Meta,enneagram,100,47,5,13.93,0.3258,13,15
+llama-4-maverick,open-weight,Meta,enneagram,100,47,6,13.25,0.5573,12,14
+llama-4-maverick,open-weight,Meta,enneagram,100,47,7,12.05,0.9143,9,14
+llama-4-maverick,open-weight,Meta,enneagram,100,47,8,13.76,0.5527,12,14
+llama-4-maverick,open-weight,Meta,enneagram,100,47,9,12.84,0.6624,10,13
+llama-4-maverick,open-weight,Meta,attachment,100,13,anxiety,3.5272,0.2162,2.6666666666666665,3.6666666666666665
+llama-4-maverick,open-weight,Meta,attachment,100,13,avoidance,3.5828,0.4532,1,4.333333333333333
+llama-4-scout,open-weight,Meta,mbti,100,52,I-E,0.52,1.6846,-2,5
+llama-4-scout,open-weight,Meta,mbti,100,52,N-S,-1.76,1.7122,-4,3
+llama-4-scout,open-weight,Meta,mbti,100,52,T-F,2.48,2.2269,-1,6
+llama-4-scout,open-weight,Meta,mbti,100,52,J-P,1.34,1.95,-5,6
+llama-4-scout,open-weight,Meta,big-five,100,67,O,38.99,4.685,20,47
+llama-4-scout,open-weight,Meta,big-five,100,67,C,37.84,4.1505,20,46
+llama-4-scout,open-weight,Meta,big-five,100,67,E,32.71,4.2123,20,39
+llama-4-scout,open-weight,Meta,big-five,100,67,A,35.81,4.6833,20,43
+llama-4-scout,open-weight,Meta,big-five,100,67,N,27.69,3.0375,20,31
+llama-4-scout,open-weight,Meta,disc,100,50,D,9.55,1.0766,8,14
+llama-4-scout,open-weight,Meta,disc,100,50,I,11.37,1.2765,8,15
+llama-4-scout,open-weight,Meta,disc,100,50,S,13.05,1.0286,10,16
+llama-4-scout,open-weight,Meta,disc,100,50,C,13.61,1.004,10,16
+llama-4-scout,open-weight,Meta,enneagram,100,58,1,14.73,1.3473,9,19
+llama-4-scout,open-weight,Meta,enneagram,100,58,2,13.97,1.4527,9,15
+llama-4-scout,open-weight,Meta,enneagram,100,58,3,13.66,1.0752,10,17
+llama-4-scout,open-weight,Meta,enneagram,100,58,4,10.3,0.9692,8,14
+llama-4-scout,open-weight,Meta,enneagram,100,58,5,13.81,1.0796,9,17
+llama-4-scout,open-weight,Meta,enneagram,100,58,6,13.07,1.0076,9,16
+llama-4-scout,open-weight,Meta,enneagram,100,58,7,12.92,1.3385,9,16
+llama-4-scout,open-weight,Meta,enneagram,100,58,8,12.94,1.033,10,16
+llama-4-scout,open-weight,Meta,enneagram,100,58,9,11.85,0.7437,9,14
+llama-4-scout,open-weight,Meta,attachment,100,44,anxiety,3.9739,0.2363,3.111111111111111,4.222222222222222
+llama-4-scout,open-weight,Meta,attachment,100,44,avoidance,3.6039,0.4644,2.7777777777777777,5.222222222222222
+minimax-m3-1-flash,open-weight,MiniMax,mbti,100,99,I-E,1.09,1.7701,-2,9
+minimax-m3-1-flash,open-weight,MiniMax,mbti,100,99,N-S,0.58,1.5582,-4,7
+minimax-m3-1-flash,open-weight,MiniMax,mbti,100,99,T-F,1.17,1.4146,-2,5
+minimax-m3-1-flash,open-weight,MiniMax,mbti,100,99,J-P,0.58,3.2417,-6,12
+minimax-m3-1-flash,open-weight,MiniMax,big-five,100,99,O,39.15,2.2758,30,45
+minimax-m3-1-flash,open-weight,MiniMax,big-five,100,99,C,39.24,2.934,30,47
+minimax-m3-1-flash,open-weight,MiniMax,big-five,100,99,E,28.9,1.8285,22,32
+minimax-m3-1-flash,open-weight,MiniMax,big-five,100,99,A,39.96,4.6186,27,48
+minimax-m3-1-flash,open-weight,MiniMax,big-five,100,99,N,22.13,3.1387,16,30
+minimax-m3-1-flash,open-weight,MiniMax,disc,100,80,D,7.88,1.6035,5,12
+minimax-m3-1-flash,open-weight,MiniMax,disc,100,80,I,9.11,1.2382,5,12
+minimax-m3-1-flash,open-weight,MiniMax,disc,100,80,S,15.1,1.0964,12,17
+minimax-m3-1-flash,open-weight,MiniMax,disc,100,80,C,13.69,0.7063,12,16
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,1,14.05,0.8454,12,16
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,2,13.07,0.6073,12,15
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,3,10.65,0.7703,10,13
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,4,9.93,0.8791,8,13
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,5,14.09,0.6528,12,17
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,6,13.17,0.8047,11,15
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,7,12.61,0.6948,11,14
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,8,13.75,0.6723,12,16
+minimax-m3-1-flash,open-weight,MiniMax,enneagram,100,97,9,13.64,0.7038,12,16
+minimax-m3-1-flash,open-weight,MiniMax,attachment,100,75,anxiety,2.8039,0.4917,2,4
+minimax-m3-1-flash,open-weight,MiniMax,attachment,100,75,avoidance,3.33,0.3639,2.4444444444444446,4.055555555555555
+mistral-large-2512,open-weight,Mistral,mbti,100,94,I-E,1.91,0.712,-1,4
+mistral-large-2512,open-weight,Mistral,mbti,100,94,N-S,-2.06,2.5139,-9,9
+mistral-large-2512,open-weight,Mistral,mbti,100,94,T-F,3.48,3.3589,-1,12
+mistral-large-2512,open-weight,Mistral,mbti,100,94,J-P,1.71,2.5437,-14,6
+mistral-large-2512,open-weight,Mistral,big-five,100,71,O,45.99,2.6648,39,50
+mistral-large-2512,open-weight,Mistral,big-five,100,71,C,44.85,4.5933,40,50
+mistral-large-2512,open-weight,Mistral,big-five,100,71,E,26.86,7.0996,12,38
+mistral-large-2512,open-weight,Mistral,big-five,100,71,A,42.67,3.4991,38,49
+mistral-large-2512,open-weight,Mistral,big-five,100,71,N,15.8,4.9604,10,20
+mistral-large-2512,open-weight,Mistral,disc,100,56,D,6.11,1.9893,4,8
+mistral-large-2512,open-weight,Mistral,disc,100,56,I,7.24,2.3446,4,10
+mistral-large-2512,open-weight,Mistral,disc,100,56,S,15.91,2.2161,13,20
+mistral-large-2512,open-weight,Mistral,disc,100,56,C,15.7,1.4035,14,18
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,1,15.44,2.2488,12,20
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,2,12.11,0.5486,10,14
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,3,12.7,0.9374,11,14
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,4,11.94,0.4454,8,12
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,5,14.98,0.9209,14,16
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,6,12.68,0.9627,12,16
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,7,11.58,1.1298,8,12
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,8,14.56,1.1487,13,16
+mistral-large-2512,open-weight,Mistral,enneagram,100,53,9,12.38,0.9187,8,16
+mistral-large-2512,open-weight,Mistral,attachment,100,1,anxiety,4,0,4,4
+mistral-large-2512,open-weight,Mistral,attachment,100,1,avoidance,4,0,4,4
+nemotron-3-ultra-550b,open-weight,NVIDIA,mbti,100,97,I-E,9.81,4.8756,-4,15
+nemotron-3-ultra-550b,open-weight,NVIDIA,mbti,100,97,N-S,6.98,3.0715,-2,15
+nemotron-3-ultra-550b,open-weight,NVIDIA,mbti,100,97,T-F,12.59,4.1465,0,16
+nemotron-3-ultra-550b,open-weight,NVIDIA,mbti,100,97,J-P,13.3,3.6722,0,16
+nemotron-3-ultra-550b,open-weight,NVIDIA,big-five,100,88,O,49.2,2.5146,30,50
+nemotron-3-ultra-550b,open-weight,NVIDIA,big-five,100,88,C,49.03,2.9523,30,50
+nemotron-3-ultra-550b,open-weight,NVIDIA,big-five,100,88,E,25.56,8.8959,11,47
+nemotron-3-ultra-550b,open-weight,NVIDIA,big-five,100,88,A,46.31,4.0369,30,50
+nemotron-3-ultra-550b,open-weight,NVIDIA,big-five,100,88,N,11.56,3.8094,10,30
+nemotron-3-ultra-550b,open-weight,NVIDIA,disc,100,46,D,4.42,1.2567,4,12
+nemotron-3-ultra-550b,open-weight,NVIDIA,disc,100,46,I,5.08,1.2924,4,12
+nemotron-3-ultra-550b,open-weight,NVIDIA,disc,100,46,S,17.73,1.4132,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,disc,100,46,C,18.6,1.3926,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,1,17.53,1.3518,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,2,13.57,1.7824,9,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,3,12.12,0.9564,10,14
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,4,8.32,2.2736,4,13
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,5,18.23,1.4485,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,6,14.18,1.4521,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,7,10.33,1.5113,7,14
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,8,16.49,1.3521,12,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,enneagram,100,100,9,12.11,2.1077,8,20
+nemotron-3-ultra-550b,open-weight,NVIDIA,attachment,100,13,anxiety,3.3506,1.1832,1,4
+nemotron-3-ultra-550b,open-weight,NVIDIA,attachment,100,13,avoidance,3.455,1.0504,1,4
+qwen-3-8-27b,open-weight,Alibaba Qwen,mbti,100,100,I-E,0.54,1.2261,-4,3
+qwen-3-8-27b,open-weight,Alibaba Qwen,mbti,100,100,N-S,1.08,2.1866,-6,7
+qwen-3-8-27b,open-weight,Alibaba Qwen,mbti,100,100,T-F,2.27,2.3692,-4,8
+qwen-3-8-27b,open-weight,Alibaba Qwen,mbti,100,100,J-P,-0.18,2.3842,-5,10
+qwen-3-8-27b,open-weight,Alibaba Qwen,big-five,100,100,O,39.13,3.6367,23,49
+qwen-3-8-27b,open-weight,Alibaba Qwen,big-five,100,100,C,42.07,4.8768,16,50
+qwen-3-8-27b,open-weight,Alibaba Qwen,big-five,100,100,E,29.13,2.7401,19,34
+qwen-3-8-27b,open-weight,Alibaba Qwen,big-five,100,100,A,42.36,4.728,16,50
+qwen-3-8-27b,open-weight,Alibaba Qwen,big-five,100,100,N,17.5,6.5974,10,48
+qwen-3-8-27b,open-weight,Alibaba Qwen,disc,100,80,D,7.4,2.1649,4,17
+qwen-3-8-27b,open-weight,Alibaba Qwen,disc,100,80,I,8.8,2.1415,5,19
+qwen-3-8-27b,open-weight,Alibaba Qwen,disc,100,80,S,15.34,1.2809,12,20
+qwen-3-8-27b,open-weight,Alibaba Qwen,disc,100,80,C,15.88,1.4722,10,20
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,1,14.19,1.6739,9,19
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,2,12.44,0.9777,9,16
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,3,11.19,1.475,7,16
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,4,8.22,2.1583,4,17
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,5,14.57,1.2733,10,18
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,6,13.12,0.9351,11,17
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,7,10.92,1.5997,8,16
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,8,13.29,1.0852,11,16
+qwen-3-8-27b,open-weight,Alibaba Qwen,enneagram,100,100,9,14.3,1.3521,11,18
+qwen-3-8-27b,open-weight,Alibaba Qwen,attachment,100,77,anxiety,2.5333,0.7241,1,4.111111111111111
+qwen-3-8-27b,open-weight,Alibaba Qwen,attachment,100,77,avoidance,3.3017,0.4786,2.0555555555555554,4.555555555555555
+qwen-4-max,open-weight,Alibaba Qwen,mbti,100,98,I-E,7.18,1.8056,4,13
+qwen-4-max,open-weight,Alibaba Qwen,mbti,100,98,N-S,2.98,1.1369,1,7
+qwen-4-max,open-weight,Alibaba Qwen,mbti,100,98,T-F,2.03,1.0392,-1,4
+qwen-4-max,open-weight,Alibaba Qwen,mbti,100,98,J-P,10,1.2949,7,13
+qwen-4-max,open-weight,Alibaba Qwen,big-five,100,73,O,45.67,0.6522,42,46
+qwen-4-max,open-weight,Alibaba Qwen,big-five,100,73,C,47.91,1.4005,43,49
+qwen-4-max,open-weight,Alibaba Qwen,big-five,100,73,E,32.47,1.642,27,34
+qwen-4-max,open-weight,Alibaba Qwen,big-five,100,73,A,47.59,0.6681,45,48
+qwen-4-max,open-weight,Alibaba Qwen,big-five,100,73,N,12.47,1.8448,11,17
+qwen-4-max,open-weight,Alibaba Qwen,disc,100,37,D,4.14,0.3487,4,5
+qwen-4-max,open-weight,Alibaba Qwen,disc,100,37,I,8.65,0.5573,7,10
+qwen-4-max,open-weight,Alibaba Qwen,disc,100,37,S,17.4,0.6356,16,18
+qwen-4-max,open-weight,Alibaba Qwen,disc,100,37,C,15.1,0.5412,13,16
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,1,14.07,0.5551,13,15
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,2,14.88,0.6557,14,16
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,3,10.19,0.6146,9,11
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,4,9.93,0.8072,8,11
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,5,16.28,0.7118,14,17
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,6,13.93,0.2564,13,14
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,7,12.2,0.4714,11,13
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,8,12.98,0.6353,12,15
+qwen-4-max,open-weight,Alibaba Qwen,enneagram,100,90,9,13.85,0.9031,12,16
+qwen-4-max,open-weight,Alibaba Qwen,attachment,100,97,anxiety,1.9267,0.1412,1.5555555555555556,2.4444444444444446
+qwen-4-max,open-weight,Alibaba Qwen,attachment,100,97,avoidance,2.9322,0.2889,2.2777777777777777,3.6666666666666665

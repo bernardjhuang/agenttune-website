@@ -27,9 +27,14 @@ All five questionnaires run client-side in your browser and never upload your re
 
 **What it measures.** Four preference axes: Extraversion vs. Introversion (E/I), Sensing vs. Intuition (S/N), Thinking vs. Feeling (T/F), and Judging vs. Perceiving (J/P). Each of the 32 items places two statements at opposite ends of a 1-to-5 scale, with eight items per axis.
 
-**Scoring.** Each item contributes to its two poles so the axis sum is always 48 across eight items (with 24 vs. 24 as an exact tie). Earlier reporting rules defaulted tied axes to I, N, T, or J. The current quiz marks any tied axis as `X`, offers an optional tie-breaker preference, and only assigns a four-letter code when all four axes resolve.
+| Axis | Poles | Items | Sum &amp; exact tie point |
+| --- | --- | --- | --- |
+| E / I | Extraversion vs Introversion | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
+| S / N | Sensing vs Intuition | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
+| T / F | Thinking vs Feeling | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
+| J / P | Judging vs Perceiving | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
 
-**Limits.** OEJTS is an open scale that produces four-letter Jungian codes; it is not the trademarked MBTI® instrument. On short axes, a one-point difference flips the letter. In our September 2026 model dataset, GPT-6 Astra split 46 ISTJ to 45 INTJ under legacy tie-breaking (with 29 of 100 runs tying on at least one axis), and Claude Opus 5.5 dropped from 94 legacy INTJ labels to 84 when ties were left open.
+**Scoring & limits.** Earlier reporting rules defaulted tied axes to I, N, T, or J. Our current scorer ([score.js](https://agent-tune.com/resources/scoring/score.js)) marks any tied axis as `X`, offers an optional tie-breaker, and only assigns a four-letter code when all four axes resolve. Take it locally at [/tests/mbti](https://agent-tune.com/tests/mbti) or fetch [/tests/mbti.md](https://agent-tune.com/tests/mbti.md).
 
 ## OEPS: the 36-item Enneagram adaptation.
 
@@ -109,7 +114,7 @@ Yes. Each questionnaire has a Markdown specification at /tests/<test>.md and is 
 
 - [Tests: Take any of the five tests](https://agent-tune.com/tests/)
 - [Guide: Open-source Enneagram scorer & React starter](https://agent-tune.com/guides/enneagram-test-react-typescript)
-- [Guide: Open-source MBTI test (OEJTS 1.2): 32 questions and scorer](https://agent-tune.com/guides/open-source-mbti-test-oejts)
-- [Guide: Free DISC assessment (ODAT): 16 questions, 12 blends & scorer](https://agent-tune.com/guides/free-disc-assessment-guide-work-ai)
+- [Prompts: DISC AI prompts & 12 workplace blends](https://agent-tune.com/guides/disc-ai-prompts)
+- [Prompts: Big Five AI prompts & IPIP-50 interpreter](https://agent-tune.com/guides/big-five-ai-prompts)
 - [Guide: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: The research hub](https://agent-tune.com/research)

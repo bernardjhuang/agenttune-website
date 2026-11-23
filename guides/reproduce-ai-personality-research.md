@@ -50,7 +50,7 @@ When citing or extending these results, state the model cohort, instrument, samp
 
 ## Design an extension that can answer a new question
 
-If you run new models through the five tests, freeze your prompt and scoring code first, log exact model IDs and sampling parameters, and publish all raw item vectors. To test whether personality instructions improve real task replies, use our [180-reply prompt comparison kit](https://agent-tune.com/guides/personality-prompts-vs-plain-english).
+If you run new models through the five tests, freeze your prompt and scoring code first, log exact model IDs and sampling parameters, and publish all raw item vectors. To test whether personality instructions improve real task replies, use our [180-reply prompt comparison kit](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
 
 ## Sources.
 

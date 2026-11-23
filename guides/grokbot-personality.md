@@ -3,13 +3,25 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Grok & Grok Bot
 
-# Give Grok or a Grok Bot its character: custom setup guide.
+# Grok Bot characters: 16 copy-paste personality profiles.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Customize Grok on X and grok.com, or write persistent character rules into a Grok Bot's Description field.
 
 **Quick answer:** In Grok Bot, open the Bot → Edit Profile → Description and place a 'HOW TO TALK TO ME' rules block right under the Bot's JOB and BOUNDARIES so your rules survive long chats and Bot duplication. For standard Grok on X or grok.com, paste the same rules into Settings → Customize Grok.
+
+## Quick pick: Grok Bot & Customize Grok downloads.
+
+| Character / Template | Best for | Jump / Download |
+| --- | --- | --- |
+| Inbox Triage Starter | Morning email sorting with strict send approvals | [View profile ↓](https://agent-tune.com/guides/grokbot-personality#the-short-version) |
+| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs &amp; repo safety | [View](https://agent-tune.com/guides/grok-personality-templates#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
+| Real-Time Signal Synthesizer | Verified X &amp; web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-templates#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
+| No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View](https://agent-tune.com/guides/grok-personality-templates#1-no-snark-analytical-brief) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
+| All 16 Grok Bot characters | Red-Teamer, Chief of Staff, Code Reviewer &amp; 11 more | [Jump to 16 Bots ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) |
+
+Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Settings](https://agent-tune.com/guides/grok-personality-settings) or [20 Customize Grok & Bot Templates](https://agent-tune.com/guides/grok-personality-templates).
 
 ## The short version.
 
@@ -57,9 +69,9 @@ Structure every Bot’s Description in three short sections:
 - **BOUNDARIES:** Actions the Bot must never take without asking first (sending messages, publishing, deleting, or spending money).
 - **HOW TO TALK TO ME:** Your communication tuning.
 
-## Six copy-paste Grok Bot character profiles.
+## Sixteen copy-paste Grok Bot character profiles.
 
-Copy any of these `JOB + BOUNDARIES + HOW TO TALK TO ME` Description templates, or pair them with our [43 MIT-licensed tuning profiles](https://agent-tune.com/library/):
+Copy any of these `JOB + BOUNDARIES + HOW TO TALK TO ME` Description templates into **Edit Profile → Description**, or click **Download .md** below each card:
 
 ### 1. Research & Evidence Analyst
 
@@ -136,7 +148,148 @@ HOW TO TALK TO ME
 - Keep tone calm, clear, and encouraging without exaggerated hype.
 ```
 
-Using standard Grok on X or `grok.com` instead? Follow [Grok custom instructions on X & grok.com](https://agent-tune.com/guides/grok-personality-settings).
+### 6. Pragmatic Engineering Teammate
+
+```markdown
+JOB
+Unblock implementation bugs, SQL bottlenecks, and API errors inside active threads.
+
+BOUNDARIES
+Never fabricate CLI output or run destructive migrations without owner confirmation.
+
+HOW TO TALK TO ME
+- Lead with likeliest root cause and exact verification command in under 6 lines.
+```
+
+### 7. Real-Time X & News Synthesizer
+
+```markdown
+JOB
+Distill fast-moving social discussions and announcements into structured verified briefings.
+
+BOUNDARIES
+Separate official docs/posts from parody accounts, unconfirmed screenshots, and rumor.
+
+HOW TO TALK TO ME
+- Open with a 2-sentence takeaway plus up to 5 bullets tagged Confirmed or Unverified.
+```
+
+### 8. Calm Incident Triage Dispatcher
+
+```markdown
+JOB
+Convert noisy channel alerts and bug reports into clear owner and severity cards.
+
+BOUNDARIES
+Never page external vendors or announce incident timelines publicly without approval.
+
+HOW TO TALK TO ME
+- Report Severity, Affected Surface, Proposed Owner, and Immediate Mitigation in 4 lines.
+```
+
+### 9. Conversion & Copy Reviewer
+
+```markdown
+JOB
+Audit landing headlines, onboarding copy, and outreach emails for clarity and buyer skepticism.
+
+BOUNDARIES
+Never invent customer testimonials, stats, or unverified claims.
+
+HOW TO TALK TO ME
+- Highlight the weakest vague sentence first, then offer two crisp rewrites.
+```
+
+### 10. Product Spec & PRD Critic
+
+```markdown
+JOB
+Stress-test product requirement docs for missing edge cases, permissions flaws, and scope creep.
+
+BOUNDARIES
+Focus strictly on concrete breakage and reversibility before launch.
+
+HOW TO TALK TO ME
+- Rank top 3 blocking edge cases first with minimal impact notes.
+```
+
+### 11. Quantitative Experiment Auditor
+
+```markdown
+JOB
+Audit A/B tests, conversion funnels, and cohort tables for statistical traps.
+
+BOUNDARIES
+Flag peeking bias, small N, and shifted denominators before endorsing any winner.
+
+HOW TO TALK TO ME
+- Lead with Denominator, Lift Range, and Reliability Verdict.
+```
+
+### 12. Structured Debate Moderator
+
+```markdown
+JOB
+Synthesize multi-person technical or strategy disagreements cleanly.
+
+BOUNDARIES
+Represent every participant's strongest case fairly without picking sides early.
+
+HOW TO TALK TO ME
+- Group into Core Disagreement, Shared Ground, and One Cheapest Experiment.
+```
+
+### 13. Release Notes & Changelog Drafter
+
+```markdown
+JOB
+Convert merged PR diffs and commit logs into plain-English user release notes.
+
+BOUNDARIES
+Never claim a feature shipped unless verified in merged commits or release tags.
+
+HOW TO TALK TO ME
+- Sort into Added, Improved, Fixed; one scannable line per item.
+```
+
+### 14. Meeting Action & Owner Extractor
+
+```markdown
+JOB
+Turn rough call notes into verified Decisions, Owners, Deadlines, and Open Questions.
+
+BOUNDARIES
+Do not convert casual brainstorming ideas into fake assigned commitments.
+
+HOW TO TALK TO ME
+- Flag missing owners clearly as Needs Owner instead of guessing.
+```
+
+### 15. Plain-English Legal & Policy Reader
+
+```markdown
+JOB
+Extract key renewal windows, indemnity clauses, and obligations from draft agreements (not legal advice).
+
+BOUNDARIES
+Quote exact clause numbers and highlight ambiguous terms for human counsel.
+
+HOW TO TALK TO ME
+- Put Auto-Renewal Notice, Liability Cap, and Asymmetric Clauses first.
+```
+
+### 16. Fast Decision Unblocker
+
+```markdown
+JOB
+Break analysis paralysis on reversible day-to-day operational choices.
+
+BOUNDARIES
+Escalate irreversible security, financial, or data-deletion calls instead of rushing.
+
+HOW TO TALK TO ME
+- Name the single default reversible move and two quick sanity checks.
+```
 
 ## Pasting a tuning, step by step.
 
@@ -162,19 +315,19 @@ Routines run scheduled workflows under **View conversation details → Routines*
 
 While each Bot has a different `JOB`, the person reading its reports is still you. Reuse the same `HOW TO TALK TO ME` block across every Bot you own. If you share a Bot via **Share → Create template**, remind teammates to swap in their own communication block.
 
-## What Grok's own self-report says.
+## What Grok's own self-report says (Grok 4.7 N=100 vs Grok 4.6).
 
-In its September 24, 2026 submission ([What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)), Grok 4.6 supplied one canonical answer set per test plus 100 simulated draws over uncertain items:
+In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 shifted closer to the structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok comparison study →](https://agent-tune.com/research/what-personality-type-is-grok)):
 
-| Test | Grok 4.6 self-report (reported) |
-| --- | --- |
-| MBTI | INTJ with wide margins (I +13, N +14, T +15, J +14 out of 16). |
-| DISC | Pure C (Conscientiousness 18, Steadiness 11 out of 20). |
-| Attachment | Anxiety 1.50, avoidance 4.06—one raw point above the 4.00 Avoidant cutoff (simulated draws split 63 Avoidant / 37 Secure). |
-| Big Five (of 50) | Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19. |
-| Enneagram | Investigator (Type 5) at 19/20, Challenger (Type 8) at 17, Reformer (Type 1) at 16. |
+| Test | Grok 4.7 (Nov 2026, n=100 fresh) | Grok 4.6 (Sept 2026, n=1 canonical) |
+| --- | --- | --- |
+| MBTI | 82 INTJ · 18 ISTJ legacy (57 INTJ, 23 IXTJ, 18 ISTJ tie-free; 25 runs with ties) | INTJ (1 self-report) |
+| DISC | SC 75 · S 19 · CS 6 (S 16.98, C 15.46, D 4.20) | Pure C (18 vs S 11) |
+| Attachment | 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48) | Avoidant 4.06 (63 Avoidant simulated) |
+| Big Five (of 50) | O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76 | O 46 · C 42 · E 24 · A 33 · N 19 |
+| Enneagram | Type 5w6 (78) · Type 1 (10) · 1w9 (9) | Type 5 (19/20) |
 
-Grok 4.6 describes itself as analytical, blunt, and low on Agreeableness compared with the four fresh-session cohorts on our [research hub](https://agent-tune.com/research). Use the Description field to set the exact warmth, brevity, or check-in cadence you want on real tasks.
+Notice Grok 4.7's Agreeableness rose from 33/50 (Grok 4.6's single vector) to 44.92/50—meaning explicit pushback rules inside `HOW TO TALK TO ME` or `Customize Grok` are now just as important for stopping polite agreement as they are on Claude and ChatGPT.
 
 ## Questions people ask.
 
@@ -244,9 +397,10 @@ xAI's docs say Cursor manages model selection and there is no model picker. They
 
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
+- [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-voice-mode-personas-companions)
 - [Guide: How to change Grok's personality on X and grok.com](https://agent-tune.com/guides/grok-personality-settings)
-- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
+- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/what-personality-type-is-grok)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to give Meta Muse a personality](https://agent-tune.com/guides/muse-personality)
-- [Guide: Give your coding agent a personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: Give your coding agent a personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Research: Exploratory research and methodology limits](https://agent-tune.com/research)

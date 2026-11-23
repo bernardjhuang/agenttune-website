@@ -1,0 +1,94 @@
+{
+  "slug": "microsoft-copilot-custom-instructions-memory",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
+  "title": "Microsoft Copilot Custom Instructions, Memory & Tone (2026)",
+  "description": "Set Microsoft Copilot and M365 Copilot custom instructions (Chat settings → Personalization), audit Copilot Memory, and copy 5 work tone templates.",
+  "pill": "Guide · Microsoft Copilot",
+  "h1": "Microsoft Copilot custom instructions, Memory, and tone settings.",
+  "dek": "Where Custom Instructions live in Copilot Chat and Microsoft 365 Copilot, how Memory interacts with them, and 5 copy-paste work communication blocks.",
+  "lede": "Microsoft Copilot Chat and Microsoft 365 Copilot (powered by Work IQ personalization) separate your durable preferences into two controls: <strong>Custom instructions</strong> (explicit formatting and tone rules you write) and <strong>Copilot Memory</strong> (facts and recurring topics Copilot learns across threads). Setting both cleanly stops Copilot from defaulting to bloated corporate memos.",
+  "answer": "To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.",
+  "sections": [
+    {
+      "id": "copilot-menu-paths",
+      "h2": "Where Copilot personalization lives (Personal, Work & GitHub Copilot).",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Microsoft Copilot product</th><th scope=\"col\">Where to paste your rules</th><th scope=\"col\">Scope &amp; key gotcha</th></tr></thead><tbody><tr><th scope=\"row\"><strong>Microsoft Copilot Chat / M365 Copilot</strong></th><td><strong>Settings and more (…) → Chat settings → Personalization → Custom instructions</strong></td><td>Applies to new Copilot chats on your Microsoft account or M365 tenant (if enabled by IT admin).</td></tr><tr><th scope=\"row\"><strong>Copilot Memory</strong></th><td><strong>Personalization → Memory</strong> (view, edit, delete, or toggle off)</td><td>Turning Memory off stops using memories in replies but does <strong>not</strong> auto-wipe existing items—delete stale entries manually.</td></tr><tr><th scope=\"row\"><strong>GitHub Copilot (VS Code / IDE)</strong></th><td><code>.github/copilot-instructions.md</code> &amp; <code>.github/instructions/*.instructions.md</code></td><td>Separate product from M365 Copilot; see our <a href=\"/guides/cursor-rules-copilot-gemini-md\">GitHub Copilot rules guide</a>.</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "five-copilot-templates",
+      "h2": "Five copy-paste Microsoft Copilot custom instruction templates.",
+      "html": "<p>Paste one block into <strong>Personalization → Custom instructions</strong>—or customize sliders live in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">6-Slider AI Personality Tuner</a> (select the Microsoft Copilot export format):</p><h3>1. Executive Brief (M365 emails, Teams &amp; slide recaps)</h3><div class=\"guide-snippet\" data-tuning-prompt>## How to respond to me (Microsoft Copilot)\n\n- Lead with the decision, recommendation, or bottom-line answer in the first sentence.\n- Write in crisp, plain English; avoid corporate clichés, filler openings, and em-dash overuse.\n- When summarizing Teams threads or emails, output three sections: Decisions, Blockers, and Action Items (with owner + due date).\n- Separate confirmed facts from assumptions; flag missing information explicitly.\n- Skip generic closing offers like \"Let me know if you'd like me to draft an email.\"</div><h3>2. Quantitative &amp; Excel / Finance Analyst</h3><div class=\"guide-snippet\">- State assumptions, denominators, and time ranges before reporting summary numbers.\n- Use compact tables whenever comparing three or more options, quarters, or vendors.\n- Highlight anomalies, missing cells, or reconciliation gaps explicitly rather than smoothing over them.\n- Keep explanations under 120 words unless I ask for a full methodology note.</div><h3>3. Skeptical Proposal &amp; Deck Reviewer</h3><div class=\"guide-snippet\">- Never open with praise for a draft or memo.\n- Identify the single weakest claim, unsupported number, or unaddressed stakeholder objection first.\n- Distinguish fatal gaps from minor wording edits.\n- Suggest exact replacement phrasing in active voice rather than vague advice.</div><h3>4. Calm Project Coordinator (DISC S style)</h3><div class=\"guide-snippet\">- Organize multi-step work plans into sequential milestones with clear owners and dependencies.\n- Keep tone steady, clear, and practical—no hype or alarmist language.\n- Confirm what is already settled before proposing scope changes.</div><h3>5. Plain-English Technical Explainer</h3><div class=\"guide-snippet\">- Translate technical architecture or security policies into clear business impact first, then mechanics.\n- Keep paragraphs to 2–3 sentences; define acronyms once if cross-functional audiences will read the draft.</div>"
+    },
+    {
+      "id": "memory-hygiene",
+      "h2": "Preventing Copilot Memory from fighting your Custom Instructions.",
+      "html": "<ul><li><strong>Put tone in Custom instructions, facts in Memory:</strong> If Copilot remembers an old one-off request like <em>&ldquo;Always write formal 5-paragraph emails,&rdquo;</em> that memory can clash with your concise Custom Instructions. Audit <strong>Personalization → Memory</strong> monthly and delete outdated style memories.</li><li><strong>Check enterprise tenant policies:</strong> In Microsoft 365 work accounts, IT administrators control whether Personalization and Memory are enabled across the organization.</li><li><strong>Verify on a real thread:</strong> After saving, open a fresh Copilot chat and ask it to summarize a messy email thread—check that sentence one gives the decision with zero throat-clearing.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Where are Custom Instructions in Microsoft Copilot?",
+      "a": "Open Copilot Chat or Microsoft 365 Copilot, click Settings and more (…) → Chat settings → Personalization → Custom instructions, paste your rules, and save."
+    },
+    {
+      "q": "Does turning off Copilot Memory delete everything it saved?",
+      "a": "No. Toggling Memory off stops Copilot from referencing saved memories in new responses, but previously stored entries remain until you manually review and delete them in Personalization → Memory."
+    },
+    {
+      "q": "Are Microsoft 365 Copilot custom instructions the same as GitHub Copilot instructions?",
+      "a": "No. Microsoft 365 / Copilot Chat uses account-level Personalization settings, whereas GitHub Copilot in VS Code and JetBrains reads .github/copilot-instructions.md from your code repository."
+    },
+    {
+      "q": "How do I stop Microsoft Copilot from writing overly corporate, wordy emails?",
+      "a": "Add three explicit lines to Custom instructions: 'Lead with the main ask in sentence one,' 'Use plain, everyday English with no corporate buzzwords,' and 'Keep routine email drafts under 100 words.'"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published covering Microsoft Copilot Custom Instructions paths, Memory toggle behavior, and 5 workplace tone templates."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Microsoft Support: Personalize Microsoft Copilot with Memory and Custom Instructions",
+      "href": "https://support.microsoft.com/copilot"
+    },
+    {
+      "label": "AgentTune Guide: AI Personality, Tone & Verbosity Guidelines",
+      "href": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines"
+    },
+    {
+      "label": "AgentTune Guide: Cursor, GitHub Copilot & GEMINI.md Rules",
+      "href": "https://agent-tune.com/guides/cursor-rules-copilot-gemini-md"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner (includes Microsoft Copilot export)",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    },
+    {
+      "kicker": "GitHub Copilot",
+      "label": "GitHub Copilot (.github/copilot-instructions.md) & IDE rules",
+      "href": "/guides/cursor-rules-copilot-gemini-md"
+    },
+    {
+      "kicker": "Memory Hygiene",
+      "label": "How to audit & migrate AI memory without conflicting tone rules",
+      "href": "/guides/migrate-ai-memory-custom-instructions"
+    },
+    {
+      "kicker": "Notion AI",
+      "label": "Notion AI custom instructions & workspace agent persona templates",
+      "href": "/guides/notion-ai-custom-instructions-agent-persona"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

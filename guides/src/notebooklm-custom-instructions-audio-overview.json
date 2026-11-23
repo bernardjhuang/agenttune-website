@@ -1,0 +1,95 @@
+{
+  "slug": "notebooklm-custom-instructions-audio-overview",
+  "published": "2026-11-20",
+  "updated": "2026-11-20",
+  "title": "NotebookLM Custom Instructions & Audio Overview Prompts",
+  "description": "Steer Google NotebookLM Audio Overview hosts and chat tone with our interactive prompt builder. Cut podcast banter, focus on risks & reuse prompts.",
+  "pill": "Guide & Builder · NotebookLM",
+  "h1": "NotebookLM custom instructions: steer Audio Overview hosts and source chat tone.",
+  "dek": "Stop default Audio Overviews from sounding like generic morning-radio banter. Build a focused steering prompt for your PDFs, docs, and research notes.",
+  "lede": "Google NotebookLM grounds every answer in the PDFs, Docs, and transcripts you upload—but out of the box, its two <strong>Audio Overview</strong> hosts often spend minutes on cheerful small talk and surface-level summaries. Using the <strong>Customize</strong> prompt box in Studio (and concise response rules in Notebook chat) turns NotebookLM into a sharp analyst, skeptical debater, or focused exam coach.",
+  "answer": "To customize a NotebookLM Audio Overview, open the Studio panel → Audio Overview → Customize and paste a 4-line directive naming the episode format, priority angle, audience level, and host banter limit. You can inspect and reuse the exact prompt tied to any saved audio file from the Studio panel menu later.",
+  "scripts": [
+    "/resources/tools/notebooklm-prompt-builder.js",
+    "/resources/tools/template-gallery.js"
+  ],
+  "sections": [
+    {
+      "id": "notebooklm-prompt-builder",
+      "h2": "Build your NotebookLM Audio Overview steering prompt.",
+      "html": "<p>Pick your briefing format, listener level, and host tone—plus an optional priority question—to generate a clean prompt for <strong>Studio → Audio Overview → Customize</strong>:</p><div class=\"at-widget\" id=\"at-notebooklm-builder\" role=\"region\" aria-label=\"Interactive NotebookLM Audio Overview Prompt Builder\"><p class=\"tools-help\">Loading interactive NotebookLM prompt builder…</p></div><noscript><p>Enable JavaScript to use the interactive builder, or copy any of the 4 Audio Overview prompts below.</p></noscript>"
+    },
+    {
+      "id": "audio-overview-vs-chat-rules",
+      "h2": "Four proven Audio Overview prompt templates (plus Notebook chat rules).",
+      "html": "<h3>1. No-Banter Executive Brief (filings, board decks, reports)</h3><div class=\"guide-snippet\" data-tuning-prompt>Open in the first 30 seconds with the three biggest takeaways and exact numbers from the uploaded sources. Skip podcast jokes, small talk, and filler intros. Focus strictly on financial risks, timeline commitments, and unresolved bottlenecks mentioned in the documents.</div><h3>2. Red-Team Critique Debate (strategy memos &amp; papers)</h3><div class=\"guide-snippet\">Assign Host A to present the strongest case supported by the uploaded sources and Host B to interrogate weak assumptions, sample size limits, and contradictions across documents. Explicitly call out whenever the uploaded sources fail to answer a key question.</div><h3>3. Senior Engineer Architecture Deep-Dive</h3><div class=\"guide-snippet\">Assume both listeners are senior engineers. Skip introductory definitions and focus on interfaces, failure modes, latency/cost tradeoffs, and exact constraints cited in the specifications.</div><h3>4. Active-Recall Study &amp; Exam Coach</h3><div class=\"guide-snippet\">Organize the sources into four clear mental models with concrete examples from the text. End the episode with five rapid-fire review questions and brief answers grounded only in the uploaded material.</div><p><strong>Reusing winning prompts:</strong> NotebookLM lets you view the custom prompt attached to previously generated Audio Overviews inside the Studio panel menu—copy your best-performing block into a reusable note or pair it with our <a href=\"/guides/gemini-personality\">Google Gemini Personal Intelligence guide</a> for non-notebook chats.</p>"
+    },
+    {
+      "id": "notebook-chat-tone",
+      "h2": "Steering NotebookLM text chat replies.",
+      "html": "<p>When querying sources in NotebookLM’s text chat panel, prepend a two-line format rule whenever you need structured citations instead of narrative recaps:</p><div class=\"guide-snippet\">Answer in sentence one with exact source citations. Split supporting points into Verified Source Facts vs. Open Gaps Not Covered by These Documents.</div><p>Want to check whether your prompt wording has conflicting instructions? Run it through our <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I stop NotebookLM Audio Overview hosts from doing generic small talk?",
+      "a": "Click Customize before generating the Audio Overview and add an explicit opening rule: 'Open in the first 30 seconds with the top three takeaways and concrete numbers. Skip podcast banter, intros, and filler.' "
+    },
+    {
+      "q": "Can I see the custom instructions I used for an older NotebookLM Audio Overview?",
+      "a": "Yes. Open the Studio panel menu next to a generated Audio Overview artifact to view the custom focus prompt used to create it, so you can reuse or refine the same framing on future notebooks."
+    },
+    {
+      "q": "Do Google Gemini Personal Intelligence settings automatically apply inside NotebookLM?",
+      "a": "NotebookLM uses its own notebook-scoped source grounding and Audio Overview Customize prompts rather than pulling your general Gemini Personal Intelligence tone rules automatically."
+    },
+    {
+      "q": "Can NotebookLM Audio Overview focus on just one PDF in a multi-source notebook?",
+      "a": "Yes. Uncheck the sources you want to exclude in the Sources panel, or explicitly name the target document and section inside the Audio Overview Customize prompt."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published with interactive NotebookLM Audio Overview prompt builder and 4 reusable studio templates."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google NotebookLM Help Center",
+      "href": "https://support.google.com/notebooklm/"
+    },
+    {
+      "label": "AgentTune Guide: Google Gemini Live Voices & Personal Intelligence",
+      "href": "https://agent-tune.com/guides/gemini-live-voices-personal-intelligence"
+    },
+    {
+      "label": "AgentTune Guide: AI Personality, Tone & Verbosity Guidelines",
+      "href": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Gemini",
+      "label": "How to change Google Gemini's personality (Personal Intelligence & Gems)",
+      "href": "/guides/gemini-personality"
+    },
+    {
+      "kicker": "Gemini Live",
+      "label": "Google Gemini Live voices list & Personal Intelligence sync fix",
+      "href": "/guides/gemini-live-voices-personal-intelligence"
+    },
+    {
+      "kicker": "Research AI",
+      "label": "Perplexity Spaces custom instructions & prompts",
+      "href": "/guides/perplexity-spaces-custom-instructions"
+    },
+    {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner → Copyable Prompt",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "anywhere"
+}

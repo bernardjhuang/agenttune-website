@@ -59,7 +59,7 @@ When working in an unfamiliar codebase or production environment where an unanno
 - Surface any ambiguity in my instructions immediately rather than guessing silently.
 ```
 
-Curious why Grok 4.6 was the only model in our September 2026 archive whose reported self-assessment crossed into the Avoidant quadrant (avoidance 4.06 vs the 4.00 cutoff)? Read [Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/grok-attachment-cutoff-simulation).
+Curious why Grok 4.6 was the only model in our September 2026 archive whose reported self-assessment crossed into the Avoidant quadrant (avoidance 4.06 vs the 4.00 cutoff)? Read [Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/what-personality-type-is-grok).
 
 ## Questions people ask.
 
@@ -85,12 +85,12 @@ In our September 2026 study of 100 fresh sessions per model, GPT-6 Astra (1.45 /
 
 - [AgentTune Library: Attachment style tunings](https://agent-tune.com/library/#attachment)
 
-- [AgentTune Research: Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
+- [AgentTune Research: Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/what-personality-type-is-grok)
 
 ## Keep going.
 
 - [Interactive Test: Take the free 36-item attachment style test (ECR-R)](https://agent-tune.com/tests/attachment)
-- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/grok-attachment-cutoff-simulation)
+- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/what-personality-type-is-grok)
 - [Library: Avoidant attachment tuning file](https://agent-tune.com/library/attachment/avoidant)
 - [Prompts: DISC AI prompts for all 4 styles (D, I, S, C)](https://agent-tune.com/guides/disc-ai-prompts)
 - [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)

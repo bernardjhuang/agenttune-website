@@ -55,7 +55,7 @@
     {
       "id": "does-it-stick-test-and-undo-the-change",
       "h2": "Does it stick? Test and undo the change.",
-      "html": "<p>Inspect the saved file and repeat fixed tasks in new conversations. The <a href=\"/guides/muse-soul-md-persistence-test\">Muse persistence kit</a> provides probes and a blank log; it contains no measured persistence results.</p><p>Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality (say <em>\"Go back to your default personality\"</em>); inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.</p>"
+      "html": "<p>Inspect the saved file and repeat fixed tasks in new conversations. Download our <a href=\"/resources/research/muse-persistence-kit.json\" download>45-turn persistence kit</a> (on the <a href=\"/guides/muse-soul-md-templates\">Soul.md templates guide</a>) to log whether your edits hold across chats.</p><p>Restore your backed-up text to undo only your edit. Meta also documents asking Muse to return to its default personality (say <em>\"Go back to your default personality\"</em>); inspect what changed afterward. A whole-account reset permanently deletes history, files and active tasks and is unnecessary for removing one instruction block.</p>"
     },
     {
       "h2": "Privacy, briefly.",
@@ -214,9 +214,9 @@
       "href": "/tests/mbti"
     },
     {
-      "kicker": "New resource",
-      "label": "Does Muse remember Soul.md changes? A persistence test kit",
-      "href": "/guides/muse-soul-md-persistence-test"
+      "kicker": "Identity & Characters",
+      "label": "16 Meta Muse character ideas & Identity.md templates",
+      "href": "/guides/muse-identity-md-templates"
     },
     {
       "kicker": "Guide",

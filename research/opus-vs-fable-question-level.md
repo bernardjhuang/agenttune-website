@@ -74,4 +74,4 @@ Before inferring that one model is warmer or more helpful, test observable behav
 ## Keep going.
 
 - [Continue reading: Claude’s aggregate questionnaire results](https://agent-tune.com/research/what-personality-type-is-claude)
-- [Continue reading: Test instruction following on actual tasks](https://agent-tune.com/guides/claude-preferences-test)
+- [Continue reading: Test instruction following on actual tasks](https://agent-tune.com/guides/claude-personality)

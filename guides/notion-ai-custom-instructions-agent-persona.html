@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notion AI Custom Instructions &amp; Agent Persona Templates</title>
+  <meta name="description" content="Configure Notion AI custom instructions, Meeting Notes rules &amp; workspace agent personas. Copy our 4-part boot-sequence template and 5 role setups." />
+
+  <meta property="og:title" content="Notion AI custom instructions and workspace agent persona templates." />
+  <meta property="og:description" content="Configure Notion AI custom instructions, Meeting Notes rules &amp; workspace agent personas. Copy our 4-part boot-sequence template and 5 role setups." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-20" />
+  <meta property="article:modified_time" content="2026-11-20" />
+  <meta property="og:url" content="https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Notion AI custom instructions and workspace agent persona templates." />
+  <meta name="twitter:description" content="Configure Notion AI custom instructions, Meeting Notes rules &amp; workspace agent personas. Copy our 4-part boot-sequence template and 5 role setups." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Notion AI custom instructions and workspace agent persona templates","description":"Configure Notion AI custom instructions, Meeting Notes rules & workspace agent personas. Copy our 4-part boot-sequence template and 5 role setups.","url":"https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Notion AI custom instructions and workspace agent persona templates"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I add custom instructions in Notion AI?","acceptedAnswer":{"@type":"Answer","text":"Open your Notion AI agent or AI Meeting Notes custom instructions panel in workspace/personal Notion AI settings, paste a concise modular block (Role, Voice, Operating Rules, and @database Data Map), and test on an existing page."}},{"@type":"Question","name":"How do I stop Notion AI Meeting Notes from writing long rambling paragraphs?","acceptedAnswer":{"@type":"Answer","text":"Define four fixed headings in your Meeting Notes instructions—Decisions Made, Action Items (Owner + Date), Open Questions, and Risks—and add a 250-word cap for routine 30-minute meetings."}},{"@type":"Question","name":"Should I use @mentions inside Notion AI custom instructions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Linking your authoritative @Tasks, @Roadmap, or @Style Guide pages inside a short Data Map section steers Notion AI toward live workspace sources instead of stale archive pages."}},{"@type":"Question","name":"Do my personal Notion AI tone rules overwrite my team's workspace settings?","acceptedAnswer":{"@type":"Answer","text":"Keep personal voice and brevity settings in your private Notion AI preferences rather than editing shared team templates, so each teammate keeps their own communication style while sharing the same output schemas."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Notion AI custom instructions and workspace agent persona templates</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Notion AI</span>
+        <h1 class="h-hero h-research-hero">Notion AI custom instructions and workspace agent persona templates.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">Use a modular 4-part boot sequence (Role, Priority, Voice, Data Map) so Notion AI summarizes meetings, edits specs, and routes tasks cleanly.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice &amp; Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.</div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <aside class="model-compatibility"><div class="prompt-picker-controls"><label for="guide-model">Adapt the communication prompts<select id="guide-model" data-guide-model="any" data-guide-target="anywhere"></select></label></div><p>Choose your model to update the communication prompts below. For a full tuning and installation steps, <a data-guide-generator href="/tools/custom-instructions-generator?model=any&amp;target=anywhere">open the prompt generator →</a></p></aside>
+
+      <section>
+        <h2 id="notion-ai-boot-sequence">The 4-part Notion AI instruction architecture.</h2>
+        <div class="guide-table-wrap" role="region" aria-label="The 4-part Notion AI instruction architecture.: table 1" tabindex="0"><table><thead><tr><th scope="col">Instruction block</th><th scope="col">What it controls in Notion AI</th><th scope="col">Example rule</th></tr></thead><tbody><tr><th scope="row">1. Priority Hierarchy</th><td>Prevents Notion AI from inventing facts when workspace pages are incomplete.</td><td><em>&ldquo;Workspace factual accuracy overrides completeness. Flag missing pages instead of guessing.&rdquo;</em></td></tr><tr><th scope="row">2. Voice &amp; Formatting</th><td>Stops generic corporate openers and walls of nested bullets.</td><td><em>&ldquo;Direct, calm prose; bold key metrics; zero &lsquo;Sure, I can help!&rsquo; filler.&rdquo;</em></td></tr><tr><th scope="row">3. Operating Rules</th><td>Concrete If-Then triggers for Meeting Notes, PRDs, and wikis.</td><td><em>&ldquo;When summarizing a meeting, extract Decisions, Blockers, and Owners as a checklist.&rdquo;</em></td></tr><tr><th scope="row">4. Data Map (<code>@mentions</code>)</th><td>Points Notion AI at authoritative databases instead of stale archive pages.</td><td><em>&ldquo;Source tasks from @Tasks DB and roadmap priorities from @Q4 Roadmap; ignore @Archive.&rdquo;</em></td></tr></tbody></table></div><p>Paste this master Chief of Staff template into your Notion AI custom instructions and replace the <code>@Database</code> placeholders with live mentions:</p><div class="guide-snippet" data-tuning-prompt>## Role
+Executive Chief of Staff operating inside this Notion workspace.
+
+## Priority Hierarchy
+1. Workspace factual accuracy and explicit constraints override general helpfulness.
+2. Brevity and clear ownership override long narrative recaps.
+
+## Voice &amp; Formatting
+- Tone: Direct, analytical, calm, and plainspoken. No filler intros or exclamation marks.
+- Always separate Verified Workspace Context from AI Recommendations.
+- Use compact tables for 3+ options and crisp checklists for action items.
+
+## Operating Rules &amp; Data Map
+- Meeting Notes: Extract Decisions, Risks/Blockers, and Action Items (Owner + Due Date).
+- Primary sources: Reference @Tasks DB and @Projects Hub first; ignore archived pages unless asked.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="five-notion-personas">Five copy-paste Notion AI persona templates by workflow.</h2>
+        <h3>1. AI Meeting Notes Extractor (zero fluff)</h3><div class="guide-snippet">- Summarize transcripts into four exact sections: 1) Decisions Made, 2) Action Items (Owner + Date), 3) Open Questions, 4) Risks Flagged.
+- Quote exact numbers, dates, and customer names from the transcript; never infer unlisted commitments.
+- Keep the entire summary under 250 words unless the meeting exceeded 60 minutes.</div><h3>2. Product Spec &amp; PRD Reviewer</h3><div class="guide-snippet">- Review PRDs against three criteria: Problem Evidence, Non-Goals, and Edge-Case Failure Modes.
+- Name the single weakest assumption at the top before listing line edits.
+- Preserve the author's structure; propose concrete replacement wording instead of vague commentary.</div><h3>3. Engineering Wiki &amp; Runbook Steward</h3><div class="guide-snippet">- Format runbooks with Prerequisites, Exact Commands (in fenced code blocks), Verification Check, and Rollback Step.
+- Flag stale commands, missing environment variables, or ambiguous ownership explicitly.</div><h3>4. Research &amp; Competitive Intelligence Librarian</h3><div class="guide-snippet">- Tag every claim with its source page name and date.
+- Highlight contradictions across uploaded interviews or notes instead of averaging them into one vague sentence.</div><h3>5. Personal Knowledge &amp; Weekly Review Partner</h3><div class="guide-snippet">- Compare my completed tasks against my stated weekly priorities and name the biggest drift cleanly.
+- Keep tone supportive, grounded, and honest—no motivational clichés.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="private-vs-team-scope">Keep personal tone private from shared team instructions.</h2>
+        <ul><li><strong>Personal instructions:</strong> Store your preferred reading density, pushback level, and bullet vs. prose rules in your private Notion AI settings so blunt preferences never surprise teammates.</li><li><strong>Shared workspace templates:</strong> Keep team database templates focused on output schema (exact sections, status tags, and data sources).</li><li><strong>Build a portable baseline:</strong> Need the same communication style across Notion, Claude, ChatGPT, and Slack? Build one portable block in our <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions">6-Slider AI Personality Tuner</a>.</li></ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Where do I add custom instructions in Notion AI?</summary>
+            <p>Open your Notion AI agent or AI Meeting Notes custom instructions panel in workspace/personal Notion AI settings, paste a concise modular block (Role, Voice, Operating Rules, and @database Data Map), and test on an existing page.</p>
+          </details>
+          <details>
+            <summary>How do I stop Notion AI Meeting Notes from writing long rambling paragraphs?</summary>
+            <p>Define four fixed headings in your Meeting Notes instructions—Decisions Made, Action Items (Owner + Date), Open Questions, and Risks—and add a 250-word cap for routine 30-minute meetings.</p>
+          </details>
+          <details>
+            <summary>Should I use @mentions inside Notion AI custom instructions?</summary>
+            <p>Yes. Linking your authoritative @Tasks, @Roadmap, or @Style Guide pages inside a short Data Map section steers Notion AI toward live workspace sources instead of stale archive pages.</p>
+          </details>
+          <details>
+            <summary>Do my personal Notion AI tone rules overwrite my team's workspace settings?</summary>
+            <p>Keep personal voice and brevity settings in your private Notion AI preferences rather than editing shared team templates, so each teammate keeps their own communication style while sharing the same output schemas.</p>
+          </details>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>What changed.</h2>
+        <ul class="guide-changelog">
+          <li><time datetime="2026-11-20">November 20, 2026</time> First published with the 4-part Notion AI boot-sequence framework, Meeting Notes extractor, and 5 copy-paste workspace personas.</li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://www.notion.com/help" target="_blank" rel="noopener">Notion Help Center: Notion AI &amp; Custom Instructions</a></li>
+          <li><a href="https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines" target="_blank" rel="noopener">AgentTune Guide: AI Personality, Tone &amp; Verbosity Guidelines</a></li>
+          <li><a href="https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template" target="_blank" rel="noopener">AgentTune Guide: How to Work With Me README Template</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/guides/microsoft-copilot-custom-instructions-memory"><span class="guide-related-kicker">Copilot</span>Microsoft Copilot custom instructions, Memory &amp; 5 work templates</a>
+          <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner → Portable Prompt</a>
+          <a href="/guides/how-to-work-with-me-readme-ai-template"><span class="guide-related-kicker">Team README</span>How to Work With Me template (for Notion, GitHub &amp; AI)</a>
+          <a href="/tools/instruction-checker"><span class="guide-related-kicker">Free browser tool</span>Instruction Checker — spot conflicting workspace rules</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
+</body>
+</html>

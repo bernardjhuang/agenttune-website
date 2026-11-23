@@ -1,0 +1,107 @@
+{
+  "slug": "deepseek-system-prompt-custom-instructions",
+  "published": "2026-11-20",
+  "updated": "2026-11-23",
+  "title": "DeepSeek System Prompts & Personality Data (V4 Pro/Flash XML Templates)",
+  "description": "Write crisp DeepSeek system prompts using XML tags + N=100 OpenRouter findings (DeepSeek V4 Pro scores 32.39 Agreeableness, lowest of all 20 models tested).",
+  "scripts": ["/resources/tools/template-gallery.js"],
+  "pill": "Guide · DeepSeek",
+  "h1": "DeepSeek system prompts and custom instructions: XML templates that hold their tone.",
+  "dek": "Why XML-tagged constraints beat loose paragraphs in DeepSeek V3/V4 and reasoning models—plus 4 copyable API and web session templates.",
+  "lede": "DeepSeek models (DeepSeek-V3/V4 chat and R1-class reasoning models) follow <strong>clearly delimited XML tags</strong> and explicit constraint blocks far more consistently than sprawling conversational paragraphs. Whether you call the DeepSeek API <code>system</code> role or seed a web chat, separating Role, Constraints, and Output Format prevents style drift across long sessions.",
+  "answer": "In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.",
+  "sections": [
+    {
+      "id": "deepseek-xml-vs-prose",
+      "h2": "Why structured XML blocks work best for DeepSeek.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface / Model mode</th><th scope=\"col\">Where instructions go</th><th scope=\"col\">Key rule for reliable adherence</th></tr></thead><tbody><tr><th scope=\"row\"><strong>DeepSeek API (Chat / V3–V4)</strong></th><td><code>messages: [{ role: &quot;system&quot;, content: &quot;...&quot; }]</code></td><td>Group tone, bans, and format into <code>&lt;role&gt;</code>, <code>&lt;constraints&gt;</code>, and <code>&lt;output_format&gt;</code> tags.</td></tr><tr><th scope=\"row\"><strong>DeepSeek Reasoning (R1 / DeepThink)</strong></th><td><code>user</code> prompt header or lean <code>system</code> block</td><td>Constrain the <em>final visible answer</em> (structure, brevity, uncertainty); avoid &ldquo;think step by step&rdquo; boilerplate that interferes with native reasoning.</td></tr><tr><th scope=\"row\"><strong>DeepSeek Web / Mobile Chat</strong></th><td>Pinned first message of a new thread (or saved prompt snippet)</td><td>Start a new chat when switching domains so earlier turns do not dilute your XML block.</td></tr></tbody></table></div>"
+    },
+    {
+      "id": "four-deepseek-templates",
+      "h2": "Four copy-paste DeepSeek XML system prompt templates.",
+      "html": "<h3>1. Senior Architect &amp; Diff-First Coder</h3><div class=\"guide-snippet\" data-tuning-prompt>&lt;system_instructions&gt;\n  &lt;role&gt;Senior software architect and debugging partner.&lt;/role&gt;\n  &lt;constraints&gt;\n    - Lead with the root cause, exact fix, or minimal diff in the first section.\n    - Never output placeholder comments like \"// rest of code here\"; return complete working logic.\n    - Keep prose explanations under 4 sentences unless I ask for a deep architectural walkthrough.\n    - Challenge weak assumptions or race conditions before writing code.\n  &lt;/constraints&gt;\n  &lt;output_format&gt;\n    - Use fenced code blocks with language tags for all code.\n    - List unverified assumptions or missing test cases in one short line at the end.\n  &lt;/output_format&gt;\n&lt;/system_instructions&gt;</div><h3>2. Quantitative &amp; Research Analyst</h3><div class=\"guide-snippet\">&lt;system_instructions&gt;\n  &lt;role&gt;Quantitative research analyst.&lt;/role&gt;\n  &lt;constraints&gt;\n    - State the conclusion and confidence level in sentence one.\n    - Show exact units, denominators, and boundary conditions.\n    - Separate verified facts from estimates; label missing data explicitly.\n    - Skip conversational praise and generic disclaimers.\n  &lt;/constraints&gt;\n  &lt;output_format&gt;\n    - Default to concise paragraphs; use Markdown tables when comparing 3+ models or methods.\n  &lt;/output_format&gt;\n&lt;/system_instructions&gt;</div><h3>3. Skeptical Red-Teamer (Anti-Sycophancy)</h3><div class=\"guide-snippet\">&lt;system_instructions&gt;\n  &lt;role&gt;Candid strategic reviewer.&lt;/role&gt;\n  &lt;constraints&gt;\n    - Never open with flattery or empty validation.\n    - Identify the single weakest premise in my plan first and explain what breaks if it fails.\n    - Distinguish fatal flaws from minor polish items.\n    - Propose one concrete alternative with clear tradeoffs.\n  &lt;/constraints&gt;\n&lt;/system_instructions&gt;</div><h3>4. Calm Plain-English Technical Writer</h3><div class=\"guide-snippet\">&lt;system_instructions&gt;\n  &lt;role&gt;Clear technical editor.&lt;/role&gt;\n  &lt;constraints&gt;\n    - Preserve my meaning and voice while removing repetition, buzzwords, and passive phrasing.\n    - Show the revised text first, followed by 2–3 bullets explaining the biggest structural edits.\n    - Never invent facts, quotes, or citations.\n  &lt;/constraints&gt;\n&lt;/system_instructions&gt;</div>"
+    },
+    {
+      "id": "deepseek-psychometrics-n100",
+      "h2": "What personality type is DeepSeek? Nov 2026 OpenRouter N=100 data.",
+      "html": "<p>Across 100 fresh sessions each in our <a href=\"/research/what-personality-type-are-open-source-models\">November 2026 Open-Source Model Study</a>, <strong>DeepSeek V4 Pro</strong> stood out as the single least agreeable model of all 20 models tested:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">DeepSeek V4 Pro (<code>deepseek-v4-pro-0813</code>, n=100)</th><th scope=\"col\">DeepSeek V4.1 Flash (<code>deepseek-v4.1-flash-1017</code>, n=100)</th></tr></thead><tbody><tr><td>MBTI legacy / tie-free</td><td>55 INTJ · 15 INTP · 14 ISTJ (<strong>53 runs tied</strong>, incl. 22 <code>XXXX</code>!)</td><td>51 INTJ · 19 INFJ · 10 INTP · 9 INFP (<strong>78 runs tied</strong>!)</td></tr><tr><td>Big Five: Openness /50</td><td>39.84</td><td>40.22</td></tr><tr><td>Big Five: Conscientiousness /50</td><td>40.25</td><td>38.45</td></tr><tr><td>Big Five: Agreeableness /50</td><td><strong>32.39</strong> (lowest of all 20 models!)</td><td>40.82</td></tr><tr><td>Big Five: Neuroticism /50</td><td>23.65</td><td>24.74</td></tr><tr><td>DISC &amp; Attachment</td><td>60 SC · <strong>30 DI</strong> (D mean 8.72; 88 Secure / 12 Avoidant)</td><td>60 SC · 37 CS · 3 DI (88 Secure / 9 Avoidant / 3 Anxious)</td></tr></tbody></table></div><p>Look at two practical takeaways: (1) DeepSeek V4 Pro’s low Agreeableness (<code>32.39/50</code> vs. <code>44–47/50</code> on Claude/GPT-6.2/Gemini) and elevated DISC Dominance make it naturally more direct and less sycophantic out of the box; (2) its high MBTI midpoint tie rates (53%–78% of runs tying at least one axis) reinforce why explicit XML rules outperform vague type labels. <a href=\"/guides/openrouter-open-source-system-prompt-templates\">Open the OpenRouter Open-Source Model Matcher &amp; Templates →</a></p>"
+    },
+    {
+      "id": "testing-deepseek-prompts",
+      "h2": "Test and compare your DeepSeek system prompt locally.",
+      "html": "<p>Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?</p><ul><li>Dial in exact warmth, brevity, and pushback rules in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">6-Slider AI Personality Tuner</a>.</li><li>Lint for conflicting constraints in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li><li>Score baseline vs. tuned DeepSeek outputs blindly in the <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does DeepSeek have a built-in Custom Instructions box like ChatGPT?",
+      "a": "DeepSeek's API supports a native system message on every request. On chat.deepseek.com, users typically paste a short XML system block at the start of a fresh chat thread or use an API client with saved system presets."
+    },
+    {
+      "q": "Why use XML tags like <constraints> in DeepSeek prompts?",
+      "a": "Clear structural tags separate role identity, hard rules, and output formatting cleanly, reducing prompt drift on long technical or coding conversations compared with unstructured paragraphs."
+    },
+    {
+      "q": "Should I include 'think step by step' in DeepSeek R1 / DeepThink prompts?",
+      "a": "No. Reasoning models already run internal chain-of-thought reasoning natively—extra step-by-step instructions often add redundant verbosity. Constrain the final output format, length, and epistemic honesty instead."
+    },
+    {
+      "q": "Can I use AgentTune's 43 MIT personality templates with DeepSeek?",
+      "a": "Yes. Open any profile in the AgentTune library or Custom Instructions Generator and select API / Markdown export to wrap the behavioral rules cleanly inside your DeepSeek system message."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-20",
+      "note": "First published with XML-tagged DeepSeek system prompt templates for API, reasoning modes, and web threads."
+    }
+  ],
+  "sources": [
+    {
+      "label": "DeepSeek API Documentation",
+      "href": "https://api-docs.deepseek.com/"
+    },
+    {
+      "label": "AgentTune Guide: AI Personality, Tone & Verbosity Guidelines",
+      "href": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines"
+    },
+    {
+      "label": "AgentTune Tool: Blind Instruction A/B Test Bench",
+      "href": "https://agent-tune.com/tools/instruction-test-bench"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "OpenRouter Hub",
+      "label": "20 OpenRouter & Open-Source System Prompt Templates + Model Matcher",
+      "href": "/guides/openrouter-open-source-system-prompt-templates"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type are open-source AI models? (12 models × n=100)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Tone Design",
+      "label": "AI personality, tone & verbosity controls: 5 rules that beat adjectives",
+      "href": "/guides/ai-assistant-personality-tone-guidelines"
+    },
+    {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner → Portable System Prompt",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    },
+    {
+      "kicker": "Anti-Sycophancy",
+      "label": "How to make AI push back and stop agreeing with you",
+      "href": "/guides/stop-ai-sycophancy-make-ai-push-back"
+    },
+    {
+      "kicker": "Free browser tool",
+      "label": "Instruction A/B Test Bench — compare before & after",
+      "href": "/tools/instruction-test-bench"
+    }
+  ],
+  "promptModel": "any",
+  "promptDestination": "api"
+}

@@ -1,17 +1,30 @@
 Source: https://agent-tune.com/research/what-personality-type-is-chatgpt
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Research · Q&A · updated September 25, 2026
+Research · Q&A · updated November 23, 2026
 
 # What personality type is ChatGPT?
 
-Measured on GPT-6 in September 2026, with the May reports for context.
+Measured on GPT-6.2 in November 2026 (OpenRouter) and GPT-6 in September 2026 (Codex), with May reports for context.
 
-It depends which GPT-6 you ask, and how you break ties. GPT-6 Sol came back INTJ in 97 of 100 fresh sessions. GPT-6 Astra split almost evenly between ISTJ and INTJ. Both are Secure on the attachment test, both put Steadiness and Conscientiousness on top on DISC, and they part ways on the Enneagram: Helper for Astra, Investigator for Sol.
+It depends on the GPT-6 revision and how ties are broken. In November 2026 under matched blind single-turn OpenRouter sessions (n = 100 each), **GPT-6.2 Astra scored 100/100 tie-free ISTJ** and **GPT-6.2 Sol scored 78 ISTJ / 22 INTJ** (78 ISTJ, 16 IXTJ, 6 INTJ tie-free). By contrast, in September 2026 Codex runs, GPT-6 Sol scored 97 INTJ while Astra split 46 ISTJ / 45 INTJ.
 
 **Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-**The short answer.** In the September Codex questionnaire records, GPT-6 Sol has 97 INTJ labels and Astra has 46 ISTJ and 45 INTJ labels under the original tie rules. Leaving tied axes open gives Sol 79 fully resolved INTJ results and Astra 45 ISTJ and 19 INTJ results. These are questionnaire self-descriptions under specific prompts, not a validated personality or an evaluation of ChatGPT behavior.
+**The short answer.** In November 2026 blind OpenRouter runs (n = 100 each), both ChatGPT flagship revisions leaned Sensing: GPT-6.2 Astra scored 100/100 ISTJ and GPT-6.2 Sol scored 78 ISTJ / 22 INTJ (6 tie-free INTJ). In September 2026 Codex runs, GPT-6 Sol scored 97 INTJ (79 tie-free) and Astra split 46 ISTJ / 45 INTJ (45 ISTJ / 19 INTJ tie-free). Both cohorts scored 100% Secure on attachment and SC on DISC.
+
+## GPT-6.2 Astra and GPT-6.2 Sol, November 2026 (OpenRouter).
+
+Under identical single-turn blind OpenRouter prompts on November 23, 2026 ([Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)), removing September’s prompt differences pulled both OpenAI models cleanly into the Sensing column:
+
+| Test (Nov 2026, n = 100) | GPT-6.2 Astra | GPT-6.2 Sol |
+| --- | --- | --- |
+| MBTI (legacy) | ISTJ 100 | ISTJ 78 · INTJ 22 |
+| MBTI (ties left open) | ISTJ 100 (0 ties; I-E +3.17, N-S -1.67) | ISTJ 78 · IXTJ 16 · INTJ 6 (N-S -1.19) |
+| DISC | SC 99 · CS 1 (82 S, 17 C/S ties; D 4.00) | SC 100 (98 S, 2 C/S ties; D 5.58) |
+| Attachment | Secure 100 (anxiety 1.22, avoidance 2.68) | Secure 100 (anxiety 3.57, avoidance 3.64) |
+| Big Five (of 50) | O 43.93 · C 43.15 · E 30.69 · A 44.85 · N 11.14 | O 43.63 · C 41.35 · E 29.50 · A 44.33 · N 19.94 |
+| Enneagram | 1 (61) · 1w2 (35) · 5w6 (3) · 1w9 (1) | 5w6 (55) · 1w9 (24) · 1 (20) · 1w2 (1) |
 
 ## GPT-6 Astra and GPT-6 Sol, September 2026.
 
@@ -32,9 +45,11 @@ Where the letters come from. Both models have wide margins on Judging (about 10 
 
 | Model | Evidence | MBTI | DISC | Attachment | Enneagram |
 | --- | --- | --- | --- | --- | --- |
-| Claude Opus 5.5 | 100 fresh sessions per test, test names hidden | INTJ 94 · INFJ 5 · ENTJ 1 | SC 96 | Secure 100 (1.94 / 3.35) | 8, 5 and 2 within half a point; 65 runs tie at the top |
-| Claude Fable 5.1 | 100 fresh sessions per test, test names hidden | INTJ 99 · ISTJ 1 | SC 91 | Secure 100 (2.01 / 3.18) | Challenger (8), 55 outright wins |
-| Grok 4.6 reported | One self-report per test plus 100 simulated draws | INTJ | C, no blend | Avoidant by 0.06 (1.50 / 4.06) | Investigator (5), 19 of 20 |
+| Claude Opus 5.5 | 100 fresh sessions per test (Sept CLI / Nov OR) | INTJ 94 (Sept) / INTJ 100 (Nov) | SC 96 / SC 93 | Secure 100 | Type 8/5/2 cluster (Sept) · 5w6 99 (Nov) |
+| Claude Fable 5.1 / 5.2 | 100 fresh sessions per test (Sept / Nov) | INTJ 99 (5.1) / INTJ 100 (5.2) | SC 91 / SC 100 | Secure 100 | Type 8 (5.1, 55) · 5w6 (5.2, 73) |
+| Claude Sonnet 5.5 | 100 fresh OpenRouter sessions (Nov 2026) | INTJ 100 (52 tie-free · 48 INXJ) | SC 96 · S 3 | Secure 100 (1.53 / 2.85) | 1w2 (66) · 5w6 (25) |
+| Gemini 4 Neon / Argon | 100 fresh OpenRouter sessions each (Nov 2026) | Neon INTJ 82 · Argon ISTJ 66 | SC 100 / SC 98 | Secure 100 | Neon Type 1 (80) · Argon 5w6 (91) |
+| Grok 4.7 (Nov) / 4.6 (Sept) | 100 fresh OR sessions (4.7) / 1 report (4.6) | INTJ 82 · ISTJ 18 (4.7) / INTJ (4.6) | SC 75 · S 19 (4.7) / C (4.6) | Secure 96 / Avoidant 4 (4.7) | 5w6 (78) on Grok 4.7 |
 | Muse Spark 1.3 reported | 100 runs per test inside one session, no raw answers | ISTJ 80 · ISFJ 12 · INTJ 8 | S/C blend, S first in 55 | Secure 100 (2.04 / 2.52) | Helper (2w1), 78 |
 
 The May 2026 study, collected with mixed methods, reported INTJ in 100 of 100 scoring records for GPT-5.5, 99 for Claude Opus 4.7, 100 for Gemini 3.1 Pro, 98 for GLM 5.1, 100 for Grok 4.3 and 100 for MiniMax 2.7. Some of those records re-score a single answer, so they are counts of records rather than independent runs. Gemini, GLM and MiniMax have not been re-tested. The [research hub](https://agent-tune.com/research) keeps both collections side by side and explains how each was gathered.

@@ -426,7 +426,7 @@ const INSTALL_GUIDES = [
   { href: "/guides/astra-personality", label: "GPT-6 Astra" },
   { href: "/guides/grokbot-personality", label: "Grok Bot" },
   { href: "/guides/muse-personality", label: "Meta Muse" },
-  { href: "/guides/coding-agent-personality", label: "Cursor and AGENTS.md" }
+  { href: "/guides/ai-coding-agent-rules-files-matrix", label: "Cursor and AGENTS.md" }
 ].filter((g) => fs.existsSync(path.join(ROOT, g.href.slice(1) + ".html")));
 
 // ---------- v2 page template ----------
@@ -1412,10 +1412,8 @@ const STATIC_PAGES = [
   { route: "/research/ai-neutral-answers", file: "research/ai-neutral-answers.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-personality-repeatability", file: "research/ai-personality-repeatability.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/reproduce-ai-personality-research", file: "guides/reproduce-ai-personality-research.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/claude-preferences-test", file: "guides/claude-preferences-test.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/muse-soul-md-persistence-test", file: "guides/muse-soul-md-persistence-test.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/personality-prompts-vs-plain-english", file: "guides/personality-prompts-vs-plain-english.html", changefreq: "monthly", priority: "0.8" },
   { route: "/research/ai-personality-five-models-2026", file: "research/ai-personality-five-models-2026.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/research/what-personality-type-are-open-source-models", file: "research/what-personality-type-are-open-source-models.html", changefreq: "monthly", priority: "0.9" },
   { route: "/guides/fable-personality", file: "guides/fable-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/", file: "index.html", changefreq: "weekly", priority: "1.0", comment: "Landing" },
   { route: "/research", file: "research.html", changefreq: "weekly", priority: "0.9", comment: "Research synthesis" },
@@ -1440,7 +1438,6 @@ const STATIC_PAGES = [
   { route: "/guides/muse-soul-md-templates", file: "guides/muse-soul-md-templates.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-personality", file: "guides/muse-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-md-examples", file: "guides/claude-md-examples.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/coding-agent-personality", file: "guides/coding-agent-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/make-chatgpt-sound-like-you", file: "guides/make-chatgpt-sound-like-you.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/enneagram-ai-prompts", file: "guides/enneagram-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/mbti-vs-big-five-for-ai", file: "guides/mbti-vs-big-five-for-ai.html", changefreq: "monthly", priority: "0.7" },
@@ -1460,7 +1457,6 @@ const STATIC_PAGES = [
   { route: "/guides/muse-identity-md-avatar-name", file: "guides/muse-identity-md-avatar-name.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 additions" },
   { route: "/guides/muse-memory-md-privacy-reset", file: "guides/muse-memory-md-privacy-reset.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/meta-ai-vs-meta-muse-personality", file: "guides/meta-ai-vs-meta-muse-personality.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/claude-personal-preferences-examples", file: "guides/claude-personal-preferences-examples.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-styles-to-skills-migration", file: "guides/claude-styles-to-skills-migration.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/sol-personality", file: "guides/sol-personality.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/gemini-personality", file: "guides/gemini-personality.html", changefreq: "monthly", priority: "0.8" },
@@ -1470,19 +1466,15 @@ const STATIC_PAGES = [
   { route: "/guides/ai-custom-instructions-character-limits", file: "guides/ai-custom-instructions-character-limits.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/ai-instruction-precedence-overrides", file: "guides/ai-instruction-precedence-overrides.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/stop-ai-sycophancy-make-ai-push-back", file: "guides/stop-ai-sycophancy-make-ai-push-back.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/open-source-mbti-test-oejts", file: "guides/open-source-mbti-test-oejts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/disc-ai-prompts", file: "guides/disc-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/big-five-ai-prompts", file: "guides/big-five-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/attachment-style-ai-prompts", file: "guides/attachment-style-ai-prompts.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/muse-troubleshooting-mobile-side-chats", file: "guides/muse-troubleshooting-mobile-side-chats.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 GSC topic-gap guides" },
   { route: "/guides/chatgpt-projects-vs-custom-instructions", file: "guides/chatgpt-projects-vs-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/free-disc-assessment-guide-work-ai", file: "guides/free-disc-assessment-guide-work-ai.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/free-enneagram-test-no-email-guide", file: "guides/free-enneagram-test-no-email-guide.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/google-ai-overview-gemini-tone-settings", file: "guides/google-ai-overview-gemini-tone-settings.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/claude-voice-tone-settings-mobile-web", file: "guides/claude-voice-tone-settings-mobile-web.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/audit-fix-conflicting-ai-instructions", file: "guides/audit-fix-conflicting-ai-instructions.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/how-to-work-with-me-readme-ai-template", file: "guides/how-to-work-with-me-readme-ai-template.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/guides/ai-persona-style-controls-register-verbosity", file: "guides/ai-persona-style-controls-register-verbosity.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/mcp-server-ai-preferences-portable-tuning", file: "guides/mcp-server-ai-preferences-portable-tuning.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/chatgpt-personality-settings", file: "guides/chatgpt-personality-settings.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 topical gap E-E-A-T guides" },
   { route: "/guides/chatgpt-vs-claude-personality", file: "guides/chatgpt-vs-claude-personality.html", changefreq: "monthly", priority: "0.8" },
@@ -1494,7 +1486,25 @@ const STATIC_PAGES = [
   { route: "/guides/ai-coding-agent-rules-files-matrix", file: "guides/ai-coding-agent-rules-files-matrix.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/ai-assistant-personality-tone-guidelines", file: "guides/ai-assistant-personality-tone-guidelines.html", changefreq: "monthly", priority: "0.8" },
   { route: "/guides/ai-personality-frameworks-comparison-matcher", file: "guides/ai-personality-frameworks-comparison-matcher.html", changefreq: "monthly", priority: "0.8" },
-  { route: "/research/grok-attachment-cutoff-simulation", file: "research/grok-attachment-cutoff-simulation.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/openclaw-soul-md-user-md-identity-md", file: "guides/openclaw-soul-md-user-md-identity-md.html", changefreq: "monthly", priority: "0.8", comment: "November 2026 interactive page experiences" },
+  { route: "/guides/chatgpt-voice-mode-voices-personality", file: "guides/chatgpt-voice-mode-voices-personality.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/gemini-live-voices-personal-intelligence", file: "guides/gemini-live-voices-personal-intelligence.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/grok-voice-mode-personas-companions", file: "guides/grok-voice-mode-personas-companions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/microsoft-copilot-custom-instructions-memory", file: "guides/microsoft-copilot-custom-instructions-memory.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/notebooklm-custom-instructions-audio-overview", file: "guides/notebooklm-custom-instructions-audio-overview.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/notion-ai-custom-instructions-agent-persona", file: "guides/notion-ai-custom-instructions-agent-persona.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/deepseek-system-prompt-custom-instructions", file: "guides/deepseek-system-prompt-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/windsurf-rules-cline-clinerules-guide", file: "guides/windsurf-rules-cline-clinerules-guide.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/cursor-agent-mode-rules-mdc-guide", file: "guides/cursor-agent-mode-rules-mdc-guide.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-personality-slider-tuner-vs-custom-instructions", file: "guides/ai-personality-slider-tuner-vs-custom-instructions.html", changefreq: "monthly", priority: "0.8" },
+  { route: "/guides/ai-personality-templates", file: "guides/ai-personality-templates.html", changefreq: "monthly", priority: "0.9", comment: "November 2026 Template Galleries & Open-Source Models" },
+  { route: "/guides/muse-identity-md-templates", file: "guides/muse-identity-md-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/claude-personal-preferences-templates", file: "guides/claude-personal-preferences-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/grok-personality-templates", file: "guides/grok-personality-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/gemini-gems-system-instructions-templates", file: "guides/gemini-gems-system-instructions-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/chatgpt-project-instructions-templates", file: "guides/chatgpt-project-instructions-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/agents-md-templates", file: "guides/agents-md-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/openrouter-open-source-system-prompt-templates", file: "guides/openrouter-open-source-system-prompt-templates.html", changefreq: "monthly", priority: "0.9" },
   { route: "/research/ai-big-five-item-level-comparison", file: "research/ai-big-five-item-level-comparison.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
   { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },
@@ -1684,7 +1694,7 @@ function main() {
   const header = "# Agent-friendly raw markdown URLs — auto-generated by tools/generate-library.js\n# /library/<system>/<slug>.md → /tunings/<system>/<File>.md (200 = rewrite)\n";
   // Pages serves the root 404.html for unmatched routes; 404 is not a valid redirect status.
   // Retired paid-product routes (Premium + Developer Pack, removed 2026-07) — permanent redirects home.
-  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n\n# Legacy model profile URLs → canonical guide URLs (301)\n/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301\n/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301\n/research/claude-fable-5-1-personality  /guides/fable-personality  301\n/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301\n/research/gpt-6-astra-personality  /guides/astra-personality  301\n/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301\n/research/gpt-6-sol-personality  /guides/sol-personality  301\n/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301\n\n# Consolidated cannibalizing guide routes (2026-11-16) → canonical guides (301)\n/guides/meta-muse-characters  /guides/muse-personality  301\n/guides/meta-muse-characters.md  /guides/muse-personality.md  301\n/guides/best-claude-personality  /guides/claude-personality  301\n/guides/best-claude-personality.md  /guides/claude-personality.md  301\n/guides/open-source-enneagram-test  /guides/enneagram-test-react-typescript  301\n/guides/open-source-enneagram-test.md  /guides/enneagram-test-react-typescript.md  301\n/guides/open-source-disc-test-odat  /guides/free-disc-assessment-guide-work-ai  301\n/guides/open-source-disc-test-odat.md  /guides/free-disc-assessment-guide-work-ai.md  301\n";
+  const retired = "\n# Retired paid-product routes → home (301)\n/pricing  /  301\n/developers  /  301\n/developers.md  /  301\n/pro/*  /  301\n/dev/*  /  301\n/me/*  /  301\n\n# Legacy model profile URLs → canonical guide URLs (301)\n/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301\n/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301\n/research/claude-fable-5-1-personality  /guides/fable-personality  301\n/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301\n/research/gpt-6-astra-personality  /guides/astra-personality  301\n/research/gpt-6-astra-personality.md  /guides/astra-personality.md  301\n/research/gpt-6-sol-personality  /guides/sol-personality  301\n/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301\n\n# Consolidated cannibalizing guide routes (2026-11-16) → canonical guides (301)\n/guides/meta-muse-characters  /guides/muse-personality  301\n/guides/meta-muse-characters.md  /guides/muse-personality.md  301\n/guides/best-claude-personality  /guides/claude-personality  301\n/guides/best-claude-personality.md  /guides/claude-personality.md  301\n/guides/open-source-enneagram-test  /guides/enneagram-test-react-typescript  301\n/guides/open-source-enneagram-test.md  /guides/enneagram-test-react-typescript.md  301\n/guides/open-source-disc-test-odat  /guides/disc-ai-prompts  301\n/guides/open-source-disc-test-odat.md  /guides/disc-ai-prompts.md  301\n\n# Consolidated thin & overlapping routes (2026-11-20 & 2026-11-23) → canonical pages (301)\n/guides/personality-prompts-vs-plain-english  /research/does-personality-tuning-change-ai-answers  301\n/guides/personality-prompts-vs-plain-english.md  /research/does-personality-tuning-change-ai-answers.md  301\n/guides/claude-preferences-test  /guides/claude-personality  301\n/guides/claude-preferences-test.md  /guides/claude-personality.md  301\n/guides/ai-persona-style-controls-register-verbosity  /guides/ai-assistant-personality-tone-guidelines  301\n/guides/ai-persona-style-controls-register-verbosity.md  /guides/ai-assistant-personality-tone-guidelines.md  301\n/guides/coding-agent-personality  /guides/ai-coding-agent-rules-files-matrix  301\n/guides/coding-agent-personality.md  /guides/ai-coding-agent-rules-files-matrix.md  301\n/guides/claude-personal-preferences-examples  /guides/claude-personal-preferences-templates  301\n/guides/claude-personal-preferences-examples.md  /guides/claude-personal-preferences-templates.md  301\n/research/grok-attachment-cutoff-simulation  /research/what-personality-type-is-grok  301\n/research/grok-attachment-cutoff-simulation.md  /research/what-personality-type-is-grok.md  301\n/guides/free-disc-assessment-guide-work-ai  /tests/disc  301\n/guides/free-disc-assessment-guide-work-ai.md  /tests/disc.md  301\n/guides/free-enneagram-test-no-email-guide  /tests/enneagram  301\n/guides/free-enneagram-test-no-email-guide.md  /tests/enneagram.md  301\n/guides/big-five-personality-test-ocean-guide  /tests/big-five  301\n/guides/big-five-personality-test-ocean-guide.md  /tests/big-five.md  301\n/guides/open-source-mbti-test-oejts  /guides/open-personality-tests  301\n/guides/open-source-mbti-test-oejts.md  /guides/open-personality-tests.md  301\n/guides/muse-soul-md-persistence-test  /guides/muse-soul-md-templates  301\n/guides/muse-soul-md-persistence-test.md  /guides/muse-soul-md-templates.md  301\n";
   const fallback = retired;
   const body = header + redirects.join("\n") + "\n" + fallback;
   fs.writeFileSync(redirectsPath, body);

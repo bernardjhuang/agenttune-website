@@ -16,7 +16,7 @@
     },
     {
       "h2": "Step 1: Move always-on tone rules to Personal Preferences.",
-      "html": "<p>If you used the old Concise or Formal style just to stop Claude from over-explaining, paste those rules once into <strong>Settings → Profile → Personal Preferences</strong>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to communicate with me\n\n- Lead with the direct answer or conclusion in the first sentence.\n- Match response length to the complexity of the question; keep routine replies under 150 words.\n- Default to clear prose paragraphs. Use bullet lists or tables only when they make comparisons easier to scan.\n- Skip conversational padding, flattery, and generic closing offers.\n- Challenge flawed assumptions in my prompt before executing the request.</div><p>For 15 role-specific blocks, see <a href=\"/guides/claude-personal-preferences-examples\">Claude Personal Preferences: 15 examples</a>.</p>"
+      "html": "<p>If you used the old Concise or Formal style just to stop Claude from over-explaining, paste those rules once into <strong>Settings → Profile → Personal Preferences</strong>:</p><div class=\"guide-snippet\" data-tuning-prompt>## How to communicate with me\n\n- Lead with the direct answer or conclusion in the first sentence.\n- Match response length to the complexity of the question; keep routine replies under 150 words.\n- Default to clear prose paragraphs. Use bullet lists or tables only when they make comparisons easier to scan.\n- Skip conversational padding, flattery, and generic closing offers.\n- Challenge flawed assumptions in my prompt before executing the request.</div><p>For 15 role-specific blocks, see <a href=\"/guides/claude-personality\">Claude Personal Preferences: 15 examples</a>.</p>"
     },
     {
       "h2": "Step 2: Turn task-specific writing voices into a Skill.",
@@ -69,11 +69,6 @@
     {
       "kicker": "Examples",
       "label": "Claude Personal Preferences: 15 examples and where to paste",
-      "href": "/guides/claude-personal-preferences-examples"
-    },
-    {
-      "kicker": "Guide",
-      "label": "How to give Claude a personality (Opus 5.5 & Fable 5.1)",
       "href": "/guides/claude-personality"
     },
     {
@@ -85,11 +80,6 @@
       "kicker": "Guide",
       "label": "Project vs account instructions: what overrides what",
       "href": "/guides/ai-instruction-precedence-overrides"
-    },
-    {
-      "kicker": "Verification",
-      "label": "How to test if Claude follows your preferences",
-      "href": "/guides/claude-preferences-test"
     }
   ],
   "promptModel": "opus-5-5",

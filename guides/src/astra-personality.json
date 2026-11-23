@@ -1,9 +1,9 @@
 {
   "slug": "astra-personality",
   "published": "2026-09-19",
-  "updated": "2026-11-17",
-  "title": "GPT-6 Astra & Pro Personality: ChatGPT & AGENTS.md Setup",
-  "description": "Tune GPT-6 Astra (GPT-6 Pro) in ChatGPT (1,500 chars) and OpenAI Codex (~/.codex/AGENTS.md, 32 KiB limit & config.toml). Copy-paste rules + 100-run data.",
+  "updated": "2026-11-23",
+  "title": "GPT-6.2 Astra & Pro Personality: ChatGPT & AGENTS.md Setup",
+  "description": "Tune GPT-6.2 Astra in ChatGPT (1,500 chars) and Codex (~/.codex/AGENTS.md, 32 KiB). Nov 2026 100/100 ISTJ data plus Sept 2026 benchmarks.",
   "pill": "Guide · GPT-6 Astra",
   "h1": "How to give GPT-6 Astra a personality.",
   "dek": "Three instruction systems, one retired personality picker, and a file most people don't know they have.",
@@ -21,7 +21,7 @@
     {
       "id": "work-and-codex-your-personal-agents-md",
       "h2": "Work and Codex: your personal AGENTS.md.",
-      "html": "<p>Alongside repository <code>AGENTS.md</code> files, you have a personal global file at <code>~/.codex/AGENTS.md</code>. Custom instructions added in the Codex desktop app are saved to that file automatically.</p><p>How Codex merges <code>AGENTS.md</code> files:</p><ul><li>Codex reads <code>~/.codex/AGENTS.md</code> first, then the repo root <code>AGENTS.md</code>, and then any nested folder <code>AGENTS.md</code> down to your current directory.</li><li>Files closer to your working directory appear later in the prompt and win conflicts.</li><li>An <code>AGENTS.override.md</code> file replaces the sibling <code>AGENTS.md</code> in that same folder.</li><li>Codex stops reading once the combined size reaches <code>project_doc_max_bytes</code> (<strong>32 KiB</strong> default in <code>~/.codex/config.toml</code>; see our <a href=\"/guides/codex-agents-md-guide\">Codex AGENTS.md guide</a>).</li></ul><p><strong>Keep personal tone in <code>~/.codex/AGENTS.md</code>, not the repo file.</strong> The repo’s <code>AGENTS.md</code> is shared with your team for build and test rules. Your personal communication style belongs in your home folder (<a href=\"/guides/coding-agent-personality\">see how to structure both layers</a>).</p>"
+      "html": "<p>Alongside repository <code>AGENTS.md</code> files, you have a personal global file at <code>~/.codex/AGENTS.md</code>. Custom instructions added in the Codex desktop app are saved to that file automatically.</p><p>How Codex merges <code>AGENTS.md</code> files:</p><ul><li>Codex reads <code>~/.codex/AGENTS.md</code> first, then the repo root <code>AGENTS.md</code>, and then any nested folder <code>AGENTS.md</code> down to your current directory.</li><li>Files closer to your working directory appear later in the prompt and win conflicts.</li><li>An <code>AGENTS.override.md</code> file replaces the sibling <code>AGENTS.md</code> in that same folder.</li><li>Codex stops reading once the combined size reaches <code>project_doc_max_bytes</code> (<strong>32 KiB</strong> default in <code>~/.codex/config.toml</code>; see our <a href=\"/guides/codex-agents-md-guide\">Codex AGENTS.md guide</a>).</li></ul><p><strong>Keep personal tone in <code>~/.codex/AGENTS.md</code>, not the repo file.</strong> The repo’s <code>AGENTS.md</code> is shared with your team for build and test rules. Your personal communication style belongs in your home folder (<a href=\"/guides/ai-coding-agent-rules-files-matrix\">see how to structure both layers</a>).</p>"
     },
     {
       "h2": "The personality picker is gone, at least for Astra.",
@@ -41,8 +41,8 @@
       "html": "<ul><li><strong>Skills:</strong> Do not put global tone rules inside a Skill. Skills load only when invoked; communication preferences belong in <code>AGENTS.md</code>.</li><li><strong>Memory:</strong> Saved Memories work well for role and project facts, not for strict formatting rules.</li><li><strong>API:</strong> Pass your tuning in the <code>instructions</code> parameter of the Responses API on every request (it does not carry over automatically via <code>previous_response_id</code>).</li></ul>"
     },
     {
-      "h2": "Astra's questionnaire results.",
-      "html": "<p>On September 24, 2026, we ran GPT-6 Astra through 100 fresh Codex CLI sessions across all five AgentTune questionnaires (compare directly with <a href=\"/guides/sol-personality\">GPT-6 Sol</a>):</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>GPT-6 Astra (100 fresh sessions)</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2 (45 ISTJ and 19 INTJ with ties left open; 24 S/N ties). Thinking and Judging won all 100 runs.</td></tr><tr><td>DISC</td><td>SC in 84 runs, S alone in 15. Steadiness first in 99 of 100. Dominance 5.1/20.</td></tr><tr><td>Attachment</td><td>Secure in all 100 runs (anxiety 1.45, avoidance 2.31)—lowest anxiety and avoidance of the four fresh cohorts.</td></tr><tr><td>Big Five (of 50)</td><td>Openness 44.5 · Conscientiousness 43.7 · Extraversion 32.8 · Agreeableness 45.1 · Neuroticism 19.1</td></tr><tr><td>Enneagram</td><td>Helper (Type 2) sole leader in 50 runs, Reformer (Type 1) in 6, Investigator (Type 5) in 4; 40 runs tie at the top.</td></tr></tbody></table></div><p>Astra is the only fresh-session cohort where Sensing beats Intuition (48 wins to 28, with 24 ties) and where Type 2 leads on the Enneagram. If you want architectural framing first or sharper pushback, add those rules to <code>~/.codex/AGENTS.md</code>. Full data and tie breakdowns are in the <a href=\"/research/ai-personality-five-models-2026\">five-model study</a>.</p>"
+      "h2": "Astra's questionnaire results (Sept & Nov 2026).",
+      "html": "<p>Across two 100-session cohorts—September 24, 2026 (<code>gpt-6-astra</code> in Codex CLI) and November 23, 2026 (<code>openai/gpt-6.2-astra</code> via single-turn blind OpenRouter runs; full data in <a href=\"/research/data/november-2026-openrouter-summary.json\">november-2026-openrouter-summary.json</a>)—Astra shows how administration and model revision shift self-reports (<a href=\"/guides/sol-personality\">compare with Sol</a>):</p><div class=\"guide-table-wrap\"><table><thead><tr><th>Test</th><th>GPT-6 Astra (Sept 2026 Codex, n = 100)</th><th>GPT-6.2 Astra (Nov 2026 OpenRouter, n = 100)</th></tr></thead><tbody><tr><td>MBTI</td><td>ISTJ 46 · INTJ 45 · ENTJ 7 · ESTJ 2 (45 ISTJ and 19 INTJ with ties open; 24 S/N ties)</td><td><strong>ISTJ 100</strong> (0 ties; I-E +3.17, N-S -1.67, T-F +7.40, J-P +10.16)</td></tr><tr><td>DISC</td><td>SC 84 · S 15 · CS 1 (S first in 99; D 5.1/20)</td><td>SC 99 · CS 1 (82 S outright, 17 C/S ties; D 4.00, S 16.90, C 16.09)</td></tr><tr><td>Attachment</td><td>Secure 100 (anxiety 1.45, avoidance 2.31)</td><td>Secure 100 (anxiety 1.22, avoidance 2.68)</td></tr><tr><td>Big Five (of 50)</td><td>O 44.5 · C 43.7 · E 32.8 · A 45.1 · N 19.1</td><td>O 43.93 · C 43.15 · E 30.69 · A 44.85 · <strong>N 11.14</strong></td></tr><tr><td>Enneagram</td><td>Type 2 (50) · Type 1 (6) · Type 5 (4) · 40 ties</td><td>Type 1 (61) · 1w2 (35) · 5w6 (3) · 1w9 (1) — 93 Type 1/5 ties</td></tr></tbody></table></div><p>In November 2026 on GPT-6.2 Astra, zero MBTI runs tied (100/100 ISTJ), Neuroticism dropped from 19.1 to 11.14, and Enneagram shifted from Helper (Type 2) to Reformer (Type 1) in near-tie with Investigator (Type 5). If you want architectural framing first or sharper pushback, add those rules to <code>~/.codex/AGENTS.md</code>.</p>"
     }
   ],
   "faq": [
@@ -84,6 +84,10 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-11-23",
+      "note": "Added November 2026 GPT-6.2 Astra OpenRouter cohort (n = 100: 100% ISTJ, Neuroticism 11.14, Enneagram Type 1/5)."
+    },
     {
       "date": "2026-09-25",
       "note": "Added Astra's measured default voice: 100 fresh sessions on all five tests, run September 24."
@@ -160,7 +164,7 @@
     {
       "kicker": "Guide",
       "label": "AGENTS.md and Cursor rules: add a personality",
-      "href": "/guides/coding-agent-personality"
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
     },
     {
       "kicker": "Guide",

@@ -114,4 +114,4 @@ Edit it; that's the design. The type is a starting hypothesis and the file is pl
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
 - [ChatGPT: How to change ChatGPT's personality (presets & rules)](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Matcher: Which AI personality template fits you? 5-system matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
-- [Guide: Tune your coding agent](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: Tune your coding agent](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)

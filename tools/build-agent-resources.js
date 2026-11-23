@@ -53,14 +53,15 @@ const tuningSections=Object.entries(systemTitles).map(([sys,label])=>{
 }).join('\n\n');
 const guideLines=resources.filter(r=>r.kind==='guide').map(r=>`- [${r.title.replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlights=[
+  ['https://agent-tune.com/research/what-personality-type-are-open-source-models','What Personality Type Are Open-Source AI Models? (November 2026): 1,200 fresh OpenRouter sessions (n = 100 each across 12 open-weight models incl. DeepSeek V4 Pro, Qwen 4 Max, Qwen 3.8 27B, Llama 4 Maverick/Scout, Mistral Large 2512, Gemma 4 31B, Kimi K2.7 Code, GLM-5.3, MiniMax M3.1, Nemotron 3 Ultra). Finds Mistral 73% ISTJ, Llama 4 Scout 48% Anxious, DeepSeek V4 Pro lowest Agreeableness (32.39/50).'],
+  ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? November 2026 540-reply study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (lifting DeepSeek correctness 78.3% → 95.0% and cutting fluff 36.7% → 3.3%) + 72-reply Claude preferences check + September 2026 60-reply pilot.'],
   ['https://agent-tune.com/research/ai-personality-five-models-2026','Five AI Models, Five Personality Tests (September 2026): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).'],
-  ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? A 60-reply controlled before/after pilot (20 tasks × 3 conditions) showing 5/5 answer-first openings rising from 14/20 (default) to 19/20 (explicit straight rules), hedges dropping from 0.35 to 0.05 per reply, and trailing questions dropping from 0.90 to 0.25.'],
   ['https://agent-tune.com/research/ai-mbti-tie-breaking','How Tie-Breaking Changes AI MBTI Results: 59 of 400 four-model OEJTS sessions contain at least one tied axis; strict `<` tie-breaking inflates apparent INTJ share from 280/400 (70.0%) to 335/400 (83.8%).'],
   ['https://agent-tune.com/research/opus-vs-fable-question-level','Claude Opus 5.5 vs. Fable 5.1 Question-Level Analysis: 170 item-by-item comparisons across all 5 instruments reconcile every aggregate dimension gap.'],
   ['https://agent-tune.com/research/astra-vs-sol-personality-data','GPT-6 Astra vs. GPT-6 Sol Personality Data: 1,000-session comparison across OEJTS, IPIP-50, ODAT, OEPS, and ECR-R.'],
   ['https://agent-tune.com/research/ai-neutral-answers','When AI Chooses the Midpoint on Human Questionnaires: Across 17,000 item responses, models selected the exact scale midpoint 2,980 times (17.5%) and explicitly flagged 1,823 responses (10.7%) as inapplicable to non-human systems.'],
   ['https://agent-tune.com/research/ai-personality-repeatability','AI Personality Test Repeatability: Within-model standard deviations, item flip rates, and run-to-run stability across 20 model-by-test cohorts (n = 100 each).'],
-  ['https://agent-tune.com/research/grok-attachment-cutoff-simulation','Grok 4.6 and the Attachment Cutoff: Sensitivity analysis of Grok 4.6 reported avoidance (4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R vectors.'],
+  ['https://agent-tune.com/research/what-personality-type-is-grok','What Personality Type Is Grok? Grok 4.6 canonical self-report (INTJ, Type 5, DISC C, and attachment avoidance 4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R cutoff sensitivity runs.'],
   ['https://agent-tune.com/research/ai-big-five-item-level-comparison','Why AI Models Score High on Agreeableness and Openness: Item-level reanalysis of 20,000 IPIP-50 Big Five responses across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.'],
   ['https://agent-tune.com/research/i-took-the-mbti-100-times','Simulating 100 MBTI Outcomes from an Opus 4.8 Profile: Historical May 2026 probability-profile Monte Carlo simulation (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) contrasted with September 2026 fresh-session runs.']
 ];
@@ -70,7 +71,7 @@ const researchHighlightsText=researchHighlights.map(([u,desc])=>`- [${desc.split
 
 const llmsTxt=`# AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), and empirical AI personality research (2,000+ scored sessions) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, and Meta Muse.
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), and empirical AI personality research (4,000+ fresh sessions across 20 proprietary & open-weight models) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
 
 Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
 
@@ -123,8 +124,12 @@ ${tuningSections}
 
 ## Optional
 - [Full LLM Documentation & All 43 Template Bodies](https://agent-tune.com/llms-full.txt): Complete installation protocol, platform steps, and all 43 Markdown preference templates in one file.
+- [November 2026 20-Model OpenRouter Summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json): Aggregate means, SDs, and tie-aware counts for 2,000 fresh sessions across 8 proprietary & 12 open-weight models.
+- [OpenRouter Open-Weight Calibration Profiles JSON](https://agent-tune.com/research/data/openrouter-open-source-profiles.json): Distilled empirical system-prompt guidance for all 12 popular open-source models on OpenRouter.
+- [November 2026 540-Reply Behavioral Prompt Comparison JSON](https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json): Blind-judged default vs. plain-English vs. plain-English+INTJ replies across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro.
+- [November 2026 Claude Preferences API Study JSON](https://agent-tune.com/research/data/november-2026-claude-preferences-results.json): 72 blind-judged replies on Claude Opus 5.5 and Claude Fable 5.2.
 - [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
-- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot (plus see the 180-reply cross-model test kit at \`/resources/research/personality-prompt-comparison-kit.json\`).
+- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot.
 - [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save \`.claude/output-styles/*.md\` files with \`keep-coding-instructions: true\`.
 `;
 write('llms.txt',llmsTxt);

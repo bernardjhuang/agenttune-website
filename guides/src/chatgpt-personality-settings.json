@@ -73,6 +73,16 @@
   ],
   "related": [
     {
+      "kicker": "Voice Mode",
+      "label": "ChatGPT Voice Mode voices (all 9 voices: Sol, Cove, Maple, Vale) & tone",
+      "href": "/guides/chatgpt-voice-mode-voices-personality"
+    },
+    {
+      "kicker": "Interactive Tuner",
+      "label": "6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt",
+      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+    },
+    {
       "kicker": "Comparison",
       "label": "ChatGPT vs Claude default personality (benchmark data)",
       "href": "/guides/chatgpt-vs-claude-personality"

@@ -132,6 +132,5 @@ It is a practical behavioral instruction telling Claude to lead with the weakest
 ## Keep going.
 
 - [Guide: Seven best Claude personality setups & settings](https://agent-tune.com/guides/claude-personality)
-- [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
 - [Guide: Change Claude Code's personality](https://agent-tune.com/guides/claude-code-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)

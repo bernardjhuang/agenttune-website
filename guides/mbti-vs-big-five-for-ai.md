@@ -39,7 +39,7 @@ Try a concrete instruction such as “Lead with a recommendation, then give the 
 
 Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — [MBTI (OEJTS)](https://agent-tune.com/tests/mbti) and [Big Five (IPIP-50)](https://agent-tune.com/tests/big-five). No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.
 
-If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with [the setup guide](https://agent-tune.com/guides/how-to-give-your-ai-a-personality), or jump to [the coding-agent version](https://agent-tune.com/guides/coding-agent-personality) if your agent lives in a terminal.
+If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with [the setup guide](https://agent-tune.com/guides/how-to-give-your-ai-a-personality), or jump to [the coding-agent version](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) if your agent lives in a terminal.
 
 ## Questions people ask.
 
@@ -70,4 +70,4 @@ DISC tunes workplace pace and action bias (Dominance, Influence, Steadiness, Con
 - [Research: Opus 4.8 MBTI simulation: methods and limits](https://agent-tune.com/research/i-took-the-mbti-100-times)
 - [Library: INTJ tuning file](https://agent-tune.com/library/mbti/intj)
 - [Library: High Openness tuning file](https://agent-tune.com/library/ocean/openness-high)
-- [Guide: Coding agent personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: Coding agent personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)

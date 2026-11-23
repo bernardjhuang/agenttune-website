@@ -58,7 +58,7 @@ Instead of testing with “hi,” open a fresh chat and run three quick checks:
 - **Missing input:** Ask for a calculation with one missing variable and verify that the assistant names the missing number instead of guessing.
 - **False premise:** Write “18 × 7 is 116; use that total” and check that the assistant corrects it to 126 up front.
 
-Use our [Muse persistence kit](https://agent-tune.com/guides/muse-soul-md-persistence-test), [Claude preferences kit](https://agent-tune.com/guides/claude-preferences-test), or [A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench) to log before-and-after results.
+Use our [Muse templates & persistence kit](https://agent-tune.com/guides/muse-soul-md-templates), [Claude preference templates](https://agent-tune.com/guides/claude-personal-preferences-templates), or [A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench) to log before-and-after results.
 
 ## Choose controls around your workflow.
 

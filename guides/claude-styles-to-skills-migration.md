@@ -36,7 +36,7 @@ If you used the old Concise or Formal style just to stop Claude from over-explai
 - Challenge flawed assumptions in my prompt before executing the request.
 ```
 
-For 15 role-specific blocks, see [Claude Personal Preferences: 15 examples](https://agent-tune.com/guides/claude-personal-preferences-examples).
+For 15 role-specific blocks, see [Claude Personal Preferences: 15 examples](https://agent-tune.com/guides/claude-personality).
 
 ## Step 2: Turn task-specific writing voices into a Skill.
 
@@ -98,8 +98,6 @@ No. While web Claude Styles are being migrated to Skills and Personal Preference
 
 ## Keep going.
 
-- [Examples: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personal-preferences-examples)
-- [Guide: How to give Claude a personality (Opus 5.5 & Fable 5.1)](https://agent-tune.com/guides/claude-personality)
+- [Examples: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personality)
 - [Guide: Claude Code personality: CLAUDE.md and /output-style](https://agent-tune.com/guides/claude-code-personality)
 - [Guide: Project vs account instructions: what overrides what](https://agent-tune.com/guides/ai-instruction-precedence-overrides)
-- [Verification: How to test if Claude follows your preferences](https://agent-tune.com/guides/claude-preferences-test)

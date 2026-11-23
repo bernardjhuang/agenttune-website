@@ -89,4 +89,4 @@ Six to ten clear bullet points (roughly 500 to 1,200 characters) cover tone, ans
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Tool: Free Custom Instructions Generator (compact 1,500-char export)](https://agent-tune.com/tools/custom-instructions-generator)
 - [Guide: ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
-- [Guide: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personal-preferences-examples)
+- [Guide: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personality)

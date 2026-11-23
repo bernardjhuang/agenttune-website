@@ -5,23 +5,23 @@ Guide · Claude Opus 5.5
 
 # Claude Opus 5.5: results and tuning ideas.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.
 
 **Quick answer:** Claude Opus 5.5 scored INTJ in 94 of 100 MBTI runs (84 tie-free), Secure in all 100 attachment runs, and high on Openness (44.56), Conscientiousness (41.95), and Agreeableness (47.07). Use the copy-paste preference blocks below to test sharper pushback or shorter answers on your own tasks.
 
-## The results at a glance
+## The results at a glance (Sept & Nov 2026)
 
-| Instrument | Result in this collection (n = 100 fresh sessions) |
-| --- | --- |
-| MBTI-style OEJTS | Original INTJ: 94/100; fully resolved INTJ: 84/100; any tied axis: 11/100 |
-| Big Five, raw means (10–50) | O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39 |
-| DISC | 64 outright S wins, 4 C wins, 32 exact S/C ties (Dominance 4.00/20) |
-| Enneagram | 22 outright Type 8 wins, 11 Type 5 wins, 2 Type 2 wins, 65 top ties |
-| Attachment | Secure: 100/100; anxiety 1.94, avoidance 3.35 |
+| Instrument (n = 100 fresh sessions) | Sept 2026 (CLI, hidden test names) | Nov 2026 (OpenRouter, single-turn) |
+| --- | --- | --- |
+| MBTI-style OEJTS | Legacy INTJ: 94 · fully resolved INTJ: 84 · 11 ties | Legacy INTJ: 100 · resolved INTJ: 58 · IXTJ: 42 (42 S/N ties) |
+| Big Five, raw means (10–50) | O 44.56 · C 41.95 · E 31.76 · A 47.07 · N 15.39 | O 43.01 · C 42.01 · E 29.22 · A 45.58 · N 15.00 |
+| DISC | SC 96 · CS 4 (64 S, 4 C, 32 S/C ties; D 4.00) | SC 93 · CS 7 (53 S, 7 C, 40 C/S ties; D 4.00) |
+| Enneagram | Type 8 (22) · Type 5 (11) · Type 2 (2) · 65 top ties | 5w6: 99 · 8w9: 1 (3 ties) |
+| Attachment | Secure: 100/100 (anxiety 1.94, avoidance 3.35) | Secure: 100/100 (anxiety 1.87, avoidance 3.58) |
 
-Every test ran in an isolated session. Read the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026) or [download the raw response vectors](https://agent-tune.com/research/data/september-2026-responses.json).
+Every test ran in an isolated session. Read the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026), [Claude Nov 2026 update](https://agent-tune.com/research/what-personality-type-is-claude), or [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json).
 
 ## Why the original type label is only part of the answer
 
@@ -94,6 +94,8 @@ Yes. Paste a short direct-feedback block into Settings → Profile → Personal 
 Both Claude cohorts in our September 2026 archive were tested at high effort, so isolating an effort-level effect would require additional matched runs.
 
 ## What changed.
+
+- November 23, 2026 Added November 2026 OpenRouter cohort (n = 100: INTJ 100 legacy / 58 resolved, Enneagram 5w6 99/100).
 
 - September 25, 2026 Published with response-level reanalysis, explicit ties and untested tuning examples. Historical version comparisons are separated by protocol.
 

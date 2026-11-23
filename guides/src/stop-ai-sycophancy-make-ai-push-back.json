@@ -84,12 +84,7 @@
     {
       "kicker": "Guide",
       "label": "Claude Personal Preferences: 15 copy-paste examples",
-      "href": "/guides/claude-personal-preferences-examples"
-    },
-    {
-      "kicker": "Verification",
-      "label": "How to test if Claude follows your preferences",
-      "href": "/guides/claude-preferences-test"
+      "href": "/guides/claude-personality"
     }
   ],
   "promptModel": "any",

@@ -66,5 +66,5 @@ Survey repeatability doesn't prove a model will follow your instructions on real
 
 ## Keep going.
 
-- [Continue reading: A controlled prompt-comparison protocol](https://agent-tune.com/guides/personality-prompts-vs-plain-english)
+- [Continue reading: A controlled prompt-comparison protocol](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [Continue reading: Where Claude’s answers differ](https://agent-tune.com/research/opus-vs-fable-question-level)

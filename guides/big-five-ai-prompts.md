@@ -5,11 +5,17 @@ Guide · Big Five Prompts
 
 # Big Five AI system prompts: all 10 high and low trait poles.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Modular communication blocks for Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism that you can mix and match across any AI assistant.
 
 **Quick answer:** Pick the two or three Big Five poles where you want your AI to move away from its default baseline—most often Low Agreeableness for candid pushback, Low Extraversion for tighter prose, and High or Low Openness to control abstraction vs concrete examples—and paste those bullets into ChatGPT, Claude, Meta Muse, Codex, or Gemini.
+
+## Interpret your 5 raw IPIP-50 scores (and build a matched prompt).
+
+Already finished the [**free 50-question Big Five test →**](https://agent-tune.com/tests/big-five) (no email, browser-only, 18 reverse-scored items via `6 - response`)? Plug your raw 10–50 totals below to compare against AI baseline averages and export a calibrated prompt:
+
+Loading interactive Big Five score interpreter…
 
 ## All 10 Big Five trait poles in the AgentTune library.
 

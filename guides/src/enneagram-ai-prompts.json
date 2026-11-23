@@ -1,7 +1,8 @@
 {
   "slug": "enneagram-ai-prompts",
-  "title": "Enneagram AI Prompts for All 9 Types (ChatGPT & Claude)",
-  "description": "Paste-ready AI instruction blocks for all nine Enneagram types — what each type needs from ChatGPT, Claude, or any agent, and how to install it.",
+  "title": "Enneagram AI Prompts for All 9 Types, Wings & Ties | AgentTune",
+  "description": "Paste-ready AI instruction blocks for all nine Enneagram types—plus how adjacent wings (5w4 vs 5w6) and tied scores work on our free test.",
+  "scripts": ["/resources/tools/template-gallery.js"],
   "pill": "Guide · Enneagram",
   "h1": "Enneagram AI prompts for all nine types.",
   "dek": "The one personality system that encodes what you're avoiding — which is exactly what your AI keeps getting wrong.",
@@ -22,11 +23,15 @@
     },
     {
       "h2": "Where to paste it.",
-      "html": "<ul><li><strong>ChatGPT:</strong> Go to <em>Settings → Personalization → Custom instructions</em> and paste into <em>\"How would you like ChatGPT to respond?\"</em> (1,500-character limit). See the <a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">ChatGPT guide</a>.</li><li><strong>Claude:</strong> Paste into <em>Settings → General → Personal Preferences</em>, a Claude Project's instructions field, or <code>CLAUDE.md</code> for Claude Code. See the <a href=\"/guides/claude-personality\">Claude personality guide</a>.</li><li><strong>Coding agents:</strong> Paste into <code>CLAUDE.md</code>, <code>.cursor/rules/</code>, or <code>AGENTS.md</code>. See the <a href=\"/guides/coding-agent-personality\">coding-agent guide</a>.</li></ul><p>Each full tuning file in the <a href=\"/library/\">library</a> also includes a one-line verification probe so you can confirm the install worked. After pasting, delete any line that doesn't sound like you and add one line of context about your current project.</p>"
+      "html": "<ul><li><strong>ChatGPT:</strong> Go to <em>Settings → Personalization → Custom instructions</em> and paste into <em>\"How would you like ChatGPT to respond?\"</em> (1,500-character limit). See the <a href=\"/guides/chatgpt-custom-instructions-by-personality-type\">ChatGPT guide</a>.</li><li><strong>Claude:</strong> Paste into <em>Settings → General → Personal Preferences</em>, a Claude Project's instructions field, or <code>CLAUDE.md</code> for Claude Code. See the <a href=\"/guides/claude-personality\">Claude personality guide</a>.</li><li><strong>Coding agents:</strong> Paste into <code>CLAUDE.md</code>, <code>.cursor/rules/</code>, or <code>AGENTS.md</code>. See the <a href=\"/guides/ai-coding-agent-rules-files-matrix\">coding-agent guide</a>.</li></ul><p>Each full tuning file in the <a href=\"/library/\">library</a> also includes a one-line verification probe so you can confirm the install worked. After pasting, delete any line that doesn't sound like you and add one line of context about your current project.</p>"
     },
     {
       "h2": "Don't know your type?",
       "html": "<p>You do not need a type to choose a communication preference. Read the blocks above, keep rules that fit your tasks, and remove the rest. The <a href=\"/tests/enneagram\">Enneagram questionnaire is available</a> with its original questions, scores and optional tuning suggestions. These templates are editorial suggestions, not evidence about your underlying motivations.</p>"
+    },
+    {
+      "h2": "All nine types, adjacent wings & tied scores explained.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Type</th><th scope=\"col\">Archetype</th><th scope=\"col\">Core motivation</th><th scope=\"col\">What the AI prompt adjusts</th></tr></thead><tbody><tr><th scope=\"row\">Type 1</th><td>Reformer</td><td>Integrity &amp; standards</td><td>Rigorous verification, explicit criteria, zero sloppy shortcuts</td></tr><tr><th scope=\"row\">Type 2</th><td>Helper</td><td>Connection &amp; usefulness</td><td>Warm register, stakeholder impact framing</td></tr><tr><th scope=\"row\">Type 3</th><td>Achiever</td><td>Execution &amp; outcomes</td><td>Outcome-first briefs, crisp leverage &amp; tempo</td></tr><tr><th scope=\"row\">Type 4</th><td>Individualist</td><td>Depth &amp; originality</td><td>Non-generic language, no forced positivity</td></tr><tr><th scope=\"row\">Type 5</th><td>Investigator</td><td>First-principles mastery</td><td>Mechanism-first analysis, zero social padding</td></tr><tr><th scope=\"row\">Type 6</th><td>Loyalist</td><td>Preparedness &amp; trust</td><td>Failure-mode analysis &amp; honest tradeoffs first</td></tr><tr><th scope=\"row\">Type 7</th><td>Enthusiast</td><td>Possibility &amp; momentum</td><td>Divergent options before premature narrowing</td></tr><tr><th scope=\"row\">Type 8</th><td>Challenger</td><td>Candor &amp; agency</td><td>Blunt pushback, zero soft-pedaling</td></tr><tr><th scope=\"row\">Type 9</th><td>Peacemaker</td><td>Balance &amp; steady clarity</td><td>Gentle directness without forced confrontation</td></tr></tbody></table></div><p>In our free 36-question <a href=\"/tests/enneagram\">Enneagram test (no email)</a>, adjacent wings only compare neighbors (e.g., Type 5 compares Type 4 vs. Type 6 for <code>5w4</code> or <code>5w6</code>), and exact top-score ties are reported openly rather than broken secretly. Explore tie arithmetic in the <a href=\"/tools/enneagram-scoring-playground\">Enneagram Scoring Playground</a>.</p>"
     },
     {
       "h2": "Building an Enneagram integration?",
@@ -93,6 +98,6 @@
     }
   ],
   "published": "2026-07-23",
-  "updated": "2026-09-25",
+  "updated": "2026-11-23",
   "promptModel": "any"
 }

@@ -5,7 +5,7 @@ Developer resource · runnable starter & JS scorer
 
 # Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 16, 2026
+By Bernard Huang · Updated November 20, 2026
 
 Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.
 
@@ -144,6 +144,6 @@ Take the 36-item Enneagram questionnaire directly in your browser at /tests/enne
 
 - [Free browser tool: Try the Enneagram scoring playground](https://agent-tune.com/tools/enneagram-scoring-playground)
 - [Interactive test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
-- [Guide: Free Enneagram test guide (9 types, wings & ties)](https://agent-tune.com/guides/free-enneagram-test-no-email-guide)
+- [9-type guide: Enneagram AI prompts for all 9 types, wings & ties](https://agent-tune.com/guides/enneagram-ai-prompts)
 - [Research: Reproduce the raw questionnaire results](https://agent-tune.com/guides/reproduce-ai-personality-research)
 - [Prompt library: Enneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)

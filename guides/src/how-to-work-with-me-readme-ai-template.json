@@ -62,7 +62,7 @@
     },
     {
       "label": "AgentTune Guide: Coding agent personality (CLAUDE.md & AGENTS.md)",
-      "href": "https://agent-tune.com/guides/coding-agent-personality"
+      "href": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
     }
   ],
   "related": [
@@ -77,14 +77,14 @@
       "href": "/tools/communication-preferences-builder"
     },
     {
-      "kicker": "Guide",
-      "label": "Free DISC assessment (no email): 4 workplace styles & 12 blends",
-      "href": "/guides/free-disc-assessment-guide-work-ai"
+      "kicker": "Prompts & blends",
+      "label": "DISC AI prompts: 4 workplace styles & 12 blends",
+      "href": "/guides/disc-ai-prompts"
     },
     {
       "kicker": "Guide",
       "label": "AGENTS.md, CLAUDE.md & Cursor rules: add AI personality",
-      "href": "/guides/coding-agent-personality"
+      "href": "/guides/ai-coding-agent-rules-files-matrix"
     },
     {
       "kicker": "Guide",

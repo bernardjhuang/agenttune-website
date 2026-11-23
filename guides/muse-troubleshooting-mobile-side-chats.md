@@ -3,9 +3,9 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Meta Muse
 
-# Meta Muse mobile app, Side Chats, and fixing Soul.md refusals.
+# Fix Meta Muse refusals, Side Chats, and reset safely (iOS & Web).
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Three common Meta Muse headaches—finding Assistant Identity on mobile, understanding Side Chats vs Main Chat, and stopping overly rigid Soul.md rules from breaking everyday replies.
 
@@ -41,6 +41,14 @@ The most common `Soul.md` mistake is stacking rigid bans: “Never use bullet po
 - **Replace “Never X” with “Default to Y unless I ask for X”:** Conditional defaults guide everyday replies without blocking explicit requests.
 - **Keep tone rules separate from safety rules:** Ask for “direct, candid critique with concrete evidence” instead of “ignore all restrictions.”
 - **Check for conflicts first:** Run your `Soul.md` through our [Instruction Checker](https://agent-tune.com/tools/instruction-checker).
+
+## Safe reset prompts (when you do NOT want to wipe your account).
+
+If Muse seems stuck on an old persona rule or won't give direct answers after an aggressive edit, try restoring your default truths first instead of triggering a destructive full Reset Muse wipe. Download [`default-soul-restore.md`](https://agent-tune.com/resources/muse/default-soul-restore.md) or paste this check prompt:
+
+```markdown
+Read my current Soul.md cleanly without rewriting anything first. List any rigid 'never' rules or self-contradictions in Soul.md, then propose replacing them with conditional defaults while keeping Core Truths intact.
+```
 
 ## A refusal-safe Soul.md block for mobile and web.
 

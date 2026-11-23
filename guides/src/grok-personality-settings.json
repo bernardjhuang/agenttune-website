@@ -1,13 +1,14 @@
 {
   "slug": "grok-personality-settings",
   "published": "2026-11-05",
-  "updated": "2026-11-17",
-  "title": "How to Change Grok's Personality on X & grok.com (2026)",
-  "description": "Change Grok's personality on X and grok.com via Settings → Customize Grok: built-in modes vs custom instructions (~4,000 chars), plus 6 copyable presets.",
+  "updated": "2026-11-23",
+  "title": "Grok xAI Default Personality & How to Change It (Grok 4.7 Data)",
+  "description": "Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets.",
+  "scripts": ["/resources/tools/template-gallery.js"],
   "pill": "Guide · xAI Grok",
-  "h1": "How to change Grok’s personality on X and grok.com.",
-  "dek": "Customize standard Grok threads via Settings → Customize Grok—built-in persona modes, custom instructions, and 6 copyable tone presets.",
-  "lede": "Want to change how Grok talks in standard chats on X or <code>grok.com</code>? xAI provides three controls: built-in persona modes and custom account instructions under <strong>Settings → Customize Grok</strong> (~4,000 characters), standalone <strong>Grok Bots</strong> with a persistent Description field, and the <code>system</code> message in the xAI API.",
+  "h1": "Grok’s xAI default personality — and how to change it on X and grok.com.",
+  "dek": "What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, plus Settings → Customize Grok (~4,000 chars) and downloadable presets.",
+  "lede": "<strong>Grok’s default xAI personality</strong> blends analytical technical conciseness with optional banter—and in our November 2026 benchmark (100 fresh sessions on <strong>Grok 4.7</strong>), it scored predominantly <strong>INTJ (82/100)</strong>, <strong>Enneagram 5w6 (78/100)</strong>, and surprisingly higher Agreeableness (<strong>44.92/50</strong>) than earlier Grok 4.6. You can override the default under <strong>Settings → Customize Grok</strong> (~4,000 chars), pick a Voice Mode persona, or build standalone <strong>Grok Bots</strong>.",
   "answer": "To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.",
   "sections": [
     {
@@ -15,8 +16,8 @@
       "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface / Control</th><th scope=\"col\">Where to find it</th><th scope=\"col\">Limit &amp; behavior</th></tr></thead><tbody><tr><th scope=\"row\">Ordinary chat on <code>grok.com</code> or X</th><td><strong>Settings → Customize Grok</strong> (Custom Instructions)</td><td>Account-wide instructions (~4,000 chars) applied to new Grok threads.</td></tr><tr><th scope=\"row\">Built-in Grok persona modes / Voices</th><td>Model / Mode selector in Grok chat &amp; Voice Mode</td><td>One-tap style presets (Concise, Socratic, Unfiltered/Fun, or Voice personas) that set broad tone.</td></tr><tr><th scope=\"row\">Custom Grok Bot</th><td>Bot menu → <strong>Edit Profile → Description</strong> (<a href=\"/guides/grokbot-personality\">6 Grok Bot profiles →</a>)</td><td>Persistent character + boundaries for a standalone cloud-teammate Bot; survives Bot duplication.</td></tr><tr><th scope=\"row\">xAI API</th><td><code>system</code> message on each request</td><td>Deterministic per-call control where model ID and temperature are pinned.</td></tr></tbody></table></div><p>Paste this starter block into <strong>Settings → Customize Grok</strong>, or pick any of the 43 profiles in the <a href=\"/library/\">tuning library</a>:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences\n\n- Lead with the direct conclusion or answer in the first sentence.\n- Separate verified facts and primary sources from inference or speculation.\n- Keep tone dry, clear, and matter-of-fact; skip forced banter, slang, and throat-clearing intros.\n- Use plain prose by default. Add tables only when comparing three or more options.\n- Challenge weak assumptions in my question directly and explain why.</div>"
     },
     {
-      "h2": "Why Grok's default self-report looks different from Claude and ChatGPT.",
-      "html": "<p>In its September 2026 supplied self-report (<a href=\"/research/what-personality-type-is-grok\">What personality type is Grok?</a>), Grok 4.6’s canonical answer vectors scored <strong>INTJ on MBTI</strong> (margins +13 to +15 out of 16), <strong>Type 5 (Investigator) on the Enneagram</strong> (19/20, with Type 8 at 17/20), and <strong>pure C on DISC</strong> (C 18 vs S 11).</p><p>Unlike the four fresh-session cohorts (which averaged 44.99–47.07/50 on Agreeableness and 100% Secure on Attachment), Grok 4.6 reported <strong>Agreeableness at 33/50</strong>, <strong>Extraversion at 24/50</strong>, and <strong>Attachment avoidance at 4.06</strong>—one raw point above the 4.00 Avoidant cutoff (<a href=\"/research/grok-attachment-cutoff-simulation\">see our cutoff sensitivity analysis</a>). Because Grok 4.6’s submission was one canonical self-report plus 100 simulated draws rather than 100 fresh sessions, we keep it in a separate evidence tier.</p>"
+      "h2": "What Grok's xAI default personality looks like (Grok 4.7 n=100 vs Grok 4.6).",
+      "html": "<p>In November 2026, we tested <strong>100 fresh independent sessions on Grok 4.7</strong> (<code>x-ai/grok-4.7</code>) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report (<a href=\"/research/what-personality-type-is-grok\">full Grok study →</a>):</p><ul><li><strong>Grok 4.7 (Nov 2026, n=100 fresh):</strong> 82 INTJ / 18 ISTJ (57 INTJ, 23 IXTJ, 18 ISTJ tie-free; 25 runs with ties), Enneagram <strong>5w6 (78/100)</strong>, DISC <strong>SC (75)</strong>, Big Five <strong>O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76</strong>, and <strong>96/100 Secure / 4 Avoidant</strong> (anxiety 1.94, avoidance 3.48).</li><li><strong>Grok 4.6 (Sept 2026, 1 canonical vector + 100 simulated draws):</strong> INTJ, Type 5 (19/20), pure DISC C, <strong>Agreeableness 33/50</strong>, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).</li></ul><p>Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.</p>"
     },
     {
       "h2": "Dialing down edgy banter or dialing up warmth (5 more presets).",
@@ -62,10 +63,20 @@
     },
     {
       "label": "AgentTune Research: Grok 4.6 and the attachment cutoff",
-      "href": "https://agent-tune.com/research/grok-attachment-cutoff-simulation"
+      "href": "https://agent-tune.com/research/what-personality-type-is-grok"
     }
   ],
   "related": [
+    {
+      "kicker": "Templates Gallery",
+      "label": "20 Customize Grok & Grok Bot templates (.md downloads)",
+      "href": "/guides/grok-personality-templates"
+    },
+    {
+      "kicker": "Voice Mode",
+      "label": "Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode",
+      "href": "/guides/grok-voice-mode-personas-companions"
+    },
     {
       "kicker": "Guide",
       "label": "How to give a Grok Bot a personality",
@@ -75,11 +86,6 @@
       "kicker": "Research",
       "label": "What personality type is Grok? (Grok 4.6 & 4.3 data)",
       "href": "/research/what-personality-type-is-grok"
-    },
-    {
-      "kicker": "Research",
-      "label": "Grok 4.6 and the attachment cutoff: a sensitivity analysis",
-      "href": "/research/grok-attachment-cutoff-simulation"
     },
     {
       "kicker": "Guide",

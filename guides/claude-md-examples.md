@@ -3,13 +3,23 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Guide · Claude Code
 
-# CLAUDE.md examples that actually change behavior.
+# CLAUDE.md examples and downloadable output styles.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Four complete files, annotated — and the principles behind them.
 
 **Quick answer:** CLAUDE.md gives Claude Code persistent session instructions. Put shared build and test rules in ./CLAUDE.md (committed to git), personal repo notes in ./CLAUDE.local.md (gitignored), and your personal communication style in ~/.claude/CLAUDE.md. Keep each file under 200 lines and focus on exact commands and constraints.
+
+## Quick pick: CLAUDE.md templates & Output Style downloads.
+
+| Template / Pack | Best for | Jump / Download |
+| --- | --- | --- |
+| Minimal Starter | 10-line build/test contract for single-repo projects | [Jump ↓](https://agent-tune.com/guides/claude-md-examples#example-1-the-minimal-starter) |
+| Test-Discipline Guardrail | Fail-first bugfixes &amp; strict verification before claiming done | [Jump ↓](https://agent-tune.com/guides/claude-md-examples#example-2-test-discipline-enforced-in-prose) |
+| TypeScript / Python / Go / Rust | 8 copy-paste stack starters + ~/.claude/CLAUDE.md | [Jump to stack examples ↓](https://agent-tune.com/guides/claude-md-examples#eight-more-stack-specific-claude-md-templates) |
+| 43 Claude Code Output Styles | MIT-licensed ~/.claude/output-styles/*.md presets | [Browse Output Styles ↓](https://agent-tune.com/guides/claude-md-examples#download-claude-code-output-styles) |
+| AGENTS.md &amp; Cursor Equivs | Open cross-agent repo rules with 32 KiB meter | [16 AGENTS.md Templates →](https://agent-tune.com/guides/agents-md-templates) |
 
 ## One file, three locations.
 
@@ -100,7 +110,92 @@ The user identifies as ISTJ. Adjust your interaction style accordingly.
 - When unsure, prefer the documented standard.
 ```
 
-Different type, different rules; the [INTJ file](https://agent-tune.com/library/mbti/intj) bans hedging and permission-asking; the [ENFP file](https://agent-tune.com/library/mbti/enfp) is nearly its inverse. All 43 are free in the [library](https://agent-tune.com/library/), and if you don't know your type, the [free MBTI test](https://agent-tune.com/tests/mbti) takes about five minutes. The full argument for why this layer belongs in an engineering file is in [coding agent personality](https://agent-tune.com/guides/coding-agent-personality).
+Different type, different rules; the [INTJ file](https://agent-tune.com/library/mbti/intj) bans hedging and permission-asking; the [ENFP file](https://agent-tune.com/library/mbti/enfp) is nearly its inverse. All 43 are free in the [library](https://agent-tune.com/library/), and if you don't know your type, the [free MBTI test](https://agent-tune.com/tests/mbti) takes about five minutes. The full argument for why this layer belongs in an engineering file is in [coding agent personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
+
+## Eight more stack-specific CLAUDE.md templates.
+
+### 5. Personal Global (~/.claude/CLAUDE.md)
+
+```markdown
+# Personal Global Communication Rules
+- Lead summaries with root cause, modified files, and verified test output.
+- Never report tests or linters passing without running them after your final edit.
+- Ask before running destructive git commands or changing production configs.
+```
+
+### 6. TypeScript & React App
+
+```markdown
+# CLAUDE.md — TypeScript + React
+- Commands: `npm run typecheck && npm test`.
+- Strict TS: no `any`, no silent `catch {}`, prefer semantic `<button type="button">` over clickable divs.
+- Check existing components and hooks before inventing abstractions.
+```
+
+### 7. Python FastAPI / Data Repo
+
+```markdown
+# CLAUDE.md — Python Repo
+- Environment: run tests with `uv run pytest` and lint via `uv run ruff check`.
+- Explicitly validate malformed input rows; never swallow KeyError or network timeouts.
+- Read secrets solely from environment variables.
+```
+
+### 8. Go CLI / Service
+
+```markdown
+# CLAUDE.md — Go Service
+- Verify: `go test -race ./... && go vet ./...`.
+- Wrap errors with `%w`; keep interfaces defined on consumer side.
+```
+
+### 9. Rust Workspace
+
+```markdown
+# CLAUDE.md — Rust
+- Verify: `cargo clippy --all-targets -- -D warnings && cargo test`.
+- Avoid `.unwrap()` in non-test code; document every `unsafe` invariant.
+```
+
+### 10. Static Site & Web Accessibility
+
+```markdown
+# CLAUDE.md — Web & A11y
+- Verify keyboard focus rings, explicit `<label for>` bindings, and 44px mobile touch targets.
+- Check `` lengths remain <= 160 chars after HTML entity encoding.
+```
+
+### 11. PR Review Read-Only Mode
+
+```markdown
+# CLAUDE.md — Code Review Mode
+- Rank security flaws, race conditions, and broken invariants first with exact line ranges.
+- Skip cosmetic style notes and generic compliments.
+```
+
+### 12. Codex + Claude Dual-Tool Bridge
+
+```markdown
+# CLAUDE.md (imports shared AGENTS.md)
+@AGENTS.md
+
+## Claude Code Specific
+- Keep sub-agent prompts tight; run repository test suite locally before handoff.
+```
+
+## Download ready-to-save Claude Code Output Styles (/output-styles/*.md).
+
+Instead of polluting a shared repo's `CLAUDE.md` with personal tone preferences, drop any of AgentTune's 43 MIT-licensed [Claude Code Output Style files](https://agent-tune.com/output-styles/index.json) directly into `~/.claude/output-styles/` (each keeps coding instructions intact via `keep-coding-instructions: true`):
+
+| Popular Output Style | Tone &amp; Focus | Direct .md Download |
+| --- | --- | --- |
+| INTJ — Direct Strategist | First-principles, concise, anti-hedge | [Download .md](https://agent-tune.com/output-styles/agenttune-mbti-intj.md) |
+| ISTJ — Exact Inspector | Precision, precedent, strict step order | [Download .md](https://agent-tune.com/output-styles/agenttune-mbti-istj.md) |
+| DISC D — Dominance | Bottom-line first, rapid triage, pushback | [Download .md](https://agent-tune.com/output-styles/agenttune-disc-d-dominance.md) |
+| DISC C — Conscientiousness | Edge-case checks, explicit bounds &amp; proofs | [Download .md](https://agent-tune.com/output-styles/agenttune-disc-c-conscientiousness.md) |
+| OCEAN Low Agreeableness | Blunt technical critique, zero flattery | [Download .md](https://agent-tune.com/output-styles/agenttune-ocean-agreeableness-low.md) |
+| OCEAN High Conscientiousness | Preconditions, checklists &amp; diffs | [Download .md](https://agent-tune.com/output-styles/agenttune-ocean-conscientiousness-high.md) |
+| Full Output Styles Index (43) | Browse all MBTI, Enneagram, DISC, Attachment &amp; OCEAN files | [index.json →](https://agent-tune.com/output-styles/index.json) · [Setup Guide →](https://agent-tune.com/guides/claude-code-personality) |
 
 ## The principles: short and imperative beats long and narrative.
 
@@ -118,7 +213,7 @@ Different type, different rules; the [INTJ file](https://agent-tune.com/library/
 - **Treating it as enforcement.** CLAUDE.md is context, not a gate. If something must always happen (lint before commit, no pushes to main) use a hook or a permission rule. Prose is for guidance; tooling is for guarantees.
 - **Personal preferences in the team file.** Your sandbox URL and your ISTJ communication layer belong in `CLAUDE.local.md` or `~/.claude/CLAUDE.md`; not in the checked-in file your teammates inherit.
 
-Don't want to write it by hand? The [free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator) builds a complete file; commands, conventions, and a personality layer matched to your type; ready to paste. And [coding agent personality](https://agent-tune.com/guides/coding-agent-personality) covers the same pattern for Cursor, Copilot, and AGENTS.md.
+Don't want to write it by hand? The [free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator) builds a complete file; commands, conventions, and a personality layer matched to your type; ready to paste. And [coding agent personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) covers the same pattern for Cursor, Copilot, and AGENTS.md.
 
 ## Questions people ask.
 
@@ -150,7 +245,7 @@ Yes, if you work with Claude Code daily; how it communicates with you is behavio
 
 - [Guide: How to change Claude Code's personality (output styles)](https://agent-tune.com/guides/claude-code-personality)
 - [Tool: Free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
-- [Guide: Give your coding agent a personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: Give your coding agent a personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
 - [Library: ISTJ tuning — the Inspector](https://agent-tune.com/library/mbti/istj)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)

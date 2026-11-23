@@ -1,0 +1,90 @@
+{
+  "slug": "agents-md-templates",
+  "published": "2026-11-23",
+  "updated": "2026-11-23",
+  "title": "Best AGENTS.md Templates for Codex & Coding Agents: 16 Files | AgentTune",
+  "h1": "AGENTS.md templates for Codex and coding agents.",
+  "dek": "16 copy-paste and downloadable AGENTS.md configs by tech stack with live 32 KiB byte counters and CLAUDE.md / Cursor equivalents.",
+  "description": "16 copy-paste AGENTS.md templates for OpenAI Codex, Cursor, Windsurf, and coding agents with 32 KiB budget meters and .md downloads by tech stack.",
+  "pill": "Guide · Coding Agents",
+  "lede": "<code>AGENTS.md</code> is the open convention read by OpenAI Codex CLI (up to <strong>32 KiB combined limit</strong> via <code>project_doc_max_bytes</code>), Cursor, Windsurf, GitHub Copilot, and compatible coding agents. Keep every repo <code>AGENTS.md</code> tight, verifiable, and focused on real commands rather than prose lectures.",
+  "answer": "Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.",
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
+  "sections": [
+    {
+      "id": "agents-picker-table",
+      "h2": "Quick pick: Downloadable AGENTS.md templates by stack.",
+      "html": "<div id=\"at-template-gallery-meta\" data-platform=\"coding\" data-limit=\"32768\" data-unit=\"bytes\" data-generator=\"/tools/claude-md-generator\" hidden></div><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Stack / Role Template</th><th scope=\"col\">Verification &amp; Guardrails</th><th scope=\"col\">Jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">TypeScript &amp; Next.js</th><td>Strict types, RSC boundaries, <code>typecheck &amp;&amp; test</code></td><td><a href=\"#1-typescript-and-next-js-agents-md\">View file</a> · <a href=\"/resources/agents/agents-md-typescript-nextjs.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Python &amp; Data Pipelines</th><td>Virtualenv, <code>pytest &amp; ruff</code>, zero secret leaks</td><td><a href=\"#2-python-and-data-pipelines-agents-md\">View file</a> · <a href=\"/resources/agents/agents-md-python-data.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Monorepo Shared Safety</th><td>Package-scoped diffs &amp; sub-32 KiB discipline</td><td><a href=\"#3-monorepo-shared-workspace-agents-md\">View file</a> · <a href=\"/resources/agents/agents-md-monorepo-safe.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Autonomous PR Reviewer</th><td>Auth, SQL, race conditions &amp; missing assertions first</td><td><a href=\"#4-autonomous-pr-reviewer-agents-md\">View file</a> · <a href=\"/resources/agents/agents-md-pr-reviewer.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">12 more coding templates</th><td>Go, Rust, Personal <code>~/.codex/AGENTS.md</code>, Migrations, Docs &amp; more</td><td><a href=\"#twelve-more-agents-md-templates\">Jump to 16 files ↓</a></td></tr></tbody></table></div><p>Using multiple tools side-by-side? See our <a href=\"/guides/codex-agents-md-guide\">Codex AGENTS.md Limit &amp; Override Guide</a>, <a href=\"/guides/claude-md-examples\">15 CLAUDE.md Examples</a>, and <a href=\"/guides/ai-coding-agent-rules-files-matrix\">7-Agent Rules File Matrix</a>.</p>"
+    },
+    {
+      "id": "1-typescript-and-next-js-agents-md",
+      "h2": "1. TypeScript & Next.js AGENTS.md.",
+      "html": "<div class=\"guide-snippet\"># AGENTS.md — TypeScript &amp; Next.js Repository\n\n## Build &amp; Verification\n- Package manager: npm / pnpm (check lockfile before running).\n- Verify after final edits: `npm run typecheck &amp;&amp; npm test`.\n\n## Conventions\n- Prefer strict TypeScript types; avoid `any` assertions and silent catches.\n- Keep Server Components default; mark Client Components only at leaf interactive boundaries.\n- Reuse existing hooks, validation schemas, and design tokens before adding packages.\n\n## Reporting\n- Summarize exact changed file paths, root cause, and observed test results only. Never claim checks passed without running them.</div><p><a href=\"/resources/agents/agents-md-typescript-nextjs.md\" download>Download TypeScript / Next.js AGENTS.md</a></p>"
+    },
+    {
+      "id": "2-python-and-data-pipelines-agents-md",
+      "h2": "2. Python & Data Pipelines AGENTS.md.",
+      "html": "<div class=\"guide-snippet\"># AGENTS.md — Python &amp; Data Pipeline Repository\n\n## Environment &amp; Checks\n- Use project virtual environment (`.venv/bin/python` or `uv run`).\n- Run `pytest` and `ruff check` before reporting completion.\n\n## Engineering Rules\n- Handle missing or malformed records explicitly rather than silent drops.\n- Never hardcode credentials, tokens, or personal host paths in committed code; read from environment variables.\n- Document assumptions, data denominators, and schema contracts clearly.</div><p><a href=\"/resources/agents/agents-md-python-data.md\" download>Download Python AGENTS.md</a></p>"
+    },
+    {
+      "id": "3-monorepo-shared-workspace-agents-md",
+      "h2": "3. Monorepo Shared Workspace AGENTS.md.",
+      "html": "<div class=\"guide-snippet\"># AGENTS.md — Monorepo Shared Workspace Safety\n\n## Scope &amp; Isolation\n- Check `git status` before and after edits; touch only the package directory requested.\n- Do not modify root lockfiles, CI workflows, or shared test harnesses unless explicitly authorized.\n- Keep every instruction section compact (stay well under Codex's 32 KiB limit).\n\n## Verification\n- Run package-local build and tests after your final edit and report exact counts.</div><p><a href=\"/resources/agents/agents-md-monorepo-safe.md\" download>Download Monorepo AGENTS.md</a></p>"
+    },
+    {
+      "id": "4-autonomous-pr-reviewer-agents-md",
+      "h2": "4. Autonomous PR Reviewer AGENTS.md.",
+      "html": "<div class=\"guide-snippet\"># AGENTS.md — Autonomous PR Review Instructions\n\n## Review Priority\n1. Security vulnerabilities, auth/permission bypasses, injection vectors, and secret leaks.\n2. Correctness bugs, state desync, race conditions, null/boundary failures, and broken contracts.\n3. Missing test assertions or untested error paths.\n\n## Output Rules\n- List blocking defects first with file + line reference and concrete reproduction path.\n- Omit cosmetic nitpicks unless they violate project linter rules. Never praise code before listing bugs.</div><p><a href=\"/resources/agents/agents-md-pr-reviewer.md\" download>Download PR Reviewer AGENTS.md</a></p>"
+    },
+    {
+      "id": "twelve-more-agents-md-templates",
+      "h2": "Twelve more AGENTS.md templates by workflow.",
+      "html": "<h3>5. Minimal Personal Global (~/.codex/AGENTS.md)</h3><div class=\"guide-snippet\"># Global Communication Preferences\n- Start responses with root cause, modified files, and test output; skip long preamble.\n- Read existing repository files completely before editing.\n- Ask before running destructive git commands, dropping tables, or adding dependencies.\n- Never fabricate test results or unverified tool output.</div><h3>6. Go Microservice</h3><div class=\"guide-snippet\"># AGENTS.md — Go Service\n- Verify after edits: `go test -race ./... &amp;&amp; go vet ./...`.\n- Wrap errors with context (`fmt.Errorf(\"...: %w\", err)`); avoid `panic` outside startup.\n- Keep interfaces narrow at consumer sites; avoid global mutable state.</div><h3>7. Rust Crate</h3><div class=\"guide-snippet\"># AGENTS.md — Rust Crate\n- Verify after edits: `cargo clippy --all-targets -- -D warnings &amp;&amp; cargo test`.\n- Avoid `.unwrap()` / `.expect()` in library code; propagate typed errors cleanly.\n- Keep `unsafe` blocks documented with explicit safety invariants.</div><h3>8. Database &amp; Migrations Guardrail</h3><div class=\"guide-snippet\"># AGENTS.md — Database Migrations\n- Never edit previously applied migration files; always generate a new forward migration.\n- Check locking risk on large tables (`CREATE INDEX CONCURRENTLY`, nullable column backfills).\n- Test both apply and rollback against local seed database before finishing.</div><h3>9. Static Site &amp; Web Accessibility</h3><div class=\"guide-snippet\"># AGENTS.md — Web Frontend\n- Use native semantic HTML (&lt;button type=\"button\"&gt;, &lt;details&gt;, proper &lt;label for&gt;) over div click handlers.\n- Enforce 44x44px touch targets and visible keyboard `:focus-visible` outlines.\n- Run build &amp; link/HTML structure tests after every change.</div><h3>10. Documentation &amp; MDX Sync</h3><div class=\"guide-snippet\"># AGENTS.md — Documentation Repo\n- Check real source code / CLI `--help` output before documenting any flag or path.\n- Keep prose scannable and concrete; lead with exact runnable examples.\n- Never leave stale URLs or deprecated flags unflagged.</div><h3>11. High-Speed Bug Triage Agent</h3><div class=\"guide-snippet\"># AGENTS.md — Bug Fix Mode\n- Write a failing reproduction test first, confirm the failure, then apply the minimal fix.\n- Report: (1) Root Cause in 1 sentence, (2) Minimal Diff, (3) Verified Test Output.</div><h3>12. Test-Hardening Specialist</h3><div class=\"guide-snippet\"># AGENTS.md — Testing Focus\n- Do not mock core pure logic under test; mock only slow network/external I/O boundaries.\n- Never loosen failing assertions to make tests pass—fix the underlying bug or escalate cleanly.</div><h3>13. Codex CLI AGENTS.override.md (Per-Directory)</h3><div class=\"guide-snippet\"># AGENTS.override.md\n- For files under this directory ONLY: skip end-to-end Docker builds during tight iteration; run `npm test -- --filter=unit` cleanly before handoff.</div><h3>14. Security Audit Read-Only Agent</h3><div class=\"guide-snippet\"># AGENTS.md — Security Audit\n- Operate strictly read-only; do not modify production files unless explicitly instructed.\n- Check OWASP top vectors, auth bypasses, command injection, path traversal, and secret leaks.\n- Include exact line numbers and exploitable call paths for every finding.</div><h3>15. Solo Founder Full-Stack Repo</h3><div class=\"guide-snippet\"># AGENTS.md — Ship Fast &amp; Safely\n- Keep solutions boring and maintainable; prefer 1 clear helper over premature frameworks.\n- Verify full build compiles cleanly and key smoke tests pass before reporting done.\n- Alert immediately if missing `.env` secrets or external API changes block progress.</div><h3>16. Multi-Agent Research &amp; Evaluation Harness</h3><div class=\"guide-snippet\"># AGENTS.md — Research Repo\n- Never modify frozen raw datasets or benchmark ground-truth splits.\n- Record exact seed, model slug, temperature, and sample size N beside every result table.</div>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the 32 KiB limit on AGENTS.md in Codex?",
+      "a": "OpenAI Codex defaults project_doc_max_bytes to 32 KiB combined across global (~/.codex/AGENTS.md) and nested repository AGENTS.md / AGENTS.override.md files. Anything past 32 KiB gets silently truncated."
+    },
+    {
+      "q": "Can I share one AGENTS.md across Cursor, Windsurf, and Copilot?",
+      "a": "Yes—many coding tools now read root AGENTS.md natively, or you can convert snippets cleanly between AGENTS.md, CLAUDE.md, and .cursor/rules/*.mdc with our Coding Rules Builder."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Codex AGENTS.md Deep Dive",
+      "href": "https://agent-tune.com/guides/codex-agents-md-guide"
+    },
+    {
+      "label": "AgentTune 7-Agent Rules Matrix",
+      "href": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Limit guide",
+      "label": "Codex AGENTS.md configuration, overrides & 32 KiB limit",
+      "href": "/guides/codex-agents-md-guide"
+    },
+    {
+      "kicker": "Claude Code",
+      "label": "15 CLAUDE.md examples & downloadable Output Styles",
+      "href": "/guides/claude-md-examples"
+    },
+    {
+      "kicker": "Generator",
+      "label": "Interactive CLAUDE.md & Coding Rules Builder",
+      "href": "/tools/claude-md-generator"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-23",
+      "note": "Created 16 stack-specific AGENTS.md templates with 32 KiB live byte counters and 4 downloadable .md starters."
+    }
+  ]
+}

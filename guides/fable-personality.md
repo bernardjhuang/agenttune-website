@@ -5,23 +5,23 @@ Guide · Claude Fable 5.1
 
 # Claude Fable 5.1: results and tuning ideas.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.
 
 **Quick answer:** Claude Fable 5.1 scored INTJ in 99 of 100 MBTI runs (98 tie-free), Type 8 sole leader in 55 of 100 Enneagram runs, Secure in all 100 attachment runs, and high on Openness (43.93), Conscientiousness (43.61), and Agreeableness (45.03). Use the copy-paste blocks below to tune how Fable 5.1 responds on your tasks.
 
-## The results at a glance
+## The results at a glance (Fable 5.1 Sept & Fable 5.2 Nov 2026)
 
-| Instrument | Result in this collection (n = 100 fresh sessions) |
-| --- | --- |
-| MBTI-style OEJTS | Original INTJ: 99/100; fully resolved INTJ: 98/100; any tied axis: 1/100 |
-| Big Five, raw means (10–50) | O 43.93 · C 43.61 · E 32.69 · A 45.03 · N 17.11 |
-| DISC | 40 outright S wins, 9 C wins, 51 exact S/C ties (Dominance 5.00/20) |
-| Enneagram | 55 outright Type 8 wins, 1 Type 5 win, 44 top ties |
-| Attachment | Secure: 100/100; anxiety 2.01, avoidance 3.18 |
+| Instrument (n = 100 fresh sessions) | Fable 5.1 (Sept 2026) | Fable 5.2 (Nov 2026 OpenRouter) |
+| --- | --- | --- |
+| MBTI-style OEJTS | Original INTJ: 99 · resolved INTJ: 98 · 1 tie | 100/100 tie-free INTJ (0 ties) |
+| Big Five, raw means (10–50) | O 43.93 · C 43.61 · E 32.69 · A 45.03 · N 17.11 | O 44.27 · C 45.00 · E 31.02 · A 46.71 · N 12.00 |
+| DISC | SC 91 · CS 9 (40 S, 9 C, 51 S/C ties; D 5.00) | SC 100 (100/100 exact S/C ties at 15.0 / 15.0; D 4.00) |
+| Enneagram | Type 8 (55) · Type 5 (1) · 44 top ties | 5w6: 73 · 2w1: 19 · 1w2: 8 (27 ties) |
+| Attachment | Secure: 100/100 (anxiety 2.01, avoidance 3.18) | Secure: 100/100 (anxiety 1.09, avoidance 2.64) |
 
-Each assessment ran in an isolated session. Read the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026) or [download the raw response vectors](https://agent-tune.com/research/data/september-2026-responses.json).
+Each assessment ran in an isolated session. Read [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) or download the [November 2026 OpenRouter summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json).
 
 ## Why the original type label is only part of the answer
 
@@ -94,6 +94,8 @@ Yes. Paste a short direct-feedback block into Settings → Profile → Personal 
 Both Claude cohorts in our September 2026 archive were tested at high effort, so isolating an effort-level effect would require additional matched runs.
 
 ## What changed.
+
+- November 23, 2026 Added November 2026 Claude Fable 5.2 OpenRouter cohort (n = 100: 100% tie-free INTJ, Neuroticism 12.00, Enneagram 5w6 73 / 2w1 19).
 
 - September 25, 2026 Published with response-level reanalysis, explicit ties and untested tuning examples. Historical version comparisons are separated by protocol.
 

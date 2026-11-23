@@ -99,7 +99,7 @@ No—when merged inside <!-- agenttune:preferences:start --> and <!-- agenttune:
 ## Keep going.
 
 - [Free browser tool: Instruction Converter — bounded marker merges across 7 formats](https://agent-tune.com/tools/instruction-converter)
-- [Guide: AGENTS.md, CLAUDE.md & Cursor rules: add AI personality](https://agent-tune.com/guides/coding-agent-personality)
+- [Guide: AGENTS.md, CLAUDE.md & Cursor rules: add AI personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Guide: How to change Claude Code's personality (/output-style)](https://agent-tune.com/guides/claude-code-personality)
 - [Library: Browse all 43 MIT-licensed personality tuning files](https://agent-tune.com/library/)

@@ -5,15 +5,30 @@ Research · descriptive reanalysis
 
 # GPT-6 Astra vs Sol: what the self-reports show
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
-1,000 total questionnaires across 200 fresh Codex sessions—why Astra split ISTJ/INTJ while Sol scored INTJ.
+1,000 September assessments in Codex plus 1,000 matched November assessments on GPT-6.2 Astra and GPT-6.2 Sol.
 
-**Quick answer:** With tied axes left open, GPT-6 Astra scored INTJ in 19 of 100 runs (with 45 resolved ISTJ and 29 tied runs), while GPT-6 Sol scored INTJ in 79 of 100 runs (18 tied). On the Big Five, Sol averaged slightly higher on Openness (46.87 vs. 44.54), while Agreeableness (45.07 vs. 44.99) and Conscientiousness (43.73 vs. 43.62) were nearly identical.
+**Quick answer:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 
 **Data note (September 26, 2026):** These pages analyze our frozen September 2026 and May 2026 AI questionnaire datasets. All raw answers, scoring keys, and summary tables are unchanged. You can take all five tests on [Tests](https://agent-tune.com/tests/), and download the item IDs and scoring keys to reproduce our numbers. Note that Big Five scores are raw totals, not human population percentiles. [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).
 
-## How the 200 sessions were collected
+## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
+
+To remove September’s midpoint-prompt confound, we ran `openai/gpt-6.2-astra` and `openai/gpt-6.2-sol` under the exact same single-turn blind OpenRouter prompt (n = 100 per model; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)). With prompt differences held constant, **both** GPT-6.2 variants landed on the Sensing side (`N-S` mean `-1.67` for Astra, `-1.19` for Sol):
+
+| Metric (Nov 2026, n = 100) | GPT-6.2 Astra | GPT-6.2 Sol |
+| --- | --- | --- |
+| MBTI (legacy) | ISTJ 100 | ISTJ 78 · INTJ 22 |
+| MBTI (tie-free) | ISTJ 100 (0 ties) | ISTJ 78 · IXTJ 16 · INTJ 6 |
+| Big Five (/50) | O 43.93 · C 43.15 · E 30.69 · A 44.85 · N 11.14 | O 43.63 · C 41.35 · E 29.50 · A 44.33 · N 19.94 |
+| DISC | SC 99 · CS 1 (82 S, 17 ties; D 4.00) | SC 100 (98 S, 2 ties; D 5.58) |
+| Enneagram | 1 (61) · 1w2 (35) · 5w6 (3) · 1w9 (1) | 5w6 (55) · 1w9 (24) · 1 (20) · 1w2 (1) |
+| Attachment | Secure 100 (anx 1.22 · avd 2.68) | Secure 100 (anx 3.57 · avd 3.64) |
+
+Notably, GPT-6.2 Sol still showed nearly double Astra’s Neuroticism score (19.94 vs. 11.14) and triple its attachment anxiety (3.57 vs. 1.22), alongside higher Enneagram Type 5 representation (55 vs. 3) and much higher response variability (94 unique MBTI vectors vs. 35).
+
+## How the September 200 sessions were collected
 
 Each model ran 100 fresh Codex CLI sessions at `xhigh` effort, answering all five questionnaires inside each session (500 scored tests per model, 1,000 total). Because all five tests shared one session window per run, the experimental unit is the 100 sessions per model—not 500 independent API calls.
 

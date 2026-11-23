@@ -5,11 +5,20 @@ Guide · Meta Muse
 
 # What is Meta Muse? Files, plans, and how it works.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 23, 2026
 
 How Meta's standalone personal AI agent (muse.ai) differs from Meta AI, what Free vs. $20 Power plans include, and how Soul.md, Identity.md, and Memory.md work.
 
 **Quick answer:** Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled Tasks, Side Chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Plans include Free ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).
+
+## Do this next with Meta Muse.
+
+| What you want to do | Go straight to |
+| --- | --- |
+| Copy a working personality | [20 Soul.md Templates + 4 .md downloads →](https://agent-tune.com/guides/muse-soul-md-templates) |
+| Pick a name &amp; avatar character | [16 Identity.md Personas & 3-File Kit Builder →](https://agent-tune.com/guides/muse-identity-md-templates) |
+| Edit Soul.md without losing starter truths | [Meta Muse Soul.md Merge Editor →](https://agent-tune.com/tools/muse-soul-md-editor) |
+| Fix refusals, Side Chats, or reset safely | [Mobile, Side Chats & Refusal Fixes →](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats) |
 
 ## What Muse is—and how it differs from Meta AI.
 
@@ -64,7 +73,7 @@ Prices and token allowances are from [Meta’s subscription documentation](https
 
 ## Muse’s questionnaire results, as reported.
 
-In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as **ISTJ in 80 of 100 MBTI runs**, **Type 2 (Helper) in 78 of 100 Enneagram runs**, and **Secure in all 100 attachment runs**. Read the [Muse research note](https://agent-tune.com/research/what-personality-type-is-muse) for full details, or use our [persistence test kit](https://agent-tune.com/guides/muse-soul-md-persistence-test) to verify `Soul.md` edits in your own account.
+In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as **ISTJ in 80 of 100 MBTI runs**, **Type 2 (Helper) in 78 of 100 Enneagram runs**, and **Secure in all 100 attachment runs**. Read the [Muse research note](https://agent-tune.com/research/what-personality-type-is-muse) for full details, or download the [45-turn persistence test kit](https://agent-tune.com/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit) to verify `Soul.md` edits in your own account.
 
 ## Questions people ask.
 
