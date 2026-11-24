@@ -109,6 +109,15 @@ Every proprietary frontier model tested maps to **Lawful Good · Accommodating**
 
 Anti-Sycophancy Pushback Index derived from the 20-model November 2026 N=100 cohort. All 8 proprietary models sit in Lawful Good / Accommodating unless explicitly prompted to challenge flawed premises.
 
+## From benchmark to daily workflow: how to use the 85/15 rule with your agents.
+
+Knowing naive roleplay slashes accuracy isn't much help unless you can translate the data into a cleaner daily habit. Across ChatGPT, Claude, Meta Muse, Gemini, and coding CLIs, four practical takeaways hold cleanly:
+
+- **Keep character costume out of global rules — borrow cognitive habits instead:** Rather than asking for "Sherlock speech", prompt for differential hypothesis elimination. Rather than "robot jokes", specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.
+- **Plant a format-override escape hatch:** Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to `1` single token (`3`) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.
+- **Pair the prompt to the model's measured baseline:** DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.
+- **Verify on your own work in 3 minutes:** Open the [Blind Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench), paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 Agent Cocktail side-by-side before saving it permanently.
+
 ## Build your own 85/15 Agent Cocktail interactively.
 
 ## Questions people ask.

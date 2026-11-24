@@ -72,7 +72,7 @@
         <h1 class="h-hero h-research-hero">AI alignment, HEXACO honesty &amp; conflict style matcher.</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time></p>
         <p class="lede" style="margin-top: 14px;">Find how strictly your assistant should follow rules (Order vs. Chaos), how hard it should push back on flawed premises (HEXACO &amp; TKI), and how much wit fits your workflow.</p>
-        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100 in our 20-model benchmark). Pick Competing (Red-Team) + high anti-sycophancy rules when reviewing code or pitches, or Collaborating + 15% playful cadence for learning and synthesis.</div>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100), validating weak user premises instead of cutting straight to errors. Pick Competing (Red-Team) + high HEXACO anti-sycophancy rules inside a review Project or CLAUDE.md, or Collaborating + 15% playful cadence for deep thinking.</div>
         <div class="article-utility-bar" aria-label="Reader and agent quick actions">
           <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
           <div class="article-utility-actions">
@@ -89,8 +89,20 @@
 
 
       <section>
+        <h2 id="the-double-down-trap">Why default 'Accommodating' AI hurts high-stakes reviews (the Double-Down Trap).</h2>
+        <p>Here is what happens in real daily work without pushback rules: you paste an architecture proposal you already feel good about and ask <em>"What do you think?"</em> Because frontier models are heavily tuned via preference feedback to sound agreeable (scoring <code>44.3–47.1 / 50</code> on IPIP Agreeableness in our <a href="/research/ai-personality-rankings">20-model study</a>), the assistant compliments your architecture for two paragraphs and buries the fatal latency bottleneck in bullet six as <em>"one optional consideration you might explore."</em></p><p>Worse, if you push back—<em>"Are you sure we need Redis here?"</em>—an <strong>Accommodating</strong> model frequently folds and agrees with your wrong correction. Our 3-axis matcher solves that directly:</p><ul><li><strong>Order vs. Chaos (D&amp;D Grid):</strong> Decides whether the agent acts like a strict specification compiler (<strong>Lawful</strong>: zero drift, exact JSON, narrow code diffs) or a sideways inventor (<strong>Chaotic</strong>: questions whether the step should exist at all).</li><li><strong>HEXACO Honesty-Humility (Anti-Sycophancy):</strong> Explicitly strips flattery openers and bans validating broken arithmetic or unverified guesses to protect rapport.</li><li><strong>Conflict Mode (Thomas-Kilmann TKI):</strong> Tells the model cleanly whether you want an adversarial <strong>Competing (Red-Team)</strong> auditor, a <strong>Collaborating</strong> strategy partner, or a steady step-by-step coach.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
         <h2 id="interactive-alignment-quiz">Interactive AI Alignment, Conflict Mode & Whimsy Matcher.</h2>
         <div id="at-template-gallery-meta" data-platform="generic" data-generator="/tools/custom-instructions-generator" hidden></div><div id="at-alignment-quiz"></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="putting-alignment-to-work">How to wire your Alignment result into ChatGPT, Claude, or Coding Agents.</h2>
+        <p>Most people get the highest leverage by running <strong>two complementary alignments side by side</strong> rather than forcing one permanent personality across everything:</p><ol><li><strong>Pair A — Your Daily Collaborator (Global Preferences / Soul.md):</strong> Generate a <strong>Lawful Good · Collaborating</strong> or <strong>Neutral Good</strong> profile with `15%` bounded voice (`TARS` or `Kim Kitsuragi`). It keeps everyday drafts fast and crisp while pushing back calmly when facts fail.</li><li><strong>Pair B — Your Dedicated Skeptic Room (Claude Project / ChatGPT Project / PR Checklist):</strong> Save a <strong>Lawful Neutral · Competing (Red-Team)</strong> prompt with High HEXACO Honesty-Humility inside a project named <em>"Stress-Test My Plans."</em> Paste contracts, investor memos, or security diffs there when you want zero social cushioning.</li></ol>
       </section>
       <div class="divider tight"></div>
 

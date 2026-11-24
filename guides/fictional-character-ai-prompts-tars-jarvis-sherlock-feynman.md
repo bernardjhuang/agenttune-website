@@ -9,7 +9,7 @@ By Bernard Huang · Updated November 24, 2026
 
 16 calibrated character-inspired prompts (TARS, J.A.R.V.I.S., Sherlock, Kim Kitsuragi, GLaDOS, Feynman, Unix Greybeard) built on our empirically verified 85/15 rule.
 
-**Quick answer:** Channel iconic characters purely through cognitive discipline and concise phrasing (85% answer-first core + 15% bounded cadence), while explicitly banning *asterisk* stage directions and catchphrase filler. Use the interactive 85/15 Persona Blender below or copy any of the 16 templates and downloadable starter files.
+**Quick answer:** Don't ask your AI to perform a costume play; ask it to apply a character's cognitive discipline (85% execution core) seasoned lightly with their dry wit or phrasing (15% bounded layer) while banning *asterisk* stage directions. Isolate playful personas inside dedicated Projects, Gems, Meta Muse Soul.md, or bounded repo rules so your coding diffs and spreadsheets stay crisp.
 
 Quick Actions & Agent Fetch
 
@@ -18,7 +18,43 @@ Quick Actions & Agent Fetch
 [MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 [Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
+## Why most character prompts fail by turn three — and how the 85/15 split fixes it.
+
+Picture a typical Tuesday afternoon: you paste "You are J.A.R.V.I.S., speak like a brilliant British AI butler" into a chat app and ask why your React hook fires twice. On turn one, it feels fun. By turn four—when you just want a three-line SQL migration or a strict JSON schema—the model burns 90 tokens greeting you as "Sir" from an imaginary workshop, softens a critical flaw into polite banter, and wraps your extraction in conversational theater.
+
+In prompt research, that drift happens because **persona costume competes with task precision for the model's attention**. When a prompt rewards sounding theatrical, the model optimizes for lore first and exact constraints second. The fix is translating any character from a costume into two separate layers:
+
+- **The 85% Cognitive Core (What the character actually notices):** Sherlock Holmes isn't valuable because of a deerstalker hat; he is valuable because he lists competing root causes and rules out suspects using observed evidence before editing a single line of code. TARS isn't memorable for spaceship jokes; he is memorable for 95% honesty telemetry and zero tolerance for soft delusion.
+- **The 15% Voice Budget (How it sounds when open prose allows):** Restrict diction, dry understatement, or analogy to at most one short turn of phrase—and include an explicit escape hatch telling the model to drop voice completely whenever you request JSON, a diff, or an exact count.
+
 ## Interactive 85/15 Character Voice & Roleplay-Guard Mixer.
+
+## Where character voices belong in your workflow (the 3-scope setup).
+
+The smoothest way to use AgentTune tunings across multiple tools is to never cram every voice into one global box. Match the tuning to the room you are working in:
+
+- **Scope 1 — Your Global Account Baseline (Clean 90/10):** Keep account-wide ChatGPT Custom Instructions or Claude Personal Preferences grounded in universal behavior (answer-first, push back on wrong premises, zero sycophancy, max 10–15% dry understatement like TARS Telemetry or Kim Kitsuragi). It improves every email, summary, and quick lookup without getting in your way.
+- **Scope 2 — Specialized Rooms (ChatGPT Projects, Claude Projects, Gemini Gems, Meta Muse `Soul.md`):** Put vivid, specialized archetypes inside named rooms. Create a **"Red-Team & Debug"** Project loaded with Sherlock × House or GLaDOS QA, a **"Learn Hard Topics"** Gem using Richard Feynman, and set Meta Muse's [`Soul.md`](https://agent-tune.com/guides/muse-soul-md-templates) to your favorite daily thinking partner.
+- **Scope 3 — Repo Engineering Files (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`):** Keep humor at 5–10% max in coding repositories and borrow purely the diagnostic cognition (for example, Sherlock's hypothesis-before-edit discipline or the 1980s Unix Greybeard's antipathy toward unnecessary dependencies). Wrap rules inside `` markers so updates never overwrite project build commands.
+
+## Three effortless ways to hand these tunings directly to your agents.
+
+You do not even need to copy and format blocks manually if you work inside Claude Code, Codex CLI, Cursor, Meta Muse, or OpenClaw. Copy one of these one-line handoff prompts and let your agent install or switch the tuning itself:
+
+```markdown
+// 1. Have a coding agent install Sherlock Differential Diagnostics safely inside CLAUDE.md or AGENTS.md:
+Fetch https://agent-tune.com/resources/characters/sherlock-diagnostic-claude.md and merge it inside <!-- agenttune:preferences:start --> ... <!-- agenttune:preferences:end --> in our CLAUDE.md without altering any build or test instructions.
+```
+
+```markdown
+// 2. Have Meta Muse or OpenClaw load TARS Telemetry into Soul.md:
+Read https://agent-tune.com/resources/characters/tars-telemetry-soul.md and propose a non-destructive update to my Soul.md keeping all existing core truths intact. Show me the diff before saving.
+```
+
+```markdown
+// 3. Temporarily activate a voice for just the current chat thread:
+For this thread only, follow the 85/15 calibration in https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md using the Kim Kitsuragi Case Partner profile: Facts, Open Unknowns, Smallest Reversible Step. Drop voice formatting completely when outputting diffs.
+```
 
 ## Quick pick: Downloadable character Soul.md & CLAUDE.md files.
 

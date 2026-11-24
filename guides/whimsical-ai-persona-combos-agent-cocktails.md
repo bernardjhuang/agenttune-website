@@ -9,7 +9,7 @@ By Bernard Huang · Updated November 24, 2026
 
 Pair a ruthless 70% execution skeleton + 20% coaching lens + 15% whimsical twist—plus 15 ready combos and a 4-question Coach-Me meta-prompt.
 
-**Quick answer:** Combine one analytical base (like INTJ or DISC-D) with one pedagogical modifier (like Differential Diagnosis or Feynman Toy-Models) and a strictly capped 15% whimsical register. Use the Agent Cocktail Mixer below, paste any of the 15 combos, or use the Coach-Me 4-question interview prompt.
+**Quick answer:** Build your Agent Cocktail in three deliberate layers: choose a structured base (INTJ, ISTJ, DISC-D, High Openness, or Type 5), layer a coaching discipline (Differential Diagnosis, Toy-Model Analogies, or Notebook Triage), and finish with 10-15% bounded whimsy or dry wit. Switch or pause the twist mid-thread with one sentence.
 
 Quick Actions & Agent Fetch
 
@@ -18,7 +18,36 @@ Quick Actions & Agent Fetch
 [MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 [Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
+## Why single-note prompts fall flat — and how a 3-layer Agent Cocktail flows.
+
+If you tell Claude or ChatGPT "be funny and playful," it tries to entertain you in every paragraph, padded with puns and filler. If you instead paste a sterile checklist rule ("be concise, bullets only"), every session feels brittle and joyless after twenty minutes.
+
+An **Agent Cocktail** separates those jobs cleanly so each layer does what LLMs handle best:
+
+- **Base Spirit (70% — Execution Architecture):** Decides what comes first and what never gets skipped—line-1 verdicts, observed evidence over guessing, and aggressive refusal to flatter bad math.
+- **Modifier (20% — Reasoning & Coaching Style):** Controls how the model works alongside you—whether it eliminates suspects like a diagnostician, maps your chaotic brainstorm into Verified Facts vs. Open Unknowns, or asks one sharp Socratic question.
+- **Bitters (10–15% — Bounded Voice & Whimsy):** Adds warmth, deadpan restraint, 1980s Unix minimalism, or cozy field-naturalist metaphors strictly inside word choice—never expanding reply length or breaking strict output counts.
+
+## A day in the life: matching four real user moments to the right cocktail.
+
+Instead of searching for one magic prompt that fits every mood, most power users keep **three or four saved combos** across Projects, Gems, or Muse profiles and reach for whichever problem they are facing right now:
+
+- **9:00 AM — Architecture review or risky pull request:** You want an AI that catches silent failure modes faster than you do without writing a lecture. Load **The TARS Staff Engineer** or **The GLaDOS Unit-Test Auditor**. You get direct vulnerability rankings on line 1 paired with just enough dry irony to make painful bug findings tolerable.
+- **1:30 PM — Messy outage, bloated scope, or ADHD brain fog:** You have fourteen browser tabs open and half a stack trace. Load **The Kim Kitsuragi Incident Lead**. Rather than drowning you in an 18-step generic checklist, the agent quietly lays down a notebook ledger: Verified Facts, Open Unknowns, Smallest Reversible Next Step.
+- **4:00 PM — Learning unfamiliar math, ML papers, or legacy internals:** You don't want textbook gatekeeping; you want intuitive grip. Switch to **The Feynman × Studio Naturalist Tutor**. It answers plainly first, drops one physical toy-model analogy so your brain clicks, and keeps curiosity light.
+- **7:00 PM — Untangling messy Obsidian notes or sharpening landing page copy:** Reach for **The Cozy Brass-Lamp Archivist** (literary organization without erasing nuance) or **The 'One More Thing' Columbo Reviewer** (friendly affirmation followed by the single hidden premise that might break your pitch).
+
 ## Build or customize your Agent Cocktail (with live diff preview).
+
+## How to dial whimsy up, down, or off mid-conversation.
+
+Once you install an 85/15 cocktail globally or in a Workspace Project, you don't need to edit settings every time your task shifts. Keep these three conversational shifter lines in muscle memory:
+
+- **Shift to 0% Voice for production code or extraction:** Add `[Telemetry mode: 0% whimsy, strict diff/JSON only]` to any follow-up turn.
+- **Run a targeted diagnostic lens on your current plan:** Say `"Put on your Columbo / Red-Team hat for one reply: acknowledge what works in one line, then point out the one contradiction I'm missing."`
+- **Switch to intuitive mode when jargon piles up:** Say `"Pause notation—explain this step using the Feynman 15% toy-model analogy, then go back to compact engineering notes."`
+
+Even better: paste one of our **Coach-Me self-interview meta-prompts** below inside a blank chat once a month, and let your assistant inspect your recent corrections and propose a cleaner cocktail recipe automatically.
 
 ## Fifteen copy-paste Agent Cocktail recipes (tested 85/15 patterns).
 

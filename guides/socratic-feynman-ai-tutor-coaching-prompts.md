@@ -9,7 +9,7 @@ By Bernard Huang · Updated November 24, 2026
 
 Turn ChatGPT, Claude Projects, Gemini Gems & Meta Muse from passive answer-dispensers into active tutors, Socratic sparing partners, and crisp debuggers.
 
-**Quick answer:** Pair explicit pedagogical pacing (e.g., 'ask 1 probing question at a time' or 'start with an everyday physical analogy before notation') with high epistemic candor so your tutor spots flawed reasoning cleanly without patronizing praise.
+**Quick answer:** Isolate your Socratic or Feynman tutor prompt inside a dedicated ChatGPT Project, Claude Project, or Gemini Gem so it doesn't interfere with quick work queries, and always include a keyword escape hatch ('if I type BLUF or urgent, give the direct solution immediately').
 
 Quick Actions & Agent Fetch
 
@@ -18,7 +18,25 @@ Quick Actions & Agent Fetch
 [MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 [Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
+## The Answer-Dispenser Trap — and how to turn AI into an active thinking partner.
+
+Default AI assistants optimize for immediate helpfulness: you ask a question, they rush to the finish line. That is ideal when you want an obscure bash flag, and terrible when you are trying to master statistics, prepare for a tough system-design interview, or untangle a strategic decision.
+
+Using these coaching tunings with your agents works best when you treat them like **specialized practice partners** rather than generic Q&A engines:
+
+- **Use Feynman Intuition for cold starts:** Force the model to build a concrete everyday toy model (pipes, train tables, ledger cards) before touching equations or frameworks.
+- **Use Socratic Mode for blind spots:** Require the model to ask exactly **one** diagnostic question per turn and wait for your reasoning before uncovering flaws.
+- **Always plant a 1-word Emergency Escape Hatch:** The top reason people abandon Socratic prompts is forgetting it is active during an urgent deadline. Add this rule to every coaching prompt: `"If my message starts with BLUF or URGENT, skip questions and give the direct answer immediately."`
+
 ## Find your Coaching Style & Pushback Calibration.
+
+## How to set up a dedicated 'Coaching Room' across your favorite apps.
+
+Instead of toggling global settings every morning, create a persistent coaching space in 60 seconds:
+
+- **Claude Projects / ChatGPT Projects:** Create a Project titled "Feynman Study Room" or "Interview Sparring", paste Template #1, #2, or #10 into Project Instructions, and drop your PDFs or lecture notes inside the Project knowledge base.
+- **Google Gemini Gems:** Save Template #3 (tested 100% accuracy Feynman 85/15) or Template #6 (Active-Recall Language Coach) as a pinned Gem you launch from web or mobile.
+- **Meta Muse or Local Ollama:** Pair [feynman-whimsical-tutor.md](https://agent-tune.com/resources/characters/feynman-whimsical-tutor.md) inside a dedicated tutoring workspace so it never slows down quick factual lookups.
 
 ## Fourteen copy-paste tutoring & coaching templates.
 

@@ -5,11 +5,11 @@ Directory · Templates
 
 # AI personality and system prompt templates.
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 24, 2026
 
-Browse tested copy-paste starters, role blocks, and downloadable .md configs across Meta Muse, Claude, ChatGPT, Grok, Gemini, coding agents, and open-source models.
+Browse tested copy-paste starters, 85/15 character voices, Agent Cocktails, and downloadable .md configs across Meta Muse, Claude, ChatGPT, Grok, Gemini, coding agents, and OpenRouter.
 
-**Quick answer:** Choose your platform in the directory table below: Meta Muse Soul.md & Identity.md (highest plug-and-play fidelity), Claude Personal Preferences & Skills, ChatGPT Custom Instructions & Projects (1,500-char limit), Grok (4,000-char limit), Gemini Gems & GEMINI.md, coding agent AGENTS.md / CLAUDE.md, or OpenRouter open-weight models.
+**Quick answer:** Choose your surface or style gallery below: Meta Muse Soul.md & Identity.md, Claude Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices, Whimsical Agent Cocktails, and Socratic/Feynman Coaching templates.
 
 Quick Actions & Agent Fetch
 
@@ -18,10 +18,22 @@ Quick Actions & Agent Fetch
 [MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 [Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
-## Template galleries by AI platform.
+## How to actually use these tunings with your agents (3 workflows that stick).
+
+Most people drop one overly detailed prompt into global settings, hit friction on a coding or spreadsheet task two days later, and delete everything. A cleaner architecture separates **where** each template lives:
+
+- **Workflow 1 — Global Baseline (2 minutes):** Paste a tight 6-rule directness & pushback foundation into account-wide settings (ChatGPT Custom Instructions or Claude Personal Preferences). It keeps every quick answer honest without clutter.
+- **Workflow 2 — Dedicated Agent Rooms & Character Cocktails:** Put stronger voices inside focused rooms—a Red-Team PR review Project using [Sherlock × JARVIS (85/15)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman), a study Gem using [Feynman Intuition Coaching](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts), or Meta Muse `Soul.md` mixed in the [Agent Cocktail Blender](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails).
+- **Workflow 3 — Agent-First `.md` & MCP Handoff:** Instead of copy-pasting manually into repos, point Claude Code, Codex CLI, or Cursor at any `.md` mirror URL or our MCP server (`https://agent-tune.com/mcp`) and instruct the agent to wrap the rules inside `` markers.
+
+## Template galleries by AI platform, voice style & use case.
 
 | Platform &amp; Gallery | Exact Paste Field &amp; Limit | Templates &amp; Tools Included |
 | --- | --- | --- |
+| [Fictional Character Voices (85/15)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) | Soul.md / Projects / CLAUDE.md | 16 prompts (TARS, JARVIS, Sherlock, Kim Kitsuragi, Feynman, GLaDOS) · 5 .md files · 300-reply tested |
+| [Whimsical Agent Cocktails & Combos](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails) | Global, Projects, Gems &amp; Muse | 15 3-layer combos · Interactive Persona Blender · 4-question Coach-Me meta-prompts |
+| [AI Alignment, HEXACO & Conflict Matcher](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test) | Any AI App (pushback &amp; rule tuning) | 2-min interactive quiz · 12 Alignment &amp; Red-Team prompts · 20-model baseline map |
+| [Socratic & Feynman Coaching Prompts](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts) | Projects, Gems &amp; Study Rooms | 14 active tutoring, toy-model &amp; rubber-duck debugging templates with BLUF escape hatch |
 | [Meta Muse Soul.md Templates](https://agent-tune.com/guides/muse-soul-md-templates) | Identity → Soul (append section, keep starter truths) | 20 templates · 4 .md downloads · [Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor) |
 | [Meta Muse Identity.md & Characters](https://agent-tune.com/guides/muse-identity-md-templates) | Identity → Identity.md + Avatar Prompt | 16 named personas · 3-file Bundle Builder · 4 .md starters |
 | [Claude Personal Preferences & Skills](https://agent-tune.com/guides/claude-personal-preferences-templates) | Settings → Personal preferences or Skill .md | 20 role templates · 4 .md Skills · [How-to Guide](https://agent-tune.com/guides/claude-personality) |

@@ -5,9 +5,9 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 24, 2026
 
-Two different goals hide inside that sentence. Here is how to set up both across ChatGPT, Claude, Meta Muse, Perplexity, Grok, Gemini, and coding agents.
+Two different goals hide inside that sentence—working alignment vs. memorable character voice. Here is how to combine both cleanly without triggering the Roleplay Tax.
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
@@ -79,11 +79,19 @@ Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and 
 
 Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the test at [/tests/attachment](https://agent-tune.com/tests/attachment).
 
+## How to layer tunings across agents — and add voice without losing accuracy.
+
+The biggest mistake new users make is pasting a highly specific tutor or character voice into their global account box—and then cursing at it two hours later during an urgent bug hunt. Think of your setup as **three clean layers**:
+
+- **Layer 1 — Global Baseline (Account Settings):** Put universal preferences here (answer-first verdicts, reject flawed math calmly, state unknowns rather than guessing). Take our 2-minute [Alignment & Conflict Style Matcher](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test) if default models feel too agreeable.
+- **Layer 2 — Project Rooms & Gems (Specialists):** Isolate Socratic/Feynman learning prompts ([14 coaching templates](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts)) or adversarial PR auditors inside dedicated ChatGPT Projects, Claude Projects, or Gemini Gems.
+- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) or [Agent Cocktail Mixer](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails) so character voice lives in 15% of diction while accuracy stays at 100%.
+
 ## What actually changes (and what our data shows).
 
-Custom instructions change how a model delivers its work, not its raw intelligence. In our [60-reply controlled pilot](https://agent-tune.com/research/does-personality-tuning-change-ai-answers), adding a short “Straight answers” tuning block raised top answer-first scores from 14/20 to 19/20, cut hedging from 0.35 to 0.05 per reply, and dropped trailing filler questions from 0.90 to 0.25 without hurting accuracy.
+Custom instructions change how a model delivers critique, formats tradeoffs, and resists sycophancy—when written cleanly. Across our [540-reply November behavioral benchmark](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [300-reply Roleplay Tax study](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts), explicit answer-first and 85/15 telemetry rules lifted DeepSeek V4 Pro correctness by **+16.7 to +20.0 percentage points** and cut filler fluff to **0.0%**—whereas naive full-character roleplay cut Claude Fable 5.2 accuracy to 85% and tripled word bloat.
 
-Treat any personality template as an editable starting draft. Keep the bullets that save you time on real tasks and delete the rest.
+Treat any template as an editable starting draft. Keep the bullets that save you time on real tasks, or tell your coding agent to fetch a template's raw `.md` URL and merge it cleanly inside bounded markers.
 
 ## Questions people ask.
 

@@ -75,35 +75,35 @@
     <loc>https://agent-tune.com/research/ai-mbti-tie-breaking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/opus-vs-fable-question-level</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/astra-vs-sol-personality-data</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-neutral-answers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-personality-repeatability</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
@@ -124,7 +124,7 @@
     <loc>https://agent-tune.com/research/what-personality-type-are-open-source-models</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
@@ -139,7 +139,7 @@
     <loc>https://agent-tune.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <!-- Research synthesis -->
@@ -162,7 +162,7 @@
     <loc>https://agent-tune.com/tests/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <!-- Legal -->
@@ -228,7 +228,7 @@
     <loc>https://agent-tune.com/guides/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <!-- Guides -->
@@ -236,7 +236,7 @@
     <loc>https://agent-tune.com/guides/how-to-give-your-ai-a-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
 
   <url>
@@ -348,7 +348,7 @@
     <loc>https://agent-tune.com/research/what-personality-type-is-muse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
@@ -376,28 +376,28 @@
     <loc>https://agent-tune.com/research/what-personality-type-is-claude</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-grok</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-gemini</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/does-personality-tuning-change-ai-answers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <url>
@@ -411,7 +411,7 @@
     <loc>https://agent-tune.com/research/first-ai-that-is-not-an-intj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <!-- November 2026 additions -->
@@ -724,7 +724,7 @@
     <loc>https://agent-tune.com/guides/ai-personality-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
 
   <url>
@@ -776,11 +776,47 @@
     <lastmod>2026-11-23</lastmod>
   </url>
 
+  <!-- Roleplay Tax Study, Alignment Test & Character Cocktails -->
+  <url>
+    <loc>https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+
   <url>
     <loc>https://agent-tune.com/research/ai-big-five-item-level-comparison</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-23</lastmod>
   </url>
 
   <!-- Free tools -->
@@ -803,7 +839,7 @@
     <loc>https://agent-tune.com/library/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
 
   <!-- Library type pages — 43 standalone tunings -->

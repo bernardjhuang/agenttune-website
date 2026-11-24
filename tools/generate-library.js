@@ -1378,6 +1378,17 @@ function buildHub(contacts) {
 
     <div class="divider"></div>
 
+    <section style="margin-top: 44px; padding: 24px 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px;" aria-labelledby="how-to-use-library-agents">
+      <span class="pill">How to use these with your agents</span>
+      <h2 class="h-sub" id="how-to-use-library-agents" style="margin-top: 8px;">Three habits that make library tunings actually stick across threads.</h2>
+      <p style="font-size: 15.5px; line-height: 1.6; color: var(--muted); margin-top: 8px;">Every card above is plain Markdown designed to travel anywhere your AI works—not a rigid bot costume. Here is how people get the most mileage out of them:</p>
+      <ol style="font-size: 15px; line-height: 1.65; color: var(--ink); padding-left: 20px; margin-top: 12px;">
+        <li><strong>Layer your base with an 85/15 voice twist:</strong> Pick one structural system above (for instance <code>INTJ</code>, <code>DISC-D</code>, or <code>Type 5</code>) for clear verdicts and low sycophancy, or blend it with a 10–15% bounded character cadence (<a href="/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman">TARS, JARVIS, Sherlock, Feynman</a>) in the <a href="/guides/whimsical-ai-persona-combos-agent-cocktails">85/15 Agent Cocktail Mixer</a>.</li>
+        <li><strong>Put universal rules globally and specialized styles in dedicated rooms:</strong> Keep account-wide ChatGPT Custom Instructions or Claude Preferences focused on answer-first pacing and honesty, while putting strict red-team skeptics, Socratic tutors (<a href="/guides/socratic-feynman-ai-tutor-coaching-prompts">14 tutoring prompts</a>), or workspace coding discipline inside dedicated Projects, Gems, Meta Muse <code>Soul.md</code>, or repo <code>CLAUDE.md</code> / <code>AGENTS.md</code> files wrapped in <code>&lt;!-- agenttune:preferences:start --&gt;</code> markers.</li>
+        <li><strong>Hand the raw URL straight to coding or MCP agents:</strong> Instead of copy-pasting manually, paste a one-line handoff prompt into Claude Code, Codex CLI, or Cursor: <em>"Fetch this tuning's raw <code>.md</code> body from AgentTune and merge it safely inside our bounded markers without touching build or test commands."</em></li>
+      </ol>
+    </section>
+
     <!-- CLOSING CTA -->
     <section class="closer">
       <span class="pill">Not sure of your type?</span>
@@ -1527,6 +1538,11 @@ const STATIC_PAGES = [
   { route: "/guides/chatgpt-project-instructions-templates", file: "guides/chatgpt-project-instructions-templates.html", changefreq: "monthly", priority: "0.9" },
   { route: "/guides/agents-md-templates", file: "guides/agents-md-templates.html", changefreq: "monthly", priority: "0.9" },
   { route: "/guides/openrouter-open-source-system-prompt-templates", file: "guides/openrouter-open-source-system-prompt-templates.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/research/ai-roleplay-tax-fictional-character-prompts", file: "research/ai-roleplay-tax-fictional-character-prompts.html", changefreq: "monthly", priority: "0.9", comment: "Roleplay Tax Study, Alignment Test & Character Cocktails" },
+  { route: "/guides/ai-alignment-hexaco-conflict-style-test", file: "guides/ai-alignment-hexaco-conflict-style-test.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman", file: "guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/whimsical-ai-persona-combos-agent-cocktails", file: "guides/whimsical-ai-persona-combos-agent-cocktails.html", changefreq: "monthly", priority: "0.9" },
+  { route: "/guides/socratic-feynman-ai-tutor-coaching-prompts", file: "guides/socratic-feynman-ai-tutor-coaching-prompts.html", changefreq: "monthly", priority: "0.9" },
   { route: "/research/ai-big-five-item-level-comparison", file: "research/ai-big-five-item-level-comparison.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
   { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },

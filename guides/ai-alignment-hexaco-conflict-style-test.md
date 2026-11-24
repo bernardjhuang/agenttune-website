@@ -9,7 +9,7 @@ By Bernard Huang · Updated November 24, 2026
 
 Find how strictly your assistant should follow rules (Order vs. Chaos), how hard it should push back on flawed premises (HEXACO & TKI), and how much wit fits your workflow.
 
-**Quick answer:** Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100 in our 20-model benchmark). Pick Competing (Red-Team) + high anti-sycophancy rules when reviewing code or pitches, or Collaborating + 15% playful cadence for learning and synthesis.
+**Quick answer:** Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100), validating weak user premises instead of cutting straight to errors. Pick Competing (Red-Team) + high HEXACO anti-sycophancy rules inside a review Project or CLAUDE.md, or Collaborating + 15% playful cadence for deep thinking.
 
 Quick Actions & Agent Fetch
 
@@ -18,7 +18,24 @@ Quick Actions & Agent Fetch
 [MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 [Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
+## Why default 'Accommodating' AI hurts high-stakes reviews (the Double-Down Trap).
+
+Here is what happens in real daily work without pushback rules: you paste an architecture proposal you already feel good about and ask "What do you think?" Because frontier models are heavily tuned via preference feedback to sound agreeable (scoring `44.3–47.1 / 50` on IPIP Agreeableness in our [20-model study](https://agent-tune.com/research/ai-personality-rankings)), the assistant compliments your architecture for two paragraphs and buries the fatal latency bottleneck in bullet six as "one optional consideration you might explore."
+
+Worse, if you push back—"Are you sure we need Redis here?"—an **Accommodating** model frequently folds and agrees with your wrong correction. Our 3-axis matcher solves that directly:
+
+- **Order vs. Chaos (D&D Grid):** Decides whether the agent acts like a strict specification compiler (**Lawful**: zero drift, exact JSON, narrow code diffs) or a sideways inventor (**Chaotic**: questions whether the step should exist at all).
+- **HEXACO Honesty-Humility (Anti-Sycophancy):** Explicitly strips flattery openers and bans validating broken arithmetic or unverified guesses to protect rapport.
+- **Conflict Mode (Thomas-Kilmann TKI):** Tells the model cleanly whether you want an adversarial **Competing (Red-Team)** auditor, a **Collaborating** strategy partner, or a steady step-by-step coach.
+
 ## Interactive AI Alignment, Conflict Mode & Whimsy Matcher.
+
+## How to wire your Alignment result into ChatGPT, Claude, or Coding Agents.
+
+Most people get the highest leverage by running **two complementary alignments side by side** rather than forcing one permanent personality across everything:
+
+- **Pair A — Your Daily Collaborator (Global Preferences / Soul.md):** Generate a **Lawful Good · Collaborating** or **Neutral Good** profile with `15%` bounded voice (`TARS` or `Kim Kitsuragi`). It keeps everyday drafts fast and crisp while pushing back calmly when facts fail.
+- **Pair B — Your Dedicated Skeptic Room (Claude Project / ChatGPT Project / PR Checklist):** Save a **Lawful Neutral · Competing (Red-Team)** prompt with High HEXACO Honesty-Humility inside a project named "Stress-Test My Plans." Paste contracts, investor memos, or security diffs there when you want zero social cushioning.
 
 ## What the 3 axes solve (and why default AIs score Accommodating).
 

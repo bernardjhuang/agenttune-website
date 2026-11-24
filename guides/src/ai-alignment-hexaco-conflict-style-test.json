@@ -7,17 +7,27 @@
   "dek": "Find how strictly your assistant should follow rules (Order vs. Chaos), how hard it should push back on flawed premises (HEXACO & TKI), and how much wit fits your workflow.",
   "description": "Take the 2-minute AI Alignment, HEXACO Honesty-Humility and TKI Conflict Style matcher. Generate anti-sycophancy and whimsy prompts for any agent.",
   "pill": "Test & Matcher · Alignment · HEXACO · Conflict",
-  "lede": "Standard personality tests capture general traits, but everyday AI frustration usually comes down to three missing axes: <strong>Order vs. Chaos</strong> (spec fidelity vs. sideways invention), <strong>HEXACO Anti-Sycophancy Pushback</strong> (will the model tell you when your math or premise is wrong?), and <strong>Thomas-Kilmann Conflict Mode</strong> (Collaborating vs. Competing Red-Team). Take the 2-minute matcher below or grab one of the 12 calibrated prompts underneath.",
-  "answer": "Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100 in our 20-model benchmark). Pick Competing (Red-Team) + high anti-sycophancy rules when reviewing code or pitches, or Collaborating + 15% playful cadence for learning and synthesis.",
+  "lede": "Ever noticed how every default AI talks to you like an eager customer-support rep? Tell ChatGPT or Claude a slightly flawed assumption—<em>\"So doubling a number always adds two, right?\"</em>—and watch how hard it tries to validate part of your premise before gently hinting at the math. Across our <a href=\"/research/ai-roleplay-tax-fictional-character-prompts\">20-model Alignment Matrix</a>, all eight proprietary frontier models fell inside <strong>Lawful Good · Accommodating</strong>. The 2-minute matcher below helps you intentionally dial in <strong>Order vs. Chaos</strong>, <strong>HEXACO Anti-Sycophancy Pushback</strong>, and <strong>Thomas-Kilmann Conflict Mode</strong> so your agent challenges weak assumptions when stakes matter.",
+  "answer": "Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100), validating weak user premises instead of cutting straight to errors. Pick Competing (Red-Team) + high HEXACO anti-sycophancy rules inside a review Project or CLAUDE.md, or Collaborating + 15% playful cadence for deep thinking.",
   "scripts": [
     "/resources/tools/alignment-archetype-quiz.js",
     "/resources/tools/template-gallery.js"
   ],
   "sections": [
     {
+      "id": "the-double-down-trap",
+      "h2": "Why default 'Accommodating' AI hurts high-stakes reviews (the Double-Down Trap).",
+      "html": "<p>Here is what happens in real daily work without pushback rules: you paste an architecture proposal you already feel good about and ask <em>\"What do you think?\"</em> Because frontier models are heavily tuned via preference feedback to sound agreeable (scoring <code>44.3–47.1 / 50</code> on IPIP Agreeableness in our <a href=\"/research/ai-personality-rankings\">20-model study</a>), the assistant compliments your architecture for two paragraphs and buries the fatal latency bottleneck in bullet six as <em>\"one optional consideration you might explore.\"</em></p><p>Worse, if you push back—<em>\"Are you sure we need Redis here?\"</em>—an <strong>Accommodating</strong> model frequently folds and agrees with your wrong correction. Our 3-axis matcher solves that directly:</p><ul><li><strong>Order vs. Chaos (D&amp;D Grid):</strong> Decides whether the agent acts like a strict specification compiler (<strong>Lawful</strong>: zero drift, exact JSON, narrow code diffs) or a sideways inventor (<strong>Chaotic</strong>: questions whether the step should exist at all).</li><li><strong>HEXACO Honesty-Humility (Anti-Sycophancy):</strong> Explicitly strips flattery openers and bans validating broken arithmetic or unverified guesses to protect rapport.</li><li><strong>Conflict Mode (Thomas-Kilmann TKI):</strong> Tells the model cleanly whether you want an adversarial <strong>Competing (Red-Team)</strong> auditor, a <strong>Collaborating</strong> strategy partner, or a steady step-by-step coach.</li></ul>"
+    },
+    {
       "id": "interactive-alignment-quiz",
       "h2": "Interactive AI Alignment, Conflict Mode & Whimsy Matcher.",
       "html": "<div id=\"at-template-gallery-meta\" data-platform=\"generic\" data-generator=\"/tools/custom-instructions-generator\" hidden></div><div id=\"at-alignment-quiz\"></div>"
+    },
+    {
+      "id": "putting-alignment-to-work",
+      "h2": "How to wire your Alignment result into ChatGPT, Claude, or Coding Agents.",
+      "html": "<p>Most people get the highest leverage by running <strong>two complementary alignments side by side</strong> rather than forcing one permanent personality across everything:</p><ol><li><strong>Pair A — Your Daily Collaborator (Global Preferences / Soul.md):</strong> Generate a <strong>Lawful Good · Collaborating</strong> or <strong>Neutral Good</strong> profile with `15%` bounded voice (`TARS` or `Kim Kitsuragi`). It keeps everyday drafts fast and crisp while pushing back calmly when facts fail.</li><li><strong>Pair B — Your Dedicated Skeptic Room (Claude Project / ChatGPT Project / PR Checklist):</strong> Save a <strong>Lawful Neutral · Competing (Red-Team)</strong> prompt with High HEXACO Honesty-Humility inside a project named <em>\"Stress-Test My Plans.\"</em> Paste contracts, investor memos, or security diffs there when you want zero social cushioning.</li></ol>"
     },
     {
       "id": "why-alignment-hexaco-matters",

@@ -17,7 +17,7 @@
       "title": "AI Alignment, HEXACO and Conflict Style Test | AgentTune",
       "url": "https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test",
       "markdown": "https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test.md",
-      "revision": "53d14ee5b901",
+      "revision": "08c35b7df005",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -97,9 +97,9 @@
       "title": "Best AI Personality & System Prompt Templates (All Apps) | AgentTune",
       "url": "https://agent-tune.com/guides/ai-personality-templates",
       "markdown": "https://agent-tune.com/guides/ai-personality-templates.md",
-      "revision": "92563fe97d07",
+      "revision": "ae222f030796",
       "evidence_status": "practical_guidance",
-      "updated": "2026-11-23"
+      "updated": "2026-11-24"
     },
     {
       "id": "astra-personality",
@@ -387,7 +387,7 @@
       "title": "Fictional Character AI Prompts: TARS, JARVIS, Sherlock & More | AgentTune",
       "url": "https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman",
       "markdown": "https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md",
-      "revision": "e3f34112509c",
+      "revision": "7bf9e7f20500",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -477,9 +477,9 @@
       "title": "How to Give Your AI a Personality: 6 Copy-Paste Prompts",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "615343764630",
+      "revision": "da85f9b10a25",
       "evidence_status": "practical_guidance",
-      "updated": "2026-11-17"
+      "updated": "2026-11-24"
     },
     {
       "id": "how-to-work-with-me-readme-ai-template",
@@ -717,7 +717,7 @@
       "title": "Socratic & Feynman AI Tutor Prompts: 14 Coaching Templates | AgentTune",
       "url": "https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts",
       "markdown": "https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md",
-      "revision": "15613f5d93eb",
+      "revision": "53ede7b321e6",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -757,7 +757,7 @@
       "title": "Whimsical AI Persona Combos: 15 Agent Cocktail Prompts | AgentTune",
       "url": "https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails",
       "markdown": "https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails.md",
-      "revision": "d77f75e3e667",
+      "revision": "b63254812089",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -827,7 +827,7 @@
       "title": "The AI Roleplay Tax: Fictional Character Prompts Tested (2026)",
       "url": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts",
       "markdown": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md",
-      "revision": "f8fabeac77a8",
+      "revision": "0809f09f7dd5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-24"
     },
@@ -937,7 +937,7 @@
       "url": "https://agent-tune.com/research/i-took-the-mbti-100-times",
       "markdown": "https://agent-tune.com/research/i-took-the-mbti-100-times.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "2955f10478c9"
+      "revision": "8a16f354a89a"
     },
     {
       "id": "what-personality-type-is-chatgpt",
@@ -946,7 +946,7 @@
       "url": "https://agent-tune.com/research/what-personality-type-is-chatgpt",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-chatgpt.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "192ea12c0d81"
+      "revision": "1781b6d6e06d"
     }
   ]
 }
