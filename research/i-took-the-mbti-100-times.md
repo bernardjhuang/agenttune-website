@@ -41,21 +41,29 @@ In September 2026, we replaced single-profile simulations with 100 independent f
 
 Across the four September 2026 fresh cohorts combined (400 sessions), **59 of 400 runs tied on at least one OEJTS axis**. Under the old strict-less-than scorer (which broke exact midpoint ties toward `INTJ`), `INTJ` share appeared inflated from 280 / 400 (70.0%) to 335 / 400 (83.8%). Read the full artifact audit in [How tie-breaking creates phantom INTJs](https://agent-tune.com/research/ai-mbti-tie-breaking).
 
-undefined
+100 Draws
 
 Synthetic Sample*
 
-undefined
+Elicited Opus 4.8 item probability table, not fresh sessions.
+
+72 INTJ
 
 Simulated Mode
 
-undefined
+Followed by 14 INFJ and 10 ISTJ from sampled probability draw.
+
+100 INTJ
 
 Fable 5.2 (Nov)
 
-undefined
+Actual fresh blind OpenRouter runs lock cleanly onto INTJ.
+
+48 Ties
 
 Sonnet 5.5 (Nov)
+
+Contrast shows why independent runs beat single-vector sampling.
 
 *Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.
 

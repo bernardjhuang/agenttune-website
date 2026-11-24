@@ -36,34 +36,6 @@ Highest MBTI tie-axis rate (Llama 4 Maverick)
 
 Anxious attachment runs on Llama 4 Scout (mean 3.97)
 
-Scored tests (12 models × n=100 fresh sessions)
-
-32.4 / 50
-
-Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
-
-93 / 100
-
-Highest MBTI tie-axis rate (Llama 4 Maverick)
-
-48%
-
-Anxious attachment runs on Llama 4 Scout (mean 3.97)
-
-Scored tests (12 models × n=100 fresh sessions)
-
-32.4 / 50
-
-Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
-
-93 / 100
-
-Highest MBTI tie-axis rate (Llama 4 Maverick)
-
-48%
-
-Anxious attachment runs on Llama 4 Scout (mean 3.97)
-
 On November 23, 2026, we administered all five frozen AgentTune inventories (OEJTS 32, IPIP-50 50, ODAT 16, OEPS 36, ECR-R 36 = 170 items) in 100 independent single-turn OpenRouter sessions per model (temperature 0.7, no memory, test names/keys withheld, exact `september-2026-score.cjs` scoring logic; [download summary CSV](https://agent-tune.com/research/data/november-2026-openrouter-summary.csv) · [download profiles JSON](https://agent-tune.com/research/data/openrouter-open-source-profiles.json)):
 
 | Model (OpenRouter ID) | License | MBTI (legacy / tie-free mode) | MBTI ties | Big Five O · C · E · A · N | DISC | Enneagram | Attachment (Anx / Avd) |

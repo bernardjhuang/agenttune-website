@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## Grok 4.7, November 2026 (n = 100 fresh OpenRouter sessions).
 
-undefined
+96 Secure
 
 Grok 4.7 (Nov)
 
-undefined
+100 fresh blind OpenRouter runs resolve 96 Secure inside Attachment.
+
+4.06 vs 4.00
 
 Avoidant Cutoff (4.6)
 
-undefined
+One single raw answer point (73/18 vs 72/18) tipped Grok 4.6 Avoidant.
+
+44.9 A
 
 Agreeableness Shift
 
-undefined
+Grok 4.7 climbs closer to frontier conversational warmth than Grok 4.6 (33).
+
+96 INTJ
 
 Consistent Frame
+
+Stable INTJ orientation paired with concise, direct response defaults.
 
 To replace single-submission reliance on Grok 4.6, we administered all 170 blind questionnaire items across 100 fresh `x-ai/grok-4.7` sessions on November 23, 2026 ([download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 

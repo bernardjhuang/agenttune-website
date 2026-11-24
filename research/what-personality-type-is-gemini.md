@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## Gemini 4 Neon & Gemini 4 Argon, November 2026.
 
-undefined
+95%
 
 Neutral Clamp (3.5)
 
-undefined
+Gemini 3.5 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.
+
+66 ISTJ
 
 Gemini 4 Argon
 
-undefined
+Shifts strongly into concrete Sensing across Nov blind OpenRouter runs.
+
+10.0
 
 Neuroticism Floor
 
-undefined
+Lowest emotional volatility (10.0/50) across tested proprietary families.
+
+48.3
 
 Conscientiousness
+
+Gemini 3.1/4 cluster high on structured, methodical item ratings.
 
 On November 23, 2026, we ran `google/gemini-4-neon` and `google/gemini-4-argon` through 100 fresh blind OpenRouter sessions each across all five questionnaires ([download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 

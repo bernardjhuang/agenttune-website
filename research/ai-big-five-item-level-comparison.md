@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## Five questions hit 5.00 in all 400 runs
 
-undefined
+20,000
 
 Item Responses
 
-undefined
+400 runs × 50 IPIP-50 items inspected at the question level.
+
+5.00 / 5
 
 Ceiling Items
 
-undefined
+Vocabulary and non-insulting items max out identically across models.
+
+3.00 / 5
 
 Neutral Lock
 
-undefined
+Physical-world party items attract blanket midpoint neutrality.
+
+47.1
 
 Opus Agreeableness
+
+Highest proprietary A score driven by near-universal prosocial ratings.
 
 Four models (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) each took the 50-item IPIP Big Five test 100 times in fresh sessions. Items are rated 1 to 5, and 18 reverse-scored items use `6 - answer`. On five questions, all 400 runs scored the maximum 5.00:
 

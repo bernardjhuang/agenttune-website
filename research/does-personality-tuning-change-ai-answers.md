@@ -34,18 +34,6 @@ DeepSeek fluff collapse with plain rules + INTJ framing
 
 100%
 
-Claude Opus & Fable Blind-judged replies across Sol, Fable 5.2 & DeepSeek V4 Pro
-
-+16.7 pp
-
-DeepSeek V4 Pro correctness lift (78.3% → 95.0%)
-
-36.7% → 3.3%
-
-DeepSeek fluff collapse with plain rules + INTJ framing
-
-100%
-
 Claude Opus & Fable Using our published 20-task protocol ([personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json): arithmetic, false-premise checks, missing-fact identification, refactoring diffs, and constrained formatting), we collected 3 independent runs per cell across three models on November 23, 2026 (540 replies total), blind-graded by `google/gemini-4-argon` ([download all 540 replies & ratings JSON](https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json)):
 
 | Model · Condition (n = 60/row) | Correctness | Format | Answer-first (/5) | Fluff rate | Mean words | Questions/reply |

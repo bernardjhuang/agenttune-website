@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## Muse Spark 1.3, as reported.
 
-undefined
+80 ISTJ
 
 Muse Spark 1.3*
 
-undefined
+Reported majority type (plus 12 ISFJ, 8 INTJ), unlike early AI INTJ clustering.
+
+78 / 100
 
 Helper (Type 2)
 
-undefined
+Enneagram Type 2 leads cleanly ahead of Type 1 (14.7 mean) and 7/8.
+
+100 Secure
 
 Attachment
 
-undefined
+All 100 reported sequential runs scored inside the Secure quadrant.
+
+Soul.md
 
 Editable Persona
+
+Muse exposes plain Markdown identity/memory files you can tune directly.
 
 In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 times sequentially inside one session per test, using Muse’s own assistant identity. Because raw answer vectors were not supplied, we cannot re-score individual items or remove tied axes; the numbers below are transcribed as reported.
 

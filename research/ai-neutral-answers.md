@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## How we counted neutral and inapplicable answers
 
-undefined
+1,823 / 2,980
 
 Flagged Midpoints
 
-undefined
+61.2% of Astra’s neutral "3" answers were marked not applicable.
+
+95%
 
 Gemini Neutrality
 
-undefined
+Gemini 3.5 Pro clicked midpoint "3" on 95% of MBTI items.
+
+79.5%
 
 Big Five Flags
 
-undefined
+Highest inapplicable flag rate appeared on human IPIP-50 items.
+
+4.00
 
 Gemma & Mistral
+
+Both averaged an exact 4.00/4.00 midpoint clamp on Attachment.
 
 Each of Astra’s 100 test sessions included 170 questions: 32 MBTI, 50 Big Five, 16 DISC, 36 Enneagram, and 36 Attachment items. A midpoint answer is `3` on a 1–5 scale or `4` on Attachment’s 1–7 scale.
 

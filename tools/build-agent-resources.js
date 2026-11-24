@@ -53,6 +53,7 @@ const tuningSections=Object.entries(systemTitles).map(([sys,label])=>{
 }).join('\n\n');
 const guideLines=resources.filter(r=>r.kind==='guide').map(r=>`- [${r.title.replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlights=[
+  ['https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts','The AI Roleplay Tax (November 2026, 300 Replies): Naive 100% character roleplay slashes correctness (93.3% → 88.3%, Claude Fable 100% → 85%) and bloats outputs to 162.7 words (91.7% fluff). Calibrated 85/15 TARS & Feynman prompts achieve 100.0% correctness (+20.0 pp on DeepSeek V4 Pro), 100.0% format compliance, and 0.0%–6.7% fluff, plus 20-model D&D Alignment & Anti-Sycophancy Pushback scores.'],
   ['https://agent-tune.com/research/what-personality-type-are-open-source-models','What Personality Type Are Open-Source AI Models? (November 2026): 1,200 fresh OpenRouter sessions (n = 100 each across 12 open-weight models incl. DeepSeek V4 Pro, Qwen 4 Max, Qwen 3.8 27B, Llama 4 Maverick/Scout, Mistral Large 2512, Gemma 4 31B, Kimi K2.7 Code, GLM-5.3, MiniMax M3.1, Nemotron 3 Ultra). Finds Mistral 73% ISTJ, Llama 4 Scout 48% Anxious, DeepSeek V4 Pro lowest Agreeableness (32.39/50).'],
   ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? November 2026 540-reply study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (lifting DeepSeek correctness 78.3% → 95.0% and cutting fluff 36.7% → 3.3%) + 72-reply Claude preferences check + September 2026 60-reply pilot.'],
   ['https://agent-tune.com/research/ai-personality-five-models-2026','Five AI Models, Five Personality Tests (September 2026): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).'],
@@ -131,6 +132,9 @@ ${tuningSections}
 - [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
 - [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot.
 - [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save \`.claude/output-styles/*.md\` files with \`keep-coding-instructions: true\`.
+- [Roleplay Tax 300-Reply Study JSON](https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json): Blind-graded comparison across Default, Naive Character LARP, Calibrated 85/15 TARS Telemetry, JARVIS×Sherlock, and Feynman Whimsy.
+- [20-Model Alignment, HEXACO & TKI Matrix JSON](https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json): Order vs. Chaos, Anti-Sycophancy Pushback Index, and conflict styles for all 20 tested proprietary & open-weight models.
+- [Agent Cocktail Curated Recipes JSON](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json): 15 copy-paste 3-layer 85/15 persona blends with zero theatrical filler.
 `;
 write('llms.txt',llmsTxt);
 const allBodies=cat.tunings.map(t=>{

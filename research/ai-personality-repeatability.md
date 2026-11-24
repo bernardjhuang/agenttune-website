@@ -20,25 +20,29 @@ Open Data & Agent Access
 
 ## Three ways to measure repeatability
 
-undefined
+2,000
 
 Audited Runs
 
-undefined
+Unique answer vectors vs. final type labels across 4 models.
+
+100 / 100
 
 GPT-6 Sol Vector
 
-undefined
+Every Sol Big Five run had unique item answers yet 100% Secure.
+
+7 / 100
 
 Opus 5.5 DISC
 
-undefined
+Only 7 distinct answer sheets across 100 independent DISC sessions.
+
+46 vs 45
 
 Astra Margin Flip
 
-- **Identical answer sheets (vector repetition):** Did the model pick the exact same numbers on every single question?
-- **Score stability:** How much did the numeric totals move from run to run?
-- **Label stability:** How often did the final category (like `INTJ` or `Secure`) stay the same?
+Tiny item swings flipped ISTJ vs INTJ nearly 50/50 in Sept.
 
 Because a broad category covers a wide range of scores, a model's final label can stay 100% constant even when its underlying answers change on almost every run.
 

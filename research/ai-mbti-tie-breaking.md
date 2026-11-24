@@ -20,21 +20,27 @@ Open Data & Agent Access
 
 ## Same answers, two scoring rules
 
-undefined
+335 → 280
 
 Resolved Drop
 
-undefined
+55 Sept INTJ labels vanish once tied axes remain tied (X).
+
+48 / 100
 
 Sonnet 5.5 Ties
 
-undefined
+Nearly half of Nov Sonnet T/F axes tie before `47 / 100
 
 DeepSeek Flash
 
-undefined
+47 INTJ labels exist purely by tie rule.
+
+26 / 100
 
 GPT-6 Astra
+
+Over half of Astra’s Sept INTJ labels were resolved ties.
 
 The legacy scorer broke exact ties toward I, N, T, and J. If a model scored 24 on Thinking and 24 on Feeling, the code labeled it T anyway. Our updated scorer marks tied axes with an `X`—for example, `INXJ` means Introversion, Intuition, and Judging won clearly, while Thinking vs. Feeling tied.
 

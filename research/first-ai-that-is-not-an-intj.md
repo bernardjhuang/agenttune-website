@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## What the May headline actually counted.
 
-undefined
+100 ISTJ
 
 GPT-6.2 Astra
 
-undefined
+Zero INTJ labels under matched Nov OpenRouter prompts.
+
+73 ISTJ
 
 Mistral 2512
 
-undefined
+Open-weight flagship leans concrete & Sensing over Intuitive.
+
+48 INTP
 
 Llama 4 Maverick
 
-undefined
+Splits 48 INTP / 44 INTJ across 100 fresh OpenRouter sessions.
+
+80 ISTJ
 
 Muse Spark 1.3*
+
+First non-INTJ majority cohort reported outside pure frontier lab tests.
 
 The May 2026 report counted 597 INTJ labels across 600 MBTI scoring records from six models. However, several cohorts re-scored a single self-assessment repeatedly instead of running 100 fresh sessions. The methods also varied across models and tests, so the headline does not prove that six independently sampled models always answer alike.
 

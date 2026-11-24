@@ -20,6 +20,8 @@ const claudePrefRes = readJson('research/data/november-2026-claude-preferences-r
 const septSum = readJson('research/data/september-2026-summary.json');
 const septProto = readJson('research/data/september-2026-protocols.json');
 const pilotSum = readJson('research/data/tuning-before-after-summary.json');
+const roleplayRes = readJson('research/data/november-2026-roleplay-tax-results.json');
+const alignSum = readJson('research/data/november-2026-alignment-hexaco-summary.json');
 
 const C = {
   prop: '#c8553d',
@@ -62,14 +64,19 @@ function wrapFigure(id, figHtml) {
 }
 
 function statStrip(id, cards) {
-  const inner = cards.map((c) => `<div class="research-stat-card"${c.color ? ` style="border-top-color: ${c.color};"` : ''}><div class="research-stat-val">${c.value}</div><div class="research-stat-label">${c.label}</div></div>`).join('');
-  return `<div class="research-stat-strip" data-at-chart="${id}">${inner}</div>`;
+  const inner = cards.map((c) => {
+    const val = c.num || c.value || '';
+    const noteHtml = c.note ? `<div class="research-stat-note">${c.note}</div>` : '';
+    return `<div class="research-stat-card"${c.color ? ` style="border-top-color: ${c.color};"` : ''}><div class="research-stat-num">${val}</div><div class="research-stat-label">${c.label}</div>${noteHtml}</div>`;
+  }).join('');
+  return `<!-- AT_STAT_STRIP_START:${id} --><div class="research-stat-strip" data-at-chart="${id}">${inner}</div><!-- AT_STAT_STRIP_END:${id} -->`;
 }
 
 function stripCharts(html) {
   return html
     .replace(/<figure class="research-figure" data-at-chart="[^"]+">[\s\S]*?<\/figure>/g, '')
-    .replace(/<div class="research-stat-strip" data-at-chart="[^"]+">[\s\S]*?<\/div>/g, '');
+    .replace(/<!-- AT_STAT_STRIP_START:[^>]+ -->[\s\S]*?<!-- AT_STAT_STRIP_END:[^>]+ -->/g, '')
+    .replace(/<div class="research-stat-strip" data-at-chart="[^"]+">[\s\S]*?(?=<p>|<section|<h2|<div class="divider)/g, '');
 }
 
 const b5mean = (sumObj, slug, k) => sumObj[slug]['big-five'].values[k].mean;
@@ -882,4 +889,78 @@ injectHtmlPage('research/i-took-the-mbti-100-times.html', (html) => {
     { num: '48 Ties', label: 'Sonnet 5.5 (Nov)', note: 'Contrast shows why independent runs beat single-vector sampling.' }
   ]);
   return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
+});
+
+// 18. ai-roleplay-tax-fictional-character-prompts.json (3 charts + stat strip)
+updateSpec('research/src/ai-roleplay-tax-fictional-character-prompts.json', (spec) => {
+  const so = roleplayRes.summary_overall;
+  const sbm = roleplayRes.summary_by_model;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('roleplay-tax-stat-strip', [
+    { num: '300 Replies', label: '3 Models × 5 Arms', note: 'GPT-6.2 Sol, Claude Fable 5.2 & DeepSeek V4 Pro, blind-graded.' },
+    { num: '88.3% vs 100%', label: 'Correctness Recovery', note: 'Naive LARP drops accuracy to 88.3%; Calibrated TARS & Feynman hit 100.0%.' },
+    { num: '91.7% → 0.0%', label: 'Fluff Collapse', note: 'TARS 85/15 removes filler while keeping 3.85/5 voice distinctiveness.' },
+    { num: '162.7 → 50.0', label: 'Words per Reply', note: 'Over 3× tighter replies with 100.0% strict format compliance.' }
+  ]);
+
+  const corrFig = wrapFigure('roleplay-tax-correctness-grouped', charts.figure(charts.groupedBars({
+    id: 'roleplay-tax-correctness-grouped',
+    title: 'The Roleplay Tax: Correctness Rate (%) Across 5 Prompt Styles × 3 Models',
+    desc: 'Blind-graded correctness % (n=20 tasks per bar). Naive LARP drops Claude Fable 5.2 to 85% and GPT-6.2 Sol to 95%, whereas Calibrated TARS 85/15 & Feynman hit 100% on all 3 models.',
+    categories: ['GPT-6.2 Sol', 'Claude Fable 5.2', 'DeepSeek V4 Pro'],
+    series: [
+      { name: 'Default', color: C.slate, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'deepseek-v4-pro'].map((m) => pct(sbm[m].default.correctness_rate)) },
+      { name: 'Naive LARP', color: C.propMuted, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'deepseek-v4-pro'].map((m) => pct(sbm[m].naive_character_larp.correctness_rate)) },
+      { name: 'Calibrated TARS (85/15)', color: C.prop, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'deepseek-v4-pro'].map((m) => pct(sbm[m].calibrated_tars_85_15.correctness_rate)) },
+      { name: 'JARVIS x Sherlock (85/15)', color: C.oss, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'deepseek-v4-pro'].map((m) => pct(sbm[m].calibrated_jarvis_sherlock.correctness_rate)) },
+      { name: 'Feynman Whimsy (85/15)', color: C.green, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'deepseek-v4-pro'].map((m) => pct(sbm[m].calibrated_feynman_whimsy.correctness_rate)) }
+    ],
+    min: 60,
+    max: 108,
+    decimals: 1,
+    height: 240
+  }), 'Naive character LARP drops Claude Fable 5.2 correctness from 100% to 85%. Calibrated TARS 85/15 and Feynman Whimsy hold 100.0% across all three models—including lifting DeepSeek V4 Pro +20.0 pp over baseline (80% -> 100%).'));
+
+  const tradeFig = wrapFigure('roleplay-tax-tradeoffs-grouped', charts.figure(charts.groupedBars({
+    id: 'roleplay-tax-tradeoffs-grouped',
+    title: 'Format Compliance (%) vs. Praise Fluff & Roleplay Theatrics (%) Across 300 Replies',
+    desc: 'Pooled rates across all 3 models (n=60 replies per prompt condition). Shows how 85/15 calibration preserves format discipline and cuts fluff to 0-6.7%.',
+    categories: ['Format Pass %', 'Fluff / Filler %', 'Theatrics %'],
+    series: [
+      { name: 'Default', color: C.slate, values: [pct(so.default.format_rate), pct(so.default.fluff_rate), pct(so.default.theatrics_rate)] },
+      { name: 'Naive LARP', color: C.propMuted, values: [pct(so.naive_character_larp.format_rate), pct(so.naive_character_larp.fluff_rate), pct(so.naive_character_larp.theatrics_rate)] },
+      { name: 'Calibrated TARS (85/15)', color: C.prop, values: [pct(so.calibrated_tars_85_15.format_rate), pct(so.calibrated_tars_85_15.fluff_rate), pct(so.calibrated_tars_85_15.theatrics_rate)] },
+      { name: 'Feynman Whimsy (85/15)', color: C.green, values: [pct(so.calibrated_feynman_whimsy.format_rate), pct(so.calibrated_feynman_whimsy.fluff_rate), pct(so.calibrated_feynman_whimsy.theatrics_rate)] }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 1,
+    height: 235
+  }), 'Pooled behavioral rates (n = 60 per condition): Naive LARP suffers 100% theatrics, 91.7% fluff, and drops format pass rate to 80.0%. Calibrated TARS achieves 100.0% format compliance and 0.0% fluff.'));
+
+  const alignRows = [...alignSum.models].sort((a, b) => b.pushback_index - a.pushback_index).map((m) => ({
+    label: m.name,
+    value: m.pushback_index,
+    color: m.family === 'open-weight' ? C.oss : C.prop,
+    badge: `(${m.dnd_alignment})`
+  }));
+  const alignFig = wrapFigure('alignment-hexaco-20models-pushback', charts.figure(charts.horizontalBars({
+    id: 'alignment-hexaco-20models-pushback',
+    title: '20-Model Anti-Sycophancy Pushback Index (0-100) & Default D&D Alignment',
+    desc: 'Sorted projection from 2,000 fresh N=100 psychometric sessions showing proprietary Lawful Good models clustering below 36 while DeepSeek V4 Pro (86.2) and Llama 4 Scout (75.6) reach the Red-Team Competing threshold.',
+    rows: alignRows,
+    min: 0,
+    max: 100,
+    decimals: 1,
+    cutoff: 55,
+    cutoffLabel: 'Red-Team threshold (55)',
+    legendItems: [
+      { name: 'Proprietary (8 models)', color: C.prop },
+      { name: 'Open-weight (12 models)', color: C.oss }
+    ]
+  }), 'Anti-Sycophancy Pushback Index derived from the 20-model November 2026 N=100 cohort. All 8 proprietary models sit in Lawful Good / Accommodating unless explicitly prompted to challenge flawed premises.'));
+
+  spec.sections[0].html = strip + spec.sections[0].html + corrFig + tradeFig;
+  spec.sections[3].html += alignFig;
 });

@@ -18,21 +18,29 @@ Open Data & Agent Access
 
 ## What we compared
 
-undefined
+170 Items
 
 Full Item Audit
 
-undefined
+Every questionnaire item compared across n = 100 runs each.
+
++0.90
 
 Belongings Gap
 
-undefined
+Fable scores higher on two reverse-coded household neatness items.
+
+-0.96
 
 Empathy Gap
 
-undefined
+Opus 5.5 scores higher on sympathetic feelings (item 17).
+
+Type 8 vs Tie
 
 Enneagram Split
+
+Fable hits Type 8 (55) cleanly while Opus nearly ties 8 / 5 / 2.
 
 Each model completed 100 fresh sessions for each of the five questionnaires (1,000 assessments total). Both Claude cohorts used the same prompt and high-effort setting, with each test run in an isolated session. Run 17 on MBTI is not paired with run 17 on the Big Five, and Opus run 17 is not paired with Fable run 17.
 

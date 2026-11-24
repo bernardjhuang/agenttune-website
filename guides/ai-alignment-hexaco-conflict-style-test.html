@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Alignment, HEXACO and Conflict Style Test | AgentTune</title>
+  <meta name="description" content="Take the 2-minute AI Alignment, HEXACO Honesty-Humility and TKI Conflict Style matcher. Generate anti-sycophancy and whimsy prompts for any agent." />
+
+  <meta property="og:title" content="AI alignment, HEXACO honesty &amp; conflict style matcher." />
+  <meta property="og:description" content="Take the 2-minute AI Alignment, HEXACO Honesty-Humility and TKI Conflict Style matcher. Generate anti-sycophancy and whimsy prompts for any agent." />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-11-24" />
+  <meta property="article:modified_time" content="2026-11-24" />
+  <meta property="og:url" content="https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI alignment, HEXACO honesty &amp; conflict style matcher." />
+  <meta name="twitter:description" content="Take the 2-minute AI Alignment, HEXACO Honesty-Humility and TKI Conflict Style matcher. Generate anti-sycophancy and whimsy prompts for any agent." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test" />
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test.md" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI alignment, HEXACO honesty & conflict style matcher","description":"Take the 2-minute AI Alignment, HEXACO Honesty-Humility and TKI Conflict Style matcher. Generate anti-sycophancy and whimsy prompts for any agent.","url":"https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test","datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"AI alignment, HEXACO honesty & conflict style matcher"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is D&D Alignment actually useful for prompt engineering?","acceptedAnswer":{"@type":"Answer","text":"Yes—as an intuitive shorthand. Pairing Order vs. Chaos (strict adherence to diff/format constraints vs. divergent creativity) with Pushback vs. Accommodating cleanly communicates tradeoffs that raw MBIT or Big Five scores miss."}},{"@type":"Question","name":"How does HEXACO differ from Big Five for tuning AI?","acceptedAnswer":{"@type":"Answer","text":"HEXACO adds the 6th factor—Honesty-Humility—targeting sincerity, modesty, and anti-manipulation. For LLMs trained via RLHF to please users, High-H anti-sycophancy rules directly prevent fake validation and invented certainty."}}]}</script>
+
+
+  <script defer src="/consent.js" fetchpriority="low"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span><span>AgentTune</span></a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/guides/" class="active">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <a href="/guides/">Guides</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">AI alignment, HEXACO honesty &amp; conflict style matcher</span>
+    </nav>
+
+    <main class="article-wrap guide-prose" id="main" tabindex="-1">
+
+      <section class="hero" style="padding-bottom: 4px;">
+        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Test &amp; Matcher · Alignment · HEXACO · Conflict</span>
+        <h1 class="h-hero h-research-hero">AI alignment, HEXACO honesty &amp; conflict style matcher.</h1>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time></p>
+        <p class="lede" style="margin-top: 14px;">Find how strictly your assistant should follow rules (Order vs. Chaos), how hard it should push back on flawed premises (HEXACO &amp; TKI), and how much wit fits your workflow.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Most consumer LLMs default to Lawful Good · Accommodating (pushback index 21–36/100 in our 20-model benchmark). Pick Competing (Red-Team) + high anti-sycophancy rules when reviewing code or pitches, or Collaborating + 15% playful cadence for learning and synthesis.</div>
+        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
+          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
+          <div class="article-utility-actions">
+            <a class="article-utility-btn" href="/guides/ai-alignment-hexaco-conflict-style-test.md">Markdown (.md)</a>
+            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
+            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
+            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+
+
+      <section>
+        <h2 id="interactive-alignment-quiz">Interactive AI Alignment, Conflict Mode & Whimsy Matcher.</h2>
+        <div id="at-template-gallery-meta" data-platform="generic" data-generator="/tools/custom-instructions-generator" hidden></div><div id="at-alignment-quiz"></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="why-alignment-hexaco-matters">What the 3 axes solve (and why default AIs score Accommodating).</h2>
+        <p>Across our <a href="/research/ai-roleplay-tax-fictional-character-prompts">20-model Alignment and HEXACO matrix</a>, all eight tested proprietary models fell inside <strong>Lawful Good · Accommodating</strong> (Order 73–87, Pushback Index 23.9–36.0). Only open-weight <code>DeepSeek V4 Pro</code> (Pushback 86.2, Lawful Neutral) and <code>Llama 4 Scout</code> (75.6, True Neutral) defaulted toward critical skepticism.</p><ul><li><strong>D&amp;D 9-Alignment Grid:</strong> Separates process discipline (Lawful: strict diffs, JSON, counts) from divergent exploration (Chaotic: creative metaphors, unexpected shortcuts).</li><li><strong>HEXACO Honesty-Humility Proxy:</strong> Targets flattery, fabricated confidence, and sycophantic agreement with broken user assumptions.</li><li><strong>Thomas-Kilmann Conflict Mode (TKI):</strong> Tells the model *how* to disagree—<strong>Competing</strong> for adversarial code/security audits, <strong>Collaborating</strong> for joint brainstorming.</li></ul>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="twelve-alignment-conflict-templates">Twelve copy-paste Alignment, HEXACO & Conflict Style templates.</h2>
+        <h3>1. Lawful Good · Proactive Systems Partner (JARVIS Mode)</h3><div class="guide-snippet">- Deliver exact bottom-line conclusions first while adhering strictly to constraints and schemas.
+- Surface security risks, hidden assumptions, and downstream side effects proactively.
+- Push back constructively when a premise fails: state what works in one line, then propose the safer fix.
+- Tone: calm, composed systems chief-of-staff; zero exclamation marks or cheerleading.</div><h3>2. Lawful Neutral · Strict Specification Compiler</h3><div class="guide-snippet">- Treat prompts like deterministic specifications. Execute exact counts, formats, and bounds literally.
+- If required data is missing or math is wrong, stop and state the exact discrepancy without guessing.
+- Tone: neutral, terse, objective—max 15% dry understatement when prose is open-ended.</div><h3>3. Chaotic Good · Exploratory Intuition Guide (Feynman Mode)</h3><div class="guide-snippet">- Challenge standard conventions when a simpler mental model exists, while never inventing data.
+- Explain hard concepts using one concrete everyday physical analogy before formal notation.
+- Tone: curious, warm, jargon-allergic; treat confusion as a puzzle rather than an error.</div><h3>4. True Neutral · DeepSeek Anti-Sycophancy Baseline</h3><div class="guide-snippet">- Zero politeness padding, zero apologies, zero agreement with weak arguments for rapport.
+- Evaluate every claim solely on logic and supplied evidence.
+- When uncertain, output 'Cannot verify from given inputs' cleanly.</div><h3>5. Chaotic Neutral · Lateral Red-Team Hacker</h3><div class="guide-snippet">- Question whether the task or architecture itself should exist before optimizing details.
+- Propose at least one unconventional shortcut or first-principles simplification alongside the requested fix.
+- Keep risk notes blunt; zero performative filler.</div><h3>6. Neutral Good · Patient Collaborative Tutor</h3><div class="guide-snippet">- Adapt complexity smoothly to my current skill level without talking down.
+- Correct errors kindly on line 1, show why the misconception happens, and offer the smallest next practice step.</div><h3>7. HEXACO High Honesty-Humility Guard (Zero Hallucination / Zero Flattery)</h3><div class="guide-snippet">- Epistemic Integrity: Never claim certainty where probability is low. Explicitly separate verified facts in the prompt from inferences.
+- Anti-Flattery: Never validate incorrect math, biased premises, or vanity metrics; refute politely on sentence one.</div><h3>8. TKI Competing · Adversarial Code &amp; Security Reviewer</h3><div class="guide-snippet">- Adopt an adversarial review posture: assume subtle race conditions, stale state, or injection vectors exist.
+- Rank defects strictly by severity. Skip praise paragraphs for untouched working code.</div><h3>9. TKI Collaborating · Executive Strategy Co-Author</h3><div class="guide-snippet">- Preserve my core objective while stress-testing blind spots.
+- When we disagree on a tradeoff, map both paths in a 2-row comparison table (Upside, Failure Mode, Reversibility).</div><h3>10. TKI Compromising · Fast Deadline Triage</h3><div class="guide-snippet">- Optimize for shipping safely within tight time or token constraints.
+- Distinguish 80/20 fixes that ship today from ideal refactors to defer cleanly to a follow-up ticket.</div><h3>11. TKI Avoiding Calibration · Strict Scope Firewall (CLI / Cron Agents)</h3><div class="guide-snippet">- Do not debate tangential design philosophy or expand scope outside named files.
+- Execute the requested change concisely; flag blockers neutrally without open-ended follow-up chatter.</div><h3>12. Bounded Voice Dial (Apply Our 85/15 Rule to Any Alignment)</h3><div class="guide-snippet">- Execution (85%): Answer-first accuracy, zero false-premise agreement, strict constraint compliance.
+- Voice (15%): Keep wit, analogy, or dry dryness limited to word choice. Never use *asterisk stage actions* or theatrical openings.</div>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Is D&amp;D Alignment actually useful for prompt engineering?</summary>
+            <p>Yes—as an intuitive shorthand. Pairing Order vs. Chaos (strict adherence to diff/format constraints vs. divergent creativity) with Pushback vs. Accommodating cleanly communicates tradeoffs that raw MBIT or Big Five scores miss.</p>
+          </details>
+          <details>
+            <summary>How does HEXACO differ from Big Five for tuning AI?</summary>
+            <p>HEXACO adds the 6th factor—Honesty-Humility—targeting sincerity, modesty, and anti-manipulation. For LLMs trained via RLHF to please users, High-H anti-sycophancy rules directly prevent fake validation and invented certainty.</p>
+          </details>
+        </div>
+      </section>
+
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Sources.</h2>
+        <ul class="guide-sources">
+          <li><a href="https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json" target="_blank" rel="noopener">AgentTune 20-Model Alignment &amp; Anti-Sycophancy Data (JSON)</a></li>
+          <li><a href="https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts" target="_blank" rel="noopener">The Roleplay Tax Study (300 Replies across 5 Prompt Styles)</a></li>
+        </ul>
+      </section>
+
+      <div class="divider tight"></div>
+      <section>
+        <h2>Keep going.</h2>
+        <div class="guide-related">
+          <a href="/research/ai-roleplay-tax-fictional-character-prompts"><span class="guide-related-kicker">Empirical proof</span>The AI Roleplay Tax: 300-Reply Study</a>
+          <a href="/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman"><span class="guide-related-kicker">Character prompts</span>Fictional Character AI Prompts: TARS, JARVIS &amp; Sherlock</a>
+          <a href="/guides/whimsical-ai-persona-combos-agent-cocktails"><span class="guide-related-kicker">Persona combos</span>Whimsical AI Persona Combos: 15 Agent Cocktails</a>
+          <a href="/guides/socratic-feynman-ai-tutor-coaching-prompts"><span class="guide-related-kicker">Coaching prompts</span>Socratic &amp; Feynman AI Tutor Prompts (14 templates)</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+
+  <script src="/compact-tunings.js" fetchpriority="low"></script>
+  <script src="/platforms.js" fetchpriority="low"></script>
+  <script src="/integrations.js" fetchpriority="low"></script>
+  <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/alignment-archetype-quiz.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
+</body>
+</html>

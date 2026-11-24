@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
 
-undefined
+1,000
 
 Sept Codex Runs
 
-undefined
+500 Astra vs. 500 Sol blind tests across all 5 instruments.
+
+100 ISTJ
 
 GPT-6.2 Astra
 
-undefined
+Zero INTJ outcomes in 100 Nov OpenRouter single-turn runs.
+
+78 ISTJ
 
 GPT-6.2 Sol
 
-undefined
+Shifted from 97 INTJ in Sept to 78 ISTJ under uniform prompts.
+
+19.9 vs 11.1
 
 Neuroticism Split
+
+GPT-6.2 Sol stays nearly 2× Astra 6.2 on IPIP Neuroticism.
 
 To remove September’s midpoint-prompt confound, we ran `openai/gpt-6.2-astra` and `openai/gpt-6.2-sol` under the exact same single-turn blind OpenRouter prompt (n = 100 per model; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)). With prompt differences held constant, **both** GPT-6.2 variants landed on the Sensing side (`N-S` mean `-1.67` for Astra, `-1.19` for Sol):
 

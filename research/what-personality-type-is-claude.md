@@ -20,21 +20,29 @@ Open Data & Agent Access
 
 ## November 2026 OpenRouter cohort: Opus 5.5, Fable 5.2 & Sonnet 5.5.
 
-undefined
+94–100 INTJ
 
 Opus & Fable
 
-undefined
+Opus 5.5 (94), Fable 5.1 (99) & Fable 5.2 (100) lock onto INTJ.
+
+47.1
 
 Peak Agreeableness
 
-undefined
+Claude Opus 5.5 & Fable 5.2 rank near the top of proprietary prosocial warmth.
+
+48 Ties
 
 Sonnet 5.5 T/F
 
-undefined
+Nearly half of Sonnet 5.5’s Nov MBTI runs tie before tie-breaking.
+
+100% Rule Fit
 
 Claude Prefs Study
+
+72-reply test shows Personal Preferences cut fluff to 0% when directness is named.
 
 On November 23, 2026, we ran all three current Anthropic models through the identical blind single-turn OpenRouter protocol (100 fresh 170-item batteries per model, scored with the published `september-2026-score.cjs` engine; [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)):
 

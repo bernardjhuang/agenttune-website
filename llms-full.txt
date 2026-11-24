@@ -38,6 +38,7 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 
 ## Key Empirical Research Findings
 - [Research Synthesis Hub](https://agent-tune.com/research): Full cross-model dataset, methodology, and May/September 2026 self-report archives.
+- [The AI Roleplay Tax (November 2026, 300 Replies)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts) ([Markdown](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md)): Naive 100% character roleplay slashes correctness (93.3% → 88.3%, Claude Fable 100% → 85%) and bloats outputs to 162.7 words (91.7% fluff). Calibrated 85/15 TARS & Feynman prompts achieve 100.0% correctness (+20.0 pp on DeepSeek V4 Pro), 100.0% format compliance, and 0.0%–6.7% fluff, plus 20-model D&D Alignment & Anti-Sycophancy Pushback scores.
 - [What Personality Type Are Open-Source AI Models? (November 2026)](https://agent-tune.com/research/what-personality-type-are-open-source-models) ([Markdown](https://agent-tune.com/research/what-personality-type-are-open-source-models.md)): 1,200 fresh OpenRouter sessions (n = 100 each across 12 open-weight models incl. DeepSeek V4 Pro, Qwen 4 Max, Qwen 3.8 27B, Llama 4 Maverick/Scout, Mistral Large 2512, Gemma 4 31B, Kimi K2.7 Code, GLM-5.3, MiniMax M3.1, Nemotron 3 Ultra). Finds Mistral 73% ISTJ, Llama 4 Scout 48% Anxious, DeepSeek V4 Pro lowest Agreeableness (32.39/50).
 - [Does Personality Tuning Change AI Answers? November 2026 540-reply study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (lifting DeepSeek correctness 78.3% → 95.0% and cutting fluff 36.7% → 3.3%) + 72-reply Claude preferences check + September 2026 60-reply pilot.](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) ([Markdown](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)):Does Personality Tuning Change AI Answers? November 2026 540-reply study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (lifting DeepSeek correctness 78.3% → 95.0% and cutting fluff 36.7% → 3.3%) + 72-reply Claude preferences check + September 2026 60-reply pilot.
 - [Five AI Models, Five Personality Tests (September 2026)](https://agent-tune.com/research/ai-personality-five-models-2026) ([Markdown](https://agent-tune.com/research/ai-personality-five-models-2026.md)): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).
@@ -62,6 +63,7 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 
 ## Setup & Platform Guides
 - [Best AGENTS.md Templates for Codex & Coding Agents: 16 Files](https://agent-tune.com/guides/agents-md-templates) ([Markdown](https://agent-tune.com/guides/agents-md-templates.md))
+- [AI Alignment, HEXACO and Conflict Style Test](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test) ([Markdown](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test.md))
 - [AI Personality, Tone & Verbosity Controls: 5 Rules That Work](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines) ([Markdown](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md))
 - [CLAUDE.md vs AGENTS.md vs .cursorrules & .windsurf/rules](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) ([Markdown](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix.md))
 - [AI Custom Instructions Character Limits (2026 Cheat Sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits) ([Markdown](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md))
@@ -98,6 +100,7 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [Enneagram AI Prompts for All 9 Types, Wings & Ties](https://agent-tune.com/guides/enneagram-ai-prompts) ([Markdown](https://agent-tune.com/guides/enneagram-ai-prompts.md))
 - [Enneagram Test Code (GitHub, MIT JS Scorer + React Starter)](https://agent-tune.com/guides/enneagram-test-react-typescript) ([Markdown](https://agent-tune.com/guides/enneagram-test-react-typescript.md))
 - [Claude Fable 5.1 & 5.2 Personality: Test Results & How to Tune It](https://agent-tune.com/guides/fable-personality) ([Markdown](https://agent-tune.com/guides/fable-personality.md))
+- [Fictional Character AI Prompts: TARS, JARVIS, Sherlock & More](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) ([Markdown](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md))
 - [Best Gemini Gems & Saved Info Templates: 20 Copy-Paste Prompts](https://agent-tune.com/guides/gemini-gems-system-instructions-templates) ([Markdown](https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md))
 - [Google Gemini Live Voices List & Personal Intelligence Fix](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence) ([Markdown](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md))
 - [Can You Change Gemini's Personality? Yes (Saved Info, Gems & 4.0 Data)](https://agent-tune.com/guides/gemini-personality) ([Markdown](https://agent-tune.com/guides/gemini-personality.md))
@@ -130,9 +133,11 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [Best OpenRouter & Open-Source System Prompt Templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates) ([Markdown](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md))
 - [Perplexity Spaces Custom Instructions: Prompts & Setup](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) ([Markdown](https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md))
 - [Reproduce AgentTune's 2,000-Session AI Personality Research](https://agent-tune.com/guides/reproduce-ai-personality-research) ([Markdown](https://agent-tune.com/guides/reproduce-ai-personality-research.md))
+- [Socratic & Feynman AI Tutor Prompts: 14 Coaching Templates](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts) ([Markdown](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md))
 - [GPT-6 & 6.2 Sol Personality: Test Results & How to Tune It](https://agent-tune.com/guides/sol-personality) ([Markdown](https://agent-tune.com/guides/sol-personality.md))
 - [How to Make AI Push Back & Stop Agreeing With You (2026)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) ([Markdown](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md))
 - [Meta Muse (muse.ai): Soul.md, Plans, Characters & Setup](https://agent-tune.com/guides/what-is-meta-muse) ([Markdown](https://agent-tune.com/guides/what-is-meta-muse.md))
+- [Whimsical AI Persona Combos: 15 Agent Cocktail Prompts](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails) ([Markdown](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails.md))
 - [Windsurf Rules (.windsurf/rules) & Cline (.clinerules) Builder](https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide) ([Markdown](https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide.md))
 
 ## 43 Communication Preference Templates
@@ -198,6 +203,9 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
 - [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot.
 - [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save `.claude/output-styles/*.md` files with `keep-coding-instructions: true`.
+- [Roleplay Tax 300-Reply Study JSON](https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json): Blind-graded comparison across Default, Naive Character LARP, Calibrated 85/15 TARS Telemetry, JARVIS×Sherlock, and Feynman Whimsy.
+- [20-Model Alignment, HEXACO & TKI Matrix JSON](https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json): Order vs. Chaos, Anti-Sycophancy Pushback Index, and conflict styles for all 20 tested proprietary & open-weight models.
+- [Agent Cocktail Curated Recipes JSON](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json): 15 copy-paste 3-layer 85/15 persona blends with zero theatrical filler.
 
 # Installing AgentTune preferences
 
