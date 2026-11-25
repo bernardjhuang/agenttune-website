@@ -30,6 +30,7 @@ claude mcp add --transport http agenttune https://agent-tune.com/mcp
 
 - **Machine index:** `https://agent-tune.com/llms.txt`
 - **All 43 template bodies + install rules in one file:** `https://agent-tune.com/llms-full.txt`
+- **Agent Research Briefs (single-fetch IF/THEN synthesis JSON):** `https://agent-tune.com/research/data/november-2026-agent-research-briefs.json` (empirical rules from Prompt Syntax Wars, Sycophancy vs. False Contrarianism, Persona Half-Life & Context Drift, and Roleplay Tax; use `list_resources` / `get_resource` for full `.md` papers)
 - **Template catalog (JSON):** `https://agent-tune.com/library/index.json`
 - **Body-only Markdown for any template:** `https://agent-tune.com/resources/tunings/{system}/{slug}.md`
   - Examples: `/resources/tunings/mbti/intj.md`, `/resources/tunings/disc/d-dominance.md`, `/resources/tunings/enneagram/5-investigator.md`, `/resources/tunings/attachment/secure.md`, `/resources/tunings/ocean/conscientiousness-high.md`

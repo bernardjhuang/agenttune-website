@@ -802,6 +802,16 @@
       "updated": "2026-11-17"
     },
     {
+      "id": "ai-persona-half-life-context-drift",
+      "kind": "research",
+      "title": "Persona Half-Life & Context Drift Across Multi-Turn Sessions",
+      "url": "https://agent-tune.com/research/ai-persona-half-life-context-drift",
+      "markdown": "https://agent-tune.com/research/ai-persona-half-life-context-drift.md",
+      "revision": "90c65c783498",
+      "evidence_status": "see_article_methods_and_limitations",
+      "updated": "2026-11-25"
+    },
+    {
       "id": "ai-personality-rankings",
       "kind": "research",
       "title": "AI Personality Rankings: 20 Models Tested (Nov & Sept 2026 Data)",
@@ -822,6 +832,16 @@
       "updated": "2026-11-17"
     },
     {
+      "id": "ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot",
+      "kind": "research",
+      "title": "Prompt Syntax Wars: Adjectives vs. Negative Bans vs. Rubrics",
+      "url": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot",
+      "markdown": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md",
+      "revision": "e785f5a9139c",
+      "evidence_status": "see_article_methods_and_limitations",
+      "updated": "2026-11-25"
+    },
+    {
       "id": "ai-roleplay-tax-fictional-character-prompts",
       "kind": "research",
       "title": "The AI Roleplay Tax: Fictional Character Prompts Tested (2026)",
@@ -830,6 +850,16 @@
       "revision": "0809f09f7dd5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-24"
+    },
+    {
+      "id": "ai-sycophancy-vs-false-contrarianism-benchmark",
+      "kind": "research",
+      "title": "Sycophancy vs. False Contrarianism: 2x2 AI Pushback Benchmark",
+      "url": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark",
+      "markdown": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md",
+      "revision": "cf09f7b3dc35",
+      "evidence_status": "see_article_methods_and_limitations",
+      "updated": "2026-11-25"
     },
     {
       "id": "astra-vs-sol-personality-data",
@@ -937,7 +967,7 @@
       "url": "https://agent-tune.com/research/i-took-the-mbti-100-times",
       "markdown": "https://agent-tune.com/research/i-took-the-mbti-100-times.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "60b2982d78a8"
+      "revision": "67f3945c42dd"
     },
     {
       "id": "what-personality-type-is-chatgpt",
@@ -946,7 +976,7 @@
       "url": "https://agent-tune.com/research/what-personality-type-is-chatgpt",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-chatgpt.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "2094baf61a49"
+      "revision": "d5be65dbc9be"
     }
   ]
 }

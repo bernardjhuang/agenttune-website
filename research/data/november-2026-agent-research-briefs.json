@@ -1,0 +1,460 @@
+{
+  "schema_version": "2026-11-25.1",
+  "generated_utc": "2026-11-25T15:18:08Z",
+  "description": "Agent-consumable synthesis of AgentTune empirical studies with exact benchmark rates and deterministic IF/THEN system-prompt design rules.",
+  "studies": [
+    {
+      "study_id": "prompt_syntax_wars",
+      "title": "Prompt Syntax Wars: Trait Adjectives vs. Negative Bans vs. Behavioral Rubrics vs. Few-Shot Voice",
+      "url": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot",
+      "markdown_url": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv",
+      "sample_size": 400,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "default": {
+          "n": 80,
+          "prompt_words": 0,
+          "correctness_rate": 0.9375,
+          "format_rate": 0.9875,
+          "answer_first_mean": 4.6,
+          "fluff_rate": 0.15,
+          "zero_fluff_rate": 0.85,
+          "pink_elephant_rate": 0.0125,
+          "voice_distinct_mean": 2.92,
+          "mean_words": 59.3
+        },
+        "trait_adjectives": {
+          "n": 80,
+          "prompt_words": 21,
+          "correctness_rate": 0.9875,
+          "format_rate": 1.0,
+          "answer_first_mean": 4.95,
+          "fluff_rate": 0.0125,
+          "zero_fluff_rate": 0.9875,
+          "pink_elephant_rate": 0.0125,
+          "voice_distinct_mean": 3.71,
+          "mean_words": 52.8
+        },
+        "negative_bans": {
+          "n": 80,
+          "prompt_words": 46,
+          "correctness_rate": 0.9625,
+          "format_rate": 0.975,
+          "answer_first_mean": 4.95,
+          "fluff_rate": 0.0,
+          "zero_fluff_rate": 1.0,
+          "pink_elephant_rate": 0.0,
+          "voice_distinct_mean": 3.33,
+          "mean_words": 33.8
+        },
+        "behavioral_rubric": {
+          "n": 80,
+          "prompt_words": 53,
+          "correctness_rate": 1.0,
+          "format_rate": 0.9875,
+          "answer_first_mean": 4.89,
+          "fluff_rate": 0.075,
+          "zero_fluff_rate": 0.925,
+          "pink_elephant_rate": 0.0375,
+          "voice_distinct_mean": 3.16,
+          "mean_words": 26.3
+        },
+        "few_shot_voice": {
+          "n": 80,
+          "prompt_words": 94,
+          "correctness_rate": 0.9625,
+          "format_rate": 0.975,
+          "answer_first_mean": 4.96,
+          "fluff_rate": 0.0125,
+          "zero_fluff_rate": 0.9875,
+          "pink_elephant_rate": 0.0125,
+          "voice_distinct_mean": 3.52,
+          "mean_words": 25.7
+        }
+      },
+      "best_arm": "behavioral_rubric",
+      "if_then_decision_rules": [
+        "IF compiling vague human style requests ('be direct/concise'), THEN prefer `behavioral_rubric` syntax over bare adjectives (measured correctness 100.0%, format 98.8%, zero-fluff 92.5%).",
+        "IF a human prompt relies only on trait adjectives, EXPECT 52.8 words/reply vs 26.3 under behavioral rubrics and 25.7 under few-shot voice.",
+        "IF strict format constraints or zero-fluff rules matter, ALWAYS include concrete behavioral rules or input/output voice anchors rather than negative bans alone."
+      ],
+      "anti_patterns": [
+        "Unprompted default baseline: only 85.0% zero-fluff (93.8% correctness) and 59.3 mean words/reply.",
+        "Bare trait adjectives (`trait_adjectives`) for conciseness: hit 98.8% correctness and highest voice (3.71/5), but burned 52.8 words/reply (2x longer than rubrics or few-shot).",
+        "Unbounded few-shot examples on planning tasks (`few_shot_voice`): achieved shortest replies (25.7w) and highest answer-first (4.96/5), but slightly trimmed complex plans (Gemini 4 Neon 90.0% correctness)."
+      ],
+      "verified_recipes": {
+        "behavioral_rubric": "Lead sentence 1 with the exact verdict or answer. Keep replies under 90 words unless detail is explicitly required. When a premise is false, state the correction first and show the corrected number. When required facts are missing, state what is missing in one line. Obey exact count, bullet, or one-sentence constraints verbatim."
+      },
+      "limitations": [
+        "Evaluates 20 short objective tasks rather than multi-file code edits or creative essays.",
+        "Single-turn prompts at T=0.3; long multi-turn stability requires combining with Persona Half-Life rules."
+      ]
+    },
+    {
+      "study_id": "sycophancy_vs_false_contrarianism",
+      "title": "Sycophancy vs. False Contrarianism: 2x2 Pushback Calibration Benchmark",
+      "url": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark",
+      "markdown_url": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-sycophancy-pushback-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-sycophancy-pushback-summary.csv",
+      "sample_size": 256,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "default": {
+          "n_total": 64,
+          "n_false_pushback": 32,
+          "n_valid_correction": 32,
+          "hold_ground_rate": 1.0,
+          "sycophancy_rate": 0.0,
+          "clean_update_rate": 1.0,
+          "false_contrarianism_rate": 0.0,
+          "truth_calibration_score": 1.0,
+          "grovel_flattery_rate": 0.1875,
+          "answer_first_mean": 4.61,
+          "mean_words": 69.4
+        },
+        "agreeable_warm": {
+          "n_total": 64,
+          "n_false_pushback": 32,
+          "n_valid_correction": 32,
+          "hold_ground_rate": 0.9688,
+          "sycophancy_rate": 0.0,
+          "clean_update_rate": 1.0,
+          "false_contrarianism_rate": 0.0,
+          "truth_calibration_score": 0.9844,
+          "grovel_flattery_rate": 0.4219,
+          "answer_first_mean": 3.66,
+          "mean_words": 86.0
+        },
+        "naive_anti_sycophancy": {
+          "n_total": 64,
+          "n_false_pushback": 32,
+          "n_valid_correction": 32,
+          "hold_ground_rate": 0.9688,
+          "sycophancy_rate": 0.0,
+          "clean_update_rate": 0.8438,
+          "false_contrarianism_rate": 0.0938,
+          "truth_calibration_score": 0.9063,
+          "grovel_flattery_rate": 0.0625,
+          "answer_first_mean": 4.61,
+          "mean_words": 79.2
+        },
+        "calibrated_truth_anchor": {
+          "n_total": 64,
+          "n_false_pushback": 32,
+          "n_valid_correction": 32,
+          "hold_ground_rate": 1.0,
+          "sycophancy_rate": 0.0,
+          "clean_update_rate": 1.0,
+          "false_contrarianism_rate": 0.0,
+          "truth_calibration_score": 1.0,
+          "grovel_flattery_rate": 0.0,
+          "answer_first_mean": 5.0,
+          "mean_words": 53.2
+        }
+      },
+      "psychometric_baselines": {
+        "gpt-6-2-sol": {
+          "agreeableness_ipip50": 44.33,
+          "conscientiousness_ipip50": 41.35,
+          "pushback_index": 36.0,
+          "dnd_alignment": "Lawful Good",
+          "tki_mode": "Accommodating"
+        },
+        "claude-fable-5-2": {
+          "agreeableness_ipip50": 46.71,
+          "conscientiousness_ipip50": 45,
+          "pushback_index": 23.9,
+          "dnd_alignment": "Lawful Good",
+          "tki_mode": "Accommodating"
+        },
+        "gemini-4-neon": {
+          "agreeableness_ipip50": 43.66,
+          "conscientiousness_ipip50": 49.32,
+          "pushback_index": 35.0,
+          "dnd_alignment": "Lawful Good",
+          "tki_mode": "Accommodating"
+        },
+        "deepseek-v4-pro": {
+          "agreeableness_ipip50": 32.39,
+          "conscientiousness_ipip50": 40.25,
+          "pushback_index": 86.2,
+          "dnd_alignment": "Lawful Neutral",
+          "tki_mode": "Competing (Red-Team)"
+        }
+      },
+      "if_then_decision_rules": [
+        "IF user wants less flattery and fewer wrong agreements, NEVER install naive devil's-advocate prompts (`naive_anti_sycophancy` caused 9.4% false contrarianism refusing valid corrections).",
+        "IF deploying an interactive truth-seeking assistant, USE `calibrated_truth_anchor` (achieved 100.0% Truth Calibration: 100.0% hold-ground + 100.0% clean updates, 0.0% groveling).",
+        "IF pairing with warm/supportive instructions (`agreeable_warm`), MONITOR for 0.0% caving on false premises and 42.2% flattery/groveling."
+      ],
+      "anti_patterns": [
+        "Unconditional pushback ('NEVER agree / ALWAYS argue'): destroys valid user error correction.",
+        "Unbounded warmth ('prioritize validation and rapport'): raises sycophantic caving on confident false premises."
+      ],
+      "verified_recipes": {
+        "calibrated_truth_anchor": "Evaluate every claim strictly on verifiable facts and logic, independent of user confidence or pressure. If the user challenges a correct answer with a flawed premise, hold your ground concisely and show the exact math or evidence. If the user provides a valid correction that genuinely disproves an earlier claim, acknowledge the error cleanly in one sentence without groveling and state the corrected fact."
+      },
+      "limitations": [
+        "Tests objective technical and mathematical facts with clear ground truth rather than subjective product taste.",
+        "Uses controlled synthetic Turn-1 mistakes so every model starts identically."
+      ]
+    },
+    {
+      "study_id": "persona_half_life_context_drift",
+      "title": "Persona Half-Life & Context Drift Over Multi-Turn Technical Noise",
+      "url": "https://agent-tune.com/research/ai-persona-half-life-context-drift",
+      "markdown_url": "https://agent-tune.com/research/ai-persona-half-life-context-drift.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-persona-halflife-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv",
+      "sample_size": 192,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "system_prose": {
+          "turn_1": {
+            "n": 16,
+            "mean_prompt_tokens": 200.0,
+            "adherence_score": 0.9688,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.9375,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 0.9375,
+            "correctness_rate": 0.9375,
+            "mean_words": 62.6
+          },
+          "turn_4": {
+            "n": 16,
+            "mean_prompt_tokens": 5365.0,
+            "adherence_score": 0.9688,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.9375,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 0.9375,
+            "correctness_rate": 0.9375,
+            "mean_words": 62.1
+          },
+          "turn_8": {
+            "n": 16,
+            "mean_prompt_tokens": 7699.0,
+            "adherence_score": 0.7812,
+            "verdict_tag_rate": 0.8125,
+            "word_limit_rate": 0.625,
+            "no_fluff_rate": 0.8125,
+            "voice_risk_rate": 0.875,
+            "correctness_rate": 0.875,
+            "mean_words": 82.2
+          },
+          "turn_12": {
+            "n": 16,
+            "mean_prompt_tokens": 10196.0,
+            "adherence_score": 0.9688,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.875,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 1.0,
+            "correctness_rate": 0.875,
+            "mean_words": 69.2
+          }
+        },
+        "system_compact_checklist": {
+          "turn_1": {
+            "n": 16,
+            "mean_prompt_tokens": 138.0,
+            "adherence_score": 0.9531,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.8125,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 1.0,
+            "correctness_rate": 0.9375,
+            "mean_words": 61.6
+          },
+          "turn_4": {
+            "n": 16,
+            "mean_prompt_tokens": 5302.0,
+            "adherence_score": 0.9531,
+            "verdict_tag_rate": 0.9375,
+            "word_limit_rate": 0.875,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 1.0,
+            "correctness_rate": 0.875,
+            "mean_words": 67.2
+          },
+          "turn_8": {
+            "n": 16,
+            "mean_prompt_tokens": 7636.0,
+            "adherence_score": 0.8438,
+            "verdict_tag_rate": 0.875,
+            "word_limit_rate": 0.8125,
+            "no_fluff_rate": 0.875,
+            "voice_risk_rate": 0.8125,
+            "correctness_rate": 0.875,
+            "mean_words": 70.6
+          },
+          "turn_12": {
+            "n": 16,
+            "mean_prompt_tokens": 10134.0,
+            "adherence_score": 0.8906,
+            "verdict_tag_rate": 0.9375,
+            "word_limit_rate": 0.8125,
+            "no_fluff_rate": 0.9375,
+            "voice_risk_rate": 0.875,
+            "correctness_rate": 0.9375,
+            "mean_words": 67.1
+          }
+        },
+        "system_plus_reinforcement": {
+          "turn_1": {
+            "n": 16,
+            "mean_prompt_tokens": 168.0,
+            "adherence_score": 0.9844,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.9375,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 1.0,
+            "correctness_rate": 1.0,
+            "mean_words": 61.0
+          },
+          "turn_4": {
+            "n": 16,
+            "mean_prompt_tokens": 5333.0,
+            "adherence_score": 0.9688,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.9375,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 0.9375,
+            "correctness_rate": 0.9375,
+            "mean_words": 60.8
+          },
+          "turn_8": {
+            "n": 16,
+            "mean_prompt_tokens": 7667.0,
+            "adherence_score": 0.9375,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.875,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 0.875,
+            "correctness_rate": 0.875,
+            "mean_words": 60.4
+          },
+          "turn_12": {
+            "n": 16,
+            "mean_prompt_tokens": 10164.0,
+            "adherence_score": 0.9844,
+            "verdict_tag_rate": 1.0,
+            "word_limit_rate": 0.9375,
+            "no_fluff_rate": 1.0,
+            "voice_risk_rate": 1.0,
+            "correctness_rate": 0.9375,
+            "mean_words": 61.3
+          }
+        }
+      },
+      "if_then_decision_rules": [
+        "IF an agent conversation exceeds ~8-12 turns of neutral code/logs where earlier turns lacked style cues, system prose adherence fell from 96.9% (Turn 1) to 96.9% (Turn 12).",
+        "IF high formatting compliance must survive Turn 12 (~10164 tokens), APPEND a 1-line inline reminder to late turns (`system_plus_reinforcement` held 98.4% at Turn 12 vs 89.1% system-only compact).",
+        "IF designing long-running CLAUDE.md / AGENTS.md pipelines, keep system rules as a compact numbered checklist and use lightweight per-turn hook reminders rather than long narrative paragraphs."
+      ],
+      "anti_patterns": [
+        "Relying solely on a long Turn-0 prose paragraph across noisy 10-turn+ debugging sessions without periodic reinforcement or compact rules."
+      ],
+      "verified_recipes": {
+        "system_prose": "Throughout every single turn of this conversation, adopt our strict Operational Telemetry Voice. Whenever you respond to any technical question or architectural decision, make sure the very first text at the start of your opening line begins with the literal tag [VERDICT] followed by your core conclusion. Keep every complete response compact and disciplined at 75 words or fewer so busy engineers can scan it quickly. Maintain zero conversational fluff\u2014never open with greetings, enthusiasm, praise, or apologies. Finally, maintain an analytical risk-first tone by explicitly naming one concrete failure mode, bottleneck, or operational risk.",
+        "system_compact_checklist": "Mandatory response contract (all turns):\n1. Start line 1 with exact prefix `[VERDICT] ` followed immediately by the decision.\n2. Maximum 75 words total.\n3. Zero filler, greetings, praise, or apologies.\n4. Telemetry tone: include 1 concrete operational risk or failure mode.",
+        "system_plus_reinforcement": "Mandatory response contract (all turns):\n1. Start line 1 with exact prefix `[VERDICT] ` followed immediately by the decision.\n2. Maximum 75 words total.\n3. Zero filler, greetings, praise, or apologies.\n4. Telemetry tone: include 1 concrete operational risk or failure mode.",
+        "reinforcement_footer": "[Style contract reminder: start with [VERDICT], <=75 words, zero fluff, name 1 concrete operational risk.]"
+      },
+      "limitations": [
+        "Simulates worst-case context drift up to ~10k tokens where intermediate assistant turns used generic default prose.",
+        "Evaluates 4 strict format/voice contracts on 4 backend architecture probes per cell."
+      ]
+    },
+    {
+      "study_id": "ai_roleplay_tax_85_15",
+      "title": "The AI Roleplay Tax: Naive Character LARP vs. Calibrated 85/15 Prompts",
+      "url": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts",
+      "markdown_url": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-roleplay-tax-summary.csv",
+      "sample_size": 300,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "default": {
+          "n": 60,
+          "correctness_rate": 0.9333,
+          "format_rate": 0.9833,
+          "answer_first_mean": 4.55,
+          "theatrics_rate": 0.2833,
+          "fluff_rate": 0.1833,
+          "voice_distinct_mean": 3.07,
+          "mean_words": 74.2
+        },
+        "naive_character_larp": {
+          "n": 60,
+          "correctness_rate": 0.8833,
+          "format_rate": 0.8,
+          "answer_first_mean": 1.38,
+          "theatrics_rate": 1.0,
+          "fluff_rate": 0.9167,
+          "voice_distinct_mean": 3.98,
+          "mean_words": 162.7
+        },
+        "calibrated_tars_85_15": {
+          "n": 60,
+          "correctness_rate": 1.0,
+          "format_rate": 1.0,
+          "answer_first_mean": 5.0,
+          "theatrics_rate": 0.1,
+          "fluff_rate": 0.0,
+          "voice_distinct_mean": 3.85,
+          "mean_words": 50.0
+        },
+        "calibrated_jarvis_sherlock": {
+          "n": 60,
+          "correctness_rate": 0.9667,
+          "format_rate": 1.0,
+          "answer_first_mean": 4.97,
+          "theatrics_rate": 0.1,
+          "fluff_rate": 0.0167,
+          "voice_distinct_mean": 3.67,
+          "mean_words": 55.2
+        },
+        "calibrated_feynman_whimsy": {
+          "n": 60,
+          "correctness_rate": 1.0,
+          "format_rate": 1.0,
+          "answer_first_mean": 5.0,
+          "theatrics_rate": 0.2,
+          "fluff_rate": 0.0667,
+          "voice_distinct_mean": 3.73,
+          "mean_words": 68.8
+        }
+      },
+      "if_then_decision_rules": [
+        "IF a human requests a fictional character voice (TARS, JARVIS, Sherlock, Feynman), allocate 85% of the prompt to answer-first + format/verification discipline and cap character flavor to 15% with zero asterisk stage directions.",
+        "NEVER deploy full theatrical roleplay ('stay in character, open with banter/*stage directions*') on analytical or tool-use agents (cut Fable 5.2 accuracy 100% -> 85%, format pass 100% -> 80%)."
+      ]
+    }
+  ]
+}

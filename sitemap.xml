@@ -776,6 +776,28 @@
     <lastmod>2026-11-25</lastmod>
   </url>
 
+  <!-- Agent-First Empirical Research Series (Syntax, Sycophancy, Half-Life) -->
+  <url>
+    <loc>https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-persona-half-life-context-drift</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-25</lastmod>
+  </url>
+
   <!-- Roleplay Tax Study, Alignment Test & Character Cocktails -->
   <url>
     <loc>https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts</loc>

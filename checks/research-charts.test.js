@@ -119,3 +119,39 @@ test('all 19 guide pages with benchmark blocks include valid accessible SVG char
     }
   }
 });
+
+test('all 3 agent-first research papers include YAML contracts, >=2 valid SVG charts, and machine brief coverage', () => {
+  const papers = [
+    ['ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot', 'prompt_syntax_wars'],
+    ['ai-sycophancy-vs-false-contrarianism-benchmark', 'sycophancy_vs_false_contrarianism'],
+    ['ai-persona-half-life-context-drift', 'persona_half_life_context_drift']
+  ];
+  const briefs = JSON.parse(fs.readFileSync(path.join(__dirname, '../research/data/november-2026-agent-research-briefs.json'), 'utf8'));
+  assert.ok(Array.isArray(briefs.studies));
+
+  for (const [slug, studyId] of papers) {
+    const htmlPath = path.join(__dirname, '../research', `${slug}.html`);
+    const mdPath = path.join(__dirname, '../research', `${slug}.md`);
+    const distMdPath = path.join(__dirname, '../dist/research', `${slug}.md`);
+    assert.ok(fs.existsSync(htmlPath), `Missing ${htmlPath}`);
+    assert.ok(fs.existsSync(mdPath), `Missing ${mdPath}`);
+    assert.ok(fs.existsSync(distMdPath), `Missing ${distMdPath}`);
+
+    const html = fs.readFileSync(htmlPath, 'utf8');
+    const svgs = [...html.matchAll(/<svg class="research-chart"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+    assert.ok(svgs.length >= 2, `${slug}.html should have >=2 charts, got ${svgs.length}`);
+    for (const svg of svgs) {
+      assert.doesNotMatch(svg, /NaN|Infinity|undefined/);
+    }
+
+    for (const p of [mdPath, distMdPath]) {
+      const md = fs.readFileSync(p, 'utf8');
+      assert.ok(md.includes(`study_id: ${studyId}`), `${p} missing YAML decision block`);
+      assert.ok(md.includes('> **Chart —'), `${p} missing Chart markdown export`);
+    }
+
+    const brief = briefs.studies.find((s) => s.study_id === studyId);
+    assert.ok(brief, `Missing ${studyId} in november-2026-agent-research-briefs.json`);
+    assert.ok(Array.isArray(brief.if_then_decision_rules) && brief.if_then_decision_rules.length >= 2);
+  }
+});

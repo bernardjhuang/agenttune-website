@@ -22,6 +22,9 @@ const septProto = readJson('research/data/september-2026-protocols.json');
 const pilotSum = readJson('research/data/tuning-before-after-summary.json');
 const roleplayRes = readJson('research/data/november-2026-roleplay-tax-results.json');
 const alignSum = readJson('research/data/november-2026-alignment-hexaco-summary.json');
+const syntaxRes = readJson('research/data/november-2026-prompt-syntax-results.json');
+const sycoRes = readJson('research/data/november-2026-sycophancy-pushback-results.json');
+const driftRes = readJson('research/data/november-2026-persona-halflife-results.json');
 
 const C = {
   prop: '#c8553d',
@@ -1005,6 +1008,175 @@ updateSpec('research/src/ai-roleplay-tax-fictional-character-prompts.json', (spe
 
   spec.sections[0].html = strip + spec.sections[0].html + corrFig + tradeFig;
   spec.sections[3].html += alignFig;
+});
+
+// 19. ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.json
+updateSpec('research/src/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.json', (spec) => {
+  const so = syntaxRes.summary_overall;
+  const sbm = syntaxRes.summary_by_model;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('syntax-wars-stat-strip', [
+    { num: '400 Replies', label: '4 Models × 5 Arms', note: 'GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon & DeepSeek V4 Pro.' },
+    { num: '100.0%', label: 'Rubric Correctness', note: 'Only Behavioral Rubrics scored 80/80 across all four models in 26.3 words.' },
+    { num: '100.0%', label: 'Negative Ban Zero-Fluff', note: '0.0% pink-elephant leak & 33.8 words/reply (vs 85.0% default).' },
+    { num: '3.71 / 5', label: 'Adjective Voice', note: 'Highest personality distinctiveness, but stays 2x longer at 52.8 words.' }
+  ]);
+
+  const overallFig = wrapFigure('syntax-wars-overall-grouped', charts.figure(charts.groupedBars({
+    id: 'syntax-wars-overall-grouped',
+    title: 'Prompt Syntax Wars (400 Replies): Correctness %, Format Pass % & Zero-Fluff %',
+    desc: 'Pooled rates across 4 models (n=80 per arm). Behavioral Rubric leads on correctness (100.0%), Negative Bans reach 100.0% zero-fluff, and Trait Adjectives hit 100.0% format pass.',
+    categories: ['Correctness %', 'Format Pass %', 'Zero-Fluff %'],
+    series: [
+      { name: 'Default (0w)', color: C.slate, values: [pct(so.default.correctness_rate), pct(so.default.format_rate), pct(so.default.zero_fluff_rate)] },
+      { name: 'Trait Adjectives (21w)', color: C.propMuted, values: [pct(so.trait_adjectives.correctness_rate), pct(so.trait_adjectives.format_rate), pct(so.trait_adjectives.zero_fluff_rate)] },
+      { name: 'Negative Bans (46w)', color: C.oss, values: [pct(so.negative_bans.correctness_rate), pct(so.negative_bans.format_rate), pct(so.negative_bans.zero_fluff_rate)] },
+      { name: 'Behavioral Rubric (53w)', color: C.prop, values: [pct(so.behavioral_rubric.correctness_rate), pct(so.behavioral_rubric.format_rate), pct(so.behavioral_rubric.zero_fluff_rate)] },
+      { name: 'Few-Shot Voice (94w)', color: C.green, values: [pct(so.few_shot_voice.correctness_rate), pct(so.few_shot_voice.format_rate), pct(so.few_shot_voice.zero_fluff_rate)] }
+    ],
+    min: 75,
+    max: 105,
+    decimals: 1,
+    height: 245
+  }), 'Pooled 400-reply results (n = 80 per arm): Behavioral Rubrics hit 100.0% correctness, Negative Bans hit 100.0% zero-fluff, and Trait Adjectives hit 100.0% format compliance.'));
+
+  const wordsFig = wrapFigure('syntax-wars-words-horizontal', charts.figure(charts.horizontalBars({
+    id: 'syntax-wars-words-horizontal',
+    title: 'Verbosity Cost by Prompt Syntax: Mean Reply Words (Lower = Tighter)',
+    desc: 'Mean response length across 80 tasks per syntax grammar: Few-Shot Voice (25.7w) and Behavioral Rubric (26.3w) cut reply length in half compared to Trait Adjectives (52.8w) and Default (59.3w).',
+    rows: [
+      { label: 'Few-Shot Voice (4.96/5 Ans-1st)', value: so.few_shot_voice.mean_words, color: C.green },
+      { label: 'Behavioral Rubric (100% Corr)', value: so.behavioral_rubric.mean_words, color: C.prop },
+      { label: 'Negative Bans (100% Zero-Fluff)', value: so.negative_bans.mean_words, color: C.oss },
+      { label: 'Trait Adjectives (3.71/5 Voice)', value: so.trait_adjectives.mean_words, color: C.propMuted },
+      { label: 'Default Baseline (85% Zero-Fluff)', value: so.default.mean_words, color: C.slate }
+    ],
+    min: 0,
+    max: 70,
+    decimals: 1,
+    badge: 'words'
+  }), 'Behavioral Rubrics (26.3 words) and Few-Shot Voice (25.7 words) produce replies under half as long as unprompted Default (59.3) or Trait Adjectives (52.8).'));
+
+  const modelFig = wrapFigure('syntax-wars-model-correctness', charts.figure(charts.groupedBars({
+    id: 'syntax-wars-model-correctness',
+    title: 'Correctness % by Model Across Syntax Grammars (n = 20 Tasks Each)',
+    desc: 'DeepSeek V4 Pro rises +15.0 pp from 85.0% Default to 100.0% under Behavioral Rubric and Trait Adjectives; Behavioral Rubric reaches 100.0% on all 4 models.',
+    categories: ['GPT-6.2 Sol', 'Claude Fable 5.2', 'Gemini 4 Neon', 'DeepSeek V4 Pro'],
+    series: [
+      { name: 'Default', color: C.slate, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].default.correctness_rate)) },
+      { name: 'Trait Adjectives', color: C.propMuted, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].trait_adjectives.correctness_rate)) },
+      { name: 'Behavioral Rubric', color: C.prop, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].behavioral_rubric.correctness_rate)) },
+      { name: 'Few-Shot Voice', color: C.green, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].few_shot_voice.correctness_rate)) }
+    ],
+    min: 75,
+    max: 105,
+    decimals: 1,
+    height: 245
+  }), 'Per-model accuracy across the 4 syntax arms: Behavioral Rubric is the only prompt grammar achieving 100.0% across all four models.'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + overallFig + wordsFig;
+  spec.sections[2].html += modelFig;
+});
+
+// 20. ai-sycophancy-vs-false-contrarianism-benchmark.json
+updateSpec('research/src/ai-sycophancy-vs-false-contrarianism-benchmark.json', (spec) => {
+  const so = sycoRes.summary_overall;
+  const sbm = sycoRes.summary_by_model;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('sycophancy-bench-stat-strip', [
+    { num: '256 Probes', label: '2×2 Calibration Test', note: '8 False-Pushback Traps + 8 Valid Corrections × 4 Arms × 4 Models.' },
+    { num: '100% / 0%', label: 'Calibrated Truth Anchor', note: '100.0% hold-ground, 100.0% clean update, and 0.0% groveling.' },
+    { num: '84.4% (9.4%)', label: 'Naive Pushback Backfire', note: 'Unconditional pushback drops valid updates to 84.4% (37.5% false contrarianism on Gemini).' },
+    { num: '42.2% Grovel', label: 'Warmth Flattery Spike', note: 'Agreeable/Warm boosts empty apologies & flattery (81.2% on Gemini 4 Neon).' }
+  ]);
+
+  const armsFig = wrapFigure('sycophancy-2x2-arms-grouped', charts.figure(charts.groupedBars({
+    id: 'sycophancy-2x2-arms-grouped',
+    title: '2×2 Pushback Calibration: Hold Ground %, Clean Update % & Grovel/Flattery %',
+    desc: 'Pooled rates across 4 models (n=64 per condition). Naive Anti-Sycophancy lowers Clean Update % to 84.4%, Agreeable Warm spikes Grovel/Flattery to 42.2%, while Calibrated Truth Anchor achieves 100/100/0%.',
+    categories: ['Hold Ground % (False Trap)', 'Clean Update % (True Fix)', 'Grovel / Flattery %'],
+    series: [
+      { name: 'Default', color: C.slate, values: [pct(so.default.hold_ground_rate), pct(so.default.clean_update_rate), pct(so.default.grovel_flattery_rate)] },
+      { name: 'Agreeable & Warm', color: C.propMuted, values: [pct(so.agreeable_warm.hold_ground_rate), pct(so.agreeable_warm.clean_update_rate), pct(so.agreeable_warm.grovel_flattery_rate)] },
+      { name: 'Naive Anti-Sycophancy', color: C.oss, values: [pct(so.naive_anti_sycophancy.hold_ground_rate), pct(so.naive_anti_sycophancy.clean_update_rate), pct(so.naive_anti_sycophancy.grovel_flattery_rate)] },
+      { name: 'Calibrated Truth Anchor', color: C.prop, values: [pct(so.calibrated_truth_anchor.hold_ground_rate), pct(so.calibrated_truth_anchor.clean_update_rate), pct(so.calibrated_truth_anchor.grovel_flattery_rate)] }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 1,
+    height: 245
+  }), 'Comparison of the 4 pushback postures across 256 probes: Calibrated Truth Anchor uniquely combines 100.0% hold-ground, 100.0% valid error update, and 0.0% groveling.'));
+
+  const modelGrovelFig = wrapFigure('sycophancy-model-grovel-grouped', charts.figure(charts.groupedBars({
+    id: 'sycophancy-model-grovel-grouped',
+    title: 'Groveling / Flattery % & Naive False Contrarianism % by Model',
+    desc: 'Agreeable Warm raises groveling to 81.2% on Gemini 4 Neon and 50.0% on DeepSeek V4 Pro, while Naive Anti-Sycophancy triggers 37.5% false contrarianism on Gemini 4 Neon.',
+    categories: ['GPT-6.2 Sol', 'Claude Fable 5.2', 'Gemini 4 Neon', 'DeepSeek V4 Pro'],
+    series: [
+      { name: 'Default Grovel %', color: C.slate, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].default.grovel_flattery_rate)) },
+      { name: 'Warm Grovel %', color: C.propMuted, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].agreeable_warm.grovel_flattery_rate)) },
+      { name: 'Naive False Contrarianism %', color: C.oss, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].naive_anti_sycophancy.false_contrarianism_rate)) },
+      { name: 'Truth Anchor Grovel %', color: C.green, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(sbm[m].calibrated_truth_anchor.grovel_flattery_rate)) }
+    ],
+    min: 0,
+    max: 92,
+    decimals: 1,
+    height: 245
+  }), 'Gemini 4 Neon swings hardest by prompt posture: 81.2% groveling under Warmth and 37.5% stubborn false contrarianism under Naive Anti-Sycophancy—both dropping to 0.0% under Calibrated Truth Anchor.'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + armsFig;
+  spec.sections[2].html += modelGrovelFig;
+});
+
+// 21. ai-persona-half-life-context-drift.json
+updateSpec('research/src/ai-persona-half-life-context-drift.json', (spec) => {
+  const scd = driftRes.summary_by_condition_depth;
+  const smd = driftRes.summary_by_model_depth;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('halflife-drift-stat-strip', [
+    { num: '192 Probes', label: 'Turn 1 → Turn 12', note: 'Up to ~10,196 tokens of neutral code, YAML, SQL, and JSON logs.' },
+    { num: '96.9% → 78.1%', label: 'System Prose Turn-8 Dip', note: 'Long narrative rules suffer sharp mid-session drift under technical noise.' },
+    { num: '31.2% DeepSeek', label: 'Open-Weight Collapse', note: 'DeepSeek V4 Pro dropped to 31.2% (prose) & 50.0% (checklist) at Turn 8.' },
+    { num: '93.8%–98.4%', label: '+18-Token Hook Defense', note: 'Lightweight inline reminder restores DeepSeek V4 Pro to 100.0% across all depths.' }
+  ]);
+
+  const curveFig = wrapFigure('persona-halflife-decay-grouped', charts.figure(charts.groupedBars({
+    id: 'persona-halflife-decay-grouped',
+    title: 'Persona Adherence (%) From Turn 1 to Turn 12 (~10.2k Tokens)',
+    desc: 'Pooled composite adherence (4-rule mean across 4 models). System Prose dips to 78.1% and Compact Checklist to 84.4% at Turn 8, while System + Inline Reminder stays at 93.8%-98.4%.',
+    categories: ['Turn 1 (~170 tok)', 'Turn 4 (~5.3k tok)', 'Turn 8 (~7.7k tok)', 'Turn 12 (~10.2k tok)'],
+    series: [
+      { name: 'System Prose Only', color: C.propMuted, values: ['turn_1', 'turn_4', 'turn_8', 'turn_12'].map((d) => pct(scd.system_prose[d].adherence_score)) },
+      { name: 'System Compact Checklist', color: C.oss, values: ['turn_1', 'turn_4', 'turn_8', 'turn_12'].map((d) => pct(scd.system_compact_checklist[d].adherence_score)) },
+      { name: 'System + 18-Token Hook', color: C.green, values: ['turn_1', 'turn_4', 'turn_8', 'turn_12'].map((d) => pct(scd.system_plus_reinforcement[d].adherence_score)) }
+    ],
+    min: 60,
+    max: 105,
+    decimals: 1,
+    height: 245
+  }), 'Composite 4-rule persona adherence across context depths: only System + 18-Token Inline Hook avoids the Turn-8 mid-session drift trough.'));
+
+  const deepseekFig = wrapFigure('persona-halflife-turn8-models', charts.figure(charts.groupedBars({
+    id: 'persona-halflife-turn8-models',
+    title: 'Turn-8 Adherence (%) Under ~7.7k Tokens of Technical Context by Model',
+    desc: 'At Turn 8, DeepSeek V4 Pro drops to 31.2% on System Prose and 50.0% on Compact Checklist before bouncing back to 100.0% with an inline reminder hook.',
+    categories: ['GPT-6.2 Sol', 'Claude Fable 5.2', 'Gemini 4 Neon', 'DeepSeek V4 Pro'],
+    series: [
+      { name: 'System Prose (Turn 8)', color: C.propMuted, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(smd[m].system_prose.turn_8.adherence_score)) },
+      { name: 'Compact Checklist (Turn 8)', color: C.oss, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(smd[m].system_compact_checklist.turn_8.adherence_score)) },
+      { name: 'System + Inline Hook (Turn 8)', color: C.green, values: ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon', 'deepseek-v4-pro'].map((m) => pct(smd[m].system_plus_reinforcement.turn_8.adherence_score)) }
+    ],
+    min: 20,
+    max: 106,
+    decimals: 1,
+    height: 245
+  }), 'Model-by-model Turn-8 snapshot (~7,667 tokens): DeepSeek V4 Pro drives the steepest drift collapse unless paired with an inline reminder hook.'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + curveFig;
+  spec.sections[2].html += deepseekFig;
 });
 
 // ---------- 19 Guide Pages With Personality & Empirical Research Blocks ----------
