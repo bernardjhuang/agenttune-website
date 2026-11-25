@@ -65,6 +65,8 @@ Sonnet 5.5 (Nov)
 
 Contrast shows why independent runs beat single-vector sampling.
 
+> **Chart — May Opus 4.8 Synthetic Draws vs. Fresh Independent Sessions (/100):** Compares 100 synthetic probability draws of Opus 4.8 against 100 independent fresh sessions per model in Sept and Nov 2026. Opus 4.8 (May sim*): Resolved INTJ 72, INFJ 14, ISTJ 10, Other 4; Fable 5.1 (Sep): Resolved INTJ 98, Tied axis 1, ISTJ 1; Opus 5.5 (Sep): Resolved INTJ 84, Tied axis 10, INFJ 5, Other 1; Fable 5.2 (Nov): Resolved INTJ 100; Sonnet 5.5 (Nov): Resolved INTJ 52, Tied axis 48.
+
 *Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.
 
 ## Why 72% versus 99% is not a version comparison

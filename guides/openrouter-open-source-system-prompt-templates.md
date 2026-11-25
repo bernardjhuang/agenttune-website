@@ -28,6 +28,10 @@ Quick Actions & Agent Fetch
 | Qwen 4 Max System File | qwen/qwen4-max · Flagship MoE | Strict JSON bounds &amp; adversarial premise checks | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#2-qwen-4-max-and-3-8-27b) · [Download .md](https://agent-tune.com/resources/openrouter/qwen-4-max-system-prompt.md) |
 | All 12 Open-Weight Models | Mistral Large, GLM-5.3, Kimi K2.7, MiniMax, Gemma 4, Nemotron | Full copy-paste blocks + OpenRouter &amp; Ollama recipes | [Jump to 16 configs ↓](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#sixteen-more-open-source-model-prompts) |
 
+> **Chart — 12 Open-Weight Models Ranked by Agreeableness (/50, n = 100 Each):** Shows huge spread across open-source models on OpenRouter—from warm Qwen 4 Max (47.6) down to skeptical DeepSeek V4 Pro (32.4). Qwen 4 Max: 47.6; Nemotron 3 Ultra 550B: 46.3; Kimi K2.7 Code: 45.3; GLM-5.3: 43.8; Mistral Large 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B IT: 41.5; Llama 4 Maverick: 41.0; DeepSeek V4.1 Flash: 40.8; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
+
+Why one system prompt does not fit every open-weight model: Qwen 4 Max and Nemotron 3 sit above the proprietary sycophancy ceiling, whereas DeepSeek V4 Pro (32.4) and Llama 4 Scout (35.8) need less anti-flattery forcing.
+
 ## Interactive OpenRouter & Ollama system prompt matcher.
 
 ## 1. DeepSeek V4 Pro & V4.1 Flash (OpenRouter / API).

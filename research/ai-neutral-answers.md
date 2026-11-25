@@ -56,6 +56,8 @@ Each of Astra’s 100 test sessions included 170 questions: 32 MBTI, 50 Big Five
 
 Every single one of the 1,823 flagged answers was a midpoint. The other 1,157 midpoint answers were not flagged.
 
+> **Chart — GPT-6 Astra Midpoint Responses vs. Explicitly Flagged Inapplicable Items:** Out of 17,000 item responses across 100 Astra sessions, compares total midpoint answers with midpoints explicitly flagged as inapplicable. Total midpoints: MBTI 724, Big Five 678, DISC 253, Enneagram 1044, Attachment 281; Flagged inapplicable: MBTI 415, Big Five 539, DISC 164, Enneagram 621, Attachment 84.
+
 Total midpoint answers vs. items explicitly flagged inapplicable out of 100 sessions (57.3% flagged on MBTI, 79.5% on Big Five, 64.8% on DISC, 59.5% on Enneagram, and 29.9% on Attachment).
 
 ## Questions about parties, family, and hobbies get flagged every time

@@ -27,7 +27,7 @@
       "title": "AI Personality, Tone & Verbosity Controls: 5 Rules That Work",
       "url": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines",
       "markdown": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md",
-      "revision": "dfbf203b691a",
+      "revision": "2bd1c7be48e0",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -67,7 +67,7 @@
       "title": "MBTI vs Enneagram vs DISC vs Big Five for AI (Matcher)",
       "url": "https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher",
       "markdown": "https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md",
-      "revision": "913fc96ebb68",
+      "revision": "7de8016c7dfd",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -107,7 +107,7 @@
       "title": "GPT-6.2 Astra & Pro Personality: ChatGPT & AGENTS.md Setup",
       "url": "https://agent-tune.com/guides/astra-personality",
       "markdown": "https://agent-tune.com/guides/astra-personality.md",
-      "revision": "a87a24daa2af",
+      "revision": "ef753fcb2479",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -207,7 +207,7 @@
       "title": "ChatGPT vs Claude Default Personality: Benchmark Data",
       "url": "https://agent-tune.com/guides/chatgpt-vs-claude-personality",
       "markdown": "https://agent-tune.com/guides/chatgpt-vs-claude-personality.md",
-      "revision": "1468ef38b398",
+      "revision": "9f59595826fb",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -237,7 +237,7 @@
       "title": "Claude Opus 5.5 Personality: Test Results & How to Tune It",
       "url": "https://agent-tune.com/guides/claude-opus-5-5-personality",
       "markdown": "https://agent-tune.com/guides/claude-opus-5-5-personality.md",
-      "revision": "e9b92e32205d",
+      "revision": "0b676df684b0",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -257,7 +257,7 @@
       "title": "How to Change Claude's Personality (Settings, Templates & Opus 5.5 Data)",
       "url": "https://agent-tune.com/guides/claude-personality",
       "markdown": "https://agent-tune.com/guides/claude-personality.md",
-      "revision": "30438919f36f",
+      "revision": "499be5a0e193",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -337,7 +337,7 @@
       "title": "DeepSeek System Prompts & Personality Data (V4 Pro/Flash XML Templates)",
       "url": "https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions",
       "markdown": "https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md",
-      "revision": "ddf9d7038687",
+      "revision": "10689215d068",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -377,7 +377,7 @@
       "title": "Claude Fable 5.1 & 5.2 Personality: Test Results & How to Tune It",
       "url": "https://agent-tune.com/guides/fable-personality",
       "markdown": "https://agent-tune.com/guides/fable-personality.md",
-      "revision": "fc734f685ce5",
+      "revision": "bda2be0fbc80",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -417,7 +417,7 @@
       "title": "Can You Change Gemini's Personality? Yes (Saved Info, Gems & 4.0 Data)",
       "url": "https://agent-tune.com/guides/gemini-personality",
       "markdown": "https://agent-tune.com/guides/gemini-personality.md",
-      "revision": "1c8d9910f4ef",
+      "revision": "fcc849ee2f3b",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -437,7 +437,7 @@
       "title": "Grok xAI Default Personality & How to Change It (Grok 4.7 Data)",
       "url": "https://agent-tune.com/guides/grok-personality-settings",
       "markdown": "https://agent-tune.com/guides/grok-personality-settings.md",
-      "revision": "e6acae165149",
+      "revision": "31660288f5b5",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -467,7 +467,7 @@
       "title": "Grok Bot Characters: 16 Copy-Paste Personality Profiles & Prompts",
       "url": "https://agent-tune.com/guides/grokbot-personality",
       "markdown": "https://agent-tune.com/guides/grokbot-personality.md",
-      "revision": "06bb02f0f1d9",
+      "revision": "49d87e4b4b28",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -477,7 +477,7 @@
       "title": "How to Give Your AI a Personality: 6 Copy-Paste Prompts",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "da85f9b10a25",
+      "revision": "e624a2be9da5",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -507,7 +507,7 @@
       "title": "How to Make Claude More Direct: 3 Editable Prompts",
       "url": "https://agent-tune.com/guides/make-claude-more-direct",
       "markdown": "https://agent-tune.com/guides/make-claude-more-direct.md",
-      "revision": "f146fca19ed9",
+      "revision": "77e3bbf830a0",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -537,7 +537,7 @@
       "title": "How to Change Meta AI's Personality (vs. Meta Muse Soul.md)",
       "url": "https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality",
       "markdown": "https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md",
-      "revision": "ed0bddf740c1",
+      "revision": "a9d2e1e7492e",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -607,7 +607,7 @@
       "title": "Meta Muse Soul.md Guide: Customize Character & Personality",
       "url": "https://agent-tune.com/guides/muse-personality",
       "markdown": "https://agent-tune.com/guides/muse-personality.md",
-      "revision": "4dff0389360d",
+      "revision": "36e5a8bfdfdf",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -637,7 +637,7 @@
       "title": "Muse vs ChatGPT vs Claude: Where Personality & Memory Live",
       "url": "https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality",
       "markdown": "https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md",
-      "revision": "8fbde618e859",
+      "revision": "4c16c503cd09",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -687,7 +687,7 @@
       "title": "Best OpenRouter & Open-Source System Prompt Templates | AgentTune",
       "url": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates",
       "markdown": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md",
-      "revision": "c1bd16f57c24",
+      "revision": "287fa107cc63",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -727,7 +727,7 @@
       "title": "GPT-6 & 6.2 Sol Personality: Test Results & How to Tune It",
       "url": "https://agent-tune.com/guides/sol-personality",
       "markdown": "https://agent-tune.com/guides/sol-personality.md",
-      "revision": "fcff2cf21cd1",
+      "revision": "b029864d15e0",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -737,7 +737,7 @@
       "title": "How to Make AI Push Back & Stop Agreeing With You (2026)",
       "url": "https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back",
       "markdown": "https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md",
-      "revision": "491fbc0f1ed7",
+      "revision": "9149ad6a5a31",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -887,7 +887,7 @@
       "title": "What Personality Type Is Claude? Opus 5.5, Fable 5.2 & Sonnet 5.5 Tested",
       "url": "https://agent-tune.com/research/what-personality-type-is-claude",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-claude.md",
-      "revision": "268c66d7b123",
+      "revision": "ac1feb90fbe2",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -897,7 +897,7 @@
       "title": "Gemini MBTI & Personality Type: Gemini 4 Neon, Argon & 3.1 Pro Data",
       "url": "https://agent-tune.com/research/what-personality-type-is-gemini",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-gemini.md",
-      "revision": "dcd722f9a326",
+      "revision": "476d9645a11a",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -907,7 +907,7 @@
       "title": "What Personality Type Is Grok? Grok 4.7 (n=100) & Grok 4.6 Data",
       "url": "https://agent-tune.com/research/what-personality-type-is-grok",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-grok.md",
-      "revision": "c88679ce37a6",
+      "revision": "dd3536e56bf1",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -917,7 +917,7 @@
       "title": "What Personality Type Is Muse? Muse Spark 1.3 Report (2026)",
       "url": "https://agent-tune.com/research/what-personality-type-is-muse",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-muse.md",
-      "revision": "be42a3447741",
+      "revision": "f8102e9ffcf4",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -937,7 +937,7 @@
       "url": "https://agent-tune.com/research/i-took-the-mbti-100-times",
       "markdown": "https://agent-tune.com/research/i-took-the-mbti-100-times.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "8a16f354a89a"
+      "revision": "60b2982d78a8"
     },
     {
       "id": "what-personality-type-is-chatgpt",
@@ -946,7 +946,7 @@
       "url": "https://agent-tune.com/research/what-personality-type-is-chatgpt",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-chatgpt.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "1781b6d6e06d"
+      "revision": "2094baf61a49"
     }
   ]
 }

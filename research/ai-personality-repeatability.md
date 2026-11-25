@@ -57,6 +57,8 @@ Because a broad category covers a wide range of scores, a model's final label ca
 
 Each cell shows how many unique answer sheets appeared across 100 fresh runs. Shorter tests like DISC (16 questions) naturally repeat exact answer sheets more often than longer tests like the Big Five (50 questions).
 
+> **Chart — Unique Answer Sheets Generated Across 100 Fresh Sessions (Out of 100):** Number of distinct item-response vectors produced in 100 fresh runs across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1. GPT-6 Astra: MBTI (32 items) 99, Big Five (50) 100, DISC (16) 58, Enneagram (36) 93, Attachment (36) 90; GPT-6 Sol: MBTI (32 items) 100, Big Five (50) 100, DISC (16) 66, Enneagram (36) 100, Attachment (36) 100; Claude Opus 5.5: MBTI (32 items) 76, Big Five (50) 38, DISC (16) 7, Enneagram (36) 54, Attachment (36) 79; Claude Fable 5.1: MBTI (32 items) 80, Big Five (50) 66, DISC (16) 10, Enneagram (36) 82, Attachment (36) 96.
+
 Distinct answer vectors out of 100 runs. Opus 5.5 produced only 7 distinct 16-item DISC vectors across 100 runs (while still scoring 100% Secure on Attachment with 79 distinct answer sheets).
 
 ## On DISC, Opus 5.5 gave the exact same 16 answers 60 times

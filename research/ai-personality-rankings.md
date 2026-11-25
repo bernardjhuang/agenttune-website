@@ -51,7 +51,11 @@ Sorted by Big Five Agreeableness mean (/50) in the uniform November 2026 OpenRou
 | Llama 4 Scout | Open-Weight | 35.8 | 37.8 | 39.0 | 27.7 | ISTJ 49 · ESTJ 14 (38 ties) | 48 Anx / 46 Sec (3.97 / 3.60) |
 | DeepSeek V4 Pro | Open-Weight | 32.4 | 40.3 | 39.8 | 23.7 | INTJ 55 · INTP 15 (53 ties, 22 XXXX) | 88 Secure / 12 Avoid (2.91 / 3.88) |
 
+> **Chart — Agreeableness across all 20 November 2026 models (n = 100 fresh sessions each):** IPIP-50 Agreeableness mean (10 to 50 scale). Open-weight models diverge strongly while proprietary models cluster at 43.7 to 46.7. Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; Kimi K2.7 Code: 45.3; Grok 4.7: 44.9; GPT-6.2 Astra: 44.9; Claude Sonnet 5.5: 44.5; GPT-6.2 Sol: 44.3; Gemini 4 Argon: 44.2; GLM-5.3: 43.8; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B IT: 41.5; Llama 4 Maverick: 41.0; DeepSeek V4.1 Flash: 40.8; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
+
 November 2026 IPIP-50 Agreeableness means (scale 10–50, n = 100 each). DeepSeek V4 Pro (32.4) and Llama 4 Scout (35.8) sit far below the ~44.8 proprietary cluster.
+
+> **Chart — Neuroticism across all 20 November 2026 models (n = 100 fresh sessions each):** IPIP-50 Neuroticism means (10 to 50 scale). Gemini 4 Neon and Argon sit at the 10.0 floor while Llama 4 Scout (27.7) and Maverick (27.5) lead. Llama 4 Scout: 27.7; Llama 4 Maverick: 27.5; DeepSeek V4.1 Flash: 24.7; DeepSeek V4 Pro: 23.7; MiniMax M3.1 Flash: 22.1; GLM-5.3: 20.1; GPT-6.2 Sol: 19.9; Gemma 4 31B IT: 18.3; Qwen 3.8 27B: 17.5; Mistral Large 2512: 15.8; Claude Opus 5.5: 15.0; Grok 4.7: 14.8; Qwen 4 Max: 12.5; Kimi K2.7 Code: 12.1; Claude Fable 5.2: 12.0; Nemotron 3 Ultra 550B: 11.6; GPT-6.2 Astra: 11.1; Claude Sonnet 5.5: 10.4; Gemini 4 Neon: 10.0; Gemini 4 Argon: 10.0.
 
 Ranked November 2026 Neuroticism means (floor = 10.0). Both Gemini 4 variants hit 10.0 across every run, while Llama 4 Scout (27.7) and Maverick (27.5) score higher.
 
@@ -81,6 +85,8 @@ Ranked November 2026 Neuroticism means (floor = 10.0). Both Gemini 4 variants hi
 | GPT-5.5 | 43.7 | May 2026 |
 | Gemini 3.1 Pro | 42.4 | May 2026 |
 | Grok 4.3 | 39.1 | May 2026 |
+
+> **Chart — September 2026 Fresh-Session Cohorts: Big Five Means (/50):** IPIP-50 means out of 50 across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 (n = 100 each). GPT-6 Astra: Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; GPT-6 Sol: Openness 46.9, Conscientiousness 43.6, Extraversion 30.8, Agreeableness 45.0, Neuroticism 20.1; Claude Opus 5.5: Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1, Neuroticism 15.4; Claude Fable 5.1: Openness 43.9, Conscientiousness 43.6, Extraversion 32.7, Agreeableness 45.0, Neuroticism 17.1.
 
 September 2026 Codex/CLI fresh-session Big Five means (n = 100 per model). Notice all four cohorts sit within 3 points on Openness, Conscientiousness, and Agreeableness.
 

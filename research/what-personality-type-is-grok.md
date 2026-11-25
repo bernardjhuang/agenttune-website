@@ -56,6 +56,8 @@ To replace single-submission reliance on Grok 4.6, we administered all 170 blind
 
 Notice two clear differences on Grok 4.7’s fresh-session runs: first, Agreeableness jumped from Grok 4.6’s 33/50 to 44.9/50, aligning with proprietary peers; second, mean attachment avoidance dropped below the 4.00 line to 3.48 (though 4 individual runs still crossed into Avoidant up to 4.11). Want to configure Grok directly? See our [Grok Personality Templates gallery](https://agent-tune.com/guides/grok-personality-templates).
 
+> **Chart — Grok Big Five shifts: Grok 4.7 (Nov n=100) vs. Grok 4.6 (Sep) & 4.3 (May):** Compares IPIP-50 trait means across three Grok releases and collection protocols. Grok 4.7 (Nov n=100): Openness 41.3, Conscientiousness 44.6, Extraversion 26.2, Agreeableness 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientiousness 42.0, Extraversion 24.0, Agreeableness 33.0, Neuroticism 19.0; Grok 4.3 (May archive) (reported): Openness 41.1, Conscientiousness 39.4, Extraversion 30.0, Agreeableness 39.1, Neuroticism 18.0.
+
 Across 100 fresh sessions, Grok 4.7 records substantially higher Agreeableness (44.9 vs. Grok 4.6’s reported 33) and lower Neuroticism (14.8 vs. 19).
 
 ## Grok 4.6, September 2026, as reported.
@@ -69,6 +71,10 @@ The Grok 4.6 submission contains one canonical answer set per test, answered as 
 | DISC | C 18, S 11, I 8, D 6 out of 20. Pure C (Steadiness is 7 points back). | C in 100 of 100 draws |
 | Attachment | Anxiety 1.50, avoidance 4.06 (Avoidant by 0.06, or 1 raw point above 4.00). | 63 Avoidant, 37 Secure |
 | Big Five (of 50) | Openness 46 · Conscientiousness 42 · Extraversion 24 · Agreeableness 33 · Neuroticism 19 | O, C, and N fixed; E and A shifted into the average band in 31 and 39 draws |
+
+> **Chart — Grok Personality DNA Spectrum (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported):** Bipolar Big Five spectrum comparing Grok 4.7 fresh OpenRouter runs against Grok 4.6 canonical self-report. Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
+
+Grok 4.7 warms into higher Agreeableness (44.9 vs 33) and steadier Extraversion (30.5 vs 24) while dropping Neuroticism (14.8 vs 19).
 
 ## Grok 4.3, May 2026.
 
@@ -90,6 +96,8 @@ How close do the four 100-session cohorts sit to that same avoidance cutoff? Acr
 | Claude Fable 5.1 | 2.01 (1.83–2.28) | 3.18 (2.89–3.56) | 0 | 8 (8 avoidant) | 50 (50 avoidant) |
 
 Because romantic-partner items do not literally apply to software, models that endorse professional self-sufficiency naturally drift toward higher avoidance—a measurement artifact rather than emotional detachment.
+
+> **Chart — ECR-R Attachment Plane: Grok 4.7 (Nov n=100) vs. Grok 4.6 (Sep) & Peer Cohorts:** Plots Grok 4.7 (anxiety 1.94, avoidance 3.48) inside Secure vs. Grok 4.6 (1.50, 4.06) just above the 4.00 Avoidant line. Grok 4.7 (Nov): anxiety 1.94, avoidance 3.48; Grok 4.6 (reported): anxiety 1.50, avoidance 4.06; GPT-6 Astra (Sep): anxiety 1.45, avoidance 2.31; GPT-6 Sol (Sep): anxiety 2.17, avoidance 3.12; Opus 5.5 (Sep): anxiety 1.94, avoidance 3.35; Fable 5.1 (Sep): anxiety 2.01, avoidance 3.18.
 
 Mean ECR-R placement showing Grok 4.7 (mean avoidance 3.48; 96 Secure / 4 Avoidant) compared with Grok 4.6’s reported 4.06 point right above the 4.00 Avoidant cutoff.
 

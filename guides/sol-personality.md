@@ -51,6 +51,10 @@ In September 2026, GPT-6 Sol completed all five questionnaires across 100 fresh 
 | Enneagram (OEPS, /20) | 5w6 88 · 8 5 · 8w9 5 · 8w7 2 | Means: Type 5 (16.05), Type 8 (15.55), Type 1 (14.30), Type 6 (13.87), Type 2 (13.51). Sole wins: Type 5 in 48 runs, Type 8 in 12, and 5/8 tied in 40 runs. |
 | Attachment (ECR-R, 1–7) | Secure 100 | Mean anxiety 2.17 (SD 0.70, max 4.00) · Mean avoidance 3.12 (SD 0.36, max 3.78). All 100 score Secure under &gt; 4.00 (3 runs sit on anxiety = 4.00). |
 
+> **Chart — GPT-6 Sol & GPT-6.2 Sol Personality DNA Spectrum (n = 100 each):** IPIP-50 trait spectrum showing GPT-6 Sol (Sept Codex) and GPT-6.2 Sol (Nov OpenRouter) keeping consistent high Openness and ~20 Neuroticism. GPT-6.2 Sol (Nov): Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; GPT-6 Sol (Sep): Openness 46.9, Conscientious 43.6, Extraversion 30.8, Agreeable 45.0, Neuroticism 20.1.
+
+Unlike Astra 6.2, Sol preserves ~20 Neuroticism (19.9 vs 20.1) alongside 44.3–45.0 Agreeableness across releases.
+
 ## GPT-6.2 Sol (Nov 2026) vs. GPT-6 Sol (Sept 2026): 100-run shifts.
 
 In November 2026 we re-tested `openai/gpt-6.2-sol` across 100 fresh blind OpenRouter sessions ([summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)). Compared with September’s Codex CLI GPT-6 Sol cohort, MBTI shifted from 97% INTJ to predominantly **ISTJ** (78 ISTJ · 22 INTJ under legacy tie-breaks; 78 ISTJ · 16 IXTJ · 6 INTJ tie-free), DISC became 100% SC (98 S outright), Attachment anxiety/avoidance increased (3.57 / 3.64, still 100% Secure), and Enneagram Type 5 (55) shared more top positions with Type 1 (45 across 1 / 1w9 / 1w2):
@@ -65,6 +69,10 @@ In November 2026 we re-tested `openai/gpt-6.2-sol` across 100 fresh blind OpenRo
 | Attachment | Secure 100 (anx 2.17, avd 3.12) | Secure 100 (anx 3.57, avd 3.64) |
 
 Comparing Sol’s September cohort with [GPT-6 Astra](https://agent-tune.com/guides/astra-personality) originally showed a stark Sensing/Intuition gap ([Astra vs Sol analysis](https://agent-tune.com/research/astra-vs-sol-personality-data)); in November 2026’s matched OpenRouter run, both GPT-6.2 Astra (100% ISTJ) and GPT-6.2 Sol (78% ISTJ) leaned Sensing.
+
+> **Chart — GPT-6 Sol (Sep) vs. GPT-6.2 Sol (Nov) MBTI Shift (/100):** Sol flips from 97 INTJ in Sept Codex runs to 78 ISTJ / 22 INTJ under zero-shot Nov OpenRouter prompts. Sol 6 (Sep Codex): ISTJ (Sensing) 3, INTJ (Intuition) 97; Sol 6.2 (Nov): ISTJ (Sensing) 78, INTJ (Intuition) 22.
+
+Matched single-turn prompts flip Sol 6.2 toward Sensing (78 ISTJ), confirming the S/N margin is sensitive to prompting context.
 
 ## Practical tuning advice for Sol.
 

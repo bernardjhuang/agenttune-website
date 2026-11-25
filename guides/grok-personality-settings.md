@@ -48,6 +48,10 @@ In November 2026, we tested **100 fresh independent sessions on Grok 4.7** (`x-a
 
 Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.
 
+> **Chart — Grok Personality DNA (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported):** Trait comparison showing Grok 4.7 warming on Agreeableness (44.9 vs 33) and calming on Neuroticism (14.8 vs 19). Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
+
+Pair Grok 4.7’s warmer Agreeableness (44.9) with explicit pushback rules so "No-BS" modes don’t revert into polite agreeableness.
+
 ## Dialing down edgy banter or dialing up warmth (5 more presets).
 
 Most people tune Grok in one of two directions:

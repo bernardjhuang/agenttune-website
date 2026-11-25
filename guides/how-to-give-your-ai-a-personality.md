@@ -93,6 +93,10 @@ Custom instructions change how a model delivers critique, formats tradeoffs, and
 
 Treat any template as an editable starting draft. Keep the bullets that save you time on real tasks, or tell your coding agent to fetch a template's raw `.md` URL and merge it cleanly inside bounded markers.
 
+> **Chart — Effect of Plain-English Behavioral Tuning (540-Reply Study, %):** Shows correctness pass rate rising on DeepSeek V4 Pro (+16.7 pp) and Claude Fable 5.2 (96.7% -> 100%), while DeepSeek fluff drops from 36.7% to 3.3%. Default (baseline): Correctness: DeepSeek 78.3, Correctness: Fable 5.2 96.7, Fluff: DeepSeek (lower=better) 36.7; Plain-English rules: Correctness: DeepSeek 95.0, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 20.0; Plain-English + INTJ: Correctness: DeepSeek 93.3, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 3.3.
+
+Checkable plain-English rules drive the real accuracy & brevity gains across controlled replies; combining them with 85/15 voice gives personality without losing fidelity.
+
 ## Questions people ask.
 
 ### Can I really give ChatGPT a personality?

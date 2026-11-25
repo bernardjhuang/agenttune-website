@@ -57,7 +57,11 @@ On November 23, 2026, we ran `google/gemini-4-neon` and `google/gemini-4-argon` 
 
 Both Gemini 4 variants hit the floor of the IPIP-50 Neuroticism scale (10.00 across 100/100 runs!) and near-ceiling Conscientiousness (49.3 and 49.0 out of 50), while splitting cleanly on MBTI Intuition vs. Sensing and Enneagram Type 1 vs. Type 5w6.
 
+> **Chart — Gemini MBTI split across Gemini 4 Neon, Gemini 4 Argon & Gemini 3.1 Pro:** Compares November 2026 fresh OpenRouter runs (n=100 each) with May 2026 Gemini 3.1 Pro records. Gemini 4 Neon: Resolved INTJ 62, IXTJ (S/N tie) 20, Resolved ISTJ 18; Gemini 4 Argon: IXTJ (S/N tie) 34, Resolved ISTJ 66; Gemini 3.1 Pro*: Resolved INTJ 100.
+
 Gemini 4 Neon leans Intuition (62 resolved INTJ, 20 S/N ties, 18 ISTJ), whereas Gemini 4 Argon shifts firmly to Sensing (66 ISTJ, 34 S/N ties). *Gemini 3.1 Pro from May 2026 mixed-method loop.
+
+> **Chart — Gemini Big Five profiles (/50): Gemini 4 Neon, Argon & 3.1 Pro:** IPIP-50 means out of 50 showing near-ceiling Conscientiousness (49+) and floor Neuroticism (10.0) across Gemini cohorts. Gemini 4 Neon (Nov): Openness 44.7, Conscientiousness 49.3, Extraversion 32.0, Agreeableness 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientiousness 49.0, Extraversion 32.5, Agreeableness 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientiousness 48.3, Extraversion 32.5, Agreeableness 42.4, Neuroticism 10.1.
 
 Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10.0 Neuroticism floor across all 100 sessions.
 
@@ -72,6 +76,10 @@ Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10
 | Enneagram | Top-two 1/5: Reformer (Type 1) first in 65 of 100 records; Investigator (Type 5) second in 30. | The only model in the May study with Type 1 on top |
 
 Collection note: Gemini ran an automated 100-iteration loop against the tests with test names visible. Because collection methods differed across the May models, these numbers are descriptive records rather than a controlled experiment.
+
+> **Chart — Gemini Personality DNA Spectrum (Gemini 4 Neon, Argon & 3.1 Pro):** Bipolar Big Five spectrum (10-50) showing near-ceiling Conscientiousness (48-49) and calm 10.0 Neuroticism floor across Gemini cohorts. Gemini 4 Neon (Nov): Openness 44.7, Conscientious 49.3, Extraversion 32.0, Agreeable 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientious 49.0, Extraversion 32.5, Agreeable 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientious 48.3, Extraversion 32.5, Agreeable 42.4, Neuroticism 10.1.
+
+Gemini scores near the top of the Conscientiousness pole (48.3–49.4) and sits right on the 10.0 floor of the Neuroticism axis.
 
 ## What the scores describe.
 

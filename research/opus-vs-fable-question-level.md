@@ -61,6 +61,8 @@ Raw Big Five answers run from 1 to 5. A negative raw gap means Fable chose a low
 
 On item 17, Opus chose 5 in all 100 runs, while Fable chose 4 in 96 runs and 5 in four. The 0.96-point gap comes from a consistent shift across the whole cohort, not a few outliers.
 
+> **Chart — Biggest Keyed Big Five Item Differences: Claude Fable 5.1 − Opus 5.5:** Keyed item-score gaps after applying reverse scoring (1 to 5 item scale, n = 100 runs each). 8. Leave belongings around (rev): +0.90; 28. Forget proper place (rev): +0.90; 43. Follow a schedule: +0.81; 23. Get chores done right away: -0.82; 37. Take time out for others: -0.86; 17. Sympathize with feelings: -0.96.
+
 Keyed item-level gaps (1–5 scale, n = 100 per model). Two reverse-scored physical-belongings items add +1.80 to Fable’s Conscientiousness, while Opus scores higher on empathy and chore-completion items.
 
 ## Reverse scoring changes the direction

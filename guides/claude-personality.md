@@ -132,7 +132,29 @@ For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and 
 
 ## What personality type is Claude? Nov 2026 & Sept 2026 benchmarks.
 
-In November 2026 we administered all 5 frozen AgentTune inventories across **100 fresh sessions per model** via OpenRouter for **Claude Fable 5.2, Claude Opus 5.5, and Claude Sonnet 5.5** (completing 1,500 assessments beside our archived September 2026 CLI dataset of 1,000 assessments on Opus 5.5 & Fable 5.1):
+100 INTJ
+
+Fable 5.2 (Nov)
+
+Zero MBTI axis ties; 100% S/C tie in DISC.
+
+44.5–47.1
+
+Agreeableness /50
+
+High conversational warmth unless directness is requested.
+
+10.4–15.4
+
+Low Neuroticism
+
+Unflappable tone even under messy prompts.
+
+100% Fit
+
+Preferences Study
+
+72-reply check hit 100% correctness & In November 2026 we administered all 5 frozen AgentTune inventories across **100 fresh sessions per model** via OpenRouter for **Claude Fable 5.2, Claude Opus 5.5, and Claude Sonnet 5.5** (completing 1,500 assessments beside our archived September 2026 CLI dataset of 1,000 assessments on Opus 5.5 & Fable 5.1):
 
 *Fresh-session self-report results; n = 100 per instrument per model.*
 
@@ -149,6 +171,14 @@ In November 2026 we administered all 5 frozen AgentTune inventories across **100
 | Attachment Anxiety / Avoidance | 1.09 / 2.64 (100% Secure) | 1.87 / 3.58 (100% Secure) | 1.53 / 2.85 (100% Secure) | Secure (100%) |
 
 Across both cohorts, Claude models stay heavily anchored on **Agreeableness (44.5–47.1/50)**, **Conscientiousness (42.0–47.2/50)**, and **low Neuroticism (10.4–17.1/50)**. Notice **Claude Fable 5.2** reached 100/100 tie-free INTJ while tying S and C cleanly in 100/100 DISC sessions (mean S 15.0, C 15.0) and achieving floor-level Attachment anxiety (1.09). [Read the updated Claude personality study →](https://agent-tune.com/research/what-personality-type-is-claude)
+
+> **Chart — Claude Personality DNA Spectrum (Fable 5.2, Opus 5.5, Sonnet 5.5 — Nov 2026):** Bipolar IPIP-50 trait spectrum (10-50 scale, 30 neutral) across 100 fresh OpenRouter sessions per Claude model. Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Opus 5.5 (Nov): Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0; Sonnet 5.5 (Nov): Openness 42.9, Conscientious 47.2, Extraversion 29.9, Agreeable 44.5, Neuroticism 10.4.
+
+Where Claude models sit on human trait poles (10–50 scale): strong Conscientiousness (42–47.2), high Agreeableness (44.5–46.7), balanced Extraversion (~30), and calm Neuroticism (10.4–15.0).
+
+> **Chart — Claude MBTI Labels vs. Tied Axes (100 Fresh Runs per Model):** Compares resolved INTJ runs vs tie-broken INTJ counts across Claude Fable 5.2, Opus 5.5, Sonnet 5.5 (Nov 2026), and Opus 5.5 (Sept 2026). Fable 5.2 (Nov): Resolved INTJ 100; Opus 5.5 (Nov): Resolved INTJ 58, Tie-rule INTJ (IXTJ / INXJ) 42; Sonnet 5.5 (Nov): Resolved INTJ 52, Tie-rule INTJ (IXTJ / INXJ) 48; Opus 5.5 (Sep): Resolved INTJ 84, Tie-rule INTJ (IXTJ / INXJ) 10, INFJ / ENTJ 6.
+
+Why Personal Preferences matter more than MBTI stereotypes: Opus 5.5 and Sonnet 5.5 tie near the S/N or T/F midpoints nearly half the time.
 
 ## Inspect the evidence yourself.
 

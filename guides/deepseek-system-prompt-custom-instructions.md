@@ -105,6 +105,10 @@ Across 100 fresh sessions each in our [November 2026 Open-Source Model Study](ht
 
 Look at two practical takeaways: (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and elevated DISC Dominance make it naturally more direct and less sycophantic out of the box; (2) its high MBTI midpoint tie rates (53%–78% of runs tying at least one axis) reinforce why explicit XML rules outperform vague type labels. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
+> **Chart — DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026):** Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7). DeepSeek V4 Pro (MIT): Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7; DeepSeek V4.1 Flash (MIT): Openness 40.2, Conscientious 38.5, Extraversion 25.6, Agreeable 40.8, Neuroticism 24.7; Proprietary Median (8 models): Openness 43.8, Conscientious 44.8, Extraversion 30.3, Agreeable 44.7, Neuroticism 11.6.
+
+DeepSeek V4 Pro is a clear statistical outlier: lowest Agreeableness (32.4 vs 44.8 proprietary median) and lowest Extraversion (23.7), making it naturally more direct and less deferential.
+
 ## Test and compare your DeepSeek system prompt locally.
 
 Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?

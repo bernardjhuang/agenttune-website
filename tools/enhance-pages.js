@@ -54,7 +54,8 @@ function markdown(html,url){
  let text=/<main\b[^>]*>([\s\S]*?)<\/main>/.exec(html)?.[1]||'';
  const blocks=[];
  const stash=s=>{const i=blocks.push(s)-1;return `\n\n@@BLOCK_${i}@@\n\n`;};
- text=text.replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/g,'')
+ text=text.replace(/<svg\b[^>]*class="[^"]*\bresearch-chart\b[^"]*"[^>]*>[\s\S]*?<title[^>]*>([\s\S]*?)<\/title>\s*<desc[^>]*>([\s\S]*?)<\/desc>[\s\S]*?<\/svg>/g,(_,t,d)=>stash('> **Chart — '+plain(t)+':** '+plain(d)))
+  .replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/g,'')
   .replace(/<details class="article-toc"[\s\S]*?<\/details>/g,'')
   .replace(/<aside class="model-compatibility"[\s\S]*?<\/aside>/g,'')
   .replace(/<span class="guide-related-kicker">([\s\S]*?)<\/span>/g,'$1: ')

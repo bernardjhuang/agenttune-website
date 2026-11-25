@@ -41,6 +41,8 @@ Each model answered all five AgentTune tests in 100 fresh Codex CLI sessions und
 
 Where the letters come from. Both models have wide margins on Judging (about 10 points of a possible 16) and Thinking (8.6 for Astra, 6.2 for Sol). Introversion is moderate. Sensing versus Intuition is close: Astra's Sensing side wins 48 runs to Intuition's 28, with 24 ties, while Sol leans Intuition 81 to 3. So "INTJ" for GPT-6 really means a firm T and J, a reasonably firm I, and a small mean S/N margin for Astra. The original reporting rule assigned a tied S/N axis to N; the current quiz leaves it open, which is why Astra shows 45 INTJ labels but only 19 fully resolved ones. The [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026) shows every pattern with ties left open, and the [answer vectors](https://agent-tune.com/research/data/september-2026-responses.json) are downloadable.
 
+> **Chart — GPT-6.2 (Nov OpenRouter) vs. GPT-6 (Sep Codex) MBTI Distribution (/100):** Compares GPT-6.2 Astra and Sol (November OpenRouter) against September Codex runs. Astra 6.2 (Nov): ISTJ 100; Sol 6.2 (Nov): Resolved INTJ 6, INTJ via tie-break 16, ISTJ 78; Sol 6 (Sep): Resolved INTJ 79, INTJ via tie-break 18, ISTJ 3; Astra 6 (Sep): Resolved INTJ 19, INTJ via tie-break 26, ISTJ 46, ENTJ / ESTJ 9.
+
 GPT-6.2 Astra scores 100/100 ISTJ and GPT-6.2 Sol shifts from September’s 97 INTJ to 78 ISTJ / 22 INTJ under uniform single-turn prompts.
 
 ## The other models, for comparison.
@@ -55,6 +57,8 @@ GPT-6.2 Astra scores 100/100 ISTJ and GPT-6.2 Sol shifts from September’s 97 I
 | Muse Spark 1.3 reported | 100 runs per test inside one session, no raw answers | ISTJ 80 · ISFJ 12 · INTJ 8 | S/C blend, S first in 55 | Secure 100 (2.04 / 2.52) | Helper (2w1), 78 |
 
 The May 2026 study, collected with mixed methods, reported INTJ in 100 of 100 scoring records for GPT-5.5, 99 for Claude Opus 4.7, 100 for Gemini 3.1 Pro, 98 for GLM 5.1, 100 for Grok 4.3 and 100 for MiniMax 2.7. Some of those records re-score a single answer, so they are counts of records rather than independent runs. Gemini, GLM and MiniMax have not been re-tested. The [research hub](https://agent-tune.com/research) keeps both collections side by side and explains how each was gathered.
+
+> **Chart — ChatGPT Big Five Means (/50): GPT-6.2 (Nov) & GPT-6 (Sep):** IPIP-50 trait means across all four ChatGPT cohorts (n = 100 runs each). Astra 6.2 (Nov): Openness 43.9, Conscientiousness 43.2, Extraversion 30.7, Agreeableness 44.9, Neuroticism 11.1; Sol 6.2 (Nov): Openness 43.6, Conscientiousness 41.4, Extraversion 29.5, Agreeableness 44.3, Neuroticism 19.9; Astra 6 (Sep): Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; Sol 6 (Sep): Openness 46.9, Conscientiousness 43.6, Extraversion 30.8, Agreeableness 45.0, Neuroticism 20.1.
 
 Big Five trait means (n = 100 each). Notice GPT-6.2 Astra drops cleanly on Neuroticism (19.1 → 11.1), while GPT-6.2 Sol stays around 19.9.
 

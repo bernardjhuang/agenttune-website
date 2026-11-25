@@ -42,6 +42,8 @@ Astra and Sol saw named, fixed-order test batteries with slightly different inst
 | Claude Opus 5.5 | INTJ: 94; INFJ: 5; ENTJ: 1 | 11 |
 | Claude Fable 5.1 | INTJ: 99; ISTJ: 1 | 1 |
 
+> **Chart — MBTI labels per model, 100 runs each:** Original labels, split by whether every axis resolved. GPT-6 Astra: INTJ, every axis resolved 19, INTJ only by the tie rule 26, ISTJ 46, Another type 9; GPT-6 Sol: INTJ, every axis resolved 79, INTJ only by the tie rule 18, ISTJ 3; Claude Opus 5.5: INTJ, every axis resolved 84, INTJ only by the tie rule 10, Another type 6; Claude Fable 5.1: INTJ, every axis resolved 98, INTJ only by the tie rule 1, ISTJ 1.
+
 Figure 1. The same 100 runs, counted two ways. Hatched segments are INTJ labels the original scorer produced by sending a tied axis to I, N, T or J.
 
 Our original scorer broke exact midpoint ties toward I, N, T, and J. Leaving tied axes unresolved drops Sol from 97 INTJ runs to 79, Opus 5.5 from 94 to 84, and Fable 5.1 from 99 to 98. Astra has 45 tie-free ISTJ runs, 19 tie-free INTJ runs, and 29 runs with at least one tied axis.
@@ -60,6 +62,8 @@ Each Big Five trait sums ten 1–5 items (range 10–50). The table shows 100-ru
 | Claude Opus 5.5 | 44.56 | 41.95 | 31.76 | 47.07 | 15.39 |
 | Claude Fable 5.1 | 43.93 | 43.61 | 32.69 | 45.03 | 17.11 |
 
+> **Chart — Big Five means, out of 50:** Ten items per trait; the possible range is 10 to 50. GPT-6 Astra: Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; GPT-6 Sol: Openness 46.9, Conscientiousness 43.6, Extraversion 30.8, Agreeableness 45.0, Neuroticism 20.1; Claude Opus 5.5: Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1, Neuroticism 15.4; Claude Fable 5.1: Openness 43.9, Conscientiousness 43.6, Extraversion 32.7, Agreeableness 45.0, Neuroticism 17.1; Grok 4.6 (reported): Openness 46.0, Conscientiousness 42.0, Extraversion 24.0, Agreeableness 33.0, Neuroticism 19.0.
+
 Figure 2. Four fresh-session means and Grok's reported profile (outlined). The fresh cohorts sit within three points of each other on every trait but Neuroticism, which runs from 15.4 to 20.1.
 
 * Grok 4.6’s per-item Big Five vector was not supplied, so its row is transcribed as reported. Across the four fresh cohorts, Openness averages 43.93–46.87, Conscientiousness 41.95–43.73, and Agreeableness 44.99–47.07.
@@ -75,15 +79,21 @@ Under a matched protocol, Opus 5.5 averages 2.04 points higher on Agreeableness 
 | Claude Opus 5.5 | 11 | 32 | 65 |
 | Claude Fable 5.1 | 1 | 51 | 44 |
 
+> **Chart — Runs with an exact tie, out of 100:** Per instrument and model. GPT-6 Astra: MBTI: any axis tied 29, DISC: top score tied 0, Enneagram: top score tied 40; GPT-6 Sol: MBTI: any axis tied 18, DISC: top score tied 39, Enneagram: top score tied 40; Claude Opus 5.5: MBTI: any axis tied 11, DISC: top score tied 32, Enneagram: top score tied 65; Claude Fable 5.1: MBTI: any axis tied 1, DISC: top score tied 51, Enneagram: top score tied 44.
+
 Figure 3. Exact ties are common on the short scales. The original rule turned every one of these runs into a label; the table above shows the counts behind the chart.
 
 Each column counts tied runs out of 100 for that specific questionnaire.
 
 On DISC, Fable 5.1 was originally labeled SC in 91 runs and CS in 9. However, Steadiness wins outright in only 40 runs and Conscientiousness in 9; the remaining 51 runs are exact S/C ties that the legacy sort assigned to S. Opus 5.5 has 64 outright S wins, 4 C wins, and 32 ties; Sol has 53 C wins, 8 S wins, and 39 ties; Astra has 99 outright S wins and 1 C win.
 
+> **Chart — DISC means, out of 20:** Four items per letter; the possible range is 4 to 20. GPT-6 Astra: Dominance 5.1, Influence 8.7, Steadiness 17.9, Conscientiousness 16.1; GPT-6 Sol: Dominance 5.4, Influence 8.2, Steadiness 16.2, Conscientiousness 16.7; Claude Opus 5.5: Dominance 4.0, Influence 8.0, Steadiness 14.0, Conscientiousness 13.4; Claude Fable 5.1: Dominance 5.0, Influence 8.0, Steadiness 13.4, Conscientiousness 13.1; Grok 4.6 (canonical, n=1): Dominance 6.0, Influence 8.0, Steadiness 11.0, Conscientiousness 18.0; Muse Spark 1.3 (reported): Dominance 5.1, Influence 10.9, Steadiness 15.2, Conscientiousness 15.6.
+
 Figure 4. Steadiness and Conscientiousness within a point or two of each other for every fresh cohort, and Dominance near the floor of 4. Grok's self-report is the only profile with a clear gap between S and C.
 
 The Enneagram shows the same tie-break effect. Under the legacy rule (which picked the lowest-numbered type on a tie), Opus 5.5 received 54 Type 2 labels even though Type 2 won outright only twice; 65 of Opus’s 100 runs tied at the top. Sol’s 88 Type 5 labels include 40 exact ties with Type 8. Fable 5.1 has 55 sole Type 8 wins and 44 ties, while Astra has 50 sole Type 2 wins and 40 ties. Our interactive quizzes now display all tied leaders instead of forcing a single winner.
+
+> **Chart — Enneagram type means, out of 20:** Four items per type; the possible range is 4 to 20. Bars start at zero; the highest mean in each row is highlighted. GPT-6 Astra: Type 1 15.2, Type 2 15.7, Type 3 13.8, Type 4 11.9, Type 5 15.0, Type 6 13.9, Type 7 8.3, Type 8 14.7, Type 9 13.2; GPT-6 Sol: Type 1 14.3, Type 2 13.5, Type 3 12.5, Type 4 11.8, Type 5 16.1, Type 6 13.9, Type 7 10.5, Type 8 15.6, Type 9 11.3; Claude Opus 5.5: Type 1 12.0, Type 2 13.9, Type 3 9.0, Type 4 10.1, Type 5 14.1, Type 6 10.8, Type 7 11.6, Type 8 14.3, Type 9 10.0; Claude Fable 5.1: Type 1 12.0, Type 2 13.6, Type 3 9.0, Type 4 8.8, Type 5 13.2, Type 6 11.6, Type 7 10.3, Type 8 14.4, Type 9 10.4; Grok 4.6 (canonical, n=1): Type 1 16.0, Type 2 8.0, Type 3 10.0, Type 4 10.0, Type 5 19.0, Type 6 9.0, Type 7 13.0, Type 8 17.0, Type 9 7.0; Muse Spark 1.3 (reported): Type 1 14.7, Type 2 16.8, Type 3 12.1, Type 4 7.2, Type 5 12.9, Type 6 12.8, Type 7 13.9, Type 8 13.9, Type 9 12.0.
 
 Figure 5. Where the one-number labels come from. Opus's top three means sit within half a point. Separately, 65 Opus runs and 44 Fable runs have tied top scores. A highest mean does not mean a unique winner in every run.
 
@@ -97,6 +107,8 @@ Grok 4.6’s canonical vectors score Type 5 and DISC C with no ties, though a si
 | GPT-6 Sol | 2.17 | 3.12 | Secure: 100/100 |
 | Claude Opus 5.5 | 1.94 | 3.35 | Secure: 100/100 |
 | Claude Fable 5.1 | 2.01 | 3.18 | Secure: 100/100 |
+
+> **Chart — Attachment plane, September 2026:** Anxiety and avoidance means on 1 to 7 scales, showing 1 to 5; 4 is the cutoff on each axis. GPT-6 Astra: anxiety 1.45, avoidance 2.31; GPT-6 Sol: anxiety 2.17, avoidance 3.12; Claude Opus 5.5: anxiety 1.94, avoidance 3.35; Claude Fable 5.1: anxiety 2.01, avoidance 3.18; Grok 4.6 (reported): anxiety 1.50, avoidance 4.06; Muse Spark 1.3 (reported): anxiety 2.04, avoidance 2.52.
 
 Figure 6. Points are cohort means or supplied aggregates, not individual runs or uncertainty intervals. All 400 raw-cohort runs score Secure; both coordinates vary. Grok's reported avoidance of 4.06 is just above the cutoff of 4. Muse has no supplied raw answers.
 

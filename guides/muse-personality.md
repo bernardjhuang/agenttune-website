@@ -158,6 +158,10 @@ The report reached us on September 24, 2026. Each test was answered 100 times, s
 
 The report does not establish a default personality, task behavior or a benefit from tuning. Read the [full Muse evidence note](https://agent-tune.com/research/what-personality-type-is-muse) for ties and missing data.
 
+> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6). Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; Claude Opus 5.5 (Sep): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4; GPT-6 Astra (Sep): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
+
+Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
+
 ## What the research can and cannot establish.
 
 These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).

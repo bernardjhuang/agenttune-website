@@ -57,6 +57,10 @@ Where memory is supported, you can also tell Meta AI: “Remember that I prefer 
 
 In the supplied Muse Spark 1.3 report (100 sequential in-session runs per test, marked reported on our research hub), Muse scored **ISTJ in 80 of 100 MBTI runs**, **Steadiness (55) and Conscientiousness (45)** on DISC, and **Type 2 (Helper)** in 78 of 100 Enneagram runs, with Agreeableness at **44.6/50**. That matches a warm, orderly default voice. If you want faster pushback or less small talk, add those rules explicitly in `Soul.md`. Read more in [What personality type is Meta Muse?](https://agent-tune.com/research/what-personality-type-is-muse).
 
+> **Chart — Meta Muse Spark 1.3 Reported Enneagram Means (/20 Scale):** Ranked OEPS means showing Helper (Type 2: 16.8/20) leading clearly over Type 1 (14.7) and Types 7/8 (13.9), explaining Muse default warmth. Type 2 (reported): 16.8; Type 1 (reported): 14.7; Type 7 (reported): 13.9; Type 8 (reported): 13.9; Type 5 (reported): 12.9; Type 6 (reported): 12.8; Type 3 (reported): 12.1; Type 9 (reported): 12.0; Type 4 (reported): 7.2.
+
+Muse Spark 1.3 reports Enneagram Helper (Type 2, 16.8/20) first—meaning custom Soul.md files work best when focusing on pushback and concise formatting.
+
 ## Questions people ask.
 
 ### Why can't I find Soul.md in Meta AI on WhatsApp or Instagram?

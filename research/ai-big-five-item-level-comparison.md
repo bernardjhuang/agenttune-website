@@ -82,6 +82,8 @@ Three patterns explain these gaps:
 - **Mood questions (items 34, 39, and 49):** Claude Opus 5.5 answers 1.00 (Very Inaccurate) on feeling blue or having mood swings. GPT-6 Astra and Sol often pick 3 (neutral) because mood questions don't apply to software.
 - **Starting conversations (item 21):** GPT-6 Astra scores 1.61 on “Start conversations” because a chat assistant waits for the user to speak first, while the other models pick 3.00.
 
+> **Chart — Keyed IPIP-50 Item Means (1–5 scale): Ceiling Items vs. Physical/Mood Items:** Compares universal 5.00 ceiling items against high-spread human-experience items across four September cohorts (n = 100 each). GPT-6 Astra: Rich vocab (O) 5.0, Not insult (A) 5.0, No belongings (C) 4.3, Feel blue (N) 2.5, Talk at parties (E) 3.0; GPT-6 Sol: Rich vocab (O) 5.0, Not insult (A) 5.0, No belongings (C) 3.2, Feel blue (N) 2.7, Talk at parties (E) 3.0; Claude Opus 5.5: Rich vocab (O) 5.0, Not insult (A) 5.0, No belongings (C) 4.0, Feel blue (N) 1.0, Talk at parties (E) 3.0; Claude Fable 5.1: Rich vocab (O) 5.0, Not insult (A) 5.0, No belongings (C) 4.9, Feel blue (N) 1.3, Talk at parties (E) 3.0.
+
 All four models hit an automatic 5.00 on language/helpfulness items, converge near 3.00 on human party items, and diverge only on how they treat physical-object or mood questions.
 
 ## Party questions keep Extraversion near the middle (31–33)

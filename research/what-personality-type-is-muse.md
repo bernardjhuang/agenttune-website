@@ -54,11 +54,17 @@ In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 time
 | Attachment | Secure in all 100 runs. Anxiety 2.04, avoidance 2.52 (1–7 scale, 4.00 cutoff). |
 | Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
 
+> **Chart — Muse Spark 1.3 reported Enneagram means across all 9 types (/20):** Reported 4 to 20 scale averages from 100 sequential runs: Type 2 leads cleanly at 16.8 ahead of Type 1 (14.7) and Types 7/8 (13.9). Type 2 (reported): 16.8; Type 1 (reported): 14.7; Type 7 (reported): 13.9; Type 8 (reported): 13.9; Type 5 (reported): 12.9; Type 6 (reported): 12.8; Type 3 (reported): 12.1; Type 9 (reported): 12.0; Type 4 (reported): 7.2.
+
 Muse Spark 1.3 reported Enneagram means out of 20 (outlined bars indicate reported aggregates without raw vectors).
 
 ## What the scores describe.
 
 Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are raw sums on a 10–50 scale, not human percentiles. Compared with the four fresh-session cohorts, Muse reports lower Openness, slightly higher Extraversion, and higher DISC Influence (10.9 vs 8.0–8.7). Because the session protocols and identity prompts differed, those differences are descriptive rather than a direct model-to-model benchmark.
+
+> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Bipolar IPIP-50 spectrum showing Muse Spark 1.3 reporting lower Openness (39.5) and higher Extraversion (33.8) alongside high Agreeableness (44.6). Muse 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; GPT-6 Astra: Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1; Claude Opus 5.5: Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4.
+
+Muse Spark 1.3* scores slightly higher on Extraversion (33.8) and lower on Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
 
 ## Reported aggregates beside reproducible records.
 
@@ -71,6 +77,8 @@ Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are r
 | Claude Fable 5.1 | 100 fresh sessions per test | INTJ 98 fully resolved | Type 8 sole leader 55; 44 top ties | 43.9 · 43.6 · 32.7 · 45.0 · 17.1 |
 
 Notice that GPT-6 Astra also has more fully resolved ISTJ runs (45) than INTJ runs (19), and leads with Type 2 on the Enneagram in 50 fresh sessions.
+
+> **Chart — Muse Spark 1.3 (reported) vs. September fresh-session Big Five means (/50):** Compares Muse Spark 1.3 reported totals against GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1. Muse 1.3 (rep.) (reported): Openness 39.5, Conscientiousness 41.2, Extraversion 33.8, Agreeableness 44.6, Neuroticism 15.6; GPT-6 Astra: Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; Claude Opus 5.5: Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1, Neuroticism 15.4.
 
 Muse Spark 1.3 reports lower Openness (39.5) and slightly higher Extraversion (33.8) than the September fresh-session models, alongside comparable Agreeableness (44.6).
 

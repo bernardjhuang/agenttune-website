@@ -87,6 +87,10 @@ In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Ne
 
 Notice Gemini 4 hits near-maximum Conscientiousness (49.0–49.3/50) and exact floor Neuroticism (10.0/50)—explaining why untuned Gemini reads hyper-orderly, thorough, and textbook-calm unless you instruct it to keep routine replies compact and push back early.
 
+> **Chart — Google Gemini Personality DNA (Gemini 4 Neon, Argon & 3.1 Pro):** IPIP-50 trait spectrum highlighting Gemini 4’s near-ceiling Conscientiousness (49.1–49.4) and flat 10.0 Neuroticism floor. Gemini 4 Neon (Nov): Openness 44.7, Conscientious 49.3, Extraversion 32.0, Agreeable 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientious 49.0, Extraversion 32.5, Agreeable 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientious 48.3, Extraversion 32.5, Agreeable 42.4, Neuroticism 10.1.
+
+Gemini combines high structured conscientiousness (48.3–49.4/50) with the lowest emotional volatility (10.0 floor) in our dataset.
+
 ## Questions people ask.
 
 ### Where are custom instructions in Google Gemini?

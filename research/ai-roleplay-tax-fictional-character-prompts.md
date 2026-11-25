@@ -56,7 +56,11 @@ Using the 20 objective tasks from our [personality-prompt-comparison-kit.json](h
 
 Look at the accuracy-versus-personality frontier: **Calibrated TARS (85/15)** delivered nearly identical voice distinctiveness (`3.85/5` vs `3.98/5`) to full theatrical roleplay while using **less than one-third as many words (50.0 vs 162.7)**, hitting **100.0% correctness** (60/60) and **0.0% fluff**.
 
+> **Chart — The Roleplay Tax: Correctness Rate (%) Across 5 Prompt Styles × 3 Models:** Blind-graded correctness % (n=20 tasks per bar). Naive LARP drops Claude Fable 5.2 to 85% and GPT-6.2 Sol to 95%, whereas Calibrated TARS 85/15 & Feynman hit 100% on all 3 models. Default: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, DeepSeek V4 Pro 80.0; Naive LARP: GPT-6.2 Sol 95.0, Claude Fable 5.2 85.0, DeepSeek V4 Pro 85.0; Calibrated TARS (85/15): GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, DeepSeek V4 Pro 100.0; JARVIS x Sherlock (85/15): GPT-6.2 Sol 100.0, Claude Fable 5.2 90.0, DeepSeek V4 Pro 100.0; Feynman Whimsy (85/15): GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, DeepSeek V4 Pro 100.0.
+
 Naive character LARP drops Claude Fable 5.2 correctness from 100% to 85%. Calibrated TARS 85/15 and Feynman Whimsy hold 100.0% across all three models—including lifting DeepSeek V4 Pro +20.0 pp over baseline (80% -> 100%).
+
+> **Chart — Format Compliance (%) vs. Praise Fluff & Roleplay Theatrics (%) Across 300 Replies:** Pooled rates across all 3 models (n=60 replies per prompt condition). Shows how 85/15 calibration preserves format discipline and cuts fluff to 0-6.7%. Default: Format Pass % 98.3, Fluff / Filler % 18.3, Theatrics % 28.3; Naive LARP: Format Pass % 80.0, Fluff / Filler % 91.7, Theatrics % 100.0; Calibrated TARS (85/15): Format Pass % 100.0, Fluff / Filler % 0.0, Theatrics % 10.0; Feynman Whimsy (85/15): Format Pass % 100.0, Fluff / Filler % 6.7, Theatrics % 20.0.
 
 Pooled behavioral rates (n = 60 per condition): Naive LARP suffers 100% theatrics, 91.7% fluff, and drops format pass rate to 80.0%. Calibrated TARS achieves 100.0% format compliance and 0.0% fluff.
 
@@ -106,6 +110,8 @@ Alongside behavioral trials, we projected our 20-model frozen November 2026 Open
 | Qwen 4 Max | Open-weight | 81.8 | 85.6 | 21.0 | Lawful Good | Accommodating |
 
 Every proprietary frontier model tested maps to **Lawful Good · Accommodating** by default—great for polite co-building, weak for unprompted adversarial critique unless you inject explicit pushback or calibrated archetype rules. Only open-weight **DeepSeek V4 Pro** (Pushback 86.2, Lawful Neutral) and **Llama 4 Scout** (Pushback 75.6, True Neutral) clear the red-team threshold out of the box.
+
+> **Chart — 20-Model Anti-Sycophancy Pushback Index (0-100) & Default D&D Alignment:** Sorted projection from 2,000 fresh N=100 psychometric sessions showing proprietary Lawful Good models clustering below 36 while DeepSeek V4 Pro (86.2) and Llama 4 Scout (75.6) reach the Red-Team Competing threshold. DeepSeek V4 Pro: 86.2; Llama 4 Scout: 75.6; MiniMax M3.1 Flash: 56.9; DeepSeek V4.1 Flash: 54.4; Llama 4 Maverick: 53.4; Gemma 4 31B IT: 48.6; Qwen 3.8 27B: 47.1; Mistral Large 2512: 43.2; GLM-5.3: 42.4; GPT-6.2 Sol: 36.0; Gemini 4 Neon: 35.0; Gemini 4 Argon: 33.3; Claude Sonnet 5.5: 32.8; Grok 4.7: 30.9; GPT-6.2 Astra: 30.7; Kimi K2.7 Code: 30.1; Claude Opus 5.5: 28.0; Nemotron 3 Ultra 550B: 26.3; Claude Fable 5.2: 23.9; Qwen 4 Max: 21.0.
 
 Anti-Sycophancy Pushback Index derived from the 20-model November 2026 N=100 cohort. All 8 proprietary models sit in Lawful Good / Accommodating unless explicitly prompted to challenge flawed premises.
 

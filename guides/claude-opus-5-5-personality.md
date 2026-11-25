@@ -30,6 +30,10 @@ Quick Actions & Agent Fetch
 
 Every test ran in an isolated session. Read the [five-model study](https://agent-tune.com/research/ai-personality-five-models-2026), [Claude Nov 2026 update](https://agent-tune.com/research/what-personality-type-is-claude), or [download Nov 2026 summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json).
 
+> **Chart — Claude Opus 5.5 Personality DNA (Nov 2026 OpenRouter vs. Sept 2026 CLI):** IPIP-50 trait spectrum showing Opus 5.5 consistency across November OpenRouter (n=100) and September CLI (n=100) cohorts. Opus 5.5 (Nov OpenRouter): Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0; Opus 5.5 (Sep CLI): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4.
+
+Opus 5.5 maintains high Agreeableness (45.6–47.1) and Openness (43.0–44.6) alongside calm Neuroticism (15.0–15.4) across both interfaces.
+
 ## Why the original type label is only part of the answer
 
 Under the legacy tie-break rule, Opus 5.5 received 94 INTJ, 5 INFJ, and 1 ENTJ labels. However, 10 runs tied exactly on Thinking vs Feeling and 1 tied on Extraversion vs Introversion. Leaving ties open gives 84 fully resolved INTJ runs, 5 INFJ runs, and 11 runs with an unresolved axis (`X`).
@@ -49,6 +53,10 @@ Opus 5.5 and Fable 5.1 ran under the same blind questionnaire protocol and high-
 | Neuroticism (N) | 15.39 | 17.11 |
 
 Opus 5.5 averages 2.04 points higher on Agreeableness, 1.66 points lower on Conscientiousness, and 1.72 points lower on Neuroticism than Fable 5.1 ([see the 170-item comparison](https://agent-tune.com/research/opus-vs-fable-question-level)).
+
+> **Chart — DISC Means (/20): Claude Opus 5.5 vs. Fable 5.1 & Fable 5.2:** Compares ODAT Dominance, Influence, Steadiness, and Conscientiousness (/20) showing very low Dominance (4.0-5.1) and high Steadiness/Conscientiousness. Opus 5.5 (Sep): Dominance (D) 4.0, Influence (I) 8.0, Steadiness (S) 14.0, Conscientious (C) 13.4; Fable 5.1 (Sep): Dominance (D) 5.0, Influence (I) 8.0, Steadiness (S) 13.4, Conscientious (C) 13.1; Fable 5.2 (Nov): Dominance (D) 4.0, Influence (I) 7.8, Steadiness (S) 15.0, Conscientious (C) 15.0.
+
+All three Claude cohorts sit near the floor on Dominance (4.0–5.1/20) and peak on Steadiness and Conscientiousness (15–16/20)—explaining why Claude benefits from explicit pushback rules.
 
 ## Communication instructions to try
 

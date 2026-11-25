@@ -57,6 +57,8 @@ To remove September’s midpoint-prompt confound, we ran `openai/gpt-6.2-astra` 
 
 Notably, GPT-6.2 Sol still showed nearly double Astra’s Neuroticism score (19.94 vs. 11.14) and triple its attachment anxiety (3.57 vs. 1.22), alongside higher Enneagram Type 5 representation (55 vs. 3) and much higher response variability (94 unique MBTI vectors vs. 35).
 
+> **Chart — MBTI Sensing vs. Intuition (N − S) Mean Axis Margin across Astra & Sol Cohorts:** Compares Sept 2026 Codex runs against Nov 2026 matched OpenRouter GPT-6.2 runs on the N minus S axis margin (-16 to +16 range). GPT-6 Sol (Sept Codex): +1.91; GPT-6 Astra (Sept Codex): -0.43; GPT-6.2 Sol (Nov OpenRouter): -1.19; GPT-6.2 Astra (Nov OpenRouter): -1.67.
+
 Zero-centered N−S axis margin (out of −16 to +16). Under uniform November single-turn prompts, both GPT-6.2 Sol (−1.19) and GPT-6.2 Astra (−1.67) sit cleanly on the Sensing side.
 
 ## How the September 200 sessions were collected
@@ -89,6 +91,8 @@ Under the old tie-breaking rule, Astra was labeled 46 ISTJ / 45 INTJ and Sol was
 | N | 19.14 | 20.05 | +0.91 |
 
 Each trait runs from 10 to 50. Astra and Sol sit within 0.11 points of each other on Conscientiousness and Agreeableness, and within 2.33 points on Openness and Extraversion. Remember that raw totals out of 50 are not human population percentiles.
+
+> **Chart — GPT-6 & GPT-6.2 Astra vs. Sol Big Five Means (/50):** Compares September Codex and November OpenRouter cohorts across Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Astra 6 (Sep): Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; Sol 6 (Sep): Openness 46.9, Conscientiousness 43.6, Extraversion 30.8, Agreeableness 45.0, Neuroticism 20.1; Astra 6.2 (Nov): Openness 43.9, Conscientiousness 43.2, Extraversion 30.7, Agreeableness 44.9, Neuroticism 11.1; Sol 6.2 (Nov): Openness 43.6, Conscientiousness 41.4, Extraversion 29.5, Agreeableness 44.3, Neuroticism 19.9.
 
 GPT-6.2 Sol shows nearly double Astra 6.2’s Neuroticism score (19.9 vs. 11.1), while Openness, Conscientiousness, Extraversion, and Agreeableness remain closely aligned.
 

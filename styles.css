@@ -5691,12 +5691,12 @@ p, blockquote, li, .lede, .hp2-hero-lede, .hp2-section-lede, .guide-tldr { text-
 .guide-prose table { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 15px; line-height: 1.5; }
 .guide-prose th { text-align: left; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--border); }
 .guide-prose td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
-.guide-table-wrap { container-type: inline-size; max-inline-size: 100%; overflow: auto; max-block-size: min(560px, 80vh); }
+.guide-table-wrap { container-type: inline-size; max-inline-size: 100%; overflow-x: auto; overflow-y: visible; margin: 18px 0 24px; }
 
 /* Homepage: one-line index of the per-agent install guides */
 .hp2-guides-line { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 28px 0 0; }
 .hp2-guides-line a { color: var(--ink); text-underline-offset: 3px; }
-.guide-table-wrap table { min-width: 540px; border-collapse: separate; border-spacing: 0; }
+.guide-table-wrap table { min-width: 540px; border-collapse: separate; border-spacing: 0; margin: 0; }
 .guide-table-wrap thead { position: sticky; inset-block-start: 0; z-index: 2; }
 .guide-table-wrap thead th { background: var(--bg, #f6f3ef); }
 .guide-table-wrap tbody th[scope="row"] { position: sticky; inset-inline-start: 0; z-index: 1; background: var(--bg, #f6f3ef); padding-right: 14px; }

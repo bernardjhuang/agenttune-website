@@ -154,4 +154,45 @@ function divergingBars({ id, title, desc, rows, min = -2, max = 2, leftLabel = '
   return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${header}${body}<line x1="${zeroX.toFixed(1)}" x2="${zeroX.toFixed(1)}" y1="${top - 4}" y2="${H - 16}" stroke="${INK}" stroke-width="1.2"/><text x="${labelW}" y="${H - 4}" font-size="9" fill="${MUTED}">${min}</text><text x="${zeroX.toFixed(1)}" y="${H - 4}" font-size="9" fill="${MUTED}" text-anchor="middle">0</text><text x="${(labelW + plotW).toFixed(1)}" y="${H - 4}" font-size="9" fill="${MUTED}" text-anchor="end">+${max}</text></svg>`;
 }
 
-module.exports = { figure, groupedBars, stackedRows, smallMultiples, plane, horizontalBars, divergingBars };
+const DEFAULT_B5_TRAITS = [
+  { label: 'Openness', poles: 'Routine ↔ Curious' },
+  { label: 'Conscientious', poles: 'Flexible ↔ Structured' },
+  { label: 'Extraversion', poles: 'Reserved ↔ Expressive' },
+  { label: 'Agreeable', poles: 'Skeptical ↔ Warm/Polite' },
+  { label: 'Neuroticism', poles: 'Calm ↔ Reactive' }
+];
+
+// Bipolar Personality DNA spectrum. series: [{name, color, values: [...], reported?}]
+function traitSpectrum({ id, title, desc, series, traits = DEFAULT_B5_TRAITS, min = 10, max = 50, mid = 30, decimals = 1 }) {
+  const W = 680, labelW = 136, plotX = 144, plotW = 468, lg = legend(series, 4, 14);
+  const top = 30 + (lg.rows - 1) * 16;
+  const barH = series.length >= 4 ? 5 : (series.length === 3 ? 6 : 8), barGap = 2;
+  const bandH = series.length * (barH + barGap) - barGap + 8;
+  const rowH = Math.max(38, bandH + 10);
+  const H = top + traits.length * rowH + 22;
+  const xPos = (v) => plotX + (Math.max(0, Math.min(max - min, v - min)) / (max - min)) * plotW;
+  const midX = xPos(mid);
+
+  const rowsHtml = traits.map((tr, ti) => {
+    const y0 = top + ti * rowH;
+    const bandY = y0 + 2;
+    const bars = series.map((s, si) => {
+      const v = s.values[ti];
+      if (v == null) return '';
+      const by = bandY + 4 + si * (barH + barGap);
+      const w = Math.max(2, xPos(v) - plotX);
+      const fill = s.reported ? '#ffffff' : s.color;
+      const strokeW = s.reported ? 1.4 : 0;
+      return `<rect x="${plotX}" y="${by}" width="${w.toFixed(1)}" height="${barH}" rx="2" fill="${fill}" stroke="${s.color}" stroke-width="${strokeW}"/><text x="${(plotX + w + 5).toFixed(1)}" y="${(by + barH - 0.5).toFixed(1)}" font-size="9.5" font-weight="600" fill="${INK}">${fmt(v, decimals)}</text>`;
+    }).join('');
+    const poleY = Math.min(y0 + 26, bandY + bandH - 1);
+    return `<text x="0" y="${y0 + 13}" font-size="11.5" font-weight="600" fill="${INK}">${esc(tr.label)}</text><text x="0" y="${poleY}" font-size="9" fill="${MUTED}">${esc(tr.poles)}</text><rect x="${plotX}" y="${bandY}" width="${plotW}" height="${bandH}" rx="4" fill="#f6f3ef" stroke="#ebe4d8" stroke-width="0.8"/><line x1="${midX.toFixed(1)}" x2="${midX.toFixed(1)}" y1="${bandY}" y2="${bandY + bandH}" stroke="#b9b1a3" stroke-width="1" stroke-dasharray="3 3"/>${bars}`;
+  }).join('');
+
+  const axisY = top + traits.length * rowH + 6;
+  const axis = `<line x1="${plotX}" x2="${plotX + plotW}" y1="${axisY}" y2="${axisY}" stroke="${GRID}"/><text x="${plotX}" y="${axisY + 12}" font-size="9" fill="${MUTED}">${min} (Low pole)</text><text x="${midX.toFixed(1)}" y="${axisY + 12}" font-size="9" fill="${MUTED}" text-anchor="middle">${mid} (Midpoint)</text><text x="${plotX + plotW}" y="${axisY + 12}" font-size="9" fill="${MUTED}" text-anchor="end">${max} (High pole)</text>`;
+  const descText = series.map((s) => `${s.name}${evidenceSuffix(s)}: ${traits.map((tr, i) => `${tr.label} ${fmt(s.values[i], decimals)}`).join(', ')}`).join('; ');
+  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${lg.g}${rowsHtml}${axis}</svg>`;
+}
+
+module.exports = { figure, groupedBars, stackedRows, smallMultiples, plane, horizontalBars, divergingBars, traitSpectrum };

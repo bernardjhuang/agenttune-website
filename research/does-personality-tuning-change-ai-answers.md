@@ -54,9 +54,15 @@ Key takeaway: on GPT-6.2 Sol and Claude Fable 5.2, default answer-first performa
 
 We also ran the 36-cell [Claude Preferences test kit](https://agent-tune.com/resources/research/claude-preferences-kit.json) on both `Claude Opus 5.5` and `Claude Fable 5.2` via OpenRouter system prompting (72 replies total; [download JSON](https://agent-tune.com/research/data/november-2026-claude-preferences-results.json)). Under baseline prompts, Opus 5.5 passed correctness and the 100-word limit 75% of the time (mean 123.0 words) and Fable 5.2 hit 83.3% correctness / 75% word-limit (102.6 words); with the 5-line instruction active, **both models hit 100% across correctness, answer-first,
 
+> **Chart — 540-Reply Behavioral Study: Correctness Rate (%) across 3 Prompt Arms:** Percent passing strict correctness rubric across 60 replies per cell (20 tasks x 3 repeats, blind-graded by Gemini 4 Argon). Default (baseline): GPT-6.2 Sol 100.0, Claude Fable 5.2 96.7, DeepSeek V4 Pro 78.3; Plain-English rules: GPT-6.2 Sol 98.3, Claude Fable 5.2 100.0, DeepSeek V4 Pro 95.0; Plain-English + INTJ: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, DeepSeek V4 Pro 93.3.
+
 Blind-judged correctness pass rates (%) across 540 replies (n = 60 per bar). DeepSeek V4 Pro climbs +16.7 percentage points from Default (78.3%) to Plain-English rules (95.0%).
 
+> **Chart — 540-Reply Study: Praise & Fluff Rate (%) across 3 Prompt Conditions:** Percentage of replies containing unnecessary openers, filler praise, or fluff across Default, Plain-English rules, and Plain-English + INTJ. Default (baseline): GPT-6.2 Sol 0.0, Claude Fable 5.2 0.0, DeepSeek V4 Pro 36.7; Plain-English rules: GPT-6.2 Sol 0.0, Claude Fable 5.2 0.0, DeepSeek V4 Pro 20.0; Plain-English + INTJ: GPT-6.2 Sol 0.0, Claude Fable 5.2 0.0, DeepSeek V4 Pro 3.3.
+
 Fluff rate (%) measured by blind judge Gemini 4 Argon. Both Sol and Fable 5.2 maintain 0% fluff, while DeepSeek V4 Pro drops from 36.7% at baseline to 3.3% under Rules + INTJ.
+
+> **Chart — 72-Reply Claude Preferences Check: Compliance Rates (%) & Mean Words:** Baseline vs. system-prompted Personal Preferences across Claude Opus 5.5 and Claude Fable 5.2 (n = 12 per arm). Correctness %: Opus 5.5 Baseline 75, Opus 5.5 Tuned 100, Fable 5.2 Baseline 83, Fable 5.2 Tuned 100; <=100-Word Pass %: Opus 5.5 Baseline 75, Opus 5.5 Tuned 100, Fable 5.2 Baseline 75, Fable 5.2 Tuned 100; Answer-First %: Opus 5.5 Baseline 100, Opus 5.5 Tuned 100, Fable 5.2 Baseline 92, Fable 5.2 Tuned 100.
 
 System-prompt conditioning lifts both Claude Opus 5.5 and Claude Fable 5.2 to 100% correctness, 100%
 
@@ -84,6 +90,8 @@ Each reply was generated in a fresh session with no tools, and every prompt, rep
 | Usefulness rating (1–5) | 4.8 | 4.8 | 4.45 |
 
 Notice that the Direct rules did not make replies shorter (381.9 words vs. 380 words)—instead, they moved the recommendation to the very first sentence (19/20 perfect answer-first scores), cut hedging from 7 total matches to 1, and stopped the model from ending every turn with “Would you like me to…?” questions.
+
+> **Chart — September 2026 60-Reply Pilot: Answer-First 5/5 Count & Trailing Questions:** Compares Baseline, Direct / INTJ, and Partner / INFP across 20 tasks on Claude Opus 5.5. Baseline: 5/5 Answer-First (/20) 14, Questions Asked (total /20) 18, Hedge Matches (total /20) 7; Direct / INTJ: 5/5 Answer-First (/20) 19, Questions Asked (total /20) 5, Hedge Matches (total /20) 1; Partner / INFP: 5/5 Answer-First (/20) 13, Questions Asked (total /20) 37, Hedge Matches (total /20) 7.
 
 In the September 2026 pilot (n = 20 tasks per arm), Direct / INTJ raised 5/5 answer-first openings from 14 to 19 while cutting trailing questions from 18 to 5 and hedge matches from 7 to 1.
 

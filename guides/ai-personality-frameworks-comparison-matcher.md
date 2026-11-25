@@ -78,6 +78,10 @@ Ordered checklist output without changing warmth.
 - **Binary type quizzes have frequent ties:** On OEJTS MBTI, **59 of 400 fresh sessions** tied on at least one axis, and legacy tie-breaking inflated apparent `INTJ` counts from **280/400 (70.0%) to 335/400 (83.8%)**. Our interactive quizzes now keep tied axes open.
 - **Concrete rules do the work, not the label:** In our 60-reply pilot, plain behavioral rules raised answer-first openings from **14/20 to 19/20** and cut hedges from **0.35 to 0.05** per reply. Pick whichever framework helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
 
+> **Chart — Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme):** Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix. Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; DeepSeek V4 Pro: Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7.
+
+Frontier assistants look remarkably alike on raw Big Five axes—pick the framework above (MBTI, Big Five, DISC, Enneagram, or Attachment) based on the exact friction you notice in chats.
+
 ## How to combine two frameworks without writing contradictory instructions.
 
 If you want to mix two profiles—such as **DISC D** for speed plus **Enneagram Type 8** for pushback—do not paste two full 80-line files together. Instead:

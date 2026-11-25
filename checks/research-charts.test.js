@@ -87,3 +87,35 @@ test('every published research page includes accessible, finite inline SVG chart
     }
   }
 });
+
+test('all 19 guide pages with benchmark blocks include valid accessible SVG charts and .md summaries', () => {
+  const guideSlugs = [
+    'claude-personality', 'claude-opus-5-5-personality', 'fable-personality',
+    'astra-personality', 'sol-personality', 'chatgpt-vs-claude-personality',
+    'gemini-personality', 'grok-personality-settings', 'grokbot-personality',
+    'muse-personality', 'meta-ai-vs-meta-muse-personality', 'muse-vs-chatgpt-vs-claude-personality',
+    'deepseek-system-prompt-custom-instructions', 'openrouter-open-source-system-prompt-templates',
+    'stop-ai-sycophancy-make-ai-push-back', 'make-claude-more-direct',
+    'ai-assistant-personality-tone-guidelines', 'how-to-give-your-ai-a-personality',
+    'ai-personality-frameworks-comparison-matcher'
+  ];
+  for (const slug of guideSlugs) {
+    const file = path.join(__dirname, '../guides', `${slug}.html`);
+    const pageHtml = fs.readFileSync(file, 'utf8');
+    const svgs = [...pageHtml.matchAll(/<svg class="research-chart"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+    assert.ok(svgs.length >= 1, `guides/${slug}.html should include at least 1 SVG chart`);
+    const ids = [...pageHtml.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
+    assert.equal(new Set(ids).size, ids.length, `Duplicate element IDs in guides/${slug}.html`);
+    for (const svg of svgs) {
+      const id = svg.match(/<title id="([^"]+)-t">/)?.[1];
+      assert.ok(id, `Chart in guides/${slug}.html missing <title id="...-t">`);
+      assert.ok(svg.includes(`role="img" aria-labelledby="${id}-t ${id}-d"`), id);
+      assert.doesNotMatch(svg, /NaN|Infinity|undefined/, id);
+    }
+    const mdFile = path.join(__dirname, '../guides', `${slug}.md`);
+    if (fs.existsSync(mdFile)) {
+      const md = fs.readFileSync(mdFile, 'utf8');
+      assert.ok(md.includes('> **Chart —'), `guides/${slug}.md should export chart summaries`);
+    }
+  }
+});

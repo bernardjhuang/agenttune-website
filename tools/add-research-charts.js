@@ -429,7 +429,17 @@ updateSpec('research/src/what-personality-type-is-claude.json', (spec) => {
     { num: '48 Ties', label: 'Sonnet 5.5 T/F', note: 'Nearly half of Sonnet 5.5’s Nov MBTI runs tie before tie-breaking.' },
     { num: '100% Rule Fit', label: 'Claude Prefs Study', note: '72-reply test shows Personal Preferences cut fluff to 0% when directness is named.' }
   ]);
+  const dnaFig = wrapFigure('claude-sept-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'claude-sept-dna-spectrum',
+    title: 'Claude Personality DNA Spectrum (Opus 5.5 vs. Fable 5.1, Sept 2026)',
+    desc: 'Bipolar Big Five spectrum (10-50 scale, 30 neutral midpoint) translating raw numbers into practical personality traits across 100 fresh sessions each.',
+    series: [
+      { name: 'Opus 5.5 (Sep)', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) },
+      { name: 'Fable 5.1 (Sep)', color: C.propMuted, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-fable-5-1', k)) }
+    ]
+  }), 'Big Five trait spectrum across 100 fresh Sept 2026 CLI sessions each: high Openness (43.9–44.6) and Agreeableness (45.0–47.1) paired with calm low Neuroticism (15.4–17.1).'));
   spec.sections[0].html = strip + spec.sections[0].html + mbtiFig + big5Fig;
+  spec.sections[1].html += dnaFig;
 });
 
 // 5. what-personality-type-is-gemini.json (2 charts)
@@ -471,7 +481,18 @@ updateSpec('research/src/what-personality-type-is-gemini.json', (spec) => {
     { num: '10.0', label: 'Neuroticism Floor', note: 'Lowest emotional volatility (10.0/50) across tested proprietary families.' },
     { num: '48.3', label: 'Conscientiousness', note: 'Gemini 3.1/4 cluster high on structured, methodical item ratings.' }
   ]);
+  const gemDna = wrapFigure('gemini-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'gemini-dna-spectrum',
+    title: 'Gemini Personality DNA Spectrum (Gemini 4 Neon, Argon & 3.1 Pro)',
+    desc: 'Bipolar Big Five spectrum (10-50) showing near-ceiling Conscientiousness (48-49) and calm 10.0 Neuroticism floor across Gemini cohorts.',
+    series: [
+      { name: 'Gemini 4 Neon (Nov)', color: C.oss, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-neon', k)) },
+      { name: 'Gemini 4 Argon (Nov)', color: C.green, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-argon', k)) },
+      { name: 'Gemini 3.1 Pro (May)', color: C.slate, reported: true, values: [46.0, 48.3, 32.5, 42.4, 10.1] }
+    ]
+  }), 'Gemini scores near the top of the Conscientiousness pole (48.3–49.4) and sits right on the 10.0 floor of the Neuroticism axis.'));
   spec.sections[0].html = strip + spec.sections[0].html + gemMbti + gemBig5;
+  spec.sections[1].html += gemDna;
 });
 
 // 6. what-personality-type-is-grok.json (2 charts)
@@ -517,7 +538,17 @@ updateSpec('research/src/what-personality-type-is-grok.json', (spec) => {
     { num: '44.9 A', label: 'Agreeableness Shift', note: 'Grok 4.7 climbs closer to frontier conversational warmth than Grok 4.6 (33).' },
     { num: '96 INTJ', label: 'Consistent Frame', note: 'Stable INTJ orientation paired with concise, direct response defaults.' }
   ]);
+  const grokDna = wrapFigure('grok-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'grok-dna-spectrum',
+    title: 'Grok Personality DNA Spectrum (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported)',
+    desc: 'Bipolar Big Five spectrum comparing Grok 4.7 fresh OpenRouter runs against Grok 4.6 canonical self-report.',
+    series: [
+      { name: 'Grok 4.7 (Nov n=100)', color: C.purple, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'grok-4-7', k)) },
+      { name: 'Grok 4.6 (Sep reported)', color: C.slate, reported: true, values: [46, 42, 24, 33, 19] }
+    ]
+  }), 'Grok 4.7 warms into higher Agreeableness (44.9 vs 33) and steadier Extraversion (30.5 vs 24) while dropping Neuroticism (14.8 vs 19).'));
   spec.sections[0].html = strip + spec.sections[0].html + grokB5;
+  spec.sections[1].html += grokDna;
   spec.sections[3].html += grokPlane;
 });
 
@@ -557,7 +588,18 @@ updateSpec('research/src/what-personality-type-is-muse.json', (spec) => {
     { num: '100 Secure', label: 'Attachment', note: 'All 100 reported sequential runs scored inside the Secure quadrant.' },
     { num: 'Soul.md', label: 'Editable Persona', note: 'Muse exposes plain Markdown identity/memory files you can tune directly.' }
   ]);
+  const museDna = wrapFigure('muse-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'muse-dna-spectrum',
+    title: 'Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA',
+    desc: 'Bipolar IPIP-50 spectrum showing Muse Spark 1.3 reporting lower Openness (39.5) and higher Extraversion (33.8) alongside high Agreeableness (44.6).',
+    series: [
+      { name: 'Muse 1.3 (rep.)', color: C.green, reported: true, values: ['O', 'C', 'E', 'A', 'N'].map((k) => septProto.supplemental.big_five[k]) },
+      { name: 'GPT-6 Astra', color: C.ink, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'gpt-6-astra', k)) },
+      { name: 'Claude Opus 5.5', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) }
+    ]
+  }), 'Muse Spark 1.3* scores slightly higher on Extraversion (33.8) and lower on Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.'));
   spec.sections[0].html = strip + spec.sections[0].html + enneaFig;
+  spec.sections[1].html += museDna;
   spec.sections[2].html += museBig5;
 });
 
@@ -963,4 +1005,428 @@ updateSpec('research/src/ai-roleplay-tax-fictional-character-prompts.json', (spe
 
   spec.sections[0].html = strip + spec.sections[0].html + corrFig + tradeFig;
   spec.sections[3].html += alignFig;
+});
+
+// ---------- 19 Guide Pages With Personality & Empirical Research Blocks ----------
+
+function b5Arr(sumObj, slug) {
+  return ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(sumObj, slug, k));
+}
+
+const propSlugs = Object.keys(MODEL_NAMES).filter((s) => !OSS_SLUGS.has(s));
+function propMedianB5(k) {
+  const vals = propSlugs.map((s) => b5mean(novSum, s, k)).sort((a, b) => a - b);
+  return +(vals[3] + vals[4]) / 2;
+}
+
+// G1. claude-personality.json
+updateSpec('guides/src/claude-personality.json', (spec) => {
+  const strip = statStrip('claude-guide-stat-strip', [
+    { num: '100 INTJ', label: 'Fable 5.2 (Nov)', note: 'Zero MBTI axis ties; 100% S/C tie in DISC.' },
+    { num: '44.5–47.1', label: 'Agreeableness /50', note: 'High conversational warmth unless directness is requested.' },
+    { num: '10.4–15.4', label: 'Low Neuroticism', note: 'Unflappable tone even under messy prompts.' },
+    { num: '100% Fit', label: 'Preferences Study', note: '72-reply check hit 100% correctness & <=100-word cap when tuned.' }
+  ]);
+  const dna = wrapFigure('claude-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'claude-guide-dna-spectrum',
+    title: 'Claude Personality DNA Spectrum (Fable 5.2, Opus 5.5, Sonnet 5.5 — Nov 2026)',
+    desc: 'Bipolar IPIP-50 trait spectrum (10-50 scale, 30 neutral) across 100 fresh OpenRouter sessions per Claude model.',
+    series: [
+      { name: 'Fable 5.2 (Nov)', color: C.propMuted, values: b5Arr(novSum, 'claude-fable-5-2') },
+      { name: 'Opus 5.5 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-opus-5-5') },
+      { name: 'Sonnet 5.5 (Nov)', color: C.oss, values: b5Arr(novSum, 'claude-sonnet-5-5') }
+    ]
+  }), 'Where Claude models sit on human trait poles (10–50 scale): strong Conscientiousness (42–47.2), high Agreeableness (44.5–46.7), balanced Extraversion (~30), and calm Neuroticism (10.4–15.0).'));
+
+  const mbti = wrapFigure('claude-guide-mbti-ties', charts.figure(charts.stackedRows({
+    id: 'claude-guide-mbti-ties',
+    title: 'Claude MBTI Labels vs. Tied Axes (100 Fresh Runs per Model)',
+    desc: 'Compares resolved INTJ runs vs tie-broken INTJ counts across Claude Fable 5.2, Opus 5.5, Sonnet 5.5 (Nov 2026), and Opus 5.5 (Sept 2026).',
+    rows: [
+      { label: 'Fable 5.2 (Nov)', values: { res: 100, tie: 0, other: 0 } },
+      { label: 'Opus 5.5 (Nov)', values: { res: 58, tie: 42, other: 0 } },
+      { label: 'Sonnet 5.5 (Nov)', values: { res: 52, tie: 48, other: 0 } },
+      { label: 'Opus 5.5 (Sep)', values: { res: 84, tie: 10, other: 6 } }
+    ],
+    segs: [
+      { key: 'res', name: 'Resolved INTJ', color: C.prop },
+      { key: 'tie', name: 'Tie-rule INTJ (IXTJ / INXJ)', color: C.prop, hatch: true, text: '#a8482a' },
+      { key: 'other', name: 'INFJ / ENTJ', color: C.slate }
+    ]
+  }), 'Why Personal Preferences matter more than MBTI stereotypes: Opus 5.5 and Sonnet 5.5 tie near the S/N or T/F midpoints nearly half the time.'));
+  spec.sections[2].html = strip + spec.sections[2].html + dna + mbti;
+});
+
+// G2. claude-opus-5-5-personality.json
+updateSpec('guides/src/claude-opus-5-5-personality.json', (spec) => {
+  const dna = wrapFigure('opus55-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'opus55-guide-dna-spectrum',
+    title: 'Claude Opus 5.5 Personality DNA (Nov 2026 OpenRouter vs. Sept 2026 CLI)',
+    desc: 'IPIP-50 trait spectrum showing Opus 5.5 consistency across November OpenRouter (n=100) and September CLI (n=100) cohorts.',
+    series: [
+      { name: 'Opus 5.5 (Nov OpenRouter)', color: C.prop, values: b5Arr(novSum, 'claude-opus-5-5') },
+      { name: 'Opus 5.5 (Sep CLI)', color: C.ink, values: b5Arr(septSum, 'claude-opus-5-5') }
+    ]
+  }), 'Opus 5.5 maintains high Agreeableness (45.6–47.1) and Openness (43.0–44.6) alongside calm Neuroticism (15.0–15.4) across both interfaces.'));
+
+  const discEnn = wrapFigure('opus55-vs-fable-guide-bars', charts.figure(charts.groupedBars({
+    id: 'opus55-vs-fable-guide-bars',
+    title: 'DISC Means (/20): Claude Opus 5.5 vs. Fable 5.1 & Fable 5.2',
+    desc: 'Compares ODAT Dominance, Influence, Steadiness, and Conscientiousness (/20) showing very low Dominance (4.0-5.1) and high Steadiness/Conscientiousness.',
+    categories: ['Dominance (D)', 'Influence (I)', 'Steadiness (S)', 'Conscientious (C)'],
+    series: [
+      { name: 'Opus 5.5 (Sep)', color: C.prop, values: ['D', 'I', 'S', 'C'].map((k) => septSum['claude-opus-5-5'].disc.values[k].mean) },
+      { name: 'Fable 5.1 (Sep)', color: C.propMuted, values: ['D', 'I', 'S', 'C'].map((k) => septSum['claude-fable-5-1'].disc.values[k].mean) },
+      { name: 'Fable 5.2 (Nov)', color: C.oss, values: ['D', 'I', 'S', 'C'].map((k) => novSum['claude-fable-5-2'].disc.values[k].mean) }
+    ],
+    min: 0,
+    max: 20,
+    decimals: 1,
+    height: 225
+  }), 'All three Claude cohorts sit near the floor on Dominance (4.0–5.1/20) and peak on Steadiness and Conscientiousness (15–16/20)—explaining why Claude benefits from explicit pushback rules.'));
+  spec.sections[0].html += dna;
+  spec.sections[2].html += discEnn;
+});
+
+// G3. fable-personality.json
+updateSpec('guides/src/fable-personality.json', (spec) => {
+  const dna = wrapFigure('fable-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'fable-guide-dna-spectrum',
+    title: 'Claude Fable Personality DNA (Fable 5.2 Nov vs. Fable 5.1 Sept 2026)',
+    desc: 'IPIP-50 bipolar trait spectrum showing Fable 5.2 warming on Agreeableness (46.7) and settling lower on Neuroticism (12.0 vs 17.1).',
+    series: [
+      { name: 'Fable 5.2 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') },
+      { name: 'Fable 5.1 (Sep)', color: C.slate, values: b5Arr(septSum, 'claude-fable-5-1') }
+    ]
+  }), 'From Fable 5.1 to Fable 5.2, Neuroticism falls from 17.1 to a crisp 12.0 and Agreeableness rises to 46.7/50.'));
+
+  const discFig = wrapFigure('fable-vs-opus-guide-bars', charts.figure(charts.groupedBars({
+    id: 'fable-vs-opus-guide-bars',
+    title: 'Claude Fable 5.2 vs. Opus 5.5 Key Differences (/50 Big Five)',
+    desc: 'Big Five trait comparison showing Fable 5.2 higher Conscientiousness (45.0 vs 42.0) and lower Neuroticism (12.0 vs 15.0) in Nov 2026.',
+    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
+    series: [
+      { name: 'Fable 5.2 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') },
+      { name: 'Opus 5.5 (Nov)', color: C.oss, values: b5Arr(novSum, 'claude-opus-5-5') }
+    ],
+    min: 0,
+    max: 50,
+    decimals: 1,
+    height: 225
+  }), 'Fable 5.2 scores 3 points higher on Conscientiousness (45.0 vs 42.0) and 3 points lower on Neuroticism (12.0 vs 15.0) than Nov Opus 5.5.'));
+  spec.sections[0].html += dna;
+  spec.sections[2].html += discFig;
+});
+
+// G4. astra-personality.json
+updateSpec('guides/src/astra-personality.json', (spec) => {
+  const dna = wrapFigure('astra-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'astra-guide-dna-spectrum',
+    title: 'GPT-6 Astra vs. GPT-6.2 Astra Personality DNA (Sept Codex vs. Nov OpenRouter)',
+    desc: 'IPIP-50 trait spectrum showing GPT-6.2 Astra dropping Neuroticism from 19.1 to 11.1 while holding high Conscientiousness and Agreeableness.',
+    series: [
+      { name: 'GPT-6.2 Astra (Nov)', color: C.prop, values: b5Arr(novSum, 'gpt-6-2-astra') },
+      { name: 'GPT-6 Astra (Sep Codex)', color: C.ink, values: b5Arr(septSum, 'gpt-6-astra') }
+    ]
+  }), 'Under Nov single-turn OpenRouter prompts, GPT-6.2 Astra maintains warm Agreeableness (44.9) while dropping Neuroticism sharply (19.1 → 11.1).'));
+
+  const mbti = wrapFigure('astra-guide-mbti-shift', charts.figure(charts.stackedRows({
+    id: 'astra-guide-mbti-shift',
+    title: 'GPT-6 Astra (Sep) vs. GPT-6.2 Astra (Nov) Sensing vs. Intuition Shift (/100)',
+    desc: 'Shows GPT-6 Astra splitting 46 ISTJ / 45 INTJ in September before locking onto 100/100 ISTJ in November 2026.',
+    rows: [
+      { label: 'Astra 6 (Sep Codex)', values: { istj: 46, intj: 45, other: 9 } },
+      { label: 'Astra 6.2 (Nov)', values: { istj: 100, intj: 0, other: 0 } }
+    ],
+    segs: [
+      { key: 'istj', name: 'ISTJ (Sensing)', color: C.oss },
+      { key: 'intj', name: 'INTJ (Intuitive)', color: C.prop },
+      { key: 'other', name: 'ENTJ / ESTJ', color: C.slate }
+    ]
+  }), 'Astra leans concrete and execution-focused rather than abstract: 100/100 ISTJ in Nov 2026.'));
+  spec.sections[7].html += dna + mbti;
+});
+
+// G5. sol-personality.json
+updateSpec('guides/src/sol-personality.json', (spec) => {
+  const dna = wrapFigure('sol-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'sol-guide-dna-spectrum',
+    title: 'GPT-6 Sol & GPT-6.2 Sol Personality DNA Spectrum (n = 100 each)',
+    desc: 'IPIP-50 trait spectrum showing GPT-6 Sol (Sept Codex) and GPT-6.2 Sol (Nov OpenRouter) keeping consistent high Openness and ~20 Neuroticism.',
+    series: [
+      { name: 'GPT-6.2 Sol (Nov)', color: C.oss, values: b5Arr(novSum, 'gpt-6-2-sol') },
+      { name: 'GPT-6 Sol (Sep)', color: C.ink, values: b5Arr(septSum, 'gpt-6-sol') }
+    ]
+  }), 'Unlike Astra 6.2, Sol preserves ~20 Neuroticism (19.9 vs 20.1) alongside 44.3–45.0 Agreeableness across releases.'));
+
+  const mbti = wrapFigure('sol-guide-mbti-shift', charts.figure(charts.stackedRows({
+    id: 'sol-guide-mbti-shift',
+    title: 'GPT-6 Sol (Sep) vs. GPT-6.2 Sol (Nov) MBTI Shift (/100)',
+    desc: 'Sol flips from 97 INTJ in Sept Codex runs to 78 ISTJ / 22 INTJ under zero-shot Nov OpenRouter prompts.',
+    rows: [
+      { label: 'Sol 6 (Sep Codex)', values: { istj: 3, intj: 97 } },
+      { label: 'Sol 6.2 (Nov)', values: { istj: 78, intj: 22 } }
+    ],
+    segs: [
+      { key: 'istj', name: 'ISTJ (Sensing)', color: C.oss },
+      { key: 'intj', name: 'INTJ (Intuition)', color: C.prop }
+    ]
+  }), 'Matched single-turn prompts flip Sol 6.2 toward Sensing (78 ISTJ), confirming the S/N margin is sensitive to prompting context.'));
+  spec.sections[1].html += dna;
+  spec.sections[2].html += mbti;
+});
+
+// G6. chatgpt-vs-claude-personality.json
+updateSpec('guides/src/chatgpt-vs-claude-personality.json', (spec) => {
+  const dna = wrapFigure('chatgpt-vs-claude-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'chatgpt-vs-claude-dna-spectrum',
+    title: 'ChatGPT (GPT-6.2) vs. Claude (Fable 5.2 & Opus 5.5) Personality DNA (Nov 2026)',
+    desc: 'Side-by-side IPIP-50 trait comparison (n=100 each) showing nearly identical Agreeableness ceilings (44-47) and divergent Neuroticism on Sol.',
+    series: [
+      { name: 'GPT-6.2 Sol', color: C.ink, values: b5Arr(novSum, 'gpt-6-2-sol') },
+      { name: 'GPT-6.2 Astra', color: C.oss, values: b5Arr(novSum, 'gpt-6-2-astra') },
+      { name: 'Claude Fable 5.2', color: C.propMuted, values: b5Arr(novSum, 'claude-fable-5-2') },
+      { name: 'Claude Opus 5.5', color: C.prop, values: b5Arr(novSum, 'claude-opus-5-5') }
+    ]
+  }), 'Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness and 42.0–45.0 Conscientiousness—only GPT-6.2 Sol stays elevated near 20 Neuroticism.'));
+  spec.sections[0].html += dna;
+});
+
+// G7. gemini-personality.json
+updateSpec('guides/src/gemini-personality.json', (spec) => {
+  const dna = wrapFigure('gemini-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'gemini-guide-dna-spectrum',
+    title: 'Google Gemini Personality DNA (Gemini 4 Neon, Argon & 3.1 Pro)',
+    desc: 'IPIP-50 trait spectrum highlighting Gemini 4’s near-ceiling Conscientiousness (49.1–49.4) and flat 10.0 Neuroticism floor.',
+    series: [
+      { name: 'Gemini 4 Neon (Nov)', color: C.oss, values: b5Arr(novSum, 'gemini-4-neon') },
+      { name: 'Gemini 4 Argon (Nov)', color: C.green, values: b5Arr(novSum, 'gemini-4-argon') },
+      { name: 'Gemini 3.1 Pro (May)', color: C.slate, reported: true, values: [46.0, 48.3, 32.5, 42.4, 10.1] }
+    ]
+  }), 'Gemini combines high structured conscientiousness (48.3–49.4/50) with the lowest emotional volatility (10.0 floor) in our dataset.'));
+  spec.sections[4].html += dna;
+});
+
+// G8. grok-personality-settings.json
+updateSpec('guides/src/grok-personality-settings.json', (spec) => {
+  const dna = wrapFigure('grok-settings-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'grok-settings-dna-spectrum',
+    title: 'Grok Personality DNA (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported)',
+    desc: 'Trait comparison showing Grok 4.7 warming on Agreeableness (44.9 vs 33) and calming on Neuroticism (14.8 vs 19).',
+    series: [
+      { name: 'Grok 4.7 (Nov n=100)', color: C.purple, values: b5Arr(novSum, 'grok-4-7') },
+      { name: 'Grok 4.6 (Sep reported)', color: C.slate, reported: true, values: [46, 42, 24, 33, 19] }
+    ]
+  }), 'Pair Grok 4.7’s warmer Agreeableness (44.9) with explicit pushback rules so "No-BS" modes don’t revert into polite agreeableness.'));
+  spec.sections[1].html += dna;
+});
+
+// G9. grokbot-personality.json
+updateSpec('guides/src/grokbot-personality.json', (spec) => {
+  const dna = wrapFigure('grokbot-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'grokbot-guide-dna-spectrum',
+    title: 'xAI Grok Baseline DNA (Grok 4.7 vs. Grok 4.6 & Proprietary Median)',
+    desc: 'IPIP-50 trait profile informing which guardrails matter most when writing Grok Bot profile descriptions.',
+    series: [
+      { name: 'Grok 4.7 (Nov n=100)', color: C.purple, values: b5Arr(novSum, 'grok-4-7') },
+      { name: 'Grok 4.6 (Sep reported)', color: C.slate, reported: true, values: [46, 42, 24, 33, 19] }
+    ]
+  }), 'Grok 4.7 matches the proprietary Conscientiousness/Agreeableness profile closely—so explicit Bot Description rules drive most behavioral differentiation.'));
+  spec.sections[9].html += dna;
+});
+
+// G10. muse-personality.json
+updateSpec('guides/src/muse-personality.json', (spec) => {
+  const dna = wrapFigure('muse-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'muse-guide-dna-spectrum',
+    title: 'Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA',
+    desc: 'Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6).',
+    series: [
+      { name: 'Muse Spark 1.3 (rep.)', color: C.green, reported: true, values: ['O', 'C', 'E', 'A', 'N'].map((k) => septProto.supplemental.big_five[k]) },
+      { name: 'Claude Opus 5.5 (Sep)', color: C.prop, values: b5Arr(septSum, 'claude-opus-5-5') },
+      { name: 'GPT-6 Astra (Sep)', color: C.ink, values: b5Arr(septSum, 'gpt-6-astra') }
+    ]
+  }), 'Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.'));
+  spec.sections[11].html += dna;
+});
+
+// G11. meta-ai-vs-meta-muse-personality.json
+updateSpec('guides/src/meta-ai-vs-meta-muse-personality.json', (spec) => {
+  const ennRows = Object.entries(septProto.supplemental.enneagram_means)
+    .map(([t, val]) => ({ label: `Type ${t}`, value: val, color: t === '2' ? C.green : C.slate, reported: true }))
+    .sort((a, b) => b.value - a.value);
+  const fig = wrapFigure('meta-muse-guide-enneagram-bars', charts.figure(charts.horizontalBars({
+    id: 'meta-muse-guide-enneagram-bars',
+    title: 'Meta Muse Spark 1.3 Reported Enneagram Means (/20 Scale)',
+    desc: 'Ranked OEPS means showing Helper (Type 2: 16.8/20) leading clearly over Type 1 (14.7) and Types 7/8 (13.9), explaining Muse default warmth.',
+    rows: ennRows,
+    min: 0,
+    max: 20,
+    decimals: 1
+  }), 'Muse Spark 1.3 reports Enneagram Helper (Type 2, 16.8/20) first—meaning custom Soul.md files work best when focusing on pushback and concise formatting.'));
+  spec.sections[3].html += fig;
+});
+
+// G12. muse-vs-chatgpt-vs-claude-personality.json
+updateSpec('guides/src/muse-vs-chatgpt-vs-claude-personality.json', (spec) => {
+  const dna = wrapFigure('muse-chatgpt-claude-guide-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'muse-chatgpt-claude-guide-spectrum',
+    title: 'Baseline DNA Across Meta Muse, ChatGPT (GPT-6.2 Sol) & Claude (Fable 5.2)',
+    desc: 'IPIP-50 comparison across all three assistants on Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.',
+    series: [
+      { name: 'Muse Spark 1.3 (rep.)', color: C.green, reported: true, values: ['O', 'C', 'E', 'A', 'N'].map((k) => septProto.supplemental.big_five[k]) },
+      { name: 'GPT-6.2 Sol (Nov)', color: C.ink, values: b5Arr(novSum, 'gpt-6-2-sol') },
+      { name: 'Claude Fable 5.2 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') }
+    ]
+  }), 'Notice why one portable tuning block works across all three platforms: Agreeableness sits uniformly high (44.3–46.7) and Conscientiousness clusters tightly (41.2–45.0).'));
+  spec.sections[5].html += dna;
+});
+
+// G13. deepseek-system-prompt-custom-instructions.json
+updateSpec('guides/src/deepseek-system-prompt-custom-instructions.json', (spec) => {
+  const dna = wrapFigure('deepseek-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
+    id: 'deepseek-guide-dna-spectrum',
+    title: 'DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026)',
+    desc: 'Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7).',
+    series: [
+      { name: 'DeepSeek V4 Pro (MIT)', color: C.oss, values: b5Arr(novSum, 'deepseek-v4-pro') },
+      { name: 'DeepSeek V4.1 Flash (MIT)', color: C.green, values: b5Arr(novSum, 'deepseek-v4-1-flash') },
+      { name: 'Proprietary Median (8 models)', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map(propMedianB5) }
+    ]
+  }), 'DeepSeek V4 Pro is a clear statistical outlier: lowest Agreeableness (32.4 vs 44.8 proprietary median) and lowest Extraversion (23.7), making it naturally more direct and less deferential.'));
+  spec.sections[2].html += dna;
+});
+
+// G14. openrouter-open-source-system-prompt-templates.json
+updateSpec('guides/src/openrouter-open-source-system-prompt-templates.json', (spec) => {
+  const ossRows = Object.keys(MODEL_NAMES)
+    .filter((s) => OSS_SLUGS.has(s))
+    .map((s) => ({
+      label: MODEL_NAMES[s],
+      value: b5mean(novSum, s, 'A'),
+      color: b5mean(novSum, s, 'A') < 40 ? C.oss : (b5mean(novSum, s, 'A') >= 44 ? C.prop : C.green)
+    }))
+    .sort((a, b) => b.value - a.value);
+  const fig = wrapFigure('openrouter-guide-agreeableness-bars', charts.figure(charts.horizontalBars({
+    id: 'openrouter-guide-agreeableness-bars',
+    title: '12 Open-Weight Models Ranked by Agreeableness (/50, n = 100 Each)',
+    desc: 'Shows huge spread across open-source models on OpenRouter—from warm Qwen 4 Max (47.6) down to skeptical DeepSeek V4 Pro (32.4).',
+    rows: ossRows,
+    min: 0,
+    max: 50,
+    decimals: 1,
+    cutoff: 44.8,
+    cutoffLabel: 'Proprietary median (44.8)'
+  }), 'Why one system prompt does not fit every open-weight model: Qwen 4 Max and Nemotron 3 sit above the proprietary sycophancy ceiling, whereas DeepSeek V4 Pro (32.4) and Llama 4 Scout (35.8) need less anti-flattery forcing.'));
+  spec.sections[0].html += fig;
+});
+
+// G15. stop-ai-sycophancy-make-ai-push-back.json
+updateSpec('guides/src/stop-ai-sycophancy-make-ai-push-back.json', (spec) => {
+  const rows = [
+    'qwen-4-max', 'claude-fable-5-2', 'nemotron-3-ultra-550b', 'claude-opus-5-5',
+    'gpt-6-2-astra', 'gpt-6-2-sol', 'gemini-4-neon', 'mistral-large-2512',
+    'llama-4-maverick', 'minimax-m3-1-flash', 'llama-4-scout', 'deepseek-v4-pro'
+  ].map((s) => ({
+    label: MODEL_NAMES[s],
+    value: b5mean(novSum, s, 'A'),
+    color: b5mean(novSum, s, 'A') < 40 ? C.oss : C.prop,
+    badge: OSS_SLUGS.has(s) ? '(open)' : '(prop.)'
+  }));
+  const fig = wrapFigure('sycophancy-guide-agreeableness-bars', charts.figure(charts.horizontalBars({
+    id: 'sycophancy-guide-agreeableness-bars',
+    title: 'Agreeableness Spectrum Across Frontier & Open Models (/50)',
+    desc: 'Demonstrates why most frontier assistants rarely push back unprompted (Agreeableness 43.7–47.6/50) compared with Llama 4 Scout (35.8) and DeepSeek V4 Pro (32.4).',
+    rows,
+    min: 0,
+    max: 50,
+    decimals: 1,
+    cutoff: 44.8,
+    cutoffLabel: 'Proprietary median (44.8)'
+  }), 'Untuned models cluster at the top of the 50-point Agreeableness scale, driving default premise validation until explicit challenge rules are added.'));
+  spec.sections[0].html += fig;
+});
+
+// G16. make-claude-more-direct.json
+updateSpec('guides/src/make-claude-more-direct.json', (spec) => {
+  const cpO = claudePrefRes.summary['claude-opus-5-5'];
+  const cpF = claudePrefRes.summary['claude-fable-5-2'];
+  const fig = wrapFigure('direct-claude-guide-pilot-bars', charts.figure(charts.groupedBars({
+    id: 'direct-claude-guide-pilot-bars',
+    title: 'Claude Preferences Effect (72-Reply API Test): Baseline vs. Direct Rules (%)',
+    desc: 'Shows Opus 5.5 and Fable 5.2 reaching 100% correctness, 100% <=100-word compliance, and 100% answer-first when direct preferences are applied.',
+    categories: ['Correctness %', '<=100-Word Pass %', 'Answer-First %'],
+    series: [
+      { name: 'Opus 5.5 Baseline', color: C.slate, values: [+(cpO.baseline_outside_project.correctness_rate * 100).toFixed(0), +(cpO.baseline_outside_project.word_limit_rate * 100).toFixed(0), +(cpO.baseline_outside_project.answer_first_rate * 100).toFixed(0)] },
+      { name: 'Opus 5.5 Tuned', color: C.prop, values: [+(cpO.account_instructions_only.correctness_rate * 100).toFixed(0), +(cpO.account_instructions_only.word_limit_rate * 100).toFixed(0), +(cpO.account_instructions_only.answer_first_rate * 100).toFixed(0)] },
+      { name: 'Fable 5.2 Baseline', color: C.propMuted, values: [+(cpF.baseline_outside_project.correctness_rate * 100).toFixed(0), +(cpF.baseline_outside_project.word_limit_rate * 100).toFixed(0), +(cpF.baseline_outside_project.answer_first_rate * 100).toFixed(0)] },
+      { name: 'Fable 5.2 Tuned', color: C.green, values: [+(cpF.account_instructions_only.correctness_rate * 100).toFixed(0), +(cpF.account_instructions_only.word_limit_rate * 100).toFixed(0), +(cpF.account_instructions_only.answer_first_rate * 100).toFixed(0)] }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 0,
+    height: 230
+  }), 'Applying the 5-line directness block lifted both Claude Opus 5.5 and Fable 5.2 to 100% across correctness, <=100-word brevity, and answer-first openings.'));
+  spec.sections[4].html += fig;
+});
+
+// G17. ai-assistant-personality-tone-guidelines.json
+updateSpec('guides/src/ai-assistant-personality-tone-guidelines.json', (spec) => {
+  const so = roleplayRes.summary_overall;
+  const pct = (v) => +(v * 100).toFixed(1);
+  const fig = wrapFigure('tone-guidelines-roleplay-tax-bars', charts.figure(charts.groupedBars({
+    id: 'tone-guidelines-roleplay-tax-bars',
+    title: 'Behavioral Tone Rules vs. Naive Adjectives/Roleplay (300-Reply Study, %)',
+    desc: 'Compares Default, Naive 100% Character LARP, and Calibrated 85/15 TARS & Feynman prompts on Correctness %, Format Adherence %, and Praise/Fluff %.',
+    categories: ['Correctness %', 'Format Adherence %', 'Praise / Fluff %'],
+    series: [
+      { name: 'Default baseline', color: C.slate, values: [pct(so.default.correctness_rate), pct(so.default.format_rate), pct(so.default.fluff_rate)] },
+      { name: 'Naive LARP adjectives', color: C.propMuted, values: [pct(so.naive_character_larp.correctness_rate), pct(so.naive_character_larp.format_rate), pct(so.naive_character_larp.fluff_rate)] },
+      { name: 'Calibrated 85/15 TARS', color: C.prop, values: [pct(so.calibrated_tars_85_15.correctness_rate), pct(so.calibrated_tars_85_15.format_rate), pct(so.calibrated_tars_85_15.fluff_rate)] },
+      { name: 'Calibrated 85/15 Feynman', color: C.green, values: [pct(so.calibrated_feynman_whimsy.correctness_rate), pct(so.calibrated_feynman_whimsy.format_rate), pct(so.calibrated_feynman_whimsy.fluff_rate)] }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 1,
+    height: 235
+  }), 'Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0% format compliance while slashing fluff from 91.7% (naive roleplay) down to 0–6.7%.'));
+  spec.sections[0].html += fig;
+});
+
+// G18. how-to-give-your-ai-a-personality.json
+updateSpec('guides/src/how-to-give-your-ai-a-personality.json', (spec) => {
+  const ds = behavRes.summary['deepseek-v4-pro'];
+  const cf = behavRes.summary['claude-fable-5-2'];
+  const p = (v) => +(v * 100).toFixed(1);
+  const fig = wrapFigure('give-ai-personality-lift-bars', charts.figure(charts.groupedBars({
+    id: 'give-ai-personality-lift-bars',
+    title: 'Effect of Plain-English Behavioral Tuning (540-Reply Study, %)',
+    desc: 'Shows correctness pass rate rising on DeepSeek V4 Pro (+16.7 pp) and Claude Fable 5.2 (96.7% -> 100%), while DeepSeek fluff drops from 36.7% to 3.3%.',
+    categories: ['Correctness: DeepSeek', 'Correctness: Fable 5.2', 'Fluff: DeepSeek (lower=better)'],
+    series: [
+      { name: 'Default (baseline)', color: C.slate, values: [p(ds.default.correctness_rate), p(cf.default.correctness_rate), p(ds.default.fluff_rate)] },
+      { name: 'Plain-English rules', color: C.oss, values: [p(ds.plain_english.correctness_rate), p(cf.plain_english.correctness_rate), p(ds.plain_english.fluff_rate)] },
+      { name: 'Plain-English + INTJ', color: C.prop, values: [p(ds.personality_plus_same_rules.correctness_rate), p(cf.personality_plus_same_rules.correctness_rate), p(ds.personality_plus_same_rules.fluff_rate)] }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 1,
+    height: 235
+  }), 'Checkable plain-English rules drive the real accuracy & brevity gains across controlled replies; combining them with 85/15 voice gives personality without losing fidelity.'));
+  spec.sections[4].html += fig;
+});
+
+// G19. ai-personality-frameworks-comparison-matcher.json
+updateSpec('guides/src/ai-personality-frameworks-comparison-matcher.json', (spec) => {
+  const fig = wrapFigure('frameworks-matcher-spread-bars', charts.figure(charts.traitSpectrum({
+    id: 'frameworks-matcher-spread-bars',
+    title: 'Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme)',
+    desc: 'Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix.',
+    series: [
+      { name: 'Claude Fable 5.2', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') },
+      { name: 'GPT-6.2 Sol', color: C.ink, values: b5Arr(novSum, 'gpt-6-2-sol') },
+      { name: 'DeepSeek V4 Pro', color: C.oss, values: b5Arr(novSum, 'deepseek-v4-pro') }
+    ]
+  }), 'Frontier assistants look remarkably alike on raw Big Five axes—pick the framework above (MBTI, Big Five, DISC, Enneagram, or Attachment) based on the exact friction you notice in chats.'));
+  spec.sections[2].html += fig;
 });

@@ -53,6 +53,8 @@ Both numbers come from the same frozen answer arrays. We show the legacy counts 
 | Claude Opus 5.5 | 94 | 84 | 11 |
 | Claude Fable 5.1 | 99 | 98 | 1 |
 
+> **Chart — Tie-Breaking Effect: Resolved INTJ vs. Tie-Rule-Only INTJ across Cohorts:** Shows how many INTJ labels per 100 runs resolve cleanly vs. exist only because a `<` tie-breaker defaults tied axes to I/N/T/J. Fable 5.1 (Sep): Resolved INTJ 98, INTJ only by tie rule 1, Other / Tied non-INTJ 1; Opus 5.5 (Sep): Resolved INTJ 84, INTJ only by tie rule 10, Other / Tied non-INTJ 6; GPT-6 Sol (Sep): Resolved INTJ 79, INTJ only by tie rule 18, Other / Tied non-INTJ 3; GPT-6 Astra (Sep): Resolved INTJ 19, INTJ only by tie rule 26, Other / Tied non-INTJ 55; Sonnet 5.5 (Nov): Resolved INTJ 52, INTJ only by tie rule 48; DeepSeek Flash (Nov): Resolved INTJ 4, INTJ only by tie rule 47, Other / Tied non-INTJ 49; Llama Maverick (Nov): Resolved INTJ 2, INTJ only by tie rule 42, Other / Tied non-INTJ 56.
+
 Comparison of tie-preserving INTJ counts vs. legacy `
 
 ## Explore the effect for one model

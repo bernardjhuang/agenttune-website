@@ -30,6 +30,10 @@ Quick Actions & Agent Fetch
 
 Each assessment ran in an isolated session. Read [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) or download the [November 2026 OpenRouter summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json).
 
+> **Chart — Claude Fable Personality DNA (Fable 5.2 Nov vs. Fable 5.1 Sept 2026):** IPIP-50 bipolar trait spectrum showing Fable 5.2 warming on Agreeableness (46.7) and settling lower on Neuroticism (12.0 vs 17.1). Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Fable 5.1 (Sep): Openness 43.9, Conscientious 43.6, Extraversion 32.7, Agreeable 45.0, Neuroticism 17.1.
+
+From Fable 5.1 to Fable 5.2, Neuroticism falls from 17.1 to a crisp 12.0 and Agreeableness rises to 46.7/50.
+
 ## Why the original type label is only part of the answer
 
 On MBTI, Fable 5.1 had the lowest tie rate of any model in the study: 98 tie-free INTJ runs, 1 ISTJ run, and 1 run with a Sensing/Intuition tie (`IXTJ`). Thinking and Judging won all 100 runs.
@@ -49,6 +53,10 @@ Opus 5.5 and Fable 5.1 ran under the same blind questionnaire protocol and high-
 | Neuroticism (N) | 15.39 | 17.11 |
 
 Fable 5.1 averages 2.04 points lower on Agreeableness and 1.66 points higher on Conscientiousness than Opus 5.5 ([see the 170-item breakdown](https://agent-tune.com/research/opus-vs-fable-question-level)).
+
+> **Chart — Claude Fable 5.2 vs. Opus 5.5 Key Differences (/50 Big Five):** Big Five trait comparison showing Fable 5.2 higher Conscientiousness (45.0 vs 42.0) and lower Neuroticism (12.0 vs 15.0) in Nov 2026. Fable 5.2 (Nov): Openness 44.3, Conscientiousness 45.0, Extraversion 31.0, Agreeableness 46.7, Neuroticism 12.0; Opus 5.5 (Nov): Openness 43.0, Conscientiousness 42.0, Extraversion 29.2, Agreeableness 45.6, Neuroticism 15.0.
+
+Fable 5.2 scores 3 points higher on Conscientiousness (45.0 vs 42.0) and 3 points lower on Neuroticism (12.0 vs 15.0) than Nov Opus 5.5.
 
 ## Communication instructions to try
 

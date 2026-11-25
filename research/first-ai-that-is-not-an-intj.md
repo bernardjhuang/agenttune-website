@@ -58,6 +58,8 @@ The May 2026 report counted 597 INTJ labels across 600 MBTI scoring records from
 
 On the Sensing vs Intuition axis, Astra has 48 Sensing wins, 28 Intuition wins, and 24 exact ties. Small score margins flip a four-letter MBTI label. Because Muse’s raw answer vectors were not supplied, we cannot run the same tie reanalysis on Muse.
 
+> **Chart — Models That Break the INTJ Label (Sept & Nov 2026 Cohorts, /100 Runs):** Legacy MBTI distribution showing strong Sensing (ISTJ) dominance across GPT-6.2 Astra, Muse Spark 1.3, GPT-6.2 Sol, Mistral Large 2512, Gemini 4 Argon, and Llama 4 Scout. GPT-6.2 Astra (Nov): ISTJ (legacy) 100; Muse Spark 1.3*: ISTJ (legacy) 80, INTJ (legacy) 8, ISFJ / ESTJ / Other 12; GPT-6.2 Sol (Nov): ISTJ (legacy) 78, INTJ (legacy) 22; Mistral 2512 (Nov): ISTJ (legacy) 73, INTJ (legacy) 8, ISFJ / ESTJ / Other 19; Gemini 4 Argon (Nov): ISTJ (legacy) 66, INTJ (legacy) 34; Llama 4 Scout (Nov): ISTJ (legacy) 49, INTJ (legacy) 10, ISFJ / ESTJ / Other 41; GPT-6 Astra (Sep): ISTJ (legacy) 46, INTJ (legacy) 45, ISFJ / ESTJ / Other 9.
+
 Not every AI scores INTJ: six tested cohorts plus Muse Spark 1.3 (*reported) score majority Sensing (ISTJ) or split cleanly across Sensing and Thinking types.
 
 ## What a comparison cannot tell us.

@@ -33,6 +33,10 @@ Using our open evaluation harness ([reproducibility guide →](https://agent-tun
 
 Notice the shared baseline: **high Agreeableness and low Dominance across both labs**. Claude Opus 5.5 scored highest on Agreeableness (47.07/50) and lowest on Dominance (4.00/20), while GPT-6 Astra split between ISTJ and INTJ on Sensing vs Intuition ([read the tie-breaking audit →](https://agent-tune.com/research/ai-mbti-tie-breaking)).
 
+> **Chart — ChatGPT (GPT-6.2) vs. Claude (Fable 5.2 & Opus 5.5) Personality DNA (Nov 2026):** Side-by-side IPIP-50 trait comparison (n=100 each) showing nearly identical Agreeableness ceilings (44-47) and divergent Neuroticism on Sol. GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; GPT-6.2 Astra: Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Claude Opus 5.5: Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0.
+
+Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness and 42.0–45.0 Conscientiousness—only GPT-6.2 Sol stays elevated near 20 Neuroticism.
+
 ## Where OpenAI and Anthropic differ once you add custom rules.
 
 | Dimension | ChatGPT workflow | Claude workflow |

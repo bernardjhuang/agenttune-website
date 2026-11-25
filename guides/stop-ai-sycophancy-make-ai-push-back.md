@@ -31,6 +31,10 @@ Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.c
 
 At the item level ([see our Big Five item breakdown](https://agent-tune.com/research/ai-big-five-item-level-comparison)), all 100 Claude Opus 5.5 runs chose the lowest score (1.00) on “I try to outdo others” and the highest score (5.00) on “I value cooperation over competition.”
 
+> **Chart — Agreeableness Spectrum Across Frontier & Open Models (/50):** Demonstrates why most frontier assistants rarely push back unprompted (Agreeableness 43.7–47.6/50) compared with Llama 4 Scout (35.8) and DeepSeek V4 Pro (32.4). Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; GPT-6.2 Astra: 44.9; GPT-6.2 Sol: 44.3; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Llama 4 Maverick: 41.0; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
+
+Untuned models cluster at the top of the 50-point Agreeableness scale, driving default premise validation until explicit challenge rules are added.
+
 ## Copy-paste anti-sycophancy block for any AI assistant.
 
 Telling an AI “be brutally honest” often produces performative snark instead of careful analysis. Use checkable procedural rules instead:

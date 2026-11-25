@@ -77,6 +77,10 @@ In our [60-reply pilot archive](https://agent-tune.com/research/does-personality
 
 Notice that average word count stayed nearly identical (380 vs 382 words) because the directness prompt changed answer order and hedging rather than imposing a strict word cap.
 
+> **Chart — Claude Preferences Effect (72-Reply API Test): Baseline vs. Direct Rules (%):** Shows Opus 5.5 and Fable 5.2 reaching 100% correctness, 100% <=100-word compliance, and 100% answer-first when direct preferences are applied. Opus 5.5 Baseline: Correctness % 75, <=100-Word Pass % 75, Answer-First % 100; Opus 5.5 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100; Fable 5.2 Baseline: Correctness % 83, <=100-Word Pass % 75, Answer-First % 92; Fable 5.2 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100.
+
+Applying the 5-line directness block lifted both Claude Opus 5.5 and Fable 5.2 to 100% across correctness,
+
 ## Check accuracy alongside style.
 
 When testing any directness prompt, verify that shorter or blunter replies still keep required caveats and factual accuracy. Always keep the line: “Say what you don’t know in one line. Direct doesn’t mean certain.”
