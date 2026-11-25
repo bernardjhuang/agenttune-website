@@ -174,7 +174,7 @@ Bring energy and life to your responses; flat, sterile replies kill my momentum.
 
 ## How to go deeper.
 
-Each block above is a condensation. The full tuning files in the [library](https://agent-tune.com/library/) carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, `CLAUDE.md` for Claude Code, Cursor rules, `AGENTS.md`, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at `/library/mbti/.md`.
+Each block above is a condensation. The full tuning files in the [library](https://agent-tune.com/library/) carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, `CLAUDE.md` for Claude Code, Cursor rules, `AGENTS.md`, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at `/library/mbti/<type>.md`.
 
 MBTI is one lens of five. If your type never quite fit, try the [Enneagram](https://agent-tune.com/tests/enneagram) or [Big Five](https://agent-tune.com/tests/big-five) tests and their matching tunings; the [MBTI vs Big Five guide](https://agent-tune.com/guides/mbti-vs-big-five-for-ai) covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality). And if you want ChatGPT to match more than your type (your pacing, your priorities) see [make ChatGPT sound like you](https://agent-tune.com/guides/make-chatgpt-sound-like-you).
 

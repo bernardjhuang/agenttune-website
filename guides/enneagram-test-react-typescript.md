@@ -99,7 +99,7 @@ This matters in empirical testing: in our September 2026 AI archive, Opus 5.5 ha
 
 ## Make the questionnaire usable with a keyboard.
 
-Each item is rendered as the `` of a native ``, and each response option is a labeled radio button. Keyboard users can tab between groups and arrow through options using standard browser controls. The starter displays six items per page and preserves selections when navigating back.
+Each item is rendered as the `<legend>` of a native `<fieldset>`, and each response option is a labeled radio button. Keyboard users can tab between groups and arrow through options using standard browser controls. The starter displays six items per page and preserves selections when navigating back.
 
 Submitting an incomplete page identifies the first unanswered item and moves focus to its first radio control. Advancing to the next page or the results view moves focus to the new section heading. Validation messages use an alert region, and the score table uses semantic row and column headers.
 

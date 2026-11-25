@@ -24,7 +24,7 @@ Most people drop one overly detailed prompt into global settings, hit friction o
 
 - **Workflow 1 — Global Baseline (2 minutes):** Paste a tight 6-rule directness & pushback foundation into account-wide settings (ChatGPT Custom Instructions or Claude Personal Preferences). It keeps every quick answer honest without clutter.
 - **Workflow 2 — Dedicated Agent Rooms & Character Cocktails:** Put stronger voices inside focused rooms—a Red-Team PR review Project using [Sherlock × JARVIS (85/15)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman), a study Gem using [Feynman Intuition Coaching](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts), or Meta Muse `Soul.md` mixed in the [Agent Cocktail Blender](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails).
-- **Workflow 3 — Agent-First `.md` & MCP Handoff:** Instead of copy-pasting manually into repos, point Claude Code, Codex CLI, or Cursor at any `.md` mirror URL or our MCP server (`https://agent-tune.com/mcp`) and instruct the agent to wrap the rules inside `` markers.
+- **Workflow 3 — Agent-First `.md` & MCP Handoff:** Instead of copy-pasting manually into repos, point Claude Code, Codex CLI, or Cursor at any `.md` mirror URL or our MCP server (`https://agent-tune.com/mcp`) and instruct the agent to wrap the rules inside `<!-- agenttune:preferences:start -->` markers.
 
 ## Template galleries by AI platform, voice style & use case.
 

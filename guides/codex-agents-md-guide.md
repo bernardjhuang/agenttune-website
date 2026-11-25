@@ -44,8 +44,8 @@ Two practical rules follow:
 Separate personal communication habits from shared team rules:
 
 - **`~/.codex/AGENTS.md` (personal):** How GPT-6 Astra or GPT-6 Sol should talk to you—answer-first order, prose vs tables, approval checkpoints, and pushback on weak premises.
-- **`/AGENTS.md` (team):** Build commands, test runners, linter flags, and architecture boundaries that apply to everyone.
-- **`/AGENTS.override.md` (local gitignored override):** Use only when you need to temporarily override a broken repo `AGENTS.md` on your machine.
+- **`<repo-root>/AGENTS.md` (team):** Build commands, test runners, linter flags, and architecture boundaries that apply to everyone.
+- **`<repo-root>/AGENTS.override.md` (local gitignored override):** Use only when you need to temporarily override a broken repo `AGENTS.md` on your machine.
 
 Starter personal block for `~/.codex/AGENTS.md` (~620 bytes, leaving over 31 KiB for repo files):
 

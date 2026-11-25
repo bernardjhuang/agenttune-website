@@ -114,7 +114,7 @@ claude --append-system-prompt-file ~/.claude/output-styles/agenttune-mbti-intj.m
 
 `--system-prompt` and `--system-prompt-file` replace the whole system prompt. That is almost never what you want for a personality. One catch from the docs: the prompt is recorded at a conversation's first request, so changing these flags on `--resume` or `--continue` only takes effect after compaction or in a new conversation.
 
-`claude --agent `, or `"agent": ""` in `.claude/settings.json`, runs the entire session as one of your subagents. Its file body becomes the system prompt, replacing the default the way `--system-prompt` does. CLAUDE.md still loads. This is how you build a different character entirely. It is a bigger hammer than a personality needs.
+`claude --agent <name>`, or `"agent": "<name>"` in `.claude/settings.json`, runs the entire session as one of your subagents. Its file body becomes the system prompt, replacing the default the way `--system-prompt` does. CLAUDE.md still loads. This is how you build a different character entirely. It is a bigger hammer than a personality needs.
 
 For a team, a plugin can ship output styles in an `output-styles/` folder at its root.
 

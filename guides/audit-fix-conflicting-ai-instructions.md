@@ -46,7 +46,9 @@ Instead, compare two real tasks from your past week in the [Instruction Test Ben
 Be super concise and never write more than 3 sentences. Always explain all edge cases, security implications, and alternative architectures thoroughly. Never use bullet points. Give me clear action items at the end of every message. Be friendly, warm, and brutally honest with zero fluff.
 ```
 
-Why it fails: the model cannot write `**Refactored conflict-free version:**
+Why it fails: the model cannot write `<= 3 sentences` while explaining `all edge cases and alternative architectures`, nor avoid bullets while adding action-item lists.
+
+**Refactored conflict-free version:**
 
 ```markdown
 ## Communication rules
@@ -61,7 +63,7 @@ Why it fails: the model cannot write `**Refactored conflict-free version:**
 
 ## Keep coding-agent files isolated with bounded markers.
 
-In `CLAUDE.md` and `AGENTS.md`, tone rules often get buried under hundreds of lines of linter prose that ESLint or Prettier already enforce. Remove style rules your linter handles, and wrap your personal communication block inside bounded HTML comments using the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) (` ... `).
+In `CLAUDE.md` and `AGENTS.md`, tone rules often get buried under hundreds of lines of linter prose that ESLint or Prettier already enforce. Remove style rules your linter handles, and wrap your personal communication block inside bounded HTML comments using the [Instruction Converter](https://agent-tune.com/tools/instruction-converter) (`<!-- agenttune:preferences:start --> ... <!-- agenttune:preferences:end -->`).
 
 ## Questions people ask.
 

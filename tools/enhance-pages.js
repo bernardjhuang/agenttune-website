@@ -50,10 +50,11 @@ function enhance(html,file){
   }
   return html.includes('src="/site-ui.js"')?html:html.replace('</body>','<script defer src="/site-ui.js"></script>\n</body>');
 }
-function markdown(html,url){
+ function markdown(html,url){
  let text=/<main\b[^>]*>([\s\S]*?)<\/main>/.exec(html)?.[1]||'';
- const blocks=[];
+ const blocks=[],inlineBlocks=[];
  const stash=s=>{const i=blocks.push(s)-1;return `\n\n@@BLOCK_${i}@@\n\n`;};
+ const stashInline=s=>{const i=inlineBlocks.push(s)-1;return `@@INL_${i}@@`;};
  text=text.replace(/<svg\b[^>]*class="[^"]*\bresearch-chart\b[^"]*"[^>]*>[\s\S]*?<title[^>]*>([\s\S]*?)<\/title>\s*<desc[^>]*>([\s\S]*?)<\/desc>[\s\S]*?<\/svg>/g,(_,t,d)=>stash('> **Chart — '+plain(t)+':** '+plain(d)))
   .replace(/<(script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/g,'')
   .replace(/<details class="article-toc"[\s\S]*?<\/details>/g,'')
@@ -79,13 +80,14 @@ function markdown(html,url){
   })
   .replace(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/g,(_,n,t)=>'\n\n'+'#'.repeat(+n)+' '+plain(t)+'\n\n')
   .replace(/<summary[^>]*>([\s\S]*?)<\/summary>/g,(_,t)=>'\n\n### '+plain(t)+'\n\n')
-  .replace(/<code[^>]*>([\s\S]*?)<\/code>/g,(_,t)=>'`'+plain(t)+'`')
+  .replace(/<code[^>]*>([\s\S]*?)<\/code>/g,(_,t)=>stashInline('`'+plain(t)+'`'))
   .replace(/<strong[^>]*>([\s\S]*?)<\/strong>/g,(_,t)=>'**'+plain(t)+'**')
   .replace(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g,(_,href,t)=>'['+plain(t)+']('+new URL(href.replace(/&amp;/g,'&'),url).href+')')
   .replace(/<li[^>]*>/g,'\n- ')
   .replace(/<\/(?:p|section|div|ul|ol|summary|figure|figcaption|header|aside|article|details)>/g,'\n\n')
   .replace(/<br\s*\/?>/g,'\n')
   .replace(/<[^>]*>/g,'')
+  .replace(/@@INL_(\d+)@@/g,(_,i)=>inlineBlocks[+i])
   .replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&').replace(/&nbsp;/g,' ')
   .replace(/^[ \t]+/gm,'')
   .replace(/[ \t]+\n/g,'\n')

@@ -85,7 +85,7 @@ DeepSeek V4 Pro dropped to 31.2% (prose) & 50.0% (checklist) at Turn 8.
 
 Lightweight inline reminder restores DeepSeek V4 Pro to 100.0% across all depths.
 
-Every model received the exact same 4-rule Operational Telemetry persona contract—(1) start line 1 with `[VERDICT]`, (2) keep total length `
+Every model received the exact same 4-rule Operational Telemetry persona contract—(1) start line 1 with `[VERDICT]`, (2) keep total length `<= 75 words`, (3) zero greetings/praise/apology fluff, and (4) include 1 concrete operational risk—across four realistic engineering probes after 0, 3, 7, or 11 intervening turns of logs, Kubernetes YAML, SQL migrations, TypeScript reviews, and generic assistant prose ([download full 192-probe JSON](https://agent-tune.com/research/data/november-2026-persona-halflife-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv), spend $5.30).
 
 | Arm × Depth (n = 16) | Tokens | Composite Adherence | [VERDICT] Tag % | &lt;=75 Words % | Zero-Fluff % | Voice + Risk % | Mean Words |
 | --- | --- | --- | --- | --- | --- | --- | --- |

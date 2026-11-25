@@ -39,7 +39,7 @@ Watch out for one hidden conflict in ChatGPT’s global settings: the **Base sty
 OpenAI Codex concatenates instruction files from outermost to innermost:
 
 - `~/.codex/AGENTS.md` (your personal global file)
-- `/AGENTS.md` (the team repository file)
+- `<repo-root>/AGENTS.md` (the team repository file)
 - Nested folder `AGENTS.md` down to your current working directory
 
 Because files closer to your current folder appear later in the prompt, they win whenever two rules conflict. In any folder, an `AGENTS.override.md` file replaces the sibling `AGENTS.md` in that folder. See the [OpenAI Codex AGENTS.md guide](https://agent-tune.com/guides/codex-agents-md-guide) for full details on the 32 KiB limit.

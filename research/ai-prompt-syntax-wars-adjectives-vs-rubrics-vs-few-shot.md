@@ -167,7 +167,7 @@ Obey exact count, bullet, JSON, or one-sentence constraints verbatim.
 Zero filler greetings, praise openers, or apology padding.
 ```
 
-**How to deploy safely:** Wrap user-approved rules in bounded markers (`` / ``), verify saved text, and re-test against multi-turn conversations—since Study 3 shows system-only rules still soften after ~8 turns unless reinforced. **Limitations:** All 400 trials measured single-turn objective tasks at temperature `0.3`; open-ended creative prose, tool-use agents across long trajectories, and domain-specific style imitation require separate evaluation.
+**How to deploy safely:** Wrap user-approved rules in bounded markers (`<!-- agenttune:preferences:start -->` / `<!-- agenttune:preferences:end -->`), verify saved text, and re-test against multi-turn conversations—since Study 3 shows system-only rules still soften after ~8 turns unless reinforced. **Limitations:** All 400 trials measured single-turn objective tasks at temperature `0.3`; open-ended creative prose, tool-use agents across long trajectories, and domain-specific style imitation require separate evaluation.
 
 ## Questions people ask.
 

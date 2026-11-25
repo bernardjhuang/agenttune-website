@@ -48,7 +48,7 @@ Machine-readable manifests are also available at `/.well-known/mcp/server-card.j
 AgentTune enforces two safety rules so an agent never overwrites your existing project commands:
 
 - **Explicit approval before writing:** Fetching a tuning file never authorizes automatic file edits. The agent must show you the target path and diff first.
-- **Bounded HTML markers:** Preferences sit inside `` and `` markers (matching our [Instruction Converter](https://agent-tune.com/tools/instruction-converter)). Updating or removing your block leaves all surrounding build and repo rules untouched.
+- **Bounded HTML markers:** Preferences sit inside `<!-- agenttune:preferences:start -->` and `<!-- agenttune:preferences:end -->` markers (matching our [Instruction Converter](https://agent-tune.com/tools/instruction-converter)). Updating or removing your block leaves all surrounding build and repo rules untouched.
 
 ```markdown
 <!-- agenttune:preferences:start -->

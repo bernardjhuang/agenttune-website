@@ -35,7 +35,7 @@ The smoothest way to use AgentTune tunings across multiple tools is to never cra
 
 - **Scope 1 — Your Global Account Baseline (Clean 90/10):** Keep account-wide ChatGPT Custom Instructions or Claude Personal Preferences grounded in universal behavior (answer-first, push back on wrong premises, zero sycophancy, max 10–15% dry understatement like TARS Telemetry or Kim Kitsuragi). It improves every email, summary, and quick lookup without getting in your way.
 - **Scope 2 — Specialized Rooms (ChatGPT Projects, Claude Projects, Gemini Gems, Meta Muse `Soul.md`):** Put vivid, specialized archetypes inside named rooms. Create a **"Red-Team & Debug"** Project loaded with Sherlock × House or GLaDOS QA, a **"Learn Hard Topics"** Gem using Richard Feynman, and set Meta Muse's [`Soul.md`](https://agent-tune.com/guides/muse-soul-md-templates) to your favorite daily thinking partner.
-- **Scope 3 — Repo Engineering Files (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`):** Keep humor at 5–10% max in coding repositories and borrow purely the diagnostic cognition (for example, Sherlock's hypothesis-before-edit discipline or the 1980s Unix Greybeard's antipathy toward unnecessary dependencies). Wrap rules inside `` markers so updates never overwrite project build commands.
+- **Scope 3 — Repo Engineering Files (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`):** Keep humor at 5–10% max in coding repositories and borrow purely the diagnostic cognition (for example, Sherlock's hypothesis-before-edit discipline or the 1980s Unix Greybeard's antipathy toward unnecessary dependencies). Wrap rules inside `<!-- agenttune:preferences:start -->` markers so updates never overwrite project build commands.
 
 ## Three effortless ways to hand these tunings directly to your agents.
 

@@ -28,7 +28,7 @@ Quick Actions & Agent Fetch
 | [IPIP-50](https://agent-tune.com/tests/big-five) | Big Five trait dimensions | 50 · 1 to 5 accuracy | Five raw totals (10–50) and item means (1–5) | International Personality Item Pool, Goldberg’s 50-item markers (public domain) |
 | [ECR-R](https://agent-tune.com/tests/attachment) | Adult attachment style | 36 · 1 to 7 agreement | Anxiety and avoidance means (1–7) plus quadrant label | Experiences in Close Relationships-Revised (Fraley, Waller &amp; Brennan, 2000) |
 
-All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at `/tests/.md` and a shared deterministic scorer at [/resources/scoring/score.js](https://agent-tune.com/resources/scoring/score.js). Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) before redistributing third-party item text.
+All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at `/tests/<test>.md` and a shared deterministic scorer at [/resources/scoring/score.js](https://agent-tune.com/resources/scoring/score.js). Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) before redistributing third-party item text.
 
 ## OEJTS: the 32-item MBTI-style questionnaire.
 
