@@ -22,7 +22,7 @@ function enhance(html,file){
   });
   const hasAltMd=/<link\b[^>]*rel="alternate"[^>]*type="text\/markdown"/i.test(html);
   if(!hasAltMd&&html.includes('</head>')){
-    if(/^(guides|research)\/.+\.html$/.test(file)&&!file.endsWith('/index.html')) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="This article as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
+    if(/^(guides|research|models)\/.+\.html$/.test(file)&&!file.endsWith('/index.html')) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="This article as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
     else if(file==='research.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="Research synthesis as Markdown" href="https://agent-tune.com/research.md" />\n</head>');
     else if(/^tests\/(?!index\.html$)[^/]+\.html$/.test(file)) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="Questionnaire specification as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
   }
@@ -60,21 +60,21 @@ function enhance(html,file){
   }
   if(file==='research.html'&&!html.includes('id="september-archive"'))html=html.replace('<!-- SEPTEMBER_RESEARCH_START -->','<details class="lib-disclosure" id="september-archive"><summary>Cohort archive: September 2026 5-model deep-dive &amp; methodology</summary><!-- SEPTEMBER_RESEARCH_START -->').replace('<!-- MAY 2026 ARCHIVE -->','</details><!-- MAY 2026 ARCHIVE -->');
   if(file==='research.html'&&!html.includes('id="may-archive"'))html=html.replace('<!-- MAY 2026 ARCHIVE -->','<details class="lib-disclosure" id="may-archive"><summary>May 2026 archive: earlier models and methods</summary><!-- MAY 2026 ARCHIVE -->').replace('<!-- ARTICLES -->','</details><!-- ARTICLES -->');
-  if((/^(guides|research)\//.test(file) || file==='research.html') && file!=='guides/index.html' && !html.includes('class="article-toc"')){
+  if((/^(guides|research|models)\//.test(file) || file==='research.html') && file!=='guides/index.html' && file!=='models/index.html' && !html.includes('class="article-toc"')){
     const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1])), headings=[];
     html=html.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g,(m,attrs,text)=>{
       let id=/\bid="([^"]+)"/.exec(attrs)?.[1];if(!id){let base=slug(text)||'section';id=base;for(let n=2;ids.has(id);n++)id=base+'-'+n;ids.add(id);attrs+=' id="'+id+'"';}headings.push({id,text:plain(text)});return '<h2'+attrs+'>'+text+'</h2>';
     });
     if(headings.length>=4){
-      const openAttr=(file==='research.html'||!/^(guides|research)\//.test(file))?'':' open';
+      const openAttr=(file==='research.html'||!/^(guides|research|models)\//.test(file))?'':' open';
       const toc='<details class="article-toc"'+openAttr+'><summary>On this page</summary><nav aria-label="On this page"><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+esc(h.text)+'</a></li>').join('')+'</ol></nav></details>';
       html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,'$1\n'+toc);
-      if(/^(guides|research)\//.test(file) && !html.includes('class="press-spread"')){
+      if(/^(guides|research|models)\//.test(file) && file!=='models/index.html' && !html.includes('class="press-spread"')){
         html=html.replace(/(<details class="article-toc"[\s\S]*?<\/details>)\s*([\s\S]*?)(<\/main>)/,(_,tocBlock,rest,closeMain)=>'<div class="press-spread">\n'+tocBlock+'\n<div class="press-body">\n'+rest+'</div>\n</div>\n'+closeMain);
       }
     }
   }
-  if((file.startsWith('research/')||file==='research.html')&&!html.includes('id="instrument-correction"')){
+  if((file.startsWith('research/')||file==='research.html')&&!file.startsWith('models/')&&!html.includes('id="instrument-correction"')){
     const note='<section id="instrument-correction" class="questionnaire-status provenance-colophon"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--text)"><strong style="color:var(--ink)">Provenance &amp; scoring note:</strong> These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on <a href="/tests/">Tests</a> and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
     html=html.replace('</main>',note+'\n</main>');
   }

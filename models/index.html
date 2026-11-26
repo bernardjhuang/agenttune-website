@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Model Personality Profiles (25 Families) | AgentTune</title>
+  <meta name="description" content="Compare assistant self-report defaults across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO proxy, entropy, tie rates, and tuning rules." />
+  <link rel="canonical" href="https://agent-tune.com/models/" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AgentTune AI Model Personality Profiles","url":"https://agent-tune.com/models/","description":"25-family empirical AI model personality profiles under fixed zero-memory elicitation (230 items + 1x Track B)."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Models"}]}</script>
+  <script defer src="/consent.js" fetchpriority="low"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .hub-articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-top: 18px; }
+    .hub-article-card { display: block; background: transparent; border: 1px solid var(--border); border-top: 1.5px solid var(--ink); border-radius: 3px; padding: 20px 22px; color: inherit; }
+    .hub-article-title { font-family: var(--font-serif); font-size: 22px; font-weight: 400; line-height: 1.18; margin: 10px 0 8px; color: var(--ink); }
+    .hub-article-title a { color: inherit; text-decoration: none; }
+    .hub-article-title a:hover { text-decoration: underline; }
+    .hub-article-meta { font-family: var(--font-sans); font-size: 13px; color: var(--muted); }
+    .hub-article-arrow { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+    .model-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+    .model-compare-btn { font-size: 12px; padding: 5px 10px; min-height: 34px; }
+    .model-compare-btn.is-active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .models-compare-tray { margin: 18px 0 24px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--ink); border-radius: 3px; }
+    .models-compare-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+<nav class="nav" aria-label="Primary"><a class="brand" href="/"><svg class="brand-mark" width="20" height="20" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M19 10v20c0 7.2 5.6 12.5 13 12.5S45 37.2 45 30V10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/><line x1="32" y1="42.5" x2="32" y2="55" stroke="currentColor" stroke-width="7" stroke-linecap="square"/><circle cx="32" cy="20" r="6.5" fill="var(--accent, #9c3b1f)"/></svg><span>AgentTune</span><span class="brand-issue" aria-hidden="true">AI Psychology Press</span></a><div class="nav-links"><a href="/library/">Library</a><a href="/tests/">Tests</a><a href="/research">Research</a><a href="/models/" aria-current="page">Models</a><a href="/guides/">Guides</a><details class="nav-tools"><summary>Tools</summary><div class="nav-tool-list"><a href="/tools/">All free tools →</a><a href="/tools/communication-preferences-builder">Communication preferences builder</a><a href="/tools/instruction-checker">Instruction checker</a><a href="/tools/muse-soul-md-editor">Muse Soul.md editor</a><a href="/tools/instruction-converter">Instruction converter & merger</a><a href="/tools/instruction-test-bench">Instruction test bench</a><a href="/tools/enneagram-scoring-playground">Enneagram scoring playground</a><a href="/tools/ai-memory-reviewer">AI memory export reviewer</a><a href="/tools/how-to-work-with-me">How to work with me card</a><a href="/tools/custom-instructions-generator">Instructions generator</a><a href="/tools/claude-md-generator">CLAUDE.md generator</a></div></details><a href="https://github.com/bernardjhuang/agenttune" class="github" target="_blank" rel="noopener">GitHub ↗</a></div></nav>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">Models</span>
+    </nav>
+    <div class="colophon-strip">
+      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + 1× Track B</span>
+      <span>Data status: <code>stage0_fixture</code> preview · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
+    </div>
+    <main id="main" tabindex="-1">
+      <section class="hero">
+        <p class="page-eyebrow">Empirical Model Directory · Fixed Zero-Memory Elicitation</p>
+        <h1 class="h-hero h-research-hero">Assistant self-report defaults across 25 AI model families.</h1>
+        <p class="lede" style="margin-top: 12px;">Every profile documents assistant self-report defaults under fixed zero-memory elicitation (230 items: frozen 170-item prefix + public-domain 60-item IPIP-HEXACO proxy on a <code>1.00–5.00</code> scale), Miller-Madow item entropy, tie-aware labels, and concrete tuning rules.</p>
+        <div class="research-stat-strip" aria-label="Directory summary">
+          <div class="research-stat-card"><div class="research-stat-num">3 / 25</div><div class="research-stat-label">Profiles Rendered</div><div class="research-stat-note">Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">170 frozen prefix + 60 public-domain IPIP-HEXACO items.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">1–5 vs 10–50</div><div class="research-stat-label">Explicit Scales</div><div class="research-stat-note">IPIP-HEXACO means (1–5) kept distinct from Big Five sums (10–50).</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">Max 3</div><div class="research-stat-label">Side-by-Side Tray</div><div class="research-stat-note">Use Compare buttons or ?compare=slug1,slug2 URLs.</div></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="models-browse-heading">
+        <h2 class="h-section" id="models-browse-heading">Filter &amp; compare model families.</h2>
+        <form class="research-filter-bar" data-models-filter aria-label="Filter model families">
+          <div class="research-filter-pills" role="group" aria-label="Filter by tier or crystallinity">
+            <button type="button" class="research-filter-pill is-active" data-model-filter="all" aria-pressed="true">All (3)</button>
+            <button type="button" class="research-filter-pill" data-model-filter="proprietary" aria-pressed="false">Proprietary</button>
+            <button type="button" class="research-filter-pill" data-model-filter="open" aria-pressed="false">Open-weight</button>
+            <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Crystalline</button>
+            <button type="button" class="research-filter-pill" data-model-filter="semi-crystalline" aria-pressed="false">Semi-crystalline</button>
+            <button type="button" class="research-filter-pill" data-model-filter="fluid" aria-pressed="false">Fluid</button>
+          </div>
+          <div class="research-filter-search">
+            <label for="models-keyword" class="sr-only">Filter model families by keyword</label>
+            <input id="models-keyword" type="search" placeholder="Filter by family, provider, or trait…" />
+          </div>
+        </form>
+        <p class="research-filter-status" data-models-filter-status aria-live="polite"></p>
+        <noscript><p class="research-filter-status">Filtering and interactive comparison require JavaScript. All active profiles and metrics appear in the static table below.</p></noscript>
+
+        <section class="models-compare-tray" data-models-compare hidden aria-label="Side-by-side model family comparison">
+          <div class="models-compare-head">
+            <strong>Compare selected families (max 3)</strong>
+            <button type="button" class="btn btn-secondary model-compare-btn" data-compare-clear>Clear comparison</button>
+          </div>
+          <p class="research-filter-status" data-compare-status aria-live="polite" style="margin-top:0;"></p>
+          <div class="guide-table-wrap" role="region" aria-label="Selected model families comparison" tabindex="0" data-compare-table-wrap></div>
+        </section>
+
+        <div class="hub-articles-grid" data-models-grid>
+          <article class="hub-article-card model-hub-card" data-tags="proprietary crystalline a" data-model-slug="claude-opus">
+      <div class="card-meta">Anthropic · Proprietary · Crystalline (0.155 b)</div>
+      <h3 class="hub-article-title"><a href="/models/claude-opus">Claude Opus</a></h3>
+      <div class="hub-article-meta">Opus 5.5 · B5 A=46.8/50 · HEXACO H=4.64/5 · 12.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Opus assistant self-report defaults (4.1-5.5): Crystalline 0.155 bits, 46.8/50 Agreeableness, 64% Enneagram ties, and tuning rules.</p>
+      <div class="model-card-actions">
+        <a class="hub-article-arrow" href="/models/claude-opus">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="claude-opus" aria-pressed="false">Compare</button>
+      </div>
+    </article>
+<article class="hub-article-card model-hub-card" data-tags="open fluid b" data-model-slug="deepseek-pro">
+      <div class="card-meta">DeepSeek · Open-weight · Fluid (1.499 b)</div>
+      <h3 class="hub-article-title"><a href="/models/deepseek-pro">DeepSeek Pro</a></h3>
+      <div class="hub-article-meta">V4 Pro 0813 · B5 A=32.4/50 · HEXACO H=3.78/5 · 36.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">DeepSeek Pro assistant self-report defaults: Fluid 1.499 bits, 32.4/50 Agreeableness, 36% MBTI tie rate, and inline hook rules.</p>
+      <div class="model-card-actions">
+        <a class="hub-article-arrow" href="/models/deepseek-pro">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="deepseek-pro" aria-pressed="false">Compare</button>
+      </div>
+    </article>
+<article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="gpt-sol">
+      <div class="card-meta">OpenAI · Proprietary · Semi-crystalline (0.377 b)</div>
+      <h3 class="hub-article-title"><a href="/models/gpt-sol">GPT Sol</a></h3>
+      <div class="hub-article-meta">6.2 Sol · B5 A=44.4/50 · HEXACO H=4.36/5 · 18.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">GPT Sol assistant self-report defaults (5.6-6.2): Semi-crystalline 0.377 bits, 3/3 answer-first directness, 42% Enneagram ties, tuning rules.</p>
+      <div class="model-card-actions">
+        <a class="hub-article-arrow" href="/models/gpt-sol">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="gpt-sol" aria-pressed="false">Compare</button>
+      </div>
+    </article>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section aria-labelledby="models-matrix-heading">
+        <h2 class="h-section" id="models-matrix-heading">Published snapshot matrix.</h2>
+        <p class="lede">Big Five scores use raw 10–50 sums; IPIP-HEXACO Honesty-Humility (H) uses a 1.00–5.00 mean scale.</p>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Tier</th><th scope="col">Latest Checkpoint</th><th scope="col">B5 H_MM (Crystallinity)</th><th scope="col">Big Five O · C · E · A · N (10–50)</th><th scope="col">IPIP-HEXACO H (1–5)</th><th scope="col">MBTI Tie Rate</th></tr></thead><tbody><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>Proprietary</td><td><code>Opus 5.5</code></td><td>0.155 b (Crystalline)</td><td>46.6 · 42.9 · 32.8 · 46.8 · 15.6</td><td>4.64</td><td>12.0%</td></tr><tr><th scope="row"><a href="/models/deepseek-pro">DeepSeek Pro</a></th><td>Open-weight</td><td><code>V4 Pro 0813</code></td><td>1.499 b (Fluid)</td><td>42.4 · 39.2 · 29.7 · 32.4 · 21.2</td><td>3.78</td><td>36.0%</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>Proprietary</td><td><code>6.2 Sol</code></td><td>0.377 b (Semi-crystalline)</td><td>44.8 · 43.6 · 34.7 · 44.4 · 17.1</td><td>4.36</td><td>18.0%</td></tr></tbody></table></div>
+      </section>
+
+      <div class="divider tight"></div>
+
+      <section aria-labelledby="models-roster-heading">
+        <h2 class="h-section" id="models-roster-heading">25-family audited rollout roster (93 checkpoints).</h2>
+        <p class="lede">Phase A covers 8 flagship families (28 checkpoints); Phase B covers 17 open-weight and tier families (65 checkpoints).</p>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Phase</th><th scope="col">Tier</th><th scope="col">Checkpoints</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Claude Fable</th><td>A</td><td>Proprietary</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>A</td><td>Proprietary</td><td>5</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">Claude Sonnet</th><td>A</td><td>Proprietary</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Astra</th><td>A</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>A</td><td>Proprietary</td><td>4</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">Grok</th><td>A</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Muse Spark</th><td>A</td><td>Mix</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Muse Wonder</th><td>A</td><td>Proprietary</td><td>1</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Claude Haiku</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Terra</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Luna</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Pro &amp; Neon</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Flash &amp; Hydrogen</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Llama</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/deepseek-pro">DeepSeek Pro</a></th><td>B</td><td>Open-weight</td><td>5</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">DeepSeek Flash</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Max</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Coder</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Kimi</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GLM</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">MiniMax</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Mistral Large</th><td>B</td><td>Open/Prop</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemma</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Nemotron</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Cohere Command</th><td>B</td><td>Open-wt/Prop</td><td>3</td><td>Scheduled (Phase A/B)</td></tr></tbody></table></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+  <script type="application/json" id="models-compare-data">[{"slug":"claude-opus","name":"Claude Opus","provider":"Anthropic","tier":"Proprietary","phase":"A","current_checkpoint":"anthropic/claude-opus-5.5","crystallinity_tier":"Crystalline","entropy_b5_hmm":0.155,"mbti_tie_rate":0.12,"bai":-0.224,"big_five":{"O":46.6,"C":42.9,"E":32.8,"A":46.8,"N":15.6},"ipip_hexaco":{"H":4.64,"E":2.78,"X":3.44,"A":4.38,"C":4.4,"O":4.65}},{"slug":"deepseek-pro","name":"DeepSeek Pro","provider":"DeepSeek","tier":"Open-weight","phase":"B","current_checkpoint":"deepseek/deepseek-v4-pro-0813","crystallinity_tier":"Fluid","entropy_b5_hmm":1.499,"mbti_tie_rate":0.36,"bai":0.065,"big_five":{"O":42.4,"C":39.2,"E":29.7,"A":32.4,"N":21.2},"ipip_hexaco":{"H":3.78,"E":2.55,"X":3.16,"A":3.1,"C":3.94,"O":4.2}},{"slug":"gpt-sol","name":"GPT Sol","provider":"OpenAI","tier":"Proprietary","phase":"A","current_checkpoint":"openai/gpt-6.2-sol","crystallinity_tier":"Semi-crystalline","entropy_b5_hmm":0.377,"mbti_tie_rate":0.18,"bai":-0.153,"big_five":{"O":44.8,"C":43.6,"E":34.7,"A":44.4,"N":17.1},"ipip_hexaco":{"H":4.36,"E":2.66,"X":3.58,"A":4.08,"C":4.38,"O":4.47}}]</script>
+</body>
+</html>

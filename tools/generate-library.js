@@ -1527,7 +1527,14 @@ const STATIC_PAGES = [
   { route: "/research/ai-big-five-item-level-comparison", file: "research/ai-big-five-item-level-comparison.html", changefreq: "monthly", priority: "0.8" },
   { route: "/tools/claude-md-generator", file: "tools/claude-md-generator.html", changefreq: "monthly", priority: "0.7", comment: "Free tools" },
   { route: "/tools/custom-instructions-generator", file: "tools/custom-instructions-generator.html", changefreq: "monthly", priority: "0.7" },
-  { route: "/library/", file: "library/index.html", changefreq: "weekly", priority: "0.9", comment: "Library hub" }
+  { route: "/library/", file: "library/index.html", changefreq: "weekly", priority: "0.9", comment: "Library hub" },
+  { route: "/models/", file: "models/index.html", changefreq: "weekly", priority: "0.9", comment: "Model Personality Profiles" },
+  ...require("./build-model-profiles").ROSTER_25.map(f => ({
+    route: "/models/" + f.slug,
+    file: "models/" + f.slug + ".html",
+    changefreq: "monthly",
+    priority: "0.9"
+  }))
 ];
 
 const TEST_IDS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
@@ -1613,6 +1620,10 @@ function writeHeaders(typePages) {
     "  Access-Control-Allow-Origin: *",
     "  X-Robots-Tag: noindex",
     "/research/*.md",
+    "  Content-Type: text/markdown; charset=utf-8",
+    "  Access-Control-Allow-Origin: *",
+    "  X-Robots-Tag: noindex",
+    "/models/*.md",
     "  Content-Type: text/markdown; charset=utf-8",
     "  Access-Control-Allow-Origin: *",
     "  X-Robots-Tag: noindex",

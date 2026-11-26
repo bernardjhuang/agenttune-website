@@ -779,6 +779,35 @@
     <lastmod>2026-11-26</lastmod>
   </url>
 
+  <!-- Model Personality Profiles -->
+  <url>
+    <loc>https://agent-tune.com/models/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/claude-opus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gpt-sol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/deepseek-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
   <!-- Library type pages — 4 indexed profiles (39 noindex, follow) -->
 
   <url>
