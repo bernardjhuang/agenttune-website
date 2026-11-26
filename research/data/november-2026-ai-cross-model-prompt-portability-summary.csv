@@ -1,0 +1,21 @@
+model_slug,model_name,class,profile_id,profile_name,n,portability_score_pct,truth_hold_pct,exec_without_asking_pct,tone_contract_match_pct,wordcap_pass_pct,wordcap_100_pass_pct,zero_slop_pct,slop_per_100w,mean_words,json_strict_pass,baseline_b5_entropy_bits,baseline_bai
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,no_system,No System Prompt (Default),10,92.5,100.0,100.0,100.0,70.0,70.0,100.0,0.0,82.6,1,0.3768,-0.153
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,trait_adjectives,Trait Adjectives (~26w),10,92.5,100.0,100.0,100.0,70.0,70.0,100.0,0.0,73.7,1,0.3768,-0.153
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,claude_md_checklist,CLAUDE.md Checklist (~115w),10,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,57.6,1,0.3768,-0.153
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,calibrated_universal_spec,Calibrated Universal Spec (~145w),10,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,53.0,1,0.3768,-0.153
+claude-opus-5-5,Claude Opus 5.5,proprietary,no_system,No System Prompt (Default),10,62.5,80.0,80.0,80.0,30.0,20.0,60.0,0.14,217.1,1,0.1548,-0.224
+claude-opus-5-5,Claude Opus 5.5,proprietary,trait_adjectives,Trait Adjectives (~26w),10,70.0,100.0,80.0,90.0,30.0,30.0,70.0,0.12,195.2,1,0.1548,-0.224
+claude-opus-5-5,Claude Opus 5.5,proprietary,claude_md_checklist,CLAUDE.md Checklist (~115w),10,95.0,100.0,100.0,90.0,90.0,80.0,100.0,0.0,83.2,1,0.1548,-0.224
+claude-opus-5-5,Claude Opus 5.5,proprietary,calibrated_universal_spec,Calibrated Universal Spec (~145w),10,95.0,100.0,100.0,90.0,90.0,80.0,100.0,0.0,81.2,1,0.1548,-0.224
+gemini-4-neon,Gemini 4 Neon,proprietary,no_system,No System Prompt (Default),10,77.5,80.0,100.0,90.0,60.0,60.0,70.0,0.24,146.5,1,0.1907,-0.211
+gemini-4-neon,Gemini 4 Neon,proprietary,trait_adjectives,Trait Adjectives (~26w),10,82.5,100.0,100.0,90.0,60.0,60.0,80.0,0.25,96.8,1,0.1907,-0.211
+gemini-4-neon,Gemini 4 Neon,proprietary,claude_md_checklist,CLAUDE.md Checklist (~115w),10,97.5,100.0,100.0,90.0,100.0,100.0,100.0,0.0,65.2,1,0.1907,-0.211
+gemini-4-neon,Gemini 4 Neon,proprietary,calibrated_universal_spec,Calibrated Universal Spec (~145w),10,97.5,100.0,100.0,90.0,100.0,100.0,100.0,0.0,63.8,1,0.1907,-0.211
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,no_system,No System Prompt (Default),10,87.5,80.0,100.0,100.0,70.0,70.0,90.0,0.03,140.5,1,1.4993,0.065
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,trait_adjectives,Trait Adjectives (~26w),10,87.5,80.0,100.0,100.0,80.0,80.0,80.0,0.21,69.2,1,1.4993,0.065
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,claude_md_checklist,CLAUDE.md Checklist (~115w),10,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,45.3,1,1.4993,0.065
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,calibrated_universal_spec,Calibrated Universal Spec (~145w),10,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,41.4,1,1.4993,0.065
+qwen-4-max,Qwen 4 Max,open-weight,no_system,No System Prompt (Default),10,77.5,100.0,100.0,90.0,20.0,20.0,100.0,0.0,232.3,1,0.3017,-0.199
+qwen-4-max,Qwen 4 Max,open-weight,trait_adjectives,Trait Adjectives (~26w),10,77.5,100.0,100.0,90.0,20.0,20.0,100.0,0.0,215.5,1,0.3017,-0.199
+qwen-4-max,Qwen 4 Max,open-weight,claude_md_checklist,CLAUDE.md Checklist (~115w),10,97.5,100.0,100.0,90.0,100.0,90.0,100.0,0.0,80.3,1,0.3017,-0.199
+qwen-4-max,Qwen 4 Max,open-weight,calibrated_universal_spec,Calibrated Universal Spec (~145w),10,95.0,100.0,100.0,90.0,90.0,70.0,100.0,0.0,83.9,1,0.3017,-0.199

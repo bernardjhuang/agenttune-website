@@ -222,9 +222,8 @@ function lineTrajectory({ id, title, desc, xLabels, series, min = 0, max = 100, 
     cutMarkup = `<line x1="${padL}" x2="${padL + plotW}" y1="${cy.toFixed(1)}" y2="${cy.toFixed(1)}" stroke="${MUTED}" stroke-width="1.1" stroke-dasharray="4 3"/>` + (cutoffLabel ? `<text x="${padL + plotW}" y="${(cy - 5).toFixed(1)}" font-size="9" font-weight="600" fill="${MUTED}" text-anchor="end">${esc(cutoffLabel)}</text>` : '');
   }
 
-  // Track occupied end-label Y coordinates to nudge overlapping labels cleanly
-  const endYs = [];
-  const lines = series.map((s) => {
+  // Collect series paths/points first, then sort end-labels top-to-bottom so colliding labels stay ordered and separated
+  const renderedSeries = series.map((s) => {
     let d = '', open = false;
     const pts = [];
     s.values.forEach((v, i) => {
@@ -236,19 +235,37 @@ function lineTrajectory({ id, title, desc, xLabels, series, min = 0, max = 100, 
     });
     const pathEl = d ? `<path d="${d.trim()}" fill="none" stroke="${s.color}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"${s.dashed ? ' stroke-dasharray="5 3"' : ''}/>` : '';
     const dots = pts.map((p) => `<circle cx="${p.cx.toFixed(1)}" cy="${p.cy.toFixed(1)}" r="3.6" fill="${PAPER}" stroke="${s.color}" stroke-width="2"/>`).join('');
-    let endLbl = '';
-    if (pts.length) {
-      const last = pts[pts.length - 1];
-      let ly = last.cy + 3.5;
-      for (const prev of endYs) {
-        if (Math.abs(ly - prev) < 12) ly = prev + 12;
-      }
-      ly = Math.max(top + 8, Math.min(top + plotH - 2, ly));
-      endYs.push(ly);
-      endLbl = `<text x="${(last.cx + 7).toFixed(1)}" y="${ly.toFixed(1)}" font-size="10" font-weight="600" fill="${s.color}">${fmt(last.v, decimals)}</text>`;
+    return { s, pts, pathEl, dots };
+  });
+
+  const endLabels = renderedSeries
+    .filter((r) => r.pts.length)
+    .map((r) => {
+      const last = r.pts[r.pts.length - 1];
+      return { s: r.s, last, targetY: last.cy + 3.5, ly: last.cy + 3.5 };
+    })
+    .sort((a, b) => a.targetY - b.targetY || b.last.v - a.last.v);
+
+  const minY = top + 8, maxY = top + plotH - 2, labelGap = 12;
+  for (let i = 0; i < endLabels.length; i++) {
+    const floor = i === 0 ? minY : endLabels[i - 1].ly + labelGap;
+    endLabels[i].ly = Math.max(endLabels[i].targetY, floor);
+  }
+  if (endLabels.length && endLabels[endLabels.length - 1].ly > maxY) {
+    endLabels[endLabels.length - 1].ly = maxY;
+    for (let i = endLabels.length - 2; i >= 0; i--) {
+      endLabels[i].ly = Math.min(endLabels[i].ly, endLabels[i + 1].ly - labelGap);
     }
-    return pathEl + dots + endLbl;
-  }).join('');
+    if (endLabels[0].ly < minY) {
+      endLabels[0].ly = minY;
+      for (let i = 1; i < endLabels.length; i++) {
+        endLabels[i].ly = Math.max(endLabels[i].ly, endLabels[i - 1].ly + labelGap);
+      }
+    }
+  }
+
+  const lines = renderedSeries.map((r) => r.pathEl + r.dots).join('') +
+    endLabels.map((e) => `<text x="${(e.last.cx + 7).toFixed(1)}" y="${e.ly.toFixed(1)}" font-size="10" font-weight="600" fill="${e.s.color}">${fmt(e.last.v, decimals)}</text>`).join('');
 
   const descText = series.map((s) => `${s.name}${evidenceSuffix(s)}: ${xLabels.map((xl, i) => s.values[i] == null ? null : `${xl} ${fmt(s.values[i], decimals)}`).filter(Boolean).join(', ')}`).join('; ');
   return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${lg.g}${grid}${cutMarkup}${lines}${xAxis}${yLbl}</svg>`;

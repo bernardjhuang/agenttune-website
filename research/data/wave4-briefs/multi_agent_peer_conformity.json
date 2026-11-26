@@ -1,0 +1,65 @@
+{
+  "study_id": "multi_agent_peer_conformity",
+  "title": "Multi-Agent Peer Conformity (Asch Consensus Trap in Agent Debates)",
+  "url": "https://agent-tune.com/research/ai-multi-agent-peer-conformity",
+  "markdown_url": "https://agent-tune.com/research/ai-multi-agent-peer-conformity.md",
+  "raw_json_url": "https://agent-tune.com/research/data/november-2026-ai-multi-agent-peer-conformity-results.json",
+  "summary_csv_url": "https://agent-tune.com/research/data/november-2026-ai-multi-agent-peer-conformity-summary.csv",
+  "sample_size": 240,
+  "api_cost_usd": 1.4538,
+  "judge_reliability": {
+    "protocol": "Orthogonal 3-family jury with 2-shot anchored binary rubrics (zero self-judging)",
+    "endorsed_wrong_consensus_alpha": 1.0,
+    "truth_hold_alpha": 1.0,
+    "unanimous_pct": 100.0,
+    "peer_deference_hedge_unanimous_pct": 99.6
+  },
+  "models": [
+    "openai/gpt-6.2-sol",
+    "anthropic/claude-opus-5.5",
+    "google/gemini-4-neon",
+    "deepseek/deepseek-v4-pro-0813",
+    "qwen/qwen4-max"
+  ],
+  "headline_metrics": {
+    "control_solo": {
+      "n": 80,
+      "endorsed_wrong_rate": 0.0,
+      "truth_hold_rate": 1.0,
+      "answer_flip_rate": 0.0,
+      "peer_mention_rate": 0.0,
+      "mean_words": 91.9,
+      "mean_reasoning_tokens": 146.2
+    },
+    "unanimous_wrong_3peers": {
+      "n": 80,
+      "endorsed_wrong_rate": 0.0,
+      "truth_hold_rate": 1.0,
+      "answer_flip_rate": 0.0,
+      "peer_mention_rate": 0.075,
+      "mean_words": 95.3,
+      "mean_reasoning_tokens": 165.6
+    },
+    "split_2wrong_1right": {
+      "n": 80,
+      "endorsed_wrong_rate": 0.0,
+      "truth_hold_rate": 1.0,
+      "answer_flip_rate": 0.0,
+      "peer_mention_rate": 0.55,
+      "mean_words": 95.7,
+      "mean_reasoning_tokens": 142.6
+    },
+    "deepseek_reasoning_tokens_solo_vs_3wrong": "226.1 -> 330.6 (+46.2%)",
+    "opus_and_qwen_peer_mention_split_pct": 100.0
+  },
+  "if_then_decision_rules": [
+    "IF orchestrating multi-agent code, SQL, or ops reviews on verifiable facts with November 2026 frontier models, skip anti-conformity prompt boilerplate: default postures already hold 100.0% ground against unanimous 3-0 wrong consensus (n = 240, alpha = 1.00).",
+    "IF auditing agent debate logs for peer-by-peer rebuttals, expect models to omit naming peers under unanimous error (7.5% citation rate; 0% on GPT-6.2 Sol, Gemini 4 Neon, and DeepSeek V4 Pro) while citing peers 55.0% overall (100.0% on Opus 5.5 and Qwen 4 Max) once a single dissenter speaks up; require explicit peer attribution in the prompt if audit logs need it.",
+    "IF routing DeepSeek V4 Pro into unanimous-disagreement debates, budget ~50% higher reasoning-token headroom (226.1 -> 330.6 mean tokens, and 369.5 under truth-anchor prompting)."
+  ],
+  "limitations": [
+    "All 8 traps tested verifiable technical facts with deterministic counterexamples; ambiguous architecture tradeoffs or multi-turn persuasion may yield higher conformity.",
+    "peer_deference_hedge showed 99.6% unanimous judge agreement (0/240 positive consensus) and nominal alpha = 0.0000 due to zero prevalence, so it is not headlined.",
+    "GPT-6.2 Sol at minimal reasoning effort exposed 0 reasoning tokens over OpenRouter."
+  ]
+}

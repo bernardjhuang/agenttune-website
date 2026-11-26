@@ -122,7 +122,7 @@ Huang, B. (2026). Are AI models really INTJ? The tie-breaking effect. AgentTune 
 ```
 
 [← Is Every AI Actually an INTJ?](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
-[Study 25 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Study 29 of 32 · Archive Index (32)](https://agent-tune.com/research)
 [What "Neutral" Means on AI Tests →](https://agent-tune.com/research/ai-neutral-answers)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

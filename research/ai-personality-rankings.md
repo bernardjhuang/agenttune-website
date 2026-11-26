@@ -314,7 +314,7 @@ Huang, B. (2026). AI personality scores, with the evidence beside them. AgentTun
 ```
 
 [← 12 Open-Source AI Models Tested](https://agent-tune.com/research/what-personality-type-are-open-source-models)
-[Study 14 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Study 18 of 32 · Archive Index (32)](https://agent-tune.com/research)
 [September 2026 Five-Model Study →](https://agent-tune.com/research/ai-personality-five-models-2026)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

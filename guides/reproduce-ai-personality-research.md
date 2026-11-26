@@ -59,7 +59,7 @@ Our November 2026 Wave 1–3 archive publishes every raw response vector, orthog
 | Wave 3: Persona Entropy & BAI | 10,000 sheets ($0 Shannon bits) | [entropy.json](https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json) · [entropy.csv](https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.csv) |
 | Wave 3: Historical Evolution (2023–2026) | 32 checkpoints · 3-judge &alpha;=0.86 | [evolution.json](https://agent-tune.com/research/data/november-2026-historical-evolution-results.json) · [summary.csv](https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv) |
 | Wave 3: Reasoning Phase Transition | 216 cells · 138 CoT traces | [reasoning.json](https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json) · [summary.csv](https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-summary.csv) |
-| Unified Agent Decision Briefs | 11 studies (YAML/JSON rules) | [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) |
+| Unified Agent Decision Briefs | 15 studies (YAML/JSON rules) | [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) |
 
 To recompute all Jacobi eigenvalues (`PC1 = 63.58%`), Campbell–Fiske MTMM correlations, Shannon entropy bits, and 50-item embodiment statistics locally with zero API calls, run `python3 tools/analyze-psychometric-forensics.py` in the repository. To test whether personality instructions improve real task replies, see our [540-reply behavioral study & 20-task comparison kit](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
 

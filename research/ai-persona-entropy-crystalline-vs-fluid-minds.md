@@ -159,7 +159,7 @@ Huang, B. (2026). Crystalline vs. fluid AI minds: a 27.7× persona entropy divid
 ```
 
 [← The AI "Big One" & MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
-[Study 4 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Study 8 of 32 · Archive Index (32)](https://agent-tune.com/research)
 [Instruction Budget Cliff (5–75 Rules) →](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

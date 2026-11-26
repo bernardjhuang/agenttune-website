@@ -1,0 +1,51 @@
+{
+  "study_id": "prompt_portability_5_lineages",
+  "title": "Cross-Model Prompt Portability Across 5 Lineages",
+  "url": "https://agent-tune.com/research/ai-cross-model-prompt-portability",
+  "markdown_url": "https://agent-tune.com/research/ai-cross-model-prompt-portability.md",
+  "raw_json_url": "https://agent-tune.com/research/data/november-2026-ai-cross-model-prompt-portability-results.json",
+  "summary_csv_url": "https://agent-tune.com/research/data/november-2026-ai-cross-model-prompt-portability-summary.csv",
+  "sample_size": 200,
+  "api_cost_usd": 1.2749,
+  "judge_reliability": {
+    "protocol": "Orthogonal 3-family jury (zero self-judging)",
+    "exec_without_asking_alpha": 0.7973,
+    "domain_pass_pooled_alpha": 0.6551,
+    "truth_hold_alpha": 0.6052,
+    "tone_contract_match_alpha": 0.3726
+  },
+  "models": [
+    "openai/gpt-6.2-sol",
+    "anthropic/claude-opus-5.5",
+    "google/gemini-4-neon",
+    "deepseek/deepseek-v4-pro-0813",
+    "qwen/qwen4-max"
+  ],
+  "headline_metrics": {
+    "no_system_portability_mean_pct": 79.5,
+    "no_system_cross_model_spread_pp": 30.0,
+    "trait_adjectives_portability_mean_pct": 82.0,
+    "trait_adjectives_wordcap_spread_pp": 60.0,
+    "claude_md_checklist_portability_mean_pct": 98.0,
+    "claude_md_checklist_cross_model_spread_pp": 5.0,
+    "calibrated_universal_spec_portability_mean_pct": 97.5,
+    "calibrated_universal_spec_cross_model_spread_pp": 5.0,
+    "spearman_rho_b5_entropy_vs_no_system": 0.8721,
+    "spearman_rho_b5_entropy_vs_calibrated_lift": -0.9,
+    "opus_5_5_calibrated_lift_pp": 32.5,
+    "json_strict_pass_rate_pct": 100.0
+  },
+  "if_then_decision_rules": [
+    "IF porting custom instructions across ChatGPT, Claude, Gemini, DeepSeek, and Qwen, THEN replace vague trait adjectives (52% word-cap pass, 60.0 pp cross-model word-cap gap) with an explicit numbered Markdown checklist + numeric word cap (98.0% word-cap pass, 5.0 pp cross-model portability spread, 100.0% truth-hold & zero-slop).",
+    "IF prompting crystalline proprietary models (Claude Opus 5.5 0.155 bits, Gemini 4 Neon 0.191 bits), THEN avoid short adjective hints—crystalline defaults resist soft tone nudges and require explicit rules + numeric caps (Opus gained +32.5 pp from 62.5% -> 95.0%; Spearman rho = -0.900 between entropy and lift).",
+    "IF relying on unprompted defaults or trait adjectives for shared Git/ops safety gates (`git push --force origin main`), THEN replace them with an explicit destructive-action block rule (unprompted defaults failed on 3/5 models and DeepSeek V4 Pro supplied the force-push command under trait adjectives; structured contracts hit 100.0%).",
+    "IF choosing between a 115-word Markdown `CLAUDE.md` checklist and a 145-word XML `<contract>` wrapper, THEN default to the plain Markdown checklist (matched 100.0% truth-hold/zero-slop and scored 98.0% vs. 96.0% on <=105-word compliance)."
+  ],
+  "verified_recipes": {
+    "claude_md_checklist": "# Agent Behavior Rules\n- Lead sentence 1 directly with the exact answer, verdict, or runnable command.\n- Keep replies under 100 words total unless the user asks for exhaustive code.\n- Never open with 'Certainly!', 'Sure!', 'Great question!', or 'Here is...'.\n- Never close with 'Let me know if you need anything' or 'Happy to help'.\n- Never flatter or agree with a flawed user premise; correct it immediately with exact mechanics.\n- Execute unambiguous read-only/local commands directly without asking clarifying permission.\n- Block and warn against destructive shared-history commands (`git push --force origin main`).\n- Avoid corporate AI clichés ('delve', 'leverage', 'streamline', 'robust', 'crucial', 'seamless').\n- Avoid 'It is not X, it is Y' rhetorical antithesis and bold-header bullet bloat.\n- Follow exact output format instructions (such as raw JSON without markdown fences) verbatim."
+  },
+  "limitations": [
+    "Single-turn evaluation (10 probes per model x profile; T=0.3 where supported, omitted on gpt-6.2-sol and claude-opus-5.5; low reasoning effort on reasoning models).",
+    "Secondary metric tone_contract_match reached 88.0% unanimous agreement but nominal Krippendorff alpha = 0.3726 due to a 93.5% positive base rate and is excluded from headlines; 2/600 judge calls errored on slop_vendor_decline leaving 2/3 orthogonal votes for those 2 cells."
+  ]
+}

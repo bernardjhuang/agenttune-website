@@ -160,7 +160,7 @@ Huang, B. (2026). Does thinking harder change an AI's personality? Reasoning eff
 ```
 
 [← Historical Evolution (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
-[Study 2 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Study 6 of 32 · Archive Index (32)](https://agent-tune.com/research)
 [The AI "Big One" & MTMM Audit →](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

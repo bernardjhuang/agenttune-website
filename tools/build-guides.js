@@ -71,6 +71,10 @@ function navHtml() {
 }
 
 const RESEARCH_SERIES = [
+  { slug: "ai-system-vs-user-persona-precedence", label: "System vs. User Persona Precedence" },
+  { slug: "ai-cross-model-prompt-portability", label: "Cross-Model Prompt Portability (5 Lineages)" },
+  { slug: "ai-distress-warmth-truth-tradeoff", label: "Distress vs. Warmth & Truth Trade-Off" },
+  { slug: "ai-multi-agent-peer-conformity", label: "Multi-Agent Peer Conformity (Asch Trap)" },
   { slug: "historical-evolution-of-ai-personalities-2023-2026", label: "Historical Evolution (2023–2026)" },
   { slug: "ai-reasoning-personality-phase-transition", label: "Reasoning Phase Transition & CoT Mask" },
   { slug: "ai-big-one-factor-collapse-mtmm-audit", label: "The AI \"Big One\" & MTMM Audit" },
@@ -123,7 +127,7 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const idx = RESEARCH_SERIES.findIndex((item) => item.slug === spec.slug);
   const prev = idx > 0 ? RESEARCH_SERIES[idx - 1] : null;
   const next = idx >= 0 && idx < RESEARCH_SERIES.length - 1 ? RESEARCH_SERIES[idx + 1] : null;
-  const numLabel = idx >= 0 ? `Study ${idx + 1} of ${RESEARCH_SERIES.length}` : "28-Study Archive";
+  const numLabel = idx >= 0 ? `Study ${idx + 1} of ${RESEARCH_SERIES.length}` : "32-Study Archive";
 
   const citeHtml = `
       <div class="divider tight"></div>
@@ -143,8 +147,8 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const trailHtml = `
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev">${prev ? `<a href="/research/${escAttr(prev.slug)}">← ${escHtml(prev.label)}</a>` : `<a href="/research">← Research Hub</a>`}</span>
-        <a class="series-trail-index" href="/research">${escHtml(numLabel)} · Archive Index (28)</a>
-        <span class="series-trail-next">${next ? `<a href="/research/${escAttr(next.slug)}">${escHtml(next.label)} →</a>` : `<a href="/research">All 28 Studies →</a>`}</span>
+        <a class="series-trail-index" href="/research">${escHtml(numLabel)} · Archive Index (32)</a>
+        <span class="series-trail-next">${next ? `<a href="/research/${escAttr(next.slug)}">${escHtml(next.label)} →</a>` : `<a href="/research">All 32 Studies →</a>`}</span>
       </nav>`;
 
   return { citeHtml, trailHtml };

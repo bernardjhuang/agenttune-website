@@ -2088,3 +2088,22 @@ if (reasonPhaseRes) {
     spec.sections[2].html += maskFig;
   });
 }
+
+// ===================================================================
+// WAVE 4 RESEARCH STUDIES
+// ===================================================================
+
+const wave4ChartsDir = path.join(ROOT, 'tools/research-wave4');
+if (fs.existsSync(wave4ChartsDir)) {
+  for (const file of fs.readdirSync(wave4ChartsDir).filter((f) => f.endsWith('-charts.js')).sort()) {
+    const slug = file.replace(/-charts\.js$/, '');
+    const specRel = `research/src/${slug}.json`;
+    const dataRel = `research/data/november-2026-${slug}-results.json`;
+    if (!fs.existsSync(path.join(ROOT, specRel)) || !fs.existsSync(path.join(ROOT, dataRel))) continue;
+    const mod = require(path.join(wave4ChartsDir, file));
+    const injectFn = typeof mod === 'function' ? mod : mod.inject;
+    if (typeof injectFn !== 'function') continue;
+    const data = readJson(dataRel);
+    updateSpec(specRel, (spec) => injectFn(spec, charts, data));
+  }
+}
