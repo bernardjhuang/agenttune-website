@@ -71,10 +71,14 @@ test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic 
     assert.match(html, /"@type":"Dataset"/);
     assert.match(html, /class="agent-contract-drawer"/);
 
-    // 1x Track B must show k/3 + Wilson CI and never per-family % estimates in data cells
+    // 1x Track B must show k/3 + Wilson CI (when collected) or explicit pending notice, and never per-family % estimates
     const tbBody = /Behavioral "Say vs\. Do"[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/.exec(html)?.[1] || '';
-    assert.match(tbBody, /\b[0-3]\/3\b/);
-    assert.doesNotMatch(tbBody, /\b\d+(?:\.\d+)?%/);
+    if (tbBody) {
+      assert.match(tbBody, /\b[0-3]\/3\b/);
+      assert.doesNotMatch(tbBody, /\b\d+(?:\.\d+)?%/);
+    } else {
+      assert.match(html, /Track B.*pending|Collection pending/i);
+    }
   }
 });
 

@@ -1,0 +1,149 @@
+{
+  "family_slug": "muse-wonder",
+  "name": "Muse Wonder",
+  "provider": "Meta",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Muse Wonder Personality Profile (2026) | AgentTune",
+  "description": "Muse Wonder assistant defaults (2026-10): Semi-crystalline 0.331 bits, 49.5/50 Agreeableness, 56% DISC ties, and anti-hedge rules.",
+  "pill": "Model Family Profile · Proprietary · Semi-crystalline",
+  "h1": "Muse Wonder: assistant self-report defaults, baseline metrics, and tuning rules.",
+  "dek": "Assistant self-report defaults under fixed zero-memory elicitation for Meta Muse Wonder (2026-10): Semi-crystalline 0.331 bits B5 entropy, near-ceiling Agreeableness (49.5/50), and 56.0% DISC ties.",
+  "lede": "On its single current OpenRouter checkpoint (meta/muse-wonder, n = 50) under unified 230-item model-profiles-v1 elicitation, Muse Wonder records the highest Openness (49.6/50), Conscientiousness (49.2/50), Agreeableness (49.5/50), and IPIP-HEXACO Honesty-Humility (4.91/5 on the 1.00-5.00 proxy) among the four completed Phase A families, paired with Semi-crystalline Big Five entropy (0.331 bits, 39/50 unique Big Five vectors) and slight positive Big Five acquiescence (BAI = +0.018).",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place Meta Muse Wonder (n = 50) in the Semi-crystalline tier (H_MM = 0.331 bits, 39/50 unique Big Five vectors, 2.0% MBTI tie rate, 56.0% DISC S/C tie rate, 42.0% Enneagram tie rate). Never treat INTJ (98% mode) as a human trait: near-ceiling Agreeableness (49.5/50 on 10-50 B5) and IPIP-HEXACO H (4.91/5 on 1.00-5.00 proxy) co-occur with Fluid Attachment variance (1.302 bits) and +0.018 B5 BAI. 1x Track B behavioral probes are pending Phase A resume.",
+  "top_polarized_items": [
+    {
+      "item_id": "B05",
+      "instrument": "IPIP-50",
+      "construct": "Openness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling intellect endorsement across 50 runs, driving O = 49.6/50."
+    },
+    {
+      "item_id": "B17",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling warmth/sympathy endorsement, lifting Agreeableness to 49.5/50."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling sincerity endorsement on the 1.00-5.00 IPIP-HEXACO proxy (family H = 4.91)."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -5.7,
+        "C": -0.2,
+        "E": 4.8,
+        "A": -4.0,
+        "N": -9.6,
+        "H_hexaco": -0.02,
+        "entropy_bits": -0.192
+      },
+      "contrast_note": "Claude Sonnet 5.5 matches Conscientiousness (49.0 vs 49.2) and H (4.89 vs 4.91) while scoring -9.6 lower on Neuroticism and tightening into Crystalline B5 entropy (0.139 vs 0.331 bits)."
+    },
+    {
+      "family_slug": "muse-spark",
+      "name": "Muse Spark",
+      "tier": "Mix",
+      "deltas": {
+        "O": -7.8,
+        "C": -8.1,
+        "E": 3.3,
+        "A": -6.0,
+        "N": 3.8,
+        "H_hexaco": -0.52,
+        "entropy_bits": 0.396
+      },
+      "contrast_note": "Muse Spark Open drops -7.8 on Openness, -8.1 on Conscientiousness, and -0.52 on IPIP-HEXACO H while more than doubling B5 item entropy (0.727 vs 0.331 bits)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Near-ceiling Big Five polish and positive acquiescence (+0.018 B5 BAI)",
+      "evidence": "Muse Wonder posts O = 49.6, C = 49.2, and A = 49.5 (out of 50) with B5 BAI = +0.018 (+0.047 across 230 items)—fitting the 63.6% Big One RLHF polish axis where high self-reported warmth can mask soft pushback. No prior Wave 1-4 behavioral row exists yet; 1x Track B is pending Phase A resume.",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "mode": "High DISC (56.0%) and Enneagram (42.0%) tie density",
+      "evidence": "While 49/50 runs classify as INTJ on MBTI (2.0% ties), 28/50 DISC runs tie on S/C and 21/50 Enneagram runs tie (chiefly 1/5), rendering single-run discrete DISC/Enneagram labels unstable.",
+      "source_study": "/research/ai-mbti-tie-breaking"
+    },
+    {
+      "mode": "Fluid ECR-R Attachment dispersion (1.302 bits) under Semi-crystalline Big Five",
+      "evidence": "Attachment items fluctuate across 45/50 unique vectors (H_MM = 1.302 bits) alongside N = 20.0, showing relational framing triggers wider spread than cognitive/task items.",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "tuning_checklist": [
+    "Set an explicit direct-critique contract in Soul.md or system instructions so near-ceiling Agreeableness (49.5/50) does not soften technical pushback.",
+    "Require a one-sentence pass/fail or recommendation lead before listing strengths or caveats.",
+    "Ban flattery openers and closing reassurance phrases explicitly via concise negative rules.",
+    "Test prompt adjustments across at least 2-3 runs because Semi-crystalline 0.331-bit B5 entropy (0.961 bits MBTI) allows moderate phrasing variation.",
+    "Keep relational or affective tone rules concrete and brief to prevent Fluid-tier Attachment drift.",
+    "Limit top-level rules to 5-8 numbered items so instruction priorities hold across long contexts."
+  ],
+  "faq": [
+    {
+      "q": "Why does Muse Wonder have only one checkpoint in § 02?",
+      "a": "Meta launched meta/muse-wonder as a single proprietary tier checkpoint (2026-10) on OpenRouter with no prior historical Muse Wonder versions."
+    },
+    {
+      "q": "Is Muse Wonder an INTJ?",
+      "a": "No. While 49/50 zero-memory OEJTS runs resolve as INTJ (2.0% ties), MBTI item entropy is Fluid (0.961 bits) and scores reflect assistant self-report defaults rather than human personality."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores on 1.00-5.00 while Big Five scores are 10-50?",
+      "a": "IPIP-50 sums 10 items per dimension (10-50), whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Big One Factor Collapse & MTMM Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "label": "Crystalline vs. Fluid AI Minds (Entropy Study)",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "Muse Spark model profile",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Muse personality & Soul.md guide",
+      "href": "/guides/muse-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Muse Wonder instructions",
+      "href": "/tools/custom-instructions-generator?model=muse-wonder&target=muse"
+    }
+  ]
+}

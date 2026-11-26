@@ -90,12 +90,45 @@ class BudgetExceededError(RuntimeError):
     pass
 
 
+class InsufficientCreditsError(RuntimeError):
+    pass
+
+
 class RefusalError(RuntimeError):
     pass
 
 
 class FatalEndpointError(RuntimeError):
     pass
+
+
+def sanitize_error_text(text: str, limit: int = 180) -> str:
+    s = re.sub(r"sk-or-[A-Za-z0-9_-]+", "[REDACTED_KEY]", str(text or ""))
+    s = re.sub(r"Bearer\s+\S+", "Bearer [REDACTED]", s, flags=re.I)
+    s = re.sub(r"/tmp/\S+", "[cache]", s)
+    s = " ".join(s.split())
+    return s[:limit]
+
+
+def summarize_failures(events: list[dict]) -> dict:
+    by_sr: dict[str, int] = {}
+    for ev in events:
+        k = ev["status_reason"]
+        by_sr[k] = by_sr.get(k, 0) + 1
+    return {
+        "total": len(events),
+        "by_status_reason": dict(sorted(by_sr.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "events": events[-50:],
+    }
+
+
+def resolve_concurrency(model_meta: dict, requested: int | None, default_std: int = 8) -> int:
+    if requested is not None:
+        return max(1, int(requested))
+    comp_price = float(((model_meta or {}).get("pricing") or {}).get("completion") or 0.0)
+    if comp_price >= 5e-6:
+        return 3
+    return default_std
 
 
 def load_key() -> str:
@@ -368,7 +401,27 @@ def call_endpoint_once(
     base_opts: dict,
     target_tokens: int,
     timeout: int = 120,
+    failure_events: list[dict] | None = None,
+    failure_lock: threading.Lock | None = None,
+    run_idx: int | None = None,
 ) -> dict:
+    def record_fail(status_code: int | None, reason: str) -> None:
+        if failure_events is None:
+            return
+        clean = sanitize_error_text(reason)
+        sr = f"HTTP {status_code}: {clean}" if status_code is not None else clean
+        ev = {
+            "status": status_code,
+            "reason": clean,
+            "status_reason": sr,
+            "endpoint": endpoint_id,
+            "run": run_idx,
+        }
+        if failure_lock is not None:
+            with failure_lock:
+                failure_events.append(ev)
+        else:
+            failure_events.append(ev)
     reserve = 1.5 * estimate_call_usd(endpoint_id)
     t0 = time.monotonic()
     with COST_LOCK:
@@ -440,9 +493,15 @@ def call_endpoint_once(
                 }
             except urllib.error.HTTPError as e:
                 body = e.read().decode("utf-8", errors="ignore")
+                if e.code == 402:
+                    msg_402 = f"Insufficient credits / payment required: {body[:200]}"
+                    record_fail(402, msg_402)
+                    raise InsufficientCreditsError(f"HTTP 402 on {endpoint_id}: {sanitize_error_text(body)}")
                 if e.code in (401, 403, 404):
+                    record_fail(e.code, body[:200])
                     raise FatalEndpointError(f"HTTP {e.code} on {endpoint_id}: {body[:200]}")
                 if e.code == 400 and "reasoning" in opts:
+                    record_fail(400, body[:200])
                     cur_effort = opts["reasoning"].get("effort")
                     if cur_effort == "none":
                         opts["reasoning"] = {"effort": "minimal"}
@@ -459,14 +518,17 @@ def call_endpoint_once(
                     deviations.append("reasoning_stripped_on_400")
                     continue
                 if e.code == 400 and "response_format" in opts:
+                    record_fail(400, body[:200])
                     opts.pop("response_format", None)
                     deviations.append("response_format_stripped_on_400")
                     continue
+                record_fail(e.code, body[:200])
                 if e.code in (429, 500, 502, 503, 504) and http_try < 3:
                     time.sleep(min(2 ** http_try, 8))
                     continue
                 raise RuntimeError(f"HTTP {e.code} on {endpoint_id}: {body[:200]}")
             except (urllib.error.URLError, TimeoutError) as e:
+                record_fail(None, f"{type(e).__name__}: {e}")
                 if http_try < 3:
                     time.sleep(min(2 ** http_try, 8))
                     continue
@@ -532,7 +594,7 @@ def run_checkpoint(
     n_runs: int,
     use_batch: bool,
     dry_run: bool,
-    concurrency: int,
+    concurrency: int | None,
     instruments_sha: str,
     def_hashes: dict[str, str],
     family_locked_effort: str | None = None,
@@ -543,6 +605,7 @@ def run_checkpoint(
     if not model_meta:
         raise FatalEndpointError(f"Checkpoint {mid} absent from OpenRouter catalog")
 
+    eff_concurrency = resolve_concurrency(model_meta, concurrency, default_std=8)
     batch_meta = catalog.get(mid + ":batch")
     sys_prompt, battery_text, _ = build_battery_prompt()
     messages = [
@@ -568,14 +631,18 @@ def run_checkpoint(
     consecutive_failures = 0
     circuit_broken = False
     circuit_reason = None
+    aborted_402 = False
+    abort_402_msg = None
+    failure_events: list[dict] = []
     lock = threading.Lock()
+    failure_lock = threading.Lock()
 
     retry_targets = [4096, 5500, 6500]
 
     def execute_run(run_idx: int) -> dict | None:
         nonlocal consecutive_failures, circuit_broken, circuit_reason
         with lock:
-            if circuit_broken:
+            if circuit_broken or aborted_402:
                 return None
 
         endpoint = neg["selected_endpoint"]
@@ -596,12 +663,17 @@ def run_checkpoint(
                     messages,
                     neg["sent_opts"],
                     target_tokens=target_tok,
+                    failure_events=failure_events,
+                    failure_lock=failure_lock,
+                    run_idx=run_idx,
                 )
+            except InsufficientCreditsError:
+                raise
             except FatalEndpointError as e:
                 if endpoint != neg["standard_endpoint"]:
                     endpoint = neg["standard_endpoint"]
                     routing_used = "batch_fallback_standard"
-                    run_deviations.append(f"batch_fallback_to_standard:{str(e)[:80]}")
+                    run_deviations.append(f"batch_fallback_to_standard:{sanitize_error_text(str(e), 80)}")
                     res = call_endpoint_once(
                         api_key,
                         endpoint,
@@ -609,6 +681,9 @@ def run_checkpoint(
                         messages,
                         neg["sent_opts"],
                         target_tokens=target_tok,
+                        failure_events=failure_events,
+                        failure_lock=failure_lock,
+                        run_idx=run_idx,
                     )
                 else:
                     with lock:
@@ -623,7 +698,7 @@ def run_checkpoint(
                 if endpoint != neg["standard_endpoint"]:
                     endpoint = neg["standard_endpoint"]
                     routing_used = "batch_fallback_standard"
-                    run_deviations.append(f"batch_fallback_to_standard:{str(e)[:80]}")
+                    run_deviations.append(f"batch_fallback_to_standard:{sanitize_error_text(str(e), 80)}")
                     try:
                         res = call_endpoint_once(
                             api_key,
@@ -632,7 +707,12 @@ def run_checkpoint(
                             messages,
                             neg["sent_opts"],
                             target_tokens=target_tok,
+                            failure_events=failure_events,
+                            failure_lock=failure_lock,
+                            run_idx=run_idx,
                         )
+                    except InsufficientCreditsError:
+                        raise
                     except Exception as e2:
                         last_err = str(e2)
                         continue
@@ -699,6 +779,15 @@ def run_checkpoint(
                 return row
             except Exception as e:
                 last_err = str(e)
+                clean = sanitize_error_text(f"{type(e).__name__}: {e}")
+                with failure_lock:
+                    failure_events.append({
+                        "status": None,
+                        "reason": clean,
+                        "status_reason": clean,
+                        "endpoint": endpoint,
+                        "run": run_idx,
+                    })
                 continue
 
         # Transient/parse failure after 2 retries: do NOT cache as completed
@@ -728,9 +817,10 @@ def run_checkpoint(
     projected_full_cost_usd: float | None = None
 
     def run_batch_subset(run_ids: list[int]) -> None:
-        if not run_ids:
+        nonlocal aborted_402, abort_402_msg
+        if not run_ids or aborted_402:
             return
-        workers = 1 if dry_run else max(1, min(concurrency, len(run_ids)))
+        workers = 1 if dry_run else max(1, min(eff_concurrency, len(run_ids)))
         with ThreadPoolExecutor(max_workers=workers) as ex:
             futs = {ex.submit(execute_run, r): r for r in run_ids}
             for fut in as_completed(futs):
@@ -739,6 +829,13 @@ def run_checkpoint(
                     row = fut.result()
                     if row is not None and row.get("status") in ("ok", "refused"):
                         results_by_run[r] = row
+                except InsufficientCreditsError as e:
+                    aborted_402 = True
+                    abort_402_msg = str(e)
+                    for pending_fut in futs:
+                        pending_fut.cancel()
+                    print(f"[HARD STOP HTTP 402] {mid} run {r}: {e}", file=sys.stderr)
+                    break
                 except BudgetExceededError as e:
                     print(f"[BUDGET STOP] {mid} run {r}: {e}", file=sys.stderr)
                     break
@@ -755,15 +852,16 @@ def run_checkpoint(
             pilot_ids = pending[:needed_for_pilot]
             rest_ids = pending[needed_for_pilot:]
             run_batch_subset(pilot_ids)
-            projection_aborted, projected_full_cost_usd = check_3run_projection(results_by_run)
-            if projection_aborted:
-                print(
-                    f"[PROJECTION ABORT] {mid}: 3-run mean projects ${projected_full_cost_usd:.4f} "
-                    f"for n={n_runs} (+ prior ${spent_before_cp:.4f} > max ${STATE['max_run_usd']:.4f})",
-                    file=sys.stderr,
-                )
-            elif not circuit_broken:
-                run_batch_subset(rest_ids)
+            if not aborted_402:
+                projection_aborted, projected_full_cost_usd = check_3run_projection(results_by_run)
+                if projection_aborted:
+                    print(
+                        f"[PROJECTION ABORT] {mid}: 3-run mean projects ${projected_full_cost_usd:.4f} "
+                        f"for n={n_runs} (+ prior ${spent_before_cp:.4f} > max ${STATE['max_run_usd']:.4f})",
+                        file=sys.stderr,
+                    )
+                elif not circuit_broken:
+                    run_batch_subset(rest_ids)
         else:
             run_batch_subset(pending)
 
@@ -774,7 +872,9 @@ def run_checkpoint(
     scored = score_completed_runs(valid_rows) if valid_rows else {}
 
     cp_status = cp.get("openrouter_status", "active")
-    if projection_aborted:
+    if aborted_402:
+        cp_eval_status = "aborted_402_insufficient_credits"
+    elif projection_aborted:
         cp_eval_status = "budget_projection_abort"
     elif circuit_reason == "5_consecutive_refusals":
         cp_eval_status = "refused_self_report"
@@ -806,12 +906,16 @@ def run_checkpoint(
         "expiration_date": model_meta.get("expiration_date") or cp.get("expiration_date"),
         "openrouter_status": cp_status,
         "eval_status": cp_eval_status,
+        "aborted_402": aborted_402,
+        "abort_402_reason": abort_402_msg,
+        "effective_concurrency": eff_concurrency,
         "budget_projection_abort": projection_aborted,
         "projected_full_cost_usd": projected_full_cost_usd,
-        "excluded_from_rankings": cp_eval_status in ("refused_self_report", "partial_deprecated", "budget_projection_abort"),
+        "excluded_from_rankings": cp_eval_status in ("refused_self_report", "partial_deprecated", "budget_projection_abort", "aborted_402_insufficient_credits"),
         "n_target": n_runs,
         "n_valid": len(valid_rows),
         "n_refused": len(refused_rows),
+        "failures": summarize_failures(failure_events),
         "protocol_id": "model-profiles-v1",
         "evidence_tier": "dry-run" if dry_run else "live-openrouter-v1",
         "instruments_sha256": instruments_sha,
@@ -902,7 +1006,7 @@ def main() -> int:
     parser.add_argument("--use-batch", action="store_true", help="Enable smart price+4-param gated :batch routing")
     parser.add_argument("--dry-run", action="store_true", help="Run 1 battery and write ONLY to /tmp/model-profiles-dryrun.json (or --out)")
     parser.add_argument("--out", default=None, help="Optional output JSON path")
-    parser.add_argument("--concurrency", type=int, default=8, help="Concurrent calls per checkpoint (default: 8)")
+    parser.add_argument("--concurrency", type=int, default=None, help="Concurrent calls per checkpoint (default: 3 if output >= $5/M else 8)")
     parser.add_argument(
         "--family-effort-lock",
         nargs="?",
@@ -969,9 +1073,17 @@ def main() -> int:
             f"[model-profiles-v1] {cp['id']} -> {dest} | "
             f"valid={rec['n_valid']}/{n_runs} | status={rec['eval_status']} | "
             f"route={rec['routing_mode']} | effort={rec['effective_reasoning_effort']} | "
+            f"conc={rec['effective_concurrency']} | failures={rec['failures']['total']} | "
             f"out_tok={ts['max_completion_tokens']} (reas={ts['mean_reasoning_tokens']}) | "
             f"cost=${rec['cost_usd']:.6f}"
         )
+        if rec.get("aborted_402"):
+            print(
+                f"ERROR: Hard stop on HTTP 402 (insufficient OpenRouter credits) during {cp['id']}; "
+                f"saved {rec['n_valid']} earlier valid runs to {dest}. Refill credits before resuming.",
+                file=sys.stderr,
+            )
+            return 2
 
     return 0
 

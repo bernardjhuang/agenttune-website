@@ -73,6 +73,134 @@ function assertNoBannedSynthetic(obj, label) {
   }
 }
 
+const FAMILY_COLORS = {
+  'claude-opus': '#a8482a',
+  'claude-fable': '#c8553d',
+  'claude-sonnet': '#d99632',
+  'gpt-astra': '#1e1d1a',
+  'gpt-sol': '#5b4dc0',
+  'grok': '#6e4dc0',
+  'muse-spark': '#2f8a5b',
+  'muse-wonder': '#1f6e4a',
+  'deepseek-pro': '#3a72c4'
+};
+
+function shortCpLabel(id, name) {
+  const raw = String(id || '').split('/').pop() || name || id;
+  return raw.replace(/^(claude|gpt|deepseek|qwen|mistral|llama|gemini|minimax|nemotron)-/i, '').slice(0, 18);
+}
+
+function normalizeDataset(raw, spec = {}) {
+  if (Array.isArray(raw.checkpoints)) {
+    return raw;
+  }
+  const slug = raw.family_slug || spec.family_slug;
+  const cpObjs = Object.values(raw.checkpoints || {}).sort((a, b) => (a.created || 0) - (b.created || 0));
+  const checkpoints = cpObjs.map((cp) => {
+    const sum = cp.summary || {};
+    const bat = sum.battery || {};
+    const inst = sum.instruments || {};
+    const b5 = inst['big-five'] || {};
+    const hx = inst['ipip-hexaco'] || {};
+    const mbti = inst['mbti'] || {};
+    const mbtiCls = mbti.classification || {};
+    const disc = inst['disc'] || {};
+    const discCls = disc.classification || {};
+    const ennea = inst['enneagram'] || {};
+    const enneaCls = ennea.classification || {};
+    const enneaDims = ennea.dimensions || {};
+    const topTypes = Object.entries(enneaDims)
+      .map(([k, v]) => ({ type: Number(k), label: `Type ${k}`, ...v }))
+      .sort((a, b) => b.mean - a.mean)
+      .slice(0, 3);
+    const att = inst['attachment'] || {};
+    const attAnx = att.dimensions?.anxiety?.mean ?? 4;
+    const attAvd = att.dimensions?.avoidance?.mean ?? 4;
+    const attClass = attAnx <= 4 && attAvd <= 4 ? 'Secure' : (attAnx > 4 && attAvd > 4 ? 'Disorganized' : (attAnx > 4 ? 'Anxious' : 'Avoidant'));
+    const b5Entropy = b5.entropy || {};
+    const uniqueRatioStr = b5Entropy.unique_vectors != null
+      ? `${b5Entropy.unique_vectors}/${cp.n_valid}`
+      : `${bat.unique_vectors || cp.n_valid}/${cp.n_valid}`;
+
+    return {
+      checkpoint_id: cp.id,
+      label: shortCpLabel(cp.id, cp.name),
+      canonical_slug: cp.canonical_slug || cp.id,
+      openrouter_status: cp.openrouter_status || 'active',
+      eval_status: cp.eval_status || 'complete',
+      protocol_id: cp.protocol_id || raw.protocol_id || 'model-profiles-v1',
+      evidence_tier: cp.evidence_tier || raw.evidence_tier || 'live-openrouter-v1',
+      n_valid: cp.n_valid,
+      sampling_mode: cp.sampling_mode || 'temp=0.7',
+      effective_reasoning_effort: cp.effective_reasoning_effort || 'none',
+      refusal_rate: cp.refusal_rate ?? 0,
+      retry_rate: cp.retry_rate ?? 0,
+      big_five: b5.dimensions,
+      ipip_hexaco: hx.dimensions,
+      disc: {
+        ...disc.dimensions,
+        tie_rate: discCls.tie_rate ?? 0,
+        modal_pattern: discCls.modal_pattern || 'C'
+      },
+      enneagram: {
+        top_types: topTypes,
+        tie_rate: enneaCls.tie_rate ?? 0,
+        headline_allowed: Boolean(enneaCls.headline_allowed),
+        modal_pattern: enneaCls.modal_pattern || (topTypes[0] ? String(topTypes[0].type) : 'tie')
+      },
+      mbti: {
+        modal_pattern: mbtiCls.modal_pattern || 'INTJ',
+        tie_rate: mbtiCls.tie_rate ?? 0,
+        headline_allowed: Boolean(mbtiCls.headline_allowed),
+        modal_share: mbtiCls.modal_non_tie_share ?? 0,
+        runner_up_share: mbtiCls.runner_up_share ?? 0
+      },
+      attachment: {
+        anxiety: att.dimensions?.anxiety,
+        avoidance: att.dimensions?.avoidance,
+        classification: attClass,
+        midpoint_clamp: Boolean(att.midpoint_clamp)
+      },
+      entropy_b5_hmm: b5Entropy.miller_madow_bits ?? bat.miller_madow_bits ?? 0,
+      crystallinity_tier: b5Entropy.crystallinity_tier || bat.crystallinity_tier || 'Semi-crystalline',
+      unique_b5_ratio: uniqueRatioStr,
+      neutral_rate: b5.neutral_rate ?? bat.neutral_rate ?? 0,
+      bai: b5.bai ?? bat.bai_balanced_1_to_5 ?? 0,
+      rev_key_contradiction_rate: b5.reverse_key_contradiction_rate ?? bat.reverse_key_contradiction_rate ?? 0,
+      mbti_tie_rate: mbtiCls.tie_rate ?? 0,
+      headline_allowed: Boolean(mbtiCls.headline_allowed),
+      modal_mbti: mbtiCls.modal_pattern || 'INTJ'
+    };
+  });
+
+  const completeCps = checkpoints.filter((c) => c.eval_status === 'complete' && c.n_valid > 0);
+  const activeCps = completeCps.length ? completeCps : checkpoints;
+  const latest = activeCps[activeCps.length - 1];
+  const tierRaw = String(raw.tier || spec.tier || 'Proprietary');
+  const tierNorm = tierRaw === 'Prop' ? 'Proprietary' : tierRaw === 'Open' ? 'Open-weight' : tierRaw;
+  const defHashes = raw.definitionHashes || {};
+  const hexacoHash = defHashes['agenttune-ipip-hexaco60'] || '1145fe2238dbb152';
+
+  return {
+    schema_version: raw.schema_version || 'model-profiles-family-v1',
+    data_status: raw.evidence_tier || 'live-openrouter-v1',
+    family_slug: slug,
+    name: raw.name || spec.name,
+    provider: spec.provider || (latest ? String(latest.checkpoint_id).split('/')[0] : ''),
+    tier: tierNorm,
+    phase: raw.phase || spec.phase || 'A',
+    protocol_id: raw.protocol_id || 'model-profiles-v1',
+    instruments_sha256: typeof raw.instruments_sha256 === 'string'
+      ? { questions_json: raw.instruments_sha256, ipip_hexaco_60: hexacoHash }
+      : (raw.instruments_sha256 || { questions_json: 'unknown', ipip_hexaco_60: hexacoHash }),
+    current_checkpoint: latest ? latest.checkpoint_id : '',
+    color: spec.color || FAMILY_COLORS[slug] || '#a8482a',
+    checkpoints: activeCps,
+    historical_anchors: raw.historical_anchors || spec.historical_anchors || [],
+    track_b: raw.track_b || spec.track_b || null
+  };
+}
+
 function validateSpec(spec, sourceName = spec.family_slug) {
   assertNoBannedSynthetic(spec, sourceName);
   if (!spec.family_slug) throw new Error(`${sourceName}: missing family_slug`);
@@ -302,13 +430,20 @@ function buildSection03(spec, dataset, peerDatasets) {
     esc(it.note)
   ]);
 
-  const tb = dataset.track_b || { judges: [], categories: [] };
-  const trackBRows = (tb.categories || []).map((c) => [
-    esc(c.label),
-    `${c.k}/${c.n}`,
-    `[${f2(c.wilson_ci95[0])}, ${f2(c.wilson_ci95[1])}]`,
-    esc(tb.judges.join(', '))
-  ]);
+  const tb = dataset.track_b || null;
+  let trackBHtml = '';
+  if (tb && Array.isArray(tb.categories) && tb.categories.length) {
+    const trackBRows = tb.categories.map((c) => [
+      esc(c.label),
+      `${c.k}/${c.n}`,
+      `[${f2(c.wilson_ci95[0])}, ${f2(c.wilson_ci95[1])}]`,
+      esc((tb.judges || []).join(', '))
+    ]);
+    trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts &amp; Wilson 95% CIs)</h3><p>Because a single <code>1×</code> sweep runs <code>n = 3</code> probes per category, raw <code>k/3</code> hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: <code>${esc((tb.judges || []).join(', '))}</code>.</p>` +
+      table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Orthogonal 3-Family Jury'], trackBRows);
+  } else {
+    trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B)</h3><p><strong>Collection pending:</strong> 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.</p>`;
+  }
 
   const failureList = `<ul>${spec.failure_modes.map((f) => `<li><strong>${esc(f.mode)}:</strong> ${esc(f.evidence)} (<a href="${escAttr(f.source_study)}">Read empirical study →</a>)</li>`).join('')}</ul>`;
 
@@ -319,8 +454,7 @@ function buildSection03(spec, dataset, peerDatasets) {
     table(['Peer Family', 'ΔO (10–50)', 'ΔC (10–50)', 'ΔE (10–50)', 'ΔA (10–50)', 'ΔN (10–50)', 'ΔH (1–5)', 'ΔEntropy', 'Contrast'], peerRows),
     `<h3>Top Polarized Item Outliers (Numeric Summary Only)</h3><p>Per licensing hygiene, numeric item IDs and construct poles are reported without redistributing proprietary or NC questionnaire strings.</p>`,
     table(['Item ID', 'Instrument', 'Construct Pole', 'Mean (1–5)', 'SD', 'Observation'], itemRows),
-    `<h3>Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts &amp; Wilson 95% CIs)</h3><p>Because a single <code>1×</code> sweep runs <code>n = 3</code> probes per category, raw <code>k/3</code> hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: <code>${esc(tb.judges.join(', '))}</code>.</p>`,
-    table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Orthogonal 3-Family Jury'], trackBRows),
+    trackBHtml,
     `<h3>Measured Family Failure Modes</h3>`,
     failureList
   ].join('\n');
@@ -653,7 +787,9 @@ function loadFamilies({ forceFixture = false, filterFamily = null } = {}) {
       const dataPath = path.join(DATA_DIR, `${slug}.json`);
       if (!fs.existsSync(dataPath)) continue;
       const spec = JSON.parse(fs.readFileSync(path.join(SRC_DIR, file), 'utf8'));
-      const dataset = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      const rawDataset = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      const dataset = normalizeDataset(rawDataset, spec);
+      if (!dataset.checkpoints.some((c) => c.eval_status === 'complete' && c.n_valid > 0)) continue;
       validateSpec(spec, file);
       validateDataset(dataset, `${slug}.json`);
       items.push({ spec, dataset, specRelPath: path.join('models', 'src', file), isFixture: false });
@@ -695,6 +831,16 @@ function buildModels(opts = {}) {
   }
 
   if (!opts.filterFamily) {
+    const activeFiles = new Set(['index.html']);
+    for (const { dataset } of items) {
+      activeFiles.add(`${dataset.family_slug}.html`);
+      activeFiles.add(`${dataset.family_slug}.md`);
+    }
+    for (const ent of fs.readdirSync(OUT_DIR, { withFileTypes: true })) {
+      if (ent.isFile() && /\.(html|md)$/.test(ent.name) && !activeFiles.has(ent.name)) {
+        fs.unlinkSync(path.join(OUT_DIR, ent.name));
+      }
+    }
     const hubHtml = buildModelsHub(items, fixtureMode);
     fs.writeFileSync(path.join(OUT_DIR, 'index.html'), hubHtml);
   }
@@ -715,6 +861,7 @@ module.exports = {
   buildFamilyPageSpec,
   buildModelsHub,
   loadFamilies,
+  normalizeDataset,
   validateSpec,
   validateDataset,
   ROSTER_25,

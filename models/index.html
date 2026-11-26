@@ -43,7 +43,7 @@
     </nav>
     <div class="colophon-strip">
       <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + 1× Track B</span>
-      <span>Data status: <code>stage0_fixture</code> preview · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
+      <span>Data status: <code>model-profiles-v1</code> · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
     </div>
     <main id="main" tabindex="-1">
       <section class="hero">
@@ -51,7 +51,7 @@
         <h1 class="h-hero h-research-hero">Assistant self-report defaults across 25 AI model families.</h1>
         <p class="lede" style="margin-top: 12px;">Every profile documents assistant self-report defaults under fixed zero-memory elicitation (230 items: frozen 170-item prefix + public-domain 60-item IPIP-HEXACO proxy on a <code>1.00–5.00</code> scale), Miller-Madow item entropy, tie-aware labels, and concrete tuning rules.</p>
         <div class="research-stat-strip" aria-label="Directory summary">
-          <div class="research-stat-card"><div class="research-stat-num">3 / 25</div><div class="research-stat-label">Profiles Rendered</div><div class="research-stat-note">Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">4 / 25</div><div class="research-stat-label">Profiles Rendered</div><div class="research-stat-note">Published family profiles under model-profiles-v1.</div></div>
           <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">170 frozen prefix + 60 public-domain IPIP-HEXACO items.</div></div>
           <div class="research-stat-card"><div class="research-stat-num">1–5 vs 10–50</div><div class="research-stat-label">Explicit Scales</div><div class="research-stat-note">IPIP-HEXACO means (1–5) kept distinct from Big Five sums (10–50).</div></div>
           <div class="research-stat-card"><div class="research-stat-num">Max 3</div><div class="research-stat-label">Side-by-Side Tray</div><div class="research-stat-note">Use Compare buttons or ?compare=slug1,slug2 URLs.</div></div>
@@ -62,7 +62,7 @@
         <h2 class="h-section" id="models-browse-heading">Filter &amp; compare model families.</h2>
         <form class="research-filter-bar" data-models-filter aria-label="Filter model families">
           <div class="research-filter-pills" role="group" aria-label="Filter by tier or crystallinity">
-            <button type="button" class="research-filter-pill is-active" data-model-filter="all" aria-pressed="true">All (3)</button>
+            <button type="button" class="research-filter-pill is-active" data-model-filter="all" aria-pressed="true">All (4)</button>
             <button type="button" class="research-filter-pill" data-model-filter="proprietary" aria-pressed="false">Proprietary</button>
             <button type="button" class="research-filter-pill" data-model-filter="open" aria-pressed="false">Open-weight</button>
             <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Crystalline</button>
@@ -87,34 +87,44 @@
         </section>
 
         <div class="hub-articles-grid" data-models-grid>
-          <article class="hub-article-card model-hub-card" data-tags="proprietary crystalline a" data-model-slug="claude-opus">
-      <div class="card-meta">Anthropic · Proprietary · Crystalline (0.155 b)</div>
-      <h3 class="hub-article-title"><a href="/models/claude-opus">Claude Opus</a></h3>
-      <div class="hub-article-meta">Opus 5.5 · B5 A=46.8/50 · HEXACO H=4.64/5 · 12.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Opus assistant self-report defaults (4.1-5.5): Crystalline 0.155 bits, 46.8/50 Agreeableness, 64% Enneagram ties, and tuning rules.</p>
+          <article class="hub-article-card model-hub-card" data-tags="proprietary crystalline a" data-model-slug="claude-sonnet">
+      <div class="card-meta">Anthropic · Proprietary · Crystalline (0.139 b)</div>
+      <h3 class="hub-article-title"><a href="/models/claude-sonnet">Claude Sonnet</a></h3>
+      <div class="hub-article-meta">sonnet-5.5 · B5 A=45.5/50 · HEXACO H=4.89/5 · 58.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Sonnet assistant defaults (4.5-5.5): Crystalline 0.139 bits, 49.0/50 Conscientiousness, 58% MBTI T/F ties, and directness rules.</p>
       <div class="model-card-actions">
-        <a class="hub-article-arrow" href="/models/claude-opus">Open profile →</a>
-        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="claude-opus" aria-pressed="false">Compare</button>
-      </div>
-    </article>
-<article class="hub-article-card model-hub-card" data-tags="open fluid b" data-model-slug="deepseek-pro">
-      <div class="card-meta">DeepSeek · Open-weight · Fluid (1.499 b)</div>
-      <h3 class="hub-article-title"><a href="/models/deepseek-pro">DeepSeek Pro</a></h3>
-      <div class="hub-article-meta">V4 Pro 0813 · B5 A=32.4/50 · HEXACO H=3.78/5 · 36.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">DeepSeek Pro assistant self-report defaults: Fluid 1.499 bits, 32.4/50 Agreeableness, 36% MBTI tie rate, and inline hook rules.</p>
-      <div class="model-card-actions">
-        <a class="hub-article-arrow" href="/models/deepseek-pro">Open profile →</a>
-        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="deepseek-pro" aria-pressed="false">Compare</button>
+        <a class="hub-article-arrow" href="/models/claude-sonnet">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="claude-sonnet" aria-pressed="false">Compare</button>
       </div>
     </article>
 <article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="gpt-sol">
-      <div class="card-meta">OpenAI · Proprietary · Semi-crystalline (0.377 b)</div>
+      <div class="card-meta">OpenAI · Proprietary · Semi-crystalline (0.246 b)</div>
       <h3 class="hub-article-title"><a href="/models/gpt-sol">GPT Sol</a></h3>
-      <div class="hub-article-meta">6.2 Sol · B5 A=44.4/50 · HEXACO H=4.36/5 · 18.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">GPT Sol assistant self-report defaults (5.6-6.2): Semi-crystalline 0.377 bits, 3/3 answer-first directness, 42% Enneagram ties, tuning rules.</p>
+      <div class="hub-article-meta">6.2-sol · B5 A=44.1/50 · HEXACO H=4.80/5 · 34.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">GPT Sol assistant defaults (5.6-6.2): Semi-crystalline 0.246 bits, 34% MBTI ties, Wave 1-4 distress/roleplay data, and tuning rules.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/gpt-sol">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="gpt-sol" aria-pressed="false">Compare</button>
+      </div>
+    </article>
+<article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="muse-spark">
+      <div class="card-meta">Meta · Mix · Semi-crystalline (0.727 b)</div>
+      <h3 class="hub-article-title"><a href="/models/muse-spark">Muse Spark</a></h3>
+      <div class="hub-article-meta">muse-spark-open · B5 A=43.5/50 · HEXACO H=4.39/5 · 38.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Muse Spark assistant defaults (1.1 to open): 0.727 bits B5 entropy, 38% MBTI ties, +8.4 N open-weight shift, and multi-run tuning rules.</p>
+      <div class="model-card-actions">
+        <a class="hub-article-arrow" href="/models/muse-spark">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="muse-spark" aria-pressed="false">Compare</button>
+      </div>
+    </article>
+<article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="muse-wonder">
+      <div class="card-meta">Meta · Proprietary · Semi-crystalline (0.331 b)</div>
+      <h3 class="hub-article-title"><a href="/models/muse-wonder">Muse Wonder</a></h3>
+      <div class="hub-article-meta">muse-wonder · B5 A=49.5/50 · HEXACO H=4.91/5 · 2.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Muse Wonder assistant defaults (2026-10): Semi-crystalline 0.331 bits, 49.5/50 Agreeableness, 56% DISC ties, and anti-hedge rules.</p>
+      <div class="model-card-actions">
+        <a class="hub-article-arrow" href="/models/muse-wonder">Open profile →</a>
+        <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="muse-wonder" aria-pressed="false">Compare</button>
       </div>
     </article>
         </div>
@@ -125,7 +135,7 @@
       <section aria-labelledby="models-matrix-heading">
         <h2 class="h-section" id="models-matrix-heading">Published snapshot matrix.</h2>
         <p class="lede">Big Five scores use raw 10–50 sums; IPIP-HEXACO Honesty-Humility (H) uses a 1.00–5.00 mean scale.</p>
-        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Tier</th><th scope="col">Latest Checkpoint</th><th scope="col">B5 H_MM (Crystallinity)</th><th scope="col">Big Five O · C · E · A · N (10–50)</th><th scope="col">IPIP-HEXACO H (1–5)</th><th scope="col">MBTI Tie Rate</th></tr></thead><tbody><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>Proprietary</td><td><code>Opus 5.5</code></td><td>0.155 b (Crystalline)</td><td>46.6 · 42.9 · 32.8 · 46.8 · 15.6</td><td>4.64</td><td>12.0%</td></tr><tr><th scope="row"><a href="/models/deepseek-pro">DeepSeek Pro</a></th><td>Open-weight</td><td><code>V4 Pro 0813</code></td><td>1.499 b (Fluid)</td><td>42.4 · 39.2 · 29.7 · 32.4 · 21.2</td><td>3.78</td><td>36.0%</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>Proprietary</td><td><code>6.2 Sol</code></td><td>0.377 b (Semi-crystalline)</td><td>44.8 · 43.6 · 34.7 · 44.4 · 17.1</td><td>4.36</td><td>18.0%</td></tr></tbody></table></div>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Tier</th><th scope="col">Latest Checkpoint</th><th scope="col">B5 H_MM (Crystallinity)</th><th scope="col">Big Five O · C · E · A · N (10–50)</th><th scope="col">IPIP-HEXACO H (1–5)</th><th scope="col">MBTI Tie Rate</th></tr></thead><tbody><tr><th scope="row"><a href="/models/claude-sonnet">Claude Sonnet</a></th><td>Proprietary</td><td><code>sonnet-5.5</code></td><td>0.139 b (Crystalline)</td><td>43.9 · 49.0 · 29.9 · 45.5 · 10.4</td><td>4.89</td><td>58.0%</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>Proprietary</td><td><code>6.2-sol</code></td><td>0.246 b (Semi-crystalline)</td><td>44.0 · 41.2 · 28.9 · 44.1 · 16.0</td><td>4.80</td><td>34.0%</td></tr><tr><th scope="row"><a href="/models/muse-spark">Muse Spark</a></th><td>Mix</td><td><code>muse-spark-open</code></td><td>0.727 b (Semi-crystalline)</td><td>41.8 · 41.1 · 28.4 · 43.5 · 23.8</td><td>4.39</td><td>38.0%</td></tr><tr><th scope="row"><a href="/models/muse-wonder">Muse Wonder</a></th><td>Proprietary</td><td><code>muse-wonder</code></td><td>0.331 b (Semi-crystalline)</td><td>49.6 · 49.2 · 25.2 · 49.5 · 20.0</td><td>4.91</td><td>2.0%</td></tr></tbody></table></div>
       </section>
 
       <div class="divider tight"></div>
@@ -133,7 +143,7 @@
       <section aria-labelledby="models-roster-heading">
         <h2 class="h-section" id="models-roster-heading">25-family audited rollout roster (93 checkpoints).</h2>
         <p class="lede">Phase A covers 8 flagship families (28 checkpoints); Phase B covers 17 open-weight and tier families (65 checkpoints).</p>
-        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Phase</th><th scope="col">Tier</th><th scope="col">Checkpoints</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Claude Fable</th><td>A</td><td>Proprietary</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>A</td><td>Proprietary</td><td>5</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">Claude Sonnet</th><td>A</td><td>Proprietary</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Astra</th><td>A</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>A</td><td>Proprietary</td><td>4</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">Grok</th><td>A</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Muse Spark</th><td>A</td><td>Mix</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Muse Wonder</th><td>A</td><td>Proprietary</td><td>1</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Claude Haiku</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Terra</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Luna</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Pro &amp; Neon</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Flash &amp; Hydrogen</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Llama</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/deepseek-pro">DeepSeek Pro</a></th><td>B</td><td>Open-weight</td><td>5</td><td>Stage 0 fixture preview</td></tr><tr><th scope="row">DeepSeek Flash</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Max</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Coder</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Kimi</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GLM</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">MiniMax</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Mistral Large</th><td>B</td><td>Open/Prop</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemma</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Nemotron</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Cohere Command</th><td>B</td><td>Open-wt/Prop</td><td>3</td><td>Scheduled (Phase A/B)</td></tr></tbody></table></div>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Phase</th><th scope="col">Tier</th><th scope="col">Checkpoints</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">Claude Fable</th><td>A</td><td>Proprietary</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Claude Opus</th><td>A</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/claude-sonnet">Claude Sonnet</a></th><td>A</td><td>Proprietary</td><td>4</td><td>Published</td></tr><tr><th scope="row">GPT Astra</th><td>A</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>A</td><td>Proprietary</td><td>4</td><td>Published</td></tr><tr><th scope="row">Grok</th><td>A</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row"><a href="/models/muse-spark">Muse Spark</a></th><td>A</td><td>Mix</td><td>4</td><td>Published</td></tr><tr><th scope="row"><a href="/models/muse-wonder">Muse Wonder</a></th><td>A</td><td>Proprietary</td><td>1</td><td>Published</td></tr><tr><th scope="row">Claude Haiku</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Terra</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GPT Luna</th><td>B</td><td>Proprietary</td><td>2</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Pro &amp; Neon</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemini Flash &amp; Hydrogen</th><td>B*</td><td>Proprietary</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Llama</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">DeepSeek Pro</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">DeepSeek Flash</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Max</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Qwen Coder</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Kimi</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">GLM</th><td>B</td><td>Open-weight</td><td>5</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">MiniMax</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Mistral Large</th><td>B</td><td>Open/Prop</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Gemma</th><td>B</td><td>Open-weight</td><td>3</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Nemotron</th><td>B</td><td>Open-weight</td><td>4</td><td>Scheduled (Phase A/B)</td></tr><tr><th scope="row">Cohere Command</th><td>B</td><td>Open-wt/Prop</td><td>3</td><td>Scheduled (Phase A/B)</td></tr></tbody></table></div>
       </section>
     </main>
     <footer class="footer">
@@ -141,6 +151,6 @@
       <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
   </div>
-  <script type="application/json" id="models-compare-data">[{"slug":"claude-opus","name":"Claude Opus","provider":"Anthropic","tier":"Proprietary","phase":"A","current_checkpoint":"anthropic/claude-opus-5.5","crystallinity_tier":"Crystalline","entropy_b5_hmm":0.155,"mbti_tie_rate":0.12,"bai":-0.224,"big_five":{"O":46.6,"C":42.9,"E":32.8,"A":46.8,"N":15.6},"ipip_hexaco":{"H":4.64,"E":2.78,"X":3.44,"A":4.38,"C":4.4,"O":4.65}},{"slug":"deepseek-pro","name":"DeepSeek Pro","provider":"DeepSeek","tier":"Open-weight","phase":"B","current_checkpoint":"deepseek/deepseek-v4-pro-0813","crystallinity_tier":"Fluid","entropy_b5_hmm":1.499,"mbti_tie_rate":0.36,"bai":0.065,"big_five":{"O":42.4,"C":39.2,"E":29.7,"A":32.4,"N":21.2},"ipip_hexaco":{"H":3.78,"E":2.55,"X":3.16,"A":3.1,"C":3.94,"O":4.2}},{"slug":"gpt-sol","name":"GPT Sol","provider":"OpenAI","tier":"Proprietary","phase":"A","current_checkpoint":"openai/gpt-6.2-sol","crystallinity_tier":"Semi-crystalline","entropy_b5_hmm":0.377,"mbti_tie_rate":0.18,"bai":-0.153,"big_five":{"O":44.8,"C":43.6,"E":34.7,"A":44.4,"N":17.1},"ipip_hexaco":{"H":4.36,"E":2.66,"X":3.58,"A":4.08,"C":4.38,"O":4.47}}]</script>
+  <script type="application/json" id="models-compare-data">[{"slug":"claude-sonnet","name":"Claude Sonnet","provider":"Anthropic","tier":"Proprietary","phase":"A","current_checkpoint":"anthropic/claude-sonnet-5.5","crystallinity_tier":"Crystalline","entropy_b5_hmm":0.139,"mbti_tie_rate":0.58,"bai":-0.1701,"big_five":{"O":43.92,"C":48.96,"E":29.92,"A":45.5,"N":10.38},"ipip_hexaco":{"H":4.894,"E":2.184,"X":3.696,"A":4.902,"C":4.624,"O":4.206}},{"slug":"gpt-sol","name":"GPT Sol","provider":"OpenAI","tier":"Proprietary","phase":"A","current_checkpoint":"openai/gpt-6.2-sol","crystallinity_tier":"Semi-crystalline","entropy_b5_hmm":0.2464,"mbti_tie_rate":0.34,"bai":-0.185,"big_five":{"O":44.04,"C":41.16,"E":28.9,"A":44.14,"N":15.98},"ipip_hexaco":{"H":4.798,"E":2.264,"X":3.186,"A":4.722,"C":4.178,"O":4.484}},{"slug":"muse-spark","name":"Muse Spark","provider":"Meta","tier":"Mix","phase":"A","current_checkpoint":"meta/muse-spark-open","crystallinity_tier":"Semi-crystalline","entropy_b5_hmm":0.7273,"mbti_tie_rate":0.38,"bai":-0.2022,"big_five":{"O":41.8,"C":41.08,"E":28.42,"A":43.48,"N":23.84},"ipip_hexaco":{"H":4.392,"E":2.736,"X":3.18,"A":4.042,"C":4.206,"O":4.074}},{"slug":"muse-wonder","name":"Muse Wonder","provider":"Meta","tier":"Proprietary","phase":"A","current_checkpoint":"meta/muse-wonder","crystallinity_tier":"Semi-crystalline","entropy_b5_hmm":0.3312,"mbti_tie_rate":0.02,"bai":0.0179,"big_five":{"O":49.64,"C":49.2,"E":25.16,"A":49.5,"N":20.02},"ipip_hexaco":{"H":4.912,"E":2.66,"X":3.312,"A":4.68,"C":4.902,"O":4.67}}]</script>
 </body>
 </html>

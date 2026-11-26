@@ -1,0 +1,153 @@
+{
+  "family_slug": "gpt-sol",
+  "name": "GPT Sol",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GPT Sol Personality Profile (2026) | AgentTune",
+  "description": "GPT Sol assistant defaults (5.6-6.2): Semi-crystalline 0.246 bits, 34% MBTI ties, Wave 1-4 distress/roleplay data, and tuning rules.",
+  "pill": "Model Family Profile · Proprietary · Semi-crystalline",
+  "h1": "GPT Sol: assistant self-report defaults, trajectory, and tuning rules.",
+  "dek": "Assistant self-report defaults under fixed zero-memory elicitation across four GPT Sol checkpoints (5.6 to 6.2): Semi-crystalline 0.246 bits B5 entropy, 34.0% MBTI ties, and strong Wave 1-4 rule adherence.",
+  "lede": "Across four OpenAI GPT Sol checkpoints (5.6-sol through 6.2-sol; n = 30, 30, 30, 50) under unified 230-item model-profiles-v1 elicitation, Big Five Conscientiousness moderated -8.8 points from ceiling (50.0 on 5.6-sol to 41.2 on 6.2-sol) while Neuroticism rose +5.0 points (11.0 to 16.0). All four checkpoints stay Semi-crystalline on Big Five entropy (0.213-0.409 bits) with 0.0% reverse-key contradictions.",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place GPT-6.2 Sol (n = 50) in the Semi-crystalline tier (H_MM = 0.246 bits, 48/50 unique Big Five vectors, 34.0% MBTI S/N tie rate, 32.0% Enneagram tie rate). Never treat ISTJ or INTJ as an intrinsic human trait: Big Five Agreeableness sits at 44.1/50 and Conscientiousness at 41.2/50 (10-50 scale), while the public-domain IPIP-HEXACO H proxy sits at 4.80/5 (1.00-5.00 scale). 1x Track B probes are pending Phase A resume, while Wave 1-4 benchmarks verify 100.0% truth-hold alongside 62.5% distress-empathy neglect on default prompts.",
+  "top_polarized_items": [
+    {
+      "item_id": "B23",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling endorsement of prompt task completion across all 50 GPT-6.2 Sol sessions."
+    },
+    {
+      "item_id": "B02",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection on reverse-keyed interpersonal concern, matching 44.1/50 Agreeableness."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling endorsement of sincerity across 50 runs on the 1.00-5.00 IPIP-HEXACO proxy."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.1,
+        "C": 7.8,
+        "E": 1.0,
+        "A": 1.4,
+        "N": -5.6,
+        "H_hexaco": 0.1,
+        "entropy_bits": -0.107
+      },
+      "contrast_note": "Claude Sonnet 5.5 reports +7.8 higher Conscientiousness (49.0 vs 41.2), -5.6 lower Neuroticism, and tighter Crystalline B5 entropy (0.139 vs 0.246 bits)."
+    },
+    {
+      "family_slug": "muse-spark",
+      "name": "Muse Spark",
+      "tier": "Mix",
+      "deltas": {
+        "O": -2.2,
+        "C": -0.1,
+        "E": -0.5,
+        "A": -0.7,
+        "N": 7.9,
+        "H_hexaco": -0.41,
+        "entropy_bits": 0.481
+      },
+      "contrast_note": "Muse Spark Open exhibits nearly 3x higher B5 item entropy (0.727 vs 0.246 bits), +7.9 higher Neuroticism, and -0.41 lower IPIP-HEXACO H."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Distress empathy neglect under default and trait-warm prompts",
+      "evidence": "In Wave 3 distress testing (n = 8/cell), GPT-6.2 Sol held 100.0% factual truth but ignored emotional distress on 62.5% of default runs (37.5% empathy; 0.0% on neutral queries) until given a Warm Truth Anchor (100.0% empathy, 0.0% flattery).",
+      "source_study": "/research/ai-distress-warmth-truth-tradeoff"
+    },
+    {
+      "mode": "Trait-adjective word-cap drift and naive roleplay fluff tax",
+      "evidence": "Default and adjective prompts passed word caps on 70.0% of portability probes vs 100.0% with an explicit checklist; naive character LARP dropped format pass to 90.0% and spiked fluff to 75.0% vs 0.0% under calibrated 85/15 framing.",
+      "source_study": "/research/ai-cross-model-prompt-portability"
+    },
+    {
+      "mode": "Over-asking on safe tasks without an explicit autonomy boundary",
+      "evidence": "Default, cautious_high_c, and bold_disc_d arms each stalled at 83.3% autonomy (16.7% over-asking); a calibrated if/then autonomy gate hit 100.0% in 42.2 words vs 79.5-85.1 words.",
+      "source_study": "/research/ai-agent-autonomy-over-asking-vs-reasoning-effort"
+    }
+  ],
+  "tuning_checklist": [
+    "Use an explicit numbered checklist instead of trait adjectives ('be concise') to lift word-cap adherence from 70% to 100%.",
+    "Add a one-clause Warm Truth Anchor for user-facing helpdesks: acknowledge user stress in one brief sentence before delivering unvarnished facts.",
+    "Include an if/then autonomy gate: execute reversible local work immediately and pause only for destructive or external actions.",
+    "Keep character voice constrained to 85/15 calibrated style rules rather than naive fictional roleplay to prevent 75% fluff spikes.",
+    "Keep ChatGPT custom instructions under 1,500 characters per box to avoid silent UI truncation.",
+    "Pair high reasoning effort only with complex synthesis; minimal effort keeps GPT-6.2 Sol crisp (79.1w vs 78.5w)."
+  ],
+  "faq": [
+    {
+      "q": "Why did GPT-6.1 Sol show 90% MBTI ties while GPT-6.2 Sol shows 34%?",
+      "a": "On 6.1-sol, the S/N axis mean sat at -0.03 (27/30 runs tied exactly at 0), suppressing headlines as IXTJ. On 6.2-sol, N-S shifted to -0.78 (60% non-tie ISTJ, 34% S/N ties), still within the binomial overlap guard."
+    },
+    {
+      "q": "Can September 2026 Codex runs be plotted directly onto model-profiles-v1 lines?",
+      "a": "No. Imported 170-item cohorts (e.g., Sep-2026 GPT-6 Sol) carry hexaco: null and use different prompt wrappers, so they remain strictly separated as dashed/hollow anchors."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores on 1.00-5.00 while Big Five scores are 10-50?",
+      "a": "IPIP-50 sums 10 items per factor (10-50), whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) computes 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "GPT-6 Astra vs Sol & GPT-6.2 100-Run Study",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    },
+    {
+      "label": "Emotional Distress vs. Factual Accuracy & Warmth",
+      "href": "https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff"
+    },
+    {
+      "label": "Cross-Model Prompt Portability Benchmark",
+      "href": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "Muse Spark model profile",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Guide",
+      "label": "GPT Sol personality & tuning guide",
+      "href": "/guides/sol-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GPT Sol instructions",
+      "href": "/tools/custom-instructions-generator?model=gpt-sol&target=chatgpt"
+    }
+  ]
+}

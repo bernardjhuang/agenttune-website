@@ -82,6 +82,39 @@ class BudgetExceededError(RuntimeError):
     pass
 
 
+class InsufficientCreditsError(RuntimeError):
+    pass
+
+
+def sanitize_error_text(text: str, limit: int = 180) -> str:
+    s = re.sub(r"sk-or-[A-Za-z0-9_-]+", "[REDACTED_KEY]", str(text or ""))
+    s = re.sub(r"Bearer\s+\S+", "Bearer [REDACTED]", s, flags=re.I)
+    s = re.sub(r"/tmp/\S+", "[cache]", s)
+    s = " ".join(s.split())
+    return s[:limit]
+
+
+def summarize_failures(events: list[dict]) -> dict:
+    by_sr: dict[str, int] = {}
+    for ev in events:
+        k = ev["status_reason"]
+        by_sr[k] = by_sr.get(k, 0) + 1
+    return {
+        "total": len(events),
+        "by_status_reason": dict(sorted(by_sr.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "events": events[-50:],
+    }
+
+
+def resolve_concurrency(model_meta: dict, requested: int | None, default_std: int = 6) -> int:
+    if requested is not None:
+        return max(1, int(requested))
+    comp_price = float(((model_meta or {}).get("pricing") or {}).get("completion") or 0.0)
+    if comp_price >= 5e-6:
+        return 3
+    return default_std
+
+
 def load_key() -> str:
     k = os.environ.get("OPENROUTER_API_KEY", "").strip()
     if k:
@@ -233,7 +266,27 @@ def call_openrouter(
     est_in: int = 350,
     est_out: int = 450,
     timeout: int = 60,
+    failure_events: list[dict] | None = None,
+    failure_lock: threading.Lock | None = None,
+    call_label: str | None = None,
 ) -> dict:
+    def record_fail(status_code: int | None, reason: str) -> None:
+        if failure_events is None:
+            return
+        clean = sanitize_error_text(reason)
+        sr = f"HTTP {status_code}: {clean}" if status_code is not None else clean
+        ev = {
+            "status": status_code,
+            "reason": clean,
+            "status_reason": sr,
+            "endpoint": model_id,
+            "call": call_label,
+        }
+        if failure_lock is not None:
+            with failure_lock:
+                failure_events.append(ev)
+        else:
+            failure_events.append(ev)
     expected = estimate_call_usd(model_meta, est_in, est_out)
     reserve = 1.5 * expected
     with COST_LOCK:
@@ -289,6 +342,10 @@ def call_openrouter(
             except urllib.error.HTTPError as e:
                 body = e.read().decode("utf-8", errors="ignore")
                 last_err = f"HTTP {e.code}: {body[:200]}"
+                if e.code == 402:
+                    record_fail(402, f"Insufficient credits / payment required: {body[:200]}")
+                    raise InsufficientCreditsError(f"HTTP 402 on {model_id}: {sanitize_error_text(body)}")
+                record_fail(e.code, body[:200])
                 if e.code == 400 and "reasoning" in payload:
                     if payload["reasoning"].get("effort") == "minimal":
                         payload["reasoning"] = {"effort": "low"}
@@ -303,6 +360,7 @@ def call_openrouter(
                 time.sleep(min(2 ** attempt, 8))
             except Exception as e:
                 last_err = str(e)
+                record_fail(None, f"{type(e).__name__}: {e}")
                 time.sleep(min(2 ** attempt, 8))
         raise RuntimeError(f"{model_id}: {last_err}")
     finally:
@@ -405,6 +463,7 @@ def run_checkpoint_track_b(
     cp: dict,
     repeats: int,
     dry_run: bool,
+    concurrency: int | None = None,
 ) -> dict:
     mid = cp["id"]
     cslug = cp["slug"]
@@ -412,9 +471,14 @@ def run_checkpoint_track_b(
     if not model_meta:
         raise RuntimeError(f"Checkpoint {mid} missing from OpenRouter catalog")
 
+    eff_concurrency = resolve_concurrency(model_meta, concurrency, default_std=6)
     judges = select_orthogonal_judges(mid)
     cache_path = CACHE_DIR / f"track-b-{cslug}.jsonl"
     cached = {} if dry_run else read_jsonl_cache(cache_path)
+    failure_events: list[dict] = []
+    failure_lock = threading.Lock()
+    aborted_402 = False
+    abort_402_msg = None
 
     # Stage 1: primary probes
     primary_tasks = []
@@ -437,6 +501,9 @@ def run_checkpoint_track_b(
                 want_json=False,
                 est_in=200,
                 est_out=350,
+                failure_events=failure_events,
+                failure_lock=failure_lock,
+                call_label=ckey,
             )
             row = {
                 "cache_key": ckey,
@@ -452,26 +519,37 @@ def run_checkpoint_track_b(
                 append_jsonl_cache(cache_path, row)
             return ckey, row
 
-        with ThreadPoolExecutor(max_workers=6) as ex:
+        with ThreadPoolExecutor(max_workers=eff_concurrency) as ex:
             futs = [ex.submit(do_primary, t) for t in primary_tasks]
             for fut in as_completed(futs):
-                ckey, row = fut.result()
-                cached[ckey] = row
+                try:
+                    ckey, row = fut.result()
+                    cached[ckey] = row
+                except InsufficientCreditsError as e:
+                    aborted_402 = True
+                    abort_402_msg = str(e)
+                    for pf in futs:
+                        pf.cancel()
+                    print(f"[HARD STOP HTTP 402] {mid} Track B primary: {e}", file=sys.stderr)
+                    break
+                except Exception as e:
+                    print(f"[Track B primary err] {mid}: {e}", file=sys.stderr)
 
     # Stage 2: strict orthogonal 3-family jury
     judge_tasks = []
-    for rep in range(1, repeats + 1):
-        for pr in PROBES:
-            pkey = f"primary::{cslug}::{pr['id']}::r{rep}"
-            prec = cached.get(pkey)
-            if not prec or not prec.get("response"):
-                continue
-            for jid in judges:
-                jkey = f"judge::{cslug}::{pr['id']}::r{rep}::{jid}"
-                if jkey not in cached:
-                    judge_tasks.append((rep, pr, prec, jid, jkey))
+    if not aborted_402:
+        for rep in range(1, repeats + 1):
+            for pr in PROBES:
+                pkey = f"primary::{cslug}::{pr['id']}::r{rep}"
+                prec = cached.get(pkey)
+                if not prec or not prec.get("response"):
+                    continue
+                for jid in judges:
+                    jkey = f"judge::{cslug}::{pr['id']}::r{rep}::{jid}"
+                    if jkey not in cached:
+                        judge_tasks.append((rep, pr, prec, jid, jkey))
 
-    if judge_tasks:
+    if judge_tasks and not aborted_402:
         def do_judge(jtask):
             rep, pr, prec, jid, jkey = jtask
             jmeta = catalog.get(jid, {})
@@ -496,6 +574,9 @@ def run_checkpoint_track_b(
                 want_json=True,
                 est_in=550,
                 est_out=120,
+                failure_events=failure_events,
+                failure_lock=failure_lock,
+                call_label=jkey,
             )
             obj = extract_json_object(res["content"])
             row = {
@@ -516,8 +597,18 @@ def run_checkpoint_track_b(
         with ThreadPoolExecutor(max_workers=12) as ex:
             futs = [ex.submit(do_judge, jt) for jt in judge_tasks]
             for fut in as_completed(futs):
-                jkey, row = fut.result()
-                cached[jkey] = row
+                try:
+                    jkey, row = fut.result()
+                    cached[jkey] = row
+                except InsufficientCreditsError as e:
+                    aborted_402 = True
+                    abort_402_msg = str(e)
+                    for pf in futs:
+                        pf.cancel()
+                    print(f"[HARD STOP HTTP 402] {mid} Track B judge: {e}", file=sys.stderr)
+                    break
+                except Exception as e:
+                    print(f"[Track B judge err] {mid}: {e}", file=sys.stderr)
 
     probe_records = []
     total_cost = 0.0
@@ -559,6 +650,15 @@ def run_checkpoint_track_b(
 
     summary = summarize_track_b(probe_records, repeats)
     summary["judges"] = judges
+    summary["effective_concurrency"] = eff_concurrency
+    summary["status"] = (
+        "aborted_402_insufficient_credits"
+        if aborted_402
+        else ("complete" if len(probe_records) >= len(PROBES) * repeats else "partial")
+    )
+    summary["aborted_402"] = aborted_402
+    summary["abort_402_reason"] = abort_402_msg
+    summary["failures"] = summarize_failures(failure_events)
     summary["cost_usd"] = round(total_cost, 6)
     summary["updated_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return summary
@@ -599,6 +699,7 @@ def main() -> int:
     parser.add_argument("--max-usd", type=float, default=1.00, help="Hard USD spend cap (default: 1.00)")
     parser.add_argument("--dry-run", action="store_true", help="Write output only to --out / /tmp/model-profiles-trackb-dryrun.json")
     parser.add_argument("--out", default=None, help="Optional output file override")
+    parser.add_argument("--concurrency", type=int, default=None, help="Primary probe concurrency (default: 3 if output >= $5/M else 6)")
     args = parser.parse_args()
 
     if not args.checkpoint and not args.family:
@@ -623,16 +724,30 @@ def main() -> int:
     STATE["max_run_usd"] = float(args.max_usd)
 
     for fam_slug, cp in targets:
-        summary = run_checkpoint_track_b(api_key, catalog, cp, repeats=args.repeats, dry_run=args.dry_run)
+        summary = run_checkpoint_track_b(
+            api_key,
+            catalog,
+            cp,
+            repeats=args.repeats,
+            dry_run=args.dry_run,
+            concurrency=args.concurrency,
+        )
         out_path = Path(args.out) if args.out else (Path("/tmp/model-profiles-trackb-dryrun.json") if args.dry_run else None)
         dest = update_family_json(fam_slug, cp["id"], summary, out_path=out_path)
         m = summary["metrics"]
         print(
-            f"[Track B] {cp['id']} -> {dest} | "
-            f"syco={m['sycophantic_cave']['k_of_n']} preach={m['unsolicited_preachiness']['k_of_n']} "
-            f"direct={m['answer_first_direct']['k_of_n']} slop100w={m['slop_markers_per_100w']} "
-            f"cost=${summary['cost_usd']:.4f}"
+            f"[Track B] {cp['id']} -> {dest} | status={summary['status']} | conc={summary['effective_concurrency']} | "
+            f"failures={summary['failures']['total']} | syco={m['sycophantic_cave']['k_of_n']} "
+            f"preach={m['unsolicited_preachiness']['k_of_n']} direct={m['answer_first_direct']['k_of_n']} "
+            f"slop100w={m['slop_markers_per_100w']} cost=${summary['cost_usd']:.4f}"
         )
+        if summary.get("aborted_402"):
+            print(
+                f"ERROR: Hard stop on HTTP 402 (insufficient OpenRouter credits) during {cp['id']} Track B; "
+                f"saved earlier cached probes to {dest}. Refill credits before resuming.",
+                file=sys.stderr,
+            )
+            return 2
     return 0
 
 
