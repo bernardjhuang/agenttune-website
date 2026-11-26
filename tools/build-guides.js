@@ -284,7 +284,8 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
     `<a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a>`,
     ...(research ? ['<a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a>'] : [])
   ].join(" · ");
-  const tldrLabel = models ? "Assistant Self-Report Summary:" : research ? "Summary:" : "Quick answer:";
+  const tldrLabel = models ? "In short:" : research ? "Summary:" : "Quick answer:";
+  const dekText = models ? (spec.goal_intro || spec.dek || "") : (spec.dek || "");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -354,8 +355,8 @@ ${navHtml(section)}
         <p class="page-eyebrow">${escHtml(spec.pill)}</p>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time> · <span class="guide-readtime">~${estimateReadMinutes(spec)} min read</span> · ${datelineExtras}</p>
-        ${isMonograph && spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
-        <div class="guide-tldr" role="note" aria-label="${models ? "Assistant self-report summary" : research ? "Summary" : "Quick answer"}"><strong>${tldrLabel}</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
+        ${isMonograph && dekText ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(dekText))}</p>` : ""}
+        <div class="guide-tldr" role="note" aria-label="${models ? "Quick summary" : research ? "Summary" : "Quick answer"}"><strong>${tldrLabel}</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
       </section>
 
 

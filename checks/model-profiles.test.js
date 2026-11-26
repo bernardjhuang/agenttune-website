@@ -30,8 +30,8 @@ function walkFiles(dir, pred = () => true) {
   });
 }
 
-// Group 1: Schema, bounds, epistemic framing & template invariants
-test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic framing hold', () => {
+// Group 1: Schema, bounds, 8-section plain-language order, zero jargon in §§1-6 & Fine Print rigor
+test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-6 & Fine Print rigor hold', () => {
   const tpl = JSON.parse(fs.readFileSync(path.join(ROOT, 'models/src/_template.json'), 'utf8'));
   assert.equal(tpl.$schema, 'agenttune-model-profile-spec-v1');
   assert.ok(Array.isArray(tpl.top_polarized_items) && tpl.top_polarized_items.length >= 3);
@@ -48,8 +48,9 @@ test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic 
     validateDataset(dataset, dataset.family_slug);
   }
 
-  // Ensure built HTML pages exist (buildModels is deterministic and idempotent)
   buildModels();
+  const jargonRe = /\bH_MM\b|\bCrystalline\b|zero-memory elicitation|\bTrack B\b|\bBAI\b|protocol|imported-[a-z0-9-]+-170/i;
+
   for (const { dataset } of items) {
     const slug = dataset.family_slug;
     const htmlPath = path.join(ROOT, 'models', `${slug}.html`);
@@ -58,12 +59,36 @@ test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic 
     assert.ok(fs.existsSync(mdPath), `Missing models/${slug}.md`);
 
     const html = fs.readFileSync(htmlPath, 'utf8');
-    assert.match(html, /assistant self-report defaults under fixed zero-memory elicitation/i);
-    assert.match(html, /Crystalline|Semi-crystalline|Fluid/);
-    assert.match(html, /10–50|10-50/);
-    assert.match(html, /1\.00–5\.00|1-5/);
-    assert.match(html, /LicenseRef-IPIP-Public-Domain/);
-    assert.match(html, /class="epistemic-ledger"/);
+    const md = fs.readFileSync(mdPath, 'utf8');
+
+    // Verify 8-section plain-language order ("at a glance" before "The fine print")
+    const idxGlance = html.indexOf('at a glance');
+    const idxFinePrint = html.indexOf('The fine print: how we tested and what the numbers mean');
+    assert.ok(idxGlance > 0, `${slug}: missing "at a glance" section`);
+    assert.ok(idxFinePrint > idxGlance, `${slug}: "at a glance" must precede "The fine print"`);
+
+    // Sections 1-6 (inside <main> before "The fine print" and in .md before "The fine print") MUST have zero jargon
+    const mainStart = html.indexOf('<main ');
+    assert.ok(mainStart > 0 && idxFinePrint > mainStart);
+    const htmlPreFinePrint = html.slice(mainStart, idxFinePrint);
+    const mdFineIdx = md.indexOf('The fine print: how we tested and what the numbers mean');
+    assert.ok(mdFineIdx > 0, `${slug}.md: missing Fine Print section`);
+    const mdPreFinePrint = md.slice(0, mdFineIdx);
+
+    assert.equal(jargonRe.test(htmlPreFinePrint), false, `${slug}.html §§1-6 leaked jargon: ${htmlPreFinePrint.match(jargonRe)?.[0]}`);
+    assert.equal(jargonRe.test(mdPreFinePrint), false, `${slug}.md §§1-6 leaked jargon: ${mdPreFinePrint.match(jargonRe)?.[0]}`);
+
+    // Never say a model "is" an MBTI or Enneagram type
+    assert.doesNotMatch(md, /\b(?:Opus|Sonnet|Sol|Spark|Wonder)\s+(?:[\d.]+\s+)?is\s+(?:an?\s+)?(?:INTJ|ISTJ|ENTP|INFJ|INTP|Type\s+\d)\b/);
+
+    // Fine Print & technical rigor assertions
+    const finePrintAndAfter = html.slice(idxFinePrint);
+    assert.match(finePrintAndAfter, /assistant self-report defaults under fixed zero-memory elicitation/i);
+    assert.match(finePrintAndAfter, /Crystalline|Semi-crystalline|Fluid/);
+    assert.match(finePrintAndAfter, /10–50|10-50/);
+    assert.match(finePrintAndAfter, /1\.00–5\.00|1-5/);
+    assert.match(finePrintAndAfter, /LicenseRef-IPIP-Public-Domain/);
+    assert.match(finePrintAndAfter, /class="epistemic-ledger"/);
     assert.match(html, /class="guide-table-wrap"/);
     assert.match(html, /class="research-chart-scroll"/);
     assert.match(html, /"@type":"BreadcrumbList"/);
@@ -74,12 +99,13 @@ test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic 
     assert.doesNotMatch(html, /<code>instruments_sha256=/);
 
     // 1x Track B must show k/3 + Wilson CI (when collected) or explicit pending notice, and never per-family % estimates
-    const tbBody = /Behavioral "Say vs\. Do"[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/.exec(html)?.[1] || '';
+    const tbSection = /<h3>Behavioral "Say vs\. Do"[\s\S]*?(?=<h3>|<div class="epistemic-ledger")/.exec(html)?.[0] || '';
+    const tbBody = /<tbody>([\s\S]*?)<\/tbody>/.exec(tbSection)?.[1] || '';
     if (tbBody) {
       assert.match(tbBody, /\b[0-3]\/3\b/);
       assert.doesNotMatch(tbBody, /\b\d+(?:\.\d+)?%/);
     } else {
-      assert.match(html, /Track B.*pending|Collection pending/i);
+      assert.match(tbSection, /Track B.*pending|Collection pending/i);
     }
   }
 });
@@ -174,7 +200,6 @@ test('Group 3: build parity, enhance-pages guards, _headers < 100, sitemap & zer
     );
   }
 
-  // No /tmp/ path leaks in site build scripts, generated HTML/MD, site-ui.js, headers, or sitemap
   const leakCheckFiles = [
     path.join(ROOT, 'tools/build-model-profiles.js'),
     path.join(ROOT, 'tools/model-profiles/render-charts.js'),
@@ -188,7 +213,6 @@ test('Group 3: build parity, enhance-pages guards, _headers < 100, sitemap & zer
     assert.equal(/\/tmp\//.test(text), false, `${path.relative(ROOT, file)} leaked /tmp/ path`);
   }
 
-  // Optional dist/ parity checks when dist/ is present
   const distModels = path.join(ROOT, 'dist/models');
   if (fs.existsSync(distModels)) {
     assert.ok(fs.existsSync(path.join(distModels, 'index.html')));
@@ -199,22 +223,21 @@ test('Group 3: build parity, enhance-pages guards, _headers < 100, sitemap & zer
     }
   }
 
-  // Verify site-ui.js routes and progressive filter/compare wiring
   const siteUi = fs.readFileSync(path.join(ROOT, 'site-ui.js'), 'utf8');
   assert.match(siteUi, /\['Hub','Model personality profiles \(25 families\)','\/models\/'\]/);
   assert.match(siteUi, /MAX_COMPARE=3/);
   assert.match(siteUi, /searchParams\.set\('compare'/);
 });
 
-// Group 4: SVG ID, ARIA, <desc> > 80c & non-NaN geometry hygiene
-test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c & finite dims', () => {
+// Group 4: SVG ID, ARIA, <desc> > 80c & non-NaN/non-overlapping geometry hygiene
+test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c & finite non-overlapping dims', () => {
   const modelPages = walkFiles(path.join(ROOT, 'models'), (f) => f.endsWith('.html') && !f.endsWith('index.html'));
   assert.ok(modelPages.length >= 1);
 
   for (const file of modelPages) {
     const html = fs.readFileSync(file, 'utf8');
     const svgs = [...html.matchAll(/<svg class="research-chart"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
-    assert.ok(svgs.length >= 3, `${path.basename(file)} should contain >= 3 SVG charts, got ${svgs.length}`);
+    assert.ok(svgs.length >= 6, `${path.basename(file)} should contain >= 6 SVG charts, got ${svgs.length}`);
     const allIds = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
     assert.equal(new Set(allIds).size, allIds.length, `Duplicate element IDs in ${path.basename(file)}`);
 
@@ -225,13 +248,13 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
       const desc = svg.match(/<desc[^>]*>([\s\S]*?)<\/desc>/)?.[1] || '';
       assert.ok(desc.length > 80, `${id}: <desc> too short (${desc.length})`);
       assert.doesNotMatch(svg, /NaN|Infinity|undefined/, id);
+      assert.doesNotMatch(svg, /\(earlier study\) \(earlier study\)/, id);
       for (const [, dim] of svg.matchAll(/\b(?:width|height|r)="(-?[0-9.]+)"/g)) {
         assert.ok(Number(dim) >= 0, `${id}: negative dimension ${dim}`);
       }
     }
   }
 
-  // Stress-check 25-row horizontalBars & heatmapMatrix exported via render-charts.js
   const rows25 = ROSTER_25.map((r, i) => ({
     label: r.name,
     value: 0.1 + i * 0.05,
@@ -263,25 +286,27 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
     }
   }
 
-  // Verify Attachment plane() keeps all label boxes inside plot bounds and pairwise non-overlapping
+  // Verify both Attachment planes (version trajectory + peer comparison) keep all labels inside plot bounds & non-overlapping
   const { items } = loadFamilies();
   const peers = items.map((i) => i.dataset);
   for (const ds of peers) {
-    const planeFig = renderCharts.renderAttachmentPlane(ds, peers);
-    const labels = [...planeFig.matchAll(/<text x="([0-9.]+)" y="([0-9.]+)" font-size="10\.5"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
-    assert.ok(labels.length >= peers.length, `${ds.family_slug}: missing labels in plane()`);
-    const boxes = labels.map(([, x, y, anchor, text]) => {
-      const lw = Math.ceil(text.length * 6.3 + 4);
-      const x1 = anchor === 'start' ? Number(x) - 2 : Number(x) - lw + 2;
-      const y1 = Number(y) - 11;
-      assert.ok(x1 >= 74, `${ds.family_slug}: label "${text}" encroaches on Y-axis area (x1=${x1})`);
-      return { text, x1, y1, x2: x1 + lw, y2: y1 + 14 };
-    });
-    for (let i = 0; i < boxes.length; i++) {
-      for (let j = i + 1; j < boxes.length; j++) {
-        const a = boxes[i], b = boxes[j];
-        const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
-        assert.equal(hit, false, `${ds.family_slug}: plane() labels overlap: "${a.text}" vs "${b.text}"`);
+    for (const planeFig of [renderCharts.renderAttachmentPlane(ds, peers), renderCharts.renderAttachmentTrajectory(ds)]) {
+      const labels = [...planeFig.matchAll(/<text x="([0-9.]+)" y="([0-9.]+)" font-size="10\.5"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
+      assert.ok(labels.length >= 1, `${ds.family_slug}: missing labels in plane()`);
+      const boxes = labels.map(([, x, y, anchor, text]) => {
+        const lw = Math.ceil(text.length * 6.3 + 4);
+        const x1 = anchor === 'start' ? Number(x) - 2 : Number(x) - lw + 2;
+        const y1 = Number(y) - 11;
+        assert.ok(x1 >= 74, `${ds.family_slug}: label "${text}" encroaches on Y-axis area (x1=${x1})`);
+        assert.ok(y1 + 14 <= 96 || y1 >= 110, `${ds.family_slug}: label "${text}" crosses y=4.0 threshold line (y1=${y1})`);
+        return { text, x1, y1, x2: x1 + lw, y2: y1 + 14 };
+      });
+      for (let i = 0; i < boxes.length; i++) {
+        for (let j = i + 1; j < boxes.length; j++) {
+          const a = boxes[i], b = boxes[j];
+          const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
+          assert.equal(hit, false, `${ds.family_slug}: plane() labels overlap: "${a.text}" vs "${b.text}"`);
+        }
       }
     }
   }

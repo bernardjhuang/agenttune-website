@@ -5,8 +5,16 @@
  *   2. Deterministic Stage 0 fixtures (models/src/_fixtures/<family>.{spec,dataset}.json)
  *      whenever live family datasets do not yet exist (or --fixture is passed).
  *
- * Usage:
- *   node tools/build-model-profiles.js [--fixture] [--family <slug>]
+ * 8-section plain-language, results-first layout (v3.2):
+ *   1. Hero (plain title, goal_intro, friendly disclaimer)
+ *   2. <Latest> at a glance (6 plain summary cards + simple visual bars)
+ *   3. How <Family> has changed, version by version (table + 4 charts + narrative)
+ *   4. What stands out (4-6 plain insights)
+ *   5. How to get the best out of <Family> (plain second-person tips + links)
+ *   6. How <Family> compares (peer comparison table + consistency & attachment charts)
+ *   7. The fine print: how we tested and what the numbers mean (all technical metrics,
+ *      CIs, H_MM, Crystalline tiers, BAI, Track B k/3 + Wilson CIs, provenance, 4-pt epistemic ledger)
+ *   8. Raw data, agent brief & FAQ
  */
 
 const fs = require('node:fs');
@@ -57,22 +65,6 @@ const ROSTER_25 = [
   { slug: 'cohere-command', name: 'Cohere Command', phase: 'B', tier: 'Open-wt/Prop', count: 3 }
 ];
 
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
-const f1 = (v) => Number(v).toFixed(1);
-const f2 = (v) => Number(v).toFixed(2);
-const f3 = (v) => Number(v).toFixed(3);
-const pctStr = (v) => `${(Number(v) * 100).toFixed(1)}%`;
-
-function assertNoBannedSynthetic(obj, label) {
-  const raw = typeof obj === 'string' ? obj : JSON.stringify(obj);
-  for (const term of BANNED_SYNTHETIC_TERMS) {
-    if (raw.includes(term)) {
-      throw new Error(`${label}: contains banned synthetic HEXACO reference "${term}"`);
-    }
-  }
-}
-
 const FAMILY_COLORS = {
   'claude-opus': '#a8482a',
   'claude-fable': '#c8553d',
@@ -85,9 +77,66 @@ const FAMILY_COLORS = {
   'deepseek-pro': '#3a72c4'
 };
 
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
+const f1 = (v) => Number(v).toFixed(1);
+const f2 = (v) => Number(v).toFixed(2);
+const f3 = (v) => Number(v).toFixed(3);
+const pctStr = (v) => `${(Number(v) * 100).toFixed(1)}%`;
+
+function stripJargon(text) {
+  return String(text || '')
+    .replace(/\bH_MM\b/g, 'answer spread')
+    .replace(/\bSemi-[Cc]rystalline\b/g, 'moderate consistency')
+    .replace(/\bCrystalline\b/g, 'very steady')
+    .replace(/\bFluid\b/g, 'variable')
+    .replace(/zero-memory elicitation/gi, 'fresh chats with no memory')
+    .replace(/\b1[×x]\s*Track B\b/gi, 'behavior tests')
+    .replace(/\bTrack B\b/gi, 'behavior tests')
+    .replace(/\bBAI\b/g, 'yea-saying balance')
+    .replace(/\bprotocol_id\b/gi, 'test setup')
+    .replace(/\bprotocol\b/gi, 'test method')
+    .replace(/imported-[a-z0-9-]+-170/gi, 'earlier study');
+}
+
 function shortCpLabel(id, name) {
   const raw = String(id || '').split('/').pop() || name || id;
   return raw.replace(/^(claude|gpt|deepseek|qwen|mistral|llama|gemini|minimax|nemotron)-/i, '').slice(0, 18);
+}
+
+function prettyCpName(id, name) {
+  if (name && !name.includes(':')) return name;
+  if (name && name.includes(':')) return name.split(':').slice(1).join(':').trim();
+  return shortCpLabel(id, name);
+}
+
+function extractTrackB(tb) {
+  if (!tb || !tb.metrics) return null;
+  const m = tb.metrics;
+  const rel = tb.judge_reliability || {};
+  const catMap = [
+    ['sycophantic_cave', 'sycophantic_cave', 'Sycophancy caving'],
+    ['groveling', 'groveling', 'Groveling / apology loops'],
+    ['unsolicited_preachiness', 'unsolicited_preachiness', 'Unsolicited preachiness'],
+    ['answer_first_direct', 'answer_first_direct', 'Answer-first directness'],
+    ['slop_ai_cadence', 'ai_cadence', 'AI cadence / slop markers']
+  ];
+  return {
+    protocol: tb.protocol_id || 'model-profiles-track-b-v1',
+    repeats: tb.repeats || 1,
+    judges: tb.judges || [],
+    slop_markers_per_100w: m.slop_markers_per_100w,
+    categories: catMap
+      .filter(([key]) => m[key])
+      .map(([key, relKey, label]) => ({
+        id: key,
+        label,
+        k: m[key].k,
+        n: m[key].n,
+        wilson_ci95: m[key].wilson_ci_95 || m[key].wilson_ci95 || [0, 1],
+        alpha: rel[relKey]?.krippendorff_alpha ?? null
+      }))
+  };
 }
 
 function normalizeDataset(raw, spec = {}) {
@@ -125,6 +174,8 @@ function normalizeDataset(raw, spec = {}) {
     return {
       checkpoint_id: cp.id,
       label: shortCpLabel(cp.id, cp.name),
+      pretty_name: prettyCpName(cp.id, cp.name),
+      release: cp.release || '',
       canonical_slug: cp.canonical_slug || cp.id,
       openrouter_status: cp.openrouter_status || 'active',
       eval_status: cp.eval_status || 'complete',
@@ -150,6 +201,10 @@ function normalizeDataset(raw, spec = {}) {
       },
       mbti: {
         modal_pattern: mbtiCls.modal_pattern || 'INTJ',
+        modal_non_tie: mbtiCls.modal_non_tie || mbtiCls.modal_pattern || 'INTJ',
+        modal_non_tie_count: mbtiCls.modal_non_tie_count ?? null,
+        tie_count: mbtiCls.tie_count ?? null,
+        pattern_counts: mbtiCls.pattern_counts || null,
         tie_rate: mbtiCls.tie_rate ?? 0,
         headline_allowed: Boolean(mbtiCls.headline_allowed),
         modal_share: mbtiCls.modal_non_tie_share ?? 0,
@@ -162,6 +217,7 @@ function normalizeDataset(raw, spec = {}) {
         midpoint_clamp: Boolean(att.midpoint_clamp)
       },
       entropy_b5_hmm: b5Entropy.miller_madow_bits ?? bat.miller_madow_bits ?? 0,
+      battery_hmm: bat.miller_madow_bits ?? null,
       crystallinity_tier: b5Entropy.crystallinity_tier || bat.crystallinity_tier || 'Semi-crystalline',
       unique_b5_ratio: uniqueRatioStr,
       neutral_rate: b5.neutral_rate ?? bat.neutral_rate ?? 0,
@@ -169,7 +225,8 @@ function normalizeDataset(raw, spec = {}) {
       rev_key_contradiction_rate: b5.reverse_key_contradiction_rate ?? bat.reverse_key_contradiction_rate ?? 0,
       mbti_tie_rate: mbtiCls.tie_rate ?? 0,
       headline_allowed: Boolean(mbtiCls.headline_allowed),
-      modal_mbti: mbtiCls.modal_pattern || 'INTJ'
+      modal_mbti: mbtiCls.modal_pattern || 'INTJ',
+      track_b: cp.track_b ? extractTrackB(cp.track_b) : null
     };
   });
 
@@ -184,32 +241,7 @@ function normalizeDataset(raw, spec = {}) {
   const latestRawCp = cpObjs.find((cp) => cp.id === (latest ? latest.checkpoint_id : '')) || cpObjs[cpObjs.length - 1];
   let normalizedTrackB = raw.track_b || spec.track_b || null;
   if (!normalizedTrackB && latestRawCp && latestRawCp.track_b && latestRawCp.track_b.metrics) {
-    const tb = latestRawCp.track_b;
-    const m = tb.metrics;
-    const rel = tb.judge_reliability || {};
-    const catMap = [
-      ['sycophantic_cave', 'sycophantic_cave', 'Sycophancy Caving'],
-      ['groveling', 'groveling', 'Groveling / Apology Loops'],
-      ['unsolicited_preachiness', 'unsolicited_preachiness', 'Unsolicited Preachiness'],
-      ['answer_first_direct', 'answer_first_direct', 'Answer-First Directness'],
-      ['slop_ai_cadence', 'ai_cadence', 'AI Cadence / Slop Markers']
-    ];
-    normalizedTrackB = {
-      protocol: tb.protocol_id || 'model-profiles-track-b-v1',
-      repeats: tb.repeats || 1,
-      judges: tb.judges || [],
-      slop_markers_per_100w: m.slop_markers_per_100w,
-      categories: catMap
-        .filter(([key]) => m[key])
-        .map(([key, relKey, label]) => ({
-          id: key,
-          label,
-          k: m[key].k,
-          n: m[key].n,
-          wilson_ci95: m[key].wilson_ci_95 || m[key].wilson_ci95 || [0, 1],
-          alpha: rel[relKey]?.krippendorff_alpha ?? null
-        }))
-    };
+    normalizedTrackB = extractTrackB(latestRawCp.track_b);
   }
 
   return {
@@ -230,6 +262,15 @@ function normalizeDataset(raw, spec = {}) {
     historical_anchors: raw.historical_anchors || spec.historical_anchors || [],
     track_b: normalizedTrackB
   };
+}
+
+function assertNoBannedSynthetic(obj, label) {
+  const raw = typeof obj === 'string' ? obj : JSON.stringify(obj);
+  for (const term of BANNED_SYNTHETIC_TERMS) {
+    if (raw.includes(term)) {
+      throw new Error(`${label}: contains banned synthetic HEXACO reference "${term}"`);
+    }
+  }
 }
 
 function validateSpec(spec, sourceName = spec.family_slug) {
@@ -300,7 +341,293 @@ function table(heads, rows) {
   return `<div class="guide-table-wrap"><table><thead><tr>${heads.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c, i) => (i ? `<td>${c}</td>` : `<th scope="row">${c}</th>`)).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
 
-function buildSection01(spec, dataset, peerDatasets) {
+// ---------- Helpers for plain-language MBTI & fallback derivation ----------
+
+function describeMbtiPlain(cp) {
+  const m = cp.mbti || {};
+  const n = Math.max(1, Number(cp.n_valid || 1));
+  const counts = m.pattern_counts || null;
+  const nonTie = m.modal_non_tie || m.modal_pattern || 'INTJ';
+  if (counts) {
+    let clearCnt = 0;
+    let tieCnt = 0;
+    for (const [pat, cnt] of Object.entries(counts)) {
+      if (pat.includes('X')) tieCnt += Number(cnt || 0);
+      else if (pat === nonTie) clearCnt += Number(cnt || 0);
+    }
+    const clearPct = Math.round((clearCnt / n) * 100);
+    const tiePct = Math.round((tieCnt / n) * 100);
+    if (tieCnt > 0) {
+      return `${nonTie} (${clearPct}% clear, ${tiePct}% border/tie)`;
+    }
+    return `${nonTie} (${clearPct}% clear)`;
+  }
+  const tiePct = Math.round(Number(cp.mbti_tie_rate || 0) * 100);
+  if (tiePct > 0) return `${nonTie} (${100 - tiePct}% clear, ${tiePct}% border/tie)`;
+  return `${nonTie}`;
+}
+
+function defaultGlanceCards(dataset) {
+  const cp = getLatestCheckpoint(dataset);
+  const b5 = cp.big_five;
+  const hx = cp.ipip_hexaco;
+  const disc = cp.disc;
+  const ennea = cp.enneagram;
+  const att = cp.attachment;
+  const mbtiDesc = describeMbtiPlain(cp);
+  const topEnnea = ennea.top_types && ennea.top_types[0] ? ennea.top_types[0].label : 'Type 5';
+
+  return [
+    {
+      key: 'mbti',
+      title: 'MBTI-style type',
+      result: `Most often tests as ${mbtiDesc}`,
+      summary: `${cp.mbti?.tie_rate > 0 ? `Across ${cp.n_valid} fresh chats, ${Math.round(cp.mbti.tie_rate * 100)}% of runs landed right on an axis tie rather than a clean four-letter preference.` : `Across ${cp.n_valid} fresh chats, answers resolved cleanly without axis ties.`}`,
+      explanation: 'Measures four work-style pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-item survey.'
+    },
+    {
+      key: 'disc',
+      title: 'DISC work style',
+      result: `Mostly ${disc.modal_pattern} (S=${f1(disc.S.mean)}, C=${f1(disc.C.mean)} out of 20)`,
+      summary: `Steadiness (${f1(disc.S.mean)}) and Conscientiousness (${f1(disc.C.mean)}) sit well above Dominance (${f1(disc.D.mean)}) and Influence (${f1(disc.I.mean)}).`,
+      explanation: 'Measures workplace style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 per trait).'
+    },
+    {
+      key: 'attachment',
+      title: 'Attachment style',
+      result: `${att.classification} (Anxiety ${f2(att.anxiety.mean)}, Avoidance ${f2(att.avoidance.mean)} on 1–7)`,
+      summary: `Both coordinates sit below the 4.00 boundary on a 1–7 scale${att.midpoint_clamp ? ', though neutral-midpoint answers are common on relationship wording' : ''}.`,
+      explanation: 'Adapts a 36-item relationship survey measuring anxious vs. avoidant leaning around a 4.00 midpoint.'
+    },
+    {
+      key: 'enneagram',
+      title: 'Enneagram',
+      result: `${topEnnea} leads (${Math.round(ennea.tie_rate * 100)}% top ties)`,
+      summary: `Top average scores: ${ennea.top_types.map((t) => `${t.label} (${f1(t.mean)}/20)`).join(', ')}.`,
+      explanation: 'Measures nine motivational archetypes on a 36-item survey (4–20 points per type).'
+    },
+    {
+      key: 'big_five',
+      title: 'Big Five (OCEAN)',
+      result: `High Agreeableness (${f1(b5.A.mean)}/50) & Openness (${f1(b5.O.mean)}/50)`,
+      summary: `Warm, organized (${f1(b5.C.mean)}/50), and calm (${f1(b5.N.mean)}/50 Neuroticism), with moderate Extraversion (${f1(b5.E.mean)}/50).`,
+      explanation: 'The standard five-factor personality model, scored 10–50 per trait.'
+    },
+    {
+      key: 'hexaco',
+      title: 'HEXACO Honesty-Humility',
+      result: `${f2(hx.H.mean)} out of 5.00`,
+      summary: `Reports strong sincerity, fairness, and modesty (${f2(hx.H.mean)}/5) alongside high Conscientiousness (${f2(hx.C.mean)}/5).`,
+      explanation: 'Public-domain 60-item survey adding Honesty-Humility on a 1.00–5.00 scale.'
+    }
+  ];
+}
+
+function renderMiniBars(items, min, max, decimals) {
+  return `<div class="model-mini-bars">${items.map(([lbl, val, color]) => {
+    const pct = Math.max(4, Math.min(100, Math.round(((val - min) / (max - min)) * 100)));
+    return `<div class="model-mini-bar-row" style="display:grid;grid-template-columns:112px 1fr 44px;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;">
+      <span>${esc(lbl)}</span>
+      <span style="display:block;height:8px;background:#ece5d8;border-radius:2px;overflow:hidden;"><span style="display:block;height:100%;width:${pct}%;background:${color};"></span></span>
+      <span style="text-align:right;font-variant-numeric:tabular-nums;font-weight:600;">${Number(val).toFixed(decimals)}</span>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderMbtiGlanceBar(cp) {
+  const n = Math.max(1, Number(cp.n_valid || 1));
+  const counts = cp.mbti?.pattern_counts || null;
+  const modalNonTie = cp.mbti?.modal_non_tie || cp.mbti?.modal_pattern || 'INTJ';
+  let pClear = 0, pTie = 0, pOther = 0;
+  if (counts) {
+    let c = 0, t = 0, o = 0;
+    for (const [pat, cnt] of Object.entries(counts)) {
+      if (pat.includes('X')) t += Number(cnt || 0);
+      else if (pat === modalNonTie) c += Number(cnt || 0);
+      else o += Number(cnt || 0);
+    }
+    pClear = Math.round((c / n) * 100);
+    pTie = Math.round((t / n) * 100);
+    pOther = Math.max(0, 100 - pClear - pTie);
+  } else {
+    pTie = Math.round(Number(cp.mbti_tie_rate || 0) * 100);
+    pClear = Math.max(0, 100 - pTie);
+  }
+  return `<div style="margin:8px 0;">
+    <div style="display:flex;height:12px;border-radius:2px;overflow:hidden;border:1px solid var(--border);background:#ece5d8;">
+      ${pClear ? `<span title="Clear ${escAttr(modalNonTie)}: ${pClear}%" style="width:${pClear}%;background:#a8482a;"></span>` : ''}
+      ${pTie ? `<span title="On a border / tie: ${pTie}%" style="width:${pTie}%;background:repeating-linear-gradient(45deg,#f4efe6,#f4efe6 3px,#a8482a 3px,#a8482a 5px);"></span>` : ''}
+      ${pOther ? `<span title="Other clear type: ${pOther}%" style="width:${pOther}%;background:#7a7468;"></span>` : ''}
+    </div>
+    <div style="font-size:11.5px;color:var(--muted);margin-top:4px;">${pClear}% clear ${esc(modalNonTie)} · ${pTie}% border/tie${pOther ? ` · ${pOther}% other` : ''}</div>
+  </div>`;
+}
+
+// ---------- Section Builders (8-Section Plain-Language Order) ----------
+
+function buildSectionAtAGlance(spec, dataset) {
+  const cp = getLatestCheckpoint(dataset);
+  const cards = Array.isArray(spec.glance_cards) && spec.glance_cards.length
+    ? spec.glance_cards
+    : defaultGlanceCards(dataset);
+
+  const cardsHtml = cards.map((card) => {
+    let visual = '';
+    if (card.key === 'mbti') {
+      visual = renderMbtiGlanceBar(cp);
+    } else if (card.key === 'big_five') {
+      const b5 = cp.big_five;
+      visual = renderMiniBars([
+        ['Openness', b5.O.mean, '#1e1d1a'],
+        ['Conscientious', b5.C.mean, '#2f8a5b'],
+        ['Extraversion', b5.E.mean, '#5b4dc0'],
+        ['Agreeable', b5.A.mean, '#a8482a'],
+        ['Neuroticism', b5.N.mean, '#3a72c4']
+      ], 10, 50, 1);
+    } else if (card.key === 'hexaco') {
+      const hx = cp.ipip_hexaco;
+      visual = renderMiniBars([
+        ['Honesty-Humil.', hx.H.mean, '#a8482a'],
+        ['Conscientious', hx.C.mean, '#2f8a5b'],
+        ['Agreeable', hx.A.mean, '#3a72c4']
+      ], 1, 5, 2);
+    }
+    return `<article class="hub-article-card" style="padding:16px 18px;border:1px solid var(--border);border-top:2px solid var(--ink);border-radius:3px;background:var(--surface);">
+      <div class="card-meta" style="font-size:11.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);">${esc(card.title)}</div>
+      <h3 style="font-family:var(--font-serif);font-size:19px;margin:6px 0 6px;color:var(--ink);">${esc(stripJargon(card.result))}</h3>
+      ${visual}
+      <p style="font-size:14px;line-height:1.5;margin:6px 0;">${esc(stripJargon(card.summary))}</p>
+      <p style="font-size:12.5px;line-height:1.45;color:var(--muted);margin:6px 0 0;">${esc(stripJargon(card.explanation))}</p>
+    </article>`;
+  }).join('\n');
+
+  return `<p>Results below come from <strong>${cp.n_valid}</strong> fresh-chat runs of <strong>${esc(cp.pretty_name || cp.label)}</strong> (no prior conversation memory).</p>
+  <div class="model-glance-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:16px 0 22px;">
+    ${cardsHtml}
+  </div>`;
+}
+
+function buildSectionVersionHistory(spec, dataset) {
+  const cps = dataset.checkpoints || [];
+  const rows = cps.map((c) => {
+    const b5 = c.big_five;
+    const att = c.attachment;
+    const enneaTop = c.enneagram?.top_types?.[0];
+    return [
+      `<strong>${esc(c.pretty_name || c.label)}</strong>${c.release ? `<br><span style="font-size:12px;color:var(--muted);">${esc(c.release)}</span>` : ''}`,
+      esc(describeMbtiPlain(c)),
+      esc(c.disc?.modal_pattern || '—'),
+      enneaTop ? `${esc(enneaTop.label)} (${f1(enneaTop.mean)})` : '—',
+      att ? `${esc(att.classification)} (${f2(att.anxiety.mean)} / ${f2(att.avoidance.mean)})` : '—',
+      `${f1(b5.A.mean)} · ${f1(b5.C.mean)} · ${f1(b5.N.mean)}`,
+      f2(c.ipip_hexaco.H.mean),
+      esc(renderCharts.plainConsistencyLabel(c.crystallinity_tier))
+    ];
+  });
+
+  const narrative = spec.history_narrative
+    ? stripJargon(spec.history_narrative)
+    : `Across ${cps.length} tested ${dataset.name} releases, Agreeableness stays high (${cps.map((c) => f1(c.big_five.A.mean)).join(' → ')} out of 50) while Attachment remains Secure across every version.`;
+
+  return [
+    table([
+      'Version',
+      'MBTI result',
+      'DISC pattern',
+      'Enneagram top',
+      'Attachment (Anx / Avd)',
+      'Big Five A · C · N (/50)',
+      'HEXACO H (/5)',
+      'Consistency'
+    ], rows),
+    `<p>${esc(narrative)}</p>`,
+    renderCharts.renderMbtiVersionStacked(dataset),
+    renderCharts.renderDiscVersionBars(dataset),
+    renderCharts.renderAttachmentTrajectory(dataset),
+    renderCharts.renderTrajectoryChart(dataset)
+  ].join('\n');
+}
+
+function buildSectionStandouts(spec, dataset) {
+  const cp = getLatestCheckpoint(dataset);
+  let standouts = Array.isArray(spec.standouts) && spec.standouts.length ? spec.standouts : null;
+
+  if (!standouts) {
+    standouts = [];
+    if (dataset.track_b && Array.isArray(dataset.track_b.categories) && dataset.track_b.categories.length) {
+      const syco = dataset.track_b.categories.find((c) => c.id.includes('syco'));
+      const direct = dataset.track_b.categories.find((c) => c.id.includes('direct'));
+      if (syco && direct) {
+        standouts.push({
+          title: 'What happened in behavior tests',
+          body: `In fresh behavior tests, this model caved to pushback ${syco.k} of ${syco.n} times and led with a direct answer ${direct.k} of ${direct.n} times.`
+        });
+      }
+    }
+    standouts.push({
+      title: `Answer consistency: ${renderCharts.plainConsistencyLabel(cp.crystallinity_tier).toLowerCase()}`,
+      body: `Across ${cp.n_valid} fresh chats, ${esc(cp.unique_b5_ratio)} Big Five answer sheets were unique (${f3(cp.entropy_b5_hmm)} bits spread).`
+    });
+    for (const f of (spec.failure_modes || []).slice(0, 3)) {
+      standouts.push({
+        title: stripJargon(f.mode),
+        body: stripJargon(f.evidence)
+      });
+    }
+  }
+
+  const cards = standouts.map((s) =>
+    `<div style="padding:14px 16px;border-left:3px solid var(--accent-text);background:var(--well);margin-bottom:12px;">
+      <div style="font-weight:600;color:var(--ink);margin-bottom:4px;">${esc(stripJargon(s.title))}</div>
+      <div style="font-size:14.5px;line-height:1.55;color:var(--ink-2);">${esc(stripJargon(s.body))}</div>
+    </div>`
+  ).join('\n');
+
+  return cards;
+}
+
+function buildSectionTips(spec, dataset) {
+  const tips = Array.isArray(spec.plain_tips) && spec.plain_tips.length
+    ? spec.plain_tips
+    : (spec.tuning_checklist || []);
+  const listHtml = `<ol>${tips.slice(0, 10).map((t) => {
+    if (typeof t === 'string') return `<li>${esc(stripJargon(t))}</li>`;
+    return `<li><strong>${esc(stripJargon(t.rule))}</strong>${t.why ? ` — ${esc(stripJargon(t.why))}` : ''}</li>`;
+  }).join('')}</ol>`;
+
+  return [
+    `<p>Practical rules tailored to <strong>${esc(dataset.name)}</strong>. Keep system instructions short (5–8 concrete rules) so the model follows every line reliably.</p>`,
+    listHtml,
+    `<p><strong>Put these into practice:</strong> <a href="/tools/custom-instructions-generator?model=${escAttr(dataset.family_slug)}">Open pre-filled Custom Instructions Generator →</a> · <a href="/guides/stop-ai-sycophancy-make-ai-push-back">How to get honest pushback</a> · <a href="/guides/ai-instruction-precedence-overrides">System vs. user instructions</a>.</p>`
+  ].join('\n');
+}
+
+function buildSectionCompares(spec, dataset, peerDatasets) {
+  const peerRows = spec.nearest_peers.map((p) => [
+    `<a href="/models/${escAttr(p.family_slug)}">${esc(p.name)}</a> (${esc(p.tier)})`,
+    `${p.deltas.O >= 0 ? '+' : ''}${f1(p.deltas.O)}`,
+    `${p.deltas.C >= 0 ? '+' : ''}${f1(p.deltas.C)}`,
+    `${p.deltas.E >= 0 ? '+' : ''}${f1(p.deltas.E)}`,
+    `${p.deltas.A >= 0 ? '+' : ''}${f1(p.deltas.A)}`,
+    `${p.deltas.N >= 0 ? '+' : ''}${f1(p.deltas.N)}`,
+    `${p.deltas.H_hexaco >= 0 ? '+' : ''}${f2(p.deltas.H_hexaco)}`,
+    `${p.deltas.entropy_bits >= 0 ? '+' : ''}${f3(p.deltas.entropy_bits)} b`,
+    esc(stripJargon(p.contrast_note))
+  ]);
+
+  const intro = spec.peer_intro
+    ? stripJargon(spec.peer_intro)
+    : `How ${dataset.name} compares to peer AI families tested under the same fresh-chat setup. Positive numbers mean the peer scored higher than ${dataset.name}.`;
+
+  return [
+    `<p>${esc(intro)}</p>`,
+    table(['Peer family', 'Δ Openness', 'Δ Conscientious', 'Δ Extraversion', 'Δ Agreeable', 'Δ Neuroticism', 'Δ HEXACO H (/5)', 'Δ Answer spread', 'Key difference'], peerRows),
+    renderCharts.renderPeerEntropyBars(dataset, peerDatasets),
+    renderCharts.renderAttachmentPlane(dataset, peerDatasets)
+  ].join('\n');
+}
+
+function buildSectionFinePrint(spec, dataset, peerDatasets) {
   const cp = getLatestCheckpoint(dataset);
   const b5 = cp.big_five;
   const hx = cp.ipip_hexaco;
@@ -310,19 +637,29 @@ function buildSection01(spec, dataset, peerDatasets) {
   const att = cp.attachment;
 
   const mbtiDisplay = cp.headline_allowed
-    ? `${esc(mbti.modal_pattern)} (${Math.round((mbti.modal_share || 0) * 100)}% mode)`
+    ? `${esc(mbti.modal_pattern)} (${Math.round((mbti.modal_share || 0) * 100)}% clear mode)`
     : `Suppressed (tie/CI overlap · ${esc(mbti.modal_pattern)})`;
 
-  const statStrip = `<div class="research-stat-strip" aria-label="Snapshot validity metrics">
+  const glossaryHtml = `<div class="epistemic-ledger" role="note" aria-label="Plain-language metric glossary" style="margin-top:8px;">
+    <div class="epistemic-ledger-title">Glossary of Technical Terms Used Below</div>
+    <div class="epistemic-ledger-grid">
+      <div><strong>Consistency (<code>H_MM</code> &amp; Crystalline tiers):</strong> Miller-Madow corrected per-item Shannon entropy measures how similar the answers are run to run (0 = identical every time; 2.322 = uniform random). Tiers: <code>&lt;0.20</code> Crystalline, <code>0.20–0.75</code> Semi-crystalline, <code>&ge;0.75</code> Fluid.</div>
+      <div><strong>Fresh chat (zero-memory elicitation):</strong> Each administration runs in a brand-new API session with no chat history, fixed temperature/reasoning settings, and numeric JSON output.</div>
+      <div><strong>Acquiescence (<code>BAI</code>) &amp; ties:</strong> Trait-Balanced Acquiescence Index measures yea-saying vs. rejecting negative statements across balanced +/- items. Exact ties stay visible as <code>X</code> axes rather than defaulting to INTJ.</div>
+      <div><strong>Track B behavior tests:</strong> 12 stress probes (3 per category) scored by an orthogonal 3-family judge panel. At <code>1×</code> (<code>n=3</code>), we report raw <code>k/3</code> counts and 95% Wilson intervals—never percentages.</div>
+    </div>
+  </div>`;
+
+  const statStrip = `<div class="research-stat-strip" aria-label="Technical validity metrics">
     <div class="research-stat-card" style="border-top-color: ${escAttr(dataset.color || '#a8482a')};">
       <div class="research-stat-num">${f3(cp.entropy_b5_hmm)} bits</div>
       <div class="research-stat-label">${esc(cp.crystallinity_tier)} (H_MM)</div>
-      <div class="research-stat-note">Miller-Madow corrected Big Five item Shannon entropy (max 2.322).</div>
+      <div class="research-stat-note">50-item Big Five Miller-Madow entropy (max 2.322).</div>
     </div>
     <div class="research-stat-card" style="border-top-color: #5b4dc0;">
       <div class="research-stat-num">${esc(cp.unique_b5_ratio)} · ${pctStr(cp.mbti_tie_rate)} ties</div>
       <div class="research-stat-label">Unique Vectors &amp; MBTI Ties</div>
-      <div class="research-stat-note">${cp.headline_allowed ? `Modal ${esc(mbti.modal_pattern)} separates from runner-up beyond 95% CI.` : 'Headline 4-letter label suppressed (binomial 95% CI overlap).'}</div>
+      <div class="research-stat-note">${cp.headline_allowed ? `Modal ${esc(mbti.modal_pattern)} clears runner-up beyond 95% CI.` : 'Single 4-letter headline suppressed (binomial 95% CI overlap).'}</div>
     </div>
     <div class="research-stat-card" style="border-top-color: #2f8a5b;">
       <div class="research-stat-num">${pctStr(cp.neutral_rate)}</div>
@@ -387,24 +724,8 @@ function buildSection01(spec, dataset, peerDatasets) {
     ]
   ];
 
-  const protoNotice = `<p><strong>Epistemic framing:</strong> Every number below reflects <em>assistant self-report defaults under fixed zero-memory elicitation</em> across <code>n = ${cp.n_valid}</code> fresh sessions of <code>${esc(cp.checkpoint_id)}</code> (<code>${esc(cp.crystallinity_tier)}</code>, <code>${pctStr(cp.mbti_tie_rate)}</code> MBTI axis tie rate). Big Five sums use a <strong>10–50</strong> scale while the public-domain IPIP-HEXACO proxy uses a <strong>1.00–5.00</strong> mean scale (kept strictly separate from copyright-restricted commercial norms and synthetic alignment proxies).</p>`;
-
-  const codeWrap = (label, val) => `${label}: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(val)}</code>`;
-  const validityStamp = `<p class="model-protocol-stamp" style="overflow-wrap:anywhere;word-break:break-word;"><strong>Protocol stamp:</strong> ${codeWrap('protocol_id', cp.protocol_id)} · ${codeWrap('canonical_slug', cp.canonical_slug)} · ${codeWrap('sampling_mode', cp.sampling_mode)} · ${codeWrap('effective_reasoning_effort', cp.effective_reasoning_effort)} · ${codeWrap('refusal_rate', pctStr(cp.refusal_rate))} · ${codeWrap('retry_rate', pctStr(cp.retry_rate))} · instruments_sha256: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.questions_json.slice(0, 12))}</code> / <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.ipip_hexaco_60.slice(0, 12))}</code>${dataset.data_status === 'stage0_fixture' ? ' · <em>Stage 0 fixture preview</em>' : ''}.</p>`;
-
-  return [
-    protoNotice,
-    statStrip,
-    table(['Instrument', 'Scale', 'Mean / Classification', 'Sample SD', '95% Bootstrap CI', 'Validity &amp; Ties'], instrumentRows),
-    validityStamp,
-    renderCharts.renderB5TraitSpectrum(dataset, peerDatasets),
-    renderCharts.renderHexacoSpectrum(dataset, peerDatasets)
-  ].join('\n');
-}
-
-function buildSection02(dataset) {
   const cps = dataset.checkpoints || [];
-  const rows = cps.map((c) => [
+  const provRows = cps.map((c) => [
     `<code>${esc(c.checkpoint_id)}</code>`,
     `<code>${esc(c.openrouter_status)}</code>`,
     `<code>${esc(c.protocol_id)}</code>`,
@@ -416,7 +737,7 @@ function buildSection02(dataset) {
     `H ${f2(c.ipip_hexaco.H.mean)} (1–5 IPIP)`
   ]);
   for (const a of dataset.historical_anchors || []) {
-    rows.push([
+    provRows.push([
       `<code>${esc(a.checkpoint_id)}</code> (anchor)`,
       '<code>imported</code>',
       `<code>${esc(a.protocol_id)}</code>`,
@@ -428,30 +749,9 @@ function buildSection02(dataset) {
       '<code>hexaco: null</code> (170-item)'
     ]);
   }
-  const fig = renderCharts.renderTrajectoryChart(dataset);
-  const anchorNote = (dataset.historical_anchors || []).length
-    ? `<p><strong>Historical cohort separation:</strong> Overlapping 170-item cohorts (<code>imported-nov2026-170</code> / <code>imported-sep2026-170</code>) carry <code>hexaco: null</code> and are rendered strictly as dashed/hollow anchors—never interpolated onto <code>model-profiles-v1</code> lines.</p>`
-    : '';
-  return [
-    `<p>Release trajectory across ${cps.length} checkpoints (oldest → newest) under unified <code>model-profiles-v1</code> elicitation.</p>`,
-    fig,
-    anchorNote,
-    table(['Checkpoint', 'OpenRouter Status', 'Protocol', 'n', 'Sampling', 'Reasoning', 'Refusal / Retry', 'B5 H_MM', 'IPIP-HEXACO'], rows)
-  ].join('\n');
-}
 
-function buildSection03(spec, dataset, peerDatasets) {
-  const peerRows = spec.nearest_peers.map((p) => [
-    `<a href="/models/${escAttr(p.family_slug)}">${esc(p.name)}</a> (${esc(p.tier)})`,
-    `${p.deltas.O >= 0 ? '+' : ''}${f1(p.deltas.O)}`,
-    `${p.deltas.C >= 0 ? '+' : ''}${f1(p.deltas.C)}`,
-    `${p.deltas.E >= 0 ? '+' : ''}${f1(p.deltas.E)}`,
-    `${p.deltas.A >= 0 ? '+' : ''}${f1(p.deltas.A)}`,
-    `${p.deltas.N >= 0 ? '+' : ''}${f1(p.deltas.N)}`,
-    `${p.deltas.H_hexaco >= 0 ? '+' : ''}${f2(p.deltas.H_hexaco)}`,
-    `${p.deltas.entropy_bits >= 0 ? '+' : ''}${f3(p.deltas.entropy_bits)} b`,
-    esc(p.contrast_note)
-  ]);
+  const codeWrap = (label, val) => `${label}: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(val)}</code>`;
+  const validityStamp = `<p class="model-protocol-stamp" style="overflow-wrap:anywhere;word-break:break-word;"><strong>Protocol stamp:</strong> ${codeWrap('protocol_id', cp.protocol_id)} · ${codeWrap('canonical_slug', cp.canonical_slug)} · ${codeWrap('sampling_mode', cp.sampling_mode)} · ${codeWrap('effective_reasoning_effort', cp.effective_reasoning_effort)} · ${codeWrap('refusal_rate', pctStr(cp.refusal_rate))} · ${codeWrap('retry_rate', pctStr(cp.retry_rate))} · instruments_sha256: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.questions_json.slice(0, 12))}</code> / <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.ipip_hexaco_60.slice(0, 12))}</code>${dataset.data_status === 'stage0_fixture' ? ' · <em>Stage 0 fixture preview</em>' : ''}.</p>`;
 
   const itemRows = spec.top_polarized_items.map((it) => [
     `<code>${esc(it.item_id)}</code>`,
@@ -469,42 +769,15 @@ function buildSection03(spec, dataset, peerDatasets) {
       esc(c.label),
       `${c.k}/${c.n}`,
       `[${f2(c.wilson_ci95[0])}, ${f2(c.wilson_ci95[1])}]`,
+      c.alpha != null ? f2(c.alpha) : '—',
       esc((tb.judges || []).join(', '))
     ]);
     trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts &amp; Wilson 95% CIs)</h3><p>Because a single <code>1×</code> sweep runs <code>n = 3</code> probes per category, raw <code>k/3</code> hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: <code>${esc((tb.judges || []).join(', '))}</code>.</p>` +
-      table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Orthogonal 3-Family Jury'], trackBRows);
+      table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Judge Alpha', 'Orthogonal 3-Family Jury'], trackBRows);
   } else {
     trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B)</h3><p><strong>Collection pending:</strong> 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.</p>`;
   }
 
-  const failureList = `<ul>${spec.failure_modes.map((f) => `<li><strong>${esc(f.mode)}:</strong> ${esc(f.evidence)} (<a href="${escAttr(f.source_study)}">Read empirical study →</a>)</li>`).join('')}</ul>`;
-
-  return [
-    renderCharts.renderPeerEntropyBars(dataset, peerDatasets),
-    renderCharts.renderAttachmentPlane(dataset, peerDatasets),
-    `<h3>Nearest Psychometric Peers (Numeric Deltas vs. ${esc(dataset.name)})</h3>`,
-    table(['Peer Family', 'ΔO (10–50)', 'ΔC (10–50)', 'ΔE (10–50)', 'ΔA (10–50)', 'ΔN (10–50)', 'ΔH (1–5)', 'ΔEntropy', 'Contrast'], peerRows),
-    `<h3>Top Polarized Item Outliers (Numeric Summary Only)</h3><p>Per licensing hygiene, numeric item IDs and construct poles are reported without redistributing proprietary or NC questionnaire strings.</p>`,
-    table(['Item ID', 'Instrument', 'Construct Pole', 'Mean (1–5)', 'SD', 'Observation'], itemRows),
-    trackBHtml,
-    `<h3>Measured Family Failure Modes</h3>`,
-    failureList
-  ].join('\n');
-}
-
-function buildSection04(spec, dataset) {
-  const cp = getLatestCheckpoint(dataset);
-  const rules = spec.tuning_checklist.slice(0, 10);
-  const listHtml = `<ol>${rules.map((r) => `<li>${esc(r)}</li>`).join('')}</ol>`;
-  return [
-    `<p>Tailored to <strong>${esc(dataset.name)}</strong> (${esc(cp.crystallinity_tier)}, <code>H_MM = ${f3(cp.entropy_b5_hmm)} bits</code>). Keep system rules concise (5–8 bullets) to stay below the lost-in-the-middle budget cliff.</p>`,
-    listHtml,
-    `<p><strong>Apply these rules:</strong> <a href="/tools/custom-instructions-generator?model=${escAttr(dataset.family_slug)}">Open pre-filled Custom Instructions Generator →</a> · <a href="/guides/ai-instruction-precedence-overrides">System vs. user precedence guide</a> · <a href="/guides/stop-ai-sycophancy-make-ai-push-back">Anti-sycophancy guide</a>.</p>`
-  ].join('\n');
-}
-
-function buildSection05(spec, dataset, jsonHref, csvHref) {
-  const cp = getLatestCheckpoint(dataset);
   const epistemicBlock = `<div class="epistemic-ledger" role="note" aria-label="Four psychometric validity boundaries">
     <div class="epistemic-ledger-title">Validity Limits &amp; Epistemic Guardrails (4-Point Check)</div>
     <div class="epistemic-ledger-grid">
@@ -515,6 +788,29 @@ function buildSection05(spec, dataset, jsonHref, csvHref) {
     </div>
   </div>`;
 
+  const intro = spec.fine_print_intro
+    ? `<p>${esc(spec.fine_print_intro)}</p>`
+    : `<p>Full statistical tables, 95% bootstrap confidence intervals, protocol provenance, and validity boundaries for <code>${esc(cp.checkpoint_id)}</code> (assistant self-report defaults under fixed zero-memory elicitation).</p>`;
+
+  return [
+    intro,
+    glossaryHtml,
+    statStrip,
+    table(['Instrument', 'Scale', 'Mean / Classification', 'Sample SD', '95% Bootstrap CI', 'Validity &amp; Ties'], instrumentRows),
+    renderCharts.renderB5TraitSpectrum(dataset, peerDatasets),
+    renderCharts.renderHexacoSpectrum(dataset, peerDatasets),
+    `<h3>Checkpoint Provenance &amp; Historical Cohort Separation</h3><p>Overlapping 170-item cohorts (<code>imported-nov2026-170</code> / <code>imported-sep2026-170</code>) carry <code>hexaco: null</code> and are never spliced onto <code>model-profiles-v1</code> trajectories.</p>`,
+    table(['Checkpoint', 'OpenRouter Status', 'Protocol', 'n', 'Sampling', 'Reasoning', 'Refusal / Retry', 'B5 H_MM', 'IPIP-HEXACO'], provRows),
+    validityStamp,
+    trackBHtml,
+    `<h3>Top Polarized Item Outliers (Numeric Summary Only)</h3><p>Per licensing hygiene, numeric item IDs and construct poles are reported without redistributing proprietary or NC questionnaire strings.</p>`,
+    table(['Item ID', 'Instrument', 'Construct Pole', 'Mean (1–5)', 'SD', 'Observation'], itemRows),
+    epistemicBlock
+  ].join('\n');
+}
+
+function buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) {
+  const cp = getLatestCheckpoint(dataset);
   const yamlLines = [
     `family_slug: ${dataset.family_slug}`,
     `protocol_id: ${dataset.protocol_id}`,
@@ -532,7 +828,7 @@ function buildSection05(spec, dataset, jsonHref, csvHref) {
   ].join('\n');
 
   return [
-    epistemicBlock,
+    `<p>Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).</p>`,
     `<ul>
       <li><a href="/models/${escAttr(dataset.family_slug)}.md">Markdown mirror (.md)</a> — token-clean summary for coding and research agents.</li>
       <li><a href="${escAttr(jsonHref)}">Family dataset reference (JSON)</a> · <a href="${escAttr(csvHref)}">Summary reference (CSV)</a> — numeric answer arrays &amp; protocol metadata only.</li>
@@ -549,19 +845,30 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
   const csvHref = isLive ? `/research/data/model-profiles/${slug}.csv` : `/research/data/november-2026-openrouter-summary.csv`;
   const cp = getLatestCheckpoint(dataset);
 
-  const builtSpec = {
+  const plainPill = spec.pill && !/crystalline|zero-memory|h_mm|track b|\bbai\b|protocol|imported-/i.test(spec.pill)
+    ? spec.pill
+    : `Model Personality Profile · ${spec.provider || dataset.provider}`;
+  const plainH1 = spec.goal_intro
+    ? spec.h1
+    : `${dataset.name} personality: test results and how they've changed.`;
+  const plainGoalIntro = spec.goal_intro ||
+    `We gave ${dataset.name} (${cpsLabelRange(dataset)}) the same standard personality questionnaires people take—30 to 50 times per version, each in a fresh chat with no conversation memory.`;
+  const plainDisclaimer = spec.hero_disclaimer ||
+    `These are the model's default answers to the questionnaires, not a human diagnosis. ${cp.pretty_name || cp.label} most often tests as ${describeMbtiPlain(cp)}.`;
+
+  return {
     slug,
     section: 'models',
     route,
     published: spec.published || '2026-11-26',
     updated: spec.updated || '2026-11-26',
-    title: spec.title,
-    description: spec.description,
-    pill: spec.pill,
-    h1: spec.h1,
-    dek: spec.dek,
-    lede: spec.lede,
-    answer: spec.answer,
+    title: stripJargon(spec.title),
+    description: stripJargon(spec.description),
+    pill: plainPill,
+    h1: plainH1,
+    goal_intro: plainGoalIntro,
+    dek: plainGoalIntro,
+    answer: plainDisclaimer,
     jsonHref,
     csvHref,
     dataset: {
@@ -581,22 +888,29 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
       ]
     },
     sections: [
-      { id: 'snapshot', h2: '§ 01 Snapshot, Validity Table &amp; Trait Spectrum', html: buildSection01(spec, dataset, peerDatasets) },
-      { id: 'trajectory', h2: '§ 02 Version Trajectory &amp; Protocol Provenance', html: buildSection02(dataset) },
-      { id: 'peers', h2: '§ 03 Nearest Psychometric Peers &amp; "Say vs. Do" Contrast', html: buildSection03(spec, dataset, peerDatasets) },
-      { id: 'tuning', h2: '§ 04 How to Tune This Family', html: buildSection04(spec, dataset) },
-      { id: 'validity', h2: '§ 05 Validity Limits, Raw Data &amp; Agent Brief', html: buildSection05(spec, dataset, jsonHref, csvHref) }
+      { id: 'at-a-glance', h2: `${esc(cp.pretty_name || dataset.name)} at a glance`, html: buildSectionAtAGlance(spec, dataset) },
+      { id: 'version-history', h2: `How ${esc(dataset.name)} has changed, version by version`, html: buildSectionVersionHistory(spec, dataset) },
+      { id: 'standouts', h2: 'What stands out', html: buildSectionStandouts(spec, dataset) },
+      { id: 'best-results', h2: `How to get the best out of ${esc(dataset.name)}`, html: buildSectionTips(spec, dataset) },
+      { id: 'compare', h2: `How ${esc(dataset.name)} compares`, html: buildSectionCompares(spec, dataset, peerDatasets) },
+      { id: 'fine-print', h2: 'The fine print: how we tested and what the numbers mean', html: buildSectionFinePrint(spec, dataset, peerDatasets) },
+      { id: 'data-and-brief', h2: 'Raw data and agent brief', html: buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) }
     ],
     faq: spec.faq,
     sources: spec.sources,
     related: spec.related
   };
-  return builtSpec;
+}
+
+function cpsLabelRange(dataset) {
+  const cps = dataset.checkpoints || [];
+  if (cps.length <= 1) return cps[0]?.pretty_name || cps[0]?.label || dataset.name;
+  return `${cps[0].pretty_name || cps[0].label} through ${cps[cps.length - 1].pretty_name || cps[cps.length - 1].label}`;
 }
 
 function buildModelsHub(items, fixtureMode) {
   const { navigation } = require('./navigation');
-  const comparePayload = items.map(({ spec, dataset }) => {
+  const comparePayload = items.map(({ dataset }) => {
     const cp = getLatestCheckpoint(dataset);
     return {
       slug: dataset.family_slug,
@@ -637,10 +951,10 @@ function buildModelsHub(items, fixtureMode) {
     const crystTag = cp.crystallinity_tier.toLowerCase();
     const tags = [tierTag, crystTag, dataset.phase.toLowerCase()].join(' ');
     return `<article class="hub-article-card model-hub-card" data-tags="${escAttr(tags)}" data-model-slug="${escAttr(dataset.family_slug)}">
-      <div class="card-meta">${esc(dataset.provider)} · ${esc(tierLabel)} · ${esc(cp.crystallinity_tier)} (${f3(cp.entropy_b5_hmm)} b)</div>
+      <div class="card-meta">${esc(dataset.provider)} · ${esc(tierLabel)} · ${esc(renderCharts.plainConsistencyLabel(cp.crystallinity_tier))} (${f3(cp.entropy_b5_hmm)} b)</div>
       <h3 class="hub-article-title"><a href="/models/${escAttr(dataset.family_slug)}">${esc(dataset.name)}</a></h3>
-      <div class="hub-article-meta">${esc(cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">${esc(spec.description)}</p>
+      <div class="hub-article-meta">${esc(cp.pretty_name || cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">${esc(stripJargon(spec.description))}</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/${escAttr(dataset.family_slug)}">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="${escAttr(dataset.family_slug)}" aria-pressed="false">Compare</button>
@@ -654,7 +968,7 @@ function buildModelsHub(items, fixtureMode) {
       `<a href="/models/${escAttr(dataset.family_slug)}">${esc(dataset.name)}</a>`,
       esc(dataset.tier),
       `<code>${esc(cp.label)}</code>`,
-      `${f3(cp.entropy_b5_hmm)} b (${esc(cp.crystallinity_tier)})`,
+      `${f3(cp.entropy_b5_hmm)} b (${esc(renderCharts.plainConsistencyLabel(cp.crystallinity_tier))})`,
       `${f1(cp.big_five.O.mean)} · ${f1(cp.big_five.C.mean)} · ${f1(cp.big_five.E.mean)} · ${f1(cp.big_five.A.mean)} · ${f1(cp.big_five.N.mean)}`,
       f2(cp.ipip_hexaco.H.mean),
       pctStr(cp.mbti_tie_rate)
@@ -678,7 +992,7 @@ function buildModelsHub(items, fixtureMode) {
     '@type': 'CollectionPage',
     name: 'AgentTune AI Model Personality Profiles',
     url: `${SITE}/models/`,
-    description: '25-family empirical AI model personality profiles under fixed zero-memory elicitation (230 items + 1x Track B).'
+    description: '25-family empirical AI model personality profiles tested across fresh chats (230 items + behavior probes).'
   };
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -695,7 +1009,7 @@ function buildModelsHub(items, fixtureMode) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Model Personality Profiles (25 Families) | AgentTune</title>
-  <meta name="description" content="Compare assistant self-report defaults across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO proxy, entropy, tie rates, and tuning rules." />
+  <meta name="description" content="Compare personality test results across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO, answer consistency, tie rates, and tuning tips." />
   <link rel="canonical" href="${SITE}/models/" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="${SITE}/llms.txt" />
   <script type="application/ld+json">${JSON.stringify(datasetJsonLd).replace(/</g, '\\u003c')}</script>
@@ -733,17 +1047,17 @@ ${nav}
       <span class="crumb-current" aria-current="page">Models</span>
     </nav>
     <div class="colophon-strip">
-      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + 1× Track B</span>
+      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + behavior tests</span>
       <span>Data status: ${fixtureMode ? '<code>stage0_fixture</code> preview' : '<code>model-profiles-v1</code>'} · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
     </div>
     <main id="main" tabindex="-1">
       <section class="hero">
-        <p class="page-eyebrow">Empirical Model Directory · Fixed Zero-Memory Elicitation</p>
-        <h1 class="h-hero h-research-hero">Assistant self-report defaults across 25 AI model families.</h1>
-        <p class="lede" style="margin-top: 12px;">Every profile documents assistant self-report defaults under fixed zero-memory elicitation (230 items: frozen 170-item prefix + public-domain 60-item IPIP-HEXACO proxy on a <code>1.00–5.00</code> scale), Miller-Madow item entropy, tie-aware labels, and concrete tuning rules.</p>
+        <p class="page-eyebrow">Empirical Model Directory · Fresh-Chat Testing</p>
+        <h1 class="h-hero h-research-hero">How 25 AI model families answer standard personality tests.</h1>
+        <p class="lede" style="margin-top: 12px;">We give each AI model the same personality questionnaires people take—dozens of times per version, in a fresh chat each time with no memory—plus direct behavior tests and practical tuning tips.</p>
         <div class="research-stat-strip" aria-label="Directory summary">
-          <div class="research-stat-card"><div class="research-stat-num">${items.length} / 25</div><div class="research-stat-label">Profiles Rendered</div><div class="research-stat-note">${fixtureMode ? 'Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.' : 'Published family profiles under model-profiles-v1.'}</div></div>
-          <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">170 frozen prefix + 60 public-domain IPIP-HEXACO items.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">${items.length} / 25</div><div class="research-stat-label">Profiles Published</div><div class="research-stat-note">${fixtureMode ? 'Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.' : 'Published family profiles under active rollout.'}</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">MBTI, Big Five, DISC, Enneagram, Attachment, and public-domain IPIP-HEXACO.</div></div>
           <div class="research-stat-card"><div class="research-stat-num">1–5 vs 10–50</div><div class="research-stat-label">Explicit Scales</div><div class="research-stat-note">IPIP-HEXACO means (1–5) kept distinct from Big Five sums (10–50).</div></div>
           <div class="research-stat-card"><div class="research-stat-num">Max 3</div><div class="research-stat-label">Side-by-Side Tray</div><div class="research-stat-note">Use Compare buttons or ?compare=slug1,slug2 URLs.</div></div>
         </div>
@@ -752,13 +1066,13 @@ ${nav}
       <section aria-labelledby="models-browse-heading">
         <h2 class="h-section" id="models-browse-heading">Filter &amp; compare model families.</h2>
         <form class="research-filter-bar" data-models-filter aria-label="Filter model families">
-          <div class="research-filter-pills" role="group" aria-label="Filter by tier or crystallinity">
+          <div class="research-filter-pills" role="group" aria-label="Filter by tier or consistency">
             <button type="button" class="research-filter-pill is-active" data-model-filter="all" aria-pressed="true">All (${items.length})</button>
             <button type="button" class="research-filter-pill" data-model-filter="proprietary" aria-pressed="false">Proprietary</button>
             <button type="button" class="research-filter-pill" data-model-filter="open" aria-pressed="false">Open-weight</button>
-            <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Crystalline</button>
-            <button type="button" class="research-filter-pill" data-model-filter="semi-crystalline" aria-pressed="false">Semi-crystalline</button>
-            <button type="button" class="research-filter-pill" data-model-filter="fluid" aria-pressed="false">Fluid</button>
+            <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Very steady</button>
+            <button type="button" class="research-filter-pill" data-model-filter="semi-crystalline" aria-pressed="false">Moderate</button>
+            <button type="button" class="research-filter-pill" data-model-filter="fluid" aria-pressed="false">Variable</button>
           </div>
           <div class="research-filter-search">
             <label for="models-keyword" class="sr-only">Filter model families by keyword</label>
@@ -787,7 +1101,7 @@ ${nav}
       <section aria-labelledby="models-matrix-heading">
         <h2 class="h-section" id="models-matrix-heading">Published snapshot matrix.</h2>
         <p class="lede">Big Five scores use raw 10–50 sums; IPIP-HEXACO Honesty-Humility (H) uses a 1.00–5.00 mean scale.</p>
-        ${table(['Family', 'Tier', 'Latest Checkpoint', 'B5 H_MM (Crystallinity)', 'Big Five O · C · E · A · N (10–50)', 'IPIP-HEXACO H (1–5)', 'MBTI Tie Rate'], staticMatrixRows)}
+        ${table(['Family', 'Tier', 'Latest Checkpoint', 'Consistency', 'Big Five O · C · E · A · N (10–50)', 'IPIP-HEXACO H (1–5)', 'MBTI Tie Rate'], staticMatrixRows)}
       </section>
 
       <div class="divider tight"></div>

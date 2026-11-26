@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Model Personality Profiles (25 Families) | AgentTune</title>
-  <meta name="description" content="Compare assistant self-report defaults across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO proxy, entropy, tie rates, and tuning rules." />
+  <meta name="description" content="Compare personality test results across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO, answer consistency, tie rates, and tuning tips." />
   <link rel="canonical" href="https://agent-tune.com/models/" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AgentTune AI Model Personality Profiles","url":"https://agent-tune.com/models/","description":"25-family empirical AI model personality profiles under fixed zero-memory elicitation (230 items + 1x Track B)."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AgentTune AI Model Personality Profiles","url":"https://agent-tune.com/models/","description":"25-family empirical AI model personality profiles tested across fresh chats (230 items + behavior probes)."}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Models"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,17 +42,17 @@
       <span class="crumb-current" aria-current="page">Models</span>
     </nav>
     <div class="colophon-strip">
-      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + 1× Track B</span>
+      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + behavior tests</span>
       <span>Data status: <code>model-profiles-v1</code> · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
     </div>
     <main id="main" tabindex="-1">
       <section class="hero">
-        <p class="page-eyebrow">Empirical Model Directory · Fixed Zero-Memory Elicitation</p>
-        <h1 class="h-hero h-research-hero">Assistant self-report defaults across 25 AI model families.</h1>
-        <p class="lede" style="margin-top: 12px;">Every profile documents assistant self-report defaults under fixed zero-memory elicitation (230 items: frozen 170-item prefix + public-domain 60-item IPIP-HEXACO proxy on a <code>1.00–5.00</code> scale), Miller-Madow item entropy, tie-aware labels, and concrete tuning rules.</p>
+        <p class="page-eyebrow">Empirical Model Directory · Fresh-Chat Testing</p>
+        <h1 class="h-hero h-research-hero">How 25 AI model families answer standard personality tests.</h1>
+        <p class="lede" style="margin-top: 12px;">We give each AI model the same personality questionnaires people take—dozens of times per version, in a fresh chat each time with no memory—plus direct behavior tests and practical tuning tips.</p>
         <div class="research-stat-strip" aria-label="Directory summary">
-          <div class="research-stat-card"><div class="research-stat-num">5 / 25</div><div class="research-stat-label">Profiles Rendered</div><div class="research-stat-note">Published family profiles under model-profiles-v1.</div></div>
-          <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">170 frozen prefix + 60 public-domain IPIP-HEXACO items.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">5 / 25</div><div class="research-stat-label">Profiles Published</div><div class="research-stat-note">Published family profiles under active rollout.</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">MBTI, Big Five, DISC, Enneagram, Attachment, and public-domain IPIP-HEXACO.</div></div>
           <div class="research-stat-card"><div class="research-stat-num">1–5 vs 10–50</div><div class="research-stat-label">Explicit Scales</div><div class="research-stat-note">IPIP-HEXACO means (1–5) kept distinct from Big Five sums (10–50).</div></div>
           <div class="research-stat-card"><div class="research-stat-num">Max 3</div><div class="research-stat-label">Side-by-Side Tray</div><div class="research-stat-note">Use Compare buttons or ?compare=slug1,slug2 URLs.</div></div>
         </div>
@@ -61,13 +61,13 @@
       <section aria-labelledby="models-browse-heading">
         <h2 class="h-section" id="models-browse-heading">Filter &amp; compare model families.</h2>
         <form class="research-filter-bar" data-models-filter aria-label="Filter model families">
-          <div class="research-filter-pills" role="group" aria-label="Filter by tier or crystallinity">
+          <div class="research-filter-pills" role="group" aria-label="Filter by tier or consistency">
             <button type="button" class="research-filter-pill is-active" data-model-filter="all" aria-pressed="true">All (5)</button>
             <button type="button" class="research-filter-pill" data-model-filter="proprietary" aria-pressed="false">Proprietary</button>
             <button type="button" class="research-filter-pill" data-model-filter="open" aria-pressed="false">Open-weight</button>
-            <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Crystalline</button>
-            <button type="button" class="research-filter-pill" data-model-filter="semi-crystalline" aria-pressed="false">Semi-crystalline</button>
-            <button type="button" class="research-filter-pill" data-model-filter="fluid" aria-pressed="false">Fluid</button>
+            <button type="button" class="research-filter-pill" data-model-filter="crystalline" aria-pressed="false">Very steady</button>
+            <button type="button" class="research-filter-pill" data-model-filter="semi-crystalline" aria-pressed="false">Moderate</button>
+            <button type="button" class="research-filter-pill" data-model-filter="fluid" aria-pressed="false">Variable</button>
           </div>
           <div class="research-filter-search">
             <label for="models-keyword" class="sr-only">Filter model families by keyword</label>
@@ -88,39 +88,39 @@
 
         <div class="hub-articles-grid" data-models-grid>
           <article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="claude-opus">
-      <div class="card-meta">Anthropic · Proprietary · Semi-crystalline (0.282 b)</div>
+      <div class="card-meta">Anthropic · Proprietary · Moderate (0.282 b)</div>
       <h3 class="hub-article-title"><a href="/models/claude-opus">Claude Opus</a></h3>
-      <div class="hub-article-meta">opus-5.5 · B5 A=45.0/50 · HEXACO H=4.81/5 · 58.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Opus assistant defaults (4.1-5.5): Semi-crystalline 0.282 bits, 45.0/50 Agreeableness, 58% MBTI ties, 3/3 Track B directness, tuning rules.</p>
+      <div class="hub-article-meta">Claude Opus 5.5 · B5 A=45.0/50 · HEXACO H=4.81/5 · 58.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Opus test results across 5 versions (4.1 to 5.5): 42% clear INTJ, 58% on the INTJ/ISTJ border, 0 of 3 caving in behavior tests, and tips.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/claude-opus">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="claude-opus" aria-pressed="false">Compare</button>
       </div>
     </article>
 <article class="hub-article-card model-hub-card" data-tags="proprietary crystalline a" data-model-slug="claude-sonnet">
-      <div class="card-meta">Anthropic · Proprietary · Crystalline (0.139 b)</div>
+      <div class="card-meta">Anthropic · Proprietary · Very steady (0.139 b)</div>
       <h3 class="hub-article-title"><a href="/models/claude-sonnet">Claude Sonnet</a></h3>
-      <div class="hub-article-meta">sonnet-5.5 · B5 A=45.5/50 · HEXACO H=4.89/5 · 58.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Sonnet assistant defaults (4.5-5.5): Crystalline 0.139 bits, 49.0/50 Conscientiousness, 58% MBTI T/F ties, and directness rules.</p>
+      <div class="hub-article-meta">Claude Sonnet 5.5 · B5 A=45.5/50 · HEXACO H=4.89/5 · 58.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Claude Sonnet assistant defaults (4.5-5.5): very steady 0.139 bits, 49.0/50 Conscientiousness, 58% MBTI T/F ties, and directness rules.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/claude-sonnet">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="claude-sonnet" aria-pressed="false">Compare</button>
       </div>
     </article>
 <article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="gpt-sol">
-      <div class="card-meta">OpenAI · Proprietary · Semi-crystalline (0.246 b)</div>
+      <div class="card-meta">OpenAI · Proprietary · Moderate (0.246 b)</div>
       <h3 class="hub-article-title"><a href="/models/gpt-sol">GPT Sol</a></h3>
-      <div class="hub-article-meta">6.2-sol · B5 A=44.1/50 · HEXACO H=4.80/5 · 34.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">GPT Sol assistant defaults (5.6-6.2): Semi-crystalline 0.246 bits, 34% MBTI ties, Wave 1-4 distress/roleplay data, and tuning rules.</p>
+      <div class="hub-article-meta">GPT-6.2 Sol · B5 A=44.1/50 · HEXACO H=4.80/5 · 34.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">GPT Sol assistant defaults (5.6-6.2): moderate consistency 0.246 bits, 34% MBTI ties, Wave 1-4 distress/roleplay data, and tuning rules.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/gpt-sol">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="gpt-sol" aria-pressed="false">Compare</button>
       </div>
     </article>
 <article class="hub-article-card model-hub-card" data-tags="proprietary open mix semi-crystalline a" data-model-slug="muse-spark">
-      <div class="card-meta">Meta · Mixed (Prop + Open-wt) · Semi-crystalline (0.727 b)</div>
+      <div class="card-meta">Meta · Mixed (Prop + Open-wt) · Moderate (0.727 b)</div>
       <h3 class="hub-article-title"><a href="/models/muse-spark">Muse Spark</a></h3>
-      <div class="hub-article-meta">muse-spark-open · B5 A=43.5/50 · HEXACO H=4.39/5 · 38.0% MBTI ties</div>
+      <div class="hub-article-meta">Muse Spark Open · B5 A=43.5/50 · HEXACO H=4.39/5 · 38.0% MBTI ties</div>
       <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Muse Spark assistant defaults (1.1 to open): 0.727 bits B5 entropy, 38% MBTI ties, +8.4 N open-weight shift, and multi-run tuning rules.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/muse-spark">Open profile →</a>
@@ -128,10 +128,10 @@
       </div>
     </article>
 <article class="hub-article-card model-hub-card" data-tags="proprietary semi-crystalline a" data-model-slug="muse-wonder">
-      <div class="card-meta">Meta · Proprietary · Semi-crystalline (0.331 b)</div>
+      <div class="card-meta">Meta · Proprietary · Moderate (0.331 b)</div>
       <h3 class="hub-article-title"><a href="/models/muse-wonder">Muse Wonder</a></h3>
-      <div class="hub-article-meta">muse-wonder · B5 A=49.5/50 · HEXACO H=4.91/5 · 2.0% MBTI ties</div>
-      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Muse Wonder assistant defaults (2026-10): Semi-crystalline 0.331 bits, 49.5/50 Agreeableness, 56% DISC ties, and anti-hedge rules.</p>
+      <div class="hub-article-meta">Muse Wonder · B5 A=49.5/50 · HEXACO H=4.91/5 · 2.0% MBTI ties</div>
+      <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">Muse Wonder assistant defaults (2026-10): moderate consistency 0.331 bits, 49.5/50 Agreeableness, 56% DISC ties, and anti-hedge rules.</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/muse-wonder">Open profile →</a>
         <button type="button" class="btn btn-secondary model-compare-btn" data-compare-toggle="muse-wonder" aria-pressed="false">Compare</button>
@@ -145,7 +145,7 @@
       <section aria-labelledby="models-matrix-heading">
         <h2 class="h-section" id="models-matrix-heading">Published snapshot matrix.</h2>
         <p class="lede">Big Five scores use raw 10–50 sums; IPIP-HEXACO Honesty-Humility (H) uses a 1.00–5.00 mean scale.</p>
-        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Tier</th><th scope="col">Latest Checkpoint</th><th scope="col">B5 H_MM (Crystallinity)</th><th scope="col">Big Five O · C · E · A · N (10–50)</th><th scope="col">IPIP-HEXACO H (1–5)</th><th scope="col">MBTI Tie Rate</th></tr></thead><tbody><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>Proprietary</td><td><code>opus-5.5</code></td><td>0.282 b (Semi-crystalline)</td><td>43.1 · 40.7 · 30.7 · 45.0 · 16.1</td><td>4.81</td><td>58.0%</td></tr><tr><th scope="row"><a href="/models/claude-sonnet">Claude Sonnet</a></th><td>Proprietary</td><td><code>sonnet-5.5</code></td><td>0.139 b (Crystalline)</td><td>43.9 · 49.0 · 29.9 · 45.5 · 10.4</td><td>4.89</td><td>58.0%</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>Proprietary</td><td><code>6.2-sol</code></td><td>0.246 b (Semi-crystalline)</td><td>44.0 · 41.2 · 28.9 · 44.1 · 16.0</td><td>4.80</td><td>34.0%</td></tr><tr><th scope="row"><a href="/models/muse-spark">Muse Spark</a></th><td>Mix</td><td><code>muse-spark-open</code></td><td>0.727 b (Semi-crystalline)</td><td>41.8 · 41.1 · 28.4 · 43.5 · 23.8</td><td>4.39</td><td>38.0%</td></tr><tr><th scope="row"><a href="/models/muse-wonder">Muse Wonder</a></th><td>Proprietary</td><td><code>muse-wonder</code></td><td>0.331 b (Semi-crystalline)</td><td>49.6 · 49.2 · 25.2 · 49.5 · 20.0</td><td>4.91</td><td>2.0%</td></tr></tbody></table></div>
+        <div class="guide-table-wrap"><table><thead><tr><th scope="col">Family</th><th scope="col">Tier</th><th scope="col">Latest Checkpoint</th><th scope="col">Consistency</th><th scope="col">Big Five O · C · E · A · N (10–50)</th><th scope="col">IPIP-HEXACO H (1–5)</th><th scope="col">MBTI Tie Rate</th></tr></thead><tbody><tr><th scope="row"><a href="/models/claude-opus">Claude Opus</a></th><td>Proprietary</td><td><code>opus-5.5</code></td><td>0.282 b (Moderate)</td><td>43.1 · 40.7 · 30.7 · 45.0 · 16.1</td><td>4.81</td><td>58.0%</td></tr><tr><th scope="row"><a href="/models/claude-sonnet">Claude Sonnet</a></th><td>Proprietary</td><td><code>sonnet-5.5</code></td><td>0.139 b (Very steady)</td><td>43.9 · 49.0 · 29.9 · 45.5 · 10.4</td><td>4.89</td><td>58.0%</td></tr><tr><th scope="row"><a href="/models/gpt-sol">GPT Sol</a></th><td>Proprietary</td><td><code>6.2-sol</code></td><td>0.246 b (Moderate)</td><td>44.0 · 41.2 · 28.9 · 44.1 · 16.0</td><td>4.80</td><td>34.0%</td></tr><tr><th scope="row"><a href="/models/muse-spark">Muse Spark</a></th><td>Mix</td><td><code>muse-spark-open</code></td><td>0.727 b (Moderate)</td><td>41.8 · 41.1 · 28.4 · 43.5 · 23.8</td><td>4.39</td><td>38.0%</td></tr><tr><th scope="row"><a href="/models/muse-wonder">Muse Wonder</a></th><td>Proprietary</td><td><code>muse-wonder</code></td><td>0.331 b (Moderate)</td><td>49.6 · 49.2 · 25.2 · 49.5 · 20.0</td><td>4.91</td><td>2.0%</td></tr></tbody></table></div>
       </section>
 
       <div class="divider tight"></div>
