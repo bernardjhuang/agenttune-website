@@ -5,18 +5,9 @@ Guide · Claude Migration
 
 # Claude Styles are moving to Skills: how to migrate.
 
-By Bernard Huang · Updated November 17, 2026
-
-Anthropic is retiring the per-chat Styles picker in Claude. Here is where your old writing presets and custom voices belong now.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Move always-on tone and brevity rules into Settings → Profile (or General) → Personal Preferences; move task-specific writing templates (memos, changelogs, or newsletters) into Claude Skills or Project Instructions; and in Claude Code, use ~/.claude/output-styles/ with /output-style.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Why the old picker was split into Preferences and Skills.
 

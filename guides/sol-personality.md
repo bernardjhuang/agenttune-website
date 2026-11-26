@@ -5,18 +5,9 @@ Guide · GPT-6 Sol
 
 # How to give GPT-6 Sol a personality.
 
-By Bernard Huang · Updated November 23, 2026
-
-Where GPT-6 Astra leans concrete and helper-oriented on questionnaires, GPT-6 Sol scores as an abstract, investigator-style INTJ. Here is what we measured across 100 fresh Codex sessions and how to tune it.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/sol-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Codex and ChatGPT Work, save your personal communication rules for GPT-6 Sol in ~/.codex/AGENTS.md (32 KiB combined limit across the directory chain). In ChatGPT, use Project Instructions or the 1,500-character Custom Instructions box. In the Responses API, pass your rules in the instructions parameter on every request.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/sol-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Where to put instructions for GPT-6 Sol.
 

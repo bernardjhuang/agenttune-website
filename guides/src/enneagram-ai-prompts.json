@@ -2,7 +2,9 @@
   "slug": "enneagram-ai-prompts",
   "title": "Enneagram AI Prompts for All 9 Types, Wings & Ties | AgentTune",
   "description": "Paste-ready AI instruction blocks for all nine Enneagram types—plus how adjacent wings (5w4 vs 5w6) and tied scores work on our free test.",
-  "scripts": ["/resources/tools/template-gallery.js"],
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
   "pill": "Guide · Enneagram",
   "h1": "Enneagram AI prompts for all nine types.",
   "dek": "The one personality system that encodes what you're avoiding — which is exactly what your AI keeps getting wrong.",

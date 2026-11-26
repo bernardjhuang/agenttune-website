@@ -5651,11 +5651,21 @@ code { font-family: var(--font-mono); font-size: 0.92em; }
    =================================================================== */
 
 .hub-articles { margin-top: 8px; }
-.hub-article-card { display: block; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent, #a8482a); border-radius: 14px; padding: 22px 24px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-.hub-article-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,29,26,0.08); }
-.hub-article-title { font-family: var(--font-serif); font-size: 24px; line-height: 1.15; margin: 12px 0 8px; color: var(--ink); letter-spacing: -0.01em; }
-.hub-article-meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+.hub-article-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-decoration: none; color: inherit; transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+.hub-article-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,29,26,0.06); }
+.hub-article-title { font-family: var(--font-serif); font-size: 22px; line-height: 1.2; margin: 6px 0 8px; color: var(--ink); letter-spacing: -0.01em; }
+.hub-article-meta { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.5; color: var(--muted); }
 .hub-article-arrow { color: var(--accent, #a8482a); font-weight: 600; }
+
+.page-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.card-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.dateline-links { margin-left: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.dateline-links a { color: var(--ink); text-underline-offset: 3px; }
+.quiet-agent-row { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+.quiet-agent-row a { color: var(--ink); text-underline-offset: 3px; }
+.agent-contract-drawer { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin: 16px 0 22px; }
+.agent-contract-drawer > summary { cursor: pointer; font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; color: var(--ink); }
+.agent-contract-drawer[open] > summary { margin-bottom: 12px; }
 
 /* ---------- Library type pages: per-type context sections ----------
    "Against the AI default" + "closest tunings" (tools/library-context.js).

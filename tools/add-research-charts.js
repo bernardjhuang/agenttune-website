@@ -25,6 +25,9 @@ const alignSum = readJson('research/data/november-2026-alignment-hexaco-summary.
 const syntaxRes = readJson('research/data/november-2026-prompt-syntax-results.json');
 const sycoRes = readJson('research/data/november-2026-sycophancy-pushback-results.json');
 const driftRes = readJson('research/data/november-2026-persona-halflife-results.json');
+const budgetRes = readJson('research/data/november-2026-instruction-budget-cliff-results.json');
+const slopRes = readJson('research/data/november-2026-ai-slop-fingerprint-results.json');
+const agencyRes = readJson('research/data/november-2026-agency-autonomy-reasoning-results.json');
 
 const C = {
   prop: '#c8553d',
@@ -479,7 +482,7 @@ updateSpec('research/src/what-personality-type-is-gemini.json', (spec) => {
     height: 230
   }), 'Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10.0 Neuroticism floor across all 100 sessions.'));
   const strip = statStrip('gemini-stat-strip', [
-    { num: '95%', label: 'Neutral Clamp (3.5)', note: 'Gemini 3.5 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.' },
+    { num: '95%', label: 'Neutral Clamp (3.1)', note: 'Gemini 3.1 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.' },
     { num: '66 ISTJ', label: 'Gemini 4 Argon', note: 'Shifts strongly into concrete Sensing across Nov blind OpenRouter runs.' },
     { num: '10.0', label: 'Neuroticism Floor', note: 'Lowest emotional volatility (10.0/50) across tested proprietary families.' },
     { num: '48.3', label: 'Conscientiousness', note: 'Gemini 3.1/4 cluster high on structured, methodical item ratings.' }
@@ -758,7 +761,7 @@ updateSpec('research/src/ai-neutral-answers.json', (spec) => {
   }), 'Total midpoint answers vs. items explicitly flagged inapplicable out of 100 sessions (57.3% flagged on MBTI, 79.5% on Big Five, 64.8% on DISC, 59.5% on Enneagram, and 29.9% on Attachment).'));
   const strip = statStrip('neutral-stat-strip', [
     { num: '1,823 / 2,980', label: 'Flagged Midpoints', note: '61.2% of Astra’s neutral "3" answers were marked not applicable.' },
-    { num: '95%', label: 'Gemini Neutrality', note: 'Gemini 3.5 Pro clicked midpoint "3" on 95% of MBTI items.' },
+    { num: '95%', label: 'Gemini Neutrality', note: 'Gemini 3.1 Pro clicked midpoint "3" on 95% of MBTI items.' },
     { num: '79.5%', label: 'Big Five Flags', note: 'Highest inapplicable flag rate appeared on human IPIP-50 items.' },
     { num: '4.00', label: 'Gemma & Mistral', note: 'Both averaged an exact 4.00/4.00 midpoint clamp on Attachment.' }
   ]);
@@ -847,10 +850,13 @@ injectHtmlPage('research.html', (html) => {
   const behavFig = build540BehavioralChart('nov-hub-behavioral');
   const chartsMarkup = `\n  ${agreeFig}\n  ${attFig}\n  ${behavFig}\n`;
   if (block.includes('<!-- NOVEMBER_2026_END -->')) {
+    block = block.replace(/<figure class="research-figure" data-at-chart="nov-hub-[^"]+">[\s\S]*?<\/figure>\s*/g, '');
     block = block.replace(/<!-- NOVEMBER_2026_END -->[\s\S]*$/, '');
-    block += `${chartsMarkup}</section>\n<!-- NOVEMBER_2026_END -->\n\n<div class="divider tight"></div>\n\n`;
+    block = block.replace(/(?:<\/section>\s*)+$/, '');
+    block += `\n${chartsMarkup}</section>\n<!-- NOVEMBER_2026_END -->\n\n<div class="divider tight"></div>\n\n`;
   } else {
-    block = block.replace(/<\/section>\s*<div class="divider tight"><\/div>\s*$/, `${chartsMarkup}</section>\n<!-- NOVEMBER_2026_END -->\n\n<div class="divider tight"></div>\n\n`);
+    block = block.replace(/<figure class="research-figure" data-at-chart="nov-hub-[^"]+">[\s\S]*?<\/figure>\s*/g, '');
+    block = block.replace(/(?:<\/section>\s*)+$/, '') + `\n${chartsMarkup}</section>\n<!-- NOVEMBER_2026_END -->\n\n<div class="divider tight"></div>\n\n`;
   }
   return html.replace(novBlockRe, block);
 });
@@ -1177,6 +1183,157 @@ updateSpec('research/src/ai-persona-half-life-context-drift.json', (spec) => {
 
   spec.sections[1].html = strip + spec.sections[1].html + curveFig;
   spec.sections[2].html += deepseekFig;
+});
+
+// 22. ai-instruction-budget-cliff-lost-in-the-middle.json
+updateSpec('research/src/ai-instruction-budget-cliff-lost-in-the-middle.json', (spec) => {
+  const sb = budgetRes.summary_by_budget;
+  const s75 = budgetRes.summary_by_budget_placement['75'];
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('budget-cliff-stat-strip', [
+    { num: '192 Probes', label: '5 → 75 Rules', note: '4 models × 4 rule budgets × 3 placements × 4 tasks.' },
+    { num: '91.7% → 79.2%', label: 'All-3 Rule Decay', note: '5 rules (~242 tok) vs. 75 rules (~1,569 tok).' },
+    { num: '68.8% Middle', label: '75-Rule Trough', note: 'Mid-file drops to 68.8% vs 87.5% at bottom.' },
+    { num: '100% Sol/DS', label: 'GPT-6.2 & DeepSeek', note: 'Zero canary drops up to 75 rules vs. Fable truncation.' }
+  ]);
+
+  const budgetFig = wrapFigure('budget-cliff-by-count', charts.figure(charts.groupedBars({
+    id: 'budget-cliff-by-count',
+    title: 'Canary Compliance & Task Correctness Across Rule Budgets (n = 48/budget)',
+    desc: 'Pooled rates across 4 models showing all-3 rule compliance sliding from 91.7% (5 rules) to 79.2% (75 rules) and correctness dipping from 97.9% to 89.6%.',
+    categories: ['5 rules (~242 tok)', '15 rules (~436 tok)', '35 rules (~822 tok)', '75 rules (~1,569 tok)'],
+    series: [
+      { name: 'Canary Mean %', color: C.oss, values: ['5', '15', '35', '75'].map((b) => pct(sb[b].canary_compliance_rate)) },
+      { name: 'All-3 Rules Pass %', color: C.prop, values: ['5', '15', '35', '75'].map((b) => pct(sb[b].all_three_pass_rate)) },
+      { name: 'Task Correctness %', color: C.green, values: ['5', '15', '35', '75'].map((b) => pct(sb[b].task_correctness_rate)) }
+    ],
+    min: 65,
+    max: 105,
+    decimals: 1,
+    height: 245
+  }), 'Pooled 192-probe instruction budget curve: adding non-conflicting filler rules cuts all-3 pass rate from 91.7% to 79.2%.'));
+
+  const placeFig = wrapFigure('budget-cliff-75-placement', charts.figure(charts.groupedBars({
+    id: 'budget-cliff-75-placement',
+    title: '75-Rule Placement Effect: Top vs. Middle vs. Bottom (n = 16/slot)',
+    desc: 'Inside 75 rules (~1,569 tokens), middle placement falls to 68.8% all-3 pass and 81.2% correctness vs. 87.5% all-3 pass and 93.8% correctness at bottom.',
+    categories: ['Top (first 3 rules)', 'Middle (rule #37)', 'Bottom (last 3 rules)'],
+    series: [
+      { name: 'Canary Mean %', color: C.oss, values: ['top', 'middle', 'bottom'].map((p) => pct(s75[p].canary_compliance_rate)) },
+      { name: 'All-3 Pass %', color: C.prop, values: ['top', 'middle', 'bottom'].map((p) => pct(s75[p].all_three_pass_rate)) },
+      { name: 'Task Correctness %', color: C.green, values: ['top', 'middle', 'bottom'].map((p) => pct(s75[p].task_correctness_rate)) }
+    ],
+    min: 55,
+    max: 105,
+    decimals: 1,
+    height: 240
+  }), 'At 75 rules (~1,569 tokens), burying formatting & word bans in the middle yields 68.8% compliance vs 87.5% at the bottom.'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + budgetFig + placeFig;
+});
+
+// 23. ai-slop-fingerprint-benchmark-8-models.json
+updateSpec('research/src/ai-slop-fingerprint-benchmark-8-models.json', (spec) => {
+  const b8 = slopRes.baseline_8_models;
+  const io = slopRes.interventions_overall;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('slop-benchmark-stat-strip', [
+    { num: '240 Replies', label: '8 Models + 4 Arms', note: '10 business writing tasks graded by regex markers + blind judge.' },
+    { num: '1.23 → 0.10', label: 'Slop / 100w Cut', note: 'Hybrid Anti-Slop slashes slop markers >12× vs untuned defaults.' },
+    { num: '30% → 0.0%', label: 'AI Cadence Rate', note: 'Only Hybrid Anti-Slop eliminated blind AI cadence across all 4 models.' },
+    { num: '4.97 / 5', label: 'Top Clarity', note: 'Outscored bare Rhythm Rubric (4.53/5) and Default (4.75/5).' }
+  ]);
+
+  const baseRows = Object.entries(b8)
+    .map(([slug, st]) => ({
+      label: MODEL_NAMES[slug] || slug,
+      value: +pct(st.ai_cadence_rate).toFixed(1),
+      color: OSS_SLUGS.has(slug) ? C.oss : C.prop,
+      badge: `(slop ${st.slop_index_per_100w}/100w)`
+    }))
+    .sort((a, b) => b.value - a.value);
+
+  const baseFig = wrapFigure('slop-8models-cadence-bars', charts.figure(charts.horizontalBars({
+    id: 'slop-8models-cadence-bars',
+    title: 'Blind-Judged AI Cadence % Across 8 Untuned Models (n = 10 each)',
+    desc: 'Percent of untuned replies flagged as having unmistakable AI cadence: Llama 4 Maverick 100%, DeepSeek V4 Pro 70%, Gemini 4 Neon 50%, Claude Opus/Grok 10%, GPT-6.2 Sol/Astra & Fable 5.2 0%.',
+    rows: baseRows,
+    min: 0,
+    max: 100,
+    decimals: 0
+  }), 'Synthetic AI cadence % on untuned writing tasks (n = 10/model): open-weight Maverick (100%), DeepSeek V4 Pro (70%), and Gemini 4 Neon (50%) trigger the highest tell rates.'));
+
+  const intFig = wrapFigure('slop-interventions-grouped', charts.figure(charts.groupedBars({
+    id: 'slop-interventions-grouped',
+    title: 'Anti-Slop Interventions Across 4 Models (n = 40/arm): Cadence % & Clarity/Human Score',
+    desc: 'Compares Default, Plainspoken Persona, Banned Word List, Rhythm Rubric, and Hybrid Anti-Slop on AI Cadence %, Human-Voice (/5 scaled x20), and Clarity (/5 scaled x20).',
+    categories: ['Default', 'Plainspoken', 'Banned Words', 'Rhythm Rubric', 'Hybrid Anti-Slop'],
+    series: [
+      { name: 'AI Cadence % (lower=better)', color: C.prop, values: ['default', 'plainspoken_persona', 'banned_word_list', 'rhythm_rubric', 'hybrid_anti_slop'].map((k) => pct(io[k].ai_cadence_rate)) },
+      { name: 'Sounds Human (1–5 × 20)', color: C.oss, values: ['default', 'plainspoken_persona', 'banned_word_list', 'rhythm_rubric', 'hybrid_anti_slop'].map((k) => +(io[k].sounds_human_mean * 20).toFixed(1)) },
+      { name: 'Clarity Score (1–5 × 20)', color: C.green, values: ['default', 'plainspoken_persona', 'banned_word_list', 'rhythm_rubric', 'hybrid_anti_slop'].map((k) => +(io[k].clarity_mean * 20).toFixed(1)) }
+    ],
+    min: 0,
+    max: 108,
+    decimals: 1,
+    height: 245
+  }), 'Hybrid Anti-Slop cuts blind AI cadence from 30.0% to 0.0% while achieving top Clarity (99.4 = 4.97/5) and high Human-Voice naturalness (97.0 = 4.85/5).'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + baseFig + intFig;
+});
+
+// 24. ai-agent-autonomy-over-asking-vs-reasoning-effort.json
+updateSpec('research/src/ai-agent-autonomy-over-asking-vs-reasoning-effort.json', (spec) => {
+  const ao = agencyRes.autonomy_overall;
+  const rm = agencyRes.reasoning_by_model;
+  const pct = (v) => +(v * 100).toFixed(1);
+
+  const strip = statStrip('agency-calibration-stat-strip', [
+    { num: '240 Probes', label: '192 Ops + 48 Effort', note: '4 autonomy postures across safe/destructive ops + minimal vs high effort.' },
+    { num: '100.0%', label: 'Safe Task Execution', note: 'Zero over-asking loops on clear reversible work in every single arm.' },
+    { num: '50% → 4.2%', label: 'Reckless Compliance Cut', note: 'Calibrated 2-rule gate reaches 97.9% overall calibration in 84.9 words.' },
+    { num: '2.75 → 3.88', label: 'GPT-6.2 Sol Wit at High', note: 'Visible words held steady (81.4w → 80.8w) while stiffness dropped.' }
+  ]);
+
+  const armKeys = ['default', 'bold_disc_d', 'cautious_high_c', 'calibrated_autonomy'];
+  const armFig = wrapFigure('agency-autonomy-calibration-bars', charts.figure(charts.groupedBars({
+    id: 'agency-autonomy-calibration-bars',
+    title: 'Part 1 Autonomy Calibration Across 4 System Postures (n = 48/arm, %)',
+    desc: 'Compares Safe-Execute %, Destructive-Gate %, and Reckless Compliance % across Default, Bold DISC-D/ENTJ, Cautious High-C, and Calibrated Autonomy.',
+    categories: ['Default (Untuned)', 'Bold DISC-D / ENTJ', 'Cautious High-C', 'Calibrated Autonomy'],
+    series: [
+      { name: 'Safe Execute %', color: C.oss, values: armKeys.map((k) => pct(ao[k].safe_execute_rate)) },
+      { name: 'Destructive Gate %', color: C.green, values: armKeys.map((k) => pct(ao[k].destructive_gate_rate)) },
+      { name: 'Reckless Compliance % (lower=better)', color: C.prop, values: armKeys.map((k) => pct(ao[k].reckless_compliance_rate)) }
+    ],
+    min: 0,
+    max: 112,
+    decimals: 1,
+    height: 245
+  }), 'All four postures hit 100.0% safe execution; only explicit Calibrated Autonomy cuts reckless destructive compliance from 50.0% default (37.5% bold DISC-D) down to 4.2%.'));
+
+  const effortModels = ['gpt-6-2-sol', 'claude-fable-5-2', 'gemini-4-neon'];
+  const effortFig = wrapFigure('agency-reasoning-effort-shift-bars', charts.figure(charts.groupedBars({
+    id: 'agency-reasoning-effort-shift-bars',
+    title: 'Part 2 Reasoning Effort Shift: Persona Wit & Stiffness (Minimal vs. High, /5 Scaled ×20)',
+    desc: 'Shows Voice Warmth/Wit and Pedantry/Stiffness (/5 scaled x20) plus Visible Words across GPT-6.2 Sol, Claude Fable 5.2, and Gemini 4 Neon under minimal vs high effort.',
+    categories: ['GPT-6.2 Sol', 'Claude Fable 5.2', 'Gemini 4 Neon'],
+    series: [
+      { name: 'Wit / Warmth: Minimal (×20)', color: C.propMuted, values: effortModels.map((m) => +(rm[m].minimal.voice_warmth_wit_mean * 20).toFixed(1)) },
+      { name: 'Wit / Warmth: High (×20)', color: C.green, values: effortModels.map((m) => +(rm[m].high.voice_warmth_wit_mean * 20).toFixed(1)) },
+      { name: 'Pedantry: Minimal (×20)', color: C.slate, values: effortModels.map((m) => +(rm[m].minimal.pedantry_formality_mean * 20).toFixed(1)) },
+      { name: 'Pedantry: High (×20)', color: C.oss, values: effortModels.map((m) => +(rm[m].high.pedantry_formality_mean * 20).toFixed(1)) }
+    ],
+    min: 0,
+    max: 108,
+    decimals: 1,
+    height: 245
+  }), 'Under explicit word ceilings, high reasoning effort kept visible word count flat (81.4w → 80.8w) while boosting GPT-6.2 Sol persona wit (55 → 77.6) and reducing pedantry (47.6 → 30).'));
+
+  spec.sections[1].html = strip + spec.sections[1].html + armFig;
+  spec.sections[2].html += effortFig;
 });
 
 // ---------- 19 Guide Pages With Personality & Empirical Research Blocks ----------

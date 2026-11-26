@@ -5,18 +5,9 @@ Templates · Coaching & Learning Modes
 
 # Socratic, Feynman & differential-diagnosis AI coaching prompts.
 
-By Bernard Huang · Updated November 24, 2026
-
-Turn ChatGPT, Claude Projects, Gemini Gems & Meta Muse from passive answer-dispensers into active tutors, Socratic sparing partners, and crisp debuggers.
+By Bernard Huang · Updated November 24, 2026 · [Markdown (.md)](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Isolate your Socratic or Feynman tutor prompt inside a dedicated ChatGPT Project, Claude Project, or Gemini Gem so it doesn't interfere with quick work queries, and always include a keyword escape hatch ('if I type BLUF or urgent, give the direct solution immediately').
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The Answer-Dispenser Trap — and how to turn AI into an active thinking partner.
 
@@ -151,11 +142,10 @@ Claude Projects and Gemini Gems are ideal for tutoring modes because you can kee
 
 - [The Roleplay Tax Study (Tested Feynman Whimsy vs Baseline)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 
-- [AgentTune Alignment, HEXACO & Conflict Style Matcher](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test)
+- [AgentTune Alignment, HEXACO & Conflict Style Matcher](https://agent-tune.com/research/ai-personality-rankings)
 
 ## Keep going.
 
-- [Persona combos: Whimsical AI Persona Combos: 15 Agent Cocktails](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails)
-- [Character gallery: Fictional Character AI Prompts: TARS, JARVIS & Feynman](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman)
+- [Persona combos: Whimsical AI Persona Combos: 15 3-Layer Character Combos](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman)
 - [Gemini Gems: Gemini Gems Custom System Instructions Templates](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
-- [Claude Projects: Claude Project Instructions Templates](https://agent-tune.com/guides/claude-project-instructions-examples)
+- [Claude Projects: Claude Project Instructions Templates](https://agent-tune.com/guides/claude-personality)

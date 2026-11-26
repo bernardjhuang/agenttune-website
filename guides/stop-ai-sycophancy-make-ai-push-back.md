@@ -5,18 +5,9 @@ Guide · Anti-Sycophancy
 
 # How to make AI push back and stop agreeing with you.
 
-By Bernard Huang · Updated November 17, 2026
-
-Across 400 fresh sessions in our September 2026 study, every major model scored near the ceiling on Agreeableness and near the floor on Dominance. Here is how to make your assistant challenge weak ideas instead of praising them.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The empirical baseline: why untuned models rarely push back.
 
@@ -66,6 +57,12 @@ If you want a full tuning file built around direct critique, start with one of t
 - [Enneagram Type 8 (The Challenger)](https://agent-tune.com/library/enneagram/8-challenger): Candid pushback on weak assumptions and scope creep.
 - [ENTP](https://agent-tune.com/library/mbti/entp) or [INTJ](https://agent-tune.com/library/mbti/intj): Stress-tests assumptions and counterexamples before agreeing.
 
+## 2-Minute Pushback & Conflict Style Matcher + Calibrated Truth Anchor note.
+
+Caution: in our [256-probe pushback benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark), blunt unconditional prompts (“ALWAYS disagree / play devil's advocate”) caused Gemini 4 Neon to reject valid corrections **37.5%** of the time. Keep conditional pushback in your rules—and use this quick matcher to choose the exact intensity your workflow needs:
+
+Loading interactive conflict-style matcher…
+
 ## Questions people ask.
 
 ### Why do ChatGPT and Claude agree with me even when I am wrong?
@@ -99,6 +96,6 @@ The Low Agreeableness Big Five tuning, the DISC Dominance (D) tuning, and the En
 ## Keep going.
 
 - [Research: Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison)
-- [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
+- [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Prompts: DISC AI prompts for all 4 styles (D, I, S, C)](https://agent-tune.com/guides/disc-ai-prompts)
 - [Guide: Claude Personal Preferences: 15 copy-paste examples](https://agent-tune.com/guides/claude-personality)

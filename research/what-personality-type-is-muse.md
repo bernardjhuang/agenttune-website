@@ -5,18 +5,11 @@ Research · Q&A
 
 # What personality type is Muse?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.
 
-**Quick answer:** Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
 
 ## Muse Spark 1.3, as reported.
 
@@ -93,7 +86,7 @@ To run a fresh-session replication yourself, use the open instruments and scorin
 
 ## How to use the report.
 
-Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates & persistence kit](https://agent-tune.com/guides/muse-soul-md-templates) and [16 Identity.md character ideas](https://agent-tune.com/guides/muse-identity-md-templates).
+Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates & persistence kit](https://agent-tune.com/guides/muse-soul-md-templates) and [16 Identity.md character ideas](https://agent-tune.com/guides/muse-identity-md-avatar-name).
 
 ## Questions people ask.
 

@@ -5,18 +5,9 @@ Interactive Matcher · All 5 Systems
 
 # Which personality system should you use to tune your AI?
 
-By Bernard Huang · Updated November 17, 2026
-
-MBTI, Enneagram, DISC, Big Five (OCEAN), and Attachment control different layers of AI behavior—pick the exact template family in 20 seconds.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use DISC or MBTI for faster bottom-line structure; use Big Five (OCEAN) to adjust a single trait (like High Openness or Low Extraversion) without adopting a full persona; and use Enneagram or Attachment to control how candidly the AI pushes back or cushions critique.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Interactive 20-second matcher: match your AI annoyance to the right templates.
 
@@ -67,10 +58,10 @@ Ordered checklist output without changing warmth.
 | System | What it captures best | Template count | Fastest test &amp; instrument | Best use case &amp; deep dive |
 | --- | --- | --- | --- | --- |
 | DISC | Directness, urgency, people vs. task focus | 4 types (D, I, S, C) | [16 items (~3 min, ODAT)](https://agent-tune.com/tests/disc) | Fastest workplace/decision tuning ([DISC guide →](https://agent-tune.com/guides/disc-ai-prompts)) |
-| Big Five (OCEAN) | Single continuous communication traits without stereotyping | 10 extreme bands (High/Low &times; 5) | [50 items (~6 min, IPIP-50)](https://agent-tune.com/tests/big-five) | Surgical adjustments like Openness or Extraversion ([OCEAN guide →](https://agent-tune.com/guides/big-five-ai-prompts)) |
+| Big Five (OCEAN) | Single continuous communication traits without stereotyping | 10 extreme bands (High/Low &times; 5) | [50 items (~6 min, IPIP-50)](https://agent-tune.com/tests/big-five) | Surgical adjustments like Openness or Extraversion ([OCEAN guide →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
 | MBTI (OEJTS) | Big-picture vs concrete steps, blunt logic vs human impact | 16 types | [32 pairs (~5 min, OEJTS 1.2)](https://agent-tune.com/tests/mbti) | Mental model framing &amp; explanation style ([MBTI vs Big Five →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
 | Enneagram | Core defensive triggers, critique directness, motivational framing | 9 types (1–9) | [36 items (~5 min, OEPS)](https://agent-tune.com/tests/enneagram) | Anti-sycophancy pushback &amp; coaching tone ([Enneagram guide →](https://agent-tune.com/guides/enneagram-ai-prompts)) |
-| Attachment | Feedback cushioning, check-in cadence, emotional steadiness | 4 styles (Secure, Anxious, Avoidant, Disorganized) | [36 items (~5 min, ECR-R)](https://agent-tune.com/tests/attachment) | Preventing harsh critique or needy over-apologies ([Attachment guide →](https://agent-tune.com/guides/attachment-style-ai-prompts)) |
+| Attachment | Feedback cushioning, check-in cadence, emotional steadiness | 4 styles (Secure, Anxious, Avoidant, Disorganized) | [36 items (~5 min, ECR-R)](https://agent-tune.com/tests/attachment) | Preventing harsh critique or needy over-apologies ([Attachment guide →](https://agent-tune.com/library/attachment/avoidant)) |
 
 ## What our September 2026 benchmark data says about choosing between systems.
 

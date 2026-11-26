@@ -31,7 +31,7 @@
     {
       "id": "testing-deepseek-prompts",
       "h2": "Test and compare your DeepSeek system prompt locally.",
-      "html": "<p>Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?</p><ul><li>Dial in exact warmth, brevity, and pushback rules in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">6-Slider AI Personality Tuner</a>.</li><li>Lint for conflicting constraints in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li><li>Score baseline vs. tuned DeepSeek outputs blindly in the <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li></ul>"
+      "html": "<p>Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?</p><ul><li>Dial in exact warmth, brevity, and pushback rules in our <a href=\"/tools/custom-instructions-generator\">6-Slider AI Personality Tuner</a>.</li><li>Lint for conflicting constraints in the <a href=\"/tools/instruction-checker\">Instruction Checker</a>.</li><li>Score baseline vs. tuned DeepSeek outputs blindly in the <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li></ul>"
     }
   ],
   "faq": [
@@ -91,7 +91,7 @@
     {
       "kicker": "Interactive Tuner",
       "label": "6-Slider AI Personality Tuner → Portable System Prompt",
-      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+      "href": "/tools/custom-instructions-generator"
     },
     {
       "kicker": "Anti-Sycophancy",

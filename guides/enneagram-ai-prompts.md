@@ -5,18 +5,9 @@ Guide · Enneagram
 
 # Enneagram AI prompts for all nine types.
 
-By Bernard Huang · Updated November 23, 2026
-
-The one personality system that encodes what you're avoiding — which is exactly what your AI keeps getting wrong.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/enneagram-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** An Enneagram AI prompt tells your assistant what your type needs from a conversation; risks named first for Type 6, outcomes first for Type 3, no forced positivity for Type 4. Copy the block for your type into ChatGPT's custom instructions or Claude's project instructions; free full-length versions exist for all nine types.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/enneagram-ai-prompts.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The Enneagram tunes motivation, not surface behavior.
 

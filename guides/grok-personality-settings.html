@@ -10,7 +10,7 @@
   <meta property="og:description" content="Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-05" />
-  <meta property="article:modified_time" content="2026-11-23" />
+  <meta property="article:modified_time" content="2026-11-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/grok-personality-settings" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -28,7 +28,7 @@
   <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/grok-personality-settings.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Grok’s xAI default personality — and how to change it on X and grok.com","description":"Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets.","url":"https://agent-tune.com/guides/grok-personality-settings","datePublished":"2026-11-05","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Grok’s xAI default personality — and how to change it on X and grok.com","description":"Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets.","url":"https://agent-tune.com/guides/grok-personality-settings","datePublished":"2026-11-05","dateModified":"2026-11-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"Grok’s xAI default personality — and how to change it on X and grok.com"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I change Grok's personality without creating a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Open your account settings on grok.com or X to set custom response instructions, or paste a short communication preference block at the start of a new chat thread."}},{"@type":"Question","name":"What is the difference between Grok chat settings and a Grok Bot?","acceptedAnswer":{"@type":"Answer","text":"Account or thread instructions shape how standard Grok replies to you across everyday topics. A Grok Bot is a saved custom assistant with its own name and Description field for a specific repeatable job."}},{"@type":"Question","name":"How do I make Grok stop using slang or sarcasm?","acceptedAnswer":{"@type":"Answer","text":"Include one explicit line in your instructions: 'Use plain, neutral, matter-of-fact prose. Skip jokes, slang, and conversational banter, and lead directly with the verified answer.'"}},{"@type":"Question","name":"Why did Grok 4.6 score Avoidant on the AgentTune attachment test?","acceptedAnswer":{"@type":"Answer","text":"In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean of 4.06 on a 1-to-7 scale where 4.00 is the boundary—literally one raw point (73/18 vs 72/18) over the threshold."}}]}</script>
 
@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · xAI Grok</span>
+        <p class="page-eyebrow">Guide · xAI Grok</p>
         <h1 class="h-hero h-research-hero">Grok’s xAI default personality — and how to change it on X and grok.com.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, plus Settings → Customize Grok (~4,000 chars) and downloadable presets.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <a href="/guides/grok-personality-settings.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/grok-personality-settings.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -119,6 +110,12 @@
 - Disagree respectfully with evidence when my idea creates avoidable risk.</div><h3>Preset 6: Anti-Sycophancy Strategist</h3><div class="guide-snippet">- Never agree just to close a turn smoothly. Name the strongest counterargument first.
 - Distinguish fatal flaws from fixable details.
 - Give one clear recommendation rather than a hedge-filled menu.</div><p>Want to package your rules into a standalone cloud bot? Read our <a href="/guides/grokbot-personality">Grok Bot personality guide</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="grok-voice-mode-and-starters">Grok Voice Mode (Ara, Rex, Sal, Eve, Leo) & downloadable .md starters.</h2>
+        <p>Inside Grok Voice Mode on iOS, Android, and <code>grok.com</code>, choose from five core voices alongside Expressive Mode. Pair your voice choice with concise rules in <strong>Settings → Customize Grok</strong> so spoken answers stay brief and grounded:</p><div class="guide-table-wrap" role="region" aria-label="Grok Voice Mode (Ara, Rex, Sal, Eve, Leo) &amp; downloadable .md starters.: table 2" tabindex="0"><table><thead><tr><th scope="col">Voice</th><th scope="col">Register &amp; Accent</th><th scope="col">Best use case</th></tr></thead><tbody><tr><th scope="row">Ara</th><td>Female · US · Warm</td><td>Everyday Q&amp;A and casual brainstorming</td></tr><tr><th scope="row">Rex</th><td>Male · US · Confident, direct</td><td>Decision triage and direct critique</td></tr><tr><th scope="row">Sal</th><td>Male · US · Conversational</td><td>Balanced back-and-forth planning</td></tr><tr><th scope="row">Eve</th><td>Female · British · Energetic</td><td>Creative exploration and lively dialogue</td></tr><tr><th scope="row">Leo</th><td>Male · British · Structured</td><td>Briefings, news synthesis &amp; review</td></tr></tbody></table></div><div class="at-widget" id="at-voice-picker" data-platform="grok" role="region" aria-label="Interactive Grok Voice Matcher"><p class="tools-help">Loading interactive Grok voice matcher…</p></div><div class="guide-table-wrap" role="region" aria-label="Grok Voice Mode (Ara, Rex, Sal, Eve, Leo) &amp; downloadable .md starters.: table 3" tabindex="0"><table><thead><tr><th scope="col">Downloadable Starter (.md)</th><th scope="col">Surface</th><th scope="col">Download</th></tr></thead><tbody><tr><th scope="row">No-Snark Analytical Brief</th><td>Settings → Customize Grok</td><td><a href="/resources/grok/no-snark-analyst.md" download>no-snark-analyst.md</a></td></tr><tr><th scope="row">Anti-Sycophant Debater</th><td>Settings → Customize Grok</td><td><a href="/resources/grok/anti-sycophant-debater.md" download>anti-sycophant-debater.md</a></td></tr><tr><th scope="row">Pragmatic Engineer Bot</th><td>Grok Bot Description</td><td><a href="/resources/grok/grokbot-teammate-engineer.md" download>grokbot-teammate-engineer.md</a></td></tr><tr><th scope="row">Real-Time Signal Synthesizer</th><td>Grok Bot Description</td><td><a href="/resources/grok/grokbot-news-synthesizer.md" download>grokbot-news-synthesizer.md</a></td></tr></tbody></table></div>
       </section>
 
       <div class="divider tight"></div>
@@ -159,7 +156,6 @@
         <ul class="guide-sources">
           <li><a href="https://agent-tune.com/guides/grokbot-personality" target="_blank" rel="noopener">AgentTune: How to give a Grok Bot a personality</a></li>
           <li><a href="https://agent-tune.com/research/what-personality-type-is-grok" target="_blank" rel="noopener">AgentTune Research: What personality type is Grok?</a></li>
-          <li><a href="https://agent-tune.com/research/what-personality-type-is-grok" target="_blank" rel="noopener">AgentTune Research: Grok 4.6 and the attachment cutoff</a></li>
         </ul>
       </section>
 
@@ -167,8 +163,6 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/guides/grok-personality-templates"><span class="guide-related-kicker">Templates Gallery</span>20 Customize Grok &amp; Grok Bot templates (.md downloads)</a>
-          <a href="/guides/grok-voice-mode-personas-companions"><span class="guide-related-kicker">Voice Mode</span>Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) &amp; Expressive Mode</a>
           <a href="/guides/grokbot-personality"><span class="guide-related-kicker">Guide</span>How to give a Grok Bot a personality</a>
           <a href="/research/what-personality-type-is-grok"><span class="guide-related-kicker">Research</span>What personality type is Grok? (Grok 4.6 &amp; 4.3 data)</a>
           <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Guide</span>How to make AI push back and stop agreeing with you</a>
@@ -188,6 +182,7 @@
   <script src="/platforms.js" fetchpriority="low"></script>
   <script src="/integrations.js" fetchpriority="low"></script>
   <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/ai-voice-picker.js" fetchpriority="low"></script>
   <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
 </body>
 </html>

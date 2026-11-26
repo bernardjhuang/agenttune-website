@@ -5,18 +5,9 @@ Templates · Character Voices (85/15)
 
 # Fictional character AI prompts without the Roleplay Tax.
 
-By Bernard Huang · Updated November 24, 2026
-
-16 calibrated character-inspired prompts (TARS, J.A.R.V.I.S., Sherlock, Kim Kitsuragi, GLaDOS, Feynman, Unix Greybeard) built on our empirically verified 85/15 rule.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Don't ask your AI to perform a costume play; ask it to apply a character's cognitive discipline (85% execution core) seasoned lightly with their dry wit or phrasing (15% bounded layer) while banning *asterisk* stage directions. Isolate playful personas inside dedicated Projects, Gems, Meta Muse Soul.md, or bounded repo rules so your coding diffs and spreadsheets stay crisp.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Why most character prompts fail by turn three — and how the 85/15 split fixes it.
 
@@ -180,6 +171,18 @@ Voice (15%): Dry, patient realism that quietly prevents midnight deployment regr
 Constraint: Persona applies solely to diction and dry perspective (max 15%). Never use *asterisks*, stage actions, greetings, or filler monologues. If the user asks for JSON, an exact word/bullet count, or code diffs, drop persona completely.
 ```
 
+## 3-Layer Character Combos, mid-thread toggles & self-calibration meta-prompts.
+
+Instead of writing fragile 1-line roleplay prompts, compose resilient prompts in three layers: **70% structured execution base** (line-1 verdict, observed evidence) + **20% reasoning method** (differential diagnosis or Socratic checks) + **10–15% bounded character cadence**. Download all 15 ready combos in [JSON](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json) or use these mid-thread toggles:
+
+- **Drop voice cleanly for diffs/JSON:** Append `[Telemetry mode: 0% voice, strict diff/JSON only]` to any follow-up prompt.
+- **Run a single-turn red-team check:** `“For one reply, switch to Columbo / Red-Team mode: name one strength, then surface the hidden contradiction.”`
+- **Coach-Me 4-Question Calibration Meta-Prompt:** Paste into a blank chat to let your assistant interview you and output a custom 85/15 block:
+
+```markdown
+Act as my AI Calibration Architect. Interview me one question at a time across 4 quick tradeoffs: (1) Pushback ratio, (2) Response length, (3) Reasoning method (Feynman analogies vs Socratic vs Differential root-cause), (4) Bounded voice flavor (0% neutral, 15% TARS deadpan, 15% JARVIS dry wit, zero *asterisks*). After Q4, output my copy-paste instructions block.
+```
+
 ## Questions people ask.
 
 ### Can I use these character prompts in Meta Muse Soul.md or CLAUDE.md?
@@ -194,11 +197,10 @@ In our 300-reply benchmark, GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro a
 
 - [The AI Roleplay Tax: 300-Reply Empirical Study](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 
-- [Agent Cocktail Curated Recipes JSON (15 Combos)](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json)
+- [3-Layer Character Combo Curated Recipes JSON (15 Combos)](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json)
 
 ## Keep going.
 
 - [Empirical proof: The AI Roleplay Tax Study (300 Replies + Transcripts)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
-- [Persona combos: Whimsical AI Persona Combos: 15 Agent Cocktails](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails)
-- [Alignment quiz: AI Alignment, HEXACO & Conflict Style Matcher](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test)
+- [Alignment quiz: AI Alignment, HEXACO & Conflict Style Matcher](https://agent-tune.com/research/ai-personality-rankings)
 - [Meta Muse: Meta Muse Soul.md Copy-Paste Templates](https://agent-tune.com/guides/muse-soul-md-templates)

@@ -5,18 +5,9 @@ Guide · Resources
 
 # Meta Muse Soul.md templates.
 
-By Bernard Huang · Updated November 23, 2026
-
-Four downloadable starter files, sixteen role blocks, default Soul.md restore backup, and interactive 3-file Muse Starter Kit Builder.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Choose a starting point.
 
@@ -31,7 +22,7 @@ Start with one template below. To keep Muse’s built-in core truths untouched, 
 | Restore Default Soul.md | Recover clean Core Truths &amp; Boundaries if overwritten | [View restore](https://agent-tune.com/guides/muse-soul-md-templates#restore-default-soul-md) · [Download .md](https://agent-tune.com/resources/muse/default-soul-restore.md) |
 | 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper &amp; 11 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
 
-Want to build `Soul.md`, [`Identity.md`](https://agent-tune.com/guides/muse-identity-md-templates), and [`Memory.md`](https://agent-tune.com/guides/muse-memory-md-privacy-reset) together? Use our [3-File Muse Starter Kit Builder below](https://agent-tune.com/guides/muse-soul-md-templates#muse-3-file-starter-builder).
+Want to build `Soul.md`, [`Identity.md`](https://agent-tune.com/guides/muse-identity-md-avatar-name), and [`Memory.md`](https://agent-tune.com/guides/muse-memory-md-privacy-reset) together? Use our [3-File Muse Starter Kit Builder below](https://agent-tune.com/guides/muse-soul-md-templates#muse-3-file-starter-builder).
 
 ## Add the template to your existing Soul.md.
 
@@ -420,9 +411,8 @@ Yes. Choose by the behavior you want: shorter answers, exploratory discussion, e
 - [Free browser tool: Edit and merge your Muse Soul.md](https://agent-tune.com/tools/muse-soul-md-editor)
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
-- [Guide: Meta Muse Connectors, tasks & approval rules](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Library: Explore all 43 tuning files](https://agent-tune.com/library/)
 - [Research: What the model reports actually measure](https://agent-tune.com/research/ai-personality-five-models-2026)
-- [Identity & Characters: 16 Meta Muse character ideas & Identity.md templates](https://agent-tune.com/guides/muse-identity-md-templates)
+- [Identity & Characters: 16 Meta Muse character ideas & Identity.md templates](https://agent-tune.com/guides/muse-identity-md-avatar-name)

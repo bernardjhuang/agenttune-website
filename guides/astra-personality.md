@@ -5,18 +5,9 @@ Guide · GPT-6 Astra
 
 # How to give GPT-6 Astra a personality.
 
-By Bernard Huang · Updated November 23, 2026
-
-Three instruction systems, one retired personality picker, and a file most people don't know they have.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/astra-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In ChatGPT Work and Codex, save your communication rules in ~/.codex/AGENTS.md (or under Settings → Personalization in the desktop app). In standard chat—where Astra runs as GPT-6 Pro—use Settings → Personalization → Custom Instructions (1,500-character limit). In the API, pass rules in the instructions parameter. The older Friendly/Pragmatic personality picker was retired in Codex and never applied to Astra.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/astra-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The short version.
 

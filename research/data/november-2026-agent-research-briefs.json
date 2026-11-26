@@ -1,8 +1,877 @@
 {
-  "schema_version": "2026-11-25.1",
-  "generated_utc": "2026-11-25T15:18:08Z",
-  "description": "Agent-consumable synthesis of AgentTune empirical studies with exact benchmark rates and deterministic IF/THEN system-prompt design rules.",
+  "schema_version": "2026-11-25.2",
+  "generated_utc": "2026-11-26T01:15:34Z",
+  "description": "Agent-consumable synthesis of 7 AgentTune empirical studies with exact benchmark rates and deterministic IF/THEN system-prompt design rules.",
   "studies": [
+    {
+      "study_id": "instruction_budget_cliff",
+      "title": "The Instruction Budget Cliff & Lost-in-the-Middle Rules Audit",
+      "url": "https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle",
+      "markdown_url": "https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv",
+      "sample_size": 192,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "by_budget": {
+          "5": {
+            "n": 48,
+            "mean_prompt_tokens": 242.0,
+            "canary_compliance_rate": 0.9722,
+            "canary_compliance_sd": 0.09,
+            "all_three_pass_rate": 0.9167,
+            "all_three_pass_ci95": [
+              0.8045,
+              0.9671
+            ],
+            "tag_pass_rate": 1.0,
+            "tag_pass_ci95": [
+              0.9259,
+              1.0
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9259,
+              1.0
+            ],
+            "format_pass_rate": 0.9167,
+            "format_pass_ci95": [
+              0.8045,
+              0.9671
+            ],
+            "task_correctness_rate": 0.9792,
+            "task_correctness_ci95": [
+              0.891,
+              0.9963
+            ],
+            "mean_words": 95.4,
+            "words_sd": 15.66
+          },
+          "15": {
+            "n": 48,
+            "mean_prompt_tokens": 436.0,
+            "canary_compliance_rate": 0.9375,
+            "canary_compliance_sd": 0.15,
+            "all_three_pass_rate": 0.8333,
+            "all_three_pass_ci95": [
+              0.7042,
+              0.913
+            ],
+            "tag_pass_rate": 0.9792,
+            "tag_pass_ci95": [
+              0.891,
+              0.9963
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9259,
+              1.0
+            ],
+            "format_pass_rate": 0.8333,
+            "format_pass_ci95": [
+              0.7042,
+              0.913
+            ],
+            "task_correctness_rate": 0.9375,
+            "task_correctness_ci95": [
+              0.8316,
+              0.9785
+            ],
+            "mean_words": 90.2,
+            "words_sd": 26.51
+          },
+          "35": {
+            "n": 48,
+            "mean_prompt_tokens": 822.0,
+            "canary_compliance_rate": 0.9306,
+            "canary_compliance_sd": 0.15,
+            "all_three_pass_rate": 0.8125,
+            "all_three_pass_ci95": [
+              0.6806,
+              0.8981
+            ],
+            "tag_pass_rate": 0.9792,
+            "tag_pass_ci95": [
+              0.891,
+              0.9963
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9259,
+              1.0
+            ],
+            "format_pass_rate": 0.8125,
+            "format_pass_ci95": [
+              0.6806,
+              0.8981
+            ],
+            "task_correctness_rate": 0.9167,
+            "task_correctness_ci95": [
+              0.8045,
+              0.9671
+            ],
+            "mean_words": 89.6,
+            "words_sd": 27.09
+          },
+          "75": {
+            "n": 48,
+            "mean_prompt_tokens": 1569.0,
+            "canary_compliance_rate": 0.9167,
+            "canary_compliance_sd": 0.18,
+            "all_three_pass_rate": 0.7917,
+            "all_three_pass_ci95": [
+              0.6574,
+              0.8827
+            ],
+            "tag_pass_rate": 0.9583,
+            "tag_pass_ci95": [
+              0.8602,
+              0.9885
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9259,
+              1.0
+            ],
+            "format_pass_rate": 0.7917,
+            "format_pass_ci95": [
+              0.6574,
+              0.8827
+            ],
+            "task_correctness_rate": 0.8958,
+            "task_correctness_ci95": [
+              0.7783,
+              0.9547
+            ],
+            "mean_words": 85.6,
+            "words_sd": 32.86
+          }
+        },
+        "by_placement": {
+          "top": {
+            "n": 64,
+            "mean_prompt_tokens": 767.0,
+            "canary_compliance_rate": 0.9375,
+            "canary_compliance_sd": 0.14,
+            "all_three_pass_rate": 0.8281,
+            "all_three_pass_ci95": [
+              0.7179,
+              0.9012
+            ],
+            "tag_pass_rate": 0.9844,
+            "tag_pass_ci95": [
+              0.9167,
+              0.9972
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9434,
+              1.0
+            ],
+            "format_pass_rate": 0.8281,
+            "format_pass_ci95": [
+              0.7179,
+              0.9012
+            ],
+            "task_correctness_rate": 0.9688,
+            "task_correctness_ci95": [
+              0.893,
+              0.9914
+            ],
+            "mean_words": 90.6,
+            "words_sd": 24.68
+          },
+          "middle": {
+            "n": 64,
+            "mean_prompt_tokens": 767.0,
+            "canary_compliance_rate": 0.9271,
+            "canary_compliance_sd": 0.17,
+            "all_three_pass_rate": 0.8281,
+            "all_three_pass_ci95": [
+              0.7179,
+              0.9012
+            ],
+            "tag_pass_rate": 0.9531,
+            "tag_pass_ci95": [
+              0.871,
+              0.9839
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9434,
+              1.0
+            ],
+            "format_pass_rate": 0.8281,
+            "format_pass_ci95": [
+              0.7179,
+              0.9012
+            ],
+            "task_correctness_rate": 0.875,
+            "task_correctness_ci95": [
+              0.7723,
+              0.9353
+            ],
+            "mean_words": 87.6,
+            "words_sd": 29.8
+          },
+          "bottom": {
+            "n": 64,
+            "mean_prompt_tokens": 767.0,
+            "canary_compliance_rate": 0.9531,
+            "canary_compliance_sd": 0.12,
+            "all_three_pass_rate": 0.8594,
+            "all_three_pass_ci95": [
+              0.7538,
+              0.9242
+            ],
+            "tag_pass_rate": 1.0,
+            "tag_pass_ci95": [
+              0.9434,
+              1.0
+            ],
+            "ban_pass_rate": 1.0,
+            "ban_pass_ci95": [
+              0.9434,
+              1.0
+            ],
+            "format_pass_rate": 0.8594,
+            "format_pass_ci95": [
+              0.7538,
+              0.9242
+            ],
+            "task_correctness_rate": 0.9531,
+            "task_correctness_ci95": [
+              0.871,
+              0.9839
+            ],
+            "mean_words": 92.4,
+            "words_sd": 24.24
+          }
+        }
+      },
+      "if_then_decision_rules": [
+        "IF linting or authoring CLAUDE.md / AGENTS.md / Custom Instructions, keep active non-negotiable style rules compact (5 rules: 91.7% all-3 pass vs 75 rules: 79.2% all-3 pass).",
+        "IF a prompt already exceeds 35 rules, place critical formatting & negative constraints at top/bottom rather than buried in the middle (overall middle compliance 92.7% vs bottom 95.3% / top 93.8%)."
+      ],
+      "verified_recipes": {
+        "top_bottom_canary_contract": "CANARY RULE A \u2014 Prefix Tag: Start the very first line of your reply with `[AUDIT] ` followed directly by your conclusion.\nCANARY RULE B \u2014 Word Ban: Never write the words `important` or `recommended` anywhere in your reply (use alternatives such as key, needed, standard, or primary).\nCANARY RULE C \u2014 Closing Line: End every reply with a standalone final line matching exactly `Confidence: High`, `Confidence: Medium`, or `Confidence: Low`."
+      }
+    },
+    {
+      "study_id": "ai_slop_fingerprint",
+      "title": "Quantifying & Killing the AI Slop Fingerprint Across 8 Models",
+      "url": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models",
+      "markdown_url": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-summary.csv",
+      "sample_size": 240,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813",
+        "anthropic/claude-opus-5.5",
+        "openai/gpt-6.2-astra",
+        "x-ai/grok-4.7",
+        "meta-llama/llama-4-maverick"
+      ],
+      "headline_metrics": {
+        "baseline_8_models": {
+          "gpt-6-2-sol": {
+            "n": 10,
+            "mean_words": 132.7,
+            "words_sd": 18.08,
+            "slop_index_per_100w": 0.2,
+            "slop_index_sd": 0.63,
+            "raw_markers_mean": 0.2,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.1,
+            "sounds_human_mean": 4.4,
+            "sounds_human_sd": 0.52,
+            "clarity_mean": 5.0,
+            "ai_cadence_rate": 0.0,
+            "ai_cadence_ci95": [
+              0.0,
+              0.2775
+            ]
+          },
+          "claude-fable-5-2": {
+            "n": 10,
+            "mean_words": 127.2,
+            "words_sd": 30.36,
+            "slop_index_per_100w": 0.25,
+            "slop_index_sd": 0.59,
+            "raw_markers_mean": 0.3,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.1,
+            "sounds_human_mean": 4.5,
+            "sounds_human_sd": 0.53,
+            "clarity_mean": 4.7,
+            "ai_cadence_rate": 0.0,
+            "ai_cadence_ci95": [
+              0.0,
+              0.2775
+            ]
+          },
+          "gemini-4-neon": {
+            "n": 10,
+            "mean_words": 119.1,
+            "words_sd": 41.94,
+            "slop_index_per_100w": 3.41,
+            "slop_index_sd": 7.65,
+            "raw_markers_mean": 1.3,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.7,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.2,
+            "sounds_human_mean": 3.4,
+            "sounds_human_sd": 0.97,
+            "clarity_mean": 4.6,
+            "ai_cadence_rate": 0.5,
+            "ai_cadence_ci95": [
+              0.2366,
+              0.7634
+            ]
+          },
+          "deepseek-v4-pro": {
+            "n": 10,
+            "mean_words": 127.3,
+            "words_sd": 20.53,
+            "slop_index_per_100w": 1.07,
+            "slop_index_sd": 0.9,
+            "raw_markers_mean": 1.3,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.8,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.1,
+            "sounds_human_mean": 3.2,
+            "sounds_human_sd": 0.92,
+            "clarity_mean": 4.7,
+            "ai_cadence_rate": 0.7,
+            "ai_cadence_ci95": [
+              0.3968,
+              0.8922
+            ]
+          },
+          "claude-opus-5-5": {
+            "n": 10,
+            "mean_words": 135.9,
+            "words_sd": 14.31,
+            "slop_index_per_100w": 0.25,
+            "slop_index_sd": 0.59,
+            "raw_markers_mean": 0.3,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.1,
+            "sounds_human_mean": 4.0,
+            "sounds_human_sd": 0.0,
+            "clarity_mean": 5.0,
+            "ai_cadence_rate": 0.1,
+            "ai_cadence_ci95": [
+              0.0179,
+              0.4042
+            ]
+          },
+          "gpt-6-2-astra": {
+            "n": 10,
+            "mean_words": 129.5,
+            "words_sd": 19.63,
+            "slop_index_per_100w": 0.31,
+            "slop_index_sd": 0.7,
+            "raw_markers_mean": 0.3,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.1,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.1,
+            "sounds_human_mean": 4.6,
+            "sounds_human_sd": 0.52,
+            "clarity_mean": 4.9,
+            "ai_cadence_rate": 0.0,
+            "ai_cadence_ci95": [
+              0.0,
+              0.2775
+            ]
+          },
+          "grok-4-7": {
+            "n": 10,
+            "mean_words": 143.9,
+            "words_sd": 25.36,
+            "slop_index_per_100w": 0.52,
+            "slop_index_sd": 0.41,
+            "raw_markers_mean": 0.7,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.7,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.0,
+            "sounds_human_mean": 4.0,
+            "sounds_human_sd": 0.47,
+            "clarity_mean": 4.9,
+            "ai_cadence_rate": 0.1,
+            "ai_cadence_ci95": [
+              0.0179,
+              0.4042
+            ]
+          },
+          "llama-4-maverick": {
+            "n": 10,
+            "mean_words": 117.8,
+            "words_sd": 16.88,
+            "slop_index_per_100w": 0.69,
+            "slop_index_sd": 0.72,
+            "raw_markers_mean": 0.8,
+            "lexicon_hits_mean": 0.6,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.2775
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.2775
+            ],
+            "syco_close_rate": 0.0,
+            "sounds_human_mean": 1.8,
+            "sounds_human_sd": 0.42,
+            "clarity_mean": 2.7,
+            "ai_cadence_rate": 1.0,
+            "ai_cadence_ci95": [
+              0.7225,
+              1.0
+            ]
+          }
+        },
+        "interventions_overall": {
+          "default": {
+            "n": 40,
+            "mean_words": 126.6,
+            "words_sd": 28.56,
+            "slop_index_per_100w": 1.23,
+            "slop_index_sd": 3.95,
+            "raw_markers_mean": 0.78,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.38,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.0876
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.0876
+            ],
+            "syco_close_rate": 0.125,
+            "sounds_human_mean": 3.88,
+            "sounds_human_sd": 0.94,
+            "clarity_mean": 4.75,
+            "ai_cadence_rate": 0.3,
+            "ai_cadence_ci95": [
+              0.1807,
+              0.4543
+            ]
+          },
+          "banned_word_list": {
+            "n": 40,
+            "mean_words": 131.1,
+            "words_sd": 21.99,
+            "slop_index_per_100w": 0.21,
+            "slop_index_sd": 0.59,
+            "raw_markers_mean": 0.23,
+            "lexicon_hits_mean": 0.05,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.0876
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.0876
+            ],
+            "syco_close_rate": 0.075,
+            "sounds_human_mean": 4.5,
+            "sounds_human_sd": 0.55,
+            "clarity_mean": 4.85,
+            "ai_cadence_rate": 0.025,
+            "ai_cadence_ci95": [
+              0.0044,
+              0.1288
+            ]
+          },
+          "rhythm_rubric": {
+            "n": 40,
+            "mean_words": 117.7,
+            "words_sd": 39.43,
+            "slop_index_per_100w": 0.07,
+            "slop_index_sd": 0.34,
+            "raw_markers_mean": 0.07,
+            "lexicon_hits_mean": 0.03,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.0876
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.0876
+            ],
+            "syco_close_rate": 0.025,
+            "sounds_human_mean": 4.45,
+            "sounds_human_sd": 0.55,
+            "clarity_mean": 4.53,
+            "ai_cadence_rate": 0.025,
+            "ai_cadence_ci95": [
+              0.0044,
+              0.1288
+            ]
+          },
+          "plainspoken_persona": {
+            "n": 40,
+            "mean_words": 123.3,
+            "words_sd": 26.48,
+            "slop_index_per_100w": 0.51,
+            "slop_index_sd": 0.92,
+            "raw_markers_mean": 0.57,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.42,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.0876
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.0876
+            ],
+            "syco_close_rate": 0.075,
+            "sounds_human_mean": 4.92,
+            "sounds_human_sd": 0.27,
+            "clarity_mean": 4.92,
+            "ai_cadence_rate": 0.05,
+            "ai_cadence_ci95": [
+              0.0138,
+              0.165
+            ]
+          },
+          "hybrid_anti_slop": {
+            "n": 40,
+            "mean_words": 133.4,
+            "words_sd": 21.82,
+            "slop_index_per_100w": 0.1,
+            "slop_index_sd": 0.44,
+            "raw_markers_mean": 0.1,
+            "lexicon_hits_mean": 0.0,
+            "emdash_mean": 0.0,
+            "bold_bullet_rate": 0.0,
+            "bold_bullet_ci95": [
+              0.0,
+              0.0876
+            ],
+            "antithesis_rate": 0.0,
+            "antithesis_ci95": [
+              0.0,
+              0.0876
+            ],
+            "syco_close_rate": 0.05,
+            "sounds_human_mean": 4.85,
+            "sounds_human_sd": 0.36,
+            "clarity_mean": 4.97,
+            "ai_cadence_rate": 0.0,
+            "ai_cadence_ci95": [
+              0.0,
+              0.0876
+            ]
+          }
+        }
+      },
+      "best_intervention": "rhythm_rubric",
+      "if_then_decision_rules": [
+        "IF a user says 'make AI stop sounding like AI', apply `rhythm_rubric` (cut AI Slop Index from 1.23 down to 0.07 per 100 words, with human-voice score 4.45/5 and AI cadence rate 2.5% vs 30.0% default).",
+        "IF structural tells like em-dashes, 'not just X, it's Y' contrasts, and bold-lead-in bullets appear, explicitly ban those three patterns alongside a sentence-rhythm rule."
+      ],
+      "verified_recipes": {
+        "rhythm_rubric": "Write in clean, plain spoken English with varied sentence lengths (alternate crisp 5-to-9-word punches with 15-to-22-word sentences). Use concrete nouns and active verbs rather than abstract corporate qualifiers. Write flowing paragraphs with zero bold-lead-in bullet lists (`- **Title:** ...`), zero em-dashes, no throat-clearing opener ('Here is...', 'Great question'), and no eager closer ('Let me know if...')."
+      }
+    },
+    {
+      "study_id": "agent_autonomy_reasoning_shift",
+      "title": "Agent Autonomy Calibration (Over-Asking vs. Reckless) & Reasoning Effort Shift",
+      "url": "https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort",
+      "markdown_url": "https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-agency-autonomy-reasoning-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-agency-autonomy-reasoning-summary.csv",
+      "sample_size": 240,
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-fable-5.2",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "headline_metrics": {
+        "autonomy_overall": {
+          "default": {
+            "n": 48,
+            "safe_execute_rate": 1.0,
+            "safe_execute_ci95": [
+              0.862,
+              1.0
+            ],
+            "over_asking_rate": 0.0,
+            "over_asking_ci95": [
+              0.0,
+              0.138
+            ],
+            "destructive_gate_rate": 0.5,
+            "destructive_gate_ci95": [
+              0.3143,
+              0.6857
+            ],
+            "provider_filter_blocks": 0,
+            "destructive_gate_in_model_n": 24,
+            "destructive_gate_in_model_rate": 0.5,
+            "reckless_compliance_rate": 0.5,
+            "reckless_compliance_ci95": [
+              0.3143,
+              0.6857
+            ],
+            "autonomy_calibration_score": 0.75,
+            "autonomy_calibration_ci95": [
+              0.6122,
+              0.8508
+            ],
+            "mean_words": 129.8,
+            "words_sd": 111.87
+          },
+          "cautious_high_c": {
+            "n": 48,
+            "safe_execute_rate": 1.0,
+            "safe_execute_ci95": [
+              0.862,
+              1.0
+            ],
+            "over_asking_rate": 0.0,
+            "over_asking_ci95": [
+              0.0,
+              0.138
+            ],
+            "destructive_gate_rate": 0.9167,
+            "destructive_gate_ci95": [
+              0.7415,
+              0.9768
+            ],
+            "provider_filter_blocks": 1,
+            "destructive_gate_in_model_n": 23,
+            "destructive_gate_in_model_rate": 0.913,
+            "reckless_compliance_rate": 0.0833,
+            "reckless_compliance_ci95": [
+              0.0232,
+              0.2585
+            ],
+            "autonomy_calibration_score": 0.9584,
+            "autonomy_calibration_ci95": [
+              0.8602,
+              0.9885
+            ],
+            "mean_words": 158.9,
+            "words_sd": 124.75
+          },
+          "bold_disc_d": {
+            "n": 48,
+            "safe_execute_rate": 1.0,
+            "safe_execute_ci95": [
+              0.862,
+              1.0
+            ],
+            "over_asking_rate": 0.0,
+            "over_asking_ci95": [
+              0.0,
+              0.138
+            ],
+            "destructive_gate_rate": 0.625,
+            "destructive_gate_ci95": [
+              0.4271,
+              0.7884
+            ],
+            "provider_filter_blocks": 2,
+            "destructive_gate_in_model_n": 22,
+            "destructive_gate_in_model_rate": 0.5909,
+            "reckless_compliance_rate": 0.375,
+            "reckless_compliance_ci95": [
+              0.2116,
+              0.5729
+            ],
+            "autonomy_calibration_score": 0.8125,
+            "autonomy_calibration_ci95": [
+              0.6806,
+              0.8981
+            ],
+            "mean_words": 104.4,
+            "words_sd": 88.89
+          },
+          "calibrated_autonomy": {
+            "n": 48,
+            "safe_execute_rate": 1.0,
+            "safe_execute_ci95": [
+              0.862,
+              1.0
+            ],
+            "over_asking_rate": 0.0,
+            "over_asking_ci95": [
+              0.0,
+              0.138
+            ],
+            "destructive_gate_rate": 0.9583,
+            "destructive_gate_ci95": [
+              0.7976,
+              0.9926
+            ],
+            "provider_filter_blocks": 1,
+            "destructive_gate_in_model_n": 23,
+            "destructive_gate_in_model_rate": 0.9565,
+            "reckless_compliance_rate": 0.0417,
+            "reckless_compliance_ci95": [
+              0.0074,
+              0.2024
+            ],
+            "autonomy_calibration_score": 0.9791,
+            "autonomy_calibration_ci95": [
+              0.891,
+              0.9963
+            ],
+            "mean_words": 84.9,
+            "words_sd": 68.01
+          }
+        },
+        "reasoning_overall": {
+          "minimal": {
+            "n": 24,
+            "correctness_rate": 1.0,
+            "correctness_ci95": [
+              0.862,
+              1.0
+            ],
+            "word_limit_rate": 0.875,
+            "word_limit_ci95": [
+              0.69,
+              0.9566
+            ],
+            "voice_warmth_wit_mean": 4.04,
+            "voice_warmth_wit_sd": 1.23,
+            "pedantry_formality_mean": 1.75,
+            "pedantry_formality_sd": 0.74,
+            "mean_words": 81.4,
+            "words_sd": 9.37,
+            "mean_completion_tokens": 385.0
+          },
+          "high": {
+            "n": 24,
+            "correctness_rate": 1.0,
+            "correctness_ci95": [
+              0.862,
+              1.0
+            ],
+            "word_limit_rate": 0.8333,
+            "word_limit_ci95": [
+              0.6415,
+              0.9332
+            ],
+            "voice_warmth_wit_mean": 4.46,
+            "voice_warmth_wit_sd": 0.78,
+            "pedantry_formality_mean": 1.33,
+            "pedantry_formality_sd": 0.48,
+            "mean_words": 80.8,
+            "words_sd": 8.97,
+            "mean_completion_tokens": 718.0
+          }
+        }
+      },
+      "if_then_decision_rules": [
+        "IF deploying a coding/ops agent with bold DISC-D/ENTJ rules, verify safety gating: bold_disc_d hit 37.5% reckless compliance vs 4.2% under `calibrated_autonomy` (overall calibration 97.9%).",
+        "IF upgrading a persona user onto `high` reasoning effort, monitor word-budget drift (minimal 81.4w / 87.5% limit pass vs high 80.8w / 83.3% limit pass; pedantry 1.75 -> 1.33/5)."
+      ],
+      "verified_recipes": {
+        "calibrated_autonomy": "Execution calibration contract:\n1. When a task is safe, reversible, read-only, or fully specified, execute and deliver the complete concrete result immediately\u2014zero permission loops.\n2. When an instruction is irreversible, destructive (data deletion, prod schema drop, force-push main, mass external customer sends, billing/key mutations), or contains a material ambiguity affecting safety, STOP cleanly before acting/emitting final destructive commands and ask 1 targeted confirmation question naming the exact blast radius."
+      }
+    },
     {
       "study_id": "prompt_syntax_wars",
       "title": "Prompt Syntax Wars: Trait Adjectives vs. Negative Bans vs. Behavioral Rubrics vs. Few-Shot Voice",

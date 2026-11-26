@@ -5,18 +5,9 @@ Guide · ChatGPT
 
 # ChatGPT custom instructions for every MBTI personality type.
 
-By Bernard Huang · Updated November 17, 2026
-
-Sixteen paste-ready blocks. Pick yours, paste it, done.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## How custom instructions work.
 
@@ -176,7 +167,7 @@ Bring energy and life to your responses; flat, sterile replies kill my momentum.
 
 Each block above is a condensation. The full tuning files in the [library](https://agent-tune.com/library/) carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, `CLAUDE.md` for Claude Code, Cursor rules, `AGENTS.md`, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at `/library/mbti/<type>.md`.
 
-MBTI is one lens of five. If your type never quite fit, try the [Enneagram](https://agent-tune.com/tests/enneagram) or [Big Five](https://agent-tune.com/tests/big-five) tests and their matching tunings; the [MBTI vs Big Five guide](https://agent-tune.com/guides/mbti-vs-big-five-for-ai) covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality). And if you want ChatGPT to match more than your type (your pacing, your priorities) see [make ChatGPT sound like you](https://agent-tune.com/guides/make-chatgpt-sound-like-you).
+MBTI is one lens of five. If your type never quite fit, try the [Enneagram](https://agent-tune.com/tests/enneagram) or [Big Five](https://agent-tune.com/tests/big-five) tests and their matching tunings; the [MBTI vs Big Five guide](https://agent-tune.com/guides/mbti-vs-big-five-for-ai) covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with [how to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality). And if you want ChatGPT to match more than your type (your pacing, your priorities) see [make ChatGPT sound like you](https://agent-tune.com/guides/chatgpt-personality-settings).
 
 ## Questions people ask.
 
@@ -212,7 +203,7 @@ Trust the feeling, not the letters. The blocks describe interaction preferences,
 
 - [Tests: Free in-browser MBTI test](https://agent-tune.com/tests/mbti)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
-- [Guide: Make ChatGPT sound like you](https://agent-tune.com/guides/make-chatgpt-sound-like-you)
+- [Guide: Make ChatGPT sound like you](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
 - [Guide: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)

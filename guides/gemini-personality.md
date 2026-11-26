@@ -5,18 +5,9 @@ Guide · Google Gemini
 
 # How to change Google Gemini’s personality.
 
-By Bernard Huang · Updated November 23, 2026
-
-Yes—configure Personal Intelligence (Instructions for Gemini / Saved Info), Custom Gems, Gemini Live voices, or GEMINI.md using 4 starter downloads.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Yes—you can change Gemini's personality in the Gemini app or on gemini.google.com under Settings & help → Personal Intelligence → Instructions for Gemini (Saved info), or by creating a Custom Gem. Pick a starter download below (No-Fluff Search Brief Gem, Saved Info Default, Code Reviewer, or GEMINI.md). Note that Google Search AI Overviews ignore Saved info.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Quick pick: 4 downloadable Gemini & Gem templates.
 
@@ -44,7 +35,7 @@ Want all 20 Saved Info, Gem & CLI presets? Open our [**20 Gemini Gems & Saved In
 | Gemini CLI &amp; Code Assist (personal) | ~/.gemini/GEMINI.md | Your personal coding assistant defaults across repositories. |
 | Gemini API (Google AI Studio / Vertex) | system_instruction field on the model request | Applies to that API call. |
 
-Paste this starter block into Instructions for Gemini, a Gem, or `~/.gemini/GEMINI.md`, or dial custom sliders in our [AI Personality Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions):
+Paste this starter block into Instructions for Gemini, a Gem, or `~/.gemini/GEMINI.md`, or dial custom sliders in our [AI Personality Tuner](https://agent-tune.com/tools/custom-instructions-generator):
 
 ```markdown
 ## How to communicate with me

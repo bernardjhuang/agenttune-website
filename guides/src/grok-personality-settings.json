@@ -1,10 +1,11 @@
 {
   "slug": "grok-personality-settings",
   "published": "2026-11-05",
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "title": "Grok xAI Default Personality & How to Change It (Grok 4.7 Data)",
   "description": "Grok xAI default personality (n=100 Grok 4.7 vs 4.6 data) and how to change it via Customize Grok (~4,000 chars), Voice Mode, and .md presets.",
   "scripts": [
+    "/resources/tools/ai-voice-picker.js",
     "/resources/tools/template-gallery.js"
   ],
   "pill": "Guide · xAI Grok",
@@ -24,6 +25,11 @@
     {
       "h2": "Dialing down edgy banter or dialing up warmth (5 more presets).",
       "html": "<p>Most people tune Grok in one of two directions:</p><ul><li><strong>Cut performative snark:</strong> Add <em>“Write in plain, neutral technical prose. Do not use jokes, sarcasm, or slang.”</em> Pair it with an <a href=\"/library/mbti/istj\">ISTJ</a> or <a href=\"/library/disc/c-conscientiousness\">DISC C</a> tuning.</li><li><strong>Add warmth and pacing:</strong> Use an <a href=\"/library/mbti/enfj\">ENFJ</a>, <a href=\"/library/disc/s-steadiness\">DISC S</a>, or <a href=\"/library/attachment/secure\">Secure attachment</a> tuning so Grok checks context before jumping to blunt critique.</li></ul><h3>Preset 2: Neutral Technical Editor</h3><div class=\"guide-snippet\">- Use plain, neutral technical prose. No jokes, slang, emojis, or snark.\n- Cite exact commands, versions, or primary docs; say what is unverified.\n- Put the fix or recommendation in paragraph one, then explain why.</div><h3>Preset 3: Live X / News Fact-Checker</h3><div class=\"guide-snippet\">- Separate primary posts, official announcements, and unconfirmed commentary.\n- Include exact timestamps or publication dates when summarizing fast-moving threads.\n- Flag conflicting claims rather than picking the loudest consensus.</div><h3>Preset 4: Socratic Study Partner</h3><div class=\"guide-snippet\">- Explain the core concept briefly, then ask me to predict the next step.\n- Point out the specific assumption I missed rather than giving away the whole solution.\n- Keep turns under 150 words unless I ask for a deep dive.</div><h3>Preset 5: Warm &amp; Balanced Advisor</h3><div class=\"guide-snippet\">- Acknowledge the constraint or stakes in one sentence before offering options.\n- Present two realistic paths with concrete pros and tradeoffs.\n- Disagree respectfully with evidence when my idea creates avoidable risk.</div><h3>Preset 6: Anti-Sycophancy Strategist</h3><div class=\"guide-snippet\">- Never agree just to close a turn smoothly. Name the strongest counterargument first.\n- Distinguish fatal flaws from fixable details.\n- Give one clear recommendation rather than a hedge-filled menu.</div><p>Want to package your rules into a standalone cloud bot? Read our <a href=\"/guides/grokbot-personality\">Grok Bot personality guide</a>.</p>"
+    },
+    {
+      "id": "grok-voice-mode-and-starters",
+      "h2": "Grok Voice Mode (Ara, Rex, Sal, Eve, Leo) & downloadable .md starters.",
+      "html": "<p>Inside Grok Voice Mode on iOS, Android, and <code>grok.com</code>, choose from five core voices alongside Expressive Mode. Pair your voice choice with concise rules in <strong>Settings → Customize Grok</strong> so spoken answers stay brief and grounded:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Voice</th><th scope=\"col\">Register &amp; Accent</th><th scope=\"col\">Best use case</th></tr></thead><tbody><tr><th scope=\"row\">Ara</th><td>Female · US · Warm</td><td>Everyday Q&amp;A and casual brainstorming</td></tr><tr><th scope=\"row\">Rex</th><td>Male · US · Confident, direct</td><td>Decision triage and direct critique</td></tr><tr><th scope=\"row\">Sal</th><td>Male · US · Conversational</td><td>Balanced back-and-forth planning</td></tr><tr><th scope=\"row\">Eve</th><td>Female · British · Energetic</td><td>Creative exploration and lively dialogue</td></tr><tr><th scope=\"row\">Leo</th><td>Male · British · Structured</td><td>Briefings, news synthesis &amp; review</td></tr></tbody></table></div><div class=\"at-widget\" id=\"at-voice-picker\" data-platform=\"grok\" role=\"region\" aria-label=\"Interactive Grok Voice Matcher\"><p class=\"tools-help\">Loading interactive Grok voice matcher…</p></div><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Downloadable Starter (.md)</th><th scope=\"col\">Surface</th><th scope=\"col\">Download</th></tr></thead><tbody><tr><th scope=\"row\">No-Snark Analytical Brief</th><td>Settings → Customize Grok</td><td><a href=\"/resources/grok/no-snark-analyst.md\" download>no-snark-analyst.md</a></td></tr><tr><th scope=\"row\">Anti-Sycophant Debater</th><td>Settings → Customize Grok</td><td><a href=\"/resources/grok/anti-sycophant-debater.md\" download>anti-sycophant-debater.md</a></td></tr><tr><th scope=\"row\">Pragmatic Engineer Bot</th><td>Grok Bot Description</td><td><a href=\"/resources/grok/grokbot-teammate-engineer.md\" download>grokbot-teammate-engineer.md</a></td></tr><tr><th scope=\"row\">Real-Time Signal Synthesizer</th><td>Grok Bot Description</td><td><a href=\"/resources/grok/grokbot-news-synthesizer.md\" download>grokbot-news-synthesizer.md</a></td></tr></tbody></table></div>"
     }
   ],
   "faq": [
@@ -62,23 +68,9 @@
     {
       "label": "AgentTune Research: What personality type is Grok?",
       "href": "https://agent-tune.com/research/what-personality-type-is-grok"
-    },
-    {
-      "label": "AgentTune Research: Grok 4.6 and the attachment cutoff",
-      "href": "https://agent-tune.com/research/what-personality-type-is-grok"
     }
   ],
   "related": [
-    {
-      "kicker": "Templates Gallery",
-      "label": "20 Customize Grok & Grok Bot templates (.md downloads)",
-      "href": "/guides/grok-personality-templates"
-    },
-    {
-      "kicker": "Voice Mode",
-      "label": "Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode",
-      "href": "/guides/grok-voice-mode-personas-companions"
-    },
     {
       "kicker": "Guide",
       "label": "How to give a Grok Bot a personality",

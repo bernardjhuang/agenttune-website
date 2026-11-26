@@ -5,18 +5,9 @@ Guide & Picker · ChatGPT Voice
 
 # ChatGPT Voice Mode: all 9 voices, female/male/UK options, and tone setup.
 
-By Bernard Huang · Updated November 20, 2026
-
-Filter Arbor, Breeze, Cove, Ember, Juniper, Maple, Sol, Spruce, and Vale—then copy a spoken-friendly Custom Instructions block so Voice Mode stops reading bullet walls.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Filter all 9 ChatGPT voices and build a Voice-Mode prompt.
 
@@ -85,11 +76,11 @@ You can switch voices in Settings → Voice across the ChatGPT iOS, Android, des
 
 - [AgentTune Guide: ChatGPT Personality Settings (Presets & Sliders)](https://agent-tune.com/guides/chatgpt-personality-settings)
 
-- [AgentTune Guide: How to Change Claude's Voice (All 5 Voices)](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
+- [AgentTune Guide: How to Change Claude's Voice (All 5 Voices)](https://agent-tune.com/guides/claude-personality)
 
 ## Keep going.
 
 - [Settings: ChatGPT Personality Settings: Cynic, Robot, Listener & Nerd](https://agent-tune.com/guides/chatgpt-personality-settings)
-- [Claude Voice: How to change Claude's voice (all 5 voices: female, male & tone)](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
+- [Claude Voice: How to change Claude's voice (all 5 voices: female, male & tone)](https://agent-tune.com/guides/claude-personality)
 - [Gemini Voice: Google Gemini Live voices & Personal Intelligence setup](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)
 - [Free tool: ChatGPT Custom Instructions & Personality Prompt Generator](https://agent-tune.com/tools/custom-instructions-generator)

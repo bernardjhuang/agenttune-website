@@ -26,6 +26,12 @@
 /output-styles/*
   X-Robots-Tag: noindex
 
+# Machine data & catalog JSON/CSV — fetchable by agents, kept out of search indexes
+/research/data/*
+  X-Robots-Tag: noindex
+/library/index.json
+  X-Robots-Tag: noindex
+
 # Resource downloads remain fetchable; discovery belongs to the guides
 /resources/*
   X-Robots-Tag: noindex
@@ -34,102 +40,150 @@
   X-Robots-Tag: noindex
 /research/*.md
   X-Robots-Tag: noindex
-# Test-spec markdown mirrors → canonical = the test page
+# Test-spec markdown mirrors → canonical = the test page + noindex
 /tests/mbti.md
   Link: <https://agent-tune.com/tests/mbti>; rel="canonical"
+  X-Robots-Tag: noindex
 /tests/enneagram.md
   Link: <https://agent-tune.com/tests/enneagram>; rel="canonical"
+  X-Robots-Tag: noindex
 /tests/disc.md
   Link: <https://agent-tune.com/tests/disc>; rel="canonical"
+  X-Robots-Tag: noindex
 /tests/attachment.md
   Link: <https://agent-tune.com/tests/attachment>; rel="canonical"
+  X-Robots-Tag: noindex
 /tests/big-five.md
   Link: <https://agent-tune.com/tests/big-five>; rel="canonical"
+  X-Robots-Tag: noindex
 
-# Tuning markdown mirrors → canonical = the library type page
+# Tuning markdown mirrors → canonical = the library type page + noindex
 /library/mbti/intj.md
   Link: <https://agent-tune.com/library/mbti/intj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/intp.md
   Link: <https://agent-tune.com/library/mbti/intp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/infj.md
   Link: <https://agent-tune.com/library/mbti/infj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/infp.md
   Link: <https://agent-tune.com/library/mbti/infp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/istj.md
   Link: <https://agent-tune.com/library/mbti/istj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/istp.md
   Link: <https://agent-tune.com/library/mbti/istp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/isfj.md
   Link: <https://agent-tune.com/library/mbti/isfj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/isfp.md
   Link: <https://agent-tune.com/library/mbti/isfp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/entj.md
   Link: <https://agent-tune.com/library/mbti/entj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/entp.md
   Link: <https://agent-tune.com/library/mbti/entp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/enfj.md
   Link: <https://agent-tune.com/library/mbti/enfj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/enfp.md
   Link: <https://agent-tune.com/library/mbti/enfp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/estj.md
   Link: <https://agent-tune.com/library/mbti/estj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/estp.md
   Link: <https://agent-tune.com/library/mbti/estp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/esfj.md
   Link: <https://agent-tune.com/library/mbti/esfj>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/mbti/esfp.md
   Link: <https://agent-tune.com/library/mbti/esfp>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/1-reformer.md
   Link: <https://agent-tune.com/library/enneagram/1-reformer>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/2-helper.md
   Link: <https://agent-tune.com/library/enneagram/2-helper>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/3-achiever.md
   Link: <https://agent-tune.com/library/enneagram/3-achiever>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/4-individualist.md
   Link: <https://agent-tune.com/library/enneagram/4-individualist>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/5-investigator.md
   Link: <https://agent-tune.com/library/enneagram/5-investigator>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/6-loyalist.md
   Link: <https://agent-tune.com/library/enneagram/6-loyalist>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/7-enthusiast.md
   Link: <https://agent-tune.com/library/enneagram/7-enthusiast>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/8-challenger.md
   Link: <https://agent-tune.com/library/enneagram/8-challenger>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/enneagram/9-peacemaker.md
   Link: <https://agent-tune.com/library/enneagram/9-peacemaker>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/disc/d-dominance.md
   Link: <https://agent-tune.com/library/disc/d-dominance>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/disc/i-influence.md
   Link: <https://agent-tune.com/library/disc/i-influence>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/disc/s-steadiness.md
   Link: <https://agent-tune.com/library/disc/s-steadiness>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/disc/c-conscientiousness.md
   Link: <https://agent-tune.com/library/disc/c-conscientiousness>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/attachment/secure.md
   Link: <https://agent-tune.com/library/attachment/secure>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/attachment/anxious.md
   Link: <https://agent-tune.com/library/attachment/anxious>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/attachment/avoidant.md
   Link: <https://agent-tune.com/library/attachment/avoidant>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/attachment/disorganized.md
   Link: <https://agent-tune.com/library/attachment/disorganized>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/openness-high.md
   Link: <https://agent-tune.com/library/ocean/openness-high>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/openness-low.md
   Link: <https://agent-tune.com/library/ocean/openness-low>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/conscientiousness-high.md
   Link: <https://agent-tune.com/library/ocean/conscientiousness-high>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/conscientiousness-low.md
   Link: <https://agent-tune.com/library/ocean/conscientiousness-low>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/extraversion-high.md
   Link: <https://agent-tune.com/library/ocean/extraversion-high>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/extraversion-low.md
   Link: <https://agent-tune.com/library/ocean/extraversion-low>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/agreeableness-high.md
   Link: <https://agent-tune.com/library/ocean/agreeableness-high>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/agreeableness-low.md
   Link: <https://agent-tune.com/library/ocean/agreeableness-low>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/neuroticism-high.md
   Link: <https://agent-tune.com/library/ocean/neuroticism-high>; rel="canonical"
+  X-Robots-Tag: noindex
 /library/ocean/neuroticism-low.md
   Link: <https://agent-tune.com/library/ocean/neuroticism-low>; rel="canonical"
+  X-Robots-Tag: noindex

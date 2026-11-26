@@ -5,18 +5,9 @@ Guide · Coding Agents
 
 # AGENTS.md templates for Codex and coding agents.
 
-By Bernard Huang · Updated November 23, 2026
-
-16 copy-paste and downloadable AGENTS.md configs by tech stack with live 32 KiB byte counters and CLAUDE.md / Cursor equivalents.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Quick pick: Downloadable AGENTS.md templates by stack.
 
@@ -28,7 +19,7 @@ Quick Actions & Agent Fetch
 | Autonomous PR Reviewer | Auth, SQL, race conditions &amp; missing assertions first | [View file](https://agent-tune.com/guides/agents-md-templates#4-autonomous-pr-reviewer-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-pr-reviewer.md) |
 | 12 more coding templates | Go, Rust, Personal ~/.codex/AGENTS.md, Migrations, Docs &amp; more | [Jump to 16 files ↓](https://agent-tune.com/guides/agents-md-templates#twelve-more-agents-md-templates) |
 
-Using multiple tools side-by-side? See our [Codex AGENTS.md Limit & Override Guide](https://agent-tune.com/guides/codex-agents-md-guide), [15 CLAUDE.md Examples](https://agent-tune.com/guides/claude-md-examples), and [7-Agent Rules File Matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
+Using multiple tools side-by-side? See our [Codex AGENTS.md Limit & Override Guide](https://agent-tune.com/guides/codex-agents-md-guide), [15 CLAUDE.md Examples](https://agent-tune.com/guides/claude-code-personality), and [7-Agent Rules File Matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
 
 ## 1. TypeScript & Next.js AGENTS.md.
 
@@ -229,5 +220,5 @@ Yes—many coding tools now read root AGENTS.md natively, or you can convert sni
 ## Keep going.
 
 - [Limit guide: Codex AGENTS.md configuration, overrides & 32 KiB limit](https://agent-tune.com/guides/codex-agents-md-guide)
-- [Claude Code: 15 CLAUDE.md examples & downloadable Output Styles](https://agent-tune.com/guides/claude-md-examples)
+- [Claude Code: 15 CLAUDE.md examples & downloadable Output Styles](https://agent-tune.com/guides/claude-code-personality)
 - [Generator: Interactive CLAUDE.md & Coding Rules Builder](https://agent-tune.com/tools/claude-md-generator)

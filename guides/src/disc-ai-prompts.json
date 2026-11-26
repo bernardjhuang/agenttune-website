@@ -4,7 +4,9 @@
   "updated": "2026-11-23",
   "title": "DISC AI Prompts for All 4 Styles & 12 Blends | AgentTune",
   "description": "Copy-paste DISC personality prompts (Dominance, Influence, Steadiness, Conscientiousness & 12 blends) for ChatGPT, Claude, Meta Muse, Codex, and Grok.",
-  "scripts": ["/resources/tools/template-gallery.js"],
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
   "pill": "Guide · DISC Prompts",
   "h1": "DISC AI prompts for all four workplace styles.",
   "dek": "Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C) that work in ChatGPT, Claude, Meta Muse, Codex, and Grok.",
@@ -80,17 +82,17 @@
     {
       "kicker": "Template",
       "label": "How to Work With Me README template for teams & AI",
-      "href": "/guides/how-to-work-with-me-readme-ai-template"
+      "href": "/tools/how-to-work-with-me"
     },
     {
       "kicker": "Prompts",
       "label": "Big Five AI system prompts: all 10 high and low trait poles",
-      "href": "/guides/big-five-ai-prompts"
+      "href": "/guides/mbti-vs-big-five-for-ai"
     },
     {
       "kicker": "Prompts",
       "label": "Attachment style AI prompts: Secure, Anxious, and Avoidant",
-      "href": "/guides/attachment-style-ai-prompts"
+      "href": "/library/attachment/avoidant"
     },
     {
       "kicker": "Guide",

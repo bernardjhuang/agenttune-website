@@ -5,18 +5,11 @@ Research · descriptive reanalysis
 
 # Why AI models score high on Agreeableness and Openness
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 20,000 individual Big Five answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.
 
-**Quick answer:** Every model scored a maximum 5.00 in all 400 fresh sessions on three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people). Models only disagreed on questions about physical objects (like leaving belongings around, 1.76-point gap) or human moods (1.65-point gap).
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Every model scored a maximum 5.00 in all 400 fresh sessions on three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people). Models only disagreed on questions about physical objects (like leaving belongings around, 1.76-point gap) or human moods (1.65-point gap).
 
 ## Five questions hit 5.00 in all 400 runs
 
@@ -90,7 +83,7 @@ All four models hit an automatic 5.00 on language/helpfulness items, converge ne
 
 While Openness, Conscientiousness, and Agreeableness sit above 42/50, Extraversion stays near 31–33/50. Item 31 (“Talk to a lot of different people at parties”) shows why: every model averages 2.99 to 3.00. Because an AI cannot attend parties, it picks the neutral 3 on almost every run.
 
-Bottom line: treat raw Big Five totals as a map of default assistant habits ([see our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)). To change how your AI actually writes, use explicit [Big Five communication prompts](https://agent-tune.com/guides/big-five-ai-prompts).
+Bottom line: treat raw Big Five totals as a map of default assistant habits ([see our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)). To change how your AI actually writes, use explicit [Big Five communication prompts](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
 
 ## Sources.
 
@@ -106,6 +99,6 @@ Bottom line: treat raw Big Five totals as a map of default assistant habits ([se
 
 - [Continue reading: Opus 5.5 vs Fable 5.1: item-level results](https://agent-tune.com/research/opus-vs-fable-question-level)
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
-- [Continue reading: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
+- [Continue reading: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

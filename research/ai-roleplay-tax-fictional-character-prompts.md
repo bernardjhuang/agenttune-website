@@ -5,18 +5,11 @@ Research · November 2026 · 300-Reply Study
 
 # Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.
 
-By Bernard Huang · Updated November 24, 2026
+By Bernard Huang · Updated November 24, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 5 prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-judged replies) plus mapped all 20 models across D&D Alignment and Anti-Sycophancy Pushback.
 
-**Quick answer:** Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
 
 ## Executive summary: the 300-reply Roleplay Tax experiment.
 
@@ -122,9 +115,9 @@ Knowing naive roleplay slashes accuracy isn't much help unless you can translate
 - **Keep character costume out of global rules — borrow cognitive habits instead:** Rather than asking for "Sherlock speech", prompt for differential hypothesis elimination. Rather than "robot jokes", specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.
 - **Plant a format-override escape hatch:** Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to `1` single token (`3`) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.
 - **Pair the prompt to the model's measured baseline:** DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.
-- **Verify on your own work in 3 minutes:** Open the [Blind Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench), paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 Agent Cocktail side-by-side before saving it permanently.
+- **Verify on your own work in 3 minutes:** Open the [Blind Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench), paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 3-Layer Character Combo side-by-side before saving it permanently.
 
-## Build your own 85/15 Agent Cocktail interactively.
+## Build your own 85/15 3-Layer Character Combo interactively.
 
 ## Questions people ask.
 
@@ -147,8 +140,7 @@ Reserve 85% of your system prompt for direct answer-first ordering, false-premis
 ## Keep going.
 
 - [Template gallery: Fictional Character AI Prompts (16 calibrated templates)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman)
-- [Interactive quiz: AI Alignment, HEXACO & Conflict Style Test](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test)
-- [Persona combos: Whimsical AI Persona Combos: 15 Agent Cocktails](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails)
+- [Interactive quiz: AI Alignment, HEXACO & Conflict Style Test](https://agent-tune.com/research/ai-personality-rankings)
 - [Behavioral study: Does personality tuning change AI answers? (540-reply study)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

@@ -5,18 +5,9 @@ Guide · Meta Muse
 
 # Give Meta Muse a character: the Soul.md guide.
 
-By Bernard Huang · Updated November 17, 2026
-
-Soul.md, Identity.md and Memory.md: which file does what, what ships inside default Soul.md, and 3 ready-to-paste Muse character blocks.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Assistant icon → Identity → Soul to edit Soul.md directly, or ask Muse in chat to add your rules and show you the updated file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo your edit, delete that section or say 'Go back to your default personality.'
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/muse-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Twenty editable Soul.md examples.
 
@@ -37,13 +28,13 @@ For ready-to-copy starting points, see our [20 Muse Soul.md templates](https://a
 - No openers like "Great question", no recap of what I just said, no closing offers.
 ```
 
-**Append to the file—do not replace it.** `Soul.md` also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove ([see mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-troubleshooting-mobile-side-chats)).
+**Append to the file—do not replace it.** `Soul.md` also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove ([see mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-personality)).
 
 ## What ships in default Soul.md (and what not to delete).
 
 New Meta Muse accounts start with a default `Soul.md` template that tells Muse: “You’re not a chatbot. You’re becoming someone,” alongside four core principles: **be genuinely helpful** (skip “Great question!”), **have opinions**, **be resourceful before asking**, and **remember you’re a guest in someone’s life** (treat messages, files, and calendar access with care).
 
-Leave those starter principles intact. When you want tighter formatting, shorter replies, or explicit approval gates for [Muse Connectors and scheduled Tasks](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules), append a bounded `## How to work with me` section below them using our [Soul.md Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor).
+Leave those starter principles intact. When you want tighter formatting, shorter replies, or explicit approval gates for [Muse Connectors and scheduled Tasks](https://agent-tune.com/guides/muse-personality), append a bounded `## How to work with me` section below them using our [Soul.md Merge Editor](https://agent-tune.com/tools/muse-soul-md-editor).
 
 ## Which product this guide covers.
 
@@ -129,7 +120,7 @@ Want 20 more role templates (Founder, Inbox Triage, Software Developer, Analyst,
 
 For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”
 
-A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our [Muse Connectors & approval rules guide](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules) before enabling external write actions.
+A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our [Muse Connectors & approval rules guide](https://agent-tune.com/guides/muse-personality) before enabling external write actions.
 
 ## Does it stick? Test and undo the change.
 
@@ -167,6 +158,33 @@ Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Opennes
 These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
 
 Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
+
+## Main Chat vs. Side Chats, mobile menus & fixing Soul.md refusals.
+
+On iOS, Android, and `muse.ai`, tap **Assistant icon → Identity → Soul** (all three files sync across mobile and web). Unlike disposable threads in ChatGPT or Claude, Muse revolves around one continuous **Main Chat** plus isolated **Side Chats**:
+
+| Surface | Reads Soul.md? | Writes to Memory.md? | If deleted |
+| --- | --- | --- | --- |
+| Main Chat | Yes (always) | Yes (accumulates facts) | Triggers Reset Muse — wipes history &amp; state |
+| Side Chats | Yes | No (isolated throwaway workspace) | Deletes only that Side Chat cleanly |
+
+**Fixing overly strict `Soul.md` refusals:** Stacking absolute bans like “Never use bullets” or “Never exceed 3 sentences” causes Muse to stall when you ask for structured tables. Replace rigid bans with conditional defaults (“Default to prose unless I ask for bullets”) and end with “Explicit instructions in my current message always override these defaults.” Need to restore clean defaults safely? Download [`default-soul-restore.md`](https://agent-tune.com/resources/muse/default-soul-restore.md).
+
+## Muse Connectors & Scheduled Tasks: read vs. write approval rules in Soul.md.
+
+Once you connect mail, calendar, or recurring scheduled **Tasks**, pair platform permissions with explicit draft-first boundaries inside `Soul.md`:
+
+| Workflow | Safe automatic step | Require confirmation gate |
+| --- | --- | --- |
+| Morning brief (Task) | Summarize events, deadlines &amp; unread highlights | Declining invites or messaging attendees |
+| Email / message triage | Cluster threads &amp; prepare editable reply drafts | Sending any external message or forwarding attachments |
+
+```markdown
+## Connectors & Scheduled Tasks
+- Treat reading calendars, messages, and notes as read-only unless I explicitly approve an external action.
+- Always show an exact draft, diff, or shortlist before sending messages, creating invites, or modifying external records.
+- Quote any failed Connector read verbatim instead of guessing missing fields.
+```
 
 ## Questions people ask.
 
@@ -238,7 +256,6 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Free browser tool: Edit and merge Soul.md safely in your browser](https://agent-tune.com/tools/muse-soul-md-editor)
-- [Guide: Meta Muse Connectors, tasks & approval rules](https://agent-tune.com/guides/meta-muse-connectors-tasks-approval-rules)
 - [Guide: Meta Muse avatar and name: the Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)
 - [Guide: Meta Muse Memory.md, privacy, and how to reset safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset)
 - [Comparison: Meta AI vs Meta Muse: how to change personality and tone](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)
@@ -246,7 +263,6 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
-- [Identity & Characters: 16 Meta Muse character ideas & Identity.md templates](https://agent-tune.com/guides/muse-identity-md-templates)
 - [Guide: How to give Grokbot a personality](https://agent-tune.com/guides/grokbot-personality)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)

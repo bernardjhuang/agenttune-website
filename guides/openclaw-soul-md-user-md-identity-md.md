@@ -5,18 +5,9 @@ Guide & Builder · OpenClaw
 
 # OpenClaw SOUL.md, IDENTITY.md, and USER.md: templates and live 3-file builder.
 
-By Bernard Huang · Updated November 20, 2026
-
-Generate all three OpenClaw root personality files together—SOUL.md for values and boundaries, IDENTITY.md for visuals, and USER.md for human context.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root directory so boot hooks load them every session. Keep communication style and hard boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone, stack, and decision preferences in USER.md—then pair them with AGENTS.md for tool triggers and workflows.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Build and download your OpenClaw 3-file bundle.
 
@@ -95,6 +86,6 @@ Aim for 15 to 35 concise lines (~600 to 1,800 characters). Checkable behavioral 
 ## Keep going.
 
 - [Templates: 20 Meta Muse Soul.md templates (portable to OpenClaw)](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Interactive Tuner: 6-Slider AI Personality Tuner → Soul.md export](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → Soul.md export](https://agent-tune.com/tools/custom-instructions-generator)
 - [Matrix: CLAUDE.md vs AGENTS.md vs .cursorrules & Windsurf matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Free browser tool: Instruction Checker — catch conflicting rules](https://agent-tune.com/tools/instruction-checker)

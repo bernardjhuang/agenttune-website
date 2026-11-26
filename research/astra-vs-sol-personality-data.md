@@ -5,18 +5,11 @@ Research · descriptive reanalysis
 
 # GPT-6 Astra vs Sol: what the self-reports show
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/astra-vs-sol-personality-data.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 1,000 September assessments in Codex plus 1,000 matched November assessments on GPT-6.2 Astra and GPT-6.2 Sol.
 
-**Quick answer:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/astra-vs-sol-personality-data.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 
 ## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
 

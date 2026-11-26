@@ -32,10 +32,10 @@
     },
     {
       "h2": "From benchmark to daily workflow: how to use the 85/15 rule with your agents.",
-      "html": "<p>Knowing naive roleplay slashes accuracy isn't much help unless you can translate the data into a cleaner daily habit. Across ChatGPT, Claude, Meta Muse, Gemini, and coding CLIs, four practical takeaways hold cleanly:</p><ol><li><strong>Keep character costume out of global rules — borrow cognitive habits instead:</strong> Rather than asking for <em>\"Sherlock speech\"</em>, prompt for differential hypothesis elimination. Rather than <em>\"robot jokes\"</em>, specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.</li><li><strong>Plant a format-override escape hatch:</strong> Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to <code>1</code> single token (<code>3</code>) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.</li><li><strong>Pair the prompt to the model's measured baseline:</strong> DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.</li><li><strong>Verify on your own work in 3 minutes:</strong> Open the <a href=\"/tools/instruction-test-bench\">Blind Instruction Test Bench</a>, paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 Agent Cocktail side-by-side before saving it permanently.</li></ol>"
+      "html": "<p>Knowing naive roleplay slashes accuracy isn't much help unless you can translate the data into a cleaner daily habit. Across ChatGPT, Claude, Meta Muse, Gemini, and coding CLIs, four practical takeaways hold cleanly:</p><ol><li><strong>Keep character costume out of global rules — borrow cognitive habits instead:</strong> Rather than asking for <em>\"Sherlock speech\"</em>, prompt for differential hypothesis elimination. Rather than <em>\"robot jokes\"</em>, specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.</li><li><strong>Plant a format-override escape hatch:</strong> Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to <code>1</code> single token (<code>3</code>) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.</li><li><strong>Pair the prompt to the model's measured baseline:</strong> DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.</li><li><strong>Verify on your own work in 3 minutes:</strong> Open the <a href=\"/tools/instruction-test-bench\">Blind Instruction Test Bench</a>, paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 3-Layer Character Combo side-by-side before saving it permanently.</li></ol>"
     },
     {
-      "h2": "Build your own 85/15 Agent Cocktail interactively.",
+      "h2": "Build your own 85/15 3-Layer Character Combo interactively.",
       "html": "<div id=\"at-character-mixer\"></div>"
     }
   ],
@@ -72,12 +72,7 @@
     {
       "kicker": "Interactive quiz",
       "label": "AI Alignment, HEXACO & Conflict Style Test",
-      "href": "/guides/ai-alignment-hexaco-conflict-style-test"
-    },
-    {
-      "kicker": "Persona combos",
-      "label": "Whimsical AI Persona Combos: 15 Agent Cocktails",
-      "href": "/guides/whimsical-ai-persona-combos-agent-cocktails"
+      "href": "/research/ai-personality-rankings"
     },
     {
       "kicker": "Behavioral study",

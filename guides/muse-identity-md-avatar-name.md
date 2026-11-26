@@ -5,18 +5,9 @@ Guide · Meta Muse
 
 # How to change Meta Muse’s avatar, name, and Identity.md.
 
-By Bernard Huang · Updated November 23, 2026
-
-Step-by-step mobile and web paths for swapping Muse's avatar, display name, and voice—and why Identity.md must stay separate from Soul.md.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep tone and formatting rules inside Soul.md so avatar updates never overwrite your communication preferences.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Avatar Picker vs. Identity.md text editor (iOS, Android & muse.ai).
 
@@ -48,7 +39,7 @@ If you put formatting rules inside `Identity.md` and later ask Muse to change it
 
 ## Clean Identity.md templates you can copy (or build interactively).
 
-Generate a coordinated `Soul.md` + `Identity.md` + `Memory.md` starter kit right here—or browse all [16 Meta Muse character ideas & Identity.md profiles](https://agent-tune.com/guides/muse-identity-md-templates):
+Generate a coordinated `Soul.md` + `Identity.md` + `Memory.md` starter kit right here—or browse all [16 Meta Muse character ideas & Identity.md profiles](https://agent-tune.com/guides/muse-identity-md-avatar-name):
 
 ### Minimal work assistant
 
@@ -62,7 +53,7 @@ Generate a coordinated `Soul.md` + `Identity.md` + `Memory.md` starter kit right
 - Boundaries: Follow Soul.md for all formatting, length, and tone rules.
 ```
 
-[Download Chief of Staff (.md)](https://agent-tune.com/resources/muse/identity-chief-of-staff.md) · [Download Coding Partner (.md)](https://agent-tune.com/resources/muse/identity-coding-partner.md)
+[Download Chief of Staff (.md)](https://agent-tune.com/resources/muse/identity-chief-of-staff.md) · [Download Coding Partner (.md)](https://agent-tune.com/resources/muse/identity-coding-partner.md) · [Download Rook — Skeptical Strategist (.md)](https://agent-tune.com/resources/muse/identity-skeptical-advisor.md) · [Download Bea — Concise Daily (.md)](https://agent-tune.com/resources/muse/identity-concise-daily.md)
 
 ### Direct study and review partner
 

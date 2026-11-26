@@ -36,7 +36,7 @@
     },
     {
       "h2": "How to go deeper.",
-      "html": "<p>Each block above is a condensation. The full tuning files in the <a href=\"/library/\">library</a> carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, <code>CLAUDE.md</code> for Claude Code, Cursor rules, <code>AGENTS.md</code>, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at <code>/library/mbti/&lt;type&gt;.md</code>.</p><p>MBTI is one lens of five. If your type never quite fit, try the <a href=\"/tests/enneagram\">Enneagram</a> or <a href=\"/tests/big-five\">Big Five</a> tests and their matching tunings; the <a href=\"/guides/mbti-vs-big-five-for-ai\">MBTI vs Big Five guide</a> covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with <a href=\"/guides/how-to-give-your-ai-a-personality\">how to give your AI a personality</a>. And if you want ChatGPT to match more than your type (your pacing, your priorities) see <a href=\"/guides/make-chatgpt-sound-like-you\">make ChatGPT sound like you</a>.</p>"
+      "html": "<p>Each block above is a condensation. The full tuning files in the <a href=\"/library/\">library</a> carry more; the complete rule set, the failure modes to watch for, verification steps, and install paths for surfaces beyond ChatGPT: Claude projects, <code>CLAUDE.md</code> for Claude Code, Cursor rules, <code>AGENTS.md</code>, Gemini Gems. Every file is plain Markdown, MIT-licensed, and mirrored raw at <code>/library/mbti/&lt;type&gt;.md</code>.</p><p>MBTI is one lens of five. If your type never quite fit, try the <a href=\"/tests/enneagram\">Enneagram</a> or <a href=\"/tests/big-five\">Big Five</a> tests and their matching tunings; the <a href=\"/guides/mbti-vs-big-five-for-ai\">MBTI vs Big Five guide</a> covers when each system maps better to AI behavior. For the wider picture of what personality tuning does and why it works, start with <a href=\"/guides/how-to-give-your-ai-a-personality\">how to give your AI a personality</a>. And if you want ChatGPT to match more than your type (your pacing, your priorities) see <a href=\"/guides/chatgpt-personality-settings\">make ChatGPT sound like you</a>.</p>"
     }
   ],
   "faq": [
@@ -79,7 +79,7 @@
     {
       "kicker": "Guide",
       "label": "Make ChatGPT sound like you",
-      "href": "/guides/make-chatgpt-sound-like-you"
+      "href": "/guides/chatgpt-personality-settings"
     },
     {
       "kicker": "Guide",

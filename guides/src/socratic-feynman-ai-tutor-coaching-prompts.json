@@ -52,18 +52,13 @@
     },
     {
       "label": "AgentTune Alignment, HEXACO & Conflict Style Matcher",
-      "href": "https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test"
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
     }
   ],
   "related": [
     {
       "kicker": "Persona combos",
-      "label": "Whimsical AI Persona Combos: 15 Agent Cocktails",
-      "href": "/guides/whimsical-ai-persona-combos-agent-cocktails"
-    },
-    {
-      "kicker": "Character gallery",
-      "label": "Fictional Character AI Prompts: TARS, JARVIS & Feynman",
+      "label": "Whimsical AI Persona Combos: 15 3-Layer Character Combos",
       "href": "/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman"
     },
     {
@@ -74,7 +69,7 @@
     {
       "kicker": "Claude Projects",
       "label": "Claude Project Instructions Templates",
-      "href": "/guides/claude-project-instructions-examples"
+      "href": "/guides/claude-personality"
     }
   ]
 }

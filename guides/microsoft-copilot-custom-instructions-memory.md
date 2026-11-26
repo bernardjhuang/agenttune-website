@@ -5,18 +5,9 @@ Guide · Microsoft Copilot
 
 # Microsoft Copilot custom instructions, Memory, and tone settings.
 
-By Bernard Huang · Updated November 20, 2026
-
-Where Custom Instructions live in Copilot Chat and Microsoft 365 Copilot, how Memory interacts with them, and 5 copy-paste work communication blocks.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Where Copilot personalization lives (Personal, Work & GitHub Copilot).
 
@@ -28,7 +19,7 @@ Quick Actions & Agent Fetch
 
 ## Five copy-paste Microsoft Copilot custom instruction templates.
 
-Paste one block into **Personalization → Custom instructions**—or customize sliders live in our [6-Slider AI Personality Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions) (select the Microsoft Copilot export format):
+Paste one block into **Personalization → Custom instructions**—or customize sliders live in our [6-Slider AI Personality Tuner](https://agent-tune.com/tools/custom-instructions-generator) (select the Microsoft Copilot export format):
 
 ### 1. Executive Brief (M365 emails, Teams & slide recaps)
 
@@ -113,7 +104,7 @@ Add three explicit lines to Custom instructions: 'Lead with the main ask in sent
 
 ## Keep going.
 
-- [Interactive Tuner: 6-Slider AI Personality Tuner (includes Microsoft Copilot export)](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner (includes Microsoft Copilot export)](https://agent-tune.com/tools/custom-instructions-generator)
 - [GitHub Copilot: GitHub Copilot (.github/copilot-instructions.md) & IDE rules](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Memory Hygiene: How to audit & migrate AI memory without conflicting tone rules](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions)
 - [Notion AI: Notion AI custom instructions & workspace agent persona templates](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona)

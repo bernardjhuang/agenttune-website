@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · DeepSeek</span>
+        <p class="page-eyebrow">Guide · DeepSeek</p>
         <h1 class="h-hero h-research-hero">DeepSeek system prompts and custom instructions: XML templates that hold their tone.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Why XML-tagged constraints beat loose paragraphs in DeepSeek V3/V4 and reasoning models—plus 4 copyable API and web session templates.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time> · <a href="/guides/deepseek-system-prompt-custom-instructions.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> In the DeepSeek API, pass an XML-delimited block (&lt;system_instructions&gt; with &lt;role&gt;, &lt;constraints&gt;, and &lt;output_format&gt;) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/deepseek-system-prompt-custom-instructions.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -146,7 +137,7 @@
 
       <section>
         <h2 id="testing-deepseek-prompts">Test and compare your DeepSeek system prompt locally.</h2>
-        <p>Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?</p><ul><li>Dial in exact warmth, brevity, and pushback rules in our <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions">6-Slider AI Personality Tuner</a>.</li><li>Lint for conflicting constraints in the <a href="/tools/instruction-checker">Instruction Checker</a>.</li><li>Score baseline vs. tuned DeepSeek outputs blindly in the <a href="/tools/instruction-test-bench">Instruction A/B Test Bench</a>.</li></ul>
+        <p>Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?</p><ul><li>Dial in exact warmth, brevity, and pushback rules in our <a href="/tools/custom-instructions-generator">6-Slider AI Personality Tuner</a>.</li><li>Lint for conflicting constraints in the <a href="/tools/instruction-checker">Instruction Checker</a>.</li><li>Score baseline vs. tuned DeepSeek outputs blindly in the <a href="/tools/instruction-test-bench">Instruction A/B Test Bench</a>.</li></ul>
       </section>
 
       <div class="divider tight"></div>
@@ -197,7 +188,7 @@
           <a href="/guides/openrouter-open-source-system-prompt-templates"><span class="guide-related-kicker">OpenRouter Hub</span>20 OpenRouter &amp; Open-Source System Prompt Templates + Model Matcher</a>
           <a href="/research/what-personality-type-are-open-source-models"><span class="guide-related-kicker">Research</span>What personality type are open-source AI models? (12 models × n=100)</a>
           <a href="/guides/ai-assistant-personality-tone-guidelines"><span class="guide-related-kicker">Tone Design</span>AI personality, tone &amp; verbosity controls: 5 rules that beat adjectives</a>
-          <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner → Portable System Prompt</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner → Portable System Prompt</a>
           <a href="/guides/stop-ai-sycophancy-make-ai-push-back"><span class="guide-related-kicker">Anti-Sycophancy</span>How to make AI push back and stop agreeing with you</a>
           <a href="/tools/instruction-test-bench"><span class="guide-related-kicker">Free browser tool</span>Instruction A/B Test Bench — compare before &amp; after</a>
         </div>

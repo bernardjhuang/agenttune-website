@@ -5,18 +5,9 @@ Guide · xAI Grok
 
 # Grok’s xAI default personality — and how to change it on X and grok.com.
 
-By Bernard Huang · Updated November 23, 2026
-
-What Grok's xAI default personality measures in 100 fresh sessions on Grok 4.7, plus Settings → Customize Grok (~4,000 chars) and downloadable presets.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Built-in Grok modes vs. custom instructions on X & grok.com.
 
@@ -101,6 +92,27 @@ Most people tune Grok in one of two directions:
 
 Want to package your rules into a standalone cloud bot? Read our [Grok Bot personality guide](https://agent-tune.com/guides/grokbot-personality).
 
+## Grok Voice Mode (Ara, Rex, Sal, Eve, Leo) & downloadable .md starters.
+
+Inside Grok Voice Mode on iOS, Android, and `grok.com`, choose from five core voices alongside Expressive Mode. Pair your voice choice with concise rules in **Settings → Customize Grok** so spoken answers stay brief and grounded:
+
+| Voice | Register &amp; Accent | Best use case |
+| --- | --- | --- |
+| Ara | Female · US · Warm | Everyday Q&amp;A and casual brainstorming |
+| Rex | Male · US · Confident, direct | Decision triage and direct critique |
+| Sal | Male · US · Conversational | Balanced back-and-forth planning |
+| Eve | Female · British · Energetic | Creative exploration and lively dialogue |
+| Leo | Male · British · Structured | Briefings, news synthesis &amp; review |
+
+Loading interactive Grok voice matcher…
+
+| Downloadable Starter (.md) | Surface | Download |
+| --- | --- | --- |
+| No-Snark Analytical Brief | Settings → Customize Grok | [no-snark-analyst.md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
+| Anti-Sycophant Debater | Settings → Customize Grok | [anti-sycophant-debater.md](https://agent-tune.com/resources/grok/anti-sycophant-debater.md) |
+| Pragmatic Engineer Bot | Grok Bot Description | [grokbot-teammate-engineer.md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
+| Real-Time Signal Synthesizer | Grok Bot Description | [grokbot-news-synthesizer.md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
+
 ## Questions people ask.
 
 ### How do I change Grok's personality without creating a Grok Bot?
@@ -131,12 +143,8 @@ In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean 
 
 - [AgentTune Research: What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)
 
-- [AgentTune Research: Grok 4.6 and the attachment cutoff](https://agent-tune.com/research/what-personality-type-is-grok)
-
 ## Keep going.
 
-- [Templates Gallery: 20 Customize Grok & Grok Bot templates (.md downloads)](https://agent-tune.com/guides/grok-personality-templates)
-- [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-voice-mode-personas-companions)
 - [Guide: How to give a Grok Bot a personality](https://agent-tune.com/guides/grokbot-personality)
 - [Research: What personality type is Grok? (Grok 4.6 & 4.3 data)](https://agent-tune.com/research/what-personality-type-is-grok)
 - [Guide: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)

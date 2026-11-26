@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Change Claude's Personality (Settings, Templates &amp; Opus 5.5 Data)</title>
-  <meta name="description" content="Yes, change Claude's personality via Settings → Profile → Personal preferences. Exact mobile/web paths, quick-pick templates &amp; Nov 2026 N=100 data." />
+  <title>How to Change Claude's Personality (Web, Mobile, Voice &amp; Data)</title>
+  <meta name="description" content="Change Claude's written tone and spoken Voice Mode on web, iOS &amp; Android. Exact Personal Preferences paths, 7 copy-paste setups, and Nov 2026 N=100 data." />
 
   <meta property="og:title" content="How to change Claude’s personality." />
-  <meta property="og:description" content="Yes, change Claude's personality via Settings → Profile → Personal preferences. Exact mobile/web paths, quick-pick templates &amp; Nov 2026 N=100 data." />
+  <meta property="og:description" content="Change Claude's written tone and spoken Voice Mode on web, iOS &amp; Android. Exact Personal Preferences paths, 7 copy-paste setups, and Nov 2026 N=100 data." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-07-23" />
-  <meta property="article:modified_time" content="2026-11-23" />
+  <meta property="article:modified_time" content="2026-11-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/claude-personality" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to change Claude’s personality." />
-  <meta name="twitter:description" content="Yes, change Claude's personality via Settings → Profile → Personal preferences. Exact mobile/web paths, quick-pick templates &amp; Nov 2026 N=100 data." />
+  <meta name="twitter:description" content="Change Claude's written tone and spoken Voice Mode on web, iOS &amp; Android. Exact Personal Preferences paths, 7 copy-paste setups, and Nov 2026 N=100 data." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
@@ -28,7 +28,7 @@
   <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/claude-personality.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude’s personality","description":"Yes, change Claude's personality via Settings → Profile → Personal preferences. Exact mobile/web paths, quick-pick templates & Nov 2026 N=100 data.","url":"https://agent-tune.com/guides/claude-personality","datePublished":"2026-07-23","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to change Claude’s personality","description":"Change Claude's written tone and spoken Voice Mode on web, iOS & Android. Exact Personal Preferences paths, 7 copy-paste setups, and Nov 2026 N=100 data.","url":"https://agent-tune.com/guides/claude-personality","datePublished":"2026-07-23","dateModified":"2026-11-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"How to change Claude’s personality"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you change Claude’s personality?","acceptedAnswer":{"@type":"Answer","text":"You can ask for a different communication style through Instructions for Claude, project instructions or Skills. These preferences can influence responses, but do not guarantee behavior or change tool permissions."}},{"@type":"Question","name":"What is the best Claude personality?","acceptedAnswer":{"@type":"Answer","text":"The best Claude personality depends on your workflow: 'Straight answers' removes preambles and trailing offers, 'Critical reviewer' curbs polite agreement, and 'Coding pair' outputs diff-first summaries. Compare two setups on your own tasks—our 60-reply pilot shows explicit behavioral rules shift opening structure cleanly without changing accuracy."}},{"@type":"Question","name":"What MBTI type is Claude?","acceptedAnswer":{"@type":"Answer","text":"In our recorded September 2026 assessments, Opus 5.5 produced 84 fully resolved INTJ results out of 100 and Fable 5.1 produced 98. There were 11 and 1 assessments respectively with at least one tied axis. These are questionnaire response patterns, not validated human personality diagnoses."}},{"@type":"Question","name":"Does a higher Agreeableness score mean a model is more sycophantic?","acceptedAnswer":{"@type":"Answer","text":"No. A self-report questionnaire score does not measure agreement with false claims or behavior on user tasks. That would require a separate behavioral evaluation."}},{"@type":"Question","name":"Where did Claude Styles go?","acceptedAnswer":{"@type":"Answer","text":"The current personalization documentation lists Instructions for Claude, project instructions and Skills. Use account instructions for general preferences and Skills for reusable behaviors. Claude Code has a separate output-style feature."}},{"@type":"Question","name":"How do I know my instructions are working?","acceptedAnswer":{"@type":"Answer","text":"Compare the same tasks in fresh chats before and after one instruction change. Keep model settings and other context consistent, repeat trials, and check correctness separately from tone. The downloadable worksheet includes three prompts and a rubric."}}]}</script>
 
@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Claude</span>
+        <p class="page-eyebrow">Guide · Claude</p>
         <h1 class="h-hero h-research-hero">How to change Claude’s personality.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Yes—open Settings → Profile → Personal Preferences on web or mobile. Quick-pick 5 Claude setups, browse 20 templates, or inspect Nov 2026 Opus 5.5, Fable 5.2 &amp; Sonnet 5.5 N=100 data.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <a href="/guides/claude-personality.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/claude-personality.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -90,13 +81,13 @@
 
       <section>
         <h2 id="how-to-change-claude-s-personality-settings">How to change Claude’s personality settings.</h2>
-        <p>Where you paste your rules depends on whether you want an account-wide default, a project override, or a terminal coding style:</p><ol><li><strong>Web &amp; desktop app:</strong> Click your initials (bottom-left) → <strong>Settings → Profile → Personal preferences</strong> (or <strong>Settings → General</strong>).</li><li><strong>iOS &amp; Android mobile app:</strong> Open the sidebar, tap your profile initials → <strong>Settings → Profile → Personal preferences</strong>. Edits sync across web and mobile.</li><li><strong>Paste one focused block:</strong> Copy one of the seven setups below (or customize in the <a href="/tools/custom-instructions-generator?target=claude-personal">generator</a>), save, and start a <strong>new chat</strong> to test.</li></ol><p>Anthropic’s <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features">personalization docs</a> split customization into four layers:</p><div class="guide-table-wrap" role="region" aria-label="How to change Claude’s personality settings.: table 1" tabindex="0"><table><thead><tr><th scope="col">Use case</th><th scope="col">Where to put it</th><th scope="col">Scope &amp; behavior</th></tr></thead><tbody><tr><th scope="row">Everyday chats (web &amp; mobile)</th><td><strong>Personal preferences / Instructions for Claude</strong> (Profile Settings)</td><td>Account-wide default across new conversations.</td></tr><tr><th scope="row">One client, repo, or research topic</th><td><strong>Project instructions</strong> (<a href="/guides/claude-project-instructions-examples">7 Project templates →</a>)</td><td>Applies inside that Project and overrides conflicting general tone rules.</td></tr><tr><th scope="row">Reusable task voice (former Styles)</th><td><strong>Skills</strong></td><td>Invoked when relevant or named explicitly; see the <a href="/guides/claude-styles-to-skills-migration">Styles-to-Skills guide</a>.</td></tr><tr><th scope="row">Claude Code CLI</th><td><code>~/.claude/output-styles/*.md</code> (<code>/output-style</code>)</td><td>System-level coding session tone with <code>keep-coding-instructions: true</code>; see the <a href="/guides/claude-code-personality">Claude Code guide</a>.</td></tr></tbody></table></div><p>Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read <a href="/guides/claude-voice-tone-settings-mobile-web">how to change Claude’s spoken Voice Mode vs. written tone</a>.</p>
+        <p>Where you paste your rules depends on whether you want an account-wide default, a project override, or a terminal coding style:</p><ol><li><strong>Web &amp; desktop app:</strong> Click your initials (bottom-left) → <strong>Settings → Profile → Personal preferences</strong> (or <strong>Settings → General</strong>).</li><li><strong>iOS &amp; Android mobile app:</strong> Open the sidebar, tap your profile initials → <strong>Settings → Profile → Personal preferences</strong>. Edits sync across web and mobile.</li><li><strong>Paste one focused block:</strong> Copy one of the seven setups below (or customize in the <a href="/tools/custom-instructions-generator?target=claude-personal">generator</a>), save, and start a <strong>new chat</strong> to test.</li></ol><p>Anthropic’s <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features">personalization docs</a> split customization into four layers:</p><div class="guide-table-wrap" role="region" aria-label="How to change Claude’s personality settings.: table 1" tabindex="0"><table><thead><tr><th scope="col">Use case</th><th scope="col">Where to put it</th><th scope="col">Scope &amp; behavior</th></tr></thead><tbody><tr><th scope="row">Everyday chats (web &amp; mobile)</th><td><strong>Personal preferences / Instructions for Claude</strong> (Profile Settings)</td><td>Account-wide default across new conversations.</td></tr><tr><th scope="row">One client, repo, or research topic</th><td><strong>Project instructions</strong> (<a href="/guides/claude-personality">7 Project templates →</a>)</td><td>Applies inside that Project and overrides conflicting general tone rules.</td></tr><tr><th scope="row">Reusable task voice (former Styles)</th><td><strong>Skills</strong></td><td>Invoked when relevant or named explicitly; see the <a href="/guides/claude-styles-to-skills-migration">Styles-to-Skills guide</a>.</td></tr><tr><th scope="row">Claude Code CLI</th><td><code>~/.claude/output-styles/*.md</code> (<code>/output-style</code>)</td><td>System-level coding session tone with <code>keep-coding-instructions: true</code>; see the <a href="/guides/claude-code-personality">Claude Code guide</a>.</td></tr></tbody></table></div><p>Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read <a href="/guides/claude-personality">how to change Claude’s spoken Voice Mode vs. written tone</a>.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2 id="five-claude-personality-setups-to-try">Quick pick: Best Claude Personal Preferences & 20-template gallery.</h2>
-        <div id="at-template-gallery-meta" data-platform="claude" data-generator="/tools/custom-instructions-generator?target=claude-personal" hidden></div><p>Looking for 20 downloadable Claude Personal Preferences &amp; Skill templates? Open our <a href="/guides/claude-personal-preferences-templates"><strong>20 Claude Templates &amp; .md Downloads Gallery →</strong></a> or copy one of these 7 flagship setups directly:</p><div class="guide-table-wrap" role="region" aria-label="Quick pick: Best Claude Personal Preferences &amp; 20-template gallery.: table 2" tabindex="0"><table><thead><tr><th scope="col">Setup</th><th scope="col">Who it suits best &amp; download</th></tr></thead><tbody><tr><th scope="row">1. Straight answers</th><td>Recommendation in sentence one, zero filler · <a href="/resources/claude/concise-preferences.md" download>Download .md</a></td></tr><tr><th scope="row">2. Thinking partner</th><td>Unpacks assumptions &amp; evidence cleanly</td></tr><tr><th scope="row">3. Warm and steady</th><td>Calm, concrete steps without hollow cheerleading</td></tr><tr><th scope="row">4. Critical reviewer</th><td>Counters Claude's 45.6–46.7/50 Agreeableness · <a href="/resources/claude/skeptical-partner-preferences.md" download>Download .md</a></td></tr><tr><th scope="row">5. Coding pair</th><td>Diff-first bugfixes &amp; verified tests · <a href="/resources/claude/senior-engineer-skill.md" download>Skill .md</a></td></tr><tr><th scope="row">6. Editor</th><td>Clean prose edits preserving voice · <a href="/resources/claude/executive-writer-skill.md" download>Skill .md</a></td></tr><tr><th scope="row">7. Task coordinator</th><td>Blockers, dependencies &amp; next actions upfront</td></tr></tbody></table></div><h3>1. Straight answers</h3><div class="guide-snippet" data-tuning-prompt># Communication preferences — straight answers
+        <div id="at-template-gallery-meta" data-platform="claude" data-generator="/tools/custom-instructions-generator?target=claude-personal" hidden></div><p>Looking for 20 downloadable Claude Personal Preferences &amp; Skill templates? Open our <a href="/guides/claude-personality"><strong>20 Claude Templates &amp; .md Downloads Gallery →</strong></a> or copy one of these 7 flagship setups directly:</p><div class="guide-table-wrap" role="region" aria-label="Quick pick: Best Claude Personal Preferences &amp; 20-template gallery.: table 2" tabindex="0"><table><thead><tr><th scope="col">Setup</th><th scope="col">Who it suits best &amp; download</th></tr></thead><tbody><tr><th scope="row">1. Straight answers</th><td>Recommendation in sentence one, zero filler · <a href="/resources/claude/concise-preferences.md" download>Download .md</a></td></tr><tr><th scope="row">2. Thinking partner</th><td>Unpacks assumptions &amp; evidence cleanly</td></tr><tr><th scope="row">3. Warm and steady</th><td>Calm, concrete steps without hollow cheerleading</td></tr><tr><th scope="row">4. Critical reviewer</th><td>Counters Claude's 45.6–46.7/50 Agreeableness · <a href="/resources/claude/skeptical-partner-preferences.md" download>Download .md</a></td></tr><tr><th scope="row">5. Coding pair</th><td>Diff-first bugfixes &amp; verified tests · <a href="/resources/claude/senior-engineer-skill.md" download>Skill .md</a></td></tr><tr><th scope="row">6. Editor</th><td>Clean prose edits preserving voice · <a href="/resources/claude/executive-writer-skill.md" download>Skill .md</a></td></tr><tr><th scope="row">7. Task coordinator</th><td>Blockers, dependencies &amp; next actions upfront</td></tr></tbody></table></div><h3>1. Straight answers</h3><div class="guide-snippet" data-tuning-prompt># Communication preferences — straight answers
 - Lead with the answer or recommendation, then the key reason.
 - Keep simple answers short; expand when I ask or when detail is necessary.
 - Preserve uncertainty that could change the decision. Say what you do not know.
@@ -163,6 +154,27 @@
         <h2>Styles, Skills and Claude Code.</h2>
         <p>Claude’s current personalization help page directs users to Instructions for Claude, project instructions and Skills. It no longer lists the old chat Styles picker. For a general communication preference, use Instructions for Claude; for a reusable task or voice, see <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Anthropic’s Skills guide</a>.</p><p>Claude Code has its own <a href="https://code.claude.com/docs/en/output-styles">output styles</a>. A custom style can preserve the built-in engineering instructions with <code>keep-coding-instructions: true</code>. Use the <a href="/guides/claude-code-personality">Claude Code walkthrough</a> for installation. Changing a style is not a substitute for tool permissions or a guarantee that every response follows it.</p>
       </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="claude-voice-mode-five-voices">Spoken Voice Mode: all 5 Claude voices (Buttery, Airy, Mellow, Glassy, Rounded).</h2>
+        <p>On iOS or Android, tap the <strong>Voice Mode waveform icon</strong> next to the composer (or open <strong>Initials → Settings → Voice</strong>) to switch between five English voices and speech speeds (Slow, Normal, Fast). On web/desktop, open <strong>Settings → Capabilities → Voice settings</strong>. Because Profile Personal Preferences sync everywhere, concise written rules also keep Voice Mode from reading long bullet lists aloud.</p><div class="guide-table-wrap" role="region" aria-label="Spoken Voice Mode: all 5 Claude voices (Buttery, Airy, Mellow, Glassy, Rounded).: table 5" tabindex="0"><table><thead><tr><th scope="col">Voice preset</th><th scope="col">Register / Accent</th><th scope="col">Best paired with</th></tr></thead><tbody><tr><th scope="row">Buttery</th><td>Warm, smooth (female-leaning)</td><td>Brainstorming &amp; coaching</td></tr><tr><th scope="row">Airy</th><td>Light, brisk (female-leaning)</td><td>Fast mobile Q&amp;A &amp; lookups</td></tr><tr><th scope="row">Mellow</th><td>Calm, lower-pitch (male-leaning)</td><td>Longer planning discussions</td></tr><tr><th scope="row">Glassy</th><td>Clear, bright articulation</td><td>Spoken summaries &amp; walkthroughs</td></tr><tr><th scope="row">Rounded</th><td>British-accented inflection</td><td>Editorial critique &amp; natural dialogue</td></tr></tbody></table></div><div class="at-widget" id="at-voice-picker" data-platform="claude" role="region" aria-label="Interactive Claude Voice &amp; Spoken Tone Picker"><p class="tools-help">Loading interactive Claude voice matcher…</p></div><h3>Voice-Mode friendly brevity preset</h3><div class="guide-snippet">- Answer in 2–4 natural spoken sentences first; wait before expanding.
+- Avoid markdown tables, nested bullets, and raw URLs unless asked.
+- Lead with the takeaway, then stop so I can steer follow-ups.</div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="claude-project-instructions-patterns">Claude Project Instructions templates & Personal Preferences precedence.</h2>
+        <p>Keep account-wide tone in <strong>Personal Preferences</strong>, and put task roles, citation schemas, and attached-file constraints inside each <strong>Claude Project</strong> (aim for 400–1,500 chars with explicit override wording if the Project requires longer memos):</p><h3>Project Template A — Primary-Source Research Analyst</h3><div class="guide-snippet">## Project Role
+Work strictly from Project Knowledge files plus verified citations.
+- Label observed quotes/figures separately from inference.
+- When uploaded docs conflict, list both sources and dates instead of averaging.
+- Start every memo with a 3-bullet Executive Findings block.</div><h3>Project Template B — Code Architecture &amp; Editorial Review</h3><div class="guide-snippet">## Project Role
+Flag correctness bugs, race conditions, and unsupported claims first using exact file/section paths.
+- Propose minimal, targeted edits instead of broad rewrites.
+- Never add generic AI clichés or unverified statistics.</div>
+      </section>
 
       <div class="divider tight"></div>
       <section>
@@ -221,14 +233,10 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/guides/claude-personal-preferences-templates"><span class="guide-related-kicker">20 Templates</span>Best Claude Personal Preferences &amp; Skill templates (.md downloads)</a>
-          <a href="/guides/claude-project-instructions-examples"><span class="guide-related-kicker">Projects</span>Claude Project instructions: limits, precedence &amp; 8 templates</a>
-          <a href="/guides/claude-voice-tone-settings-mobile-web"><span class="guide-related-kicker">Voice &amp; Mobile</span>How to change Claude's spoken voice (5 voices) vs. written tone</a>
-          <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner (export for Claude, ChatGPT &amp; Muse)</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner (export for Claude, ChatGPT &amp; Muse)</a>
           <a href="/guides/claude-styles-to-skills-migration"><span class="guide-related-kicker">Migration</span>Claude Styles are being retired and migrated to Skills</a>
           <a href="/research/ai-personality-five-models-2026"><span class="guide-related-kicker">Research</span>The five-model questionnaire study</a>
           <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Claude Code</span>Set a coding-session output style</a>
-          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Tool</span>Build your custom instructions</a>
         </div>
       </section>
 
@@ -244,6 +252,7 @@
   <script src="/platforms.js" fetchpriority="low"></script>
   <script src="/integrations.js" fetchpriority="low"></script>
   <script src="/guide-prompts.js" fetchpriority="low"></script>
+  <script defer src="/resources/tools/ai-voice-picker.js" fetchpriority="low"></script>
   <script defer src="/resources/tools/template-gallery.js" fetchpriority="low"></script>
 </body>
 </html>

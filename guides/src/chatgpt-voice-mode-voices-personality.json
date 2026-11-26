@@ -64,7 +64,7 @@
     },
     {
       "label": "AgentTune Guide: How to Change Claude's Voice (All 5 Voices)",
-      "href": "https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web"
+      "href": "https://agent-tune.com/guides/claude-personality"
     }
   ],
   "related": [
@@ -76,7 +76,7 @@
     {
       "kicker": "Claude Voice",
       "label": "How to change Claude's voice (all 5 voices: female, male & tone)",
-      "href": "/guides/claude-voice-tone-settings-mobile-web"
+      "href": "/guides/claude-personality"
     },
     {
       "kicker": "Gemini Voice",

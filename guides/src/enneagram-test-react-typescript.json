@@ -86,11 +86,6 @@
       "kicker": "Research",
       "label": "Reproduce the raw questionnaire results",
       "href": "/guides/reproduce-ai-personality-research"
-    },
-    {
-      "kicker": "Prompt library",
-      "label": "Enneagram prompts for all nine types",
-      "href": "/guides/enneagram-ai-prompts"
     }
   ],
   "faq": [

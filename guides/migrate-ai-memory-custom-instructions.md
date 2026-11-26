@@ -5,18 +5,9 @@ Workflow · Cross-Platform Memory
 
 # How to migrate AI memory into portable custom instructions without leaking secrets.
 
-By Bernard Huang · Updated November 17, 2026
-
-Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract clean behavioral rules and scrub PII before pasting.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Five-step memory & preference migration workflow.
 
@@ -30,7 +21,7 @@ Quick Actions & Agent Fetch
 
 | Information type | ChatGPT | Claude | Meta Muse | Gemini |
 | --- | --- | --- | --- | --- |
-| Durable tone &amp; formatting rules | Personalization → Custom Instructions (Box 2) | Profile Preferences (and [Projects](https://agent-tune.com/guides/claude-project-instructions-examples)) | Soul.md ([safe merge →](https://agent-tune.com/tools/muse-soul-md-editor)) | Saved Info + Gems instructions |
+| Durable tone &amp; formatting rules | Personalization → Custom Instructions (Box 2) | Profile Preferences (and [Projects](https://agent-tune.com/guides/claude-personality)) | Soul.md ([safe merge →](https://agent-tune.com/tools/muse-soul-md-editor)) | Saved Info + Gems instructions |
 | User role, stack, workflow facts | Personalization Box 1 or Saved Memories | Memory / Profile intro | Memory.md ([guide →](https://agent-tune.com/guides/muse-memory-md-privacy-reset)) | Saved Info facts |
 | Project-specific specs &amp; docs | ChatGPT Project (8,000 chars + files) | Claude Project Knowledge | Task context / uploaded notes | Custom Gem Knowledge |
 | Secrets, credentials, raw PII | Remove everywhere before pasting | Remove everywhere before pasting | Remove everywhere before pasting | Remove everywhere before pasting |

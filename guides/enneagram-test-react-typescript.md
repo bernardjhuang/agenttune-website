@@ -5,18 +5,9 @@ Developer resource · runnable starter & JS scorer
 
 # Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 20, 2026
-
-Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Download the standalone JS scorer or full React + TypeScript starter.
 
@@ -153,4 +144,3 @@ Take the 36-item Enneagram questionnaire directly in your browser at /tests/enne
 - [Interactive test: Take the free 36-item Enneagram test (no email)](https://agent-tune.com/tests/enneagram)
 - [9-type guide: Enneagram AI prompts for all 9 types, wings & ties](https://agent-tune.com/guides/enneagram-ai-prompts)
 - [Research: Reproduce the raw questionnaire results](https://agent-tune.com/guides/reproduce-ai-personality-research)
-- [Prompt library: Enneagram prompts for all nine types](https://agent-tune.com/guides/enneagram-ai-prompts)

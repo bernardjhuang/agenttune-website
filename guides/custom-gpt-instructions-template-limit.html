@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · OpenAI Custom GPTs</span>
+        <p class="page-eyebrow">Guide · OpenAI Custom GPTs</p>
         <h1 class="h-hero h-research-hero">Custom GPT instructions template: how to use the 8,000-character budget cleanly.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Custom GPTs and ChatGPT Projects give you 8,000 characters—more than 5x Custom Instructions—but dumping walls of prose lowers compliance.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time> · <a href="/guides/custom-gpt-instructions-template-limit.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Custom GPTs accept up to 8,000 characters in Instructions, but prompts between 1,800 and 4,000 characters follow rules more reliably. Split your prompt into six sections—Role, Behavioral Rules, Output Format, Knowledge &amp; Tool Boundaries, Failure Modes, and Instruction Integrity—and offload reference docs to Knowledge files.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/custom-gpt-instructions-template-limit.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -90,7 +81,7 @@
 
       <section>
         <h2 id="eight-thousand-char-budget">Where each budget lives (Custom Instructions vs. Custom GPTs vs. Projects).</h2>
-        <div class="guide-table-wrap" role="region" aria-label="Where each budget lives (Custom Instructions vs. Custom GPTs vs. Projects).: table 1" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Instruction limit</th><th scope="col">Recommended fill</th><th scope="col">What to offload to Knowledge files</th></tr></thead><tbody><tr><th scope="row">Account Custom Instructions</th><td>1,500 chars &times; 2 boxes</td><td>350–1,200 chars each</td><td>N/A — keep personal bio &amp; durable tone concise</td></tr><tr><th scope="row">Custom GPT Instructions</th><td>8,000 chars</td><td>1,800–4,000 chars</td><td>Pricing tables, style bibles, glossaries, long few-shot corpora</td></tr><tr><th scope="row">ChatGPT Project Instructions</th><td>8,000 chars (<a href="/guides/chatgpt-projects-vs-custom-instructions">precedence guide →</a>)</td><td>1,200–3,500 chars</td><td>Project briefs, specs, datasets, archived notes</td></tr></tbody></table></div><p>Tip: define explicit formatting and tone rules inside your Custom GPT so a user’s global Personalization preset doesn’t accidentally override the GPT’s output style.</p>
+        <div class="guide-table-wrap" role="region" aria-label="Where each budget lives (Custom Instructions vs. Custom GPTs vs. Projects).: table 1" tabindex="0"><table><thead><tr><th scope="col">Surface</th><th scope="col">Instruction limit</th><th scope="col">Recommended fill</th><th scope="col">What to offload to Knowledge files</th></tr></thead><tbody><tr><th scope="row">Account Custom Instructions</th><td>1,500 chars &times; 2 boxes</td><td>350–1,200 chars each</td><td>N/A — keep personal bio &amp; durable tone concise</td></tr><tr><th scope="row">Custom GPT Instructions</th><td>8,000 chars</td><td>1,800–4,000 chars</td><td>Pricing tables, style bibles, glossaries, long few-shot corpora</td></tr><tr><th scope="row">ChatGPT Project Instructions</th><td>8,000 chars (<a href="/guides/chatgpt-personality-settings">precedence guide →</a>)</td><td>1,200–3,500 chars</td><td>Project briefs, specs, datasets, archived notes</td></tr></tbody></table></div><p>Tip: define explicit formatting and tone rules inside your Custom GPT so a user’s global Personalization preset doesn’t accidentally override the GPT’s output style.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -164,7 +155,7 @@ You are a focused [Domain] assistant that helps users accomplish [Specific Outco
         <h2>Sources.</h2>
         <ul class="guide-sources">
           <li><a href="https://agent-tune.com/guides/ai-custom-instructions-character-limits" target="_blank" rel="noopener">AgentTune: AI Custom Instructions Character Limits</a></li>
-          <li><a href="https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions" target="_blank" rel="noopener">AgentTune: ChatGPT Projects vs Custom Instructions</a></li>
+          <li><a href="https://agent-tune.com/guides/chatgpt-personality-settings" target="_blank" rel="noopener">AgentTune: ChatGPT Projects vs Custom Instructions</a></li>
         </ul>
       </section>
 
@@ -172,10 +163,9 @@ You are a focused [Domain] assistant that helps users accomplish [Specific Outco
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
-          <a href="/guides/chatgpt-projects-vs-custom-instructions"><span class="guide-related-kicker">Comparison</span>ChatGPT Projects vs Custom Instructions</a>
+          <a href="/guides/chatgpt-personality-settings"><span class="guide-related-kicker">Comparison</span>ChatGPT Projects vs Custom Instructions</a>
           <a href="/guides/ai-custom-instructions-character-limits"><span class="guide-related-kicker">Reference</span>Character limits across AI platforms</a>
           <a href="/tools/instruction-checker"><span class="guide-related-kicker">Tool</span>Instruction Checker (catch bloated &amp; conflicting lines)</a>
-          <a href="/guides/chatgpt-personality-settings"><span class="guide-related-kicker">Guide</span>ChatGPT Personality Settings (2026)</a>
         </div>
       </section>
 

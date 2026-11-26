@@ -17,7 +17,7 @@
     {
       "id": "choose-a-starting-point",
       "h2": "Choose a starting point.",
-      "html": "<div id=\"at-template-gallery-meta\" data-platform=\"muse\" data-generator=\"/tools/muse-soul-md-editor\" hidden></div><p>Start with one template below. To keep Muse’s built-in core truths untouched, paste your current <code>Soul.md</code> into our <a href=\"/tools/muse-soul-md-editor\">browser Soul.md merge editor</a> for a one-click backup and diff preview:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template</th><th scope=\"col\">Best for</th><th scope=\"col\">Quick jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">Concise assistant</th><td>Short, answer-first replies without filler</td><td><a href=\"#1-concise-assistant\">View prompt</a> · <a href=\"/resources/muse/concise-assistant.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Thinking partner</th><td>Decisions, tradeoffs, and checking assumptions</td><td><a href=\"#2-thinking-partner\">View prompt</a> · <a href=\"/resources/muse/thinking-partner.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Writing editor</th><td>Tight prose edits that keep your voice &amp; facts</td><td><a href=\"#3-writing-editor\">View prompt</a> · <a href=\"/resources/muse/writing-editor.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Task coordinator</th><td>Status briefs, blockers, and Connector approval cards</td><td><a href=\"#4-task-coordinator\">View prompt</a> · <a href=\"/resources/muse/task-coordinator.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Restore Default Soul.md</th><td>Recover clean Core Truths &amp; Boundaries if overwritten</td><td><a href=\"#restore-default-soul-md\">View restore</a> · <a href=\"/resources/muse/default-soul-restore.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">16 role blocks</th><td>Founder, Developer, Analyst, Inbox Triage, Shopper &amp; 11 more</td><td><a href=\"#sixteen-more-soul-md-examples-by-role\">Jump to 16 roles ↓</a></td></tr></tbody></table></div><p>Want to build <code>Soul.md</code>, <a href=\"/guides/muse-identity-md-templates\"><code>Identity.md</code></a>, and <a href=\"/guides/muse-memory-md-privacy-reset\"><code>Memory.md</code></a> together? Use our <a href=\"#muse-3-file-starter-builder\">3-File Muse Starter Kit Builder below</a>.</p>"
+      "html": "<div id=\"at-template-gallery-meta\" data-platform=\"muse\" data-generator=\"/tools/muse-soul-md-editor\" hidden></div><p>Start with one template below. To keep Muse’s built-in core truths untouched, paste your current <code>Soul.md</code> into our <a href=\"/tools/muse-soul-md-editor\">browser Soul.md merge editor</a> for a one-click backup and diff preview:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template</th><th scope=\"col\">Best for</th><th scope=\"col\">Quick jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">Concise assistant</th><td>Short, answer-first replies without filler</td><td><a href=\"#1-concise-assistant\">View prompt</a> · <a href=\"/resources/muse/concise-assistant.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Thinking partner</th><td>Decisions, tradeoffs, and checking assumptions</td><td><a href=\"#2-thinking-partner\">View prompt</a> · <a href=\"/resources/muse/thinking-partner.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Writing editor</th><td>Tight prose edits that keep your voice &amp; facts</td><td><a href=\"#3-writing-editor\">View prompt</a> · <a href=\"/resources/muse/writing-editor.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Task coordinator</th><td>Status briefs, blockers, and Connector approval cards</td><td><a href=\"#4-task-coordinator\">View prompt</a> · <a href=\"/resources/muse/task-coordinator.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Restore Default Soul.md</th><td>Recover clean Core Truths &amp; Boundaries if overwritten</td><td><a href=\"#restore-default-soul-md\">View restore</a> · <a href=\"/resources/muse/default-soul-restore.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">16 role blocks</th><td>Founder, Developer, Analyst, Inbox Triage, Shopper &amp; 11 more</td><td><a href=\"#sixteen-more-soul-md-examples-by-role\">Jump to 16 roles ↓</a></td></tr></tbody></table></div><p>Want to build <code>Soul.md</code>, <a href=\"/guides/muse-identity-md-avatar-name\"><code>Identity.md</code></a>, and <a href=\"/guides/muse-memory-md-privacy-reset\"><code>Memory.md</code></a> together? Use our <a href=\"#muse-3-file-starter-builder\">3-File Muse Starter Kit Builder below</a>.</p>"
     },
     {
       "h2": "Add the template to your existing Soul.md.",
@@ -110,11 +110,6 @@
     },
     {
       "kicker": "Guide",
-      "label": "Meta Muse Connectors, tasks & approval rules",
-      "href": "/guides/meta-muse-connectors-tasks-approval-rules"
-    },
-    {
-      "kicker": "Guide",
       "label": "Muse vs ChatGPT vs Claude: where the personality lives",
       "href": "/guides/muse-vs-chatgpt-vs-claude-personality"
     },
@@ -136,7 +131,7 @@
     {
       "kicker": "Identity & Characters",
       "label": "16 Meta Muse character ideas & Identity.md templates",
-      "href": "/guides/muse-identity-md-templates"
+      "href": "/guides/muse-identity-md-avatar-name"
     }
   ],
   "changelog": [

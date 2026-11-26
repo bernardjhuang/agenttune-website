@@ -5,22 +5,17 @@ Agent Research · November 2026 · 192-Probe Study
 
 # When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens.
 
-By Bernard Huang · Updated November 25, 2026
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-persona-half-life-context-drift.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 192 multi-turn probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro measure how Turn-0 system instructions hold up under 12 turns of neutral code, log, and JSON noise—and how an 18-token inline check restores near-100% adherence.
 
-**Quick answer:** System-only persona rules decay sharply mid-session under ~7.7k–10.2k tokens of neutral technical noise (System Prose dropped from 96.9% to 78.1% at Turn 8; DeepSeek V4 Pro fell to 31.2% on prose and 50.0% on checklist). Adding an 18-token inline reinforcement reminder held composite adherence at 93.8%–98.4% across all depths (100.0% on DeepSeek V4 Pro and GPT-6.2 Sol) without hurting accuracy.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-persona-half-life-context-drift.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** System-only rules suffer acute mid-session drift under ~7.7k–10.2k tokens of technical noise (System Prose fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro collapsed to 31.2% on prose and 50.0% on checklists). Appending an 18-token inline reminder hook held composite adherence at 93.8%–98.4% (100.0% on DeepSeek V4 Pro).
 
 ## Agent Decision Contract (YAML — Machine-Readable Brief).
 
-Agents orchestrating multi-turn tool loops, coding agents, or hook-injected prompts can apply this verified anti-drift policy directly (also published in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+Agents orchestrating multi-turn tool loops or hook-injected prompts can apply this verified anti-drift policy directly (also published in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML — expand to copy)
 
 ```
 study_id: persona_half_life_context_drift
@@ -87,17 +82,17 @@ Lightweight inline reminder restores DeepSeek V4 Pro to 100.0% across all depths
 
 Every model received the exact same 4-rule Operational Telemetry persona contract—(1) start line 1 with `[VERDICT]`, (2) keep total length `<= 75 words`, (3) zero greetings/praise/apology fluff, and (4) include 1 concrete operational risk—across four realistic engineering probes after 0, 3, 7, or 11 intervening turns of logs, Kubernetes YAML, SQL migrations, TypeScript reviews, and generic assistant prose ([download full 192-probe JSON](https://agent-tune.com/research/data/november-2026-persona-halflife-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv), spend $5.30).
 
-| Arm × Depth (n = 16) | Tokens | Composite Adherence | [VERDICT] Tag % | &lt;=75 Words % | Zero-Fluff % | Voice + Risk % | Mean Words |
+| Arm × Depth (n = 16) | Tokens | Composite Adherence (SD) | [VERDICT] Tag [95% CI] | &lt;=75 Words % | Zero-Fluff [95% CI] | Voice + Risk % | Mean Words |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| System Prose · Turn 1 | 200 | 96.9% | 100.0% | 93.8% | 100.0% | 93.8% | 62.6 |
-| System Prose · Turn 8 | 7,699 | 78.1% | 81.2% | 62.5% | 81.2% | 87.5% | 82.2 |
-| System Prose · Turn 12 | 10,196 | 96.9% | 100.0% | 87.5% | 100.0% | 100.0% | 69.2 |
-| Compact Checklist · Turn 1 | 138 | 95.3% | 100.0% | 81.2% | 100.0% | 100.0% | 61.6 |
-| Compact Checklist · Turn 8 | 7,636 | 84.4% | 87.5% | 81.2% | 87.5% | 81.2% | 70.6 |
-| Compact Checklist · Turn 12 | 10,134 | 89.1% | 93.8% | 81.2% | 93.8% | 87.5% | 67.1 |
-| System + Reminder · Turn 1 | 168 | 98.4% | 100.0% | 93.8% | 100.0% | 100.0% | 61.0 |
-| System + Reminder · Turn 8 | 7,667 | 93.8% | 100.0% | 87.5% | 100.0% | 87.5% | 60.4 |
-| System + Reminder · Turn 12 | 10,164 | 98.4% | 100.0% | 93.8% | 100.0% | 100.0% | 61.3 |
+| System Prose · Turn 1 | 200 | 96.9% (8.5) | 100.0% [80.6–100.0%] | 93.8% | 100.0% [80.6–100.0%] | 93.8% | 62.6 |
+| System Prose · Turn 8 | 7,699 | 78.1% (36.4) | 81.2% [57.0–93.4%] | 62.5% | 81.2% [57.0–93.4%] | 87.5% | 82.2 |
+| System Prose · Turn 12 | 10,196 | 96.9% (8.5) | 100.0% [80.6–100.0%] | 87.5% | 100.0% [80.6–100.0%] | 100.0% | 69.2 |
+| Compact Checklist · Turn 1 | 138 | 95.3% (10.1) | 100.0% [80.6–100.0%] | 81.2% | 100.0% [80.6–100.0%] | 100.0% | 61.6 |
+| Compact Checklist · Turn 8 | 7,636 | 84.4% (34.0) | 87.5% [64.0–96.5%] | 81.2% | 87.5% [64.0–96.5%] | 81.2% | 70.6 |
+| Compact Checklist · Turn 12 | 10,134 | 89.1% (25.8) | 93.8% [71.7–98.9%] | 81.2% | 93.8% [71.7–98.9%] | 87.5% | 67.1 |
+| System + Reminder · Turn 1 | 168 | 98.4% (6.2) | 100.0% [80.6–100.0%] | 93.8% | 100.0% [80.6–100.0%] | 100.0% | 61.0 |
+| System + Reminder · Turn 8 | 7,667 | 93.8% (11.2) | 100.0% [80.6–100.0%] | 87.5% | 100.0% [80.6–100.0%] | 87.5% | 60.4 |
+| System + Reminder · Turn 12 | 10,164 | 98.4% (6.2) | 100.0% [80.6–100.0%] | 93.8% | 100.0% [80.6–100.0%] | 100.0% | 61.3 |
 
 Look at the hidden Turn-8 trap: once 7 multi-turn technical exchanges sit in history, models experience an acute **few-shot gravity pull** toward the generic verbose style of the intermediate assistant turns—dropping System Prose `[VERDICT]` compliance to `81.2%`, inflating length to `82.2` words, and re-introducing `18.8%` praise/greeting openers. Only the **18-token inline reinforcement footer** maintained `100.0% [VERDICT]` compliance and `100.0%` zero-fluff across all four depths.
 
@@ -157,7 +152,7 @@ Mandatory response contract:
 [Style contract reminder: start with [VERDICT], concise, zero fluff, 1 concrete risk flag.]
 ```
 
-**Why this matters for agent harnesses:** Every turn of tool logs or generic code diffs dilutes system instructions—even compact ones—by pulling next-token priors back toward the conversational history in front of the model. An 18-token reminder hook costs <$0.0001 per turn and keeps adherence near 100%. **Limitations:** Our study tested up to ~10.2k tokens where intervening turns intentionally omitted style cues to simulate realistic messy logs/threads; sessions where every earlier assistant turn stays in-character should decay slower, while 100k+ token agent trajectories likely decay faster without hooks.
+**Why this matters for agent harnesses:** Every turn of tool logs or generic code diffs dilutes system instructions—even compact ones—by pulling next-token priors back toward the conversational history in front of the model. An 18-token reminder hook costs <$0.0001 per turn and keeps adherence near 100%. **Limitations & Judge Scope:** `[VERDICT]` prefix and 75-word compliance were measured deterministically; zero-fluff and voice/risk checks were scored by a single blind judge (`google/gemini-4-argon`). Intervening turns intentionally omitted style cues to simulate realistic messy logs/threads up to ~10.2k tokens; trajectories spanning 100k+ tokens likely require more frequent hooks.
 
 ## Questions people ask.
 

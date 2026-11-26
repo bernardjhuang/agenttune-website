@@ -5,18 +5,9 @@ Guide · Coding Assistants
 
 # Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.
 
-By Bernard Huang · Updated November 17, 2026
-
-Every IDE and terminal agent has its own instruction file path and frontmatter syntax. Here is the exact format for Cursor, GitHub Copilot, Gemini CLI, Claude Code, and OpenAI Codex.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in YAML frontmatter (or in Cursor's user Rules for AI). For GitHub Copilot, add your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md or repo GEMINI.md. For Claude Code, use ~/.claude/CLAUDE.md or ~/.claude/output-styles/agenttune.md. For OpenAI Codex, use ~/.codex/AGENTS.md.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Side-by-side comparison of coding agent instruction files.
 
@@ -68,6 +59,17 @@ Gemini CLI and Gemini Code Assist read `~/.gemini/GEMINI.md` for personal defaul
 ## Exporting any of the 43 AgentTune profiles in one click.
 
 On any profile page in the [AgentTune library](https://agent-tune.com/library/), select **Coding assistant** in the first dropdown, then choose **Cursor · project rule**, **GitHub Copilot · repository instructions**, **Gemini CLI · GEMINI.md**, **Claude Code · output style**, or **Codex · personal instructions**. Or merge into an existing file with our [Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter).
+
+## Cursor Agent Mode: all 4 .mdc attachment modes & interactive builder.
+
+| Rule mode | YAML frontmatter | When loaded | Best used for |
+| --- | --- | --- | --- |
+| Always | alwaysApply: true | Every Agent &amp; Chat turn | Core test commands, diff boundaries &amp; tone |
+| Auto Attached | globs: [&quot;src/api/**/*.ts&quot;], alwaysApply: false | Matching file in context | API schemas, SQL migrations, UI conventions |
+| Agent Requested | description: &quot;...&quot;, alwaysApply: false | Agent pulls when relevant | Release checklists, deployment steps |
+| Manual | No globs, alwaysApply: false | Invoked via @rule-name | Occasional migrations or strict audit passes |
+
+Loading interactive Cursor .mdc rules builder…
 
 ## Questions people ask.
 

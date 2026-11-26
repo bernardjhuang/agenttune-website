@@ -9,8 +9,6 @@ Measured on GPT-6.2 in November 2026 (OpenRouter) and GPT-6 in September 2026 (C
 
 It depends on the GPT-6 revision and how ties are broken. In November 2026 under matched blind single-turn OpenRouter sessions (n = 100 each), **GPT-6.2 Astra scored 100/100 tie-free ISTJ** and **GPT-6.2 Sol scored 78 ISTJ / 22 INTJ** (78 ISTJ, 16 IXTJ, 6 INTJ tie-free). By contrast, in September 2026 Codex runs, GPT-6 Sol scored 97 INTJ while Astra split 46 ISTJ / 45 INTJ.
 
-Open Data & Agent Access[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-chatgpt.md)[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)[Apply a template →](https://agent-tune.com/library/)
-
 **The short answer.** In November 2026 blind OpenRouter runs (n = 100 each), both ChatGPT flagship revisions leaned Sensing: GPT-6.2 Astra scored 100/100 ISTJ and GPT-6.2 Sol scored 78 ISTJ / 22 INTJ (6 tie-free INTJ). In September 2026 Codex runs, GPT-6 Sol scored 97 INTJ (79 tie-free) and Astra split 46 ISTJ / 45 INTJ (45 ISTJ / 19 INTJ tie-free). Both cohorts scored 100% Secure on attachment and SC on DISC.
 
 ## GPT-6.2 Astra and GPT-6.2 Sol, November 2026 (OpenRouter).

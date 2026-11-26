@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · Coding Agents</span>
+        <p class="page-eyebrow">Guide · Coding Agents</p>
         <h1 class="h-hero h-research-hero">AGENTS.md templates for Codex and coding agents.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">16 copy-paste and downloadable AGENTS.md configs by tech stack with live 32 KiB byte counters and CLAUDE.md / Cursor equivalents.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time> · <a href="/guides/agents-md-templates.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/agents-md-templates.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -90,7 +81,7 @@
 
       <section>
         <h2 id="agents-picker-table">Quick pick: Downloadable AGENTS.md templates by stack.</h2>
-        <div id="at-template-gallery-meta" data-platform="coding" data-limit="32768" data-unit="bytes" data-generator="/tools/claude-md-generator" hidden></div><div class="guide-table-wrap" role="region" aria-label="Quick pick: Downloadable AGENTS.md templates by stack.: table 1" tabindex="0"><table><thead><tr><th scope="col">Stack / Role Template</th><th scope="col">Verification &amp; Guardrails</th><th scope="col">Jump / Download</th></tr></thead><tbody><tr><th scope="row">TypeScript &amp; Next.js</th><td>Strict types, RSC boundaries, <code>typecheck &amp;&amp; test</code></td><td><a href="#1-typescript-and-next-js-agents-md">View file</a> · <a href="/resources/agents/agents-md-typescript-nextjs.md" download>Download .md</a></td></tr><tr><th scope="row">Python &amp; Data Pipelines</th><td>Virtualenv, <code>pytest &amp; ruff</code>, zero secret leaks</td><td><a href="#2-python-and-data-pipelines-agents-md">View file</a> · <a href="/resources/agents/agents-md-python-data.md" download>Download .md</a></td></tr><tr><th scope="row">Monorepo Shared Safety</th><td>Package-scoped diffs &amp; sub-32 KiB discipline</td><td><a href="#3-monorepo-shared-workspace-agents-md">View file</a> · <a href="/resources/agents/agents-md-monorepo-safe.md" download>Download .md</a></td></tr><tr><th scope="row">Autonomous PR Reviewer</th><td>Auth, SQL, race conditions &amp; missing assertions first</td><td><a href="#4-autonomous-pr-reviewer-agents-md">View file</a> · <a href="/resources/agents/agents-md-pr-reviewer.md" download>Download .md</a></td></tr><tr><th scope="row">12 more coding templates</th><td>Go, Rust, Personal <code>~/.codex/AGENTS.md</code>, Migrations, Docs &amp; more</td><td><a href="#twelve-more-agents-md-templates">Jump to 16 files ↓</a></td></tr></tbody></table></div><p>Using multiple tools side-by-side? See our <a href="/guides/codex-agents-md-guide">Codex AGENTS.md Limit &amp; Override Guide</a>, <a href="/guides/claude-md-examples">15 CLAUDE.md Examples</a>, and <a href="/guides/ai-coding-agent-rules-files-matrix">7-Agent Rules File Matrix</a>.</p>
+        <div id="at-template-gallery-meta" data-platform="coding" data-limit="32768" data-unit="bytes" data-generator="/tools/claude-md-generator" hidden></div><div class="guide-table-wrap" role="region" aria-label="Quick pick: Downloadable AGENTS.md templates by stack.: table 1" tabindex="0"><table><thead><tr><th scope="col">Stack / Role Template</th><th scope="col">Verification &amp; Guardrails</th><th scope="col">Jump / Download</th></tr></thead><tbody><tr><th scope="row">TypeScript &amp; Next.js</th><td>Strict types, RSC boundaries, <code>typecheck &amp;&amp; test</code></td><td><a href="#1-typescript-and-next-js-agents-md">View file</a> · <a href="/resources/agents/agents-md-typescript-nextjs.md" download>Download .md</a></td></tr><tr><th scope="row">Python &amp; Data Pipelines</th><td>Virtualenv, <code>pytest &amp; ruff</code>, zero secret leaks</td><td><a href="#2-python-and-data-pipelines-agents-md">View file</a> · <a href="/resources/agents/agents-md-python-data.md" download>Download .md</a></td></tr><tr><th scope="row">Monorepo Shared Safety</th><td>Package-scoped diffs &amp; sub-32 KiB discipline</td><td><a href="#3-monorepo-shared-workspace-agents-md">View file</a> · <a href="/resources/agents/agents-md-monorepo-safe.md" download>Download .md</a></td></tr><tr><th scope="row">Autonomous PR Reviewer</th><td>Auth, SQL, race conditions &amp; missing assertions first</td><td><a href="#4-autonomous-pr-reviewer-agents-md">View file</a> · <a href="/resources/agents/agents-md-pr-reviewer.md" download>Download .md</a></td></tr><tr><th scope="row">12 more coding templates</th><td>Go, Rust, Personal <code>~/.codex/AGENTS.md</code>, Migrations, Docs &amp; more</td><td><a href="#twelve-more-agents-md-templates">Jump to 16 files ↓</a></td></tr></tbody></table></div><p>Using multiple tools side-by-side? See our <a href="/guides/codex-agents-md-guide">Codex AGENTS.md Limit &amp; Override Guide</a>, <a href="/guides/claude-code-personality">15 CLAUDE.md Examples</a>, and <a href="/guides/ai-coding-agent-rules-files-matrix">7-Agent Rules File Matrix</a>.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -230,7 +221,7 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/guides/codex-agents-md-guide"><span class="guide-related-kicker">Limit guide</span>Codex AGENTS.md configuration, overrides &amp; 32 KiB limit</a>
-          <a href="/guides/claude-md-examples"><span class="guide-related-kicker">Claude Code</span>15 CLAUDE.md examples &amp; downloadable Output Styles</a>
+          <a href="/guides/claude-code-personality"><span class="guide-related-kicker">Claude Code</span>15 CLAUDE.md examples &amp; downloadable Output Styles</a>
           <a href="/tools/claude-md-generator"><span class="guide-related-kicker">Generator</span>Interactive CLAUDE.md &amp; Coding Rules Builder</a>
         </div>
       </section>

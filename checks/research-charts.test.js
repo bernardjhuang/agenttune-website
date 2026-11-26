@@ -120,8 +120,11 @@ test('all 19 guide pages with benchmark blocks include valid accessible SVG char
   }
 });
 
-test('all 3 agent-first research papers include YAML contracts, >=2 valid SVG charts, and machine brief coverage', () => {
+test('all 6 agent-first research papers include YAML contracts, >=2 valid SVG charts, and machine brief coverage', () => {
   const papers = [
+    ['ai-instruction-budget-cliff-lost-in-the-middle', 'instruction_budget_cliff'],
+    ['ai-slop-fingerprint-benchmark-8-models', 'ai_slop_fingerprint'],
+    ['ai-agent-autonomy-over-asking-vs-reasoning-effort', 'agent_autonomy_reasoning_shift'],
     ['ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot', 'prompt_syntax_wars'],
     ['ai-sycophancy-vs-false-contrarianism-benchmark', 'sycophancy_vs_false_contrarianism'],
     ['ai-persona-half-life-context-drift', 'persona_half_life_context_drift']
@@ -153,5 +156,78 @@ test('all 3 agent-first research papers include YAML contracts, >=2 valid SVG ch
     const brief = briefs.studies.find((s) => s.study_id === studyId);
     assert.ok(brief, `Missing ${studyId} in november-2026-agent-research-briefs.json`);
     assert.ok(Array.isArray(brief.if_then_decision_rules) && brief.if_then_decision_rules.length >= 2);
+  }
+});
+
+test('dist indexation headers, sitemap hygiene, and consolidated guide links hold', () => {
+  const headersPath = path.join(__dirname, '../dist/_headers');
+  assert.ok(fs.existsSync(headersPath), 'Missing dist/_headers');
+  const headersText = fs.readFileSync(headersPath, 'utf8');
+  assert.ok(headersText.includes('X-Robots-Tag: noindex'), 'dist/_headers must emit X-Robots-Tag: noindex');
+  const ruleBlocks = headersText.split('\n').filter((line) => line.startsWith('/')).length;
+  assert.ok(ruleBlocks < 100, `dist/_headers must stay under 100 path blocks, got ${ruleBlocks}`);
+
+  const intjHtml = fs.readFileSync(path.join(__dirname, '../dist/library/mbti/intj.html'), 'utf8');
+  const esfpHtml = fs.readFileSync(path.join(__dirname, '../dist/library/mbti/esfp.html'), 'utf8');
+  assert.ok(!/noindex/i.test(intjHtml), 'dist/library/mbti/intj.html should remain indexable');
+  assert.ok(esfpHtml.includes('noindex, follow'), 'dist/library/mbti/esfp.html must emit noindex, follow');
+
+  const sitemapPath = path.join(__dirname, '../dist/sitemap.xml');
+  assert.ok(fs.existsSync(sitemapPath), 'Missing dist/sitemap.xml');
+  const sitemapText = fs.readFileSync(sitemapPath, 'utf8');
+  for (const excluded of ['/privacy', '/terms', '/library/mbti/esfp', '/library/mbti/isfp']) {
+    assert.ok(!sitemapText.includes(`<loc>https://agent-tune.com${excluded}</loc>`), `Sitemap should exclude ${excluded}`);
+  }
+  for (const included of [
+    '/library/mbti/intj',
+    '/library/mbti/infj',
+    '/library/mbti/enfj',
+    '/library/attachment/avoidant',
+    '/research/ai-instruction-budget-cliff-lost-in-the-middle',
+    '/research/ai-slop-fingerprint-benchmark-8-models',
+    '/research/ai-agent-autonomy-over-asking-vs-reasoning-effort'
+  ]) {
+    assert.ok(sitemapText.includes(`<loc>https://agent-tune.com${included}</loc>`), `Sitemap missing ${included}`);
+  }
+
+  const retiredSlugs = [
+    'claude-voice-tone-settings-mobile-web',
+    'claude-personal-preferences-templates',
+    'claude-project-instructions-examples',
+    'claude-md-examples',
+    'muse-troubleshooting-mobile-side-chats',
+    'meta-muse-connectors-tasks-approval-rules',
+    'muse-identity-md-templates',
+    'make-chatgpt-sound-like-you',
+    'chatgpt-projects-vs-custom-instructions',
+    'chatgpt-project-instructions-templates',
+    'grok-personality-templates',
+    'grok-voice-mode-personas-companions',
+    'audit-fix-conflicting-ai-instructions',
+    'how-to-work-with-me-readme-ai-template',
+    'cursor-agent-mode-rules-mdc-guide',
+    'windsurf-rules-cline-clinerules-guide',
+    'whimsical-ai-persona-combos-agent-cocktails',
+    'ai-alignment-hexaco-conflict-style-test',
+    'ai-personality-slider-tuner-vs-custom-instructions',
+    'attachment-style-ai-prompts',
+    'big-five-ai-prompts'
+  ];
+  const walkHtml = (dir) => {
+    const out = [];
+    for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, ent.name);
+      if (ent.isDirectory()) out.push(...walkHtml(full));
+      else if (ent.name.endsWith('.html')) out.push(full);
+    }
+    return out;
+  };
+  const retiredSet = new Set(retiredSlugs.map((s) => `/guides/${s}`));
+  for (const file of walkHtml(path.join(__dirname, '../dist'))) {
+    const html = fs.readFileSync(file, 'utf8');
+    for (const m of html.matchAll(/href="([^"]+)"/g)) {
+      const href = m[1].split('#')[0].split('?')[0].replace(/\.md$/, '').replace(/\/$/, '');
+      assert.ok(!retiredSet.has(href), `Internal link to retired 301 guide ${href} in ${file}`);
+    }
   }
 });

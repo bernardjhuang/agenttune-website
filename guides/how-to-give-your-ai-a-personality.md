@@ -5,18 +5,9 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 24, 2026
-
-Two different goals hide inside that sentence—working alignment vs. memorable character voice. Here is how to combine both cleanly without triggering the Roleplay Tax.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## "Give my AI a personality" means two different things.
 
@@ -46,7 +37,7 @@ In both cases, **checkable rules beat adjectives**. “Be concise and candid” 
 | App / Agent | Where to paste (Web &amp; Mobile) | Walkthrough |
 | --- | --- | --- |
 | ChatGPT | Settings → Personalization → Personality presets &amp; Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
-| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web) |
+| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-personality) |
 | Meta Muse | Assistant icon → Identity → Soul.md (keep avatar/name in Identity.md) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
 | Perplexity | Perplexity Spaces → Space Settings → Custom Instructions (4,000 chars) or AI Profile | [Perplexity Spaces guide](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) |
 | Grok &amp; Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
@@ -83,9 +74,9 @@ Controls how often the assistant pauses for confirmation versus executing end-to
 
 The biggest mistake new users make is pasting a highly specific tutor or character voice into their global account box—and then cursing at it two hours later during an urgent bug hunt. Think of your setup as **three clean layers**:
 
-- **Layer 1 — Global Baseline (Account Settings):** Put universal preferences here (answer-first verdicts, reject flawed math calmly, state unknowns rather than guessing). Take our 2-minute [Alignment & Conflict Style Matcher](https://agent-tune.com/guides/ai-alignment-hexaco-conflict-style-test) if default models feel too agreeable.
+- **Layer 1 — Global Baseline (Account Settings):** Put universal preferences here (answer-first verdicts, reject flawed math calmly, state unknowns rather than guessing). Take our 2-minute [Alignment & Conflict Style Matcher](https://agent-tune.com/research/ai-personality-rankings) if default models feel too agreeable.
 - **Layer 2 — Project Rooms & Gems (Specialists):** Isolate Socratic/Feynman learning prompts ([14 coaching templates](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts)) or adversarial PR auditors inside dedicated ChatGPT Projects, Claude Projects, or Gemini Gems.
-- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) or [Agent Cocktail Mixer](https://agent-tune.com/guides/whimsical-ai-persona-combos-agent-cocktails) so character voice lives in 15% of diction while accuracy stays at 100%.
+- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) or [3-Layer Character Combo Mixer](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) so character voice lives in 15% of diction while accuracy stays at 100%.
 
 ## What actually changes (and what our data shows).
 
@@ -96,6 +87,12 @@ Treat any template as an editable starting draft. Keep the bullets that save you
 > **Chart — Effect of Plain-English Behavioral Tuning (540-Reply Study, %):** Shows correctness pass rate rising on DeepSeek V4 Pro (+16.7 pp) and Claude Fable 5.2 (96.7% -> 100%), while DeepSeek fluff drops from 36.7% to 3.3%. Default (baseline): Correctness: DeepSeek 78.3, Correctness: Fable 5.2 96.7, Fluff: DeepSeek (lower=better) 36.7; Plain-English rules: Correctness: DeepSeek 95.0, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 20.0; Plain-English + INTJ: Correctness: DeepSeek 93.3, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 3.3.
 
 Checkable plain-English rules drive the real accuracy & brevity gains across controlled replies; combining them with 85/15 voice gives personality without losing fidelity.
+
+## Interactive 6-Slider AI Personality Tuner (portable export).
+
+Prefer adjusting dials instead of taking a personality test? Dial six behavioral settings below—Directness, Length, Pushback, Format, Exploration, and Questions—to generate a portable block for ChatGPT (≤1,500 chars), Claude, Meta Muse, Gemini, Grok, or coding agents:
+
+Loading 6-slider AI personality tuner…
 
 ## Questions people ask.
 

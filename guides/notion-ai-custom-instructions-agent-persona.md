@@ -5,18 +5,9 @@ Guide · Notion AI
 
 # Notion AI custom instructions and workspace agent persona templates.
 
-By Bernard Huang · Updated November 20, 2026
-
-Use a modular 4-part boot sequence (Role, Priority, Voice, Data Map) so Notion AI summarizes meetings, edits specs, and routes tasks cleanly.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice & Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The 4-part Notion AI instruction architecture.
 
@@ -90,7 +81,7 @@ Executive Chief of Staff operating inside this Notion workspace.
 
 - **Personal instructions:** Store your preferred reading density, pushback level, and bullet vs. prose rules in your private Notion AI settings so blunt preferences never surprise teammates.
 - **Shared workspace templates:** Keep team database templates focused on output schema (exact sections, status tags, and data sources).
-- **Build a portable baseline:** Need the same communication style across Notion, Claude, ChatGPT, and Slack? Build one portable block in our [6-Slider AI Personality Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions).
+- **Build a portable baseline:** Need the same communication style across Notion, Claude, ChatGPT, and Slack? Build one portable block in our [6-Slider AI Personality Tuner](https://agent-tune.com/tools/custom-instructions-generator).
 
 ## Questions people ask.
 
@@ -120,11 +111,11 @@ Keep personal voice and brevity settings in your private Notion AI preferences r
 
 - [AgentTune Guide: AI Personality, Tone & Verbosity Guidelines](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
 
-- [AgentTune Guide: How to Work With Me README Template](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template)
+- [AgentTune Guide: How to Work With Me README Template](https://agent-tune.com/tools/how-to-work-with-me)
 
 ## Keep going.
 
 - [Copilot: Microsoft Copilot custom instructions, Memory & 5 work templates](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory)
-- [Interactive Tuner: 6-Slider AI Personality Tuner → Portable Prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
-- [Team README: How to Work With Me template (for Notion, GitHub & AI)](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → Portable Prompt](https://agent-tune.com/tools/custom-instructions-generator)
+- [Team README: How to Work With Me template (for Notion, GitHub & AI)](https://agent-tune.com/tools/how-to-work-with-me)
 - [Free browser tool: Instruction Checker — spot conflicting workspace rules](https://agent-tune.com/tools/instruction-checker)

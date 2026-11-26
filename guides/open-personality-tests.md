@@ -5,18 +5,9 @@ Guide · Tests
 
 # The five open personality tests, explained.
 
-By Bernard Huang · Updated September 26, 2026
-
-What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.
+By Bernard Huang · Updated September 26, 2026 · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** AgentTune provides five browser-based questionnaire adaptations: OEJTS (32 items, MBTI-style), a 36-item OEPS adaptation (Enneagram), ODAT (16 items, DISC), IPIP-50 (50 items, Big Five) and ECR-R (36 items, attachment). All five score locally in your browser and preserve ties explicitly. Original AgentTune code and templates are MIT licensed; questionnaire items remain subject to their upstream source terms.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## At a glance.
 
@@ -122,6 +113,5 @@ Yes. Each questionnaire has a Markdown specification at /tests/<test>.md and is 
 - [Tests: Take any of the five tests](https://agent-tune.com/tests/)
 - [Guide: Open-source Enneagram scorer & React starter](https://agent-tune.com/guides/enneagram-test-react-typescript)
 - [Prompts: DISC AI prompts & 12 workplace blends](https://agent-tune.com/guides/disc-ai-prompts)
-- [Prompts: Big Five AI prompts & IPIP-50 interpreter](https://agent-tune.com/guides/big-five-ai-prompts)
-- [Guide: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
+- [Prompts: Big Five AI prompts & IPIP-50 interpreter](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: The research hub](https://agent-tune.com/research)

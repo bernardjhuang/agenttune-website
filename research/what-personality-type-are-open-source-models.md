@@ -5,18 +5,11 @@ Research · November 2026
 
 # What personality type are open-source AI models?
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 1,200 fresh blind OpenRouter sessions (6,000 scored questionnaires) across 12 popular open-weight models—and why they break the proprietary INTJ mold.
 
-**Quick answer:** Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
 
 ## All 12 open-weight models side by side (n = 100 each).
 

@@ -4,7 +4,9 @@
   "updated": "2026-11-23",
   "title": "How to Change Google AI Overview Personality (Yes/No + Gem Workaround)",
   "description": "No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data).",
-  "scripts": ["/resources/tools/template-gallery.js"],
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
   "pill": "Guide · Google & Gemini",
   "h1": "Can you change Google AI Overview's personality? What works (and what requires Gemini).",
   "dek": "Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.",

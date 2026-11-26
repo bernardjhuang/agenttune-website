@@ -5,18 +5,9 @@ Guide · Google & Gemini
 
 # Can you change Google AI Overview's personality? What works (and what requires Gemini).
 
-By Bernard Huang · Updated November 23, 2026
-
-Google Search AI Overviews don't take a persistent system prompt—but AI Mode follow-ups, Gemini Saved Info, Gems, and GEMINI.md do.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** No—Google Search does not have a permanent personality setting for automatic AI Overviews. You can steer one search by adding format words ('in 3 bullets, no intro') or asking a follow-up in Search AI Mode. For permanent tone and directness rules across sessions, save them in Google Gemini under Settings → Saved info, inside a custom Gem, or in ~/.gemini/GEMINI.md.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## What you can (and can't) control across Google's four AI surfaces.
 

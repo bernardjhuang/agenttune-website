@@ -5,18 +5,11 @@ Research · rankings
 
 # AI personality scores, with the evidence beside them.
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Side-by-side survey scores across 20 November 2026 OpenRouter models (8 proprietary + 12 open-weight) plus September and May 2026 archives.
 
-**Quick answer:** Among the 20 November 2026 OpenRouter models (n = 100 fresh sessions each), Qwen 4 Max scored highest on Agreeableness (47.6/50) while DeepSeek V4 Pro scored lowest (32.4/50), and Nemotron 3 Ultra 550B scored highest on Openness (49.2/50). In September 2026 Codex/CLI cohorts, Claude Opus 5.5 led Agreeableness (47.1/50).
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Among the 20 November 2026 OpenRouter models (n = 100 fresh sessions each), Qwen 4 Max scored highest on Agreeableness (47.6/50) while DeepSeek V4 Pro scored lowest (32.4/50), and Nemotron 3 Ultra 550B scored highest on Openness (49.2/50). In September 2026 Codex/CLI cohorts, Claude Opus 5.5 led Agreeableness (47.1/50).
 
 ## How to read these tables.
 

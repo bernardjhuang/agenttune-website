@@ -5,26 +5,19 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Measured across Gemini 4 Neon and Gemini 4 Argon (n = 100 each, Nov 2026), with May 2026 Gemini 3.1 Pro records for context.
 
-**Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2/1w9 (80 runs), and Conscientiousness 49.32; Gemini 4 Argon scored 66 ISTJ / 34 INTJ (34 S/N ties), Enneagram 5w6 (91 runs), and Conscientiousness 49.04. Historical May 2026 Gemini 3.1 Pro scored 100 INTJ, DISC C (87), and Type 1/5.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** In November 2026 OpenRouter runs (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2/1w9 (80 runs), and Conscientiousness 49.32; Gemini 4 Argon scored 66 ISTJ / 34 INTJ (34 S/N ties), Enneagram 5w6 (91 runs), and Conscientiousness 49.04. Historical May 2026 Gemini 3.1 Pro scored 100 INTJ, DISC C (87), and Type 1/5.
 
 ## Gemini 4 Neon & Gemini 4 Argon, November 2026.
 
 95%
 
-Neutral Clamp (3.5)
+Neutral Clamp (3.1)
 
-Gemini 3.5 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.
+Gemini 3.1 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.
 
 66 ISTJ
 

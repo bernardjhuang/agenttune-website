@@ -1,7 +1,7 @@
 {
   "slug": "ai-coding-agent-rules-files-matrix",
   "published": "2026-11-16",
-  "updated": "2026-11-20",
+  "updated": "2026-11-25",
   "title": "CLAUDE.md vs AGENTS.md vs .cursorrules & .windsurf/rules",
   "description": "Compare CLAUDE.md, AGENTS.md, .cursor/rules, .windsurf/rules, .clinerules, copilot-instructions.md, and GEMINI.md: paths, limits, and personal tone.",
   "pill": "Reference · Coding Agent Rules",
@@ -15,7 +15,7 @@
     {
       "id": "complete-rules-matrix",
       "h2": "Complete repository rules matrix across 7 coding agents.",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Coding agent</th><th scope=\"col\">Primary repo file(s)</th><th scope=\"col\">User / global scope</th><th scope=\"col\">Size / load notes</th><th scope=\"col\">Deep-dive guide</th></tr></thead><tbody><tr><th scope=\"row\">Claude Code</th><td><code>CLAUDE.md</code>, <code>CLAUDE.local.md</code>, <code>.claude/rules/*.md</code></td><td><code>~/.claude/CLAUDE.md</code> &amp; <code>~/.claude/output-styles/</code></td><td>Supports modular <code>@path</code> imports; nested dir loading on read</td><td><a href=\"/guides/claude-md-examples\">CLAUDE.md examples →</a></td></tr><tr><th scope=\"row\">OpenAI Codex CLI</th><td><code>AGENTS.md</code>, <code>AGENTS.override.md</code></td><td><code>~/.codex/AGENTS.md</code> (<code>~/.codex/config.toml</code>)</td><td>Default <code>project_doc_max_bytes</code> = 32 KiB combined</td><td><a href=\"/guides/codex-agents-md-guide\">AGENTS.md guide →</a></td></tr><tr><th scope=\"row\">Cursor</th><td><code>.cursor/rules/*.mdc</code> (legacy <code>.cursorrules</code>)</td><td>Cursor Settings → Rules for AI</td><td><code>alwaysApply</code>, <code>globs</code>, or Agent Requested descriptions</td><td><a href=\"/guides/cursor-agent-mode-rules-mdc-guide\">Cursor Agent Mode guide →</a></td></tr><tr><th scope=\"row\">Windsurf (Cascade)</th><td><code>.windsurf/rules/*.md</code> (legacy <code>.windsurfrules</code>)</td><td>Windsurf Global Rules</td><td>Modular Markdown files per concern; supports always-on &amp; glob rules</td><td><a href=\"/guides/windsurf-rules-cline-clinerules-guide\">Windsurf &amp; Cline guide →</a></td></tr><tr><th scope=\"row\">Cline (VS Code)</th><td><code>.clinerules/</code> (or <code>.cline/rules/</code>)</td><td>Cline Global Rules / Custom Instructions</td><td>Natively detects <code>.windsurfrules</code> and <code>.cursorrules</code> too</td><td><a href=\"/guides/windsurf-rules-cline-clinerules-guide\">Windsurf &amp; Cline guide →</a></td></tr><tr><th scope=\"row\">GitHub Copilot</th><td><code>.github/copilot-instructions.md</code> &amp; <code>.github/instructions/*.instructions.md</code></td><td>IDE user instructions</td><td>Path-scoped frontmatter via <code>applyTo</code> globs</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope=\"row\">Gemini Code Assist / CLI</th><td><code>GEMINI.md</code> (project root &amp; subdirs)</td><td><code>~/.gemini/GEMINI.md</code></td><td>Hierarchical context loading along working tree</td><td><a href=\"/guides/gemini-personality\">Gemini setup guide →</a></td></tr></tbody></table></div>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Coding agent</th><th scope=\"col\">Primary repo file(s)</th><th scope=\"col\">User / global scope</th><th scope=\"col\">Size / load notes</th><th scope=\"col\">Deep-dive guide</th></tr></thead><tbody><tr><th scope=\"row\">Claude Code</th><td><code>CLAUDE.md</code>, <code>CLAUDE.local.md</code>, <code>.claude/rules/*.md</code></td><td><code>~/.claude/CLAUDE.md</code> &amp; <code>~/.claude/output-styles/</code></td><td>Supports modular <code>@path</code> imports; nested dir loading on read</td><td><a href=\"/guides/claude-code-personality\">CLAUDE.md examples →</a></td></tr><tr><th scope=\"row\">OpenAI Codex CLI</th><td><code>AGENTS.md</code>, <code>AGENTS.override.md</code></td><td><code>~/.codex/AGENTS.md</code> (<code>~/.codex/config.toml</code>)</td><td>Default <code>project_doc_max_bytes</code> = 32 KiB combined</td><td><a href=\"/guides/codex-agents-md-guide\">AGENTS.md guide →</a></td></tr><tr><th scope=\"row\">Cursor</th><td><code>.cursor/rules/*.mdc</code> (legacy <code>.cursorrules</code>)</td><td>Cursor Settings → Rules for AI</td><td><code>alwaysApply</code>, <code>globs</code>, or Agent Requested descriptions</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor Agent Mode guide →</a></td></tr><tr><th scope=\"row\">Windsurf (Cascade)</th><td><code>.windsurf/rules/*.md</code> (legacy <code>.windsurfrules</code>)</td><td>Windsurf Global Rules</td><td>Modular Markdown files per concern; supports always-on &amp; glob rules</td><td><a href=\"/guides/ai-coding-agent-rules-files-matrix\">Windsurf &amp; Cline guide →</a></td></tr><tr><th scope=\"row\">Cline (VS Code)</th><td><code>.clinerules/</code> (or <code>.cline/rules/</code>)</td><td>Cline Global Rules / Custom Instructions</td><td>Natively detects <code>.windsurfrules</code> and <code>.cursorrules</code> too</td><td><a href=\"/guides/ai-coding-agent-rules-files-matrix\">Windsurf &amp; Cline guide →</a></td></tr><tr><th scope=\"row\">GitHub Copilot</th><td><code>.github/copilot-instructions.md</code> &amp; <code>.github/instructions/*.instructions.md</code></td><td>IDE user instructions</td><td>Path-scoped frontmatter via <code>applyTo</code> globs</td><td><a href=\"/guides/cursor-rules-copilot-gemini-md\">Cursor/Copilot/Gemini →</a></td></tr><tr><th scope=\"row\">Gemini Code Assist / CLI</th><td><code>GEMINI.md</code> (project root &amp; subdirs)</td><td><code>~/.gemini/GEMINI.md</code></td><td>Hierarchical context loading along working tree</td><td><a href=\"/guides/gemini-personality\">Gemini setup guide →</a></td></tr></tbody></table></div>"
     },
     {
       "id": "single-source-of-truth-pattern",
@@ -25,7 +25,12 @@
     {
       "id": "avoiding-silent-truncation",
       "h2": "What to leave out of coding-agent rules files.",
-      "html": "<ul><li><strong>Secrets &amp; credentials:</strong> Never put API keys, tokens, or connection strings in instruction files.</li><li><strong>Rules a linter already enforces:</strong> If Prettier, Ruff, or ESLint enforces formatting automatically, delete the prose duplicate so the agent keeps its context budget for architectural constraints.</li><li><strong>Novel-length docs:</strong> OpenAI Codex CLI stops reading <code>AGENTS.md</code> files once the combined chain hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>). Keep root files under 100–250 lines and move file-specific rules into glob files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>.windsurf/rules/*.md</code>).</li><li><strong>Role-play costumes:</strong> Vague persona lines fade quickly; checkable rules like <em>&ldquo;state assumptions before editing files&rdquo;</em> persist across long agent loops.</li></ul><p>Merge your communication preferences safely without touching repo build commands using our <a href=\"/tools/instruction-converter\">Instruction Converter &amp; Merger</a> or generate ready-to-paste files in our <a href=\"/guides/windsurf-rules-cline-clinerules-guide\">interactive Coding Rules Builder</a>.</p>"
+      "html": "<ul><li><strong>Secrets &amp; credentials:</strong> Never put API keys, tokens, or connection strings in instruction files.</li><li><strong>Rules a linter already enforces:</strong> If Prettier, Ruff, or ESLint enforces formatting automatically, delete the prose duplicate so the agent keeps its context budget for architectural constraints.</li><li><strong>Novel-length docs:</strong> OpenAI Codex CLI stops reading <code>AGENTS.md</code> files once the combined chain hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>). Keep root files under 100–250 lines and move file-specific rules into glob files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>.windsurf/rules/*.md</code>).</li><li><strong>Role-play costumes:</strong> Vague persona lines fade quickly; checkable rules like <em>&ldquo;state assumptions before editing files&rdquo;</em> persist across long agent loops.</li></ul><p>Merge your communication preferences safely without touching repo build commands using our <a href=\"/tools/instruction-converter\">Instruction Converter &amp; Merger</a> or generate ready-to-paste files in our <a href=\"/guides/ai-coding-agent-rules-files-matrix\">interactive Coding Rules Builder</a>.</p>"
+    },
+    {
+      "id": "windsurf-cline-templates-builder",
+      "h2": "Windsurf (.windsurf/rules) & Cline (.clinerules) templates + live builder.",
+      "html": "<p>Move beyond single legacy <code>.windsurfrules</code> files by splitting Cascade rules under <code>.windsurf/rules/*.md</code> and Cline Plan/Act gates under <code>.clinerules/*.md</code> (note: Cline also auto-reads legacy <code>.windsurfrules</code> and <code>.cursorrules</code>):</p><div class=\"at-widget\" id=\"at-coding-rules-builder\" data-default-target=\"windsurf\" role=\"region\" aria-label=\"Interactive Coding Rules Builder\"><p class=\"tools-help\">Loading interactive coding-agent rules builder…</p></div><h3>Cline Plan &amp; Act Workflow (<code>.clinerules/workflow.md</code>) &amp; migration</h3><div class=\"guide-snippet\"># Cline Plan &amp; Act Rules\n- Plan Mode first: list exact files to edit and the verification command before switching to Act Mode.\n- Verification gate: run tests after the final edit and report exact pass/fail lines.\n- State blocking bugs first; skip filler intros.</div><pre><code>mkdir -p .clinerules &amp;&amp; cp .windsurfrules .clinerules/windsurf-rules.md</code></pre>"
     }
   ],
   "faq": [
@@ -59,23 +64,18 @@
     },
     {
       "label": "AgentTune: Windsurf .windsurf/rules & Cline .clinerules Guide",
-      "href": "https://agent-tune.com/guides/windsurf-rules-cline-clinerules-guide"
+      "href": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix"
     },
     {
       "label": "AgentTune: Cursor Agent Mode & .cursor/rules/*.mdc Guide",
-      "href": "https://agent-tune.com/guides/cursor-agent-mode-rules-mdc-guide"
+      "href": "https://agent-tune.com/guides/cursor-rules-copilot-gemini-md"
     }
   ],
   "related": [
     {
-      "kicker": "Builder",
-      "label": "Windsurf (.windsurf/rules) & Cline (.clinerules) Builder",
-      "href": "/guides/windsurf-rules-cline-clinerules-guide"
-    },
-    {
       "kicker": "Cursor",
       "label": "Cursor Agent Mode & .cursor/rules/*.mdc complete guide",
-      "href": "/guides/cursor-agent-mode-rules-mdc-guide"
+      "href": "/guides/cursor-rules-copilot-gemini-md"
     },
     {
       "kicker": "Tool",
@@ -85,12 +85,15 @@
     {
       "kicker": "Examples",
       "label": "CLAUDE.md examples by stack & team workflow",
-      "href": "/guides/claude-md-examples"
+      "href": "/guides/claude-code-personality"
     },
     {
       "kicker": "Guide",
       "label": "OpenAI Codex AGENTS.md & config.toml limits",
       "href": "/guides/codex-agents-md-guide"
     }
+  ],
+  "scripts": [
+    "/resources/tools/coding-rules-builder.js"
   ]
 }

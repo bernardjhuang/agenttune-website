@@ -212,20 +212,11 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">${escHtml(spec.pill)}</span>
+        <p class="page-eyebrow">${escHtml(spec.pill)}</p>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time></p>
-        ${spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
-        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">${research ? "Open Data &amp; Agent Access" : "Quick Actions &amp; Agent Fetch"}</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/${research ? "research" : "guides"}/${spec.slug}.md">Markdown (.md)</a>
-            ${research ? '<a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a>' : '<a class="article-utility-btn" href="/library/index.json">Library JSON</a>'}
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="${research ? "/library/" : "/tools/custom-instructions-generator"}">${research ? "Apply a template →" : "Build instructions →"}</a>
-          </div>
-        </div>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time> · <a href="/${research ? "research" : "guides"}/${spec.slug}.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a>${research ? ' · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a>' : ""}</p>
+        ${research && spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
+        <div class="guide-tldr" role="note" aria-label="${research ? "Summary" : "Quick answer"}"><strong>${research ? "Summary:" : "Quick answer:"}</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
       </section>
 
 

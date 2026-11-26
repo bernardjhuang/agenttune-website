@@ -5,18 +5,9 @@ Guide · OpenAI ChatGPT
 
 # ChatGPT personality settings: presets, warmth controls, and custom instructions.
 
-By Bernard Huang · Updated November 17, 2026
-
-Settings → Personalization gives you Base style and tone presets, four characteristic sliders, and two 1,500-character instruction boxes.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## All three tone layers inside Settings → Personalization.
 
@@ -80,6 +71,16 @@ In our 60-reply pilot, adding explicit behavioral rules raised answer-first open
 
 Want a template matched to your working style and automatically sized under 1,500 characters? Open the [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=chatgpt-custom) or browse all 43 profiles in the [Tuning Library](https://agent-tune.com/library/).
 
+## Writing samples vs. Custom Instructions — and how ChatGPT Projects override global rules.
+
+**Writing samples vs. communication rules:** Paste 5–10 writing samples when the output must sound like your prose (emails, posts, memos). Use behavioral rules in Box 2 when changing how ChatGPT thinks and responds (verdict first, zero filler, explicit pushback). Watch out for one conflict: leave **Base style and tone** on Default if written Box 2 rules already specify direct, low-filler replies.
+
+| Layer | Limit | Precedence on conflict |
+| --- | --- | --- |
+| Global Custom Instructions | 1,500 chars/box | Baseline default across normal chats (keep Box 2 focused on communication habits) |
+| ChatGPT Project Instructions | Up to 8,000 chars + files | Overrides conflicting global Custom Instructions inside that Project |
+| Saved Memories | Per-entry facts | Check Personalization → Memory if an old stack or tone keeps resurfacing |
+
 ## Questions people ask.
 
 ### Where did Custom Instructions move in the newer ChatGPT Personalization menu?
@@ -113,8 +114,7 @@ Preset modes adjust phrasing gently but rarely suppress RLHF closing habits on t
 ## Keep going.
 
 - [Voice Mode: ChatGPT Voice Mode voices (all 9 voices: Sol, Cove, Maple, Vale) & tone](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality)
-- [Interactive Tuner: 6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt](https://agent-tune.com/tools/custom-instructions-generator)
 - [Comparison: ChatGPT vs Claude default personality (benchmark data)](https://agent-tune.com/guides/chatgpt-vs-claude-personality)
 - [Guide: ChatGPT Custom Instructions examples (Box 1 vs Box 2)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples)
-- [Guide: ChatGPT Projects vs Custom Instructions: precedence & limits](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions)
 - [Guide: Custom GPT instructions template & 8,000-char guide](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)

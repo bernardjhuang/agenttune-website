@@ -5,18 +5,9 @@ Guide · DISC Prompts
 
 # DISC AI prompts for all four workplace styles.
 
-By Bernard Huang · Updated November 23, 2026
-
-Copy-paste communication blocks for Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C) that work in ChatGPT, Claude, Meta Muse, Codex, and Grok.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Copy the DISC block that matches your working style: Dominance (bottom-line conclusions), Influence (fast brainstorming), Steadiness (step-by-step pacing), or Conscientiousness (strict verification and edge cases). Paste it into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Which DISC tuning solves which AI annoyance?
 
@@ -125,7 +116,7 @@ Paste them into ChatGPT Custom Instructions, Claude Personal Preferences (Settin
 ## Keep going.
 
 - [Interactive Test: Take the free 16-question DISC assessment (no email)](https://agent-tune.com/tests/disc)
-- [Template: How to Work With Me README template for teams & AI](https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template)
-- [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/big-five-ai-prompts)
-- [Prompts: Attachment style AI prompts: Secure, Anxious, and Avoidant](https://agent-tune.com/guides/attachment-style-ai-prompts)
+- [Template: How to Work With Me README template for teams & AI](https://agent-tune.com/tools/how-to-work-with-me)
+- [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
+- [Prompts: Attachment style AI prompts: Secure, Anxious, and Avoidant](https://agent-tune.com/library/attachment/avoidant)
 - [Guide: ChatGPT custom instructions by MBTI personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

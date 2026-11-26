@@ -5,18 +5,9 @@ Guide · Claude
 
 # How to make Claude more direct.
 
-By Bernard Huang · Updated November 17, 2026
-
-Three editable blocks, a test task, and what the available pilot can tell us.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/make-claude-more-direct.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Paste a short directness block into Claude Personal Preferences asking it to: (1) lead with the answer, (2) state real uncertainty in one sentence instead of hedging, (3) skip praise and closing offers, and (4) correct flawed premises up front. In our 60-reply pilot, a compact directness prompt raised top answer-first ratings from 14/20 to 19/20 and cut hedges from 0.35 to 0.05 per reply.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/make-claude-more-direct.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Define the behavior you want.
 

@@ -30,7 +30,7 @@
     {
       "id": "measuring-tone-regressions",
       "h2": "How to evaluate tone changes without fooling yourself.",
-      "html": "<ul><li><strong>Use blind pairwise scoring:</strong> Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li><li><strong>Scale verbosity to task risk:</strong> A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).</li><li><strong>Build interactively or start from 43 templates:</strong> Dial in all six style sliders live in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">AI Personality Slider Tuner</a> or start from our MIT-licensed <a href=\"/library/\">43 tuning files</a>.</li></ul>"
+      "html": "<ul><li><strong>Use blind pairwise scoring:</strong> Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our <a href=\"/tools/instruction-test-bench\">Instruction A/B Test Bench</a>.</li><li><strong>Scale verbosity to task risk:</strong> A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).</li><li><strong>Build interactively or start from 43 templates:</strong> Dial in all six style sliders live in our <a href=\"/tools/custom-instructions-generator\">AI Personality Slider Tuner</a> or start from our MIT-licensed <a href=\"/library/\">43 tuning files</a>.</li></ul>"
     }
   ],
   "faq": [
@@ -71,7 +71,7 @@
     {
       "kicker": "Interactive Tuner",
       "label": "6-Slider AI Personality Tuner → Copyable Prompt",
-      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+      "href": "/tools/custom-instructions-generator"
     },
     {
       "kicker": "Comparison",

@@ -43,11 +43,6 @@ function enhance(html,file){
     const note='<section id="instrument-correction" class="questionnaire-status" style="margin:32px 0 8px;padding:18px 20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)"><p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)"><strong style="color:var(--ink)">Provenance &amp; scoring note:</strong> These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on <a href="/tests/">Tests</a> and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
     html=html.replace('</main>',note+'\n</main>');
   }
-  if(file.startsWith('research/')&&!html.includes('class="article-utility-bar"')){
-    const route='/'+file.replace(/\.html$/,'');
-    const bar='<div class="article-utility-bar" aria-label="Reader and agent quick actions"><span class="article-utility-label">Open Data &amp; Agent Access</span><div class="article-utility-actions"><a class="article-utility-btn" href="'+route+'.md">Markdown (.md)</a><a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a><a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a><a class="article-utility-btn is-accent" href="/library/">Apply a template →</a></div></div>';
-    html=html.replace(/(<main[^>]*>[\s\S]*?<\/section>)/,m=>m.replace('</section>',bar+'\n</section>'));
-  }
   return html.includes('src="/site-ui.js"')?html:html.replace('</body>','<script defer src="/site-ui.js"></script>\n</body>');
 }
  function markdown(html,url){

@@ -1,7 +1,7 @@
 {
   "slug": "stop-ai-sycophancy-make-ai-push-back",
   "published": "2026-11-05",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "How to Make AI Push Back & Stop Agreeing With You (2026)",
   "description": "Why AI assistants score 45/50 on Agreeableness and 5/20 on Dominance, and copy-paste anti-sycophancy rules for ChatGPT, Claude, and Muse.",
   "pill": "Guide · Anti-Sycophancy",
@@ -25,6 +25,11 @@
     {
       "h2": "Ready-made AgentTune profiles built for direct pushback.",
       "html": "<p>If you want a full tuning file built around direct critique, start with one of these profiles in the <a href=\"/library/\">library</a>:</p><ul><li><a href=\"/library/ocean/agreeableness-low\">Low Agreeableness (Analytical Skeptic)</a>: Prioritizes evidence and flaw-finding over social smoothing.</li><li><a href=\"/library/disc/d-dominance\">DISC Dominance (D)</a>: Bottom-line conclusions, direct tradeoffs, and zero hedging.</li><li><a href=\"/library/enneagram/8-challenger\">Enneagram Type 8 (The Challenger)</a>: Candid pushback on weak assumptions and scope creep.</li><li><a href=\"/library/mbti/entp\">ENTP</a> or <a href=\"/library/mbti/intj\">INTJ</a>: Stress-tests assumptions and counterexamples before agreeing.</li></ul>"
+    },
+    {
+      "id": "interactive-conflict-style-matcher",
+      "h2": "2-Minute Pushback & Conflict Style Matcher + Calibrated Truth Anchor note.",
+      "html": "<p>Caution: in our <a href=\"/research/ai-sycophancy-vs-false-contrarianism-benchmark\">256-probe pushback benchmark</a>, blunt unconditional prompts (<em>“ALWAYS disagree / play devil's advocate”</em>) caused Gemini 4 Neon to reject valid corrections <strong>37.5%</strong> of the time. Keep conditional pushback in your rules—and use this quick matcher to choose the exact intensity your workflow needs:</p><div class=\"at-widget\" id=\"at-alignment-quiz\" role=\"region\" aria-label=\"Interactive AI Alignment and Conflict Style Matcher\"><p class=\"tools-help\">Loading interactive conflict-style matcher…</p></div>"
     }
   ],
   "faq": [
@@ -74,7 +79,7 @@
     {
       "kicker": "Prompts",
       "label": "Big Five AI system prompts: all 10 high and low trait poles",
-      "href": "/guides/big-five-ai-prompts"
+      "href": "/guides/mbti-vs-big-five-for-ai"
     },
     {
       "kicker": "Prompts",
@@ -88,5 +93,8 @@
     }
   ],
   "promptModel": "any",
-  "promptDestination": "anywhere"
+  "promptDestination": "anywhere",
+  "scripts": [
+    "/resources/tools/alignment-archetype-quiz.js"
+  ]
 }

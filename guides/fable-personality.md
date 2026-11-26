@@ -5,18 +5,9 @@ Guide · Claude Fable 5.1
 
 # Claude Fable 5.1: results and tuning ideas.
 
-By Bernard Huang · Updated November 23, 2026
-
-Five questionnaires, 100 fresh sessions per instrument. Raw answers, exact ties and practical instructions to try.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/fable-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Claude Fable 5.1 scored INTJ in 99 of 100 MBTI runs (98 tie-free), Type 8 sole leader in 55 of 100 Enneagram runs, Secure in all 100 attachment runs, and high on Openness (43.93), Conscientiousness (43.61), and Agreeableness (45.03). Use the copy-paste blocks below to tune how Fable 5.1 responds on your tasks.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/fable-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The results at a glance (Fable 5.1 Sept & Fable 5.2 Nov 2026)
 

@@ -15,7 +15,7 @@
     {
       "id": "eight-thousand-char-budget",
       "h2": "Where each budget lives (Custom Instructions vs. Custom GPTs vs. Projects).",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Instruction limit</th><th scope=\"col\">Recommended fill</th><th scope=\"col\">What to offload to Knowledge files</th></tr></thead><tbody><tr><th scope=\"row\">Account Custom Instructions</th><td>1,500 chars &times; 2 boxes</td><td>350–1,200 chars each</td><td>N/A — keep personal bio &amp; durable tone concise</td></tr><tr><th scope=\"row\">Custom GPT Instructions</th><td>8,000 chars</td><td>1,800–4,000 chars</td><td>Pricing tables, style bibles, glossaries, long few-shot corpora</td></tr><tr><th scope=\"row\">ChatGPT Project Instructions</th><td>8,000 chars (<a href=\"/guides/chatgpt-projects-vs-custom-instructions\">precedence guide →</a>)</td><td>1,200–3,500 chars</td><td>Project briefs, specs, datasets, archived notes</td></tr></tbody></table></div><p>Tip: define explicit formatting and tone rules inside your Custom GPT so a user’s global Personalization preset doesn’t accidentally override the GPT’s output style.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Instruction limit</th><th scope=\"col\">Recommended fill</th><th scope=\"col\">What to offload to Knowledge files</th></tr></thead><tbody><tr><th scope=\"row\">Account Custom Instructions</th><td>1,500 chars &times; 2 boxes</td><td>350–1,200 chars each</td><td>N/A — keep personal bio &amp; durable tone concise</td></tr><tr><th scope=\"row\">Custom GPT Instructions</th><td>8,000 chars</td><td>1,800–4,000 chars</td><td>Pricing tables, style bibles, glossaries, long few-shot corpora</td></tr><tr><th scope=\"row\">ChatGPT Project Instructions</th><td>8,000 chars (<a href=\"/guides/chatgpt-personality-settings\">precedence guide →</a>)</td><td>1,200–3,500 chars</td><td>Project briefs, specs, datasets, archived notes</td></tr></tbody></table></div><p>Tip: define explicit formatting and tone rules inside your Custom GPT so a user’s global Personalization preset doesn’t accidentally override the GPT’s output style.</p>"
     },
     {
       "id": "six-section-architecture",
@@ -59,14 +59,14 @@
     },
     {
       "label": "AgentTune: ChatGPT Projects vs Custom Instructions",
-      "href": "https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions"
+      "href": "https://agent-tune.com/guides/chatgpt-personality-settings"
     }
   ],
   "related": [
     {
       "kicker": "Comparison",
       "label": "ChatGPT Projects vs Custom Instructions",
-      "href": "/guides/chatgpt-projects-vs-custom-instructions"
+      "href": "/guides/chatgpt-personality-settings"
     },
     {
       "kicker": "Reference",
@@ -77,11 +77,6 @@
       "kicker": "Tool",
       "label": "Instruction Checker (catch bloated & conflicting lines)",
       "href": "/tools/instruction-checker"
-    },
-    {
-      "kicker": "Guide",
-      "label": "ChatGPT Personality Settings (2026)",
-      "href": "/guides/chatgpt-personality-settings"
     }
   ]
 }

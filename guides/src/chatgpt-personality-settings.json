@@ -1,7 +1,7 @@
 {
   "slug": "chatgpt-personality-settings",
   "published": "2026-11-16",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "ChatGPT Personality Settings: Modes & Instructions (2026)",
   "description": "How ChatGPT Personality presets (Cynic, Robot, Listener, Nerd) work with Warmth sliders and the 1,500-char Custom Instructions boxes in Personalization.",
   "pill": "Guide · OpenAI ChatGPT",
@@ -31,6 +31,11 @@
       "id": "three-copyable-setups",
       "h2": "Three ready-to-paste ChatGPT setups under 600 characters.",
       "html": "<h3>1. Sharp Editor &amp; Strategist (Pair with Candid)</h3><div class=\"guide-snippet\">- Put the verdict and concrete tradeoff first; explain rationale after.\n- Treat strong claims skeptically: identify weak premises before drafting solutions.\n- Omit filler openers, apologies, and &ldquo;Would you like me to...&rdquo; closers.</div><h3>2. Calm Technical Mentor (Pair with Friendly or Default)</h3><div class=\"guide-snippet\">- Explain concepts in plain step-by-step prose without talking down.\n- Define domain jargon on first use and give one concrete minimal example.\n- Pause after key decision points to confirm whether I want to go deeper.</div><h3>3. Strict Code &amp; Docs Partner (Pair with Efficient)</h3><div class=\"guide-snippet\">- Output exact commands, schemas, or diffs first; keep commentary to three bullets max.\n- Never invent file paths, APIs, or test results; mark unverified details explicitly.\n- Wait for confirmation before expanding scope across unrelated modules.</div><p>Want a template matched to your working style and automatically sized under 1,500 characters? Open the <a href=\"/tools/custom-instructions-generator?target=chatgpt-custom\">Custom Instructions Generator</a> or browse all 43 profiles in the <a href=\"/library/\">Tuning Library</a>.</p>"
+    },
+    {
+      "id": "writing-samples-and-projects-override",
+      "h2": "Writing samples vs. Custom Instructions — and how ChatGPT Projects override global rules.",
+      "html": "<p><strong>Writing samples vs. communication rules:</strong> Paste 5–10 writing samples when the output <em>must sound like your prose</em> (emails, posts, memos). Use behavioral rules in Box 2 when changing <em>how ChatGPT thinks and responds</em> (verdict first, zero filler, explicit pushback). Watch out for one conflict: leave <strong>Base style and tone</strong> on <em>Default</em> if written Box 2 rules already specify direct, low-filler replies.</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Layer</th><th scope=\"col\">Limit</th><th scope=\"col\">Precedence on conflict</th></tr></thead><tbody><tr><th scope=\"row\">Global Custom Instructions</th><td>1,500 chars/box</td><td>Baseline default across normal chats (keep Box 2 focused on communication habits)</td></tr><tr><th scope=\"row\">ChatGPT Project Instructions</th><td>Up to 8,000 chars + files</td><td><strong>Overrides</strong> conflicting global Custom Instructions inside that Project</td></tr><tr><th scope=\"row\">Saved Memories</th><td>Per-entry facts</td><td>Check <em>Personalization → Memory</em> if an old stack or tone keeps resurfacing</td></tr></tbody></table></div>"
     }
   ],
   "faq": [
@@ -80,7 +85,7 @@
     {
       "kicker": "Interactive Tuner",
       "label": "6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt",
-      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+      "href": "/tools/custom-instructions-generator"
     },
     {
       "kicker": "Comparison",
@@ -91,11 +96,6 @@
       "kicker": "Guide",
       "label": "ChatGPT Custom Instructions examples (Box 1 vs Box 2)",
       "href": "/guides/chatgpt-custom-instructions-examples"
-    },
-    {
-      "kicker": "Guide",
-      "label": "ChatGPT Projects vs Custom Instructions: precedence & limits",
-      "href": "/guides/chatgpt-projects-vs-custom-instructions"
     },
     {
       "kicker": "Guide",

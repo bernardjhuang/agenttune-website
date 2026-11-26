@@ -5,30 +5,21 @@ Guide · Grok & Grok Bot
 
 # Grok Bot characters: 16 copy-paste personality profiles.
 
-By Bernard Huang · Updated November 23, 2026
-
-Customize Grok on X and grok.com, or write persistent character rules into a Grok Bot's Description field.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Grok Bot, open the Bot → Edit Profile → Description and place a 'HOW TO TALK TO ME' rules block right under the Bot's JOB and BOUNDARIES so your rules survive long chats and Bot duplication. For standard Grok on X or grok.com, paste the same rules into Settings → Customize Grok.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Quick pick: Grok Bot & Customize Grok downloads.
 
 | Character / Template | Best for | Jump / Download |
 | --- | --- | --- |
 | Inbox Triage Starter | Morning email sorting with strict send approvals | [View profile ↓](https://agent-tune.com/guides/grokbot-personality#the-short-version) |
-| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs &amp; repo safety | [View](https://agent-tune.com/guides/grok-personality-templates#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
-| Real-Time Signal Synthesizer | Verified X &amp; web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-templates#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
-| No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View](https://agent-tune.com/guides/grok-personality-templates#1-no-snark-analytical-brief) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
+| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs &amp; repo safety | [View](https://agent-tune.com/guides/grok-personality-settings#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
+| Real-Time Signal Synthesizer | Verified X &amp; web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-settings#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
+| No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View](https://agent-tune.com/guides/grok-personality-settings#1-no-snark-analytical-brief) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
 | All 16 Grok Bot characters | Red-Teamer, Chief of Staff, Code Reviewer &amp; 11 more | [Jump to 16 Bots ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) |
 
-Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Settings](https://agent-tune.com/guides/grok-personality-settings) or [20 Customize Grok & Bot Templates](https://agent-tune.com/guides/grok-personality-templates).
+Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Settings](https://agent-tune.com/guides/grok-personality-settings) or [20 Customize Grok & Bot Templates](https://agent-tune.com/guides/grok-personality-settings).
 
 ## The short version.
 
@@ -408,8 +399,7 @@ xAI's docs say Cursor manages model selection and there is no model picker. They
 
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
-- [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-voice-mode-personas-companions)
-- [Guide: How to change Grok's personality on X and grok.com](https://agent-tune.com/guides/grok-personality-settings)
+- [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-personality-settings)
 - [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/what-personality-type-is-grok)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to give Meta Muse a personality](https://agent-tune.com/guides/muse-personality)

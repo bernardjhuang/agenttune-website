@@ -5,18 +5,11 @@ Research · descriptive reanalysis
 
 # What does “neutral” mean when an AI takes a test?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 When an AI picks 3 on a 1–5 scale, it usually means the question is about human life—not that the AI has a moderate trait.
 
-**Quick answer:** Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
 
 ## How we counted neutral and inapplicable answers
 
@@ -30,7 +23,7 @@ Flagged Midpoints
 
 Gemini Neutrality
 
-Gemini 3.5 Pro clicked midpoint "3" on 95% of MBTI items.
+Gemini 3.1 Pro clicked midpoint "3" on 95% of MBTI items.
 
 79.5%
 

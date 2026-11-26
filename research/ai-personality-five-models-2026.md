@@ -11,8 +11,6 @@ GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1
 
 **Quick answer:** Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
 
-Open Data & Agent Access[Markdown (.md)](https://agent-tune.com/research/ai-personality-five-models-2026.md)[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)[Apply a template →](https://agent-tune.com/library/)
-
 ## Abstract
 
 We reanalyzed five AgentTune questionnaires run on September 24, 2026: MBTI (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS), and Attachment (ECR-R). We verified 2,000 complete answer vectors for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, plus three canonical vectors for Grok 4.6 (170 items per full 5-test battery).

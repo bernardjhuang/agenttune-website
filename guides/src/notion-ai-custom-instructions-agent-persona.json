@@ -26,7 +26,7 @@
     {
       "id": "private-vs-team-scope",
       "h2": "Keep personal tone private from shared team instructions.",
-      "html": "<ul><li><strong>Personal instructions:</strong> Store your preferred reading density, pushback level, and bullet vs. prose rules in your private Notion AI settings so blunt preferences never surprise teammates.</li><li><strong>Shared workspace templates:</strong> Keep team database templates focused on output schema (exact sections, status tags, and data sources).</li><li><strong>Build a portable baseline:</strong> Need the same communication style across Notion, Claude, ChatGPT, and Slack? Build one portable block in our <a href=\"/guides/ai-personality-slider-tuner-vs-custom-instructions\">6-Slider AI Personality Tuner</a>.</li></ul>"
+      "html": "<ul><li><strong>Personal instructions:</strong> Store your preferred reading density, pushback level, and bullet vs. prose rules in your private Notion AI settings so blunt preferences never surprise teammates.</li><li><strong>Shared workspace templates:</strong> Keep team database templates focused on output schema (exact sections, status tags, and data sources).</li><li><strong>Build a portable baseline:</strong> Need the same communication style across Notion, Claude, ChatGPT, and Slack? Build one portable block in our <a href=\"/tools/custom-instructions-generator\">6-Slider AI Personality Tuner</a>.</li></ul>"
     }
   ],
   "faq": [
@@ -64,7 +64,7 @@
     },
     {
       "label": "AgentTune Guide: How to Work With Me README Template",
-      "href": "https://agent-tune.com/guides/how-to-work-with-me-readme-ai-template"
+      "href": "https://agent-tune.com/tools/how-to-work-with-me"
     }
   ],
   "related": [
@@ -76,12 +76,12 @@
     {
       "kicker": "Interactive Tuner",
       "label": "6-Slider AI Personality Tuner → Portable Prompt",
-      "href": "/guides/ai-personality-slider-tuner-vs-custom-instructions"
+      "href": "/tools/custom-instructions-generator"
     },
     {
       "kicker": "Team README",
       "label": "How to Work With Me template (for Notion, GitHub & AI)",
-      "href": "/guides/how-to-work-with-me-readme-ai-template"
+      "href": "/tools/how-to-work-with-me"
     },
     {
       "kicker": "Free browser tool",

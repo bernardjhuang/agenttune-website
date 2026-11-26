@@ -5,18 +5,9 @@ Guide · Claude Code
 
 # How to change Claude Code's personality.
 
-By Bernard Huang · Updated November 17, 2026
-
-Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save a Markdown file to ~/.claude/output-styles/ with name, description, and keep-coding-instructions: true in the YAML frontmatter, followed by your communication rules. Activate it with /output-style or /config. AgentTune provides all 43 personality tunings as ready-to-download output styles.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The twenty-second version.
 
@@ -102,7 +93,7 @@ Three reasons your personality does not belong in the project's CLAUDE.md:
 - **It is weaker.** It arrives as a message, not as part of the system prompt.
 - **It competes.** Every line about your temperament is a line not spent on how to run the tests.
 
-If you want it in a CLAUDE.md anyway, use `~/.claude/CLAUDE.md` or `CLAUDE.local.md`, which are yours alone, and keep it to a few lines. `/memory` opens the files for editing, and `/context` shows what actually loaded. For what belongs in the project file, see [CLAUDE.md examples](https://agent-tune.com/guides/claude-md-examples).
+If you want it in a CLAUDE.md anyway, use `~/.claude/CLAUDE.md` or `CLAUDE.local.md`, which are yours alone, and keep it to a few lines. `/memory` opens the files for editing, and `/context` shows what actually loaded. For what belongs in the project file, see [CLAUDE.md examples](https://agent-tune.com/guides/claude-code-personality).
 
 ## Flags and agents: for one-offs and full replacements.
 
@@ -129,6 +120,48 @@ These rules change how you talk: what you lead with, how you frame decisions, ho
 ```
 
 The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in [the layer your AGENTS.md is missing](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
+
+## Annotated CLAUDE.md starter examples (Minimal, Test-Discipline & Monorepo).
+
+While `~/.claude/output-styles/*.md` controls how Claude Code talks to you, keep `./CLAUDE.md` focused on repo commands and invariants that code reading alone misses (stay under ~200 lines):
+
+### 1. Minimal starter (10 lines)
+
+```markdown
+# CLAUDE.md
+
+## Commands
+- Build: `npm run build`
+- Test: `npm test` (single file: `npm test -- path/to/file.test.ts`)
+- Lint: `npm run lint`; run before declaring any task done
+
+## Style
+- TypeScript strict mode. No `any`.
+- Read a neighboring file in `src/` before inventing a new pattern.
+```
+
+### 2. Test-discipline guardrail
+
+```markdown
+# CLAUDE.md
+
+## Tests are the contract
+- Run `npm test` after every final edit. Never report complete with failing tests.
+- Never modify a test assertion just to make it pass; report broken tests first.
+- Flag flaky tests instead of looping retries until green.
+```
+
+### 3. Monorepo root + dual-tool @AGENTS.md bridge
+
+```markdown
+# CLAUDE.md
+@AGENTS.md
+
+## Package pointers (detailed CLAUDE.md lives in each package)
+- `apps/web` — frontend
+- `apps/api` — backend API
+- Keep shared types in `packages/types` cleanly; changes across packages need a changeset.
+```
 
 ## Questions people ask.
 
@@ -183,7 +216,6 @@ In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside 
 ## Keep going.
 
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
-- [Guide: CLAUDE.md examples and best practices](https://agent-tune.com/guides/claude-md-examples)
 - [Guide: AGENTS.md and Cursor rules: add a personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Tool: Free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)

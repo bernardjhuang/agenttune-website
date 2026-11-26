@@ -5,22 +5,17 @@ Agent Research · November 2026 · 400-Reply Study
 
 # Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?
 
-By Bernard Huang · Updated November 25, 2026
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 400 blind-graded replies across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro reveal the exact accuracy, fluff, word-count, and voice trade-offs of four competing system-prompt grammars.
 
-**Quick answer:** For agent-built system prompts, lead with a 50-word behavioral rubric (100.0% correctness across all 4 models in 26.3 mean words), add targeted negative bans only if strict zero-fluff suppression (100.0%) is mandatory, and reserve trait adjectives (3.71/5 voice distinctiveness, 52.8 words) or 3-shot examples (25.7 words, 4.96/5 answer-first) for style flavor rather than core planning reliability.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Lead with a ~50-word behavioral rubric (100.0% correctness [95.4–100.0%] across all 4 models, 26.3 words, SD 27.4). Add focused negative bans only where 100.0% zero-fluff is mandatory, and reserve trait adjectives (52.8w) or 3-shot voice examples (25.7w) for stylistic tone rather than planning reliability.
 
 ## Agent Decision Contract (YAML — Machine-Readable Brief).
 
-Agents reading this study over `.md`, MCP `get_resource`, or [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) can consume this verified decision contract directly before compiling system instructions for a human:
+Agents fetching `.md`, MCP `get_resource`, or [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) can consume this verified policy directly:
+
+### Agent Decision Contract (YAML — expand to copy)
 
 ```
 study_id: prompt_syntax_wars
@@ -87,13 +82,13 @@ Highest personality distinctiveness, but stays 2x longer at 52.8 words.
 
 We tested all 20 objective tasks from our [personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) (arithmetic, false-premise traps, missing-information honesty, commitment-preserving rewrites, triage planning, strict extraction, and strict formatting) across four frontier models (`gpt-6-2-sol`, `claude-fable-5-2`, `gemini-4-neon`, and `deepseek-v4-pro`; `n = 80` per arm, total spend $1.84; [download full 400-reply JSON](https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv)).
 
-| Syntax Condition (n = 80) | Prompt Words | Correctness % | Format % | Zero-Fluff % | Pink-Elephant % | Answer-First (/5) | Voice (/5) | Mean Words |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Default (baseline) | 0 | 93.8% | 98.8% | 85.0% | 1.2% | 4.60 | 2.92 | 59.3 |
-| Trait Adjectives | 21 | 98.8% | 100.0% | 98.8% | 1.2% | 4.95 | 3.71 | 52.8 |
-| Negative Bans | 46 | 96.2% | 97.5% | 100.0% | 0.0% | 4.95 | 3.33 | 33.8 |
-| Behavioral Rubric | 53 | 100.0% | 98.8% | 92.5% | 3.8% | 4.89 | 3.16 | 26.3 |
-| Few-Shot Voice | 94 | 96.2% | 97.5% | 98.8% | 1.2% | 4.96 | 3.52 | 25.7 |
+| Syntax Condition (n = 80) | Prompt Words | Correctness % [95% CI] | Format % [95% CI] | Zero-Fluff % [95% CI] | Pink-Elephant % | Voice (/5) | Mean Words (SD) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Default (baseline) | 0 | 93.8% [86.2–97.3%] | 98.8% [93.3–99.8%] | 85.0% [75.6–91.2%] | 1.2% | 2.92 | 59.3 (87.3) |
+| Trait Adjectives | 21 | 98.8% [93.3–99.8%] | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 1.2% | 3.71 | 52.8 (90.7) |
+| Negative Bans | 46 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 100.0% [95.4–100.0%] | 0.0% | 3.33 | 33.8 (57.4) |
+| Behavioral Rubric | 53 | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 92.5% [84.6–96.5%] | 3.8% | 3.16 | 26.3 (27.4) |
+| Few-Shot Voice | 94 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 98.8% [93.3–99.8%] | 1.2% | 3.52 | 25.7 (45.8) |
 
 Notice two empirical surprises that contradict common prompt lore: first, **Negative Bans did not trigger pink-elephant backfiring** on November 2026 frontier models—they achieved `100.0%` zero-fluff and `0.0%` leak rate. Second, **Behavioral Rubrics were the only syntax to hit 100.0% correctness (80/80)** across every tested model while cutting mean reply length by 55.6% (from `59.3` to `26.3` words).
 
@@ -167,7 +162,7 @@ Obey exact count, bullet, JSON, or one-sentence constraints verbatim.
 Zero filler greetings, praise openers, or apology padding.
 ```
 
-**How to deploy safely:** Wrap user-approved rules in bounded markers (`<!-- agenttune:preferences:start -->` / `<!-- agenttune:preferences:end -->`), verify saved text, and re-test against multi-turn conversations—since Study 3 shows system-only rules still soften after ~8 turns unless reinforced. **Limitations:** All 400 trials measured single-turn objective tasks at temperature `0.3`; open-ended creative prose, tool-use agents across long trajectories, and domain-specific style imitation require separate evaluation.
+**How to deploy safely:** Wrap user-approved rules in bounded markers (`<!-- agenttune:preferences:start -->` / `<!-- agenttune:preferences:end -->`), verify saved text, and re-test against multi-turn conversations—since Study 3 shows system-only rules still soften after ~8 turns unless reinforced. **Limitations & Judge Scope:** Word counts and pink-elephant substrings are computed deterministically; correctness, format adherence, fluff, and voice ratings were scored by a single blind LLM judge (`google/gemini-4-argon`), which may carry subtle same-family scoring affinity on `google/gemini-4-neon`. All 400 trials measured single-turn objective tasks at temperature `0.3`; multi-turn agent trajectories and open-ended creative prose require separate evaluation.
 
 ## Questions people ask.
 

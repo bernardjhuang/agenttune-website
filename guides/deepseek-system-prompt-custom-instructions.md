@@ -5,18 +5,9 @@ Guide · DeepSeek
 
 # DeepSeek system prompts and custom instructions: XML templates that hold their tone.
 
-By Bernard Huang · Updated November 23, 2026
-
-Why XML-tagged constraints beat loose paragraphs in DeepSeek V3/V4 and reasoning models—plus 4 copyable API and web session templates.
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Why structured XML blocks work best for DeepSeek.
 
@@ -113,7 +104,7 @@ DeepSeek V4 Pro is a clear statistical outlier: lowest Agreeableness (32.4 vs 44
 
 Want to build a custom tone block with sliders first, or verify that your DeepSeek prompt doesn’t contain contradictory rules?
 
-- Dial in exact warmth, brevity, and pushback rules in our [6-Slider AI Personality Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions).
+- Dial in exact warmth, brevity, and pushback rules in our [6-Slider AI Personality Tuner](https://agent-tune.com/tools/custom-instructions-generator).
 - Lint for conflicting constraints in the [Instruction Checker](https://agent-tune.com/tools/instruction-checker).
 - Score baseline vs. tuned DeepSeek outputs blindly in the [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 
@@ -152,6 +143,6 @@ Yes. Open any profile in the AgentTune library or Custom Instructions Generator 
 - [OpenRouter Hub: 20 OpenRouter & Open-Source System Prompt Templates + Model Matcher](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Research: What personality type are open-source AI models? (12 models × n=100)](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 - [Tone Design: AI personality, tone & verbosity controls: 5 rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
-- [Interactive Tuner: 6-Slider AI Personality Tuner → Portable System Prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → Portable System Prompt](https://agent-tune.com/tools/custom-instructions-generator)
 - [Anti-Sycophancy: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Free browser tool: Instruction A/B Test Bench — compare before & after](https://agent-tune.com/tools/instruction-test-bench)

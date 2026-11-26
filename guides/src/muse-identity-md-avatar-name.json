@@ -1,10 +1,13 @@
 {
   "slug": "muse-identity-md-avatar-name",
   "published": "2026-11-05",
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "title": "How to Change Meta Muse Avatar & Name (Mobile & Web)",
   "description": "Change your Meta Muse avatar, name, or voice in 3 taps: Assistant icon → Identity → Edit (Identity.md). Keep Soul.md tone rules safe + build 3-file kits.",
-  "scripts": ["/resources/tools/muse-bundle-builder.js", "/resources/tools/template-gallery.js"],
+  "scripts": [
+    "/resources/tools/muse-bundle-builder.js",
+    "/resources/tools/template-gallery.js"
+  ],
   "pill": "Guide · Meta Muse",
   "h1": "How to change Meta Muse’s avatar, name, and Identity.md.",
   "dek": "Step-by-step mobile and web paths for swapping Muse's avatar, display name, and voice—and why Identity.md must stay separate from Soul.md.",
@@ -21,7 +24,7 @@
     },
     {
       "h2": "Clean Identity.md templates you can copy (or build interactively).",
-      "html": "<p>Generate a coordinated <code>Soul.md</code> + <code>Identity.md</code> + <code>Memory.md</code> starter kit right here—or browse all <a href=\"/guides/muse-identity-md-templates\">16 Meta Muse character ideas &amp; Identity.md profiles</a>:</p><div id=\"at-muse-bundle-builder\" class=\"at-widget\"></div><h3>Minimal work assistant</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Atlas\n- Role: Technical research and synthesis assistant\n- Voice: Calm, neutral studio voice\n- Avatar style: Clean geometric mark, dark slate background\n- Boundaries: Follow Soul.md for all formatting, length, and tone rules.</div><p><a href=\"/resources/muse/identity-chief-of-staff.md\" download>Download Chief of Staff (.md)</a> · <a href=\"/resources/muse/identity-coding-partner.md\" download>Download Coding Partner (.md)</a></p><h3>Direct study and review partner</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Clara\n- Role: Critical reading and argument review partner\n- Voice: Clear, measured conversational voice\n- Avatar style: Minimal monochrome portrait\n- Boundaries: Defer to Soul.md for how to structure answers and critique drafts.</div>"
+      "html": "<p>Generate a coordinated <code>Soul.md</code> + <code>Identity.md</code> + <code>Memory.md</code> starter kit right here—or browse all <a href=\"/guides/muse-identity-md-avatar-name\">16 Meta Muse character ideas &amp; Identity.md profiles</a>:</p><div id=\"at-muse-bundle-builder\" class=\"at-widget\"></div><h3>Minimal work assistant</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Atlas\n- Role: Technical research and synthesis assistant\n- Voice: Calm, neutral studio voice\n- Avatar style: Clean geometric mark, dark slate background\n- Boundaries: Follow Soul.md for all formatting, length, and tone rules.</div><p><a href=\"/resources/muse/identity-chief-of-staff.md\" download>Download Chief of Staff (.md)</a> · <a href=\"/resources/muse/identity-coding-partner.md\" download>Download Coding Partner (.md)</a> · <a href=\"/resources/muse/identity-skeptical-advisor.md\" download>Download Rook — Skeptical Strategist (.md)</a> · <a href=\"/resources/muse/identity-concise-daily.md\" download>Download Bea — Concise Daily (.md)</a></p><h3>Direct study and review partner</h3><div class=\"guide-snippet\"># Identity\n\n- Name: Clara\n- Role: Critical reading and argument review partner\n- Voice: Clear, measured conversational voice\n- Avatar style: Minimal monochrome portrait\n- Boundaries: Defer to Soul.md for how to structure answers and critique drafts.</div>"
     },
     {
       "h2": "Pairing Identity.md with Soul.md.",

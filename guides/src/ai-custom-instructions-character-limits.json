@@ -3,7 +3,7 @@
   "published": "2026-11-05",
   "updated": "2026-11-17",
   "title": "AI Custom Instructions Character Limits (2026 Cheat Sheet)",
-  "description": "Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok.",
+  "description": "Exact character and byte limits for ChatGPT (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, Gemini, and Grok—plus a universal 580-char block.",
   "pill": "Reference · Limits & Quotas",
   "h1": "AI custom instructions character limits (2026 cheat sheet).",
   "dek": "Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Claude, Claude Code, Meta Muse, Gemini, Cursor, and Grok.",

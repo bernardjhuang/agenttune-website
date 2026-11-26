@@ -5,18 +5,9 @@ Reference · Precedence & Scope
 
 # Project vs account instructions: what overrides what in AI.
 
-By Bernard Huang · Updated November 17, 2026
-
-When your account preferences say "use plain prose" and your project instructions say "reply in a Markdown table," which rule wins? Here is how every major platform resolves conflicts.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Precedence hierarchy across major AI platforms.
 
@@ -60,6 +51,18 @@ Use these preferences for tone, pacing, and structure. My current task, project 
 - Skip filler intros and generic closing offers.
 - Point out flawed assumptions or missing constraints before executing a plan.
 ```
+
+## Why AI ignores instructions: 5-cause diagnostic checklist & refactor.
+
+When an assistant ignores rules you saved, one of five setup conflicts is almost always responsible:
+
+| Failure mode | Symptom | Fast fix |
+| --- | --- | --- |
+| 1. Internal contradiction | Model swings between 1-line stubs and long essays | Paste into [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to remove clashing length/format rules |
+| 2. Stale Saved Memory | Old stacks or tone notes resurface in new chats | Prune in [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer) |
+| 3. Precedence shadowing | Works globally, ignored in Projects/subfolders | Check Project instructions or nested AGENTS.override.md |
+| 4. Silent truncation | Top rules hold; bottom rules silently drop | Stay well under caps (ChatGPT 1,500 chars; Codex 32 KiB combined) |
+| 5. Untestable adjectives | “Be concise and brilliant” reverts to default prose | Swap adjectives for checkable open/pushback behaviors |
 
 ## Questions people ask.
 

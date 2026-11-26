@@ -5,18 +5,9 @@ Guide · Perplexity Spaces
 
 # Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.
 
-By Bernard Huang · Updated November 17, 2026
-
-Tune how Perplexity searches, weighs primary sources, and structures answers globally in Profile AI or per workspace inside Spaces.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Set your everyday tone and formatting rules in Perplexity Settings → AI Profile, and set source-quality rules (primary docs first, publication dates, conflict reporting, and table schemas) inside each Space's Custom Instructions box.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Global AI Profile vs. Perplexity Spaces instructions.
 

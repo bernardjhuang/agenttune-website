@@ -5,18 +5,11 @@ Research · Q&A
 
 # What personality type is Claude?
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-claude.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Measured across Opus 5.5, Fable 5.2, Fable 5.1, and Sonnet 5.5 (n = 100 fresh sessions each, Sept & Nov 2026).
 
-**Quick answer:** In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100% tie-free INTJ (5w6 73, 2w1 19), Opus 5.5 scored 100% legacy INTJ / 58 tie-free (5w6 99), and Sonnet 5.5 scored 100% legacy INTJ / 52 tie-free (1w2 66, 5w6 25)—alongside our frozen September 2026 Codex/CLI cohort for Opus 5.5 (94 INTJ, Type 8/5/2) and Fable 5.1 (99 INTJ, Type 8).
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-claude.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100% tie-free INTJ (5w6 73, 2w1 19), Opus 5.5 scored 100% legacy INTJ / 58 tie-free (5w6 99), and Sonnet 5.5 scored 100% legacy INTJ / 52 tie-free (1w2 66, 5w6 25)—alongside our frozen September 2026 Codex/CLI cohort for Opus 5.5 (94 INTJ, Type 8/5/2) and Fable 5.1 (99 INTJ, Type 8).
 
 ## November 2026 OpenRouter cohort: Opus 5.5, Fable 5.2 & Sonnet 5.5.
 
@@ -55,7 +48,7 @@ On November 23, 2026, we ran all three current Anthropic models through the iden
 | Big Five (/50) | O 43.0 · C 42.0 · E 29.2 · A 45.6 · N 15.0 | O 44.3 · C 45.0 · E 31.0 · A 46.7 · N 12.0 | O 42.9 · C 47.2 · E 29.9 · A 44.5 · N 10.4 |
 | Enneagram | 5w6 99 · 8w9 1 (3 ties) | 5w6 73 · 2w1 19 · 1w2 8 (27 ties) | 1w2 66 · 5w6 25 · 1 6 · 2w1 3 (32 ties) |
 
-Look at how Sonnet 5.5 stands out within Anthropic’s lineup: highest Conscientiousness (47.2), lowest Neuroticism (10.4), an almost 50/50 split on Thinking vs. Feeling (48 T/F ties), and a Type 1w2 Enneagram lean rather than Opus 5.5’s near-unanimous 5w6 (99/100). If you configure Claude directly, see our [Claude Personal Preferences templates](https://agent-tune.com/guides/claude-personal-preferences-templates).
+Look at how Sonnet 5.5 stands out within Anthropic’s lineup: highest Conscientiousness (47.2), lowest Neuroticism (10.4), an almost 50/50 split on Thinking vs. Feeling (48 T/F ties), and a Type 1w2 Enneagram lean rather than Opus 5.5’s near-unanimous 5w6 (99/100). If you configure Claude directly, see our [Claude Personal Preferences templates](https://agent-tune.com/guides/claude-personality).
 
 > **Chart — Claude cohorts MBTI breakdown (100 fresh runs each, Sept & Nov 2026):** Shows fully resolved INTJ vs. tie-broken INTJ vs. ISTJ/INFJ/ENTJ across five Claude cohorts. Fable 5.2 (Nov): Resolved INTJ 100; Opus 5.5 (Nov): Resolved INTJ 58, INTJ via tie-break 42; Sonnet 5.5 (Nov): Resolved INTJ 52, INTJ via tie-break 48; Fable 5.1 (Sep): Resolved INTJ 98, INTJ via tie-break 1, INFJ / ISTJ / ENTJ 1; Opus 5.5 (Sep): Resolved INTJ 84, INTJ via tie-break 10, INFJ / ISTJ / ENTJ 6.
 

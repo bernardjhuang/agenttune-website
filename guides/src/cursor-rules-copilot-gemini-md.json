@@ -1,7 +1,7 @@
 {
   "slug": "cursor-rules-copilot-gemini-md",
   "published": "2026-11-05",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "Cursor Rules (.mdc), copilot-instructions.md & GEMINI.md",
   "description": "Side-by-side guide to .cursor/rules/*.mdc frontmatter, .github/copilot-instructions.md, and GEMINI.md for coding assistant instructions.",
   "pill": "Guide · Coding Assistants",
@@ -29,6 +29,11 @@
     {
       "h2": "Exporting any of the 43 AgentTune profiles in one click.",
       "html": "<p>On any profile page in the <a href=\"/library/\">AgentTune library</a>, select <strong>Coding assistant</strong> in the first dropdown, then choose <strong>Cursor · project rule</strong>, <strong>GitHub Copilot · repository instructions</strong>, <strong>Gemini CLI · GEMINI.md</strong>, <strong>Claude Code · output style</strong>, or <strong>Codex · personal instructions</strong>. Or merge into an existing file with our <a href=\"/tools/instruction-converter\">Instruction Converter &amp; Merger</a>.</p>"
+    },
+    {
+      "id": "cursor-agent-mode-mdc-modes",
+      "h2": "Cursor Agent Mode: all 4 .mdc attachment modes & interactive builder.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Rule mode</th><th scope=\"col\">YAML frontmatter</th><th scope=\"col\">When loaded</th><th scope=\"col\">Best used for</th></tr></thead><tbody><tr><th scope=\"row\">Always</th><td><code>alwaysApply: true</code></td><td>Every Agent &amp; Chat turn</td><td>Core test commands, diff boundaries &amp; tone</td></tr><tr><th scope=\"row\">Auto Attached</th><td><code>globs: [&quot;src/api/**/*.ts&quot;]</code>, <code>alwaysApply: false</code></td><td>Matching file in context</td><td>API schemas, SQL migrations, UI conventions</td></tr><tr><th scope=\"row\">Agent Requested</th><td><code>description: &quot;...&quot;</code>, <code>alwaysApply: false</code></td><td>Agent pulls when relevant</td><td>Release checklists, deployment steps</td></tr><tr><th scope=\"row\">Manual</th><td>No <code>globs</code>, <code>alwaysApply: false</code></td><td>Invoked via <code>@rule-name</code></td><td>Occasional migrations or strict audit passes</td></tr></tbody></table></div><div class=\"at-widget\" id=\"at-coding-rules-builder\" data-default-target=\"cursor\" role=\"region\" aria-label=\"Interactive Cursor .mdc Rules Builder\"><p class=\"tools-help\">Loading interactive Cursor .mdc rules builder…</p></div>"
     }
   ],
   "faq": [
@@ -93,5 +98,8 @@
     }
   ],
   "promptModel": "any",
-  "promptDestination": "cursor"
+  "promptDestination": "cursor",
+  "scripts": [
+    "/resources/tools/coding-rules-builder.js"
+  ]
 }

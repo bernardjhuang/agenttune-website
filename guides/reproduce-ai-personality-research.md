@@ -5,16 +5,9 @@ Developer guide · reproducibility
 
 # How to reproduce AgentTune’s AI self-report research
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download the five frozen files into one folder, run 'node september-2026-score.cjs' and 'node content-analysis.cjs', and compare the JSON output with our published summaries. This reproduces all 2,003 scored questionnaire records locally with zero model calls.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## September 26 provenance correction
 

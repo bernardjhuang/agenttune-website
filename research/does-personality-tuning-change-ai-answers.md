@@ -5,18 +5,11 @@ Research · November & September 2026
 
 # Does personality tuning change AI answers?
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.
 
-**Quick answer:** Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
 
 ## November 2026: 540-reply controlled study across GPT-6.2 Sol, Claude Fable 5.2 & DeepSeek V4 Pro.
 

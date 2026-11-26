@@ -1,7 +1,7 @@
 {
   "slug": "claude-code-personality",
   "published": "2026-09-19",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "Claude Code Personality: /output-style & CLAUDE.md Guide",
   "description": "Customize Claude Code's personality via ~/.claude/output-styles (/output-style with keep-coding-instructions: true) or CLAUDE.md. 43 downloadable styles.",
   "pill": "Guide · Claude Code",
@@ -28,7 +28,7 @@
     },
     {
       "h2": "CLAUDE.md: right for the project, wrong for you.",
-      "html": "<p>CLAUDE.md still matters. It is just answering a different question. The docs give the load order: a managed policy file, then <code>~/.claude/CLAUDE.md</code>, then <code>./CLAUDE.md</code> or <code>./.claude/CLAUDE.md</code>, then <code>./CLAUDE.local.md</code>. The files are concatenated, none overrides another, and the docs suggest keeping each under 200 lines.</p><p>Three reasons your personality does not belong in the project's CLAUDE.md:</p><ul><li><strong>It is shared.</strong> The repo's CLAUDE.md is your team's file. <em>\"Talk to me like an ENFP\"</em> is not a team convention.</li><li><strong>It is weaker.</strong> It arrives as a message, not as part of the system prompt.</li><li><strong>It competes.</strong> Every line about your temperament is a line not spent on how to run the tests.</li></ul><p>If you want it in a CLAUDE.md anyway, use <code>~/.claude/CLAUDE.md</code> or <code>CLAUDE.local.md</code>, which are yours alone, and keep it to a few lines. <code>/memory</code> opens the files for editing, and <code>/context</code> shows what actually loaded. For what belongs in the project file, see <a href=\"/guides/claude-md-examples\">CLAUDE.md examples</a>.</p>"
+      "html": "<p>CLAUDE.md still matters. It is just answering a different question. The docs give the load order: a managed policy file, then <code>~/.claude/CLAUDE.md</code>, then <code>./CLAUDE.md</code> or <code>./.claude/CLAUDE.md</code>, then <code>./CLAUDE.local.md</code>. The files are concatenated, none overrides another, and the docs suggest keeping each under 200 lines.</p><p>Three reasons your personality does not belong in the project's CLAUDE.md:</p><ul><li><strong>It is shared.</strong> The repo's CLAUDE.md is your team's file. <em>\"Talk to me like an ENFP\"</em> is not a team convention.</li><li><strong>It is weaker.</strong> It arrives as a message, not as part of the system prompt.</li><li><strong>It competes.</strong> Every line about your temperament is a line not spent on how to run the tests.</li></ul><p>If you want it in a CLAUDE.md anyway, use <code>~/.claude/CLAUDE.md</code> or <code>CLAUDE.local.md</code>, which are yours alone, and keep it to a few lines. <code>/memory</code> opens the files for editing, and <code>/context</code> shows what actually loaded. For what belongs in the project file, see <a href=\"/guides/claude-code-personality\">CLAUDE.md examples</a>.</p>"
     },
     {
       "h2": "Flags and agents: for one-offs and full replacements.",
@@ -37,6 +37,11 @@
     {
       "h2": "What a personality file should not touch.",
       "html": "<p>Keep the two layers apart. The personality layer says how to talk to you: what to lead with, how to disagree, when to stop asking questions. The engineering layer says how to build: conventions, tests, what never to commit. When they blur you get a style that says <em>\"be decisive\"</em> being read as <em>\"skip the tests\"</em>.</p><p>The line we put at the top of every file in the pack:</p><div class=\"guide-snippet\" data-tuning-prompt>These rules change how you talk: what you lead with, how you frame decisions, how you disagree, when you stop asking questions. They do not change how you engineer.</div><p>The same separation applies to Cursor rules, AGENTS.md and Copilot instructions. That is covered in <a href=\"/guides/ai-coding-agent-rules-files-matrix\">the layer your AGENTS.md is missing</a>.</p>"
+    },
+    {
+      "id": "claude-md-production-examples",
+      "h2": "Annotated CLAUDE.md starter examples (Minimal, Test-Discipline & Monorepo).",
+      "html": "<p>While <code>~/.claude/output-styles/*.md</code> controls how Claude Code talks to you, keep <code>./CLAUDE.md</code> focused on repo commands and invariants that code reading alone misses (stay under ~200 lines):</p><h3>1. Minimal starter (10 lines)</h3><div class=\"guide-snippet\"># CLAUDE.md\n\n## Commands\n- Build: `npm run build`\n- Test: `npm test` (single file: `npm test -- path/to/file.test.ts`)\n- Lint: `npm run lint`; run before declaring any task done\n\n## Style\n- TypeScript strict mode. No `any`.\n- Read a neighboring file in `src/` before inventing a new pattern.</div><h3>2. Test-discipline guardrail</h3><div class=\"guide-snippet\"># CLAUDE.md\n\n## Tests are the contract\n- Run `npm test` after every final edit. Never report complete with failing tests.\n- Never modify a test assertion just to make it pass; report broken tests first.\n- Flag flaky tests instead of looping retries until green.</div><h3>3. Monorepo root + dual-tool @AGENTS.md bridge</h3><div class=\"guide-snippet\"># CLAUDE.md\n@AGENTS.md\n\n## Package pointers (detailed CLAUDE.md lives in each package)\n- `apps/web` — frontend\n- `apps/api` — backend API\n- Keep shared types in `packages/types` cleanly; changes across packages need a changeset.</div>"
     }
   ],
   "faq": [
@@ -110,11 +115,6 @@
       "kicker": "Guide",
       "label": "How to change Claude's personality",
       "href": "/guides/claude-personality"
-    },
-    {
-      "kicker": "Guide",
-      "label": "CLAUDE.md examples and best practices",
-      "href": "/guides/claude-md-examples"
     },
     {
       "kicker": "Guide",

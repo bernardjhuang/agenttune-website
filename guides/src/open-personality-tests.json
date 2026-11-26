@@ -108,11 +108,6 @@
     {
       "kicker": "Prompts",
       "label": "Big Five AI prompts & IPIP-50 interpreter",
-      "href": "/guides/big-five-ai-prompts"
-    },
-    {
-      "kicker": "Guide",
-      "label": "MBTI vs Big Five for AI",
       "href": "/guides/mbti-vs-big-five-for-ai"
     },
     {

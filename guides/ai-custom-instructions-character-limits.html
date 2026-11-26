@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Custom Instructions Character Limits (2026 Cheat Sheet)</title>
-  <meta name="description" content="Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok." />
+  <meta name="description" content="Exact character and byte limits for ChatGPT (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, Gemini, and Grok—plus a universal 580-char block." />
 
   <meta property="og:title" content="AI custom instructions character limits (2026 cheat sheet)." />
-  <meta property="og:description" content="Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok." />
+  <meta property="og:description" content="Exact character and byte limits for ChatGPT (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, Gemini, and Grok—plus a universal 580-char block." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-05" />
   <meta property="article:modified_time" content="2026-11-17" />
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AI custom instructions character limits (2026 cheat sheet)." />
-  <meta name="twitter:description" content="Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok." />
+  <meta name="twitter:description" content="Exact character and byte limits for ChatGPT (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, Gemini, and Grok—plus a universal 580-char block." />
   <meta name="twitter:site" content="@bernardjhuang" />
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
@@ -28,7 +28,7 @@
   <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/ai-custom-instructions-character-limits.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI custom instructions character limits (2026 cheat sheet)","description":"Verified 2026 character and byte limits for ChatGPT custom instructions (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, and Grok.","url":"https://agent-tune.com/guides/ai-custom-instructions-character-limits","datePublished":"2026-11-05","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI custom instructions character limits (2026 cheat sheet)","description":"Exact character and byte limits for ChatGPT (1,500 chars), Codex AGENTS.md (32 KiB), Claude, Meta Muse, Gemini, and Grok—plus a universal 580-char block.","url":"https://agent-tune.com/guides/ai-custom-instructions-character-limits","datePublished":"2026-11-05","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"AI custom instructions character limits (2026 cheat sheet)"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the character limit for ChatGPT Custom Instructions in 2026?","acceptedAnswer":{"@type":"Answer","text":"OpenAI documents a 1,500-character limit for the longer Custom Instructions fields under Settings, Personalization, Custom Instructions. Every profile in AgentTune includes a reviewed compact export under 1,500 characters."}},{"@type":"Question","name":"What is the byte limit for OpenAI Codex AGENTS.md?","acceptedAnswer":{"@type":"Answer","text":"Codex reads up to 32 KiB (32,768 bytes) combined across all AGENTS.md and AGENTS.override.md files in the directory chain, configured by project_doc_max_bytes."}},{"@type":"Question","name":"Do ChatGPT Project Instructions have the same 1,500-character limit?","acceptedAnswer":{"@type":"Answer","text":"No. Project Instructions inside a ChatGPT Project accept full multi-paragraph Markdown tunings and override your global Custom Instructions inside that project."}},{"@type":"Question","name":"How many rules should I put in Claude Personal Preferences or Meta Muse Soul.md?","acceptedAnswer":{"@type":"Answer","text":"Six to ten clear bullet points (roughly 500 to 1,200 characters) cover tone, answer order, formatting, and pushback without crowding out your task context."}}]}</script>
 
@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Reference · Limits &amp; Quotas</span>
+        <p class="page-eyebrow">Reference · Limits &amp; Quotas</p>
         <h1 class="h-hero h-research-hero">AI custom instructions character limits (2026 cheat sheet).</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Claude, Claude Code, Meta Muse, Gemini, Cursor, and Grok.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time> · <a href="/guides/ai-custom-instructions-character-limits.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/ai-custom-instructions-character-limits.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 

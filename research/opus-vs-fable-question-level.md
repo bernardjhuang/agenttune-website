@@ -5,16 +5,9 @@ Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-**Quick answer:** The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
 
 ## What we compared
 

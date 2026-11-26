@@ -10,7 +10,7 @@
   <meta property="og:description" content="How ChatGPT Personality presets (Cynic, Robot, Listener, Nerd) work with Warmth sliders and the 1,500-char Custom Instructions boxes in Personalization." />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2026-11-16" />
-  <meta property="article:modified_time" content="2026-11-17" />
+  <meta property="article:modified_time" content="2026-11-25" />
   <meta property="og:url" content="https://agent-tune.com/guides/chatgpt-personality-settings" />
   <meta property="og:site_name" content="AgentTune" />
   <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
@@ -28,7 +28,7 @@
   <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/chatgpt-personality-settings.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT personality settings: presets, warmth controls, and custom instructions","description":"How ChatGPT Personality presets (Cynic, Robot, Listener, Nerd) work with Warmth sliders and the 1,500-char Custom Instructions boxes in Personalization.","url":"https://agent-tune.com/guides/chatgpt-personality-settings","datePublished":"2026-11-16","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT personality settings: presets, warmth controls, and custom instructions","description":"How ChatGPT Personality presets (Cynic, Robot, Listener, Nerd) work with Warmth sliders and the 1,500-char Custom Instructions boxes in Personalization.","url":"https://agent-tune.com/guides/chatgpt-personality-settings","datePublished":"2026-11-16","dateModified":"2026-11-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://agent-tune.com/guides/"},{"@type":"ListItem","position":3,"name":"ChatGPT personality settings: presets, warmth controls, and custom instructions"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where did Custom Instructions move in the newer ChatGPT Personalization menu?","acceptedAnswer":{"@type":"Answer","text":"Custom Instructions now live inside Settings → Personalization alongside Base style and tone presets and the Characteristic sliders, keeping the same two 1,500-character boxes for context about you and how ChatGPT should respond."}},{"@type":"Question","name":"Can I combine a ChatGPT Personality preset like Robot or Cynic with Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Base style preset sets default conversational flavor, while Custom Instructions override formatting, critique style, and length rules when the two are specific and non-contradictory."}},{"@type":"Question","name":"Does turning off Reference Saved Memories erase Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"No. Personalization toggles for Memory and Custom Instructions are independent; Custom Instructions remain active in every new chat unless toggled off or overridden inside a Project or Custom GPT."}},{"@type":"Question","name":"Why does ChatGPT still end answers with follow-up questions even on Efficient mode?","acceptedAnswer":{"@type":"Answer","text":"Preset modes adjust phrasing gently but rarely suppress RLHF closing habits on their own. Add an explicit negative rule in Custom Instructions such as 'End immediately after answering; do not add follow-up prompts or menu offers.'"}}]}</script>
 
@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Guide · OpenAI ChatGPT</span>
+        <p class="page-eyebrow">Guide · OpenAI ChatGPT</p>
         <h1 class="h-hero h-research-hero">ChatGPT personality settings: presets, warmth controls, and custom instructions.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time></p>
-        <p class="lede" style="margin-top: 14px;">Settings → Personalization gives you Base style and tone presets, four characteristic sliders, and two 1,500-character instruction boxes.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <a href="/guides/chatgpt-personality-settings.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers &amp; Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Quick Actions &amp; Agent Fetch</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/guides/chatgpt-personality-settings.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/library/index.json">Library JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/tools/custom-instructions-generator">Build instructions →</a>
-          </div>
-        </div>
       </section>
 
 
@@ -120,6 +111,12 @@
 - Pause after key decision points to confirm whether I want to go deeper.</div><h3>3. Strict Code &amp; Docs Partner (Pair with Efficient)</h3><div class="guide-snippet">- Output exact commands, schemas, or diffs first; keep commentary to three bullets max.
 - Never invent file paths, APIs, or test results; mark unverified details explicitly.
 - Wait for confirmation before expanding scope across unrelated modules.</div><p>Want a template matched to your working style and automatically sized under 1,500 characters? Open the <a href="/tools/custom-instructions-generator?target=chatgpt-custom">Custom Instructions Generator</a> or browse all 43 profiles in the <a href="/library/">Tuning Library</a>.</p>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2 id="writing-samples-and-projects-override">Writing samples vs. Custom Instructions — and how ChatGPT Projects override global rules.</h2>
+        <p><strong>Writing samples vs. communication rules:</strong> Paste 5–10 writing samples when the output <em>must sound like your prose</em> (emails, posts, memos). Use behavioral rules in Box 2 when changing <em>how ChatGPT thinks and responds</em> (verdict first, zero filler, explicit pushback). Watch out for one conflict: leave <strong>Base style and tone</strong> on <em>Default</em> if written Box 2 rules already specify direct, low-filler replies.</p><div class="guide-table-wrap" role="region" aria-label="Writing samples vs. Custom Instructions — and how ChatGPT Projects override global rules.: table 2" tabindex="0"><table><thead><tr><th scope="col">Layer</th><th scope="col">Limit</th><th scope="col">Precedence on conflict</th></tr></thead><tbody><tr><th scope="row">Global Custom Instructions</th><td>1,500 chars/box</td><td>Baseline default across normal chats (keep Box 2 focused on communication habits)</td></tr><tr><th scope="row">ChatGPT Project Instructions</th><td>Up to 8,000 chars + files</td><td><strong>Overrides</strong> conflicting global Custom Instructions inside that Project</td></tr><tr><th scope="row">Saved Memories</th><td>Per-entry facts</td><td>Check <em>Personalization → Memory</em> if an old stack or tone keeps resurfacing</td></tr></tbody></table></div>
       </section>
 
       <div class="divider tight"></div>
@@ -168,10 +165,9 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/guides/chatgpt-voice-mode-voices-personality"><span class="guide-related-kicker">Voice Mode</span>ChatGPT Voice Mode voices (all 9 voices: Sol, Cove, Maple, Vale) &amp; tone</a>
-          <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Interactive Tuner</span>6-Slider AI Personality Tuner → 1,500-char ChatGPT prompt</a>
           <a href="/guides/chatgpt-vs-claude-personality"><span class="guide-related-kicker">Comparison</span>ChatGPT vs Claude default personality (benchmark data)</a>
           <a href="/guides/chatgpt-custom-instructions-examples"><span class="guide-related-kicker">Guide</span>ChatGPT Custom Instructions examples (Box 1 vs Box 2)</a>
-          <a href="/guides/chatgpt-projects-vs-custom-instructions"><span class="guide-related-kicker">Guide</span>ChatGPT Projects vs Custom Instructions: precedence &amp; limits</a>
           <a href="/guides/custom-gpt-instructions-template-limit"><span class="guide-related-kicker">Guide</span>Custom GPT instructions template &amp; 8,000-char guide</a>
         </div>
       </section>

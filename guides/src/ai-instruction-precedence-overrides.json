@@ -1,7 +1,7 @@
 {
   "slug": "ai-instruction-precedence-overrides",
   "published": "2026-11-05",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "Project vs Account Instructions: What Overrides What in AI",
   "description": "How ChatGPT, Claude, OpenAI Codex, Claude Code, and Meta Muse resolve conflicts between account custom instructions, project rules, and chat.",
   "pill": "Reference · Precedence & Scope",
@@ -25,6 +25,11 @@
     {
       "h2": "3. Claude: Personal Preferences vs Projects and Skills.",
       "html": "<p>In Claude, <strong>Personal Preferences</strong> (Settings → General) set your account-wide baseline. When you work inside a <strong>Claude Project</strong> or invoke a <strong>Skill</strong>, both layers load together. If your Personal Preferences say <em>“keep answers under 150 words in plain prose”</em> and a Skill asks for a <em>“5-section Markdown table report,”</em> Claude can hesitate unless your account rules include an explicit override line.</p><p>Every AgentTune prompt includes that override line at the top so your baseline never blocks a task:</p><div class=\"guide-snippet\" data-tuning-prompt>## Communication preferences\n\nUse these preferences for tone, pacing, and structure. My current task, project instructions, and explicit corrections take precedence.\n\n- Lead with the direct answer or recommendation.\n- Use plain prose by default; switch to tables or lists when the task or project calls for them.\n- Skip filler intros and generic closing offers.\n- Point out flawed assumptions or missing constraints before executing a plan.</div>"
+    },
+    {
+      "id": "five-cause-conflict-audit",
+      "h2": "Why AI ignores instructions: 5-cause diagnostic checklist & refactor.",
+      "html": "<p>When an assistant ignores rules you saved, one of five setup conflicts is almost always responsible:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Failure mode</th><th scope=\"col\">Symptom</th><th scope=\"col\">Fast fix</th></tr></thead><tbody><tr><th scope=\"row\">1. Internal contradiction</th><td>Model swings between 1-line stubs and long essays</td><td>Paste into <a href=\"/tools/instruction-checker\">Instruction Checker</a> to remove clashing length/format rules</td></tr><tr><th scope=\"row\">2. Stale Saved Memory</th><td>Old stacks or tone notes resurface in new chats</td><td>Prune in <a href=\"/tools/ai-memory-reviewer\">AI Memory Reviewer</a></td></tr><tr><th scope=\"row\">3. Precedence shadowing</th><td>Works globally, ignored in Projects/subfolders</td><td>Check Project instructions or nested <code>AGENTS.override.md</code></td></tr><tr><th scope=\"row\">4. Silent truncation</th><td>Top rules hold; bottom rules silently drop</td><td>Stay well under caps (ChatGPT 1,500 chars; Codex 32 KiB combined)</td></tr><tr><th scope=\"row\">5. Untestable adjectives</th><td><em>“Be concise and brilliant”</em> reverts to default prose</td><td>Swap adjectives for checkable open/pushback behaviors</td></tr></tbody></table></div>"
     }
   ],
   "faq": [

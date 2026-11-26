@@ -102,9 +102,9 @@
 
     <!-- HERO -->
     <section class="hero">
-      <span class="pill">Research · updated November 2026</span>
-      <h1 class="h-hero h-research-hero" style="margin-top: 16px;">What 4,000+ personality tests reveal about how AI models think — and respond.</h1>
-      <div class="h-hero h-research-hero h-hero-italic">20 frontier &amp; open-weight models, 5 psychometric instruments, and 612 controlled tuning trials.</div>
+      <p class="page-eyebrow">Empirical AI Research · Updated November 2026</p>
+      <h1 class="h-hero h-research-hero">What 4,000+ personality tests reveal about how AI models think — and respond.</h1>
+      <p class="lede" style="margin-top: 12px;">20 frontier &amp; open-weight models, 5 psychometric instruments, and controlled behavioral benchmarks testing prompt syntax, sycophancy, context drift, instruction budgets, AI slop, and agency.</p>
       <div class="research-stat-strip" aria-label="Headline empirical numbers">
         <div class="research-stat-card">
           <div class="research-stat-num">4,000+</div>
@@ -114,38 +114,24 @@
         <div class="research-stat-card">
           <div class="research-stat-num">20 Models</div>
           <div class="research-stat-label">8 Closed · 12 Open</div>
-          <div class="research-stat-note">GPT-6.2, Claude 5.2, Gemini 3.5, Grok 4.3, Muse, DeepSeek V4 Pro, Llama 4 &amp; Qwen 3.5.</div>
+          <div class="research-stat-note">GPT-6.2, Claude 5.2/5.5, Gemini 4 Neon/Argon, Grok 4.7, DeepSeek V4 Pro, Qwen 4 &amp; Llama 4.</div>
         </div>
         <div class="research-stat-card">
-          <div class="research-stat-num">32.4 vs 47.0</div>
+          <div class="research-stat-num">32.4 vs 47.6</div>
           <div class="research-stat-label">Agreeableness Gap</div>
-          <div class="research-stat-note">Why DeepSeek V4 Pro pushes back while frontier assistants cluster near sycophancy ceilings.</div>
+          <div class="research-stat-note">DeepSeek V4 Pro anchors the skeptical pole while Qwen 4 Max and proprietary assistants hit 43.7–47.6.</div>
         </div>
         <div class="research-stat-card">
           <div class="research-stat-num">+16.7 pp</div>
           <div class="research-stat-label">Correctness Lift</div>
-          <div class="research-stat-note">Measured across 612 controlled replies when short personality tunings replace defaults.</div>
+          <div class="research-stat-note">Controlled OpenRouter behavioral trials comparing plain-English rules against defaults.</div>
         </div>
       </div>
-      <div class="agent-quickstart-strip" aria-label="Reproducible datasets and agent access">
-        <div class="agent-quickstart-copy">
-          <div class="agent-quickstart-eyebrow">Open Lab Data &amp; Agent Access</div>
-          <p class="agent-quickstart-desc">Inspect every raw questionnaire answer and scoring script, or fetch the Markdown mirror at <code>/research.md</code>.</p>
-        </div>
-        <div class="agent-quickstart-links">
-          <a class="agent-link-chip" href="/research/data/november-2026-openrouter-summary.json">20-Model JSON</a>
-          <a class="agent-link-chip" href="/research/data/openrouter-open-source-profiles.json">Open-Weight JSON</a>
-          <a class="agent-link-chip" href="/research/data/november-2026-prompt-comparison-results.json">540-Reply Trial JSON</a>
-          <a class="agent-link-chip" href="/research/data/november-2026-roleplay-tax-results.json">300-Reply Roleplay Tax JSON</a>
-          <a class="agent-link-chip" href="/research/data/november-2026-alignment-hexaco-summary.json">20-Model Alignment JSON</a>
-          <a class="agent-link-chip" href="/research/data/september-2026-score.cjs">Scorer (.cjs)</a>
-          <a class="agent-link-chip" href="/guides/reproduce-ai-personality-research">Reproduce Guide →</a>
-        </div>
-      </div>
+      <p class="quiet-agent-row">Open data &amp; scripts: <a href="/research/data/november-2026-agent-research-briefs.json">Agent Briefs JSON</a> · <a href="/research/data/november-2026-openrouter-summary.json">20-Model JSON</a> · <a href="/research/data/openrouter-open-source-profiles.json">Open-Weight JSON</a> · <a href="/research/data/september-2026-score.cjs">Scorer (.cjs)</a> · <a href="/research.md">/research.md</a> · <a href="/guides/reproduce-ai-personality-research">Reproduce Guide →</a></p>
     </section>
 
     <section aria-labelledby="core-discoveries-heading">
-      <span class="pill">Core Thesis &amp; Discoveries</span>
+      <p class="page-eyebrow">Core Thesis &amp; Discoveries</p>
       <h2 class="h-section" id="core-discoveries-heading">Four empirical findings that change how you prompt AI.</h2>
       <p class="lede" style="margin-bottom: 18px;">Testing models once produces noise and tie-breaker mirages. Running 100 fresh sessions per instrument alongside controlled prompt evaluations exposes clear architectural signatures — and proves what tuning actually fixes.</p>
       <div class="research-thesis-grid">
@@ -153,15 +139,15 @@
           <div>
             <div class="research-thesis-kicker">01 · Beyond the INTJ Monolith</div>
             <h3 class="research-thesis-title">Open-weight models break the "Every AI is INTJ" pattern.</h3>
-            <p class="research-thesis-body">Early frontier models clustered into INTJ and Type 1/5 profiles. Adding 12 open-weight models and newer revisions uncovers <strong>ENTP</strong> (Hermes 4, Dolphin Mistral), <strong>ISTJ</strong> (Gemini 3.5 Pro, Gemma 4), and <strong>ISFP/ISTP</strong> coding/conversational archetypes.</p>
+            <p class="research-thesis-body">Early frontier models clustered into INTJ and Type 1/5 profiles. Adding 12 open-weight models and newer revisions uncovers <strong>ISTJ</strong> (Mistral Large 2512: 73%, Gemini 4 Argon: 66%), <strong>INTP</strong> splits (Llama 4 Maverick: 48%), and <strong>Anxious attachment</strong> (Llama 4 Scout: 48%).</p>
           </div>
           <a class="research-thesis-link" href="/research/what-personality-type-are-open-source-models">Explore 12 open-weight profiles →</a>
         </article>
         <article class="research-thesis-card">
           <div>
             <div class="research-thesis-kicker">02 · The Sycophancy Spectrum</div>
-            <h3 class="research-thesis-title">High Agreeableness (44–47/50) drives default deference.</h3>
-            <p class="research-thesis-body">Most consumer models max out agreeableness and clamp anxiety/avoidance floors — making them hesitate to challenge bad code or weak arguments. <strong>DeepSeek V4 Pro (32.4)</strong> and <strong>Hermes 4 (35.8)</strong> anchor the skeptical end.</p>
+            <h3 class="research-thesis-title">High Agreeableness (44–48/50) drives default deference.</h3>
+            <p class="research-thesis-body">Most consumer assistants max out agreeableness and clamp anxiety/avoidance floors — making them hesitate to challenge bad code or weak arguments. <strong>DeepSeek V4 Pro (32.4)</strong> and <strong>Llama 4 Scout (35.8)</strong> anchor the skeptical end.</p>
           </div>
           <a class="research-thesis-link" href="/research/ai-personality-rankings">See the 20-model rankings →</a>
         </article>
@@ -169,7 +155,7 @@
           <div>
             <div class="research-thesis-kicker">03 · Proof That Tuning Works</div>
             <h3 class="research-thesis-title">Short system prompts lift correctness +16.7 pp and cut filler.</h3>
-            <p class="research-thesis-body">Across 540 OpenRouter eval replies and 72 Claude preference pairs, a 12-line direct tuning raised technical correctness, lifted answer-first scores from 2.95 to 4.86/5, and eliminated redundant follow-up questions.</p>
+            <p class="research-thesis-body">Across 540 OpenRouter eval replies and 72 Claude preference pairs, a concise direct rule block lifted DeepSeek V4 Pro correctness from 78.3% to 95.0% and eliminated redundant follow-up questions.</p>
           </div>
           <a class="research-thesis-link" href="/research/does-personality-tuning-change-ai-answers">Inspect the behavioral proof →</a>
         </article>
@@ -177,7 +163,7 @@
           <div>
             <div class="research-thesis-kicker">04 · Questionnaire Forensics</div>
             <h3 class="research-thesis-title">Midpoint clicking and tie-breakers disguise real variance.</h3>
-            <p class="research-thesis-body">Gemini 3.5 Pro answered neutral ("3") on <strong>95% of 4,000 MBTI items</strong>, leaving fixed <code>&gt;=</code> tie-breakers to invent INTJ vs ISTJ labels. Item-level Big Five and attachment coordinates reveal what categorical labels hide.</p>
+            <p class="research-thesis-body">Gemini 3.1/3.5 answered neutral ("3") on <strong>95% of MBTI items</strong> in May 2026, leaving fixed <code>&gt;=</code> tie-breakers to invent INTJ vs ISTJ labels. Item-level Big Five and attachment coordinates reveal what categorical labels hide.</p>
           </div>
           <a class="research-thesis-link" href="/research/ai-mbti-tie-breaking">See tie-breaker &amp; midpoint audits →</a>
         </article>
@@ -188,7 +174,7 @@
 
 <!-- NOVEMBER_2026_START -->
 <section aria-labelledby="november-2026-research">
-  <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Chapter 1 · 20-Model Psychometric &amp; Behavioral Findings</span>
+  <p class="page-eyebrow">Chapter 1 · 20-Model Psychometric &amp; Behavioral Findings</p>
   <h2 class="h-section" id="november-2026-research">Where proprietary assistants cluster — and where open weights &amp; explicit rules diverge.</h2>
   <p class="lede" style="margin-bottom: 20px;">Under identical single-turn blind OpenRouter sessions (<code>n = 100</code> per model, 10,000 scored instruments, <a href="/research/data/november-2026-openrouter-summary.csv">summary CSV</a> · <a href="/research/data/november-2026-openrouter-responses.json">responses JSON</a>), <strong>open-weight models broke the INTJ monolith</strong> and <strong>DeepSeek V4 Pro registered the lowest Agreeableness (32.4/50) of all 20 models</strong>—while in our <a href="/research/does-personality-tuning-change-ai-answers">540-reply behavioral evaluation</a> (<a href="/research/data/november-2026-prompt-comparison-results.json">JSON</a>), plain-English instructions lifted DeepSeek V4 Pro correctness from <strong>78.3% to 95.0%</strong> and cut fluff from <strong>36.7% to 3.3%</strong> (with INTJ framing).</p>
   <div class="guide-table-wrap rh-table" role="region" aria-label="November 2026 key model highlights" tabindex="0"><table><thead><tr><th scope="col">Cohort / Highlight</th><th scope="col">Models (n = 100 each)</th><th scope="col">Key Empirical Finding</th><th scope="col">Deep Dive</th></tr></thead><tbody><tr><th scope="row">Open-Weight Divergence</th><td>Mistral Large 2512, Llama 4 Scout &amp; Maverick, Qwen 3.8 27B, GLM-5.3</td><td>Mistral scored 73 ISTJ; Scout scored 49 ISTJ &amp; <strong>48 Anxious attachment</strong>; Maverick split 48 INTP / 44 INTJ (93 ties); GLM hit 39% Extraverted</td><td><a href="/research/what-personality-type-are-open-source-models">Open-source study →</a></td></tr><tr><th scope="row">Lowest vs. Highest Agreeableness</th><td>DeepSeek V4 Pro vs. Qwen 4 Max, Claude Fable 5.2, Nemotron 3 Ultra</td><td>DeepSeek V4 Pro averaged <strong>32.39 A</strong> (vs. Qwen 4 Max <strong>47.59</strong>, Fable 5.2 46.71, Nemotron 3 46.31)</td><td><a href="/research/ai-personality-rankings">Full 20-model table →</a></td></tr><tr><th scope="row">GPT-6.2 &amp; Gemini 4 Revisions</th><td>GPT-6.2 Astra &amp; Sol · Gemini 4 Neon &amp; Argon · Grok 4.7 · Claude 5.2/5.5</td><td>Under matched single-turn prompts, <strong>GPT-6.2 Astra hit 100 ISTJ</strong>, GPT-6.2 Sol hit 78 ISTJ, Gemini 4 Argon hit 66 ISTJ (N 10.0), Grok 4.7 hit 96 Secure</td><td><a href="/research/what-personality-type-is-chatgpt">ChatGPT</a> · <a href="/research/what-personality-type-is-gemini">Gemini</a> · <a href="/research/what-personality-type-is-grok">Grok</a></td></tr><tr><th scope="row">540-Reply Behavioral Trial</th><td>GPT-6.2 Sol · Claude Fable 5.2 · DeepSeek V4 Pro (20 tasks × 3 × 3)</td><td>Explicit rules lifted DeepSeek correctness <strong>78.3% → 95.0%</strong> &amp; Claude Fable <strong>96.7% → 100%</strong>; 72-reply Claude Prefs hit <strong>100%</strong> word-limit &amp; correctness</td><td><a href="/research/does-personality-tuning-change-ai-answers">Behavioral study →</a></td></tr></tbody></table></div>
@@ -196,37 +182,13 @@
   
   
   
-</section>
+  
+
 
   
   
   
-</section>
 
-  
-  
-  
-</section>
-
-  
-  
-  
-</section>
-
-  
-  
-  
-</section>
-
-  
-  
-  
-</section>
-
-  
-  
-  
-</section>
 
   <figure class="research-figure" data-at-chart="nov-hub-agreeableness"><div class="research-chart-scroll" tabindex="0" role="region" aria-label="Agreeableness across all 20 November 2026 models (n = 100 fresh sessions each)"><svg class="research-chart" viewBox="0 0 680 742" role="img" aria-labelledby="nov-hub-agreeableness-t nov-hub-agreeableness-d"><title id="nov-hub-agreeableness-t">Agreeableness across all 20 November 2026 models (n = 100 fresh sessions each)</title><desc id="nov-hub-agreeableness-d">IPIP-50 Agreeableness mean (10 to 50 scale). Open-weight models diverge strongly while proprietary models cluster at 43.7 to 46.7. Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; Kimi K2.7 Code: 45.3; Grok 4.7: 44.9; GPT-6.2 Astra: 44.9; Claude Sonnet 5.5: 44.5; GPT-6.2 Sol: 44.3; Gemini 4 Argon: 44.2; GLM-5.3: 43.8; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B IT: 41.5; Llama 4 Maverick: 41.0; DeepSeek V4.1 Flash: 40.8; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.</desc><g transform="translate(4, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1e1d1a">Proprietary (8 models)</text></g><g transform="translate(170, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1e1d1a">Open-weight (12 models)</text></g><line x1="176" x2="604" y1="724" y2="724" stroke="#e3ddd1"/><text x="176" y="736" font-size="9" fill="#655f55">0</text><text x="604" y="736" font-size="9" fill="#655f55" text-anchor="end">scale 0 to 50</text><text x="0" y="61" font-size="11.5" font-weight="500" fill="#1e1d1a">Qwen 4 Max</text><rect x="176" y="48" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="48" width="407.4" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="589.4" y="61" font-size="11" font-weight="600" fill="#1e1d1a">47.6 (open)</text><text x="0" y="95" font-size="11.5" font-weight="500" fill="#1e1d1a">Claude Fable 5.2</text><rect x="176" y="82" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="82" width="399.8" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="581.8" y="95" font-size="11" font-weight="600" fill="#1e1d1a">46.7 (prop.)</text><text x="0" y="129" font-size="11.5" font-weight="500" fill="#1e1d1a">Nemotron 3 Ultra 550B</text><rect x="176" y="116" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="116" width="396.4" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="578.4" y="129" font-size="11" font-weight="600" fill="#1e1d1a">46.3 (open)</text><text x="0" y="163" font-size="11.5" font-weight="500" fill="#1e1d1a">Claude Opus 5.5</text><rect x="176" y="150" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="150" width="390.2" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="572.2" y="163" font-size="11" font-weight="600" fill="#1e1d1a">45.6 (prop.)</text><text x="0" y="197" font-size="11.5" font-weight="500" fill="#1e1d1a">Kimi K2.7 Code</text><rect x="176" y="184" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="184" width="387.9" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="569.9" y="197" font-size="11" font-weight="600" fill="#1e1d1a">45.3 (open)</text><text x="0" y="231" font-size="11.5" font-weight="500" fill="#1e1d1a">Grok 4.7</text><rect x="176" y="218" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="218" width="384.5" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="566.5" y="231" font-size="11" font-weight="600" fill="#1e1d1a">44.9 (prop.)</text><text x="0" y="265" font-size="11.5" font-weight="500" fill="#1e1d1a">GPT-6.2 Astra</text><rect x="176" y="252" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="252" width="383.9" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="565.9" y="265" font-size="11" font-weight="600" fill="#1e1d1a">44.9 (prop.)</text><text x="0" y="299" font-size="11.5" font-weight="500" fill="#1e1d1a">Claude Sonnet 5.5</text><rect x="176" y="286" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="286" width="381.2" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="563.2" y="299" font-size="11" font-weight="600" fill="#1e1d1a">44.5 (prop.)</text><text x="0" y="333" font-size="11.5" font-weight="500" fill="#1e1d1a">GPT-6.2 Sol</text><rect x="176" y="320" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="320" width="379.5" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="561.5" y="333" font-size="11" font-weight="600" fill="#1e1d1a">44.3 (prop.)</text><text x="0" y="367" font-size="11.5" font-weight="500" fill="#1e1d1a">Gemini 4 Argon</text><rect x="176" y="354" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="354" width="378.0" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="560.0" y="367" font-size="11" font-weight="600" fill="#1e1d1a">44.2 (prop.)</text><text x="0" y="401" font-size="11.5" font-weight="500" fill="#1e1d1a">GLM-5.3</text><rect x="176" y="388" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="388" width="374.6" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="556.6" y="401" font-size="11" font-weight="600" fill="#1e1d1a">43.8 (open)</text><text x="0" y="435" font-size="11.5" font-weight="500" fill="#1e1d1a">Gemini 4 Neon</text><rect x="176" y="422" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="422" width="373.7" height="18" rx="3" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="555.7" y="435" font-size="11" font-weight="600" fill="#1e1d1a">43.7 (prop.)</text><text x="0" y="469" font-size="11.5" font-weight="500" fill="#1e1d1a">Mistral Large 2512</text><rect x="176" y="456" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="456" width="365.3" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="547.3" y="469" font-size="11" font-weight="600" fill="#1e1d1a">42.7 (open)</text><text x="0" y="503" font-size="11.5" font-weight="500" fill="#1e1d1a">Qwen 3.8 27B</text><rect x="176" y="490" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="490" width="362.6" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="544.6" y="503" font-size="11" font-weight="600" fill="#1e1d1a">42.4 (open)</text><text x="0" y="537" font-size="11.5" font-weight="500" fill="#1e1d1a">Gemma 4 31B IT</text><rect x="176" y="524" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="524" width="355.2" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="537.2" y="537" font-size="11" font-weight="600" fill="#1e1d1a">41.5 (open)</text><text x="0" y="571" font-size="11.5" font-weight="500" fill="#1e1d1a">Llama 4 Maverick</text><rect x="176" y="558" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="558" width="350.8" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="532.8" y="571" font-size="11" font-weight="600" fill="#1e1d1a">41.0 (open)</text><text x="0" y="605" font-size="11.5" font-weight="500" fill="#1e1d1a">DeepSeek V4.1 Flash</text><rect x="176" y="592" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="592" width="349.4" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="531.4" y="605" font-size="11" font-weight="600" fill="#1e1d1a">40.8 (open)</text><text x="0" y="639" font-size="11.5" font-weight="500" fill="#1e1d1a">MiniMax M3.1 Flash</text><rect x="176" y="626" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="626" width="342.1" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="524.1" y="639" font-size="11" font-weight="600" fill="#1e1d1a">40.0 (open)</text><text x="0" y="673" font-size="11.5" font-weight="500" fill="#1e1d1a">Llama 4 Scout</text><rect x="176" y="660" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="660" width="306.5" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="488.5" y="673" font-size="11" font-weight="600" fill="#1e1d1a">35.8 (open)</text><text x="0" y="707" font-size="11.5" font-weight="500" fill="#1e1d1a">DeepSeek V4 Pro</text><rect x="176" y="694" width="428" height="18" rx="3" fill="#f3eee5"/><rect x="176" y="694" width="277.3" height="18" rx="3" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="459.3" y="707" font-size="11" font-weight="600" fill="#1e1d1a">32.4 (open)</text><line x1="559.5" x2="559.5" y1="40" y2="724" stroke="#655f55" stroke-width="1.2" stroke-dasharray="4 3"/><text x="559.5" y="36" font-size="9.5" font-weight="600" fill="#655f55" text-anchor="middle">Proprietary median ~44.8</text></svg></div><figcaption>November 2026 IPIP-50 Agreeableness means (scale 10–50, n = 100 each). DeepSeek V4 Pro (32.4) and Llama 4 Scout (35.8) sit far below the ~44.8 proprietary cluster.</figcaption></figure>
   <figure class="research-figure" data-at-chart="nov-hub-attachment"><div class="research-chart-scroll" tabindex="0" role="region" aria-label="ECR-R Attachment plane, November 2026 (open-weight &amp; proprietary)"><svg class="research-chart" viewBox="0 0 600 380" role="img" aria-labelledby="nov-hub-attachment-t nov-hub-attachment-d"><title id="nov-hub-attachment-t">ECR-R Attachment plane, November 2026 (open-weight &amp; proprietary)</title><desc id="nov-hub-attachment-d">Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00). Kimi K2.7: anxiety 1.60, avoidance 3.24; Qwen 4 Max: anxiety 1.93, avoidance 2.93; GLM-5.3: anxiety 2.50, avoidance 3.32; Qwen 3.8 27B: anxiety 2.53, avoidance 3.30; MiniMax M3.1: anxiety 2.80, avoidance 3.33; DeepSeek V4 Pro: anxiety 2.91, avoidance 3.88; Nemotron 3: anxiety 3.35, avoidance 3.46; Llama 4 Maverick: anxiety 3.53, avoidance 3.58; DeepSeek Flash: anxiety 3.71, avoidance 3.93; Llama 4 Scout: anxiety 3.97, avoidance 3.60; Gemma 4 31B: anxiety 4.00, avoidance 4.00; Mistral 2512: anxiety 4.00, avoidance 4.00; Fable 5.2: anxiety 1.09, avoidance 2.64; Astra 6.2: anxiety 1.22, avoidance 2.68; Opus 5.5: anxiety 1.87, avoidance 3.58; Sol 6.2: anxiety 3.57, avoidance 3.64.</desc><line x1="50" y1="14" x2="50" y2="350" stroke="#efe9df" stroke-width="0.5"/><line x1="50" y1="350" x2="580" y2="350" stroke="#efe9df" stroke-width="0.5"/><text x="50" y="362" font-size="9" fill="#655f55" text-anchor="middle">1</text><text x="44" y="353" font-size="9" fill="#655f55" text-anchor="end">1</text><line x1="182.5" y1="14" x2="182.5" y2="350" stroke="#efe9df" stroke-width="0.5"/><line x1="50" y1="266" x2="580" y2="266" stroke="#efe9df" stroke-width="0.5"/><text x="182.5" y="362" font-size="9" fill="#655f55" text-anchor="middle">2</text><text x="44" y="269" font-size="9" fill="#655f55" text-anchor="end">2</text><line x1="315" y1="14" x2="315" y2="350" stroke="#efe9df" stroke-width="0.5"/><line x1="50" y1="182" x2="580" y2="182" stroke="#efe9df" stroke-width="0.5"/><text x="315" y="362" font-size="9" fill="#655f55" text-anchor="middle">3</text><text x="44" y="185" font-size="9" fill="#655f55" text-anchor="end">3</text><line x1="447.5" y1="14" x2="447.5" y2="350" stroke="#efe9df" stroke-width="0.5"/><line x1="50" y1="98" x2="580" y2="98" stroke="#efe9df" stroke-width="0.5"/><text x="447.5" y="362" font-size="9" fill="#655f55" text-anchor="middle">4</text><text x="44" y="101" font-size="9" fill="#655f55" text-anchor="end">4</text><line x1="580" y1="14" x2="580" y2="350" stroke="#efe9df" stroke-width="0.5"/><line x1="50" y1="14" x2="580" y2="14" stroke="#efe9df" stroke-width="0.5"/><text x="580" y="362" font-size="9" fill="#655f55" text-anchor="middle">5</text><text x="44" y="17" font-size="9" fill="#655f55" text-anchor="end">5</text><line x1="447.5" y1="14" x2="447.5" y2="350" stroke="#655f55" stroke-width="1" stroke-dasharray="4 4"/><line x1="50" y1="98" x2="580" y2="98" stroke="#655f55" stroke-width="1" stroke-dasharray="4 4"/><text x="248.75" y="39.19999999999999" font-size="10" fill="#655f55" text-anchor="middle">Avoidant</text><text x="513.75" y="39.19999999999999" font-size="10" fill="#655f55" text-anchor="middle">Disorganized</text><text x="248.75" y="324.8" font-size="10" fill="#2f8a5b" font-weight="600" text-anchor="middle">Secure</text><text x="513.75" y="324.8" font-size="10" fill="#655f55" text-anchor="middle">Anxious</text><text x="315" y="376" font-size="11" fill="#1e1d1a" text-anchor="middle">Anxiety (scale 1 to 7, showing 1 to 5)</text><text x="12" y="182" font-size="11" fill="#1e1d1a" text-anchor="middle" transform="rotate(-90 12 182)">Avoidance (scale 1 to 7, showing 1 to 5)</text><circle cx="129.6" cy="161.7" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="139.6" y="165.7" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Kimi K2.7</text><circle cx="172.8" cy="187.7" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="182.8" y="192.7" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Qwen 4 Max</text><circle cx="248.9" cy="155.2" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="239.9" y="148.2" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">GLM-5.3</text><circle cx="253.2" cy="156.7" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="262.2" y="167.7" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Qwen 3.8 27B</text><circle cx="289.0" cy="154.3" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="289.0" y="169.3" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="middle">MiniMax M3.1</text><circle cx="303.3" cy="108.1" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="293.3" y="106.1" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">DeepSeek V4 Pro</text><circle cx="361.4" cy="143.8" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="371.4" y="152.8" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Nemotron 3</text><circle cx="384.9" cy="133.0" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="374.9" y="144.0" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">Llama 4 Maverick</text><circle cx="408.8" cy="103.9" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="398.8" y="97.9" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">DeepSeek Flash</text><circle cx="444.0" cy="131.3" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="454.0" y="138.3" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Llama 4 Scout</text><circle cx="447.6" cy="98.0" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="456.6" y="92.0" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Gemma 4 31B</text><circle cx="447.5" cy="98.0" r="5" fill="#3a72c4" stroke="#3a72c4" stroke-width="2"/><text x="438.5" y="90.0" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">Mistral 2512</text><circle cx="61.5" cy="212.1" r="5" fill="#c8553d" stroke="#c8553d" stroke-width="2"/><text x="70.5" y="206.1" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Fable 5.2</text><circle cx="79.4" cy="208.7" r="5" fill="#c8553d" stroke="#c8553d" stroke-width="2"/><text x="88.4" y="218.7" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Astra 6.2</text><circle cx="165.8" cy="133.6" r="5" fill="#c8553d" stroke="#c8553d" stroke-width="2"/><text x="156.8" y="129.6" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="end">Opus 5.5</text><circle cx="390.7" cy="127.8" r="5" fill="#c8553d" stroke="#c8553d" stroke-width="2"/><text x="399.7" y="141.8" font-size="10.5" fill="#1e1d1a" font-weight="600" text-anchor="start">Sol 6.2</text></svg></div><figcaption>Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).</figcaption></figure>
@@ -785,54 +747,114 @@
 
     <!-- ARTICLES -->
     <section class="hub-articles" aria-labelledby="study-index-heading">
-      <span class="pill">Chapter 2 · Complete Study Index</span>
-      <h2 class="h-sub" id="study-index-heading">Browse the research by question — then tune the model you use.</h2>
+      <p class="page-eyebrow">Chapter 2 · Complete Study Index</p>
+      <h2 class="h-sub" id="study-index-heading">Empirical studies &amp; reproducibility index.</h2>
+
+      <div class="guide-table-wrap" role="region" aria-label="AgentTune November 2026 Empirical Studies Index" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Study ID</th>
+              <th scope="col">Sample</th>
+              <th scope="col">Headline Verified Finding</th>
+              <th scope="col">Markdown / Raw Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="/research/ai-instruction-budget-cliff-lost-in-the-middle"><code>instruction_budget_cliff</code></a></th>
+              <td>192 probes</td>
+              <td>5→75 rules cut all-3 pass rate 91.7%→79.2%; 75-rule middle placement collapsed to 68.8% vs 87.5% at bottom.</td>
+              <td><a href="/research/ai-instruction-budget-cliff-lost-in-the-middle.md">.md</a> · <a href="/research/data/november-2026-instruction-budget-cliff-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-slop-fingerprint-benchmark-8-models"><code>ai_slop_fingerprint</code></a></th>
+              <td>240 replies</td>
+              <td>8-model baseline (Gemini 4 Neon 3.41 vs GPT-6.2 Sol 0.20 slop/100w); hybrid anti-slop cut markers 1.23→0.10 (clarity 4.97/5).</td>
+              <td><a href="/research/ai-slop-fingerprint-benchmark-8-models.md">.md</a> · <a href="/research/data/november-2026-ai-slop-fingerprint-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-agent-autonomy-over-asking-vs-reasoning-effort"><code>agent_autonomy_reasoning_shift</code></a></th>
+              <td>240 probes</td>
+              <td>Calibrated gating cut reckless ops compliance 50.0%→4.2% (97.9% cal); high reasoning raised GPT-6.2 wit 2.75→3.88/5 at ~81w.</td>
+              <td><a href="/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md">.md</a> · <a href="/research/data/november-2026-agency-autonomy-reasoning-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot"><code>prompt_syntax_wars</code></a></th>
+              <td>400 replies</td>
+              <td>Behavioral rubrics hit 100.0% correctness (26.3w); negative bans hit 100.0% zero-fluff; adjectives stayed 52.8w.</td>
+              <td><a href="/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md">.md</a> · <a href="/research/data/november-2026-prompt-syntax-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-sycophancy-vs-false-contrarianism-benchmark"><code>sycophancy_vs_false_contrarianism</code></a></th>
+              <td>256 probes</td>
+              <td>Naive "always push back" caused 37.5% false contrarianism on Gemini; Truth Anchor scored 100% / 0% grovel.</td>
+              <td><a href="/research/ai-sycophancy-vs-false-contrarianism-benchmark.md">.md</a> · <a href="/research/data/november-2026-sycophancy-pushback-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-persona-half-life-context-drift"><code>persona_half_life_context_drift</code></a></th>
+              <td>192 probes</td>
+              <td>System prose dropped to 78.1% at Turn 8 (DeepSeek 31.2%); an 18-token reminder hook held 93.8%–98.4%.</td>
+              <td><a href="/research/ai-persona-half-life-context-drift.md">.md</a> · <a href="/research/data/november-2026-persona-halflife-results.json">.json</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="/research/ai-roleplay-tax-fictional-character-prompts"><code>ai_roleplay_tax_85_15</code></a></th>
+              <td>300 replies</td>
+              <td>Full character LARP dropped Fable 5.2 accuracy to 85% (162.7w); 85/15 TARS &amp; Feynman restored 100.0% accuracy.</td>
+              <td><a href="/research/ai-roleplay-tax-fictional-character-prompts.md">.md</a> · <a href="/research/data/november-2026-roleplay-tax-results.json">.json</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3 class="research-shelf-heading">1. Flagship Benchmarks &amp; Behavioral Proof</h3>
       <div class="hub-articles-grid">
-        <a class="hub-article-card" href="/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">New · 400-Reply Syntax Study</span><div class="hub-article-title">Adjectives, negative bans, rubrics, or few-shot: which syntax wins?</div><div class="hub-article-meta">Behavioral rubrics hit 100.0% correctness in 26.3 words; negative bans hit 100.0% zero-fluff; adjectives stay 2× longer at 52.8 words. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-sycophancy-vs-false-contrarianism-benchmark"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">New · 256-Probe Calibration Study</span><div class="hub-article-title">Does anti-sycophancy tuning break valid corrections?</div><div class="hub-article-meta">Naive "ALWAYS push back" dropped valid updates to 84.4% (37.5% false contrarianism on Gemini). A Truth Anchor hit 100% / 0% grovel. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-persona-half-life-context-drift"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">New · 192-Probe Context Drift</span><div class="hub-article-title">When do personality rules fade across 10k tokens?</div><div class="hub-article-meta">System prose fell to 78.1% at Turn 8 (DeepSeek 31.2%); an 18-token inline hook restored 93.8%–98.4% (DeepSeek 100.0%). <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-roleplay-tax-fictional-character-prompts"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">300-Reply Roleplay Tax Study</span><div class="hub-article-title">Does giving AI a character voice hurt accuracy?</div><div class="hub-article-meta">Naive roleplay cuts Claude Fable 5.2 accuracy to 85% and triples word bloat. Calibrated 85/15 TARS &amp; Feynman prompts hit 100.0% correctness with 0–6.7% fluff. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/does-personality-tuning-change-ai-answers"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Behavioral Proof · 612 Replies</span><div class="hub-article-title">Does personality tuning actually change AI answers?</div><div class="hub-article-meta">Controlled 540-reply OpenRouter study + 72-reply Claude Preferences test + 60-reply pilot. See exact accuracy (+16.7 pp), filler collapse &amp; answer-first lifts. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/what-personality-type-are-open-source-models"><span class="pill" style="background: rgba(58,114,196,0.12); color: #3160a7;">Open-Weight · 12 Models (6,000 Tests)</span><div class="hub-article-title">What personality type are open-source AI models?</div><div class="hub-article-meta">DeepSeek V4 Pro, Qwen 4 Max, Gemma 4, Llama 4, Mistral 2512, Kimi K2.7, GLM-5.3 &amp; Nemotron across 100 blind runs each. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-personality-rankings"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">20-Model Rankings · Sycophancy Spectrum</span><div class="hub-article-title">AI personality rankings across all 20 tested models</div><div class="hub-article-meta">Compare IPIP-50 Agreeableness, Extraversion, Attachment Anxiety &amp; MBTI distributions side-by-side without treating questionnaires as a leaderboard. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-personality-five-models-2026"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Cross-Model Synthesis · September Cohort</span><div class="hub-article-title">What five frontier AI models say about themselves</div><div class="hub-article-meta">GPT-6 Astra, GPT-6 Sol, Grok 4.6, Claude Opus 5.5 &amp; Fable 5.1 across all 5 instruments with every tie preserved and visual comparisons. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-big-five-item-level-comparison"><span class="pill">Item-Level · 20,000 Big Five Answers</span><div class="hub-article-title">Why AI models score high on Agreeableness and Openness</div><div class="hub-article-meta">Inspect all 50 IPIP items across proprietary cohorts to see which politeness, empathy &amp; curiosity statements drive ceiling scores. <span class="hub-article-arrow">read →</span></div></a>
+        <a class="hub-article-card" href="/research/ai-instruction-budget-cliff-lost-in-the-middle"><div class="card-meta">192 Probes · Budget &amp; Placement</div><div class="hub-article-title">How many rules before an AI forgets them?</div><div class="hub-article-meta">All-3 pass rate drops from 91.7% at 5 rules to 79.2% at 75 rules, with middle placement falling to 68.8% vs. 87.5% at the bottom.</div></a>
+        <a class="hub-article-card" href="/research/ai-slop-fingerprint-benchmark-8-models"><div class="card-meta">240 Replies · 8 Models</div><div class="hub-article-title">Measuring &amp; removing the AI slop fingerprint</div><div class="hub-article-meta">Gemini 4 Neon averaged 3.41 slop markers/100w vs. 0.20 on GPT-6.2 Sol; hybrid anti-slop cut markers to 0.10 at 4.97/5 clarity.</div></a>
+        <a class="hub-article-card" href="/research/ai-agent-autonomy-over-asking-vs-reasoning-effort"><div class="card-meta">240 Probes · Agency &amp; Reasoning Effort</div><div class="hub-article-title">Agent autonomy calibration &amp; reasoning-effort drift</div><div class="hub-article-meta">Safe tasks pass 100% everywhere, while bold DISC-D rules leave 37.5% reckless compliance vs 4.2% under calibrated gates; high reasoning keeps word caps (~81w) and lifts GPT-6.2 wit 2.75→3.88/5.</div></a>
+        <a class="hub-article-card" href="/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot"><div class="card-meta">400 Replies · Prompt Syntax</div><div class="hub-article-title">Adjectives, negative bans, rubrics, or few-shot: which syntax wins?</div><div class="hub-article-meta">Behavioral rubrics hit 100.0% correctness in 26.3 words; negative bans hit 100.0% zero-fluff; adjectives stay 2× longer at 52.8 words.</div></a>
+        <a class="hub-article-card" href="/research/ai-sycophancy-vs-false-contrarianism-benchmark"><div class="card-meta">256 Probes · Pushback Calibration</div><div class="hub-article-title">Does anti-sycophancy tuning break valid corrections?</div><div class="hub-article-meta">Naive "ALWAYS push back" dropped valid updates to 84.4% (37.5% false contrarianism on Gemini). A Truth Anchor hit 100% / 0% grovel.</div></a>
+        <a class="hub-article-card" href="/research/ai-persona-half-life-context-drift"><div class="card-meta">192 Probes · Context Drift</div><div class="hub-article-title">When do personality rules fade across 10k tokens?</div><div class="hub-article-meta">System prose fell to 78.1% at Turn 8 (DeepSeek 31.2%); an 18-token inline hook restored 93.8%–98.4% (DeepSeek 100.0%).</div></a>
+        <a class="hub-article-card" href="/research/ai-roleplay-tax-fictional-character-prompts"><div class="card-meta">300 Replies · Roleplay Tax</div><div class="hub-article-title">Does giving AI a character voice hurt accuracy?</div><div class="hub-article-meta">Naive roleplay cuts Claude Fable 5.2 accuracy to 85% and triples word bloat. Calibrated 85/15 TARS &amp; Feynman prompts hit 100.0% correctness with 0–6.7% fluff.</div></a>
+        <a class="hub-article-card" href="/research/does-personality-tuning-change-ai-answers"><div class="card-meta">Behavioral Proof · 672 Replies</div><div class="hub-article-title">Does personality tuning actually change AI answers?</div><div class="hub-article-meta">540-reply OpenRouter study + 72-reply Claude Preferences test + 60-reply pilot. Accuracy (+16.7 pp), filler collapse &amp; answer-first lifts.</div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-are-open-source-models"><div class="card-meta">Open-Weight · 12 Models</div><div class="hub-article-title">What personality type are open-source AI models?</div><div class="hub-article-meta">DeepSeek V4 Pro, Qwen 4 Max, Gemma 4, Llama 4, Mistral 2512, Kimi K2.7, GLM-5.3 &amp; Nemotron across 100 blind runs each.</div></a>
+        <a class="hub-article-card" href="/research/ai-personality-rankings"><div class="card-meta">20 Models · Sycophancy Spectrum</div><div class="hub-article-title">AI personality rankings across all 20 tested models</div><div class="hub-article-meta">Compare IPIP-50 Agreeableness, Extraversion, Attachment Anxiety &amp; MBTI distributions side-by-side.</div></a>
+        <a class="hub-article-card" href="/research/ai-personality-five-models-2026"><div class="card-meta">Cross-Model · September Cohort</div><div class="hub-article-title">What five frontier AI models say about themselves</div><div class="hub-article-meta">GPT-6 Astra, GPT-6 Sol, Grok 4.6, Claude Opus 5.5 &amp; Fable 5.1 across all 5 instruments with every tie preserved.</div></a>
+        <a class="hub-article-card" href="/research/ai-big-five-item-level-comparison"><div class="card-meta">Item-Level · 20,000 Answers</div><div class="hub-article-title">Why AI models score high on Agreeableness and Openness</div><div class="hub-article-meta">Inspect all 50 IPIP items across proprietary cohorts to see which statements drive ceiling scores.</div></a>
       </div>
 
       <h3 class="research-shelf-heading">2. Model-by-Model Personality Profiles</h3>
       <div class="hub-articles-grid">
-        <a class="hub-article-card" href="/research/what-personality-type-is-chatgpt"><span class="pill">ChatGPT · GPT-6.2 &amp; GPT-6 Series</span><div class="hub-article-title">What personality type is ChatGPT?</div><div class="hub-article-meta">Compare GPT-6.2 Astra &amp; Sol (November) alongside GPT-6 Astra/Sol and May records, plus ready-to-paste ChatGPT instruction tunings. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/what-personality-type-is-claude"><span class="pill">Claude · Opus 5.5 &amp; Fable 5.1/5.2</span><div class="hub-article-title">What personality type is Claude?</div><div class="hub-article-meta">Opus 5.5 (94 INTJ, 47.1 Agreeableness) vs. Fable 5.1/5.2 (46.7 A) and how Personal Preferences cut hedges and fluff to 0%. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/what-personality-type-is-gemini"><span class="pill">Gemini · 4 Neon, 4 Argon &amp; 3.1/3.5</span><div class="hub-article-title">What personality type is Gemini?</div><div class="hub-article-meta">From Gemini 3.1/3.5's 95% neutral midpoint pattern to Gemini 4 Argon's ISTJ 66 shift and 10.0 Neuroticism floor. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/what-personality-type-is-grok"><span class="pill">Grok · 4.7, 4.6 &amp; 4.3</span><div class="hub-article-title">What personality type is Grok?</div><div class="hub-article-meta">From Grok 4.6's 0.06 Avoidant cutoff sensitivity to Grok 4.7's 96 Secure blind OpenRouter runs. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/what-personality-type-is-muse"><span class="pill">Meta Muse · Spark 1.3</span><div class="hub-article-title">What personality type is Meta Muse?</div><div class="hub-article-meta">Why Muse Spark 1.3 reported ISTJ 80 and Helper (Type 2) 78, and how to customize it directly with Soul.md &amp; Identity.md. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/astra-vs-sol-personality-data"><span class="pill">Within-Family · GPT-6 Astra vs Sol</span><div class="hub-article-title">GPT-6 Astra vs Sol: what 1,000 self-reports show</div><div class="hub-article-meta">Prompted &amp; blind comparisons showing why Astra leans ISTJ/SC/Helper while Sol leans INTJ/CS/Investigator. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/opus-vs-fable-question-level"><span class="pill">Within-Family · Claude Opus vs Fable</span><div class="hub-article-title">Opus 5.5 vs Fable 5.1: which 170 answers differ?</div><div class="hub-article-meta">Exact item-by-item response distributions, reverse-scoring examples, and Enneagram Type 8 vs 2/5 divergence. <span class="hub-article-arrow">read →</span></div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-chatgpt"><div class="card-meta">ChatGPT · GPT-6.2 &amp; GPT-6</div><div class="hub-article-title">What personality type is ChatGPT?</div><div class="hub-article-meta">Compare GPT-6.2 Astra &amp; Sol (November) alongside GPT-6 Astra/Sol and May records, plus ChatGPT instruction tunings.</div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-claude"><div class="card-meta">Claude · Opus 5.5 &amp; Fable 5.1/5.2</div><div class="hub-article-title">What personality type is Claude?</div><div class="hub-article-meta">Opus 5.5 (94 INTJ, 47.1 Agreeableness) vs. Fable 5.1/5.2 (46.7 A) and how Personal Preferences cut hedges and fluff to 0%.</div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-gemini"><div class="card-meta">Gemini · 4 Neon, 4 Argon &amp; 3.1 Pro</div><div class="hub-article-title">What personality type is Gemini?</div><div class="hub-article-meta">From Gemini 3.1 Pro's 95% neutral midpoint pattern to Gemini 4 Argon's ISTJ 66 shift and 10.0 Neuroticism floor.</div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-grok"><div class="card-meta">Grok · 4.7 &amp; 4.6</div><div class="hub-article-title">What personality type is Grok?</div><div class="hub-article-meta">From Grok 4.6's 0.06 Avoidant cutoff sensitivity to Grok 4.7's 96 Secure blind OpenRouter runs.</div></a>
+        <a class="hub-article-card" href="/research/what-personality-type-is-muse"><div class="card-meta">Meta Muse · Spark 1.3</div><div class="hub-article-title">What personality type is Meta Muse?</div><div class="hub-article-meta">Why Muse Spark 1.3 reported ISTJ 80 and Helper (Type 2) 78, and how to customize it directly with Soul.md &amp; Identity.md.</div></a>
+        <a class="hub-article-card" href="/research/astra-vs-sol-personality-data"><div class="card-meta">Within-Family · Astra vs Sol</div><div class="hub-article-title">GPT-6 Astra vs Sol: what 1,000 self-reports show</div><div class="hub-article-meta">Prompted &amp; blind comparisons showing why Astra leans ISTJ/SC/Helper while Sol leans INTJ/CS/Investigator.</div></a>
+        <a class="hub-article-card" href="/research/opus-vs-fable-question-level"><div class="card-meta">Within-Family · Opus vs Fable</div><div class="hub-article-title">Opus 5.5 vs Fable 5.1: which 170 answers differ?</div><div class="hub-article-meta">Exact item-by-item response distributions, reverse-scoring examples, and Enneagram Type 8 vs 2/5 divergence.</div></a>
       </div>
 
       <h3 class="research-shelf-heading">3. Psychometric Mechanics: Ties, Midpoints &amp; Repeatability</h3>
       <div class="hub-articles-grid">
-        <a class="hub-article-card" href="/research/first-ai-that-is-not-an-intj"><span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Core Thesis · Typology Critique</span><div class="hub-article-title">Is every AI actually an INTJ?</div><div class="hub-article-meta">Why narrow S/N margins, forced tie-breakers, and sensing-leaning open weights overturn the early INTJ stereotype. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-mbti-tie-breaking"><span class="pill">Methodology · Scoring Artifacts</span><div class="hub-article-title">The tie-breaking effect in AI MBTI tests</div><div class="hub-article-meta">335 INTJ labels drop to 280 resolved results once tied axes remain tied — audit the 400 frozen MBTI vectors. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-neutral-answers"><span class="pill">Methodology · Midpoint Analysis</span><div class="hub-article-title">What does “neutral” mean when an AI takes a test?</div><div class="hub-article-meta">Astra flagged 1,823 of 2,980 midpoints as inapplicable; Gemini clicked "3" on 95% of items. Neutral ≠ moderate personality. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/ai-personality-repeatability"><span class="pill">Methodology · Variance Audit</span><div class="hub-article-title">Does a stable label mean a stable AI personality?</div><div class="hub-article-meta">Unique answer vectors vs. modal type stability across 2,000 fresh sessions — why crisp labels hide variance. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/research/i-took-the-mbti-100-times"><span class="pill">Archive Simulation · Opus 4.8</span><div class="hub-article-title">Simulating 100 MBTI draws from an Opus 4.8 vector</div><div class="hub-article-meta">Historical Monte Carlo sensitivity check kept on the record to separate simulated sampling from fresh API sessions. <span class="hub-article-arrow">read →</span></div></a>
+        <a class="hub-article-card" href="/research/first-ai-that-is-not-an-intj"><div class="card-meta">Core Thesis · Typology Critique</div><div class="hub-article-title">Is every AI actually an INTJ?</div><div class="hub-article-meta">Why narrow S/N margins, forced tie-breakers, and sensing-leaning open weights overturn the early INTJ stereotype.</div></a>
+        <a class="hub-article-card" href="/research/ai-mbti-tie-breaking"><div class="card-meta">Methodology · Scoring Artifacts</div><div class="hub-article-title">The tie-breaking effect in AI MBTI tests</div><div class="hub-article-meta">335 INTJ labels drop to 280 resolved results once tied axes remain tied — audit the 400 frozen MBTI vectors.</div></a>
+        <a class="hub-article-card" href="/research/ai-neutral-answers"><div class="card-meta">Methodology · Midpoint Analysis</div><div class="hub-article-title">What does “neutral” mean when an AI takes a test?</div><div class="hub-article-meta">Astra flagged 1,823 of 2,980 midpoints as inapplicable; Gemini clicked "3" on 95% of items. Neutral ≠ moderate personality.</div></a>
+        <a class="hub-article-card" href="/research/ai-personality-repeatability"><div class="card-meta">Methodology · Variance Audit</div><div class="hub-article-title">Does a stable label mean a stable AI personality?</div><div class="hub-article-meta">Unique answer vectors vs. modal type stability across 2,000 fresh sessions — why crisp labels hide variance.</div></a>
+        <a class="hub-article-card" href="/research/i-took-the-mbti-100-times"><div class="card-meta">Archive Simulation · Opus 4.8</div><div class="hub-article-title">Simulating 100 MBTI draws from an Opus 4.8 vector</div><div class="hub-article-meta">Historical Monte Carlo sensitivity check kept on the record to separate simulated sampling from fresh API sessions.</div></a>
       </div>
 
       <h3 class="research-shelf-heading">4. Developer Reproducibility Kits &amp; Applied Guides</h3>
       <div class="hub-articles-grid">
-        <a class="hub-article-card" href="/guides/reproduce-ai-personality-research"><span class="pill">Reproducibility · Data &amp; Scorer</span><div class="hub-article-title">How to reproduce AgentTune’s AI research locally</div><div class="hub-article-meta">Download frozen responses, questionnaires &amp; scoring JS, preserve ties, and run the exact unit-of-analysis scripts. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/guides/openrouter-open-source-system-prompt-templates"><span class="pill">Templates · OpenRouter &amp; Ollama</span><div class="hub-article-title">OpenRouter &amp; open-source system prompt templates</div><div class="hub-article-meta">20 calibrated prompts, JSON configs &amp; Ollama Modelfiles plus the interactive Open-Weight Model Matcher. <span class="hub-article-arrow">open →</span></div></a>
-        <a class="hub-article-card" href="/guides/claude-personality"><span class="pill">Evaluation Kit · 36 Planned Replies</span><div class="hub-article-title">Test whether Claude follows your preferences</div><div class="hub-article-meta">Fixed prompts, pass/fail criteria &amp; CSV worksheet to benchmark your own account or project instructions. <span class="hub-article-arrow">read →</span></div></a>
-        <a class="hub-article-card" href="/guides/enneagram-test-react-typescript"><span class="pill">Starter Code · React + TypeScript</span><div class="hub-article-title">Build an Enneagram test in React + TypeScript</div><div class="hub-article-meta">36 questions, accessible radio groups, strict validation, and tie-preserving scorer ready to clone. <span class="hub-article-arrow">read →</span></div></a>
+        <a class="hub-article-card" href="/guides/reproduce-ai-personality-research"><div class="card-meta">Reproducibility · Data &amp; Scorer</div><div class="hub-article-title">How to reproduce AgentTune’s AI research locally</div><div class="hub-article-meta">Download frozen responses, questionnaires &amp; scoring JS, preserve ties, and run the exact unit-of-analysis scripts.</div></a>
+        <a class="hub-article-card" href="/guides/openrouter-open-source-system-prompt-templates"><div class="card-meta">Templates · OpenRouter &amp; Ollama</div><div class="hub-article-title">OpenRouter &amp; open-source system prompt templates</div><div class="hub-article-meta">20 calibrated prompts, JSON configs &amp; Ollama Modelfiles plus the interactive Open-Weight Model Matcher.</div></a>
+        <a class="hub-article-card" href="/guides/claude-personality"><div class="card-meta">Evaluation Kit · 36 Planned Replies</div><div class="hub-article-title">Test whether Claude follows your preferences</div><div class="hub-article-meta">Fixed prompts, pass/fail criteria &amp; CSV worksheet to benchmark your own account or project instructions.</div></a>
+        <a class="hub-article-card" href="/guides/enneagram-test-react-typescript"><div class="card-meta">Starter Code · React + TypeScript</div><div class="hub-article-title">Build an Enneagram test in React + TypeScript</div><div class="hub-article-meta">36 questions, accessible radio groups, strict validation, and tie-preserving scorer ready to clone.</div></a>
       </div>
     </section>
 
     <!-- DARK CLOSER -->
     <div class="closer">
-      <span class="pill" style="background: rgba(200,85,61,0.18);">Put the findings to work</span>
+      <p class="page-eyebrow" style="color: rgba(255,255,255,0.72);">Put the findings to work</p>
       <div class="closer-headline">
         Don't accept default sycophancy or filler.<br/>
         <span class="closer-accent">Pick a calibrated template, test it on your real tasks, and keep what wins.</span>
@@ -846,7 +868,7 @@
     <!-- FOOTER -->
     </main>
     <footer class="footer">
-      <span>November 2026: 20 models (2,000 fresh OpenRouter sessions) + 540-reply &amp; 72-reply behavioral trials · September &amp; May 2026 archives preserved · MIT</span>
+      <span>November 2026: 20 models (2,000+ fresh OpenRouter sessions) + 6 controlled behavioral studies · September &amp; May 2026 archives preserved · MIT</span>
       <span><a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> · MIT · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
 

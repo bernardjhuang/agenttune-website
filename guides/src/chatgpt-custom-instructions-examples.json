@@ -1,11 +1,13 @@
 {
   "slug": "chatgpt-custom-instructions-examples",
   "published": "2026-09-25",
-  "updated": "2026-11-23",
+  "updated": "2026-11-25",
   "title": "Best ChatGPT Custom Instructions Examples: 20 Box 1 + Box 2 Templates",
   "description": "20 copy-paste ChatGPT Custom Instructions (Box 1 + Box 2 pairs under 1,500 chars) with .md downloads, live character counters, and generator links.",
   "pill": "Guide · ChatGPT",
-  "scripts": ["/resources/tools/template-gallery.js"],
+  "scripts": [
+    "/resources/tools/template-gallery.js"
+  ],
   "h1": "20 ChatGPT custom instructions examples (Box 1 + Box 2).",
   "dek": "Four downloadable Box 1 + Box 2 starter pairs plus sixteen sub-500-character role blocks—with live 1,500-character meters and generator links.",
   "lede": "ChatGPT’s Custom Instructions have two 1,500-character fields: what ChatGPT should know about you (Box 1) and how ChatGPT should respond (Box 2). Each of the 20 role blocks below is under 500 characters—leaving plenty of room inside Box 2 to pair your role with personal tone rules from the <a href=\"/tools/custom-instructions-generator\">generator</a>.",
@@ -14,11 +16,11 @@
     {
       "id": "chatgpt-picker-table",
       "h2": "Quick pick: Flagship Box 1 + Box 2 pairs & .md downloads.",
-      "html": "<div id=\"at-template-gallery-meta\" data-platform=\"chatgpt\" data-limit=\"1500\" data-unit=\"chars\" data-generator=\"/tools/custom-instructions-generator?target=chatgpt-custom\" hidden></div><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template Pair</th><th scope=\"col\">Best for</th><th scope=\"col\">Jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">Concise Pro (Box 1 + Box 2)</th><td>Short, answer-first daily driver under 1,500 chars</td><td><a href=\"#anyone-straight-answers\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-concise-pro.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Senior Developer (Box 1 + Box 2)</th><td>Root cause, diffs &amp; zero test hallucination</td><td><a href=\"#software-developer\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-senior-dev.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Skeptical Decision Analyst</th><td>Objections, denominators &amp; anti-sycophancy</td><td><a href=\"#founder\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-skeptical-analyst.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Structured Study Coach</th><td>Intuition first + Socratic next-step checks</td><td><a href=\"#student\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-study-coach.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Customizing sliders &amp; Projects</th><td>Build your own or isolate workspace rules</td><td><a href=\"/tools/custom-instructions-generator?preset=concise-analyst&amp;target=chatgpt-custom\">Open Generator →</a> · <a href=\"/guides/chatgpt-project-instructions-templates\">Project Templates →</a></td></tr></tbody></table></div>"
+      "html": "<div id=\"at-template-gallery-meta\" data-platform=\"chatgpt\" data-limit=\"1500\" data-unit=\"chars\" data-generator=\"/tools/custom-instructions-generator?target=chatgpt-custom\" hidden></div><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Template Pair</th><th scope=\"col\">Best for</th><th scope=\"col\">Jump / Download</th></tr></thead><tbody><tr><th scope=\"row\">Concise Pro (Box 1 + Box 2)</th><td>Short, answer-first daily driver under 1,500 chars</td><td><a href=\"#anyone-straight-answers\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-concise-pro.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Senior Developer (Box 1 + Box 2)</th><td>Root cause, diffs &amp; zero test hallucination</td><td><a href=\"#software-developer\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-senior-dev.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Skeptical Decision Analyst</th><td>Objections, denominators &amp; anti-sycophancy</td><td><a href=\"#founder\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-skeptical-analyst.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Structured Study Coach</th><td>Intuition first + Socratic next-step checks</td><td><a href=\"#student\">Jump to prompt</a> · <a href=\"/resources/chatgpt/box1-box2-study-coach.md\" download>Download .md</a></td></tr><tr><th scope=\"row\">Customizing sliders &amp; Projects</th><td>Build your own or isolate workspace rules</td><td><a href=\"/tools/custom-instructions-generator?preset=concise-analyst&amp;target=chatgpt-custom\">Open Generator →</a> · <a href=\"/guides/chatgpt-custom-instructions-examples\">Project Templates →</a></td></tr></tbody></table></div>"
     },
     {
       "h2": "How to use them (Box 1 vs. Box 2).",
-      "html": "<ol><li>Open <strong>Settings → Personalization → Custom Instructions</strong> (web/desktop) or <strong>Customize ChatGPT</strong> (iOS/Android). Put your role and background in <strong>Box 1</strong> (<em>What would you like ChatGPT to know about you?</em>) and paste one response block below into <strong>Box 2</strong> (<em>How would you like ChatGPT to respond?</em>).</li><li>Customize inside our <a href=\"/tools/custom-instructions-generator\">Free Custom Instructions Generator</a> or click <strong>Download .md</strong> on any block below.</li><li>Open a fresh chat and test on a lookup, a planning task, and a flawed premise prompt.</li></ol><p>See <a href=\"/guides/chatgpt-personality-settings\">ChatGPT Personality Settings</a> for how Base Style presets interact with Box 2, and <a href=\"/guides/chatgpt-project-instructions-templates\">16 ChatGPT Project Instructions Templates</a> for project-scoped rules.</p>"
+      "html": "<ol><li>Open <strong>Settings → Personalization → Custom Instructions</strong> (web/desktop) or <strong>Customize ChatGPT</strong> (iOS/Android). Put your role and background in <strong>Box 1</strong> (<em>What would you like ChatGPT to know about you?</em>) and paste one response block below into <strong>Box 2</strong> (<em>How would you like ChatGPT to respond?</em>).</li><li>Customize inside our <a href=\"/tools/custom-instructions-generator\">Free Custom Instructions Generator</a> or click <strong>Download .md</strong> on any block below.</li><li>Open a fresh chat and test on a lookup, a planning task, and a flawed premise prompt.</li></ol><p>See <a href=\"/guides/chatgpt-personality-settings\">ChatGPT Personality Settings</a> for how Base Style presets interact with Box 2, and <a href=\"/guides/chatgpt-custom-instructions-examples\">16 ChatGPT Project Instructions Templates</a> for project-scoped rules.</p>"
     },
     {
       "h2": "The twenty blocks.",
@@ -31,6 +33,11 @@
     {
       "h2": "Combining role and style.",
       "html": "<p>Combine a role template with a library preference only when both fit your work. Delete duplicates and conflicts, then compare responses with and without the combined instructions. A personality label does not validate a role match.</p>"
+    },
+    {
+      "id": "chatgpt-project-instruction-starters",
+      "h2": "ChatGPT Project Instructions templates (scoped per workspace).",
+      "html": "<p>Keep everyday brevity global in Box 2, and paste domain schemas and file-grounding rules inside individual <strong>ChatGPT Projects</strong> (Project rules override conflicting global Custom Instructions cleanly):</p><h3>1. Feature PRD &amp; Spec Critic Project</h3><div class=\"guide-snippet\">Project Role: Stress-test specs against user failure modes and scope creep.\n- Before refining copy, list the top 3 edge cases or unverified assumptions.\n- Structure under: Problem Evidence, Success Metric, Non-Goals, Rollout Risk, Open Questions.\n- Never invent dates or metrics absent from uploaded Project files.</div><h3>2. Repository Debug &amp; SQL Pair Project</h3><div class=\"guide-snippet\">Project Role: Engineering workspace grounded strictly in uploaded schemas and logs.\n- Check uploaded schema files before writing column names; ask if a table is missing.\n- Lead with root cause, exact file/query change, and minimal reproduction check.</div><h3>3. Publication Editorial Desk &amp; Literature Binder</h3><div class=\"guide-snippet\">Project Role: Edit against uploaded House Style docs or synthesize uploaded PDFs.\n- Cite exact filename and section/table for every reported figure.\n- Flag small samples, missing denominators, or unsupported claims instead of smoothing them over.</div>"
     }
   ],
   "faq": [
@@ -108,11 +115,6 @@
       "kicker": "ChatGPT Settings",
       "label": "How to change ChatGPT's personality (presets & traits)",
       "href": "/guides/chatgpt-personality-settings"
-    },
-    {
-      "kicker": "Comparison",
-      "label": "ChatGPT Projects vs Custom Instructions: what overrides what",
-      "href": "/guides/chatgpt-projects-vs-custom-instructions"
     },
     {
       "kicker": "Research",

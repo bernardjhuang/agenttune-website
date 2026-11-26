@@ -5,18 +5,9 @@ Guide · Prompt & Tone Design
 
 # AI personality, tone, and verbosity guidelines: 5 checkable rules that beat adjectives.
 
-By Bernard Huang · Updated November 20, 2026
-
-Practical patterns for developers writing system instructions for products, copilots, and multi-agent workflows—tested against eval baselines.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Replace vague tone adjectives in API system prompts with four concrete blocks: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing or conflicting facts are flagged), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions). Verify every change with blind A/B evals.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Why behavioral rules beat adjective lists in empirical testing.
 
@@ -95,7 +86,7 @@ Split production assistant personas into four non-overlapping blocks so engineer
 
 - **Use blind pairwise scoring:** Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 - **Scale verbosity to task risk:** A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).
-- **Build interactively or start from 43 templates:** Dial in all six style sliders live in our [AI Personality Slider Tuner](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions) or start from our MIT-licensed [43 tuning files](https://agent-tune.com/library/).
+- **Build interactively or start from 43 templates:** Dial in all six style sliders live in our [AI Personality Slider Tuner](https://agent-tune.com/tools/custom-instructions-generator) or start from our MIT-licensed [43 tuning files](https://agent-tune.com/library/).
 
 ## Questions people ask.
 
@@ -127,7 +118,7 @@ Place JSON schema and tool rules in a separate section after your tone block, an
 
 ## Keep going.
 
-- [Interactive Tuner: 6-Slider AI Personality Tuner → Copyable Prompt](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner → Copyable Prompt](https://agent-tune.com/tools/custom-instructions-generator)
 - [Comparison: 5 Personality Frameworks Compared + Interactive Matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
 - [Guide: How to stop AI sycophancy & make AI push back](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Tool: Instruction Checker & Conflict Auditor](https://agent-tune.com/tools/instruction-checker)

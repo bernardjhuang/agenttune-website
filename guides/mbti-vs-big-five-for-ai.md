@@ -5,18 +5,9 @@ Guide · Frameworks
 
 # MBTI vs Big Five for AI: crisp switches or calibrated dials.
 
-By Bernard Huang · Updated September 26, 2026
-
-One sorts people into types. One measures traits on a scale. For prompting, that difference is the whole story.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## One sorts. One measures.
 
@@ -47,6 +38,20 @@ Try a concrete instruction such as “Lead with a recommendation, then give the 
 Both tests are free, in-browser, and take about five minutes for MBTI and seven for Big Five — [MBTI (OEJTS)](https://agent-tune.com/tests/mbti) and [Big Five (IPIP-50)](https://agent-tune.com/tests/big-five). No email, no paywall on results. Both use open instruments rather than proprietary clones — OEJTS and IPIP-50. Human scores and model self-descriptions should not be treated as interchangeable measurements.
 
 If you only take one: take Big Five if you want the more defensible self-measurement; take MBTI if you want output you can paste into a prompt tonight. Either way the result maps to a tuning file — start with [the setup guide](https://agent-tune.com/guides/how-to-give-your-ai-a-personality), or jump to [the coding-agent version](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) if your agent lives in a terminal.
+
+## All 10 Big Five (OCEAN) trait poles & live IPIP-50 interpreter.
+
+Plug your raw 10–50 scores from the [free 50-item Big Five test](https://agent-tune.com/tests/big-five) into the local interpreter below to compare against 2026 model baselines and build a single-trait custom prompt:
+
+Loading interactive Big Five score interpreter…
+
+| Trait | High pole | Low pole | Untuned AI baseline (/50) |
+| --- | --- | --- | --- |
+| Openness | [Concept synthesis & first principles](https://agent-tune.com/library/ocean/openness-high) | [Concrete proven steps only](https://agent-tune.com/library/ocean/openness-low) | High (43.9–46.9) |
+| Conscientiousness | [Preconditions, checklists & verification](https://agent-tune.com/library/ocean/conscientiousness-high) | [Fast prototypes, minimal ceremony](https://agent-tune.com/library/ocean/conscientiousness-low) | High (42.0–49.3) |
+| Extraversion | [Collaborative brainstorming energy](https://agent-tune.com/library/ocean/extraversion-high) | [Quiet, compressed, answer-only](https://agent-tune.com/library/ocean/extraversion-low) | Mid (29.2–32.8) |
+| Agreeableness | [Diplomatic, supportive framing](https://agent-tune.com/library/ocean/agreeableness-high) | [Blunt skeptic & premise checker](https://agent-tune.com/library/ocean/agreeableness-low) | Very High (43.7–47.6 prop.) |
+| Neuroticism | [Pre-mortem risk & failure radar](https://agent-tune.com/library/ocean/neuroticism-high) | [Steady calm under ambiguity](https://agent-tune.com/library/ocean/neuroticism-low) | Low (10.0–20.1) |
 
 ## Questions people ask.
 

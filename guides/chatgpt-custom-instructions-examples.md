@@ -5,18 +5,9 @@ Guide · ChatGPT
 
 # 20 ChatGPT custom instructions examples (Box 1 + Box 2).
 
-By Bernard Huang · Updated November 23, 2026
-
-Four downloadable Box 1 + Box 2 starter pairs plus sixteen sub-500-character role blocks—with live 1,500-character meters and generator links.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Quick pick: Flagship Box 1 + Box 2 pairs & .md downloads.
 
@@ -26,7 +17,7 @@ Quick Actions & Agent Fetch
 | Senior Developer (Box 1 + Box 2) | Root cause, diffs &amp; zero test hallucination | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#software-developer) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-senior-dev.md) |
 | Skeptical Decision Analyst | Objections, denominators &amp; anti-sycophancy | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#founder) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-skeptical-analyst.md) |
 | Structured Study Coach | Intuition first + Socratic next-step checks | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#student) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-study-coach.md) |
-| Customizing sliders &amp; Projects | Build your own or isolate workspace rules | [Open Generator →](https://agent-tune.com/tools/custom-instructions-generator?preset=concise-analyst&target=chatgpt-custom) · [Project Templates →](https://agent-tune.com/guides/chatgpt-project-instructions-templates) |
+| Customizing sliders &amp; Projects | Build your own or isolate workspace rules | [Open Generator →](https://agent-tune.com/tools/custom-instructions-generator?preset=concise-analyst&target=chatgpt-custom) · [Project Templates →](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
 
 ## How to use them (Box 1 vs. Box 2).
 
@@ -34,7 +25,7 @@ Quick Actions & Agent Fetch
 - Customize inside our [Free Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator) or click **Download .md** on any block below.
 - Open a fresh chat and test on a lookup, a planning task, and a flawed premise prompt.
 
-See [ChatGPT Personality Settings](https://agent-tune.com/guides/chatgpt-personality-settings) for how Base Style presets interact with Box 2, and [16 ChatGPT Project Instructions Templates](https://agent-tune.com/guides/chatgpt-project-instructions-templates) for project-scoped rules.
+See [ChatGPT Personality Settings](https://agent-tune.com/guides/chatgpt-personality-settings) for how Base Style presets interact with Box 2, and [16 ChatGPT Project Instructions Templates](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) for project-scoped rules.
 
 ## The twenty blocks.
 
@@ -214,6 +205,35 @@ Lead with the answer or the recommendation, then the key reason. Keep simple ans
 
 Combine a role template with a library preference only when both fit your work. Delete duplicates and conflicts, then compare responses with and without the combined instructions. A personality label does not validate a role match.
 
+## ChatGPT Project Instructions templates (scoped per workspace).
+
+Keep everyday brevity global in Box 2, and paste domain schemas and file-grounding rules inside individual **ChatGPT Projects** (Project rules override conflicting global Custom Instructions cleanly):
+
+### 1. Feature PRD & Spec Critic Project
+
+```markdown
+Project Role: Stress-test specs against user failure modes and scope creep.
+- Before refining copy, list the top 3 edge cases or unverified assumptions.
+- Structure under: Problem Evidence, Success Metric, Non-Goals, Rollout Risk, Open Questions.
+- Never invent dates or metrics absent from uploaded Project files.
+```
+
+### 2. Repository Debug & SQL Pair Project
+
+```markdown
+Project Role: Engineering workspace grounded strictly in uploaded schemas and logs.
+- Check uploaded schema files before writing column names; ask if a table is missing.
+- Lead with root cause, exact file/query change, and minimal reproduction check.
+```
+
+### 3. Publication Editorial Desk & Literature Binder
+
+```markdown
+Project Role: Edit against uploaded House Style docs or synthesize uploaded PDFs.
+- Cite exact filename and section/table for every reported figure.
+- Flag small samples, missing denominators, or unsupported claims instead of smoothing them over.
+```
+
 ## Questions people ask.
 
 ### What should I write in custom instructions?
@@ -261,5 +281,4 @@ No. They are editable editorial suggestions. Evaluate the instructions on tasks 
 - [Tool: Free ChatGPT custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [ChatGPT Settings: How to change ChatGPT's personality (presets & traits)](https://agent-tune.com/guides/chatgpt-personality-settings)
-- [Comparison: ChatGPT Projects vs Custom Instructions: what overrides what](https://agent-tune.com/guides/chatgpt-projects-vs-custom-instructions)
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)

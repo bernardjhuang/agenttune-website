@@ -117,11 +117,11 @@
               <tr><th scope="col">Surface</th><th scope="col">Exact settings path (Web &amp; Mobile)</th><th scope="col">Budget / precedence note</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">ChatGPT</th><td>Profile → <strong>Personalization → Custom Instructions</strong> → <em>How would you like ChatGPT to respond?</em></td><td>1,500 chars per box. <a href="/guides/chatgpt-projects-vs-custom-instructions">Project instructions</a> override conflicting lines inside that Project.</td></tr>
+              <tr><th scope="row">ChatGPT</th><td>Profile → <strong>Personalization → Custom Instructions</strong> → <em>How would you like ChatGPT to respond?</em></td><td>1,500 chars per box. <a href="/guides/chatgpt-personality-settings">Project instructions</a> override conflicting lines inside that Project.</td></tr>
               <tr><th scope="row">Claude</th><td>Initials → <strong>Settings → Profile</strong> → <em>What personal preferences should Claude consider in responses?</em></td><td>Account-wide across web, iOS, and Android. See <a href="/guides/claude-personality">Claude personality guide</a>.</td></tr>
               <tr><th scope="row">Meta Muse &amp; OpenClaw</th><td><code>muse.ai</code> / app → <strong><code>Soul.md</code></strong> (voice), <code>Identity.md</code> (avatar/name), <code>Memory.md</code> (facts)</td><td>Keep voice rules in <code>Soul.md</code> (<a href="/guides/muse-personality">Muse guide</a> · <a href="/guides/openclaw-soul-md-user-md-identity-md">OpenClaw 3-file builder</a>).</td></tr>
               <tr><th scope="row">Grok, Gemini &amp; Copilot</th><td>Grok: <strong>Customize Grok</strong>. Gemini: <strong>Personal Intelligence → Instructions for Gemini</strong>. Copilot: <strong>Chat settings → Custom instructions</strong>.</td><td>Short bullet rules hold longer than roleplay adjectives (<a href="/guides/grok-personality-settings">Grok</a> · <a href="/guides/gemini-personality">Gemini</a> · <a href="/guides/microsoft-copilot-custom-instructions-memory">Copilot</a>).</td></tr>
-              <tr><th scope="row">Coding agents</th><td><code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, <code>.cursor/rules/*.mdc</code>, <code>.windsurf/rules/</code>, or <code>.clinerules/</code></td><td>Use <a href="/tools/instruction-converter">Instruction Converter</a> or <a href="/guides/windsurf-rules-cline-clinerules-guide">Coding Rules Builder</a>.</td></tr>
+              <tr><th scope="row">Coding agents</th><td><code>~/.claude/CLAUDE.md</code>, <code>~/.codex/AGENTS.md</code>, <code>.cursor/rules/*.mdc</code>, <code>.windsurf/rules/</code>, or <code>.clinerules/</code></td><td>Use <a href="/tools/instruction-converter">Instruction Converter</a> or <a href="/guides/ai-coding-agent-rules-files-matrix">Coding Rules Builder</a>.</td></tr>
             </tbody>
           </table>
         </div>
@@ -133,7 +133,7 @@
         </details>
         <details class="lib-disclosure">
           <summary>How do ChatGPT Projects interact with account-wide Custom Instructions?</summary>
-          <p>Inside a ChatGPT Project, Project Instructions override your account-wide Custom Instructions whenever two rules conflict. Keep a short 6–10 line voice block in global settings and put project-specific schemas or repo rules inside the Project (<a href="/guides/chatgpt-projects-vs-custom-instructions">full precedence guide</a>).</p>
+          <p>Inside a ChatGPT Project, Project Instructions override your account-wide Custom Instructions whenever two rules conflict. Keep a short 6–10 line voice block in global settings and put project-specific schemas or repo rules inside the Project (<a href="/guides/chatgpt-personality-settings">full precedence guide</a>).</p>
         </details>
         <details class="lib-disclosure">
           <summary>Do I need to take a personality test to use this generator?</summary>
@@ -168,7 +168,7 @@
             </tbody>
           </table>
         </div>
-        <p>Prefer interactive sliders instead of checkboxes? Try our <a href="/guides/ai-personality-slider-tuner-vs-custom-instructions">6-Slider AI Personality Tuner</a>. See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-project-instructions-examples">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
+        <p>Prefer interactive sliders instead of checkboxes? Try our <a href="/tools/custom-instructions-generator">6-Slider AI Personality Tuner</a>. See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-personality">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
       </section>
     </main>
 

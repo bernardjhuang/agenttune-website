@@ -5,18 +5,9 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 23, 2026
-
-Yes—open Settings → Profile → Personal Preferences on web or mobile. Quick-pick 5 Claude setups, browse 20 templates, or inspect Nov 2026 Opus 5.5, Fable 5.2 & Sonnet 5.5 N=100 data.
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/claude-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## How to change Claude’s personality settings.
 
@@ -31,15 +22,15 @@ Anthropic’s [personalization docs](https://support.claude.com/en/articles/1018
 | Use case | Where to put it | Scope &amp; behavior |
 | --- | --- | --- |
 | Everyday chats (web &amp; mobile) | Personal preferences / Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
-| One client, repo, or research topic | Project instructions ([7 Project templates →](https://agent-tune.com/guides/claude-project-instructions-examples)) | Applies inside that Project and overrides conflicting general tone rules. |
+| One client, repo, or research topic | Project instructions ([7 Project templates →](https://agent-tune.com/guides/claude-personality)) | Applies inside that Project and overrides conflicting general tone rules. |
 | Reusable task voice (former Styles) | Skills | Invoked when relevant or named explicitly; see the [Styles-to-Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration). |
 | Claude Code CLI | ~/.claude/output-styles/*.md (/output-style) | System-level coding session tone with keep-coding-instructions: true; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
 
-Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web).
+Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-personality).
 
 ## Quick pick: Best Claude Personal Preferences & 20-template gallery.
 
-Looking for 20 downloadable Claude Personal Preferences & Skill templates? Open our [**20 Claude Templates & .md Downloads Gallery →**](https://agent-tune.com/guides/claude-personal-preferences-templates) or copy one of these 7 flagship setups directly:
+Looking for 20 downloadable Claude Personal Preferences & Skill templates? Open our [**20 Claude Templates & .md Downloads Gallery →**](https://agent-tune.com/guides/claude-personality) or copy one of these 7 flagship setups directly:
 
 | Setup | Who it suits best &amp; download |
 | --- | --- |
@@ -220,6 +211,51 @@ Claude’s current personalization help page directs users to Instructions for C
 
 Claude Code has its own [output styles](https://code.claude.com/docs/en/output-styles). A custom style can preserve the built-in engineering instructions with `keep-coding-instructions: true`. Use the [Claude Code walkthrough](https://agent-tune.com/guides/claude-code-personality) for installation. Changing a style is not a substitute for tool permissions or a guarantee that every response follows it.
 
+## Spoken Voice Mode: all 5 Claude voices (Buttery, Airy, Mellow, Glassy, Rounded).
+
+On iOS or Android, tap the **Voice Mode waveform icon** next to the composer (or open **Initials → Settings → Voice**) to switch between five English voices and speech speeds (Slow, Normal, Fast). On web/desktop, open **Settings → Capabilities → Voice settings**. Because Profile Personal Preferences sync everywhere, concise written rules also keep Voice Mode from reading long bullet lists aloud.
+
+| Voice preset | Register / Accent | Best paired with |
+| --- | --- | --- |
+| Buttery | Warm, smooth (female-leaning) | Brainstorming &amp; coaching |
+| Airy | Light, brisk (female-leaning) | Fast mobile Q&amp;A &amp; lookups |
+| Mellow | Calm, lower-pitch (male-leaning) | Longer planning discussions |
+| Glassy | Clear, bright articulation | Spoken summaries &amp; walkthroughs |
+| Rounded | British-accented inflection | Editorial critique &amp; natural dialogue |
+
+Loading interactive Claude voice matcher…
+
+### Voice-Mode friendly brevity preset
+
+```markdown
+- Answer in 2–4 natural spoken sentences first; wait before expanding.
+- Avoid markdown tables, nested bullets, and raw URLs unless asked.
+- Lead with the takeaway, then stop so I can steer follow-ups.
+```
+
+## Claude Project Instructions templates & Personal Preferences precedence.
+
+Keep account-wide tone in **Personal Preferences**, and put task roles, citation schemas, and attached-file constraints inside each **Claude Project** (aim for 400–1,500 chars with explicit override wording if the Project requires longer memos):
+
+### Project Template A — Primary-Source Research Analyst
+
+```markdown
+## Project Role
+Work strictly from Project Knowledge files plus verified citations.
+- Label observed quotes/figures separately from inference.
+- When uploaded docs conflict, list both sources and dates instead of averaging.
+- Start every memo with a 3-bullet Executive Findings block.
+```
+
+### Project Template B — Code Architecture & Editorial Review
+
+```markdown
+## Project Role
+Flag correctness bugs, race conditions, and unsupported claims first using exact file/section paths.
+- Propose minimal, targeted edits instead of broad rewrites.
+- Never add generic AI clichés or unverified statistics.
+```
+
 ## Questions people ask.
 
 ### Can you change Claude’s personality?
@@ -268,11 +304,7 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 
 ## Keep going.
 
-- [20 Templates: Best Claude Personal Preferences & Skill templates (.md downloads)](https://agent-tune.com/guides/claude-personal-preferences-templates)
-- [Projects: Claude Project instructions: limits, precedence & 8 templates](https://agent-tune.com/guides/claude-project-instructions-examples)
-- [Voice & Mobile: How to change Claude's spoken voice (5 voices) vs. written tone](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
-- [Interactive Tuner: 6-Slider AI Personality Tuner (export for Claude, ChatGPT & Muse)](https://agent-tune.com/guides/ai-personality-slider-tuner-vs-custom-instructions)
+- [Interactive Tuner: 6-Slider AI Personality Tuner (export for Claude, ChatGPT & Muse)](https://agent-tune.com/tools/custom-instructions-generator)
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Research: The five-model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Claude Code: Set a coding-session output style](https://agent-tune.com/guides/claude-code-personality)
-- [Tool: Build your custom instructions](https://agent-tune.com/tools/custom-instructions-generator)

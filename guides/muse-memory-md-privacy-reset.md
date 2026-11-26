@@ -5,18 +5,9 @@ Guide · Meta Muse
 
 # Meta Muse Memory.md, privacy, and how to reset safely.
 
-By Bernard Huang · Updated November 17, 2026
-
-Memory.md stores facts about your work and preferences across chats. Here is how to audit it, prune stale entries, or clear it without losing your Soul.md tuning.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization → Assistant Identity (or tap the Assistant icon) and select Memory.md to view, edit, or delete saved facts about you. To clear old context without losing your communication style, reset only Memory.md and leave Soul.md and Identity.md untouched.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## What Muse writes to Memory.md.
 

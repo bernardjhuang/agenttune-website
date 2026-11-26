@@ -5,18 +5,9 @@ Comparison · GPT vs Claude
 
 # ChatGPT vs. Claude personality: what default benchmarks actually show.
 
-By Bernard Huang · Updated November 17, 2026
-
-Measured across 2,000 independent fresh runs on GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1—plus how each responds to tuning.
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest questionnaire difference is MBTI tie rate: Claude Fable 5.1 resolved to INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (45 ISTJ vs 19 INTJ tie-free). Adding custom instructions changes reply structure much more than switching models.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## September 2026 head-to-head: 400 fresh sessions per framework.
 
@@ -43,8 +34,8 @@ Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness a
 | --- | --- | --- |
 | Fastest global tone switch | Settings → Personalization → Base style preset + 4 toggles ([guide →](https://agent-tune.com/guides/chatgpt-personality-settings)) | Profile Preferences box + chat Styles/Skills |
 | Global instruction budget | 1,500 chars &times; 2 boxes + Saved Memories | Multi-paragraph text box in Profile Preferences (best kept under ~1,200 chars) |
-| Workspace isolation | ChatGPT Projects (8,000 chars) or Custom GPTs | Claude Projects (system prompt + knowledge) ([examples →](https://agent-tune.com/guides/claude-project-instructions-examples)) |
-| Spoken voice persona | Voice selector inside ChatGPT Voice settings | 5 named Voice presets: Buttery, Airy, Mellow, Glassy, Rounded ([guide →](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)) |
+| Workspace isolation | ChatGPT Projects (8,000 chars) or Custom GPTs | Claude Projects (system prompt + knowledge) ([examples →](https://agent-tune.com/guides/claude-personality)) |
+| Spoken voice persona | Voice selector inside ChatGPT Voice settings | 5 named Voice presets: Buttery, Airy, Mellow, Glassy, Rounded ([guide →](https://agent-tune.com/guides/claude-personality)) |
 
 ## One portable rule set that works cleanly in both ChatGPT and Claude.
 

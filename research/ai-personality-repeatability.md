@@ -5,18 +5,11 @@ Research · descriptive reanalysis
 
 # Does a stable result mean a stable AI personality?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.
 
-**Quick answer:** All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
 
 ## Three ways to measure repeatability
 

@@ -5,18 +5,11 @@ Research · essay
 
 # Is every AI an INTJ?
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Different labels do not establish a change in personality.
 
-**Quick answer:** Not every AI scores INTJ. Muse Spark 1.3 reports 80 ISTJ labels in 100 runs, and GPT-6 Astra has 45 fully resolved ISTJ runs versus 19 fully resolved INTJ runs when ties are left open. Because the May and September studies used different models, prompts, and session rules, their label counts cannot isolate a trend over time.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Not every AI scores INTJ. Muse Spark 1.3 reports 80 ISTJ labels in 100 runs, and GPT-6 Astra has 45 fully resolved ISTJ runs versus 19 fully resolved INTJ runs when ties are left open. Because the May and September studies used different models, prompts, and session rules, their label counts cannot isolate a trend over time.
 
 ## What the May headline actually counted.
 

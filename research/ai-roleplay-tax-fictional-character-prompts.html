@@ -68,20 +68,11 @@
     <main class="article-wrap guide-prose" id="main" tabindex="-1">
 
       <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Research · November 2026 · 300-Reply Study</span>
+        <p class="page-eyebrow">Research · November 2026 · 300-Reply Study</p>
         <h1 class="h-hero h-research-hero">Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time> · <a href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
         <p class="lede" style="margin-top: 14px;">We tested 5 prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-judged replies) plus mapped all 20 models across D&amp;D Alignment and Anti-Sycophancy Pushback.</p>
-        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.</div>
-        <div class="article-utility-bar" aria-label="Reader and agent quick actions">
-          <span class="article-utility-label">Open Data &amp; Agent Access</span>
-          <div class="article-utility-actions">
-            <a class="article-utility-btn" href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a>
-            <a class="article-utility-btn" href="/research/data/november-2026-openrouter-summary.json">OpenRouter JSON</a>
-            <a class="article-utility-btn" href="/guides/mcp-server-ai-preferences-portable-tuning">MCP Config</a>
-            <a class="article-utility-btn is-accent" href="/library/">Apply a template →</a>
-          </div>
-        </div>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.</div>
       </section>
 
 
@@ -114,12 +105,12 @@
 
       <section>
         <h2>From benchmark to daily workflow: how to use the 85/15 rule with your agents.</h2>
-        <p>Knowing naive roleplay slashes accuracy isn't much help unless you can translate the data into a cleaner daily habit. Across ChatGPT, Claude, Meta Muse, Gemini, and coding CLIs, four practical takeaways hold cleanly:</p><ol><li><strong>Keep character costume out of global rules — borrow cognitive habits instead:</strong> Rather than asking for <em>"Sherlock speech"</em>, prompt for differential hypothesis elimination. Rather than <em>"robot jokes"</em>, specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.</li><li><strong>Plant a format-override escape hatch:</strong> Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to <code>1</code> single token (<code>3</code>) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.</li><li><strong>Pair the prompt to the model's measured baseline:</strong> DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.</li><li><strong>Verify on your own work in 3 minutes:</strong> Open the <a href="/tools/instruction-test-bench">Blind Instruction Test Bench</a>, paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 Agent Cocktail side-by-side before saving it permanently.</li></ol>
+        <p>Knowing naive roleplay slashes accuracy isn't much help unless you can translate the data into a cleaner daily habit. Across ChatGPT, Claude, Meta Muse, Gemini, and coding CLIs, four practical takeaways hold cleanly:</p><ol><li><strong>Keep character costume out of global rules — borrow cognitive habits instead:</strong> Rather than asking for <em>"Sherlock speech"</em>, prompt for differential hypothesis elimination. Rather than <em>"robot jokes"</em>, specify `[Honesty: 95% | Deadpan: 60% | Asterisks: 0%]`.</li><li><strong>Plant a format-override escape hatch:</strong> Notice in our 300-reply study that calibrated 85/15 models dropped from playful voice down to <code>1</code> single token (<code>3</code>) whenever the user asked for an exact count—because each 85/15 prompt stated plainly that format constraints override persona.</li><li><strong>Pair the prompt to the model's measured baseline:</strong> DeepSeek V4 Pro showed `86.2` default pushback and `80.0%` unprompted baseline correctness—adding calibrated TARS telemetry gave it structure without suppressing skepticism (+20.0 pp accuracy gain to 100.0%). Conversely, Claude Fable 5.2 and GPT-6.2 Sol (`23.9–36.0` pushback) already lead cleanly on format, so they benefit most from anti-sycophancy challenge rules.</li><li><strong>Verify on your own work in 3 minutes:</strong> Open the <a href="/tools/instruction-test-bench">Blind Instruction Test Bench</a>, paste a thorny bug or real memo from yesterday, and compare a baseline reply vs. your new 85/15 3-Layer Character Combo side-by-side before saving it permanently.</li></ol>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>Build your own 85/15 Agent Cocktail interactively.</h2>
+        <h2>Build your own 85/15 3-Layer Character Combo interactively.</h2>
         <div id="at-character-mixer"></div>
       </section>
 
@@ -154,8 +145,7 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman"><span class="guide-related-kicker">Template gallery</span>Fictional Character AI Prompts (16 calibrated templates)</a>
-          <a href="/guides/ai-alignment-hexaco-conflict-style-test"><span class="guide-related-kicker">Interactive quiz</span>AI Alignment, HEXACO &amp; Conflict Style Test</a>
-          <a href="/guides/whimsical-ai-persona-combos-agent-cocktails"><span class="guide-related-kicker">Persona combos</span>Whimsical AI Persona Combos: 15 Agent Cocktails</a>
+          <a href="/research/ai-personality-rankings"><span class="guide-related-kicker">Interactive quiz</span>AI Alignment, HEXACO &amp; Conflict Style Test</a>
           <a href="/research/does-personality-tuning-change-ai-answers"><span class="guide-related-kicker">Behavioral study</span>Does personality tuning change AI answers? (540-reply study)</a>
         </div>
       </section>

@@ -5,18 +5,11 @@ Research · descriptive reanalysis
 
 # Are AI models really INTJ? The tie-breaking effect
 
-By Bernard Huang · Updated November 17, 2026
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.
 
-**Quick answer:** Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
 
 ## Same answers, two scoring rules
 

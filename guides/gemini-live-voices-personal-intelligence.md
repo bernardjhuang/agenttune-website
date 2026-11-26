@@ -5,18 +5,9 @@ Guide & Picker · Gemini Live
 
 # Google Gemini Live voices and Personal Intelligence: voice list, setup, and sync fix.
 
-By Bernard Huang · Updated November 20, 2026
-
-Pick a Gemini voice (including female, male, and British Capella), configure Instructions for Gemini, and fix the bug where Gemini Live skips saved rules.
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and select voices like Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Put permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.
-
-Quick Actions & Agent Fetch
-
-[Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md)
-[Library JSON](https://agent-tune.com/library/index.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Build instructions →](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## Filter Gemini Live voices and copy a Personal Intelligence block.
 
@@ -90,5 +81,5 @@ Add a spoken-length rule ('Keep spoken answers to 2–4 sentences and lead with 
 
 - [Guide: How to change Gemini's personality (Personal Intelligence, Gems & GEMINI.md)](https://agent-tune.com/guides/gemini-personality)
 - [Search AI: How to change Google AI Overview personality (what works)](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings)
-- [Claude Voice: How to change Claude's voice (all 5 voices & tone)](https://agent-tune.com/guides/claude-voice-tone-settings-mobile-web)
+- [Claude Voice: How to change Claude's voice (all 5 voices & tone)](https://agent-tune.com/guides/claude-personality)
 - [ChatGPT Voice: ChatGPT Voice Mode: all 9 voices & tone setup](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality)

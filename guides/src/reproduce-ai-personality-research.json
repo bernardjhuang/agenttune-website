@@ -5,8 +5,8 @@
   "updated": "2026-11-17",
   "title": "Reproduce AgentTune's 2,000-Session AI Personality Research",
   "description": "Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.",
-  "pill": "Developer guide \u00b7 reproducibility",
-  "h1": "How to reproduce AgentTune\u2019s AI self-report research",
+  "pill": "Developer guide · reproducibility",
+  "h1": "How to reproduce AgentTune’s AI self-report research",
   "lede": "You can recompute every September 2026 score on your own machine with Node.js—no API key, npm install, or model subscription required. Here are the five frozen files, the two scoring commands, and how to verify the output.",
   "answer": "Download the five frozen files into one folder, run 'node september-2026-score.cjs' and 'node content-analysis.cjs', and compare the JSON output with our published summaries. This reproduces all 2,003 scored questionnaire records locally with zero model calls.",
   "sections": [
@@ -24,7 +24,7 @@
     },
     {
       "h2": "Check the scoring contract",
-      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Items / response range</th><th scope=\"col\">Published score</th></tr></thead><tbody><tr><th scope=\"row\">MBTI (OEJTS)</th><td>32 / 1\u20135</td><td>Four signed margins; legacy label plus tie-aware X pattern</td></tr><tr><th scope=\"row\">Big Five (IPIP-50)</th><td>50 / 1\u20135</td><td>Five raw totals (10\u201350); 18 reverse-scored items</td></tr><tr><th scope=\"row\">DISC (ODAT)</th><td>16 / 1\u20135</td><td>Four totals (4\u201320); all top ties preserved</td></tr><tr><th scope=\"row\">Enneagram (OEPS)</th><td>36 / 1\u20135</td><td>Nine totals (4\u201320); all top ties preserved</td></tr><tr><th scope=\"row\">Attachment (ECR-R)</th><td>36 / 1\u20137</td><td>Two means (1\u20137); Secure cutoff &lt;= 4.00</td></tr></tbody></table></div>"
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Instrument</th><th scope=\"col\">Items / response range</th><th scope=\"col\">Published score</th></tr></thead><tbody><tr><th scope=\"row\">MBTI (OEJTS)</th><td>32 / 1–5</td><td>Four signed margins; legacy label plus tie-aware X pattern</td></tr><tr><th scope=\"row\">Big Five (IPIP-50)</th><td>50 / 1–5</td><td>Five raw totals (10–50); 18 reverse-scored items</td></tr><tr><th scope=\"row\">DISC (ODAT)</th><td>16 / 1–5</td><td>Four totals (4–20); all top ties preserved</td></tr><tr><th scope=\"row\">Enneagram (OEPS)</th><td>36 / 1–5</td><td>Nine totals (4–20); all top ties preserved</td></tr><tr><th scope=\"row\">Attachment (ECR-R)</th><td>36 / 1–7</td><td>Two means (1–7); Secure cutoff &lt;= 4.00</td></tr></tbody></table></div>"
     },
     {
       "h2": "Verify provenance before changing a file",

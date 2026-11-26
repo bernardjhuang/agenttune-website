@@ -1,7 +1,7 @@
 {
   "slug": "muse-personality",
   "published": "2026-09-19",
-  "updated": "2026-11-17",
+  "updated": "2026-11-25",
   "title": "Meta Muse Soul.md Guide: Customize Character & Personality",
   "description": "Edit Meta Muse's Soul.md on mobile or muse.ai: exact tap path, default Soul.md breakdown, 3 character presets, Memory.md vs Identity.md, and how to reset.",
   "pill": "Guide · Meta Muse",
@@ -17,11 +17,11 @@
     {
       "id": "the-short-version",
       "h2": "The short version.",
-      "html": "<ol><li>In the Muse app or <code>muse.ai</code>, tap the <strong>Assistant icon</strong> (your Muse’s avatar) → <strong>Identity → Soul</strong>.</li><li>Append a section at the bottom of <code>Soul.md</code> using the starter block below, one of the three character presets on this page, or any profile from the <a href=\"/library/\">library</a>.</li><li>Save and test the same real task before and after in fresh chats.</li></ol><div class=\"guide-snippet\" data-tuning-prompt># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- State material uncertainty and missing information plainly.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p><strong>Append to the file—do not replace it.</strong> <code>Soul.md</code> also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove (<a href=\"/guides/muse-troubleshooting-mobile-side-chats\">see mobile &amp; Side Chats troubleshooting</a>).</p>"
+      "html": "<ol><li>In the Muse app or <code>muse.ai</code>, tap the <strong>Assistant icon</strong> (your Muse’s avatar) → <strong>Identity → Soul</strong>.</li><li>Append a section at the bottom of <code>Soul.md</code> using the starter block below, one of the three character presets on this page, or any profile from the <a href=\"/library/\">library</a>.</li><li>Save and test the same real task before and after in fresh chats.</li></ol><div class=\"guide-snippet\" data-tuning-prompt># How to talk to me\n- Lead with the answer or the recommendation. Reasoning comes after.\n- State material uncertainty and missing information plainly.\n- Give one recommendation, not a menu, unless I ask for options.\n- Push back when I'm wrong, and say why.\n- No openers like \"Great question\", no recap of what I just said, no closing offers.</div><p><strong>Append to the file—do not replace it.</strong> <code>Soul.md</code> also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove (<a href=\"/guides/muse-personality\">see mobile &amp; Side Chats troubleshooting</a>).</p>"
     },
     {
       "h2": "What ships in default Soul.md (and what not to delete).",
-      "html": "<p>New Meta Muse accounts start with a default <code>Soul.md</code> template that tells Muse: <em>“You’re not a chatbot. You’re becoming someone,”</em> alongside four core principles: <strong>be genuinely helpful</strong> (skip “Great question!”), <strong>have opinions</strong>, <strong>be resourceful before asking</strong>, and <strong>remember you’re a guest in someone’s life</strong> (treat messages, files, and calendar access with care).</p><p>Leave those starter principles intact. When you want tighter formatting, shorter replies, or explicit approval gates for <a href=\"/guides/meta-muse-connectors-tasks-approval-rules\">Muse Connectors and scheduled Tasks</a>, append a bounded <code>## How to work with me</code> section below them using our <a href=\"/tools/muse-soul-md-editor\">Soul.md Merge Editor</a>.</p>"
+      "html": "<p>New Meta Muse accounts start with a default <code>Soul.md</code> template that tells Muse: <em>“You’re not a chatbot. You’re becoming someone,”</em> alongside four core principles: <strong>be genuinely helpful</strong> (skip “Great question!”), <strong>have opinions</strong>, <strong>be resourceful before asking</strong>, and <strong>remember you’re a guest in someone’s life</strong> (treat messages, files, and calendar access with care).</p><p>Leave those starter principles intact. When you want tighter formatting, shorter replies, or explicit approval gates for <a href=\"/guides/muse-personality\">Muse Connectors and scheduled Tasks</a>, append a bounded <code>## How to work with me</code> section below them using our <a href=\"/tools/muse-soul-md-editor\">Soul.md Merge Editor</a>.</p>"
     },
     {
       "id": "which-product-this-guide-covers",
@@ -50,7 +50,7 @@
     {
       "id": "write-rules-for-reports-and-approval-requests",
       "h2": "Write rules for reports and approval requests.",
-      "html": "<p>For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”</p><p>A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our <a href=\"/guides/meta-muse-connectors-tasks-approval-rules\">Muse Connectors &amp; approval rules guide</a> before enabling external write actions.</p>"
+      "html": "<p>For an assistant that can act through connected services, specify how you want proposed actions and verified results presented. For example: “When approval is needed, state the action, known cost and consequence together. Do not claim completion without evidence.”</p><p>A communication preference does not set tool permissions. Meta describes separate approval checks whose requirements depend on the action, connector and permissions you select. Review those settings independently and read our <a href=\"/guides/muse-personality\">Muse Connectors &amp; approval rules guide</a> before enabling external write actions.</p>"
     },
     {
       "id": "does-it-stick-test-and-undo-the-change",
@@ -68,6 +68,16 @@
     {
       "h2": "What the research can and cannot establish.",
       "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
+    },
+    {
+      "id": "muse-mobile-side-chats-and-refusals",
+      "h2": "Main Chat vs. Side Chats, mobile menus & fixing Soul.md refusals.",
+      "html": "<p>On iOS, Android, and <code>muse.ai</code>, tap <strong>Assistant icon → Identity → Soul</strong> (all three files sync across mobile and web). Unlike disposable threads in ChatGPT or Claude, Muse revolves around one continuous <strong>Main Chat</strong> plus isolated <strong>Side Chats</strong>:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Surface</th><th scope=\"col\">Reads <code>Soul.md</code>?</th><th scope=\"col\">Writes to <code>Memory.md</code>?</th><th scope=\"col\">If deleted</th></tr></thead><tbody><tr><th scope=\"row\">Main Chat</th><td>Yes (always)</td><td>Yes (accumulates facts)</td><td><strong>Triggers Reset Muse</strong> — wipes history &amp; state</td></tr><tr><th scope=\"row\">Side Chats</th><td>Yes</td><td>No (isolated throwaway workspace)</td><td>Deletes only that Side Chat cleanly</td></tr></tbody></table></div><p><strong>Fixing overly strict <code>Soul.md</code> refusals:</strong> Stacking absolute bans like <em>“Never use bullets”</em> or <em>“Never exceed 3 sentences”</em> causes Muse to stall when you ask for structured tables. Replace rigid bans with conditional defaults (<em>“Default to prose unless I ask for bullets”</em>) and end with <em>“Explicit instructions in my current message always override these defaults.”</em> Need to restore clean defaults safely? Download <a href=\"/resources/muse/default-soul-restore.md\" download><code>default-soul-restore.md</code></a>.</p>"
+    },
+    {
+      "id": "muse-connectors-and-tasks-approvals",
+      "h2": "Muse Connectors & Scheduled Tasks: read vs. write approval rules in Soul.md.",
+      "html": "<p>Once you connect mail, calendar, or recurring scheduled <strong>Tasks</strong>, pair platform permissions with explicit draft-first boundaries inside <code>Soul.md</code>:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Workflow</th><th scope=\"col\">Safe automatic step</th><th scope=\"col\">Require confirmation gate</th></tr></thead><tbody><tr><th scope=\"row\">Morning brief (Task)</th><td>Summarize events, deadlines &amp; unread highlights</td><td>Declining invites or messaging attendees</td></tr><tr><th scope=\"row\">Email / message triage</th><td>Cluster threads &amp; prepare editable reply drafts</td><td>Sending any external message or forwarding attachments</td></tr></tbody></table></div><div class=\"guide-snippet\" data-tuning-prompt>## Connectors &amp; Scheduled Tasks\n- Treat reading calendars, messages, and notes as read-only unless I explicitly approve an external action.\n- Always show an exact draft, diff, or shortlist before sending messages, creating invites, or modifying external records.\n- Quote any failed Connector read verbatim instead of guessing missing fields.</div>"
     }
   ],
   "faq": [
@@ -175,11 +185,6 @@
     },
     {
       "kicker": "Guide",
-      "label": "Meta Muse Connectors, tasks & approval rules",
-      "href": "/guides/meta-muse-connectors-tasks-approval-rules"
-    },
-    {
-      "kicker": "Guide",
       "label": "Meta Muse avatar and name: the Identity.md guide",
       "href": "/guides/muse-identity-md-avatar-name"
     },
@@ -212,11 +217,6 @@
       "kicker": "Tests",
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
-    },
-    {
-      "kicker": "Identity & Characters",
-      "label": "16 Meta Muse character ideas & Identity.md templates",
-      "href": "/guides/muse-identity-md-templates"
     },
     {
       "kicker": "Guide",

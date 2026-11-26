@@ -5,18 +5,11 @@ Research · Q&A
 
 # What personality type is Grok?
 
-By Bernard Huang · Updated November 23, 2026
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-grok.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Grok 4.7 tested in 100 fresh sessions (Nov 2026), compared against September’s Grok 4.6 report and May 2026 Grok 4.3.
 
-**Quick answer:** Grok 4.7 in November 2026 (n = 100 fresh blind runs) scored INTJ 82 / ISTJ 18 (57 tie-free INTJ), Type 5w6 (78), DISC SC 75 / S 19 / CS 6, Agreeableness 44.92, and 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48). September’s single-report Grok 4.6 stood on the Avoidant cutoff (4.06, or 73/18) with lower reported Agreeableness (33).
-
-Open Data & Agent Access
-
-[Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-grok.md)
-[OpenRouter JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
-[MCP Config](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
-[Apply a template →](https://agent-tune.com/library/)
+**Summary:** Grok 4.7 in November 2026 (n = 100 fresh blind runs) scored INTJ 82 / ISTJ 18 (57 tie-free INTJ), Type 5w6 (78), DISC SC 75 / S 19 / CS 6, Agreeableness 44.92, and 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48). September’s single-report Grok 4.6 stood on the Avoidant cutoff (4.06, or 73/18) with lower reported Agreeableness (33).
 
 ## Grok 4.7, November 2026 (n = 100 fresh OpenRouter sessions).
 
@@ -54,7 +47,7 @@ To replace single-submission reliance on Grok 4.6, we administered all 170 blind
 | Attachment | Secure 96 · Avoidant 4 (anxiety 1.94, avoidance 3.48, max 4.11) | Avoidant 63 / Secure 37 sim (1.50 / 4.06) |
 | Big Five (/50) | O 41.3 · C 44.6 · E 26.2 · A 44.9 · N 14.8 | O 46 · C 42 · E 24 · A 33 · N 19 |
 
-Notice two clear differences on Grok 4.7’s fresh-session runs: first, Agreeableness jumped from Grok 4.6’s 33/50 to 44.9/50, aligning with proprietary peers; second, mean attachment avoidance dropped below the 4.00 line to 3.48 (though 4 individual runs still crossed into Avoidant up to 4.11). Want to configure Grok directly? See our [Grok Personality Templates gallery](https://agent-tune.com/guides/grok-personality-templates).
+Notice two clear differences on Grok 4.7’s fresh-session runs: first, Agreeableness jumped from Grok 4.6’s 33/50 to 44.9/50, aligning with proprietary peers; second, mean attachment avoidance dropped below the 4.00 line to 3.48 (though 4 individual runs still crossed into Avoidant up to 4.11). Want to configure Grok directly? See our [Grok Personality Templates gallery](https://agent-tune.com/guides/grok-personality-settings).
 
 > **Chart — Grok Big Five shifts: Grok 4.7 (Nov n=100) vs. Grok 4.6 (Sep) & 4.3 (May):** Compares IPIP-50 trait means across three Grok releases and collection protocols. Grok 4.7 (Nov n=100): Openness 41.3, Conscientiousness 44.6, Extraversion 26.2, Agreeableness 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientiousness 42.0, Extraversion 24.0, Agreeableness 33.0, Neuroticism 19.0; Grok 4.3 (May archive) (reported): Openness 41.1, Conscientiousness 39.4, Extraversion 30.0, Agreeableness 39.1, Neuroticism 18.0.
 
@@ -103,7 +96,7 @@ Mean ECR-R placement showing Grok 4.7 (mean avoidance 3.48; 96 Secure / 4 Avoida
 
 ## Using these results with Grok & Grok Bot.
 
-Questionnaire self-reports do not predict how blunt, warm, or accurate Grok will be on your tasks. Set explicit tone rules using our [Grok on X & grok.com guide](https://agent-tune.com/guides/grok-personality-settings), [Grok Voice Mode voices guide](https://agent-tune.com/guides/grok-voice-mode-personas-companions), or [Grok Bot setup guide](https://agent-tune.com/guides/grokbot-personality).
+Questionnaire self-reports do not predict how blunt, warm, or accurate Grok will be on your tasks. Set explicit tone rules using our [Grok on X & grok.com guide](https://agent-tune.com/guides/grok-personality-settings), [Grok Voice Mode voices guide](https://agent-tune.com/guides/grok-personality-settings), or [Grok Bot setup guide](https://agent-tune.com/guides/grokbot-personality).
 
 ## Questions people ask.
 
