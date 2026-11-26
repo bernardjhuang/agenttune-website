@@ -109,7 +109,7 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 
 ## Free Browser Tools
 - [All Free AI Tools](https://agent-tune.com/tools/): Ten client-side browser tools (8 local text utilities + 2 template generators) for drafting, linting, converting, and testing AI instructions locally.
-- [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator): Build instructions from plain-English preferences or any of the 43 templates with compact ChatGPT (≤1,500 chars) and file exports.
+- [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator): Build instructions from 12 agent archetypes, 16 behavioral toggles, or any of the 43 templates with live reply previews, compact ChatGPT (≤1,500 chars), and file downloads.
 - [CLAUDE.md & AGENTS.md Generator](https://agent-tune.com/tools/claude-md-generator): Generate project instruction files for Claude Code, Codex CLI, Cursor, Windsurf, Copilot, and Gemini Code Assist.
 - [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder): Turn six explicit preference choices (length, tone, format, pushback, questions, context) into copyable instructions.
 - [AI Instruction & Prompt Conflict Checker](https://agent-tune.com/tools/instruction-checker): Detect duplicate lines, verbosity contradictions, uncertainty-hiding rules, and policy-override prompts.

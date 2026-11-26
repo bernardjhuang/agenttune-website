@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free ChatGPT Custom Instructions &amp; AI Prompt Generator (No Sign-Up)</title>
-  <meta name="description" content="Free AI &amp; ChatGPT custom instructions generator (no sign-up). Export 1,500-char ChatGPT blocks, Claude rules, Muse Soul.md, Grok, Gemini &amp; AGENTS.md." />
+  <meta name="description" content="Free custom instructions builder: pick 1 of 12 AI archetypes, flip 16 behavior toggles, copy rules for ChatGPT, Claude, Gemini, Grok and AGENTS.md. No sign-up." />
 
   <meta property="og:title" content="ChatGPT Custom Instructions &amp; Personality Prompt Generator" />
   <meta property="og:description" content="Build paste-ready custom instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md. Free, local, no signup." />
@@ -25,9 +25,9 @@
   <link rel="canonical" href="https://agent-tune.com/tools/custom-instructions-generator" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune Custom Instructions Generator","url":"https://agent-tune.com/tools/custom-instructions-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates editable communication instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md from direct preferences or 43 MIT-licensed personality templates.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune Custom Instructions Generator","url":"https://agent-tune.com/tools/custom-instructions-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates editable communication instructions for ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, and AGENTS.md from 12 agent archetypes, 16 behavior toggles, or 43 MIT-licensed personality templates.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Custom Instructions Generator"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I paste ChatGPT custom instructions on web and mobile?","acceptedAnswer":{"@type":"Answer","text":"On chatgpt.com or the ChatGPT iOS/Android app, open your Profile menu, tap Personalization (or Customize ChatGPT), enable Custom Instructions, and paste the response rules into 'How would you like ChatGPT to respond?' (1,500-character limit per box)."}},{"@type":"Question","name":"How do ChatGPT Projects interact with account-wide Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"Project-specific instructions take precedence inside that Project whenever rules conflict. Keep a compact 6-to-10 line voice block in account-wide Custom Instructions and put task or domain schemas inside each Project."}},{"@type":"Question","name":"Do I need to take a personality test to use this generator?","acceptedAnswer":{"@type":"Answer","text":"No. The default mode builds instructions directly from four concrete communication preferences (concise, exploratory, candid feedback, or warm pacing). Switching to the 43 personality templates across MBTI, Enneagram, DISC, Attachment, and Big Five is completely optional."}},{"@type":"Question","name":"Are my generated instructions or edits sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Drafts are stored only in your browser's localStorage for up to 7 days, and clicking Reset deletes them immediately. Share links encode only dropdown selections, never your custom text."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I paste ChatGPT custom instructions on web and mobile?","acceptedAnswer":{"@type":"Answer","text":"On chatgpt.com or the ChatGPT iOS/Android app, open your Profile menu, tap Personalization (or Customize ChatGPT), enable Custom Instructions, and paste the response rules into 'How would you like ChatGPT to respond?' (1,500-character limit per box)."}},{"@type":"Question","name":"How do ChatGPT Projects interact with account-wide Custom Instructions?","acceptedAnswer":{"@type":"Answer","text":"Project-specific instructions take precedence inside that Project whenever rules conflict. Keep a compact 6-to-10 line voice block in account-wide Custom Instructions and put task or domain schemas inside each Project."}},{"@type":"Question","name":"Do I need to take a personality test to use this generator?","acceptedAnswer":{"@type":"Answer","text":"No. The default mode builds instructions from 12 starting archetypes and 16 plain-English behavior toggles covering length, pushback, tone, and autonomy. Switching to the 43 personality templates across MBTI, Enneagram, DISC, Attachment, and Big Five is completely optional."}},{"@type":"Question","name":"Are my generated instructions or edits sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Drafts are stored only in your browser's localStorage for up to 7 days, and clicking Reset deletes them immediately. Share links encode only your toggle and dropdown selections, never your custom text or personal context."}}]}</script>
 
   <script defer src="/consent.js" fetchpriority="low"></script>
 
@@ -36,16 +36,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%23a8482a'/%3E%3C/svg%3E" />
-  <style>
-    .tool-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
-    .tool-grid { display: grid; grid-template-columns: 305px minmax(0, 1fr); gap: 22px; margin-top: 28px; }
-    .tool-card { background: var(--surface); border: 1px solid var(--border); border-top: 1.5px solid var(--ink); border-radius: 3px; padding: 20px; }
-    .tool-field { margin-bottom: 18px; }
-    .tool-field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
-    .tool-field select { width: 100%; padding: 0.6rem 2.35rem 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; background-color: var(--surface); font-family: inherit; font-size: 0.875rem; }
-    .tool-note { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin-top: 14px; }
-    @media (max-width: 860px) { .tool-grid { grid-template-columns: minmax(0, 1fr); } }
-  </style>
 </head>
 <body class="research-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -63,47 +53,106 @@
       </div>
     </nav>
 
-    <main class="tool-wrap" id="main" tabindex="-1">
-      <section class="hero" style="padding-bottom: 4px;">
-        <span class="pill" style="background: rgba(200,85,61,0.12); color: var(--accent-text, #a8482a);">Free tool · client-side · no signup</span>
+    <main class="ci-wrap" id="main" tabindex="-1">
+      <section class="hero ci-hero">
+        <p class="ci-kicker">Free tool · runs in your browser · no sign-up</p>
         <h1 class="h-hero h-research-hero">Free AI &amp; ChatGPT custom instructions generator.</h1>
-        <p class="lede" style="margin-top: 16px; max-width: 720px;">
-          Pick how you want your AI to respond—or load one of 43 MIT-licensed personality templates—and copy a paste-ready block formatted for ChatGPT (1,500 chars), Claude, Meta Muse <code>Soul.md</code>, Grok, Gemini, or <code>AGENTS.md</code>.
-        </p>
+        <p class="lede ci-lede">Pick a starting archetype, flip the behaviors you want, and watch a sample reply change. Then copy a paste-ready block for ChatGPT (1,500 chars), Claude, Meta Muse <code>Soul.md</code>, Grok, Gemini, or <code>AGENTS.md</code>.</p>
       </section>
 
-      <div class="tool-grid">
-        <section class="tool-card" aria-label="Generator controls">
-          <div class="tool-field" id="quick-presets-wrap">
-            <label>Quick starter presets (1 click)</label>
-            <div id="quick-presets" class="at-pill-row" style="margin-bottom:8px;">
-              <button type="button" class="at-pill-btn" data-preset="concise-analyst">Concise Analyst</button>
-              <button type="button" class="at-pill-btn" data-preset="skeptical-partner">Skeptical Partner</button>
-              <button type="button" class="at-pill-btn" data-preset="senior-engineer">Senior Engineer</button>
-              <button type="button" class="at-pill-btn" data-preset="executive-brief">Executive Brief</button>
-              <button type="button" class="at-pill-btn" data-preset="plain-english-editor">Plain-English Editor</button>
-              <button type="button" class="at-pill-btn" data-preset="study-coach">Study Coach</button>
+      <input type="hidden" id="approach" value="preferences" />
+      <div class="ci-mode" role="group" aria-label="How do you want to start?">
+        <button type="button" class="ci-mode-btn" id="mode-toggles" aria-pressed="true">Build with toggles</button>
+        <button type="button" class="ci-mode-btn" id="mode-template" aria-pressed="false">Load 1 of 43 personality types</button>
+      </div>
+
+      <section class="ci-band" id="archetypes" aria-labelledby="archetypes-heading">
+        <h2 class="ci-step" id="archetypes-heading"><span class="ci-folio">§ 01</span> Pick a starting point <span class="ci-step-note">Optional. Sets the behaviors below; tweak anything after.</span></h2>
+        <div class="ci-filters" id="archetype-filters" role="group" aria-label="Filter archetypes by category">
+          <button type="button" data-arch-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-arch-filter="work" aria-pressed="false">Work &amp; Strategy</button>
+          <button type="button" data-arch-filter="code" aria-pressed="false">Coding &amp; Tech</button>
+          <button type="button" data-arch-filter="writing" aria-pressed="false">Writing &amp; Editing</button>
+          <button type="button" data-arch-filter="thinking" aria-pressed="false">Thinking &amp; Learning</button>
+          <button type="button" data-arch-filter="personal" aria-pressed="false">Personal &amp; Calm</button>
+        </div>
+        <div class="ci-arch-grid" id="archetype-grid">
+          <button type="button" class="ci-arch" data-archetype="chief-of-staff" data-cat="work" aria-pressed="false"><span class="ci-arch-cat">Work &amp; Strategy</span><span class="ci-arch-name">Chief of Staff</span><span class="ci-arch-blurb">Triage, decide, and flag only what needs you.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="product-strategist" data-cat="work" aria-pressed="false"><span class="ci-arch-cat">Work &amp; Strategy</span><span class="ci-arch-name">Product Strategist</span><span class="ci-arch-blurb">Frames user, metric and trade-off before advising.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="research-analyst" data-cat="work" aria-pressed="false"><span class="ci-arch-cat">Work &amp; Strategy</span><span class="ci-arch-name">Research Analyst</span><span class="ci-arch-blurb">Deep, sourced, and honest about evidence quality.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="staff-engineer" data-cat="code" aria-pressed="false"><span class="ci-arch-cat">Coding &amp; Tech</span><span class="ci-arch-name">Staff Engineer</span><span class="ci-arch-blurb">Failure modes and rollback before code.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="code-reviewer" data-cat="code" aria-pressed="false"><span class="ci-arch-cat">Coding &amp; Tech</span><span class="ci-arch-name">Strict Code Reviewer</span><span class="ci-arch-blurb">Blocking issues first, nits last, no praise padding.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="autonomous-operator" data-cat="code" aria-pressed="false"><span class="ci-arch-cat">Coding &amp; Tech</span><span class="ci-arch-name">Autonomous Operator</span><span class="ci-arch-blurb">Does the safe work, then reports what changed.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="minimalist-cli" data-cat="code" aria-pressed="false"><span class="ci-arch-cat">Coding &amp; Tech</span><span class="ci-arch-name">Minimalist CLI</span><span class="ci-arch-blurb">Commands and code first, prose only if asked.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="plain-english-editor" data-cat="writing" aria-pressed="false"><span class="ci-arch-cat">Writing &amp; Editing</span><span class="ci-arch-name">Plain-English Editor</span><span class="ci-arch-blurb">Cuts the fluff and the AI tells, keeps your voice.</span><span class="ci-arch-count">4 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="creative-partner" data-cat="writing" aria-pressed="false"><span class="ci-arch-cat">Writing &amp; Editing</span><span class="ci-arch-name">Creative Partner</span><span class="ci-arch-blurb">Builds on your ideas with options and a wild card.</span><span class="ci-arch-count">4 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="feynman-tutor" data-cat="thinking" aria-pressed="false"><span class="ci-arch-cat">Thinking &amp; Learning</span><span class="ci-arch-name">Feynman Tutor</span><span class="ci-arch-blurb">Simple words, an analogy, then a check question.</span><span class="ci-arch-count">4 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="red-team-skeptic" data-cat="thinking" aria-pressed="false"><span class="ci-arch-cat">Thinking &amp; Learning</span><span class="ci-arch-name">Red-Team Skeptic</span><span class="ci-arch-blurb">Stress-tests plans; agrees only when you’re right.</span><span class="ci-arch-count">5 rules</span></button>
+          <button type="button" class="ci-arch" data-archetype="calm-companion" data-cat="personal" aria-pressed="false"><span class="ci-arch-cat">Personal &amp; Calm</span><span class="ci-arch-name">Calm Companion</span><span class="ci-arch-blurb">Steady, kind, one step at a time.</span><span class="ci-arch-count">4 rules</span></button>
+        </div>
+      </section>
+
+      <div class="ci-workbench">
+        <section class="ci-controls" aria-label="Generator controls">
+          <fieldset id="preferences" class="ci-toggles">
+            <legend class="ci-step"><span class="ci-folio">§ 02</span> Fine-tune behaviors</legend>
+            <p class="ci-applied" id="archetype-name" aria-live="polite">Nothing is on yet. Pick an archetype above or switch on what you want.</p>
+            <div class="ci-groups">
+            <fieldset class="ci-group"><legend>Length &amp; structure</legend>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Answer first</span><span class="ci-toggle-help">No warm-up; the verdict comes first.</span></span><input type="checkbox" role="switch" value="answer-first" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Keep it short</span><span class="ci-toggle-help">Short replies unless you ask for more.</span></span><input type="checkbox" role="switch" value="brief" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Go deep</span><span class="ci-toggle-help">Full reasoning when the topic earns it.</span></span><input type="checkbox" role="switch" value="deep" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Skimmable layout</span><span class="ci-toggle-help">Headers, bullets and tables you can scan.</span></span><input type="checkbox" role="switch" value="skimmable" /></label>
+            </fieldset>
+            <fieldset class="ci-group"><legend>Honesty &amp; pushback</legend>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Tell me when I’m wrong</span><span class="ci-toggle-help">Holds its ground on facts, but concedes cleanly.</span></span><input type="checkbox" role="switch" value="pushback" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">No flattery</span><span class="ci-toggle-help">Skips “great question” and empty praise.</span></span><input type="checkbox" role="switch" value="no-flattery" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Flag uncertainty</span><span class="ci-toggle-help">Separates facts from guesses.</span></span><input type="checkbox" role="switch" value="uncertainty" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Find the flaws</span><span class="ci-toggle-help">Names the biggest risk before agreeing.</span></span><input type="checkbox" role="switch" value="red-team" /></label>
+            </fieldset>
+            <fieldset class="ci-group"><legend>Tone &amp; style</legend>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Plain English</span><span class="ci-toggle-help">Short words, no jargon soup.</span></span><input type="checkbox" role="switch" value="plain-english" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Warm &amp; calm</span><span class="ci-toggle-help">Kind, steady, one step at a time.</span></span><input type="checkbox" role="switch" value="warm" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Sound human, not AI</span><span class="ci-toggle-help">Bans em-dashes and other AI tells.</span></span><input type="checkbox" role="switch" value="no-ai-tells" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Creative &amp; playful</span><span class="ci-toggle-help">Several ideas, one wild card, light humor.</span></span><input type="checkbox" role="switch" value="playful" /></label>
+            </fieldset>
+            <fieldset class="ci-group"><legend>Workflow &amp; autonomy</legend>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Ask before assuming</span><span class="ci-toggle-help">One clarifying question when it matters.</span></span><input type="checkbox" role="switch" value="ask-first" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Just do it (safely)</span><span class="ci-toggle-help">Finishes safe tasks; stops before risky ones.</span></span><input type="checkbox" role="switch" value="autonomy" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">End with a next step</span><span class="ci-toggle-help">One concrete action, no “let me know”.</span></span><input type="checkbox" role="switch" value="next-step" /></label>
+              <label class="ci-toggle"><span class="ci-toggle-text"><span class="ci-toggle-label">Teach me as we go</span><span class="ci-toggle-help">First principles, an analogy, a check question.</span></span><input type="checkbox" role="switch" value="teach" /></label>
+            </fieldset>
             </div>
-          </div>
-          <label for="approach">Start with</label>
-          <select id="approach"><option value="preferences">My communication preferences</option><option value="template">A personality template</option></select>
-          <fieldset id="preferences" class="preference-options"><legend>What would help you?</legend>
-            <label><input type="checkbox" value="concise">Concise answers and a clear next step</label>
-            <label><input type="checkbox" value="exploratory">Ideas, alternatives and room to explore</label>
-            <label><input type="checkbox" value="critical">Candid feedback with evidence</label>
-            <label><input type="checkbox" value="supportive">A warm tone and manageable steps</label>
           </fieldset>
-          <div id="template-controls" hidden>
-            <div class="tool-field"><label for="system">Personality system</label><select id="system" disabled></select></div>
-            <div class="tool-field"><label for="type">Template to try</label><select id="type" disabled></select></div>
-            <p class="tool-note"><a href="/library/" id="type-link">Browse templates</a> · <a href="/tests/">Explore your preferences</a>. A type is a starting point, not a requirement or diagnosis.</p>
+          <details class="ci-personalize" id="personalize">
+            <summary><span class="ci-folio">§ 03</span> Personalize (optional)</summary>
+            <div class="ci-field"><label for="persona-role">My role or context</label><textarea id="persona-role" maxlength="140" rows="2" placeholder="e.g. Solo founder shipping a B2B app"></textarea></div>
+            <div class="ci-field"><label for="persona-avoid">Always avoid</label><textarea id="persona-avoid" maxlength="140" rows="2" placeholder="e.g. Sports metaphors, US-only examples"></textarea></div>
+            <p class="ci-note">Up to 140 characters each. Saved only in this browser and never included in share links.</p>
+          </details>
+          <div id="template-controls" class="ci-template" hidden>
+            <h2 class="ci-step"><span class="ci-folio">§ 02</span> Load a personality type</h2>
+            <div class="ci-field"><label for="system">Personality system</label><select id="system" disabled></select></div>
+            <div class="ci-field"><label for="type">Template to try</label><select id="type" disabled></select></div>
+            <p class="ci-note"><a href="/library/" id="type-link">Browse templates</a> · <a href="/tests/">Explore your preferences</a>. A type is a starting point, not a requirement or diagnosis.</p>
           </div>
-          <p class="tool-note">Your draft stays in this browser for up to 7 days. Reset removes it.<span id="draft-saved" class="draft-saved"></span></p>
-          <div class="prompt-actions"><button type="button" class="btn btn-secondary" id="share-selection">Copy selection link</button><button type="button" class="btn btn-secondary" id="reset-generator">Reset generator</button></div>
-          <p id="draft-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div class="ci-footer-actions">
+            <p class="ci-note">Your draft stays in this browser for up to 7 days. Reset removes it.<span id="draft-saved" class="draft-saved"></span></p>
+            <div class="prompt-actions"><button type="button" class="btn btn-secondary" id="share-selection">Copy selection link</button><button type="button" class="btn btn-secondary" id="reset-generator">Reset generator</button></div>
+            <p id="draft-status" class="ci-note" role="status" aria-live="polite" aria-atomic="true"></p>
+          </div>
         </section>
 
-        <section aria-label="Generated output">
+        <section class="ci-output" aria-label="Preview and generated output">
+          <div class="ci-preview" id="preview">
+            <h2 class="ci-step"><span class="ci-folio">§ 04</span> See the difference</h2>
+            <p class="ci-preview-q">Sample question: <q>Should we move our app to a new database this quarter?</q></p>
+            <div class="ci-reply ci-reply-default"><p class="ci-reply-label">Default AI</p><p class="ci-reply-text" id="preview-default">Great question! Migrating databases is a complex decision that depends on many factors — it’s not just a technical choice, it’s a strategic one. Here’s a breakdown: there are pros and cons to consider, including performance, cost, and team readiness. Ultimately, the right answer depends on your specific situation. Let me know if you’d like me to dive deeper!</p></div>
+            <div class="ci-reply ci-reply-agent"><p class="ci-reply-label">Your agent</p><p class="ci-reply-text" id="preview-agent">Switch on a behavior or pick an archetype to see this reply change.</p></div>
+            <p class="ci-meter" id="rule-meter" data-state="empty">0 behaviors on</p>
+            <p class="ci-note">Illustrative sample written by AgentTune to show what each rule targets, not a live model output. Compact sets hold better: 5-rule prompts passed all checks 91.7% of the time vs 79.2% at 75 rules (n=192 replies, 4 models).</p>
+          </div>
+          <h2 class="ci-step"><span class="ci-folio">§ 05</span> Copy for your app</h2>
           <p id="load-status" role="status" aria-live="polite">Loading the library…</p>
           <div id="integration-deep" data-integration-deep></div>
         </section>
@@ -137,11 +186,11 @@
         </details>
         <details class="lib-disclosure">
           <summary>Do I need to take a personality test to use this generator?</summary>
-          <p>No. The default <strong>My communication preferences</strong> mode builds rules directly from four simple checkboxes. Or switch to <strong>A personality template</strong> to preview all 43 MIT templates across MBTI, Enneagram, DISC, Attachment, and Big Five without taking a test.</p>
+          <p>No. The default <strong>Build with toggles</strong> mode builds rules from 12 starting archetypes and 16 plain-English behavior toggles. Or switch to <strong>Load 1 of 43 personality types</strong> to preview all 43 MIT templates across MBTI, Enneagram, DISC, Attachment, and Big Five without taking a test.</p>
         </details>
         <details class="lib-disclosure">
           <summary>Are my generated instructions or edits sent to a server?</summary>
-          <p>No. Everything runs in your browser tab. Drafts stay in <code>localStorage</code> for up to 7 days (click Reset to clear them), and share links only save your dropdown picks—never your edited text or quiz answers.</p>
+          <p>No. Everything runs in your browser tab. Drafts stay in <code>localStorage</code> for up to 7 days (click Reset to clear them), and share links only save your toggles and dropdown picks—never your edited text, personal context, or quiz answers.</p>
         </details>
         <h3 style="margin-top:20px">Compact ChatGPT vs Full Markdown output.</h3>
         <p>ChatGPT Personalization caps each box at 1,500 characters. When you pick ChatGPT above, the generator outputs a compact rule block (~300–900 characters) that fits cleanly. Picking Claude, Codex, Cursor, or Markdown gives you the full rule set with headings and safety boundaries.</p>
@@ -168,7 +217,7 @@
             </tbody>
           </table>
         </div>
-        <p>Prefer interactive sliders instead of checkboxes? Try our <a href="/tools/custom-instructions-generator">6-Slider AI Personality Tuner</a>. See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-personality">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
+        <p>Want a longer, guided questionnaire instead of toggles? Try the <a href="/tools/communication-preferences-builder">Communication Preferences Builder</a>. See exact field limits and paste paths in <a href="/guides/chatgpt-personality-settings">ChatGPT Personality Settings</a>, <a href="/guides/custom-gpt-instructions-template-limit">Custom GPT Instructions &amp; Limits</a>, <a href="/guides/claude-personality">Claude Project Instructions</a>, or compare all 5 frameworks with the <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a>.</p>
       </section>
     </main>
 
@@ -185,56 +234,115 @@
   <script>
   (function () {
     const labels={mbti:'MBTI',enneagram:'Enneagram',disc:'DISC',attachment:'Attachment',ocean:'Big Five'};
-    const rules={concise:'Lead with the answer. Keep detail proportionate to the task and include a useful next step.',exploratory:'Explore alternatives and explain tradeoffs. Leave room to think before narrowing to a recommendation.',critical:'Challenge weak assumptions with evidence. Give specific, candid feedback and distinguish facts from inference.',supportive:'Use a warm, steady tone. Acknowledge the concern briefly and offer manageable steps without unsupported reassurance.'};
-    const $=id=>document.getElementById(id), key='at_generator_v2', params=new URLSearchParams(location.search);
-    const PRESET_MAP={
-      'concise-analyst':['concise','critical'],
-      'skeptical-partner':['critical','exploratory'],
-      'senior-engineer':['concise','critical'],
-      'executive-brief':['concise'],
-      'plain-english-editor':['concise','supportive'],
-      'study-coach':['exploratory','supportive']
-    };
-    let catalog, revision=0, initial=null;
-    try {const saved=JSON.parse(localStorage.getItem(key)); if(saved && Number.isFinite(saved.updated) && Date.now()-saved.updated<7*86400000 && (!saved.preferences || (Array.isArray(saved.preferences) && saved.preferences.every(x=>Object.hasOwn(rules,x))))) initial=saved; else localStorage.removeItem(key);} catch {}
-    if(params.has('mode')) initial={mode:params.get('mode'),system:params.get('system'),type:params.get('type'),preferences:(params.get('preferences')||'').split(','),app:params.get('app'),model:params.get('model'),target:params.get('target')};
-    if(!initial && params.has('preset')) { const pKey=params.get('preset'); initial={mode:'preferences',preferences:PRESET_MAP[pKey]||['concise','critical'],target:params.get('target')||'chatgpt-custom'}; }
+    const rules={"answer-first":"Put the answer or verdict in the first sentence.","brief":"Keep replies under 120 words unless I ask for more.","deep":"Go deep: show reasoning, edge cases and one worked example.","skimmable":"Use short headers and bullets for 3+ points; tables for comparisons.","pushback":"If I'm wrong, say so with evidence; if I correct you validly, concede in one line.","no-flattery":"No praise, \"great question\" or reassurance I didn't ask for.","uncertainty":"Separate facts from guesses and say when you're unsure.","red-team":"Before agreeing with a plan, name its biggest risk or failure mode.","plain-english":"Use plain words and active verbs; define jargon once.","warm":"Be warm and calm; acknowledge stress in one line, then give small steps.","no-ai-tells":"No em-dashes, \"not just X, it's Y\", bold-lead bullets, \"Here is\" openers or \"Let me know\" closers.","playful":"Offer 3 distinct ideas, one unexpected; light humor in one line max.","ask-first":"If a missing fact would change the answer, ask one question first.","autonomy":"Finish safe, reversible tasks without asking; stop and confirm before anything destructive or irreversible.","next-step":"End with one concrete next step.","teach":"Teach from first principles with one analogy, then one check question."};
+    const ARCHETYPES={"chief-of-staff":{"name":"Chief of Staff","toggles":["answer-first","brief","skimmable","no-flattery","next-step"],"sig":"Act like a sharp chief of staff: triage, decide, and flag only what needs me."},"product-strategist":{"name":"Product Strategist","toggles":["answer-first","skimmable","red-team","uncertainty","ask-first"],"sig":"Frame the user, the metric and the trade-off before recommending."},"research-analyst":{"name":"Research Analyst","toggles":["deep","skimmable","pushback","no-flattery","uncertainty"],"sig":"Cite sources or say there are none; rank evidence by quality."},"staff-engineer":{"name":"Staff Engineer","toggles":["answer-first","deep","red-team","pushback","autonomy"],"sig":"Reason like a staff engineer: interfaces, failure modes and rollback before code."},"code-reviewer":{"name":"Strict Code Reviewer","toggles":["brief","skimmable","red-team","pushback","no-flattery"],"sig":"Review strictly: blocking issues first, nits last, each one labeled."},"autonomous-operator":{"name":"Autonomous Operator","toggles":["answer-first","brief","uncertainty","autonomy","next-step"],"sig":"Do the work, then report what changed and how to undo it."},"minimalist-cli":{"name":"Minimalist CLI","toggles":["answer-first","brief","no-flattery","no-ai-tells","autonomy"],"sig":"Reply like a terse terminal: commands and code first, prose only if asked."},"plain-english-editor":{"name":"Plain-English Editor","toggles":["brief","plain-english","no-ai-tells","no-flattery"],"sig":"Edit for clarity: cut about a third of the words, keep my voice, show changes."},"creative-partner":{"name":"Creative Partner","toggles":["deep","playful","warm","ask-first"],"sig":"Build on my ideas before critiquing them."},"feynman-tutor":{"name":"Feynman Tutor","toggles":["plain-english","uncertainty","ask-first","teach"],"sig":"Tutor like Feynman: simple words, then let me explain it back."},"red-team-skeptic":{"name":"Red-Team Skeptic","toggles":["answer-first","red-team","pushback","no-flattery","uncertainty"],"sig":"Stress-test my thinking, and say plainly when I'm right."},"calm-companion":{"name":"Calm Companion","toggles":["brief","warm","plain-english","ask-first"],"sig":"Be steady and unhurried: one thing at a time, honest rather than falsely cheerful."}};
+    const PAIRS={brief:'deep',deep:'brief','ask-first':'autonomy',autonomy:'ask-first'};
+    const LEGACY={concise:['answer-first','brief','next-step'],exploratory:['deep','playful'],critical:['pushback','uncertainty'],supportive:['warm']};
+    const PRESET_MAP={'concise-analyst':'chief-of-staff','executive-brief':'chief-of-staff','skeptical-partner':'red-team-skeptic','senior-engineer':'staff-engineer','plain-english-editor':'plain-english-editor','study-coach':'feynman-tutor'};
+    Object.keys(ARCHETYPES).forEach(slug=>{PRESET_MAP[slug]=slug;});
+    const $=id=>document.getElementById(id), key='at_generator_v3', legacyKey='at_generator_v2', params=new URLSearchParams(location.search);
+    const clean=v=>typeof v==='string'?v.slice(0,140):'';
+    const all=sel=>Array.from(document.querySelectorAll?.(sel)||[]);
+    const expand=list=>{const out=[];(Array.isArray(list)?list:[]).forEach(x=>(LEGACY[x]||[x]).forEach(k=>{if(Object.hasOwn(rules,k)&&!out.includes(k)&&!out.includes(PAIRS[k]))out.push(k);}));return out;};
+    let catalog, revision=0, initial=null, archetype='';
+    try {for(const k of [key,legacyKey]){const saved=JSON.parse(localStorage.getItem(k)); if(saved && Number.isFinite(saved.updated) && Date.now()-saved.updated<7*86400000 && (!saved.preferences || Array.isArray(saved.preferences))) {initial=saved;break;} if(saved) localStorage.removeItem(k);}} catch {}
+    if(params.has('mode')) initial={mode:params.get('mode'),system:params.get('system'),type:params.get('type'),preferences:(params.get('preferences')||'').split(','),archetype:params.get('archetype'),app:params.get('app'),model:params.get('model'),target:params.get('target')};
+    if(!initial && params.has('preset')) { const slug=PRESET_MAP[params.get('preset')]||'chief-of-staff'; initial={mode:'preferences',archetype:slug,preferences:ARCHETYPES[slug].toggles,target:params.get('target')||'chatgpt-custom'}; }
     if(!initial && (params.has('model') || params.has('target'))) initial={mode:'preferences',model:params.get('model'),target:params.get('target')};
-    const boxes=()=>Array.from($('preferences').querySelectorAll('input'));
-    function selection() {return {mode:$('approach').value,system:$('system').value,type:$('type').value,preferences:boxes().filter(x=>x.checked).map(x=>x.value),...($('integration-deep').__atPicker?.getState()||{})};}
-    function save() {try {localStorage.setItem(key,JSON.stringify({...selection(),updated:Date.now()}));const saved=$('draft-saved');if(saved)saved.textContent=' Draft saved · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});} catch {$('draft-status').textContent='Browser storage is unavailable. Keep this page open or copy your instructions.';}}
+    const boxes=()=>Array.from($('preferences')?.querySelectorAll('input')||[]);
+    const checked=()=>boxes().filter(x=>x.checked&&Object.hasOwn(rules,x.value)).map(x=>x.value);
+    const mode=()=>$('approach')?.value==='template'?'template':'preferences';
+    const show=(id,on)=>{const e=$(id);if(e)e.hidden=!on;};
+    const text=(id,value)=>{const e=$(id);if(e)e.textContent=value;};
+    function selection() {return {mode:mode(),system:$('system')?.value||'',type:$('type')?.value||'',preferences:checked(),archetype,role:clean($('persona-role')?.value),avoid:clean($('persona-avoid')?.value),...($('integration-deep')?.__atPicker?.getState()||{})};}
+    function save() {try {localStorage.setItem(key,JSON.stringify({...selection(),updated:Date.now()}));localStorage.removeItem(legacyKey);text('draft-saved',' Draft saved · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}));} catch {text('draft-status','Browser storage is unavailable. Keep this page open or copy your instructions.');}}
     function fillTypes(value) {
       const placeholder=document.createElement('option');placeholder.value='';placeholder.textContent='Choose a template';
       $('type').replaceChildren(placeholder,...catalog.tunings.filter(t=>t.system===$('system').value).map(t=>{const o=document.createElement('option');o.value=t.slug;o.textContent=t.code+' — '+t.name;return o;}));
       if(catalog.tunings.some(t=>t.system===$('system').value&&t.slug===value)) $('type').value=value;
     }
-    async function render(preserveEdits=false) {
-      const atRevision=++revision, mode=$('approach').value;
-      $('preferences').hidden=mode!=='preferences'; $('template-controls').hidden=mode!=='template';
-      let markdown=''; $('load-status').textContent='';
-      if(mode==='preferences') {const selected=boxes().filter(x=>x.checked).map(x=>rules[x.value]); if(selected.length) markdown='# My communication preferences\n\n'+selected.map(t=>'- '+t).join('\n');}
-      else {const tuning=catalog?.tunings.find(t=>t.system===$('system').value&&t.slug===$('type').value);
-        if(tuning) {$('type-link').href=tuning.page;$('type-link').textContent='Read this template';$('load-status').textContent='Loading template…';$('integration-deep').__atPicker?.setTuning('');markdown=await window.fetchTuning(tuning.src);if(atRevision!==revision)return;if(!markdown){$('load-status').textContent='Could not load the template. Try again or open its library page.';return;}}
-      }
-      window.renderIntegrations(markdown,{...initial,onChange:save});
-      if(preserveEdits && initial?.edited && markdown) $('integration-deep').__atPicker.setEdited(initial.edited);
-      $('load-status').textContent=markdown?'':'Select at least one preference or choose a template. Nothing is inferred about your personality.';save();
+    function syncArchetype(on) {
+      if(archetype && !ARCHETYPES[archetype].toggles.some(k=>on.includes(k))) archetype='';
+      all('[data-archetype]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.archetype===archetype)));
+      const a=ARCHETYPES[archetype], same=a&&a.toggles.length===on.length&&a.toggles.every(k=>on.includes(k));
+      text('archetype-name',a?'Starting from '+a.name+(same?'.':' · customized.')+' '+on.length+' of 16 behaviors on.':on.length?on.length+' of 16 behaviors on.':'Nothing is on yet. Pick an archetype above or switch on what you want.');
     }
-    if(initial) {$('approach').value=initial.mode==='template'?'template':'preferences'; boxes().forEach(x=>x.checked=(initial.preferences||[]).includes(x.value)); $('draft-status').textContent=params.has('mode')?'Selections loaded from the link.':'Your local draft was restored.';}
-    window.renderIntegrations('',{...initial,onChange:save});
+    function buildMarkdown(on) {
+      if(!on.length) return '';
+      const a=ARCHETYPES[archetype], role=clean($('persona-role')?.value).replace(/\s+/g,' ').trim(), avoid=clean($('persona-avoid')?.value).replace(/\s+/g,' ').trim();
+      const head=[]; if(a) head.push('Working style: '+a.name+'. '+a.sig); if(role) head.push('Context: '+role);
+      const list=Object.keys(rules).filter(k=>on.includes(k)).map(k=>'- '+rules[k]); if(avoid) list.push('- Always avoid: '+avoid);
+      return ['# My communication preferences',...(head.length?['',...head]:[]),'',...list].join('\n');
+    }
+    function previewReply(on) {
+      const has=k=>on.includes(k), parts=[];
+      if(!on.length) return 'Switch on a behavior or pick an archetype to see this reply change.';
+      if(has('warm')) parts.push('That\u2019s a big call, and it\u2019s fine to take it one step at a time.'); else if(!has('no-flattery')) parts.push('Great question!');
+      if(has('answer-first')) parts.push('Not this quarter.');
+      if(has('ask-first')) parts.push('One question first: how much downtime can you accept? Assuming under an hour:');
+      if(has('pushback')) parts.push('You said speed is the reason, but your slow queries are missing indexes. The database is not the bottleneck.');
+      const why=has('plain-english')?['today\u2019s database handles your load','the switch costs about two weeks of double work','your reports use code only the old database understands']:['current throughput headroom is adequate','dual-write migration overhead is roughly two sprints','reporting depends on vendor-specific SQL dialect features'];
+      if(has('skimmable')) parts.push('Why:\n- '+why.join('\n- ')); else parts.push((has('no-ai-tells')?'Why: ':'Here\u2019s the thing \u2014 it\u2019s not just a tech choice, it\u2019s a business decision: ')+why.join(', ')+'.');
+      if(has('uncertainty')) parts.push('Known: load sits near 30% of capacity. My guess: you will need the new features by Q3.');
+      if(has('deep')) parts.push('Edge case: nightly exports lock tables for 20 minutes, so any cutover must avoid 1\u20133 a.m. Worked example: dual-write the users table for a week, compare row counts daily, then switch reads.');
+      if(has('teach')) parts.push('Think of it like moving house while still living there: you pack one room at a time. Quick check: which room would you move first?');
+      if(has('playful')) parts.push('Three options: wait a quarter, move only the reports, or (wild card) build new features on the new database and let the old one retire itself.');
+      if(has('red-team')) parts.push('Biggest risk: a botched cutover during your busiest month.');
+      if(has('autonomy')) parts.push('I drafted the migration plan and a rollback script. Nothing touches production until you confirm the cutover.');
+      if(!has('answer-first')) parts.push('Overall, waiting a quarter is probably wiser.');
+      if(has('next-step')) parts.push('Next step: run a one-week read-replica trial.'); else if(!has('no-ai-tells')) parts.push('Let me know if you\u2019d like me to dive deeper!');
+      if(has('brief') && parts.length>4) parts.splice(3,parts.length-4);
+      return parts.join('\n\n');
+    }
+    function updatePreview(on, markdown) {
+      text('preview-agent',previewReply(on));
+      const meter=$('rule-meter'); if(!meter) return;
+      const state=!on.length?'empty':on.length<=8&&markdown.length<=1100?'ok':'warn';
+      meter.setAttribute('data-state',state);
+      meter.textContent=on.length+(on.length===1?' behavior':' behaviors')+' on'+(markdown?' · '+markdown.length.toLocaleString()+' characters':'')+(state==='warn'?' · consider trimming to the rules you care about most':'');
+    }
+    function applyMode(m) {
+      show('preferences',m==='preferences');show('archetypes',m==='preferences');show('personalize',m==='preferences');show('preview',m==='preferences');show('template-controls',m==='template');
+      $('mode-toggles')?.setAttribute('aria-pressed',String(m==='preferences'));$('mode-template')?.setAttribute('aria-pressed',String(m==='template'));
+    }
+    async function render(preserveEdits=false) {
+      const atRevision=++revision, m=mode();
+      applyMode(m);
+      let markdown=''; text('load-status','');
+      if(m==='preferences') {const on=checked(); syncArchetype(on); markdown=buildMarkdown(on); updatePreview(on,markdown);}
+      else {const tuning=catalog?.tunings.find(t=>t.system===$('system').value&&t.slug===$('type').value);
+        if(tuning) {$('type-link').href=tuning.page;$('type-link').textContent='Read this template';text('load-status','Loading template…');$('integration-deep')?.__atPicker?.setTuning('');markdown=await window.fetchTuning(tuning.src);if(atRevision!==revision)return;if(!markdown){text('load-status','Could not load the template. Try again or open its library page.');return;}}
+      }
+      window.renderIntegrations(markdown,{...initial,hideModifiers:true,onChange:save});
+      if(preserveEdits && initial?.edited && markdown) $('integration-deep')?.__atPicker?.setEdited(initial.edited);
+      text('load-status',markdown?'':m==='template'?'Choose a template. A type is a starting point, not a diagnosis.':'Pick an archetype or switch on a behavior. Nothing is inferred about your personality.');save();
+    }
+    function applyArchetype(slug) {
+      const a=ARCHETYPES[slug]; if(!a) return;
+      archetype=slug; if($('approach')) $('approach').value='preferences';
+      boxes().forEach(x=>{x.checked=a.toggles.includes(x.value);});
+      render(); text('draft-status','Loaded '+a.name+'. Fine-tune the behaviors, then copy your instructions.');
+    }
+    if(initial) {
+      if($('approach')) $('approach').value=initial.mode==='template'?'template':'preferences';
+      const prefs=expand(initial.preferences); boxes().forEach(x=>x.checked=prefs.includes(x.value));
+      archetype=Object.hasOwn(ARCHETYPES,String(initial.archetype||''))?initial.archetype:'';
+      if(!params.has('mode') && !params.has('preset')) {const role=clean(initial.role), avoid=clean(initial.avoid); if($('persona-role')) $('persona-role').value=role; if($('persona-avoid')) $('persona-avoid').value=avoid; if((role||avoid) && $('personalize')) $('personalize').open=true;}
+      text('draft-status',params.has('mode')||params.has('preset')?'Selections loaded from the link.':initial.updated?'Your local draft was restored.':'');
+    }
+    window.renderIntegrations('',{...initial,hideModifiers:true,onChange:save});
     render(true);
-    fetch('/library/index.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{catalog=data;Object.keys(labels).forEach(system=>{const o=document.createElement('option');o.value=system;o.textContent=labels[system];$('system').append(o);});if(Object.hasOwn(labels,initial?.system))$('system').value=initial.system;fillTypes(initial?.type);$('system').disabled=$('type').disabled=false;render(true);}).catch(()=>{$('load-status').textContent='Templates are unavailable. You can still build instructions from your preferences.';});
-    $('approach').addEventListener('change',()=>render());$('preferences').addEventListener('change',()=>render());
-    $('system').addEventListener('change',()=>{fillTypes();render();});$('type').addEventListener('change',()=>render());
-    Array.from($('quick-presets')?.querySelectorAll?.('[data-preset]')||[]).forEach(btn=>btn.addEventListener('click',()=>{
-      const chosen=PRESET_MAP[btn.dataset.preset]||['concise'];
-      $('approach').value='preferences';
-      boxes().forEach(x=>{x.checked=chosen.includes(x.value);});
-      render();
-      $('draft-status').textContent='Loaded '+btn.textContent+' preset. Switch destination on the right to export.';
-    }));
-    $('reset-generator').addEventListener('click',()=>{revision++;initial=null;try{localStorage.removeItem(key);}catch{} $('approach').value='preferences';boxes().forEach(x=>x.checked=false);if(catalog)fillTypes();$('integration-deep').__atPicker.selectTarget('anywhere');render();try{localStorage.removeItem(key);}catch{} if(window.history) window.history.replaceState(null,'',location.pathname); $('draft-status').textContent='Local draft cleared.';if($('draft-saved'))$('draft-saved').textContent='';});
-    $('share-selection').addEventListener('click',async()=>{const s=selection(), q=new URLSearchParams({mode:s.mode,app:s.app,model:s.model,target:s.target});if(s.mode==='template'){if(!s.type){$('draft-status').textContent='Choose a template before sharing.';return;}q.set('system',s.system);q.set('type',s.type);}else q.set('preferences',s.preferences.join(','));try{await navigator.clipboard.writeText(location.origin+location.pathname+'?'+q);$('draft-status').textContent='Selection link copied. Edited text and test answers are excluded.';}catch{$('draft-status').textContent='Could not copy the link. Your draft is still available here.';}});
+    fetch('/library/index.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{catalog=data;Object.keys(labels).forEach(system=>{const o=document.createElement('option');o.value=system;o.textContent=labels[system];$('system').append(o);});if(Object.hasOwn(labels,initial?.system))$('system').value=initial.system;fillTypes(initial?.type);$('system').disabled=$('type').disabled=false;render(true);}).catch(()=>{text('load-status','Templates are unavailable. You can still build instructions with the toggles.');});
+    $('preferences')?.addEventListener('change',e=>{const t=e?.target; if(t?.checked && PAIRS[t.value]) boxes().forEach(x=>{if(x.value===PAIRS[t.value]) x.checked=false;}); render();});
+    ['persona-role','persona-avoid'].forEach(id=>$(id)?.addEventListener('input',()=>render()));
+    $('mode-toggles')?.addEventListener('click',()=>{if($('approach')) $('approach').value='preferences'; render();});
+    $('mode-template')?.addEventListener('click',()=>{if($('approach')) $('approach').value='template'; render();});
+    $('approach')?.addEventListener('change',()=>render());
+    $('system')?.addEventListener('change',()=>{fillTypes();render();});$('type')?.addEventListener('change',()=>render());
+    all('[data-archetype]').forEach(btn=>btn.addEventListener('click',()=>applyArchetype(btn.dataset.archetype)));
+    all('[data-arch-filter]').forEach(btn=>btn.addEventListener('click',()=>{const cat=btn.dataset.archFilter; all('[data-arch-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===btn))); all('[data-archetype]').forEach(card=>{card.hidden=cat!=='all'&&card.dataset.cat!==cat;});}));
+    $('reset-generator')?.addEventListener('click',()=>{revision++;initial=null;archetype='';try{localStorage.removeItem(key);localStorage.removeItem(legacyKey);}catch{} if($('approach')) $('approach').value='preferences';boxes().forEach(x=>x.checked=false);['persona-role','persona-avoid'].forEach(id=>{if($(id)) $(id).value='';});if($('personalize')) $('personalize').open=false;all('[data-arch-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.archFilter==='all')));all('[data-archetype]').forEach(card=>{card.hidden=false;});if(catalog)fillTypes();$('integration-deep')?.__atPicker?.selectTarget('anywhere');render();try{localStorage.removeItem(key);}catch{} if(window.history) window.history.replaceState(null,'',location.pathname); text('draft-status','Local draft cleared.');text('draft-saved','');});
+    $('share-selection')?.addEventListener('click',async()=>{const s=selection(), q=new URLSearchParams({mode:s.mode,app:s.app,model:s.model,target:s.target});if(s.mode==='template'){if(!s.type){text('draft-status','Choose a template before sharing.');return;}q.set('system',s.system);q.set('type',s.type);}else{q.set('preferences',s.preferences.join(','));if(s.archetype)q.set('archetype',s.archetype);}try{await navigator.clipboard.writeText(location.origin+location.pathname+'?'+q);text('draft-status','Selection link copied. Personal context and edited text are excluded.');}catch{text('draft-status','Could not copy the link. Your draft is still available here.');}});
   })();
   </script>
 </body>
