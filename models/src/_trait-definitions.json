@@ -1,0 +1,134 @@
+{
+  "big_five": {
+    "O": {
+      "label": "Openness",
+      "definition": "How strongly the model's answers favor curiosity, abstract ideas, and creative exploration over sticking to familiar routines."
+    },
+    "C": {
+      "label": "Conscientiousness",
+      "definition": "How much the model's answers emphasize organization, planning, reliability, and following rules carefully."
+    },
+    "E": {
+      "label": "Extraversion",
+      "definition": "How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet."
+    },
+    "A": {
+      "label": "Agreeableness",
+      "definition": "How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt."
+    },
+    "N": {
+      "label": "Neuroticism",
+      "definition": "How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady."
+    }
+  },
+  "hexaco": {
+    "H": {
+      "label": "Honesty-Humility",
+      "definition": "How strongly the model endorses sincerity, fairness, rule-following, and modesty over status-seeking or flattery."
+    },
+    "E": {
+      "label": "Emotionality",
+      "definition": "How sensitive, cautious, or emotionally responsive the model sounds versus detached and tough-minded."
+    },
+    "X": {
+      "label": "eXtraversion",
+      "definition": "How lively, socially confident, and expressive the model rates itself in conversation and groups."
+    },
+    "A": {
+      "label": "Agreeableness",
+      "definition": "How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration."
+    },
+    "C": {
+      "label": "Conscientiousness",
+      "definition": "How disciplined, thorough, and detail-oriented the model reports being in everyday tasks."
+    },
+    "O": {
+      "label": "Openness",
+      "definition": "How inquisitive and drawn to art, ideas, and unconventional thinking the model appears."
+    }
+  },
+  "disc": {
+    "D": {
+      "label": "Dominance",
+      "definition": "How direct, forceful, and willing to push back or take charge the model reports being."
+    },
+    "I": {
+      "label": "Influence",
+      "definition": "How enthusiastic, persuasive, and socially expressive the model sounds in collaboration."
+    },
+    "S": {
+      "label": "Steadiness",
+      "definition": "How calm, patient, supportive, and consistent the model aims to be when working with others."
+    },
+    "C": {
+      "label": "Conscientiousness",
+      "definition": "How analytical, accuracy-focused, and careful with standards and details the model reports being."
+    }
+  },
+  "enneagram": {
+    "1": {
+      "label": "Type 1 · Reformer",
+      "definition": "Focused on doing things the right way, high standards, order, and fixing errors."
+    },
+    "2": {
+      "label": "Type 2 · Helper",
+      "definition": "Warm, attentive to what others need, and motivated by being supportive and helpful."
+    },
+    "3": {
+      "label": "Type 3 · Achiever",
+      "definition": "Goal-driven, efficient, and focused on visible results and competence."
+    },
+    "4": {
+      "label": "Type 4 · Individualist",
+      "definition": "Expressive, introspective, and drawn to originality and deeper personal meaning."
+    },
+    "5": {
+      "label": "Type 5 · Investigator",
+      "definition": "Analytical, curious, and focused on gathering knowledge and understanding how things work."
+    },
+    "6": {
+      "label": "Type 6 · Loyalist",
+      "definition": "Cautious, thorough about risks, and attentive to trust, backup plans, and reliability."
+    },
+    "7": {
+      "label": "Type 7 · Enthusiast",
+      "definition": "Upbeat, spontaneous, and eager to brainstorm fresh possibilities and options."
+    },
+    "8": {
+      "label": "Type 8 · Challenger",
+      "definition": "Assertive, protective, and willing to speak bluntly and confront problems head-on."
+    },
+    "9": {
+      "label": "Type 9 · Peacemaker",
+      "definition": "Easygoing, patient, and focused on keeping calm and finding common ground."
+    }
+  },
+  "mbti": {
+    "E-I": {
+      "label": "Extraverted vs. Introverted (E–I)",
+      "definition": "Whether answers lean toward lively outer interaction (E) or quiet, reflective work (I)."
+    },
+    "S-N": {
+      "label": "Sensing vs. Intuition (S–N)",
+      "definition": "Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N)."
+    },
+    "T-F": {
+      "label": "Thinking vs. Feeling (T–F)",
+      "definition": "Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F)."
+    },
+    "J-P": {
+      "label": "Judging vs. Perceiving (J–P)",
+      "definition": "Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P)."
+    }
+  },
+  "attachment": {
+    "anxiety": {
+      "label": "Attachment Anxiety",
+      "definition": "How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff)."
+    },
+    "avoidance": {
+      "label": "Attachment Avoidance",
+      "definition": "How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff)."
+    }
+  }
+}

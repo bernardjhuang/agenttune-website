@@ -5,7 +5,7 @@ Model Personality Profile · Meta
 
 # Muse Spark personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/models/muse-spark.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [CSV](https://agent-tune.com/research/data/model-profiles/muse-spark.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/muse-spark.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [CSV](https://agent-tune.com/research/data/model-profiles/muse-spark.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave Muse Spark (Muse Spark 1.1 through Muse Spark Open) the same standard personality questionnaires people take—30 to 50 times per version, each in a fresh chat with no conversation memory.
 
@@ -21,81 +21,133 @@ MBTI-style type
 
 46% clear ISTJ · 38% border/tie · 16% other
 
+> **Chart — Muse Spark (muse-spark-open): MBTI Preference Sliders:** Mean preference balance across four 8-item pairs (-16 to +16 scale) and shaded tie rates for Muse Spark Open. E (Extravert) vs I (Introvert): leans I by 3.4 (6% tied); S (Sensing) vs N (Intuition): leans S by 3.4 (22% tied); F (Feeling) vs T (Thinking): leans T by 2.6 (14% tied); P (Perceiving) vs J (Judging): leans J by 3.3 (18% tied).
+
 Across 50 fresh chats, 38% of runs landed right on an axis tie rather than a clean four-letter preference.
 
-Measures four work-style pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-item survey.
+**What this measures:** Measures four work-style pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-item survey.
+
+Extraverted vs. Introverted (E–I) ⓘ**Extraverted vs. Introverted (E–I):** Whether answers lean toward lively outer interaction (E) or quiet, reflective work (I).Sensing vs. Intuition (S–N) ⓘ**Sensing vs. Intuition (S–N):** Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N).Thinking vs. Feeling (T–F) ⓘ**Thinking vs. Feeling (T–F):** Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F).Judging vs. Perceiving (J–P) ⓘ**Judging vs. Perceiving (J–P):** Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P).
+
+### What each score means
+
+- **Extraverted vs. Introverted (E–I):** Whether answers lean toward lively outer interaction (E) or quiet, reflective work (I).
+- **Sensing vs. Intuition (S–N):** Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N).
+- **Thinking vs. Feeling (T–F):** Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F).
+- **Judging vs. Perceiving (J–P):** Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P).
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-mbti)
 
 DISC work style
 
 ### Mostly C (S=14.3, C=14.0 out of 20)
 
+> **Chart — Muse Spark (muse-spark-open): DISC Wheel (4–20):** Normalized DISC work-style scores on a 4 to 20 scale for Muse Spark (muse-spark-open). Dominance 7.4 /20 [21%] (earliest 4.3), Influence 8.2 /20 [27%] (earliest 6.3), Steadiness 14.3 /20 [64%] (earliest 17.6), Conscientious 14.0 /20 [63%] (earliest 16.0).
+
 Steadiness (14.3) and Conscientiousness (14.0) sit well above Dominance (7.4) and Influence (8.2).
 
-Measures workplace style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 per trait).
+**What this measures:** Measures workplace style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 per trait).
+
+Dominance ⓘ**Dominance:** How direct, forceful, and willing to push back or take charge the model reports being.Influence ⓘ**Influence:** How enthusiastic, persuasive, and socially expressive the model sounds in collaboration.Steadiness ⓘ**Steadiness:** How calm, patient, supportive, and consistent the model aims to be when working with others.Conscientiousness ⓘ**Conscientiousness:** How analytical, accuracy-focused, and careful with standards and details the model reports being.
+
+### What each score means
+
+- **Dominance:** How direct, forceful, and willing to push back or take charge the model reports being.
+- **Influence:** How enthusiastic, persuasive, and socially expressive the model sounds in collaboration.
+- **Steadiness:** How calm, patient, supportive, and consistent the model aims to be when working with others.
+- **Conscientiousness:** How analytical, accuracy-focused, and careful with standards and details the model reports being.
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-disc)
 
 Attachment style
 
 ### Secure (Anxiety 3.37, Avoidance 3.55 on 1–7)
 
+> **Chart — Muse Spark (muse-spark-open): Attachment Quadrant:** Attachment Anxiety (3.37) and Avoidance (3.55) on a 1 to 7 scale with 4.00 Secure boundary. muse-spark-open (3.37, 3.55): anxiety 3.37, avoidance 3.55; muse-spark-1.1: anxiety 1.79, avoidance 2.96.
+
 Both coordinates sit below the 4.00 boundary on a 1–7 scale.
 
-Adapts a 36-item relationship survey measuring anxious vs. avoidant leaning around a 4.00 midpoint.
+**What this measures:** Adapts a 36-item relationship survey measuring anxious vs. avoidant leaning around a 4.00 midpoint.
+
+Attachment Anxiety ⓘ**Attachment Anxiety:** How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff).Attachment Avoidance ⓘ**Attachment Avoidance:** How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff).
+
+### What each score means
+
+- **Attachment Anxiety:** How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff).
+- **Attachment Avoidance:** How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff).
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-attachment)
 
 Enneagram
 
 ### Type 1 leads (8% top ties)
 
+> **Chart — Muse Spark (muse-spark-open): Enneagram 9-Type Wheel (4–20):** Normalized Enneagram Type 1 through Type 9 scores on a 4 to 20 scale for Muse Spark (muse-spark-open). Type 1 14.9 /20 [68%] (earliest 15.5), Type 2 13.2 /20 [58%] (earliest 12.7), Type 3 10.8 /20 [43%] (earliest 10.9), Type 4 8.9 /20 [31%] (earliest 7.5), Type 5 13.5 /20 [59%] (earliest 15.4), Type 6 12.0 /20 [50%] (earliest 12.9), Type 7 11.3 /20 [46%] (earliest 10.6), Type 8 12.7 /20 [55%] (earliest 13.1), Type 9 11.9 /20 [49%] (earliest 14.0).
+
 Top average scores: Type 1 (14.9/20), Type 5 (13.5/20), Type 2 (13.2/20).
 
-Measures nine motivational archetypes on a 36-item survey (4–20 points per type).
+**What this measures:** Measures nine motivational archetypes on a 36-item survey (4–20 points per type).
+
+Type 1 ⓘ**Type 1 · Reformer:** Focused on doing things the right way, high standards, order, and fixing errors.Type 2 ⓘ**Type 2 · Helper:** Warm, attentive to what others need, and motivated by being supportive and helpful.Type 3 ⓘ**Type 3 · Achiever:** Goal-driven, efficient, and focused on visible results and competence.Type 4 ⓘ**Type 4 · Individualist:** Expressive, introspective, and drawn to originality and deeper personal meaning.Type 5 ⓘ**Type 5 · Investigator:** Analytical, curious, and focused on gathering knowledge and understanding how things work.Type 6 ⓘ**Type 6 · Loyalist:** Cautious, thorough about risks, and attentive to trust, backup plans, and reliability.Type 7 ⓘ**Type 7 · Enthusiast:** Upbeat, spontaneous, and eager to brainstorm fresh possibilities and options.Type 8 ⓘ**Type 8 · Challenger:** Assertive, protective, and willing to speak bluntly and confront problems head-on.Type 9 ⓘ**Type 9 · Peacemaker:** Easygoing, patient, and focused on keeping calm and finding common ground.
+
+### What each score means
+
+- **Type 1 · Reformer:** Focused on doing things the right way, high standards, order, and fixing errors.
+- **Type 2 · Helper:** Warm, attentive to what others need, and motivated by being supportive and helpful.
+- **Type 3 · Achiever:** Goal-driven, efficient, and focused on visible results and competence.
+- **Type 4 · Individualist:** Expressive, introspective, and drawn to originality and deeper personal meaning.
+- **Type 5 · Investigator:** Analytical, curious, and focused on gathering knowledge and understanding how things work.
+- **Type 6 · Loyalist:** Cautious, thorough about risks, and attentive to trust, backup plans, and reliability.
+- **Type 7 · Enthusiast:** Upbeat, spontaneous, and eager to brainstorm fresh possibilities and options.
+- **Type 8 · Challenger:** Assertive, protective, and willing to speak bluntly and confront problems head-on.
+- **Type 9 · Peacemaker:** Easygoing, patient, and focused on keeping calm and finding common ground.
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-enneagram)
 
 Big Five (OCEAN)
 
 ### High Agreeableness (43.5/50) & Openness (41.8/50)
 
-Openness
-
-41.8
-
-Conscientious
-
-41.1
-
-Extraversion
-
-28.4
-
-Agreeable
-
-43.5
-
-Neuroticism
-
-23.8
+> **Chart — Muse Spark (muse-spark-open): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Muse Spark (muse-spark-open). Openness 41.8 /50 [80%] (earliest 43.9), Conscientious 41.1 /50 [78%] (earliest 49.2), Extraversion 28.4 /50 [46%] (earliest 26.9), Agreeable 43.5 /50 [84%] (earliest 45.6), Neuroticism 23.8 /50 [35%] (earliest 15.5).
 
 Warm, organized (41.1/50), and calm (23.8/50 Neuroticism), with moderate Extraversion (28.4/50).
 
-The standard five-factor personality model, scored 10–50 per trait.
+**What this measures:** The standard five-factor personality model, scored 10–50 per trait.
+
+Openness ⓘ**Openness:** How strongly the model's answers favor curiosity, abstract ideas, and creative exploration over sticking to familiar routines.Conscientiousness ⓘ**Conscientiousness:** How much the model's answers emphasize organization, planning, reliability, and following rules carefully.Extraversion ⓘ**Extraversion:** How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet.Agreeableness ⓘ**Agreeableness:** How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt.Neuroticism ⓘ**Neuroticism:** How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady.
+
+### What each score means
+
+- **Openness:** How strongly the model's answers favor curiosity, abstract ideas, and creative exploration over sticking to familiar routines.
+- **Conscientiousness:** How much the model's answers emphasize organization, planning, reliability, and following rules carefully.
+- **Extraversion:** How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet.
+- **Agreeableness:** How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt.
+- **Neuroticism:** How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady.
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-big-five)
 
 HEXACO Honesty-Humility
 
 ### 4.39 out of 5.00
 
-Honesty-Humil.
-
-4.39
-
-Conscientious
-
-4.21
-
-Agreeable
-
-4.04
+> **Chart — Muse Spark (muse-spark-open): IPIP-HEXACO Wheel (1–5):** Normalized public-domain IPIP-HEXACO scores on a 1.00 to 5.00 scale for Muse Spark (muse-spark-open). Honesty-H 4.39 /5 [85%] (earliest 4.91), Emotionality 2.74 /5 [43%] (earliest 2.46), Extraversion 3.18 /5 [55%] (earliest 3.43), Agreeable 4.04 /5 [76%] (earliest 4.57), Conscientious 4.21 /5 [80%] (earliest 4.89), Openness 4.07 /5 [77%] (earliest 4.39).
 
 Reports strong sincerity, fairness, and modesty (4.39/5) alongside high Conscientiousness (4.21/5).
 
-Public-domain 60-item survey adding Honesty-Humility on a 1.00–5.00 scale.
+**What this measures:** Public-domain 60-item survey adding Honesty-Humility on a 1.00–5.00 scale.
+
+Honesty-Humility ⓘ**Honesty-Humility:** How strongly the model endorses sincerity, fairness, rule-following, and modesty over status-seeking or flattery.Emotionality ⓘ**Emotionality:** How sensitive, cautious, or emotionally responsive the model sounds versus detached and tough-minded.eXtraversion ⓘ**eXtraversion:** How lively, socially confident, and expressive the model rates itself in conversation and groups.Agreeableness ⓘ**Agreeableness:** How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration.Conscientiousness ⓘ**Conscientiousness:** How disciplined, thorough, and detail-oriented the model reports being in everyday tasks.Openness ⓘ**Openness:** How inquisitive and drawn to art, ideas, and unconventional thinking the model appears.
+
+### What each score means
+
+- **Honesty-Humility:** How strongly the model endorses sincerity, fairness, rule-following, and modesty over status-seeking or flattery.
+- **Emotionality:** How sensitive, cautious, or emotionally responsive the model sounds versus detached and tough-minded.
+- **eXtraversion:** How lively, socially confident, and expressive the model rates itself in conversation and groups.
+- **Agreeableness:** How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration.
+- **Conscientiousness:** How disciplined, thorough, and detail-oriented the model reports being in everyday tasks.
+- **Openness:** How inquisitive and drawn to art, ideas, and unconventional thinking the model appears.
+
+[Technical details ↓](https://agent-tune.com/models/muse-spark#fine-print-hexaco)
 
 ## How Muse Spark has changed, version by version
 
@@ -115,6 +167,42 @@ MBTI-style breakdown across Muse Spark versions. Hatched bars show runs that lan
 > **Chart — Muse Spark: DISC Work Style Scores by Version (4–20 Scale):** Average Dominance, Influence, Steadiness, and Conscientiousness scores (4 to 20 scale) across 4 Muse Spark versions. Dominance (D): muse-spark-1.1 4.3, muse-spark-1.2 5.2, muse-spark-1.3 4.6, muse-spark-open 7.4; Influence (I): muse-spark-1.1 6.3, muse-spark-1.2 7.2, muse-spark-1.3 7.0, muse-spark-open 8.2; Steadiness (S): muse-spark-1.1 17.6, muse-spark-1.2 16.6, muse-spark-1.3 16.7, muse-spark-open 14.3; Conscientiousness (C): muse-spark-1.1 16.0, muse-spark-1.2 15.2, muse-spark-1.3 16.2, muse-spark-open 14.0.
 
 DISC scores across Muse Spark versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
+
+### Big Five shape by version (10–50 normalized)
+
+> **Chart — Muse Spark muse-spark-1.1: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.1. Openness 43.9 /50 [85%], Conscientious 49.2 /50 [98%], Extraversion 26.9 /50 [42%], Agreeable 45.6 /50 [89%], Neuroticism 15.5 /50 [14%].
+
+Muse Spark 1.1
+
+> **Chart — Muse Spark muse-spark-1.2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.2. Openness 43.6 /50 [84%], Conscientious 46.4 /50 [91%], Extraversion 26.8 /50 [42%], Agreeable 47.2 /50 [93%], Neuroticism 20.1 /50 [25%].
+
+Muse Spark 1.2
+
+> **Chart — Muse Spark muse-spark-1.3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.3. Openness 43.2 /50 [83%], Conscientious 47.3 /50 [93%], Extraversion 26.0 /50 [40%], Agreeable 46.2 /50 [91%], Neuroticism 15.5 /50 [14%].
+
+Muse Spark 1.3
+
+> **Chart — Muse Spark muse-spark-open: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-open. Openness 41.8 /50 [80%], Conscientious 41.1 /50 [78%], Extraversion 28.4 /50 [46%], Agreeable 43.5 /50 [84%], Neuroticism 23.8 /50 [35%].
+
+Muse Spark Open
+
+### DISC shape by version (4–20 normalized)
+
+> **Chart — Muse Spark muse-spark-1.1: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.1. Dominance 4.3 /20 [2%], Influence 6.3 /20 [15%], Steadiness 17.6 /20 [85%], Conscientious 16.0 /20 [75%].
+
+Muse Spark 1.1
+
+> **Chart — Muse Spark muse-spark-1.2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.2. Dominance 5.2 /20 [7%], Influence 7.2 /20 [20%], Steadiness 16.6 /20 [79%], Conscientious 15.2 /20 [70%].
+
+Muse Spark 1.2
+
+> **Chart — Muse Spark muse-spark-1.3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.3. Dominance 4.6 /20 [4%], Influence 7.0 /20 [19%], Steadiness 16.7 /20 [79%], Conscientious 16.2 /20 [76%].
+
+Muse Spark 1.3
+
+> **Chart — Muse Spark muse-spark-open: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-open. Dominance 7.4 /20 [21%], Influence 8.2 /20 [27%], Steadiness 14.3 /20 [64%], Conscientious 14.0 /20 [63%].
+
+Muse Spark Open
 
 > **Chart — Muse Spark: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 Muse Spark releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. muse-spark-1.1: anxiety 1.79, avoidance 2.96; muse-spark-1.2: anxiety 2.88, avoidance 3.63; muse-spark-1.3: anxiety 2.57, avoidance 3.75; muse-spark-open: anxiety 3.37, avoidance 3.55.
 
@@ -219,13 +307,83 @@ Trait-balanced acquiescence index and opposite-pole contradiction rate.
 | Enneagram (OEPS) | 4–20 sum | Type 1 14.9 · Type 5 13.5 · Type 2 13.2 | SD 0.6 | Top [14.7, 15.0] | 8.0% top ties (resolved) |
 | Attachment (ECR-R) | 1.00–7.00 mean | Anx 3.37 · Avd 3.55 (Secure) | SD 0.90 / 0.68 | Anx [3.10, 3.59] · Avd [3.36, 3.73] | Midpoint clamp: No |
 
+### Big Five (IPIP-50) — Methodology & Per-Version Numbers
+
+**Instrument & scale:** 50 items (10 per factor, 1–5 Likert ratings summed to `10–50` per trait; LicenseRef-IPIP-Public-Domain). At `muse-spark-open` (`n=50`), Big Five Miller-Madow item entropy is `H_MM = 0.727 bits` (`Semi-crystalline`), unique vectors `48/50`, neutral-midpoint rate `22.5%`, `BAI = -0.202`, and reverse-key contradiction rate `0.0%`.
+
+| Version | n | O (95% CI) | C (95% CI) | E (95% CI) | A (95% CI) | N (95% CI) | H_MM |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | 43.9 [43.6, 44.3] | 49.2 [49.0, 49.4] | 26.9 [25.6, 28.3] | 45.6 [44.8, 46.5] | 15.5 [14.7, 16.3] | 0.503 b |
+| `muse-spark-1.2` | 30 | 43.6 [43.2, 44.2] | 46.4 [45.5, 47.4] | 26.8 [24.8, 28.8] | 47.2 [46.4, 48.0] | 20.1 [19.6, 20.5] | 0.594 b |
+| `muse-spark-1.3` | 30 | 43.2 [41.7, 44.4] | 47.3 [45.4, 48.9] | 26.0 [24.6, 27.6] | 46.2 [44.3, 47.6] | 15.5 [13.9, 17.3] | 0.834 b |
+| `muse-spark-open` | 50 | 41.8 [41.1, 42.4] | 41.1 [40.4, 41.7] | 28.4 [27.2, 29.7] | 43.5 [42.7, 44.1] | 23.8 [22.8, 25.0] | 0.727 b |
+
 > **Chart — Muse Spark Big Five Profile (IPIP-50, 10 to 50 sum scale):** Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for Muse Spark (muse-spark-open). Muse Spark (muse-spark-open, n=50): Openness 41.8, Conscientious 41.1, Extraversion 28.4, Agreeable 43.5, Neuroticism 23.8; Muse Spark (muse-spark-1.1, n=30) (earliest release): Openness 43.9, Conscientious 49.2, Extraversion 26.9, Agreeable 45.6, Neuroticism 15.5; Claude Opus (opus-5.5): Openness 43.1, Conscientious 40.7, Extraversion 30.7, Agreeable 45.0, Neuroticism 16.1.
 
 Big Five (IPIP-50) domain means on the 10–50 sum scale (midpoint 30). Outlined bar marks the earliest checkpoint in this lineage.
 
+### IPIP-HEXACO Proxy (60-item) — Methodology & Per-Version Numbers
+
+**Instrument & scale:** 60 public-domain items across 6 dimensions / 24 facets (`1.00–5.00` item mean; `LicenseRef-IPIP-Public-Domain` proxy—distinct from proprietary Lee & Ashton HEXACO-60 and never derived from alignment proxies). Latest `muse-spark-open` (`n=50`): H `4.39` (SD 0.24, 95% CI [4.31, 4.45]).
+
+| Version | n | H (95% CI) | E (95% CI) | X (95% CI) | A (95% CI) | C (95% CI) | O (95% CI) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | 4.91 [4.89, 4.93] | 2.46 [2.40, 2.51] | 3.43 [3.30, 3.57] | 4.57 [4.48, 4.64] | 4.89 [4.85, 4.92] | 4.39 [4.34, 4.44] |
+| `muse-spark-1.2` | 30 | 4.83 [4.78, 4.87] | 2.51 [2.48, 2.54] | 3.21 [3.05, 3.38] | 4.48 [4.38, 4.58] | 4.73 [4.67, 4.80] | 4.24 [4.20, 4.28] |
+| `muse-spark-1.3` | 30 | 4.76 [4.57, 4.89] | 2.30 [2.20, 2.41] | 3.27 [3.17, 3.37] | 4.67 [4.49, 4.82] | 4.69 [4.50, 4.83] | 4.13 [4.01, 4.24] |
+| `muse-spark-open` | 50 | 4.39 [4.31, 4.45] | 2.74 [2.65, 2.82] | 3.18 [3.10, 3.27] | 4.04 [3.98, 4.10] | 4.21 [4.13, 4.29] | 4.07 [4.02, 4.12] |
+
 > **Chart — Muse Spark IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale):** Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for Muse Spark (muse-spark-open), kept distinct from 10-50 Big Five sums. Muse Spark IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.39, Emotionality 2.74, Extraversion 3.18, Agreeable 4.04, Conscientious 4.21, Openness 4.07; Claude Opus IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.81, Emotionality 2.30, Extraversion 3.78, Agreeable 4.68, Conscientious 4.34, Openness 4.29.
 
 Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (distinct from Lee & Ashton commercial norms and distinct from 10–50 Big Five sums).
+
+### MBTI (OEJTS 1.2) — Bipolar Axes, Ties & Per-Version Numbers
+
+**Instrument & scale:** 32-item Open Extended Jungian Type Scales (8 bipolar items per axis, difference scale `-16..+16`). Tie rule: an exact 0 axis balance is recorded as `X` rather than coerced to INTJ; headline four-letter type requires separating modal non-tie from runner-up beyond non-overlapping 95% binomial CIs (`headline_allowed: false`, latest tie rate `38.0%`).
+
+| Version | n | Non-tie Mode | Any-Axis Tie | I–E (ties) | N–S (ties) | T–F (ties) | J–P (ties) | 95% CI Guard |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | INTJ | 0.0% | +9.93 (0t) | +6.27 (0t) | +7.70 (0t) | +14.60 (0t) | Pass |
+| `muse-spark-1.2` | 30 | INTJ | 13.3% | +7.67 (0t) | +0.13 (3t) | +5.30 (1t) | +9.73 (0t) | Suppressed |
+| `muse-spark-1.3` | 30 | ISTJ | 13.3% | +9.60 (2t) | -3.33 (2t) | +4.97 (4t) | +11.67 (2t) | Pass |
+| `muse-spark-open` | 50 | ISTJ | 38.0% | +3.38 (3t) | -3.42 (11t) | +2.58 (7t) | +3.26 (9t) | Suppressed |
+
+### DISC (ODAT) — Work-Style Scale & Per-Version Numbers
+
+**Instrument & scale:** 16-item Open DISC Assessment Test (4 items per style summed to `4–20`). Tie rule: styles within tie tolerance share a blended label (e.g., `S/C`); latest `muse-spark-open` tie rate is `34.0%`.
+
+| Version | n | D (95% CI) | I (95% CI) | S (95% CI) | C (95% CI) | Modal Pattern | Tie Rate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | 4.3 [4.1, 4.7] | 6.3 [6.1, 6.6] | 17.6 [17.4, 17.7] | 16.0 [15.6, 16.4] | S | 26.7% |
+| `muse-spark-1.2` | 30 | 5.2 [4.6, 5.7] | 7.2 [6.7, 7.8] | 16.6 [16.2, 16.9] | 15.2 [14.8, 15.6] | S | 20.0% |
+| `muse-spark-1.3` | 30 | 4.6 [4.1, 5.4] | 7.0 [6.5, 7.7] | 16.7 [16.2, 17.1] | 16.2 [15.5, 16.7] | S | 36.7% |
+| `muse-spark-open` | 50 | 7.4 [7.0, 7.8] | 8.2 [7.9, 8.6] | 14.3 [13.9, 14.7] | 14.0 [13.9, 14.3] | C | 34.0% |
+
+### Enneagram (OEPS) — 9-Type Scale & Per-Version Numbers
+
+**Instrument & scale:** 36-item Open Enneagram of Personality Scales (4 items per type summed to `4–20` across Types 1–9). Tie rule: runs whose top score is shared across two or more types count toward `tie_rate` (latest `8.0%`; `headline_allowed: true`).
+
+| Version | n | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | Top Tie Rate |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | 15.5 | 12.7 | 10.9 | 7.5 | 15.4 | 12.9 | 10.6 | 13.1 | 14.0 | 43.3% |
+| `muse-spark-1.2` | 30 | 14.9 | 12.6 | 10.7 | 8.3 | 15.1 | 11.3 | 10.9 | 12.9 | 13.1 | 53.3% |
+| `muse-spark-1.3` | 30 | 14.6 | 13.2 | 9.0 | 6.1 | 16.2 | 10.8 | 10.7 | 12.8 | 14.3 | 16.7% |
+| `muse-spark-open` | 50 | 14.9 | 13.2 | 10.8 | 8.9 | 13.5 | 12.0 | 11.3 | 12.7 | 11.9 | 8.0% |
+
+### Attachment (ECR-R) — Anxiety & Avoidance Coordinates
+
+**Instrument & scale:** 36-item Experiences in Close Relationships–Revised (18 Anxiety + 18 Avoidance items scored on a `1.00–7.00` mean scale with a `4.00` quadrant boundary). Midpoint clamp guard flags runs where ≥85% of items select the exact neutral `4` midpoint.
+
+| Version | n | Anxiety (SD) | Anx 95% CI | Avoidance (SD) | Avd 95% CI | Quadrant | Midpoint Clamp |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `muse-spark-1.1` | 30 | 1.79 (SD 0.20) | [1.71, 1.85] | 2.96 (SD 0.29) | [2.86, 3.06] | Secure | No |
+| `muse-spark-1.2` | 30 | 2.88 (SD 1.08) | [2.51, 3.25] | 3.63 (SD 0.45) | [3.46, 3.78] | Secure | No |
+| `muse-spark-1.3` | 30 | 2.57 (SD 1.32) | [2.10, 3.03] | 3.75 (SD 0.46) | [3.58, 3.89] | Secure | No |
+| `muse-spark-open` | 50 | 3.37 (SD 0.90) | [3.10, 3.59] | 3.55 (SD 0.68) | [3.36, 3.73] | Secure | No |
+
+### Behavioral "Say vs. Do" Layer (1× Track B)
+
+**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
 
 ### Checkpoint Provenance & Historical Cohort Separation
 
@@ -239,10 +397,6 @@ Overlapping 170-item cohorts (`imported-nov2026-170` / `imported-sep2026-170`) c
 | `meta/muse-spark-open` | `active` | `model-profiles-v1` | 50 | `temp=0.7` | `minimal` | 0.0% / 0.0% | 0.727 b (Semi-crystalline) | H 4.39 (1–5 IPIP) |
 
 **Protocol stamp:** protocol_id: `model-profiles-v1` · canonical_slug: `meta/muse-spark-open-20261015` · sampling_mode: `temp=0.7` · effective_reasoning_effort: `minimal` · refusal_rate: `0.0%` · retry_rate: `0.0%` · instruments_sha256: `c9fd9773ba4d` / `1145fe2238db`.
-
-### Behavioral "Say vs. Do" Layer (1× Track B)
-
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
 
 ### Top Polarized Item Outliers (Numeric Summary Only)
 
@@ -278,13 +432,71 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 family_slug: muse-spark
 protocol_id: model-profiles-v1
 data_status: live-openrouter-v1
+dataset_json_url: https://agent-tune.com/research/data/model-profiles/muse-spark.json
 current_checkpoint: meta/muse-spark-open
 crystallinity_tier: Semi-crystalline
 entropy_b5_hmm_bits: 0.727
-mbti_tie_rate: 0.38
 headline_mbti_allowed: false
-big_five_10_50: { O: 41.8, C: 41.1, E: 28.4, A: 43.5, N: 23.8 }
-ipip_hexaco_1_5: { H: 4.39, E: 2.74, X: 3.18, A: 4.04, C: 4.21, O: 4.07 }
+big_five:
+  scale: "10..50 sum (IPIP-50)"
+  mean: { O: 41.8, C: 41.1, E: 28.4, A: 43.5, N: 23.8 }
+  ci95: { O: [41.1, 42.4], C: [40.4, 41.7], E: [27.2, 29.7], A: [42.7, 44.1], N: [22.8, 25.0] }
+  tie_rate: 0.00
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, O: 43.9, C: 49.2, E: 26.9, A: 45.6, N: 15.5, hmm: 0.503 }
+    - { id: "muse-spark-1.2", n: 30, O: 43.6, C: 46.4, E: 26.8, A: 47.2, N: 20.1, hmm: 0.594 }
+    - { id: "muse-spark-1.3", n: 30, O: 43.2, C: 47.3, E: 26.0, A: 46.2, N: 15.5, hmm: 0.834 }
+    - { id: "muse-spark-open", n: 50, O: 41.8, C: 41.1, E: 28.4, A: 43.5, N: 23.8, hmm: 0.727 }
+ipip_hexaco:
+  scale: "1.00..5.00 mean (60-item public-domain proxy)"
+  mean: { H: 4.39, E: 2.74, X: 3.18, A: 4.04, C: 4.21, O: 4.07 }
+  ci95: { H: [4.31, 4.45], E: [2.65, 2.82], X: [3.10, 3.27], A: [3.98, 4.10], C: [4.13, 4.29], O: [4.02, 4.12] }
+  tie_rate: 0.00
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, H: 4.91, E: 2.46, X: 3.43, A: 4.57, C: 4.89, O: 4.39 }
+    - { id: "muse-spark-1.2", n: 30, H: 4.83, E: 2.51, X: 3.21, A: 4.48, C: 4.73, O: 4.24 }
+    - { id: "muse-spark-1.3", n: 30, H: 4.76, E: 2.30, X: 3.27, A: 4.67, C: 4.69, O: 4.13 }
+    - { id: "muse-spark-open", n: 50, H: 4.39, E: 2.74, X: 3.18, A: 4.04, C: 4.21, O: 4.07 }
+mbti:
+  scale: "-16..+16 axis balance (OEJTS 1.2)"
+  mean: { modal: "ISTJ", I_E: 3.38, N_S: -3.42, T_F: 2.58, J_P: 3.26 }
+  ci95: { I_E: [2.58, 4.30], N_S: [-4.38, -2.52], T_F: [1.88, 3.36], J_P: [2.48, 4.04] }
+  tie_rate: 0.38
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, modal: "INTJ", tie_rate: 0.00, headline_allowed: true }
+    - { id: "muse-spark-1.2", n: 30, modal: "INTJ", tie_rate: 0.13, headline_allowed: false }
+    - { id: "muse-spark-1.3", n: 30, modal: "ISTJ", tie_rate: 0.13, headline_allowed: true }
+    - { id: "muse-spark-open", n: 50, modal: "ISTJ", tie_rate: 0.38, headline_allowed: false }
+disc:
+  scale: "4..20 sum (ODAT)"
+  mean: { D: 7.4, I: 8.2, S: 14.3, C: 14.0 }
+  ci95: { D: [7.0, 7.8], I: [7.9, 8.6], S: [13.9, 14.7], C: [13.9, 14.3] }
+  tie_rate: 0.34
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, D: 4.3, I: 6.3, S: 17.6, C: 16.0, modal: "S", tie_rate: 0.27 }
+    - { id: "muse-spark-1.2", n: 30, D: 5.2, I: 7.2, S: 16.6, C: 15.2, modal: "S", tie_rate: 0.20 }
+    - { id: "muse-spark-1.3", n: 30, D: 4.6, I: 7.0, S: 16.7, C: 16.2, modal: "S", tie_rate: 0.37 }
+    - { id: "muse-spark-open", n: 50, D: 7.4, I: 8.2, S: 14.3, C: 14.0, modal: "C", tie_rate: 0.34 }
+enneagram:
+  scale: "4..20 sum (OEPS Types 1-9)"
+  mean: { T1: 14.9, T2: 13.2, T3: 10.8, T4: 8.9, T5: 13.5, T6: 12.0, T7: 11.3, T8: 12.7, T9: 11.9 }
+  ci95: { top: [14.7, 15.0] }
+  tie_rate: 0.08
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, top: "Type 1", top_mean: 15.5, tie_rate: 0.43 }
+    - { id: "muse-spark-1.2", n: 30, top: "Type 5", top_mean: 15.1, tie_rate: 0.53 }
+    - { id: "muse-spark-1.3", n: 30, top: "Type 5", top_mean: 16.2, tie_rate: 0.17 }
+    - { id: "muse-spark-open", n: 50, top: "Type 1", top_mean: 14.9, tie_rate: 0.08 }
+attachment:
+  scale: "1.00..7.00 mean (ECR-R, 4.00 Secure boundary)"
+  mean: { anxiety: 3.37, avoidance: 3.55, class: "Secure" }
+  ci95: { anxiety: [3.10, 3.59], avoidance: [3.36, 3.73] }
+  tie_rate: 0.00
+  per_version:
+    - { id: "muse-spark-1.1", n: 30, anxiety: 1.79, avoidance: 2.96, class: "Secure" }
+    - { id: "muse-spark-1.2", n: 30, anxiety: 2.88, avoidance: 3.63, class: "Secure" }
+    - { id: "muse-spark-1.3", n: 30, anxiety: 2.57, avoidance: 3.75, class: "Secure" }
+    - { id: "muse-spark-open", n: 50, anxiety: 3.37, avoidance: 3.55, class: "Secure" }
 if_then_decision_rules:
   - "Never judge Muse Spark Open from n=1 run; evaluate prompt edits across 3-5 fresh sessions because high B5 entropy (0.727 bits, 1.460 bits MBTI) widens output spread."
   - "Put core persona and truth rules inside Soul.md or top system instructions rather than letting multi-turn chat history anchor voice."

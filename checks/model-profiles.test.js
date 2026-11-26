@@ -94,7 +94,21 @@ test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-
     assert.match(html, /"@type":"BreadcrumbList"/);
     assert.match(html, /"name":"Models","item":"https:\/\/agent-tune\.com\/models\/"/);
     assert.match(html, /"@type":"Dataset"/);
+    assert.match(html, /"variableMeasured":\[/);
     assert.match(html, /class="agent-contract-drawer"/);
+    assert.match(html, /dataset_json_url:/);
+    for (const blockKey of ['big_five:', 'ipip_hexaco:', 'mbti:', 'disc:', 'enneagram:', 'attachment:']) {
+      assert.ok(html.includes(blockKey), `${slug}: agent brief missing ${blockKey}`);
+    }
+    for (const fineId of ['fine-print-mbti', 'fine-print-disc', 'fine-print-attachment', 'fine-print-enneagram', 'fine-print-big-five', 'fine-print-hexaco', 'fine-print-behavior']) {
+      assert.ok(html.includes(`id="${fineId}"`), `${slug}: missing #${fineId}`);
+    }
+    for (const fineTarget of ['mbti', 'disc', 'attachment', 'enneagram', 'big-five', 'hexaco']) {
+      assert.ok(html.includes(`href="#fine-print-${fineTarget}"`), `${slug}: glance card missing #fine-print-${fineTarget} link`);
+    }
+    assert.match(html, /class="trait-info-btn"/);
+    assert.match(html, /class="trait-defs-fallback"/);
+    assert.match(html, /class="model-wheel-strip"/);
     assert.match(html, /class="model-protocol-stamp"[^>]*overflow-wrap:anywhere/);
     assert.doesNotMatch(html, /<code>instruments_sha256=/);
 
@@ -178,6 +192,10 @@ test('Group 3: build parity, enhance-pages guards, _headers < 100, sitemap & zer
   }
 
   const hubRaw = fs.readFileSync(path.join(ROOT, 'models/index.html'), 'utf8');
+  assert.match(hubRaw, /class="model-hub-thumb"/);
+  for (const { dataset } of items) {
+    assert.ok(hubRaw.includes(`hub-${dataset.family_slug}-b5-thumb-t`), `models/index.html missing mini wheel for ${dataset.family_slug}`);
+  }
   const hubEnhanced = enhance(applyNavigation(hubRaw, '/models/'), 'models/index.html');
   assert.doesNotMatch(hubEnhanced, /class="article-toc"/, 'models/index.html must skip .article-toc');
   assert.doesNotMatch(hubEnhanced, /class="press-spread"/, 'models/index.html must skip .press-spread');
@@ -235,15 +253,20 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
   assert.ok(modelPages.length >= 1);
 
   for (const file of modelPages) {
+    const slug = path.basename(file, '.html');
     const html = fs.readFileSync(file, 'utf8');
+    const md = fs.readFileSync(path.join(ROOT, 'models', `${slug}.md`), 'utf8');
     const svgs = [...html.matchAll(/<svg class="research-chart"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
-    assert.ok(svgs.length >= 6, `${path.basename(file)} should contain >= 6 SVG charts, got ${svgs.length}`);
+    assert.ok(svgs.length >= 12, `${path.basename(file)} should contain >= 12 SVG charts, got ${svgs.length}`);
     const allIds = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
     assert.equal(new Set(allIds).size, allIds.length, `Duplicate element IDs in ${path.basename(file)}`);
 
     for (const svg of svgs) {
       const id = svg.match(/<title id="([^"]+)-t">/)?.[1];
       assert.ok(id, `Chart missing <title id="...-t"> in ${path.basename(file)}`);
+      const rawTitle = svg.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1] || '';
+      const decodedTitle = rawTitle.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      assert.ok(md.includes(`> **Chart — ${decodedTitle}:`), `${slug}.md missing > **Chart — ${decodedTitle}:** block`);
       assert.ok(svg.includes(`role="img" aria-labelledby="${id}-t ${id}-d"`), id);
       const desc = svg.match(/<desc[^>]*>([\s\S]*?)<\/desc>/)?.[1] || '';
       assert.ok(desc.length > 80, `${id}: <desc> too short (${desc.length})`);
@@ -286,10 +309,66 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
     }
   }
 
-  // Verify both Attachment planes (version trajectory + peer comparison) keep all labels inside plot bounds & non-overlapping
+  // Verify Rose Wheels (4/5/6/9 petals), MBTI Bipolar Sliders & Attachment planes across all live families
   const { items } = loadFamilies();
   const peers = items.map((i) => i.dataset);
+  const wheelSpec = [
+    ['big_five', 5, 10, 50, (cp) => ['O', 'C', 'E', 'A', 'N'].map((k) => cp.big_five[k].mean)],
+    ['hexaco', 6, 1, 5, (cp) => ['H', 'E', 'X', 'A', 'C', 'O'].map((k) => cp.ipip_hexaco[k].mean)],
+    ['disc', 4, 4, 20, (cp) => ['D', 'I', 'S', 'C'].map((k) => cp.disc[k].mean)],
+    ['enneagram', 9, 4, 20, (cp) => {
+      const m = new Map((cp.enneagram?.all_types || cp.enneagram?.top_types || []).map((t) => [Number(t.type), t.mean]));
+      return [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => m.get(n) ?? 4);
+    }]
+  ];
+
   for (const ds of peers) {
+    const latest = ds.checkpoints[ds.checkpoints.length - 1];
+    for (const [kind, count, min, max, valsFn] of wheelSpec) {
+      const svg = renderCharts.renderCardWheel(ds, kind);
+      const vb = svg.match(/viewBox="0 0 ([0-9.]+) ([0-9.]+)"/);
+      assert.ok(vb, `${ds.family_slug} ${kind}: missing viewBox`);
+      const W = Number(vb[1]), H = Number(vb[2]);
+      const norms = [...svg.matchAll(/data-petal-norm="([0-9.]+)"/g)].map((m) => Number(m[1]));
+      assert.equal(norms.length, count, `${ds.family_slug} ${kind}: expected ${count} petals, got ${norms.length}`);
+      const rawVals = valsFn(latest);
+      norms.forEach((nVal, idx) => {
+        assert.ok(nVal >= 0 && nVal <= 100, `${ds.family_slug} ${kind}: norm ${nVal} out of [0,100]`);
+        const expected = Math.max(0, Math.min(100, ((rawVals[idx] - min) / (max - min)) * 100));
+        assert.ok(Math.abs(nVal - expected) <= 0.2, `${ds.family_slug} ${kind} petal ${idx}: ${nVal} != ${expected.toFixed(1)}`);
+      });
+
+      const txtMatches = [...svg.matchAll(/<text x="([0-9.-]+)" y="([0-9.-]+)" font-size="([0-9.]+)"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
+      const petalBoxes = [];
+      for (const [, x, y, fs, anchor, text] of txtMatches) {
+        const fontSize = Number(fs);
+        const lw = Math.ceil(text.length * fontSize * 0.56 + 2);
+        let x1 = Number(x);
+        if (anchor === 'middle') x1 -= lw / 2;
+        else if (anchor === 'end') x1 -= lw;
+        const y1 = Number(y) - fontSize;
+        const x2 = x1 + lw;
+        const y2 = Number(y) + 2;
+        assert.ok(x1 >= 0 && x2 <= W && y1 >= 0 && y2 <= H, `${ds.family_slug} ${kind}: text "${text}" clipped outside [0,${W}]x[0,${H}] (${x1.toFixed(1)},${y1.toFixed(1)},${x2.toFixed(1)},${y2.toFixed(1)})`);
+        if (Number(y) < H - 15) {
+          petalBoxes.push({ text, x1, y1, x2, y2 });
+        }
+      }
+      for (let i = 0; i < petalBoxes.length; i++) {
+        for (let j = i + 1; j < petalBoxes.length; j++) {
+          const a = petalBoxes[i], b = petalBoxes[j];
+          const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
+          assert.equal(hit, false, `${ds.family_slug} ${kind}: labels overlap: "${a.text}" vs "${b.text}"`);
+        }
+      }
+    }
+
+    const sliderSvg = renderCharts.renderBipolarSliders(ds);
+    assert.doesNotMatch(sliderSvg, /NaN|Infinity|undefined/);
+    assert.ok(sliderSvg.includes('viewBox="0 0 380 '), `${ds.family_slug}: slider missing viewBox`);
+    const miniQuad = renderCharts.renderAttachmentQuadrantMini(ds);
+    assert.doesNotMatch(miniQuad, /NaN|Infinity|undefined/);
+
     for (const planeFig of [renderCharts.renderAttachmentPlane(ds, peers), renderCharts.renderAttachmentTrajectory(ds)]) {
       const labels = [...planeFig.matchAll(/<text x="([0-9.]+)" y="([0-9.]+)" font-size="10\.5"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
       assert.ok(labels.length >= 1, `${ds.family_slug}: missing labels in plane()`);

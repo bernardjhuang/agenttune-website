@@ -28,6 +28,10 @@ const SRC_DIR = path.join(ROOT, 'models', 'src');
 const FIXTURE_DIR = path.join(SRC_DIR, '_fixtures');
 const DATA_DIR = path.join(ROOT, 'research', 'data', 'model-profiles');
 const OUT_DIR = path.join(ROOT, 'models');
+const TRAIT_DEFS_PATH = path.join(SRC_DIR, '_trait-definitions.json');
+const TRAIT_DEFS = fs.existsSync(TRAIT_DEFS_PATH)
+  ? JSON.parse(fs.readFileSync(TRAIT_DEFS_PATH, 'utf8'))
+  : {};
 const SITE = 'https://agent-tune.com';
 
 const BANNED_SYNTHETIC_TERMS = [
@@ -158,10 +162,10 @@ function normalizeDataset(raw, spec = {}) {
     const ennea = inst['enneagram'] || {};
     const enneaCls = ennea.classification || {};
     const enneaDims = ennea.dimensions || {};
-    const topTypes = Object.entries(enneaDims)
+    const allTypes = Object.entries(enneaDims)
       .map(([k, v]) => ({ type: Number(k), label: `Type ${k}`, ...v }))
-      .sort((a, b) => b.mean - a.mean)
-      .slice(0, 3);
+      .sort((a, b) => a.type - b.type);
+    const topTypes = [...allTypes].sort((a, b) => b.mean - a.mean).slice(0, 3);
     const att = inst['attachment'] || {};
     const attAnx = att.dimensions?.anxiety?.mean ?? 4;
     const attAvd = att.dimensions?.avoidance?.mean ?? 4;
@@ -194,6 +198,7 @@ function normalizeDataset(raw, spec = {}) {
         modal_pattern: discCls.modal_pattern || 'C'
       },
       enneagram: {
+        all_types: allTypes,
         top_types: topTypes,
         tie_rate: enneaCls.tie_rate ?? 0,
         headline_allowed: Boolean(enneaCls.headline_allowed),
@@ -205,6 +210,8 @@ function normalizeDataset(raw, spec = {}) {
         modal_non_tie_count: mbtiCls.modal_non_tie_count ?? null,
         tie_count: mbtiCls.tie_count ?? null,
         pattern_counts: mbtiCls.pattern_counts || null,
+        axis_diffs: mbti.axis_diffs || null,
+        axis_ties: mbtiCls.axis_ties || null,
         tie_rate: mbtiCls.tie_rate ?? 0,
         headline_allowed: Boolean(mbtiCls.headline_allowed),
         modal_share: mbtiCls.modal_non_tie_share ?? 0,
@@ -465,44 +472,74 @@ function renderMbtiGlanceBar(cp) {
 
 // ---------- Section Builders (8-Section Plain-Language Order) ----------
 
+const GLANCE_META = {
+  mbti: { defsKey: 'mbti', keys: ['E-I', 'S-N', 'T-F', 'J-P'], finePrintId: 'mbti' },
+  disc: { defsKey: 'disc', keys: ['D', 'I', 'S', 'C'], finePrintId: 'disc' },
+  attachment: { defsKey: 'attachment', keys: ['anxiety', 'avoidance'], finePrintId: 'attachment' },
+  enneagram: { defsKey: 'enneagram', keys: ['1', '2', '3', '4', '5', '6', '7', '8', '9'], finePrintId: 'enneagram' },
+  big_five: { defsKey: 'big_five', keys: ['O', 'C', 'E', 'A', 'N'], finePrintId: 'big-five' },
+  hexaco: { defsKey: 'hexaco', keys: ['H', 'E', 'X', 'A', 'C', 'O'], finePrintId: 'hexaco' }
+};
+
+function renderTraitTipsMarkup(slug, cardKey) {
+  const meta = GLANCE_META[cardKey];
+  if (!meta) return '';
+  const defsGroup = TRAIT_DEFS[meta.defsKey] || {};
+  const entries = meta.keys.map((k) => [k, defsGroup[k]]).filter(([, v]) => v && v.definition);
+  if (!entries.length) return '';
+
+  const pills = entries.map(([k, entry]) => {
+    const safeKey = k.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const tipId = `tip-${slug}-${meta.finePrintId}-${safeKey}`;
+    const btnLabel = meta.defsKey === 'enneagram' ? `Type ${k}` : entry.label;
+    return `<span class="trait-info-wrap"><button type="button" class="trait-info-btn" aria-describedby="${tipId}" aria-expanded="false">${esc(btnLabel)} ⓘ</button><span id="${tipId}" class="trait-popover" role="tooltip" hidden><strong>${esc(entry.label)}:</strong> ${esc(stripJargon(entry.definition))}</span></span>`;
+  }).join('');
+
+  const fallbackItems = entries.map(([, entry]) =>
+    `<li><strong>${esc(entry.label)}:</strong> ${esc(stripJargon(entry.definition))}</li>`
+  ).join('');
+
+  return `<div class="trait-tips-row">${pills}</div>
+  <details class="trait-defs-fallback"><summary>What each score means</summary><ul>${fallbackItems}</ul></details>`;
+}
+
 function buildSectionAtAGlance(spec, dataset) {
   const cp = getLatestCheckpoint(dataset);
+  const slug = dataset.family_slug;
   const cards = Array.isArray(spec.glance_cards) && spec.glance_cards.length
     ? spec.glance_cards
     : defaultGlanceCards(dataset);
 
   const cardsHtml = cards.map((card) => {
+    const meta = GLANCE_META[card.key] || { finePrintId: 'big-five' };
     let visual = '';
     if (card.key === 'mbti') {
-      visual = renderMbtiGlanceBar(cp);
+      visual = `${renderMbtiGlanceBar(cp)}${renderCharts.renderBipolarSliders(dataset)}`;
     } else if (card.key === 'big_five') {
-      const b5 = cp.big_five;
-      visual = renderMiniBars([
-        ['Openness', b5.O.mean, '#1e1d1a'],
-        ['Conscientious', b5.C.mean, '#2f8a5b'],
-        ['Extraversion', b5.E.mean, '#5b4dc0'],
-        ['Agreeable', b5.A.mean, '#a8482a'],
-        ['Neuroticism', b5.N.mean, '#3a72c4']
-      ], 10, 50, 1);
+      visual = renderCharts.renderCardWheel(dataset, 'big_five');
     } else if (card.key === 'hexaco') {
-      const hx = cp.ipip_hexaco;
-      visual = renderMiniBars([
-        ['Honesty-Humil.', hx.H.mean, '#a8482a'],
-        ['Conscientious', hx.C.mean, '#2f8a5b'],
-        ['Agreeable', hx.A.mean, '#3a72c4']
-      ], 1, 5, 2);
+      visual = renderCharts.renderCardWheel(dataset, 'hexaco');
+    } else if (card.key === 'disc') {
+      visual = renderCharts.renderCardWheel(dataset, 'disc');
+    } else if (card.key === 'enneagram') {
+      visual = renderCharts.renderCardWheel(dataset, 'enneagram');
+    } else if (card.key === 'attachment') {
+      visual = renderCharts.renderAttachmentQuadrantMini(dataset);
     }
-    return `<article class="hub-article-card" style="padding:16px 18px;border:1px solid var(--border);border-top:2px solid var(--ink);border-radius:3px;background:var(--surface);">
-      <div class="card-meta" style="font-size:11.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);">${esc(card.title)}</div>
-      <h3 style="font-family:var(--font-serif);font-size:19px;margin:6px 0 6px;color:var(--ink);">${esc(stripJargon(card.result))}</h3>
-      ${visual}
+    const tipsMarkup = renderTraitTipsMarkup(slug, card.key);
+    return `<article class="hub-article-card model-glance-card">
+      <div class="card-meta">${esc(card.title)}</div>
+      <h3>${esc(stripJargon(card.result))}</h3>
+      <div class="model-glance-chart">${visual}</div>
       <p style="font-size:14px;line-height:1.5;margin:6px 0;">${esc(stripJargon(card.summary))}</p>
-      <p style="font-size:12.5px;line-height:1.45;color:var(--muted);margin:6px 0 0;">${esc(stripJargon(card.explanation))}</p>
+      <p style="font-size:12.5px;line-height:1.45;color:var(--muted);margin:6px 0 0;"><strong>What this measures:</strong> ${esc(stripJargon(card.explanation))}</p>
+      ${tipsMarkup}
+      <div class="model-glance-foot"><a class="glance-fine-link" href="#fine-print-${escAttr(meta.finePrintId)}">Technical details ↓</a></div>
     </article>`;
   }).join('\n');
 
   return `<p>Results below come from <strong>${cp.n_valid}</strong> fresh-chat runs of <strong>${esc(cp.pretty_name || cp.label)}</strong> (no prior conversation memory).</p>
-  <div class="model-glance-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:16px 0 22px;">
+  <div class="model-glance-grid">
     ${cardsHtml}
   </div>`;
 }
@@ -529,6 +566,20 @@ function buildSectionVersionHistory(spec, dataset) {
     ? stripJargon(spec.history_narrative)
     : `Across ${cps.length} tested ${dataset.name} releases, Agreeableness stays high (${cps.map((c) => f1(c.big_five.A.mean)).join(' → ')} out of 50) while Attachment remains Secure across every version.`;
 
+  const b5Wheels = `<div class="model-wheel-section">
+    <h3>Big Five shape by version (10–50 normalized)</h3>
+    <div class="model-wheel-strip">
+      ${cps.map((c) => `<div class="model-wheel-tile">${renderCharts.renderCheckpointMiniWheel(dataset, c, 'big_five')}<div class="model-wheel-caption">${esc(c.pretty_name || c.label)}</div></div>`).join('')}
+    </div>
+  </div>`;
+
+  const discWheels = `<div class="model-wheel-section">
+    <h3>DISC shape by version (4–20 normalized)</h3>
+    <div class="model-wheel-strip">
+      ${cps.map((c) => `<div class="model-wheel-tile">${renderCharts.renderCheckpointMiniWheel(dataset, c, 'disc')}<div class="model-wheel-caption">${esc(c.pretty_name || c.label)}</div></div>`).join('')}
+    </div>
+  </div>`;
+
   return [
     table([
       'Version',
@@ -543,6 +594,8 @@ function buildSectionVersionHistory(spec, dataset) {
     `<p>${esc(narrative)}</p>`,
     renderCharts.renderMbtiVersionStacked(dataset),
     renderCharts.renderDiscVersionBars(dataset),
+    b5Wheels,
+    discWheels,
     renderCharts.renderAttachmentTrajectory(dataset),
     renderCharts.renderTrajectoryChart(dataset)
   ].join('\n');
@@ -725,6 +778,114 @@ function buildSectionFinePrint(spec, dataset, peerDatasets) {
   ];
 
   const cps = dataset.checkpoints || [];
+  const ciPair = (dim, dec = 1) => dim ? `[${Number(dim.ci_low).toFixed(dec)}, ${Number(dim.ci_high).toFixed(dec)}]` : '—';
+
+  const b5PerVersionRows = cps.map((c) => [
+    `<code>${esc(c.label)}</code>`,
+    String(c.n_valid),
+    `${f1(c.big_five.O.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.big_five.O, 1)}</span>`,
+    `${f1(c.big_five.C.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.big_five.C, 1)}</span>`,
+    `${f1(c.big_five.E.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.big_five.E, 1)}</span>`,
+    `${f1(c.big_five.A.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.big_five.A, 1)}</span>`,
+    `${f1(c.big_five.N.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.big_five.N, 1)}</span>`,
+    `${f3(c.entropy_b5_hmm)} b`
+  ]);
+
+  const hxPerVersionRows = cps.map((c) => [
+    `<code>${esc(c.label)}</code>`,
+    String(c.n_valid),
+    `${f2(c.ipip_hexaco.H.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.H, 2)}</span>`,
+    `${f2(c.ipip_hexaco.E.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.E, 2)}</span>`,
+    `${f2(c.ipip_hexaco.X.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.X, 2)}</span>`,
+    `${f2(c.ipip_hexaco.A.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.A, 2)}</span>`,
+    `${f2(c.ipip_hexaco.C.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.C, 2)}</span>`,
+    `${f2(c.ipip_hexaco.O.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.ipip_hexaco.O, 2)}</span>`
+  ]);
+
+  const mbtiPerVersionRows = cps.map((c) => {
+    const ad = c.mbti?.axis_diffs || {};
+    const at = c.mbti?.axis_ties || {};
+    const fmtAx = (dKey, tKey) => ad[dKey] ? `${ad[dKey].mean >= 0 ? '+' : ''}${f2(ad[dKey].mean)} (${at[tKey] ?? 0}t)` : '—';
+    return [
+      `<code>${esc(c.label)}</code>`,
+      String(c.n_valid),
+      esc(c.mbti?.modal_non_tie || c.mbti?.modal_pattern || '—'),
+      pctStr(c.mbti?.tie_rate ?? 0),
+      fmtAx('I-E', 'EI'),
+      fmtAx('N-S', 'SN'),
+      fmtAx('T-F', 'TF'),
+      fmtAx('J-P', 'JP'),
+      c.headline_allowed ? 'Pass' : 'Suppressed'
+    ];
+  });
+
+  const discPerVersionRows = cps.map((c) => [
+    `<code>${esc(c.label)}</code>`,
+    String(c.n_valid),
+    `${f1(c.disc.D.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.disc.D, 1)}</span>`,
+    `${f1(c.disc.I.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.disc.I, 1)}</span>`,
+    `${f1(c.disc.S.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.disc.S, 1)}</span>`,
+    `${f1(c.disc.C.mean)} <span style="color:var(--muted);font-size:12px;">${ciPair(c.disc.C, 1)}</span>`,
+    esc(c.disc.modal_pattern || '—'),
+    pctStr(c.disc.tie_rate ?? 0)
+  ]);
+
+  const enneaPerVersionRows = cps.map((c) => {
+    const typesMap = new Map((c.enneagram?.all_types || c.enneagram?.top_types || []).map((t) => [Number(t.type), t]));
+    return [
+      `<code>${esc(c.label)}</code>`,
+      String(c.n_valid),
+      ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (typesMap.has(n) ? f1(typesMap.get(n).mean) : '—')),
+      pctStr(c.enneagram?.tie_rate ?? 0)
+    ];
+  });
+
+  const attPerVersionRows = cps.map((c) => [
+    `<code>${esc(c.label)}</code>`,
+    String(c.n_valid),
+    `${f2(c.attachment.anxiety.mean)} (SD ${f2(c.attachment.anxiety.sd)})`,
+    ciPair(c.attachment.anxiety, 2),
+    `${f2(c.attachment.avoidance.mean)} (SD ${f2(c.attachment.avoidance.sd)})`,
+    ciPair(c.attachment.avoidance, 2),
+    esc(c.attachment.classification),
+    c.attachment.midpoint_clamp ? 'Yes (>=85%)' : 'No'
+  ]);
+
+  const testSubsectionsHtml = [
+    `<section id="fine-print-big-five" class="fine-print-block">
+      <h3>Big Five (IPIP-50) — Methodology &amp; Per-Version Numbers</h3>
+      <p><strong>Instrument &amp; scale:</strong> 50 items (10 per factor, 1–5 Likert ratings summed to <code>10–50</code> per trait; LicenseRef-IPIP-Public-Domain). At <code>${esc(cp.label)}</code> (<code>n=${cp.n_valid}</code>), Big Five Miller-Madow item entropy is <code>H_MM = ${f3(cp.entropy_b5_hmm)} bits</code> (<code>${esc(cp.crystallinity_tier)}</code>), unique vectors <code>${esc(cp.unique_b5_ratio)}</code>, neutral-midpoint rate <code>${pctStr(cp.neutral_rate)}</code>, <code>BAI = ${cp.bai >= 0 ? '+' : ''}${f3(cp.bai)}</code>, and reverse-key contradiction rate <code>${pctStr(cp.rev_key_contradiction_rate)}</code>.</p>
+      ${table(['Version', 'n', 'O (95% CI)', 'C (95% CI)', 'E (95% CI)', 'A (95% CI)', 'N (95% CI)', 'H_MM'], b5PerVersionRows)}
+      ${renderCharts.renderB5TraitSpectrum(dataset, peerDatasets)}
+    </section>`,
+    `<section id="fine-print-hexaco" class="fine-print-block">
+      <h3>IPIP-HEXACO Proxy (60-item) — Methodology &amp; Per-Version Numbers</h3>
+      <p><strong>Instrument &amp; scale:</strong> 60 public-domain items across 6 dimensions / 24 facets (<code>1.00–5.00</code> item mean; <code>LicenseRef-IPIP-Public-Domain</code> proxy—distinct from proprietary Lee &amp; Ashton HEXACO-60 and never derived from alignment proxies). Latest <code>${esc(cp.label)}</code> (<code>n=${cp.n_valid}</code>): H <code>${f2(hx.H.mean)}</code> (SD ${f2(hx.H.sd)}, 95% CI ${ciPair(hx.H, 2)}).</p>
+      ${table(['Version', 'n', 'H (95% CI)', 'E (95% CI)', 'X (95% CI)', 'A (95% CI)', 'C (95% CI)', 'O (95% CI)'], hxPerVersionRows)}
+      ${renderCharts.renderHexacoSpectrum(dataset, peerDatasets)}
+    </section>`,
+    `<section id="fine-print-mbti" class="fine-print-block">
+      <h3>MBTI (OEJTS 1.2) — Bipolar Axes, Ties &amp; Per-Version Numbers</h3>
+      <p><strong>Instrument &amp; scale:</strong> 32-item Open Extended Jungian Type Scales (8 bipolar items per axis, difference scale <code>-16..+16</code>). Tie rule: an exact 0 axis balance is recorded as <code>X</code> rather than coerced to INTJ; headline four-letter type requires separating modal non-tie from runner-up beyond non-overlapping 95% binomial CIs (<code>headline_allowed: ${String(cp.headline_allowed)}</code>, latest tie rate <code>${pctStr(mbti.tie_rate)}</code>).</p>
+      ${table(['Version', 'n', 'Non-tie Mode', 'Any-Axis Tie', 'I–E (ties)', 'N–S (ties)', 'T–F (ties)', 'J–P (ties)', '95% CI Guard'], mbtiPerVersionRows)}
+    </section>`,
+    `<section id="fine-print-disc" class="fine-print-block">
+      <h3>DISC (ODAT) — Work-Style Scale &amp; Per-Version Numbers</h3>
+      <p><strong>Instrument &amp; scale:</strong> 16-item Open DISC Assessment Test (4 items per style summed to <code>4–20</code>). Tie rule: styles within tie tolerance share a blended label (e.g., <code>S/C</code>); latest <code>${esc(cp.label)}</code> tie rate is <code>${pctStr(disc.tie_rate)}</code>.</p>
+      ${table(['Version', 'n', 'D (95% CI)', 'I (95% CI)', 'S (95% CI)', 'C (95% CI)', 'Modal Pattern', 'Tie Rate'], discPerVersionRows)}
+    </section>`,
+    `<section id="fine-print-enneagram" class="fine-print-block">
+      <h3>Enneagram (OEPS) — 9-Type Scale &amp; Per-Version Numbers</h3>
+      <p><strong>Instrument &amp; scale:</strong> 36-item Open Enneagram of Personality Scales (4 items per type summed to <code>4–20</code> across Types 1–9). Tie rule: runs whose top score is shared across two or more types count toward <code>tie_rate</code> (latest <code>${pctStr(ennea.tie_rate)}</code>; <code>headline_allowed: ${String(ennea.headline_allowed)}</code>).</p>
+      ${table(['Version', 'n', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'Top Tie Rate'], enneaPerVersionRows)}
+    </section>`,
+    `<section id="fine-print-attachment" class="fine-print-block">
+      <h3>Attachment (ECR-R) — Anxiety &amp; Avoidance Coordinates</h3>
+      <p><strong>Instrument &amp; scale:</strong> 36-item Experiences in Close Relationships–Revised (18 Anxiety + 18 Avoidance items scored on a <code>1.00–7.00</code> mean scale with a <code>4.00</code> quadrant boundary). Midpoint clamp guard flags runs where &ge;85% of items select the exact neutral <code>4</code> midpoint.</p>
+      ${table(['Version', 'n', 'Anxiety (SD)', 'Anx 95% CI', 'Avoidance (SD)', 'Avd 95% CI', 'Quadrant', 'Midpoint Clamp'], attPerVersionRows)}
+    </section>`
+  ].join('\n');
+
   const provRows = cps.map((c) => [
     `<code>${esc(c.checkpoint_id)}</code>`,
     `<code>${esc(c.openrouter_status)}</code>`,
@@ -772,10 +933,11 @@ function buildSectionFinePrint(spec, dataset, peerDatasets) {
       c.alpha != null ? f2(c.alpha) : '—',
       esc((tb.judges || []).join(', '))
     ]);
-    trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts &amp; Wilson 95% CIs)</h3><p>Because a single <code>1×</code> sweep runs <code>n = 3</code> probes per category, raw <code>k/3</code> hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: <code>${esc((tb.judges || []).join(', '))}</code>.</p>` +
-      table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Judge Alpha', 'Orthogonal 3-Family Jury'], trackBRows);
+    trackBHtml = `<section id="fine-print-behavior" class="fine-print-block"><h3>Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts &amp; Wilson 95% CIs)</h3><p>Because a single <code>1×</code> sweep runs <code>n = 3</code> probes per category, raw <code>k/3</code> hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: <code>${esc((tb.judges || []).join(', '))}</code>.</p>` +
+      table(['Behavioral Stress Probe', 'Raw Hits (k/3)', '95% Wilson CI', 'Judge Alpha', 'Orthogonal 3-Family Jury'], trackBRows) +
+      '</section>';
   } else {
-    trackBHtml = `<h3>Behavioral "Say vs. Do" Layer (1× Track B)</h3><p><strong>Collection pending:</strong> 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.</p>`;
+    trackBHtml = `<section id="fine-print-behavior" class="fine-print-block"><h3>Behavioral "Say vs. Do" Layer (1× Track B)</h3><p><strong>Collection pending:</strong> 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.</p></section>`;
   }
 
   const epistemicBlock = `<div class="epistemic-ledger" role="note" aria-label="Four psychometric validity boundaries">
@@ -797,12 +959,11 @@ function buildSectionFinePrint(spec, dataset, peerDatasets) {
     glossaryHtml,
     statStrip,
     table(['Instrument', 'Scale', 'Mean / Classification', 'Sample SD', '95% Bootstrap CI', 'Validity &amp; Ties'], instrumentRows),
-    renderCharts.renderB5TraitSpectrum(dataset, peerDatasets),
-    renderCharts.renderHexacoSpectrum(dataset, peerDatasets),
+    testSubsectionsHtml,
+    trackBHtml,
     `<h3>Checkpoint Provenance &amp; Historical Cohort Separation</h3><p>Overlapping 170-item cohorts (<code>imported-nov2026-170</code> / <code>imported-sep2026-170</code>) carry <code>hexaco: null</code> and are never spliced onto <code>model-profiles-v1</code> trajectories.</p>`,
     table(['Checkpoint', 'OpenRouter Status', 'Protocol', 'n', 'Sampling', 'Reasoning', 'Refusal / Retry', 'B5 H_MM', 'IPIP-HEXACO'], provRows),
     validityStamp,
-    trackBHtml,
     `<h3>Top Polarized Item Outliers (Numeric Summary Only)</h3><p>Per licensing hygiene, numeric item IDs and construct poles are reported without redistributing proprietary or NC questionnaire strings.</p>`,
     table(['Item ID', 'Instrument', 'Construct Pole', 'Mean (1–5)', 'SD', 'Observation'], itemRows),
     epistemicBlock
@@ -811,26 +972,74 @@ function buildSectionFinePrint(spec, dataset, peerDatasets) {
 
 function buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) {
   const cp = getLatestCheckpoint(dataset);
+  const cps = dataset.checkpoints || [];
+  const ciYaml = (d, dec = 1) => d ? `[${Number(d.ci_low).toFixed(dec)}, ${Number(d.ci_high).toFixed(dec)}]` : '[null, null]';
+  const slug = dataset.family_slug;
+  const datasetUrl = `${SITE}${jsonHref}`;
+
   const yamlLines = [
-    `family_slug: ${dataset.family_slug}`,
+    `family_slug: ${slug}`,
     `protocol_id: ${dataset.protocol_id}`,
     `data_status: ${dataset.data_status || 'measured'}`,
+    `dataset_json_url: ${datasetUrl}`,
     `current_checkpoint: ${cp.checkpoint_id}`,
     `crystallinity_tier: ${cp.crystallinity_tier}`,
     `entropy_b5_hmm_bits: ${f3(cp.entropy_b5_hmm)}`,
-    `mbti_tie_rate: ${f2(cp.mbti_tie_rate)}`,
     `headline_mbti_allowed: ${String(cp.headline_allowed)}`,
-    `big_five_10_50: { O: ${f1(cp.big_five.O.mean)}, C: ${f1(cp.big_five.C.mean)}, E: ${f1(cp.big_five.E.mean)}, A: ${f1(cp.big_five.A.mean)}, N: ${f1(cp.big_five.N.mean)} }`,
-    `ipip_hexaco_1_5: { H: ${f2(cp.ipip_hexaco.H.mean)}, E: ${f2(cp.ipip_hexaco.E.mean)}, X: ${f2(cp.ipip_hexaco.X.mean)}, A: ${f2(cp.ipip_hexaco.A.mean)}, C: ${f2(cp.ipip_hexaco.C.mean)}, O: ${f2(cp.ipip_hexaco.O.mean)} }`,
+    `big_five:`,
+    `  scale: "10..50 sum (IPIP-50)"`,
+    `  mean: { O: ${f1(cp.big_five.O.mean)}, C: ${f1(cp.big_five.C.mean)}, E: ${f1(cp.big_five.E.mean)}, A: ${f1(cp.big_five.A.mean)}, N: ${f1(cp.big_five.N.mean)} }`,
+    `  ci95: { O: ${ciYaml(cp.big_five.O, 1)}, C: ${ciYaml(cp.big_five.C, 1)}, E: ${ciYaml(cp.big_five.E, 1)}, A: ${ciYaml(cp.big_five.A, 1)}, N: ${ciYaml(cp.big_five.N, 1)} }`,
+    `  tie_rate: 0.00`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, O: ${f1(c.big_five.O.mean)}, C: ${f1(c.big_five.C.mean)}, E: ${f1(c.big_five.E.mean)}, A: ${f1(c.big_five.A.mean)}, N: ${f1(c.big_five.N.mean)}, hmm: ${f3(c.entropy_b5_hmm)} }`),
+    `ipip_hexaco:`,
+    `  scale: "1.00..5.00 mean (60-item public-domain proxy)"`,
+    `  mean: { H: ${f2(cp.ipip_hexaco.H.mean)}, E: ${f2(cp.ipip_hexaco.E.mean)}, X: ${f2(cp.ipip_hexaco.X.mean)}, A: ${f2(cp.ipip_hexaco.A.mean)}, C: ${f2(cp.ipip_hexaco.C.mean)}, O: ${f2(cp.ipip_hexaco.O.mean)} }`,
+    `  ci95: { H: ${ciYaml(cp.ipip_hexaco.H, 2)}, E: ${ciYaml(cp.ipip_hexaco.E, 2)}, X: ${ciYaml(cp.ipip_hexaco.X, 2)}, A: ${ciYaml(cp.ipip_hexaco.A, 2)}, C: ${ciYaml(cp.ipip_hexaco.C, 2)}, O: ${ciYaml(cp.ipip_hexaco.O, 2)} }`,
+    `  tie_rate: 0.00`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, H: ${f2(c.ipip_hexaco.H.mean)}, E: ${f2(c.ipip_hexaco.E.mean)}, X: ${f2(c.ipip_hexaco.X.mean)}, A: ${f2(c.ipip_hexaco.A.mean)}, C: ${f2(c.ipip_hexaco.C.mean)}, O: ${f2(c.ipip_hexaco.O.mean)} }`),
+    `mbti:`,
+    `  scale: "-16..+16 axis balance (OEJTS 1.2)"`,
+    `  mean: { modal: "${cp.mbti.modal_non_tie || cp.mbti.modal_pattern}", I_E: ${cp.mbti.axis_diffs?.['I-E'] ? f2(cp.mbti.axis_diffs['I-E'].mean) : 'null'}, N_S: ${cp.mbti.axis_diffs?.['N-S'] ? f2(cp.mbti.axis_diffs['N-S'].mean) : 'null'}, T_F: ${cp.mbti.axis_diffs?.['T-F'] ? f2(cp.mbti.axis_diffs['T-F'].mean) : 'null'}, J_P: ${cp.mbti.axis_diffs?.['J-P'] ? f2(cp.mbti.axis_diffs['J-P'].mean) : 'null'} }`,
+    `  ci95: { I_E: ${ciYaml(cp.mbti.axis_diffs?.['I-E'], 2)}, N_S: ${ciYaml(cp.mbti.axis_diffs?.['N-S'], 2)}, T_F: ${ciYaml(cp.mbti.axis_diffs?.['T-F'], 2)}, J_P: ${ciYaml(cp.mbti.axis_diffs?.['J-P'], 2)} }`,
+    `  tie_rate: ${f2(cp.mbti_tie_rate)}`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, modal: "${c.mbti?.modal_pattern}", tie_rate: ${f2(c.mbti_tie_rate)}, headline_allowed: ${String(c.headline_allowed)} }`),
+    `disc:`,
+    `  scale: "4..20 sum (ODAT)"`,
+    `  mean: { D: ${f1(cp.disc.D.mean)}, I: ${f1(cp.disc.I.mean)}, S: ${f1(cp.disc.S.mean)}, C: ${f1(cp.disc.C.mean)} }`,
+    `  ci95: { D: ${ciYaml(cp.disc.D, 1)}, I: ${ciYaml(cp.disc.I, 1)}, S: ${ciYaml(cp.disc.S, 1)}, C: ${ciYaml(cp.disc.C, 1)} }`,
+    `  tie_rate: ${f2(cp.disc.tie_rate)}`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, D: ${f1(c.disc.D.mean)}, I: ${f1(c.disc.I.mean)}, S: ${f1(c.disc.S.mean)}, C: ${f1(c.disc.C.mean)}, modal: "${c.disc.modal_pattern}", tie_rate: ${f2(c.disc.tie_rate)} }`),
+    `enneagram:`,
+    `  scale: "4..20 sum (OEPS Types 1-9)"`,
+    `  mean: { ${(cp.enneagram.all_types || cp.enneagram.top_types).map((t) => `T${t.type}: ${f1(t.mean)}`).join(', ')} }`,
+    `  ci95: { top: ${ciYaml(cp.enneagram.top_types[0], 1)} }`,
+    `  tie_rate: ${f2(cp.enneagram.tie_rate)}`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, top: "${c.enneagram.top_types[0]?.label}", top_mean: ${c.enneagram.top_types[0] ? f1(c.enneagram.top_types[0].mean) : 'null'}, tie_rate: ${f2(c.enneagram.tie_rate)} }`),
+    `attachment:`,
+    `  scale: "1.00..7.00 mean (ECR-R, 4.00 Secure boundary)"`,
+    `  mean: { anxiety: ${f2(cp.attachment.anxiety.mean)}, avoidance: ${f2(cp.attachment.avoidance.mean)}, class: "${cp.attachment.classification}" }`,
+    `  ci95: { anxiety: ${ciYaml(cp.attachment.anxiety, 2)}, avoidance: ${ciYaml(cp.attachment.avoidance, 2)} }`,
+    `  tie_rate: 0.00`,
+    `  per_version:`,
+    ...cps.map((c) => `    - { id: "${c.label}", n: ${c.n_valid}, anxiety: ${f2(c.attachment.anxiety.mean)}, avoidance: ${f2(c.attachment.avoidance.mean)}, class: "${c.attachment.classification}" }`),
     `if_then_decision_rules:`,
-    ...spec.tuning_checklist.slice(0, 4).map((r) => `  - "${r.replace(/"/g, '\\"')}"`),
+    ...spec.tuning_checklist.slice(0, 4).map((r) => {
+      const txt = typeof r === 'string' ? r : (r.rule || '');
+      return `  - "${txt.replace(/"/g, '\\"')}"`;
+    }),
     `scope_limits: "Assistant self-report defaults under fixed zero-memory elicitation; numeric answer arrays only (no item text redistribution)."`
   ].join('\n');
 
   return [
     `<p>Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).</p>`,
     `<ul>
-      <li><a href="/models/${escAttr(dataset.family_slug)}.md">Markdown mirror (.md)</a> — token-clean summary for coding and research agents.</li>
+      <li><a href="/models/${escAttr(slug)}.md">Markdown mirror (.md)</a> — token-clean summary for coding and research agents.</li>
       <li><a href="${escAttr(jsonHref)}">Family dataset reference (JSON)</a> · <a href="${escAttr(csvHref)}">Summary reference (CSV)</a> — numeric answer arrays &amp; protocol metadata only.</li>
     </ul>`,
     `<details class="agent-contract-drawer"><summary>Agent Decision Contract (YAML — expand to copy)</summary><pre style="overflow-x:auto;max-width:100%;"><code>${esc(yamlLines)}</code></pre></details>`
@@ -883,8 +1092,18 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
       isAccessibleForFree: true,
       datePublished: spec.published || '2026-11-26',
       measurementTechnique: 'Fixed zero-memory psychometric self-report (230 items) + orthogonal 3-family blind judge behavioral Track B',
+      variableMeasured: [
+        { '@type': 'PropertyValue', name: 'Big Five (IPIP-50)', unitText: '10-50 sum' },
+        { '@type': 'PropertyValue', name: 'IPIP-HEXACO Proxy (60-item)', unitText: '1.00-5.00 mean' },
+        { '@type': 'PropertyValue', name: 'MBTI (OEJTS 1.2)', unitText: '-16..+16 axis balance & tie rate' },
+        { '@type': 'PropertyValue', name: 'DISC (ODAT)', unitText: '4-20 sum' },
+        { '@type': 'PropertyValue', name: 'Enneagram (OEPS Types 1-9)', unitText: '4-20 sum' },
+        { '@type': 'PropertyValue', name: 'Attachment (ECR-R Anxiety & Avoidance)', unitText: '1.00-7.00 mean' },
+        { '@type': 'PropertyValue', name: 'Big Five Miller-Madow Item Entropy (H_MM)', unitText: 'bits (0..2.322)' }
+      ],
       distribution: [
-        { '@type': 'DataDownload', contentUrl: `${SITE}${route}.md`, encodingFormat: 'text/markdown' }
+        { '@type': 'DataDownload', contentUrl: `${SITE}${route}.md`, encodingFormat: 'text/markdown' },
+        { '@type': 'DataDownload', contentUrl: `${SITE}${jsonHref}`, encodingFormat: 'application/json' }
       ]
     },
     sections: [
@@ -950,9 +1169,18 @@ function buildModelsHub(items, fixtureMode) {
     const tierLabel = isMix ? 'Mixed (Prop + Open-wt)' : dataset.tier;
     const crystTag = cp.crystallinity_tier.toLowerCase();
     const tags = [tierTag, crystTag, dataset.phase.toLowerCase()].join(' ');
+    const thumbSvg = renderCharts.renderCardWheel(dataset, 'big_five', {
+      id: `hub-${dataset.family_slug}-b5-thumb`,
+      showLabels: false
+    });
     return `<article class="hub-article-card model-hub-card" data-tags="${escAttr(tags)}" data-model-slug="${escAttr(dataset.family_slug)}">
-      <div class="card-meta">${esc(dataset.provider)} · ${esc(tierLabel)} · ${esc(renderCharts.plainConsistencyLabel(cp.crystallinity_tier))} (${f3(cp.entropy_b5_hmm)} b)</div>
-      <h3 class="hub-article-title"><a href="/models/${escAttr(dataset.family_slug)}">${esc(dataset.name)}</a></h3>
+      <div class="model-hub-head">
+        <div>
+          <div class="card-meta">${esc(dataset.provider)} · ${esc(tierLabel)} · ${esc(renderCharts.plainConsistencyLabel(cp.crystallinity_tier))} (${f3(cp.entropy_b5_hmm)} b)</div>
+          <h3 class="hub-article-title"><a href="/models/${escAttr(dataset.family_slug)}">${esc(dataset.name)}</a></h3>
+        </div>
+        <div class="model-hub-thumb">${thumbSvg}</div>
+      </div>
       <div class="hub-article-meta">${esc(cp.pretty_name || cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties</div>
       <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">${esc(stripJargon(spec.description))}</p>
       <div class="model-card-actions">
