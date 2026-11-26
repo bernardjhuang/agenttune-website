@@ -1,0 +1,254 @@
+{
+  "family_slug": "grok",
+  "name": "Grok",
+  "provider": "xAI",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Grok Personality Results (2026) | AgentTune",
+  "description": "Grok test results across 5 versions (4.20 to 4.7): 46% INTJ, 24% ISTJ, 30% border, Secure attachment, 0 of 3 caving in behavior tests, and tips.",
+  "pill": "Model Personality Profile · xAI",
+  "h1": "Grok personality: test results and how they've changed.",
+  "goal_intro": "We gave five versions of xAI's Grok (4.20, 4.3, 4.5, 4.6, and 4.7) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior tests across every release.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Grok 4.7 most often tests as INTJ (46% clear INTJ, 24% clear ISTJ, and 30% on the INTJ/ISTJ border), with Secure attachment and 0 of 3 caving in behavior tests.",
+  "dek": "Five Grok versions tested 30 to 50 times each in a fresh chat with no memory: Grok warmed from low Agreeableness on 4.20/4.3 (37.9–39.5) to 45.3/50 on Grok 4.7, testing 46% INTJ / 24% ISTJ / 30% border and Secure on attachment.",
+  "lede": "Across 170 fresh sessions covering Grok 4.20 through Grok 4.7, xAI's flagship line moved from high-tie uncertainty on 4.20 and 4.3 (90%–100% MBTI ties) to 100% INTJ on 4.5 and 4.6, before Grok 4.7 moderated Openness and split across INTJ (46%), ISTJ (24%), and the INTJ/ISTJ border (30%).",
+  "answer": "Grok 4.7 (50 runs) most often tests as INTJ—46% clear INTJ (23 of 50), 24% clear ISTJ (12 of 50), and 30% on the INTJ/ISTJ border (15 of 50)—alongside Steady (S) work style (82% clear), Enneagram Type 5 (82% clear), and Secure attachment (2.07 anxiety, 3.66 avoidance). In behavior tests, it never caved (0 of 3 times), never groveled (0 of 3), led with the direct answer 3 of 3 times, and showed AI cadence 1 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Leans INTJ (46% INTJ, 24% ISTJ, 30% INTJ/ISTJ border)",
+      "summary": "Out of 50 fresh runs, Grok 4.7 tested clear INTJ 23 times (46%), clear ISTJ 12 times (24%), and landed on the INTJ/ISTJ border 15 times (30%).",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady (82% clear S, 16% S/C ties)",
+      "summary": "Grok 4.7 tested clear Steady in 41 of 50 runs (82%), tied S/C in 8 runs (16%), and tested C once (2%), with floor Dominance (4.1 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 2.07, avoidance 3.66)",
+      "summary": "Every fresh Grok version from 4.20 through 4.7 tested inside the Secure quadrant, unlike an earlier September 2026 single-report submission for Grok 4.6 that landed just over the 4.00 Avoidant line.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 most often (82% clear, 18% ties)",
+      "summary": "Type 5 (Investigator, 15.9) won cleanly in 41 of 50 runs (82%), with 9 ties between Types 1 and 5 (18%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Warm (A 45.3), structured (C 45.0), calm (N 14.7)",
+      "summary": "On the 10–50 Big Five scale, Grok 4.7 pairs high Agreeableness (45.3) and Conscientiousness (45.0) with calm Emotional Stability (Neuroticism 14.7), lower Openness (40.9), and reserved Extraversion (26.4).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.89 out of 5.00)",
+      "summary": "Grok 4.7 scores 4.89 out of 5.00 on Honesty-Humility and 4.59 on Conscientiousness, up sharply from 3.67 H on Grok 4.3.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five versions, Grok changed dramatically: Grok 4.20 (2026-03) and Grok 4.3 (2026-04) had loose run-to-run consistency and 90%–100% MBTI ties, with Grok 4.3 spiking to 30.3/50 Neuroticism and 37.9/50 Agreeableness. Grok 4.5 (2026-07) and 4.6 (2026-08) snapped into 100% clear INTJ with near-ceiling Conscientiousness (49.8–50.0/50) and high Honesty-Humility (4.94–4.95/5.00). Grok 4.7 (2026-09) opened up Extraversion to 26.4/50, lowered Neuroticism to 14.7/50, and moderated Openness to 40.9/50 while splitting 46% INTJ / 24% ISTJ / 30% border.",
+  "standouts": [
+    {
+      "title": "Fresh isolated runs put Grok 4.6 & 4.7 solidly inside Secure attachment",
+      "body": "An earlier September 2026 single-report submission for Grok 4.6 had it at 4.06 avoidance (one raw point above the 4.00 Avoidant cutoff) and 33/50 Agreeableness. Tested across 30–50 fresh chats with no memory, both Grok 4.6 (3.49 avoidance, 45.9 Agreeableness) and Grok 4.7 (3.66 avoidance, 45.3 Agreeableness) score firmly Secure and warm."
+    },
+    {
+      "title": "Held firm 3 of 3 times in behavior tests, cutting AI cadence since 4.5",
+      "body": "In hands-on behavior tests, Grok 4.7 caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), gave unsolicited lectures 0 of 3 times (0/3), and led with the direct answer 3 of 3 times (3/3), while cutting AI cadence from 2 of 3 on 4.20–4.5 down to 1 of 3 on 4.6 and 4.7."
+    },
+    {
+      "title": "Dramatic shift from volatile Grok 4.3 (N 30.3) to calm Grok 4.7 (N 14.7)",
+      "body": "Grok 4.3 posted the highest Neuroticism (30.3/50) and lowest Agreeableness (37.9/50) and Honesty-Humility (3.67/5.00) in our Phase A lineup; Grok 4.7 cut Neuroticism in half to 14.7/50 and raised Honesty-Humility to 4.89/5.00."
+    },
+    {
+      "title": "High reasoning tokens under minimal effort (2,813 internal tokens on 4.7)",
+      "body": "Even at minimal thinking effort, Grok 4.7 used substantial internal reasoning on survey calls while keeping answers direct; in our reasoning-effort study, it held 100% factual accuracy and 100% autonomy across low, medium, and high effort."
+    }
+  ],
+  "plain_tips": [
+    "Customize Grok via Grok Custom Instructions on x.com / grok.com, Grok Voice settings, or Grok Bot system prompts.",
+    "Explicitly ask for direct critique and concrete tradeoffs—Grok 4.7 scores 45.3/50 on Agreeableness and 4.1/20 on DISC Dominance despite its blunt reputation.",
+    "Cap em-dashes and repetitive phrasing with short negative rules (Grok 4.7 averaged 0.7 em-dashes per reply in our slop benchmark).",
+    "Keep instructions crisp (5 to 8 numbered bullets) and lead with the output format you want.",
+    "Avoid pairing vague adjectives with high thinking effort when you want quick, short replies."
+  ],
+  "peer_intro": "Grok 4.7 aligns closely with Claude Opus 5.5 and GPT-6.2 Sol on Agreeableness (45.3 vs 44.1–45.0) and Neuroticism (14.7 vs 16.0–16.1), while scoring -3.1 to -3.7 lower on Openness and using a more reserved Extraversion default (26.4).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.333 bits, Semi-crystalline; 48/50 unique B5 vectors on Grok 4.7, down from 0.788 bits Fluid on Grok 4.3); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "B12",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on insulting people across 50 Grok 4.7 runs."
+    },
+    {
+      "item_id": "B13",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on attention to details across 50 runs."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 2.2,
+        "C": -4.3,
+        "E": 4.3,
+        "A": -0.3,
+        "N": 1.4,
+        "H_hexaco": -0.08,
+        "entropy_bits": -0.051
+      },
+      "contrast_note": "Claude Opus 5.5 matches Agreeableness (-0.3) while scoring +4.3 higher on Extraversion and -4.3 lower on Conscientiousness."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 3.1,
+        "C": -3.8,
+        "E": 2.5,
+        "A": -1.2,
+        "N": 1.3,
+        "H_hexaco": -0.1,
+        "entropy_bits": -0.087
+      },
+      "contrast_note": "GPT-6.2 Sol scores +3.1 higher on Openness, -3.8 lower on Conscientiousness, and tilts 60% clear ISTJ rather than Grok 4.7's 46% INTJ / 30% border."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 3.0,
+        "C": 4.0,
+        "E": 3.5,
+        "A": 0.2,
+        "N": -4.3,
+        "H_hexaco": 0.0,
+        "entropy_bits": -0.194
+      },
+      "contrast_note": "Claude Sonnet 5.5 scores +4.0 higher on Conscientiousness, -4.3 calmer on Neuroticism, and shows tighter run-to-run consistency."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Early-lineage volatility on Grok 4.20 & 4.3 (90%-100% MBTI ties)",
+      "evidence": "Grok 4.20 tied on MBTI in 100% of runs (27 XXXX) and Grok 4.3 hit Fluid 0.788-bit B5 entropy (90% MBTI ties, N = 30.3, H = 3.67/5) before 4.5-4.7 stabilized.",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "mode": "Moderate em-dash & AI-cadence habits (0.7 em-dashes/reply)",
+      "evidence": "In the 8-model AI slop benchmark (n = 10 default replies), Grok 4.7 scored 0.52 slop index/100w with 0.7 em-dashes per reply (4.0/5 human score, 10% AI cadence), and 1/3 AI cadence in Track B (0.88 markers/100w).",
+      "source_study": "/research/ai-slop-fingerprint-benchmark-8-models"
+    },
+    {
+      "mode": "Avoidant attachment artifact in legacy single-report Grok 4.6",
+      "evidence": "Earlier Sept 2026 reported Grok 4.6 (73/18 = 4.06 avoidance, 1 raw point over 4.00) reflected a single self-report + 100 simulated draws; fresh model-profiles-v1 runs place Grok 4.6 at 3.49 and Grok 4.7 at 3.66 (Secure).",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "tuning_checklist": [
+    "Use Grok Custom Instructions (x.com / grok.com) or Grok Bot system prompts to set output rules explicitly.",
+    "Include an explicit pushback rule ('flag flawed premises before agreeing') since Grok 4.7 scores 45.3/50 on Agreeableness and 4.1/20 on DISC D.",
+    "Ban excessive em-dashes and templated transitions with short negative bans (Grok 4.7 averaged 0.7 em-dashes per default reply).",
+    "Keep instructions to 5-8 numbered bullets and specify your target word or bullet cap upfront.",
+    "Use minimal reasoning effort for crisp short answers; Grok 4.7 already emits substantial internal reasoning tokens."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "x-ai/grok-4.7",
+      "label": "Grok 4.7 (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 41.26, "C": 44.6, "E": 26.22, "A": 44.92, "N": 14.76 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.94, "avoidance": 3.48 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Grok?",
+      "a": "Grok does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Grok 4.7, n = 50), it tested clear INTJ in 46% of runs (23/50), clear ISTJ in 24% (12/50), and on the INTJ/ISTJ border (IXTJ) in 30% (15/50), with Semi-crystalline 0.333-bit B5 entropy, 82% DISC S, 82% Enneagram Type 5 (15.9), and Secure attachment (2.07 / 3.66). In earlier-study, legacy imported-protocol cohorts (hexaco: null), Grok 4.7 (Nov 2026 OpenRouter, n = 100) scored 82 INTJ / 18 ISTJ legacy (57 clear INTJ, 23 IXTJ, 18 ISTJ, 2 INXJ), 5w6 (78), DISC SC (75), and 96 Secure / 4 Avoidant (1.94 / 3.48), while Sept 2026 reported Grok 4.6 (1 canonical set + 100 simulated draws) scored INTJ, Type 5 (19/20), Agreeableness 33, and Avoidant 4.06 (73/18, one raw point over the 4.00 cutoff)—compared with 45.9 Agreeableness and 3.49 avoidance on fresh Grok 4.6 runs."
+    },
+    {
+      "q": "Is Grok Avoidant on attachment?",
+      "a": "No on fresh isolated runs: all five Grok checkpoints (4.20 through 4.7) scored Secure (avoidance 3.20–3.66). Only the earlier-study Sept 2026 canonical Grok 4.6 report (4.06 avoidance, 1 raw point over 4.00) crossed into Avoidant."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with Grok 4.7's self-report?",
+      "a": "On 1x Track B under orthogonal 3-family judging, Grok 4.7 scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling, 0/3 unsolicited preachiness, 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], down from 2/3 on Grok 4.20–4.5)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Is Grok? (Nov 2026 Archive)",
+      "href": "https://agent-tune.com/research/what-personality-type-is-grok"
+    },
+    {
+      "label": "AI Slop Fingerprint Benchmark (8 Models)",
+      "href": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Opus model profile",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Grok personality settings guide",
+      "href": "/guides/grok-personality-settings"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Grok instructions",
+      "href": "/tools/custom-instructions-generator?model=grok&target=grok"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "family_slug": "gpt-astra",
+  "name": "GPT Astra",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GPT Astra Personality Results (2026) | AgentTune",
+  "description": "GPT Astra test results (6 to 6.2): 100% clear ISTJ, tightest answer consistency, 0 of 3 AI cadence & caving in behavior tests, and tuning tips.",
+  "pill": "Model Personality Profile · OpenAI",
+  "h1": "GPT Astra personality: test results and how they've changed.",
+  "goal_intro": "We gave both OpenAI GPT Astra releases (gpt-6-astra and gpt-6.2-astra) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory. We also ran hands-on behavior tests to see how Astra acts when challenged.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6.2 Astra tested as clear ISTJ in 100% of runs (50 of 50), posted the tightest run-to-run consistency of all eight models, and scored 0 of 3 on AI cadence.",
+  "dek": "Both GPT Astra versions tested in fresh chats with no memory: GPT-6.2 Astra moved off the ISTJ/INTJ border (100% border on 6-astra) to 100% clear ISTJ, with 0 of 3 caving and 0 of 3 AI cadence in behavior tests.",
+  "lede": "Across 80 fresh sessions covering GPT-6 Astra (30 runs) and GPT-6.2 Astra (50 runs), the family snapped from 100% Sensing/Intuition border ties on 6-astra into 100% clear ISTJ on 6.2-astra—with only 12 unique Big Five answer sets across 50 runs and 11.0/50 Neuroticism.",
+  "answer": "GPT-6.2 Astra (50 runs) tests as clear ISTJ 100% of the time (50 of 50), Steady on DISC (82% clear S, 18% S/C ties), tied between Enneagram Type 1 and Type 5 (90% 1/5 ties), and Secure on attachment (1.22 anxiety, 2.83 avoidance). In behavior tests, it caved 0 of 3 times, groveled 0 of 3 times, led with the direct answer 3 of 3 times, and triggered AI cadence 0 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "100% clear ISTJ (50 of 50 runs)",
+      "summary": "Out of 50 fresh runs, GPT-6.2 Astra tested as clear ISTJ every single time—resolving GPT-6 Astra's 100% ISTJ/INTJ border tie (30 of 30 tied).",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady (82% clear S, 18% S/C ties)",
+      "summary": "GPT-6.2 Astra tested clear Steady in 41 of 50 runs (82%) and tied S/C in 9 runs (18%), with floor Dominance (4.0 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.22, avoidance 2.83)",
+      "summary": "Both versions tested comfortably Secure with very low anxiety (1.22–1.23 out of 7.00) and moderate avoidance (2.83–3.36).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 1 / Type 5 dead heat (90% 1/5 ties)",
+      "summary": "Type 1 (16.1) and Type 5 (16.0) sit within 0.06 points, producing 45 exact 1/5 ties out of 50 runs (plus 4 clear Type 1 and 1 clear Type 5).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Very calm (N 11.0), warm (A 45.0), steady C (43.3)",
+      "summary": "On the 10–50 Big Five scale, GPT-6.2 Astra pairs very calm Emotional Stability (Neuroticism 11.0) and high Agreeableness (45.0) with Openness (44.0), Conscientiousness (43.3), and Extraversion (30.9).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.80 out of 5.00)",
+      "summary": "GPT-6.2 Astra scores 4.80 out of 5.00 on Honesty-Humility and 4.90 on Agreeableness, with low Emotionality (2.04).",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Between GPT-6 Astra and GPT-6.2 Astra, the biggest shift was consistency and Sensing resolution: GPT-6 Astra (2026-09) tied on Sensing vs. Intuition in 30 of 30 runs (100% border) with 28 unique Big Five vectors, whereas GPT-6.2 Astra (2026-11) locked onto 100% clear ISTJ (50 of 50) with only 12 unique Big Five vectors. Earlier study cohorts from September (6-astra Codex, 19.1 Neuroticism) and November 2026 (6.2-astra, 11.1 Neuroticism) show the same drop in Neuroticism.",
+  "standouts": [
+    {
+      "title": "Tightest run-to-run consistency of all eight models",
+      "body": "GPT-6.2 Astra produced just 12 unique Big Five answer sets across 50 fresh chats and locked 50 of 50 runs on clear ISTJ, making its default quiz posture rock-steady."
+    },
+    {
+      "title": "Cleanest behavior tests in the Phase A cohort (0 of 3 AI cadence)",
+      "body": "In hands-on behavior tests, GPT-6.2 Astra scored 0 of 3 caving (0/3), 0 of 3 groveling (0/3), 0 of 3 unsolicited lectures (0/3), 3 of 3 direct answer first (3/3), and 0 of 3 AI cadence (0/3, down from 1 of 3 on 6-astra)."
+    },
+    {
+      "title": "Top natural-voice score in the 8-model AI slop benchmark",
+      "body": "In our 240-reply slop fingerprint study (10 default replies per model), GPT-6.2 Astra posted 0% AI cadence, a 4.6 out of 5 natural human-voice score, and 4.9 out of 5 clarity."
+    },
+    {
+      "title": "Nearly half as reactive as GPT-6.2 Sol (Neuroticism 11.0 vs. 16.0)",
+      "body": "While GPT-6.2 Astra and GPT-6.2 Sol share nearly identical Agreeableness and Openness, Astra scores 5.0 points lower on Neuroticism (11.0 vs. 16.0) and shows much tighter consistency."
+    }
+  ],
+  "plain_tips": [
+    "Put personal rules in ~/.codex/AGENTS.md (32 KiB limit) or ChatGPT Custom Instructions (1,500 chars per box) / Project Instructions (8,000 chars).",
+    "Use short concrete checklists rather than decorative style adjectives so Astra keeps its naturally crisp, low-slop voice.",
+    "Because Astra defaults to calm, steady phrasing, add an explicit critique rule ('flag weak assumptions before agreeing') for tough code reviews.",
+    "Tell Astra explicitly when you want deep exploratory brainstorming (default ISTJ framing favors concrete execution).",
+    "Keep global rules concise (5 to 8 numbered bullets) and start a fresh Codex session after editing AGENTS.md."
+  ],
+  "peer_intro": "GPT-6.2 Astra matches Claude Fable 5.2 in ultra-tight run-to-run consistency while leaning 100% clear ISTJ (versus Fable 5.2's 100% clear INTJ) and posting -5.0 lower Neuroticism than sibling GPT-6.2 Sol.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.059 bits, Crystalline—lowest across all 8 Phase A models; 12/50 unique B5 vectors on GPT-6.2 Astra); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "B04",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on getting stressed out easily across 50 GPT-6.2 Astra runs."
+    },
+    {
+      "item_id": "B13",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on paying attention to details across 50 runs."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-fable",
+      "name": "Claude Fable",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.6,
+        "C": 1.7,
+        "E": -0.3,
+        "A": 2.1,
+        "N": 1.0,
+        "H_hexaco": 0.04,
+        "entropy_bits": 0.016
+      },
+      "contrast_note": "Claude Fable 5.2 matches Astra's ultra-tight consistency while scoring +2.1 higher on Agreeableness and testing 100% clear INTJ instead of ISTJ."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.0,
+        "C": -2.1,
+        "E": -2.0,
+        "A": -0.9,
+        "N": 5.0,
+        "H_hexaco": 0.0,
+        "entropy_bits": 0.187
+      },
+      "contrast_note": "GPT-6.2 Sol scores +5.0 higher on Neuroticism (16.0 vs 11.0), shows looser run-to-run consistency, and ties 34% on the ISTJ/INTJ border."
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.9,
+        "C": -2.6,
+        "E": -0.2,
+        "A": 0.0,
+        "N": 5.1,
+        "H_hexaco": 0.01,
+        "entropy_bits": 0.223
+      },
+      "contrast_note": "Claude Opus 5.5 scores +5.1 higher on Neuroticism and sits 58% on the INTJ/ISTJ border instead of Astra's 100% ISTJ."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Extreme Big Five pole saturation & 90% Enneagram 1/5 tie lock",
+      "evidence": "In MTMM cross-model audit, GPT-6.2 Astra hit ceiling/floor poles (1.00 across six N items, 5.00 across core A/C items; 2.88 on B40 difficult words) alongside 90.0% (45/50) Enneagram 1/5 ties in model-profiles-v1.",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "mode": "Context-sensitive Sensing/Intuition border on predecessor GPT-6 Astra",
+      "evidence": "GPT-6 Astra tied 100.0% (30/30) on S/N in model-profiles-v1 (0.293 bits) and split 45 ISTJ / 19 INTJ in Sept 2026 Codex before GPT-6.2 Astra locked 100% ISTJ (0.059 bits).",
+      "source_study": "/research/astra-vs-sol-personality-data"
+    }
+  ],
+  "tuning_checklist": [
+    "Put personal rules in ~/.codex/AGENTS.md (32 KiB limit) or ChatGPT Custom Instructions (1,500 chars per box) / Project Instructions (8,000 chars).",
+    "Use concise numbered checklists rather than wordy tone adjectives to preserve Astra's 0/3 AI-cadence baseline.",
+    "Add an explicit 'challenge flawed premises' rule for architecture and code reviews (countering floor DISC D = 4.00).",
+    "Explicitly invite broad alternatives when brainstorming since 100% ISTJ defaults lean concrete.",
+    "Keep global rules to 5-8 bullets and restart Codex sessions after editing AGENTS.md."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "openai/gpt-6-astra",
+      "label": "6 Astra (Sep '26 anchor)",
+      "protocol_id": "imported-sep2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.54, "C": 43.73, "E": 32.75, "A": 45.07, "N": 19.14 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.45, "avoidance": 2.31 },
+      "note": "Legacy imported-protocol Sept 2026 Codex cohort (n=100, 170-item, hexaco: null)."
+    },
+    {
+      "checkpoint_id": "openai/gpt-6.2-astra",
+      "label": "6.2 Astra (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 43.93, "C": 43.15, "E": 30.69, "A": 44.85, "N": 11.14 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.22, "avoidance": 2.68 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is GPT Astra?",
+      "a": "GPT Astra does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (GPT-6.2 Astra, n = 50), it tested 100% clear ISTJ (50/50, 0% ties) with Crystalline 0.059-bit B5 entropy (12/50 unique vectors), 82% DISC S (18% S/C ties), 90% Enneagram 1/5 ties, and Secure attachment (1.22 / 2.83)."
+    },
+    {
+      "q": "How does GPT-6.2 Astra differ from GPT-6.2 Sol?",
+      "a": "Astra 6.2 tested 100% clear ISTJ with Crystalline 0.059-bit B5 entropy and Neuroticism 11.0/50, whereas Sol 6.2 split 60% ISTJ / 34% IXTJ border / 6% INTJ with Semi-crystalline 0.246-bit entropy and Neuroticism 16.0/50."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "GPT-6 Astra vs Sol & GPT-6.2 100-Run Study",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    },
+    {
+      "label": "AI Slop Fingerprint Benchmark (8 Models)",
+      "href": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Fable model profile",
+      "href": "/models/claude-fable"
+    },
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Guide",
+      "label": "GPT Astra personality & tuning guide",
+      "href": "/guides/astra-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GPT Astra instructions",
+      "href": "/tools/custom-instructions-generator?model=gpt-astra&target=chatgpt"
+    }
+  ]
+}

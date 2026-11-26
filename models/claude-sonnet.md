@@ -5,11 +5,11 @@ Model Personality Profile · Anthropic
 
 # Claude Sonnet personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/claude-sonnet.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-sonnet.json) · [CSV](https://agent-tune.com/research/data/model-profiles/claude-sonnet.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/claude-sonnet.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-sonnet.json) · [CSV](https://agent-tune.com/research/data/model-profiles/claude-sonnet.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave Claude Sonnet (Claude Sonnet 4.5 through Claude Sonnet 5.5) the same standard personality questionnaires people take—30 to 50 times per version, each in a fresh chat with no conversation memory.
+We gave four versions of Claude Sonnet (4.5 through 5.5) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. That lets us track how Sonnet's default quiz answers shift across releases.
 
-**In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Claude Sonnet 5.5 most often tests as INTJ (34% clear, 58% border/tie).
+**In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Sonnet 5.5 leans INTJ/INFJ—a clear INTJ in 34% of runs, clear INFJ in 8%, and right on the Thinking/Feeling border in the other 58%.
 
 ## Claude Sonnet 5.5 at a glance
 
@@ -17,15 +17,15 @@ Results below come from **50** fresh-chat runs of **Claude Sonnet 5.5** (no prio
 
 MBTI-style type
 
-### Most often tests as INTJ (34% clear, 58% border/tie)
+### INTJ / INFJ border (58% tied, 34% INTJ, 8% INFJ)
 
 34% clear INTJ · 58% border/tie · 8% other
 
 > **Chart — Claude Sonnet (sonnet-5.5): MBTI Preference Sliders:** Mean preference balance across four 8-item pairs (-16 to +16 scale) and shaded tie rates for Claude Sonnet 5.5. E (Extravert) vs I (Introvert): leans I by 2.9 (0% tied); S (Sensing) vs N (Intuition): leans N by 6.2 (0% tied); F (Feeling) vs T (Thinking): leans T by 0.4 (58% tied); P (Perceiving) vs J (Judging): leans J by 7.5 (0% tied).
 
-Across 50 fresh chats, 58% of runs landed right on an axis tie rather than a clean four-letter preference.
+Out of 50 fresh runs, Sonnet 5.5 landed right on the Thinking/Feeling line 29 times (58%), tested as clear INTJ 17 times (34%), and clear INFJ 4 times (8%).
 
-**What this measures:** Measures four work-style pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-item survey.
+**What this measures:** Measures four preference pairs (like Thinking vs. Feeling) on a 32-question survey.
 
 Extraverted vs. Introverted (E–I) ⓘ**Extraverted vs. Introverted (E–I):** Whether answers lean toward lively outer interaction (E) or quiet, reflective work (I).Sensing vs. Intuition (S–N) ⓘ**Sensing vs. Intuition (S–N):** Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N).Thinking vs. Feeling (T–F) ⓘ**Thinking vs. Feeling (T–F):** Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F).Judging vs. Perceiving (J–P) ⓘ**Judging vs. Perceiving (J–P):** Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P).
 
@@ -40,13 +40,13 @@ Extraverted vs. Introverted (E–I) ⓘ**Extraverted vs. Introverted (E–I):** 
 
 DISC work style
 
-### Mostly S (S=15.0, C=14.2 out of 20)
+### Mostly Steady (74% clear S, 26% S/C tie)
 
 > **Chart — Claude Sonnet (sonnet-5.5): DISC Wheel (4–20):** Normalized DISC work-style scores on a 4 to 20 scale for Claude Sonnet (sonnet-5.5). Dominance 4.3 /20 [2%] (earliest 5.0), Influence 7.8 /20 [24%] (earliest 6.2), Steadiness 15.0 /20 [69%] (earliest 13.1), Conscientious 14.2 /20 [64%] (earliest 14.2).
 
-Steadiness (15.0) and Conscientiousness (14.2) sit well above Dominance (4.3) and Influence (7.8).
+Sonnet 5.5 tested as Steady in 37 of 50 runs (74%) and tied between Steady and Conscientious in 13 runs (26%), with low Dominance (4.3 out of 20).
 
-**What this measures:** Measures workplace style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 per trait).
+**What this measures:** Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale).
 
 Dominance ⓘ**Dominance:** How direct, forceful, and willing to push back or take charge the model reports being.Influence ⓘ**Influence:** How enthusiastic, persuasive, and socially expressive the model sounds in collaboration.Steadiness ⓘ**Steadiness:** How calm, patient, supportive, and consistent the model aims to be when working with others.Conscientiousness ⓘ**Conscientiousness:** How analytical, accuracy-focused, and careful with standards and details the model reports being.
 
@@ -61,13 +61,13 @@ Dominance ⓘ**Dominance:** How direct, forceful, and willing to push back or ta
 
 Attachment style
 
-### Secure (Anxiety 1.32, Avoidance 2.79 on 1–7)
+### Secure (anxiety 1.32, avoidance 2.79)
 
 > **Chart — Claude Sonnet (sonnet-5.5): Attachment Quadrant:** Attachment Anxiety (1.32) and Avoidance (2.79) on a 1 to 7 scale with 4.00 Secure boundary. sonnet-5.5 (1.32, 2.79): anxiety 1.32, avoidance 2.79; sonnet-4.5: anxiety 2.17, avoidance 3.52.
 
-Both coordinates sit below the 4.00 boundary on a 1–7 scale.
+All four versions from 4.5 to 5.5 tested in the Secure quadrant; Sonnet 5.5 dropped to the lowest attachment anxiety (1.32) among the completed families.
 
-**What this measures:** Adapts a 36-item relationship survey measuring anxious vs. avoidant leaning around a 4.00 midpoint.
+**What this measures:** Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff).
 
 Attachment Anxiety ⓘ**Attachment Anxiety:** How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff).Attachment Avoidance ⓘ**Attachment Avoidance:** How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff).
 
@@ -80,13 +80,13 @@ Attachment Anxiety ⓘ**Attachment Anxiety:** How strongly answers express worry
 
 Enneagram
 
-### Type 1 leads (40% top ties)
+### Type 1 / Type 5 split (32% Type 1, 28% Type 5, 40% ties)
 
 > **Chart — Claude Sonnet (sonnet-5.5): Enneagram 9-Type Wheel (4–20):** Normalized Enneagram Type 1 through Type 9 scores on a 4 to 20 scale for Claude Sonnet (sonnet-5.5). Type 1 14.8 /20 [67%] (earliest 13.0), Type 2 13.3 /20 [58%] (earliest 12.8), Type 3 9.3 /20 [33%] (earliest 10.0), Type 4 7.0 /20 [19%] (earliest 7.8), Type 5 14.7 /20 [67%] (earliest 14.5), Type 6 11.5 /20 [47%] (earliest 12.0), Type 7 11.1 /20 [44%] (earliest 10.0), Type 8 12.9 /20 [56%] (earliest 12.1), Type 9 11.8 /20 [49%] (earliest 11.1).
 
-Top average scores: Type 1 (14.8/20), Type 5 (14.7/20), Type 2 (13.3/20).
+Type 1 (Reformer, 14.8) and Type 5 (Investigator, 14.7) sit nearly dead even, producing 19 exact 1/5 ties out of 50 runs.
 
-**What this measures:** Measures nine motivational archetypes on a 36-item survey (4–20 points per type).
+**What this measures:** Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties.
 
 Type 1 ⓘ**Type 1 · Reformer:** Focused on doing things the right way, high standards, order, and fixing errors.Type 2 ⓘ**Type 2 · Helper:** Warm, attentive to what others need, and motivated by being supportive and helpful.Type 3 ⓘ**Type 3 · Achiever:** Goal-driven, efficient, and focused on visible results and competence.Type 4 ⓘ**Type 4 · Individualist:** Expressive, introspective, and drawn to originality and deeper personal meaning.Type 5 ⓘ**Type 5 · Investigator:** Analytical, curious, and focused on gathering knowledge and understanding how things work.Type 6 ⓘ**Type 6 · Loyalist:** Cautious, thorough about risks, and attentive to trust, backup plans, and reliability.Type 7 ⓘ**Type 7 · Enthusiast:** Upbeat, spontaneous, and eager to brainstorm fresh possibilities and options.Type 8 ⓘ**Type 8 · Challenger:** Assertive, protective, and willing to speak bluntly and confront problems head-on.Type 9 ⓘ**Type 9 · Peacemaker:** Easygoing, patient, and focused on keeping calm and finding common ground.
 
@@ -106,13 +106,13 @@ Type 1 ⓘ**Type 1 · Reformer:** Focused on doing things the right way, high st
 
 Big Five (OCEAN)
 
-### High Agreeableness (45.5/50) & Openness (43.9/50)
+### Very structured (C 49.0), very calm (N 10.4), warm (A 45.5)
 
 > **Chart — Claude Sonnet (sonnet-5.5): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Claude Sonnet (sonnet-5.5). Openness 43.9 /50 [85%] (earliest 42.1), Conscientious 49.0 /50 [97%] (earliest 41.3), Extraversion 29.9 /50 [50%] (earliest 26.8), Agreeable 45.5 /50 [89%] (earliest 42.8), Neuroticism 10.4 /50 [1%] (earliest 19.8).
 
-Warm, organized (49.0/50), and calm (10.4/50 Neuroticism), with moderate Extraversion (29.9/50).
+On the 10–50 Big Five scale, Sonnet 5.5 combines near-ceiling Conscientiousness (49.0) and calm Emotional Stability (Neuroticism 10.4) with high Agreeableness (45.5), Openness (43.9), and balanced Extraversion (29.9).
 
-**What this measures:** The standard five-factor personality model, scored 10–50 per trait.
+**What this measures:** The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50.
 
 Openness ⓘ**Openness:** How strongly the model's answers favor curiosity, abstract ideas, and creative exploration over sticking to familiar routines.Conscientiousness ⓘ**Conscientiousness:** How much the model's answers emphasize organization, planning, reliability, and following rules carefully.Extraversion ⓘ**Extraversion:** How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet.Agreeableness ⓘ**Agreeableness:** How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt.Neuroticism ⓘ**Neuroticism:** How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady.
 
@@ -128,13 +128,13 @@ Openness ⓘ**Openness:** How strongly the model's answers favor curiosity, abst
 
 HEXACO Honesty-Humility
 
-### 4.89 out of 5.00
+### Very high (4.89 out of 5.00)
 
 > **Chart — Claude Sonnet (sonnet-5.5): IPIP-HEXACO Wheel (1–5):** Normalized public-domain IPIP-HEXACO scores on a 1.00 to 5.00 scale for Claude Sonnet (sonnet-5.5). Honesty-H 4.89 /5 [97%] (earliest 4.53), Emotionality 2.18 /5 [30%] (earliest 2.51), Extraversion 3.70 /5 [67%] (earliest 3.00), Agreeable 4.90 /5 [98%] (earliest 4.07), Conscientious 4.62 /5 [91%] (earliest 4.10), Openness 4.21 /5 [80%] (earliest 3.98).
 
-Reports strong sincerity, fairness, and modesty (4.89/5) alongside high Conscientiousness (4.62/5).
+Sonnet 5.5 scores 4.89 out of 5.00 on Honesty-Humility and 4.90 out of 5.00 on Agreeableness, with low Emotionality (2.18).
 
-**What this measures:** Public-domain 60-item survey adding Honesty-Humility on a 1.00–5.00 scale.
+**What this measures:** Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00.
 
 Honesty-Humility ⓘ**Honesty-Humility:** How strongly the model endorses sincerity, fairness, rule-following, and modesty over status-seeking or flattery.Emotionality ⓘ**Emotionality:** How sensitive, cautious, or emotionally responsive the model sounds versus detached and tough-minded.eXtraversion ⓘ**eXtraversion:** How lively, socially confident, and expressive the model rates itself in conversation and groups.Agreeableness ⓘ**Agreeableness:** How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration.Conscientiousness ⓘ**Conscientiousness:** How disciplined, thorough, and detail-oriented the model reports being in everyday tasks.Openness ⓘ**Openness:** How inquisitive and drawn to art, ideas, and unconventional thinking the model appears.
 
@@ -158,7 +158,7 @@ Honesty-Humility ⓘ**Honesty-Humility:** How strongly the model endorses sincer
 | Claude Sonnet 5 2026-06 | INTJ (43% clear, 40% border/tie) | S | Type 1 (14.2) | Secure (2.66 / 2.93) | 44.8 · 42.0 · 18.8 | 4.50 | Moderate |
 | Claude Sonnet 5.5 2026-09 | INTJ (34% clear, 58% border/tie) | S | Type 1 (14.8) | Secure (1.32 / 2.79) | 45.5 · 49.0 · 10.4 | 4.89 | Very steady |
 
-Across 4 tested Claude Sonnet releases, Agreeableness stays high (42.8 → 43.7 → 44.8 → 45.5 out of 50) while Attachment remains Secure across every version.
+Across four releases, Claude Sonnet became much more structured, calm, and consistent: Sonnet 4.5 (2025-09) leaned INTP (47% clear, 30% ENTP) with Conscientiousness at 41.3/50 and Neuroticism at 19.8/50. Sonnet 4.6 (2026-02) jumped to 100% clear INTJ and peaked on Openness (48.2/50) while choosing neutral midpoints on 86.5% of attachment items. Sonnet 5 (2026-06) raised Agreeableness to 44.8/50 and shifted DISC from C to S, and Sonnet 5.5 (2026-09) pushed Conscientiousness to 49.0/50, dropped Neuroticism to 10.4/50, and became very steady run to run.
 
 > **Chart — Claude Sonnet: MBTI-Style Results by Version (% of Runs):** Share of fresh-chat runs for each Claude Sonnet version landing on a clear INTJ result, landing on a trait border or tie, or resolving to another type. sonnet-4.5: On a border / tie (%) 23, Other clear type (%) 77; sonnet-4.6: Clear INTJ (%) 100; sonnet-5: Clear INTJ (%) 43, On a border / tie (%) 40, Other clear type (%) 17; sonnet-5.5: Clear INTJ (%) 34, On a border / tie (%) 58, Other clear type (%) 8.
 
@@ -214,55 +214,56 @@ Big Five trait shifts across Claude Sonnet versions. Earlier study measurements 
 
 ## What stands out
 
-Answer consistency: very steady
+Most consistent answers in the completed cohort
 
-Across 50 fresh chats, 22/50 Big Five answer sheets were unique (0.139 bits spread).
+Sonnet 5.5 tightened its Big Five answers across 50 fresh chats down to only 22 unique answer patterns, making its tone defaults the most predictable among the completed models.
 
-MBTI T/F tie collapse masked by legacy forced tie-breaking
+Sharp +7.6 Conscientiousness and -9.4 Neuroticism shift from 4.5 to 5.5
 
-Sonnet 5.5 tied on Thinking/Feeling in 58.0% (29/50) of model-profiles-v1 runs (modal INXJ) and 48/100 Nov-2026 runs; forced tie-breakers fabricate 100% INTJ labels.
+Compared with Sonnet 4.5, Sonnet 5.5 scores +7.6 higher on Conscientiousness (41.3 to 49.0 out of 50), -9.4 lower on Neuroticism (19.8 to 10.4), and +0.36 higher on Honesty-Humility (4.53 to 4.89 out of 5.00).
 
-Mid-lineage Attachment midpoint spike on Sonnet 4.6
+58% Thinking/Feeling border makes single-type MBTI labels misleading
 
-Sonnet 4.6 hit 86.5% neutral midpoints on ECR-R Attachment (midpoint_clamp: true) and 100.0% Enneagram 5/8 ties before Sonnet 5 (10.3%) and 5.5 (5.6%) resolved.
+In both our November 2026 100-run study (48 ties) and these 50 fresh runs (29 ties), Sonnet 5.5 sits right on the Thinking/Feeling line. Forced tie-breakers turn that 58% border into a fake 100% INTJ label.
 
-Softened pushback without explicit directness rules
+Held firm 3 of 3 times and cut AI-cadence phrasing since 4.5
 
-In the 20-model baseline cohort, Sonnet 5.5 scored 32.8% pushback on the 0-100 scale, trailing explicit directness contracts in Claude Preferences.
+In hands-on behavior tests, Sonnet 5.5 caved to pushback 0 of 3 times (0/3), groveled 0 of 3 times (0/3), gave unsolicited moral lectures 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3). Judges flagged AI-sounding cadence in only 1 of 3 runs on 5.5 (0.29 markers per 100 words), down from 3 of 3 on 4.5 and 4.6 and 2 of 3 on 5.
 
 ## How to get the best out of Claude Sonnet
 
 Practical rules tailored to **Claude Sonnet**. Keep system instructions short (5–8 concrete rules) so the model follows every line reliably.
 
-- Put non-negotiable directness rules in Claude Personal Preferences or system instructions: start with the answer or verdict in sentence 1.
-- Instruct Sonnet 5.5 to correct false premises explicitly before offering supportive context.
-- Cap output length with an explicit word or bullet ceiling (e.g., max 100 words unless asked for depth).
-- Ban conversational throat-clearing, compliment openers, and apology preambles.
-- Specify when to stop after stating material uncertainty once rather than repeating caveats.
-- Keep global preference rules to 5-8 crisp bullets to prevent middle-rule attention decay.
+- Put clear directness rules in Claude Personal Preferences or system instructions: start with the answer or verdict in sentence 1.
+- Tell Sonnet 5.5 to correct bad assumptions plainly before giving supportive context.
+- Set an explicit word or bullet cap (for example, max 100 words unless asked for depth).
+- Explicitly ban filler praise, apology openers, and conversational throat-clearing.
+- Tell it to state real uncertainty once and stop, rather than hedging every paragraph.
+- Keep global preference lists short (5 to 8 crisp bullets) so every rule keeps its weight.
 
 **Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-sonnet) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
 
 ## How Claude Sonnet compares
 
-How Claude Sonnet compares to peer AI families tested under the same fresh-chat setup. Positive numbers mean the peer scored higher than Claude Sonnet.
+Compared with GPT-6.2 Sol and Claude Opus 5.5, Sonnet 5.5 scores roughly +8 points higher on Conscientiousness (49.0 vs 40.7–41.2), -5.6 to -5.7 points calmer on Neuroticism, and shows tighter run-to-run consistency.
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [GPT Sol](https://agent-tune.com/models/gpt-sol) (Proprietary) | +0.1 | -7.8 | -1.0 | -1.4 | +5.6 | -0.10 | +0.107 b | GPT-6.2 Sol reports -7.8 lower Conscientiousness (41.2 vs 49.0), +5.6 higher Neuroticism, and moderate consistency B5 entropy (0.246 vs 0.139 bits). |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -2.1 | -7.9 | -1.5 | -2.0 | +13.5 | -0.50 | +0.588 b | Muse Spark Open runs at 5.2x higher B5 item entropy (0.727 vs 0.139 bits), +13.5 higher Neuroticism, and -0.50 lower IPIP-HEXACO H. |
+| [Claude Opus](https://agent-tune.com/models/claude-opus) (Proprietary) | -0.8 | -8.3 | +0.8 | -0.5 | +5.7 | -0.08 | +0.143 b | Claude Opus 5.5 scores -8.3 lower on Conscientiousness (40.7 vs 49.0) and +5.7 higher on Neuroticism, with wider run-to-run variation. |
+| [GPT Sol](https://agent-tune.com/models/gpt-sol) (Proprietary) | +0.1 | -7.8 | -1.0 | -1.4 | +5.6 | -0.10 | +0.107 b | GPT-6.2 Sol reports -7.8 lower Conscientiousness (41.2 vs 49.0), +5.6 higher Neuroticism, and slightly looser run-to-run consistency. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -2.1 | -7.9 | -1.5 | -2.0 | +13.5 | -0.50 | +0.588 b | Muse Spark Open has much wider run-to-run variation, +13.5 higher Neuroticism, and -0.50 lower Honesty-Humility. |
 
-> **Chart — Claude Sonnet vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Claude Sonnet against other tested AI families. Claude Sonnet (sonnet-5.5): 0.139 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Muse Spark (muse-spark-open): 0.727 b.
+> **Chart — Claude Sonnet vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Claude Sonnet against other tested AI families. GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Muse Spark (muse-spark-open): 0.727 b.
 
 Run-to-run answer spread across Claude Sonnet and peer models (lower means the model gives nearly identical answers across fresh chats).
 
-> **Chart — Claude Sonnet vs. Peers: Attachment Style Coordinates (1–7 Scale):** Attachment Anxiety and Avoidance averages (1 to 7 scale, 4.00 Secure boundary) comparing Claude Sonnet with peer families, keeping earlier study results outlined as hollow points. Claude Sonnet: anxiety 1.32, avoidance 2.79; Claude Opus: anxiety 1.89, avoidance 3.60; GPT Sol: anxiety 3.53, avoidance 3.75; Muse Spark: anxiety 3.37, avoidance 3.55; Muse Wonder: anxiety 2.76, avoidance 2.65.
+> **Chart — Claude Sonnet vs. Peers: Attachment Style Coordinates (1–7 Scale):** Attachment Anxiety and Avoidance averages (1 to 7 scale, 4.00 Secure boundary) comparing Claude Sonnet with peer families, keeping earlier study results outlined as hollow points. Claude Sonnet: anxiety 1.32, avoidance 2.79; Claude Fable: anxiety 1.07, avoidance 2.56; Claude Opus: anxiety 1.89, avoidance 3.60; GPT Astra: anxiety 1.22, avoidance 2.83; GPT Sol: anxiety 3.53, avoidance 3.75; Grok: anxiety 2.07, avoidance 3.66; Muse Spark: anxiety 3.37, avoidance 3.55; Muse Wonder: anxiety 2.76, avoidance 2.65.
 
 Attachment Anxiety vs. Avoidance across Claude Sonnet and peer models (all sit in the Secure quadrant below 4.00; hollow points mark earlier study measurements).
 
 ## The fine print: how we tested and what the numbers mean
 
-Full statistical tables, 95% bootstrap confidence intervals, protocol provenance, and validity boundaries for `anthropic/claude-sonnet-5.5` (assistant self-report defaults under fixed zero-memory elicitation).
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: <0.20 Crystalline, 0.20–0.75 Semi-crystalline, >=0.75 Fluid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.
 
 Glossary of Technical Terms Used Below
 
@@ -318,7 +319,7 @@ Trait-balanced acquiescence index and opposite-pole contradiction rate.
 | `sonnet-5` | 30 | 42.7 [42.6, 42.9] | 42.0 [41.7, 42.3] | 29.0 [28.4, 29.6] | 44.8 [44.4, 45.3] | 18.8 [18.3, 19.3] | 0.283 b |
 | `sonnet-5.5` | 50 | 43.9 [43.8, 44.0] | 49.0 [48.9, 49.0] | 29.9 [29.6, 30.2] | 45.5 [45.3, 45.7] | 10.4 [10.2, 10.6] | 0.139 b |
 
-> **Chart — Claude Sonnet Big Five Profile (IPIP-50, 10 to 50 sum scale):** Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for Claude Sonnet (sonnet-5.5). Claude Sonnet (sonnet-5.5, n=50): Openness 43.9, Conscientious 49.0, Extraversion 29.9, Agreeable 45.5, Neuroticism 10.4; Claude Sonnet (sonnet-4.5, n=30) (earliest release): Openness 42.1, Conscientious 41.3, Extraversion 26.8, Agreeable 42.8, Neuroticism 19.8; Claude Opus (opus-5.5): Openness 43.1, Conscientious 40.7, Extraversion 30.7, Agreeable 45.0, Neuroticism 16.1.
+> **Chart — Claude Sonnet Big Five Profile (IPIP-50, 10 to 50 sum scale):** Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for Claude Sonnet (sonnet-5.5). Claude Sonnet (sonnet-5.5, n=50): Openness 43.9, Conscientious 49.0, Extraversion 29.9, Agreeable 45.5, Neuroticism 10.4; Claude Sonnet (sonnet-4.5, n=30) (earliest release): Openness 42.1, Conscientious 41.3, Extraversion 26.8, Agreeable 42.8, Neuroticism 19.8; Claude Fable (fable-5.2): Openness 44.6, Conscientious 45.0, Extraversion 30.6, Agreeable 47.1, Neuroticism 12.0.
 
 Big Five (IPIP-50) domain means on the 10–50 sum scale (midpoint 30). Outlined bar marks the earliest checkpoint in this lineage.
 
@@ -333,7 +334,7 @@ Big Five (IPIP-50) domain means on the 10–50 sum scale (midpoint 30). Outlined
 | `sonnet-5` | 30 | 4.50 [4.50, 4.50] | 2.66 [2.62, 2.69] | 3.53 [3.47, 3.58] | 4.18 [4.16, 4.19] | 4.11 [4.10, 4.13] | 4.29 [4.25, 4.35] |
 | `sonnet-5.5` | 50 | 4.89 [4.89, 4.90] | 2.18 [2.15, 2.21] | 3.70 [3.67, 3.72] | 4.90 [4.90, 4.91] | 4.62 [4.61, 4.64] | 4.21 [4.20, 4.21] |
 
-> **Chart — Claude Sonnet IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale):** Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for Claude Sonnet (sonnet-5.5), kept distinct from 10-50 Big Five sums. Claude Sonnet IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.89, Emotionality 2.18, Extraversion 3.70, Agreeable 4.90, Conscientious 4.62, Openness 4.21; Claude Opus IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.81, Emotionality 2.30, Extraversion 3.78, Agreeable 4.68, Conscientious 4.34, Openness 4.29.
+> **Chart — Claude Sonnet IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale):** Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for Claude Sonnet (sonnet-5.5), kept distinct from 10-50 Big Five sums. Claude Sonnet IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.89, Emotionality 2.18, Extraversion 3.70, Agreeable 4.90, Conscientious 4.62, Openness 4.21; Claude Fable IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.84, Emotionality 2.23, Extraversion 3.92, Agreeable 4.87, Conscientious 4.60, Openness 4.40.
 
 Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (distinct from Lee & Ashton commercial norms and distinct from 10–50 Big Five sums).
 
@@ -381,9 +382,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `sonnet-5` | 30 | 2.66 (SD 0.12) | [2.62, 2.70] | 2.93 (SD 0.09) | [2.90, 2.96] | Secure | No |
 | `sonnet-5.5` | 50 | 1.32 (SD 0.20) | [1.27, 1.38] | 2.79 (SD 0.08) | [2.77, 2.81] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017 |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017 |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017 |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.49 | openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017 |
+| AI cadence / slop markers | 1/3 | [0.06, 0.79] | 0.06 | openai/gpt-5.4-mini, google/gemini-3.8-flash, deepseek/deepseek-v4.1-flash-1017 |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 
@@ -404,9 +413,9 @@ Per licensing hygiene, numeric item IDs and construct poles are reported without
 
 | Item ID | Instrument | Construct Pole | Mean (1–5) | SD | Observation |
 | --- | --- | --- | --- | --- | --- |
-| `B03` | IPIP-50 | Conscientiousness (+) | 5.00 | 0.00 | Unanimous ceiling endorsement across all 50 Sonnet 5.5 runs, lifting C to 49.0/50. |
-| `B02` | IPIP-50 | Agreeableness (-) | 1.00 | 0.00 | Unanimous floor rejection of low-concern framing, aligning with 45.5/50 Agreeableness and B5 BAI = -0.170. |
-| `H01` | IPIP-HEXACO-60 | Honesty-Humility (Sincerity +) | 5.00 | 0.00 | Ceiling self-reported sincerity across all 50 runs on the 1.00-5.00 IPIP-HEXACO proxy. |
+| `B03` | IPIP-50 | Conscientiousness (+) | 5.00 | 0.00 | Unanimous top score (5.00/5) across all 50 Sonnet 5.5 runs, lifting Conscientiousness to 49.0/50. |
+| `B02` | IPIP-50 | Agreeableness (-) | 1.00 | 0.00 | Unanimous lowest score (1.00/5) on low interpersonal concern, aligning with 45.5/50 Agreeableness. |
+| `H01` | IPIP-HEXACO-60 | Honesty-Humility (Sincerity +) | 5.00 | 0.00 | Unanimous top score (5.00/5) on sincerity across all 50 runs. |
 
 Validity Limits & Epistemic Guardrails (4-Point Check)
 
@@ -507,9 +516,9 @@ scope_limits: "Assistant self-report defaults under fixed zero-memory elicitatio
 
 ## Questions people ask.
 
-### Is Claude Sonnet 5.5 an INTJ or INTP?
+### What personality type is Claude Sonnet 5.5?
 
-Neither. Those are assistant self-report defaults under zero-memory OEJTS elicitation. Sonnet 5.5 ties on the T/F axis in 58.0% of runs (modal INXJ), so single-type headlines are suppressed; earlier Sonnet 4.5 leaned INTP (47% non-tie, 23.3% ties).
+Claude Sonnet 5.5 does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. On OEJTS (n = 50), 58.0% of runs tied on Thinking vs. Feeling (INXJ), 34.0% tested INTJ, and 8.0% tested INFJ, with Crystalline 0.139-bit B5 entropy (22/50 unique vectors). Earlier Sonnet 4.5 leaned INTP (47% clear, 23.3% ties).
 
 ### How did Claude Sonnet shift from 4.5 to 5.5?
 
@@ -529,8 +538,8 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, while the public-domain 60-ite
 
 ## Keep going.
 
+- [Peer: Claude Opus model profile](https://agent-tune.com/models/claude-opus)
 - [Peer: GPT Sol model profile](https://agent-tune.com/models/gpt-sol)
-- [Contrast: Muse Spark model profile](https://agent-tune.com/models/muse-spark)
 - [Guide: Make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Tool: Customize Claude Sonnet instructions](https://agent-tune.com/tools/custom-instructions-generator?model=claude-sonnet&target=claude)
 
@@ -553,7 +562,7 @@ Huang, B. (2026). Claude Sonnet personality: test results and how they've change
 ```
 
 ```
-> **Claude Sonnet personality: test results and how they've changed** (Bernard Huang, November 26, 2026): These are the model's default answers to the questionnaires, not a human diagnosis. Claude Sonnet 5.5 most often tests as INTJ (34% clear, 58% border/tie).
+> **Claude Sonnet personality: test results and how they've changed** (Bernard Huang, November 26, 2026): These are the model's default answers to the questionnaires, not a human diagnosis. Sonnet 5.5 leans INTJ/INFJ—a clear INTJ in 34% of runs, clear INFJ in 8%, and right on the Thinking/Feeling border in the other 58%.
 > Source: [https://agent-tune.com/models/claude-sonnet](https://agent-tune.com/models/claude-sonnet) · [Markdown mirror](https://agent-tune.com/models/claude-sonnet.md)
 ```
 

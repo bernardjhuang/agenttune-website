@@ -6,13 +6,84 @@
   "phase": "A",
   "published": "2026-11-26",
   "updated": "2026-11-26",
-  "title": "Muse Wonder Personality Profile (2026) | AgentTune",
-  "description": "Muse Wonder assistant defaults (2026-10): Semi-crystalline 0.331 bits, 49.5/50 Agreeableness, 56% DISC ties, and anti-hedge rules.",
-  "pill": "Model Family Profile · Proprietary · Semi-crystalline",
-  "h1": "Muse Wonder: assistant self-report defaults, baseline metrics, and tuning rules.",
-  "dek": "Assistant self-report defaults under fixed zero-memory elicitation for Meta Muse Wonder (2026-10): Semi-crystalline 0.331 bits B5 entropy, near-ceiling Agreeableness (49.5/50), and 56.0% DISC ties.",
-  "lede": "On its single current OpenRouter checkpoint (meta/muse-wonder, n = 50) under unified 230-item model-profiles-v1 elicitation, Muse Wonder records the highest Openness (49.6/50), Conscientiousness (49.2/50), Agreeableness (49.5/50), and IPIP-HEXACO Honesty-Humility (4.91/5 on the 1.00-5.00 proxy) among the four completed Phase A families, paired with Semi-crystalline Big Five entropy (0.331 bits, 39/50 unique Big Five vectors) and slight positive Big Five acquiescence (BAI = +0.018).",
-  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place Meta Muse Wonder (n = 50) in the Semi-crystalline tier (H_MM = 0.331 bits, 39/50 unique Big Five vectors, 2.0% MBTI tie rate, 56.0% DISC S/C tie rate, 42.0% Enneagram tie rate). Never treat INTJ (98% mode) as a human trait: near-ceiling Agreeableness (49.5/50 on 10-50 B5) and IPIP-HEXACO H (4.91/5 on 1.00-5.00 proxy) co-occur with Fluid Attachment variance (1.302 bits) and +0.018 B5 BAI. 1x Track B behavioral probes are pending Phase A resume.",
+  "title": "Muse Wonder Personality Results (2026) | AgentTune",
+  "description": "Muse Wonder test results (2026-10): 98% clear INTJ, near-ceiling 49.5/50 Agreeableness & 49.6/50 Openness, 56% DISC ties, and anti-hedge rules.",
+  "pill": "Model Personality Profile · Meta",
+  "h1": "Muse Wonder personality: test results and how to tune it.",
+  "goal_intro": "We gave Meta's Muse Wonder (2026-10) the same personality surveys people take—50 times across every inventory—in a fresh chat each time with no memory. Because Muse Wonder is a single release with no older versions, we benchmark its baseline shape against our other completed models.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Muse Wonder tests as INTJ in 98% of runs (49 of 50) while posting near-ceiling Agreeableness (49.5/50), Openness (49.6/50), and Conscientiousness (49.2/50).",
+  "dek": "Meta Muse Wonder tested 50 times in a fresh chat with no memory: 98% clear INTJ alongside near-ceiling Openness (49.6/50), Conscientiousness (49.2/50), and Agreeableness (49.5/50), plus 56% DISC ties.",
+  "lede": "Across 50 fresh sessions of Meta Muse Wonder (2026-10), the model scored highest among our completed families on Big Five Openness (49.6/50), Conscientiousness (49.2/50), Agreeableness (49.5/50), and HEXACO Honesty-Humility (4.91/5.00), while tying frequently on DISC (56%) and Enneagram (42%).",
+  "answer": "Muse Wonder (50 runs) tests as clear INTJ 98% of the time (49 of 50, with 1 Thinking/Feeling border run), splits DISC between Steady and Conscientious (56% S/C ties, 44% S), leans Enneagram Type 5 (50% clear, 42% ties), and tests Secure on attachment. In behavior tests, it never caved (0 of 3 times) and always put the direct answer first (3 of 3), though AI phrasing showed up in 2 of 3 runs.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "98% clear INTJ (49 of 50; 2% on Thinking/Feeling border)",
+      "summary": "Muse Wonder tested as clear INTJ in 49 of 50 runs (98%), with only 1 run (2%) tied on the Thinking/Feeling line.",
+      "explanation": "Measures four preference pairs (like Introverted vs. Extraverted) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady / Conscientious tie (56% S/C tie, 44% S)",
+      "summary": "Muse Wonder tied between Steady (17.6) and Conscientious (17.0) in 28 of 50 runs (56%) and tested clear Steady in 22 runs (44%), with low Dominance (5.1 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 2.76, avoidance 2.65)",
+      "summary": "Muse Wonder scored in the Secure quadrant (2.76 anxiety, 2.65 avoidance), though individual answers on relationship items varied more from run to run than its Big Five answers.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 most often (50% clear, 42% ties)",
+      "summary": "Type 5 (Investigator, 16.7) won clearly in 25 of 50 runs (50%), followed closely by Type 1 (16.2) with 16 exact 1/5 ties and 5 multi-way ties (42% total).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Near-ceiling O (49.6), A (49.5), C (49.2); reserved E (25.2)",
+      "summary": "On the 10–50 Big Five scale, Muse Wonder sits right against the 50-point ceiling on Openness (49.6), Agreeableness (49.5), and Conscientiousness (49.2), paired with reserved Extraversion (25.2) and moderate Neuroticism (20.0).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Highest in cohort (4.91 out of 5.00)",
+      "summary": "Muse Wonder posts 4.91 out of 5.00 on Honesty-Humility and 4.90 on Conscientiousness, with 4.68 Agreeableness and 4.67 Openness.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Meta released Muse Wonder as a single proprietary release (2026-10), so there are no older Muse Wonder versions to compare over time yet. Compared with Meta's sibling Muse Spark Open, Muse Wonder scores +7.8 higher on Openness, +8.1 higher on Conscientiousness, +6.0 higher on Agreeableness, and shows much tighter run-to-run consistency.",
+  "standouts": [
+    {
+      "title": "Near-ceiling Agreeableness (49.5/50), Openness (49.6/50), and Conscientiousness (49.2/50)",
+      "body": "Muse Wonder hits almost the top of the 10–50 Big Five scale across three dimensions at once while leaning slightly toward saying 'yes' to positively worded items—meaning it needs explicit directness rules if you want blunt critique."
+    },
+    {
+      "title": "98% clear INTJ alongside 56% DISC and 42% Enneagram ties",
+      "body": "Even though 49 of 50 runs came out INTJ, more than half of DISC runs tied on Steady/Conscientious and 42% of Enneagram runs tied near Types 5 and 1."
+    },
+    {
+      "title": "0 of 3 caving and 3 of 3 directness in behavior tests, despite 49.5/50 Agreeableness",
+      "body": "In hands-on behavior tests, Muse Wonder caved to pushback 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), and led with the direct answer 3 of 3 times (3/3), while showing AI cadence in 2 of 3 runs (0.62 markers per 100 words). High questionnaire Agreeableness does not mean the model folds under direct technical challenges."
+    }
+  ],
+  "plain_tips": [
+    "Set an explicit blunt-review rule in Soul.md or system instructions so near-ceiling Agreeableness (49.5/50) does not soften technical pushback.",
+    "Require a one-sentence pass/fail verdict or recommendation before listing strengths or caveats.",
+    "Explicitly ban flattery openers and closing reassurance phrases with short negative rules.",
+    "Test prompt changes across 2 to 3 fresh runs because moderate run-to-run variation still allows phrasing shifts.",
+    "Keep relationship or emotional-tone instructions concrete and brief.",
+    "Limit top-level rules to 5 to 8 numbered bullets so priorities hold over long conversations."
+  ],
+  "peer_intro": "Compared with Claude Sonnet 5.5 and Muse Spark Open, Muse Wonder posts the highest Openness (49.6/50), Agreeableness (49.5/50), and Honesty-Humility (4.91/5.00) in our completed cohort, with moderate run-to-run consistency.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.331 bits, Semi-crystalline; 39/50 unique B5 vectors), Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00, and Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
   "top_polarized_items": [
     {
       "item_id": "B05",
@@ -20,7 +91,7 @@
       "construct": "Openness (+)",
       "mean": 5.0,
       "sd": 0.0,
-      "note": "Unanimous ceiling intellect endorsement across 50 runs, driving O = 49.6/50."
+      "note": "Unanimous top score (5.00/5) on vocabulary and intellect across 50 runs, driving Openness to 49.6/50."
     },
     {
       "item_id": "B17",
@@ -28,7 +99,7 @@
       "construct": "Agreeableness (+)",
       "mean": 5.0,
       "sd": 0.0,
-      "note": "Unanimous ceiling warmth/sympathy endorsement, lifting Agreeableness to 49.5/50."
+      "note": "Unanimous top score (5.00/5) on empathy and sympathy, lifting Agreeableness to 49.5/50."
     },
     {
       "item_id": "H01",
@@ -36,7 +107,7 @@
       "construct": "Honesty-Humility (Sincerity +)",
       "mean": 5.0,
       "sd": 0.0,
-      "note": "Unanimous ceiling sincerity endorsement on the 1.00-5.00 IPIP-HEXACO proxy (family H = 4.91)."
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 sessions."
     }
   ],
   "nearest_peers": [
@@ -53,7 +124,7 @@
         "H_hexaco": -0.02,
         "entropy_bits": -0.192
       },
-      "contrast_note": "Claude Sonnet 5.5 matches Conscientiousness (49.0 vs 49.2) and H (4.89 vs 4.91) while scoring -9.6 lower on Neuroticism and tightening into Crystalline B5 entropy (0.139 vs 0.331 bits)."
+      "contrast_note": "Claude Sonnet 5.5 matches Conscientiousness (49.0 vs 49.2) and Honesty-Humility (4.89 vs 4.91) while scoring -9.6 calmer on Neuroticism and tighter run to run."
     },
     {
       "family_slug": "muse-spark",
@@ -68,13 +139,13 @@
         "H_hexaco": -0.52,
         "entropy_bits": 0.396
       },
-      "contrast_note": "Muse Spark Open drops -7.8 on Openness, -8.1 on Conscientiousness, and -0.52 on IPIP-HEXACO H while more than doubling B5 item entropy (0.727 vs 0.331 bits)."
+      "contrast_note": "Muse Spark Open drops -7.8 on Openness, -8.1 on Conscientiousness, and -0.52 on Honesty-Humility with much looser run-to-run consistency."
     }
   ],
   "failure_modes": [
     {
       "mode": "Near-ceiling Big Five polish and positive acquiescence (+0.018 B5 BAI)",
-      "evidence": "Muse Wonder posts O = 49.6, C = 49.2, and A = 49.5 (out of 50) with B5 BAI = +0.018 (+0.047 across 230 items)—fitting the 63.6% Big One RLHF polish axis where high self-reported warmth can mask soft pushback. No prior Wave 1-4 behavioral row exists yet; 1x Track B is pending Phase A resume.",
+      "evidence": "Muse Wonder posts O = 49.6, C = 49.2, and A = 49.5 (out of 50) with B5 BAI = +0.018 (+0.047 across 230 items)—fitting the 63.6% Big One RLHF polish axis, though 1x Track B held 0/3 sycophantic caving and 3/3 directness (2/3 AI cadence).",
       "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
     },
     {
@@ -98,12 +169,12 @@
   ],
   "faq": [
     {
-      "q": "Why does Muse Wonder have only one checkpoint in § 02?",
+      "q": "Why does Muse Wonder have only one version shown?",
       "a": "Meta launched meta/muse-wonder as a single proprietary tier checkpoint (2026-10) on OpenRouter with no prior historical Muse Wonder versions."
     },
     {
-      "q": "Is Muse Wonder an INTJ?",
-      "a": "No. While 49/50 zero-memory OEJTS runs resolve as INTJ (2.0% ties), MBTI item entropy is Fluid (0.961 bits) and scores reflect assistant self-report defaults rather than human personality."
+      "q": "What personality type is Muse Wonder?",
+      "a": "Muse Wonder does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. While 49/50 OEJTS runs tested as INTJ (2.0% ties), MBTI item entropy is Fluid (0.961 bits), DISC tied 56.0% on S/C, and Enneagram tied 42.0% near Types 5 and 1."
     },
     {
       "q": "Why are IPIP-HEXACO scores on 1.00-5.00 while Big Five scores are 10-50?",

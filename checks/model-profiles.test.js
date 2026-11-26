@@ -79,7 +79,7 @@ test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-
     assert.equal(jargonRe.test(mdPreFinePrint), false, `${slug}.md §§1-6 leaked jargon: ${mdPreFinePrint.match(jargonRe)?.[0]}`);
 
     // Never say a model "is" an MBTI or Enneagram type
-    assert.doesNotMatch(md, /\b(?:Opus|Sonnet|Sol|Spark|Wonder)\s+(?:[\d.]+\s+)?is\s+(?:an?\s+)?(?:INTJ|ISTJ|ENTP|INFJ|INTP|Type\s+\d)\b/);
+    assert.doesNotMatch(md, /\b(?:Opus|Fable|Sonnet|Astra|Sol|Grok|Spark|Wonder)\s+(?:[\d.]+\s+)?is\s+(?:an?\s+)?(?:INTJ|ISTJ|ENTP|INFJ|INTP|Type\s+\d)\b/);
 
     // Fine Print & technical rigor assertions
     const finePrintAndAfter = html.slice(idxFinePrint);
@@ -387,6 +387,43 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
           assert.equal(hit, false, `${ds.family_slug}: plane() labels overlap: "${a.text}" vs "${b.text}"`);
         }
       }
+    }
+  }
+
+  // Verify rose wheel stacked legend with long Phase B names has 0 overlaps & 0 viewBox clips
+  const longLegendSvg = renderCharts.renderRoseWheel({
+    id: 'test-long-legend-wheel',
+    title: 'Long Legend Test Wheel',
+    desc: 'Verifying stacked two-line legend prevents overlap with long earliest and latest checkpoint labels across 9 petals.',
+    petals: Array.from({ length: 9 }, (_, i) => ({ label: `Type ${i + 1}`, value: 8 + i })),
+    earliestPetals: Array.from({ length: 9 }, (_, i) => ({ label: `Type ${i + 1}`, value: 7 + i })),
+    min: 4,
+    max: 20,
+    scaleSuffix: '/20',
+    decimals: 1,
+    latestLabel: 'DeepSeek V4.1 Flash 1017',
+    earliestLabel: 'DeepSeek V3.2 Flash'
+  });
+  const lvb = longLegendSvg.match(/viewBox="0 0 ([0-9.]+) ([0-9.]+)"/);
+  const lW = Number(lvb[1]), lH = Number(lvb[2]);
+  const lBoxes = [...longLegendSvg.matchAll(/<text x="([0-9.-]+)" y="([0-9.-]+)" font-size="([0-9.]+)"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)]
+    .map(([, x, y, fs, anchor, text]) => {
+      const f = Number(fs);
+      const lw = Math.ceil(text.length * f * 0.56 + 2);
+      let x1 = Number(x);
+      if (anchor === 'middle') x1 -= lw / 2;
+      else if (anchor === 'end') x1 -= lw;
+      const y1 = Number(y) - f;
+      const box = { text, x1, y1, x2: x1 + lw, y2: y1 + 2 };
+      assert.ok(box.x1 >= 0 && box.x2 <= lW && box.y1 >= 0 && box.y2 <= lH, `Long legend text "${text}" clipped`);
+      return box;
+    });
+  for (let i = 0; i < lBoxes.length; i++) {
+    for (let j = i + 1; j < lBoxes.length; j++) {
+      const a = lBoxes[i], b = lBoxes[j];
+      if (Number(a.y1) > lH - 25 || Number(b.y1) > lH - 25) continue;
+      const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
+      assert.equal(hit, false, `Long legend wheel text overlap: "${a.text}" vs "${b.text}"`);
     }
   }
 });

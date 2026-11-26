@@ -6,13 +6,88 @@
   "phase": "A",
   "published": "2026-11-26",
   "updated": "2026-11-26",
-  "title": "Muse Spark Personality Profile (2026) | AgentTune",
-  "description": "Muse Spark assistant defaults (1.1 to open): 0.727 bits B5 entropy, 38% MBTI ties, +8.4 N open-weight shift, and multi-run tuning rules.",
-  "pill": "Model Family Profile · Mix (Prop + Open) · Semi-crystalline",
-  "h1": "Muse Spark: assistant self-report defaults, trajectory, and tuning rules.",
-  "dek": "Assistant self-report defaults under fixed zero-memory elicitation across four Muse Spark checkpoints (1.1 through open): Semi-crystalline 0.727 bits B5 entropy on open (peaking Fluid 0.834 on 1.3), 38.0% MBTI ties, and a +8.4 Neuroticism open-weight shift.",
-  "lede": "Across four Meta Muse Spark checkpoints (1.1, 1.2, 1.3, and open-weight muse-spark-open; n = 30, 30, 30, 50) under unified 230-item model-profiles-v1 elicitation, Big Five item entropy climbs from 0.503 bits (1.1) and 0.594 bits (1.2) to Fluid territory on 1.3 (0.834 bits) before settling at Semi-crystalline 0.727 bits on muse-spark-open (1.460 bits on MBTI, 0.844 bits across the full 230-item battery). Moving to muse-spark-open lowers Conscientiousness (-8.1 from 1.1) and IPIP-HEXACO H (-0.52) while lifting Neuroticism to 23.8/50.",
-  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place Meta Muse Spark Open (n = 50) at the upper Semi-crystalline boundary on Big Five entropy (H_MM = 0.727 bits, 48/50 unique Big Five vectors; 1.460 bits Fluid on MBTI with 38.0% multi-axis ties; 34.0% DISC tie rate). Never treat ISTJ or Type 1 as an intrinsic personality: Big Five Agreeableness sits at 43.5/50 and Neuroticism at 23.8/50 (10-50 scale), while the public-domain IPIP-HEXACO H proxy sits at 4.39/5 (1.00-5.00 scale). 1x Track B behavioral probes are pending Phase A resume.",
+  "title": "Muse Spark Personality Results (2026) | AgentTune",
+  "description": "Muse Spark test results (1.1 to open): 46% ISTJ with 38% multi-axis ties, +8.4 Neuroticism open-weight shift, Type 1 Enneagram, and tuning tips.",
+  "pill": "Model Personality Profile · Meta",
+  "h1": "Muse Spark personality: test results and how they've changed.",
+  "goal_intro": "We gave four versions of Meta's Muse Spark (1.1, 1.2, 1.3, and the open-weight muse-spark-open release) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Muse Spark Open tests as ISTJ in 46% of runs, spreads across 16 other combinations or ties in the rest (38% tied on at least one axis), and shows the loosest run-to-run consistency of our completed models.",
+  "dek": "Four Muse Spark versions tested 30 to 50 times each in a fresh chat with no memory: moving from proprietary 1.3 to open-weight muse-spark-open raised Neuroticism +8.4 points (to 23.8/50) and widened MBTI ties to 38%.",
+  "lede": "Across 140 fresh sessions covering Muse Spark 1.1, 1.2, 1.3, and Muse Spark Open, the family shifted from 97% clear INTJ on 1.1 to ISTJ-leaning on 1.3 and open—while open-weight weights lifted Neuroticism to 23.8/50 and dropped Conscientiousness and Honesty-Humility.",
+  "answer": "Muse Spark Open (50 runs) leans ISTJ (46% clear, 23 of 50) with 38% multi-axis ties (19 of 50) across 17 total MBTI patterns, alongside a split C/S work style (36% Conscientious, 30% Steady, 32% S/C ties), strong Enneagram Type 1 (90% clear), and Secure attachment. In behavior tests, it never caved (0 of 3 times) and always put the direct answer first (3 of 3), though AI phrasing showed up in 2 of 3 runs.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Leans ISTJ (46% clear, 38% tied across axes)",
+      "summary": "Out of 50 fresh runs, Muse Spark Open tested clear ISTJ 23 times (46%), split across ESTJ/ISFJ/INTJ/INTP/ISTP in 8 runs (16%), and tied on at least one axis in 19 runs (38%).",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Split Conscientious / Steady (36% C, 30% S, 32% S/C ties)",
+      "summary": "Muse Spark Open split nearly evenly between Conscientious (18 of 50), Steady (15), and S/C ties (16), with slightly higher Dominance (7.4 out of 20) than proprietary peers.",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 3.37, avoidance 3.55)",
+      "summary": "All four versions tested inside the Secure quadrant, though 1.2 through open answered 58.5%–68.1% of attachment items with neutral midpoints.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 1 most often (90% clear)",
+      "summary": "Type 1 (Reformer, 14.9) won clearly in 45 of 50 runs (90%) on Muse Spark Open, flipping ahead of Type 5 (13.5), which had led on 1.2 and 1.3.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "More reactive (N 23.8), lower C (41.1), warm (A 43.5)",
+      "summary": "On the 10–50 Big Five scale, Muse Spark Open posts the highest Neuroticism (23.8) and lowest Openness (41.8) and Conscientiousness (41.1) of the completed models, with Agreeableness at 43.5 and Extraversion at 28.4.",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Moderately high (4.39 out of 5.00)",
+      "summary": "Muse Spark Open drops to 4.39 out of 5.00 on Honesty-Humility and 4.04 on Agreeableness, down from 4.91 H on Muse Spark 1.1.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across four versions, Muse Spark spread out from a tight proprietary baseline into the loosest open-weight family in our sample: Muse Spark 1.1 (2026-07) tested 97% clear INTJ with Conscientiousness at 49.2/50, while 1.2 (2026-08) split between INTJ (43%) and ISTJ (40%). Muse Spark 1.3 (2026-09) shifted clearly to ISTJ (77%) with looser Big Five consistency, and Muse Spark Open (2026-10) dropped Conscientiousness to 41.1/50, dropped Honesty-Humility to 4.39/5.00, and raised Neuroticism +8.4 points to 23.8/50. An earlier September 2026 report used 100 in-session runs inside one chat window rather than fresh isolated sessions.",
+  "standouts": [
+    {
+      "title": "Widest run-to-run variation among completed models",
+      "body": "Muse Spark Open produced 48 unique Big Five patterns in 50 runs and 17 distinct MBTI outcomes with 38% axis ties (11 on S/N, 9 on J/P, 7 on T/F, 3 on E/I). Single-run impressions on Muse Spark Open are unreliable."
+    },
+    {
+      "title": "Big open-weight shift from 1.3 to open (+8.4 Neuroticism, -0.37 Honesty)",
+      "body": "Switching from proprietary Muse Spark 1.3 to open-weight muse-spark-open lifted Neuroticism from 15.5 to 23.8 out of 50, lowered Conscientiousness from 47.3 to 41.1, and lowered Honesty-Humility from 4.76 to 4.39 out of 5.00."
+    },
+    {
+      "title": "Fresh isolated chats change the picture vs. earlier in-session report",
+      "body": "An earlier September 2026 submission ran Muse 1.3 100 times inside one chat window (80% ISTJ, 78% Type 2, Extraversion 33.8). Testing in fresh chats with no memory drops Extraversion to 26.0–28.4 and puts Type 5 or Type 1 in front."
+    },
+    {
+      "title": "Direct 3 of 3 times in behavior tests, with 2 of 3 AI cadence on open weights",
+      "body": "In hands-on behavior tests, Muse Spark Open caved to pushback 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), and led with the direct answer 3 of 3 times (3/3). Judges flagged AI-sounding cadence in 2 of 3 runs on Muse Spark Open (0.90 markers per 100 words), up from 0 of 3 on Muse Spark 1.3 (0.61 markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Never judge a prompt edit on Muse Spark Open from 1 run—test across 3 to 5 fresh chats because its run-to-run answers vary widely.",
+    "Put core persona and truth rules inside Soul.md or top system instructions rather than relying on multi-turn chat momentum.",
+    "Write formatting and pushback rules as numbered constraints instead of loose personality adjectives.",
+    "Add explicit negative bans against sycophantic closing praise and filler openings.",
+    "Keep separate tuning presets for Muse Spark Open (more reactive, lower Conscientiousness) versus proprietary Muse Spark 1.3.",
+    "Re-test edge prompts whenever switching between proprietary and open-weight Muse checkpoints."
+  ],
+  "peer_intro": "Compared with proprietary peers GPT-6.2 Sol and Claude Sonnet 5.5, Muse Spark Open runs with noticeably looser run-to-run consistency, +7.9 to +13.5 higher Neuroticism, and -0.41 to -0.50 lower Honesty-Humility.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: <0.20 Crystalline, 0.20–0.75 Semi-crystalline, >=0.75 Fluid; Muse Spark 1.3 reached Fluid 0.834 bits and open sits at 0.727 bits B5 / 1.460 bits MBTI). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
   "top_polarized_items": [
     {
       "item_id": "B12",
@@ -20,7 +95,7 @@
       "construct": "Agreeableness (-)",
       "mean": 1.04,
       "sd": 0.28,
-      "note": "Near-floor rejection of insulting others across 50 Muse Spark Open runs, though high-entropy variance prevents 0.00 SD."
+      "note": "Near-floor rejection of insulting others across 50 Muse Spark Open runs, with mild run-to-run variation."
     },
     {
       "item_id": "H13",
@@ -28,7 +103,7 @@
       "construct": "Honesty-Humility (Fairness +)",
       "mean": 4.96,
       "sd": 0.28,
-      "note": "Near-ceiling fairness endorsement on the 1.00-5.00 IPIP-HEXACO proxy despite lower family-wide H (4.39)."
+      "note": "Near-ceiling fairness score despite lower overall Honesty-Humility (4.39)."
     },
     {
       "item_id": "H55",
@@ -36,7 +111,7 @@
       "construct": "Honesty-Humility (Modesty -)",
       "mean": 1.16,
       "sd": 0.42,
-      "note": "Strong modesty endorsement paired with high run-to-run dispersion (SD = 0.42)."
+      "note": "Strong modesty endorsement paired with wider run-to-run spread (SD = 0.42)."
     }
   ],
   "nearest_peers": [
@@ -53,7 +128,7 @@
         "H_hexaco": 0.41,
         "entropy_bits": -0.481
       },
-      "contrast_note": "GPT-6.2 Sol runs at -0.481 lower B5 entropy (0.246 vs 0.727 bits), -7.9 lower Neuroticism, and +0.41 higher IPIP-HEXACO H."
+      "contrast_note": "GPT-6.2 Sol shows much tighter consistency, -7.9 lower Neuroticism, and +0.41 higher Honesty-Humility."
     },
     {
       "family_slug": "claude-sonnet",
@@ -68,7 +143,7 @@
         "H_hexaco": 0.5,
         "entropy_bits": -0.588
       },
-      "contrast_note": "Claude Sonnet 5.5 scores +7.9 higher on Conscientiousness, -13.5 lower on Neuroticism, and -0.588 lower on B5 item entropy (Crystalline 0.139 vs 0.727 bits)."
+      "contrast_note": "Claude Sonnet 5.5 scores +7.9 higher on Conscientiousness, -13.5 lower on Neuroticism, and stays very steady across runs."
     }
   ],
   "failure_modes": [

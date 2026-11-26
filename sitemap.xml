@@ -788,6 +788,13 @@
   </url>
 
   <url>
+    <loc>https://agent-tune.com/models/claude-fable</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
     <loc>https://agent-tune.com/models/claude-opus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -802,7 +809,21 @@
   </url>
 
   <url>
+    <loc>https://agent-tune.com/models/gpt-astra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
     <loc>https://agent-tune.com/models/gpt-sol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/grok</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-11-26</lastmod>

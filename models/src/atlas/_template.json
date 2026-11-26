@@ -1,6 +1,6 @@
 {
-  "$schema": "agenttune-atlas-template-v1",
-  "_comment": "Canonical template and page manifest for the 12 cross-family Personality Atlas pages (v3.1 §11). Emits research/src-compatible JSON specs and HTML previews into models/.atlas-staging/ during Stage 0/Phase A, and promotes to research/src/ in Phase C.",
+  "$schema": "agenttune-atlas-template-v2",
+  "_comment": "Canonical template and page manifest for the 12 cross-family Personality Atlas pages (Plan v3.1 §11 + v3.2 plain-language visual-first upgrade). Emits research/src-compatible JSON specs, HTML previews, .md mirrors, and numeric-only CSVs strictly into models/.atlas-staging/ during Stage 0/Phase A.",
   "protocol_id": "model-profiles-v1",
   "epistemic_block_4pt": [
     {
@@ -60,69 +60,69 @@
     "published": "2026-11-26",
     "updated": "2026-11-26",
     "pill": "Research · Personality Atlas",
-    "epistemic_framing": "Assistant self-report defaults under fixed zero-memory elicitation; never claims a model \"is\" a personality type."
+    "epistemic_framing": "Default test results under fresh-chat testing with no memory; never claims a model \"is\" a personality type."
   },
   "pages": [
     {
       "slug": "ai-personality-rankings",
       "kind": "overview",
       "route": "/research/ai-personality-rankings",
-      "title": "AI Personality Rankings: 25 Model Families × 6 Tests | AgentTune",
+      "title": "AI Personality Rankings: 25 Families × 6 Tests | AgentTune",
       "h1": "AI personality rankings across 25 model families and 6 tests.",
       "csv": "atlas-overview.csv"
     },
     {
-      "slug": "ai-big-five-scores-by-model",
+      "slug": "ai-big-five-personalities",
       "kind": "per-test",
       "test": "big-five",
-      "route": "/research/ai-big-five-scores-by-model",
-      "title": "AI Big Five (IPIP-50) Scores by Model (25 Families) | AgentTune",
-      "h1": "AI Big Five (IPIP-50) results across 25 model families.",
+      "route": "/research/ai-big-five-personalities",
+      "title": "AI Big Five Personalities (25 Families) | AgentTune",
+      "h1": "Big Five (OCEAN) personality test results across 25 AI families.",
       "csv": "atlas-big-five.csv"
     },
     {
-      "slug": "ai-hexaco-scores-by-model",
+      "slug": "ai-hexaco-personalities",
       "kind": "per-test",
       "test": "ipip-hexaco",
-      "route": "/research/ai-hexaco-scores-by-model",
-      "title": "AI IPIP-HEXACO Proxy Scores by Model (1–5 Scale) | AgentTune",
-      "h1": "AI IPIP-HEXACO proxy results across 25 model families.",
+      "route": "/research/ai-hexaco-personalities",
+      "title": "AI HEXACO Personalities (1–5 Proxy, 25 Fams) | AgentTune",
+      "h1": "HEXACO personality test results across 25 AI families (1–5 scale).",
       "csv": "atlas-hexaco.csv"
     },
     {
-      "slug": "ai-mbti-results-by-model",
+      "slug": "ai-mbti-personalities",
       "kind": "per-test",
       "test": "mbti",
-      "route": "/research/ai-mbti-results-by-model",
-      "title": "AI MBTI Results by Model (Tie-Aware, 25 Families) | AgentTune",
-      "h1": "AI MBTI results across 25 model families (with ties preserved).",
+      "route": "/research/ai-mbti-personalities",
+      "title": "AI MBTI Personalities: 25 Families Tested | AgentTune",
+      "h1": "MBTI-style personality test results across 25 AI families.",
       "csv": "atlas-mbti.csv"
     },
     {
-      "slug": "ai-disc-results-by-model",
+      "slug": "ai-disc-personalities",
       "kind": "per-test",
       "test": "disc",
-      "route": "/research/ai-disc-results-by-model",
-      "title": "AI DISC Results by Model (25 Families) | AgentTune",
-      "h1": "AI DISC results across 25 model families.",
+      "route": "/research/ai-disc-personalities",
+      "title": "AI DISC Personalities: 25 Families Tested | AgentTune",
+      "h1": "DISC work-style test results across 25 AI families.",
       "csv": "atlas-disc.csv"
     },
     {
-      "slug": "ai-enneagram-results-by-model",
+      "slug": "ai-enneagram-personalities",
       "kind": "per-test",
       "test": "enneagram",
-      "route": "/research/ai-enneagram-results-by-model",
-      "title": "AI Enneagram Results by Model (25 Families) | AgentTune",
-      "h1": "AI Enneagram results across 25 model families.",
+      "route": "/research/ai-enneagram-personalities",
+      "title": "AI Enneagram Personalities (25 Families) | AgentTune",
+      "h1": "Enneagram personality test results across 25 AI families.",
       "csv": "atlas-enneagram.csv"
     },
     {
-      "slug": "ai-attachment-results-by-model",
+      "slug": "ai-attachment-styles",
       "kind": "per-test",
       "test": "attachment",
-      "route": "/research/ai-attachment-results-by-model",
-      "title": "AI Attachment (ECR-R) Results by Model (25 Families) | AgentTune",
-      "h1": "AI Attachment (ECR-R) results across 25 model families.",
+      "route": "/research/ai-attachment-styles",
+      "title": "AI Attachment Styles: 25 Families Tested | AgentTune",
+      "h1": "Attachment style test results across 25 AI families.",
       "csv": "atlas-attachment.csv"
     },
     {
@@ -131,8 +131,8 @@
       "lab": "Anthropic",
       "families": ["claude-fable", "claude-opus", "claude-sonnet", "claude-haiku"],
       "route": "/research/what-personality-type-is-claude",
-      "title": "What Personality Type Is Claude? (Fable, Opus, Sonnet, Haiku) | AgentTune",
-      "h1": "Claude self-report results across Fable, Opus, Sonnet, and Haiku.",
+      "title": "What Personality Type Does Claude Test As? | AgentTune",
+      "h1": "Claude personality test results across Fable, Opus, Sonnet, and Haiku.",
       "csv": "atlas-lab-anthropic.csv"
     },
     {
@@ -141,8 +141,8 @@
       "lab": "OpenAI",
       "families": ["gpt-astra", "gpt-sol", "gpt-terra", "gpt-luna"],
       "route": "/research/what-personality-type-is-chatgpt",
-      "title": "What Personality Type Is ChatGPT? (Astra, Sol, Terra, Luna) | AgentTune",
-      "h1": "ChatGPT self-report results across GPT Astra, Sol, Terra, and Luna.",
+      "title": "What Personality Type Does ChatGPT Test As? | AgentTune",
+      "h1": "ChatGPT personality test results across Astra, Sol, Terra, and Luna.",
       "csv": "atlas-lab-openai.csv"
     },
     {
@@ -151,8 +151,8 @@
       "lab": "Google",
       "families": ["gemini-pro", "gemini-flash", "gemma"],
       "route": "/research/what-personality-type-is-gemini",
-      "title": "What Personality Type Is Gemini? (Pro, Flash, Gemma) | AgentTune",
-      "h1": "Google AI self-report results across Gemini Pro, Flash, and Gemma.",
+      "title": "What Personality Type Does Gemini Test As? | AgentTune",
+      "h1": "Google AI personality test results across Gemini Pro, Flash, and Gemma.",
       "csv": "atlas-lab-google.csv"
     },
     {
@@ -161,8 +161,8 @@
       "lab": "Meta",
       "families": ["muse-spark", "muse-wonder", "llama"],
       "route": "/research/what-personality-type-is-muse",
-      "title": "What Personality Type Is Meta Muse & Llama? | AgentTune",
-      "h1": "Meta AI self-report results across Muse Spark, Muse Wonder, and Llama.",
+      "title": "What Personality Type Do Meta Models Test As? | AgentTune",
+      "h1": "Meta AI personality test results across Muse Spark, Muse Wonder, and Llama.",
       "csv": "atlas-lab-meta.csv"
     },
     {
@@ -171,8 +171,8 @@
       "cohort": "open-weight",
       "families": ["llama", "deepseek-pro", "deepseek-flash", "qwen-max", "qwen-coder", "kimi", "glm", "minimax", "mistral-large", "gemma", "nemotron", "cohere-command"],
       "route": "/research/what-personality-type-are-open-source-models",
-      "title": "What Personality Type Are Open-Source AI Models? (12 Families) | AgentTune",
-      "h1": "Open-weight AI self-report results across 12 model families.",
+      "title": "Open-Source AI Personality Test Results (12) | AgentTune",
+      "h1": "Open-weight AI personality test results across 12 model families.",
       "csv": "atlas-cohort-open-weight.csv"
     }
   ]
