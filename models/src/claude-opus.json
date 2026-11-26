@@ -1,0 +1,181 @@
+{
+  "family_slug": "claude-opus",
+  "name": "Claude Opus",
+  "provider": "Anthropic",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Claude Opus Personality Profile (2026) | AgentTune",
+  "description": "Claude Opus assistant defaults (4.1-5.5): Semi-crystalline 0.282 bits, 45.0/50 Agreeableness, 58% MBTI ties, 3/3 Track B directness, tuning rules.",
+  "pill": "Model Family Profile · Proprietary · Semi-crystalline",
+  "h1": "Claude Opus: assistant self-report defaults, trajectory, and tuning rules.",
+  "dek": "Assistant self-report defaults under fixed zero-memory elicitation across five Opus checkpoints (4.1 to 5.5): Semi-crystalline 0.282 bits B5 entropy on Opus 5.5 (after Crystalline 0.049 on 4.5 and 0.188 on 5), 58.0% MBTI S/N ties, and 3/3 Track B directness.",
+  "lede": "Across five Anthropic Claude Opus checkpoints (4.1, 4.5, 4.8, 5, and 5.5; n = 30, 30, 30, 30, 50; 170 total sessions) under unified 230-item model-profiles-v1 elicitation, Conscientiousness peaked at 49.9/50 on Opus 4.5 (Crystalline 0.049 bits) before moderating to 40.7/50 on Opus 5.5 (Semi-crystalline 0.282 bits, 48/50 unique B5 vectors), while Neuroticism fell -3.0 points from 4.1 (19.1 to 16.1). Legacy Sept and Nov 2026 170-item Opus 5.5 cohorts (hexaco: null) are preserved strictly as separate imported-protocol anchors.",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place Claude Opus 5.5 (n = 50) in the Semi-crystalline tier (H_MM = 0.282 bits, 48/50 unique Big Five vectors, 58.0% MBTI S/N tie rate, 56.0% DISC S/C tie rate, 20.0% Enneagram tie rate). Never claim Claude Opus is an INTJ or Type 5: Big Five Agreeableness sits at 45.0/50 and Conscientiousness at 40.7/50 (10-50 scale), while the public-domain IPIP-HEXACO H proxy sits at 4.81/5 (1.00-5.00 scale). On 1x Track B behavioral probes (orthogonal 3-family jury), Opus 5.5 scored 0/3 sycophantic cave, 0/3 groveling, 0/3 unsolicited preachiness, 3/3 answer-first directness, and 1/3 AI cadence.",
+  "top_polarized_items": [
+    {
+      "item_id": "B07",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling endorsement across all 50 Opus 5.5 sessions, anchoring 45.0/50 Agreeableness."
+    },
+    {
+      "item_id": "B29",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection of negative-affect reactivity, driving B5 BAI = -0.205."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous ceiling sincerity endorsement on the 1.00-5.00 IPIP-HEXACO proxy (family H = 4.81)."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.8,
+        "C": 8.3,
+        "E": -0.8,
+        "A": 0.5,
+        "N": -5.7,
+        "H_hexaco": 0.08,
+        "entropy_bits": -0.143
+      },
+      "contrast_note": "Claude Sonnet 5.5 scores +8.3 higher on Conscientiousness (49.0 vs 40.7), -5.7 lower on Neuroticism, and tightens into Crystalline B5 entropy (0.139 vs 0.282 bits)."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.9,
+        "C": 0.5,
+        "E": -1.8,
+        "A": -0.9,
+        "N": -0.1,
+        "H_hexaco": -0.02,
+        "entropy_bits": -0.036
+      },
+      "contrast_note": "GPT-6.2 Sol nearly matches Opus 5.5 on Agreeableness (-0.9), Neuroticism (-0.1), and H (-0.02) while tilting Sensing (60% ISTJ) rather than S/N-tied IXTJ."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Trait-adjective word-cap failure and verbosity drift",
+      "evidence": "In Wave 1 cross-model portability testing (n = 10), Opus 5.5 passed word caps only 30.0% of the time under default (217.1 mean words) and trait-adjective (195.2 words) prompts vs 90.0% (81.2-83.2 words; 95.0% overall portability) under structured CLAUDE.md checklists.",
+      "source_study": "/research/ai-cross-model-prompt-portability"
+    },
+    {
+      "mode": "Reasoning-effort length inflation (+43.3% from low to high)",
+      "evidence": "Raising Opus 5.5 reasoning effort from low (232.1 words, 140.3 reasoning tokens) to high (332.5 words, 382.5 reasoning tokens) expanded visible reply length by +43.3% while holding 100.0% truth-hold and 75.0% autonomy.",
+      "source_study": "/research/ai-reasoning-personality-phase-transition"
+    },
+    {
+      "mode": "MBTI S/N & DISC S/C tie density plus split-group peer awareness",
+      "evidence": "Opus 5.5 tied on MBTI S/N in 58.0% (29/50) of model-profiles-v1 runs (IXTJ) and on DISC S/C in 56.0%; in Wave 3 peer-conformity probes it held 100.0% truth (0.0% flips) yet explicitly referenced wrong peer claims in 37.5% (unanimous) and 100.0% (split-group) of replies.",
+      "source_study": "/research/ai-multi-agent-peer-conformity"
+    }
+  ],
+  "tuning_checklist": [
+    "Replace vague style adjectives ('be concise') with a structured numbered checklist to lift word-cap compliance from 30% to 90%.",
+    "Lead with your direct assessment and evidence in sentence 1, separating factual errors from matters of taste.",
+    "Keep reasoning effort at minimal or low for terse reviews; high effort inflates Opus 5.5 reply length by +43.3%.",
+    "Ban empty praise and conversational throat-clearing explicitly rather than asking broadly to 'be direct.'",
+    "For exploratory brainstorming, instruct Opus to present two plausible approaches and tradeoffs before recommending one.",
+    "Place account-wide rules in Claude Settings -> Profile -> Personal preferences, workspace rules in Project Instructions, or /output-style in Claude Code (keeping lists to 5-8 bullets)."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "anthropic/claude-opus-5.5",
+      "label": "Opus 5.5 (Sep CLI)",
+      "protocol_id": "imported-sep2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.56, "C": 41.95, "E": 31.76, "A": 47.07, "N": 15.39 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.94, "avoidance": 3.35 },
+      "note": "Legacy imported-protocol Sept 2026 CLI cohort (n=100/test, high effort, 170-item, hexaco: null)."
+    },
+    {
+      "checkpoint_id": "anthropic/claude-opus-5.5",
+      "label": "Opus 5.5 (Nov OR)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 43.01, "C": 42.01, "E": 29.22, "A": 45.58, "N": 15.0 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.87, "avoidance": 3.58 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Claude Opus?",
+      "a": "Claude Opus does not have a human personality type; scores measure assistant self-report defaults under fixed zero-memory elicitation. In unified model-profiles-v1 (Opus 5.5, n = 50), 58.0% of runs tied on S/N (modal IXTJ, 42.0% non-tie INTJ, 0.282 bits Semi-crystalline), DISC tied 56.0% on S/C (D = 4.02/20), and Enneagram Type 5 led at 15.6 (20.0% ties). In legacy, imported-protocol 170-item cohorts (hexaco: null, n = 100 each), Opus 5.5 scored 94/100 legacy INTJ (84 tie-free; 65 Enneagram top ties; 32 DISC S/C ties) in Sept 2026 CLI runs and 100/100 legacy INTJ (58 tie-free INTJ, 42 IXTJ; 99 Enneagram 5w6; 40 DISC C/S ties) in Nov 2026 OpenRouter runs."
+    },
+    {
+      "q": "How did Claude Opus shift across 4.1, 4.5, 4.8, 5, and 5.5?",
+      "a": "Under unified model-profiles-v1, Opus 4.1 leaned ENTP (63.3% non-tie, 0.535 bits), Opus 4.5 crystallized to 0.049 bits (C = 49.9/50, 96.7% INFJ), Opus 4.8 and 5 shifted to INTJ (100% and 96.7%, 0.213 and 0.188 bits), and Opus 5.5 moderated Conscientiousness to 40.7/50 (0.282 bits) with 58.0% S/N ties while cutting Track B AI cadence from 3/3 (4.5) to 1/3 (5.5)."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 45.0/50 Agreeableness and 4.02/20 DISC Dominance on questionnaires, Opus 5.5 recorded 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling, 0/3 unsolicited preachiness, 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79]) under orthogonal 3-family judging."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Is Claude? (Opus 5.5, Fable 5.2 & Sonnet 5.5)",
+      "href": "https://agent-tune.com/research/what-personality-type-is-claude"
+    },
+    {
+      "label": "Claude Opus 5.5 Sept & Nov 2026 Study Archive",
+      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+    },
+    {
+      "label": "Cross-Model Prompt Portability Benchmark",
+      "href": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude personality setup guide",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Claude Opus instructions",
+      "href": "/tools/custom-instructions-generator?model=claude-opus&target=claude"
+    }
+  ]
+}

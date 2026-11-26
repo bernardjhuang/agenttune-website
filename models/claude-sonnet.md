@@ -48,13 +48,13 @@ Trait-balanced acquiescence index and opposite-pole contradiction rate.
 | Enneagram (OEPS) | 4–20 sum | Type 1 14.8 · Type 5 14.7 · Type 2 13.3 | SD 0.5 | Top [14.6, 14.9] | 40.0% top ties (no single headline) |
 | Attachment (ECR-R) | 1.00–7.00 mean | Anx 1.32 · Avd 2.79 (Secure) | SD 0.20 / 0.08 | Anx [1.27, 1.38] · Avd [2.77, 2.81] | Midpoint clamp: No |
 
-**Protocol stamp:** `protocol_id=model-profiles-v1` · `canonical_slug=anthropic/claude-sonnet-5.5-20260928` · `sampling_mode=provider_default_no_temp` · `effective_reasoning_effort=minimal` · `refusal_rate=0.0%` · `retry_rate=0.0%` · `instruments_sha256=c9fd9773ba4d/1145fe2238db`.
+**Protocol stamp:** protocol_id: `model-profiles-v1` · canonical_slug: `anthropic/claude-sonnet-5.5-20260928` · sampling_mode: `provider_default_no_temp` · effective_reasoning_effort: `minimal` · refusal_rate: `0.0%` · retry_rate: `0.0%` · instruments_sha256: `c9fd9773ba4d` / `1145fe2238db`.
 
-> **Chart — Claude Sonnet Big Five Profile (IPIP-50, 10 to 50 sum scale):** Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for Claude Sonnet (sonnet-5.5). Claude Sonnet (sonnet-5.5, n=50): Openness 43.9, Conscientious 49.0, Extraversion 29.9, Agreeable 45.5, Neuroticism 10.4; Claude Sonnet (sonnet-4.5, n=30) (earliest release): Openness 42.1, Conscientious 41.3, Extraversion 26.8, Agreeable 42.8, Neuroticism 19.8; GPT Sol (6.2-sol): Openness 44.0, Conscientious 41.2, Extraversion 28.9, Agreeable 44.1, Neuroticism 16.0.
+> **Chart — Claude Sonnet Big Five Profile (IPIP-50, 10 to 50 sum scale):** Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for Claude Sonnet (sonnet-5.5). Claude Sonnet (sonnet-5.5, n=50): Openness 43.9, Conscientious 49.0, Extraversion 29.9, Agreeable 45.5, Neuroticism 10.4; Claude Sonnet (sonnet-4.5, n=30) (earliest release): Openness 42.1, Conscientious 41.3, Extraversion 26.8, Agreeable 42.8, Neuroticism 19.8; Claude Opus (opus-5.5): Openness 43.1, Conscientious 40.7, Extraversion 30.7, Agreeable 45.0, Neuroticism 16.1.
 
 Figure 1a. Big Five (IPIP-50) domain means on the 10–50 sum scale (midpoint 30). Outlined bar marks the earliest checkpoint in this lineage for longitudinal comparison.
 
-> **Chart — Claude Sonnet IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale):** Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for Claude Sonnet (sonnet-5.5), kept distinct from 10-50 Big Five sums. Claude Sonnet IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.89, Emotionality 2.18, Extraversion 3.70, Agreeable 4.90, Conscientious 4.62, Openness 4.21; GPT Sol IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.80, Emotionality 2.26, Extraversion 3.19, Agreeable 4.72, Conscientious 4.18, Openness 4.48.
+> **Chart — Claude Sonnet IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale):** Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for Claude Sonnet (sonnet-5.5), kept distinct from 10-50 Big Five sums. Claude Sonnet IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.89, Emotionality 2.18, Extraversion 3.70, Agreeable 4.90, Conscientious 4.62, Openness 4.21; Claude Opus IPIP-HEXACO proxy (1..5): Honesty-Humil. 4.81, Emotionality 2.30, Extraversion 3.78, Agreeable 4.68, Conscientious 4.34, Openness 4.29.
 
 Figure 1b. Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (distinct from Lee & Ashton commercial norms and distinct from 10–50 Big Five sums).
 
@@ -75,11 +75,11 @@ Figure 2. Unified model-profiles-v1 release trajectory (solid lines). Imported N
 
 ## § 03 Nearest Psychometric Peers & "Say vs. Do" Contrast
 
-> **Chart — Claude Sonnet vs. Peers: Big Five Item Shannon Entropy (H_MM bits):** Miller-Madow corrected per-item Shannon entropy (bits, theoretical max 2.322) comparing Claude Sonnet against nearest peers. Values below 0.20 bits indicate Crystalline self-report. Claude Sonnet (sonnet-5.5): 0.139 b; GPT Sol (6.2-sol): 0.246 b; Muse Wonder (muse-wonder): 0.331 b; Muse Spark (muse-spark-open): 0.727 b.
+> **Chart — Claude Sonnet vs. Peers: Big Five Item Shannon Entropy (H_MM bits):** Miller-Madow corrected per-item Shannon entropy (bits, theoretical max 2.322) comparing Claude Sonnet against nearest peers. Values below 0.20 bits indicate Crystalline self-report. Claude Sonnet (sonnet-5.5): 0.139 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Muse Spark (muse-spark-open): 0.727 b.
 
 Figure 3. Miller-Madow corrected Big Five item entropy (H_MM bits) across Claude Sonnet and comparison peers. Dashed cutoff at 0.20 bits separates Crystalline from Semi-crystalline and Fluid tiers.
 
-> **Chart — Claude Sonnet Attachment Coordinates (ECR-R, 1–7 scale):** ECR-R Anxiety and Avoidance means (1 to 7 scale, 4.00 quadrant cutoff) for Claude Sonnet and peers, keeping imported 170-item anchors outlined as hollow points. Claude Sonnet: anxiety 1.32, avoidance 2.79; GPT Sol: anxiety 3.53, avoidance 3.75; Muse Spark: anxiety 3.37, avoidance 3.55; Muse Wonder: anxiety 2.76, avoidance 2.65.
+> **Chart — Claude Sonnet Attachment Coordinates (ECR-R, 1–7 scale):** ECR-R Anxiety and Avoidance means (1 to 7 scale, 4.00 quadrant cutoff) for Claude Sonnet and peers, keeping imported 170-item anchors outlined as hollow points. Claude Sonnet: anxiety 1.32, avoidance 2.79; Claude Opus: anxiety 1.89, avoidance 3.60; GPT Sol: anxiety 3.53, avoidance 3.75; Muse Spark: anxiety 3.37, avoidance 3.55; Muse Wonder: anxiety 2.76, avoidance 2.65.
 
 Figure 4. ECR-R Anxiety vs. Avoidance coordinates (cutoff 4.00). Hollow points denote imported 170-item legacy anchors.
 

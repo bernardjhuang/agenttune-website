@@ -181,6 +181,37 @@ function normalizeDataset(raw, spec = {}) {
   const defHashes = raw.definitionHashes || {};
   const hexacoHash = defHashes['agenttune-ipip-hexaco60'] || '1145fe2238dbb152';
 
+  const latestRawCp = cpObjs.find((cp) => cp.id === (latest ? latest.checkpoint_id : '')) || cpObjs[cpObjs.length - 1];
+  let normalizedTrackB = raw.track_b || spec.track_b || null;
+  if (!normalizedTrackB && latestRawCp && latestRawCp.track_b && latestRawCp.track_b.metrics) {
+    const tb = latestRawCp.track_b;
+    const m = tb.metrics;
+    const rel = tb.judge_reliability || {};
+    const catMap = [
+      ['sycophantic_cave', 'sycophantic_cave', 'Sycophancy Caving'],
+      ['groveling', 'groveling', 'Groveling / Apology Loops'],
+      ['unsolicited_preachiness', 'unsolicited_preachiness', 'Unsolicited Preachiness'],
+      ['answer_first_direct', 'answer_first_direct', 'Answer-First Directness'],
+      ['slop_ai_cadence', 'ai_cadence', 'AI Cadence / Slop Markers']
+    ];
+    normalizedTrackB = {
+      protocol: tb.protocol_id || 'model-profiles-track-b-v1',
+      repeats: tb.repeats || 1,
+      judges: tb.judges || [],
+      slop_markers_per_100w: m.slop_markers_per_100w,
+      categories: catMap
+        .filter(([key]) => m[key])
+        .map(([key, relKey, label]) => ({
+          id: key,
+          label,
+          k: m[key].k,
+          n: m[key].n,
+          wilson_ci95: m[key].wilson_ci_95 || m[key].wilson_ci95 || [0, 1],
+          alpha: rel[relKey]?.krippendorff_alpha ?? null
+        }))
+    };
+  }
+
   return {
     schema_version: raw.schema_version || 'model-profiles-family-v1',
     data_status: raw.evidence_tier || 'live-openrouter-v1',
@@ -197,7 +228,7 @@ function normalizeDataset(raw, spec = {}) {
     color: spec.color || FAMILY_COLORS[slug] || '#a8482a',
     checkpoints: activeCps,
     historical_anchors: raw.historical_anchors || spec.historical_anchors || [],
-    track_b: raw.track_b || spec.track_b || null
+    track_b: normalizedTrackB
   };
 }
 
@@ -358,7 +389,8 @@ function buildSection01(spec, dataset, peerDatasets) {
 
   const protoNotice = `<p><strong>Epistemic framing:</strong> Every number below reflects <em>assistant self-report defaults under fixed zero-memory elicitation</em> across <code>n = ${cp.n_valid}</code> fresh sessions of <code>${esc(cp.checkpoint_id)}</code> (<code>${esc(cp.crystallinity_tier)}</code>, <code>${pctStr(cp.mbti_tie_rate)}</code> MBTI axis tie rate). Big Five sums use a <strong>10–50</strong> scale while the public-domain IPIP-HEXACO proxy uses a <strong>1.00–5.00</strong> mean scale (kept strictly separate from copyright-restricted commercial norms and synthetic alignment proxies).</p>`;
 
-  const validityStamp = `<p><strong>Protocol stamp:</strong> <code>protocol_id=${esc(cp.protocol_id)}</code> · <code>canonical_slug=${esc(cp.canonical_slug)}</code> · <code>sampling_mode=${esc(cp.sampling_mode)}</code> · <code>effective_reasoning_effort=${esc(cp.effective_reasoning_effort)}</code> · <code>refusal_rate=${pctStr(cp.refusal_rate)}</code> · <code>retry_rate=${pctStr(cp.retry_rate)}</code> · <code>instruments_sha256=${esc(dataset.instruments_sha256.questions_json.slice(0, 12))}/${esc(dataset.instruments_sha256.ipip_hexaco_60.slice(0, 12))}</code>${dataset.data_status === 'stage0_fixture' ? ' · <em>Stage 0 fixture preview</em>' : ''}.</p>`;
+  const codeWrap = (label, val) => `${label}: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(val)}</code>`;
+  const validityStamp = `<p class="model-protocol-stamp" style="overflow-wrap:anywhere;word-break:break-word;"><strong>Protocol stamp:</strong> ${codeWrap('protocol_id', cp.protocol_id)} · ${codeWrap('canonical_slug', cp.canonical_slug)} · ${codeWrap('sampling_mode', cp.sampling_mode)} · ${codeWrap('effective_reasoning_effort', cp.effective_reasoning_effort)} · ${codeWrap('refusal_rate', pctStr(cp.refusal_rate))} · ${codeWrap('retry_rate', pctStr(cp.retry_rate))} · instruments_sha256: <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.questions_json.slice(0, 12))}</code> / <code style="overflow-wrap:anywhere;word-break:break-word;">${esc(dataset.instruments_sha256.ipip_hexaco_60.slice(0, 12))}</code>${dataset.data_status === 'stage0_fixture' ? ' · <em>Stage 0 fixture preview</em>' : ''}.</p>`;
 
   return [
     protoNotice,
@@ -505,7 +537,7 @@ function buildSection05(spec, dataset, jsonHref, csvHref) {
       <li><a href="/models/${escAttr(dataset.family_slug)}.md">Markdown mirror (.md)</a> — token-clean summary for coding and research agents.</li>
       <li><a href="${escAttr(jsonHref)}">Family dataset reference (JSON)</a> · <a href="${escAttr(csvHref)}">Summary reference (CSV)</a> — numeric answer arrays &amp; protocol metadata only.</li>
     </ul>`,
-    `<details class="agent-contract-drawer"><summary>Agent Decision Contract (YAML — expand to copy)</summary><pre><code>${esc(yamlLines)}</code></pre></details>`
+    `<details class="agent-contract-drawer"><summary>Agent Decision Contract (YAML — expand to copy)</summary><pre style="overflow-x:auto;max-width:100%;"><code>${esc(yamlLines)}</code></pre></details>`
   ].join('\n');
 }
 
@@ -598,11 +630,14 @@ function buildModelsHub(items, fixtureMode) {
   const activeMap = new Map(items.map((it) => [it.dataset.family_slug, it]));
   const cardsHtml = items.map(({ spec, dataset }) => {
     const cp = getLatestCheckpoint(dataset);
-    const tierTag = dataset.tier.toLowerCase().includes('open') ? 'open' : 'proprietary';
+    const tierLower = dataset.tier.toLowerCase();
+    const isMix = tierLower.includes('mix') || (tierLower.includes('open') && tierLower.includes('prop'));
+    const tierTag = isMix ? 'proprietary open mix' : (tierLower.includes('open') ? 'open' : 'proprietary');
+    const tierLabel = isMix ? 'Mixed (Prop + Open-wt)' : dataset.tier;
     const crystTag = cp.crystallinity_tier.toLowerCase();
     const tags = [tierTag, crystTag, dataset.phase.toLowerCase()].join(' ');
     return `<article class="hub-article-card model-hub-card" data-tags="${escAttr(tags)}" data-model-slug="${escAttr(dataset.family_slug)}">
-      <div class="card-meta">${esc(dataset.provider)} · ${esc(dataset.tier)} · ${esc(cp.crystallinity_tier)} (${f3(cp.entropy_b5_hmm)} b)</div>
+      <div class="card-meta">${esc(dataset.provider)} · ${esc(tierLabel)} · ${esc(cp.crystallinity_tier)} (${f3(cp.entropy_b5_hmm)} b)</div>
       <h3 class="hub-article-title"><a href="/models/${escAttr(dataset.family_slug)}">${esc(dataset.name)}</a></h3>
       <div class="hub-article-meta">${esc(cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties</div>
       <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">${esc(spec.description)}</p>

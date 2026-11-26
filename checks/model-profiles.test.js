@@ -70,6 +70,8 @@ test('Group 1: roster, template, fixture/live schemas, score bounds & epistemic 
     assert.match(html, /"name":"Models","item":"https:\/\/agent-tune\.com\/models\/"/);
     assert.match(html, /"@type":"Dataset"/);
     assert.match(html, /class="agent-contract-drawer"/);
+    assert.match(html, /class="model-protocol-stamp"[^>]*overflow-wrap:anywhere/);
+    assert.doesNotMatch(html, /<code>instruments_sha256=/);
 
     // 1x Track B must show k/3 + Wilson CI (when collected) or explicit pending notice, and never per-family % estimates
     const tbBody = /Behavioral "Say vs\. Do"[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/.exec(html)?.[1] || '';
@@ -258,6 +260,29 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
     assert.doesNotMatch(svg, /NaN|Infinity|undefined/);
     for (const [, dim] of svg.matchAll(/\b(?:width|height|r)="(-?[0-9.]+)"/g)) {
       assert.ok(Number(dim) >= 0);
+    }
+  }
+
+  // Verify Attachment plane() keeps all label boxes inside plot bounds and pairwise non-overlapping
+  const { items } = loadFamilies();
+  const peers = items.map((i) => i.dataset);
+  for (const ds of peers) {
+    const planeFig = renderCharts.renderAttachmentPlane(ds, peers);
+    const labels = [...planeFig.matchAll(/<text x="([0-9.]+)" y="([0-9.]+)" font-size="10\.5"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
+    assert.ok(labels.length >= peers.length, `${ds.family_slug}: missing labels in plane()`);
+    const boxes = labels.map(([, x, y, anchor, text]) => {
+      const lw = Math.ceil(text.length * 6.3 + 4);
+      const x1 = anchor === 'start' ? Number(x) - 2 : Number(x) - lw + 2;
+      const y1 = Number(y) - 11;
+      assert.ok(x1 >= 74, `${ds.family_slug}: label "${text}" encroaches on Y-axis area (x1=${x1})`);
+      return { text, x1, y1, x2: x1 + lw, y2: y1 + 14 };
+    });
+    for (let i = 0; i < boxes.length; i++) {
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i], b = boxes[j];
+        const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
+        assert.equal(hit, false, `${ds.family_slug}: plane() labels overlap: "${a.text}" vs "${b.text}"`);
+      }
     }
   }
 });

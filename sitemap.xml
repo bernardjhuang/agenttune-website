@@ -788,6 +788,13 @@
   </url>
 
   <url>
+    <loc>https://agent-tune.com/models/claude-opus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-26</lastmod>
+  </url>
+
+  <url>
     <loc>https://agent-tune.com/models/claude-sonnet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
