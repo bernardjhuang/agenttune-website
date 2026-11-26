@@ -91,3 +91,11 @@ Built around a **`0.375rem` (`6px`) baseline unit** (`--bl`) and a **`24px` (`4 
 1. **Verdict-First, Zero Fluff:** Open every section, guide, and answer with the concrete conclusion, rule, or setting path. Never start with *"In today's fast-paced AI landscape..."*, *"Wait — what if..."*, or *"That's completely normal!"*.
 2. **Quantify Claims Inline With Defects:** Whenever citing a metric (`87.2%` -> `11.1%` slop drop, `63.6%` PC1 factor collapse, `+16.7 pp`), state the exact sample unit (`n`, sessions vs. tasks, model IDs, judge setup) immediately beside it.
 3. **Copyable Rules Must Be Testable:** Prefer observable instructions (*"Lead with the recommendation, then two bullets of trade-offs"*) over vague personality adjectives (*"Be smart and insightful"*).
+
+---
+
+## 6. Logo & Favicon System ("The Calibration Fork")
+
+- **Mark Metaphor:** An architectural tuning fork (`viewBox="0 0 64 64"`) whose twin tines silhouette an open caliper around a suspended Burnt Sienna resonance node (`#9c3b1f` on `#f4efe6` paper; `#cf5636` enamel on `#1c1a17` ink).
+- **Favicon & App Icons:** Unified across every route via `/favicon.svg` (`64×64` crisp SVG), `/favicon.ico` (`16×16`, `32×32`, `48×48` PNG-in-ICO frames), and `/apple-touch-icon.png` (`180×180` full-bleed `#1c1a17` ink PNG), version-hashed at build time in `tools/build-public.js` (zero inline plain-circle fallbacks).
+- **Navbar Wordmark:** Pairs `.brand-mark` (`20×20` currentColor fork + `--accent` focal dot) with `Newsreader` `"AgentTune"`.

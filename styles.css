@@ -6819,6 +6819,14 @@ body.show-grid::after {
   background: var(--accent);
 }
 
+.brand-mark {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+  color: var(--ink);
+}
+
 .brand-issue {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
