@@ -5,7 +5,7 @@ Guide · Resources
 
 # Meta Muse Soul.md templates.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~13 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
 
@@ -17,10 +17,10 @@ Start with one template below. To keep Muse’s built-in core truths untouched, 
 | --- | --- | --- |
 | Concise assistant | Short, answer-first replies without filler | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#1-concise-assistant) · [Download .md](https://agent-tune.com/resources/muse/concise-assistant.md) |
 | Thinking partner | Decisions, tradeoffs, and checking assumptions | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#2-thinking-partner) · [Download .md](https://agent-tune.com/resources/muse/thinking-partner.md) |
-| Writing editor | Tight prose edits that keep your voice &amp; facts | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#3-writing-editor) · [Download .md](https://agent-tune.com/resources/muse/writing-editor.md) |
+| Writing editor | Tight prose edits that keep your voice & facts | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#3-writing-editor) · [Download .md](https://agent-tune.com/resources/muse/writing-editor.md) |
 | Task coordinator | Status briefs, blockers, and Connector approval cards | [View prompt](https://agent-tune.com/guides/muse-soul-md-templates#4-task-coordinator) · [Download .md](https://agent-tune.com/resources/muse/task-coordinator.md) |
-| Restore Default Soul.md | Recover clean Core Truths &amp; Boundaries if overwritten | [View restore](https://agent-tune.com/guides/muse-soul-md-templates#restore-default-soul-md) · [Download .md](https://agent-tune.com/resources/muse/default-soul-restore.md) |
-| 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper &amp; 11 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
+| Restore Default Soul.md | Recover clean Core Truths & Boundaries if overwritten | [View restore](https://agent-tune.com/guides/muse-soul-md-templates#restore-default-soul-md) · [Download .md](https://agent-tune.com/resources/muse/default-soul-restore.md) |
+| 16 role blocks | Founder, Developer, Analyst, Inbox Triage, Shopper & 11 more | [Jump to 16 roles ↓](https://agent-tune.com/guides/muse-soul-md-templates#sixteen-more-soul-md-examples-by-role) |
 
 Want to build `Soul.md`, [`Identity.md`](https://agent-tune.com/guides/muse-identity-md-avatar-name), and [`Memory.md`](https://agent-tune.com/guides/muse-memory-md-privacy-reset) together? Use our [3-File Muse Starter Kit Builder below](https://agent-tune.com/guides/muse-soul-md-templates#muse-3-file-starter-builder).
 

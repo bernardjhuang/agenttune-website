@@ -5,24 +5,24 @@ Reference · Limits & Quotas
 
 # AI custom instructions character limits (2026 cheat sheet).
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.
 
 ## 2026 custom instructions limit & path reference table.
 
-| Platform &amp; surface | Exact menu path or file location | Documented cap | Recommended tuning size |
+| Platform & surface | Exact menu path or file location | Documented cap | Recommended tuning size |
 | --- | --- | --- | --- |
 | ChatGPT Custom Instructions | Settings → Personalization → Custom Instructions | 1,500 characters per longer field | 600–1,200 chars (use our [compact generator](https://agent-tune.com/tools/custom-instructions-generator)) |
 | ChatGPT Projects | Project → Project Instructions | Multi-kilobyte Markdown (overrides account custom instructions in that project) | 800–2,000 chars |
-| OpenAI Codex &amp; ChatGPT Work | ~/.codex/AGENTS.md + repo AGENTS.md / AGENTS.override.md | 32 KiB (32,768 bytes) combined across all files (project_doc_max_bytes) | Keep personal ~/.codex/AGENTS.md under 2 KiB |
+| OpenAI Codex & ChatGPT Work | `~/.codex/AGENTS.md` + repo `AGENTS.md` / `AGENTS.override.md` | 32 KiB (32,768 bytes) combined across all files (`project_doc_max_bytes`) | Keep personal `~/.codex/AGENTS.md` under 2 KiB |
 | Claude Personal Preferences | Settings → General → Personal Preferences | Multi-paragraph text field (no 1,500-char lock) | 500–1,200 chars (6–10 bullets) |
 | Claude Projects | Project → Project Instructions | Shared with project knowledge context window | 800–2,500 chars |
-| Claude Code | ~/.claude/CLAUDE.md &amp; ~/.claude/output-styles/*.md | Local Markdown file loaded into session context | 600–1,800 chars with keep-coding-instructions: true |
-| Meta Muse | Settings → Personalization → Assistant Identity → Soul.md | Editable Markdown file (alongside Identity.md and Memory.md) | 500–1,500 chars inside How to work with me |
-| Google Gemini | Settings → Saved info, Gems, or ~/.gemini/GEMINI.md | Short individual memories in Saved info; full Markdown in Gems and GEMINI.md | 1–2 sentences per Saved info item; 600–1,500 chars in Gems |
-| xAI Grok &amp; Grok Bot | Account response settings or Grok Bot Description | Compact text box in Bot Description; full system prompt in API | 500–1,200 chars |
-| Cursor &amp; GitHub Copilot | .cursor/rules/*.mdc &amp; .github/copilot-instructions.md | Local repository Markdown files | 600–1,800 chars |
+| Claude Code | `~/.claude/CLAUDE.md` & `~/.claude/output-styles/*.md` | Local Markdown file loaded into session context | 600–1,800 chars with `keep-coding-instructions: true` |
+| Meta Muse | Settings → Personalization → Assistant Identity → Soul.md | Editable Markdown file (alongside `Identity.md` and `Memory.md`) | 500–1,500 chars inside How to work with me |
+| Google Gemini | Settings → Saved info, Gems, or `~/.gemini/GEMINI.md` | Short individual memories in Saved info; full Markdown in Gems and `GEMINI.md` | 1–2 sentences per Saved info item; 600–1,500 chars in Gems |
+| xAI Grok & Grok Bot | Account response settings or Grok Bot Description | Compact text box in Bot Description; full system prompt in API | 500–1,200 chars |
+| Cursor & GitHub Copilot | `.cursor/rules/*.mdc` & `.github/copilot-instructions.md` | Local repository Markdown files | 600–1,800 chars |
 
 ## Why shorter tunings beat 10,000-word prompt walls.
 

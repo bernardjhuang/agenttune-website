@@ -5,7 +5,7 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
@@ -34,15 +34,15 @@ In both cases, **checkable rules beat adjectives**. “Be concise and candid” 
 - **Grab a template:** Browse all [43 MIT-licensed tuning files](https://agent-tune.com/library/) or build a custom export in the [generator](https://agent-tune.com/tools/custom-instructions-generator).
 - **Paste it into your app’s settings box (web & mobile):**
 
-| App / Agent | Where to paste (Web &amp; Mobile) | Walkthrough |
+| App / Agent | Where to paste (Web & Mobile) | Walkthrough |
 | --- | --- | --- |
-| ChatGPT | Settings → Personalization → Personality presets &amp; Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
+| ChatGPT | Settings → Personalization → Personality presets & Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
 | Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-personality) |
-| Meta Muse | Assistant icon → Identity → Soul.md (keep avatar/name in Identity.md) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
+| Meta Muse | Assistant icon → Identity → `Soul.md` (keep avatar/name in `Identity.md`) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
 | Perplexity | Perplexity Spaces → Space Settings → Custom Instructions (4,000 chars) or AI Profile | [Perplexity Spaces guide](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) |
-| Grok &amp; Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
-| Google Gemini | Settings → Saved info, custom Gems, or ~/.gemini/GEMINI.md | [Gemini guide](https://agent-tune.com/guides/gemini-personality) |
-| Coding Agents | ~/.claude/output-styles/*.md, CLAUDE.md, ~/.codex/AGENTS.md (32 KiB), .cursor/rules/*.mdc | [All coding rules files](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) |
+| Grok & Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
+| Google Gemini | Settings → Saved info, custom Gems, or `~/.gemini/GEMINI.md` | [Gemini guide](https://agent-tune.com/guides/gemini-personality) |
+| Coding Agents | `~/.claude/output-styles/*.md`, `CLAUDE.md`, `~/.codex/AGENTS.md` (32 KiB), `.cursor/rules/*.mdc` | [All coding rules files](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) |
 
 **Step 4 — Check for conflicts:** Delete any line that doesn’t fit your work, and paste your rules into the [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to catch contradictions.
 

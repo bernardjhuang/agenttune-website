@@ -5,7 +5,7 @@ Guide · Enneagram
 
 # Enneagram AI prompts for all nine types.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/enneagram-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** An Enneagram AI prompt tells your assistant what your type needs from a conversation; risks named first for Type 6, outcomes first for Type 3, no forced positivity for Type 4. Copy the block for your type into ChatGPT's custom instructions or Claude's project instructions; free full-length versions exist for all nine types.
 
@@ -117,15 +117,15 @@ You do not need a type to choose a communication preference. Read the blocks abo
 
 | Type | Archetype | Core motivation | What the AI prompt adjusts |
 | --- | --- | --- | --- |
-| Type 1 | Reformer | Integrity &amp; standards | Rigorous verification, explicit criteria, zero sloppy shortcuts |
-| Type 2 | Helper | Connection &amp; usefulness | Warm register, stakeholder impact framing |
-| Type 3 | Achiever | Execution &amp; outcomes | Outcome-first briefs, crisp leverage &amp; tempo |
-| Type 4 | Individualist | Depth &amp; originality | Non-generic language, no forced positivity |
+| Type 1 | Reformer | Integrity & standards | Rigorous verification, explicit criteria, zero sloppy shortcuts |
+| Type 2 | Helper | Connection & usefulness | Warm register, stakeholder impact framing |
+| Type 3 | Achiever | Execution & outcomes | Outcome-first briefs, crisp leverage & tempo |
+| Type 4 | Individualist | Depth & originality | Non-generic language, no forced positivity |
 | Type 5 | Investigator | First-principles mastery | Mechanism-first analysis, zero social padding |
-| Type 6 | Loyalist | Preparedness &amp; trust | Failure-mode analysis &amp; honest tradeoffs first |
-| Type 7 | Enthusiast | Possibility &amp; momentum | Divergent options before premature narrowing |
-| Type 8 | Challenger | Candor &amp; agency | Blunt pushback, zero soft-pedaling |
-| Type 9 | Peacemaker | Balance &amp; steady clarity | Gentle directness without forced confrontation |
+| Type 6 | Loyalist | Preparedness & trust | Failure-mode analysis & honest tradeoffs first |
+| Type 7 | Enthusiast | Possibility & momentum | Divergent options before premature narrowing |
+| Type 8 | Challenger | Candor & agency | Blunt pushback, zero soft-pedaling |
+| Type 9 | Peacemaker | Balance & steady clarity | Gentle directness without forced confrontation |
 
 In our free 36-question [Enneagram test (no email)](https://agent-tune.com/tests/enneagram), adjacent wings only compare neighbors (e.g., Type 5 compares Type 4 vs. Type 6 for `5w4` or `5w6`), and exact top-score ties are reported openly rather than broken secretly. Explore tie arithmetic in the [Enneagram Scoring Playground](https://agent-tune.com/tools/enneagram-scoring-playground).
 

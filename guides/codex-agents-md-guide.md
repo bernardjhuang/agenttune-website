@@ -5,7 +5,7 @@ Guide · OpenAI Codex
 
 # OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/codex-agents-md-guide.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/codex-agents-md-guide.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Codex reads your personal ~/.codex/AGENTS.md first, then walks from the repo root down to your working directory, concatenating AGENTS.md files until their combined size hits 32 KiB (project_doc_max_bytes = 32768 bytes). In any folder, AGENTS.override.md replaces the sibling AGENTS.md. Files closer to your current folder appear later in the prompt and win conflicts.
 
@@ -13,11 +13,11 @@ By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-
 
 Codex builds its instruction chain once when a session starts:
 
-| Order | File path | Behavior &amp; precedence |
+| Order | File path | Behavior & precedence |
 | --- | --- | --- |
-| 1 (First) | ~/.codex/AGENTS.override.md or ~/.codex/AGENTS.md | Your personal global defaults across all projects (also editable in the desktop app under Settings → Personalization). |
-| 2 | &lt;repo-root&gt;/AGENTS.override.md or &lt;repo-root&gt;/AGENTS.md | Repository-wide build, test, and architecture rules shared with the team. |
-| 3 (Last) | Intermediate folders down to &lt;cwd&gt;/AGENTS.override.md or &lt;cwd&gt;/AGENTS.md | Package or subfolder rules. Appears last in the prompt, so it wins conflicts with earlier files. |
+| 1 (First) | `~/.codex/AGENTS.override.md` or `~/.codex/AGENTS.md` | Your personal global defaults across all projects (also editable in the desktop app under Settings → Personalization). |
+| 2 | `<repo-root>/AGENTS.override.md` or `<repo-root>/AGENTS.md` | Repository-wide build, test, and architecture rules shared with the team. |
+| 3 (Last) | Intermediate folders down to `<cwd>/AGENTS.override.md` or `<cwd>/AGENTS.md` | Package or subfolder rules. Appears last in the prompt, so it wins conflicts with earlier files. |
 
 In any folder where both `AGENTS.override.md` and `AGENTS.md` exist, Codex loads `AGENTS.override.md` and skips the sibling `AGENTS.md`.
 

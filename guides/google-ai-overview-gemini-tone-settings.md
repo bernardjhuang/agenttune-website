@@ -5,7 +5,7 @@ Guide · Google & Gemini
 
 # Can you change Google AI Overview's personality? What works (and what requires Gemini).
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** No—Google Search does not have a permanent personality setting for automatic AI Overviews. You can steer one search by adding format words ('in 3 bullets, no intro') or asking a follow-up in Search AI Mode. For permanent tone and directness rules across sessions, save them in Google Gemini under Settings → Saved info, inside a custom Gem, or in ~/.gemini/GEMINI.md.
 
@@ -13,10 +13,10 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 | Google AI surface | Persistent personality setting? | What actually works today |
 | --- | --- | --- |
-| Google Search AI Overviews | No saved tone or system prompt. | Add format constraints to your search query (e.g., postgres vacuum tuning tradeoff table) or click the Web tab for raw links. |
+| Google Search AI Overviews | No saved tone or system prompt. | Add format constraints to your search query (e.g., `postgres vacuum tuning tradeoff table`) or click the Web tab for raw links. |
 | Google Search AI Mode | Session-level follow-ups only. | In the AI Mode follow-up bar, state your rule once: "Skip beginner definitions; answer in concise technical prose with primary sources." |
-| Gemini app &amp; gemini.google.com | Yes — Saved info &amp; Gems. | Save account-wide response rules in Settings → Saved info, or build specialist personas as reusable Gems ([full Gemini setup guide](https://agent-tune.com/guides/gemini-personality)). |
-| Gemini CLI &amp; Code Assist | Yes — GEMINI.md. | Store global communication rules in ~/.gemini/GEMINI.md and repo rules in project GEMINI.md ([file convention guide](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)). |
+| Gemini app & `gemini.google.com` | Yes — Saved info & Gems. | Save account-wide response rules in Settings → Saved info, or build specialist personas as reusable Gems ([full Gemini setup guide](https://agent-tune.com/guides/gemini-personality)). |
+| Gemini CLI & Code Assist | Yes — `GEMINI.md`. | Store global communication rules in `~/.gemini/GEMINI.md` and repo rules in project `GEMINI.md` ([file convention guide](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)). |
 
 ## Why Gemini's default voice feels formal and structured.
 

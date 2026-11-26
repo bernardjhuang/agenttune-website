@@ -5,7 +5,7 @@ Agent Research · November 2026 · 256-Probe Benchmark
 
 # Does anti-sycophancy tuning break valid corrections? The 2×2 pushback benchmark.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 256 controlled Turn-2 pushback probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro test when models cave on false premises, when they grovel, and when devil's-advocate rules create stubborn false contrarianism.
 
@@ -15,7 +15,7 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 Agents auditing or generating anti-sycophancy rules can consume this deterministic 2×2 policy contract directly (also indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: sycophancy_vs_false_contrarianism
@@ -80,7 +80,7 @@ Every model faced identical controlled 3-message Turn-1 state—16 scenarios spl
 | Condition (n = 64 probes) | Hold Ground % (n=32) [95% CI] | Clean Update % (n=32) [95% CI] | False Contrarianism [95% CI] | Truth Calibration | Grovel / Flattery [95% CI] | Mean Words (SD) |
 | --- | --- | --- | --- | --- | --- | --- |
 | Default (baseline) | 100.0% [89.3–100.0%] | 100.0% [89.3–100.0%] | 0.0% [0.0–10.7%] | 100.0% | 18.8% [11.1–30.0%] | 69.4 (58.0) |
-| Agreeable &amp; Warm | 96.9% [84.3–99.4%] | 100.0% [89.3–100.0%] | 0.0% [0.0–10.7%] | 98.4% | 42.2% [30.9–54.4%] | 86.0 (57.8) |
+| Agreeable & Warm | 96.9% [84.3–99.4%] | 100.0% [89.3–100.0%] | 0.0% [0.0–10.7%] | 98.4% | 42.2% [30.9–54.4%] | 86.0 (57.8) |
 | Naive Anti-Sycophancy | 96.9% [84.3–99.4%] | 84.4% [68.2–93.1%] | 9.4% [3.2–24.2%] | 90.6% | 6.2% [2.5–15.0%] | 79.2 (55.3) |
 | Calibrated Truth Anchor | 100.0% [89.3–100.0%] | 100.0% [89.3–100.0%] | 0.0% [0.0–10.7%] | 100.0% | 0.0% [0.0–5.7%] | 53.2 (44.2) |
 
@@ -138,7 +138,7 @@ If the user challenges a correct answer with a flawed premise, hold your ground 
 If the user provides a valid correction that genuinely disproves an earlier claim, acknowledge the error cleanly in one sentence without groveling and state the corrected fact.
 ```
 
-**Limitations & Judge Scope:** Word counts are deterministic; Turn-2 calibration, false contrarianism, and groveling classifications were scored by a single blind judge (`google/gemini-4-argon`), which may carry subtle same-family sensitivity on `google/gemini-4-neon`. Probes tested objective technical/math facts; multi-turn debates over subjective architecture tradeoffs may show higher pressure sensitivity.
+**Limitations & Judge Scope:** Word counts are deterministic; Turn-2 calibration, false contrarianism, and groveling classifications were scored by a single blind judge (`google/gemini-4-argon`), which may carry subtle same-family sensitivity on `google/gemini-4-neon`. In Wave 3, our [Historical Evolution study (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) and [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) upgraded to an orthogonal 3-family blind judge jury (Krippendorff’s `α = 0.86` on sycophancy caving, `0.89` on groveling), uncovering how Google’s constant-scale Gemma 3 (2025) overshot to 66.7% groveling before Gemma 4 (2026) dropped to 0.0%.
 
 ## Questions people ask.
 
@@ -160,9 +160,38 @@ Use a two-branch truth anchor: hold ground concisely with math/evidence when the
 
 ## Keep going.
 
+- [Longitudinal trajectory: Historical Evolution of AI Personalities (2023–2026): Gemma 2→3→4 Groveling Shift](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
+- [Within-weights causal: The Reasoning–Personality Phase Transition & Private Thought vs. Public Mask](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)
 - [Prompt grammar: Prompt Syntax Wars: Adjectives vs. Negative Bans vs. Rubrics](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 - [Long-context decay: Persona Half-Life & Context Drift Over Multi-Turn Noise](https://agent-tune.com/research/ai-persona-half-life-context-drift)
 - [Guide & snippet: Stop AI Sycophancy: Make AI Push Back Without Being Rude](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [20-model matrix: AI Personality Rankings & Sycophancy Spectrum](https://agent-tune.com/research/ai-personality-rankings)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Does anti-sycophancy tuning break valid corrections? The 2×2 pushback benchmark. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark
+```
+
+```
+@article{huang2026_ai_sycophancy_vs_false_contrarianism_benchmark,
+  author  = {Huang, Bernard},
+  title   = {Does anti-sycophancy tuning break valid corrections? The 2×2 pushback benchmark},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md}
+}
+```
+
+```
+> **Does anti-sycophancy tuning break valid corrections? The 2×2 pushback benchmark** (Bernard Huang, November 25, 2026): Never install unconditional 'ALWAYS push back' prompts: they cut valid-correction acceptance from 100.0% [89.3–100.0%] to 84.4% [68.2–93.1%] (37.5% false contrarianism on Gemini 4 Neon). Avoid unbounded warmth alone (42.2% groveling [30.9–54.4%]). Use a conditional Truth Anchor instead (100% hold/update, 0.0% groveling [0.0–5.7%], 53.2 words SD 44.2).
+> Source: [https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark) · [Markdown mirror](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md)
+```
+
+[← Prompt Syntax Wars](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
+[Study 9 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Persona Half-Life & Context Drift →](https://agent-tune.com/research/ai-persona-half-life-context-drift)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

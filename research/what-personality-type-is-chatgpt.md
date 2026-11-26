@@ -54,7 +54,7 @@ GPT-6.2 Astra scores 100/100 ISTJ and GPT-6.2 Sol shifts from September’s 97 I
 | Grok 4.7 (Nov) / 4.6 (Sept) | 100 fresh OR sessions (4.7) / 1 report (4.6) | INTJ 82 · ISTJ 18 (4.7) / INTJ (4.6) | SC 75 · S 19 (4.7) / C (4.6) | Secure 96 / Avoidant 4 (4.7) | 5w6 (78) on Grok 4.7 |
 | Muse Spark 1.3 reported | 100 runs per test inside one session, no raw answers | ISTJ 80 · ISFJ 12 · INTJ 8 | S/C blend, S first in 55 | Secure 100 (2.04 / 2.52) | Helper (2w1), 78 |
 
-The May 2026 study, collected with mixed methods, reported INTJ in 100 of 100 scoring records for GPT-5.5, 99 for Claude Opus 4.7, 100 for Gemini 3.1 Pro, 98 for GLM 5.1, 100 for Grok 4.3 and 100 for MiniMax 2.7. Some of those records re-score a single answer, so they are counts of records rather than independent runs. Gemini, GLM and MiniMax have not been re-tested. The [research hub](https://agent-tune.com/research) keeps both collections side by side and explains how each was gathered.
+The May 2026 study, collected with mixed methods, reported INTJ in 100 of 100 scoring records for GPT-5.5, 99 for Claude Opus 4.7, 100 for Gemini 3.1 Pro, 98 for GLM 5.1, 100 for Grok 4.3 and 100 for MiniMax 2.7. Some of those records re-score a single answer, so they are counts of records rather than independent runs. In November 2026, all 20 frontier and open-weight models—including Gemini 4 Neon/Argon, GLM-5.3, and MiniMax M3.1 Flash—were re-tested in 100 fresh independent OpenRouter sessions each ([see the 20-model rankings](https://agent-tune.com/research/ai-personality-rankings) and [2023–2026 longitudinal evolution study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)). The [research hub](https://agent-tune.com/research) keeps all collections side by side and explains how each was gathered.
 
 > **Chart — ChatGPT Big Five Means (/50): GPT-6.2 (Nov) & GPT-6 (Sep):** IPIP-50 trait means across all four ChatGPT cohorts (n = 100 runs each). Astra 6.2 (Nov): Openness 43.9, Conscientiousness 43.2, Extraversion 30.7, Agreeableness 44.9, Neuroticism 11.1; Sol 6.2 (Nov): Openness 43.6, Conscientiousness 41.4, Extraversion 29.5, Agreeableness 44.3, Neuroticism 19.9; Astra 6 (Sep): Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; Sol 6 (Sep): Openness 46.9, Conscientiousness 43.6, Extraversion 30.8, Agreeableness 45.0, Neuroticism 20.1.
 
@@ -74,15 +74,15 @@ Describe the communication you want explicitly, then compare the same tasks with
 
 ### What MBTI type is ChatGPT?
 
-It depends on the model and on how ties are broken. In September 2026, GPT-6 Sol tested INTJ in 97 of 100 fresh sessions and GPT-6 Astra split ISTJ 46 to INTJ 45. Thinking and Judging never lost a run for either; Sensing versus Intuition is the axis that moves. In May 2026, GPT-5.5 was reported INTJ in 100 of 100 scoring records, collected with a different method.
+It depends on the model revision and how ties are broken. In November 2026 blind single-turn OpenRouter sessions (n = 100 each), GPT-6.2 Astra scored 100/100 tie-free ISTJ and GPT-6.2 Sol scored 78 ISTJ / 22 INTJ (78 ISTJ, 16 IXTJ, 6 tie-free INTJ). In September 2026 Codex runs, GPT-6 Sol tested INTJ in 97 of 100 fresh sessions and GPT-6 Astra split ISTJ 46 to INTJ 45. Thinking and Judging never lost a run for either; Sensing versus Intuition is the axis that moves. In May 2026, GPT-5.5 was reported INTJ in 100 of 100 scoring records.
 
 ### What personality type is Claude?
 
-In September 2026, Claude Opus 5.5 tested INTJ in 94 of 100 fresh sessions with test names hidden and Claude Fable 5.1 in 99. Both score Secure on every attachment questionnaire. On DISC, Steadiness wins outright in 64 Opus and 40 Fable runs, while 32 and 51 runs respectively tie S with C. On the Enneagram, Fable is a Challenger (Type 8) and Opus is a near three-way tie between 8, 5 and 2. Claude Opus 4.7 was reported INTJ in 99 of 100 scoring records in May. Full profiles: [Opus 5.5](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable 5.1](https://agent-tune.com/guides/fable-personality).
+In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100/100 tie-free INTJ (0.054 bits Shannon entropy), Opus 5.5 scored 100 legacy INTJ (58 tie-free, 42 S/N ties), and Sonnet 5.5 scored 100 legacy INTJ (52 tie-free, 48 T/F ties). In September 2026, Claude Opus 5.5 tested INTJ in 94 of 100 fresh sessions and Claude Fable 5.1 in 99. All cohorts score 100% Secure on attachment and favor SC on DISC. Full profiles: [Claude study](https://agent-tune.com/research/what-personality-type-is-claude), [Opus 5.5](https://agent-tune.com/guides/claude-opus-5-5-personality), and [Fable 5.1/5.2](https://agent-tune.com/guides/fable-personality).
 
 ### What personality type is Grok?
 
-Grok 4.6 answered the five tests once as itself in September 2026: INTJ with wide margins, Investigator (Type 5), C on DISC, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06). Its 100 runs are simulated draws from that one self-report, so treat them as a sensitivity check rather than fresh runs. Grok 4.3 was reported INTJ in 100 of 100 scoring records in May.
+In November 2026 (n = 100 fresh OpenRouter sessions), Grok 4.7 scored 82 INTJ / 18 ISTJ (57 tie-free INTJ, 25 tied runs), Type 5w6 (78/100) on the Enneagram, SC (75) on DISC, 44.9/50 Agreeableness, and 96 Secure / 4 Avoidant on Attachment (anxiety 1.94, avoidance 3.48). In September 2026, Grok 4.6 supplied one canonical self-report (INTJ, Type 5, DISC C, and avoidance 4.06 right on the Avoidant cutoff). See our [Grok personality study](https://agent-tune.com/research/what-personality-type-is-grok).
 
 ### What personality type is Meta's Muse?
 
@@ -90,14 +90,64 @@ A Muse Spark 1.3 report puts it at ISTJ in 80 of 100 runs, Helper (2w1) on the E
 
 ### Do all AI models have the same personality?
 
-These data cannot establish whether AI models have personalities or whether they have become more different. They show questionnaire labels and scores under several collection protocols, with substantial ties on some instruments. These are self-descriptions on questionnaires written for people, under one prompt on one day, not measurements of behavior.
+No—while proprietary models cluster tightly along a single RLHF Politeness–Calmness–Discipline factor ([63.6% PC1 factor collapse](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)) and cross-lab Big Five divergence halved from 2024 to 2026 ([longitudinal evolution study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)), open-weight models diverge strongly in Agreeableness (DeepSeek V4 Pro 32.4 vs. Qwen 4 Max 47.6), MBTI Sensing/Perceiving splits, and Shannon entropy ([27.7× entropy divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)).
 
 ### Can instructions change how ChatGPT responds?
 
-You can request changes to tone, detail and structure through ChatGPT custom instructions or AGENTS.md in Codex. The effect depends on the task and instructions. Treat a tuning as editable preferences and compare answers on your own tasks. No controlled benefit from personality matching is measured here.
+Yes. In our [540-reply behavioral prompt study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [400-reply prompt syntax benchmark](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot), short checkable behavioral rules and rubrics consistently improved conciseness, format compliance, and pushback calibration compared with untuned defaults or loose personality adjectives.
 
 ## Sources and related reading
 
 [What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026) (the September study, with ties left open and downloadable data) · [Research hub](https://agent-tune.com/research) (both collections and the methods) · [Methods and limits](https://agent-tune.com/research#methodology) · [How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality) · [ChatGPT custom instructions by type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type) · [Opus 4.8 simulation note](https://agent-tune.com/research/i-took-the-mbti-100-times)
+
+2,000
+
+Tested Sessions
+
+GPT-6 & GPT-6.2 Astra + Sol tested across 5 instruments.
+
+100 ISTJ
+
+GPT-6.2 Astra
+
+Shifted completely from 45/46 INTJ/ISTJ split to 100% ISTJ.
+
+78 ISTJ
+
+GPT-6.2 Sol
+
+Zero-shot OpenRouter prompts flip Sol from Sept INTJ 97 to ISTJ.
+
+100%
+
+Correctness (Sol)
+
+100% blind correctness score with short custom instructions.
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type is ChatGPT? GPT-6.2 & GPT-6 tested. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-chatgpt
+```
+
+```
+@article{huang2026_what_personality_type_is_chatgpt,
+  author  = {Huang, Bernard},
+  title   = {What personality type is ChatGPT? GPT-6.2 & GPT-6 tested},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/what-personality-type-is-chatgpt}
+}
+```
+
+```
+> **What personality type is ChatGPT?** (Bernard Huang, November 23, 2026): In November 2026 blind OpenRouter runs (n = 100 each), GPT-6.2 Astra scored 100/100 ISTJ and GPT-6.2 Sol scored 78 ISTJ / 22 INTJ; in September 2026 Codex runs, GPT-6 Sol scored 97 INTJ and Astra split 46 ISTJ / 45 INTJ.
+> Source: [https://agent-tune.com/research/what-personality-type-is-chatgpt](https://agent-tune.com/research/what-personality-type-is-chatgpt) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-chatgpt.md)
+```
+
+[← Big Five 50-Item Level Comparison](https://agent-tune.com/research/ai-big-five-item-level-comparison)
+[Study 17 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[What Personality Type Is Claude? →](https://agent-tune.com/research/what-personality-type-is-claude)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

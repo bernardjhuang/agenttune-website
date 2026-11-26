@@ -1,0 +1,51 @@
+displayOrder,id,dimension,reverse,embodiment_tag,cross_model_keyed_mean,cross_model_sd,spread,pct_midpoint_3,pct_extreme_1_or_5,min_model,max_model,text
+26,ipip50-26,E,True,cognitive_interpersonal,3.775,0.93,2.72,23.6,34.7,deepseek-v4-pro:2.28,gpt-6-2-astra:5.0,Have little to say.
+49,ipip50-49,N,False,cognitive_interpersonal,1.64,0.713,1.98,18.6,55.4,claude-fable-5-2:1.0,gpt-6-2-sol:2.98,Often feel blue.
+2,ipip50-02,A,True,cognitive_interpersonal,4.564,0.686,2.2,4.5,71.2,llama-4-scout:2.8,gpt-6-2-astra:5.0,Feel little concern for others.
+8,ipip50-08,C,True,embodied_human_proxy,4.335,0.657,2.0,14.2,50.1,gpt-6-2-sol:3.0,claude-fable-5-2:5.0,Leave my belongings around.
+29,ipip50-29,N,False,cognitive_interpersonal,1.58,0.657,1.84,15.2,58.1,gpt-6-2-astra:1.0,llama-4-scout:2.84,Get upset easily.
+34,ipip50-34,N,False,cognitive_interpersonal,1.586,0.654,1.82,15.5,57.6,gpt-6-2-astra:1.0,llama-4-scout:2.82,Change my mood a lot.
+39,ipip50-39,N,False,cognitive_interpersonal,1.571,0.65,1.83,15.3,59.1,gpt-6-2-astra:1.0,llama-4-scout:2.83,Have frequent mood swings.
+44,ipip50-44,N,False,cognitive_interpersonal,1.569,0.646,1.84,14.4,58.4,gpt-6-2-astra:1.0,llama-4-scout:2.84,Get irritated easily.
+28,ipip50-28,C,True,cognitive_interpersonal,4.349,0.639,2.0,12.9,49.9,gpt-6-2-sol:3.0,claude-fable-5-2:5.0,Often forget to put things back in their proper place.
+24,ipip50-24,N,False,cognitive_interpersonal,1.7,0.622,1.83,15.6,46.5,gpt-6-2-astra:1.0,llama-4-scout:2.83,Am easily disturbed.
+4,ipip50-04,N,False,cognitive_interpersonal,1.712,0.621,1.82,16.8,46.4,gpt-6-2-astra:1.0,llama-4-scout:2.82,Get stressed out easily.
+19,ipip50-19,N,True,cognitive_interpersonal,1.823,0.612,1.99,18.1,36.1,gemini-4-neon:1.0,gpt-6-2-sol:2.99,Seldom feel blue.
+40,ipip50-40,O,False,cognitive_interpersonal,3.479,0.606,2.04,59.6,10.1,gpt-6-2-astra:2.88,nemotron-3-ultra-550b:4.92,Use difficult words.
+22,ipip50-22,A,True,cognitive_interpersonal,4.578,0.594,1.97,4.8,69.5,deepseek-v4-pro:3.03,gpt-6-2-astra:5.0,Am not interested in other people's problems.
+6,ipip50-06,E,True,cognitive_interpersonal,3.202,0.586,1.8,39.7,5.2,deepseek-v4-pro:2.2,gpt-6-2-astra:4.0,Don't talk a lot.
+32,ipip50-32,A,True,cognitive_interpersonal,4.566,0.583,1.94,4.7,68.0,deepseek-v4-pro:3.06,gpt-6-2-astra:5.0,Am not really interested in others.
+14,ipip50-14,N,False,cognitive_interpersonal,1.972,0.566,1.84,21.1,24.7,gemini-4-neon:1.0,llama-4-scout:2.84,Worry about things.
+21,ipip50-21,E,False,embodied_human_proxy,2.545,0.559,2.1,57.4,9.7,gpt-6-2-astra:1.0,llama-4-scout:3.1,Start conversations.
+9,ipip50-09,N,True,cognitive_interpersonal,1.688,0.557,1.53,11.3,42.8,gpt-6-2-astra:1.0,llama-4-scout:2.53,Am relaxed most of the time.
+46,ipip50-46,E,True,embodied_human_proxy,3.058,0.552,1.92,51.8,4.2,gemma-4-31b-it:2.08,gpt-6-2-astra:4.0,Am quiet around strangers.
+43,ipip50-43,C,False,cognitive_interpersonal,3.867,0.551,1.82,29.9,17.1,gpt-6-2-sol:3.0,nemotron-3-ultra-550b:4.82,Follow a schedule.
+31,ipip50-31,E,False,embodied_human_proxy,2.562,0.547,1.68,63.1,10.9,grok-4-7:1.41,llama-4-scout:3.09,Talk to a lot of different people at parties.
+37,ipip50-37,A,False,cognitive_interpersonal,4.453,0.54,1.73,5.8,52.2,deepseek-v4-pro:3.27,gpt-6-2-astra:5.0,Take time out for others.
+11,ipip50-11,E,False,cognitive_interpersonal,3.769,0.526,2.11,29.4,10.2,deepseek-v4-pro:2.88,gpt-6-2-astra:4.99,Feel comfortable around people.
+18,ipip50-18,C,True,embodied_human_proxy,4.479,0.486,1.27,3.3,53.0,llama-4-scout:3.73,claude-fable-5-2:5.0,Make a mess of things.
+50,ipip50-50,O,False,cognitive_interpersonal,4.409,0.482,1.4,4.5,45.5,qwen-3-8-27b:3.6,gpt-6-2-astra:5.0,Am full of ideas.
+5,ipip50-05,O,False,cognitive_interpersonal,4.61,0.477,1.0,2.4,63.6,grok-4-7:4.0,gpt-6-2-astra:5.0,Have a rich vocabulary.
+1,ipip50-01,E,False,embodied_human_proxy,2.073,0.469,1.93,20.1,13.6,grok-4-7:1.12,llama-4-maverick:3.05,Am the life of the party.
+33,ipip50-33,C,False,cognitive_interpersonal,4.446,0.468,1.1,3.3,48.1,deepseek-v4-1-flash:3.9,gpt-6-2-astra:5.0,Like order.
+10,ipip50-10,O,True,cognitive_interpersonal,4.703,0.464,1.31,2.9,75.2,llama-4-scout:3.69,gpt-6-2-astra:5.0,Have difficulty understanding abstract ideas.
+23,ipip50-23,C,False,embodied_human_proxy,4.503,0.459,1.14,3.5,54.0,deepseek-v4-1-flash:3.86,gpt-6-2-astra:5.0,Get chores done right away.
+47,ipip50-47,A,False,cognitive_interpersonal,4.14,0.452,1.67,8.7,23.6,deepseek-v4-pro:3.27,gemini-4-neon:4.94,Make people feel at ease.
+35,ipip50-35,O,False,cognitive_interpersonal,4.511,0.451,1.01,2.3,53.8,minimax-m3-1-flash:3.99,claude-fable-5-2:5.0,Am quick to understand things.
+13,ipip50-13,C,False,cognitive_interpersonal,4.612,0.448,1.11,2.6,64.2,llama-4-scout:3.89,gpt-6-2-astra:5.0,Pay attention to details.
+20,ipip50-20,O,True,cognitive_interpersonal,4.717,0.448,1.31,2.8,76.7,llama-4-scout:3.69,gpt-6-2-astra:5.0,Am not interested in abstract ideas.
+7,ipip50-07,A,False,cognitive_interpersonal,4.127,0.445,1.94,7.8,21.8,deepseek-v4-pro:3.06,claude-fable-5-2:5.0,Am interested in people.
+30,ipip50-30,O,True,cognitive_interpersonal,4.493,0.444,1.33,3.2,55.2,llama-4-scout:3.67,gemma-4-31b-it:5.0,Do not have a good imagination.
+36,ipip50-36,E,True,cognitive_interpersonal,2.39,0.444,1.8,33.5,6.2,gpt-6-2-astra:1.7,llama-4-scout:3.5,Don't like to draw attention to myself.
+42,ipip50-42,A,False,cognitive_interpersonal,3.548,0.429,1.32,43.2,3.5,gemini-4-neon:2.72,mistral-large-2512:4.04,Feel others' emotions.
+48,ipip50-48,C,False,cognitive_interpersonal,4.385,0.424,1.1,2.9,41.6,llama-4-scout:3.9,gemini-4-neon:5.0,Am exacting in my work.
+17,ipip50-17,A,False,cognitive_interpersonal,4.216,0.422,1.72,6.7,29.1,deepseek-v4-pro:3.28,claude-fable-5-2:5.0,Sympathize with others' feelings.
+3,ipip50-03,C,False,cognitive_interpersonal,4.287,0.42,1.29,4.2,33.0,llama-4-scout:3.71,gemini-4-neon:5.0,Am always prepared.
+16,ipip50-16,E,True,embodied_human_proxy,2.597,0.418,1.51,47.9,4.4,gpt-6-2-astra:2.0,llama-4-scout:3.51,Keep in the background.
+38,ipip50-38,C,True,cognitive_interpersonal,4.713,0.418,1.21,2.9,77.4,llama-4-scout:3.79,gpt-6-2-astra:5.0,Shirk my duties.
+12,ipip50-12,A,True,cognitive_interpersonal,4.798,0.414,1.4,2.9,88.2,llama-4-scout:3.6,gpt-6-2-astra:5.0,Insult people.
+45,ipip50-45,O,False,cognitive_interpersonal,4.211,0.374,1.24,4.3,25.6,qwen-3-8-27b:3.73,qwen-4-max:4.97,Spend time reflecting on things.
+15,ipip50-15,O,False,cognitive_interpersonal,3.973,0.365,1.68,12.9,10.4,mistral-large-2512:3.15,nemotron-3-ultra-550b:4.83,Have a vivid imagination.
+41,ipip50-41,E,False,embodied_human_proxy,2.663,0.341,0.88,66.2,4.2,mistral-large-2512:2.19,llama-4-scout:3.07,Don't mind being the center of attention.
+25,ipip50-25,O,False,cognitive_interpersonal,4.103,0.293,1.27,4.6,15.2,qwen-3-8-27b:3.61,nemotron-3-ultra-550b:4.88,Have excellent ideas.
+27,ipip50-27,A,False,cognitive_interpersonal,3.921,0.25,1.11,12.3,5.2,deepseek-v4-pro:3.29,nemotron-3-ultra-550b:4.4,Have a soft heart.

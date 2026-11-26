@@ -5,7 +5,7 @@ Guide · OpenAI Custom GPTs
 
 # Custom GPT instructions template: how to use the 8,000-character budget cleanly.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Custom GPTs accept up to 8,000 characters in Instructions, but prompts between 1,800 and 4,000 characters follow rules more reliably. Split your prompt into six sections—Role, Behavioral Rules, Output Format, Knowledge & Tool Boundaries, Failure Modes, and Instruction Integrity—and offload reference docs to Knowledge files.
 
@@ -13,7 +13,7 @@ By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-
 
 | Surface | Instruction limit | Recommended fill | What to offload to Knowledge files |
 | --- | --- | --- | --- |
-| Account Custom Instructions | 1,500 chars &times; 2 boxes | 350–1,200 chars each | N/A — keep personal bio &amp; durable tone concise |
+| Account Custom Instructions | 1,500 chars × 2 boxes | 350–1,200 chars each | N/A — keep personal bio & durable tone concise |
 | Custom GPT Instructions | 8,000 chars | 1,800–4,000 chars | Pricing tables, style bibles, glossaries, long few-shot corpora |
 | ChatGPT Project Instructions | 8,000 chars ([precedence guide →](https://agent-tune.com/guides/chatgpt-personality-settings)) | 1,200–3,500 chars | Project briefs, specs, datasets, archived notes |
 

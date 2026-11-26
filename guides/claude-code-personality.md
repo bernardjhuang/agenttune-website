@@ -5,7 +5,7 @@ Guide · Claude Code
 
 # How to change Claude Code's personality.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save a Markdown file to ~/.claude/output-styles/ with name, description, and keep-coding-instructions: true in the YAML frontmatter, followed by your communication rules. Activate it with /output-style or /config. AgentTune provides all 43 personality tunings as ready-to-download output styles.
 
@@ -35,8 +35,8 @@ Claude Code offers four ways to pass instructions, each with a different scope:
 | --- | --- | --- | --- |
 | Output style | Updates the system-level instructions Claude Code works from | Every turn | Role and communication tone (your personality file) |
 | CLAUDE.md | Arrives as a context message after the system prompt | Every session | Project build commands, test runners, and architecture |
-| --append-system-prompt | Appends text to the system prompt at launch | That launch | One-off scripts or quick experiments |
-| --agent | Runs the session as a subagent with its own prompt, model, and tools | That session | Replacing who Claude Code is entirely |
+| `--append-system-prompt` | Appends text to the system prompt at launch | That launch | One-off scripts or quick experiments |
+| `--agent` | Runs the session as a subagent with its own prompt, model, and tools | That session | Replacing who Claude Code is entirely |
 
 Because an output style is reinforced in the system prompt across turns, it holds up much better in long sessions than tone notes buried inside a repo `CLAUDE.md`.
 

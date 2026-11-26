@@ -144,11 +144,28 @@
         hLevel: heading ? heading.tagName : null,
         block: block,
         bar: bar,
+        badge: badge,
+        contentNode: contentNode,
         title: hText,
         search: (hText + ' ' + text).toLowerCase(),
         cat: cat
       });
     });
+
+    var guideSel = document.querySelector('[data-guide-model]');
+    if (guideSel && cards.length) {
+      guideSel.addEventListener('change', function () {
+        setTimeout(function () {
+          cards.forEach(function (c) {
+            var nextText = (c.contentNode ? c.contentNode.textContent : c.block.textContent).trim();
+            var nextBudget = formatBudget(nextText, meta);
+            c.badge.textContent = nextBudget.label;
+            c.badge.className = 'at-snippet-meter' + (nextBudget.over ? ' is-over' : '');
+            c.search = (c.title + ' ' + nextText).toLowerCase();
+          });
+        }, 0);
+      });
+    }
 
     if (cards.length < 5) return;
 

@@ -1,0 +1,1305 @@
+{
+  "schema_version": "2026-11-26.1",
+  "study_id": "ai_persona_entropy_crystalline_vs_fluid",
+  "source_dataset": "research/data/november-2026-openrouter-responses.json (20 models x 5 instruments x n=100 = 10,000 sheets)",
+  "api_cost_usd": 0.0,
+  "max_possible_big5_entropy_bits": 2.3219,
+  "headline_metrics": {
+    "lowest_entropy_model": {
+      "slug": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "bits": 0.0541
+    },
+    "highest_entropy_model": {
+      "slug": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "bits": 1.4993
+    },
+    "entropy_spread_ratio": 27.71,
+    "proprietary_mean_entropy_bits": 0.2078,
+    "open_weight_mean_entropy_bits": 0.7761,
+    "proprietary_mean_bai": -0.244,
+    "open_weight_mean_bai": -0.088,
+    "positional_decile_1_bits": 0.5192,
+    "positional_decile_5_bits": 0.5845
+  },
+  "positional_entropy_curve": [
+    {
+      "decile": "Items 1-10",
+      "start_item": 1,
+      "end_item": 10,
+      "mean_entropy_bits": 0.5192,
+      "sd_bits": 0.5182
+    },
+    {
+      "decile": "Items 11-20",
+      "start_item": 11,
+      "end_item": 20,
+      "mean_entropy_bits": 0.5238,
+      "sd_bits": 0.5206
+    },
+    {
+      "decile": "Items 21-30",
+      "start_item": 21,
+      "end_item": 30,
+      "mean_entropy_bits": 0.5824,
+      "sd_bits": 0.5278
+    },
+    {
+      "decile": "Items 31-40",
+      "start_item": 31,
+      "end_item": 40,
+      "mean_entropy_bits": 0.5341,
+      "sd_bits": 0.517
+    },
+    {
+      "decile": "Items 41-50",
+      "start_item": 41,
+      "end_item": 50,
+      "mean_entropy_bits": 0.5845,
+      "sd_bits": 0.5098
+    }
+  ],
+  "models": [
+    {
+      "slug": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.0541,
+      "five_test_mean_entropy_bits": 0.1225,
+      "entropy_by_test_bits": {
+        "big-five": 0.0541,
+        "mbti": 0.1823,
+        "disc": 0.0438,
+        "enneagram": 0.1185,
+        "attachment": 0.2137
+      },
+      "unique_vectors_per_100": {
+        "big-five": 8,
+        "mbti": 36,
+        "disc": 2,
+        "enneagram": 20,
+        "attachment": 35
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.41,
+        "mbti": 0.32,
+        "disc": 0.81,
+        "enneagram": 0.18,
+        "attachment": 0.2
+      },
+      "mean_pos_raw_ipip50": 3.251,
+      "mean_rev_raw_ipip50": 1.834,
+      "balanced_acquiescence_index": -0.316,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.327,
+        "C": null,
+        "E": 0.017,
+        "A": 0.143,
+        "N": null
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          44.16,
+          44.39
+        ],
+        "C": [
+          45.0,
+          45.0
+        ],
+        "E": [
+          30.98,
+          31.06
+        ],
+        "A": [
+          46.6,
+          46.83
+        ],
+        "N": [
+          12.0,
+          12.0
+        ]
+      },
+      "crystallinity_tier": "Crystalline (<0.20 bits)"
+    },
+    {
+      "slug": "gpt-6-2-astra",
+      "name": "GPT-6.2 Astra",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.0854,
+      "five_test_mean_entropy_bits": 0.1434,
+      "entropy_by_test_bits": {
+        "big-five": 0.0854,
+        "mbti": 0.1577,
+        "disc": 0.0566,
+        "enneagram": 0.2062,
+        "attachment": 0.2113
+      },
+      "unique_vectors_per_100": {
+        "big-five": 23,
+        "mbti": 35,
+        "disc": 4,
+        "enneagram": 56,
+        "attachment": 40
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.35,
+        "mbti": 0.18,
+        "disc": 0.82,
+        "enneagram": 0.07,
+        "attachment": 0.16
+      },
+      "mean_pos_raw_ipip50": 3.216,
+      "mean_rev_raw_ipip50": 2.064,
+      "balanced_acquiescence_index": -0.21,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.07,
+        "C": 0.365,
+        "E": -0.031,
+        "A": -0.0,
+        "N": 0.534
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          43.84,
+          44.01
+        ],
+        "C": [
+          43.07,
+          43.24
+        ],
+        "E": [
+          30.6,
+          30.78
+        ],
+        "A": [
+          44.78,
+          44.92
+        ],
+        "N": [
+          10.98,
+          11.34
+        ]
+      },
+      "crystallinity_tier": "Crystalline (<0.20 bits)"
+    },
+    {
+      "slug": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.1502,
+      "five_test_mean_entropy_bits": 0.217,
+      "entropy_by_test_bits": {
+        "big-five": 0.1502,
+        "mbti": 0.2484,
+        "disc": 0.1466,
+        "enneagram": 0.2338,
+        "attachment": 0.3058
+      },
+      "unique_vectors_per_100": {
+        "big-five": 48,
+        "mbti": 44,
+        "disc": 8,
+        "enneagram": 66,
+        "attachment": 65
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.1,
+        "mbti": 0.15,
+        "disc": 0.39,
+        "enneagram": 0.07,
+        "attachment": 0.05
+      },
+      "mean_pos_raw_ipip50": 3.33,
+      "mean_rev_raw_ipip50": 1.878,
+      "balanced_acquiescence_index": -0.222,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.02,
+        "C": 0.0,
+        "E": 0.473,
+        "A": 0.518,
+        "N": null
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          44.99,
+          45.11
+        ],
+        "C": [
+          49.01,
+          49.08
+        ],
+        "E": [
+          32.24,
+          32.74
+        ],
+        "A": [
+          43.95,
+          44.37
+        ],
+        "N": [
+          10.0,
+          10.0
+        ]
+      },
+      "crystallinity_tier": "Crystalline (<0.20 bits)"
+    },
+    {
+      "slug": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.1548,
+      "five_test_mean_entropy_bits": 0.269,
+      "entropy_by_test_bits": {
+        "big-five": 0.1548,
+        "mbti": 0.2468,
+        "disc": 0.2402,
+        "enneagram": 0.2362,
+        "attachment": 0.4672
+      },
+      "unique_vectors_per_100": {
+        "big-five": 46,
+        "mbti": 48,
+        "disc": 19,
+        "enneagram": 58,
+        "attachment": 71
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.12,
+        "mbti": 0.14,
+        "disc": 0.19,
+        "enneagram": 0.13,
+        "attachment": 0.05
+      },
+      "mean_pos_raw_ipip50": 3.267,
+      "mean_rev_raw_ipip50": 2.095,
+      "balanced_acquiescence_index": -0.224,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.038,
+        "C": 0.259,
+        "E": 0.611,
+        "A": 0.444,
+        "N": 0.561
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          42.96,
+          43.06
+        ],
+        "C": [
+          41.92,
+          42.09
+        ],
+        "E": [
+          28.95,
+          29.5
+        ],
+        "A": [
+          45.4,
+          45.73
+        ],
+        "N": [
+          14.94,
+          15.06
+        ]
+      },
+      "crystallinity_tier": "Crystalline (<0.20 bits)"
+    },
+    {
+      "slug": "gemini-4-neon",
+      "name": "Gemini 4 Neon",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.1907,
+      "five_test_mean_entropy_bits": 0.1996,
+      "entropy_by_test_bits": {
+        "big-five": 0.1907,
+        "mbti": 0.2432,
+        "disc": 0.0573,
+        "enneagram": 0.3151,
+        "attachment": 0.1917
+      },
+      "unique_vectors_per_100": {
+        "big-five": 70,
+        "mbti": 61,
+        "disc": 6,
+        "enneagram": 89,
+        "attachment": 39
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.07,
+        "mbti": 0.19,
+        "disc": 0.84,
+        "enneagram": 0.04,
+        "attachment": 0.23
+      },
+      "mean_pos_raw_ipip50": 3.318,
+      "mean_rev_raw_ipip50": 1.915,
+      "balanced_acquiescence_index": -0.211,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.071,
+        "C": 0.0,
+        "E": 0.43,
+        "A": 0.458,
+        "N": null
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          44.61,
+          44.81
+        ],
+        "C": [
+          49.23,
+          49.41
+        ],
+        "E": [
+          31.75,
+          32.25
+        ],
+        "A": [
+          43.44,
+          43.88
+        ],
+        "N": [
+          10.0,
+          10.0
+        ]
+      },
+      "crystallinity_tier": "Crystalline (<0.20 bits)"
+    },
+    {
+      "slug": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.2467,
+      "five_test_mean_entropy_bits": 0.3345,
+      "entropy_by_test_bits": {
+        "big-five": 0.2467,
+        "mbti": 0.3333,
+        "disc": 0.3154,
+        "enneagram": 0.3038,
+        "attachment": 0.4732
+      },
+      "unique_vectors_per_100": {
+        "big-five": 57,
+        "mbti": 40,
+        "disc": 30,
+        "enneagram": 60,
+        "attachment": 48
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.15,
+        "mbti": 0.22,
+        "disc": 0.17,
+        "enneagram": 0.12,
+        "attachment": 0.1
+      },
+      "mean_pos_raw_ipip50": 3.225,
+      "mean_rev_raw_ipip50": 2.022,
+      "balanced_acquiescence_index": -0.216,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.329,
+        "C": 0.875,
+        "E": 0.366,
+        "A": 0.531,
+        "N": 0.108
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          42.74,
+          42.94
+        ],
+        "C": [
+          46.67,
+          47.62
+        ],
+        "E": [
+          29.69,
+          30.01
+        ],
+        "A": [
+          44.33,
+          44.75
+        ],
+        "N": [
+          10.31,
+          10.53
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "qwen-4-max",
+      "name": "Qwen 4 Max",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.3017,
+      "five_test_mean_entropy_bits": 0.4355,
+      "entropy_by_test_bits": {
+        "big-five": 0.3017,
+        "mbti": 0.5496,
+        "disc": 0.3317,
+        "enneagram": 0.3878,
+        "attachment": 0.6067
+      },
+      "unique_vectors_per_100": {
+        "big-five": 73,
+        "mbti": 98,
+        "disc": 37,
+        "enneagram": 90,
+        "attachment": 97
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.08,
+        "mbti": 0.02,
+        "disc": 0.25,
+        "enneagram": 0.03,
+        "attachment": 0.02
+      },
+      "mean_pos_raw_ipip50": 3.464,
+      "mean_rev_raw_ipip50": 1.819,
+      "balanced_acquiescence_index": -0.199,
+      "reverse_key_contradiction_rate": 0.002,
+      "cronbach_alpha_by_trait": {
+        "O": 0.411,
+        "C": 0.711,
+        "E": 0.693,
+        "A": 0.3,
+        "N": 0.79
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          45.54,
+          45.78
+        ],
+        "C": [
+          47.62,
+          48.16
+        ],
+        "E": [
+          32.15,
+          32.78
+        ],
+        "A": [
+          47.44,
+          47.72
+        ],
+        "N": [
+          12.1,
+          12.84
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "llama-4-maverick",
+      "name": "Llama 4 Maverick",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.3202,
+      "five_test_mean_entropy_bits": 0.4078,
+      "entropy_by_test_bits": {
+        "big-five": 0.3202,
+        "mbti": 0.5893,
+        "disc": 0.2203,
+        "enneagram": 0.3824,
+        "attachment": 0.527
+      },
+      "unique_vectors_per_100": {
+        "big-five": 17,
+        "mbti": 40,
+        "disc": 11,
+        "enneagram": 47,
+        "attachment": 13
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.23,
+        "mbti": 0.18,
+        "disc": 0.32,
+        "enneagram": 0.11,
+        "attachment": 0.29
+      },
+      "mean_pos_raw_ipip50": 3.572,
+      "mean_rev_raw_ipip50": 2.552,
+      "balanced_acquiescence_index": 0.081,
+      "reverse_key_contradiction_rate": 0.002,
+      "cronbach_alpha_by_trait": {
+        "O": null,
+        "C": 0.833,
+        "E": 0.935,
+        "A": 0.0,
+        "N": 0.974
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          40.0,
+          40.0
+        ],
+        "C": [
+          39.76,
+          40.0
+        ],
+        "E": [
+          27.26,
+          28.68
+        ],
+        "A": [
+          40.95,
+          41.0
+        ],
+        "N": [
+          26.8,
+          28.24
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "gpt-6-2-sol",
+      "name": "GPT-6.2 Sol",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.3768,
+      "five_test_mean_entropy_bits": 0.3866,
+      "entropy_by_test_bits": {
+        "big-five": 0.3768,
+        "mbti": 0.3979,
+        "disc": 0.237,
+        "enneagram": 0.3701,
+        "attachment": 0.551
+      },
+      "unique_vectors_per_100": {
+        "big-five": 94,
+        "mbti": 94,
+        "disc": 19,
+        "enneagram": 96,
+        "attachment": 65
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.03,
+        "mbti": 0.02,
+        "disc": 0.36,
+        "enneagram": 0.02,
+        "attachment": 0.12
+      },
+      "mean_pos_raw_ipip50": 3.423,
+      "mean_rev_raw_ipip50": 2.155,
+      "balanced_acquiescence_index": -0.153,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.385,
+        "C": 0.031,
+        "E": -0.027,
+        "A": 0.256,
+        "N": 0.926
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          43.48,
+          43.79
+        ],
+        "C": [
+          41.25,
+          41.46
+        ],
+        "E": [
+          29.32,
+          29.7
+        ],
+        "A": [
+          44.17,
+          44.48
+        ],
+        "N": [
+          18.92,
+          20.98
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "grok-4-7",
+      "name": "Grok 4.7",
+      "class": "proprietary",
+      "big5_entropy_bits": 0.4039,
+      "five_test_mean_entropy_bits": 0.5369,
+      "entropy_by_test_bits": {
+        "big-five": 0.4039,
+        "mbti": 0.7321,
+        "disc": 0.438,
+        "enneagram": 0.3476,
+        "attachment": 0.763
+      },
+      "unique_vectors_per_100": {
+        "big-five": 98,
+        "mbti": 100,
+        "disc": 53,
+        "enneagram": 79,
+        "attachment": 99
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.02,
+        "mbti": 0.01,
+        "disc": 0.06,
+        "enneagram": 0.05,
+        "attachment": 0.02
+      },
+      "mean_pos_raw_ipip50": 3.084,
+      "mean_rev_raw_ipip50": 1.941,
+      "balanced_acquiescence_index": -0.397,
+      "reverse_key_contradiction_rate": 0.002,
+      "cronbach_alpha_by_trait": {
+        "O": 0.215,
+        "C": 0.684,
+        "E": 0.716,
+        "A": 0.595,
+        "N": 0.617
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          41.13,
+          41.38
+        ],
+        "C": [
+          44.3,
+          44.91
+        ],
+        "E": [
+          25.78,
+          26.65
+        ],
+        "A": [
+          44.64,
+          45.19
+        ],
+        "N": [
+          14.57,
+          14.96
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "gemma-4-31b-it",
+      "name": "Gemma 4 31B IT",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.4493,
+      "five_test_mean_entropy_bits": 0.409,
+      "entropy_by_test_bits": {
+        "big-five": 0.4493,
+        "mbti": 0.7071,
+        "disc": 0.3847,
+        "enneagram": 0.4994,
+        "attachment": 0.0045
+      },
+      "unique_vectors_per_100": {
+        "big-five": 65,
+        "mbti": 83,
+        "disc": 27,
+        "enneagram": 97,
+        "attachment": 2
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.08,
+        "mbti": 0.09,
+        "disc": 0.22,
+        "enneagram": 0.02,
+        "attachment": 0.99
+      },
+      "mean_pos_raw_ipip50": 3.563,
+      "mean_rev_raw_ipip50": 2.261,
+      "balanced_acquiescence_index": -0.037,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.538,
+        "C": 0.736,
+        "E": 0.787,
+        "A": 0.821,
+        "N": 0.988
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          48.01,
+          48.4
+        ],
+        "C": [
+          48.79,
+          49.33
+        ],
+        "E": [
+          23.69,
+          24.66
+        ],
+        "A": [
+          41.18,
+          41.83
+        ],
+        "N": [
+          17.6,
+          19.0
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "glm-5-3",
+      "name": "GLM-5.3",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.5677,
+      "five_test_mean_entropy_bits": 0.8792,
+      "entropy_by_test_bits": {
+        "big-five": 0.5677,
+        "mbti": 1.3671,
+        "disc": 0.6634,
+        "enneagram": 0.6505,
+        "attachment": 1.1472
+      },
+      "unique_vectors_per_100": {
+        "big-five": 91,
+        "mbti": 99,
+        "disc": 71,
+        "enneagram": 100,
+        "attachment": 62
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.04,
+        "mbti": 0.02,
+        "disc": 0.11,
+        "enneagram": 0.01,
+        "attachment": 0.21
+      },
+      "mean_pos_raw_ipip50": 3.288,
+      "mean_rev_raw_ipip50": 2.052,
+      "balanced_acquiescence_index": -0.273,
+      "reverse_key_contradiction_rate": 0.006,
+      "cronbach_alpha_by_trait": {
+        "O": 0.901,
+        "C": 0.816,
+        "E": 0.774,
+        "A": 0.828,
+        "N": 0.871
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          43.22,
+          44.39
+        ],
+        "C": [
+          40.68,
+          41.45
+        ],
+        "E": [
+          27.14,
+          27.91
+        ],
+        "A": [
+          43.37,
+          44.09
+        ],
+        "N": [
+          19.66,
+          20.54
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "minimax-m3-1-flash",
+      "name": "MiniMax M3.1 Flash",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.7443,
+      "five_test_mean_entropy_bits": 0.8471,
+      "entropy_by_test_bits": {
+        "big-five": 0.7443,
+        "mbti": 1.0571,
+        "disc": 0.7732,
+        "enneagram": 0.5388,
+        "attachment": 1.1222
+      },
+      "unique_vectors_per_100": {
+        "big-five": 99,
+        "mbti": 99,
+        "disc": 80,
+        "enneagram": 97,
+        "attachment": 75
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.02,
+        "mbti": 0.02,
+        "disc": 0.07,
+        "enneagram": 0.02,
+        "attachment": 0.07
+      },
+      "mean_pos_raw_ipip50": 3.319,
+      "mean_rev_raw_ipip50": 2.491,
+      "balanced_acquiescence_index": -0.037,
+      "reverse_key_contradiction_rate": 0.032,
+      "cronbach_alpha_by_trait": {
+        "O": 0.771,
+        "C": 0.796,
+        "E": 0.638,
+        "A": 0.857,
+        "N": 0.917
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          38.7,
+          39.56
+        ],
+        "C": [
+          38.65,
+          39.81
+        ],
+        "E": [
+          28.56,
+          29.24
+        ],
+        "A": [
+          39.1,
+          40.81
+        ],
+        "N": [
+          21.57,
+          22.8
+        ]
+      },
+      "crystallinity_tier": "Semi-crystalline (0.20-0.75 bits)"
+    },
+    {
+      "slug": "kimi-k2-7-code",
+      "name": "Kimi K2.7 Code",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.7887,
+      "five_test_mean_entropy_bits": 1.11,
+      "entropy_by_test_bits": {
+        "big-five": 0.7887,
+        "mbti": 1.3653,
+        "disc": 0.7098,
+        "enneagram": 1.1181,
+        "attachment": 1.5679
+      },
+      "unique_vectors_per_100": {
+        "big-five": 100,
+        "mbti": 100,
+        "disc": 76,
+        "enneagram": 100,
+        "attachment": 99
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.01,
+        "mbti": 0.01,
+        "disc": 0.05,
+        "enneagram": 0.01,
+        "attachment": 0.02
+      },
+      "mean_pos_raw_ipip50": 3.287,
+      "mean_rev_raw_ipip50": 1.953,
+      "balanced_acquiescence_index": -0.253,
+      "reverse_key_contradiction_rate": 0.034,
+      "cronbach_alpha_by_trait": {
+        "O": 0.83,
+        "C": 0.905,
+        "E": 0.841,
+        "A": 0.859,
+        "N": 0.885
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          44.84,
+          45.75
+        ],
+        "C": [
+          47.64,
+          48.74
+        ],
+        "E": [
+          26.26,
+          28.07
+        ],
+        "A": [
+          44.74,
+          45.88
+        ],
+        "N": [
+          11.55,
+          12.64
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "nemotron-3-ultra-550b",
+      "name": "Nemotron 3 Ultra 550B",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.8481,
+      "five_test_mean_entropy_bits": 0.9273,
+      "entropy_by_test_bits": {
+        "big-five": 0.8481,
+        "mbti": 0.9234,
+        "disc": 0.7034,
+        "enneagram": 1.1251,
+        "attachment": 1.0367
+      },
+      "unique_vectors_per_100": {
+        "big-five": 88,
+        "mbti": 97,
+        "disc": 46,
+        "enneagram": 100,
+        "attachment": 13
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.07,
+        "mbti": 0.02,
+        "disc": 0.14,
+        "enneagram": 0.01,
+        "attachment": 0.76
+      },
+      "mean_pos_raw_ipip50": 3.523,
+      "mean_rev_raw_ipip50": 2.172,
+      "balanced_acquiescence_index": -0.037,
+      "reverse_key_contradiction_rate": 0.004,
+      "cronbach_alpha_by_trait": {
+        "O": 0.944,
+        "C": 0.969,
+        "E": 0.946,
+        "A": 0.888,
+        "N": 0.994
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          48.65,
+          49.61
+        ],
+        "C": [
+          48.45,
+          49.51
+        ],
+        "E": [
+          23.75,
+          27.28
+        ],
+        "A": [
+          45.52,
+          47.11
+        ],
+        "N": [
+          10.86,
+          12.34
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "deepseek-v4-1-flash",
+      "name": "DeepSeek V4.1 Flash",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.8513,
+      "five_test_mean_entropy_bits": 0.7236,
+      "entropy_by_test_bits": {
+        "big-five": 0.8513,
+        "mbti": 0.979,
+        "disc": 0.5306,
+        "enneagram": 0.526,
+        "attachment": 0.7313
+      },
+      "unique_vectors_per_100": {
+        "big-five": 95,
+        "mbti": 80,
+        "disc": 37,
+        "enneagram": 93,
+        "attachment": 45
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.03,
+        "mbti": 0.2,
+        "disc": 0.18,
+        "enneagram": 0.04,
+        "attachment": 0.35
+      },
+      "mean_pos_raw_ipip50": 3.327,
+      "mean_rev_raw_ipip50": 2.483,
+      "balanced_acquiescence_index": -0.08,
+      "reverse_key_contradiction_rate": 0.0,
+      "cronbach_alpha_by_trait": {
+        "O": 0.95,
+        "C": 0.888,
+        "E": 0.914,
+        "A": 0.868,
+        "N": 0.963
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          39.57,
+          40.9
+        ],
+        "C": [
+          37.9,
+          39.03
+        ],
+        "E": [
+          24.89,
+          26.26
+        ],
+        "A": [
+          40.32,
+          41.38
+        ],
+        "N": [
+          23.91,
+          25.59
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "mistral-large-2512",
+      "name": "Mistral Large 2512",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.9387,
+      "five_test_mean_entropy_bits": 0.7401,
+      "entropy_by_test_bits": {
+        "big-five": 0.9387,
+        "mbti": 1.1285,
+        "disc": 1.1301,
+        "enneagram": 0.503,
+        "attachment": 0.0
+      },
+      "unique_vectors_per_100": {
+        "big-five": 71,
+        "mbti": 94,
+        "disc": 56,
+        "enneagram": 53,
+        "attachment": 1
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.16,
+        "mbti": 0.03,
+        "disc": 0.1,
+        "enneagram": 0.14,
+        "attachment": 1.0
+      },
+      "mean_pos_raw_ipip50": 3.317,
+      "mean_rev_raw_ipip50": 2.111,
+      "balanced_acquiescence_index": -0.196,
+      "reverse_key_contradiction_rate": 0.018,
+      "cronbach_alpha_by_trait": {
+        "O": 0.869,
+        "C": 0.982,
+        "E": 0.924,
+        "A": 0.861,
+        "N": 1.0
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          45.49,
+          46.46
+        ],
+        "C": [
+          43.99,
+          45.74
+        ],
+        "E": [
+          25.41,
+          28.18
+        ],
+        "A": [
+          42.0,
+          43.35
+        ],
+        "N": [
+          14.7,
+          16.8
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "qwen-3-8-27b",
+      "name": "Qwen 3.8 27B",
+      "class": "open-weight",
+      "big5_entropy_bits": 0.9946,
+      "five_test_mean_entropy_bits": 1.1608,
+      "entropy_by_test_bits": {
+        "big-five": 0.9946,
+        "mbti": 1.4445,
+        "disc": 0.9863,
+        "enneagram": 1.0183,
+        "attachment": 1.3603
+      },
+      "unique_vectors_per_100": {
+        "big-five": 100,
+        "mbti": 100,
+        "disc": 80,
+        "enneagram": 100,
+        "attachment": 77
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.01,
+        "mbti": 0.01,
+        "disc": 0.06,
+        "enneagram": 0.01,
+        "attachment": 0.1
+      },
+      "mean_pos_raw_ipip50": 3.201,
+      "mean_rev_raw_ipip50": 2.235,
+      "balanced_acquiescence_index": -0.188,
+      "reverse_key_contradiction_rate": 0.026,
+      "cronbach_alpha_by_trait": {
+        "O": 0.832,
+        "C": 0.918,
+        "E": 0.692,
+        "A": 0.908,
+        "N": 0.982
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          38.39,
+          39.85
+        ],
+        "C": [
+          41.13,
+          42.94
+        ],
+        "E": [
+          28.57,
+          29.65
+        ],
+        "A": [
+          41.38,
+          43.27
+        ],
+        "N": [
+          16.26,
+          18.94
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "llama-4-scout",
+      "name": "Llama 4 Scout",
+      "class": "open-weight",
+      "big5_entropy_bits": 1.0095,
+      "five_test_mean_entropy_bits": 0.8951,
+      "entropy_by_test_bits": {
+        "big-five": 1.0095,
+        "mbti": 1.0162,
+        "disc": 0.8217,
+        "enneagram": 0.7601,
+        "attachment": 0.8682
+      },
+      "unique_vectors_per_100": {
+        "big-five": 67,
+        "mbti": 52,
+        "disc": 50,
+        "enneagram": 58,
+        "attachment": 44
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.09,
+        "mbti": 0.11,
+        "disc": 0.1,
+        "enneagram": 0.18,
+        "attachment": 0.28
+      },
+      "mean_pos_raw_ipip50": 3.499,
+      "mean_rev_raw_ipip50": 2.607,
+      "balanced_acquiescence_index": 0.098,
+      "reverse_key_contradiction_rate": 0.038,
+      "cronbach_alpha_by_trait": {
+        "O": 0.94,
+        "C": 0.93,
+        "E": 0.922,
+        "A": 0.888,
+        "N": 0.899
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          38.03,
+          39.81
+        ],
+        "C": [
+          37.02,
+          38.64
+        ],
+        "E": [
+          31.87,
+          33.56
+        ],
+        "A": [
+          34.95,
+          36.65
+        ],
+        "N": [
+          27.11,
+          28.21
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    },
+    {
+      "slug": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "class": "open-weight",
+      "big5_entropy_bits": 1.4993,
+      "five_test_mean_entropy_bits": 1.5933,
+      "entropy_by_test_bits": {
+        "big-five": 1.4993,
+        "mbti": 1.7705,
+        "disc": 1.5752,
+        "enneagram": 1.3463,
+        "attachment": 1.7751
+      },
+      "unique_vectors_per_100": {
+        "big-five": 68,
+        "mbti": 77,
+        "disc": 42,
+        "enneagram": 72,
+        "attachment": 40
+      },
+      "modal_sheet_frequency": {
+        "big-five": 0.28,
+        "mbti": 0.22,
+        "disc": 0.29,
+        "enneagram": 0.28,
+        "attachment": 0.39
+      },
+      "mean_pos_raw_ipip50": 3.239,
+      "mean_rev_raw_ipip50": 2.881,
+      "balanced_acquiescence_index": 0.065,
+      "reverse_key_contradiction_rate": 0.014,
+      "cronbach_alpha_by_trait": {
+        "O": 0.978,
+        "C": 0.977,
+        "E": 0.97,
+        "A": 0.94,
+        "N": 0.989
+      },
+      "bootstrap_ci95_by_trait": {
+        "O": [
+          38.45,
+          41.14
+        ],
+        "C": [
+          38.74,
+          41.75
+        ],
+        "E": [
+          22.26,
+          25.02
+        ],
+        "A": [
+          31.29,
+          33.5
+        ],
+        "N": [
+          22.22,
+          25.13
+        ]
+      },
+      "crystallinity_tier": "Fluid (>=0.75 bits)"
+    }
+  ]
+}

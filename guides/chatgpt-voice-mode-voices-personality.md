@@ -5,7 +5,7 @@ Guide & Picker · ChatGPT Voice
 
 # ChatGPT Voice Mode: all 9 voices, female/male/UK options, and tone setup.
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.
 
@@ -19,9 +19,9 @@ Enable JavaScript to filter voices interactively, or inspect the complete 9-voic
 
 ## Complete list of all 9 ChatGPT voices.
 
-| Voice | Register &amp; accent | OpenAI character description | Best use case |
+| Voice | Register & accent | OpenAI character description | Best use case |
 | --- | --- | --- | --- |
-| Cove | Male · US | Composed and direct | Fast work triage, technical Q&amp;A, low-fluff briefs |
+| Cove | Male · US | Composed and direct | Fast work triage, technical Q&A, low-fluff briefs |
 | Sol | Female · US | Savvy and relaxed | Natural daily conversation and strategy check-ins |
 | Maple | Female · US | Cheerful and candid | Energetic brainstorming and candid sounding board |
 | Juniper | Female · US | Open and upbeat | Warm coaching, language practice, friendly pacing |

@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # How to change Meta Muse’s avatar, name, and Identity.md.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep tone and formatting rules inside Soul.md so avatar updates never overwrite your communication preferences.
 
@@ -13,11 +13,11 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 You can update Muse’s appearance and display name either through the visual **Assistant Identity** sheet or by editing `Identity.md` directly:
 
-| Method | Where to tap / type | What it changes &amp; gotcha to avoid |
+| Method | Where to tap / type | What it changes & gotcha to avoid |
 | --- | --- | --- |
-| Visual Avatar &amp; Identity sheet (iOS, Android, muse.ai) | Tap the Assistant icon (Muse's avatar at top of chat or sidebar) → Identity → Edit | Swaps Muse's visual avatar, display name, tagline, and voice preset without touching Soul.md. |
-| Direct Identity.md edit | Assistant icon → Identity → Edit (Markdown view) | Edits Name, Role, Vibe, Avatar style, and Tagline in plain Markdown. Always save a backup first. |
-| Chat command (quick rename) | In Main Chat: name Identity.md explicitly and forbid editing Soul.md or Memory.md. | Muse updates the file and shows a confirmation diff. Inspect Identity.md afterward to confirm. |
+| Visual Avatar & Identity sheet (iOS, Android, `muse.ai`) | Tap the Assistant icon (Muse's avatar at top of chat or sidebar) → Identity → Edit | Swaps Muse's visual avatar, display name, tagline, and voice preset without touching `Soul.md`. |
+| Direct `Identity.md` edit | Assistant icon → Identity → Edit (Markdown view) | Edits Name, Role, Vibe, Avatar style, and Tagline in plain Markdown. Always save a backup first. |
+| Chat command (quick rename) | In Main Chat: name `Identity.md` explicitly and forbid editing `Soul.md` or `Memory.md`. | Muse updates the file and shows a confirmation diff. Inspect `Identity.md` afterward to confirm. |
 
 When asking Muse in chat to rename itself or update its avatar, name `Identity.md` explicitly so it leaves `Soul.md` alone:
 
@@ -31,9 +31,9 @@ Give each of the three Assistant Identity files one clear job:
 
 | File | What it controls | What to keep out of it |
 | --- | --- | --- |
-| Identity.md | Assistant display name, avatar appearance, spoken voice preset, and a one-line role label. | Formatting rules, length caps, tone rules, and personal facts about you. |
-| Soul.md | How Muse speaks and works with you: directness, prose vs lists, pushback, and pacing. | Avatar prompts, voice selection, and sensitive personal history. |
-| Memory.md | Facts about you, active projects, recurring tools, and ongoing context across chats. | Communication style rules or temporary single-task instructions. |
+| `Identity.md` | Assistant display name, avatar appearance, spoken voice preset, and a one-line role label. | Formatting rules, length caps, tone rules, and personal facts about you. |
+| `Soul.md` | How Muse speaks and works with you: directness, prose vs lists, pushback, and pacing. | Avatar prompts, voice selection, and sensitive personal history. |
+| `Memory.md` | Facts about you, active projects, recurring tools, and ongoing context across chats. | Communication style rules or temporary single-task instructions. |
 
 If you put formatting rules inside `Identity.md` and later ask Muse to change its avatar, Muse can overwrite the entire file and drop your rules. Keep communication preferences in [Soul.md](https://agent-tune.com/guides/muse-soul-md-templates) instead.
 

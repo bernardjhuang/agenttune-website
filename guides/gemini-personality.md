@@ -5,18 +5,18 @@ Guide · Google Gemini
 
 # How to change Google Gemini’s personality.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Yes—you can change Gemini's personality in the Gemini app or on gemini.google.com under Settings & help → Personal Intelligence → Instructions for Gemini (Saved info), or by creating a Custom Gem. Pick a starter download below (No-Fluff Search Brief Gem, Saved Info Default, Code Reviewer, or GEMINI.md). Note that Google Search AI Overviews ignore Saved info.
 
 ## Quick pick: 4 downloadable Gemini & Gem templates.
 
-| Template | Where to paste &amp; use case | Download / Gallery |
+| Template | Where to paste & use case | Download / Gallery |
 | --- | --- | --- |
 | Saved Info Global Default | Personal Intelligence (global answer-first tone) | [Download .md](https://agent-tune.com/resources/gemini/saved-info-concise-default.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#1-saved-info-global-default) |
 | No-Fluff Search Brief Gem | Custom Gem (tight factual alternative to AI Overviews) | [Download .md](https://agent-tune.com/resources/gemini/gem-no-fluff-search-brief.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem) |
-| Senior Code Reviewer Gem | Custom Gem (bugs, auth flaws &amp; SQL perf first) | [Download .md](https://agent-tune.com/resources/gemini/gem-senior-code-reviewer.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#3-senior-code-reviewer-gem) |
-| Workspace GEMINI.md | ~/.gemini/GEMINI.md or repo root | [Download .md](https://agent-tune.com/resources/gemini/gemini-md-workspace.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#4-workspace-gemini-md) |
+| Senior Code Reviewer Gem | Custom Gem (bugs, auth flaws & SQL perf first) | [Download .md](https://agent-tune.com/resources/gemini/gem-senior-code-reviewer.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#3-senior-code-reviewer-gem) |
+| Workspace GEMINI.md | `~/.gemini/GEMINI.md` or repo root | [Download .md](https://agent-tune.com/resources/gemini/gemini-md-workspace.md) · [Preview →](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#4-workspace-gemini-md) |
 
 Want all 20 Saved Info, Gem & CLI presets? Open our [**20 Gemini Gems & Saved Info Templates Gallery →**](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
 
@@ -29,11 +29,11 @@ Want all 20 Saved Info, Gem & CLI presets? Open our [**20 Gemini Gems & Saved In
 
 | Surface | Where to paste your rules | Scope |
 | --- | --- | --- |
-| Gemini web &amp; mobile (account-wide) | Settings &amp; help → Personal Intelligence → Instructions for Gemini (formerly Saved info) | Applies across ordinary chats on your personal Google Account (18+). |
+| Gemini web & mobile (account-wide) | Settings & help → Personal Intelligence → Instructions for Gemini (formerly Saved info) | Applies across ordinary chats on your personal Google Account (18+). |
 | Gemini Gems | Gem manager → New Gem → Instructions | Applies only when chatting with that specific Gem. |
-| Gemini Live spoken voice | Settings → Gemini’s voice (or 3-dot menu inside Live) | Sets app-wide spoken voice &amp; Listen playback ([voice list + sync fix →](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)). |
-| Gemini CLI &amp; Code Assist (personal) | ~/.gemini/GEMINI.md | Your personal coding assistant defaults across repositories. |
-| Gemini API (Google AI Studio / Vertex) | system_instruction field on the model request | Applies to that API call. |
+| Gemini Live spoken voice | Settings → Gemini’s voice (or 3-dot menu inside Live) | Sets app-wide spoken voice & Listen playback ([voice list + sync fix →](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)). |
+| Gemini CLI & Code Assist (personal) | `~/.gemini/GEMINI.md` | Your personal coding assistant defaults across repositories. |
+| Gemini API (Google AI Studio / Vertex) | `system_instruction` field on the model request | Applies to that API call. |
 
 Paste this starter block into Instructions for Gemini, a Gem, or `~/.gemini/GEMINI.md`, or dial custom sliders in our [AI Personality Tuner](https://agent-tune.com/tools/custom-instructions-generator):
 
@@ -98,7 +98,7 @@ Put your everyday communication baseline (like answer-first structure and no fil
 
 ### What personality type did Gemini score on the AgentTune tests?
 
-In the May 2026 study of Gemini 3.1 Pro, its self-report scored INTJ on the OEJTS, Type 1 / Type 5 on the Enneagram, Conscientiousness on DISC, and Secure on the ECR-R attachment scale. It was not part of the September 2026 fresh-session collection.
+In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2, and 49.3/50 Conscientiousness, while Gemini 4 Argon scored 66 ISTJ / 34 IXTJ, Type 5w6 (91/100), and 49.0/50 Conscientiousness—both sitting at the exact 10.0 Neuroticism floor and 100/100 Secure on ECR-R attachment.
 
 ## What changed.
 

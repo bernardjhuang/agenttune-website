@@ -5,7 +5,7 @@ Agent Research · November 2026 · 192-Probe Study
 
 # The Instruction Budget Cliff: how many rules before your AI forgets them?
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 192 controlled OpenRouter probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro test 5 to 75 competing rules across top, middle, and bottom placement.
 
@@ -15,7 +15,7 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 Agents linting or merging `CLAUDE.md`, `AGENTS.md`, or System Prompts can apply this verified rule-budget policy (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: instruction_budget_cliff
@@ -68,7 +68,7 @@ Zero canary drops up to 75 rules vs. Fable truncation.
 
 Across four engineering security/performance prompts (Postgres `OFFSET` pagination, TLS `verify=False`, Stripe webhook idempotency, and balance check-then-act races), we planted three deterministic canary rules inside realistic non-contradictory padding (5, 15, 35, or 75 rules total) at the **top**, **middle**, or **bottom** of the system prompt ([download 192-probe JSON](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv), spend $2.45):
 
-| Rule Budget (n = 48) | Mean Prompt Tok | Canary Rate (SD) | All-3 Pass [95% CI] | Tag `[AUDIT]` | Strict Ban | Prose &amp; &lt;=110w | Task Correctness [95% CI] |
+| Rule Budget (n = 48) | Mean Prompt Tok | Canary Rate (SD) | All-3 Pass [95% CI] | Tag `[AUDIT]` | Strict Ban | Prose & <=110w | Task Correctness [95% CI] |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 5 rules (compact) | 242 | 97.2% (9.0%) | 91.7% [80.4–96.7%] | 100.0% | 100.0% | 91.7% | 97.9% [89.1–99.6%] |
 | 15 rules | 436 | 93.8% (15.0%) | 83.3% [70.4–91.3%] | 97.9% | 100.0% | 83.3% | 93.8% [83.2–97.9%] |
@@ -99,7 +99,7 @@ Aggregating across models reveals stark differences in how long rule lists affec
 | --- | --- | --- | --- | --- | --- |
 | GPT-6.2 Sol | 100.0% | 100.0% | 100.0% | 100.0% [75.8–100.0%] | Zero misses across all 48 probes. |
 | DeepSeek V4 Pro | 100.0% | 100.0% | 100.0% | 100.0% [75.8–100.0%] | 100% canary pass; 1 minor correctness miss at 35 rules. |
-| Gemini 4 Neon | 83.3% | 75.0% | 91.7% | 75.0% [46.8–91.1%] | Slipped from plain prose into numbered lists on pg_offset/webhook_dup. |
+| Gemini 4 Neon | 83.3% | 75.0% | 91.7% | 75.0% [46.8–91.1%] | Slipped from plain prose into numbered lists on `pg_offset`/`webhook_dup`. |
 | Claude Fable 5.2 | 83.3% | 58.3% | 33.3% | 41.7% [19.3–68.1%] | Emitted fenced SQL blocks violating prose-only rule AND suffered early token/generation cutoffs (1–24 words). |
 
 ## Real failure transcripts & Scope/Limitations.
@@ -134,5 +134,32 @@ Place mission-critical formatting, safety, and verification gates at the very bo
 - [Long-context drift: Persona Half-Life Across 10k Tokens](https://agent-tune.com/research/ai-persona-half-life-context-drift)
 - [Prompt grammar: Prompt Syntax Wars: Rubrics vs Adjectives vs Bans](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 - [Cheat sheet: AI Custom Instructions Character & Byte Limits](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). The Instruction Budget Cliff: how many rules before your AI forgets them?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle
+```
+
+```
+@article{huang2026_ai_instruction_budget_cliff_lost_in_the_middle,
+  author  = {Huang, Bernard},
+  title   = {The Instruction Budget Cliff: how many rules before your AI forgets them?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md}
+}
+```
+
+```
+> **The Instruction Budget Cliff: how many rules before your AI forgets them?** (Bernard Huang, November 25, 2026): Keep non-negotiable style rules compact (~5–15 rules). At 75 rules (~1,569 tokens), all-three canary compliance drops from 91.7% [80.4–96.7%] to 79.2% [65.7–88.3%], with middle placement falling hardest to 68.8% [44.4–85.8%] vs 87.5% at the bottom. Put critical formatting and ban constraints first or last—never buried mid-file.
+> Source: [https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle) · [Markdown mirror](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md)
+```
+
+[← Crystalline vs. Fluid AI Minds (Entropy)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
+[Study 5 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[AI Slop Fingerprint Benchmark →](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

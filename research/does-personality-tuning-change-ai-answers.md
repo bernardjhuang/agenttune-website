@@ -5,7 +5,7 @@ Research · November & September 2026
 
 # Does personality tuning change AI answers?
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.
 
@@ -102,9 +102,10 @@ Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three 
 
 ## Limits & the 180-reply plain-English vs. label test kit.
 
-- **Small sample:** 20 tasks × 3 prompts = 60 total replies on one model pair.
+- **Single-judge methodological limit (Waves 1–2):** Our November 2026 540-reply study and 72-reply Claude check were graded blind by a single judge (`google/gemini-4-argon`), alongside deterministic regex and length checks. All Wave-3 empirical studies ([Historical Evolution 2023–2026](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026), [Reasoning Phase Transition](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)) upgrade to a strict orthogonal 3-family judge jury with Krippendorff's α.
+- **September 60-reply pilot sample:** 20 tasks × 3 prompts = 60 total replies on one model pair.
 - **Style gives away the prompt:** Even when condition labels are hidden from the judge, a terse reply looks visibly different from a warm reply.
-- **Isolating the type label:** This pilot tested full rule blocks rather than a bare type label like `Use an INTJ-style communication approach.` Want to test whether adding a personality label adds value on top of identical plain-English rules? Download our open 20-task, 180-reply blind protocol (not yet run): [20 tasks and rubrics (JSON)](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) · [180-row scoring worksheet (CSV)](https://agent-tune.com/resources/research/personality-prompt-comparison-worksheet.csv), or compare pairs of replies live in the [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench).
+- **Isolating the type label:** Both November and September datasets show checkable plain-English rules drive the core correctness lift; bare labels alone are secondary. [Download 20 tasks and rubrics (JSON)](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) · [Instruction Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Download and verify the numbers yourself.
 
@@ -154,5 +155,32 @@ You can reproduce the published summaries with the downloadable Node script and 
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Research: What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Research: The research hub](https://agent-tune.com/research)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/does-personality-tuning-change-ai-answers
+```
+
+```
+@article{huang2026_does_personality_tuning_change_ai_answers,
+  author  = {Huang, Bernard},
+  title   = {Does personality tuning change AI answers?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+}
+```
+
+```
+> **Does personality tuning change AI answers?** (Bernard Huang, November 23, 2026): Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
+> Source: [https://agent-tune.com/research/does-personality-tuning-change-ai-answers](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) · [Markdown mirror](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)
+```
+
+[← The Roleplay Tax (85/15 Calibration)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
+[Study 12 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[12 Open-Source AI Models Tested →](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

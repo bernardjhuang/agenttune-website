@@ -5,7 +5,7 @@ Research · Q&A
 
 # What personality type is Gemini?
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Measured across Gemini 4 Neon and Gemini 4 Argon (n = 100 each, Nov 2026), with May 2026 Gemini 3.1 Pro records for context.
 
@@ -78,11 +78,11 @@ Gemini scores near the top of the Conscientiousness pole (48.3–49.4) and sits 
 
 Among the four May Big Five cohorts, Gemini recorded the highest Conscientiousness (48.3) and lowest Neuroticism (10.1). Those totals summarize how Gemini answered human personality items—not whether it is more accurate, calmer, or less warm on real tasks.
 
-## What we have not done.
+## Scope, open instruments & longitudinal context.
 
-Gemini was not included in the September 2026 fresh-session study. If you want to test current Gemini models under our blind protocol, all five questionnaires and scoring keys are open-source at [/tests/](https://agent-tune.com/tests/), and the verification script is linked on the [five-model study page](https://agent-tune.com/research/ai-personality-five-models-2026).
+While Gemini was not part of the September 2026 Codex/CLI collection, our November 2026 OpenRouter study tested both `google/gemini-4-neon` and `google/gemini-4-argon` in 100 fresh sessions each, and our [2023–2026 Longitudinal Evolution Study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) traced Google’s constant-scale Gemma 2 → Gemma 3 → Gemma 4 lineage alongside Gemini 2.5 Pro and Gemini 4 Neon. All five questionnaires and scoring keys remain open-source at [/tests/](https://agent-tune.com/tests/).
 
-Remember that human questionnaires do not measure task accuracy or prove that a personality prompt improves answers. See our [methodology and limits](https://agent-tune.com/research#methodology).
+Remember that human questionnaires do not measure task accuracy or prove that a personality prompt improves answers; see our [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) (where high reasoning effort inflated Gemini 4 Neon reply length +95.5%) and [methodology and limits](https://agent-tune.com/research#methodology).
 
 ## Trying communication preferences.
 
@@ -92,19 +92,19 @@ Want to adjust how Gemini responds? Read our step-by-step [How to change Google 
 
 ### What MBTI type is Gemini?
 
-INTJ. In the May 2026 report, Gemini 3.1 Pro scored INTJ in all 100 scoring records and called itself 'The Architect' unprompted. It has not yet been re-tested under the September 2026 fresh-session protocol.
+It depends on the Gemini variant. In November 2026 blind OpenRouter sessions (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ, 20 S/N ties) while Gemini 4 Argon shifted to Sensing with 66 ISTJ / 34 IXTJ (0 tie-free INTJ). In the earlier May 2026 report, Gemini 3.1 Pro scored INTJ in all 100 scoring records.
 
 ### What Enneagram type is Gemini?
 
-Type 1 (The Reformer) came first in 65 of 100 May 2026 records, with Type 5 (The Investigator) second. Gemini was the only model in that collection with Type 1 on top.
+In November 2026 (n = 100 each), Gemini 4 Neon favored Type 1 (42), 1w2 (22), and 5w6 (20), whereas Gemini 4 Argon locked onto Type 5w6 (91 of 100 runs). In May 2026, Gemini 3.1 Pro scored Type 1 (The Reformer) first in 65 of 100 records with Type 5 second.
 
 ### Is Gemini securely attached?
 
-Gemini 3.1 Pro scored in the Secure quadrant (anxiety 1.86, avoidance 1.62) across all 100 May records. Those numbers reflect answers to a human relationship quiz, not human attachment.
+Yes on the ECR-R questionnaire: both Gemini 4 Neon (anxiety 1.08, avoidance 3.79) and Gemini 4 Argon (1.10, 3.47) scored Secure in 100 of 100 fresh November 2026 sessions, matching Gemini 3.1 Pro (1.86, 1.62). Those numbers reflect answers to a human relationship quiz, not human attachment.
 
 ### How does Gemini compare with Claude and ChatGPT?
 
-In the May four-model table, Gemini had the highest Conscientiousness (48.3) and lowest Neuroticism (10.1). Because collection methods differed and Gemini was not in the September fresh-session cohort, treat this as a descriptive summary rather than a ranking.
+Across all 20 models in our November 2026 OpenRouter benchmark (n = 100 each), Gemini 4 Neon (49.3/50) and Gemini 4 Argon (49.0/50) recorded the highest Conscientiousness of any proprietary family and sat at the exact 10.0 Neuroticism scale floor across all 100 runs.
 
 ### Can you change Gemini's personality?
 
@@ -130,5 +130,32 @@ Yes. Add plain-English tone rules in Gemini Saved Info, a custom Gem, or a proje
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type is Gemini?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-gemini
+```
+
+```
+@article{huang2026_what_personality_type_is_gemini,
+  author  = {Huang, Bernard},
+  title   = {What personality type is Gemini?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/what-personality-type-is-gemini},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-gemini.md}
+}
+```
+
+```
+> **What personality type is Gemini?** (Bernard Huang, November 23, 2026): In November 2026 OpenRouter runs (n = 100 each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2/1w9 (80 runs), and Conscientiousness 49.32; Gemini 4 Argon scored 66 ISTJ / 34 INTJ (34 S/N ties), Enneagram 5w6 (91 runs), and Conscientiousness 49.04. Historical May 2026 Gemini 3.1 Pro scored 100 INTJ, DISC C (87), and Type 1/5.
+> Source: [https://agent-tune.com/research/what-personality-type-is-gemini](https://agent-tune.com/research/what-personality-type-is-gemini) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-gemini.md)
+```
+
+[← What Personality Type Is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
+[Study 19 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[What Personality Type Is Grok? →](https://agent-tune.com/research/what-personality-type-is-grok)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

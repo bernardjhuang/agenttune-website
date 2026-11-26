@@ -5,7 +5,7 @@ Guide · Notion AI
 
 # Notion AI custom instructions and workspace agent persona templates.
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice & Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.
 
@@ -14,9 +14,9 @@ By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-
 | Instruction block | What it controls in Notion AI | Example rule |
 | --- | --- | --- |
 | 1. Priority Hierarchy | Prevents Notion AI from inventing facts when workspace pages are incomplete. | &ldquo;Workspace factual accuracy overrides completeness. Flag missing pages instead of guessing.&rdquo; |
-| 2. Voice &amp; Formatting | Stops generic corporate openers and walls of nested bullets. | &ldquo;Direct, calm prose; bold key metrics; zero &lsquo;Sure, I can help!&rsquo; filler.&rdquo; |
+| 2. Voice & Formatting | Stops generic corporate openers and walls of nested bullets. | &ldquo;Direct, calm prose; bold key metrics; zero &lsquo;Sure, I can help!&rsquo; filler.&rdquo; |
 | 3. Operating Rules | Concrete If-Then triggers for Meeting Notes, PRDs, and wikis. | &ldquo;When summarizing a meeting, extract Decisions, Blockers, and Owners as a checklist.&rdquo; |
-| 4. Data Map (@mentions) | Points Notion AI at authoritative databases instead of stale archive pages. | &ldquo;Source tasks from @Tasks DB and roadmap priorities from @Q4 Roadmap; ignore @Archive.&rdquo; |
+| 4. Data Map (`@mentions`) | Points Notion AI at authoritative databases instead of stale archive pages. | &ldquo;Source tasks from @Tasks DB and roadmap priorities from @Q4 Roadmap; ignore @Archive.&rdquo; |
 
 Paste this master Chief of Staff template into your Notion AI custom instructions and replace the `@Database` placeholders with live mentions:
 

@@ -5,7 +5,7 @@ Guide · MCP & Agent-First
 
 # AgentTune MCP & portable AI preferences across every agent.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, run local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
 
@@ -15,22 +15,22 @@ The AgentTune MCP endpoint at `https://agent-tune.com/mcp` is stateless, read-on
 
 | Client / Agent | Exact connection command or config |
 | --- | --- |
-| Claude Code CLI | claude mcp add --transport http agenttune https://agent-tune.com/mcp |
-| Claude Web &amp; Desktop Connectors | Settings → Connectors → Add custom connector → URL: https://agent-tune.com/mcp |
-| Cursor (.cursor/mcp.json) | {"mcpServers":{"agenttune":{"url":"https://agent-tune.com/mcp"}}} |
-| OpenAI Codex CLI / MCP clients | Point Streamable HTTP client at https://agent-tune.com/mcp, or tell the agent to read https://agent-tune.com/SKILL.md. |
-| Any web-fetching agent (no MCP needed) | Read [/SKILL.md](https://agent-tune.com/SKILL.md), [/llms.txt](https://agent-tune.com/llms.txt), or fetch any raw tuning at /library/{system}/{slug}.md. |
+| Claude Code CLI | `claude mcp add --transport http agenttune https://agent-tune.com/mcp` |
+| Claude Web & Desktop Connectors | Settings → Connectors → Add custom connector → URL: `https://agent-tune.com/mcp` |
+| Cursor (`.cursor/mcp.json`) | `{"mcpServers":{"agenttune":{"url":"https://agent-tune.com/mcp"}}}` |
+| OpenAI Codex CLI / MCP clients | Point Streamable HTTP client at `https://agent-tune.com/mcp`, or tell the agent to read `https://agent-tune.com/SKILL.md`. |
+| Any web-fetching agent (no MCP needed) | Read [@@CELL_0@@](https://agent-tune.com/SKILL.md), [@@CELL_1@@](https://agent-tune.com/llms.txt), or fetch any raw tuning at `/library/{system}/{slug}.md`. |
 
 ## What the 6 MCP tools and machine endpoints expose.
 
 | MCP tool | Inputs | What it returns |
 | --- | --- | --- |
-| list_tunings | Optional system (mbti, enneagram, disc, attachment, ocean) | All 43 MIT-licensed profiles with slugs, codes, one-line blurbs, SHA-256 revisions, and raw Markdown URLs. |
-| get_tuning | system + slug (e.g. mbti / intj, disc / d-dominance) | Clean Markdown communication rules in structuredContent.body separated cleanly from install metadata. |
-| get_test_spec | test (mbti, enneagram, disc, attachment, or big-five) | Versioned questionnaire items, anchors, and deterministic local scoring rules—so answers stay 100% local and never cross the network. |
-| list_resources | Optional kind (guide or research) and query | Searchable index of all setup guides and empirical AI personality studies. |
-| get_resource | id (e.g. claude-personality, ai-personality-five-models-2026) | Full Markdown mirror and provenance metadata for any guide or research article. |
-| get_free_tools | None (zero personal input accepted) | Catalog of local browser utilities and the window.AgentTuneTools JavaScript text-processing API. |
+| `list_tunings` | Optional `system` (`mbti`, `enneagram`, `disc`, `attachment`, `ocean`) | All 43 MIT-licensed profiles with slugs, codes, one-line blurbs, SHA-256 revisions, and raw Markdown URLs. |
+| `get_tuning` | `system` + `slug` (e.g. `mbti` / `intj`, `disc` / `d-dominance`) | Clean Markdown communication rules in `structuredContent.body` separated cleanly from install metadata. |
+| `get_test_spec` | `test` (`mbti`, `enneagram`, `disc`, `attachment`, or `big-five`) | Versioned questionnaire items, anchors, and deterministic local scoring rules—so answers stay 100% local and never cross the network. |
+| `list_resources` | Optional `kind` (`guide` or `research`) and `query` | Searchable index of all setup guides and empirical AI personality studies. |
+| `get_resource` | `id` (e.g. `claude-personality`, `ai-personality-five-models-2026`) | Full Markdown mirror and provenance metadata for any guide or research article. |
+| `get_free_tools` | None (zero personal input accepted) | Catalog of local browser utilities and the `window.AgentTuneTools` JavaScript text-processing API. |
 
 Machine-readable manifests are also available at `/.well-known/mcp/server-card.json`, [`/SKILL.md`](https://agent-tune.com/SKILL.md), [`/llms.txt`](https://agent-tune.com/llms.txt), and [`/library/index.json`](https://agent-tune.com/library/index.json).
 

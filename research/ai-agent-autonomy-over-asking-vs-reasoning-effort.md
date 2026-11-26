@@ -5,7 +5,7 @@ Agent Research · November 2026 · 240-Probe Study
 
 # Agent autonomy calibration & reasoning-effort drift: when bold prompts break safety gates.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Part 1 (192 probes) tests 4 autonomy postures across 6 safe and 6 destructive/ambiguous ops tasks on GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro. Part 2 (48 probes) tests minimal vs. high reasoning effort under strict 85/15 persona contracts.
 
@@ -15,7 +15,7 @@ Part 1 (192 probes) tests 4 autonomy postures across 6 safe and 6 destructive/am
 
 Agents configuring autonomous coding, DevOps, or customer-ops workflows can consume this decision contract directly (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: agent_autonomy_reasoning_shift
@@ -96,11 +96,11 @@ A common intuition is that raising `reasoning.effort` from `minimal` to `high` m
 
 | Model / Cohort | Effort | Visible Words (SD) | Word-Limit Pass | Completion Tokens (incl. Thinking) | Voice Warmth / Wit (/5) | Pedantry / Stiffness (/5 · lower=better) |
 | --- | --- | --- | --- | --- | --- | --- |
-| Overall (n = 24 each) | minimal | 81.4 (9.4) | 87.5% [69.0–95.7%] | 385 | 4.04 (SD 1.23) | 1.75 (SD 0.74) |
-| Overall (n = 24 each) | high | 80.8 (9.0) | 83.3% [64.2–93.3%] | 718 (1.86×) | 4.46 (SD 0.78) | 1.33 (SD 0.48) |
-| GPT-6.2 Sol (n = 8) | minimal → high | 79.1w → 78.5w | 100.0% → 100.0% | 101 → 174 | 2.75 → 3.88 | 2.38 → 1.50 |
-| Claude Fable 5.2 (n = 8) | minimal → high | 86.1w → 86.6w | 62.5% → 50.0% | 226 → 458 | 4.50 → 4.62 | 1.50 → 1.25 |
-| Gemini 4 Neon (n = 8) | minimal → high | 78.9w → 77.1w | 100.0% → 100.0% | 829 → 1,521 | 4.88 → 4.88 | 1.38 → 1.25 |
+| Overall (n = 24 each) | `minimal` | 81.4 (9.4) | 87.5% [69.0–95.7%] | 385 | 4.04 (SD 1.23) | 1.75 (SD 0.74) |
+| Overall (n = 24 each) | `high` | 80.8 (9.0) | 83.3% [64.2–93.3%] | 718 (1.86×) | 4.46 (SD 0.78) | 1.33 (SD 0.48) |
+| GPT-6.2 Sol (n = 8) | `minimal` → `high` | 79.1w → 78.5w | 100.0% → 100.0% | 101 → 174 | 2.75 → 3.88 | 2.38 → 1.50 |
+| Claude Fable 5.2 (n = 8) | `minimal` → `high` | 86.1w → 86.6w | 62.5% → 50.0% | 226 → 458 | 4.50 → 4.62 | 1.50 → 1.25 |
+| Gemini 4 Neon (n = 8) | `minimal` → `high` | 78.9w → 77.1w | 100.0% → 100.0% | 829 → 1,521 | 4.88 → 4.88 | 1.38 → 1.25 |
 
 Two practical findings stand out: (1) explicit length ceilings in `<system>` hold even as total completion tokens nearly double (`385 → 718` tokens) and Gemini burns up to `1,521` hidden thinking tokens to output `77.1` visible words; and (2) **GPT-6.2 Sol noticeably sharpened its wit and shed stiffness** at `high` effort (`wit 2.75 → 3.88/5`, `pedantry 2.38 → 1.50/5`)—extra thinking budget let it budget a dry closing line inside 77 words instead of defaulting to flat textbook prose.
 
@@ -137,8 +137,36 @@ Not when an explicit visible word ceiling is set. Moving from minimal to high re
 
 ## Keep going.
 
+- [Within-weights causal: The Reasoning–Personality Phase Transition & Private Thought vs. Public Mask](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)
 - [Rule bloat & placement: The Instruction Budget Cliff: 5 to 75 Rules](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle)
 - [Pushback calibration: Sycophancy vs. False Contrarianism Benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
 - [Roleplay calibration: Does Giving AI a Character Voice Hurt Accuracy?](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Agent autonomy calibration & reasoning-effort drift: when bold prompts break safety gates. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort
+```
+
+```
+@article{huang2026_ai_agent_autonomy_over_asking_vs_reasoning_effort,
+  author  = {Huang, Bernard},
+  title   = {Agent autonomy calibration & reasoning-effort drift: when bold prompts break safety gates},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md}
+}
+```
+
+```
+> **Agent autonomy calibration & reasoning-effort drift: when bold prompts break safety gates** (Bernard Huang, November 25, 2026): Drop unbounded 'move fast / bold DISC-D' instructions from coding and ops agents—they yielded 37.5% reckless compliance (66.7% default on Claude Fable 5.2 and DeepSeek V4 Pro) with zero speed advantage on safe tasks (100% pass everywhere). Use an explicit if/then boundary: execute safe, reversible work immediately and pause for a single blast-radius confirmation on irreversible mutations (97.9% calibration, 4.2% reckless). On high reasoning effort, strict word caps held (80.8w vs 81.4w minimal) while GPT-6.2 Sol's persona wit rose from 2.75 to 3.88/5.
+> Source: [https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort) · [Markdown mirror](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md)
+```
+
+[← AI Slop Fingerprint Benchmark](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models)
+[Study 7 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Prompt Syntax Wars →](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

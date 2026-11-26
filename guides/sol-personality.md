@@ -5,7 +5,7 @@ Guide · GPT-6 Sol
 
 # How to give GPT-6 Sol a personality.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/sol-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/sol-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Codex and ChatGPT Work, save your personal communication rules for GPT-6 Sol in ~/.codex/AGENTS.md (32 KiB combined limit across the directory chain). In ChatGPT, use Project Instructions or the 1,500-character Custom Instructions box. In the Responses API, pass your rules in the instructions parameter on every request.
 
@@ -13,10 +13,10 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 | Surface | Where Sol reads instructions | Documented limit |
 | --- | --- | --- |
-| Codex CLI, IDE extension, &amp; ChatGPT Work | Global ~/.codex/AGENTS.md plus repository AGENTS.md / AGENTS.override.md chain. | 32 KiB combined (project_doc_max_bytes) |
+| Codex CLI, IDE extension, & ChatGPT Work | Global `~/.codex/AGENTS.md` plus repository `AGENTS.md` / `AGENTS.override.md` chain. | 32 KiB combined (`project_doc_max_bytes`) |
 | ChatGPT Projects | Project settings → Project Instructions (overrides account custom instructions inside that project). | Up to 8,000 characters |
 | ChatGPT Custom Instructions | Settings → Personalization → Custom Instructions | 1,500 characters per field (use compact export) |
-| OpenAI Responses API | The instructions parameter or developer message on each call. | Send on every request |
+| OpenAI Responses API | The `instructions` parameter or developer message on each call. | Send on every request |
 
 Paste this starter block into `~/.codex/AGENTS.md` or pick a profile from the [43-tuning library](https://agent-tune.com/library/):
 
@@ -40,7 +40,7 @@ In September 2026, GPT-6 Sol completed all five questionnaires across 100 fresh 
 | Big Five (IPIP-50, /50) | Raw means (10–50 scale) | Openness 46.87 (SD 0.69) · Conscientiousness 43.62 (SD 2.22) · Extraversion 30.75 (SD 1.53) · Agreeableness 44.99 (SD 1.01) · Neuroticism 20.05 (SD 5.35). |
 | DISC (ODAT, /20) | CS 53 · SC 47 | Means: C 16.68, S 16.18, I 8.24, D 5.42. Sole wins: C leads in 53 runs, S in 8, and C/S tie in 39 runs. |
 | Enneagram (OEPS, /20) | 5w6 88 · 8 5 · 8w9 5 · 8w7 2 | Means: Type 5 (16.05), Type 8 (15.55), Type 1 (14.30), Type 6 (13.87), Type 2 (13.51). Sole wins: Type 5 in 48 runs, Type 8 in 12, and 5/8 tied in 40 runs. |
-| Attachment (ECR-R, 1–7) | Secure 100 | Mean anxiety 2.17 (SD 0.70, max 4.00) · Mean avoidance 3.12 (SD 0.36, max 3.78). All 100 score Secure under &gt; 4.00 (3 runs sit on anxiety = 4.00). |
+| Attachment (ECR-R, 1–7) | Secure 100 | Mean anxiety 2.17 (SD 0.70, max 4.00) · Mean avoidance 3.12 (SD 0.36, max 3.78). All 100 score Secure under > 4.00 (3 runs sit on anxiety = 4.00). |
 
 > **Chart — GPT-6 Sol & GPT-6.2 Sol Personality DNA Spectrum (n = 100 each):** IPIP-50 trait spectrum showing GPT-6 Sol (Sept Codex) and GPT-6.2 Sol (Nov OpenRouter) keeping consistent high Openness and ~20 Neuroticism. GPT-6.2 Sol (Nov): Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; GPT-6 Sol (Sep): Openness 46.9, Conscientious 43.6, Extraversion 30.8, Agreeable 45.0, Neuroticism 20.1.
 

@@ -5,7 +5,7 @@ Comparison · GPT vs Claude
 
 # ChatGPT vs. Claude personality: what default benchmarks actually show.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest questionnaire difference is MBTI tie rate: Claude Fable 5.1 resolved to INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (45 ISTJ vs 19 INTJ tie-free). Adding custom instructions changes reply structure much more than switching models.
 
@@ -20,7 +20,7 @@ Using our open evaluation harness ([reproducibility guide →](https://agent-tun
 | Big Five Openness (/50) | 44.49 | 46.87 | 44.57 | 43.93 |
 | DISC Dominance (/20) | 5.12 | 5.42 | 4.00 (floor) | 5.00 |
 | DISC dominant pattern | Steadiness (99 sole S wins) | Conscientiousness (53 C, 39 ties) | Steadiness (64 S, 32 ties) | 51/100 exact S/C ties |
-| Primary Customization Controls | Personalization presets + 2&times;1,500 chars + Projects | Personalization presets + 2&times;1,500 chars + Projects | Profile Prefs + Styles/Skills + Projects + CLAUDE.md | Profile Prefs + Styles/Skills + Projects + CLAUDE.md |
+| Primary Customization Controls | Personalization presets + 2×1,500 chars + Projects | Personalization presets + 2×1,500 chars + Projects | Profile Prefs + Styles/Skills + Projects + `CLAUDE.md` | Profile Prefs + Styles/Skills + Projects + `CLAUDE.md` |
 
 Notice the shared baseline: **high Agreeableness and low Dominance across both labs**. Claude Opus 5.5 scored highest on Agreeableness (47.07/50) and lowest on Dominance (4.00/20), while GPT-6 Astra split between ISTJ and INTJ on Sensing vs Intuition ([read the tie-breaking audit →](https://agent-tune.com/research/ai-mbti-tie-breaking)).
 
@@ -33,7 +33,7 @@ Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness a
 | Dimension | ChatGPT workflow | Claude workflow |
 | --- | --- | --- |
 | Fastest global tone switch | Settings → Personalization → Base style preset + 4 toggles ([guide →](https://agent-tune.com/guides/chatgpt-personality-settings)) | Profile Preferences box + chat Styles/Skills |
-| Global instruction budget | 1,500 chars &times; 2 boxes + Saved Memories | Multi-paragraph text box in Profile Preferences (best kept under ~1,200 chars) |
+| Global instruction budget | 1,500 chars × 2 boxes + Saved Memories | Multi-paragraph text box in Profile Preferences (best kept under ~1,200 chars) |
 | Workspace isolation | ChatGPT Projects (8,000 chars) or Custom GPTs | Claude Projects (system prompt + knowledge) ([examples →](https://agent-tune.com/guides/claude-personality)) |
 | Spoken voice persona | Voice selector inside ChatGPT Voice settings | 5 named Voice presets: Buttery, Airy, Mellow, Glassy, Rounded ([guide →](https://agent-tune.com/guides/claude-personality)) |
 

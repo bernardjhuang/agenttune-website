@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Does a stable result mean a stable AI personality?
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.
 
@@ -72,7 +72,7 @@ GPT-6 Sol’s Neuroticism score averaged 20.05 out of 50 with a standard deviati
 
 ## How to test whether your AI is consistent on real work
 
-Survey repeatability doesn't prove a model will follow your instructions on real tasks. To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? [Download the 20-row repeatability CSV](https://agent-tune.com/research/data/ai-repeatability.csv) to inspect all counts from this study.
+Survey repeatability doesn't prove a model will follow your instructions on real tasks. In our November 2026 10,000-sheet expansion ([Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)), per-item Shannon entropy spanned from `0.054 bits` on Claude Fable 5.2 (only `2/100` unique DISC vectors and `8/100` unique Big Five vectors) up to `1.499 bits` on DeepSeek V4 Pro, while disproving late-survey fatigue collapse (`0.519 → 0.585 bits` across items 1–50). To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? [Download the 20-row repeatability CSV](https://agent-tune.com/research/data/ai-repeatability.csv) to inspect all counts from this study.
 
 ## Sources.
 
@@ -88,7 +88,36 @@ Survey repeatability doesn't prove a model will follow your instructions on real
 
 ## Keep going.
 
+- [10,000-sheet expansion: Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
+- [Factor forensics: The AI Big One: 63.6% Factor Collapse & MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
 - [Continue reading: A controlled prompt-comparison protocol](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [Continue reading: Where Claude’s answers differ](https://agent-tune.com/research/opus-vs-fable-question-level)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Does a stable result mean a stable AI personality?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-repeatability
+```
+
+```
+@article{huang2026_ai_personality_repeatability,
+  author  = {Huang, Bernard},
+  title   = {Does a stable result mean a stable AI personality?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-17},
+  url     = {https://agent-tune.com/research/ai-personality-repeatability},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-repeatability.md}
+}
+```
+
+```
+> **Does a stable result mean a stable AI personality?** (Bernard Huang, November 17, 2026): All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
+> Source: [https://agent-tune.com/research/ai-personality-repeatability](https://agent-tune.com/research/ai-personality-repeatability) · [Markdown mirror](https://agent-tune.com/research/ai-personality-repeatability.md)
+```
+
+[← What "Neutral" Means on AI Tests](https://agent-tune.com/research/ai-neutral-answers)
+[Study 27 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Opus 4.8 100x MBTI Simulation Note →](https://agent-tune.com/research/i-took-the-mbti-100-times)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

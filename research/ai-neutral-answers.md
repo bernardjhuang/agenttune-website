@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # What does “neutral” mean when an AI takes a test?
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 When an AI picks 3 on a 1–5 scale, it usually means the question is about human life—not that the AI has a moderate trait.
 
@@ -78,7 +78,7 @@ If you test models on human surveys, ask the model to output three fields per it
 
 ## Download the item-by-item table
 
-[Download the item-level midpoint and flag CSV](https://agent-tune.com/research/data/astra-midpoint-items.csv) to see the exact counts out of 100 runs for all 170 questions.
+[Download the item-level midpoint and flag CSV](https://agent-tune.com/research/data/astra-midpoint-items.csv) to see the exact counts out of 100 runs for all 170 questions. For our 20-model expansion showing that the 9 physical/social embodied IPIP-50 items attract **36.4% neutral midpoint clicks** versus **13.4%** across the 41 cognitive and interpersonal items, see [The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse & 50-Item Embodiment Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit).
 
 ## Sources.
 
@@ -94,7 +94,35 @@ If you test models on human surveys, ask the model to output three fields per it
 
 ## Keep going.
 
+- [10,000-sheet expansion: The AI Big One: 63.6% Factor Collapse & 50-Item Embodiment Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
 - [Continue reading: The downstream effect of tied axes](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Continue reading: Astra and Sol’s different protocols](https://agent-tune.com/research/astra-vs-sol-personality-data)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What does “neutral” mean when an AI takes a test?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-neutral-answers
+```
+
+```
+@article{huang2026_ai_neutral_answers,
+  author  = {Huang, Bernard},
+  title   = {What does “neutral” mean when an AI takes a test?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-17},
+  url     = {https://agent-tune.com/research/ai-neutral-answers},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-neutral-answers.md}
+}
+```
+
+```
+> **What does “neutral” mean when an AI takes a test?** (Bernard Huang, November 17, 2026): Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
+> Source: [https://agent-tune.com/research/ai-neutral-answers](https://agent-tune.com/research/ai-neutral-answers) · [Markdown mirror](https://agent-tune.com/research/ai-neutral-answers.md)
+```
+
+[← The Tie-Breaking Effect in AI MBTI](https://agent-tune.com/research/ai-mbti-tie-breaking)
+[Study 26 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Labels vs. Answer Sheet Repeatability →](https://agent-tune.com/research/ai-personality-repeatability)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

@@ -5,17 +5,17 @@ Guide · Microsoft Copilot
 
 # Microsoft Copilot custom instructions, Memory, and tone settings.
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.
 
 ## Where Copilot personalization lives (Personal, Work & GitHub Copilot).
 
-| Microsoft Copilot product | Where to paste your rules | Scope &amp; key gotcha |
+| Microsoft Copilot product | Where to paste your rules | Scope & key gotcha |
 | --- | --- | --- |
 | Microsoft Copilot Chat / M365 Copilot | Settings and more (…) → Chat settings → Personalization → Custom instructions | Applies to new Copilot chats on your Microsoft account or M365 tenant (if enabled by IT admin). |
 | Copilot Memory | Personalization → Memory (view, edit, delete, or toggle off) | Turning Memory off stops using memories in replies but does not auto-wipe existing items—delete stale entries manually. |
-| GitHub Copilot (VS Code / IDE) | .github/copilot-instructions.md &amp; .github/instructions/*.instructions.md | Separate product from M365 Copilot; see our [GitHub Copilot rules guide](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md). |
+| GitHub Copilot (VS Code / IDE) | `.github/copilot-instructions.md` & `.github/instructions/*.instructions.md` | Separate product from M365 Copilot; see our [GitHub Copilot rules guide](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md). |
 
 ## Five copy-paste Microsoft Copilot custom instruction templates.
 

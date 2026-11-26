@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Are AI models really INTJ? The tie-breaking effect
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.
 
@@ -97,5 +97,32 @@ Download the raw answers, instrument keys, and reanalysis script into one folder
 
 - [Continue reading: Stable labels and variable answers](https://agent-tune.com/research/ai-personality-repeatability)
 - [Continue reading: The wider INTJ question](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Are AI models really INTJ? The tie-breaking effect. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-mbti-tie-breaking
+```
+
+```
+@article{huang2026_ai_mbti_tie_breaking,
+  author  = {Huang, Bernard},
+  title   = {Are AI models really INTJ? The tie-breaking effect},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-17},
+  url     = {https://agent-tune.com/research/ai-mbti-tie-breaking},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-mbti-tie-breaking.md}
+}
+```
+
+```
+> **Are AI models really INTJ? The tie-breaking effect** (Bernard Huang, November 17, 2026): Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
+> Source: [https://agent-tune.com/research/ai-mbti-tie-breaking](https://agent-tune.com/research/ai-mbti-tie-breaking) · [Markdown mirror](https://agent-tune.com/research/ai-mbti-tie-breaking.md)
+```
+
+[← Is Every AI Actually an INTJ?](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
+[Study 25 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[What "Neutral" Means on AI Tests →](https://agent-tune.com/research/ai-neutral-answers)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

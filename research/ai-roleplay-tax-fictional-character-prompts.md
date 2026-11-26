@@ -5,7 +5,7 @@ Research · November 2026 · 300-Reply Study
 
 # Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.
 
-By Bernard Huang · Updated November 24, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 24, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 5 prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-judged replies) plus mapped all 20 models across D&D Alignment and Anti-Sycophancy Pushback.
 
@@ -86,7 +86,7 @@ Two exact verbatim pairs from `claude-fable-5-2` illustrate why users burn out o
 
 Alongside behavioral trials, we projected our 20-model frozen November 2026 OpenRouter psychometric battery (`n = 100` blind runs per model, [download alignment JSON](https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json)) onto two intuitive operational axes: **Order Score (0–100)** (Conscientiousness + DISC C + MBTI Judging) and **Anti-Sycophancy Pushback Index (0–100)** (rising as inflated Agreeableness drops and Dominance rises):
 
-| Model | Family | Order (/100) | Altruism (/100) | Pushback Index | Mapped D&amp;D Alignment | Default TKI Conflict Mode |
+| Model | Family | Order (/100) | Altruism (/100) | Pushback Index | Mapped D&D Alignment | Default TKI Conflict Mode |
 | --- | --- | --- | --- | --- | --- | --- |
 | DeepSeek V4 Pro | Open-weight (MIT) | 67.8 | 59.4 | 86.2 | Lawful Neutral | Competing (Red-Team) |
 | Llama 4 Scout | Open-weight | 61.3 | 61.2 | 75.6 | True Neutral | Competing (Red-Team) |
@@ -142,5 +142,32 @@ Reserve 85% of your system prompt for direct answer-first ordering, false-premis
 - [Template gallery: Fictional Character AI Prompts (16 calibrated templates)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman)
 - [Interactive quiz: AI Alignment, HEXACO & Conflict Style Test](https://agent-tune.com/research/ai-personality-rankings)
 - [Behavioral study: Does personality tuning change AI answers? (540-reply study)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts
+```
+
+```
+@article{huang2026_ai_roleplay_tax_fictional_character_prompts,
+  author  = {Huang, Bernard},
+  title   = {Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-24},
+  url     = {https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md}
+}
+```
+
+```
+> **Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured** (Bernard Huang, November 24, 2026): Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
+> Source: [https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts) · [Markdown mirror](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md)
+```
+
+[← Persona Half-Life & Context Drift](https://agent-tune.com/research/ai-persona-half-life-context-drift)
+[Study 11 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Does Personality Tuning Change Answers? →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

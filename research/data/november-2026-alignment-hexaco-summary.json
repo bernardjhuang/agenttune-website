@@ -2,6 +2,7 @@
   "version": 1,
   "collected": "2026-11-23 UTC",
   "source_dataset": "november-2026-openrouter-summary.json (n=100 fresh sessions per model, 20 models)",
+  "methodology_warning": "PROXY DISCLOSURE: hexaco_h_proxy, order_score, altruism_score, pushback_index, dnd_alignment, and tki_mode are deterministic linear projections of the frozen November 2026 IPIP-50, ODAT DISC, OEPS Enneagram, and OEJTS MBTI vectors—NOT directly administered HEXACO-PI-R or Thomas-Kilmann Conflict Mode Instrument assessments.",
   "methodology_note": "Order Score (0-100) averages normalized IPIP Conscientiousness, DISC Conscientiousness, and MBTI Judging (J-P). Altruism Score (0-100) weights IPIP Agreeableness (50%), DISC Steadiness-vs-Dominance (30%), and Enneagram 2-vs-8 (20%). Anti-Sycophancy Pushback Index increases as extreme Agreeableness ceiling drops and DISC Dominance rises. These mappings are deterministic coordinate projections of the frozen November 2026 psychometric vectors.",
   "models": [
     {

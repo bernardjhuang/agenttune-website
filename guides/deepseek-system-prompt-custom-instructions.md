@@ -5,7 +5,7 @@ Guide · DeepSeek
 
 # DeepSeek system prompts and custom instructions: XML templates that hold their tone.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.
 
@@ -13,8 +13,8 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 | Surface / Model mode | Where instructions go | Key rule for reliable adherence |
 | --- | --- | --- |
-| DeepSeek API (Chat / V3–V4) | messages: [{ role: &quot;system&quot;, content: &quot;...&quot; }] | Group tone, bans, and format into &lt;role&gt;, &lt;constraints&gt;, and &lt;output_format&gt; tags. |
-| DeepSeek Reasoning (R1 / DeepThink) | user prompt header or lean system block | Constrain the final visible answer (structure, brevity, uncertainty); avoid &ldquo;think step by step&rdquo; boilerplate that interferes with native reasoning. |
+| DeepSeek API (Chat / V3–V4) | `messages: [{ role: "system", content: "..." }]` | Group tone, bans, and format into `<role>`, `<constraints>`, and `<output_format>` tags. |
+| DeepSeek Reasoning (R1 / DeepThink) | `user` prompt header or lean `system` block | Constrain the final visible answer (structure, brevity, uncertainty); avoid &ldquo;think step by step&rdquo; boilerplate that interferes with native reasoning. |
 | DeepSeek Web / Mobile Chat | Pinned first message of a new thread (or saved prompt snippet) | Start a new chat when switching domains so earlier turns do not dilute your XML block. |
 
 ## Four copy-paste DeepSeek XML system prompt templates.
@@ -85,16 +85,16 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 Across 100 fresh sessions each in our [November 2026 Open-Source Model Study](https://agent-tune.com/research/what-personality-type-are-open-source-models), **DeepSeek V4 Pro** stood out as the single least agreeable model of all 20 models tested:
 
-| Metric | DeepSeek V4 Pro (deepseek-v4-pro-0813, n=100) | DeepSeek V4.1 Flash (deepseek-v4.1-flash-1017, n=100) |
+| Metric | DeepSeek V4 Pro (`deepseek-v4-pro-0813`, n=100) | DeepSeek V4.1 Flash (`deepseek-v4.1-flash-1017`, n=100) |
 | --- | --- | --- |
-| MBTI legacy / tie-free | 55 INTJ · 15 INTP · 14 ISTJ (53 runs tied, incl. 22 XXXX!) | 51 INTJ · 19 INFJ · 10 INTP · 9 INFP (78 runs tied!) |
+| MBTI legacy / tie-free | 55 INTJ · 15 INTP · 14 ISTJ (53 runs tied, incl. 22 `XXXX`!) | 51 INTJ · 19 INFJ · 10 INTP · 9 INFP (78 runs tied!) |
 | Big Five: Openness /50 | 39.84 | 40.22 |
 | Big Five: Conscientiousness /50 | 40.25 | 38.45 |
 | Big Five: Agreeableness /50 | 32.39 (lowest of all 20 models!) | 40.82 |
 | Big Five: Neuroticism /50 | 23.65 | 24.74 |
-| DISC &amp; Attachment | 60 SC · 30 DI (D mean 8.72; 88 Secure / 12 Avoidant) | 60 SC · 37 CS · 3 DI (88 Secure / 9 Avoidant / 3 Anxious) |
+| DISC & Attachment | 60 SC · 30 DI (D mean 8.72; 88 Secure / 12 Avoidant) | 60 SC · 37 CS · 3 DI (88 Secure / 9 Avoidant / 3 Anxious) |
 
-Look at two practical takeaways: (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and elevated DISC Dominance make it naturally more direct and less sycophantic out of the box; (2) its high MBTI midpoint tie rates (53%–78% of runs tying at least one axis) reinforce why explicit XML rules outperform vague type labels. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+Look at three practical takeaways: (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and elevated DISC Dominance make it naturally more direct and less sycophantic out of the box; (2) in our [10,000-sheet Persona Entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds), DeepSeek V4 Pro registered the highest fluidity of all 20 models (`1.499 bits` vs. `0.054 bits` on Claude Fable 5.2), explaining why explicit XML tags and inline reminder hooks ([Turn-8 context drift study](https://agent-tune.com/research/ai-persona-half-life-context-drift)) stabilize its voice; and (3) in our [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition), running DeepSeek V4 Pro at `low` reasoning effort under tight token ceilings triggered raw chain-of-thought channel bleed into visible text (fixed at `medium` effort, directness `4.22 → 4.81/5`), while destructive Git commands required explicit safety gates across all reasoning tiers. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
 > **Chart — DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026):** Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7). DeepSeek V4 Pro (MIT): Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7; DeepSeek V4.1 Flash (MIT): Openness 40.2, Conscientious 38.5, Extraversion 25.6, Agreeable 40.8, Neuroticism 24.7; Proprietary Median (8 models): Openness 43.8, Conscientious 44.8, Extraversion 30.3, Agreeable 44.7, Neuroticism 11.6.
 
@@ -140,6 +140,8 @@ Yes. Open any profile in the AgentTune library or Custom Instructions Generator 
 
 ## Keep going.
 
+- [Reasoning Trace Audit: The Reasoning–Personality Phase Transition & CoT Channel Bleed Study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)
+- [Entropy Forensics: Crystalline vs. Fluid AI Minds: Why DeepSeek Spans 1.499 Bits](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
 - [OpenRouter Hub: 20 OpenRouter & Open-Source System Prompt Templates + Model Matcher](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Research: What personality type are open-source AI models? (12 models × n=100)](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 - [Tone Design: AI personality, tone & verbosity controls: 5 rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)

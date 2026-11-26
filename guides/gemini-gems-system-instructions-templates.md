@@ -5,19 +5,19 @@ Guide · Gemini
 
 # Gemini Gems, Saved Info, and GEMINI.md templates.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Gemini → Settings → Personal Intelligence to add 3–5 concise Saved Info rules globally, or Gem Manager → New Gem for specialized workflows. Pick any of the 4 downloadable starters or 16 Gem & GEMINI.md roles below.
 
 ## Quick pick: Top Gemini Gems & Saved Info downloads.
 
-| Template | Surface &amp; Best Use | Jump / Download |
+| Template | Surface & Best Use | Jump / Download |
 | --- | --- | --- |
-| Saved Info Global Default | Personal Intelligence — concise, zero disclaimers | [View prompt](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#1-saved-info-global-default) · [Download .md](https://agent-tune.com/resources/gemini/saved-info-concise-default.md) |
-| No-Fluff Search Brief Gem | Custom Gem — clean alternative to vague Search Overviews | [View Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem) · [Download .md](https://agent-tune.com/resources/gemini/gem-no-fluff-search-brief.md) |
-| Senior Code Reviewer Gem | Custom Gem — correctness &amp; N+1 SQL bugs first | [View Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#3-senior-code-reviewer-gem) · [Download .md](https://agent-tune.com/resources/gemini/gem-senior-code-reviewer.md) |
-| Workspace GEMINI.md | Gemini CLI / Code Assist — repo discipline | [View file](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#4-workspace-gemini-md) · [Download .md](https://agent-tune.com/resources/gemini/gemini-md-workspace.md) |
-| 16 more Gems &amp; Saved Info rules | Docs Synthesizer, Study Guide, SQL Tuner, Decision Brief &amp; more | [Jump to 16 roles ↓](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#sixteen-more-gemini-gems-and-rules) |
+| Saved Info Global Default | `Personal Intelligence` — concise, zero disclaimers | [View prompt](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#1-saved-info-global-default) · [Download .md](https://agent-tune.com/resources/gemini/saved-info-concise-default.md) |
+| No-Fluff Search Brief Gem | `Custom Gem` — clean alternative to vague Search Overviews | [View Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem) · [Download .md](https://agent-tune.com/resources/gemini/gem-no-fluff-search-brief.md) |
+| Senior Code Reviewer Gem | `Custom Gem` — correctness & N+1 SQL bugs first | [View Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#3-senior-code-reviewer-gem) · [Download .md](https://agent-tune.com/resources/gemini/gem-senior-code-reviewer.md) |
+| Workspace GEMINI.md | `Gemini CLI / Code Assist` — repo discipline | [View file](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#4-workspace-gemini-md) · [Download .md](https://agent-tune.com/resources/gemini/gemini-md-workspace.md) |
+| 16 more Gems & Saved Info rules | Docs Synthesizer, Study Guide, SQL Tuner, Decision Brief & more | [Jump to 16 roles ↓](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#sixteen-more-gemini-gems-and-rules) |
 
 Also see [How to Change Gemini’s Personality](https://agent-tune.com/guides/gemini-personality), [Google AI Overview vs. Gemini Settings](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings), and [Gemini Live Voices & Personal Intelligence](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence).
 

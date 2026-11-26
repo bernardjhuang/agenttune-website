@@ -5,7 +5,7 @@ Guide · Coding Assistants
 
 # Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in YAML frontmatter (or in Cursor's user Rules for AI). For GitHub Copilot, add your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md or repo GEMINI.md. For Claude Code, use ~/.claude/CLAUDE.md or ~/.claude/output-styles/agenttune.md. For OpenAI Codex, use ~/.codex/AGENTS.md.
 
@@ -13,11 +13,11 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 | Tool | Personal (user-wide) path | Project (repo-committed) path | Required header / frontmatter |
 | --- | --- | --- | --- |
-| Cursor | Cursor Settings → Rules for AI | .cursor/rules/*.mdc | YAML frontmatter with description and alwaysApply: true |
-| GitHub Copilot | VS Code user settings / personal instructions | .github/copilot-instructions.md (plus .github/instructions/*.instructions.md) | Plain Markdown (applyTo frontmatter optional in scoped files) |
-| Gemini CLI &amp; Code Assist | ~/.gemini/GEMINI.md | GEMINI.md at repo root or subdirectories | Plain Markdown |
-| Claude Code | ~/.claude/CLAUDE.md or ~/.claude/output-styles/*.md | CLAUDE.md at repo root | keep-coding-instructions: true in output-style files |
-| OpenAI Codex | ~/.codex/AGENTS.md | AGENTS.md / AGENTS.override.md (32 KiB total cap) | Plain Markdown |
+| Cursor | Cursor Settings → Rules for AI | `.cursor/rules/*.mdc` | YAML frontmatter with `description` and `alwaysApply: true` |
+| GitHub Copilot | VS Code user settings / personal instructions | `.github/copilot-instructions.md` (plus `.github/instructions/*.instructions.md`) | Plain Markdown (`applyTo` frontmatter optional in scoped files) |
+| Gemini CLI & Code Assist | `~/.gemini/GEMINI.md` | `GEMINI.md` at repo root or subdirectories | Plain Markdown |
+| Claude Code | `~/.claude/CLAUDE.md` or `~/.claude/output-styles/*.md` | `CLAUDE.md` at repo root | `keep-coding-instructions: true` in output-style files |
+| OpenAI Codex | `~/.codex/AGENTS.md` | `AGENTS.md` / `AGENTS.override.md` (32 KiB total cap) | Plain Markdown |
 
 ## 1. Cursor: .cursor/rules/agenttune.mdc with alwaysApply.
 
@@ -64,10 +64,10 @@ On any profile page in the [AgentTune library](https://agent-tune.com/library/),
 
 | Rule mode | YAML frontmatter | When loaded | Best used for |
 | --- | --- | --- | --- |
-| Always | alwaysApply: true | Every Agent &amp; Chat turn | Core test commands, diff boundaries &amp; tone |
-| Auto Attached | globs: [&quot;src/api/**/*.ts&quot;], alwaysApply: false | Matching file in context | API schemas, SQL migrations, UI conventions |
-| Agent Requested | description: &quot;...&quot;, alwaysApply: false | Agent pulls when relevant | Release checklists, deployment steps |
-| Manual | No globs, alwaysApply: false | Invoked via @rule-name | Occasional migrations or strict audit passes |
+| Always | `alwaysApply: true` | Every Agent & Chat turn | Core test commands, diff boundaries & tone |
+| Auto Attached | `globs: ["src/api/**/*.ts"]`, `alwaysApply: false` | Matching file in context | API schemas, SQL migrations, UI conventions |
+| Agent Requested | `description: "..."`, `alwaysApply: false` | Agent pulls when relevant | Release checklists, deployment steps |
+| Manual | No `globs`, `alwaysApply: false` | Invoked via `@rule-name` | Occasional migrations or strict audit passes |
 
 Loading interactive Cursor .mdc rules builder…
 

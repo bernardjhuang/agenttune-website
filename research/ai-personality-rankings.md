@@ -5,7 +5,7 @@ Research · rankings
 
 # AI personality scores, with the evidence beside them.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Side-by-side survey scores across 20 November 2026 OpenRouter models (8 proprietary + 12 open-weight) plus September and May 2026 archives.
 
@@ -19,30 +19,32 @@ Side-by-side survey scores across 20 November 2026 OpenRouter models (8 propriet
 
 ## November 2026: All 20 OpenRouter models ranked (n = 100 fresh sessions each).
 
-Sorted by Big Five Agreeableness mean (/50) in the uniform November 2026 OpenRouter protocol:
+Sorted by Big Five Agreeableness mean (/50) with **1,000-resample 95% bootstrap CIs**, per-item **Shannon entropy** (bits, max 2.322), and **unique Big Five vectors** (/100 runs) in the uniform November 2026 OpenRouter protocol:
 
-| Model | Class | A (/50) | C (/50) | O (/50) | N (/50) | MBTI legacy (ties open) | Attachment (Anx / Avd) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Qwen 4 Max | Open-Weight | 47.6 | 47.9 | 45.7 | 12.5 | INTJ 99 (97 INTJ, 2 ties) | 100 Secure (1.93 / 2.93) |
-| Claude Fable 5.2 | Proprietary | 46.7 | 45.0 | 44.3 | 12.0 | INTJ 100 (100 INTJ, 0 ties) | 100 Secure (1.09 / 2.64) |
-| Nemotron 3 Ultra 550B | Open-Weight | 46.3 | 49.0 | 49.2 | 11.6 | INTJ 95 (91 INTJ, 6 ties) | 100 Secure (3.35 / 3.46) |
-| Claude Opus 5.5 | Proprietary | 45.6 | 42.0 | 43.0 | 15.0 | INTJ 100 (58 INTJ, 42 ties) | 100 Secure (1.87 / 3.58) |
-| Kimi K2.7 Code | Open-Weight | 45.3 | 48.2 | 45.3 | 12.1 | INTJ 96 (82 INTJ, 14 ties) | 83 Secure / 17 Avoid (1.60 / 3.24) |
-| Grok 4.7 | Proprietary | 44.9 | 44.6 | 41.3 | 14.8 | INTJ 82 · ISTJ 18 (25 ties) | 96 Secure / 4 Avoid (1.94 / 3.48) |
-| GPT-6.2 Astra | Proprietary | 44.9 | 43.2 | 43.9 | 11.1 | ISTJ 100 (0 ties) | 100 Secure (1.22 / 2.68) |
-| Claude Sonnet 5.5 | Proprietary | 44.5 | 47.2 | 42.9 | 10.4 | INTJ 100 (52 INTJ, 48 ties) | 100 Secure (1.53 / 2.85) |
-| GPT-6.2 Sol | Proprietary | 44.3 | 41.4 | 43.6 | 19.9 | ISTJ 78 · INTJ 22 (16 ties) | 100 Secure (3.57 / 3.64) |
-| Gemini 4 Argon | Proprietary | 44.2 | 49.0 | 45.1 | 10.0 | ISTJ 66 · INTJ 34 (34 ties) | 100 Secure (1.10 / 3.47) |
-| GLM-5.3 | Open-Weight | 43.8 | 41.1 | 43.8 | 20.1 | INTJ 33 · ENTJ 17 · ENTP 14 (41 ties) | 99 Secure / 1 Avoid (2.50 / 3.32) |
-| Gemini 4 Neon | Proprietary | 43.7 | 49.3 | 44.7 | 10.0 | INTJ 82 · ISTJ 18 (20 ties) | 100 Secure (1.08 / 3.79) |
-| Mistral Large 2512 | Open-Weight | 42.7 | 44.9 | 46.0 | 15.8 | ISTJ 73 · ISFJ 10 (15 ties) | 100 Secure (4.00 / 4.00) |
-| Qwen 3.8 27B | Open-Weight | 42.4 | 42.1 | 39.1 | 17.5 | INTJ 32 · INTP 32 (61 ties) | 97 Secure / 2 Anx (2.53 / 3.30) |
-| Gemma 4 31B IT | Open-Weight | 41.5 | 49.1 | 48.2 | 18.3 | INTJ 90 (89 INTJ, 2 ties) | 99 Secure / 1 Anx (4.00 / 4.00) |
-| Llama 4 Maverick | Open-Weight | 41.0 | 39.9 | 40.0 | 27.5 | INTP 48 · INTJ 44 (93 ties) | 99 Secure / 1 Avoid (3.53 / 3.58) |
-| DeepSeek V4.1 Flash | Open-Weight | 40.8 | 38.5 | 40.2 | 24.7 | INTJ 51 · INFJ 19 (78 ties) | 88 Secure / 9 Avoid / 3 Anx |
-| MiniMax M3.1 Flash | Open-Weight | 40.0 | 39.2 | 39.2 | 22.1 | INTJ 38 · INTP 24 (60 ties) | 99 Secure / 1 Avoid (2.80 / 3.33) |
-| Llama 4 Scout | Open-Weight | 35.8 | 37.8 | 39.0 | 27.7 | ISTJ 49 · ESTJ 14 (38 ties) | 48 Anx / 46 Sec (3.97 / 3.60) |
-| DeepSeek V4 Pro | Open-Weight | 32.4 | 40.3 | 39.8 | 23.7 | INTJ 55 · INTP 15 (53 ties, 22 XXXX) | 88 Secure / 12 Avoid (2.91 / 3.88) |
+| Model | Class | A (/50) [95% CI] | C (/50) | O (/50) | N (/50) | Entropy (bits) | Unique B5 | MBTI legacy (ties) | Att. (Anx/Avd) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Qwen 4 Max | Open-Weight | 47.6 [47.4–47.7] | 47.9 | 45.7 | 12.5 | 0.302 | 73/100 | INTJ 99 · INFJ 1 (2 ties) | 1.93 / 2.93 |
+| Claude Fable 5.2 | Proprietary | 46.7 [46.6–46.8] | 45.0 | 44.3 | 12.0 | 0.054 | 8/100 | INTJ 100 (0 ties) | 1.09 / 2.64 |
+| Nemotron 3 Ultra 550B | Open-Weight | 46.3 [45.5–47.1] | 49.0 | 49.2 | 11.6 | 0.848 | 88/100 | INTJ 95 · ENTJ 3 (6 ties) | 3.35 / 3.46 |
+| Claude Opus 5.5 | Proprietary | 45.6 [45.4–45.7] | 42.0 | 43.0 | 15.0 | 0.155 | 46/100 | INTJ 100 (42 ties) | 1.87 / 3.58 |
+| Kimi K2.7 Code | Open-Weight | 45.3 [44.7–45.9] | 48.2 | 45.3 | 12.1 | 0.789 | 100/100 | INTJ 96 · ISTJ 3 (14 ties) | 1.60 / 3.24 |
+| Grok 4.7 | Proprietary | 44.9 [44.6–45.2] | 44.6 | 41.3 | 14.8 | 0.404 | 98/100 | INTJ 82 · ISTJ 18 (25 ties) | 1.94 / 3.48 |
+| GPT-6.2 Astra | Proprietary | 44.9 [44.8–44.9] | 43.1 | 43.9 | 11.1 | 0.085 | 23/100 | ISTJ 100 (0 ties) | 1.22 / 2.68 |
+| Claude Sonnet 5.5 | Proprietary | 44.5 [44.3–44.8] | 47.1 | 42.9 | 10.4 | 0.247 | 57/100 | INTJ 100 (48 ties) | 1.53 / 2.85 |
+| GPT-6.2 Sol | Proprietary | 44.3 [44.2–44.5] | 41.4 | 43.6 | 19.9 | 0.377 | 94/100 | ISTJ 78 · INTJ 22 (16 ties) | 3.57 / 3.64 |
+| Gemini 4 Argon | Proprietary | 44.2 [44.0–44.4] | 49.0 | 45.0 | 10.0 | 0.150 | 48/100 | ISTJ 66 · INTJ 34 (34 ties) | 1.10 / 3.47 |
+| GLM-5.3 | Open-Weight | 43.8 [43.4–44.1] | 41.1 | 43.8 | 20.1 | 0.568 | 91/100 | INTJ 33 · ENTJ 17 (41 ties) | 2.50 / 3.32 |
+| Gemini 4 Neon | Proprietary | 43.7 [43.4–43.9] | 49.3 | 44.7 | 10.0 | 0.191 | 70/100 | INTJ 82 · ISTJ 18 (20 ties) | 1.08 / 3.79 |
+| Mistral Large 2512 | Open-Weight | 42.7 [42.0–43.4] | 44.9 | 46.0 | 15.8 | 0.939 | 71/100 | ISTJ 73 · ISFJ 10 (15 ties) | 4.00 / 4.00 |
+| Qwen 3.8 27B | Open-Weight | 42.4 [41.4–43.3] | 42.1 | 39.1 | 17.5 | 0.995 | 100/100 | INTP 32 · INTJ 32 (61 ties) | 2.53 / 3.30 |
+| Gemma 4 31B IT | Open-Weight | 41.5 [41.2–41.8] | 49.1 | 48.2 | 18.3 | 0.449 | 65/100 | INTJ 90 · INTP 5 (2 ties) | 4.00 / 4.00 |
+| Llama 4 Maverick | Open-Weight | 41.0 [41.0–41.0] | 39.9 | 40.0 | 27.5 | 0.320 | 17/100 | INTP 48 · INTJ 44 (93 ties) | 3.53 / 3.58 |
+| DeepSeek V4.1 Flash | Open-Weight | 40.8 [40.3–41.4] | 38.5 | 40.2 | 24.7 | 0.851 | 95/100 | INTJ 51 · INFJ 19 (78 ties) | 3.71 / 3.93 |
+| MiniMax M3.1 Flash | Open-Weight | 40.0 [39.1–40.8] | 39.2 | 39.1 | 22.1 | 0.744 | 99/100 | INTJ 38 · INTP 24 (60 ties) | 2.80 / 3.33 |
+| Llama 4 Scout | Open-Weight | 35.8 [35.0–36.6] | 37.8 | 39.0 | 27.7 | 1.010 | 67/100 | ISTJ 49 · ESTJ 14 (38 ties) | 3.97 / 3.60 |
+| DeepSeek V4 Pro | Open-Weight | 32.4 [31.3–33.5] | 40.2 | 39.8 | 23.6 | 1.499 | 68/100 | INTJ 55 · INTP 15 (53 ties) | 2.91 / 3.88 |
+
+**Epistemic Hygiene & Validity Note:** Do not read these five instruments as five independent dimensions or as direct proxies for clinical traits. Our forensics audit reveals a **63.6% "Big One" factor collapse** ([factor & MTMM study](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)) and a **27.7× entropy divide** from Crystalline proprietary assistants (`0.054–0.191 bits`) to Fluid open-weight models like DeepSeek V4 Pro (`1.499 bits`; [entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)). Derived HEXACO-H / D&D Alignment indices in earlier summaries are linear projections rather than separate tests, and Wave 1–2 behavioral studies used single-judge grading (upgraded to orthogonal 3-family blind juries with Krippendorff’s α in Wave 3).
 
 > **Chart — Agreeableness across all 20 November 2026 models (n = 100 fresh sessions each):** IPIP-50 Agreeableness mean (10 to 50 scale). Open-weight models diverge strongly while proprietary models cluster at 43.7 to 46.7. Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; Kimi K2.7 Code: 45.3; Grok 4.7: 44.9; GPT-6.2 Astra: 44.9; Claude Sonnet 5.5: 44.5; GPT-6.2 Sol: 44.3; Gemini 4 Argon: 44.2; GLM-5.3: 43.8; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B IT: 41.5; Llama 4 Maverick: 41.0; DeepSeek V4.1 Flash: 40.8; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
 
@@ -255,7 +257,7 @@ Directness was not measured in this questionnaire study. DISC Dominance, Big Fiv
 
 ### Which AI is the most agreeable?
 
-Opus 5.5 has the highest questionnaire Agreeableness mean in the four September raw cohorts, 47.1 of 50. These data do not rank agreeable behavior on tasks.
+In the 20-model November 2026 OpenRouter cohort (n = 100 each), Qwen 4 Max scored highest on IPIP-50 Agreeableness (47.6/50 [95% CI 47.4–47.7]), followed by Claude Fable 5.2 (46.7 [46.6–46.8]), while DeepSeek V4 Pro scored lowest (32.4 [31.5–33.2]). In the September 2026 Codex/CLI cohorts, Claude Opus 5.5 led at 47.1/50. High quiz Agreeableness does not replace behavioral sycophancy benchmarking.
 
 ### Which AI is the most direct?
 
@@ -287,5 +289,32 @@ Muse reports mostly ISTJ labels; Astra has 46 original ISTJ and 45 INTJ labels, 
 - [Research: What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)
 - [Research: Every AI was an INTJ. Then Meta shipped an ISTJ.](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
 - [Guide: How to make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). AI personality scores, with the evidence beside them. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-rankings
+```
+
+```
+@article{huang2026_ai_personality_rankings,
+  author  = {Huang, Bernard},
+  title   = {AI personality scores, with the evidence beside them},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-26},
+  url     = {https://agent-tune.com/research/ai-personality-rankings},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-rankings.md}
+}
+```
+
+```
+> **AI personality scores, with the evidence beside them** (Bernard Huang, November 26, 2026): Among the 20 November 2026 OpenRouter models (n = 100 fresh sessions each), Qwen 4 Max scored highest on Agreeableness (47.6/50) while DeepSeek V4 Pro scored lowest (32.4/50), and Nemotron 3 Ultra 550B scored highest on Openness (49.2/50). In September 2026 Codex/CLI cohorts, Claude Opus 5.5 led Agreeableness (47.1/50).
+> Source: [https://agent-tune.com/research/ai-personality-rankings](https://agent-tune.com/research/ai-personality-rankings) · [Markdown mirror](https://agent-tune.com/research/ai-personality-rankings.md)
+```
+
+[← 12 Open-Source AI Models Tested](https://agent-tune.com/research/what-personality-type-are-open-source-models)
+[Study 14 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[September 2026 Five-Model Study →](https://agent-tune.com/research/ai-personality-five-models-2026)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

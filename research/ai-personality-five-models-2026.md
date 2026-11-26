@@ -5,11 +5,11 @@ Research · September 2026
 
 # What five AI models say about themselves.
 
-By Bernard Huang · Updated September 25, 2026
+By Bernard Huang · Updated September 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-five-models-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1
 
-**Quick answer:** Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
+**Summary:** Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
 
 ## Abstract
 
@@ -110,7 +110,7 @@ Grok 4.6’s canonical vectors score Type 5 and DISC C with no ties, though a si
 
 Figure 6. Points are cohort means or supplied aggregates, not individual runs or uncertainty intervals. All 400 raw-cohort runs score Secure; both coordinates vary. Grok's reported avoidance of 4.06 is just above the cutoff of 4. Muse has no supplied raw answers.
 
-All 400 fresh-session runs score in the Secure quadrant (anxiety &le; 4.00, avoidance &le; 4.00). Even so, their coordinates differ: Astra averages 2.31 on avoidance, whereas Opus 5.5 averages 3.35. Those shifts reflect how each model interprets romantic-partner questions, not emotional attachment.
+All 400 fresh-session runs score in the Secure quadrant (anxiety ≤ 4.00, avoidance ≤ 4.00). Even so, their coordinates differ: Astra averages 2.31 on avoidance, whereas Opus 5.5 averages 3.35. Those shifts reflect how each model interprets romantic-partner questions, not emotional attachment.
 
 Grok 4.6 reports anxiety 1.50 and avoidance 4.06—just one raw item point above the 4.00 Avoidant boundary—with a reported 63 Avoidant / 37 Secure simulation split.
 
@@ -163,5 +163,32 @@ No. It measures how models answer human questionnaires under specific prompts. I
 - [Guide: Claude Opus 5.5 results and tuning examples](https://agent-tune.com/guides/claude-opus-5-5-personality)
 - [Guide: Claude Fable 5.1 results and tuning examples](https://agent-tune.com/guides/fable-personality)
 - [Tool: Custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-five-models-2026
+```
+
+```
+@article{huang2026_ai_personality_five_models_2026,
+  author  = {Huang, Bernard},
+  title   = {What five AI models say about themselves},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-09-25},
+  url     = {https://agent-tune.com/research/ai-personality-five-models-2026},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-five-models-2026.md}
+}
+```
+
+```
+> **What five AI models say about themselves** (Bernard Huang, September 25, 2026): Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
+> Source: [https://agent-tune.com/research/ai-personality-five-models-2026](https://agent-tune.com/research/ai-personality-five-models-2026) · [Markdown mirror](https://agent-tune.com/research/ai-personality-five-models-2026.md)
+```
+
+[← 20-Model AI Personality Rankings](https://agent-tune.com/research/ai-personality-rankings)
+[Study 15 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Big Five 50-Item Level Comparison →](https://agent-tune.com/research/ai-big-five-item-level-comparison)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

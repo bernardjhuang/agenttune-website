@@ -34,17 +34,28 @@
 
     <main id="main" tabindex="-1">
 
-    <section class="hero" style="text-align: center;">
-      <span class="pill" style="background: rgba(168,72,42,0.12); color: #9f4427;">404 · page not found</span>
+    <section class="hero hero-center">
+      <span class="error-kicker">Error 404 · Unindexed route</span>
       <h1 class="h-hero h-research-hero">Page not found.</h1>
-      <p class="lede" style="margin-left: auto; margin-right: auto;">
+      <p class="lede">
         That URL doesn't exist. Jump to the template library, take a 5-minute test, or build custom instructions below.
       </p>
-      <div class="cta-row" style="justify-content: center;">
+      <div class="cta-row">
         <a class="btn btn-primary" href="/library/">Browse 43 templates →</a>
         <a class="btn btn-secondary" href="/tools/custom-instructions-generator">Open generator →</a>
         <a class="btn btn-secondary" href="/tests/">Take a test →</a>
       </div>
+
+      <section class="diag-404" data-diag-404 aria-labelledby="diag-404-title">
+        <h2 class="diag-404-title" id="diag-404-title">Specimen report · Type 404, the Unindexed Ghost</h2>
+        <dl>
+          <dt>Requested</dt><dd><code data-diag-requested>this URL</code></dd>
+          <dt>Nearest construct</dt><dd><a href="/library/" data-diag-nearest>Template library</a> <span data-diag-distance></span></dd>
+          <dt>Conscientiousness</dt><dd>10 / 50 (IPIP-50 floor; the link did not arrive where it said it would)</dd>
+          <dt>Diagnosis</dt><dd data-diag-verdict>hallucinated route; confidence low, n = 1</dd>
+        </dl>
+        <p class="diag-404-foot">One observation is not a profile. Press <kbd>/</kbd> to search every study, template and tool.</p>
+      </section>
     </section>
 
     </main>

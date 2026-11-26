@@ -5,7 +5,7 @@ Guide · Perplexity Spaces
 
 # Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Set your everyday tone and formatting rules in Perplexity Settings → AI Profile, and set source-quality rules (primary docs first, publication dates, conflict reporting, and table schemas) inside each Space's Custom Instructions box.
 
@@ -14,8 +14,8 @@ By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-
 | Setting location | Where to find it | Scope | What works best here |
 | --- | --- | --- | --- |
 | Global AI Profile | Settings → AI Profile | Account-wide across general searches | Role context, plain prose preference, citation density, and no filler intros |
-| Space Custom Instructions | Spaces → [Your Space] → Instructions | Threads &amp; files inside that Space | Source authority rules, date filters, and comparison table schemas |
-| Space Knowledge Files + Web toggle | Space sidebar (Files &amp; Web Search toggles) | Retrieval mix inside that Space | Restricting answers to uploaded PDFs/notes or combining them with live web search |
+| Space Custom Instructions | Spaces → [Your Space] → Instructions | Threads & files inside that Space | Source authority rules, date filters, and comparison table schemas |
+| Space Knowledge Files + Web toggle | Space sidebar (Files & Web Search toggles) | Retrieval mix inside that Space | Restricting answers to uploaded PDFs/notes or combining them with live web search |
 
 Because Perplexity synthesizes live search snippets, rules that tell it how to handle conflicting or missing sources improve answers far more than vague tone adjectives.
 

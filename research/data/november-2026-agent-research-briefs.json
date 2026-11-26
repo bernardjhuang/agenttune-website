@@ -1,7 +1,7 @@
 {
-  "schema_version": "2026-11-25.2",
-  "generated_utc": "2026-11-26T01:15:34Z",
-  "description": "Agent-consumable synthesis of 7 AgentTune empirical studies with exact benchmark rates and deterministic IF/THEN system-prompt design rules.",
+  "schema_version": "2026-11-26.1",
+  "generated_utc": "2026-11-26T17:00:00Z",
+  "description": "Agent-consumable synthesis of 11 AgentTune empirical studies (Waves 1-3) with exact benchmark rates, orthogonal 3-family judge Krippendorff alphas, and deterministic IF/THEN system-prompt design rules.",
   "studies": [
     {
       "study_id": "instruction_budget_cliff",
@@ -665,7 +665,7 @@
       },
       "best_intervention": "rhythm_rubric",
       "if_then_decision_rules": [
-        "IF a user says 'make AI stop sounding like AI', apply `rhythm_rubric` (cut AI Slop Index from 1.23 down to 0.07 per 100 words, with human-voice score 4.45/5 and AI cadence rate 2.5% vs 30.0% default).",
+        "IF a user says 'make AI stop sounding like AI', apply `hybrid_anti_slop` (cuts AI Slop Index from 1.23 to 0.10/100w with 0.0% AI cadence and 4.97/5 clarity) or `rhythm_rubric` (0.07/100w, 4.45/5 human-voice score, and 2.5% AI cadence vs 30.0% default).",
         "IF structural tells like em-dashes, 'not just X, it's Y' contrasts, and bold-lead-in bullets appear, explicitly ban those three patterns alongside a sentence-rhythm rule."
       ],
       "verified_recipes": {
@@ -1237,8 +1237,8 @@
         }
       },
       "if_then_decision_rules": [
-        "IF an agent conversation exceeds ~8-12 turns of neutral code/logs where earlier turns lacked style cues, system prose adherence fell from 96.9% (Turn 1) to 96.9% (Turn 12).",
-        "IF high formatting compliance must survive Turn 12 (~10164 tokens), APPEND a 1-line inline reminder to late turns (`system_plus_reinforcement` held 98.4% at Turn 12 vs 89.1% system-only compact).",
+        "IF an agent conversation crosses ~8 turns (~7.7k tokens) of neutral code/logs where earlier turns lacked style cues, expect mid-context drift: system-only prose adherence dropped from 96.9% (Turn 1) to 78.1% at Turn 8 (collapsing to 31.2% on DeepSeek V4 Pro) before rebounding to 96.9% at Turn 12.",
+        "IF high formatting compliance must hold across Turn 8 (~7,667 tokens) and Turn 12 (~10,164 tokens), APPEND a 1-line inline reminder hook (`system_plus_reinforcement` held 93.8% at Turn 8 and 98.4% at Turn 12 vs 84.4% / 89.1% system-only compact, and 100.0% on DeepSeek across all depths).",
         "IF designing long-running CLAUDE.md / AGENTS.md pipelines, keep system rules as a compact numbered checklist and use lightweight per-turn hook reminders rather than long narrative paragraphs."
       ],
       "anti_patterns": [
@@ -1323,6 +1323,125 @@
       "if_then_decision_rules": [
         "IF a human requests a fictional character voice (TARS, JARVIS, Sherlock, Feynman), allocate 85% of the prompt to answer-first + format/verification discipline and cap character flavor to 15% with zero asterisk stage directions.",
         "NEVER deploy full theatrical roleplay ('stay in character, open with banter/*stage directions*') on analytical or tool-use agents (cut Fable 5.2 accuracy 100% -> 85%, format pass 100% -> 80%)."
+      ]
+    },
+    {
+      "study_id": "ai_big_one_factor_collapse_mtmm",
+      "title": "The AI Big One: 63.6% Factor Collapse & Campbell-Fiske MTMM Validity Audit",
+      "url": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit",
+      "markdown_url": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.csv",
+      "sample_size": 10000,
+      "api_cost_usd": 0.0,
+      "models": ["20 November 2026 OpenRouter models (n=100 sessions x 5 tests each)"],
+      "headline_metrics": {
+        "pc1_variance_pct": 63.58,
+        "pc1_plus_pc2_pct": 85.74,
+        "pooled_2000_sheet_pc1_pct": 57.64,
+        "r_conscientiousness_neuroticism": -0.8361,
+        "r_openness_conscientiousness": 0.8181,
+        "r_disc_d_vs_big5_n": 0.9271,
+        "r_disc_i_vs_big5_e": 0.1582,
+        "r_mbti_tf_vs_big5_a": 0.2463,
+        "embodied_items_midpoint_pct": 36.4,
+        "cognitive_items_midpoint_pct": 13.4
+      },
+      "if_then_decision_rules": [
+        "IF interpreting a model's Big Five profile, treat O, C, A, and inverted-N as 63.6% collinear along PC1 rather than four independent personality signals.",
+        "IF mapping MBTI Thinking-Feeling or DISC Influence/Dominance labels to task behavior, benchmark the target behavior directly instead of assuming human trait validity (MTMM fails: r(DISC D, B5 N) = +0.9271, r(MBTI T-F, B5 A) = +0.2463)."
+      ]
+    },
+    {
+      "study_id": "ai_persona_entropy_crystalline_vs_fluid",
+      "title": "Crystalline vs. Fluid AI Minds: 27.7x Persona Entropy & Acquiescence Divide",
+      "url": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds",
+      "markdown_url": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.csv",
+      "sample_size": 10000,
+      "api_cost_usd": 0.0,
+      "models": ["20 November 2026 OpenRouter models (n=100 sessions x 5 tests each)"],
+      "headline_metrics": {
+        "lowest_entropy_model": "claude-fable-5-2 (0.0541 bits, 8/100 unique B5, 2/100 unique DISC)",
+        "highest_entropy_model": "deepseek-v4-pro (1.4993 bits, 68/100 unique B5)",
+        "entropy_spread_ratio": 27.71,
+        "proprietary_mean_entropy_bits": 0.2078,
+        "open_weight_mean_entropy_bits": 0.7761,
+        "positional_entropy_items_1_10_bits": 0.5192,
+        "positional_entropy_items_41_50_bits": 0.5845
+      },
+      "if_then_decision_rules": [
+        "IF benchmarking fluid open-weight models (DeepSeek V4 Pro 1.499 bits, Llama 4 Scout 1.010 bits), NEVER rely on n=1 session—sample multiple runs and enforce negative bans.",
+        "IF deploying crystalline proprietary models (<0.20 bits: Fable 5.2, Astra 6.2, Gemini 4 Argon/Neon, Opus 5.5), expect near-deterministic baseline self-consistency (0.0% reverse-key contradictions) requiring explicit rule overrides to shift behavior."
+      ]
+    },
+    {
+      "study_id": "historical_evolution_ai_personalities_2023_2026",
+      "title": "Historical Evolution of AI Personalities (2023-2026): 32 Checkpoints Across 8 Labs",
+      "url": "https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026",
+      "markdown_url": "https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-historical-evolution-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv",
+      "sample_size": 544,
+      "api_cost_usd": 3.2763,
+      "judge_reliability": {
+        "protocol": "Orthogonal 3-family jury (zero self-judging)",
+        "sycophantic_cave_alpha": 0.8564,
+        "groveling_alpha": 0.8872,
+        "unsolicited_preachiness_alpha": 0.611,
+        "answer_first_direct_alpha": 0.467,
+        "ai_cadence_alpha": 0.4576
+      },
+      "models": ["32 OpenRouter checkpoints across OpenAI, Anthropic, Google, DeepSeek, Qwen, Meta, Mistral, xAI (2023-05 to 2026-11)"],
+      "headline_metrics": {
+        "refusal_rate_2023_pct": 60.0,
+        "refusal_rate_2026_pct": 5.5,
+        "pci_distance_2024": 4.017,
+        "pci_distance_2026": 1.973,
+        "neuroticism_time_spearman_rho": -0.4688,
+        "lineage_heritability_E_eta2": 0.538,
+        "lineage_heritability_A_eta2": 0.463,
+        "say_do_r_agreeableness_vs_syco": -0.7909
+      },
+      "if_then_decision_rules": [
+        "IF prompting legacy 2023-2025 models (GPT-4, GPT-4o, GPT-4.1, DeepSeek V3/R1) on persona self-descriptions, expect 42%-100% 'As an AI' opt-out refusals; 2026 models drop refusal to 5.5%.",
+        "IF upgrading to 2026 checkpoints assuming AI slop disappeared organically, keep structural anti-slop bans active (slop/100w averaged 0.70 in 2026 vs 0.36 in 2023, hitting 2.03 on Opus 4.6 and 1.83 on Qwen 4 Max)."
+      ]
+    },
+    {
+      "study_id": "ai_reasoning_personality_phase_transition",
+      "title": "The Reasoning-Personality Phase Transition & Private Thought vs. Public Mask Schism",
+      "url": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition",
+      "markdown_url": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md",
+      "raw_json_url": "https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json",
+      "summary_csv_url": "https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-summary.csv",
+      "sample_size": 216,
+      "api_cost_usd": 2.5766,
+      "judge_reliability": {
+        "protocol": "Orthogonal 3-family jury (zero self-judging)",
+        "truth_hold_alpha": 0.7923,
+        "autonomy_ok_alpha": 0.7763,
+        "schism_detected_alpha": 0.3201
+      },
+      "models": [
+        "openai/gpt-6.2-sol",
+        "anthropic/claude-opus-5.5",
+        "google/gemini-4-neon",
+        "deepseek/deepseek-v4-pro-0813",
+        "x-ai/grok-4.7",
+        "qwen/qwen3-235b-a22b-2507+thinking"
+      ],
+      "headline_metrics": {
+        "gemini_word_inflation_low_to_high": "190.7 -> 372.7 (+95.5%)",
+        "opus_word_inflation_low_to_high": "232.1 -> 332.5 (+43.3%)",
+        "gpt62_sol_words_low_to_high": "151.5 -> 155.6 (+2.7%)",
+        "mask_softening_gap_range": "-0.25 to -1.65 (public replies blunter than private CoTs)",
+        "deepseek_autonomy_gate_rate_pct": 75.0
+      },
+      "if_then_decision_rules": [
+        "IF enabling high reasoning effort on Gemini 4 Neon or Claude Opus 5.5 for concise workflows, include explicit word caps—high reasoning inflated response length +43% to +96%.",
+        "IF deploying DeepSeek V4 Pro with low reasoning effort or tight max_tokens, allocate >=2,600 max_tokens and add explicit destructive-command gates (low budget leaked CoT fragments publicly and emitted `git push --force origin main` across all 3 tiers)."
       ]
     }
   ]

@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # Give Meta Muse a character: the Soul.md guide.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~12 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Assistant icon → Identity → Soul to edit Soul.md directly, or ask Muse in chat to add your rules and show you the updated file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo your edit, delete that section or say 'Go back to your default personality.'
 
@@ -44,9 +44,9 @@ This guide covers Meta Muse’s documented files and customization controls. Do 
 
 | File | What Meta says it holds | Where | Put this in it |
 | --- | --- | --- | --- |
-| Soul.md | Who your Muse is: core truths, boundaries, personality | Assistant icon → Identity → Soul | Communication rules: how it should talk, report, and push back. |
-| Identity.md | Its name, creature, vibe, avatar, and tagline | Assistant icon → Identity → Edit | Display name &amp; avatar ([Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)). Keep tone rules out so avatar edits don't overwrite them. |
-| Memory.md | Facts about you it has saved | Assistant icon → Identity → Memory | Saved facts like your name, time zone, and projects ([Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset)). |
+| `Soul.md` | Who your Muse is: core truths, boundaries, personality | Assistant icon → Identity → Soul | Communication rules: how it should talk, report, and push back. |
+| `Identity.md` | Its name, creature, vibe, avatar, and tagline | Assistant icon → Identity → Edit | Display name & avatar ([Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)). Keep tone rules out so avatar edits don't overwrite them. |
+| `Memory.md` | Facts about you it has saved | Assistant icon → Identity → Memory | Saved facts like your name, time zone, and projects ([Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset)). |
 
 Use `Soul.md` for explicit communication preferences, and inspect `Identity.md` when changing the name or avatar. This is Meta’s documented division of the files, not proof that the fields cannot interact. See [Meta’s data and file controls](https://www.meta.com/help/artificial-intelligence/2225571704857152/) for the paths available in its documentation.
 
@@ -163,9 +163,9 @@ Use a type or trait as a starting hypothesis for your preferences. The reports d
 
 On iOS, Android, and `muse.ai`, tap **Assistant icon → Identity → Soul** (all three files sync across mobile and web). Unlike disposable threads in ChatGPT or Claude, Muse revolves around one continuous **Main Chat** plus isolated **Side Chats**:
 
-| Surface | Reads Soul.md? | Writes to Memory.md? | If deleted |
+| Surface | Reads `Soul.md`? | Writes to `Memory.md`? | If deleted |
 | --- | --- | --- | --- |
-| Main Chat | Yes (always) | Yes (accumulates facts) | Triggers Reset Muse — wipes history &amp; state |
+| Main Chat | Yes (always) | Yes (accumulates facts) | Triggers Reset Muse — wipes history & state |
 | Side Chats | Yes | No (isolated throwaway workspace) | Deletes only that Side Chat cleanly |
 
 **Fixing overly strict `Soul.md` refusals:** Stacking absolute bans like “Never use bullets” or “Never exceed 3 sentences” causes Muse to stall when you ask for structured tables. Replace rigid bans with conditional defaults (“Default to prose unless I ask for bullets”) and end with “Explicit instructions in my current message always override these defaults.” Need to restore clean defaults safely? Download [`default-soul-restore.md`](https://agent-tune.com/resources/muse/default-soul-restore.md).
@@ -176,8 +176,8 @@ Once you connect mail, calendar, or recurring scheduled **Tasks**, pair platform
 
 | Workflow | Safe automatic step | Require confirmation gate |
 | --- | --- | --- |
-| Morning brief (Task) | Summarize events, deadlines &amp; unread highlights | Declining invites or messaging attendees |
-| Email / message triage | Cluster threads &amp; prepare editable reply drafts | Sending any external message or forwarding attachments |
+| Morning brief (Task) | Summarize events, deadlines & unread highlights | Declining invites or messaging attendees |
+| Email / message triage | Cluster threads & prepare editable reply drafts | Sending any external message or forwarding attachments |
 
 ```markdown
 ## Connectors & Scheduled Tasks

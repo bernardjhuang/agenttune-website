@@ -70,6 +70,86 @@ function navHtml() {
     </nav>`;
 }
 
+const RESEARCH_SERIES = [
+  { slug: "historical-evolution-of-ai-personalities-2023-2026", label: "Historical Evolution (2023–2026)" },
+  { slug: "ai-reasoning-personality-phase-transition", label: "Reasoning Phase Transition & CoT Mask" },
+  { slug: "ai-big-one-factor-collapse-mtmm-audit", label: "The AI \"Big One\" & MTMM Audit" },
+  { slug: "ai-persona-entropy-crystalline-vs-fluid-minds", label: "Crystalline vs. Fluid AI Minds (Entropy)" },
+  { slug: "ai-instruction-budget-cliff-lost-in-the-middle", label: "Instruction Budget Cliff (5–75 Rules)" },
+  { slug: "ai-slop-fingerprint-benchmark-8-models", label: "AI Slop Fingerprint Benchmark" },
+  { slug: "ai-agent-autonomy-over-asking-vs-reasoning-effort", label: "Agent Autonomy & Reasoning Effort" },
+  { slug: "ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot", label: "Prompt Syntax Wars" },
+  { slug: "ai-sycophancy-vs-false-contrarianism-benchmark", label: "Sycophancy vs. False Contrarianism" },
+  { slug: "ai-persona-half-life-context-drift", label: "Persona Half-Life & Context Drift" },
+  { slug: "ai-roleplay-tax-fictional-character-prompts", label: "The Roleplay Tax (85/15 Calibration)" },
+  { slug: "does-personality-tuning-change-ai-answers", label: "Does Personality Tuning Change Answers?" },
+  { slug: "what-personality-type-are-open-source-models", label: "12 Open-Source AI Models Tested" },
+  { slug: "ai-personality-rankings", label: "20-Model AI Personality Rankings" },
+  { slug: "ai-personality-five-models-2026", label: "September 2026 Five-Model Study" },
+  { slug: "ai-big-five-item-level-comparison", label: "Big Five 50-Item Level Comparison" },
+  { slug: "what-personality-type-is-chatgpt", label: "What Personality Type Is ChatGPT?" },
+  { slug: "what-personality-type-is-claude", label: "What Personality Type Is Claude?" },
+  { slug: "what-personality-type-is-gemini", label: "What Personality Type Is Gemini?" },
+  { slug: "what-personality-type-is-grok", label: "What Personality Type Is Grok?" },
+  { slug: "what-personality-type-is-muse", label: "What Personality Type Is Meta Muse?" },
+  { slug: "astra-vs-sol-personality-data", label: "GPT-6 Astra vs. Sol (1,000 Runs)" },
+  { slug: "opus-vs-fable-question-level", label: "Claude Opus 5.5 vs. Fable 5.1 (170 Items)" },
+  { slug: "first-ai-that-is-not-an-intj", label: "Is Every AI Actually an INTJ?" },
+  { slug: "ai-mbti-tie-breaking", label: "The Tie-Breaking Effect in AI MBTI" },
+  { slug: "ai-neutral-answers", label: "What \"Neutral\" Means on AI Tests" },
+  { slug: "ai-personality-repeatability", label: "Labels vs. Answer Sheet Repeatability" },
+  { slug: "i-took-the-mbti-100-times", label: "Opus 4.8 100x MBTI Simulation Note" }
+];
+
+function estimateReadMinutes(spec) {
+  const parts = [
+    spec.h1, spec.dek, spec.lede, spec.answer,
+    ...(spec.sections || []).map((s) => `${s.h2} ${(s.html || "").replace(/<svg[\s\S]*?<\/svg>/g, "")}`),
+    ...(spec.faq || []).map((f) => `${f.q} ${f.a}`)
+  ];
+  const words = stripTags(parts.filter(Boolean).join(" ")).split(/\s+/).filter(Boolean).length;
+  return Math.max(3, Math.round(words / 220));
+}
+
+function buildResearchCiteAndTrail(spec, dates, url) {
+  const headline = stripTags(spec.h1).replace(/\.$/, "");
+  const year = (dates.updated || dates.published || "2026").slice(0, 4);
+  const citeKey = `huang${year}_${spec.slug.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "")}`;
+  const summaryLine = stripTags(spec.answer || spec.lede || spec.description);
+  const apa = `Huang, B. (${year}). ${headline}. AgentTune Empirical AI Psychology Monographs. ${url}`;
+  const bibtex = `@article{${citeKey},\n  author  = {Huang, Bernard},\n  title   = {${headline}},\n  journal = {AgentTune Empirical AI Psychology Monographs},\n  year    = {${year}},\n  date    = {${dates.updated}},\n  url     = {${url}},\n  note    = {Open dataset and Markdown mirror at ${url}.md}\n}`;
+  const mdBrief = `> **${headline}** (Bernard Huang, ${longDate(dates.updated)}): ${summaryLine}\n> Source: [${url}](${url}) · [Markdown mirror](${url}.md)`;
+
+  const idx = RESEARCH_SERIES.findIndex((item) => item.slug === spec.slug);
+  const prev = idx > 0 ? RESEARCH_SERIES[idx - 1] : null;
+  const next = idx >= 0 && idx < RESEARCH_SERIES.length - 1 ? RESEARCH_SERIES[idx + 1] : null;
+  const numLabel = idx >= 0 ? `Study ${idx + 1} of ${RESEARCH_SERIES.length}` : "28-Study Archive";
+
+  const citeHtml = `
+      <div class="divider tight"></div>
+      <details class="cite-drawer" data-cite-box>
+        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <div class="cite-actions">
+          <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
+          <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
+        </div>
+        <pre class="cite-block" data-cite-text="apa">${escHtml(apa)}</pre>
+        <pre class="cite-block" data-cite-text="bibtex">${escHtml(bibtex)}</pre>
+        <pre class="cite-block" data-cite-text="md">${escHtml(mdBrief)}</pre>
+      </details>`;
+
+  const trailHtml = `
+      <nav class="series-trail" aria-label="Research study trail">
+        <span class="series-trail-prev">${prev ? `<a href="/research/${escAttr(prev.slug)}">← ${escHtml(prev.label)}</a>` : `<a href="/research">← Research Hub</a>`}</span>
+        <a class="series-trail-index" href="/research">${escHtml(numLabel)} · Archive Index (28)</a>
+        <span class="series-trail-next">${next ? `<a href="/research/${escAttr(next.slug)}">${escHtml(next.label)} →</a>` : `<a href="/research">All 28 Studies →</a>`}</span>
+      </nav>`;
+
+  return { citeHtml, trailHtml };
+}
+
 function buildPage(spec, dates) {
   const route = spec.route || `/guides/${spec.slug}`;
   const research = route.startsWith("/research/");
@@ -182,8 +262,14 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <meta name="twitter:image" content="${SITE}/og/og-card.png" />
 
   <link rel="canonical" href="${url}" />
-  <link rel="alternate" type="text/markdown" title="Markdown version" href="${SITE}/${research ? "research" : "guides"}/${spec.slug}.md" />
-  <link rel="alternate" type="text/markdown" title="LLM index" href="${SITE}/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="This article as Markdown" href="${SITE}/${research ? "research" : "guides"}/${spec.slug}.md" />
+  <link rel="alternate" type="text/markdown" title="LLM index" href="${SITE}/llms.txt" />${research ? `
+  <meta name="citation_title" content="${escAttr(stripTags(spec.h1).replace(/\.$/, ""))}" />
+  <meta name="citation_author" content="Bernard Huang" />
+  <meta name="citation_publication_date" content="${dates.published.replace(/-/g, "/")}" />
+  <meta name="citation_online_date" content="${dates.updated.replace(/-/g, "/")}" />
+  <meta name="citation_journal_title" content="AgentTune Empirical AI Psychology Monographs" />
+  <meta name="citation_public_url" content="${url}" />` : ""}
 
   <script type="application/ld+json">${jsonInline(articleSchema)}</script>
   <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>${faqSchema ? `\n  <script type="application/ld+json">${jsonInline(faqSchema)}</script>` : ""}
@@ -214,7 +300,7 @@ ${research ? navHtml().replace('href="/guides/" class="active"', 'href="/guides/
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">${escHtml(spec.pill)}</p>
         <h1 class="h-hero h-research-hero">${escHtml(spec.h1)}</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time> · <a href="/${research ? "research" : "guides"}/${spec.slug}.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a>${research ? ' · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a>' : ""}</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="${dates.updated}">${escHtml(longDate(dates.updated))}</time> · <span class="guide-readtime">~${estimateReadMinutes(spec)} min read</span> · <a href="/${research ? "research" : "guides"}/${spec.slug}.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a>${research ? ' · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a>' : ""}</p>
         ${research && spec.dek ? `<p class="lede" style="margin-top: 14px;">${escHtml(stripTags(spec.dek))}</p>` : ""}
         <div class="guide-tldr" role="note" aria-label="${research ? "Summary" : "Quick answer"}"><strong>${research ? "Summary:" : "Quick answer:"}</strong> ${spec.answer ? escHtml(spec.answer) : spec.lede}</div>
       </section>
@@ -226,7 +312,7 @@ ${sectionsHtml}
 ${faqHtml}
 ${changelogHtml}
 ${sourcesHtml}
-${relatedHtml}
+${relatedHtml}${research ? (() => { const { citeHtml, trailHtml } = buildResearchCiteAndTrail(spec, dates, url); return `${citeHtml}\n${trailHtml}`; })() : ""}
 
     </main>
 
@@ -245,7 +331,7 @@ ${relatedHtml}
 `;
 }
 
-module.exports = { buildPage, datesFor };
+module.exports = { buildPage, datesFor, RESEARCH_SERIES, estimateReadMinutes, buildResearchCiteAndTrail };
 if (require.main === module) {
 const selected = process.argv.slice(2);
 const specs = fs.readdirSync(SRC).filter((f) => f.endsWith(".json") && (!selected.length || selected.includes(f.replace(/\.json$/, ""))));

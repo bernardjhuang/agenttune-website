@@ -5,7 +5,7 @@ Guide · OpenAI ChatGPT
 
 # ChatGPT personality settings: presets, warmth controls, and custom instructions.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).
 
@@ -13,12 +13,12 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 ChatGPT stacks three account-wide personalization controls alongside workspace-specific Projects and Custom GPTs:
 
-| Layer | Where to find it | Limit &amp; scope | Best controlled here |
+| Layer | Where to find it | Limit & scope | Best controlled here |
 | --- | --- | --- | --- |
-| Base style &amp; tone presets | Settings → Personalization → Base style and tone | One global preset per account | Broad voice flavor (Efficient, Candid, Friendly, Professional, Cynic, Robot) |
-| Characteristic controls | Settings → Personalization → Characteristics (Warm, Enthusiastic, Headers &amp; Lists, Emoji) | More / Default / Less toggles | Dialing warmth, excitement, markdown headers, and emoji up or down |
-| Custom instructions (Box 1 &amp; Box 2) | Settings → Personalization → Custom instructions | 1,500 chars per box · new chats | Checkable rules: answer-first order, pushback, and no trailing questions |
-| ChatGPT Projects &amp; Custom GPTs | Project sidebar / Explore GPTs → Configure | Up to 8,000 chars · scoped to project/GPT | Domain workflows, repo rules, and multi-file rubrics ([8,000-char guide →](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)) |
+| Base style & tone presets | Settings → Personalization → Base style and tone | One global preset per account | Broad voice flavor (Efficient, Candid, Friendly, Professional, Cynic, Robot) |
+| Characteristic controls | Settings → Personalization → Characteristics (Warm, Enthusiastic, Headers & Lists, Emoji) | More / Default / Less toggles | Dialing warmth, excitement, markdown headers, and emoji up or down |
+| Custom instructions (Box 1 & Box 2) | Settings → Personalization → Custom instructions | 1,500 chars per box · new chats | Checkable rules: answer-first order, pushback, and no trailing questions |
+| ChatGPT Projects & Custom GPTs | Project sidebar / Explore GPTs → Configure | Up to 8,000 chars · scoped to project/GPT | Domain workflows, repo rules, and multi-file rubrics ([8,000-char guide →](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)) |
 
 Paste this starter block into Box 2 (**How would you like ChatGPT to respond?** — under 500 characters):
 

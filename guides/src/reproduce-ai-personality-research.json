@@ -2,13 +2,13 @@
   "slug": "reproduce-ai-personality-research",
   "route": "/guides/reproduce-ai-personality-research",
   "published": "2026-09-25",
-  "updated": "2026-11-17",
-  "title": "Reproduce AgentTune's 2,000-Session AI Personality Research",
-  "description": "Download frozen responses, questionnaires and scoring code. Reproduce all five instruments, preserve tied results and check the unit of analysis.",
+  "updated": "2026-11-26",
+  "title": "Reproduce AgentTune's 28 AI Psychology Studies & 10,000-Sheet Datasets",
+  "description": "Download frozen responses, questionnaires, and zero-dependency Node/Python scripts to reproduce all 10,000 Nov 2026 sheets, Sept 2026 cohorts, and Wave 3 PCA.",
   "pill": "Developer guide · reproducibility",
   "h1": "How to reproduce AgentTune’s AI self-report research",
-  "lede": "You can recompute every September 2026 score on your own machine with Node.js—no API key, npm install, or model subscription required. Here are the five frozen files, the two scoring commands, and how to verify the output.",
-  "answer": "Download the five frozen files into one folder, run 'node september-2026-score.cjs' and 'node content-analysis.cjs', and compare the JSON output with our published summaries. This reproduces all 2,003 scored questionnaire records locally with zero model calls.",
+  "lede": "You can recompute every November 2026 (10,000-sheet OpenRouter baseline + Wave 3 PCA, MTMM, Shannon entropy, longitudinal 2023–2026, and reasoning traces) and September 2026 (2,003-sheet) score on your own machine with Node.js and Python—no API key or npm install required for the frozen datasets.",
+  "answer": "Download the frozen JSON/CSV files from /research/data/, run 'node september-2026-score.cjs' and 'node content-analysis.cjs' for the September 2,003-record cohort, or run 'python3 tools/analyze-psychometric-forensics.py' in the repo to deterministically recompute the November 2026 10,000-sheet Big One PCA (63.58% PC1), Campbell-Fiske MTMM matrix, and Shannon entropy (0.054 to 1.499 bits) at $0.00 API cost.",
   "sections": [
     {
       "h2": "September 26 provenance correction",
@@ -35,20 +35,30 @@
       "html": "<p>When citing or extending these results, state the model cohort, instrument, sample size (fresh sessions vs simulated draws), and tie-breaking rule. Saying “100 of 100 runs scored Secure on the ECR-R scale” is an exact, reproducible statement; saying “this model forms secure human attachments” is not.</p>"
     },
     {
-      "h2": "Design an extension that can answer a new question",
-      "html": "<p>If you run new models through the five tests, freeze your prompt and scoring code first, log exact model IDs and sampling parameters, and publish all raw item vectors. To test whether personality instructions improve real task replies, use our <a href=\"/research/does-personality-tuning-change-ai-answers\">180-reply prompt comparison kit</a>.</p>"
+      "h2": "Reproduce the November 2026 10,000-sheet & Wave 3 forensics studies ($0.00 API cost)",
+      "html": "<p>Our November 2026 Wave 1–3 archive publishes every raw response vector, orthogonal 3-family blind judge transcript, and deterministic forensics output under <code>/research/data/</code>:</p><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Wave 1–3 Dataset / Study</th><th scope=\"col\">Sample</th><th scope=\"col\">Primary Frozen JSON / CSV</th></tr></thead><tbody><tr><th scope=\"row\">20-Model Psychometric Baseline</th><td>10,000 sheets (20 &times; 5 &times; 100)</td><td><a href=\"/research/data/november-2026-openrouter-responses.json\">responses.json</a> · <a href=\"/research/data/november-2026-openrouter-summary.csv\">summary.csv</a></td></tr><tr><th scope=\"row\">Wave 3: AI &ldquo;Big One&rdquo; PCA &amp; MTMM</th><td>10,000 sheets ($0 Jacobi PCA)</td><td><a href=\"/research/data/november-2026-factor-collapse-mtmm.json\">factor-collapse-mtmm.json</a> · <a href=\"/research/data/november-2026-factor-collapse-mtmm.csv\">50-item CSV</a></td></tr><tr><th scope=\"row\">Wave 3: Persona Entropy &amp; BAI</th><td>10,000 sheets ($0 Shannon bits)</td><td><a href=\"/research/data/november-2026-persona-entropy-acquiescence.json\">entropy.json</a> · <a href=\"/research/data/november-2026-persona-entropy-acquiescence.csv\">entropy.csv</a></td></tr><tr><th scope=\"row\">Wave 3: Historical Evolution (2023–2026)</th><td>32 checkpoints · 3-judge &alpha;=0.86</td><td><a href=\"/research/data/november-2026-historical-evolution-results.json\">evolution.json</a> · <a href=\"/research/data/november-2026-historical-evolution-summary.csv\">summary.csv</a></td></tr><tr><th scope=\"row\">Wave 3: Reasoning Phase Transition</th><td>216 cells · 138 CoT traces</td><td><a href=\"/research/data/november-2026-reasoning-phase-transition-results.json\">reasoning.json</a> · <a href=\"/research/data/november-2026-reasoning-phase-transition-summary.csv\">summary.csv</a></td></tr><tr><th scope=\"row\">Unified Agent Decision Briefs</th><td>11 studies (YAML/JSON rules)</td><td><a href=\"/research/data/november-2026-agent-research-briefs.json\">november-2026-agent-research-briefs.json</a></td></tr></tbody></table></div><p>To recompute all Jacobi eigenvalues (<code>PC1 = 63.58%</code>), Campbell–Fiske MTMM correlations, Shannon entropy bits, and 50-item embodiment statistics locally with zero API calls, run <code>python3 tools/analyze-psychometric-forensics.py</code> in the repository. To test whether personality instructions improve real task replies, see our <a href=\"/research/does-personality-tuning-change-ai-answers\">540-reply behavioral study &amp; 20-task comparison kit</a>.</p>"
     }
   ],
   "related": [
     {
+      "kicker": "Wave 3 Forensics",
+      "label": "The AI Big One: 63.6% Factor Collapse & MTMM Audit",
+      "href": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "kicker": "Wave 3 Longitudinal",
+      "label": "Historical Evolution of AI Personalities (2023–2026)",
+      "href": "/research/historical-evolution-of-ai-personalities-2023-2026"
+    },
+    {
       "kicker": "Continue reading",
-      "label": "Read the original study",
+      "label": "Read the September five-model study",
       "href": "/research/ai-personality-five-models-2026"
     },
     {
       "kicker": "Continue reading",
-      "label": "Interpret repeated answers",
-      "href": "/research/ai-personality-repeatability"
+      "label": "Crystalline vs. Fluid AI Minds: 27.7× Entropy Spread",
+      "href": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
     }
   ],
   "sources": [

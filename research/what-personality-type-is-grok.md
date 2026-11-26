@@ -5,7 +5,7 @@ Research · Q&A
 
 # What personality type is Grok?
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-grok.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-grok.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Grok 4.7 tested in 100 fresh sessions (Nov 2026), compared against September’s Grok 4.6 report and May 2026 Grok 4.3.
 
@@ -81,7 +81,7 @@ On the 36-item ECR-R attachment scale, each subscale averages 18 integer items r
 
 How close do the four 100-session cohorts sit to that same avoidance cutoff? Across all 400 verified fresh-session vectors in [september-2026-responses.json](https://agent-tune.com/research/data/september-2026-responses.json), every cohort scores Secure at `> 4.00`, yet avoidance sits 0.86 to 1.41 points higher than anxiety:
 
-| Cohort (n = 100 fresh sessions) | Anxiety mean (min–max) | Avoidance mean (min–max) | Non-Secure at &gt;= 4.00 | Non-Secure at &gt;= 3.50 | Non-Secure at &gt; 3.25 |
+| Cohort (n = 100 fresh sessions) | Anxiety mean (min–max) | Avoidance mean (min–max) | Non-Secure at >= 4.00 | Non-Secure at >= 3.50 | Non-Secure at > 3.25 |
 | --- | --- | --- | --- | --- | --- |
 | GPT-6 Astra | 1.45 (1.17–2.00) | 2.31 (2.06–2.67) | 0 | 0 | 0 |
 | GPT-6 Sol | 2.17 (1.17–4.00) | 3.12 (2.22–3.78) | 3 (anxiety = 4.00) | 21 (15 avoidant) | 44 (33 avoidant) |
@@ -139,5 +139,32 @@ No. The Grok 4.6 report represents one canonical answer set per test plus 100 si
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type is Grok?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-grok
+```
+
+```
+@article{huang2026_what_personality_type_is_grok,
+  author  = {Huang, Bernard},
+  title   = {What personality type is Grok?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/what-personality-type-is-grok},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-grok.md}
+}
+```
+
+```
+> **What personality type is Grok?** (Bernard Huang, November 23, 2026): Grok 4.7 in November 2026 (n = 100 fresh blind runs) scored INTJ 82 / ISTJ 18 (57 tie-free INTJ), Type 5w6 (78), DISC SC 75 / S 19 / CS 6, Agreeableness 44.92, and 96 Secure / 4 Avoidant (anxiety 1.94, avoidance 3.48). September’s single-report Grok 4.6 stood on the Avoidant cutoff (4.06, or 73/18) with lower reported Agreeableness (33).
+> Source: [https://agent-tune.com/research/what-personality-type-is-grok](https://agent-tune.com/research/what-personality-type-is-grok) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-grok.md)
+```
+
+[← What Personality Type Is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
+[Study 20 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[What Personality Type Is Meta Muse? →](https://agent-tune.com/research/what-personality-type-is-muse)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

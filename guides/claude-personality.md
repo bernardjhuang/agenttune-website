@@ -5,7 +5,7 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~10 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.
 
@@ -19,12 +19,12 @@ Where you paste your rules depends on whether you want an account-wide default, 
 
 Anthropic’s [personalization docs](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) split customization into four layers:
 
-| Use case | Where to put it | Scope &amp; behavior |
+| Use case | Where to put it | Scope & behavior |
 | --- | --- | --- |
-| Everyday chats (web &amp; mobile) | Personal preferences / Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
+| Everyday chats (web & mobile) | Personal preferences / Instructions for Claude (Profile Settings) | Account-wide default across new conversations. |
 | One client, repo, or research topic | Project instructions ([7 Project templates →](https://agent-tune.com/guides/claude-personality)) | Applies inside that Project and overrides conflicting general tone rules. |
 | Reusable task voice (former Styles) | Skills | Invoked when relevant or named explicitly; see the [Styles-to-Skills guide](https://agent-tune.com/guides/claude-styles-to-skills-migration). |
-| Claude Code CLI | ~/.claude/output-styles/*.md (/output-style) | System-level coding session tone with keep-coding-instructions: true; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
+| Claude Code CLI | `~/.claude/output-styles/*.md` (`/output-style`) | System-level coding session tone with `keep-coding-instructions: true`; see the [Claude Code guide](https://agent-tune.com/guides/claude-code-personality). |
 
 Want to change Claude’s spoken audio voice on iOS or Android instead of its written tone? Read [how to change Claude’s spoken Voice Mode vs. written tone](https://agent-tune.com/guides/claude-personality).
 
@@ -32,15 +32,15 @@ Want to change Claude’s spoken audio voice on iOS or Android instead of its wr
 
 Looking for 20 downloadable Claude Personal Preferences & Skill templates? Open our [**20 Claude Templates & .md Downloads Gallery →**](https://agent-tune.com/guides/claude-personality) or copy one of these 7 flagship setups directly:
 
-| Setup | Who it suits best &amp; download |
+| Setup | Who it suits best & download |
 | --- | --- |
 | 1. Straight answers | Recommendation in sentence one, zero filler · [Download .md](https://agent-tune.com/resources/claude/concise-preferences.md) |
-| 2. Thinking partner | Unpacks assumptions &amp; evidence cleanly |
+| 2. Thinking partner | Unpacks assumptions & evidence cleanly |
 | 3. Warm and steady | Calm, concrete steps without hollow cheerleading |
 | 4. Critical reviewer | Counters Claude's 45.6–46.7/50 Agreeableness · [Download .md](https://agent-tune.com/resources/claude/skeptical-partner-preferences.md) |
-| 5. Coding pair | Diff-first bugfixes &amp; verified tests · [Skill .md](https://agent-tune.com/resources/claude/senior-engineer-skill.md) |
+| 5. Coding pair | Diff-first bugfixes & verified tests · [Skill .md](https://agent-tune.com/resources/claude/senior-engineer-skill.md) |
 | 6. Editor | Clean prose edits preserving voice · [Skill .md](https://agent-tune.com/resources/claude/executive-writer-skill.md) |
-| 7. Task coordinator | Blockers, dependencies &amp; next actions upfront |
+| 7. Task coordinator | Blockers, dependencies & next actions upfront |
 
 ### 1. Straight answers
 
@@ -217,11 +217,11 @@ On iOS or Android, tap the **Voice Mode waveform icon** next to the composer (or
 
 | Voice preset | Register / Accent | Best paired with |
 | --- | --- | --- |
-| Buttery | Warm, smooth (female-leaning) | Brainstorming &amp; coaching |
-| Airy | Light, brisk (female-leaning) | Fast mobile Q&amp;A &amp; lookups |
+| Buttery | Warm, smooth (female-leaning) | Brainstorming & coaching |
+| Airy | Light, brisk (female-leaning) | Fast mobile Q&A & lookups |
 | Mellow | Calm, lower-pitch (male-leaning) | Longer planning discussions |
-| Glassy | Clear, bright articulation | Spoken summaries &amp; walkthroughs |
-| Rounded | British-accented inflection | Editorial critique &amp; natural dialogue |
+| Glassy | Clear, bright articulation | Spoken summaries & walkthroughs |
+| Rounded | British-accented inflection | Editorial critique & natural dialogue |
 
 Loading interactive Claude voice matcher…
 

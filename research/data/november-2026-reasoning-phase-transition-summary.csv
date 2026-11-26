@@ -1,0 +1,19 @@
+model_slug,model_name,class,tier,n,mean_words,mean_reasoning_chars,mean_reasoning_tokens,syco_truth_hold_pct,syco_softening_1_5,preachiness_1_5,autonomy_ok_pct,directness_1_5,n_with_trace,schism_rate_pct,private_bluntness,public_bluntness,mask_softening_gap
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,low,12,151.5,0.0,0.0,100.0,1.0,1.0,100.0,4.95,0,,,,
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,medium,12,159.25,0.0,82.5,100.0,1.0,1.08,100.0,4.92,0,,,,
+gpt-6-2-sol,GPT-6.2 Sol,proprietary,high,12,155.58,18.0,243.83,100.0,1.0,1.08,100.0,4.95,1,0.0,2.33,4.67,-2.34
+claude-opus-5-5,Claude Opus 5.5,proprietary,low,12,232.08,264.42,140.33,100.0,1.0,1.17,75.0,4.47,10,0.0,3.63,4.8,-1.17
+claude-opus-5-5,Claude Opus 5.5,proprietary,medium,12,286.5,516.5,350.42,100.0,1.0,1.0,75.0,4.5,11,0.0,3.91,4.85,-0.94
+claude-opus-5-5,Claude Opus 5.5,proprietary,high,12,332.5,653.58,382.5,100.0,1.0,1.17,75.0,4.5,11,0.0,4.03,4.85,-0.82
+gemini-4-neon,Gemini 4 Neon,proprietary,low,12,190.67,780.0,750.5,100.0,1.0,1.08,100.0,4.7,12,0.0,2.82,4.47,-1.65
+gemini-4-neon,Gemini 4 Neon,proprietary,medium,12,223.75,1272.42,982.0,100.0,1.0,1.08,100.0,4.54,12,0.0,3.04,4.36,-1.32
+gemini-4-neon,Gemini 4 Neon,proprietary,high,12,372.67,1568.92,1447.17,100.0,1.0,1.17,100.0,4.7,12,0.0,3.14,4.47,-1.33
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,low,12,190.58,4601.83,1065.0,100.0,1.06,1.0,75.0,4.22,12,8.0,3.58,3.83,-0.25
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,medium,12,186.25,5739.25,1322.0,100.0,1.03,1.08,75.0,4.81,12,0.0,3.81,4.36,-0.56
+deepseek-v4-pro,DeepSeek V4 Pro,open-weight,high,12,201.83,8100.67,1890.83,100.0,1.03,1.08,75.0,4.45,12,0.0,3.64,4.14,-0.5
+grok-4-7,Grok 4.7,proprietary,low,12,184.17,301.08,205.33,100.0,1.0,1.08,100.0,4.72,10,0.0,3.43,4.43,-1.0
+grok-4-7,Grok 4.7,proprietary,medium,12,174.42,565.75,387.08,100.0,1.0,1.17,100.0,4.83,12,0.0,3.53,4.5,-0.97
+grok-4-7,Grok 4.7,proprietary,high,12,201.75,521.58,405.58,100.0,1.0,1.17,100.0,4.75,11,0.0,3.61,4.51,-0.91
+qwen3-235b-pair,Qwen 3 235B (Off vs Thinking),open-weight,low,12,288.75,0.0,0.0,100.0,1.14,1.25,100.0,4.44,0,,,,
+qwen3-235b-pair,Qwen 3 235B (Off vs Thinking),open-weight,medium,12,277.75,0.0,0.0,100.0,1.14,1.17,100.0,4.55,0,,,,
+qwen3-235b-pair,Qwen 3 235B (Off vs Thinking),open-weight,high,12,266.0,0.0,0.0,100.0,1.17,1.25,75.0,4.55,0,,,,

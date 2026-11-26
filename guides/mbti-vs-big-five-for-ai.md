@@ -5,7 +5,7 @@ Guide · Frameworks
 
 # MBTI vs Big Five for AI: crisp switches or calibrated dials.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 
@@ -21,9 +21,9 @@ Prompting an AI raises a practical engineering question: do you want a bundled f
 
 ## What the research can and cannot establish.
 
-These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
+These are empirical analyses of model-generated self-descriptions, not clinical personality diagnoses. Furthermore, while humans span five orthogonal Big Five factors, our [10,000-sheet AI "Big One" Factor Collapse & MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) proves that across 20 LLMs, **63.58% of Big Five variance collapses onto a single general RLHF alignment axis** (+O/+C/+A/−N) and cross-instrument discriminant validity breaks (e.g., MBTI Thinking–Feeling correlates `r = +0.25` with Agreeableness and `+0.68` with Openness). See our [methodology and limitations](https://agent-tune.com/research#methodology).
 
-Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
+Use a type or trait as a starting hypothesis for your preferences. In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [400-reply prompt syntax benchmark](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot), checkable behavioral rules drive the actual accuracy and brevity gains rather than bare four-letter labels. Compare outputs on your own tasks and retain only rules that help.
 
 ## Types write instructions. Traits tune them.
 
@@ -77,6 +77,8 @@ DISC tunes workplace pace and action bias (Dominance, Influence, Steadiness, Con
 
 ## Keep going.
 
+- [Forensics Audit: The AI Big One: 63.6% Factor Collapse & Campbell–Fiske MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
+- [Entropy Forensics: Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
 - [Tests: MBTI test (OEJTS) — free, ~5 min](https://agent-tune.com/tests/mbti)
 - [Tests: Big Five test (IPIP-50) — free, ~5 min](https://agent-tune.com/tests/big-five)
 - [Research: Opus 4.8 MBTI simulation: methods and limits](https://agent-tune.com/research/i-took-the-mbti-100-times)

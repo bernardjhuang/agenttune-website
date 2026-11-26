@@ -5,18 +5,18 @@ Guide · xAI Grok
 
 # Grok’s xAI default personality — and how to change it on X and grok.com.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
 
 ## Built-in Grok modes vs. custom instructions on X & grok.com.
 
-| Surface / Control | Where to find it | Limit &amp; behavior |
+| Surface / Control | Where to find it | Limit & behavior |
 | --- | --- | --- |
-| Ordinary chat on grok.com or X | Settings → Customize Grok (Custom Instructions) | Account-wide instructions (~4,000 chars) applied to new Grok threads. |
-| Built-in Grok persona modes / Voices | Model / Mode selector in Grok chat &amp; Voice Mode | One-tap style presets (Concise, Socratic, Unfiltered/Fun, or Voice personas) that set broad tone. |
+| Ordinary chat on `grok.com` or X | Settings → Customize Grok (Custom Instructions) | Account-wide instructions (~4,000 chars) applied to new Grok threads. |
+| Built-in Grok persona modes / Voices | Model / Mode selector in Grok chat & Voice Mode | One-tap style presets (Concise, Socratic, Unfiltered/Fun, or Voice personas) that set broad tone. |
 | Custom Grok Bot | Bot menu → Edit Profile → Description ([6 Grok Bot profiles →](https://agent-tune.com/guides/grokbot-personality)) | Persistent character + boundaries for a standalone cloud-teammate Bot; survives Bot duplication. |
-| xAI API | system message on each request | Deterministic per-call control where model ID and temperature are pinned. |
+| xAI API | `system` message on each request | Deterministic per-call control where model ID and temperature are pinned. |
 
 Paste this starter block into **Settings → Customize Grok**, or pick any of the 43 profiles in the [tuning library](https://agent-tune.com/library/):
 
@@ -96,13 +96,13 @@ Want to package your rules into a standalone cloud bot? Read our [Grok Bot perso
 
 Inside Grok Voice Mode on iOS, Android, and `grok.com`, choose from five core voices alongside Expressive Mode. Pair your voice choice with concise rules in **Settings → Customize Grok** so spoken answers stay brief and grounded:
 
-| Voice | Register &amp; Accent | Best use case |
+| Voice | Register & Accent | Best use case |
 | --- | --- | --- |
-| Ara | Female · US · Warm | Everyday Q&amp;A and casual brainstorming |
+| Ara | Female · US · Warm | Everyday Q&A and casual brainstorming |
 | Rex | Male · US · Confident, direct | Decision triage and direct critique |
 | Sal | Male · US · Conversational | Balanced back-and-forth planning |
 | Eve | Female · British · Energetic | Creative exploration and lively dialogue |
-| Leo | Male · British · Structured | Briefings, news synthesis &amp; review |
+| Leo | Male · British · Structured | Briefings, news synthesis & review |
 
 Loading interactive Grok voice matcher…
 

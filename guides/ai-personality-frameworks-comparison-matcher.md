@@ -5,7 +5,7 @@ Interactive Matcher · All 5 Systems
 
 # Which personality system should you use to tune your AI?
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use DISC or MBTI for faster bottom-line structure; use Big Five (OCEAN) to adjust a single trait (like High Openness or Low Extraversion) without adopting a full persona; and use Enneagram or Attachment to control how candidly the AI pushes back or cushions critique.
 
@@ -55,19 +55,19 @@ Ordered checklist output without changing warmth.
 
 ## All 5 personality frameworks compared side by side.
 
-| System | What it captures best | Template count | Fastest test &amp; instrument | Best use case &amp; deep dive |
+| System | What it captures best | Template count | Fastest test & instrument | Best use case & deep dive |
 | --- | --- | --- | --- | --- |
 | DISC | Directness, urgency, people vs. task focus | 4 types (D, I, S, C) | [16 items (~3 min, ODAT)](https://agent-tune.com/tests/disc) | Fastest workplace/decision tuning ([DISC guide →](https://agent-tune.com/guides/disc-ai-prompts)) |
-| Big Five (OCEAN) | Single continuous communication traits without stereotyping | 10 extreme bands (High/Low &times; 5) | [50 items (~6 min, IPIP-50)](https://agent-tune.com/tests/big-five) | Surgical adjustments like Openness or Extraversion ([OCEAN guide →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
-| MBTI (OEJTS) | Big-picture vs concrete steps, blunt logic vs human impact | 16 types | [32 pairs (~5 min, OEJTS 1.2)](https://agent-tune.com/tests/mbti) | Mental model framing &amp; explanation style ([MBTI vs Big Five →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
-| Enneagram | Core defensive triggers, critique directness, motivational framing | 9 types (1–9) | [36 items (~5 min, OEPS)](https://agent-tune.com/tests/enneagram) | Anti-sycophancy pushback &amp; coaching tone ([Enneagram guide →](https://agent-tune.com/guides/enneagram-ai-prompts)) |
+| Big Five (OCEAN) | Single continuous communication traits without stereotyping | 10 extreme bands (High/Low × 5) | [50 items (~6 min, IPIP-50)](https://agent-tune.com/tests/big-five) | Surgical adjustments like Openness or Extraversion ([OCEAN guide →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
+| MBTI (OEJTS) | Big-picture vs concrete steps, blunt logic vs human impact | 16 types | [32 pairs (~5 min, OEJTS 1.2)](https://agent-tune.com/tests/mbti) | Mental model framing & explanation style ([MBTI vs Big Five →](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)) |
+| Enneagram | Core defensive triggers, critique directness, motivational framing | 9 types (1–9) | [36 items (~5 min, OEPS)](https://agent-tune.com/tests/enneagram) | Anti-sycophancy pushback & coaching tone ([Enneagram guide →](https://agent-tune.com/guides/enneagram-ai-prompts)) |
 | Attachment | Feedback cushioning, check-in cadence, emotional steadiness | 4 styles (Secure, Anxious, Avoidant, Disorganized) | [36 items (~5 min, ECR-R)](https://agent-tune.com/tests/attachment) | Preventing harsh critique or needy over-apologies ([Attachment guide →](https://agent-tune.com/library/attachment/avoidant)) |
 
-## What our September 2026 benchmark data says about choosing between systems.
+## What our September & November 2026 benchmark data says about choosing between systems.
 
-- **Models share high default Agreeableness and low Dominance:** Across 2,000 fresh September 2026 sessions (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1), Big Five Agreeableness averaged **44.99–47.07 / 50** while DISC Dominance sat at **4.00–5.42 / 20**. That is why default AI replies rarely challenge weak ideas unless your instructions ask them to.
-- **Binary type quizzes have frequent ties:** On OEJTS MBTI, **59 of 400 fresh sessions** tied on at least one axis, and legacy tie-breaking inflated apparent `INTJ` counts from **280/400 (70.0%) to 335/400 (83.8%)**. Our interactive quizzes now keep tied axes open.
-- **Concrete rules do the work, not the label:** In our 60-reply pilot, plain behavioral rules raised answer-first openings from **14/20 to 19/20** and cut hedges from **0.35 to 0.05** per reply. Pick whichever framework helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
+- **Models share high default Agreeableness and collapse 63.6% of variance onto one RLHF axis:** Across our 10,000-sheet November 2026 OpenRouter study and 2,000-sheet September study, proprietary Big Five Agreeableness averaged **43.7–47.1 / 50** while DISC Dominance sat at **4.00–5.58 / 20**—and Principal Component Analysis shows [63.58% of Big Five variance collapses onto a single "Big One" alignment factor](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) while Campbell–Fiske MTMM cross-test correlations diverge from human norms.
+- **Binary type quizzes have frequent ties & a 27.7× entropy divide:** On OEJTS MBTI, **59 of 400 September sessions** (and up to 93/100 on Llama 4 Maverick) tied on at least one axis, and per-item Shannon entropy spans **27.7×** from crystalline Claude Fable 5.2 (`0.054 bits`) to fluid DeepSeek V4 Pro (`1.499 bits`; [entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)).
+- **Concrete rules do the work, not the label:** In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and 60-reply pilot, plain behavioral rules lifted DeepSeek V4 Pro correctness **+16.7 pp (78.3% → 95.0%)** and raised answer-first openings from **14/20 to 19/20**. Pick whichever framework helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
 
 > **Chart — Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme):** Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix. Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; DeepSeek V4 Pro: Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7.
 
@@ -113,6 +113,7 @@ No. Bare four-letter labels push models toward caricatures or clichés. Concrete
 
 ## Keep going.
 
+- [Factor Forensics: The AI Big One: 63.6% Factor Collapse & MTMM Validity Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)
 - [Tool: Communication Preferences Builder (no personality test)](https://agent-tune.com/tools/communication-preferences-builder)
 - [Tool: Custom Instructions Generator (all 43 templates)](https://agent-tune.com/tools/custom-instructions-generator)
 - [Comparison: MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)

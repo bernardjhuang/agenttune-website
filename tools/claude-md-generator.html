@@ -38,13 +38,17 @@
   <style>
     .tool-wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px 80px; }
     .tool-grid { display: grid; grid-template-columns: 380px 1fr; gap: 20px; margin-top: 28px; }
-    .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .tool-card { background: transparent; border: 1px solid var(--border); border-top: 1.5px solid var(--ink); border-radius: 3px; padding: 22px; }
     .tool-field { margin-bottom: 18px; }
     .tool-field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
-    .tool-field select { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg, #faf7ef); font-family: inherit; font-size: 15px; }
-    .tool-out { background: #1e1d1a; color: #f5f1e8; border-radius: 16px; padding: 20px; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; min-height: 420px; overflow: auto; }
-    .tool-copy { border: 1px solid var(--ink); background: var(--ink); color: var(--bg, #faf7ef); border-radius: 999px; padding: 11px 18px; font-weight: 600; cursor: pointer; font-size: 14px; }
-    .tool-copy:hover { opacity: 0.88; }
+    .tool-field select { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 2px; background: var(--well, #ece5d8); font-family: inherit; font-size: 15px; }
+    .tool-out { background: var(--well, #ece5d8); color: var(--ink); border: 1px solid var(--border); border-top: 1.5px solid var(--ink); border-radius: 3px; padding: 20px; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; min-height: 420px; overflow: auto; }
+    .tool-copy-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tool-copy { border: 1px solid var(--ink); background: var(--ink); color: var(--bg, #f4efe6); border-radius: 2px; min-height: 44px; padding: 11px 18px; font-family: var(--font-sans); font-weight: 600; cursor: pointer; font-size: 14px; transition: background .15s, border-color .15s, color .15s; }
+    .tool-copy.is-secondary { background: transparent; color: var(--ink); }
+    .tool-copy.is-secondary:hover { background: var(--well); }
+    .tool-copy.is-copied { background: var(--green); border-color: var(--green); color: var(--bg); }
+    .tool-copy:not(.is-secondary):not(.is-copied):hover { background: var(--accent); border-color: var(--accent); color: var(--surface, #f8f4ec); }
     .tool-note { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin-top: 14px; }
     @media (max-width: 860px) { .tool-grid { grid-template-columns: 1fr; } }
   </style>
@@ -85,7 +89,7 @@
           <div class="tool-field"><label for="tests">Testing style</label><select id="tests"><option value="strict">Write/update tests before implementation</option><option value="regression">Regression tests for bugs</option><option value="pragmatic">Targeted tests for risky changes</option></select></div>
           <div class="tool-field"><label for="scope">Diff scope</label><select id="scope"><option value="minimal">Minimal diffs</option><option value="current">Current file only unless asked</option><option value="cleanup">Adjacent cleanup allowed</option></select></div>
           <div class="tool-field"><label for="deps">Dependencies</label><select id="deps"><option value="ask">Ask before adding packages</option><option value="native">Prefer native APIs/existing utilities</option><option value="common">Common packages allowed with rationale</option></select></div>
-          <button class="tool-copy" id="copy" type="button">Copy CLAUDE.md</button>
+          <div class="tool-copy-row"><button class="tool-copy" id="copy" type="button">Copy CLAUDE.md</button><button class="tool-copy is-secondary" id="download" type="button">Download CLAUDE.md</button></div>
           <p class="tool-note">Merge this into <code>CLAUDE.md</code> in your repo root alongside your build and test commands. Keep what helps and <a href="/guides/claude-code-personality">edit it like code</a>.</p>
         </section>
         <section aria-label="Generated output"><pre class="tool-out" id="out" tabindex="0"></pre><p id="copy-status" role="status" aria-live="polite"></p></section>
@@ -128,7 +132,10 @@ function md(){
 }
 function render(){document.getElementById('out').textContent=md();}
 document.querySelectorAll('select').forEach(s=>s.addEventListener('change',render));
-document.getElementById('copy').addEventListener('click',async()=>{try {await navigator.clipboard.writeText(md()); document.getElementById('copy-status').textContent='Copied';} catch (_) {document.getElementById('copy-status').textContent='Clipboard unavailable. Select and copy the text in the preview.'; document.getElementById('out').focus();}});render();
+const copyBtn=document.getElementById('copy'),statusEl=document.getElementById('copy-status');
+copyBtn.addEventListener('click',async()=>{try {await navigator.clipboard.writeText(md()); statusEl.textContent='Copied CLAUDE.md to clipboard.'; if(window.ATFlashCopied)window.ATFlashCopied(copyBtn);} catch (_) {statusEl.textContent='Clipboard unavailable. Select and copy the text in the preview.'; document.getElementById('out').focus();}});
+document.getElementById('download').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([md()+'\n'],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='CLAUDE.md';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);statusEl.textContent='Downloaded CLAUDE.md. Merge it into your repo root next to your build and test commands.';});
+render();
 </script>
 </body>
 </html>

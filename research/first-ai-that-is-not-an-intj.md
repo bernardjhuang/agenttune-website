@@ -5,7 +5,7 @@ Research · essay
 
 # Is every AI an INTJ?
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Different labels do not establish a change in personality.
 
@@ -79,7 +79,7 @@ Our archive cannot name a 'first.' Muse Spark 1.3 reports 80 ISTJ labels in 100 
 
 ### Did AI personalities diverge between May and September?
 
-We cannot isolate a time trend because model versions, prompts, and session rules changed at the same time.
+Comparing May and September directly could not isolate a time trend because prompts and session rules changed. To solve that confound, our November 2026 longitudinal study tested 32 pinned checkpoints (May 2023 to Nov 2026) under one identical randomized protocol—finding that cross-lab Big Five divergence actually halved (PCI 4.017 in 2024 to 1.973 in 2026) while 'As an AI' test refusals dropped 11× (60.0% to 5.5%).
 
 ### Does an ISTJ score predict how an assistant will respond?
 
@@ -95,10 +95,38 @@ No. Predicting assistant behavior requires testing real task replies rather than
 
 ## Keep going.
 
+- [Longitudinal study: Historical Evolution of AI Personalities (2023–2026): 32 Checkpoints](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
 - [New resource: Are AI models really INTJ? The tie-breaking effect](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
 - [Tests: Find your own type](https://agent-tune.com/tests/)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Is every AI an INTJ?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/first-ai-that-is-not-an-intj
+```
+
+```
+@article{huang2026_first_ai_that_is_not_an_intj,
+  author  = {Huang, Bernard},
+  title   = {Is every AI an INTJ?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-17},
+  url     = {https://agent-tune.com/research/first-ai-that-is-not-an-intj},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/first-ai-that-is-not-an-intj.md}
+}
+```
+
+```
+> **Is every AI an INTJ?** (Bernard Huang, November 17, 2026): Not every AI scores INTJ. Muse Spark 1.3 reports 80 ISTJ labels in 100 runs, and GPT-6 Astra has 45 fully resolved ISTJ runs versus 19 fully resolved INTJ runs when ties are left open. Because the May and September studies used different models, prompts, and session rules, their label counts cannot isolate a trend over time.
+> Source: [https://agent-tune.com/research/first-ai-that-is-not-an-intj](https://agent-tune.com/research/first-ai-that-is-not-an-intj) · [Markdown mirror](https://agent-tune.com/research/first-ai-that-is-not-an-intj.md)
+```
+
+[← Claude Opus 5.5 vs. Fable 5.1 (170 Items)](https://agent-tune.com/research/opus-vs-fable-question-level)
+[Study 24 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[The Tie-Breaking Effect in AI MBTI →](https://agent-tune.com/research/ai-mbti-tie-breaking)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

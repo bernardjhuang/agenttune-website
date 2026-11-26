@@ -5,7 +5,7 @@ Guide · Tests
 
 # The five open personality tests, explained.
 
-By Bernard Huang · Updated September 26, 2026 · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated September 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** AgentTune provides five browser-based questionnaire adaptations: OEJTS (32 items, MBTI-style), a 36-item OEPS adaptation (Enneagram), ODAT (16 items, DISC), IPIP-50 (50 items, Big Five) and ECR-R (36 items, attachment). All five score locally in your browser and preserve ties explicitly. Original AgentTune code and templates are MIT licensed; questionnaire items remain subject to their upstream source terms.
 
@@ -17,7 +17,7 @@ By Bernard Huang · Updated September 26, 2026 · [Markdown (.md)](https://agent
 | [OEPS (36-item)](https://agent-tune.com/tests/enneagram) | Enneagram type | 36 · 1 to 5 agreement | Type 1 to 9 (4–20 each), all tied leaders, and adjacent wing | 36-item adaptation of the Open Enneagram of Personality Scales (full OEPS has 54 items) |
 | [ODAT](https://agent-tune.com/tests/disc) | DISC workplace style | 16 · 1 to 5 agreement | D, I, S or C (4–20 each), tied leaders, and 2-point blends | Adapted from the Open DISC Assessment Test (Open Psychometrics) |
 | [IPIP-50](https://agent-tune.com/tests/big-five) | Big Five trait dimensions | 50 · 1 to 5 accuracy | Five raw totals (10–50) and item means (1–5) | International Personality Item Pool, Goldberg’s 50-item markers (public domain) |
-| [ECR-R](https://agent-tune.com/tests/attachment) | Adult attachment style | 36 · 1 to 7 agreement | Anxiety and avoidance means (1–7) plus quadrant label | Experiences in Close Relationships-Revised (Fraley, Waller &amp; Brennan, 2000) |
+| [ECR-R](https://agent-tune.com/tests/attachment) | Adult attachment style | 36 · 1 to 7 agreement | Anxiety and avoidance means (1–7) plus quadrant label | Experiences in Close Relationships-Revised (Fraley, Waller & Brennan, 2000) |
 
 All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at `/tests/<test>.md` and a shared deterministic scorer at [/resources/scoring/score.js](https://agent-tune.com/resources/scoring/score.js). Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) before redistributing third-party item text.
 
@@ -25,7 +25,7 @@ All five questionnaires run client-side in your browser and never upload your re
 
 **What it measures.** Four preference axes: Extraversion vs. Introversion (E/I), Sensing vs. Intuition (S/N), Thinking vs. Feeling (T/F), and Judging vs. Perceiving (J/P). Each of the 32 items places two statements at opposite ends of a 1-to-5 scale, with eight items per axis.
 
-| Axis | Poles | Items | Sum &amp; exact tie point |
+| Axis | Poles | Items | Sum & exact tie point |
 | --- | --- | --- | --- |
 | E / I | Extraversion vs Introversion | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
 | S / N | Sensing vs Intuition | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |

@@ -5,7 +5,7 @@ Reference · Precedence & Scope
 
 # Project vs account instructions: what overrides what in AI.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
 
@@ -13,11 +13,11 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 | Platform | Lowest priority (broadest scope) | Middle priority (workspace scope) | Highest priority (wins conflicts) |
 | --- | --- | --- | --- |
-| ChatGPT (web, desktop, mobile) | Account Memory &amp; global Custom Instructions | Project Instructions (overrides global Custom Instructions inside that project) | Current conversation prompt |
-| OpenAI Codex (Astra &amp; Sol) | Personal ~/.codex/AGENTS.md | Repo root AGENTS.md / AGENTS.override.md | Subdirectory AGENTS.md closest to working directory, then task prompt |
-| Claude (web, desktop, mobile) | Settings → General → Personal Preferences | Claude Project Instructions &amp; invoked Skills | Current conversation prompt |
-| Claude Code (CLI) | User ~/.claude/CLAUDE.md &amp; active /output-style | Repository CLAUDE.md | Subdirectory CLAUDE.md &amp; current CLI command |
-| Meta Muse | Identity.md &amp; background facts in Memory.md | Communication rules in Soul.md | Explicit instructions in the current chat turn |
+| ChatGPT (web, desktop, mobile) | Account Memory & global Custom Instructions | Project Instructions (overrides global Custom Instructions inside that project) | Current conversation prompt |
+| OpenAI Codex (Astra & Sol) | Personal `~/.codex/AGENTS.md` | Repo root `AGENTS.md` / `AGENTS.override.md` | Subdirectory `AGENTS.md` closest to working directory, then task prompt |
+| Claude (web, desktop, mobile) | Settings → General → Personal Preferences | Claude Project Instructions & invoked Skills | Current conversation prompt |
+| Claude Code (CLI) | User `~/.claude/CLAUDE.md` & active `/output-style` | Repository `CLAUDE.md` | Subdirectory `CLAUDE.md` & current CLI command |
+| Meta Muse | `Identity.md` & background facts in `Memory.md` | Communication rules in `Soul.md` | Explicit instructions in the current chat turn |
 
 ## 1. ChatGPT: Project Instructions override global Custom Instructions.
 
@@ -60,7 +60,7 @@ When an assistant ignores rules you saved, one of five setup conflicts is almost
 | --- | --- | --- |
 | 1. Internal contradiction | Model swings between 1-line stubs and long essays | Paste into [Instruction Checker](https://agent-tune.com/tools/instruction-checker) to remove clashing length/format rules |
 | 2. Stale Saved Memory | Old stacks or tone notes resurface in new chats | Prune in [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer) |
-| 3. Precedence shadowing | Works globally, ignored in Projects/subfolders | Check Project instructions or nested AGENTS.override.md |
+| 3. Precedence shadowing | Works globally, ignored in Projects/subfolders | Check Project instructions or nested `AGENTS.override.md` |
 | 4. Silent truncation | Top rules hold; bottom rules silently drop | Stay well under caps (ChatGPT 1,500 chars; Codex 32 KiB combined) |
 | 5. Untestable adjectives | “Be concise and brilliant” reverts to default prose | Swap adjectives for checkable open/pushback behaviors |
 

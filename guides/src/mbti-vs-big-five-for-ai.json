@@ -14,7 +14,7 @@
     },
     {
       "h2": "What the research can and cannot establish.",
-      "html": "<p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>"
+      "html": "<p>These are empirical analyses of model-generated self-descriptions, not clinical personality diagnoses. Furthermore, while humans span five orthogonal Big Five factors, our <a href=\"/research/ai-big-one-factor-collapse-mtmm-audit\">10,000-sheet AI \"Big One\" Factor Collapse &amp; MTMM Audit</a> proves that across 20 LLMs, <strong>63.58% of Big Five variance collapses onto a single general RLHF alignment axis</strong> (+O/+C/+A/−N) and cross-instrument discriminant validity breaks (e.g., MBTI Thinking–Feeling correlates <code>r = +0.25</code> with Agreeableness and <code>+0.68</code> with Openness). See our <a href=\"/research#methodology\">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. In our <a href=\"/research/does-personality-tuning-change-ai-answers\">540-reply behavioral study</a> and <a href=\"/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot\">400-reply prompt syntax benchmark</a>, checkable behavioral rules drive the actual accuracy and brevity gains rather than bare four-letter labels. Compare outputs on your own tasks and retain only rules that help.</p>"
     },
     {
       "h2": "Types write instructions. Traits tune them.",
@@ -53,6 +53,16 @@
     }
   ],
   "related": [
+    {
+      "kicker": "Forensics Audit",
+      "label": "The AI Big One: 63.6% Factor Collapse & Campbell–Fiske MTMM Audit",
+      "href": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "kicker": "Entropy Forensics",
+      "label": "Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide",
+      "href": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
     {
       "kicker": "Tests",
       "label": "MBTI test (OEJTS) — free, ~5 min",

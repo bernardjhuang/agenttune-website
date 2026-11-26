@@ -5,7 +5,7 @@ Guide · Comparison
 
 # Muse vs ChatGPT vs Claude: where the personality lives.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Meta Muse stores communication rules in Soul.md (Assistant icon → Identity → Soul), avatar/name in Identity.md, and personal facts in Memory.md. ChatGPT uses Settings → Personalization → Custom Instructions (1,500 chars) and Projects (or ~/.codex/AGENTS.md in Codex). Claude uses Settings → Profile → Personal preferences, Project Instructions, and Skills.
 
@@ -13,10 +13,10 @@ By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-
 
 | Control | Meta Muse | ChatGPT | Claude |
 | --- | --- | --- | --- |
-| Communication rules | Soul.md: Assistant icon → Identity → Soul (or ask in chat). | Custom Instructions under Settings → Personalization (1,500 chars). Codex uses ~/.codex/AGENTS.md. | Personal preferences in Settings → Profile (or General); Project Instructions per workspace. |
+| Communication rules | `Soul.md`: Assistant icon → Identity → Soul (or ask in chat). | Custom Instructions under Settings → Personalization (1,500 chars). Codex uses `~/.codex/AGENTS.md`. | Personal preferences in Settings → Profile (or General); Project Instructions per workspace. |
 | Scope | Carries across Main Chat, Side Chats, and scheduled Tasks. | Account-wide across new chats; Project Instructions override global rules inside a Project. | Account-wide across new chats; Project Instructions and Skills add task-specific rules. |
-| Other style controls | Identity.md for display name, avatar, and voice. | Base style presets and 4 Characteristic sliders in Personalization. | Skills (replacing retired Styles) and /output-style in Claude Code. |
-| Undo a rule | Delete the added section in Soul.md or restore your backup (avoid full Reset Muse). | Edit or toggle off Custom Instructions. | Edit or clear Personal preferences or Project Instructions. |
+| Other style controls | `Identity.md` for display name, avatar, and voice. | Base style presets and 4 Characteristic sliders in Personalization. | Skills (replacing retired Styles) and `/output-style` in Claude Code. |
+| Undo a rule | Delete the added section in `Soul.md` or restore your backup (avoid full Reset Muse). | Edit or toggle off Custom Instructions. | Edit or clear Personal preferences or Project Instructions. |
 
 Sources: [Meta customization](https://www.meta.com/help/artificial-intelligence/995796179982326/), [OpenAI personalization](https://learn.chatgpt.com/docs/personalize), [OpenAI desktop settings](https://learn.chatgpt.com/docs/reference/settings), and [Anthropic personalization](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features).
 
@@ -24,8 +24,8 @@ Sources: [Meta customization](https://www.meta.com/help/artificial-intelligence/
 
 | Control | Meta Muse | ChatGPT | Claude |
 | --- | --- | --- | --- |
-| Inspect | Open Memory.md via Assistant icon → Identity → Memory. | Settings → Personalization → Memory → Manage memories. | Settings → Memory shows saved entries (Projects have separate memory). |
-| Change or stop | Edit Memory.md directly or ask Muse to forget a topic. | Delete individual memories or toggle off Reference saved memories. | Pause or reset memory in Settings → Memory. |
+| Inspect | Open `Memory.md` via Assistant icon → Identity → Memory. | Settings → Personalization → Memory → Manage memories. | Settings → Memory shows saved entries (Projects have separate memory). |
+| Change or stop | Edit `Memory.md` directly or ask Muse to forget a topic. | Delete individual memories or toggle off Reference saved memories. | Pause or reset memory in Settings → Memory. |
 | Defaults and privacy | Help improve our AI models starts enabled under Settings → Data controls (can be toggled off). | Managed under Data Controls; local Codex memory is separate. | Memory is on by default for consumer plans; Incognito chats exclude history and memory. |
 | Import | Settings → Data Controls → Import memory (accepts exported .zip). | Paste curated rules into Custom Instructions or Saved Memories. | Settings → Memory → Start import accepts pasted memory text. |
 

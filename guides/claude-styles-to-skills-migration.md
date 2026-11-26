@@ -5,7 +5,7 @@ Guide · Claude Migration
 
 # Claude Styles are moving to Skills: how to migrate.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Move always-on tone and brevity rules into Settings → Profile (or General) → Personal Preferences; move task-specific writing templates (memos, changelogs, or newsletters) into Claude Skills or Project Instructions; and in Claude Code, use ~/.claude/output-styles/ with /output-style.
 
@@ -16,9 +16,9 @@ People used the old Styles dropdown for two very different jobs: permanent habit
 | What you kept in the old preset | Where to migrate it now | Why it works better |
 | --- | --- | --- |
 | Everyday tone, brevity, directness, and pushback | Settings → Profile / General → Personal Preferences | Applies automatically in every chat without picking from a dropdown. |
-| Repeatable document formats, rubrics, or brand voice rules | Claude Skills (SKILL.md) | Loads only when the task calls for that specific format, keeping ordinary chats clean. |
+| Repeatable document formats, rubrics, or brand voice rules | Claude Skills (`SKILL.md`) | Loads only when the task calls for that specific format, keeping ordinary chats clean. |
 | Client-specific or codebase-specific instructions | Claude Project Instructions | Scoped to one workspace and shared with project files. |
-| Terminal CLI communication style | Claude Code ~/.claude/output-styles/ | Keeps coding instructions intact via keep-coding-instructions: true. |
+| Terminal CLI communication style | Claude Code `~/.claude/output-styles/` | Keeps coding instructions intact via `keep-coding-instructions: true`. |
 
 ## Step 1: Move always-on tone rules to Personal Preferences.
 

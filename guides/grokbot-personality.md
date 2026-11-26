@@ -5,7 +5,7 @@ Guide · Grok & Grok Bot
 
 # Grok Bot characters: 16 copy-paste personality profiles.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~10 min read · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Grok Bot, open the Bot → Edit Profile → Description and place a 'HOW TO TALK TO ME' rules block right under the Bot's JOB and BOUNDARIES so your rules survive long chats and Bot duplication. For standard Grok on X or grok.com, paste the same rules into Settings → Customize Grok.
 
@@ -14,10 +14,10 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 | Character / Template | Best for | Jump / Download |
 | --- | --- | --- |
 | Inbox Triage Starter | Morning email sorting with strict send approvals | [View profile ↓](https://agent-tune.com/guides/grokbot-personality#the-short-version) |
-| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs &amp; repo safety | [View](https://agent-tune.com/guides/grok-personality-settings#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
-| Real-Time Signal Synthesizer | Verified X &amp; web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-settings#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
+| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs & repo safety | [View](https://agent-tune.com/guides/grok-personality-settings#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
+| Real-Time Signal Synthesizer | Verified X & web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-settings#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
 | No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View](https://agent-tune.com/guides/grok-personality-settings#1-no-snark-analytical-brief) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
-| All 16 Grok Bot characters | Red-Teamer, Chief of Staff, Code Reviewer &amp; 11 more | [Jump to 16 Bots ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) |
+| All 16 Grok Bot characters | Red-Teamer, Chief of Staff, Code Reviewer & 11 more | [Jump to 16 Bots ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) |
 
 Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Settings](https://agent-tune.com/guides/grok-personality-settings) or [20 Customize Grok & Bot Templates](https://agent-tune.com/guides/grok-personality-settings).
 
@@ -52,8 +52,8 @@ Three xAI products share the Grok name, and each one stores instructions in a di
 | Product | What it is | Where its instructions live |
 | --- | --- | --- |
 | Grok Bot | Persistent AI teammates, each running on a cloud computer with a browser, filesystem, and terminal. | Each Bot's Description (Edit Profile) |
-| Grok (X &amp; grok.com) | The conversational assistant on grok.com and inside X (web &amp; mobile) | Settings → Customize Grok ([X & grok.com guide](https://agent-tune.com/guides/grok-personality-settings)) |
-| Grok Build | xAI's coding agent for the terminal | AGENTS.md project rules |
+| Grok (X & grok.com) | The conversational assistant on `grok.com` and inside X (web & mobile) | Settings → Customize Grok ([X & grok.com guide](https://agent-tune.com/guides/grok-personality-settings)) |
+| Grok Build | xAI's coding agent for the terminal | `AGENTS.md` project rules |
 
 Grok Bot is built jointly with Cursor and runs on Cursor’s cloud computers (available on paid Cursor plans or linked SuperGrok subscriptions).
 

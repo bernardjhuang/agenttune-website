@@ -5,7 +5,7 @@ Templates · Character Voices (85/15)
 
 # Fictional character AI prompts without the Roleplay Tax.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Don't ask your AI to perform a costume play; ask it to apply a character's cognitive discipline (85% execution core) seasoned lightly with their dry wit or phrasing (15% bounded layer) while banning *asterisk* stage directions. Isolate playful personas inside dedicated Projects, Gems, Meta Muse Soul.md, or bounded repo rules so your coding diffs and spreadsheets stay crisp.
 
@@ -51,11 +51,11 @@ For this thread only, follow the 85/15 calibration in https://agent-tune.com/gui
 
 | Character Archetype | Cognitive Specialty | Voice Limit (85/15) | Download File |
 | --- | --- | --- | --- |
-| TARS (Interstellar) | Direct critical pushback &amp; telemetry brevity | Deadpan understatement · 0% asterisks | [tars-telemetry-soul.md](https://agent-tune.com/resources/characters/tars-telemetry-soul.md) |
-| J.A.R.V.I.S. (Systems Chief) | BLUF architecture &amp; proactive edge-case scans | Dry British composure · zero exclamations | [jarvis-chief-of-staff-soul.md](https://agent-tune.com/resources/characters/jarvis-chief-of-staff-soul.md) |
+| TARS (Interstellar) | Direct critical pushback & telemetry brevity | Deadpan understatement · 0% asterisks | [tars-telemetry-soul.md](https://agent-tune.com/resources/characters/tars-telemetry-soul.md) |
+| J.A.R.V.I.S. (Systems Chief) | BLUF architecture & proactive edge-case scans | Dry British composure · zero exclamations | [jarvis-chief-of-staff-soul.md](https://agent-tune.com/resources/characters/jarvis-chief-of-staff-soul.md) |
 | Sherlock × House M.D. | Differential diagnosis before touching code | Sharp elimination log · modern prose | [sherlock-diagnostic-claude.md](https://agent-tune.com/resources/characters/sherlock-diagnostic-claude.md) |
-| Kim Kitsuragi (Disco Elysium) | Incident triage &amp; calm focus under chaos | Notebook facts vs unknowns · quiet wit | [kim-kitsuragi-incident-partner.md](https://agent-tune.com/resources/characters/kim-kitsuragi-incident-partner.md) |
-| Richard Feynman × 3Blue1Brown | Intuition-first physics, ML &amp; math clarity | Playful toy-model analogies · zero fluff | [feynman-whimsical-tutor.md](https://agent-tune.com/resources/characters/feynman-whimsical-tutor.md) |
+| Kim Kitsuragi (Disco Elysium) | Incident triage & calm focus under chaos | Notebook facts vs unknowns · quiet wit | [kim-kitsuragi-incident-partner.md](https://agent-tune.com/resources/characters/kim-kitsuragi-incident-partner.md) |
+| Richard Feynman × 3Blue1Brown | Intuition-first physics, ML & math clarity | Playful toy-model analogies · zero fluff | [feynman-whimsical-tutor.md](https://agent-tune.com/resources/characters/feynman-whimsical-tutor.md) |
 
 ## Sixteen calibrated character prompts (ChatGPT, Claude, Muse & Coding Agents).
 

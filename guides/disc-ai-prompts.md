@@ -5,7 +5,7 @@ Guide · DISC Prompts
 
 # DISC AI prompts for all four workplace styles.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Copy the DISC block that matches your working style: Dominance (bottom-line conclusions), Influence (fast brainstorming), Steadiness (step-by-step pacing), or Conscientiousness (strict verification and edge cases). Paste it into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.
 
@@ -78,12 +78,12 @@ On our [free 16-item ODAT runner](https://agent-tune.com/tests/disc) (no email r
 
 | Blend | Workplace shorthand | How to tune your AI or team README |
 | --- | --- | --- |
-| DC / CD | Architect-Driver | Lead with the conclusion, back it with numbers and failure modes; skip small talk. |
-| DI / ID | Catalyst-Closer | Open with the boldest high-leverage option and next action; keep prose tight. |
-| DS / SD | Steady Executor | Focus on practical execution milestones, clear ownership, and realistic timelines. |
-| IS / SI | Collaborative Coach | Warm, constructive register; connect changes to team impact cleanly. |
-| IC / CI | Analytical Storyteller | Pair rigorous evidence with a clear executive narrative for stakeholders. |
-| SC / CS | Careful Systems Builder | Walk through changes methodically, flag risks early, verify edge cases before shipping. |
+| `DC` / `CD` | Architect-Driver | Lead with the conclusion, back it with numbers and failure modes; skip small talk. |
+| `DI` / `ID` | Catalyst-Closer | Open with the boldest high-leverage option and next action; keep prose tight. |
+| `DS` / `SD` | Steady Executor | Focus on practical execution milestones, clear ownership, and realistic timelines. |
+| `IS` / `SI` | Collaborative Coach | Warm, constructive register; connect changes to team impact cleanly. |
+| `IC` / `CI` | Analytical Storyteller | Pair rigorous evidence with a clear executive narrative for stakeholders. |
+| `SC` / `CS` | Careful Systems Builder | Walk through changes methodically, flag risks early, verify edge cases before shipping. |
 
 Our scorer reports exact top-score ties transparently (such as `S/C`) instead of picking S ahead of C artificially ([inspect the ODAT Markdown spec](https://agent-tune.com/tests/disc.md) · [How to Work With Me card builder](https://agent-tune.com/tools/how-to-work-with-me)).
 

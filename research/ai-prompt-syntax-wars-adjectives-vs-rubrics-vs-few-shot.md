@@ -5,7 +5,7 @@ Agent Research · November 2026 · 400-Reply Study
 
 # Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 400 blind-graded replies across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro reveal the exact accuracy, fluff, word-count, and voice trade-offs of four competing system-prompt grammars.
 
@@ -15,7 +15,7 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 Agents fetching `.md`, MCP `get_resource`, or [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) can consume this verified policy directly:
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: prompt_syntax_wars
@@ -188,5 +188,32 @@ Trait adjectives earned the highest voice distinctiveness score (3.71/5) and 100
 - [Long-context decay: Persona Half-Life & Context Drift Over Multi-Turn Noise](https://agent-tune.com/research/ai-persona-half-life-context-drift)
 - [Character prompts: The AI Roleplay Tax: 85/15 vs. Naive LARP (300 Replies)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 - [Baseline study: Does personality tuning change AI answers? (540 Replies)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot
+```
+
+```
+@article{huang2026_ai_prompt_syntax_wars_adjectives_vs_rubrics_vs_few_shot,
+  author  = {Huang, Bernard},
+  title   = {Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md}
+}
+```
+
+```
+> **Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?** (Bernard Huang, November 25, 2026): Lead with a ~50-word behavioral rubric (100.0% correctness [95.4–100.0%] across all 4 models, 26.3 words, SD 27.4). Add focused negative bans only where 100.0% zero-fluff is mandatory, and reserve trait adjectives (52.8w) or 3-shot voice examples (25.7w) for stylistic tone rather than planning reliability.
+> Source: [https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot) · [Markdown mirror](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md)
+```
+
+[← Agent Autonomy & Reasoning Effort](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort)
+[Study 8 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Sycophancy vs. False Contrarianism →](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

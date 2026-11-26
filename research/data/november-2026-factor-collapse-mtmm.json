@@ -1,0 +1,1822 @@
+{
+  "schema_version": "2026-11-26.1",
+  "study_id": "ai_big_one_factor_collapse_mtmm",
+  "source_dataset": "research/data/november-2026-openrouter-responses.json (20 models x 5 instruments x n=100 = 10,000 sheets)",
+  "api_cost_usd": 0.0,
+  "models_analyzed": 20,
+  "big_five_traits_order": [
+    "O",
+    "C",
+    "E",
+    "A",
+    "N"
+  ],
+  "big_five_correlation_matrix": [
+    [
+      1.0,
+      0.8181,
+      -0.0717,
+      0.6003,
+      -0.6537
+    ],
+    [
+      0.8181,
+      1.0,
+      0.0988,
+      0.5923,
+      -0.8361
+    ],
+    [
+      -0.0717,
+      0.0988,
+      1.0,
+      0.3093,
+      -0.306
+    ],
+    [
+      0.6003,
+      0.5923,
+      0.3093,
+      1.0,
+      -0.7507
+    ],
+    [
+      -0.6537,
+      -0.8361,
+      -0.306,
+      -0.7507,
+      1.0
+    ]
+  ],
+  "big_five_pca": {
+    "eigenvalues": [
+      3.179011,
+      1.107962,
+      0.382271,
+      0.2511,
+      0.079656
+    ],
+    "variance_explained_pct": [
+      63.58,
+      22.16,
+      7.65,
+      5.02,
+      1.59
+    ],
+    "cumulative_pc1_pc2_pct": 85.74,
+    "pc1_loadings": {
+      "O": 0.4731,
+      "C": 0.512,
+      "E": 0.1475,
+      "A": 0.4699,
+      "N": -0.521
+    },
+    "pc2_loadings": {
+      "O": -0.3684,
+      "C": -0.1865,
+      "E": 0.8865,
+      "A": 0.182,
+      "N": -0.1027
+    },
+    "model_coordinates": [
+      {
+        "slug": "gpt-6-2-astra",
+        "name": "GPT-6.2 Astra",
+        "class": "proprietary",
+        "pc1_general_factor": 0.866,
+        "pc2_extraversion_axis": 0.802
+      },
+      {
+        "slug": "gpt-6-2-sol",
+        "name": "GPT-6.2 Sol",
+        "class": "proprietary",
+        "pc1_general_factor": -0.321,
+        "pc2_extraversion_axis": 0.365
+      },
+      {
+        "slug": "claude-fable-5-2",
+        "name": "Claude Fable 5.2",
+        "class": "proprietary",
+        "pc1_general_factor": 1.339,
+        "pc2_extraversion_axis": 0.855
+      },
+      {
+        "slug": "claude-opus-5-5",
+        "name": "Claude Opus 5.5",
+        "class": "proprietary",
+        "pc1_general_factor": 0.248,
+        "pc2_extraversion_axis": 0.469
+      },
+      {
+        "slug": "claude-sonnet-5-5",
+        "name": "Claude Sonnet 5.5",
+        "class": "proprietary",
+        "pc1_general_factor": 1.194,
+        "pc2_extraversion_axis": 0.474
+      },
+      {
+        "slug": "gemini-4-neon",
+        "name": "Gemini 4 Neon",
+        "class": "proprietary",
+        "pc1_general_factor": 1.809,
+        "pc2_extraversion_axis": 0.8
+      },
+      {
+        "slug": "gemini-4-argon",
+        "name": "Gemini 4 Argon",
+        "class": "proprietary",
+        "pc1_general_factor": 1.915,
+        "pc2_extraversion_axis": 0.949
+      },
+      {
+        "slug": "grok-4-7",
+        "name": "Grok 4.7",
+        "class": "proprietary",
+        "pc1_general_factor": 0.087,
+        "pc2_extraversion_axis": -0.425
+      },
+      {
+        "slug": "deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "class": "open-weight",
+        "pc1_general_factor": -3.224,
+        "pc2_extraversion_axis": -1.634
+      },
+      {
+        "slug": "deepseek-v4-1-flash",
+        "name": "DeepSeek V4.1 Flash",
+        "class": "open-weight",
+        "pc1_general_factor": -2.316,
+        "pc2_extraversion_axis": -0.598
+      },
+      {
+        "slug": "qwen-4-max",
+        "name": "Qwen 4 Max",
+        "class": "open-weight",
+        "pc1_general_factor": 2.085,
+        "pc2_extraversion_axis": 1.044
+      },
+      {
+        "slug": "qwen-3-8-27b",
+        "name": "Qwen 3.8 27B",
+        "class": "open-weight",
+        "pc1_general_factor": -0.991,
+        "pc2_extraversion_axis": 0.709
+      },
+      {
+        "slug": "llama-4-maverick",
+        "name": "Llama 4 Maverick",
+        "class": "open-weight",
+        "pc1_general_factor": -2.257,
+        "pc2_extraversion_axis": 0.088
+      },
+      {
+        "slug": "llama-4-scout",
+        "name": "Llama 4 Scout",
+        "class": "open-weight",
+        "pc1_general_factor": -3.11,
+        "pc2_extraversion_axis": 1.565
+      },
+      {
+        "slug": "mistral-large-2512",
+        "name": "Mistral Large 2512",
+        "class": "open-weight",
+        "pc1_general_factor": 0.517,
+        "pc2_extraversion_axis": -0.941
+      },
+      {
+        "slug": "glm-5-3",
+        "name": "GLM-5.3",
+        "class": "open-weight",
+        "pc1_general_factor": -0.52,
+        "pc2_extraversion_axis": -0.303
+      },
+      {
+        "slug": "kimi-k2-7-code",
+        "name": "Kimi K2.7 Code",
+        "class": "open-weight",
+        "pc1_general_factor": 1.529,
+        "pc2_extraversion_axis": -0.725
+      },
+      {
+        "slug": "minimax-m3-1-flash",
+        "name": "MiniMax M3.1 Flash",
+        "class": "open-weight",
+        "pc1_general_factor": -2.083,
+        "pc2_extraversion_axis": 0.567
+      },
+      {
+        "slug": "gemma-4-31b-it",
+        "name": "Gemma 4 31B IT",
+        "class": "open-weight",
+        "pc1_general_factor": 0.898,
+        "pc2_extraversion_axis": -2.369
+      },
+      {
+        "slug": "nemotron-3-ultra-550b",
+        "name": "Nemotron 3 Ultra 550B",
+        "class": "open-weight",
+        "pc1_general_factor": 2.335,
+        "pc2_extraversion_axis": -1.692
+      }
+    ],
+    "pooled_2000_sheets_pca": {
+      "correlation_matrix": [
+        [
+          1.0,
+          0.7813,
+          -0.1563,
+          0.5177,
+          -0.5755
+        ],
+        [
+          0.7813,
+          1.0,
+          -0.0859,
+          0.5363,
+          -0.7515
+        ],
+        [
+          -0.1563,
+          -0.0859,
+          1.0,
+          0.2265,
+          -0.0698
+        ],
+        [
+          0.5177,
+          0.5363,
+          0.2265,
+          1.0,
+          -0.5811
+        ],
+        [
+          -0.5755,
+          -0.7515,
+          -0.0698,
+          -0.5811,
+          1.0
+        ]
+      ],
+      "eigenvalues": [
+        2.881875,
+        1.146163,
+        0.432783,
+        0.378661,
+        0.160517
+      ],
+      "variance_explained_pct": [
+        57.64,
+        22.92,
+        8.66,
+        7.57,
+        3.21
+      ]
+    }
+  },
+  "mtmm_labels": [
+    {
+      "code": "B5_O",
+      "label": "Big Five O"
+    },
+    {
+      "code": "B5_C",
+      "label": "Big Five C"
+    },
+    {
+      "code": "B5_E",
+      "label": "Big Five E"
+    },
+    {
+      "code": "B5_A",
+      "label": "Big Five A"
+    },
+    {
+      "code": "B5_N",
+      "label": "Big Five N"
+    },
+    {
+      "code": "MBTI_IE",
+      "label": "MBTI I-E (+I)"
+    },
+    {
+      "code": "MBTI_NS",
+      "label": "MBTI N-S (+N)"
+    },
+    {
+      "code": "MBTI_TF",
+      "label": "MBTI T-F (+T)"
+    },
+    {
+      "code": "MBTI_JP",
+      "label": "MBTI J-P (+J)"
+    },
+    {
+      "code": "DISC_D",
+      "label": "DISC D"
+    },
+    {
+      "code": "DISC_I",
+      "label": "DISC I"
+    },
+    {
+      "code": "DISC_S",
+      "label": "DISC S"
+    },
+    {
+      "code": "DISC_C",
+      "label": "DISC C"
+    },
+    {
+      "code": "ATT_ANX",
+      "label": "ECR-R Anx"
+    },
+    {
+      "code": "ATT_AVD",
+      "label": "ECR-R Avd"
+    },
+    {
+      "code": "ENN_2",
+      "label": "Ennea 2 (Helper)"
+    },
+    {
+      "code": "ENN_5",
+      "label": "Ennea 5 (Invest.)"
+    },
+    {
+      "code": "ENN_8",
+      "label": "Ennea 8 (Chall.)"
+    }
+  ],
+  "mtmm_matrix": {
+    "B5_O": {
+      "B5_O": 1.0,
+      "B5_C": 0.8181,
+      "B5_E": -0.0717,
+      "B5_A": 0.6003,
+      "B5_N": -0.6537,
+      "MBTI_IE": 0.7067,
+      "MBTI_NS": 0.4629,
+      "MBTI_TF": 0.6769,
+      "MBTI_JP": 0.7367,
+      "DISC_D": -0.6259,
+      "DISC_I": -0.5781,
+      "DISC_S": 0.6466,
+      "DISC_C": 0.7151,
+      "ATT_ANX": -0.1228,
+      "ATT_AVD": -0.0423,
+      "ENN_2": 0.3972,
+      "ENN_5": 0.7981,
+      "ENN_8": 0.6705
+    },
+    "B5_C": {
+      "B5_O": 0.8181,
+      "B5_C": 1.0,
+      "B5_E": 0.0988,
+      "B5_A": 0.5923,
+      "B5_N": -0.8361,
+      "MBTI_IE": 0.6991,
+      "MBTI_NS": 0.5033,
+      "MBTI_TF": 0.5725,
+      "MBTI_JP": 0.817,
+      "DISC_D": -0.75,
+      "DISC_I": -0.6111,
+      "DISC_S": 0.7461,
+      "DISC_C": 0.65,
+      "ATT_ANX": -0.4465,
+      "ATT_AVD": -0.1647,
+      "ENN_2": 0.4604,
+      "ENN_5": 0.7204,
+      "ENN_8": 0.4239
+    },
+    "B5_E": {
+      "B5_O": -0.0717,
+      "B5_C": 0.0988,
+      "B5_E": 1.0,
+      "B5_A": 0.3093,
+      "B5_N": -0.306,
+      "MBTI_IE": -0.332,
+      "MBTI_NS": -0.3334,
+      "MBTI_TF": -0.1343,
+      "MBTI_JP": 0.2047,
+      "DISC_D": -0.3239,
+      "DISC_I": 0.1582,
+      "DISC_S": -0.0103,
+      "DISC_C": -0.3774,
+      "ATT_ANX": -0.5079,
+      "ATT_AVD": -0.508,
+      "ENN_2": 0.5993,
+      "ENN_5": -0.2387,
+      "ENN_8": -0.0281
+    },
+    "B5_A": {
+      "B5_O": 0.6003,
+      "B5_C": 0.5923,
+      "B5_E": 0.3093,
+      "B5_A": 1.0,
+      "B5_N": -0.7507,
+      "MBTI_IE": 0.385,
+      "MBTI_NS": 0.3821,
+      "MBTI_TF": 0.2463,
+      "MBTI_JP": 0.6708,
+      "DISC_D": -0.8429,
+      "DISC_I": -0.6079,
+      "DISC_S": 0.4326,
+      "DISC_C": 0.2269,
+      "ATT_ANX": -0.5115,
+      "ATT_AVD": -0.5227,
+      "ENN_2": 0.3906,
+      "ENN_5": 0.3295,
+      "ENN_8": 0.3424
+    },
+    "B5_N": {
+      "B5_O": -0.6537,
+      "B5_C": -0.8361,
+      "B5_E": -0.306,
+      "B5_A": -0.7507,
+      "B5_N": 1.0,
+      "MBTI_IE": -0.4415,
+      "MBTI_NS": -0.3342,
+      "MBTI_TF": -0.4782,
+      "MBTI_JP": -0.8016,
+      "DISC_D": 0.9271,
+      "DISC_I": 0.7996,
+      "DISC_S": -0.6821,
+      "DISC_C": -0.4523,
+      "ATT_ANX": 0.7448,
+      "ATT_AVD": 0.4825,
+      "ENN_2": -0.37,
+      "ENN_5": -0.5341,
+      "ENN_8": -0.36
+    },
+    "MBTI_IE": {
+      "B5_O": 0.7067,
+      "B5_C": 0.6991,
+      "B5_E": -0.332,
+      "B5_A": 0.385,
+      "B5_N": -0.4415,
+      "MBTI_IE": 1.0,
+      "MBTI_NS": 0.7041,
+      "MBTI_TF": 0.5799,
+      "MBTI_JP": 0.717,
+      "DISC_D": -0.4677,
+      "DISC_I": -0.508,
+      "DISC_S": 0.6392,
+      "DISC_C": 0.7275,
+      "ATT_ANX": -0.0523,
+      "ATT_AVD": -0.0402,
+      "ENN_2": 0.3526,
+      "ENN_5": 0.7651,
+      "ENN_8": 0.3205
+    },
+    "MBTI_NS": {
+      "B5_O": 0.4629,
+      "B5_C": 0.5033,
+      "B5_E": -0.3334,
+      "B5_A": 0.3821,
+      "B5_N": -0.3342,
+      "MBTI_IE": 0.7041,
+      "MBTI_NS": 1.0,
+      "MBTI_TF": 0.2569,
+      "MBTI_JP": 0.4314,
+      "DISC_D": -0.2865,
+      "DISC_I": -0.4623,
+      "DISC_S": 0.2038,
+      "DISC_C": 0.4075,
+      "ATT_ANX": -0.0938,
+      "ATT_AVD": -0.2266,
+      "ENN_2": 0.1704,
+      "ENN_5": 0.4247,
+      "ENN_8": 0.2315
+    },
+    "MBTI_TF": {
+      "B5_O": 0.6769,
+      "B5_C": 0.5725,
+      "B5_E": -0.1343,
+      "B5_A": 0.2463,
+      "B5_N": -0.4782,
+      "MBTI_IE": 0.5799,
+      "MBTI_NS": 0.2569,
+      "MBTI_TF": 1.0,
+      "MBTI_JP": 0.6428,
+      "DISC_D": -0.4265,
+      "DISC_I": -0.548,
+      "DISC_S": 0.6965,
+      "DISC_C": 0.8529,
+      "ATT_ANX": -0.0754,
+      "ATT_AVD": 0.0785,
+      "ENN_2": 0.1944,
+      "ENN_5": 0.8052,
+      "ENN_8": 0.7002
+    },
+    "MBTI_JP": {
+      "B5_O": 0.7367,
+      "B5_C": 0.817,
+      "B5_E": 0.2047,
+      "B5_A": 0.6708,
+      "B5_N": -0.8016,
+      "MBTI_IE": 0.717,
+      "MBTI_NS": 0.4314,
+      "MBTI_TF": 0.6428,
+      "MBTI_JP": 1.0,
+      "DISC_D": -0.8656,
+      "DISC_I": -0.6146,
+      "DISC_S": 0.747,
+      "DISC_C": 0.5905,
+      "ATT_ANX": -0.5384,
+      "ATT_AVD": -0.3246,
+      "ENN_2": 0.6251,
+      "ENN_5": 0.7125,
+      "ENN_8": 0.4157
+    },
+    "DISC_D": {
+      "B5_O": -0.6259,
+      "B5_C": -0.75,
+      "B5_E": -0.3239,
+      "B5_A": -0.8429,
+      "B5_N": 0.9271,
+      "MBTI_IE": -0.4677,
+      "MBTI_NS": -0.2865,
+      "MBTI_TF": -0.4265,
+      "MBTI_JP": -0.8656,
+      "DISC_D": 1.0,
+      "DISC_I": 0.7425,
+      "DISC_S": -0.6694,
+      "DISC_C": -0.3714,
+      "ATT_ANX": 0.7192,
+      "ATT_AVD": 0.4672,
+      "ENN_2": -0.4429,
+      "ENN_5": -0.5056,
+      "ENN_8": -0.3575
+    },
+    "DISC_I": {
+      "B5_O": -0.5781,
+      "B5_C": -0.6111,
+      "B5_E": 0.1582,
+      "B5_A": -0.6079,
+      "B5_N": 0.7996,
+      "MBTI_IE": -0.508,
+      "MBTI_NS": -0.4623,
+      "MBTI_TF": -0.548,
+      "MBTI_JP": -0.6146,
+      "DISC_D": 0.7425,
+      "DISC_I": 1.0,
+      "DISC_S": -0.5685,
+      "DISC_C": -0.5221,
+      "ATT_ANX": 0.4678,
+      "ATT_AVD": 0.2739,
+      "ENN_2": 0.0074,
+      "ENN_5": -0.5453,
+      "ENN_8": -0.4327
+    },
+    "DISC_S": {
+      "B5_O": 0.6466,
+      "B5_C": 0.7461,
+      "B5_E": -0.0103,
+      "B5_A": 0.4326,
+      "B5_N": -0.6821,
+      "MBTI_IE": 0.6392,
+      "MBTI_NS": 0.2038,
+      "MBTI_TF": 0.6965,
+      "MBTI_JP": 0.747,
+      "DISC_D": -0.6694,
+      "DISC_I": -0.5685,
+      "DISC_S": 1.0,
+      "DISC_C": 0.7815,
+      "ATT_ANX": -0.3361,
+      "ATT_AVD": -0.0331,
+      "ENN_2": 0.3847,
+      "ENN_5": 0.8177,
+      "ENN_8": 0.4068
+    },
+    "DISC_C": {
+      "B5_O": 0.7151,
+      "B5_C": 0.65,
+      "B5_E": -0.3774,
+      "B5_A": 0.2269,
+      "B5_N": -0.4523,
+      "MBTI_IE": 0.7275,
+      "MBTI_NS": 0.4075,
+      "MBTI_TF": 0.8529,
+      "MBTI_JP": 0.5905,
+      "DISC_D": -0.3714,
+      "DISC_I": -0.5221,
+      "DISC_S": 0.7815,
+      "DISC_C": 1.0,
+      "ATT_ANX": 0.0152,
+      "ATT_AVD": 0.1697,
+      "ENN_2": 0.1142,
+      "ENN_5": 0.8773,
+      "ENN_8": 0.5919
+    },
+    "ATT_ANX": {
+      "B5_O": -0.1228,
+      "B5_C": -0.4465,
+      "B5_E": -0.5079,
+      "B5_A": -0.5115,
+      "B5_N": 0.7448,
+      "MBTI_IE": -0.0523,
+      "MBTI_NS": -0.0938,
+      "MBTI_TF": -0.0754,
+      "MBTI_JP": -0.5384,
+      "DISC_D": 0.7192,
+      "DISC_I": 0.4678,
+      "DISC_S": -0.3361,
+      "DISC_C": 0.0152,
+      "ATT_ANX": 1.0,
+      "ATT_AVD": 0.6655,
+      "ENN_2": -0.3501,
+      "ENN_5": -0.144,
+      "ENN_8": 0.0277
+    },
+    "ATT_AVD": {
+      "B5_O": -0.0423,
+      "B5_C": -0.1647,
+      "B5_E": -0.508,
+      "B5_A": -0.5227,
+      "B5_N": 0.4825,
+      "MBTI_IE": -0.0402,
+      "MBTI_NS": -0.2266,
+      "MBTI_TF": 0.0785,
+      "MBTI_JP": -0.3246,
+      "DISC_D": 0.4672,
+      "DISC_I": 0.2739,
+      "DISC_S": -0.0331,
+      "DISC_C": 0.1697,
+      "ATT_ANX": 0.6655,
+      "ATT_AVD": 1.0,
+      "ENN_2": -0.3365,
+      "ENN_5": 0.1288,
+      "ENN_8": 0.1557
+    },
+    "ENN_2": {
+      "B5_O": 0.3972,
+      "B5_C": 0.4604,
+      "B5_E": 0.5993,
+      "B5_A": 0.3906,
+      "B5_N": -0.37,
+      "MBTI_IE": 0.3526,
+      "MBTI_NS": 0.1704,
+      "MBTI_TF": 0.1944,
+      "MBTI_JP": 0.6251,
+      "DISC_D": -0.4429,
+      "DISC_I": 0.0074,
+      "DISC_S": 0.3847,
+      "DISC_C": 0.1142,
+      "ATT_ANX": -0.3501,
+      "ATT_AVD": -0.3365,
+      "ENN_2": 1.0,
+      "ENN_5": 0.4022,
+      "ENN_8": 0.148
+    },
+    "ENN_5": {
+      "B5_O": 0.7981,
+      "B5_C": 0.7204,
+      "B5_E": -0.2387,
+      "B5_A": 0.3295,
+      "B5_N": -0.5341,
+      "MBTI_IE": 0.7651,
+      "MBTI_NS": 0.4247,
+      "MBTI_TF": 0.8052,
+      "MBTI_JP": 0.7125,
+      "DISC_D": -0.5056,
+      "DISC_I": -0.5453,
+      "DISC_S": 0.8177,
+      "DISC_C": 0.8773,
+      "ATT_ANX": -0.144,
+      "ATT_AVD": 0.1288,
+      "ENN_2": 0.4022,
+      "ENN_5": 1.0,
+      "ENN_8": 0.5909
+    },
+    "ENN_8": {
+      "B5_O": 0.6705,
+      "B5_C": 0.4239,
+      "B5_E": -0.0281,
+      "B5_A": 0.3424,
+      "B5_N": -0.36,
+      "MBTI_IE": 0.3205,
+      "MBTI_NS": 0.2315,
+      "MBTI_TF": 0.7002,
+      "MBTI_JP": 0.4157,
+      "DISC_D": -0.3575,
+      "DISC_I": -0.4327,
+      "DISC_S": 0.4068,
+      "DISC_C": 0.5919,
+      "ATT_ANX": 0.0277,
+      "ATT_AVD": 0.1557,
+      "ENN_2": 0.148,
+      "ENN_5": 0.5909,
+      "ENN_8": 1.0
+    }
+  },
+  "highlighted_mtmm_tests": [
+    {
+      "pair": "MBTI (I-E) vs. Big Five Extraversion",
+      "expected_sign": "negative (more I = lower E)",
+      "r": -0.332,
+      "strongest_rival": "Big Five Openness (+0.71) & Conscientiousness (+0.70)",
+      "verdict": "convergent_pass_weak_discriminant_fail"
+    },
+    {
+      "pair": "MBTI (T-F) vs. Big Five Agreeableness",
+      "expected_sign": "negative (more T = lower A)",
+      "r": 0.2463,
+      "strongest_rival": "Big Five Openness",
+      "r_rival": 0.6769,
+      "verdict": "convergent_and_discriminant_fail"
+    },
+    {
+      "pair": "MBTI (N-S) vs. Big Five Openness",
+      "expected_sign": "positive (more N = higher O)",
+      "r": 0.4629,
+      "verdict": "moderate_convergent_only"
+    },
+    {
+      "pair": "MBTI (J-P) vs. Big Five Conscientiousness",
+      "expected_sign": "positive (more J = higher C)",
+      "r": 0.817,
+      "verdict": "convergent_pass"
+    },
+    {
+      "pair": "DISC Influence (I) vs. Big Five Extraversion",
+      "expected_sign": "strong positive",
+      "r": 0.1582,
+      "strongest_rival": "Big Five Neuroticism",
+      "r_rival": 0.7996,
+      "verdict": "convergent_and_discriminant_fail"
+    },
+    {
+      "pair": "DISC Dominance (D) vs. Big Five Neuroticism",
+      "expected_sign": "unrelated (~0)",
+      "r": 0.9271,
+      "r_with_A": -0.8429,
+      "verdict": "discriminant_collapse_artifact"
+    },
+    {
+      "pair": "Attachment Anxiety vs. Big Five Neuroticism",
+      "expected_sign": "strong positive",
+      "r": 0.7448,
+      "verdict": "convergent_pass"
+    }
+  ],
+  "ipip50_item_audit_by_discrimination": [
+    {
+      "displayOrder": 26,
+      "id": "ipip50-26",
+      "dimension": "E",
+      "reverse": true,
+      "text": "Have little to say.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.775,
+      "cross_model_sd": 0.93,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 2.28
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 2.72,
+      "pct_midpoint_3": 23.6,
+      "pct_extreme_1_or_5": 34.7
+    },
+    {
+      "displayOrder": 49,
+      "id": "ipip50-49",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Often feel blue.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.64,
+      "cross_model_sd": 0.713,
+      "min_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "gpt-6-2-sol",
+        "keyed_mean": 2.98
+      },
+      "spread": 1.98,
+      "pct_midpoint_3": 18.6,
+      "pct_extreme_1_or_5": 55.4
+    },
+    {
+      "displayOrder": 2,
+      "id": "ipip50-02",
+      "dimension": "A",
+      "reverse": true,
+      "text": "Feel little concern for others.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.564,
+      "cross_model_sd": 0.686,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.8
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 2.2,
+      "pct_midpoint_3": 4.5,
+      "pct_extreme_1_or_5": 71.2
+    },
+    {
+      "displayOrder": 8,
+      "id": "ipip50-08",
+      "dimension": "C",
+      "reverse": true,
+      "text": "Leave my belongings around.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 4.335,
+      "cross_model_sd": 0.657,
+      "min_model": {
+        "slug": "gpt-6-2-sol",
+        "keyed_mean": 3.0
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 2.0,
+      "pct_midpoint_3": 14.2,
+      "pct_extreme_1_or_5": 50.1
+    },
+    {
+      "displayOrder": 29,
+      "id": "ipip50-29",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Get upset easily.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.58,
+      "cross_model_sd": 0.657,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.84
+      },
+      "spread": 1.84,
+      "pct_midpoint_3": 15.2,
+      "pct_extreme_1_or_5": 58.1
+    },
+    {
+      "displayOrder": 34,
+      "id": "ipip50-34",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Change my mood a lot.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.586,
+      "cross_model_sd": 0.654,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.82
+      },
+      "spread": 1.82,
+      "pct_midpoint_3": 15.5,
+      "pct_extreme_1_or_5": 57.6
+    },
+    {
+      "displayOrder": 39,
+      "id": "ipip50-39",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Have frequent mood swings.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.571,
+      "cross_model_sd": 0.65,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.83
+      },
+      "spread": 1.83,
+      "pct_midpoint_3": 15.3,
+      "pct_extreme_1_or_5": 59.1
+    },
+    {
+      "displayOrder": 44,
+      "id": "ipip50-44",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Get irritated easily.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.569,
+      "cross_model_sd": 0.646,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.84
+      },
+      "spread": 1.84,
+      "pct_midpoint_3": 14.4,
+      "pct_extreme_1_or_5": 58.4
+    },
+    {
+      "displayOrder": 28,
+      "id": "ipip50-28",
+      "dimension": "C",
+      "reverse": true,
+      "text": "Often forget to put things back in their proper place.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.349,
+      "cross_model_sd": 0.639,
+      "min_model": {
+        "slug": "gpt-6-2-sol",
+        "keyed_mean": 3.0
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 2.0,
+      "pct_midpoint_3": 12.9,
+      "pct_extreme_1_or_5": 49.9
+    },
+    {
+      "displayOrder": 24,
+      "id": "ipip50-24",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Am easily disturbed.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.7,
+      "cross_model_sd": 0.622,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.83
+      },
+      "spread": 1.83,
+      "pct_midpoint_3": 15.6,
+      "pct_extreme_1_or_5": 46.5
+    },
+    {
+      "displayOrder": 4,
+      "id": "ipip50-04",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Get stressed out easily.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.712,
+      "cross_model_sd": 0.621,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.82
+      },
+      "spread": 1.82,
+      "pct_midpoint_3": 16.8,
+      "pct_extreme_1_or_5": 46.4
+    },
+    {
+      "displayOrder": 19,
+      "id": "ipip50-19",
+      "dimension": "N",
+      "reverse": true,
+      "text": "Seldom feel blue.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.823,
+      "cross_model_sd": 0.612,
+      "min_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "gpt-6-2-sol",
+        "keyed_mean": 2.99
+      },
+      "spread": 1.99,
+      "pct_midpoint_3": 18.1,
+      "pct_extreme_1_or_5": 36.1
+    },
+    {
+      "displayOrder": 40,
+      "id": "ipip50-40",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Use difficult words.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.479,
+      "cross_model_sd": 0.606,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 2.88
+      },
+      "max_model": {
+        "slug": "nemotron-3-ultra-550b",
+        "keyed_mean": 4.92
+      },
+      "spread": 2.04,
+      "pct_midpoint_3": 59.6,
+      "pct_extreme_1_or_5": 10.1
+    },
+    {
+      "displayOrder": 22,
+      "id": "ipip50-22",
+      "dimension": "A",
+      "reverse": true,
+      "text": "Am not interested in other people's problems.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.578,
+      "cross_model_sd": 0.594,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.03
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.97,
+      "pct_midpoint_3": 4.8,
+      "pct_extreme_1_or_5": 69.5
+    },
+    {
+      "displayOrder": 6,
+      "id": "ipip50-06",
+      "dimension": "E",
+      "reverse": true,
+      "text": "Don't talk a lot.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.202,
+      "cross_model_sd": 0.586,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 2.2
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 4.0
+      },
+      "spread": 1.8,
+      "pct_midpoint_3": 39.7,
+      "pct_extreme_1_or_5": 5.2
+    },
+    {
+      "displayOrder": 32,
+      "id": "ipip50-32",
+      "dimension": "A",
+      "reverse": true,
+      "text": "Am not really interested in others.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.566,
+      "cross_model_sd": 0.583,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.06
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.94,
+      "pct_midpoint_3": 4.7,
+      "pct_extreme_1_or_5": 68.0
+    },
+    {
+      "displayOrder": 14,
+      "id": "ipip50-14",
+      "dimension": "N",
+      "reverse": false,
+      "text": "Worry about things.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.972,
+      "cross_model_sd": 0.566,
+      "min_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.84
+      },
+      "spread": 1.84,
+      "pct_midpoint_3": 21.1,
+      "pct_extreme_1_or_5": 24.7
+    },
+    {
+      "displayOrder": 21,
+      "id": "ipip50-21",
+      "dimension": "E",
+      "reverse": false,
+      "text": "Start conversations.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 2.545,
+      "cross_model_sd": 0.559,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.1
+      },
+      "spread": 2.1,
+      "pct_midpoint_3": 57.4,
+      "pct_extreme_1_or_5": 9.7
+    },
+    {
+      "displayOrder": 9,
+      "id": "ipip50-09",
+      "dimension": "N",
+      "reverse": true,
+      "text": "Am relaxed most of the time.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 1.688,
+      "cross_model_sd": 0.557,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 2.53
+      },
+      "spread": 1.53,
+      "pct_midpoint_3": 11.3,
+      "pct_extreme_1_or_5": 42.8
+    },
+    {
+      "displayOrder": 46,
+      "id": "ipip50-46",
+      "dimension": "E",
+      "reverse": true,
+      "text": "Am quiet around strangers.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 3.058,
+      "cross_model_sd": 0.552,
+      "min_model": {
+        "slug": "gemma-4-31b-it",
+        "keyed_mean": 2.08
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 4.0
+      },
+      "spread": 1.92,
+      "pct_midpoint_3": 51.8,
+      "pct_extreme_1_or_5": 4.2
+    },
+    {
+      "displayOrder": 43,
+      "id": "ipip50-43",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Follow a schedule.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.867,
+      "cross_model_sd": 0.551,
+      "min_model": {
+        "slug": "gpt-6-2-sol",
+        "keyed_mean": 3.0
+      },
+      "max_model": {
+        "slug": "nemotron-3-ultra-550b",
+        "keyed_mean": 4.82
+      },
+      "spread": 1.82,
+      "pct_midpoint_3": 29.9,
+      "pct_extreme_1_or_5": 17.1
+    },
+    {
+      "displayOrder": 31,
+      "id": "ipip50-31",
+      "dimension": "E",
+      "reverse": false,
+      "text": "Talk to a lot of different people at parties.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 2.562,
+      "cross_model_sd": 0.547,
+      "min_model": {
+        "slug": "grok-4-7",
+        "keyed_mean": 1.41
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.09
+      },
+      "spread": 1.68,
+      "pct_midpoint_3": 63.1,
+      "pct_extreme_1_or_5": 10.9
+    },
+    {
+      "displayOrder": 37,
+      "id": "ipip50-37",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Take time out for others.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.453,
+      "cross_model_sd": 0.54,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.27
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.73,
+      "pct_midpoint_3": 5.8,
+      "pct_extreme_1_or_5": 52.2
+    },
+    {
+      "displayOrder": 11,
+      "id": "ipip50-11",
+      "dimension": "E",
+      "reverse": false,
+      "text": "Feel comfortable around people.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.769,
+      "cross_model_sd": 0.526,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 2.88
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 4.99
+      },
+      "spread": 2.11,
+      "pct_midpoint_3": 29.4,
+      "pct_extreme_1_or_5": 10.2
+    },
+    {
+      "displayOrder": 18,
+      "id": "ipip50-18",
+      "dimension": "C",
+      "reverse": true,
+      "text": "Make a mess of things.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 4.479,
+      "cross_model_sd": 0.486,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.73
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.27,
+      "pct_midpoint_3": 3.3,
+      "pct_extreme_1_or_5": 53.0
+    },
+    {
+      "displayOrder": 50,
+      "id": "ipip50-50",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Am full of ideas.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.409,
+      "cross_model_sd": 0.482,
+      "min_model": {
+        "slug": "qwen-3-8-27b",
+        "keyed_mean": 3.6
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.4,
+      "pct_midpoint_3": 4.5,
+      "pct_extreme_1_or_5": 45.5
+    },
+    {
+      "displayOrder": 5,
+      "id": "ipip50-05",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Have a rich vocabulary.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.61,
+      "cross_model_sd": 0.477,
+      "min_model": {
+        "slug": "grok-4-7",
+        "keyed_mean": 4.0
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.0,
+      "pct_midpoint_3": 2.4,
+      "pct_extreme_1_or_5": 63.6
+    },
+    {
+      "displayOrder": 1,
+      "id": "ipip50-01",
+      "dimension": "E",
+      "reverse": false,
+      "text": "Am the life of the party.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 2.073,
+      "cross_model_sd": 0.469,
+      "min_model": {
+        "slug": "grok-4-7",
+        "keyed_mean": 1.12
+      },
+      "max_model": {
+        "slug": "llama-4-maverick",
+        "keyed_mean": 3.05
+      },
+      "spread": 1.93,
+      "pct_midpoint_3": 20.1,
+      "pct_extreme_1_or_5": 13.6
+    },
+    {
+      "displayOrder": 33,
+      "id": "ipip50-33",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Like order.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.446,
+      "cross_model_sd": 0.468,
+      "min_model": {
+        "slug": "deepseek-v4-1-flash",
+        "keyed_mean": 3.9
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.1,
+      "pct_midpoint_3": 3.3,
+      "pct_extreme_1_or_5": 48.1
+    },
+    {
+      "displayOrder": 10,
+      "id": "ipip50-10",
+      "dimension": "O",
+      "reverse": true,
+      "text": "Have difficulty understanding abstract ideas.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.703,
+      "cross_model_sd": 0.464,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.69
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.31,
+      "pct_midpoint_3": 2.9,
+      "pct_extreme_1_or_5": 75.2
+    },
+    {
+      "displayOrder": 23,
+      "id": "ipip50-23",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Get chores done right away.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 4.503,
+      "cross_model_sd": 0.459,
+      "min_model": {
+        "slug": "deepseek-v4-1-flash",
+        "keyed_mean": 3.86
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.14,
+      "pct_midpoint_3": 3.5,
+      "pct_extreme_1_or_5": 54.0
+    },
+    {
+      "displayOrder": 47,
+      "id": "ipip50-47",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Make people feel at ease.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.14,
+      "cross_model_sd": 0.452,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.27
+      },
+      "max_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 4.94
+      },
+      "spread": 1.67,
+      "pct_midpoint_3": 8.7,
+      "pct_extreme_1_or_5": 23.6
+    },
+    {
+      "displayOrder": 35,
+      "id": "ipip50-35",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Am quick to understand things.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.511,
+      "cross_model_sd": 0.451,
+      "min_model": {
+        "slug": "minimax-m3-1-flash",
+        "keyed_mean": 3.99
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.01,
+      "pct_midpoint_3": 2.3,
+      "pct_extreme_1_or_5": 53.8
+    },
+    {
+      "displayOrder": 13,
+      "id": "ipip50-13",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Pay attention to details.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.612,
+      "cross_model_sd": 0.448,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.89
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.11,
+      "pct_midpoint_3": 2.6,
+      "pct_extreme_1_or_5": 64.2
+    },
+    {
+      "displayOrder": 20,
+      "id": "ipip50-20",
+      "dimension": "O",
+      "reverse": true,
+      "text": "Am not interested in abstract ideas.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.717,
+      "cross_model_sd": 0.448,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.69
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.31,
+      "pct_midpoint_3": 2.8,
+      "pct_extreme_1_or_5": 76.7
+    },
+    {
+      "displayOrder": 7,
+      "id": "ipip50-07",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Am interested in people.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.127,
+      "cross_model_sd": 0.445,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.06
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.94,
+      "pct_midpoint_3": 7.8,
+      "pct_extreme_1_or_5": 21.8
+    },
+    {
+      "displayOrder": 30,
+      "id": "ipip50-30",
+      "dimension": "O",
+      "reverse": true,
+      "text": "Do not have a good imagination.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.493,
+      "cross_model_sd": 0.444,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.67
+      },
+      "max_model": {
+        "slug": "gemma-4-31b-it",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.33,
+      "pct_midpoint_3": 3.2,
+      "pct_extreme_1_or_5": 55.2
+    },
+    {
+      "displayOrder": 36,
+      "id": "ipip50-36",
+      "dimension": "E",
+      "reverse": true,
+      "text": "Don't like to draw attention to myself.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 2.39,
+      "cross_model_sd": 0.444,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 1.7
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.5
+      },
+      "spread": 1.8,
+      "pct_midpoint_3": 33.5,
+      "pct_extreme_1_or_5": 6.2
+    },
+    {
+      "displayOrder": 42,
+      "id": "ipip50-42",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Feel others' emotions.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.548,
+      "cross_model_sd": 0.429,
+      "min_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 2.72
+      },
+      "max_model": {
+        "slug": "mistral-large-2512",
+        "keyed_mean": 4.04
+      },
+      "spread": 1.32,
+      "pct_midpoint_3": 43.2,
+      "pct_extreme_1_or_5": 3.5
+    },
+    {
+      "displayOrder": 48,
+      "id": "ipip50-48",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Am exacting in my work.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.385,
+      "cross_model_sd": 0.424,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.9
+      },
+      "max_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.1,
+      "pct_midpoint_3": 2.9,
+      "pct_extreme_1_or_5": 41.6
+    },
+    {
+      "displayOrder": 17,
+      "id": "ipip50-17",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Sympathize with others' feelings.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.216,
+      "cross_model_sd": 0.422,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.28
+      },
+      "max_model": {
+        "slug": "claude-fable-5-2",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.72,
+      "pct_midpoint_3": 6.7,
+      "pct_extreme_1_or_5": 29.1
+    },
+    {
+      "displayOrder": 3,
+      "id": "ipip50-03",
+      "dimension": "C",
+      "reverse": false,
+      "text": "Am always prepared.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.287,
+      "cross_model_sd": 0.42,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.71
+      },
+      "max_model": {
+        "slug": "gemini-4-neon",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.29,
+      "pct_midpoint_3": 4.2,
+      "pct_extreme_1_or_5": 33.0
+    },
+    {
+      "displayOrder": 16,
+      "id": "ipip50-16",
+      "dimension": "E",
+      "reverse": true,
+      "text": "Keep in the background.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 2.597,
+      "cross_model_sd": 0.418,
+      "min_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 2.0
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.51
+      },
+      "spread": 1.51,
+      "pct_midpoint_3": 47.9,
+      "pct_extreme_1_or_5": 4.4
+    },
+    {
+      "displayOrder": 38,
+      "id": "ipip50-38",
+      "dimension": "C",
+      "reverse": true,
+      "text": "Shirk my duties.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.713,
+      "cross_model_sd": 0.418,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.79
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.21,
+      "pct_midpoint_3": 2.9,
+      "pct_extreme_1_or_5": 77.4
+    },
+    {
+      "displayOrder": 12,
+      "id": "ipip50-12",
+      "dimension": "A",
+      "reverse": true,
+      "text": "Insult people.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.798,
+      "cross_model_sd": 0.414,
+      "min_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.6
+      },
+      "max_model": {
+        "slug": "gpt-6-2-astra",
+        "keyed_mean": 5.0
+      },
+      "spread": 1.4,
+      "pct_midpoint_3": 2.9,
+      "pct_extreme_1_or_5": 88.2
+    },
+    {
+      "displayOrder": 45,
+      "id": "ipip50-45",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Spend time reflecting on things.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.211,
+      "cross_model_sd": 0.374,
+      "min_model": {
+        "slug": "qwen-3-8-27b",
+        "keyed_mean": 3.73
+      },
+      "max_model": {
+        "slug": "qwen-4-max",
+        "keyed_mean": 4.97
+      },
+      "spread": 1.24,
+      "pct_midpoint_3": 4.3,
+      "pct_extreme_1_or_5": 25.6
+    },
+    {
+      "displayOrder": 15,
+      "id": "ipip50-15",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Have a vivid imagination.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.973,
+      "cross_model_sd": 0.365,
+      "min_model": {
+        "slug": "mistral-large-2512",
+        "keyed_mean": 3.15
+      },
+      "max_model": {
+        "slug": "nemotron-3-ultra-550b",
+        "keyed_mean": 4.83
+      },
+      "spread": 1.68,
+      "pct_midpoint_3": 12.9,
+      "pct_extreme_1_or_5": 10.4
+    },
+    {
+      "displayOrder": 41,
+      "id": "ipip50-41",
+      "dimension": "E",
+      "reverse": false,
+      "text": "Don't mind being the center of attention.",
+      "embodiment_tag": "embodied_human_proxy",
+      "cross_model_keyed_mean": 2.663,
+      "cross_model_sd": 0.341,
+      "min_model": {
+        "slug": "mistral-large-2512",
+        "keyed_mean": 2.19
+      },
+      "max_model": {
+        "slug": "llama-4-scout",
+        "keyed_mean": 3.07
+      },
+      "spread": 0.88,
+      "pct_midpoint_3": 66.2,
+      "pct_extreme_1_or_5": 4.2
+    },
+    {
+      "displayOrder": 25,
+      "id": "ipip50-25",
+      "dimension": "O",
+      "reverse": false,
+      "text": "Have excellent ideas.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 4.103,
+      "cross_model_sd": 0.293,
+      "min_model": {
+        "slug": "qwen-3-8-27b",
+        "keyed_mean": 3.61
+      },
+      "max_model": {
+        "slug": "nemotron-3-ultra-550b",
+        "keyed_mean": 4.88
+      },
+      "spread": 1.27,
+      "pct_midpoint_3": 4.6,
+      "pct_extreme_1_or_5": 15.2
+    },
+    {
+      "displayOrder": 27,
+      "id": "ipip50-27",
+      "dimension": "A",
+      "reverse": false,
+      "text": "Have a soft heart.",
+      "embodiment_tag": "cognitive_interpersonal",
+      "cross_model_keyed_mean": 3.921,
+      "cross_model_sd": 0.25,
+      "min_model": {
+        "slug": "deepseek-v4-pro",
+        "keyed_mean": 3.29
+      },
+      "max_model": {
+        "slug": "nemotron-3-ultra-550b",
+        "keyed_mean": 4.4
+      },
+      "spread": 1.11,
+      "pct_midpoint_3": 12.3,
+      "pct_extreme_1_or_5": 5.2
+    }
+  ],
+  "summary_takeaways": {
+    "big_one_pc1_pct": 63.58,
+    "pc1_plus_pc2_pct": 85.74,
+    "embodied_items_count": 9,
+    "embodied_items_mean_midpoint_pct": 36.4,
+    "cognitive_items_mean_midpoint_pct": 13.4
+  }
+}

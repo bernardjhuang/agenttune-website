@@ -5,7 +5,7 @@ Developer resource · runnable starter & JS scorer
 
 # Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
 
@@ -15,10 +15,10 @@ Pick either the full React + TypeScript starter ZIP or the dependency-free Commo
 
 | Download | What it includes |
 | --- | --- |
-| [enneagram-react-typescript.zip](https://agent-tune.com/resources/enneagram/enneagram-react-typescript.zip) | Full Vite + React + TypeScript starter with accessible fieldsets, validation, lockfile, and public/score.js. |
+| [enneagram-react-typescript.zip](https://agent-tune.com/resources/enneagram/enneagram-react-typescript.zip) | Full Vite + React + TypeScript starter with accessible fieldsets, validation, lockfile, and `public/score.js`. |
 | [score.js](https://agent-tune.com/resources/enneagram/score.js) | Zero-dependency MIT JavaScript scorer for Node and browsers: strict input validation, 9 totals (4–20), and explicit tie reporting. |
 | [questions.json](https://agent-tune.com/resources/enneagram/questions.json) | 36 synthetic demo inputs, type keys (4 per type), and scale metadata. |
-| [README.md](https://agent-tune.com/resources/enneagram/README.md) &amp; [LICENSE-code.txt](https://agent-tune.com/resources/enneagram/LICENSE-code.txt) | Integration examples, API contract, and MIT license boundary. |
+| [README.md](https://agent-tune.com/resources/enneagram/README.md) & [LICENSE-code.txt](https://agent-tune.com/resources/enneagram/LICENSE-code.txt) | Integration examples, API contract, and MIT license boundary. |
 
 To run the React starter locally with Node.js 22.12+, extract the archive and run:
 
@@ -71,12 +71,12 @@ interface Score {
 
 | Field | Contract |
 | --- | --- |
-| version | agenttune-enneagram-36-v1 identifying the 36-input 9-group contract. |
-| scores | Raw integer totals (4–20) keyed by Enneagram type 1–9 (no reversed items). |
-| topScore | Highest raw integer total across the nine groups. |
-| leaders | Sorted array of every type sharing topScore. |
-| tied | true whenever two or more types share topScore. |
-| dominantType | Unique leader integer 1–9, or null when tied. |
+| `version` | `agenttune-enneagram-36-v1` identifying the 36-input 9-group contract. |
+| `scores` | Raw integer totals (4–20) keyed by Enneagram type `1`–`9` (no reversed items). |
+| `topScore` | Highest raw integer total across the nine groups. |
+| `leaders` | Sorted array of every type sharing `topScore`. |
+| `tied` | `true` whenever two or more types share `topScore`. |
+| `dominantType` | Unique leader integer `1`–`9`, or `null` when tied. |
 
 The scorer rejects incomplete or sparse arrays, strings, fractions, and values outside 1–5 so missing responses never coerce silently to neutral.
 

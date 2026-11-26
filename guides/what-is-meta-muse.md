@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # What is Meta Muse? Files, plans, and how it works.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/what-is-meta-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/what-is-meta-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled Tasks, Side Chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Plans include Free ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).
 
@@ -14,7 +14,7 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 | What you want to do | Go straight to |
 | --- | --- |
 | Copy a working personality | [20 Soul.md Templates + 4 .md downloads →](https://agent-tune.com/guides/muse-soul-md-templates) |
-| Pick a name &amp; avatar character | [16 Identity.md Personas & 3-File Kit Builder →](https://agent-tune.com/guides/muse-identity-md-avatar-name) |
+| Pick a name & avatar character | [16 Identity.md Personas & 3-File Kit Builder →](https://agent-tune.com/guides/muse-identity-md-avatar-name) |
 | Edit Soul.md without losing starter truths | [Meta Muse Soul.md Merge Editor →](https://agent-tune.com/tools/muse-soul-md-editor) |
 | Fix refusals, Side Chats, or reset safely | [Mobile, Side Chats & Refusal Fixes →](https://agent-tune.com/guides/muse-personality) |
 
@@ -22,11 +22,11 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 Here is how **Meta Muse** compares side by side with **Meta AI**:
 
-| Feature | Meta Muse (muse.ai &amp; Muse app) | Meta AI (WhatsApp, Instagram, web) |
+| Feature | Meta Muse (`muse.ai` & Muse app) | Meta AI (WhatsApp, Instagram, web) |
 | --- | --- | --- |
 | Primary role | Persistent personal agent with isolated cloud workspace, Connectors, and scheduled Tasks | General conversational assistant inside social apps and meta.ai |
-| Pricing &amp; allowances | Free ($0, refreshing limit), Power ($20/mo, 500M tokens/wk), Maximum ($100/mo, 3B/wk) | Included free in Meta social apps &amp; meta.ai |
-| Customization files | Editable Soul.md, Identity.md, and Memory.md | Chat prompts and basic memory toggles; no Soul.md file system |
+| Pricing & allowances | Free ($0, refreshing limit), Power ($20/mo, 500M tokens/wk), Maximum ($100/mo, 3B/wk) | Included free in Meta social apps & meta.ai |
+| Customization files | Editable `Soul.md`, `Identity.md`, and `Memory.md` | Chat prompts and basic memory toggles; no `Soul.md` file system |
 | Thread model | One persistent Main Chat plus disposable Side Chats | Standard multi-thread chat history |
 | Sensitive actions | Connector permissions + approval prompts for actions like email or purchases ([Connector approval guide](https://agent-tune.com/guides/muse-personality)) | No cloud-VM file system or Muse connector approvals |
 
@@ -40,11 +40,11 @@ Each user’s Muse runs in an isolated cloud virtual machine with automated back
 
 On both `muse.ai` and the iOS/Android app, tap the **Assistant icon** (or Profile → Personalization) → **Identity** to view and edit all three files:
 
-| File | What it controls | Menu path | Dedicated guide &amp; tool |
+| File | What it controls | Menu path | Dedicated guide & tool |
 | --- | --- | --- | --- |
-| Soul.md | Core truths, boundaries, tone, brevity, and pushback rules | Assistant icon → Identity → Soul | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor) |
-| Identity.md | Display name, visual avatar, spoken voice, and tagline | Assistant icon → Identity → Edit | [Avatar & Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name) |
-| Memory.md | Saved facts about you, projects, and recurring preferences | Assistant icon → Identity → Memory | [Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset) |
+| `Soul.md` | Core truths, boundaries, tone, brevity, and pushback rules | Assistant icon → Identity → Soul | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [Soul.md editor](https://agent-tune.com/tools/muse-soul-md-editor) |
+| `Identity.md` | Display name, visual avatar, spoken voice, and tagline | Assistant icon → Identity → Edit | [Avatar & Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name) |
+| `Memory.md` | Saved facts about you, projects, and recurring preferences | Assistant icon → Identity → Memory | [Memory.md & safe reset guide](https://agent-tune.com/guides/muse-memory-md-privacy-reset) |
 
 Keep formatting and tone rules inside `Soul.md` rather than `Identity.md` so changing your Muse’s avatar or name never overwrites how it talks to you. For mobile menu paths and Side Chat rules, read [Meta Muse mobile menus & Side Chats vs. Main Chat](https://agent-tune.com/guides/muse-personality).
 

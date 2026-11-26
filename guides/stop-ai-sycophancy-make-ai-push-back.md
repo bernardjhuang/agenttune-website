@@ -5,7 +5,7 @@ Guide · Anti-Sycophancy
 
 # How to make AI push back and stop agreeing with you.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
 
@@ -59,7 +59,7 @@ If you want a full tuning file built around direct critique, start with one of t
 
 ## 2-Minute Pushback & Conflict Style Matcher + Calibrated Truth Anchor note.
 
-Caution: in our [256-probe pushback benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark), blunt unconditional prompts (“ALWAYS disagree / play devil's advocate”) caused Gemini 4 Neon to reject valid corrections **37.5%** of the time. Keep conditional pushback in your rules—and use this quick matcher to choose the exact intensity your workflow needs:
+Caution: in our [256-probe pushback benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark), blunt unconditional prompts (“ALWAYS disagree / play devil's advocate”) caused Gemini 4 Neon to reject valid corrections **37.5%** of the time, while our [2023–2026 Historical Evolution study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) and [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) show that post-training and private `<think>` scratchpads already deliberate cautiously before emitting sharper public verdicts. Keep conditional pushback in your rules—and use this quick matcher to choose the exact intensity your workflow needs:
 
 Loading interactive conflict-style matcher…
 
@@ -95,6 +95,8 @@ The Low Agreeableness Big Five tuning, the DISC Dominance (D) tuning, and the En
 
 ## Keep going.
 
+- [2×2 Benchmark: Sycophancy vs. False Contrarianism: 256-Probe Pushback Study](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
+- [Longitudinal Study: Historical Evolution of AI Personalities (2023–2026): 32 Checkpoints](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
 - [Research: Why AI models score high on Agreeableness and Openness](https://agent-tune.com/research/ai-big-five-item-level-comparison)
 - [Prompts: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Prompts: DISC AI prompts for all 4 styles (D, I, S, C)](https://agent-tune.com/guides/disc-ai-prompts)

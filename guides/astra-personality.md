@@ -5,7 +5,7 @@ Guide · GPT-6 Astra
 
 # How to give GPT-6 Astra a personality.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/astra-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/astra-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In ChatGPT Work and Codex, save your communication rules in ~/.codex/AGENTS.md (or under Settings → Personalization in the desktop app). In standard chat—where Astra runs as GPT-6 Pro—use Settings → Personalization → Custom Instructions (1,500-character limit). In the API, pass rules in the instructions parameter. The older Friendly/Pragmatic personality picker was retired in Codex and never applied to Astra.
 
@@ -13,9 +13,9 @@ By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-
 
 | Where you use Astra | Where the rules go | Limit |
 | --- | --- | --- |
-| ChatGPT Work, desktop app, Codex CLI, IDE extension | Your personal ~/.codex/AGENTS.md (or Settings → Personalization in the desktop app) | 32 KiB combined across all AGENTS.md files |
+| ChatGPT Work, desktop app, Codex CLI, IDE extension | Your personal `~/.codex/AGENTS.md` (or Settings → Personalization in the desktop app) | 32 KiB combined across all AGENTS.md files |
 | Ordinary chat (as GPT-6 Pro) | Settings → Personalization → Custom Instructions | 1,500 characters per box (use our compact export) |
-| The API | The instructions parameter of the Responses API | Sent with each request |
+| The API | The `instructions` parameter of the Responses API | Sent with each request |
 
 Paste this starter block, or pick your own profile from the [library](https://agent-tune.com/library/):
 

@@ -30,3 +30,6 @@ NOTES.md
 
 # Local bounded dependency cache
 .cache/
+
+# Local site-audit script output
+docs/site-audit-out/

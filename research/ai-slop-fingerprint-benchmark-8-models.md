@@ -5,7 +5,7 @@ Agent Research · November 2026 · 240-Reply Study
 
 # Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 240 blind-evaluated writing tasks measure deterministic slop markers per 100 words alongside human-voice and clarity ratings—and prove a hybrid anti-slop prompt cuts markers from 1.23 to 0.10.
 
@@ -15,7 +15,7 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 Agents drafting emails, memos, docs, or editorial system prompts can apply this verified anti-slop policy directly (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: ai_slop_fingerprint
@@ -111,7 +111,7 @@ Real verbatim outputs on identical prompts show why structural tell-removal beat
 - Default (AI Cadence True, 3/5 human): `"Hi [Name], Thanks to your incredible feedback during our beta, we’re thrilled to announce that Version 2.0 is officially live! You asked, we listened..."`
 - Hybrid Anti-Slop (AI Cadence False, 5/5 human, 5/5 clarity, 0.00 slop): `"Subject: Version 2.0 is live: fast CSV imports and dark mode. Version 2.0 is ready in your account right now. You asked for faster data uploads and a break from the bright white screen during late-night sessions. We built both. Our new CSV importer handles 50,000 rows in under four seconds..."`
 
-**Scope & Limitations:** Regex slop density, em-dash counts, and sycophantic closures were scored deterministically; human-likeness, clarity, and AI cadence ratings came from a single blind judge (`google/gemini-4-argon`). Sample size is `n = 10` replies per model in the 8-model leaderboard (wider CIs) and `n = 40` per intervention arm across 4 models. Notice also 5 brief generation truncations under strict `rhythm_rubric` (12–23 words) dragged its pooled clarity to `4.53/5`, reinforcing why combining positive voice structure with targeted bans (`hybrid_anti_slop`) performed best.
+**Scope & Limitations:** Regex slop density, em-dash counts, and sycophantic closures were scored deterministically; human-likeness, clarity, and AI cadence ratings came from a single blind judge (`google/gemini-4-argon`; see our Wave-3 [orthogonal 3-family judge jury standard](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) with Krippendorff's α). Sample size is `n = 10` replies per model in the 8-model leaderboard (wider CIs) and `n = 40` per intervention arm across 4 models. Notice also 5 brief generation truncations under strict `rhythm_rubric` (12–23 words) dragged its pooled clarity to `4.53/5`, reinforcing why combining positive voice structure with targeted bans (`hybrid_anti_slop`) performed best.
 
 ## Questions people ask.
 
@@ -136,5 +136,32 @@ Only partially. Banning words alone scored 0.21 slop markers/100w and 4.50/5 hum
 - [Prompt grammar: Prompt Syntax Wars: Rubrics vs Adjectives vs Bans](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 - [Style guide: AI Personality, Tone & Verbosity Rules That Beat Adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
 - [Open-weight models: OpenRouter & Open-Source System Prompt Templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models
+```
+
+```
+@article{huang2026_ai_slop_fingerprint_benchmark_8_models,
+  author  = {Huang, Bernard},
+  title   = {Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md}
+}
+```
+
+```
+> **Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models** (Bernard Huang, November 25, 2026): Banning isolated vocabulary clichés ('delve') alone misses modern AI slop: 0.00 lexicon hits appeared per default reply across all 7 top models except Llama 4 Maverick (0.60), yet blind judges flagged 30.0%–100.0% AI cadence on Gemini 4 Neon, DeepSeek V4 Pro, and Llama 4 Maverick. Use a Hybrid Anti-Slop prompt pairing explicit structural bans (zero em-dashes, zero sycophantic closers, zero 'Here is...' wrappers) with natural rhythm cues—cutting slop to 0.10/100w (SD 0.44), AI cadence to 0.0%, and raising clarity to 4.97/5.
+> Source: [https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models) · [Markdown mirror](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md)
+```
+
+[← Instruction Budget Cliff (5–75 Rules)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle)
+[Study 6 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[Agent Autonomy & Reasoning Effort →](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

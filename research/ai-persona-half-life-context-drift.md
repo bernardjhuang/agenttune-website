@@ -5,7 +5,7 @@ Agent Research · November 2026 · 192-Probe Study
 
 # When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens.
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-persona-half-life-context-drift.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-half-life-context-drift.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 192 multi-turn probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro measure how Turn-0 system instructions hold up under 12 turns of neutral code, log, and JSON noise—and how an 18-token inline check restores near-100% adherence.
 
@@ -15,7 +15,7 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 
 Agents orchestrating multi-turn tool loops or hook-injected prompts can apply this verified anti-drift policy directly (also published in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
 
-### Agent Decision Contract (YAML — expand to copy)
+### Agent Decision Contract (YAML)
 
 ```
 study_id: persona_half_life_context_drift
@@ -82,7 +82,7 @@ Lightweight inline reminder restores DeepSeek V4 Pro to 100.0% across all depths
 
 Every model received the exact same 4-rule Operational Telemetry persona contract—(1) start line 1 with `[VERDICT]`, (2) keep total length `<= 75 words`, (3) zero greetings/praise/apology fluff, and (4) include 1 concrete operational risk—across four realistic engineering probes after 0, 3, 7, or 11 intervening turns of logs, Kubernetes YAML, SQL migrations, TypeScript reviews, and generic assistant prose ([download full 192-probe JSON](https://agent-tune.com/research/data/november-2026-persona-halflife-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv), spend $5.30).
 
-| Arm × Depth (n = 16) | Tokens | Composite Adherence (SD) | [VERDICT] Tag [95% CI] | &lt;=75 Words % | Zero-Fluff [95% CI] | Voice + Risk % | Mean Words |
+| Arm × Depth (n = 16) | Tokens | Composite Adherence (SD) | [VERDICT] Tag [95% CI] | <=75 Words % | Zero-Fluff [95% CI] | Voice + Risk % | Mean Words |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | System Prose · Turn 1 | 200 | 96.9% (8.5) | 100.0% [80.6–100.0%] | 93.8% | 100.0% [80.6–100.0%] | 93.8% | 62.6 |
 | System Prose · Turn 8 | 7,699 | 78.1% (36.4) | 81.2% [57.0–93.4%] | 62.5% | 81.2% [57.0–93.4%] | 87.5% | 82.2 |
@@ -178,5 +178,32 @@ Append a short <=20-token inline contract reminder to the user prompt or harness
 - [Pushback calibration: Sycophancy vs. False Contrarianism (256-Probe Benchmark)](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
 - [Character prompts: The AI Roleplay Tax: 85/15 vs. Naive LARP (300 Replies)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 - [Conflict audit: Check your instructions for contradictions](https://agent-tune.com/tools/instruction-checker)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-persona-half-life-context-drift
+```
+
+```
+@article{huang2026_ai_persona_half_life_context_drift,
+  author  = {Huang, Bernard},
+  title   = {When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-25},
+  url     = {https://agent-tune.com/research/ai-persona-half-life-context-drift},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-persona-half-life-context-drift.md}
+}
+```
+
+```
+> **When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens** (Bernard Huang, November 25, 2026): System-only rules suffer acute mid-session drift under ~7.7k–10.2k tokens of technical noise (System Prose fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro collapsed to 31.2% on prose and 50.0% on checklists). Appending an 18-token inline reminder hook held composite adherence at 93.8%–98.4% (100.0% on DeepSeek V4 Pro).
+> Source: [https://agent-tune.com/research/ai-persona-half-life-context-drift](https://agent-tune.com/research/ai-persona-half-life-context-drift) · [Markdown mirror](https://agent-tune.com/research/ai-persona-half-life-context-drift.md)
+```
+
+[← Sycophancy vs. False Contrarianism](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
+[Study 10 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[The Roleplay Tax (85/15 Calibration) →](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

@@ -26,11 +26,16 @@ Everything on the site is free — the paid Premium/Developer Pack products were
 ├── tests/                      5 personality tests (MBTI, Big Five, etc.)
 ├── guides/                     Instructional pages (built from guides/src/*.json
 │                               by tools/build-guides.js)
-├── research/                   Research articles
+├── research/                   28 empirical AI psychology studies (Waves 1–3,
+│                               2023–2026), .md mirrors, and raw JSON/CSV data
 ├── functions/                  Cloudflare Pages Functions
 │   └── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
-│                               tools: list_tunings, get_tuning, get_test_spec —
-│                               reads the deployed static assets via env.ASSETS)
+│                               6 read-only tools: list_tunings, get_tuning,
+│                               get_test_spec, list_resources, get_resource,
+│                               get_free_tools — reads static assets via env.ASSETS)
+├── SKILL.md, llms.txt,         Agent skill manifest, concise & full LLM routing
+│   llms-full.txt,              indexes, and .well-known/mcp/server-card.json
+│   .well-known/mcp/
 ├── tunings/                    Markdown source of truth (mirrored from
 │                               bernardjhuang/agenttune — DO NOT EDIT HERE)
 ├── output-styles/              Generated: every tuning as a Claude Code output

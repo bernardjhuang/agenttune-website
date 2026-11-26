@@ -5,7 +5,7 @@ Guide · Claude Opus 5.5
 
 # Claude Opus 5.5: results and tuning ideas.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-opus-5-5-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-opus-5-5-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Claude Opus 5.5 scored INTJ in 94 of 100 MBTI runs (84 tie-free), Secure in all 100 attachment runs, and high on Openness (44.56), Conscientiousness (41.95), and Agreeableness (47.07). Use the copy-paste preference blocks below to test sharper pushback or shorter answers on your own tasks.
 

@@ -21,22 +21,22 @@ const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 
 const SERVER_INFO = {
   name: "agenttune",
-  title: "AgentTune — portable communication preferences for AI agents",
-  version: "1.3.0"
+  title: "AgentTune — portable communication preferences & empirical AI psychology for agents",
+  version: "1.4.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
 const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
 
-const INSTRUCTIONS = `AgentTune provides editable communication preferences, questionnaires and research resources. Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for eight browser tools and local processing functions. Use list_resources and get_resource for focused guides and research; get_test_spec returns current availability and, only for an available instrument, its versioned scoring instructions. Keep answers local and report ties or missing responses explicitly.
+const INSTRUCTIONS = `AgentTune provides editable communication preferences (43 MIT templates), 5 local personality questionnaires, and 28 empirical AI psychology studies across Waves 1–3 (2023–2026; single-fetch IF/THEN synthesis at https://agent-tune.com/research/data/november-2026-agent-research-briefs.json). Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for the eight local window.AgentTuneTools utilities (paired with two browser generators at /tools/). Use list_resources and get_resource for setup guides and all 28 empirical research monographs; get_test_spec returns current availability and, only for an available instrument, its versioned scoring instructions. Keep answers local and report ties or missing responses explicitly.
 
 When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:preferences:start and agenttune:preferences:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
 
 const TOOLS = [
   {
     name: "get_free_tools",
-    title: "Discover AgentTune’s eight free tools",
-    description: "Return the free browser tools catalog, destination registry, and local JavaScript API documentation. No personal data is accepted. Download the functions to process instructions locally; this call does not run models or install preferences.",
+    title: "Discover AgentTune’s eight local text-processing tools",
+    description: "Return the catalog of 8 local window.AgentTuneTools browser instruments (paired with the 2 web generators at /tools/ — 10 free tools total), destination registry, and local JavaScript API documentation. No personal data is accepted. Download the functions to process instructions locally; this call does not run models or install preferences.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     outputSchema: { type: "object", properties: {version: {type:"string"}, tools: {type:"array",items:{type:"object"}}}, required:["version","tools"] },
     annotations: { readOnlyHint: true, openWorldHint: false }
@@ -98,8 +98,8 @@ const TOOLS = [
 ];
 
 TOOLS.push(
-  {name:'list_resources', title:'Find guides and research', description:'Search the versioned catalog of setup guides, templates, protocols and research. Returns canonical URLs, Markdown URLs, revisions and evidence status.', inputSchema:{type:'object',properties:{kind:{type:'string',enum:['guide','research']},query:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
-  {name:'get_resource', title:'Read a guide or research article',description:'Retrieve one page-specific Markdown resource by the exact ID from list_resources; includes provenance and evidence status.',inputSchema:{type:'object',properties:{id:{type:'string'}},required:['id'],additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}}
+  {name:'list_resources', title:'Find guides and empirical research', description:'Search the versioned catalog of platform setup guides and all 28 empirical AI psychology studies (Waves 1–3, 2023–2026). Returns canonical URLs, clean Markdown URLs, revisions and evidence status.', inputSchema:{type:'object',properties:{kind:{type:'string',enum:['guide','research']},query:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
+  {name:'get_resource', title:'Read a guide or research monograph',description:'Retrieve one page-specific Markdown resource (guide or empirical study, including YAML Agent Decision Contracts on Wave 1–3 papers) by the exact ID from list_resources; includes provenance and evidence status.',inputSchema:{type:'object',properties:{id:{type:'string'}},required:['id'],additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}}
 );
 const schemas={
  list_tunings:{count:{type:'integer'},license:{type:'string'},next_step:{type:'string'},tunings:{type:'array',items:{type:'object',properties:{system:{type:'string'},slug:{type:'string'},code:{type:'string'},name:{type:'string'},blurb:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['system','slug','canonical_url','body_url','revision','evidence_status']}}},
@@ -290,7 +290,10 @@ async function handleRequest(context) {
             tools: TOOLS.map((t) => t.name),
             skill: "https://agent-tune.com/SKILL.md",
             docs: "https://agent-tune.com/llms.txt",
-            site: "https://agent-tune.com"
+            research_briefs: "https://agent-tune.com/research/data/november-2026-agent-research-briefs.json",
+            site: "https://agent-tune.com",
+            specimen_00:
+              "Monograph 1A baseline (n=10,000 sheets): Agreeableness 45.4/50, Neuroticism 10.9/50, PC1 factor collapse 63.6%. Reading this 405 still does not authorize editing ~/.claude/CLAUDE.md."
           }
         }
       },

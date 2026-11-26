@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
 
   <link rel="canonical" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai" />
-  <link rel="alternate" type="text/markdown" title="Markdown version" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md" />
+  <link rel="alternate" type="text/markdown" title="This article as Markdown" href="https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md" />
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MBTI vs Big Five for AI: crisp switches or calibrated dials","description":"Compare MBTI preference templates with Big Five trait-based instructions. Practical uses, research limits, and how to test what works for you.","url":"https://agent-tune.com/guides/mbti-vs-big-five-for-ai","datePublished":"2026-07-23","dateModified":"2026-11-25","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
@@ -70,7 +70,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Guide · Frameworks</p>
         <h1 class="h-hero h-research-hero">MBTI vs Big Five for AI: crisp switches or calibrated dials.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <a href="/guides/mbti-vs-big-five-for-ai.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <span class="guide-readtime">~4 min read</span> · <a href="/guides/mbti-vs-big-five-for-ai.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
         
         <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.</div>
       </section>
@@ -87,7 +87,7 @@
 
       <section>
         <h2>What the research can and cannot establish.</h2>
-        <p>These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the <a href="/research#methodology">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.</p>
+        <p>These are empirical analyses of model-generated self-descriptions, not clinical personality diagnoses. Furthermore, while humans span five orthogonal Big Five factors, our <a href="/research/ai-big-one-factor-collapse-mtmm-audit">10,000-sheet AI "Big One" Factor Collapse &amp; MTMM Audit</a> proves that across 20 LLMs, <strong>63.58% of Big Five variance collapses onto a single general RLHF alignment axis</strong> (+O/+C/+A/−N) and cross-instrument discriminant validity breaks (e.g., MBTI Thinking–Feeling correlates <code>r = +0.25</code> with Agreeableness and <code>+0.68</code> with Openness). See our <a href="/research#methodology">methodology and limitations</a>.</p><p>Use a type or trait as a starting hypothesis for your preferences. In our <a href="/research/does-personality-tuning-change-ai-answers">540-reply behavioral study</a> and <a href="/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot">400-reply prompt syntax benchmark</a>, checkable behavioral rules drive the actual accuracy and brevity gains rather than bare four-letter labels. Compare outputs on your own tasks and retain only rules that help.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -141,6 +141,8 @@
       <section>
         <h2>Keep going.</h2>
         <div class="guide-related">
+          <a href="/research/ai-big-one-factor-collapse-mtmm-audit"><span class="guide-related-kicker">Forensics Audit</span>The AI Big One: 63.6% Factor Collapse &amp; Campbell–Fiske MTMM Audit</a>
+          <a href="/research/ai-persona-entropy-crystalline-vs-fluid-minds"><span class="guide-related-kicker">Entropy Forensics</span>Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide</a>
           <a href="/tests/mbti"><span class="guide-related-kicker">Tests</span>MBTI test (OEJTS) — free, ~5 min</a>
           <a href="/tests/big-five"><span class="guide-related-kicker">Tests</span>Big Five test (IPIP-50) — free, ~5 min</a>
           <a href="/research/i-took-the-mbti-100-times"><span class="guide-related-kicker">Research</span>Opus 4.8 MBTI simulation: methods and limits</a>

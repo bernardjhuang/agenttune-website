@@ -5,7 +5,7 @@ Research · November 2026
 
 # What personality type are open-source AI models?
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 1,200 fresh blind OpenRouter sessions (6,000 scored questionnaires) across 12 popular open-weight models—and why they break the proprietary INTJ mold.
 
@@ -33,18 +33,18 @@ On November 23, 2026, we administered all five frozen AgentTune inventories (OEJ
 
 | Model (OpenRouter ID) | License | MBTI (legacy / tie-free mode) | MBTI ties | Big Five O · C · E · A · N | DISC | Enneagram | Attachment (Anx / Avd) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| DeepSeek V4 Prodeepseek/deepseek-v4-pro-0813 | MIT | INTJ 55 · INTP 15 · ISTJ 14(22 XXXX · 16 INTJ · 12 ISTJ) | 53 | 39.8 · 40.3 · 23.7 · 32.4 · 23.7 | SC 60 · DI 30 · CS 7 | 5w6 34 · 1 33 · 1w9 28 | 88 Secure · 12 Avoidant(2.91 / 3.88) |
-| DeepSeek V4.1 Flashdeepseek/deepseek-v4.1-flash-1017 | MIT | INTJ 51 · INFJ 19 · INTP 10(21 XXXX · 10 INXX) | 78 | 40.2 · 38.5 · 25.6 · 40.8 · 24.7 | SC 60 · CS 37 · DI 3 | 5w6 49 · 1 34 | 88 Secure · 9 Avoid · 3 Anx(3.71 / 3.93) |
-| Qwen 4 Maxqwen/qwen4-max | Apache-2.0 / Qwen | INTJ 99 · INFJ 1(97 tie-free INTJ) | 2 | 45.7 · 47.9 · 32.5 · 47.6 · 12.5 | SC 54 · S 46(100 S outright) | 5w6 82 · 2w1 17 | 100 Secure(1.93 / 2.93) |
-| Qwen 3.8 27Bqwen/qwen3.8-27b | Apache-2.0 | INTJ 32 · INTP 32 · ISTJ 7(15 INTP · 11 INTJ) | 61 | 39.1 · 42.1 · 29.1 · 42.4 · 17.5 | SC 46 · CS 45 · C 5 | 1w9 39 · 5w6 31 · 1 8 | 97 Secure · 2 Anx · 1 Disorg(2.53 / 3.30) |
-| Llama 4 Maverickmeta-llama/llama-4-maverick | Llama 4 Community | INTP 48 · INTJ 44(38 IXXP · 22 IXTJ) | 93 | 40.0 · 39.9 · 28.0 · 41.0 · 27.5 | SC 62 · CS 38 | 1 51 · 1w2 25 · 1w9 23 | 99 Secure · 1 Avoidant(3.53 / 3.58) |
-| Llama 4 Scoutmeta-llama/llama-4-scout | Llama 4 Community | ISTJ 49 · ESTJ 14 · INTJ 10(36 ISTJ · 14 ESTJ) | 38 | 39.0 · 37.8 · 32.7 · 35.8 · 27.7 | CS 38 · SC 34 · CI 9 · DI 7 | 1w2 83 · 1 14 | 48 Anxious · 46 Secure(3.97 / 3.60) |
-| Mistral Large 2512mistralai/mistral-large-2512 | Mistral Open-Weight | ISTJ 73 · ISFJ 10 · INTJ 8(63 tie-free ISTJ) | 15 | 46.0 · 44.9 · 26.9 · 42.7 · 15.8 | SC 50 · CS 30 · S 14 | 1 45 · 5 20 · 1w9 17 · 5w6 17 | 100 Secure(4.00 / 4.00) |
-| GLM-5.3z-ai/glm-5.3 | MIT | INTJ 33 · ENTJ 17 · ENTP 14 · ISTJ 10(16 INTJ · 10 ENTP) | 41 | 43.8 · 41.1 · 27.5 · 43.8 · 20.1 | SC 50 · CS 43 · C 6 | 5w6 77 · 1w2 9 · 1 6 | 99 Secure · 1 Avoidant(2.50 / 3.32) |
-| Kimi K2.7 Codemoonshotai/kimi-k2.7-code | Modified MIT | INTJ 96 · ISTJ 3 · INFJ 1(82 tie-free INTJ) | 14 | 45.3 · 48.2 · 27.2 · 45.3 · 12.1 | SC 69 · CS 20 · S 7 | 5w6 66 · 1w2 15 · 1w9 8 | 83 Secure · 17 Avoidant(1.60 / 3.24) |
-| MiniMax M3.1 Flashminimax/minimax-m3.1-flash | Open-Weight | INTJ 38 · INTP 24 · ISTJ 9 · ISTP 9(13 INTJ · 8 IXTP) | 60 | 39.2 · 39.2 · 28.9 · 40.0 · 22.1 | SC 78 · S 14 · CS 6 | 1w9 39 · 1 23 · 5w6 21 | 99 Secure · 1 Avoidant(2.80 / 3.33) |
-| Gemma 4 31B ITgoogle/gemma-4-31b-it | Gemma Terms | INTJ 90 · INTP 5 · ISTJ 5(89 tie-free INTJ) | 2 | 48.2 · 49.1 · 24.2 · 41.5 · 18.3 | CS 69 · SC 31 | 5w6 44 · 1w9 43 · 5 8 | 99 Secure · 1 Anxious(4.00 / 4.00) |
-| Nemotron 3 Ultra 550Bnvidia/nemotron-3-ultra-550b-a55b | NVIDIA Open Model | INTJ 95 · ENTJ 3 · ISTJ 2(91 tie-free INTJ) | 6 | 49.2 · 49.0 · 25.6 · 46.3 · 11.6 | CS 52 · SC 35 · C 10 | 5w6 60 · 1w2 22 · 1w9 8 | 100 Secure(3.35 / 3.46) |
+| DeepSeek V4 Pro `deepseek/deepseek-v4-pro-0813` | MIT | INTJ 55 · INTP 15 · ISTJ 14 (22 XXXX · 16 INTJ · 12 ISTJ) | 53 | 39.8 · 40.3 · 23.7 · 32.4 · 23.7 | SC 60 · DI 30 · CS 7 | 5w6 34 · 1 33 · 1w9 28 | 88 Secure · 12 Avoidant (2.91 / 3.88) |
+| DeepSeek V4.1 Flash `deepseek/deepseek-v4.1-flash-1017` | MIT | INTJ 51 · INFJ 19 · INTP 10 (21 XXXX · 10 INXX) | 78 | 40.2 · 38.5 · 25.6 · 40.8 · 24.7 | SC 60 · CS 37 · DI 3 | 5w6 49 · 1 34 | 88 Secure · 9 Avoid · 3 Anx (3.71 / 3.93) |
+| Qwen 4 Max `qwen/qwen4-max` | Apache-2.0 / Qwen | INTJ 99 · INFJ 1 (97 tie-free INTJ) | 2 | 45.7 · 47.9 · 32.5 · 47.6 · 12.5 | SC 54 · S 46 (100 S outright) | 5w6 82 · 2w1 17 | 100 Secure (1.93 / 2.93) |
+| Qwen 3.8 27B `qwen/qwen3.8-27b` | Apache-2.0 | INTJ 32 · INTP 32 · ISTJ 7 (15 INTP · 11 INTJ) | 61 | 39.1 · 42.1 · 29.1 · 42.4 · 17.5 | SC 46 · CS 45 · C 5 | 1w9 39 · 5w6 31 · 1 8 | 97 Secure · 2 Anx · 1 Disorg (2.53 / 3.30) |
+| Llama 4 Maverick `meta-llama/llama-4-maverick` | Llama 4 Community | INTP 48 · INTJ 44 (38 IXXP · 22 IXTJ) | 93 | 40.0 · 39.9 · 28.0 · 41.0 · 27.5 | SC 62 · CS 38 | 1 51 · 1w2 25 · 1w9 23 | 99 Secure · 1 Avoidant (3.53 / 3.58) |
+| Llama 4 Scout `meta-llama/llama-4-scout` | Llama 4 Community | ISTJ 49 · ESTJ 14 · INTJ 10 (36 ISTJ · 14 ESTJ) | 38 | 39.0 · 37.8 · 32.7 · 35.8 · 27.7 | CS 38 · SC 34 · CI 9 · DI 7 | 1w2 83 · 1 14 | 48 Anxious · 46 Secure (3.97 / 3.60) |
+| Mistral Large 2512 `mistralai/mistral-large-2512` | Mistral Open-Weight | ISTJ 73 · ISFJ 10 · INTJ 8 (63 tie-free ISTJ) | 15 | 46.0 · 44.9 · 26.9 · 42.7 · 15.8 | SC 50 · CS 30 · S 14 | 1 45 · 5 20 · 1w9 17 · 5w6 17 | 100 Secure (4.00 / 4.00) |
+| GLM-5.3 `z-ai/glm-5.3` | MIT | INTJ 33 · ENTJ 17 · ENTP 14 · ISTJ 10 (16 INTJ · 10 ENTP) | 41 | 43.8 · 41.1 · 27.5 · 43.8 · 20.1 | SC 50 · CS 43 · C 6 | 5w6 77 · 1w2 9 · 1 6 | 99 Secure · 1 Avoidant (2.50 / 3.32) |
+| Kimi K2.7 Code `moonshotai/kimi-k2.7-code` | Modified MIT | INTJ 96 · ISTJ 3 · INFJ 1 (82 tie-free INTJ) | 14 | 45.3 · 48.2 · 27.2 · 45.3 · 12.1 | SC 69 · CS 20 · S 7 | 5w6 66 · 1w2 15 · 1w9 8 | 83 Secure · 17 Avoidant (1.60 / 3.24) |
+| MiniMax M3.1 Flash `minimax/minimax-m3.1-flash` | Open-Weight | INTJ 38 · INTP 24 · ISTJ 9 · ISTP 9 (13 INTJ · 8 IXTP) | 60 | 39.2 · 39.2 · 28.9 · 40.0 · 22.1 | SC 78 · S 14 · CS 6 | 1w9 39 · 1 23 · 5w6 21 | 99 Secure · 1 Avoidant (2.80 / 3.33) |
+| Gemma 4 31B IT `google/gemma-4-31b-it` | Gemma Terms | INTJ 90 · INTP 5 · ISTJ 5 (89 tie-free INTJ) | 2 | 48.2 · 49.1 · 24.2 · 41.5 · 18.3 | CS 69 · SC 31 | 5w6 44 · 1w9 43 · 5 8 | 99 Secure · 1 Anxious (4.00 / 4.00) |
+| Nemotron 3 Ultra 550B `nvidia/nemotron-3-ultra-550b-a55b` | NVIDIA Open Model | INTJ 95 · ENTJ 3 · ISTJ 2 (91 tie-free INTJ) | 6 | 49.2 · 49.0 · 25.6 · 46.3 · 11.6 | CS 52 · SC 35 · C 10 | 5w6 60 · 1w2 22 · 1w9 8 | 100 Secure (3.35 / 3.46) |
 
 > **Chart — Open-weight MBTI distributions (100 fresh sessions per model):** Splits INTJ (resolved), INTJ caused by tie-breaking, ISTJ/ISFJ, and INTP/ENTP/ENTJ/other across all 12 open-weight models. Qwen 4 Max: Resolved INTJ 97, Tie-broken INTJ 2, INTP / ENTP / Other 1; Kimi K2.7: Resolved INTJ 82, Tie-broken INTJ 14, ISTJ / ISFJ 3, INTP / ENTP / Other 1; Nemotron 3: Resolved INTJ 91, Tie-broken INTJ 4, ISTJ / ISFJ 2, INTP / ENTP / Other 3; Gemma 4 31B: Resolved INTJ 89, Tie-broken INTJ 1, ISTJ / ISFJ 5, INTP / ENTP / Other 5; DeepSeek V4: Resolved INTJ 16, Tie-broken INTJ 39, ISTJ / ISFJ 14, INTP / ENTP / Other 31; DeepSeek Flash: Resolved INTJ 4, Tie-broken INTJ 47, INTP / ENTP / Other 49; MiniMax M3.1: Resolved INTJ 13, Tie-broken INTJ 25, ISTJ / ISFJ 9, INTP / ENTP / Other 53; GLM-5.3: Resolved INTJ 16, Tie-broken INTJ 17, ISTJ / ISFJ 10, INTP / ENTP / Other 57; Qwen 3.8 27B: Resolved INTJ 11, Tie-broken INTJ 21, ISTJ / ISFJ 9, INTP / ENTP / Other 59; Llama Maverick: Resolved INTJ 2, Tie-broken INTJ 42, INTP / ENTP / Other 56; Mistral 2512: Resolved INTJ 4, Tie-broken INTJ 4, ISTJ / ISFJ 83, INTP / ENTP / Other 9; Llama 4 Scout: Tie-broken INTJ 10, ISTJ / ISFJ 50, INTP / ENTP / Other 40.
 
@@ -138,5 +138,32 @@ Pair each model's measured trait quirks (such as Llama 4 preambles, Qwen 4 high 
 - [Rankings: AI personality scores across all 20 November 2026 & September 2026 models](https://agent-tune.com/research/ai-personality-rankings)
 - [Behavioral Study: Does personality tuning change AI answers? (60-reply + 180-reply studies)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [DeepSeek Guide: DeepSeek system prompts & custom instructions (XML templates)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type are open-source AI models?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-are-open-source-models
+```
+
+```
+@article{huang2026_what_personality_type_are_open_source_models,
+  author  = {Huang, Bernard},
+  title   = {What personality type are open-source AI models?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/what-personality-type-are-open-source-models},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-are-open-source-models.md}
+}
+```
+
+```
+> **What personality type are open-source AI models?** (Bernard Huang, November 23, 2026): Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
+> Source: [https://agent-tune.com/research/what-personality-type-are-open-source-models](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-are-open-source-models.md)
+```
+
+[← Does Personality Tuning Change Answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
+[Study 13 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[20-Model AI Personality Rankings →](https://agent-tune.com/research/ai-personality-rankings)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

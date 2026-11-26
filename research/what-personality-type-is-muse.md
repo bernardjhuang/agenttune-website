@@ -5,7 +5,7 @@ Research · Q&A
 
 # What personality type is Muse?
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.
 
@@ -126,5 +126,32 @@ This questionnaire report did not test Soul.md edits. Use our Soul.md templates 
 - [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type is Muse?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-muse
+```
+
+```
+@article{huang2026_what_personality_type_is_muse,
+  author  = {Huang, Bernard},
+  title   = {What personality type is Muse?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-17},
+  url     = {https://agent-tune.com/research/what-personality-type-is-muse},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-muse.md}
+}
+```
+
+```
+> **What personality type is Muse?** (Bernard Huang, November 17, 2026): Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
+> Source: [https://agent-tune.com/research/what-personality-type-is-muse](https://agent-tune.com/research/what-personality-type-is-muse) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-muse.md)
+```
+
+[← What Personality Type Is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)
+[Study 21 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[GPT-6 Astra vs. Sol (1,000 Runs) →](https://agent-tune.com/research/astra-vs-sol-personality-data)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

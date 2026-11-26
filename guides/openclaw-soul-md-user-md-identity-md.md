@@ -5,7 +5,7 @@ Guide & Builder · OpenClaw
 
 # OpenClaw SOUL.md, IDENTITY.md, and USER.md: templates and live 3-file builder.
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root directory so boot hooks load them every session. Keep communication style and hard boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone, stack, and decision preferences in USER.md—then pair them with AGENTS.md for tool triggers and workflows.
 
@@ -21,10 +21,10 @@ Enable JavaScript to use the interactive 3-file builder, or copy the three start
 
 | Workspace file | What belongs here | What to keep out |
 | --- | --- | --- |
-| SOUL.md | Core truths, directness vs. warmth, pushback rules, hard safety boundaries, and continuity habits. | API keys, passwords, temporary task prompts, and visual avatar paths. |
-| IDENTITY.md | Agent display name, creature/role label, signature emoji, vibe keywords, and avatar path. | Long behavioral rubrics (which get clobbered if you regenerate visual identity). |
-| USER.md | Your name, timezone, active tech stack, decision cadence, and notification boundaries. | Credentials, raw secrets, or reusable agent rules meant for other teammates. |
-| AGENTS.md | Operational loops, repo build/test commands, sub-agent routing, and tool workflows. | Personal conversational flavor (keep that in SOUL.md). |
+| `SOUL.md` | Core truths, directness vs. warmth, pushback rules, hard safety boundaries, and continuity habits. | API keys, passwords, temporary task prompts, and visual avatar paths. |
+| `IDENTITY.md` | Agent display name, creature/role label, signature emoji, vibe keywords, and avatar path. | Long behavioral rubrics (which get clobbered if you regenerate visual identity). |
+| `USER.md` | Your name, timezone, active tech stack, decision cadence, and notification boundaries. | Credentials, raw secrets, or reusable agent rules meant for other teammates. |
+| `AGENTS.md` | Operational loops, repo build/test commands, sub-agent routing, and tool workflows. | Personal conversational flavor (keep that in `SOUL.md`). |
 
 Using Meta Muse alongside OpenClaw? Notice the parallel: Meta Muse uses `Soul.md`, `Identity.md`, and `Memory.md` ([Meta Muse Soul.md guide](https://agent-tune.com/guides/muse-personality)), so your core behavioral bullets transfer straight across both platforms.
 

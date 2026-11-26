@@ -120,14 +120,18 @@ test('all 19 guide pages with benchmark blocks include valid accessible SVG char
   }
 });
 
-test('all 6 agent-first research papers include YAML contracts, >=2 valid SVG charts, and machine brief coverage', () => {
+test('all 10 agent-first & Wave-3 research papers include YAML contracts, >=2 valid SVG charts, and machine brief coverage', () => {
   const papers = [
     ['ai-instruction-budget-cliff-lost-in-the-middle', 'instruction_budget_cliff'],
     ['ai-slop-fingerprint-benchmark-8-models', 'ai_slop_fingerprint'],
     ['ai-agent-autonomy-over-asking-vs-reasoning-effort', 'agent_autonomy_reasoning_shift'],
     ['ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot', 'prompt_syntax_wars'],
     ['ai-sycophancy-vs-false-contrarianism-benchmark', 'sycophancy_vs_false_contrarianism'],
-    ['ai-persona-half-life-context-drift', 'persona_half_life_context_drift']
+    ['ai-persona-half-life-context-drift', 'persona_half_life_context_drift'],
+    ['ai-big-one-factor-collapse-mtmm-audit', 'ai_big_one_factor_collapse_mtmm'],
+    ['ai-persona-entropy-crystalline-vs-fluid-minds', 'ai_persona_entropy_crystalline_vs_fluid'],
+    ['historical-evolution-of-ai-personalities-2023-2026', 'historical_evolution_ai_personalities_2023_2026'],
+    ['ai-reasoning-personality-phase-transition', 'ai_reasoning_personality_phase_transition']
   ];
   const briefs = JSON.parse(fs.readFileSync(path.join(__dirname, '../research/data/november-2026-agent-research-briefs.json'), 'utf8'));
   assert.ok(Array.isArray(briefs.studies));
@@ -185,7 +189,11 @@ test('dist indexation headers, sitemap hygiene, and consolidated guide links hol
     '/library/attachment/avoidant',
     '/research/ai-instruction-budget-cliff-lost-in-the-middle',
     '/research/ai-slop-fingerprint-benchmark-8-models',
-    '/research/ai-agent-autonomy-over-asking-vs-reasoning-effort'
+    '/research/ai-agent-autonomy-over-asking-vs-reasoning-effort',
+    '/research/ai-big-one-factor-collapse-mtmm-audit',
+    '/research/ai-persona-entropy-crystalline-vs-fluid-minds',
+    '/research/historical-evolution-of-ai-personalities-2023-2026',
+    '/research/ai-reasoning-personality-phase-transition'
   ]) {
     assert.ok(sitemapText.includes(`<loc>https://agent-tune.com${included}</loc>`), `Sitemap missing ${included}`);
   }

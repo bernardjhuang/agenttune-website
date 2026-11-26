@@ -5,7 +5,7 @@ Guide · ChatGPT
 
 # 20 ChatGPT custom instructions examples (Box 1 + Box 2).
 
-By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').
 
@@ -14,10 +14,10 @@ By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-
 | Template Pair | Best for | Jump / Download |
 | --- | --- | --- |
 | Concise Pro (Box 1 + Box 2) | Short, answer-first daily driver under 1,500 chars | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#anyone-straight-answers) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-concise-pro.md) |
-| Senior Developer (Box 1 + Box 2) | Root cause, diffs &amp; zero test hallucination | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#software-developer) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-senior-dev.md) |
-| Skeptical Decision Analyst | Objections, denominators &amp; anti-sycophancy | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#founder) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-skeptical-analyst.md) |
+| Senior Developer (Box 1 + Box 2) | Root cause, diffs & zero test hallucination | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#software-developer) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-senior-dev.md) |
+| Skeptical Decision Analyst | Objections, denominators & anti-sycophancy | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#founder) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-skeptical-analyst.md) |
 | Structured Study Coach | Intuition first + Socratic next-step checks | [Jump to prompt](https://agent-tune.com/guides/chatgpt-custom-instructions-examples#student) · [Download .md](https://agent-tune.com/resources/chatgpt/box1-box2-study-coach.md) |
-| Customizing sliders &amp; Projects | Build your own or isolate workspace rules | [Open Generator →](https://agent-tune.com/tools/custom-instructions-generator?preset=concise-analyst&target=chatgpt-custom) · [Project Templates →](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
+| Customizing sliders & Projects | Build your own or isolate workspace rules | [Open Generator →](https://agent-tune.com/tools/custom-instructions-generator?preset=concise-analyst&target=chatgpt-custom) · [Project Templates →](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
 
 ## How to use them (Box 1 vs. Box 2).
 

@@ -5,7 +5,7 @@ Research · Q&A
 
 # What personality type is Claude?
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-claude.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-claude.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Measured across Opus 5.5, Fable 5.2, Fable 5.1, and Sonnet 5.5 (n = 100 fresh sessions each, Sept & Nov 2026).
 
@@ -141,5 +141,32 @@ Paste explicit tone and formatting rules into Personal Preferences (Settings →
 - [Research: AI personality rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Research: The research hub: both collections and the methods](https://agent-tune.com/research)
 - [Tests: Take the same tests yourself](https://agent-tune.com/tests/)
+
+### Cite this study (APA 7th · BibTeX · Markdown Brief)
+
+```
+Huang, B. (2026). What personality type is Claude?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-claude
+```
+
+```
+@article{huang2026_what_personality_type_is_claude,
+  author  = {Huang, Bernard},
+  title   = {What personality type is Claude?},
+  journal = {AgentTune Empirical AI Psychology Monographs},
+  year    = {2026},
+  date    = {2026-11-23},
+  url     = {https://agent-tune.com/research/what-personality-type-is-claude},
+  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-claude.md}
+}
+```
+
+```
+> **What personality type is Claude?** (Bernard Huang, November 23, 2026): In November 2026 OpenRouter runs (n = 100 each), Claude Fable 5.2 scored 100% tie-free INTJ (5w6 73, 2w1 19), Opus 5.5 scored 100% legacy INTJ / 58 tie-free (5w6 99), and Sonnet 5.5 scored 100% legacy INTJ / 52 tie-free (1w2 66, 5w6 25)—alongside our frozen September 2026 Codex/CLI cohort for Opus 5.5 (94 INTJ, Type 8/5/2) and Fable 5.1 (99 INTJ, Type 8).
+> Source: [https://agent-tune.com/research/what-personality-type-is-claude](https://agent-tune.com/research/what-personality-type-is-claude) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-claude.md)
+```
+
+[← What Personality Type Is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt)
+[Study 18 of 28 · Archive Index (28)](https://agent-tune.com/research)
+[What Personality Type Is Gemini? →](https://agent-tune.com/research/what-personality-type-is-gemini)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

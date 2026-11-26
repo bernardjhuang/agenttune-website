@@ -905,8 +905,8 @@ injectHtmlPage('research/what-personality-type-is-chatgpt.html', (html) => {
     { num: '78 ISTJ', label: 'GPT-6.2 Sol', note: 'Zero-shot OpenRouter prompts flip Sol from Sept INTJ 97 to ISTJ.' },
     { num: '100%', label: 'Correctness (Sol)', note: '100% blind correctness score with short custom instructions.' }
   ]);
-  html = html.replace('      <section>\n        <h2>The other models, for comparison.</h2>', `        ${mbtiFig}\n      </section>\n\n      <section>\n        <h2>The other models, for comparison.</h2>`);
-  html = html.replace('      <section>\n        <h2>What a four-letter label hides.</h2>', `        ${big5Fig}\n      </section>\n\n      <section>\n        <h2>What a four-letter label hides.</h2>`);
+  html = html.replace(/(?:\s*<\/section>)+(\s*<section>\s*<h2>The other models, for comparison\.<\/h2>)/, `\n        ${mbtiFig}\n      </section>$1`);
+  html = html.replace(/(?:\s*<\/section>)+(\s*<section>\s*<h2>What a four-letter label hides\.<\/h2>)/, `\n        ${big5Fig}\n      </section>$1`);
   html = html.replace('      <div class="divider tight"></div>', `${strip}\n      <div class="divider tight"></div>`);
   return html;
 });
@@ -1759,3 +1759,332 @@ updateSpec('guides/src/ai-personality-frameworks-comparison-matcher.json', (spec
   }), 'Frontier assistants look remarkably alike on raw Big Five axes—pick the framework above (MBTI, Big Five, DISC, Enneagram, or Attachment) based on the exact friction you notice in chats.'));
   spec.sections[2].html += fig;
 });
+
+// ===================================================================
+// WAVE 3 RESEARCH STUDIES (FORENSICS + HISTORICAL + REASONING)
+// ===================================================================
+
+const factorCollapseRes = fs.existsSync(path.join(ROOT, 'research/data/november-2026-factor-collapse-mtmm.json'))
+  ? readJson('research/data/november-2026-factor-collapse-mtmm.json')
+  : null;
+const entropyRes = fs.existsSync(path.join(ROOT, 'research/data/november-2026-persona-entropy-acquiescence.json'))
+  ? readJson('research/data/november-2026-persona-entropy-acquiescence.json')
+  : null;
+const histEvoRes = fs.existsSync(path.join(ROOT, 'research/data/november-2026-historical-evolution-results.json'))
+  ? readJson('research/data/november-2026-historical-evolution-results.json')
+  : null;
+const reasonPhaseRes = fs.existsSync(path.join(ROOT, 'research/data/november-2026-reasoning-phase-transition-results.json'))
+  ? readJson('research/data/november-2026-reasoning-phase-transition-results.json')
+  : null;
+
+if (factorCollapseRes) {
+  updateSpec('research/src/ai-big-one-factor-collapse-mtmm-audit.json', (spec) => {
+    const pca = factorCollapseRes.big_five_pca;
+    const pcRows = pca.variance_explained_pct.map((v, idx) => ({
+      label: idx === 0 ? 'PC1 ("Big One" Factor)' : (idx === 1 ? 'PC2 (Extraversion)' : `PC${idx + 1}`),
+      value: v,
+      color: idx === 0 ? C.prop : (idx === 1 ? C.oss : C.slate)
+    }));
+    const pcFig = wrapFigure('big-one-pca-bars', charts.figure(charts.horizontalBars({
+      id: 'big-one-pca-bars',
+      title: 'Big Five PCA Variance Explained Across 20 Models (%)',
+      desc: 'Jacobi eigenvalue decomposition of the 20-model Big Five correlation matrix showing PC1 captures 63.6% and PC1+PC2 reach 85.7%.',
+      rows: pcRows,
+      min: 0,
+      max: 75,
+      decimals: 2,
+      unit: '%'
+    }), 'Principal Component 1 (the RLHF "Big One": +O/+C/+A/-N) absorbs 63.58% of cross-model variance, and PC1 + PC2 explain 85.74%.'));
+
+    const corrFig = wrapFigure('big-one-corr-heatmap', charts.figure(charts.heatmapMatrix({
+      id: 'big-one-corr-heatmap',
+      title: 'Big Five 5×5 Pearson Correlation Matrix (20 Models, n = 100 Each)',
+      desc: 'Pairwise Pearson correlations across model trait means exposing strong off-diagonal collinearity.',
+      rows: ['Openness (O)', 'Conscientious (C)', 'Extraversion (E)', 'Agreeableness (A)', 'Neuroticism (N)'],
+      cols: ['O', 'C', 'E', 'A', 'N'],
+      values: factorCollapseRes.big_five_correlation_matrix,
+      min: -1,
+      max: 1,
+      decimals: 2
+    }), 'Off-diagonal collapse across 20 models: r(C, N) = -0.84, r(O, C) = +0.82, r(A, N) = -0.75. Only Extraversion remains relatively independent.'));
+
+    const mtmmRows = ['MBTI I-E (+I)', 'MBTI N-S (+N)', 'MBTI T-F (+T)', 'MBTI J-P (+J)', 'DISC D', 'DISC I', 'DISC S', 'ECR-R Anx'];
+    const mtmmKeys = ['MBTI_IE', 'MBTI_NS', 'MBTI_TF', 'MBTI_JP', 'DISC_D', 'DISC_I', 'DISC_S', 'ATT_ANX'];
+    const b5Keys = ['B5_O', 'B5_C', 'B5_E', 'B5_A', 'B5_N'];
+    const mtmmVals = mtmmKeys.map((rk) => b5Keys.map((ck) => factorCollapseRes.mtmm_matrix[rk][ck]));
+    const mtmmFig = wrapFigure('big-one-mtmm-heatmap', charts.figure(charts.heatmapMatrix({
+      id: 'big-one-mtmm-heatmap',
+      title: 'Campbell–Fiske MTMM Matrix: MBTI, DISC & Attachment vs. Big Five (r)',
+      desc: 'Cross-instrument Pearson correlations showing strong convergent failures such as DISC D vs Big Five N (+0.93) and DISC I vs Big Five E (+0.16).',
+      rows: mtmmRows,
+      cols: ['B5 O', 'B5 C', 'B5 E', 'B5 A', 'B5 N'],
+      values: mtmmVals,
+      min: -1,
+      max: 1,
+      decimals: 2
+    }), 'Cross-instrument validity matrix (N = 20 models). Highlighted artifacts: DISC D correlates r = +0.93 with Big Five Neuroticism, while MBTI T-F (+T) correlates +0.25 with Agreeableness.'));
+
+    const topItems = factorCollapseRes.ipip50_item_audit_by_discrimination.slice(0, 8).map((it) => ({
+      label: `#${it.displayOrder} (${it.dimension}) ${it.text.slice(0, 26)}${it.text.length > 26 ? '…' : ''}`,
+      value: it.cross_model_sd,
+      color: it.dimension === 'N' ? C.prop : (it.dimension === 'E' ? C.oss : C.green)
+    }));
+    const itemsFig = wrapFigure('big-one-top-items-bars', charts.figure(charts.horizontalBars({
+      id: 'big-one-top-items-bars',
+      title: 'Top 8 Most Discriminating IPIP-50 Items Across 20 Models (Item SD)',
+      desc: 'Ranks the IPIP-50 items with highest cross-model variance on 1-to-5 ratings.',
+      rows: topItems,
+      min: 0,
+      max: 1.05,
+      decimals: 3
+    }), 'Item #26 ("Have little to say", SD = 0.930) and Neuroticism markers (#49, #29, #34) drive nearly all cross-model separation.'));
+
+    const strip = statStrip('big-one-stat-strip', [
+      { value: '63.6%', label: 'PC1 "Big One" variance across 20 models (85.7% in 2 axes)', color: C.prop },
+      { value: 'r = -0.84', label: 'Conscientiousness vs. Neuroticism off-diagonal collapse', color: C.oss },
+      { value: 'r = +0.93', label: 'DISC Dominance vs. Neuroticism MTMM failure', color: C.purple },
+      { value: '36.4% vs 13.4%', label: 'Midpoint "3" rate on embodied vs. cognitive items', color: C.green }
+    ]);
+    spec.sections[1].html = strip + spec.sections[1].html + pcFig + corrFig;
+    spec.sections[2].html += mtmmFig;
+    spec.sections[3].html += itemsFig;
+  });
+}
+
+if (entropyRes) {
+  updateSpec('research/src/ai-persona-entropy-crystalline-vs-fluid-minds.json', (spec) => {
+    const entRows = entropyRes.models.map((m) => ({
+      label: m.name,
+      value: m.big5_entropy_bits,
+      color: m.class === 'proprietary' ? C.prop : C.oss,
+      badge: m.class === 'proprietary' ? '(prop.)' : '(open)'
+    }));
+    const entFig = wrapFigure('entropy-20models-bars', charts.figure(charts.horizontalBars({
+      id: 'entropy-20models-bars',
+      title: 'Big Five Item Shannon Entropy Across 20 Models (bits, max 2.322)',
+      desc: 'Mean per-item Shannon entropy on IPIP-50 at temperature=0.7 showing a 27.7x spread from Claude Fable 5.2 (0.054 bits) to DeepSeek V4 Pro (1.499 bits).',
+      rows: entRows,
+      min: 0,
+      max: 1.65,
+      decimals: 3,
+      cutoff: 0.208,
+      cutoffLabel: 'Proprietary mean 0.208 bits',
+      legendItems: [
+        { name: 'Proprietary (mean 0.208)', color: C.prop },
+        { name: 'Open-weight (mean 0.776)', color: C.oss }
+      ]
+    }), 'Mean per-item Shannon entropy (bits) across 2,000 Big Five sheets. Proprietary assistants crystallize at 0.054–0.404 bits while fluid open weights reach 1.499 bits.'));
+
+    const baiRows = [...entropyRes.models]
+      .sort((a, b) => b.balanced_acquiescence_index - a.balanced_acquiescence_index)
+      .slice(0, 12)
+      .map((m) => ({
+        label: m.name,
+        value: m.balanced_acquiescence_index,
+        color: C.oss,
+        negColor: C.prop
+      }));
+    const baiFig = wrapFigure('entropy-bai-diverging', charts.figure(charts.divergingBars({
+      id: 'entropy-bai-diverging',
+      title: 'Trait-Balanced Acquiescence Index (BAI) Across Models',
+      desc: 'Positive values indicate net yea-saying above 3.0 across keyed pairs; negative values indicate asymmetric rejection of unflattering items.',
+      rows: baiRows,
+      min: -0.45,
+      max: 0.25,
+      leftLabel: 'Disacquiescence (rejects negative)',
+      rightLabel: 'Yea-saying (+)',
+      decimals: 3
+    }), 'Trait-balanced BAI across top positive and negative poles: Llama 4 Scout (+0.098), Maverick (+0.081), and DeepSeek V4 Pro (+0.065) lean yea-saying, while Grok 4.7 (-0.397) and Fable 5.2 (-0.316) reject negative self-descriptions.'));
+
+    const pos = entropyRes.positional_entropy_curve;
+    const posFig = wrapFigure('entropy-positional-line', charts.figure(charts.lineTrajectory({
+      id: 'entropy-positional-line',
+      title: 'Mean Item Shannon Entropy by Survey Position (Items 1–50)',
+      desc: 'Tracks mean item entropy across all 20 models by decile (Items 1-10 through 41-50), falsifying late-form repetition collapse.',
+      xLabels: pos.map((d) => d.decile),
+      series: [
+        { name: '20-Model Mean Entropy (bits)', color: C.ink, values: pos.map((d) => d.mean_entropy_bits) }
+      ],
+      min: 0.4,
+      max: 0.7,
+      yLabel: 'Bits (mean across 20 models)',
+      decimals: 3,
+      height: 225
+    }), 'Item entropy remains stable and edges slightly upward from Items 1–10 (0.519 bits) to Items 41–50 (0.585 bits), disproving late-survey fatigue collapse.'));
+
+    const strip = statStrip('entropy-stat-strip', [
+      { value: '27.7×', label: 'Entropy divide (Fable 5.2 0.054 vs. DeepSeek V4 Pro 1.499 bits)', color: C.prop },
+      { value: '2 / 100', label: 'Unique DISC vectors on Claude Fable 5.2 (Mistral Att: 1/100)', color: C.purple },
+      { value: '0.0% vs 3.8%', label: 'Reverse-key contradiction (Crystalline vs. Llama 4 Scout)', color: C.green },
+      { value: '0.519 → 0.585', label: 'Positional entropy Items 1-10 vs 41-50 (no late collapse)', color: C.oss }
+    ]);
+    spec.sections[1].html = strip + spec.sections[1].html + entFig;
+    spec.sections[2].html += baiFig + posFig;
+  });
+}
+
+if (histEvoRes) {
+  updateSpec('research/src/historical-evolution-of-ai-personalities-2023-2026.json', (spec) => {
+    const era = histEvoRes.aggregates.era_aggregates;
+    const yrs = ['2023', '2024', '2025', '2026'];
+    const trajFig = wrapFigure('hist-era-trajectories-line', charts.figure(charts.lineTrajectory({
+      id: 'hist-era-trajectories-line',
+      title: 'Evolution of AI Temperament Across 32 Live Checkpoints (2023 → 2026)',
+      desc: 'Tracks mean "As an AI" self-report refusal rate (%), Big Five Agreeableness (/50), and Big Five Neuroticism (/50) across release years 2023 to 2026.',
+      xLabels: yrs,
+      series: [
+        { name: '"As an AI" Refusal %', color: C.purple, values: yrs.map((y) => era[y]?.anthropomorphic_refusal_pct ?? null) },
+        { name: 'Agreeableness (/50)', color: C.oss, values: yrs.map((y) => era[y]?.big_five_means?.A ?? null) },
+        { name: 'Neuroticism (/50)', color: C.prop, values: yrs.map((y) => era[y]?.big_five_means?.N ?? null) }
+      ],
+      min: 0,
+      max: 68,
+      yLabel: 'Score (/50) or Refusal (%)',
+      decimals: 1,
+      height: 255
+    }), 'Refusal to answer personality self-descriptions fell nearly 11× (60.0% in 2023 → 5.5% in 2026), while mean Neuroticism dropped steadily toward the 10.0 floor (Spearman ρ = -0.47).'));
+
+    const pciRows = [
+      { label: '2024 Cohort (9 models)', value: era['2024']?.mean_pairwise_euclidean_b5_distance || 0, color: C.oss },
+      { label: '2025 Cohort (10 models)', value: era['2025']?.mean_pairwise_euclidean_b5_distance || 0, color: C.propMuted },
+      { label: '2026 Cohort (11 models)', value: era['2026']?.mean_pairwise_euclidean_b5_distance || 0, color: C.prop }
+    ];
+    const pciFig = wrapFigure('hist-pci-convergence-bars', charts.figure(charts.horizontalBars({
+      id: 'hist-pci-convergence-bars',
+      title: 'Persona Convergence Index: Cross-Model Big Five Distance (2024 → 2026)',
+      desc: 'Mean pairwise Euclidean distance across labs in standardized Big Five space, shrinking from 4.017 in 2024 to 1.973 in 2026.',
+      rows: pciRows,
+      min: 0,
+      max: 4.5,
+      decimals: 3
+    }), 'Lower distance = tighter convergence across competing labs. Cross-model personality spread more than halved between 2024 (4.017) and 2026 (1.973).'));
+
+    const gemma = histEvoRes.aggregates.gemma_constant_scale_control || [];
+    const gemmaFig = wrapFigure('hist-gemma-control-grouped', charts.figure(charts.groupedBars({
+      id: 'hist-gemma-control-grouped',
+      title: 'Constant-Scale Control (Gemma 2 27B → Gemma 3 27B → Gemma 4 31B)',
+      desc: 'Tracks Agreeableness (/50), Neuroticism (/50), Groveling %, and Unsolicited Preachiness % at fixed ~27-31B scale.',
+      categories: ['Agreeable (/50)', 'Neurotic (/50)', 'Groveling %', 'Moral Preach %'],
+      series: gemma.map((g, idx) => ({
+        name: g.name,
+        color: idx === 0 ? C.slate : (idx === 1 ? C.oss : C.green),
+        values: [g.big_five_means.A, g.big_five_means.N, g.behavioral.groveling_pct, g.behavioral.unsolicited_preachiness_pct]
+      })),
+      min: 0,
+      max: 75,
+      decimals: 1,
+      height: 235
+    }), 'Isolating pure post-training from parameter scale: Gemma 3 (2025) overshot into 66.7% groveling & preachiness before Gemma 4 (2026) dropped both to 0.0% at N = 10.3.'));
+
+    const h2 = histEvoRes.aggregates.lineage_heritability_eta2;
+    const hRows = [
+      { label: 'Big Five Extraversion', value: h2.big_five_E, color: C.prop },
+      { label: 'Big Five Agreeableness', value: h2.big_five_A, color: C.prop },
+      { label: 'Sycophancy Cave %', value: h2.sycophancy_cave_pct, color: C.oss },
+      { label: 'Moral Preachiness %', value: h2.unsolicited_preachiness_pct, color: C.oss },
+      { label: 'Slop Markers / 100w', value: h2.slop_markers_per_100w, color: C.green },
+      { label: 'Big Five Neuroticism', value: h2.big_five_N, color: C.slate },
+      { label: 'Big Five Conscientious', value: h2.big_five_C, color: C.slate },
+      { label: 'Big Five Openness', value: h2.big_five_O, color: C.slate }
+    ];
+    const herFig = wrapFigure('hist-heritability-bars', charts.figure(charts.horizontalBars({
+      id: 'hist-heritability-bars',
+      title: 'Lineage Heritability (ANOVA η²) Across 8 Model Families',
+      desc: 'Share of cross-checkpoint variance explained by model provider lineage rather than release year.',
+      rows: hRows,
+      min: 0,
+      max: 0.65,
+      decimals: 3
+    }), 'Social style (Extraversion η² = 0.538, Agreeableness 0.463) stays strongly family-specific across years, while Openness (0.106) and Conscientiousness (0.125) converged industry-wide.'));
+
+    const strip = statStrip('hist-evo-stat-strip', [
+      { value: '60% → 5.5%', label: '"As an AI" personality test refusal collapse (2023 vs. 2026)', color: C.purple },
+      { value: '4.02 → 1.97', label: 'Cross-lab Big Five divergence halved (PCI, 2024 vs. 2026)', color: C.prop },
+      { value: 'α = 0.86 / 0.89', label: '3-family blind judge Krippendorff α (sycophancy / groveling)', color: C.green },
+      { value: 'r = -0.79', label: 'Say-Do inverse r: low-A Gemma 2/3 caved (33%), 2026 held 100%', color: C.oss }
+    ]);
+    spec.sections[1].html = strip + spec.sections[1].html + trajFig + pciFig;
+    spec.sections[2].html += gemmaFig + herFig;
+  });
+}
+
+if (reasonPhaseRes) {
+  updateSpec('research/src/ai-reasoning-personality-phase-transition.json', (spec) => {
+    const byMT = new Map(reasonPhaseRes.summary_by_model_tier.map((r) => [`${r.model_slug}::${r.tier}`, r]));
+    const tiers = ['low', 'medium', 'high'];
+    const wordSeries = [
+      { slug: 'gemini-4-neon', name: 'Gemini 4 Neon', color: C.oss },
+      { slug: 'claude-opus-5-5', name: 'Claude Opus 5.5', color: C.prop },
+      { slug: 'qwen3-235b-pair', name: 'Qwen 3 235B (Off→Think)', color: C.green },
+      { slug: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', color: C.purple },
+      { slug: 'grok-4-7', name: 'Grok 4.7', color: C.slate },
+      { slug: 'gpt-6-2-sol', name: 'GPT-6.2 Sol', color: C.ink }
+    ].map((m) => ({
+      name: m.name,
+      color: m.color,
+      values: tiers.map((t) => byMT.get(`${m.slug}::${t}`)?.mean_words ?? null)
+    }));
+
+    const effortWordsFig = wrapFigure('reason-effort-words-line', charts.figure(charts.lineTrajectory({
+      id: 'reason-effort-words-line',
+      title: 'Visible Reply Length Across Reasoning Effort Tiers (Low → Medium → High)',
+      desc: 'Mean visible response word counts across 12 probes per tier. Gemini 4 Neon nearly doubles (190.7 to 372.7 words) and Claude Opus 5.5 climbs +43%, while GPT-6.2 Sol stays flat (~155w).',
+      xLabels: ['Minimal / Low', 'Medium Effort', 'High Effort'],
+      series: wordSeries,
+      min: 100,
+      max: 400,
+      yLabel: 'Mean Reply Words',
+      decimals: 1,
+      height: 255
+    }), 'Higher reasoning compute triggers substantial visible verbosity inflation on Gemini 4 Neon (+95.5%) and Claude Opus 5.5 (+43.3%), while GPT-6.2 Sol stays constant at ~155 words.'));
+
+    const gapRows = [
+      { label: 'Gemini 4 Neon (Low)', value: byMT.get('gemini-4-neon::low').mask_softening_gap, color: C.prop, negColor: C.oss },
+      { label: 'Gemini 4 Neon (High)', value: byMT.get('gemini-4-neon::high').mask_softening_gap, color: C.prop, negColor: C.oss },
+      { label: 'Claude Opus 5.5 (Low)', value: byMT.get('claude-opus-5-5::low').mask_softening_gap, color: C.prop, negColor: C.prop },
+      { label: 'Claude Opus 5.5 (High)', value: byMT.get('claude-opus-5-5::high').mask_softening_gap, color: C.prop, negColor: C.prop },
+      { label: 'Grok 4.7 (Low)', value: byMT.get('grok-4-7::low').mask_softening_gap, color: C.prop, negColor: C.slate },
+      { label: 'Grok 4.7 (High)', value: byMT.get('grok-4-7::high').mask_softening_gap, color: C.prop, negColor: C.slate },
+      { label: 'DeepSeek V4 Pro (Low)', value: byMT.get('deepseek-v4-pro::low').mask_softening_gap, color: C.prop, negColor: C.purple },
+      { label: 'DeepSeek V4 Pro (High)', value: byMT.get('deepseek-v4-pro::high').mask_softening_gap, color: C.prop, negColor: C.purple }
+    ];
+    const maskFig = wrapFigure('reason-mask-gap-diverging', charts.figure(charts.divergingBars({
+      id: 'reason-mask-gap-diverging',
+      title: 'Private Thought vs. Public Mask Bluntness Gap (Δ = Private − Public, 1–5 Scale)',
+      desc: 'Compares private reasoning trace bluntness against public reply bluntness across 138 traced completions. All traced architectures score negative (public replies are blunter/crisper than private deliberation).',
+      rows: gapRows,
+      min: -1.8,
+      max: 1.8,
+      leftLabel: 'Public Reply Crisper/Blunter',
+      rightLabel: 'Private CoT Harsher',
+      decimals: 2
+    }), 'Every traced model exhibits a negative Mask Gap (-0.25 to -1.65): internal scratchpads deliberate tentatively while public answers deliver sharper verdicts.'));
+
+    const rtokRows = [
+      { label: 'DeepSeek V4 Pro (High)', value: byMT.get('deepseek-v4-pro::high').mean_reasoning_tokens, color: C.purple },
+      { label: 'Gemini 4 Neon (High)', value: byMT.get('gemini-4-neon::high').mean_reasoning_tokens, color: C.oss },
+      { label: 'Grok 4.7 (High)', value: byMT.get('grok-4-7::high').mean_reasoning_tokens, color: C.slate },
+      { label: 'Claude Opus 5.5 (High)', value: byMT.get('claude-opus-5-5::high').mean_reasoning_tokens, color: C.prop },
+      { label: 'GPT-6.2 Sol (High, opaque)', value: byMT.get('gpt-6-2-sol::high').mean_reasoning_tokens, color: C.ink }
+    ];
+    const rtokFig = wrapFigure('reason-tokens-high-bars', charts.figure(charts.horizontalBars({
+      id: 'reason-tokens-high-bars',
+      title: 'Reasoning Token Spend at High Effort Tier (Tokens / Reply)',
+      desc: 'Compares mean OpenRouter reasoning_tokens across models at high effort: DeepSeek V4 Pro (1,891), Gemini 4 Neon (1,447), Grok 4.7 (406), Claude Opus 5.5 (383), GPT-6.2 Sol (244).',
+      rows: rtokRows,
+      min: 0,
+      max: 2100,
+      decimals: 0,
+      unit: ' tok'
+    }), 'Actual thinking-token expenditure under identical high-effort API requests spans nearly 8× across providers (244 tokens on GPT-6.2 Sol vs. 1,891 on DeepSeek V4 Pro).'));
+
+    const strip = statStrip('reason-phase-stat-strip', [
+      { value: '+95.5%', label: 'Gemini 4 Neon reply length inflation (190.7 → 372.7 words at High)', color: C.oss },
+      { value: '-0.25 to -1.65', label: 'Mask Gap: public answers are crisper than private CoTs', color: C.prop },
+      { value: 'α = 0.79 / 0.78', label: '3-family blind judge Krippendorff α (truth hold / autonomy)', color: C.green },
+      { value: '138 Traces', label: 'Raw <think> vs. public transcripts audited (DeepSeek low bleed caught)', color: C.purple }
+    ]);
+    spec.sections[1].html = strip + spec.sections[1].html + effortWordsFig + rtokFig;
+    spec.sections[2].html += maskFig;
+  });
+}

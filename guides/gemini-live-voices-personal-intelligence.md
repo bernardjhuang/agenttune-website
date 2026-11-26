@@ -5,7 +5,7 @@ Guide & Picker · Gemini Live
 
 # Google Gemini Live voices and Personal Intelligence: voice list, setup, and sync fix.
 
-By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and select voices like Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Put permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.
 
@@ -21,10 +21,10 @@ Enable JavaScript to filter voices interactively, or read the complete voice tab
 
 Google shifted Gemini’s voice picker from a horizontal carousel to a vertical list and has gradually replaced early names like Lyra and Nova with refreshed voices such as **Flare** and **Glow** depending on app version and region:
 
-| Voice | Register &amp; cadence | Best paired with |
+| Voice | Register & cadence | Best paired with |
 | --- | --- | --- |
 | Ursa | Female · Engaged, mid-range | Balanced everyday assistant conversations |
-| Vega | Female · Bright, higher-pitched | Crisp factual Q&amp;A and quick lookups |
+| Vega | Female · Bright, higher-pitched | Crisp factual Q&A and quick lookups |
 | Capella | Female · British accent, serene | Reading summaries, study sessions, and calm critique |
 | Eclipse | Female · Energetic, mid-range | Brainstorming and active coaching |
 | Dipper / Pegasus | Male · Engaged, deeper | Structured work planning and steady walkthroughs |

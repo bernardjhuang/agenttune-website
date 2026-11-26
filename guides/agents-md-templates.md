@@ -5,19 +5,19 @@ Guide · Coding Agents
 
 # AGENTS.md templates for Codex and coding agents.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.
 
 ## Quick pick: Downloadable AGENTS.md templates by stack.
 
-| Stack / Role Template | Verification &amp; Guardrails | Jump / Download |
+| Stack / Role Template | Verification & Guardrails | Jump / Download |
 | --- | --- | --- |
-| TypeScript &amp; Next.js | Strict types, RSC boundaries, typecheck &amp;&amp; test | [View file](https://agent-tune.com/guides/agents-md-templates#1-typescript-and-next-js-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-typescript-nextjs.md) |
-| Python &amp; Data Pipelines | Virtualenv, pytest &amp; ruff, zero secret leaks | [View file](https://agent-tune.com/guides/agents-md-templates#2-python-and-data-pipelines-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-python-data.md) |
-| Monorepo Shared Safety | Package-scoped diffs &amp; sub-32 KiB discipline | [View file](https://agent-tune.com/guides/agents-md-templates#3-monorepo-shared-workspace-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-monorepo-safe.md) |
-| Autonomous PR Reviewer | Auth, SQL, race conditions &amp; missing assertions first | [View file](https://agent-tune.com/guides/agents-md-templates#4-autonomous-pr-reviewer-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-pr-reviewer.md) |
-| 12 more coding templates | Go, Rust, Personal ~/.codex/AGENTS.md, Migrations, Docs &amp; more | [Jump to 16 files ↓](https://agent-tune.com/guides/agents-md-templates#twelve-more-agents-md-templates) |
+| TypeScript & Next.js | Strict types, RSC boundaries, `typecheck && test` | [View file](https://agent-tune.com/guides/agents-md-templates#1-typescript-and-next-js-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-typescript-nextjs.md) |
+| Python & Data Pipelines | Virtualenv, `pytest & ruff`, zero secret leaks | [View file](https://agent-tune.com/guides/agents-md-templates#2-python-and-data-pipelines-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-python-data.md) |
+| Monorepo Shared Safety | Package-scoped diffs & sub-32 KiB discipline | [View file](https://agent-tune.com/guides/agents-md-templates#3-monorepo-shared-workspace-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-monorepo-safe.md) |
+| Autonomous PR Reviewer | Auth, SQL, race conditions & missing assertions first | [View file](https://agent-tune.com/guides/agents-md-templates#4-autonomous-pr-reviewer-agents-md) · [Download .md](https://agent-tune.com/resources/agents/agents-md-pr-reviewer.md) |
+| 12 more coding templates | Go, Rust, Personal `~/.codex/AGENTS.md`, Migrations, Docs & more | [Jump to 16 files ↓](https://agent-tune.com/guides/agents-md-templates#twelve-more-agents-md-templates) |
 
 Using multiple tools side-by-side? See our [Codex AGENTS.md Limit & Override Guide](https://agent-tune.com/guides/codex-agents-md-guide), [15 CLAUDE.md Examples](https://agent-tune.com/guides/claude-code-personality), and [7-Agent Rules File Matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix).
 

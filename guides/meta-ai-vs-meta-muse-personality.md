@@ -5,18 +5,18 @@ Guide · Meta Muse & Meta AI
 
 # How to change Meta AI’s personality (and how it differs from Meta Muse).
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Meta Muse, open Settings → Personalization → Assistant Identity (or tap the Assistant icon → Identity) to edit Soul.md (communication style), Identity.md (name, avatar, voice), and Memory.md (facts about you). In Meta AI on WhatsApp, Instagram, Messenger, or web chat where Soul.md is not available, paste a compact communication block at the start of the thread or save a one-line preference in account memory.
 
 ## Side-by-side comparison: Meta Muse vs Meta AI surfaces.
 
-| Feature | Meta Muse (Assistant Identity) | Meta AI in social &amp; messaging apps |
+| Feature | Meta Muse (Assistant Identity) | Meta AI in social & messaging apps |
 | --- | --- | --- |
-| Persistent style file | Yes: editable Soul.md under Personalization → Assistant Identity. | No Soul.md file; uses chat-level prompts or saved memory items. |
-| Custom name &amp; avatar file | Yes: editable Identity.md for name, avatar, and voice. | Fixed Meta AI identity or preset voices where offered. |
-| Editable memory notebook | Yes: Memory.md viewable and editable as Markdown. | Account memory items managed through app settings. |
-| Best AgentTune export | Muse · saved preferences (updates Soul.md). | Any chat prompt block or compact 1,500-character preferences. |
+| Persistent style file | Yes: editable `Soul.md` under Personalization → Assistant Identity. | No `Soul.md` file; uses chat-level prompts or saved memory items. |
+| Custom name & avatar file | Yes: editable `Identity.md` for name, avatar, and voice. | Fixed Meta AI identity or preset voices where offered. |
+| Editable memory notebook | Yes: `Memory.md` viewable and editable as Markdown. | Account memory items managed through app settings. |
+| Best AgentTune export | Muse · saved preferences (updates `Soul.md`). | Any chat prompt block or compact 1,500-character preferences. |
 
 ## If you are using Meta Muse: use Soul.md.
 

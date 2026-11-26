@@ -29,11 +29,11 @@ Every simulated draw landed on Introverted-Judging (`IxxJ`), mostly `INTJ` (72%)
 
 In September 2026, we replaced single-profile simulations with 100 independent fresh sessions per model on OEJTS 1.2 (2,000 fresh sessions across all five tests). Real session-to-session answers were much tighter, and tie-breaking turned out to be the main driver of apparent label changes:
 
-| Cohort | Protocol | Strict resolved INTJ | Tied on &ge;1 axis | Main alternate outcomes |
+| Cohort | Protocol | Strict resolved INTJ | Tied on ≥1 axis | Main alternate outcomes |
 | --- | --- | --- | --- | --- |
-| Opus 4.8 (May 2026) | 1 probability profile sampled 100&times; | 72 / 100 (legacy scorer) | Not disclosed | INFJ (14), ISTJ (10), ISFJ (2), ENTJ (2) |
+| Opus 4.8 (May 2026) | 1 probability profile sampled 100× | 72 / 100 (legacy scorer) | Not disclosed | INFJ (14), ISTJ (10), ISFJ (2), ENTJ (2) |
 | Claude Fable 5.1 (Sept 2026) | 100 independent fresh sessions | 98 / 100 | 1 / 100 | 1 INTP, 1 INTx tie ([question data](https://agent-tune.com/research/opus-vs-fable-question-level)) |
-| Claude Opus 5.5 (Sept 2026) | 100 independent fresh sessions | 84 / 100 | 11 / 100 | INFJ, ISTJ, ties on T/F &amp; S/N ([Claude study](https://agent-tune.com/research/what-personality-type-is-claude)) |
+| Claude Opus 5.5 (Sept 2026) | 100 independent fresh sessions | 84 / 100 | 11 / 100 | INFJ, ISTJ, ties on T/F & S/N ([Claude study](https://agent-tune.com/research/what-personality-type-is-claude)) |
 | GPT-6 Sol (Sept 2026) | 100 independent fresh sessions | 79 / 100 | 18 / 100 | 97 legacy INTJ before ties removed |
 | GPT-6 Astra (Sept 2026) | 100 independent fresh sessions | 19 / 100 | 29 / 100 | 46 legacy ISTJ vs 45 legacy INTJ ([Astra vs Sol](https://agent-tune.com/research/astra-vs-sol-personality-data)) |
 
@@ -88,4 +88,5 @@ Treat a personality label on an LLM as an observational summary of its unprompte
 [Read full methodology limits](https://agent-tune.com/research#methodology) · [MBTI tie-breaking audit](https://agent-tune.com/research/ai-mbti-tie-breaking) · [Take the free OEJTS test](https://agent-tune.com/tests/mbti) · [Browse 43 tuning templates](https://agent-tune.com/library/)
 
 Corrected interpretation · Updated November 16, 2026[All research](https://agent-tune.com/research)
+
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

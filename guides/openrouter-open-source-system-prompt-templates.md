@@ -5,19 +5,19 @@ Guide · Open-Source AI
 
 # OpenRouter and open-source AI system prompt templates.
 
-By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Select your open-weight model in the interactive matcher below to get a ready-to-paste system prompt, OpenRouter API JSON payload, or Ollama Modelfile calibrated to that model's measured quirks (like Llama 4 preambles, DeepSeek verbosity, or Gemma 4 high agreeableness).
 
 ## Quick pick: Starter downloads for top open-weight models.
 
-| Open-Weight Model Family | OpenRouter ID &amp; License | Key Calibration Antidote | Download / Jump |
+| Open-Weight Model Family | OpenRouter ID & License | Key Calibration Antidote | Download / Jump |
 | --- | --- | --- | --- |
-| DeepSeek V4 Pro / V4.1 Flash | deepseek/deepseek-v4-pro-0813 · MIT | Lock answer-first &amp; flag missing file evidence upfront | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#1-deepseek-v4-pro-and-flash) · [Download .md](https://agent-tune.com/resources/openrouter/deepseek-v4-pro-system-prompt.md) |
-| Qwen 4 Max &amp; Qwen 3.8 27B | qwen/qwen4-max · Apache-2.0 / Qwen | Enforce direct pushback, zero filler &amp; Ollama Modelfile | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#2-qwen-4-max-and-3-8-27b) · [Modelfile](https://agent-tune.com/resources/openrouter/Modelfile.qwen3.8-27b) |
-| Llama 4 Maverick &amp; Scout | meta-llama/llama-4-maverick · Llama 4 | Suppress 'Sure! Here is JSON' preambles &amp; curb agreement | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#3-llama-4-maverick-and-scout) · [Download .md](https://agent-tune.com/resources/openrouter/llama-4-maverick-system-prompt.md) |
-| Qwen 4 Max System File | qwen/qwen4-max · Flagship MoE | Strict JSON bounds &amp; adversarial premise checks | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#2-qwen-4-max-and-3-8-27b) · [Download .md](https://agent-tune.com/resources/openrouter/qwen-4-max-system-prompt.md) |
-| All 12 Open-Weight Models | Mistral Large, GLM-5.3, Kimi K2.7, MiniMax, Gemma 4, Nemotron | Full copy-paste blocks + OpenRouter &amp; Ollama recipes | [Jump to 16 configs ↓](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#sixteen-more-open-source-model-prompts) |
+| DeepSeek V4 Pro / V4.1 Flash | `deepseek/deepseek-v4-pro-0813` · MIT | Lock answer-first & flag missing file evidence upfront | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#1-deepseek-v4-pro-and-flash) · [Download .md](https://agent-tune.com/resources/openrouter/deepseek-v4-pro-system-prompt.md) |
+| Qwen 4 Max & Qwen 3.8 27B | `qwen/qwen4-max` · Apache-2.0 / Qwen | Enforce direct pushback, zero filler & Ollama `Modelfile` | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#2-qwen-4-max-and-3-8-27b) · [Modelfile](https://agent-tune.com/resources/openrouter/Modelfile.qwen3.8-27b) |
+| Llama 4 Maverick & Scout | `meta-llama/llama-4-maverick` · Llama 4 | Suppress 'Sure! Here is JSON' preambles & curb agreement | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#3-llama-4-maverick-and-scout) · [Download .md](https://agent-tune.com/resources/openrouter/llama-4-maverick-system-prompt.md) |
+| Qwen 4 Max System File | `qwen/qwen4-max` · Flagship MoE | Strict JSON bounds & adversarial premise checks | [View prompt](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#2-qwen-4-max-and-3-8-27b) · [Download .md](https://agent-tune.com/resources/openrouter/qwen-4-max-system-prompt.md) |
+| All 12 Open-Weight Models | Mistral Large, GLM-5.3, Kimi K2.7, MiniMax, Gemma 4, Nemotron | Full copy-paste blocks + OpenRouter & Ollama recipes | [Jump to 16 configs ↓](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates#sixteen-more-open-source-model-prompts) |
 
 > **Chart — 12 Open-Weight Models Ranked by Agreeableness (/50, n = 100 Each):** Shows huge spread across open-source models on OpenRouter—from warm Qwen 4 Max (47.6) down to skeptical DeepSeek V4 Pro (32.4). Qwen 4 Max: 47.6; Nemotron 3 Ultra 550B: 46.3; Kimi K2.7 Code: 45.3; GLM-5.3: 43.8; Mistral Large 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B IT: 41.5; Llama 4 Maverick: 41.0; DeepSeek V4.1 Flash: 40.8; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
 

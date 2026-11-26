@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # Meta Muse Memory.md, privacy, and how to reset safely.
 
-By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-memory-md-privacy-reset.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization → Assistant Identity (or tap the Assistant icon) and select Memory.md to view, edit, or delete saved facts about you. To clear old context without losing your communication style, reset only Memory.md and leave Soul.md and Identity.md untouched.
 
