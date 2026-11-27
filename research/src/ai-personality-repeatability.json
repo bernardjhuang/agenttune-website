@@ -6,7 +6,7 @@
   "title": "AI Personality Repeatability: Labels vs Answer Variance",
   "description": "Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.",
   "pill": "Research · descriptive reanalysis",
-  "h1": "Does a stable result mean a stable AI personality?",
+  "h1": "AI personality repeatability: does a stable label mean stable answers?",
   "dek": "A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.",
   "lede": "Getting the same four-letter type across 100 runs doesn't mean the model gave the same answers every time. Using our 2,000 September 2026 test sessions, we separated three things: identical answer sheets, score variation, and repeated final labels.",
   "answer": "All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.",
@@ -32,7 +32,7 @@
       "html": "<p>GPT-6 Sol’s Neuroticism score averaged 20.05 out of 50 with a standard deviation of <strong>5.35 points</strong> from run to run. Its Agreeableness score averaged 44.99 with a standard deviation of just <strong>1.01 points</strong>. Looking only at the average hides which traits bounce around between sessions.</p>"
     },
     {
-      "h2": "How to test whether your AI is consistent on real work",
+      "h2": "The fine print: how to test consistency on real work and download the data",
       "html": "<p>Survey repeatability doesn't prove a model will follow your instructions on real tasks. In our November 2026 10,000-sheet expansion (<a href=\"/research/ai-persona-entropy-crystalline-vs-fluid-minds\">Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide</a>), per-item Shannon entropy spanned from <code>0.054 bits</code> on Claude Fable 5.2 (only <code>2/100</code> unique DISC vectors and <code>8/100</code> unique Big Five vectors) up to <code>1.499 bits</code> on DeepSeek V4 Pro, while disproving late-survey fatigue collapse (<code>0.519 → 0.585 bits</code> across items 1–50). To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? <a href=\"/research/data/ai-repeatability.csv\" download>Download the 20-row repeatability CSV</a> to inspect all counts from this study.</p>"
     }
   ],
@@ -78,6 +78,16 @@
     {
       "label": "Complete derived results (JSON)",
       "href": "/research/data/content-analysis.json"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does a 100% repeatable personality label mean an AI gives identical quiz answers every run?",
+      "a": "No. Across 400 fresh Attachment runs, all four models tested as Secure 100% of the time, yet they produced 79 to 100 distinct 36-item answer sheets out of 100 runs because any anxiety and avoidance averages below 4.00 fall into the same Secure quadrant."
+    },
+    {
+      "q": "Which questionnaire showed the highest vs. lowest answer-sheet repeatability?",
+      "a": "The 16-item DISC test had the fewest unique answer sheets (Claude Opus 5.5 produced only 7 distinct sheets across 100 runs, repeating its top sheet 60 times), whereas the 50-item Big Five and 36-item Attachment tests produced 79 to 100 unique answer sheets per 100 runs."
     }
   ]
 }

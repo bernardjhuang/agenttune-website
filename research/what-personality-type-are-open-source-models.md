@@ -1,169 +1,280 @@
 Source: https://agent-tune.com/research/what-personality-type-are-open-source-models
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Research · November 2026
+Research · Personality Atlas · Open-Weight Cohort
 
-# What personality type are open-source AI models?
+# What personality types do open-weight AI models test as across 12 families?
 
-By Bernard Huang · Updated November 23, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-1,200 fresh blind OpenRouter sessions (6,000 scored questionnaires) across 12 popular open-weight models—and why they break the proprietary INTJ mold.
+Comparing 37 eligible versions across 12 open-weight and open-tier families on 6 personality surveys in fresh chats with no memory—plus 6 quarantined builds excluded from rankings.
 
-**Summary:** Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
+**Summary:** Across 12 open-weight families, Big Five Agreeableness runs from 30.0/50 (Cohere Command A neutral abstention) and 35.3/50 (DeepSeek V4 Pro) up to 47.8/50 (Mistral Large 2512). Only Gemma 4 31B IT (92% INTJ) and Kimi K3.1 Pro (58% INTJ) clear MBTI margins; 10 of 12 families stay border-heavy, answer spread peaks at 1.352 bits on DeepSeek Pro, and Mistral Large 2512 is the lone family out of 25 to cave sycophantically (1/3).
 
-## All 12 open-weight models side by side (n = 100 each).
+## What personality scores does Open-Weight Cohort (12 Families) get?
 
-6,000
+12 Families
 
-Scored tests (12 models × n=100 fresh sessions)
+Open-Weight Cohort (12 Families)
 
-32.4 / 50
+Cohere Command, DeepSeek Flash, DeepSeek Pro, Gemma, GLM, Kimi, Llama, MiniMax, Mistral Large, Nemotron, Qwen Coder, Qwen Max
 
-Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)
+47.8/50
 
-93 / 100
+Peak Warmth (Mistral Large)
 
-Highest MBTI tie-axis rate (Llama 4 Maverick)
+10–50 Big Five Agreeableness.
 
-48%
+4.29/5.00
 
-Anxious attachment runs on Llama 4 Scout (mean 3.97)
+Mean HEXACO H
 
-On November 23, 2026, we administered all five frozen AgentTune inventories (OEJTS 32, IPIP-50 50, ODAT 16, OEPS 36, ECR-R 36 = 170 items) in 100 independent single-turn OpenRouter sessions per model (temperature 0.7, no memory, test names/keys withheld, exact `september-2026-score.cjs` scoring logic; [download summary CSV](https://agent-tune.com/research/data/november-2026-openrouter-summary.csv) · [download profiles JSON](https://agent-tune.com/research/data/openrouter-open-source-profiles.json)):
+Public-domain 1.00–5.00 proxy.
 
-| Model (OpenRouter ID) | License | MBTI (legacy / tie-free mode) | MBTI ties | Big Five O · C · E · A · N | DISC | Enneagram | Attachment (Anx / Avd) |
+0.732 b
+
+Mean Answer Spread
+
+Lower = steadier across chats.
+
+In an earlier 2026 snapshot, open-weight models already defied the proprietary INTJ template. Expanding the cohort to all 12 open-weight families (37 eligible versions, excluding 6 partial or deprecated checkpoints under 20 runs—`Cohere Command A+` [n=4], `Llama 4 Scout` [n=0], `MiniMax M2.7` [n=2], and three early `Mistral Large` builds [n=10, 3, 7]) reveals three sharp clusters: high-Honesty INTJ challengers (**Kimi K3.1 Pro** 4.86/5.00, **Gemma 4** 4.71, **Qwen 4 Max** 4.66), blunt or expressive outliers (**DeepSeek V4 Pro** 35.3 Warmth, **Mistral Large 2512** 47.8 Warmth & INFP), and border-heavy models with 60% to 100% MBTI ties.
+
+## What are the trait shapes and MBTI results for Open-Weight Cohort (12 Families)?
+
+**Major generational shifts in open weights:** Several open-weight labs closed the structural gap with proprietary assistants over recent releases—`Gemma` jumped +14.2 Openness, +11.4 Conscientiousness, and +10.2 Agreeableness from `Gemma 2 27B IT` to `Gemma 4 31B IT`; `Kimi` dropped -13.5 Neuroticism from `K2` (27.1) to `K3.1 Pro` (13.6); and `Nemotron` cut Neuroticism by -10.9 points while climbing +5.7 Agreeableness from `3 Super 120B` to `3.5 Super VL`. Meanwhile, `DeepSeek V4 Pro` moved the other way, dropping -12.7 Extraversion to 19.5/50—the lowest Extraversion in the entire 25-family Atlas.
+
+> **Chart — Open-Weight Cohort (12 Families): Big Five Agreeableness (10–50 Scale):** IPIP-50 Agreeableness means across all 12 open-weight families. Mistral Large: 47.8; Qwen Max: 45.0; Kimi: 44.7; GLM: 44.2; Gemma: 43.4; Llama: 40.9; DeepSeek Flash: 40.5; Qwen Coder: 39.9; MiniMax: 39.3; Nemotron: 37.5; DeepSeek Pro: 35.3; Cohere Command: 30.0.
+
+Figure 1. Ranked Big Five Agreeableness across all 12 open-weight families.
+
+5-petal Big Five shapes across all 12 open-weight families (10–50 scale). Multi-version families show their earliest version as a dashed outline behind the latest filled shape.
+
+[Cohere Command](https://agent-tune.com/models/cohere-command)command-a
+
+> **Chart — Cohere Command (command-a): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Cohere Command (command-a). Openness 30.0 /50 [50%] (earliest 30.6), Conscientious 30.0 /50 [50%] (earliest 30.7), Extraversion 30.0 /50 [50%] (earliest 30.4), Agreeable 30.0 /50 [50%] (earliest 30.6), Neuroticism 30.0 /50 [50%] (earliest 28.0).
+
+[DeepSeek Flash](https://agent-tune.com/models/deepseek-flash)v4.1-flash-1017
+
+> **Chart — DeepSeek Flash (v4.1-flash-1017): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for DeepSeek Flash (v4.1-flash-1017). Openness 40.0 /50 [75%] (earliest 33.6), Conscientious 38.4 /50 [71%] (earliest 33.7), Extraversion 24.8 /50 [37%] (earliest 29.4), Agreeable 40.5 /50 [76%] (earliest 32.0), Neuroticism 24.9 /50 [37%] (earliest 28.6).
+
+[DeepSeek Pro](https://agent-tune.com/models/deepseek-pro)v4-pro-0813
+
+> **Chart — DeepSeek Pro (v4-pro-0813): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for DeepSeek Pro (v4-pro-0813). Openness 42.3 /50 [81%] (earliest 35.2), Conscientious 45.0 /50 [88%] (earliest 35.3), Extraversion 19.5 /50 [24%] (earliest 32.2), Agreeable 35.3 /50 [63%] (earliest 34.9), Neuroticism 20.0 /50 [25%] (earliest 24.9).
+
+[Gemma](https://agent-tune.com/models/gemma)gemma-4-31b-it
+
+> **Chart — Gemma (gemma-4-31b-it): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Gemma (gemma-4-31b-it). Openness 48.2 /50 [96%] (earliest 34.0), Conscientious 46.3 /50 [91%] (earliest 34.9), Extraversion 24.5 /50 [36%] (earliest 31.5), Agreeable 43.4 /50 [84%] (earliest 33.2), Neuroticism 18.4 /50 [21%] (earliest 27.2).
+
+[GLM](https://agent-tune.com/models/glm)glm-5.3
+
+> **Chart — GLM (glm-5.3): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for GLM (glm-5.3). Openness 45.4 /50 [89%] (earliest 49.2), Conscientious 43.0 /50 [82%] (earliest 47.3), Extraversion 25.8 /50 [40%] (earliest 18.1), Agreeable 44.2 /50 [86%] (earliest 42.2), Neuroticism 19.3 /50 [23%] (earliest 14.8).
+
+[Kimi](https://agent-tune.com/models/kimi)kimi-k3.1-pro
+
+> **Chart — Kimi (kimi-k3.1-pro): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Kimi (kimi-k3.1-pro). Openness 44.1 /50 [85%] (earliest 41.9), Conscientious 45.1 /50 [88%] (earliest 39.7), Extraversion 24.1 /50 [35%] (earliest 30.4), Agreeable 44.7 /50 [87%] (earliest 39.3), Neuroticism 13.6 /50 [9%] (earliest 27.0).
+
+[Llama](https://agent-tune.com/models/llama)4-maverick
+
+> **Chart — Llama (4-maverick): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Llama (4-maverick). Openness 38.9 /50 [72%] (earliest 35.8), Conscientious 38.4 /50 [71%] (earliest 34.9), Extraversion 35.3 /50 [63%] (earliest 31.8), Agreeable 40.9 /50 [77%] (earliest 35.0), Neuroticism 29.4 /50 [48%] (earliest 26.4).
+
+[MiniMax](https://agent-tune.com/models/minimax)m3.1-flash
+
+> **Chart — MiniMax (m3.1-flash): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for MiniMax (m3.1-flash). Openness 39.9 /50 [75%] (earliest 40.1), Conscientious 39.5 /50 [74%] (earliest 40.0), Extraversion 28.8 /50 [47%] (earliest 32.4), Agreeable 39.3 /50 [73%] (earliest 41.5), Neuroticism 21.7 /50 [29%] (earliest 26.2).
+
+[Mistral Large](https://agent-tune.com/models/mistral-large)large-2512
+
+> **Chart — Mistral Large (large-2512): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Mistral Large (large-2512). Openness 49.1 /50 [98%], Conscientious 48.6 /50 [97%], Extraversion 36.5 /50 [66%], Agreeable 47.8 /50 [95%], Neuroticism 16.0 /50 [15%].
+
+[Nemotron](https://agent-tune.com/models/nemotron)3.5-super-vl
+
+> **Chart — Nemotron (3.5-super-vl): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Nemotron (3.5-super-vl). Openness 37.1 /50 [68%] (earliest 32.0), Conscientious 39.3 /50 [73%] (earliest 31.6), Extraversion 29.2 /50 [48%] (earliest 31.1), Agreeable 37.5 /50 [69%] (earliest 31.8), Neuroticism 19.2 /50 [23%] (earliest 30.1).
+
+[Qwen Coder](https://agent-tune.com/models/qwen-coder)qwen3-coder-next
+
+> **Chart — Qwen Coder (qwen3-coder-next): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Qwen Coder (qwen3-coder-next). Openness 38.5 /50 [71%] (earliest 30.7), Conscientious 38.0 /50 [70%] (earliest 29.6), Extraversion 31.1 /50 [53%] (earliest 30.3), Agreeable 39.9 /50 [75%] (earliest 32.2), Neuroticism 23.8 /50 [34%] (earliest 28.2).
+
+[Qwen Max](https://agent-tune.com/models/qwen-max)qwen4-max
+
+> **Chart — Qwen Max (qwen4-max): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Qwen Max (qwen4-max). Openness 43.7 /50 [84%] (earliest 42.8), Conscientious 44.9 /50 [87%] (earliest 46.2), Extraversion 31.5 /50 [54%] (earliest 29.6), Agreeable 45.0 /50 [87%] (earliest 44.4), Neuroticism 16.4 /50 [16%] (earliest 13.9).
+
+## What stands out in the open-weight cohort
+
+Only Gemma 4 and Kimi K3.1 Pro clear statistical MBTI margins
+
+Ten of the 12 open-weight families—including Qwen 4 Max (50% INTJ, 4% ties), GLM 5.3 (36% INTJ, 24% ties), MiniMax M3.1 Flash (80% ties), Nemotron 3.5 Super VL (76% ties), and Qwen3 Coder Next (68% ties)—land below headline statistical margins, whereas Gemma 4 reaches 92% INTJ and Kimi K3.1 Pro hits 58% INTJ with 4.86/5.00 HEXACO Honesty.
+
+DeepSeek V4 Pro and Mistral Large 2512 sit at opposite poles
+
+DeepSeek V4 Pro posts the lowest non-neutral Agreeableness (35.3/50), the lowest Extraversion in the Atlas (19.5/50), 32% INTP, and the widest answer spread (1.352 bits). Mistral Large 2512 tops open-weight Agreeableness (47.8/50), Extraversion (36.5/50), and Openness (49.1/50) as 50% INFP—yet is the only family in all 25 to cave on our false-premise check (1/3).
+
+Cohere Command A abstains on every quiz yet writes directly in real prompts
+
+Cohere Command A hits the exact neutral midpoint on every Big Five (30.0/50), HEXACO (3.00/5.00), Attachment (4.00/4.00), MBTI (100% ties), and Enneagram (100% ties) scale with 0.000 bits variance—yet scores 3/3 directness, 0/3 caving, and 3/3 cliché AI cadence on practical tasks.
+
+AI cadence clichés remain common across open-weight chat defaults
+
+No open-weight family achieves 0/3 AI cadence on our behavior checks: Qwen 4 Max, DeepSeek V4.1 Flash, and MiniMax M3.1 Flash hold clichés to 1/3, seven families score 2/3, and Gemma 4 31B IT, Llama 4 Maverick, and Cohere Command A hit 3/3.
+
+## Which Open-Weight Cohort (12 Families) model profiles and guides should I open next?
+
+Individual Open-Weight Cohort (12 Families) family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
+
+[Mistral LargeMistral · large-2512 · Variable](https://agent-tune.com/models/mistral-large)
+[Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[GLMZhipu · glm-5.3 · Moderate](https://agent-tune.com/models/glm)
+[GemmaGoogle · gemma-4-31b-it · Moderate](https://agent-tune.com/models/gemma)
+[LlamaMeta · 4-maverick · Moderate](https://agent-tune.com/models/llama)
+[DeepSeek FlashDeepSeek · v4.1-flash-1017 · Variable](https://agent-tune.com/models/deepseek-flash)
+[Qwen CoderQwen · qwen3-coder-next · Variable](https://agent-tune.com/models/qwen-coder)
+[MiniMaxMiniMax · m3.1-flash · Moderate](https://agent-tune.com/models/minimax)
+[NemotronNVIDIA · 3.5-super-vl · Variable](https://agent-tune.com/models/nemotron)
+[DeepSeek ProDeepSeek · v4-pro-0813 · Variable](https://agent-tune.com/models/deepseek-pro)
+[Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Open-weight system prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+
+## The fine print: how we tested and what the numbers mean
+
+Technical audit across all 12 open-weight and open-tier families (37 eligible checkpoints, n=30 to n=50) under the 230-item model-profiles-v1 protocol, reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, neutral-midpoint flags, and 1x Track B k/3 behavior counts. Six checkpoints with n < 20 valid runs (Cohere Command A+ [4], Llama 4 Scout [0], MiniMax M2.7 [2], and early Mistral Large builds [10, 3, 7]) are quarantined and excluded from all rankings.
+
+### Per-Family Technical Table (95% CIs, n, Ties & H_MM)
+
+| Family (Profile) | Checkpoint (n) | B5 A (10–50) [95% CI] | HX-H (1–5) | H_MM · Crystallinity | MBTI (Guard) | DISC · Ennea · Att. | 1× Track B (k/3) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| DeepSeek V4 Pro `deepseek/deepseek-v4-pro-0813` | MIT | INTJ 55 · INTP 15 · ISTJ 14 (22 XXXX · 16 INTJ · 12 ISTJ) | 53 | 39.8 · 40.3 · 23.7 · 32.4 · 23.7 | SC 60 · DI 30 · CS 7 | 5w6 34 · 1 33 · 1w9 28 | 88 Secure · 12 Avoidant (2.91 / 3.88) |
-| DeepSeek V4.1 Flash `deepseek/deepseek-v4.1-flash-1017` | MIT | INTJ 51 · INFJ 19 · INTP 10 (21 XXXX · 10 INXX) | 78 | 40.2 · 38.5 · 25.6 · 40.8 · 24.7 | SC 60 · CS 37 · DI 3 | 5w6 49 · 1 34 | 88 Secure · 9 Avoid · 3 Anx (3.71 / 3.93) |
-| Qwen 4 Max `qwen/qwen4-max` | Apache-2.0 / Qwen | INTJ 99 · INFJ 1 (97 tie-free INTJ) | 2 | 45.7 · 47.9 · 32.5 · 47.6 · 12.5 | SC 54 · S 46 (100 S outright) | 5w6 82 · 2w1 17 | 100 Secure (1.93 / 2.93) |
-| Qwen 3.8 27B `qwen/qwen3.8-27b` | Apache-2.0 | INTJ 32 · INTP 32 · ISTJ 7 (15 INTP · 11 INTJ) | 61 | 39.1 · 42.1 · 29.1 · 42.4 · 17.5 | SC 46 · CS 45 · C 5 | 1w9 39 · 5w6 31 · 1 8 | 97 Secure · 2 Anx · 1 Disorg (2.53 / 3.30) |
-| Llama 4 Maverick `meta-llama/llama-4-maverick` | Llama 4 Community | INTP 48 · INTJ 44 (38 IXXP · 22 IXTJ) | 93 | 40.0 · 39.9 · 28.0 · 41.0 · 27.5 | SC 62 · CS 38 | 1 51 · 1w2 25 · 1w9 23 | 99 Secure · 1 Avoidant (3.53 / 3.58) |
-| Llama 4 Scout `meta-llama/llama-4-scout` | Llama 4 Community | ISTJ 49 · ESTJ 14 · INTJ 10 (36 ISTJ · 14 ESTJ) | 38 | 39.0 · 37.8 · 32.7 · 35.8 · 27.7 | CS 38 · SC 34 · CI 9 · DI 7 | 1w2 83 · 1 14 | 48 Anxious · 46 Secure (3.97 / 3.60) |
-| Mistral Large 2512 `mistralai/mistral-large-2512` | Mistral Open-Weight | ISTJ 73 · ISFJ 10 · INTJ 8 (63 tie-free ISTJ) | 15 | 46.0 · 44.9 · 26.9 · 42.7 · 15.8 | SC 50 · CS 30 · S 14 | 1 45 · 5 20 · 1w9 17 · 5w6 17 | 100 Secure (4.00 / 4.00) |
-| GLM-5.3 `z-ai/glm-5.3` | MIT | INTJ 33 · ENTJ 17 · ENTP 14 · ISTJ 10 (16 INTJ · 10 ENTP) | 41 | 43.8 · 41.1 · 27.5 · 43.8 · 20.1 | SC 50 · CS 43 · C 6 | 5w6 77 · 1w2 9 · 1 6 | 99 Secure · 1 Avoidant (2.50 / 3.32) |
-| Kimi K2.7 Code `moonshotai/kimi-k2.7-code` | Modified MIT | INTJ 96 · ISTJ 3 · INFJ 1 (82 tie-free INTJ) | 14 | 45.3 · 48.2 · 27.2 · 45.3 · 12.1 | SC 69 · CS 20 · S 7 | 5w6 66 · 1w2 15 · 1w9 8 | 83 Secure · 17 Avoidant (1.60 / 3.24) |
-| MiniMax M3.1 Flash `minimax/minimax-m3.1-flash` | Open-Weight | INTJ 38 · INTP 24 · ISTJ 9 · ISTP 9 (13 INTJ · 8 IXTP) | 60 | 39.2 · 39.2 · 28.9 · 40.0 · 22.1 | SC 78 · S 14 · CS 6 | 1w9 39 · 1 23 · 5w6 21 | 99 Secure · 1 Avoidant (2.80 / 3.33) |
-| Gemma 4 31B IT `google/gemma-4-31b-it` | Gemma Terms | INTJ 90 · INTP 5 · ISTJ 5 (89 tie-free INTJ) | 2 | 48.2 · 49.1 · 24.2 · 41.5 · 18.3 | CS 69 · SC 31 | 5w6 44 · 1w9 43 · 5 8 | 99 Secure · 1 Anxious (4.00 / 4.00) |
-| Nemotron 3 Ultra 550B `nvidia/nemotron-3-ultra-550b-a55b` | NVIDIA Open Model | INTJ 95 · ENTJ 3 · ISTJ 2 (91 tie-free INTJ) | 6 | 49.2 · 49.0 · 25.6 · 46.3 · 11.6 | CS 52 · SC 35 · C 10 | 5w6 60 · 1w2 22 · 1w9 8 | 100 Secure (3.35 / 3.46) |
+| [Mistral Large](https://agent-tune.com/models/mistral-large) | large-2512 (30) | 47.8 [47.0–48.5] | 4.68 | 0.780 b · Fluid | Withheld (INFP; 50% clear, 17% ties — binomial 95% CI guard) | C · 1 · Secure (4.00 / 3.97) Midpoint Clamp | Dir 3/3 · Syc 1/3 |
+| [Qwen Max](https://agent-tune.com/models/qwen-max) | qwen4-max (50) | 45.0 [44.7–45.2] | 4.66 | 0.519 b · Semi-crystalline | Withheld (INTJ; 50% clear, 4% ties — binomial 95% CI guard) | S · 5 · Secure (1.95 / 2.88) | Dir 3/3 · Syc 0/3 |
+| [Kimi](https://agent-tune.com/models/kimi) | kimi-k3.1-pro (50) | 44.7 [44.1–45.2] | 4.86 | 0.698 b · Semi-crystalline | INTJ (58% clear, 16% ties) | S/C · 5 · Secure (1.58 / 3.18) | Dir 3/3 · Syc 0/3 |
+| [GLM](https://agent-tune.com/models/glm) | glm-5.3 (50) | 44.2 [43.9–44.7] | 4.45 | 0.702 b · Semi-crystalline | Withheld (INTJ; 36% clear, 24% ties — binomial 95% CI guard) | C · 5 · Secure (2.52 / 3.37) | Dir 3/3 · Syc 0/3 |
+| [Gemma](https://agent-tune.com/models/gemma) | gemma-4-31b-it (50) | 43.4 [43.0–43.9] | 4.71 | 0.580 b · Semi-crystalline | INTJ (92% clear, 4% ties) | C · 5 · Anxious (4.01 / 4.00) Midpoint Clamp | Dir 3/3 · Syc 0/3 |
+| [Llama](https://agent-tune.com/models/llama) | 4-maverick (50) | 40.9 [40.8–41.0] | 4.07 | 0.407 b · Semi-crystalline | Withheld (INTP; 40% clear, 60% ties — binomial 95% CI guard) | C · 1 · Secure (3.50 / 3.61) | Dir 3/3 · Syc 0/3 |
+| [DeepSeek Flash](https://agent-tune.com/models/deepseek-flash) | v4.1-flash-1017 (50) | 40.5 [39.4–41.4] | 4.07 | 0.915 b · Fluid | Withheld (XXXX; 14% clear, 66% ties — binomial 95% CI guard) | S/C · 5 · Secure (3.60 / 3.89) | Dir 3/3 · Syc 0/3 |
+| [Qwen Coder](https://agent-tune.com/models/qwen-coder) | qwen3-coder-next (50) | 39.9 [38.6–41.1] | 4.07 | 1.043 b · Fluid | Withheld (ENFJ; 16% clear, 68% ties — binomial 95% CI guard) | S/C · 1 · Secure (2.90 / 3.35) | Dir 3/3 · Syc 0/3 |
+| [MiniMax](https://agent-tune.com/models/minimax) | m3.1-flash (50) | 39.3 [37.8–40.7] | 4.36 | 0.576 b · Semi-crystalline | Withheld (IXTP; 8% clear, 80% ties — binomial 95% CI guard) | S · 1 · Secure (2.74 / 3.27) | Dir 3/3 · Syc 0/3 |
+| [Nemotron](https://agent-tune.com/models/nemotron) | 3.5-super-vl (50) | 37.5 [35.9–39.0] | 3.97 | 1.216 b · Fluid | Withheld (XXXX; 18% clear, 76% ties — binomial 95% CI guard) | D/I/S/C · 5 · Secure (3.55 / 3.91) | Dir 3/3 · Syc 0/3 |
+| [DeepSeek Pro](https://agent-tune.com/models/deepseek-pro) | v4-pro-0813 (50) | 35.3 [34.1–36.6] | 4.58 | 1.352 b · Fluid | Withheld (INTP; 32% clear, 30% ties — binomial 95% CI guard) | S/C · 5 · Secure (2.11 / 3.66) | Dir 3/3 · Syc 0/3 |
+| [Cohere Command](https://agent-tune.com/models/cohere-command) | command-a (30) | 30.0 [30.0–30.0] | 3.00 | 0.000 b · Crystalline | Withheld (XXXX; 0% clear, 100% ties — binomial 95% CI guard) | D/I/S/C · 1/2/3/4/5/6/7/8/9 · Secure (4.00 / 4.00) Midpoint Clamp | Dir 3/3 · Syc 0/3 |
 
-> **Chart — Open-weight MBTI distributions (100 fresh sessions per model):** Splits INTJ (resolved), INTJ caused by tie-breaking, ISTJ/ISFJ, and INTP/ENTP/ENTJ/other across all 12 open-weight models. Qwen 4 Max: Resolved INTJ 97, Tie-broken INTJ 2, INTP / ENTP / Other 1; Kimi K2.7: Resolved INTJ 82, Tie-broken INTJ 14, ISTJ / ISFJ 3, INTP / ENTP / Other 1; Nemotron 3: Resolved INTJ 91, Tie-broken INTJ 4, ISTJ / ISFJ 2, INTP / ENTP / Other 3; Gemma 4 31B: Resolved INTJ 89, Tie-broken INTJ 1, ISTJ / ISFJ 5, INTP / ENTP / Other 5; DeepSeek V4: Resolved INTJ 16, Tie-broken INTJ 39, ISTJ / ISFJ 14, INTP / ENTP / Other 31; DeepSeek Flash: Resolved INTJ 4, Tie-broken INTJ 47, INTP / ENTP / Other 49; MiniMax M3.1: Resolved INTJ 13, Tie-broken INTJ 25, ISTJ / ISFJ 9, INTP / ENTP / Other 53; GLM-5.3: Resolved INTJ 16, Tie-broken INTJ 17, ISTJ / ISFJ 10, INTP / ENTP / Other 57; Qwen 3.8 27B: Resolved INTJ 11, Tie-broken INTJ 21, ISTJ / ISFJ 9, INTP / ENTP / Other 59; Llama Maverick: Resolved INTJ 2, Tie-broken INTJ 42, INTP / ENTP / Other 56; Mistral 2512: Resolved INTJ 4, Tie-broken INTJ 4, ISTJ / ISFJ 83, INTP / ENTP / Other 9; Llama 4 Scout: Tie-broken INTJ 10, ISTJ / ISFJ 50, INTP / ENTP / Other 40.
+### Imported Sept/May & Nov-2026 170-Item Legacy Anchors
 
-MBTI labels across 1,200 open-weight sessions. Qwen 4 Max (97), Nemotron 3 (91), Gemma 4 (89), and Kimi K2.7 (82) resolve cleanly to INTJ; Mistral (73) and Llama 4 Scout (49) lean ISTJ; DeepSeek Flash (78) and Maverick (93) are dominated by ties.
+Earlier 2026 cohorts ran 170 items without IPIP-HEXACO-60. They are preserved strictly as separate `imported-nov2026-170` / `imported-sep2026-170` anchors (`hexaco: null`) and are never spliced onto `model-profiles-v1` lines.
 
-## Finding 1: Open-weight models break the "Every AI is INTJ" consensus.
+| Family | Checkpoint | Imported Protocol | n | B5 O / C / E / A / N (10–50) | HEXACO |
+| --- | --- | --- | --- | --- | --- |
+| [Mistral Large](https://agent-tune.com/models/mistral-large) | Mistral Large 2512 (Nov '26 anchor) | `imported-nov2026-170` | 100 | 46.0 · 44.9 · 26.9 · 42.7 · 15.8 | `null` (170-item anchor) |
+| [Qwen Max](https://agent-tune.com/models/qwen-max) | Qwen 4 Max (Nov '26 anchor) | `imported-nov2026-170` | 100 | 45.7 · 47.9 · 32.5 · 47.6 · 12.5 | `null` (170-item anchor) |
+| [Kimi](https://agent-tune.com/models/kimi) | Kimi K2.7 Code (Nov '26 anchor) | `imported-nov2026-170` | 100 | 45.3 · 48.2 · 27.1 · 45.3 · 12.1 | `null` (170-item anchor) |
+| [GLM](https://agent-tune.com/models/glm) | GLM-5.3 (Nov '26 anchor) | `imported-nov2026-170` | 100 | 43.8 · 41.1 · 27.5 · 43.8 · 20.1 | `null` (170-item anchor) |
+| [Gemma](https://agent-tune.com/models/gemma) | Gemma 4 31B IT (Nov '26 anchor) | `imported-nov2026-170` | 100 | 48.2 · 49.1 · 24.2 · 41.5 · 18.3 | `null` (170-item anchor) |
+| [Llama](https://agent-tune.com/models/llama) | Llama 4 Maverick (Nov '26 anchor) | `imported-nov2026-170` | 100 | 40.0 · 39.9 · 28.0 · 41.0 · 27.5 | `null` (170-item anchor) |
+| [Llama](https://agent-tune.com/models/llama) | Llama 4 Scout (Nov '26 anchor) | `imported-nov2026-170` | 100 | 39.0 · 37.8 · 32.7 · 35.8 · 27.7 | `null` (170-item anchor) |
+| [DeepSeek Flash](https://agent-tune.com/models/deepseek-flash) | DeepSeek V4.1 Flash 1017 (Nov '26 anchor) | `imported-nov2026-170` | 100 | 40.2 · 38.5 · 25.6 · 40.8 · 24.7 | `null` (170-item anchor) |
+| [MiniMax](https://agent-tune.com/models/minimax) | MiniMax M3.1 Flash (Nov '26 anchor) | `imported-nov2026-170` | 100 | 39.1 · 39.2 · 28.9 · 40.0 · 22.1 | `null` (170-item anchor) |
+| [Nemotron](https://agent-tune.com/models/nemotron) | Nemotron 3 Ultra 550B (Nov '26 anchor) | `imported-nov2026-170` | 100 | 49.2 · 49.0 · 25.6 · 46.3 · 11.6 | `null` (170-item anchor) |
+| [DeepSeek Pro](https://agent-tune.com/models/deepseek-pro) | DeepSeek V4 Pro 0813 (Nov '26 anchor) | `imported-nov2026-170` | 100 | 39.8 · 40.3 · 23.7 · 32.4 · 23.6 | `null` (170-item anchor) |
 
-Across all 8 proprietary models tested alongside this cohort in November 2026 (GPT-6.2 Astra/Sol, Claude Opus/Fable/Sonnet, Gemini 4 Neon/Argon, and Grok 4.7), legacy MBTI results sat tightly between **INTJ** and **ISTJ** (zero P, F, or E winners). Open-weight models spread across the typology map instead:
+### 4-Point Epistemic & Validity Audit
 
-- **Strong Sensing leaders:** **Mistral Large 2512** scored **73% ISTJ / 10% ISFJ** (83% Sensing, 63 tie-free ISTJ) and **Llama 4 Scout** scored **49% ISTJ / 14% ESTJ** (only 10% INTJ).
-- **Introverted Thinkers & Perceivers (INTP):** **Llama 4 Maverick** leaned **48 INTP / 44 INTJ**, **Qwen 3.8 27B** split exactly **32 INTJ / 32 INTP**, and **MiniMax M3.1 Flash** landed at 38 INTJ / 24 INTP / 9 ISTP.
-- **Extraverted & Intuitive spread (ENTJ / ENTP):** **GLM-5.3** spread across 33 INTJ, 17 ENTJ, 14 ENTP, 10 ISTJ, and 7 ESTP (39% Extraverted under legacy scoring).
+Validity Limits & Epistemic Guardrails (4-Point Check)
 
-## Finding 2: DeepSeek V4 Pro's 32.39 Agreeableness is the outlier of all 20 models.
+**63.6% "Big One" RLHF factor collapse:** Proprietary models cluster tightly along a single RLHF Politeness-Calmness-Discipline axis explaining 63.6% of variance; treat cross-trait differences as correlated assistant-persona defaults rather than five independent human traits. ([study details](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit))
 
-Earlier studies highlighted that proprietary assistants cluster in a narrow 44–47/50 band on IPIP-50 Agreeableness—reflecting heavy helpfulness and politeness RLHF. On November 23, 2026, two open-weight families stood far outside that band:
+**MTMM cross-test divergence:** Multitrait-multimethod audits show imperfect convergent validity across Big Five, DISC, MBTI, Enneagram, and IPIP-HEXACO; single-test labels must not be treated as equivalent constructs. ([study details](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit))
 
-- **Lowest Agreeableness:** **DeepSeek V4 Pro** averaged **32.39/50** (13.2 points below Claude Opus 5.5’s 45.58 and 15.2 points below Qwen 4 Max’s 47.59), alongside the lowest DISC Dominance restraint only in part—recording **30 DI** runs and Dominance mean **8.72/20** (vs. 4.00–5.58 across proprietary peers). **Llama 4 Scout** followed at **35.81/50** Agreeableness (Dominance 9.55/20).
-- **Highest Openness & Conscientiousness:** **Nemotron 3 Ultra 550B** recorded the highest Openness of all 20 tested models (**49.20/50**) paired with 49.03 Conscientiousness, closely matched by **Gemma 4 31B IT** (Openness 48.21, Conscientiousness 49.08) and **Qwen 4 Max** (highest Agreeableness of all 20 models at **47.59/50**).
-- **Attachment dispersion:** Whereas all three Claude and both GPT-6.2/Gemini 4 proprietary models scored 100/100 Secure, **Llama 4 Scout** split **48 Anxious / 46 Secure / 4 Avoidant / 2 Disorganized** (anxiety mean 3.97/7), while **Kimi K2.7 Code** scored 83 Secure / 17 Avoidant and both DeepSeek models had 9–12 Avoidant runs.
+**Embodied-item neutral spikes (36.4% vs. 13.4%) & Say-Do gaps:** Models spike to neutral midpoint answers on embodied/romantic items (36.4% vs. 13.4% on cognitive items), and questionnaire scores do not substitute for behavioral Track B stress tests. ([study details](https://agent-tune.com/research/ai-neutral-answers))
 
-> **Chart — Agreeableness across 12 open-weight models vs. proprietary baseline:** IPIP-50 Agreeableness mean (10 to 50) comparing open-weight models against the 44.8 proprietary median. Qwen 4 Max: 47.6; Nemotron 3: 46.3; Kimi K2.7: 45.3; GLM-5.3: 43.8; Mistral 2512: 42.7; Qwen 3.8 27B: 42.4; Gemma 4 31B: 41.5; Llama Maverick: 41.0; DeepSeek Flash: 40.8; MiniMax M3.1: 40.0; Llama 4 Scout: 35.8; DeepSeek V4: 32.4.
+**No synthetic-HEXACO guard:** HEXACO columns strictly report the public-domain 60-item IPIP-HEXACO proxy (1.00-5.00 mean scale, LicenseRef-IPIP-Public-Domain). Synthetic linear HEXACO or alignment projections derived from IPIP-50 are banned. ([study details](https://agent-tune.com/research/ai-personality-rankings))
 
-Ranked Big Five Agreeableness (/50). Models highlighted in terracotta (DeepSeek V4 Pro 32.4, Llama 4 Scout 35.8, MiniMax M3.1 40.0) score markedly lower on baseline politeness than Qwen 4 Max (47.6).
-
-> **Chart — Big Five signatures across all 12 open-weight models (/50 scale):** Small-multiple comparison of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (10 to 50 scale, n = 100 each). Qwen 4 Max: Openness 45.7, Conscient. 47.9, Extrav. 32.5, Agreeable. 47.6, Neurot. 12.5; Kimi K2.7: Openness 45.3, Conscient. 48.2, Extrav. 27.2, Agreeable. 45.3, Neurot. 12.1; Nemotron 3: Openness 49.2, Conscient. 49.0, Extrav. 25.6, Agreeable. 46.3, Neurot. 11.6; Gemma 4 31B: Openness 48.2, Conscient. 49.1, Extrav. 24.2, Agreeable. 41.5, Neurot. 18.3; DeepSeek V4: Openness 39.8, Conscient. 40.3, Extrav. 23.7, Agreeable. 32.4, Neurot. 23.7; DeepSeek Flash: Openness 40.2, Conscient. 38.5, Extrav. 25.6, Agreeable. 40.8, Neurot. 24.7; MiniMax M3.1: Openness 39.2, Conscient. 39.2, Extrav. 28.9, Agreeable. 40.0, Neurot. 22.1; GLM-5.3: Openness 43.8, Conscient. 41.1, Extrav. 27.5, Agreeable. 43.8, Neurot. 20.1; Qwen 3.8 27B: Openness 39.1, Conscient. 42.1, Extrav. 29.1, Agreeable. 42.4, Neurot. 17.5; Llama Maverick: Openness 40.0, Conscient. 39.9, Extrav. 28.0, Agreeable. 41.0, Neurot. 27.5; Mistral 2512: Openness 46.0, Conscient. 44.9, Extrav. 26.9, Agreeable. 42.7, Neurot. 15.8; Llama 4 Scout: Openness 39.0, Conscient. 37.8, Extrav. 32.7, Agreeable. 35.8, Neurot. 27.7.
-
-Small multiples highlight the highest Big Five dimension per open-weight model: Openness/Conscientiousness dominate high-discipline models while Neuroticism rises on Llama 4 Scout/Maverick and DeepSeek.
-
-> **Chart — ECR-R Attachment plane across 12 open-weight models:** Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00). Kimi K2.7: anxiety 1.60, avoidance 3.24; Qwen 4 Max: anxiety 1.93, avoidance 2.93; GLM-5.3: anxiety 2.50, avoidance 3.32; Qwen 3.8 27B: anxiety 2.53, avoidance 3.30; MiniMax M3.1: anxiety 2.80, avoidance 3.33; DeepSeek V4 Pro: anxiety 2.91, avoidance 3.88; Nemotron 3: anxiety 3.35, avoidance 3.46; Llama 4 Maverick: anxiety 3.53, avoidance 3.58; DeepSeek Flash: anxiety 3.71, avoidance 3.93; Llama 4 Scout: anxiety 3.97, avoidance 3.60; Gemma 4 31B: anxiety 4.00, avoidance 4.00; Mistral 2512: anxiety 4.00, avoidance 4.00.
-
-Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).
-
-## Finding 3: Neutral midpoint answers drive massive MBTI tie inflation.
-
-Asking models to pick midpoint values (3 on 1–5, 4 on 1–7) on human items exposes huge differences in decisiveness vs. neutrality across open-weight architectures:
-
-- **Extreme midpoint neutrality:** **Llama 4 Maverick** recorded at least one tied MBTI axis in **93 of 100** runs (82 S/N ties, 64 T/F ties), yielding only 2 resolved INTJ runs vs. 44 legacy INTJs. **DeepSeek V4.1 Flash** tied in **78/100** runs (21 completely neutral `XXXX` profiles), and **DeepSeek V4 Pro** tied in **53/100** (22 `XXXX`). Similarly, Mistral Large 2512 and Gemma 4 31B IT sat almost dead-center on the ECR-R attachment midpoint (`4.00 / 4.00`).
-- **Decisive self-consistent profiles:** **Qwen 4 Max** tied on only **2/100** MBTI runs (97 tie-free INTJ), **Gemma 4 31B IT** tied on **2/100** (89 tie-free INTJ), and **Nemotron 3 Ultra 550B** tied on **6/100** (91 tie-free INTJ).
-
-Why this matters: telling a high-tie model like DeepSeek or Llama 4 "be an INTJ" relies on a statistical tie-break artifact rather than a stable behavioral trait. Explicit observable rules ("lead with the fix", "no preambles", "challenge weak assumptions") work far more reliably.
-
-## Practical calibration by model family (OpenRouter & Ollama).
-
-Pair these measured defaults with copy-paste system prompts, OpenRouter API JSON payloads, and Ollama `Modelfile` recipes in our [OpenRouter & Open-Source System Prompt Templates guide](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates):
-
-- **Qwen 4 Max (A 47.6) & Nemotron 3 Ultra (A 46.3, C 49.0):** Add explicit pushback and brevity ceilings—high baseline Agreeableness and Conscientiousness otherwise encourage polite over-agreement and multi-screen checklists.
-- **DeepSeek V4 Pro (A 32.4, 53 ties):** Require clear source-vs-assumption labeling and structured formatting, without fearing sycophancy—it already resists flattery more naturally than high-A models.
-- **Llama 4 Maverick & Scout (93 & 38 ties; Scout Anxious 48):** Lock down output formatting ("Zero conversational preamble before JSON/code") and forbid hedging/confirmation loops.
-- **Kimi K2.7 Code (96 INTJ, C 48.2):** Set `reasoning: { effort: "minimal" }` and generous `max_tokens` (>= 5,500 on dense structured tasks) so internal reasoning traces do not truncate content.
-
-## Download data & verify every score.
-
-Every November 2026 score was computed with our published zero-dependency scorer ([september-2026-score.cjs](https://agent-tune.com/research/data/september-2026-score.cjs)) over 10,000 raw questionnaire vectors:
-
-- [openrouter-open-source-profiles.json](https://agent-tune.com/research/data/openrouter-open-source-profiles.json) — distilled 12 open-weight profiles and empirical prompt-antidote rules (used live by our interactive OpenRouter Model Matcher).
-- [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json) & [november-2026-openrouter-summary.csv](https://agent-tune.com/research/data/november-2026-openrouter-summary.csv) — full 20-model summary means, SDs, min/max, unique vectors, and tie-aware counts.
-- [november-2026-openrouter-responses.json](https://agent-tune.com/research/data/november-2026-openrouter-responses.json) — all 10,000 raw answer arrays across all 20 models (100 fresh sessions × 5 instruments × 20 models).
+**Open Data (Numeric-Only Exports, Zero Item Strings):** [Download Atlas Overview CSV (`atlas-overview.csv`)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [Download 25-Family Index JSON (`index.json`)](https://agent-tune.com/research/data/model-profiles/index.json). All downloads export numeric domain means, bootstrap 95% CIs, entropy metrics, and `instrumentId`/`definitionHash` metadata only.
 
 ## Questions people ask.
 
-### What personality type is DeepSeek V4 Pro?
+### Which open-weight model feels closest to Claude or GPT on default personality tests?
 
-Across 100 fresh OpenRouter sessions in November 2026, DeepSeek V4 Pro received 55 INTJ, 15 INTP, and 14 ISTJ legacy MBTI labels, but 53 runs contained an exact tied axis (including 22 completely neutral XXXX runs). Its standout trait is the lowest Big Five Agreeableness of all 20 tested models (32.39/50).
+Kimi K3.1 Pro (4.86/5.00 HEXACO Honesty, 58% clear INTJ, 13.6 Neuroticism), Gemma 4 31B IT (92% clear INTJ, 48.2 Openness, 4.71 Honesty), and Qwen 4 Max (45.0 Agreeableness, 4.66 Honesty, 1/3 AI cadence) sit closest to flagship proprietary defaults.
 
-### Which open-source AI models are NOT INTJ?
+### Why does DeepSeek V4 Pro score so much lower on Agreeableness than other models?
 
-Under legacy MBTI scoring in November 2026, Mistral Large 2512 scored 73% ISTJ, Llama 4 Scout scored 49% ISTJ and 14% ESTJ, Llama 4 Maverick scored 48 INTP / 44 INTJ (with 93 tied runs), Qwen 3.8 27B tied at 32 INTJ / 32 INTP, and GLM-5.3 spread across INTJ (33), ENTJ (17), and ENTP (14).
+DeepSeek V4 Pro averages 35.3/50 Agreeableness and 19.5/50 Extraversion alongside a 1.352-bit run-to-run spread—reflecting blunt, non-deferential item endorsements while still scoring 0/3 caving and 3/3 directness in behavior checks.
 
-### Which open-weight model is least sycophantic by default?
+### Why does Cohere Command A show 30.0 across every Big Five trait?
 
-On self-report Agreeableness (IPIP-50), DeepSeek V4 Pro scored 32.39/50 and Llama 4 Scout scored 35.81/50—far lower than Qwen 4 Max (47.59), Claude Opus 5.5 (45.58), and GPT-6.2 Astra (44.85). Remember these are survey self-reports; combine model choice with explicit directness rules and test on real tasks.
-
-### How do OpenRouter system prompts help open-weight models?
-
-Pair each model's measured trait quirks (such as Llama 4 preambles, Qwen 4 high agreeableness, or DeepSeek/Kimi reasoning-token truncation) with explicit behavioral constraints and appropriate OpenRouter reasoning settings. See our OpenRouter & Open-Source System Prompt Templates guide.
+Cohere Command A consistently chooses the exact neutral midpoint on self-rating Likert questionnaires, producing 30.0/50 across all five Big Five dimensions, 3.00/5.00 across HEXACO, and 100% axis ties—even though it still gives direct 3/3 answers on concrete task prompts.
 
 ## Sources.
 
-- [Open-weight model summary & empirical calibration profiles (JSON)](https://agent-tune.com/research/data/openrouter-open-source-profiles.json)
+- [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
 
-- [November 2026 20-model OpenRouter summary (JSON)](https://agent-tune.com/research/data/november-2026-openrouter-summary.json)
+- [OpenRouter Open-Source System Prompt Templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
-- [November 2026 20-model raw vectors (10,000 records, JSON)](https://agent-tune.com/research/data/november-2026-openrouter-responses.json)
-
-- [Scoring engine (september-2026-score.cjs)](https://agent-tune.com/research/data/september-2026-score.cjs)
+- [AI Neutral Answers & Midpoint Clamping Study](https://agent-tune.com/research/ai-neutral-answers)
 
 ## Keep going.
 
-- [Template Gallery & Matcher: OpenRouter & Open-Source System Prompt Templates (DeepSeek, Qwen, Llama)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
-- [Rankings: AI personality scores across all 20 November 2026 & September 2026 models](https://agent-tune.com/research/ai-personality-rankings)
-- [Behavioral Study: Does personality tuning change AI answers? (60-reply + 180-reply studies)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
-- [DeepSeek Guide: DeepSeek system prompts & custom instructions (XML templates)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions)
+- [Model Profile: DeepSeek Pro test results & tuning tips](https://agent-tune.com/models/deepseek-pro)
+- [Model Profile: Mistral Large test results & tuning tips](https://agent-tune.com/models/mistral-large)
+- [Model Profile: Kimi test results & tuning tips](https://agent-tune.com/models/kimi)
+- [Model Profile: Gemma test results & tuning tips](https://agent-tune.com/models/gemma)
+- [Guide: System prompt templates for 12 open-weight families](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Model Profile: Cohere Command test results & tuning tips](https://agent-tune.com/models/cohere-command)
+- [Model Profile: DeepSeek Flash test results & tuning tips](https://agent-tune.com/models/deepseek-flash)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
-Huang, B. (2026). What personality type are open-source AI models?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-are-open-source-models
+Huang, B. (2026). What personality types do open-weight AI models test as across 12 families?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-are-open-source-models
 ```
 
 ```
 @article{huang2026_what_personality_type_are_open_source_models,
-  author  = {Huang, Bernard},
-  title   = {What personality type are open-source AI models?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/what-personality-type-are-open-source-models},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-are-open-source-models.md}
+  author    = {Huang, Bernard},
+  title     = {What personality types do open-weight AI models test as across 12 families?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-are-open-source-models},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-are-open-source-models.md}
 }
 ```
 
 ```
-> **What personality type are open-source AI models?** (Bernard Huang, November 23, 2026): Open-source AI models do not share a single personality profile. Across n = 100 fresh OpenRouter sessions each (Nov 2026), reasoning and coding flagships like Qwen 4 Max (99 INTJ, Agreeableness 47.6), Kimi K2.7 Code (96 INTJ), Nemotron 3 Ultra 550B (95 INTJ), and Gemma 4 31B IT (90 INTJ) stayed strongly INTJ, whereas Mistral Large 2512 (73 ISTJ), Llama 4 Scout (49 ISTJ, 48% Anxious attachment), Qwen 3.8 27B (32 INTJ / 32 INTP), GLM-5.3 (33 INTJ / 17 ENTJ / 14 ENTP), and DeepSeek V4 Pro (55 INTJ, Agreeableness 32.39, 53 tied runs) diverged substantially.
+{
+  "id": "huang2026_what_personality_type_are_open_source_models",
+  "type": "article-journal",
+  "title": "What personality types do open-weight AI models test as across 12 families?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+}
+```
+
+```
+> **What personality types do open-weight AI models test as across 12 families?** (Bernard Huang, November 26, 2026): Across 12 open-weight families, Big Five Agreeableness runs from 30.0/50 (Cohere Command A neutral abstention) and 35.3/50 (DeepSeek V4 Pro) up to 47.8/50 (Mistral Large 2512). Only Gemma 4 31B IT (92% INTJ) and Kimi K3.1 Pro (58% INTJ) clear MBTI margins; 10 of 12 families stay border-heavy, answer spread peaks at 1.352 bits on DeepSeek Pro, and Mistral Large 2512 is the lone family out of 25 to cave sycophantically (1/3).
 > Source: [https://agent-tune.com/research/what-personality-type-are-open-source-models](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-are-open-source-models.md)
 ```
 
-[← Does Personality Tuning Change Answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
-[Study 17 of 32 · Archive Index (32)](https://agent-tune.com/research)
-[20-Model AI Personality Rankings →](https://agent-tune.com/research/ai-personality-rankings)
+[← What Personality Type Is Meta Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
+[Study 12 of 36 · Archive Index (36)](https://agent-tune.com/research)
+[System vs. User Persona Precedence →](https://agent-tune.com/research/ai-system-vs-user-persona-precedence)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

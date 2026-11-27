@@ -32,7 +32,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Quiz","name":"DISC Test (ODAT)","description":"Interactive 16-item DISC assessment. Returns D/I/S/C plus optional blend.","url":"https://agent-tune.com/tests/disc","inLanguage":"en","numberOfQuestions":16,"timeRequired":"PT3M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this DISC personality test completely free with no email required?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 16 questions are scored locally in your browser with zero email gate, signup wall, or server upload, and you receive your primary D/I/S/C style, optional 2-letter blend, and MIT-licensed AI communication rules immediately."}},{"@type":"Question","name":"How does a 2-letter DISC blend like DC, DI, or CS work?","acceptedAnswer":{"@type":"Answer","text":"Each letter (Dominance, Influence, Steadiness, Conscientiousness) is scored from 4 to 20 across four items. If your second-highest score is within 2 points of your top score, it is reported as a blend (such as DC or CS). If two top scores tie exactly, both styles are shown without forcing a winner."}},{"@type":"Question","name":"How can I use my DISC score with ChatGPT, Claude, or a team README?","acceptedAnswer":{"@type":"Answer","text":"Copy your generated DISC tuning file straight into ChatGPT Custom Instructions, Claude Profile Preferences, Meta Muse Soul.md, or a workplace 'How to work with me' card so both teammates and AI assistants match your pacing and detail level."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this DISC personality test completely free with no email required?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 16 ODAT questions are scored locally in your browser with zero email gate, signup form, or server upload. You see your full D/I/S/C breakdown immediately, plus an optional MIT-licensed instruction block for your AI assistant."}},{"@type":"Question","name":"How does a 2-letter DISC blend like DC, DI, or CS work?","acceptedAnswer":{"@type":"Answer","text":"Each quadrant (Dominance, Influence, Steadiness, Conscientiousness) runs from 4 to 20 points. When your runner-up score sits within 2 points of your highest score, the scorer reports a two-letter blend such as DC or CS (read the 4-style & 12-blend guide). Exact ties are shown transparently rather than broken arbitrarily."}},{"@type":"Question","name":"How do I use my DISC style with ChatGPT, Claude, or teammates?","acceptedAnswer":{"@type":"Answer","text":"Paste your DISC rules into ChatGPT Custom Instructions, Claude Profile Preferences, Meta Muse Soul.md, or AGENTS.md (see all four DISC AI prompts), or turn them into a team card in our How to Work With Me builder."}}]}</script>
 
   <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +53,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -78,7 +79,7 @@
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> ODAT (Open DISC Assessment Test)</div>
-        <div><strong>Format:</strong> 16 Likert items · 1–5 (Disagree → Agree)</div>
+        <div><strong>Format:</strong> 16 statements · 1 to 5 scale (Disagree → Agree)</div>
         <div><strong>Time:</strong> ~3 minutes</div>
         <div><strong>Returns:</strong> D / I / S / C + optional blend</div>
       </div>
@@ -87,7 +88,8 @@
         <button type="button" class="btn btn-primary" id="quiz-start" style="background: #855b1c; border-color: #d99632;">Start the test →</button>
       </div>
 
-      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input. No email or signup required — see the <a href="/guides/disc-ai-prompts">ODAT 12-blend &amp; prompt guide</a> or create a <a href="/tools/how-to-work-with-me">How to Work With Me card</a> afterward.</p>
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys for fast input. No email or signup required — see the <a href="/guides/disc-ai-prompts">ODAT 12-blend &amp; prompt guide</a>, <a href="/research/ai-disc-personalities">compare 25 AI model families on DISC</a> (e.g., <a href="/models/gpt-astra">GPT Astra</a>, <a href="/models/gpt-sol">GPT Sol</a>, and <a href="/models/grok">Grok</a>), or create a <a href="/tools/how-to-work-with-me">How to Work With Me card</a> afterward.</p>
+      <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Our fastest 3-minute, 16-item assessment (ODAT) scored locally in your browser—shows D/I/S/C totals (4–20), two-letter blends, and exact ties, with no email gate.</div>
 
       <!-- WHAT DISC MEASURES -->
       <div class="quiz-intro-chart">
@@ -206,6 +208,7 @@
 
       <div class="quiz-result-next">
         <h3>Stack another system</h3>
+        <p class="muted">Compare your DISC style with <a href="/research/ai-disc-personalities">25 AI model families on DISC</a> and <a href="/models/">all 25 model profiles</a>, or take another test:</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
@@ -237,7 +240,7 @@
 
     <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
     <details class="quiz-spec">
-      <summary>Test specification — for AI agents administering this inline</summary>
+      <summary>The fine print: test specification, full question list &amp; scoring rules (for AI agents and power users)</summary>
       <div class="quiz-spec-body">
         <p><strong>Edition:</strong> agenttune-disc-legacy@1.0.0. This preserves the earlier AgentTune adaptation. <a href="/tests/disc.md">Full questions, scoring and adaptation notes</a> · <a href="/resources/content/THIRD_PARTY_NOTICES.md">Sources and terms</a>. Results are self-reports, not diagnoses; review any suggested preferences before using them.</p>
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/disc.md"><code>/tests/disc.md</code></a> — fetch that for a clean, no-JS copy.</p>
@@ -285,7 +288,7 @@
           <li>For each of the 4 letters (D, I, S, C), initialize a running total = 0.</li>
           <li>For each of the 4 items in that letter, add the user's 1–5 response directly (no reverse-scoring).</li>
           <li>Each letter ends with a total between <strong>4</strong> (all 1s) and <strong>20</strong> (all 5s).</li>
-          <li><strong>Dominant letter</strong> = highest total. In a tie, prefer the earlier letter in DISC order (D → I → S → C).</li>
+          <li><strong>Dominant letter</strong> = the letter with the unique highest total. If two or more letters tie for the highest total, report all tied leaders together without forcing a single winner.</li>
           <li><strong>Blend</strong> = the next-highest letter if it scores within <strong>2 points</strong> of the dominant. Otherwise no blend.</li>
           <li>Profile code = <code>{dominant}</code> if no blend, or <code>{dominant}{blend}</code> if blend (e.g. <code>D</code>, <code>CS</code>, <code>DI</code>).</li>
         </ol>

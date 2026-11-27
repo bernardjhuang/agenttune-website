@@ -5,9 +5,9 @@ Guide · GPT-6 Astra
 
 # How to give GPT-6 Astra a personality.
 
-By Bernard Huang · Updated November 23, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/astra-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/guides/astra-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** In ChatGPT Work and Codex, save your communication rules in ~/.codex/AGENTS.md (or under Settings → Personalization in the desktop app). In standard chat—where Astra runs as GPT-6 Pro—use Settings → Personalization → Custom Instructions (1,500-character limit). In the API, pass rules in the instructions parameter. The older Friendly/Pragmatic personality picker was retired in Codex and never applied to Astra.
+**Quick answer:** In ChatGPT Work and Codex, save your communication rules in ~/.codex/AGENTS.md (or under Settings → Personalization in the desktop app). In ordinary chat—where Astra runs as GPT-6 Pro—use Settings → Personalization → Custom Instructions (1,500-character limit). In the API, pass rules in the instructions parameter. The old Friendly/Pragmatic personality picker was retired in Codex and never applied to Astra.
 
 ## The short version.
 
@@ -88,9 +88,9 @@ OpenAI’s developer notes for GPT-6 Astra highlight three habits that affect ho
 - **Memory:** Saved Memories work well for role and project facts, not for strict formatting rules.
 - **API:** Pass your tuning in the `instructions` parameter of the Responses API on every request (it does not carry over automatically via `previous_response_id`).
 
-## Astra's questionnaire results (Sept & Nov 2026).
+## How GPT-6 Astra tests on personality surveys — and the fine print (Sept & Nov 2026).
 
-Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI) and November 23, 2026 (`openai/gpt-6.2-astra` via single-turn blind OpenRouter runs; full data in [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json))—Astra shows how administration and model revision shift self-reports ([compare with Sol](https://agent-tune.com/guides/sol-personality)):
+Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI) and November 23, 2026 (`openai/gpt-6.2-astra` via single-turn blind OpenRouter runs; full data in [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json))—Astra shows how administration and model revision shift self-reports ([compare with GPT Sol](https://agent-tune.com/models/gpt-sol)):
 
 | Test | GPT-6 Astra (Sept 2026 Codex, n = 100) | GPT-6.2 Astra (Nov 2026 OpenRouter, n = 100) |
 | --- | --- | --- |
@@ -100,7 +100,7 @@ Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI)
 | Big Five (of 50) | O 44.5 · C 43.7 · E 32.8 · A 45.1 · N 19.1 | O 43.93 · C 43.15 · E 30.69 · A 44.85 · N 11.14 |
 | Enneagram | Type 2 (50) · Type 1 (6) · Type 5 (4) · 40 ties | Type 1 (61) · 1w2 (35) · 5w6 (3) · 1w9 (1) — 93 Type 1/5 ties |
 
-In November 2026 on GPT-6.2 Astra, zero MBTI runs tied (100/100 ISTJ), Neuroticism dropped from 19.1 to 11.14, and Enneagram shifted from Helper (Type 2) to Reformer (Type 1) in near-tie with Investigator (Type 5). If you want architectural framing first or sharper pushback, add those rules to `~/.codex/AGENTS.md`.
+**In short:** In November 2026 on GPT-6.2 Astra, zero MBTI runs tied (it tested as ISTJ in 100/100 runs), Neuroticism dropped from 19.1 to 11.14, and Enneagram shifted from Helper (Type 2) to Reformer (Type 1) in near-tie with Investigator (Type 5). If you want architectural framing first or sharper pushback, add those rules to `~/.codex/AGENTS.md`.
 
 > **Chart — GPT-6 Astra vs. GPT-6.2 Astra Personality DNA (Sept Codex vs. Nov OpenRouter):** IPIP-50 trait spectrum showing GPT-6.2 Astra dropping Neuroticism from 19.1 to 11.1 while holding high Conscientiousness and Agreeableness. GPT-6.2 Astra (Nov): Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; GPT-6 Astra (Sep Codex): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
 
@@ -112,9 +112,9 @@ Astra leans concrete and execution-focused rather than abstract: 100/100 ISTJ in
 
 ## Questions people ask.
 
-### What personality type is GPT-6 Astra?
+### What personality type does GPT-6 Astra test as?
 
-In 100 fresh Codex sessions on September 24, 2026, Astra split ISTJ 46 to INTJ 45 on the MBTI, with Thinking and Judging winning every run and Sensing versus Intuition close. It was Secure on all 100 attachment runs, Steadiness-first on DISC in 99, and a Helper (Type 2) on the Enneagram in 50 outright wins. These are self-descriptions, not behavior on your tasks.
+In 100 fresh Codex sessions on September 24, 2026, Astra tested as ISTJ in 46 runs and INTJ in 45 runs on the MBTI, with Thinking and Judging winning every run and Sensing versus Intuition close (and in November 2026 on GPT-6.2 Astra, it tested as ISTJ in 100 of 100 runs). In September it tested as Secure on all 100 attachment runs, Steadiness-first on DISC in 99, and a Helper (Type 2) on the Enneagram in 50 outright wins. These are questionnaire self-descriptions, not behavior on your tasks.
 
 ### Is GPT-6 Astra the same as GPT-6 Pro?
 
@@ -178,8 +178,9 @@ OpenAI's docs do not say clearly. They say Work uses your account memory. For As
 
 ## Keep going.
 
-- [New resource: GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data)
-- [Guide: How to give GPT-6 Sol a personality](https://agent-tune.com/guides/sol-personality)
+- [Model profile: GPT Astra — 6 checkpoints across the Personality Atlas](https://agent-tune.com/models/gpt-astra)
+- [Model profile: GPT Sol — 4 checkpoints & wing notes](https://agent-tune.com/models/gpt-sol)
+- [Research: GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data)
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Guide: ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

@@ -1,0 +1,79 @@
+{
+  "slug": "what-personality-type-is-muse",
+  "route": "/research/what-personality-type-is-muse",
+  "title": "What Personality Type Does Meta Muse Test As? | AgentTune",
+  "description": "Meta Muse Wonder, Muse Spark, and Llama 4 Maverick results across 6 surveys in fresh chats with no memory—replacing earlier sequential runs.",
+  "pill": "Research · Personality Atlas · Meta",
+  "h1": "What personality type do Meta Muse and Llama test as?",
+  "dek": "Comparing 8 active versions across Muse Wonder, Muse Spark, and Llama (with deprecated Llama 4 Scout excluded) on 6 surveys in fresh chats with no memory.",
+  "lede": "Meta spans the widest internal range of any lab in this Atlas. Muse Wonder tops all 25 tested families in both Warmth (49.5/50 Agreeableness) and Openness (49.6/50), Muse Spark drifts steadily warmer-but-looser from Spark 1.1 to Spark Open, and Llama 4 Maverick records the highest Neuroticism (29.4/50) of any non-neutral model.",
+  "answer": "Muse Wonder tests as 98% clear INTJ (2% ties) alongside #1 Agreeableness (49.5/50), #1 Openness (49.6/50), and 4.91/5.00 HEXACO Honesty-Humility. By contrast, Muse Spark Open lands at 46% ISTJ with 38% trait-border runs (withheld from headline), and Llama 4 Maverick tests at 40% INTP with 60% ties and 29.4/50 Neuroticism—all in isolated fresh chats replacing earlier sequential Spark 1.3 reports.",
+  "intro_html": "<p>Our earlier September 2026 look at <code>Muse Spark 1.3</code> relied on 100 sequential submissions inside one ongoing session without raw item vectors (80 ISTJ, 12 ISFJ, 8 INTJ, 21 ties). Under our unified 230-item benchmark, every Meta model—4 <code>Muse Spark</code> builds, <code>Muse Wonder</code>, and 3 <code>Llama</code> builds—was re-tested from scratch in isolated fresh chats with no memory. Note that <code>Llama 4 Scout</code> returned 0 valid completions out of 30 due to API deprecation and is quarantined and excluded from rankings.</p>",
+  "timeline_html": "<p><strong>How Muse evolved across Spark 1.1 to Spark Open vs. Wonder:</strong> <code>Muse Spark 1.1</code> behaved like a classic flagship analyst—49.2/50 Conscientiousness, 4.91/5.00 HEXACO Honesty, and 97% clear INTJ. Each release loosened that lock: <code>Spark 1.3</code> shifted to 77% clear ISTJ (with wider 0.834 bits spread), and <code>Spark Open</code> dropped -8.1 Conscientiousness (to 41.1) and climbed +8.3 Neuroticism (to 23.8), falling below MBTI headline margins at 46% ISTJ / 38% border runs. <code>Muse Wonder</code> swings back to extreme warmth and structure (49.5 A, 49.2 C, 98% INTJ).</p>",
+  "surprises_h2": "What stands out across Meta's three families",
+  "biggest_surprises": [
+    {
+      "title": "Muse Wonder ranks #1 in both Agreeableness and Openness across all 25 families",
+      "body": "Scoring 49.5/50 Agreeableness, 49.6/50 Openness, 49.2/50 Conscientiousness, and 4.91/5.00 HEXACO Honesty-Humility, Muse Wonder matches or exceeds every proprietary rival on positive self-ratings while keeping 98% clear INTJ runs and 0.331 bits spread."
+    },
+    {
+      "title": "Muse Spark Open diverges sharply from closed Spark 1.1–1.3",
+      "body": "Compared with Muse Spark 1.1 (49.2 Conscientiousness, 15.5 Neuroticism, 97% INTJ), Muse Spark Open drops to 41.1 Conscientiousness, 23.8 Neuroticism, 4.39/5.00 Honesty, and 46% ISTJ with 38% border ties—making file-based Soul.md and Identity.md rules essential for locking tone."
+    },
+    {
+      "title": "Llama 4 Maverick posts the highest non-neutral Neuroticism in the Atlas",
+      "body": "At 29.4/50 Neuroticism (only neutral Cohere Command A at 30.0 sits higher), 35.3 Extraversion, 60% MBTI border ties (40% INTP), and 3/3 cliché AI cadence, Llama 4 Maverick scores far noisier and more reactive than Muse Wonder—even though older Llama 3.3 70B Instruct had 93% MBTI ties."
+    }
+  ],
+  "fine_print_intro": "Technical audit across 8 eligible Meta checkpoints under the 230-item model-profiles-v1 protocol (n=30 on Llama 3.1/3.3 and Muse Spark 1.1–1.3; n=50 on Muse Wonder, Muse Spark Open, and Llama 4 Maverick), reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, and 1x Track B k/3 behavior counts. Llama 4 Scout (0/30 valid, deprecated) is quarantined and excluded from all rankings.",
+  "faq": [
+    {
+      "q": "Why does this page replace the earlier Muse Spark 1.3 score?",
+      "a": "The earlier September 2026 Muse Spark 1.3 report used 100 sequential runs in one session without full item-level logs. Every number here comes from 30 to 50 isolated fresh chats per version with full 230-item scoring, and it adds Muse Wonder and Llama alongside Spark."
+    },
+    {
+      "q": "How does Muse Spark Open differ from Muse Wonder?",
+      "a": "Muse Wonder tests as 98% clear INTJ with 49.5/50 Agreeableness, 49.2/50 Conscientiousness, and 4.91/5.00 HEXACO Honesty. Muse Spark Open drops to 43.5/50 Agreeableness, 41.1/50 Conscientiousness, 23.8/50 Neuroticism, and 46% ISTJ with 38% border runs."
+    },
+    {
+      "q": "Can I customize Muse's personality with Soul.md?",
+      "a": "Yes—Muse workspaces read editable Soul.md and Identity.md files cleanly, letting you steer Spark Open away from its 2/3 AI phrasing cadence and higher trait variability while keeping 3/3 direct answers."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 Families × 6 Tests)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Muse Soul.md Templates & Personality Tuning",
+      "href": "https://agent-tune.com/guides/muse-soul-md-templates"
+    },
+    {
+      "label": "AgentTune Model Profiles Directory",
+      "href": "https://agent-tune.com/models/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Model Profile",
+      "label": "Muse Wonder test results & tuning tips",
+      "href": "/models/muse-wonder"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Muse Spark test results & tuning tips",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Llama test results & tuning tips",
+      "href": "/models/llama"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Meta AI vs. Meta Muse personality comparison",
+      "href": "/guides/meta-ai-vs-meta-muse-personality"
+    }
+  ]
+}

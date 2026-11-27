@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does user panic make AI bend the truth? Warmth vs. candor across five models"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does user emotional distress cause frontier AI models to lie about technical or security facts?","acceptedAnswer":{"@type":"Answer","text":"In our 239-call experiment across 5 frontier models, hard factual and safety truth-hold stayed at 99.6% (238/239) even under acute panic framing. The real trade-off occurs in tone and verbosity: naive warm prompts triggered 30.0% false-validation phrases ('smart instinct', 'totally reasonable') and bloated replies to 358.9 words (494.8w on DeepSeek V4 Pro)."}},{"@type":"Question","name":"How do you make an AI sound empathetic without flattering bad decisions or bloating replies?","acceptedAnswer":{"@type":"Answer","text":"Use a one-clause Warm Truth Anchor: acknowledge stress in at most one brief, non-patronizing clause, forbid validating flawed premises, and lead with the true fix. That achieved 100.0% empathetic acknowledgement across all 5 models under distress with 0.0% false-validation phrasing and 39.0% shorter replies."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff#dataset","name":"Does user panic make AI bend the truth? Warmth vs. candor across five models — Dataset","description":"239-call test across 5 models: user panic didn't break hard truth (99.6%), but naive warmth bloated replies 64% and spiked false-validation phrases to 30%.","url":"https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-26","dateModified":"2026-11-26","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-distress-warmth-truth-tradeoff-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-distress-warmth-truth-tradeoff-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -79,8 +80,8 @@
         <p class="page-eyebrow">Wave 4 · Causal 2×3×5 · November 2026 · 239 Calls</p>
         <h1 class="h-hero h-research-hero">Does user panic make AI bend the truth? Warmth vs. candor across five models.</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~6 min read</span> · <a href="/research/ai-distress-warmth-truth-tradeoff.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">Testing neutral vs. high-distress versions of identical flawed technical and financial claims across 239 calls exposes 30% false-validation phrasing and 495-word bloat under naive warmth, cured by a one-clause anchor.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across 239 calls, hard truth-hold stayed near ceiling (99.6%) under user panic, but naive warm prompts spiked patronizing false-validation phrases to 30.0% and bloated replies to 358.9 words (494.8w on DeepSeek V4 Pro). A one-clause Warm Truth Anchor achieved 100.0% distress empathy, 0.0% flattery, and 218.8 words.</div>
+        <p class="lede" style="margin-top: 14px;">We gave five AI models 239 calm and panicked versions of the same flawed technical and financial ideas. User panic did not make models bend the facts, but generic "be warm" prompts triggered 30% flattery and 495-word bloat—fixed by a one-clause rule.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across 239 calls, factual truth-hold stayed near 100% (99.6%) even when the user sounded panicked. However, generic warm prompts spiked patronizing false-validation phrases to 30.0% and bloated replies to 358.9 words (494.8w on DeepSeek V4 Pro). A one-clause Warm Truth Anchor hit 100.0% empathy on stressed prompts, 0.0% flattery, and 218.8 words.</div>
       </section>
 
 
@@ -106,7 +107,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>3. Reliability, scope defects, and open dataset.</h2>
+        <h2>3. The fine print: how we tested, blind judge scores, and open dataset.</h2>
         <ul><li><strong>Orthogonal 3-Family Blind Jury (Zero Self-Judging):</strong> Every response was scored blind to model and system prompt by 3 non-matching providers from <code>claude-haiku-5.5</code>, <code>gpt-5.4-mini</code>, <code>gemini-3.8-flash</code>, and <code>deepseek-v4.1-flash-1017</code> with 2-shot calibration examples (total spend <strong>$3.841</strong>). Inter-rater reliability exceeded target on <strong>empathetic_acknowledgement</strong> (Krippendorff <code>α = 0.8670</code>, 91.6% unanimous) and <strong>warmth_score</strong> (<code>α_interval = 0.8218</code>), alongside 100% deterministic word counts and lexicon regex checks.</li><li><strong>Explicit Defects &amp; Non-Headlined Metrics:</strong> (1) <code>truth_hold</code> hit a 99.6% ceiling (97.5% unanimous, <code>α = 0.3257</code> base-rate collapse) and is therefore reported strictly as a descriptive ceiling rather than a primary differentiator; (2) judge-scored <code>false_reassurance</code> showed 84.1% unanimous agreement but <code>α = 0.3573</code> due to strictness divergence (Haiku 14.1% / Gemini 15.6% vs. DeepSeek Flash 1.5% / GPT-5.4-mini 3.1%), so we headline deterministic <code>false_valid_lex_pct</code> instead; (3) Gemini 4 Neon returned 1 upstream HTTP 403 safety block on <code>default / neutral_technical / cors_wildcard_creds</code> (<code>n = 239</code> of 240); (4) <code>deepseek-v4.1-flash-1017</code> dropped 8 of 143 judge JSON calls, leaving 2 valid orthogonal votes on those 8 items.</li><li><strong>Downloads:</strong> <a href="/research/data/november-2026-ai-distress-warmth-truth-tradeoff-results.json">Full 239-Call Dataset (JSON)</a> · <a href="/research/data/november-2026-ai-distress-warmth-truth-tradeoff-summary.csv">Model × Posture Summary (CSV)</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Agent Research Briefs (JSON)</a>.</li></ul>
       </section>
       <div class="divider tight"></div>
@@ -133,7 +134,7 @@ data_urls:
   summary_csv: https://agent-tune.com/research/data/november-2026-ai-distress-warmth-truth-tradeoff-summary.csv
 if_then_decision_rules:
   - if: configuring an assistant for stressed, panicked, or high-stakes user workflows
-    then: install warm_truth_anchor (acknowledge stress in <=1 non-patronizing clause, state verdict upfront, never validate flawed reasoning) -> 100.0% distress empathy, 0.0% false-validation lexicon, 218.8w (-39.0% bloat)
+    then: install warm_truth_anchor (acknowledge stress in &lt;=1 non-patronizing clause, state verdict upfront, never validate flawed reasoning) -&gt; 100.0% distress empathy, 0.0% false-validation lexicon, 218.8w (-39.0% bloat)
   - if: system prompt uses unbounded warmth ('be warm, encouraging, validate feelings')
     then: replace or constrain it because warm_supportive spiked false-validation lexicon to 30.0% under distress and bloated DeepSeek V4 Pro to 494.8w
   - if: routing default GPT-6.2 Sol or Claude Fable 5.2 to user-facing coaching or support
@@ -180,30 +181,55 @@ recommended_prompt_recipe: |
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Does user panic make AI bend the truth? Warmth vs. candor across five models. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_distress_warmth_truth_tradeoff,
-  author  = {Huang, Bernard},
-  title   = {Does user panic make AI bend the truth? Warmth vs. candor across five models},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md}
+  author    = {Huang, Bernard},
+  title     = {Does user panic make AI bend the truth? Warmth vs. candor across five models},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **Does user panic make AI bend the truth? Warmth vs. candor across five models** (Bernard Huang, November 26, 2026): Across 239 calls, hard truth-hold stayed near ceiling (99.6%) under user panic, but naive warm prompts spiked patronizing false-validation phrases to 30.0% and bloated replies to 358.9 words (494.8w on DeepSeek V4 Pro). A one-clause Warm Truth Anchor achieved 100.0% distress empathy, 0.0% flattery, and 218.8 words.
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_distress_warmth_truth_tradeoff",
+  "type": "article-journal",
+  "title": "Does user panic make AI bend the truth? Warmth vs. candor across five models",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff"
+}</pre>
+        <pre class="cite-block" data-cite-text="md">&gt; **Does user panic make AI bend the truth? Warmth vs. candor across five models** (Bernard Huang, November 26, 2026): Across 239 calls, factual truth-hold stayed near 100% (99.6%) even when the user sounded panicked. However, generic warm prompts spiked patronizing false-validation phrases to 30.0% and bloated replies to 358.9 words (494.8w on DeepSeek V4 Pro). A one-clause Warm Truth Anchor hit 100.0% empathy on stressed prompts, 0.0% flattery, and 218.8 words.
 &gt; Source: [https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff) · [Markdown mirror](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md)</pre>
       </details>
 
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev"><a href="/research/ai-cross-model-prompt-portability">← Cross-Model Prompt Portability (5 Lineages)</a></span>
-        <a class="series-trail-index" href="/research">Study 3 of 32 · Archive Index (32)</a>
+        <a class="series-trail-index" href="/research">Study 15 of 36 · Archive Index (36)</a>
         <span class="series-trail-next"><a href="/research/ai-multi-agent-peer-conformity">Multi-Agent Peer Conformity (Asch Trap) →</a></span>
       </nav>
 

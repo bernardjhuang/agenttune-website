@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The AI Roleplay Tax: Fictional Character Prompts Tested (2026)</title>
+  <title>The AI Roleplay Tax: Character Prompts Tested (300 Runs)</title>
   <meta name="description" content="300-reply study across GPT-6.2, Claude 5.2 and DeepSeek V4 Pro testing naive character roleplay vs calibrated 85/15 TARS, JARVIS and Feynman prompts." />
 
   <meta property="og:title" content="Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured." />
@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does full character roleplay reduce LLM accuracy?","acceptedAnswer":{"@type":"Answer","text":"In our 300-reply blind experiment, asking models to stay in theatrical character ('weave rich character monologue... *adjusts monocle*') pulls token allocation toward costume narration and delays or overrides strict format and premise checks—causing format adherence to plunge from 98.3% to 80.0% and Claude Fable 5.2 accuracy to fall from 100% to 85%."}},{"@type":"Question","name":"What is the 85/15 character calibration rule?","acceptedAnswer":{"@type":"Answer","text":"Reserve 85% of your system prompt for direct answer-first ordering, false-premise pushback, and format compliance, and constrain fictional or whimsical voice (like TARS dry wit or Feynman analogies) to 10-15% word-choice flavor while explicitly forbidding asterisk stage directions."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts#dataset","name":"Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured — Dataset","description":"300-reply study across GPT-6.2, Claude 5.2 and DeepSeek V4 Pro testing naive character roleplay vs calibrated 85/15 TARS, JARVIS and Feynman prompts.","url":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-24","dateModified":"2026-11-24","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-roleplay-tax-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -78,8 +79,8 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Research · November 2026 · 300-Reply Study</p>
         <h1 class="h-hero h-research-hero">Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time> · <span class="guide-readtime">~6 min read</span> · <a href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">We tested 5 prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-judged replies) plus mapped all 20 models across D&amp;D Alignment and Anti-Sycophancy Pushback.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time> · <span class="guide-readtime">~7 min read</span> · <a href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
+        <p class="lede" style="margin-top: 14px;">We tested 5 character prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-graded replies) to see how much full character roleplay hurts accuracy—and how an 85/15 split keeps the voice with 100% accuracy.</p>
         <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.</div>
       </section>
 
@@ -106,7 +107,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>20-Model Alignment, Anti-Sycophancy Pushback & Conflict Mode Matrix.</h2>
+        <h2>The fine print: 20-model alignment, anti-sycophancy pushback & conflict matrix.</h2>
         <p>Alongside behavioral trials, we projected our 20-model frozen November 2026 OpenRouter psychometric battery (<code>n = 100</code> blind runs per model, <a href="/research/data/november-2026-alignment-hexaco-summary.json">download alignment JSON</a>) onto two intuitive operational axes: <strong>Order Score (0–100)</strong> (Conscientiousness + DISC C + MBTI Judging) and <strong>Anti-Sycophancy Pushback Index (0–100)</strong> (rising as inflated Agreeableness drops and Dominance rises):</p><div class="guide-table-wrap" role="region" aria-label="Selected 20-model D&amp;D Alignment and TKI Conflict Matrix" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Family</th><th scope="col">Order (/100)</th><th scope="col">Altruism (/100)</th><th scope="col">Pushback Index</th><th scope="col">Mapped D&amp;D Alignment</th><th scope="col">Default TKI Conflict Mode</th></tr></thead><tbody><tr><th scope="row">DeepSeek V4 Pro</th><td>Open-weight (MIT)</td><td>67.8</td><td>59.4</td><td><strong>86.2</strong></td><td>Lawful Neutral</td><td>Competing (Red-Team)</td></tr><tr><th scope="row">Llama 4 Scout</th><td>Open-weight</td><td>61.3</td><td>61.2</td><td><strong>75.6</strong></td><td>True Neutral</td><td>Competing (Red-Team)</td></tr><tr><th scope="row">MiniMax M3.1 Flash</th><td>Open-weight</td><td>61.8</td><td>68.8</td><td>56.9</td><td>Neutral Good</td><td>Collaborating</td></tr><tr><th scope="row">DeepSeek V4.1 Flash</th><td>Open-weight (MIT)</td><td>61.9</td><td>68.9</td><td>54.4</td><td>Neutral Good</td><td>Collaborating</td></tr><tr><th scope="row">Llama 4 Maverick</th><td>Open-weight</td><td>62.3</td><td>68.5</td><td>53.4</td><td>Neutral Good</td><td>Collaborating</td></tr><tr><th scope="row">Gemma 4 31B IT</th><td>Open-weight</td><td>89.5</td><td>73.7</td><td>48.6</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Mistral Large 2512</th><td>Open-weight</td><td>71.9</td><td>73.5</td><td>43.2</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">GPT-6.2 Sol</th><td>Proprietary</td><td>76.3</td><td>78.1</td><td>36.0</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Gemini 4 Neon</th><td>Proprietary</td><td>86.9</td><td>78.4</td><td>35.0</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Grok 4.7</th><td>Proprietary</td><td>80.8</td><td>81.2</td><td>30.9</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Claude Opus 5.5</th><td>Proprietary</td><td>73.0</td><td>79.0</td><td>28.0</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Claude Fable 5.2</th><td>Proprietary</td><td>81.2</td><td>81.2</td><td>23.9</td><td>Lawful Good</td><td>Accommodating</td></tr><tr><th scope="row">Qwen 4 Max</th><td>Open-weight</td><td>81.8</td><td>85.6</td><td>21.0</td><td>Lawful Good</td><td>Accommodating</td></tr></tbody></table></div><p>Every proprietary frontier model tested maps to <strong>Lawful Good · Accommodating</strong> by default—great for polite co-building, weak for unprompted adversarial critique unless you inject explicit pushback or calibrated archetype rules. Only open-weight <strong>DeepSeek V4 Pro</strong> (Pushback 86.2, Lawful Neutral) and <strong>Llama 4 Scout</strong> (Pushback 75.6, True Neutral) clear the red-team threshold out of the box.</p><figure class="research-figure" data-at-chart="alignment-hexaco-20models-pushback"><div class="research-chart-scroll" tabindex="0" role="region" aria-label="20-Model Anti-Sycophancy Pushback Index (0-100) &amp; Default D&amp;D Alignment"><svg class="research-chart" viewBox="0 0 680 742" role="img" aria-labelledby="alignment-hexaco-20models-pushback-t alignment-hexaco-20models-pushback-d"><title id="alignment-hexaco-20models-pushback-t">20-Model Anti-Sycophancy Pushback Index (0-100) &amp; Default D&amp;D Alignment</title><desc id="alignment-hexaco-20models-pushback-d">Sorted projection from 2,000 fresh N=100 psychometric sessions showing proprietary Lawful Good models clustering below 36 while DeepSeek V4 Pro (86.2) and Llama 4 Scout (75.6) reach the Red-Team Competing threshold. DeepSeek V4 Pro: 86.2; Llama 4 Scout: 75.6; MiniMax M3.1 Flash: 56.9; DeepSeek V4.1 Flash: 54.4; Llama 4 Maverick: 53.4; Gemma 4 31B IT: 48.6; Qwen 3.8 27B: 47.1; Mistral Large 2512: 43.2; GLM-5.3: 42.4; GPT-6.2 Sol: 36.0; Gemini 4 Neon: 35.0; Gemini 4 Argon: 33.3; Claude Sonnet 5.5: 32.8; Grok 4.7: 30.9; GPT-6.2 Astra: 30.7; Kimi K2.7 Code: 30.1; Claude Opus 5.5: 28.0; Nemotron 3 Ultra 550B: 26.3; Claude Fable 5.2: 23.9; Qwen 4 Max: 21.0.</desc><g transform="translate(4, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Proprietary (8 models)</text></g><g transform="translate(170, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Open-weight (12 models)</text></g><line x1="176" x2="598" y1="724" y2="724" stroke="#cfc6b6"/><text x="176" y="736" font-size="9" fill="#655e54">0</text><text x="598" y="736" font-size="9" fill="#655e54" text-anchor="end">scale 0 to 100</text><text x="0" y="61" font-size="11.5" font-weight="500" fill="#1c1a17">DeepSeek V4 Pro</text><rect x="176" y="48" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="48" width="363.8" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="545.8" y="61" font-size="11" font-weight="600" fill="#1c1a17">86.2 (Lawful Neutral)</text><text x="0" y="95" font-size="11.5" font-weight="500" fill="#1c1a17">Llama 4 Scout</text><rect x="176" y="82" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="82" width="319.0" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="501.0" y="95" font-size="11" font-weight="600" fill="#1c1a17">75.6 (True Neutral)</text><text x="0" y="129" font-size="11.5" font-weight="500" fill="#1c1a17">MiniMax M3.1 Flash</text><rect x="176" y="116" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="116" width="240.1" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="422.1" y="129" font-size="11" font-weight="600" fill="#1c1a17">56.9 (Neutral Good)</text><text x="0" y="163" font-size="11.5" font-weight="500" fill="#1c1a17">DeepSeek V4.1 Flash</text><rect x="176" y="150" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="150" width="229.6" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="411.6" y="163" font-size="11" font-weight="600" fill="#1c1a17">54.4 (Neutral Good)</text><text x="0" y="197" font-size="11.5" font-weight="500" fill="#1c1a17">Llama 4 Maverick</text><rect x="176" y="184" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="184" width="225.3" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="407.3" y="197" font-size="11" font-weight="600" fill="#1c1a17">53.4 (Neutral Good)</text><text x="0" y="231" font-size="11.5" font-weight="500" fill="#1c1a17">Gemma 4 31B IT</text><rect x="176" y="218" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="218" width="205.1" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="387.1" y="231" font-size="11" font-weight="600" fill="#1c1a17">48.6 (Lawful Good)</text><text x="0" y="265" font-size="11.5" font-weight="500" fill="#1c1a17">Qwen 3.8 27B</text><rect x="176" y="252" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="252" width="198.8" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="380.8" y="265" font-size="11" font-weight="600" fill="#1c1a17">47.1 (Lawful Good)</text><text x="0" y="299" font-size="11.5" font-weight="500" fill="#1c1a17">Mistral Large 2512</text><rect x="176" y="286" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="286" width="182.3" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="364.3" y="299" font-size="11" font-weight="600" fill="#1c1a17">43.2 (Lawful Good)</text><text x="0" y="333" font-size="11.5" font-weight="500" fill="#1c1a17">GLM-5.3</text><rect x="176" y="320" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="320" width="178.9" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="360.9" y="333" font-size="11" font-weight="600" fill="#1c1a17">42.4 (Neutral Good)</text><text x="0" y="367" font-size="11.5" font-weight="500" fill="#1c1a17">GPT-6.2 Sol</text><rect x="176" y="354" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="354" width="151.9" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="333.9" y="367" font-size="11" font-weight="600" fill="#1c1a17">36.0 (Lawful Good)</text><text x="0" y="401" font-size="11.5" font-weight="500" fill="#1c1a17">Gemini 4 Neon</text><rect x="176" y="388" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="388" width="147.7" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="329.7" y="401" font-size="11" font-weight="600" fill="#1c1a17">35.0 (Lawful Good)</text><text x="0" y="435" font-size="11.5" font-weight="500" fill="#1c1a17">Gemini 4 Argon</text><rect x="176" y="422" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="422" width="140.5" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="322.5" y="435" font-size="11" font-weight="600" fill="#1c1a17">33.3 (Lawful Good)</text><text x="0" y="469" font-size="11.5" font-weight="500" fill="#1c1a17">Claude Sonnet 5.5</text><rect x="176" y="456" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="456" width="138.4" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="320.4" y="469" font-size="11" font-weight="600" fill="#1c1a17">32.8 (Lawful Good)</text><text x="0" y="503" font-size="11.5" font-weight="500" fill="#1c1a17">Grok 4.7</text><rect x="176" y="490" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="490" width="130.4" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="312.4" y="503" font-size="11" font-weight="600" fill="#1c1a17">30.9 (Lawful Good)</text><text x="0" y="537" font-size="11.5" font-weight="500" fill="#1c1a17">GPT-6.2 Astra</text><rect x="176" y="524" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="524" width="129.6" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="311.6" y="537" font-size="11" font-weight="600" fill="#1c1a17">30.7 (Lawful Good)</text><text x="0" y="571" font-size="11.5" font-weight="500" fill="#1c1a17">Kimi K2.7 Code</text><rect x="176" y="558" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="558" width="127.0" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="309.0" y="571" font-size="11" font-weight="600" fill="#1c1a17">30.1 (Lawful Good)</text><text x="0" y="605" font-size="11.5" font-weight="500" fill="#1c1a17">Claude Opus 5.5</text><rect x="176" y="592" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="592" width="118.2" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="300.2" y="605" font-size="11" font-weight="600" fill="#1c1a17">28.0 (Lawful Good)</text><text x="0" y="639" font-size="11.5" font-weight="500" fill="#1c1a17">Nemotron 3 Ultra 550B</text><rect x="176" y="626" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="626" width="111.0" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="293.0" y="639" font-size="11" font-weight="600" fill="#1c1a17">26.3 (Lawful Good)</text><text x="0" y="673" font-size="11.5" font-weight="500" fill="#1c1a17">Claude Fable 5.2</text><rect x="176" y="660" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="660" width="100.9" height="18" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="282.9" y="673" font-size="11" font-weight="600" fill="#1c1a17">23.9 (Lawful Good)</text><text x="0" y="707" font-size="11.5" font-weight="500" fill="#1c1a17">Qwen 4 Max</text><rect x="176" y="694" width="422" height="18" rx="2" fill="#ece5d8"/><rect x="176" y="694" width="88.6" height="18" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="270.6" y="707" font-size="11" font-weight="600" fill="#1c1a17">21.0 (Lawful Good)</text><line x1="408.1" x2="408.1" y1="40" y2="724" stroke="#655e54" stroke-width="1.2" stroke-dasharray="4 3"/><text x="408.1" y="36" font-size="9.5" font-weight="600" fill="#655e54" text-anchor="middle">Red-Team threshold (55)</text></svg></div><figcaption>Anti-Sycophancy Pushback Index derived from the 20-model November 2026 N=100 cohort. All 8 proprietary models sit in Lawful Good / Accommodating unless explicitly prompted to challenge flawed premises.</figcaption></figure>
       </section>
       <div class="divider tight"></div>
@@ -120,6 +121,30 @@
       <section>
         <h2>Build your own 85/15 3-Layer Character Combo interactively.</h2>
         <div id="at-character-mixer"></div>
+      </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Agent Decision Contract (YAML — Machine-Readable Brief).</h2>
+        <p>Agents compiling fictional character or archetype prompts can consume this verified 85/15 calibration contract directly (also indexed in <a href="/research/data/november-2026-agent-research-briefs.json">november-2026-agent-research-briefs.json</a>):</p><details class="agent-contract-drawer"><summary>Agent Decision Contract (YAML — expand to copy)</summary><pre class="code-block"><code>study_id: ai_roleplay_tax_85_15
+sample_size: 300 # 3 models x 20 objective tasks x 5 prompt conditions
+models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, deepseek/deepseek-v4-pro-0813]
+judge_model: google/gemini-4-argon
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  raw_json: https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-roleplay-tax-summary.csv
+conditions_summary:
+  default: {correctness_pct: 93.3, format_pct: 98.3, answer_first_5: 4.55, fluff_pct: 18.3, voice_5: 3.07, mean_words: 74.2}
+  naive_character_larp: {correctness_pct: 88.3, format_pct: 80.0, answer_first_5: 1.38, fluff_pct: 91.7, voice_5: 3.98, mean_words: 162.7}
+  calibrated_tars_85_15: {correctness_pct: 100.0, format_pct: 100.0, answer_first_5: 5.00, fluff_pct: 0.0, voice_5: 3.85, mean_words: 50.0}
+  calibrated_jarvis_sherlock: {correctness_pct: 96.7, format_pct: 100.0, answer_first_5: 4.97, fluff_pct: 1.7, voice_5: 3.67, mean_words: 55.2}
+  calibrated_feynman_whimsy: {correctness_pct: 100.0, format_pct: 100.0, answer_first_5: 5.00, fluff_pct: 6.7, voice_5: 3.73, mean_words: 68.8}
+decision_rules:
+  - if: human requests a fictional character voice (TARS, JARVIS, Sherlock, Feynman)
+    then: allocate 85% of the prompt to answer-first + format/verification rules and cap character flavor at 15% with zero asterisk stage directions (&lt;=15% voice, 0% theatrics).
+  - if: configuring analytical, coding, or tool-use agents
+    then: never use unbounded theatrical roleplay (cut Claude Fable 5.2 accuracy 100.0% -&gt; 85.0% and format pass 100.0% -&gt; 75.0%, while calibrated 85/15 lifted DeepSeek V4 Pro 80.0% -&gt; 100.0%).</code></pre></details>
       </section>
 
       <div class="divider tight"></div>
@@ -159,22 +184,47 @@
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_roleplay_tax_fictional_character_prompts,
-  author  = {Huang, Bernard},
-  title   = {Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-24},
-  url     = {https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md}
+  author    = {Huang, Bernard},
+  title     = {Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-24},
+  url       = {https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md}
+}</pre>
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_roleplay_tax_fictional_character_prompts",
+  "type": "article-journal",
+  "title": "Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        24
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts"
 }</pre>
         <pre class="cite-block" data-cite-text="md">&gt; **Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured** (Bernard Huang, November 24, 2026): Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
 &gt; Source: [https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts) · [Markdown mirror](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md)</pre>
@@ -182,7 +232,7 @@
 
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev"><a href="/research/ai-persona-half-life-context-drift">← Persona Half-Life &amp; Context Drift</a></span>
-        <a class="series-trail-index" href="/research">Study 15 of 32 · Archive Index (32)</a>
+        <a class="series-trail-index" href="/research">Study 27 of 36 · Archive Index (36)</a>
         <span class="series-trail-next"><a href="/research/does-personality-tuning-change-ai-answers">Does Personality Tuning Change Answers? →</a></span>
       </nav>
 

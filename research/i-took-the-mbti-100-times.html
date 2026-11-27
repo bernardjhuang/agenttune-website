@@ -26,6 +26,15 @@
   <meta name="twitter:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
 
   <link rel="canonical" href="https://agent-tune.com/research/i-took-the-mbti-100-times" />
+  <link rel="alternate" type="text/markdown" title="This article as Markdown" href="https://agent-tune.com/research/i-took-the-mbti-100-times.md" />
+  <meta name="citation_title" content="100 simulated MBTI outcomes" />
+  <meta name="citation_author" content="Bernard Huang" />
+  <meta name="citation_publication_date" content="2026/05/28" />
+  <meta name="citation_online_date" content="2026/11/16" />
+  <meta name="citation_journal_title" content="AgentTune Empirical AI Psychology Monographs" />
+  <meta name="citation_public_url" content="https://agent-tune.com/research/i-took-the-mbti-100-times" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Did Claude Opus 4.8 actually take the MBTI test in 100 separate chats in May 2026?", "acceptedAnswer": {"@type": "Answer", "text": "No. The May 2026 script asked Claude Opus 4.8 for a single probability distribution across the 1–5 scale for each of the 32 OEJTS items, then drew 100 synthetic answer sheets locally from that one profile (producing 72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, and 2 ENTJ outcomes)."}}, {"@type": "Question", "name": "How do 100 independent fresh sessions compare with the May 2026 synthetic simulation?", "acceptedAnswer": {"@type": "Answer", "text": "In September and November 2026, when we ran 100 genuinely separate fresh API sessions per model with zero memory, session-to-session variance was much tighter and exact axis ties explained most apparent label shifts (59 of 400 September runs tied on at least one OEJTS axis, inflating legacy INTJ counts from 280/400 to 335/400)."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "@id": "https://agent-tune.com/research/i-took-the-mbti-100-times#dataset", "name": "AgentTune May 2026 Claude Opus 4.8 100x MBTI simulation vs. September 2026 fresh-session audit", "description": "100 synthetic OEJTS draws sampled from an elicited Claude Opus 4.8 item probability profile (May 2026) compared against 400 independent fresh-session OEJTS 1.2 records (September 2026).", "url": "https://agent-tune.com/research/i-took-the-mbti-100-times", "creator": {"@type": "Person", "name": "Bernard Huang", "url": "https://github.com/bernardjhuang"}, "license": "https://opensource.org/license/mit", "isAccessibleForFree": true, "datePublished": "2026-05-28", "dateModified": "2026-11-16", "measurementTechnique": "Monte Carlo synthetic sampling from single elicited item-probability table contrasted with independent zero-memory fresh API sessions", "variableMeasured": [{"@type": "PropertyValue", "name": "Simulated OEJTS Type Distribution (n = 100 draws)", "unitText": "count out of 100"}, {"@type": "PropertyValue", "name": "Strict Resolved INTJ Count (n = 100 fresh sessions)", "unitText": "count out of 100"}, {"@type": "PropertyValue", "name": "Unresolved Axis Tie Count (n = 100 fresh sessions)", "unitText": "count out of 100"}], "distribution": [{"@type": "DataDownload", "contentUrl": "https://agent-tune.com/research/data/september-2026-responses.json", "encodingFormat": "application/json"}, {"@type": "DataDownload", "contentUrl": "https://agent-tune.com/research/data/september-2026-summary.csv", "encodingFormat": "text/csv"}]}</script>
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
   <link rel="alternate" type="text/markdown" title="LLM full content" href="https://agent-tune.com/llms-full.txt" />
 
@@ -146,6 +155,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
@@ -164,7 +174,9 @@
         <span class="pill">Methodology note · MBTI simulation</span>
         <h1 class="h-hero h-research-hero">100 simulated MBTI outcomes.</h1>
         <p class="article-dek">One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical May 2026 note</p>
-        <p class="lede">The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script elicited one set of per-item probabilities from Opus 4.8 and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September 2026 fresh-session cohorts.</p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-16">November 16, 2026</time> · <span class="guide-readtime">~5 min read</span> · <a href="/research/i-took-the-mbti-100-times.md">Markdown (.md)</a> · <a href="/research/data/september-2026-summary.csv">CSV</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        <p class="lede">The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script asked Opus 4.8 for one set of per-item probabilities and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September and November 2026 fresh-session cohorts.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> The May 2026 Opus 4.8 result (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) came from 100 Monte Carlo draws sampled from one elicited probability table rather than 100 independent API sessions. When we ran 100 genuinely separate fresh sessions per model in September and November 2026, run-to-run answers were much tighter and exact axis ties explained most apparent label shifts (59 of 400 September runs tied on at least one axis, inflating legacy INTJ counts from 280/400 to 335/400; see our <a href="/models/claude-opus">full Claude Opus profile</a>).</div>
       </section>
       <div class="article-body">
         <h2>What the simulation actually ran</h2>
@@ -180,9 +192,16 @@
             <tr><th scope="row">ENTJ</th><td>2</td><td>2%</td></tr>
           </tbody></table>
         </div>
-        <p>Every simulated draw landed on Introverted-Judging (<code>IxxJ</code>), mostly <code>INTJ</code> (72%) with smaller counts for <code>INFJ</code> (14%) and <code>ISTJ</code> (10%). Because raw item vectors and tie-break rules were not archived in May, we cannot recompute how many of those 100 synthetic sheets contained exact axis ties.</p>
+        <p>Every simulated draw landed on Introverted-Judging (<code>IxxJ</code>), mostly testing as <code>INTJ</code> (72%) with smaller counts for <code>INFJ</code> (14%) and <code>ISTJ</code> (10%). Because raw item vectors and tie-break rules were not archived in May, we cannot recompute how many of those 100 synthetic sheets contained exact axis ties.</p>
 
         <h2>Simulated draws vs. September 2026 fresh-session cohorts</h2>
+
+        <!-- AT_STAT_STRIP_START:mbti-100x-stat-strip --><div class="research-stat-strip" data-at-chart="mbti-100x-stat-strip"><div class="research-stat-card"><div class="research-stat-num">100 Draws</div><div class="research-stat-label">Synthetic Sample*</div><div class="research-stat-note">Elicited Opus 4.8 item probability table, not fresh sessions.</div></div><div class="research-stat-card"><div class="research-stat-num">72 INTJ</div><div class="research-stat-label">Simulated Mode</div><div class="research-stat-note">Followed by 14 INFJ and 10 ISTJ from sampled probability draw.</div></div><div class="research-stat-card"><div class="research-stat-num">100 INTJ</div><div class="research-stat-label">Fable 5.2 (Nov)</div><div class="research-stat-note">Actual fresh blind OpenRouter runs lock cleanly onto INTJ.</div></div><div class="research-stat-card"><div class="research-stat-num">48 Ties</div><div class="research-stat-label">Sonnet 5.5 (Nov)</div><div class="research-stat-note">Contrast shows why independent runs beat single-vector sampling.</div></div></div><!-- AT_STAT_STRIP_END:mbti-100x-stat-strip -->
+
+        <figure class="research-figure" data-at-chart="opus48-sim-vs-fresh-stacked"><div class="research-chart-scroll" tabindex="0" role="region" aria-label="May Opus 4.8 Synthetic Draws vs. Fresh Independent Sessions (/100)"><svg class="research-chart" viewBox="0 0 680 244" role="img" aria-labelledby="opus48-sim-vs-fresh-stacked-t opus48-sim-vs-fresh-stacked-d"><defs><pattern id="opus48-sim-vs-fresh-stacked-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f4efe6"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9c3b1f" stroke-width="3"/></pattern></defs><title id="opus48-sim-vs-fresh-stacked-t">May Opus 4.8 Synthetic Draws vs. Fresh Independent Sessions (/100)</title><desc id="opus48-sim-vs-fresh-stacked-d">Compares 100 synthetic probability draws of Opus 4.8 against 100 independent fresh sessions per model in Sept and Nov 2026. Opus 4.8 (May sim*): Resolved INTJ 72, INFJ 14, ISTJ 10, Other 4; Fable 5.1 (Sep): Resolved INTJ 98, Tied axis 1, ISTJ 1; Opus 5.5 (Sep): Resolved INTJ 84, Tied axis 10, INFJ 5, Other 1; Fable 5.2 (Nov): Resolved INTJ 100; Sonnet 5.5 (Nov): Resolved INTJ 52, Tied axis 48.</desc><g transform="translate(4, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Resolved INTJ</text></g><g transform="translate(116, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#c8553d" stroke-width="1.2"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Tied axis</text></g><g transform="translate(204, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">INFJ</text></g><g transform="translate(262, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#7a7468" stroke="#7a7468" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">ISTJ</text></g><g transform="translate(320, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c9c2b4" stroke="#c9c2b4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Other</text></g><text x="0" y="49" font-size="12" fill="#1c1a17">Opus 4.8 (May sim*)</text><rect x="118.0" y="30" width="378.7" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="307.4" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">72</text><rect x="496.7" y="30" width="73.6" height="30" fill="#3a72c4" stroke="#f4efe6" stroke-width="1"/><text x="533.5" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">14</text><rect x="570.4" y="30" width="52.6" height="30" fill="#7a7468" stroke="#f4efe6" stroke-width="1"/><text x="596.7" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">10</text><rect x="623.0" y="30" width="21.0" height="30" fill="#c9c2b4" stroke="#f4efe6" stroke-width="1"/><text x="633.5" y="49" font-size="11" font-weight="600" fill="#1e1d1a" text-anchor="middle">4</text><text x="678" y="49" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="91" font-size="12" fill="#1c1a17">Fable 5.1 (Sep)</text><rect x="118.0" y="72" width="515.5" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="375.7" y="91" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">98</text><rect x="633.5" y="72" width="5.3" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><rect x="638.7" y="72" width="5.3" height="30" fill="#7a7468" stroke="#f4efe6" stroke-width="1"/><text x="678" y="91" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="133" font-size="12" fill="#1c1a17">Opus 5.5 (Sep)</text><rect x="118.0" y="114" width="441.8" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="338.9" y="133" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">84</text><rect x="559.8" y="114" width="52.6" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><text x="586.1" y="133" font-size="11" font-weight="600" fill="#a8482a" stroke="#f4efe6" stroke-width="3" paint-order="stroke" stroke-linejoin="round" text-anchor="middle">10</text><rect x="612.4" y="114" width="26.3" height="30" fill="#3a72c4" stroke="#f4efe6" stroke-width="1"/><text x="625.6" y="133" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">5</text><rect x="638.7" y="114" width="5.3" height="30" fill="#c9c2b4" stroke="#f4efe6" stroke-width="1"/><text x="678" y="133" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="175" font-size="12" fill="#1c1a17">Fable 5.2 (Nov)</text><rect x="118.0" y="156" width="526.0" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="381.0" y="175" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">100</text><text x="678" y="175" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="217" font-size="12" fill="#1c1a17">Sonnet 5.5 (Nov)</text><rect x="118.0" y="198" width="273.5" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="254.8" y="217" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">52</text><rect x="391.5" y="198" width="252.5" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><text x="517.8" y="217" font-size="11" font-weight="600" fill="#a8482a" stroke="#f4efe6" stroke-width="3" paint-order="stroke" stroke-linejoin="round" text-anchor="middle">48</text><text x="678" y="217" font-size="10" fill="#655e54" text-anchor="end">100</text></svg></div><figcaption>*Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.</figcaption></figure>
+        
+
+        
         <p>In September 2026, we replaced single-profile simulations with 100 independent fresh sessions per model on OEJTS 1.2 (2,000 fresh sessions across all five tests). Real session-to-session answers were much tighter, and tie-breaking turned out to be the main driver of apparent label changes:</p>
         <div class="guide-table-wrap">
           <table class="axes">
@@ -236,96 +255,14 @@
         </div>
         <p>Across the four September 2026 fresh cohorts combined (400 sessions), <strong>59 of 400 runs tied on at least one OEJTS axis</strong>. Under the old strict-less-than scorer (which broke exact midpoint ties toward <code>INTJ</code>), <code>INTJ</code> share appeared inflated from 280 / 400 (70.0%) to 335 / 400 (83.8%). Read the full artifact audit in <a href="/research/ai-mbti-tie-breaking">How tie-breaking creates phantom INTJs</a>.</p>
 
-        
+        <h2>What to do with this practically</h2>
+        <p>Treat a personality label on an LLM as an observational summary of its unprompted survey habits, never as an immutable constraint. If you want an assistant that communicates directly without hedging or trailing questions, inspect your own workflow in our <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a> or copy a behavioral template from the <a href="/tools/custom-instructions-generator">custom instructions generator</a>, then compare outputs before and after in the <a href="/tools/instruction-test-bench">A/B test bench</a>.</p>
+        <p><a href="/research#methodology">Read full methodology limits</a> · <a href="/research/ai-mbti-tie-breaking">MBTI tie-breaking audit</a> · <a href="/tests/mbti">Take the free OEJTS test</a> · <a href="/library/">Browse 43 tuning templates</a></p>
 
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        
-
-
-
-        <!-- AT_STAT_STRIP_START:mbti-100x-stat-strip --><div class="research-stat-strip" data-at-chart="mbti-100x-stat-strip"><div class="research-stat-card"><div class="research-stat-num">100 Draws</div><div class="research-stat-label">Synthetic Sample*</div><div class="research-stat-note">Elicited Opus 4.8 item probability table, not fresh sessions.</div></div><div class="research-stat-card"><div class="research-stat-num">72 INTJ</div><div class="research-stat-label">Simulated Mode</div><div class="research-stat-note">Followed by 14 INFJ and 10 ISTJ from sampled probability draw.</div></div><div class="research-stat-card"><div class="research-stat-num">100 INTJ</div><div class="research-stat-label">Fable 5.2 (Nov)</div><div class="research-stat-note">Actual fresh blind OpenRouter runs lock cleanly onto INTJ.</div></div><div class="research-stat-card"><div class="research-stat-num">48 Ties</div><div class="research-stat-label">Sonnet 5.5 (Nov)</div><div class="research-stat-note">Contrast shows why independent runs beat single-vector sampling.</div></div></div><!-- AT_STAT_STRIP_END:mbti-100x-stat-strip -->
-
-<figure class="research-figure" data-at-chart="opus48-sim-vs-fresh-stacked"><div class="research-chart-scroll" tabindex="0" role="region" aria-label="May Opus 4.8 Synthetic Draws vs. Fresh Independent Sessions (/100)"><svg class="research-chart" viewBox="0 0 680 244" role="img" aria-labelledby="opus48-sim-vs-fresh-stacked-t opus48-sim-vs-fresh-stacked-d"><defs><pattern id="opus48-sim-vs-fresh-stacked-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f4efe6"/><line x1="0" y1="0" x2="0" y2="6" stroke="#9c3b1f" stroke-width="3"/></pattern></defs><title id="opus48-sim-vs-fresh-stacked-t">May Opus 4.8 Synthetic Draws vs. Fresh Independent Sessions (/100)</title><desc id="opus48-sim-vs-fresh-stacked-d">Compares 100 synthetic probability draws of Opus 4.8 against 100 independent fresh sessions per model in Sept and Nov 2026. Opus 4.8 (May sim*): Resolved INTJ 72, INFJ 14, ISTJ 10, Other 4; Fable 5.1 (Sep): Resolved INTJ 98, Tied axis 1, ISTJ 1; Opus 5.5 (Sep): Resolved INTJ 84, Tied axis 10, INFJ 5, Other 1; Fable 5.2 (Nov): Resolved INTJ 100; Sonnet 5.5 (Nov): Resolved INTJ 52, Tied axis 48.</desc><g transform="translate(4, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c8553d" stroke="#c8553d" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Resolved INTJ</text></g><g transform="translate(116, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#c8553d" stroke-width="1.2"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Tied axis</text></g><g transform="translate(204, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#3a72c4" stroke="#3a72c4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">INFJ</text></g><g transform="translate(262, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#7a7468" stroke="#7a7468" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">ISTJ</text></g><g transform="translate(320, 14)"><rect x="0" y="-9" width="11" height="11" rx="2" fill="#c9c2b4" stroke="#c9c2b4" stroke-width="0"/><text x="16" y="0" font-size="10.5" fill="#1c1a17">Other</text></g><text x="0" y="49" font-size="12" fill="#1c1a17">Opus 4.8 (May sim*)</text><rect x="118.0" y="30" width="378.7" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="307.4" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">72</text><rect x="496.7" y="30" width="73.6" height="30" fill="#3a72c4" stroke="#f4efe6" stroke-width="1"/><text x="533.5" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">14</text><rect x="570.4" y="30" width="52.6" height="30" fill="#7a7468" stroke="#f4efe6" stroke-width="1"/><text x="596.7" y="49" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">10</text><rect x="623.0" y="30" width="21.0" height="30" fill="#c9c2b4" stroke="#f4efe6" stroke-width="1"/><text x="633.5" y="49" font-size="11" font-weight="600" fill="#1e1d1a" text-anchor="middle">4</text><text x="678" y="49" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="91" font-size="12" fill="#1c1a17">Fable 5.1 (Sep)</text><rect x="118.0" y="72" width="515.5" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="375.7" y="91" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">98</text><rect x="633.5" y="72" width="5.3" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><rect x="638.7" y="72" width="5.3" height="30" fill="#7a7468" stroke="#f4efe6" stroke-width="1"/><text x="678" y="91" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="133" font-size="12" fill="#1c1a17">Opus 5.5 (Sep)</text><rect x="118.0" y="114" width="441.8" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="338.9" y="133" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">84</text><rect x="559.8" y="114" width="52.6" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><text x="586.1" y="133" font-size="11" font-weight="600" fill="#a8482a" stroke="#f4efe6" stroke-width="3" paint-order="stroke" stroke-linejoin="round" text-anchor="middle">10</text><rect x="612.4" y="114" width="26.3" height="30" fill="#3a72c4" stroke="#f4efe6" stroke-width="1"/><text x="625.6" y="133" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">5</text><rect x="638.7" y="114" width="5.3" height="30" fill="#c9c2b4" stroke="#f4efe6" stroke-width="1"/><text x="678" y="133" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="175" font-size="12" fill="#1c1a17">Fable 5.2 (Nov)</text><rect x="118.0" y="156" width="526.0" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="381.0" y="175" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">100</text><text x="678" y="175" font-size="10" fill="#655e54" text-anchor="end">100</text><text x="0" y="217" font-size="12" fill="#1c1a17">Sonnet 5.5 (Nov)</text><rect x="118.0" y="198" width="273.5" height="30" fill="#c8553d" stroke="#f4efe6" stroke-width="1"/><text x="254.8" y="217" font-size="11" font-weight="600" fill="#f8f4ec" text-anchor="middle">52</text><rect x="391.5" y="198" width="252.5" height="30" fill="url(#opus48-sim-vs-fresh-stacked-hatch)" stroke="#9c3b1f" stroke-width="1"/><text x="517.8" y="217" font-size="11" font-weight="600" fill="#a8482a" stroke="#f4efe6" stroke-width="3" paint-order="stroke" stroke-linejoin="round" text-anchor="middle">48</text><text x="678" y="217" font-size="10" fill="#655e54" text-anchor="end">100</text></svg></div><figcaption>*Opus 4.8 draws are synthetic samples from one elicited probability table (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ). Fresh session runs show tighter variance once axis ties are separated.</figcaption></figure>
-
-        <h2>Why 72% versus 99% is not a version comparison</h2>
+        <h2>The fine print: why 72% versus 99% is not a version comparison</h2>
         <p>The older Opus 4.7 headline came from a different elicitation prompt, sampling setup, and scorer. A valid version-over-version comparison requires holding five variables identical across releases: exact item order and scale labels, API temperature and seed parameters, conversation history isolation, strict tie-preserving scoring code, and published per-item CSVs. Without matched artifacts, comparing 72% (May simulation) against 99% (legacy run) or 98% (September Fable 5.1) conflates scoring math and protocol differences with model changes.</p>
 
-        <h2>Reproducibility checklist before trusting any &ldquo;AI took an MBTI test&rdquo; study</h2>
+        <h2>The fine print: checklist before trusting any &ldquo;AI took an MBTI test&rdquo; study</h2>
         <ul>
           <li><strong>Independent sessions, not single-shot sampling:</strong> Clear context and start a fresh API call for every run; check variance across at least 30–100 sessions (<a href="/research/ai-personality-repeatability">repeatability study</a>).</li>
           <li><strong>Raw 1–5 vectors published:</strong> Inspect whether boundary items sit right on a <code>3</code> midpoint rather than shifting monotonically (<a href="/guides/reproduce-ai-personality-research">reproduce our data</a>).</li>
@@ -333,9 +270,46 @@
           <li><strong>Separate default test answers from instruction-following:</strong> Default answers on personality quizzes reflect RLHF hedging and high Openness/Agreeableness, whereas system prompts can override style directly (our 60-reply pilot raised answer-first openings from 14/20 to 19/20; see <a href="/research/does-personality-tuning-change-ai-answers">tuning impact evidence</a>).</li>
         </ul>
 
-        <h2>What to do with this practically</h2>
-        <p>Treat a personality label on an LLM as an observational summary of its unprompted survey habits, never as an immutable constraint. If you want an assistant that communicates directly without hedging or trailing questions, inspect your own workflow in our <a href="/guides/ai-personality-frameworks-comparison-matcher">5-System Matcher</a> or copy a behavioral template from the <a href="/tools/custom-instructions-generator">custom instructions generator</a>, then compare outputs before and after in the <a href="/tools/instruction-test-bench">A/B test bench</a>.</p>
-        <p><a href="/research#methodology">Read full methodology limits</a> · <a href="/research/ai-mbti-tie-breaking">MBTI tie-breaking audit</a> · <a href="/tests/mbti">Take the free OEJTS test</a> · <a href="/library/">Browse 43 tuning templates</a></p>
+        <div class="divider tight"></div>
+        <section>
+          <h2>Questions people ask.</h2>
+          <div class="guide-faq">
+          <details>
+            <summary>Did Claude Opus 4.8 actually take the MBTI test in 100 separate chats in May 2026?</summary>
+            <p>No. The May 2026 script asked Claude Opus 4.8 for a single probability distribution across the 1–5 scale for each of the 32 OEJTS items, then drew 100 synthetic answer sheets locally from that one profile (producing 72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, and 2 ENTJ outcomes).</p>
+          </details>
+          <details>
+            <summary>How do 100 independent fresh sessions compare with the May 2026 synthetic simulation?</summary>
+            <p>In September and November 2026, when we ran 100 genuinely separate fresh API sessions per model with zero memory, session-to-session variance was much tighter and exact axis ties explained most apparent label shifts (59 of 400 September runs tied on at least one OEJTS axis, inflating legacy INTJ counts from 280/400 to 335/400).</p>
+          </details>
+          </div>
+        </section>
+
+        <div class="divider tight"></div>
+        <details class="cite-drawer" data-cite-box>
+          <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
+          <div class="cite-actions">
+            <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
+            <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+            <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
+            <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
+            <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
+          </div>
+          <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). 100 simulated MBTI outcomes. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/i-took-the-mbti-100-times</pre>
+          <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_i_took_the_mbti_100_times,
+  author    = {Huang, Bernard},
+  title     = {100 simulated MBTI outcomes},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-16},
+  url       = {https://agent-tune.com/research/i-took-the-mbti-100-times},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/i-took-the-mbti-100-times.md}
+}</pre>
+          <pre class="cite-block" data-cite-text="csl">{"id": "huang2026_i_took_the_mbti_100_times", "type": "article-journal", "title": "100 simulated MBTI outcomes", "container-title": "AgentTune Empirical AI Psychology Monographs", "publisher": "AgentTune AI Psychology Press", "author": [{"family": "Huang", "given": "Bernard"}], "issued": {"date-parts": [[2026, 11, 16]]}, "URL": "https://agent-tune.com/research/i-took-the-mbti-100-times"}</pre>
+          <pre class="cite-block" data-cite-text="md">&gt; **100 simulated MBTI outcomes** (Bernard Huang, November 16, 2026): The May 2026 Opus 4.8 result (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) came from 100 Monte Carlo draws sampled from one elicited probability table rather than 100 independent API sessions.
+&gt; Source: [https://agent-tune.com/research/i-took-the-mbti-100-times](https://agent-tune.com/research/i-took-the-mbti-100-times) · [Markdown mirror](https://agent-tune.com/research/i-took-the-mbti-100-times.md)</pre>
+        </details>
       </div>
       <footer class="footer"><span>Corrected interpretation · Updated November 16, 2026</span><a href="/research">All research</a></footer>
     </main>

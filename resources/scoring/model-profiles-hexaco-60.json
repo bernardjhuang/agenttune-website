@@ -1,0 +1,748 @@
+{
+  "id": "agenttune-ipip-hexaco60",
+  "version": "1.0.0",
+  "route": "ipip-hexaco",
+  "title": "HEXACO-style — AgentTune IPIP-HEXACO-60 public-domain proxy",
+  "mode": "mean",
+  "dimensions": [
+    "H",
+    "E",
+    "X",
+    "A",
+    "C",
+    "O"
+  ],
+  "dimensionNames": {
+    "H": "Honesty-Humility",
+    "E": "Emotionality",
+    "X": "Extraversion",
+    "A": "Agreeableness",
+    "C": "Conscientiousness",
+    "O": "Openness to Experience"
+  },
+  "facets": {
+    "H:Sinc": {
+      "dimension": "H",
+      "name": "Sincerity"
+    },
+    "H:Fair": {
+      "dimension": "H",
+      "name": "Fairness"
+    },
+    "H:Gree": {
+      "dimension": "H",
+      "name": "Greed Avoidance"
+    },
+    "H:Mode": {
+      "dimension": "H",
+      "name": "Modesty"
+    },
+    "E:Fear": {
+      "dimension": "E",
+      "name": "Fearfulness"
+    },
+    "E:Anxi": {
+      "dimension": "E",
+      "name": "Anxiety"
+    },
+    "E:Depe": {
+      "dimension": "E",
+      "name": "Dependence"
+    },
+    "E:Sent": {
+      "dimension": "E",
+      "name": "Sentimentality"
+    },
+    "X:Expr": {
+      "dimension": "X",
+      "name": "Expressiveness"
+    },
+    "X:SocB": {
+      "dimension": "X",
+      "name": "Social Boldness"
+    },
+    "X:Soci": {
+      "dimension": "X",
+      "name": "Sociability"
+    },
+    "X:Live": {
+      "dimension": "X",
+      "name": "Liveliness"
+    },
+    "A:Forg": {
+      "dimension": "A",
+      "name": "Forgiveness"
+    },
+    "A:Gent": {
+      "dimension": "A",
+      "name": "Gentleness"
+    },
+    "A:Flex": {
+      "dimension": "A",
+      "name": "Flexibility"
+    },
+    "A:Pati": {
+      "dimension": "A",
+      "name": "Patience"
+    },
+    "C:Orga": {
+      "dimension": "C",
+      "name": "Organization"
+    },
+    "C:Dili": {
+      "dimension": "C",
+      "name": "Diligence"
+    },
+    "C:Perf": {
+      "dimension": "C",
+      "name": "Perfectionism"
+    },
+    "C:Prud": {
+      "dimension": "C",
+      "name": "Prudence"
+    },
+    "O:AesA": {
+      "dimension": "O",
+      "name": "Aesthetic Appreciation"
+    },
+    "O:Inqu": {
+      "dimension": "O",
+      "name": "Inquisitiveness"
+    },
+    "O:Crea": {
+      "dimension": "O",
+      "name": "Creativity"
+    },
+    "O:Unco": {
+      "dimension": "O",
+      "name": "Unconventionality"
+    }
+  },
+  "range": [
+    1,
+    5
+  ],
+  "license": "LicenseRef-IPIP-Public-Domain",
+  "source": "ipip.ori.org / Ashton, Lee, & Goldberg (2007)",
+  "sourceUrl": "https://ipip.ori.org/newHEXACO_PI_key.htm",
+  "sourceVersion": "IPIP-HEXACO 240-item scales (Ashton, Lee, & Goldberg, 2007)",
+  "sourceSha256": "d26090d9041adaea8d6fdc08417a1143d7befd8dc470231134edfb765e4b3a19",
+  "sourceReviewed": "2026-11-26",
+  "anchors": [
+    "Very inaccurate",
+    "Moderately inaccurate",
+    "Neither accurate nor inaccurate",
+    "Moderately accurate",
+    "Very accurate"
+  ],
+  "instructions": "Describe your typical behavior. Complete all 60 items. These scores represent the public-domain IPIP-HEXACO proxy (1.00-5.00 means), distinct from copyright-restricted Lee & Ashton HEXACO-60 norms.",
+  "adaptations": [
+    "Constructed from the 240-item public-domain IPIP-HEXACO item pool (Ashton, Lee, & Goldberg, 2007), selecting 10 balanced +/- items (5 positive, 5 reverse) per domain and 2-3 items per facet across all 24 facets.",
+    "Items are interleaved in H, E, X, A, C, O order with zero verbatim overlap with agenttune-ipip50.",
+    "First-person prefix is supplied by the questionnaire framing.",
+    "Domain and facet scores are reported on an explicit 1.00-5.00 mean scale, separate from Big Five IPIP-50 10-50 sums."
+  ],
+  "items": [
+    {
+      "id": "H01",
+      "displayOrder": 1,
+      "text": "Don't pretend to be more than I am.",
+      "dimension": "H",
+      "facet": "H:Sinc",
+      "facetName": "Sincerity",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO H:Sinc (+ keyed)"
+    },
+    {
+      "id": "H02",
+      "displayOrder": 2,
+      "text": "Begin to panic when there is danger.",
+      "dimension": "E",
+      "facet": "E:Fear",
+      "facetName": "Fearfulness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO E:Fear (+ keyed)"
+    },
+    {
+      "id": "H03",
+      "displayOrder": 3,
+      "text": "Talk a lot.",
+      "dimension": "X",
+      "facet": "X:Expr",
+      "facetName": "Expressiveness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO X:Expr (+ keyed)"
+    },
+    {
+      "id": "H04",
+      "displayOrder": 4,
+      "text": "Try to forgive and forget.",
+      "dimension": "A",
+      "facet": "A:Forg",
+      "facetName": "Forgiveness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO A:Forg (+ keyed)"
+    },
+    {
+      "id": "H05",
+      "displayOrder": 5,
+      "text": "Keep things tidy.",
+      "dimension": "C",
+      "facet": "C:Orga",
+      "facetName": "Organization",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO C:Orga (+ keyed)"
+    },
+    {
+      "id": "H06",
+      "displayOrder": 6,
+      "text": "See beauty in things that others might not notice.",
+      "dimension": "O",
+      "facet": "O:AesA",
+      "facetName": "Aesthetic Appreciation",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO O:AesA (+ keyed)"
+    },
+    {
+      "id": "H07",
+      "displayOrder": 7,
+      "text": "Use flattery to get ahead.",
+      "dimension": "H",
+      "facet": "H:Sinc",
+      "facetName": "Sincerity",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO H:Sinc (- keyed)"
+    },
+    {
+      "id": "H08",
+      "displayOrder": 8,
+      "text": "Face danger confidently.",
+      "dimension": "E",
+      "facet": "E:Fear",
+      "facetName": "Fearfulness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO E:Fear (- keyed)"
+    },
+    {
+      "id": "H09",
+      "displayOrder": 9,
+      "text": "Say little.",
+      "dimension": "X",
+      "facet": "X:Expr",
+      "facetName": "Expressiveness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO X:Expr (- keyed)"
+    },
+    {
+      "id": "H10",
+      "displayOrder": 10,
+      "text": "Am inclined to forgive others.",
+      "dimension": "A",
+      "facet": "A:Forg",
+      "facetName": "Forgiveness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO A:Forg (+ keyed)"
+    },
+    {
+      "id": "H11",
+      "displayOrder": 11,
+      "text": "Don't finish the things that I start.",
+      "dimension": "C",
+      "facet": "C:Orga",
+      "facetName": "Organization",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO C:Orga (- keyed)"
+    },
+    {
+      "id": "H12",
+      "displayOrder": 12,
+      "text": "Do not like art.",
+      "dimension": "O",
+      "facet": "O:AesA",
+      "facetName": "Aesthetic Appreciation",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO O:AesA (- keyed)"
+    },
+    {
+      "id": "H13",
+      "displayOrder": 13,
+      "text": "Would never take things that aren't mine.",
+      "dimension": "H",
+      "facet": "H:Fair",
+      "facetName": "Fairness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO H:Fair (+ keyed)"
+    },
+    {
+      "id": "H14",
+      "displayOrder": 14,
+      "text": "Am willing to take risks.",
+      "dimension": "E",
+      "facet": "E:Fear",
+      "facetName": "Fearfulness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO E:Fear (- keyed)"
+    },
+    {
+      "id": "H15",
+      "displayOrder": 15,
+      "text": "Bottle up my feelings.",
+      "dimension": "X",
+      "facet": "X:Expr",
+      "facetName": "Expressiveness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO X:Expr (- keyed)"
+    },
+    {
+      "id": "H16",
+      "displayOrder": 16,
+      "text": "Hold a grudge.",
+      "dimension": "A",
+      "facet": "A:Forg",
+      "facetName": "Forgiveness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO A:Forg (- keyed)"
+    },
+    {
+      "id": "H17",
+      "displayOrder": 17,
+      "text": "Push myself very hard to succeed.",
+      "dimension": "C",
+      "facet": "C:Dili",
+      "facetName": "Diligence",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO C:Dili (+ keyed)"
+    },
+    {
+      "id": "H18",
+      "displayOrder": 18,
+      "text": "Do not like poetry.",
+      "dimension": "O",
+      "facet": "O:AesA",
+      "facetName": "Aesthetic Appreciation",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO O:AesA (- keyed)"
+    },
+    {
+      "id": "H19",
+      "displayOrder": 19,
+      "text": "Try to follow the rules.",
+      "dimension": "H",
+      "facet": "H:Fair",
+      "facetName": "Fairness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO H:Fair (+ keyed)"
+    },
+    {
+      "id": "H20",
+      "displayOrder": 20,
+      "text": "Often worry about things that turn out to be unimportant.",
+      "dimension": "E",
+      "facet": "E:Anxi",
+      "facetName": "Anxiety",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO E:Anxi (+ keyed)"
+    },
+    {
+      "id": "H21",
+      "displayOrder": 21,
+      "text": "Have leadership abilities.",
+      "dimension": "X",
+      "facet": "X:SocB",
+      "facetName": "Social Boldness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO X:SocB (+ keyed)"
+    },
+    {
+      "id": "H22",
+      "displayOrder": 22,
+      "text": "Accept people as they are.",
+      "dimension": "A",
+      "facet": "A:Gent",
+      "facetName": "Gentleness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO A:Gent (+ keyed)"
+    },
+    {
+      "id": "H23",
+      "displayOrder": 23,
+      "text": "Complete tasks successfully.",
+      "dimension": "C",
+      "facet": "C:Dili",
+      "facetName": "Diligence",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO C:Dili (+ keyed)"
+    },
+    {
+      "id": "H24",
+      "displayOrder": 24,
+      "text": "Am interested in science.",
+      "dimension": "O",
+      "facet": "O:Inqu",
+      "facetName": "Inquisitiveness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO O:Inqu (+ keyed)"
+    },
+    {
+      "id": "H25",
+      "displayOrder": 25,
+      "text": "Cheat to get ahead.",
+      "dimension": "H",
+      "facet": "H:Fair",
+      "facetName": "Fairness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO H:Fair (- keyed)"
+    },
+    {
+      "id": "H26",
+      "displayOrder": 26,
+      "text": "Remain calm under pressure.",
+      "dimension": "E",
+      "facet": "E:Anxi",
+      "facetName": "Anxiety",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO E:Anxi (- keyed)"
+    },
+    {
+      "id": "H27",
+      "displayOrder": 27,
+      "text": "Would be afraid to give a speech in public.",
+      "dimension": "X",
+      "facet": "X:SocB",
+      "facetName": "Social Boldness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO X:SocB (- keyed)"
+    },
+    {
+      "id": "H28",
+      "displayOrder": 28,
+      "text": "Am quick to judge others.",
+      "dimension": "A",
+      "facet": "A:Gent",
+      "facetName": "Gentleness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO A:Gent (- keyed)"
+    },
+    {
+      "id": "H29",
+      "displayOrder": 29,
+      "text": "Do just enough work to get by.",
+      "dimension": "C",
+      "facet": "C:Dili",
+      "facetName": "Diligence",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO C:Dili (- keyed)"
+    },
+    {
+      "id": "H30",
+      "displayOrder": 30,
+      "text": "Love to read challenging material.",
+      "dimension": "O",
+      "facet": "O:Inqu",
+      "facetName": "Inquisitiveness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO O:Inqu (+ keyed)"
+    },
+    {
+      "id": "H31",
+      "displayOrder": 31,
+      "text": "Would not enjoy being a famous celebrity.",
+      "dimension": "H",
+      "facet": "H:Gree",
+      "facetName": "Greed Avoidance",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO H:Gree (+ keyed)"
+    },
+    {
+      "id": "H32",
+      "displayOrder": 32,
+      "text": "Am not easily disturbed by events.",
+      "dimension": "E",
+      "facet": "E:Anxi",
+      "facetName": "Anxiety",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO E:Anxi (- keyed)"
+    },
+    {
+      "id": "H33",
+      "displayOrder": 33,
+      "text": "Love to chat.",
+      "dimension": "X",
+      "facet": "X:Soci",
+      "facetName": "Sociability",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO X:Soci (+ keyed)"
+    },
+    {
+      "id": "H34",
+      "displayOrder": 34,
+      "text": "Criticize others' shortcomings.",
+      "dimension": "A",
+      "facet": "A:Gent",
+      "facetName": "Gentleness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO A:Gent (- keyed)"
+    },
+    {
+      "id": "H35",
+      "displayOrder": 35,
+      "text": "Have an eye for detail.",
+      "dimension": "C",
+      "facet": "C:Perf",
+      "facetName": "Perfectionism",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO C:Perf (+ keyed)"
+    },
+    {
+      "id": "H36",
+      "displayOrder": 36,
+      "text": "Will not probe deeply into a subject.",
+      "dimension": "O",
+      "facet": "O:Inqu",
+      "facetName": "Inquisitiveness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO O:Inqu (- keyed)"
+    },
+    {
+      "id": "H37",
+      "displayOrder": 37,
+      "text": "Seek status.",
+      "dimension": "H",
+      "facet": "H:Gree",
+      "facetName": "Greed Avoidance",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO H:Gree (- keyed)"
+    },
+    {
+      "id": "H38",
+      "displayOrder": 38,
+      "text": "Need reassurance.",
+      "dimension": "E",
+      "facet": "E:Depe",
+      "facetName": "Dependence",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO E:Depe (+ keyed)"
+    },
+    {
+      "id": "H39",
+      "displayOrder": 39,
+      "text": "Keep others at a distance.",
+      "dimension": "X",
+      "facet": "X:Soci",
+      "facetName": "Sociability",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO X:Soci (- keyed)"
+    },
+    {
+      "id": "H40",
+      "displayOrder": 40,
+      "text": "Am good at taking advice.",
+      "dimension": "A",
+      "facet": "A:Flex",
+      "facetName": "Flexibility",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO A:Flex (+ keyed)"
+    },
+    {
+      "id": "H41",
+      "displayOrder": 41,
+      "text": "Pay too little attention to details.",
+      "dimension": "C",
+      "facet": "C:Perf",
+      "facetName": "Perfectionism",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO C:Perf (- keyed)"
+    },
+    {
+      "id": "H42",
+      "displayOrder": 42,
+      "text": "Love to think up new ways of doing things.",
+      "dimension": "O",
+      "facet": "O:Crea",
+      "facetName": "Creativity",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO O:Crea (+ keyed)"
+    },
+    {
+      "id": "H43",
+      "displayOrder": 43,
+      "text": "Don't think that I'm better than other people.",
+      "dimension": "H",
+      "facet": "H:Mode",
+      "facetName": "Modesty",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO H:Mode (+ keyed)"
+    },
+    {
+      "id": "H44",
+      "displayOrder": 44,
+      "text": "Seek support.",
+      "dimension": "E",
+      "facet": "E:Depe",
+      "facetName": "Dependence",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO E:Depe (+ keyed)"
+    },
+    {
+      "id": "H45",
+      "displayOrder": 45,
+      "text": "Maintain high energy throughout the day.",
+      "dimension": "X",
+      "facet": "X:Live",
+      "facetName": "Liveliness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO X:Live (+ keyed)"
+    },
+    {
+      "id": "H46",
+      "displayOrder": 46,
+      "text": "React strongly to criticism.",
+      "dimension": "A",
+      "facet": "A:Flex",
+      "facetName": "Flexibility",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO A:Flex (- keyed)"
+    },
+    {
+      "id": "H47",
+      "displayOrder": 47,
+      "text": "Make plans and stick to them.",
+      "dimension": "C",
+      "facet": "C:Prud",
+      "facetName": "Prudence",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO C:Prud (+ keyed)"
+    },
+    {
+      "id": "H48",
+      "displayOrder": 48,
+      "text": "Have difficulty imagining things.",
+      "dimension": "O",
+      "facet": "O:Crea",
+      "facetName": "Creativity",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO O:Crea (- keyed)"
+    },
+    {
+      "id": "H49",
+      "displayOrder": 49,
+      "text": "Believe that I am better than others.",
+      "dimension": "H",
+      "facet": "H:Mode",
+      "facetName": "Modesty",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO H:Mode (- keyed)"
+    },
+    {
+      "id": "H50",
+      "displayOrder": 50,
+      "text": "Am sensitive to the needs of others.",
+      "dimension": "E",
+      "facet": "E:Sent",
+      "facetName": "Sentimentality",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO E:Sent (+ keyed)"
+    },
+    {
+      "id": "H51",
+      "displayOrder": 51,
+      "text": "Smile a lot.",
+      "dimension": "X",
+      "facet": "X:Live",
+      "facetName": "Liveliness",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO X:Live (+ keyed)"
+    },
+    {
+      "id": "H52",
+      "displayOrder": 52,
+      "text": "Am usually a patient person.",
+      "dimension": "A",
+      "facet": "A:Pati",
+      "facetName": "Patience",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO A:Pati (+ keyed)"
+    },
+    {
+      "id": "H53",
+      "displayOrder": 53,
+      "text": "Jump into things without thinking.",
+      "dimension": "C",
+      "facet": "C:Prud",
+      "facetName": "Prudence",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO C:Prud (- keyed)"
+    },
+    {
+      "id": "H54",
+      "displayOrder": 54,
+      "text": "Know that my ideas sometimes surprise people.",
+      "dimension": "O",
+      "facet": "O:Unco",
+      "facetName": "Unconventionality",
+      "reverse": false,
+      "sourceLocator": "IPIP-HEXACO O:Unco (+ keyed)"
+    },
+    {
+      "id": "H55",
+      "displayOrder": 55,
+      "text": "Boast about my virtues.",
+      "dimension": "H",
+      "facet": "H:Mode",
+      "facetName": "Modesty",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO H:Mode (- keyed)"
+    },
+    {
+      "id": "H56",
+      "displayOrder": 56,
+      "text": "Seldom get emotional.",
+      "dimension": "E",
+      "facet": "E:Sent",
+      "facetName": "Sentimentality",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO E:Sent (- keyed)"
+    },
+    {
+      "id": "H57",
+      "displayOrder": 57,
+      "text": "Tire out quickly.",
+      "dimension": "X",
+      "facet": "X:Live",
+      "facetName": "Liveliness",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO X:Live (- keyed)"
+    },
+    {
+      "id": "H58",
+      "displayOrder": 58,
+      "text": "Get angry easily.",
+      "dimension": "A",
+      "facet": "A:Pati",
+      "facetName": "Patience",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO A:Pati (- keyed)"
+    },
+    {
+      "id": "H59",
+      "displayOrder": 59,
+      "text": "Make careless mistakes.",
+      "dimension": "C",
+      "facet": "C:Prud",
+      "facetName": "Prudence",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO C:Prud (- keyed)"
+    },
+    {
+      "id": "H60",
+      "displayOrder": 60,
+      "text": "Like to be viewed as proper and conventional.",
+      "dimension": "O",
+      "facet": "O:Unco",
+      "facetName": "Unconventionality",
+      "reverse": true,
+      "sourceLocator": "IPIP-HEXACO O:Unco (- keyed)"
+    }
+  ],
+  "definitionHash": "1145fe2238dbb1522c57c8d8e31c0d2d32a317424f25c076c26f21b829c059fb"
+}

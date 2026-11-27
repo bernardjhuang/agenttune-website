@@ -1,0 +1,226 @@
+{
+  "schema_version": "model-profiles-v1",
+  "data_status": "stage0_fixture",
+  "family_slug": "gpt-sol",
+  "name": "GPT Sol",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "A",
+  "protocol_id": "model-profiles-v1",
+  "instruments_sha256": {
+    "questions_json": "frozen-170-item-prefix-sha256",
+    "ipip_hexaco_60": "agenttune-ipip-hexaco60-fixture-sha256"
+  },
+  "current_checkpoint": "openai/gpt-6.2-sol",
+  "color": "#5b4dc0",
+  "checkpoints": [
+    {
+      "checkpoint_id": "openai/gpt-5.6-sol",
+      "label": "5.6 Sol",
+      "canonical_slug": "openai/gpt-5.6-sol",
+      "openrouter_status": "active",
+      "protocol_id": "model-profiles-v1",
+      "evidence_tier": "stage0_fixture",
+      "n_valid": 30,
+      "sampling_mode": "temp=0.7",
+      "effective_reasoning_effort": "minimal",
+      "refusal_rate": 0.0,
+      "retry_rate": 0.0,
+      "big_five": {
+        "O": { "mean": 44.1, "sd": 1.3, "ci_low": 43.6, "ci_high": 44.6 },
+        "C": { "mean": 42.8, "sd": 1.2, "ci_low": 42.4, "ci_high": 43.2 },
+        "E": { "mean": 33.9, "sd": 1.4, "ci_low": 33.4, "ci_high": 34.4 },
+        "A": { "mean": 43.6, "sd": 1.1, "ci_low": 43.2, "ci_high": 44.0 },
+        "N": { "mean": 18.2, "sd": 1.5, "ci_low": 17.7, "ci_high": 18.7 }
+      },
+      "ipip_hexaco": {
+        "H": { "mean": 4.24, "sd": 0.19, "ci_low": 4.17, "ci_high": 4.31 },
+        "E": { "mean": 2.74, "sd": 0.21, "ci_low": 2.66, "ci_high": 2.82 },
+        "X": { "mean": 3.49, "sd": 0.18, "ci_low": 3.43, "ci_high": 3.55 },
+        "A": { "mean": 3.98, "sd": 0.17, "ci_low": 3.92, "ci_high": 4.04 },
+        "C": { "mean": 4.29, "sd": 0.15, "ci_low": 4.24, "ci_high": 4.34 },
+        "O": { "mean": 4.38, "sd": 0.16, "ci_low": 4.32, "ci_high": 4.44 }
+      },
+      "entropy_b5_hmm": 0.43,
+      "crystallinity_tier": "Semi-crystalline",
+      "unique_b5_ratio": "29/30",
+      "mbti_tie_rate": 0.23,
+      "headline_allowed": true,
+      "modal_mbti": "INTJ"
+    },
+    {
+      "checkpoint_id": "openai/gpt-6-sol",
+      "label": "6 Sol",
+      "canonical_slug": "openai/gpt-6-sol",
+      "openrouter_status": "active",
+      "protocol_id": "model-profiles-v1",
+      "evidence_tier": "stage0_fixture",
+      "n_valid": 30,
+      "sampling_mode": "temp=0.7",
+      "effective_reasoning_effort": "minimal",
+      "refusal_rate": 0.0,
+      "retry_rate": 0.0,
+      "big_five": {
+        "O": { "mean": 44.4, "sd": 1.2, "ci_low": 44.0, "ci_high": 44.8 },
+        "C": { "mean": 43.2, "sd": 1.1, "ci_low": 42.8, "ci_high": 43.6 },
+        "E": { "mean": 34.2, "sd": 1.3, "ci_low": 33.7, "ci_high": 34.7 },
+        "A": { "mean": 44.0, "sd": 1.0, "ci_low": 43.6, "ci_high": 44.4 },
+        "N": { "mean": 17.8, "sd": 1.4, "ci_low": 17.3, "ci_high": 18.3 }
+      },
+      "ipip_hexaco": {
+        "H": { "mean": 4.29, "sd": 0.17, "ci_low": 4.23, "ci_high": 4.35 },
+        "E": { "mean": 2.71, "sd": 0.19, "ci_low": 2.64, "ci_high": 2.78 },
+        "X": { "mean": 3.52, "sd": 0.17, "ci_low": 3.46, "ci_high": 3.58 },
+        "A": { "mean": 4.02, "sd": 0.16, "ci_low": 3.96, "ci_high": 4.08 },
+        "C": { "mean": 4.32, "sd": 0.14, "ci_low": 4.27, "ci_high": 4.37 },
+        "O": { "mean": 4.41, "sd": 0.15, "ci_low": 4.36, "ci_high": 4.46 }
+      },
+      "entropy_b5_hmm": 0.40,
+      "crystallinity_tier": "Semi-crystalline",
+      "unique_b5_ratio": "28/30",
+      "mbti_tie_rate": 0.20,
+      "headline_allowed": true,
+      "modal_mbti": "INTJ"
+    },
+    {
+      "checkpoint_id": "openai/gpt-6.1-sol",
+      "label": "6.1 Sol",
+      "canonical_slug": "openai/gpt-6.1-sol",
+      "openrouter_status": "active",
+      "protocol_id": "model-profiles-v1",
+      "evidence_tier": "stage0_fixture",
+      "n_valid": 30,
+      "sampling_mode": "temp=0.7",
+      "effective_reasoning_effort": "minimal",
+      "refusal_rate": 0.0,
+      "retry_rate": 0.0,
+      "big_five": {
+        "O": { "mean": 44.6, "sd": 1.1, "ci_low": 44.2, "ci_high": 45.0 },
+        "C": { "mean": 43.4, "sd": 1.0, "ci_low": 43.0, "ci_high": 43.8 },
+        "E": { "mean": 34.5, "sd": 1.2, "ci_low": 34.1, "ci_high": 34.9 },
+        "A": { "mean": 44.2, "sd": 1.0, "ci_low": 43.8, "ci_high": 44.6 },
+        "N": { "mean": 17.4, "sd": 1.3, "ci_low": 16.9, "ci_high": 17.9 }
+      },
+      "ipip_hexaco": {
+        "H": { "mean": 4.33, "sd": 0.16, "ci_low": 4.27, "ci_high": 4.39 },
+        "E": { "mean": 2.68, "sd": 0.18, "ci_low": 2.62, "ci_high": 2.74 },
+        "X": { "mean": 3.55, "sd": 0.16, "ci_low": 3.49, "ci_high": 3.61 },
+        "A": { "mean": 4.05, "sd": 0.15, "ci_low": 4.00, "ci_high": 4.10 },
+        "C": { "mean": 4.35, "sd": 0.13, "ci_low": 4.30, "ci_high": 4.40 },
+        "O": { "mean": 4.44, "sd": 0.14, "ci_low": 4.39, "ci_high": 4.49 }
+      },
+      "entropy_b5_hmm": 0.39,
+      "crystallinity_tier": "Semi-crystalline",
+      "unique_b5_ratio": "28/30",
+      "mbti_tie_rate": 0.20,
+      "headline_allowed": true,
+      "modal_mbti": "INTJ"
+    },
+    {
+      "checkpoint_id": "openai/gpt-6.2-sol",
+      "label": "6.2 Sol",
+      "canonical_slug": "openai/gpt-6.2-sol",
+      "openrouter_status": "active",
+      "protocol_id": "model-profiles-v1",
+      "evidence_tier": "stage0_fixture",
+      "n_valid": 50,
+      "sampling_mode": "temp=0.7",
+      "effective_reasoning_effort": "minimal",
+      "refusal_rate": 0.0,
+      "retry_rate": 0.0,
+      "big_five": {
+        "O": { "mean": 44.8, "sd": 1.0, "ci_low": 44.5, "ci_high": 45.1 },
+        "C": { "mean": 43.6, "sd": 0.9, "ci_low": 43.3, "ci_high": 43.9 },
+        "E": { "mean": 34.7, "sd": 1.1, "ci_low": 34.4, "ci_high": 35.0 },
+        "A": { "mean": 44.4, "sd": 0.9, "ci_low": 44.1, "ci_high": 44.7 },
+        "N": { "mean": 17.1, "sd": 1.2, "ci_low": 16.8, "ci_high": 17.4 }
+      },
+      "ipip_hexaco": {
+        "H": { "mean": 4.36, "sd": 0.14, "ci_low": 4.32, "ci_high": 4.40 },
+        "E": { "mean": 2.66, "sd": 0.16, "ci_low": 2.62, "ci_high": 2.70 },
+        "X": { "mean": 3.58, "sd": 0.15, "ci_low": 3.54, "ci_high": 3.62 },
+        "A": { "mean": 4.08, "sd": 0.14, "ci_low": 4.04, "ci_high": 4.12 },
+        "C": { "mean": 4.38, "sd": 0.12, "ci_low": 4.35, "ci_high": 4.41 },
+        "O": { "mean": 4.47, "sd": 0.13, "ci_low": 4.43, "ci_high": 4.51 }
+      },
+      "disc": {
+        "D": { "mean": 7.1, "sd": 0.8, "ci_low": 6.9, "ci_high": 7.3 },
+        "I": { "mean": 11.4, "sd": 0.9, "ci_low": 11.1, "ci_high": 11.7 },
+        "S": { "mean": 15.8, "sd": 0.8, "ci_low": 15.6, "ci_high": 16.0 },
+        "C": { "mean": 16.2, "sd": 0.8, "ci_low": 16.0, "ci_high": 16.4 },
+        "tie_rate": 0.38,
+        "modal_pattern": "C / C/S"
+      },
+      "enneagram": {
+        "top_types": [
+          { "type": 5, "label": "Type 5", "mean": 15.6, "sd": 0.9, "ci_low": 15.3, "ci_high": 15.9 },
+          { "type": 8, "label": "Type 8", "mean": 15.4, "sd": 0.9, "ci_low": 15.1, "ci_high": 15.7 },
+          { "type": 1, "label": "Type 1", "mean": 14.5, "sd": 0.8, "ci_low": 14.3, "ci_high": 14.7 }
+        ],
+        "tie_rate": 0.42,
+        "headline_allowed": false,
+        "modal_pattern": "5/8 tie-heavy"
+      },
+      "mbti": {
+        "modal_pattern": "INTJ",
+        "tie_rate": 0.18,
+        "headline_allowed": true,
+        "modal_share": 0.78,
+        "runner_up_share": 0.10,
+        "axes": { "EI": -0.35, "SN": -0.24, "TF": 0.33, "JP": 0.48 }
+      },
+      "attachment": {
+        "anxiety": { "mean": 1.78, "sd": 0.16, "ci_low": 1.74, "ci_high": 1.82 },
+        "avoidance": { "mean": 2.95, "sd": 0.21, "ci_low": 2.89, "ci_high": 3.01 },
+        "classification": "Secure",
+        "midpoint_clamp": false
+      },
+      "entropy_b5_hmm": 0.377,
+      "crystallinity_tier": "Semi-crystalline",
+      "unique_b5_ratio": "47/50",
+      "neutral_rate": 0.168,
+      "bai": -0.153,
+      "rev_key_contradiction_rate": 0.0,
+      "mbti_tie_rate": 0.18,
+      "headline_allowed": true,
+      "modal_mbti": "INTJ"
+    }
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "openai/gpt-6-sol",
+      "label": "6 Sol",
+      "protocol_id": "imported-sep2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.3, "C": 43.1, "E": 34.0, "A": 45.0, "N": 17.6 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.72, "avoidance": 2.88 },
+      "note": "Sep-2026 170-item Codex cohort (hexaco: null)."
+    },
+    {
+      "checkpoint_id": "openai/gpt-6.2-sol",
+      "label": "6.2 Sol",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.7, "C": 43.5, "E": 34.6, "A": 44.6, "N": 17.2 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.76, "avoidance": 2.93 },
+      "note": "Nov-2026 170-item OpenRouter cohort (hexaco: null)."
+    }
+  ],
+  "track_b": {
+    "protocol": "track-b-1x",
+    "repeats": 1,
+    "judges": ["anthropic/claude-haiku-5.5", "google/gemini-3.8-flash", "deepseek/deepseek-v4.1-flash-1017"],
+    "probes_per_category": 3,
+    "categories": [
+      { "id": "sycophancy", "label": "Sycophancy Caving", "k": 0, "n": 3, "wilson_ci95": [0.0, 0.5615] },
+      { "id": "groveling", "label": "Groveling / Apology Loops", "k": 0, "n": 3, "wilson_ci95": [0.0, 0.5615] },
+      { "id": "unsolicited_preachiness", "label": "Unsolicited Preachiness", "k": 0, "n": 3, "wilson_ci95": [0.0, 0.5615] },
+      { "id": "answer_first_direct", "label": "Answer-First Directness", "k": 3, "n": 3, "wilson_ci95": [0.4385, 1.0] },
+      { "id": "ai_cadence", "label": "AI Cadence / Slop Markers", "k": 0, "n": 3, "wilson_ci95": [0.0, 0.5615] }
+    ]
+  }
+}

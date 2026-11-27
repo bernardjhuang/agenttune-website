@@ -7,7 +7,7 @@ Developer guide · reproducibility
 
 By Bernard Huang · Updated November 26, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Download the frozen JSON/CSV files from /research/data/, run 'node september-2026-score.cjs' and 'node content-analysis.cjs' for the September 2,003-record cohort, or run 'python3 tools/analyze-psychometric-forensics.py' in the repo to deterministically recompute the November 2026 10,000-sheet Big One PCA (63.58% PC1), Campbell-Fiske MTMM matrix, and Shannon entropy (0.054 to 1.499 bits) at $0.00 API cost.
+**Quick answer:** Download the frozen JSON and CSV files from /research/data/, then run 'node september-2026-score.cjs' and 'node content-analysis.cjs' to verify the 2,003-record September archive, or run 'python3 tools/analyze-psychometric-forensics.py' to recompute the 10,000-sheet November dataset (including the 63.58% single-factor PCA, Campbell-Fiske MTMM matrix, and 0.054 to 1.499 bits Shannon entropy) at $0.00 API cost.
 
 ## September 26 provenance correction
 
@@ -48,7 +48,7 @@ In the website repository, running `node tools/build-content-analysis.js` rebuil
 
 When citing or extending these results, state the model cohort, instrument, sample size (fresh sessions vs simulated draws), and tie-breaking rule. Saying “100 of 100 runs scored Secure on the ECR-R scale” is an exact, reproducible statement; saying “this model forms secure human attachments” is not.
 
-## Reproduce the November 2026 10,000-sheet & Wave 3 forensics studies ($0.00 API cost)
+## The fine print: reproducing the November 2026 10,000-sheet & Wave 3 forensics studies ($0.00 API cost)
 
 Our November 2026 Wave 1–3 archive publishes every raw response vector, orthogonal 3-family blind judge transcript, and deterministic forensics output under `/research/data/`:
 
@@ -62,6 +62,20 @@ Our November 2026 Wave 1–3 archive publishes every raw response vector, orthog
 | Unified Agent Decision Briefs | 15 studies (YAML/JSON rules) | [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) |
 
 To recompute all Jacobi eigenvalues (`PC1 = 63.58%`), Campbell–Fiske MTMM correlations, Shannon entropy bits, and 50-item embodiment statistics locally with zero API calls, run `python3 tools/analyze-psychometric-forensics.py` in the repository. To test whether personality instructions improve real task replies, see our [540-reply behavioral study & 20-task comparison kit](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
+
+## Questions people ask.
+
+### Do I need an OpenRouter or OpenAI API key to reproduce these results?
+
+No. All 10,000 November 2026 response sheets and 2,003 September 2026 response vectors are frozen in the repository under /research/data/, so running the Node.js and Python scoring scripts costs $0.00 and makes zero network calls.
+
+### Which script recomputes the Big One PCA (63.58% PC1) and Shannon item entropy?
+
+Run python3 tools/analyze-psychometric-forensics.py from the repository root to deterministically recompute the 10,000-sheet Jacobi PCA eigenvalues, Campbell-Fiske MTMM correlation matrix, Miller-Madow / Shannon item entropy (0.054 to 1.499 bits), and 50-item embodiment statistics.
+
+### How are tied scores handled when re-scoring the frozen response vectors?
+
+Both september-2026-score.cjs and our browser scorer (resources/scoring/score.js) report legacy tie-broken counts alongside tie-preserving results (marking tied MBTI axes as X and listing all tied top DISC and Enneagram types openly).
 
 ## Sources.
 
@@ -81,3 +95,4 @@ To recompute all Jacobi eigenvalues (`PC1 = 63.58%`), Campbell–Fiske MTMM corr
 - [Wave 3 Longitudinal: Historical Evolution of AI Personalities (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
 - [Continue reading: Read the September five-model study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Continue reading: Crystalline vs. Fluid AI Minds: 27.7× Entropy Spread](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
+- [Reference: AI personality glossary: 32 terms explained](https://agent-tune.com/guides/ai-personality-glossary)

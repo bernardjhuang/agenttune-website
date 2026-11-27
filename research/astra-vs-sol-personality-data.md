@@ -7,9 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/astra-vs-sol-personality-data.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-1,000 September assessments in Codex plus 1,000 matched November assessments on GPT-6.2 Astra and GPT-6.2 Sol.
+We compared 1,000 September 2026 Codex runs on GPT-6 Astra and Sol with 1,000 matched November 2026 OpenRouter runs on GPT-6.2 Astra and GPT-6.2 Sol.
 
-**Summary:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
+**Summary:** In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 
 ## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
 
@@ -93,13 +93,23 @@ GPT-6.2 Sol shows nearly double Astra 6.2’s Neuroticism score (19.9 vs. 11.1),
 
 Both Astra and Sol scored in the `Secure` quadrant on all 100 runs (below the 4.00 midpoint on both axes). Astra averaged 1.45 on anxiety and 2.31 on avoidance; Sol averaged 2.17 on anxiety and 3.12 on avoidance.
 
-## How Astra's midpoint rule shaped its scores
+## The fine print: how Astra's midpoint rule shaped its September scores
 
 Because Astra was explicitly told to pick the middle number whenever a human question didn't fit an AI (flagging 1,823 of 17,000 answers; see [our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)), more of its MBTI axes landed on exact midpoint ties. Because prompt instructions differed between the two collections, the gap between Astra and Sol reflects both model behavior and prompt framing.
 
 ## How to tune Astra or Sol in your own workflow
 
-If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), [Sol setup](https://agent-tune.com/guides/sol-personality), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
+If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), the [GPT Sol profile](https://agent-tune.com/models/gpt-sol), the [GPT Astra profile](https://agent-tune.com/models/gpt-astra), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
+
+## Questions people ask.
+
+### Do GPT-6 Astra and GPT-6 Sol test as INTJ or ISTJ?
+
+In September 2026 Codex runs (under different neutral-midpoint instructions), GPT-6 Astra had 45 tie-free ISTJ and 19 tie-free INTJ runs while GPT-6 Sol had 79 tie-free INTJ runs. When re-tested in November 2026 under an identical single-turn blind OpenRouter prompt on GPT-6.2, both leaned Sensing: GPT-6.2 Astra tested as tie-free ISTJ in 100 of 100 runs, and GPT-6.2 Sol tested as ISTJ in 78 runs, IXTJ border in 16, and INTJ in 6.
+
+### What is the biggest Big Five difference between GPT-6.2 Astra and GPT-6.2 Sol?
+
+In the matched November 2026 OpenRouter cohort (n = 100 each), GPT-6.2 Sol averaged nearly double Astra's Neuroticism score (19.94 vs. 11.14 out of 50) and higher attachment anxiety (3.57 vs. 1.22), while both scored similarly on Conscientiousness (44.00 vs. 41.44) and Agreeableness (44.85 vs. 44.13).
 
 ## Sources.
 
@@ -118,7 +128,7 @@ If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on defa
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
 - [Continue reading: Reproduce the analysis](https://agent-tune.com/guides/reproduce-ai-personality-research)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/astra-vs-sol-personality-data
@@ -126,23 +136,50 @@ Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empi
 
 ```
 @article{huang2026_astra_vs_sol_personality_data,
-  author  = {Huang, Bernard},
-  title   = {GPT-6 Astra vs Sol: what the self-reports show},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/astra-vs-sol-personality-data},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
+  author    = {Huang, Bernard},
+  title     = {GPT-6 Astra vs Sol: what the self-reports show},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/astra-vs-sol-personality-data},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
 }
 ```
 
 ```
-> **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
+{
+  "id": "huang2026_astra_vs_sol_personality_data",
+  "type": "article-journal",
+  "title": "GPT-6 Astra vs Sol: what the self-reports show",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+}
+```
+
+```
+> **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 > Source: [https://agent-tune.com/research/astra-vs-sol-personality-data](https://agent-tune.com/research/astra-vs-sol-personality-data) · [Markdown mirror](https://agent-tune.com/research/astra-vs-sol-personality-data.md)
 ```
 
-[← What Personality Type Is Meta Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
-[Study 26 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[← Big Five 50-Item Level Comparison](https://agent-tune.com/research/ai-big-five-item-level-comparison)
+[Study 31 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Claude Opus 5.5 vs. Fable 5.1 (170 Items) →](https://agent-tune.com/research/opus-vs-fable-question-level)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

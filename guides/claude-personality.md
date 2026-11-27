@@ -5,7 +5,7 @@ Guide · Claude
 
 # How to change Claude’s personality.
 
-By Bernard Huang · Updated November 25, 2026 · ~10 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** On web or desktop, click your initials (bottom-left) → Settings → Profile → Personal preferences (also labeled Settings → General or Instructions for Claude) and paste a short rules block. On iOS or Android, tap your profile icon → Settings → Profile → Personal preferences. Use Project instructions for one workspace, Skills for reusable task formats, and /output-style in Claude Code.
 
@@ -121,7 +121,7 @@ Looking for 20 downloadable Claude Personal Preferences & Skill templates? Open 
 
 For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and Big Five, open the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator?target=claude-personal).
 
-## What personality type is Claude? Nov 2026 & Sept 2026 benchmarks.
+## What personality type does Claude test as? Nov 2026 & Sept 2026 benchmarks.
 
 100 INTJ
 
@@ -161,7 +161,7 @@ Preferences Study
 | Big Five: Neuroticism /50 | 12.00 | 15.00 | 10.42 | 15.39 |
 | Attachment Anxiety / Avoidance | 1.09 / 2.64 (100% Secure) | 1.87 / 3.58 (100% Secure) | 1.53 / 2.85 (100% Secure) | Secure (100%) |
 
-Across both cohorts, Claude models stay heavily anchored on **Agreeableness (44.5–47.1/50)**, **Conscientiousness (42.0–47.2/50)**, and **low Neuroticism (10.4–17.1/50)**. Notice **Claude Fable 5.2** reached 100/100 tie-free INTJ while tying S and C cleanly in 100/100 DISC sessions (mean S 15.0, C 15.0) and achieving floor-level Attachment anxiety (1.09). [Read the updated Claude personality study →](https://agent-tune.com/research/what-personality-type-is-claude)
+Across both cohorts, Claude models stay heavily anchored on **Agreeableness (44.5–47.1/50)**, **Conscientiousness (42.0–47.2/50)**, and **low Neuroticism (10.4–17.1/50)**. **In short:** Notice **Claude Fable 5.2** tested as a tie-free INTJ in 100/100 runs while tying S and C cleanly in 100/100 DISC sessions (mean S 15.0, C 15.0) and scoring near the floor on Attachment anxiety (1.09). [Read the updated Claude personality study →](https://agent-tune.com/research/what-personality-type-is-claude)
 
 > **Chart — Claude Personality DNA Spectrum (Fable 5.2, Opus 5.5, Sonnet 5.5 — Nov 2026):** Bipolar IPIP-50 trait spectrum (10-50 scale, 30 neutral) across 100 fresh OpenRouter sessions per Claude model. Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Opus 5.5 (Nov): Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0; Sonnet 5.5 (Nov): Openness 42.9, Conscientious 47.2, Extraversion 29.9, Agreeable 44.5, Neuroticism 10.4.
 
@@ -171,7 +171,7 @@ Where Claude models sit on human trait poles (10–50 scale): strong Conscientio
 
 Why Personal Preferences matter more than MBTI stereotypes: Opus 5.5 and Sonnet 5.5 tie near the S/N or T/F midpoints nearly half the time.
 
-## Inspect the evidence yourself.
+## The fine print: inspect the raw data and pilot results yourself.
 
 The [saved answer vectors](https://agent-tune.com/research/data/september-2026-responses.json), [item wording and scoring keys](https://agent-tune.com/research/data/september-2026-instruments.json), [prompts and collection protocols](https://agent-tune.com/research/data/september-2026-protocols.json), and [summary CSV](https://agent-tune.com/research/data/september-2026-summary.csv) are public. The [offline research scorer](https://agent-tune.com/research/data/september-2026-score.cjs) reproduces the summaries without calling a model.
 
@@ -266,9 +266,9 @@ You can ask for a different communication style through Instructions for Claude,
 
 The best Claude personality depends on your workflow: 'Straight answers' removes preambles and trailing offers, 'Critical reviewer' curbs polite agreement, and 'Coding pair' outputs diff-first summaries. Compare two setups on your own tasks—our 60-reply pilot shows explicit behavioral rules shift opening structure cleanly without changing accuracy.
 
-### What MBTI type is Claude?
+### What MBTI type does Claude test as?
 
-In our recorded September 2026 assessments, Opus 5.5 produced 84 fully resolved INTJ results out of 100 and Fable 5.1 produced 98. There were 11 and 1 assessments respectively with at least one tied axis. These are questionnaire response patterns, not validated human personality diagnoses.
+In our recorded September 2026 assessments, Opus 5.5 tested as a clear INTJ in 84 of 100 runs and Fable 5.1 tested as a clear INTJ in 98 of 100 runs (with 11 and 1 assessments respectively landing on at least one tied axis). These are default questionnaire answer patterns, not human personality diagnoses.
 
 ### Does a higher Agreeableness score mean a model is more sycophantic?
 
@@ -308,3 +308,10 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Research: The five-model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Claude Code: Set a coding-session output style](https://agent-tune.com/guides/claude-code-personality)
+- [Model profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model profile: Claude Sonnet — baseline & tuning](https://agent-tune.com/models/claude-sonnet)
+- [Model profile: Claude Haiku — fast baseline & tuning](https://agent-tune.com/models/claude-haiku)
+- [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
+- [Guide: How to make Claude more direct: 3 editable prompts](https://agent-tune.com/guides/make-claude-more-direct)
+- [Comparison: ChatGPT vs. Claude default personality: benchmark data](https://agent-tune.com/guides/chatgpt-vs-claude-personality)

@@ -5,7 +5,7 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 
@@ -37,7 +37,7 @@ In both cases, **checkable rules beat adjectives**. “Be concise and candid” 
 | App / Agent | Where to paste (Web & Mobile) | Walkthrough |
 | --- | --- | --- |
 | ChatGPT | Settings → Personalization → Personality presets & Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
-| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-personality) |
+| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup, mobile & Voice](https://agent-tune.com/guides/claude-personality) · [Make Claude direct](https://agent-tune.com/guides/make-claude-more-direct) |
 | Meta Muse | Assistant icon → Identity → `Soul.md` (keep avatar/name in `Identity.md`) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
 | Perplexity | Perplexity Spaces → Space Settings → Custom Instructions (4,000 chars) or AI Profile | [Perplexity Spaces guide](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) |
 | Grok & Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
@@ -52,23 +52,23 @@ You can pick a tuning file using any of our five personality frameworks—each o
 
 ### MBTI — cognitive framing (16 types)
 
-Maps how you take in information and make decisions. For example, an INTJ tuning leads with system architecture and tradeoffs; an ESFP tuning leads with the immediate concrete action. Take the test at [/tests/mbti](https://agent-tune.com/tests/mbti).
+Maps how you take in information and make decisions. For example, an INTJ tuning leads with system architecture and tradeoffs; an ESFP tuning leads with the immediate concrete action. Take the [free 32-item MBTI test](https://agent-tune.com/tests/mbti).
 
 ### Big Five (OCEAN) — single-trait sliders (10 poles)
 
-Five continuous dimensions—Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—with High and Low templates for each trait. Ideal when you want to adjust one specific habit without adopting a four-letter type. Take the test at [/tests/big-five](https://agent-tune.com/tests/big-five) or compare [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
+Five continuous dimensions—Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—with High and Low templates for each trait. Ideal when you want to adjust one specific habit without adopting a four-letter type. Take the [free 50-item Big Five test](https://agent-tune.com/tests/big-five) or compare [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
 
 ### Enneagram — core motivation & pushback (9 types)
 
-Focuses on what drives you and how you want critique delivered. Take the test at [/tests/enneagram](https://agent-tune.com/tests/enneagram) or browse all nine profiles in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts).
+Focuses on what drives you and how you want critique delivered. Take the [free 36-item Enneagram test](https://agent-tune.com/tests/enneagram) or browse all nine profiles in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts).
 
 ### DISC — workplace speed & structure (4 styles)
 
-Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and the fastest test on the site (16 questions, ~3 minutes at [/tests/disc](https://agent-tune.com/tests/disc)).
+Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and the fastest test on the site (16 questions, ~3 minutes on the [free 16-item DISC test](https://agent-tune.com/tests/disc)).
 
 ### Attachment — autonomy & check-in cadence (4 styles)
 
-Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the test at [/tests/attachment](https://agent-tune.com/tests/attachment).
+Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the [free 36-item Attachment test](https://agent-tune.com/tests/attachment).
 
 ## How to layer tunings across agents — and add voice without losing accuracy.
 
@@ -76,9 +76,9 @@ The biggest mistake new users make is pasting a highly specific tutor or charact
 
 - **Layer 1 — Global Baseline (Account Settings):** Put universal preferences here (answer-first verdicts, reject flawed math calmly, state unknowns rather than guessing). Take our 2-minute [Alignment & Conflict Style Matcher](https://agent-tune.com/research/ai-personality-rankings) if default models feel too agreeable.
 - **Layer 2 — Project Rooms & Gems (Specialists):** Isolate Socratic/Feynman learning prompts ([14 coaching templates](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts)) or adversarial PR auditors inside dedicated ChatGPT Projects, Claude Projects, or Gemini Gems.
-- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) or [3-Layer Character Combo Mixer](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) so character voice lives in 15% of diction while accuracy stays at 100%.
+- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates & 3-Layer Character Combo Mixer](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) so character voice lives in 15% of diction while accuracy stays at 100%.
 
-## What actually changes (and what our data shows).
+## What actually changes in our tests (and the fine print).
 
 Custom instructions change how a model delivers critique, formats tradeoffs, and resists sycophancy—when written cleanly. Across our [540-reply November behavioral benchmark](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [300-reply Roleplay Tax study](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts), explicit answer-first and 85/15 telemetry rules lifted DeepSeek V4 Pro correctness by **+16.7 to +20.0 percentage points** and cut filler fluff to **0.0%**—whereas naive full-character roleplay cut Claude Fable 5.2 accuracy to 85% and tripled word bloat.
 
@@ -114,7 +114,7 @@ Specific behavioral rules do; standalone type labels or adjectives mostly don't.
 
 ### Doesn't my AI already have a personality?
 
-Yes—default assistants share a similar RLHF baseline: structured, agreeable, and cautious (scoring 44–47/50 on Agreeableness and predominantly INTJ/ISTJ in our 2,000-session questionnaire archive). A tuning tells the model where your preferences differ from the average user it was trained for.
+Yes—default assistants share a similar post-training baseline: structured, agreeable, and cautious (scoring 44–47/50 on Agreeableness and most often testing as INTJ or ISTJ in our 2,000-session questionnaire archive). A tuning tells the model where your preferences differ from the average user it was trained for.
 
 ### What if the tuning file gets things wrong about me?
 
@@ -131,3 +131,5 @@ Edit it; that's the design. The type is a starting hypothesis and the file is pl
 - [ChatGPT: How to change ChatGPT's personality (presets & rules)](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Matcher: Which AI personality template fits you? 5-system matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
 - [Guide: Tune your coding agent](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
+- [Guide: Notion AI custom instructions & workspace agent personas](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona)
+- [Reference: AI personality glossary: 32 terms explained](https://agent-tune.com/guides/ai-personality-glossary)

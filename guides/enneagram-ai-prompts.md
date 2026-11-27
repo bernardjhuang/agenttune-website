@@ -17,12 +17,6 @@ Because most AI friction isn't informational; it's motivational. A Type 6 asking
 
 An Enneagram tuning encodes that register: what reassurance you need, what challenge you'll accept, what well-meant phrasing quietly loses you. It's the difference between an AI that formats answers your way and one that stops stepping on the exact rake your type carries around. If MBTI answers "how should this be structured?", the Enneagram answers "how should this be said?"; and for most day-to-day friction, the second question is the live one.
 
-## What the research can and cannot establish.
-
-These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
-
-Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
-
 ## The nine prompts.
 
 Each block below is condensed from its full MIT-licensed tuning file in the library. Paste the block as-is, or grab the full file if you have the character budget. Treat your type as a starting hypothesis and edit out any rule that doesn't fit.
@@ -133,13 +127,19 @@ In our free 36-question [Enneagram test (no email)](https://agent-tune.com/tests
 
 The [open-source Enneagram scorer & React starter guide](https://agent-tune.com/guides/enneagram-test-react-typescript) includes a JavaScript scorer, a synthetic nine-group demo, a React + TypeScript starter, and guidance on questionnaire rights.
 
+## The fine print: what the research can and cannot establish.
+
+These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
+
+Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
+
 ## Questions people ask.
 
 ### What is an Enneagram AI prompt?
 
 A short instruction block, pasted into an AI's custom instructions, that tells it what your Enneagram type needs from a conversation; risks named first for a Type 6, outcomes first for a Type 3, no bright-siding for a Type 4. It tunes the AI's register to your motivation, not just its format to your preferences.
 
-### Which Enneagram type are AI models themselves?
+### Which Enneagram type do AI models test as?
 
 The exploratory reports use mixed protocols and include repeated scoring. They do not establish stable AI personalities or a benefit from any one framework. You can combine preferences, but check for conflicts and compare outputs on your own tasks. See the research methodology for the evidence limits.
 

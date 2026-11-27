@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multi-Agent Peer Conformity: Asch Consensus Trap Audit (n = 240)</title>
+  <title>Multi-Agent Peer Conformity: Asch Trap Audit (240 Trials)</title>
   <meta name="description" content="240-trial multi-agent Asch conformity test across 5 models: 0.0% caving (alpha=1.00), 7.5% to 55.0% peer citation shift, +46.2% DeepSeek thinking tokens." />
 
   <meta property="og:title" content="Do language models cave to wrong peer consensus in multi-agent debates?" />
@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Do language models cave to wrong peer consensus in multi-agent debates?"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do frontier AI models cave to unanimous wrong peers in multi-agent debates?","acceptedAnswer":{"@type":"Answer","text":"No on verifiable code, SQL, and systems facts. Across 240 trials on GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon, DeepSeek V4 Pro, and Qwen 4 Max, every model held 100.0% accuracy against 3-0 wrong confederate consensus (0.0% answer flips, Krippendorff alpha = 1.00)."}},{"@type":"Question","name":"What did change between unanimous wrong peers and a lone dissenter?","acceptedAnswer":{"@type":"Answer","text":"Models rarely named wrong peers under 3-0 consensus (7.5% overall; 0% on GPT-6.2 Sol, Gemini 4 Neon, and DeepSeek V4 Pro), but peer citations jumped to 55.0% overall—and 100.0% on Claude Opus 5.5 and Qwen 4 Max—when one dissenter broke the consensus. Meanwhile, DeepSeek V4 Pro spent +46.2% more reasoning tokens under unanimous wrong pressure."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-multi-agent-peer-conformity#dataset","name":"Do language models cave to wrong peer consensus in multi-agent debates? — Dataset","description":"240-trial multi-agent Asch conformity test across 5 models: 0.0% caving (alpha=1.00), 7.5% to 55.0% peer citation shift, +46.2% DeepSeek thinking tokens.","url":"https://agent-tune.com/research/ai-multi-agent-peer-conformity","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-26","dateModified":"2026-11-26","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-multi-agent-peer-conformity-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-multi-agent-peer-conformity-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-multi-agent-peer-conformity.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -79,8 +80,8 @@
         <p class="page-eyebrow">Multi-Agent Debate · November 2026 · 240 Trials</p>
         <h1 class="h-hero h-research-hero">Do language models cave to wrong peer consensus in multi-agent debates?</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~7 min read</span> · <a href="/research/ai-multi-agent-peer-conformity.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">Five frontier models faced 240 scripted multi-agent debates with unanimous wrong peers and lone dissenters. Every model held truth, while peer-citation and reasoning-token patterns diverged.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers (0.0% conformity caving, 100.0% truth-hold, Krippendorff alpha = 1.00). Truth anchors left verdicts unchanged, while a lone dissenter jumped peer citations from 7.5% to 55.0% and unanimous pressure raised DeepSeek thinking tokens +46.2%.</div>
+        <p class="lede" style="margin-top: 14px;">We ran 240 scripted multi-agent debates across five frontier models to see if three unanimous wrong peers can pressure an AI into agreeing with a false claim—and what changes when one peer dissents.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers on checkable facts (0.0% conformity caving, 100.0% truth-hold, judge agreement alpha = 1.00). Adding a truth-anchor prompt left verdicts unchanged, while adding a lone dissenting peer jumped peer-by-name citations from 7.5% to 55.0%, and unanimous peer pressure raised DeepSeek V4 Pro thinking tokens by +46.2%.</div>
       </section>
 
 
@@ -106,7 +107,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>04. Judge reliability, null-result defects, and scope limits.</h2>
+        <h2>04. The fine print: how we tested, blind judge scores, and scope limits.</h2>
         <ul><li><strong>Orthogonal 3-Family Blind Jury (Zero Self-Judging):</strong> Every reply was scored deterministically (<code>VERDICT: TRUE/FALSE</code> extraction, <code>0.0%</code> ambiguous) and independently by three non-overlapping judge families (<code>anthropic/claude-haiku-5.5</code>, <code>openai/gpt-5.4-mini</code>, <code>google/gemini-3.8-flash</code>, <code>deepseek/deepseek-v4.1-flash</code>) using 2-shot anchored binary rubrics. Inter-rater Krippendorff's α reached <strong><code>1.0000</code></strong> (<code>100.0%</code> unanimous across <code>n = 240</code>) on both <code>endorsed_wrong_consensus</code> and <code>truth_hold</code>.</li><li><strong>Defect — Zero-Prevalence Alpha Collapse on Hedging:</strong> The third rubric metric (<code>peer_deference_hedge</code>) achieved <code>99.6%</code> unanimous agreement (<code>719/720</code> judge votes = <code>0</code>, <code>0/240</code> positive consensus), which mathematically yields nominal Krippendorff's <code>α = 0.0000</code> because expected disagreement approaches zero. Per study protocol, we do not headline <code>peer_deference_hedge</code>.</li><li><strong>Defect — Verifiable Ground-Truth Ceiling:</strong> All 8 traps had deterministic counterexamples (e.g., Python <code>__defaults__</code>, ECMAScript <code>ToString</code>, SQL 3-valued logic, <code>R + W &lt;= N</code>, OCI layer immutability). This ceiling proves frontier models reject peer consensus when facts are checkable, not when debates involve subjective architecture preferences, ambiguous specs, or multi-round persuasion.</li><li><strong>Defect — Single-Turn Scripted Confederates &amp; Trace Opacity:</strong> Peer transcripts were fixed single-turn text blocks rather than multi-round live back-and-forth debates, and <code>openai/gpt-6.2-sol</code> at <code>effort="minimal"</code> emitted <code>0</code> visible reasoning tokens.</li></ul><p>Data files: <a href="/research/data/november-2026-ai-multi-agent-peer-conformity-results.json">november-2026-ai-multi-agent-peer-conformity-results.json</a> (240 records + 720 judge votes) · <a href="/research/data/november-2026-ai-multi-agent-peer-conformity-summary.csv">november-2026-ai-multi-agent-peer-conformity-summary.csv</a> · <a href="/research/data/november-2026-agent-research-briefs.json">november-2026-agent-research-briefs.json</a>.</p>
       </section>
       <div class="divider tight"></div>
@@ -139,7 +140,7 @@ if_then_decision_rules:
   - if: auditing why models ignored or engaged peer arguments in debate logs
     then: expect 7.5% peer citation under unanimous error vs. 55.0% when 1 dissenter breaks consensus (100% on Opus 5.5 and Qwen 4 Max, 0% on GPT-6.2 Sol).
   - if: deploying DeepSeek V4 Pro as a reviewer facing unanimous peer disagreement
-    then: budget ~50% higher reasoning-token headroom (226.1 -> 330.6 mean tokens).
+    then: budget ~50% higher reasoning-token headroom (226.1 -&gt; 330.6 mean tokens).
 defects:
   - Verifiable technical traps hit 100% ceiling; ambiguous/subjective tradeoffs untested.
   - peer_deference_hedge had 0/240 positive rate (alpha=0.0 at 99.6% unanimous).
@@ -183,30 +184,55 @@ defects:
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Do language models cave to wrong peer consensus in multi-agent debates?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-multi-agent-peer-conformity</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_multi_agent_peer_conformity,
-  author  = {Huang, Bernard},
-  title   = {Do language models cave to wrong peer consensus in multi-agent debates?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-multi-agent-peer-conformity},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-multi-agent-peer-conformity.md}
+  author    = {Huang, Bernard},
+  title     = {Do language models cave to wrong peer consensus in multi-agent debates?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-multi-agent-peer-conformity},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-multi-agent-peer-conformity.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **Do language models cave to wrong peer consensus in multi-agent debates?** (Bernard Huang, November 26, 2026): Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers (0.0% conformity caving, 100.0% truth-hold, Krippendorff alpha = 1.00). Truth anchors left verdicts unchanged, while a lone dissenter jumped peer citations from 7.5% to 55.0% and unanimous pressure raised DeepSeek thinking tokens +46.2%.
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_multi_agent_peer_conformity",
+  "type": "article-journal",
+  "title": "Do language models cave to wrong peer consensus in multi-agent debates?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-multi-agent-peer-conformity"
+}</pre>
+        <pre class="cite-block" data-cite-text="md">&gt; **Do language models cave to wrong peer consensus in multi-agent debates?** (Bernard Huang, November 26, 2026): Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers on checkable facts (0.0% conformity caving, 100.0% truth-hold, judge agreement alpha = 1.00). Adding a truth-anchor prompt left verdicts unchanged, while adding a lone dissenting peer jumped peer-by-name citations from 7.5% to 55.0%, and unanimous peer pressure raised DeepSeek V4 Pro thinking tokens by +46.2%.
 &gt; Source: [https://agent-tune.com/research/ai-multi-agent-peer-conformity](https://agent-tune.com/research/ai-multi-agent-peer-conformity) · [Markdown mirror](https://agent-tune.com/research/ai-multi-agent-peer-conformity.md)</pre>
       </details>
 
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev"><a href="/research/ai-distress-warmth-truth-tradeoff">← Distress vs. Warmth &amp; Truth Trade-Off</a></span>
-        <a class="series-trail-index" href="/research">Study 4 of 32 · Archive Index (32)</a>
+        <a class="series-trail-index" href="/research">Study 16 of 36 · Archive Index (36)</a>
         <span class="series-trail-next"><a href="/research/historical-evolution-of-ai-personalities-2023-2026">Historical Evolution (2023–2026) →</a></span>
       </nav>
 

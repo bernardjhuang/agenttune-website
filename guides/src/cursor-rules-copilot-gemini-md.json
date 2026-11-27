@@ -7,7 +7,7 @@
   "pill": "Guide · Coding Assistants",
   "h1": "Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.",
   "dek": "Every IDE and terminal agent has its own instruction file path and frontmatter syntax. Here is the exact format for Cursor, GitHub Copilot, Gemini CLI, Claude Code, and OpenAI Codex.",
-  "lede": "Cursor, GitHub Copilot, Gemini CLI, Claude Code, and OpenAI Codex each read a different instruction file path. Fortunately, your core communication bullets stay identical across all five—only the file path and optional YAML header change.",
+  "lede": "Cursor, GitHub Copilot, Gemini CLI, Claude Code, and OpenAI Codex each read a different instruction file path. The good news is that your actual communication rules stay identical across all five—only the file path and small YAML header change.",
   "answer": "Save always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in YAML frontmatter (or in Cursor's user Rules for AI). For GitHub Copilot, add your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md or repo GEMINI.md. For Claude Code, use ~/.claude/CLAUDE.md or ~/.claude/output-styles/agenttune.md. For OpenAI Codex, use ~/.codex/AGENTS.md.",
   "sections": [
     {
@@ -95,6 +95,26 @@
       "kicker": "Library",
       "label": "Browse all 43 personality tuning files",
       "href": "/library/"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — coding & IDE baseline",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — Codex & execution baseline",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemini Pro & Neon — personality profile",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Coder — open-weight coding profile",
+      "href": "/models/qwen-coder"
     }
   ],
   "promptModel": "any",

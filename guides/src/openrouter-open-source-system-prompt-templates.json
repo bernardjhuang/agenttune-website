@@ -2,12 +2,12 @@
   "slug": "openrouter-open-source-system-prompt-templates",
   "published": "2026-11-23",
   "updated": "2026-11-23",
-  "title": "Best OpenRouter & Open-Source System Prompt Templates | AgentTune",
+  "title": "Best OpenRouter & Open-Source System Prompt Templates",
   "h1": "OpenRouter and open-source AI system prompt templates.",
   "dek": "Empirically calibrated system prompts, OpenRouter API JSON payloads, and Ollama Modelfiles for DeepSeek V4, Qwen 4 / 3.8, Llama 4, Mistral, GLM-5.3, Gemma 4 & Kimi K2.7.",
   "description": "20 OpenRouter and open-source system prompt templates + Ollama Modelfiles grounded in N=100 tests across DeepSeek V4, Qwen 4, Llama 4, Mistral & Gemma 4.",
   "pill": "Guide · Open-Source AI",
-  "lede": "Open-weight models vary sharply in default agreeableness, preamble verbosity, and structured-output compliance. Pair our interactive <strong>OpenRouter Open-Weight Matcher</strong> (backed by our <a href=\"/research/what-personality-type-are-open-source-models\">November 2026 N=100 benchmark</a> across 12 open-weight models) with copy-paste Markdown prompts, OpenRouter API JSON configs, and Ollama <code>Modelfile</code> recipes below.",
+  "lede": "Open-weight models behave very differently out of the box: some are just as warm and deferential as ChatGPT or Claude, while others (like DeepSeek V4 Pro and Llama 4 Scout) are naturally blunter and mainly need format rules. Use our interactive <strong>OpenRouter Open-Weight Matcher</strong> below—grounded in 100 fresh survey runs per model across <a href=\"/research/what-personality-type-are-open-source-models\">12 open-weight models</a>—or copy the ready-to-use Markdown prompts, OpenRouter API JSON configs, and Ollama <code>Modelfile</code> recipes.",
   "answer": "Select your open-weight model in the interactive matcher below to get a ready-to-paste system prompt, OpenRouter API JSON payload, or Ollama Modelfile calibrated to that model's measured quirks (like Llama 4 preambles, DeepSeek verbosity, or Gemma 4 high agreeableness).",
   "scripts": [
     "/resources/tools/openrouter-model-matcher.js",
@@ -80,6 +80,71 @@
       "kicker": "All templates",
       "label": "Master AI template directory across every platform",
       "href": "/guides/ai-personality-templates"
+    },
+    {
+      "kicker": "Model directory",
+      "label": "All 25 AI model personality profiles",
+      "href": "/models/"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "DeepSeek Pro — personality profile",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "DeepSeek Flash — personality profile",
+      "href": "/models/deepseek-flash"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Max — personality profile",
+      "href": "/models/qwen-max"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Coder — personality profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Llama — Meta open-weights profile",
+      "href": "/models/llama"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemma — Google open-weights profile",
+      "href": "/models/gemma"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GLM — Zhipu AI personality profile",
+      "href": "/models/glm"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Kimi — Moonshot AI personality profile",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "MiniMax — personality profile",
+      "href": "/models/minimax"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Mistral Large — personality profile",
+      "href": "/models/mistral-large"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Nemotron — NVIDIA personality profile",
+      "href": "/models/nemotron"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Cohere Command — enterprise profile",
+      "href": "/models/cohere-command"
     }
   ],
   "changelog": [

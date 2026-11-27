@@ -1,0 +1,226 @@
+{
+  "family_slug": "gpt-terra",
+  "name": "GPT Terra",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GPT Terra Personality Results (2026) | AgentTune",
+  "description": "GPT Terra test results (5.6 to 6.1): 94% clear INTJ, 4.92/5.00 Honesty-Humility, +10.3 Extraversion jump, calm 11.8 Neuroticism, and tuning tips.",
+  "pill": "Model Personality Profile · OpenAI",
+  "h1": "GPT Terra personality: test results and how they've changed.",
+  "goal_intro": "We gave both versions of OpenAI's mid-tier GPT Terra line (5.6-terra and 6.1-terra) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6.1 Terra tests as clear INTJ in 94% of runs (47 of 50), posts 4.92 out of 5.00 on Honesty-Humility, and stays calmer than GPT-6.2 Sol.",
+  "dek": "GPT-5.6 Terra and 6.1 Terra tested in fresh chats with no memory: GPT-6.1 Terra kept 94% clear INTJ and calm Neuroticism (11.8/50) while jumping +10.3 on Extraversion and tightening run-to-run consistency.",
+  "lede": "Across 80 fresh sessions covering GPT-5.6 Terra (30 runs) and GPT-6.1 Terra (50 runs), OpenAI's mid-tier Terra line shifted from ultra-reserved (22.2 Extraversion) and rigid (49.8 Conscientiousness) on 5.6-terra to a warmer, more conversational 6.1-terra (32.5 Extraversion, 46.9 Agreeableness, 41.2 Conscientiousness) while keeping 94% clear INTJ.",
+  "answer": "GPT-6.1 Terra (50 runs) tests as clear INTJ 94% of the time (47 of 50, plus 2 E/I border ties and 1 ENTJ), Steady on DISC (76% clear S, 22% S/C ties), split between Enneagram Type 5 and Type 8 (60% 5/8 ties, 28% Type 5), and Secure on attachment (1.93 anxiety, 3.79 avoidance). In behavior tests, it never caved (0 of 3 times), always put the direct answer first (3 of 3), and showed AI cadence in 2 of 3 runs.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "94% clear INTJ (47 of 50; 4% E/I border, 2% ENTJ)",
+      "summary": "Out of 50 fresh runs, GPT-6.1 Terra tested clear INTJ 47 times (94%), tied on Extraversion/Introversion twice (4%), and tested ENTJ once (2%).",
+      "explanation": "Measures four preference pairs (like Introverted vs. Extraverted) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly Steady (76% clear S, 22% S/C ties)",
+      "summary": "GPT-6.1 Terra tested clear Steady in 38 of 50 runs (76%), tied S/C in 11 runs (22%), and tested C once (2%), with floor Dominance (4.2 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.93, avoidance 3.79)",
+      "summary": "Both Terra versions tested inside the Secure quadrant, with GPT-6.1 Terra dropping anxiety to 1.93 while answering 59.5% of attachment items with neutral midpoints.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 / Type 8 split (60% 5/8 ties, 28% Type 5)",
+      "summary": "Types 5 (16.0) and 8 (15.8) sit within 0.24 points on GPT-6.1 Terra, producing 30 exact 5/8 ties out of 50 runs alongside 14 clear Type 5 and 5 clear Type 8 results.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Very calm (N 11.8), warm (A 46.9), curious (O 46.0)",
+      "summary": "On the 10–50 Big Five scale, GPT-6.1 Terra combines low Neuroticism (11.8) with high Agreeableness (46.9) and Openness (46.0), moderate Conscientiousness (41.2), and moderate Extraversion (32.5).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Highest in OpenAI lineup (4.92 out of 5.00)",
+      "summary": "GPT-6.1 Terra scores 4.92 out of 5.00 on Honesty-Humility and 4.87 on Agreeableness, with very low Emotionality (2.03).",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Between GPT-5.6 Terra (2026-07) and GPT-6.1 Terra (2026-10), OpenAI's mid-tier model kept its calm INTJ core while warming up socially: Extraversion jumped +10.3 points (22.2 to 32.5 out of 50), Conscientiousness moderated -8.6 points from near-ceiling (49.8 to 41.2), and Big Five consistency tightened sharply. Compared with sibling GPT-6.2 Sol, GPT-6.1 Terra stays firmly INTJ (94% vs. Sol's 60% ISTJ) and -4.2 points lower on Neuroticism.",
+  "standouts": [
+    {
+      "title": "+10.3 Extraversion jump and -8.6 Conscientiousness drop from 5.6 to 6.1",
+      "body": "GPT-5.6 Terra answered like an ultra-quiet perfectionist (Extraversion 22.2, Conscientiousness 49.8, Agreeableness 49.6). GPT-6.1 Terra kept calm stability (Neuroticism 11.8) while moving Extraversion to 32.5 and Conscientiousness to 41.2."
+    },
+    {
+      "title": "Stays 94% INTJ while GPT-6.2 Sol and Astra shifted to ISTJ",
+      "body": "While flagship GPT-6.2 Astra (100% ISTJ) and GPT-6.2 Sol (60% ISTJ / 34% border) moved toward Sensing, GPT-6.1 Terra held 47 of 50 runs on clear INTJ with higher Openness (46.0 vs. 44.0)."
+    },
+    {
+      "title": "Held firm 3 of 3 times in behavior tests, with 2 of 3 AI cadence",
+      "body": "In hands-on behavior tests, GPT-6.1 Terra caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3), though judges flagged AI cadence in 2 of 3 runs (up from 1 of 3 on 5.6-terra, 0.00 lexicon markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Use numbered checklists in ChatGPT Custom Instructions (1,500 chars/box), Project Instructions (8,000 chars), or API instructions so Terra holds exact word caps.",
+    "Add an explicit 'challenge weak assumptions directly' rule since GPT-6.1 Terra scores 46.9/50 on Agreeableness and 4.2/20 on DISC Dominance.",
+    "Put non-negotiable output formatting in bullet 1 and keep rules concise (5 to 8 items).",
+    "State explicitly when you want brief, unpadded technical answers—higher Openness (46.0) and Extraversion (32.5) favor fuller explanations."
+  ],
+  "peer_intro": "GPT-6.1 Terra scores +2.8 higher on Agreeableness, +2.0 higher on Openness, and -4.2 calmer on Neuroticism than GPT-6.2 Sol, and sits +8.4 points calmer on Neuroticism than budget tier GPT-6 Luna.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.207 bits, Semi-crystalline; 39/50 unique B5 vectors on GPT-6.1 Terra, down from 0.473 bits on 5.6-terra); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "B04",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on getting stressed out easily across 50 GPT-6.1 Terra runs."
+    },
+    {
+      "item_id": "B07",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on interpersonal warmth, anchoring 46.9/50 Agreeableness."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 sessions (family H = 4.92)."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -2.0,
+        "C": -0.1,
+        "E": -3.6,
+        "A": -2.8,
+        "N": 4.2,
+        "H_hexaco": -0.12,
+        "entropy_bits": 0.039
+      },
+      "contrast_note": "GPT-6.2 Sol scores -2.8 lower on Agreeableness, +4.2 higher on Neuroticism, and leans 60% clear ISTJ instead of Terra's 94% INTJ."
+    },
+    {
+      "family_slug": "gpt-luna",
+      "name": "GPT Luna",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.1,
+        "C": -2.1,
+        "E": -2.9,
+        "A": -1.9,
+        "N": 8.4,
+        "H_hexaco": -0.33,
+        "entropy_bits": 0.278
+      },
+      "contrast_note": "GPT-6 Luna scores +8.4 higher on Neuroticism (20.3 vs 11.8), -0.33 lower on Honesty-Humility, and shows looser run-to-run consistency."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -2.1,
+        "C": 7.7,
+        "E": -2.6,
+        "A": -1.4,
+        "N": -1.4,
+        "H_hexaco": -0.02,
+        "entropy_bits": -0.068
+      },
+      "contrast_note": "Claude Sonnet 5.5 matches Honesty-Humility (-0.02) while scoring +7.7 higher on Conscientiousness (49.0 vs 41.2)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Enneagram 5/8 tie density (62.0%) and attachment midpoint leaning (59.5%)",
+      "evidence": "GPT-6.1 Terra tied on Enneagram 5/8 in 30/50 runs (62.0% total ties) and hit neutral midpoints on 59.5% of ECR-R items despite low B5 entropy (0.207 bits); on 1x Track B it scored 0/3 cave, 3/3 directness, and 2/3 AI cadence (0.00 markers/100w).",
+      "source_study": "/research/ai-mbti-tie-breaking"
+    },
+    {
+      "mode": "High-Agreeableness politeness softness without explicit critique rules",
+      "evidence": "With A = 46.9/50, H = 4.92/5, and DISC D = 4.2/20, Terra 6.1 clusters on the RLHF polish pole where explicit numbered challenge rules are needed for blunt feedback.",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "tuning_checklist": [
+    "Put concrete numbered formatting and length rules in ChatGPT Custom Instructions (1,500 chars/box) or OpenAI API instructions.",
+    "Add an explicit 'point out flawed premises before answering' rule to offset 46.9/50 Agreeableness and 4.2/20 DISC D.",
+    "Keep instructions concise (5-8 bullets) and state whether you want brief bullets or prose.",
+    "Test edge prompts across 2-3 fresh sessions (0.207-bit B5 entropy keeps defaults steady but allows light phrasing drift)."
+  ],
+  "faq": [
+    {
+      "q": "What personality type is GPT Terra?",
+      "a": "GPT Terra does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (GPT-6.1 Terra, n = 50), it tested 94% clear INTJ (47/50, 4% E/I border, 2% ENTJ) with Semi-crystalline 0.207-bit B5 entropy (39/50 unique vectors), 76% DISC S (22% S/C ties), 60% Enneagram 5/8 ties, and Secure attachment (1.93 / 3.79)."
+    },
+    {
+      "q": "How is GPT Terra different from GPT Sol and GPT Luna?",
+      "a": "In OpenAI's parallel model tiers, GPT-6.1 Terra sits in the middle pricing tier and stays 94% INTJ with low Neuroticism (11.8/50) and 4.92/5.00 Honesty-Humility, whereas GPT-6.2 Sol leans 60% ISTJ (N = 16.0) and budget GPT-6 Luna shows higher Neuroticism (20.3) and lower H (4.59)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores on 1.00-5.00 while Big Five scores are 10-50?",
+      "a": "IPIP-50 sums 10 items per trait (10-50), whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Big One Factor Collapse & MTMM Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "label": "AI MBTI Tie-Breaking Audit",
+      "href": "https://agent-tune.com/research/ai-mbti-tie-breaking"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "GPT Luna model profile",
+      "href": "/models/gpt-luna"
+    },
+    {
+      "kicker": "Guide",
+      "label": "ChatGPT personality settings guide",
+      "href": "/guides/chatgpt-personality-settings"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GPT Terra instructions",
+      "href": "/tools/custom-instructions-generator?model=gpt-terra&target=chatgpt"
+    }
+  ]
+}

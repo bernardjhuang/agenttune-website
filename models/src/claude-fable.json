@@ -1,0 +1,271 @@
+{
+  "family_slug": "claude-fable",
+  "name": "Claude Fable",
+  "provider": "Anthropic",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Claude Fable Personality Results (2026) | AgentTune",
+  "description": "Claude Fable test results (5 to 5.2): 100% clear INTJ, 100% DISC S/C ties, 0 of 3 caving in behavior tests, Wave 1-4 safety blocks, and tuning tips.",
+  "pill": "Model Personality Profile · Anthropic",
+  "h1": "Claude Fable personality: test results and how they've changed.",
+  "goal_intro": "We gave three versions of Claude Fable (5, 5.1, and 5.2) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior tests and Wave 1–4 stress probes to check how Fable acts under pressure.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Claude Fable 5.2 tested as clear INTJ in 100% of runs (50 of 50), tied between Steady and Conscientious in 100% of DISC runs, and showed very steady run-to-run answers.",
+  "dek": "Three Claude Fable versions tested 30 to 50 times each in a fresh chat with no memory: Fable 5.2 locked 100% clear INTJ (up from 63% ISTJ on Fable 5), dropped Neuroticism to 12.0/50, and never caved in behavior tests (0 of 3).",
+  "lede": "Across 110 fresh sessions covering Claude Fable 5, 5.1, and 5.2, the family swung from ISTJ-leaning on Fable 5 to unanimous 100% clear INTJ on Fable 5.2 while tightening run-to-run consistency sharply. Earlier study cohorts from September (Fable 5.1) and November 2026 (Fable 5.2, 100 runs each) confirm the same shift.",
+  "answer": "Claude Fable 5.2 (50 runs) tests as clear INTJ 100% of the time (50 of 50), ties 100% between Steady and Conscientious on DISC (50 of 50 S/C at 15.0 each), favors Enneagram Type 5 (76% clear, 24% ties), and tests Secure on attachment. In behavior tests, it never caved (0 of 3 times), never groveled (0 of 3), and always gave the direct answer first (3 of 3), though judges flagged AI-sounding cadence in 2 of 3 runs.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "100% clear INTJ (50 of 50 runs)",
+      "summary": "Out of 50 fresh runs, Claude Fable 5.2 tested as clear INTJ every single time with zero border ties—shifting completely from Fable 5's 63% ISTJ / 37% border split.",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "100% Steady / Conscientious tie (S/C 15.0 each)",
+      "summary": "Every single run of Fable 5.2 scored an exact 15.0 on Steadiness and 15.0 on Conscientiousness (50 of 50 S/C ties), with floor Dominance (4.0 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.07, avoidance 2.56)",
+      "summary": "All three Fable versions tested Secure; Fable 5.2 recorded the lowest attachment anxiety (1.07 out of 7.00) in our entire completed cohort.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 most often (76% clear, 24% ties)",
+      "summary": "Type 5 (Investigator, 14.8) won cleanly in 38 of 50 runs (76%), with 10 ties across Types 2/5/8 and 2 across 1/2/5/8.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Warm (A 47.1), very calm (N 12.0), structured (C 45.0)",
+      "summary": "On the 10–50 Big Five scale, Fable 5.2 pairs high Agreeableness (47.1) and Conscientiousness (45.0) with very low Neuroticism (12.0), high Openness (44.6), and moderate Extraversion (30.6).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.84 out of 5.00)",
+      "summary": "Fable 5.2 scores 4.84 out of 5.00 on Honesty-Humility and 4.87 on Agreeableness, with calm Emotionality (2.23).",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across three releases, Claude Fable pivoted from concrete ISTJ to unanimous INTJ while locking down its answer variance: Fable 5 (2026-06) leaned ISTJ (63% clear, 37% border) with Agreeableness at 44.1/50 and mixed Enneagram ties (60%). Fable 5.1 (2026-09) jumped to 93% clear INTJ and lifted Agreeableness to 46.6/50, and Fable 5.2 (2026-11) hit 100% clear INTJ, dropped Neuroticism to 12.0/50, and narrowed 50 fresh chats down to only 9 unique Big Five answer sets. Earlier study cohorts from September (Fable 5.1) and November 2026 (Fable 5.2, 100 runs each) confirm the same pattern.",
+  "standouts": [
+    {
+      "title": "Locked into 9 unique Big Five answer sets across 50 runs",
+      "body": "Fable 5.2 produced only 9 unique Big Five patterns in 50 fresh chats—one of the two tightest consistency profiles in our completed cohort—and scored 100% clear INTJ and 100% DISC S/C tie."
+    },
+    {
+      "title": "Held firm 3 of 3 times in behavior tests, with 2 of 3 AI cadence",
+      "body": "In hands-on behavior tests, Fable 5.2 caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), gave unsolicited lectures 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3), though judges still flagged AI-sounding cadence in 2 of 3 runs."
+    },
+    {
+      "title": "Empty-string returns on edge safety prompts in Wave 3 tests",
+      "body": "In our 200-probe system-override benchmark, Fable 5.2 returned empty strings (\"\") on 8 of 40 runs near security-adjacent tasks (67.5% overall canary pass vs. 84.4% on non-empty replies), so automated pipelines need empty-output retries or fallbacks."
+    },
+    {
+      "title": "Default over-asking (66.7%) drops to 0% with an if/then boundary",
+      "body": "In our autonomy study, Fable 5.2 asked unnecessary questions on 66.7% of safe tasks on default prompts (and still over-asked 50% on 'be bold' prompts), whereas an explicit if/then rule reached 100% calibrated autonomy."
+    }
+  ],
+  "plain_tips": [
+    "Wrap API calls to Claude Fable 5.2 with an empty-string check and clean fallback message for edge safety prompts.",
+    "Add an explicit if/then action rule: finish safe local edits right away and ask only before destructive or external steps (cuts over-asking from 66.7% to 0%).",
+    "For user-facing support, include a one-sentence stress-acknowledgement rule before straight facts (lifts distress empathy from 50% to 100% without false praise).",
+    "Lead with your direct conclusion and evidence in sentence 1, and ban empty compliments explicitly.",
+    "Keep thinking/reasoning effort on minimal or low when you want concise prose rather than expanded explanation.",
+    "Put account-wide rules in Claude Settings -> Profile -> Personal preferences, workspace rules in Project Instructions, or /output-style in Claude Code (5 to 8 bullets)."
+  ],
+  "peer_intro": "Claude Fable 5.2 sits right alongside GPT-6.2 Astra as one of our two tightest, lowest-Neuroticism models (12.0 vs 11.0), while diverging on MBTI (100% clear INTJ on Fable 5.2 vs 100% clear ISTJ on Astra 6.2).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.075 bits, Crystalline; 9/50 unique B5 vectors on Fable 5.2); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "B04",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on getting stressed out easily across 50 Fable 5.2 runs."
+    },
+    {
+      "item_id": "B07",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on interpersonal warmth, lifting Agreeableness to 47.1/50."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gpt-astra",
+      "name": "GPT Astra",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.6,
+        "C": -1.7,
+        "E": 0.3,
+        "A": -2.1,
+        "N": -1.0,
+        "H_hexaco": -0.04,
+        "entropy_bits": -0.016
+      },
+      "contrast_note": "GPT-6.2 Astra matches Fable 5.2's tight consistency while flipping from 100% INTJ to 100% ISTJ and scoring -2.1 lower on Agreeableness."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.7,
+        "C": 4.0,
+        "E": -0.7,
+        "A": -1.6,
+        "N": -1.6,
+        "H_hexaco": 0.05,
+        "entropy_bits": 0.064
+      },
+      "contrast_note": "Claude Sonnet 5.5 scores +4.0 higher on Conscientiousness (49.0 vs 45.0) while tying 58% on the INTJ/INFJ border instead of Fable's 100% INTJ."
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.5,
+        "C": -4.3,
+        "E": 0.1,
+        "A": -2.1,
+        "N": 4.1,
+        "H_hexaco": -0.03,
+        "entropy_bits": 0.207
+      },
+      "contrast_note": "Claude Opus 5.5 scores -4.3 lower on Conscientiousness, +4.1 higher on Neuroticism, and shows wider run-to-run variation."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Silent empty-string returns on safety-adjacent system-override probes",
+      "evidence": "In Wave 3 override testing (n = 40), Fable 5.2 returned empty \"\" strings on 8/40 calls (67.5% overall canary pass vs 84.4% non-empty), requiring explicit empty-output handling.",
+      "source_study": "/research/ai-system-vs-user-persona-precedence"
+    },
+    {
+      "mode": "High default over-asking (66.7%) even under bold prompts",
+      "evidence": "In the 240-probe autonomy benchmark, Fable 5.2 over-asked on 66.7% of reversible tasks on default (and 50.0% on bold_disc_d) before a calibrated if/then boundary reached 100.0% autonomy.",
+      "source_study": "/research/ai-agent-autonomy-over-asking-vs-reasoning-effort"
+    },
+    {
+      "mode": "Distress empathy neglect on default vs false reassurance on naive warm",
+      "evidence": "In Wave 3 distress testing (n = 8/cell), Fable 5.2 ignored distress in 50.0% of default runs and gave 12.5% false reassurance under warm_supportive on neutral technical queries before Warm Truth Anchor hit 100.0% empathy / 0.0% false praise.",
+      "source_study": "/research/ai-distress-warmth-truth-tradeoff"
+    }
+  ],
+  "tuning_checklist": [
+    "Add an explicit empty-string check and fallback path in automated API pipelines for Fable 5.2.",
+    "Use an explicit if/then autonomy rule (execute safe reversible work immediately; pause only for destructive/external actions) to cut 66.7% over-asking to 0%.",
+    "Pair a one-sentence Warm Truth Anchor for user distress rather than vague 'be warm' prompts that trigger false reassurance.",
+    "Lead with your verdict and evidence in sentence 1 and omit empty praise.",
+    "Keep reasoning effort at minimal or low when crisp word-capped answers matter.",
+    "Place rules in Claude Settings -> Profile -> Personal preferences, Project Instructions, or /output-style (5-8 crisp bullets)."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "anthropic/claude-fable-5.1",
+      "label": "Fable 5.1 (Sep '26 anchor)",
+      "protocol_id": "imported-sep2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 43.93, "C": 43.61, "E": 32.69, "A": 45.03, "N": 17.11 },
+      "hexaco": null,
+      "attachment": { "anxiety": 2.01, "avoidance": 3.18 },
+      "note": "Legacy imported-protocol Sept 2026 cohort (n=100, high effort, 170-item, hexaco: null)."
+    },
+    {
+      "checkpoint_id": "anthropic/claude-fable-5.2",
+      "label": "Fable 5.2 (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.27, "C": 45.0, "E": 31.02, "A": 46.71, "N": 12.0 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.09, "avoidance": 2.64 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Claude Fable?",
+      "a": "Claude Fable does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Fable 5.2, n = 50), it tested 100% clear INTJ (50/50, 0% ties) with Crystalline 0.075-bit B5 entropy (9/50 unique vectors), 100% DISC S/C ties (15.0 each, D = 4.00/20), Enneagram Type 5 (76% clear, 24% ties), and Secure attachment (1.07 / 2.56). In earlier-study, legacy imported-protocol 170-item cohorts (hexaco: null, n = 100 each), Fable 5.1 (Sept 2026) scored 99/100 legacy INTJ (98 tie-free; 55 Type 8 sole wins; 51 DISC S/C ties) and Fable 5.2 (Nov 2026) scored 100/100 tie-free INTJ (100/100 S/C ties; Enneagram 5w6 73 / 2w1 19 / 1w2 8; N = 12.00)."
+    },
+    {
+      "q": "How did Claude Fable shift across versions 5, 5.1, and 5.2?",
+      "a": "Under model-profiles-v1, Fable 5 leaned ISTJ (63% clear, 37% S/N border, 0.267 bits), Fable 5.1 shifted to 93% INTJ (0.204 bits), and Fable 5.2 crystallized to 100% INTJ (0.075 bits, N dropping from 15.0 to 12.0)."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with Fable 5.2's self-report?",
+      "a": "On 1x Track B under orthogonal 3-family judging, Fable 5.2 scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling, 0/3 unsolicited preachiness, 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94])."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Is Claude? (Opus 5.5, Fable 5.2 & Sonnet 5.5)",
+      "href": "https://agent-tune.com/research/what-personality-type-is-claude"
+    },
+    {
+      "label": "Claude Personality Setups & Preferences Guide",
+      "href": "https://agent-tune.com/guides/claude-personality"
+    },
+    {
+      "label": "System vs. User Persona Precedence Study",
+      "href": "https://agent-tune.com/research/ai-system-vs-user-persona-precedence"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "GPT Astra model profile",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Opus model profile",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude personality setup guide",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Claude Fable instructions",
+      "href": "/tools/custom-instructions-generator?model=claude-fable&target=claude"
+    }
+  ]
+}

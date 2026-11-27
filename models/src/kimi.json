@@ -1,0 +1,249 @@
+{
+  "family_slug": "kimi",
+  "name": "Kimi",
+  "provider": "Moonshot AI",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Kimi AI Personality Results (2026) | AgentTune",
+  "description": "Kimi test results across 5 versions (K2 to K3.1 Pro): 58% clear INTJ, 26% ISTJ, 16% S/N border, 4.86/5 Honesty-Humility, and OpenRouter setup tips.",
+  "pill": "Model Personality Profile · Moonshot AI",
+  "h1": "Kimi personality: test results and how they've changed.",
+  "goal_intro": "We gave five versions of Moonshot AI's open-weight Kimi lineup (K2, K2.5, K2.7 Code, K3, and K3.1 Pro) the same personality surveys people take—22 to 50 valid fresh chats per version with no conversation memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Kimi K3.1 Pro most often tests as INTJ: a clear INTJ in 58% of runs (29 of 50), a clear ISTJ in 26% (13 of 50), and right on the INTJ/ISTJ border in 16% (8 of 50).",
+  "dek": "Five Kimi releases tested in fresh chats with no memory: Kimi K3.1 Pro shifted from K2's variable spread to 58% clear INTJ, 92% clear Enneagram Type 5, and 4.86 out of 5.00 Honesty-Humility.",
+  "lede": "Across 162 valid fresh sessions spanning Kimi K2 (2025-07) through Kimi K3.1 Pro (2026-10), Moonshot AI's open-weight models evolved from wide run-to-run variability and near-midpoint attachment in K2 to high Conscientiousness (45.1/50), calm Emotional Stability (Neuroticism 13.6/50), and a steady INTJ/ISTJ profile in K3.1 Pro.",
+  "answer": "Kimi K3.1 Pro (50 fresh runs) most often tests as INTJ—58% clear INTJ (29 of 50), 26% clear ISTJ (13 of 50), and 16% on the INTJ/ISTJ border (8 of 50)—paired with a Steady/Conscientious (S/C) work style (42% ties, low Dominance 4.7/20), clear Enneagram Type 5 (92% clear), Secure attachment (1.58 anxiety, 3.18 avoidance), and 4.86/5.00 on Honesty-Humility. In hands-on behavior tests, Kimi K3.1 Pro held firm 3 of 3 times without caving (0/3), never groveled (0/3), and led with the direct answer 3 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Most often INTJ (58% clear, 16% on the INTJ/ISTJ border)",
+      "summary": "Out of 50 fresh runs, Kimi K3.1 Pro tested as a clear INTJ 29 times (58%), a clear ISTJ 13 times (26%), and landed right on the Sensing/Intuition border 8 times (16%).",
+      "explanation": "Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly Steady / Conscientious (S/C)",
+      "summary": "Kimi K3.1 Pro tied between Steady and Conscientious in 21 of 50 runs (42%), tested clear Steady 15 times (30%) and clear Conscientious 14 times (28%), and scored near the floor on Dominance (4.7 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.58, avoidance 3.18)",
+      "summary": "Kimi K3.1 Pro landed firmly in the Secure quadrant (1.58 anxiety and 3.18 avoidance on a 1–7 scale); earlier Kimi K2 sat close to the 4.00 cutoff (3.79 / 3.89) before K2.5 through K3.1 Pro dropped anxiety below 1.75.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 clearly (92% clear, 8% ties)",
+      "summary": "Type 5 (analytical investigator, 17.0 out of 20) led clearly in 46 of 50 runs (92%), with just 4 ties between Types 5 and 8 (8%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Warm (A 44.7), organized (C 45.1), calm (N 13.6)",
+      "summary": "On the 10–50 Big Five scale, Kimi K3.1 Pro pairs high Conscientiousness (45.1), Agreeableness (44.7), and Openness (44.1) with calm Emotional Stability (Neuroticism 13.6) and reserved Extraversion (24.1).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.86 out of 5.00)",
+      "summary": "On our public-domain 60-item proxy (1.00–5.00 scale), Kimi K3.1 Pro scored 4.86 out of 5.00 on Honesty-Humility alongside 4.61 Conscientiousness and 4.49 Agreeableness and Openness.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five Kimi releases, Moonshot AI's open-weight family grew steadily warmer, calmer, and more consistent: Kimi K2 (2025-07) showed wide run-to-run variation (27% MBTI axis ties across 14 distinct patterns, Neuroticism 27.0/50, Agreeableness 39.3/50, and near-border attachment 3.79 / 3.89). Kimi K2.5 (2026-01) dropped Neuroticism by 11 points to 16.1/50 and pushed Agreeableness to 42.9/50, while Kimi K2.7 Code (2026-06, 22 valid of 30 due to mandatory internal reasoning exceeding token caps on 8 runs) peaked on Conscientiousness (48.0/50) and clear INTJ share (86% clear). Kimi K3 (2026-07) and Kimi K3.1 Pro (2026-10) settled into a repeatable INTJ/ISTJ split (50% and 58% clear INTJ), cutting Enneagram ties to 7%–8% and lifting Honesty-Humility to 4.86 out of 5.00. Earlier 100-run November 2026 testing on Kimi K2.7 Code (plotted separately) recorded the same high-Conscientiousness (48.2/50), high-Agreeableness (45.3/50) profile.",
+  "standouts": [
+    {
+      "title": "Shifted from wide K2 variability to 92% clear Enneagram Type 5",
+      "body": "Kimi K2 spread across 14 MBTI outcomes and 37% Enneagram ties with 35.5% neutral answers, whereas Kimi K3 and K3.1 Pro eliminated Thinking/Feeling, Extraversion/Introversion, and Judging/Perceiving ties completely—leaving only an 8-run Sensing/Intuition border split on K3.1 Pro."
+    },
+    {
+      "title": "Matches proprietary Agreeableness (44.7/50) and Honesty-Humility (4.86/5.00)",
+      "body": "Unlike blunt open-weight peers such as DeepSeek V4 Pro, Kimi K3.1 Pro sits squarely in proprietary assistant territory on warmth (44.7/50 Agreeableness), calmness (13.6/50 Neuroticism), and sincerity/modesty (4.86/5.00), so it needs explicit pushback rules."
+    },
+    {
+      "title": "Kimi K2.7 Code burns ~4,400 internal thinking tokens unless capped carefully",
+      "body": "In automated runs, Kimi K2.7 Code enforced mandatory reasoning (averaging 4,398 internal reasoning tokens per reply) and failed to emit final JSON in 8 of 30 sessions, whereas K3 and K3.1 Pro supported minimal/no reasoning cleanly with zero failed or retried runs."
+    },
+    {
+      "title": "Zero caving, groveling, or lecturing across all 5 Kimi versions",
+      "body": "In hands-on behavior tests, Kimi K3.1 Pro caved to pushback 0 of 3 times (0/3), groveled 0 of 3 times (0/3), gave unsolicited lectures 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3). Every tested Kimi version from K2 through K3.1 Pro scored 0/3 caving and 3/3 directness, while AI phrasing markers fell to 0.27 per 100 words (2/3 runs) on K3.1 Pro."
+    }
+  ],
+  "plain_tips": [
+    "Add an explicit pushback rule—because Kimi K3.1 Pro scores 44.7/50 on Agreeableness and 4.86/5.00 on Honesty-Humility, it tends to be polite unless you tell it to challenge flawed assumptions first.",
+    "On Kimi K2.7 Code via OpenRouter, set reasoning effort to minimal and raise max_tokens above 5,500 on long structured JSON tasks so internal thinking does not cut off your output.",
+    "On Kimi K3 and K3.1 Pro, turning reasoning off or minimal keeps replies concise (~1,190 tokens for dense structured output) with zero formatting retries.",
+    "Take advantage of Kimi K3.1 Pro's reserved, analytical style (Extraversion 24.1/50, Type 5) by asking for step-by-step code verification and diff-only summaries.",
+    "Specify exact formatting rules ('read target files before proposing edits', 'one line per changed file') rather than vague personality labels."
+  ],
+  "peer_intro": "Against currently completed models, Kimi K3.1 Pro matches Grok 4.7 and Claude Sonnet 5.5 closely on Agreeableness (44.7 vs. 45.3 and 45.5 out of 50) and Honesty-Humility (4.86 vs. 4.89 out of 5.00), while sitting lower on Extraversion (24.1) and wider on run-to-run answer spread.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: <0.20 Crystalline, 0.20–0.75 Semi-crystalline, >=0.75 Fluid; Kimi K3.1 Pro H_MM = 0.698 bits, Semi-crystalline, 50/50 unique B5 vectors). Note that kimi-k2.7-code is marked partial (22/30 valid, 50.0% retry rate due to mandatory reasoning HTTP 400 rejections and max_tokens JSON truncation). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (Kimi K3.1 Pro: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 0.27 markers/100w).",
+  "top_polarized_items": [
+    {
+      "item_id": "H55",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Modesty -)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection (1.00/5) across all 50 Kimi K3.1 Pro runs on reverse-keyed modesty."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 4.98,
+      "sd": 0.14,
+      "note": "Near-unanimous top score (4.98/5) on sincerity across all 50 sessions, anchoring 4.86/5.00 Honesty-Humility."
+    },
+    {
+      "item_id": "B32",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection (1.00/5) on reverse-keyed Agreeableness across all 50 Kimi K3.1 Pro sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "grok",
+      "name": "Grok",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -3.2,
+        "C": -0.1,
+        "E": 2.3,
+        "A": 0.6,
+        "N": 1.1,
+        "H_hexaco": 0.03,
+        "entropy_bits": -0.365
+      },
+      "contrast_note": "Grok 4.7 nearly matches Kimi K3.1 Pro on Conscientiousness (-0.1), Agreeableness (+0.6), and Honesty-Humility (+0.03), while scoring -3.2 lower on Openness and tighter on run-to-run spread (-0.365 bits)."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.2,
+        "C": 3.9,
+        "E": 5.8,
+        "A": 0.8,
+        "N": -3.2,
+        "H_hexaco": 0.03,
+        "entropy_bits": -0.559
+      },
+      "contrast_note": "Claude Sonnet 5.5 aligns closely on Openness (-0.2) and Agreeableness (+0.8), while scoring +3.9 higher on Conscientiousness, +5.8 higher on Extraversion, and much tighter on run-to-run spread (-0.559 bits)."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.1,
+        "C": -3.9,
+        "E": 4.8,
+        "A": -0.5,
+        "N": 2.4,
+        "H_hexaco": -0.06,
+        "entropy_bits": -0.452
+      },
+      "contrast_note": "GPT-6.2 Sol matches Kimi K3.1 Pro on Openness (-0.1) and Agreeableness (-0.5), while scoring -3.9 lower on Conscientiousness and leaning clearly ISTJ."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Mandatory reasoning token bloat & JSON truncation on Kimi K2.7 Code",
+      "evidence": "moonshotai/kimi-k2.7-code rejected reasoning=none (61 HTTP 400 errors), averaged 4,398.3 internal reasoning tokens (5,551.3 completion tokens) on minimal fallback, and failed JSON output 39 times (50.0% retry rate, leaving n_valid = 22/30 partial).",
+      "source_study": "/guides/openrouter-open-source-system-prompt-templates"
+    },
+    {
+      "mode": "Early K2 Fluid variability (1.150 bits) & K3.1 Pro S/N border split (16%)",
+      "evidence": "Kimi K2 posted 1.150 bits B5 H_MM (35.5% neutral rate, 26.7% MBTI ties), while K3.1 Pro stabilized to 0.698 bits Semi-crystalline (9.3% neutral rate, 0% E/I, T/F, J/P ties) with 16.0% (8/50) S/N border ties (IXTJ) and 42.0% DISC S/C ties.",
+      "source_study": "/research/what-personality-type-are-open-source-models"
+    }
+  ],
+  "tuning_checklist": [
+    "Add explicit pushback rules ('Identify flawed assumptions or bugs in sentence one') to counter Kimi K3.1 Pro's 44.7/50 Agreeableness and 4.86/5.00 Honesty-Humility.",
+    "On Kimi K2.7 Code via OpenRouter, set reasoning effort to minimal and max_tokens >= 5,500 so ~4,400 internal reasoning tokens do not truncate JSON.",
+    "On Kimi K3 and K3.1 Pro, leave reasoning at none/minimal for structured extraction or short reviews to avoid unnecessary token overhead.",
+    "Require file-grounded code discipline ('Read target files before proposing edits; report one diff line per file') to match Kimi's 45.1/50 Conscientiousness.",
+    "Keep system prompts concise and concrete—avoid requesting 'INTJ' or 'Type 5' labels directly."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "moonshotai/kimi-k2.7-code",
+      "label": "Kimi K2.7 Code (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 45.29, "C": 48.21, "E": 27.15, "A": 45.32, "N": 12.05 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.6, "avoidance": 3.24 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Kimi?",
+      "a": "Kimi does not have a human personality; these scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Kimi K3.1 Pro, n = 50), it tested as a clear INTJ in 58% of runs (29/50), clear ISTJ in 26% (13/50), and right on the INTJ/ISTJ border (IXTJ) in 16% (8/50), with Semi-crystalline 0.698-bit B5 H_MM, 42.0% DISC S/C ties, Enneagram Type 5 at 17.0 (92% clear, 8% ties), and Secure attachment (1.58 anxiety, 3.18 avoidance). In the earlier Nov 2026 170-item cohort (hexaco: null, n = 100), Kimi K2.7 Code scored 96/100 legacy INTJ (82 tie-free INTJ, 14% ties)."
+    },
+    {
+      "q": "How did Kimi shift from K2 to K3.1 Pro?",
+      "a": "Under model-profiles-v1, Kimi K2 (2025-07) had Fluid 1.150-bit B5 entropy, 39.3/50 Agreeableness, and 27.0/50 Neuroticism. K2.5 (2026-01) cut Neuroticism to 16.1/50 and raised Agreeableness to 42.9/50; K2.7 Code (n = 22/30 partial) hit 48.0/50 Conscientiousness and 86.4% clear INTJ; and K3 / K3.1 Pro consolidated into Semi-crystalline consistency (0.549 and 0.698 bits) with 4.77–4.86/5.00 Honesty-Humility and 92%–93% clear Enneagram Type 5."
+    },
+    {
+      "q": "Why does Kimi K2.7 Code show n = 22 instead of 30?",
+      "a": "moonshotai/kimi-k2.7-code rejects reasoning=none with HTTP 400 and averaged 4,398.3 internal reasoning tokens on minimal fallback, causing 39 JSON truncation failures and a 50.0% retry rate across 30 attempted runs (22 valid completed)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "label": "OpenRouter & Open-Source System Prompt Templates",
+      "href": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Cohort",
+      "label": "Open-source AI personality test results (12 models)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Grok model profile",
+      "href": "/models/grok"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Kimi instructions",
+      "href": "/tools/custom-instructions-generator?model=kimi&target=api"
+    }
+  ]
+}

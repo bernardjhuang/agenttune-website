@@ -64,9 +64,9 @@ Use our [Muse templates & persistence kit](https://agent-tune.com/guides/muse-so
 - **Quick sliders + 1,500-char box:** ChatGPT pairs presets and sliders with Custom Instructions and 8,000-char Projects.
 - **Account baseline + Projects/Skills:** Claude keeps global Personal Preferences separate from workspace Projects and reusable Skills.
 
-## Questionnaire results answer a different question.
+## What our personality surveys show across all three (and the fine print).
 
-Our September 2026 questionnaire archive measures untuned model self-reports: Muse Spark 1.3 reported 80 ISTJ runs in 100 sequential in-session runs, while the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) have 2,000 published raw vectors. Read the [Muse report](https://agent-tune.com/research/what-personality-type-is-muse), [ChatGPT study](https://agent-tune.com/research/what-personality-type-is-chatgpt), and [Claude study](https://agent-tune.com/research/what-personality-type-is-claude) for full details.
+Our September 2026 questionnaire archive measures untuned model self-reports: Muse Spark 1.3 was reported as testing as ISTJ in 80 of 100 sequential in-session runs, while the four fresh-session cohorts (GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1) have 2,000 published raw vectors. Read the [Muse report](https://agent-tune.com/research/what-personality-type-is-muse), [ChatGPT study](https://agent-tune.com/research/what-personality-type-is-chatgpt), and [Claude study](https://agent-tune.com/research/what-personality-type-is-claude) for full details.
 
 > **Chart — Baseline DNA Across Meta Muse, ChatGPT (GPT-6.2 Sol) & Claude (Fable 5.2):** IPIP-50 comparison across all three assistants on Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; GPT-6.2 Sol (Nov): Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; Claude Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0.
 
@@ -128,3 +128,7 @@ No. Always test your rules on real decision, editing, or false-premise tasks in 
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Guide: ChatGPT custom instructions for all 16 MBTI types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
+- [Atlas: All 25 AI model personality profiles](https://agent-tune.com/models/)
+- [Model profile: Muse Spark — personality profile](https://agent-tune.com/models/muse-spark)
+- [Model profile: GPT Astra — personality profile](https://agent-tune.com/models/gpt-astra)
+- [Model profile: Claude Opus — personality profile](https://agent-tune.com/models/claude-opus)

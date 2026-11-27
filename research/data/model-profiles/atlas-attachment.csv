@@ -1,0 +1,26 @@
+family_slug,provider,checkpoint_id,n_valid,anxiety_mean,anxiety_ci_low,anxiety_ci_high,avoidance_mean,avoidance_ci_low,avoidance_ci_high,neutral_rate,midpoint_clamp
+claude-fable,Anthropic,anthropic/claude-fable-5.2,50,1.0678,1.06,1.0767,2.5611,2.5344,2.5833,0.0892,0
+claude-haiku,Anthropic,anthropic/claude-haiku-5.5,49,3.076,2.873,3.2914,2.9898,2.7925,3.2245,0.4641,0
+claude-opus,Anthropic,anthropic/claude-opus-5.5,50,1.8856,1.82,1.9578,3.5989,3.5433,3.6578,0.1652,0
+claude-sonnet,Anthropic,anthropic/claude-sonnet-5.5,50,1.3222,1.2744,1.3789,2.7889,2.7678,2.8111,0.1292,0
+cohere-command,Cohere,cohere/command-a,30,4,4,4,4,4,4,1,1
+deepseek-flash,DeepSeek,deepseek/deepseek-v4.1-flash-1017,50,3.6022,3.4933,3.7,3.8867,3.8178,3.9478,0.2804,0
+deepseek-pro,DeepSeek,deepseek/deepseek-v4-pro-0813,50,2.1122,1.8578,2.4011,3.6556,3.3489,3.9822,0.2232,0
+gemini-flash,Google,google/gemini-4-hydrogen,50,1.1211,1.0522,1.2444,3.3,3.2178,3.3822,0.1652,0
+gemini-pro,Google,google/gemini-4-neon,50,1.07,1.0622,1.0789,3.7633,3.7244,3.8056,0.1408,0
+gemma,Google,google/gemma-4-31b-it,50,4.0089,4.0022,4.0167,4,4,4,0.0696,1
+glm,Zhipu,z-ai/glm-5.3,50,2.5156,2.3722,2.6833,3.3733,3.2578,3.49,0.1292,0
+gpt-astra,OpenAI,openai/gpt-6.2-astra,50,1.2222,1.2222,1.2222,2.8256,2.7644,2.8911,0.098,0
+gpt-luna,OpenAI,openai/gpt-6-luna,50,3.0078,2.9111,3.1144,3.0744,3.0267,3.1322,0.2032,0
+gpt-sol,OpenAI,openai/gpt-6.2-sol,50,3.5289,3.4556,3.6144,3.7511,3.7122,3.7811,0.244,0
+gpt-terra,OpenAI,openai/gpt-6.1-terra,50,1.9256,1.7567,2.1356,3.7878,3.7467,3.8267,0.1832,0
+grok,xAI,x-ai/grok-4.7,50,2.0733,1.9744,2.1922,3.6567,3.5711,3.7489,0.104,0
+kimi,Moonshot AI,moonshotai/kimi-k3.1-pro,50,1.5833,1.3256,1.8844,3.1778,3.0211,3.3411,0.0928,0
+llama,Meta,meta-llama/llama-4-maverick,50,3.5044,3.4389,3.5633,3.61,3.5444,3.6656,0.2332,0
+minimax,MiniMax,minimax/minimax-m3.1-flash,50,2.7422,2.6289,2.8467,3.2711,3.1767,3.36,0.2188,0
+mistral-large,Mistral,mistralai/mistral-large-2512,30,4,4,4,3.9667,3.9222,4,0.0993,1
+muse-spark,Meta,meta/muse-spark-open,50,3.3689,3.1044,3.5911,3.5522,3.3556,3.7344,0.2248,0
+muse-wonder,Meta,meta/muse-wonder,50,2.7578,2.5044,3.0078,2.6456,2.5056,2.7889,0.0788,0
+nemotron,NVIDIA,nvidia/nemotron-3.5-super-vl,50,3.5522,3.3167,3.75,3.9133,3.7789,3.9967,0.5068,0
+qwen-coder,Qwen,qwen/qwen3-coder-next,50,2.9011,2.7444,3.0544,3.3522,3.1844,3.5167,0.3532,0
+qwen-max,Qwen,qwen/qwen4-max,50,1.9511,1.8778,2.0244,2.8767,2.7956,2.95,0.1176,0

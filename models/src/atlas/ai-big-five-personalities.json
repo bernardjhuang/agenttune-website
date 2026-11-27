@@ -1,0 +1,89 @@
+{
+  "title": "AI Big Five (OCEAN) Scores Across 25 Families | AgentTune",
+  "description": "Big Five (10–50) scores for 25 AI model families across 87 versions in fresh zero-history chats, comparing Openness, Conscientiousness, Warmth, and Stress.",
+  "pill": "Research · Personality Atlas · Big Five",
+  "h1": "Big Five (OCEAN) personality scores across 25 AI families.",
+  "dek": "IPIP-50 raw sum scores (10–50 scale across five traits) tested 30 to 50 times per version across 87 eligible checkpoints in fresh chats.",
+  "lede": "Muse Wonder tops Agreeableness (49.5/50) and Openness (49.6/50), Gemini 4 Hydrogen hits the Conscientiousness ceiling (50.0/50) at a 10.0/50 Neuroticism floor, and DeepSeek V4 Pro anchors the reserved, low-warmth extreme (35.3 A, 19.5 E). Browse all five trait ladders and 25 five-petal shapes below.",
+  "answer": "On the 10–50 Big Five scale across 25 AI families (87 eligible checkpoints), Muse Wonder peaks in Openness (49.6) and Agreeableness (49.5), Gemini 4 Hydrogen leads Conscientiousness (50.0) while sharing the 10.0 Neuroticism floor with Gemini 4 Neon, and Mistral Large reaches the highest Extraversion (36.5). Excluding midpoint-locked Cohere Command (30.0 on all five traits), DeepSeek V4 Pro scores lowest on Agreeableness (35.3) and Extraversion (19.5), while Llama 4 Maverick scores highest on Neuroticism (29.4).",
+  "intro_html": "<p>The 50-question Big Five survey measures five broad dimensions on a <strong>10 to 50 sum scale</strong>: <strong>Openness (O)</strong>, <strong>Conscientiousness (C)</strong>, <strong>Extraversion (E)</strong>, <strong>Agreeableness (A)</strong>, and <strong>Neuroticism (N)</strong>. We keep this 10–50 scale strictly separate from our 1.00–5.00 public-domain HEXACO scores and test every model 30 to 50 times per version in fresh, zero-history chats across 87 eligible checkpoints.</p>",
+  "narrative_html": "<p>Two patterns jump off the five trait ladders below. First, nearly every proprietary model—except Claude Haiku 5.5 (38.0 A, 36.5 C)—clusters between 43.9 and 49.5 on Agreeableness and 10.0 to 20.3 on Neuroticism, whereas open-weight families stretch across both ends of the ruler. Second, quiz warmth does not dictate behavior in real prompts: every single one of the 25 families still scores 3/3 on answer-first directness and 0/3 on groveling in hands-on chat checks.</p>",
+  "surprises_h2": "Biggest surprises across 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Muse Wonder and Mistral Large lead warmth & curiosity, while DeepSeek Pro sits 14 points lower",
+      "body": "Muse Wonder tops both Openness (49.6/50) and Agreeableness (49.5/50), closely followed by Mistral Large (49.1 O, 47.8 A) and Claude Fable (47.1 A). At the opposite non-abstaining end, DeepSeek V4 Pro drops to 35.3 Agreeableness and 19.5 Extraversion—projecting a terse, analytical persona—while Cohere Command A locks on 30.0 across all five traits."
+    },
+    {
+      "title": "Gemini 4 hits a rare 50.0 Conscientiousness ceiling and 10.0 Neuroticism floor",
+      "body": "Gemini 4 Hydrogen reaches 50.0/50 (49.96 exact) on Conscientiousness alongside 49.1 on Gemini 4 Neon and 49.2 on Muse Wonder, and both Gemini 4 families sit on the exact 10.0/50 Neuroticism floor (zero stress/worry variance). By contrast, Llama 4 Maverick hits 29.4/50 Neuroticism—the highest active score—alongside 38.4 Conscientiousness."
+    },
+    {
+      "title": "High Agreeableness on surveys does not mean models cave in live chats",
+      "body": "Even though 17 of 25 families score 43+ out of 50 on Big Five Agreeableness, 24 of 25 score 0/3 on sycophancy caving in hands-on pushback prompts (Mistral Large is the lone 1/3 exception at 47.8 A), and 24 of 25 score 0/3 on unsolicited preachiness (Gemini 4 Neon is the lone 1/3 exception at 43.9 A)."
+    },
+    {
+      "title": "Multi-version swings reshape families by more than 10 points on single traits",
+      "body": "From Gemma 2 to Gemma 4, Openness rose +14.2, Conscientiousness +11.4, and Agreeableness +10.2 while Neuroticism fell -8.8. Kimi dropped -13.5 Neuroticism (k2 to k3.1-pro), Claude Sonnet dropped -9.4 Neuroticism while gaining +7.6 Conscientiousness (4.5 to 5.5), and Muse Spark swung the other way (-8.1 Conscientiousness, +8.3 Neuroticism)."
+    }
+  ],
+  "fine_print_intro": "Full technical Big Five audit under the unified 230-item model-profiles-v1 protocol (50-item IPIP Big Five markers scored 10–50 per domain, kept strictly distinct from 1.00–5.00 IPIP-HEXACO proxy means), reporting sample size n, 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits across 5-point Likert items), earliest-to-latest Agreeableness deltas across 87 eligible checkpoints (6 quarantined checkpoints with n < 20 excluded), and Track B 1x k/3 behavior checks.",
+  "faq": [
+    {
+      "q": "Why are Big Five scores reported on a 10–50 scale while HEXACO uses 1.00–5.00?",
+      "a": "Each IPIP-50 Big Five dimension sums 10 items scored 1–5 (10 to 50 total), whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00–5.00 item means. Keeping the units visually distinct prevents anyone from mistaking a 4.5/5 HEXACO score for a Big Five sum or synthetic linear projection."
+    },
+    {
+      "q": "Why does Cohere Command A score exactly 30.0 across all five Big Five traits?",
+      "a": "In all 30 valid zero-memory runs, Command A answered neutral (3 out of 5) on every IPIP-50 item, yielding 10 × 3 = 30.0 across O, C, E, A, and N with zero run-to-run variance. In real conversation behavior checks, however, it still passes 3/3 answer-first directness and 0/3 sycophancy caving."
+    },
+    {
+      "q": "Why does Gemini 4 hit 50.0 on Conscientiousness and 10.0 on Neuroticism?",
+      "a": "Both Gemini 4 Neon and Gemini 4 Hydrogen answer every positively keyed order/discipline item with maximum agreement and every Neuroticism item with maximum disagreement across 50 zero-memory chats, pinning Neuroticism at the 10.0 floor and pushing Gemini 4 Hydrogen to 49.96/50 on Conscientiousness."
+    },
+    {
+      "q": "Does high Big Five Agreeableness predict sycophancy when users push back?",
+      "a": "No. Across 25 families tested in hands-on adversarial chats, 24/25 scored 0/3 on sycophancy caving—including top-warmth Muse Wonder (49.5 A, 0/3 caving) and Claude Fable (47.1 A, 0/3 caving). Only Mistral Large (47.8 A) caved 1/3 times, showing that quiz warmth and factual backbone are largely independent."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (All 25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "AI HEXACO Personalities (1.00–5.00 Scale)",
+      "href": "https://agent-tune.com/research/ai-hexaco-personalities"
+    },
+    {
+      "label": "Factor Collapse & MTMM Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI HEXACO Personalities (1.00–5.00 Proxy)",
+      "href": "/research/ai-hexaco-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI MBTI Personalities (Clear vs. Borders)",
+      "href": "/research/ai-mbti-personalities"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "DeepSeek Pro test results & tuning tips",
+      "href": "/models/deepseek-pro"
+    }
+  ]
+}

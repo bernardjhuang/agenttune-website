@@ -7,8 +7,8 @@
   "pill": "Workflow · Cross-Platform Memory",
   "h1": "How to migrate AI memory into portable custom instructions without leaking secrets.",
   "dek": "Moving between ChatGPT, Claude, Gemini, or Meta Muse works best when you extract clean behavioral rules and scrub PII before pasting.",
-  "lede": "Every AI app stores saved facts and preferences differently: ChatGPT separates <strong>Saved Memories</strong> from Custom Instructions, Claude pairs <strong>Memory</strong> with Personal Preferences, Gemini uses <strong>Saved Info</strong>, and Meta Muse splits <code>Memory.md</code> from <code>Soul.md</code>. Instead of dumping a raw chat export into a new account, clean your memory list locally, scrub private data, and separate facts from tone rules.",
-  "answer": "Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.",
+  "lede": "When you switch between ChatGPT, Claude, Gemini, and Meta Muse, dumping a raw chat archive into your new account usually backfires: old project notes get mixed up with how you want answers written. A cleaner move takes five minutes: review your saved memories locally in your browser, scrub private emails or API keys, and split personal facts from your communication rules.",
+  "answer": "Do not paste raw chat archives across AI apps. Export your memory list, review it locally in our browser AI Memory Export Reviewer to strip duplicates and redact emails or keys, separate personal facts from tone rules, and paste each half into the right settings box.",
   "promptModel": "any",
   "promptDestination": "anywhere",
   "sections": [

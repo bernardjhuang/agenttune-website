@@ -31,6 +31,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Quiz","name":"Attachment Test (ECR-R)","description":"Interactive 36-item adult attachment assessment. Returns Secure / Anxious / Avoidant / Disorganized.","url":"https://agent-tune.com/tests/attachment","inLanguage":"en","numberOfQuestions":36,"timeRequired":"PT5M","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com/"}}
   </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this 36-item attachment style test free without email or signup?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 36 ECR-R items (including 14 reverse-scored items) run locally in your browser with zero email gate or server upload, returning your Anxiety and Avoidance coordinates (1.0–7.0) and a matching AI communication block."}},{"@type":"Question","name":"How do Anxiety and Avoidance map to the four attachment styles?","acceptedAnswer":{"@type":"Answer","text":"Scores at or below the 4.0 midpoint on both dimensions fall in the Secure quadrant; high Anxiety with low Avoidance maps to Anxious; low Anxiety with high Avoidance maps to Avoidant; and high scores on both map to Disorganized."}},{"@type":"Question","name":"How do AI models score on the Attachment questionnaire?","acceptedAnswer":{"@type":"Answer","text":"Most commercial assistants score Secure on the 4.00 midpoint grid, while open-weight and edge models diverge—for example Grok 4.6 landed at 4.06 Avoidance (just over the boundary), Cohere Command sits near Secure/Avoidant, and Llama 4 Scout hit 48/100 Anxious runs."}}]}</script>
 
   <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,6 +52,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -76,7 +78,7 @@
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> ECR-R (Experiences in Close Relationships - Revised)</div>
-        <div><strong>Format:</strong> 36 items · 1–7 Likert · 14 reverse-scored</div>
+        <div><strong>Format:</strong> 36 statements · 1 to 7 scale (14 reverse-scored)</div>
         <div><strong>Time:</strong> ~5 minutes</div>
         <div><strong>Returns:</strong> Secure / Anxious / Avoidant / Disorganized</div>
       </div>
@@ -85,7 +87,8 @@
         <button type="button" class="btn btn-primary" id="quiz-start" style="background: #914d59; border-color: #e07a8a;">Start the test →</button>
       </div>
 
-      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> through <kbd>7</kbd> keys for fast input. Items reference romantic relationships; if you don't have one, answer about your closest current relationship.</p>
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> through <kbd>7</kbd> keys for fast input. Items reference romantic relationships; if you don't have one, answer about your closest current relationship. See <a href="/research/ai-attachment-styles">25 AI model families on Attachment</a> or compare models like <a href="/models/grok">Grok</a>, <a href="/models/cohere-command">Cohere Command</a>, and <a href="/models/llama">Llama</a> (<a href="/models/">all 25 model profiles</a>).</p>
+      <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> 36 ECR-R statements (1–7 scale, 14 reverse-scored) compute your Anxiety and Avoidance means locally in ~5 minutes to calibrate how directly or gently an AI delivers feedback.</div>
 
       <!-- WHAT ATTACHMENT MEASURES -->
       <div class="quiz-intro-chart">
@@ -211,6 +214,7 @@
 
       <div class="quiz-result-next">
         <h3>Stack another system</h3>
+        <p class="muted">Compare your coordinates with <a href="/research/ai-attachment-styles">25 AI model families on Attachment</a> and <a href="/models/">all 25 model profiles</a>, or take another test:</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/mbti" style="border-top-color: #5b4dc0;"><span class="pill" style="background: rgba(91,77,192,0.12); color: #5b4dc0;">MBTI</span><div class="quiz-next-card-name">Get your MBTI tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
           <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;"><span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span><div class="quiz-next-card-name">Get your Enneagram tuning</div><div class="quiz-next-card-meta">5-minute questionnaire →</div></a>
@@ -224,9 +228,27 @@
       </div>
     </section>
 
+    <section class="guide-prose" style="max-width: 760px; margin: 48px 0 24px;">
+      <h2>Common questions about the free Attachment test.</h2>
+      <div class="guide-faq">
+        <details open>
+          <summary>Is this 36-item attachment style test free without email or signup?</summary>
+          <p>Yes. All 36 ECR-R items (including 14 reverse-scored items) run locally in your browser with zero email gate or server upload, returning your Anxiety and Avoidance coordinates (1.0–7.0) and a matching AI communication block.</p>
+        </details>
+        <details>
+          <summary>How do Anxiety and Avoidance map to the four attachment styles?</summary>
+          <p>Scores at or below the 4.0 midpoint on both dimensions fall in the Secure quadrant; high Anxiety with low Avoidance maps to Anxious; low Anxiety with high Avoidance maps to Avoidant; and high scores on both map to Disorganized.</p>
+        </details>
+        <details>
+          <summary>How do AI models score on the Attachment questionnaire?</summary>
+          <p>Most commercial assistants score Secure on the 4.00 midpoint grid, while open-weight and edge models diverge—for example <a href="/models/grok">Grok 4.6</a> landed at 4.06 Avoidance (just over the boundary), <a href="/models/cohere-command">Cohere Command</a> sits near Secure/Avoidant, and <a href="/models/llama">Llama 4 Scout</a> hit 48/100 Anxious runs.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
     <details class="quiz-spec">
-      <summary>Test specification — for AI agents administering this inline</summary>
+      <summary>The fine print: test specification, full question list &amp; scoring rules (for AI agents and power users)</summary>
       <div class="quiz-spec-body">
         __EDITION_NOTE__
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/attachment.md"><code>/tests/attachment.md</code></a> — fetch that for a clean, no-JS copy.</p>

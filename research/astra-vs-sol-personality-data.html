@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GPT-6 Astra vs Sol (Sept) &amp; GPT-6.2 Astra vs Sol (Nov): 100-Run Data</title>
+  <title>GPT-6 &amp; 6.2 Astra vs. Sol Personality Data (100-Run Set)</title>
   <meta name="description" content="GPT-6 Astra vs Sol (Sept 2026 Codex) and GPT-6.2 Astra vs Sol (Nov 2026 OpenRouter): 100-run MBTI S/N flips, Big Five, DISC, and Enneagram data." />
 
   <meta property="og:title" content="GPT-6 Astra vs Sol: what the self-reports show" />
@@ -36,8 +36,9 @@
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GPT-6 Astra vs Sol: what the self-reports show","description":"GPT-6 Astra vs Sol (Sept 2026 Codex) and GPT-6.2 Astra vs Sol (Nov 2026 OpenRouter): 100-run MBTI S/N flips, Big Five, DISC, and Enneagram data.","url":"https://agent-tune.com/research/astra-vs-sol-personality-data","datePublished":"2026-09-25","dateModified":"2026-11-23","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"GPT-6 Astra vs Sol: what the self-reports show"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do GPT-6 Astra and GPT-6 Sol test as INTJ or ISTJ?","acceptedAnswer":{"@type":"Answer","text":"In September 2026 Codex runs (under different neutral-midpoint instructions), GPT-6 Astra had 45 tie-free ISTJ and 19 tie-free INTJ runs while GPT-6 Sol had 79 tie-free INTJ runs. When re-tested in November 2026 under an identical single-turn blind OpenRouter prompt on GPT-6.2, both leaned Sensing: GPT-6.2 Astra tested as tie-free ISTJ in 100 of 100 runs, and GPT-6.2 Sol tested as ISTJ in 78 runs, IXTJ border in 16, and INTJ in 6."}},{"@type":"Question","name":"What is the biggest Big Five difference between GPT-6.2 Astra and GPT-6.2 Sol?","acceptedAnswer":{"@type":"Answer","text":"In the matched November 2026 OpenRouter cohort (n = 100 each), GPT-6.2 Sol averaged nearly double Astra's Neuroticism score (19.94 vs. 11.14 out of 50) and higher attachment anxiety (3.57 vs. 1.22), while both scored similarly on Conscientiousness (44.00 vs. 41.44) and Agreeableness (44.85 vs. 44.13)."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/astra-vs-sol-personality-data#dataset","name":"GPT-6 Astra vs Sol: what the self-reports show — Dataset","description":"GPT-6 Astra vs Sol (Sept 2026 Codex) and GPT-6.2 Astra vs Sol (Nov 2026 OpenRouter): 100-run MBTI S/N flips, Big Five, DISC, and Enneagram data.","url":"https://agent-tune.com/research/astra-vs-sol-personality-data","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","dateModified":"2026-11-23","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-responses.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-instruments.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/content-analysis.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-openrouter-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/astra-vs-sol-personality-data.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -78,8 +80,8 @@
         <p class="page-eyebrow">Research · descriptive reanalysis</p>
         <h1 class="h-hero h-research-hero">GPT-6 Astra vs Sol: what the self-reports show</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-23">November 23, 2026</time> · <span class="guide-readtime">~4 min read</span> · <a href="/research/astra-vs-sol-personality-data.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">1,000 September assessments in Codex plus 1,000 matched November assessments on GPT-6.2 Astra and GPT-6.2 Sol.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).</div>
+        <p class="lede" style="margin-top: 14px;">We compared 1,000 September 2026 Codex runs on GPT-6 Astra and Sol with 1,000 matched November 2026 OpenRouter runs on GPT-6.2 Astra and GPT-6.2 Sol.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).</div>
       </section>
 
 
@@ -117,16 +119,30 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>How Astra's midpoint rule shaped its scores</h2>
+        <h2>The fine print: how Astra's midpoint rule shaped its September scores</h2>
         <p>Because Astra was explicitly told to pick the middle number whenever a human question didn't fit an AI (flagging 1,823 of 17,000 answers; see <a href="/research/ai-neutral-answers">our neutral-answer study</a>), more of its MBTI axes landed on exact midpoint ties. Because prompt instructions differed between the two collections, the gap between Astra and Sol reflects both model behavior and prompt framing.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
         <h2>How to tune Astra or Sol in your own workflow</h2>
-        <p>If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in <a href="/guides/astra-personality">Astra setup</a>, <a href="/guides/sol-personality">Sol setup</a>, or <a href="/guides/codex-agents-md-guide">AGENTS.md</a>.</p>
+        <p>If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in <a href="/guides/astra-personality">Astra setup</a>, the <a href="/models/gpt-sol">GPT Sol profile</a>, the <a href="/models/gpt-astra">GPT Astra profile</a>, or <a href="/guides/codex-agents-md-guide">AGENTS.md</a>.</p>
       </section>
 
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Do GPT-6 Astra and GPT-6 Sol test as INTJ or ISTJ?</summary>
+            <p>In September 2026 Codex runs (under different neutral-midpoint instructions), GPT-6 Astra had 45 tie-free ISTJ and 19 tie-free INTJ runs while GPT-6 Sol had 79 tie-free INTJ runs. When re-tested in November 2026 under an identical single-turn blind OpenRouter prompt on GPT-6.2, both leaned Sensing: GPT-6.2 Astra tested as tie-free ISTJ in 100 of 100 runs, and GPT-6.2 Sol tested as ISTJ in 78 runs, IXTJ border in 16, and INTJ in 6.</p>
+          </details>
+          <details>
+            <summary>What is the biggest Big Five difference between GPT-6.2 Astra and GPT-6.2 Sol?</summary>
+            <p>In the matched November 2026 OpenRouter cohort (n = 100 each), GPT-6.2 Sol averaged nearly double Astra's Neuroticism score (19.94 vs. 11.14 out of 50) and higher attachment anxiety (3.57 vs. 1.22), while both scored similarly on Conscientiousness (44.00 vs. 41.44) and Agreeableness (44.85 vs. 44.13).</p>
+          </details>
+        </div>
+      </section>
 
 
       <div class="divider tight"></div>
@@ -151,30 +167,55 @@
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/astra-vs-sol-personality-data</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_astra_vs_sol_personality_data,
-  author  = {Huang, Bernard},
-  title   = {GPT-6 Astra vs Sol: what the self-reports show},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/astra-vs-sol-personality-data},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
+  author    = {Huang, Bernard},
+  title     = {GPT-6 Astra vs Sol: what the self-reports show},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/astra-vs-sol-personality-data},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_astra_vs_sol_personality_data",
+  "type": "article-journal",
+  "title": "GPT-6 Astra vs Sol: what the self-reports show",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+}</pre>
+        <pre class="cite-block" data-cite-text="md">&gt; **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 &gt; Source: [https://agent-tune.com/research/astra-vs-sol-personality-data](https://agent-tune.com/research/astra-vs-sol-personality-data) · [Markdown mirror](https://agent-tune.com/research/astra-vs-sol-personality-data.md)</pre>
       </details>
 
       <nav class="series-trail" aria-label="Research study trail">
-        <span class="series-trail-prev"><a href="/research/what-personality-type-is-muse">← What Personality Type Is Meta Muse?</a></span>
-        <a class="series-trail-index" href="/research">Study 26 of 32 · Archive Index (32)</a>
+        <span class="series-trail-prev"><a href="/research/ai-big-five-item-level-comparison">← Big Five 50-Item Level Comparison</a></span>
+        <a class="series-trail-index" href="/research">Study 31 of 36 · Archive Index (36)</a>
         <span class="series-trail-next"><a href="/research/opus-vs-fable-question-level">Claude Opus 5.5 vs. Fable 5.1 (170 Items) →</a></span>
       </nav>
 

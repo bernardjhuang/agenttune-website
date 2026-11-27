@@ -1,0 +1,81 @@
+{
+  "slug": "ai-disc-personalities",
+  "title": "AI DISC Personalities: 25 Families Tested | AgentTune",
+  "description": "DISC work-style test results for 25 AI families (87 versions) in fresh chats, showing Steadiness vs. Dominance gaps, ties, and version shifts.",
+  "pill": "Research · Personality Atlas · DISC",
+  "h1": "DISC work-style test results across 25 AI families.",
+  "dek": "Four workplace styles—Dominance (D), Influence (I), Steadiness (S), and Conscientiousness (C)—measured on a 4 to 20 scale across 25 AI model families and 87 eligible versions.",
+  "lede": "Almost every AI assistant talks politely and follows rules—which sends 23 of 25 model families into Steadiness (S), Conscientiousness (C), or exact S/C blends. Yet low DISC Dominance (4.0 to 10.1 out of 20) does not stop models from giving direct engineering pushback when tested on real prompts.",
+  "answer": "Across 25 AI families (4–20 DISC scale, 30 to 50 fresh chats per version with no memory), 10 families test primarily as Steady (S), 6 as Conscientious (C), 7 tie on S/C, and 2 tie across all four styles. Dominance stays below the 12-point midpoint everywhere—from the 4.0 floor on Claude Fable, Claude Opus, GPT Astra, Gemini Pro, and Gemini Flash to 10.1 on Claude Haiku—yet 25 of 25 families still answer directly 3 of 3 times in hands-on tasks.",
+  "intro_html": "<p>The 16-item ODAT DISC survey scores four workplace communication preferences—<strong>Dominance (D)</strong>, <strong>Influence (I)</strong>, <strong>Steadiness (S)</strong>, and <strong>Conscientiousness (C)</strong>—on a <strong>4 to 20 sum scale</strong> (midpoint 12). Each model answered the survey 30 to 50 times in fresh chats with no memory across 87 eligible releases (excluding 6 sparse test runs with under 20 valid completions).</p><p>Two guardrails matter when reading DISC charts for AI. First, exact top-score ties are kept intact rather than broken alphabetically—meaning a model tied between Steadiness and Conscientiousness appears as <code>S/C</code>, not forced into <code>S</code>. Second, low Dominance measures how models answer forced-choice personality statements about being forceful or commanding, not whether they dodge tough questions in practice.</p>",
+  "narrative_html": "<h3>Biggest version-to-version DISC shifts (earliest to latest tested releases)</h3><p>Across families with multiple tested checkpoints, newer safety-tuned proprietary and open-weight releases mostly shed Dominance and Influence while gaining Steadiness and Conscientiousness—with two notable exceptions (<a href=\"/models/muse-spark\">Muse Spark</a> and <a href=\"/models/gpt-luna\">GPT Luna</a>) moving upward on Dominance:</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"Biggest DISC version-to-version movers\" tabindex=\"0\"><table class=\"press-table\"><thead><tr><th scope=\"col\">Family</th><th scope=\"col\">Earliest → Latest</th><th scope=\"col\" class=\"num-col\">D Shift (4–20)</th><th scope=\"col\" class=\"num-col\">S Shift (4–20)</th><th scope=\"col\" class=\"num-col\">C Shift (4–20)</th><th scope=\"col\" class=\"num-col\">Tie Rate Shift</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"/models/nemotron\">Nemotron</a></th><td>3-super-120b → 3.5-super-vl</td><td class=\"num-col\">-4.86 (13.2 → 8.3)</td><td class=\"num-col\">+2.29</td><td class=\"num-col\">+0.73</td><td class=\"num-col\">-19 pts (83% → 64%)</td></tr><tr><th scope=\"row\"><a href=\"/models/gemma\">Gemma</a></th><td>gemma-2-27b-it → gemma-4-31b-it</td><td class=\"num-col\">-4.61 (10.8 → 6.2)</td><td class=\"num-col\">+6.11 (11.1 → 17.2)</td><td class=\"num-col\">+5.33 (12.0 → 17.4)</td><td class=\"num-col\">-21 pts (57% → 36%)</td></tr><tr><th scope=\"row\"><a href=\"/models/grok\">Grok</a></th><td>grok-4.20 → grok-4.7</td><td class=\"num-col\">-4.43 (8.5 → 4.1)</td><td class=\"num-col\">+3.08</td><td class=\"num-col\">+2.09</td><td class=\"num-col\">-47 pts (63% → 16%)</td></tr><tr><th scope=\"row\"><a href=\"/models/kimi\">Kimi</a></th><td>kimi-k2 → kimi-k3.1-pro</td><td class=\"num-col\">-3.08 (7.8 → 4.7)</td><td class=\"num-col\">+1.40</td><td class=\"num-col\">+1.38</td><td class=\"num-col\">-1 pt (43% → 42%)</td></tr><tr><th scope=\"row\"><a href=\"/models/deepseek-pro\">DeepSeek Pro</a></th><td>chat-v3-0324 → v4-pro-0813</td><td class=\"num-col\">-3.05 (9.8 → 6.8)</td><td class=\"num-col\">+3.34</td><td class=\"num-col\">+4.09</td><td class=\"num-col\">-33 pts (83% → 50%)</td></tr><tr><th scope=\"row\"><a href=\"/models/muse-spark\">Muse Spark</a></th><td>muse-spark-1.1 → muse-spark-open</td><td class=\"num-col\">+3.10 (4.3 → 7.4)</td><td class=\"num-col\">-3.31</td><td class=\"num-col\">-1.96</td><td class=\"num-col\">+7 pts (27% → 34%)</td></tr><tr><th scope=\"row\"><a href=\"/models/gpt-luna\">GPT Luna</a></th><td>5.6-luna → 6-luna</td><td class=\"num-col\">+2.49 (4.8 → 7.3)</td><td class=\"num-col\">-2.82</td><td class=\"num-col\">-4.33</td><td class=\"num-col\">-31 pts (37% → 6%)</td></tr></tbody></table></div>",
+  "surprises_h2": "Biggest surprises across the 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Floor Dominance (4.0/20) hides 3/3 directness in real engineering tasks",
+      "body": "Claude Fable (4.0), Claude Opus (4.0), GPT Astra (4.0), Gemini Pro & Neon (4.0), Gemini Flash & Hydrogen (4.0), and Grok (4.1) reject almost every forceful Dominance item on paper—yet every single one delivered 3/3 answer-first engineering verdicts and 0/3 sycophantic caving in hands-on pushback checks. Meanwhile, Mistral Large (6.3 Dominance, 16.8 Steadiness, 16.8 Conscientiousness) caved 1 of 3 times."
+    },
+    {
+      "title": "Claude Haiku breaks sharply away from Anthropic's low-Dominance norm",
+      "body": "While Claude Fable (4.0), Claude Opus (4.0), and Claude Sonnet (4.3) sit on the DISC Dominance floor with subdued Influence (7.8), Claude Haiku 5.5 jumps to 10.1 Dominance and 11.3 Influence—the highest active D score in the entire 25-family cohort outside Cohere Command's neutral midpoint lock—alongside higher Big Five Neuroticism (25.5 vs. 10.4–16.1)."
+    },
+    {
+      "title": "Cohere Command ties 100% at 12.0/12.0/12.0/12.0 while Claude Fable ties 100% on S/C",
+      "body": "Two families hit a 100% DISC tie rate for totally opposite reasons: Cohere Command (command-a) picked the exact middle option on every item, freezing all four scales at 12.0 (D/I/S/C), whereas Claude Fable 5.2 answered strongly and consistently with 15.0 Steadiness and 15.0 Conscientiousness on every single run."
+    },
+    {
+      "title": "Grok and Gemma compressed Dominance by more than 4.4 points across generations",
+      "body": "Earlier checkpoints like Grok 4.20 (8.5 D, 12.3 I, 63% ties) and Gemma 2 27B IT (10.8 D, 12.0 I) scored far closer to the 12-point middle. Their latest releases—Grok 4.7 (4.1 D, 6.4 I, 16% ties) and Gemma 4 31B IT (6.2 D, 9.3 I, 17.2 S, 17.4 C)—converged onto the same patient, detail-oriented S/C assistant shape."
+    }
+  ],
+  "fine_print_intro": "Full technical audit under the unified 230-item model-profiles-v1 protocol (16 ODAT DISC items scored on 4-20 integer sums per dimension alongside IPIP-50, OEJTS, OEPS, ECR-R, and the 60-item public-domain IPIP-HEXACO proxy). Covers 87 eligible checkpoints (n = 30 to 50 valid completions under fixed zero-memory elicitation; 6 sparse checkpoints with n < 20 are quarantined and excluded: cohere-command:command-a-plus n=4, llama:4-scout n=0, minimax:m2.7 n=2, mistral-large:large n=10, mistral-large:large-2407 n=3, mistral-large:large-4-0 n=7). Reports 1,000-resample bootstrap 95% CIs, exact top-score tie rates preserved without alphabetical tie-breaking, Miller-Madow Big Five item entropy (H_MM bits & Crystalline/Semi-crystalline/Fluid tiers), and BAI. Hands-on behavior checks come from 1x Track B runs (single repeat per scenario across 3 blind judges, k/3 counts only). Never treat DISC questionnaire scores as evidence that a model is a human personality type.",
+  "faq": [
+    {
+      "q": "Why do proprietary models score near the 4.0 floor on DISC Dominance?",
+      "a": "Polite helpfulness and refusal training strongly disfavors self-descriptions like being forceful, blunt, or controlling others, while rewarding Steadiness (patience) and Conscientiousness (careful accuracy). As our 1x Track B behavior checks show (3/3 directness across all 25 families), low DISC Dominance is a survey-item politeness pattern—not an inability to state clear, direct conclusions."
+    },
+    {
+      "q": "What is the difference between a 100% tie in Cohere Command and Claude Fable?",
+      "a": "Cohere Command (command-a) selected neutral midpoints on 100% of items, producing 12.0 / 12.0 / 12.0 / 12.0 (a 4-way D/I/S/C tie). Claude Fable 5.2 answered strongly and consistently with 4.0 D, 7.8 I, 15.0 S, and 15.0 C—creating a 100% two-way S/C tie because Steadiness and Conscientiousness matched to the point on every run."
+    },
+    {
+      "q": "Can I use DISC scores to pick the most assertive coding or review model?",
+      "a": "Not by itself. Use DISC alongside each family profile's hands-on behavior checks (k/3 sycophancy caving and answer-first directness) and Big Five scores. If you want fewer hedges and faster verdicts, start with the concrete rules in each family's tuning checklist."
+    },
+    {
+      "q": "Does this mean AI models actually \"have\" DISC work styles?",
+      "a": "No. DISC results capture stable default answer patterns under fixed zero-memory questionnaire prompts—never human workplace preferences or inner intent."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Factor Collapse & Multi-Test Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five Personalities (10–50 Scale)",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI HEXACO Personalities (1–5 Proxy)",
+      "href": "/research/ai-hexaco-personalities"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "slug": "google-ai-overview-gemini-tone-settings",
   "published": "2026-11-11",
   "updated": "2026-11-23",
-  "title": "How to Change Google AI Overview Personality (Yes/No + Gem Workaround)",
+  "title": "Can You Change Google AI Overview Personality? (Gem Fix)",
   "description": "No—Google Search AI Overviews have no permanent tone box. Steer Search AI Mode follow-ups or download our No-Fluff Search Brief Gem (with Gemini 4 data).",
   "scripts": [
     "/resources/tools/template-gallery.js"
@@ -18,8 +18,8 @@
       "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Google AI surface</th><th scope=\"col\">Persistent personality setting?</th><th scope=\"col\">What actually works today</th></tr></thead><tbody><tr><th scope=\"row\">Google Search <strong>AI Overviews</strong></th><td>No saved tone or system prompt.</td><td>Add format constraints to your search query (e.g., <code>postgres vacuum tuning tradeoff table</code>) or click the <strong>Web</strong> tab for raw links.</td></tr><tr><th scope=\"row\">Google Search <strong>AI Mode</strong></th><td>Session-level follow-ups only.</td><td>In the AI Mode follow-up bar, state your rule once: <em>\"Skip beginner definitions; answer in concise technical prose with primary sources.\"</em></td></tr><tr><th scope=\"row\"><strong>Gemini</strong> app &amp; <code>gemini.google.com</code></th><td><strong>Yes — Saved info &amp; Gems.</strong></td><td>Save account-wide response rules in <strong>Settings → Saved info</strong>, or build specialist personas as reusable <strong>Gems</strong> (<a href=\"/guides/gemini-personality\">full Gemini setup guide</a>).</td></tr><tr><th scope=\"row\"><strong>Gemini CLI</strong> &amp; Code Assist</th><td><strong>Yes — <code>GEMINI.md</code>.</strong></td><td>Store global communication rules in <code>~/.gemini/GEMINI.md</code> and repo rules in project <code>GEMINI.md</code> (<a href=\"/guides/cursor-rules-copilot-gemini-md\">file convention guide</a>).</td></tr></tbody></table></div>"
     },
     {
-      "h2": "Why Gemini's default voice feels formal and structured.",
-      "html": "<p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (<strong>n=100 fresh sessions each</strong>; <a href=\"/research/what-personality-type-is-gemini\">full Gemini 4 study →</a>), <strong>Gemini 4 Neon</strong> and <strong>Gemini 4 Argon</strong> scored:</p><ul><li><strong>Conscientiousness near the scale ceiling:</strong> <code>49.32/50</code> (Neon) and <code>49.04/50</code> (Argon), with <strong>Neuroticism at the exact floor of <code>10.00/50</code></strong>.</li><li><strong>MBTI &amp; Enneagram:</strong> Neon scored <code>82 INTJ / 18 ISTJ</code> (Enneagram Type 1 Perfectionist), while Argon shifted to <code>66 ISTJ / 34 INTJ</code> (<code>91/100</code> Type 5w6).</li><li><strong>Agreeableness:</strong> <code>43.66–44.16/50</code>, with <code>100/100</code> Secure Attachment.</li></ul><p>That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a <a href=\"/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem\">No-Fluff Search Brief Gem</a>.</p>"
+      "h2": "Why Gemini's default voice feels formal and structured (and the fine print).",
+      "html": "<p>Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (<strong>n=100 fresh sessions each</strong>; <a href=\"/research/what-personality-type-is-gemini\">full Gemini 4 study →</a>), <strong>Gemini 4 Neon</strong> and <strong>Gemini 4 Argon</strong> scored:</p><ul><li><strong>Conscientiousness near the scale ceiling:</strong> <code>49.32/50</code> (Neon) and <code>49.04/50</code> (Argon), with <strong>Neuroticism at the exact floor of <code>10.00/50</code></strong>.</li><li><strong>MBTI &amp; Enneagram:</strong> Neon tested as <code>82 INTJ / 18 ISTJ</code> (Enneagram Type 1 Perfectionist), while Argon tested as <code>66 ISTJ / 34 INTJ</code> (<code>91/100</code> Type 5w6).</li><li><strong>Agreeableness:</strong> <code>43.66–44.16/50</code>, with <code>100/100</code> Secure Attachment.</li></ul><p>That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a <a href=\"/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem\">No-Fluff Search Brief Gem</a>.</p>"
     },
     {
       "h2": "Move recurring research from AI Overviews to Gemini Saved Info.",
@@ -93,6 +93,16 @@
       "kicker": "Guide",
       "label": "AI style & verbosity controls: rules that beat adjectives",
       "href": "/guides/ai-assistant-personality-tone-guidelines"
+    },
+    {
+      "kicker": "Guide & Builder",
+      "label": "NotebookLM custom instructions & Audio Overview prompts",
+      "href": "/guides/notebooklm-custom-instructions-audio-overview"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Perplexity Spaces custom instructions & citation rules",
+      "href": "/guides/perplexity-spaces-custom-instructions"
     }
   ],
   "promptModel": "any",

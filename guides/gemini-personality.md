@@ -62,7 +62,7 @@ Gemini CLI and Gemini Code Assist load context from `GEMINI.md` files. Like Code
 
 Keep personal tone in `~/.gemini/GEMINI.md` so your team repo stays focused on build and test rules. See our side-by-side comparison in [Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md).
 
-## What we measured on Gemini 4 Neon, Argon & 3.1 Pro.
+## What we measured on Gemini 4 Neon, Argon & 3.1 Pro (and the fine print).
 
 In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Neon** and **Gemini 4 Argon** via OpenRouter, updating our May 2026 Gemini 3.1 Pro baseline ([read the full Gemini personality study →](https://agent-tune.com/research/what-personality-type-is-gemini)):
 
@@ -76,7 +76,7 @@ In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Ne
 | Enneagram mode | Type 1 Perfectionist (42) · 1w2 (22) · 5w6 (20) | Type 5w6 Investigator (91/100) | Type 1 / Type 5 |
 | DISC / Attachment | 100/100 SC · 100/100 Secure (1.08 anx / 3.79 avd) | 98 SC · 100/100 Secure (1.10 anx / 3.47 avd) | DISC C · Secure (1.86 / 1.62) |
 
-Notice Gemini 4 hits near-maximum Conscientiousness (49.0–49.3/50) and exact floor Neuroticism (10.0/50)—explaining why untuned Gemini reads hyper-orderly, thorough, and textbook-calm unless you instruct it to keep routine replies compact and push back early.
+**In short:** Across 100 fresh chats each, Gemini 4 Neon and Gemini 4 Argon scored near the top of the 10–50 scale on Conscientiousness (49.32 and 49.04) and at the exact calm floor on Neuroticism (10.00), while Neon tested as INTJ in 82 of 100 runs (20 tied) and Argon tested as ISTJ in 66 of 100 runs (34 tied). That explains why untuned Gemini reads so orderly and textbook-calm unless you ask for short, direct answers.
 
 > **Chart — Google Gemini Personality DNA (Gemini 4 Neon, Argon & 3.1 Pro):** IPIP-50 trait spectrum highlighting Gemini 4’s near-ceiling Conscientiousness (49.1–49.4) and flat 10.0 Neuroticism floor. Gemini 4 Neon (Nov): Openness 44.7, Conscientious 49.3, Extraversion 32.0, Agreeable 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientious 49.0, Extraversion 32.5, Agreeable 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientious 48.3, Extraversion 32.5, Agreeable 42.4, Neuroticism 10.1.
 
@@ -96,9 +96,9 @@ GEMINI.md is the Markdown instruction file read by Gemini CLI and Gemini Code As
 
 Put your everyday communication baseline (like answer-first structure and no filler intros) in Saved info. Use a Gem when you want a specialized voice or workflow that only activates when you open that Gem.
 
-### What personality type did Gemini score on the AgentTune tests?
+### What personality type does Gemini test as on the AgentTune surveys?
 
-In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), Gemini 4 Neon scored 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2, and 49.3/50 Conscientiousness, while Gemini 4 Argon scored 66 ISTJ / 34 IXTJ, Type 5w6 (91/100), and 49.0/50 Conscientiousness—both sitting at the exact 10.0 Neuroticism floor and 100/100 Secure on ECR-R attachment.
+In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), Gemini 4 Neon tested as 82 INTJ / 18 ISTJ (62 tie-free INTJ), Type 1/1w2, and 49.3/50 Conscientiousness, while Gemini 4 Argon tested as 66 ISTJ / 34 IXTJ, Type 5w6 (91/100), and 49.0/50 Conscientiousness—both sitting at the exact 10.0 Neuroticism floor and testing as 100/100 Secure on ECR-R attachment.
 
 ## What changed.
 
@@ -118,7 +118,11 @@ In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), G
 
 - [20 Templates: Best Gemini Gems, Saved Info & GEMINI.md templates (.md downloads)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
 - [Research: What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
+- [Model profile: Gemini Pro & Neon — personality profile](https://agent-tune.com/models/gemini-pro)
+- [Model profile: Gemini Flash & Hydrogen — personality profile](https://agent-tune.com/models/gemini-flash)
+- [Model profile: Gemma — open-weights personality profile](https://agent-tune.com/models/gemma)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
 - [Library: All 43 personality tuning files](https://agent-tune.com/library/)
+- [Guide & Builder: NotebookLM custom instructions & Audio Overview prompts](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview)

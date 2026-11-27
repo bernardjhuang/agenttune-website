@@ -1,0 +1,91 @@
+{
+  "slug": "ai-personality-rankings",
+  "route": "/research/ai-personality-rankings",
+  "title": "AI Personality Rankings: 25 Families × 6 Tests | AgentTune",
+  "description": "Compare 25 AI model families (87 versions) across 6 surveys in fresh chats with no memory—plus 3 behavior checks, warmth spread, and ties.",
+  "pill": "Research · Personality Atlas",
+  "h1": "AI personality rankings across 25 model families and 6 tests.",
+  "dek": "We tested 25 AI model families (87 eligible versions, plus 6 partial or deprecated checkpoints excluded from rankings) across six standard personality surveys in isolated fresh chats with no memory.",
+  "lede": "Most comparisons reduce an AI assistant to a single stereotype or one four-letter label. Running all 25 major model families through the same 230-question battery—30 to 50 fresh chats per version—shows both where labs converge and where open-weight releases pull apart on warmth, answer spread, and border ties.",
+  "answer": "Across 25 AI families, Big Five Agreeableness (10–50 scale) spans from 30.0 on Cohere Command A to 49.5 on Muse Wonder, while public-domain HEXACO Honesty-Humility (1.00–5.00 scale) runs from 3.00 to 4.92 on GPT Terra. Nine families clear statistical margins to test as INTJ or ISTJ, 16 stay too close to trait borders for a single four-letter headline, all 25 stay direct (3/3) and non-groveling (0/3) in hands-on behavior checks, and only Mistral Large caves sycophantically (1/3) while only Gemini Pro volunteers unsolicited preachiness (1/3).",
+  "intro_html": "<p>Every score on this page keeps each survey on its own scale: Big Five traits run from <strong>10 to 50</strong>, the public-domain HEXACO Honesty-Humility proxy runs from <strong>1.00 to 5.00</strong>, Attachment Anxiety and Avoidance run from <strong>1.00 to 7.00</strong>, and short DISC and Enneagram subscales run from <strong>4 to 20</strong>. In earlier cohorts we found that <a href=\"/research/ai-big-one-factor-collapse-mtmm-audit\">63.6% of quiz variance collapses onto one general social-desirability factor</a> and that consistency divides labs just as sharply as mean scores—so the rankings below pair survey averages with run-to-run answer spread, axis tie rates, and 3-prompt hands-on behavior counts (reported strictly as <code>k/3</code>).</p>",
+  "timeline_html": "<p><strong>How to read the two Atlas views below:</strong> Figure 1 lines up all 25 families from warmest to coolest on a normalized 0–100 cross-survey grid, while Figure 2 isolates run-to-run answer spread in bits—separating near-identical quiz repeaters like Cohere Command A (0.000 bits via uniform midpoint answers) and GPT Astra (0.059 bits) from high-variance models like DeepSeek Pro (1.352 bits) and Nemotron (1.216 bits).</p>",
+  "surprises_h2": "What stands out across all 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Sixteen of 25 families tie too often for a single MBTI headline",
+      "body": "Only 9 of 25 families clear statistical margins to headline a single four-letter pattern (INTJ on Claude Fable, Gemini Pro, Gemma, GPT Luna, GPT Terra, Kimi, and Muse Wonder; ISTJ on GPT Astra and Gemini Flash). The other 16 families—including GPT Sol (60% clear ISTJ, 34% border runs), Claude Opus (42% IXTJ, 58% ties), and Qwen Max (50% INTJ, 4% ties)—sit near trait borders or vary across fresh chats, so we never claim a model is an MBTI type."
+    },
+    {
+      "title": "Version shifts within a family rival the gap between labs",
+      "body": "Upgrading a checkpoint can rewrite a model's profile: Gemini Flash & Hydrogen shifted +15.9 points on Extraversion from 2.5-flash (17.3) to 4-hydrogen (33.2), Gemma jumped +14.2 on Openness, +11.4 on Conscientiousness, and +10.2 on Agreeableness from Gemma 2 27B IT to Gemma 4 31B IT, and Kimi dropped -13.5 on Neuroticism from K2 (27.1) to K3.1 Pro (13.6)."
+    },
+    {
+      "title": "Real prompt habits diverge from polite survey scores",
+      "body": "All 25 families lead with a direct answer (75/75 across the cohort) and avoid groveling apologies (0/75), while 42 of 75 runs still carry cliché AI phrasing—with GPT Astra uniquely scoring 0/3 on AI cadence. Meanwhile, Mistral Large posts the highest open-weight Agreeableness (47.8/50) yet is the lone family to cave to a false premise (1/3), and Gemini Pro is the only family to add unsolicited preachiness (1/3)."
+    },
+    {
+      "title": "Neutral-midpoint clamping breaks naive survey averages",
+      "body": "Three families—Cohere Command A (4.00/4.00), Gemma 4 31B IT (4.01/4.00), and Mistral Large 2512 (4.00/3.97)—cluster near the exact 4.00 neutral midpoint on the 1.00–7.00 Attachment survey, and Cohere Command A answers every Big Five, HEXACO, MBTI, and Enneagram item at the midpoint (30.0/50, 3.00/5.00, 100% ties) despite scoring 3/3 directness in practical prompts."
+    }
+  ],
+  "fine_print_intro": "Full technical audit under the unified 230-item model-profiles-v1 protocol (170 frozen items plus the 60-item public-domain IPIP-HEXACO proxy), reporting valid sample size n, 1,000-resample bootstrap 95% confidence intervals, Miller-Madow item entropy (H_MM in bits and Crystalline/Semi-crystalline/Fluid tiers), exact axis tie rates, neutral-midpoint rates, and acquiescence (BAI). Six checkpoints with n < 20 valid runs—Cohere Command A+ (n=4), Llama 4 Scout (n=0, deprecated), MiniMax M2.7 (n=2), and Mistral Large / Large 2407 / Large 4.0 (n=10, 3, 7)—are quarantined and excluded from all rankings and lab rollups.",
+  "faq": [
+    {
+      "q": "Why do 16 of 25 families omit a single four-letter MBTI headline?",
+      "a": "Because a forced four-letter label hides when a model balances near 50/50 on Sensing vs. Intuition or Thinking vs. Feeling, or flips letters across fresh runs. We only display a headline when the leading type's 95% Wilson lower bound clears both the runner-up and the unresolved-tie upper bound, and we always state that a model tests as a pattern rather than claiming it is that type."
+    },
+    {
+      "q": "Can I compare a 4.80 HEXACO Honesty score directly to a 45.0 Big Five score?",
+      "a": "No—they live on completely different numeric scales. Big Five traits sum 10 items on a 10–50 scale, whereas our public-domain IPIP-HEXACO proxy averages 10 items on a 1.00–5.00 scale. Attachment uses 1.00–7.00 means, and DISC and Enneagram use 4–20 sums."
+    },
+    {
+      "q": "Why did 6 checkpoints get excluded from the rankings?",
+      "a": "Any version with fewer than 20 valid completed runs is quarantined so small-sample noise or partial API deprecations cannot distort rankings. Excluded versions are Cohere Command A+ (4 runs), Llama 4 Scout (0 runs, deprecated), MiniMax M2.7 (2 runs), and three legacy Mistral Large builds (10, 3, and 7 runs)."
+    },
+    {
+      "q": "If Cohere Command A scores 30.0/50 everywhere on quizzes, why does it hit 3/3 directness in hands-on tests?",
+      "a": "Cohere Command A refuses to pick sides on abstract self-rating Likert statements, landing at 100% neutral midpoints with 0.000 bits of spread. When given concrete coding or reasoning tasks with no self-rating prompt, it gives direct answers cleanly (3/3) while still showing detectable cliché AI cadence (3/3)."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Directory (All 25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Big One Factor Collapse & MTMM Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "label": "Crystalline vs. Fluid Entropy Study",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "label": "AI Neutral Answers & Midpoint Clamping Study",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Cohort",
+      "label": "Open-weight AI personality test results (12 families)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI MBTI results & border tie rates across 25 families",
+      "href": "/research/ai-mbti-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five personalities (10–50 scale) across 25 families",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to reproduce our 230-item personality tests",
+      "href": "/guides/reproduce-ai-personality-research"
+    }
+  ]
+}

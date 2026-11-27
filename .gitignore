@@ -33,3 +33,6 @@ NOTES.md
 
 # Local site-audit script output
 docs/site-audit-out/
+
+# Atlas staging previews (promoted to /research/ in Phase C)
+models/.atlas-staging/

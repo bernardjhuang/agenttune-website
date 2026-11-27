@@ -7,8 +7,8 @@
   "pill": "Reference · Limits & Quotas",
   "h1": "AI custom instructions character limits (2026 cheat sheet).",
   "dek": "Exact field lengths, byte caps, and file paths across ChatGPT, OpenAI Codex, Claude, Claude Code, Meta Muse, Gemini, Cursor, and Grok.",
-  "lede": "Silent truncation is the fastest way to break custom instructions. ChatGPT caps each Custom Instructions box at <strong>1,500 characters</strong>, while OpenAI Codex caps the combined <code>AGENTS.md</code> chain at <strong>32 KiB (32,768 bytes)</strong>. Use the table below to check exact limits and recommended prompt sizes for every major AI tool.",
-  "answer": "ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.",
+  "lede": "When custom instructions stop working, silent truncation is often the culprit. ChatGPT caps each Custom Instructions box at <strong>1,500 characters</strong>. OpenAI Codex caps the combined <code>AGENTS.md</code> chain at <strong>32 KiB (32,768 bytes)</strong>. Use the cheat sheet below to check the exact limit and sweet-spot length for every major AI app.",
+  "answer": "ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept longer multi-paragraph Markdown, but keeping your rules to 5–8 bullets (500–1,200 characters) gets the most reliable compliance.",
   "sections": [
     {
       "h2": "2026 custom instructions limit & path reference table.",

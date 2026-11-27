@@ -7,7 +7,7 @@ Workflow · Cross-Platform Memory
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Do not paste raw chat archives across AI apps. Export your memory entries, review them locally in our browser AI Memory Export Reviewer to remove duplicates and redact emails or keys, separate personal facts from tone rules, and paste each part into the matching settings box.
+**Quick answer:** Do not paste raw chat archives across AI apps. Export your memory list, review it locally in our browser AI Memory Export Reviewer to strip duplicates and redact emails or keys, separate personal facts from tone rules, and paste each half into the right settings box.
 
 ## Five-step memory & preference migration workflow.
 

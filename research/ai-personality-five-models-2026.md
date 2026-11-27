@@ -7,29 +7,15 @@ Research · September 2026
 
 By Bernard Huang · Updated September 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-five-models-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-GPT-6 Astra · GPT-6 Sol · Grok 4.6 · Claude Opus 5.5 · Claude Fable 5.1
+We gave GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 five standard personality quizzes 100 times each in fresh chats (plus Grok 4.6’s single-profile report) to see how their answers compare.
 
 **Summary:** Across all four fresh-session cohorts, models score high on Openness, Conscientiousness, and Agreeableness, while many categorical labels depend on how exact ties are broken. Claude Opus 5.5 and Fable 5.1 share the closest matched protocol. Grok 4.6’s simulated draws and Muse Spark 1.3’s sequential summary are kept in separate evidence tiers.
 
-## Abstract
+## At a glance: what we tested and found
 
 We reanalyzed five AgentTune questionnaires run on September 24, 2026: MBTI (OEJTS), Big Five (IPIP-50), DISC (ODAT), Enneagram (OEPS), and Attachment (ECR-R). We verified 2,000 complete answer vectors for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1, plus three canonical vectors for Grok 4.6 (170 items per full 5-test battery).
 
 Key findings: Astra and Sol split on MBTI (ISTJ vs INTJ), though their prompt instructions also differed. Under a matched blind protocol, Opus 5.5 scores 2.04 points higher on Agreeableness than Fable 5.1. Exact ties affect 29% of Astra MBTI runs and 51% of Fable DISC runs. All scores measure prompt-conditioned self-descriptions, not fixed traits or task performance.
-
-## Five models, three kinds of evidence
-
-| Model | What was collected | What can be reproduced |
-| --- | --- | --- |
-| GPT-6 Astra | 100 fresh Codex sessions; five tests per session; xhigh effort | All 500 answer vectors; complete prompt; frozen scoring keys |
-| GPT-6 Sol | 100 fresh Codex sessions; five tests per session; xhigh effort | All 500 answer vectors; instruction prefix; full prompt not supplied |
-| Claude Opus 5.5 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
-| Claude Fable 5.1 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
-| Grok 4.6 | One canonical self-report plus 100 simulated draws per test | Three canonical vectors; no simulation harness or full Big Five/attachment vectors |
-
-For Astra and Sol, each fresh Codex session ran all five tests in sequence (100 sessions = 500 tests per model). For Opus 5.5 and Fable 5.1, each test ran in its own isolated headless session (500 sessions per model) with test names and scoring keys hidden. No personality tuning was installed.
-
-Astra and Sol saw named, fixed-order test batteries with slightly different instructions for adapting human items to software. Three supplied Astra files contained the same 100-session cohort, so we counted that cohort once.
 
 ## MBTI: keep the original result, reveal the tie
 
@@ -120,17 +106,31 @@ The Muse Spark 1.3 submission reports 100 sequential runs inside a single chat s
 
 Because raw answer vectors were not included, we preserve Muse’s numbers in the protocol file as reported aggregates and keep them separate from the 2,000 verified fresh-session vectors.
 
+## How to use the findings
+
+Use our [Claude Opus profile](https://agent-tune.com/models/claude-opus) and [Claude Fable profile](https://agent-tune.com/models/claude-fable) when writing custom instructions. A high Agreeableness score on a quiz is a good reason to test a directness rule on real tasks—not proof that a prompt works without testing. Draft rules in the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator) and compare before-and-after replies in the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
+
+## Five models, three kinds of evidence
+
+| Model | What was collected | What can be reproduced |
+| --- | --- | --- |
+| GPT-6 Astra | 100 fresh Codex sessions; five tests per session; xhigh effort | All 500 answer vectors; complete prompt; frozen scoring keys |
+| GPT-6 Sol | 100 fresh Codex sessions; five tests per session; xhigh effort | All 500 answer vectors; instruction prefix; full prompt not supplied |
+| Claude Opus 5.5 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
+| Claude Fable 5.1 | 100 fresh sessions per instrument; 500 total; high effort | All 500 answer vectors and prompt metadata; full questionnaire prompts withdrawn |
+| Grok 4.6 | One canonical self-report plus 100 simulated draws per test | Three canonical vectors; no simulation harness or full Big Five/attachment vectors |
+
+For Astra and Sol, each fresh Codex session ran all five tests in sequence (100 sessions = 500 tests per model). For Opus 5.5 and Fable 5.1, each test ran in its own isolated headless session (500 sessions per model) with test names and scoring keys hidden. No personality tuning was installed.
+
+Astra and Sol saw named, fixed-order test batteries with slightly different instructions for adapting human items to software. Three supplied Astra files contained the same 100-session cohort, so we counted that cohort once.
+
 ## What this adds to the earlier research
 
 The [May 2026 archive](https://agent-tune.com/research) combined fresh runs, repeated scoring of single self-assessments, and simulations (~2,200 records). Similarly, the [Opus 4.8 note](https://agent-tune.com/research/i-took-the-mbti-100-times) sampled 100 synthetic sheets from one probability profile.
 
 This September release adds 2,000 auditable per-item response vectors, frozen scoring keys, and explicit tie counts. It also confirms that the Big Five scorer reverses 18 items (matching all published means).
 
-## How to use the findings
-
-Use our [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) when writing custom instructions. A high Agreeableness score on a quiz is a good reason to test a directness rule on real tasks—not proof that a prompt works without testing. Draft rules in the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator) and compare before-and-after replies in the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
-
-## Data, methods and reproduction
+## The fine print: data, methods and reproduction
 
 - [Response vectors (JSON)](https://agent-tune.com/research/data/september-2026-responses.json): 2,000 complete fresh-session assessments and three canonical Grok vectors.
 - [Recomputed summaries (JSON)](https://agent-tune.com/research/data/september-2026-summary.json) and [numeric summary (CSV)](https://agent-tune.com/research/data/september-2026-summary.csv): counts, legacy labels, tie sets, means, and sample SDs.
@@ -142,9 +142,9 @@ Every vector was validated for length, integer values, and scale bounds, and all
 
 ## Questions people ask.
 
-### Are all five models INTJ?
+### Do all five models test as INTJ?
 
-No. GPT-6 Astra splits between ISTJ (45 tie-free) and INTJ (19 tie-free). Sol, Opus 5.5, and Fable 5.1 mostly score INTJ, though several runs tie on S/N or T/F. Grok 4.6 has one canonical INTJ vector.
+No. GPT-6 Astra splits between testing as ISTJ (45 tie-free) and INTJ (19 tie-free). Sol, Opus 5.5, and Fable 5.1 mostly test as INTJ, though several runs tie on S/N or T/F. Grok 4.6 has one canonical INTJ vector.
 
 ### Does this research prove AI models have personalities?
 
@@ -160,11 +160,13 @@ No. It measures how models answer human questionnaires under specific prompts. I
 
 ## Keep going.
 
-- [Guide: Claude Opus 5.5 results and tuning examples](https://agent-tune.com/guides/claude-opus-5-5-personality)
-- [Guide: Claude Fable 5.1 results and tuning examples](https://agent-tune.com/guides/fable-personality)
+- [Model Profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model Profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model Profile: GPT Astra — 6 checkpoints & tuning](https://agent-tune.com/models/gpt-astra)
+- [Atlas: AI personality rankings (25 families)](https://agent-tune.com/research/ai-personality-rankings)
 - [Tool: Custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-five-models-2026
@@ -172,13 +174,40 @@ Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical 
 
 ```
 @article{huang2026_ai_personality_five_models_2026,
-  author  = {Huang, Bernard},
-  title   = {What five AI models say about themselves},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-09-25},
-  url     = {https://agent-tune.com/research/ai-personality-five-models-2026},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-five-models-2026.md}
+  author    = {Huang, Bernard},
+  title     = {What five AI models say about themselves},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-09-25},
+  url       = {https://agent-tune.com/research/ai-personality-five-models-2026},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-five-models-2026.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_personality_five_models_2026",
+  "type": "article-journal",
+  "title": "What five AI models say about themselves",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        9,
+        25
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-personality-five-models-2026"
 }
 ```
 
@@ -187,8 +216,8 @@ Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical 
 > Source: [https://agent-tune.com/research/ai-personality-five-models-2026](https://agent-tune.com/research/ai-personality-five-models-2026) · [Markdown mirror](https://agent-tune.com/research/ai-personality-five-models-2026.md)
 ```
 
-[← 20-Model AI Personality Rankings](https://agent-tune.com/research/ai-personality-rankings)
-[Study 19 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[← Does Personality Tuning Change Answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
+[Study 29 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Big Five 50-Item Level Comparison →](https://agent-tune.com/research/ai-big-five-item-level-comparison)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

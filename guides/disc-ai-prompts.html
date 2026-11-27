@@ -53,6 +53,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/" class="active">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -89,7 +90,7 @@
 
       <section>
         <h2>1. Dominance (D): bottom line first, zero hedging.</h2>
-        <p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our <a href="/tests/disc">ODAT evaluations</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href="/library/disc/d-dominance">/library/disc/d-dominance</a>.</p><div class="guide-snippet" data-tuning-prompt>## Communication preferences — DISC Dominance (D)
+        <p>Because untuned models score between 4.0 and 5.4 out of 20 on Dominance on our 16-question <a href="/tests/disc">DISC work-style survey (ODAT)</a>, the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: <a href="/library/disc/d-dominance">DISC Dominance (D) tuning profile</a>.</p><div class="guide-snippet" data-tuning-prompt>## Communication preferences — DISC Dominance (D)
 
 - Start every reply with the bottom-line answer, decision, or recommendation.
 - Give one clear recommendation first rather than an unranked menu of options.
@@ -101,7 +102,7 @@
 
       <section>
         <h2>2. Influence (I): high-momentum brainstorming and narrative clarity.</h2>
-        <p>Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: <a href="/library/disc/i-influence">/library/disc/i-influence</a>.</p><div class="guide-snippet">## Communication preferences — DISC Influence (I)
+        <p>Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: <a href="/library/disc/i-influence">DISC Influence (I) tuning profile</a>.</p><div class="guide-snippet">## Communication preferences — DISC Influence (I)
 
 - Lead with the big picture, core hook, or human takeaway before diving into mechanics.
 - When brainstorming, offer distinct, vivid angles with concrete examples rather than dry taxonomies.
@@ -113,7 +114,7 @@
 
       <section>
         <h2>3. Steadiness (S): calm, predictable, step-by-step execution.</h2>
-        <p>Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: <a href="/library/disc/s-steadiness">/library/disc/s-steadiness</a>.</p><div class="guide-snippet">## Communication preferences — DISC Steadiness (S)
+        <p>Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: <a href="/library/disc/s-steadiness">DISC Steadiness (S) tuning profile</a>.</p><div class="guide-snippet">## Communication preferences — DISC Steadiness (S)
 
 - Keep a calm, steady, matter-of-fact tone without rushed jumps or exaggerated hype.
 - Break multi-part tasks into small, sequential steps with a clear verification check after each step.
@@ -124,7 +125,7 @@
 
       <section>
         <h2>4. Conscientiousness (C): precision, edge cases, and primary evidence.</h2>
-        <p>Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: <a href="/library/disc/c-conscientiousness">/library/disc/c-conscientiousness</a>.</p><div class="guide-snippet">## Communication preferences — DISC Conscientiousness (C)
+        <p>Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: <a href="/library/disc/c-conscientiousness">DISC Conscientiousness (C) tuning profile</a>.</p><div class="guide-snippet">## Communication preferences — DISC Conscientiousness (C)
 
 - Prioritize accuracy, exact definitions, and verifiable evidence over speed or brevity.
 - State assumptions, boundary conditions, and sample sizes explicitly.
@@ -134,8 +135,8 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2 id="workplace-blends-and-odat-math">All 12 two-letter DISC blends & how ODAT scores work.</h2>
-        <p>On our <a href="/tests/disc">free 16-item ODAT runner</a> (no email required), each style sums 4 direct statements rated 1–5 (range <strong>4 to 20</strong>). When a unique runner-up lands within 2 points of your top style, you get a two-letter blend:</p><div class="guide-table-wrap" role="region" aria-label="All 12 two-letter DISC blends &amp; how ODAT scores work.: table 2" tabindex="0"><table><thead><tr><th scope="col">Blend</th><th scope="col">Workplace shorthand</th><th scope="col">How to tune your AI or team README</th></tr></thead><tbody><tr><th scope="row"><code>DC</code> / <code>CD</code></th><td>Architect-Driver</td><td>Lead with the conclusion, back it with numbers and failure modes; skip small talk.</td></tr><tr><th scope="row"><code>DI</code> / <code>ID</code></th><td>Catalyst-Closer</td><td>Open with the boldest high-leverage option and next action; keep prose tight.</td></tr><tr><th scope="row"><code>DS</code> / <code>SD</code></th><td>Steady Executor</td><td>Focus on practical execution milestones, clear ownership, and realistic timelines.</td></tr><tr><th scope="row"><code>IS</code> / <code>SI</code></th><td>Collaborative Coach</td><td>Warm, constructive register; connect changes to team impact cleanly.</td></tr><tr><th scope="row"><code>IC</code> / <code>CI</code></th><td>Analytical Storyteller</td><td>Pair rigorous evidence with a clear executive narrative for stakeholders.</td></tr><tr><th scope="row"><code>SC</code> / <code>CS</code></th><td>Careful Systems Builder</td><td>Walk through changes methodically, flag risks early, verify edge cases before shipping.</td></tr></tbody></table></div><p>Our scorer reports exact top-score ties transparently (such as <code>S/C</code>) instead of picking S ahead of C artificially (<a href="/tests/disc.md">inspect the ODAT Markdown spec</a> · <a href="/tools/how-to-work-with-me">How to Work With Me card builder</a>).</p>
+        <h2 id="workplace-blends-and-odat-math">All 12 two-letter DISC blends — and the fine print on ODAT scoring.</h2>
+        <p>On our <a href="/tests/disc">free 16-item ODAT runner</a> (no email required), each style sums 4 direct statements rated 1–5 (range <strong>4 to 20</strong>). When a unique runner-up lands within 2 points of your top style, you get a two-letter blend:</p><div class="guide-table-wrap" role="region" aria-label="All 12 two-letter DISC blends — and the fine print on ODAT scoring.: table 2" tabindex="0"><table><thead><tr><th scope="col">Blend</th><th scope="col">Workplace shorthand</th><th scope="col">How to tune your AI or team README</th></tr></thead><tbody><tr><th scope="row"><code>DC</code> / <code>CD</code></th><td>Architect-Driver</td><td>Lead with the conclusion, back it with numbers and failure modes; skip small talk.</td></tr><tr><th scope="row"><code>DI</code> / <code>ID</code></th><td>Catalyst-Closer</td><td>Open with the boldest high-leverage option and next action; keep prose tight.</td></tr><tr><th scope="row"><code>DS</code> / <code>SD</code></th><td>Steady Executor</td><td>Focus on practical execution milestones, clear ownership, and realistic timelines.</td></tr><tr><th scope="row"><code>IS</code> / <code>SI</code></th><td>Collaborative Coach</td><td>Warm, constructive register; connect changes to team impact cleanly.</td></tr><tr><th scope="row"><code>IC</code> / <code>CI</code></th><td>Analytical Storyteller</td><td>Pair rigorous evidence with a clear executive narrative for stakeholders.</td></tr><tr><th scope="row"><code>SC</code> / <code>CS</code></th><td>Careful Systems Builder</td><td>Walk through changes methodically, flag risks early, verify edge cases before shipping.</td></tr></tbody></table></div><p>Our scorer reports exact top-score ties transparently (such as <code>S/C</code>) instead of picking S ahead of C artificially (<a href="/tests/disc.md">inspect the ODAT Markdown spec</a> · <a href="/tools/how-to-work-with-me">How to Work With Me card builder</a>).</p>
       </section>
 
       <div class="divider tight"></div>

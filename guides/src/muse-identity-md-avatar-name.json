@@ -12,7 +12,7 @@
   "h1": "How to change Meta Muse’s avatar, name, and Identity.md.",
   "dek": "Step-by-step mobile and web paths for swapping Muse's avatar, display name, and voice—and why Identity.md must stay separate from Soul.md.",
   "lede": "Meta Muse splits personalization across three Markdown files under Assistant Identity: <strong>Identity.md</strong>, <strong>Soul.md</strong>, and <strong>Memory.md</strong>. Use the Avatar Picker and <code>Identity.md</code> to change Muse’s display name, avatar icon, or voice; use <code>Soul.md</code> for answer length, formatting, and pushback rules.",
-  "answer": "To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep tone and formatting rules inside Soul.md so avatar updates never overwrite your communication preferences.",
+  "answer": "To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep your tone and formatting rules inside Soul.md so avatar updates never overwrite how Muse talks to you.",
   "sections": [
     {
       "h2": "Avatar Picker vs. Identity.md text editor (iOS, Android & muse.ai).",

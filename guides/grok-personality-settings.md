@@ -30,12 +30,12 @@ Paste this starter block into **Settings → Customize Grok**, or pick any of th
 - Challenge weak assumptions in my question directly and explain why.
 ```
 
-## What Grok's xAI default personality looks like (Grok 4.7 n=100 vs Grok 4.6).
+## What Grok's default personality tests as (Grok 4.7 vs. 4.6 — and the fine print).
 
-In November 2026, we tested **100 fresh independent sessions on Grok 4.7** (`x-ai/grok-4.7`) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report ([full Grok study →](https://agent-tune.com/research/what-personality-type-is-grok)):
+In November 2026, we tested **100 fresh independent sessions on Grok 4.7** (`x-ai/grok-4.7`) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report ([full Grok model profile →](https://agent-tune.com/models/grok)):
 
-- **Grok 4.7 (Nov 2026, n=100 fresh):** 82 INTJ / 18 ISTJ (57 INTJ, 23 IXTJ, 18 ISTJ tie-free; 25 runs with ties), Enneagram **5w6 (78/100)**, DISC **SC (75)**, Big Five **O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76**, and **96/100 Secure / 4 Avoidant** (anxiety 1.94, avoidance 3.48).
-- **Grok 4.6 (Sept 2026, 1 canonical vector + 100 simulated draws):** INTJ, Type 5 (19/20), pure DISC C, **Agreeableness 33/50**, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).
+- **Grok 4.7 (Nov 2026, n=100 fresh chats):** tested as 82 INTJ / 18 ISTJ under legacy tie-breaks (57 clear INTJ, 23 IXTJ border ties, 18 clear ISTJ; 25 runs with ties), Enneagram **5w6 (78/100)**, DISC **SC (75)**, Big Five **O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76**, and **96/100 Secure / 4 Avoidant** (anxiety 1.94, avoidance 3.48).
+- **Grok 4.6 (Sept 2026 fine print — 1 canonical vector + 100 simulated draws):** tested as INTJ, Type 5 (19/20), pure DISC C, **Agreeableness 33/50**, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).
 
 Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.
 
@@ -141,11 +141,11 @@ In its supplied September 2026 self-report, Grok 4.6 reported an avoidance mean 
 
 - [AgentTune: How to give a Grok Bot a personality](https://agent-tune.com/guides/grokbot-personality)
 
-- [AgentTune Research: What personality type is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)
+- [AgentTune: Grok model personality profile](https://agent-tune.com/models/grok)
 
 ## Keep going.
 
 - [Guide: How to give a Grok Bot a personality](https://agent-tune.com/guides/grokbot-personality)
-- [Research: What personality type is Grok? (Grok 4.6 & 4.3 data)](https://agent-tune.com/research/what-personality-type-is-grok)
+- [Model profile: Grok — 4.7, 4.6 & 4.3 data & attachment analysis](https://agent-tune.com/models/grok)
 - [Guide: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Library: Browse all 43 personality tuning files](https://agent-tune.com/library/)

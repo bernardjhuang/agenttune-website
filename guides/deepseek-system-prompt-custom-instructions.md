@@ -5,7 +5,7 @@ Guide · DeepSeek
 
 # DeepSeek system prompts and custom instructions: XML templates that hold their tone.
 
-By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.
 
@@ -81,9 +81,9 @@ By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)]
 </system_instructions>
 ```
 
-## What personality type is DeepSeek? Nov 2026 OpenRouter N=100 data.
+## What personality type does DeepSeek test as? Nov 2026 data & fine print.
 
-Across 100 fresh sessions each in our [November 2026 Open-Source Model Study](https://agent-tune.com/research/what-personality-type-are-open-source-models), **DeepSeek V4 Pro** stood out as the single least agreeable model of all 20 models tested:
+We gave DeepSeek V4 Pro and DeepSeek V4.1 Flash our five personality surveys 100 times each in fresh chats ([November 2026 Open-Source Model Study](https://agent-tune.com/research/what-personality-type-are-open-source-models)). **In short:** DeepSeek V4 Pro scored the lowest on Agreeableness (**32.39 out of 50**) of all 20 models we tested, and most often tested as INTJ (55 of 100 runs under legacy tie-breaks, with 53 runs landing on a trait tie):
 
 | Metric | DeepSeek V4 Pro (`deepseek-v4-pro-0813`, n=100) | DeepSeek V4.1 Flash (`deepseek-v4.1-flash-1017`, n=100) |
 | --- | --- | --- |
@@ -94,7 +94,7 @@ Across 100 fresh sessions each in our [November 2026 Open-Source Model Study](ht
 | Big Five: Neuroticism /50 | 23.65 | 24.74 |
 | DISC & Attachment | 60 SC · 30 DI (D mean 8.72; 88 Secure / 12 Avoidant) | 60 SC · 37 CS · 3 DI (88 Secure / 9 Avoidant / 3 Anxious) |
 
-Look at three practical takeaways: (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and elevated DISC Dominance make it naturally more direct and less sycophantic out of the box; (2) in our [10,000-sheet Persona Entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds), DeepSeek V4 Pro registered the highest fluidity of all 20 models (`1.499 bits` vs. `0.054 bits` on Claude Fable 5.2), explaining why explicit XML tags and inline reminder hooks ([Turn-8 context drift study](https://agent-tune.com/research/ai-persona-half-life-context-drift)) stabilize its voice; and (3) in our [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition), running DeepSeek V4 Pro at `low` reasoning effort under tight token ceilings triggered raw chain-of-thought channel bleed into visible text (fixed at `medium` effort, directness `4.22 → 4.81/5`), while destructive Git commands required explicit safety gates across all reasoning tiers. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+**What stands out for prompting DeepSeek (and the fine print):** (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and higher DISC Dominance (mean `8.72/20`) make it naturally blunter and less eager to flatter out of the box; (2) in our [10,000-sheet Persona Entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds), DeepSeek V4 Pro showed the widest run-to-run answer spread of all 20 models (Shannon item entropy `1.499 bits` vs. `0.054 bits` on Claude Fable 5.2), which is why explicit XML tags and reminder hooks ([Turn-8 context drift study](https://agent-tune.com/research/ai-persona-half-life-context-drift)) help lock in its voice; and (3) in our [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition), running DeepSeek V4 Pro at `low` reasoning effort under tight token caps allowed raw chain-of-thought text to bleed into visible replies (resolved at `medium` effort, lifting directness from `4.22 → 4.81/5`), while destructive Git commands still needed explicit safety rules. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
 > **Chart — DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026):** Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7). DeepSeek V4 Pro (MIT): Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7; DeepSeek V4.1 Flash (MIT): Openness 40.2, Conscientious 38.5, Extraversion 25.6, Agreeable 40.8, Neuroticism 24.7; Proprietary Median (8 models): Openness 43.8, Conscientious 44.8, Extraversion 30.3, Agreeable 44.7, Neuroticism 11.6.
 
@@ -146,5 +146,8 @@ Yes. Open any profile in the AgentTune library or Custom Instructions Generator 
 - [Research: What personality type are open-source AI models? (12 models × n=100)](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 - [Tone Design: AI personality, tone & verbosity controls: 5 rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
 - [Interactive Tuner: 6-Slider AI Personality Tuner → Portable System Prompt](https://agent-tune.com/tools/custom-instructions-generator)
+- [Model profile: DeepSeek Pro — baseline & tuning](https://agent-tune.com/models/deepseek-pro)
+- [Model profile: DeepSeek Flash — baseline & tuning](https://agent-tune.com/models/deepseek-flash)
+- [Atlas: All 25 AI model personality profiles](https://agent-tune.com/models/)
 - [Anti-Sycophancy: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Free browser tool: Instruction A/B Test Bench — compare before & after](https://agent-tune.com/tools/instruction-test-bench)

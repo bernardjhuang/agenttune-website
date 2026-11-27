@@ -5,9 +5,9 @@ Interactive Matcher · All 5 Systems
 
 # Which personality system should you use to tune your AI?
 
-By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Use DISC or MBTI for faster bottom-line structure; use Big Five (OCEAN) to adjust a single trait (like High Openness or Low Extraversion) without adopting a full persona; and use Enneagram or Attachment to control how candidly the AI pushes back or cushions critique.
+**Quick answer:** Pick DISC or MBTI when you want faster, bottom-line-first structure. Pick Big Five (OCEAN) when you want to adjust one trait at a time (like High Openness or Low Agreeableness). Pick Enneagram or Attachment when you want to control how directly the AI challenges your ideas or paces check-ins.
 
 ## Interactive 20-second matcher: match your AI annoyance to the right templates.
 
@@ -63,11 +63,15 @@ Ordered checklist output without changing warmth.
 | Enneagram | Core defensive triggers, critique directness, motivational framing | 9 types (1–9) | [36 items (~5 min, OEPS)](https://agent-tune.com/tests/enneagram) | Anti-sycophancy pushback & coaching tone ([Enneagram guide →](https://agent-tune.com/guides/enneagram-ai-prompts)) |
 | Attachment | Feedback cushioning, check-in cadence, emotional steadiness | 4 styles (Secure, Anxious, Avoidant, Disorganized) | [36 items (~5 min, ECR-R)](https://agent-tune.com/tests/attachment) | Preventing harsh critique or needy over-apologies ([Attachment guide →](https://agent-tune.com/library/attachment/avoidant)) |
 
-## What our September & November 2026 benchmark data says about choosing between systems.
+## What our test results say about choosing a system (and the fine print).
 
-- **Models share high default Agreeableness and collapse 63.6% of variance onto one RLHF axis:** Across our 10,000-sheet November 2026 OpenRouter study and 2,000-sheet September study, proprietary Big Five Agreeableness averaged **43.7–47.1 / 50** while DISC Dominance sat at **4.00–5.58 / 20**—and Principal Component Analysis shows [63.58% of Big Five variance collapses onto a single "Big One" alignment factor](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) while Campbell–Fiske MTMM cross-test correlations diverge from human norms.
-- **Binary type quizzes have frequent ties & a 27.7× entropy divide:** On OEJTS MBTI, **59 of 400 September sessions** (and up to 93/100 on Llama 4 Maverick) tied on at least one axis, and per-item Shannon entropy spans **27.7×** from crystalline Claude Fable 5.2 (`0.054 bits`) to fluid DeepSeek V4 Pro (`1.499 bits`; [entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)).
-- **Concrete rules do the work, not the label:** In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and 60-reply pilot, plain behavioral rules lifted DeepSeek V4 Pro correctness **+16.7 pp (78.3% → 95.0%)** and raised answer-first openings from **14/20 to 19/20**. Pick whichever framework helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
+We tested 20 AI models across 10,000 questionnaire runs in November 2026 and 2,000 runs in September 2026 to see how untuned models answer human personality surveys—and what actually changes when you add custom instructions.
+
+- **Untuned models cluster together on warmth and caution:** Across our studies, default proprietary models scored very high on Big Five Agreeableness (**43.7–47.1 / 50**) and very low on DISC Dominance (**4.00–5.58 / 20**). Left alone, almost every assistant defaults to a polite, cautious, conflict-avoidant style.
+- **Models often land on a border between two types:** On our 32-question MBTI-style survey, **59 of 400 September sessions** (and up to 93/100 on Llama 4 Maverick) tied on at least one preference pair, and models vary widely in how steady their answers are from run to run.
+- **Concrete rules do the work, not the label:** In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and 60-reply pilot, plain behavioral rules lifted DeepSeek V4 Pro correctness **+16.7 pp (78.3% → 95.0%)** and raised answer-first openings from **14/20 to 19/20**. Pick whichever system helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
+
+**The fine print (psychometric audit):** On the 32-item OEJTS, 16-item ODAT, 36-item OEPS, 50-item IPIP-50, and 36-item ECR-R, Principal Component Analysis shows [63.58% of Big Five variance collapses onto a single "Big One" alignment factor](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) while Campbell–Fiske MTMM cross-test correlations diverge from human norms. Per-item Shannon entropy spans **27.7×** from crystalline Claude Fable 5.2 (`0.054 bits`) to fluid DeepSeek V4 Pro (`1.499 bits`; [entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)).
 
 > **Chart — Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme):** Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix. Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; DeepSeek V4 Pro: Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7.
 

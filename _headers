@@ -6,7 +6,7 @@
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Frame-Options: SAMEORIGIN
-  X-AgentTune-Specimen: Monograph-1A; studies=32; pc1=63.6%; entropy=0.054..1.499b; ties=preserved
+  X-AgentTune-Specimen: Monograph-1A; studies=36; families=25; pc1=63.6%; entropy=0.054..1.499b; ties=preserved
   Link: <https://agent-tune.com/llms.txt>; rel="describedby"; type="text/markdown", <https://agent-tune.com/SKILL.md>; rel="service-doc"; type="text/markdown", <https://agent-tune.com/.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"
 
 # LLM index, skill & MCP server card — CORS-enabled for agents, kept out of search result pages
@@ -63,6 +63,34 @@
 /research/*.md
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+/models/*.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+/tools/*.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/>; rel="canonical"
+  X-Robots-Tag: noindex
+/guides/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/guides/>; rel="canonical"
+  X-Robots-Tag: noindex
+/library/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/library/>; rel="canonical"
+  X-Robots-Tag: noindex
+/tests/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/tests/>; rel="canonical"
   X-Robots-Tag: noindex
 /research.md
   Content-Type: text/markdown; charset=utf-8

@@ -7,7 +7,7 @@ Guide · MCP & Agent-First
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, run local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
+**Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, score local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
 
 ## One-command setup across Claude Code, Claude Web, Cursor, and Codex.
 
@@ -19,7 +19,7 @@ The AgentTune MCP endpoint at `https://agent-tune.com/mcp` is stateless, read-on
 | Claude Web & Desktop Connectors | Settings → Connectors → Add custom connector → URL: `https://agent-tune.com/mcp` |
 | Cursor (`.cursor/mcp.json`) | `{"mcpServers":{"agenttune":{"url":"https://agent-tune.com/mcp"}}}` |
 | OpenAI Codex CLI / MCP clients | Point Streamable HTTP client at `https://agent-tune.com/mcp`, or tell the agent to read `https://agent-tune.com/SKILL.md`. |
-| Any web-fetching agent (no MCP needed) | Read [@@CELL_0@@](https://agent-tune.com/SKILL.md), [@@CELL_1@@](https://agent-tune.com/llms.txt), or fetch any raw tuning at `/library/{system}/{slug}.md`. |
+| Any web-fetching agent (no MCP needed) | Read [`/SKILL.md`](https://agent-tune.com/SKILL.md), [`/llms.txt`](https://agent-tune.com/llms.txt), or fetch any raw tuning at `/library/{system}/{slug}.md`. |
 
 ## What the 6 MCP tools and machine endpoints expose.
 

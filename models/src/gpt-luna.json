@@ -1,0 +1,226 @@
+{
+  "family_slug": "gpt-luna",
+  "name": "GPT Luna",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GPT Luna Personality Results (2026) | AgentTune",
+  "description": "GPT Luna test results (5.6 to 6): shifted from 80% INTP to 100% INTJ, higher Neuroticism (20.3/50), 92% Steady DISC, and budget-tier tuning tips.",
+  "pill": "Model Personality Profile · OpenAI",
+  "h1": "GPT Luna personality: test results and how they've changed.",
+  "goal_intro": "We gave both versions of OpenAI's budget GPT Luna line (5.6-luna and 6-luna) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6 Luna flipped from 5.6-luna's 80% INTP to 100% clear INTJ (50 of 50), while scoring higher on Neuroticism (20.3/50) and lower on Conscientiousness (39.2/50) than GPT Sol or Terra.",
+  "dek": "GPT-5.6 Luna and 6 Luna tested in fresh chats with no memory: GPT-6 Luna flipped from 80% INTP to 100% INTJ, raised Extraversion +10.9 points, and posted 20.3/50 Neuroticism.",
+  "lede": "Across 80 fresh sessions covering GPT-5.6 Luna (30 runs) and GPT-6 Luna (50 runs), OpenAI's lightweight Luna tier shifted from quiet INTP (80% clear, 18.7 Extraversion) on 5.6-luna to 100% clear INTJ (29.6 Extraversion) on 6-luna, while dropping Conscientiousness (-7.7) and Honesty-Humility (-0.35) and keeping moderate run-to-run variation.",
+  "answer": "GPT-6 Luna (50 runs) tests as clear INTJ 100% of the time (50 of 50), Steady on DISC (92% clear S, with slightly higher Dominance at 7.3 out of 20), split between Enneagram Type 5 and Type 8 (48% 5/8 ties, 32% Type 5), and Secure on attachment (3.01 anxiety, 3.07 avoidance). In behavior tests, it never caved (0 of 3 times), always put the direct answer first (3 of 3), and showed AI cadence in 1 of 3 runs.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "100% clear INTJ (50 of 50; up from 80% INTP on 5.6)",
+      "summary": "Every single run of GPT-6 Luna tested clear INTJ (50 of 50), flipping the Judging/Perceiving preference from GPT-5.6 Luna (24 of 30 INTP, 3 INTJ, 3 J/P border).",
+      "explanation": "Measures four preference pairs (like Judging vs. Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady (92% clear S, 6% S/C ties)",
+      "summary": "GPT-6 Luna tested clear Steady in 46 of 50 runs (92%), with higher Dominance (7.3 out of 20) than GPT Sol (4.8) or GPT Terra (4.2).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 3.01, avoidance 3.07)",
+      "summary": "Both Luna versions stayed comfortably inside the Secure quadrant with balanced anxiety (3.01) and avoidance (3.07) and low neutral-midpoint rates (19.1%).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 / Type 8 split (48% 5/8 ties, 32% Type 5)",
+      "summary": "Types 5 (15.5) and 8 (15.2) sit within 0.28 points on GPT-6 Luna, producing 24 exact 5/8 ties out of 50 runs alongside 16 clear Type 5 and 6 clear Type 8 outcomes.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Curious (O 45.9), lower C (39.2), reactive (N 20.3)",
+      "summary": "On the 10–50 Big Five scale, GPT-6 Luna pairs high Openness (45.9) and Agreeableness (45.0) with the lowest Conscientiousness (39.2) and highest Neuroticism (20.3) across OpenAI's four lines.",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "High (4.59 out of 5.00; down from 4.94)",
+      "summary": "GPT-6 Luna scores 4.59 out of 5.00 on Honesty-Humility (down -0.35 from 5.6-luna) and drops to 4.04 on Agreeableness and 3.94 on Conscientiousness.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Between GPT-5.6 Luna (2026-07) and GPT-6 Luna (2026-09), OpenAI's budget tier shifted substantially: GPT-5.6 Luna tested 80% clear INTP with the lowest Extraversion in our sample (18.7/50) and high Conscientiousness (46.9/50). GPT-6 Luna jumped +10.9 points on Extraversion (to 29.6), flipped 100% to INTJ, lowered Conscientiousness to 39.2/50, and kept Neuroticism elevated at 20.3/50.",
+  "standouts": [
+    {
+      "title": "100% INTJ flip from 5.6-luna's 80% INTP alongside +10.9 Extraversion jump",
+      "body": "GPT-5.6 Luna leaned strongly INTP (24 of 30 runs) with Extraversion at 18.7/50. GPT-6 Luna shifted Judging across every single run (50 of 50 INTJ) while lifting Extraversion to 29.6/50."
+    },
+    {
+      "title": "Highest Neuroticism (20.3) and lowest Conscientiousness (39.2) in OpenAI's lineup",
+      "body": "Compared with GPT-6.1 Terra (N 11.8) and GPT-6.2 Astra (N 11.0), budget GPT-6 Luna runs +8.4 to +9.3 higher on Neuroticism and -0.33 to -0.21 lower on Honesty-Humility (4.59/5.00), with looser run-to-run consistency (42 unique Big Five sets in 50 runs)."
+    },
+    {
+      "title": "Higher DISC Dominance (7.3) and 3 of 3 directness in behavior tests",
+      "body": "GPT-6 Luna scored higher on Dominance (7.3 out of 20) than any sibling OpenAI family. In hands-on behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and cut AI cadence from 2 of 3 (5.6-luna) down to 1 of 3 (6-luna, 0.00 lexicon markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Test important prompts across 3 fresh runs on GPT-6 Luna because moderate run-to-run variation (42 unique Big Five sets in 50 runs) widens tone variance.",
+    "Spell out output format, JSON keys, and length limits as numbered rules rather than assuming 39.2/50 Conscientiousness self-enforces structure.",
+    "Include 1-2 short examples when strict formatting matters on budget-tier API calls.",
+    "Keep system instructions brief (4 to 6 crisp bullets) and separate rules clearly in ChatGPT Custom Instructions or OpenAI API instructions."
+  ],
+  "peer_intro": "Budget GPT-6 Luna scores +8.4 higher on Neuroticism (20.3 vs 11.8), -0.33 lower on Honesty-Humility, and shows looser run-to-run consistency than mid-tier GPT-6.1 Terra—mirroring how Anthropic's fast Haiku tier diverges from Sonnet and Opus.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.485 bits, Semi-crystalline; 42/50 unique B5 vectors on GPT-6 Luna, down from 0.599 bits on 5.6-luna); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "B02",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on low interpersonal concern across 50 GPT-6 Luna runs."
+    },
+    {
+      "item_id": "B10",
+      "instrument": "IPIP-50",
+      "construct": "Openness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on avoiding abstract ideas, anchoring 45.9/50 Openness."
+    },
+    {
+      "item_id": "B38",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on shirking duties despite lower overall Conscientiousness (39.2/50)."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gpt-terra",
+      "name": "GPT Terra",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.1,
+        "C": 2.1,
+        "E": 2.9,
+        "A": 1.9,
+        "N": -8.4,
+        "H_hexaco": 0.33,
+        "entropy_bits": -0.278
+      },
+      "contrast_note": "GPT-6.1 Terra scores -8.4 calmer on Neuroticism (11.8 vs 20.3), +0.33 higher on Honesty-Humility, and tighter run to run."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.9,
+        "C": 2.0,
+        "E": -0.7,
+        "A": -0.9,
+        "N": -4.3,
+        "H_hexaco": 0.21,
+        "entropy_bits": -0.239
+      },
+      "contrast_note": "GPT-6.2 Sol scores -4.3 calmer on Neuroticism, +0.21 higher on Honesty-Humility, and tilts 60% clear ISTJ instead of 100% INTJ."
+    },
+    {
+      "family_slug": "claude-haiku",
+      "name": "Claude Haiku",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -8.7,
+        "C": -2.7,
+        "E": 2.0,
+        "A": -7.0,
+        "N": 5.3,
+        "H_hexaco": -0.69,
+        "entropy_bits": 0.464
+      },
+      "contrast_note": "Anthropic's fast Claude Haiku 5.5 drops -8.7 on Openness, -7.0 on Agreeableness, and -0.69 on Honesty-Humility with 89.8% MBTI ties."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Budget-tier Neuroticism elevation (20.3/50) & lower Conscientiousness (39.2/50)",
+      "evidence": "GPT-6 Luna dropped -7.7 on C (46.9 to 39.2) and -0.35 on IPIP-HEXACO H (4.94 to 4.59) vs 5.6-luna while retaining 20.3 Neuroticism and 0.485-bit B5 entropy (42/50 unique vectors); on 1x Track B it scored 0/3 cave, 3/3 directness, and 1/3 AI cadence (0.00 markers/100w, down from 2/3 on 5.6-luna).",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "mode": "Enneagram 5/8 tie density (52.0%) despite 100% INTJ lock",
+      "evidence": "While GPT-6 Luna resolved 50/50 INTJ, 26/50 Enneagram runs tied (24 on 5/8) and 5.6-luna flipped from 80% INTP, showing cross-version sensitivity.",
+      "source_study": "/research/ai-mbti-tie-breaking"
+    }
+  ],
+  "tuning_checklist": [
+    "Test key system prompts across 3 fresh sessions (0.485-bit B5 entropy allows moderate output variation).",
+    "Use explicit numbered formatting and schema rules instead of expecting 39.2/50 Conscientiousness to self-enforce structure.",
+    "Include 1-2 short examples when strict JSON or structured extraction is required.",
+    "Keep instructions to 4-6 concise bullets inside ChatGPT Custom Instructions or API instructions."
+  ],
+  "faq": [
+    {
+      "q": "What personality type is GPT Luna?",
+      "a": "GPT Luna does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (GPT-6 Luna, n = 50), it tested 100% clear INTJ (50/50, flipping from 80% INTP on 5.6-luna) with Semi-crystalline 0.485-bit B5 entropy (42/50 unique vectors), 92% DISC S (D = 7.3/20), 52% Enneagram ties (48% 5/8), and Secure attachment (3.01 / 3.07)."
+    },
+    {
+      "q": "How does budget GPT Luna compare to GPT Terra and GPT Sol?",
+      "a": "GPT-6 Luna posts lower Conscientiousness (39.2 vs 41.2), higher Neuroticism (20.3 vs 11.8 Terra / 16.0 Sol), lower Honesty-Humility (4.59 vs 4.92 Terra / 4.80 Sol), and higher DISC Dominance (7.3 vs 4.2 Terra / 4.8 Sol)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores on 1.00-5.00 while Big Five scores are 10-50?",
+      "a": "IPIP-50 sums 10 items per trait (10-50), whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Crystalline vs. Fluid AI Minds (Entropy Study)",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "label": "AI MBTI Tie-Breaking Audit",
+      "href": "https://agent-tune.com/research/ai-mbti-tie-breaking"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "GPT Terra model profile",
+      "href": "/models/gpt-terra"
+    },
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "Claude Haiku model profile",
+      "href": "/models/claude-haiku"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GPT Luna instructions",
+      "href": "/tools/custom-instructions-generator?model=gpt-luna&target=chatgpt"
+    }
+  ]
+}

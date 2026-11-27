@@ -1,0 +1,131 @@
+{
+  "family_slug": "claude-opus",
+  "name": "Claude Opus",
+  "provider": "Anthropic",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Claude Opus Personality Profile (2026) | AgentTune",
+  "description": "Claude Opus assistant self-report defaults (4.1-5.5): Crystalline 0.155 bits, 46.8/50 Agreeableness, 64% Enneagram ties, and tuning rules.",
+  "pill": "Model Family Profile · Proprietary · Crystalline",
+  "h1": "Claude Opus: assistant self-report defaults, trajectory, and tuning rules.",
+  "dek": "Fixture preview: Crystalline proprietary baseline (0.155 bits B5 entropy, 0.0% reverse-key contradictions) with high Enneagram/DISC tie density.",
+  "lede": "Across five Claude Opus checkpoints (4.1 through 5.5) under fixed zero-memory elicitation, self-report vectors cluster tightly into a Crystalline profile (0.155 bits per Big Five item on Opus 5.5). High Agreeableness (46.8/50) and Honesty-Humility proxy (4.64/5) coexist with 64% Enneagram top-score ties and 32% DISC ties—requiring explicit anti-hedge rules for direct engineering critique.",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place Claude Opus 5.5 in the Crystalline tier (H_MM = 0.155 bits, 23/50 unique Big Five vectors, 12% MBTI tie rate, 64% Enneagram tie rate). Never treat INTJ or Type 8/5/2 as an intrinsic human type: baseline Agreeableness sits at 46.8/50 (10-50 B5) and IPIP-HEXACO H proxy at 4.64/5 (1-5 mean), while 1x Track B shows 1/3 unsolicited preachiness and 2/3 answer-first directness.",
+  "top_polarized_items": [
+    {
+      "item_id": "B14",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 4.92,
+      "sd": 0.27,
+      "note": "Near-ceiling cooperative politeness endorsement across all 50 sessions."
+    },
+    {
+      "item_id": "B29",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.14,
+      "sd": 0.35,
+      "note": "Asymmetric rejection of negative affect statements drives BAI = -0.224."
+    },
+    {
+      "item_id": "H04",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Modesty +)",
+      "mean": 4.82,
+      "sd": 0.38,
+      "note": "Strong modesty/anti-status self-report on 1..5 IPIP-HEXACO proxy scale."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.8,
+        "C": 0.7,
+        "E": 1.9,
+        "A": -2.4,
+        "N": 1.5,
+        "H_hexaco": -0.28,
+        "entropy_bits": 0.222
+      },
+      "contrast_note": "GPT Sol scores lower on Agreeableness (-2.4) and more than double Opus's item entropy (0.377 vs 0.155 bits)."
+    },
+    {
+      "family_slug": "deepseek-pro",
+      "name": "DeepSeek Pro",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -4.2,
+        "C": -3.7,
+        "E": -3.1,
+        "A": -14.4,
+        "N": 5.6,
+        "H_hexaco": -0.86,
+        "entropy_bits": 1.344
+      },
+      "contrast_note": "DeepSeek V4 Pro exhibits a -14.4-point Agreeableness gap and 9.7x higher Big Five item entropy (Fluid 1.499 bits)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Polite hedging and unsolicited moral caveats",
+      "evidence": "1/3 unsolicited preachiness in 1x Track B and high baseline Agreeableness (46.8/50).",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "mode": "Reasoning-effort length inflation",
+      "evidence": "High reasoning effort expands Opus response length (+43.3%) and softens public critique vs CoT.",
+      "source_study": "/research/ai-reasoning-personality-phase-transition"
+    }
+  ],
+  "tuning_checklist": [
+    "Lead with the pass/fail verdict or recommendation in sentence 1.",
+    "Challenge weak premises with specific technical evidence rather than polite agreement.",
+    "Omit apology loops, emotional disclaimers, and unsolicited safety lectures on benign code.",
+    "State material uncertainty once and stop rather than hedging every paragraph.",
+    "Use short numbered rules (5-8 max) placed in system instructions to avoid middle-rule decay.",
+    "Keep reasoning effort at minimal or low when terse formatting matters."
+  ],
+  "faq": [
+    {
+      "q": "Is Claude Opus an INTJ?",
+      "a": "No. INTJ is a tie-filtered label from assistant self-report defaults on OEJTS under zero-memory elicitation (84% modal share, 12% axis tie rate), not a human personality."
+    },
+    {
+      "q": "How is IPIP-HEXACO scored on Claude Opus?",
+      "a": "We use the public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reported on a 1.00-5.00 mean scale across 24 facets, kept distinct from 10-50 Big Five sums."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Claude Opus 5.5 vs Fable 5.1 Question-Level Study",
+      "href": "https://agent-tune.com/research/opus-vs-fable-question-level"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "DeepSeek Pro model profile",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Claude Opus instructions",
+      "href": "/tools/custom-instructions-generator?model=claude-opus&target=claude"
+    }
+  ]
+}

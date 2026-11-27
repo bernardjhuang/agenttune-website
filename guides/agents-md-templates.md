@@ -7,7 +7,7 @@ Guide · Coding Agents
 
 By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/agents-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.
+**Quick answer:** Put a short, command-focused AGENTS.md at your repository root and keep the combined chain (global ~/.codex/AGENTS.md + repo AGENTS.md + any AGENTS.override.md) well under Codex's 32 KiB cap. Include exact test and lint commands, and grab one of the 16 stack starters below.
 
 ## Quick pick: Downloadable AGENTS.md templates by stack.
 
@@ -222,3 +222,4 @@ Yes—many coding tools now read root AGENTS.md natively, or you can convert sni
 - [Limit guide: Codex AGENTS.md configuration, overrides & 32 KiB limit](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Claude Code: 15 CLAUDE.md examples & downloadable Output Styles](https://agent-tune.com/guides/claude-code-personality)
 - [Generator: Interactive CLAUDE.md & Coding Rules Builder](https://agent-tune.com/tools/claude-md-generator)
+- [Guide & Builder: OpenClaw SOUL.md, IDENTITY.md & USER.md 3-file builder](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md)

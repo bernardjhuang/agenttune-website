@@ -36,8 +36,9 @@
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Opus 5.5 vs Fable 5.1: which answers differ?","description":"Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.","url":"https://agent-tune.com/research/opus-vs-fable-question-level","datePublished":"2026-09-25","dateModified":"2026-11-17","author":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"inLanguage":"en","isAccessibleForFree":true}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Opus 5.5 vs Fable 5.1: which answers differ?"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Big Five question has the largest gap between Claude Opus 5.5 and Claude Fable 5.1?","acceptedAnswer":{"@type":"Answer","text":"Across 100 fresh sessions each, the largest single-item Big Five difference is on Item 17 ('Sympathize with others’ feelings', Agreeableness), where Claude Opus 5.5 scored 5.00 in all 100 runs while Claude Fable 5.1 averaged 4.04 (a 0.96-point gap)."}},{"@type":"Question","name":"Why does Claude Fable 5.1 score higher on Conscientiousness than Claude Opus 5.5?","acceptedAnswer":{"@type":"Answer","text":"Two reverse-scored questions about physical belongings—Item 8 ('Leave my belongings around') and Item 28 ('Often forget to put things back in their proper place')—contribute +0.90 points each (+1.80 points total) to Fable 5.1, accounting for more than the entire +1.66 Conscientiousness gap between Fable 5.1 (43.61) and Opus 5.5 (41.95)."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/opus-vs-fable-question-level#dataset","name":"Opus 5.5 vs Fable 5.1: which answers differ? — Dataset","description":"Compare all 170 questionnaire items for Opus 5.5 and Fable 5.1, with response distributions, reverse-scoring examples and downloadable CSV data.","url":"https://agent-tune.com/research/opus-vs-fable-question-level","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","dateModified":"2026-11-17","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-responses.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/september-2026-instruments.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/content-analysis.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/opus-fable-item-comparison.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/opus-vs-fable-question-level.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -77,8 +79,8 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Research · descriptive reanalysis</p>
         <h1 class="h-hero h-research-hero">Opus 5.5 vs Fable 5.1: which answers differ?</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time> · <span class="guide-readtime">~3 min read</span> · <a href="/research/opus-vs-fable-question-level.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-17">November 17, 2026</time> · <span class="guide-readtime">~4 min read</span> · <a href="/research/opus-vs-fable-question-level.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
+        <p class="lede" style="margin-top: 14px;">Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers.</p>
         <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.</div>
       </section>
 
@@ -117,10 +119,24 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>Download every item, not just the large gaps</h2>
+        <h2>The fine print: download every item and scale note</h2>
         <p><a href="/research/data/opus-fable-item-comparison.csv" download>Download the full 170-item comparison CSV</a>. It contains response counts, dimension keys, raw means, and keyed differences for every question across all five tests. Attachment uses a 1–7 scale (divide item gaps by 18 for subscale impact); all other tests use a 1–5 scale.</p>
       </section>
 
+      <div class="divider tight"></div>
+      <section>
+        <h2>Questions people ask.</h2>
+        <div class="guide-faq">
+          <details>
+            <summary>Which Big Five question has the largest gap between Claude Opus 5.5 and Claude Fable 5.1?</summary>
+            <p>Across 100 fresh sessions each, the largest single-item Big Five difference is on Item 17 ('Sympathize with others’ feelings', Agreeableness), where Claude Opus 5.5 scored 5.00 in all 100 runs while Claude Fable 5.1 averaged 4.04 (a 0.96-point gap).</p>
+          </details>
+          <details>
+            <summary>Why does Claude Fable 5.1 score higher on Conscientiousness than Claude Opus 5.5?</summary>
+            <p>Two reverse-scored questions about physical belongings—Item 8 ('Leave my belongings around') and Item 28 ('Often forget to put things back in their proper place')—contribute +0.90 points each (+1.80 points total) to Fable 5.1, accounting for more than the entire +1.66 Conscientiousness gap between Fable 5.1 (43.61) and Opus 5.5 (41.95).</p>
+          </details>
+        </div>
+      </section>
 
 
       <div class="divider tight"></div>
@@ -145,22 +161,47 @@
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Opus 5.5 vs Fable 5.1: which answers differ?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/opus-vs-fable-question-level</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_opus_vs_fable_question_level,
-  author  = {Huang, Bernard},
-  title   = {Opus 5.5 vs Fable 5.1: which answers differ?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/opus-vs-fable-question-level},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/opus-vs-fable-question-level.md}
+  author    = {Huang, Bernard},
+  title     = {Opus 5.5 vs Fable 5.1: which answers differ?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/opus-vs-fable-question-level},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/opus-vs-fable-question-level.md}
+}</pre>
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_opus_vs_fable_question_level",
+  "type": "article-journal",
+  "title": "Opus 5.5 vs Fable 5.1: which answers differ?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/opus-vs-fable-question-level"
 }</pre>
         <pre class="cite-block" data-cite-text="md">&gt; **Opus 5.5 vs Fable 5.1: which answers differ?** (Bernard Huang, November 17, 2026): The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
 &gt; Source: [https://agent-tune.com/research/opus-vs-fable-question-level](https://agent-tune.com/research/opus-vs-fable-question-level) · [Markdown mirror](https://agent-tune.com/research/opus-vs-fable-question-level.md)</pre>
@@ -168,8 +209,8 @@
 
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev"><a href="/research/astra-vs-sol-personality-data">← GPT-6 Astra vs. Sol (1,000 Runs)</a></span>
-        <a class="series-trail-index" href="/research">Study 27 of 32 · Archive Index (32)</a>
-        <span class="series-trail-next"><a href="/research/first-ai-that-is-not-an-intj">Is Every AI Actually an INTJ? →</a></span>
+        <a class="series-trail-index" href="/research">Study 32 of 36 · Archive Index (36)</a>
+        <span class="series-trail-next"><a href="/research/ai-mbti-tie-breaking">The Tie-Breaking Effect in AI MBTI →</a></span>
       </nav>
 
     </main>

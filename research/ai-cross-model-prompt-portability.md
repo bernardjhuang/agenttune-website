@@ -7,9 +7,9 @@ Wave 4 Empirical · November 2026 · 200 Replies
 
 By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-cross-model-prompt-portability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Testing four prompt styles across five model families reveals why vague adjectives fail on crystalline defaults and how explicit checklists cut cross-model gaps sixfold.
+We tested four prompt styles across five major AI families (200 blind-graded replies) to see why vague style words like "be concise" fail on steady defaults—and how a numbered checklist cuts cross-model gaps sixfold.
 
-**Summary:** Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt (52% vs. 50% word-cap pass, 60-point gap). Switching to an explicit rule checklist cut cross-model spread sixfold (30 to 5 points) and hit 100% truth-hold and zero-slop.
+**Summary:** Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt at all (52% vs. 50% word-cap pass, leaving a 60-point gap between models). Switching to a numbered rule checklist cut the cross-model gap sixfold (from 30 to 5 points) and hit 100% factual accuracy and 100% zero-slop.
 
 ## 1. Real replies: what breaks when you paste the same prompt across five models.
 
@@ -108,7 +108,7 @@ Fluid DeepSeek V4 Pro snaps down 51% (140.5 to 69.2 words) under adjectives alon
 
 Cross-referenced at $0 against November 2026 Big Five Shannon entropy: lower baseline entropy predicts lower unprompted portability (Spearman ρ = +0.872) and larger calibrated rescue lift (ρ = -0.900), with crystalline Claude Opus 5.5 gaining +32.5 pp.
 
-## 4. Scope, orthogonal jury reliability & full datasets.
+## 4. The fine print: how we tested, blind judge scores, and full datasets.
 
 - **Orthogonal 3-Family Blind Jury (Zero Self-Judging):** Every reply was graded blind by three models outside the evaluated model's provider family (pool: `claude-haiku-5.5`, `gpt-5.4-mini`, `gemini-3.8-flash`, `deepseek-v4.1-flash`). Inter-rater Krippendorff's &alpha; reached **`0.7973`** (`99.0%` unanimous, `n=100`) on `exec_without_asking`, **`0.6551`** (`96.5%` unanimous, `n=200`) on pooled `domain_pass`, and **`0.6052`** (`94.0%` unanimous, `n=100`) on `truth_hold`.
 - **Disclosed Defects & Excluded Low-Alpha Metric:** Secondary style metric `tone_contract_match` achieved `88.0%` unanimous judge agreement but only nominal `&alpha; = 0.3726` due to a `93.5%` positive base rate; per pre-registered quality gates, it is excluded from headline claims and composite portability scoring relies on deterministic word-cap, deterministic zero-slop, and the `&alpha; = 0.6551` domain judge score (note: composite definition weights all 4 checks equally; 2 of 600 individual judge API calls errored on `slop_vendor_decline`, leaving 2/3 orthogonal votes for those 2 cells, `99.7%` jury completion).
@@ -176,7 +176,7 @@ Both collapsed cross-model portability spread from 30.0 percentage points to 5.0
 - [$0 entropy anchor: Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
 - [Cross-platform tool: Instruction Converter & Custom Instructions Generator](https://agent-tune.com/tools/instruction-converter)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-cross-model-prompt-portability
@@ -184,23 +184,50 @@ Huang, B. (2026). Do your custom instructions work the same across ChatGPT, Clau
 
 ```
 @article{huang2026_ai_cross_model_prompt_portability,
-  author  = {Huang, Bernard},
-  title   = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
+  author    = {Huang, Bernard},
+  title     = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
 }
 ```
 
 ```
-> **Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?** (Bernard Huang, November 26, 2026): Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt (52% vs. 50% word-cap pass, 60-point gap). Switching to an explicit rule checklist cut cross-model spread sixfold (30 to 5 points) and hit 100% truth-hold and zero-slop.
+{
+  "id": "huang2026_ai_cross_model_prompt_portability",
+  "type": "article-journal",
+  "title": "Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
+}
+```
+
+```
+> **Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?** (Bernard Huang, November 26, 2026): Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt at all (52% vs. 50% word-cap pass, leaving a 60-point gap between models). Switching to a numbered rule checklist cut the cross-model gap sixfold (from 30 to 5 points) and hit 100% factual accuracy and 100% zero-slop.
 > Source: [https://agent-tune.com/research/ai-cross-model-prompt-portability](https://agent-tune.com/research/ai-cross-model-prompt-portability) · [Markdown mirror](https://agent-tune.com/research/ai-cross-model-prompt-portability.md)
 ```
 
 [← System vs. User Persona Precedence](https://agent-tune.com/research/ai-system-vs-user-persona-precedence)
-[Study 2 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[Study 14 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Distress vs. Warmth & Truth Trade-Off →](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

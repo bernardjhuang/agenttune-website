@@ -7,7 +7,7 @@
   "pill": "Guide · OpenAI ChatGPT",
   "h1": "ChatGPT personality settings: presets, warmth controls, and custom instructions.",
   "dek": "Settings → Personalization gives you Base style and tone presets, four characteristic sliders, and two 1,500-character instruction boxes.",
-  "lede": "Inside <strong>Settings → Personalization</strong>, ChatGPT splits tone into three controls: Base style and tone presets (Default, Professional, Friendly, Candid, Quirky, Efficient, Cynic, Robot), four Characteristic sliders (Warm, Enthusiastic, Headers &amp; Lists, Emoji), and two 1,500-character <strong>Custom Instructions</strong> boxes. Knowing what each control does keeps your setup from fighting itself across web, desktop, and mobile.",
+  "lede": "Inside <strong>Settings → Personalization</strong>, ChatGPT splits tone into three controls: <strong>Base style and tone</strong> presets (Default, Professional, Friendly, Candid, Quirky, Efficient, Cynic, Robot), four <strong>Characteristic</strong> sliders (Warm, Enthusiastic, Headers &amp; Lists, Emoji), and two 1,500-character <strong>Custom Instructions</strong> boxes. Here is what each layer controls so your settings don’t fight each other across web, desktop, and mobile.",
   "answer": "Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).",
   "promptModel": "sol-6",
   "promptDestination": "chatgpt-custom",
@@ -96,6 +96,31 @@
       "kicker": "Guide",
       "label": "ChatGPT Custom Instructions examples (Box 1 vs Box 2)",
       "href": "/guides/chatgpt-custom-instructions-examples"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is ChatGPT? (4 families)",
+      "href": "/research/what-personality-type-is-chatgpt"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — 6 checkpoints & tuning",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Sol — 4 checkpoints & wing notes",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Luna — personality profile",
+      "href": "/models/gpt-luna"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Terra — personality profile",
+      "href": "/models/gpt-terra"
     },
     {
       "kicker": "Guide",

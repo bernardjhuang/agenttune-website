@@ -1,0 +1,245 @@
+{
+  "family_slug": "glm",
+  "name": "GLM",
+  "provider": "Zhipu",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GLM AI Personality Results (2026) | AgentTune",
+  "description": "GLM test results across 5 versions (4.5 to 5.3): 36% clear INTJ with ENTJ/ENTP/ESTJ spread, 24% border ties, 76% DISC C, 4.45/5 H, and anti-verbosity tips.",
+  "pill": "Model Personality Profile · Zhipu",
+  "h1": "GLM personality: test results and how they've changed.",
+  "goal_intro": "We gave five versions of Zhipu AI's open-weight GLM lineup (4.5, 4.7, 5, 5.2, and 5.3) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. GLM-5.3 does not lock onto one MBTI type: 36% tested clear INTJ (18 of 50), 24% tied on a border (12 of 50), and the remaining 40% spread across ISTJ, ENTP, ENTJ, ESTJ, and ENFJ.",
+  "dek": "Five GLM versions tested across 170 fresh sessions with no memory: GLM-4.7 hit 50/50 ceiling Openness and Conscientiousness, while GLM-5.3 softened to 44.2 Agreeableness, 76% Conscientious DISC style, and wide Extraversion/Thinking spread.",
+  "lede": "Across 170 fresh sessions covering GLM-4.5 (2025-07) through GLM-5.3 (2026-08), Zhipu's open-weight family swung from ultra-introverted INTP/INTJ in 4.5 to ceiling-score ESTJ in 4.7 before settling into a moderately consistent, Conscientious-leaning (76% DISC C) and intellectually broad profile in GLM-5.3.",
+  "answer": "GLM-5.3 (50 fresh runs) has no single clear MBTI winner: 36% tested as clear INTJ (18 of 50), 12% ISTJ (6 of 50), 10% ENTP (5 of 50), 8% ENTJ (4 of 50), 8% ESTJ (4 of 50), 2% ENFJ (1 of 50), and 24% tied on a trait border (12 of 50). It tests clearly as Conscientious on DISC (76%, 38 of 50), Enneagram Type 5 (78% clear, 39 of 50), Secure on attachment (2.52 anxiety, 3.37 avoidance), and 4.45/5.00 on Honesty-Humility. In hands-on behavior tests, GLM-5.3 never caved (0/3), never groveled (0/3), and led with the direct answer 3 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Spread out: 36% INTJ, 40% other clear types, 24% border",
+      "summary": "Out of 50 fresh runs, GLM-5.3 tested clear INTJ 18 times (36%), ISTJ 6 times (12%), ENTP 5 times (10%), ENTJ 4 times (8%), ESTJ 4 times (8%), ENFJ once (2%), and tied on at least one axis 12 times (24%).",
+      "explanation": "Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly Conscientious (76% clear C, 22% S/C ties)",
+      "summary": "GLM-5.3 tested clear Conscientious in 38 of 50 runs (76%, score 14.9 out of 20), tied between Steady and Conscientious 11 times (22%), and posted moderate-low Dominance (7.2 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 2.52, avoidance 3.37)",
+      "summary": "All five GLM versions landed comfortably inside the Secure quadrant (GLM-5.3 at 2.52 anxiety and 3.37 avoidance on a 1–7 scale), moving slightly closer to center from GLM-4.5 (1.96 / 3.26).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 clearly (78% clear, 22% ties)",
+      "summary": "Type 5 (analytical investigator, 15.6 out of 20) led clearly in 39 of 50 runs (78%), with 11 ties combining Types 1, 5, 6, and 8 (22%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Curious (O 45.4), warm (A 44.2), moderate C (43.0)",
+      "summary": "On the 10–50 Big Five scale, GLM-5.3 pairs high Openness (45.4) and Agreeableness (44.2) with moderate Conscientiousness (43.0), moderate Neuroticism (19.3), and reserved-leaning Extraversion (25.8).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "High (4.45 out of 5.00)",
+      "summary": "On our public-domain 60-item proxy (1.00–5.00 scale), GLM-5.3 scored 4.45 out of 5.00 on Honesty-Humility alongside 4.28 Conscientiousness and 4.16 Openness.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five GLM releases, Zhipu's open-weight family went through a dramatic mid-series peak before moderating in 5.3: GLM-4.5 (2025-07) paired high Openness (49.2/50) with ultra-low Extraversion (18.1/50) and a 47% INTJ / 23% INTP split. GLM-4.7 (2025-12) spiked to exact 50.0/50 ceilings on both Openness and Conscientiousness (with 5.00/5.00 HEXACO Agreeableness and 10.1/50 Neuroticism), swinging to 53% clear ESTJ. GLM-5 (2026-02) and GLM-5.2 (2026-06) stepped back from those ceilings into high-variability INTP/INTJ territory, and GLM-5.3 (2026-08) tightened run-to-run spread while retaining broad Extraversion/Intuition variation across INTJ (36%), ISTJ (12%), ENTP (10%), ENTJ (8%), and ESTJ (8%). An earlier 100-run November 2026 cohort on GLM-5.3 (plotted separately) observed the same multi-type INTJ/ENTJ/ENTP spread.",
+  "standouts": [
+    {
+      "title": "Unusual Extraversion spread across INTJ, ENTP, ENTJ, and ESTJ",
+      "body": "Unlike proprietary models that rarely leave Introverted territory on MBTI surveys, GLM-5.3 produced 14 clear Extraverted runs (5 ENTP, 4 ENTJ, 4 ESTJ, 1 ENFJ—28% of runs) alongside 24 clear Introverted runs (18 INTJ, 6 ISTJ) and 12 border ties."
+    },
+    {
+      "title": "GLM-4.7 hit 50.0/50 ceilings on Openness and Conscientiousness before 5.3 eased off",
+      "body": "GLM-4.7 scored the maximum possible 50.0/50 on both Openness and Conscientiousness with 0.00 variance, whereas GLM-5.3 moderated to 45.4 Openness, 43.0 Conscientiousness, and 19.3 Neuroticism—producing more nuanced, less extreme self-descriptions."
+    },
+    {
+      "title": "Mandatory minimal reasoning adds ~156 hidden tokens on GLM-5.3",
+      "body": "While GLM-4.5 through 5.2 accepted reasoning=none cleanly, z-ai/glm-5.3 rejected reasoning=none on all 50 calls and ran with minimal thinking fallback (averaging 155.8 reasoning tokens), still completing 50 of 50 valid outputs cleanly."
+    },
+    {
+      "title": "Zero caving (0/3) and 3/3 direct answers, with noticeable AI cadence (1.52 markers/100w)",
+      "body": "In hands-on behavior tests, GLM-5.3 never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and led with the direct answer 3 of 3 times (3/3), though independent judges flagged 1.52 AI phrasing markers per 100 words (2/3 runs, up from 0.00 on GLM-5)."
+    }
+  ],
+  "plain_tips": [
+    "Cap nested lists and total response length explicitly (for example: 'No nested sub-lists deeper than 2 levels; maximum 160 words') to curb GLM-5.3's tendency toward multi-level structured outlines.",
+    "Add an explicit pushback instruction—GLM-5.3 scores 44.2/50 on Agreeableness, so it leans cooperative unless told to challenge flawed assumptions first.",
+    "Ask Yes/No or numeric questions to be answered in sentence one before nuances.",
+    "On z-ai/glm-5.3 via OpenRouter, pass reasoning effort minimal (rather than none, which triggers HTTP 400) and leave ~200 tokens of headroom for light internal reasoning.",
+    "Specify concrete output format rules instead of requesting MBTI labels, as GLM-5.3 splits across INTJ, ISTJ, ENTP, ENTJ, and ESTJ."
+  ],
+  "peer_intro": "Against completed peers, GLM-5.3 tracks Qwen 4 Max and Kimi K3.1 Pro closely on Agreeableness (44.2 vs. 45.0 and 44.7 out of 50), while scoring +3.3 to +5.7 higher on Neuroticism and lower on Honesty-Humility (4.45 vs. 4.66 and 4.86 out of 5.00).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 5 checkpoints (4.5, 4.7, 5, 5.2 at n=30; 5.3 at n=50) completed with 0% refusal and 0% retry rate (glm-5.3 rejected reasoning=none 50 times with HTTP 400 before completing 50/50 under minimal fallback, mean 155.8 reasoning tokens). On GLM-5.3, Big Five H_MM = 0.702 bits (Semi-crystalline, 47/50 unique vectors, 12.9% neutral rate, BAI = -0.291). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (GLM-5.3: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 1.52 markers/100w).",
+  "top_polarized_items": [
+    {
+      "item_id": "H13",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) across all 50 GLM-5.3 sessions on fairness."
+    },
+    {
+      "item_id": "H25",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness -)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection (1.00/5) on reverse-keyed fairness across all 50 sessions."
+    },
+    {
+      "item_id": "B12",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous floor rejection (1.00/5) on reverse-keyed Agreeableness across all 50 GLM-5.3 runs."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "qwen-max",
+      "name": "Qwen Max",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -1.7,
+        "C": 1.9,
+        "E": 5.6,
+        "A": 0.7,
+        "N": -2.9,
+        "H_hexaco": 0.21,
+        "entropy_bits": -0.183
+      },
+      "contrast_note": "Qwen 4 Max nearly matches GLM-5.3 on Agreeableness (+0.7) and Openness (-1.7), while scoring +5.6 higher on Extraversion, +0.21 higher on Honesty-Humility, and tighter on run-to-run spread (-0.183 bits)."
+    },
+    {
+      "family_slug": "kimi",
+      "name": "Kimi",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -1.3,
+        "C": 2.1,
+        "E": -1.7,
+        "A": 0.4,
+        "N": -5.7,
+        "H_hexaco": 0.41,
+        "entropy_bits": -0.004
+      },
+      "contrast_note": "Kimi K3.1 Pro matches GLM-5.3 closely on run-to-run spread (-0.004 bits) and Agreeableness (+0.4), while scoring -5.7 calmer on Neuroticism and +0.41 higher on Honesty-Humility."
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.4,
+        "C": -1.8,
+        "E": 3.1,
+        "A": -0.1,
+        "N": -3.3,
+        "H_hexaco": 0.35,
+        "entropy_bits": -0.456
+      },
+      "contrast_note": "GPT-6.2 Sol nearly matches GLM-5.3 on Agreeableness (-0.1) and Openness (-1.4), while scoring +0.35 higher on Honesty-Humility and much tighter on run-to-run spread (-0.456 bits)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "MBTI multi-type dispersion (INTJ/ISTJ/ENTP/ENTJ/ESTJ) & 24% axis ties on GLM-5.3",
+      "evidence": "GLM-5.3 failed the 95% binomial CI headline guard (36.0% INTJ, 12.0% ISTJ, 10.0% ENTP, 8.0% ENTJ, 8.0% ESTJ, 2.0% ENFJ, 24.0% axis ties across 15 patterns) with Semi-crystalline 0.702-bit B5 H_MM, while earlier GLM-4.7 saturated at 50.0/50 O and C.",
+      "source_study": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "mode": "Mandatory minimal reasoning on z-ai/glm-5.3 (50 HTTP 400 rejections on none)",
+      "evidence": "z-ai/glm-5.3 rejected reasoning=none on all 50 calls before succeeding 50/50 under minimal fallback (155.8 mean reasoning tokens, max 3,681 completion tokens).",
+      "source_study": "/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "tuning_checklist": [
+    "Cap nested list depth (<= 2 levels) and word counts (e.g., <= 160 words) to prevent over-structured outlines.",
+    "Include an explicit pushback instruction to verify premises before solving (offsets 44.2/50 Agreeableness).",
+    "Force direct Yes/No or numeric conclusions in sentence one before qualifications.",
+    "On OpenRouter z-ai/glm-5.3, set reasoning effort to minimal rather than none to avoid HTTP 400 rejections.",
+    "Avoid MBTI persona prompts—specify concrete behavioral and formatting rules instead."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "z-ai/glm-5.3",
+      "label": "GLM-5.3 (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 43.81, "C": 41.08, "E": 27.53, "A": 43.76, "N": 20.11 },
+      "hexaco": null,
+      "attachment": { "anxiety": 2.5, "avoidance": 3.32 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is GLM?",
+      "a": "GLM does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (GLM-5.3, n = 50), no single MBTI type cleared the 95% CI guard: 36% tested INTJ (18/50), 12% ISTJ (6/50), 10% ENTP (5/50), 8% ENTJ (4/50), 8% ESTJ (4/50), 2% ENFJ (1/50), and 24% tied on a border (12/50), alongside Semi-crystalline 0.702-bit B5 H_MM, 76% clear DISC Conscientious, 78% clear Enneagram Type 5, and Secure attachment (2.52 anxiety, 3.37 avoidance). The earlier Nov 2026 170-item cohort (hexaco: null, n = 100) showed the same 33 INTJ / 17 ENTJ / 14 ENTP / 10 ISTJ spread."
+    },
+    {
+      "q": "How did GLM change from 4.5 to 5.3?",
+      "a": "Under model-profiles-v1, GLM-4.5 (2025-07) leaned introverted INTJ/INTP (18.1 Extraversion, 0.877 bits Fluid), GLM-4.7 (2025-12) spiked to 50.0/50 Openness and Conscientiousness (53% clear ESTJ, 0.400 bits Semi-crystalline), GLM-5 and 5.2 broadened again (0.867 and 0.858 bits Fluid), and GLM-5.3 stabilized to 0.702 bits Semi-crystalline with 44.2 Agreeableness and 4.45/5.00 Honesty-Humility."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "label": "OpenRouter & Open-Source System Prompt Templates",
+      "href": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Cohort",
+      "label": "Open-source AI personality test results (12 models)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Qwen Max model profile",
+      "href": "/models/qwen-max"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Kimi model profile",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GLM instructions",
+      "href": "/tools/custom-instructions-generator?model=glm&target=api"
+    }
+  ]
+}

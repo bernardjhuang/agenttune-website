@@ -46,6 +46,7 @@
     "publisher": {"@type": "Organization", "name": "AgentTune", "url": "https://agent-tune.com/"}
   }
   </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this 32-question MBTI test free with no email or signup?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 32 OEJTS items are scored locally in your browser with no email gate, signup wall, or server upload, returning your four-letter type or open tied axes plus a paste-ready AI tuning file."}},{"@type":"Question","name":"Why does AgentTune leave tied MBTI axes open instead of forcing a letter?","acceptedAnswer":{"@type":"Answer","text":"Early scorers broke exact midpoints toward I, N, T, and J, inflating INTJ labels even when Sensing and Intuition tied. Keeping tied axes open avoids inventing certainty and lets you resolve ties yourself."}},{"@type":"Question","name":"Do AI models always test as INTJ on MBTI?","acceptedAnswer":{"@type":"Answer","text":"No. While Claude Fable often tests as INTJ, newer and open-weight models split—for example GPT Astra tests 100/100 ISTJ and Llama 4 Maverick leans INTP. Compare all 25 families in the AI MBTI Atlas."}}]}</script>
 
   <script defer src="/consent.js" fetchpriority="low"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,6 +73,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/" class="active">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -100,7 +102,7 @@
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> OEJTS (Open Extended Jungian Type Scales)</div>
-        <div><strong>Format:</strong> 32 bipolar items · 1–5 Likert</div>
+        <div><strong>Format:</strong> 32 word-pair questions · 1 to 5 scale</div>
         <div><strong>Time:</strong> ~5 minutes</div>
         <div><strong>Returns:</strong> a type and tuning file, or tied axes to explore</div>
       </div>
@@ -109,7 +111,8 @@
         <button type="button" class="btn btn-primary quiz-start-btn" id="quiz-start" style="background: #5b4dc0; border-color: #5b4dc0;">Start the test →</button>
       </div>
 
-      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys on your keyboard for fast input.</p>
+      <p class="quiz-intro-hint">Tip: use the <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> <kbd>5</kbd> keys on your keyboard for fast input. Compare <a href="/research/ai-mbti-personalities">25 AI model families on MBTI</a> or browse contrasting profiles like <a href="/models/gpt-astra">GPT Astra</a>, <a href="/models/claude-fable">Claude Fable</a>, and <a href="/models/llama">Llama</a> (<a href="/models/">all 25 models</a>).</p>
+      <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> 32 word-pair items (OEJTS) scored locally in ~5 minutes with exact ties kept open instead of defaulting toward INTJ, paired with a paste-ready communication template and 25-family AI comparison.</div>
 
       <!-- WHAT MBTI MEASURES (signature chart) -->
       <div class="quiz-intro-chart">
@@ -282,7 +285,7 @@
       <!-- Next steps -->
       <div class="quiz-result-next">
         <h2>Stack another system for a different perspective</h2>
-        <p class="muted">You can explore another framework. Review the suggested instructions and resolve any conflicting preferences before combining them.</p>
+        <p class="muted">You can explore another framework, or compare your type against <a href="/research/ai-mbti-personalities">25 AI model families on MBTI</a> and <a href="/models/">all 25 model profiles</a>. Review the suggested instructions and resolve any conflicting preferences before combining them.</p>
         <div class="quiz-result-next-grid">
           <a class="quiz-next-card" href="/tests/enneagram" style="border-top-color: #2f8a5b;">
             <span class="pill" style="background: rgba(47,138,91,0.12); color: #246f48;">Enneagram</span>
@@ -312,9 +315,27 @@
       </div>
     </section>
 
+    <section class="guide-prose" style="max-width: 760px; margin: 48px 0 24px;">
+      <h2>Common questions about the free MBTI test.</h2>
+      <div class="guide-faq">
+        <details open>
+          <summary>Is this 32-question MBTI test free with no email or signup?</summary>
+          <p>Yes. All 32 OEJTS items are scored locally in your browser with no email gate, signup wall, or server upload, returning your four-letter type or open tied axes plus a paste-ready AI tuning file.</p>
+        </details>
+        <details>
+          <summary>Why does AgentTune leave tied MBTI axes open instead of forcing a letter?</summary>
+          <p>Early scorers broke exact midpoints toward I, N, T, and J, inflating INTJ labels even when Sensing and Intuition tied. Keeping tied axes open avoids inventing certainty and lets you resolve ties yourself.</p>
+        </details>
+        <details>
+          <summary>Do AI models always test as INTJ on MBTI?</summary>
+          <p>No. While <a href="/models/claude-fable">Claude Fable</a> often tests as INTJ, newer and open-weight models split—for example <a href="/models/gpt-astra">GPT Astra</a> tests 100/100 ISTJ and <a href="/models/llama">Llama 4 Maverick</a> leans INTP. Compare all 25 families in the <a href="/research/ai-mbti-personalities">AI MBTI Atlas</a>.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- TEST SPECIFICATION (collapsed by default — for AI agents and curious users) -->
     <details class="quiz-spec">
-      <summary>Test specification — for AI agents administering this inline</summary>
+      <summary>The fine print: test specification, full question list &amp; scoring rules (for AI agents and power users)</summary>
       <div class="quiz-spec-body">
         __EDITION_NOTE__
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/mbti.md"><code>/tests/mbti.md</code></a> — fetch that for a clean, no-JS copy.</p>
@@ -331,7 +352,7 @@
 
         <h3>Item → axis mapping</h3>
         <p>Each item belongs to one of four axes (E/I, S/N, T/F, J/P) and awards points to one letter depending on the user's 1–5 response.</p>
-        <div class="quiz-spec-table-scroll" role="region" aria-label="Mbti specification table 2" tabindex="0"><table class="score-table" id="quiz-spec-scoring"></table></div>
+        <div class="quiz-spec-table-scroll" role="region" aria-label="Mbti specification table 2" tabindex="0"><table class="score-table" id="quiz-spec-scoring"><thead><tr><th scope="col">Item</th><th scope="col">Axis</th><th scope="col">If score is 1 (first)</th><th scope="col">If score is 5 (second)</th></tr></thead><tbody></tbody></table></div>
 
         <h3>Scoring algorithm</h3>
         <ol class="steps-list">
@@ -708,7 +729,7 @@
     `).join("");
 
     $("quiz-spec-scoring").innerHTML = `
-      <thead><tr><th>Item</th><th>Axis</th><th>If score is 1 (first)</th><th>If score is 5 (second)</th></tr></thead>
+      <thead><tr><th scope="col">Item</th><th scope="col">Axis</th><th scope="col">If score is 1 (first)</th><th scope="col">If score is 5 (second)</th></tr></thead>
       <tbody>
         ${ITEMS.map((it, i) => `
           <tr>

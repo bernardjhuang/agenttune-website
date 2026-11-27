@@ -18,12 +18,12 @@ By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)]
 | Gemini app & `gemini.google.com` | Yes — Saved info & Gems. | Save account-wide response rules in Settings → Saved info, or build specialist personas as reusable Gems ([full Gemini setup guide](https://agent-tune.com/guides/gemini-personality)). |
 | Gemini CLI & Code Assist | Yes — `GEMINI.md`. | Store global communication rules in `~/.gemini/GEMINI.md` and repo rules in project `GEMINI.md` ([file convention guide](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)). |
 
-## Why Gemini's default voice feels formal and structured.
+## Why Gemini's default voice feels formal and structured (and the fine print).
 
 Google’s Search and Gemini models share a tidy, textbook-like default style: organized headings, cautious caveats, and bulleted summaries. In our November 2026 OpenRouter study (**n=100 fresh sessions each**; [full Gemini 4 study →](https://agent-tune.com/research/what-personality-type-is-gemini)), **Gemini 4 Neon** and **Gemini 4 Argon** scored:
 
 - **Conscientiousness near the scale ceiling:** `49.32/50` (Neon) and `49.04/50` (Argon), with **Neuroticism at the exact floor of `10.00/50`**.
-- **MBTI & Enneagram:** Neon scored `82 INTJ / 18 ISTJ` (Enneagram Type 1 Perfectionist), while Argon shifted to `66 ISTJ / 34 INTJ` (`91/100` Type 5w6).
+- **MBTI & Enneagram:** Neon tested as `82 INTJ / 18 ISTJ` (Enneagram Type 1 Perfectionist), while Argon tested as `66 ISTJ / 34 INTJ` (`91/100` Type 5w6).
 - **Agreeableness:** `43.66–44.16/50`, with `100/100` Secure Attachment.
 
 That ultra-conscientious profile explains why default summaries read like textbooks unless you constrain length and formatting inside a [No-Fluff Search Brief Gem](https://agent-tune.com/guides/gemini-gems-system-instructions-templates#2-no-fluff-search-brief-gem).
@@ -91,3 +91,5 @@ No. Gemini CLI is configured locally via Markdown files—put personal communica
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Free browser tool: AI & Gemini Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator)
 - [Guide: AI style & verbosity controls: rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
+- [Guide & Builder: NotebookLM custom instructions & Audio Overview prompts](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview)
+- [Guide: Perplexity Spaces custom instructions & citation rules](https://agent-tune.com/guides/perplexity-spaces-custom-instructions)

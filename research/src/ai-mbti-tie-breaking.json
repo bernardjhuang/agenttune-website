@@ -3,11 +3,11 @@
   "route": "/research/ai-mbti-tie-breaking",
   "published": "2026-09-25",
   "updated": "2026-11-17",
-  "title": "Are AI Models Really INTJ? How Tie-Breaking Inflates Results",
+  "title": "Do AI Models Test as INTJ? How Tie-Breaking Inflates Results",
   "description": "335 INTJ labels become 280 fully resolved results when tied axes stay unresolved. Explore the scoring policy in 400 frozen MBTI records.",
   "pill": "Research · descriptive reanalysis",
-  "h1": "Are AI models really INTJ? The tie-breaking effect",
-  "dek": "How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.",
+  "h1": "Do AI models really test as INTJ? The tie-breaking effect",
+  "dek": "We re-scored 400 MBTI test runs from September 2026 to see how a single `<` operator in the original scoring code turned 55 tied runs into INTJ results.",
   "lede": "We re-scored the exact same 400 MBTI answer sheets from September 2026 without forcing a winner on tied axes. No model was asked a new question—only the tie-breaking rule changed.",
   "answer": "Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.",
   "sections": [
@@ -29,10 +29,10 @@
     },
     {
       "h2": "How to report AI personality scores clearly",
-      "html": "<ul><li><strong>Show both numbers:</strong> Report the resolved count alongside any legacy tie-broken count.</li><li><strong>Include axis margins:</strong> Saying “Opus 5.5 had 84 resolved INTJs and 10 T/F ties” is much clearer than “Opus is 94% INTJ.”</li><li><strong>Keep prompts in mind:</strong> The four models were tested under two different prompt setups (Codex 5-test batteries vs. hidden-name single tests), so these 400 runs describe this dataset rather than all AI systems everywhere.</li></ul>"
+      "html": "<ul><li><strong>Show both numbers:</strong> Report the resolved count alongside any legacy tie-broken count.</li><li><strong>Include axis margins:</strong> Saying “Opus 5.5 had 84 resolved INTJs and 10 T/F ties” is much clearer than saying “Opus tests as INTJ 94% of the time.”</li><li><strong>Keep prompts in mind:</strong> The four models were tested under two different prompt setups (Codex 5-test batteries vs. hidden-name single tests), so these 400 runs describe this dataset rather than all AI systems everywhere.</li></ul>"
     },
     {
-      "h2": "Reproduce the comparison",
+      "h2": "The fine print: how to reproduce the comparison",
       "html": "<p>Download the raw answers, instrument keys, and reanalysis script into one folder and run <code>node content-analysis.cjs &gt; content-analysis.json</code>. See the <a href=\"/guides/reproduce-ai-personality-research\">reproduction guide</a> for step-by-step instructions.</p>"
     }
   ],
@@ -43,9 +43,9 @@
       "href": "/research/ai-personality-repeatability"
     },
     {
-      "kicker": "Continue reading",
-      "label": "The wider INTJ question",
-      "href": "/research/first-ai-that-is-not-an-intj"
+      "kicker": "Atlas",
+      "label": "AI MBTI Personalities across 25 model families",
+      "href": "/research/ai-mbti-personalities"
     }
   ],
   "sources": [
@@ -72,5 +72,19 @@
   ],
   "scripts": [
     "/resources/research/tie-explorer.js"
+  ],
+  "faq": [
+    {
+      "q": "How does tie-breaking change AI MBTI test results?",
+      "a": "Across 400 frozen September 2026 MBTI runs, the legacy scorer broke exact midpoint ties (24 vs. 24) toward I, N, T, and J, labeling 335 of 400 runs as INTJ (83.8%). When exact ties are preserved as unresolved (X), only 280 of 400 runs test cleanly as INTJ (70.0%), because 59 runs tied on at least one axis."
+    },
+    {
+      "q": "Which AI model had the most tied MBTI runs in the 400-run study?",
+      "a": "GPT-6 Astra had 29 runs with at least one tied axis (24 on Sensing vs. Intuition and 12 on Extraversion vs. Introversion), dropping from 45 legacy INTJ labels to 19 tie-free INTJ results. By contrast, Claude Fable 5.1 had just 1 tied run out of 100 (99 legacy vs. 98 tie-free INTJ)."
+    },
+    {
+      "q": "How should researchers report AI MBTI scores to avoid tie inflation?",
+      "a": "Always report the tie-free resolved count alongside any legacy tie-broken count, mark exact 0-margin axes as X (such as INXJ or IXTJ), and publish the mean axis margins alongside four-letter labels."
+    }
   ]
 }

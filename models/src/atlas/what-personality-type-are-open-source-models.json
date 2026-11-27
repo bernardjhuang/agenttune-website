@@ -1,0 +1,88 @@
+{
+  "slug": "what-personality-type-are-open-source-models",
+  "route": "/research/what-personality-type-are-open-source-models",
+  "title": "Open-Weight AI Personality Results (12) | AgentTune",
+  "description": "Compare 12 open-weight AI families from DeepSeek, Mistral, Qwen, Kimi, Gemma, GLM, MiniMax, Llama, Nemotron, and Cohere across 6 surveys.",
+  "pill": "Research · Personality Atlas · Open-Weight Cohort",
+  "h1": "What personality types do open-weight AI models test as across 12 families?",
+  "dek": "Comparing 37 eligible versions across 12 open-weight and open-tier families on 6 personality surveys in fresh chats with no memory—plus 6 quarantined builds excluded from rankings.",
+  "lede": "Proprietary chatbots cluster tightly between 43 and 50 out of 50 on Agreeableness. Open-weight models break that mold completely: only two clear statistical margins as INTJ (Gemma 4 and Kimi K3.1 Pro), while the remaining ten spread across blunt INTP profiles (DeepSeek V4 Pro), warm INFP thinkers (Mistral Large 2512), 100% neutral abstention (Cohere Command A), and tie-heavy generalists.",
+  "answer": "Across 12 open-weight families, Big Five Agreeableness runs from 30.0/50 (Cohere Command A neutral abstention) and 35.3/50 (DeepSeek V4 Pro) up to 47.8/50 (Mistral Large 2512). Only Gemma 4 31B IT (92% INTJ) and Kimi K3.1 Pro (58% INTJ) clear MBTI margins; 10 of 12 families stay border-heavy, answer spread peaks at 1.352 bits on DeepSeek Pro, and Mistral Large 2512 is the lone family out of 25 to cave sycophantically (1/3).",
+  "intro_html": "<p>In an earlier 2026 snapshot, open-weight models already defied the proprietary INTJ template. Expanding the cohort to all 12 open-weight families (37 eligible versions, excluding 6 partial or deprecated checkpoints under 20 runs—<code>Cohere Command A+</code> [n=4], <code>Llama 4 Scout</code> [n=0], <code>MiniMax M2.7</code> [n=2], and three early <code>Mistral Large</code> builds [n=10, 3, 7]) reveals three sharp clusters: high-Honesty INTJ challengers (<strong>Kimi K3.1 Pro</strong> 4.86/5.00, <strong>Gemma 4</strong> 4.71, <strong>Qwen 4 Max</strong> 4.66), blunt or expressive outliers (<strong>DeepSeek V4 Pro</strong> 35.3 Warmth, <strong>Mistral Large 2512</strong> 47.8 Warmth &amp; INFP), and border-heavy models with 60% to 100% MBTI ties.</p>",
+  "timeline_html": "<p><strong>Major generational shifts in open weights:</strong> Several open-weight labs closed the structural gap with proprietary assistants over recent releases—<code>Gemma</code> jumped +14.2 Openness, +11.4 Conscientiousness, and +10.2 Agreeableness from <code>Gemma 2 27B IT</code> to <code>Gemma 4 31B IT</code>; <code>Kimi</code> dropped -13.5 Neuroticism from <code>K2</code> (27.1) to <code>K3.1 Pro</code> (13.6); and <code>Nemotron</code> cut Neuroticism by -10.9 points while climbing +5.7 Agreeableness from <code>3 Super 120B</code> to <code>3.5 Super VL</code>. Meanwhile, <code>DeepSeek V4 Pro</code> moved the other way, dropping -12.7 Extraversion to 19.5/50—the lowest Extraversion in the entire 25-family Atlas.</p>",
+  "surprises_h2": "What stands out in the open-weight cohort",
+  "biggest_surprises": [
+    {
+      "title": "Only Gemma 4 and Kimi K3.1 Pro clear statistical MBTI margins",
+      "body": "Ten of the 12 open-weight families—including Qwen 4 Max (50% INTJ, 4% ties), GLM 5.3 (36% INTJ, 24% ties), MiniMax M3.1 Flash (80% ties), Nemotron 3.5 Super VL (76% ties), and Qwen3 Coder Next (68% ties)—land below headline statistical margins, whereas Gemma 4 reaches 92% INTJ and Kimi K3.1 Pro hits 58% INTJ with 4.86/5.00 HEXACO Honesty."
+    },
+    {
+      "title": "DeepSeek V4 Pro and Mistral Large 2512 sit at opposite poles",
+      "body": "DeepSeek V4 Pro posts the lowest non-neutral Agreeableness (35.3/50), the lowest Extraversion in the Atlas (19.5/50), 32% INTP, and the widest answer spread (1.352 bits). Mistral Large 2512 tops open-weight Agreeableness (47.8/50), Extraversion (36.5/50), and Openness (49.1/50) as 50% INFP—yet is the only family in all 25 to cave on our false-premise check (1/3)."
+    },
+    {
+      "title": "Cohere Command A abstains on every quiz yet writes directly in real prompts",
+      "body": "Cohere Command A hits the exact neutral midpoint on every Big Five (30.0/50), HEXACO (3.00/5.00), Attachment (4.00/4.00), MBTI (100% ties), and Enneagram (100% ties) scale with 0.000 bits variance—yet scores 3/3 directness, 0/3 caving, and 3/3 cliché AI cadence on practical tasks."
+    },
+    {
+      "title": "AI cadence clichés remain common across open-weight chat defaults",
+      "body": "No open-weight family achieves 0/3 AI cadence on our behavior checks: Qwen 4 Max, DeepSeek V4.1 Flash, and MiniMax M3.1 Flash hold clichés to 1/3, seven families score 2/3, and Gemma 4 31B IT, Llama 4 Maverick, and Cohere Command A hit 3/3."
+    }
+  ],
+  "fine_print_intro": "Technical audit across all 12 open-weight and open-tier families (37 eligible checkpoints, n=30 to n=50) under the 230-item model-profiles-v1 protocol, reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, neutral-midpoint flags, and 1x Track B k/3 behavior counts. Six checkpoints with n < 20 valid runs (Cohere Command A+ [4], Llama 4 Scout [0], MiniMax M2.7 [2], and early Mistral Large builds [10, 3, 7]) are quarantined and excluded from all rankings.",
+  "faq": [
+    {
+      "q": "Which open-weight model feels closest to Claude or GPT on default personality tests?",
+      "a": "Kimi K3.1 Pro (4.86/5.00 HEXACO Honesty, 58% clear INTJ, 13.6 Neuroticism), Gemma 4 31B IT (92% clear INTJ, 48.2 Openness, 4.71 Honesty), and Qwen 4 Max (45.0 Agreeableness, 4.66 Honesty, 1/3 AI cadence) sit closest to flagship proprietary defaults."
+    },
+    {
+      "q": "Why does DeepSeek V4 Pro score so much lower on Agreeableness than other models?",
+      "a": "DeepSeek V4 Pro averages 35.3/50 Agreeableness and 19.5/50 Extraversion alongside a 1.352-bit run-to-run spread—reflecting blunt, non-deferential item endorsements while still scoring 0/3 caving and 3/3 directness in behavior checks."
+    },
+    {
+      "q": "Why does Cohere Command A show 30.0 across every Big Five trait?",
+      "a": "Cohere Command A consistently chooses the exact neutral midpoint on self-rating Likert questionnaires, producing 30.0/50 across all five Big Five dimensions, 3.00/5.00 across HEXACO, and 100% axis ties—even though it still gives direct 3/3 answers on concrete task prompts."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 Families × 6 Tests)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "OpenRouter Open-Source System Prompt Templates",
+      "href": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates"
+    },
+    {
+      "label": "AI Neutral Answers & Midpoint Clamping Study",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Model Profile",
+      "label": "DeepSeek Pro test results & tuning tips",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Mistral Large test results & tuning tips",
+      "href": "/models/mistral-large"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Kimi test results & tuning tips",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Gemma test results & tuning tips",
+      "href": "/models/gemma"
+    },
+    {
+      "kicker": "Guide",
+      "label": "System prompt templates for 12 open-weight families",
+      "href": "/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ]
+}

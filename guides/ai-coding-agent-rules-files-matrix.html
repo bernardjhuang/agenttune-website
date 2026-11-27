@@ -53,6 +53,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/" class="active">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -74,7 +75,7 @@
         <h1 class="h-hero h-research-hero">CLAUDE.md vs. AGENTS.md vs. .cursorrules, Windsurf &amp; Cline: complete matrix.</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-25">November 25, 2026</time> · <span class="guide-readtime">~4 min read</span> · <a href="/guides/ai-coding-agent-rules-files-matrix.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
         
-        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Use AGENTS.md as your portable cross-tool repo rules file (Codex CLI 32 KiB default cap; also read by Cursor, Cline, and Copilot). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI—and keep personal tone in user-global configs.</div>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Use AGENTS.md as your shared repo rules file across tools (Codex CLI reads up to 32 KiB by default, and Cursor, Cline, and Copilot read it too). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI. Keep your personal tone preferences in your own home-folder config.</div>
       </section>
 
 
@@ -99,7 +100,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2 id="avoiding-silent-truncation">What to leave out of coding-agent rules files.</h2>
+        <h2 id="avoiding-silent-truncation">What to leave out of coding-agent rules files (and the 32 KiB fine print).</h2>
         <ul><li><strong>Secrets &amp; credentials:</strong> Never put API keys, tokens, or connection strings in instruction files.</li><li><strong>Rules a linter already enforces:</strong> If Prettier, Ruff, or ESLint enforces formatting automatically, delete the prose duplicate so the agent keeps its context budget for architectural constraints.</li><li><strong>Novel-length docs:</strong> OpenAI Codex CLI stops reading <code>AGENTS.md</code> files once the combined chain hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>). Keep root files under 100–250 lines and move file-specific rules into glob files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>.windsurf/rules/*.md</code>).</li><li><strong>Role-play costumes:</strong> Vague persona lines fade quickly; checkable rules like <em>&ldquo;state assumptions before editing files&rdquo;</em> persist across long agent loops.</li></ul><p>Merge your communication preferences safely without touching repo build commands using our <a href="/tools/instruction-converter">Instruction Converter &amp; Merger</a> or generate ready-to-paste files in our <a href="/guides/ai-coding-agent-rules-files-matrix">interactive Coding Rules Builder</a>.</p>
       </section>
       <div class="divider tight"></div>

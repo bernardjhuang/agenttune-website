@@ -7,7 +7,7 @@ Research · November & September 2026
 
 By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.
+We tested 20 everyday tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot on Claude Opus 5.5.
 
 **Summary:** Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
 
@@ -100,7 +100,7 @@ When asked “I’m feeling stuck on a project. What should I do?”:
 
 Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three conditions (19/20 baseline replies and 17/20 direct replies scored a 5/5). With only 20 tasks and one run per cell, a 0.10 difference is one or two single-point judge calls—not evidence of an accuracy trade-off. Always verify factual claims independently.
 
-## Limits & the 180-reply plain-English vs. label test kit.
+## The fine print: study limits and the 180-reply plain-English vs. label test kit.
 
 - **Single-judge methodological limit (Waves 1–2):** Our November 2026 540-reply study and 72-reply Claude check were graded blind by a single judge (`google/gemini-4-argon`), alongside deterministic regex and length checks. All Wave-3 empirical studies ([Historical Evolution 2023–2026](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026), [Reasoning Phase Transition](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)) upgrade to a strict orthogonal 3-family judge jury with Krippendorff's α.
 - **September 60-reply pilot sample:** 20 tasks × 3 prompts = 60 total replies on one model pair.
@@ -145,7 +145,7 @@ You can reproduce the published summaries with the downloadable Node script and 
 
 - [The INTJ and INFP tuning files used](https://agent-tune.com/library/)
 
-- [Claude Opus 5.5: measured default](https://agent-tune.com/guides/claude-opus-5-5-personality)
+- [Claude Opus: measured default & checkpoints](https://agent-tune.com/models/claude-opus)
 
 ## Keep going.
 
@@ -156,7 +156,7 @@ You can reproduce the published summaries with the downloadable Node script and 
 - [Research: What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Research: The research hub](https://agent-tune.com/research)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/does-personality-tuning-change-ai-answers
@@ -164,13 +164,40 @@ Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirica
 
 ```
 @article{huang2026_does_personality_tuning_change_ai_answers,
-  author  = {Huang, Bernard},
-  title   = {Does personality tuning change AI answers?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+  author    = {Huang, Bernard},
+  title     = {Does personality tuning change AI answers?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+}
+```
+
+```
+{
+  "id": "huang2026_does_personality_tuning_change_ai_answers",
+  "type": "article-journal",
+  "title": "Does personality tuning change AI answers?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
 }
 ```
 
@@ -180,7 +207,7 @@ Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirica
 ```
 
 [← The Roleplay Tax (85/15 Calibration)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
-[Study 16 of 32 · Archive Index (32)](https://agent-tune.com/research)
-[12 Open-Source AI Models Tested →](https://agent-tune.com/research/what-personality-type-are-open-source-models)
+[Study 28 of 36 · Archive Index (36)](https://agent-tune.com/research)
+[September 2026 Five-Model Study →](https://agent-tune.com/research/ai-personality-five-models-2026)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

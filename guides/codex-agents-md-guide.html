@@ -53,6 +53,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/" class="active">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -106,8 +107,8 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>How personality = "none" in config.toml interacts with AGENTS.md.</h2>
-        <p>As noted in our <a href="/guides/astra-personality">GPT-6 Astra guide</a> and <a href="/guides/sol-personality">GPT-6 Sol guide</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = "none"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>
+        <h2>The fine print: how personality = "none" in config.toml interacts with AGENTS.md.</h2>
+        <p>As noted in our <a href="/guides/astra-personality">GPT-6 Astra guide</a> and the <a href="/models/gpt-sol">GPT Sol model profile</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = "none"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>
       </section>
 
       <div class="divider tight"></div>
@@ -148,7 +149,7 @@
           <li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener">ChatGPT &amp; Codex Docs: AGENTS.md configuration</a></li>
           <li><a href="https://learn.chatgpt.com/docs/personalize" target="_blank" rel="noopener">ChatGPT Docs: Personalize ChatGPT (Work and Codex)</a></li>
           <li><a href="https://agent-tune.com/guides/astra-personality" target="_blank" rel="noopener">AgentTune: How to give GPT-6 Astra a personality</a></li>
-          <li><a href="https://agent-tune.com/guides/sol-personality" target="_blank" rel="noopener">AgentTune: How to give GPT-6 Sol a personality</a></li>
+          <li><a href="https://agent-tune.com/models/gpt-sol" target="_blank" rel="noopener">AgentTune: GPT Sol model personality profile</a></li>
         </ul>
       </section>
 
@@ -157,10 +158,12 @@
         <h2>Keep going.</h2>
         <div class="guide-related">
           <a href="/guides/astra-personality"><span class="guide-related-kicker">Guide</span>How to give GPT-6 Astra a personality</a>
-          <a href="/guides/sol-personality"><span class="guide-related-kicker">Guide</span>How to give GPT-6 Sol a personality</a>
+          <a href="/models/gpt-astra"><span class="guide-related-kicker">Model profile</span>GPT Astra — 6 checkpoints across the Personality Atlas</a>
+          <a href="/models/gpt-sol"><span class="guide-related-kicker">Model profile</span>GPT Sol — 4 checkpoints &amp; tuning notes</a>
           <a href="/guides/ai-coding-agent-rules-files-matrix"><span class="guide-related-kicker">Guide</span>The layer your AGENTS.md is missing (coding agent personality)</a>
           <a href="/guides/cursor-rules-copilot-gemini-md"><span class="guide-related-kicker">Guide</span>Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md</a>
           <a href="/guides/ai-custom-instructions-character-limits"><span class="guide-related-kicker">Guide</span>AI custom instructions character limits (2026 cheat sheet)</a>
+          <a href="/guides/agents-md-templates"><span class="guide-related-kicker">Templates</span>16 copy-paste AGENTS.md templates by tech stack</a>
         </div>
       </section>
 

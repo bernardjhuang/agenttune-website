@@ -5,7 +5,7 @@ Guide · Frameworks
 
 # MBTI vs Big Five for AI: crisp switches or calibrated dials.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 
@@ -18,12 +18,6 @@ Big Five (OCEAN) measures five continuous dimensions: Openness, Conscientiousnes
 In academic personality research, Big Five is the gold standard because traits are continuous in human data and hold up better on retest reliability. On MBTI, a person at 52% Thinking and a person at 95% Thinking both get the letter `T`, and scores near the midpoint can flip letters on retest.
 
 Prompting an AI raises a practical engineering question: do you want a bundled four-letter template or five independent trait dials you can mix and match?
-
-## What the research can and cannot establish.
-
-These are empirical analyses of model-generated self-descriptions, not clinical personality diagnoses. Furthermore, while humans span five orthogonal Big Five factors, our [10,000-sheet AI "Big One" Factor Collapse & MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) proves that across 20 LLMs, **63.58% of Big Five variance collapses onto a single general RLHF alignment axis** (+O/+C/+A/−N) and cross-instrument discriminant validity breaks (e.g., MBTI Thinking–Feeling correlates `r = +0.25` with Agreeableness and `+0.68` with Openness). See our [methodology and limitations](https://agent-tune.com/research#methodology).
-
-Use a type or trait as a starting hypothesis for your preferences. In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [400-reply prompt syntax benchmark](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot), checkable behavioral rules drive the actual accuracy and brevity gains rather than bare four-letter labels. Compare outputs on your own tasks and retain only rules that help.
 
 ## Types write instructions. Traits tune them.
 
@@ -53,6 +47,12 @@ Loading interactive Big Five score interpreter…
 | Agreeableness | [Diplomatic, supportive framing](https://agent-tune.com/library/ocean/agreeableness-high) | [Blunt skeptic & premise checker](https://agent-tune.com/library/ocean/agreeableness-low) | Very High (43.7–47.6 prop.) |
 | Neuroticism | [Pre-mortem risk & failure radar](https://agent-tune.com/library/ocean/neuroticism-high) | [Steady calm under ambiguity](https://agent-tune.com/library/ocean/neuroticism-low) | Low (10.0–20.1) |
 
+## The fine print: what our research can and cannot establish.
+
+**In plain terms:** When we give AI models human personality quizzes, their answers reflect their default training (warm, organized, calm) rather than five independent human traits. In detail, these are empirical analyses of model-generated self-descriptions, not clinical personality diagnoses. While humans span five independent Big Five factors, our [10,000-sheet AI "Big One" Factor Collapse & MTMM Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) shows that across 20 LLMs, **63.58% of Big Five variance collapses onto a single general RLHF alignment axis** (+O/+C/+A/−N) and cross-instrument discriminant validity breaks (for example, MBTI Thinking–Feeling correlates `r = +0.25` with Agreeableness and `+0.68` with Openness). See our [methodology and limitations](https://agent-tune.com/research#methodology).
+
+Use a type or trait as a starting draft for your preferences. In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [400-reply prompt syntax benchmark](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot), checkable behavioral rules drive the actual accuracy and brevity gains rather than bare four-letter labels. Compare outputs on your own tasks and keep the rules that help.
+
 ## Questions people ask.
 
 ### Is MBTI scientifically valid?
@@ -63,9 +63,9 @@ It's criticized on two real grounds: it splits continuous traits into binaries, 
 
 Start with MBTI: each axis converts directly into an instruction the model can follow without interpretation. Then layer Big Five for calibration — how much detail, how much hedging, how much warmth. Our tuning files pair both, so in practice you don't have to choose.
 
-### Why did several AI models score as INTJ or ISTJ in your studies?
+### Why did several AI models test as INTJ or ISTJ in your studies?
 
-In our exploratory self-report benchmarks, instruction-tuned assistants regularly rate themselves as quiet (I), analytical (T), and structured (J). However, S/N and T/F margins are often narrow or tied, and the May 2026 and September 2026 cohorts used mixed protocols—so those scores describe questionnaire self-reports, not fixed model personalities.
+In our exploratory self-report benchmarks, instruction-tuned assistants regularly rate themselves as quiet (I), analytical (T), and structured (J), so they most often test as INTJ or ISTJ. However, S/N and T/F margins are often narrow or tied, and the May 2026 and September 2026 cohorts used mixed protocols—so those scores describe default questionnaire answers, not fixed human personalities.
 
 ### Can I use both MBTI and Big Five in one prompt?
 

@@ -7,7 +7,7 @@ Guide & Picker · ChatGPT Voice
 
 By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.
+**Quick answer:** To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session). Pick from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Then add a 2–4 sentence rule in Custom Instructions so spoken replies stay brief.
 
 ## Filter all 9 ChatGPT voices and build a Voice-Mode prompt.
 

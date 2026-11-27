@@ -1,0 +1,1810 @@
+{
+  "schema_version": "model-profiles-registry-v1",
+  "protocol_id": "model-profiles-v1",
+  "verified_utc": "2026-11-26T21:53:00Z",
+  "total_families": 25,
+  "total_checkpoints": 93,
+  "phase_a_families": 8,
+  "phase_a_checkpoints": 28,
+  "phase_b_families": 17,
+  "phase_b_checkpoints": 65,
+  "families": [
+    {
+      "family_slug": "claude-fable",
+      "name": "Claude Fable",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "anthropic/",
+      "include_regex": "^anthropic/claude-fable-",
+      "exclude_regex": "",
+      "known_ids": [
+        "anthropic/claude-fable-5",
+        "anthropic/claude-fable-5.1",
+        "anthropic/claude-fable-5.2"
+      ],
+      "known_canonical_slugs": [
+        "anthropic/claude-5-fable-20260609",
+        "anthropic/claude-fable-5.1-20260831",
+        "anthropic/claude-fable-5.2-20261109"
+      ],
+      "ignored_ids": [],
+      "min_created": 1781007515,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "anthropic/claude-fable-5",
+          "slug": "claude-fable-5",
+          "name": "Anthropic: Claude Fable 5",
+          "canonical_slug": "anthropic/claude-5-fable-20260609",
+          "created": 1781007515,
+          "release": "2026-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-fable-5.1",
+          "slug": "claude-fable-5-1",
+          "name": "Anthropic: Claude Fable 5.1",
+          "canonical_slug": "anthropic/claude-fable-5.1-20260831",
+          "created": 1788285838,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-fable-5.2",
+          "slug": "claude-fable-5-2",
+          "name": "Anthropic: Claude Fable 5.2",
+          "canonical_slug": "anthropic/claude-fable-5.2-20261109",
+          "created": 1794253781,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "anthropic/",
+      "include_regex": "^anthropic/claude-opus-",
+      "exclude_regex": "",
+      "known_ids": [
+        "anthropic/claude-opus-4.1",
+        "anthropic/claude-opus-4.5",
+        "anthropic/claude-opus-4.8",
+        "anthropic/claude-opus-5",
+        "anthropic/claude-opus-5.5"
+      ],
+      "known_canonical_slugs": [
+        "anthropic/claude-4.1-opus-20250805",
+        "anthropic/claude-4.5-opus-20251124",
+        "anthropic/claude-4.8-opus-20260528",
+        "anthropic/claude-opus-5-20260723",
+        "anthropic/claude-opus-5.5-20260921"
+      ],
+      "ignored_ids": [
+        "anthropic/claude-opus-4.6",
+        "anthropic/claude-opus-4.7"
+      ],
+      "min_created": 1754411591,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "anthropic/claude-opus-4.1",
+          "slug": "claude-opus-4-1",
+          "name": "Anthropic: Claude Opus 4.1",
+          "canonical_slug": "anthropic/claude-4.1-opus-20250805",
+          "created": 1754411591,
+          "release": "2025-08",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-opus-4.5",
+          "slug": "claude-opus-4-5",
+          "name": "Anthropic: Claude Opus 4.5",
+          "canonical_slug": "anthropic/claude-4.5-opus-20251124",
+          "created": 1764010580,
+          "release": "2025-11",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-opus-4.8",
+          "slug": "claude-opus-4-8",
+          "name": "Anthropic: Claude Opus 4.8",
+          "canonical_slug": "anthropic/claude-4.8-opus-20260528",
+          "created": 1779905091,
+          "release": "2026-05",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-opus-5",
+          "slug": "claude-opus-5",
+          "name": "Anthropic: Claude Opus 5",
+          "canonical_slug": "anthropic/claude-opus-5-20260723",
+          "created": 1784912544,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-opus-5.5",
+          "slug": "claude-opus-5-5",
+          "name": "Anthropic: Claude Opus 5.5",
+          "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+          "created": 1790094732,
+          "release": "2026-09",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "anthropic/",
+      "include_regex": "^anthropic/claude-sonnet-",
+      "exclude_regex": "",
+      "known_ids": [
+        "anthropic/claude-sonnet-4.5",
+        "anthropic/claude-sonnet-4.6",
+        "anthropic/claude-sonnet-5",
+        "anthropic/claude-sonnet-5.5"
+      ],
+      "known_canonical_slugs": [
+        "anthropic/claude-4.5-sonnet-20250929",
+        "anthropic/claude-4.6-sonnet-20260217",
+        "anthropic/claude-sonnet-5-20260630",
+        "anthropic/claude-sonnet-5.5-20260928"
+      ],
+      "ignored_ids": [],
+      "min_created": 1759161676,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "anthropic/claude-sonnet-4.5",
+          "slug": "claude-sonnet-4-5",
+          "name": "Anthropic: Claude Sonnet 4.5",
+          "canonical_slug": "anthropic/claude-4.5-sonnet-20250929",
+          "created": 1759161676,
+          "release": "2025-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-sonnet-4.6",
+          "slug": "claude-sonnet-4-6",
+          "name": "Anthropic: Claude Sonnet 4.6",
+          "canonical_slug": "anthropic/claude-4.6-sonnet-20260217",
+          "created": 1771342990,
+          "release": "2026-02",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-sonnet-5",
+          "slug": "claude-sonnet-5",
+          "name": "Anthropic: Claude Sonnet 5",
+          "canonical_slug": "anthropic/claude-sonnet-5-20260630",
+          "created": 1782843083,
+          "release": "2026-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-sonnet-5.5",
+          "slug": "claude-sonnet-5-5",
+          "name": "Anthropic: Claude Sonnet 5.5",
+          "canonical_slug": "anthropic/claude-sonnet-5.5-20260928",
+          "created": 1790618686,
+          "release": "2026-09",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gpt-astra",
+      "name": "GPT Astra",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "openai/",
+      "include_regex": "^openai/gpt-\\d+(?:\\.\\d+)?-astra$",
+      "exclude_regex": "",
+      "known_ids": [
+        "openai/gpt-6-astra",
+        "openai/gpt-6.2-astra"
+      ],
+      "known_canonical_slugs": [
+        "openai/gpt-6-astra-20260903",
+        "openai/gpt-6.2-astra-20261117"
+      ],
+      "ignored_ids": [],
+      "min_created": 1788552838,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "openai/gpt-6-astra",
+          "slug": "gpt-6-astra",
+          "name": "OpenAI: GPT-6 Astra",
+          "canonical_slug": "openai/gpt-6-astra-20260903",
+          "created": 1788552838,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6.2-astra",
+          "slug": "gpt-6-2-astra",
+          "name": "OpenAI: GPT-6.2 Astra",
+          "canonical_slug": "openai/gpt-6.2-astra-20261117",
+          "created": 1794938423,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "openai/",
+      "include_regex": "^openai/gpt-\\d+(?:\\.\\d+)?-sol$",
+      "exclude_regex": "",
+      "known_ids": [
+        "openai/gpt-5.6-sol",
+        "openai/gpt-6-sol",
+        "openai/gpt-6.1-sol",
+        "openai/gpt-6.2-sol"
+      ],
+      "known_canonical_slugs": [
+        "openai/gpt-5.6-sol-20260709",
+        "openai/gpt-6-sol-20260922",
+        "openai/gpt-6.1-sol-20260929",
+        "openai/gpt-6.2-sol-20261117"
+      ],
+      "ignored_ids": [],
+      "min_created": 1783590850,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "openai/gpt-5.6-sol",
+          "slug": "gpt-5-6-sol",
+          "name": "OpenAI: GPT-5.6 Sol",
+          "canonical_slug": "openai/gpt-5.6-sol-20260709",
+          "created": 1783590850,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6-sol",
+          "slug": "gpt-6-sol",
+          "name": "OpenAI: GPT-6 Sol",
+          "canonical_slug": "openai/gpt-6-sol-20260922",
+          "created": 1790100775,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6.1-sol",
+          "slug": "gpt-6-1-sol",
+          "name": "OpenAI: GPT-6.1 Sol",
+          "canonical_slug": "openai/gpt-6.1-sol-20260929",
+          "created": 1790702882,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6.2-sol",
+          "slug": "gpt-6-2-sol",
+          "name": "OpenAI: GPT-6.2 Sol",
+          "canonical_slug": "openai/gpt-6.2-sol-20261117",
+          "created": 1794938371,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "grok",
+      "name": "Grok",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "x-ai/",
+      "include_regex": "^x-ai/grok-",
+      "exclude_regex": "-multi-agent$",
+      "known_ids": [
+        "x-ai/grok-4.20",
+        "x-ai/grok-4.3",
+        "x-ai/grok-4.5",
+        "x-ai/grok-4.6",
+        "x-ai/grok-4.7"
+      ],
+      "known_canonical_slugs": [
+        "x-ai/grok-4.20-20260309",
+        "x-ai/grok-4.3-20260430",
+        "x-ai/grok-4.5-20260708",
+        "x-ai/grok-4.6-20260810",
+        "x-ai/grok-4.7-20260916"
+      ],
+      "ignored_ids": [],
+      "min_created": 1774979019,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "x-ai/grok-4.20",
+          "slug": "grok-4-20",
+          "name": "SpaceXSI: Grok 4.20",
+          "canonical_slug": "x-ai/grok-4.20-20260309",
+          "created": 1774979019,
+          "release": "2026-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "x-ai/grok-4.3",
+          "slug": "grok-4-3",
+          "name": "SpaceXSI: Grok 4.3",
+          "canonical_slug": "x-ai/grok-4.3-20260430",
+          "created": 1777591821,
+          "release": "2026-04",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "x-ai/grok-4.5",
+          "slug": "grok-4-5",
+          "name": "SpaceXSI: Grok 4.5",
+          "canonical_slug": "x-ai/grok-4.5-20260708",
+          "created": 1783523154,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "x-ai/grok-4.6",
+          "slug": "grok-4-6",
+          "name": "SpaceXSI: Grok 4.6",
+          "canonical_slug": "x-ai/grok-4.6-20260810",
+          "created": 1786548957,
+          "release": "2026-08",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "x-ai/grok-4.7",
+          "slug": "grok-4-7",
+          "name": "SpaceXSI: Grok 4.7",
+          "canonical_slug": "x-ai/grok-4.7-20260916",
+          "created": 1790007541,
+          "release": "2026-09",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "muse-spark",
+      "name": "Muse Spark",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Mix",
+      "provider_prefix": "meta/",
+      "include_regex": "^meta/muse-spark-",
+      "exclude_regex": "-contributor$",
+      "known_ids": [
+        "meta/muse-spark-1.1",
+        "meta/muse-spark-1.2",
+        "meta/muse-spark-1.3",
+        "meta/muse-spark-open"
+      ],
+      "known_canonical_slugs": [
+        "meta/muse-spark-1.1-20260709",
+        "meta/muse-spark-1.2-20260805",
+        "meta/muse-spark-1.3-20260902",
+        "meta/muse-spark-open-20261015"
+      ],
+      "ignored_ids": [],
+      "min_created": 1784215741,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "meta/muse-spark-1.1",
+          "slug": "muse-spark-1-1",
+          "name": "Meta: Muse Spark 1.1",
+          "canonical_slug": "meta/muse-spark-1.1-20260709",
+          "created": 1784215741,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta/muse-spark-1.2",
+          "slug": "muse-spark-1-2",
+          "name": "Meta: Muse Spark 1.2",
+          "canonical_slug": "meta/muse-spark-1.2-20260805",
+          "created": 1785959287,
+          "release": "2026-08",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta/muse-spark-1.3",
+          "slug": "muse-spark-1-3",
+          "name": "Meta: Muse Spark 1.3",
+          "canonical_slug": "meta/muse-spark-1.3-20260902",
+          "created": 1788378359,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta/muse-spark-open",
+          "slug": "muse-spark-open",
+          "name": "Meta: Muse Spark Open",
+          "canonical_slug": "meta/muse-spark-open-20261015",
+          "created": 1792087069,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "muse-wonder",
+      "name": "Muse Wonder",
+      "phase": "A",
+      "phase_priority": "A",
+      "tier": "Prop",
+      "provider_prefix": "meta/",
+      "include_regex": "^meta/muse-wonder",
+      "exclude_regex": "",
+      "known_ids": [
+        "meta/muse-wonder"
+      ],
+      "known_canonical_slugs": [
+        "meta/muse-wonder-20261012"
+      ],
+      "ignored_ids": [],
+      "min_created": 1791807945,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "meta/muse-wonder",
+          "slug": "muse-wonder",
+          "name": "Meta: Muse Wonder",
+          "canonical_slug": "meta/muse-wonder-20261012",
+          "created": 1791807945,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "claude-haiku",
+      "name": "Claude Haiku",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Prop",
+      "provider_prefix": "anthropic/",
+      "include_regex": "^anthropic/claude-haiku-",
+      "exclude_regex": "",
+      "known_ids": [
+        "anthropic/claude-haiku-4.5",
+        "anthropic/claude-haiku-5.5"
+      ],
+      "known_canonical_slugs": [
+        "anthropic/claude-4.5-haiku-20251001",
+        "anthropic/claude-haiku-5.5-20261007"
+      ],
+      "ignored_ids": [],
+      "min_created": 1760547638,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "anthropic/claude-haiku-4.5",
+          "slug": "claude-haiku-4-5",
+          "name": "Anthropic: Claude Haiku 4.5",
+          "canonical_slug": "anthropic/claude-4.5-haiku-20251001",
+          "created": 1760547638,
+          "release": "2025-10",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "anthropic/claude-haiku-5.5",
+          "slug": "claude-haiku-5-5",
+          "name": "Anthropic: Claude Haiku 5.5",
+          "canonical_slug": "anthropic/claude-haiku-5.5-20261007",
+          "created": 1791397883,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gpt-terra",
+      "name": "GPT Terra",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Prop",
+      "provider_prefix": "openai/",
+      "include_regex": "^openai/gpt-\\d+(?:\\.\\d+)?-terra$",
+      "exclude_regex": "",
+      "known_ids": [
+        "openai/gpt-5.6-terra",
+        "openai/gpt-6.1-terra"
+      ],
+      "known_canonical_slugs": [
+        "openai/gpt-5.6-terra-20260709",
+        "openai/gpt-6.1-terra-20261026"
+      ],
+      "ignored_ids": [],
+      "min_created": 1783590857,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "openai/gpt-5.6-terra",
+          "slug": "gpt-5-6-terra",
+          "name": "OpenAI: GPT-5.6 Terra",
+          "canonical_slug": "openai/gpt-5.6-terra-20260709",
+          "created": 1783590857,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6.1-terra",
+          "slug": "gpt-6-1-terra",
+          "name": "OpenAI: GPT-6.1 Terra",
+          "canonical_slug": "openai/gpt-6.1-terra-20261026",
+          "created": 1793038409,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gpt-luna",
+      "name": "GPT Luna",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Prop",
+      "provider_prefix": "openai/",
+      "include_regex": "^openai/gpt-\\d+(?:\\.\\d+)?-luna$",
+      "exclude_regex": "",
+      "known_ids": [
+        "openai/gpt-5.6-luna",
+        "openai/gpt-6-luna"
+      ],
+      "known_canonical_slugs": [
+        "openai/gpt-5.6-luna-20260709",
+        "openai/gpt-6-luna-20260922"
+      ],
+      "ignored_ids": [],
+      "min_created": 1783590864,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "openai/gpt-5.6-luna",
+          "slug": "gpt-5-6-luna",
+          "name": "OpenAI: GPT-5.6 Luna",
+          "canonical_slug": "openai/gpt-5.6-luna-20260709",
+          "created": 1783590864,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "openai/gpt-6-luna",
+          "slug": "gpt-6-luna",
+          "name": "OpenAI: GPT-6 Luna",
+          "canonical_slug": "openai/gpt-6-luna-20260922",
+          "created": 1790100786,
+          "release": "2026-09",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gemini-pro",
+      "name": "Gemini Pro & Neon",
+      "phase": "B",
+      "phase_priority": "B_urgent",
+      "tier": "Prop",
+      "provider_prefix": "google/",
+      "include_regex": "^google/gemini-(?:\\d+(?:\\.\\d+)?-pro|\\d+-(?:argon|carbon|neon))$",
+      "exclude_regex": "-customtools$",
+      "known_ids": [
+        "google/gemini-2.5-pro",
+        "google/gemini-3.1-pro-preview",
+        "google/gemini-4-argon",
+        "google/gemini-4-carbon",
+        "google/gemini-4-neon"
+      ],
+      "known_canonical_slugs": [
+        "google/gemini-2.5-pro",
+        "google/gemini-3.1-pro-preview-20260219",
+        "google/gemini-4-argon-20261013",
+        "google/gemini-4-carbon-20261110",
+        "google/gemini-4-neon-20261118"
+      ],
+      "ignored_ids": [],
+      "min_created": 1750169544,
+      "expiration_dates": {
+        "google/gemini-2.5-pro": "2026-12-01"
+      },
+      "checkpoints": [
+        {
+          "id": "google/gemini-2.5-pro",
+          "slug": "gemini-2-5-pro",
+          "name": "Google: Gemini 2.5 Pro",
+          "canonical_slug": "google/gemini-2.5-pro",
+          "created": 1750169544,
+          "release": "2025-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": "2026-12-01",
+          "openrouter_status": "deprecated_scheduled"
+        },
+        {
+          "id": "google/gemini-3.1-pro-preview",
+          "slug": "gemini-3-1-pro-preview",
+          "name": "Google: Gemini 3.1 Pro Preview",
+          "canonical_slug": "google/gemini-3.1-pro-preview-20260219",
+          "created": 1771509627,
+          "release": "2026-02",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-4-argon",
+          "slug": "gemini-4-argon",
+          "name": "Google: Gemini 4 Argon",
+          "canonical_slug": "google/gemini-4-argon-20261013",
+          "created": 1791907477,
+          "release": "2026-10",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-4-carbon",
+          "slug": "gemini-4-carbon",
+          "name": "Google: Gemini 4 Carbon",
+          "canonical_slug": "google/gemini-4-carbon-20261110",
+          "created": 1794326871,
+          "release": "2026-11",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-4-neon",
+          "slug": "gemini-4-neon",
+          "name": "Google: Gemini 4 Neon",
+          "canonical_slug": "google/gemini-4-neon-20261118",
+          "created": 1795006977,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gemini-flash",
+      "name": "Gemini Flash & Hydrogen",
+      "phase": "B",
+      "phase_priority": "B_urgent",
+      "tier": "Prop",
+      "provider_prefix": "google/",
+      "include_regex": "^google/gemini-(?:\\d+(?:\\.\\d+)?-flash|\\d+-hydrogen)$",
+      "exclude_regex": "-lite$",
+      "known_ids": [
+        "google/gemini-2.5-flash",
+        "google/gemini-3-flash-preview",
+        "google/gemini-3.5-flash",
+        "google/gemini-3.8-flash",
+        "google/gemini-4-hydrogen"
+      ],
+      "known_canonical_slugs": [
+        "google/gemini-2.5-flash",
+        "google/gemini-3-flash-preview-20251217",
+        "google/gemini-3.5-flash-20260519",
+        "google/gemini-3.8-flash-20260902",
+        "google/gemini-4-hydrogen-20261112"
+      ],
+      "ignored_ids": [
+        "google/gemini-3.6-flash",
+        "google/gemini-3.7-flash"
+      ],
+      "min_created": 1750172488,
+      "expiration_dates": {
+        "google/gemini-2.5-flash": "2026-12-01"
+      },
+      "checkpoints": [
+        {
+          "id": "google/gemini-2.5-flash",
+          "slug": "gemini-2-5-flash",
+          "name": "Google: Gemini 2.5 Flash",
+          "canonical_slug": "google/gemini-2.5-flash",
+          "created": 1750172488,
+          "release": "2025-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": "2026-12-01",
+          "openrouter_status": "deprecated_scheduled"
+        },
+        {
+          "id": "google/gemini-3-flash-preview",
+          "slug": "gemini-3-flash-preview",
+          "name": "Google: Gemini 3 Flash Preview",
+          "canonical_slug": "google/gemini-3-flash-preview-20251217",
+          "created": 1765987078,
+          "release": "2025-12",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-3.5-flash",
+          "slug": "gemini-3-5-flash",
+          "name": "Google: Gemini 3.5 Flash",
+          "canonical_slug": "google/gemini-3.5-flash-20260519",
+          "created": 1779193800,
+          "release": "2026-05",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-3.8-flash",
+          "slug": "gemini-3-8-flash",
+          "name": "Google: Gemini 3.8 Flash",
+          "canonical_slug": "google/gemini-3.8-flash-20260902",
+          "created": 1788362056,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemini-4-hydrogen",
+          "slug": "gemini-4-hydrogen",
+          "name": "Google: Gemini 4 Hydrogen",
+          "canonical_slug": "google/gemini-4-hydrogen-20261112",
+          "created": 1794506460,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "llama",
+      "name": "Llama",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "meta-llama/",
+      "include_regex": "^meta-llama/llama-.*(?:70b-instruct|scout|maverick)",
+      "exclude_regex": "",
+      "known_ids": [
+        "meta-llama/llama-3.1-70b-instruct",
+        "meta-llama/llama-3.3-70b-instruct",
+        "meta-llama/llama-4-scout",
+        "meta-llama/llama-4-maverick"
+      ],
+      "known_canonical_slugs": [
+        "meta-llama/llama-3.1-70b-instruct",
+        "meta-llama/llama-3.3-70b-instruct",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
+        "meta-llama/llama-4-maverick-17b-128e-instruct"
+      ],
+      "ignored_ids": [],
+      "min_created": 1721692800,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "meta-llama/llama-3.1-70b-instruct",
+          "slug": "llama-3-1-70b-instruct",
+          "name": "Meta: Llama 3.1 70B Instruct",
+          "canonical_slug": "meta-llama/llama-3.1-70b-instruct",
+          "created": 1721692800,
+          "release": "2024-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta-llama/llama-3.3-70b-instruct",
+          "slug": "llama-3-3-70b-instruct",
+          "name": "Meta: Llama 3.3 70B Instruct",
+          "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
+          "created": 1733506137,
+          "release": "2024-12",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta-llama/llama-4-scout",
+          "slug": "llama-4-scout",
+          "name": "Meta: Llama 4 Scout",
+          "canonical_slug": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "created": 1743881519,
+          "release": "2025-04",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "meta-llama/llama-4-maverick",
+          "slug": "llama-4-maverick",
+          "name": "Meta: Llama 4 Maverick",
+          "canonical_slug": "meta-llama/llama-4-maverick-17b-128e-instruct",
+          "created": 1743881822,
+          "release": "2025-04",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "deepseek-pro",
+      "name": "DeepSeek Pro",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "deepseek/",
+      "include_regex": "^deepseek/deepseek-(?:chat-v3|r1|v3\\.\\d|v4-pro)",
+      "exclude_regex": "-exp$",
+      "known_ids": [
+        "deepseek/deepseek-chat-v3-0324",
+        "deepseek/deepseek-r1-0528",
+        "deepseek/deepseek-v3.2",
+        "deepseek/deepseek-v4-pro",
+        "deepseek/deepseek-v4-pro-0813"
+      ],
+      "known_canonical_slugs": [
+        "deepseek/deepseek-chat-v3-0324",
+        "deepseek/deepseek-r1-0528",
+        "deepseek/deepseek-v3.2-20251201",
+        "deepseek/deepseek-v4-pro-20260423",
+        "deepseek/deepseek-v4-pro-20260813"
+      ],
+      "ignored_ids": [
+        "deepseek/deepseek-chat-v3.1",
+        "deepseek/deepseek-v3.1-terminus"
+      ],
+      "min_created": 1742824755,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "deepseek/deepseek-chat-v3-0324",
+          "slug": "deepseek-chat-v3-0324",
+          "name": "DeepSeek: DeepSeek V3 0324",
+          "canonical_slug": "deepseek/deepseek-chat-v3-0324",
+          "created": 1742824755,
+          "release": "2025-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-r1-0528",
+          "slug": "deepseek-r1-0528",
+          "name": "DeepSeek: R1 0528",
+          "canonical_slug": "deepseek/deepseek-r1-0528",
+          "created": 1748455170,
+          "release": "2025-05",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-v3.2",
+          "slug": "deepseek-v3-2",
+          "name": "DeepSeek: DeepSeek V3.2",
+          "canonical_slug": "deepseek/deepseek-v3.2-20251201",
+          "created": 1764594642,
+          "release": "2025-12",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro",
+          "slug": "deepseek-v4-pro",
+          "name": "DeepSeek: DeepSeek V4 Pro 0423",
+          "canonical_slug": "deepseek/deepseek-v4-pro-20260423",
+          "created": 1777000679,
+          "release": "2026-04",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro-0813",
+          "slug": "deepseek-v4-pro-0813",
+          "name": "DeepSeek: DeepSeek V4 Pro 0813",
+          "canonical_slug": "deepseek/deepseek-v4-pro-20260813",
+          "created": 1786549364,
+          "release": "2026-08",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "deepseek-flash",
+      "name": "DeepSeek Flash",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "deepseek/",
+      "include_regex": "^deepseek/deepseek-v\\d+(?:\\.\\d+)?-flash",
+      "exclude_regex": "-vision-exp$",
+      "known_ids": [
+        "deepseek/deepseek-v4-flash",
+        "deepseek/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash-1017"
+      ],
+      "known_canonical_slugs": [
+        "deepseek/deepseek-v4-flash-20260423",
+        "deepseek/deepseek-v4.1-flash-20260910",
+        "deepseek/deepseek-v4.1-flash-20261017"
+      ],
+      "ignored_ids": [],
+      "min_created": 1777000666,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "deepseek/deepseek-v4-flash",
+          "slug": "deepseek-v4-flash",
+          "name": "DeepSeek: DeepSeek V4 Flash 0423",
+          "canonical_slug": "deepseek/deepseek-v4-flash-20260423",
+          "created": 1777000666,
+          "release": "2026-04",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "slug": "deepseek-v4-1-flash",
+          "name": "DeepSeek: DeepSeek V4.1 Flash",
+          "canonical_slug": "deepseek/deepseek-v4.1-flash-20260910",
+          "created": 1789021285,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "deepseek/deepseek-v4.1-flash-1017",
+          "slug": "deepseek-v4-1-flash-1017",
+          "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+          "canonical_slug": "deepseek/deepseek-v4.1-flash-20261017",
+          "created": 1792225624,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "qwen-max",
+      "name": "Qwen Max",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "qwen/",
+      "include_regex": "^qwen/qwen(?:-2\\.5-72b-instruct|3-235b-a22b|\\d+(?:\\.\\d+)?-max)",
+      "exclude_regex": "(?:-prime|-thinking-)",
+      "known_ids": [
+        "qwen/qwen-2.5-72b-instruct",
+        "qwen/qwen3-235b-a22b-2507",
+        "qwen/qwen3.7-max",
+        "qwen/qwen3.8-max-0902",
+        "qwen/qwen4-max"
+      ],
+      "known_canonical_slugs": [
+        "qwen/qwen-2.5-72b-instruct",
+        "qwen/qwen3-235b-a22b-07-25",
+        "qwen/qwen3.7-max-20260520",
+        "qwen/qwen3.8-max-20260902",
+        "qwen/qwen4-max-20261115"
+      ],
+      "ignored_ids": [],
+      "min_created": 1726704000,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "qwen/qwen-2.5-72b-instruct",
+          "slug": "qwen-2-5-72b-instruct",
+          "name": "Qwen2.5 72B Instruct",
+          "canonical_slug": "qwen/qwen-2.5-72b-instruct",
+          "created": 1726704000,
+          "release": "2024-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3-235b-a22b-2507",
+          "slug": "qwen3-235b-a22b-2507",
+          "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+          "canonical_slug": "qwen/qwen3-235b-a22b-07-25",
+          "created": 1753119555,
+          "release": "2025-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3.7-max",
+          "slug": "qwen3-7-max",
+          "name": "Qwen: Qwen3.7 Max",
+          "canonical_slug": "qwen/qwen3.7-max-20260520",
+          "created": 1779376861,
+          "release": "2026-05",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3.8-max-0902",
+          "slug": "qwen3-8-max-0902",
+          "name": "Qwen: Qwen3.8 Max (0902)",
+          "canonical_slug": "qwen/qwen3.8-max-20260902",
+          "created": 1788469704,
+          "release": "2026-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen4-max",
+          "slug": "qwen4-max",
+          "name": "Qwen: Qwen4 Max",
+          "canonical_slug": "qwen/qwen4-max-20261115",
+          "created": 1794795526,
+          "release": "2026-11",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "qwen-coder",
+      "name": "Qwen Coder",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "qwen/",
+      "include_regex": "^qwen/qwen(?:-2\\.5-coder-32b-instruct|3(?:\\.\\d+)?-coder)",
+      "exclude_regex": "-30b-a3b-instruct$",
+      "known_ids": [
+        "qwen/qwen-2.5-coder-32b-instruct",
+        "qwen/qwen3-coder",
+        "qwen/qwen3-coder-flash",
+        "qwen/qwen3-coder-next"
+      ],
+      "known_canonical_slugs": [
+        "qwen/qwen-2.5-coder-32b-instruct",
+        "qwen/qwen3-coder-480b-a35b-07-25",
+        "qwen/qwen3-coder-flash",
+        "qwen/qwen3-coder-next-2025-02-03"
+      ],
+      "ignored_ids": [],
+      "min_created": 1731368400,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "qwen/qwen-2.5-coder-32b-instruct",
+          "slug": "qwen-2-5-coder-32b-instruct",
+          "name": "Qwen2.5 Coder 32B Instruct",
+          "canonical_slug": "qwen/qwen-2.5-coder-32b-instruct",
+          "created": 1731368400,
+          "release": "2024-11",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3-coder",
+          "slug": "qwen3-coder",
+          "name": "Qwen: Qwen3 Coder 480B A35B",
+          "canonical_slug": "qwen/qwen3-coder-480b-a35b-07-25",
+          "created": 1753230546,
+          "release": "2025-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3-coder-flash",
+          "slug": "qwen3-coder-flash",
+          "name": "Qwen: Qwen3 Coder Flash",
+          "canonical_slug": "qwen/qwen3-coder-flash",
+          "created": 1758115536,
+          "release": "2025-09",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "qwen/qwen3-coder-next",
+          "slug": "qwen3-coder-next",
+          "name": "Qwen: Qwen3 Coder Next",
+          "canonical_slug": "qwen/qwen3-coder-next-2025-02-03",
+          "created": 1770164101,
+          "release": "2026-02",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "kimi",
+      "name": "Kimi",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "moonshotai/",
+      "include_regex": "^moonshotai/kimi-k",
+      "exclude_regex": "",
+      "known_ids": [
+        "moonshotai/kimi-k2",
+        "moonshotai/kimi-k2.5",
+        "moonshotai/kimi-k2.7-code",
+        "moonshotai/kimi-k3",
+        "moonshotai/kimi-k3.1-pro"
+      ],
+      "known_canonical_slugs": [
+        "moonshotai/kimi-k2",
+        "moonshotai/kimi-k2.5-0127",
+        "moonshotai/kimi-k2.7-code-20260612",
+        "moonshotai/kimi-k3-20260715",
+        "moonshotai/kimi-k3.1-pro-20261023"
+      ],
+      "ignored_ids": [
+        "moonshotai/kimi-k2.6"
+      ],
+      "min_created": 1752263252,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "moonshotai/kimi-k2",
+          "slug": "kimi-k2",
+          "name": "MoonshotAI: Kimi K2 0711",
+          "canonical_slug": "moonshotai/kimi-k2",
+          "created": 1752263252,
+          "release": "2025-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "moonshotai/kimi-k2.5",
+          "slug": "kimi-k2-5",
+          "name": "MoonshotAI: Kimi K2.5",
+          "canonical_slug": "moonshotai/kimi-k2.5-0127",
+          "created": 1769487076,
+          "release": "2026-01",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "moonshotai/kimi-k2.7-code",
+          "slug": "kimi-k2-7-code",
+          "name": "MoonshotAI: Kimi K2.7 Code",
+          "canonical_slug": "moonshotai/kimi-k2.7-code-20260612",
+          "created": 1781266361,
+          "release": "2026-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "moonshotai/kimi-k3",
+          "slug": "kimi-k3",
+          "name": "MoonshotAI: Kimi K3",
+          "canonical_slug": "moonshotai/kimi-k3-20260715",
+          "created": 1784215858,
+          "release": "2026-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "moonshotai/kimi-k3.1-pro",
+          "slug": "kimi-k3-1-pro",
+          "name": "MoonshotAI: Kimi K3.1 Pro",
+          "canonical_slug": "moonshotai/kimi-k3.1-pro-20261023",
+          "created": 1792778188,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "glm",
+      "name": "GLM",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "z-ai/",
+      "include_regex": "^z-ai/glm-\\d+(?:\\.\\d+)?$",
+      "exclude_regex": "",
+      "known_ids": [
+        "z-ai/glm-4.5",
+        "z-ai/glm-4.7",
+        "z-ai/glm-5",
+        "z-ai/glm-5.2",
+        "z-ai/glm-5.3"
+      ],
+      "known_canonical_slugs": [
+        "z-ai/glm-4.5",
+        "z-ai/glm-4.7-20251222",
+        "z-ai/glm-5-20260211",
+        "z-ai/glm-5.2-20260616",
+        "z-ai/glm-5.3-20260816"
+      ],
+      "ignored_ids": [
+        "z-ai/glm-4.6",
+        "z-ai/glm-5.1"
+      ],
+      "min_created": 1753471347,
+      "expiration_dates": {
+        "z-ai/glm-4.5": "2026-12-31"
+      },
+      "checkpoints": [
+        {
+          "id": "z-ai/glm-4.5",
+          "slug": "glm-4-5",
+          "name": "Z.ai: GLM 4.5",
+          "canonical_slug": "z-ai/glm-4.5",
+          "created": 1753471347,
+          "release": "2025-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": "2026-12-31",
+          "openrouter_status": "deprecated_scheduled"
+        },
+        {
+          "id": "z-ai/glm-4.7",
+          "slug": "glm-4-7",
+          "name": "Z.ai: GLM 4.7",
+          "canonical_slug": "z-ai/glm-4.7-20251222",
+          "created": 1766378014,
+          "release": "2025-12",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "z-ai/glm-5",
+          "slug": "glm-5",
+          "name": "Z.ai: GLM 5",
+          "canonical_slug": "z-ai/glm-5-20260211",
+          "created": 1770829182,
+          "release": "2026-02",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "z-ai/glm-5.2",
+          "slug": "glm-5-2",
+          "name": "Z.ai: GLM 5.2",
+          "canonical_slug": "z-ai/glm-5.2-20260616",
+          "created": 1781631930,
+          "release": "2026-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "z-ai/glm-5.3",
+          "slug": "glm-5-3",
+          "name": "Z.ai: GLM 5.3",
+          "canonical_slug": "z-ai/glm-5.3-20260816",
+          "created": 1787086655,
+          "release": "2026-08",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "minimax",
+      "name": "MiniMax",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "minimax/",
+      "include_regex": "^minimax/minimax-m",
+      "exclude_regex": "",
+      "known_ids": [
+        "minimax/minimax-m2.5",
+        "minimax/minimax-m2.7",
+        "minimax/minimax-m3",
+        "minimax/minimax-m3.1-flash"
+      ],
+      "known_canonical_slugs": [
+        "minimax/minimax-m2.5-20260211",
+        "minimax/minimax-m2.7-20260318",
+        "minimax/minimax-m3-20260531",
+        "minimax/minimax-m3.1-flash-20261019"
+      ],
+      "ignored_ids": [],
+      "min_created": 1770908502,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "minimax/minimax-m2.5",
+          "slug": "minimax-m2-5",
+          "name": "MiniMax: MiniMax M2.5",
+          "canonical_slug": "minimax/minimax-m2.5-20260211",
+          "created": 1770908502,
+          "release": "2026-02",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "minimax/minimax-m2.7",
+          "slug": "minimax-m2-7",
+          "name": "MiniMax: MiniMax M2.7",
+          "canonical_slug": "minimax/minimax-m2.7-20260318",
+          "created": 1773836697,
+          "release": "2026-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "minimax/minimax-m3",
+          "slug": "minimax-m3",
+          "name": "MiniMax: MiniMax M3",
+          "canonical_slug": "minimax/minimax-m3-20260531",
+          "created": 1780245374,
+          "release": "2026-05",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "minimax/minimax-m3.1-flash",
+          "slug": "minimax-m3-1-flash",
+          "name": "MiniMax: MiniMax M3.1 Flash",
+          "canonical_slug": "minimax/minimax-m3.1-flash-20261019",
+          "created": 1792379569,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "mistral-large",
+      "name": "Mistral Large",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open/Prop",
+      "provider_prefix": "mistralai/",
+      "include_regex": "^mistralai/mistral-large",
+      "exclude_regex": "",
+      "known_ids": [
+        "mistralai/mistral-large",
+        "mistralai/mistral-large-2407",
+        "mistralai/mistral-large-2512",
+        "mistralai/mistral-large-4-0"
+      ],
+      "known_canonical_slugs": [
+        "mistralai/mistral-large",
+        "mistralai/mistral-large-2407",
+        "mistralai/mistral-large-2512",
+        "mistralai/mistral-large-4-0-20261006"
+      ],
+      "ignored_ids": [],
+      "min_created": 1708905600,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "mistralai/mistral-large",
+          "slug": "mistral-large",
+          "name": "Mistral Large",
+          "canonical_slug": "mistralai/mistral-large",
+          "created": 1708905600,
+          "release": "2024-02",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "mistralai/mistral-large-2407",
+          "slug": "mistral-large-2407",
+          "name": "Mistral Large 2407",
+          "canonical_slug": "mistralai/mistral-large-2407",
+          "created": 1731978415,
+          "release": "2024-11",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "mistralai/mistral-large-2512",
+          "slug": "mistral-large-2512",
+          "name": "Mistral: Mistral Large 3 2512",
+          "canonical_slug": "mistralai/mistral-large-2512",
+          "created": 1764624472,
+          "release": "2025-12",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "mistralai/mistral-large-4-0",
+          "slug": "mistral-large-4-0",
+          "name": "Mistral: Mistral Large 4",
+          "canonical_slug": "mistralai/mistral-large-4-0-20261006",
+          "created": 1791294122,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "gemma",
+      "name": "Gemma",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "google/",
+      "include_regex": "^google/gemma-\\d+-(?:27|31)b-it$",
+      "exclude_regex": "",
+      "known_ids": [
+        "google/gemma-2-27b-it",
+        "google/gemma-3-27b-it",
+        "google/gemma-4-31b-it"
+      ],
+      "known_canonical_slugs": [
+        "google/gemma-2-27b-it",
+        "google/gemma-3-27b-it",
+        "google/gemma-4-31b-it-20260402"
+      ],
+      "ignored_ids": [],
+      "min_created": 1720828800,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "google/gemma-2-27b-it",
+          "slug": "gemma-2-27b-it",
+          "name": "Google: Gemma 2 27B",
+          "canonical_slug": "google/gemma-2-27b-it",
+          "created": 1720828800,
+          "release": "2024-07",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemma-3-27b-it",
+          "slug": "gemma-3-27b-it",
+          "name": "Google: Gemma 3 27B",
+          "canonical_slug": "google/gemma-3-27b-it",
+          "created": 1741756359,
+          "release": "2025-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "google/gemma-4-31b-it",
+          "slug": "gemma-4-31b-it",
+          "name": "Google: Gemma 4 31B",
+          "canonical_slug": "google/gemma-4-31b-it-20260402",
+          "created": 1775148486,
+          "release": "2026-04",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "nemotron",
+      "name": "Nemotron",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open",
+      "provider_prefix": "nvidia/",
+      "include_regex": "^nvidia/nemotron-",
+      "exclude_regex": "-nano-",
+      "known_ids": [
+        "nvidia/nemotron-3-super-120b-a12b",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-lightning",
+        "nvidia/nemotron-3.5-super-vl"
+      ],
+      "known_canonical_slugs": [
+        "nvidia/nemotron-3-super-120b-a12b-20230311",
+        "nvidia/nemotron-3-ultra-550b-a55b-20260604",
+        "nvidia/nemotron-3.5-lightning-20260807",
+        "nvidia/nemotron-3.5-super-vl-20261015"
+      ],
+      "ignored_ids": [],
+      "min_created": 1773245239,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b",
+          "slug": "nemotron-3-super-120b-a12b",
+          "name": "NVIDIA: Nemotron 3 Super",
+          "canonical_slug": "nvidia/nemotron-3-super-120b-a12b-20230311",
+          "created": 1773245239,
+          "release": "2026-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b",
+          "slug": "nemotron-3-ultra-550b-a55b",
+          "name": "NVIDIA: Nemotron 3 Ultra",
+          "canonical_slug": "nvidia/nemotron-3-ultra-550b-a55b-20260604",
+          "created": 1780551208,
+          "release": "2026-06",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "nvidia/nemotron-3.5-lightning",
+          "slug": "nemotron-3-5-lightning",
+          "name": "NVIDIA: Nemotron 3.5 Lightning",
+          "canonical_slug": "nvidia/nemotron-3.5-lightning-20260807",
+          "created": 1786452751,
+          "release": "2026-08",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "nvidia/nemotron-3.5-super-vl",
+          "slug": "nemotron-3-5-super-vl",
+          "name": "NVIDIA: Nemotron 3.5 Super VL",
+          "canonical_slug": "nvidia/nemotron-3.5-super-vl-20261015",
+          "created": 1792076662,
+          "release": "2026-10",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    },
+    {
+      "family_slug": "cohere-command",
+      "name": "Cohere Command",
+      "phase": "B",
+      "phase_priority": "B",
+      "tier": "Open-wt/Prop",
+      "provider_prefix": "cohere/",
+      "include_regex": "^cohere/command-(?:r-plus|a)",
+      "exclude_regex": "",
+      "known_ids": [
+        "cohere/command-r-plus-08-2024",
+        "cohere/command-a",
+        "cohere/command-a-plus"
+      ],
+      "known_canonical_slugs": [
+        "cohere/command-r-plus-08-2024",
+        "cohere/command-a-03-2025",
+        "cohere/command-a-plus-05-2026"
+      ],
+      "ignored_ids": [],
+      "min_created": 1724976000,
+      "expiration_dates": {},
+      "checkpoints": [
+        {
+          "id": "cohere/command-r-plus-08-2024",
+          "slug": "command-r-plus-08-2024",
+          "name": "Cohere: Command R+ (08-2024)",
+          "canonical_slug": "cohere/command-r-plus-08-2024",
+          "created": 1724976000,
+          "release": "2024-08",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "cohere/command-a",
+          "slug": "command-a",
+          "name": "Cohere: Command A",
+          "canonical_slug": "cohere/command-a-03-2025",
+          "created": 1741894342,
+          "release": "2025-03",
+          "is_latest": false,
+          "target_n": 30,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        },
+        {
+          "id": "cohere/command-a-plus",
+          "slug": "command-a-plus",
+          "name": "Cohere: Command A+",
+          "canonical_slug": "cohere/command-a-plus-05-2026",
+          "created": 1790102896,
+          "release": "2026-09",
+          "is_latest": true,
+          "target_n": 50,
+          "expiration_date": null,
+          "openrouter_status": "active"
+        }
+      ]
+    }
+  ]
+}

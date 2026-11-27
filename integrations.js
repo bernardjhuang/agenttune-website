@@ -65,6 +65,15 @@
     "mcp": "mcp-setup.sh"
   };
   const filenameFor = targetId => TARGET_FILENAMES[targetId] || "agenttune-instructions.md";
+  const MODEL_PROFILE_URLS = {
+    "any": "/models/",
+    "muse": "/models/muse-spark",
+    "astra-6": "/models/gpt-astra",
+    "sol-6": "/models/gpt-sol",
+    "fable-5-1": "/models/claude-fable",
+    "opus-5-5": "/models/claude-opus",
+    "grok-4-7": "/models/grok"
+  };
   window.AT_INTEGRATIONS = INTEGRATIONS;
   window.AT_PROMPTS = { models: MODELS, modelFor, prompt, snippet, stripFrontMatter, destinations, modifiers: MODIFIERS, filenameFor };
   window.renderIntegrations = function (tuning, containerOrOpts) {
@@ -86,7 +95,7 @@
     root.innerHTML = '<div class="prompt-picker-controls"><label for="' + uid + '-app">1. Your app<select id="' + uid + '-app" data-app>' +
       allowedApps.map(a => '<option value="' + a.id + '">' + a.name + '</option>').join('') +
       '</select></label><label for="' + uid + '-target">2. Where to use it<select id="' + uid + '-target" data-target></select></label></div>' +
-      '<details><summary>Optional model guidance</summary><label for="' + uid + '-model">Model<select id="' + uid + '-model" data-model></select></label><p>A prompt cannot switch models. Choose the model in your app separately.</p></details>' +
+      '<details><summary>Optional model guidance</summary><label for="' + uid + '-model">Model<select id="' + uid + '-model" data-model></select></label><p>A prompt cannot switch models. Choose the model in your app separately. <a href="/models/" data-model-profile>View tested model profile →</a></p></details>' +
       '<article class="integration-deep-card prompt-picker-card"><div class="prompt-picker-heading"><h2 data-title></h2><span class="integration-badge" data-badge></span></div>' +
       '<p class="prompt-picker-sub" data-sub></p><p class="prompt-model-note" data-note></p><div class="prompt-picker-steps" data-steps></div>' +
       '<div class="prompt-modifiers" data-modifiers role="group" aria-label="Optional style modifiers"><span class="prompt-modifiers-label">Quick modifiers (optional):</span>' +
@@ -203,6 +212,11 @@
       if (modWrap) modWrap.hidden = hideModifiers || target.id === 'mcp';
       $('[data-title]').textContent = target.name; $('[data-badge]').textContent = target.badge;
       $('[data-sub]').textContent = target.sub; $('[data-note]').textContent = model.note;
+      const profileLink = $('[data-model-profile]');
+      if (profileLink) {
+        profileLink.href = MODEL_PROFILE_URLS[model.id] || '/models/';
+        profileLink.textContent = model.id === 'any' ? 'Browse all 25 model profiles →' : 'View ' + model.name + ' personality profile →';
+      }
       $('[data-steps]').innerHTML = target.steps;
       editor.value = text; window.ATTextareas?.resize(editor);
       copyBtn.disabled = !text;

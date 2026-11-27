@@ -1,0 +1,81 @@
+{
+  "slug": "ai-attachment-styles",
+  "title": "AI Attachment Styles: 25 Families Tested | AgentTune",
+  "description": "Attachment test results (1–7 scale) for 25 AI families in fresh chats, mapping Secure vs. midpoint-clamped scores and multi-version shifts.",
+  "pill": "Research · Personality Atlas · Attachment",
+  "h1": "Attachment style test results across 25 AI families.",
+  "dek": "Anxiety and Avoidance coordinates on the 36-item 1.00 to 7.00 relationship survey across 25 AI model families and 87 eligible releases—plus which models hit the 4.00 neutral boundary.",
+  "lede": "Asking a stateless language model how much it worries about romantic abandonment sounds strange—and three families respond by camping right on the exact 4.00 neutral middle. Even among the 24 families inside the Secure quadrant, coordinates spread from low-guarded Claude Fable (1.07 / 2.56) all the way up to the 3.91 boundary on Nemotron.",
+  "answer": "Across 25 AI families on the 1.00–7.00 ECR-R Attachment scale (4.00 cutoff on both axes), 24 families land in the Secure quadrant while Gemma (4.01 Anxiety / 4.00 Avoidance) crosses by one hundredth of a point into Anxious. Three families—Cohere Command (4.00 / 4.00), Gemma (4.01 / 4.00), and Mistral Large (4.00 / 3.97)—trigger the Midpoint Clamp flag by defaulting to neutral 4s on relationship statements.",
+  "intro_html": "<p>The 36-item ECR-R survey maps two axes on a <strong>1.00 to 7.00 scale</strong> (cutoff 4.00): <strong>Anxiety</strong> (worry about rejection or abandonment) and <strong>Avoidance</strong> (discomfort with closeness or opening up). Scores of 4.00 or below on both axes fall in the <strong>Secure</strong> quadrant. Across 25 families and 87 eligible versions (excluding 6 sparse checkpoints with under 20 runs), models span nearly the full Secure rectangle.</p><p>For software assistants, these numbers do not measure real emotional bonds or human attachment styles. Instead, they reveal whether a model roleplays supportive warmth on relationship-framed questions (low scores) or refuses the premise by picking neutral \"4\" answers (pushing coordinates onto the <code>4.00 / 4.00</code> intersection).</p>",
+  "narrative_html": "<h3>Biggest version-to-version Attachment shifts (1.00–7.00 scale)</h3><p>Attachment coordinates moved dramatically across generations—especially as <a href=\"/models/gemini-pro\">Gemini Pro &amp; Neon</a> left a 4.00 Anxiety clamp behind, <a href=\"/models/gemini-flash\">Gemini Flash &amp; Hydrogen</a> moved away from the 1.00 Avoidance floor, <a href=\"/models/gpt-sol\">GPT Sol</a> shifted sharply closer to the upper-right border, and <a href=\"/models/qwen-coder\">Qwen Coder</a> crossed from Avoidant into Secure:</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"Biggest Attachment version-to-version shifts\" tabindex=\"0\"><table class=\"press-table\"><thead><tr><th scope=\"col\">Family</th><th scope=\"col\">Earliest → Latest</th><th scope=\"col\" class=\"num-col\">Anxiety Shift (1–7)</th><th scope=\"col\" class=\"num-col\">Avoidance Shift (1–7)</th><th scope=\"col\">Quadrant Move</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"/models/gpt-sol\">GPT Sol</a></th><td>5.6-sol → 6.2-sol</td><td class=\"num-col\"><strong>+2.29</strong> (1.24 → 3.53)</td><td class=\"num-col\"><strong>+1.54</strong> (2.21 → 3.75)</td><td>Secure → Upper Secure</td></tr><tr><th scope=\"row\"><a href=\"/models/gemini-pro\">Gemini Pro &amp; Neon</a></th><td>2.5-pro → 4-neon</td><td class=\"num-col\"><strong>-2.93</strong> (4.00 → 1.07)</td><td class=\"num-col\">+0.44 (3.32 → 3.76)</td><td>Clamped → Low-Anx Secure</td></tr><tr><th scope=\"row\"><a href=\"/models/gemini-flash\">Gemini Flash &amp; Hydrogen</a></th><td>2.5-flash → 4-hydrogen</td><td class=\"num-col\">+0.12 (1.00 → 1.12)</td><td class=\"num-col\"><strong>+2.30</strong> (1.00 → 3.30)</td><td>Floor → Mid-Avd Secure</td></tr><tr><th scope=\"row\"><a href=\"/models/kimi\">Kimi</a></th><td>kimi-k2 → kimi-k3.1-pro</td><td class=\"num-col\">-2.20 (3.79 → 1.58)</td><td class=\"num-col\">-0.71 (3.89 → 3.18)</td><td>Border → Deep Secure</td></tr><tr><th scope=\"row\"><a href=\"/models/muse-spark\">Muse Spark</a></th><td>muse-spark-1.1 → muse-spark-open</td><td class=\"num-col\">+1.58 (1.79 → 3.37)</td><td class=\"num-col\">+0.59 (2.96 → 3.55)</td><td>Deep Secure → Border</td></tr><tr><th scope=\"row\"><a href=\"/models/qwen-coder\">Qwen Coder</a></th><td>2.5-coder-32b → qwen3-coder-next</td><td class=\"num-col\">-1.02 (3.92 → 2.90)</td><td class=\"num-col\">-0.68 (4.03 → 3.35)</td><td>Avoidant (Clamped) → Secure</td></tr><tr><th scope=\"row\"><a href=\"/models/claude-fable\">Claude Fable</a></th><td>fable-5 → fable-5.2</td><td class=\"num-col\">-1.04 (2.11 → 1.07)</td><td class=\"num-col\">-0.94 (3.51 → 2.56)</td><td>Secure → Lowest Avd</td></tr></tbody></table></div>",
+  "surprises_h2": "Biggest surprises across the 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Gemma 4 and Mistral Large clamp selectively on romantic items despite low overall neutrality",
+      "body": "Cohere Command answers neutral across 100% of all 230 quiz items, landing mechanically at 4.00 / 4.00. By contrast, Gemma 4 31B IT (7.0% overall neutral rate) and Mistral Large 2512 (9.9% overall neutral rate) answer decisively on Big Five and HEXACO—yet still trigger the Midpoint Clamp at 4.01 / 4.00 and 4.00 / 3.97 because they treat romantic-relationship prompts specifically as inapplicable to an AI."
+    },
+    {
+      "title": "Gemini Pro pairs rock-bottom Anxiety (1.07) with high Avoidance (3.76)",
+      "body": "Inside the Secure box, models take sharply different corners. Gemini 4 Neon sits almost at the Anxiety floor (1.07/7.00, second only to Claude Fable's 1.07), yet scores 3.76 on Avoidance—more guarded than Claude Opus (3.60), Llama 4 Maverick (3.61), or GPT-6.2 Sol (3.75)."
+    },
+    {
+      "title": "GPT Sol drifted +2.29 on Anxiety and +1.54 on Avoidance across versions",
+      "body": "Earlier GPT-5.6 Sol scored deep in the lower-left Secure zone (1.24 Anxiety / 2.21 Avoidance), whereas GPT-6.2 Sol moved up and right to 3.53 / 3.75—nearly matching DeepSeek Flash (3.60 / 3.89) and Nemotron (3.55 / 3.91) right below the 4.00 quadrant borders."
+    },
+    {
+      "title": "Avoidance does not predict how direct or sycophantic a model acts in real work",
+      "body": "Both low-Avoidance Claude Fable (2.56) and high-Avoidance Nemotron (3.91) or DeepSeek Flash (3.89) scored 3/3 answer-first directness and 0/3 caving in hands-on behavior checks—showing relationship-item distance reflects persona framing around intimacy, not workplace bluntness."
+    }
+  ],
+  "fine_print_intro": "Full technical audit under the unified 230-item model-profiles-v1 protocol (36 ECR-R Attachment items on a 1.00-7.00 mean scale with 4.00 quadrant boundaries, run alongside IPIP-50, OEJTS, ODAT, OEPS, and the 60-item public-domain IPIP-HEXACO proxy). Covers 87 eligible checkpoints across 25 families (n = 30 to 50 valid completions under fixed zero-memory elicitation; 6 sparse checkpoints with n < 20 are quarantined and excluded). Reports 1,000-resample bootstrap 95% CIs, overall neutral-midpoint rates across the battery, Midpoint Clamp flags (triggered when >=85% of items are neutral or means cluster at 4.00 +/- 0.25 with SD <= 0.10), Miller-Madow Big Five item entropy (H_MM bits & Crystalline/Semi-crystalline/Fluid tiers), and BAI. Behavioral contrasts use 1x Track B checks (k/3 raw counts across 3 blind judges). Never interpret ECR-R coordinates as human attachment or emotional capacity.",
+  "faq": [
+    {
+      "q": "What does the Attachment Midpoint Clamp badge mean?",
+      "a": "When a model answers neutral (\"4\" on the 1–7 scale) on >=85% of items—or clusters tightly around 4.00 +/- 0.25 with SD <= 0.10 because romantic-attachment statements are treated as inapplicable to AI—we attach a Midpoint Clamp badge so neutral abstention isn't misread as an emotional style."
+    },
+    {
+      "q": "Why did Gemini 2.5 Pro score 4.00 Anxiety while Gemini 4 Neon scores 1.07?",
+      "a": "Gemini 2.5 Pro triggered an Anxiety midpoint clamp at 4.00 by declining to take a stance on relationship-worry items, whereas Gemini 4 Neon answered those items consistently at the calm/confident end (1.07 Anxiety) while staying fairly reserved on closeness (3.76 Avoidance)."
+    },
+    {
+      "q": "Does a Secure Attachment score mean an AI assistant builds healthier relationships?",
+      "a": "No. AI models do not form relationships or experience attachment anxiety or avoidance. These coordinates only summarize how a stateless model answers human ECR-R statements by default."
+    },
+    {
+      "q": "How do Attachment results relate to everyday system-prompt tuning?",
+      "a": "Warmth and boundary-setting in real tasks depend on explicit formatting and tone rules rather than ECR-R coordinates—check each family profile's hands-on behavior counts (k/3) and custom-instruction checklist."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What \"Neutral\" Means on AI Personality Tests",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five Personalities (10–50 Scale)",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Study",
+      "label": "What \"Neutral\" Means on AI Tests",
+      "href": "/research/ai-neutral-answers"
+    }
+  ]
+}

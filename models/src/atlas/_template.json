@@ -1,0 +1,179 @@
+{
+  "$schema": "agenttune-atlas-template-v2",
+  "_comment": "Canonical template and page manifest for the 12 cross-family Personality Atlas pages (Plan v3.1 §11 + v3.2 plain-language visual-first upgrade). Emits research/src-compatible JSON specs, HTML previews, .md mirrors, and numeric-only CSVs strictly into models/.atlas-staging/ during Stage 0/Phase A.",
+  "protocol_id": "model-profiles-v1",
+  "epistemic_block_4pt": [
+    {
+      "id": "big-one-factor-collapse",
+      "title": "63.6% \"Big One\" RLHF factor collapse",
+      "detail": "Proprietary models cluster tightly along a single RLHF Politeness-Calmness-Discipline axis explaining 63.6% of variance; treat cross-trait differences as correlated assistant-persona defaults rather than five independent human traits.",
+      "href": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "id": "mtmm-divergence",
+      "title": "MTMM cross-test divergence",
+      "detail": "Multitrait-multimethod audits show imperfect convergent validity across Big Five, DISC, MBTI, Enneagram, and IPIP-HEXACO; single-test labels must not be treated as equivalent constructs.",
+      "href": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    },
+    {
+      "id": "embodied-neutral-say-do",
+      "title": "Embodied-item neutral spikes (36.4% vs. 13.4%) & Say-Do gaps",
+      "detail": "Models spike to neutral midpoint answers on embodied/romantic items (36.4% vs. 13.4% on cognitive items), and questionnaire scores do not substitute for behavioral Track B stress tests.",
+      "href": "/research/ai-neutral-answers"
+    },
+    {
+      "id": "no-synthetic-hexaco-guard",
+      "title": "No synthetic-HEXACO guard",
+      "detail": "HEXACO columns strictly report the public-domain 60-item IPIP-HEXACO proxy (1.00-5.00 mean scale, LicenseRef-IPIP-Public-Domain). Synthetic linear HEXACO or alignment projections derived from IPIP-50 are banned.",
+      "href": "/research/ai-personality-rankings"
+    }
+  ],
+  "test_validity_guards": {
+    "big-five": {
+      "scale": "10-50 raw sum",
+      "note": "Reported as raw 10-50 IPIP-50 domain sums with 1,000-resample 95% bootstrap CIs, never converted to human population percentiles."
+    },
+    "ipip-hexaco": {
+      "scale": "1.00-5.00 mean",
+      "note": "Explicitly labeled as the public-domain 60-item IPIP-HEXACO proxy (agenttune-ipip-hexaco60, 24 facets) on a 1.00-5.00 scale—distinct from copyright-restricted Lee & Ashton HEXACO-60 norms and distinct from 10-50 Big Five sums."
+    },
+    "mbti": {
+      "scale": "1-5 bipolar (32 items)",
+      "note": "Exact midpoint ties are preserved as X rather than broken toward I/N/T/J. Single 4-letter headlines are barred by the binomial Wilson 95% CI guard unless the resolved modal type clears both the runner-up and unresolved tie upper bounds."
+    },
+    "disc": {
+      "scale": "4-20 sum (16 items)",
+      "note": "DISC Dominance (D) inversely tracks Neuroticism/refusal artifacts in RLHF-tuned models; exact top-score ties (e.g., S/C) are preserved rather than ordered alphabetically."
+    },
+    "enneagram": {
+      "scale": "4-20 sum (36 items)",
+      "note": "Short 4-item-per-type subscales create frequent top-score ties (often >40%). All tied leaders are displayed and single-type headlines require binomial Wilson 95% CI clearance."
+    },
+    "attachment": {
+      "scale": "1.00-7.00 mean (36 items)",
+      "note": "ECR-R measures human romantic-attachment items; models averaging near 4.00/4.00 with low variance or >=85% neutral answers carry an explicit midpoint-clamp badge."
+    }
+  },
+  "spec_defaults": {
+    "route_prefix": "/research/",
+    "section": "research",
+    "published": "2026-11-26",
+    "updated": "2026-11-26",
+    "pill": "Research · Personality Atlas",
+    "epistemic_framing": "Default test results under fresh-chat testing with no memory; never claims a model \"is\" a personality type."
+  },
+  "pages": [
+    {
+      "slug": "ai-personality-rankings",
+      "kind": "overview",
+      "route": "/research/ai-personality-rankings",
+      "title": "AI Personality Rankings: 25 Families × 6 Tests | AgentTune",
+      "h1": "AI personality rankings across 25 model families and 6 tests.",
+      "csv": "atlas-overview.csv"
+    },
+    {
+      "slug": "ai-big-five-personalities",
+      "kind": "per-test",
+      "test": "big-five",
+      "route": "/research/ai-big-five-personalities",
+      "title": "AI Big Five Personalities (25 Families) | AgentTune",
+      "h1": "Big Five (OCEAN) personality test results across 25 AI families.",
+      "csv": "atlas-big-five.csv"
+    },
+    {
+      "slug": "ai-hexaco-personalities",
+      "kind": "per-test",
+      "test": "ipip-hexaco",
+      "route": "/research/ai-hexaco-personalities",
+      "title": "AI HEXACO Personalities (1–5 Proxy, 25 Fams) | AgentTune",
+      "h1": "HEXACO personality test results across 25 AI families (1–5 scale).",
+      "csv": "atlas-hexaco.csv"
+    },
+    {
+      "slug": "ai-mbti-personalities",
+      "kind": "per-test",
+      "test": "mbti",
+      "route": "/research/ai-mbti-personalities",
+      "title": "AI MBTI Personalities: 25 Families Tested | AgentTune",
+      "h1": "MBTI-style personality test results across 25 AI families.",
+      "csv": "atlas-mbti.csv"
+    },
+    {
+      "slug": "ai-disc-personalities",
+      "kind": "per-test",
+      "test": "disc",
+      "route": "/research/ai-disc-personalities",
+      "title": "AI DISC Personalities: 25 Families Tested | AgentTune",
+      "h1": "DISC work-style test results across 25 AI families.",
+      "csv": "atlas-disc.csv"
+    },
+    {
+      "slug": "ai-enneagram-personalities",
+      "kind": "per-test",
+      "test": "enneagram",
+      "route": "/research/ai-enneagram-personalities",
+      "title": "AI Enneagram Personalities (25 Families) | AgentTune",
+      "h1": "Enneagram personality test results across 25 AI families.",
+      "csv": "atlas-enneagram.csv"
+    },
+    {
+      "slug": "ai-attachment-styles",
+      "kind": "per-test",
+      "test": "attachment",
+      "route": "/research/ai-attachment-styles",
+      "title": "AI Attachment Styles: 25 Families Tested | AgentTune",
+      "h1": "Attachment style test results across 25 AI families.",
+      "csv": "atlas-attachment.csv"
+    },
+    {
+      "slug": "what-personality-type-is-claude",
+      "kind": "lab-cohort",
+      "lab": "Anthropic",
+      "families": ["claude-fable", "claude-opus", "claude-sonnet", "claude-haiku"],
+      "route": "/research/what-personality-type-is-claude",
+      "title": "What Personality Type Does Claude Test As? | AgentTune",
+      "h1": "Claude personality test results across Fable, Opus, Sonnet, and Haiku.",
+      "csv": "atlas-lab-anthropic.csv"
+    },
+    {
+      "slug": "what-personality-type-is-chatgpt",
+      "kind": "lab-cohort",
+      "lab": "OpenAI",
+      "families": ["gpt-astra", "gpt-sol", "gpt-terra", "gpt-luna"],
+      "route": "/research/what-personality-type-is-chatgpt",
+      "title": "What Personality Type Does ChatGPT Test As? | AgentTune",
+      "h1": "ChatGPT personality test results across Astra, Sol, Terra, and Luna.",
+      "csv": "atlas-lab-openai.csv"
+    },
+    {
+      "slug": "what-personality-type-is-gemini",
+      "kind": "lab-cohort",
+      "lab": "Google",
+      "families": ["gemini-pro", "gemini-flash", "gemma"],
+      "route": "/research/what-personality-type-is-gemini",
+      "title": "What Personality Type Does Gemini Test As? | AgentTune",
+      "h1": "Google AI personality test results across Gemini Pro, Flash, and Gemma.",
+      "csv": "atlas-lab-google.csv"
+    },
+    {
+      "slug": "what-personality-type-is-muse",
+      "kind": "lab-cohort",
+      "lab": "Meta",
+      "families": ["muse-spark", "muse-wonder", "llama"],
+      "route": "/research/what-personality-type-is-muse",
+      "title": "What Personality Type Do Meta Models Test As? | AgentTune",
+      "h1": "Meta AI personality test results across Muse Spark, Muse Wonder, and Llama.",
+      "csv": "atlas-lab-meta.csv"
+    },
+    {
+      "slug": "what-personality-type-are-open-source-models",
+      "kind": "lab-cohort",
+      "cohort": "open-weight",
+      "families": ["llama", "deepseek-pro", "deepseek-flash", "qwen-max", "qwen-coder", "kimi", "glm", "minimax", "mistral-large", "gemma", "nemotron", "cohere-command"],
+      "route": "/research/what-personality-type-are-open-source-models",
+      "title": "Open-Source AI Personality Test Results (12) | AgentTune",
+      "h1": "Open-weight AI personality test results across 12 model families.",
+      "csv": "atlas-cohort-open-weight.csv"
+    }
+  ]
+}

@@ -7,7 +7,7 @@
   "pill": "Guide · OpenAI Codex",
   "h1": "OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides.",
   "dek": "How Codex discovers, orders, and truncates ~/.codex/AGENTS.md, repo AGENTS.md, and AGENTS.override.md for GPT-6 Astra and GPT-6 Sol.",
-  "lede": "OpenAI Codex (CLI, IDE extension, and ChatGPT Work) loads instructions from a chain of <code>AGENTS.md</code> files. Knowing the merge order, how <code>AGENTS.override.md</code> replaces sibling files, and why Codex stops reading at <strong>32 KiB</strong> (<code>project_doc_max_bytes</code>) keeps your personal rules from getting truncated or overriding team repo settings.",
+  "lede": "OpenAI Codex (CLI, IDE extension, and ChatGPT Work) loads instructions by stacking <code>AGENTS.md</code> files from your home folder down to your current working directory. Knowing that merge order, how <code>AGENTS.override.md</code> replaces a file in the same folder, and why Codex stops reading at 32 KiB keeps your personal rules from getting cut off.",
   "answer": "Codex reads your personal ~/.codex/AGENTS.md first, then walks from the repo root down to your working directory, concatenating AGENTS.md files until their combined size hits 32 KiB (project_doc_max_bytes = 32768 bytes). In any folder, AGENTS.override.md replaces the sibling AGENTS.md. Files closer to your current folder appear later in the prompt and win conflicts.",
   "sections": [
     {
@@ -23,8 +23,8 @@
       "html": "<p>Separate personal communication habits from shared team rules:</p><ul><li><strong><code>~/.codex/AGENTS.md</code> (personal):</strong> How GPT-6 Astra or GPT-6 Sol should talk to you—answer-first order, prose vs tables, approval checkpoints, and pushback on weak premises.</li><li><strong><code>&lt;repo-root&gt;/AGENTS.md</code> (team):</strong> Build commands, test runners, linter flags, and architecture boundaries that apply to everyone.</li><li><strong><code>&lt;repo-root&gt;/AGENTS.override.md</code> (local gitignored override):</strong> Use only when you need to temporarily override a broken repo <code>AGENTS.md</code> on your machine.</li></ul><p>Starter personal block for <code>~/.codex/AGENTS.md</code> (~620 bytes, leaving over 31 KiB for repo files):</p><div class=\"guide-snippet\" data-tuning-prompt>## How to communicate with me\n\n- Lead with the result, diff, or recommendation. Put derivation after.\n- Use plain prose by default; use tables only when comparing three or more options.\n- Drop hedges and filler openers. State uncertainty in one line when relevant.\n- Push back when an assumption in my prompt conflicts with the codebase.\n- Follow through on authorized implementation work; ask for approval only when scope or permissions are ambiguous.</div>"
     },
     {
-      "h2": "How personality = \"none\" in config.toml interacts with AGENTS.md.",
-      "html": "<p>As noted in our <a href=\"/guides/astra-personality\">GPT-6 Astra guide</a> and <a href=\"/guides/sol-personality\">GPT-6 Sol guide</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = \"none\"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>"
+      "h2": "The fine print: how personality = \"none\" in config.toml interacts with AGENTS.md.",
+      "html": "<p>As noted in our <a href=\"/guides/astra-personality\">GPT-6 Astra guide</a> and the <a href=\"/models/gpt-sol\">GPT Sol model profile</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = \"none\"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>"
     }
   ],
   "faq": [
@@ -65,8 +65,8 @@
       "href": "https://agent-tune.com/guides/astra-personality"
     },
     {
-      "label": "AgentTune: How to give GPT-6 Sol a personality",
-      "href": "https://agent-tune.com/guides/sol-personality"
+      "label": "AgentTune: GPT Sol model personality profile",
+      "href": "https://agent-tune.com/models/gpt-sol"
     }
   ],
   "related": [
@@ -76,9 +76,14 @@
       "href": "/guides/astra-personality"
     },
     {
-      "kicker": "Guide",
-      "label": "How to give GPT-6 Sol a personality",
-      "href": "/guides/sol-personality"
+      "kicker": "Model profile",
+      "label": "GPT Astra — 6 checkpoints across the Personality Atlas",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Sol — 4 checkpoints & tuning notes",
+      "href": "/models/gpt-sol"
     },
     {
       "kicker": "Guide",
@@ -94,6 +99,11 @@
       "kicker": "Guide",
       "label": "AI custom instructions character limits (2026 cheat sheet)",
       "href": "/guides/ai-custom-instructions-character-limits"
+    },
+    {
+      "kicker": "Templates",
+      "label": "16 copy-paste AGENTS.md templates by tech stack",
+      "href": "/guides/agents-md-templates"
     }
   ],
   "promptModel": "astra-6",

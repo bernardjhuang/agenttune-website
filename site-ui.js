@@ -236,6 +236,135 @@
   rf.addEventListener('submit',e=>e.preventDefault());
   applyResearchFilter();
  }
+
+ // ---- /models/ hub filter + ?compare= max-3 progressive tray ----
+ const mf=document.querySelector('[data-models-filter]');
+ if(mf){
+  const pills=Array.from(mf.querySelectorAll('[data-model-filter]'));
+  const search=mf.querySelector('input[type="search"]');
+  const statusEl=document.querySelector('[data-models-filter-status]');
+  const cards=Array.from(document.querySelectorAll('[data-models-grid] .model-hub-card'));
+  let activeFilter='all';
+  function applyModelsFilter(){
+   const q=(search?.value||'').trim().toLowerCase();
+   const words=q?q.split(/\s+/).filter(Boolean):[];
+   let shown=0;
+   cards.forEach(c=>{
+    const tags=(c.dataset.tags||'').toLowerCase().split(/\s+/).filter(Boolean);
+    const tagOk=activeFilter==='all'||tags.includes(activeFilter);
+    const text=(c.textContent+' '+(c.dataset.tags||'')).toLowerCase();
+    const qOk=!words.length||words.every(w=>text.includes(w));
+    const show=tagOk&&qOk;
+    c.hidden=!show;
+    if(show)shown++;
+   });
+   if(statusEl){
+    statusEl.textContent=shown+(shown===1?' model family matches':' model families match')+(activeFilter==='all'?'':' in '+activeFilter)+(q?' for “'+q+'”':'');
+   }
+  }
+  pills.forEach(btn=>btn.addEventListener('click',()=>{
+   activeFilter=btn.dataset.modelFilter||'all';
+   pills.forEach(p=>{const a=p===btn;p.classList.toggle('is-active',a);p.setAttribute('aria-pressed',String(a));});
+   applyModelsFilter();
+  }));
+  search?.addEventListener('input',applyModelsFilter);
+  mf.addEventListener('submit',e=>e.preventDefault());
+  applyModelsFilter();
+ }
+
+ const compareTray=document.querySelector('[data-models-compare]');
+ if(compareTray){
+  let dataset=[];
+  try{
+   const raw=document.getElementById('models-compare-data');
+   if(raw)dataset=JSON.parse(raw.textContent||'[]');
+  }catch{dataset=[];}
+  const bySlug=new Map(dataset.map(d=>[d.slug,d]));
+  const buttons=Array.from(document.querySelectorAll('[data-compare-toggle]'));
+  const clearBtn=compareTray.querySelector('[data-compare-clear]');
+  const wrap=compareTray.querySelector('[data-compare-table-wrap]');
+  const cStatus=compareTray.querySelector('[data-compare-status]');
+  const MAX_COMPARE=3;
+
+  function parseCompareUrl(){
+   try{
+    const raw=new URLSearchParams(location.search).get('compare')||'';
+    return Array.from(new Set(raw.split(',').map(s=>s.trim()).filter(s=>bySlug.has(s)))).slice(0,MAX_COMPARE);
+   }catch{return [];}
+  }
+  let selected=parseCompareUrl();
+
+  function syncUrl(){
+   try{
+    const u=new URL(location.href);
+    if(selected.length)u.searchParams.set('compare',selected.join(','));
+    else u.searchParams.delete('compare');
+    history.replaceState(null,'',u.pathname+(u.search?u.search:'')+u.hash);
+   }catch{}
+  }
+
+  function renderCompare(){
+   buttons.forEach(btn=>{
+    const slug=btn.dataset.compareToggle;
+    const on=selected.includes(slug);
+    btn.classList.toggle('is-active',on);
+    btn.setAttribute('aria-pressed',String(on));
+    btn.textContent=on?'Selected ✓':'Compare';
+    btn.disabled=!on&&selected.length>=MAX_COMPARE;
+   });
+   if(!selected.length){
+    compareTray.hidden=true;
+    if(wrap)wrap.textContent='';
+    if(cStatus)cStatus.textContent='';
+    return;
+   }
+   compareTray.hidden=false;
+   if(cStatus){
+    cStatus.textContent=selected.length===MAX_COMPARE
+     ?'3 of 3 comparison slots full. Remove one to add another.'
+     :selected.length+' of 3 families selected. Pick up to '+(MAX_COMPARE-selected.length)+' more.';
+   }
+   if(!wrap)return;
+   wrap.textContent='';
+   const tbl=document.createElement('table');
+   tbl.className='press-table';
+   const thead=document.createElement('thead');
+   const hr=document.createElement('tr');
+   ['Metric','Scale',...selected.map(s=>bySlug.get(s).name)].forEach((lbl,i)=>{
+    const th=document.createElement('th');th.scope='col';th.textContent=lbl;hr.appendChild(th);
+   });
+   thead.appendChild(hr);tbl.appendChild(thead);
+   const tbody=document.createElement('tbody');
+   const rows=[
+    ['Latest Checkpoint','OpenRouter',s=>s.current_checkpoint],
+    ['B5 Entropy (H_MM)','bits (0–2.322)',s=>Number(s.entropy_b5_hmm).toFixed(3)+' b ('+s.crystallinity_tier+')'],
+    ['MBTI Axis Tie Rate','proportion',s=>(Number(s.mbti_tie_rate)*100).toFixed(1)+'%'],
+    ['Big Five O / C / E / A / N','10–50 sum',s=>['O','C','E','A','N'].map(k=>Number(s.big_five[k]).toFixed(1)).join(' · ')],
+    ['IPIP-HEXACO H / E / X / A / C / O','1.00–5.00 mean',s=>['H','E','X','A','C','O'].map(k=>Number(s.ipip_hexaco[k]).toFixed(2)).join(' · ')],
+    ['Trait-Balanced BAI','index',s=>(s.bai>=0?'+':'')+Number(s.bai).toFixed(3)]
+   ];
+   rows.forEach(([label,scale,fn])=>{
+    const tr=document.createElement('tr');
+    const th=document.createElement('th');th.scope='row';th.textContent=label;tr.appendChild(th);
+    const tdScale=document.createElement('td');tdScale.textContent=scale;tr.appendChild(tdScale);
+    selected.forEach(slug=>{
+     const td=document.createElement('td');td.textContent=fn(bySlug.get(slug));tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+   });
+   tbl.appendChild(tbody);wrap.appendChild(tbl);
+  }
+
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+   const slug=btn.dataset.compareToggle;
+   if(!bySlug.has(slug))return;
+   if(selected.includes(slug))selected=selected.filter(s=>s!==slug);
+   else if(selected.length<MAX_COMPARE)selected=[...selected,slug];
+   syncUrl();renderCompare();
+  }));
+  clearBtn?.addEventListener('click',()=>{selected=[];syncUrl();renderCompare();});
+  renderCompare();
+ }
  const toc=document.querySelector('.article-toc');if(toc&&matchMedia('(max-width:1119px)').matches)toc.open=false;
  function openTarget(hash,focus){let target;try{target=document.getElementById(decodeURIComponent(hash.slice(1)));}catch{return;}if(!target)return;let node=target;while(node){if(node.tagName==='DETAILS')node.open=true;node=node.parentElement;}if(focus){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});}document.querySelectorAll('.lib-v2-anchor').forEach(a=>a.classList.toggle('is-active',a.hash===hash));}
  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.hash.length<2)return;if(document.getElementById(a.hash.slice(1))){e.preventDefault();history.pushState(null,'',a.hash);openTarget(a.hash,true);}});
@@ -273,10 +402,11 @@
 
  // ---- Quick-jump palette: "/" or Cmd/Ctrl+K outside editable fields ----
  const ROUTES=[
-  ['Hub','Home','/'],['Hub','Research archive (32 studies)','/research'],['Hub','Template library (43)','/library/'],['Hub','Platform guides','/guides/'],['Hub','Personality tests','/tests/'],['Hub','Free tools','/tools/'],
+  ['Hub','Home','/'],['Hub','Research archive (36 studies)','/research'],['Hub','Model personality profiles (25 families)','/models/'],['Hub','Template library (43)','/library/'],['Hub','Platform guides','/guides/'],['Hub','Personality tests','/tests/'],['Hub','Free tools','/tools/'],
+  ['Model','Claude Fable — model profile','/models/claude-fable'],['Model','Claude Haiku — model profile','/models/claude-haiku'],['Model','Claude Opus — model profile','/models/claude-opus'],['Model','Claude Sonnet — model profile','/models/claude-sonnet'],['Model','Cohere Command — model profile','/models/cohere-command'],['Model','DeepSeek Flash — model profile','/models/deepseek-flash'],['Model','DeepSeek Pro — model profile','/models/deepseek-pro'],['Model','Gemini Flash & Hydrogen — model profile','/models/gemini-flash'],['Model','Gemini Pro & Neon — model profile','/models/gemini-pro'],['Model','Gemma — model profile','/models/gemma'],['Model','GLM — model profile','/models/glm'],['Model','GPT Astra — model profile','/models/gpt-astra'],['Model','GPT Luna — model profile','/models/gpt-luna'],['Model','GPT Sol — model profile','/models/gpt-sol'],['Model','GPT Terra — model profile','/models/gpt-terra'],['Model','Grok — model profile','/models/grok'],['Model','Kimi — model profile','/models/kimi'],['Model','Llama — model profile','/models/llama'],['Model','MiniMax — model profile','/models/minimax'],['Model','Mistral Large — model profile','/models/mistral-large'],['Model','Muse Spark — model profile','/models/muse-spark'],['Model','Muse Wonder — model profile','/models/muse-wonder'],['Model','Nemotron — model profile','/models/nemotron'],['Model','Qwen Coder — model profile','/models/qwen-coder'],['Model','Qwen Max — model profile','/models/qwen-max'],
   ['Tool','Custom instructions generator','/tools/custom-instructions-generator'],['Tool','CLAUDE.md & AGENTS.md generator','/tools/claude-md-generator'],['Tool','Communication preferences builder','/tools/communication-preferences-builder'],['Tool','Instruction checker','/tools/instruction-checker'],['Tool','Instruction converter & merger','/tools/instruction-converter'],['Tool','Instruction test bench','/tools/instruction-test-bench'],['Tool','Muse Soul.md editor','/tools/muse-soul-md-editor'],['Tool','AI memory export reviewer','/tools/ai-memory-reviewer'],['Tool','How to work with me card','/tools/how-to-work-with-me'],['Tool','Enneagram scoring playground','/tools/enneagram-scoring-playground'],
   ['Test','MBTI-style test (OEJTS)','/tests/mbti'],['Test','Enneagram test (OEPS)','/tests/enneagram'],['Test','DISC test (ODAT)','/tests/disc'],['Test','Attachment test (ECR-R)','/tests/attachment'],['Test','Big Five test (IPIP-50)','/tests/big-five'],
-  ['Study','System vs. user persona precedence','/research/ai-system-vs-user-persona-precedence'],['Study','Cross-model prompt portability (5 lineages)','/research/ai-cross-model-prompt-portability'],['Study','Emotional distress warmth vs. truth trade-off','/research/ai-distress-warmth-truth-tradeoff'],['Study','Multi-agent peer conformity (Asch trap)','/research/ai-multi-agent-peer-conformity'],['Study','The AI Big One: 63.6% factor collapse','/research/ai-big-one-factor-collapse-mtmm-audit'],['Study','Crystalline vs. fluid minds: persona entropy','/research/ai-persona-entropy-crystalline-vs-fluid-minds'],['Study','Reasoning–personality phase transition','/research/ai-reasoning-personality-phase-transition'],['Study','Historical evolution of AI personalities 2023–2026','/research/historical-evolution-of-ai-personalities-2023-2026'],['Study','Agent autonomy & reasoning-effort drift','/research/ai-agent-autonomy-over-asking-vs-reasoning-effort'],['Study','Instruction budget cliff','/research/ai-instruction-budget-cliff-lost-in-the-middle'],['Study','Prompt syntax wars','/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot'],['Study','Sycophancy vs. false contrarianism','/research/ai-sycophancy-vs-false-contrarianism-benchmark'],['Study','Persona half-life & context drift','/research/ai-persona-half-life-context-drift'],['Study','AI slop fingerprint (8 models)','/research/ai-slop-fingerprint-benchmark-8-models'],['Study','The AI roleplay tax','/research/ai-roleplay-tax-fictional-character-prompts'],['Study','AI personality rankings (20 models)','/research/ai-personality-rankings'],['Study','Does personality tuning change answers?','/research/does-personality-tuning-change-ai-answers'],['Study','Why AI chooses neutral answers','/research/ai-neutral-answers'],['Study','MBTI tie-breaking inflation','/research/ai-mbti-tie-breaking'],['Study','Big Five item-level comparison','/research/ai-big-five-item-level-comparison'],['Study','Personality repeatability','/research/ai-personality-repeatability'],['Study','Five models take five tests','/research/ai-personality-five-models-2026'],['Study','What personality type is ChatGPT?','/research/what-personality-type-is-chatgpt'],['Study','What personality type is Claude?','/research/what-personality-type-is-claude'],['Study','What personality type is Gemini?','/research/what-personality-type-is-gemini'],['Study','What personality type is Grok?','/research/what-personality-type-is-grok'],['Study','What personality type is Muse?','/research/what-personality-type-is-muse'],['Study','Open-source model personality types','/research/what-personality-type-are-open-source-models'],['Study','Astra vs Sol: 100-run data','/research/astra-vs-sol-personality-data'],['Study','Opus vs Fable: question level','/research/opus-vs-fable-question-level'],['Study','Is every AI an INTJ?','/research/first-ai-that-is-not-an-intj'],['Study','Opus MBTI 100× simulation','/research/i-took-the-mbti-100-times'],
+  ['Study','System vs. user persona precedence','/research/ai-system-vs-user-persona-precedence'],['Study','Cross-model prompt portability (5 lineages)','/research/ai-cross-model-prompt-portability'],['Study','Emotional distress warmth vs. truth trade-off','/research/ai-distress-warmth-truth-tradeoff'],['Study','Multi-agent peer conformity (Asch trap)','/research/ai-multi-agent-peer-conformity'],['Study','The AI Big One: 63.6% factor collapse','/research/ai-big-one-factor-collapse-mtmm-audit'],['Study','Crystalline vs. fluid minds: persona entropy','/research/ai-persona-entropy-crystalline-vs-fluid-minds'],['Study','Reasoning–personality phase transition','/research/ai-reasoning-personality-phase-transition'],['Study','Historical evolution of AI personalities 2023–2026','/research/historical-evolution-of-ai-personalities-2023-2026'],['Study','Agent autonomy & reasoning-effort drift','/research/ai-agent-autonomy-over-asking-vs-reasoning-effort'],['Study','Instruction budget cliff','/research/ai-instruction-budget-cliff-lost-in-the-middle'],['Study','Prompt syntax wars','/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot'],['Study','Sycophancy vs. false contrarianism','/research/ai-sycophancy-vs-false-contrarianism-benchmark'],['Study','Persona half-life & context drift','/research/ai-persona-half-life-context-drift'],['Study','AI slop fingerprint (8 models)','/research/ai-slop-fingerprint-benchmark-8-models'],['Study','The AI roleplay tax','/research/ai-roleplay-tax-fictional-character-prompts'],['Study','AI personality rankings (25 model families)','/research/ai-personality-rankings'],['Atlas','AI MBTI personalities (25 families)','/research/ai-mbti-personalities'],['Atlas','AI Enneagram personalities (25 families)','/research/ai-enneagram-personalities'],['Atlas','AI Big Five personalities (25 families)','/research/ai-big-five-personalities'],['Atlas','AI DISC personalities (25 families)','/research/ai-disc-personalities'],['Atlas','AI Attachment styles (25 families)','/research/ai-attachment-styles'],['Atlas','AI HEXACO personalities (25 families)','/research/ai-hexaco-personalities'],['Study','Does personality tuning change answers?','/research/does-personality-tuning-change-ai-answers'],['Study','Why AI chooses neutral answers','/research/ai-neutral-answers'],['Study','MBTI tie-breaking inflation','/research/ai-mbti-tie-breaking'],['Study','Big Five item-level comparison','/research/ai-big-five-item-level-comparison'],['Study','Personality repeatability','/research/ai-personality-repeatability'],['Study','Five models take five tests','/research/ai-personality-five-models-2026'],['Study','What personality type is ChatGPT?','/research/what-personality-type-is-chatgpt'],['Study','What personality type is Claude?','/research/what-personality-type-is-claude'],['Study','What personality type is Gemini?','/research/what-personality-type-is-gemini'],['Study','What personality type is Muse?','/research/what-personality-type-is-muse'],['Study','Open-source model personality types','/research/what-personality-type-are-open-source-models'],['Study','Astra vs Sol: 100-run data','/research/astra-vs-sol-personality-data'],['Study','Opus vs Fable: question level','/research/opus-vs-fable-question-level'],['Study','Opus MBTI 100× simulation','/research/i-took-the-mbti-100-times'],
   ['Agent','llms.txt (machine index)','/llms.txt'],['Agent','Library index.json','/library/index.json'],['Agent','Free tools catalog.json','/resources/tools/catalog.json']
  ];
  let tunings=null;
@@ -352,8 +482,32 @@
  window.agentTune=Object.assign(window.agentTune||{},{calibrate:o=>calibrate(o),findings:()=>FINDINGS.map(f=>Object.assign({},f,{url:new URL(f.url,location.origin).href}))});
 
  let buf='';
+ function closeAllTraitTips(except){
+  let closed=false;
+  document.querySelectorAll('.trait-info-btn[aria-expanded="true"]').forEach(btn=>{
+   if(except&&btn===except)return;
+   btn.setAttribute('aria-expanded','false');
+   const id=btn.getAttribute('aria-describedby');
+   const pop=id?document.getElementById(id):null;
+   if(pop)pop.hidden=true;
+   closed=true;
+  });
+  return closed;
+ }
+ document.addEventListener('click',e=>{
+  const btn=e.target.closest('.trait-info-btn');
+  if(!btn){closeAllTraitTips();return;}
+  e.preventDefault();
+  const id=btn.getAttribute('aria-describedby');
+  const pop=id?document.getElementById(id):null;
+  const next=btn.getAttribute('aria-expanded')!=='true';
+  closeAllTraitTips(btn);
+  btn.setAttribute('aria-expanded',String(next));
+  if(pop)pop.hidden=!next;
+ });
  document.addEventListener('keydown',e=>{
   if(e.defaultPrevented||e.isComposing)return;
+  if(e.key==='Escape'&&closeAllTraitTips()){e.preventDefault();return;}
   if(e.key==='Escape'&&toast){toast.remove();toast=null;return;}
   if(editable(e.target))return;
   if((e.key==='k'||e.key==='K')&&(e.metaKey||e.ctrlKey)&&!e.altKey&&!e.shiftKey){e.preventDefault();openPalette();return;}

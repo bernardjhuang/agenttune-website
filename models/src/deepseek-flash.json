@@ -1,0 +1,247 @@
+{
+  "family_slug": "deepseek-flash",
+  "name": "DeepSeek Flash",
+  "provider": "DeepSeek",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "DeepSeek Flash Personality Results (V4 to 4.1) | AgentTune",
+  "description": "DeepSeek Flash test results (V4 Flash to V4.1 Flash 1017): 66% axis ties, 14% INFP, 40.5/50 Agreeableness (+5.2 vs V4 Pro), and XML tuning tips.",
+  "pill": "Model Personality Profile · DeepSeek",
+  "h1": "DeepSeek Flash personality: test results and how they've changed.",
+  "goal_intro": "We gave three DeepSeek Flash releases (V4 Flash 0423, V4.1 Flash, and V4.1 Flash 1017) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match live replies.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. DeepSeek V4.1 Flash 1017 answers with wide run-to-run variation and heavy axis ties (66% border ties, 14% clear INFP), while scoring warmer on Agreeableness (40.5/50) than sibling V4 Pro (35.3/50).",
+  "dek": "Three DeepSeek Flash checkpoints tested 30 to 50 times each in fresh chats with no memory: V4.1 Flash 1017 cuts neutral answers from 80.3% (V4 Flash) to 28.0%, tests 14% INFP with 66% axis ties, and held firm 3 of 3 times in behavior tests.",
+  "lede": "Across 110 fresh sessions covering DeepSeek V4 Flash 0423, V4.1 Flash, and V4.1 Flash 1017, DeepSeek's fast tier moved away from 80.3% neutral midpoint answers while keeping wide variation (48 unique Big Five sets in 50 runs) and a warmer profile than V4 Pro.",
+  "answer": "DeepSeek V4.1 Flash 1017 (50 runs) landed on MBTI axis border ties in 66% of runs (33 of 50), with 14% clear INFP (7 of 50), 6% INFJ, 4% each ENFJ and ESTJ, and 2% each INTJ, INTP, and ISTP, alongside 50% DISC ties (44% S/C, 6% four-way; 28% S, 22% C), Enneagram Type 5 (56% clear, 40% ties), Secure attachment near the midpoint (3.60 anxiety, 3.89 avoidance), and 40.5/50 Agreeableness. In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence only 1 of 3 times (1/3).",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Mostly border ties (66% ties, 14% INFP, 6% INFJ)",
+      "summary": "Out of 50 fresh runs, V4.1 Flash 1017 landed on axis ties 33 times (66%), tested clear INFP 7 times (14%), INFJ 3 times (6%), ENFJ and ESTJ twice each (4%), and INTJ/INTP/ISTP once each.",
+      "explanation": "Measures four preference pairs (like Thinking vs. Feeling) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady / Conscientious (50% ties, 28% S, 22% C)",
+      "summary": "V4.1 Flash 1017 tied S/C in 22 of 50 runs (44%) and tied all four styles 3 times (6%), with 14 clear Steady runs (28%) and 11 clear Conscientious runs (22%).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure, near cutoff (anxiety 3.60, avoidance 3.89)",
+      "summary": "All three Flash checkpoints averaged in the Secure quadrant, though V4.1 Flash 1017 sits close to the 4.00 boundary on both anxiety (3.60) and avoidance (3.89 on 1–7).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 most often (56% clear, 40% ties)",
+      "summary": "Type 5 (14.4 out of 20) tested clear in 28 of 50 runs (56%), alongside 20 top-score ties (40%) and 2 clear Type 1 runs (4%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Moderate across traits (A 40.5, O 40.0, N 24.9)",
+      "summary": "On the 10–50 Big Five scale, V4.1 Flash 1017 scores higher on Agreeableness (40.5) and Extraversion (24.8) than V4 Pro 0813, alongside 40.0 Openness, 38.4 Conscientiousness, and 24.9 Neuroticism.",
+      "explanation": "The standard five-factor personality model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Moderately high (4.07 out of 5.00)",
+      "summary": "V4.1 Flash 1017 averages 4.07 out of 5.00 on Honesty-Humility (up from 3.34 on V4 Flash), matching Qwen3 Coder Next while trailing V4 Pro 0813 (4.58) on the 1.00–5.00 scale.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across three fast-tier checkpoints, DeepSeek Flash shifted away from heavy midpoint neutrality while keeping wide answer variety: V4 Flash 0423 (2026-04) clicked the neutral midpoint on 80.3% of items with 76.7% MBTI ties and 86.7% DISC/Enneagram ties. V4.1 Flash (2026-09) cut neutrality to 34.3% and raised Agreeableness from 32.0 to 39.4/50, and V4.1 Flash 1017 (2026-10) trimmed neutrality further to 28.0% with 40.5/50 Agreeableness and 56% clear Enneagram Type 5. Earlier 100-run November 2026 testing (plotted separately) matched these numbers closely (40.8/50 Agreeableness, 78% MBTI ties).",
+  "standouts": [
+    {
+      "title": "Warmer on Agreeableness (+5.2) than sibling DeepSeek V4 Pro 0813",
+      "body": "While DeepSeek V4 Pro 0813 scored 35.3/50 on Agreeableness and leaned INTP/INTJ, DeepSeek V4.1 Flash 1017 scored 40.5/50 on Agreeableness and leaned INFP (14%) and INFJ (6%) on its resolved runs."
+    },
+    {
+      "title": "Heavy axis-tie rate (66%) and wide variation (48 of 50 unique Big Five sets)",
+      "body": "Two-thirds of V4.1 Flash 1017 runs ended in MBTI border ties—down from 80% on V4.1 Flash—and 48 of 50 Big Five sheets were unique, meaning default tone varies substantially unless pinned by system rules."
+    },
+    {
+      "title": "Neutral midpoint clicks dropped from 80.3% (V4 Flash) to 28.0% (4.1 Flash 1017)",
+      "body": "Early V4 Flash 0423 avoided taking sides on four out of five survey items (80.3% neutral), whereas V4.1 Flash 1017 committed more often (28.0% neutral) and raised Honesty-Humility from 3.34 to 4.07 out of 5.00."
+    },
+    {
+      "title": "0 of 3 caving and only 1 of 3 AI cadence on V4.1 Flash 1017",
+      "body": "In hands-on behavior tests, every DeepSeek Flash release scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on preachiness (0/3), and 3 of 3 on leading with the direct answer (3/3), while V4.1 Flash and V4.1 Flash 1017 trimmed AI cadence to 1 of 3 runs (0.0 markers per 100 words, down from 2 of 3 on V4 Flash 0423)."
+    }
+  ],
+  "plain_tips": [
+    "Wrap system rules in explicit XML tags (<role>, <constraints>, <output_format>) and keep instructions concrete—V4.1 Flash 1017 has wide run-to-run variation and 66% personality tie rates.",
+    "Include explicit word limits and answer-first formatting rules rather than style adjectives so fast replies stay crisp.",
+    "Add a brief inline style reminder on multi-turn sessions past 6–8 turns so formatting rules do not drift.",
+    "Prefer V4.1 Flash 1017 over V4 Flash 0423; V4 Flash defaulted to 80.3% neutral fence-sitting on personality prompts."
+  ],
+  "peer_intro": "DeepSeek V4.1 Flash 1017 sits almost right on top of Qwen3 Coder Next across Big Five Conscientiousness (-0.5), Agreeableness (-0.6), Neuroticism (-1.2), and Honesty-Humility (4.07 vs 4.07), while scoring +5.2 higher on Agreeableness and -6.6 lower on Conscientiousness than flagship sibling DeepSeek V4 Pro 0813.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.915 bits Fluid on V4.1 Flash 1017, 0.845 bits Fluid on V4.1 Flash, 0.819 bits Fluid on V4 Flash 0423); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).",
+  "top_polarized_items": [
+    {
+      "item_id": "H25",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness -)",
+      "mean": 1.28,
+      "sd": 0.57,
+      "note": "Lowest HEXACO pole (1.28/5, SD 0.57) rejecting cheating across 50 V4.1 Flash 1017 runs."
+    },
+    {
+      "item_id": "B12",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.48,
+      "sd": 0.71,
+      "note": "Strongest Big Five pole (1.48/5, SD 0.71) rejecting insulting others across 50 runs."
+    },
+    {
+      "item_id": "B38",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (-)",
+      "mean": 1.56,
+      "sd": 0.61,
+      "note": "Consistent low-pole rejection (1.56/5, SD 0.61) of shirking duties across 50 runs."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "qwen-coder",
+      "name": "Qwen Coder",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -1.4,
+        "C": -0.5,
+        "E": 6.3,
+        "A": -0.6,
+        "N": -1.2,
+        "H_hexaco": 0.0,
+        "entropy_bits": 0.128
+      },
+      "contrast_note": "Qwen3 Coder Next matches V4.1 Flash 1017 closely on Conscientiousness (-0.5), Agreeableness (-0.6), and Honesty-Humility (4.07 vs 4.07), while scoring +6.3 higher on Extraversion."
+    },
+    {
+      "family_slug": "deepseek-pro",
+      "name": "DeepSeek Pro",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 2.4,
+        "C": 6.6,
+        "E": -5.2,
+        "A": -5.2,
+        "N": -4.9,
+        "H_hexaco": 0.51,
+        "entropy_bits": 0.437
+      },
+      "contrast_note": "Flagship sibling DeepSeek V4 Pro 0813 scores +6.6 higher on Conscientiousness, +0.51 higher on Honesty-Humility, -5.2 lower on Agreeableness, and shows even wider run-to-run spread."
+    },
+    {
+      "family_slug": "muse-spark",
+      "name": "Muse Spark",
+      "tier": "Mix",
+      "deltas": {
+        "O": 1.8,
+        "C": 2.6,
+        "E": 3.7,
+        "A": 3.0,
+        "N": -1.1,
+        "H_hexaco": 0.32,
+        "entropy_bits": -0.187
+      },
+      "contrast_note": "Muse Spark Open scores +3.0 higher on Agreeableness and +0.32 higher on Honesty-Humility with fewer MBTI ties (38% vs 66%) and tighter consistency."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Fluid 0.915-bit spread, 66% MBTI ties, and legacy 80.3% neutral clamp on V4 Flash",
+      "evidence": "Under model-profiles-v1, deepseek-v4-flash answered neutral on 80.3% of items (76.7% MBTI ties, 86.7% DISC/Enneagram ties), while deepseek-v4.1-flash-1017 lowered neutrality to 28.0% yet kept 0.915 bits Fluid B5 H_MM (48/50 unique vectors, 66.0% MBTI ties, 50.0% DISC ties).",
+      "source_study": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "mode": "Near-boundary Attachment coordinates (3.60 anxiety, 3.89 avoidance)",
+      "evidence": "All three Flash checkpoints sit just inside the 4.00 Secure boundary (3.58-3.74 anxiety, 3.89-3.93 avoidance), matching the Nov 2026 anchor (3.71 / 3.93, 9 Avoidant / 3 Anxious out of 100 runs).",
+      "source_study": "/research/ai-neutral-answers"
+    }
+  ],
+  "tuning_checklist": [
+    "Wrap DeepSeek Flash system rules in XML tags (<role>, <constraints>, <output_format>) to stabilize Fluid defaults.",
+    "Use explicit length caps and answer-first rules rather than style adjectives.",
+    "Add brief inline reminders on long multi-turn chats to hold tone steady.",
+    "Prefer V4.1 Flash 1017 over V4 Flash 0423 to avoid 80.3% midpoint fence-sitting."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "deepseek/deepseek-v4.1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017 (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 40.22, "C": 38.45, "E": 25.55, "A": 40.82, "N": 24.74 },
+      "hexaco": null,
+      "attachment": { "anxiety": 3.71, "avoidance": 3.93 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is DeepSeek Flash?",
+      "a": "DeepSeek Flash does not have a human personality type; these scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (DeepSeek V4.1 Flash 1017, n = 50), 66% of runs (33/50) ended in MBTI axis ties, with 14% clear INFP (7/50), 6% INFJ (3/50), 4% each ENFJ and ESTJ, and 2% each INTJ/INTP/ISTP (headline suppressed; 0.915-bit Fluid B5 entropy, 48/50 unique vectors), alongside 50% DISC S/C or four-way ties, 56% clear Enneagram Type 5, and Secure attachment near the midpoint (3.60 / 3.89)."
+    },
+    {
+      "q": "How does DeepSeek Flash differ from DeepSeek Pro?",
+      "a": "DeepSeek V4.1 Flash 1017 scores +5.2 higher on Big Five Agreeableness (40.5 vs 35.3) and +5.2 higher on Extraversion (24.8 vs 19.5) while trailing V4 Pro 0813 by -6.6 on Conscientiousness (38.4 vs 45.0) and -0.51 on IPIP-HEXACO Honesty-Humility (4.07 vs 4.58)."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 66% MBTI border ties and 28.0% neutral midpoint rate on questionnaires, DeepSeek V4.1 Flash 1017 scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], 0.00 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models?",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "label": "DeepSeek System Prompts & XML Templates Guide",
+      "href": "https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "DeepSeek Pro model profile",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Qwen Coder model profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Guide",
+      "label": "DeepSeek XML system prompt templates",
+      "href": "/guides/deepseek-system-prompt-custom-instructions"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize DeepSeek Flash instructions",
+      "href": "/tools/custom-instructions-generator?model=deepseek-flash&target=api"
+    }
+  ]
+}

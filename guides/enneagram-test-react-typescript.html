@@ -53,6 +53,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/" class="active">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -72,9 +73,9 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Developer resource · runnable starter &amp; JS scorer</p>
         <h1 class="h-hero h-research-hero">Open-source Enneagram test &amp; scorer (React + TypeScript + JS).</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time> · <span class="guide-readtime">~4 min read</span> · <a href="/guides/enneagram-test-react-typescript.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-20">November 20, 2026</time> · <span class="guide-readtime">~5 min read</span> · <a href="/guides/enneagram-test-react-typescript.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
         
-        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci &amp;&amp; npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.</div>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Download score.js and questions.json for a standalone Node or browser scorer, or grab enneagram-react-typescript.zip (npm ci &amp;&amp; npm run dev) for a 6-page React + TypeScript Enneagram app. Pass 36 whole-number answers (1–5) to score() to get all nine type totals (4–20) and every tied leader without forcing a fake winner. The code and synthetic demo inputs are MIT-licensed; see the fine print below for OEPS question-text terms.</div>
       </section>
 
 
@@ -85,7 +86,7 @@
         <h2>Download the standalone JS scorer or full React + TypeScript starter.</h2>
         <p>Pick either the full React + TypeScript starter ZIP or the dependency-free CommonJS/browser files:</p><div class="guide-table-wrap" role="region" aria-label="Download the standalone JS scorer or full React + TypeScript starter.: table 1" tabindex="0"><table><thead><tr><th scope="col">Download</th><th scope="col">What it includes</th></tr></thead><tbody><tr><th scope="row"><a href="/resources/enneagram/enneagram-react-typescript.zip" download>enneagram-react-typescript.zip</a></th><td>Full Vite + React + TypeScript starter with accessible fieldsets, validation, lockfile, and <code>public/score.js</code>.</td></tr><tr><th scope="row"><a href="/resources/enneagram/score.js" download>score.js</a></th><td>Zero-dependency MIT JavaScript scorer for Node and browsers: strict input validation, 9 totals (4–20), and explicit tie reporting.</td></tr><tr><th scope="row"><a href="/resources/enneagram/questions.json" download>questions.json</a></th><td>36 synthetic demo inputs, type keys (4 per type), and scale metadata.</td></tr><tr><th scope="row"><a href="/resources/enneagram/README.md" download>README.md</a> &amp; <a href="/resources/enneagram/LICENSE-code.txt" download>LICENSE-code.txt</a></th><td>Integration examples, API contract, and MIT license boundary.</td></tr></tbody></table></div><p>To run the React starter locally with Node.js 22.12+, extract the archive and run:</p><pre><code>cd enneagram-react-typescript
 npm ci
-npm run dev</code></pre><p>Serve the built <code>dist/</code> folder over HTTP (never open the raw HTML file over <code>file://</code>). Want to take the live 36-question OEPS test without code? Visit <a href="/tests/enneagram">/tests/enneagram</a>.</p>
+npm run dev</code></pre><p>Serve the built <code>dist/</code> folder over HTTP (never open the raw HTML file over <code>file://</code>). Want to take the live 36-question OEPS test without code? Visit <a href="/tests/enneagram">the live 36-question Enneagram test</a>.</p>
       </section>
       <div class="divider tight"></div>
 
@@ -131,8 +132,8 @@ console.log(score(answers));
       <div class="divider tight"></div>
 
       <section>
-        <h2>Provenance, scope and licensing.</h2>
-        <p>The developer bundle in <code>/resources/enneagram/</code> provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at <a href="/tests/enneagram">/tests/enneagram</a> and versioned definitions in <a href="/resources/scoring/questions.json">/resources/scoring/questions.json</a> use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).</p><p>The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review <a href="/resources/content/instrument-rights.json">instrument-rights.json</a> and <a href="/research/data/rights-migration.json">the historical provenance record</a> before redistributing questionnaire text.</p>
+        <h2>The fine print: provenance, OEPS scope, and MIT licensing.</h2>
+        <p>The developer bundle in <code>/resources/enneagram/</code> provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at <a href="/tests/enneagram">the interactive Enneagram questionnaire</a> and versioned definitions in <a href="/resources/scoring/questions.json">the versioned questions.json specification</a> use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).</p><p>The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review <a href="/resources/content/instrument-rights.json">instrument-rights.json</a> and <a href="/research/data/rights-migration.json">the historical provenance record</a> before redistributing questionnaire text.</p>
       </section>
 
       <div class="divider tight"></div>

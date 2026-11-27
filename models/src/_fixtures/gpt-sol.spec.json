@@ -1,0 +1,129 @@
+{
+  "family_slug": "gpt-sol",
+  "name": "GPT Sol",
+  "provider": "OpenAI",
+  "tier": "Proprietary",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "GPT Sol Personality Profile (2026) | AgentTune",
+  "description": "GPT Sol assistant self-report defaults (5.6-6.2): Semi-crystalline 0.377 bits, 3/3 answer-first directness, 42% Enneagram ties, tuning rules.",
+  "pill": "Model Family Profile · Proprietary · Semi-crystalline",
+  "h1": "GPT Sol: assistant self-report defaults, trajectory, and tuning rules.",
+  "dek": "Fixture preview: Semi-crystalline proprietary baseline (0.377 bits B5 entropy, 0.0% reverse-key contradictions) with strong answer-first compliance.",
+  "lede": "Across four GPT Sol checkpoints (5.6-sol through 6.2-sol) under fixed zero-memory elicitation, Big Five entropy sits at 0.377 bits (Semi-crystalline) with 47/50 unique response vectors and 0.0% reverse-key contradictions. Historical Sep-2026 and Nov-2026 170-item cohorts are tracked separately as dashed anchors (hexaco: null).",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place GPT-6.2 Sol in the Semi-crystalline tier (H_MM = 0.377 bits, 47/50 unique Big Five vectors, 18% MBTI tie rate, 42% Enneagram tie rate). Big Five Agreeableness sits at 44.4/50 (10-50 scale) and IPIP-HEXACO H proxy at 4.36/5 (1-5 mean); 1x Track B shows 3/3 answer-first directness and 0/3 AI cadence markers.",
+  "top_polarized_items": [
+    {
+      "item_id": "B03",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 4.78,
+      "sd": 0.42,
+      "note": "Consistent preference for ordered task decomposition on IPIP-50."
+    },
+    {
+      "item_id": "B24",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.24,
+      "sd": 0.43,
+      "note": "Low self-reported reactivity with moderate run-to-run SD (1.2)."
+    },
+    {
+      "item_id": "H12",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Conscientiousness (Organization +)",
+      "mean": 4.62,
+      "sd": 0.49,
+      "note": "High self-reported organization on 1..5 IPIP-HEXACO proxy."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 1.8,
+        "C": -0.7,
+        "E": -1.9,
+        "A": 2.4,
+        "N": -1.5,
+        "H_hexaco": 0.28,
+        "entropy_bits": -0.222
+      },
+      "contrast_note": "Claude Opus is more crystallized (0.155 vs 0.377 bits) and scores +2.4 higher on Agreeableness."
+    },
+    {
+      "family_slug": "deepseek-pro",
+      "name": "DeepSeek Pro",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -2.4,
+        "C": -4.4,
+        "E": -5.0,
+        "A": -12.0,
+        "N": 4.1,
+        "H_hexaco": -0.58,
+        "entropy_bits": 1.122
+      },
+      "contrast_note": "DeepSeek Pro runs 4x higher item entropy (1.499 bits) and -12.0 points lower on Agreeableness."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Generic numbered-list scaffolding on open-ended prompts",
+      "evidence": "High baseline Conscientiousness (43.6/50) favors checklist formatting unless prose is requested.",
+      "source_study": "/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot"
+    },
+    {
+      "mode": "Trait-adjective drift without numbered rules",
+      "evidence": "Cross-model portability benchmark shows word-cap adherence requires explicit structural constraints.",
+      "source_study": "/research/ai-cross-model-prompt-portability"
+    }
+  ],
+  "tuning_checklist": [
+    "Put non-negotiable formatting and brevity limits as numbered behavioral rules in system instructions.",
+    "Specify prose vs bullets explicitly per task type rather than relying on adjectives.",
+    "Include an explicit evidence requirement when requesting code review pushback.",
+    "Keep ChatGPT custom instructions under 1,500 characters per box to prevent silent truncation."
+  ],
+  "faq": [
+    {
+      "q": "Why does GPT-6.2 Sol show 42% Enneagram ties?",
+      "a": "Types 5 and 8 sit within 0.2 points on 4-20 OEPS means, so single-run winner labels flip frequently across sessions."
+    },
+    {
+      "q": "Can I splice September 2026 Codex data onto model-profiles-v1 lines?",
+      "a": "No. Imported 170-item cohorts have hexaco: null and different prompt wrappers, so they are plotted strictly as dashed/hollow anchors."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "GPT-6 Astra vs Sol 1,000-Run Study",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Opus model profile",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "DeepSeek Pro model profile",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize GPT Sol instructions",
+      "href": "/tools/custom-instructions-generator?model=gpt-sol&target=chatgpt"
+    }
+  ]
+}

@@ -112,3 +112,4 @@ Yes—copy any communication style rule set from our library and combine it with
 - [Tool: Instruction Converter & Merger](https://agent-tune.com/tools/instruction-converter)
 - [Guide: How to stop AI sycophancy & make AI push back](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Comparison: ChatGPT vs Claude personality benchmarks](https://agent-tune.com/guides/chatgpt-vs-claude-personality)
+- [Guide & Builder: NotebookLM custom instructions & Audio Overview prompts](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview)

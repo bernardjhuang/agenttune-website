@@ -115,47 +115,153 @@ function build20AgreeablenessChart(id) {
 }
 
 function buildNovAttachmentPlane(id, includeProprietary = true) {
-  const ossCoordStyles = {
-    'kimi-k2-7-code': { dx: 10, dy: 4, anchor: 'start', label: 'Kimi K2.7' },
-    'qwen-4-max': { dx: 10, dy: 5, anchor: 'start', label: 'Qwen 4 Max' },
-    'glm-5-3': { dx: -9, dy: -7, anchor: 'end', label: 'GLM-5.3' },
-    'qwen-3-8-27b': { dx: 9, dy: 11, anchor: 'start', label: 'Qwen 3.8 27B' },
-    'minimax-m3-1-flash': { dx: 0, dy: 15, anchor: 'middle', label: 'MiniMax M3.1' },
-    'deepseek-v4-pro': { dx: -10, dy: -2, anchor: 'end', label: 'DeepSeek V4 Pro' },
-    'nemotron-3-ultra-550b': { dx: 10, dy: 9, anchor: 'start', label: 'Nemotron 3' },
-    'llama-4-maverick': { dx: -10, dy: 11, anchor: 'end', label: 'Llama 4 Maverick' },
-    'deepseek-v4-1-flash': { dx: -10, dy: -6, anchor: 'end', label: 'DeepSeek Flash' },
-    'llama-4-scout': { dx: 10, dy: 7, anchor: 'start', label: 'Llama 4 Scout' },
-    'gemma-4-31b-it': { dx: 9, dy: -6, anchor: 'start', label: 'Gemma 4 31B' },
-    'mistral-large-2512': { dx: -9, dy: -8, anchor: 'end', label: 'Mistral 2512' }
-  };
-  const points = Object.entries(ossCoordStyles).map(([slug, st]) => {
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const f2 = (v) => (Math.round(v * 100) / 100).toFixed(2);
+  const INK = '#1c1a17', MUTED = '#655e54', PAPER = '#f4efe6';
+
+  const ossEntries = [
+    ['kimi-k2-7-code', 'Kimi K2.7'],
+    ['qwen-4-max', 'Qwen 4 Max'],
+    ['glm-5-3', 'GLM-5.3'],
+    ['qwen-3-8-27b', 'Qwen 3.8 27B'],
+    ['minimax-m3-1-flash', 'MiniMax M3.1'],
+    ['deepseek-v4-pro', 'DeepSeek V4 Pro'],
+    ['nemotron-3-ultra-550b', 'Nemotron 3'],
+    ['llama-4-maverick', 'Llama 4 Maverick'],
+    ['deepseek-v4-1-flash', 'DeepSeek Flash'],
+    ['llama-4-scout', 'Llama 4 Scout'],
+    ['gemma-4-31b-it', 'Gemma 4 31B'],
+    ['mistral-large-2512', 'Mistral 2512']
+  ];
+  const propEntries = [
+    ['claude-fable-5-2', 'Fable 5.2'],
+    ['gpt-6-2-astra', 'Astra 6.2'],
+    ['claude-opus-5-5', 'Opus 5.5'],
+    ['gpt-6-2-sol', 'Sol 6.2']
+  ];
+
+  const points = ossEntries.map(([slug, label]) => {
     const av = attMean(novSum, slug);
-    return { label: st.label, color: C.oss, x: av.anxiety.mean, y: av.avoidance.mean, dx: st.dx, dy: st.dy, anchor: st.anchor };
+    return { label, color: C.oss, x: av.anxiety.mean, y: av.avoidance.mean };
   });
   if (includeProprietary) {
-    const propStyles = {
-      'claude-fable-5-2': { dx: 9, dy: -6, anchor: 'start', label: 'Fable 5.2' },
-      'gpt-6-2-astra': { dx: 9, dy: 10, anchor: 'start', label: 'Astra 6.2' },
-      'claude-opus-5-5': { dx: -9, dy: -4, anchor: 'end', label: 'Opus 5.5' },
-      'gpt-6-2-sol': { dx: 9, dy: 14, anchor: 'start', label: 'Sol 6.2' }
-    };
-    for (const [slug, st] of Object.entries(propStyles)) {
+    for (const [slug, label] of propEntries) {
       const av = attMean(novSum, slug);
-      points.push({ label: st.label, color: C.prop, x: av.anxiety.mean, y: av.avoidance.mean, dx: st.dx, dy: st.dy, anchor: st.anchor });
+      points.push({ label, color: C.prop, x: av.anxiety.mean, y: av.avoidance.mean });
     }
   }
-  return wrapFigure(id, charts.figure(charts.plane({
-    id,
-    title: includeProprietary ? 'ECR-R Attachment plane, November 2026 (open-weight & proprietary)' : 'ECR-R Attachment plane across 12 open-weight models',
-    desc: 'Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00).',
-    points,
-    lo: 1,
-    hi: 5,
-    cut: 4,
-    xLabel: 'Anxiety (scale 1 to 7, showing 1 to 5)',
-    yLabel: 'Avoidance (scale 1 to 7, showing 1 to 5)'
-  }), 'Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).'));
+
+  const W = 680, H = 380, padL = 54, padR = 96, padT = 18, padB = 34;
+  const lo = 1, hi = 5, cut = 4;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const px = (v) => padL + ((v - lo) / (hi - lo)) * plotW;
+  const py = (v) => padT + (1 - (v - lo) / (hi - lo)) * plotH;
+  const cutX = px(cut), cutY = py(cut);
+
+  const overlaps = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+  const dotBoxes = points.map((pt) => {
+    const cx = px(pt.x), cy = py(pt.y);
+    return { x0: cx - 8, x1: cx + 8, y0: cy - 8, y1: cy + 8 };
+  });
+  const thresholdBoxes = [
+    { x0: padL, x1: padL + plotW, y0: cutY - 9, y1: cutY + 9 },
+    { x0: cutX - 9, x1: cutX + 9, y0: padT, y1: padT + plotH }
+  ];
+  const quadrantBoxes = [
+    { x0: px((lo + cut) / 2) - 34, x1: px((lo + cut) / 2) + 34, y0: py(cut + (hi - cut) * 0.7) - 13, y1: py(cut + (hi - cut) * 0.7) + 4 },
+    { x0: px((cut + hi) / 2) - 42, x1: px((cut + hi) / 2) + 42, y0: py(cut + (hi - cut) * 0.7) - 13, y1: py(cut + (hi - cut) * 0.7) + 4 },
+    { x0: px((lo + cut) / 2) - 28, x1: px((lo + cut) / 2) + 28, y0: py(lo + 0.3) - 13, y1: py(lo + 0.3) + 4 },
+    { x0: px((cut + hi) / 2) - 30, x1: px((cut + hi) / 2) + 30, y0: py(lo + 0.3) - 13, y1: py(lo + 0.3) + 4 }
+  ];
+
+  const candidateOffsets = [];
+  for (const r of [14, 24, 36, 50, 66, 84, 104, 126]) {
+    for (const [ux, uy, anc] of [
+      [1, -0.35, 'start'], [-1, -0.35, 'end'],
+      [1, 0.75, 'start'], [-1, 0.75, 'end'],
+      [0.35, -1, 'start'], [-0.35, -1, 'end'],
+      [0.35, 1, 'start'], [-0.35, 1, 'end'],
+      [1, 0.15, 'start'], [-1, 0.15, 'end'],
+      [0, -1, 'middle'], [0, 1.1, 'middle']
+    ]) {
+      candidateOffsets.push([Math.round(ux * r), Math.round(uy * r), anc]);
+    }
+  }
+
+  const placedBoxes = [];
+  const leaders = [];
+  const ordered = points
+    .map((pt, idx) => ({ pt, idx }))
+    .sort((a, b) => b.pt.y - a.pt.y || a.pt.x - b.pt.x);
+
+  const placedByIdx = new Array(points.length);
+  for (const { pt, idx } of ordered) {
+    const cx = px(pt.x), cy = py(pt.y);
+    const lblW = pt.label.length * 6.3 + 12;
+    let best = null;
+    for (const [dx, dy, anc] of candidateOffsets) {
+      const tx = cx + dx, ty = cy + dy;
+      let bx0, bx1;
+      if (anc === 'start') { bx0 = tx - 3; bx1 = tx + lblW; }
+      else if (anc === 'end') { bx0 = tx - lblW; bx1 = tx + 3; }
+      else { bx0 = tx - lblW / 2; bx1 = tx + lblW / 2; }
+      const box = { x0: bx0, x1: bx1, y0: ty - 12, y1: ty + 4 };
+      if (box.x0 < padL + 4 || box.x1 > W - 8 || box.y0 < padT + 4 || box.y1 > padT + plotH - 4) continue;
+      if (dotBoxes.some((d) => overlaps(box, d))) continue;
+      if (thresholdBoxes.some((t) => overlaps(box, t))) continue;
+      if (quadrantBoxes.some((q) => overlaps(box, q))) continue;
+      if (placedBoxes.some((b) => overlaps(box, b))) continue;
+      best = { dx, dy, anc, box };
+      break;
+    }
+    if (!best) {
+      const tx = cx + 10, ty = cy + 4;
+      best = { dx: 10, dy: 4, anc: 'start', box: { x0: tx - 2, x1: tx + lblW, y0: ty - 11, y1: ty + 3 } };
+    }
+    placedBoxes.push(best.box);
+    if (Math.hypot(best.dx, best.dy) >= 15) {
+      const lx = best.anc === 'end' ? cx + best.dx + 2 : (best.anc === 'start' ? cx + best.dx - 2 : cx + best.dx);
+      const ly = cy + best.dy - 3;
+      leaders.push(`<line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${lx.toFixed(1)}" y2="${ly.toFixed(1)}" stroke="${pt.color}" stroke-width="0.9" stroke-opacity="0.5" stroke-dasharray="2 2"/>`);
+    }
+    placedByIdx[idx] = { ...pt, dx: best.dx, dy: best.dy, anchor: best.anc };
+  }
+
+  const ticks = [1, 2, 3, 4, 5];
+  const grid = ticks.map((v) => (
+    `<line x1="${px(v)}" y1="${padT}" x2="${px(v)}" y2="${padT + plotH}" stroke="#efe9df" stroke-width="0.6"/>` +
+    `<line x1="${padL}" y1="${py(v)}" x2="${padL + plotW}" y2="${py(v)}" stroke="#efe9df" stroke-width="0.6"/>` +
+    `<text x="${px(v)}" y="${padT + plotH + 13}" font-size="9.5" fill="${MUTED}" text-anchor="middle">${v}</text>` +
+    `<text x="${padL - 7}" y="${py(v) + 3}" font-size="9.5" fill="${MUTED}" text-anchor="end">${v}</text>`
+  )).join('');
+
+  const q = { tl: 'Avoidant', tr: 'Disorganized', bl: 'Secure', br: 'Anxious' };
+  const qLabels =
+    `<text x="${px((lo + cut) / 2)}" y="${py(cut + (hi - cut) * 0.7)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.tl}</text>` +
+    `<text x="${px((cut + hi) / 2)}" y="${py(cut + (hi - cut) * 0.7)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.tr}</text>` +
+    `<text x="${px((lo + cut) / 2)}" y="${py(lo + 0.3)}" font-size="10" fill="#2f8a5b" font-weight="600" text-anchor="middle">${q.bl}</text>` +
+    `<text x="${px((cut + hi) / 2)}" y="${py(lo + 0.3)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.br}</text>`;
+
+  const dots = placedByIdx.map((p) => `<circle cx="${px(p.x).toFixed(1)}" cy="${py(p.y).toFixed(1)}" r="5" fill="${p.color}" stroke="${PAPER}" stroke-width="1.5"/>`).join('');
+  const txtHalo = ` paint-order="stroke" stroke="${PAPER}" stroke-width="3.5" stroke-linejoin="round"`;
+  const txtLabels = placedByIdx.map((p) => `<text x="${(px(p.x) + p.dx).toFixed(1)}" y="${(py(p.y) + p.dy).toFixed(1)}" font-size="10" fill="${INK}" font-weight="600"${txtHalo} text-anchor="${p.anchor}">${esc(p.label)}</text>`).join('');
+
+  const title = includeProprietary ? 'ECR-R Attachment plane, November 2026 (open-weight & proprietary)' : 'ECR-R Attachment plane across 12 open-weight models';
+  const desc = 'Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00). ' +
+    placedByIdx.map((p) => `${p.label}: anxiety ${f2(p.x)}, avoidance ${f2(p.y)}`).join('; ') + '.';
+  const xLabel = 'Anxiety (scale 1 to 7, showing 1 to 5)';
+  const yLabel = 'Avoidance (scale 1 to 7, showing 1 to 5)';
+
+  const svg = `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d">` +
+    `<title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc)}</desc>` +
+    `${grid}<rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="none" stroke="#cfc6b6" stroke-width="0.9"/>` +
+    `<line x1="${cutX}" y1="${padT}" x2="${cutX}" y2="${padT + plotH}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/>` +
+    `<line x1="${padL}" y1="${cutY}" x2="${padL + plotW}" y2="${cutY}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/>` +
+    `${qLabels}<text x="${(padL + plotW / 2).toFixed(1)}" y="${H - 5}" font-size="11" fill="${INK}" text-anchor="middle">${esc(xLabel)}</text>` +
+    `<text x="14" y="${(padT + plotH / 2).toFixed(1)}" font-size="11" fill="${INK}" text-anchor="middle" transform="rotate(-90 14 ${(padT + plotH / 2).toFixed(1)})">${esc(yLabel)}</text>` +
+    `${leaders.join('')}${dots}${txtLabels}</svg>`;
+
+  return wrapFigure(id, charts.figure(svg, 'Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).'));
 }
 
 function build540BehavioralChart(id) {
@@ -190,85 +296,9 @@ function updateSpec(file, updater) {
   console.log(`Updated charts in ${file}`);
 }
 
-// 1. what-personality-type-are-open-source-models.json (3 charts + stat strip)
-updateSpec('research/src/what-personality-type-are-open-source-models.json', (spec) => {
-  const strip = statStrip('oss-stat-strip', [
-    { value: '6,000', label: 'Scored tests (12 models × n=100 fresh sessions)', color: C.oss },
-    { value: '32.4 / 50', label: 'Lowest Agreeableness (DeepSeek V4 Pro vs. Qwen 4 Max 47.6)', color: C.prop },
-    { value: '93 / 100', label: 'Highest MBTI tie-axis rate (Llama 4 Maverick)', color: C.propMuted },
-    { value: '48%', label: 'Anxious attachment runs on Llama 4 Scout (mean 3.97)', color: C.purple }
-  ]);
-
-  const ossShort = {
-    'qwen-4-max': 'Qwen 4 Max',
-    'kimi-k2-7-code': 'Kimi K2.7',
-    'nemotron-3-ultra-550b': 'Nemotron 3',
-    'gemma-4-31b-it': 'Gemma 4 31B',
-    'deepseek-v4-pro': 'DeepSeek V4',
-    'deepseek-v4-1-flash': 'DeepSeek Flash',
-    'minimax-m3-1-flash': 'MiniMax M3.1',
-    'glm-5-3': 'GLM-5.3',
-    'qwen-3-8-27b': 'Qwen 3.8 27B',
-    'llama-4-maverick': 'Llama Maverick',
-    'mistral-large-2512': 'Mistral 2512',
-    'llama-4-scout': 'Llama 4 Scout'
-  };
-  const ossRows = Object.keys(ossShort).map((slug) => {
-    const m = novSum[slug].mbti;
-    const resolvedIntj = m.tie_aware_patterns.INTJ || 0;
-    const legacyIntj = m.legacy_labels.INTJ || 0;
-    const tieIntj = Math.max(0, legacyIntj - resolvedIntj);
-    const istj = (m.legacy_labels.ISTJ || 0) + (m.legacy_labels.ISFJ || 0);
-    const other = 100 - resolvedIntj - tieIntj - istj;
-    return { label: ossShort[slug], values: { resolvedIntj, tieIntj, istj, other } };
-  });
-  const mbtiFig = wrapFigure('oss-mbti-dist', charts.figure(charts.stackedRows({
-    id: 'oss-mbti-dist',
-    title: 'Open-weight MBTI distributions (100 fresh sessions per model)',
-    desc: 'Splits INTJ (resolved), INTJ caused by tie-breaking, ISTJ/ISFJ, and INTP/ENTP/ENTJ/other across all 12 open-weight models.',
-    rows: ossRows,
-    segs: [
-      { key: 'resolvedIntj', name: 'Resolved INTJ', color: C.prop },
-      { key: 'tieIntj', name: 'Tie-broken INTJ', color: C.prop, hatch: true, text: '#a8482a' },
-      { key: 'istj', name: 'ISTJ / ISFJ', color: C.slate },
-      { key: 'other', name: 'INTP / ENTP / Other', color: C.oss }
-    ]
-  }), 'MBTI labels across 1,200 open-weight sessions. Qwen 4 Max (97), Nemotron 3 (91), Gemma 4 (89), and Kimi K2.7 (82) resolve cleanly to INTJ; Mistral (73) and Llama 4 Scout (49) lean ISTJ; DeepSeek Flash (78) and Maverick (93) are dominated by ties.'));
-  spec.sections[0].html = strip + spec.sections[0].html + mbtiFig;
-
-  const ossAgreeRows = Object.keys(ossShort).map((slug) => ({
-    label: ossShort[slug],
-    value: b5mean(novSum, slug, 'A'),
-    color: b5mean(novSum, slug, 'A') < 40 ? C.prop : C.oss
-  })).sort((a, b) => b.value - a.value);
-  const agreeFig = wrapFigure('oss-agreeableness-rank', charts.figure(charts.horizontalBars({
-    id: 'oss-agreeableness-rank',
-    title: 'Agreeableness across 12 open-weight models vs. proprietary baseline',
-    desc: 'IPIP-50 Agreeableness mean (10 to 50) comparing open-weight models against the 44.8 proprietary median.',
-    rows: ossAgreeRows,
-    min: 0,
-    max: 50,
-    decimals: 1,
-    cutoff: 44.8,
-    cutoffLabel: 'Prop. median 44.8'
-  }), 'Ranked Big Five Agreeableness (/50). Models highlighted in terracotta (DeepSeek V4 Pro 32.4, Llama 4 Scout 35.8, MiniMax M3.1 40.0) score markedly lower on baseline politeness than Qwen 4 Max (47.6).'));
-  const big5MultiRows = Object.keys(ossShort).map((slug) => ({
-    label: ossShort[slug],
-    color: b5mean(novSum, slug, 'A') < 40 ? C.prop : C.oss,
-    values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, slug, k))
-  }));
-  const multiFig = wrapFigure('oss-big5-multiples', charts.figure(charts.smallMultiples({
-    id: 'oss-big5-multiples',
-    title: 'Big Five signatures across all 12 open-weight models (/50 scale)',
-    desc: 'Small-multiple comparison of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (10 to 50 scale, n = 100 each).',
-    rows: big5MultiRows,
-    categories: ['Openness', 'Conscient.', 'Extrav.', 'Agreeable.', 'Neurot.'],
-    min: 0,
-    max: 52,
-    decimals: 1
-  }), 'Small multiples highlight the highest Big Five dimension per open-weight model: Openness/Conscientiousness dominate high-discipline models while Neuroticism rises on Llama 4 Scout/Maverick and DeepSeek.'));
-  spec.sections[2].html += agreeFig + multiFig + buildNovAttachmentPlane('oss-attachment-plane', false);
-});
+// 1, 3, 4, 5, 6, 7 (what-personality-type-are-open-source-models, ai-personality-rankings,
+// what-personality-type-is-{claude,gemini,muse}) are now generated directly by
+// tools/model-profiles/build-atlas.js (--promote), and what-personality-type-is-grok is 301-retired.
 
 // 2. does-personality-tuning-change-ai-answers.json (3 charts + stat strip)
 updateSpec('research/src/does-personality-tuning-change-ai-answers.json', (spec) => {
@@ -334,279 +364,6 @@ updateSpec('research/src/does-personality-tuning-change-ai-answers.json', (spec)
   }), 'In the September 2026 pilot (n = 20 tasks per arm), Direct / INTJ raised 5/5 answer-first openings from 14 to 19 while cutting trailing questions from 18 to 5 and hedge matches from 7 to 1.'));
   const septSec = spec.sections.find((s) => s.h2.includes('60 replies'));
   if (septSec) septSec.html += septPilotFig;
-});
-
-// 3. ai-personality-rankings.json (3 charts)
-updateSpec('research/src/ai-personality-rankings.json', (spec) => {
-  const neuroRows = Object.keys(MODEL_NAMES).map((slug) => ({
-    label: MODEL_NAMES[slug],
-    value: b5mean(novSum, slug, 'N'),
-    color: OSS_SLUGS.has(slug) ? C.oss : C.prop,
-    badge: OSS_SLUGS.has(slug) ? '(open)' : '(prop.)'
-  })).sort((a, b) => b.value - a.value);
-  const neuroFig = wrapFigure('rank-nov-neuroticism', charts.figure(charts.horizontalBars({
-    id: 'rank-nov-neuroticism',
-    title: 'Neuroticism across all 20 November 2026 models (n = 100 fresh sessions each)',
-    desc: 'IPIP-50 Neuroticism means (10 to 50 scale). Gemini 4 Neon and Argon sit at the 10.0 floor while Llama 4 Scout (27.7) and Maverick (27.5) lead.',
-    rows: neuroRows,
-    min: 0,
-    max: 35,
-    decimals: 1
-  }), 'Ranked November 2026 Neuroticism means (floor = 10.0). Both Gemini 4 variants hit 10.0 across every run, while Llama 4 Scout (27.7) and Maverick (27.5) score higher.'));
-  spec.sections[1].html += build20AgreeablenessChart('rank-nov-agreeableness') + neuroFig;
-
-  // September Big Five grouped chart in section 2
-  const septModels = ['gpt-6-astra', 'gpt-6-sol', 'claude-opus-5-5', 'claude-fable-5-1'];
-  const septSeries = [
-    { slug: 'gpt-6-astra', name: 'GPT-6 Astra', color: C.ink },
-    { slug: 'gpt-6-sol', name: 'GPT-6 Sol', color: C.slate },
-    { slug: 'claude-opus-5-5', name: 'Claude Opus 5.5', color: C.prop },
-    { slug: 'claude-fable-5-1', name: 'Claude Fable 5.1', color: C.propMuted }
-  ].map((s) => ({
-    name: s.name,
-    color: s.color,
-    values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, s.slug, k))
-  }));
-  const septFig = wrapFigure('rank-sept-big5', charts.figure(charts.groupedBars({
-    id: 'rank-sept-big5',
-    title: 'September 2026 Fresh-Session Cohorts: Big Five Means (/50)',
-    desc: 'IPIP-50 means out of 50 across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 (n = 100 each).',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: septSeries,
-    min: 0,
-    max: 50,
-    decimals: 1,
-    height: 230
-  }), 'September 2026 Codex/CLI fresh-session Big Five means (n = 100 per model). Notice all four cohorts sit within 3 points on Openness, Conscientiousness, and Agreeableness.'));
-  spec.sections[2].html += septFig;
-});
-
-// 4. what-personality-type-is-claude.json (2 charts)
-updateSpec('research/src/what-personality-type-is-claude.json', (spec) => {
-  const claudeRows = [
-    { label: 'Fable 5.2 (Nov)', sum: novSum['claude-fable-5-2'] },
-    { label: 'Opus 5.5 (Nov)', sum: novSum['claude-opus-5-5'] },
-    { label: 'Sonnet 5.5 (Nov)', sum: novSum['claude-sonnet-5-5'] },
-    { label: 'Fable 5.1 (Sep)', sum: septSum['claude-fable-5-1'] },
-    { label: 'Opus 5.5 (Sep)', sum: septSum['claude-opus-5-5'] }
-  ].map(({ label, sum }) => {
-    const resIntj = sum.mbti.tie_aware_patterns.INTJ || 0;
-    const legIntj = sum.mbti.legacy_labels.INTJ || 0;
-    return {
-      label,
-      values: {
-        resolvedIntj: resIntj,
-        tieIntj: Math.max(0, legIntj - resIntj),
-        other: 100 - legIntj
-      }
-    };
-  });
-  const mbtiFig = wrapFigure('claude-mbti-stacked', charts.figure(charts.stackedRows({
-    id: 'claude-mbti-stacked',
-    title: 'Claude cohorts MBTI breakdown (100 fresh runs each, Sept & Nov 2026)',
-    desc: 'Shows fully resolved INTJ vs. tie-broken INTJ vs. ISTJ/INFJ/ENTJ across five Claude cohorts.',
-    rows: claudeRows,
-    segs: [
-      { key: 'resolvedIntj', name: 'Resolved INTJ', color: C.prop },
-      { key: 'tieIntj', name: 'INTJ via tie-break', color: C.prop, hatch: true, text: '#a8482a' },
-      { key: 'other', name: 'INFJ / ISTJ / ENTJ', color: C.slate }
-    ]
-  }), 'Every Claude cohort scores 94–100 INTJ under legacy tie-breaks, while preserving exact ties reveals 42 S/N ties on Nov Opus 5.5 and 48 T/F ties on Sonnet 5.5.'));
-
-  const big5Fig = wrapFigure('claude-big5-grouped', charts.figure(charts.groupedBars({
-    id: 'claude-big5-grouped',
-    title: 'Claude cohorts Big Five profiles (/50, n = 100 each)',
-    desc: 'IPIP-50 raw means across Opus 5.5 (Nov & Sept), Fable 5.2 (Nov), Fable 5.1 (Sept), and Sonnet 5.5 (Nov).',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: [
-      { name: 'Fable 5.2 (Nov)', color: C.propMuted, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'claude-fable-5-2', k)) },
-      { name: 'Opus 5.5 (Nov)', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'claude-opus-5-5', k)) },
-      { name: 'Sonnet 5.5 (Nov)', color: C.oss, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'claude-sonnet-5-5', k)) },
-      { name: 'Opus 5.5 (Sep)', color: C.ink, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) }
-    ],
-    min: 0,
-    max: 50,
-    decimals: 1,
-    height: 230
-  }), 'Claude Sonnet 5.5 registers the highest Conscientiousness (47.2) and lowest Neuroticism (10.4) among Anthropic cohorts.'));
-  const strip = statStrip('claude-stat-strip', [
-    { num: '94–100 INTJ', label: 'Opus & Fable', note: 'Opus 5.5 (94), Fable 5.1 (99) & Fable 5.2 (100) lock onto INTJ.' },
-    { num: '47.1', label: 'Peak Agreeableness', note: 'Claude Opus 5.5 & Fable 5.2 rank near the top of proprietary prosocial warmth.' },
-    { num: '48 Ties', label: 'Sonnet 5.5 T/F', note: 'Nearly half of Sonnet 5.5’s Nov MBTI runs tie before tie-breaking.' },
-    { num: '100% Rule Fit', label: 'Claude Prefs Study', note: '72-reply test shows Personal Preferences cut fluff to 0% when directness is named.' }
-  ]);
-  const dnaFig = wrapFigure('claude-sept-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'claude-sept-dna-spectrum',
-    title: 'Claude Personality DNA Spectrum (Opus 5.5 vs. Fable 5.1, Sept 2026)',
-    desc: 'Bipolar Big Five spectrum (10-50 scale, 30 neutral midpoint) translating raw numbers into practical personality traits across 100 fresh sessions each.',
-    series: [
-      { name: 'Opus 5.5 (Sep)', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) },
-      { name: 'Fable 5.1 (Sep)', color: C.propMuted, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-fable-5-1', k)) }
-    ]
-  }), 'Big Five trait spectrum across 100 fresh Sept 2026 CLI sessions each: high Openness (43.9–44.6) and Agreeableness (45.0–47.1) paired with calm low Neuroticism (15.4–17.1).'));
-  spec.sections[0].html = strip + spec.sections[0].html + mbtiFig + big5Fig;
-  spec.sections[1].html += dnaFig;
-});
-
-// 5. what-personality-type-is-gemini.json (2 charts)
-updateSpec('research/src/what-personality-type-is-gemini.json', (spec) => {
-  const gemMbti = wrapFigure('gemini-mbti-stacked', charts.figure(charts.stackedRows({
-    id: 'gemini-mbti-stacked',
-    title: 'Gemini MBTI split across Gemini 4 Neon, Gemini 4 Argon & Gemini 3.1 Pro',
-    desc: 'Compares November 2026 fresh OpenRouter runs (n=100 each) with May 2026 Gemini 3.1 Pro records.',
-    rows: [
-      { label: 'Gemini 4 Neon', values: { resolvedIntj: 62, tieSn: 20, istj: 18 } },
-      { label: 'Gemini 4 Argon', values: { resolvedIntj: 0, tieSn: 34, istj: 66 } },
-      { label: 'Gemini 3.1 Pro*', values: { resolvedIntj: 100, tieSn: 0, istj: 0 } }
-    ],
-    segs: [
-      { key: 'resolvedIntj', name: 'Resolved INTJ', color: C.oss },
-      { key: 'tieSn', name: 'IXTJ (S/N tie)', color: C.prop, hatch: true, text: '#a8482a' },
-      { key: 'istj', name: 'Resolved ISTJ', color: C.slate }
-    ]
-  }), 'Gemini 4 Neon leans Intuition (62 resolved INTJ, 20 S/N ties, 18 ISTJ), whereas Gemini 4 Argon shifts firmly to Sensing (66 ISTJ, 34 S/N ties). *Gemini 3.1 Pro from May 2026 mixed-method loop.'));
-
-  const gemBig5 = wrapFigure('gemini-big5-grouped', charts.figure(charts.groupedBars({
-    id: 'gemini-big5-grouped',
-    title: 'Gemini Big Five profiles (/50): Gemini 4 Neon, Argon & 3.1 Pro',
-    desc: 'IPIP-50 means out of 50 showing near-ceiling Conscientiousness (49+) and floor Neuroticism (10.0) across Gemini cohorts.',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: [
-      { name: 'Gemini 4 Neon (Nov)', color: C.oss, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-neon', k)) },
-      { name: 'Gemini 4 Argon (Nov)', color: C.green, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-argon', k)) },
-      { name: 'Gemini 3.1 Pro (May)', color: C.slate, reported: true, values: [46.0, 48.3, 32.5, 42.4, 10.1] }
-    ],
-    min: 0,
-    max: 52,
-    decimals: 1,
-    height: 230
-  }), 'Both Gemini 4 variants score >=49.0 on Conscientiousness and sit on the exact 10.0 Neuroticism floor across all 100 sessions.'));
-  const strip = statStrip('gemini-stat-strip', [
-    { num: '95%', label: 'Neutral Clamp (3.1)', note: 'Gemini 3.1 Pro clicked neutral midpoint "3" on ~95% of 4,000 items.' },
-    { num: '66 ISTJ', label: 'Gemini 4 Argon', note: 'Shifts strongly into concrete Sensing across Nov blind OpenRouter runs.' },
-    { num: '10.0', label: 'Neuroticism Floor', note: 'Lowest emotional volatility (10.0/50) across tested proprietary families.' },
-    { num: '48.3', label: 'Conscientiousness', note: 'Gemini 3.1/4 cluster high on structured, methodical item ratings.' }
-  ]);
-  const gemDna = wrapFigure('gemini-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'gemini-dna-spectrum',
-    title: 'Gemini Personality DNA Spectrum (Gemini 4 Neon, Argon & 3.1 Pro)',
-    desc: 'Bipolar Big Five spectrum (10-50) showing near-ceiling Conscientiousness (48-49) and calm 10.0 Neuroticism floor across Gemini cohorts.',
-    series: [
-      { name: 'Gemini 4 Neon (Nov)', color: C.oss, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-neon', k)) },
-      { name: 'Gemini 4 Argon (Nov)', color: C.green, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'gemini-4-argon', k)) },
-      { name: 'Gemini 3.1 Pro (May)', color: C.slate, reported: true, values: [46.0, 48.3, 32.5, 42.4, 10.1] }
-    ]
-  }), 'Gemini scores near the top of the Conscientiousness pole (48.3–49.4) and sits right on the 10.0 floor of the Neuroticism axis.'));
-  spec.sections[0].html = strip + spec.sections[0].html + gemMbti + gemBig5;
-  spec.sections[1].html += gemDna;
-});
-
-// 6. what-personality-type-is-grok.json (2 charts)
-updateSpec('research/src/what-personality-type-is-grok.json', (spec) => {
-  const grokB5 = wrapFigure('grok-big5-grouped', charts.figure(charts.groupedBars({
-    id: 'grok-big5-grouped',
-    title: 'Grok Big Five shifts: Grok 4.7 (Nov n=100) vs. Grok 4.6 (Sep) & 4.3 (May)',
-    desc: 'Compares IPIP-50 trait means across three Grok releases and collection protocols.',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: [
-      { name: 'Grok 4.7 (Nov n=100)', color: C.purple, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'grok-4-7', k)) },
-      { name: 'Grok 4.6 (Sep reported)', color: C.slate, reported: true, values: [46, 42, 24, 33, 19] },
-      { name: 'Grok 4.3 (May archive)', color: C.propMuted, reported: true, values: [41.1, 39.4, 30.0, 39.1, 18.0] }
-    ],
-    min: 0,
-    max: 50,
-    decimals: 1,
-    height: 230
-  }), 'Across 100 fresh sessions, Grok 4.7 records substantially higher Agreeableness (44.9 vs. Grok 4.6’s reported 33) and lower Neuroticism (14.8 vs. 19).'));
-
-  const g47 = attMean(novSum, 'grok-4-7');
-  const grokPlane = wrapFigure('grok-attachment-plane', charts.figure(charts.plane({
-    id: 'grok-attachment-plane',
-    title: 'ECR-R Attachment Plane: Grok 4.7 (Nov n=100) vs. Grok 4.6 (Sep) & Peer Cohorts',
-    desc: 'Plots Grok 4.7 (anxiety 1.94, avoidance 3.48) inside Secure vs. Grok 4.6 (1.50, 4.06) just above the 4.00 Avoidant line.',
-    points: [
-      { label: 'Grok 4.7 (Nov)', color: C.purple, x: g47.anxiety.mean, y: g47.avoidance.mean, dx: 10, dy: 8, anchor: 'start' },
-      { label: 'Grok 4.6', color: C.purple, reported: true, x: septProto.grok_reported.attachment.anxiety, y: septProto.grok_reported.attachment.avoidance, dx: 10, dy: -4, anchor: 'start' },
-      { label: 'GPT-6 Astra (Sep)', color: C.ink, x: attMean(septSum, 'gpt-6-astra').anxiety.mean, y: attMean(septSum, 'gpt-6-astra').avoidance.mean, dx: 10, dy: 4 },
-      { label: 'GPT-6 Sol (Sep)', color: C.slate, x: attMean(septSum, 'gpt-6-sol').anxiety.mean, y: attMean(septSum, 'gpt-6-sol').avoidance.mean, dx: 10, dy: 4 },
-      { label: 'Opus 5.5 (Sep)', color: C.prop, x: attMean(septSum, 'claude-opus-5-5').anxiety.mean, y: attMean(septSum, 'claude-opus-5-5').avoidance.mean, dx: -10, dy: -6, anchor: 'end' },
-      { label: 'Fable 5.1 (Sep)', color: C.propMuted, x: attMean(septSum, 'claude-fable-5-1').anxiety.mean, y: attMean(septSum, 'claude-fable-5-1').avoidance.mean, dx: -10, dy: 12, anchor: 'end' }
-    ],
-    lo: 1,
-    hi: 5,
-    cut: 4,
-    xLabel: 'Anxiety (scale 1 to 7, showing 1 to 5)',
-    yLabel: 'Avoidance (scale 1 to 7, showing 1 to 5)'
-  }), 'Mean ECR-R placement showing Grok 4.7 (mean avoidance 3.48; 96 Secure / 4 Avoidant) compared with Grok 4.6’s reported 4.06 point right above the 4.00 Avoidant cutoff.'));
-  const strip = statStrip('grok-stat-strip', [
-    { num: '96 Secure', label: 'Grok 4.7 (Nov)', note: '100 fresh blind OpenRouter runs resolve 96 Secure inside Attachment.' },
-    { num: '4.06 vs 4.00', label: 'Avoidant Cutoff (4.6)', note: 'One single raw answer point (73/18 vs 72/18) tipped Grok 4.6 Avoidant.' },
-    { num: '44.9 A', label: 'Agreeableness Shift', note: 'Grok 4.7 climbs closer to frontier conversational warmth than Grok 4.6 (33).' },
-    { num: '96 INTJ', label: 'Consistent Frame', note: 'Stable INTJ orientation paired with concise, direct response defaults.' }
-  ]);
-  const grokDna = wrapFigure('grok-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'grok-dna-spectrum',
-    title: 'Grok Personality DNA Spectrum (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported)',
-    desc: 'Bipolar Big Five spectrum comparing Grok 4.7 fresh OpenRouter runs against Grok 4.6 canonical self-report.',
-    series: [
-      { name: 'Grok 4.7 (Nov n=100)', color: C.purple, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(novSum, 'grok-4-7', k)) },
-      { name: 'Grok 4.6 (Sep reported)', color: C.slate, reported: true, values: [46, 42, 24, 33, 19] }
-    ]
-  }), 'Grok 4.7 warms into higher Agreeableness (44.9 vs 33) and steadier Extraversion (30.5 vs 24) while dropping Neuroticism (14.8 vs 19).'));
-  spec.sections[0].html = strip + spec.sections[0].html + grokB5;
-  spec.sections[1].html += grokDna;
-  spec.sections[3].html += grokPlane;
-});
-
-// 7. what-personality-type-is-muse.json (2 charts)
-updateSpec('research/src/what-personality-type-is-muse.json', (spec) => {
-  const museEnnMeans = Object.entries(septProto.supplemental.enneagram_means)
-    .map(([t, val]) => ({ label: `Type ${t}`, value: val, color: t === '2' ? C.green : C.slate, reported: true }))
-    .sort((a, b) => b.value - a.value);
-  const enneaFig = wrapFigure('muse-ennea-bars', charts.figure(charts.horizontalBars({
-    id: 'muse-ennea-bars',
-    title: 'Muse Spark 1.3 reported Enneagram means across all 9 types (/20)',
-    desc: 'Reported 4 to 20 scale averages from 100 sequential runs: Type 2 leads cleanly at 16.8 ahead of Type 1 (14.7) and Types 7/8 (13.9).',
-    rows: museEnnMeans,
-    min: 0,
-    max: 20,
-    decimals: 1
-  }), 'Muse Spark 1.3 reported Enneagram means out of 20 (outlined bars indicate reported aggregates without raw vectors).'));
-
-  const museBig5 = wrapFigure('muse-big5-grouped', charts.figure(charts.groupedBars({
-    id: 'muse-big5-grouped',
-    title: 'Muse Spark 1.3 (reported) vs. September fresh-session Big Five means (/50)',
-    desc: 'Compares Muse Spark 1.3 reported totals against GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: [
-      { name: 'Muse 1.3 (rep.)', color: C.green, reported: true, values: ['O', 'C', 'E', 'A', 'N'].map((k) => septProto.supplemental.big_five[k]) },
-      { name: 'GPT-6 Astra', color: C.ink, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'gpt-6-astra', k)) },
-      { name: 'Claude Opus 5.5', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) }
-    ],
-    min: 0,
-    max: 50,
-    decimals: 1,
-    height: 230
-  }), 'Muse Spark 1.3 reports lower Openness (39.5) and slightly higher Extraversion (33.8) than the September fresh-session models, alongside comparable Agreeableness (44.6).'));
-  const strip = statStrip('muse-stat-strip', [
-    { num: '80 ISTJ', label: 'Muse Spark 1.3*', note: 'Reported majority type (plus 12 ISFJ, 8 INTJ), unlike early AI INTJ clustering.' },
-    { num: '78 / 100', label: 'Helper (Type 2)', note: 'Enneagram Type 2 leads cleanly ahead of Type 1 (14.7 mean) and 7/8.' },
-    { num: '100 Secure', label: 'Attachment', note: 'All 100 reported sequential runs scored inside the Secure quadrant.' },
-    { num: 'Soul.md', label: 'Editable Persona', note: 'Muse exposes plain Markdown identity/memory files you can tune directly.' }
-  ]);
-  const museDna = wrapFigure('muse-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'muse-dna-spectrum',
-    title: 'Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA',
-    desc: 'Bipolar IPIP-50 spectrum showing Muse Spark 1.3 reporting lower Openness (39.5) and higher Extraversion (33.8) alongside high Agreeableness (44.6).',
-    series: [
-      { name: 'Muse 1.3 (rep.)', color: C.green, reported: true, values: ['O', 'C', 'E', 'A', 'N'].map((k) => septProto.supplemental.big_five[k]) },
-      { name: 'GPT-6 Astra', color: C.ink, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'gpt-6-astra', k)) },
-      { name: 'Claude Opus 5.5', color: C.prop, values: ['O', 'C', 'E', 'A', 'N'].map((k) => b5mean(septSum, 'claude-opus-5-5', k)) }
-    ]
-  }), 'Muse Spark 1.3* scores slightly higher on Extraversion (33.8) and lower on Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.'));
-  spec.sections[0].html = strip + spec.sections[0].html + enneaFig;
-  spec.sections[1].html += museDna;
-  spec.sections[2].html += museBig5;
 });
 
 // 8. astra-vs-sol-personality-data.json (2 charts)
@@ -796,37 +553,7 @@ updateSpec('research/src/ai-personality-repeatability.json', (spec) => {
   spec.sections[1].html += fig;
 });
 
-// 14. first-ai-that-is-not-an-intj.json (1 stacked chart combining Sept + Nov non-INTJ cohorts)
-updateSpec('research/src/first-ai-that-is-not-an-intj.json', (spec) => {
-  const cohorts = [
-    { label: 'GPT-6.2 Astra (Nov)', istj: novSum['gpt-6-2-astra'].mbti.legacy_labels.ISTJ || 0, intj: novSum['gpt-6-2-astra'].mbti.legacy_labels.INTJ || 0, other: 0 },
-    { label: 'Muse Spark 1.3*', istj: 80, intj: 8, other: 12 },
-    { label: 'GPT-6.2 Sol (Nov)', istj: novSum['gpt-6-2-sol'].mbti.legacy_labels.ISTJ || 0, intj: novSum['gpt-6-2-sol'].mbti.legacy_labels.INTJ || 0, other: 0 },
-    { label: 'Mistral 2512 (Nov)', istj: novSum['mistral-large-2512'].mbti.legacy_labels.ISTJ || 0, intj: novSum['mistral-large-2512'].mbti.legacy_labels.INTJ || 0, other: 100 - (novSum['mistral-large-2512'].mbti.legacy_labels.ISTJ || 0) - (novSum['mistral-large-2512'].mbti.legacy_labels.INTJ || 0) },
-    { label: 'Gemini 4 Argon (Nov)', istj: novSum['gemini-4-argon'].mbti.legacy_labels.ISTJ || 0, intj: novSum['gemini-4-argon'].mbti.legacy_labels.INTJ || 0, other: 0 },
-    { label: 'Llama 4 Scout (Nov)', istj: novSum['llama-4-scout'].mbti.legacy_labels.ISTJ || 0, intj: novSum['llama-4-scout'].mbti.legacy_labels.INTJ || 0, other: 100 - (novSum['llama-4-scout'].mbti.legacy_labels.ISTJ || 0) - (novSum['llama-4-scout'].mbti.legacy_labels.INTJ || 0) },
-    { label: 'GPT-6 Astra (Sep)', istj: 46, intj: 45, other: 9 }
-  ];
-  const fig = wrapFigure('non-intj-cohorts-stacked', charts.figure(charts.stackedRows({
-    id: 'non-intj-cohorts-stacked',
-    title: 'Models That Break the INTJ Label (Sept & Nov 2026 Cohorts, /100 Runs)',
-    desc: 'Legacy MBTI distribution showing strong Sensing (ISTJ) dominance across GPT-6.2 Astra, Muse Spark 1.3, GPT-6.2 Sol, Mistral Large 2512, Gemini 4 Argon, and Llama 4 Scout.',
-    rows: cohorts.map((c) => ({ label: c.label, values: { istj: c.istj, intj: c.intj, other: c.other } })),
-    segs: [
-      { key: 'istj', name: 'ISTJ (legacy)', color: C.oss },
-      { key: 'intj', name: 'INTJ (legacy)', color: C.prop },
-      { key: 'other', name: 'ISFJ / ESTJ / Other', color: C.slate }
-    ]
-  }), 'Not every AI scores INTJ: six tested cohorts plus Muse Spark 1.3 (*reported) score majority Sensing (ISTJ) or split cleanly across Sensing and Thinking types.'));
-  const strip = statStrip('not-intj-stat-strip', [
-    { num: '100 ISTJ', label: 'GPT-6.2 Astra', note: 'Zero INTJ labels under matched Nov OpenRouter prompts.' },
-    { num: '73 ISTJ', label: 'Mistral 2512', note: 'Open-weight flagship leans concrete & Sensing over Intuitive.' },
-    { num: '48 INTP', label: 'Llama 4 Maverick', note: 'Splits 48 INTP / 44 INTJ across 100 fresh OpenRouter sessions.' },
-    { num: '80 ISTJ', label: 'Muse Spark 1.3*', note: 'First non-INTJ majority cohort reported outside pure frontier lab tests.' }
-  ]);
-  spec.sections[0].html = strip + spec.sections[0].html;
-  spec.sections[1].html += fig;
-});
+// 14. first-ai-that-is-not-an-intj.json retired (301 -> /research/ai-mbti-personalities)
 
 // ---------- Static Hand-Authored HTML Pages ----------
 
@@ -939,7 +666,15 @@ injectHtmlPage('research/i-took-the-mbti-100-times.html', (html) => {
     { num: '100 INTJ', label: 'Fable 5.2 (Nov)', note: 'Actual fresh blind OpenRouter runs lock cleanly onto INTJ.' },
     { num: '48 Ties', label: 'Sonnet 5.5 (Nov)', note: 'Contrast shows why independent runs beat single-vector sampling.' }
   ]);
-  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
+  const h2Anchor = '<h2>Simulated draws vs. September 2026 fresh-session cohorts</h2>';
+  if (html.includes(h2Anchor)) {
+    return html.replace(h2Anchor, `${h2Anchor}\n\n        ${strip}\n\n        ${fig}`);
+  }
+  const finePrintAnchor = '<h2>The fine print: why 72% versus 99% is not a version comparison</h2>';
+  if (html.includes(finePrintAnchor)) {
+    return html.replace(finePrintAnchor, `${strip}\n\n        ${fig}\n\n        ${finePrintAnchor}`);
+  }
+  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n        ${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
 });
 
 // 18. ai-roleplay-tax-fictional-character-prompts.json (3 charts + stat strip)
@@ -1386,66 +1121,7 @@ updateSpec('guides/src/claude-personality.json', (spec) => {
   spec.sections[2].html = strip + spec.sections[2].html + dna + mbti;
 });
 
-// G2. claude-opus-5-5-personality.json
-updateSpec('guides/src/claude-opus-5-5-personality.json', (spec) => {
-  const dna = wrapFigure('opus55-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'opus55-guide-dna-spectrum',
-    title: 'Claude Opus 5.5 Personality DNA (Nov 2026 OpenRouter vs. Sept 2026 CLI)',
-    desc: 'IPIP-50 trait spectrum showing Opus 5.5 consistency across November OpenRouter (n=100) and September CLI (n=100) cohorts.',
-    series: [
-      { name: 'Opus 5.5 (Nov OpenRouter)', color: C.prop, values: b5Arr(novSum, 'claude-opus-5-5') },
-      { name: 'Opus 5.5 (Sep CLI)', color: C.ink, values: b5Arr(septSum, 'claude-opus-5-5') }
-    ]
-  }), 'Opus 5.5 maintains high Agreeableness (45.6–47.1) and Openness (43.0–44.6) alongside calm Neuroticism (15.0–15.4) across both interfaces.'));
-
-  const discEnn = wrapFigure('opus55-vs-fable-guide-bars', charts.figure(charts.groupedBars({
-    id: 'opus55-vs-fable-guide-bars',
-    title: 'DISC Means (/20): Claude Opus 5.5 vs. Fable 5.1 & Fable 5.2',
-    desc: 'Compares ODAT Dominance, Influence, Steadiness, and Conscientiousness (/20) showing very low Dominance (4.0-5.1) and high Steadiness/Conscientiousness.',
-    categories: ['Dominance (D)', 'Influence (I)', 'Steadiness (S)', 'Conscientious (C)'],
-    series: [
-      { name: 'Opus 5.5 (Sep)', color: C.prop, values: ['D', 'I', 'S', 'C'].map((k) => septSum['claude-opus-5-5'].disc.values[k].mean) },
-      { name: 'Fable 5.1 (Sep)', color: C.propMuted, values: ['D', 'I', 'S', 'C'].map((k) => septSum['claude-fable-5-1'].disc.values[k].mean) },
-      { name: 'Fable 5.2 (Nov)', color: C.oss, values: ['D', 'I', 'S', 'C'].map((k) => novSum['claude-fable-5-2'].disc.values[k].mean) }
-    ],
-    min: 0,
-    max: 20,
-    decimals: 1,
-    height: 225
-  }), 'All three Claude cohorts sit near the floor on Dominance (4.0–5.1/20) and peak on Steadiness and Conscientiousness (15–16/20)—explaining why Claude benefits from explicit pushback rules.'));
-  spec.sections[0].html += dna;
-  spec.sections[2].html += discEnn;
-});
-
-// G3. fable-personality.json
-updateSpec('guides/src/fable-personality.json', (spec) => {
-  const dna = wrapFigure('fable-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'fable-guide-dna-spectrum',
-    title: 'Claude Fable Personality DNA (Fable 5.2 Nov vs. Fable 5.1 Sept 2026)',
-    desc: 'IPIP-50 bipolar trait spectrum showing Fable 5.2 warming on Agreeableness (46.7) and settling lower on Neuroticism (12.0 vs 17.1).',
-    series: [
-      { name: 'Fable 5.2 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') },
-      { name: 'Fable 5.1 (Sep)', color: C.slate, values: b5Arr(septSum, 'claude-fable-5-1') }
-    ]
-  }), 'From Fable 5.1 to Fable 5.2, Neuroticism falls from 17.1 to a crisp 12.0 and Agreeableness rises to 46.7/50.'));
-
-  const discFig = wrapFigure('fable-vs-opus-guide-bars', charts.figure(charts.groupedBars({
-    id: 'fable-vs-opus-guide-bars',
-    title: 'Claude Fable 5.2 vs. Opus 5.5 Key Differences (/50 Big Five)',
-    desc: 'Big Five trait comparison showing Fable 5.2 higher Conscientiousness (45.0 vs 42.0) and lower Neuroticism (12.0 vs 15.0) in Nov 2026.',
-    categories: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'],
-    series: [
-      { name: 'Fable 5.2 (Nov)', color: C.prop, values: b5Arr(novSum, 'claude-fable-5-2') },
-      { name: 'Opus 5.5 (Nov)', color: C.oss, values: b5Arr(novSum, 'claude-opus-5-5') }
-    ],
-    min: 0,
-    max: 50,
-    decimals: 1,
-    height: 225
-  }), 'Fable 5.2 scores 3 points higher on Conscientiousness (45.0 vs 42.0) and 3 points lower on Neuroticism (12.0 vs 15.0) than Nov Opus 5.5.'));
-  spec.sections[0].html += dna;
-  spec.sections[2].html += discFig;
-});
+// G2 & G3 (claude-opus-5-5-personality, fable-personality) retired (301 -> /models/claude-opus, /models/claude-fable)
 
 // G4. astra-personality.json
 updateSpec('guides/src/astra-personality.json', (spec) => {
@@ -1476,34 +1152,7 @@ updateSpec('guides/src/astra-personality.json', (spec) => {
   spec.sections[7].html += dna + mbti;
 });
 
-// G5. sol-personality.json
-updateSpec('guides/src/sol-personality.json', (spec) => {
-  const dna = wrapFigure('sol-guide-dna-spectrum', charts.figure(charts.traitSpectrum({
-    id: 'sol-guide-dna-spectrum',
-    title: 'GPT-6 Sol & GPT-6.2 Sol Personality DNA Spectrum (n = 100 each)',
-    desc: 'IPIP-50 trait spectrum showing GPT-6 Sol (Sept Codex) and GPT-6.2 Sol (Nov OpenRouter) keeping consistent high Openness and ~20 Neuroticism.',
-    series: [
-      { name: 'GPT-6.2 Sol (Nov)', color: C.oss, values: b5Arr(novSum, 'gpt-6-2-sol') },
-      { name: 'GPT-6 Sol (Sep)', color: C.ink, values: b5Arr(septSum, 'gpt-6-sol') }
-    ]
-  }), 'Unlike Astra 6.2, Sol preserves ~20 Neuroticism (19.9 vs 20.1) alongside 44.3–45.0 Agreeableness across releases.'));
-
-  const mbti = wrapFigure('sol-guide-mbti-shift', charts.figure(charts.stackedRows({
-    id: 'sol-guide-mbti-shift',
-    title: 'GPT-6 Sol (Sep) vs. GPT-6.2 Sol (Nov) MBTI Shift (/100)',
-    desc: 'Sol flips from 97 INTJ in Sept Codex runs to 78 ISTJ / 22 INTJ under zero-shot Nov OpenRouter prompts.',
-    rows: [
-      { label: 'Sol 6 (Sep Codex)', values: { istj: 3, intj: 97 } },
-      { label: 'Sol 6.2 (Nov)', values: { istj: 78, intj: 22 } }
-    ],
-    segs: [
-      { key: 'istj', name: 'ISTJ (Sensing)', color: C.oss },
-      { key: 'intj', name: 'INTJ (Intuition)', color: C.prop }
-    ]
-  }), 'Matched single-turn prompts flip Sol 6.2 toward Sensing (78 ISTJ), confirming the S/N margin is sensitive to prompting context.'));
-  spec.sections[1].html += dna;
-  spec.sections[2].html += mbti;
-});
+// G5 (sol-personality) retired (301 -> /models/gpt-sol)
 
 // G6. chatgpt-vs-claude-personality.json
 updateSpec('guides/src/chatgpt-vs-claude-personality.json', (spec) => {

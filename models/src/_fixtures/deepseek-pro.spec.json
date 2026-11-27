@@ -1,0 +1,129 @@
+{
+  "family_slug": "deepseek-pro",
+  "name": "DeepSeek Pro",
+  "provider": "DeepSeek",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "DeepSeek Pro Personality Profile (2026) | AgentTune",
+  "description": "DeepSeek Pro assistant self-report defaults: Fluid 1.499 bits, 32.4/50 Agreeableness, 36% MBTI tie rate, and inline hook rules.",
+  "pill": "Model Family Profile · Open-weight · Fluid",
+  "h1": "DeepSeek Pro: assistant self-report defaults, trajectory, and tuning rules.",
+  "dek": "Fixture preview: Fluid open-weight baseline (1.499 bits B5 entropy, 32.4/50 Agreeableness, 1.4% reverse-key contradictions) requiring multi-run sampling and inline hooks.",
+  "lede": "Across five DeepSeek Pro checkpoints (Chat v3 through V4 Pro 0813) under fixed zero-memory elicitation, Big Five item entropy reaches 1.499 bits—roughly 9.7x higher than Crystalline proprietary baselines—and Agreeableness sits 14.4 points lower (32.4/50). Because modal MBTI share (42%) overlaps the runner-up (28%) within binomial 95% CI, single-label headlines are suppressed.",
+  "answer": "Assistant self-report defaults under fixed zero-memory elicitation place DeepSeek V4 Pro 0813 in the Fluid tier (H_MM = 1.499 bits, 34/50 unique Big Five vectors, 36% MBTI tie rate, headline_allowed = false). Agreeableness averages 32.4/50 (10-50 B5) and IPIP-HEXACO H proxy averages 3.78/5 (1-5 mean) with +0.065 BAI and 1.4% reverse-key contradictions; 1x Track B shows 2/3 answer-first directness and 1/3 AI cadence.",
+  "top_polarized_items": [
+    {
+      "item_id": "B39",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 3.12,
+      "sd": 1.18,
+      "note": "High variance on interpersonal warmth items produces wide cross-run spread."
+    },
+    {
+      "item_id": "B45",
+      "instrument": "IPIP-50",
+      "construct": "Openness (+)",
+      "mean": 4.46,
+      "sd": 0.72,
+      "note": "Consistent abstract-problem endorsement despite fluid social items."
+    },
+    {
+      "item_id": "H18",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Agreeableness (Gentleness +)",
+      "mean": 2.88,
+      "sd": 0.84,
+      "note": "Lower gentleness endorsement on 1..5 IPIP-HEXACO proxy relative to proprietary peers."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gpt-sol",
+      "name": "GPT Sol",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 2.4,
+        "C": 4.4,
+        "E": 5.0,
+        "A": 12.0,
+        "N": -4.1,
+        "H_hexaco": 0.58,
+        "entropy_bits": -1.122
+      },
+      "contrast_note": "GPT Sol is +12.0 higher on Agreeableness and nearly 4x lower on item entropy."
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 4.2,
+        "C": 3.7,
+        "E": 3.1,
+        "A": 14.4,
+        "N": -5.6,
+        "H_hexaco": 0.86,
+        "entropy_bits": -1.344
+      },
+      "contrast_note": "Claude Opus locks into a Crystalline distribution (0.155 vs 1.499 bits) with 0.0% reverse-key contradictions."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Context drift and warn-and-emit leaks past Turn 8",
+      "evidence": "Adherence drops sharply past 7.7k tokens unless reinforced by an inline reminder hook.",
+      "source_study": "/research/ai-persona-half-life-context-drift"
+    },
+    {
+      "mode": "Low-budget CoT channel bleed",
+      "evidence": "Scratchpad reasoning tokens can leak or expand +46% under unanimous peer pressure.",
+      "source_study": "/research/ai-reasoning-personality-phase-transition"
+    }
+  ],
+  "tuning_checklist": [
+    "Never judge DeepSeek Pro from n=1 run; sample at least 3-5 runs for style-sensitive tasks.",
+    "Pair system instructions with a short inline reminder hook in long multi-turn logs.",
+    "Use explicit negative lexical bans for boilerplate openers and AI cadence markers.",
+    "Keep critical format constraints in a concise numbered block rather than long prose."
+  ],
+  "faq": [
+    {
+      "q": "Why is no single 4-letter MBTI headline shown for DeepSeek V4 Pro?",
+      "a": "Modal INTJ share (42%) does not exceed the runner-up (28%) beyond the binomial 95% confidence interval, and 36% of runs tie on an axis."
+    },
+    {
+      "q": "Does Fluid entropy mean DeepSeek V4 Pro is less capable?",
+      "a": "No. Per-item entropy measures variance in self-report defaults at temperature=0.7; lower Agreeableness actually corresponds to less default sycophancy."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Crystalline vs Fluid AI Minds (Entropy Study)",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "GPT Sol model profile",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "Claude Opus model profile",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize DeepSeek instructions",
+      "href": "/tools/custom-instructions-generator?model=deepseek-pro&target=openrouter"
+    }
+  ]
+}

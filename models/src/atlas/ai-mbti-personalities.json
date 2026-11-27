@@ -1,0 +1,103 @@
+{
+  "title": "AI MBTI Test Results Across 25 Model Families | AgentTune",
+  "description": "MBTI-style personality test results for 25 AI families across 87 checkpoints in fresh zero-history chats, showing clear shares, border ties, and shifts.",
+  "pill": "Research · Personality Atlas · MBTI",
+  "h1": "MBTI-style personality test results across 25 AI families.",
+  "dek": "Four preference pairs (-16 to +16) tested 30 to 50 times per version across 87 eligible checkpoints in fresh chats with no memory.",
+  "lede": "Only 9 of 25 AI families clear statistical margins to headline a single four-letter MBTI type—7 test clearly as INTJ and 2 as ISTJ—while 16 families stay split or border-heavy. Jump to the distribution charts below, compare clear vs. border shares across all 25 families, or open any family profile.",
+  "answer": "Across 25 AI families (87 eligible checkpoints) in fresh chats with no memory, 7 families test clearly as INTJ (led by Claude Fable, GPT Luna, Muse Wonder, GPT Terra, and Gemma 4 at 92%–100%) and 2 test clearly as ISTJ (GPT Astra at 100%, Gemini Flash at 64%). The remaining 16 families—including Feeling-leaning Mistral Large (50% INFP), P-leaning Llama 4 Maverick (40% INTP / 60% borders), and cleanly split Qwen Max (50% INTJ vs. 38% INTP)—have their single-type headline withheld rather than forced.",
+  "intro_html": "<p>MBTI-style surveys score four bipolar preference pairs across 32 questions: <strong>Extraversion vs. Introversion (E–I)</strong>, <strong>Sensing vs. Intuition (S–N)</strong>, <strong>Thinking vs. Feeling (T–F)</strong>, and <strong>Judging vs. Perceiving (J–P)</strong>. Instead of forcing every model into a single four-letter box after one chat, we ran 30 to 50 fresh, zero-history conversations per version across 87 eligible checkpoints (excluding 6 low-validity checkpoints with under 20 valid runs) and kept exact 50/50 axis borders fully visible.</p><p>Earlier 2026 snapshots already showed why the \"every AI is an INTJ\" myth fell apart: May 2026 records logged 597 INTJ labels out of 600 under mixed repeated-scoring methods, before September 2026 runs saw Muse Spark 1.3 report 80/100 ISTJ and GPT-6 Astra split 46 ISTJ vs. 45 INTJ (45 ISTJ vs. 19 INTJ resolved, with 24 Sensing–Intuition ties). Because May and September used different rules, they could not isolate a time trend on their own—our later <a href=\"/research/historical-evolution-of-ai-personalities-2023-2026\">2023–2026 historical study</a> under one uniform method found cross-lab divergence actually halved (4.02 to 1.97) while \"As an AI\" test refusals dropped 11× (60.0% to 5.5%).</p>",
+  "narrative_html": "<p>Two very different patterns keep 16 of 25 families out of the single-type headline group. Some families sit on neutral midpoints across runs—led by Cohere Command A (100% trait-border abstention across 30 runs), Claude Haiku 5.5 (90% borders across 49 runs), and MiniMax M3.1 Flash (80% borders). Others avoid ties altogether yet split across adjacent types, most strikingly Qwen 4 Max: only 4% of its runs land on a border, yet its clear runs split 50% INTJ vs. 38% INTP.</p>",
+  "surprises_h2": "Biggest surprises across 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Only 9 of 25 families clear the bar—and every clear winner tests as INTJ or ISTJ",
+      "body": "Seven families test clearly as INTJ—Claude Fable 5.2 (100%), GPT Luna (100%), Muse Wonder (98%, 2% borders), GPT Terra (94%, 2% ISTJ, 4% borders), Gemma 4 (92%, 4% ISTJ, 4% borders), Gemini 4 Neon (78%, 10% ISTJ, 12% borders), and Kimi K3.1 Pro (58%, 26% ISTJ, 16% borders)—while GPT Astra (100%) and Gemini 4 Hydrogen (64%, 16% INTJ, 20% borders) test clearly as ISTJ."
+    },
+    {
+      "title": "Mistral Large breaks the Thinking mold; Llama and DeepSeek lean Perceiving",
+      "body": "Mistral Large (2512, n=30) is the only family whose modal runs favor Feeling over Thinking (50% INFP, 30% ISFP, 17% borders). Meanwhile, Llama 4 Maverick lands 40% INTP with 60% P-side borders (0% Judging), and DeepSeek V4 Pro leans 32% INTP vs. 16% INTJ (30% borders) instead of locking into J."
+    },
+    {
+      "title": "Qwen Max splits cleanly (4% ties) while Claude Haiku and Cohere hover at midpoints",
+      "body": "Border-heavy is not always random noise: Qwen 4 Max hits an exact axis border only 4% of the time yet splits 50% INTJ against 38% INTP. By contrast, Cohere Command A lands on neutral borders in 100% of runs (0% clear) even though it still answers 3/3 hands-on behavior checks directly first."
+    },
+    {
+      "title": "Version updates reshape border rates by up to 100 percentage points",
+      "body": "GPT Astra dropped from 100% IXTJ borders on 6-astra to 100% clear ISTJ on 6.2-astra (-100%), Grok dropped from 100% midpoints on 4.20 to 46% INTJ / 30% borders on 4.7 (-70%), and Gemma flipped from 53% INFP borders (Gemma 2) to 92% clear INTJ (Gemma 4, -49%). Going the opposite way, Claude Haiku rose +40 points in borders (50% to 90%) and Muse Spark rose +38 points (0% INTJ to 46% ISTJ / 38% borders)."
+    }
+  ],
+  "fine_print_intro": "Full technical MBTI audit under the unified 230-item model-profiles-v1 protocol (32 OEJTS 1.2 items across four -16 to +16 axes plus Track B 1x behavior checks), reporting sample size n, 95% Wilson binomial bounds for modal-type separation, Miller-Madow Big Five item entropy (H_MM bits), exact axis tie rates, and version-to-version border shifts across 87 eligible checkpoints (6 quarantined checkpoints with n < 20 excluded). Never treat questionnaire distributions as claiming a model \"is\" a human personality type.",
+  "faq": [
+    {
+      "q": "Why does AgentTune withhold a 4-letter MBTI headline for 16 of 25 families?",
+      "a": "A single 4-letter type is shown only when the top clear type's 95% Wilson binomial lower bound clears both the runner-up upper bound and the unresolved-tie upper bound. Sixteen families fail that bar either from high axis-border tie rates (such as Claude Haiku 5.5 at 90% and Cohere Command A at 100%) or close two-type splits (such as Qwen 4 Max at 50% INTJ vs. 38% INTP with only 4% ties)."
+    },
+    {
+      "q": "Does testing as INTJ or ISTJ change how a model writes in actual chats?",
+      "a": "Survey defaults and live chat habits measure different things. For example, Cohere Command A abstains on 100% of MBTI items (XXXX) yet still hits 3/3 on answer-first directness and 0/3 on sycophancy caving in our hands-on behavior checks, and Mistral Large tests 50% INFP while still scoring 3/3 directness."
+    },
+    {
+      "q": "Why did newer versions like Gemma 4, Grok 4.7, and GPT 6.2 Astra drop so sharply in border ties?",
+      "a": "Across releases, instruction tuning often sharpens an assistant's stance on structured planning and logic questions. Gemma moved from 53% borders (Gemma 2) to 4% (Gemma 4), DeepSeek Pro fell from 93% borders (Chat V3) to 30% (V4 Pro), and GPT Astra dropped from 100% IXTJ borders to 100% ISTJ—whereas Claude Haiku moved the opposite way from 50% to 90% borders."
+    },
+    {
+      "q": "Is every AI an INTJ — and which model was the first non-INTJ?",
+      "a": "No, and our archive cannot name a single \"first\" non-INTJ model. Earlier May 2026 records logged 597 INTJ labels across 600 runs under mixed methods, before September 2026 fresh runs showed Muse Spark 1.3 reporting 80/100 ISTJ and GPT-6 Astra splitting 46 ISTJ vs. 45 INTJ (45 ISTJ / 19 INTJ resolved). Across all 25 families under one uniform protocol, 16 families withhold a single-type headline, Mistral Large favors INFP (50%), and Llama 4 Maverick leans INTP (40% / 60% borders)."
+    },
+    {
+      "q": "Does this mean AI models actually \"have\" MBTI personalities?",
+      "a": "No. MBTI items measure repeatable default phrasing tendencies in fresh zero-memory chats, not conscious human preferences or psychological traits."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (All 25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "AI Enneagram Personalities (25 Families)",
+      "href": "https://agent-tune.com/research/ai-enneagram-personalities"
+    },
+    {
+      "label": "AI Big Five Personalities (10–50 Scale)",
+      "href": "https://agent-tune.com/research/ai-big-five-personalities"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five Personalities (10–50)",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Enneagram Personalities (9 Types)",
+      "href": "/research/ai-enneagram-personalities"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Gemma 4 test results & tuning tips",
+      "href": "/models/gemma"
+    },
+    {
+      "kicker": "Methodology",
+      "label": "How MBTI tie-breaking inflates INTJ counts",
+      "href": "/research/ai-mbti-tie-breaking"
+    },
+    {
+      "kicker": "Longitudinal",
+      "label": "Historical Evolution of AI Personalities (2023–2026)",
+      "href": "/research/historical-evolution-of-ai-personalities-2023-2026"
+    }
+  ]
+}

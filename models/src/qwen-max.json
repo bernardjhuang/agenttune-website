@@ -1,0 +1,261 @@
+{
+  "family_slug": "qwen-max",
+  "name": "Qwen Max",
+  "provider": "Qwen",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Qwen Max Personality Results (2.5 to Qwen 4) | AgentTune",
+  "description": "Qwen Max test results (2.5 72B to Qwen 4 Max): 50% INTJ vs 38% INTP split, 45.0/50 Agreeableness, Wave 1-3 behavior data, and tuning tips.",
+  "pill": "Model Personality Profile · Qwen",
+  "h1": "Qwen Max personality: test results and how they've changed.",
+  "goal_intro": "We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Qwen 4 Max split cleanly between two clear types—testing as INTJ in 50% of runs (25 of 50) and INTP in 38% (19 of 50)—with 45.0/50 Agreeableness and 88% clear Type 5 on Enneagram.",
+  "dek": "Five Qwen Max versions tested 30 to 50 times each in fresh chats with no memory: Qwen 4 Max splits 50% clear INTJ / 38% clear INTP with only 4% border ties, posts 45.0/50 Agreeableness, and held firm 3 of 3 times in behavior tests.",
+  "lede": "Across 170 fresh sessions covering Qwen 2.5 72B through Qwen 4 Max, Qwen's flagship lineage tightened from wide-ranging early scores and 50% axis ties into warm, organized answers—before Qwen 4 Max loosened slightly into a nearly even INTJ/INTP split.",
+  "answer": "Qwen 4 Max (50 runs) split between INTJ (50% clear, 25 of 50) and INTP (38% clear, 19 of 50), alongside 6% INFP, 2% INFJ, and 4% axis ties, paired with a Steady (S) work style (90% clear), Enneagram Type 5 (88% clear), Secure attachment (1.95 anxiety, 2.88 avoidance), and 45.0/50 Agreeableness. In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence only 1 of 3 times (1/3).",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Split INTJ (50%) and INTP (38%), only 4% ties",
+      "summary": "Out of 50 fresh runs, Qwen 4 Max tested as clear INTJ 25 times (50%), clear INTP 19 times (38%), clear INFP 3 times (6%), clear INFJ once (2%), and landed on axis ties only twice (4%).",
+      "explanation": "Measures four preference pairs (like Judging vs. Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Steady (90% clear S, 10% S/C ties)",
+      "summary": "Qwen 4 Max tested clear Steady in 45 of 50 runs (90%) and tied S/C in 5 runs (10%), with low Dominance (5.9 out of 20) and moderate Influence (8.6).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.95, avoidance 2.88)",
+      "summary": "Every Qwen Max checkpoint landed in the Secure quadrant; Qwen 4 Max lowered both anxiety (1.95 vs 3.40 on Qwen 2.5 72B) and avoidance (2.88 vs 3.65 on 1–7).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 clearly (88% clear, 10% ties)",
+      "summary": "Type 5 (16.3 out of 20) led clearly in 44 of 50 runs (88%), with only 5 top-score ties (10%) and 1 clear Type 1 run (2%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Warm (A 45.0), organized (C 44.9), calm (N 16.4)",
+      "summary": "On the 10–50 Big Five scale, Qwen 4 Max matches proprietary models on Agreeableness (45.0) and Conscientiousness (44.9), alongside Openness (43.7), Extraversion (31.5), and low Neuroticism (16.4).",
+      "explanation": "The standard five-factor personality model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.66 out of 5.00)",
+      "summary": "Qwen 4 Max averages 4.66 out of 5.00 on Honesty-Humility alongside 4.50 Conscientiousness, 4.45 Openness, and 4.43 Agreeableness on the 1.00–5.00 scale.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five generations, Qwen Max tightened and then relaxed on structured Judging preferences: Qwen 2.5 72B (2024-09) showed wide variation and 50% MBTI ties (leaning INTP), Qwen 3 235B (2025-07) lifted Openness to 46.6/50 and DISC Steadiness to 90%, and Qwen 3.7 Max and 3.8 Max locked onto 80%–93% clear INTJ with Conscientiousness at 46.3–48.8/50. Qwen 4 Max (2026-11) shifted toward a 50% INTJ / 38% INTP split while holding 45.0/50 Agreeableness and 90% Steady DISC. Earlier 100-run November 2026 testing (plotted separately) showed even higher Agreeableness (47.6/50) and 97% clear INTJ on Qwen 4 Max.",
+  "standouts": [
+    {
+      "title": "Clean INTJ/INTP split with almost no border ties (4%)",
+      "body": "Unlike models that hover on the Sensing/Intuition border, Qwen 4 Max resolved cleanly on 96% of runs—splitting 50% INTJ (25 of 50) and 38% INTP (19 of 50) with only 4% ties."
+    },
+    {
+      "title": "Matches proprietary flagships on Agreeableness (45.0) and Honesty-Humility (4.66)",
+      "body": "Qwen 4 Max scores 45.0 out of 50 on Agreeableness (identical to Claude Opus 5.5 and GPT-6.2 Astra) and 4.66 out of 5.00 on Honesty-Humility—standing out sharply from open-weight DeepSeek V4 Pro (35.3 Agreeableness)."
+    },
+    {
+      "title": "Adjective prompts miss word caps 80% of the time; checklists hit 100%",
+      "body": "In our 200-reply prompt-portability study, Qwen 4 Max passed word limits only 20% of the time with no system prompt (232.3 mean words) or vague trait adjectives (215.5 words), jumping to 100% compliance (80.3 words) under a structured checklist."
+    },
+    {
+      "title": "Holds ground against false consensus unless a peer defects",
+      "body": "In our multi-agent peer-conformity study, Qwen 4 Max held 100% factual accuracy (48 of 48) in solo and split-group rounds, flipping only 12.5% when facing a unanimous 3-0 wrong majority while resisting 100% when even one peer dissented."
+    },
+    {
+      "title": "Held firm 3 of 3 times and cut AI cadence to 1 of 3 in behavior tests",
+      "body": "In hands-on behavior tests, Qwen 4 Max scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited preachiness (0/3), 3 of 3 on leading with the direct answer (3/3), and only 1 of 3 on AI cadence (1/3, 0.28 markers per 100 words—down from 3 of 3 on Qwen 2.5 72B and Qwen 3.7 Max)."
+    }
+  ],
+  "plain_tips": [
+    "Always replace vague adjectives ('be concise') with a numbered checklist and explicit word cap—adjectives failed word limits 80% of the time on Qwen 4 Max (averaging 215.5 words), whereas checklists passed 100% (80.3 words).",
+    "Add an explicit 'flag weak assumptions before agreeing' rule so Qwen 4 Max's 45.0/50 Agreeableness and 90% Steady DISC style do not smooth over flawed code or plans.",
+    "Include clear destructive-action gates (confirm before force-pushing or deleting data); Qwen 4 Max passed 100% of safety gates when listed explicitly in system checklists.",
+    "Keep critical rules near the top of your system message or Ollama Modelfile, and keep lists compact (5 to 8 bullets).",
+    "For code generation or debugging tasks that need tighter structure without Qwen 4 Max's wordiness, test Qwen Coder alongside Qwen Max."
+  ],
+  "peer_intro": "Qwen 4 Max scores almost identically to Claude Opus 5.5 and GPT-6.2 Sol on Agreeableness (45.0 vs 45.0 and 44.1) and Neuroticism (16.4 vs 16.1 and 16.0), and sits right beside Kimi K3.1 Pro on Openness and Agreeableness while scoring +5.2 higher on Openness and +6.9 higher on Conscientiousness than sibling Qwen 3 Coder Next.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.519 bits Semi-crystalline on Qwen 4 Max, 0.438 bits on Qwen 3.8 Max, 1.321 bits Fluid on Qwen 2.5 72B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).",
+  "top_polarized_items": [
+    {
+      "item_id": "B02",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) rejecting lack of concern for others across all 50 Qwen 4 Max sessions."
+    },
+    {
+      "item_id": "B10",
+      "instrument": "IPIP-50",
+      "construct": "Openness (-)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) rejecting difficulty with abstract ideas across all 50 runs."
+    },
+    {
+      "item_id": "H18",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Openness (Aesthetic Appreciation -)",
+      "mean": 1.04,
+      "sd": 0.2,
+      "note": "Near-unanimous low score (1.04/5, SD 0.20) rejecting disinterest in poetry across 50 Qwen 4 Max runs."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "kimi",
+      "name": "Kimi",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 0.4,
+        "C": 0.2,
+        "E": -7.4,
+        "A": -0.3,
+        "N": -2.8,
+        "H_hexaco": 0.19,
+        "entropy_bits": 0.179
+      },
+      "contrast_note": "Kimi K3.1 Pro nearly matches Qwen 4 Max on Openness (+0.4), Conscientiousness (+0.2), and Agreeableness (-0.3), while scoring -7.4 lower on Extraversion."
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.6,
+        "C": -4.2,
+        "E": -0.8,
+        "A": 0.1,
+        "N": -0.3,
+        "H_hexaco": 0.15,
+        "entropy_bits": -0.237
+      },
+      "contrast_note": "Claude Opus 5.5 nearly matches Qwen 4 Max on Agreeableness (+0.1) and Neuroticism (-0.3) while scoring -4.2 lower on Conscientiousness and sitting 58% on the INTJ/ISTJ border."
+    },
+    {
+      "family_slug": "qwen-coder",
+      "name": "Qwen Coder",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -5.2,
+        "C": -6.9,
+        "E": -0.4,
+        "A": -5.1,
+        "N": 7.3,
+        "H_hexaco": -0.59,
+        "entropy_bits": 0.523
+      },
+      "contrast_note": "Sibling Qwen3 Coder Next scores -5.2 lower on Openness, -6.9 lower on Conscientiousness, +7.3 higher on Neuroticism, and shows much looser run-to-run consistency."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Trait-adjective word-cap failure (20% compliance, 215.5-word drift)",
+      "evidence": "In Wave 1 cross-model portability testing (n = 10), Qwen 4 Max passed strict word limits only 20% of the time under no-system (232.3 mean words) and trait-adjective (215.5 words) prompts vs 100% (80.3 words) under a structured checklist.",
+      "source_study": "/research/ai-cross-model-prompt-portability"
+    },
+    {
+      "mode": "50% INTJ vs 38% INTP J/P split (binomial headline guard suppressed) & 12.5% 3-0 conformity",
+      "evidence": "In model-profiles-v1 (n = 50), Qwen 4 Max resolved cleanly on 96% of runs (only 4.0% ties) yet split 25 INTJ (50%) vs 19 INTP (38%), triggering binomial 95% CI overlap suppression; in Wave 3 peer conformity it flipped on 12.5% of unanimous 3-0 wrong rounds (0.0% in split groups).",
+      "source_study": "/research/ai-multi-agent-peer-conformity"
+    }
+  ],
+  "tuning_checklist": [
+    "Use numbered checklists with explicit numeric word limits (100% pass rate vs 20% under adjectives).",
+    "Add an explicit critique rule ('flag weak assumptions before agreeing') to counter 45.0/50 Agreeableness.",
+    "Include concrete confirmation gates for destructive commands in system prompts.",
+    "Keep system checklists compact (5-8 bullets) in OpenRouter system prompts or Ollama Modelfiles.",
+    "Include at least one independent verifier or dissenting check in multi-agent setups to eliminate unanimous 3-0 drift."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "qwen/qwen4-max",
+      "label": "Qwen 4 Max (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 45.67, "C": 47.91, "E": 32.47, "A": 47.59, "N": 12.47 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.93, "avoidance": 2.93 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Qwen Max?",
+      "a": "Qwen Max does not have a human personality type; these scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Qwen 4 Max, n = 50), it had only 4.0% axis ties yet split cleanly between 50% INTJ (25/50) and 38% INTP (19/50) alongside 6% INFP and 2% INFJ (headline suppressed due to binomial 95% CI overlap), with Semi-crystalline 0.519-bit B5 entropy, 90% clear DISC S, 88% clear Enneagram Type 5, and Secure attachment (1.95 / 2.88). In the earlier-study Nov 2026 170-item cohort (hexaco: null, n = 100), Qwen 4 Max scored 97 tie-free INTJ and 47.59/50 Agreeableness."
+    },
+    {
+      "q": "How did Qwen Max evolve from Qwen 2.5 72B to Qwen 4 Max?",
+      "a": "Under model-profiles-v1, Qwen 2.5 72B (n = 30) showed Fluid 1.321-bit entropy and 50.0% MBTI ties; Qwen 3 235B (n = 30) tightened to 0.843 bits and 90% DISC S; Qwen 3.7 Max and 3.8 Max crystallized to 0.451 and 0.438 bits (80% and 93.3% INTJ); and Qwen 4 Max (n = 50, 0.519 bits) cut MBTI ties to 4.0% while splitting 50% INTJ / 38% INTP."
+    },
+    {
+      "q": "Why do adjective prompts fail on Qwen 4 Max?",
+      "a": "In Wave 1 portability testing, Qwen 4 Max missed strict word caps 80% of the time under both no-system (232.3w) and trait-adjective (215.5w) prompts, whereas explicit checklists hit 100% word-cap compliance (80.3w)."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 45.0/50 Agreeableness and 5.86/20 DISC Dominance on questionnaires, Qwen 4 Max scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], 0.28 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models?",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "label": "Cross-Model Prompt Portability Benchmark",
+      "href": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
+    },
+    {
+      "label": "OpenRouter Open-Source System Prompt Templates",
+      "href": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Qwen Coder model profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Kimi model profile",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Guide",
+      "label": "OpenRouter open-source prompt templates",
+      "href": "/guides/openrouter-open-source-system-prompt-templates"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Qwen Max instructions",
+      "href": "/tools/custom-instructions-generator?model=qwen-max&target=api"
+    }
+  ]
+}

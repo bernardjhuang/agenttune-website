@@ -2,13 +2,13 @@
   "slug": "agents-md-templates",
   "published": "2026-11-23",
   "updated": "2026-11-23",
-  "title": "Best AGENTS.md Templates for Codex & Coding Agents: 16 Files | AgentTune",
+  "title": "Best AGENTS.md Templates for Codex & Coding Agents (16)",
   "h1": "AGENTS.md templates for Codex and coding agents.",
   "dek": "16 copy-paste and downloadable AGENTS.md configs by tech stack with live 32 KiB byte counters and CLAUDE.md / Cursor equivalents.",
   "description": "16 copy-paste AGENTS.md templates for OpenAI Codex, Cursor, Windsurf, and coding agents with 32 KiB budget meters and .md downloads by tech stack.",
   "pill": "Guide · Coding Agents",
-  "lede": "<code>AGENTS.md</code> is the open convention read by OpenAI Codex CLI (up to <strong>32 KiB combined limit</strong> via <code>project_doc_max_bytes</code>), Cursor, Windsurf, GitHub Copilot, and compatible coding agents. Keep every repo <code>AGENTS.md</code> tight, verifiable, and focused on real commands rather than prose lectures.",
-  "answer": "Place a short, command-grounded AGENTS.md at your repository root (stay well below Codex's 32 KiB byte cap across AGENTS.override.md + global ~/.codex/AGENTS.md), include exact test/lint commands, and download a stack starter below.",
+  "lede": "<code>AGENTS.md</code> is the shared instruction file read by OpenAI Codex CLI, Cursor, Windsurf, GitHub Copilot, and other coding agents. A good <code>AGENTS.md</code> stays short and practical: give the agent exact build, test, and lint commands instead of a long essay. That keeps your personal and repo files well below Codex’s 32 KiB combined limit (<code>project_doc_max_bytes</code>).",
+  "answer": "Put a short, command-focused AGENTS.md at your repository root and keep the combined chain (global ~/.codex/AGENTS.md + repo AGENTS.md + any AGENTS.override.md) well under Codex's 32 KiB cap. Include exact test and lint commands, and grab one of the 16 stack starters below.",
   "scripts": [
     "/resources/tools/template-gallery.js"
   ],
@@ -79,6 +79,11 @@
       "kicker": "Generator",
       "label": "Interactive CLAUDE.md & Coding Rules Builder",
       "href": "/tools/claude-md-generator"
+    },
+    {
+      "kicker": "Guide & Builder",
+      "label": "OpenClaw SOUL.md, IDENTITY.md & USER.md 3-file builder",
+      "href": "/guides/openclaw-soul-md-user-md-identity-md"
     }
   ],
   "changelog": [

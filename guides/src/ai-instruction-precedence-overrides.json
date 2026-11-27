@@ -7,8 +7,8 @@
   "pill": "Reference · Precedence & Scope",
   "h1": "Project vs account instructions: what overrides what in AI.",
   "dek": "When your account preferences say \"use plain prose\" and your project instructions say \"reply in a Markdown table,\" which rule wins? Here is how every major platform resolves conflicts.",
-  "lede": "AI assistants read instructions from up to four places at once: account preferences, saved memory, project or repo files, and your live chat message. When those layers disagree, the most specific layer wins.",
-  "answer": "Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, more specific instructions override broader ones: your current chat prompt overrides project or repo rules, and project or repo rules override account-wide Custom Instructions. In ChatGPT Projects, project instructions replace global Custom Instructions inside that project. In OpenAI Codex, subdirectory AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.",
+  "lede": "AI assistants can read instructions from four places at once: account settings, saved memory, project or repo files, and your current chat message. When two rules disagree, the rule closest to your current task wins.",
+  "answer": "Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, specific rules override broad ones. Your current chat message beats project or repo files, and project or repo files beat account-wide preferences. In ChatGPT Projects, project instructions replace global Custom Instructions inside that workspace. In OpenAI Codex, nested folder AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.",
   "sections": [
     {
       "h2": "Precedence hierarchy across major AI platforms.",
@@ -95,6 +95,16 @@
       "kicker": "Guide",
       "label": "Meta Muse Memory.md, privacy, and how to reset safely",
       "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Notion AI custom instructions & workspace agent personas",
+      "href": "/guides/notion-ai-custom-instructions-agent-persona"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Microsoft Copilot custom instructions & Memory settings",
+      "href": "/guides/microsoft-copilot-custom-instructions-memory"
     }
   ],
   "promptModel": "any",

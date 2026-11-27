@@ -7,8 +7,8 @@
   "pill": "Reference · Coding Agent Rules",
   "h1": "CLAUDE.md vs. AGENTS.md vs. .cursorrules, Windsurf & Cline: complete matrix.",
   "dek": "File locations, size limits, personal communication layers, and single-source setups across all 7 major coding agents.",
-  "lede": "Most repositories have teams split across Claude Code, OpenAI Codex, Cursor, Windsurf, Cline, GitHub Copilot, and Gemini CLI. Code rules tell the agent what code to write, while a short 10-line personal communication section tells it how to report diffs, flag uncertainty, and push back on bad ideas. Here is the complete 7-agent matrix and how to keep one single source of truth.",
-  "answer": "Use AGENTS.md as your portable cross-tool repo rules file (Codex CLI 32 KiB default cap; also read by Cursor, Cline, and Copilot). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI—and keep personal tone in user-global configs.",
+  "lede": "Many engineering teams use several coding agents at once—Claude Code, OpenAI Codex, Cursor, Windsurf, Cline, GitHub Copilot, and Gemini CLI. Shared repo rules tell the agent how to build and test the code. A short 10-line personal block tells it how to talk to you, flag uncertainty, and push back on risky ideas. Below is the complete 7-agent map and how to keep one clean source of truth.",
+  "answer": "Use AGENTS.md as your shared repo rules file across tools (Codex CLI reads up to 32 KiB by default, and Cursor, Cline, and Copilot read it too). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI. Keep your personal tone preferences in your own home-folder config.",
   "promptModel": "astra-6",
   "promptDestination": "codex-cli",
   "sections": [
@@ -24,7 +24,7 @@
     },
     {
       "id": "avoiding-silent-truncation",
-      "h2": "What to leave out of coding-agent rules files.",
+      "h2": "What to leave out of coding-agent rules files (and the 32 KiB fine print).",
       "html": "<ul><li><strong>Secrets &amp; credentials:</strong> Never put API keys, tokens, or connection strings in instruction files.</li><li><strong>Rules a linter already enforces:</strong> If Prettier, Ruff, or ESLint enforces formatting automatically, delete the prose duplicate so the agent keeps its context budget for architectural constraints.</li><li><strong>Novel-length docs:</strong> OpenAI Codex CLI stops reading <code>AGENTS.md</code> files once the combined chain hits <code>project_doc_max_bytes</code> (32 KiB default in <code>~/.codex/config.toml</code>). Keep root files under 100–250 lines and move file-specific rules into glob files (<code>.cursor/rules/*.mdc</code>, <code>.claude/rules/*.md</code>, <code>.windsurf/rules/*.md</code>).</li><li><strong>Role-play costumes:</strong> Vague persona lines fade quickly; checkable rules like <em>&ldquo;state assumptions before editing files&rdquo;</em> persist across long agent loops.</li></ul><p>Merge your communication preferences safely without touching repo build commands using our <a href=\"/tools/instruction-converter\">Instruction Converter &amp; Merger</a> or generate ready-to-paste files in our <a href=\"/guides/ai-coding-agent-rules-files-matrix\">interactive Coding Rules Builder</a>.</p>"
     },
     {

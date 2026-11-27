@@ -3,11 +3,11 @@
   "route": "/research/does-personality-tuning-change-ai-answers",
   "published": "2026-09-25",
   "updated": "2026-11-23",
-  "title": "Does Personality Tuning Change AI Answers? 540-Reply Study + 60-Reply Pilot",
+  "title": "Does Personality Tuning Change AI Answers? (540-Run Study)",
   "description": "60-reply Sept pilot plus 540-reply Nov OpenRouter study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro with raw data and blind ratings.",
   "pill": "Research · November & September 2026",
   "h1": "Does personality tuning change AI answers?",
-  "dek": "We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.",
+  "dek": "We tested 20 everyday tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot on Claude Opus 5.5.",
   "lede": "In November 2026 we ran the full 180-reply personality-prompt comparison protocol across three models (540 total replies, blind-judged by Gemini 4 Argon) plus a 72-reply Claude preference check. In September 2026 we also archived a 60-reply Claude Opus 5.5 pilot. Explicit plain-English instructions raised DeepSeek V4 Pro correctness from 78.3% to 95.0% (and Claude Fable 5.2 from 96.7% to 100%), while adding an INTJ label on top of identical rules left GPT-6.2 Sol and Fable 5.2 virtually unchanged.",
   "answer": "Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.",
   "sections": [
@@ -32,7 +32,7 @@
       "html": "<p>Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three conditions (19/20 baseline replies and 17/20 direct replies scored a 5/5). With only 20 tasks and one run per cell, a 0.10 difference is one or two single-point judge calls—not evidence of an accuracy trade-off. Always verify factual claims independently.</p>"
     },
     {
-      "h2": "Limits & the 180-reply plain-English vs. label test kit.",
+      "h2": "The fine print: study limits and the 180-reply plain-English vs. label test kit.",
       "html": "<ul><li><strong>Single-judge methodological limit (Waves 1–2):</strong> Our November 2026 540-reply study and 72-reply Claude check were graded blind by a single judge (<code>google/gemini-4-argon</code>), alongside deterministic regex and length checks. All Wave-3 empirical studies (<a href=\"/research/historical-evolution-of-ai-personalities-2023-2026\">Historical Evolution 2023–2026</a>, <a href=\"/research/ai-reasoning-personality-phase-transition\">Reasoning Phase Transition</a>) upgrade to a strict orthogonal 3-family judge jury with Krippendorff's α.</li><li><strong>September 60-reply pilot sample:</strong> 20 tasks × 3 prompts = 60 total replies on one model pair.</li><li><strong>Style gives away the prompt:</strong> Even when condition labels are hidden from the judge, a terse reply looks visibly different from a warm reply.</li><li><strong>Isolating the type label:</strong> Both November and September datasets show checkable plain-English rules drive the core correctness lift; bare labels alone are secondary. <a href=\"/resources/research/personality-prompt-comparison-kit.json\" download>Download 20 tasks and rubrics (JSON)</a> · <a href=\"/tools/instruction-test-bench\">Instruction Test Bench</a>.</li></ul>"
     },
     {
@@ -72,8 +72,8 @@
       "href": "https://agent-tune.com/library/"
     },
     {
-      "label": "Claude Opus 5.5: measured default",
-      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+      "label": "Claude Opus: measured default & checkpoints",
+      "href": "https://agent-tune.com/models/claude-opus"
     }
   ],
   "related": [
@@ -148,6 +148,29 @@
         "@type": "DataDownload",
         "contentUrl": "https://agent-tune.com/research/data/november-2026-claude-preferences-results.json",
         "encodingFormat": "application/json"
+      }
+    ],
+    "variableMeasured": [
+      {
+        "@type": "PropertyValue",
+        "name": "Task Correctness Rate",
+        "unitText": "percentage (0 to 100%)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Answer-First Opening Score",
+        "minValue": 1,
+        "maxValue": 5
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Fluff & Filler Rate",
+        "unitText": "percentage (0 to 100%)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Reply Word Count",
+        "unitText": "words"
       }
     ]
   }

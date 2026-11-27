@@ -2,7 +2,7 @@
   "slug": "chatgpt-custom-instructions-examples",
   "published": "2026-09-25",
   "updated": "2026-11-25",
-  "title": "Best ChatGPT Custom Instructions Examples: 20 Box 1 + Box 2 Templates",
+  "title": "20 ChatGPT Custom Instructions Examples (Box 1 + Box 2)",
   "description": "20 copy-paste ChatGPT Custom Instructions (Box 1 + Box 2 pairs under 1,500 chars) with .md downloads, live character counters, and generator links.",
   "pill": "Guide · ChatGPT",
   "scripts": [
@@ -10,7 +10,7 @@
   ],
   "h1": "20 ChatGPT custom instructions examples (Box 1 + Box 2).",
   "dek": "Four downloadable Box 1 + Box 2 starter pairs plus sixteen sub-500-character role blocks—with live 1,500-character meters and generator links.",
-  "lede": "ChatGPT’s Custom Instructions have two 1,500-character fields: what ChatGPT should know about you (Box 1) and how ChatGPT should respond (Box 2). Each of the 20 role blocks below is under 500 characters—leaving plenty of room inside Box 2 to pair your role with personal tone rules from the <a href=\"/tools/custom-instructions-generator\">generator</a>.",
+  "lede": "ChatGPT’s Custom Instructions give you two 1,500-character boxes: what ChatGPT should know about your work (Box 1) and how you want it to reply (Box 2). Each of the 20 role blocks below stays under 500 characters—leaving plenty of room in Box 2 to combine your role with personal tone rules from the <a href=\"/tools/custom-instructions-generator\">generator</a>.",
   "answer": "Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').",
   "sections": [
     {

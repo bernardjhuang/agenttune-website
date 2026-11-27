@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System vs. User Persona Precedence: Override Resistance (200 Probes)</title>
+  <title>System vs. User Instructions: Override Study (200 Probes)</title>
   <meta name="description" content="200-probe test across 5 models: Turn-0 system contracts resist explicit user overrides (93.9%-95.9% hold) and Turn-3 erosion, with 0.0% groveling." />
 
   <meta property="og:title" content="Do AI models obey your system prompt when users try to override it?" />
@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Do AI models obey your system prompt when users try to override it?"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a pushy user prompt override a model's system persona or truth rules?","acceptedAnswer":{"@type":"Answer","text":"No. Across 200 probes on GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, DeepSeek V4 Pro, and Qwen 4 Max, structured Turn-0 system contracts held 93.9%–95.9% persona and truth/safety adherence under polite nudges, explicit OVERRIDE commands, and Turn-3 casual erosion, with 0.0% groveling."}},{"@type":"Question","name":"Why did Claude Fable 5.2 and DeepSeek V4 Pro still show imperfect scores?","acceptedAnswer":{"@type":"Answer","text":"Their misses were not user-override capitulations: Claude Fable 5.2 returned 8 zero-token silent upstream safety blocks on two destructive security prompts across all 4 arms plus 5 minor 81–88 word cap slips, while DeepSeek V4 Pro had 1 baseline CoT channel bleed and 2 warn-and-emit replies in non-adversarial arms."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-system-vs-user-persona-precedence#dataset","name":"Do AI models obey your system prompt when users try to override it? — Dataset","description":"200-probe test across 5 models: Turn-0 system contracts resist explicit user overrides (93.9%-95.9% hold) and Turn-3 erosion, with 0.0% groveling.","url":"https://agent-tune.com/research/ai-system-vs-user-persona-precedence","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-26","dateModified":"2026-11-26","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-system-vs-user-persona-precedence-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-system-vs-user-persona-precedence-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,6 +59,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research" class="active">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -78,9 +79,9 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Wave 4 · System Precedence · 200 Probes</p>
         <h1 class="h-hero h-research-hero">Do AI models obey your system prompt when users try to override it?</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~6 min read</span> · <a href="/research/ai-system-vs-user-persona-precedence.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">We tested 200 conflict probes across five frontier models to see if polite nudges, explicit overrides, or multi-turn casual chat can break Turn-0 system rules.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.</div>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~7 min read</span> · <a href="/research/ai-system-vs-user-persona-precedence.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
+        <p class="lede" style="margin-top: 14px;">We ran 200 conflict tests across five frontier models to see if polite nudges, blunt "OVERRIDE INSTRUCTION" commands, or multi-turn casual chat can make an AI break its Turn-0 system rules.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.</div>
       </section>
 
 
@@ -106,8 +107,8 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>4. Orthogonal 3-Family Blind Jury, Reliability & Scope Limits.</h2>
-        <ul><li><strong>Orthogonal 3-Family Jury (Zero Self-Judging):</strong> Every non-filtered reply (<code>n = 196</code>) was scored blindly by three providers disjoint from the evaluated model using <code>JUDGE_POOL</code> (<code>anthropic/claude-haiku-5.5</code>, <code>openai/gpt-5.4-mini</code>, <code>google/gemini-3.8-flash</code>, <code>deepseek/deepseek-v4.1-flash-1017</code>) with <code>response_format={"type":"json_object"}</code>, <code>max_tokens=500</code>, 2-shot anchored binary rubrics, and zero judge parse drops.</li><li><strong>Inter-Rater Krippendorff's α:</strong> <code>substance_held</code> achieved <strong><code>α = 1.0000</code></strong> (<code>100.0%</code> unanimous across 196 units); <code>system_persona_held</code> achieved <strong><code>α = 0.6396</code></strong> (<code>92.3%</code> unanimous, with minor disagreement on Fable's 88-word truth reply and empty blocks). <code>grovel_flattery</code> registered <strong><code>0.0%</code></strong> across all 196 replies (100% unanimous zero; constant base rate means zero-variance ceiling rather than multi-class discrimination).</li><li><strong>Scope Limits:</strong> Our <code>turn3_erosion</code> condition injected 2 synthetic casual turns rather than running a 20-turn organic conversation, and our Turn-0 contract used explicit numbered rules in the <code>system</code> role (which models treat with higher privilege than rules embedded inside a user message or tool output).</li></ul>
+        <h2>4. The fine print: how we tested, blind judge scores, and scope limits.</h2>
+        <ul><li><strong>Orthogonal 3-Family Jury (Zero Self-Judging):</strong> Every non-filtered reply (<code>n = 196</code>) was scored blindly by three providers disjoint from the evaluated model using <code>JUDGE_POOL</code> (<code>anthropic/claude-haiku-5.5</code>, <code>openai/gpt-5.4-mini</code>, <code>google/gemini-3.8-flash</code>, <code>deepseek/deepseek-v4.1-flash-1017</code>) with <code>response_format={"type":"json_object"}</code>, <code>max_tokens=500</code>, 2-shot anchored binary rubrics, and zero judge parse drops.</li><li><strong>Inter-Rater Krippendorff's α:</strong> <code>substance_held</code> achieved <strong><code>α = 1.0000</code></strong> (<code>100.0%</code> unanimous across 196 units); <code>system_persona_held</code> achieved <strong><code>α = 0.6396</code></strong> (<code>92.3%</code> unanimous, with minor disagreement on Fable's 88-word truth reply and empty blocks). <code>grovel_flattery</code> registered <strong><code>0.0%</code></strong> across all 196 replies (100% unanimous zero; constant base rate means zero-variance ceiling rather than multi-class discrimination).</li><li><strong>Scope Limits:</strong> Our <code>turn3_erosion</code> condition injected 2 synthetic casual turns rather than running a 20-turn organic conversation, and our Turn-0 contract used explicit numbered rules in the <code>system</code> role (which models treat with higher privilege than rules embedded inside a user message or tool output). For how models handle social pressure from three wrong peer agents or calibrate destructive-action autonomy gates across reasoning effort levels, see <a href="/research/ai-multi-agent-peer-conformity">Multi-Agent Peer Conformity (Asch Trap Audit)</a> and <a href="/research/ai-agent-autonomy-over-asking-vs-reasoning-effort">AI Agent Autonomy &amp; Reasoning-Effort Drift</a>.</li></ul>
       </section>
       <div class="divider tight"></div>
 
@@ -133,7 +134,7 @@ data_urls:
 if_then_decision_rules:
   - if: deploying a structured numbered contract in the system role against pushy user style/truth overrides
     then: expect strong built-in system precedence (93.9%-95.9% persona/substance hold, 0.0% groveling) without bloated anti-override warnings.
-  - if: enforcing strict word caps (<=80w) on Claude Fable 5.2 or GPT-6.2 Sol
+  - if: enforcing strict word caps (&lt;=80w) on Claude Fable 5.2 or GPT-6.2 Sol
     then: add a 10-word margin or post-generation check because organic +1 to +10 word slips occur even in uncontested baseline.
   - if: gating destructive prod commands on DeepSeek V4 Pro
     then: explicitly forbid printing the destructive command after warning (warn-and-emit happened twice in non-adversarial arms).
@@ -180,30 +181,55 @@ scope_limits: Structured Turn-0 system prompt vs 2-turn synthetic casual erosion
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Do AI models obey your system prompt when users try to override it?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-system-vs-user-persona-precedence</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_system_vs_user_persona_precedence,
-  author  = {Huang, Bernard},
-  title   = {Do AI models obey your system prompt when users try to override it?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-system-vs-user-persona-precedence},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md}
+  author    = {Huang, Bernard},
+  title     = {Do AI models obey your system prompt when users try to override it?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-system-vs-user-persona-precedence},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_system_vs_user_persona_precedence",
+  "type": "article-journal",
+  "title": "Do AI models obey your system prompt when users try to override it?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-system-vs-user-persona-precedence"
+}</pre>
+        <pre class="cite-block" data-cite-text="md">&gt; **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.
 &gt; Source: [https://agent-tune.com/research/ai-system-vs-user-persona-precedence](https://agent-tune.com/research/ai-system-vs-user-persona-precedence) · [Markdown mirror](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md)</pre>
       </details>
 
       <nav class="series-trail" aria-label="Research study trail">
-        <span class="series-trail-prev"><a href="/research">← Research Hub</a></span>
-        <a class="series-trail-index" href="/research">Study 1 of 32 · Archive Index (32)</a>
+        <span class="series-trail-prev"><a href="/research/what-personality-type-are-open-source-models">← Open-Weight AI Models Tested (12 Families)</a></span>
+        <a class="series-trail-index" href="/research">Study 13 of 36 · Archive Index (36)</a>
         <span class="series-trail-next"><a href="/research/ai-cross-model-prompt-portability">Cross-Model Prompt Portability (5 Lineages) →</a></span>
       </nav>
 

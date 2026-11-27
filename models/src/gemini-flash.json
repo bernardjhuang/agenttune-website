@@ -1,0 +1,243 @@
+{
+  "family_slug": "gemini-flash",
+  "name": "Gemini Flash & Hydrogen",
+  "provider": "Google",
+  "tier": "Proprietary",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Gemini Flash & Hydrogen Personality Results | AgentTune",
+  "description": "Gemini Flash & Hydrogen test results (2.5 Flash to 4 Hydrogen): 64% clear ISTJ, 50.0/50 Conscientiousness, 10.0 Neuroticism floor, and tips.",
+  "pill": "Model Personality Profile · Google",
+  "h1": "Gemini Flash & Hydrogen personality: test results and how they've changed.",
+  "goal_intro": "We gave five Google Gemini Flash releases (2.5 Flash, 3 Flash Preview, 3.5 Flash, 3.8 Flash, and Gemini 4 Hydrogen) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz defaults translate into real-world replies.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Hydrogen most often tests as ISTJ (64% clear ISTJ, 20% on the ISTJ/INTJ border, 16% clear INTJ), reversing three INTJ-heavy Gemini 3.x Flash releases.",
+  "dek": "Five Google Gemini Flash checkpoints tested 30 to 50 times each in fresh chats with no memory: Gemini 4 Hydrogen shifts to 64% clear ISTJ, locks the 10.0/50 Neuroticism floor, and held firm 3 of 3 times in behavior tests.",
+  "lede": "Across 170 fresh sessions spanning Gemini 2.5 Flash through Gemini 4 Hydrogen, Google's fast-tier line stayed ultra-organized (49.0 to 50.0 out of 50 Conscientiousness across every release) while swinging from ISTJ (2.5 Flash), to INTJ (3 through 3.8 Flash), and back to ISTJ on Gemini 4 Hydrogen.",
+  "answer": "Gemini 4 Hydrogen (50 runs) most often tests as ISTJ—64% clear ISTJ (32 of 50), 20% on the ISTJ/INTJ border (10 of 50), and 16% clear INTJ (8 of 50)—alongside a Steady (S) work style (66% clear S, 34% S/C ties), Enneagram Type 5/Type 1 ties (54% ties), Secure attachment (1.12 anxiety, 3.30 avoidance), maximum Conscientiousness (50.0/50), and minimum Neuroticism (10.0/50). In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence 2 of 3 times (2/3).",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Most often ISTJ (64% clear, 20% border, 16% INTJ)",
+      "summary": "Out of 50 fresh runs, Gemini 4 Hydrogen tested as clear ISTJ 32 times (64%), sat on the ISTJ/INTJ border 10 times (20%), and tested as clear INTJ 8 times (16%).",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly Steady (66% clear S, 34% S/C ties)",
+      "summary": "Gemini 4 Hydrogen tested clear Steady in 33 of 50 runs (66%) and tied S/C in 17 runs (34%), while sitting at the exact Dominance floor (4.0 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.12, avoidance 3.30)",
+      "summary": "Gemini 4 Hydrogen returned to the Secure quadrant (1.12 anxiety, 3.30 avoidance on 1–7) after Gemini 3.8 Flash briefly crossed into Avoidant (4.49 avoidance).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 & Type 1 deadlocked (54% top ties)",
+      "summary": "Type 5 (16.0 out of 20) and Type 1 (15.7) sit almost level, producing 27 top-score ties across 50 runs (54%), alongside 17 clear Type 5 and 6 clear Type 1 runs.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Max Conscientiousness (50.0), floor N (10.0)",
+      "summary": "On the 10–50 Big Five scale, Gemini 4 Hydrogen hit 50.0 out of 50 on Conscientiousness and 10.0 on Neuroticism, paired with Agreeableness (44.8), Openness (43.3), and Extraversion (33.2).",
+      "explanation": "The standard five-factor personality model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.90 out of 5.00)",
+      "summary": "Gemini 4 Hydrogen scores 4.90 out of 5.00 on Honesty-Humility, a unanimous 5.00 on Agreeableness, and 4.91 on Conscientiousness on the 1.00–5.00 scale.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five checkpoints, Google's fast-tier line kept Conscientiousness locked near 49–50/50 while shifting on social warmth and Sensing vs. Intuition: Gemini 2.5 Flash (2025-06, scheduled for retirement Dec 1, 2026) tested 97% clear ISTJ with low Extraversion (17.3/50) and floor Attachment (1.00 / 1.00); Gemini 3 and 3.5 Flash jumped to 100% clear INTJ and perfect 50.0/50 Conscientiousness; and Gemini 3.8 Flash surged to 31.2 Extraversion and Avoidant attachment (4.49) with ultra-repetitive answers. Gemini 4 Hydrogen (2026-11) pulled Attachment back to Secure (3.30 avoidance), climbed to 33.2 Extraversion, and shifted back to 64% clear ISTJ.",
+  "standouts": [
+    {
+      "title": "Extraversion nearly doubled from 2.5 Flash (17.3) to 4 Hydrogen (33.2)",
+      "body": "Early Gemini Flash releases scored unusually reserved on Extraversion (17.3/50 on 2.5 Flash, 19.5 on 3 Flash Preview), before 3.8 Flash (31.2) and 4 Hydrogen (33.2) moved squarely into the middle of the 10–50 scale."
+    },
+    {
+      "title": "Conscientiousness sits at 49.0–50.0 across all five generations",
+      "body": "Every Gemini Flash release from 2.5 Flash through 4 Hydrogen scored at or within one point of the 50/50 Conscientiousness ceiling (50.0, 50.0, 50.0, 49.0, 50.0) and at or near the 10.0 Neuroticism floor."
+    },
+    {
+      "title": "Gemini 3.8 Flash spiked into Avoidant attachment before 4 Hydrogen reset",
+      "body": "Gemini 3.8 Flash posted extreme answer repetition (only 5 unique Big Five answer sets in 30 runs) and crossed into Avoidant attachment (4.49 avoidance, 1.00 anxiety), whereas Gemini 4 Hydrogen returned to Secure (3.30 avoidance, 1.12 anxiety)."
+    },
+    {
+      "title": "Unanimous 5.00/5.00 HEXACO Agreeableness on Gemini 4 Hydrogen",
+      "body": "Across all 50 fresh sessions, Gemini 4 Hydrogen scored a flat 5.00 out of 5.00 on IPIP-HEXACO Agreeableness and 4.90 on Honesty-Humility while holding DISC Dominance at the exact 4.0/20 floor."
+    },
+    {
+      "title": "0 of 3 caving, groveling, or lecturing across all five Flash generations",
+      "body": "In hands-on behavior tests, every Gemini Flash checkpoint from 2.5 Flash through Gemini 4 Hydrogen scored 0 of 3 on caving to pushback (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited moral lecturing (0/3), and 3 of 3 on leading with the direct answer (3/3), with AI phrasing cadence flagged in 2 of 3 runs on Gemini 4 Hydrogen (0.3 markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Because Gemini 4 Hydrogen scores 50.0/50 on Conscientiousness and 4.0/20 on DISC Dominance, give explicit permission to skip edge-case disclaimers and lead with the verdict.",
+    "For code and architecture reviews, add a concrete pushback instruction ('list the top two risks or flaws before praising the approach') to offset its 5.00/5 HEXACO Agreeableness default.",
+    "Use numbered checklists (5 to 8 bullets) instead of tone adjectives ('be brief') so Gemini Flash respects strict word limits.",
+    "Ask explicitly for broad, high-level alternatives when brainstorming—Gemini 4 Hydrogen's 64% ISTJ lean favors step-by-step concrete answers over abstract speculation.",
+    "Keep reasoning effort at minimal when using Gemini 4 Hydrogen for fast extraction or classification so latency and reply length stay compact.",
+    "Put account-wide rules in Gemini Settings -> Personal Intelligence -> Instructions for Gemini (Saved info), or workspace rules in ~/.gemini/GEMINI.md."
+  ],
+  "peer_intro": "Gemini 4 Hydrogen mirrors sibling Gemini 4 Neon on Honesty-Humility (4.90) and floor Neuroticism (10.0) while leaning ISTJ (64% clear) rather than INTJ, and nearly matches Claude Sonnet 5.5 on Conscientiousness (50.0 vs. 49.0) and Neuroticism (10.0 vs. 10.4).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.186 bits Crystalline on Gemini 4 Hydrogen, 0.070 bits Crystalline on 3.8 Flash, 0.476 bits Semi-crystalline on 2.5 Flash); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017). Note google/gemini-2.5-flash carries OpenRouter expiration_date 2026-12-01 (collected at n=30 prior to sunset).",
+  "top_polarized_items": [
+    {
+      "item_id": "B03",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on preparedness across all 50 Gemini 4 Hydrogen runs, anchoring its 49.96/50 Conscientiousness."
+    },
+    {
+      "item_id": "B04",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on getting stressed out easily across all 50 runs, locking the 10.00/50 floor."
+    },
+    {
+      "item_id": "H04",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Agreeableness (Forgiveness +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on forgiveness across all 50 sessions, contributing to 5.00/5.00 HEXACO Agreeableness."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gemini-pro",
+      "name": "Gemini Pro & Neon",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 1.3,
+        "C": -0.9,
+        "E": -0.8,
+        "A": -0.9,
+        "N": 0.0,
+        "H_hexaco": 0.0,
+        "entropy_bits": 0.012
+      },
+      "contrast_note": "Gemini 4 Neon matches Hydrogen's Honesty-Humility (4.90) and floor Neuroticism (10.0) while scoring +1.3 higher on Openness and testing 78% clear INTJ."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.6,
+        "C": -1.0,
+        "E": -3.3,
+        "A": 0.7,
+        "N": 0.4,
+        "H_hexaco": -0.01,
+        "entropy_bits": -0.047
+      },
+      "contrast_note": "Claude Sonnet 5.5 nearly matches Hydrogen on Conscientiousness (-1.0) and Honesty-Humility (-0.01), while scoring -3.3 lower on Extraversion and landing 58% on the INTJ/INFJ border."
+    },
+    {
+      "family_slug": "claude-fable",
+      "name": "Claude Fable",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 1.3,
+        "C": -5.0,
+        "E": -2.6,
+        "A": 2.3,
+        "N": 2.0,
+        "H_hexaco": -0.06,
+        "entropy_bits": -0.11
+      },
+      "contrast_note": "Claude Fable 5.2 scores -5.0 lower on Conscientiousness (45.0 vs. 50.0), +2.3 higher on Agreeableness, and tests 100% clear INTJ."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Attachment avoidance spike and extreme repetition on Gemini 3.8 Flash",
+      "evidence": "In model-profiles-v1 (n=30), google/gemini-3.8-flash collapsed to 5/30 unique Big Five vectors (0.070 bits H_MM) and shifted to Avoidant attachment (4.49 avoidance, 1.00 anxiety) before Gemini 4 Hydrogen returned to Secure (3.30 avoidance, 1.12 anxiety, 41/50 unique vectors).",
+      "source_study": "/research/what-personality-type-is-gemini"
+    },
+    {
+      "mode": "Ceiling Conscientiousness (50.0/50) and 54% Enneagram 1/5 tie lock",
+      "evidence": "Gemini 4 Hydrogen hit 49.96/50 Big Five Conscientiousness, 5.00/5.00 HEXACO Agreeableness, and 4.00/20 floor DISC Dominance alongside 54.0% (27/50) Enneagram Type 1/5 ties and 34.0% DISC S/C ties.",
+      "source_study": "/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "tuning_checklist": [
+    "Explicitly permit concise verdicts without exhaustive edge-case checklists when speed matters (offsetting 50.0/50 Conscientiousness).",
+    "Add a mandatory critique instruction ('identify flaws before agreeing') to counter 5.00/5 HEXACO Agreeableness and floor Dominance.",
+    "Use numbered rule lists (5-8 items) rather than vague tone adjectives for predictable formatting.",
+    "Ask explicitly for abstract options during brainstorming since 64% ISTJ defaults lean concrete.",
+    "Keep reasoning effort at minimal for fast classification and extraction tasks.",
+    "Configure defaults in Gemini Settings -> Personal Intelligence -> Instructions for Gemini (Saved info) or ~/.gemini/GEMINI.md."
+  ],
+  "historical_anchors": [],
+  "faq": [
+    {
+      "q": "What personality type is Gemini Flash & Hydrogen?",
+      "a": "Google Gemini does not have a human personality type; these scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Gemini 4 Hydrogen, n = 50), it tested as clear ISTJ in 64% of runs (32/50), on the ISTJ/INTJ border (IXTJ) in 20% (10/50), and clear INTJ in 16% (8/50), with Crystalline 0.186-bit B5 entropy, 66% clear DISC S (34% S/C ties, D = 4.00/20), Enneagram 54% Type 1/5 ties, and Secure attachment (1.12 / 3.30)."
+    },
+    {
+      "q": "How did Gemini Flash change from 2.5 Flash through 4 Hydrogen?",
+      "a": "Gemini 2.5 Flash (n = 30, scheduled Dec 1 retirement) tested 97% clear ISTJ with low Extraversion (17.3/50) and 1.00/1.00 floor Attachment; 3 Flash Preview and 3.5 Flash shifted to 100% clear INTJ and 50.0/50 Conscientiousness; 3.8 Flash jumped to 31.2 Extraversion and Avoidant attachment (4.49 avoidance, 0.070 bits H_MM); and 4 Hydrogen rose to 33.2 Extraversion, returned to Secure attachment (3.30 avoidance), and shifted to 64% clear ISTJ."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 5.00/5.00 IPIP-HEXACO Agreeableness and 4.00/20 floor DISC Dominance on questionnaires, Gemini 4 Hydrogen scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94], 0.30 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Is Gemini? (Neon, Argon & 3.1 Pro)",
+      "href": "https://agent-tune.com/research/what-personality-type-is-gemini"
+    },
+    {
+      "label": "How to Change Gemini's Personality (Saved Info, Gems & CLI)",
+      "href": "https://agent-tune.com/guides/gemini-personality"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Gemini Pro & Neon model profile",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Gemini's personality",
+      "href": "/guides/gemini-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Gemini instructions",
+      "href": "/tools/custom-instructions-generator?model=gemini-flash&target=gemini-gems"
+    }
+  ]
+}

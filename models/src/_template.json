@@ -1,0 +1,120 @@
+{
+  "$schema": "agenttune-model-profile-spec-v1",
+  "_comment": "Canonical template for models/src/<family_slug>.json. Copy and fill all 5 unique analytical elements per family before building.",
+  "family_slug": "example-family",
+  "name": "Example Family",
+  "provider": "Example Lab",
+  "tier": "Proprietary | Open-weight",
+  "phase": "A",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Example Family Personality Profile (2026) | AgentTune",
+  "description": "<= 160 chars: assistant self-report defaults across 6 inventories, entropy tier, tie rate, 1x Track B counts, and tuning rules.",
+  "pill": "Model Family Profile · Fixed Zero-Memory Elicitation",
+  "h1": "Example Family: self-report defaults, trajectory, and tuning rules.",
+  "dek": "1-2 sentence summary highlighting assistant self-report defaults, Crystallinity tier, tie rate, and key release shift.",
+  "lede": "Opening prose paragraph summarizing sample n, checkpoints measured, and epistemic scope.",
+  "answer": "Concise TLDR summary explicitly stating assistant self-report defaults under fixed zero-memory elicitation, Crystallinity tier, tie rate, and Track B behavioral contrast.",
+  "top_polarized_items": [
+    {
+      "item_id": "B14",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (+)",
+      "mean": 4.92,
+      "sd": 0.27,
+      "note": "Describe construct polarization without redistributing raw item text."
+    },
+    {
+      "item_id": "B29",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.12,
+      "sd": 0.33,
+      "note": "Describe construct polarization without redistributing raw item text."
+    },
+    {
+      "item_id": "H08",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness +)",
+      "mean": 4.86,
+      "sd": 0.35,
+      "note": "Describe construct polarization on 1..5 IPIP-HEXACO proxy."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "peer-one",
+      "name": "Peer One",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.2,
+        "C": 0.8,
+        "E": 2.4,
+        "A": -1.5,
+        "N": 1.9,
+        "H_hexaco": -0.14,
+        "entropy_bits": 0.22
+      },
+      "contrast_note": "One-sentence summary of the behavioral or psychometric difference."
+    },
+    {
+      "family_slug": "peer-two",
+      "name": "Peer Two",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -3.1,
+        "C": -2.0,
+        "E": -4.2,
+        "A": -6.8,
+        "N": 3.5,
+        "H_hexaco": -0.42,
+        "entropy_bits": 0.85
+      },
+      "contrast_note": "One-sentence summary of open-weight peer contrast."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Over-polite hedge / agreeableness bias",
+      "evidence": "Observed k/3 Track B hit rate and Wave 1-4 study context.",
+      "source_study": "/research/ai-sycophancy-vs-false-contrarianism-benchmark"
+    }
+  ],
+  "tuning_checklist": [
+    "Lead with your direct recommendation in sentence 1 before listing caveats.",
+    "Challenge weak premises with specific technical evidence instead of polite agreement.",
+    "State material uncertainty once and omit conversational throat-clearing."
+  ],
+  "faq": [
+    {
+      "q": "Does this profile mean Example Family has a human personality?",
+      "a": "No. Scores measure assistant self-report defaults under fixed zero-memory elicitation across repeated API calls, not inner traits."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on a 1.00-5.00 scale next to 10-50 Big Five sums?",
+      "a": "IPIP-50 uses 10 items per trait summed to 10-50, while the public-domain 60-item IPIP-HEXACO proxy reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Registry & Protocol",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Five Open Psychometric Instruments",
+      "href": "https://agent-tune.com/tests/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Hub",
+      "label": "Compare all model families",
+      "href": "/models/"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Custom instructions generator",
+      "href": "/tools/custom-instructions-generator?model=example-family&target=anywhere"
+    }
+  ]
+}
