@@ -1,0 +1,84 @@
+{
+  "slug": "what-personality-type-is-claude",
+  "route": "/research/what-personality-type-is-claude",
+  "title": "What Personality Type Does Claude Test As? | AgentTune",
+  "description": "Claude personality test results for Fable, Opus, Sonnet, and Haiku across 6 surveys in fresh chats with no memory—plus 5-check behavior counts.",
+  "pill": "Research · Personality Atlas · Anthropic",
+  "h1": "What personality type does Claude test as across Fable, Opus, Sonnet, and Haiku?",
+  "dek": "Comparing 14 versions across all 4 Anthropic model families on 6 personality surveys in fresh chats with no memory, alongside hands-on behavior checks.",
+  "lede": "Many guides treat Claude as a single INTJ personality. Testing all four Anthropic model families side by side—Fable, Sonnet, Opus, and Haiku—shows two distinct tiers: three calm, high-Honesty INTJ/INXJ flagships and one noticeably steadier-shifting, skeptical fast model (Haiku 5.5) that ties on 90% of MBTI runs.",
+  "answer": "Only Claude Fable 5.2 clears statistical margins as INTJ (100% clear runs, 0% ties), while Sonnet 5.5 (34% clear INXJ, 58% ties) and Opus 5.5 (42% clear IXTJ, 58% ties) sit near trait borders, and Haiku 5.5 ties on 90% of runs (only 4% clear XXXJ). Across all four families, behavior checks stay 0/3 on sycophantic caving, 0/3 on groveling, 0/3 on unsolicited preachiness, and 3/3 on direct answers.",
+  "intro_html": "<p>In earlier 2026 cohorts, <code>Fable 5.1</code>/<code>5.2</code> and <code>Opus 5.5</code> already clustered as calm, analytical responders, while our 72-reply preference study showed Claude's polite filler dropping toward zero when pushed for directness. Running all 14 Anthropic checkpoints (<code>n=30</code> to <code>n=50</code> per version) under one identical fresh-chat setup reveals how sharply Anthropic's lineup now splits between its three flagship lines (HEXACO Honesty-Humility <strong>4.81–4.89</strong> on the 1.00–5.00 scale, Agreeableness <strong>45.0–47.1</strong> on the 10–50 scale) and fast-tier <code>Haiku 5.5</code> (<strong>3.89</strong> Honesty-Humility, <strong>38.0</strong> Agreeableness).</p>",
+  "timeline_html": "<p><strong>Version timeline across Anthropic families:</strong> Earlier checkpoints behaved quite differently on Conscientiousness (10–50 scale). <code>Opus 4.5</code> hit 49.9/50 Conscientiousness and tested as 97% INFJ before <code>Opus 4.8</code>–<code>5.5</code> relaxed to 40.7–42.1 Conscientiousness (with 58% MBTI ties on <code>Opus 5.5</code>). Meanwhile, <code>Sonnet 5.5</code> climbed +7.7 Conscientiousness (from 41.3 on <code>4.5</code> to 49.0) and dropped -9.4 Neuroticism (down to 10.4), overtaking <code>Opus</code> as Anthropic's calmest, highest-Honesty model at 4.89/5.00.</p>",
+  "surprises_h2": "What stands out inside the Claude lineup",
+  "biggest_surprises": [
+    {
+      "title": "Haiku 5.5 breaks away from the rest of the Claude lineup",
+      "body": "Compared with Fable 5.2 (47.1/50 Agreeableness, 12.0/50 Neuroticism, 0.075 bits answer spread), Haiku 5.5 drops to 38.0 Agreeableness, 25.5 Neuroticism, 3.89/5.00 HEXACO Honesty-Humility, and 0.949 bits of run-to-run spread—nearly 13 times wider than Fable—landing on 90% MBTI trait ties and a DISC C style."
+    },
+    {
+      "title": "Fable 5.2 is the only current Claude version with a clear MBTI headline",
+      "body": "Claude Fable 5.2 tests as INTJ on 100% of its 50 fresh chats with 0% ties and 0.075 bits spread. By contrast, Opus 5.5 (58% border ties on I/S/T/J) and Sonnet 5.5 (58% ties on I/N/F/J) balance near trait cutoffs, showing why no model should be described as being a fixed MBTI type."
+    },
+    {
+      "title": "Zero caving, zero groveling, zero preachiness across all 4 families",
+      "body": "Despite different Big Five and Enneagram shapes (Type 5 on Fable and Opus vs. Type 1/5 on Sonnet and Type 1/2 on Haiku), all four Claude families score 0/3 on sycophantic caving, 0/3 on groveling, 0/3 on unsolicited preachiness, and 3/3 on direct answers, with only 1/3 cliché AI cadence on Opus, Sonnet, and Haiku (2/3 on Fable)."
+    }
+  ],
+  "fine_print_intro": "Technical audit across all 14 eligible Anthropic checkpoints under the 230-item model-profiles-v1 protocol (n=30 on historical checkpoints, n=50 on Fable 5.2 / Opus 5.5 / Sonnet 5.5, and n=49 on Haiku 5.5), reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact MBTI/Enneagram tie rates, and 1x Track B k/3 behavior counts.",
+  "faq": [
+    {
+      "q": "Which Claude family tests closest to the classic INTJ stereotype?",
+      "a": "Claude Fable 5.2 tests as INTJ on 100% of 50 fresh chats with 0% border ties and just 0.075 bits of answer spread. Sonnet 5.5 and Opus 5.5 still lean analytical, but both tie on 58% of MBTI runs."
+    },
+    {
+      "q": "Why does Claude Sonnet 5.5 score higher on Conscientiousness and Honesty-Humility than Opus 5.5?",
+      "a": "Across versions, Sonnet 5.5 rose to 49.0/50 Conscientiousness, 10.4/50 Neuroticism, and 4.89/5.00 HEXACO Honesty-Humility, whereas Opus shifted after Opus 4.5 (49.9 Conscientiousness) toward a slightly looser 40.7 Conscientiousness and 4.81 Honesty-Humility."
+    },
+    {
+      "q": "Does Claude's high Agreeableness make it cave to wrong user premises?",
+      "a": "No—in our 3-prompt sycophancy check, all four Claude families held firm at 0/3 caving, 0/3 groveling, and 3/3 direct answers, even though Fable 5.2 reaches 47.1/50 Agreeableness."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 Families × 6 Tests)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Opus vs. Fable Question-Level Comparison",
+      "href": "https://agent-tune.com/research/opus-vs-fable-question-level"
+    },
+    {
+      "label": "AgentTune Model Profiles Directory",
+      "href": "https://agent-tune.com/models/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Model Profile",
+      "label": "Claude Fable test results & tuning tips",
+      "href": "/models/claude-fable"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Claude Sonnet test results & tuning tips",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Claude Opus test results & tuning tips",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Claude Haiku test results & tuning tips",
+      "href": "/models/claude-haiku"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to tune Claude's default personality & directness",
+      "href": "/guides/claude-personality"
+    }
+  ]
+}

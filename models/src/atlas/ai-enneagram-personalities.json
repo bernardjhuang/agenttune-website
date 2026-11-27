@@ -1,0 +1,89 @@
+{
+  "title": "AI Enneagram Test Results: 25 Model Families | AgentTune",
+  "description": "Enneagram (Types 1–9) test results across 25 AI families (87 versions) in fresh chats, ranking Type 5 vs. Type 1 leaders, exact tie rates, and 9-petal shapes.",
+  "pill": "Research · Personality Atlas · Enneagram",
+  "h1": "Enneagram personality test results across 25 AI families.",
+  "dek": "Nine motivational patterns (4–20 sum per type across 36 items) tested 30 to 50 times per version across 87 eligible checkpoints in fresh chats.",
+  "lede": "Every model family runs on a tight Type 5 vs. Type 1 axis—accounting for 24 of 25 top averages—while exact ties at the top range from 6% (Gemma 4) to 90% (GPT Astra) and 100% (Cohere Command). Inspect all 25 nine-petal shapes below or click into any family profile.",
+  "answer": "Across 25 AI families on the 4–20 Enneagram scale (87 eligible checkpoints), Type 5 (Investigator) leads 16 families—peaking at 17.96/20 for Gemma 4, 17.30 for DeepSeek V4 Pro, and 17.00 for Kimi K3.1 Pro—while Type 1 (Perfectionist) leads 8 families (up to 16.50 for Mistral Large and 16.06 for GPT Astra) and Qwen3 Coder leans marginally to Type 8 (13.46 vs. 13.38 Type 5, 60% ties). Only 9 of 25 families tie rarely enough (6%–32%) to headline a single type.",
+  "intro_html": "<p>The 36-item Enneagram survey scores nine types (Types 1 through 9) from <strong>4 to 20 points each</strong>. Because each type relies on just four survey questions, models with balanced or clustered ratings frequently land on identical top integer sums in the same run—so we report full 9-petal averages alongside exact top-place tie rates across 30 to 50 fresh, zero-history chats per version.</p>",
+  "narrative_html": "<p>Because only 9 of 25 families clear our margin to headline a single Enneagram number, the 9-petal shapes below reveal distinctions a single label hides: Type 5 leads in Gemma 4 (17.96) and Kimi K3.1 Pro (17.00) with crisp Type 1 separation, whereas GPT Astra hits a 90% tie dead heat between Type 1 (16.06) and Type 5 (16.00), and Claude Sonnet 5.5 splits almost identically at Type 1 (14.76) vs. Type 5 (14.74) with 40% ties.</p>",
+  "surprises_h2": "Biggest surprises across 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Types 5 and 1 win 24 of 25 families—with Qwen3 Coder as the lone Type 8 outlier",
+      "body": "Type 5 (analytical, systems-focused) holds the highest average in 16 families, led by Gemma 4 (17.96), DeepSeek V4 Pro (17.30), Kimi K3.1 Pro (17.00), and Muse Wonder (16.74). Type 1 (standards-driven) leads 8 families, led by Mistral Large (16.50) and GPT Astra (16.06). Only Qwen3 Coder puts Type 8 slightly ahead (13.46 vs. 13.38 Type 5 and 13.36 Type 2, 60% ties)."
+    },
+    {
+      "title": "Exact tie rates span 6% to 100%, disqualifying 16 of 25 single-type headlines",
+      "body": "While Gemma 4 (6% ties), Kimi K3.1 Pro (8%), Muse Spark Open (8%), and Qwen 4 Max (10%) separate cleanly, GPT Astra ties in 90% of runs (16.06 Type 1 vs. 16.00 Type 5), Claude Haiku 5.5 ties in 78% (77.6%), and Cohere Command A ties in 100% of runs with an identical 12.0 across all nine types."
+    },
+    {
+      "title": "Both 16.5+ proprietary titans still show 42%–54% exact top-type ties",
+      "body": "High averages do not prevent ties: Gemini 4 Hydrogen (16.02 Type 5 vs. 15.74 Type 1, 54% ties), Gemini 4 Neon (16.40 Type 5 vs. 15.80 Type 1, 52% ties), GPT 6.1 Terra (16.00 Type 5 vs. 15.76 Type 8, 62% ties), and DeepSeek V4 Pro (17.30 Type 5 vs. 17.00 Type 1, 44% ties) all score intensely on two adjacent types at once."
+    },
+    {
+      "title": "Gemma, Grok, and DeepSeek tightened dramatically across model generations",
+      "body": "Gemma's top-place tie rate dropped from 77% (Gemma 2) to 6% (Gemma 4), Grok fell from 73% (4.20) to 18% (4.7), and DeepSeek Pro fell from 83% (V3) to 44% (V4 Pro). Meanwhile, Type 2 never places first in any of the 25 families, appearing instead as runner-up in empathetic or conversational profiles like Claude Fable (14.00) and Claude Haiku (14.06)."
+    }
+  ],
+  "fine_print_intro": "Full technical Enneagram audit under the unified 230-item model-profiles-v1 protocol (36 OEPS items scoring Types 1–9 on a 4–20 integer sum scale), reporting sample size n, 1,000-resample bootstrap 95% CIs, 95% Wilson tie-clearance guard status, exact top-rank tie rates, and Miller-Madow Big Five item entropy (H_MM bits) across 87 eligible checkpoints (6 quarantined checkpoints with n < 20 excluded). Short 4-item subscales inherently amplify tie rates.",
+  "faq": [
+    {
+      "q": "Why do 16 of 25 AI families tie too often for a single Enneagram headline?",
+      "a": "Each Enneagram type in OEPS uses only 4 items (integer sums from 4 to 20). Models that strongly endorse both Type 5 and Type 1 traits—like GPT Astra (16.06 vs. 16.00, 90% ties) or Gemini 4 Neon (16.40 vs. 15.80, 52% ties)—frequently hit identical sums across multiple types, failing our 95% Wilson CI separation guard. Only 9 of 25 families separate cleanly (6%–32% ties)."
+    },
+    {
+      "q": "Why does Cohere Command A show a flat 12.0 across all nine types?",
+      "a": "Across all 30 valid zero-memory runs, Command A selected the middle neutral option (3 on a 1–5 scale, summing to 12 across 4 items) on every Enneagram item, creating a 100% nine-way tie (1/2/3/4/5/6/7/8/9). That reflects a survey-neutral guardrail rather than refusal on real tasks, where Command A still passes 3/3 answer-first directness checks."
+    },
+    {
+      "q": "Does Type 2 ever rank first among the 25 AI families?",
+      "a": "No. Across all 25 latest checkpoints, 16 families rank highest on Type 5, 8 rank highest on Type 1, and 1 (Qwen3 Coder Next) leans narrowly to Type 8 (13.46 vs. 13.38 Type 5 and 13.36 Type 2). Type 2 appears as runner-up in Claude Fable (14.00), Claude Haiku (14.06), and Qwen4 Max (14.50)."
+    },
+    {
+      "q": "Does this mean AI models actually \"have\" Enneagram motives or wings?",
+      "a": "No. Enneagram scores reflect consistent wording and stance preferences on self-report questions in fresh chats, not inner human motivations or psychological defenses."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (All 25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "AI MBTI Personalities (25 Families)",
+      "href": "https://agent-tune.com/research/ai-mbti-personalities"
+    },
+    {
+      "label": "AI Big Five Personalities (10–50 Scale)",
+      "href": "https://agent-tune.com/research/ai-big-five-personalities"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI MBTI Personalities (Clear vs. Borders)",
+      "href": "/research/ai-mbti-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five Personalities (10–50)",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "DeepSeek Pro test results & tuning tips",
+      "href": "/models/deepseek-pro"
+    }
+  ]
+}

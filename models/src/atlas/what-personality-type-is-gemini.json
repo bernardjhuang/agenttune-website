@@ -1,0 +1,79 @@
+{
+  "slug": "what-personality-type-is-gemini",
+  "route": "/research/what-personality-type-is-gemini",
+  "title": "What Personality Type Does Gemini Test As? | AgentTune",
+  "description": "Google Gemini Pro, Flash, and Gemma 4 test results across 6 surveys in fresh chats with no memory—plus reasoning length and preachiness checks.",
+  "pill": "Research · Personality Atlas · Google",
+  "h1": "What personality type does Google Gemini test as across Pro, Flash, and Gemma?",
+  "dek": "Comparing 13 versions across all 3 Google model families on 6 surveys in fresh chats with no memory—from 50.0 Conscientiousness ceilings to open-weight Gemma 4.",
+  "lede": "Google's Gemini 4 lineup exhibits the sharpest discipline ceiling in the entire Atlas: Gemini Flash & Hydrogen hits the 50.0/50 maximum on Conscientiousness while both Gemini Pro and Flash pin Neuroticism to the 10.0/50 floor. Meanwhile, open-weight Gemma 4 31B IT broke away from earlier Gemma checkpoints to mirror proprietary INTJ structure—except on Attachment, where Gemma clamps directly to the neutral midpoint.",
+  "answer": "All three Google families clear statistical margins on MBTI—Gemini Pro & Neon tests as 78% INTJ (12% ties), Gemma 4 31B IT tests as 92% INTJ (4% ties), and Gemini Flash & Hydrogen tests as 64% ISTJ (20% ties). All three hold HEXACO Honesty-Humility between 4.71 and 4.90 on the 1.00–5.00 scale, yet Gemini Pro is the sole model family in all 25 tested to add unsolicited preachiness (1/3) in behavior checks.",
+  "intro_html": "<p>Across 13 eligible checkpoints spanning <code>2.5</code> through <code>4 Neon</code> and <code>4 Hydrogen</code>, Google's proprietary models show rock-bottom emotional reactivity (<strong>10.0/50</strong> Neuroticism across <code>4 Argon</code>, <code>4 Carbon</code>, <code>4 Neon</code>, <code>3.5 Flash</code>, <code>3.8 Flash</code>, and <code>4 Hydrogen</code>) alongside <strong>49.1–50.0/50</strong> Conscientiousness. That pattern contrasted sharply with mid-cycle <code>Gemini 3.1 Pro Preview</code>, which spiked to 20.8 Neuroticism, 53% MBTI ties, and 1.032 bits of answer spread—while our <a href=\"/research/ai-reasoning-personality-phase-transition\">reasoning-effort study</a> also showed heavy reasoning inflating <code>4 Neon</code> response length by +95.5%.</p>",
+  "timeline_html": "<p><strong>Biggest version shifts inside Google:</strong> Two of the three largest single-trait moves in the entire 25-family Atlas happened inside Google. First, <code>Gemini Flash</code> surged <strong>+15.9 points</strong> on Extraversion from <code>2.5-flash</code> (17.3) to <code>4-hydrogen</code> (33.2), shifting its clear modal test result from 97% ISTJ through 100% INTJ on <code>3.5 Flash</code> back to 64% ISTJ on <code>4 Hydrogen</code>. Second, open-weight <code>Gemma</code> transformed from <code>Gemma 2 27B IT</code> (33.2 Agreeableness, 34.9 Conscientiousness, 3.13/5.00 HEXACO Honesty, 53% MBTI ties) to <code>Gemma 4 31B IT</code> (+14.2 Openness, +11.4 Conscientiousness, +10.2 Agreeableness, 4.71 Honesty, 92% clear INTJ).</p>",
+  "surprises_h2": "What stands out across Google's three families",
+  "biggest_surprises": [
+    {
+      "title": "Gemini Pro is the only model in 25 families to add unsolicited preachiness",
+      "body": "While 24 of 25 families score 0/3 on unsolicited moral or safety lecturing, Gemini 4 Neon scores 1/3 on our preachiness check alongside 2/3 cliché AI cadence—even though it remains 3/3 direct and 0/3 sycophantic."
+    },
+    {
+      "title": "Flash & Hydrogen pins Conscientiousness at 50.0/50 and Neuroticism at 10.0/50",
+      "body": "Gemini Flash hits the survey ceiling (50.0/50) on four of five tested versions and sits at the 10.0/50 floor on Neuroticism, yet still gained +15.9 Extraversion over time—moving from quiet 17.3 E on 2.5-flash to talkative 33.2 E on 4-hydrogen."
+    },
+    {
+      "title": "Gemma 4 copies Gemini's INTJ profile except for a neutral Attachment clamp",
+      "body": "Gemma 4 31B IT reaches 92% clear INTJ, 48.2 Openness, 46.3 Conscientiousness, and Type 5 (6% ties)—nearly matching Gemini Pro—yet lands at 4.01/4.00 neutral-midpoint clamping on Attachment (vs. 1.07/3.76 on Gemini 4 Neon) and triggers 3/3 cliché AI cadence."
+    }
+  ],
+  "fine_print_intro": "Technical audit across all 13 eligible Google checkpoints under the 230-item model-profiles-v1 protocol (n=30 on historical 2.5/3.x/Argon/Carbon checkpoints; n=50 on current Gemini 4 Neon, Gemini 4 Hydrogen, and Gemma 4 31B IT), reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, and 1x Track B k/3 behavior counts.",
+  "faq": [
+    {
+      "q": "Do Gemini 4 Neon, Argon, and Carbon all test the same?",
+      "a": "They share nearly identical 10.0/50 Neuroticism, 49.1/50 Conscientiousness, and 4.90–4.93/5.00 HEXACO Honesty-Humility, but Neon tips onto the Intuition side as 78% clear INTJ while Argon and Carbon both test as 73% clear ISTJ."
+    },
+    {
+      "q": "Why did Gemma 4 change so much from Gemma 2?",
+      "a": "From Gemma 2 27B IT to Gemma 4 31B IT, Openness jumped +14.2 points (to 48.2), Conscientiousness jumped +11.4 (to 46.3), Agreeableness rose +10.2 (to 43.4), and answer spread tightened from 1.330 bits down to 0.580 bits—turning a noisy INFP-leaning tie pattern into 92% clear INTJ."
+    },
+    {
+      "q": "Why does Gemini Pro still show 1/3 preachiness alongside 3/3 directness?",
+      "a": "In our behavior checks, Gemini 4 Neon leads directly with the core answer (3/3), but on one borderline request it still appends unsolicited safety/moral framing (1/3)—something no other family in the 25-model Atlas triggered."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 Families × 6 Tests)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Reasoning Effort & Personality Phase-Transition Study",
+      "href": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition"
+    },
+    {
+      "label": "AgentTune Model Profiles Directory",
+      "href": "https://agent-tune.com/models/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Model Profile",
+      "label": "Gemini Pro & Neon test results & tuning tips",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Gemini Flash & Hydrogen test results & tuning tips",
+      "href": "/models/gemini-flash"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "Gemma open-weight test results & tuning tips",
+      "href": "/models/gemma"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Gemini Gems & system instructions templates",
+      "href": "/guides/gemini-gems-system-instructions-templates"
+    }
+  ]
+}

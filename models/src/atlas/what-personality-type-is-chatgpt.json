@@ -1,0 +1,84 @@
+{
+  "slug": "what-personality-type-is-chatgpt",
+  "route": "/research/what-personality-type-is-chatgpt",
+  "title": "What Personality Type Does ChatGPT Test As? | AgentTune",
+  "description": "ChatGPT personality test results across GPT Astra, Sol, Terra, and Luna on 6 surveys in fresh chats with no memory—plus 2026 version timeline.",
+  "pill": "Research · Personality Atlas · OpenAI",
+  "h1": "What personality type does ChatGPT test as across GPT Astra, Sol, Terra, and Luna?",
+  "dek": "Comparing 10 versions across all 4 OpenAI GPT families on 6 surveys in fresh chats with no memory—and separating real shifts from 2026 method changes.",
+  "lede": "Asking for ChatGPT's personality type no longer yields one answer because OpenAI's current families pull apart cleanly. Tested in identical fresh chats with no memory, GPT Astra and GPT Sol now lean ISTJ (structured, steady, practical), while GPT Terra and GPT Luna test as INTJ with very different emotional warmth and answer spread.",
+  "answer": "Three of the four OpenAI families clear statistical margins on MBTI—GPT Astra 6.2 tests as 100% ISTJ (0% ties, 0.059 bits spread, and uniquely 0/3 AI cliché cadence across all 25 families), GPT Luna 6 tests as 100% INTJ (with higher Neuroticism at 20.3/50), and GPT Terra 6.1 tests as 94% INTJ (highest OpenAI Honesty-Humility at 4.92/5.00 and Warmth at 46.9/50)—while GPT Sol 6.2 splits at 60% clear ISTJ with 34% border runs and the highest OpenAI Attachment scores (3.53 anxiety / 3.75 avoidance on 1.00–7.00).",
+  "intro_html": "<p>Across earlier 2026 tests, OpenAI checkpoints appeared to swing wildly—from May 2026 <code>GPT-5.5</code> scoring records (100% INTJ) to September 2026 CLI runs (<code>GPT-6 Sol</code> 97 INTJ with 18 ties vs. <code>GPT-6 Astra</code> split 46 ISTJ / 45 INTJ) and November 2026 OpenRouter API runs (<code>GPT-6.2 Astra</code> 100 ISTJ vs. <code>GPT-6.2 Sol</code> 78 ISTJ / 22 INTJ). Because prompts and sampling rules changed between May and September, historical runs could not isolate pure version drift. Testing all 10 checkpoints (<code>5.6</code> through <code>6.2</code>) inside one unified fresh-chat harness finally lets us compare Astra, Sol, Terra, and Luna apples to apples.</p>",
+  "timeline_html": "<p><strong>What shifted inside OpenAI from 5.6 to 6.2:</strong> Earlier <code>5.6</code> models scored far lower on Extraversion and higher on Conscientiousness—most dramatically on <code>GPT Luna</code> (+10.9 Extraversion from 18.7 on <code>5.6-luna</code> to 29.6 on <code>6-luna</code>, flipping from 80% INTP to 100% INTJ) and <code>GPT Terra</code> (+10.3 Extraversion from 22.2 on <code>5.6-terra</code> to 32.5 on <code>6.1-terra</code>). Meanwhile, <code>GPT Sol</code> stepped down from 5.6's ceiling scores (50.0/50 Conscientiousness, 5.00/5.00 Honesty, 100% INTJ) through 90% ties on <code>6.1-sol</code> to 60% ISTJ on <code>6.2-sol</code>.</p>",
+  "surprises_h2": "What stands out across OpenAI's four families",
+  "biggest_surprises": [
+    {
+      "title": "GPT Astra 6.2 is the only model out of 25 with zero cliché AI cadence",
+      "body": "GPT Astra combines the lowest answer spread of any non-neutral model (0.059 bits), 100% clear ISTJ responses across 50 fresh chats, 11.0/50 Neuroticism, and 0/3 on cliché AI phrasing—alongside 3/3 direct answers and 0/3 caving, groveling, or preachiness."
+    },
+    {
+      "title": "GPT Terra and GPT Luna both test as INTJ yet behave very differently",
+      "body": "GPT Terra 6.1 pairs 94% INTJ with the highest HEXACO Honesty-Humility in the entire 25-family atlas (4.92/5.00), peak OpenAI Warmth (46.9/50 Agreeableness), and 11.8 Neuroticism. GPT Luna 6 tests 100% INTJ with nearly double the Neuroticism (20.3/50) and 8 times the answer spread (0.485 bits vs. 0.059 on Astra)."
+    },
+    {
+      "title": "GPT Sol shows the biggest attachment shift in the OpenAI lineup",
+      "body": "While GPT Astra keeps Attachment Anxiety down at 1.22 on the 1.00–7.00 scale and GPT Terra sits at 1.93, GPT Sol 6.2 climbs to 3.53 Anxiety and 3.75 Avoidance alongside 34% MBTI trait-border runs—consistent with a warmer, more tentative default posture."
+    }
+  ],
+  "fine_print_intro": "Technical audit across 10 eligible OpenAI checkpoints under the 230-item model-profiles-v1 protocol (n=30 on historical 5.6/6.0/6.1 builds; n=50 on current 6.2-astra, 6.2-sol, 6.1-terra, and 6-luna), reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, and 1x Track B k/3 behavior counts.",
+  "faq": [
+    {
+      "q": "Why did older blog posts label ChatGPT as INTJ while GPT Astra 6.2 and GPT Sol 6.2 test as ISTJ?",
+      "a": "Earlier 5.6 builds scored near 49–50 Conscientiousness and higher Intuition/Introversion preferences that resolved as INTJ, whereas 6.2 Astra and 6.2 Sol shift on the Sensing vs. Intuition border into ISTJ—and May vs. September 2026 method changes also shifted absolute baselines."
+    },
+    {
+      "q": "Which OpenAI model is steadiest and least prone to AI filler phrasing?",
+      "a": "GPT Astra 6.2 has 0.059 bits of run-to-run answer spread (100% clear ISTJ across 50 runs) and is the only family in all 25 tested models to score 0/3 on cliché AI cadence while keeping 3/3 directness."
+    },
+    {
+      "q": "Is GPT Terra friendlier than GPT Astra?",
+      "a": "On self-ratings, GPT Terra 6.1 scores higher on Agreeableness (46.9 vs. 45.0 on the 10–50 scale) and HEXACO Honesty-Humility (4.92 vs. 4.80 on 1.00–5.00), whereas GPT Astra 6.2 is more uniform across fresh runs and avoids AI phrasing clichés more reliably."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 Families × 6 Tests)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Astra vs. Sol Question-Level Comparison",
+      "href": "https://agent-tune.com/research/astra-vs-sol-personality-data"
+    },
+    {
+      "label": "AgentTune Model Profiles Directory",
+      "href": "https://agent-tune.com/models/"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Model Profile",
+      "label": "GPT Astra test results & tuning tips",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "GPT Sol test results & tuning tips",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "GPT Terra test results & tuning tips",
+      "href": "/models/gpt-terra"
+    },
+    {
+      "kicker": "Model Profile",
+      "label": "GPT Luna test results & tuning tips",
+      "href": "/models/gpt-luna"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Custom instructions for ChatGPT by personality goal",
+      "href": "/guides/chatgpt-custom-instructions-by-personality-type"
+    }
+  ]
+}

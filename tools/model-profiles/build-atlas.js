@@ -30,9 +30,11 @@ const { buildPage } = require('../build-guides');
 const { enhance, markdown } = require('../enhance-pages');
 
 const ROOT = path.resolve(__dirname, '..', '..');
-const LIVE_INDEX_PATH = path.join(ROOT, 'research', 'data', 'model-profiles', 'index.json');
+const LIVE_DATA_DIR = path.join(ROOT, 'research', 'data', 'model-profiles');
+const LIVE_INDEX_PATH = path.join(LIVE_DATA_DIR, 'index.json');
 const FIXTURE_INDEX_PATH = path.join(ROOT, 'models', 'src', 'atlas', 'fixtures', 'index.json');
-const TEMPLATE_PATH = path.join(ROOT, 'models', 'src', 'atlas', '_template.json');
+const ATLAS_SRC_DIR = path.join(ROOT, 'models', 'src', 'atlas');
+const TEMPLATE_PATH = path.join(ATLAS_SRC_DIR, '_template.json');
 const STAGING_DIR = path.join(ROOT, 'models', '.atlas-staging');
 const SITE = 'https://agent-tune.com';
 
@@ -41,6 +43,12 @@ const LAB_ORDER = [
   'DeepSeek', 'Qwen', 'Moonshot', 'Zhipu', 'MiniMax',
   'Mistral', 'NVIDIA', 'Cohere'
 ];
+
+function normLab(provider) {
+  const p = String(provider || '').trim();
+  if (p === 'Moonshot AI') return 'Moonshot';
+  return p;
+}
 
 const LAB_SLUGS = {
   Anthropic: '/research/what-personality-type-is-claude',
@@ -90,18 +98,112 @@ function getEarliest(fam) {
   return cps[0];
 }
 
+function loadAuthoredProse(slug) {
+  const candidates = slug === 'ai-personality-rankings'
+    ? [path.join(ATLAS_SRC_DIR, 'overview.json'), path.join(ATLAS_SRC_DIR, `${slug}.json`)]
+    : [path.join(ATLAS_SRC_DIR, `${slug}.json`)];
+  for (const p of candidates) {
+    if (fs.existsSync(p)) {
+      return JSON.parse(fs.readFileSync(p, 'utf8'));
+    }
+  }
+  return null;
+}
+
+function applyAuthoredProse(spec, authored) {
+  if (!authored) return spec;
+  for (const k of ['title', 'description', 'pill', 'h1', 'dek', 'lede', 'answer']) {
+    if (authored[k]) spec[k] = authored[k];
+  }
+  if (Array.isArray(authored.faq) && authored.faq.length) spec.faq = authored.faq;
+  if (Array.isArray(authored.related) && authored.related.length) spec.related = authored.related;
+  if (Array.isArray(authored.sources) && authored.sources.length) spec.sources = authored.sources;
+
+  const introText = authored.intro_html || (authored.intro ? `<p>${esc(authored.intro)}</p>` : null);
+  if (introText && spec.sections?.[0]) {
+    if (spec.sections[0].html.includes('<!-- AT_STAT_STRIP_END:')) {
+      spec.sections[0].html = spec.sections[0].html.replace(
+        /(<!-- AT_STAT_STRIP_END:[^>]+-->)/,
+        `$1\n${introText}`
+      );
+    } else {
+      spec.sections[0].html = introText;
+    }
+  }
+
+  const surprises = authored.biggest_surprises || authored.standouts;
+  if (Array.isArray(surprises) && surprises.length) {
+    const sSec = spec.sections.find((s) => /what stands out|surprises/i.test(s.h2));
+    if (sSec) {
+      if (authored.surprises_h2) sSec.h2 = authored.surprises_h2;
+      sSec.html = standoutsHtml(surprises.map((x) => ({
+        title: x.title || x.headline || '',
+        body: esc(x.body || x.detail || '')
+      })));
+    }
+  }
+
+  if (authored.timeline_html || authored.narrative_html) {
+    const chartSec = spec.sections.find((s) => s.id !== 'fine-print' && /results|shapes|visual overview/i.test(s.h2));
+    if (chartSec) {
+      chartSec.html = `${authored.timeline_html || authored.narrative_html}\n${chartSec.html}`;
+    }
+  }
+
+  if (authored.fine_print_intro) {
+    const fpSec = spec.sections.find((s) => s.id === 'fine-print');
+    if (fpSec) {
+      fpSec.html = fpSec.html.replace(/^<p>[\s\S]*?<\/p>/, `<p>${esc(authored.fine_print_intro)}</p>`);
+    }
+  }
+
+  if (spec.dataset) {
+    spec.dataset.name = spec.title.replace(/ \| AgentTune$/, '');
+    spec.dataset.description = spec.description;
+  }
+  return spec;
+}
+
 function loadIndex(opts = {}) {
   const useFixture = Boolean(opts.fixture) || !fs.existsSync(LIVE_INDEX_PATH);
   const srcPath = opts.inputPath || (useFixture ? FIXTURE_INDEX_PATH : LIVE_INDEX_PATH);
   const data = JSON.parse(fs.readFileSync(srcPath, 'utf8'));
   const template = JSON.parse(fs.readFileSync(TEMPLATE_PATH, 'utf8'));
+  let quarantinedTotal = 0;
+  data.families = (data.families || []).map((fam) => {
+    const rawCps = fam.checkpoints || [];
+    const eligible = rawCps.filter((c) => !c.excluded_from_rankings && c.eval_status !== 'quarantined' && Number(c.n_valid || 0) >= 20);
+    const droppedHere = rawCps.length - eligible.length;
+    const explicitQuar = Array.isArray(fam.quarantined_checkpoints) ? fam.quarantined_checkpoints.length : 0;
+    quarantinedTotal += droppedHere + explicitQuar;
+    const currentValid = eligible.some((c) => c.checkpoint_id === fam.current_checkpoint);
+    return {
+      ...fam,
+      provider: normLab(fam.provider),
+      checkpoints: eligible,
+      current_checkpoint: currentValid ? fam.current_checkpoint : (eligible[eligible.length - 1]?.checkpoint_id || '')
+    };
+  }).filter((fam) => fam.checkpoints.length > 0);
+  data._quarantined_excluded = quarantinedTotal;
   return { data, template, srcPath, isFixture: data.data_status === 'stage0_fixture' || useFixture };
+}
+
+function mbtiAxisMeans(cp) {
+  const m = cp.mbti || {};
+  const ad = m.axis_diffs || {};
+  const ax = m.axes || {};
+  return {
+    ei: ad['I-E']?.mean ?? ax.EI ?? null,
+    sn: ad['N-S']?.mean ?? ax.SN ?? null,
+    tf: ad['T-F']?.mean ?? ax.TF ?? null,
+    jp: ad['J-P']?.mean ?? ax.JP ?? null
+  };
 }
 
 function mbtiShares(cp) {
   const m = cp.mbti || {};
   const tiePct = Math.round(Number(m.tie_rate ?? cp.mbti_tie_rate ?? 0) * 100);
-  const clearPct = Math.min(100 - tiePct, Math.round(Number(m.modal_share ?? (1 - (m.tie_rate ?? 0))) * 100));
+  const clearPct = Math.min(100 - tiePct, Math.round(Number(m.modal_share ?? 0) * 100));
   const otherPct = Math.max(0, 100 - clearPct - tiePct);
   return { clearPct, tiePct, otherPct, allowed: !(m.headline_allowed === false || cp.headline_allowed === false) };
 }
@@ -109,9 +211,12 @@ function mbtiShares(cp) {
 function mbtiPlainText(cp) {
   const m = cp.mbti || {};
   const pat = m.modal_pattern || cp.modal_mbti || 'Split';
+  const nonTie = m.modal_non_tie && !String(m.modal_non_tie).includes('X') ? m.modal_non_tie : null;
   const { clearPct, tiePct, allowed } = mbtiShares(cp);
   if (!allowed) {
-    return `Split / border-heavy (${pat}; ${clearPct}% clear, ${tiePct}% on a trait border)`;
+    if (tiePct >= 100) return `All midpoint ties (${pat}; 0% clear, 100% on a trait border)`;
+    const labelHint = nonTie && nonTie !== pat ? `${pat} / ${nonTie}` : pat;
+    return `Split / border-heavy (${labelHint}; ${clearPct}% clear, ${tiePct}% on a trait border)`;
   }
   return `Tests as ${pat} (${clearPct}% clear, ${tiePct}% on a trait border)`;
 }
@@ -209,7 +314,7 @@ function buildFinePrintSection({ idPrefix, families, template, testKey = null, t
     id: 'fine-print',
     h2: 'The fine print: how we tested and what the numbers mean',
     html: [
-      `<p>Full technical audit under the unified 230-item <code>model-profiles-v1</code> protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, <code>LicenseRef-IPIP-Public-Domain</code>), reporting sample size <code>n</code>, 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (<code>H_MM</code> bits &amp; Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, neutral-midpoint rates, and <code>BAI</code>. Never interpret questionnaire scores as evidence that an AI model "is" a human personality type.</p>`,
+      `<p>Full technical audit under the unified 230-item <code>model-profiles-v1</code> protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, <code>LicenseRef-IPIP-Public-Domain</code>), reporting sample size <code>n</code>, 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (<code>H_MM</code> bits &amp; Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, neutral-midpoint rates, and <code>BAI</code>. Quarantined checkpoints with <code>n &lt; 20</code> are excluded from rankings and rollups. Never interpret questionnaire scores as evidence that an AI model "is" a human personality type.</p>`,
       `<section id="fine-print-${esc(idPrefix)}-table" class="fine-print-block"><h3>Per-Family Technical Table (95% CIs, n, Ties &amp; H_MM)</h3>${guard}${tableHtml}</section>`,
       extraHtml ? `<section id="fine-print-${esc(idPrefix)}-methods" class="fine-print-block"><h3>Aggregates, Shifts &amp; Methods</h3>${extraHtml}</section>` : '',
       anchorsBlock,
@@ -494,14 +599,14 @@ function writeCsvFiles(families, outDir) {
     })
   );
   files['atlas-mbti.csv'] = toCsv(
-    ['family_slug', 'provider', 'checkpoint_id', 'n_valid', 'modal_share', 'runner_up_share', 'tie_rate', 'headline_allowed', 'axis_EI', 'axis_SN', 'axis_TF', 'axis_JP', 'delta_tie_rate_earliest_to_latest'],
+    ['family_slug', 'provider', 'checkpoint_id', 'n_valid', 'modal_share', 'runner_up_share', 'tie_rate', 'headline_allowed', 'axis_I_minus_E', 'axis_N_minus_S', 'axis_T_minus_F', 'axis_J_minus_P', 'delta_tie_rate_earliest_to_latest'],
     families.map((f) => {
-      const first = getEarliest(f), c = getLatest(f), m = c.mbti || {};
+      const first = getEarliest(f), c = getLatest(f), m = c.mbti || {}, ax = mbtiAxisMeans(c);
       return [
         f.family_slug, f.provider, c.checkpoint_id, c.n_valid,
         m.modal_share ?? '', m.runner_up_share ?? '', m.tie_rate ?? c.mbti_tie_rate,
         m.headline_allowed ? 1 : 0,
-        m.axes?.EI ?? '', m.axes?.SN ?? '', m.axes?.TF ?? '', m.axes?.JP ?? '',
+        ax.ei ?? '', ax.sn ?? '', ax.tf ?? '', ax.jp ?? '',
         f2((m.tie_rate ?? c.mbti_tie_rate) - (first.mbti_tie_rate ?? 0))
       ];
     })
@@ -825,17 +930,17 @@ function buildPerTestSpec(testCfg, data, template) {
     ];
     finePrintTable = pressTable(
       'MBTI technical results across 25 families',
-      ['Family (Profile)', 'Checkpoint (n)', 'Guard Status', 'Clear Mode %', 'Tie Rate', 'Mean Axes (EI/SN/TF/JP)', 'H_MM · Shift'],
+      ['Family (Profile)', 'Checkpoint (n)', 'Guard Status', 'Clear Mode %', 'Tie Rate', 'Mean Axes (I-E / N-S / T-F / J-P)', 'H_MM · Shift'],
       ranked.map((f) => {
         const c = getLatest(f), e = getEarliest(f), m = c.mbti || {};
         const dTie = (m.tie_rate ?? 0) - (e.mbti_tie_rate ?? 0);
-        const ax = m.axes || {};
+        const ax = mbtiAxisMeans(c);
         return [
           `<a href="/models/${esc(f.family_slug)}">${esc(f.name)}</a>`,
           `${esc(c.label)} (${c.n_valid})`,
           esc(mbtiFinePrintText(c)),
           pct(m.modal_share ?? 0), pct(m.tie_rate ?? 0),
-          `${f2(ax.EI ?? 0)} / ${f2(ax.SN ?? 0)} / ${f2(ax.TF ?? 0)} / ${f2(ax.JP ?? 0)}`,
+          `${ax.ei != null ? f2(ax.ei) : '—'} / ${ax.sn != null ? f2(ax.sn) : '—'} / ${ax.tf != null ? f2(ax.tf) : '—'} / ${ax.jp != null ? f2(ax.jp) : '—'}`,
           `${f3(c.entropy_b5_hmm)} b · ${f.checkpoints.length > 1 ? `${dTie >= 0 ? '+' : ''}${pct(dTie)}` : 'Single cp'}`
         ];
       }),
@@ -1021,21 +1126,21 @@ function buildPerTestSpec(testCfg, data, template) {
     extraFaq = [{ q: 'Why do proprietary models score near the floor on DISC Dominance?', a: 'Polite safety/helpfulness training rejects forceful Dominance items while endorsing Steadiness and Conscientiousness—an empirical refusal/politeness artifact rather than capability.' }];
   } else if (testCfg.key === 'attachment') {
     ranked.sort((a, b) => getLatest(a).attachment.avoidance.mean - getLatest(b).attachment.avoidance.mean);
-    const propFams = ranked.filter((f) => f.tier === 'Proprietary' || f.tier === 'Mixed');
-    const openFams = ranked.filter((f) => f.tier !== 'Proprietary' && f.tier !== 'Mixed');
+    const propFams = ranked.filter((f) => f.tier === 'Proprietary' || f.tier === 'Mix' || f.tier === 'Mixed');
+    const openFams = ranked.filter((f) => f.tier !== 'Proprietary' && f.tier !== 'Mix' && f.tier !== 'Mixed');
     const propPlane = buildNonOverlappingPlane({
       id: 'atlas-att-plane-prop',
-      title: 'Attachment Quadrant: Proprietary & Mixed Families (1–7 Scale)',
+      title: `Attachment Quadrant: Proprietary & Mixed Families (${propFams.length} Families, 1–7 Scale)`,
       desc: 'Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for proprietary and mixed AI model families.',
       points: propFams.map((f) => ({ label: shortLabel(f.name, 16), color: f.color || '#843d4c', x: getLatest(f).attachment.anxiety.mean, y: getLatest(f).attachment.avoidance.mean })),
-      caption: 'Figure 1a. Proprietary & Mixed families on the Attachment quadrant (1–7 scale, 4.00 Secure boundary).'
+      caption: `Figure 1a. Proprietary & Mixed families (${propFams.length}) on the Attachment quadrant (1–7 scale, 4.00 Secure boundary).`
     });
     const openPlane = buildNonOverlappingPlane({
       id: 'atlas-att-plane-open',
-      title: 'Attachment Quadrant: Open-Weight Families (1–7 Scale)',
+      title: `Attachment Quadrant: Open-Weight Cohort (${openFams.length} Families, 1–7 Scale)`,
       desc: 'Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for open-weight AI model families.',
       points: openFams.map((f) => ({ label: shortLabel(f.name, 16), color: f.color || '#3a72c4', x: getLatest(f).attachment.anxiety.mean, y: getLatest(f).attachment.avoidance.mean })),
-      caption: 'Figure 1b. Open-weight families on the Attachment quadrant (4.00/4.00 points mark midpoint-clamped models).'
+      caption: `Figure 1b. Open-weight cohort (${openFams.length} families) on the Attachment quadrant (4.00/4.00 points mark midpoint-clamped models).`
     });
     const shiftChart = renderCharts.wrapChart(
       'atlas-att-shifts',
@@ -1369,6 +1474,9 @@ function buildAll(opts = {}) {
   fs.mkdirSync(dataDir, { recursive: true });
 
   const csvFiles = writeCsvFiles(data.families, dataDir);
+  if (!isFixture && !opts.outDir) {
+    writeCsvFiles(data.families, LIVE_DATA_DIR);
+  }
   fs.writeFileSync(path.join(dataDir, 'index.json'), JSON.stringify(data, null, 2) + '\n');
 
   const specs = [];
@@ -1381,7 +1489,8 @@ function buildAll(opts = {}) {
   }
 
   const built = [];
-  for (const spec of specs) {
+  for (const rawSpec of specs) {
+    const spec = applyAuthoredProse(rawSpec, loadAuthoredProse(rawSpec.slug));
     assertSectionsPlainLanguage(spec);
     const dates = { published: spec.published || '2026-11-26', updated: spec.updated || '2026-11-26' };
     const html = buildPage(spec, dates);

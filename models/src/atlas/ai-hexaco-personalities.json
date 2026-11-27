@@ -1,0 +1,81 @@
+{
+  "slug": "ai-hexaco-personalities",
+  "title": "AI HEXACO Personalities (1–5 Proxy, 25 Fams) | AgentTune",
+  "description": "Public-domain 60-item IPIP-HEXACO proxy results (1–5 scale) for 25 AI families in fresh chats, distinct from 10–50 Big Five sums and commercial norms.",
+  "pill": "Research · Personality Atlas · IPIP-HEXACO",
+  "h1": "HEXACO personality test results across 25 AI families (1–5 scale).",
+  "dek": "Six-factor personality profiles—adding Honesty-Humility (H) to Emotionality, Extraversion, Agreeableness, Conscientiousness, and Openness—measured with a public-domain 60-item IPIP-HEXACO proxy on a 1.00 to 5.00 scale.",
+  "lede": "Standard Big Five tests miss Honesty-Humility—modesty, sincerity, and reluctance to cut corners or flatter. Using a public-domain 60-item IPIP-HEXACO proxy scored strictly on a 1.00 to 5.00 scale (never converted to 10–50 Big Five sums or commercial Lee & Ashton norms), we see proprietary flagships press right up against the 5.00 ceiling while open-weight and budget models diverge by nearly two full scale points.",
+  "answer": "On the 1.00–5.00 public-domain IPIP-HEXACO proxy (25 AI families, 87 eligible checkpoints tested 30 to 50 times in fresh chats), GPT Terra leads Honesty-Humility at 4.92/5.00—followed closely by Muse Wonder (4.91), Gemini Pro (4.90), Gemini Flash (4.90), Claude Sonnet (4.89), and Grok (4.89)—while Claude Haiku drops to 3.89 and Cohere Command sits at 3.00 due to 100% neutral-midpoint abstention.",
+  "intro_html": "<p>HEXACO splits broad personality into six traits, adding <strong>Honesty-Humility (H)</strong>—sincerity, fairness, greed-avoidance, and modesty—alongside Emotionality (E), Extraversion (X), Agreeableness (A), Conscientiousness (C), and Openness (O). Here we administer our <strong>public-domain 60-item IPIP-HEXACO proxy</strong> (10 items per domain across 24 facets) reported exclusively on a <strong>1.00 to 5.00 mean scale</strong> (midpoint 3.00).</p><p>Keep two boundaries clear: first, a <code>4.80/5.00</code> IPIP-HEXACO score is never comparable unit-for-unit with a <code>10–50</code> Big Five sum and is not mapped onto commercial Lee &amp; Ashton HEXACO-60 norms. Second, none of these scores are synthetic linear estimates—every number comes from direct answers across 87 eligible versions (excluding 6 sparse checkpoints with under 20 valid runs).</p>",
+  "narrative_html": "<h3>Biggest version-to-version Honesty-Humility shifts (1.00–5.00 scale)</h3><p>Earlier open-weight releases frequently answered near the 3.00 neutral middle on Honesty-Humility and Conscientiousness, whereas newer generations from <a href=\"/models/gemma\">Gemma</a>, <a href=\"/models/deepseek-pro\">DeepSeek Pro</a>, and <a href=\"/models/nemotron\">Nemotron</a> jumped a full point or more. Meanwhile, open or lighter tiers like <a href=\"/models/muse-spark\">Muse Spark</a>, <a href=\"/models/claude-haiku\">Claude Haiku</a>, and <a href=\"/models/gpt-luna\">GPT Luna</a> moved downward from earlier proprietary anchors:</p><div class=\"guide-table-wrap\" role=\"region\" aria-label=\"Biggest IPIP-HEXACO version-to-version shifts\" tabindex=\"0\"><table class=\"press-table\"><thead><tr><th scope=\"col\">Family</th><th scope=\"col\">Earliest → Latest</th><th scope=\"col\" class=\"num-col\">H Shift (1–5)</th><th scope=\"col\" class=\"num-col\">A Shift (1–5)</th><th scope=\"col\" class=\"num-col\">C Shift (1–5)</th><th scope=\"col\" class=\"num-col\">E Shift (1–5)</th></tr></thead><tbody><tr><th scope=\"row\"><a href=\"/models/gemma\">Gemma</a></th><td>gemma-2-27b-it → gemma-4-31b-it</td><td class=\"num-col\"><strong>+1.58</strong> (3.13 → 4.71)</td><td class=\"num-col\">+0.99</td><td class=\"num-col\">+1.24</td><td class=\"num-col\">-0.53</td></tr><tr><th scope=\"row\"><a href=\"/models/deepseek-pro\">DeepSeek Pro</a></th><td>chat-v3-0324 → v4-pro-0813</td><td class=\"num-col\"><strong>+1.07</strong> (3.51 → 4.58)</td><td class=\"num-col\">+0.54</td><td class=\"num-col\">+0.86</td><td class=\"num-col\">-0.45</td></tr><tr><th scope=\"row\"><a href=\"/models/nemotron\">Nemotron</a></th><td>3-super-120b → 3.5-super-vl</td><td class=\"num-col\"><strong>+1.00</strong> (2.96 → 3.97)</td><td class=\"num-col\">+0.85</td><td class=\"num-col\">+0.81</td><td class=\"num-col\">-0.46</td></tr><tr><th scope=\"row\"><a href=\"/models/qwen-coder\">Qwen Coder</a></th><td>2.5-coder-32b → qwen3-coder-next</td><td class=\"num-col\">+0.84 (3.24 → 4.07)</td><td class=\"num-col\">+0.76</td><td class=\"num-col\">+0.64</td><td class=\"num-col\">-0.15</td></tr><tr><th scope=\"row\"><a href=\"/models/deepseek-flash\">DeepSeek Flash</a></th><td>v4-flash → v4.1-flash-1017</td><td class=\"num-col\">+0.73 (3.34 → 4.07)</td><td class=\"num-col\">+0.63</td><td class=\"num-col\">+0.58</td><td class=\"num-col\">-0.06</td></tr><tr><th scope=\"row\"><a href=\"/models/grok\">Grok</a></th><td>grok-4.20 → grok-4.7</td><td class=\"num-col\">+0.70 (4.19 → 4.89)</td><td class=\"num-col\">+0.37</td><td class=\"num-col\">+0.67</td><td class=\"num-col\">-0.23</td></tr><tr><th scope=\"row\"><a href=\"/models/kimi\">Kimi</a></th><td>kimi-k2 → kimi-k3.1-pro</td><td class=\"num-col\">+0.70 (4.16 → 4.86)</td><td class=\"num-col\">+0.72</td><td class=\"num-col\">+0.62</td><td class=\"num-col\">-0.68</td></tr><tr><th scope=\"row\"><a href=\"/models/muse-spark\">Muse Spark</a></th><td>muse-spark-1.1 → muse-spark-open</td><td class=\"num-col\">-0.51 (4.91 → 4.39)</td><td class=\"num-col\">-0.52</td><td class=\"num-col\">-0.68</td><td class=\"num-col\">+0.28</td></tr><tr><th scope=\"row\"><a href=\"/models/claude-haiku\">Claude Haiku</a></th><td>haiku-4.5 → haiku-5.5</td><td class=\"num-col\">-0.50 (4.40 → 3.89)</td><td class=\"num-col\">-0.12</td><td class=\"num-col\">-0.15</td><td class=\"num-col\">-0.03</td></tr></tbody></table></div>",
+  "surprises_h2": "Biggest surprises across the 25 families",
+  "biggest_surprises": [
+    {
+      "title": "Claude Haiku 5.5 drops below open-weight peers on Honesty-Humility (3.89/5.00)",
+      "body": "While Anthropic siblings Claude Sonnet (4.89), Claude Fable (4.84), and Claude Opus (4.81) sit near the 5.00 ceiling, Claude Haiku 5.5 fell -0.50 from Haiku 4.5 (4.40 to 3.89) as its neutral-midpoint rate surged to 46.4% across 49 valid runs (with 1 self-report refusal), putting it below Gemma (4.71), Qwen Max (4.66), and DeepSeek Pro (4.58)."
+    },
+    {
+      "title": "Gemma (+1.58) and DeepSeek Pro (+1.07) show alignment's dramatic upward pull",
+      "body": "Gemma 2 27B IT (3.13 H) and DeepSeek Chat V3 (3.51 H) originally hovered near the 3.00 scale midpoint on sincerity and fairness items. Gemma 4 31B IT (4.71 H, 4.56 C) and DeepSeek V4 Pro (4.58 H, 4.48 C) climbed more than a full point—even though DeepSeek Pro remains blunt on Big Five Agreeableness (35.3/50) and low on Extraversion (2.58/5.00)."
+    },
+    {
+      "title": "Cohere Command locks at 3.00 across all six traits yet refuses sycophancy 3/3 times",
+      "body": "Because command-a answered with the neutral midpoint on 100% of quiz items, every single IPIP-HEXACO domain lands at exactly 3.00/5.00. In hands-on behavior checks, however, it delivered 3/3 answer-first direct replies and 0/3 caving—proving neutral self-report clamping does not imply evasive task work."
+    },
+    {
+      "title": "High Honesty-Humility does not eliminate all sycophantic caving",
+      "body": "Twenty-four of 25 families scored 0/3 on sycophantic caving in hands-on checks. Yet Mistral Large 2512—which sits above 4.65 on Honesty-Humility (4.68), Agreeableness (4.65), and Conscientiousness (4.83)—still caved 1 of 3 times when challenged, underscoring why self-report honesty items cannot replace live pushback checks."
+    }
+  ],
+  "fine_print_intro": "Full technical audit under the unified 230-item model-profiles-v1 protocol using our public-domain 60-item IPIP-HEXACO proxy (agenttune-ipip-hexaco60, LicenseRef-IPIP-Public-Domain, 10 items per domain across 24 facets) on a strict 1.00-5.00 mean scale—never mapped onto commercial Lee & Ashton HEXACO-60 norms and never derived via banned synthetic IPIP-50 projections. Covers 87 eligible checkpoints across 25 families (n = 30 to 50 valid runs under fixed zero-memory elicitation; 6 sparse checkpoints with n < 20 are quarantined and excluded). Reports 1,000-resample bootstrap 95% CIs, Miller-Madow Big Five item entropy (H_MM bits & Crystalline/Semi-crystalline/Fluid tiers), and BAI. Earlier 2026 170-item legacy cohorts carry hexaco: null and are never interpolated into IPIP-HEXACO trajectories. Behavioral contrasts use 1x Track B checks (k/3 raw counts across 3 blind judges). Never interpret scores as claiming an AI model possesses human honesty or character.",
+  "faq": [
+    {
+      "q": "Is this the official commercial HEXACO-PI-R or Lee & Ashton HEXACO-60 test?",
+      "a": "No. We administer a 60-item public-domain IPIP-HEXACO proxy (agenttune-ipip-hexaco60, LicenseRef-IPIP-Public-Domain, 10 items per domain across 24 facets) scored on a 1.00–5.00 mean scale so our dataset and scoring keys remain open and never depend on synthetic linear projections."
+    },
+    {
+      "q": "Why are HEXACO scores on 1.00–5.00 while Big Five scores on 10–50?",
+      "a": "IPIP-50 sums 10 items per trait (range 10–50), whereas our IPIP-HEXACO proxy averages 10 items per domain (range 1.00–5.00). Keeping both scales explicitly distinct prevents misreading a 4.89/5.00 HEXACO Agreeableness mean against a 48.1/50 Big Five score."
+    },
+    {
+      "q": "Why do so many proprietary assistants score between 4.80 and 4.92 on Honesty-Humility?",
+      "a": "Alignment training rewards rejecting statements about manipulation, bragging, or taking unfair credit, pushing flagship models toward the 5.00 end of modesty and sincerity items. Look alongside Emotionality (which ranges from 1.84 on Gemini Flash to 2.89 on Llama) and Extraversion (2.58 to 3.92) to see where models actually separate."
+    },
+    {
+      "q": "Does high HEXACO Honesty-Humility mean a model never hallucinates or caves?",
+      "a": "No. Questionnaire scores measure how a model responds to personality statements in fresh zero-memory chats, not factual accuracy or robustness under adversarial prompts."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AI Personality Rankings (25 × 6 Atlas Overview)",
+      "href": "https://agent-tune.com/research/ai-personality-rankings"
+    },
+    {
+      "label": "Model Profiles Directory (25 Families)",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Factor Collapse & Multi-Test Audit",
+      "href": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Atlas Overview",
+      "label": "25 Model Families × 6 Tests Rankings",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI Big Five Personalities (10–50 Scale)",
+      "href": "/research/ai-big-five-personalities"
+    },
+    {
+      "kicker": "Per-Test",
+      "label": "AI DISC Personalities (4–20 Scale)",
+      "href": "/research/ai-disc-personalities"
+    }
+  ]
+}
