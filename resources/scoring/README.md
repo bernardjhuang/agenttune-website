@@ -1,6 +1,6 @@
 # Local questionnaire scoring
 
-Content 1.1.0; scorer 1.0.0. Original code is MIT; questionnaire terms are instrument-specific.
+Content 1.1.1; scorer 1.0.0. Original code is MIT; questionnaire terms are instrument-specific.
 
 Download [score.js](https://agent-tune.com/resources/scoring/score.js) and [definitions](https://agent-tune.com/resources/scoring/questions.json). Node uses require('./score.js'); browsers expose AgentTuneScoring.
 

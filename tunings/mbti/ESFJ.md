@@ -6,9 +6,9 @@ name: "Consul"
 canonical_url: https://agent-tune.com/library/mbti/esfj
 raw_url: https://agent-tune.com/library/mbti/esfj.md
 body_url: https://agent-tune.com/resources/tunings/mbti/esfj.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/mbti/ESFJ.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/12d39bbb7b5b46f20bd6e9bdb5fd1c0de587b6f5/mbti/ESFJ.md
 license: MIT
-content_version: 1.1.0
+content_version: 1.1.1
 revision: 4754a6263c45
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

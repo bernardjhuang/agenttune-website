@@ -6,9 +6,9 @@ name: "Challenger"
 canonical_url: https://agent-tune.com/library/enneagram/8-challenger
 raw_url: https://agent-tune.com/library/enneagram/8-challenger.md
 body_url: https://agent-tune.com/resources/tunings/enneagram/8-challenger.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/enneagram/8-challenger.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/12d39bbb7b5b46f20bd6e9bdb5fd1c0de587b6f5/enneagram/8-challenger.md
 license: MIT
-content_version: 1.1.0
+content_version: 1.1.1
 revision: 6b7fb28d6acc
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

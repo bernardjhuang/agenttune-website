@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/bernardjhuang/agenttune",
-  "version": "1.1.0",
-  "commit": "42420f1185a57c179a85094774860bb6f0fc05c9",
-  "manifestSha256": "d2e063d17d2deb9548505d09b6d4045b5560f6ddfb37ee98627066e8d15d3898"
+  "version": "1.1.1",
+  "commit": "12d39bbb7b5b46f20bd6e9bdb5fd1c0de587b6f5",
+  "manifestSha256": "9985679c291fd53494e9c421ce96e2d77b99ad65f745b597b2fcd8262d3d726b"
 }

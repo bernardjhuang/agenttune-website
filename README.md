@@ -1,157 +1,98 @@
-# agent-tune.com — website
+# agent-tune.com — website & research platform
 
-The website for [AgentTune](https://github.com/bernardjhuang/agenttune). Live at **[agent-tune.com](https://agent-tune.com)**.
+The web platform, research archive, and MCP server for **[AgentTune](https://agent-tune.com)** ([bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)).
 
-The tuning library itself (43 personality tuning markdown files) is in the public companion repo: **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)**. This repo holds the site itself (pages, generator tooling, MCP server).
+This repository holds the static generators, benchmark runners, raw OpenRouter evaluation data, empirical studies, model personality profiles, and Cloudflare Pages Functions (`/mcp`). The canonical `43` communication tuning templates and offline scoring engine live in the companion content repository **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)** and are integrity-pinned here via `agenttune-content.lock.json` (`v1.1.1`).
+
+## What is on agent-tune.com
+
+Everything on the site is free (all paid products were retired in July 2026):
+
+- **25 Model Personality Profiles ([`/models/`](https://agent-tune.com/models/)):** Multi-version profiles covering `87` primary checkpoints (`93` tested; `6` sparse `<20`-run checkpoints disclosed and excluded from rankings) across proprietary and open-weight model families.
+- **12 Personality Atlas Pages ([`/research/ai-personality-rankings`](https://agent-tune.com/research/ai-personality-rankings)):** Overview rankings, 6 framework deep dives (MBTI, Enneagram, Big Five, DISC, IPIP-HEXACO, Attachment Styles), and 5 lab/cohort rollups (Claude, ChatGPT, Gemini, Muse, and Open-Weight models).
+- **36 Empirical Research Studies ([`/research`](https://agent-tune.com/research)):** Longitudinal Waves 1–4 plus the 12-page Personality Atlas, `.md` mirrors, and raw JSON/CSV downloads.
+- **53 Practical Setup Guides ([`/guides/`](https://agent-tune.com/guides/)):** Copy-paste custom instructions and config guides for ChatGPT, Claude, Gemini, Grok, Muse, Codex, Cursor, DeepSeek, Notion AI, NotebookLM, and OpenRouter.
+- **43 Tuning Templates ([`/library/`](https://agent-tune.com/library/)):** Generated from the pinned `vendor/agenttune-content/` bundle across MBTI, Enneagram, DISC, Attachment, and OCEAN/Big Five.
+- **5 Free Personality Tests ([`/tests/`](https://agent-tune.com/tests/)) & 10 Browser Tools ([`/tools/`](https://agent-tune.com/tools/)):** Local browser questionnaires + interactive custom-instruction builders and prompt comparators.
 
 ## Stack
 
-- **Static HTML + CSS + vanilla JS** — content generators plus a public-only deployment build
-- **Cloudflare Pages** for hosting (one Pages Function: the MCP server at `/mcp`)
-- Domain `agent-tune.com` registered through Cloudflare
-
-Everything on the site is free — the paid Premium/Developer Pack products were removed in July 2026.
+- **Static HTML + CSS + vanilla JS** — deterministic content generators outputting `182` HTML pages and a public-only `dist/` deployment bundle (`726+` assets)
+- **Cloudflare Pages + Pages Functions** — hosts the static site, `301` redirect rules (`_redirects`), custom Markdown headers (`_headers`), and the stateless streamable-HTTP MCP server (`functions/mcp.js` at `/mcp`)
+- **Discovery & agent specs** — `llms.txt`, `llms-full.txt`, `SKILL.md`, `.well-known/mcp/server-card.json`, `resources/catalog.json`, and 1:1 `.md` article mirrors
 
 ## Project layout
 
-```
+```text
 .
-├── index.html                  Homepage
-├── research.html               Research collections, methods and downloadable data
-├── library/                    Generated library pages (43 type pages + hub)
-│   ├── index.html              /library hub
-│   ├── mbti/<type>.html        e.g. /library/mbti/intj
-│   ├── enneagram/...
-│   ├── disc/, attachment/, ocean/
-├── tests/                      5 personality tests (MBTI, Big Five, etc.)
-├── guides/                     Instructional pages (built from guides/src/*.json
-│                               by tools/build-guides.js)
-├── research/                   32 empirical AI psychology studies (Waves 1–4,
-│                               2023–2026), .md mirrors, and raw JSON/CSV data
-├── functions/                  Cloudflare Pages Functions
-│   └── mcp.js                  MCP server at /mcp (stateless streamable-HTTP;
-│                               6 read-only tools: list_tunings, get_tuning,
-│                               get_test_spec, list_resources, get_resource,
-│                               get_free_tools — reads static assets via env.ASSETS)
-├── SKILL.md, llms.txt,         Agent skill manifest, concise & full LLM routing
-│   llms-full.txt,              indexes, and .well-known/mcp/server-card.json
-│   .well-known/mcp/
-├── tunings/                    Markdown source of truth (mirrored from
-│                               bernardjhuang/agenttune — DO NOT EDIT HERE)
-├── output-styles/              Generated: every tuning as a Claude Code output
-│                               style (+ index.json). Served noindex.
-├── tools/
-│   ├── build-guides.js         Builds /guides pages from guides/src specs
-│   │                           (dates, changelog and sources come from the spec)
-│   ├── build-output-styles.js  Builds /output-styles from /tunings
-│   ├── generate-library.js     Builds the 43 /library pages from /tunings
-│   ├── library-context.js      Per-type "against the AI default" + "closest
-│   │                           tunings" sections; numbers read from AT_RESEARCH
-│   └── v2-content.js           Per-type human content (humanContexts, outward)
-├── data.js                     Browser-side: AT_CONTACTS, AT_RESEARCH, etc.
-├── integrations.js             Per-agent paste-ready install snippets
-├── styles.css                  All shared styles
-└── _redirects                  Cloudflare Pages routing (auto-generated)
+├── index.html                      Homepage
+├── research.html                   Research hub + Nov 2026 interactive/static figures
+├── models/                         25 generated model family profiles + /models/ hub
+│   └── src/                        Per-family copy specs + 12 Atlas source specs (models/src/atlas/)
+├── research/                       36 empirical studies (.html + .md mirrors)
+│   ├── src/                        Study & promoted Atlas JSON specs
+│   └── data/model-profiles/        Live 25-family JSONs + index.json + 7 Atlas CSVs
+├── guides/                         53 setup & workflow guides (.html + .md mirrors)
+│   └── src/                        Guide JSON specs
+├── library/                        43 generated type pages + hub
+├── tests/                          5 personality questionnaires (MBTI, Enneagram, DISC, Attachment, Big Five)
+├── tools/                          Builders (build-guides.js, build-model-profiles.js, model-profiles/build-atlas.js,
+│                                   generate-library.js, build-research.js, build-tools.js, build-agent-resources.js,
+│                                   site-audit.py, etc.) + 10 free browser tools (/tools/*)
+├── functions/mcp.js                Cloudflare Pages MCP endpoint (list_tunings, get_tuning, get_test_spec,
+│                                   list_resources, get_resource, get_free_tools)
+├── vendor/agenttune-content/       Integrity-verified copy of bernardjhuang/agenttune dist/
+├── agenttune-content.lock.json     Pinned upstream commit SHA, version (1.1.1), and manifest SHA-256
+├── SKILL.md, llms.txt,             Agent discovery manifests & server card
+│   llms-full.txt, .well-known/
+├── checks/                         Node test suite (node:test)
+└── _redirects, _headers            Cloudflare Pages routing & Markdown headers (<100 blocks)
 ```
 
-## Local development
+## Local development & building
 
 ```sh
 npm install
-npm run dev          # serves at http://localhost:3000
+npm run build:content   # regenerates questionnaires, guides, Atlas, research, models, library, tools & catalogs
+npm run build           # builds the public-only dist/ bundle
+npm test                # runs the full Node test suite (108+ tests)
+python3 tools/site-audit.py --dist dist
+npm run dev             # serves locally at http://localhost:3000
 ```
 
-Library and research content is pre-rendered; interactive quizzes run in the browser. To exercise the MCP server (`/mcp`), use `npm run build && npx wrangler pages dev dist` instead of `npm run dev`.
-
-No secrets or KV bindings are required for the site or MCP endpoint. MCP accepts JSON requests up to 64 KiB. Server-to-server clients need no Origin header. Browser Origins are restricted to the deployment origin, agent-tune.com, claude.ai, chatgpt.com and chat.openai.com. To support another browser client, set the optional Pages environment variable `MCP_ALLOWED_ORIGINS` to a comma-separated list of exact origins. Unsupported protocol-version headers receive HTTP 400; malformed requests do not reach the asset tools.
-
-## Regenerating the library pages
-
-Whenever a tuning markdown file in `tunings/` changes, regenerate the 43 HTML pages + the hub + sitemap inputs:
+To exercise the Cloudflare Pages `/mcp` Function locally:
 
 ```sh
-node tools/generate-library.js
+npm run build && npx wrangler pages dev dist
 ```
 
-The ESTP page at `library/mbti/estp.html` is **hand-built** and intentionally skipped by the generator — it's the canonical v2 template reference. The generator still refreshes the blocks between `<!-- AT:name -->` … `<!-- /AT:name -->` markers in it (the default-gap section, the neighbors section and the guides line), so research numbers and links don't drift. To regenerate the whole page, run with `AT_REGEN_ALL=1`.
+Browser Origins for `/mcp` allowlist the deployment origin, `agent-tune.com`, `claude.ai`, `chatgpt.com`, and `chat.openai.com` (override with comma-separated `MCP_ALLOWED_ORIGINS`); server-to-server clients require no `Origin` header.
 
-After changing a tuning, also rebuild the output-style pack:
+## Syncing canonical content from `bernardjhuang/agenttune`
+
+`agenttune-content.lock.json` pins the exact upstream commit, version, and SHA-256 of `manifest.json` in `vendor/agenttune-content/`. Builds fail closed if any vendored checksum diverges (`tools/content-bundle.cjs`).
+
+To update after a new release in `../agenttune`:
 
 ```sh
-node tools/build-output-styles.js
+rsync -a --delete ../agenttune/dist/ vendor/agenttune-content/
+# Update version, commit, and manifestSha256 in agenttune-content.lock.json
+npm run build:content && npm test && npm run build
 ```
 
-## Guides
-
-Each guide is a JSON spec in `guides/src/`. Edit the spec, then run `node tools/build-guides.js`. Optional spec fields: `published` and `updated` (default to the spec file's first and last commit dates, or today while it has uncommitted edits), `changelog: [{date, note}]`, and `sources: [{label, href}]`. The guides hub (`guides/index.html`), `llms.txt` and the `STATIC_PAGES` list in `tools/generate-library.js` are hand-maintained: add new guides to all three.
+All active questionnaire adaptations and tuning profiles render directly from the verified vendor bundle (`public-assets.json` governs which data/manifest assets enter `dist/`).
 
 ## Deploying
 
-**Current deployment status (September 25, 2026):** GitHub’s Cloudflare API token is invalid. The owner has chosen direct local deployment until that secret is replaced. A merge alone does not publish the site; run the verified local deployment and check production. Do not copy local OAuth credentials into CI.
-
-**The configured automated deploy path is `git push`.** A GitHub Action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) runs `wrangler pages deploy` on every push to `main`, so a normal commit-and-push deploys the site automatically.
+**Local Cloudflare Pages deploy** (the configured path while GitHub Actions Secrets are managed locally via `wrangler` OAuth; run `npx wrangler login` if needed and never copy local OAuth credentials into CI):
 
 ```sh
-git add .
-git commit -m "..."
-git push origin main      # ← triggers deploy via GitHub Actions
+npm run deploy          # runs npm test && npm run build && wrangler pages deploy dist --project-name=agent-tune --branch=main
+git push origin main
 ```
 
-**Local deploy is still available as a backup** (no commit required — useful for hotfixes):
-
-```sh
-npm run deploy
-```
-
-This runs the regression checks, builds a public-only `dist/` directory and deploys it to the production `main` branch. Source specs, docs, test files and package metadata are excluded. Pages Functions are compiled from the root `functions/` directory.
-
-### How the deploy is wired
-
-The Cloudflare Pages project `agent-tune` is a **Direct Upload** project (originally created via the wrangler CLI). The GitHub Action doesn't convert it to a Git-connected project — it just automates the same `wrangler pages deploy` command on each push. This avoids any disruption to the existing `agent-tune.com` custom-domain attachment.
-
-### Required GitHub repo secrets (one-time setup)
-
-For the Action to authenticate with Cloudflare, set these in the GitHub repo at **Settings → Secrets and variables → Actions**:
-
-| Secret | How to get it |
-|---|---|
-| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens → Create Token → use the "Edit Cloudflare Workers" template |
-| `CLOUDFLARE_ACCOUNT_ID` | Visible in the right sidebar of any Cloudflare dashboard page |
-
-Once those are set, every `git push origin main` deploys production.
-
-## Keeping `tunings/` in sync with the library repo
-
-The `tunings/` directory mirrors the canonical library at `bernardjhuang/agenttune`. A GitHub Action (planned) will open a sync PR when upstream changes. For now, sync manually:
-
-```sh
-rsync -av --delete \
-  ../agenttune/{mbti,enneagram,disc,attachment,ocean,souls}/ \
-  tunings/
-node tools/generate-library.js
-npm run deploy
-```
+Every `301` redirect rule and `.md` rewrite is emitted deterministically into `_redirects` and `dist/_redirects` (with zero multi-hop chains verified by `checks/consolidation.test.js`).
 
 ## License
 
-Source code in this repo is **proprietary** — all rights reserved. Tunings under `tunings/` are MIT, mirrored from [bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune).
-
-## September research
-
-`research/data/september-2026-responses.json` contains 2,000 fresh-session questionnaire vectors and three canonical Grok vectors. Available prompts and source hashes are in the protocol JSON. No model calls are required to regenerate the analysis:
-
-```sh
-npm run build:research
-node tools/build-guides.js
-node tools/generate-library.js
-npm test
-npm run build
-```
-
-The article and hub are generated by `tools/build-research.js`; the hub's September section (tables, stat block and static figures) lives in `tools/research-hub.js` and reads the summary plus the reported Grok and Muse figures in the protocol JSON. Preserve original labels alongside tie-aware results. Keep the historical studies separate from the September cohorts. Editorial proposals and future experiments are in `docs/research-content-plan.md`.
-
-Deployment status at this release: the existing GitHub Actions Cloudflare API token was rejected as invalid. Direct deployment requires a valid local Wrangler OAuth session; run `npx wrangler login` if its refresh token is rejected. Restore the repository token before relying on automatic deployment; do not copy short-lived OAuth credentials into Actions secrets.
-
-## Canonical content release
-
-`agenttune-content.lock.json` pins the library release in `vendor/agenttune-content/`. Builds verify its SHA-256 manifest and render current profiles, questionnaire availability and scoring from that bundle. Update the vendor bundle and lock together in a reviewed PR. Never regenerate current definitions from historical research. All five questionnaire adaptations are active; their exact edition IDs, source terms and adaptation notes are retained. Third-party questionnaire terms are separate from original code licenses. `public-assets.json` is the reviewed publication allowlist; new public files must be added explicitly. The synthetic nine-group starter measures no personality traits.
+Website source code and original empirical analysis in this repository are © AgentTune / Bernard Huang unless noted otherwise in individual dataset metadata (`MIT` for model-profile schemas/benchmarks where specified). The canonical tuning templates under `vendor/agenttune-content/` are MIT licensed via **[bernardjhuang/agenttune](https://github.com/bernardjhuang/agenttune)**; third-party questionnaire source terms remain governed by `instrument-rights.json` and `THIRD_PARTY_NOTICES.md`.

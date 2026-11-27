@@ -6,9 +6,9 @@ name: "Dominance"
 canonical_url: https://agent-tune.com/library/disc/d-dominance
 raw_url: https://agent-tune.com/library/disc/d-dominance.md
 body_url: https://agent-tune.com/resources/tunings/disc/d-dominance.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/disc/D-dominance.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/12d39bbb7b5b46f20bd6e9bdb5fd1c0de587b6f5/disc/D-dominance.md
 license: MIT
-content_version: 1.1.0
+content_version: 1.1.1
 revision: d99285817611
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json

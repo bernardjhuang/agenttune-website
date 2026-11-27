@@ -6,9 +6,9 @@ name: "High Neuroticism"
 canonical_url: https://agent-tune.com/library/ocean/neuroticism-high
 raw_url: https://agent-tune.com/library/ocean/neuroticism-high.md
 body_url: https://agent-tune.com/resources/tunings/ocean/neuroticism-high.md
-upstream_url: https://github.com/bernardjhuang/agenttune/blob/42420f1185a57c179a85094774860bb6f0fc05c9/ocean/N-high.md
+upstream_url: https://github.com/bernardjhuang/agenttune/blob/12d39bbb7b5b46f20bd6e9bdb5fd1c0de587b6f5/ocean/N-high.md
 license: MIT
-content_version: 1.1.0
+content_version: 1.1.1
 revision: 65cfb92fabaf
 evidence_status: editorial_preferences_not_validated
 platform_registry: https://agent-tune.com/resources/platforms.json
