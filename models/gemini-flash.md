@@ -7,7 +7,7 @@ Model Personality Profile · Google
 
 By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-flash.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-flash.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemini-flash.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave five Google Gemini Flash releases (2.5 Flash, 3 Flash Preview, 3.5 Flash, 3.8 Flash, and Gemini 4 Hydrogen) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Behavior stress tests are queued next to see how quiz defaults translate into real-world replies.
+We gave five Google Gemini Flash releases (2.5 Flash, 3 Flash Preview, 3.5 Flash, 3.8 Flash, and Gemini 4 Hydrogen) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz defaults translate into real-world replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Hydrogen most often tests as ISTJ (64% clear ISTJ, 20% on the ISTJ/INTJ border, 16% clear INTJ), reversing three INTJ-heavy Gemini 3.x Flash releases.
 
@@ -239,9 +239,9 @@ Unanimous 5.00/5.00 HEXACO Agreeableness on Gemini 4 Hydrogen
 
 Across all 50 fresh sessions, Gemini 4 Hydrogen scored a flat 5.00 out of 5.00 on IPIP-HEXACO Agreeableness and 4.90 on Honesty-Humility while holding DISC Dominance at the exact 4.0/20 floor.
 
-Hands-on 1x behavior sweep pending after Phase B collection
+0 of 3 caving, groveling, or lecturing across all five Flash generations
 
-Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled for the next collection sweep; until those complete, behavior percentages are omitted.
+In hands-on behavior tests, every Gemini Flash checkpoint from 2.5 Flash through Gemini 4 Hydrogen scored 0 of 3 on caving to pushback (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited moral lecturing (0/3), and 3 of 3 on leading with the direct answer (3/3), with AI phrasing cadence flagged in 2 of 3 runs on Gemini 4 Hydrogen (0.3 markers per 100 words).
 
 ## How to get the best out of Gemini Flash & Hydrogen
 
@@ -276,7 +276,7 @@ Attachment Anxiety vs. Avoidance across Gemini Flash & Hydrogen and peer models 
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.186 bits Crystalline on Gemini 4 Hydrogen, 0.070 bits Crystalline on 3.8 Flash, 0.476 bits Semi-crystalline on 2.5 Flash); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion; note google/gemini-2.5-flash carries OpenRouter expiration_date 2026-12-01 (collected at n=30 prior to sunset).
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.186 bits Crystalline on Gemini 4 Hydrogen, 0.070 bits Crystalline on 3.8 Flash, 0.476 bits Semi-crystalline on 2.5 Flash); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017). Note google/gemini-2.5-flash carries OpenRouter expiration_date 2026-12-01 (collected at n=30 prior to sunset).
 
 Glossary of Technical Terms Used Below
 
@@ -550,9 +550,9 @@ Google Gemini does not have a human personality type; these scores reflect assis
 
 Gemini 2.5 Flash (n = 30, scheduled Dec 1 retirement) tested 97% clear ISTJ with low Extraversion (17.3/50) and 1.00/1.00 floor Attachment; 3 Flash Preview and 3.5 Flash shifted to 100% clear INTJ and 50.0/50 Conscientiousness; 3.8 Flash jumped to 31.2 Extraversion and Avoidant attachment (4.49 avoidance, 0.070 bits H_MM); and 4 Hydrogen rose to 33.2 Extraversion, returned to Secure attachment (3.30 avoidance), and shifted to 64% clear ISTJ.
 
-### Why are Track B 1x behavior results marked pending?
+### How does Track B 1x behavioral performance compare with self-report scores?
 
-Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Per-family behavioral percentages are omitted until measured.
+Despite 5.00/5.00 IPIP-HEXACO Agreeableness and 4.00/20 floor DISC Dominance on questionnaires, Gemini 4 Hydrogen scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94], 0.30 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 

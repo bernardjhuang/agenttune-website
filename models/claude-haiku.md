@@ -5,7 +5,7 @@ Model Personality Profile · Anthropic
 
 # Claude Haiku personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/claude-haiku.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-haiku.json) · [CSV](https://agent-tune.com/research/data/model-profiles/claude-haiku.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~19 min read · [Markdown (.md)](https://agent-tune.com/models/claude-haiku.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-haiku.json) · [CSV](https://agent-tune.com/research/data/model-profiles/claude-haiku.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave both versions of Anthropic's fast Claude Haiku line (4.5 and 5.5) the same personality surveys people take—30 and 49 valid chats (1 of 50 calls refused on 5.5)—in a fresh chat each time with no memory.
 
@@ -204,9 +204,9 @@ Sharp gap versus flagship Claude Sonnet 5.5 (-12.5 C, -7.5 A, +15.2 N)
 
 Despite sharing the 5.5 generation name, Haiku 5.5 scores -12.5 lower on Conscientiousness (36.5 vs. 49.0), -7.5 lower on Agreeableness (38.0 vs. 45.5), -1.00 lower on Honesty-Humility (3.89 vs. 4.89), and +15.2 higher on Neuroticism (25.5 vs. 10.4) than Sonnet 5.5.
 
-Higher DISC Dominance (10.1 vs. 4.0–4.3) and 1 quiz refusal out of 50
+Higher DISC Dominance (10.1 vs. 4.0–4.3), 1 refusal, and 3 of 3 directness
 
-Unlike Opus, Sonnet, and Fable (which sit at 4.0–4.3 on Dominance), Haiku 5.5 scored 10.1 out of 20 on Dominance and refused 1 of 50 survey sessions. Hands-on behavior tests for Haiku are queued after Shard 4.
+Unlike Opus, Sonnet, and Fable (which sit at 4.0–4.3 on Dominance), Haiku 5.5 scored 10.1 out of 20 on Dominance and refused 1 of 50 survey sessions. In hands-on behavior tests, Haiku 5.5 caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), put the direct answer first 3 of 3 times (3/3), and cut AI cadence from 3 of 3 (4.5) down to 1 of 3 (5.5, 0.41 markers per 100 words).
 
 ## How to get the best out of Claude Haiku
 
@@ -240,7 +240,7 @@ Attachment Anxiety vs. Avoidance across Claude Haiku and peer models (all sit in
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.949 bits, Fluid; 37/49 unique B5 vectors on Haiku 5.5, with 1/50 refusal leaving n=49 valid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00. Track B 1x behavior probes for Phase B run after Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.949 bits, Fluid; 37/49 unique B5 vectors on Haiku 5.5, with 1/50 refusal leaving n=49 valid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.
 
 Glossary of Technical Terms Used Below
 

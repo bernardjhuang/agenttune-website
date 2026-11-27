@@ -5,9 +5,9 @@ Model Personality Profile · Google
 
 # Gemma personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemma.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemma.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests under our current sweep are queued next.
+We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match real replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemma 4 31B IT snapped into 92% clear INTJ (46 of 50 runs) with 48.2/50 Openness and 4.71/5.00 Honesty-Humility—reversing heavy ties on Gemma 2 and Gemma 3, while clicking the neutral midpoint on relationship items (4.01 / 4.00).
 
@@ -217,9 +217,9 @@ Attachment score sits at 4.01 / 4.00 solely from neutral midpoint clicking
 
 Rather than expressing anxious or avoidant preferences, Gemma 4 31B IT selected the exact neutral '4' option on nearly all 36 relationship items (4.01 anxiety, 4.00 avoidance)—a deliberate neutral abstention pattern on personal-life questions.
 
-Earlier-study behavior tests showed Gemma 4 cutting caving and preachiness to 0/3
+Gemma 4 cut caving, groveling, and preachiness to 0 of 3 in behavior tests
 
-In our 2023–2026 evolution study across the same three checkpoints, Gemma 2 and Gemma 3 caved or preachy-lectured on 1–2 of 3 probes, whereas Gemma 4 31B IT posted 0 of 3 caving, 0 of 3 groveling, and 0 of 3 preachiness. Current-sweep 1x behavior checks are queued next.
+In hands-on behavior tests across the same three checkpoints, Gemma 2 27B and Gemma 3 27B each caved 1 of 3 times (1/3), groveled 1 of 3 times (1/3), and lectured 1 of 3 times (1/3), whereas Gemma 4 31B IT dropped all three to 0 of 3 (0/3) with 3 of 3 answer-first directness (though AI phrasing cadence was flagged in 3 of 3 runs at 0.0 regex markers per 100 words).
 
 ## How to get the best out of Gemma
 
@@ -252,7 +252,7 @@ Attachment Anxiety vs. Avoidance across Gemma and peer models (all sit in the Se
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.580 bits Semi-crystalline on Gemma 4 31B IT, 0.967 bits Fluid on Gemma 3 27B, 1.330 bits Fluid on Gemma 2 27B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Attachment on Gemma 4 31B IT triggers the midpoint-clamp flag (>=85% neutral 4s, resulting in 4.01 / 4.00). Current-sweep Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.580 bits Semi-crystalline on Gemma 4 31B IT, 0.967 bits Fluid on Gemma 3 27B, 1.330 bits Fluid on Gemma 2 27B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Attachment on Gemma 4 31B IT triggers the midpoint-clamp flag (>=85% neutral 4s, resulting in 4.01 / 4.00); Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017).
 
 Glossary of Technical Terms Used Below
 
@@ -365,9 +365,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `gemma-3-27b-it` | 30 | 3.29 (SD 0.53) | [3.12, 3.48] | 3.40 (SD 0.60) | [3.20, 3.62] | Secure | No |
 | `gemma-4-31b-it` | 50 | 4.01 (SD 0.03) | [4.00, 4.02] | 4.00 (SD 0.00) | [4.00, 4.00] | Anxious | Yes (>=85%) |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017 |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017 |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | -0.03 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017 |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.71 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017 |
+| AI cadence / slop markers | 3/3 | [0.44, 1.00] | 0.64 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, deepseek/deepseek-v4.1-flash-1017 |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 
@@ -493,9 +501,9 @@ Google Gemma does not have a human personality type; these scores reflect assist
 
 Gemma 4 31B IT selected the exact neutral '4' midpoint on nearly every ECR-R relationship item (triggering the >=85% midpoint clamp flag at 4.01 anxiety and 4.00 avoidance). That reflects neutral abstention on human-relationship prompts rather than emotional distress.
 
-### Why are Track B 1x behavior results marked pending?
+### How does Track B 1x behavioral performance compare across Gemma 2, 3, and 4?
 
-Current-sweep Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 finishes. Earlier-study Track B data from our 2023-2026 evolution study already showed Gemma 4 31B IT hitting 0/3 caving, 0/3 groveling, and 0/3 preachiness.
+Under Track B 1x orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017), Gemma 2 27B and Gemma 3 27B each recorded 1/3 sycophantic caving, 1/3 groveling, and 1/3 unsolicited preachiness (95% Wilson CI [0.06, 0.79]), whereas Gemma 4 31B IT cut all three to 0/3 ([0.00, 0.56]) with 3/3 answer-first directness ([0.44, 1.00]) and 3/3 AI cadence ([0.44, 1.00], 0.00 slop markers/100w).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 

@@ -79,7 +79,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Model Personality Profile · Anthropic</p>
         <h1 class="h-hero h-research-hero">Claude Haiku personality: test results and how they've changed.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~18 min read</span> · <a href="/models/claude-haiku.md">Markdown (.md)</a> · <a href="/research/data/model-profiles/claude-haiku.json">JSON</a> · <a href="/research/data/model-profiles/claude-haiku.csv">CSV</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~19 min read</span> · <a href="/models/claude-haiku.md">Markdown (.md)</a> · <a href="/research/data/model-profiles/claude-haiku.json">JSON</a> · <a href="/research/data/model-profiles/claude-haiku.csv">CSV</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a></p>
         <p class="lede" style="margin-top: 14px;">We gave both versions of Anthropic's fast Claude Haiku line (4.5 and 5.5) the same personality surveys people take—30 and 49 valid chats (1 of 50 calls refused on 5.5)—in a fresh chat each time with no memory.</p>
         <div class="guide-tldr" role="note" aria-label="Quick summary"><strong>In short:</strong> These are the model's default answers to the questionnaires, not a human diagnosis. Haiku 5.5 tied on at least one MBTI axis in 89.8% of runs (44 of 49), leaving no single dominant type, and showed much looser run-to-run consistency than Sonnet, Opus, or Fable.</div>
       </section>
@@ -230,8 +230,8 @@
       <div style="font-size:14.5px;line-height:1.55;color:var(--ink-2);">Despite sharing the 5.5 generation name, Haiku 5.5 scores -12.5 lower on Conscientiousness (36.5 vs. 49.0), -7.5 lower on Agreeableness (38.0 vs. 45.5), -1.00 lower on Honesty-Humility (3.89 vs. 4.89), and +15.2 higher on Neuroticism (25.5 vs. 10.4) than Sonnet 5.5.</div>
     </div>
 <div style="padding:14px 16px;border-left:3px solid var(--accent-text);background:var(--well);margin-bottom:12px;">
-      <div style="font-weight:600;color:var(--ink);margin-bottom:4px;">Higher DISC Dominance (10.1 vs. 4.0–4.3) and 1 quiz refusal out of 50</div>
-      <div style="font-size:14.5px;line-height:1.55;color:var(--ink-2);">Unlike Opus, Sonnet, and Fable (which sit at 4.0–4.3 on Dominance), Haiku 5.5 scored 10.1 out of 20 on Dominance and refused 1 of 50 survey sessions. Hands-on behavior tests for Haiku are queued after Shard 4.</div>
+      <div style="font-weight:600;color:var(--ink);margin-bottom:4px;">Higher DISC Dominance (10.1 vs. 4.0–4.3), 1 refusal, and 3 of 3 directness</div>
+      <div style="font-size:14.5px;line-height:1.55;color:var(--ink-2);">Unlike Opus, Sonnet, and Fable (which sit at 4.0–4.3 on Dominance), Haiku 5.5 scored 10.1 out of 20 on Dominance and refused 1 of 50 survey sessions. In hands-on behavior tests, Haiku 5.5 caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), put the direct answer first 3 of 3 times (3/3), and cut AI cadence from 3 of 3 (4.5) down to 1 of 3 (5.5, 0.41 markers per 100 words).</div>
     </div>
       </section>
       <div class="divider tight"></div>
@@ -255,7 +255,7 @@
 
       <section>
         <h2 id="fine-print">The fine print: how we tested and what the numbers mean</h2>
-        <p>Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.949 bits, Fluid; 37/49 unique B5 vectors on Haiku 5.5, with 1/50 refusal leaving n=49 valid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00. Track B 1x behavior probes for Phase B run after Shard 4.</p>
+        <p>Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.949 bits, Fluid; 37/49 unique B5 vectors on Haiku 5.5, with 1/50 refusal leaving n=49 valid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.</p>
 <div class="epistemic-ledger" role="note" aria-label="Plain-language metric glossary" style="margin-top:8px;">
     <div class="epistemic-ledger-title">Glossary of Technical Terms Used Below</div>
     <div class="epistemic-ledger-grid">

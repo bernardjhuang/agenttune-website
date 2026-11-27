@@ -204,9 +204,9 @@ Highest Neuroticism (20.3) and lowest Conscientiousness (39.2) in OpenAI's lineu
 
 Compared with GPT-6.1 Terra (N 11.8) and GPT-6.2 Astra (N 11.0), budget GPT-6 Luna runs +8.4 to +9.3 higher on Neuroticism and -0.33 to -0.21 lower on Honesty-Humility (4.59/5.00), with looser run-to-run consistency (42 unique Big Five sets in 50 runs).
 
-Higher DISC Dominance (7.3) than Sol (4.8), Terra (4.2), or Astra (4.0)
+Higher DISC Dominance (7.3) and 3 of 3 directness in behavior tests
 
-GPT-6 Luna scored higher on Dominance (7.3 out of 20) than any sibling OpenAI family; hands-on behavior tests for Luna run after Shard 4.
+GPT-6 Luna scored higher on Dominance (7.3 out of 20) than any sibling OpenAI family. In hands-on behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and cut AI cadence from 2 of 3 (5.6-luna) down to 1 of 3 (6-luna, 0.00 lexicon markers per 100 words).
 
 ## How to get the best out of GPT Luna
 
@@ -239,7 +239,7 @@ Attachment Anxiety vs. Avoidance across GPT Luna and peer models (all sit in the
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.485 bits, Semi-crystalline; 42/50 unique B5 vectors on GPT-6 Luna, down from 0.599 bits on 5.6-luna); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x behavior probes run after Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.485 bits, Semi-crystalline; 42/50 unique B5 vectors on GPT-6 Luna, down from 0.599 bits on 5.6-luna); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.
 
 Glossary of Technical Terms Used Below
 

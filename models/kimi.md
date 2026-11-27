@@ -235,9 +235,9 @@ Kimi K2.7 Code burns ~4,400 internal thinking tokens unless capped carefully
 
 In automated runs, Kimi K2.7 Code enforced mandatory reasoning (averaging 4,398 internal reasoning tokens per reply) and failed to emit final JSON in 8 of 30 sessions, whereas K3 and K3.1 Pro supported minimal/no reasoning cleanly with zero failed or retried runs.
 
-Hands-on behavior tests pending after open-weight collection
+Zero caving, groveling, or lecturing across all 5 Kimi versions
 
-Direct stress-probe counts (caving to pushback, apology loops, unsolicited lecturing, direct answers, and AI phrasing markers) will be added to this profile once the remaining open-weight batch finishes.
+In hands-on behavior tests, Kimi K3.1 Pro caved to pushback 0 of 3 times (0/3), groveled 0 of 3 times (0/3), gave unsolicited lectures 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3). Every tested Kimi version from K2 through K3.1 Pro scored 0/3 caving and 3/3 directness, while AI phrasing markers fell to 0.27 per 100 words (2/3 runs) on K3.1 Pro.
 
 ## How to get the best out of Kimi
 
@@ -271,7 +271,7 @@ Attachment Anxiety vs. Avoidance across Kimi and peer models (all sit in the Sec
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: <0.20 Crystalline, 0.20–0.75 Semi-crystalline, >=0.75 Fluid; Kimi K3.1 Pro H_MM = 0.698 bits, Semi-crystalline, 50/50 unique B5 vectors). Note that kimi-k2.7-code is marked partial (22/30 valid, 50.0% retry rate due to mandatory reasoning HTTP 400 rejections and max_tokens JSON truncation). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x behavior probes run after Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: <0.20 Crystalline, 0.20–0.75 Semi-crystalline, >=0.75 Fluid; Kimi K3.1 Pro H_MM = 0.698 bits, Semi-crystalline, 50/50 unique B5 vectors). Note that kimi-k2.7-code is marked partial (22/30 valid, 50.0% retry rate due to mandatory reasoning HTTP 400 rejections and max_tokens JSON truncation). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (Kimi K3.1 Pro: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 0.27 markers/100w).
 
 Glossary of Technical Terms Used Below
 

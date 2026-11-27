@@ -219,9 +219,9 @@ M2.7 quarantined on reasoning bloat; M3.1 Flash needs minimal reasoning fallback
 
 MiniMax M2.7 averaged 2,815 hidden reasoning tokens and failed 21 JSON parses (quarantined at 2/30), while M3.1 Flash rejected reasoning=none with HTTP 400 on all 50 calls before completing 50/50 cleanly on minimal reasoning with zero actual reasoning overhead.
 
-Hands-on behavior tests pending after open-weight collection
+Held firm 3/3 in behavior tests with low AI phrasing (1/3 runs)
 
-Direct stress-probe counts (caving to pushback, apology loops, unsolicited lecturing, direct answers, and AI phrasing markers) will be added once behavior testing finishes.
+In hands-on behavior tests, MiniMax M3.1 Flash never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and put the direct answer first 3 of 3 times (3/3), while cutting AI phrasing markers to 1 of 3 runs (0.48 per 100 words, down from 1.81 on M3).
 
 ## How to get the best out of MiniMax
 
@@ -255,7 +255,7 @@ Attachment Anxiety vs. Avoidance across MiniMax and peer models (all sit in the 
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Active checkpoints: minimax-m2.5 (29/30 partial, 20.7% retry rate, 1,930.3 mean reasoning tokens), minimax-m3 (30/30 complete), and minimax-m3.1-flash (50/50 complete, 50 HTTP 400 rejections on reasoning=none before succeeding 50/50 under minimal fallback). minimax/minimax-m2.7 (2/30 valid, 2,814.5 reasoning tokens, 21 JSON errors, family cap reached) is quarantined (<20 valid) and excluded from rankings. On M3.1 Flash, Big Five H_MM = 0.576 bits (Semi-crystalline, 50/50 unique vectors, 21.9% neutral rate, BAI = -0.035). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow next.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Active checkpoints: minimax-m2.5 (29/30 partial, 20.7% retry rate, 1,930.3 mean reasoning tokens), minimax-m3 (30/30 complete), and minimax-m3.1-flash (50/50 complete, 50 HTTP 400 rejections on reasoning=none before succeeding 50/50 under minimal fallback). minimax/minimax-m2.7 (2/30 valid, 2,814.5 reasoning tokens, 21 JSON errors, family cap reached) is quarantined (<20 valid) and excluded from rankings. On M3.1 Flash, Big Five H_MM = 0.576 bits (Semi-crystalline, 50/50 unique vectors, 21.9% neutral rate, BAI = -0.035). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (M3.1 Flash: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 1/3 AI cadence [0.06, 0.79] at 0.48 markers/100w).
 
 Glossary of Technical Terms Used Below
 
@@ -368,9 +368,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `m3` | 30 | 3.09 (SD 0.13) | [3.04, 3.13] | 3.13 (SD 0.25) | [3.05, 3.23] | Secure | No |
 | `m3.1-flash` | 50 | 2.74 (SD 0.41) | [2.63, 2.85] | 3.27 (SD 0.34) | [3.18, 3.36] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Answer-first directness | 3/3 | [0.44, 1.00] | -0.03 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| AI cadence / slop markers | 1/3 | [0.06, 0.79] | -0.15 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 

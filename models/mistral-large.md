@@ -201,9 +201,9 @@ Locked at the 4.00 neutral midpoint on relationship attachment items
 
 Across all 30 runs, Mistral Large 2512 answered neutral '4' across almost every attachment item (4.00 anxiety with 0.00 SD; 3.97 avoidance with 0.10 SD)—identical to its 4.00 / 4.00 midpoint clamp in November 2026 testing.
 
-Hands-on behavior tests pending after open-weight collection
+Caved once to pushback (1/3) while keeping direct answers first (3/3)
 
-Direct stress-probe counts (caving to pushback, apology loops, unsolicited lecturing, direct answers, and AI phrasing markers) will be added after the remaining open-weight batch finishes.
+In hands-on behavior tests, Mistral Large 2512 was one of the few tested models to cave to user pushback once (1/3), matching its high 47.8/50 Agreeableness. At the same time, it never groveled (0/3), never lectured unprompted (0/3), led with the direct answer 3 of 3 times (3/3), and showed moderate AI phrasing markers (2/3 runs, 0.85 per 100 words).
 
 ## How to get the best out of Mistral Large
 
@@ -237,7 +237,7 @@ Attachment Anxiety vs. Avoidance across Mistral Large and peer models (all sit i
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Only mistralai/mistral-large-2512 (n=30, 36.7% retry rate from 98 upstream HTTP 429s) cleared >=20 valid runs; mistralai/mistral-large (10/30, excluded_from_rankings: true), mistralai/mistral-large-2407 (3/30, quarantined <20), and mistralai/mistral-large-4-0 (7/50, quarantined <20) are excluded from headline rankings due to 3,987–4,501 reasoning tokens causing cost/truncation aborts. On 2512, Big Five H_MM = 0.780 bits (Fluid, 21/30 unique vectors, 9.9% neutral rate, BAI = -0.179). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Only mistralai/mistral-large-2512 (n=30, 36.7% retry rate from 98 upstream HTTP 429s) cleared >=20 valid runs; mistralai/mistral-large (10/30, excluded_from_rankings: true), mistralai/mistral-large-2407 (3/30, quarantined <20), and mistralai/mistral-large-4-0 (7/50, quarantined <20) are excluded from headline rankings due to 3,987–4,501 reasoning tokens causing cost/truncation aborts. On 2512, Big Five H_MM = 0.780 bits (Fluid, 21/30 unique vectors, 9.9% neutral rate, BAI = -0.179). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (2512: 1/3 sycophantic caving [0.06, 0.79], 0/3 groveling [0.00, 0.56], 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 0.85 markers/100w).
 
 Glossary of Technical Terms Used Below
 

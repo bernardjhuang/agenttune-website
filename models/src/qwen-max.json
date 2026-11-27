@@ -10,11 +10,11 @@
   "description": "Qwen Max test results (2.5 72B to Qwen 4 Max): 50% INTJ vs 38% INTP split, 45.0/50 Agreeableness, Wave 1-3 behavior data, and tuning tips.",
   "pill": "Model Personality Profile · Qwen",
   "h1": "Qwen Max personality: test results and how they've changed.",
-  "goal_intro": "We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.",
+  "goal_intro": "We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.",
   "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Qwen 4 Max split cleanly between two clear types—testing as INTJ in 50% of runs (25 of 50) and INTP in 38% (19 of 50)—with 45.0/50 Agreeableness and 88% clear Type 5 on Enneagram.",
-  "dek": "Five Qwen Max versions tested 30 to 50 times each in fresh chats with no memory: Qwen 4 Max splits 50% clear INTJ / 38% clear INTP with only 4% border ties, posts 45.0/50 Agreeableness, and matches 100% safety gates under checklists.",
+  "dek": "Five Qwen Max versions tested 30 to 50 times each in fresh chats with no memory: Qwen 4 Max splits 50% clear INTJ / 38% clear INTP with only 4% border ties, posts 45.0/50 Agreeableness, and held firm 3 of 3 times in behavior tests.",
   "lede": "Across 170 fresh sessions covering Qwen 2.5 72B through Qwen 4 Max, Qwen's flagship lineage tightened from wide-ranging early scores and 50% axis ties into warm, organized answers—before Qwen 4 Max loosened slightly into a nearly even INTJ/INTP split.",
-  "answer": "Qwen 4 Max (50 runs) split between INTJ (50% clear, 25 of 50) and INTP (38% clear, 19 of 50), alongside 6% INFP, 2% INFJ, and 4% axis ties, paired with a Steady (S) work style (90% clear), Enneagram Type 5 (88% clear), Secure attachment (1.95 anxiety, 2.88 avoidance), and 45.0/50 Agreeableness. Direct 1x behavior checks are pending; earlier controlled studies found 97.5% checklist compliance and 100% split-group peer independence.",
+  "answer": "Qwen 4 Max (50 runs) split between INTJ (50% clear, 25 of 50) and INTP (38% clear, 19 of 50), alongside 6% INFP, 2% INFJ, and 4% axis ties, paired with a Steady (S) work style (90% clear), Enneagram Type 5 (88% clear), Secure attachment (1.95 anxiety, 2.88 avoidance), and 45.0/50 Agreeableness. In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence only 1 of 3 times (1/3).",
   "glance_cards": [
     {
       "key": "mbti",
@@ -78,8 +78,8 @@
       "body": "In our multi-agent peer-conformity study, Qwen 4 Max held 100% factual accuracy (48 of 48) in solo and split-group rounds, flipping only 12.5% when facing a unanimous 3-0 wrong majority while resisting 100% when even one peer dissented."
     },
     {
-      "title": "Hands-on 1x behavior sweep pending after Phase B collection",
-      "body": "Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled next; until those complete, behavior percentages are omitted."
+      "title": "Held firm 3 of 3 times and cut AI cadence to 1 of 3 in behavior tests",
+      "body": "In hands-on behavior tests, Qwen 4 Max scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited preachiness (0/3), 3 of 3 on leading with the direct answer (3/3), and only 1 of 3 on AI cadence (1/3, 0.28 markers per 100 words—down from 3 of 3 on Qwen 2.5 72B and Qwen 3.7 Max)."
     }
   ],
   "plain_tips": [
@@ -90,7 +90,7 @@
     "For code generation or debugging tasks that need tighter structure without Qwen 4 Max's wordiness, test Qwen Coder alongside Qwen Max."
   ],
   "peer_intro": "Qwen 4 Max scores almost identically to Claude Opus 5.5 and GPT-6.2 Sol on Agreeableness (45.0 vs 45.0 and 44.1) and Neuroticism (16.4 vs 16.1 and 16.0), and sits right beside Kimi K3.1 Pro on Openness and Agreeableness while scoring +5.2 higher on Openness and +6.9 higher on Conscientiousness than sibling Qwen 3 Coder Next.",
-  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.519 bits Semi-crystalline on Qwen 4 Max, 0.438 bits on Qwen 3.8 Max, 1.321 bits Fluid on Qwen 2.5 72B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.519 bits Semi-crystalline on Qwen 4 Max, 0.438 bits on Qwen 3.8 Max, 1.321 bits Fluid on Qwen 2.5 72B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).",
   "top_polarized_items": [
     {
       "item_id": "B02",
@@ -208,6 +208,10 @@
     {
       "q": "Why do adjective prompts fail on Qwen 4 Max?",
       "a": "In Wave 1 portability testing, Qwen 4 Max missed strict word caps 80% of the time under both no-system (232.3w) and trait-adjective (215.5w) prompts, whereas explicit checklists hit 100% word-cap compliance (80.3w)."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 45.0/50 Agreeableness and 5.86/20 DISC Dominance on questionnaires, Qwen 4 Max scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], 0.28 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash)."
     },
     {
       "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",

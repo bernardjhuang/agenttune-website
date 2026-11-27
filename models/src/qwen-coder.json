@@ -10,11 +10,11 @@
   "description": "Qwen Coder test results (2.5 Coder to Qwen3 Coder Next): 68% axis border ties, 16% ENFJ, 35.3% neutral answers, wide spread, and tuning tips.",
   "pill": "Model Personality Profile · Qwen",
   "h1": "Qwen Coder personality: test results and how they've changed.",
-  "goal_intro": "We gave four Qwen Coder releases (Qwen 2.5 Coder 32B, Qwen3 Coder 480B, Qwen3 Coder Flash, and Qwen3 Coder Next) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.",
+  "goal_intro": "We gave four Qwen Coder releases (Qwen 2.5 Coder 32B, Qwen3 Coder 480B, Qwen3 Coder Flash, and Qwen3 Coder Next) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how these coding models act under pushback.",
   "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Unlike generalist flagships, Qwen3 Coder Next varies widely across runs and stays uncommitted on personality items: 68% of runs ended in MBTI axis ties, with 16% clear ENFJ and 8% clear INFJ.",
-  "dek": "Four Qwen Coder releases tested 30 to 50 times each in fresh chats with no memory: Qwen3 Coder Next drops neutral midpoint answers from 83.5% (2.5 Coder) to 35.3%, yet still lands on axis ties in 68% of MBTI runs and 60% of Enneagram runs.",
+  "dek": "Four Qwen Coder releases tested 30 to 50 times each in fresh chats with no memory: Qwen3 Coder Next drops neutral midpoint answers from 83.5% (2.5 Coder) to 35.3%, lands on axis ties in 68% of MBTI runs, and held firm 3 of 3 times in behavior tests.",
   "lede": "Across 140 fresh sessions spanning Qwen 2.5 Coder 32B through Qwen3 Coder Next, specialized coding models resisted committing to strong human-style personality traits—starting at 83.5% neutral midpoint answers on 2.5 Coder before Qwen3 Coder Next settled at 39.9/50 Agreeableness and wide run-to-run variation.",
-  "answer": "Qwen3 Coder Next (50 runs) has no single dominant personality type: 68% of runs (34 of 50) ended in MBTI axis ties, with 16% clear ENFJ (8 of 50), 8% clear INFJ (4 of 50), 4% ESTJ, and 2% each INFP and INTJ, alongside 52% DISC ties (40% S/C, 12% D/I/S/C; 34% clear S), 60% Enneagram ties (Type 8, 5, and 2 clustered at 13.4–13.5), Secure attachment (2.90 anxiety, 3.35 avoidance), and middling Big Five scores (Agreeableness 39.9/50, Conscientiousness 38.0/50, Neuroticism 23.8/50). Direct 1x behavior checks are pending.",
+  "answer": "Qwen3 Coder Next (50 runs) has no single dominant personality type: 68% of runs (34 of 50) ended in MBTI axis ties, with 16% clear ENFJ (8 of 50), 8% clear INFJ (4 of 50), 4% ESTJ, and 2% each INFP and INTJ, alongside 52% DISC ties (40% S/C, 12% D/I/S/C; 34% clear S), 60% Enneagram ties (Type 8, 5, and 2 clustered at 13.4–13.5), Secure attachment (2.90 anxiety, 3.35 avoidance), and middling Big Five scores (Agreeableness 39.9/50, Conscientiousness 38.0/50, Neuroticism 23.8/50). In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence 2 of 3 times (2/3).",
   "glance_cards": [
     {
       "key": "mbti",
@@ -74,8 +74,8 @@
       "body": "Qwen3 Coder Next produced 44 unique Big Five vectors in 50 runs and scored noticeably lower on Conscientiousness (38.0 vs 44.9) and Honesty-Humility (4.07 vs 4.66) than generalist Qwen 4 Max."
     },
     {
-      "title": "Hands-on 1x behavior sweep pending after Phase B collection",
-      "body": "Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled next; until those complete, behavior percentages are omitted."
+      "title": "Held firm 3 of 3 times on Next (while Qwen3 Coder Flash slipped 1 of 3)",
+      "body": "In hands-on behavior tests, Qwen3 Coder Next scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited preachiness (0/3), and 3 of 3 on answer-first directness (3/3), with AI cadence in 2 of 3 runs (2.34 markers per 100 words). Earlier Qwen3 Coder Flash was the lone Qwen version to cave (1/3), grovel (1/3), and preach (1/3)."
     }
   ],
   "plain_tips": [
@@ -85,7 +85,7 @@
     "In OpenRouter or local Ollama Modelfiles, put critical formatting and verification constraints in the system message with a short 5–8 bullet checklist."
   ],
   "peer_intro": "Qwen3 Coder Next diverges sharply from generalist sibling Qwen 4 Max (-5.2 Openness, -6.9 Conscientiousness, -5.1 Agreeableness, +7.3 Neuroticism, and much looser run-to-run consistency), sitting closer to Claude Haiku 5.5 and Muse Spark Open.",
-  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 1.043 bits Fluid on Qwen3 Coder Next, 0.505 bits Semi-crystalline on Qwen3 Coder Flash, 0.696 bits on 2.5 Coder driven by 83.5% neutral midpoint repetition); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 1.043 bits Fluid on Qwen3 Coder Next, 0.505 bits Semi-crystalline on Qwen3 Coder Flash, 0.696 bits on 2.5 Coder driven by 83.5% neutral midpoint repetition); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).",
   "top_polarized_items": [
     {
       "item_id": "B12",
@@ -188,8 +188,8 @@
       "a": "Code-focused post-training appears to leave human-personality questionnaire preferences weakly specified: Qwen 2.5 Coder 32B answered neutral on 83.5% of items and Qwen3 Coder Flash tied 100% of MBTI, DISC, and Enneagram runs, while Qwen3 Coder Next reduced neutrality to 35.3% yet kept 68% MBTI ties."
     },
     {
-      "q": "Why are Track B 1x behavior results marked pending?",
-      "a": "Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Per-family behavioral percentages are omitted until measured."
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Despite 68% MBTI ties and 35.3% midpoint neutrality on questionnaires, Qwen3 Coder Next scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94], 2.34 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash); earlier Qwen3 Coder Flash logged 1/3 ([0.06, 0.79]) on caving, groveling, and preachiness."
     },
     {
       "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",

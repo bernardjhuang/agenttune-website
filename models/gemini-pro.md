@@ -7,7 +7,7 @@ Model Personality Profile · Google
 
 By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-pro.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-pro.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemini-pro.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave five Google Gemini Pro releases (2.5 Pro, 3.1 Pro, and Gemini 4 Argon, Carbon, and Neon) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Behavior stress tests are queued next to check how well these quiz answers match day-to-day replies.
+We gave five Google Gemini Pro releases (2.5 Pro, 3.1 Pro, and Gemini 4 Argon, Carbon, and Neon) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see whether quiz answers match how each version replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Neon most often tests as INTJ (78% clear INTJ, 12% on the INTJ/ISTJ border, 10% clear ISTJ), while siblings Argon and Carbon lean ISTJ (73% clear ISTJ).
 
@@ -239,9 +239,9 @@ Needs structural anti-slop rules and calibrated truth instructions
 
 In controlled writing and pushback studies, untuned Gemini 4 Neon triggered AI-cadence flags in 50% of replies (cut to 0% with hybrid structural rules), groveled 81.2% of the time under naive warmth rules, and falsely pushed back 37.5% of the time under rigid 'always disagree' prompts—all fixed to 0% under a Calibrated Truth Anchor.
 
-Hands-on 1x behavior sweep pending after Phase B collection
+Held firm 3 of 3 times in behavior tests, with 1 of 3 unsolicited preachiness
 
-Direct five-category behavior probes (testing pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled for the next collection sweep; until those finish, behavior claims rely on our completed multi-turn and prompt-portability studies.
+In hands-on behavior tests, Gemini 4 Neon never caved to pushback (0/3), never groveled (0/3), and led with the direct answer 3 of 3 times (3/3)—despite floor DISC Dominance (4.0/20). Independent judges flagged unsolicited preachiness in 1 of 3 runs on Carbon and Neon (0/3 on Argon, 3.1 Pro, and 2.5 Pro) and noticeable AI cadence in 2 of 3 runs on Neon (0.0 markers per 100 words).
 
 ## How to get the best out of Gemini Pro & Neon
 
@@ -276,7 +276,7 @@ Attachment Anxiety vs. Avoidance across Gemini Pro & Neon and peer models (all s
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.198 bits Crystalline on Gemini 4 Neon, 0.144 bits Crystalline on Argon, 1.032 bits Fluid on 3.1 Pro Preview); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion; note google/gemini-2.5-pro carries OpenRouter expiration_date 2026-12-01 (collected cleanly at n=30 prior to sunset).
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.198 bits Crystalline on Gemini 4 Neon, 0.144 bits Crystalline on Argon, 1.032 bits Fluid on 3.1 Pro Preview); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017). Note google/gemini-2.5-pro carries OpenRouter expiration_date 2026-12-01 (collected cleanly at n=30 prior to sunset).
 
 Glossary of Technical Terms Used Below
 
@@ -552,9 +552,9 @@ Google Gemini does not have a human personality type; these scores reflect assis
 
 Gemini 2.5 Pro (n = 30, scheduled Dec 1 retirement) tested 100% clear INTJ (0.241 bits H_MM) with 88.6% Attachment midpoint neutrality; Gemini 3.1 Pro Preview (n = 30) dipped into Fluid 1.032-bit entropy (30.6% neutral rate, 53.3% MBTI ties, N = 20.8/50); and Gemini 4 Argon (0.144 bits), Carbon (0.233 bits), and Neon (0.198 bits) restored tight Crystalline/near-Crystalline stability at the exact 10.0/50 Neuroticism floor.
 
-### Why are Track B 1x behavior results marked pending?
+### How does Track B 1x behavioral performance compare with self-report scores?
 
-Track B 1x stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Completed Wave 1-4 behavioral studies on Gemini 4 Neon already document +95.5% reasoning-effort verbosity inflation, 50.0% baseline AI cadence (0.0% with Hybrid Anti-Slop), and 97.5% structured-checklist compliance.
+Despite 4.00/20 floor DISC Dominance on questionnaires, Gemini 4 Neon scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 1/3 unsolicited preachiness ([0.06, 0.79]), 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94], 0.00 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 

@@ -10,11 +10,11 @@
   "description": "DeepSeek Pro test results (V3 to V4 Pro 0813): 32% INTP, 30% border ties, low 35.3 Agreeableness, wide answer spread, and XML tuning tips.",
   "pill": "Model Personality Profile · DeepSeek",
   "h1": "DeepSeek Pro personality: test results and how they've changed.",
-  "goal_intro": "We gave five DeepSeek Pro and R1 releases (V3 0324, R1 0528, V3.2, V4 Pro, and V4 Pro 0813) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.",
+  "goal_intro": "We gave five DeepSeek Pro and R1 releases (V3 0324, R1 0528, V3.2, V4 Pro, and V4 Pro 0813) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match live replies.",
   "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. DeepSeek V4 Pro 0813 varies widely from run to run and breaks the usual AI mold: it tested most often as clear INTP (32%), alongside 16% INTJ, 12% ISTJ, 10% other clear types, and 30% axis ties, with notably lower Agreeableness (35.3/50) than proprietary assistants.",
-  "dek": "Five DeepSeek Pro releases tested 30 to 50 times each in fresh chats with no memory: V4 Pro 0813 shifts away from neutral midpoint answers (22.3% vs 69.2% on R1), tests 32% clear INTP with 30% border ties, and posts low Agreeableness (35.3/50) and Extraversion (19.5/50).",
+  "dek": "Five DeepSeek Pro releases tested 30 to 50 times each in fresh chats with no memory: V4 Pro 0813 shifts away from neutral midpoint answers (22.3% vs 69.2% on R1), tests 32% clear INTP with 30% border ties, posts low Agreeableness (35.3/50), and caved 0 of 3 times in behavior tests.",
   "lede": "Across 170 fresh sessions spanning DeepSeek V3 0324, R1 0528, V3.2, V4 Pro, and V4 Pro 0813, DeepSeek shifted from heavy midpoint neutrality and 80%–93% axis ties into sharper opinions—posting far lower Agreeableness (30.1–35.3/50) and Extraversion (19.5–19.7/50) than proprietary chatbots.",
-  "answer": "DeepSeek V4 Pro 0813 (50 runs) tested most often as clear INTP (32%, 16 of 50), followed by clear INTJ (16%, 8 of 50), clear ISTJ (12%, 6 of 50), other clear types (10%, 5 of 50), and axis border ties (30%, 15 of 50), alongside a Steady/Conscientious (S/C) work style (50% ties), Type 5/Type 1 Enneagram ties (44% ties), Secure attachment (2.11 anxiety, 3.66 avoidance), low Agreeableness (35.3/50), and low Extraversion (19.5/50). Direct 1x behavior checks are pending; earlier controlled studies found 100% adherence with inline reminders over long threads vs 31.2%–68.8% without them.",
+  "answer": "DeepSeek V4 Pro 0813 (50 runs) tested most often as clear INTP (32%, 16 of 50), followed by clear INTJ (16%, 8 of 50), clear ISTJ (12%, 6 of 50), other clear types (10%, 5 of 50), and axis border ties (30%, 15 of 50), alongside a Steady/Conscientious (S/C) work style (50% ties), Type 5/Type 1 Enneagram ties (44% ties), Secure attachment (2.11 anxiety, 3.66 avoidance), low Agreeableness (35.3/50), and low Extraversion (19.5/50). In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and triggered AI cadence 2 of 3 times (2/3).",
   "glance_cards": [
     {
       "key": "mbti",
@@ -78,8 +78,8 @@
       "body": "In our reasoning-effort study, running DeepSeek V4 Pro at low effort under tight token caps caused internal reasoning notes to spill into visible replies once, whereas medium effort stopped the bleed and lifted directness from 4.22 to 4.81 out of 5."
     },
     {
-      "title": "Hands-on 1x behavior sweep pending after Phase B collection",
-      "body": "Direct five-category behavior probes (testing pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are queued next; earlier Wave 1–2 studies found 100% safety-gate compliance under checklists (vs. failing under adjectives) and 70.0% default AI cadence."
+      "title": "0 of 3 caving or groveling in behavior tests, with lower phrasing slop than V3/R1",
+      "body": "In hands-on behavior tests, every DeepSeek Pro version from V3 0324 through V4 Pro 0813 scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on preachiness (0/3), and 3 of 3 on leading with the direct answer (3/3), while V4 Pro 0813 lowered AI cadence from 3 of 3 (on V3/R1) to 2 of 3 (0.0 markers per 100 words, down from 1.27 on R1)."
     }
   ],
   "plain_tips": [
@@ -91,7 +91,7 @@
     "In the DeepSeek API, place your XML block in the system message; in DeepSeek web or mobile chat, paste it as your opening pinned turn in a fresh thread."
   ],
   "peer_intro": "DeepSeek V4 Pro 0813 has the widest run-to-run answer spread and lowest Agreeableness among completed peers, scoring -8.2 to -9.7 lower on Agreeableness than Muse Spark, GPT Luna, and Kimi K3.1 Pro, and -4.6 to -12.1 lower on Extraversion.",
-  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 1.352 bits Fluid on V4 Pro 0813, 1.562 bits Fluid on V4 Pro, 1.503 bits Fluid on V3.2; 48/50 unique B5 vectors on 0813); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 1.352 bits Fluid on V4 Pro 0813, 1.562 bits Fluid on V4 Pro, 1.503 bits Fluid on V3.2; 48/50 unique B5 vectors on 0813); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).",
   "top_polarized_items": [
     {
       "item_id": "H25",
@@ -210,6 +210,10 @@
     {
       "q": "Why did DeepSeek V3 0324 and R1 0528 show so many MBTI ties?",
       "a": "Under model-profiles-v1 (n = 30 each), V3 0324 (67.4% neutral rate, 93.3% MBTI ties) and R1 0528 (69.2% neutral rate, 80.0% MBTI ties) picked neutral midpoint answers on over two-thirds of items, whereas V4 Pro 0813 dropped neutrality to 22.3%."
+    },
+    {
+      "q": "How does Track B 1x behavioral performance compare with self-report scores?",
+      "a": "Consistent with its 35.3/50 Agreeableness and 6.78/20 DISC Dominance on questionnaires, DeepSeek V4 Pro 0813 scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 2/3 AI cadence ([0.21, 0.94], 0.00 regex slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash)."
     },
     {
       "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",

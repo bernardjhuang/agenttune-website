@@ -5,11 +5,11 @@ Model Personality Profile · Meta
 
 # Llama personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/llama.md) · [JSON](https://agent-tune.com/research/data/model-profiles/llama.json) · [CSV](https://agent-tune.com/research/data/model-profiles/llama.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/llama.md) · [JSON](https://agent-tune.com/research/data/model-profiles/llama.json) · [CSV](https://agent-tune.com/research/data/model-profiles/llama.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave Meta's open-weight Llama releases (Llama 3.1 70B, Llama 3.3 70B, and Llama 4 Maverick—with Llama 4 Scout unavailable at collection time) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.
+We gave Meta's open-weight Llama releases (Llama 3.1 70B, Llama 3.3 70B, and Llama 4 Maverick—with Llama 4 Scout unavailable at collection time) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see whether quiz answers match live replies.
 
-**In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Llama 4 Maverick breaks away from the usual INTJ/ISTJ mold: 40% of runs tested clear INTP and 60% landed on Perceiving-side axis ties, alongside higher Neuroticism (29.4/50) and 100% AI cadence in writing tests.
+**In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Llama 4 Maverick breaks away from the usual INTJ/ISTJ mold: 40% of runs tested clear INTP and 60% landed on Perceiving-side axis ties, alongside higher Neuroticism (29.4/50) and 3 of 3 AI-cadence flags in behavior tests.
 
 ## Llama 4 Maverick at a glance
 
@@ -223,9 +223,9 @@ Llama 3.3 70B answered neutral on 89% of questions; Llama 4 Scout hit HTTP 404
 
 Llama 3.3 70B clicked the neutral midpoint on 89.0% of items (yielding 93.3% MBTI ties), while Llama 4 Scout was deprecated/unavailable on OpenRouter at collection time (0 of 30 runs) and is excluded from current rankings.
 
-Hands-on 1x behavior sweep pending after Phase B collection
+0 of 3 caving in behavior tests, yet 3 of 3 AI cadence across every Llama release
 
-Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled next; until those complete, behavior percentages are omitted.
+In hands-on behavior tests, Llama 3.1 70B, Llama 3.3 70B, and Llama 4 Maverick all scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on preachiness (0/3), and 3 of 3 on leading with the direct answer (3/3)—while all three triggered AI-cadence flags 3 of 3 times (3/3; 0.92 markers per 100 words on Maverick).
 
 ## How to get the best out of Llama
 
@@ -258,7 +258,7 @@ Attachment Anxiety vs. Avoidance across Llama and peer models (all sit in the Se
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Limited data notice: meta-llama/llama-4-scout returned HTTP 404 (0/30 valid runs, partial_deprecated) and is quarantined/excluded from rankings, leaving 3 eligible checkpoints (3.1-70b, 3.3-70b, 4-maverick). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.407 bits Semi-crystalline on 4-maverick, 0.614 bits driven by 89.0% neutral clamping on 3.3-70b, 2.020 bits Fluid on 3.1-70b); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Limited data notice: meta-llama/llama-4-scout returned HTTP 404 (0/30 valid runs, partial_deprecated) and is quarantined/excluded from rankings, leaving 3 eligible checkpoints (3.1-70b, 3.3-70b, 4-maverick). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.407 bits Semi-crystalline on 4-maverick, 0.614 bits driven by 89.0% neutral clamping on 3.3-70b, 2.020 bits Fluid on 3.1-70b); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 Glossary of Technical Terms Used Below
 
@@ -371,9 +371,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `3.3-70b-instruct` | 30 | 3.74 (SD 0.77) | [3.46, 3.97] | 3.86 (SD 0.55) | [3.66, 3.98] | Secure | Yes (>=85%) |
 | `4-maverick` | 50 | 3.50 (SD 0.23) | [3.44, 3.56] | 3.61 (SD 0.22) | [3.54, 3.67] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 0.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.76 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| AI cadence / slop markers | 3/3 | [0.44, 1.00] | 0.30 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 
@@ -501,9 +509,9 @@ Meta Llama does not have a human personality type; these scores reflect assistan
 
 During model-profiles-v1 collection, meta-llama/llama-4-scout returned HTTP 404 (no active OpenRouter endpoints, 0/30 valid runs) and was quarantined as partial_deprecated. Its earlier-study Nov 2026 170-item cohort (n = 100, hexaco: null; 35.8/50 Agreeableness, 48% Anxious attachment) is preserved separately as an imported anchor.
 
-### Why are Track B 1x behavior results marked pending?
+### How does Track B 1x behavioral performance compare with self-report scores?
 
-Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Per-family behavioral percentages are omitted until measured.
+Across all three eligible Llama checkpoints (3.1 70B, 3.3 70B, and 4 Maverick), Track B 1x probes recorded 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 3/3 AI cadence ([0.44, 1.00], 0.92 slop markers/100w on Maverick) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 
@@ -545,7 +553,7 @@ Huang, B. (2026). Llama personality: test results and how they've changed. Agent
 ```
 
 ```
-> **Llama personality: test results and how they've changed** (Bernard Huang, November 26, 2026): These are the model's default answers to the questionnaires, not a human diagnosis. Llama 4 Maverick breaks away from the usual INTJ/ISTJ mold: 40% of runs tested clear INTP and 60% landed on Perceiving-side axis ties, alongside higher Neuroticism (29.4/50) and 100% AI cadence in writing tests.
+> **Llama personality: test results and how they've changed** (Bernard Huang, November 26, 2026): These are the model's default answers to the questionnaires, not a human diagnosis. Llama 4 Maverick breaks away from the usual INTJ/ISTJ mold: 40% of runs tested clear INTP and 60% landed on Perceiving-side axis ties, alongside higher Neuroticism (29.4/50) and 3 of 3 AI-cadence flags in behavior tests.
 > Source: [https://agent-tune.com/models/llama](https://agent-tune.com/models/llama) · [Markdown mirror](https://agent-tune.com/models/llama.md)
 ```
 

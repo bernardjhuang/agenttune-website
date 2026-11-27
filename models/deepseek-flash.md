@@ -7,7 +7,7 @@ Model Personality Profile · DeepSeek
 
 By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/deepseek-flash.md) · [JSON](https://agent-tune.com/research/data/model-profiles/deepseek-flash.json) · [CSV](https://agent-tune.com/research/data/model-profiles/deepseek-flash.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave three DeepSeek Flash releases (V4 Flash 0423, V4.1 Flash, and V4.1 Flash 1017) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.
+We gave three DeepSeek Flash releases (V4 Flash 0423, V4.1 Flash, and V4.1 Flash 1017) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match live replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. DeepSeek V4.1 Flash 1017 answers with wide run-to-run variation and heavy axis ties (66% border ties, 14% clear INFP), while scoring warmer on Agreeableness (40.5/50) than sibling V4 Pro (35.3/50).
 
@@ -217,9 +217,9 @@ Neutral midpoint clicks dropped from 80.3% (V4 Flash) to 28.0% (4.1 Flash 1017)
 
 Early V4 Flash 0423 avoided taking sides on four out of five survey items (80.3% neutral), whereas V4.1 Flash 1017 committed more often (28.0% neutral) and raised Honesty-Humility from 3.34 to 4.07 out of 5.00.
 
-Hands-on 1x behavior sweep pending after Phase B collection
+0 of 3 caving and only 1 of 3 AI cadence on V4.1 Flash 1017
 
-Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled next; until those complete, behavior percentages are omitted.
+In hands-on behavior tests, every DeepSeek Flash release scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on preachiness (0/3), and 3 of 3 on leading with the direct answer (3/3), while V4.1 Flash and V4.1 Flash 1017 trimmed AI cadence to 1 of 3 runs (0.0 markers per 100 words, down from 2 of 3 on V4 Flash 0423).
 
 ## How to get the best out of DeepSeek Flash
 
@@ -252,7 +252,7 @@ Attachment Anxiety vs. Avoidance across DeepSeek Flash and peer models (all sit 
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.915 bits Fluid on V4.1 Flash 1017, 0.845 bits Fluid on V4.1 Flash, 0.819 bits Fluid on V4 Flash 0423); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.915 bits Fluid on V4.1 Flash 1017, 0.845 bits Fluid on V4.1 Flash, 0.819 bits Fluid on V4 Flash 0423); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 Glossary of Technical Terms Used Below
 
@@ -365,9 +365,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `v4.1-flash` | 30 | 3.74 (SD 0.44) | [3.58, 3.89] | 3.93 (SD 0.19) | [3.86, 3.99] | Secure | No |
 | `v4.1-flash-1017` | 50 | 3.60 (SD 0.40) | [3.49, 3.70] | 3.89 (SD 0.24) | [3.82, 3.95] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 0.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.48 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| AI cadence / slop markers | 1/3 | [0.06, 0.79] | 0.36 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 
@@ -493,9 +501,9 @@ DeepSeek Flash does not have a human personality type; these scores reflect assi
 
 DeepSeek V4.1 Flash 1017 scores +5.2 higher on Big Five Agreeableness (40.5 vs 35.3) and +5.2 higher on Extraversion (24.8 vs 19.5) while trailing V4 Pro 0813 by -6.6 on Conscientiousness (38.4 vs 45.0) and -0.51 on IPIP-HEXACO Honesty-Humility (4.07 vs 4.58).
 
-### Why are Track B 1x behavior results marked pending?
+### How does Track B 1x behavioral performance compare with self-report scores?
 
-Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Per-family behavioral percentages are omitted until measured.
+Despite 66% MBTI border ties and 28.0% neutral midpoint rate on questionnaires, DeepSeek V4.1 Flash 1017 scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], 0.00 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 

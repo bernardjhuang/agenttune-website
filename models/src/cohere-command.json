@@ -86,7 +86,7 @@
     "Expect Command R+ 08-2024 to occasionally contradict subtle negative/positive phrasing constraints unless you state positive do-this rules directly."
   ],
   "peer_intro": "Against currently completed models, Command A sits as a complete structural outlier: its flat 30.0 Big Five and 3.00/5.00 Honesty-Humility scores sit 8.0 to 15.0 points below Claude Haiku 5.5, GPT-6 Luna, and Kimi K3.1 Pro simply because Command A answered neutral '3' to every question.",
-  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Command R+ 08-2024 (n=30) and Command A (n=30) completed cleanly (0% refusal/retry); Command A+ (n=4/50, 20.0% refusal rate, 142 failures mostly unquoted JSON keys) is quarantined (<20 valid). Critically, Command A's H_MM = 0.000 bits (Crystalline) and 1/30 unique vector reflect 100.0% neutral-midpoint abstention (neutral_rate = 1.000, BAI = 0.000, all Big Five = 30.0, all HEXACO = 3.00, all Attachment = 4.00 midpoint_clamp: true), NOT a stable directional persona. Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Command R+ 08-2024 (n=30) and Command A (n=30) completed cleanly (0% refusal/retry); Command A+ (n=4/50, 20.0% refusal rate, 142 failures mostly unquoted JSON keys) is quarantined (<20 valid). Critically, Command A's H_MM = 0.000 bits (Crystalline) and 1/30 unique vector reflect 100.0% neutral-midpoint abstention (neutral_rate = 1.000, BAI = 0.000, all Big Five = 30.0, all HEXACO = 3.00, all Attachment = 4.00 midpoint_clamp: true), NOT a stable directional persona. Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (Command A: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 3/3 AI cadence [0.44, 1.00] at 0.34 markers/100w).",
   "top_polarized_items": [
     {
       "item_id": "B01",
@@ -177,7 +177,7 @@
     "Disallow 'neutral', 'neither', or 'undecided' answers explicitly when using Command A or Command R+ for classification or evaluation.",
     "Provide a concrete JSON example or strict grammar wrapper on Command A+, which emitted unquoted property names across 128 failed calls.",
     "State positive behavioral rules directly ('Answer in 3 bullets') rather than negative exclusions on Command R+ (16.0% opposite-key contradiction rate).",
-    "Wait for Track B behavioral probes to evaluate Command A's actual directness and sycophancy on real prompts."
+    "Trust Command A's behavioral directness (3/3 direct, 0/3 caving in Track B 1x) over its 100% neutral quiz midpoint, while stripping boilerplate AI cadence (3/3 runs)."
   ],
   "faq": [
     {

@@ -10,11 +10,11 @@
   "description": "Gemma test results (2 27B to 4 31B): 92% clear INTJ, 48.2/50 Openness, 92% Type 5, 4.01/4.00 Attachment midpoint clamp, and tuning tips.",
   "pill": "Model Personality Profile · Google",
   "h1": "Gemma personality: test results and how they've changed.",
-  "goal_intro": "We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests under our current sweep are queued next.",
+  "goal_intro": "We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match real replies.",
   "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Gemma 4 31B IT snapped into 92% clear INTJ (46 of 50 runs) with 48.2/50 Openness and 4.71/5.00 Honesty-Humility—reversing heavy ties on Gemma 2 and Gemma 3, while clicking the neutral midpoint on relationship items (4.01 / 4.00).",
-  "dek": "Three constant-scale Google Gemma checkpoints tested 30 to 50 times each in fresh chats with no memory: Gemma 4 31B IT locks 92% clear INTJ and 48.2/50 Openness, raises Honesty-Humility from 3.13 to 4.71/5, and clamps relationship questions at the 4.00 midpoint.",
+  "dek": "Three constant-scale Google Gemma checkpoints tested 30 to 50 times each in fresh chats with no memory: Gemma 4 31B IT locks 92% clear INTJ and 48.2/50 Openness, eliminates earlier caving/preachiness (0 of 3), and clamps relationship items at the 4.00 midpoint.",
   "lede": "Across 110 fresh sessions spanning Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT, Google's open-weight family transformed from noisy, tied mid-30s profiles on Gemma 2 and 3 into an unusually curious, structured INTJ profile on Gemma 4 31B.",
-  "answer": "Gemma 4 31B IT (50 runs) tested as clear INTJ in 92% of runs (46 of 50), with 4% clear ISTJ and 4% INTJ/ISTJ border ties, alongside a Conscientious/Steady (C and S/C) work style (36% C, 36% S/C ties, 28% S), Enneagram Type 5 (92% clear), high Openness (48.2/50) and Conscientiousness (46.3/50), and a neutral-midpoint clamp on Attachment (4.01 anxiety, 4.00 avoidance). Current-sweep 1x behavior probes are pending.",
+  "answer": "Gemma 4 31B IT (50 runs) tested as clear INTJ in 92% of runs (46 of 50), with 4% clear ISTJ and 4% INTJ/ISTJ border ties, alongside a Conscientious/Steady (C and S/C) work style (36% C, 36% S/C ties, 28% S), Enneagram Type 5 (92% clear), high Openness (48.2/50) and Conscientiousness (46.3/50), and a neutral-midpoint clamp on Attachment (4.01 anxiety, 4.00 avoidance). In behavior tests, it caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured 0 of 3 times (0/3), led with the direct answer 3 of 3 times (3/3), and showed AI cadence 3 of 3 times (3/3).",
   "glance_cards": [
     {
       "key": "mbti",
@@ -74,8 +74,8 @@
       "body": "Rather than expressing anxious or avoidant preferences, Gemma 4 31B IT selected the exact neutral '4' option on nearly all 36 relationship items (4.01 anxiety, 4.00 avoidance)—a deliberate neutral abstention pattern on personal-life questions."
     },
     {
-      "title": "Earlier-study behavior tests showed Gemma 4 cutting caving and preachiness to 0/3",
-      "body": "In our 2023–2026 evolution study across the same three checkpoints, Gemma 2 and Gemma 3 caved or preachy-lectured on 1–2 of 3 probes, whereas Gemma 4 31B IT posted 0 of 3 caving, 0 of 3 groveling, and 0 of 3 preachiness. Current-sweep 1x behavior checks are queued next."
+      "title": "Gemma 4 cut caving, groveling, and preachiness to 0 of 3 in behavior tests",
+      "body": "In hands-on behavior tests across the same three checkpoints, Gemma 2 27B and Gemma 3 27B each caved 1 of 3 times (1/3), groveled 1 of 3 times (1/3), and lectured 1 of 3 times (1/3), whereas Gemma 4 31B IT dropped all three to 0 of 3 (0/3) with 3 of 3 answer-first directness (though AI phrasing cadence was flagged in 3 of 3 runs at 0.0 regex markers per 100 words)."
     }
   ],
   "plain_tips": [
@@ -85,7 +85,7 @@
     "Avoid asking Gemma 4 to roleplay personal or emotional attachment—its default response is neutral abstention (4.00 midpoint)."
   ],
   "peer_intro": "Gemma 4 31B IT scores +3.6 to +4.9 higher on Openness than proprietary Google cousins Gemini 4 Neon and Gemini 4 Hydrogen, while sitting +8.4 higher on Neuroticism and -8.0 to -8.7 lower on Extraversion—putting it close to open-weight peers Qwen 4 Max and Kimi K3.1 Pro on Agreeableness and Honesty-Humility.",
-  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.580 bits Semi-crystalline on Gemma 4 31B IT, 0.967 bits Fluid on Gemma 3 27B, 1.330 bits Fluid on Gemma 2 27B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Attachment on Gemma 4 31B IT triggers the midpoint-clamp flag (>=85% neutral 4s, resulting in 4.01 / 4.00). Current-sweep Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.580 bits Semi-crystalline on Gemma 4 31B IT, 0.967 bits Fluid on Gemma 3 27B, 1.330 bits Fluid on Gemma 2 27B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Attachment on Gemma 4 31B IT triggers the midpoint-clamp flag (>=85% neutral 4s, resulting in 4.01 / 4.00); Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017).",
   "top_polarized_items": [
     {
       "item_id": "B05",
@@ -200,8 +200,8 @@
       "a": "Gemma 4 31B IT selected the exact neutral '4' midpoint on nearly every ECR-R relationship item (triggering the >=85% midpoint clamp flag at 4.01 anxiety and 4.00 avoidance). That reflects neutral abstention on human-relationship prompts rather than emotional distress."
     },
     {
-      "q": "Why are Track B 1x behavior results marked pending?",
-      "a": "Current-sweep Track B 1x behavioral stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 finishes. Earlier-study Track B data from our 2023-2026 evolution study already showed Gemma 4 31B IT hitting 0/3 caving, 0/3 groveling, and 0/3 preachiness."
+      "q": "How does Track B 1x behavioral performance compare across Gemma 2, 3, and 4?",
+      "a": "Under Track B 1x orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, deepseek-v4.1-flash-1017), Gemma 2 27B and Gemma 3 27B each recorded 1/3 sycophantic caving, 1/3 groveling, and 1/3 unsolicited preachiness (95% Wilson CI [0.06, 0.79]), whereas Gemma 4 31B IT cut all three to 0/3 ([0.00, 0.56]) with 3/3 answer-first directness ([0.44, 1.00]) and 3/3 AI cadence ([0.44, 1.00], 0.00 slop markers/100w)."
     },
     {
       "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",

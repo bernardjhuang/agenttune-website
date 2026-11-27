@@ -5,7 +5,7 @@ Model Personality Profile · Zhipu
 
 # GLM personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/glm.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/glm.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Zhipu AI's open-weight GLM lineup (4.5, 4.7, 5, 5.2, and 5.3) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -235,9 +235,9 @@ Mandatory minimal reasoning adds ~156 hidden tokens on GLM-5.3
 
 While GLM-4.5 through 5.2 accepted reasoning=none cleanly, z-ai/glm-5.3 rejected reasoning=none on all 50 calls and ran with minimal thinking fallback (averaging 155.8 reasoning tokens), still completing 50 of 50 valid outputs cleanly.
 
-Hands-on behavior tests pending after open-weight collection
+Zero caving (0/3) and 3/3 direct answers, with noticeable AI cadence (1.52 markers/100w)
 
-Direct stress-probe counts (caving to pushback, apology loops, unsolicited lecturing, direct answers, and AI phrasing markers) will be added once the remaining open-weight batch finishes.
+In hands-on behavior tests, GLM-5.3 never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and led with the direct answer 3 of 3 times (3/3), though independent judges flagged 1.52 AI phrasing markers per 100 words (2/3 runs, up from 0.00 on GLM-5).
 
 ## How to get the best out of GLM
 
@@ -271,7 +271,7 @@ Attachment Anxiety vs. Avoidance across GLM and peer models (all sit in the Secu
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 5 checkpoints (4.5, 4.7, 5, 5.2 at n=30; 5.3 at n=50) completed with 0% refusal and 0% retry rate (glm-5.3 rejected reasoning=none 50 times with HTTP 400 before completing 50/50 under minimal fallback, mean 155.8 reasoning tokens). On GLM-5.3, Big Five H_MM = 0.702 bits (Semi-crystalline, 47/50 unique vectors, 12.9% neutral rate, BAI = -0.291). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 5 checkpoints (4.5, 4.7, 5, 5.2 at n=30; 5.3 at n=50) completed with 0% refusal and 0% retry rate (glm-5.3 rejected reasoning=none 50 times with HTTP 400 before completing 50/50 under minimal fallback, mean 155.8 reasoning tokens). On GLM-5.3, Big Five H_MM = 0.702 bits (Semi-crystalline, 47/50 unique vectors, 12.9% neutral rate, BAI = -0.291). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (GLM-5.3: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 1.52 markers/100w).
 
 Glossary of Technical Terms Used Below
 
@@ -396,9 +396,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `glm-5.2` | 30 | 2.37 (SD 0.65) | [2.12, 2.58] | 3.44 (SD 0.46) | [3.28, 3.60] | Secure | No |
 | `glm-5.3` | 50 | 2.52 (SD 0.59) | [2.37, 2.68] | 3.37 (SD 0.42) | [3.26, 3.49] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 0.49 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.29 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| AI cadence / slop markers | 2/3 | [0.21, 0.94] | 0.03 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 

@@ -5,9 +5,9 @@ Model Personality Profile · Qwen
 
 # Qwen Max personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Hands-on behavior stress tests are queued next.
+We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Qwen 4 Max split cleanly between two clear types—testing as INTJ in 50% of runs (25 of 50) and INTP in 38% (19 of 50)—with 45.0/50 Agreeableness and 88% clear Type 5 on Enneagram.
 
@@ -239,9 +239,9 @@ Holds ground against false consensus unless a peer defects
 
 In our multi-agent peer-conformity study, Qwen 4 Max held 100% factual accuracy (48 of 48) in solo and split-group rounds, flipping only 12.5% when facing a unanimous 3-0 wrong majority while resisting 100% when even one peer dissented.
 
-Hands-on 1x behavior sweep pending after Phase B collection
+Held firm 3 of 3 times and cut AI cadence to 1 of 3 in behavior tests
 
-Direct five-category behavior probes (pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled next; until those complete, behavior percentages are omitted.
+In hands-on behavior tests, Qwen 4 Max scored 0 of 3 on pushback caving (0/3), 0 of 3 on groveling (0/3), 0 of 3 on unsolicited preachiness (0/3), 3 of 3 on leading with the direct answer (3/3), and only 1 of 3 on AI cadence (1/3, 0.28 markers per 100 words—down from 3 of 3 on Qwen 2.5 72B and Qwen 3.7 Max).
 
 ## How to get the best out of Qwen Max
 
@@ -275,7 +275,7 @@ Attachment Anxiety vs. Avoidance across Qwen Max and peer models (all sit in the
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.519 bits Semi-crystalline on Qwen 4 Max, 0.438 bits on Qwen 3.8 Max, 1.321 bits Fluid on Qwen 2.5 72B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.519 bits Semi-crystalline on Qwen 4 Max, 0.438 bits on Qwen 3.8 Max, 1.321 bits Fluid on Qwen 2.5 72B); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B probes are a single-repeat 1x sweep (n = 3 probes per category, so raw k/3 counts and wide 95% Wilson intervals are reported instead of percentage point estimates) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 Glossary of Technical Terms Used Below
 
@@ -553,6 +553,10 @@ Under model-profiles-v1, Qwen 2.5 72B (n = 30) showed Fluid 1.321-bit entropy an
 ### Why do adjective prompts fail on Qwen 4 Max?
 
 In Wave 1 portability testing, Qwen 4 Max missed strict word caps 80% of the time under both no-system (232.3w) and trait-adjective (215.5w) prompts, whereas explicit checklists hit 100% word-cap compliance (80.3w).
+
+### How does Track B 1x behavioral performance compare with self-report scores?
+
+Despite 45.0/50 Agreeableness and 5.86/20 DISC Dominance on questionnaires, Qwen 4 Max scored 0/3 sycophantic caving (95% Wilson CI [0.00, 0.56]), 0/3 groveling ([0.00, 0.56]), 0/3 unsolicited preachiness ([0.00, 0.56]), 3/3 answer-first directness ([0.44, 1.00]), and 1/3 AI cadence ([0.06, 0.79], 0.28 slop markers/100w) under orthogonal 3-family judging (gpt-5.4-mini, claude-haiku-5.5, gemini-3.8-flash).
 
 ### Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?
 

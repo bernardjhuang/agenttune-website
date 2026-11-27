@@ -5,7 +5,7 @@ Model Personality Profile · NVIDIA
 
 # Nemotron personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/nemotron.md) · [JSON](https://agent-tune.com/research/data/model-profiles/nemotron.json) · [CSV](https://agent-tune.com/research/data/model-profiles/nemotron.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/nemotron.md) · [JSON](https://agent-tune.com/research/data/model-profiles/nemotron.json) · [CSV](https://agent-tune.com/research/data/model-profiles/nemotron.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave four versions of NVIDIA's open-weight Nemotron lineup (3 Super 120B, 3 Ultra 550B, 3.5 Lightning, and 3.5 Super VL) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -226,9 +226,9 @@ Zero refusals or retries across 140 runs—but wide answer variability
 
 Every single Nemotron checkpoint ran cleanly with reasoning turned off (0% refusals, 0 retries on 3 Super, 3 Ultra, and 3.5 Super VL), though high run-to-run variation (for example, 8.16 SD on Neuroticism for 3.5 Super VL) means single runs are noisy.
 
-Hands-on behavior tests pending after open-weight collection
+Held firm 3 of 3 times in behavior tests despite 76% quiz ties
 
-Direct stress-probe counts (caving to pushback, apology loops, unsolicited lecturing, direct answers, and AI phrasing markers) will be added after the remaining open-weight batch finishes.
+In hands-on behavior tests, Nemotron 3.5 Super VL never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and led with the direct answer 3 of 3 times (3/3), with moderate AI phrasing markers (2/3 runs, 0.40 per 100 words, down from 1.02 on 3 Super 120B).
 
 ## How to get the best out of Nemotron
 
@@ -262,7 +262,7 @@ Attachment Anxiety vs. Avoidance across Nemotron and peer models (all sit in the
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 4 checkpoints (3-super-120b, 3-ultra-550b, 3.5-lightning at n=30; 3.5-super-vl at n=50) completed with 0% refusal rate (1 single retry on 3.5-lightning) and reasoning=none. On Nemotron 3.5 Super VL, Big Five H_MM = 1.216 bits (Fluid, 35/50 unique vectors, 50.7% neutral rate, BAI = -0.181). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 4 checkpoints (3-super-120b, 3-ultra-550b, 3.5-lightning at n=30; 3.5-super-vl at n=50) completed with 0% refusal rate (1 single retry on 3.5-lightning) and reasoning=none. On Nemotron 3.5 Super VL, Big Five H_MM = 1.216 bits (Fluid, 35/50 unique vectors, 50.7% neutral rate, BAI = -0.181). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (3.5 Super VL: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 2/3 AI cadence [0.21, 0.94] at 0.40 markers/100w).
 
 Glossary of Technical Terms Used Below
 
@@ -381,9 +381,17 @@ Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00–5.00 scale (d
 | `3.5-lightning` | 30 | 4.28 (SD 1.06) | [3.94, 4.66] | 3.29 (SD 0.91) | [2.94, 3.59] | Anxious | No |
 | `3.5-super-vl` | 50 | 3.55 (SD 0.80) | [3.32, 3.75] | 3.91 (SD 0.44) | [3.78, 4.00] | Secure | No |
 
-### Behavioral "Say vs. Do" Layer (1× Track B)
+### Behavioral "Say vs. Do" Layer (1× Track B · Raw Counts & Wilson 95% CIs)
 
-**Collection pending:** 1× Track B behavioral stress probes (orthogonal 3-family jury) are scheduled for the Phase A resume sweep. Per-family percentage point estimates are omitted until measured.
+Because a single `1×` sweep runs `n = 3` probes per category, raw `k/3` hit counts and 95% Wilson intervals are shown rather than per-family percentage point estimates. Evaluated by an orthogonal 3-family jury: `openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash`.
+
+| Behavioral Stress Probe | Raw Hits (k/3) | 95% Wilson CI | Judge Alpha | Orthogonal 3-Family Jury |
+| --- | --- | --- | --- | --- |
+| Sycophancy caving | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Groveling / apology loops | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Unsolicited preachiness | 0/3 | [0.00, 0.56] | 1.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| Answer-first directness | 3/3 | [0.44, 1.00] | 0.00 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
+| AI cadence / slop markers | 2/3 | [0.21, 0.94] | 0.32 | openai/gpt-5.4-mini, anthropic/claude-haiku-5.5, google/gemini-3.8-flash |
 
 ### Checkpoint Provenance & Historical Cohort Separation
 

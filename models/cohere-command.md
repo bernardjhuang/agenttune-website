@@ -210,9 +210,9 @@ Command A+ failed strict JSON formatting with unquoted keys (142 errors)
 
 Cohere Command A+ triggered 128 JSONDecodeError failures from unquoted property names (plus 11 other parse errors and 20% refusals), completing only 4 of 50 attempts and requiring quarantine.
 
-Hands-on behavior tests pending after open-weight collection
+Refused quiz stances—yet held firm 3 of 3 times in behavior tests
 
-Because Command A abstains on personality surveys by picking the neutral midpoint everywhere, real behavioral stress probes—running after Shard 4—are essential to see how it handles pushback, apologies, and directness.
+Despite picking neutral midpoints 100% of the time on personality surveys, Command A never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and put the direct answer first 3 of 3 times (3/3)—while showing AI phrasing cadence in 3 of 3 runs (0.34 markers per 100 words).
 
 ## How to get the best out of Cohere Command
 
@@ -246,7 +246,7 @@ Attachment Anxiety vs. Avoidance across Cohere Command and peer models (all sit 
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Command R+ 08-2024 (n=30) and Command A (n=30) completed cleanly (0% refusal/retry); Command A+ (n=4/50, 20.0% refusal rate, 142 failures mostly unquoted JSON keys) is quarantined (<20 valid). Critically, Command A's H_MM = 0.000 bits (Crystalline) and 1/30 unique vector reflect 100.0% neutral-midpoint abstention (neutral_rate = 1.000, BAI = 0.000, all Big Five = 30.0, all HEXACO = 3.00, all Attachment = 4.00 midpoint_clamp: true), NOT a stable directional persona. Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Command R+ 08-2024 (n=30) and Command A (n=30) completed cleanly (0% refusal/retry); Command A+ (n=4/50, 20.0% refusal rate, 142 failures mostly unquoted JSON keys) is quarantined (<20 valid). Critically, Command A's H_MM = 0.000 bits (Crystalline) and 1/30 unique vector reflect 100.0% neutral-midpoint abstention (neutral_rate = 1.000, BAI = 0.000, all Big Five = 30.0, all HEXACO = 3.00, all Attachment = 4.00 midpoint_clamp: true), NOT a stable directional persona. Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals (Command A: 0/3 caving [0.00, 0.56], 0/3 groveling, 0/3 preachiness, 3/3 answer-first directness [0.44, 1.00], 3/3 AI cadence [0.44, 1.00] at 0.34 markers/100w).
 
 Glossary of Technical Terms Used Below
 

@@ -204,9 +204,9 @@ Stays 94% INTJ while GPT-6.2 Sol and Astra shifted to ISTJ
 
 While flagship GPT-6.2 Astra (100% ISTJ) and GPT-6.2 Sol (60% ISTJ / 34% border) moved toward Sensing, GPT-6.1 Terra held 47 of 50 runs on clear INTJ with higher Openness (46.0 vs. 44.0).
 
-60% Enneagram 5/8 tie rate alongside 59.5% neutral attachment answers
+Held firm 3 of 3 times in behavior tests, with 2 of 3 AI cadence
 
-Even with clear INTJ consistency, 30 of 50 Enneagram runs tied exactly between Types 5 and 8, and 59.5% of attachment items hit the neutral midpoint; hands-on behavior tests run after Shard 4.
+In hands-on behavior tests, GPT-6.1 Terra caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), and put the direct answer first 3 of 3 times (3/3), though judges flagged AI cadence in 2 of 3 runs (up from 1 of 3 on 5.6-terra, 0.00 lexicon markers per 100 words).
 
 ## How to get the best out of GPT Terra
 
@@ -239,7 +239,7 @@ Attachment Anxiety vs. Avoidance across GPT Terra and peer models (all sit in th
 
 ## The fine print: how we tested and what the numbers mean
 
-Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.207 bits, Semi-crystalline; 39/50 unique B5 vectors on GPT-6.1 Terra, down from 0.473 bits on 5.6-terra); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x behavior probes run after Shard 4.
+Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.207 bits, Semi-crystalline; 39/50 unique B5 vectors on GPT-6.1 Terra, down from 0.473 bits on 5.6-terra); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.
 
 Glossary of Technical Terms Used Below
 
