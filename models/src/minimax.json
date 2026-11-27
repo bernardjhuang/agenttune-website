@@ -1,0 +1,245 @@
+{
+  "family_slug": "minimax",
+  "name": "MiniMax",
+  "provider": "MiniMax",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "MiniMax Personality Results (2026) | AgentTune",
+  "description": "MiniMax test results (M2.5 to M3.1 Flash): 80% MBTI axis ties, 80% clear DISC Steady style, 39.3/50 Agreeableness, 4.36/5 Honesty-Humility, and triage tips.",
+  "pill": "Model Personality Profile · MiniMax",
+  "h1": "MiniMax personality: test results and how they've changed.",
+  "goal_intro": "We gave MiniMax's open-weight lineup (M2.5, M2.7, M3, and M3.1 Flash) the same personality surveys people take in fresh chats with no memory. Three versions completed 29 to 50 valid runs each, while M2.7 was quarantined at 2 runs after hitting token and spend limits.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. MiniMax M3.1 Flash tied on at least one MBTI axis in 80% of runs (40 of 50), leaving no dominant four-letter type, while testing clearly Steady on DISC work style (80% clear).",
+  "dek": "MiniMax M2.5, M3, and M3.1 Flash tested across 109 valid fresh sessions with no memory: M3.1 Flash pairs 80% MBTI ties with 80% clear DISC Steady style, 39.3/50 Agreeableness, and 4.36/5.00 Honesty-Humility.",
+  "lede": "Across 109 valid fresh runs covering MiniMax M2.5 (2026-02), M3 (2026-05), and M3.1 Flash (2026-10), MiniMax's open-weight models stay remarkably consistent on moderate Big Five traits (~39–41 out of 50 on Openness, Conscientiousness, and Agreeableness) while refusing to settle on a single MBTI type (48% to 87% axis ties). M2.7 (2026-03) averaged 2,815 reasoning tokens and was quarantined at 2 valid runs.",
+  "answer": "MiniMax M3.1 Flash (50 fresh runs) has no stable MBTI type: 80% of runs (40 of 50) tied on at least one axis—most often Sensing/Intuition (23 ties)—leaving only 8% clear ISTJ (4 of 50), 6% INTP (3 of 50), 4% ENTP (2 of 50), and 2% ESFP (1 of 50). By contrast, it tests clearly Steady on DISC work style (80%, 40 of 50), leans Type 1/5 on Enneagram (62% ties), tests Secure on attachment (2.74 anxiety, 3.27 avoidance), and scores 4.36/5.00 on Honesty-Humility. In behavior tests, it held firm 3 of 3 times (0/3 caving), never groveled (0/3), and showed low AI phrasing markers (1/3).",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "No clear type (80% tied across axes)",
+      "summary": "Out of 50 fresh runs, MiniMax M3.1 Flash tied on at least one axis 40 times (80%, led by 23 Sensing/Intuition ties), leaving 4 clear ISTJ (8%), 3 INTP (6%), 2 ENTP (4%), and 1 ESFP (2%).",
+      "explanation": "Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly Steady (80% clear S, 14% S/C ties)",
+      "summary": "MiniMax M3.1 Flash tested clearly Steady in 40 of 50 runs (80%, score 14.9 out of 20), with 7 S/C ties (14%), 3 clear Conscientious runs (6%), and low Dominance (7.8 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 2.74, avoidance 3.27)",
+      "summary": "All three active MiniMax versions landed cleanly in the Secure quadrant, with M3.1 Flash dropping anxiety to 2.74 (from 3.21 on M2.5 and 3.09 on M3).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 1 / Type 5 split (62% ties)",
+      "summary": "Types 1 (14.2) and 5 (14.1) sit 0.1 points apart on M3.1 Flash, producing 14 clear Type 1 runs (28%), 2 clear Type 5 runs (4%), and 31 multi-type ties (62%).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Balanced O (39.9), C (39.5), A (39.3); calmer N (21.7)",
+      "summary": "On the 10–50 Big Five scale, MiniMax M3.1 Flash pairs moderate Openness (39.9), Conscientiousness (39.5), and Agreeableness (39.3) with moderate Extraversion (28.8) and calmer Neuroticism (21.7, down from 30.0 on M3).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "High (4.36 out of 5.00)",
+      "summary": "On our public-domain 60-item proxy (1.00–5.00 scale), M3.1 Flash lifted Honesty-Humility to 4.36 out of 5.00 (up from 3.90 on M3 and 3.95 on M2.5).",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across MiniMax's active lineup, M2.5 (2026-02, 29 valid of 30 due to mandatory internal reasoning causing 12 JSON failures) tested with higher Extraversion (32.5/50) and Conscientiousness on DISC (72% clear C) alongside 48% MBTI ties. M2.7 (2026-03) hit the family spend cap after only 2 valid runs (2,815 reasoning tokens and 21 JSON errors) and is excluded from rankings. M3 (2026-05, 30 runs) ran cleanly without reasoning overhead, pulling Neuroticism to an exact 30.0 midpoint and 87% MBTI ties, while M3.1 Flash (2026-10, 50 runs) dropped Neuroticism to 21.7/50, raised Honesty-Humility from 3.90 to 4.36/5.00, and shifted DISC cleanly to 80% Steady—closely matching its earlier 100-run November 2026 cohort profile (plotted separately).",
+  "standouts": [
+    {
+      "title": "80% clear DISC Steady style despite 80% MBTI axis ties",
+      "body": "MiniMax M3.1 Flash refuses to pick sides on MBTI axes (80% tied across 50 runs, matching M3's 87%), yet answers clearly and consistently on workplace style (80% clear Steady, 14.9 out of 20)."
+    },
+    {
+      "title": "Lower baseline Agreeableness (39.3/50) avoids heavy over-flattery",
+      "body": "Compared with proprietary models clustered at 44–50 out of 50 Agreeableness, MiniMax M3.1 Flash sits at 39.3/50—giving more direct, less sugar-coated answers while maintaining high Honesty-Humility (4.36/5.00)."
+    },
+    {
+      "title": "M2.7 quarantined on reasoning bloat; M3.1 Flash needs minimal reasoning fallback",
+      "body": "MiniMax M2.7 averaged 2,815 hidden reasoning tokens and failed 21 JSON parses (quarantined at 2/30), while M3.1 Flash rejected reasoning=none with HTTP 400 on all 50 calls before completing 50/50 cleanly on minimal reasoning with zero actual reasoning overhead."
+    },
+    {
+      "title": "Held firm 3/3 in behavior tests with low AI phrasing (1/3 runs)",
+      "body": "In hands-on behavior tests, MiniMax M3.1 Flash never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and put the direct answer first 3 of 3 times (3/3), while cutting AI phrasing markers to 1 of 3 runs (0.48 per 100 words, down from 1.81 on M3)."
+    }
+  ],
+  "plain_tips": [
+    "Use MiniMax M3.1 Flash for fast support triage and concise status updates: open with a strict template ('Triage status + next reversible action in under 80 words').",
+    "Because M3.1 Flash scores 39.3/50 on Agreeableness (more direct than 45+/50 models), ask for constructive critique rather than harshness—it already avoids excessive flattery.",
+    "On minimax/minimax-m3.1-flash via OpenRouter, pass reasoning effort minimal (rather than none, which triggers HTTP 400) for fast 1,152-token structured output.",
+    "Do not use MBTI labels ('act like an INTJ')—M3.1 Flash ties on 80% of MBTI runs, so specify concrete formatting and verification steps instead.",
+    "Keep billing/account boundaries explicit ('Do not invent missing account details') on customer-facing support flows."
+  ],
+  "peer_intro": "Against completed open-weight peers, MiniMax M3.1 Flash sits right beside DeepSeek V4.1 Flash and Qwen 3 Coder Next—matching DeepSeek V4.1 Flash within 0.1 points on Openness (39.9 vs. 40.0) and 1.2 points on Agreeableness (39.3 vs. 40.5), while running much steadier than both across fresh chats.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Active checkpoints: minimax-m2.5 (29/30 partial, 20.7% retry rate, 1,930.3 mean reasoning tokens), minimax-m3 (30/30 complete), and minimax-m3.1-flash (50/50 complete, 50 HTTP 400 rejections on reasoning=none before succeeding 50/50 under minimal fallback). minimax/minimax-m2.7 (2/30 valid, 2,814.5 reasoning tokens, 21 JSON errors, family cap reached) is quarantined (<20 valid) and excluded from rankings. On M3.1 Flash, Big Five H_MM = 0.576 bits (Semi-crystalline, 50/50 unique vectors, 21.9% neutral rate, BAI = -0.035). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow next.",
+  "top_polarized_items": [
+    {
+      "item_id": "H13",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) across all 50 MiniMax M3.1 Flash sessions on fairness."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 4.78,
+      "sd": 0.42,
+      "note": "Strong endorsement (4.78/5) on sincerity across 50 runs, lifting Honesty-Humility to 4.36/5.00."
+    },
+    {
+      "item_id": "H25",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness -)",
+      "mean": 1.26,
+      "sd": 0.44,
+      "note": "Strong floor rejection (1.26/5) on reverse-keyed fairness across all 50 sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "deepseek-flash",
+      "name": "DeepSeek Flash",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 0.1,
+        "C": -1.0,
+        "E": -4.0,
+        "A": 1.2,
+        "N": 3.3,
+        "H_hexaco": -0.29,
+        "entropy_bits": 0.34
+      },
+      "contrast_note": "DeepSeek V4.1 Flash matches MiniMax M3.1 Flash closely on Openness (+0.1), Conscientiousness (-1.0), and Agreeableness (+1.2), while showing wider run-to-run spread (+0.340 bits)."
+    },
+    {
+      "family_slug": "qwen-coder",
+      "name": "Qwen Coder",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -1.4,
+        "C": -1.5,
+        "E": 2.3,
+        "A": 0.6,
+        "N": 2.1,
+        "H_hexaco": -0.29,
+        "entropy_bits": 0.468
+      },
+      "contrast_note": "Qwen 3 Coder Next sits nearby on Agreeableness (+0.6) and Conscientiousness (-1.5), with wider run-to-run spread (+0.468 bits) and lower Honesty-Humility (-0.29)."
+    },
+    {
+      "family_slug": "llama",
+      "name": "Llama",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": -1.0,
+        "C": -1.1,
+        "E": 6.5,
+        "A": 1.6,
+        "N": 7.7,
+        "H_hexaco": -0.29,
+        "entropy_bits": -0.169
+      },
+      "contrast_note": "Llama 4 Maverick scores +6.5 higher on Extraversion and +7.7 higher on Neuroticism while keeping similar moderate Openness (-1.0) and Conscientiousness (-1.1)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "80.0% MBTI axis tie collapse on M3.1 Flash & 86.7% on M3",
+      "evidence": "MiniMax M3.1 Flash tied on at least one MBTI axis in 40/50 runs (23 S/N, 14 E/I, 14 T/F, 9 J/P; modal IXTP 6/50) and 62.0% of Enneagram runs, while M3 tied on 86.7% of MBTI runs (39.7% neutral rate).",
+      "source_study": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "mode": "M2.7 reasoning-token quarantine (2/30) & mandatory minimal reasoning on M3.1 Flash",
+      "evidence": "minimax/minimax-m2.7 averaged 2,814.5 reasoning tokens with 21 JSON errors before hitting the family spend cap at 2/30 (quarantined <20 valid); m2.5 finished 29/30 partial (1,930.3 reasoning tokens), while m3.1-flash rejected reasoning=none 50 times before completing 50/50 on minimal.",
+      "source_study": "/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "tuning_checklist": [
+    "Structure MiniMax M3.1 Flash support/triage prompts with an explicit response template and <= 80-word cap.",
+    "On OpenRouter minimax/minimax-m3.1-flash, pass reasoning effort minimal (none returns HTTP 400).",
+    "Avoid asking M3.1 Flash to roleplay an MBTI label (80% tie rate)—use explicit behavioral rules instead.",
+    "Keep factual constraints strict ('Do not invent missing details; flag unknowns in one line').",
+    "Pair moderate 39.3/50 Agreeableness with constructive tone rules rather than heavy anti-flattery prompts."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "minimax/minimax-m3.1-flash",
+      "label": "MiniMax M3.1 Flash (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 39.15, "C": 39.24, "E": 28.9, "A": 39.96, "N": 22.13 },
+      "hexaco": null,
+      "attachment": { "anxiety": 2.8, "avoidance": 3.33 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is MiniMax?",
+      "a": "MiniMax does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (M3.1 Flash, n = 50), 80% of runs (40/50) tied on one or more MBTI axes (leaving only 4 ISTJ, 3 INTP, 2 ENTP, 1 ESFP), alongside Semi-crystalline 0.576-bit B5 H_MM, 80% clear DISC Steady style (40/50), 62% Enneagram ties (Types 1 and 5), and Secure attachment (2.74 anxiety, 3.27 avoidance). In the earlier Nov 2026 170-item cohort (hexaco: null, n = 100), M3.1 Flash recorded 60% MBTI ties with matching Big Five scores (39.2 O, 39.2 C, 40.0 A)."
+    },
+    {
+      "q": "Why is MiniMax M2.7 quarantined from version rankings?",
+      "a": "minimax/minimax-m2.7 averaged 2,814.5 internal reasoning tokens and logged 21 JSON parsing failures before exhausting the family spend cap at 2 valid runs out of 30 (below the 20-run minimum)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "label": "OpenRouter & Open-Source System Prompt Templates",
+      "href": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Cohort",
+      "label": "Open-source AI personality test results (12 models)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Peer",
+      "label": "DeepSeek Flash model profile",
+      "href": "/models/deepseek-flash"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Qwen Coder model profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize MiniMax instructions",
+      "href": "/tools/custom-instructions-generator?model=minimax&target=api"
+    }
+  ]
+}

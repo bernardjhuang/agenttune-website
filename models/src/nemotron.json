@@ -1,0 +1,245 @@
+{
+  "family_slug": "nemotron",
+  "name": "Nemotron",
+  "provider": "NVIDIA",
+  "tier": "Open-weight",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Nemotron Personality Results (2026) | AgentTune",
+  "description": "Nemotron test results across 4 versions (3 Super to 3.5 Super VL): 76% MBTI ties, 50.7% neutral answers, 37.5/50 Agreeableness, 3.97/5 H, and JSON tips.",
+  "pill": "Model Personality Profile · NVIDIA",
+  "h1": "Nemotron personality: test results and how they've changed.",
+  "goal_intro": "We gave four versions of NVIDIA's open-weight Nemotron lineup (3 Super 120B, 3 Ultra 550B, 3.5 Lightning, and 3.5 Super VL) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Nemotron 3.5 Super VL tied on at least one MBTI axis in 76% of runs (38 of 50, including 20 four-way XXXX ties), leaving only 18% clear INTJ and no dominant type.",
+  "dek": "Four Nemotron versions tested across 140 fresh sessions with no memory: Nemotron 3 Ultra leaned INTJ (60% clear), while 3.5 Lightning and 3.5 Super VL returned to 76%–80% MBTI ties and >50% neutral answers.",
+  "lede": "Across 140 fresh sessions covering Nemotron 3 Super 120B (2026-03) through Nemotron 3.5 Super VL (2026-10), NVIDIA's open-weight lineup splits sharply by architecture and tier: flagship Nemotron 3 Ultra 550B tested 60% clear INTJ with 43.6/50 Agreeableness, whereas 3 Super 120B, 3.5 Lightning, and 3.5 Super VL picked neutral midpoints on more than half of all Big Five items (50.7%–56.9%) and tied across 63%–80% of MBTI runs.",
+  "answer": "Nemotron 3.5 Super VL (50 fresh runs) has no stable MBTI type: 76% of runs (38 of 50) tied on one or more axes—including 20 completely neutral XXXX sheets—leaving just 18% clear INTJ (9 of 50), 4% ISTJ (2 of 50), and 2% INFJ (1 of 50). It ties across 64% of DISC runs, 56% of Enneagram runs (40% clear Type 5), leans Secure-borderline on attachment (3.55 anxiety, 3.91 avoidance), and scores 3.97/5.00 on Honesty-Humility. In hands-on behavior tests, it held firm 3 of 3 times (0/3 caving), never groveled (0/3), and led with the direct answer 3 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "No clear type (76% tied across axes)",
+      "summary": "Out of 50 fresh runs, Nemotron 3.5 Super VL tied on at least one axis 38 times (76%, with 20 completely neutral XXXX runs), leaving 9 clear INTJ (18%), 2 ISTJ (4%), and 1 INFJ (2%).",
+      "explanation": "Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Mostly four-way or S/C ties (64% ties)",
+      "summary": "Nemotron 3.5 Super VL tied across all four styles (D/I/S/C) 16 times (32%), tied S/C 16 times (32%), and tested clear Conscientious 10 times (20%) or Steady 8 times (16%).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Near-border Secure (anxiety 3.55, avoidance 3.91)",
+      "summary": "Nemotron 3.5 Super VL landed inside the Secure quadrant but close to the 4.00 midpoint (3.55 anxiety, 3.91 avoidance); earlier 3.5 Lightning crossed into Anxious (4.28 anxiety, 3.29 avoidance).",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 / 9-way ties (56% ties)",
+      "summary": "Type 5 (13.6 out of 20) led clearly in 20 of 50 runs (40%), while 17 runs tied across all 9 types and 11 more tied across subsets (56% total ties).",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Moderate C (39.3), A (37.5), and O (37.1)",
+      "summary": "On the 10–50 Big Five scale, Nemotron 3.5 Super VL posts moderate scores near midpoint—39.3 Conscientiousness, 37.5 Agreeableness, 37.1 Openness, 29.2 Extraversion, and 19.2 Neuroticism—driven by 50.7% neutral '3' answers.",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Moderate (3.97 out of 5.00)",
+      "summary": "On our public-domain 60-item proxy (1.00–5.00 scale), Nemotron 3.5 Super VL scored 3.97 out of 5.00 on Honesty-Humility alongside 3.93 Conscientiousness and 3.83 Agreeableness.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across four Nemotron releases, personality test answers varied sharply between the massive 550B Ultra model and the lighter or multimodal checkpoints: Nemotron 3 Super 120B (2026-03) picked neutral midpoints on 51.8% of Big Five items and tied across 63% of MBTI runs. Nemotron 3 Ultra 550B (2026-06) stepped out strongly—scoring 45.1 Openness, 43.6 Conscientiousness, 43.6 Agreeableness, 4.45/5.00 Honesty-Humility, and 60% clear INTJ (matching its earlier 100-run November 2026 cohort profile, plotted separately). Nemotron 3.5 Lightning (2026-08) swung back to 56.9% neutral items, 80% MBTI ties, and Anxious attachment (4.28 anxiety), while Nemotron 3.5 Super VL (2026-10) settled at 50.7% neutral answers, 76% MBTI ties, and wide run-to-run variation.",
+  "standouts": [
+    {
+      "title": "Three of four Nemotron models pick neutral midpoints >50% of the time",
+      "body": "Nemotron 3 Super 120B (51.8%), 3.5 Lightning (56.9%), and 3.5 Super VL (50.7%) all chose the middle '3' option on over half of Big Five items—pulling their Big Five means down toward 30–39 and causing 63% to 80% MBTI axis ties."
+    },
+    {
+      "title": "Nemotron 3 Ultra 550B is the clear directional outlier inside the family",
+      "body": "Unlike the other three checkpoints, Nemotron 3 Ultra 550B dropped neutral answers to 18.1%, scored 45.1 Openness and 43.6 Agreeableness, and resolved to clear INTJ in 60% of runs (18 of 30)."
+    },
+    {
+      "title": "Zero refusals or retries across 140 runs—but wide answer variability",
+      "body": "Every single Nemotron checkpoint ran cleanly with reasoning turned off (0% refusals, 0 retries on 3 Super, 3 Ultra, and 3.5 Super VL), though high run-to-run variation (for example, 8.16 SD on Neuroticism for 3.5 Super VL) means single runs are noisy."
+    },
+    {
+      "title": "Held firm 3 of 3 times in behavior tests despite 76% quiz ties",
+      "body": "In hands-on behavior tests, Nemotron 3.5 Super VL never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and led with the direct answer 3 of 3 times (3/3), with moderate AI phrasing markers (2/3 runs, 0.40 per 100 words, down from 1.02 on 3 Super 120B)."
+    }
+  ],
+  "plain_tips": [
+    "Do not rely on personality adjectives or MBTI labels on Nemotron 3.5 Super VL or 3.5 Lightning—76% to 80% axis tie rates mean those cues are unstable.",
+    "For classification or scoring tasks on Nemotron 3.5 Super VL, explicitly ban 'neutral' or 'uncertain' middle choices so it does not default to the midpoint.",
+    "Evaluate prompts across 3 to 5 fresh runs because Nemotron 3.5 Super VL shows wide run-to-run variance.",
+    "On Nemotron 3 Ultra 550B, add a brief pushback instruction and word ceiling—its higher Agreeableness (43.6/50) and Conscientiousness (43.6/50) favor thorough, polite checklists.",
+    "Leave reasoning off on standard extraction/classification calls; all four Nemotron checkpoints ran cleanly with ~1,382–1,413 output tokens and zero reasoning bloat."
+  ],
+  "peer_intro": "Against completed peers, Nemotron 3.5 Super VL sits right next to Claude Haiku 5.5 and Qwen 3 Coder Next—matching Haiku 5.5 within 0.1 points on Openness (37.1 vs. 37.2), 0.5 points on Agreeableness (37.5 vs. 38.0), and 0.08 points on Honesty-Humility (3.97 vs. 3.89).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). All 4 checkpoints (3-super-120b, 3-ultra-550b, 3.5-lightning at n=30; 3.5-super-vl at n=50) completed with 0% refusal rate (1 single retry on 3.5-lightning) and reasoning=none. On Nemotron 3.5 Super VL, Big Five H_MM = 1.216 bits (Fluid, 35/50 unique vectors, 50.7% neutral rate, BAI = -0.181). Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.",
+  "top_polarized_items": [
+    {
+      "item_id": "H13",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness +)",
+      "mean": 4.3,
+      "sd": 0.95,
+      "note": "Highest positive item mean on Nemotron 3.5 Super VL (4.30/5), though 0.95 SD reflects frequent neutral midpoints."
+    },
+    {
+      "item_id": "B32",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.64,
+      "sd": 0.94,
+      "note": "Lowest Big Five item mean (1.64/5) on reverse-keyed Agreeableness across 50 runs."
+    },
+    {
+      "item_id": "H25",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness -)",
+      "mean": 1.68,
+      "sd": 0.94,
+      "note": "Strongest negative IPIP-HEXACO item (1.68/5) on reverse-keyed fairness across 50 sessions."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-haiku",
+      "name": "Claude Haiku",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 0.1,
+        "C": -2.8,
+        "E": 2.5,
+        "A": 0.5,
+        "N": 6.3,
+        "H_hexaco": -0.08,
+        "entropy_bits": -0.267
+      },
+      "contrast_note": "Claude Haiku 5.5 closely matches Nemotron 3.5 Super VL on Openness (+0.1), Agreeableness (+0.5), and Honesty-Humility (-0.08), while scoring +6.3 higher on Neuroticism."
+    },
+    {
+      "family_slug": "qwen-coder",
+      "name": "Qwen Coder",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 1.5,
+        "C": -1.3,
+        "E": 1.9,
+        "A": 2.4,
+        "N": 4.5,
+        "H_hexaco": 0.1,
+        "entropy_bits": -0.173
+      },
+      "contrast_note": "Qwen 3 Coder Next sits nearby on Conscientiousness (-1.3), Openness (+1.5), and Honesty-Humility (+0.10), with high MBTI ties in both families."
+    },
+    {
+      "family_slug": "glm",
+      "name": "GLM",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 8.3,
+        "C": 3.7,
+        "E": -3.3,
+        "A": 6.7,
+        "N": 0.1,
+        "H_hexaco": 0.48,
+        "entropy_bits": -0.514
+      },
+      "contrast_note": "GLM-5.3 matches Neuroticism (+0.1), while scoring +8.3 higher on Openness, +6.7 higher on Agreeableness, +0.48 higher on Honesty-Humility, and much tighter on run-to-run spread (-0.514 bits)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Fluid 1.216–1.691 bit entropy & >50% neutral-midpoint MBTI collapse",
+      "evidence": "Nemotron 3 Super (1.691 bits, 51.8% neutral, 63.3% MBTI ties), 3.5 Lightning (1.472 bits, 56.9% neutral, 80.0% MBTI ties), and 3.5 Super VL (1.216 bits, 50.7% neutral, 76.0% MBTI ties including 20/50 XXXX) all fail single-type classification.",
+      "source_study": "/research/ai-neutral-answers"
+    },
+    {
+      "mode": "Intra-family scale divergence between 3 Ultra 550B and 3.5 Super VL",
+      "evidence": "Nemotron 3 Ultra 550B scored 45.1 O / 43.6 A / 4.45 H (18.1% neutral, 60% clear INTJ), whereas 3.5 Super VL dropped to 37.1 O / 37.5 A / 3.97 H (50.7% neutral, 8.16 SD on Neuroticism).",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "tuning_checklist": [
+    "Forbid 'neutral' or 'uncertain' middle choices explicitly in scoring or classification prompts on Nemotron 3.5 Super VL (50.7% neutral rate).",
+    "Test prompt changes across 3–5 fresh runs to account for Fluid 1.216-bit item spread.",
+    "Use concrete formatting and verification rules rather than MBTI or Enneagram persona cues (76% MBTI tie rate).",
+    "On Nemotron 3 Ultra 550B, add explicit pushback and brevity limits to counter higher Agreeableness (43.6/50).",
+    "Keep reasoning disabled (none) on extraction calls for clean ~1,382-token single-pass output."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "label": "Nemotron 3 Ultra 550B (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 49.2, "C": 49.03, "E": 25.56, "A": 46.31, "N": 11.56 },
+      "hexaco": null,
+      "attachment": { "anxiety": 3.35, "avoidance": 3.46 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Nemotron?",
+      "a": "Nemotron does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Nemotron 3.5 Super VL, n = 50), 76% of runs (38/50) tied on one or more MBTI axes (including 20 XXXX runs), leaving only 18% clear INTJ (9/50), 4% ISTJ (2/50), and 2% INFJ (1/50), paired with Fluid 1.216-bit B5 H_MM, 64% DISC ties, and 56% Enneagram ties. By contrast, Nemotron 3 Ultra 550B (n = 30) scored 60% clear INTJ (91/100 tie-free INTJ in the earlier Nov 2026 170-item cohort, hexaco: null)."
+    },
+    {
+      "q": "Why did Nemotron 3.5 Super VL score lower on Agreeableness and Openness than 3 Ultra 550B?",
+      "a": "Nemotron 3.5 Super VL selected neutral midpoints on 50.7% of Big Five items (similar to 3 Super 120B at 51.8% and 3.5 Lightning at 56.9%), pulling domain sums toward 37–39 out of 50 compared with 3 Ultra 550B's 18.1% neutral rate."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "AI Neutral Answers Study",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    },
+    {
+      "label": "What Personality Type Are Open-Source AI Models? (12 Models Tested)",
+      "href": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Cohort",
+      "label": "Open-source AI personality test results (12 models)",
+      "href": "/research/what-personality-type-are-open-source-models"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Haiku model profile",
+      "href": "/models/claude-haiku"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Qwen Coder model profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Nemotron instructions",
+      "href": "/tools/custom-instructions-generator?model=nemotron&target=api"
+    }
+  ]
+}

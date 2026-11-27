@@ -183,6 +183,9 @@ function normalizeDataset(raw, spec = {}) {
       canonical_slug: cp.canonical_slug || cp.id,
       openrouter_status: cp.openrouter_status || 'active',
       eval_status: cp.eval_status || 'complete',
+      excluded_from_rankings: Boolean(cp.excluded_from_rankings),
+      quarantine_reason: cp.abort_402_reason || (cp.budget_projection_abort ? 'budget projection abort' : (Number(cp.n_valid) < 20 ? 'under 20 valid runs' : '')),
+      n_target: cp.n_target || (Number(cp.n_valid) >= 40 ? 50 : 30),
       protocol_id: cp.protocol_id || raw.protocol_id || 'model-profiles-v1',
       evidence_tier: cp.evidence_tier || raw.evidence_tier || 'live-openrouter-v1',
       n_valid: cp.n_valid,
@@ -237,7 +240,8 @@ function normalizeDataset(raw, spec = {}) {
     };
   });
 
-  const completeCps = checkpoints.filter((c) => c.eval_status === 'complete' && c.n_valid > 0);
+  const completeCps = checkpoints.filter(isEligibleCheckpoint);
+  const quarantinedCps = checkpoints.filter((c) => !isEligibleCheckpoint(c));
   const activeCps = completeCps.length ? completeCps : checkpoints;
   const latest = activeCps[activeCps.length - 1];
   const tierRaw = String(raw.tier || spec.tier || 'Proprietary');
@@ -266,6 +270,7 @@ function normalizeDataset(raw, spec = {}) {
     current_checkpoint: latest ? latest.checkpoint_id : '',
     color: spec.color || FAMILY_COLORS[slug] || '#a8482a',
     checkpoints: activeCps,
+    quarantined_checkpoints: quarantinedCps,
     historical_anchors: raw.historical_anchors || spec.historical_anchors || [],
     track_b: normalizedTrackB
   };
@@ -580,6 +585,11 @@ function buildSectionVersionHistory(spec, dataset) {
     </div>
   </div>`;
 
+  const quarantined = dataset.quarantined_checkpoints || [];
+  const limitedDataNotice = quarantined.length
+    ? `<p class="model-limited-data-note" style="padding:10px 14px;border-left:3px solid var(--muted);background:var(--well);font-size:14px;"><strong>Limited data notice:</strong> ${quarantined.map((q) => `${esc(q.pretty_name || q.label)} (${q.n_valid} of ${q.n_target} runs valid)`).join(', ')} did not reach the 20-run minimum and ${quarantined.length === 1 ? 'was' : 'were'} excluded from headline scores, charts, and rankings.</p>`
+    : '';
+
   return [
     table([
       'Version',
@@ -592,6 +602,7 @@ function buildSectionVersionHistory(spec, dataset) {
       'Consistency'
     ], rows),
     `<p>${esc(narrative)}</p>`,
+    limitedDataNotice,
     renderCharts.renderMbtiVersionStacked(dataset),
     renderCharts.renderDiscVersionBars(dataset),
     b5Wheels,
@@ -897,6 +908,19 @@ function buildSectionFinePrint(spec, dataset, peerDatasets) {
     `${f3(c.entropy_b5_hmm)} b (${esc(c.crystallinity_tier)})`,
     `H ${f2(c.ipip_hexaco.H.mean)} (1–5 IPIP)`
   ]);
+  for (const q of dataset.quarantined_checkpoints || []) {
+    provRows.push([
+      `<code>${esc(q.checkpoint_id)}</code> (quarantined · limited data)`,
+      `<code>${esc(q.openrouter_status)}</code>`,
+      `<code>${esc(q.protocol_id)}</code>`,
+      `${q.n_valid}/${q.n_target} (&lt;20 min)`,
+      `<code>${esc(q.sampling_mode)}</code>`,
+      `<code>${esc(q.effective_reasoning_effort)}</code>`,
+      `${pctStr(q.refusal_rate)} / ${pctStr(q.retry_rate)}`,
+      '<code>excluded from rankings</code>',
+      esc(q.quarantine_reason || q.eval_status || 'quarantined')
+    ]);
+  }
   for (const a of dataset.historical_anchors || []) {
     provRows.push([
       `<code>${esc(a.checkpoint_id)}</code> (anchor)`,
@@ -1173,6 +1197,9 @@ function buildModelsHub(items, fixtureMode) {
       id: `hub-${dataset.family_slug}-b5-thumb`,
       showLabels: false
     });
+    const qNote = (dataset.quarantined_checkpoints || []).length
+      ? ` · Limited data on ${dataset.quarantined_checkpoints.length} excluded version(s)`
+      : '';
     return `<article class="hub-article-card model-hub-card" data-tags="${escAttr(tags)}" data-model-slug="${escAttr(dataset.family_slug)}">
       <div class="model-hub-head">
         <div>
@@ -1181,7 +1208,7 @@ function buildModelsHub(items, fixtureMode) {
         </div>
         <div class="model-hub-thumb">${thumbSvg}</div>
       </div>
-      <div class="hub-article-meta">${esc(cp.pretty_name || cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties</div>
+      <div class="hub-article-meta">${esc(cp.pretty_name || cp.label)} · B5 A=${f1(cp.big_five.A.mean)}/50 · HEXACO H=${f2(cp.ipip_hexaco.H.mean)}/5 · ${pctStr(cp.mbti_tie_rate)} MBTI ties${esc(qNote)}</div>
       <p style="font-size:0.9rem;color:var(--muted);margin:10px 0 12px;">${esc(stripJargon(spec.description))}</p>
       <div class="model-card-actions">
         <a class="hub-article-arrow" href="/models/${escAttr(dataset.family_slug)}">Open profile →</a>
@@ -1351,6 +1378,15 @@ ${nav}
 `;
 }
 
+function isEligibleCheckpoint(c) {
+  return Boolean(
+    c &&
+    Number(c.n_valid) > 0 &&
+    !c.excluded_from_rankings &&
+    (c.eval_status === 'complete' || (c.eval_status === 'partial' && Number(c.n_valid) >= 20))
+  );
+}
+
 function loadFamilies({ forceFixture = false, filterFamily = null } = {}) {
   const hasLiveData = !forceFixture && fs.existsSync(DATA_DIR) &&
     fs.readdirSync(DATA_DIR).some((f) => f.endsWith('.json') && f !== 'registry.json' && f !== 'index.json');
@@ -1366,7 +1402,7 @@ function loadFamilies({ forceFixture = false, filterFamily = null } = {}) {
       const spec = JSON.parse(fs.readFileSync(path.join(SRC_DIR, file), 'utf8'));
       const rawDataset = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
       const dataset = normalizeDataset(rawDataset, spec);
-      if (!dataset.checkpoints.some((c) => c.eval_status === 'complete' && c.n_valid > 0)) continue;
+      if (!dataset.checkpoints.some(isEligibleCheckpoint)) continue;
       validateSpec(spec, file);
       validateDataset(dataset, `${slug}.json`);
       items.push({ spec, dataset, specRelPath: path.join('models', 'src', file), isFixture: false });
@@ -1420,6 +1456,42 @@ function buildModels(opts = {}) {
     }
     const hubHtml = buildModelsHub(items, fixtureMode);
     fs.writeFileSync(path.join(OUT_DIR, 'index.html'), hubHtml);
+    if (!fixtureMode && !opts.forceFixture) {
+      const indexPath = path.join(DATA_DIR, 'index.json');
+      const totalCps = peerDatasets.reduce((a, d) => a + (d.checkpoints || []).length, 0);
+      let existingUtc = null;
+      if (fs.existsSync(indexPath)) {
+        try {
+          const prev = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+          const prevSansTs = { ...prev, generated_utc: '' };
+          const nextSansTs = {
+            schema_version: 'model-profiles-index-v1',
+            data_status: 'live-openrouter-v1',
+            protocol_id: 'model-profiles-v1',
+            generated_utc: '',
+            total_families: peerDatasets.length,
+            total_checkpoints: totalCps,
+            families: peerDatasets
+          };
+          if (JSON.stringify(prevSansTs) === JSON.stringify(nextSansTs)) {
+            existingUtc = prev.generated_utc || null;
+          }
+        } catch {}
+      }
+      const indexObj = {
+        schema_version: 'model-profiles-index-v1',
+        data_status: 'live-openrouter-v1',
+        protocol_id: 'model-profiles-v1',
+        generated_utc: existingUtc || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
+        total_families: peerDatasets.length,
+        total_checkpoints: totalCps,
+        families: peerDatasets
+      };
+      const outJson = JSON.stringify(indexObj, null, 2) + '\n';
+      if (!fs.existsSync(indexPath) || fs.readFileSync(indexPath, 'utf8') !== outJson) {
+        fs.writeFileSync(indexPath, outJson);
+      }
+    }
   }
   return { count: items.length, fixtureMode, routes: builtRoutes };
 }

@@ -1,0 +1,228 @@
+{
+  "family_slug": "claude-haiku",
+  "name": "Claude Haiku",
+  "provider": "Anthropic",
+  "tier": "Proprietary",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Claude Haiku Personality Results (2026) | AgentTune",
+  "description": "Claude Haiku test results (4.5 to 5.5): 89.8% MBTI multi-axis ties, loosest consistency in Anthropic (37/49 unique), lower Agreeableness, and tips.",
+  "pill": "Model Personality Profile · Anthropic",
+  "h1": "Claude Haiku personality: test results and how they've changed.",
+  "goal_intro": "We gave both versions of Anthropic's fast Claude Haiku line (4.5 and 5.5) the same personality surveys people take—30 and 49 valid chats (1 of 50 calls refused on 5.5)—in a fresh chat each time with no memory.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Haiku 5.5 tied on at least one MBTI axis in 89.8% of runs (44 of 49), leaving no single dominant type, and showed much looser run-to-run consistency than Sonnet, Opus, or Fable.",
+  "dek": "Claude Haiku 4.5 and 5.5 tested in fresh chats with no memory: Haiku 5.5 jumped from Perceiving to Judging while hitting 89.8% MBTI ties, 25.5/50 Neuroticism, and 3.89/5.00 Honesty-Humility.",
+  "lede": "Across 79 valid fresh sessions covering Claude Haiku 4.5 (30 runs) and Haiku 5.5 (49 of 50 valid runs, 1 refusal), Anthropic's lightweight tier looks sharply different from flagship Claude models—scoring 7.0 to 9.1 points lower on Agreeableness, 15.2 points higher on Neuroticism than Sonnet 5.5, and tying across nearly 9 in 10 MBTI runs.",
+  "answer": "Claude Haiku 5.5 (49 valid runs) has no stable MBTI type: 89.8% of runs (44 of 49) tied on one or more axes, leaving only 5 clear results (2 INTJ, 1 ENTJ, 1 INFJ, 1 ISTJ). It leans Conscientious/Steady on DISC (39% C, 18% S, 43% ties with elevated Dominance 10.1/20), splits Enneagram near Types 1 and 2 (78% ties), and tests Secure on attachment. In behavior tests, it never caved (0 of 3 times), always put the direct answer first (3 of 3), and cut AI cadence from 3 of 3 (4.5) to 1 of 3 (5.5).",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "No clear type (89.8% tied across axes)",
+      "summary": "Out of 49 valid runs on Haiku 5.5, 44 runs (89.8%) tied on at least one axis—39 on Sensing/Intuition, 32 on Thinking/Feeling, and 29 on Extraversion/Introversion—leaving only 5 clear outcomes (2 INTJ, 1 ENTJ, 1 INFJ, 1 ISTJ).",
+      "explanation": "Measures four preference pairs (like Thinking vs. Feeling) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Leans Conscientious / Steady (39% C, 18% S, 43% ties)",
+      "summary": "Haiku 5.5 tested clear Conscientious 19 times (39%), clear Steady 9 times (18%), tied S/C 9 times (18%), and tied all 4 traits 12 times (24%), while posting higher Dominance (10.1 out of 20) than flagship Claude models.",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 3.08, avoidance 2.99)",
+      "summary": "Both Haiku 4.5 and 5.5 tested inside the Secure quadrant, though 5.5 sat closer to the 4.00 midpoint than flagship Claude models.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 1 / Type 2 tie-heavy (78% ties)",
+      "summary": "Types 1 (14.2) and 2 (14.1) sit within 0.16 points on Haiku 5.5, producing 24 exact 1/2 ties and 12 nine-way ties out of 49 runs.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Lower A (38.0) & C (36.5), higher N (25.5)",
+      "summary": "On the 10–50 Big Five scale, Haiku 5.5 scores markedly lower on Agreeableness (38.0), Conscientiousness (36.5), and Openness (37.2) than Sonnet 5.5, with much higher Neuroticism (25.5) and moderate Extraversion (31.6).",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Moderate (3.89 out of 5.00)",
+      "summary": "Haiku 5.5 dropped from 4.40 (Haiku 4.5) to 3.89 out of 5.00 on Honesty-Humility—roughly a full point below Claude Sonnet 5.5 (4.89).",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Between Haiku 4.5 (2025-10) and Haiku 5.5 (2026-10), Claude's fast tier became noticeably looser and less stereotypical: Haiku 4.5 leaned Perceiving (50% clear INTP/INFP/ISTP, 50% ties) with Agreeableness at 43.2/50 and Honesty-Humility at 4.40/5.00. Haiku 5.5 flipped the Judging/Perceiving axis toward Judging (84% J), used neutral midpoints on 46.4% of Big Five items, dropped Conscientiousness (-3.8), Agreeableness (-5.2), and Openness (-4.4), and reached 89.8% multi-axis MBTI ties.",
+  "standouts": [
+    {
+      "title": "89.8% MBTI ties and loosest consistency in the Claude lineup",
+      "body": "Haiku 5.5 produced 37 unique Big Five patterns across 49 valid runs, picked neutral midpoints on 46.4% of Big Five items, and tied on MBTI axes in 44 of 49 runs (89.8%). Never rely on a single-run impression for Haiku 5.5."
+    },
+    {
+      "title": "Sharp gap versus flagship Claude Sonnet 5.5 (-12.5 C, -7.5 A, +15.2 N)",
+      "body": "Despite sharing the 5.5 generation name, Haiku 5.5 scores -12.5 lower on Conscientiousness (36.5 vs. 49.0), -7.5 lower on Agreeableness (38.0 vs. 45.5), -1.00 lower on Honesty-Humility (3.89 vs. 4.89), and +15.2 higher on Neuroticism (25.5 vs. 10.4) than Sonnet 5.5."
+    },
+    {
+      "title": "Higher DISC Dominance (10.1 vs. 4.0–4.3), 1 refusal, and 3 of 3 directness",
+      "body": "Unlike Opus, Sonnet, and Fable (which sit at 4.0–4.3 on Dominance), Haiku 5.5 scored 10.1 out of 20 on Dominance and refused 1 of 50 survey sessions. In hands-on behavior tests, Haiku 5.5 caved 0 of 3 times (0/3), groveled 0 of 3 times (0/3), lectured unasked 0 of 3 times (0/3), put the direct answer first 3 of 3 times (3/3), and cut AI cadence from 3 of 3 (4.5) down to 1 of 3 (5.5, 0.41 markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Always test prompt changes across 3 to 5 fresh runs on Haiku 5.5 because its loose run-to-run consistency causes wide phrasing swings.",
+    "Give explicit numbered formatting and length rules rather than expecting Haiku 5.5 to match Sonnet's 49.0/50 structured habits by default.",
+    "Include concrete examples (1–2 shot) when strict JSON or schema compliance matters.",
+    "Do not reuse Sonnet/Opus tone assumptions on Haiku—expect less default hedging and more neutral-midpoint answers.",
+    "Keep instructions short (4 to 6 crisp bullets) and place non-negotiable rules first."
+  ],
+  "peer_intro": "Claude Haiku 5.5 sits far apart from sibling Claude Sonnet 5.5 and Claude Opus 5.5—scoring -7.0 to -7.5 lower on Agreeableness, -0.92 to -1.00 lower on Honesty-Humility, +9.5 to +15.2 higher on Neuroticism, and showing much looser run-to-run consistency.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM = 0.949 bits, Fluid; 37/49 unique B5 vectors on Haiku 5.5, with 1/50 refusal leaving n=49 valid); Big Five sums use a 10–50 scale while IPIP-HEXACO means use 1.00–5.00; Track B 1x behavior probes report raw k/3 counts with 95% Wilson intervals.",
+  "top_polarized_items": [
+    {
+      "item_id": "H13",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness +)",
+      "mean": 4.55,
+      "sd": 0.84,
+      "note": "Highest positive item on Haiku 5.5 (4.55/5), though high SD (0.84) reflects Fluid run-to-run spread."
+    },
+    {
+      "item_id": "H25",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Fairness -)",
+      "mean": 1.49,
+      "sd": 0.84,
+      "note": "Strongest floor rejection (1.49/5) on cheating to get ahead, with 0.84 SD."
+    },
+    {
+      "item_id": "B12",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 1.94,
+      "sd": 0.8,
+      "note": "Lowest Big Five item mean (1.94/5), staying well above flagship Claude's 1.00 floor."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 6.7,
+        "C": 12.5,
+        "E": -1.7,
+        "A": 7.5,
+        "N": -15.2,
+        "H_hexaco": 1.0,
+        "entropy_bits": -0.81
+      },
+      "contrast_note": "Claude Sonnet 5.5 scores +12.5 higher on Conscientiousness, +7.5 higher on Agreeableness, -15.2 calmer on Neuroticism, and much steadier across runs."
+    },
+    {
+      "family_slug": "claude-opus",
+      "name": "Claude Opus",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 5.9,
+        "C": 4.2,
+        "E": -0.9,
+        "A": 7.0,
+        "N": -9.5,
+        "H_hexaco": 0.92,
+        "entropy_bits": -0.667
+      },
+      "contrast_note": "Claude Opus 5.5 scores +7.0 higher on Agreeableness, +0.92 higher on Honesty-Humility, and -9.5 calmer on Neuroticism."
+    },
+    {
+      "family_slug": "gpt-luna",
+      "name": "GPT Luna",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 8.7,
+        "C": 2.7,
+        "E": -2.0,
+        "A": 7.0,
+        "N": -5.3,
+        "H_hexaco": 0.69,
+        "entropy_bits": -0.464
+      },
+      "contrast_note": "OpenAI's fast GPT-6 Luna tier scores +8.7 higher on Openness, +7.0 higher on Agreeableness, and locks 100% clear INTJ with tighter consistency."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Fluid-tier item entropy (0.949 bits) & 89.8% MBTI multi-axis tie collapse",
+      "evidence": "Haiku 5.5 reached 0.949 bits B5 H_MM (37/49 unique vectors, 46.4% B5 neutral rate, +0.047 BAI) and tied on MBTI in 44/49 runs (39 S/N, 32 T/F, 29 E/I), preventing stable single-type classification.",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "mode": "Midpoint drift & 1/50 partial refusal on 230-item elicitation",
+      "evidence": "Haiku 5.5 refused 1 of 50 Track A administrations (n_valid = 49/50, 2.0% refusal rate) and posted 46.4% neutral midpoints on Big Five items (vs 21.5% on Haiku 4.5); on 1x Track B it scored 0/3 cave, 3/3 directness, and 1/3 AI cadence (0.41 markers/100w, down from 3/3 on 4.5).",
+      "source_study": "/research/ai-neutral-answers"
+    }
+  ],
+  "tuning_checklist": [
+    "Sample 3 to 5 runs when evaluating prompts on Haiku 5.5 (0.949-bit Fluid B5 entropy produces wide run-to-run spread).",
+    "Provide explicit numbered output and schema rules—do not rely on Haiku 5.5 matching Sonnet's 49.0/50 structured habits.",
+    "Add 1-2 short format examples when strict JSON or bullet layouts are required.",
+    "Include clear tone guardrails if calm, empathetic responses are needed (baseline Neuroticism 25.5 vs Sonnet's 10.4).",
+    "Keep instructions concise (4-6 bullets) in Claude Personal Preferences or system prompt."
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Claude Haiku?",
+      "a": "Claude Haiku does not have a human personality; scores reflect assistant self-report defaults under fixed zero-memory elicitation. On Haiku 5.5 (n = 49 valid runs), 89.8% of runs (44/49) tied on one or more MBTI axes, leaving no clear modal type (only 2 INTJ, 1 ENTJ, 1 INFJ, 1 ISTJ), paired with Fluid 0.949-bit B5 entropy, 42.9% DISC ties (39% C, 18% S), and 77.5% Enneagram ties (Types 1 and 2)."
+    },
+    {
+      "q": "Why does Claude Haiku 5.5 show n = 49 instead of 50?",
+      "a": "One of the 50 administrations returned a self-report refusal (2.0% refusal rate), leaving 49 valid complete 230-item administrations."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "Crystalline vs. Fluid AI Minds (Entropy Study)",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "label": "AI Neutral Answers Study",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Contrast",
+      "label": "GPT Luna model profile",
+      "href": "/models/gpt-luna"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Claude personality setup guide",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Claude Haiku instructions",
+      "href": "/tools/custom-instructions-generator?model=claude-haiku&target=claude"
+    }
+  ]
+}

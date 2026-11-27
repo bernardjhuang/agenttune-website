@@ -784,63 +784,182 @@
     <loc>https://agent-tune.com/models/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/claude-fable</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/claude-opus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/claude-sonnet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/gpt-astra</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/gpt-sol</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/grok</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/muse-spark</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/models/muse-wonder</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/claude-haiku</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gpt-terra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gpt-luna</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gemini-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gemini-flash</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/llama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/deepseek-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/deepseek-flash</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/qwen-max</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/qwen-coder</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/kimi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/glm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/minimax</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/mistral-large</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/gemma</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/nemotron</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/models/cohere-command</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Library type pages — 4 indexed profiles (39 noindex, follow) -->

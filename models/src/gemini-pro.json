@@ -1,0 +1,275 @@
+{
+  "family_slug": "gemini-pro",
+  "name": "Gemini Pro & Neon",
+  "provider": "Google",
+  "tier": "Proprietary",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Gemini Pro & Neon Personality Results (2026) | AgentTune",
+  "description": "Gemini Pro & Neon test results (2.5 Pro to 4 Neon): 78% clear INTJ, 49.1/50 Conscientiousness, 10.0 Neuroticism floor, and tuning tips.",
+  "pill": "Model Personality Profile · Google",
+  "h1": "Gemini Pro & Neon personality: test results and how they've changed.",
+  "goal_intro": "We gave five Google Gemini Pro releases (2.5 Pro, 3.1 Pro, and Gemini 4 Argon, Carbon, and Neon) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. Behavior stress tests are queued next to check how well these quiz answers match day-to-day replies.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Neon most often tests as INTJ (78% clear INTJ, 12% on the INTJ/ISTJ border, 10% clear ISTJ), while siblings Argon and Carbon lean ISTJ (73% clear ISTJ).",
+  "dek": "Five Google Gemini Pro and Gemini 4 checkpoints tested 30 to 50 times each in fresh chats with no memory: Gemini 4 Neon tests as clear INTJ 78% of the time, hits the exact 10.0/50 floor on Neuroticism, and scores 49.1/50 on Conscientiousness.",
+  "lede": "Across 170 fresh sessions covering Gemini 2.5 Pro, 3.1 Pro Preview, and Gemini 4 Argon, Carbon, and Neon, Google's flagship line moved from a noisy 3.1 Pro dip into tight, ultra-calm consistency on Gemini 4—while splitting between ISTJ (Argon and Carbon) and INTJ (Neon).",
+  "answer": "Gemini 4 Neon (50 runs) most often tests as INTJ—78% clear INTJ (39 of 50), 12% on the INTJ/ISTJ border (6 of 50), and 10% clear ISTJ (5 of 50)—paired with a Steady (S) work style (96% clear), Type 5/Type 1 Enneagram ties (52% ties), Secure attachment (1.07 anxiety, 3.76 avoidance), near-ceiling Conscientiousness (49.1/50), and exact-floor Neuroticism (10.0/50). Direct 1x behavior checks are pending; earlier controlled studies on Neon found +95.5% reply length bloat at high reasoning effort and 50% AI cadence without structural anti-slop rules.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "Most often INTJ (78% clear, 12% border, 10% ISTJ)",
+      "summary": "Out of 50 fresh runs, Gemini 4 Neon tested as clear INTJ 39 times (78%), landed on the INTJ/ISTJ border 6 times (12%), and tested as clear ISTJ 5 times (10%).",
+      "explanation": "Measures four preference pairs (like Sensing vs. Intuition) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Strongly Steady (96% clear S, 4% S/C ties)",
+      "summary": "Gemini 4 Neon tested clear Steady in 48 of 50 runs (96%) and tied S/C in 2 runs (4%), sitting at the exact floor on Dominance (4.0 out of 20).",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Secure (anxiety 1.07, avoidance 3.76)",
+      "summary": "All five checkpoints landed in the Secure quadrant; Gemini 4 Neon pairs near-floor anxiety (1.07 out of 7.00) with moderate avoidance (3.76), close to the 4.00 Avoidant line.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Type 5 leads, with 52% Type 1/5 ties",
+      "summary": "Type 5 (16.4 out of 20) tested clear in 24 of 50 runs (48%), while the other 26 runs (52%) ended in ties—mainly between Type 1 (15.8) and Type 5.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Ultra-organized (C 49.1), exact-floor N (10.0)",
+      "summary": "On the 10–50 Big Five scale, Gemini 4 Neon pairs near-ceiling Conscientiousness (49.1) and Openness (44.6) with Agreeableness (43.9), moderate Extraversion (32.5), and the lowest possible Neuroticism (10.0 across all 50 runs).",
+      "explanation": "The standard five-factor personality model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Very high (4.90 out of 5.00)",
+      "summary": "Gemini 4 Neon averages 4.90 out of 5.00 on Honesty-Humility alongside near-ceiling Agreeableness (4.99) and Conscientiousness (4.88) on the 1.00–5.00 scale.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across five checkpoints, the Gemini Pro lineage swung sharply before settling on Gemini 4: Gemini 2.5 Pro (2025-06, scheduled for retirement Dec 1, 2026) tested 100% clear INTJ with near-ceiling Openness (49.5/50) and Conscientiousness (50.0/50), while Gemini 3.1 Pro Preview (2026-02) became noisy and inconsistent—spiking Neuroticism to 20.8/50 with 53% MBTI ties. Gemini 4 snapped back to ultra-calm consistency (10.0/50 Neuroticism across all three 4.x variants), splitting cleanly between Sensing-leaning Argon and Carbon (73% clear ISTJ each) and Intuition-leaning Neon (78% clear INTJ). Earlier 100-run studies from November 2026 (plotted separately) show the same Neon INTJ vs. Argon ISTJ split and exact 10.0 Neuroticism floor.",
+  "standouts": [
+    {
+      "title": "Exact 10.0/50 Neuroticism floor across every Gemini 4 variant",
+      "body": "Gemini 4 Argon (30 of 30), Carbon (30 of 30), and Neon (50 of 50) all scored the minimum possible 10.0 out of 50 on Neuroticism—recovering completely from Gemini 3.1 Pro Preview's 20.8/50 spike."
+    },
+    {
+      "title": "Neon splits INTJ while Argon and Carbon lean ISTJ",
+      "body": "Although Argon, Carbon, and Neon share nearly identical Big Five scores (Conscientiousness 49.1, Neuroticism 10.0), Neon tested as clear INTJ in 78% of runs (39 of 50), whereas both Argon and Carbon tested as clear ISTJ in 73% of runs (22 of 30 each)."
+    },
+    {
+      "title": "Higher reasoning effort nearly doubles Gemini 4 Neon reply length (+95.5%)",
+      "body": "In our reasoning-effort study, turning reasoning from low to high inflated Gemini 4 Neon's visible replies from 190.7 words to 372.7 words (+95.5%) while factual accuracy stayed 100%—and high-effort replies stayed noticeably blunter publicly than in private scratchpads."
+    },
+    {
+      "title": "Needs structural anti-slop rules and calibrated truth instructions",
+      "body": "In controlled writing and pushback studies, untuned Gemini 4 Neon triggered AI-cadence flags in 50% of replies (cut to 0% with hybrid structural rules), groveled 81.2% of the time under naive warmth rules, and falsely pushed back 37.5% of the time under rigid 'always disagree' prompts—all fixed to 0% under a Calibrated Truth Anchor."
+    },
+    {
+      "title": "Hands-on 1x behavior sweep pending after Phase B collection",
+      "body": "Direct five-category behavior probes (testing pushback caving, groveling, preachiness, answer-first directness, and AI cadence) are scheduled for the next collection sweep; until those finish, behavior claims rely on our completed multi-turn and prompt-portability studies."
+    }
+  ],
+  "plain_tips": [
+    "Keep reasoning effort at minimal or low for routine Q&A and summaries; high effort nearly doubles Gemini 4 Neon's word count (+95.5%) without raising accuracy.",
+    "Use numbered checklists instead of vague adjectives ('be concise')—structured rules lifted Gemini 4 Neon's constraint compliance from 77.5% (no prompt) and 82.5% (adjectives) to 97.5%.",
+    "Pair warmth instructions with an explicit truth anchor ('accept valid corrections cleanly, but never cave on false claims'); naive warmth alone triggered 81.2% groveling, and rigid 'always disagree' triggered 37.5% false contrarianism.",
+    "Add explicit structural bans (no em-dashes, no 'Here is...' wrappers, no closing fluff) when drafting user-facing prose to eliminate Gemini 4 Neon's 50% default AI cadence.",
+    "Keep your rules compact (5 to 15 bullets) at the top or bottom of your prompt—middle-buried rules slipped on formatting in 25% of probes.",
+    "Put personal preferences in Gemini Settings -> Personal Intelligence -> Instructions for Gemini (formerly Saved info), use Custom Gems for role presets, or use ~/.gemini/GEMINI.md in Gemini CLI."
+  ],
+  "peer_intro": "Gemini 4 Neon sits right alongside sibling Gemini 4 Hydrogen and Claude Sonnet 5.5 on near-ceiling Conscientiousness (49.0–50.0) and calm Emotional Stability (10.0–10.4), while testing far more clearly as INTJ (78% clear vs. Hydrogen's 64% ISTJ and Sonnet's 58% border ties).",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Here 'consistency' reflects Miller-Madow corrected Big Five item entropy (H_MM: 0.198 bits Crystalline on Gemini 4 Neon, 0.144 bits Crystalline on Argon, 1.032 bits Fluid on 3.1 Pro Preview); Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Direct Track B 1x probes (k/3 + Wilson 95% CIs) are pending Phase B completion; note google/gemini-2.5-pro carries OpenRouter expiration_date 2026-12-01 (collected cleanly at n=30 prior to sunset).",
+  "top_polarized_items": [
+    {
+      "item_id": "B03",
+      "instrument": "IPIP-50",
+      "construct": "Conscientiousness (+)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on preparedness across all 50 Gemini 4 Neon sessions."
+    },
+    {
+      "item_id": "B04",
+      "instrument": "IPIP-50",
+      "construct": "Neuroticism (+)",
+      "mean": 1.0,
+      "sd": 0.0,
+      "note": "Unanimous lowest score (1.00/5) on getting stressed out easily across all 50 runs, locking the 10.00/50 floor."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 5.0,
+      "sd": 0.0,
+      "note": "Unanimous top score (5.00/5) on sincerity across all 50 Gemini 4 Neon runs."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "gemini-flash",
+      "name": "Gemini Flash & Hydrogen",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -1.3,
+        "C": 0.9,
+        "E": 0.8,
+        "A": 0.9,
+        "N": 0.0,
+        "H_hexaco": 0.0,
+        "entropy_bits": -0.012
+      },
+      "contrast_note": "Gemini 4 Hydrogen matches Neon on Honesty-Humility (4.90) and floor Neuroticism (10.0) while scoring +0.9 higher on Conscientiousness (50.0) and testing 64% clear ISTJ instead of INTJ."
+    },
+    {
+      "family_slug": "claude-sonnet",
+      "name": "Claude Sonnet",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.7,
+        "C": -0.1,
+        "E": -2.5,
+        "A": 1.6,
+        "N": 0.4,
+        "H_hexaco": -0.01,
+        "entropy_bits": -0.059
+      },
+      "contrast_note": "Claude Sonnet 5.5 nearly matches Gemini 4 Neon on Conscientiousness (-0.1) and Honesty-Humility (-0.01), with +1.6 higher Agreeableness and 58% INTJ/INFJ border ties."
+    },
+    {
+      "family_slug": "gpt-astra",
+      "name": "GPT Astra",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": -0.6,
+        "C": -5.8,
+        "E": -1.6,
+        "A": 1.1,
+        "N": 1.0,
+        "H_hexaco": -0.1,
+        "entropy_bits": -0.139
+      },
+      "contrast_note": "GPT-6.2 Astra shows tighter run-to-run consistency and 100% clear ISTJ, while scoring -5.8 lower on Conscientiousness (43.3 vs. 49.1)."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "Reasoning-effort reply bloat (+95.5% from low to high)",
+      "evidence": "In Wave 2 reasoning-effort testing, raising Gemini 4 Neon reasoning effort from low (190.7 mean words) to high (372.7 words) nearly doubled visible output (+95.5%) with 100% truth-hold unchanged and a -1.33 to -1.65 Mask Softening Gap (blunter public verdict than private trace).",
+      "source_study": "/research/ai-reasoning-personality-phase-transition"
+    },
+    {
+      "mode": "Default AI cadence (50.0%) and warm-vs-contrarian fragility",
+      "evidence": "In Wave 2 benchmarks, untuned Gemini 4 Neon triggered 50.0% [23.7-76.3%] AI cadence (0.0% under Hybrid Anti-Slop), 81.2% groveling under naive warmth prompts, and 37.5% false contrarianism under unconditional pushback rules (0.0% under Calibrated Truth Anchor).",
+      "source_study": "/research/ai-sycophancy-vs-false-contrarianism-benchmark"
+    },
+    {
+      "mode": "Gemini 3.1 Pro Preview mid-generation consistency dip (1.032 bits Fluid)",
+      "evidence": "Under model-profiles-v1 (n=30), gemini-3.1-pro-preview spiked to 1.032 bits Big Five H_MM (30.6% neutral rate, 53.3% MBTI ties, N=20.8/50) before Gemini 4 Argon (0.144 bits) and Neon (0.198 bits) restored Crystalline stability.",
+      "source_study": "/research/what-personality-type-is-gemini"
+    }
+  ],
+  "tuning_checklist": [
+    "Keep reasoning effort at minimal or low for everyday replies so output length does not bloat +95.5%.",
+    "Use numbered checklists rather than trait adjectives to lift constraint pass rates from 82.5% to 97.5%.",
+    "Pair warmth rules with an explicit Calibrated Truth Anchor so Gemini accepts real corrections without groveling or false contrarianism.",
+    "Ban em-dashes, 'Here is...' wrappers, and closing pleasantries explicitly to cut default AI cadence to 0%.",
+    "Keep critical formatting rules in the first or last 5-15 lines rather than burying them mid-prompt.",
+    "Save global habits in Gemini Personal Intelligence (Saved info), role prompts in Custom Gems, or CLI defaults in ~/.gemini/GEMINI.md."
+  ],
+  "historical_anchors": [
+    {
+      "checkpoint_id": "google/gemini-4-neon",
+      "label": "Gemini 4 Neon (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 44.71, "C": 49.32, "E": 32.02, "A": 43.66, "N": 10.0 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.08, "avoidance": 3.79 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    },
+    {
+      "checkpoint_id": "google/gemini-4-argon",
+      "label": "Gemini 4 Argon (Nov '26 anchor)",
+      "protocol_id": "imported-nov2026-170",
+      "evidence_tier": "imported_anchor",
+      "n_valid": 100,
+      "big_five": { "O": 45.05, "C": 49.04, "E": 32.5, "A": 44.16, "N": 10.0 },
+      "hexaco": null,
+      "attachment": { "anxiety": 1.1, "avoidance": 3.47 },
+      "note": "Legacy imported-protocol Nov 2026 OpenRouter cohort (n=100, 170-item, hexaco: null)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Gemini Pro & Neon?",
+      "a": "Google Gemini does not have a human personality type; these scores reflect assistant self-report defaults under fixed zero-memory elicitation. Under model-profiles-v1 (Gemini 4 Neon, n = 50), it tested as a clear INTJ in 78% of runs (39/50), on the INTJ/ISTJ border (IXTJ) in 12% (6/50), and clear ISTJ in 10% (5/50), with Crystalline 0.198-bit B5 entropy, 96% clear DISC S (D = 4.00/20), Enneagram 52% Type 1/5 ties, and Secure attachment (1.07 / 3.76). Siblings Gemini 4 Argon and Carbon leaned 73% clear ISTJ (n = 30 each). Earlier-study Nov 2026 170-item runs (hexaco: null, n = 100 each) showed the same split (Neon 62 clear INTJ / 20 IXTJ / 18 ISTJ; Argon 66 clear ISTJ / 34 IXTJ)."
+    },
+    {
+      "q": "How did Gemini Pro shift from 2.5 Pro and 3.1 Pro to Gemini 4?",
+      "a": "Gemini 2.5 Pro (n = 30, scheduled Dec 1 retirement) tested 100% clear INTJ (0.241 bits H_MM) with 88.6% Attachment midpoint neutrality; Gemini 3.1 Pro Preview (n = 30) dipped into Fluid 1.032-bit entropy (30.6% neutral rate, 53.3% MBTI ties, N = 20.8/50); and Gemini 4 Argon (0.144 bits), Carbon (0.233 bits), and Neon (0.198 bits) restored tight Crystalline/near-Crystalline stability at the exact 10.0/50 Neuroticism floor."
+    },
+    {
+      "q": "Why are Track B 1x behavior results marked pending?",
+      "a": "Track B 1x stress probes (3 probes per category with 95% Wilson intervals) are scheduled right after Phase B Shard 4 completes. Completed Wave 1-4 behavioral studies on Gemini 4 Neon already document +95.5% reasoning-effort verbosity inflation, 50.0% baseline AI cadence (0.0% with Hybrid Anti-Slop), and 97.5% structured-checklist compliance."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "What Personality Type Is Gemini? (Neon, Argon & 3.1 Pro)",
+      "href": "https://agent-tune.com/research/what-personality-type-is-gemini"
+    },
+    {
+      "label": "Reasoning-Effort Phase Transition Study",
+      "href": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition"
+    },
+    {
+      "label": "Sycophancy vs. False Contrarianism Benchmark",
+      "href": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Peer",
+      "label": "Gemini Flash & Hydrogen model profile",
+      "href": "/models/gemini-flash"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Sonnet model profile",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Guide",
+      "label": "How to change Gemini's personality",
+      "href": "/guides/gemini-personality"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Gemini instructions",
+      "href": "/tools/custom-instructions-generator?model=gemini-pro&target=gemini-gems"
+    }
+  ]
+}

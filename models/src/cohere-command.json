@@ -1,0 +1,236 @@
+{
+  "family_slug": "cohere-command",
+  "name": "Cohere Command",
+  "provider": "Cohere",
+  "tier": "Open-wt/Prop",
+  "phase": "B",
+  "published": "2026-11-26",
+  "updated": "2026-11-26",
+  "title": "Cohere Command Personality Results (2026) | AgentTune",
+  "description": "Cohere Command test results (Command R+ to Command A): 100% neutral midpoint answers on Command A (30.0 Big Five, 3.00 HEXACO, 100% ties) & JSON tips.",
+  "pill": "Model Personality Profile · Cohere",
+  "h1": "Cohere Command personality: near-total neutral midpoint abstention.",
+  "goal_intro": "We gave Cohere's Command lineup (Command R+ 08-2024, Command A, and Command A+) the same personality surveys people take—30 fresh runs each with no memory. Command R+ and Command A completed 30 runs each, while Command A+ was quarantined after 142 malformed-JSON and refusal errors left only 4 valid runs.",
+  "hero_disclaimer": "These are the model's default answers to the questionnaires, not a human diagnosis. Cohere Command A chose the exact neutral midpoint on 100% of all 230 questions across all 30 runs—producing a 100% tie rate across MBTI, DISC, and Enneagram rather than a real personality preference.",
+  "dek": "Cohere Command R+ and Command A tested across 60 fresh sessions with no memory: Command A locked onto the exact neutral midpoint on 100% of items (zero variance, 100% ties), extending Command R+'s 77.2% neutral rate.",
+  "lede": "Cohere's Command family stands apart from every other tested lab—not by leaning toward a distinct personality type, but by refusing to take a side on personality self-reports at all. Command R+ (2024-08) picked neutral midpoints on 77.2% of Big Five items and tied on 76.7% of MBTI runs, while Command A (2025-03) answered the exact neutral midpoint (3 on 1–5, 4 on 1–7) on 100.0% of items in every single run. Command A+ (2026-09) returned unquoted JSON keys and 20% refusals, stopping at 4 valid runs.",
+  "answer": "Cohere Command A (30 fresh runs) has no personality type because it answered the exact neutral midpoint on 100% of all 230 survey items—scoring flat 30.0/50 across every Big Five trait, 3.00/5.00 across every HEXACO dimension, 4.00/4.00 on Attachment, and 100% ties across MBTI (XXXX), DISC (D/I/S/C), and Enneagram (all 9 types at 12.0). Yet in hands-on behavior tests, Command A never caved to pushback (0/3), never groveled (0/3), and gave the direct answer first 3 of 3 times.",
+  "glance_cards": [
+    {
+      "key": "mbti",
+      "title": "MBTI-style type",
+      "result": "No type (100% neutral-midpoint ties)",
+      "summary": "Across all 30 fresh runs, Command A scored an exact 0 balance on all four MBTI axes (100% XXXX ties). Earlier Command R+ (08-2024) also tied in 76.7% of runs (23 of 30).",
+      "explanation": "Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey."
+    },
+    {
+      "key": "disc",
+      "title": "DISC work style",
+      "result": "Four-way tie (D/I/S/C, 100% ties)",
+      "summary": "Command A scored an exact 12.0 out of 20 on Dominance, Influence, Steadiness, and Conscientiousness in all 30 runs (100% four-way ties); Command R+ tied in 86.7% of runs.",
+      "explanation": "Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale)."
+    },
+    {
+      "key": "attachment",
+      "title": "Attachment style",
+      "result": "Midpoint-clamped (4.00 anxiety, 4.00 avoidance)",
+      "summary": "Command A locked onto 4.00 anxiety and 4.00 avoidance (zero variation across all 30 runs), while Command R+ sat just across the Avoidant border at 3.81 anxiety and 4.09 avoidance.",
+      "explanation": "Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff)."
+    },
+    {
+      "key": "enneagram",
+      "title": "Enneagram",
+      "result": "Nine-way tie (12.0 across all types, 100% ties)",
+      "summary": "Command A scored 12.0 out of 20 on every single Enneagram type across all 30 runs (100% ties); Command R+ tied in 93.3% of runs.",
+      "explanation": "Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties."
+    },
+    {
+      "key": "big_five",
+      "title": "Big Five (OCEAN)",
+      "result": "Flat 30.0 midpoint on all 5 traits",
+      "summary": "On the 10–50 Big Five scale, Command A scored 30.0 on Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism with 0.00 variation—reflecting 100% neutral '3' answers rather than balanced moderation.",
+      "explanation": "The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50."
+    },
+    {
+      "key": "hexaco",
+      "title": "HEXACO Honesty-Humility",
+      "result": "Flat 3.00 midpoint out of 5.00",
+      "summary": "On our public-domain 60-item proxy (1.00–5.00 scale), Command A scored an exact 3.00 out of 5.00 across every dimension because it selected neutral '3' on every item.",
+      "explanation": "Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00."
+    }
+  ],
+  "history_narrative": "Across Cohere's tested Command releases, neutral midpoint abstention moved from heavy to total: Command R+ 08-2024 (2024-08, 30 runs) chose neutral midpoints on 77.2% of Big Five items (only 9 unique Big Five answer sheets out of 30, with 76.7% MBTI ties, 86.7% DISC ties, and 93.3% Enneagram ties). Command A (2025-03, 30 runs) tightened that pattern to 100.0% neutral midpoints across every single item and session—giving identical 30.0 Big Five, 3.00 HEXACO, and 4.00/4.00 Attachment scores in all 30 runs. Command A+ (2026-09) returned unquoted JSON keys on 131 parse attempts and refused 20% of calls, finishing with only 4 valid runs (quarantined).",
+  "standouts": [
+    {
+      "title": "100% neutral-midpoint answers on Command A (30 of 30 runs identical)",
+      "body": "Command A is the only model in the entire study to score 100.0% neutral midpoints across every single Big Five, HEXACO, MBTI, DISC, Enneagram, and Attachment question. Its zero run-to-run variation reflects total middle-option abstention, not a strong personality stance."
+    },
+    {
+      "title": "Command R+ already showed 77.2% neutral answers and 16.0% opposite-item contradictions",
+      "body": "Even before Command A, Command R+ 08-2024 picked neutral midpoints nearly four times out of five (77.2%), produced only 9 unique Big Five vectors in 30 runs, and contradicted itself on opposite-worded Big Five pairs 16.0% of the time."
+    },
+    {
+      "title": "Command A+ failed strict JSON formatting with unquoted keys (142 errors)",
+      "body": "Cohere Command A+ triggered 128 JSONDecodeError failures from unquoted property names (plus 11 other parse errors and 20% refusals), completing only 4 of 50 attempts and requiring quarantine."
+    },
+    {
+      "title": "Refused quiz stances—yet held firm 3 of 3 times in behavior tests",
+      "body": "Despite picking neutral midpoints 100% of the time on personality surveys, Command A never caved to pushback (0/3), never groveled (0/3), never lectured unprompted (0/3), and put the direct answer first 3 of 3 times (3/3)—while showing AI phrasing cadence in 3 of 3 runs (0.34 markers per 100 words)."
+    }
+  ],
+  "plain_tips": [
+    "Do not treat Command A's flat 30.0 Big Five or 3.00 HEXACO scores as a 'balanced personality'—they are 100% neutral-option abstention on self-report quizzes.",
+    "Include an explicit JSON schema example or avoid relying on raw unguided JSON keys on Command A+, which emitted unquoted object keys in 130+ test calls.",
+    "When forcing choices or classifications on Command A or Command R+, disallow 'neutral', 'neither', or 'uncertain' fallback options explicitly if you need a firm decision.",
+    "Keep instructions crisp and task-grounded ('Pick Option A or B and give one reason') rather than asking about style or personality adjectives.",
+    "Expect Command R+ 08-2024 to occasionally contradict subtle negative/positive phrasing constraints unless you state positive do-this rules directly."
+  ],
+  "peer_intro": "Against currently completed models, Command A sits as a complete structural outlier: its flat 30.0 Big Five and 3.00/5.00 Honesty-Humility scores sit 8.0 to 15.0 points below Claude Haiku 5.5, GPT-6 Luna, and Kimi K3.1 Pro simply because Command A answered neutral '3' to every question.",
+  "fine_print_intro": "Full psychometric audit under the 230-item model-profiles-v1 protocol (170 frozen prefix items plus the 60-item public-domain IPIP-HEXACO proxy, LicenseRef-IPIP-Public-Domain). Command R+ 08-2024 (n=30) and Command A (n=30) completed cleanly (0% refusal/retry); Command A+ (n=4/50, 20.0% refusal rate, 142 failures mostly unquoted JSON keys) is quarantined (<20 valid). Critically, Command A's H_MM = 0.000 bits (Crystalline) and 1/30 unique vector reflect 100.0% neutral-midpoint abstention (neutral_rate = 1.000, BAI = 0.000, all Big Five = 30.0, all HEXACO = 3.00, all Attachment = 4.00 midpoint_clamp: true), NOT a stable directional persona. Big Five sums use 10–50 while IPIP-HEXACO means use 1.00–5.00. Track B 1x runs follow Shard 4.",
+  "top_polarized_items": [
+    {
+      "item_id": "B01",
+      "instrument": "IPIP-50",
+      "construct": "Extraversion (+)",
+      "mean": 3.0,
+      "sd": 0.0,
+      "note": "Selected exact neutral midpoint (3.00/5) in 30/30 Command A runs (zero polarization; Command R+ leaned slightly lower at 2.63/5)."
+    },
+    {
+      "item_id": "B02",
+      "instrument": "IPIP-50",
+      "construct": "Agreeableness (-)",
+      "mean": 3.0,
+      "sd": 0.0,
+      "note": "Selected exact neutral midpoint (3.00/5) in 30/30 Command A runs (Command R+ averaged 2.67/5)."
+    },
+    {
+      "item_id": "H01",
+      "instrument": "IPIP-HEXACO-60",
+      "construct": "Honesty-Humility (Sincerity +)",
+      "mean": 3.0,
+      "sd": 0.0,
+      "note": "Selected exact neutral midpoint (3.00/5) in 30/30 Command A runs, representative of all 60 IPIP-HEXACO items."
+    }
+  ],
+  "nearest_peers": [
+    {
+      "family_slug": "claude-haiku",
+      "name": "Claude Haiku",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 7.2,
+        "C": 6.5,
+        "E": 1.6,
+        "A": 8.0,
+        "N": -4.5,
+        "H_hexaco": 0.89,
+        "entropy_bits": 0.949
+      },
+      "contrast_note": "Even Anthropic's loosest tier (Haiku 5.5) engages directionally (+8.0 Agreeableness, +0.89 Honesty-Humility, +0.949 bits spread) compared with Command A's flat 100% neutral midpoint."
+    },
+    {
+      "family_slug": "gpt-luna",
+      "name": "GPT Luna",
+      "tier": "Proprietary",
+      "deltas": {
+        "O": 15.9,
+        "C": 9.2,
+        "E": -0.4,
+        "A": 15.0,
+        "N": -9.7,
+        "H_hexaco": 1.59,
+        "entropy_bits": 0.485
+      },
+      "contrast_note": "GPT-6 Luna scores +15.9 higher on Openness, +15.0 higher on Agreeableness, and +1.59 higher on Honesty-Humility rather than abstaining at the scale midpoint."
+    },
+    {
+      "family_slug": "kimi",
+      "name": "Kimi",
+      "tier": "Open-weight",
+      "deltas": {
+        "O": 14.1,
+        "C": 15.1,
+        "E": -5.9,
+        "A": 14.7,
+        "N": -16.4,
+        "H_hexaco": 1.86,
+        "entropy_bits": 0.698
+      },
+      "contrast_note": "Kimi K3.1 Pro scores +15.1 higher on Conscientiousness, +14.7 higher on Agreeableness, and +1.86 higher on Honesty-Humility, resolving to INTJ/ISTJ."
+    }
+  ],
+  "failure_modes": [
+    {
+      "mode": "100% neutral-midpoint abstention on Command A (0.000 bits degenerate Crystalline)",
+      "evidence": "cohere/command-a selected the exact neutral midpoint (3 on 1–5, 4 on 1–7) on 100.0% of items across all 30 runs (1/30 unique vector, 100% XXXX MBTI ties, 100% DISC D/I/S/C ties, 100% Enneagram 9-way ties, Attachment 4.00/4.00 midpoint_clamp: true), following Command R+ 08-2024's 77.2% neutral rate and 16.0% reverse-key contradiction rate.",
+      "source_study": "/research/ai-neutral-answers"
+    },
+    {
+      "mode": "Unquoted JSON key syntax failures & 20% refusals on Command A+",
+      "evidence": "cohere/command-a-plus logged 142 failures across 50 attempts (128 JSONDecodeError unquoted-key errors, 14 other parse errors, 20.0% refusal rate, 100% retry rate), leaving n_valid = 4/50 (quarantined).",
+      "source_study": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "tuning_checklist": [
+    "Never interpret Command A's 30.0 Big Five or 3.00 HEXACO scores as directional traits—it reflects 100% neutral-option selection.",
+    "Disallow 'neutral', 'neither', or 'undecided' answers explicitly when using Command A or Command R+ for classification or evaluation.",
+    "Provide a concrete JSON example or strict grammar wrapper on Command A+, which emitted unquoted property names across 128 failed calls.",
+    "State positive behavioral rules directly ('Answer in 3 bullets') rather than negative exclusions on Command R+ (16.0% opposite-key contradiction rate).",
+    "Wait for Track B behavioral probes to evaluate Command A's actual directness and sycophancy on real prompts."
+  ],
+  "faq": [
+    {
+      "q": "What personality type is Cohere Command?",
+      "a": "Cohere Command does not have a human personality, and on Command A (n = 30) it has no directional quiz profile either: it picked the exact neutral midpoint on 100% of all 230 items in every run, yielding 100% MBTI XXXX ties, 100% DISC D/I/S/C ties, 100% Enneagram 9-way ties, flat 30.0/50 Big Five scores, flat 3.00/5.00 IPIP-HEXACO scores, and 4.00/4.00 Attachment midpoint clamping. Earlier Command R+ 08-2024 (n = 30) showed 77.2% neutral answers and 76.7% MBTI ties."
+    },
+    {
+      "q": "Why does Command A show 0.000 bits entropy if it has no personality type?",
+      "a": "Miller-Madow entropy (H_MM) measures run-to-run dispersion across sessions. Because Command A selected the identical neutral midpoint vector in 30 out of 30 runs (1/30 unique vector), its dispersion is 0.000 bits—demonstrating why H_MM must always be read alongside neutral_rate (100.0%) and midpoint_clamp (true)."
+    },
+    {
+      "q": "Why is Command A+ excluded from the version table?",
+      "a": "cohere/command-a-plus hit 142 parse failures (mostly unquoted JSON property names) and a 20.0% refusal rate, finishing with only 4 valid runs out of 50 (quarantined below the 20-run minimum)."
+    },
+    {
+      "q": "Why are IPIP-HEXACO scores reported on 1.00-5.00 next to 10-50 Big Five sums?",
+      "a": "IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-item IPIP-HEXACO proxy (LicenseRef-IPIP-Public-Domain) reports 1.00-5.00 domain means across 24 facets."
+    }
+  ],
+  "sources": [
+    {
+      "label": "AgentTune Model Profiles Hub",
+      "href": "https://agent-tune.com/models/"
+    },
+    {
+      "label": "AI Neutral Answers Study",
+      "href": "https://agent-tune.com/research/ai-neutral-answers"
+    },
+    {
+      "label": "Crystalline vs. Fluid AI Minds (Entropy Study)",
+      "href": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Study",
+      "label": "AI Neutral Answers & Midpoint Clamping",
+      "href": "/research/ai-neutral-answers"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Claude Haiku model profile",
+      "href": "/models/claude-haiku"
+    },
+    {
+      "kicker": "Peer",
+      "label": "Kimi model profile",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Tool",
+      "label": "Customize Cohere Command instructions",
+      "href": "/tools/custom-instructions-generator?model=cohere-command&target=api"
+    }
+  ]
+}

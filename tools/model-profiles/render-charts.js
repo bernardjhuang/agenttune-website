@@ -149,7 +149,7 @@ function renderRoseWheel({
     ? `<text x="${cx}" y="${H - 8}" font-size="9.5" fill="${C.muted}" text-anchor="middle">dashed ring = scale midpoint (${((min + max) / 2).toFixed(decimals === 2 ? 2 : 0)} ${scaleSuffix})</text>`
     : '';
   const legendMarkup = (showLabels && hasGhost)
-    ? `<g transform="translate(12, 14)"><rect x="0" y="-9" width="10" height="10" rx="2" fill="${hue}" fill-opacity="0.72" stroke="${hue}" stroke-width="1"/><text x="15" y="0" font-size="10" fill="${C.ink}">${esc(latestLabel)} (filled)</text><rect x="136" y="-9" width="10" height="10" rx="2" fill="none" stroke="${C.ink}" stroke-width="1.3" stroke-dasharray="3 2"/><text x="151" y="0" font-size="10" fill="${C.ink}">${esc(earliestLabel)} (outline)</text></g>`
+    ? `<rect x="12" y="4" width="10" height="10" rx="2" fill="${hue}" fill-opacity="0.72" stroke="${hue}" stroke-width="1"/><text x="27" y="13" font-size="10" fill="${C.ink}" text-anchor="start">${esc(latestLabel)} (filled)</text><rect x="12" y="20" width="10" height="10" rx="2" fill="none" stroke="${C.ink}" stroke-width="1.3" stroke-dasharray="3 2"/><text x="27" y="29" font-size="10" fill="${C.ink}" text-anchor="start">${esc(earliestLabel)} (outline)</text>`
     : '';
 
   const descValues = petals.map((p, i) => {
@@ -219,7 +219,7 @@ function renderBipolarSliders(dataset) {
 // ---------- Attachment Mini Quadrant ----------
 
 function renderAttachmentPointsSvg({ id, title, desc, points, caption, compact = false }) {
-  const W = compact ? 360 : 680;
+  const W = compact ? 360 : 760;
   const H = compact ? 250 : 390;
   const padL = compact ? 54 : 74;
   const padR = compact ? 18 : 28;
@@ -247,15 +247,21 @@ function renderAttachmentPointsSvg({ id, title, desc, points, caption, compact =
   const placedBoxes = [];
   const cutY = yPos(cut);
   const thresholdBands = [
-    { x1: padL, y1: cutY - 7, x2: padL + plotW, y2: cutY + 7 }
+    { x1: padL, y1: cutY - 8, x2: padL + plotW, y2: cutY + 8 }
+  ];
+  const qLabelBoxes = [
+    { x1: xPos((lo + cut) / 2) - 34, y1: yPos(cut + (hi - cut) * 0.65) - 12, x2: xPos((lo + cut) / 2) + 34, y2: yPos(cut + (hi - cut) * 0.65) + 4 },
+    { x1: xPos((cut + hi) / 2) - 30, y1: yPos(cut + (hi - cut) * 0.65) - 12, x2: xPos((cut + hi) / 2) + 30, y2: yPos(cut + (hi - cut) * 0.65) + 4 },
+    { x1: xPos((lo + cut) / 2) - 30, y1: yPos(lo + 0.28) - 12, x2: xPos((lo + cut) / 2) + 30, y2: yPos(lo + 0.28) + 4 },
+    { x1: xPos((cut + hi) / 2) - 32, y1: yPos(lo + 0.28) - 12, x2: xPos((cut + hi) / 2) + 32, y2: yPos(lo + 0.28) + 4 }
   ];
   const dotBoxes = points.map((p) => {
     const cx = xPos(p.x), cy = yPos(p.y);
-    return { x1: cx - 7, y1: cy - 7, x2: cx + 7, y2: cy + 7 };
+    return { x1: cx - 8, y1: cy - 8, x2: cx + 8, y2: cy + 8 };
   });
   const overlaps = (a, b) => !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
 
-  const ordered = [...points].sort((a, b) => a.x - b.x || a.y - b.y);
+  const ordered = [...points].sort((a, b) => b.label.length - a.label.length || a.x - b.x || a.y - b.y);
   const placed = new Map();
   const offsets = [
     [10, 4, 'start'], [10, -10, 'start'], [10, 17, 'start'],
@@ -263,13 +269,26 @@ function renderAttachmentPointsSvg({ id, title, desc, points, caption, compact =
     [12, -22, 'start'], [12, 29, 'start'], [-12, -22, 'end'], [-12, 29, 'end'],
     [14, -34, 'start'], [14, 41, 'start'], [-14, -34, 'end'], [-14, 41, 'end'],
     [18, -46, 'start'], [18, 53, 'start'], [-18, -46, 'end'], [-18, 53, 'end'],
-    [24, -58, 'start'], [24, 65, 'start']
+    [24, -58, 'start'], [24, 65, 'start'], [-24, -58, 'end'], [-24, 65, 'end'],
+    [36, 4, 'start'], [-36, 4, 'end'], [48, -12, 'start'], [48, 18, 'start']
   ];
+
+  const isBoxFree = (box) => (
+    box.x1 >= padL + 2 &&
+    box.x2 <= W - 6 &&
+    box.y1 >= padT + 4 &&
+    box.y2 <= padT + plotH - 4 &&
+    !thresholdBands.some((tb) => overlaps(box, tb)) &&
+    !qLabelBoxes.some((qb) => overlaps(box, qb)) &&
+    !dotBoxes.some((d) => overlaps(box, d)) &&
+    !placedBoxes.some((b) => overlaps(box, b))
+  );
 
   for (const p of ordered) {
     const cx = xPos(p.x), cy = yPos(p.y);
     const fullText = p.label;
-    const lw = Math.ceil(fullText.length * 6.2 + 8);
+    const textLen = Math.max(fullText.length, esc(fullText).length);
+    const lw = Math.ceil(textLen * 6.4 + 6);
     const lh = 14;
     let chosen = null;
 
@@ -277,24 +296,33 @@ function renderAttachmentPointsSvg({ id, title, desc, points, caption, compact =
       const tx = cx + dx;
       const ty = cy + dy;
       const x1 = anchor === 'start' ? tx - 2 : tx - lw + 2;
-      const x2 = x1 + lw;
       const y1 = ty - 11;
-      const y2 = y1 + lh;
-      if (x1 < padL + 4 || x2 > W - 6 || y1 < padT + 4 || y2 > padT + plotH - 4) continue;
-      const box = { x1, y1, x2, y2 };
-      if (thresholdBands.some((tb) => overlaps(box, tb))) continue;
-      if (dotBoxes.some((d) => overlaps(box, d))) continue;
-      if (placedBoxes.some((b) => overlaps(box, b))) continue;
+      const box = { x1, y1, x2: x1 + lw, y2: y1 + lh };
+      if (!isBoxFree(box)) continue;
       chosen = { tx, ty, anchor, box, dist: Math.hypot(dx, dy) };
       break;
     }
     if (!chosen) {
+      const gridCandidates = [];
+      for (let ty = padT + 16; ty <= padT + plotH - 6; ty += 14) {
+        for (let x1 = padL + 4; x1 <= W - 6 - lw; x1 += 12) {
+          const box = { x1, y1: ty - 11, x2: x1 + lw, y2: ty + 3 };
+          if (!isBoxFree(box)) continue;
+          const anchor = (x1 + lw / 2) >= cx ? 'start' : 'end';
+          const tx = anchor === 'start' ? x1 + 2 : x1 + lw - 2;
+          gridCandidates.push({ tx, ty, anchor, box, dist: Math.hypot(tx - cx, ty - cy) });
+        }
+      }
+      gridCandidates.sort((a, b) => a.dist - b.dist);
+      chosen = gridCandidates[0] || null;
+    }
+    if (!chosen) {
       const anchor = cx < W * 0.55 ? 'start' : 'end';
       const dx = anchor === 'start' ? 10 : -10;
-      const dy = 4 + placedBoxes.length * 14;
-      const tx = cx + dx, ty = Math.min(padT + plotH - 6, cy + dy);
+      const tx = cx + dx;
+      const ty = Math.min(padT + plotH - 6, Math.max(padT + 16, cy));
       const x1 = anchor === 'start' ? tx - 2 : tx - lw + 2;
-      chosen = { tx, ty, anchor, box: { x1, y1: ty - 11, x2: x1 + lw, y2: ty + 3 }, dist: Math.hypot(dx, dy) };
+      chosen = { tx, ty, anchor, box: { x1, y1: ty - 11, x2: x1 + lw, y2: ty + 3 }, dist: Math.hypot(dx, 0) };
     }
     placedBoxes.push(chosen.box);
     placed.set(p, { cx, cy, fullText, ...chosen });

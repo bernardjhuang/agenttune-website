@@ -7,7 +7,9 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const {
   buildModels,
+  buildFamilyPageSpec,
   loadFamilies,
+  normalizeDataset,
   validateSpec,
   validateDataset,
   ROSTER_25,
@@ -79,7 +81,7 @@ test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-
     assert.equal(jargonRe.test(mdPreFinePrint), false, `${slug}.md §§1-6 leaked jargon: ${mdPreFinePrint.match(jargonRe)?.[0]}`);
 
     // Never say a model "is" an MBTI or Enneagram type
-    assert.doesNotMatch(md, /\b(?:Opus|Fable|Sonnet|Astra|Sol|Grok|Spark|Wonder)\s+(?:[\d.]+\s+)?is\s+(?:an?\s+)?(?:INTJ|ISTJ|ENTP|INFJ|INTP|Type\s+\d)\b/);
+    assert.doesNotMatch(md, /\b(?:Opus|Fable|Sonnet|Haiku|Astra|Sol|Terra|Luna|Grok|Spark|Wonder|Gemini|Neon|Hydrogen|Kimi|DeepSeek|Mistral|Cohere|Command|Qwen|GLM|Llama|Gemma|Nemotron|MiniMax)\s+(?:[\d.]+\s+)?is\s+(?:an?\s+)?(?:INTJ|ISTJ|ENTP|INFJ|INTP|Type\s+\d)\b/);
 
     // Fine Print & technical rigor assertions
     const finePrintAndAfter = html.slice(idxFinePrint);
@@ -121,6 +123,26 @@ test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-
     } else {
       assert.match(tbSection, /Track B.*pending|Collection pending/i);
     }
+  }
+
+  // Verify quarantined checkpoints (<20 valid or excluded_from_rankings) render "Limited data notice" & stay excluded from headline charts
+  for (const [qSlug, expectedLatest, expectedQuarantined] of [
+    ['mistral-large', 'mistralai/mistral-large-2512', 3],
+    ['cohere-command', 'cohere/command-a', 1]
+  ]) {
+    const dataPath = path.join(ROOT, 'research/data/model-profiles', `${qSlug}.json`);
+    if (!fs.existsSync(dataPath)) continue;
+    const raw = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    const ds = normalizeDataset(raw, { family_slug: qSlug, name: raw.name });
+    validateDataset(ds, `${qSlug}.json`);
+    assert.equal(ds.current_checkpoint, expectedLatest);
+    assert.equal(ds.quarantined_checkpoints.length, expectedQuarantined);
+    const pageSpec = buildFamilyPageSpec({ ...tpl, family_slug: qSlug, name: raw.name }, ds, [ds]);
+    const verHtml = pageSpec.sections.find((s) => s.id === 'version-history').html;
+    assert.match(verHtml, /Limited data notice:/);
+    assert.equal(jargonRe.test(verHtml), false, `${qSlug}: limited data notice leaked jargon`);
+    const fineHtml = pageSpec.sections.find((s) => s.id === 'fine-print').html;
+    assert.match(fineHtml, /excluded from rankings/);
   }
 });
 
@@ -387,6 +409,44 @@ test('Group 4: model profile SVG charts have unique IDs, ARIA labels, desc > 80c
           assert.equal(hit, false, `${ds.family_slug}: plane() labels overlap: "${a.text}" vs "${b.text}"`);
         }
       }
+    }
+  }
+
+  // Stress-test Attachment plane() across 25 densely clustered families + 2 historical anchors
+  const peers25 = ROSTER_25.map((r, i) => ({
+    family_slug: r.slug,
+    name: r.name,
+    color: '#3a72c4',
+    current_checkpoint: `${r.slug}-latest`,
+    checkpoints: [{
+      checkpoint_id: `${r.slug}-latest`,
+      label: r.slug,
+      attachment: {
+        anxiety: { mean: 1.5 + (i % 6) * 0.28 },
+        avoidance: { mean: 2.2 + Math.floor(i / 6) * 0.35 }
+      }
+    }],
+    historical_anchors: i === 0 ? [
+      { label: 'earlier study', protocol_id: 'imported-nov2026-170', attachment: { anxiety: 2.1, avoidance: 3.1 } },
+      { label: 'earlier study', protocol_id: 'imported-sep2026-170', attachment: { anxiety: 2.3, avoidance: 3.3 } }
+    ] : []
+  }));
+  const plane25 = renderCharts.renderAttachmentPlane(peers25[0], peers25.slice(1));
+  const labels25 = [...plane25.matchAll(/<text x="([0-9.]+)" y="([0-9.]+)" font-size="10\.5"[^>]*text-anchor="([^"]+)">([^<]+)<\/text>/g)];
+  assert.equal(labels25.length, 27);
+  const boxes25 = labels25.map(([, x, y, anchor, text]) => {
+    const lw = Math.ceil(text.length * 6.3 + 4);
+    const x1 = anchor === 'start' ? Number(x) - 2 : Number(x) - lw + 2;
+    const y1 = Number(y) - 11;
+    assert.ok(x1 >= 74, `25-family plane(): label "${text}" encroaches on Y-axis (x1=${x1})`);
+    assert.ok(y1 + 14 <= 96 || y1 >= 110, `25-family plane(): label "${text}" crosses y=4.0 line (y1=${y1})`);
+    return { text, x1, y1, x2: x1 + lw, y2: y1 + 14 };
+  });
+  for (let i = 0; i < boxes25.length; i++) {
+    for (let j = i + 1; j < boxes25.length; j++) {
+      const a = boxes25[i], b = boxes25[j];
+      const hit = !(a.x2 <= b.x1 || a.x1 >= b.x2 || a.y2 <= b.y1 || a.y1 >= b.y2);
+      assert.equal(hit, false, `25-family plane() overlap: "${a.text}" vs "${b.text}"`);
     }
   }
 
