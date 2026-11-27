@@ -5,7 +5,7 @@ Guide · Getting started
 
 # How to give your AI a personality.
 
-By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Write six to eight checkable rules—covering how replies open, length, formatting, pushback, and follow-up questions—and paste them into your AI's persistent settings box: ChatGPT Custom Instructions (1,500 chars), Claude Personal Preferences, Meta Muse Soul.md, Perplexity Spaces (4,000 chars), Grok Customize settings, Gemini Saved Info/Gems, or CLAUDE.md and AGENTS.md for coding agents.
 

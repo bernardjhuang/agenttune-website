@@ -5,7 +5,7 @@ Guide · Claude Code
 
 # How to change Claude Code's personality.
 
-By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-code-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save a Markdown file to ~/.claude/output-styles/ with name, description, and keep-coding-instructions: true in the YAML frontmatter, followed by your communication rules. Activate it with /output-style or /config. AgentTune provides all 43 personality tunings as ready-to-download output styles.
 

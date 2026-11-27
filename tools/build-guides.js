@@ -440,7 +440,7 @@ ${relatedHtml}${research ? (() => { const { citeHtml, trailHtml } = buildResearc
 
     <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
-      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span class="footer-legal"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
   </div>
 

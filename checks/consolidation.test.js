@@ -238,14 +238,28 @@ test('checkpoint reconciliation, hub Markdown mirrors, and clean Markdown code f
   const hubIds = new Set(catalog.resources.filter(r => r.kind === 'hub').map(r => r.id));
   assert.ok(hubIds.has('models-hub'), 'catalog.json must register models-hub');
 
-  for (const mdRel of ['index.md', 'models/index.md', 'research.md', 'guides/index.md', 'library/index.md', 'tests/index.md', 'tools/index.md']) {
+  for (const mdRel of ['index.md', 'about.md', 'models/index.md', 'research.md', 'guides/index.md', 'library/index.md', 'tests/index.md', 'tools/index.md']) {
     assert.ok(fs.existsSync(path.join(DIST, mdRel)), `Missing hub Markdown mirror dist/${mdRel}`);
   }
 
   for (const mdRel of walkMd(DIST)) {
     const md = read(path.join(DIST, mdRel));
     assert.equal(/@@(?:CELL|BLOCK|INL)_\d+@@/.test(md), false, `Unexpanded placeholder leaked in dist/${mdRel}`);
+    assert.equal(/\u24d8/.test(md), false, `Leftover UI info icon ⓘ in dist/${mdRel}`);
+    assert.equal(/Technical details\s*↓/.test(md), false, `Leftover hero jump link in dist/${mdRel}`);
     const fenceCount = (md.match(/^```/gm) || []).length;
     assert.equal(fenceCount % 2, 0, `Unclosed code fence in dist/${mdRel} (${fenceCount} fences)`);
   }
+
+  const llmsSize = Buffer.byteLength(read(path.join(DIST, 'llms.txt')), 'utf8');
+  assert.ok(llmsSize <= 10240, `dist/llms.txt size ${llmsSize} exceeds 10 KB budget`);
+
+  const robots = read(path.join(DIST, 'robots.txt'));
+  assert.equal(/OPIP-0/i.test(robots), false, 'robots.txt must not include Form OPIP-0');
+  for (const htmlRel of walkHtml(DIST)) {
+    const html = read(path.join(DIST, htmlRel));
+    assert.equal(/permission_to_overwrite_CLAUDE_md/i.test(html), false, `Colophon comment leaked in dist/${htmlRel}`);
+  }
+  assert.ok(fs.existsSync(path.join(DIST, '_routes.json')), 'Missing dist/_routes.json');
+  assert.ok(fs.existsSync(path.join(DIST, 'about.html')), 'Missing dist/about.html');
 });

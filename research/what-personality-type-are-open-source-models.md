@@ -5,7 +5,7 @@ Research · Personality Atlas · Open-Weight Cohort
 
 # What personality types do open-weight AI models test as across 12 families?
 
-By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-are-open-source-models.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Comparing 37 eligible versions across 12 open-weight and open-tier families on 6 personality surveys in fresh chats with no memory—plus 6 quarantined builds excluded from rankings.
 

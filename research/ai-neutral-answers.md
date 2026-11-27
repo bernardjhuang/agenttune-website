@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Why AI chooses neutral answers: what “neutral” means on a personality test.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We checked 17,000 individual quiz answers from GPT-6 Astra to see how often picking 3 on a 1–5 scale means a moderate personality—and how often it just means the question is about human life.
 

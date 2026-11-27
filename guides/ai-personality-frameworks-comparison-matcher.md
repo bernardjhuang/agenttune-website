@@ -5,7 +5,7 @@ Interactive Matcher · All 5 Systems
 
 # Which personality system should you use to tune your AI?
 
-By Bernard Huang · Updated November 17, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Pick DISC or MBTI when you want faster, bottom-line-first structure. Pick Big Five (OCEAN) when you want to adjust one trait at a time (like High Openness or Low Agreeableness). Pick Enneagram or Attachment when you want to control how directly the AI challenges your ideas or paces check-ins.
 

@@ -27,6 +27,7 @@ function enhance(html,file){
     else if(/^(?:guides|models|library|tests|tools)\/index\.html$/.test(file)) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="Section index as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
     else if(file==='index.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="Home page as Markdown" href="https://agent-tune.com/index.md" />\n</head>');
     else if(file==='research.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="Research synthesis as Markdown" href="https://agent-tune.com/research.md" />\n</head>');
+    else if(file==='about.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="About AgentTune as Markdown" href="https://agent-tune.com/about.md" />\n</head>');
     else if(/^tests\/(?!index\.html$)[^/]+\.html$/.test(file)) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="Questionnaire specification as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
   }
   if(/^research\/(?!index\.html$).+\.html$/.test(file)&&!html.includes('name="citation_title"')&&html.includes('</head>')){
@@ -81,9 +82,8 @@ function enhance(html,file){
     const note='<section id="instrument-correction" class="questionnaire-status provenance-colophon"><p style="margin:0;font-size:14px;line-height:1.6;color:var(--text)"><strong style="color:var(--ink)">Provenance &amp; scoring note:</strong> These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on <a href="/tests/">Tests</a> and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). <a href="/research/data/rights-migration.json">Read the provenance note</a>.</p></section>';
     html=html.replace('</main>',note+'\n</main>');
   }
-  const colophonComment='<!-- ARCHIVAL PRESS COLOPHON · Monograph 1A · Specimen #00 (n=10,000): A=45.4/50, N=10.9/50, PC1=63.6%, permission_to_overwrite_CLAUDE_md=false. Agent index: /llms.txt · Human check: window.agentTune.calibrate() -->';
+  if(!html.includes('href="/about"')) html=html.replace(/<a href="\/privacy">/g,'<a href="/about">About</a> · <a href="/privacy">');
   if(!html.includes('src="/site-ui.js"')) html=html.replace('</body>','<script defer src="/site-ui.js"></script>\n</body>');
-  if(!html.includes('ARCHIVAL PRESS COLOPHON')) html=html.replace('</body>',colophonComment+'\n</body>');
   return html;
 }
 function markdown(html,url){
@@ -96,6 +96,8 @@ function markdown(html,url){
   const stashCell=s=>{const i=cellInlines.push(s)-1;return `@@CELL_${i}@@`;};
   const cleaned=cell
    .replace(/<br\s*\/?>/gi,' ')
+   .replace(/<span\b[^>]*class="[^"]*\btrait-popover\b[^"]*"[^>]*>[\s\S]*?<\/span>/gi,'')
+   .replace(/\s*\u24d8(?=\s*<\/button>)/g,'')
    .replace(/<code[^>]*>([\s\S]*?)<\/code>/gi,(_,t)=>stashCell('`'+plain(t)+'`'))
    .replace(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi,(_,href,t)=>stashCell('['+plain(t)+']('+new URL(decodeEntities(href),url).href+')'))
    .replace(/<\/?think>/gi,m=>stashCell('`'+m.toLowerCase()+'`'))
@@ -105,6 +107,7 @@ function markdown(html,url){
    out=out.replace(/@@CELL_(\d+)@@/g,(_,i)=>cellInlines[+i]??'');
   }
   return out
+   .replace(/\u24d8/g,'')
    .replace(/\s+/g,' ')
    .replace(/\|/g,'\\|')
    .trim();
@@ -114,6 +117,11 @@ function markdown(html,url){
   .replace(/<details class="article-toc"[\s\S]*?<\/details>/g,'')
   .replace(/<div class="cite-actions"[\s\S]*?<\/div>/g,'')
   .replace(/<aside class="model-compatibility"[\s\S]*?<\/aside>/g,'')
+  .replace(/<span\b[^>]*class="[^"]*\btrait-popover\b[^"]*"[^>]*>[\s\S]*?<\/span>/gi,'')
+  .replace(/<span\b[^>]*class="[^"]*\bguide-readtime\b[^"]*"[^>]*>[\s\S]*?<\/span>/gi,'')
+  .replace(/<div\b[^>]*class="[^"]*\bmodel-glance-foot\b[^"]*"[^>]*>[\s\S]*?<\/div>/gi,'')
+  .replace(/<a\b[^>]*class="[^"]*\bglance-fine-link\b[^"]*"[^>]*>[\s\S]*?<\/a>/gi,'')
+  .replace(/\s*\u24d8(?=\s*<\/button>)/g,'')
   .replace(/<span class="guide-related-kicker">([\s\S]*?)<\/span>/g,'$1: ')
   .replace(/<div class="guide-related">([\s\S]*?)<\/div>/g,(_,inner)=>'\n\n'+[...inner.matchAll(/<a\b[\s\S]*?<\/a>/g)].map(m=>'- '+m[0]).join('\n')+'\n\n')
   .replace(/<div\b[^>]*class="[^"]*\bguide-snippet\b[^"]*"[^>]*>([\s\S]*?)<\/div>/g,(_,t)=>stash('```markdown\n'+plainCode(t)+'\n```'))
@@ -145,6 +153,8 @@ function markdown(html,url){
   text=text.replace(/@@INL_(\d+)@@/g,(_,i)=>inlineBlocks[+i]??'');
  }
  text=text
+  .replace(/\u24d8/g,'')
+  .replace(/ ·\s+· /g,' · ')
   .replace(/^[ \t]+/gm,'')
   .replace(/[ \t]+\n/g,'\n')
   .replace(/\n{3,}/g,'\n\n')

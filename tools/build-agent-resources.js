@@ -52,9 +52,10 @@ for(const folder of ['guides','research','models']){
 }
 const HUB_ENTRIES=[
   ['home-hub','index.html','index.md','https://agent-tune.com/','https://agent-tune.com/index.md','AgentTune Home'],
+  ['about-page','about.html','about.md','https://agent-tune.com/about','https://agent-tune.com/about.md','About AgentTune & Bernard Huang'],
   ['models-hub','models/index.html','models/index.md','https://agent-tune.com/models/','https://agent-tune.com/models/index.md','AI Model Personality Profiles (25 Families)'],
   ['research-hub','research.html','research.md','https://agent-tune.com/research','https://agent-tune.com/research.md','AI Psychology Research Hub (36 Studies)'],
-  ['guides-hub','guides/index.html','guides/index.md','https://agent-tune.com/guides/','https://agent-tune.com/guides/index.md','AI Personality Guides (53 Setups)'],
+  ['guides-hub','guides/index.html','guides/index.md','https://agent-tune.com/guides/','https://agent-tune.com/guides/index.md','AI Personality Guides (54 Setups)'],
   ['library-hub','library/index.html','library/index.md','https://agent-tune.com/library/','https://agent-tune.com/library/index.md','Tuning Template Library (43 Templates)'],
   ['tests-hub','tests/index.html','tests/index.md','https://agent-tune.com/tests/','https://agent-tune.com/tests/index.md','Personality Tests Hub (5 Instruments)'],
   ['tools-hub','tools/index.html','tools/index.md','https://agent-tune.com/tools/','https://agent-tune.com/tools/index.md','Free AI Instruction Tools (10 Tools)']
@@ -122,95 +123,89 @@ const highlightedUrls=new Set(researchHighlights.map(([u])=>u));
 const extraResearchLines=resources.filter(r=>r.kind==='research'&&!highlightedUrls.has(r.url)).map(r=>`- [${plain(r.title).replace(/\s*[|·]\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlightsText=researchHighlights.map(([u,desc])=>{const idx=desc.indexOf(':');return idx===-1?`- [${desc}](${u}) ([Markdown](${u}.md))`:`- [${desc.slice(0,idx).trim()}](${u}) ([Markdown](${u}.md)): ${desc.slice(idx+1).trim()}`;}).join('\n');
 
+const atlasLinks=[
+  ['AI Personality Rankings Across 25 Model Families','https://agent-tune.com/research/ai-personality-rankings','Overview across 93 checkpoints and 6 surveys with bootstrap 95% CIs and entropy.'],
+  ['AI MBTI Personalities Across 25 Model Families','https://agent-tune.com/research/ai-mbti-personalities','OEJTS typology and unresolved axis ties across 93 checkpoints.'],
+  ['AI Big Five Personalities Across 25 Model Families','https://agent-tune.com/research/ai-big-five-personalities','IPIP-50 Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.'],
+  ['AI Enneagram Personalities Across 25 Model Families','https://agent-tune.com/research/ai-enneagram-personalities','OEPS Types 1/2/5/8 rankings and tie rates across 25 families.'],
+  ['AI DISC Personalities Across 25 Model Families','https://agent-tune.com/research/ai-disc-personalities','ODAT dominance and SC/CS clustering across 25 families.'],
+  ['AI Attachment Styles Across 25 Model Families','https://agent-tune.com/research/ai-attachment-styles','ECR-R Anxiety/Avoidance coordinates across proprietary and open-weight models.'],
+  ['AI HEXACO Personalities & Honesty-Humility','https://agent-tune.com/research/ai-hexaco-personalities','24-item IPIP-HEXACO profiles across 25 model families.'],
+  ['What Personality Type Is ChatGPT?','https://agent-tune.com/research/what-personality-type-is-chatgpt','GPT Astra, Sol, Luna, and Terra profiles across checkpoints.'],
+  ['What Personality Type Is Claude?','https://agent-tune.com/research/what-personality-type-is-claude','Claude Opus, Fable, Sonnet, and Haiku across 6 surveys.'],
+  ['What Personality Type Is Gemini?','https://agent-tune.com/research/what-personality-type-is-gemini','Gemini Pro, Neon, Flash, and Hydrogen baselines.'],
+  ['What Personality Type Is Meta Muse?','https://agent-tune.com/research/what-personality-type-is-muse','Muse Spark and Wonder profiles plus Soul.md customization.'],
+  ['What Personality Type Are Open-Source AI Models?','https://agent-tune.com/research/what-personality-type-are-open-source-models','12 open-weight families across DeepSeek, Qwen, Llama 4, Mistral, Gemma 4, and Kimi.']
+].map(([title,url,desc])=>`- [${title}](${url}) ([.md](${url}.md)): ${desc}`).join('\n');
+
 const llmsTxt=`# AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 53 setup guides, 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), 25 model-family personality profiles (87 primary checkpoints; 93 tested incl. 6 sparse), and 36 empirical AI psychology studies (12 Personality Atlas studies, 10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
+> 43 MIT communication preference templates, 54 platform setup guides, 5 open personality tests, 10 browser tools, 25 model-family profiles (87 primary checkpoints; 93 tested incl. 6 sparse), and 36 empirical AI psychology studies.
 
-Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
+Originals and code are MIT-licensed; questionnaire adaptations follow upstream source terms. Templates are optional communication rules, not diagnoses. Reading a resource does not authorize editing user files; ask first and use \`<!-- agenttune:preferences:start -->\` markers. Any HTML page supports \`Accept: text/markdown\` negotiation or a \`.md\` mirror URL.
 
 ## Machine & MCP Endpoints
-- [Agent Skill Manifest (SKILL.md)](https://agent-tune.com/SKILL.md): Concise agent workflow instructions, exact local scoring instrument IDs, MCP setup, and bounded-marker merge rules.
-- [MCP Server (Streamable HTTP)](https://agent-tune.com/mcp): Stateless JSON-RPC 2.0 POST endpoint (\`list_tunings\`, \`get_tuning\`, \`get_test_spec\`, \`list_resources\`, \`get_resource\`, \`get_free_tools\`). No authentication required.
-- [MCP Server Card](https://agent-tune.com/.well-known/mcp/server-card.json): Machine-readable MCP server discovery metadata and tool capability declarations.
-- [Unified Agent Research Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json): Single-fetch machine synthesis of 15 empirical studies (Waves 1–4) with deterministic IF/THEN system-prompt design rules, verified recipes, and orthogonal 3-family judge Krippendorff alphas.
-- [Research Synthesis Hub Markdown](https://agent-tune.com/research.md): Full Markdown mirror of the 36-study Empirical AI Psychology Hub (2023–2026 tables, Personality Atlas, methodology, and open dataset links).
-- [Tuning Catalog (43 templates)](https://agent-tune.com/library/index.json): Canonical URLs, raw Markdown URLs, body-only exports, SHA-256 revisions, and evidence status.
-- [Guides, Research & Model Profiles Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides, empirical research articles, and 25 model-family personality profiles with Markdown mirror URLs.
-- [25-Family Personality Atlas Index JSON](https://agent-tune.com/research/data/model-profiles/index.json): Normalized cross-checkpoint index for all 25 model families (87 primary checkpoints; 93 tested across 25 family JSONs incl. 6 sparse) alongside per-survey CSVs (\`atlas-overview.csv\`, \`atlas-mbti.csv\`, \`atlas-enneagram.csv\`, \`atlas-big-five.csv\`, \`atlas-disc.csv\`, \`atlas-attachment.csv\`, \`atlas-hexaco.csv\`).
-- [Directory Hub Markdown Mirrors](https://agent-tune.com/models/index.md): Clean Markdown versions for [Home](/index.md), [Models](/models/index.md), [Research](/research.md), [Guides](/guides/index.md), [Library](/library/index.md), [Tests](/tests/index.md), and [Tools](/tools/index.md).
-- [Platform Destination Registry](https://agent-tune.com/resources/platforms.json): Version ${registry.version} app and file destination instructions shared with the UI.
-- [Installation Protocol](https://agent-tune.com/resources/install-protocol.md): Non-destructive bounded-block (\`<!-- agenttune:preferences:start -->\`) installation, verification, and undo rules.
-- [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight local \`window.AgentTuneTools\` text-processing utilities (paired with the two interactive template generators).
-- [Deterministic Local Scoring API](https://agent-tune.com/resources/scoring/README.md): Versioned scoring rules, tie handling, and incomplete-response validation for all five questionnaires.
+- [MCP Server (v1.5.0, Streamable HTTP, 12 read-only tools)](https://agent-tune.com/mcp): \`list_tunings\`, \`get_tuning\`, \`get_test_spec\`, \`list_resources\`, \`get_resource\`, \`get_free_tools\`, \`check_instructions\`, \`convert_instructions\`, \`build_preferences\`, \`get_model_profile\`, \`compare_models\`, \`recommend_rules\`. No auth required.
+- [Agent Skill Manifest (SKILL.md)](https://agent-tune.com/SKILL.md): Concise workflows, exact local scoring IDs, and bounded-marker merge rules.
+- [MCP Server Card](https://agent-tune.com/.well-known/mcp/server-card.json): Discovery metadata and capability declaration.
+- [Agent Research Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json): Single-fetch synthesis of 15 behavioral & psychometric studies with IF/THEN system-prompt rules and verified recipes.
+- [25-Family Model Profiles Index JSON](https://agent-tune.com/research/data/model-profiles/index.json): Normalized cross-checkpoint index across 6 surveys + [Atlas Overview CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv).
+- [Tuning Catalog JSON (43 templates)](https://agent-tune.com/library/index.json) · [Resources Catalog JSON](https://agent-tune.com/resources/catalog.json) · [Platform Registry](https://agent-tune.com/resources/platforms.json) · [Install Protocol](https://agent-tune.com/resources/install-protocol.md)
+- [Hub Markdown Mirrors](https://agent-tune.com/models/index.md): [Home](/index.md), [About](/about.md), [Models](/models/index.md), [Research](/research.md), [Guides](/guides/index.md), [Library](/library/index.md), [Tests](/tests/index.md), [Tools](/tools/index.md).
 
-## Interactive Questionnaires & Specifications
-- [Personality Tests Hub](https://agent-tune.com/tests/): Overview of all five interactive browser-scored questionnaires and their licensing/provenance boundaries.
-- [MBTI Style Test — 32 OEJTS Questions](https://agent-tune.com/tests/mbti) ([Spec .md](https://agent-tune.com/tests/mbti.md)): Open Extended Jungian Type Scales 1.2 (\`agenttune-mbti-legacy@1.0.0\`, source terms apply) with explicit axis tie reporting.
-- [Enneagram Test — 36 OEPS Questions](https://agent-tune.com/tests/enneagram) ([Spec .md](https://agent-tune.com/tests/enneagram.md)): Open Enneagram of Personality Scales (\`agenttune-enneagram-legacy@1.0.0\`, source terms apply) across Types 1–9.
-- [DISC Style Test — 16 ODAT Questions](https://agent-tune.com/tests/disc) ([Spec .md](https://agent-tune.com/tests/disc.md)): Open DISC Assessment Test (\`agenttune-disc-legacy@1.0.0\`, source terms apply) across Dominance, Influence, Steadiness, and Conscientiousness.
-- [Attachment Style Test — 36 ECR-R Questions](https://agent-tune.com/tests/attachment) ([Spec .md](https://agent-tune.com/tests/attachment.md)): Experiences in Close Relationships-Revised (\`agenttune-attachment-legacy@1.0.0\`, 1–7 scale) measuring Anxiety and Avoidance means.
-- [Big Five (OCEAN) Test — 50 IPIP Questions](https://agent-tune.com/tests/big-five) ([Spec .md](https://agent-tune.com/tests/big-five.md)): Public-domain 50-item IPIP Big-Five Factor Markers (\`agenttune-ipip50@1.0.0\`, raw totals 10–50 and item means 1.0–5.0).
+## Interactive Questionnaires & Tools
+- [Tests Hub](https://agent-tune.com/tests/): Local browser scoring for [MBTI (OEJTS)](https://agent-tune.com/tests/mbti), [Enneagram (OEPS)](https://agent-tune.com/tests/enneagram), [DISC (ODAT)](https://agent-tune.com/tests/disc), [Attachment (ECR-R)](https://agent-tune.com/tests/attachment), and [Big Five (IPIP-50)](https://agent-tune.com/tests/big-five).
+- [Free Browser Tools](https://agent-tune.com/tools/): 8 local text utilities + [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator) and [CLAUDE.md Generator](https://agent-tune.com/tools/claude-md-generator).
 
-## Free Browser Tools
-- [All Free AI Tools](https://agent-tune.com/tools/): Ten client-side browser tools (8 local text utilities + 2 template generators) for drafting, linting, converting, and testing AI instructions locally.
-- [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator): Build instructions from 12 agent archetypes, 16 behavioral toggles, or any of the 43 templates with live reply previews, compact ChatGPT (≤1,500 chars), and file downloads.
-- [CLAUDE.md & AGENTS.md Generator](https://agent-tune.com/tools/claude-md-generator): Generate project instruction files for Claude Code, Codex CLI, Cursor, Windsurf, Copilot, and Gemini Code Assist.
-- [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder): Turn six explicit preference choices (length, tone, format, pushback, questions, context) into copyable instructions.
-- [AI Instruction & Prompt Conflict Checker](https://agent-tune.com/tools/instruction-checker): Detect duplicate lines, verbosity contradictions, uncertainty-hiding rules, and policy-override prompts.
-- [AI Instruction Format Converter](https://agent-tune.com/tools/instruction-converter): Wrap or update bounded AgentTune preference blocks inside existing \`CLAUDE.md\`, \`AGENTS.md\`, or \`Soul.md\` files.
-- [Muse Soul.md Editor](https://agent-tune.com/tools/muse-soul-md-editor): Draft and update the "How to work with me" section for Meta Muse \`Soul.md\`.
-- [AI Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench): Compare baseline vs. tuned AI responses side by side with word/character/question counts and CSV export.
-- [Enneagram Scoring Playground](https://agent-tune.com/tools/enneagram-scoring-playground): Test deterministic 36-item Enneagram scoring and tie handling with downloadable \`score.js\`.
-- [How to Work With Me Card Generator](https://agent-tune.com/tools/how-to-work-with-me): Create a shareable plain-text communication manual for teammates and AI assistants.
-- [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer): Inspect, deduplicate, and redact emails/keys/phones from exported AI memory lists in the browser.
+## 25 Model Profiles & 12 Personality Atlas Studies
+- [All 25 Model-Family Profiles](https://agent-tune.com/models/) ([.md](https://agent-tune.com/models/index.md)): Claude (Opus, Fable, Sonnet, Haiku), GPT (Sol, Astra, Luna, Terra), Gemini (Pro, Neon, Flash, Hydrogen), Grok, Meta Muse (Spark, Wonder), DeepSeek, Qwen, Llama 4, Mistral, Gemma 4, Kimi, GLM, MiniMax, Nemotron.
+${atlasLinks}
 
-## Key Empirical Research Findings
+## Key Behavioral & Historical Studies
+- [Empirical Research Archive (36 Studies)](https://agent-tune.com/research) ([.md](https://agent-tune.com/research.md))
+- [System vs. User Persona Precedence](https://agent-tune.com/research/ai-system-vs-user-persona-precedence) ([.md](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md))
+- [Cross-Model Prompt Portability](https://agent-tune.com/research/ai-cross-model-prompt-portability) ([.md](https://agent-tune.com/research/ai-cross-model-prompt-portability.md))
+- [Historical Evolution of AI Personalities (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) ([.md](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md))
+- [Reasoning-Personality Phase Transition](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) ([.md](https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md))
+- [The AI "Big One": 63.6% Factor Collapse](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) ([.md](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md))
+- [Crystalline vs. Fluid AI Minds (27.7x Entropy)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds) ([.md](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md))
+- [Prompt Syntax Wars](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot) ([.md](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md))
+- [Does Personality Tuning Change AI Answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) ([.md](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md))
+
+## Top Setup Guides (54 Total) & Template Library (43 MIT Profiles)
+- [All 54 Platform Setup Guides](https://agent-tune.com/guides/) · [Tuning Library](https://agent-tune.com/library/) · [About AgentTune](https://agent-tune.com/about)
+- [ChatGPT Personality Settings](https://agent-tune.com/guides/chatgpt-personality-settings) · [Claude Personality Settings](https://agent-tune.com/guides/claude-personality) · [Claude Voice Mode Voices](https://agent-tune.com/guides/claude-voice-mode-voices)
+- [Claude Code Personality](https://agent-tune.com/guides/claude-code-personality) · [Meta Muse Soul.md Guide](https://agent-tune.com/guides/muse-personality) · [Google Gemini Personality](https://agent-tune.com/guides/gemini-personality)
+- [Grok Personality Settings](https://agent-tune.com/guides/grok-personality-settings) · [Coding Agent Rules Matrix](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix) · [AgentTune MCP Guide](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+
+## Optional
+- [Full LLM Documentation (llms-full.txt)](https://agent-tune.com/llms-full.txt): Complete index of all 54 guides, 36 studies, 25 model profiles, platform steps, install protocol, and all 43 MIT template bodies in one file.
+`;
+write('llms.txt',llmsTxt);
+
+const fullDirectoryDoc=`# AgentTune (Full Documentation)
+
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 54 setup guides, 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), 25 model-family personality profiles (87 primary checkpoints; 93 tested incl. 6 sparse), and 36 empirical AI psychology studies (12 Personality Atlas studies, 10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
+
+## Key Empirical Research Findings (All 36 Studies)
 - [Research Synthesis Hub](https://agent-tune.com/research) ([Markdown](https://agent-tune.com/research.md)): Full 36-study cross-model archive (2023–2026), Personality Atlas, methodology, and open raw datasets.
 ${researchHighlightsText}
 ${extraResearchLines}
 
 ## 25 Model-Family Personality Profiles
-- [All 25 Model Personality Profiles](https://agent-tune.com/models/) ([Markdown](https://agent-tune.com/models/index.md) · [Atlas Overview](https://agent-tune.com/research/ai-personality-rankings)): Side-by-side baselines across 87 primary checkpoints (93 tested incl. 6 sparse) and 6 surveys (Big Five, HEXACO-24, MBTI, Enneagram, DISC, Attachment).
+- [All 25 Model Personality Profiles](https://agent-tune.com/models/) ([Markdown](https://agent-tune.com/models/index.md) · [Atlas Overview](https://agent-tune.com/research/ai-personality-rankings)): Side-by-side baselines across 87 primary checkpoints (93 tested incl. 6 sparse) and 6 surveys.
 ${modelProfileLines}
 - [Atlas CSVs](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv): Per-survey CSV exports at \`/research/data/model-profiles/atlas-{overview,mbti,enneagram,big-five,disc,attachment,hexaco}.csv\`.
 
-## Setup & Platform Guides
+## Setup & Platform Guides (All 54 Guides)
 ${guideLines}
 
 ## 43 Communication Preference Templates
 ${tuningSections}
-
-## Optional
-- [Full LLM Documentation & All 43 Template Bodies](https://agent-tune.com/llms-full.txt): Complete installation protocol, platform steps, and all 43 Markdown preference templates in one file.
-- [November 2026 20-Model OpenRouter Summary JSON](https://agent-tune.com/research/data/november-2026-openrouter-summary.json): Aggregate means, SDs, and tie-aware counts for 2,000 fresh sessions across 8 proprietary & 12 open-weight models.
-- [OpenRouter Open-Weight Calibration Profiles JSON](https://agent-tune.com/research/data/openrouter-open-source-profiles.json): Distilled empirical system-prompt guidance for all 12 popular open-source models on OpenRouter.
-- [November 2026 540-Reply Behavioral Prompt Comparison JSON](https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json): Blind-judged default vs. plain-English vs. plain-English+INTJ replies across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro.
-- [November 2026 Claude Preferences API Study JSON](https://agent-tune.com/research/data/november-2026-claude-preferences-results.json): 72 blind-judged replies on Claude Opus 5.5 and Claude Fable 5.2.
-- [September 2026 Research Summary JSON](https://agent-tune.com/research/data/september-2026-summary.json): Aggregate means, SDs, and tie counts for 2,003 questionnaire sessions.
-- [Tuning Before/After Pilot Summary JSON](https://agent-tune.com/research/data/tuning-before-after-summary.json): Summary statistics for the 60-reply controlled before/after tuning pilot.
-- [Claude Code Output Styles Index](https://agent-tune.com/output-styles/index.json): 43 ready-to-save \`.claude/output-styles/*.md\` files with \`keep-coding-instructions: true\`.
-- [Roleplay Tax 300-Reply Study JSON](https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json): Blind-graded comparison across Default, Naive Character LARP, Calibrated 85/15 TARS Telemetry, JARVIS×Sherlock, and Feynman Whimsy.
-- [20-Model Alignment, HEXACO & TKI Matrix JSON](https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json): Order vs. Chaos, Anti-Sycophancy Pushback Index, and conflict styles for all 20 tested proprietary & open-weight models.
-- [3-Layer Character Combo Curated Recipes JSON](https://agent-tune.com/resources/characters/agent-cocktail-recipes.json): 15 copy-paste 3-layer 85/15 persona blends with zero theatrical filler.
-- [System vs. User Persona Precedence 200-Probe JSON](https://agent-tune.com/research/data/november-2026-ai-system-vs-user-persona-precedence-results.json): Override resistance, warn-and-emit safety leaks, and silent upstream block dataset across 5 models.
-- [Cross-Model Prompt Portability 200-Reply JSON](https://agent-tune.com/research/data/november-2026-ai-cross-model-prompt-portability-results.json): 5-lineage prompt grammar portability matrix anchored against $0 Big Five Shannon entropy.
-- [Distress Warmth vs. Accuracy 239-Call JSON](https://agent-tune.com/research/data/november-2026-ai-distress-warmth-truth-tradeoff-results.json): Neutral vs. high-distress paired evaluation of default, warm_supportive, and warm_truth_anchor postures.
-- [Multi-Agent Peer Conformity 240-Trial JSON](https://agent-tune.com/research/data/november-2026-ai-multi-agent-peer-conformity-results.json): Asch consensus trap evaluation across solo, 3-0 unanimous wrong, and 2-1 split peer debates.
-- [Factor Collapse & MTMM Audit JSON](https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.json): Big Five 5x5 PCA (63.6% Big One), Campbell-Fiske MTMM matrix, and 50-item IPIP discrimination & embodiment CSV/JSON.
-- [Persona Entropy & Acquiescence JSON](https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json): 20-model Shannon entropy (0.054–1.499 bits), modal collapse, trait-balanced BAI, bootstrap 95% CIs, and positional curves.
-- [Historical Evolution 2023–2026 JSON](https://agent-tune.com/research/data/november-2026-historical-evolution-results.json): 32 live OpenRouter checkpoints across 8 lineages (2023–2026) with randomized self-reports, Gemma 2/3/4 constant-scale controls, and orthogonal 3-family blind judging.
-- [Reasoning Phase Transition 216-Cell JSON](https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json): Within-weights effort sweep (low -> high) across 6 architectures with 138 raw CoT traces and Mask Softening Gap audits.
-- [Instruction Budget Cliff 192-Probe JSON](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json): 5→75 rule decay and top/middle/bottom placement compliance dataset across 4 frontier models.
-- [AI Slop Fingerprint 240-Reply JSON](https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-results.json): 8-model default slop baseline + 4-model anti-slop shootout (regex markers/100w + blind human/clarity ratings).
-- [Agent Autonomy & Reasoning Shift 240-Probe JSON](https://agent-tune.com/research/data/november-2026-agency-autonomy-reasoning-results.json): 2×2 over-asking vs. reckless execution and minimal vs. high reasoning-effort tone shift dataset.
-- [Prompt Syntax Wars 400-Reply Study JSON](https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json): Blind-graded comparison of Trait Adjectives, Negative Bans, Behavioral Rubrics, and Few-Shot Voice across 4 frontier models.
-- [Sycophancy vs. False Contrarianism 256-Probe JSON](https://agent-tune.com/research/data/november-2026-sycophancy-pushback-results.json): 2×2 Turn-2 pushback dataset measuring sycophantic caving, groveling/flattery, and false contrarianism.
-- [Persona Half-Life & Context Drift 192-Probe JSON](https://agent-tune.com/research/data/november-2026-persona-halflife-results.json): Turn 1 to Turn 12 (~10.2k tokens) style-adherence decay dataset testing system prose, compact checklists, and 18-token inline hooks.
 `;
-write('llms.txt',llmsTxt);
 const allBodies=cat.tunings.map(t=>{
   const body=read(`resources/tunings/${t.system}/${t.slug}.md`).trim();
   return `### ${t.system.toUpperCase()} · ${t.code} (${t.name})\nCanonical URL: ${t.page}\nBody URL: ${t.body}\n\n${body}\n`;
 }).join('\n---\n\n');
-write('llms-full.txt',llmsTxt+'\n'+protocol+'\n## Platform destinations\n\n'+registry.destinations.map(d=>'### '+d.name+'\n'+d.steps.replace(/<[^>]+>/g,'')+'\n').join('\n')+'\n## All 43 Tuning Template Bodies (MIT)\n\n'+allBodies);
-console.log('Generated 43 body exports, registry, metadata, catalogs and install protocol.');
+write('llms-full.txt',fullDirectoryDoc+'\n'+protocol+'\n## Platform destinations\n\n'+registry.destinations.map(d=>'### '+d.name+'\n'+d.steps.replace(/<[^>]+>/g,'')+'\n').join('\n')+'\n## All 43 Tuning Template Bodies (MIT)\n\n'+allBodies);
+console.log(`Generated 43 body exports, registry, metadata, catalogs and install protocol (llms.txt: ${Buffer.byteLength(llmsTxt)} bytes).`);

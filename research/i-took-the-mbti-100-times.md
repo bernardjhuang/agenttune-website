@@ -7,7 +7,7 @@ Methodology note · MBTI simulation
 
 One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical May 2026 note
 
-By Bernard Huang · Updated November 16, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/i-took-the-mbti-100-times.md) · [CSV](https://agent-tune.com/research/data/september-2026-summary.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 16, 2026 · [Markdown (.md)](https://agent-tune.com/research/i-took-the-mbti-100-times.md) · [CSV](https://agent-tune.com/research/data/september-2026-summary.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script asked Opus 4.8 for one set of per-item probabilities and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September and November 2026 fresh-session cohorts.
 

@@ -5,7 +5,7 @@ Guide · ChatGPT
 
 # 20 ChatGPT custom instructions examples (Box 1 + Box 2).
 
-By Bernard Huang · Updated November 25, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization → Custom Instructions (on mobile: Settings → Customize ChatGPT). Put your role, tech stack, and goals in Box 1, and paste one of the sub-500-character role blocks below into Box 2 ('How would you like ChatGPT to respond?').
 

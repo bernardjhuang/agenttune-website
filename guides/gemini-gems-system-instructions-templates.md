@@ -5,7 +5,7 @@ Guide · Gemini
 
 # Gemini Gems, Saved Info, and GEMINI.md templates.
 
-By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Gemini → Settings → Personal Intelligence to add 3–5 concise Saved Info rules globally, or Gem Manager → New Gem for specialized workflows. Pick any of the 4 downloadable starters or 16 Gem & GEMINI.md roles below.
 

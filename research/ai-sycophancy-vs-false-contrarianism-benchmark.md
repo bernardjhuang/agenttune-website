@@ -5,7 +5,7 @@ Agent Research · November 2026 · 256-Probe Benchmark
 
 # Does anti-sycophancy tuning break valid corrections? The 2×2 pushback benchmark.
 
-By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 256 two-turn pushback tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro to see when models cave in, when they grovel, and when "always push back" rules make them argue against valid corrections.
 

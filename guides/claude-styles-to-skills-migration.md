@@ -5,7 +5,7 @@ Guide · Claude Migration
 
 # Claude Styles are moving to Skills: how to migrate.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Move your everyday tone and brevity rules into Settings → Profile (or General) → Personal Preferences. Move task-specific writing formats (like memos, changelogs, or newsletters) into Claude Skills or Project Instructions. In Claude Code, use ~/.claude/output-styles/ with /output-style.
 

@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # How to change Meta Muse’s avatar, name, and Identity.md.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-identity-md-avatar-name.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Meta Muse's avatar, name, or voice on mobile or muse.ai, tap your Assistant icon (Muse's avatar) → Identity → Edit (Identity.md), or tell Muse in chat: 'Update only Identity.md: change your avatar/name to X without touching Soul.md.' Keep your tone and formatting rules inside Soul.md so avatar updates never overwrite how Muse talks to you.
 

@@ -5,7 +5,7 @@ Developer resource · runnable starter & JS scorer
 
 # Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 20, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram app. Pass 36 whole-number answers (1–5) to score() to get all nine type totals (4–20) and every tied leader without forcing a fake winner. The code and synthetic demo inputs are MIT-licensed; see the fine print below for OEPS question-text terms.
 

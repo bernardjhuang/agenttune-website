@@ -5,7 +5,7 @@ Templates · Coaching & Learning Modes
 
 # Socratic, Feynman & differential-diagnosis AI coaching prompts.
 
-By Bernard Huang · Updated November 24, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 24, 2026 · [Markdown (.md)](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Isolate your Socratic or Feynman tutor prompt inside a dedicated ChatGPT Project, Claude Project, or Gemini Gem so it doesn't interfere with quick work queries, and always include a keyword escape hatch ('if I type BLUF or urgent, give the direct solution immediately').
 

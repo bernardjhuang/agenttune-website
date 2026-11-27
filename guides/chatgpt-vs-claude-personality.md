@@ -5,7 +5,7 @@ Comparison · GPT vs Claude
 
 # ChatGPT vs. Claude personality: what default benchmarks actually show.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest survey difference is how often they land on an MBTI border tie: Claude Fable 5.1 tested as a clear INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (testing as clear ISTJ in 45 vs clear INTJ in 19 tie-free). Adding custom instructions changes reply structure much more than switching models.
 

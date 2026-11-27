@@ -5,7 +5,7 @@ Guide · Google Gemini
 
 # How to change Google Gemini’s personality.
 
-By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 27, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Yes—you can change Gemini's personality in the Gemini app or on gemini.google.com under Settings & help → Personal Intelligence → Instructions for Gemini (Saved info), or by creating a Custom Gem. Pick a starter download below (No-Fluff Search Brief Gem, Saved Info Default, Code Reviewer, or GEMINI.md). Note that Google Search AI Overviews ignore Saved info.
 

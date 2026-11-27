@@ -5,7 +5,7 @@ Psychometric Forensics · November 2026 · 10,000 Sheets
 
 # The AI "Big One": 63.6% factor collapse and cross-instrument validity failure across 10,000 sheets.
 
-By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 In humans, the Big Five traits vary independently. Across 20 frontier and open-weight AI models (2,000 fresh IPIP-50 sessions and 10,000 total tests), 63.6% of all Big Five variation collapses onto one general helpfulness-and-calmness score—and similar labels on MBTI and DISC do not line up.
 

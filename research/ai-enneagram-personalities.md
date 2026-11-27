@@ -5,7 +5,7 @@ Research · Personality Atlas · Enneagram
 
 # Enneagram personality test results across 25 AI families.
 
-By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-enneagram-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-enneagram.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-enneagram-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-enneagram.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Nine motivational patterns (4–20 sum per type across 36 items) tested 30 to 50 times per version across 87 eligible checkpoints in fresh chats.
 

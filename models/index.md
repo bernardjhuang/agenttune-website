@@ -51,7 +51,7 @@ Start from the [25-Family × 6-Test Atlas Overview](https://agent-tune.com/resea
 - [Lab Rollup: Open-Source Model Personalities](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 - [Free Tool: Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator)
 - [Templates: 43 Personality Templates](https://agent-tune.com/library/)
-- [Setup: 53 App & Agent Guides](https://agent-tune.com/guides/)
+- [Setup: 54 App & Agent Guides](https://agent-tune.com/guides/)
 - [Reference: AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary)
 
 ## Filter & compare model families.

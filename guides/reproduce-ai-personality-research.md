@@ -5,7 +5,7 @@ Developer guide · reproducibility
 
 # How to reproduce AgentTune’s AI self-report research
 
-By Bernard Huang · Updated November 26, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download the frozen JSON and CSV files from /research/data/, then run 'node september-2026-score.cjs' and 'node content-analysis.cjs' to verify the 2,003-record September archive, or run 'python3 tools/analyze-psychometric-forensics.py' to recompute the 10,000-sheet November dataset (including the 63.58% single-factor PCA, Campbell-Fiske MTMM matrix, and 0.054 to 1.499 bits Shannon entropy) at $0.00 API cost.
 

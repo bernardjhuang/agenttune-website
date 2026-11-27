@@ -5,7 +5,7 @@ Psychometric Forensics · November 2026 · 10,000 Sheets
 
 # Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models.
 
-By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Average scores hide a huge split in how steady AI models are from chat to chat: proprietary models give almost identical answers every run (Claude Fable 5.2 averages just 0.054 bits of spread with 2/100 unique DISC sheets), while DeepSeek V4 Pro varies across 1.499 bits.
 

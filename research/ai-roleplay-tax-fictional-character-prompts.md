@@ -5,7 +5,7 @@ Research · November 2026 · 300-Reply Study
 
 # Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.
 
-By Bernard Huang · Updated November 24, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 24, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 5 character prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-graded replies) to see how much full character roleplay hurts accuracy—and how an 85/15 split keeps the voice with 100% accuracy.
 

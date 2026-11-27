@@ -5,7 +5,7 @@ Agent Research · November 2026 · 240-Probe Study
 
 # Agent autonomy calibration & reasoning-effort drift: when bold prompts break safety gates.
 
-By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 240 live tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro. Part 1 (192 probes) tests 4 autonomy styles across 6 safe and 6 destructive ops tasks; Part 2 (48 probes) tests minimal vs. high reasoning effort under strict 85/15 persona rules.
 

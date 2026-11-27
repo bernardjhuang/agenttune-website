@@ -140,8 +140,11 @@ Base styles, Warmth/Headers sliders, and compact custom instructions](https://ag
 Custom GPT instructions template & 8,000-char budget.
 Six-part GPT skeleton, Knowledge file offloads & rule ordering](https://agent-tune.com/guides/custom-gpt-instructions-template-limit)
 [Claude
-How to change Claude's personality: settings & 7 prompts.
+Change Claude's personality: settings & 7 prompts (2026).
 Personal Preferences paths, 7 setups, Opus/Fable data & 36-reply test kit](https://agent-tune.com/guides/claude-personality)
+[Claude Voice Mode
+How to change Claude's voice (5 voices, gender & speed).
+Switch Buttery, Airy, Mellow, Glassy & Rounded on mobile/web + interactive picker](https://agent-tune.com/guides/claude-voice-mode-voices)
 [Claude Migration
 Claude Styles are being retired and migrated to Skills.
 Where your old presets belong across Personal Preferences, Skills, and Projects](https://agent-tune.com/guides/claude-styles-to-skills-migration)

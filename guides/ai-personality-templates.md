@@ -5,7 +5,7 @@ Directory · Templates
 
 # AI personality and system prompt templates.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Pick your app or style gallery below: Meta Muse Soul.md & Identity.md, Claude Personal Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices and Socratic/Feynman Coaching templates.
 

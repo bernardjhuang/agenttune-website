@@ -5,7 +5,7 @@ Guide · Open-Source AI
 
 # OpenRouter and open-source AI system prompt templates.
 
-By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Select your open-weight model in the interactive matcher below to get a ready-to-paste system prompt, OpenRouter API JSON payload, or Ollama Modelfile calibrated to that model's measured quirks (like Llama 4 preambles, DeepSeek verbosity, or Gemma 4 high agreeableness).
 

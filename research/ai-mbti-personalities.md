@@ -5,7 +5,7 @@ Research · Personality Atlas · MBTI
 
 # MBTI-style personality test results across 25 AI families.
 
-By Bernard Huang · Updated November 26, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-mbti.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-mbti.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Four preference pairs (-16 to +16) tested 30 to 50 times per version across 87 eligible checkpoints in fresh chats with no memory.
 

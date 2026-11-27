@@ -5,7 +5,7 @@ Research · November & September 2026
 
 # Does personality tuning change AI answers?
 
-By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 20 everyday tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot on Claude Opus 5.5.
 

@@ -5,7 +5,7 @@ Guide · Meta Muse & Meta AI
 
 # How to change Meta AI’s personality (and how it differs from Meta Muse).
 
-By Bernard Huang · Updated November 23, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Meta Muse, open Settings → Personalization → Assistant Identity (or tap the Assistant icon → Identity) to edit Soul.md (communication style), Identity.md (name, avatar, voice), and Memory.md (facts about you). In Meta AI on WhatsApp, Instagram, Messenger, or web chat where Soul.md is not available, paste a compact communication block at the start of the thread or save a one-line preference in account memory.
 

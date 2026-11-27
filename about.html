@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About AgentTune &amp; Bernard Huang | AI Psychology &amp; Tuning</title>
+  <meta name="description" content="Meet Bernard Huang, founder of AgentTune. Learn how we test 25 AI model families across 6 personality surveys, benchmark prompts, and publish open MIT rules." />
+
+  <meta property="og:title" content="About AgentTune &amp; Bernard Huang" />
+  <meta property="og:description" content="Independent AI personality research, transparent empirical benchmarks, and free open-source custom instructions for ChatGPT, Claude, Muse, and coding agents." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agent-tune.com/about" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="https://agent-tune.com/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune — paste-ready personality tunings for your AI agent." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About AgentTune &amp; Bernard Huang" />
+  <meta name="twitter:description" content="Independent AI personality benchmarks and MIT-licensed custom instructions built by Bernard Huang." />
+  <meta name="twitter:site" content="@bernardjhuang" />
+  <meta name="twitter:image" content="https://agent-tune.com/og/og-card.png" />
+
+  <link rel="canonical" href="https://agent-tune.com/about" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://agent-tune.com/about#webpage",
+        "url": "https://agent-tune.com/about",
+        "name": "About AgentTune & Bernard Huang",
+        "description": "Creator background, empirical AI psychology methodology, reproducibility standards, and licensing boundaries for AgentTune.",
+        "mainEntity": {"@id": "https://agent-tune.com/#person"},
+        "isPartOf": {"@id": "https://agent-tune.com/#website"}
+      },
+      {
+        "@type": "Person",
+        "@id": "https://agent-tune.com/#person",
+        "name": "Bernard Huang",
+        "url": "https://agent-tune.com/about",
+        "jobTitle": "Creator & Researcher",
+        "sameAs": [
+          "https://github.com/bernardjhuang",
+          "https://x.com/bernardjhuang",
+          "https://github.com/bernardjhuang/agenttune"
+        ],
+        "worksFor": {"@id": "https://agent-tune.com/#organization"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://agent-tune.com/#organization",
+        "name": "AgentTune",
+        "url": "https://agent-tune.com/",
+        "founder": {"@id": "https://agent-tune.com/#person"},
+        "sameAs": [
+          "https://github.com/bernardjhuang/agenttune",
+          "https://github.com/bernardjhuang/agenttune-benchmarks",
+          "https://x.com/bernardjhuang"
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"About"}]}</script>
+
+  <script defer src="/consent.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .about-body { max-width: 760px; margin: 0 auto; }
+    .about-summary { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 6px 0 30px; font-size: 15.5px; line-height: 1.64; color: var(--ink); }
+    .about-body h2 { font-family: var(--font-serif); font-size: 24px; font-weight: 500; letter-spacing: -0.012em; color: var(--ink); margin: 38px 0 12px; }
+    .about-body p, .about-body li { font-size: 16px; line-height: 1.68; color: var(--ink); }
+    .about-body p { margin: 0 0 14px; }
+    .about-body ul { margin: 0 0 18px; padding-left: 22px; }
+    .about-body li { margin-bottom: 8px; }
+    .about-body a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+    .about-meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); margin: 6px 0 0; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <svg class="brand-mark" width="20" height="20" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M19 10v20c0 7.2 5.6 12.5 13 12.5S45 37.2 45 30V10" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/><line x1="32" y1="42.5" x2="32" y2="55" stroke="currentColor" stroke-width="7" stroke-linecap="square"/><circle cx="32" cy="20" r="6.5" fill="var(--accent, #9c3b1f)"/></svg>
+        <span>AgentTune</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library/">Library</a>
+        <a href="/tests/">Tests</a>
+        <a href="/research">Research</a>
+        <a href="/models/">Models</a>
+        <a href="/guides/">Guides</a>
+        <a href="/tools/custom-instructions-generator">Generator</a>
+        <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="crumb-sep" aria-hidden="true">›</span>
+      <span class="crumb-current" aria-current="page">About</span>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" style="padding-bottom: 10px;">
+        <p class="page-eyebrow">About AgentTune · Open AI Psychology &amp; Preferences</p>
+        <h1 class="h-hero h-research-hero">Why we measure how AI models behave—and give away every rule block for free.</h1>
+        <p class="about-meta">Created by Bernard Huang · MIT-licensed library &amp; open datasets</p>
+      </section>
+
+      <div class="about-body">
+        <div class="about-summary">
+          <strong>In brief:</strong> AgentTune is an independent open-source project built by <a href="https://github.com/bernardjhuang" target="_blank" rel="noopener">Bernard Huang</a>. We run reproducible personality benchmarks across 25 AI model families (93 checkpoints) and publish copy-paste custom instructions, browser scoring tools, and a stateless MCP server with zero paywalls, accounts, or tracking of your prompts.
+        </div>
+
+        <h2>Who builds AgentTune</h2>
+        <p>I started AgentTune because customizing how AI models talk—without triggering sycophancy, roleplay bloat, or forgotten system rules—relied almost entirely on vibes and viral prompt threads. Every claim on this site is backed by published JSON/CSV datasets and reproducible scripts so engineers, researchers, and everyday users can check the evidence for themselves.</p>
+        <p>Find the source repositories on GitHub (<a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a> for templates and the Claude Code plugin, plus <a href="https://github.com/bernardjhuang/agenttune-benchmarks" target="_blank" rel="noopener">bernardjhuang/agenttune-benchmarks</a> for open psychometric CSV/JSON datasets), follow updates on <a href="https://x.com/bernardjhuang" target="_blank" rel="noopener">X (@bernardjhuang)</a>, or write to <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->.</p>
+
+        <h2>How we run our experiments</h2>
+        <ul>
+          <li><strong>Fresh-chat isolation:</strong> All 25 model-family profiles in our <a href="/models/">Models directory</a> and 36 studies in the <a href="/research">Research Hub</a> are sampled across independent zero-memory API calls via OpenRouter (87 primary checkpoints passing our n &ge; 20 threshold; 93 total tested including 6 quarantined sparse runs).</li>
+          <li><strong>Orthogonal 3-family blind judging:</strong> Task benchmarks pair deterministic regex/token checks with three separate model families acting as blind judges (reporting Krippendorff&rsquo;s &alpha;) so no lab grades its own outputs.</li>
+          <li><strong>Limits shown alongside headlines:</strong> Whenever an MBTI four-letter code hides high axis tie rates (16 of 25 model families) or a body-related question triggers midpoint clamping, we suppress clean labels and publish the raw tie counts.</li>
+          <li><strong>Local-first privacy:</strong> All 5 <a href="/tests/">personality questionnaires</a> and 10 browser utilities score completely inside your tab, while the zero-auth <a href="/guides/mcp-server-ai-preferences-portable-tuning">AgentTune MCP server</a> processes tool calls statelessly in memory without storing inputs.</li>
+        </ul>
+
+        <h2>What personality templates are (and are not)</h2>
+        <p>Our 43 <a href="/library/">Library templates</a> are MIT-licensed starter rules for formatting, directness, pushback, and clarifying questions—not psychological diagnoses or guaranteed capability boosters. Short, plain-English behavioral rubrics consistently outperform vague trait adjectives in our controlled benchmarks, so we encourage users to inspect every rule and adapt it via the <a href="/tools/custom-instructions-generator">Custom Instructions Generator</a>.</p>
+
+        <h2>Start exploring</h2>
+        <ul>
+          <li><a href="/research">Empirical AI Psychology Archive (36 Studies)</a> — raw datasets, methodology, and reproducible scripts.</li>
+          <li><a href="/models/">25 Model-Family Personality Profiles</a> — compare Claude, ChatGPT, Gemini, Grok, Muse, DeepSeek, Qwen, Llama 4, and Mistral.</li>
+          <li><a href="/guides/">54 Setup Guides</a> — exact paste paths and character budgets across every AI client and coding agent.</li>
+          <li><a href="/SKILL.md">Agent Skill Manifest (SKILL.md)</a> &amp; <a href="/llms.txt">llms.txt</a> — machine-readable entrypoints and MCP integration.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
+      <span class="footer-legal"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+    </footer>
+  </div>
+</body>
+</html>

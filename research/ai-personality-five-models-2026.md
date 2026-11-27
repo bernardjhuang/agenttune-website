@@ -5,7 +5,7 @@ Research · September 2026
 
 # What five AI models say about themselves.
 
-By Bernard Huang · Updated September 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-five-models-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated September 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-five-models-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We gave GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 five standard personality quizzes 100 times each in fresh chats (plus Grok 4.6’s single-profile report) to see how their answers compare.
 

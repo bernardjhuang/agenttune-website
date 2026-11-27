@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.agent-tune/agenttune",
-  "description": "Primary-source AI psychology research (36 empirical studies across 2023–2026 + 12 Personality Atlas pages + deterministic IF/THEN agent briefs), 53 setup guides, 25 model-family personality profiles (87 primary checkpoints across 6 surveys including HEXACO; 93 tested incl. 6 sparse), 43 MIT-licensed communication preference templates, 5 open local personality questionnaires, 10 free browser tools (8 local JS utilities + 2 generators), SKILL.md, and 6 read-only MCP tools.",
-  "version": "1.4.0",
+  "description": "25 AI model personality profiles (87 primary checkpoints across 6 surveys incl. HEXACO), 36 empirical AI psychology studies, 54 setup guides, 43 MIT preference templates, 5 open local personality tests, SKILL.md, and 12 read-only MCP tools (including live instruction linting, format conversion & model comparison).",
+  "version": "1.5.0",
   "websiteUrl": "https://agent-tune.com",
   "repository": {
     "url": "https://github.com/bernardjhuang/agenttune",

@@ -1,0 +1,99 @@
+{
+  "slug": "claude-voice-mode-voices",
+  "published": "2026-11-11",
+  "updated": "2026-11-27",
+  "title": "How to Change Claude's Voice (5 Voices, Gender & Speed)",
+  "description": "Change Claude's voice on mobile, web, and desktop: switch Buttery, Airy, Mellow, Glassy, or Rounded (female/male/British), speed, and Voice Mode tone.",
+  "scripts": [
+    "/resources/tools/ai-voice-picker.js"
+  ],
+  "pill": "Guide · Claude Voice Mode",
+  "h1": "How to change Claude’s voice (all 5 voices, female/male options & tone).",
+  "dek": "Exact iOS, Android, web, and desktop paths to switch between Buttery, Airy, Mellow, Glassy, and Rounded, pick speech speed, and keep spoken answers crisp.",
+  "lede": "You can change Claude’s <strong>spoken audio voice</strong> across all five voice options (female-leaning, male-leaning, and British-accented) plus speech speed (<strong>Slow, Normal, Fast</strong>) on iOS, Android, web, and desktop—and separately tune how concise or direct Claude sounds out loud via Profile Personal Preferences.",
+  "answer": "On iOS or Android, open Voice Mode (tap the waveform icon) and tap the bottom-left settings button—or go to Initials → Settings → Voice—to switch between Claude's 5 voices (Buttery, Airy, Mellow, Glassy, Rounded) and speech speed. On web or desktop, open Settings → Capabilities → Voice settings. To make Voice Mode give shorter spoken answers, add formatting rules in Settings → Profile → Personal preferences.",
+  "sections": [
+    {
+      "id": "how-to-change-claude-s-voice-mobile-web-desktop",
+      "h2": "How to change Claude’s voice on mobile, web, and desktop.",
+      "html": "<span id=\"claude-voice-settings-paths\"></span><p>Claude Voice Mode offers five English voice presets along with speech speed controls (<strong>Slow, Normal, Fast</strong>):</p><ol><li><strong>On iOS &amp; Android:</strong> Tap the <strong>Voice Mode waveform icon</strong> next to the composer, then tap the <strong>Settings button</strong> at the bottom-left of the voice screen (or tap your initials → <strong>Settings → Voice</strong>) to preview all five voices and adjust playback speed.</li><li><strong>On Web (<code>claude.ai</code>) &amp; Claude Desktop:</strong> Click your profile initials (bottom-left) → <strong>Settings → Capabilities → Voice settings</strong> (or <strong>Settings → General</strong> on older layouts) to pick and save your voice.</li></ol><div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Voice preset</th><th scope=\"col\">Voice register (Female / Male / Accent)</th><th scope=\"col\">Best paired with</th></tr></thead><tbody><tr><th scope=\"row\">Buttery</th><td>Warm, smooth, conversational (female-leaning register)</td><td>Thinking out loud, brainstorming, and coaching</td></tr><tr><th scope=\"row\">Airy</th><td>Light, brisk, crisp and neutral (female-leaning register)</td><td>Fast Q&amp;A and concise factual lookups on the move</td></tr><tr><th scope=\"row\">Mellow</th><td>Calm, measured, lower-pitch (male-leaning register)</td><td>Longer planning discussions and steady step-by-step pacing</td></tr><tr><th scope=\"row\">Glassy</th><td>Clear, poised, slightly brighter articulation</td><td>Spoken summaries and technical walkthroughs</td></tr><tr><th scope=\"row\">Rounded</th><td>Full, grounded British-accented inflection</td><td>Editorial critique and natural spoken dialogue</td></tr></tbody></table></div><div class=\"at-widget\" id=\"at-voice-picker\" data-platform=\"claude\" role=\"region\" aria-label=\"Interactive Claude Voice &amp; Spoken Tone Picker\"><p class=\"tools-help\">Loading interactive Claude voice &amp; tone matcher…</p></div><noscript><p>Enable JavaScript to use the interactive Claude voice matcher, or copy the spoken-tone rules below.</p></noscript>"
+    },
+    {
+      "id": "spoken-voice-vs-written-tone",
+      "h2": "Spoken audio voice vs. written Personal Preferences.",
+      "html": "<p>Changing a voice preset only changes pitch, cadence, and accent. Because Voice Mode reads Claude’s text output aloud, long markdown tables or multi-level bullet lists sound robotic when spoken. Pair your voice choice with a short <strong>Personal preferences</strong> block under <strong>Settings → Profile → Personal preferences</strong> (synced across mobile, web, and desktop), or open the full <a href=\"/guides/claude-personality\">Claude personality &amp; 7 setups guide</a>.</p><div class=\"guide-snippet\" data-tuning-prompt># Voice-Mode friendly brevity\n- Answer in 2–4 natural spoken sentences first, then ask if I want detail.\n- Avoid Markdown tables, deeply nested bullet lists, and raw URLs unless I ask.\n- Lead with the takeaway cleanly without warm-up filler.</div><p>Want to customize this for both spoken chats and desktop workflows? Open the <a href=\"/tools/custom-instructions-generator?target=claude-personal\">Custom Instructions Generator →</a></p>"
+    },
+    {
+      "id": "compare-ai-voice-modes",
+      "h2": "Compare Claude Voice Mode with ChatGPT and Gemini Live.",
+      "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th scope=\"col\">Assistant</th><th scope=\"col\">Available voice options</th><th scope=\"col\">Spoken-tone guide</th></tr></thead><tbody><tr><th scope=\"row\">Claude Voice Mode</th><td>5 English voices (Buttery, Airy, Mellow, Glassy, Rounded) + Slow/Normal/Fast</td><td><a href=\"/guides/claude-personality\">Written Personal Preferences →</a></td></tr><tr><th scope=\"row\">ChatGPT Voice Mode</th><td>9 voices (Sol, Cove, Maple, Vale, Arbor, Breeze, Ember, Juniper, Spruce)</td><td><a href=\"/guides/chatgpt-voice-mode-voices-personality\">ChatGPT Voice Mode voices →</a></td></tr><tr><th scope=\"row\">Google Gemini Live</th><td>App-wide Gemini Live voices synced under Settings → Gemini’s voice</td><td><a href=\"/guides/gemini-live-voices-personal-intelligence\">Gemini Live voices guide →</a></td></tr></tbody></table></div>"
+    },
+    {
+      "id": "what-measured-pilot-data-shows",
+      "h2": "What measured testing shows about spoken-ready brevity.",
+      "html": "<p>In our <a href=\"/research/does-personality-tuning-change-ai-answers\">60-reply controlled pilot</a> (20 real tasks across default Claude, plain behavioral rules, and conversational framing), adding explicit concise rules lifted answer-first openings from <strong>14/20 to 19/20</strong>, cut hedges per reply from <strong>0.35 to 0.05</strong>, and dropped trailing follow-up questions from <strong>0.90 to 0.25</strong> without hurting task accuracy. Verify your settings in two fresh chats using the <a href=\"/tools/instruction-test-bench\">Instruction Test Bench</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How do I change Claude's voice to female or male, or pick a British accent?",
+      "a": "Open Claude Voice Mode (tap the waveform icon) and tap the bottom-left settings button on mobile—or open Settings → Capabilities → Voice settings on web or desktop. Pick Buttery or Airy for female-leaning voices, Mellow for a calm male-leaning voice, Glassy for bright articulation, or Rounded for a British-accented cadence."
+    },
+    {
+      "q": "How do I change Claude's voice on the iPhone or Android app?",
+      "a": "Tap the Voice Mode waveform icon in the mobile composer and open its bottom-left settings icon, or tap your initials → Settings → Voice to pick Buttery, Airy, Mellow, Glassy, or Rounded and choose Slow, Normal, or Fast playback speed."
+    },
+    {
+      "q": "Do my Claude Personal Preferences affect Voice Mode replies?",
+      "a": "Yes. Personal Preferences sync across claude.ai web, desktop, and mobile apps. Keeping replies under 2–4 sentences with no Markdown tables makes Voice Mode conversations sound much more natural."
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-11-27",
+      "note": "Promoted standalone Claude Voice Mode voices & speed guide (replacing redirect to general Claude personality guide)."
+    },
+    {
+      "date": "2026-11-11",
+      "note": "Initial Voice Mode presets (Buttery, Airy, Mellow, Glassy, Rounded) and mobile/web menu paths."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Anthropic Help Center: Understanding Claude's personalization features",
+      "href": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
+    },
+    {
+      "label": "AgentTune Guide: How to change Claude's personality",
+      "href": "https://agent-tune.com/guides/claude-personality"
+    },
+    {
+      "label": "AgentTune Study: Does personality tuning change AI answers?",
+      "href": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
+    }
+  ],
+  "related": [
+    {
+      "kicker": "Pillar guide",
+      "label": "Change Claude's personality: Settings & 7 prompts",
+      "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "ChatGPT Voice Mode: all 9 voices & tone",
+      "href": "/guides/chatgpt-voice-mode-voices-personality"
+    },
+    {
+      "kicker": "Comparison",
+      "label": "Google Gemini Live voices & Personal Intelligence sync",
+      "href": "/guides/gemini-live-voices-personal-intelligence"
+    },
+    {
+      "kicker": "Free builder",
+      "label": "Custom Instructions Generator for Claude",
+      "href": "/tools/custom-instructions-generator?target=claude-personal"
+    }
+  ],
+  "promptModel": "opus-5-5",
+  "promptDestination": "claude-personal"
+}

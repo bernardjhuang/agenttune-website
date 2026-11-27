@@ -5,7 +5,7 @@ Guide · OpenAI Custom GPTs
 
 # Custom GPT instructions template: how to use the 8,000-character budget cleanly.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Custom GPTs accept up to 8,000 characters in Instructions, but prompts between 1,800 and 4,000 characters follow rules more reliably. Split your prompt into six sections—Role, Behavioral Rules, Output Format, Knowledge & Tool Boundaries, Failure Modes, and Instruction Integrity—and offload reference docs to Knowledge files.
 

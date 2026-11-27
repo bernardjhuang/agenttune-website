@@ -1378,7 +1378,7 @@ ${nav}
           <a href="/research/what-personality-type-are-open-source-models"><span class="guide-related-kicker">Lab Rollup</span>Open-Source Model Personalities</a>
           <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Free Tool</span>Custom Instructions Generator</a>
           <a href="/library/"><span class="guide-related-kicker">Templates</span>43 Personality Templates</a>
-          <a href="/guides/"><span class="guide-related-kicker">Setup</span>53 App &amp; Agent Guides</a>
+          <a href="/guides/"><span class="guide-related-kicker">Setup</span>54 App &amp; Agent Guides</a>
           <a href="/guides/ai-personality-glossary"><span class="guide-related-kicker">Reference</span>AI Personality Glossary</a>
         </div>
       </section>
@@ -1451,7 +1451,7 @@ ${nav}
     </main>
     <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
-      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span class="footer-legal"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
   </div>
   <script type="application/json" id="models-compare-data">${JSON.stringify(comparePayload).replace(/</g, '\\u003c')}</script>

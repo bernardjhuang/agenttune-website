@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Do AI models really test as INTJ? The tie-breaking effect
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We re-scored 400 MBTI test runs from September 2026 to see how a single `<` operator in the original scoring code turned 55 tied runs into INTJ results.
 

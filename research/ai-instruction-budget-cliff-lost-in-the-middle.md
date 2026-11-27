@@ -5,7 +5,7 @@ Agent Research · November 2026 · 192-Probe Study
 
 # The Instruction Budget Cliff: how many rules before your AI forgets them?
 
-By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 192 controlled tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro to measure what happens when your system prompt grows from 5 rules to 75 rules—and why rules buried in the middle get forgotten first.
 

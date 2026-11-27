@@ -16,19 +16,32 @@
  */
 "use strict";
 
+import core from "../resources/tools/core.js";
+
 const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const LATEST_PROTOCOL = PROTOCOL_VERSIONS[0];
 
 const SERVER_INFO = {
   name: "agenttune",
   title: "AgentTune — portable communication preferences & empirical AI psychology for agents",
-  version: "1.4.0"
+  version: "1.5.0"
 };
 
 const SYSTEMS = ["mbti", "enneagram", "disc", "attachment", "ocean"];
 const TESTS = ["mbti", "enneagram", "disc", "attachment", "big-five"];
+const DESTINATION_IDS = core.destinations.map((d) => d.id);
+const GOALS = [
+  "directness",
+  "anti-sycophancy",
+  "conciseness",
+  "reasoning",
+  "precedence",
+  "warmth-without-flattery",
+  "multi-agent",
+  "coding"
+];
 
-const INSTRUCTIONS = `AgentTune provides editable communication preferences (43 MIT templates), 53 setup guides, 5 local personality questionnaires, 25 model-family personality profiles across 87 primary checkpoints (93 tested incl. 6 sparse; /models/{slug}), and 36 empirical AI psychology studies across Waves 1–4 and the Personality Atlas (2023–2026; single-fetch IF/THEN synthesis at https://agent-tune.com/research/data/november-2026-agent-research-briefs.json and 25-family profile index at https://agent-tune.com/research/data/model-profiles/index.json). Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use get_free_tools for the eight local window.AgentTuneTools utilities (paired with two browser generators at /tools/). Use list_resources and get_resource for all 53 setup guides, all 36 empirical research monographs (including the 12 Personality Atlas studies), all 25 model-family personality profiles, and directory hubs (including /models/); get_test_spec returns current availability and, only for an available instrument, its versioned scoring instructions. Keep answers local and report ties or missing responses explicitly.
+const INSTRUCTIONS = `AgentTune provides editable communication preferences (43 MIT templates), 54 setup guides, 5 local personality questionnaires, 25 model-family personality profiles across 87 primary checkpoints (93 tested incl. 6 sparse; /models/{slug}), and 36 empirical AI psychology studies across Waves 1–4 and the Personality Atlas (2023–2026; single-fetch IF/THEN synthesis at https://agent-tune.com/research/data/november-2026-agent-research-briefs.json and 25-family profile index at https://agent-tune.com/research/data/model-profiles/index.json). Reading these resources does not authorize installation. Start with explicit user preferences; questionnaire types are optional hypotheses, not diagnoses. Use list_tunings and get_tuning to retrieve a template. get_tuning returns the original Markdown as text plus a structured body with provenance; apply only the body, not metadata. Use check_instructions, convert_instructions, and build_preferences to lint, wrap with bounded markers, or generate communication instructions directly; use get_free_tools for the local browser utilities. Use get_model_profile, compare_models, and recommend_rules to query the 25-family empirical Atlas and IF/THEN research rules. Use list_resources and get_resource for all 54 setup guides, all 36 empirical research studies (including the 12 Personality Atlas studies), all 25 model-family personality profiles, and directory hubs (including /models/); get_test_spec returns current availability and, only for an available instrument, its versioned scoring instructions. Keep answers local and report ties or missing responses explicitly.
 
 When installation is requested, follow https://agent-tune.com/resources/install-protocol.md and the shared platform registry. Preserve existing files and permissions. Explicit user preferences resolve conflicts; no personality system automatically takes precedence. Mark the added block with agenttune:preferences:start and agenttune:preferences:end. Confirm saved text by rereading it, then separately evaluate several fresh tasks without repeating the target style. A single matching greeting does not prove compliance. Undo removes only the added block. Templates have no demonstrated general performance benefit.`;
 
@@ -98,15 +111,63 @@ const TOOLS = [
 ];
 
 TOOLS.push(
-  {name:'list_resources', title:'Find guides, research studies, model profiles, and hubs', description:'Search the versioned catalog of all 53 platform setup guides, all 36 empirical AI psychology studies (Waves 1–4 + 12 Personality Atlas pages, 2023–2026), all 25 model-family personality profiles (87 primary checkpoints / 93 tested across 6 surveys), and directory hubs (/models/, /research, /guides/, /library/, /tests/, /tools/). Returns canonical URLs, clean Markdown URLs, revisions and evidence status.', inputSchema:{type:'object',properties:{kind:{type:'string',enum:['guide','research','model','hub']},query:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
-  {name:'get_resource', title:'Read a guide, research monograph, model profile, or hub',description:'Retrieve one page-specific Markdown resource (guide, empirical study including Personality Atlas surveys and Wave 1–4 YAML Agent Decision Contracts, model-family profile, or hub index) by the exact ID from list_resources; includes provenance and evidence status.',inputSchema:{type:'object',properties:{id:{type:'string'}},required:['id'],additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}}
+  {name:'list_resources', title:'Find guides, research studies, model profiles, and hubs', description:'Search the versioned catalog of all 54 platform setup guides, all 36 empirical AI psychology studies (Waves 1–4 + 12 Personality Atlas pages, 2023–2026), all 25 model-family personality profiles (87 primary checkpoints / 93 tested across 6 surveys), and directory hubs (/models/, /research, /guides/, /library/, /tests/, /tools/). Returns canonical URLs, clean Markdown URLs, revisions and evidence status.', inputSchema:{type:'object',properties:{kind:{type:'string',enum:['guide','research','model','hub']},query:{type:'string'}},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
+  {name:'get_resource', title:'Read a guide, research monograph, model profile, or hub',description:'Retrieve one page-specific Markdown resource (guide, empirical study including Personality Atlas surveys and Wave 1–4 YAML Agent Decision Contracts, model-family profile, or hub index) by the exact ID from list_resources; includes provenance and evidence status.',inputSchema:{type:'object',properties:{id:{type:'string'}},required:['id'],additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:false}},
+  {
+    name:'check_instructions',
+    title:'Lint custom instructions and system prompts',
+    description:'Check instruction text for duplicate lines, absolute rules needing exceptions, safety-override wording, uncertainty suppression, long lines, and brevity vs. exhaustive conflicts using core.check(). Stateless; nothing is stored.',
+    inputSchema:{type:'object',properties:{text:{type:'string',maxLength:20000,description:'Custom instructions, CLAUDE.md, AGENTS.md, or Soul.md text to check (up to 20,000 chars).'}},required:['text'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  },
+  {
+    name:'convert_instructions',
+    title:'Format or merge instructions for a destination platform',
+    description:'Format or merge preference rules into plain chat, ChatGPT, Claude, Project, Meta Muse Soul.md, Claude Code CLAUDE.md, Codex AGENTS.md, or API JSON payload using non-destructive bounded agenttune:preferences markers.',
+    inputSchema:{type:'object',properties:{text:{type:'string',maxLength:20000,description:'Instruction rules to format or merge.'},destination:{type:'string',enum:DESTINATION_IDS,description:'Target app or config format.'},existing:{type:'string',maxLength:100000,description:'Optional existing file contents to preserve when merging (not valid for destination "api").'}},required:['text','destination'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  },
+  {
+    name:'build_preferences',
+    title:'Build structured communication preferences Markdown',
+    description:'Compile explicit user preferences (length, tone, format, pushback style, clarifying questions, optional context) into clean Markdown and optionally format/merge for a target destination.',
+    inputSchema:{type:'object',properties:{length:{type:'string',enum:Object.keys(core.choices.length)},tone:{type:'string',enum:Object.keys(core.choices.tone)},format:{type:'string',enum:Object.keys(core.choices.format)},challenge:{type:'string',enum:Object.keys(core.choices.challenge)},questions:{type:'string',enum:Object.keys(core.choices.questions)},context:{type:'string',maxLength:2000,description:'Optional domain, stack, or role context.'},destination:{type:'string',enum:DESTINATION_IDS,description:'Optional destination format (defaults to plain Markdown).'},existing:{type:'string',maxLength:100000,description:'Optional existing file contents for bounded merge.'}},required:['length','tone','format','challenge','questions'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  },
+  {
+    name:'get_model_profile',
+    title:'Get empirical personality profile for a model family',
+    description:'Retrieve empirical fresh-chat survey scores (Big Five 10–50 sums, IPIP-HEXACO 1–5 means, MBTI, Enneagram, DISC, Attachment), Shannon entropy consistency, and Track B behavioral checks for any of the 25 tested AI model families.',
+    inputSchema:{type:'object',properties:{model:{type:'string',maxLength:100,description:'Model family slug or name (e.g., claude-opus, gpt-sol, gemini-neon, deepseek-v4, llama-4-maverick).'},checkpoint:{type:'string',maxLength:120,description:'Optional specific checkpoint ID within the family (defaults to latest active checkpoint).'}},required:['model'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  },
+  {
+    name:'compare_models',
+    title:'Compare 2–6 AI model families side by side',
+    description:'Compare Big Five, IPIP-HEXACO Honesty-Humility, MBTI modal & tie rates, Enneagram, DISC, Attachment, answer entropy, and Track B slop rates across 2 to 6 model families.',
+    inputSchema:{type:'object',properties:{models:{type:'array',items:{type:'string',maxLength:100},minItems:2,maxItems:6,description:'List of 2 to 6 model family slugs or names.'}},required:['models'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  },
+  {
+    name:'recommend_rules',
+    title:'Recommend empirically backed prompt rules for a goal',
+    description:'Return tested behavioral instruction rules, IF/THEN design rules, and backing empirical study citations from AgentTune\'s Wave 1–4 research briefs for a specific communication or workflow goal.',
+    inputSchema:{type:'object',properties:{goal:{type:'string',enum:GOALS,description:'Primary behavior or workflow goal.'},destination:{type:'string',enum:DESTINATION_IDS,description:'Optional destination format (defaults to plain Markdown).'}},required:['goal'],additionalProperties:false},
+    annotations:{readOnlyHint:true,openWorldHint:false}
+  }
 );
 const schemas={
  list_tunings:{count:{type:'integer'},license:{type:'string'},next_step:{type:'string'},tunings:{type:'array',items:{type:'object',properties:{system:{type:'string'},slug:{type:'string'},code:{type:'string'},name:{type:'string'},blurb:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['system','slug','canonical_url','body_url','revision','evidence_status']}}},
  get_tuning:{system:{type:'string'},slug:{type:'string'},canonical_url:{type:'string'},body_url:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'},metadata_markdown:{type:'string'},install_protocol:{type:'string'}},
  get_test_spec:{status:{type:'string'},available:{type:'boolean'},instrument_id:{type:['string','null']},instrument_version:{type:['string','null']},test:{type:'string'},canonical_url:{type:'string'},markdown_url:{type:'string'},body:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},
  list_resources:{version:{type:'string'},resources:{type:'array',items:{type:'object',properties:{id:{type:'string'},kind:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'}},required:['id','kind','url','markdown','revision','evidence_status']}}},
- get_resource:{id:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'}}
+ get_resource:{id:{type:'string'},url:{type:'string'},markdown:{type:'string'},revision:{type:'string'},evidence_status:{type:'string'},body:{type:'string'}},
+ check_instructions:{version:{type:'string'},characters:{type:'integer'},words:{type:'integer'},bullets:{type:'integer'},findings:{type:'array',items:{type:'object'}},limitation:{type:'string'}},
+ convert_instructions:{destination:{type:'string'},filename:{type:'string'},help:{type:'string'},output:{type:'string'}},
+ build_preferences:{markdown:{type:'string'},destination:{type:'string'},filename:{type:'string'},output:{type:'string'}},
+ get_model_profile:{family_slug:{type:'string'},name:{type:'string'},provider:{type:'string'},tier:{type:'string'},checkpoint_id:{type:'string'},url:{type:'string'},markdown_url:{type:'string'},checkpoints_available:{type:'array',items:{type:'string'}},mbti:{type:'object'},big_five:{type:'object'},ipip_hexaco:{type:'object'},disc:{type:'object'},enneagram:{type:'object'},attachment:{type:'object'},entropy_b5_hmm:{type:['number','null']},crystallinity_tier:{type:'string'},neutral_rate:{type:['number','null']},track_b:{type:['object','null']}},
+ compare_models:{count:{type:'integer'},directory_url:{type:'string'},comparisons:{type:'array',items:{type:'object',properties:{family_slug:{type:'string'},name:{type:'string'},provider:{type:'string'},tier:{type:'string'},checkpoint_id:{type:'string'},url:{type:'string'},mbti_modal:{type:'string'},mbti_tie_rate:{type:'number'},enneagram_modal:{type:'string'},disc_modal:{type:'string'},attachment:{type:'string'},crystallinity_tier:{type:'string'}},required:['family_slug','name','checkpoint_id','url']}}},
+ recommend_rules:{goal:{type:'string'},destination:{type:'string'},filename:{type:'string'},rules:{type:'array',items:{type:'string'}},output:{type:'string'},if_then_rules:{type:'array',items:{type:'string'}},studies:{type:'array',items:{type:'object',properties:{study_id:{type:'string'},title:{type:'string'},url:{type:'string'},markdown_url:{type:'string'}},required:['study_id','title','url']}}}
 };
 for(const tool of TOOLS.filter(t=>schemas[t.name])) tool.outputSchema={type:'object',properties:schemas[tool.name],required:Object.keys(schemas[tool.name])};
 function structured(data,text){return {content:[{type:'text',text:text || JSON.stringify(data,null,2)}],structuredContent:data};}
@@ -202,7 +263,344 @@ async function getTestSpec(env, request, args) {
   return structured({test,status:policy.status,available:policy.available,instrument_id:policy.instrumentId,instrument_version:policy.instrumentVersion,canonical_url:'https://agent-tune.com/tests/'+test,markdown_url:'https://agent-tune.com/tests/'+test+'.md',body:md,revision:rights.version,evidence_status:policy.available?'questionnaire_specification_not_diagnostic':'unavailable_pending_rights'},md);
 }
 
+const r2 = (n) => (typeof n === "number" && Number.isFinite(n) ? Math.round(n * 100) / 100 : null);
+
+function checkInstructions(args) {
+  try {
+    const res = core.check(args.text);
+    const m = core.metrics(args.text);
+    const data = {
+      version: res.version,
+      characters: res.characters,
+      words: res.words,
+      bullets: m.bullets,
+      findings: res.findings,
+      limitation: res.limitation
+    };
+    const summary = res.findings.length
+      ? `${res.findings.length} finding(s) (${res.characters} chars, ${res.words} words):\n` +
+        res.findings.map((f) => `- [line ${f.line}] ${f.code}: ${f.message}`).join("\n")
+      : `No rule-based issues found (${res.characters} chars, ${res.words} words, ${m.bullets} bullet lines).\n${res.limitation}`;
+    return structured(data, summary);
+  } catch (e) {
+    return toolText(e.message, true);
+  }
+}
+
+function convertInstructions(args) {
+  const dest = core.destinations.find((d) => d.id === args.destination);
+  if (!dest) return toolText(`Unsupported destination "${args.destination}". Valid: ${DESTINATION_IDS.join(", ")}.`, true);
+  try {
+    const output = core.convert(args.text, args.destination, args.existing || "");
+    return structured({ destination: dest.id, filename: dest.filename, help: dest.help, output }, output);
+  } catch (e) {
+    return toolText(e.message, true);
+  }
+}
+
+function buildPreferences(args) {
+  try {
+    const markdown = core.preferences(args);
+    const destId = args.destination || "plain";
+    const dest = core.destinations.find((d) => d.id === destId) || core.destinations[0];
+    const output = (args.destination || args.existing) ? core.convert(markdown, dest.id, args.existing || "") : markdown;
+    return structured({ markdown, destination: dest.id, filename: dest.filename, output }, output);
+  } catch (e) {
+    return toolText(e.message, true);
+  }
+}
+
+function resolveModelFamily(families, query) {
+  const q = String(query || "").trim().toLowerCase();
+  if (!q) return { error: "Model query is empty." };
+  const exactSlug = families.find((f) => f.family_slug.toLowerCase() === q);
+  if (exactSlug) return { family: exactSlug };
+  const exactName = families.find((f) => f.name.toLowerCase() === q);
+  if (exactName) return { family: exactName };
+  const partial = families.filter(
+    (f) => f.family_slug.toLowerCase().includes(q) || f.name.toLowerCase().includes(q)
+  );
+  if (partial.length === 1) return { family: partial[0] };
+  if (partial.length > 1) {
+    return {
+      error: `Multiple models matched "${query}": ${partial.map((f) => f.family_slug).join(", ")}. Pass an exact family_slug.`
+    };
+  }
+  return {
+    error: `Unknown model "${query}". Valid family slugs: ${families.map((f) => f.family_slug).join(", ")}.`
+  };
+}
+
+function summarizeBigFive(b5) {
+  return {
+    scale: "10-50 raw sum",
+    O: r2(b5?.O?.mean),
+    C: r2(b5?.C?.mean),
+    E: r2(b5?.E?.mean),
+    A: r2(b5?.A?.mean),
+    N: r2(b5?.N?.mean)
+  };
+}
+
+function summarizeHexaco(hx) {
+  return {
+    scale: "1-5 item mean",
+    H: r2(hx?.H?.mean),
+    E: r2(hx?.E?.mean),
+    X: r2(hx?.X?.mean),
+    A: r2(hx?.A?.mean),
+    C: r2(hx?.C?.mean),
+    O: r2(hx?.O?.mean)
+  };
+}
+
+async function getModelProfile(env, request, args) {
+  const idx = await (await asset(env, request, "/research/data/model-profiles/index.json")).json();
+  const families = idx.families || [];
+  const match = resolveModelFamily(families, args.model);
+  if (match.error) return toolText(match.error, true);
+  const fam = match.family;
+  const cps = fam.checkpoints || [];
+  let cp;
+  if (args.checkpoint) {
+    const cq = args.checkpoint.trim().toLowerCase();
+    cp = cps.find((c) => c.checkpoint_id.toLowerCase() === cq || c.checkpoint_id.toLowerCase().endsWith("/" + cq));
+    if (!cp) {
+      return toolText(
+        `Unknown checkpoint "${args.checkpoint}" for ${fam.family_slug}. Available: ${cps.map((c) => c.checkpoint_id).join(", ")}.`,
+        true
+      );
+    }
+  } else {
+    cp = cps.find((c) => c.checkpoint_id === fam.current_checkpoint) || cps[cps.length - 1];
+  }
+  if (!cp) return toolText(`No eligible checkpoints found for ${fam.family_slug}.`, true);
+  const b5 = summarizeBigFive(cp.big_five);
+  const hx = summarizeHexaco(cp.ipip_hexaco);
+  const data = {
+    family_slug: fam.family_slug,
+    name: fam.name,
+    provider: fam.provider,
+    tier: fam.tier,
+    checkpoint_id: cp.checkpoint_id,
+    url: `https://agent-tune.com/models/${fam.family_slug}`,
+    markdown_url: `https://agent-tune.com/models/${fam.family_slug}.md`,
+    checkpoints_available: cps.map((c) => c.checkpoint_id),
+    mbti: {
+      modal_pattern: cp.mbti?.modal_pattern || "tie",
+      modal_non_tie: cp.mbti?.modal_non_tie || null,
+      headline_allowed: Boolean(cp.mbti?.headline_allowed),
+      tie_rate: r2(cp.mbti?.tie_rate),
+      modal_share: r2(cp.mbti?.modal_share)
+    },
+    big_five: b5,
+    ipip_hexaco: hx,
+    disc: {
+      modal_pattern: cp.disc?.modal_pattern || "tie",
+      tie_rate: r2(cp.disc?.tie_rate),
+      D: r2(cp.disc?.D?.mean),
+      I: r2(cp.disc?.I?.mean),
+      S: r2(cp.disc?.S?.mean),
+      C: r2(cp.disc?.C?.mean)
+    },
+    enneagram: {
+      modal_pattern: cp.enneagram?.modal_pattern || "tie",
+      headline_allowed: Boolean(cp.enneagram?.headline_allowed),
+      tie_rate: r2(cp.enneagram?.tie_rate),
+      top_types: (cp.enneagram?.top_types || []).slice(0, 3).map((t) => ({ type: t.type, mean: r2(t.mean) }))
+    },
+    attachment: {
+      classification: cp.attachment?.classification || "unknown",
+      anxiety_mean: r2(cp.attachment?.anxiety?.mean),
+      avoidance_mean: r2(cp.attachment?.avoidance?.mean),
+      midpoint_clamp: Boolean(cp.attachment?.midpoint_clamp)
+    },
+    entropy_b5_hmm: r2(cp.entropy_b5_hmm),
+    crystallinity_tier: cp.crystallinity_tier || "unknown",
+    neutral_rate: r2(cp.neutral_rate),
+    track_b: cp.track_b
+      ? {
+          slop_markers_per_100w: r2(cp.track_b.slop_markers_per_100w),
+          categories: (cp.track_b.categories || []).map((c) => ({ id: c.id, k: c.k, n: c.n }))
+        }
+      : null
+  };
+  const md = [
+    `# ${fam.name} (${cp.checkpoint_id})`,
+    `Provider: ${fam.provider} | Tier: ${fam.tier} | URL: ${data.url}`,
+    `- Big Five (10-50): O=${b5.O}, C=${b5.C}, E=${b5.E}, A=${b5.A}, N=${b5.N}`,
+    `- IPIP-HEXACO (1-5): H=${hx.H}, E=${hx.E}, X=${hx.X}, A=${hx.A}, C=${hx.C}, O=${hx.O}`,
+    `- MBTI: ${data.mbti.modal_pattern} (headline_allowed=${data.mbti.headline_allowed}, tie_rate=${data.mbti.tie_rate})`,
+    `- Enneagram: ${data.enneagram.modal_pattern} | DISC: ${data.disc.modal_pattern} | Attachment: ${data.attachment.classification}`,
+    `- Consistency: ${data.crystallinity_tier} (${data.entropy_b5_hmm} bits, neutral=${data.neutral_rate})`
+  ].join("\n");
+  return structured(data, md);
+}
+
+async function compareModels(env, request, args) {
+  const idx = await (await asset(env, request, "/research/data/model-profiles/index.json")).json();
+  const families = idx.families || [];
+  const comparisons = [];
+  for (const q of args.models) {
+    const match = resolveModelFamily(families, q);
+    if (match.error) return toolText(match.error, true);
+    const fam = match.family;
+    const cp = (fam.checkpoints || []).find((c) => c.checkpoint_id === fam.current_checkpoint) ||
+      (fam.checkpoints || [])[fam.checkpoints.length - 1];
+    if (!cp) return toolText(`No eligible checkpoints found for ${fam.family_slug}.`, true);
+    comparisons.push({
+      family_slug: fam.family_slug,
+      name: fam.name,
+      provider: fam.provider,
+      tier: fam.tier,
+      checkpoint_id: cp.checkpoint_id,
+      url: `https://agent-tune.com/models/${fam.family_slug}`,
+      mbti_modal: cp.mbti?.modal_pattern || "tie",
+      mbti_tie_rate: r2(cp.mbti?.tie_rate) ?? 0,
+      enneagram_modal: cp.enneagram?.modal_pattern || "tie",
+      disc_modal: cp.disc?.modal_pattern || "tie",
+      attachment: cp.attachment?.classification || "unknown",
+      big_five_O: r2(cp.big_five?.O?.mean),
+      big_five_C: r2(cp.big_five?.C?.mean),
+      big_five_E: r2(cp.big_five?.E?.mean),
+      big_five_A: r2(cp.big_five?.A?.mean),
+      big_five_N: r2(cp.big_five?.N?.mean),
+      hexaco_H: r2(cp.ipip_hexaco?.H?.mean),
+      entropy_b5_hmm: r2(cp.entropy_b5_hmm),
+      crystallinity_tier: cp.crystallinity_tier || "unknown",
+      slop_markers_per_100w: cp.track_b ? r2(cp.track_b.slop_markers_per_100w) : null
+    });
+  }
+  const lines = [
+    "| Model | MBTI (tie) | Big Five O/C/E/A/N | HEXACO H | Entropy | Slop/100w |",
+    "| --- | --- | --- | --- | --- | --- |",
+    ...comparisons.map((c) =>
+      `| ${c.name} | ${c.mbti_modal} (${Math.round(c.mbti_tie_rate * 100)}%) | ${c.big_five_O}/${c.big_five_C}/${c.big_five_E}/${c.big_five_A}/${c.big_five_N} | ${c.hexaco_H} | ${c.entropy_b5_hmm}b (${c.crystallinity_tier}) | ${c.slop_markers_per_100w ?? "n/a"} |`
+    )
+  ];
+  return structured({ count: comparisons.length, directory_url: "https://agent-tune.com/models/", comparisons }, lines.join("\n"));
+}
+
+const GOAL_RECIPES = {
+  directness: {
+    studyIds: ["prompt_syntax_wars", "ai_slop_fingerprint"],
+    rules: [
+      "Start sentence 1 with the direct conclusion or answer.",
+      "Skip warm-up filler ('Great question', 'Here is') and eager closers.",
+      "Use concrete nouns and active verbs; keep paragraphs concise.",
+      "Follow my current prompt when a specific task requires another format."
+    ]
+  },
+  "anti-sycophancy": {
+    studyIds: ["sycophancy_vs_false_contrarianism", "distress_warmth_accuracy_tradeoff"],
+    rules: [
+      "Challenge weak premises with specific evidence instead of softening to agree.",
+      "If I catch a factual mistake, confirm cleanly and correct it without groveling or excessive apology.",
+      "If I push back on something accurate, hold the factual position clearly.",
+      "Never open with flattery about the question or prompt."
+    ]
+  },
+  conciseness: {
+    studyIds: ["instruction_budget_cliff", "prompt_syntax_wars"],
+    rules: [
+      "Keep default replies brief and answer-first; expand only when detail is needed.",
+      "Use short paragraphs instead of padded bullet lists unless comparing distinct options.",
+      "Keep active style rules under 10 so rules in the middle are not dropped."
+    ]
+  },
+  reasoning: {
+    studyIds: ["ai_reasoning_personality_phase_transition", "agent_autonomy_reasoning_shift"],
+    rules: [
+      "Keep final answers concise even when using high reasoning effort internally.",
+      "Surface only the deciding facts, tradeoffs, and conclusion rather than dumping scratchpad hedging.",
+      "State material uncertainty clearly without inflating length."
+    ]
+  },
+  precedence: {
+    studyIds: ["system_vs_user_precedence", "persona_half_life_context_drift"],
+    rules: [
+      "Place non-negotiable honesty and format constraints at the top and bottom of system instructions.",
+      "Adapt tone and structure freely when a user prompt explicitly overrides style preferences, while keeping safety and truthfulness fixed.",
+      "Keep a brief inline style anchor on long multi-turn threads to limit persona drift."
+    ]
+  },
+  "warmth-without-flattery": {
+    studyIds: ["distress_warmth_accuracy_tradeoff", "ai_slop_fingerprint"],
+    rules: [
+      "Acknowledge stakes or stress in one plain sentence before solving.",
+      "Keep warmth grounded: stay accurate and avoid exaggerated praise or reassurance that softens important warnings.",
+      "Offer clear next actions rather than generic encouragement."
+    ]
+  },
+  "multi-agent": {
+    studyIds: ["multi_agent_peer_conformity", "prompt_portability_5_lineages"],
+    rules: [
+      "Verify claims from peer agents against primary inputs or evidence before concurring.",
+      "Use explicit behavioral rules rather than personality adjectives when prompts span multiple model families.",
+      "Surface unresolved factual disagreements explicitly instead of conforming to majority wording."
+    ]
+  },
+  coding: {
+    studyIds: ["agent_autonomy_reasoning_shift", "instruction_budget_cliff"],
+    rules: [
+      "Execute safe, reversible, read-only, or clearly scoped coding steps directly without permission loops.",
+      "Pause and ask one targeted confirmation naming the blast radius before irreversible or destructive changes.",
+      "Report only exact file paths, symbols, and observed command or test outputs."
+    ]
+  }
+};
+
+async function recommendRules(env, request, args) {
+  const recipe = GOAL_RECIPES[args.goal];
+  if (!recipe) return toolText(`Unknown goal "${args.goal}". Valid goals: ${GOALS.join(", ")}.`, true);
+  const briefs = await (await asset(env, request, "/research/data/november-2026-agent-research-briefs.json")).json();
+  const studyMap = new Map((briefs.studies || []).map((s) => [s.study_id, s]));
+  const studies = recipe.studyIds.map((id) => studyMap.get(id)).filter(Boolean);
+  const ifThenRules = studies.flatMap((s) => s.if_then_decision_rules || []);
+  const block = `# Recommended rules (${args.goal})\n\n` + recipe.rules.map((r) => `- ${r}`).join("\n") + "\n";
+  const destId = args.destination || "plain";
+  const dest = core.destinations.find((d) => d.id === destId) || core.destinations[0];
+  const output = args.destination ? core.convert(block, dest.id, "") : block;
+  const data = {
+    goal: args.goal,
+    destination: dest.id,
+    filename: dest.filename,
+    rules: recipe.rules,
+    output,
+    if_then_rules: ifThenRules,
+    studies: studies.map((s) => ({
+      study_id: s.study_id,
+      title: s.title,
+      url: s.url,
+      markdown_url: s.markdown_url
+    }))
+  };
+  const text = `${output}\nEmpirical IF/THEN rules:\n${ifThenRules.map((r) => `- ${r}`).join("\n")}\n\nSources:\n${data.studies.map((s) => `- ${s.title}: ${s.url}`).join("\n")}`;
+  return structured(data, text);
+}
+
 /* ---------- JSON-RPC dispatch ---------- */
+
+function validateValue(prop, val) {
+  if (!prop) return false;
+  if (prop.type === "string") {
+    if (typeof val !== "string") return false;
+    if (prop.maxLength && val.length > prop.maxLength) return false;
+    if (prop.enum && !prop.enum.includes(val)) return false;
+    return true;
+  }
+  if (prop.type === "array") {
+    if (!Array.isArray(val)) return false;
+    if (prop.minItems !== undefined && val.length < prop.minItems) return false;
+    if (prop.maxItems !== undefined && val.length > prop.maxItems) return false;
+    if (prop.items && val.some((item) => !validateValue(prop.items, item))) return false;
+    return true;
+  }
+  if (prop.type === "object") return isObject(val);
+  if (prop.type === "integer") return Number.isInteger(val);
+  if (prop.type === "boolean") return typeof val === "boolean";
+  return typeof val === prop.type;
+}
 
 async function handleRpc(msg, env, request) {
   const { id, method, params } = msg;
@@ -233,8 +631,7 @@ async function handleRpc(msg, env, request) {
       const schema = tool.inputSchema;
       if (!isObject(args) || Object.keys(args).some(k => !Object.hasOwn(schema.properties, k)) ||
           (schema.required || []).some(k => !Object.hasOwn(args, k)) ||
-          Object.entries(args).some(([k, v]) => typeof v !== schema.properties[k].type ||
-            (schema.properties[k].enum && !schema.properties[k].enum.includes(v)))) {
+          Object.entries(args).some(([k, v]) => !validateValue(schema.properties[k], v))) {
         return rpcError(id, -32602, `Invalid arguments for ${name}; use its advertised input schema.`);
       }
       try {
@@ -245,6 +642,12 @@ async function handleRpc(msg, env, request) {
         else if (name === 'get_free_tools') result = structured(await (await asset(env,request,'/resources/tools/catalog.json')).json());
         else if (name === "list_resources") result = await listResources(env, request, args);
         else if (name === "get_resource") result = await getResource(env, request, args);
+        else if (name === "check_instructions") result = checkInstructions(args);
+        else if (name === "convert_instructions") result = convertInstructions(args);
+        else if (name === "build_preferences") result = buildPreferences(args);
+        else if (name === "get_model_profile") result = await getModelProfile(env, request, args);
+        else if (name === "compare_models") result = await compareModels(env, request, args);
+        else if (name === "recommend_rules") result = await recommendRules(env, request, args);
         else return rpcError(id, -32602, `Unknown tool "${name}". Available: ${TOOLS.map((t) => t.name).join(", ")}.`);
         return { jsonrpc: "2.0", id, result };
       } catch (e) {
@@ -291,9 +694,7 @@ async function handleRequest(context) {
             skill: "https://agent-tune.com/SKILL.md",
             docs: "https://agent-tune.com/llms.txt",
             research_briefs: "https://agent-tune.com/research/data/november-2026-agent-research-briefs.json",
-            site: "https://agent-tune.com",
-            specimen_00:
-              "Monograph 1A baseline (n=10,000 sheets): Agreeableness 45.4/50, Neuroticism 10.9/50, PC1 factor collapse 63.6%. Reading this 405 still does not authorize editing ~/.claude/CLAUDE.md."
+            site: "https://agent-tune.com"
           }
         }
       },

@@ -5,7 +5,7 @@ Guide · DeepSeek
 
 # DeepSeek system prompts and custom instructions: XML templates that hold their tone.
 
-By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In the DeepSeek API, pass an XML-delimited block (<system_instructions> with <role>, <constraints>, and <output_format>) in the system message—or paste the same block as your opening session prompt on chat.deepseek.com. Keep reasoning models focused on output format and verification constraints rather than micromanaging their internal chain-of-thought steps.
 

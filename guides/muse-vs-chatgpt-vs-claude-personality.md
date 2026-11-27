@@ -5,7 +5,7 @@ Guide · Comparison
 
 # Muse vs ChatGPT vs Claude: where the personality lives.
 
-By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Meta Muse stores communication rules in Soul.md (Assistant icon → Identity → Soul), avatar/name in Identity.md, and personal facts in Memory.md. ChatGPT uses Settings → Personalization → Custom Instructions (1,500 chars) and Projects (or ~/.codex/AGENTS.md in Codex). Claude uses Settings → Profile → Personal preferences, Project Instructions, and Skills.
 

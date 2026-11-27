@@ -5,7 +5,7 @@ Agent Research · November 2026 · 240-Reply Study
 
 # Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models.
 
-By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We graded 240 workplace writing replies across 8 AI models to measure common AI writing tics per 100 words—and found a hybrid anti-slop prompt cuts tics from 1.23 down to 0.10 while lifting human-voice scores.
 

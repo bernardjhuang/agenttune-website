@@ -5,7 +5,7 @@ Guide · Anti-Sycophancy
 
 # How to make AI push back and stop agreeing with you.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
 
