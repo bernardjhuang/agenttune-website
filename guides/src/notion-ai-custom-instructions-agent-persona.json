@@ -10,7 +10,7 @@
   "pill": "Guide · Notion AI",
   "h1": "Notion AI custom instructions and workspace agent persona templates.",
   "dek": "Use a modular 4-part boot sequence (Role, Priority, Voice, Data Map) so Notion AI summarizes meetings, edits specs, and routes tasks cleanly.",
-  "lede": "Unlike standalone chatbots, <strong>Notion AI</strong> reads directly from your team pages, databases, and AI Meeting Notes. Pasting a bloated style essay degrades database retrieval—instead, use a modular four-part instruction block that defines <strong>Role, Priority Hierarchy, Voice &amp; Tone, and Data Map</strong> (with explicit <code>@database</code> references).",
+  "lede": "Unlike a standalone chatbot, <strong>Notion AI</strong> reads directly from your team’s pages, databases, and AI Meeting Notes. A long, flowery persona prompt gets in the way of database lookup. Instead, use a short four-part instruction block: <strong>Role, Priority Hierarchy, Voice &amp; Tone, and Data Map</strong> (with live <code>@database</code> mentions).",
   "answer": "Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice & Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.",
   "sections": [
     {

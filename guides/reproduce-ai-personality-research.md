@@ -7,7 +7,7 @@ Developer guide · reproducibility
 
 By Bernard Huang · Updated November 26, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/reproduce-ai-personality-research.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Download the frozen JSON/CSV files from /research/data/, run 'node september-2026-score.cjs' and 'node content-analysis.cjs' for the September 2,003-record cohort, or run 'python3 tools/analyze-psychometric-forensics.py' in the repo to deterministically recompute the November 2026 10,000-sheet Big One PCA (63.58% PC1), Campbell-Fiske MTMM matrix, and Shannon entropy (0.054 to 1.499 bits) at $0.00 API cost.
+**Quick answer:** Download the frozen JSON and CSV files from /research/data/, then run 'node september-2026-score.cjs' and 'node content-analysis.cjs' to verify the 2,003-record September archive, or run 'python3 tools/analyze-psychometric-forensics.py' to recompute the 10,000-sheet November dataset (including the 63.58% single-factor PCA, Campbell-Fiske MTMM matrix, and 0.054 to 1.499 bits Shannon entropy) at $0.00 API cost.
 
 ## September 26 provenance correction
 
@@ -48,7 +48,7 @@ In the website repository, running `node tools/build-content-analysis.js` rebuil
 
 When citing or extending these results, state the model cohort, instrument, sample size (fresh sessions vs simulated draws), and tie-breaking rule. Saying “100 of 100 runs scored Secure on the ECR-R scale” is an exact, reproducible statement; saying “this model forms secure human attachments” is not.
 
-## Reproduce the November 2026 10,000-sheet & Wave 3 forensics studies ($0.00 API cost)
+## The fine print: reproducing the November 2026 10,000-sheet & Wave 3 forensics studies ($0.00 API cost)
 
 Our November 2026 Wave 1–3 archive publishes every raw response vector, orthogonal 3-family blind judge transcript, and deterministic forensics output under `/research/data/`:
 

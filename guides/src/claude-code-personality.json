@@ -7,7 +7,7 @@
   "pill": "Guide · Claude Code",
   "h1": "How to change Claude Code's personality.",
   "dek": "Output styles, CLAUDE.md, a launch flag, or a whole agent. One of them is built for this.",
-  "lede": "Most developers put their tone preferences in <code>CLAUDE.md</code> because it is the file they already know. However, <code>CLAUDE.md</code> is built for project commands and repo rules. To change how Claude Code talks to <em>you</em> on every turn, use an <strong>output style</strong> in <code>~/.claude/output-styles/</code>—and always set <code>keep-coding-instructions: true</code> so Claude Code keeps its built-in engineering rules.",
+  "lede": "Most developers put their tone preferences in <code>CLAUDE.md</code> because it’s the file they already know. But <code>CLAUDE.md</code> is built for project commands and team repo rules. To change how Claude Code talks to you on every turn, use an <strong>output style</strong> in <code>~/.claude/output-styles/</code>—and always set <code>keep-coding-instructions: true</code> so Claude Code keeps its built-in engineering rules.",
   "answer": "Save a Markdown file to ~/.claude/output-styles/ with name, description, and keep-coding-instructions: true in the YAML frontmatter, followed by your communication rules. Activate it with /output-style or /config. AgentTune provides all 43 personality tunings as ready-to-download output styles.",
   "sections": [
     {

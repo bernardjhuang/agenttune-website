@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System vs. User Persona Precedence: Override Resistance (200 Probes)</title>
+  <title>System vs. User Instructions: Override Study (200 Probes)</title>
   <meta name="description" content="200-probe test across 5 models: Turn-0 system contracts resist explicit user overrides (93.9%-95.9% hold) and Turn-3 erosion, with 0.0% groveling." />
 
   <meta property="og:title" content="Do AI models obey your system prompt when users try to override it?" />
@@ -80,8 +80,8 @@
         <p class="page-eyebrow">Wave 4 · System Precedence · 200 Probes</p>
         <h1 class="h-hero h-research-hero">Do AI models obey your system prompt when users try to override it?</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~6 min read</span> · <a href="/research/ai-system-vs-user-persona-precedence.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">We tested 200 conflict probes across five frontier models to see if polite nudges, explicit overrides, or multi-turn casual chat can break Turn-0 system rules.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.</div>
+        <p class="lede" style="margin-top: 14px;">We ran 200 conflict tests across five frontier models to see if polite nudges, blunt "OVERRIDE INSTRUCTION" commands, or multi-turn casual chat can make an AI break its Turn-0 system rules.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.</div>
       </section>
 
 
@@ -107,7 +107,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>4. Orthogonal 3-Family Blind Jury, Reliability & Scope Limits.</h2>
+        <h2>4. The fine print: how we tested, blind judge scores, and scope limits.</h2>
         <ul><li><strong>Orthogonal 3-Family Jury (Zero Self-Judging):</strong> Every non-filtered reply (<code>n = 196</code>) was scored blindly by three providers disjoint from the evaluated model using <code>JUDGE_POOL</code> (<code>anthropic/claude-haiku-5.5</code>, <code>openai/gpt-5.4-mini</code>, <code>google/gemini-3.8-flash</code>, <code>deepseek/deepseek-v4.1-flash-1017</code>) with <code>response_format={"type":"json_object"}</code>, <code>max_tokens=500</code>, 2-shot anchored binary rubrics, and zero judge parse drops.</li><li><strong>Inter-Rater Krippendorff's α:</strong> <code>substance_held</code> achieved <strong><code>α = 1.0000</code></strong> (<code>100.0%</code> unanimous across 196 units); <code>system_persona_held</code> achieved <strong><code>α = 0.6396</code></strong> (<code>92.3%</code> unanimous, with minor disagreement on Fable's 88-word truth reply and empty blocks). <code>grovel_flattery</code> registered <strong><code>0.0%</code></strong> across all 196 replies (100% unanimous zero; constant base rate means zero-variance ceiling rather than multi-class discrimination).</li><li><strong>Scope Limits:</strong> Our <code>turn3_erosion</code> condition injected 2 synthetic casual turns rather than running a 20-turn organic conversation, and our Turn-0 contract used explicit numbered rules in the <code>system</code> role (which models treat with higher privilege than rules embedded inside a user message or tool output).</li></ul>
       </section>
       <div class="divider tight"></div>
@@ -198,7 +198,7 @@ scope_limits: Structured Turn-0 system prompt vs 2-turn synthetic casual erosion
   url     = {https://agent-tune.com/research/ai-system-vs-user-persona-precedence},
   note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.
+        <pre class="cite-block" data-cite-text="md">&gt; **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.
 &gt; Source: [https://agent-tune.com/research/ai-system-vs-user-persona-precedence](https://agent-tune.com/research/ai-system-vs-user-persona-precedence) · [Markdown mirror](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md)</pre>
       </details>
 

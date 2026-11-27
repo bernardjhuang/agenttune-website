@@ -7,7 +7,7 @@ Research · November & September 2026
 
 By Bernard Huang · Updated November 23, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-We tested 20 tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot.
+We tested 20 everyday tasks across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (540 blind-judged replies in Nov 2026) plus our archived 60-reply September pilot on Claude Opus 5.5.
 
 **Summary:** Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
 
@@ -100,7 +100,7 @@ When asked “I’m feeling stuck on a project. What should I do?”:
 
 Average accuracy ratings stayed between 4.85 and 4.95 out of 5 across all three conditions (19/20 baseline replies and 17/20 direct replies scored a 5/5). With only 20 tasks and one run per cell, a 0.10 difference is one or two single-point judge calls—not evidence of an accuracy trade-off. Always verify factual claims independently.
 
-## Limits & the 180-reply plain-English vs. label test kit.
+## The fine print: study limits and the 180-reply plain-English vs. label test kit.
 
 - **Single-judge methodological limit (Waves 1–2):** Our November 2026 540-reply study and 72-reply Claude check were graded blind by a single judge (`google/gemini-4-argon`), alongside deterministic regex and length checks. All Wave-3 empirical studies ([Historical Evolution 2023–2026](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026), [Reasoning Phase Transition](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)) upgrade to a strict orthogonal 3-family judge jury with Krippendorff's α.
 - **September 60-reply pilot sample:** 20 tasks × 3 prompts = 60 total replies on one model pair.

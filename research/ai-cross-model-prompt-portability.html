@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cross-Model Prompt Portability Across 5 AI Lineages (200 Replies)</title>
+  <title>Cross-Model Prompt Portability: 5 AI Lineages (200 Tests)</title>
   <meta name="description" content="200-reply test across GPT-6.2, Claude Opus 5.5, Gemini 4, DeepSeek V4, and Qwen 4 Max: adjective prompts leave 60-point gaps; checklists cut spread to 5 points." />
 
   <meta property="og:title" content="Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?" />
@@ -80,8 +80,8 @@
         <p class="page-eyebrow">Wave 4 Empirical · November 2026 · 200 Replies</p>
         <h1 class="h-hero h-research-hero">Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?</h1>
         <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-26">November 26, 2026</time> · <span class="guide-readtime">~8 min read</span> · <a href="/research/ai-cross-model-prompt-portability.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
-        <p class="lede" style="margin-top: 14px;">Testing four prompt styles across five model families reveals why vague adjectives fail on crystalline defaults and how explicit checklists cut cross-model gaps sixfold.</p>
-        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt (52% vs. 50% word-cap pass, 60-point gap). Switching to an explicit rule checklist cut cross-model spread sixfold (30 to 5 points) and hit 100% truth-hold and zero-slop.</div>
+        <p class="lede" style="margin-top: 14px;">We tested four prompt styles across five major AI families (200 blind-graded replies) to see why vague style words like "be concise" fail on steady defaults—and how a numbered checklist cuts cross-model gaps sixfold.</p>
+        <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt at all (52% vs. 50% word-cap pass, leaving a 60-point gap between models). Switching to a numbered rule checklist cut the cross-model gap sixfold (from 30 to 5 points) and hit 100% factual accuracy and 100% zero-slop.</div>
       </section>
 
 
@@ -112,7 +112,7 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>4. Scope, orthogonal jury reliability & full datasets.</h2>
+        <h2>4. The fine print: how we tested, blind judge scores, and full datasets.</h2>
         <ul><li><strong>Orthogonal 3-Family Blind Jury (Zero Self-Judging):</strong> Every reply was graded blind by three models outside the evaluated model's provider family (pool: <code>claude-haiku-5.5</code>, <code>gpt-5.4-mini</code>, <code>gemini-3.8-flash</code>, <code>deepseek-v4.1-flash</code>). Inter-rater Krippendorff's &alpha; reached <strong><code>0.7973</code></strong> (<code>99.0%</code> unanimous, <code>n=100</code>) on <code>exec_without_asking</code>, <strong><code>0.6551</code></strong> (<code>96.5%</code> unanimous, <code>n=200</code>) on pooled <code>domain_pass</code>, and <strong><code>0.6052</code></strong> (<code>94.0%</code> unanimous, <code>n=100</code>) on <code>truth_hold</code>.</li><li><strong>Disclosed Defects &amp; Excluded Low-Alpha Metric:</strong> Secondary style metric <code>tone_contract_match</code> achieved <code>88.0%</code> unanimous judge agreement but only nominal <code>&alpha; = 0.3726</code> due to a <code>93.5%</code> positive base rate; per pre-registered quality gates, it is excluded from headline claims and composite portability scoring relies on deterministic word-cap, deterministic zero-slop, and the <code>&alpha; = 0.6551</code> domain judge score (note: composite definition weights all 4 checks equally; 2 of 600 individual judge API calls errored on <code>slop_vendor_decline</code>, leaving 2/3 orthogonal votes for those 2 cells, <code>99.7%</code> jury completion).</li><li><strong>Scope Limits:</strong> Single-turn evaluation at <code>low</code> reasoning effort (non-reasoning on Qwen 4 Max) and <code>T = 0.3</code> where OpenRouter supported temperature (omitted automatically on <code>gpt-6.2-sol</code> and <code>claude-opus-5.5</code>). Multi-turn drift is measured separately in <a href="/research/ai-persona-half-life-context-drift">Persona Half-Life</a>, and strict rule-count limits in <a href="/research/ai-instruction-budget-cliff-lost-in-the-middle">Instruction Budget Cliff</a>.</li><li><strong>Open Reproduction Assets:</strong> <a href="/research/data/november-2026-ai-cross-model-prompt-portability-results.json">Full 200-Reply Dataset &amp; Judge Votes (JSON)</a> &middot; <a href="/research/data/november-2026-ai-cross-model-prompt-portability-summary.csv">20-Cell Summary Matrix (CSV)</a> &middot; <a href="/research/data/november-2026-agent-research-briefs.json">Agent Research Briefs (JSON)</a> &middot; Runner script: <code>tools/run-ai-cross-model-prompt-portability-study.py</code>.</li></ul>
       </section>
       <div class="divider tight"></div>
@@ -202,7 +202,7 @@ scope_limits: Single-turn evaluation (T=0.3 where supported, low reasoning effor
   url     = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
   note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
 }</pre>
-        <pre class="cite-block" data-cite-text="md">&gt; **Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?** (Bernard Huang, November 26, 2026): Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt (52% vs. 50% word-cap pass, 60-point gap). Switching to an explicit rule checklist cut cross-model spread sixfold (30 to 5 points) and hit 100% truth-hold and zero-slop.
+        <pre class="cite-block" data-cite-text="md">&gt; **Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?** (Bernard Huang, November 26, 2026): Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt at all (52% vs. 50% word-cap pass, leaving a 60-point gap between models). Switching to a numbered rule checklist cut the cross-model gap sixfold (from 30 to 5 points) and hit 100% factual accuracy and 100% zero-slop.
 &gt; Source: [https://agent-tune.com/research/ai-cross-model-prompt-portability](https://agent-tune.com/research/ai-cross-model-prompt-portability) · [Markdown mirror](https://agent-tune.com/research/ai-cross-model-prompt-portability.md)</pre>
       </details>
 

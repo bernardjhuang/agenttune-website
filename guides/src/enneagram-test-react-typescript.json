@@ -9,7 +9,7 @@
   "h1": "Open-source Enneagram test & scorer (React + TypeScript + JS).",
   "dek": "Download the zero-dependency MIT JavaScript scorer (score.js), try the live 36-item scoring demo, or run the complete Vite + React + TypeScript starter app.",
   "lede": "Build an Enneagram assessment locally without rewriting pagination, keyboard accessibility, or tie-preserving scoring math. Below you get both the complete MIT-licensed React + TypeScript starter project and the standalone zero-dependency JavaScript scorer (<code>score.js</code>) for Node or browsers—plus a live scoring widget right on this page.",
-  "answer": "Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.",
+  "answer": "Download score.js and questions.json for a standalone Node or browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram app. Pass 36 whole-number answers (1–5) to score() to get all nine type totals (4–20) and every tied leader without forcing a fake winner. The code and synthetic demo inputs are MIT-licensed; see the fine print below for OEPS question-text terms.",
   "sections": [
     {
       "h2": "Download the standalone JS scorer or full React + TypeScript starter.",
@@ -36,7 +36,7 @@
       "html": "<ul><li><code>src/App.tsx</code> controls six-page pagination, radio state, validation and the result view.</li><li><code>src/styles.css</code> controls layout, color contrast and focus rings.</li><li><code>src/questions.json</code> holds the 36 synthetic demo inputs and group mapping.</li><li><code>src/scorer.ts</code> declares the TypeScript types and calls the global scorer.</li><li><code>public/score.js</code> provides the dependency-free scoring implementation.</li></ul><p>If you replace the synthetic demo controls in <code>src/questions.json</code> with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.</p>"
     },
     {
-      "h2": "Provenance, scope and licensing.",
+      "h2": "The fine print: provenance, OEPS scope, and MIT licensing.",
       "html": "<p>The developer bundle in <code>/resources/enneagram/</code> provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at <a href=\"/tests/enneagram\">/tests/enneagram</a> and versioned definitions in <a href=\"/resources/scoring/questions.json\">/resources/scoring/questions.json</a> use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).</p><p>The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review <a href=\"/resources/content/instrument-rights.json\">instrument-rights.json</a> and <a href=\"/research/data/rights-migration.json\">the historical provenance record</a> before redistributing questionnaire text.</p>"
     }
   ],

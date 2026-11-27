@@ -8,7 +8,7 @@
   "h1": "AgentTune MCP & portable AI preferences across every agent.",
   "dek": "Connect one zero-auth remote MCP server (or point any agent at /SKILL.md and /llms.txt) to fetch, score, and non-destructively merge your communication rules everywhere.",
   "lede": "Most developers use three or four AI tools every day—Claude on the web, Claude Code or Codex in the terminal, Cursor in the editor, and ChatGPT or Meta Muse on mobile. Instead of copying rules across five places by hand, connect AgentTune’s free, zero-auth <strong>Model Context Protocol (MCP) server</strong> (or point your agent at <code>/SKILL.md</code>) to fetch and merge your communication preferences safely.",
-  "answer": "Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, run local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.",
+  "answer": "Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, score local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.",
   "sections": [
     {
       "h2": "One-command setup across Claude Code, Claude Web, Cursor, and Codex.",

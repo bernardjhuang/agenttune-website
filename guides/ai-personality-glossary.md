@@ -77,7 +77,7 @@ A saved Google Gemini assistant with its own persistent instructions field. See 
 
 Facts and preferences an assistant saves about you across chats. Audit or clean saved memories locally with our [AI Memory Reviewer](https://agent-tune.com/tools/ai-memory-reviewer).
 
-## The tests.
+## The tests (and scoring fine print).
 
 ### Instrument
 
@@ -115,7 +115,7 @@ How a scorer handles equal top scores. Legacy scorers forced a single winner (de
 
 How many standard deviations a score sits above or below a reference mean. On our Big Five quiz, a trait more than 0.5 SD from the reference mean selects its High or Low tuning file.
 
-## The research.
+## The research terms (the fine print).
 
 ### Fresh session
 

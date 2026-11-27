@@ -7,7 +7,7 @@ Directory · Templates
 
 By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-personality-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Choose your surface or style gallery below: Meta Muse Soul.md & Identity.md, Claude Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices, Calibrated Character Voices (85/15), and Socratic/Feynman Coaching templates.
+**Quick answer:** Pick your app or style gallery below: Meta Muse Soul.md & Identity.md, Claude Personal Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices and Socratic/Feynman Coaching templates.
 
 ## How to actually use these tunings with your agents (3 workflows that stick).
 

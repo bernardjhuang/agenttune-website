@@ -7,7 +7,7 @@ Guide · Microsoft Copilot
 
 By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.
+**Quick answer:** To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line rules block, and save. Manage saved facts separately under Personalization → Memory. Note that toggling Memory off only hides saved entries; delete old style items manually if they clash with your new instructions.
 
 ## Where Copilot personalization lives (Personal, Work & GitHub Copilot).
 

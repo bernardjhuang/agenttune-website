@@ -3,11 +3,11 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Research · descriptive reanalysis
 
-# Are AI models really INTJ? The tie-breaking effect
+# Do AI models really test as INTJ? The tie-breaking effect
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-mbti-tie-breaking.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-How a single `<` operator in MBTI scoring code turned 55 tied runs into INTJs.
+We re-scored 400 MBTI test runs from September 2026 to see how a single `<` operator in the original scoring code turned 55 tied runs into INTJ results.
 
 **Summary:** Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
 
@@ -74,10 +74,10 @@ Even a 1-point margin (like 25 vs. 24) resolves to a letter, so you should alway
 ## How to report AI personality scores clearly
 
 - **Show both numbers:** Report the resolved count alongside any legacy tie-broken count.
-- **Include axis margins:** Saying “Opus 5.5 had 84 resolved INTJs and 10 T/F ties” is much clearer than “Opus is 94% INTJ.”
+- **Include axis margins:** Saying “Opus 5.5 had 84 resolved INTJs and 10 T/F ties” is much clearer than saying “Opus tests as INTJ 94% of the time.”
 - **Keep prompts in mind:** The four models were tested under two different prompt setups (Codex 5-test batteries vs. hidden-name single tests), so these 400 runs describe this dataset rather than all AI systems everywhere.
 
-## Reproduce the comparison
+## The fine print: how to reproduce the comparison
 
 Download the raw answers, instrument keys, and reanalysis script into one folder and run `node content-analysis.cjs > content-analysis.json`. See the [reproduction guide](https://agent-tune.com/guides/reproduce-ai-personality-research) for step-by-step instructions.
 
@@ -101,13 +101,13 @@ Download the raw answers, instrument keys, and reanalysis script into one folder
 ### Cite this study (APA 7th · BibTeX · Markdown Brief)
 
 ```
-Huang, B. (2026). Are AI models really INTJ? The tie-breaking effect. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-mbti-tie-breaking
+Huang, B. (2026). Do AI models really test as INTJ? The tie-breaking effect. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-mbti-tie-breaking
 ```
 
 ```
 @article{huang2026_ai_mbti_tie_breaking,
   author  = {Huang, Bernard},
-  title   = {Are AI models really INTJ? The tie-breaking effect},
+  title   = {Do AI models really test as INTJ? The tie-breaking effect},
   journal = {AgentTune Empirical AI Psychology Monographs},
   year    = {2026},
   date    = {2026-11-17},
@@ -117,7 +117,7 @@ Huang, B. (2026). Are AI models really INTJ? The tie-breaking effect. AgentTune 
 ```
 
 ```
-> **Are AI models really INTJ? The tie-breaking effect** (Bernard Huang, November 17, 2026): Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
+> **Do AI models really test as INTJ? The tie-breaking effect** (Bernard Huang, November 17, 2026): Under the original tie-breaking rule, 335 of 400 AI test runs were labeled INTJ (83.8%). When exact ties are left open instead of defaulting to I, N, T, and J, only 280 of 400 runs resolve cleanly to INTJ (70.0%). Fifty-nine runs tied on at least one axis, and 55 of those were counted as INTJ by the old rule.
 > Source: [https://agent-tune.com/research/ai-mbti-tie-breaking](https://agent-tune.com/research/ai-mbti-tie-breaking) · [Markdown mirror](https://agent-tune.com/research/ai-mbti-tie-breaking.md)
 ```
 

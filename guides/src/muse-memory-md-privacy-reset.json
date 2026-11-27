@@ -7,7 +7,7 @@
   "pill": "Guide · Meta Muse",
   "h1": "Meta Muse Memory.md, privacy, and how to reset safely.",
   "dek": "Memory.md stores facts about your work and preferences across chats. Here is how to audit it, prune stale entries, or clear it without losing your Soul.md tuning.",
-  "lede": "Meta Muse stores personal facts and project context in <strong>Memory.md</strong> under Assistant Identity. Over weeks of use, <code>Memory.md</code> can collect one-off notes or finished project details that start bleeding into unrelated chats. Here is how to audit and reset <code>Memory.md</code> in two minutes without touching your <code>Soul.md</code> personality rules.",
+  "lede": "Meta Muse saves facts about your work and ongoing projects in <strong>Memory.md</strong> under Assistant Identity. After a few weeks, <code>Memory.md</code> can pick up one-off notes or finished tasks that start showing up in unrelated chats. Here is how to audit and clean up <code>Memory.md</code> in two minutes without losing your <code>Soul.md</code> communication rules.",
   "answer": "Open Settings → Personalization → Assistant Identity (or tap the Assistant icon) and select Memory.md to view, edit, or delete saved facts about you. To clear old context without losing your communication style, reset only Memory.md and leave Soul.md and Identity.md untouched.",
   "sections": [
     {

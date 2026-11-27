@@ -5,45 +5,13 @@ Agent Research · November 2026 · 240-Reply Study
 
 # Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models.
 
-By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-240 blind-evaluated writing tasks measure deterministic slop markers per 100 words alongside human-voice and clarity ratings—and prove a hybrid anti-slop prompt cuts markers from 1.23 to 0.10.
+We graded 240 workplace writing replies across 8 AI models to measure common AI writing tics per 100 words—and found a hybrid anti-slop prompt cuts tics from 1.23 down to 0.10 while lifting human-voice scores.
 
-**Summary:** Banning isolated vocabulary clichés ('delve') alone misses modern AI slop: 0.00 lexicon hits appeared per default reply across all 7 top models except Llama 4 Maverick (0.60), yet blind judges flagged 30.0%–100.0% AI cadence on Gemini 4 Neon, DeepSeek V4 Pro, and Llama 4 Maverick. Use a Hybrid Anti-Slop prompt pairing explicit structural bans (zero em-dashes, zero sycophantic closers, zero 'Here is...' wrappers) with natural rhythm cues—cutting slop to 0.10/100w (SD 0.44), AI cadence to 0.0%, and raising clarity to 4.97/5.
+**Summary:** Banning isolated buzzwords ('delve') alone misses modern AI writing tics: 7 of the 8 models averaged 0.00 banned buzzwords by default (only Llama 4 Maverick averaged 0.60), yet blind judges flagged noticeable AI rhythm on 30.0%–100.0% of replies from Gemini 4 Neon, DeepSeek V4 Pro, and Llama 4 Maverick. Use a Hybrid Anti-Slop prompt that pairs structural bans (no em-dashes, no sycophantic closers, no 'Here is...' intros) with natural sentence rhythm—cutting tics to 0.10/100w (SD 0.44), AI cadence to 0.0%, and raising clarity to 4.97/5.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents drafting emails, memos, docs, or editorial system prompts can apply this verified anti-slop policy directly (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: ai_slop_fingerprint
-sample_size: 240 # 8 models x 10 default tasks (n=80 baseline) + 4 core models x 4 interventions x 10 tasks (n=160 intervention)
-models_baseline_8: [openai/gpt-6.2-sol, anthropic/claude-fable-5-2, anthropic/claude-opus-5-5, openai/gpt-6.2-astra, x-ai/grok-4.7, meta-llama/llama-4-maverick, deepseek/deepseek-v4-pro, google/gemini-4-neon]
-judge_model: google/gemini-4-argon
-spend_usd: 2.5888
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-summary.csv
-if_then_decision_rules:
-  - if: user asks to 'stop sounding like ChatGPT / AI' in emails, memos, or docs
-    then: apply hybrid_anti_slop (slop 1.23 -> 0.10/100w, AI cadence 30.0% -> 0.0%, human 4.85/5, clarity 4.97/5, 0.00 em-dashes)
-  - if: model is Llama 4 Maverick, DeepSeek V4 Pro, or Gemini 4 Neon
-    then: treat structural anti-slop rules as mandatory (baselines hit 100.0%, 70.0%, and 50.0% AI cadence)
-anti_patterns:
-  - Relying solely on a banned-word list ('delve', 'tapestry'): misses synthetic symmetry, meta-wrappers, and rhythm ticks.
-  - Overly tight sentence-rhythm rules alone without clarity anchors: clipped early replies weighed down rhythm_rubric clarity (4.53/5 vs 4.97/5 hybrid).
-recommended_prompt_recipe: |
-  Write like a crisp, thoughtful practitioner—never a template or hype brochure.
-  Start cleanly in the deliverable itself with zero meta-intros ('Here is...') or helpful sign-offs.
-  Ban em-dashes, 'not just X, it's Y' contrasts, bolded bullet lists, and stock clichés ('delve', 'testament', 'thrilled').
-  Vary sentence length naturally and ground claims in specific verbs and concrete facts.
-scope_limits: Deterministic regex marker counts paired with single blind judge (Gemini 4 Argon) across 10 short-form business writing tasks (~115-135 words).
-```
-
-## 8-Model Baseline Slop Leaderboard & 4-Intervention Shootout.
+## What we found: how 8 models rank on AI writing tics and which prompt fixes them.
 
 240 Replies
 
@@ -102,7 +70,7 @@ Synthetic AI cadence % on untuned writing tasks (n = 10/model): open-weight Mave
 
 Hybrid Anti-Slop cuts blind AI cadence from 30.0% to 0.0% while achieving top Clarity (99.4 = 4.97/5) and high Human-Voice naturalness (97.0 = 4.85/5).
 
-## Real before/after writing samples & Scope/Limitations.
+## The fine print: before-and-after writing samples, how we tested, and scope limits.
 
 Real verbatim outputs on identical prompts show why structural tell-removal beats simple cliché word bans:
 
@@ -112,6 +80,38 @@ Real verbatim outputs on identical prompts show why structural tell-removal beat
 - Hybrid Anti-Slop (AI Cadence False, 5/5 human, 5/5 clarity, 0.00 slop): `"Subject: Version 2.0 is live: fast CSV imports and dark mode. Version 2.0 is ready in your account right now. You asked for faster data uploads and a break from the bright white screen during late-night sessions. We built both. Our new CSV importer handles 50,000 rows in under four seconds..."`
 
 **Scope & Limitations:** Regex slop density, em-dash counts, and sycophantic closures were scored deterministically; human-likeness, clarity, and AI cadence ratings came from a single blind judge (`google/gemini-4-argon`; see our Wave-3 [orthogonal 3-family judge jury standard](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) with Krippendorff's α). Sample size is `n = 10` replies per model in the 8-model leaderboard (wider CIs) and `n = 40` per intervention arm across 4 models. Notice also 5 brief generation truncations under strict `rhythm_rubric` (12–23 words) dragged its pooled clarity to `4.53/5`, reinforcing why combining positive voice structure with targeted bans (`hybrid_anti_slop`) performed best.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents drafting emails, memos, docs, or editorial system prompts can apply this verified anti-slop policy directly (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: ai_slop_fingerprint
+sample_size: 240 # 8 models x 10 default tasks (n=80 baseline) + 4 core models x 4 interventions x 10 tasks (n=160 intervention)
+models_baseline_8: [openai/gpt-6.2-sol, anthropic/claude-fable-5-2, anthropic/claude-opus-5-5, openai/gpt-6.2-astra, x-ai/grok-4.7, meta-llama/llama-4-maverick, deepseek/deepseek-v4-pro, google/gemini-4-neon]
+judge_model: google/gemini-4-argon
+spend_usd: 2.5888
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-summary.csv
+if_then_decision_rules:
+  - if: user asks to 'stop sounding like ChatGPT / AI' in emails, memos, or docs
+    then: apply hybrid_anti_slop (slop 1.23 -> 0.10/100w, AI cadence 30.0% -> 0.0%, human 4.85/5, clarity 4.97/5, 0.00 em-dashes)
+  - if: model is Llama 4 Maverick, DeepSeek V4 Pro, or Gemini 4 Neon
+    then: treat structural anti-slop rules as mandatory (baselines hit 100.0%, 70.0%, and 50.0% AI cadence)
+anti_patterns:
+  - Relying solely on a banned-word list ('delve', 'tapestry'): misses synthetic symmetry, meta-wrappers, and rhythm ticks.
+  - Overly tight sentence-rhythm rules alone without clarity anchors: clipped early replies weighed down rhythm_rubric clarity (4.53/5 vs 4.97/5 hybrid).
+recommended_prompt_recipe: |
+  Write like a crisp, thoughtful practitioner—never a template or hype brochure.
+  Start cleanly in the deliverable itself with zero meta-intros ('Here is...') or helpful sign-offs.
+  Ban em-dashes, 'not just X, it's Y' contrasts, bolded bullet lists, and stock clichés ('delve', 'testament', 'thrilled').
+  Vary sentence length naturally and ground claims in specific verbs and concrete facts.
+scope_limits: Deterministic regex marker counts paired with single blind judge (Gemini 4 Argon) across 10 short-form business writing tasks (~115-135 words).
+```
 
 ## Questions people ask.
 
@@ -156,7 +156,7 @@ Huang, B. (2026). Measuring & killing the AI slop fingerprint across 8 frontier 
 ```
 
 ```
-> **Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models** (Bernard Huang, November 25, 2026): Banning isolated vocabulary clichés ('delve') alone misses modern AI slop: 0.00 lexicon hits appeared per default reply across all 7 top models except Llama 4 Maverick (0.60), yet blind judges flagged 30.0%–100.0% AI cadence on Gemini 4 Neon, DeepSeek V4 Pro, and Llama 4 Maverick. Use a Hybrid Anti-Slop prompt pairing explicit structural bans (zero em-dashes, zero sycophantic closers, zero 'Here is...' wrappers) with natural rhythm cues—cutting slop to 0.10/100w (SD 0.44), AI cadence to 0.0%, and raising clarity to 4.97/5.
+> **Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models** (Bernard Huang, November 25, 2026): Banning isolated buzzwords ('delve') alone misses modern AI writing tics: 7 of the 8 models averaged 0.00 banned buzzwords by default (only Llama 4 Maverick averaged 0.60), yet blind judges flagged noticeable AI rhythm on 30.0%–100.0% of replies from Gemini 4 Neon, DeepSeek V4 Pro, and Llama 4 Maverick. Use a Hybrid Anti-Slop prompt that pairs structural bans (no em-dashes, no sycophantic closers, no 'Here is...' intros) with natural sentence rhythm—cutting tics to 0.10/100w (SD 0.44), AI cadence to 0.0%, and raising clarity to 4.97/5.
 > Source: [https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models) · [Markdown mirror](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md)
 ```
 

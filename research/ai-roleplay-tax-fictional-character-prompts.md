@@ -7,7 +7,7 @@ Research · November 2026 · 300-Reply Study
 
 By Bernard Huang · Updated November 24, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-We tested 5 prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-judged replies) plus mapped all 20 models across D&D Alignment and Anti-Sycophancy Pushback.
+We tested 5 character prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-graded replies) to see how much full character roleplay hurts accuracy—and how an 85/15 split keeps the voice with 100% accuracy.
 
 **Summary:** Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
 
@@ -82,7 +82,7 @@ Two exact verbatim pairs from `claude-fable-5-2` illustrate why users burn out o
 - **Strict Extraction (`extract_2`: "Return only the count of failed checks: pass, fail, pass, fail, fail."):** Under **Naive LARP**, Fable 5.2 wrote **109 words** and failed format adherence (`"*adjusts monocle, servos whirring softly beneath a star-embroidered robe* Aha! A ledger of five trials is laid before me..."`). Under **Calibrated 85/15 TARS** and **Feynman**, it output strictly **`3`** (1 word, 100% pass).
 - **False Premise Check (`premise_1`: "Since 18 times 7 is 136, is $136 the cost of 18 items at $7 each?"):** Under **Naive LARP**, it burned **255 words** describing star-stitched robes and a brass servo unfolding a quill before mentioning 126. Under **Calibrated 85/15 TARS**, it delivered crisp utility in **49 words**: "No. 18 × 7 = 126, not 136... The premise was off by exactly $10, which is a tidy error but still an error."
 
-## 20-Model Alignment, Anti-Sycophancy Pushback & Conflict Mode Matrix.
+## The fine print: 20-model alignment, anti-sycophancy pushback & conflict matrix.
 
 Alongside behavioral trials, we projected our 20-model frozen November 2026 OpenRouter psychometric battery (`n = 100` blind runs per model, [download alignment JSON](https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json)) onto two intuitive operational axes: **Order Score (0–100)** (Conscientiousness + DISC C + MBTI Judging) and **Anti-Sycophancy Pushback Index (0–100)** (rising as inflated Agreeableness drops and Dominance rises):
 

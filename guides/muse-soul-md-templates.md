@@ -7,7 +7,7 @@ Guide · Resources
 
 By Bernard Huang · Updated November 23, 2026 · ~13 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-soul-md-templates.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or sixteen role blocks below, append it to the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), and test it on real tasks.
+**Quick answer:** Pick one of the four downloadable Soul.md starter templates (Concise assistant, Thinking partner, Writing editor, or Task coordinator) or any of the sixteen role blocks below. Append it as a new section at the bottom of Soul.md (or merge with automatic backup in /tools/muse-soul-md-editor), then test it on a real task.
 
 ## Choose a starting point.
 

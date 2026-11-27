@@ -7,7 +7,7 @@
   "description": "Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.",
   "pill": "Research · descriptive reanalysis",
   "h1": "What does “neutral” mean when an AI takes a test?",
-  "dek": "When an AI picks 3 on a 1–5 scale, it usually means the question is about human life—not that the AI has a moderate trait.",
+  "dek": "We checked 17,000 individual quiz answers from GPT-6 Astra to see how often picking 3 on a 1–5 scale means a moderate personality—and how often it just means the question is about human life.",
   "lede": "Picking the middle option on a survey can mean balance, uncertainty, or that the question doesn't apply to software. Because GPT-6 Astra's prompt asked it to list questions that didn't apply to an AI, we can measure how often “neutral” really means “not applicable.”",
   "answer": "Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.",
   "sections": [
@@ -32,7 +32,7 @@
       "html": "<p>If you test models on human surveys, ask the model to output three fields per item: the numeric score, whether the question applies to an AI, and a short reason. Use the exact same midpoint instructions across every model you compare. (Sol, Opus, and Fable were not asked to output an inapplicable list, so their unflagged midpoints simply lacked that extra field.)</p>"
     },
     {
-      "h2": "Download the item-by-item table",
+      "h2": "The fine print: download the item-by-item table",
       "html": "<p><a href=\"/research/data/astra-midpoint-items.csv\" download>Download the item-level midpoint and flag CSV</a> to see the exact counts out of 100 runs for all 170 questions. For our 20-model expansion showing that the 9 physical/social embodied IPIP-50 items attract <strong>36.4% neutral midpoint clicks</strong> versus <strong>13.4%</strong> across the 41 cognitive and interpersonal items, see <a href=\"/research/ai-big-one-factor-collapse-mtmm-audit\">The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse &amp; 50-Item Embodiment Audit</a>.</p>"
     }
   ],

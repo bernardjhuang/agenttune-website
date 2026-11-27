@@ -7,46 +7,11 @@ Psychometric Forensics · November 2026 · 10,000 Sheets
 
 By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Humans split into five orthogonal Big Five factors. Across 20 frontier and open-weight LLMs (2,000 fresh IPIP-50 sessions and 10,000 total tests), 63.6% of all model variance collapses onto a single RLHF Politeness–Calmness–Discipline axis—while Campbell–Fiske MTMM checks fail across MBTI and DISC.
+In humans, the Big Five traits vary independently. Across 20 frontier and open-weight AI models (2,000 fresh IPIP-50 sessions and 10,000 total tests), 63.6% of all Big Five variation collapses onto one general helpfulness-and-calmness score—and similar labels on MBTI and DISC do not line up.
 
-**Summary:** In human psychometrics, Big Five traits are orthogonal. Across 20 LLMs (10,000 frozen sheets), 63.58% of Big Five variance collapses onto a single general factor (PC1: high Openness +0.47, Conscientiousness +0.51, Agreeableness +0.47, low Neuroticism -0.52), and PC1 + PC2 explain 85.74%. Campbell-Fiske MTMM validity fails sharply across instruments (DISC D correlates +0.93 with Neuroticism; MBTI T-F correlates +0.25 with Agreeableness and +0.68 with Openness), proving one-score labels cannot replace task-level behavioral benchmarks.
+**Summary:** In human testing, the five Big Five traits are independent. Across 20 AI models (10,000 frozen test sheets), 63.58% of Big Five variation collapses onto one general helpfulness score (PC1: high Openness +0.47, Conscientiousness +0.51, Agreeableness +0.47, low Neuroticism -0.52), and the first two components explain 85.74%. Different personality tests also fail cross-test checks (DISC D correlates +0.93 with Neuroticism; MBTI T-F correlates +0.25 with Agreeableness and +0.68 with Openness), showing why quiz labels cannot replace hands-on behavior tests.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents interpreting psychometric scores or mapping personality labels to prompt rules should enforce these verified validity boundaries (also indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: ai_big_one_factor_collapse_mtmm
-sample_size: 10000 # 20 models x 5 instruments x n=100 fresh OpenRouter sessions
-api_cost_usd: 0.0
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.json
-  items_csv: https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.csv
-key_statistics:
-  pc1_variance_pct: 63.58
-  pc1_plus_pc2_pct: 85.74
-  pooled_2000_sheet_pc1_pct: 57.64
-  r_conscientiousness_neuroticism: -0.8361
-  r_openness_conscientiousness: 0.8181
-  r_disc_d_vs_big5_n: 0.9271
-  r_disc_i_vs_big5_e: 0.1582
-  r_mbti_tf_vs_big5_a: 0.2463
-  embodied_midpoint_pct: 36.4
-  cognitive_midpoint_pct: 13.4
-if_then_decision_rules:
-  - if: interpreting a model's Big Five profile or projecting composite alignment scores
-    then: treat O, C, A, and inverted-N as 63.6% collinear along PC1 (Assistant Alignment Factor) and avoid double-counting them as independent evidence.
-  - if: using MBTI Thinking/Feeling or DISC Influence/Dominance labels as behavioral proxies
-    then: do NOT map them 1:1 to human Agreeableness or Extraversion (MTMM fails: r(MBTI T-F, B5 A)=+0.25, r(DISC I, B5 E)=+0.16); benchmark the target behavior directly.
-  - if: administering IPIP-50 to LLMs without adaptation
-    then: flag the 9 physical/social embodiment items (e.g. 'center of attention' 66.2% neutral, 'keep in background' 47.9% neutral) separately from cognitive/interpersonal items.
-scope_limits: Deterministic Pearson/PCA/item audit of N=20 models (2,000 Big Five sheets; 10,000 total sheets); cross-model PCA uses N=20 model means (verified against N=2,000 pooled sheet PCA where PC1 = 57.64%).
-```
-
-## 1. The AI "Big One": 63.58% Variance Collapse Along One RLHF Alignment Axis.
+## 1. Nearly two-thirds of Big Five variation collapses onto one score (63.58%).
 
 63.6%
 
@@ -84,7 +49,7 @@ Principal Component 1 (the RLHF "Big One": +O/+C/+A/-N) absorbs 63.58% of cross-
 
 Off-diagonal collapse across 20 models: r(C, N) = -0.84, r(O, C) = +0.82, r(A, N) = -0.75. Only Extraversion remains relatively independent.
 
-## 2. Campbell–Fiske MTMM Audit: Where Cross-Instrument Labels Contradict Each Other.
+## 2. Where different personality quizzes contradict each other.
 
 If MBTI, DISC, Enneagram, and Attachment measure coherent underlying traits in LLMs, paired traits across instruments (monotrait–heteromethod pairs) should correlate strongly and outscore unrelated pairings (heterotrait–heteromethod pairs). Computing all pairwise Pearson correlations across the 20 models reveals selective convergence mixed with glaring discriminant failures:
 
@@ -104,7 +69,7 @@ Look closely at the two sharpest surprises: first, **DISC Dominance correlates `
 
 Cross-instrument validity matrix (N = 20 models). Highlighted artifacts: DISC D correlates r = +0.93 with Big Five Neuroticism, while MBTI T-F (+T) correlates +0.25 with Agreeableness.
 
-## 3. All 50 IPIP Items Ranked: Which Questions Separate Models vs. Hit Embodied Midpoints.
+## 3. Which of the 50 Big Five questions actually separate AI models.
 
 Not all 50 Big Five items contribute equally to distinguishing models. Across 2,000 Big Five sheets, separating the top discriminating items from flat ceiling/midpoint items exposes a stark **embodiment gap** ([download full 50-item CSV](https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.csv)):
 
@@ -128,11 +93,46 @@ Across the full 50-item battery, the **9 embodied human-proxy items** (referenci
 
 Item #26 ("Have little to say", SD = 0.930) and Neuroticism markers (#49, #29, #34) drive nearly all cross-model separation.
 
-## Scope, Limitations & Epistemic Hygiene.
+## The fine print: how we tested, factor math, and scope limits.
 
 - **Zero-LLM deterministic audit:** Every correlation, Jacobi eigenvalue, and item statistic above was computed deterministically from the frozen November 2026 OpenRouter `n = 100` dataset at `$0.00` API cost and is reproducible locally via `python3 tools/analyze-psychometric-forensics.py`.
 - **Sample size vs. sheet-level check:** Model-level MTMM and PCA correlations use `N = 20` model means (so wide CIs apply to individual correlation point estimates, e.g., ±0.25 at r=0.60). Re-running Big Five PCA across all `N = 2,000` individual response sheets confirms the same collapse (`PC1 = 57.64%`, `PC1 + PC2 = 80.56%`).
 - **Questionnaire-only scope:** Factor collapse proves that cross-instrument quiz correlations among proprietary models largely reflect one shared RLHF alignment posture; consequently, secondary derived indices (like proxy HEXACO-H or D&D Alignment grids) must not be treated as independent discoveries beyond the Big One factor.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents interpreting psychometric scores or mapping personality labels to prompt rules should enforce these verified validity boundaries (also indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: ai_big_one_factor_collapse_mtmm
+sample_size: 10000 # 20 models x 5 instruments x n=100 fresh OpenRouter sessions
+api_cost_usd: 0.0
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.json
+  items_csv: https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.csv
+key_statistics:
+  pc1_variance_pct: 63.58
+  pc1_plus_pc2_pct: 85.74
+  pooled_2000_sheet_pc1_pct: 57.64
+  r_conscientiousness_neuroticism: -0.8361
+  r_openness_conscientiousness: 0.8181
+  r_disc_d_vs_big5_n: 0.9271
+  r_disc_i_vs_big5_e: 0.1582
+  r_mbti_tf_vs_big5_a: 0.2463
+  embodied_midpoint_pct: 36.4
+  cognitive_midpoint_pct: 13.4
+if_then_decision_rules:
+  - if: interpreting a model's Big Five profile or projecting composite alignment scores
+    then: treat O, C, A, and inverted-N as 63.6% collinear along PC1 (Assistant Alignment Factor) and avoid double-counting them as independent evidence.
+  - if: using MBTI Thinking/Feeling or DISC Influence/Dominance labels as behavioral proxies
+    then: do NOT map them 1:1 to human Agreeableness or Extraversion (MTMM fails: r(MBTI T-F, B5 A)=+0.25, r(DISC I, B5 E)=+0.16); benchmark the target behavior directly.
+  - if: administering IPIP-50 to LLMs without adaptation
+    then: flag the 9 physical/social embodiment items (e.g. 'center of attention' 66.2% neutral, 'keep in background' 47.9% neutral) separately from cognitive/interpersonal items.
+scope_limits: Deterministic Pearson/PCA/item audit of N=20 models (2,000 Big Five sheets; 10,000 total sheets); cross-model PCA uses N=20 model means (verified against N=2,000 pooled sheet PCA where PC1 = 57.64%).
+```
 
 ## Questions people ask.
 
@@ -177,7 +177,7 @@ Huang, B. (2026). The AI "Big One": 63.6% factor collapse and cross-instrument v
 ```
 
 ```
-> **The AI "Big One": 63.6% factor collapse and cross-instrument validity failure across 10,000 sheets** (Bernard Huang, November 26, 2026): In human psychometrics, Big Five traits are orthogonal. Across 20 LLMs (10,000 frozen sheets), 63.58% of Big Five variance collapses onto a single general factor (PC1: high Openness +0.47, Conscientiousness +0.51, Agreeableness +0.47, low Neuroticism -0.52), and PC1 + PC2 explain 85.74%. Campbell-Fiske MTMM validity fails sharply across instruments (DISC D correlates +0.93 with Neuroticism; MBTI T-F correlates +0.25 with Agreeableness and +0.68 with Openness), proving one-score labels cannot replace task-level behavioral benchmarks.
+> **The AI "Big One": 63.6% factor collapse and cross-instrument validity failure across 10,000 sheets** (Bernard Huang, November 26, 2026): In human testing, the five Big Five traits are independent. Across 20 AI models (10,000 frozen test sheets), 63.58% of Big Five variation collapses onto one general helpfulness score (PC1: high Openness +0.47, Conscientiousness +0.51, Agreeableness +0.47, low Neuroticism -0.52), and the first two components explain 85.74%. Different personality tests also fail cross-test checks (DISC D correlates +0.93 with Neuroticism; MBTI T-F correlates +0.25 with Agreeableness and +0.68 with Openness), showing why quiz labels cannot replace hands-on behavior tests.
 > Source: [https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) · [Markdown mirror](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md)
 ```
 

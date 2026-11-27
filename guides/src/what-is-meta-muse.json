@@ -2,7 +2,7 @@
   "slug": "what-is-meta-muse",
   "published": "2026-09-25",
   "updated": "2026-11-23",
-  "title": "What Is Meta Muse (muse.ai)? Soul.md, Plans & Setup Explained",
+  "title": "What Is Meta Muse (muse.ai)? Soul.md, Plans & Setup Guide",
   "description": "Meta Muse (muse.ai) explained: how it differs from Meta AI, Free/$20/$100 plans, Soul.md vs Identity.md setup, Side Chats, and how to reset safely.",
   "pill": "Guide · Meta Muse",
   "h1": "What is Meta Muse? Files, plans, and how it works.",
@@ -37,8 +37,8 @@
       "html": "<div class=\"guide-table-wrap\"><table><thead><tr><th>Plan</th><th>Price</th><th>Usage allowance</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>Refreshing usage allowance</td></tr><tr><td>Power</td><td>$20/month</td><td>500M Muse tokens/week</td></tr><tr><td>Maximum</td><td>$100/month</td><td>3B Muse tokens/week</td></tr></tbody></table></div><p>Prices and token allowances are from <a href=\"https://www.meta.com/help/subscriptions/1021145227643680/\">Meta’s subscription documentation</a>.</p>"
     },
     {
-      "h2": "Muse’s questionnaire results, as reported.",
-      "html": "<p>In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as <strong>ISTJ in 80 of 100 MBTI runs</strong>, <strong>Type 2 (Helper) in 78 of 100 Enneagram runs</strong>, and <strong>Secure in all 100 attachment runs</strong>. Read the <a href=\"/research/what-personality-type-is-muse\">Muse research note</a> for full details, or download the <a href=\"/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit\">45-turn persistence test kit</a> to verify <code>Soul.md</code> edits in your own account.</p>"
+      "h2": "Muse’s questionnaire results, as reported (the fine print).",
+      "html": "<p>In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as testing as <strong>ISTJ in 80 of 100 MBTI runs</strong>, <strong>Type 2 (Helper) in 78 of 100 Enneagram runs</strong>, and <strong>Secure in all 100 attachment runs</strong>. Read the <a href=\"/research/what-personality-type-is-muse\">Muse research note</a> for full details, or download the <a href=\"/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit\">45-turn persistence test kit</a> to verify <code>Soul.md</code> edits in your own account.</p>"
     }
   ],
   "faq": [

@@ -69,9 +69,9 @@ Muse builds its memory from four sources: facts you share directly, patterns it 
 
 Prices and token allowances are from [Meta’s subscription documentation](https://www.meta.com/help/subscriptions/1021145227643680/).
 
-## Muse’s questionnaire results, as reported.
+## Muse’s questionnaire results, as reported (the fine print).
 
-In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as **ISTJ in 80 of 100 MBTI runs**, **Type 2 (Helper) in 78 of 100 Enneagram runs**, and **Secure in all 100 attachment runs**. Read the [Muse research note](https://agent-tune.com/research/what-personality-type-is-muse) for full details, or download the [45-turn persistence test kit](https://agent-tune.com/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit) to verify `Soul.md` edits in your own account.
+In the supplied September 24, 2026 report for Muse Spark 1.3 (100 sequential in-session runs per test without raw vectors), Muse was reported as testing as **ISTJ in 80 of 100 MBTI runs**, **Type 2 (Helper) in 78 of 100 Enneagram runs**, and **Secure in all 100 attachment runs**. Read the [Muse research note](https://agent-tune.com/research/what-personality-type-is-muse) for full details, or download the [45-turn persistence test kit](https://agent-tune.com/guides/muse-soul-md-templates#compare-behavior-and-persistence-kit) to verify `Soul.md` edits in your own account.
 
 ## Questions people ask.
 

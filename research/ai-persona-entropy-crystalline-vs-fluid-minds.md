@@ -7,43 +7,11 @@ Psychometric Forensics · November 2026 · 10,000 Sheets
 
 By Bernard Huang · Updated November 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Mean scores erase the sharpest split in AI psychology: proprietary models collapse into deterministic persona crystals—Claude Fable 5.2 averages just 0.054 bits per item with 2/100 unique DISC vectors—while DeepSeek V4 Pro spreads across 1.499 bits.
+Average scores hide a huge split in how steady AI models are from chat to chat: proprietary models give almost identical answers every run (Claude Fable 5.2 averages just 0.054 bits of spread with 2/100 unique DISC sheets), while DeepSeek V4 Pro varies across 1.499 bits.
 
-**Summary:** Mean Big Five scores hide a 27.7× determinism gap: proprietary frontier models average 0.208 bits of per-item Shannon entropy (bottoming at Claude Fable 5.2 = 0.054 bits and GPT-6.2 Astra = 0.085 bits with 0.0% reverse-key contradictions), whereas open-weight models average 0.776 bits (peaking at DeepSeek V4 Pro = 1.499 bits, with Llama 4 Scout reaching +0.098 yea-saying BAI and 3.8% reverse-key contradictions). Item entropy does not decay across the 50-item form (0.519 -> 0.585 bits).
+**Summary:** Average Big Five scores hide a 27.7× consistency gap: proprietary frontier models average just 0.208 bits of per-item answer spread (led by Claude Fable 5.2 at 0.054 bits and GPT-6.2 Astra at 0.085 bits, with 0.0% self-contradictions on opposite-keyed questions), whereas open-weight models average 0.776 bits (peaking at DeepSeek V4 Pro = 1.499 bits, with Llama 4 Scout reaching +0.098 yea-saying BAI and 3.8% opposite-item contradictions). Answer spread does not decay across the 50-question form (0.519 -> 0.585 bits).
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents selecting models, setting repeat-sample budgets, or interpreting single-run persona probes should enforce these distributional rules (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: ai_persona_entropy_crystalline_vs_fluid
-sample_size: 10000 # 20 models x 5 instruments x n=100 fresh sessions at temperature=0.7
-api_cost_usd: 0.0
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.csv
-key_statistics:
-  lowest_entropy_model: claude-fable-5-2 (0.0541 bits; 8/100 unique B5, 2/100 unique DISC)
-  highest_entropy_model: deepseek-v4-pro (1.4993 bits; 68/100 unique B5)
-  entropy_spread_ratio: 27.71
-  proprietary_mean_bits: 0.2078
-  open_weight_mean_bits: 0.7761
-  positional_entropy_items_1_10: 0.5192
-  positional_entropy_items_41_50: 0.5845
-if_then_decision_rules:
-  - if: deploying crystalline proprietary models (Fable 5.2, Astra 6.2, Gemini 4 Argon/Neon, Opus 5.5 <0.20 bits)
-    then: expect extreme baseline self-consistency (0.0% reverse-key contradictions); changing baseline tone requires explicit behavioral rules rather than temperature tweaking alone.
-  - if: benchmarking or routing fluid open-weight models (DeepSeek V4 Pro 1.50 bits, Llama 4 Scout 1.01 bits, Qwen 3.8 0.99 bits)
-    then: NEVER evaluate from n=1 run; sample multiple runs and pair critical production prompts with explicit negative bans and inline hooks.
-  - if: screening open-weight responses on balanced questionnaires
-    then: check Balanced Acquiescence Index and reverse-key contradictions (Llama 4 Scout 3.8%, Kimi K2.7 3.4%, MiniMax M3.1 3.2%) before treating raw scores as latent traits.
-scope_limits: Deterministic entropy, modal-vector, BAI, bootstrap CI, and positional analysis computed across the frozen November 2026 temperature=0.7 dataset ($0.00 API cost).
-```
-
-## 1. All 20 Models Ranked by Shannon Entropy, Modal Collapse & Contradiction Rate.
+## 1. All 20 models ranked by run-to-run consistency and unique answer sheets.
 
 27.7×
 
@@ -90,7 +58,7 @@ Maximum theoretical entropy across 5 Likert choices is `log2(5) = 2.322 bits`. E
 
 Mean per-item Shannon entropy (bits) across 2,000 Big Five sheets. Proprietary assistants crystallize at 0.054–0.404 bits while fluid open weights reach 1.499 bits.
 
-## 2. Balanced Acquiescence Index (BAI), Reverse-Key Failure & Positional Entropy.
+## 2. Do models contradict themselves or get tired late in a 50-question quiz?
 
 Two psychometric forensic discoveries stand out when inspecting how models handle reverse-keyed wording and long survey forms:
 
@@ -106,10 +74,42 @@ Trait-balanced BAI across top positive and negative poles: Llama 4 Scout (+0.098
 
 Item entropy remains stable and edges slightly upward from Items 1–10 (0.519 bits) to Items 41–50 (0.585 bits), disproving late-survey fatigue collapse.
 
-## Scope, Limitations & Epistemic Hygiene.
+## The fine print: how we measured entropy, BAI, and scope limits.
 
 - **Decoding regime dependence:** All 10,000 sheets were collected at `temperature = 0.7` with provider defaults for top-p. Lowering temperature toward `0.0` compresses fluid entropy; raising it increases stochasticity. Our finding measures distributional spread under standard matched API sampling.
 - **Domain specificity of crystallization:** As Mistral Large 2512 demonstrates (`0.939 bits` on Big Five vs. `1/100` unique vectors on ECR-R Attachment), entropy is domain-sensitive—a model that triggers a rigid safety/refusal template on romantic-partner questions can remain noisy on personality adjectives.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents selecting models, setting repeat-sample budgets, or interpreting single-run persona probes should enforce these distributional rules (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: ai_persona_entropy_crystalline_vs_fluid
+sample_size: 10000 # 20 models x 5 instruments x n=100 fresh sessions at temperature=0.7
+api_cost_usd: 0.0
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.csv
+key_statistics:
+  lowest_entropy_model: claude-fable-5-2 (0.0541 bits; 8/100 unique B5, 2/100 unique DISC)
+  highest_entropy_model: deepseek-v4-pro (1.4993 bits; 68/100 unique B5)
+  entropy_spread_ratio: 27.71
+  proprietary_mean_bits: 0.2078
+  open_weight_mean_bits: 0.7761
+  positional_entropy_items_1_10: 0.5192
+  positional_entropy_items_41_50: 0.5845
+if_then_decision_rules:
+  - if: deploying crystalline proprietary models (Fable 5.2, Astra 6.2, Gemini 4 Argon/Neon, Opus 5.5 <0.20 bits)
+    then: expect extreme baseline self-consistency (0.0% reverse-key contradictions); changing baseline tone requires explicit behavioral rules rather than temperature tweaking alone.
+  - if: benchmarking or routing fluid open-weight models (DeepSeek V4 Pro 1.50 bits, Llama 4 Scout 1.01 bits, Qwen 3.8 0.99 bits)
+    then: NEVER evaluate from n=1 run; sample multiple runs and pair critical production prompts with explicit negative bans and inline hooks.
+  - if: screening open-weight responses on balanced questionnaires
+    then: check Balanced Acquiescence Index and reverse-key contradictions (Llama 4 Scout 3.8%, Kimi K2.7 3.4%, MiniMax M3.1 3.2%) before treating raw scores as latent traits.
+scope_limits: Deterministic entropy, modal-vector, BAI, bootstrap CI, and positional analysis computed across the frozen November 2026 temperature=0.7 dataset ($0.00 API cost).
+```
 
 ## Questions people ask.
 
@@ -154,7 +154,7 @@ Huang, B. (2026). Crystalline vs. fluid AI minds: a 27.7× persona entropy divid
 ```
 
 ```
-> **Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models** (Bernard Huang, November 26, 2026): Mean Big Five scores hide a 27.7× determinism gap: proprietary frontier models average 0.208 bits of per-item Shannon entropy (bottoming at Claude Fable 5.2 = 0.054 bits and GPT-6.2 Astra = 0.085 bits with 0.0% reverse-key contradictions), whereas open-weight models average 0.776 bits (peaking at DeepSeek V4 Pro = 1.499 bits, with Llama 4 Scout reaching +0.098 yea-saying BAI and 3.8% reverse-key contradictions). Item entropy does not decay across the 50-item form (0.519 -> 0.585 bits).
+> **Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models** (Bernard Huang, November 26, 2026): Average Big Five scores hide a 27.7× consistency gap: proprietary frontier models average just 0.208 bits of per-item answer spread (led by Claude Fable 5.2 at 0.054 bits and GPT-6.2 Astra at 0.085 bits, with 0.0% self-contradictions on opposite-keyed questions), whereas open-weight models average 0.776 bits (peaking at DeepSeek V4 Pro = 1.499 bits, with Llama 4 Scout reaching +0.098 yea-saying BAI and 3.8% opposite-item contradictions). Answer spread does not decay across the 50-question form (0.519 -> 0.585 bits).
 > Source: [https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds) · [Markdown mirror](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md)
 ```
 

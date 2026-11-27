@@ -70,7 +70,7 @@ On MBTI, keeping tied axes open shows 98 resolved `INTJ` runs for Fable vs. 45 r
 
 GPT-6 Sol’s Neuroticism score averaged 20.05 out of 50 with a standard deviation of **5.35 points** from run to run. Its Agreeableness score averaged 44.99 with a standard deviation of just **1.01 points**. Looking only at the average hides which traits bounce around between sessions.
 
-## How to test whether your AI is consistent on real work
+## The fine print: how to test consistency on real work and download the data
 
 Survey repeatability doesn't prove a model will follow your instructions on real tasks. In our November 2026 10,000-sheet expansion ([Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)), per-item Shannon entropy spanned from `0.054 bits` on Claude Fable 5.2 (only `2/100` unique DISC vectors and `8/100` unique Big Five vectors) up to `1.499 bits` on DeepSeek V4 Pro, while disproving late-survey fatigue collapse (`0.519 → 0.585 bits` across items 1–50). To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? [Download the 20-row repeatability CSV](https://agent-tune.com/research/data/ai-repeatability.csv) to inspect all counts from this study.
 

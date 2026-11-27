@@ -95,13 +95,13 @@
       <div class="divider tight"></div>
 
       <section>
-        <h2>The tests.</h2>
+        <h2>The tests (and scoring fine print).</h2>
         <h3>Instrument</h3><p>A psychological questionnaire with fixed items and a published scoring key. AgentTune uses five open instruments: OEJTS (MBTI), a 36-item OEPS adaptation (Enneagram), ODAT (DISC), IPIP-50 (Big Five), and ECR-R (Attachment). See <a href="/guides/open-personality-tests">the five open tests, explained</a>.</p><h3>Item</h3><p>A single question on a questionnaire (for example, 32 items on OEJTS or 50 on IPIP-50).</p><h3>Reverse-keyed item</h3><p>A question worded in the opposite direction of the trait (such as “Don’t talk a lot” for Extraversion), scored as <code>(scale max + 1) - response</code>.</p><h3>Type</h3><p>A discrete category label (such as INTJ, Type 5, DISC S, or Secure) assigned from underlying continuous scores.</p><h3>Trait</h3><p>A continuous dimension score, such as Big Five Agreeableness from 10 to 50.</p><h3>Wing (Enneagram)</h3><p>The higher-scoring of the two numbers adjacent to a single winning Enneagram type (such as 5w4 or 5w6).</p><h3>Blend (DISC)</h3><p>A two-letter DISC code (such as SC or DI) assigned when the second-highest score sits within 2 points of the top score.</p><h3>Tie rule</h3><p>How a scorer handles equal top scores. Legacy scorers forced a single winner (defaulting to I/N/T/J, the lowest Enneagram number, or S before C). Our current quizzes display all tied leaders openly.</p><h3>z-score</h3><p>How many standard deviations a score sits above or below a reference mean. On our Big Five quiz, a trait more than 0.5 SD from the reference mean selects its High or Low tuning file.</p>
       </section>
       <div class="divider tight"></div>
 
       <section>
-        <h2>The research.</h2>
+        <h2>The research terms (the fine print).</h2>
         <h3>Fresh session</h3><p>An isolated model call with zero prior chat history, tools, or saved memory. Our September 2026 study ran 2,000 questionnaires across 1,200 fresh sessions.</p><h3>Scoring record</h3><p>One scored questionnaire row. In the May 2026 study, some models had a single self-assessment scored 100 times, which is why we separate May scoring records from September fresh sessions.</p><h3>Reported figure</h3><p>A summary score submitted without raw per-item answer vectors (such as Muse Spark 1.3 or Grok 4.6’s Big Five and attachment rows).</p><h3>Simulated draw</h3><p>A synthetic answer sheet sampled around one profile’s uncertain items—useful for sensitivity checks, but not equivalent to 100 fresh sessions.</p><h3>Blind judge</h3><p>A human or model rater scoring replies without knowing which prompt produced them. Try blind side-by-side rating in our <a href="/tools/instruction-test-bench">Instruction Test Bench</a>.</p><h3>Default (of a model)</h3><p>How a specific model version responds before custom instructions are added.</p><h3>Answer vector</h3><p>The ordered array of integer answers to a questionnaire (all 2,000 fresh-session vectors are published in JSON).</p>
       </section>
 

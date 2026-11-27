@@ -7,7 +7,7 @@ Reference · Limits & Quotas
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-custom-instructions-character-limits.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept multi-paragraph Markdown without a 1,500-character cliff, though keeping rules between 500 and 1,200 characters improves instruction adherence.
+**Quick answer:** ChatGPT caps each Custom Instructions field at 1,500 characters, and OpenAI Codex caps combined AGENTS.md files at 32 KiB (32,768 bytes via project_doc_max_bytes). Claude Personal Preferences, Claude Projects, Claude Code, Meta Muse Soul.md, and Gemini Gems accept longer multi-paragraph Markdown, but keeping your rules to 5–8 bullets (500–1,200 characters) gets the most reliable compliance.
 
 ## 2026 custom instructions limit & path reference table.
 

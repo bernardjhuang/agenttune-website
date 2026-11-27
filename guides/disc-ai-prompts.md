@@ -20,7 +20,7 @@ By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)]
 
 ## 1. Dominance (D): bottom line first, zero hedging.
 
-Because untuned models score between 4.0 and 5.4 out of 20 on Dominance in our [ODAT evaluations](https://agent-tune.com/tests/disc), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
+Because untuned models score between 4.0 and 5.4 out of 20 on Dominance on our 16-question [DISC work-style survey (ODAT)](https://agent-tune.com/tests/disc), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
 
 ```markdown
 ## Communication preferences — DISC Dominance (D)
@@ -72,7 +72,7 @@ Use the Conscientiousness block for engineering, quantitative research, and audi
 - Call out edge cases, regression risks, and missing test coverage before pronouncing a solution complete.
 ```
 
-## All 12 two-letter DISC blends & how ODAT scores work.
+## All 12 two-letter DISC blends — and the fine print on ODAT scoring.
 
 On our [free 16-item ODAT runner](https://agent-tune.com/tests/disc) (no email required), each style sums 4 direct statements rated 1–5 (range **4 to 20**). When a unique runner-up lands within 2 points of your top style, you get a two-letter blend:
 

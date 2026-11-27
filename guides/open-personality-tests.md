@@ -7,7 +7,7 @@ Guide · Tests
 
 By Bernard Huang · Updated September 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** AgentTune provides five browser-based questionnaire adaptations: OEJTS (32 items, MBTI-style), a 36-item OEPS adaptation (Enneagram), ODAT (16 items, DISC), IPIP-50 (50 items, Big Five) and ECR-R (36 items, attachment). All five score locally in your browser and preserve ties explicitly. Original AgentTune code and templates are MIT licensed; questionnaire items remain subject to their upstream source terms.
+**Quick answer:** AgentTune includes five free in-browser personality quizzes: a 32-question MBTI-style survey (OEJTS), a 36-question Enneagram survey (OEPS adaptation), a 16-question DISC work-style survey (ODAT), a 50-question Big Five trait survey (IPIP-50), and a 36-question Attachment survey (ECR-R). Every quiz scores locally in your browser and keeps ties visible. Original AgentTune code and templates are MIT-licensed; see the fine print below for upstream item terms.
 
 ## At a glance.
 
@@ -66,7 +66,7 @@ All five questionnaires run client-side in your browser and never upload your re
 
 **Limits.** Because the statements describe close human relationships, administering them to a language model requires prompt translation, and small boundary shifts (such as Grok 4.6’s reported avoidance of 4.06 vs. a 4.00 cutoff) can flip a quadrant label.
 
-## Historical research provenance and direct preferences.
+## The fine print: historical research provenance and licensing.
 
 Published studies in the [research hub](https://agent-tune.com/research) used the frozen September 2026 and May 2026 adaptations. As documented in [rights-migration.json](https://agent-tune.com/research/data/rights-migration.json), legacy MBTI item 1 and two legacy Enneagram items contained undocumented substitutions; raw response vectors and numeric summaries remain preserved for exact reproduction via [the reproducibility guide](https://agent-tune.com/guides/reproduce-ai-personality-research).
 

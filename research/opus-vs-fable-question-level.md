@@ -5,7 +5,9 @@ Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+
+Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers.
 
 **Summary:** The largest Big Five item gap is on 'Sympathize with others’ feelings' (Opus mean 5.00 vs Fable 4.04). Conversely, two reverse-scored items about leaving belongings around add +1.80 points to Fable’s higher Conscientiousness total. These gaps reflect how each model interprets human metaphors, not proven differences in task performance.
 
@@ -83,7 +85,7 @@ The largest Enneagram gap appears on “I put family first” (Opus 2.08 vs Fabl
 
 Before inferring that one model is warmer or more helpful, test observable behavior on your own prompts—such as whether the assistant flags a flawed assumption.
 
-## Download every item, not just the large gaps
+## The fine print: download every item and scale note
 
 [Download the full 170-item comparison CSV](https://agent-tune.com/research/data/opus-fable-item-comparison.csv). It contains response counts, dimension keys, raw means, and keyed differences for every question across all five tests. Attachment uses a 1–7 scale (divide item gaps by 18 for subscale impact); all other tests use a 1–5 scale.
 

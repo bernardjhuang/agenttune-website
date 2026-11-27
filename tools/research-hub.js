@@ -117,7 +117,7 @@ function buildHub(summary, protocols) {
     'MBTI labels and ties'
   );
   const mbti = card(1, '#c8553d', 'MBTI', 'OEJTS · 32 items · sample sizes and ties below',
-    'Still INTJ, except where Sensing beats Intuition.',
+    'Still tests as INTJ most often, except where Sensing beats Intuition.',
     `Sol, Opus 5.5, and Fable 5.1 score INTJ in ${so.mbti.legacy_labels.INTJ}, ${op.mbti.legacy_labels.INTJ}, and ${fa.mbti.legacy_labels.INTJ} of 100 runs under the legacy tie-break rule. Astra splits between ISTJ (${a.mbti.legacy_labels.ISTJ}) and INTJ (${a.mbti.legacy_labels.INTJ}), with ${a.mbti.axis_ties.SN} exact S/N ties. Muse Spark 1.3 reports ISTJ in ${sup.mbti.ISTJ} of 100 runs. Judging won all 400 fresh-session runs. When tied axes are left open instead of defaulting to I/N/T/J, the four fresh cohorts have ${resolvedIntj} fully resolved INTJ runs rather than ${freshIntj}.`,
     mbtiTable);
 
@@ -135,7 +135,7 @@ function buildHub(summary, protocols) {
     'DISC means out of 20 and labels'
   );
   const disc = card(2, '#d99632', 'DISC', 'ODAT · 16 items · means out of 20',
-    'Everyone is Steadiness and Conscientiousness. The order flips by a point.',
+    'Every model tests high on Steadiness and Conscientiousness. The order flips by a point.',
     `Every model clusters in Steadiness (S) and Conscientiousness (C). Astra, Opus 5.5, and Fable 5.1 put S ahead of C on average; Sol and Grok 4.6 put C ahead of S; and Muse splits ${sup.disc.S} S to ${sup.disc.C} C. Because S and C means often sit within 1 point out of 20, exact top ties are common: Fable ties in ${fa.disc.runs_with_ties} runs, Sol in ${so.disc.runs_with_ties}, and Opus in ${op.disc.runs_with_ties}. Dominance stays near the floor (${f1(dMin)} to ${f1(dMax)} out of 20) for every model.`,
     discTable);
 

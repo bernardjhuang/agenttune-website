@@ -52,9 +52,11 @@ Append this block when you bring Claude plans, drafts, or code and want it to fi
 - Change your position when the evidence does, and say so.
 ```
 
-## Observations from a separate pilot.
+## What changed in our 60-reply pilot (and the fine print).
 
-In our [60-reply pilot archive](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 setups), a compact directness prompt produced measurable shifts in reply structure compared with the untuned baseline:
+> **Chart — Claude Preferences Effect (72-Reply API Test): Baseline vs. Direct Rules (%):** Shows Opus 5.5 and Fable 5.2 reaching 100% correctness, 100% <=100-word compliance, and 100% answer-first when direct preferences are applied. Opus 5.5 Baseline: Correctness % 75, <=100-Word Pass % 75, Answer-First % 100; Opus 5.5 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100; Fable 5.2 Baseline: Correctness % 83, <=100-Word Pass % 75, Answer-First % 92; Fable 5.2 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100.
+
+Applying the 5-line directness block lifted both Claude Opus 5.5 and Fable 5.2 to 100% across correctness, In our [60-reply pilot archive](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) (20 tasks × 3 setups), a compact directness prompt produced measurable shifts in reply structure compared with the untuned baseline:
 
 | Measure | Baseline | Direct |
 | --- | --- | --- |
@@ -67,10 +69,6 @@ In our [60-reply pilot archive](https://agent-tune.com/research/does-personality
 | Usefulness rating (1–5) | 4.80 | 4.80 |
 
 Notice that average word count stayed nearly identical (380 vs 382 words) because the directness prompt changed answer order and hedging rather than imposing a strict word cap.
-
-> **Chart — Claude Preferences Effect (72-Reply API Test): Baseline vs. Direct Rules (%):** Shows Opus 5.5 and Fable 5.2 reaching 100% correctness, 100% <=100-word compliance, and 100% answer-first when direct preferences are applied. Opus 5.5 Baseline: Correctness % 75, <=100-Word Pass % 75, Answer-First % 100; Opus 5.5 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100; Fable 5.2 Baseline: Correctness % 83, <=100-Word Pass % 75, Answer-First % 92; Fable 5.2 Tuned: Correctness % 100, <=100-Word Pass % 100, Answer-First % 100.
-
-Applying the 5-line directness block lifted both Claude Opus 5.5 and Fable 5.2 to 100% across correctness,
 
 ## Check accuracy alongside style.
 

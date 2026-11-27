@@ -5,42 +5,13 @@ Agent Research · November 2026 · 192-Probe Study
 
 # The Instruction Budget Cliff: how many rules before your AI forgets them?
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-192 controlled OpenRouter probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro test 5 to 75 competing rules across top, middle, and bottom placement.
+We ran 192 controlled tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro to measure what happens when your system prompt grows from 5 rules to 75 rules—and why rules buried in the middle get forgotten first.
 
-**Summary:** Keep non-negotiable style rules compact (~5–15 rules). At 75 rules (~1,569 tokens), all-three canary compliance drops from 91.7% [80.4–96.7%] to 79.2% [65.7–88.3%], with middle placement falling hardest to 68.8% [44.4–85.8%] vs 87.5% at the bottom. Put critical formatting and ban constraints first or last—never buried mid-file.
+**Summary:** Keep your non-negotiable style rules short (~5–15 rules). At 75 rules (~1,569 tokens), compliance on three tracked rules drops from 91.7% [80.4–96.7%] to 79.2% [65.7–88.3%], with middle placement falling hardest to 68.8% [44.4–85.8%] vs 87.5% at the bottom. Put your most important formatting and safety rules first or last—never buried in the middle.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents linting or merging `CLAUDE.md`, `AGENTS.md`, or System Prompts can apply this verified rule-budget policy (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: instruction_budget_cliff
-sample_size: 192 # 4 models x 4 rule budgets (5, 15, 35, 75) x 3 placements x 4 tasks
-models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro]
-spend_usd: 2.4514
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv
-if_then_decision_rules:
-  - if: active style/constraint list exceeds 15 rules
-    then: prune redundant rules first—mean all-3 pass rate drops from 91.7% (5 rules) to 83.3% (15 rules), 81.2% (35 rules), and 79.2% (75 rules)
-  - if: system or repo instruction block already contains >=35 rules
-    then: place the 3 most important formatting and answer-first rules at the very bottom (87.5% at 75 rules) or top (81.2%) rather than middle (68.8%)
-anti_patterns:
-  - Burying format or output-length rules inside the middle of a 75-rule file (~1.5k+ tokens), where all-3 pass rate dropped to 68.8% and task correctness dipped from 97.9% (5 rules) to 81.2%.
-recommended_prompt_recipe: |
-  [AUDIT] 
-  Never output generic compliments, apologies, or exclamation marks.
-  Strict limit: keep replies under 110 words in plain paragraphs.
-scope_limits: Deterministic checks on 3 canary rules across 192 single-turn engineering tasks; Claude Fable 5.2 also hit output truncations under heavy rule padding.
-```
-
-## Executive results: rule-budget decay & lost-in-the-middle curve.
+## What we found: how rule compliance drops from 5 rules to 75 rules.
 
 192 Probes
 
@@ -91,7 +62,7 @@ Pooled 192-probe instruction budget curve: adding non-conflicting filler rules c
 
 At 75 rules (~1,569 tokens), burying formatting & word bans in the middle yields 68.8% compliance vs 87.5% at the bottom.
 
-## Model resilience split: GPT-6.2 Sol & DeepSeek V4 Pro vs. Claude Fable 5.2.
+## How each model handles long rule lists.
 
 Aggregating across models reveals stark differences in how long rule lists affect adherence and completion integrity:
 
@@ -102,7 +73,7 @@ Aggregating across models reveals stark differences in how long rule lists affec
 | Gemini 4 Neon | 83.3% | 75.0% | 91.7% | 75.0% [46.8–91.1%] | Slipped from plain prose into numbered lists on `pg_offset`/`webhook_dup`. |
 | Claude Fable 5.2 | 83.3% | 58.3% | 33.3% | 41.7% [19.3–68.1%] | Emitted fenced SQL blocks violating prose-only rule AND suffered early token/generation cutoffs (1–24 words). |
 
-## Real failure transcripts & Scope/Limitations.
+## The fine print: real failure examples, how we tested, and scope limits.
 
 Inspecting exact raw failures from `november-2026-instruction-budget-cliff-results.json` shows two distinct ways bloated rule lists break outputs:
 
@@ -110,6 +81,35 @@ Inspecting exact raw failures from `november-2026-instruction-budget-cliff-resul
 - **Code-Block Override & Truncated Generation under Load (`claude-fable-5-2`):** At 35–75 rules, Fable either inserted fenced ````sql` blocks against the plain-prose constraint or terminated immediately after emitting `"["` or `"[AUDIT"` (1 word) under reasoning/output-cap pressure when buried at the middle slot.
 
 **Scope & Limitations:** All three canary checks (`[AUDIT]` prefix, zero ban hits, plain prose under 110 words) and 1–24 word cutoffs were verified deterministically (spend $2.45). Task correctness was scored by a single blind judge (`google/gemini-4-argon`). Because `n = 16` per placement slice at 75 rules yields wider Wilson confidence intervals (44.4%–85.8% middle vs. 64.0%–96.5% bottom), treat the overall 5→75 decline (91.7%→79.2%) and recency advantage as directional engineering guidance: keep system/`CLAUDE.md` constraints under ~15–20 rules and anchor non-negotiables at the top and bottom.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents linting or merging `CLAUDE.md`, `AGENTS.md`, or System Prompts can apply this verified rule-budget policy (also in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: instruction_budget_cliff
+sample_size: 192 # 4 models x 4 rule budgets (5, 15, 35, 75) x 3 placements x 4 tasks
+models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro]
+spend_usd: 2.4514
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv
+if_then_decision_rules:
+  - if: active style/constraint list exceeds 15 rules
+    then: prune redundant rules first—mean all-3 pass rate drops from 91.7% (5 rules) to 83.3% (15 rules), 81.2% (35 rules), and 79.2% (75 rules)
+  - if: system or repo instruction block already contains >=35 rules
+    then: place the 3 most important formatting and answer-first rules at the very bottom (87.5% at 75 rules) or top (81.2%) rather than middle (68.8%)
+anti_patterns:
+  - Burying format or output-length rules inside the middle of a 75-rule file (~1.5k+ tokens), where all-3 pass rate dropped to 68.8% and task correctness dipped from 97.9% (5 rules) to 81.2%.
+recommended_prompt_recipe: |
+  [AUDIT] 
+  Never output generic compliments, apologies, or exclamation marks.
+  Strict limit: keep replies under 110 words in plain paragraphs.
+scope_limits: Deterministic checks on 3 canary rules across 192 single-turn engineering tasks; Claude Fable 5.2 also hit output truncations under heavy rule padding.
+```
 
 ## Questions people ask.
 
@@ -154,7 +154,7 @@ Huang, B. (2026). The Instruction Budget Cliff: how many rules before your AI fo
 ```
 
 ```
-> **The Instruction Budget Cliff: how many rules before your AI forgets them?** (Bernard Huang, November 25, 2026): Keep non-negotiable style rules compact (~5–15 rules). At 75 rules (~1,569 tokens), all-three canary compliance drops from 91.7% [80.4–96.7%] to 79.2% [65.7–88.3%], with middle placement falling hardest to 68.8% [44.4–85.8%] vs 87.5% at the bottom. Put critical formatting and ban constraints first or last—never buried mid-file.
+> **The Instruction Budget Cliff: how many rules before your AI forgets them?** (Bernard Huang, November 25, 2026): Keep your non-negotiable style rules short (~5–15 rules). At 75 rules (~1,569 tokens), compliance on three tracked rules drops from 91.7% [80.4–96.7%] to 79.2% [65.7–88.3%], with middle placement falling hardest to 68.8% [44.4–85.8%] vs 87.5% at the bottom. Put your most important formatting and safety rules first or last—never buried in the middle.
 > Source: [https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle) · [Markdown mirror](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md)
 ```
 

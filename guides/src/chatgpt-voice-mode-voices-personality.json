@@ -8,7 +8,7 @@
   "h1": "ChatGPT Voice Mode: all 9 voices, female/male/UK options, and tone setup.",
   "dek": "Filter Arbor, Breeze, Cove, Ember, Juniper, Maple, Sol, Spruce, and Vale—then copy a spoken-friendly Custom Instructions block so Voice Mode stops reading bullet walls.",
   "lede": "ChatGPT’s Voice Mode gives you <strong>nine built-in voices</strong> spanning female-leaning, male-leaning, US, and British accents. Changing the voice changes how ChatGPT sounds, while adding three short lines to Custom Instructions controls how long it talks and whether it pushes back.",
-  "answer": "To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session) and choose from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Pair your voice with a 2–4 sentence Custom Instructions rule so spoken answers stay brief.",
+  "answer": "To change ChatGPT's voice on iOS, Android, or desktop, open Settings → Voice (or tap the voice controls inside an active Voice Mode session). Pick from all 9 voices: Juniper, Maple, Sol, and Vale (female-leaning; Vale is British), or Arbor, Breeze, Cove, Ember, and Spruce (male-leaning; Arbor is British). Then add a 2–4 sentence rule in Custom Instructions so spoken replies stay brief.",
   "scripts": [
     "/resources/tools/ai-voice-picker.js"
   ],

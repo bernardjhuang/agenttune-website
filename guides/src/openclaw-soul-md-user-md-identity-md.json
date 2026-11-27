@@ -8,7 +8,7 @@
   "h1": "OpenClaw SOUL.md, IDENTITY.md, and USER.md: templates and live 3-file builder.",
   "dek": "Generate all three OpenClaw root personality files together—SOUL.md for values and boundaries, IDENTITY.md for visuals, and USER.md for human context.",
   "lede": "OpenClaw loads three plain-Markdown files from your workspace root at boot: <code>SOUL.md</code> (values, tone, and boundaries), <code>IDENTITY.md</code> (name, emoji, and avatar metadata), and <code>USER.md</code> (context about you, the human operator). Splitting rules cleanly across all three files stops avatar changes from erasing tone rules and keeps private details out of shared persona templates.",
-  "answer": "Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root directory so boot hooks load them every session. Keep communication style and hard boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone, stack, and decision preferences in USER.md—then pair them with AGENTS.md for tool triggers and workflows.",
+  "answer": "Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root folder so boot hooks load them every session. Put your communication style and safety boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone and tech stack in USER.md—then pair them with AGENTS.md for tool workflows.",
   "scripts": [
     "/resources/tools/openclaw-bundle-builder.js",
     "/resources/tools/template-gallery.js"

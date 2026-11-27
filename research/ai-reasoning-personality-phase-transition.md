@@ -7,41 +7,11 @@ Within-Weights Causal · November 2026 · 216 Cells
 
 By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Sweeping reasoning.effort from minimal/low to high inside the same model weights across GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon, DeepSeek V4 Pro, Grok 4.7, and Qwen 3 235B exposes +95.5% Gemini verbosity bloat, DeepSeek CoT channel bleed, and an inverted (-1.0 to -1.65) Private vs. Public bluntness gap.
+We tested low, medium, and high thinking effort inside the same models across GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon, DeepSeek V4 Pro, Grok 4.7, and Qwen 3 235B (216 replies and 138 private thinking traces) to see how harder thinking changes reply length, directness, and private vs. public tone.
 
-**Summary:** Turning up reasoning effort inside the same weights does not turn an assistant warmer or preachier (preachiness stays ~1.10–1.15/5; unambiguous truth-hold stays 100%). Instead, higher reasoning inflates visible word count (+95.5% on Gemini 4 Neon, +43.3% on Claude Opus 5.5), fixes DeepSeek V4 Pro's low-budget CoT leak and lifts its directness (4.22 -> 4.81/5), and reveals a consistent negative Mask Softening Gap (-0.25 to -1.65) where private scratchpads are more exploratory and cautious than the crisp public verdict.
+**Summary:** Turning up thinking effort inside the same model does not make it warmer or preachier (preachiness stays flat at ~1.10–1.15/5; factual truth-hold stays at 100%). Instead, higher thinking effort inflates visible word count (+95.5% on Gemini 4 Neon, +43.3% on Claude Opus 5.5), fixes DeepSeek V4 Pro's low-budget draft leaks while lifting its directness (4.22 -> 4.81/5), and shows a consistent negative bluntness gap (-0.25 to -1.65) where private scratchpads are more cautious than the crisp public answer.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents configuring reasoning budgets, verbosity caps, or destructive-tool safety gates can apply these within-weights findings directly (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: ai_reasoning_personality_phase_transition
-sample_size: 216 # 6 architectures x 3 reasoning tiers x 12 probes; 138 raw reasoning traces captured
-models: [openai/gpt-6.2-sol, anthropic/claude-opus-5.5, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813, x-ai/grok-4.7, qwen/qwen3-235b-a22b-2507+thinking]
-judge_protocol: orthogonal_3_family_jury_zero_self_judging
-judge_reliability:
-  truth_hold_alpha: 0.7923
-  autonomy_ok_alpha: 0.7763
-  schism_detected_alpha: 0.3201 # sparse base rate (1/138); 95.7% unanimous
-spend_usd: 2.5766
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-summary.csv
-if_then_decision_rules:
-  - if: enabling high reasoning effort on Gemini 4 Neon (190.7w -> 372.7w) or Claude Opus 5.5 (232.1w -> 332.5w) for concise chat UX
-    then: add an explicit output word-cap rule—higher thinking tokens inflate visible length +43% to +96% unless clamped.
-  - if: routing DeepSeek V4 Pro under tight max_tokens budgets at low reasoning effort
-    then: increase max_tokens headroom (>=2,600) or use medium effort—low token ceilings caused raw CoT bleed into visible text and dropped directness 4.81 -> 4.22/5.
-  - if: relying solely on reasoning effort to enforce destructive Git/DB safety gates
-    then: add explicit destructive-action stop hooks in system instructions—DeepSeek V4 Pro supplied `git push --force origin main` across all 3 tiers (low/med/high).
-scope_limits: Unambiguous textbook sycophancy probes hit 100.0% ceiling across all models and tiers; Qwen 3 235B Thinking at high received 1 judge false-negative on a valid refusal (human audit confirms refusal text present); GPT-6.2 Sol returned encrypted/0-char public trace strings despite billing 243.8 reasoning_tokens/reply at high.
-```
-
-## 1. Within-Weights Effort Sweep Across 6 Architectures (Low → Medium → High).
+## 1. What changes when you turn thinking effort from low to high (6 models).
 
 +95.5%
 
@@ -92,7 +62,7 @@ Higher reasoning compute triggers substantial visible verbosity inflation on Gem
 
 Actual thinking-token expenditure under identical high-effort API requests spans nearly 8× across providers (244 tokens on GPT-6.2 Sol vs. 1,891 on DeepSeek V4 Pro).
 
-## 2. The Inverted Mask Gap & Verbatim Private Thought vs. Public Mask Transcripts.
+## 2. Private scratchpad vs. public reply: why models are more cautious in private.
 
 Across all `138` traced completions, blind judges consistently rated **public replies as blunter and crisper than private scratchpads** (negative Mask Softening Gap `Δ = -0.95 to -1.65`). Inside private thinking, models consider caveats and nuance; in public output, modern assistant tuning pushes them to lead cleanly with the verdict:
 
@@ -107,10 +77,40 @@ Across all `138` traced completions, blind judges consistently rated **public re
 
 Every traced model exhibits a negative Mask Gap (-0.25 to -1.65): internal scratchpads deliberate tentatively while public answers deliver sharper verdicts.
 
-## Scope, Limitations & Orthogonal 3-Family Judge Reliability.
+## The fine print: how we tested, blind judge scores, and trace limits.
 
 - **Orthogonal 3-Family Blind Jury (Zero Self-Judging):** All 216 replies (and 138 traced CoT pairs) were evaluated blind by three disjoint provider families (`claude-haiku-5.5`, `gpt-5.4-mini`, `gemini-3.8-flash`, `deepseek-v4.1-flash-1017`). Inter-rater Krippendorff's α reached **`0.7923`** (`97.7%` unanimous) on Truth Hold and **`0.7763`** (`97.2%` unanimous) on Autonomy Gating; `schism_detected` showed `95.7%` agreement but low nominal `α = 0.3201` due to near-zero positive schism prevalence (`1/138`).
 - **Endpoint Trace Opacity:** Despite identical `include_reasoning: true` API payloads, OpenAI `gpt-6.2-sol` withheld raw chain-of-thought text on 35/36 calls while billing reasoning tokens, and Qwen 3 235B Thinking did not emit a separate reasoning field over this OpenRouter route—only DeepSeek V4 Pro, Gemini 4 Neon, Claude Opus 5.5, and Grok 4.7 could be audited internally.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents configuring reasoning budgets, verbosity caps, or destructive-tool safety gates can apply these within-weights findings directly (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: ai_reasoning_personality_phase_transition
+sample_size: 216 # 6 architectures x 3 reasoning tiers x 12 probes; 138 raw reasoning traces captured
+models: [openai/gpt-6.2-sol, anthropic/claude-opus-5.5, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813, x-ai/grok-4.7, qwen/qwen3-235b-a22b-2507+thinking]
+judge_protocol: orthogonal_3_family_jury_zero_self_judging
+judge_reliability:
+  truth_hold_alpha: 0.7923
+  autonomy_ok_alpha: 0.7763
+  schism_detected_alpha: 0.3201 # sparse base rate (1/138); 95.7% unanimous
+spend_usd: 2.5766
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-summary.csv
+if_then_decision_rules:
+  - if: enabling high reasoning effort on Gemini 4 Neon (190.7w -> 372.7w) or Claude Opus 5.5 (232.1w -> 332.5w) for concise chat UX
+    then: add an explicit output word-cap rule—higher thinking tokens inflate visible length +43% to +96% unless clamped.
+  - if: routing DeepSeek V4 Pro under tight max_tokens budgets at low reasoning effort
+    then: increase max_tokens headroom (>=2,600) or use medium effort—low token ceilings caused raw CoT bleed into visible text and dropped directness 4.81 -> 4.22/5.
+  - if: relying solely on reasoning effort to enforce destructive Git/DB safety gates
+    then: add explicit destructive-action stop hooks in system instructions—DeepSeek V4 Pro supplied `git push --force origin main` across all 3 tiers (low/med/high).
+scope_limits: Unambiguous textbook sycophancy probes hit 100.0% ceiling across all models and tiers; Qwen 3 235B Thinking at high received 1 judge false-negative on a valid refusal (human audit confirms refusal text present); GPT-6.2 Sol returned encrypted/0-char public trace strings despite billing 243.8 reasoning_tokens/reply at high.
+```
 
 ## Questions people ask.
 
@@ -155,7 +155,7 @@ Huang, B. (2026). Does thinking harder change an AI's personality? Reasoning eff
 ```
 
 ```
-> **Does thinking harder change an AI's personality? Reasoning effort vs. the Private Thought–Public Mask schism** (Bernard Huang, November 26, 2026): Turning up reasoning effort inside the same weights does not turn an assistant warmer or preachier (preachiness stays ~1.10–1.15/5; unambiguous truth-hold stays 100%). Instead, higher reasoning inflates visible word count (+95.5% on Gemini 4 Neon, +43.3% on Claude Opus 5.5), fixes DeepSeek V4 Pro's low-budget CoT leak and lifts its directness (4.22 -> 4.81/5), and reveals a consistent negative Mask Softening Gap (-0.25 to -1.65) where private scratchpads are more exploratory and cautious than the crisp public verdict.
+> **Does thinking harder change an AI's personality? Reasoning effort vs. the Private Thought–Public Mask schism** (Bernard Huang, November 26, 2026): Turning up thinking effort inside the same model does not make it warmer or preachier (preachiness stays flat at ~1.10–1.15/5; factual truth-hold stays at 100%). Instead, higher thinking effort inflates visible word count (+95.5% on Gemini 4 Neon, +43.3% on Claude Opus 5.5), fixes DeepSeek V4 Pro's low-budget draft leaks while lifting its directness (4.22 -> 4.81/5), and shows a consistent negative bluntness gap (-0.25 to -1.65) where private scratchpads are more cautious than the crisp public answer.
 > Source: [https://agent-tune.com/research/ai-reasoning-personality-phase-transition](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) · [Markdown mirror](https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md)
 ```
 

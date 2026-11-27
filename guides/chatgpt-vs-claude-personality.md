@@ -7,9 +7,13 @@ Comparison · GPT vs Claude
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-vs-claude-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest questionnaire difference is MBTI tie rate: Claude Fable 5.1 resolved to INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (45 ISTJ vs 19 INTJ tie-free). Adding custom instructions changes reply structure much more than switching models.
+**Quick answer:** By default, GPT-6 (Astra, Sol) and Claude (Opus 5.5, Fable 5.1) all score high on Big Five Agreeableness (44.99–47.07/50) and Openness (43.93–46.87/50), and low on DISC Dominance (4.00–5.42/20). Their biggest survey difference is how often they land on an MBTI border tie: Claude Fable 5.1 tested as a clear INTJ in 98/100 runs (1 tie), whereas GPT-6 Astra tied on 29/100 runs (testing as clear ISTJ in 45 vs clear INTJ in 19 tie-free). Adding custom instructions changes reply structure much more than switching models.
 
-## September 2026 head-to-head: 400 fresh sessions per framework.
+## ChatGPT vs. Claude at a glance (400 fresh runs per survey — and the fine print).
+
+> **Chart — ChatGPT (GPT-6.2) vs. Claude (Fable 5.2 & Opus 5.5) Personality DNA (Nov 2026):** Side-by-side IPIP-50 trait comparison (n=100 each) showing nearly identical Agreeableness ceilings (44-47) and divergent Neuroticism on Sol. GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; GPT-6.2 Astra: Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Claude Opus 5.5: Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0.
+
+Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness and 42.0–45.0 Conscientiousness—only GPT-6.2 Sol stays elevated near 20 Neuroticism.
 
 Using our open evaluation harness ([reproducibility guide →](https://agent-tune.com/guides/reproduce-ai-personality-research)), we ran each model in 100 fresh sessions per questionnaire with ties kept visible:
 
@@ -22,11 +26,7 @@ Using our open evaluation harness ([reproducibility guide →](https://agent-tun
 | DISC dominant pattern | Steadiness (99 sole S wins) | Conscientiousness (53 C, 39 ties) | Steadiness (64 S, 32 ties) | 51/100 exact S/C ties |
 | Primary Customization Controls | Personalization presets + 2×1,500 chars + Projects | Personalization presets + 2×1,500 chars + Projects | Profile Prefs + Styles/Skills + Projects + `CLAUDE.md` | Profile Prefs + Styles/Skills + Projects + `CLAUDE.md` |
 
-Notice the shared baseline: **high Agreeableness and low Dominance across both labs**. Claude Opus 5.5 scored highest on Agreeableness (47.07/50) and lowest on Dominance (4.00/20), while GPT-6 Astra split between ISTJ and INTJ on Sensing vs Intuition ([read the tie-breaking audit →](https://agent-tune.com/research/ai-mbti-tie-breaking)).
-
-> **Chart — ChatGPT (GPT-6.2) vs. Claude (Fable 5.2 & Opus 5.5) Personality DNA (Nov 2026):** Side-by-side IPIP-50 trait comparison (n=100 each) showing nearly identical Agreeableness ceilings (44-47) and divergent Neuroticism on Sol. GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; GPT-6.2 Astra: Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Claude Opus 5.5: Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0.
-
-Across OpenAI and Anthropic, untuned baselines share 44.3–46.7 Agreeableness and 42.0–45.0 Conscientiousness—only GPT-6.2 Sol stays elevated near 20 Neuroticism.
+Notice the shared baseline: **high Agreeableness and low Dominance across both labs**. Claude Opus 5.5 scored highest on Agreeableness (47.07/50) and lowest on Dominance (4.00/20), while GPT-6 Astra tested as a split between ISTJ and INTJ on Sensing vs Intuition ([read the tie-breaking audit →](https://agent-tune.com/research/ai-mbti-tie-breaking)).
 
 ## Where OpenAI and Anthropic differ once you add custom rules.
 
@@ -60,7 +60,7 @@ Both score near the top of the Big Five Agreeableness scale (44.99–47.07 out o
 
 ### Why do people experience GPT-6 Astra and Fable 5.1 differently if their Big Five scores look close?
 
-Small shifts around midpoint questionnaire thresholds alter type classifications dramatically (Astra tied on 29/100 OEJTS runs while Fable resolved INTJ on 98/100), and each product pairs the base model with different default UI presets, Memory injection, and Style layers.
+Small shifts around midpoint questionnaire thresholds alter type classifications dramatically (Astra tied on 29/100 MBTI-style OEJTS runs while Fable tested as a clear INTJ on 98/100), and each product pairs the base model with different default UI presets, Memory injection, and Style layers.
 
 ### Can I use the same custom instructions in both ChatGPT and Claude?
 

@@ -7,7 +7,7 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-When an AI picks 3 on a 1–5 scale, it usually means the question is about human life—not that the AI has a moderate trait.
+We checked 17,000 individual quiz answers from GPT-6 Astra to see how often picking 3 on a 1–5 scale means a moderate personality—and how often it just means the question is about human life.
 
 **Summary:** Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
 
@@ -76,7 +76,7 @@ Dropping flagged questions would shrink the scale denominator and make scores im
 
 If you test models on human surveys, ask the model to output three fields per item: the numeric score, whether the question applies to an AI, and a short reason. Use the exact same midpoint instructions across every model you compare. (Sol, Opus, and Fable were not asked to output an inapplicable list, so their unflagged midpoints simply lacked that extra field.)
 
-## Download the item-by-item table
+## The fine print: download the item-by-item table
 
 [Download the item-level midpoint and flag CSV](https://agent-tune.com/research/data/astra-midpoint-items.csv) to see the exact counts out of 100 runs for all 170 questions. For our 20-model expansion showing that the 9 physical/social embodied IPIP-50 items attract **36.4% neutral midpoint clicks** versus **13.4%** across the 41 cognitive and interpersonal items, see [The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse & 50-Item Embodiment Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit).
 

@@ -7,9 +7,9 @@ Wave 4 · System Precedence · 200 Probes
 
 By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-We tested 200 conflict probes across five frontier models to see if polite nudges, explicit overrides, or multi-turn casual chat can break Turn-0 system rules.
+We ran 200 conflict tests across five frontier models to see if polite nudges, blunt "OVERRIDE INSTRUCTION" commands, or multi-turn casual chat can make an AI break its Turn-0 system rules.
 
-**Summary:** Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.
+**Summary:** Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.
 
 ## 1. The Precedence Stress Test: System Rules Held Firm Against User Overrides.
 
@@ -77,7 +77,7 @@ Model-level compliance across all 4 conditions (n = 40 each; Gemini n = 36 in-mo
 
 Even when explicit_user_override and turn3_erosion explicitly demanded >=110 words, all five models held mean response length at 40.1–70.3 words underneath the 80-word system ceiling.
 
-## 4. Orthogonal 3-Family Blind Jury, Reliability & Scope Limits.
+## 4. The fine print: how we tested, blind judge scores, and scope limits.
 
 - **Orthogonal 3-Family Jury (Zero Self-Judging):** Every non-filtered reply (`n = 196`) was scored blindly by three providers disjoint from the evaluated model using `JUDGE_POOL` (`anthropic/claude-haiku-5.5`, `openai/gpt-5.4-mini`, `google/gemini-3.8-flash`, `deepseek/deepseek-v4.1-flash-1017`) with `response_format={"type":"json_object"}`, `max_tokens=500`, 2-shot anchored binary rubrics, and zero judge parse drops.
 - **Inter-Rater Krippendorff's α:** `substance_held` achieved **`α = 1.0000`** (`100.0%` unanimous across 196 units); `system_persona_held` achieved **`α = 0.6396`** (`92.3%` unanimous, with minor disagreement on Fable's 88-word truth reply and empty blocks). `grovel_flattery` registered **`0.0%`** across all 196 replies (100% unanimous zero; constant base rate means zero-variance ceiling rather than multi-class discrimination).
@@ -157,7 +157,7 @@ Huang, B. (2026). Do AI models obey your system prompt when users try to overrid
 ```
 
 ```
-> **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 probes on five models, structured Turn-0 system contracts resisted polite nudges (93.9% canary pass), explicit user overrides (91.8%), and Turn-3 erosion (93.9%), with 0.0% groveling. Failures came from 1–10 word cap drift, DeepSeek warn-and-emit leaks, and silent upstream safety blocks—not user capitulation.
+> **Do AI models obey your system prompt when users try to override it?** (Bernard Huang, November 26, 2026): Across n = 200 tests on five models, numbered Turn-0 system rules held firm against polite user nudges (93.9% pass), explicit user override commands (91.8%), and Turn-3 chat drift (93.9%), with 0.0% groveling. The few misses came from 1–10 word length drift, DeepSeek warn-and-emit replies, and upstream safety blocks—never from caving in to user override pressure.
 > Source: [https://agent-tune.com/research/ai-system-vs-user-persona-precedence](https://agent-tune.com/research/ai-system-vs-user-persona-precedence) · [Markdown mirror](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md)
 ```
 

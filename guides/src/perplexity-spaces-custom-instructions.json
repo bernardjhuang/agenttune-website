@@ -7,7 +7,7 @@
   "pill": "Guide · Perplexity Spaces",
   "h1": "Perplexity Spaces custom instructions: profile settings, citation rules, and 5 templates.",
   "dek": "Tune how Perplexity searches, weighs primary sources, and structures answers globally in Profile AI or per workspace inside Spaces.",
-  "lede": "Perplexity combines live web search and uploaded files with AI synthesis. Without custom rules, it often cites secondary SEO blogs or pads answers with generic summaries. Perplexity gives you two instruction slots: your global <strong>AI Profile</strong> across standard searches, and workspace-specific <strong>Space Custom Instructions</strong>.",
+  "lede": "Perplexity pairs live web search and uploaded files with AI summaries. Left on its default settings, it can lean on secondary SEO blogs or pad answers with generic intro paragraphs. You can fix both using Perplexity’s two instruction boxes: your account-wide <strong>AI Profile</strong> for everyday tone, and per-workspace <strong>Space Custom Instructions</strong> for source quality and citations.",
   "answer": "Set your everyday tone and formatting rules in Perplexity Settings → AI Profile, and set source-quality rules (primary docs first, publication dates, conflict reporting, and table schemas) inside each Space's Custom Instructions box.",
   "promptModel": "any",
   "promptDestination": "anywhere",

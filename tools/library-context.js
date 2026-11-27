@@ -31,7 +31,7 @@ const ATLAS_FOR = {
 };
 function defaultGap(c, research) {
   const notes = {
-    mbti: 'In our earlier May archive, 597 of 600 scoring records were labeled INTJ (including repeated scoring of single answer sets). Across 25 AI families today, 16 families stay split or border-heavy while 9 clear statistical margins for INTJ or ISTJ.',
+    mbti: 'In our earlier May archive, 597 of 600 scoring records were labeled INTJ (including repeated scoring of single answer sets). Across 25 AI families today, 16 families stay split or tied on at least one axis while 9 consistently test as INTJ or ISTJ.',
     enneagram: 'On the 36-item Enneagram test, AI models often tie at the top (up to 90% in some families). Model scores reflect survey wording, not human motives.',
     disc: 'Every tested AI model scores high on Steadiness and Conscientiousness and low on Dominance (4.0 to 12.0 out of 20). If you want fast, direct answers, you have to ask for them explicitly.',
     attachment: 'Almost every tested AI family (24 of 25) lands in the Secure quadrant, with three families clamping near the 4.00 midpoint on romantic items. Those scores reflect how models answer relationship questions, not emotional attachment.',

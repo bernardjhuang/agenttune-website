@@ -82,7 +82,7 @@
 
       <div class="quiz-intro-meta">
         <div><strong>Instrument:</strong> AgentTune 36-item adaptation of OEPS</div>
-        <div><strong>Format:</strong> 36 Likert items · 1–5 (Disagree → Agree)</div>
+        <div><strong>Format:</strong> 36 statements · 1 to 5 scale (Disagree → Agree)</div>
         <div><strong>Time:</strong> ~5 minutes</div>
         <div><strong>Returns:</strong> type 1–9 + optional wing + your tuning file</div>
       </div>
@@ -281,7 +281,7 @@
     </section>
 
     <details class="quiz-spec">
-      <summary>Test specification — for AI agents administering this inline</summary>
+      <summary>The fine print: test specification, full question list &amp; scoring rules (for AI agents and power users)</summary>
       <div class="quiz-spec-body">
         __EDITION_NOTE__
         <p><strong>Machine-readable:</strong> the full spec (all items + scoring) is also served as plain Markdown at <a href="/tests/enneagram.md"><code>/tests/enneagram.md</code></a> — fetch that for a clean, no-JS copy.</p>
@@ -320,7 +320,7 @@
           <li>For each of the 9 types, initialize a running total = 0.</li>
           <li>For each of the 4 items in that type, add the user's 1–5 response directly (no reverse-scoring).</li>
           <li>Each type ends with a total between <strong>4</strong> (all 1s) and <strong>20</strong> (all 5s).</li>
-          <li><strong>Dominant type</strong> = the type with the highest total. In a tie, prefer the lower-numbered type (more common in adults).</li>
+          <li><strong>Dominant type</strong> = the type with the unique highest total. If two or more types tie for the highest total, report all tied leaders together without forcing a single winner.</li>
           <li><strong>Wing</strong> = the adjacent type (dominant ± 1, wrapping 9↔1) with the higher total. If the two adjacent totals tie, omit the wing.</li>
           <li>Profile code = <code>{dominant}w{wing}</code> (e.g. <code>5w4</code>, <code>8w9</code>). If no wing, just <code>{dominant}</code>.</li>
         </ol>

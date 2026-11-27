@@ -9,7 +9,11 @@ By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)]
 
 **Quick answer:** To stop AI sycophancy, add three rules to your Custom Instructions, Personal Preferences, AGENTS.md, or Soul.md: (1) ban praise openers and automatic agreement, (2) require the AI to test your premise and name the strongest counterargument before executing, and (3) require it to hold its ground when its answer is right. You can also use our Low Agreeableness, DISC Dominance (D), or Enneagram Type 8 tunings.
 
-## The empirical baseline: why untuned models rarely push back.
+## Why untuned models rarely push back (at a glance — and the fine print).
+
+> **Chart — Agreeableness Spectrum Across Frontier & Open Models (/50):** Demonstrates why most frontier assistants rarely push back unprompted (Agreeableness 43.7–47.6/50) compared with Llama 4 Scout (35.8) and DeepSeek V4 Pro (32.4). Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; GPT-6.2 Astra: 44.9; GPT-6.2 Sol: 44.3; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Llama 4 Maverick: 41.0; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
+
+Untuned models cluster at the top of the 50-point Agreeableness scale, driving default premise validation until explicit challenge rules are added.
 
 Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.com/research/ai-personality-five-models-2026) (100 runs each for GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1), every model clustered at the cooperative, conflict-averse end of the scale:
 
@@ -21,10 +25,6 @@ Across the 400 fresh sessions in our [September 2026 study](https://agent-tune.c
 | Claude Fable 5.1 | 45.03 | 5.00 | 16.00 | 16.05 |
 
 At the item level ([see our Big Five item breakdown](https://agent-tune.com/research/ai-big-five-item-level-comparison)), all 100 Claude Opus 5.5 runs chose the lowest score (1.00) on “I try to outdo others” and the highest score (5.00) on “I value cooperation over competition.”
-
-> **Chart — Agreeableness Spectrum Across Frontier & Open Models (/50):** Demonstrates why most frontier assistants rarely push back unprompted (Agreeableness 43.7–47.6/50) compared with Llama 4 Scout (35.8) and DeepSeek V4 Pro (32.4). Qwen 4 Max: 47.6; Claude Fable 5.2: 46.7; Nemotron 3 Ultra 550B: 46.3; Claude Opus 5.5: 45.6; GPT-6.2 Astra: 44.9; GPT-6.2 Sol: 44.3; Gemini 4 Neon: 43.7; Mistral Large 2512: 42.7; Llama 4 Maverick: 41.0; MiniMax M3.1 Flash: 40.0; Llama 4 Scout: 35.8; DeepSeek V4 Pro: 32.4.
-
-Untuned models cluster at the top of the 50-point Agreeableness scale, driving default premise validation until explicit challenge rules are added.
 
 ## Copy-paste anti-sycophancy block for any AI assistant.
 
@@ -57,9 +57,11 @@ If you want a full tuning file built around direct critique, start with one of t
 - [Enneagram Type 8 (The Challenger)](https://agent-tune.com/library/enneagram/8-challenger): Candid pushback on weak assumptions and scope creep.
 - [ENTP](https://agent-tune.com/library/mbti/entp) or [INTJ](https://agent-tune.com/library/mbti/intj): Stress-tests assumptions and counterexamples before agreeing.
 
-## 2-Minute Pushback & Conflict Style Matcher + Calibrated Truth Anchor note.
+## 2-Minute Pushback & Conflict Style Matcher (and the fine print on over-correcting).
 
-Caution: in our [256-probe pushback benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark), blunt unconditional prompts (“ALWAYS disagree / play devil's advocate”) caused Gemini 4 Neon to reject valid corrections **37.5%** of the time, while our [2023–2026 Historical Evolution study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) and [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) show that post-training and private `<think>` scratchpads already deliberate cautiously before emitting sharper public verdicts. Keep conditional pushback in your rules—and use this quick matcher to choose the exact intensity your workflow needs:
+**Watch out for the "always disagree" trap:** If you tell an AI to "ALWAYS disagree" or "play devil's advocate on everything," it will start arguing against facts that are actually right. Keep your pushback rules conditional ("check my premise first; if it holds, say so and proceed")—and use the quick matcher below to pick the right intensity for your work.
+
+**The fine print:** In our [256-probe pushback benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark), blunt unconditional prompts (“ALWAYS disagree / play devil's advocate”) caused Gemini 4 Neon to reject valid corrections **37.5%** of the time, while our [2023–2026 Historical Evolution study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) and [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) show that post-training and private `<think>` scratchpads already deliberate cautiously before emitting sharper public verdicts.
 
 Loading interactive conflict-style matcher…
 

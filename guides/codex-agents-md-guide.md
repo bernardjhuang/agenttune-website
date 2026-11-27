@@ -50,7 +50,7 @@ Starter personal block for `~/.codex/AGENTS.md` (~620 bytes, leaving over 31 KiB
 - Follow through on authorized implementation work; ask for approval only when scope or permissions are ambiguous.
 ```
 
-## How personality = "none" in config.toml interacts with AGENTS.md.
+## The fine print: how personality = "none" in config.toml interacts with AGENTS.md.
 
 As noted in our [GPT-6 Astra guide](https://agent-tune.com/guides/astra-personality) and the [GPT Sol model profile](https://agent-tune.com/models/gpt-sol), Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting `personality = "none"` in `~/.codex/config.toml` strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving `config.toml` at its default and adding 6–8 lines to `~/.codex/AGENTS.md` is safer and easier to audit.
 

@@ -2,12 +2,12 @@
   "slug": "gemini-gems-system-instructions-templates",
   "published": "2026-11-23",
   "updated": "2026-11-23",
-  "title": "Best Gemini Gems & Saved Info Templates: 20 Copy-Paste Prompts | AgentTune",
+  "title": "20 Gemini Gems, Saved Info & GEMINI.md Prompt Templates",
   "h1": "Gemini Gems, Saved Info, and GEMINI.md templates.",
   "dek": "20 copy-paste system instruction templates for Gemini Personal Intelligence, Custom Gems (including No-Fluff Search Brief), and Gemini CLI.",
   "description": "20 copy-paste Gemini Gems, Personal Intelligence Saved Info, and GEMINI.md templates including No-Fluff Search Brief, Coding Reviewer, and .md downloads.",
   "pill": "Guide · Gemini",
-  "lede": "Google separates three configuration surfaces: account-wide <strong>Personal Intelligence (Saved Info)</strong> inside <code>gemini.google.com</code>, task-focused <strong>Custom Gems</strong>, and workspace <strong><code>GEMINI.md</code></strong> files for Gemini CLI &amp; Code Assist. Note that Google AI Overviews inside Google Search cannot be customized via Saved Info—use our <strong>No-Fluff Search Brief Gem</strong> when you want fast verified answers.",
+  "lede": "Google Gemini gives you three places to save instructions: account-wide <strong>Personal Intelligence (Saved Info)</strong> on <code>gemini.google.com</code> and mobile, task-specific <strong>Custom Gems</strong>, and <code>GEMINI.md</code> files for Gemini CLI &amp; Code Assist. Automatic Google Search AI Overviews don’t read Saved Info—so use our <strong>No-Fluff Search Brief Gem</strong> below when you want fast, source-checked answers.",
   "answer": "Open Gemini → Settings → Personal Intelligence to add 3–5 concise Saved Info rules globally, or Gem Manager → New Gem for specialized workflows. Pick any of the 4 downloadable starters or 16 Gem & GEMINI.md roles below.",
   "scripts": [
     "/resources/tools/template-gallery.js"

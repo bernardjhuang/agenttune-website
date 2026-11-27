@@ -7,7 +7,7 @@ Developer resource · runnable starter & JS scorer
 
 By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or download enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram UI. Pass 36 integers (1–5) to score() to return nine raw totals (4–20) and all tied leaders without forcing an arbitrary winner. The code and synthetic demo inputs are MIT-licensed; the live 36-item test at /tests/enneagram carries separate OEPS upstream item terms.
+**Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram app. Pass 36 whole-number answers (1–5) to score() to get all nine type totals (4–20) and every tied leader without forcing a fake winner. The code and synthetic demo inputs are MIT-licensed; see the fine print below for OEPS question-text terms.
 
 ## Download the standalone JS scorer or full React + TypeScript starter.
 
@@ -104,7 +104,7 @@ Submitting an incomplete page identifies the first unanswered item and moves foc
 
 If you replace the synthetic demo controls in `src/questions.json` with a licensed questionnaire, verify the instrument’s redistribution terms and bump the version identifier so scores from different instruments are never mixed.
 
-## Provenance, scope and licensing.
+## The fine print: provenance, OEPS scope, and MIT licensing.
 
 The developer bundle in `/resources/enneagram/` provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
 

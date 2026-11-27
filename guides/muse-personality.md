@@ -135,30 +135,6 @@ A personality file says a lot about you. Two facts from Meta's help pages:
 - The setting that lets Meta use your interactions to train its models is **on when you first use Muse**. It is under Settings, Data controls, Help improve our AI models. Meta says it removes certain identifiers and that you can switch it off at any time.
 - If you import memory from another assistant (Settings, Data Controls, Import memory), everything in that export becomes material Muse can use.
 
-## Muse's questionnaire results, as reported.
-
-The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked reported, next to the four models that answered in fresh sessions with every answer published.
-
-| Test | Muse Spark 1.3, 100 runs, reported |
-| --- | --- |
-| MBTI | ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label contains I and J; 92 contain S. These letter counts include tied-axis assignments. Twenty-one runs had a tied axis, resolved by the original reporting rule. |
-| Enneagram | Helper (Type 2) labels in 78 runs, Reformer (1) in 15; the report describes 2w1 as its usual wing. Twenty runs reportedly tied at the top; the supplied Type 2 and Type 1 counts do not account for the other seven labels. Type means of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2. |
-| DISC | Steadiness first in 55 runs, Conscientiousness first in 45. Means of 20: D 5.1, I 10.9, S 15.2, C 15.6. |
-| Attachment | Secure in all 100. Anxiety 2.04, avoidance 2.52 on 1 to 7 scales where 4 is the cutoff. |
-| Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
-
-The report does not establish a default personality, task behavior or a benefit from tuning. Read the [full Muse evidence note](https://agent-tune.com/research/what-personality-type-is-muse) for ties and missing data.
-
-> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6). Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; Claude Opus 5.5 (Sep): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4; GPT-6 Astra (Sep): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
-
-Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
-
-## What the research can and cannot establish.
-
-These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
-
-Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
-
 ## Main Chat vs. Side Chats, mobile menus & fixing Soul.md refusals.
 
 On iOS, Android, and `muse.ai`, tap **Assistant icon → Identity → Soul** (all three files sync across mobile and web). Unlike disposable threads in ChatGPT or Claude, Muse revolves around one continuous **Main Chat** plus isolated **Side Chats**:
@@ -186,11 +162,35 @@ Once you connect mail, calendar, or recurring scheduled **Tasks**, pair platform
 - Quote any failed Connector read verbatim instead of guessing missing fields.
 ```
 
+## Muse's questionnaire results, as reported (and the fine print).
+
+> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6). Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; Claude Opus 5.5 (Sep): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4; GPT-6 Astra (Sep): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
+
+Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
+
+The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked reported, next to the four models that answered in fresh sessions with every answer published.
+
+| Test | Muse Spark 1.3, 100 runs, reported |
+| --- | --- |
+| MBTI | ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label contains I and J; 92 contain S. These letter counts include tied-axis assignments. Twenty-one runs had a tied axis, resolved by the original reporting rule. |
+| Enneagram | Helper (Type 2) labels in 78 runs, Reformer (1) in 15; the report describes 2w1 as its usual wing. Twenty runs reportedly tied at the top; the supplied Type 2 and Type 1 counts do not account for the other seven labels. Type means of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2. |
+| DISC | Steadiness first in 55 runs, Conscientiousness first in 45. Means of 20: D 5.1, I 10.9, S 15.2, C 15.6. |
+| Attachment | Secure in all 100. Anxiety 2.04, avoidance 2.52 on 1 to 7 scales where 4 is the cutoff. |
+| Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
+
+The report does not establish a default personality, task behavior or a benefit from tuning. Read the [full Muse evidence note](https://agent-tune.com/research/what-personality-type-is-muse) for ties and missing data.
+
+## The fine print: what the research can and cannot establish.
+
+These are exploratory reports of model-generated self-descriptions, not a validated measure of AI personality or evidence that personality matching improves outcomes. The MBTI total includes repeated scoring of a single answer vector for GLM, Grok, and MiniMax; it does not represent 600 independent model responses. Protocols differed across models. See the [methodology and limitations](https://agent-tune.com/research#methodology).
+
+Use a type or trait as a starting hypothesis for your preferences. The reports do not establish that one framework produces better instructions, that every model shares a default personality, or that those historical results apply to later model versions. Compare outputs on your own tasks and retain only rules that help.
+
 ## Questions people ask.
 
-### What personality type is Muse?
+### What personality type does Muse test as?
 
-Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
+Muse Spark 1.3 was reported as testing as ISTJ in 80 of 100 runs, with ISFJ in 12 and INTJ in eight. The report also lists Type 2 Enneagram labels in 78 runs and Secure attachment labels in 100. These aggregate figures were supplied without raw answer vectors, so AgentTune has not independently re-scored them.
 
 ### Does Muse have custom instructions?
 

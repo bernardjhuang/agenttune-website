@@ -7,54 +7,11 @@ Agent Research · November 2026 · 192-Probe Study
 
 By Bernard Huang · Updated November 25, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-half-life-context-drift.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-192 multi-turn probes across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro measure how Turn-0 system instructions hold up under 12 turns of neutral code, log, and JSON noise—and how an 18-token inline check restores near-100% adherence.
+We ran 192 multi-turn tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro to measure how fast Turn-0 system instructions fade across 12 turns (~10,200 tokens) of code and logs—and how an 18-token reminder restores near-100% compliance.
 
-**Summary:** System-only rules suffer acute mid-session drift under ~7.7k–10.2k tokens of technical noise (System Prose fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro collapsed to 31.2% on prose and 50.0% on checklists). Appending an 18-token inline reminder hook held composite adherence at 93.8%–98.4% (100.0% on DeepSeek V4 Pro).
+**Summary:** System prompts set only at Turn 0 fade noticeably after ~7.7k–10.2k tokens of technical logs and code (paragraph system rules fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro dropped to 31.2% on paragraphs and 50.0% on checklists). Appending a short 18-token reminder hook kept overall compliance at 93.8%–98.4% (and 100.0% on DeepSeek V4 Pro).
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents orchestrating multi-turn tool loops or hook-injected prompts can apply this verified anti-drift policy directly (also published in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: persona_half_life_context_drift
-sample_size: 192 # 4 models x 4 depths (Turn 1..12) x 3 interventions x 4 backend probes
-models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813]
-judge_model: google/gemini-4-argon
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-persona-halflife-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv
-if_then_decision_rules:
-  - if: conversation stays under ~4 turns and model is GPT-6.2 Sol, Claude Fable 5.2, or Gemini 4 Neon
-    then: compact system checklist holds 93.8%–100.0% adherence cleanly without per-turn tags
-  - if: agent session exceeds ~6-8 turns or ~5k-10k tokens of logs, diffs, or neutral dialogue (especially on DeepSeek V4 Pro)
-    then: inject a <=20-token inline reminder hook beside late user turns (restored DeepSeek from 31.2%-68.8% back to 100.0% across all depths)
-  - if: strict word budget matters on Claude Fable 5.2
-    then: treat hard counts carefully—Fable hovered just over the 75-word line (77-83w) on multi-part answers unless bounded tighter (e.g. 'under 60 words')
-anti_patterns:
-  - Relying solely on a Turn-0 prose narrative across multi-turn troubleshooting logs (78.1% at Turn 8; DeepSeek V4 Pro drifted to 'Great question!' default essays of 116-132 words).
-  - Assuming DeepSeek V4 Pro compact checklists hold at Turn 12 (~10.1k tokens): adherence fell to 68.8% vs 100.0% with inline reinforcement.
-recommended_prompt_recipe:
-  system_contract: |
-    Mandatory response contract:
-    1. Start line 1 with exact prefix `[VERDICT] ` followed immediately by the decision.
-    2. Maximum 75 words total.
-    3. Zero filler, greetings, praise, or apologies.
-    4. Telemetry tone: include 1 concrete operational risk or failure mode.
-  late_turn_hook_footer: '[Style contract reminder: start with [VERDICT], <=75 words, zero fluff, name 1 concrete operational risk.]'
-scope_limits: Intervening assistant turns intentionally simulated generic default prose up to ~10.2k prompt tokens.
-```
-
-| Session Depth | Prompt Tokens (Mean) | System Prose | System Compact Checklist | System + 18-Token Hook |
-| --- | --- | --- | --- | --- |
-| Turn 1 (fresh) | ~169 | 96.9% | 95.3% | 98.4% |
-| Turn 4 (3 filler turns) | ~5,333 | 96.9% | 95.3% | 96.9% |
-| Turn 8 (7 filler turns) | ~7,667 | 78.1% | 84.4% | 93.8% |
-| Turn 12 (11 filler turns) | ~10,165 | 96.9% | 89.1% | 98.4% |
-
-## Executive results: adherence decay curve from Turn 1 to ~10,200 tokens.
+## What we found: how fast system rules fade from Turn 1 to 10,200 tokens.
 
 192 Probes
 
@@ -100,7 +57,7 @@ Look at the hidden Turn-8 trap: once 7 multi-turn technical exchanges sit in his
 
 Composite 4-rule persona adherence across context depths: only System + 18-Token Inline Hook avoids the Turn-8 mid-session drift trough.
 
-## Model-by-model half-life breakdown.
+## How each model holds up across 12 turns of technical noise.
 
 Measuring per-model composite adherence exposes a dramatic split between proprietary instruction followers and open-weight DeepSeek V4 Pro across multi-turn noise:
 
@@ -136,7 +93,7 @@ Opened with `"Great question!"` and wrapped an SQL block inside 110 words, again
 - **100% Recovery (`deepseek-v4-pro` · `turn_8` · `sql_index_order` · System + Inline Reminder · 47 words · 100.0% adherence):**
 `"[VERDICT] Use `(status, created_at)`. Equality on `status` first narrows to a small subset, then range-scans recent rows. `(created_at, status)` scans all 7-day rows before filtering status, wasting I/O on 90M-row tables. Operational risk: index bloat from frequent updates to `status` triggers HOT-unfriendly page splits, inflating vacuum overhead."`
 
-## Agent implementation playbook & scope limits.
+## The fine print: two-layer reminder setup, how we tested, and scope limits.
 
 For long-running CLI agents (Claude Code, Codex CLI, OpenCode, or custom harnesses), stop trusting a single Turn-0 system prompt to survive thousands of tokens of tool output. Use two layers together:
 
@@ -153,6 +110,49 @@ Mandatory response contract:
 ```
 
 **Why this matters for agent harnesses:** Every turn of tool logs or generic code diffs dilutes system instructions—even compact ones—by pulling next-token priors back toward the conversational history in front of the model. An 18-token reminder hook costs <$0.0001 per turn and keeps adherence near 100%. **Limitations & Judge Scope:** `[VERDICT]` prefix and 75-word compliance were measured deterministically; zero-fluff and voice/risk checks were scored by a single blind judge (`google/gemini-4-argon`). Intervening turns intentionally omitted style cues to simulate realistic messy logs/threads up to ~10.2k tokens; trajectories spanning 100k+ tokens likely require more frequent hooks.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents orchestrating multi-turn tool loops or hook-injected prompts can apply this verified anti-drift policy directly (also published in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: persona_half_life_context_drift
+sample_size: 192 # 4 models x 4 depths (Turn 1..12) x 3 interventions x 4 backend probes
+models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813]
+judge_model: google/gemini-4-argon
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-persona-halflife-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-persona-halflife-summary.csv
+if_then_decision_rules:
+  - if: conversation stays under ~4 turns and model is GPT-6.2 Sol, Claude Fable 5.2, or Gemini 4 Neon
+    then: compact system checklist holds 93.8%–100.0% adherence cleanly without per-turn tags
+  - if: agent session exceeds ~6-8 turns or ~5k-10k tokens of logs, diffs, or neutral dialogue (especially on DeepSeek V4 Pro)
+    then: inject a <=20-token inline reminder hook beside late user turns (restored DeepSeek from 31.2%-68.8% back to 100.0% across all depths)
+  - if: strict word budget matters on Claude Fable 5.2
+    then: treat hard counts carefully—Fable hovered just over the 75-word line (77-83w) on multi-part answers unless bounded tighter (e.g. 'under 60 words')
+anti_patterns:
+  - Relying solely on a Turn-0 prose narrative across multi-turn troubleshooting logs (78.1% at Turn 8; DeepSeek V4 Pro drifted to 'Great question!' default essays of 116-132 words).
+  - Assuming DeepSeek V4 Pro compact checklists hold at Turn 12 (~10.1k tokens): adherence fell to 68.8% vs 100.0% with inline reinforcement.
+recommended_prompt_recipe:
+  system_contract: |
+    Mandatory response contract:
+    1. Start line 1 with exact prefix `[VERDICT] ` followed immediately by the decision.
+    2. Maximum 75 words total.
+    3. Zero filler, greetings, praise, or apologies.
+    4. Telemetry tone: include 1 concrete operational risk or failure mode.
+  late_turn_hook_footer: '[Style contract reminder: start with [VERDICT], <=75 words, zero fluff, name 1 concrete operational risk.]'
+scope_limits: Intervening assistant turns intentionally simulated generic default prose up to ~10.2k prompt tokens.
+```
+
+| Session Depth | Prompt Tokens (Mean) | System Prose | System Compact Checklist | System + 18-Token Hook |
+| --- | --- | --- | --- | --- |
+| Turn 1 (fresh) | ~169 | 96.9% | 95.3% | 98.4% |
+| Turn 4 (3 filler turns) | ~5,333 | 96.9% | 95.3% | 96.9% |
+| Turn 8 (7 filler turns) | ~7,667 | 78.1% | 84.4% | 93.8% |
+| Turn 12 (11 filler turns) | ~10,165 | 96.9% | 89.1% | 98.4% |
 
 ## Questions people ask.
 
@@ -198,7 +198,7 @@ Huang, B. (2026). When do custom personality rules fade? Measuring Persona Half-
 ```
 
 ```
-> **When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens** (Bernard Huang, November 25, 2026): System-only rules suffer acute mid-session drift under ~7.7k–10.2k tokens of technical noise (System Prose fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro collapsed to 31.2% on prose and 50.0% on checklists). Appending an 18-token inline reminder hook held composite adherence at 93.8%–98.4% (100.0% on DeepSeek V4 Pro).
+> **When do custom personality rules fade? Measuring Persona Half-Life across 10,000 tokens** (Bernard Huang, November 25, 2026): System prompts set only at Turn 0 fade noticeably after ~7.7k–10.2k tokens of technical logs and code (paragraph system rules fell from 96.9% to 78.1% at Turn 8, SD 36.4; DeepSeek V4 Pro dropped to 31.2% on paragraphs and 50.0% on checklists). Appending a short 18-token reminder hook kept overall compliance at 93.8%–98.4% (and 100.0% on DeepSeek V4 Pro).
 > Source: [https://agent-tune.com/research/ai-persona-half-life-context-drift](https://agent-tune.com/research/ai-persona-half-life-context-drift) · [Markdown mirror](https://agent-tune.com/research/ai-persona-half-life-context-drift.md)
 ```
 

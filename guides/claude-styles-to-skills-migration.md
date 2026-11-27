@@ -7,7 +7,7 @@ Guide · Claude Migration
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/claude-styles-to-skills-migration.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Move always-on tone and brevity rules into Settings → Profile (or General) → Personal Preferences; move task-specific writing templates (memos, changelogs, or newsletters) into Claude Skills or Project Instructions; and in Claude Code, use ~/.claude/output-styles/ with /output-style.
+**Quick answer:** Move your everyday tone and brevity rules into Settings → Profile (or General) → Personal Preferences. Move task-specific writing formats (like memos, changelogs, or newsletters) into Claude Skills or Project Instructions. In Claude Code, use ~/.claude/output-styles/ with /output-style.
 
 ## Why the old picker was split into Preferences and Skills.
 

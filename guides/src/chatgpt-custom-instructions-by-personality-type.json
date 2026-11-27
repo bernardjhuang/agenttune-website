@@ -7,7 +7,7 @@
   "pill": "Guide · ChatGPT",
   "h1": "ChatGPT custom instructions for every MBTI personality type.",
   "dek": "Sixteen paste-ready blocks. Pick yours, paste it, done.",
-  "lede": "Pick any of the 16 MBTI blocks below, delete any rule that doesn’t fit how you work, and paste the rest into ChatGPT’s Custom Instructions box. Every block is condensed to fit comfortably inside ChatGPT’s 1,500-character limit.",
+  "lede": "Pick any of the 16 MBTI-style preference blocks below, trim any line that doesn’t fit how you work, and paste the rest into ChatGPT’s Custom Instructions box. Every block is written for humans who like that communication style and sized to fit well inside ChatGPT’s 1,500-character limit.",
   "answer": "Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.",
   "sections": [
     {

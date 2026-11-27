@@ -8,7 +8,7 @@
   "h1": "Google Gemini Live voices and Personal Intelligence: voice list, setup, and sync fix.",
   "dek": "Pick a Gemini voice (including female, male, and British Capella), configure Instructions for Gemini, and fix the bug where Gemini Live skips saved rules.",
   "lede": "Google Gemini lets you pick your spoken voice across Gemini Live and text-chat Listen playback, while grouping custom rules and memory under <strong>Settings &amp; help → Personal Intelligence</strong>. Below is the complete voice guide, interactive matcher, and the quick 1-prompt fix when Gemini Live ignores your saved instructions.",
-  "answer": "To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and select voices like Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Put permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.",
+  "answer": "To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and pick from Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Save permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.",
   "scripts": [
     "/resources/tools/ai-voice-picker.js"
   ],

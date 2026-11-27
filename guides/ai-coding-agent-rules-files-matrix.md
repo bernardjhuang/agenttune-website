@@ -7,7 +7,7 @@ Reference · Coding Agent Rules
 
 By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Use AGENTS.md as your portable cross-tool repo rules file (Codex CLI 32 KiB default cap; also read by Cursor, Cline, and Copilot). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI—and keep personal tone in user-global configs.
+**Quick answer:** Use AGENTS.md as your shared repo rules file across tools (Codex CLI reads up to 32 KiB by default, and Cursor, Cline, and Copilot read it too). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI. Keep your personal tone preferences in your own home-folder config.
 
 ## Complete repository rules matrix across 7 coding agents.
 
@@ -39,7 +39,7 @@ Starter communication block for personal global coding-agent files (~360 charact
 - Ask before refactoring unrelated files or changing public APIs.
 ```
 
-## What to leave out of coding-agent rules files.
+## What to leave out of coding-agent rules files (and the 32 KiB fine print).
 
 - **Secrets & credentials:** Never put API keys, tokens, or connection strings in instruction files.
 - **Rules a linter already enforces:** If Prettier, Ruff, or ESLint enforces formatting automatically, delete the prose duplicate so the agent keeps its context budget for architectural constraints.

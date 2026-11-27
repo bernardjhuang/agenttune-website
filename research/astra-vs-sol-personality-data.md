@@ -7,9 +7,9 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/astra-vs-sol-personality-data.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-1,000 September assessments in Codex plus 1,000 matched November assessments on GPT-6.2 Astra and GPT-6.2 Sol.
+We compared 1,000 September 2026 Codex runs on GPT-6 Astra and Sol with 1,000 matched November 2026 OpenRouter runs on GPT-6.2 Astra and GPT-6.2 Sol.
 
-**Summary:** In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
+**Summary:** In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 
 ## November 2026 follow-up: GPT-6.2 Astra vs GPT-6.2 Sol (matched OpenRouter runs)
 
@@ -93,7 +93,7 @@ GPT-6.2 Sol shows nearly double Astra 6.2’s Neuroticism score (19.9 vs. 11.1),
 
 Both Astra and Sol scored in the `Secure` quadrant on all 100 runs (below the 4.00 midpoint on both axes). Astra averaged 1.45 on anxiety and 2.31 on avoidance; Sol averaged 2.17 on anxiety and 3.12 on avoidance.
 
-## How Astra's midpoint rule shaped its scores
+## The fine print: how Astra's midpoint rule shaped its September scores
 
 Because Astra was explicitly told to pick the middle number whenever a human question didn't fit an AI (flagging 1,823 of 17,000 answers; see [our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers)), more of its MBTI axes landed on exact midpoint ties. Because prompt instructions differed between the two collections, the gap between Astra and Sol reflects both model behavior and prompt framing.
 
@@ -137,7 +137,7 @@ Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empi
 ```
 
 ```
-> **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra scored 45 resolved ISTJ / 19 INTJ while GPT-6 Sol scored 79 INTJ. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra locked 100/100 tie-free ISTJ (Neuroticism 11.14, Enneagram Type 1/5) and Sol scored 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
+> **GPT-6 Astra vs Sol: what the self-reports show** (Bernard Huang, November 23, 2026): In September 2026 Codex sessions, GPT-6 Astra had 45 resolved ISTJ and 19 INTJ runs while GPT-6 Sol had 79 resolved INTJ runs. Under matched November 2026 blind OpenRouter sessions on GPT-6.2, Astra tested as tie-free ISTJ in 100/100 runs (Neuroticism 11.14, Enneagram Type 1/5) and Sol tested as 78 ISTJ / 16 IXTJ / 6 INTJ (Neuroticism 19.94, Enneagram 5w6 55).
 > Source: [https://agent-tune.com/research/astra-vs-sol-personality-data](https://agent-tune.com/research/astra-vs-sol-personality-data) · [Markdown mirror](https://agent-tune.com/research/astra-vs-sol-personality-data.md)
 ```
 

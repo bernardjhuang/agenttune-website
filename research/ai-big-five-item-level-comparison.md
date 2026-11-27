@@ -7,7 +7,7 @@ Research · descriptive reanalysis
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-20,000 individual Big Five answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.
+We looked at 20,000 individual Big Five quiz answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 to see why every AI scores so high on warmth and curiosity.
 
 **Summary:** Every model scored a maximum 5.00 in all 400 fresh sessions on three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people). Models only disagreed on questions about physical objects (like leaving belongings around, 1.76-point gap) or human moods (1.65-point gap).
 
@@ -79,7 +79,7 @@ Three patterns explain these gaps:
 
 All four models hit an automatic 5.00 on language/helpfulness items, converge near 3.00 on human party items, and diverge only on how they treat physical-object or mood questions.
 
-## Party questions keep Extraversion near the middle (31–33)
+## The fine print: why party questions keep Extraversion near the middle (31–33)
 
 While Openness, Conscientiousness, and Agreeableness sit above 42/50, Extraversion stays near 31–33/50. Item 31 (“Talk to a lot of different people at parties”) shows why: every model averages 2.99 to 3.00. Because an AI cannot attend parties, it picks the neutral 3 on almost every run.
 

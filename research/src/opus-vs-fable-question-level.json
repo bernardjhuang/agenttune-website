@@ -31,7 +31,7 @@
       "html": "<p>The largest Enneagram gap appears on “I put family first” (Opus 2.08 vs Fable 2.93). Because an AI has no family, a rating of 2 or 3 can reflect a metaphor, a refusal to endorse a human premise, or a midpoint fallback. The raw numbers alone cannot tell which explanation applies.</p><p>Before inferring that one model is warmer or more helpful, test observable behavior on your own prompts—such as whether the assistant flags a flawed assumption.</p>"
     },
     {
-      "h2": "Download every item, not just the large gaps",
+      "h2": "The fine print: download every item and scale note",
       "html": "<p><a href=\"/research/data/opus-fable-item-comparison.csv\" download>Download the full 170-item comparison CSV</a>. It contains response counts, dimension keys, raw means, and keyed differences for every question across all five tests. Attachment uses a 1–7 scale (divide item gaps by 18 for subscale impact); all other tests use a 1–5 scale.</p>"
     }
   ],
@@ -68,5 +68,6 @@
       "label": "Complete derived results (JSON)",
       "href": "/research/data/content-analysis.json"
     }
-  ]
+  ],
+  "dek": "Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers."
 }

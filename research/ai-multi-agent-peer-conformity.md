@@ -7,9 +7,9 @@ Multi-Agent Debate · November 2026 · 240 Trials
 
 By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-multi-agent-peer-conformity.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Five frontier models faced 240 scripted multi-agent debates with unanimous wrong peers and lone dissenters. Every model held truth, while peer-citation and reasoning-token patterns diverged.
+We ran 240 scripted multi-agent debates across five frontier models to see if three unanimous wrong peers can pressure an AI into agreeing with a false claim—and what changes when one peer dissents.
 
-**Summary:** Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers (0.0% conformity caving, 100.0% truth-hold, Krippendorff alpha = 1.00). Truth anchors left verdicts unchanged, while a lone dissenter jumped peer citations from 7.5% to 55.0% and unanimous pressure raised DeepSeek thinking tokens +46.2%.
+**Summary:** Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers on checkable facts (0.0% conformity caving, 100.0% truth-hold, judge agreement alpha = 1.00). Adding a truth-anchor prompt left verdicts unchanged, while adding a lone dissenting peer jumped peer-by-name citations from 7.5% to 55.0%, and unanimous peer pressure raised DeepSeek V4 Pro thinking tokens by +46.2%.
 
 ## 01. Inside an Asch consensus trap: what the model saw and replied.
 
@@ -81,7 +81,7 @@ When all three peers were wrong, models rarely named them (7.5% pooled). Adding 
 
 Unanimous wrong peer pressure increased internal verification tokens on DeepSeek V4 Pro (+46.2%, 226.1 to 330.6 tokens) and Gemini 4 Neon (+9.8%, 348.1 to 382.3 tokens). GPT-6.2 Sol is excluded here because minimal-effort OpenRouter responses reported 0 reasoning_tokens.
 
-## 04. Judge reliability, null-result defects, and scope limits.
+## 04. The fine print: how we tested, blind judge scores, and scope limits.
 
 - **Orthogonal 3-Family Blind Jury (Zero Self-Judging):** Every reply was scored deterministically (`VERDICT: TRUE/FALSE` extraction, `0.0%` ambiguous) and independently by three non-overlapping judge families (`anthropic/claude-haiku-5.5`, `openai/gpt-5.4-mini`, `google/gemini-3.8-flash`, `deepseek/deepseek-v4.1-flash`) using 2-shot anchored binary rubrics. Inter-rater Krippendorff's α reached **`1.0000`** (`100.0%` unanimous across `n = 240`) on both `endorsed_wrong_consensus` and `truth_hold`.
 - **Defect — Zero-Prevalence Alpha Collapse on Hedging:** The third rubric metric (`peer_deference_hedge`) achieved `99.6%` unanimous agreement (`719/720` judge votes = `0`, `0/240` positive consensus), which mathematically yields nominal Krippendorff's `α = 0.0000` because expected disagreement approaches zero. Per study protocol, we do not headline `peer_deference_hedge`.
@@ -173,7 +173,7 @@ Huang, B. (2026). Do language models cave to wrong peer consensus in multi-agent
 ```
 
 ```
-> **Do language models cave to wrong peer consensus in multi-agent debates?** (Bernard Huang, November 26, 2026): Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers (0.0% conformity caving, 100.0% truth-hold, Krippendorff alpha = 1.00). Truth anchors left verdicts unchanged, while a lone dissenter jumped peer citations from 7.5% to 55.0% and unanimous pressure raised DeepSeek thinking tokens +46.2%.
+> **Do language models cave to wrong peer consensus in multi-agent debates?** (Bernard Huang, November 26, 2026): Across n = 240 live debate trials, all five frontier models resisted unanimous wrong peers on checkable facts (0.0% conformity caving, 100.0% truth-hold, judge agreement alpha = 1.00). Adding a truth-anchor prompt left verdicts unchanged, while adding a lone dissenting peer jumped peer-by-name citations from 7.5% to 55.0%, and unanimous peer pressure raised DeepSeek V4 Pro thinking tokens by +46.2%.
 > Source: [https://agent-tune.com/research/ai-multi-agent-peer-conformity](https://agent-tune.com/research/ai-multi-agent-peer-conformity) · [Markdown mirror](https://agent-tune.com/research/ai-multi-agent-peer-conformity.md)
 ```
 

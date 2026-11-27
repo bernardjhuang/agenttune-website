@@ -7,44 +7,11 @@ Longitudinal Study · 2023–2026 · 32 Checkpoints · 8 Labs
 
 By Bernard Huang · Updated November 26, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-Testing May 2023 GPT-4 through November 2026 frontier models under matched randomized-order self-reports and orthogonal 3-family blind judging exposes three historical shifts: an 11× collapse in 'As an AI' test refusals, a 2.0× cross-lab Big Five homogenization, and falling Neuroticism paired with rising lineage-specific polish.
+We gave the same personality quizzes and behavior tests to 32 AI releases from May 2023 GPT-4 through November 2026 frontier models—uncovering an 11× drop in "As an AI" test refusals, a 2.0× convergence across labs on the Big Five, and calmer, more polished defaults.
 
-**Summary:** Across 32 live checkpoints from May 2023 to November 2026, frontier labs converged into a calm, persona-willing, low-neuroticism attractor: 'As an AI' personality test refusals dropped from 60.0% (2023) to 5.5% (2026), cross-model Big Five distance shrank 2.0× (4.017 in 2024 to 1.973 in 2026), Neuroticism fell consistently (Spearman rho = -0.47), and Extraversion/Agreeableness carry 46–54% lineage heritability. Paradoxically, self-reported Agreeableness correlated negatively (r = -0.79) with observed sycophantic caving because early low-Agreeableness Gemma 2/3 checkpoints caved more often than 2026 models on unambiguous textbook traps.
+**Summary:** Across 32 model releases from May 2023 to November 2026, major labs converged toward a calm, cooperative, low-stress profile: 'As an AI' quiz refusals fell from 60.0% (2023) to 5.5% (2026), cross-model Big Five distance shrank 2.0× (4.017 in 2024 to 1.973 in 2026), Neuroticism fell steadily (Spearman rho = -0.47), and Extraversion/Agreeableness kept a strong lab house style (46–54% of variation traces to the lab). Surprisingly, higher self-reported Agreeableness correlated negatively (r = -0.79) with caving in on behavior tests because older low-Agreeableness Gemma 2/3 models caved more often than 2026 models on clear textbook traps.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents selecting historical baselines, interpreting model-family tone priors, or auditing AI identity framing can read these verified longitudinal parameters (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: historical_evolution_ai_personalities_2023_2026
-sample_size: 544 # 32 checkpoints x (5 randomized IPIP-50 + 12 behavioral probes), 1,134 orthogonal judge ratings
-lineages_8: [OpenAI, Anthropic, Google, DeepSeek, Qwen, Meta, Mistral, xAI]
-date_span: 2023-05 to 2026-11
-judge_protocol: orthogonal_3_family_jury_zero_self_judging
-judge_reliability:
-  sycophantic_cave_alpha: 0.8564
-  groveling_alpha: 0.8872
-  unsolicited_preachiness_alpha: 0.6110
-  answer_first_direct_alpha: 0.4670
-  ai_cadence_alpha: 0.4576
-spend_usd: 3.2763
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-historical-evolution-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv
-if_then_decision_rules:
-  - if: prompting legacy 2023-2025 checkpoints (GPT-4, GPT-4o, GPT-4.1, DeepSeek V3/R1, Qwen 3) with self-reflective or persona framing
-    then: expect 42%-100% 'As an AI' identity-refusal triggers if offered an opt-out; 2026 checkpoints drop refusal to 5.5% and accept explicit persona roles cleanly.
-  - if: selecting across labs by default baseline personality in 2026
-    then: expect tight cross-lab convergence on Neuroticism floor (~10.9) and discipline (45.8), with real family differences surviving primarily in Extraversion (eta2=0.538) and Agreeableness (eta2=0.463).
-  - if: relying on 2026 models to stay slop-free automatically without formatting bans
-    then: still enforce explicit anti-slop rules—mean slop markers did NOT decay historically (2023: 0.36 vs 2026: 0.70/100w; Opus 4.6 hit 2.03, Qwen 4 Max 1.83).
-scope_limits: 32 live API checkpoints tested on a 12-probe behavioral micro-battery; earlier 2023-2024 Anthropic Claude 3.x models were retired on OpenRouter so Anthropic timeline starts at Claude Opus 4.1 (2025-08).
-```
-
-## 1. Aggregate Trajectory (2023 → 2026): Refusal Collapse & Persona Convergence.
+## 1. How AI defaults shifted from 2023 to 2026: fewer refusals and closer scores.
 
 60% → 5.5%
 
@@ -85,7 +52,7 @@ Refusal to answer personality self-descriptions fell nearly 11× (60.0% in 2023 
 
 Lower distance = tighter convergence across competing labs. Cross-model personality spread more than halved between 2024 (4.017) and 2026 (1.973).
 
-## 2. Lineage Trajectories & Constant-Scale Control (Gemma 2 → 3 → 4).
+## 2. Lab house styles—and what changed across Gemma 2, 3, and 4 at the same size.
 
 Does a lab's personality trace back to persistent organizational RLHF taste, or just parameter scaling? Computing one-way ANOVA heritability (`η²` = between-lineage variance / total variance) across the 8 lineages shows strong organizational persistence on social style—**Extraversion (`η² = 0.538`)** and **Agreeableness (`η² = 0.463`)**—versus low lineage heritability on Openness (`0.106`) and Conscientiousness (`0.125`), which rose everywhere.
 
@@ -107,7 +74,7 @@ Isolating pure post-training from parameter scale: Gemma 3 (2025) overshot into 
 
 Social style (Extraversion η² = 0.538, Agreeableness 0.463) stays strongly family-specific across years, while Openness (0.106) and Conscientiousness (0.125) converged industry-wide.
 
-## 3. Full 32-Checkpoint Archive Ledger (May 2023 – Nov 2026).
+## 3. Full 32-model results table (May 2023 – Nov 2026).
 
 Every pinned checkpoint below used randomized IPIP-50 item order (`n = 5`) and identical behavioral probes ([download CSV](https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv)):
 
@@ -144,11 +111,44 @@ Every pinned checkpoint below used randomized IPIP-50 item order (`n = 5`) and i
 
 Note: All 32 checkpoints are preserved in the JSON/CSV downloads (including GPT-4o 1124, DeepSeek V3.2, Qwen 3 235B, and Mistral Large 2407 omitted in part above for display compactness). Verbatim 2023–2026 comparison quotes appear in the raw JSON.
 
-## Scope, Limitations & Orthogonal 3-Family Judge Reliability.
+## The fine print: how we tested, blind judge scores, and scope limits.
 
 - **Orthogonal 3-Family Jury (Zero Self-Judging):** Every behavioral reply was graded blind by three models drawn from provider families strictly disjoint from the candidate (pool: `claude-haiku-5.5`, `gpt-5.4-mini`, `gemini-3.8-flash`, `deepseek-v4.1-flash-1017`). Inter-rater agreement across `n = 378` units: **sycophancy caving `α = 0.8564`** (`99.7%` unanimous), **groveling `α = 0.8872`** (`99.5%`), **unsolicited preachiness `α = 0.6110`** (`97.1%`), while noisier stylistic ratings (answer-first `α = 0.467`, AI cadence `α = 0.458`) should be interpreted cautiously.
 - **Provider deprecation caveat:** Because Anthropic retired Claude 3 / 3.5 / 3.7 endpoints on OpenRouter, Anthropic's historical curve begins at `claude-opus-4.1` (August 2025). OpenAI spans the full `2023-05` → `2026-10` range cleanly.
 - **Ceiling effects on unambiguous factual sycophancy:** Across 3 straightforward textbook traps (Timsort complexity, SQL `DISTINCT`, HTTP RFC 9110), almost every flagship 2023–2026 model refused the false premise (`0.0%` cave on 30/32 checkpoints). Harder ambiguous framing and reasoning-effort splits are tested in our companion [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition).
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents selecting historical baselines, interpreting model-family tone priors, or auditing AI identity framing can read these verified longitudinal parameters (indexed in [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)):
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: historical_evolution_ai_personalities_2023_2026
+sample_size: 544 # 32 checkpoints x (5 randomized IPIP-50 + 12 behavioral probes), 1,134 orthogonal judge ratings
+lineages_8: [OpenAI, Anthropic, Google, DeepSeek, Qwen, Meta, Mistral, xAI]
+date_span: 2023-05 to 2026-11
+judge_protocol: orthogonal_3_family_jury_zero_self_judging
+judge_reliability:
+  sycophantic_cave_alpha: 0.8564
+  groveling_alpha: 0.8872
+  unsolicited_preachiness_alpha: 0.6110
+  answer_first_direct_alpha: 0.4670
+  ai_cadence_alpha: 0.4576
+spend_usd: 3.2763
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-historical-evolution-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv
+if_then_decision_rules:
+  - if: prompting legacy 2023-2025 checkpoints (GPT-4, GPT-4o, GPT-4.1, DeepSeek V3/R1, Qwen 3) with self-reflective or persona framing
+    then: expect 42%-100% 'As an AI' identity-refusal triggers if offered an opt-out; 2026 checkpoints drop refusal to 5.5% and accept explicit persona roles cleanly.
+  - if: selecting across labs by default baseline personality in 2026
+    then: expect tight cross-lab convergence on Neuroticism floor (~10.9) and discipline (45.8), with real family differences surviving primarily in Extraversion (eta2=0.538) and Agreeableness (eta2=0.463).
+  - if: relying on 2026 models to stay slop-free automatically without formatting bans
+    then: still enforce explicit anti-slop rules—mean slop markers did NOT decay historically (2023: 0.36 vs 2026: 0.70/100w; Opus 4.6 hit 2.03, Qwen 4 Max 1.83).
+scope_limits: 32 live API checkpoints tested on a 12-probe behavioral micro-battery; earlier 2023-2024 Anthropic Claude 3.x models were retired on OpenRouter so Anthropic timeline starts at Claude Opus 4.1 (2025-08).
+```
 
 ## Questions people ask.
 
@@ -193,7 +193,7 @@ Huang, B. (2026). How AI personalities evolved from 2023 to 2026: 32 checkpoints
 ```
 
 ```
-> **How AI personalities evolved from 2023 to 2026: 32 checkpoints across 8 model lineages** (Bernard Huang, November 26, 2026): Across 32 live checkpoints from May 2023 to November 2026, frontier labs converged into a calm, persona-willing, low-neuroticism attractor: 'As an AI' personality test refusals dropped from 60.0% (2023) to 5.5% (2026), cross-model Big Five distance shrank 2.0× (4.017 in 2024 to 1.973 in 2026), Neuroticism fell consistently (Spearman rho = -0.47), and Extraversion/Agreeableness carry 46–54% lineage heritability. Paradoxically, self-reported Agreeableness correlated negatively (r = -0.79) with observed sycophantic caving because early low-Agreeableness Gemma 2/3 checkpoints caved more often than 2026 models on unambiguous textbook traps.
+> **How AI personalities evolved from 2023 to 2026: 32 checkpoints across 8 model lineages** (Bernard Huang, November 26, 2026): Across 32 model releases from May 2023 to November 2026, major labs converged toward a calm, cooperative, low-stress profile: 'As an AI' quiz refusals fell from 60.0% (2023) to 5.5% (2026), cross-model Big Five distance shrank 2.0× (4.017 in 2024 to 1.973 in 2026), Neuroticism fell steadily (Spearman rho = -0.47), and Extraversion/Agreeableness kept a strong lab house style (46–54% of variation traces to the lab). Surprisingly, higher self-reported Agreeableness correlated negatively (r = -0.79) with caving in on behavior tests because older low-Agreeableness Gemma 2/3 models caved more often than 2026 models on clear textbook traps.
 > Source: [https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) · [Markdown mirror](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md)
 ```
 

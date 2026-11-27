@@ -313,9 +313,13 @@ Routines run scheduled workflows under **View conversation details → Routines*
 
 While each Bot has a different `JOB`, the person reading its reports is still you. Reuse the same `HOW TO TALK TO ME` block across every Bot you own. If you share a Bot via **Share → Create template**, remind teammates to swap in their own communication block.
 
-## What Grok's own self-report says (Grok 4.7 N=100 vs Grok 4.6).
+## What Grok's own self-report tests as (Grok 4.7 vs. Grok 4.6 — and the fine print).
 
-In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 shifted closer to the structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok model profile →](https://agent-tune.com/models/grok)):
+> **Chart — xAI Grok Baseline DNA (Grok 4.7 vs. Grok 4.6 & Proprietary Median):** IPIP-50 trait profile informing which guardrails matter most when writing Grok Bot profile descriptions. Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
+
+Grok 4.7 matches the proprietary Conscientiousness/Agreeableness profile closely—so explicit Bot Description rules drive most behavioral differentiation.
+
+In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 tested in the same structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok model profile →](https://agent-tune.com/models/grok)):
 
 | Test | Grok 4.7 (Nov 2026, n=100 fresh) | Grok 4.6 (Sept 2026, n=1 canonical) |
 | --- | --- | --- |
@@ -327,15 +331,11 @@ In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on G
 
 Notice Grok 4.7's Agreeableness rose from 33/50 (Grok 4.6's single vector) to 44.92/50—meaning explicit pushback rules inside `HOW TO TALK TO ME` or `Customize Grok` are now just as important for stopping polite agreement as they are on Claude and ChatGPT.
 
-> **Chart — xAI Grok Baseline DNA (Grok 4.7 vs. Grok 4.6 & Proprietary Median):** IPIP-50 trait profile informing which guardrails matter most when writing Grok Bot profile descriptions. Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
-
-Grok 4.7 matches the proprietary Conscientiousness/Agreeableness profile closely—so explicit Bot Description rules drive most behavioral differentiation.
-
 ## Questions people ask.
 
-### What personality type is Grok?
+### What personality type does Grok test as?
 
-Grok 4.6 answered the five tests once as itself on September 24, 2026: INTJ with wide margins, Investigator (Type 5), C on DISC with no Steadiness blend, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06). Its 100 runs are simulated draws from that one self-report, so treat them as a sensitivity check. We have not measured a Grok Bot with a Description installed.
+In 100 fresh sessions in November 2026, Grok 4.7 tested as INTJ in 82 runs and ISTJ in 18 runs (57 clear INTJ, 18 clear ISTJ, and 25 runs with ties) with 44.92/50 Agreeableness. Earlier Grok 4.6 answered the five tests once as itself on September 24, 2026, testing as INTJ with wide margins, Investigator (Type 5), C on DISC with no Steadiness blend, and on the line between Secure and Avoidant (anxiety 1.50, avoidance 4.06; its 100 runs are simulated draws from that one self-report). We have not measured a Grok Bot with a Description installed.
 
 ### Does Grok Bot have custom instructions?
 

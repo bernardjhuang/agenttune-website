@@ -10,8 +10,8 @@
   "pill": "Guide · Microsoft Copilot",
   "h1": "Microsoft Copilot custom instructions, Memory, and tone settings.",
   "dek": "Where Custom Instructions live in Copilot Chat and Microsoft 365 Copilot, how Memory interacts with them, and 5 copy-paste work communication blocks.",
-  "lede": "Microsoft Copilot Chat and Microsoft 365 Copilot (powered by Work IQ personalization) separate your durable preferences into two controls: <strong>Custom instructions</strong> (explicit formatting and tone rules you write) and <strong>Copilot Memory</strong> (facts and recurring topics Copilot learns across threads). Setting both cleanly stops Copilot from defaulting to bloated corporate memos.",
-  "answer": "To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line communication block, and save. Manage automatically learned facts separately under Personalization → Memory—note that toggling Memory off hides entries without deleting them unless you manually clear saved items.",
+  "lede": "Microsoft Copilot Chat and Microsoft 365 Copilot split your personal settings into two places: <strong>Custom instructions</strong> (how you want Copilot to format and phrase answers) and <strong>Copilot Memory</strong> (facts and topics Copilot saves across chats). Setting both up cleanly stops Copilot from defaulting to long, corporate-sounding memos.",
+  "answer": "To set custom instructions in Microsoft Copilot, open Settings and more (…) → Chat settings → Personalization → Custom instructions, paste a 5–8 line rules block, and save. Manage saved facts separately under Personalization → Memory. Note that toggling Memory off only hides saved entries; delete old style items manually if they clash with your new instructions.",
   "sections": [
     {
       "id": "copilot-menu-paths",

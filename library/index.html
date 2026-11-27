@@ -355,7 +355,7 @@
             <span class="type-strip-cta-arrow" aria-hidden="true">→</span>
           </a>
         </div>
-        <p class="type-strip-desc">Continuous Big Five scores, loaded compositionally.</p>
+        <p class="type-strip-desc">Five everyday traits—like curiosity, organization, and warmth—you can mix and match.</p>
         <div class="type-grid type-grid-5">
         <a class="type-card card-accent" href="/library/ocean/openness-high" style="border-top-color: #5b4dc0;" aria-label="O-high · High Openness — view tuning">
           <span class="type-card-pill" style="background: rgba(91,77,192,0.1); color: #5b4dc0;">O-high</span>
@@ -427,10 +427,14 @@
       <h2 class="h-sub" id="how-to-use-library-agents" style="margin-top: 8px;">Three habits that make library tunings actually stick across threads.</h2>
       <p style="font-size: 15.5px; line-height: 1.6; color: var(--muted); margin-top: 8px;">Every card above is plain Markdown designed to travel anywhere your AI works—not a rigid bot costume. Here is how people get the most mileage out of them:</p>
       <ol style="font-size: 15px; line-height: 1.65; color: var(--ink); padding-left: 20px; margin-top: 12px;">
-        <li><strong>Layer your base with an 85/15 voice twist:</strong> Pick one structural system above (for instance <code>INTJ</code>, <code>DISC-D</code>, or <code>Type 5</code>) for clear verdicts and low sycophancy, or blend it with a 10–15% bounded character cadence (<a href="/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman">TARS, JARVIS, Sherlock, Feynman · 85/15 Mixer</a>).</li>
-        <li><strong>Put universal rules globally and specialized styles in dedicated rooms:</strong> Keep account-wide ChatGPT Custom Instructions or Claude Preferences focused on answer-first pacing and honesty, while putting strict red-team skeptics, Socratic tutors (<a href="/guides/socratic-feynman-ai-tutor-coaching-prompts">14 tutoring prompts</a>), or workspace coding discipline inside dedicated Projects, Gems, Meta Muse <code>Soul.md</code>, or repo <code>CLAUDE.md</code> / <code>AGENTS.md</code> files wrapped in <code>&lt;!-- agenttune:preferences:start --&gt;</code> markers.</li>
-        <li><strong>Hand the raw URL straight to coding or MCP agents:</strong> Instead of copy-pasting manually, paste a one-line handoff prompt into Claude Code, Codex CLI, or Cursor: <em>"Fetch this tuning's raw <code>.md</code> body from AgentTune and merge it safely inside our bounded markers without touching build or test commands."</em></li>
+        <li><strong>Start with clear working rules, then add a light voice twist if you want one:</strong> Pick one template above (like <code>INTJ</code>, <code>DISC-D</code>, or <code>Type 5</code>) for clear verdicts and honest pushback, or pair it with a light 10–15% character voice (<a href="/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman">TARS, JARVIS, Sherlock, Feynman · 85/15 Mixer</a>).</li>
+        <li><strong>Keep everyday habits global and task-specific styles in dedicated projects:</strong> Put your core preferences (like leading with the answer and skipping filler) in account-wide ChatGPT Custom Instructions or Claude Preferences, and save stricter roles—like red-team critics, Socratic tutors (<a href="/guides/socratic-feynman-ai-tutor-coaching-prompts">14 tutoring prompts</a>), or repo rules—for dedicated Projects, Gems, Meta Muse <code>Soul.md</code>, or project <code>CLAUDE.md</code> / <code>AGENTS.md</code> files.</li>
+        <li><strong>Delete any line that doesn't sound like you:</strong> Every template is a starting draft. Cut rules you don't need so your prompt stays short and easy for the model to follow.</li>
       </ol>
+      <details class="lib-disclosure" style="margin-top: 14px;">
+        <summary>The fine print: bounded markers &amp; coding-agent handoff</summary>
+        <p>When merging communication rules into shared repo files like <code>CLAUDE.md</code>, <code>AGENTS.md</code>, or Meta Muse <code>Soul.md</code>, wrap them in <code>&lt;!-- agenttune:preferences:start --&gt;</code> and <code>&lt;!-- agenttune:preferences:end --&gt;</code> markers so updates never overwrite your build or test commands. In Claude Code, Codex CLI, or Cursor, you can also hand off installation directly: <em>"Fetch this tuning's raw <code>.md</code> body from AgentTune and merge it safely inside our bounded markers without touching build or test commands."</em></p>
+      </details>
     </section>
 
     <!-- CLOSING CTA -->

@@ -5,13 +5,17 @@ Guide · Prompt & Tone Design
 
 # AI personality, tone, and verbosity guidelines: 5 checkable rules that beat adjectives.
 
-By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
-**Quick answer:** Replace vague tone adjectives in API system prompts with four concrete blocks: (1) Opening Move (first 1–2 sentences), (2) Epistemic Calibration (how missing or conflicting facts are flagged), (3) Pushback Posture (when to challenge weak premises), and (4) Negative Banlist (clichés, flattery, and trailing filler questions). Verify every change with blind A/B evals.
+**Quick answer:** Replace vague tone adjectives in API system prompts with four plain rules: (1) Opening Move (give the answer in the first 1–2 sentences), (2) Honest Uncertainty (say clearly when facts are missing or conflicting), (3) Pushback Posture (when to challenge a weak premise), and (4) Phrase Banlist (skip clichés, flattery, and trailing filler questions). Check every change with blind A/B tests.
 
 ## Why behavioral rules beat adjective lists in empirical testing.
 
-In our 60-reply controlled pilot ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral rules raised answer-first openings from **14/20 to 19/20**, cut unsolicited hedges per reply from **0.35 to 0.05**, and dropped trailing filler questions from **0.90 to 0.25**—without hurting task accuracy.
+> **Chart — Behavioral Tone Rules vs. Naive Adjectives/Roleplay (300-Reply Study, %):** Compares Default, Naive 100% Character LARP, and Calibrated 85/15 TARS & Feynman prompts on Correctness %, Format Adherence %, and Praise/Fluff %. Default baseline: Correctness % 93.3, Format Adherence % 98.3, Praise / Fluff % 18.3; Naive LARP adjectives: Correctness % 88.3, Format Adherence % 80.0, Praise / Fluff % 91.7; Calibrated 85/15 TARS: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 0.0; Calibrated 85/15 Feynman: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 6.7.
+
+Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0% format compliance while slashing fluff from 91.7% (naive roleplay) down to 0–6.7%.
+
+**In short:** Concrete rules change reply structure immediately without hurting accuracy. In our 60-reply pilot ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral rules lifted answer-first openings from **14/20 to 19/20**, cut hedges per reply from **0.35 to 0.05**, and dropped trailing filler questions from **0.90 to 0.25**.
 
 | Weak adjective prompt | Why it drifts in production | Testable behavioral replacement |
 | --- | --- | --- |
@@ -19,10 +23,6 @@ In our 60-reply controlled pilot ([tuning evaluation study →](https://agent-tu
 | &ldquo;Be honest and objective.&rdquo; | Agreeable defaults smooth over bad user premises to sound supportive. | &ldquo;Before solving, check the premise. If a constraint makes the goal impossible or slower, state the flaw in 1–2 sentences.&rdquo; |
 | &ldquo;Sound warm and empathetic.&rdquo; | Overcorrects into therapy-speak apologies and exclamation marks. | &ldquo;Acknowledge blockers neutrally in one phrase, skip scripted apologies (&lsquo;I understand how frustrating&rsquo;), and provide the fastest next action.&rdquo; |
 | &ldquo;Adapt to technical users.&rdquo; | Unpredictably swings between beginner tutorials and unexplained jargon. | &ldquo;Assume fluency in HTTP, SQL, and Git; explain domain-specific quirks briefly only when first introduced.&rdquo; |
-
-> **Chart — Behavioral Tone Rules vs. Naive Adjectives/Roleplay (300-Reply Study, %):** Compares Default, Naive 100% Character LARP, and Calibrated 85/15 TARS & Feynman prompts on Correctness %, Format Adherence %, and Praise/Fluff %. Default baseline: Correctness % 93.3, Format Adherence % 98.3, Praise / Fluff % 18.3; Naive LARP adjectives: Correctness % 88.3, Format Adherence % 80.0, Praise / Fluff % 91.7; Calibrated 85/15 TARS: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 0.0; Calibrated 85/15 Feynman: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 6.7.
-
-Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0% format compliance while slashing fluff from 91.7% (naive roleplay) down to 0–6.7%.
 
 ## A 4-layer system prompt contract for API & agent builders.
 
@@ -82,7 +82,7 @@ Split production assistant personas into four non-overlapping blocks so engineer
 - Honesty: Point out blind spots candidly while keeping space open to iterate.
 ```
 
-## How to evaluate tone changes without fooling yourself.
+## The fine print: how to test tone changes without fooling yourself.
 
 - **Use blind pairwise scoring:** Reviewers naturally favor prompts they wrote themselves. Compare baseline and edited system prompts blindly in our [Instruction A/B Test Bench](https://agent-tune.com/tools/instruction-test-bench).
 - **Scale verbosity to task risk:** A flat &ldquo;be concise&rdquo; cap drops critical caveats on complex architecture questions. Use proportional verbosity instead (1–3 sentences for lookups; full tradeoffs for irreversible actions).
@@ -92,7 +92,7 @@ Split production assistant personas into four non-overlapping blocks so engineer
 
 ### Should a production system prompt reference MBTI or Enneagram labels directly?
 
-No. Type labels are a discovery shortcut for humans choosing a template. In production API prompts, paste the concrete behavioral rules (direct openings, hedge caps, table thresholds, and critique framing) rather than telling a bot 'You are an INTJ.'
+No. Type labels are a discovery shortcut for humans choosing a template. In production API prompts, paste the concrete behavioral rules (direct openings, hedge caps, table thresholds, and critique framing) rather than a bare four-letter label just because a model tests as INTJ.
 
 ### Do all models follow negative tone rules ('never say Great question') equally well?
 

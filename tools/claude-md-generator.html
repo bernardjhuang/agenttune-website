@@ -65,6 +65,7 @@
         <a href="/library/">Library</a>
         <a href="/tests/">Tests</a>
         <a href="/research">Research</a>
+        <a href="/models/">Models</a>
         <a href="/guides/">Guides</a>
         <a href="/tools/custom-instructions-generator">Generator</a>
         <a class="github" href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">GitHub ↗</a>
@@ -102,7 +103,11 @@
         <p>Claude Code reads <code>CLAUDE.md</code> at the start of every session. Use it for project facts: how to run tests, code conventions, and files to leave alone. The three controls above cover the habits that cause the most daily friction: when to run tests, how many files a diff can touch, and whether the agent can install new packages.</p>
         <p>Keep it short—under 200 lines works best. Claude Code loads <code>CLAUDE.md</code> as context rather than a hard guardrail, so short, specific rules beat long essays.</p>
 
-        <h2>Where to save it.</h2>
+        <h2>Keep project rules separate from personal tone.</h2>
+        <p>Project rules belong in <code>CLAUDE.md</code>. How Claude Code talks to you—like leading with the answer, skipping preamble, or pushing back on weak ideas—belongs in your personal <code>~/.claude/CLAUDE.md</code> or a Claude Code <strong>output style</strong> so you don't force your personal tone onto teammates.</p>
+        <p>See <a href="/guides/claude-code-personality">how to change Claude Code's personality</a> for all 43 ready-to-save output styles, check baseline traits in our <a href="/models/claude-opus">Claude Opus</a> and <a href="/models/claude-fable">Claude Fable</a> profiles, or compare all coding agents in our <a href="/guides/ai-coding-agent-rules-files-matrix">CLAUDE.md vs AGENTS.md vs .cursorrules matrix</a>.</p>
+
+        <h2>The fine print: how Claude Code loads and merges files.</h2>
         <p>Claude Code checks four locations and combines what it finds:</p>
         <ul>
           <li><strong>Organization policy file</strong> (if set by your team admin).</li>
@@ -111,10 +116,6 @@
           <li><code>./CLAUDE.local.md</code> — your personal rules for this repo only (gitignored).</li>
         </ul>
         <p>Run <code>/memory</code> in Claude Code to edit active files, or <code>/context</code> to inspect what loaded. You can also pull in other files with <code>@path</code>.</p>
-
-        <h2>Keep project rules separate from personal tone.</h2>
-        <p>Project rules belong in <code>CLAUDE.md</code>. How Claude Code talks to you—like leading with the answer, skipping preamble, or pushing back on weak ideas—belongs in your personal <code>~/.claude/CLAUDE.md</code> or a Claude Code <strong>output style</strong> so you don't force your personal tone onto teammates.</p>
-        <p>See <a href="/guides/claude-code-personality">how to change Claude Code's personality</a> for all 43 ready-to-save output styles, or compare all coding agents in our <a href="/guides/ai-coding-agent-rules-files-matrix">CLAUDE.md vs AGENTS.md vs .cursorrules matrix</a>.</p>
       </section>
     </main>
 

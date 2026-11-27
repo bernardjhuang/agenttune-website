@@ -7,8 +7,8 @@
   "pill": "Guide · Tests",
   "h1": "The five open personality tests, explained.",
   "dek": "What OEJTS, OEPS, ODAT, IPIP-50 and ECR-R measure, how they score, and where they break.",
-  "lede": "This guide documents the five questionnaires used on AgentTune: their item sources, versioned scoring rules, tie handling, and practical limits. All five run locally in your browser at /tests/ with no signup, and each has a Markdown specification for reproducible scoring.",
-  "answer": "AgentTune provides five browser-based questionnaire adaptations: OEJTS (32 items, MBTI-style), a 36-item OEPS adaptation (Enneagram), ODAT (16 items, DISC), IPIP-50 (50 items, Big Five) and ECR-R (36 items, attachment). All five score locally in your browser and preserve ties explicitly. Original AgentTune code and templates are MIT licensed; questionnaire items remain subject to their upstream source terms.",
+  "lede": "Want to know what the five personality quizzes on AgentTune actually measure—and how they score your answers? All five run locally in your browser at <code>/tests/</code> with no email or signup, show exact ties openly instead of forcing a single label, and publish their full scoring rules in plain Markdown.",
+  "answer": "AgentTune includes five free in-browser personality quizzes: a 32-question MBTI-style survey (OEJTS), a 36-question Enneagram survey (OEPS adaptation), a 16-question DISC work-style survey (ODAT), a 50-question Big Five trait survey (IPIP-50), and a 36-question Attachment survey (ECR-R). Every quiz scores locally in your browser and keeps ties visible. Original AgentTune code and templates are MIT-licensed; see the fine print below for upstream item terms.",
   "sections": [
     {
       "h2": "At a glance.",
@@ -35,7 +35,7 @@
       "html": "<p><strong>What it measures.</strong> Two adult attachment dimensions—attachment anxiety (items 1–18) and attachment avoidance (items 19–36)—rated 1 to 7, with 14 reverse-keyed items.</p><p><strong>Scoring.</strong> Reverse-keyed items use <code>8 - response</code>. Each axis is the mean of its 18 items (1.00 to 7.00). Using the scale midpoint of 4.00, scores map to four site categories: Secure (both ≤ 4), Anxious (anxiety &gt; 4, avoidance ≤ 4), Avoidant (anxiety ≤ 4, avoidance &gt; 4), and Disorganized (both &gt; 4).</p><p><strong>Limits.</strong> Because the statements describe close human relationships, administering them to a language model requires prompt translation, and small boundary shifts (such as Grok 4.6’s reported avoidance of 4.06 vs. a 4.00 cutoff) can flip a quadrant label.</p>"
     },
     {
-      "h2": "Historical research provenance and direct preferences.",
+      "h2": "The fine print: historical research provenance and licensing.",
       "html": "<p>Published studies in the <a href=\"/research\">research hub</a> used the frozen September 2026 and May 2026 adaptations. As documented in <a href=\"/research/data/rights-migration.json\">rights-migration.json</a>, legacy MBTI item 1 and two legacy Enneagram items contained undocumented substitutions; raw response vectors and numeric summaries remain preserved for exact reproduction via <a href=\"/guides/reproduce-ai-personality-research\">the reproducibility guide</a>.</p><p>Every questionnaire is optional. If you already know how you want your AI to respond, use the <a href=\"/tools/communication-preferences-builder\">communication preferences builder</a> or <a href=\"/tools/custom-instructions-generator\">custom instructions generator</a> directly.</p>"
     }
   ],

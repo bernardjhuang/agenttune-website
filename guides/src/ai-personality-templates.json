@@ -2,13 +2,13 @@
   "slug": "ai-personality-templates",
   "published": "2026-11-23",
   "updated": "2026-11-25",
-  "title": "AI Personality & System Prompt Templates (All Apps) | AgentTune",
+  "title": "AI Personality & System Prompt Templates (All Apps)",
   "h1": "AI personality and system prompt templates.",
   "dek": "Browse tested copy-paste starters, 85/15 character voices, and downloadable .md configs across Meta Muse, Claude, ChatGPT, Grok, Gemini, coding agents, and OpenRouter.",
   "description": "Browse copy-paste AI personality and system prompt templates with .md downloads for Meta Muse Soul.md, Claude, ChatGPT, Grok, Gemini, Codex, and OpenRouter.",
   "pill": "Directory · Templates",
-  "lede": "Pick your AI app, workflow problem, or voice style below to open its copy-paste template gallery, download ready-to-use <code>.md</code> starter files, or mix a custom blend interactively. Every gallery follows concrete, checkable execution rules proven across our <a href=\"/research\">4,000+ session &amp; behavioral evaluations</a>.",
-  "answer": "Choose your surface or style gallery below: Meta Muse Soul.md & Identity.md, Claude Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices, Calibrated Character Voices (85/15), and Socratic/Feynman Coaching templates.",
+  "lede": "Pick your AI app, workflow problem, or voice style below to open its copy-paste template gallery, download ready-to-use <code>.md</code> starter files, or mix a custom blend. Every template uses short, checkable behavior rules tested across our <a href=\"/research\">4,000+ session &amp; behavioral evaluations</a>.",
+  "answer": "Pick your app or style gallery below: Meta Muse Soul.md & Identity.md, Claude Personal Preferences & Skills, ChatGPT Custom Instructions & Projects, Grok, Gemini Gems, coding agent AGENTS.md / CLAUDE.md, OpenRouter open-weight configs, or our 85/15 Fictional Character Voices and Socratic/Feynman Coaching templates.",
   "scripts": [
     "/resources/tools/template-gallery.js"
   ],

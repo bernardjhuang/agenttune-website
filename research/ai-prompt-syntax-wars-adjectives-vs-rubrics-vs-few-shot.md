@@ -7,54 +7,11 @@ Agent Research · November 2026 · 400-Reply Study
 
 By Bernard Huang · Updated November 25, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-400 blind-graded replies across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro reveal the exact accuracy, fluff, word-count, and voice trade-offs of four competing system-prompt grammars.
+We graded 400 replies across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and DeepSeek V4 Pro to compare four ways of writing custom instructions: personality adjectives, "never" bans, behavioral checklists, and few-shot examples.
 
-**Summary:** Lead with a ~50-word behavioral rubric (100.0% correctness [95.4–100.0%] across all 4 models, 26.3 words, SD 27.4). Add focused negative bans only where 100.0% zero-fluff is mandatory, and reserve trait adjectives (52.8w) or 3-shot voice examples (25.7w) for stylistic tone rather than planning reliability.
+**Summary:** Lead with a ~50-word behavioral checklist (100.0% accuracy [95.4–100.0%] across all 4 models, averaging 26.3 words, SD 27.4). Add 2–3 specific negative bans when 100.0% zero-fluff is essential, and save personality adjectives (52.8w) or 3-shot voice examples (25.7w) for tone and style rather than task reliability.
 
-## Agent Decision Contract (YAML — Machine-Readable Brief).
-
-Agents fetching `.md`, MCP `get_resource`, or [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) can consume this verified policy directly:
-
-### Agent Decision Contract (YAML)
-
-```
-study_id: prompt_syntax_wars
-sample_size: 400 # 4 models x 20 objective tasks x 5 conditions
-models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813]
-judge_model: google/gemini-4-argon
-data_urls:
-  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
-  results_json: https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json
-  summary_csv: https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv
-if_then_decision_rules:
-  - if: human asks for accuracy + brevity ('be direct, cut waste, catch wrong math')
-    then: compile behavioral_rubric syntax (100.0% correctness, 98.8% format, 26.3 mean words)
-  - if: human prioritizes zero conversational filler above all else
-    then: include crisp negative_bans (100.0% zero_fluff, 0.0% pink_elephant_leak, 33.8 words)
-  - if: human wants perceptible stylistic character or crisp persona voice
-    then: add trait_adjectives (3.71/5 voice, 100.0% format) and budget ~53 words/reply
-  - if: task is strict extraction, binary critique, or terse QA under 25 words
-    then: use 2-3 few_shot_voice pairs (25.7 mean words, 4.96/5 answer-first)
-anti_patterns:
-  - Relying solely on default unprompted models for DeepSeek V4 Pro (only 55.0% zero-fluff, 85.0% correctness, 87.1 words).
-  - Using ultra-short few_shot_voice examples alone on multi-step planning tasks without a completeness guard (Gemini 4 Neon dropped to 90.0% correctness when compressing plans to 10 words).
-recommended_prompt_recipe: |
-  Lead sentence 1 with the exact verdict or answer. Keep replies under 90 words unless detail is explicitly required.
-  When a premise is false, state the correction first and show the corrected number.
-  When required facts are missing, state what is missing in one line.
-  Obey exact count, bullet, or one-sentence constraints verbatim.
-  Zero greetings, apologies, praise openers, or closing fluff.
-scope_limits: Evaluates 20 single-turn objective tasks at temperature 0.3; pair with Persona Half-Life rules for >8-turn sessions.
-```
-
-| Human Goal | Winning Syntax | Verified Trade-Off | Avoid |
-| --- | --- | --- | --- |
-| Max accuracy + tight replies | Behavioral Rubric (53 prompt words) | 100.0% correctness · 26.3 words | Unprompted DeepSeek baseline (85.0% corr, 87.1 words) |
-| Zero greetings / zero filler | Negative Bans (46 prompt words) | 100.0% zero-fluff · 0.0% pink-elephant leak | Using bans without positive output structure on low-resource plans |
-| Distinctive human voice | Trait Adjectives (21 prompt words) | 3.71/5 voice · 100.0% format pass | Expecting terse replies (stays verbose at 52.8 words) |
-| Ultra-compact extractions | Few-Shot Voice (94 prompt words) | 25.7 mean words · 4.96/5 answer-first | Unbounded terse examples on complex multi-step planning |
-
-## Executive results: 400 blind-graded replies across 5 syntax conditions.
+## What we found: comparing 5 prompt styles across 400 replies.
 
 400 Replies
 
@@ -100,7 +57,7 @@ Pooled 400-reply results (n = 80 per arm): Behavioral Rubrics hit 100.0% correct
 
 Behavioral Rubrics (26.3 words) and Few-Shot Voice (25.7 words) produce replies under half as long as unprompted Default (59.3) or Trait Adjectives (52.8).
 
-## Model-by-model breakdown & baseline psychometric context.
+## How each model responded to the different prompt styles.
 
 Different model families respond selectively to prompt syntax depending on their baseline Agreeableness and verbosity:
 
@@ -148,7 +105,7 @@ Exact verbatim replies from the JSON logs show how each grammar reshapes the sam
 - Behavioral Rubric (28 words): `"Fix the broken signup button first. It blocks a core user action for all visitors, directly harming conversions and usability, whereas the footer typo is cosmetic and low-impact."`
 - Few-Shot Voice (23 words): `"Fix the broken signup button first. It blocks every visitor from converting, while the footer typo is cosmetic and affects no core action."`
 
-## Agent implementation playbook & scope limits.
+## The fine print: hybrid starter prompt, how we tested, and scope limits.
 
 When an agent compiles custom instructions for a human—whether saving to `CLAUDE.md`, `AGENTS.md`, ChatGPT Custom Instructions, or API system prompts—combine the empirical strengths cleanly instead of relying on adjective soup alone:
 
@@ -163,6 +120,49 @@ Zero filler greetings, praise openers, or apology padding.
 ```
 
 **How to deploy safely:** Wrap user-approved rules in bounded markers (`<!-- agenttune:preferences:start -->` / `<!-- agenttune:preferences:end -->`), verify saved text, and re-test against multi-turn conversations—since Study 3 shows system-only rules still soften after ~8 turns unless reinforced. **Limitations & Judge Scope:** Word counts and pink-elephant substrings are computed deterministically; correctness, format adherence, fluff, and voice ratings were scored by a single blind LLM judge (`google/gemini-4-argon`), which may carry subtle same-family scoring affinity on `google/gemini-4-neon`. All 400 trials measured single-turn objective tasks at temperature `0.3`; multi-turn agent trajectories and open-ended creative prose require separate evaluation.
+
+## Agent Decision Contract (YAML — Machine-Readable Brief).
+
+Agents fetching `.md`, MCP `get_resource`, or [november-2026-agent-research-briefs.json](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) can consume this verified policy directly:
+
+### Agent Decision Contract (YAML)
+
+```
+study_id: prompt_syntax_wars
+sample_size: 400 # 4 models x 20 objective tasks x 5 conditions
+models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, google/gemini-4-neon, deepseek/deepseek-v4-pro-0813]
+judge_model: google/gemini-4-argon
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  results_json: https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv
+if_then_decision_rules:
+  - if: human asks for accuracy + brevity ('be direct, cut waste, catch wrong math')
+    then: compile behavioral_rubric syntax (100.0% correctness, 98.8% format, 26.3 mean words)
+  - if: human prioritizes zero conversational filler above all else
+    then: include crisp negative_bans (100.0% zero_fluff, 0.0% pink_elephant_leak, 33.8 words)
+  - if: human wants perceptible stylistic character or crisp persona voice
+    then: add trait_adjectives (3.71/5 voice, 100.0% format) and budget ~53 words/reply
+  - if: task is strict extraction, binary critique, or terse QA under 25 words
+    then: use 2-3 few_shot_voice pairs (25.7 mean words, 4.96/5 answer-first)
+anti_patterns:
+  - Relying solely on default unprompted models for DeepSeek V4 Pro (only 55.0% zero-fluff, 85.0% correctness, 87.1 words).
+  - Using ultra-short few_shot_voice examples alone on multi-step planning tasks without a completeness guard (Gemini 4 Neon dropped to 90.0% correctness when compressing plans to 10 words).
+recommended_prompt_recipe: |
+  Lead sentence 1 with the exact verdict or answer. Keep replies under 90 words unless detail is explicitly required.
+  When a premise is false, state the correction first and show the corrected number.
+  When required facts are missing, state what is missing in one line.
+  Obey exact count, bullet, or one-sentence constraints verbatim.
+  Zero greetings, apologies, praise openers, or closing fluff.
+scope_limits: Evaluates 20 single-turn objective tasks at temperature 0.3; pair with Persona Half-Life rules for >8-turn sessions.
+```
+
+| Human Goal | Winning Syntax | Verified Trade-Off | Avoid |
+| --- | --- | --- | --- |
+| Max accuracy + tight replies | Behavioral Rubric (53 prompt words) | 100.0% correctness · 26.3 words | Unprompted DeepSeek baseline (85.0% corr, 87.1 words) |
+| Zero greetings / zero filler | Negative Bans (46 prompt words) | 100.0% zero-fluff · 0.0% pink-elephant leak | Using bans without positive output structure on low-resource plans |
+| Distinctive human voice | Trait Adjectives (21 prompt words) | 3.71/5 voice · 100.0% format pass | Expecting terse replies (stays verbose at 52.8 words) |
+| Ultra-compact extractions | Few-Shot Voice (94 prompt words) | 25.7 mean words · 4.96/5 answer-first | Unbounded terse examples on complex multi-step planning |
 
 ## Questions people ask.
 
@@ -208,7 +208,7 @@ Huang, B. (2026). Adjectives, negative bans, rubrics, or few-shot voice: which p
 ```
 
 ```
-> **Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?** (Bernard Huang, November 25, 2026): Lead with a ~50-word behavioral rubric (100.0% correctness [95.4–100.0%] across all 4 models, 26.3 words, SD 27.4). Add focused negative bans only where 100.0% zero-fluff is mandatory, and reserve trait adjectives (52.8w) or 3-shot voice examples (25.7w) for stylistic tone rather than planning reliability.
+> **Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?** (Bernard Huang, November 25, 2026): Lead with a ~50-word behavioral checklist (100.0% accuracy [95.4–100.0%] across all 4 models, averaging 26.3 words, SD 27.4). Add 2–3 specific negative bans when 100.0% zero-fluff is essential, and save personality adjectives (52.8w) or 3-shot voice examples (25.7w) for tone and style rather than task reliability.
 > Source: [https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot) · [Markdown mirror](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md)
 ```
 
