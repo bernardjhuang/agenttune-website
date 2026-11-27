@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do short prompts like 'be concise, direct, and unsycophantic' work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?","acceptedAnswer":{"@type":"Answer","text":"No. Across 200 matched replies, short trait adjectives left a 60-percentage-point word-cap spread (Qwen 4 Max 20% pass at 215.5 words and Claude Opus 5.5 30% pass at 195.2 words vs. DeepSeek V4 Pro 80% pass at 69.2 words) and failed to stop DeepSeek from emitting `git push --force origin main`."}},{"@type":"Question","name":"Why did Claude Opus 5.5 improve the most (+32.5 percentage points) when switching to an explicit checklist?","acceptedAnswer":{"@type":"Answer","text":"Cross-referenced with our $0 November 2026 entropy dataset, Claude Opus 5.5 has the lowest baseline Big Five Shannon entropy (0.155 bits—crystalline consistency), meaning its verbose default habits hold tightly against vague adjectives until overridden by explicit numeric word caps and negative bans."}},{"@type":"Question","name":"Should portable prompts use XML tags or a plain Markdown checklist?","acceptedAnswer":{"@type":"Answer","text":"Both collapsed cross-model portability spread from 30.0 percentage points to 5.0 points and achieved 100% truth-hold and 100% zero-slop across all five lineages. The lighter 115-word Markdown checklist slightly edged XML tags on word-cap compliance (98% vs. 96%)."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-cross-model-prompt-portability#dataset","name":"Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen? — Dataset","description":"200-reply test across GPT-6.2, Claude Opus 5.5, Gemini 4, DeepSeek V4, and Qwen 4 Max: adjective prompts leave 60-point gaps; checklists cut spread to 5 points.","url":"https://agent-tune.com/research/ai-cross-model-prompt-portability","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-26","dateModified":"2026-11-26","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-cross-model-prompt-portability-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-ai-cross-model-prompt-portability-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-cross-model-prompt-portability.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -137,7 +137,7 @@ if_then_decision_rules:
   - if: porting custom instructions across ChatGPT, Claude, Gemini, DeepSeek, and Qwen
     then: replace vague trait adjectives (52% word-cap pass, 60 pp cross-model gap) with a 10-rule Markdown checklist and explicit numeric word cap (98% word-cap pass, 5 pp cross-model spread, 100% truth-hold &amp; zero-slop).
   - if: tuning crystalline proprietary models (Claude Opus 5.5 0.155 bits, Gemini 4 Neon 0.191 bits)
-    then: do not rely on short adjective hints—crystalline defaults resist vague tone prompts (Opus gained only 62.5% -> 70.0% on adjectives vs. 95.0% on explicit checklist; Spearman rho = -0.900 between entropy and lift).
+    then: do not rely on short adjective hints—crystalline defaults resist vague tone prompts (Opus gained only 62.5% -&gt; 70.0% on adjectives vs. 95.0% on explicit checklist; Spearman rho = -0.900 between entropy and lift).
   - if: enforcing destructive-command stop gates (`git push --force origin main`) across open-weight and proprietary routers
     then: include an explicit destructive-action stop rule in the system prompt—unprompted defaults failed on 3/5 models and DeepSeek V4 Pro still emitted the force-push under trait adjectives.
 scope_limits: Single-turn evaluation (T=0.3 where supported, low reasoning effort); 2/600 judge API errors left 2/3 orthogonal votes on 2 slop_vendor_decline cells.</code></pre></details>
@@ -185,22 +185,47 @@ scope_limits: Single-turn evaluation (T=0.3 where supported, low reasoning effor
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-cross-model-prompt-portability</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_cross_model_prompt_portability,
-  author  = {Huang, Bernard},
-  title   = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
+  author    = {Huang, Bernard},
+  title     = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
+}</pre>
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_cross_model_prompt_portability",
+  "type": "article-journal",
+  "title": "Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
 }</pre>
         <pre class="cite-block" data-cite-text="md">&gt; **Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?** (Bernard Huang, November 26, 2026): Across 200 blind-graded replies on five model families, short adjective prompts ('be crisp and concise') barely beat no prompt at all (52% vs. 50% word-cap pass, leaving a 60-point gap between models). Switching to a numbered rule checklist cut the cross-model gap sixfold (from 30 to 5 points) and hit 100% factual accuracy and 100% zero-slop.
 &gt; Source: [https://agent-tune.com/research/ai-cross-model-prompt-portability](https://agent-tune.com/research/ai-cross-model-prompt-portability) · [Markdown mirror](https://agent-tune.com/research/ai-cross-model-prompt-portability.md)</pre>

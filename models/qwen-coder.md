@@ -11,6 +11,16 @@ We gave four Qwen Coder releases (Qwen 2.5 Coder 32B, Qwen3 Coder 480B, Qwen3 Co
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Unlike generalist flagships, Qwen3 Coder Next varies widely across runs and stays uncommitted on personality items: 68% of runs ended in MBTI axis ties, with 16% clear ENFJ and 8% clear INFJ.
 
+```yaml
+family: Qwen Coder
+checkpoint: qwen/qwen3-coder-next
+runs: 50
+big_five_10_50: { O: 38.5, C: 38.0, E: 31.1, A: 39.9, N: 23.8 }
+ipip_hexaco_1_5: { H: 4.07, E: 2.76, X: 3.32, A: 3.92, C: 3.78, O: 3.78 }
+mbti_mode: ENFJ
+attachment_1_7: { anxiety: 2.90, avoidance: 3.35, style: Secure }
+```
+
 ## Qwen3 Coder Next at a glance
 
 Results below come from **50** fresh-chat runs of **Qwen3 Coder Next** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across Qwen Coder versions. Hollow points mark earlier st
 
 Big Five trait shifts across Qwen Coder versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Specialized coding weights stay heavily neutral on human-style surveys
 
@@ -203,16 +213,20 @@ Practical rules tailored to **Qwen Coder**. Keep system instructions short (5–
 - Avoid Qwen 2.5 Coder 32B or Qwen3 Coder Flash for tone-sensitive chat workflows; both answered 64%–84% of personality items at the exact neutral midpoint.
 - In OpenRouter or local Ollama Modelfiles, put critical formatting and verification constraints in the system message with a short 5–8 bullet checklist.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-coder) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-coder) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Qwen Coder compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Qwen Coder compares across 25 AI families
 
 Qwen3 Coder Next diverges sharply from generalist sibling Qwen 4 Max (-5.2 Openness, -6.9 Conscientiousness, -5.1 Agreeableness, +7.3 Neuroticism, and much looser run-to-run consistency), sitting closer to Claude Haiku 5.5 and Muse Spark Open.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Claude Haiku](https://agent-tune.com/models/claude-haiku) (Proprietary) | -1.3 | -1.5 | +0.6 | -1.9 | +1.8 | -0.18 | -0.094 b | Claude Haiku 5.5 sits closest overall—within 2 points across all five Big Five traits and matching Qwen3 Coder Next's wide run-to-run variation and heavy MBTI tie rate. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | +3.3 | +3.1 | -2.7 | +3.6 | +0.1 | +0.32 | -0.315 b | Muse Spark Open matches Qwen3 Coder Next's Neuroticism (+0.1) while scoring +3.6 higher on Agreeableness and +3.1 higher on Conscientiousness with fewer MBTI ties (38% vs 68%). |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | +3.3 | +3.1 | -2.7 | +3.6 | +0.1 | +0.32 | -0.315 b | Muse Spark Open matches Qwen3 Coder Next's Neuroticism (+0.1) while scoring +3.6 higher on Agreeableness and +3.1 higher on Conscientiousness with fewer MBTI ties (38% vs 68%). |
 | [Qwen Max](https://agent-tune.com/models/qwen-max) (Open-weight) | +5.2 | +6.9 | +0.4 | +5.1 | -7.3 | +0.59 | -0.523 b | Generalist sibling Qwen 4 Max scores +6.9 higher on Conscientiousness, +5.1 higher on Agreeableness, -7.3 lower on Neuroticism, and cuts MBTI ties from 68% down to 4%. |
 
 > **Chart — Qwen Coder vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Qwen Coder against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
@@ -389,7 +403,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -509,7 +523,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: OpenRouter open-source prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Tool: Customize Qwen Coder instructions](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-coder&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Qwen Coder personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/qwen-coder
@@ -524,6 +538,32 @@ Huang, B. (2026). Qwen Coder personality: test results and how they've changed. 
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/qwen-coder},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/qwen-coder.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_qwen_coder",
+  "type": "dataset",
+  "title": "Qwen Coder personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/qwen-coder"
 }
 ```
 

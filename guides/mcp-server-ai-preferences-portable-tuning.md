@@ -19,7 +19,7 @@ The AgentTune MCP endpoint at `https://agent-tune.com/mcp` is stateless, read-on
 | Claude Web & Desktop Connectors | Settings → Connectors → Add custom connector → URL: `https://agent-tune.com/mcp` |
 | Cursor (`.cursor/mcp.json`) | `{"mcpServers":{"agenttune":{"url":"https://agent-tune.com/mcp"}}}` |
 | OpenAI Codex CLI / MCP clients | Point Streamable HTTP client at `https://agent-tune.com/mcp`, or tell the agent to read `https://agent-tune.com/SKILL.md`. |
-| Any web-fetching agent (no MCP needed) | Read [@@CELL_0@@](https://agent-tune.com/SKILL.md), [@@CELL_1@@](https://agent-tune.com/llms.txt), or fetch any raw tuning at `/library/{system}/{slug}.md`. |
+| Any web-fetching agent (no MCP needed) | Read [`/SKILL.md`](https://agent-tune.com/SKILL.md), [`/llms.txt`](https://agent-tune.com/llms.txt), or fetch any raw tuning at `/library/{system}/{slug}.md`. |
 
 ## What the 6 MCP tools and machine endpoints expose.
 

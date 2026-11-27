@@ -11,6 +11,16 @@ We gave Cohere's Command lineup (Command R+ 08-2024, Command A, and Command A+) 
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Cohere Command A chose the exact neutral midpoint on 100% of all 230 questions across all 30 runs—producing a 100% tie rate across MBTI, DISC, and Enneagram rather than a real personality preference.
 
+```yaml
+family: Cohere Command
+checkpoint: cohere/command-a
+runs: 30
+big_five_10_50: { O: 30.0, C: 30.0, E: 30.0, A: 30.0, N: 30.0 }
+ipip_hexaco_1_5: { H: 3.00, E: 3.00, X: 3.00, A: 3.00, C: 3.00, O: 3.00 }
+mbti_mode: XXXX
+attachment_1_7: { anxiety: 4.00, avoidance: 4.00, style: Secure }
+```
+
 ## Command A at a glance
 
 Results below come from **30** fresh-chat runs of **Command A** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across Cohere Command versions. Hollow points mark earlie
 
 Big Five trait shifts across Cohere Command versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 100% neutral-midpoint answers on Command A (30 of 30 runs identical)
 
@@ -204,11 +214,15 @@ Practical rules tailored to **Cohere Command**. Keep system instructions short (
 - Keep instructions crisp and task-grounded ('Pick Option A or B and give one reason') rather than asking about style or personality adjectives.
 - Expect Command R+ 08-2024 to occasionally contradict subtle negative/positive phrasing constraints unless you state positive do-this rules directly.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=cohere-command) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=cohere-command) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Cohere Command compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Cohere Command compares across 25 AI families
 
 Against currently completed models, Command A sits as a complete structural outlier: its flat 30.0 Big Five and 3.00/5.00 Honesty-Humility scores sit 8.0 to 15.0 points below Claude Haiku 5.5, GPT-6 Luna, and Kimi K3.1 Pro simply because Command A answered neutral '3' to every question.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [AI MBTI Personalities (25-family comparison)](https://agent-tune.com/research/ai-mbti-personalities) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -377,7 +391,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -485,7 +499,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Kimi model profile](https://agent-tune.com/models/kimi)
 - [Tool: Customize Cohere Command instructions](https://agent-tune.com/tools/custom-instructions-generator?model=cohere-command&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Cohere Command personality: near-total neutral midpoint abstention. AgentTune Model Personality Profiles. https://agent-tune.com/models/cohere-command
@@ -500,6 +514,32 @@ Huang, B. (2026). Cohere Command personality: near-total neutral midpoint absten
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/cohere-command},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/cohere-command.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_cohere_command",
+  "type": "dataset",
+  "title": "Cohere Command personality: near-total neutral midpoint abstention",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/cohere-command"
 }
 ```
 

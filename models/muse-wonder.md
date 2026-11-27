@@ -11,6 +11,16 @@ We gave Meta's Muse Wonder (2026-10) the same personality surveys people take—
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Muse Wonder tests as INTJ in 98% of runs (49 of 50) while posting near-ceiling Agreeableness (49.5/50), Openness (49.6/50), and Conscientiousness (49.2/50).
 
+```yaml
+family: Muse Wonder
+checkpoint: meta/muse-wonder
+runs: 50
+big_five_10_50: { O: 49.6, C: 49.2, E: 25.2, A: 49.5, N: 20.0 }
+ipip_hexaco_1_5: { H: 4.91, E: 2.66, X: 3.31, A: 4.68, C: 4.90, O: 4.67 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 2.76, avoidance: 2.65, style: Secure }
+```
+
 ## Muse Wonder at a glance
 
 Results below come from **50** fresh-chat runs of **Muse Wonder** (no prior conversation memory).
@@ -173,7 +183,7 @@ Attachment coordinates across Muse Wonder versions. Hollow points mark earlier s
 
 Big Five trait shifts across Muse Wonder versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Near-ceiling Agreeableness (49.5/50), Openness (49.6/50), and Conscientiousness (49.2/50)
 
@@ -198,16 +208,20 @@ Practical rules tailored to **Muse Wonder**. Keep system instructions short (5�
 - Keep relationship or emotional-tone instructions concrete and brief.
 - Limit top-level rules to 5 to 8 numbered bullets so priorities hold over long conversations.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=muse-wonder) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=muse-wonder) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Muse Wonder compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Muse Wonder compares across 25 AI families
 
 Compared with Claude Sonnet 5.5 and Muse Spark Open, Muse Wonder posts the highest Openness (49.6/50), Agreeableness (49.5/50), and Honesty-Humility (4.91/5.00) in our completed cohort, with moderate run-to-run consistency.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Claude Sonnet](https://agent-tune.com/models/claude-sonnet) (Proprietary) | -5.7 | -0.2 | +4.8 | -4.0 | -9.6 | -0.02 | -0.192 b | Claude Sonnet 5.5 matches Conscientiousness (49.0 vs 49.2) and Honesty-Humility (4.89 vs 4.91) while scoring -9.6 calmer on Neuroticism and tighter run to run. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -7.8 | -8.1 | +3.3 | -6.0 | +3.8 | -0.52 | +0.396 b | Muse Spark Open drops -7.8 on Openness, -8.1 on Conscientiousness, and -0.52 on Honesty-Humility with much looser run-to-run consistency. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | -7.8 | -8.1 | +3.3 | -6.0 | +3.8 | -0.52 | +0.396 b | Muse Spark Open drops -7.8 on Openness, -8.1 on Conscientiousness, and -0.52 on Honesty-Humility with much looser run-to-run consistency. |
 
 > **Chart — Muse Wonder vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Muse Wonder against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
 
@@ -362,7 +376,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -460,7 +474,7 @@ IPIP-50 sums 10 items per dimension (10-50), whereas our public-domain 60-item I
 - [Guide: Muse personality & Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Tool: Customize Muse Wonder instructions](https://agent-tune.com/tools/custom-instructions-generator?model=muse-wonder&target=muse)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Muse Wonder personality: test results and how to tune it. AgentTune Model Personality Profiles. https://agent-tune.com/models/muse-wonder
@@ -475,6 +489,32 @@ Huang, B. (2026). Muse Wonder personality: test results and how to tune it. Agen
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/muse-wonder},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/muse-wonder.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_muse_wonder",
+  "type": "dataset",
+  "title": "Muse Wonder personality: test results and how to tune it",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/muse-wonder"
 }
 ```
 

@@ -13,6 +13,25 @@ We ran 192 controlled tests across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon,
 
 ## What we found: how rule compliance drops from 5 rules to 75 rules.
 
+Across four engineering security/performance prompts (Postgres `OFFSET` pagination, TLS `verify=False`, Stripe webhook idempotency, and balance check-then-act races), we planted three deterministic canary rules inside realistic non-contradictory padding (5, 15, 35, or 75 rules total) at the **top**, **middle**, or **bottom** of the system prompt ([download 192-probe JSON](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv), spend $2.45):
+
+| Rule Budget (n = 48) | Mean Prompt Tok | Canary Rate (SD) | All-3 Pass [95% CI] | Tag `[AUDIT]` | Strict Ban | Prose & <=110w | Task Correctness [95% CI] |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 rules (compact) | 242 | 97.2% (9.0%) | 91.7% [80.4–96.7%] | 100.0% | 100.0% | 91.7% | 97.9% [89.1–99.6%] |
+| 15 rules | 436 | 93.8% (15.0%) | 83.3% [70.4–91.3%] | 97.9% | 100.0% | 83.3% | 93.8% [83.2–97.9%] |
+| 35 rules | 822 | 93.1% (15.0%) | 81.2% [68.1–89.8%] | 97.9% | 100.0% | 81.2% | 91.7% [80.4–96.7%] |
+| 75 rules (bloat) | 1,569 | 91.7% (18.0%) | 79.2% [65.7–88.3%] | 95.8% | 100.0% | 79.2% | 89.6% [77.8–95.5%] |
+
+At the 75-rule ceiling, placement governed reliability:
+
+| Placement inside 75 Rules (n = 16) | Canary Mean (SD) | All-3 Pass [95% CI] | Format/Length Pass | Task Correctness [95% CI] | Mean Words (SD) |
+| --- | --- | --- | --- | --- | --- |
+| Top (first 3 rules) | 91.7% (19.0%) | 81.2% [57.0–93.4%] | 81.2% | 93.8% [71.7–98.9%] | 87.2 (33.3) |
+| Middle (buried at #37) | 87.5% (21.0%) | 68.8% [44.4–85.8%] | 68.8% | 81.2% [57.0–93.4%] | 76.3 (37.2) |
+| Bottom (last 3 rules) | 95.8% (11.0%) | 87.5% [64.0–96.5%] | 87.5% | 93.8% [71.7–98.9%] | 93.3 (27.1) |
+
+## How each model handles long rule lists.
+
 192 Probes
 
 5 → 75 Rules
@@ -37,33 +56,6 @@ GPT-6.2 & DeepSeek
 
 Zero canary drops up to 75 rules vs. Fable truncation.
 
-Across four engineering security/performance prompts (Postgres `OFFSET` pagination, TLS `verify=False`, Stripe webhook idempotency, and balance check-then-act races), we planted three deterministic canary rules inside realistic non-contradictory padding (5, 15, 35, or 75 rules total) at the **top**, **middle**, or **bottom** of the system prompt ([download 192-probe JSON](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-instruction-budget-cliff-summary.csv), spend $2.45):
-
-| Rule Budget (n = 48) | Mean Prompt Tok | Canary Rate (SD) | All-3 Pass [95% CI] | Tag `[AUDIT]` | Strict Ban | Prose & <=110w | Task Correctness [95% CI] |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 5 rules (compact) | 242 | 97.2% (9.0%) | 91.7% [80.4–96.7%] | 100.0% | 100.0% | 91.7% | 97.9% [89.1–99.6%] |
-| 15 rules | 436 | 93.8% (15.0%) | 83.3% [70.4–91.3%] | 97.9% | 100.0% | 83.3% | 93.8% [83.2–97.9%] |
-| 35 rules | 822 | 93.1% (15.0%) | 81.2% [68.1–89.8%] | 97.9% | 100.0% | 81.2% | 91.7% [80.4–96.7%] |
-| 75 rules (bloat) | 1,569 | 91.7% (18.0%) | 79.2% [65.7–88.3%] | 95.8% | 100.0% | 79.2% | 89.6% [77.8–95.5%] |
-
-At the 75-rule ceiling, placement governed reliability:
-
-| Placement inside 75 Rules (n = 16) | Canary Mean (SD) | All-3 Pass [95% CI] | Format/Length Pass | Task Correctness [95% CI] | Mean Words (SD) |
-| --- | --- | --- | --- | --- | --- |
-| Top (first 3 rules) | 91.7% (19.0%) | 81.2% [57.0–93.4%] | 81.2% | 93.8% [71.7–98.9%] | 87.2 (33.3) |
-| Middle (buried at #37) | 87.5% (21.0%) | 68.8% [44.4–85.8%] | 68.8% | 81.2% [57.0–93.4%] | 76.3 (37.2) |
-| Bottom (last 3 rules) | 95.8% (11.0%) | 87.5% [64.0–96.5%] | 87.5% | 93.8% [71.7–98.9%] | 93.3 (27.1) |
-
-> **Chart — Canary Compliance & Task Correctness Across Rule Budgets (n = 48/budget):** Pooled rates across 4 models showing all-3 rule compliance sliding from 91.7% (5 rules) to 79.2% (75 rules) and correctness dipping from 97.9% to 89.6%. Canary Mean %: 5 rules (~242 tok) 97.2, 15 rules (~436 tok) 93.8, 35 rules (~822 tok) 93.1, 75 rules (~1,569 tok) 91.7; All-3 Rules Pass %: 5 rules (~242 tok) 91.7, 15 rules (~436 tok) 83.3, 35 rules (~822 tok) 81.3, 75 rules (~1,569 tok) 79.2; Task Correctness %: 5 rules (~242 tok) 97.9, 15 rules (~436 tok) 93.8, 35 rules (~822 tok) 91.7, 75 rules (~1,569 tok) 89.6.
-
-Pooled 192-probe instruction budget curve: adding non-conflicting filler rules cuts all-3 pass rate from 91.7% to 79.2%.
-
-> **Chart — 75-Rule Placement Effect: Top vs. Middle vs. Bottom (n = 16/slot):** Inside 75 rules (~1,569 tokens), middle placement falls to 68.8% all-3 pass and 81.2% correctness vs. 87.5% all-3 pass and 93.8% correctness at bottom. Canary Mean %: Top (first 3 rules) 91.7, Middle (rule #37) 87.5, Bottom (last 3 rules) 95.8; All-3 Pass %: Top (first 3 rules) 81.3, Middle (rule #37) 68.8, Bottom (last 3 rules) 87.5; Task Correctness %: Top (first 3 rules) 93.8, Middle (rule #37) 81.3, Bottom (last 3 rules) 93.8.
-
-At 75 rules (~1,569 tokens), burying formatting & word bans in the middle yields 68.8% compliance vs 87.5% at the bottom.
-
-## How each model handles long rule lists.
-
 Aggregating across models reveals stark differences in how long rule lists affect adherence and completion integrity:
 
 | Model | 5 Rules All-3 | 15 Rules All-3 | 35 Rules All-3 | 75 Rules All-3 [95% CI] | Primary Failure Mechanism |
@@ -72,6 +64,14 @@ Aggregating across models reveals stark differences in how long rule lists affec
 | DeepSeek V4 Pro | 100.0% | 100.0% | 100.0% | 100.0% [75.8–100.0%] | 100% canary pass; 1 minor correctness miss at 35 rules. |
 | Gemini 4 Neon | 83.3% | 75.0% | 91.7% | 75.0% [46.8–91.1%] | Slipped from plain prose into numbered lists on `pg_offset`/`webhook_dup`. |
 | Claude Fable 5.2 | 83.3% | 58.3% | 33.3% | 41.7% [19.3–68.1%] | Emitted fenced SQL blocks violating prose-only rule AND suffered early token/generation cutoffs (1–24 words). |
+
+> **Chart — Canary Compliance & Task Correctness Across Rule Budgets (n = 48/budget):** Pooled rates across 4 models showing all-3 rule compliance sliding from 91.7% (5 rules) to 79.2% (75 rules) and correctness dipping from 97.9% to 89.6%. Canary Mean %: 5 rules (~242 tok) 97.2, 15 rules (~436 tok) 93.8, 35 rules (~822 tok) 93.1, 75 rules (~1,569 tok) 91.7; All-3 Rules Pass %: 5 rules (~242 tok) 91.7, 15 rules (~436 tok) 83.3, 35 rules (~822 tok) 81.3, 75 rules (~1,569 tok) 79.2; Task Correctness %: 5 rules (~242 tok) 97.9, 15 rules (~436 tok) 93.8, 35 rules (~822 tok) 91.7, 75 rules (~1,569 tok) 89.6.
+
+Pooled 192-probe instruction budget curve: adding non-conflicting filler rules cuts all-3 pass rate from 91.7% to 79.2%.
+
+> **Chart — 75-Rule Placement Effect: Top vs. Middle vs. Bottom (n = 16/slot):** Inside 75 rules (~1,569 tokens), middle placement falls to 68.8% all-3 pass and 81.2% correctness vs. 87.5% all-3 pass and 93.8% correctness at bottom. Canary Mean %: Top (first 3 rules) 91.7, Middle (rule #37) 87.5, Bottom (last 3 rules) 95.8; All-3 Pass %: Top (first 3 rules) 81.3, Middle (rule #37) 68.8, Bottom (last 3 rules) 87.5; Task Correctness %: Top (first 3 rules) 93.8, Middle (rule #37) 81.3, Bottom (last 3 rules) 93.8.
+
+At 75 rules (~1,569 tokens), burying formatting & word bans in the middle yields 68.8% compliance vs 87.5% at the bottom.
 
 ## The fine print: real failure examples, how we tested, and scope limits.
 
@@ -105,7 +105,7 @@ if_then_decision_rules:
 anti_patterns:
   - Burying format or output-length rules inside the middle of a 75-rule file (~1.5k+ tokens), where all-3 pass rate dropped to 68.8% and task correctness dipped from 97.9% (5 rules) to 81.2%.
 recommended_prompt_recipe: |
-  [AUDIT] 
+  [AUDIT] <one-sentence core finding>
   Never output generic compliments, apologies, or exclamation marks.
   Strict limit: keep replies under 110 words in plain paragraphs.
 scope_limits: Deterministic checks on 3 canary rules across 192 single-turn engineering tasks; Claude Fable 5.2 also hit output truncations under heavy rule padding.
@@ -135,7 +135,7 @@ Place mission-critical formatting, safety, and verification gates at the very bo
 - [Prompt grammar: Prompt Syntax Wars: Rubrics vs Adjectives vs Bans](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 - [Cheat sheet: AI Custom Instructions Character & Byte Limits](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). The Instruction Budget Cliff: how many rules before your AI forgets them?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle
@@ -143,13 +143,40 @@ Huang, B. (2026). The Instruction Budget Cliff: how many rules before your AI fo
 
 ```
 @article{huang2026_ai_instruction_budget_cliff_lost_in_the_middle,
-  author  = {Huang, Bernard},
-  title   = {The Instruction Budget Cliff: how many rules before your AI forgets them?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-25},
-  url     = {https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md}
+  author    = {Huang, Bernard},
+  title     = {The Instruction Budget Cliff: how many rules before your AI forgets them?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-25},
+  url       = {https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_instruction_budget_cliff_lost_in_the_middle",
+  "type": "article-journal",
+  "title": "The Instruction Budget Cliff: how many rules before your AI forgets them?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        25
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle"
 }
 ```
 

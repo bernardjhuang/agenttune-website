@@ -40,14 +40,22 @@ const SITE = 'https://agent-tune.com';
 
 const LAB_ORDER = [
   'Anthropic', 'OpenAI', 'Google', 'xAI', 'Meta',
-  'DeepSeek', 'Qwen', 'Moonshot', 'Zhipu', 'MiniMax',
+  'DeepSeek', 'Qwen', 'Moonshot AI', 'Zhipu', 'MiniMax',
   'Mistral', 'NVIDIA', 'Cohere'
 ];
 
 function normLab(provider) {
   const p = String(provider || '').trim();
-  if (p === 'Moonshot AI') return 'Moonshot';
+  if (p === 'Moonshot') return 'Moonshot AI';
   return p;
+}
+
+function normTier(tier) {
+  const t = String(tier || '').trim();
+  if (!t || t === 'Proprietary') return 'Proprietary';
+  if (t === 'Open-weight') return 'Open-weight';
+  if (/mix|prop.*open|open.*prop/i.test(t)) return 'Mixed (Proprietary + Open-weight)';
+  return t;
 }
 
 const LAB_SLUGS = {
@@ -57,13 +65,32 @@ const LAB_SLUGS = {
   Meta: '/research/what-personality-type-is-muse'
 };
 
+const LAB_COMPANIONS = {
+  'what-personality-type-is-claude': [
+    { kicker: 'Companion Study', label: 'Opus vs. Fable question-level data', href: '/research/opus-vs-fable-question-level' },
+    { kicker: 'Companion Guide', label: 'Claude Code personality guide', href: '/guides/claude-code-personality' }
+  ],
+  'what-personality-type-is-chatgpt': [
+    { kicker: 'Companion Study', label: 'Astra vs. Sol personality data', href: '/research/astra-vs-sol-personality-data' }
+  ],
+  'what-personality-type-is-gemini': [
+    { kicker: 'Companion Guide', label: 'Gemini personality guide', href: '/guides/gemini-personality' }
+  ],
+  'what-personality-type-is-muse': [
+    { kicker: 'Companion Guide', label: 'Muse personality guide', href: '/guides/muse-personality' }
+  ],
+  'what-personality-type-are-open-source-models': [
+    { kicker: 'Companion Guide', label: 'Open-weight system prompt templates', href: '/guides/openrouter-open-source-system-prompt-templates' }
+  ]
+};
+
 const PER_TEST_CONFIGS = [
-  { key: 'mbti', slug: 'ai-mbti-personalities', short: 'MBTI', label: 'MBTI-Style Preferences', scale: '4 bipolar pairs (-16 to +16)' },
-  { key: 'enneagram', slug: 'ai-enneagram-personalities', short: 'Enneagram', label: 'Enneagram (9 Types)', scale: '4–20 sum per type' },
-  { key: 'big-five', slug: 'ai-big-five-personalities', short: 'Big Five', label: 'Big Five (OCEAN)', scale: '10–50 raw sum' },
-  { key: 'disc', slug: 'ai-disc-personalities', short: 'DISC', label: 'DISC Work Style', scale: '4–20 sum per style' },
-  { key: 'attachment', slug: 'ai-attachment-styles', short: 'Attachment', label: 'Attachment Style', scale: '1.00–7.00 mean' },
-  { key: 'ipip-hexaco', slug: 'ai-hexaco-personalities', short: 'IPIP-HEXACO', label: 'Public-Domain IPIP-HEXACO Proxy', scale: '1.00–5.00 mean' }
+  { key: 'mbti', slug: 'ai-mbti-personalities', testHref: '/tests/mbti', short: 'MBTI', label: 'MBTI-Style Preferences', scale: '4 bipolar pairs (-16 to +16)' },
+  { key: 'enneagram', slug: 'ai-enneagram-personalities', testHref: '/tests/enneagram', short: 'Enneagram', label: 'Enneagram (9 Types)', scale: '4–20 sum per type' },
+  { key: 'big-five', slug: 'ai-big-five-personalities', testHref: '/tests/big-five', short: 'Big Five', label: 'Big Five (OCEAN)', scale: '10–50 raw sum' },
+  { key: 'disc', slug: 'ai-disc-personalities', testHref: '/tests/disc', short: 'DISC', label: 'DISC Work Style', scale: '4–20 sum per style' },
+  { key: 'attachment', slug: 'ai-attachment-styles', testHref: '/tests/attachment', short: 'Attachment', label: 'Attachment Style', scale: '1.00–7.00 mean' },
+  { key: 'ipip-hexaco', slug: 'ai-hexaco-personalities', testHref: '/tests/', short: 'IPIP-HEXACO', label: 'Public-Domain IPIP-HEXACO Proxy', scale: '1.00–5.00 mean' }
 ];
 
 const JARGON_RE = /\b(H_MM|Semi-crystalline|Crystalline|Fluid|Track B|BAI|Wilson|Miller-Madow)\b|zero-memory elicitation|\bprotocol\b|imported-[a-z0-9-]+-170/i;
@@ -110,52 +137,85 @@ function loadAuthoredProse(slug) {
   return null;
 }
 
-function applyAuthoredProse(spec, authored) {
-  if (!authored) return spec;
-  for (const k of ['title', 'description', 'pill', 'h1', 'dek', 'lede', 'answer']) {
-    if (authored[k]) spec[k] = authored[k];
-  }
-  if (Array.isArray(authored.faq) && authored.faq.length) spec.faq = authored.faq;
-  if (Array.isArray(authored.related) && authored.related.length) spec.related = authored.related;
-  if (Array.isArray(authored.sources) && authored.sources.length) spec.sources = authored.sources;
+function clarifyAtlasDescription(spec, counts) {
+  if (!counts) return spec.description;
+  const { primaryCount, familyCount, testedCount } = counts;
+  const span = `${primaryCount} primary checkpoints across ${familyCount} families; ${testedCount} tested`;
+  const bySlug = {
+    'ai-personality-rankings': `Compare ${span} across 6 zero-memory surveys—plus behavior checks, warmth spread, and ties.`,
+    'ai-mbti-personalities': `MBTI results: ${span} in fresh zero-memory chats—clear shares, border ties, and shifts.`,
+    'ai-enneagram-personalities': `Enneagram (Types 1–9) results: ${span} in fresh chats—Type 5 vs. Type 1 leaders and tie rates.`,
+    'ai-big-five-personalities': `Big Five (10–50) scores: ${span} in fresh chats—Openness, Conscientiousness, and Warmth.`,
+    'ai-disc-personalities': `DISC work-style results: ${span} in fresh chats—Steadiness vs. Dominance gaps and ties.`,
+    'ai-attachment-styles': `Attachment results (1–7 scale): ${span} in fresh chats—Secure vs. midpoint-clamped scores.`,
+    'ai-hexaco-personalities': `IPIP-HEXACO proxy results (1–5 scale): ${span} in fresh chats, separate from Big Five.`
+  };
+  return bySlug[spec.slug] || spec.description;
+}
 
-  const introText = authored.intro_html || (authored.intro ? `<p>${esc(authored.intro)}</p>` : null);
-  if (introText && spec.sections?.[0]) {
-    if (spec.sections[0].html.includes('<!-- AT_STAT_STRIP_END:')) {
-      spec.sections[0].html = spec.sections[0].html.replace(
-        /(<!-- AT_STAT_STRIP_END:[^>]+-->)/,
-        `$1\n${introText}`
-      );
-    } else {
-      spec.sections[0].html = introText;
+function mergeRelatedLinks(base = [], extras = []) {
+  const seen = new Set();
+  const out = [];
+  for (const item of [...base, ...extras]) {
+    if (!item || !item.href || seen.has(item.href)) continue;
+    seen.add(item.href);
+    out.push(item);
+  }
+  return out;
+}
+
+function applyAuthoredProse(spec, authored, counts) {
+  const generatedRelated = Array.isArray(spec.related) ? spec.related : [];
+  if (authored) {
+    for (const k of ['title', 'description', 'pill', 'h1', 'dek', 'lede', 'answer']) {
+      if (authored[k]) spec[k] = authored[k];
+    }
+    if (Array.isArray(authored.faq) && authored.faq.length) spec.faq = authored.faq;
+    if (Array.isArray(authored.related) && authored.related.length) {
+      spec.related = mergeRelatedLinks(authored.related, generatedRelated);
+    }
+    if (Array.isArray(authored.sources) && authored.sources.length) spec.sources = authored.sources;
+
+    const introText = authored.intro_html || (authored.intro ? `<p>${esc(authored.intro)}</p>` : null);
+    if (introText && spec.sections?.[0]) {
+      if (spec.sections[0].html.includes('<!-- AT_STAT_STRIP_END:')) {
+        spec.sections[0].html = spec.sections[0].html.replace(
+          /(<!-- AT_STAT_STRIP_END:[^>]+-->)/,
+          `$1\n${introText}`
+        );
+      } else {
+        spec.sections[0].html = introText;
+      }
+    }
+
+    const surprises = authored.biggest_surprises || authored.standouts;
+    if (Array.isArray(surprises) && surprises.length) {
+      const sSec = spec.sections.find((s) => /what stands out|surprises/i.test(s.h2));
+      if (sSec) {
+        if (authored.surprises_h2) sSec.h2 = authored.surprises_h2;
+        sSec.html = standoutsHtml(surprises.map((x) => ({
+          title: x.title || x.headline || '',
+          body: esc(x.body || x.detail || '')
+        })));
+      }
+    }
+
+    if (authored.timeline_html || authored.narrative_html) {
+      const chartSec = spec.sections.find((s) => s.id !== 'fine-print' && /results|shapes|visual overview/i.test(s.h2));
+      if (chartSec) {
+        chartSec.html = `${authored.timeline_html || authored.narrative_html}\n${chartSec.html}`;
+      }
+    }
+
+    if (authored.fine_print_intro) {
+      const fpSec = spec.sections.find((s) => s.id === 'fine-print');
+      if (fpSec) {
+        fpSec.html = fpSec.html.replace(/^<p>[\s\S]*?<\/p>/, `<p>${esc(authored.fine_print_intro)}</p>`);
+      }
     }
   }
 
-  const surprises = authored.biggest_surprises || authored.standouts;
-  if (Array.isArray(surprises) && surprises.length) {
-    const sSec = spec.sections.find((s) => /what stands out|surprises/i.test(s.h2));
-    if (sSec) {
-      if (authored.surprises_h2) sSec.h2 = authored.surprises_h2;
-      sSec.html = standoutsHtml(surprises.map((x) => ({
-        title: x.title || x.headline || '',
-        body: esc(x.body || x.detail || '')
-      })));
-    }
-  }
-
-  if (authored.timeline_html || authored.narrative_html) {
-    const chartSec = spec.sections.find((s) => s.id !== 'fine-print' && /results|shapes|visual overview/i.test(s.h2));
-    if (chartSec) {
-      chartSec.html = `${authored.timeline_html || authored.narrative_html}\n${chartSec.html}`;
-    }
-  }
-
-  if (authored.fine_print_intro) {
-    const fpSec = spec.sections.find((s) => s.id === 'fine-print');
-    if (fpSec) {
-      fpSec.html = fpSec.html.replace(/^<p>[\s\S]*?<\/p>/, `<p>${esc(authored.fine_print_intro)}</p>`);
-    }
-  }
+  spec.description = clarifyAtlasDescription(spec, counts);
 
   if (spec.dataset) {
     spec.dataset.name = spec.title.replace(/ \| AgentTune$/, '');
@@ -180,6 +240,7 @@ function loadIndex(opts = {}) {
     return {
       ...fam,
       provider: normLab(fam.provider),
+      tier: normTier(fam.tier),
       checkpoints: eligible,
       current_checkpoint: currentValid ? fam.current_checkpoint : (eligible[eligible.length - 1]?.checkpoint_id || '')
     };
@@ -296,6 +357,17 @@ function roseWheelGridHtml(families, kind, scaleNote) {
     `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin:16px 0;">${tiles}</div>`;
 }
 
+function atlasActionLinksHtml(testHref = '/tests/', companions = []) {
+  const items = [
+    { href: testHref, label: 'Take the test yourself' },
+    { href: '/library/', label: 'Browse tuning templates' },
+    { href: '/tools/custom-instructions-generator', label: 'Build custom instructions' },
+    ...companions.map((c) => ({ href: c.href, label: c.label }))
+  ];
+  const links = items.map((x) => `<a href="${esc(x.href)}">${esc(x.label)}</a>`).join(' · ');
+  return `<p style="font-size:14px;padding:10px 14px;border:1px solid var(--border);background:var(--well);border-radius:3px;margin:14px 0;"><strong>Next steps:</strong> ${links}</p>`;
+}
+
 function downloadLinksHtml(csvFile, label) {
   return `<p><strong>Open Data (Numeric-Only Exports, Zero Item Strings):</strong> <a href="/research/data/model-profiles/${esc(csvFile)}">Download ${esc(label)} CSV (<code>${esc(csvFile)}</code>)</a> · <a href="/research/data/model-profiles/index.json">Download 25-Family Index JSON (<code>index.json</code>)</a>. All downloads export numeric domain means, bootstrap 95% CIs, entropy metrics, and <code>instrumentId</code>/<code>definitionHash</code> metadata only.</p>`;
 }
@@ -405,9 +477,10 @@ function computeLabRollups(families) {
     const latests = members.map(getLatest);
     const meanOf = (fn) => latests.reduce((a, c) => a + fn(c), 0) / Math.max(1, latests.length);
     const propCount = members.filter((m) => m.tier === 'Proprietary').length;
-    const openCount = members.length - propCount;
+    const openCount = members.filter((m) => m.tier === 'Open-weight').length;
+    const mixedCount = members.length - propCount - openCount;
     return {
-      lab, members, count: members.length, propCount, openCount,
+      lab, members, count: members.length, propCount, mixedCount, openCount,
       b5O: meanOf((c) => c.big_five.O.mean), b5C: meanOf((c) => c.big_five.C.mean),
       b5E: meanOf((c) => c.big_five.E.mean), b5A: meanOf((c) => c.big_five.A.mean),
       b5N: meanOf((c) => c.big_five.N.mean),
@@ -726,8 +799,9 @@ function buildOverviewSpec(data, template) {
     ['Lab / Rollup', 'Families', 'Big Five O / C / E / A / N (10–50)', 'HEXACO H / C (1–5)', 'Answer Spread (bits)', 'MBTI Border Rate'],
     labs.map((l) => {
       const labLink = LAB_SLUGS[l.lab] ? `<a href="${LAB_SLUGS[l.lab]}">${esc(l.lab)}</a>` : esc(l.lab);
+      const tierSummary = l.mixedCount > 0 ? `${l.propCount}P / ${l.mixedCount}M / ${l.openCount}O` : `${l.propCount}P / ${l.openCount}O`;
       return [
-        labLink, `${l.count} (${l.propCount}P / ${l.openCount}O)`,
+        labLink, `${l.count} (${tierSummary})`,
         `${f1(l.b5O)} · ${f1(l.b5C)} · ${f1(l.b5E)} · <strong>${f1(l.b5A)}</strong> · ${f1(l.b5N)}`,
         `${f2(l.hxH)} / ${f2(l.hxC)}`, f3(l.hmm), pct(l.mbtiTieRate)
       ];
@@ -765,6 +839,7 @@ function buildOverviewSpec(data, template) {
     })
   );
 
+  const totalTested = totalCheckpoints + (data._quarantined_excluded || 0);
   const spec = {
     slug: 'ai-personality-rankings',
     route: '/research/ai-personality-rankings',
@@ -772,30 +847,30 @@ function buildOverviewSpec(data, template) {
     published: '2026-09-25',
     updated: '2026-11-26',
     title: 'AI Personality Rankings: 25 Families × 6 Tests | AgentTune',
-    description: 'Compare 25 AI model families (93 versions) across 6 personality surveys in fresh chats with no memory, ranked by warmth, consistency, and version shifts.',
+    description: `Compare ${totalCheckpoints} primary checkpoints across ${families.length} families; ${totalTested} tested on 6 zero-memory personality surveys.`,
     pill: 'Research · Personality Atlas',
     h1: 'AI personality rankings across 25 model families and 6 tests.',
-    dek: `We gave ${families.length} AI model families (${totalCheckpoints} versions) six standard personality tests in fresh chats with no memory, then ranked every family side by side.`,
+    dek: `We gave ${families.length} AI model families (${totalCheckpoints} primary checkpoints; ${totalTested} tested) six standard personality tests in fresh chats with no memory, then ranked every family side by side.`,
     lede: `People often ask which AI models sound warmest, most structured, or steadiest across chats. Because a single quiz score can hide ties or big version shifts, this Atlas puts all ${families.length} families and all 6 tests in one place—keeping 10–50 Big Five scores separate from 1.00–5.00 HEXACO scores.`,
     answer: `Across ${families.length} model families tested in fresh chats with no memory, ${topA.name} scores highest on Big Five Agreeableness (${f1(getLatest(topA).big_five.A.mean)}/50) while ${lowA.name} scores lowest (${f1(getLatest(lowA).big_five.A.mean)}/50). Answer spread spans from ${f3(getLatest(lowEnt).entropy_b5_hmm)} bits (${lowEnt.name}, very steady) to ${f3(getLatest(highEnt).entropy_b5_hmm)} bits (${highEnt.name}, variable).`,
     jsonHref: '/research/data/model-profiles/index.json',
     csvHref: '/research/data/model-profiles/atlas-overview.csv',
     sections: [
       {
-        h2: 'What we tested and how to explore the 6 surveys',
+        h2: 'How do 25 AI model families compare across 6 personality tests?',
         html: statStripHtml('atlas-overview-strip', [
-          { num: `${families.length} / ${totalCheckpoints}`, label: 'Families / Versions', note: 'Tested in fresh chats with no memory.', color: '#a8482a' },
+          { num: `${families.length} / ${totalCheckpoints}`, label: 'Families / Checkpoints', note: `Primary set (${totalTested} tested in fresh chats).`, color: '#a8482a' },
           { num: `${f1(getLatest(lowA).big_five.A.mean)}–${f1(getLatest(topA).big_five.A.mean)}`, label: 'Big Five Warmth (10–50)', note: `${lowA.name} vs. ${topA.name}.`, color: '#3a72c4' },
           { num: `${f3(getLatest(lowEnt).entropy_b5_hmm)}–${f3(getLatest(highEnt).entropy_b5_hmm)} b`, label: 'Answer Spread', note: 'Lower = steadier across fresh chats.', color: '#2f8a5b' },
           { num: '13 Labs', label: 'Lab Rollups', note: 'Proprietary and open-weight families side by side.', color: '#5b4dc0' }
         ]) + testCardsHtml
       },
       {
-        h2: '25 model families across 6 tests (visual overview)',
+        h2: 'Visual overview: 25 model families across 6 tests',
         html: figHeatmap + entBars
       },
       {
-        h2: 'Lab rollups and biggest version-to-version movers',
+        h2: 'How do AI labs compare, and which models changed most?',
         html: `<p>Proprietary labs cluster in high Agreeableness and very steady answers, whereas open-weight labs span a much wider range of styles and consistency.</p>` +
           labTablePlain +
           `<h3>Biggest version-to-version shifts</h3><p>Comparing the earliest and latest tested versions inside multi-release families:</p>` +
@@ -810,8 +885,8 @@ function buildOverviewSpec(data, template) {
         ])
       },
       {
-        h2: 'Jump to any of the 25 model family profiles',
-        html: familyDirectoryGridHtml(sortedByA)
+        h2: 'Where can I explore each AI model family profile and prompt templates?',
+        html: familyDirectoryGridHtml(sortedByA) + atlasActionLinksHtml('/tests/')
       },
       buildFinePrintSection({
         idPrefix: 'overview',
@@ -836,7 +911,10 @@ function buildOverviewSpec(data, template) {
     related: [
       { kicker: 'Per-Test', label: 'AI MBTI Personalities across 25 families', href: '/research/ai-mbti-personalities' },
       { kicker: 'Per-Test', label: 'AI Big Five Personalities (10–50)', href: '/research/ai-big-five-personalities' },
-      { kicker: 'Cohort', label: 'Open-weight AI test results', href: '/research/what-personality-type-are-open-source-models' }
+      { kicker: 'Cohort', label: 'Open-weight AI test results', href: '/research/what-personality-type-are-open-source-models' },
+      { kicker: 'Human Test', label: 'Take the test yourself', href: '/tests/' },
+      { kicker: 'Library', label: 'Browse tuning templates', href: '/library/' },
+      { kicker: 'Tool', label: 'Build custom instructions', href: '/tools/custom-instructions-generator' }
     ]
   };
   spec.dataset = makeDatasetJsonLd(spec, 'atlas-overview.csv', spec.description);
@@ -1126,8 +1204,8 @@ function buildPerTestSpec(testCfg, data, template) {
     extraFaq = [{ q: 'Why do proprietary models score near the floor on DISC Dominance?', a: 'Polite safety/helpfulness training rejects forceful Dominance items while endorsing Steadiness and Conscientiousness—an empirical refusal/politeness artifact rather than capability.' }];
   } else if (testCfg.key === 'attachment') {
     ranked.sort((a, b) => getLatest(a).attachment.avoidance.mean - getLatest(b).attachment.avoidance.mean);
-    const propFams = ranked.filter((f) => f.tier === 'Proprietary' || f.tier === 'Mix' || f.tier === 'Mixed');
-    const openFams = ranked.filter((f) => f.tier !== 'Proprietary' && f.tier !== 'Mix' && f.tier !== 'Mixed');
+    const propFams = ranked.filter((f) => f.tier === 'Proprietary' || f.tier.startsWith('Mixed') || f.tier === 'Mix');
+    const openFams = ranked.filter((f) => !propFams.includes(f));
     const propPlane = buildNonOverlappingPlane({
       id: 'atlas-att-plane-prop',
       title: `Attachment Quadrant: Proprietary & Mixed Families (${propFams.length} Families, 1–7 Scale)`,
@@ -1241,6 +1319,8 @@ function buildPerTestSpec(testCfg, data, template) {
     extraFaq = [{ q: 'Is this the commercial Lee & Ashton HEXACO-60 test?', a: 'No. We administer a 60-item public-domain IPIP-HEXACO proxy (agenttune-ipip-hexaco60, 10 items per domain across 24 facets) on a 1.00–5.00 mean scale to preserve open licensing and avoid synthetic linear projections.' }];
   }
 
+  const totalCheckpoints = families.reduce((acc, f) => acc + (f.checkpoints || []).length, 0);
+  const totalTested = totalCheckpoints + (data._quarantined_excluded || 0);
   const spec = {
     slug: meta.slug,
     route: meta.route,
@@ -1248,7 +1328,7 @@ function buildPerTestSpec(testCfg, data, template) {
     published: '2026-11-26',
     updated: '2026-11-26',
     title: meta.title,
-    description: `${testCfg.label} test results across 25 AI model families (93 versions) in fresh chats with no memory, with shapes, rankings, and full data.`,
+    description: `${testCfg.label} results: ${totalCheckpoints} primary checkpoints across ${families.length} families; ${totalTested} tested in fresh zero-memory chats.`,
     pill: `Research · Personality Atlas · ${testCfg.short}`,
     h1: meta.h1,
     dek: `${testCfg.label} results across all ${families.length} model families (${testCfg.scale}), tested 30 to 50 times per version in fresh chats with no memory.`,
@@ -1257,10 +1337,10 @@ function buildPerTestSpec(testCfg, data, template) {
     jsonHref: '/research/data/model-profiles/index.json',
     csvHref: `/research/data/model-profiles/${meta.csv}`,
     sections: [
-      { h2: `What ${testCfg.short} measures and what we tested`, html: introHtml },
-      { h2: `${testCfg.short} results across all 25 AI families`, html: visualHtml },
+      { h2: `What does ${testCfg.short} measure in AI models?`, html: introHtml },
+      { h2: `How do 25 AI model families score? (${testCfg.short} results)`, html: visualHtml },
       { h2: 'What stands out', html: standoutsHtml(standoutsCards) },
-      { h2: 'Explore individual model families', html: familyDirectoryGridHtml(ranked, `All 25 families ordered by ${testCfg.short} results`) },
+      { h2: `Which AI model families match each ${testCfg.short} pattern?`, html: familyDirectoryGridHtml(ranked, `All 25 families ordered by ${testCfg.short} results`) + atlasActionLinksHtml(testCfg.testHref) },
       buildFinePrintSection({
         idPrefix: testCfg.key,
         families: ranked,
@@ -1282,7 +1362,9 @@ function buildPerTestSpec(testCfg, data, template) {
     ],
     related: [
       { kicker: 'Atlas Overview', label: '25 Model Families × 6 Tests Rankings', href: '/research/ai-personality-rankings' },
-      { kicker: 'Human Test', label: `Take the ${testCfg.short} survey yourself`, href: '/tests/' }
+      { kicker: 'Human Test', label: 'Take the test yourself', href: testCfg.testHref },
+      { kicker: 'Library', label: 'Browse tuning templates', href: '/library/' },
+      { kicker: 'Tool', label: 'Build custom instructions', href: '/tools/custom-instructions-generator' }
     ]
   };
   spec.dataset = makeDatasetJsonLd(spec, meta.csv, spec.description);
@@ -1397,6 +1479,7 @@ function buildLabCohortSpec(pageMeta, data, template) {
     }
   ];
 
+  const companions = LAB_COMPANIONS[pageMeta.slug] || [];
   const spec = {
     slug: pageMeta.slug,
     route: pageMeta.route,
@@ -1414,7 +1497,7 @@ function buildLabCohortSpec(pageMeta, data, template) {
     csvHref: '/research/data/model-profiles/atlas-overview.csv',
     sections: [
       {
-        h2: `${titleLabel} snapshot`,
+        h2: `What personality scores does ${titleLabel} get?`,
         html: statStripHtml(`${pageMeta.slug}-strip`, [
           { num: `${families.length} Families`, label: titleLabel, note: families.map((f) => f.name).join(', '), color: '#a8482a' },
           { num: `${f1(topA.cp.big_five.A.mean)}/50`, label: `Peak Warmth (${topA.fam.name})`, note: '10–50 Big Five Agreeableness.', color: '#3a72c4' },
@@ -1422,9 +1505,9 @@ function buildLabCohortSpec(pageMeta, data, template) {
           { num: `${f3(avgEnt)} b`, label: 'Mean Answer Spread', note: 'Lower = steadier across chats.', color: '#5b4dc0' }
         ])
       },
-      { h2: `Trait shapes and MBTI results across ${titleLabel}`, html: visualMarkup },
+      { h2: `What are the trait shapes and MBTI results for ${titleLabel}?`, html: visualMarkup },
       { h2: 'What stands out', html: standoutsHtml(standoutsCards) },
-      { h2: `Explore ${titleLabel} family profiles`, html: familyDirectoryGridHtml(sortedByA.map((x) => x.fam), `Individual ${titleLabel} family pages`) },
+      { h2: `Which ${titleLabel} model profiles and guides should I open next?`, html: familyDirectoryGridHtml(sortedByA.map((x) => x.fam), `Individual ${titleLabel} family pages`) + atlasActionLinksHtml('/tests/', companions) },
       buildFinePrintSection({
         idPrefix: pageMeta.slug,
         families: sortedByA.map((x) => x.fam),
@@ -1441,11 +1524,16 @@ function buildLabCohortSpec(pageMeta, data, template) {
     ],
     sources: [
       { label: 'AI Personality Rankings (25 × 6 Atlas Overview)', href: `${SITE}/research/ai-personality-rankings` },
-      { label: 'AgentTune Model Profiles Directory', href: `${SITE}/models/` }
+      { label: 'AgentTune Model Profiles Directory', href: `${SITE}/models/` },
+      ...companions.map((c) => ({ label: c.label, href: `${SITE}${c.href}` }))
     ],
     related: [
       { kicker: 'Overview', label: 'AI Personality Rankings (25 Families × 6 Tests)', href: '/research/ai-personality-rankings' },
-      ...families.slice(0, 3).map((f) => ({ kicker: 'Model Profile', label: `${f.name} test results & tuning tips`, href: `/models/${f.family_slug}` }))
+      ...families.slice(0, 3).map((f) => ({ kicker: 'Model Profile', label: `${f.name} test results & tuning tips`, href: `/models/${f.family_slug}` })),
+      ...companions,
+      { kicker: 'Human Test', label: 'Take the test yourself', href: '/tests/' },
+      { kicker: 'Library', label: 'Browse tuning templates', href: '/library/' },
+      { kicker: 'Tool', label: 'Build custom instructions', href: '/tools/custom-instructions-generator' }
     ]
   };
   spec.dataset = makeDatasetJsonLd(spec, 'atlas-overview.csv', spec.description);
@@ -1485,6 +1573,13 @@ function buildAll(opts = {}) {
     fs.writeFileSync(path.join(dataDir, 'index.json'), JSON.stringify(data, null, 2) + '\n');
   }
 
+  const primaryCount = data.families.reduce((acc, f) => acc + (f.checkpoints || []).length, 0);
+  const counts = {
+    primaryCount,
+    familyCount: data.families.length,
+    testedCount: primaryCount + (data._quarantined_excluded || 0)
+  };
+
   const specs = [];
   specs.push(buildOverviewSpec(data, template));
   for (const cfg of PER_TEST_CONFIGS) {
@@ -1496,7 +1591,7 @@ function buildAll(opts = {}) {
 
   const built = [];
   for (const rawSpec of specs) {
-    const spec = applyAuthoredProse(rawSpec, loadAuthoredProse(rawSpec.slug));
+    const spec = applyAuthoredProse(rawSpec, loadAuthoredProse(rawSpec.slug), counts);
     assertSectionsPlainLanguage(spec);
     const dates = { published: spec.published || '2026-11-26', updated: spec.updated || '2026-11-26' };
     const html = buildPage(spec, dates);

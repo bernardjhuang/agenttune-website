@@ -3,7 +3,7 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Research · descriptive reanalysis
 
-# Does a stable result mean a stable AI personality?
+# AI personality repeatability: does a stable label mean stable answers?
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-repeatability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
@@ -74,6 +74,16 @@ GPT-6 Sol’s Neuroticism score averaged 20.05 out of 50 with a standard deviati
 
 Survey repeatability doesn't prove a model will follow your instructions on real tasks. In our November 2026 10,000-sheet expansion ([Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)), per-item Shannon entropy spanned from `0.054 bits` on Claude Fable 5.2 (only `2/100` unique DISC vectors and `8/100` unique Big Five vectors) up to `1.499 bits` on DeepSeek V4 Pro, while disproving late-survey fatigue collapse (`0.519 → 0.585 bits` across items 1–50). To test real consistency, run the same task prompt 5–10 times in fresh chats and check observable rules: Did it put the conclusion first? Did it challenge a flawed assumption? Did it stay under your word limit? [Download the 20-row repeatability CSV](https://agent-tune.com/research/data/ai-repeatability.csv) to inspect all counts from this study.
 
+## Questions people ask.
+
+### Does a 100% repeatable personality label mean an AI gives identical quiz answers every run?
+
+No. Across 400 fresh Attachment runs, all four models tested as Secure 100% of the time, yet they produced 79 to 100 distinct 36-item answer sheets out of 100 runs because any anxiety and avoidance averages below 4.00 fall into the same Secure quadrant.
+
+### Which questionnaire showed the highest vs. lowest answer-sheet repeatability?
+
+The 16-item DISC test had the fewest unique answer sheets (Claude Opus 5.5 produced only 7 distinct sheets across 100 runs, repeating its top sheet 60 times), whereas the 50-item Big Five and 36-item Attachment tests produced 79 to 100 unique answer sheets per 100 runs.
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -93,26 +103,53 @@ Survey repeatability doesn't prove a model will follow your instructions on real
 - [Continue reading: A controlled prompt-comparison protocol](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 - [Continue reading: Where Claude’s answers differ](https://agent-tune.com/research/opus-vs-fable-question-level)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
-Huang, B. (2026). Does a stable result mean a stable AI personality?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-repeatability
+Huang, B. (2026). AI personality repeatability: does a stable label mean stable answers?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-repeatability
 ```
 
 ```
 @article{huang2026_ai_personality_repeatability,
-  author  = {Huang, Bernard},
-  title   = {Does a stable result mean a stable AI personality?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/ai-personality-repeatability},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-repeatability.md}
+  author    = {Huang, Bernard},
+  title     = {AI personality repeatability: does a stable label mean stable answers?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/ai-personality-repeatability},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-repeatability.md}
 }
 ```
 
 ```
-> **Does a stable result mean a stable AI personality?** (Bernard Huang, November 17, 2026): All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
+{
+  "id": "huang2026_ai_personality_repeatability",
+  "type": "article-journal",
+  "title": "AI personality repeatability: does a stable label mean stable answers?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-personality-repeatability"
+}
+```
+
+```
+> **AI personality repeatability: does a stable label mean stable answers?** (Bernard Huang, November 17, 2026): All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.
 > Source: [https://agent-tune.com/research/ai-personality-repeatability](https://agent-tune.com/research/ai-personality-repeatability) · [Markdown mirror](https://agent-tune.com/research/ai-personality-repeatability.md)
 ```
 

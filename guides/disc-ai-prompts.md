@@ -20,7 +20,7 @@ By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)]
 
 ## 1. Dominance (D): bottom line first, zero hedging.
 
-Because untuned models score between 4.0 and 5.4 out of 20 on Dominance on our 16-question [DISC work-style survey (ODAT)](https://agent-tune.com/tests/disc), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [/library/disc/d-dominance](https://agent-tune.com/library/disc/d-dominance).
+Because untuned models score between 4.0 and 5.4 out of 20 on Dominance on our 16-question [DISC work-style survey (ODAT)](https://agent-tune.com/tests/disc), the Dominance tuning makes the biggest immediate change to how an assistant sounds. Full profile: [DISC Dominance (D) tuning profile](https://agent-tune.com/library/disc/d-dominance).
 
 ```markdown
 ## Communication preferences — DISC Dominance (D)
@@ -34,7 +34,7 @@ Because untuned models score between 4.0 and 5.4 out of 20 on Dominance on our 1
 
 ## 2. Influence (I): high-momentum brainstorming and narrative clarity.
 
-Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: [/library/disc/i-influence](https://agent-tune.com/library/disc/i-influence).
+Use the Influence block when you want an energetic collaborator that helps you pitch, frame, and explore angles before narrowing down. Full profile: [DISC Influence (I) tuning profile](https://agent-tune.com/library/disc/i-influence).
 
 ```markdown
 ## Communication preferences — DISC Influence (I)
@@ -48,7 +48,7 @@ Use the Influence block when you want an energetic collaborator that helps you p
 
 ## 3. Steadiness (S): calm, predictable, step-by-step execution.
 
-Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: [/library/disc/s-steadiness](https://agent-tune.com/library/disc/s-steadiness).
+Use the Steadiness block when you want the assistant to preserve what already works, move one verified step at a time, and never surprise you with unrequested rewrites. Full profile: [DISC Steadiness (S) tuning profile](https://agent-tune.com/library/disc/s-steadiness).
 
 ```markdown
 ## Communication preferences — DISC Steadiness (S)
@@ -61,7 +61,7 @@ Use the Steadiness block when you want the assistant to preserve what already wo
 
 ## 4. Conscientiousness (C): precision, edge cases, and primary evidence.
 
-Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: [/library/disc/c-conscientiousness](https://agent-tune.com/library/disc/c-conscientiousness).
+Use the Conscientiousness block for engineering, quantitative research, and auditing where accuracy and explicit assumptions matter more than speed. Full profile: [DISC Conscientiousness (C) tuning profile](https://agent-tune.com/library/disc/c-conscientiousness).
 
 ```markdown
 ## Communication preferences — DISC Conscientiousness (C)

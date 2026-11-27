@@ -82,6 +82,11 @@
       "kicker": "Comparison",
       "label": "ChatGPT vs Claude personality benchmarks",
       "href": "/guides/chatgpt-vs-claude-personality"
+    },
+    {
+      "kicker": "Guide & Builder",
+      "label": "NotebookLM custom instructions & Audio Overview prompts",
+      "href": "/guides/notebooklm-custom-instructions-audio-overview"
     }
   ]
 }

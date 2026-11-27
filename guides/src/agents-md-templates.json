@@ -79,6 +79,11 @@
       "kicker": "Generator",
       "label": "Interactive CLAUDE.md & Coding Rules Builder",
       "href": "/tools/claude-md-generator"
+    },
+    {
+      "kicker": "Guide & Builder",
+      "label": "OpenClaw SOUL.md, IDENTITY.md & USER.md 3-file builder",
+      "href": "/guides/openclaw-soul-md-user-md-identity-md"
     }
   ],
   "changelog": [

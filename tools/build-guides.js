@@ -126,7 +126,17 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const citeKey = `huang${year}_${spec.slug.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "")}`;
   const summaryLine = stripTags(spec.answer || spec.lede || spec.description);
   const apa = `Huang, B. (${year}). ${headline}. AgentTune Empirical AI Psychology Monographs. ${url}`;
-  const bibtex = `@article{${citeKey},\n  author  = {Huang, Bernard},\n  title   = {${headline}},\n  journal = {AgentTune Empirical AI Psychology Monographs},\n  year    = {${year}},\n  date    = {${dates.updated}},\n  url     = {${url}},\n  note    = {Open dataset and Markdown mirror at ${url}.md}\n}`;
+  const bibtex = `@article{${citeKey},\n  author    = {Huang, Bernard},\n  title     = {${headline}},\n  journal   = {AgentTune Empirical AI Psychology Monographs},\n  publisher = {AgentTune AI Psychology Press},\n  year      = {${year}},\n  date      = {${dates.updated}},\n  url       = {${url}},\n  note      = {Open dataset and Markdown mirror at ${url}.md}\n}`;
+  const csl = JSON.stringify({
+    id: citeKey,
+    type: "article-journal",
+    title: headline,
+    author: [{ family: "Huang", given: "Bernard" }],
+    "container-title": "AgentTune Empirical AI Psychology Monographs",
+    publisher: "AgentTune AI Psychology Press",
+    issued: { "date-parts": [[Number(year), Number(dates.updated.slice(5, 7)), Number(dates.updated.slice(8, 10))]] },
+    URL: url
+  }, null, 2);
   const mdBrief = `> **${headline}** (Bernard Huang, ${longDate(dates.updated)}): ${summaryLine}\n> Source: [${url}](${url}) · [Markdown mirror](${url}.md)`;
 
   const idx = RESEARCH_SERIES.findIndex((item) => item.slug === spec.slug);
@@ -137,15 +147,17 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const citeHtml = `
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">${escHtml(apa)}</pre>
         <pre class="cite-block" data-cite-text="bibtex">${escHtml(bibtex)}</pre>
+        <pre class="cite-block" data-cite-text="csl">${escHtml(csl)}</pre>
         <pre class="cite-block" data-cite-text="md">${escHtml(mdBrief)}</pre>
       </details>`;
 
@@ -167,19 +179,31 @@ function buildModelCiteDrawer(spec, dates, url) {
   const apa = `Huang, B. (${year}). ${headline}. AgentTune Model Personality Profiles. ${url}`;
   const bibtex = `@misc{${citeKey},\n  author  = {Huang, Bernard},\n  title   = {${headline}},\n  publisher = {AgentTune AI Psychology Press},\n  year    = {${year}},\n  date    = {${dates.updated}},\n  url     = {${url}},\n  note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at ${url}.md}\n}`;
   const mdBrief = `> **${headline}** (Bernard Huang, ${longDate(dates.updated)}): ${summaryLine}\n> Source: [${url}](${url}) · [Markdown mirror](${url}.md)`;
+  const csl = JSON.stringify({
+    id: citeKey,
+    type: "dataset",
+    title: headline,
+    author: [{ family: "Huang", given: "Bernard" }],
+    "container-title": "AgentTune Model Personality Profiles",
+    publisher: "AgentTune AI Psychology Press",
+    issued: { "date-parts": [[Number(year), Number(dates.updated.slice(5, 7)), Number(dates.updated.slice(8, 10))]] },
+    URL: url
+  }, null, 2);
 
   return `
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this model profile (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">${escHtml(apa)}</pre>
         <pre class="cite-block" data-cite-text="bibtex">${escHtml(bibtex)}</pre>
+        <pre class="cite-block" data-cite-text="csl">${escHtml(csl)}</pre>
         <pre class="cite-block" data-cite-text="md">${escHtml(mdBrief)}</pre>
       </details>
       <nav class="series-trail" aria-label="Model profiles navigation">
@@ -291,6 +315,46 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   const tldrLabel = models ? "In short:" : research ? "Summary:" : "Quick answer:";
   const dekText = models ? (spec.goal_intro || spec.dek || "") : (spec.dek || "");
 
+  const dataUrls = new Set();
+  if (spec.jsonHref) dataUrls.add(spec.jsonHref);
+  if (spec.csvHref) dataUrls.add(spec.csvHref);
+  for (const s of (spec.sources || [])) {
+    const m = String(s && s.href || "").match(/(?:https:\/\/agent-tune\.com)?(\/research\/data\/[^"'\s)]+\.(?:json|csv))/i);
+    if (m) dataUrls.add(m[1]);
+  }
+  for (const sec of (spec.sections || [])) {
+    for (const m of String(sec && sec.html || "").matchAll(/\/research\/data\/[^"'\s<)]+\.(?:json|csv)/gi)) dataUrls.add(m[0]);
+  }
+  const autoDataset = research && !spec.dataset && dataUrls.size ? {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": `${url}#dataset`,
+    name: `${stripTags(spec.h1).replace(/\.$/, "")} — Dataset`,
+    description: spec.description,
+    url,
+    creator: { "@type": "Person", name: "Bernard Huang", url: "https://github.com/bernardjhuang" },
+    publisher: { "@type": "Organization", name: "AgentTune", url: SITE },
+    license: "https://opensource.org/license/mit",
+    isAccessibleForFree: true,
+    datePublished: dates.published,
+    dateModified: dates.updated,
+    measurementTechnique: "Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation",
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Big Five (IPIP-50)", unitText: "10-50 sum" },
+      { "@type": "PropertyValue", name: "MBTI (OEJTS)", unitText: "axis balance & tie rate" },
+      { "@type": "PropertyValue", name: "Behavioral Pass Rate / Compliance", unitText: "percentage or count" }
+    ],
+    distribution: [
+      ...[...dataUrls].map((p) => ({
+        "@type": "DataDownload",
+        contentUrl: p.startsWith("http") ? p : `${SITE}${p}`,
+        encodingFormat: p.endsWith(".csv") ? "text/csv" : "application/json"
+      })),
+      { "@type": "DataDownload", contentUrl: `${url}.md`, encodingFormat: "text/markdown" }
+    ]
+  } : null;
+  const datasetSchema = spec.dataset || autoDataset;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -330,7 +394,7 @@ ${spec.related.map((r) => `          <a href="${escAttr(r.href)}"><span class="g
   <script type="application/ld+json">${jsonInline(articleSchema)}</script>
   <script type="application/ld+json">${jsonInline(breadcrumbSchema)}</script>${faqSchema ? `\n  <script type="application/ld+json">${jsonInline(faqSchema)}</script>` : ""}
 
-${spec.dataset ? `<script type="application/ld+json">${jsonInline(spec.dataset)}</script>` : ""}
+${datasetSchema ? `<script type="application/ld+json">${jsonInline(datasetSchema)}</script>` : ""}
   <script defer src="/consent.js" fetchpriority="low"></script>
 
 ${FONT_BLOCK}

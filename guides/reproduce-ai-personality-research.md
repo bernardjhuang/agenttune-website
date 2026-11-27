@@ -63,6 +63,20 @@ Our November 2026 Wave 1–3 archive publishes every raw response vector, orthog
 
 To recompute all Jacobi eigenvalues (`PC1 = 63.58%`), Campbell–Fiske MTMM correlations, Shannon entropy bits, and 50-item embodiment statistics locally with zero API calls, run `python3 tools/analyze-psychometric-forensics.py` in the repository. To test whether personality instructions improve real task replies, see our [540-reply behavioral study & 20-task comparison kit](https://agent-tune.com/research/does-personality-tuning-change-ai-answers).
 
+## Questions people ask.
+
+### Do I need an OpenRouter or OpenAI API key to reproduce these results?
+
+No. All 10,000 November 2026 response sheets and 2,003 September 2026 response vectors are frozen in the repository under /research/data/, so running the Node.js and Python scoring scripts costs $0.00 and makes zero network calls.
+
+### Which script recomputes the Big One PCA (63.58% PC1) and Shannon item entropy?
+
+Run python3 tools/analyze-psychometric-forensics.py from the repository root to deterministically recompute the 10,000-sheet Jacobi PCA eigenvalues, Campbell-Fiske MTMM correlation matrix, Miller-Madow / Shannon item entropy (0.054 to 1.499 bits), and 50-item embodiment statistics.
+
+### How are tied scores handled when re-scoring the frozen response vectors?
+
+Both september-2026-score.cjs and our browser scorer (resources/scoring/score.js) report legacy tie-broken counts alongside tie-preserving results (marking tied MBTI axes as X and listing all tied top DISC and Enneagram types openly).
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -81,3 +95,4 @@ To recompute all Jacobi eigenvalues (`PC1 = 63.58%`), Campbell–Fiske MTMM corr
 - [Wave 3 Longitudinal: Historical Evolution of AI Personalities (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
 - [Continue reading: Read the September five-model study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Continue reading: Crystalline vs. Fluid AI Minds: 27.7× Entropy Spread](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
+- [Reference: AI personality glossary: 32 terms explained](https://agent-tune.com/guides/ai-personality-glossary)

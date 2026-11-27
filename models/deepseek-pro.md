@@ -11,6 +11,16 @@ We gave five DeepSeek Pro and R1 releases (V3 0324, R1 0528, V3.2, V4 Pro, and V
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. DeepSeek V4 Pro 0813 varies widely from run to run and breaks the usual AI mold: it tested most often as clear INTP (32%), alongside 16% INTJ, 12% ISTJ, 10% other clear types, and 30% axis ties, with notably lower Agreeableness (35.3/50) than proprietary assistants.
 
+```yaml
+family: DeepSeek Pro
+checkpoint: deepseek/deepseek-v4-pro-0813
+runs: 50
+big_five_10_50: { O: 42.3, C: 45.0, E: 19.5, A: 35.3, N: 20.0 }
+ipip_hexaco_1_5: { H: 4.58, E: 2.28, X: 2.58, A: 4.13, C: 4.48, O: 3.86 }
+mbti_mode: INTP
+attachment_1_7: { anxiety: 2.11, avoidance: 3.66, style: Secure }
+```
+
 ## DeepSeek V4 Pro 0813 at a glance
 
 Results below come from **50** fresh-chat runs of **DeepSeek V4 Pro 0813** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across DeepSeek Pro versions. Hollow points mark earlier 
 
 Big Five trait shifts across DeepSeek Pro versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Much lower Agreeableness (35.3) and Extraversion (19.5) than proprietary peers
 
@@ -210,15 +220,19 @@ Practical rules tailored to **DeepSeek Pro**. Keep system instructions short (5�
 - Pair any warmth or politeness request with an explicit truth-first anchor and structural anti-slop bans (no em-dashes, no 'Great question!' openers) to prevent its 70% default AI-cadence tells.
 - In the DeepSeek API, place your XML block in the system message; in DeepSeek web or mobile chat, paste it as your opening pinned turn in a fresh thread.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-pro) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-pro) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How DeepSeek Pro compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How DeepSeek Pro compares across 25 AI families
 
 DeepSeek V4 Pro 0813 has the widest run-to-run answer spread and lowest Agreeableness among completed peers, scoring -8.2 to -9.7 lower on Agreeableness than Muse Spark, GPT Luna, and Kimi K3.1 Pro, and -4.6 to -12.1 lower on Extraversion.
 
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
+
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -0.5 | -4.0 | +8.9 | +8.2 | +3.8 | -0.18 | -0.625 b | Muse Spark Open sits closer in Neuroticism (+3.8) while scoring +8.9 higher on Extraversion, +8.2 higher on Agreeableness, and showing much tighter run-to-run consistency. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | -0.5 | -4.0 | +8.9 | +8.2 | +3.8 | -0.18 | -0.625 b | Muse Spark Open sits closer in Neuroticism (+3.8) while scoring +8.9 higher on Extraversion, +8.2 higher on Agreeableness, and showing much tighter run-to-run consistency. |
 | [Kimi](https://agent-tune.com/models/kimi) (Open-weight) | +1.8 | +0.0 | +4.6 | +9.4 | -6.4 | +0.28 | -0.654 b | Kimi K3.1 Pro matches DeepSeek V4 Pro 0813 on Conscientiousness (45.1 vs 45.0) while scoring +9.4 higher on Agreeableness, -6.4 lower on Neuroticism, and showing tighter consistency. |
 | [Claude Haiku](https://agent-tune.com/models/claude-haiku) (Proprietary) | -5.1 | -8.6 | +12.1 | +2.8 | +5.5 | -0.68 | -0.403 b | Claude Haiku 5.5 also shows wide run-to-run answer spread while scoring +12.1 higher on Extraversion, -8.6 lower on Conscientiousness, and -0.68 lower on Honesty-Humility. |
 
@@ -404,7 +418,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -536,7 +550,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: DeepSeek XML system prompt templates](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions)
 - [Tool: Customize DeepSeek instructions](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-pro&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). DeepSeek Pro personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/deepseek-pro
@@ -551,6 +565,32 @@ Huang, B. (2026). DeepSeek Pro personality: test results and how they've changed
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/deepseek-pro},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/deepseek-pro.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_deepseek_pro",
+  "type": "dataset",
+  "title": "DeepSeek Pro personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/deepseek-pro"
 }
 ```
 

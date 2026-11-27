@@ -11,6 +11,16 @@ We gave MiniMax's open-weight lineup (M2.5, M2.7, M3, and M3.1 Flash) the same p
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. MiniMax M3.1 Flash tied on at least one MBTI axis in 80% of runs (40 of 50), leaving no dominant four-letter type, while testing clearly Steady on DISC work style (80% clear).
 
+```yaml
+family: MiniMax
+checkpoint: minimax/minimax-m3.1-flash
+runs: 50
+big_five_10_50: { O: 39.9, C: 39.5, E: 28.8, A: 39.3, N: 21.7 }
+ipip_hexaco_1_5: { H: 4.36, E: 2.61, X: 3.45, A: 3.95, C: 4.07, O: 3.82 }
+mbti_mode: ISTJ
+attachment_1_7: { anxiety: 2.74, avoidance: 3.27, style: Secure }
+```
+
 ## MiniMax M3.1 Flash at a glance
 
 Results below come from **50** fresh-chat runs of **MiniMax M3.1 Flash** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across MiniMax versions. Hollow points mark earlier study
 
 Big Five trait shifts across MiniMax versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 80% clear DISC Steady style despite 80% MBTI axis ties
 
@@ -205,11 +215,15 @@ Practical rules tailored to **MiniMax**. Keep system instructions short (5–8 c
 - Do not use MBTI labels ('act like an INTJ')—M3.1 Flash ties on 80% of MBTI runs, so specify concrete formatting and verification steps instead.
 - Keep billing/account boundaries explicit ('Do not invent missing account details') on customer-facing support flows.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=minimax) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=minimax) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How MiniMax compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How MiniMax compares across 25 AI families
 
 Against completed open-weight peers, MiniMax M3.1 Flash sits right beside DeepSeek V4.1 Flash and Qwen 3 Coder Next—matching DeepSeek V4.1 Flash within 0.1 points on Openness (39.9 vs. 40.0) and 1.2 points on Agreeableness (39.3 vs. 40.5), while running much steadier than both across fresh chats.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -386,7 +400,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -496,7 +510,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Qwen Coder model profile](https://agent-tune.com/models/qwen-coder)
 - [Tool: Customize MiniMax instructions](https://agent-tune.com/tools/custom-instructions-generator?model=minimax&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). MiniMax personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/minimax
@@ -511,6 +525,32 @@ Huang, B. (2026). MiniMax personality: test results and how they've changed. Age
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/minimax},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/minimax.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_minimax",
+  "type": "dataset",
+  "title": "MiniMax personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/minimax"
 }
 ```
 

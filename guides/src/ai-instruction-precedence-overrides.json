@@ -95,6 +95,16 @@
       "kicker": "Guide",
       "label": "Meta Muse Memory.md, privacy, and how to reset safely",
       "href": "/guides/muse-memory-md-privacy-reset"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Notion AI custom instructions & workspace agent personas",
+      "href": "/guides/notion-ai-custom-instructions-agent-persona"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Microsoft Copilot custom instructions & Memory settings",
+      "href": "/guides/microsoft-copilot-custom-instructions-memory"
     }
   ],
   "promptModel": "any",

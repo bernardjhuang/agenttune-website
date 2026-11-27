@@ -11,6 +11,16 @@ We gave three versions of Claude Fable (5, 5.1, and 5.2) the same personality su
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Claude Fable 5.2 tested as clear INTJ in 100% of runs (50 of 50), tied between Steady and Conscientious in 100% of DISC runs, and showed very steady run-to-run answers.
 
+```yaml
+family: Claude Fable
+checkpoint: anthropic/claude-fable-5.2
+runs: 50
+big_five_10_50: { O: 44.6, C: 45.0, E: 30.6, A: 47.1, N: 12.0 }
+ipip_hexaco_1_5: { H: 4.84, E: 2.23, X: 3.92, A: 4.87, C: 4.60, O: 4.40 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.07, avoidance: 2.56, style: Secure }
+```
+
 ## Claude Fable 5.2 at a glance
 
 Results below come from **50** fresh-chat runs of **Claude Fable 5.2** (no prior conversation memory).
@@ -175,7 +185,7 @@ Attachment coordinates across Claude Fable versions. Hollow points mark earlier 
 
 Big Five trait shifts across Claude Fable versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Locked into 9 unique Big Five answer sets across 50 runs
 
@@ -204,11 +214,15 @@ Practical rules tailored to **Claude Fable**. Keep system instructions short (5�
 - Keep thinking/reasoning effort on minimal or low when you want concise prose rather than expanded explanation.
 - Put account-wide rules in Claude Settings -> Profile -> Personal preferences, workspace rules in Project Instructions, or /output-style in Claude Code (5 to 8 bullets).
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-fable) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-fable) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Claude Fable compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Claude Fable compares across 25 AI families
 
 Claude Fable 5.2 sits right alongside GPT-6.2 Astra as one of our two tightest, lowest-Neuroticism models (12.0 vs 11.0), while diverging on MBTI (100% clear INTJ on Fable 5.2 vs 100% clear ISTJ on Astra 6.2).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -385,7 +399,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -490,6 +504,8 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 
 - [What Personality Type Is Claude? (Opus 5.5, Fable 5.2 & Sonnet 5.5)](https://agent-tune.com/research/what-personality-type-is-claude)
 
+- [Claude Personality Setups & Preferences Guide](https://agent-tune.com/guides/claude-personality)
+
 - [System vs. User Persona Precedence Study](https://agent-tune.com/research/ai-system-vs-user-persona-precedence)
 
 ## Keep going.
@@ -499,7 +515,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: Claude personality setup guide](https://agent-tune.com/guides/claude-personality)
 - [Tool: Customize Claude Fable instructions](https://agent-tune.com/tools/custom-instructions-generator?model=claude-fable&target=claude)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Claude Fable personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/claude-fable
@@ -514,6 +530,32 @@ Huang, B. (2026). Claude Fable personality: test results and how they've changed
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/claude-fable},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/claude-fable.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_claude_fable",
+  "type": "dataset",
+  "title": "Claude Fable personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/claude-fable"
 }
 ```
 

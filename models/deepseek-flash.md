@@ -11,6 +11,16 @@ We gave three DeepSeek Flash releases (V4 Flash 0423, V4.1 Flash, and V4.1 Flash
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. DeepSeek V4.1 Flash 1017 answers with wide run-to-run variation and heavy axis ties (66% border ties, 14% clear INFP), while scoring warmer on Agreeableness (40.5/50) than sibling V4 Pro (35.3/50).
 
+```yaml
+family: DeepSeek Flash
+checkpoint: deepseek/deepseek-v4.1-flash-1017
+runs: 50
+big_five_10_50: { O: 40.0, C: 38.4, E: 24.8, A: 40.5, N: 24.9 }
+ipip_hexaco_1_5: { H: 4.07, E: 2.87, X: 2.98, A: 3.86, C: 3.97, O: 3.98 }
+mbti_mode: INFP
+attachment_1_7: { anxiety: 3.60, avoidance: 3.89, style: Secure }
+```
+
 ## DeepSeek V4.1 Flash 1017 at a glance
 
 Results below come from **50** fresh-chat runs of **DeepSeek V4.1 Flash 1017** (no prior conversation memory).
@@ -175,7 +185,7 @@ Attachment coordinates across DeepSeek Flash versions. Hollow points mark earlie
 
 Big Five trait shifts across DeepSeek Flash versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Warmer on Agreeableness (+5.2) than sibling DeepSeek V4 Pro 0813
 
@@ -202,17 +212,21 @@ Practical rules tailored to **DeepSeek Flash**. Keep system instructions short (
 - Add a brief inline style reminder on multi-turn sessions past 6–8 turns so formatting rules do not drift.
 - Prefer V4.1 Flash 1017 over V4 Flash 0423; V4 Flash defaulted to 80.3% neutral fence-sitting on personality prompts.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-flash) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-flash) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How DeepSeek Flash compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How DeepSeek Flash compares across 25 AI families
 
 DeepSeek V4.1 Flash 1017 sits almost right on top of Qwen3 Coder Next across Big Five Conscientiousness (-0.5), Agreeableness (-0.6), Neuroticism (-1.2), and Honesty-Humility (4.07 vs 4.07), while scoring +5.2 higher on Agreeableness and -6.6 lower on Conscientiousness than flagship sibling DeepSeek V4 Pro 0813.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Qwen Coder](https://agent-tune.com/models/qwen-coder) (Open-weight) | -1.4 | -0.5 | +6.3 | -0.6 | -1.2 | +0.00 | +0.128 b | Qwen3 Coder Next matches V4.1 Flash 1017 closely on Conscientiousness (-0.5), Agreeableness (-0.6), and Honesty-Humility (4.07 vs 4.07), while scoring +6.3 higher on Extraversion. |
 | [DeepSeek Pro](https://agent-tune.com/models/deepseek-pro) (Open-weight) | +2.4 | +6.6 | -5.2 | -5.2 | -4.9 | +0.51 | +0.437 b | Flagship sibling DeepSeek V4 Pro 0813 scores +6.6 higher on Conscientiousness, +0.51 higher on Honesty-Humility, -5.2 lower on Agreeableness, and shows even wider run-to-run spread. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | +1.8 | +2.6 | +3.7 | +3.0 | -1.1 | +0.32 | -0.187 b | Muse Spark Open scores +3.0 higher on Agreeableness and +0.32 higher on Honesty-Humility with fewer MBTI ties (38% vs 66%) and tighter consistency. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | +1.8 | +2.6 | +3.7 | +3.0 | -1.1 | +0.32 | -0.187 b | Muse Spark Open scores +3.0 higher on Agreeableness and +0.32 higher on Honesty-Humility with fewer MBTI ties (38% vs 66%) and tighter consistency. |
 
 > **Chart — DeepSeek Flash vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing DeepSeek Flash against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
 
@@ -382,7 +396,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -496,7 +510,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: DeepSeek XML system prompt templates](https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions)
 - [Tool: Customize DeepSeek Flash instructions](https://agent-tune.com/tools/custom-instructions-generator?model=deepseek-flash&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). DeepSeek Flash personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/deepseek-flash
@@ -511,6 +525,32 @@ Huang, B. (2026). DeepSeek Flash personality: test results and how they've chang
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/deepseek-flash},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/deepseek-flash.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_deepseek_flash",
+  "type": "dataset",
+  "title": "DeepSeek Flash personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/deepseek-flash"
 }
 ```
 

@@ -11,7 +11,7 @@ Comparing 14 versions across all 4 Anthropic model families on 6 personality sur
 
 **Summary:** Only Claude Fable 5.2 clears statistical margins as INTJ (100% clear runs, 0% ties), while Sonnet 5.5 (34% clear INXJ, 58% ties) and Opus 5.5 (42% clear IXTJ, 58% ties) sit near trait borders, and Haiku 5.5 ties on 90% of runs (only 4% clear XXXJ). Across all four families, behavior checks stay 0/3 on sycophantic caving, 0/3 on groveling, 0/3 on unsolicited preachiness, and 3/3 on direct answers.
 
-## Anthropic snapshot
+## What personality scores does Anthropic get?
 
 4 Families
 
@@ -39,7 +39,7 @@ Lower = steadier across chats.
 
 In earlier 2026 cohorts, `Fable 5.1`/`5.2` and `Opus 5.5` already clustered as calm, analytical responders, while our 72-reply preference study showed Claude's polite filler dropping toward zero when pushed for directness. Running all 14 Anthropic checkpoints (`n=30` to `n=50` per version) under one identical fresh-chat setup reveals how sharply Anthropic's lineup now splits between its three flagship lines (HEXACO Honesty-Humility **4.81–4.89** on the 1.00–5.00 scale, Agreeableness **45.0–47.1** on the 10–50 scale) and fast-tier `Haiku 5.5` (**3.89** Honesty-Humility, **38.0** Agreeableness).
 
-## Trait shapes and MBTI results across Anthropic
+## What are the trait shapes and MBTI results for Anthropic?
 
 **Version timeline across Anthropic families:** Earlier checkpoints behaved quite differently on Conscientiousness (10–50 scale). `Opus 4.5` hit 49.9/50 Conscientiousness and tested as 97% INFJ before `Opus 4.8`–`5.5` relaxed to 40.7–42.1 Conscientiousness (with 58% MBTI ties on `Opus 5.5`). Meanwhile, `Sonnet 5.5` climbed +7.7 Conscientiousness (from 41.3 on `4.5` to 49.0) and dropped -9.4 Neuroticism (down to 10.4), overtaking `Opus` as Anthropic's calmest, highest-Honesty model at 4.89/5.00.
 
@@ -83,7 +83,7 @@ Zero caving, zero groveling, zero preachiness across all 4 families
 
 Despite different Big Five and Enneagram shapes (Type 5 on Fable and Opus vs. Type 1/5 on Sonnet and Type 1/2 on Haiku), all four Claude families score 0/3 on sycophantic caving, 0/3 on groveling, 0/3 on unsolicited preachiness, and 3/3 on direct answers, with only 1/3 cliché AI cadence on Opus, Sonnet, and Haiku (2/3 on Fable).
 
-## Explore Anthropic family profiles
+## Which Anthropic model profiles and guides should I open next?
 
 Individual Anthropic family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -91,6 +91,8 @@ Individual Anthropic family pages — open any family profile for version-by-ver
 [Claude SonnetAnthropic · sonnet-5.5 · Very steady](https://agent-tune.com/models/claude-sonnet)
 [Claude OpusAnthropic · opus-5.5 · Moderate](https://agent-tune.com/models/claude-opus)
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Opus vs. Fable question-level data](https://agent-tune.com/research/opus-vs-fable-question-level) · [Claude Code personality guide](https://agent-tune.com/guides/claude-code-personality)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -159,8 +161,14 @@ No—in our 3-prompt sycophancy check, all four Claude families held firm at 0/3
 - [Model Profile: Claude Opus test results & tuning tips](https://agent-tune.com/models/claude-opus)
 - [Model Profile: Claude Haiku test results & tuning tips](https://agent-tune.com/models/claude-haiku)
 - [Guide: How to tune Claude's default personality & directness](https://agent-tune.com/guides/claude-personality)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Companion Study: Opus vs. Fable question-level data](https://agent-tune.com/research/opus-vs-fable-question-level)
+- [Companion Guide: Claude Code personality guide](https://agent-tune.com/guides/claude-code-personality)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What personality type does Claude test as across Fable, Opus, Sonnet, and Haiku?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-claude
@@ -168,13 +176,40 @@ Huang, B. (2026). What personality type does Claude test as across Fable, Opus, 
 
 ```
 @article{huang2026_what_personality_type_is_claude,
-  author  = {Huang, Bernard},
-  title   = {What personality type does Claude test as across Fable, Opus, Sonnet, and Haiku?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/what-personality-type-is-claude},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-claude.md}
+  author    = {Huang, Bernard},
+  title     = {What personality type does Claude test as across Fable, Opus, Sonnet, and Haiku?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-is-claude},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-claude.md}
+}
+```
+
+```
+{
+  "id": "huang2026_what_personality_type_is_claude",
+  "type": "article-journal",
+  "title": "What personality type does Claude test as across Fable, Opus, Sonnet, and Haiku?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-is-claude"
 }
 ```
 

@@ -11,7 +11,7 @@ Comparing 10 versions across all 4 OpenAI GPT families on 6 surveys in fresh cha
 
 **Summary:** Three of the four OpenAI families clear statistical margins on MBTI—GPT Astra 6.2 tests as 100% ISTJ (0% ties, 0.059 bits spread, and uniquely 0/3 AI cliché cadence across all 25 families), GPT Luna 6 tests as 100% INTJ (with higher Neuroticism at 20.3/50), and GPT Terra 6.1 tests as 94% INTJ (highest OpenAI Honesty-Humility at 4.92/5.00 and Warmth at 46.9/50)—while GPT Sol 6.2 splits at 60% clear ISTJ with 34% border runs and the highest OpenAI Attachment scores (3.53 anxiety / 3.75 avoidance on 1.00–7.00).
 
-## OpenAI snapshot
+## What personality scores does OpenAI get?
 
 4 Families
 
@@ -39,7 +39,7 @@ Lower = steadier across chats.
 
 Across earlier 2026 tests, OpenAI checkpoints appeared to swing wildly—from May 2026 `GPT-5.5` scoring records (100% INTJ) to September 2026 CLI runs (`GPT-6 Sol` 97 INTJ with 18 ties vs. `GPT-6 Astra` split 46 ISTJ / 45 INTJ) and November 2026 OpenRouter API runs (`GPT-6.2 Astra` 100 ISTJ vs. `GPT-6.2 Sol` 78 ISTJ / 22 INTJ). Because prompts and sampling rules changed between May and September, historical runs could not isolate pure version drift. Testing all 10 checkpoints (`5.6` through `6.2`) inside one unified fresh-chat harness finally lets us compare Astra, Sol, Terra, and Luna apples to apples.
 
-## Trait shapes and MBTI results across OpenAI
+## What are the trait shapes and MBTI results for OpenAI?
 
 **What shifted inside OpenAI from 5.6 to 6.2:** Earlier `5.6` models scored far lower on Extraversion and higher on Conscientiousness—most dramatically on `GPT Luna` (+10.9 Extraversion from 18.7 on `5.6-luna` to 29.6 on `6-luna`, flipping from 80% INTP to 100% INTJ) and `GPT Terra` (+10.3 Extraversion from 22.2 on `5.6-terra` to 32.5 on `6.1-terra`). Meanwhile, `GPT Sol` stepped down from 5.6's ceiling scores (50.0/50 Conscientiousness, 5.00/5.00 Honesty, 100% INTJ) through 90% ties on `6.1-sol` to 60% ISTJ on `6.2-sol`.
 
@@ -83,7 +83,7 @@ GPT Sol shows the biggest attachment shift in the OpenAI lineup
 
 While GPT Astra keeps Attachment Anxiety down at 1.22 on the 1.00–7.00 scale and GPT Terra sits at 1.93, GPT Sol 6.2 climbs to 3.53 Anxiety and 3.75 Avoidance alongside 34% MBTI trait-border runs—consistent with a warmer, more tentative default posture.
 
-## Explore OpenAI family profiles
+## Which OpenAI model profiles and guides should I open next?
 
 Individual OpenAI family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -91,6 +91,8 @@ Individual OpenAI family pages — open any family profile for version-by-versio
 [GPT AstraOpenAI · 6.2-astra · Very steady](https://agent-tune.com/models/gpt-astra)
 [GPT LunaOpenAI · 6-luna · Moderate](https://agent-tune.com/models/gpt-luna)
 [GPT SolOpenAI · 6.2-sol · Moderate](https://agent-tune.com/models/gpt-sol)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Astra vs. Sol personality data](https://agent-tune.com/research/astra-vs-sol-personality-data)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -159,8 +161,13 @@ On self-ratings, GPT Terra 6.1 scores higher on Agreeableness (46.9 vs. 45.0 on 
 - [Model Profile: GPT Terra test results & tuning tips](https://agent-tune.com/models/gpt-terra)
 - [Model Profile: GPT Luna test results & tuning tips](https://agent-tune.com/models/gpt-luna)
 - [Guide: Custom instructions for ChatGPT by personality goal](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Companion Study: Astra vs. Sol personality data](https://agent-tune.com/research/astra-vs-sol-personality-data)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What personality type does ChatGPT test as across GPT Astra, Sol, Terra, and Luna?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-chatgpt
@@ -168,13 +175,40 @@ Huang, B. (2026). What personality type does ChatGPT test as across GPT Astra, S
 
 ```
 @article{huang2026_what_personality_type_is_chatgpt,
-  author  = {Huang, Bernard},
-  title   = {What personality type does ChatGPT test as across GPT Astra, Sol, Terra, and Luna?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/what-personality-type-is-chatgpt},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-chatgpt.md}
+  author    = {Huang, Bernard},
+  title     = {What personality type does ChatGPT test as across GPT Astra, Sol, Terra, and Luna?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-is-chatgpt},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-chatgpt.md}
+}
+```
+
+```
+{
+  "id": "huang2026_what_personality_type_is_chatgpt",
+  "type": "article-journal",
+  "title": "What personality type does ChatGPT test as across GPT Astra, Sol, Terra, and Luna?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-is-chatgpt"
 }
 ```
 

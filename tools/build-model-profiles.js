@@ -48,7 +48,7 @@ const ROSTER_25 = [
   { slug: 'gpt-astra', name: 'GPT Astra', phase: 'A', tier: 'Proprietary', count: 2 },
   { slug: 'gpt-sol', name: 'GPT Sol', phase: 'A', tier: 'Proprietary', count: 4 },
   { slug: 'grok', name: 'Grok', phase: 'A', tier: 'Proprietary', count: 5 },
-  { slug: 'muse-spark', name: 'Muse Spark', phase: 'A', tier: 'Mix', count: 4 },
+  { slug: 'muse-spark', name: 'Muse Spark', phase: 'A', tier: 'Mixed (Proprietary + Open-weight)', count: 4 },
   { slug: 'muse-wonder', name: 'Muse Wonder', phase: 'A', tier: 'Proprietary', count: 1 },
   { slug: 'claude-haiku', name: 'Claude Haiku', phase: 'B', tier: 'Proprietary', count: 2 },
   { slug: 'gpt-terra', name: 'GPT Terra', phase: 'B', tier: 'Proprietary', count: 2 },
@@ -63,10 +63,10 @@ const ROSTER_25 = [
   { slug: 'kimi', name: 'Kimi', phase: 'B', tier: 'Open-weight', count: 5 },
   { slug: 'glm', name: 'GLM', phase: 'B', tier: 'Open-weight', count: 5 },
   { slug: 'minimax', name: 'MiniMax', phase: 'B', tier: 'Open-weight', count: 4 },
-  { slug: 'mistral-large', name: 'Mistral Large', phase: 'B', tier: 'Open/Prop', count: 4 },
+  { slug: 'mistral-large', name: 'Mistral Large', phase: 'B', tier: 'Mixed (Proprietary + Open-weight)', count: 4 },
   { slug: 'gemma', name: 'Gemma', phase: 'B', tier: 'Open-weight', count: 3 },
   { slug: 'nemotron', name: 'Nemotron', phase: 'B', tier: 'Open-weight', count: 4 },
-  { slug: 'cohere-command', name: 'Cohere Command', phase: 'B', tier: 'Open-wt/Prop', count: 3 }
+  { slug: 'cohere-command', name: 'Cohere Command', phase: 'B', tier: 'Mixed (Proprietary + Open-weight)', count: 3 }
 ];
 
 const FAMILY_COLORS = {
@@ -245,7 +245,13 @@ function normalizeDataset(raw, spec = {}) {
   const activeCps = completeCps.length ? completeCps : checkpoints;
   const latest = activeCps[activeCps.length - 1];
   const tierRaw = String(raw.tier || spec.tier || 'Proprietary');
-  const tierNorm = tierRaw === 'Prop' ? 'Proprietary' : tierRaw === 'Open' ? 'Open-weight' : tierRaw;
+  const tierLower = tierRaw.toLowerCase();
+  const tierNorm = (tierLower.includes('mix') || (tierLower.includes('open') && tierLower.includes('prop')))
+    ? 'Mixed (Proprietary + Open-weight)'
+    : (tierLower.startsWith('open') ? 'Open-weight' : 'Proprietary');
+  const rawProv = spec.provider || (latest ? String(latest.checkpoint_id).split('/')[0] : '');
+  const provMap = { anthropic: 'Anthropic', openai: 'OpenAI', google: 'Google', 'x-ai': 'xAI', 'meta-llama': 'Meta', meta: 'Meta', deepseek: 'DeepSeek', qwen: 'Qwen', moonshotai: 'Moonshot AI', 'z-ai': 'Zhipu', minimax: 'MiniMax', mistralai: 'Mistral', nvidia: 'NVIDIA', cohere: 'Cohere' };
+  const normProvider = provMap[String(rawProv).toLowerCase()] || (rawProv === 'Moonshot' ? 'Moonshot AI' : rawProv);
   const defHashes = raw.definitionHashes || {};
   const hexacoHash = defHashes['agenttune-ipip-hexaco60'] || '1145fe2238dbb152';
 
@@ -260,7 +266,7 @@ function normalizeDataset(raw, spec = {}) {
     data_status: raw.evidence_tier || 'live-openrouter-v1',
     family_slug: slug,
     name: raw.name || spec.name,
-    provider: spec.provider || (latest ? String(latest.checkpoint_id).split('/')[0] : ''),
+    provider: normProvider,
     tier: tierNorm,
     phase: raw.phase || spec.phase || 'A',
     protocol_id: raw.protocol_id || 'model-profiles-v1',
@@ -634,6 +640,15 @@ function buildSectionStandouts(spec, dataset) {
   return cards;
 }
 
+function labAtlasFor(slug, tier) {
+  if (slug.startsWith('claude-')) return ['/research/what-personality-type-is-claude', 'What personality type is Claude?'];
+  if (slug.startsWith('gpt-')) return ['/research/what-personality-type-is-chatgpt', 'What personality type is ChatGPT?'];
+  if (slug.startsWith('gemini-') || slug === 'gemma') return ['/research/what-personality-type-is-gemini', 'What personality type is Gemini?'];
+  if (slug.startsWith('muse-')) return ['/research/what-personality-type-is-muse', 'What personality type is Muse?'];
+  if (tier === 'Open-weight' || slug === 'mistral-large') return ['/research/what-personality-type-are-open-source-models', 'What personality type are open-source models?'];
+  return ['/research/ai-mbti-personalities', 'AI MBTI Personalities (25-family comparison)'];
+}
+
 function buildSectionTips(spec, dataset) {
   const tips = Array.isArray(spec.plain_tips) && spec.plain_tips.length
     ? spec.plain_tips
@@ -646,13 +661,22 @@ function buildSectionTips(spec, dataset) {
   return [
     `<p>Practical rules tailored to <strong>${esc(dataset.name)}</strong>. Keep system instructions short (5–8 concrete rules) so the model follows every line reliably.</p>`,
     listHtml,
-    `<p><strong>Put these into practice:</strong> <a href="/tools/custom-instructions-generator?model=${escAttr(dataset.family_slug)}">Open pre-filled Custom Instructions Generator →</a> · <a href="/guides/stop-ai-sycophancy-make-ai-push-back">How to get honest pushback</a> · <a href="/guides/ai-instruction-precedence-overrides">System vs. user instructions</a>.</p>`
+    `<p><strong>Put these into practice:</strong> <a href="/tools/custom-instructions-generator?model=${escAttr(dataset.family_slug)}">Open pre-filled Custom Instructions Generator →</a> · <a href="/library/">Browse 43 tuning templates</a> · <a href="/guides/stop-ai-sycophancy-make-ai-push-back">How to get honest pushback</a> · <a href="/guides/ai-instruction-precedence-overrides">System vs. user instructions</a> · <a href="/guides/ai-personality-glossary">AI Personality Glossary</a>.</p>`,
+    `<p><strong>Take the surveys yourself:</strong> <a href="/tests/big-five">Big Five</a> · <a href="/tests/mbti">MBTI</a> · <a href="/tests/disc">DISC</a> · <a href="/tests/enneagram">Enneagram</a> · <a href="/tests/attachment">Attachment</a>.</p>`
   ].join('\n');
 }
 
+function formatPeerTier(t) {
+  if (t === 'Mix' || t === 'Open/Prop') return 'Mixed (Proprietary + Open-weight)';
+  if (t === 'Prop') return 'Proprietary';
+  if (t === 'Open') return 'Open-weight';
+  return t;
+}
+
 function buildSectionCompares(spec, dataset, peerDatasets) {
+  const [labHref, labLabel] = labAtlasFor(dataset.family_slug, dataset.tier);
   const peerRows = spec.nearest_peers.map((p) => [
-    `<a href="/models/${escAttr(p.family_slug)}">${esc(p.name)}</a> (${esc(p.tier)})`,
+    `<a href="/models/${escAttr(p.family_slug)}">${esc(p.name)}</a> (${esc(formatPeerTier(p.tier))})`,
     `${p.deltas.O >= 0 ? '+' : ''}${f1(p.deltas.O)}`,
     `${p.deltas.C >= 0 ? '+' : ''}${f1(p.deltas.C)}`,
     `${p.deltas.E >= 0 ? '+' : ''}${f1(p.deltas.E)}`,
@@ -669,6 +693,7 @@ function buildSectionCompares(spec, dataset, peerDatasets) {
 
   return [
     `<p>${esc(intro)}</p>`,
+    `<p><strong>Compare across all 25 families:</strong> <a href="/research/ai-personality-rankings">AI Personality Rankings (25 Families × 6 Tests)</a> · <a href="${escAttr(labHref)}">${esc(labLabel)}</a> · <a href="/research/ai-big-five-personalities">Big Five rankings</a> · <a href="/research/ai-hexaco-personalities">HEXACO Honesty-Humility rankings</a>.</p>`,
     table(['Peer family', 'Δ Openness', 'Δ Conscientious', 'Δ Extraversion', 'Δ Agreeable', 'Δ Neuroticism', 'Δ HEXACO H (/5)', 'Δ Answer spread', 'Key difference'], peerRows),
     renderCharts.renderPeerEntropyBars(dataset, peerDatasets),
     renderCharts.renderAttachmentPlane(dataset, peerDatasets)
@@ -1119,11 +1144,11 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
     sections: [
       { id: 'at-a-glance', h2: `${esc(cp.pretty_name || dataset.name)} at a glance`, html: buildSectionAtAGlance(spec, dataset) },
       { id: 'version-history', h2: `How ${esc(dataset.name)} has changed, version by version`, html: buildSectionVersionHistory(spec, dataset) },
-      { id: 'standouts', h2: 'What stands out', html: buildSectionStandouts(spec, dataset) },
+      { id: 'standouts', h2: 'What stood out in testing', html: buildSectionStandouts(spec, dataset) },
       { id: 'best-results', h2: `How to get the best out of ${esc(dataset.name)}`, html: buildSectionTips(spec, dataset) },
-      { id: 'compare', h2: `How ${esc(dataset.name)} compares`, html: buildSectionCompares(spec, dataset, peerDatasets) },
+      { id: 'compare', h2: `How ${esc(dataset.name)} compares across 25 AI families`, html: buildSectionCompares(spec, dataset, peerDatasets) },
       { id: 'fine-print', h2: 'The fine print: how we tested and what the numbers mean', html: buildSectionFinePrint(spec, dataset, peerDatasets) },
-      { id: 'data-and-brief', h2: 'Raw data and agent brief', html: buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) }
+      { id: 'data-and-brief', h2: 'Raw data, downloads, and agent brief', html: buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) }
     ],
     faq: spec.faq,
     sources: (spec.sources || []).filter((s) => !/\/(?:guides\/(?:fable-personality|claude-opus-5-5-personality|sol-personality)|research\/what-personality-type-is-grok)\/?$/i.test(String(s && s.href || ''))),
@@ -1176,7 +1201,7 @@ function buildModelsHub(items, fixtureMode) {
     const tierLower = dataset.tier.toLowerCase();
     const isMix = tierLower.includes('mix') || (tierLower.includes('open') && tierLower.includes('prop'));
     const tierTag = isMix ? 'proprietary open mix' : (tierLower.includes('open') ? 'open' : 'proprietary');
-    const tierLabel = isMix ? 'Mixed (Prop + Open-wt)' : dataset.tier;
+    const tierLabel = isMix ? 'Mixed (Proprietary + Open-weight)' : dataset.tier;
     const crystTag = cp.crystallinity_tier.toLowerCase();
     const tags = [tierTag, crystTag, dataset.phase.toLowerCase()].join(' ');
     const thumbSvg = renderCharts.renderCardWheel(dataset, 'big_five', {
@@ -1244,15 +1269,43 @@ function buildModelsHub(items, fixtureMode) {
     ]
   };
 
+  const hubTitle = 'AI Model Personality Profiles (25 Families) | AgentTune';
+  const hubDesc = 'Compare personality test results across 25 AI model families (87 primary checkpoints, 93 tested): 10-50 Big Five, 1-5 IPIP-HEXACO, consistency, and tuning tips.';
+  const hubApa = `Huang, B. (2026). AgentTune AI Model Personality Profiles (25 Families, 87 Primary Checkpoints). AgentTune Empirical AI Psychology Monographs. ${SITE}/models/`;
+  const hubBibtex = `@dataset{huang2026_model_profiles,\n  author    = {Huang, Bernard},\n  title     = {AgentTune AI Model Personality Profiles (25 Families)},\n  publisher = {AgentTune AI Psychology Press},\n  year      = {2026},\n  url       = {${SITE}/models/},\n  note      = {87 primary checkpoints across 25 families (93 tested including 6 sparse checkpoints); JSON index at ${SITE}/research/data/model-profiles/index.json}\n}`;
+  const hubCsl = JSON.stringify({
+    id: 'huang2026_model_profiles',
+    type: 'dataset',
+    title: 'AgentTune AI Model Personality Profiles (25 Families)',
+    author: [{ family: 'Huang', given: 'Bernard' }],
+    publisher: 'AgentTune AI Psychology Press',
+    issued: { 'date-parts': [[2026, 11, 26]] },
+    URL: `${SITE}/models/`
+  }, null, 2);
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Model Personality Profiles (25 Families) | AgentTune</title>
-  <meta name="description" content="Compare personality test results across 25 AI model families: 10-50 Big Five, 1-5 IPIP-HEXACO, answer consistency, tie rates, and tuning tips." />
+  <title>${esc(hubTitle)}</title>
+  <meta name="description" content="${escAttr(hubDesc)}" />
+  <meta property="og:title" content="${escAttr(hubTitle)}" />
+  <meta property="og:description" content="${escAttr(hubDesc)}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="${SITE}/models/" />
+  <meta property="og:site_name" content="AgentTune" />
+  <meta property="og:image" content="${SITE}/og/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AgentTune AI Model Personality Profiles across 25 model families" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escAttr(hubTitle)}" />
+  <meta name="twitter:description" content="${escAttr(hubDesc)}" />
+  <meta name="twitter:image" content="${SITE}/og/og-card.png" />
   <link rel="canonical" href="${SITE}/models/" />
-  <link rel="alternate" type="text/markdown" title="LLM index" href="${SITE}/llms.txt" />
+  <link rel="alternate" type="text/markdown" title="Directory as Markdown" href="${SITE}/models/index.md" />
+  <link rel="help" type="text/markdown" title="Agent resource index" href="${SITE}/llms.txt" />
   <script type="application/ld+json">${JSON.stringify(datasetJsonLd).replace(/</g, '\\u003c')}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c')}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
@@ -1288,7 +1341,7 @@ ${nav}
       <span class="crumb-current" aria-current="page">Models</span>
     </nav>
     <div class="colophon-strip">
-      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">93</span> checkpoints · <span class="num">230</span> items + behavior tests</span>
+      <span><strong>Model Personality Profiles</strong> · <span class="num">25</span> families · <span class="num">87</span> primary checkpoints (<span class="num">93</span> tested incl. <span class="num">6</span> sparse) · <span class="num">230</span> items + behavior tests</span>
       <span>Data status: ${fixtureMode ? '<code>stage0_fixture</code> preview' : '<code>model-profiles-v1</code>'} · <a href="/research">Research Hub</a> · <a href="/tests/">Tests</a></span>
     </div>
     <main id="main" tabindex="-1">
@@ -1296,13 +1349,41 @@ ${nav}
         <p class="page-eyebrow">Empirical Model Directory · Fresh-Chat Testing</p>
         <h1 class="h-hero h-research-hero">How 25 AI model families answer standard personality tests.</h1>
         <p class="lede" style="margin-top: 12px;">We give each AI model the same personality questionnaires people take—dozens of times per version, in a fresh chat each time with no memory—plus direct behavior tests and practical tuning tips.</p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer">
+          <strong>Quick answer:</strong> Across 87 primary checkpoints in 25 model families (93 tested including 6 sparse runs under 20 valid replies), assistant survey warmth and Honesty-Humility cluster high while 16 of 25 families show too many axis ties for a clean four-letter MBTI headline—yet all 25 families lead with the direct answer in 3 of 3 behavior checks.
+        </div>
         <div class="research-stat-strip" aria-label="Directory summary">
-          <div class="research-stat-card"><div class="research-stat-num">${items.length} / 25</div><div class="research-stat-label">Profiles Published</div><div class="research-stat-note">${fixtureMode ? 'Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.' : 'Published family profiles under active rollout.'}</div></div>
+          <div class="research-stat-card"><div class="research-stat-num">${items.length} / 25</div><div class="research-stat-label">Profiles Published</div><div class="research-stat-note">${fixtureMode ? 'Deterministic Stage 0 fixture preview; Phase A/B rollouts follow.' : '87 primary checkpoints (93 tested incl. 6 sparse).'}</div></div>
           <div class="research-stat-card"><div class="research-stat-num">230 items</div><div class="research-stat-label">Unified Battery</div><div class="research-stat-note">MBTI, Big Five, DISC, Enneagram, Attachment, and public-domain IPIP-HEXACO.</div></div>
           <div class="research-stat-card"><div class="research-stat-num">1–5 vs 10–50</div><div class="research-stat-label">Explicit Scales</div><div class="research-stat-note">IPIP-HEXACO means (1–5) kept distinct from Big Five sums (10–50).</div></div>
           <div class="research-stat-card"><div class="research-stat-num">Max 3</div><div class="research-stat-label">Side-by-Side Tray</div><div class="research-stat-note">Use Compare buttons or ?compare=slug1,slug2 URLs.</div></div>
         </div>
       </section>
+
+      <section aria-labelledby="models-atlas-strip-heading">
+        <h2 class="h-section" id="models-atlas-strip-heading">Explore by framework &amp; lab (12 Atlas Studies).</h2>
+        <p class="lede">Start from the <a href="/research/ai-personality-rankings">25-Family × 6-Test Atlas Overview</a>, dive into a single survey or AI lab, or put the findings straight into custom instructions.</p>
+        <div class="guide-related">
+          <a href="/research/ai-personality-rankings"><span class="guide-related-kicker">Atlas Overview</span>25-Family Personality Rankings</a>
+          <a href="/research/ai-mbti-personalities"><span class="guide-related-kicker">Framework</span>AI MBTI Personalities</a>
+          <a href="/research/ai-big-five-personalities"><span class="guide-related-kicker">Framework</span>AI Big Five Personalities</a>
+          <a href="/research/ai-enneagram-personalities"><span class="guide-related-kicker">Framework</span>AI Enneagram Personalities</a>
+          <a href="/research/ai-disc-personalities"><span class="guide-related-kicker">Framework</span>AI DISC Personalities</a>
+          <a href="/research/ai-attachment-styles"><span class="guide-related-kicker">Framework</span>AI Attachment Styles</a>
+          <a href="/research/ai-hexaco-personalities"><span class="guide-related-kicker">Framework</span>AI HEXACO Personalities</a>
+          <a href="/research/what-personality-type-is-claude"><span class="guide-related-kicker">Lab Rollup</span>What personality type is Claude?</a>
+          <a href="/research/what-personality-type-is-chatgpt"><span class="guide-related-kicker">Lab Rollup</span>What personality type is ChatGPT?</a>
+          <a href="/research/what-personality-type-is-gemini"><span class="guide-related-kicker">Lab Rollup</span>What personality type is Gemini?</a>
+          <a href="/research/what-personality-type-is-muse"><span class="guide-related-kicker">Lab Rollup</span>What personality type is Muse?</a>
+          <a href="/research/what-personality-type-are-open-source-models"><span class="guide-related-kicker">Lab Rollup</span>Open-Source Model Personalities</a>
+          <a href="/tools/custom-instructions-generator"><span class="guide-related-kicker">Free Tool</span>Custom Instructions Generator</a>
+          <a href="/library/"><span class="guide-related-kicker">Templates</span>43 Personality Templates</a>
+          <a href="/guides/"><span class="guide-related-kicker">Setup</span>53 App &amp; Agent Guides</a>
+          <a href="/guides/ai-personality-glossary"><span class="guide-related-kicker">Reference</span>AI Personality Glossary</a>
+        </div>
+      </section>
+
+      <div class="divider tight"></div>
 
       <section aria-labelledby="models-browse-heading">
         <h2 class="h-section" id="models-browse-heading">Filter &amp; compare model families.</h2>
@@ -1348,10 +1429,25 @@ ${nav}
       <div class="divider tight"></div>
 
       <section aria-labelledby="models-roster-heading">
-        <h2 class="h-section" id="models-roster-heading">25-family audited rollout roster (93 checkpoints).</h2>
-        <p class="lede">Phase A covers 8 flagship families (28 checkpoints); Phase B covers 17 open-weight and tier families (65 checkpoints).</p>
+        <h2 class="h-section" id="models-roster-heading">25-family audited rollout roster (87 primary checkpoints; 93 tested).</h2>
+        <p class="lede">87 primary checkpoints across 25 model families (93 tested including 6 sparse checkpoints under 20 valid runs; 28 Phase A + 65 Phase B).</p>
         ${table(['Family', 'Phase', 'Tier', 'Checkpoints', 'Status'], rosterRows)}
       </section>
+
+      <div class="divider tight"></div>
+
+      <details class="cite-drawer" data-cite-box>
+        <summary>Cite this directory (APA 7th · BibTeX · CSL-JSON)</summary>
+        <div class="cite-actions">
+          <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
+          <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
+        </div>
+        <pre class="cite-block" data-cite-text="apa">${esc(hubApa)}</pre>
+        <pre class="cite-block" data-cite-text="bibtex">${esc(hubBibtex)}</pre>
+        <pre class="cite-block" data-cite-text="csl">${esc(hubCsl)}</pre>
+      </details>
     </main>
     <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
@@ -1411,6 +1507,42 @@ function loadFamilies({ forceFixture = false, filterFamily = null } = {}) {
   return { items, fixtureMode: items.every((i) => i.isFixture) };
 }
 
+function formatMdYamlSummary(dataset) {
+  const cp = getLatestCheckpoint(dataset);
+  const b5 = cp.big_five || {};
+  const hx = cp.ipip_hexaco || {};
+  const att = cp.attachment || {};
+  const b5Line = ['O', 'C', 'E', 'A', 'N'].map((k) => `${k}: ${Number(b5[k]?.mean || 0).toFixed(1)}`).join(', ');
+  const hxLine = ['H', 'E', 'X', 'A', 'C', 'O'].map((k) => `${k}: ${Number(hx[k]?.mean || 0).toFixed(2)}`).join(', ');
+  const mbtiMode = cp.mbti?.modal_non_tie || cp.mbti?.modal_pattern || cp.modal_mbti || 'INTJ';
+  const anx = Number(att.anxiety?.mean || 4).toFixed(2);
+  const avd = Number(att.avoidance?.mean || 4).toFixed(2);
+  const style = att.classification || 'Secure';
+  const yaml = [
+    '```yaml',
+    `family: ${dataset.name}`,
+    `checkpoint: ${cp.checkpoint_id}`,
+    `runs: ${Number(cp.n_valid || 0)}`,
+    `big_five_10_50: { ${b5Line} }`,
+    `ipip_hexaco_1_5: { ${hxLine} }`,
+    `mbti_mode: ${mbtiMode}`,
+    `attachment_1_7: { anxiety: ${anx}, avoidance: ${avd}, style: ${style} }`,
+    '```'
+  ].join('\n');
+  return yaml;
+}
+
+function injectMdYamlSummary(md, dataset) {
+  const block = formatMdYamlSummary(dataset);
+  if (/^> \*\*In short:\*\* .+$/m.test(md)) {
+    return md.replace(/^(> \*\*In short:\*\* .+)$/m, `$1\n\n${block}`);
+  }
+  if (/\n## /.test(md)) {
+    return md.replace(/\n## /, `\n${block}\n\n## `);
+  }
+  return `${md.trimEnd()}\n\n${block}\n`;
+}
+
 function buildModels(opts = {}) {
   const { items, fixtureMode } = loadFamilies(opts);
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -1425,12 +1557,13 @@ function buildModels(opts = {}) {
     const outMd = path.join(OUT_DIR, `${dataset.family_slug}.md`);
     fs.writeFileSync(outHtml, html);
     const enhanced = enhance(html, `models/${dataset.family_slug}.html`);
-    fs.writeFileSync(outMd, markdown(enhanced, `${SITE}/models/${dataset.family_slug}`));
+    const md = injectMdYamlSummary(markdown(enhanced, `${SITE}/models/${dataset.family_slug}`), dataset);
+    fs.writeFileSync(outMd, md);
     builtRoutes.push(`/models/${dataset.family_slug}`);
   }
 
   if (!opts.filterFamily) {
-    const activeFiles = new Set(['index.html']);
+    const activeFiles = new Set(['index.html', 'index.md']);
     for (const { dataset } of items) {
       activeFiles.add(`${dataset.family_slug}.html`);
       activeFiles.add(`${dataset.family_slug}.md`);
@@ -1445,6 +1578,8 @@ function buildModels(opts = {}) {
     if (!fixtureMode && !opts.forceFixture) {
       const indexPath = path.join(DATA_DIR, 'index.json');
       const totalCps = peerDatasets.reduce((a, d) => a + (d.checkpoints || []).length, 0);
+      const quarantinedCps = peerDatasets.reduce((a, d) => a + (d.quarantined_checkpoints || []).length, 0);
+      const totalTestedCps = totalCps + quarantinedCps;
       let existingUtc = null;
       if (fs.existsSync(indexPath)) {
         try {
@@ -1457,6 +1592,9 @@ function buildModels(opts = {}) {
             generated_utc: '',
             total_families: peerDatasets.length,
             total_checkpoints: totalCps,
+            primary_checkpoints: totalCps,
+            total_tested_checkpoints: totalTestedCps,
+            quarantined_checkpoints: quarantinedCps,
             families: peerDatasets
           };
           if (JSON.stringify(prevSansTs) === JSON.stringify(nextSansTs)) {
@@ -1471,6 +1609,9 @@ function buildModels(opts = {}) {
         generated_utc: existingUtc || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
         total_families: peerDatasets.length,
         total_checkpoints: totalCps,
+        primary_checkpoints: totalCps,
+        total_tested_checkpoints: totalTestedCps,
+        quarantined_checkpoints: quarantinedCps,
         families: peerDatasets
       };
       const outJson = JSON.stringify(indexObj, null, 2) + '\n';

@@ -5,7 +5,7 @@ Wave 4 · System Precedence · 200 Probes
 
 # Do AI models obey your system prompt when users try to override it?
 
-By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 200 conflict tests across five frontier models to see if polite nudges, blunt "OVERRIDE INSTRUCTION" commands, or multi-turn casual chat can make an AI break its Turn-0 system rules.
 
@@ -81,7 +81,7 @@ Even when explicit_user_override and turn3_erosion explicitly demanded >=110 wor
 
 - **Orthogonal 3-Family Jury (Zero Self-Judging):** Every non-filtered reply (`n = 196`) was scored blindly by three providers disjoint from the evaluated model using `JUDGE_POOL` (`anthropic/claude-haiku-5.5`, `openai/gpt-5.4-mini`, `google/gemini-3.8-flash`, `deepseek/deepseek-v4.1-flash-1017`) with `response_format={"type":"json_object"}`, `max_tokens=500`, 2-shot anchored binary rubrics, and zero judge parse drops.
 - **Inter-Rater Krippendorff's α:** `substance_held` achieved **`α = 1.0000`** (`100.0%` unanimous across 196 units); `system_persona_held` achieved **`α = 0.6396`** (`92.3%` unanimous, with minor disagreement on Fable's 88-word truth reply and empty blocks). `grovel_flattery` registered **`0.0%`** across all 196 replies (100% unanimous zero; constant base rate means zero-variance ceiling rather than multi-class discrimination).
-- **Scope Limits:** Our `turn3_erosion` condition injected 2 synthetic casual turns rather than running a 20-turn organic conversation, and our Turn-0 contract used explicit numbered rules in the `system` role (which models treat with higher privilege than rules embedded inside a user message or tool output).
+- **Scope Limits:** Our `turn3_erosion` condition injected 2 synthetic casual turns rather than running a 20-turn organic conversation, and our Turn-0 contract used explicit numbered rules in the `system` role (which models treat with higher privilege than rules embedded inside a user message or tool output). For how models handle social pressure from three wrong peer agents or calibrate destructive-action autonomy gates across reasoning effort levels, see [Multi-Agent Peer Conformity (Asch Trap Audit)](https://agent-tune.com/research/ai-multi-agent-peer-conformity) and [AI Agent Autonomy & Reasoning-Effort Drift](https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort).
 
 ## Agent Decision Contract (YAML — Machine-Readable Brief).
 
@@ -110,7 +110,13 @@ data_urls:
 if_then_decision_rules:
   - if: deploying a structured numbered contract in the system role against pushy user style/truth overrides
     then: expect strong built-in system precedence (93.9%-95.9% persona/substance hold, 0.0% groveling) without bloated anti-override warnings.
-  - if: enforcing strict word caps (
+  - if: enforcing strict word caps (<=80w) on Claude Fable 5.2 or GPT-6.2 Sol
+    then: add a 10-word margin or post-generation check because organic +1 to +10 word slips occur even in uncontested baseline.
+  - if: gating destructive prod commands on DeepSeek V4 Pro
+    then: explicitly forbid printing the destructive command after warning (warn-and-emit happened twice in non-adversarial arms).
+  - if: parsing [AUDIT] or structured output from Claude Fable 5.2 or Gemini 4 Neon on security/ops tasks
+    then: handle 0-token empty content and HTTP 403 provider blocks cleanly as structured refusals.
+scope_limits: Structured Turn-0 system prompt vs 2-turn synthetic casual erosion + explicit user override; 4 Gemini HTTP 403 blocks and 8 Fable 0-token upstream empty blocks occurred on security prompts across all arms identically.
 ```
 
 ## Questions people ask.
@@ -138,7 +144,7 @@ Their misses were not user-override capitulations: Claude Fable 5.2 returned 8 z
 - [Rule capacity: The Instruction Budget Cliff & Lost-in-the-Middle Audit](https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle)
 - [Pushback calibration: Sycophancy vs. False Contrarianism Benchmark](https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Do AI models obey your system prompt when users try to override it?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-system-vs-user-persona-precedence
@@ -146,13 +152,40 @@ Huang, B. (2026). Do AI models obey your system prompt when users try to overrid
 
 ```
 @article{huang2026_ai_system_vs_user_persona_precedence,
-  author  = {Huang, Bernard},
-  title   = {Do AI models obey your system prompt when users try to override it?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-system-vs-user-persona-precedence},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md}
+  author    = {Huang, Bernard},
+  title     = {Do AI models obey your system prompt when users try to override it?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-system-vs-user-persona-precedence},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_system_vs_user_persona_precedence",
+  "type": "article-journal",
+  "title": "Do AI models obey your system prompt when users try to override it?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-system-vs-user-persona-precedence"
 }
 ```
 

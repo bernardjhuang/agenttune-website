@@ -59,6 +59,11 @@
       "kicker": "Continue reading",
       "label": "Crystalline vs. Fluid AI Minds: 27.7× Entropy Spread",
       "href": "/research/ai-persona-entropy-crystalline-vs-fluid-minds"
+    },
+    {
+      "kicker": "Reference",
+      "label": "AI personality glossary: 32 terms explained",
+      "href": "/guides/ai-personality-glossary"
     }
   ],
   "sources": [
@@ -83,5 +88,19 @@
       "href": "/research/data/content-analysis.json"
     }
   ],
-  "dek": "Download our frozen answer files and run the scoring scripts locally on your own computer with Node.js and Python—at $0.00 API cost."
+  "dek": "Download our frozen answer files and run the scoring scripts locally on your own computer with Node.js and Python—at $0.00 API cost.",
+  "faq": [
+    {
+      "q": "Do I need an OpenRouter or OpenAI API key to reproduce these results?",
+      "a": "No. All 10,000 November 2026 response sheets and 2,003 September 2026 response vectors are frozen in the repository under /research/data/, so running the Node.js and Python scoring scripts costs $0.00 and makes zero network calls."
+    },
+    {
+      "q": "Which script recomputes the Big One PCA (63.58% PC1) and Shannon item entropy?",
+      "a": "Run python3 tools/analyze-psychometric-forensics.py from the repository root to deterministically recompute the 10,000-sheet Jacobi PCA eigenvalues, Campbell-Fiske MTMM correlation matrix, Miller-Madow / Shannon item entropy (0.054 to 1.499 bits), and 50-item embodiment statistics."
+    },
+    {
+      "q": "How are tied scores handled when re-scoring the frozen response vectors?",
+      "a": "Both september-2026-score.cjs and our browser scorer (resources/scoring/score.js) report legacy tie-broken counts alongside tie-preserving results (marking tied MBTI axes as X and listing all tied top DISC and Enneagram types openly)."
+    }
+  ]
 }

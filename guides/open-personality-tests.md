@@ -5,7 +5,7 @@ Guide · Tests
 
 # The five open personality tests, explained.
 
-By Bernard Huang · Updated September 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated September 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** AgentTune includes five free in-browser personality quizzes: a 32-question MBTI-style survey (OEJTS), a 36-question Enneagram survey (OEPS adaptation), a 16-question DISC work-style survey (ODAT), a 50-question Big Five trait survey (IPIP-50), and a 36-question Attachment survey (ECR-R). Every quiz scores locally in your browser and keeps ties visible. Original AgentTune code and templates are MIT-licensed; see the fine print below for upstream item terms.
 
@@ -19,7 +19,7 @@ By Bernard Huang · Updated September 26, 2026 · ~5 min read · [Markdown (.md)
 | [IPIP-50](https://agent-tune.com/tests/big-five) | Big Five trait dimensions | 50 · 1 to 5 accuracy | Five raw totals (10–50) and item means (1–5) | International Personality Item Pool, Goldberg’s 50-item markers (public domain) |
 | [ECR-R](https://agent-tune.com/tests/attachment) | Adult attachment style | 36 · 1 to 7 agreement | Anxiety and avoidance means (1–7) plus quadrant label | Experiences in Close Relationships-Revised (Fraley, Waller & Brennan, 2000) |
 
-All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at `/tests/<test>.md` and a shared deterministic scorer at [/resources/scoring/score.js](https://agent-tune.com/resources/scoring/score.js). Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) before redistributing third-party item text.
+All five questionnaires run client-side in your browser and never upload your responses. Each test also has a machine-readable Markdown specification at `/tests/<test>.md` and a shared deterministic scorer at [the shared deterministic scorer (score.js)](https://agent-tune.com/resources/scoring/score.js). Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) before redistributing third-party item text.
 
 ## OEJTS: the 32-item MBTI-style questionnaire.
 
@@ -32,7 +32,7 @@ All five questionnaires run client-side in your browser and never upload your re
 | T / F | Thinking vs Feeling | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
 | J / P | Judging vs Perceiving | 8 bipolar (1–5) | Sum = 48; exact tie at 24 vs 24 (margin 0) |
 
-**Scoring & limits.** Earlier reporting rules defaulted tied axes to I, N, T, or J. Our current scorer ([score.js](https://agent-tune.com/resources/scoring/score.js)) marks any tied axis as `X`, offers an optional tie-breaker, and only assigns a four-letter code when all four axes resolve. Take it locally at [/tests/mbti](https://agent-tune.com/tests/mbti) or fetch [/tests/mbti.md](https://agent-tune.com/tests/mbti.md).
+**Scoring & limits.** Earlier reporting rules defaulted tied axes to I, N, T, or J. Our current scorer ([score.js](https://agent-tune.com/resources/scoring/score.js)) marks any tied axis as `X`, offers an optional tie-breaker, and only assigns a four-letter code when all four axes resolve. Take it locally at [the free MBTI-style test](https://agent-tune.com/tests/mbti) or fetch [the MBTI Markdown specification](https://agent-tune.com/tests/mbti.md).
 
 ## OEPS: the 36-item Enneagram adaptation.
 
@@ -115,3 +115,4 @@ Yes. Each questionnaire has a Markdown specification at /tests/<test>.md and is 
 - [Prompts: DISC AI prompts & 12 workplace blends](https://agent-tune.com/guides/disc-ai-prompts)
 - [Prompts: Big Five AI prompts & IPIP-50 interpreter](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 - [Research: The research hub](https://agent-tune.com/research)
+- [Reference: AI personality glossary: 32 terms explained](https://agent-tune.com/guides/ai-personality-glossary)

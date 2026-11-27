@@ -11,6 +11,16 @@ We gave four versions of Meta's Muse Spark (1.1, 1.2, 1.3, and the open-weight m
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Muse Spark Open tests as ISTJ in 46% of runs, spreads across 16 other combinations or ties in the rest (38% tied on at least one axis), and shows the loosest run-to-run consistency of our completed models.
 
+```yaml
+family: Muse Spark
+checkpoint: meta/muse-spark-open
+runs: 50
+big_five_10_50: { O: 41.8, C: 41.1, E: 28.4, A: 43.5, N: 23.8 }
+ipip_hexaco_1_5: { H: 4.39, E: 2.74, X: 3.18, A: 4.04, C: 4.21, O: 4.07 }
+mbti_mode: ISTJ
+attachment_1_7: { anxiety: 3.37, avoidance: 3.55, style: Secure }
+```
+
 ## Muse Spark Open at a glance
 
 Results below come from **50** fresh-chat runs of **Muse Spark Open** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across Muse Spark versions. Hollow points mark earlier st
 
 Big Five trait shifts across Muse Spark versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Widest run-to-run variation among completed models
 
@@ -205,11 +215,15 @@ Practical rules tailored to **Muse Spark**. Keep system instructions short (5–
 - Keep separate tuning presets for Muse Spark Open (more reactive, lower Conscientiousness) versus proprietary Muse Spark 1.3.
 - Re-test edge prompts whenever switching between proprietary and open-weight Muse checkpoints.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=muse-spark) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=muse-spark) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Muse Spark compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Muse Spark compares across 25 AI families
 
 Compared with proprietary peers GPT-6.2 Sol and Claude Sonnet 5.5, Muse Spark Open runs with noticeably looser run-to-run consistency, +7.9 to +13.5 higher Neuroticism, and -0.41 to -0.50 lower Honesty-Humility.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -390,7 +404,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -506,7 +520,7 @@ IPIP-50 uses 10-50 trait sums, whereas the public-domain 60-item IPIP-HEXACO pro
 - [Guide: Muse personality & Soul.md guide](https://agent-tune.com/guides/muse-personality)
 - [Tool: Customize Muse Spark instructions](https://agent-tune.com/tools/custom-instructions-generator?model=muse-spark&target=muse)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Muse Spark personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/muse-spark
@@ -521,6 +535,32 @@ Huang, B. (2026). Muse Spark personality: test results and how they've changed. 
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/muse-spark},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/muse-spark.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_muse_spark",
+  "type": "dataset",
+  "title": "Muse Spark personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/muse-spark"
 }
 ```
 

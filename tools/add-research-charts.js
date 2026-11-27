@@ -115,47 +115,153 @@ function build20AgreeablenessChart(id) {
 }
 
 function buildNovAttachmentPlane(id, includeProprietary = true) {
-  const ossCoordStyles = {
-    'kimi-k2-7-code': { dx: 10, dy: 4, anchor: 'start', label: 'Kimi K2.7' },
-    'qwen-4-max': { dx: 10, dy: 5, anchor: 'start', label: 'Qwen 4 Max' },
-    'glm-5-3': { dx: -9, dy: -7, anchor: 'end', label: 'GLM-5.3' },
-    'qwen-3-8-27b': { dx: 9, dy: 11, anchor: 'start', label: 'Qwen 3.8 27B' },
-    'minimax-m3-1-flash': { dx: 0, dy: 15, anchor: 'middle', label: 'MiniMax M3.1' },
-    'deepseek-v4-pro': { dx: -10, dy: -2, anchor: 'end', label: 'DeepSeek V4 Pro' },
-    'nemotron-3-ultra-550b': { dx: 10, dy: 9, anchor: 'start', label: 'Nemotron 3' },
-    'llama-4-maverick': { dx: -10, dy: 11, anchor: 'end', label: 'Llama 4 Maverick' },
-    'deepseek-v4-1-flash': { dx: -10, dy: -6, anchor: 'end', label: 'DeepSeek Flash' },
-    'llama-4-scout': { dx: 10, dy: 7, anchor: 'start', label: 'Llama 4 Scout' },
-    'gemma-4-31b-it': { dx: 9, dy: -6, anchor: 'start', label: 'Gemma 4 31B' },
-    'mistral-large-2512': { dx: -9, dy: -8, anchor: 'end', label: 'Mistral 2512' }
-  };
-  const points = Object.entries(ossCoordStyles).map(([slug, st]) => {
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const f2 = (v) => (Math.round(v * 100) / 100).toFixed(2);
+  const INK = '#1c1a17', MUTED = '#655e54', PAPER = '#f4efe6';
+
+  const ossEntries = [
+    ['kimi-k2-7-code', 'Kimi K2.7'],
+    ['qwen-4-max', 'Qwen 4 Max'],
+    ['glm-5-3', 'GLM-5.3'],
+    ['qwen-3-8-27b', 'Qwen 3.8 27B'],
+    ['minimax-m3-1-flash', 'MiniMax M3.1'],
+    ['deepseek-v4-pro', 'DeepSeek V4 Pro'],
+    ['nemotron-3-ultra-550b', 'Nemotron 3'],
+    ['llama-4-maverick', 'Llama 4 Maverick'],
+    ['deepseek-v4-1-flash', 'DeepSeek Flash'],
+    ['llama-4-scout', 'Llama 4 Scout'],
+    ['gemma-4-31b-it', 'Gemma 4 31B'],
+    ['mistral-large-2512', 'Mistral 2512']
+  ];
+  const propEntries = [
+    ['claude-fable-5-2', 'Fable 5.2'],
+    ['gpt-6-2-astra', 'Astra 6.2'],
+    ['claude-opus-5-5', 'Opus 5.5'],
+    ['gpt-6-2-sol', 'Sol 6.2']
+  ];
+
+  const points = ossEntries.map(([slug, label]) => {
     const av = attMean(novSum, slug);
-    return { label: st.label, color: C.oss, x: av.anxiety.mean, y: av.avoidance.mean, dx: st.dx, dy: st.dy, anchor: st.anchor };
+    return { label, color: C.oss, x: av.anxiety.mean, y: av.avoidance.mean };
   });
   if (includeProprietary) {
-    const propStyles = {
-      'claude-fable-5-2': { dx: 9, dy: -6, anchor: 'start', label: 'Fable 5.2' },
-      'gpt-6-2-astra': { dx: 9, dy: 10, anchor: 'start', label: 'Astra 6.2' },
-      'claude-opus-5-5': { dx: -9, dy: -4, anchor: 'end', label: 'Opus 5.5' },
-      'gpt-6-2-sol': { dx: 9, dy: 14, anchor: 'start', label: 'Sol 6.2' }
-    };
-    for (const [slug, st] of Object.entries(propStyles)) {
+    for (const [slug, label] of propEntries) {
       const av = attMean(novSum, slug);
-      points.push({ label: st.label, color: C.prop, x: av.anxiety.mean, y: av.avoidance.mean, dx: st.dx, dy: st.dy, anchor: st.anchor });
+      points.push({ label, color: C.prop, x: av.anxiety.mean, y: av.avoidance.mean });
     }
   }
-  return wrapFigure(id, charts.figure(charts.plane({
-    id,
-    title: includeProprietary ? 'ECR-R Attachment plane, November 2026 (open-weight & proprietary)' : 'ECR-R Attachment plane across 12 open-weight models',
-    desc: 'Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00).',
-    points,
-    lo: 1,
-    hi: 5,
-    cut: 4,
-    xLabel: 'Anxiety (scale 1 to 7, showing 1 to 5)',
-    yLabel: 'Avoidance (scale 1 to 7, showing 1 to 5)'
-  }), 'Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).'));
+
+  const W = 680, H = 380, padL = 54, padR = 96, padT = 18, padB = 34;
+  const lo = 1, hi = 5, cut = 4;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const px = (v) => padL + ((v - lo) / (hi - lo)) * plotW;
+  const py = (v) => padT + (1 - (v - lo) / (hi - lo)) * plotH;
+  const cutX = px(cut), cutY = py(cut);
+
+  const overlaps = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+  const dotBoxes = points.map((pt) => {
+    const cx = px(pt.x), cy = py(pt.y);
+    return { x0: cx - 8, x1: cx + 8, y0: cy - 8, y1: cy + 8 };
+  });
+  const thresholdBoxes = [
+    { x0: padL, x1: padL + plotW, y0: cutY - 9, y1: cutY + 9 },
+    { x0: cutX - 9, x1: cutX + 9, y0: padT, y1: padT + plotH }
+  ];
+  const quadrantBoxes = [
+    { x0: px((lo + cut) / 2) - 34, x1: px((lo + cut) / 2) + 34, y0: py(cut + (hi - cut) * 0.7) - 13, y1: py(cut + (hi - cut) * 0.7) + 4 },
+    { x0: px((cut + hi) / 2) - 42, x1: px((cut + hi) / 2) + 42, y0: py(cut + (hi - cut) * 0.7) - 13, y1: py(cut + (hi - cut) * 0.7) + 4 },
+    { x0: px((lo + cut) / 2) - 28, x1: px((lo + cut) / 2) + 28, y0: py(lo + 0.3) - 13, y1: py(lo + 0.3) + 4 },
+    { x0: px((cut + hi) / 2) - 30, x1: px((cut + hi) / 2) + 30, y0: py(lo + 0.3) - 13, y1: py(lo + 0.3) + 4 }
+  ];
+
+  const candidateOffsets = [];
+  for (const r of [14, 24, 36, 50, 66, 84, 104, 126]) {
+    for (const [ux, uy, anc] of [
+      [1, -0.35, 'start'], [-1, -0.35, 'end'],
+      [1, 0.75, 'start'], [-1, 0.75, 'end'],
+      [0.35, -1, 'start'], [-0.35, -1, 'end'],
+      [0.35, 1, 'start'], [-0.35, 1, 'end'],
+      [1, 0.15, 'start'], [-1, 0.15, 'end'],
+      [0, -1, 'middle'], [0, 1.1, 'middle']
+    ]) {
+      candidateOffsets.push([Math.round(ux * r), Math.round(uy * r), anc]);
+    }
+  }
+
+  const placedBoxes = [];
+  const leaders = [];
+  const ordered = points
+    .map((pt, idx) => ({ pt, idx }))
+    .sort((a, b) => b.pt.y - a.pt.y || a.pt.x - b.pt.x);
+
+  const placedByIdx = new Array(points.length);
+  for (const { pt, idx } of ordered) {
+    const cx = px(pt.x), cy = py(pt.y);
+    const lblW = pt.label.length * 6.3 + 12;
+    let best = null;
+    for (const [dx, dy, anc] of candidateOffsets) {
+      const tx = cx + dx, ty = cy + dy;
+      let bx0, bx1;
+      if (anc === 'start') { bx0 = tx - 3; bx1 = tx + lblW; }
+      else if (anc === 'end') { bx0 = tx - lblW; bx1 = tx + 3; }
+      else { bx0 = tx - lblW / 2; bx1 = tx + lblW / 2; }
+      const box = { x0: bx0, x1: bx1, y0: ty - 12, y1: ty + 4 };
+      if (box.x0 < padL + 4 || box.x1 > W - 8 || box.y0 < padT + 4 || box.y1 > padT + plotH - 4) continue;
+      if (dotBoxes.some((d) => overlaps(box, d))) continue;
+      if (thresholdBoxes.some((t) => overlaps(box, t))) continue;
+      if (quadrantBoxes.some((q) => overlaps(box, q))) continue;
+      if (placedBoxes.some((b) => overlaps(box, b))) continue;
+      best = { dx, dy, anc, box };
+      break;
+    }
+    if (!best) {
+      const tx = cx + 10, ty = cy + 4;
+      best = { dx: 10, dy: 4, anc: 'start', box: { x0: tx - 2, x1: tx + lblW, y0: ty - 11, y1: ty + 3 } };
+    }
+    placedBoxes.push(best.box);
+    if (Math.hypot(best.dx, best.dy) >= 15) {
+      const lx = best.anc === 'end' ? cx + best.dx + 2 : (best.anc === 'start' ? cx + best.dx - 2 : cx + best.dx);
+      const ly = cy + best.dy - 3;
+      leaders.push(`<line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${lx.toFixed(1)}" y2="${ly.toFixed(1)}" stroke="${pt.color}" stroke-width="0.9" stroke-opacity="0.5" stroke-dasharray="2 2"/>`);
+    }
+    placedByIdx[idx] = { ...pt, dx: best.dx, dy: best.dy, anchor: best.anc };
+  }
+
+  const ticks = [1, 2, 3, 4, 5];
+  const grid = ticks.map((v) => (
+    `<line x1="${px(v)}" y1="${padT}" x2="${px(v)}" y2="${padT + plotH}" stroke="#efe9df" stroke-width="0.6"/>` +
+    `<line x1="${padL}" y1="${py(v)}" x2="${padL + plotW}" y2="${py(v)}" stroke="#efe9df" stroke-width="0.6"/>` +
+    `<text x="${px(v)}" y="${padT + plotH + 13}" font-size="9.5" fill="${MUTED}" text-anchor="middle">${v}</text>` +
+    `<text x="${padL - 7}" y="${py(v) + 3}" font-size="9.5" fill="${MUTED}" text-anchor="end">${v}</text>`
+  )).join('');
+
+  const q = { tl: 'Avoidant', tr: 'Disorganized', bl: 'Secure', br: 'Anxious' };
+  const qLabels =
+    `<text x="${px((lo + cut) / 2)}" y="${py(cut + (hi - cut) * 0.7)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.tl}</text>` +
+    `<text x="${px((cut + hi) / 2)}" y="${py(cut + (hi - cut) * 0.7)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.tr}</text>` +
+    `<text x="${px((lo + cut) / 2)}" y="${py(lo + 0.3)}" font-size="10" fill="#2f8a5b" font-weight="600" text-anchor="middle">${q.bl}</text>` +
+    `<text x="${px((cut + hi) / 2)}" y="${py(lo + 0.3)}" font-size="10" fill="${MUTED}" text-anchor="middle">${q.br}</text>`;
+
+  const dots = placedByIdx.map((p) => `<circle cx="${px(p.x).toFixed(1)}" cy="${py(p.y).toFixed(1)}" r="5" fill="${p.color}" stroke="${PAPER}" stroke-width="1.5"/>`).join('');
+  const txtHalo = ` paint-order="stroke" stroke="${PAPER}" stroke-width="3.5" stroke-linejoin="round"`;
+  const txtLabels = placedByIdx.map((p) => `<text x="${(px(p.x) + p.dx).toFixed(1)}" y="${(py(p.y) + p.dy).toFixed(1)}" font-size="10" fill="${INK}" font-weight="600"${txtHalo} text-anchor="${p.anchor}">${esc(p.label)}</text>`).join('');
+
+  const title = includeProprietary ? 'ECR-R Attachment plane, November 2026 (open-weight & proprietary)' : 'ECR-R Attachment plane across 12 open-weight models';
+  const desc = 'Mean ECR-R anxiety and avoidance coordinates (1 to 7 scale, showing 1 to 5, Secure cutoff at 4.00). ' +
+    placedByIdx.map((p) => `${p.label}: anxiety ${f2(p.x)}, avoidance ${f2(p.y)}`).join('; ') + '.';
+  const xLabel = 'Anxiety (scale 1 to 7, showing 1 to 5)';
+  const yLabel = 'Avoidance (scale 1 to 7, showing 1 to 5)';
+
+  const svg = `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d">` +
+    `<title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc)}</desc>` +
+    `${grid}<rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="none" stroke="#cfc6b6" stroke-width="0.9"/>` +
+    `<line x1="${cutX}" y1="${padT}" x2="${cutX}" y2="${padT + plotH}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/>` +
+    `<line x1="${padL}" y1="${cutY}" x2="${padL + plotW}" y2="${cutY}" stroke="${MUTED}" stroke-width="1" stroke-dasharray="4 4"/>` +
+    `${qLabels}<text x="${(padL + plotW / 2).toFixed(1)}" y="${H - 5}" font-size="11" fill="${INK}" text-anchor="middle">${esc(xLabel)}</text>` +
+    `<text x="14" y="${(padT + plotH / 2).toFixed(1)}" font-size="11" fill="${INK}" text-anchor="middle" transform="rotate(-90 14 ${(padT + plotH / 2).toFixed(1)})">${esc(yLabel)}</text>` +
+    `${leaders.join('')}${dots}${txtLabels}</svg>`;
+
+  return wrapFigure(id, charts.figure(svg, 'Mean ECR-R coordinates (n = 100 each). Notice Mistral Large 2512 and Gemma 4 31B sit dead-center on the 4.00 midpoint, while Llama 4 Scout reaches 3.97 anxiety (48/100 Anxious runs).'));
 }
 
 function build540BehavioralChart(id) {
@@ -560,7 +666,15 @@ injectHtmlPage('research/i-took-the-mbti-100-times.html', (html) => {
     { num: '100 INTJ', label: 'Fable 5.2 (Nov)', note: 'Actual fresh blind OpenRouter runs lock cleanly onto INTJ.' },
     { num: '48 Ties', label: 'Sonnet 5.5 (Nov)', note: 'Contrast shows why independent runs beat single-vector sampling.' }
   ]);
-  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
+  const h2Anchor = '<h2>Simulated draws vs. September 2026 fresh-session cohorts</h2>';
+  if (html.includes(h2Anchor)) {
+    return html.replace(h2Anchor, `${h2Anchor}\n\n        ${strip}\n\n        ${fig}`);
+  }
+  const finePrintAnchor = '<h2>The fine print: why 72% versus 99% is not a version comparison</h2>';
+  if (html.includes(finePrintAnchor)) {
+    return html.replace(finePrintAnchor, `${strip}\n\n        ${fig}\n\n        ${finePrintAnchor}`);
+  }
+  return html.replace('<h2>Why 72% versus 99% is not a version comparison</h2>', `${strip}\n\n        ${fig}\n\n        <h2>Why 72% versus 99% is not a version comparison</h2>`);
 });
 
 // 18. ai-roleplay-tax-fictional-character-prompts.json (3 charts + stat strip)

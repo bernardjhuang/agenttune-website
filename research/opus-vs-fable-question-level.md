@@ -89,6 +89,16 @@ Before inferring that one model is warmer or more helpful, test observable behav
 
 [Download the full 170-item comparison CSV](https://agent-tune.com/research/data/opus-fable-item-comparison.csv). It contains response counts, dimension keys, raw means, and keyed differences for every question across all five tests. Attachment uses a 1–7 scale (divide item gaps by 18 for subscale impact); all other tests use a 1–5 scale.
 
+## Questions people ask.
+
+### Which Big Five question has the largest gap between Claude Opus 5.5 and Claude Fable 5.1?
+
+Across 100 fresh sessions each, the largest single-item Big Five difference is on Item 17 ('Sympathize with others’ feelings', Agreeableness), where Claude Opus 5.5 scored 5.00 in all 100 runs while Claude Fable 5.1 averaged 4.04 (a 0.96-point gap).
+
+### Why does Claude Fable 5.1 score higher on Conscientiousness than Claude Opus 5.5?
+
+Two reverse-scored questions about physical belongings—Item 8 ('Leave my belongings around') and Item 28 ('Often forget to put things back in their proper place')—contribute +0.90 points each (+1.80 points total) to Fable 5.1, accounting for more than the entire +1.66 Conscientiousness gap between Fable 5.1 (43.61) and Opus 5.5 (41.95).
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -106,7 +116,7 @@ Before inferring that one model is warmer or more helpful, test observable behav
 - [Continue reading: Claude’s aggregate questionnaire results](https://agent-tune.com/research/what-personality-type-is-claude)
 - [Continue reading: Test instruction following on actual tasks](https://agent-tune.com/guides/claude-personality)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Opus 5.5 vs Fable 5.1: which answers differ?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/opus-vs-fable-question-level
@@ -114,13 +124,40 @@ Huang, B. (2026). Opus 5.5 vs Fable 5.1: which answers differ?. AgentTune Empiri
 
 ```
 @article{huang2026_opus_vs_fable_question_level,
-  author  = {Huang, Bernard},
-  title   = {Opus 5.5 vs Fable 5.1: which answers differ?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/opus-vs-fable-question-level},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/opus-vs-fable-question-level.md}
+  author    = {Huang, Bernard},
+  title     = {Opus 5.5 vs Fable 5.1: which answers differ?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/opus-vs-fable-question-level},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/opus-vs-fable-question-level.md}
+}
+```
+
+```
+{
+  "id": "huang2026_opus_vs_fable_question_level",
+  "type": "article-journal",
+  "title": "Opus 5.5 vs Fable 5.1: which answers differ?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/opus-vs-fable-question-level"
 }
 ```
 

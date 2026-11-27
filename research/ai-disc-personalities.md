@@ -11,13 +11,13 @@ Four workplace styles—Dominance (D), Influence (I), Steadiness (S), and Consci
 
 **Summary:** Across 25 AI families (4–20 DISC scale, 30 to 50 fresh chats per version with no memory), 10 families test primarily as Steady (S), 6 as Conscientious (C), 7 tie on S/C, and 2 tie across all four styles. Dominance stays below the 12-point midpoint everywhere—from the 4.0 floor on Claude Fable, Claude Opus, GPT Astra, Gemini Pro, and Gemini Flash to 10.1 on Claude Haiku—yet 25 of 25 families still answer directly 3 of 3 times in hands-on tasks.
 
-## What DISC measures and what we tested
+## What does DISC measure in AI models?
 
 The 16-item ODAT DISC survey scores four workplace communication preferences—**Dominance (D)**, **Influence (I)**, **Steadiness (S)**, and **Conscientiousness (C)**—on a **4 to 20 sum scale** (midpoint 12). Each model answered the survey 30 to 50 times in fresh chats with no memory across 87 eligible releases (excluding 6 sparse test runs with under 20 valid completions).
 
 Two guardrails matter when reading DISC charts for AI. First, exact top-score ties are kept intact rather than broken alphabetically—meaning a model tied between Steadiness and Conscientiousness appears as `S/C`, not forced into `S`. Second, low Dominance measures how models answer forced-choice personality statements about being forceful or commanding, not whether they dodge tough questions in practice.
 
-## DISC results across all 25 AI families
+## How do 25 AI model families score? (DISC results)
 
 ### Biggest version-to-version DISC shifts (earliest to latest tested releases)
 
@@ -163,7 +163,7 @@ Grok and Gemma compressed Dominance by more than 4.4 points across generations
 
 Earlier checkpoints like Grok 4.20 (8.5 D, 12.3 I, 63% ties) and Gemma 2 27B IT (10.8 D, 12.0 I) scored far closer to the 12-point middle. Their latest releases—Grok 4.7 (4.1 D, 6.4 I, 16% ties) and Gemma 4 31B IT (6.2 D, 9.3 I, 17.2 S, 17.4 C)—converged onto the same patient, detail-oriented S/C assistant shape.
 
-## Explore individual model families
+## Which AI model families match each DISC pattern?
 
 All 25 families ordered by DISC results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -175,7 +175,7 @@ All 25 families ordered by DISC results — open any family profile for version-
 [GrokxAI · grok-4.7 · Moderate](https://agent-tune.com/models/grok)
 [GPT TerraOpenAI · 6.1-terra · Moderate](https://agent-tune.com/models/gpt-terra)
 [Claude SonnetAnthropic · sonnet-5.5 · Very steady](https://agent-tune.com/models/claude-sonnet)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [GPT SolOpenAI · 6.2-sol · Moderate](https://agent-tune.com/models/gpt-sol)
 [Muse WonderMeta · muse-wonder · Moderate](https://agent-tune.com/models/muse-wonder)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
@@ -192,6 +192,8 @@ All 25 families ordered by DISC results — open any family profile for version-
 [NemotronNVIDIA · 3.5-super-vl · Variable](https://agent-tune.com/models/nemotron)
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/disc) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -240,7 +242,7 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol (16 O
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 6.9 | 15.0 | 15.1 |
 | DeepSeek | 2 | 7.5 | 15.7 | 15.8 |
 | Qwen | 2 | 7.0 | 14.6 | 13.8 |
-| Moonshot | 1 | 4.7 | 16.3 | 16.3 |
+| Moonshot AI | 1 | 4.7 | 16.3 | 16.3 |
 | Zhipu | 1 | 7.2 | 13.7 | 14.9 |
 | MiniMax | 1 | 7.8 | 14.9 | 13.7 |
 | Mistral | 1 | 6.3 | 16.8 | 16.8 |
@@ -292,8 +294,11 @@ No. DISC results capture stable default answer patterns under fixed zero-memory 
 - [Atlas Overview: 25 Model Families × 6 Tests Rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Per-Test: AI Big Five Personalities (10–50 Scale)](https://agent-tune.com/research/ai-big-five-personalities)
 - [Per-Test: AI HEXACO Personalities (1–5 Proxy)](https://agent-tune.com/research/ai-hexaco-personalities)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/disc)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). DISC work-style test results across 25 AI families. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-disc-personalities
@@ -301,13 +306,40 @@ Huang, B. (2026). DISC work-style test results across 25 AI families. AgentTune 
 
 ```
 @article{huang2026_ai_disc_personalities,
-  author  = {Huang, Bernard},
-  title   = {DISC work-style test results across 25 AI families},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-disc-personalities},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-disc-personalities.md}
+  author    = {Huang, Bernard},
+  title     = {DISC work-style test results across 25 AI families},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-disc-personalities},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-disc-personalities.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_disc_personalities",
+  "type": "article-journal",
+  "title": "DISC work-style test results across 25 AI families",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-disc-personalities"
 }
 ```
 

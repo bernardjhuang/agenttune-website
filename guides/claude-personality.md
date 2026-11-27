@@ -123,14 +123,6 @@ For personality-matched templates across MBTI, Enneagram, DISC, Attachment, and 
 
 ## What personality type does Claude test as? Nov 2026 & Sept 2026 benchmarks.
 
-> **Chart — Claude Personality DNA Spectrum (Fable 5.2, Opus 5.5, Sonnet 5.5 — Nov 2026):** Bipolar IPIP-50 trait spectrum (10-50 scale, 30 neutral) across 100 fresh OpenRouter sessions per Claude model. Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Opus 5.5 (Nov): Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0; Sonnet 5.5 (Nov): Openness 42.9, Conscientious 47.2, Extraversion 29.9, Agreeable 44.5, Neuroticism 10.4.
-
-Where Claude models sit on human trait poles (10–50 scale): strong Conscientiousness (42–47.2), high Agreeableness (44.5–46.7), balanced Extraversion (~30), and calm Neuroticism (10.4–15.0).
-
-> **Chart — Claude MBTI Labels vs. Tied Axes (100 Fresh Runs per Model):** Compares resolved INTJ runs vs tie-broken INTJ counts across Claude Fable 5.2, Opus 5.5, Sonnet 5.5 (Nov 2026), and Opus 5.5 (Sept 2026). Fable 5.2 (Nov): Resolved INTJ 100; Opus 5.5 (Nov): Resolved INTJ 58, Tie-rule INTJ (IXTJ / INXJ) 42; Sonnet 5.5 (Nov): Resolved INTJ 52, Tie-rule INTJ (IXTJ / INXJ) 48; Opus 5.5 (Sep): Resolved INTJ 84, Tie-rule INTJ (IXTJ / INXJ) 10, INFJ / ENTJ 6.
-
-Why Personal Preferences matter more than MBTI stereotypes: Opus 5.5 and Sonnet 5.5 tie near the S/N or T/F midpoints nearly half the time.
-
 100 INTJ
 
 Fable 5.2 (Nov)
@@ -170,6 +162,14 @@ Preferences Study
 | Attachment Anxiety / Avoidance | 1.09 / 2.64 (100% Secure) | 1.87 / 3.58 (100% Secure) | 1.53 / 2.85 (100% Secure) | Secure (100%) |
 
 Across both cohorts, Claude models stay heavily anchored on **Agreeableness (44.5–47.1/50)**, **Conscientiousness (42.0–47.2/50)**, and **low Neuroticism (10.4–17.1/50)**. **In short:** Notice **Claude Fable 5.2** tested as a tie-free INTJ in 100/100 runs while tying S and C cleanly in 100/100 DISC sessions (mean S 15.0, C 15.0) and scoring near the floor on Attachment anxiety (1.09). [Read the updated Claude personality study →](https://agent-tune.com/research/what-personality-type-is-claude)
+
+> **Chart — Claude Personality DNA Spectrum (Fable 5.2, Opus 5.5, Sonnet 5.5 — Nov 2026):** Bipolar IPIP-50 trait spectrum (10-50 scale, 30 neutral) across 100 fresh OpenRouter sessions per Claude model. Fable 5.2 (Nov): Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; Opus 5.5 (Nov): Openness 43.0, Conscientious 42.0, Extraversion 29.2, Agreeable 45.6, Neuroticism 15.0; Sonnet 5.5 (Nov): Openness 42.9, Conscientious 47.2, Extraversion 29.9, Agreeable 44.5, Neuroticism 10.4.
+
+Where Claude models sit on human trait poles (10–50 scale): strong Conscientiousness (42–47.2), high Agreeableness (44.5–46.7), balanced Extraversion (~30), and calm Neuroticism (10.4–15.0).
+
+> **Chart — Claude MBTI Labels vs. Tied Axes (100 Fresh Runs per Model):** Compares resolved INTJ runs vs tie-broken INTJ counts across Claude Fable 5.2, Opus 5.5, Sonnet 5.5 (Nov 2026), and Opus 5.5 (Sept 2026). Fable 5.2 (Nov): Resolved INTJ 100; Opus 5.5 (Nov): Resolved INTJ 58, Tie-rule INTJ (IXTJ / INXJ) 42; Sonnet 5.5 (Nov): Resolved INTJ 52, Tie-rule INTJ (IXTJ / INXJ) 48; Opus 5.5 (Sep): Resolved INTJ 84, Tie-rule INTJ (IXTJ / INXJ) 10, INFJ / ENTJ 6.
+
+Why Personal Preferences matter more than MBTI stereotypes: Opus 5.5 and Sonnet 5.5 tie near the S/N or T/F midpoints nearly half the time.
 
 ## The fine print: inspect the raw data and pilot results yourself.
 
@@ -313,3 +313,5 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 - [Model profile: Claude Sonnet — baseline & tuning](https://agent-tune.com/models/claude-sonnet)
 - [Model profile: Claude Haiku — fast baseline & tuning](https://agent-tune.com/models/claude-haiku)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
+- [Guide: How to make Claude more direct: 3 editable prompts](https://agent-tune.com/guides/make-claude-more-direct)
+- [Comparison: ChatGPT vs. Claude default personality: benchmark data](https://agent-tune.com/guides/chatgpt-vs-claude-personality)

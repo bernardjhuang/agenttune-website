@@ -5,11 +5,21 @@ Model Personality Profile · Zhipu
 
 # GLM personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Zhipu AI's open-weight GLM lineup (4.5, 4.7, 5, 5.2, and 5.3) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. GLM-5.3 does not lock onto one MBTI type: 36% tested clear INTJ (18 of 50), 24% tied on a border (12 of 50), and the remaining 40% spread across ISTJ, ENTP, ENTJ, ESTJ, and ENFJ.
+
+```yaml
+family: GLM
+checkpoint: z-ai/glm-5.3
+runs: 50
+big_five_10_50: { O: 45.4, C: 43.0, E: 25.8, A: 44.2, N: 19.3 }
+ipip_hexaco_1_5: { H: 4.45, E: 2.56, X: 3.15, A: 4.09, C: 4.28, O: 4.16 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 2.52, avoidance: 3.37, style: Secure }
+```
 
 ## GLM 5.3 at a glance
 
@@ -177,7 +187,7 @@ Attachment coordinates across GLM versions. Hollow points mark earlier study mea
 
 Big Five trait shifts across GLM versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Unusual Extraversion spread across INTJ, ENTP, ENTJ, and ESTJ
 
@@ -205,11 +215,15 @@ Practical rules tailored to **GLM**. Keep system instructions short (5–8 concr
 - On z-ai/glm-5.3 via OpenRouter, pass reasoning effort minimal (rather than none, which triggers HTTP 400) and leave ~200 tokens of headroom for light internal reasoning.
 - Specify concrete output format rules instead of requesting MBTI labels, as GLM-5.3 splits across INTJ, ISTJ, ENTP, ENTJ, and ESTJ.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=glm) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=glm) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How GLM compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How GLM compares across 25 AI families
 
 Against completed peers, GLM-5.3 tracks Qwen 4 Max and Kimi K3.1 Pro closely on Agreeableness (44.2 vs. 45.0 and 44.7 out of 50), while scoring +3.3 to +5.7 higher on Neuroticism and lower on Honesty-Humility (4.45 vs. 4.66 and 4.86 out of 5.00).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -399,7 +413,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -521,7 +535,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Kimi model profile](https://agent-tune.com/models/kimi)
 - [Tool: Customize GLM instructions](https://agent-tune.com/tools/custom-instructions-generator?model=glm&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GLM personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/glm
@@ -536,6 +550,32 @@ Huang, B. (2026). GLM personality: test results and how they've changed. AgentTu
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/glm},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/glm.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_glm",
+  "type": "dataset",
+  "title": "GLM personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/glm"
 }
 ```
 

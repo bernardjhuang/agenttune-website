@@ -67,15 +67,15 @@ Ordered checklist output without changing warmth.
 
 We tested 20 AI models across 10,000 questionnaire runs in November 2026 and 2,000 runs in September 2026 to see how untuned models answer human personality surveys—and what actually changes when you add custom instructions.
 
-> **Chart — Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme):** Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix. Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; DeepSeek V4 Pro: Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7.
-
-Frontier assistants look remarkably alike on raw Big Five axes—pick the framework above (MBTI, Big Five, DISC, Enneagram, or Attachment) based on the exact friction you notice in chats.
-
 - **Untuned models cluster together on warmth and caution:** Across our studies, default proprietary models scored very high on Big Five Agreeableness (**43.7–47.1 / 50**) and very low on DISC Dominance (**4.00–5.58 / 20**). Left alone, almost every assistant defaults to a polite, cautious, conflict-avoidant style.
 - **Models often land on a border between two types:** On our 32-question MBTI-style survey, **59 of 400 September sessions** (and up to 93/100 on Llama 4 Maverick) tied on at least one preference pair, and models vary widely in how steady their answers are from run to run.
 - **Concrete rules do the work, not the label:** In our [540-reply behavioral study](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and 60-reply pilot, plain behavioral rules lifted DeepSeek V4 Pro correctness **+16.7 pp (78.3% → 95.0%)** and raised answer-first openings from **14/20 to 19/20**. Pick whichever system helps you choose your rules fastest—or skip tests entirely in the [Communication Preferences Builder](https://agent-tune.com/tools/communication-preferences-builder).
 
 **The fine print (psychometric audit):** On the 32-item OEJTS, 16-item ODAT, 36-item OEPS, 50-item IPIP-50, and 36-item ECR-R, Principal Component Analysis shows [63.58% of Big Five variance collapses onto a single "Big One" alignment factor](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit) while Campbell–Fiske MTMM cross-test correlations diverge from human norms. Per-item Shannon entropy spans **27.7×** from crystalline Claude Fable 5.2 (`0.054 bits`) to fluid DeepSeek V4 Pro (`1.499 bits`; [entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)).
+
+> **Chart — Why Default AIs Cluster Together on Big Five Traits (Proprietary vs. Open Extreme):** Shows how proprietary assistants share nearly identical Big Five DNA profiles, making framework choice depend on what friction you want to fix. Claude Fable 5.2: Openness 44.3, Conscientious 45.0, Extraversion 31.0, Agreeable 46.7, Neuroticism 12.0; GPT-6.2 Sol: Openness 43.6, Conscientious 41.4, Extraversion 29.5, Agreeable 44.3, Neuroticism 19.9; DeepSeek V4 Pro: Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7.
+
+Frontier assistants look remarkably alike on raw Big Five axes—pick the framework above (MBTI, Big Five, DISC, Enneagram, or Attachment) based on the exact friction you notice in chats.
 
 ## How to combine two frameworks without writing contradictory instructions.
 

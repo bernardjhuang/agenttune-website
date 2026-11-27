@@ -135,8 +135,8 @@ function renderRoseWheel({
       const lx = cx + rLbl * cosT;
       const ly = cy + rLbl * sinT;
       const scoreText = `${Number(p.value).toFixed(decimals)} ${scaleSuffix}`;
-      const line1Y = sinT < -0.75 ? ly - 10 : (sinT > 0.75 ? ly + 2 : ly - 3);
-      const line2Y = line1Y + 12;
+      const line1Y = sinT < -0.75 ? ly - 13 : (sinT > 0.75 ? ly + 2 : ly - 4);
+      const line2Y = line1Y + 15;
       labelEls.push(
         `<text x="${lx.toFixed(1)}" y="${line1Y.toFixed(1)}" font-size="10.5" font-weight="600" fill="${C.ink}" text-anchor="${anchor}">${esc(p.label)}</text>` +
         `<text x="${lx.toFixed(1)}" y="${line2Y.toFixed(1)}" font-size="10" fill="${C.muted}" text-anchor="${anchor}">${esc(scoreText)}</text>`
@@ -576,7 +576,7 @@ function renderMbtiVersionStacked(dataset) {
       { key: 'other', name: 'Other clear type (%)', color: C.slate }
     ],
     max: 100
-  });
+  }).replace(/stroke="#f4efe6" stroke-width="3" paint-order="stroke" stroke-linejoin="round"/g, 'stroke="#f6f3ec" stroke-width="4" paint-order="stroke" stroke-linejoin="round"');
   return wrapChart(
     id,
     svg,
@@ -805,6 +805,70 @@ function renderAttachmentPlane(dataset, peerDatasets) {
 
 // ---------- Section 7 Technical Charts ----------
 
+const PEER_COMPARE_HUE = '#3d5a80';
+
+const DEFAULT_B5_TRAITS = [
+  { label: 'Openness', poles: 'Routine ↔ Curious' },
+  { label: 'Conscientious', poles: 'Flexible ↔ Structured' },
+  { label: 'Extraversion', poles: 'Reserved ↔ Expressive' },
+  { label: 'Agreeable', poles: 'Skeptical ↔ Warm/Polite' },
+  { label: 'Neuroticism', poles: 'Calm ↔ Reactive' }
+];
+
+function fmtVal(v, d) {
+  return d === 0 ? String(Math.round(v)) : (d > 1 ? Number(v).toFixed(d) : (Math.round(v * 10) / 10).toFixed(1));
+}
+
+function renderLegend(items, x, y, maxW = 676) {
+  let cx = x, cy = y, rows = 1;
+  const g = items.map((s) => {
+    const suffix = s.evidence ? ` (${s.evidence})` : (s.reported ? ' (reported)' : '');
+    const label = s.name + suffix;
+    const w = 16 + label.length * 6 + 18;
+    if (cx + w > maxW && cx > x) { cx = x; cy += 16; rows++; }
+    const out = `<g transform="translate(${cx}, ${cy})"><rect x="0" y="-9" width="11" height="11" rx="2" fill="${s.reported ? C.paper : s.color}" stroke="${s.color}" stroke-width="${s.reported ? 1.2 : 0}"/><text x="16" y="0" font-size="10.5" fill="${C.ink}">${esc(label)}</text></g>`;
+    cx += w;
+    return out;
+  }).join('');
+  return { g, rows };
+}
+
+function renderTraitSpectrumSvg({ id, title, desc, series, traits = DEFAULT_B5_TRAITS, min = 10, max = 50, mid = 30, decimals = 1 }) {
+  const W = 680, plotX = 144, plotW = 468, lg = renderLegend(series, 4, 14);
+  const top = 30 + (lg.rows - 1) * 16;
+  const barH = series.length >= 4 ? 7 : 8;
+  const barGap = 6;
+  const bandH = series.length * (barH + barGap) - barGap + 10;
+  const rowH = Math.max(46, bandH + 12);
+  const H = top + traits.length * rowH + 22;
+  const xPos = (v) => plotX + (Math.max(0, Math.min(max - min, v - min)) / (max - min)) * plotW;
+  const midX = xPos(mid);
+
+  const rowsHtml = traits.map((tr, ti) => {
+    const y0 = top + ti * rowH;
+    const bandY = y0 + 2;
+    const bars = series.map((s, si) => {
+      const v = s.values[ti];
+      if (v == null) return '';
+      const by = bandY + 5 + si * (barH + barGap);
+      const w = Math.max(2, xPos(v) - plotX);
+      const fill = s.reported ? C.paper : s.color;
+      const strokeW = s.reported ? 1.4 : 0;
+      return `<rect x="${plotX}" y="${by}" width="${w.toFixed(1)}" height="${barH}" rx="2" fill="${fill}" stroke="${s.color}" stroke-width="${strokeW}"/><text x="${(plotX + w + 6).toFixed(1)}" y="${(by + barH - 0.5).toFixed(1)}" font-size="9" font-weight="600" fill="${C.ink}" paint-order="stroke" stroke="#f6f3ec" stroke-width="4" stroke-linejoin="round">${fmtVal(v, decimals)}</text>`;
+    }).join('');
+    const poleY = Math.min(y0 + 28, bandY + bandH - 2);
+    return `<text x="0" y="${y0 + 13}" font-size="11.5" font-weight="600" fill="${C.ink}">${esc(tr.label)}</text><text x="0" y="${poleY}" font-size="9" fill="${C.muted}">${esc(tr.poles)}</text><rect x="${plotX}" y="${bandY}" width="${plotW}" height="${bandH}" rx="2" fill="${C.track}" stroke="${C.sand}" stroke-width="0.8"/><line x1="${midX.toFixed(1)}" x2="${midX.toFixed(1)}" y1="${bandY}" y2="${bandY + bandH}" stroke="#857d71" stroke-width="1" stroke-dasharray="3 3"/>${bars}`;
+  }).join('');
+
+  const axisY = top + traits.length * rowH + 6;
+  const axis = `<line x1="${plotX}" x2="${plotX + plotW}" y1="${axisY}" y2="${axisY}" stroke="${C.sand}"/><text x="${plotX}" y="${axisY + 12}" font-size="9" fill="${C.muted}">${min} (Low pole)</text><text x="${midX.toFixed(1)}" y="${axisY + 12}" font-size="9" fill="${C.muted}" text-anchor="middle">${mid} (Midpoint)</text><text x="${plotX + plotW}" y="${axisY + 12}" font-size="9" fill="${C.muted}" text-anchor="end">${max} (High pole)</text>`;
+  const descText = series.map((s) => {
+    const suffix = s.evidence ? ` (${s.evidence})` : (s.reported ? ' (reported)' : '');
+    return `${s.name}${suffix}: ${traits.map((tr, i) => `${tr.label} ${fmtVal(s.values[i], decimals)}`).join(', ')}`;
+  }).join('; ');
+  return `<svg class="research-chart" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d"><title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc ? desc + ' ' : '')}${esc(descText)}.</desc>${lg.g}${rowsHtml}${axis}</svg>`;
+}
+
 function renderB5TraitSpectrum(dataset, peerDatasets) {
   const slug = dataset.family_slug;
   const id = `${slug}-b5-spectrum`;
@@ -834,11 +898,11 @@ function renderB5TraitSpectrum(dataset, peerDatasets) {
     const pLatest = getLatestCheckpoint(peer);
     series.push({
       name: `${peer.name} (${pLatest.label})`,
-      color: peer.color || C.secondary,
+      color: PEER_COMPARE_HUE,
       values: b5Keys.map((k) => Number(pLatest.big_five[k].mean))
     });
   }
-  const svg = charts.traitSpectrum({
+  const svg = renderTraitSpectrumSvg({
     id,
     title: `${dataset.name} Big Five Profile (IPIP-50, 10 to 50 sum scale)`,
     desc: `Assistant self-report Big Five domain means on the 10 to 50 IPIP-50 scale under fixed zero-memory elicitation for ${dataset.name} (${latest.label}).`,
@@ -872,11 +936,11 @@ function renderHexacoSpectrum(dataset, peerDatasets) {
     const pLatest = getLatestCheckpoint(peer);
     series.push({
       name: `${peer.name} IPIP-HEXACO proxy (1..5)`,
-      color: peer.color || C.secondary,
+      color: PEER_COMPARE_HUE,
       values: hKeys.map((k) => Number(pLatest.ipip_hexaco[k].mean))
     });
   }
-  const svg = charts.traitSpectrum({
+  const svg = renderTraitSpectrumSvg({
     id,
     title: `${dataset.name} IPIP-HEXACO Proxy Profile (1.00 to 5.00 mean scale)`,
     desc: `Public-domain 60-item IPIP-HEXACO proxy domain means on the 1.00 to 5.00 scale across 24 facets for ${dataset.name} (${latest.label}), kept distinct from 10-50 Big Five sums.`,

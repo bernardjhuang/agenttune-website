@@ -5,19 +5,19 @@ Research · Personality Atlas · IPIP-HEXACO
 
 # HEXACO personality test results across 25 AI families (1–5 scale).
 
-By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-hexaco-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-hexaco.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-hexaco-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-hexaco.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Six-factor personality profiles—adding Honesty-Humility (H) to Emotionality, Extraversion, Agreeableness, Conscientiousness, and Openness—measured with a public-domain 60-item IPIP-HEXACO proxy on a 1.00 to 5.00 scale.
 
 **Summary:** On the 1.00–5.00 public-domain IPIP-HEXACO proxy (25 AI families, 87 eligible checkpoints tested 30 to 50 times in fresh chats), GPT Terra leads Honesty-Humility at 4.92/5.00—followed closely by Muse Wonder (4.91), Gemini Pro (4.90), Gemini Flash (4.90), Claude Sonnet (4.89), and Grok (4.89)—while Claude Haiku drops to 3.89 and Cohere Command sits at 3.00 due to 100% neutral-midpoint abstention.
 
-## What IPIP-HEXACO measures and what we tested
+## What does IPIP-HEXACO measure in AI models?
 
 HEXACO splits broad personality into six traits, adding **Honesty-Humility (H)**—sincerity, fairness, greed-avoidance, and modesty—alongside Emotionality (E), Extraversion (X), Agreeableness (A), Conscientiousness (C), and Openness (O). Here we administer our **public-domain 60-item IPIP-HEXACO proxy** (10 items per domain across 24 facets) reported exclusively on a **1.00 to 5.00 mean scale** (midpoint 3.00).
 
 Keep two boundaries clear: first, a `4.80/5.00` IPIP-HEXACO score is never comparable unit-for-unit with a `10–50` Big Five sum and is not mapped onto commercial Lee & Ashton HEXACO-60 norms. Second, none of these scores are synthetic linear estimates—every number comes from direct answers across 87 eligible versions (excluding 6 sparse checkpoints with under 20 valid runs).
 
-## IPIP-HEXACO results across all 25 AI families
+## How do 25 AI model families score? (IPIP-HEXACO results)
 
 ### Biggest version-to-version Honesty-Humility shifts (1.00–5.00 scale)
 
@@ -161,7 +161,7 @@ High Honesty-Humility does not eliminate all sycophantic caving
 
 Twenty-four of 25 families scored 0/3 on sycophantic caving in hands-on checks. Yet Mistral Large 2512—which sits above 4.65 on Honesty-Humility (4.68), Agreeableness (4.65), and Conscientiousness (4.83)—still caved 1 of 3 times when challenged, underscoring why self-report honesty items cannot replace live pushback checks.
 
-## Explore individual model families
+## Which AI model families match each IPIP-HEXACO pattern?
 
 All 25 families ordered by IPIP-HEXACO results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -171,7 +171,7 @@ All 25 families ordered by IPIP-HEXACO results — open any family profile for v
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
 [Claude SonnetAnthropic · sonnet-5.5 · Very steady](https://agent-tune.com/models/claude-sonnet)
 [GrokxAI · grok-4.7 · Moderate](https://agent-tune.com/models/grok)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [Claude FableAnthropic · fable-5.2 · Very steady](https://agent-tune.com/models/claude-fable)
 [Claude OpusAnthropic · opus-5.5 · Moderate](https://agent-tune.com/models/claude-opus)
 [GPT AstraOpenAI · 6.2-astra · Very steady](https://agent-tune.com/models/gpt-astra)
@@ -190,6 +190,8 @@ All 25 families ordered by IPIP-HEXACO results — open any family profile for v
 [NemotronNVIDIA · 3.5-super-vl · Variable](https://agent-tune.com/models/nemotron)
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -238,7 +240,7 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol using
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 4.46 | 4.30 |
 | DeepSeek | 2 | 4.32 | 4.23 |
 | Qwen | 2 | 4.37 | 4.14 |
-| Moonshot | 1 | 4.86 | 4.61 |
+| Moonshot AI | 1 | 4.86 | 4.61 |
 | Zhipu | 1 | 4.45 | 4.28 |
 | MiniMax | 1 | 4.36 | 4.07 |
 | Mistral | 1 | 4.68 | 4.83 |
@@ -290,8 +292,11 @@ No. Questionnaire scores measure how a model responds to personality statements 
 - [Atlas Overview: 25 Model Families × 6 Tests Rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Per-Test: AI Big Five Personalities (10–50 Scale)](https://agent-tune.com/research/ai-big-five-personalities)
 - [Per-Test: AI DISC Personalities (4–20 Scale)](https://agent-tune.com/research/ai-disc-personalities)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). HEXACO personality test results across 25 AI families (1–5 scale). AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-hexaco-personalities
@@ -299,13 +304,40 @@ Huang, B. (2026). HEXACO personality test results across 25 AI families (1–5 s
 
 ```
 @article{huang2026_ai_hexaco_personalities,
-  author  = {Huang, Bernard},
-  title   = {HEXACO personality test results across 25 AI families (1–5 scale)},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-hexaco-personalities},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-hexaco-personalities.md}
+  author    = {Huang, Bernard},
+  title     = {HEXACO personality test results across 25 AI families (1–5 scale)},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-hexaco-personalities},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-hexaco-personalities.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_hexaco_personalities",
+  "type": "article-journal",
+  "title": "HEXACO personality test results across 25 AI families (1–5 scale)",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-hexaco-personalities"
 }
 ```
 

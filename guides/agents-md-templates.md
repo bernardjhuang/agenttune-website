@@ -222,3 +222,4 @@ Yes—many coding tools now read root AGENTS.md natively, or you can convert sni
 - [Limit guide: Codex AGENTS.md configuration, overrides & 32 KiB limit](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Claude Code: 15 CLAUDE.md examples & downloadable Output Styles](https://agent-tune.com/guides/claude-code-personality)
 - [Generator: Interactive CLAUDE.md & Coding Rules Builder](https://agent-tune.com/tools/claude-md-generator)
+- [Guide & Builder: OpenClaw SOUL.md, IDENTITY.md & USER.md 3-file builder](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md)

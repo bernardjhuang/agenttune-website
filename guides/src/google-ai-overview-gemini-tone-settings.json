@@ -93,6 +93,16 @@
       "kicker": "Guide",
       "label": "AI style & verbosity controls: rules that beat adjectives",
       "href": "/guides/ai-assistant-personality-tone-guidelines"
+    },
+    {
+      "kicker": "Guide & Builder",
+      "label": "NotebookLM custom instructions & Audio Overview prompts",
+      "href": "/guides/notebooklm-custom-instructions-audio-overview"
+    },
+    {
+      "kicker": "Guide",
+      "label": "Perplexity Spaces custom instructions & citation rules",
+      "href": "/guides/perplexity-spaces-custom-instructions"
     }
   ],
   "promptModel": "any",

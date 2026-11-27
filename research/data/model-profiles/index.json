@@ -2,9 +2,12 @@
   "schema_version": "model-profiles-index-v1",
   "data_status": "live-openrouter-v1",
   "protocol_id": "model-profiles-v1",
-  "generated_utc": "2026-11-27T05:05:16Z",
+  "generated_utc": "2026-11-27T06:01:29Z",
   "total_families": 25,
   "total_checkpoints": 87,
+  "primary_checkpoints": 87,
+  "total_tested_checkpoints": 93,
+  "quarantined_checkpoints": 6,
   "families": [
     {
       "schema_version": "model-profiles-family-v1",
@@ -6449,7 +6452,7 @@
       "family_slug": "cohere-command",
       "name": "Cohere Command",
       "provider": "Cohere",
-      "tier": "Open-wt/Prop",
+      "tier": "Mixed (Proprietary + Open-weight)",
       "phase": "B",
       "protocol_id": "model-profiles-v1",
       "instruments_sha256": {
@@ -32208,7 +32211,7 @@
       "family_slug": "mistral-large",
       "name": "Mistral Large",
       "provider": "Mistral",
-      "tier": "Open/Prop",
+      "tier": "Mixed (Proprietary + Open-weight)",
       "phase": "B",
       "protocol_id": "model-profiles-v1",
       "instruments_sha256": {
@@ -33834,7 +33837,7 @@
       "family_slug": "muse-spark",
       "name": "Muse Spark",
       "provider": "Meta",
-      "tier": "Mix",
+      "tier": "Mixed (Proprietary + Open-weight)",
       "phase": "A",
       "protocol_id": "model-profiles-v1",
       "instruments_sha256": {

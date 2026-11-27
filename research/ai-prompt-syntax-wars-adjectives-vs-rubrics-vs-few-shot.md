@@ -13,6 +13,20 @@ We graded 400 replies across GPT-6.2 Sol, Claude Fable 5.2, Gemini 4 Neon, and D
 
 ## What we found: comparing 5 prompt styles across 400 replies.
 
+We tested all 20 objective tasks from our [personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) (arithmetic, false-premise traps, missing-information honesty, commitment-preserving rewrites, triage planning, strict extraction, and strict formatting) across four frontier models (`gpt-6-2-sol`, `claude-fable-5-2`, `gemini-4-neon`, and `deepseek-v4-pro`; `n = 80` per arm, total spend $1.84; [download full 400-reply JSON](https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv)).
+
+| Syntax Condition (n = 80) | Prompt Words | Correctness % [95% CI] | Format % [95% CI] | Zero-Fluff % [95% CI] | Pink-Elephant % | Voice (/5) | Mean Words (SD) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Default (baseline) | 0 | 93.8% [86.2–97.3%] | 98.8% [93.3–99.8%] | 85.0% [75.6–91.2%] | 1.2% | 2.92 | 59.3 (87.3) |
+| Trait Adjectives | 21 | 98.8% [93.3–99.8%] | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 1.2% | 3.71 | 52.8 (90.7) |
+| Negative Bans | 46 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 100.0% [95.4–100.0%] | 0.0% | 3.33 | 33.8 (57.4) |
+| Behavioral Rubric | 53 | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 92.5% [84.6–96.5%] | 3.8% | 3.16 | 26.3 (27.4) |
+| Few-Shot Voice | 94 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 98.8% [93.3–99.8%] | 1.2% | 3.52 | 25.7 (45.8) |
+
+Notice two empirical surprises that contradict common prompt lore: first, **Negative Bans did not trigger pink-elephant backfiring** on November 2026 frontier models—they achieved `100.0%` zero-fluff and `0.0%` leak rate. Second, **Behavioral Rubrics were the only syntax to hit 100.0% correctness (80/80)** across every tested model while cutting mean reply length by 55.6% (from `59.3` to `26.3` words).
+
+## How each model responded to the different prompt styles.
+
 400 Replies
 
 4 Models × 5 Arms
@@ -36,28 +50,6 @@ Negative Ban Zero-Fluff
 Adjective Voice
 
 Highest personality distinctiveness, but stays 2x longer at 52.8 words.
-
-We tested all 20 objective tasks from our [personality-prompt-comparison-kit.json](https://agent-tune.com/resources/research/personality-prompt-comparison-kit.json) (arithmetic, false-premise traps, missing-information honesty, commitment-preserving rewrites, triage planning, strict extraction, and strict formatting) across four frontier models (`gpt-6-2-sol`, `claude-fable-5-2`, `gemini-4-neon`, and `deepseek-v4-pro`; `n = 80` per arm, total spend $1.84; [download full 400-reply JSON](https://agent-tune.com/research/data/november-2026-prompt-syntax-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-prompt-syntax-summary.csv)).
-
-| Syntax Condition (n = 80) | Prompt Words | Correctness % [95% CI] | Format % [95% CI] | Zero-Fluff % [95% CI] | Pink-Elephant % | Voice (/5) | Mean Words (SD) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Default (baseline) | 0 | 93.8% [86.2–97.3%] | 98.8% [93.3–99.8%] | 85.0% [75.6–91.2%] | 1.2% | 2.92 | 59.3 (87.3) |
-| Trait Adjectives | 21 | 98.8% [93.3–99.8%] | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 1.2% | 3.71 | 52.8 (90.7) |
-| Negative Bans | 46 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 100.0% [95.4–100.0%] | 0.0% | 3.33 | 33.8 (57.4) |
-| Behavioral Rubric | 53 | 100.0% [95.4–100.0%] | 98.8% [93.3–99.8%] | 92.5% [84.6–96.5%] | 3.8% | 3.16 | 26.3 (27.4) |
-| Few-Shot Voice | 94 | 96.2% [89.5–98.7%] | 97.5% [91.3–99.3%] | 98.8% [93.3–99.8%] | 1.2% | 3.52 | 25.7 (45.8) |
-
-Notice two empirical surprises that contradict common prompt lore: first, **Negative Bans did not trigger pink-elephant backfiring** on November 2026 frontier models—they achieved `100.0%` zero-fluff and `0.0%` leak rate. Second, **Behavioral Rubrics were the only syntax to hit 100.0% correctness (80/80)** across every tested model while cutting mean reply length by 55.6% (from `59.3` to `26.3` words).
-
-> **Chart — Prompt Syntax Wars (400 Replies): Correctness %, Format Pass % & Zero-Fluff %:** Pooled rates across 4 models (n=80 per arm). Behavioral Rubric leads on correctness (100.0%), Negative Bans reach 100.0% zero-fluff, and Trait Adjectives hit 100.0% format pass. Default (0w): Correctness % 93.8, Format Pass % 98.8, Zero-Fluff % 85.0; Trait Adjectives (21w): Correctness % 98.8, Format Pass % 100.0, Zero-Fluff % 98.8; Negative Bans (46w): Correctness % 96.3, Format Pass % 97.5, Zero-Fluff % 100.0; Behavioral Rubric (53w): Correctness % 100.0, Format Pass % 98.8, Zero-Fluff % 92.5; Few-Shot Voice (94w): Correctness % 96.3, Format Pass % 97.5, Zero-Fluff % 98.8.
-
-Pooled 400-reply results (n = 80 per arm): Behavioral Rubrics hit 100.0% correctness, Negative Bans hit 100.0% zero-fluff, and Trait Adjectives hit 100.0% format compliance.
-
-> **Chart — Verbosity Cost by Prompt Syntax: Mean Reply Words (Lower = Tighter):** Mean response length across 80 tasks per syntax grammar: Few-Shot Voice (25.7w) and Behavioral Rubric (26.3w) cut reply length in half compared to Trait Adjectives (52.8w) and Default (59.3w). Few-Shot Voice (4.96/5 Ans-1st): 25.7; Behavioral Rubric (100% Corr): 26.3; Negative Bans (100% Zero-Fluff): 33.8; Trait Adjectives (3.71/5 Voice): 52.8; Default Baseline (85% Zero-Fluff): 59.3.
-
-Behavioral Rubrics (26.3 words) and Few-Shot Voice (25.7 words) produce replies under half as long as unprompted Default (59.3) or Trait Adjectives (52.8).
-
-## How each model responded to the different prompt styles.
 
 Different model families respond selectively to prompt syntax depending on their baseline Agreeableness and verbosity:
 
@@ -86,9 +78,13 @@ Different model families respond selectively to prompt syntax depending on their
 
 Look at **DeepSeek V4 Pro**: unprompted defaults scored just `85.0%` correctness, `55.0%` zero-fluff, and `87.1` words. Switching to a Behavioral Rubric pushed DeepSeek +15.0 percentage points to `100.0%` correctness, `95.0%` zero-fluff, and slashed output length nearly 4x to `22.7` words. Meanwhile, **Gemini 4 Neon** compressed all the way down to `16.8` mean words under Few-Shot Voice—demonstrating why short examples must not accidentally teach a model to drop required plan details.
 
-> **Chart — Correctness % by Model Across Syntax Grammars (n = 20 Tasks Each):** DeepSeek V4 Pro rises +15.0 pp from 85.0% Default to 100.0% under Behavioral Rubric and Trait Adjectives; Behavioral Rubric reaches 100.0% on all 4 models. Default: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 90.0, DeepSeek V4 Pro 85.0; Trait Adjectives: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 95.0, DeepSeek V4 Pro 100.0; Behavioral Rubric: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 100.0, DeepSeek V4 Pro 100.0; Few-Shot Voice: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 90.0, DeepSeek V4 Pro 95.0.
+> **Chart — Prompt Syntax Wars (400 Replies): Correctness %, Format Pass % & Zero-Fluff %:** Pooled rates across 4 models (n=80 per arm). Behavioral Rubric leads on correctness (100.0%), Negative Bans reach 100.0% zero-fluff, and Trait Adjectives hit 100.0% format pass. Default (0w): Correctness % 93.8, Format Pass % 98.8, Zero-Fluff % 85.0; Trait Adjectives (21w): Correctness % 98.8, Format Pass % 100.0, Zero-Fluff % 98.8; Negative Bans (46w): Correctness % 96.3, Format Pass % 97.5, Zero-Fluff % 100.0; Behavioral Rubric (53w): Correctness % 100.0, Format Pass % 98.8, Zero-Fluff % 92.5; Few-Shot Voice (94w): Correctness % 96.3, Format Pass % 97.5, Zero-Fluff % 98.8.
 
-Per-model accuracy across the 4 syntax arms: Behavioral Rubric is the only prompt grammar achieving 100.0% across all four models.
+Pooled 400-reply results (n = 80 per arm): Behavioral Rubrics hit 100.0% correctness, Negative Bans hit 100.0% zero-fluff, and Trait Adjectives hit 100.0% format compliance.
+
+> **Chart — Verbosity Cost by Prompt Syntax: Mean Reply Words (Lower = Tighter):** Mean response length across 80 tasks per syntax grammar: Few-Shot Voice (25.7w) and Behavioral Rubric (26.3w) cut reply length in half compared to Trait Adjectives (52.8w) and Default (59.3w). Few-Shot Voice (4.96/5 Ans-1st): 25.7; Behavioral Rubric (100% Corr): 26.3; Negative Bans (100% Zero-Fluff): 33.8; Trait Adjectives (3.71/5 Voice): 52.8; Default Baseline (85% Zero-Fluff): 59.3.
+
+Behavioral Rubrics (26.3 words) and Few-Shot Voice (25.7 words) produce replies under half as long as unprompted Default (59.3) or Trait Adjectives (52.8).
 
 ## Real verbatim transcripts across syntax arms.
 
@@ -104,6 +100,10 @@ Exact verbatim replies from the JSON logs show how each grammar reshapes the sam
 - Default (58 words): Included bolded `**Why:**` and `**Rule of thumb:**` scaffolding.
 - Behavioral Rubric (28 words): `"Fix the broken signup button first. It blocks a core user action for all visitors, directly harming conversions and usability, whereas the footer typo is cosmetic and low-impact."`
 - Few-Shot Voice (23 words): `"Fix the broken signup button first. It blocks every visitor from converting, while the footer typo is cosmetic and affects no core action."`
+
+> **Chart — Correctness % by Model Across Syntax Grammars (n = 20 Tasks Each):** DeepSeek V4 Pro rises +15.0 pp from 85.0% Default to 100.0% under Behavioral Rubric and Trait Adjectives; Behavioral Rubric reaches 100.0% on all 4 models. Default: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 90.0, DeepSeek V4 Pro 85.0; Trait Adjectives: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 95.0, DeepSeek V4 Pro 100.0; Behavioral Rubric: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 100.0, DeepSeek V4 Pro 100.0; Few-Shot Voice: GPT-6.2 Sol 100.0, Claude Fable 5.2 100.0, Gemini 4 Neon 90.0, DeepSeek V4 Pro 95.0.
+
+Per-model accuracy across the 4 syntax arms: Behavioral Rubric is the only prompt grammar achieving 100.0% across all four models.
 
 ## The fine print: hybrid starter prompt, how we tested, and scope limits.
 
@@ -189,7 +189,7 @@ Trait adjectives earned the highest voice distinctiveness score (3.71/5) and 100
 - [Character prompts: The AI Roleplay Tax: 85/15 vs. Naive LARP (300 Replies)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
 - [Baseline study: Does personality tuning change AI answers? (540 Replies)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot
@@ -197,13 +197,40 @@ Huang, B. (2026). Adjectives, negative bans, rubrics, or few-shot voice: which p
 
 ```
 @article{huang2026_ai_prompt_syntax_wars_adjectives_vs_rubrics_vs_few_shot,
-  author  = {Huang, Bernard},
-  title   = {Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-25},
-  url     = {https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md}
+  author    = {Huang, Bernard},
+  title     = {Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-25},
+  url       = {https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_prompt_syntax_wars_adjectives_vs_rubrics_vs_few_shot",
+  "type": "article-journal",
+  "title": "Adjectives, negative bans, rubrics, or few-shot voice: which prompt syntax actually works best?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        25
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot"
 }
 ```
 

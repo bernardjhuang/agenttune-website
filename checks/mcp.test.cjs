@@ -74,6 +74,9 @@ test('MCP structured results match advertised schemas and retain readable text',
  assert.ok(!opus.isError);assert.match(opus.structuredContent.body,/Claude Opus/);
  const mbtiAtlas=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'ai-mbti-personalities'}}))).json()).result;
  assert.ok(!mbtiAtlas.isError);assert.match(mbtiAtlas.structuredContent.body,/MBTI/);
+ const hubList=(await(await call(rpc('tools/call',{name:'list_resources',arguments:{kind:'hub'}}))).json()).result;
+ assert.ok(!hubList.isError);
+ assert.ok(hubList.structuredContent.resources.some(r=>r.id==='models-hub'));
 });
 
 test('MCP free tools discovery returns the public catalog in both structured and text form without accepting personal input',async()=>{

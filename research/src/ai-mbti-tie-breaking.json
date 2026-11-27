@@ -72,5 +72,19 @@
   ],
   "scripts": [
     "/resources/research/tie-explorer.js"
+  ],
+  "faq": [
+    {
+      "q": "How does tie-breaking change AI MBTI test results?",
+      "a": "Across 400 frozen September 2026 MBTI runs, the legacy scorer broke exact midpoint ties (24 vs. 24) toward I, N, T, and J, labeling 335 of 400 runs as INTJ (83.8%). When exact ties are preserved as unresolved (X), only 280 of 400 runs test cleanly as INTJ (70.0%), because 59 runs tied on at least one axis."
+    },
+    {
+      "q": "Which AI model had the most tied MBTI runs in the 400-run study?",
+      "a": "GPT-6 Astra had 29 runs with at least one tied axis (24 on Sensing vs. Intuition and 12 on Extraversion vs. Introversion), dropping from 45 legacy INTJ labels to 19 tie-free INTJ results. By contrast, Claude Fable 5.1 had just 1 tied run out of 100 (99 legacy vs. 98 tie-free INTJ)."
+    },
+    {
+      "q": "How should researchers report AI MBTI scores to avoid tie inflation?",
+      "a": "Always report the tie-free resolved count alongside any legacy tie-broken count, mark exact 0-margin axes as X (such as INXJ or IXTJ), and publish the mean axis margins alongside four-letter labels."
+    }
   ]
 }

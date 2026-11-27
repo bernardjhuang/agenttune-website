@@ -68,6 +68,30 @@
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
   X-Robots-Tag: noindex
+/tools/*.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: noindex
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/>; rel="canonical"
+  X-Robots-Tag: noindex
+/guides/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/guides/>; rel="canonical"
+  X-Robots-Tag: noindex
+/library/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/library/>; rel="canonical"
+  X-Robots-Tag: noindex
+/tests/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Link: <https://agent-tune.com/tests/>; rel="canonical"
+  X-Robots-Tag: noindex
 /research.md
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *

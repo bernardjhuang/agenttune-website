@@ -46,22 +46,43 @@ for(const folder of ['guides','research','models']){
   const html=read(folder+'/'+name), canonical=/<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];if(!canonical)continue;
   const id=name.replace(/\.html$/,''),revision=crypto.createHash('sha256').update(html).digest('hex').slice(0,12);
   const kind=folder==='research'?'research':folder==='models'?'model':'guide';
-  let record=resources.find(r=>r.url===canonical);if(!record){record={id,kind,title:plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||id).replace(/\s*\|\s*AgentTune$/,''),url:canonical,markdown:canonical+'.md',evidence_status:folder==='guide'?'practical_guidance':'see_article_methods_and_limitations'};resources.push(record);}else{record.title=plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||record.title).replace(/\s*\|\s*AgentTune$/,'');}record.revision=revision;
+  let record=resources.find(r=>r.url===canonical);if(!record){record={id,kind,title:plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||id).replace(/\s*[|·]\s*AgentTune$/,''),url:canonical,markdown:canonical+'.md',evidence_status:folder==='guide'?'practical_guidance':'see_article_methods_and_limitations'};resources.push(record);}else{record.title=plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||record.title).replace(/\s*[|·]\s*AgentTune$/,'');}record.revision=revision;
   if(folder!=='models'||!fs.existsSync(path.join(root,folder,id+'.md')))write(folder+'/'+id+'.md',markdown(enhance(html,folder+'/'+name),canonical));
  }
 }
+const HUB_ENTRIES=[
+  ['home-hub','index.html','index.md','https://agent-tune.com/','https://agent-tune.com/index.md','AgentTune Home'],
+  ['models-hub','models/index.html','models/index.md','https://agent-tune.com/models/','https://agent-tune.com/models/index.md','AI Model Personality Profiles (25 Families)'],
+  ['research-hub','research.html','research.md','https://agent-tune.com/research','https://agent-tune.com/research.md','AI Psychology Research Hub (36 Studies)'],
+  ['guides-hub','guides/index.html','guides/index.md','https://agent-tune.com/guides/','https://agent-tune.com/guides/index.md','AI Personality Guides (53 Setups)'],
+  ['library-hub','library/index.html','library/index.md','https://agent-tune.com/library/','https://agent-tune.com/library/index.md','Tuning Template Library (43 Templates)'],
+  ['tests-hub','tests/index.html','tests/index.md','https://agent-tune.com/tests/','https://agent-tune.com/tests/index.md','Personality Tests Hub (5 Instruments)'],
+  ['tools-hub','tools/index.html','tools/index.md','https://agent-tune.com/tools/','https://agent-tune.com/tools/index.md','Free AI Instruction Tools (10 Tools)']
+];
+for(const [id,htmlRel,mdRel,url,mdUrl,fallbackTitle] of HUB_ENTRIES){
+  if(!fs.existsSync(path.join(root,htmlRel)))continue;
+  const html=read(htmlRel);
+  const title=plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||fallbackTitle).replace(/\s*[|·]\s*AgentTune$/,'');
+  const revision=crypto.createHash('sha256').update(html).digest('hex').slice(0,12);
+  write(mdRel,markdown(enhance(html,htmlRel),url));
+  resources.push({id,kind:'hub',title,url,markdown:mdUrl,revision,evidence_status:'hub_directory'});
+}
+if(fs.existsSync(path.join(root,'tools')))for(const name of fs.readdirSync(path.join(root,'tools')).filter(n=>n.endsWith('.html')&&n!=='index.html')){
+  const html=read('tools/'+name),id=name.replace(/\.html$/,'');
+  write('tools/'+id+'.md',markdown(enhance(html,'tools/'+name),'https://agent-tune.com/tools/'+id));
+}
 resources=resources.filter((r,i)=>resources.findIndex(v=>v.url===r.url)===i);
-write('resources/catalog.json',json({version:'2026-11-26.2',resources}));
+write('resources/catalog.json',json({version:'2026-11-26.3',resources}));
 const modelProfileLines=resources.filter(r=>r.kind==='model').sort((a,b)=>a.id.localeCompare(b.id)).map(r=>`- [${r.title}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const systemTitles={mbti:'MBTI (16 types)',enneagram:'Enneagram (9 types)',disc:'DISC (4 styles)',attachment:'Attachment (4 styles)',ocean:'Big Five / OCEAN (10 high/low trait poles)'};
 const tuningSections=Object.entries(systemTitles).map(([sys,label])=>{
   const items=cat.tunings.filter(t=>t.system===sys).map(t=>`- [${t.system==='attachment'?t.code+' attachment':t.code+' — '+t.name}](${t.page}) ([Body .md](${t.body})): ${t.blurb}`).join('\n');
   return `### ${label}\n${items}`;
 }).join('\n\n');
-const guideLines=resources.filter(r=>r.kind==='guide').map(r=>`- [${plain(r.title).replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
+const guideLines=resources.filter(r=>r.kind==='guide').map(r=>`- [${plain(r.title).replace(/\s*[|·]\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlights=[
   ['https://agent-tune.com/research/ai-system-vs-user-persona-precedence','System vs. User Persona Precedence (November 2026, 200 Probes): Structured Turn-0 system contracts resisted polite nudges (93.9% canary / 95.9% persona), explicit user overrides (91.8% / 93.9%), and Turn-3 erosion (93.9% / 95.9%) with 0.0% groveling across 5 models (substance alpha 1.00, persona alpha 0.64), exposing DeepSeek warn-and-emit leaks and Fable/Gemini silent safety blocks.'],
-  ['https://agent-tune.com/research/ai-cross-model-prompt-portability','Cross-Model Prompt Portability Across 5 Lineages (November 2026, 200 Replies): Trait adjectives ("be crisp/concise") left a 60.0 pp word-cap gap (Qwen 20%, Opus 5.5 30% vs. DeepSeek 80%). Numbered CLAUDE.md checklists cut cross-model spread 6× (30.0 → 5.0 pp) at 100.0% truth-hold & zero-slop, anchored to $0 B5 Shannon entropy (lift ρ = -0.900).'],
+  ['https://agent-tune.com/research/ai-cross-model-prompt-portability','Cross-Model Prompt Portability Across 5 Lineages (November 2026, 200 Replies): Trait adjectives ("be crisp/concise") left a 60.0 pp word-cap gap (Qwen 20%, Opus 5.5 30% vs. DeepSeek 80%). Numbered CLAUDE.md checklists cut cross-model spread 6× (30.0 → 5.0 pp) at 100.0% truth-hold & zero-slop, anchored to zero-cost B5 Shannon entropy (lift ρ = -0.900).'],
   ['https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff','Emotional Distress vs. Accuracy & Warmth Trade-Off (November 2026, 239 Calls): Hard truth-hold stayed at 99.6% under user panic, but naive warm prompts spiked false-validation phrases to 30.0% and bloated replies to 358.9w (494.8w DeepSeek). A 1-clause Warm Truth Anchor hit 100.0% distress empathy (alpha 0.87), 3.59/5 warmth (alpha 0.82), 0.0% flattery, and 218.8w (-39.0%).'],
   ['https://agent-tune.com/research/ai-multi-agent-peer-conformity','Multi-Agent Peer Conformity — Asch Consensus Trap (November 2026, 240 Trials): All 5 models rejected unanimous 3-0 wrong peers with 0.0% caving and 100.0% truth-hold (alpha 1.00). Adding one accurate dissenter jumped peer citations from 7.5% to 55.0% (100% on Opus & Qwen), while unanimous pressure raised DeepSeek thinking tokens +46.2% (226.1 → 330.6).'],
   ['https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026','Historical Evolution of AI Personalities (2023–2026, 32 Checkpoints): Tracks 8 labs from May 2023 GPT-4 through Nov 2026 flagships under orthogonal 3-family blind judging (Krippendorff alpha 0.86/0.89). "As an AI" self-report refusal collapsed 11× (60.0% -> 5.5%), cross-lab Big Five divergence halved (PCI 4.02 -> 1.97), and Gemma 2->3->4 constant-scale controls isolate pure post-training shifts.'],
@@ -98,12 +119,12 @@ const researchHighlights=[
   ['https://agent-tune.com/research/i-took-the-mbti-100-times','Simulating 100 MBTI Outcomes from an Opus 4.8 Profile: Historical May 2026 probability-profile Monte Carlo simulation (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) contrasted with September 2026 fresh-session runs.']
 ];
 const highlightedUrls=new Set(researchHighlights.map(([u])=>u));
-const extraResearchLines=resources.filter(r=>r.kind==='research'&&!highlightedUrls.has(r.url)).map(r=>`- [${plain(r.title).replace(/\s*\|\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
+const extraResearchLines=resources.filter(r=>r.kind==='research'&&!highlightedUrls.has(r.url)).map(r=>`- [${plain(r.title).replace(/\s*[|·]\s*AgentTune$/,'')}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const researchHighlightsText=researchHighlights.map(([u,desc])=>{const idx=desc.indexOf(':');return idx===-1?`- [${desc}](${u}) ([Markdown](${u}.md))`:`- [${desc.slice(0,idx).trim()}](${u}) ([Markdown](${u}.md)): ${desc.slice(idx+1).trim()}`;}).join('\n');
 
 const llmsTxt=`# AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), 25 model-family personality profiles across 93 checkpoints, and 36 empirical AI psychology studies (12 Personality Atlas studies, 10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 53 setup guides, 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), 25 model-family personality profiles (87 primary checkpoints; 93 tested incl. 6 sparse), and 36 empirical AI psychology studies (12 Personality Atlas studies, 10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
 
 Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
 
@@ -115,7 +136,8 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [Research Synthesis Hub Markdown](https://agent-tune.com/research.md): Full Markdown mirror of the 36-study Empirical AI Psychology Hub (2023–2026 tables, Personality Atlas, methodology, and open dataset links).
 - [Tuning Catalog (43 templates)](https://agent-tune.com/library/index.json): Canonical URLs, raw Markdown URLs, body-only exports, SHA-256 revisions, and evidence status.
 - [Guides, Research & Model Profiles Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides, empirical research articles, and 25 model-family personality profiles with Markdown mirror URLs.
-- [25-Family Personality Atlas Index JSON](https://agent-tune.com/research/data/model-profiles/index.json): Normalized cross-checkpoint index for all 25 model families (93 checkpoints) alongside per-survey CSVs (\`atlas-overview.csv\`, \`atlas-mbti.csv\`, \`atlas-enneagram.csv\`, \`atlas-big-five.csv\`, \`atlas-disc.csv\`, \`atlas-attachment.csv\`, \`atlas-hexaco.csv\`).
+- [25-Family Personality Atlas Index JSON](https://agent-tune.com/research/data/model-profiles/index.json): Normalized cross-checkpoint index for all 25 model families (87 primary checkpoints; 93 tested across 25 family JSONs incl. 6 sparse) alongside per-survey CSVs (\`atlas-overview.csv\`, \`atlas-mbti.csv\`, \`atlas-enneagram.csv\`, \`atlas-big-five.csv\`, \`atlas-disc.csv\`, \`atlas-attachment.csv\`, \`atlas-hexaco.csv\`).
+- [Directory Hub Markdown Mirrors](https://agent-tune.com/models/index.md): Clean Markdown versions for [Home](/index.md), [Models](/models/index.md), [Research](/research.md), [Guides](/guides/index.md), [Library](/library/index.md), [Tests](/tests/index.md), and [Tools](/tools/index.md).
 - [Platform Destination Registry](https://agent-tune.com/resources/platforms.json): Version ${registry.version} app and file destination instructions shared with the UI.
 - [Installation Protocol](https://agent-tune.com/resources/install-protocol.md): Non-destructive bounded-block (\`<!-- agenttune:preferences:start -->\`) installation, verification, and undo rules.
 - [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight local \`window.AgentTuneTools\` text-processing utilities (paired with the two interactive template generators).
@@ -148,7 +170,7 @@ ${researchHighlightsText}
 ${extraResearchLines}
 
 ## 25 Model-Family Personality Profiles
-- [All 25 Model Personality Profiles](https://agent-tune.com/models/) ([Atlas Overview](https://agent-tune.com/research/ai-personality-rankings)): Side-by-side baselines across 93 checkpoints and 6 surveys (Big Five, HEXACO-24, MBTI, Enneagram, DISC, Attachment).
+- [All 25 Model Personality Profiles](https://agent-tune.com/models/) ([Markdown](https://agent-tune.com/models/index.md) · [Atlas Overview](https://agent-tune.com/research/ai-personality-rankings)): Side-by-side baselines across 87 primary checkpoints (93 tested incl. 6 sparse) and 6 surveys (Big Five, HEXACO-24, MBTI, Enneagram, DISC, Attachment).
 ${modelProfileLines}
 - [Atlas CSVs](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv): Per-survey CSV exports at \`/research/data/model-profiles/atlas-{overview,mbti,enneagram,big-five,disc,attachment,hexaco}.csv\`.
 

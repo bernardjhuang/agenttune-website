@@ -11,6 +11,16 @@ We gave both versions of OpenAI's budget GPT Luna line (5.6-luna and 6-luna) the
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6 Luna flipped from 5.6-luna's 80% INTP to 100% clear INTJ (50 of 50), while scoring higher on Neuroticism (20.3/50) and lower on Conscientiousness (39.2/50) than GPT Sol or Terra.
 
+```yaml
+family: GPT Luna
+checkpoint: openai/gpt-6-luna
+runs: 50
+big_five_10_50: { O: 45.9, C: 39.2, E: 29.6, A: 45.0, N: 20.3 }
+ipip_hexaco_1_5: { H: 4.59, E: 2.52, X: 3.20, A: 4.04, C: 3.94, O: 4.51 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 3.01, avoidance: 3.07, style: Secure }
+```
+
 ## GPT-6 Luna at a glance
 
 Results below come from **50** fresh-chat runs of **GPT-6 Luna** (no prior conversation memory).
@@ -174,7 +184,7 @@ Attachment coordinates across GPT Luna versions. Hollow points mark earlier stud
 
 Big Five trait shifts across GPT Luna versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 100% INTJ flip from 5.6-luna's 80% INTP alongside +10.9 Extraversion jump
 
@@ -197,11 +207,15 @@ Practical rules tailored to **GPT Luna**. Keep system instructions short (5–8 
 - Include 1-2 short examples when strict formatting matters on budget-tier API calls.
 - Keep system instructions brief (4 to 6 crisp bullets) and separate rules clearly in ChatGPT Custom Instructions or OpenAI API instructions.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-luna) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-luna) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How GPT Luna compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How GPT Luna compares across 25 AI families
 
 Budget GPT-6 Luna scores +8.4 higher on Neuroticism (20.3 vs 11.8), -0.33 lower on Honesty-Humility, and shows looser run-to-run consistency than mid-tier GPT-6.1 Terra—mirroring how Anthropic's fast Haiku tier diverges from Sonnet and Opus.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -369,7 +383,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -473,7 +487,7 @@ IPIP-50 sums 10 items per trait (10-50), whereas our public-domain 60-item IPIP-
 - [Contrast: Claude Haiku model profile](https://agent-tune.com/models/claude-haiku)
 - [Tool: Customize GPT Luna instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-luna&target=chatgpt)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT Luna personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gpt-luna
@@ -488,6 +502,32 @@ Huang, B. (2026). GPT Luna personality: test results and how they've changed. Ag
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gpt-luna},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gpt-luna.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gpt_luna",
+  "type": "dataset",
+  "title": "GPT Luna personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gpt-luna"
 }
 ```
 

@@ -6,7 +6,7 @@
   "title": "AI Personality Repeatability: Labels vs Answer Variance",
   "description": "Compare unique answer vectors, modal results and score variation across 2,000 assessments. Stable labels can conceal changing questionnaire answers.",
   "pill": "Research · descriptive reanalysis",
-  "h1": "Does a stable result mean a stable AI personality?",
+  "h1": "AI personality repeatability: does a stable label mean stable answers?",
   "dek": "A model can get the exact same personality label 100 times in a row while changing dozens of individual answers underneath.",
   "lede": "Getting the same four-letter type across 100 runs doesn't mean the model gave the same answers every time. Using our 2,000 September 2026 test sessions, we separated three things: identical answer sheets, score variation, and repeated final labels.",
   "answer": "All 400 fresh Attachment runs scored Secure, yet the four models produced 90, 100, 79, and 96 different answer sheets out of 100. A steady label often hides shifting individual answers.",
@@ -78,6 +78,16 @@
     {
       "label": "Complete derived results (JSON)",
       "href": "/research/data/content-analysis.json"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does a 100% repeatable personality label mean an AI gives identical quiz answers every run?",
+      "a": "No. Across 400 fresh Attachment runs, all four models tested as Secure 100% of the time, yet they produced 79 to 100 distinct 36-item answer sheets out of 100 runs because any anxiety and avoidance averages below 4.00 fall into the same Secure quadrant."
+    },
+    {
+      "q": "Which questionnaire showed the highest vs. lowest answer-sheet repeatability?",
+      "a": "The 16-item DISC test had the fewest unique answer sheets (Claude Opus 5.5 produced only 7 distinct sheets across 100 runs, repeating its top sheet 60 times), whereas the 50-item Big Five and 36-item Attachment tests produced 79 to 100 unique answer sheets per 100 runs."
     }
   ]
 }

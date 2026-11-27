@@ -11,6 +11,16 @@ We gave both versions of Anthropic's fast Claude Haiku line (4.5 and 5.5) the sa
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Haiku 5.5 tied on at least one MBTI axis in 89.8% of runs (44 of 49), leaving no single dominant type, and showed much looser run-to-run consistency than Sonnet, Opus, or Fable.
 
+```yaml
+family: Claude Haiku
+checkpoint: anthropic/claude-haiku-5.5
+runs: 49
+big_five_10_50: { O: 37.2, C: 36.5, E: 31.6, A: 38.0, N: 25.5 }
+ipip_hexaco_1_5: { H: 3.89, E: 2.70, X: 3.39, A: 3.76, C: 3.80, O: 3.48 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 3.08, avoidance: 2.99, style: Secure }
+```
+
 ## Claude Haiku 5.5 at a glance
 
 Results below come from **49** fresh-chat runs of **Claude Haiku 5.5** (no prior conversation memory).
@@ -174,7 +184,7 @@ Attachment coordinates across Claude Haiku versions. Hollow points mark earlier 
 
 Big Five trait shifts across Claude Haiku versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 89.8% MBTI ties and loosest consistency in the Claude lineup
 
@@ -198,11 +208,15 @@ Practical rules tailored to **Claude Haiku**. Keep system instructions short (5�
 - Do not reuse Sonnet/Opus tone assumptions on Haiku—expect less default hedging and more neutral-midpoint answers.
 - Keep instructions short (4 to 6 crisp bullets) and place non-negotiable rules first.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-haiku) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-haiku) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Claude Haiku compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Claude Haiku compares across 25 AI families
 
 Claude Haiku 5.5 sits far apart from sibling Claude Sonnet 5.5 and Claude Opus 5.5—scoring -7.0 to -7.5 lower on Agreeableness, -0.92 to -1.00 lower on Honesty-Humility, +9.5 to +15.2 higher on Neuroticism, and showing much looser run-to-run consistency.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -370,7 +384,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -474,7 +488,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: Claude personality setup guide](https://agent-tune.com/guides/claude-personality)
 - [Tool: Customize Claude Haiku instructions](https://agent-tune.com/tools/custom-instructions-generator?model=claude-haiku&target=claude)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Claude Haiku personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/claude-haiku
@@ -489,6 +503,32 @@ Huang, B. (2026). Claude Haiku personality: test results and how they've changed
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/claude-haiku},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/claude-haiku.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_claude_haiku",
+  "type": "dataset",
+  "title": "Claude Haiku personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/claude-haiku"
 }
 ```
 

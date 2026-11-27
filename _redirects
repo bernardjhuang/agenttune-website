@@ -46,6 +46,7 @@
 
 # Retired paid-product routes → home (301)
 /pricing  /  301
+/pricing.md  /  301
 /developers  /  301
 /developers.md  /  301
 /pro/*  /  301

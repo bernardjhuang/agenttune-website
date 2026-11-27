@@ -26,7 +26,8 @@
   <link rel="alternate" type="text/markdown" title="LLM index" href="https://agent-tune.com/llms.txt" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AgentTune CLAUDE.md Generator","url":"https://agent-tune.com/tools/claude-md-generator","applicationCategory":"DeveloperApplication","operatingSystem":"Any (browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generates a starter CLAUDE.md instruction file for Claude Code from three questions about testing style, diff scope, and dependency policy.","publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"CLAUDE.md Generator"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Free tools","item":"https://agent-tune.com/tools/"},{"@type":"ListItem","position":3,"name":"CLAUDE.md Generator"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What belongs in CLAUDE.md vs. personal settings?","acceptedAnswer":{"@type":"Answer","text":"Put shared repository facts—build commands, test runners, code conventions, and diff-scope rules—in ./CLAUDE.md. Keep personal tone and response-format preferences in ~/.claude/CLAUDE.md or an output style so teammates are not forced into your style."}},{"@type":"Question","name":"How long should a CLAUDE.md file be?","acceptedAnswer":{"@type":"Answer","text":"Keep project CLAUDE.md files concise—well under 200 lines works best. Claude Code loads CLAUDE.md into session context, and shorter, concrete rules achieve higher compliance than long prose essays."}},{"@type":"Question","name":"Does this generator upload my repository setup?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs locally inside your browser tab with no API calls, accounts, or server storage."}}]}</script>
 
   <script defer src="/consent.js"></script>
 
@@ -85,6 +86,7 @@
         <p class="lede" style="margin-top: 16px; max-width: 720px;">
           Answer three quick questions to build a clean <code>CLAUDE.md</code> starter for Claude Code (Opus 5.5 or Fable 5.1). Want real repo examples? Read our <a href="/guides/claude-code-personality">annotated CLAUDE.md guide</a>, or add communication rules with the <a href="/tools/custom-instructions-generator">custom instructions generator</a>.
         </p>
+        <div class="guide-tldr" role="note" aria-label="Quick answer"><strong>Quick answer:</strong> Choose testing style, diff scope, and package policy to emit a concise project <code>CLAUDE.md</code> starter locally in your browser. Grounded in <a href="/models/">25 tested AI model profiles</a> and the <a href="/research/ai-personality-rankings">Personality Atlas</a>.</div>
       </section>
 
       <div class="tool-grid">
@@ -116,6 +118,20 @@
           <li><code>./CLAUDE.local.md</code> — your personal rules for this repo only (gitignored).</li>
         </ul>
         <p>Run <code>/memory</code> in Claude Code to edit active files, or <code>/context</code> to inspect what loaded. You can also pull in other files with <code>@path</code>.</p>
+
+        <h2>How it works &amp; common questions.</h2>
+        <details class="lib-disclosure" open>
+          <summary>What belongs in CLAUDE.md vs. personal settings?</summary>
+          <p>Put shared repository facts—build commands, test runners, code conventions, and diff-scope rules—in ./CLAUDE.md. Keep personal tone and response-format preferences in ~/.claude/CLAUDE.md or an output style so teammates are not forced into your style.</p>
+        </details>
+        <details class="lib-disclosure">
+          <summary>How long should a CLAUDE.md file be?</summary>
+          <p>Keep project CLAUDE.md files concise—well under 200 lines works best. Claude Code loads CLAUDE.md into session context, and shorter, concrete rules achieve higher compliance than long prose essays.</p>
+        </details>
+        <details class="lib-disclosure">
+          <summary>Does this generator upload my repository setup?</summary>
+          <p>No. Everything runs locally inside your browser tab with no API calls, accounts, or server storage.</p>
+        </details>
       </section>
     </main>
 

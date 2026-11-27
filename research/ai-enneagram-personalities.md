@@ -11,11 +11,11 @@ Nine motivational patterns (4–20 sum per type across 36 items) tested 30 to 50
 
 **Summary:** Across 25 AI families on the 4–20 Enneagram scale (87 eligible checkpoints), Type 5 (Investigator) leads 16 families—peaking at 17.96/20 for Gemma 4, 17.30 for DeepSeek V4 Pro, and 17.00 for Kimi K3.1 Pro—while Type 1 (Perfectionist) leads 8 families (up to 16.50 for Mistral Large and 16.06 for GPT Astra) and Qwen3 Coder leans marginally to Type 8 (13.46 vs. 13.38 Type 5, 60% ties). Only 9 of 25 families tie rarely enough (6%–32%) to headline a single type.
 
-## What Enneagram measures and what we tested
+## What does Enneagram measure in AI models?
 
 The 36-item Enneagram survey scores nine types (Types 1 through 9) from **4 to 20 points each**. Because each type relies on just four survey questions, models with balanced or clustered ratings frequently land on identical top integer sums in the same run—so we report full 9-petal averages alongside exact top-place tie rates across 30 to 50 fresh, zero-history chats per version.
 
-## Enneagram results across all 25 AI families
+## How do 25 AI model families score? (Enneagram results)
 
 Because only 9 of 25 families clear our margin to headline a single Enneagram number, the 9-petal shapes below reveal distinctions a single label hides: Type 5 leads in Gemma 4 (17.96) and Kimi K3.1 Pro (17.00) with crisp Type 1 separation, whereas GPT Astra hits a 90% tie dead heat between Type 1 (16.06) and Type 5 (16.00), and Claude Sonnet 5.5 splits almost identically at Type 1 (14.76) vs. Type 5 (14.74) with 40% ties.
 
@@ -145,12 +145,12 @@ Gemma, Grok, and DeepSeek tightened dramatically across model generations
 
 Gemma's top-place tie rate dropped from 77% (Gemma 2) to 6% (Gemma 4), Grok fell from 73% (4.20) to 18% (4.7), and DeepSeek Pro fell from 83% (V3) to 44% (V4 Pro). Meanwhile, Type 2 never places first in any of the 25 families, appearing instead as runner-up in empathetic or conversational profiles like Claude Fable (14.00) and Claude Haiku (14.06).
 
-## Explore individual model families
+## Which AI model families match each Enneagram pattern?
 
 All 25 families ordered by Enneagram results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
 [GemmaGoogle · gemma-4-31b-it · Moderate](https://agent-tune.com/models/gemma)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [Muse SparkMeta · muse-spark-open · Moderate](https://agent-tune.com/models/muse-spark)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
 [GrokxAI · grok-4.7 · Moderate](https://agent-tune.com/models/grok)
@@ -174,6 +174,8 @@ All 25 families ordered by Enneagram results — open any family profile for ver
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
 [GPT AstraOpenAI · 6.2-astra · Very steady](https://agent-tune.com/models/gpt-astra)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/enneagram) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -222,7 +224,7 @@ Full technical Enneagram audit under the unified 230-item model-profiles-v1 prot
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 25% | 1 / 3 |
 | DeepSeek | 2 | 42% | 0 / 2 |
 | Qwen | 2 | 35% | 1 / 2 |
-| Moonshot | 1 | 8% | 1 / 1 |
+| Moonshot AI | 1 | 8% | 1 / 1 |
 | Zhipu | 1 | 22% | 1 / 1 |
 | MiniMax | 1 | 62% | 0 / 1 |
 | Mistral | 1 | 30% | 0 / 1 |
@@ -277,8 +279,11 @@ No. Enneagram scores reflect consistent wording and stance preferences on self-r
 - [Per-Test: AI MBTI Personalities (Clear vs. Borders)](https://agent-tune.com/research/ai-mbti-personalities)
 - [Per-Test: AI Big Five Personalities (10–50)](https://agent-tune.com/research/ai-big-five-personalities)
 - [Model Profile: DeepSeek Pro test results & tuning tips](https://agent-tune.com/models/deepseek-pro)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/enneagram)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Enneagram personality test results across 25 AI families. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-enneagram-personalities
@@ -286,13 +291,40 @@ Huang, B. (2026). Enneagram personality test results across 25 AI families. Agen
 
 ```
 @article{huang2026_ai_enneagram_personalities,
-  author  = {Huang, Bernard},
-  title   = {Enneagram personality test results across 25 AI families},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-enneagram-personalities},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-enneagram-personalities.md}
+  author    = {Huang, Bernard},
+  title     = {Enneagram personality test results across 25 AI families},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-enneagram-personalities},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-enneagram-personalities.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_enneagram_personalities",
+  "type": "article-journal",
+  "title": "Enneagram personality test results across 25 AI families",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-enneagram-personalities"
 }
 ```
 

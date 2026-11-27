@@ -101,6 +101,16 @@ Because Astra was explicitly told to pick the middle number whenever a human que
 
 If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), the [GPT Sol profile](https://agent-tune.com/models/gpt-sol), the [GPT Astra profile](https://agent-tune.com/models/gpt-astra), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
 
+## Questions people ask.
+
+### Do GPT-6 Astra and GPT-6 Sol test as INTJ or ISTJ?
+
+In September 2026 Codex runs (under different neutral-midpoint instructions), GPT-6 Astra had 45 tie-free ISTJ and 19 tie-free INTJ runs while GPT-6 Sol had 79 tie-free INTJ runs. When re-tested in November 2026 under an identical single-turn blind OpenRouter prompt on GPT-6.2, both leaned Sensing: GPT-6.2 Astra tested as tie-free ISTJ in 100 of 100 runs, and GPT-6.2 Sol tested as ISTJ in 78 runs, IXTJ border in 16, and INTJ in 6.
+
+### What is the biggest Big Five difference between GPT-6.2 Astra and GPT-6.2 Sol?
+
+In the matched November 2026 OpenRouter cohort (n = 100 each), GPT-6.2 Sol averaged nearly double Astra's Neuroticism score (19.94 vs. 11.14 out of 50) and higher attachment anxiety (3.57 vs. 1.22), while both scored similarly on Conscientiousness (44.00 vs. 41.44) and Agreeableness (44.85 vs. 44.13).
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -118,7 +128,7 @@ If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on defa
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
 - [Continue reading: Reproduce the analysis](https://agent-tune.com/guides/reproduce-ai-personality-research)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/astra-vs-sol-personality-data
@@ -126,13 +136,40 @@ Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empi
 
 ```
 @article{huang2026_astra_vs_sol_personality_data,
-  author  = {Huang, Bernard},
-  title   = {GPT-6 Astra vs Sol: what the self-reports show},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/astra-vs-sol-personality-data},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
+  author    = {Huang, Bernard},
+  title     = {GPT-6 Astra vs Sol: what the self-reports show},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/astra-vs-sol-personality-data},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/astra-vs-sol-personality-data.md}
+}
+```
+
+```
+{
+  "id": "huang2026_astra_vs_sol_personality_data",
+  "type": "article-journal",
+  "title": "GPT-6 Astra vs Sol: what the self-reports show",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/astra-vs-sol-personality-data"
 }
 ```
 

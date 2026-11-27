@@ -5,7 +5,7 @@ Guide · Grok & Grok Bot
 
 # Grok Bot characters: 16 copy-paste personality profiles.
 
-By Bernard Huang · Updated November 23, 2026 · ~10 min read · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Grok Bot, open the Bot → Edit Profile → Description and place a 'HOW TO TALK TO ME' rules block right under the Bot's JOB and BOUNDARIES so your rules survive long chats and Bot duplication. For standard Grok on X or grok.com, paste the same rules into Settings → Customize Grok.
 
@@ -14,12 +14,12 @@ By Bernard Huang · Updated November 23, 2026 · ~10 min read · [Markdown (.md)
 | Character / Template | Best for | Jump / Download |
 | --- | --- | --- |
 | Inbox Triage Starter | Morning email sorting with strict send approvals | [View profile ↓](https://agent-tune.com/guides/grokbot-personality#the-short-version) |
-| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs & repo safety | [View](https://agent-tune.com/guides/grok-personality-settings#3-grok-bot-pragmatic-engineer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
-| Real-Time Signal Synthesizer | Verified X & web briefings separating rumors | [View](https://agent-tune.com/guides/grok-personality-settings#4-grok-bot-signal-synthesizer) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
-| No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View](https://agent-tune.com/guides/grok-personality-settings#1-no-snark-analytical-brief) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
+| Pragmatic Engineer Bot | Thread bug unblocking, minimal diffs & repo safety | [View Bot #6 ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) · [Download .md](https://agent-tune.com/resources/grok/grokbot-teammate-engineer.md) |
+| Real-Time Signal Synthesizer | Verified X & web briefings separating rumors | [View Bot #7 ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) · [Download .md](https://agent-tune.com/resources/grok/grokbot-news-synthesizer.md) |
+| No-Snark Analytical Brief | Standard Grok on X / grok.com without banter | [View Grok starter](https://agent-tune.com/guides/grok-personality-settings#grok-voice-mode-and-starters) · [Download .md](https://agent-tune.com/resources/grok/no-snark-analyst.md) |
 | All 16 Grok Bot characters | Red-Teamer, Chief of Staff, Code Reviewer & 11 more | [Jump to 16 Bots ↓](https://agent-tune.com/guides/grokbot-personality#sixteen-copy-paste-grok-bot-character-profiles) |
 
-Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Settings](https://agent-tune.com/guides/grok-personality-settings) or [20 Customize Grok & Bot Templates](https://agent-tune.com/guides/grok-personality-settings).
+Want standard **Grok on X & grok.com** instead of Grok Bots? See [Grok xAI Default Personality & Customize Grok Settings](https://agent-tune.com/guides/grok-personality-settings).
 
 ## The short version.
 
@@ -315,10 +315,6 @@ While each Bot has a different `JOB`, the person reading its reports is still yo
 
 ## What Grok's own self-report tests as (Grok 4.7 vs. Grok 4.6 — and the fine print).
 
-> **Chart — xAI Grok Baseline DNA (Grok 4.7 vs. Grok 4.6 & Proprietary Median):** IPIP-50 trait profile informing which guardrails matter most when writing Grok Bot profile descriptions. Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
-
-Grok 4.7 matches the proprietary Conscientiousness/Agreeableness profile closely—so explicit Bot Description rules drive most behavioral differentiation.
-
 In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 tested in the same structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok model profile →](https://agent-tune.com/models/grok)):
 
 | Test | Grok 4.7 (Nov 2026, n=100 fresh) | Grok 4.6 (Sept 2026, n=1 canonical) |
@@ -330,6 +326,10 @@ In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on G
 | Enneagram | Type 5w6 (78) · Type 1 (10) · 1w9 (9) | Type 5 (19/20) |
 
 Notice Grok 4.7's Agreeableness rose from 33/50 (Grok 4.6's single vector) to 44.92/50—meaning explicit pushback rules inside `HOW TO TALK TO ME` or `Customize Grok` are now just as important for stopping polite agreement as they are on Claude and ChatGPT.
+
+> **Chart — xAI Grok Baseline DNA (Grok 4.7 vs. Grok 4.6 & Proprietary Median):** IPIP-50 trait profile informing which guardrails matter most when writing Grok Bot profile descriptions. Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
+
+Grok 4.7 matches the proprietary Conscientiousness/Agreeableness profile closely—so explicit Bot Description rules drive most behavioral differentiation.
 
 ## Questions people ask.
 

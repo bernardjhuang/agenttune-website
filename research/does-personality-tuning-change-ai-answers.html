@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does personality tuning change AI answers?"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a personality prompt change how an AI answers?","acceptedAnswer":{"@type":"Answer","text":"The archived replies differ across conditions, with higher answer-first ratings and fewer hedge matches in the direct condition. This small pilot does not establish a general or repeatable effect."}},{"@type":"Question","name":"Does it make answers shorter?","acceptedAnswer":{"@type":"Answer","text":"The independently recounted means are 380 words for baseline replies and 381.9 for direct replies. That does not establish that instruction blocks have no effect on length; task selection and response variation remain uncontrolled."}},{"@type":"Question","name":"Does it hurt accuracy?","acceptedAnswer":{"@type":"Answer","text":"Mean archived accuracy ratings differ by 0.10 points between baseline and direct replies. The study cannot isolate an instruction-caused accuracy effect or substitute for independent fact checking."}},{"@type":"Question","name":"Was the judge blind?","acceptedAnswer":{"@type":"Answer","text":"The archive says the condition label was withheld. Reply style may still reveal it, and the full rubric and execution harness were not supplied."}},{"@type":"Question","name":"Can I reproduce the results?","acceptedAnswer":{"@type":"Answer","text":"You can reproduce the published summaries with the downloadable Node script and inspect every archived reply. Reproducing model generation and judging requires additional execution details not included in the archive."}}]}</script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers#dataset","name":"AgentTune archived tuning pilot and descriptive reanalysis, September 2026","description":"60 archived replies and model ratings under three instruction conditions. Summary arithmetic and whitespace word counts are reproducible; original generation and judging execution is not independently verified.","url":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-2026-09.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-score.cjs","encodingFormat":"text/javascript"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-claude-preferences-results.json","encodingFormat":"application/json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers#dataset","name":"AgentTune archived tuning pilot and descriptive reanalysis, September 2026","description":"60 archived replies and model ratings under three instruction conditions. Summary arithmetic and whitespace word counts are reproducible; original generation and judging execution is not independently verified.","url":"https://agent-tune.com/research/does-personality-tuning-change-ai-answers","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-09-25","distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-2026-09.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/tuning-before-after-score.cjs","encodingFormat":"text/javascript"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-prompt-comparison-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-claude-preferences-results.json","encodingFormat":"application/json"}],"variableMeasured":[{"@type":"PropertyValue","name":"Task Correctness Rate","unitText":"percentage (0 to 100%)"},{"@type":"PropertyValue","name":"Answer-First Opening Score","minValue":1,"maxValue":5},{"@type":"PropertyValue","name":"Fluff & Filler Rate","unitText":"percentage (0 to 100%)"},{"@type":"PropertyValue","name":"Reply Word Count","unitText":"words"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -181,22 +181,47 @@
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/does-personality-tuning-change-ai-answers</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_does_personality_tuning_change_ai_answers,
-  author  = {Huang, Bernard},
-  title   = {Does personality tuning change AI answers?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+  author    = {Huang, Bernard},
+  title     = {Does personality tuning change AI answers?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+}</pre>
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_does_personality_tuning_change_ai_answers",
+  "type": "article-journal",
+  "title": "Does personality tuning change AI answers?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
 }</pre>
         <pre class="cite-block" data-cite-text="md">&gt; **Does personality tuning change AI answers?** (Bernard Huang, November 23, 2026): Yes—especially on models with lower baseline compliance. In our November 2026 540-reply OpenRouter study (3 models × 20 tasks × 3 conditions × 3 repeats), adding plain-English rules lifted DeepSeek V4 Pro correctness from 78.3% to 95.0%, cut fluff from 36.7% to 20.0% (3.3% with an added INTJ label), and lifted answer-first scores from 3.78 to 4.52/4.92. In our September 2026 60-reply Opus 5.5 pilot, 5/5 answer-first openings rose from 14/20 to 19/20.
 &gt; Source: [https://agent-tune.com/research/does-personality-tuning-change-ai-answers](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) · [Markdown mirror](https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md)</pre>

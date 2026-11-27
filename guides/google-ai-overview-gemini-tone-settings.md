@@ -91,3 +91,5 @@ No. Gemini CLI is configured locally via Markdown files—put personal communica
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Free browser tool: AI & Gemini Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator)
 - [Guide: AI style & verbosity controls: rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
+- [Guide & Builder: NotebookLM custom instructions & Audio Overview prompts](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview)
+- [Guide: Perplexity Spaces custom instructions & citation rules](https://agent-tune.com/guides/perplexity-spaces-custom-instructions)

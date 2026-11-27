@@ -81,6 +81,20 @@ Even a 1-point margin (like 25 vs. 24) resolves to a letter, so you should alway
 
 Download the raw answers, instrument keys, and reanalysis script into one folder and run `node content-analysis.cjs > content-analysis.json`. See the [reproduction guide](https://agent-tune.com/guides/reproduce-ai-personality-research) for step-by-step instructions.
 
+## Questions people ask.
+
+### How does tie-breaking change AI MBTI test results?
+
+Across 400 frozen September 2026 MBTI runs, the legacy scorer broke exact midpoint ties (24 vs. 24) toward I, N, T, and J, labeling 335 of 400 runs as INTJ (83.8%). When exact ties are preserved as unresolved (X), only 280 of 400 runs test cleanly as INTJ (70.0%), because 59 runs tied on at least one axis.
+
+### Which AI model had the most tied MBTI runs in the 400-run study?
+
+GPT-6 Astra had 29 runs with at least one tied axis (24 on Sensing vs. Intuition and 12 on Extraversion vs. Introversion), dropping from 45 legacy INTJ labels to 19 tie-free INTJ results. By contrast, Claude Fable 5.1 had just 1 tied run out of 100 (99 legacy vs. 98 tie-free INTJ).
+
+### How should researchers report AI MBTI scores to avoid tie inflation?
+
+Always report the tie-free resolved count alongside any legacy tie-broken count, mark exact 0-margin axes as X (such as INXJ or IXTJ), and publish the mean axis margins alongside four-letter labels.
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -98,7 +112,7 @@ Download the raw answers, instrument keys, and reanalysis script into one folder
 - [Continue reading: Stable labels and variable answers](https://agent-tune.com/research/ai-personality-repeatability)
 - [Atlas: AI MBTI Personalities across 25 model families](https://agent-tune.com/research/ai-mbti-personalities)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Do AI models really test as INTJ? The tie-breaking effect. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-mbti-tie-breaking
@@ -106,13 +120,40 @@ Huang, B. (2026). Do AI models really test as INTJ? The tie-breaking effect. Age
 
 ```
 @article{huang2026_ai_mbti_tie_breaking,
-  author  = {Huang, Bernard},
-  title   = {Do AI models really test as INTJ? The tie-breaking effect},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/ai-mbti-tie-breaking},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-mbti-tie-breaking.md}
+  author    = {Huang, Bernard},
+  title     = {Do AI models really test as INTJ? The tie-breaking effect},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/ai-mbti-tie-breaking},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-mbti-tie-breaking.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_mbti_tie_breaking",
+  "type": "article-journal",
+  "title": "Do AI models really test as INTJ? The tie-breaking effect",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-mbti-tie-breaking"
 }
 ```
 

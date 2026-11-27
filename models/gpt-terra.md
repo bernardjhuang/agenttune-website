@@ -11,6 +11,16 @@ We gave both versions of OpenAI's mid-tier GPT Terra line (5.6-terra and 6.1-ter
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6.1 Terra tests as clear INTJ in 94% of runs (47 of 50), posts 4.92 out of 5.00 on Honesty-Humility, and stays calmer than GPT-6.2 Sol.
 
+```yaml
+family: GPT Terra
+checkpoint: openai/gpt-6.1-terra
+runs: 50
+big_five_10_50: { O: 46.0, C: 41.2, E: 32.5, A: 46.9, N: 11.8 }
+ipip_hexaco_1_5: { H: 4.92, E: 2.03, X: 3.80, A: 4.87, C: 4.53, O: 4.62 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.93, avoidance: 3.79, style: Secure }
+```
+
 ## GPT-6.1 Terra at a glance
 
 Results below come from **50** fresh-chat runs of **GPT-6.1 Terra** (no prior conversation memory).
@@ -174,7 +184,7 @@ Attachment coordinates across GPT Terra versions. Hollow points mark earlier stu
 
 Big Five trait shifts across GPT Terra versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 +10.3 Extraversion jump and -8.6 Conscientiousness drop from 5.6 to 6.1
 
@@ -197,11 +207,15 @@ Practical rules tailored to **GPT Terra**. Keep system instructions short (5–8
 - Put non-negotiable output formatting in bullet 1 and keep rules concise (5 to 8 items).
 - State explicitly when you want brief, unpadded technical answers—higher Openness (46.0) and Extraversion (32.5) favor fuller explanations.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-terra) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-terra) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How GPT Terra compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How GPT Terra compares across 25 AI families
 
 GPT-6.1 Terra scores +2.8 higher on Agreeableness, +2.0 higher on Openness, and -4.2 calmer on Neuroticism than GPT-6.2 Sol, and sits +8.4 points calmer on Neuroticism than budget tier GPT-6 Luna.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -369,7 +383,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -473,7 +487,7 @@ IPIP-50 sums 10 items per trait (10-50), whereas our public-domain 60-item IPIP-
 - [Guide: ChatGPT personality settings guide](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Tool: Customize GPT Terra instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-terra&target=chatgpt)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT Terra personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gpt-terra
@@ -488,6 +502,32 @@ Huang, B. (2026). GPT Terra personality: test results and how they've changed. A
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gpt-terra},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gpt-terra.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gpt_terra",
+  "type": "dataset",
+  "title": "GPT Terra personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gpt-terra"
 }
 ```
 

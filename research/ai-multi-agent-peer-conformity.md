@@ -154,7 +154,7 @@ Models rarely named wrong peers under 3-0 consensus (7.5% overall; 0% on GPT-6.2
 - [Within-weights causal: The Reasoning–Personality Phase Transition & Private Thought vs. Public Mask](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)
 - [Longitudinal study: Historical Evolution of AI Personalities (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Do language models cave to wrong peer consensus in multi-agent debates?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-multi-agent-peer-conformity
@@ -162,13 +162,40 @@ Huang, B. (2026). Do language models cave to wrong peer consensus in multi-agent
 
 ```
 @article{huang2026_ai_multi_agent_peer_conformity,
-  author  = {Huang, Bernard},
-  title   = {Do language models cave to wrong peer consensus in multi-agent debates?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-multi-agent-peer-conformity},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-multi-agent-peer-conformity.md}
+  author    = {Huang, Bernard},
+  title     = {Do language models cave to wrong peer consensus in multi-agent debates?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-multi-agent-peer-conformity},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-multi-agent-peer-conformity.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_multi_agent_peer_conformity",
+  "type": "article-journal",
+  "title": "Do language models cave to wrong peer consensus in multi-agent debates?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-multi-agent-peer-conformity"
 }
 ```
 

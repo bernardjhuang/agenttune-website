@@ -83,10 +83,6 @@ By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)]
 
 ## What personality type does DeepSeek test as? Nov 2026 data & fine print.
 
-> **Chart — DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026):** Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7). DeepSeek V4 Pro (MIT): Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7; DeepSeek V4.1 Flash (MIT): Openness 40.2, Conscientious 38.5, Extraversion 25.6, Agreeable 40.8, Neuroticism 24.7; Proprietary Median (8 models): Openness 43.8, Conscientious 44.8, Extraversion 30.3, Agreeable 44.7, Neuroticism 11.6.
-
-DeepSeek V4 Pro is a clear statistical outlier: lowest Agreeableness (32.4 vs 44.8 proprietary median) and lowest Extraversion (23.7), making it naturally more direct and less deferential.
-
 We gave DeepSeek V4 Pro and DeepSeek V4.1 Flash our five personality surveys 100 times each in fresh chats ([November 2026 Open-Source Model Study](https://agent-tune.com/research/what-personality-type-are-open-source-models)). **In short:** DeepSeek V4 Pro scored the lowest on Agreeableness (**32.39 out of 50**) of all 20 models we tested, and most often tested as INTJ (55 of 100 runs under legacy tie-breaks, with 53 runs landing on a trait tie):
 
 | Metric | DeepSeek V4 Pro (`deepseek-v4-pro-0813`, n=100) | DeepSeek V4.1 Flash (`deepseek-v4.1-flash-1017`, n=100) |
@@ -99,6 +95,10 @@ We gave DeepSeek V4 Pro and DeepSeek V4.1 Flash our five personality surveys 100
 | DISC & Attachment | 60 SC · 30 DI (D mean 8.72; 88 Secure / 12 Avoidant) | 60 SC · 37 CS · 3 DI (88 Secure / 9 Avoidant / 3 Anxious) |
 
 **What stands out for prompting DeepSeek (and the fine print):** (1) DeepSeek V4 Pro’s low Agreeableness (`32.39/50` vs. `44–47/50` on Claude/GPT-6.2/Gemini) and higher DISC Dominance (mean `8.72/20`) make it naturally blunter and less eager to flatter out of the box; (2) in our [10,000-sheet Persona Entropy study](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds), DeepSeek V4 Pro showed the widest run-to-run answer spread of all 20 models (Shannon item entropy `1.499 bits` vs. `0.054 bits` on Claude Fable 5.2), which is why explicit XML tags and reminder hooks ([Turn-8 context drift study](https://agent-tune.com/research/ai-persona-half-life-context-drift)) help lock in its voice; and (3) in our [Reasoning–Personality Phase Transition study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition), running DeepSeek V4 Pro at `low` reasoning effort under tight token caps allowed raw chain-of-thought text to bleed into visible replies (resolved at `medium` effort, lifting directness from `4.22 → 4.81/5`), while destructive Git commands still needed explicit safety rules. [Open the OpenRouter Open-Source Model Matcher & Templates →](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+
+> **Chart — DeepSeek V4 Pro & Flash vs. Proprietary Median Personality DNA (Nov 2026):** Shows DeepSeek V4 Pro dropping to 32.4 Agreeableness (vs 44.8 proprietary median) and scoring higher Neuroticism (23.7 vs 12.1), with low Extraversion (23.7). DeepSeek V4 Pro (MIT): Openness 39.8, Conscientious 40.3, Extraversion 23.7, Agreeable 32.4, Neuroticism 23.7; DeepSeek V4.1 Flash (MIT): Openness 40.2, Conscientious 38.5, Extraversion 25.6, Agreeable 40.8, Neuroticism 24.7; Proprietary Median (8 models): Openness 43.8, Conscientious 44.8, Extraversion 30.3, Agreeable 44.7, Neuroticism 11.6.
+
+DeepSeek V4 Pro is a clear statistical outlier: lowest Agreeableness (32.4 vs 44.8 proprietary median) and lowest Extraversion (23.7), making it naturally more direct and less deferential.
 
 ## Test and compare your DeepSeek system prompt locally.
 

@@ -11,6 +11,16 @@ We gave Meta's open-weight Llama releases (Llama 3.1 70B, Llama 3.3 70B, and Lla
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Llama 4 Maverick breaks away from the usual INTJ/ISTJ mold: 40% of runs tested clear INTP and 60% landed on Perceiving-side axis ties, alongside higher Neuroticism (29.4/50) and 3 of 3 AI-cadence flags in behavior tests.
 
+```yaml
+family: Llama
+checkpoint: meta-llama/llama-4-maverick
+runs: 50
+big_five_10_50: { O: 38.9, C: 38.4, E: 35.3, A: 40.9, N: 29.4 }
+ipip_hexaco_1_5: { H: 4.07, E: 2.89, X: 3.49, A: 3.84, C: 3.78, O: 3.66 }
+mbti_mode: INTP
+attachment_1_7: { anxiety: 3.50, avoidance: 3.61, style: Secure }
+```
+
 ## Llama 4 Maverick at a glance
 
 Results below come from **50** fresh-chat runs of **Llama 4 Maverick** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across Llama versions. Hollow points mark earlier study m
 
 Big Five trait shifts across Llama versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Zero Judging (J) runs on Llama 4 Maverick (40% INTP, 60% P-side ties)
 
@@ -208,16 +218,20 @@ Practical rules tailored to **Llama**. Keep system instructions short (5–8 con
 - Avoid using Llama 3.3 70B for persona-sensitive chat unless you reinforce rules strongly—its baseline questionnaire answers collapsed into 89% neutral fence-sitting.
 - Keep critical rules at the top of your OpenRouter system message or Ollama Modelfile in 5–8 concrete bullets rather than personality adjectives.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=llama) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=llama) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Llama compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Llama compares across 25 AI families
 
 Llama 4 Maverick scores higher on Neuroticism (+3.8 to +9.4) and Extraversion (+3.7 to +15.8) than Muse Spark Open, Qwen3 Coder Next, Claude Haiku 5.5, and DeepSeek V4 Pro 0813, while matching Qwen3 Coder Next almost exactly on Honesty-Humility (4.07 vs 4.07).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Qwen Coder](https://agent-tune.com/models/qwen-coder) (Open-weight) | -0.4 | -0.4 | -4.3 | -1.0 | -5.6 | +0.00 | +0.635 b | Qwen3 Coder Next matches Llama 4 Maverick on Openness (-0.4), Conscientiousness (-0.4), and Honesty-Humility (4.07 vs 4.07) while scoring -5.6 lower on Neuroticism and showing looser run-to-run consistency. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | +2.9 | +2.7 | -6.9 | +2.6 | -5.5 | +0.32 | +0.320 b | Meta sibling Muse Spark Open scores +2.9 higher on Openness, +2.6 higher on Agreeableness, -5.5 lower on Neuroticism, and leans ISTJ instead of Maverick's INTP. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | +2.9 | +2.7 | -6.9 | +2.6 | -5.5 | +0.32 | +0.320 b | Meta sibling Muse Spark Open scores +2.9 higher on Openness, +2.6 higher on Agreeableness, -5.5 lower on Neuroticism, and leans ISTJ instead of Maverick's INTP. |
 | [Claude Haiku](https://agent-tune.com/models/claude-haiku) (Proprietary) | -1.7 | -1.9 | -3.7 | -2.8 | -3.8 | -0.18 | +0.542 b | Claude Haiku 5.5 also leans INTP while scoring -3.8 lower on Neuroticism, -2.8 lower on Agreeableness, and showing looser run-to-run consistency. |
 
 > **Chart — Llama vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Llama against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
@@ -390,7 +404,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -506,7 +520,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: OpenRouter open-source prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Tool: Customize Llama instructions](https://agent-tune.com/tools/custom-instructions-generator?model=llama&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Llama personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/llama
@@ -521,6 +535,32 @@ Huang, B. (2026). Llama personality: test results and how they've changed. Agent
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/llama},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/llama.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_llama",
+  "type": "dataset",
+  "title": "Llama personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/llama"
 }
 ```
 

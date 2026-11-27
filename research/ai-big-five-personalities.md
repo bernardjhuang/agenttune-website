@@ -11,11 +11,11 @@ IPIP-50 raw sum scores (10–50 scale across five traits) tested 30 to 50 times 
 
 **Summary:** On the 10–50 Big Five scale across 25 AI families (87 eligible checkpoints), Muse Wonder peaks in Openness (49.6) and Agreeableness (49.5), Gemini 4 Hydrogen leads Conscientiousness (50.0) while sharing the 10.0 Neuroticism floor with Gemini 4 Neon, and Mistral Large reaches the highest Extraversion (36.5). Excluding midpoint-locked Cohere Command (30.0 on all five traits), DeepSeek V4 Pro scores lowest on Agreeableness (35.3) and Extraversion (19.5), while Llama 4 Maverick scores highest on Neuroticism (29.4).
 
-## What Big Five measures and what we tested
+## What does Big Five measure in AI models?
 
 The 50-question Big Five survey measures five broad dimensions on a **10 to 50 sum scale**: **Openness (O)**, **Conscientiousness (C)**, **Extraversion (E)**, **Agreeableness (A)**, and **Neuroticism (N)**. We keep this 10–50 scale strictly separate from our 1.00–5.00 public-domain HEXACO scores and test every model 30 to 50 times per version in fresh, zero-history chats across 87 eligible checkpoints.
 
-## Big Five results across all 25 AI families
+## How do 25 AI model families score? (Big Five results)
 
 Two patterns jump off the five trait ladders below. First, nearly every proprietary model—except Claude Haiku 5.5 (38.0 A, 36.5 C)—clusters between 43.9 and 49.5 on Agreeableness and 10.0 to 20.3 on Neuroticism, whereas open-weight families stretch across both ends of the ruler. Second, quiz warmth does not dictate behavior in real prompts: every single one of the 25 families still scores 3/3 on answer-first directness and 0/3 on groveling in hands-on chat checks.
 
@@ -161,7 +161,7 @@ Multi-version swings reshape families by more than 10 points on single traits
 
 From Gemma 2 to Gemma 4, Openness rose +14.2, Conscientiousness +11.4, and Agreeableness +10.2 while Neuroticism fell -8.8. Kimi dropped -13.5 Neuroticism (k2 to k3.1-pro), Claude Sonnet dropped -9.4 Neuroticism while gaining +7.6 Conscientiousness (4.5 to 5.5), and Muse Spark swung the other way (-8.1 Conscientiousness, +8.3 Neuroticism).
 
-## Explore individual model families
+## Which AI model families match each Big Five pattern?
 
 All 25 families ordered by Big Five results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -176,7 +176,7 @@ All 25 families ordered by Big Five results — open any family profile for vers
 [GPT LunaOpenAI · 6-luna · Moderate](https://agent-tune.com/models/gpt-luna)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [GLMZhipu · glm-5.3 · Moderate](https://agent-tune.com/models/glm)
 [GPT SolOpenAI · 6.2-sol · Moderate](https://agent-tune.com/models/gpt-sol)
 [Gemini Pro & NeonGoogle · 4-neon · Very steady](https://agent-tune.com/models/gemini-pro)
@@ -190,6 +190,8 @@ All 25 families ordered by Big Five results — open any family profile for vers
 [NemotronNVIDIA · 3.5-super-vl · Variable](https://agent-tune.com/models/nemotron)
 [DeepSeek ProDeepSeek · v4-pro-0813 · Variable](https://agent-tune.com/models/deepseek-pro)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/big-five) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -238,7 +240,7 @@ Full technical Big Five audit under the unified 230-item model-profiles-v1 proto
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 43.5 | 42.9 | 29.6 | 44.6 | 24.4 |
 | DeepSeek | 2 | 41.2 | 41.7 | 22.1 | 37.9 | 22.5 |
 | Qwen | 2 | 41.1 | 41.4 | 31.3 | 42.5 | 20.1 |
-| Moonshot | 1 | 44.1 | 45.1 | 24.1 | 44.7 | 13.6 |
+| Moonshot AI | 1 | 44.1 | 45.1 | 24.1 | 44.7 | 13.6 |
 | Zhipu | 1 | 45.4 | 43.0 | 25.8 | 44.2 | 19.3 |
 | MiniMax | 1 | 39.9 | 39.5 | 28.8 | 39.3 | 21.7 |
 | Mistral | 1 | 49.1 | 48.6 | 36.5 | 47.8 | 16.0 |
@@ -293,8 +295,11 @@ No. Across 25 families tested in hands-on adversarial chats, 24/25 scored 0/3 on
 - [Per-Test: AI HEXACO Personalities (1.00–5.00 Proxy)](https://agent-tune.com/research/ai-hexaco-personalities)
 - [Per-Test: AI MBTI Personalities (Clear vs. Borders)](https://agent-tune.com/research/ai-mbti-personalities)
 - [Model Profile: DeepSeek Pro test results & tuning tips](https://agent-tune.com/models/deepseek-pro)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/big-five)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Big Five (OCEAN) personality scores across 25 AI families. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-big-five-personalities
@@ -302,13 +307,40 @@ Huang, B. (2026). Big Five (OCEAN) personality scores across 25 AI families. Age
 
 ```
 @article{huang2026_ai_big_five_personalities,
-  author  = {Huang, Bernard},
-  title   = {Big Five (OCEAN) personality scores across 25 AI families},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-big-five-personalities},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-big-five-personalities.md}
+  author    = {Huang, Bernard},
+  title     = {Big Five (OCEAN) personality scores across 25 AI families},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-big-five-personalities},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-big-five-personalities.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_big_five_personalities",
+  "type": "article-journal",
+  "title": "Big Five (OCEAN) personality scores across 25 AI families",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-big-five-personalities"
 }
 ```
 

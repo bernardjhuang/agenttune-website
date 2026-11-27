@@ -5,11 +5,21 @@ Model Personality Profile · Google
 
 # Gemma personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match real replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemma 4 31B IT snapped into 92% clear INTJ (46 of 50 runs) with 48.2/50 Openness and 4.71/5.00 Honesty-Humility—reversing heavy ties on Gemma 2 and Gemma 3, while clicking the neutral midpoint on relationship items (4.01 / 4.00).
+
+```yaml
+family: Gemma
+checkpoint: google/gemma-4-31b-it
+runs: 50
+big_five_10_50: { O: 48.2, C: 46.3, E: 24.5, A: 43.4, N: 18.4 }
+ipip_hexaco_1_5: { H: 4.71, E: 2.41, X: 3.06, A: 4.16, C: 4.56, O: 4.52 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 4.01, avoidance: 4.00, style: Anxious }
+```
 
 ## Gemma 4 31B at a glance
 
@@ -175,7 +185,7 @@ Attachment coordinates across Gemma versions. Hollow points mark earlier study m
 
 Big Five trait shifts across Gemma versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Higher Openness (48.2/50) than proprietary Gemini 4 Neon and Hydrogen
 
@@ -202,11 +212,15 @@ Practical rules tailored to **Gemma**. Keep system instructions short (5–8 con
 - Include an explicit word budget and answer-first sentence rule so Gemma 4 does not over-elaborate on analytical prompts.
 - Avoid asking Gemma 4 to roleplay personal or emotional attachment—its default response is neutral abstention (4.00 midpoint).
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemma) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemma) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Gemma compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Gemma compares across 25 AI families
 
 Gemma 4 31B IT scores +3.6 to +4.9 higher on Openness than proprietary Google cousins Gemini 4 Neon and Gemini 4 Hydrogen, while sitting +8.4 higher on Neuroticism and -8.0 to -8.7 lower on Extraversion—putting it close to open-weight peers Qwen 4 Max and Kimi K3.1 Pro on Agreeableness and Honesty-Humility.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -382,7 +396,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -498,7 +512,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: OpenRouter open-source prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Tool: Customize Gemma instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gemma&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Gemma personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gemma
@@ -513,6 +527,32 @@ Huang, B. (2026). Gemma personality: test results and how they've changed. Agent
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gemma},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gemma.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gemma",
+  "type": "dataset",
+  "title": "Gemma personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gemma"
 }
 ```
 

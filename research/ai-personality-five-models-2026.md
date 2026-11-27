@@ -166,7 +166,7 @@ No. It measures how models answer human questionnaires under specific prompts. I
 - [Atlas: AI personality rankings (25 families)](https://agent-tune.com/research/ai-personality-rankings)
 - [Tool: Custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-five-models-2026
@@ -174,13 +174,40 @@ Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical 
 
 ```
 @article{huang2026_ai_personality_five_models_2026,
-  author  = {Huang, Bernard},
-  title   = {What five AI models say about themselves},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-09-25},
-  url     = {https://agent-tune.com/research/ai-personality-five-models-2026},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-five-models-2026.md}
+  author    = {Huang, Bernard},
+  title     = {What five AI models say about themselves},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-09-25},
+  url       = {https://agent-tune.com/research/ai-personality-five-models-2026},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-five-models-2026.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_personality_five_models_2026",
+  "type": "article-journal",
+  "title": "What five AI models say about themselves",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        9,
+        25
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-personality-five-models-2026"
 }
 ```
 

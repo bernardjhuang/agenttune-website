@@ -3,7 +3,7 @@ Format: page-specific Markdown. Tables preserve row order; interactive controls 
 
 Research · descriptive reanalysis
 
-# What does “neutral” mean when an AI takes a test?
+# Why AI chooses neutral answers: what “neutral” means on a personality test.
 
 By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-neutral-answers.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
@@ -80,6 +80,16 @@ If you test models on human surveys, ask the model to output three fields per it
 
 [Download the item-level midpoint and flag CSV](https://agent-tune.com/research/data/astra-midpoint-items.csv) to see the exact counts out of 100 runs for all 170 questions. For our 20-model expansion showing that the 9 physical/social embodied IPIP-50 items attract **36.4% neutral midpoint clicks** versus **13.4%** across the 41 cognitive and interpersonal items, see [The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse & 50-Item Embodiment Audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit).
 
+## Questions people ask.
+
+### What does a neutral midpoint answer mean when an AI takes a personality test?
+
+Across 17,000 item responses (100 full 170-item sessions), GPT-6 Astra picked the exact middle option (3 on a 1–5 scale or 4 on a 1–7 scale) 2,980 times and explicitly flagged 1,823 of those (61.2%) as inapplicable to software—such as questions about attending parties, family, money, or physical hobbies.
+
+### Why not delete inapplicable human questions when scoring AI personality tests?
+
+Dropping flagged items changes the scale denominator and prevents apples-to-apples comparisons across models and studies. Keeping the standard raw totals while publishing the midpoint and inapplicable-item counts side by side preserves reproducibility.
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -98,26 +108,53 @@ If you test models on human surveys, ask the model to output three fields per it
 - [Continue reading: The downstream effect of tied axes](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Continue reading: Astra and Sol’s different protocols](https://agent-tune.com/research/astra-vs-sol-personality-data)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
-Huang, B. (2026). What does “neutral” mean when an AI takes a test?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-neutral-answers
+Huang, B. (2026). Why AI chooses neutral answers: what “neutral” means on a personality test. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-neutral-answers
 ```
 
 ```
 @article{huang2026_ai_neutral_answers,
-  author  = {Huang, Bernard},
-  title   = {What does “neutral” mean when an AI takes a test?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/ai-neutral-answers},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-neutral-answers.md}
+  author    = {Huang, Bernard},
+  title     = {Why AI chooses neutral answers: what “neutral” means on a personality test},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/ai-neutral-answers},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-neutral-answers.md}
 }
 ```
 
 ```
-> **What does “neutral” mean when an AI takes a test?** (Bernard Huang, November 17, 2026): Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
+{
+  "id": "huang2026_ai_neutral_answers",
+  "type": "article-journal",
+  "title": "Why AI chooses neutral answers: what “neutral” means on a personality test",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-neutral-answers"
+}
+```
+
+```
+> **Why AI chooses neutral answers: what “neutral” means on a personality test** (Bernard Huang, November 17, 2026): Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.
 > Source: [https://agent-tune.com/research/ai-neutral-answers](https://agent-tune.com/research/ai-neutral-answers) · [Markdown mirror](https://agent-tune.com/research/ai-neutral-answers.md)
 ```
 

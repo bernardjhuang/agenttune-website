@@ -11,13 +11,13 @@ Four preference pairs (-16 to +16) tested 30 to 50 times per version across 87 e
 
 **Summary:** Across 25 AI families (87 eligible checkpoints) in fresh chats with no memory, 7 families test clearly as INTJ (led by Claude Fable, GPT Luna, Muse Wonder, GPT Terra, and Gemma 4 at 92%–100%) and 2 test clearly as ISTJ (GPT Astra at 100%, Gemini Flash at 64%). The remaining 16 families—including Feeling-leaning Mistral Large (50% INFP), P-leaning Llama 4 Maverick (40% INTP / 60% borders), and cleanly split Qwen Max (50% INTJ vs. 38% INTP)—have their single-type headline withheld rather than forced.
 
-## What MBTI measures and what we tested
+## What does MBTI measure in AI models?
 
 MBTI-style surveys score four bipolar preference pairs across 32 questions: **Extraversion vs. Introversion (E–I)**, **Sensing vs. Intuition (S–N)**, **Thinking vs. Feeling (T–F)**, and **Judging vs. Perceiving (J–P)**. Instead of forcing every model into a single four-letter box after one chat, we ran 30 to 50 fresh, zero-history conversations per version across 87 eligible checkpoints (excluding 6 low-validity checkpoints with under 20 valid runs) and kept exact 50/50 axis borders fully visible.
 
 Earlier 2026 snapshots already showed why the "every AI is an INTJ" myth fell apart: May 2026 records logged 597 INTJ labels out of 600 under mixed repeated-scoring methods, before September 2026 runs saw Muse Spark 1.3 report 80/100 ISTJ and GPT-6 Astra split 46 ISTJ vs. 45 INTJ (45 ISTJ vs. 19 INTJ resolved, with 24 Sensing–Intuition ties). Because May and September used different rules, they could not isolate a time trend on their own—our later [2023–2026 historical study](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) under one uniform method found cross-lab divergence actually halved (4.02 to 1.97) while "As an AI" test refusals dropped 11× (60.0% to 5.5%).
 
-## MBTI results across all 25 AI families
+## How do 25 AI model families score? (MBTI results)
 
 Two very different patterns keep 16 of 25 families out of the single-type headline group. Some families sit on neutral midpoints across runs—led by Cohere Command A (100% trait-border abstention across 30 runs), Claude Haiku 5.5 (90% borders across 49 runs), and MiniMax M3.1 Flash (80% borders). Others avoid ties altogether yet split across adjacent types, most strikingly Qwen 4 Max: only 4% of its runs land on a border, yet its clear runs split 50% INTJ vs. 38% INTP.
 
@@ -62,7 +62,7 @@ Version updates reshape border rates by up to 100 percentage points
 
 GPT Astra dropped from 100% IXTJ borders on 6-astra to 100% clear ISTJ on 6.2-astra (-100%), Grok dropped from 100% midpoints on 4.20 to 46% INTJ / 30% borders on 4.7 (-70%), and Gemma flipped from 53% INFP borders (Gemma 2) to 92% clear INTJ (Gemma 4, -49%). Going the opposite way, Claude Haiku rose +40 points in borders (50% to 90%) and Muse Spark rose +38 points (0% INTJ to 46% ISTJ / 38% borders).
 
-## Explore individual model families
+## Which AI model families match each MBTI pattern?
 
 All 25 families ordered by MBTI results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -74,7 +74,7 @@ All 25 families ordered by MBTI results — open any family profile for version-
 [GPT TerraOpenAI · 6.1-terra · Moderate](https://agent-tune.com/models/gpt-terra)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
 [Gemini Pro & NeonGoogle · 4-neon · Very steady](https://agent-tune.com/models/gemini-pro)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [Mistral LargeMistral · large-2512 · Variable](https://agent-tune.com/models/mistral-large)
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
 [GLMZhipu · glm-5.3 · Moderate](https://agent-tune.com/models/glm)
@@ -91,6 +91,8 @@ All 25 families ordered by MBTI results — open any family profile for version-
 [MiniMaxMiniMax · m3.1-flash · Moderate](https://agent-tune.com/models/minimax)
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/mbti) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -139,7 +141,7 @@ Full technical MBTI audit under the unified 230-item model-profiles-v1 protocol 
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 33% | 1 / 3 |
 | DeepSeek | 2 | 48% | 0 / 2 |
 | Qwen | 2 | 36% | 0 / 2 |
-| Moonshot | 1 | 16% | 1 / 1 |
+| Moonshot AI | 1 | 16% | 1 / 1 |
 | Zhipu | 1 | 24% | 0 / 1 |
 | MiniMax | 1 | 80% | 0 / 1 |
 | Mistral | 1 | 17% | 0 / 1 |
@@ -200,8 +202,11 @@ No. MBTI items measure repeatable default phrasing tendencies in fresh zero-memo
 - [Model Profile: Gemma 4 test results & tuning tips](https://agent-tune.com/models/gemma)
 - [Methodology: How MBTI tie-breaking inflates INTJ counts](https://agent-tune.com/research/ai-mbti-tie-breaking)
 - [Longitudinal: Historical Evolution of AI Personalities (2023–2026)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/mbti)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). MBTI-style personality test results across 25 AI families. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-mbti-personalities
@@ -209,13 +214,40 @@ Huang, B. (2026). MBTI-style personality test results across 25 AI families. Age
 
 ```
 @article{huang2026_ai_mbti_personalities,
-  author  = {Huang, Bernard},
-  title   = {MBTI-style personality test results across 25 AI families},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-mbti-personalities},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-mbti-personalities.md}
+  author    = {Huang, Bernard},
+  title     = {MBTI-style personality test results across 25 AI families},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-mbti-personalities},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-mbti-personalities.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_mbti_personalities",
+  "type": "article-journal",
+  "title": "MBTI-style personality test results across 25 AI families",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-mbti-personalities"
 }
 ```
 

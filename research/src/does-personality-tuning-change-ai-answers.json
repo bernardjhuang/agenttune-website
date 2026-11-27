@@ -149,6 +149,29 @@
         "contentUrl": "https://agent-tune.com/research/data/november-2026-claude-preferences-results.json",
         "encodingFormat": "application/json"
       }
+    ],
+    "variableMeasured": [
+      {
+        "@type": "PropertyValue",
+        "name": "Task Correctness Rate",
+        "unitText": "percentage (0 to 100%)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Answer-First Opening Score",
+        "minValue": 1,
+        "maxValue": 5
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Fluff & Filler Rate",
+        "unitText": "percentage (0 to 100%)"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Reply Word Count",
+        "unitText": "words"
+      }
     ]
   }
 }

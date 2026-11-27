@@ -5,7 +5,7 @@ Developer resource · runnable starter & JS scorer
 
 # Open-source Enneagram test & scorer (React + TypeScript + JS).
 
-By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/enneagram-test-react-typescript.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Download score.js and questions.json for a standalone Node or browser scorer, or grab enneagram-react-typescript.zip (npm ci && npm run dev) for a 6-page React + TypeScript Enneagram app. Pass 36 whole-number answers (1–5) to score() to get all nine type totals (4–20) and every tied leader without forcing a fake winner. The code and synthetic demo inputs are MIT-licensed; see the fine print below for OEPS question-text terms.
 
@@ -28,7 +28,7 @@ npm ci
 npm run dev
 ```
 
-Serve the built `dist/` folder over HTTP (never open the raw HTML file over `file://`). Want to take the live 36-question OEPS test without code? Visit [/tests/enneagram](https://agent-tune.com/tests/enneagram).
+Serve the built `dist/` folder over HTTP (never open the raw HTML file over `file://`). Want to take the live 36-question OEPS test without code? Visit [the live 36-question Enneagram test](https://agent-tune.com/tests/enneagram).
 
 ## Try the JavaScript scorer live in your browser.
 
@@ -106,7 +106,7 @@ If you replace the synthetic demo controls in `src/questions.json` with a licens
 
 ## The fine print: provenance, OEPS scope, and MIT licensing.
 
-The developer bundle in `/resources/enneagram/` provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [/tests/enneagram](https://agent-tune.com/tests/enneagram) and versioned definitions in [/resources/scoring/questions.json](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
+The developer bundle in `/resources/enneagram/` provides MIT-licensed JavaScript arithmetic and 36 synthetic demo controls for testing form state and tie handling. The separate interactive questionnaire at [the interactive Enneagram questionnaire](https://agent-tune.com/tests/enneagram) and versioned definitions in [the versioned questions.json specification](https://agent-tune.com/resources/scoring/questions.json) use AgentTune’s 36-item adaptation of material attributed to the Open-Source Psychometrics Project’s OEPS (whose live upstream instrument has 54 items).
 
 The MIT code license applies to the original JavaScript implementation and synthetic inputs; it does not relicense third-party questionnaire wording. Review [instrument-rights.json](https://agent-tune.com/resources/content/instrument-rights.json) and [the historical provenance record](https://agent-tune.com/research/data/rights-migration.json) before redistributing questionnaire text.
 

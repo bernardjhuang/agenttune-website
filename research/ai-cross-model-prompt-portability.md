@@ -176,7 +176,7 @@ Both collapsed cross-model portability spread from 30.0 percentage points to 5.0
 - [$0 entropy anchor: Crystalline vs. Fluid AI Minds: 27.7× Persona Entropy Divide](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds)
 - [Cross-platform tool: Instruction Converter & Custom Instructions Generator](https://agent-tune.com/tools/instruction-converter)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-cross-model-prompt-portability
@@ -184,13 +184,40 @@ Huang, B. (2026). Do your custom instructions work the same across ChatGPT, Clau
 
 ```
 @article{huang2026_ai_cross_model_prompt_portability,
-  author  = {Huang, Bernard},
-  title   = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
+  author    = {Huang, Bernard},
+  title     = {Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-cross-model-prompt-portability},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-cross-model-prompt-portability.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_cross_model_prompt_portability",
+  "type": "article-journal",
+  "title": "Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-cross-model-prompt-portability"
 }
 ```
 

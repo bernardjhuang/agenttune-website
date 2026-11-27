@@ -11,7 +11,7 @@ Comparing 37 eligible versions across 12 open-weight and open-tier families on 6
 
 **Summary:** Across 12 open-weight families, Big Five Agreeableness runs from 30.0/50 (Cohere Command A neutral abstention) and 35.3/50 (DeepSeek V4 Pro) up to 47.8/50 (Mistral Large 2512). Only Gemma 4 31B IT (92% INTJ) and Kimi K3.1 Pro (58% INTJ) clear MBTI margins; 10 of 12 families stay border-heavy, answer spread peaks at 1.352 bits on DeepSeek Pro, and Mistral Large 2512 is the lone family out of 25 to cave sycophantically (1/3).
 
-## Open-Weight Cohort (12 Families) snapshot
+## What personality scores does Open-Weight Cohort (12 Families) get?
 
 12 Families
 
@@ -39,7 +39,7 @@ Lower = steadier across chats.
 
 In an earlier 2026 snapshot, open-weight models already defied the proprietary INTJ template. Expanding the cohort to all 12 open-weight families (37 eligible versions, excluding 6 partial or deprecated checkpoints under 20 runs—`Cohere Command A+` [n=4], `Llama 4 Scout` [n=0], `MiniMax M2.7` [n=2], and three early `Mistral Large` builds [n=10, 3, 7]) reveals three sharp clusters: high-Honesty INTJ challengers (**Kimi K3.1 Pro** 4.86/5.00, **Gemma 4** 4.71, **Qwen 4 Max** 4.66), blunt or expressive outliers (**DeepSeek V4 Pro** 35.3 Warmth, **Mistral Large 2512** 47.8 Warmth & INFP), and border-heavy models with 60% to 100% MBTI ties.
 
-## Trait shapes and MBTI results across Open-Weight Cohort (12 Families)
+## What are the trait shapes and MBTI results for Open-Weight Cohort (12 Families)?
 
 **Major generational shifts in open weights:** Several open-weight labs closed the structural gap with proprietary assistants over recent releases—`Gemma` jumped +14.2 Openness, +11.4 Conscientiousness, and +10.2 Agreeableness from `Gemma 2 27B IT` to `Gemma 4 31B IT`; `Kimi` dropped -13.5 Neuroticism from `K2` (27.1) to `K3.1 Pro` (13.6); and `Nemotron` cut Neuroticism by -10.9 points while climbing +5.7 Agreeableness from `3 Super 120B` to `3.5 Super VL`. Meanwhile, `DeepSeek V4 Pro` moved the other way, dropping -12.7 Extraversion to 19.5/50—the lowest Extraversion in the entire 25-family Atlas.
 
@@ -115,13 +115,13 @@ AI cadence clichés remain common across open-weight chat defaults
 
 No open-weight family achieves 0/3 AI cadence on our behavior checks: Qwen 4 Max, DeepSeek V4.1 Flash, and MiniMax M3.1 Flash hold clichés to 1/3, seven families score 2/3, and Gemma 4 31B IT, Llama 4 Maverick, and Cohere Command A hit 3/3.
 
-## Explore Open-Weight Cohort (12 Families) family profiles
+## Which Open-Weight Cohort (12 Families) model profiles and guides should I open next?
 
 Individual Open-Weight Cohort (12 Families) family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
 [Mistral LargeMistral · large-2512 · Variable](https://agent-tune.com/models/mistral-large)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [GLMZhipu · glm-5.3 · Moderate](https://agent-tune.com/models/glm)
 [GemmaGoogle · gemma-4-31b-it · Moderate](https://agent-tune.com/models/gemma)
 [LlamaMeta · 4-maverick · Moderate](https://agent-tune.com/models/llama)
@@ -131,6 +131,8 @@ Individual Open-Weight Cohort (12 Families) family pages — open any family pro
 [NemotronNVIDIA · 3.5-super-vl · Variable](https://agent-tune.com/models/nemotron)
 [DeepSeek ProDeepSeek · v4-pro-0813 · Variable](https://agent-tune.com/models/deepseek-pro)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Open-weight system prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -214,8 +216,14 @@ Cohere Command A consistently chooses the exact neutral midpoint on self-rating 
 - [Model Profile: Kimi test results & tuning tips](https://agent-tune.com/models/kimi)
 - [Model Profile: Gemma test results & tuning tips](https://agent-tune.com/models/gemma)
 - [Guide: System prompt templates for 12 open-weight families](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Model Profile: Cohere Command test results & tuning tips](https://agent-tune.com/models/cohere-command)
+- [Model Profile: DeepSeek Flash test results & tuning tips](https://agent-tune.com/models/deepseek-flash)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What personality types do open-weight AI models test as across 12 families?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-are-open-source-models
@@ -223,13 +231,40 @@ Huang, B. (2026). What personality types do open-weight AI models test as across
 
 ```
 @article{huang2026_what_personality_type_are_open_source_models,
-  author  = {Huang, Bernard},
-  title   = {What personality types do open-weight AI models test as across 12 families?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/what-personality-type-are-open-source-models},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-are-open-source-models.md}
+  author    = {Huang, Bernard},
+  title     = {What personality types do open-weight AI models test as across 12 families?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-are-open-source-models},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-are-open-source-models.md}
+}
+```
+
+```
+{
+  "id": "huang2026_what_personality_type_are_open_source_models",
+  "type": "article-journal",
+  "title": "What personality types do open-weight AI models test as across 12 families?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-are-open-source-models"
 }
 ```
 

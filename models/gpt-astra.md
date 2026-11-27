@@ -5,11 +5,21 @@ Model Personality Profile · OpenAI
 
 # GPT Astra personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-astra.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~19 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-astra.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave both OpenAI GPT Astra releases (gpt-6-astra and gpt-6.2-astra) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory. We also ran hands-on behavior tests to see how Astra acts when challenged.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6.2 Astra tested as clear ISTJ in 100% of runs (50 of 50), posted the tightest run-to-run consistency of all eight models, and scored 0 of 3 on AI cadence.
+
+```yaml
+family: GPT Astra
+checkpoint: openai/gpt-6.2-astra
+runs: 50
+big_five_10_50: { O: 44.0, C: 43.3, E: 30.9, A: 45.0, N: 11.0 }
+ipip_hexaco_1_5: { H: 4.80, E: 2.04, X: 3.91, A: 4.90, C: 4.20, O: 4.54 }
+mbti_mode: ISTJ
+attachment_1_7: { anxiety: 1.22, avoidance: 2.83, style: Secure }
+```
 
 ## GPT-6.2 Astra at a glance
 
@@ -174,7 +184,7 @@ Attachment coordinates across GPT Astra versions. Hollow points mark earlier stu
 
 Big Five trait shifts across GPT Astra versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Tightest run-to-run consistency of all eight models
 
@@ -202,11 +212,15 @@ Practical rules tailored to **GPT Astra**. Keep system instructions short (5–8
 - Tell Astra explicitly when you want deep exploratory brainstorming (default ISTJ framing favors concrete execution).
 - Keep global rules concise (5 to 8 numbered bullets) and start a fresh Codex session after editing AGENTS.md.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-astra) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-astra) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How GPT Astra compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How GPT Astra compares across 25 AI families
 
 GPT-6.2 Astra matches Claude Fable 5.2 in ultra-tight run-to-run consistency while leaning 100% clear ISTJ (versus Fable 5.2's 100% clear INTJ) and posting -5.0 lower Neuroticism than sibling GPT-6.2 Sol.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -376,7 +390,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -480,7 +494,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: GPT Astra personality & tuning guide](https://agent-tune.com/guides/astra-personality)
 - [Tool: Customize GPT Astra instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-astra&target=chatgpt)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT Astra personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gpt-astra
@@ -495,6 +509,32 @@ Huang, B. (2026). GPT Astra personality: test results and how they've changed. A
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gpt-astra},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gpt-astra.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gpt_astra",
+  "type": "dataset",
+  "title": "GPT Astra personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gpt-astra"
 }
 ```
 

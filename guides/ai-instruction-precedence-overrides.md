@@ -101,3 +101,5 @@ Check two places: first, make sure you are not inside a Project whose Project In
 - [Guide: Claude Personal Preferences: 15 examples and where to paste](https://agent-tune.com/guides/claude-personality)
 - [Guide: Claude Styles are moving to Skills: how to migrate](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Guide: Meta Muse Memory.md, privacy, and how to reset safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset)
+- [Guide: Notion AI custom instructions & workspace agent personas](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona)
+- [Guide: Microsoft Copilot custom instructions & Memory settings](https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory)

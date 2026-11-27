@@ -38,7 +38,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agent-tune.com/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://agent-tune.com/research"},{"@type":"ListItem","position":3,"name":"Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does full character roleplay reduce LLM accuracy?","acceptedAnswer":{"@type":"Answer","text":"In our 300-reply blind experiment, asking models to stay in theatrical character ('weave rich character monologue... *adjusts monocle*') pulls token allocation toward costume narration and delays or overrides strict format and premise checks—causing format adherence to plunge from 98.3% to 80.0% and Claude Fable 5.2 accuracy to fall from 100% to 85%."}},{"@type":"Question","name":"What is the 85/15 character calibration rule?","acceptedAnswer":{"@type":"Answer","text":"Reserve 85% of your system prompt for direct answer-first ordering, false-premise pushback, and format compliance, and constrain fictional or whimsical voice (like TARS dry wit or Feynman analogies) to 10-15% word-choice flavor while explicitly forbidding asterisk stage directions."}}]}</script>
 
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","@id":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts#dataset","name":"Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured — Dataset","description":"300-reply study across GPT-6.2, Claude 5.2 and DeepSeek V4 Pro testing naive character roleplay vs calibrated 85/15 TARS, JARVIS and Feynman prompts.","url":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts","creator":{"@type":"Person","name":"Bernard Huang","url":"https://github.com/bernardjhuang"},"publisher":{"@type":"Organization","name":"AgentTune","url":"https://agent-tune.com"},"license":"https://opensource.org/license/mit","isAccessibleForFree":true,"datePublished":"2026-11-24","dateModified":"2026-11-24","measurementTechnique":"Reproducible LLM psychometric elicitation & orthogonal multi-family blind behavioral evaluation","variableMeasured":[{"@type":"PropertyValue","name":"Big Five (IPIP-50)","unitText":"10-50 sum"},{"@type":"PropertyValue","name":"MBTI (OEJTS)","unitText":"axis balance & tie rate"},{"@type":"PropertyValue","name":"Behavioral Pass Rate / Compliance","unitText":"percentage or count"}],"distribution":[{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-alignment-hexaco-summary.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-roleplay-tax-summary.csv","encodingFormat":"text/csv"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/data/november-2026-agent-research-briefs.json","encodingFormat":"application/json"},{"@type":"DataDownload","contentUrl":"https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md","encodingFormat":"text/markdown"}]}</script>
   <script defer src="/consent.js" fetchpriority="low"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,7 +79,7 @@
       <section class="hero" style="padding-bottom: 4px;">
         <p class="page-eyebrow">Research · November 2026 · 300-Reply Study</p>
         <h1 class="h-hero h-research-hero">Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured.</h1>
-        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time> · <span class="guide-readtime">~6 min read</span> · <a href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
+        <p class="guide-dateline">By Bernard Huang · Updated <time datetime="2026-11-24">November 24, 2026</time> · <span class="guide-readtime">~7 min read</span> · <a href="/research/ai-roleplay-tax-fictional-character-prompts.md">Markdown (.md)</a> · <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP</a> · <a href="/research/data/november-2026-agent-research-briefs.json">Briefs JSON</a></p>
         <p class="lede" style="margin-top: 14px;">We tested 5 character prompt styles across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (300 blind-graded replies) to see how much full character roleplay hurts accuracy—and how an 85/15 split keeps the voice with 100% accuracy.</p>
         <div class="guide-tldr" role="note" aria-label="Summary"><strong>Summary:</strong> Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.</div>
       </section>
@@ -122,6 +122,30 @@
         <h2>Build your own 85/15 3-Layer Character Combo interactively.</h2>
         <div id="at-character-mixer"></div>
       </section>
+      <div class="divider tight"></div>
+
+      <section>
+        <h2>Agent Decision Contract (YAML — Machine-Readable Brief).</h2>
+        <p>Agents compiling fictional character or archetype prompts can consume this verified 85/15 calibration contract directly (also indexed in <a href="/research/data/november-2026-agent-research-briefs.json">november-2026-agent-research-briefs.json</a>):</p><details class="agent-contract-drawer"><summary>Agent Decision Contract (YAML — expand to copy)</summary><pre class="code-block"><code>study_id: ai_roleplay_tax_85_15
+sample_size: 300 # 3 models x 20 objective tasks x 5 prompt conditions
+models_tested: [openai/gpt-6.2-sol, anthropic/claude-fable-5.2, deepseek/deepseek-v4-pro-0813]
+judge_model: google/gemini-4-argon
+data_urls:
+  briefs_json: https://agent-tune.com/research/data/november-2026-agent-research-briefs.json
+  raw_json: https://agent-tune.com/research/data/november-2026-roleplay-tax-results.json
+  summary_csv: https://agent-tune.com/research/data/november-2026-roleplay-tax-summary.csv
+conditions_summary:
+  default: {correctness_pct: 93.3, format_pct: 98.3, answer_first_5: 4.55, fluff_pct: 18.3, voice_5: 3.07, mean_words: 74.2}
+  naive_character_larp: {correctness_pct: 88.3, format_pct: 80.0, answer_first_5: 1.38, fluff_pct: 91.7, voice_5: 3.98, mean_words: 162.7}
+  calibrated_tars_85_15: {correctness_pct: 100.0, format_pct: 100.0, answer_first_5: 5.00, fluff_pct: 0.0, voice_5: 3.85, mean_words: 50.0}
+  calibrated_jarvis_sherlock: {correctness_pct: 96.7, format_pct: 100.0, answer_first_5: 4.97, fluff_pct: 1.7, voice_5: 3.67, mean_words: 55.2}
+  calibrated_feynman_whimsy: {correctness_pct: 100.0, format_pct: 100.0, answer_first_5: 5.00, fluff_pct: 6.7, voice_5: 3.73, mean_words: 68.8}
+decision_rules:
+  - if: human requests a fictional character voice (TARS, JARVIS, Sherlock, Feynman)
+    then: allocate 85% of the prompt to answer-first + format/verification rules and cap character flavor at 15% with zero asterisk stage directions (&lt;=15% voice, 0% theatrics).
+  - if: configuring analytical, coding, or tool-use agents
+    then: never use unbounded theatrical roleplay (cut Claude Fable 5.2 accuracy 100.0% -&gt; 85.0% and format pass 100.0% -&gt; 75.0%, while calibrated 85/15 lifted DeepSeek V4 Pro 80.0% -&gt; 100.0%).</code></pre></details>
+      </section>
 
       <div class="divider tight"></div>
       <section>
@@ -160,22 +184,47 @@
       </section>
       <div class="divider tight"></div>
       <details class="cite-drawer" data-cite-box>
-        <summary>Cite this study (APA 7th · BibTeX · Markdown Brief)</summary>
+        <summary>Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)</summary>
         <div class="cite-actions">
           <button type="button" class="btn btn-secondary" data-copy-cite="apa">Copy APA</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="bibtex">Copy BibTeX</button>
+          <button type="button" class="btn btn-secondary" data-copy-cite="csl">Copy CSL-JSON</button>
           <button type="button" class="btn btn-secondary" data-copy-cite="md">Copy Markdown</button>
           <span class="cite-status" role="status" aria-live="polite" data-cite-status></span>
         </div>
         <pre class="cite-block" data-cite-text="apa">Huang, B. (2026). Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts</pre>
         <pre class="cite-block" data-cite-text="bibtex">@article{huang2026_ai_roleplay_tax_fictional_character_prompts,
-  author  = {Huang, Bernard},
-  title   = {Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-24},
-  url     = {https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md}
+  author    = {Huang, Bernard},
+  title     = {Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-24},
+  url       = {https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md}
+}</pre>
+        <pre class="cite-block" data-cite-text="csl">{
+  "id": "huang2026_ai_roleplay_tax_fictional_character_prompts",
+  "type": "article-journal",
+  "title": "Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        24
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts"
 }</pre>
         <pre class="cite-block" data-cite-text="md">&gt; **Does giving your AI a character voice hurt accuracy? The Roleplay Tax measured** (Bernard Huang, November 24, 2026): Naive character roleplay imposes a real accuracy and verbosity tax (88.3% correctness, 80.0% format pass rate, 162.7 words, 91.7% fluff across 300 blind-graded replies). Calibrated 85/15 character prompts—locking answer-first discipline at 85% and capping dry wit or analogy at 15% with zero asterisk stage directions—achieved 100.0% correctness on TARS Telemetry and Feynman Whimsy (lifting DeepSeek V4 Pro +20.0 pp from 80.0% to 100.0%), 100.0% format adherence, and 0.0%–6.7% fluff.
 &gt; Source: [https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts) · [Markdown mirror](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md)</pre>

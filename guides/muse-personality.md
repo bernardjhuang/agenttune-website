@@ -146,6 +146,10 @@ On iOS, Android, and `muse.ai`, tap **Assistant icon → Identity → Soul** (al
 
 **Fixing overly strict `Soul.md` refusals:** Stacking absolute bans like “Never use bullets” or “Never exceed 3 sentences” causes Muse to stall when you ask for structured tables. Replace rigid bans with conditional defaults (“Default to prose unless I ask for bullets”) and end with “Explicit instructions in my current message always override these defaults.” Need to restore clean defaults safely? Download [`default-soul-restore.md`](https://agent-tune.com/resources/muse/default-soul-restore.md).
 
+> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6). Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; Claude Opus 5.5 (Sep): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4; GPT-6 Astra (Sep): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
+
+Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
+
 ## Muse Connectors & Scheduled Tasks: read vs. write approval rules in Soul.md.
 
 Once you connect mail, calendar, or recurring scheduled **Tasks**, pair platform permissions with explicit draft-first boundaries inside `Soul.md`:
@@ -163,10 +167,6 @@ Once you connect mail, calendar, or recurring scheduled **Tasks**, pair platform
 ```
 
 ## Muse's questionnaire results, as reported (and the fine print).
-
-> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Shows Muse Spark 1.3 scoring noticeably lower on Openness (39.5) and slightly warmer on Extraversion (33.8) and Agreeableness (44.6). Muse Spark 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; Claude Opus 5.5 (Sep): Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4; GPT-6 Astra (Sep): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
-
-Muse Spark 1.3* sits higher on Extraversion (33.8) and lower on abstract Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
 
 The report reached us on September 24, 2026. Each test was answered 100 times, sequentially, inside one session per test, as Muse's own assistant identity. No raw answer vectors or harness were supplied, so we could not re-score anything; the figures below are transcribed. They sit on the research hub marked reported, next to the four models that answered in fresh sessions with every answer published.
 

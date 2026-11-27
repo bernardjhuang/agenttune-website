@@ -37,7 +37,7 @@ In both cases, **checkable rules beat adjectives**. “Be concise and candid” 
 | App / Agent | Where to paste (Web & Mobile) | Walkthrough |
 | --- | --- | --- |
 | ChatGPT | Settings → Personalization → Personality presets & Custom Instructions (≤1,500 chars) or Project Instructions | [ChatGPT Personality guide](https://agent-tune.com/guides/chatgpt-personality-settings) · [20 examples](https://agent-tune.com/guides/chatgpt-custom-instructions-examples) |
-| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup](https://agent-tune.com/guides/claude-personality) · [Mobile & Voice](https://agent-tune.com/guides/claude-personality) |
+| Claude | Initials / Profile icon → Settings → Profile → Personal preferences (or Projects / Skills) | [Claude setup, mobile & Voice](https://agent-tune.com/guides/claude-personality) · [Make Claude direct](https://agent-tune.com/guides/make-claude-more-direct) |
 | Meta Muse | Assistant icon → Identity → `Soul.md` (keep avatar/name in `Identity.md`) | [Soul.md guide](https://agent-tune.com/guides/muse-personality) · [20 templates](https://agent-tune.com/guides/muse-soul-md-templates) |
 | Perplexity | Perplexity Spaces → Space Settings → Custom Instructions (4,000 chars) or AI Profile | [Perplexity Spaces guide](https://agent-tune.com/guides/perplexity-spaces-custom-instructions) |
 | Grok & Grok Bot | X / grok.com: Settings → Customize Grok · Grok Bot: Edit Profile → Description | [Grok settings](https://agent-tune.com/guides/grok-personality-settings) · [Grok Bot](https://agent-tune.com/guides/grokbot-personality) |
@@ -52,23 +52,23 @@ You can pick a tuning file using any of our five personality frameworks—each o
 
 ### MBTI — cognitive framing (16 types)
 
-Maps how you take in information and make decisions. For example, an INTJ tuning leads with system architecture and tradeoffs; an ESFP tuning leads with the immediate concrete action. Take the test at [/tests/mbti](https://agent-tune.com/tests/mbti).
+Maps how you take in information and make decisions. For example, an INTJ tuning leads with system architecture and tradeoffs; an ESFP tuning leads with the immediate concrete action. Take the [free 32-item MBTI test](https://agent-tune.com/tests/mbti).
 
 ### Big Five (OCEAN) — single-trait sliders (10 poles)
 
-Five continuous dimensions—Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—with High and Low templates for each trait. Ideal when you want to adjust one specific habit without adopting a four-letter type. Take the test at [/tests/big-five](https://agent-tune.com/tests/big-five) or compare [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
+Five continuous dimensions—Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism—with High and Low templates for each trait. Ideal when you want to adjust one specific habit without adopting a four-letter type. Take the [free 50-item Big Five test](https://agent-tune.com/tests/big-five) or compare [MBTI vs Big Five for AI](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
 
 ### Enneagram — core motivation & pushback (9 types)
 
-Focuses on what drives you and how you want critique delivered. Take the test at [/tests/enneagram](https://agent-tune.com/tests/enneagram) or browse all nine profiles in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts).
+Focuses on what drives you and how you want critique delivered. Take the [free 36-item Enneagram test](https://agent-tune.com/tests/enneagram) or browse all nine profiles in the [Enneagram AI prompts guide](https://agent-tune.com/guides/enneagram-ai-prompts).
 
 ### DISC — workplace speed & structure (4 styles)
 
-Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and the fastest test on the site (16 questions, ~3 minutes at [/tests/disc](https://agent-tune.com/tests/disc)).
+Four workplace styles (Dominance, Influence, Steadiness, Conscientiousness) and the fastest test on the site (16 questions, ~3 minutes on the [free 16-item DISC test](https://agent-tune.com/tests/disc)).
 
 ### Attachment — autonomy & check-in cadence (4 styles)
 
-Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the test at [/tests/attachment](https://agent-tune.com/tests/attachment).
+Controls how often the assistant pauses for confirmation versus executing end-to-end, and how gently it flags uncertainty. Take the [free 36-item Attachment test](https://agent-tune.com/tests/attachment).
 
 ## How to layer tunings across agents — and add voice without losing accuracy.
 
@@ -76,17 +76,17 @@ The biggest mistake new users make is pasting a highly specific tutor or charact
 
 - **Layer 1 — Global Baseline (Account Settings):** Put universal preferences here (answer-first verdicts, reject flawed math calmly, state unknowns rather than guessing). Take our 2-minute [Alignment & Conflict Style Matcher](https://agent-tune.com/research/ai-personality-rankings) if default models feel too agreeable.
 - **Layer 2 — Project Rooms & Gems (Specialists):** Isolate Socratic/Feynman learning prompts ([14 coaching templates](https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts)) or adversarial PR auditors inside dedicated ChatGPT Projects, Claude Projects, or Gemini Gems.
-- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) or [3-Layer Character Combo Mixer](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) so character voice lives in 15% of diction while accuracy stays at 100%.
+- **Layer 3 — 85/15 Character & Whimsy Twists (Zero Roleplay Tax):** Want a partner with dry TARS wit, J.A.R.V.I.S. composure, Sherlock differential rigor, or Feynman analogies? Never write generic "act like X" prompts. Pair our [85/15 Fictional Character Templates & 3-Layer Character Combo Mixer](https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman) so character voice lives in 15% of diction while accuracy stays at 100%.
 
 ## What actually changes in our tests (and the fine print).
-
-> **Chart — Effect of Plain-English Behavioral Tuning (540-Reply Study, %):** Shows correctness pass rate rising on DeepSeek V4 Pro (+16.7 pp) and Claude Fable 5.2 (96.7% -> 100%), while DeepSeek fluff drops from 36.7% to 3.3%. Default (baseline): Correctness: DeepSeek 78.3, Correctness: Fable 5.2 96.7, Fluff: DeepSeek (lower=better) 36.7; Plain-English rules: Correctness: DeepSeek 95.0, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 20.0; Plain-English + INTJ: Correctness: DeepSeek 93.3, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 3.3.
-
-Checkable plain-English rules drive the real accuracy & brevity gains across controlled replies; combining them with 85/15 voice gives personality without losing fidelity.
 
 Custom instructions change how a model delivers critique, formats tradeoffs, and resists sycophancy—when written cleanly. Across our [540-reply November behavioral benchmark](https://agent-tune.com/research/does-personality-tuning-change-ai-answers) and [300-reply Roleplay Tax study](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts), explicit answer-first and 85/15 telemetry rules lifted DeepSeek V4 Pro correctness by **+16.7 to +20.0 percentage points** and cut filler fluff to **0.0%**—whereas naive full-character roleplay cut Claude Fable 5.2 accuracy to 85% and tripled word bloat.
 
 Treat any template as an editable starting draft. Keep the bullets that save you time on real tasks, or tell your coding agent to fetch a template's raw `.md` URL and merge it cleanly inside bounded markers.
+
+> **Chart — Effect of Plain-English Behavioral Tuning (540-Reply Study, %):** Shows correctness pass rate rising on DeepSeek V4 Pro (+16.7 pp) and Claude Fable 5.2 (96.7% -> 100%), while DeepSeek fluff drops from 36.7% to 3.3%. Default (baseline): Correctness: DeepSeek 78.3, Correctness: Fable 5.2 96.7, Fluff: DeepSeek (lower=better) 36.7; Plain-English rules: Correctness: DeepSeek 95.0, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 20.0; Plain-English + INTJ: Correctness: DeepSeek 93.3, Correctness: Fable 5.2 100.0, Fluff: DeepSeek (lower=better) 3.3.
+
+Checkable plain-English rules drive the real accuracy & brevity gains across controlled replies; combining them with 85/15 voice gives personality without losing fidelity.
 
 ## Interactive 6-Slider AI Personality Tuner (portable export).
 
@@ -131,3 +131,5 @@ Edit it; that's the design. The type is a starting hypothesis and the file is pl
 - [ChatGPT: How to change ChatGPT's personality (presets & rules)](https://agent-tune.com/guides/chatgpt-personality-settings)
 - [Matcher: Which AI personality template fits you? 5-system matcher](https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher)
 - [Guide: Tune your coding agent](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
+- [Guide: Notion AI custom instructions & workspace agent personas](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona)
+- [Reference: AI personality glossary: 32 terms explained](https://agent-tune.com/guides/ai-personality-glossary)

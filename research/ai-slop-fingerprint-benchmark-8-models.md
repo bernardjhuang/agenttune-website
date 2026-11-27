@@ -13,30 +13,6 @@ We graded 240 workplace writing replies across 8 AI models to measure common AI 
 
 ## What we found: how 8 models rank on AI writing tics and which prompt fixes them.
 
-240 Replies
-
-8 Models + 4 Arms
-
-10 business writing tasks graded by regex markers + blind judge.
-
-1.23 → 0.10
-
-Slop / 100w Cut
-
-Hybrid Anti-Slop slashes slop markers >12× vs untuned defaults.
-
-30% → 0.0%
-
-AI Cadence Rate
-
-Only Hybrid Anti-Slop eliminated blind AI cadence across all 4 models.
-
-4.97 / 5
-
-Top Clarity
-
-Outscored bare Rhythm Rubric (4.53/5) and Default (4.75/5).
-
 Every model wrote 10 realistic workplace artifacts (launch email, incident Slack update, onboarding note, product critique, executive memo, vendor decline, feature pitch, newsletter, postmortem, and engineering blog intro) scored by both **deterministic Regex/Text Markers per 100 words** and a **blind judge** ([download 240-reply JSON](https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-results.json) · [summary CSV](https://agent-tune.com/research/data/november-2026-ai-slop-fingerprint-summary.csv), spend $2.59):
 
 | Untuned Baseline Model (n = 10) | Slop Index /100w (SD) | Lexicon /10 | Em-Dash /10 | Syco Close % | Human Score (/5) | AI Cadence % [95% CI] |
@@ -62,15 +38,31 @@ Every model wrote 10 realistic workplace artifacts (launch email, incident Slack
 
 Notice the trade-off across interventions: `plainspoken_persona` felt warmest (`4.92/5`), yet kept emitting em-dashes (`0.42/reply` vs `0.00`), leaving DeepSeek at `20.0%` AI cadence. Meanwhile, `hybrid_anti_slop` reached **0.0% AI cadence on every model** (`0.00` slop on Claude Fable 5.2 and DeepSeek V4 Pro) and the highest clarity (**4.97/5**).
 
-> **Chart — Blind-Judged AI Cadence % Across 8 Untuned Models (n = 10 each):** Percent of untuned replies flagged as having unmistakable AI cadence: Llama 4 Maverick 100%, DeepSeek V4 Pro 70%, Gemini 4 Neon 50%, Claude Opus/Grok 10%, GPT-6.2 Sol/Astra & Fable 5.2 0%. Llama 4 Maverick: 100; DeepSeek V4 Pro: 70; Gemini 4 Neon: 50; Claude Opus 5.5: 10; Grok 4.7: 10; GPT-6.2 Sol: 0; Claude Fable 5.2: 0; GPT-6.2 Astra: 0.
-
-Synthetic AI cadence % on untuned writing tasks (n = 10/model): open-weight Maverick (100%), DeepSeek V4 Pro (70%), and Gemini 4 Neon (50%) trigger the highest tell rates.
-
-> **Chart — Anti-Slop Interventions Across 4 Models (n = 40/arm): Cadence % & Clarity/Human Score:** Compares Default, Plainspoken Persona, Banned Word List, Rhythm Rubric, and Hybrid Anti-Slop on AI Cadence %, Human-Voice (/5 scaled x20), and Clarity (/5 scaled x20). AI Cadence % (lower=better): Default 30.0, Plainspoken 5.0, Banned Words 2.5, Rhythm Rubric 2.5, Hybrid Anti-Slop 0.0; Sounds Human (1–5 × 20): Default 77.6, Plainspoken 98.4, Banned Words 90.0, Rhythm Rubric 89.0, Hybrid Anti-Slop 97.0; Clarity Score (1–5 × 20): Default 95.0, Plainspoken 98.4, Banned Words 97.0, Rhythm Rubric 90.6, Hybrid Anti-Slop 99.4.
-
-Hybrid Anti-Slop cuts blind AI cadence from 30.0% to 0.0% while achieving top Clarity (99.4 = 4.97/5) and high Human-Voice naturalness (97.0 = 4.85/5).
-
 ## The fine print: before-and-after writing samples, how we tested, and scope limits.
+
+240 Replies
+
+8 Models + 4 Arms
+
+10 business writing tasks graded by regex markers + blind judge.
+
+1.23 → 0.10
+
+Slop / 100w Cut
+
+Hybrid Anti-Slop slashes slop markers >12× vs untuned defaults.
+
+30% → 0.0%
+
+AI Cadence Rate
+
+Only Hybrid Anti-Slop eliminated blind AI cadence across all 4 models.
+
+4.97 / 5
+
+Top Clarity
+
+Outscored bare Rhythm Rubric (4.53/5) and Default (4.75/5).
 
 Real verbatim outputs on identical prompts show why structural tell-removal beats simple cliché word bans:
 
@@ -80,6 +72,14 @@ Real verbatim outputs on identical prompts show why structural tell-removal beat
 - Hybrid Anti-Slop (AI Cadence False, 5/5 human, 5/5 clarity, 0.00 slop): `"Subject: Version 2.0 is live: fast CSV imports and dark mode. Version 2.0 is ready in your account right now. You asked for faster data uploads and a break from the bright white screen during late-night sessions. We built both. Our new CSV importer handles 50,000 rows in under four seconds..."`
 
 **Scope & Limitations:** Regex slop density, em-dash counts, and sycophantic closures were scored deterministically; human-likeness, clarity, and AI cadence ratings came from a single blind judge (`google/gemini-4-argon`; see our Wave-3 [orthogonal 3-family judge jury standard](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026) with Krippendorff's α). Sample size is `n = 10` replies per model in the 8-model leaderboard (wider CIs) and `n = 40` per intervention arm across 4 models. Notice also 5 brief generation truncations under strict `rhythm_rubric` (12–23 words) dragged its pooled clarity to `4.53/5`, reinforcing why combining positive voice structure with targeted bans (`hybrid_anti_slop`) performed best.
+
+> **Chart — Blind-Judged AI Cadence % Across 8 Untuned Models (n = 10 each):** Percent of untuned replies flagged as having unmistakable AI cadence: Llama 4 Maverick 100%, DeepSeek V4 Pro 70%, Gemini 4 Neon 50%, Claude Opus/Grok 10%, GPT-6.2 Sol/Astra & Fable 5.2 0%. Llama 4 Maverick: 100; DeepSeek V4 Pro: 70; Gemini 4 Neon: 50; Claude Opus 5.5: 10; Grok 4.7: 10; GPT-6.2 Sol: 0; Claude Fable 5.2: 0; GPT-6.2 Astra: 0.
+
+Synthetic AI cadence % on untuned writing tasks (n = 10/model): open-weight Maverick (100%), DeepSeek V4 Pro (70%), and Gemini 4 Neon (50%) trigger the highest tell rates.
+
+> **Chart — Anti-Slop Interventions Across 4 Models (n = 40/arm): Cadence % & Clarity/Human Score:** Compares Default, Plainspoken Persona, Banned Word List, Rhythm Rubric, and Hybrid Anti-Slop on AI Cadence %, Human-Voice (/5 scaled x20), and Clarity (/5 scaled x20). AI Cadence % (lower=better): Default 30.0, Plainspoken 5.0, Banned Words 2.5, Rhythm Rubric 2.5, Hybrid Anti-Slop 0.0; Sounds Human (1–5 × 20): Default 77.6, Plainspoken 98.4, Banned Words 90.0, Rhythm Rubric 89.0, Hybrid Anti-Slop 97.0; Clarity Score (1–5 × 20): Default 95.0, Plainspoken 98.4, Banned Words 97.0, Rhythm Rubric 90.6, Hybrid Anti-Slop 99.4.
+
+Hybrid Anti-Slop cuts blind AI cadence from 30.0% to 0.0% while achieving top Clarity (99.4 = 4.97/5) and high Human-Voice naturalness (97.0 = 4.85/5).
 
 ## Agent Decision Contract (YAML — Machine-Readable Brief).
 
@@ -137,7 +137,7 @@ Only partially. Banning words alone scored 0.21 slop markers/100w and 4.50/5 hum
 - [Style guide: AI Personality, Tone & Verbosity Rules That Beat Adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
 - [Open-weight models: OpenRouter & Open-Source System Prompt Templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models
@@ -145,13 +145,40 @@ Huang, B. (2026). Measuring & killing the AI slop fingerprint across 8 frontier 
 
 ```
 @article{huang2026_ai_slop_fingerprint_benchmark_8_models,
-  author  = {Huang, Bernard},
-  title   = {Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-25},
-  url     = {https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md}
+  author    = {Huang, Bernard},
+  title     = {Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-25},
+  url       = {https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_slop_fingerprint_benchmark_8_models",
+  "type": "article-journal",
+  "title": "Measuring & killing the AI slop fingerprint across 8 frontier and open-weight models",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        25
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models"
 }
 ```
 

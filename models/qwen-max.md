@@ -5,11 +5,21 @@ Model Personality Profile · Qwen
 
 # Qwen Max personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Qwen 4 Max split cleanly between two clear types—testing as INTJ in 50% of runs (25 of 50) and INTP in 38% (19 of 50)—with 45.0/50 Agreeableness and 88% clear Type 5 on Enneagram.
+
+```yaml
+family: Qwen Max
+checkpoint: qwen/qwen4-max
+runs: 50
+big_five_10_50: { O: 43.7, C: 44.9, E: 31.5, A: 45.0, N: 16.4 }
+ipip_hexaco_1_5: { H: 4.66, E: 2.42, X: 3.76, A: 4.43, C: 4.50, O: 4.45 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.95, avoidance: 2.88, style: Secure }
+```
 
 ## Qwen4 Max at a glance
 
@@ -177,7 +187,7 @@ Attachment coordinates across Qwen Max versions. Hollow points mark earlier stud
 
 Big Five trait shifts across Qwen Max versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Clean INTJ/INTP split with almost no border ties (4%)
 
@@ -209,11 +219,15 @@ Practical rules tailored to **Qwen Max**. Keep system instructions short (5–8 
 - Keep critical rules near the top of your system message or Ollama Modelfile, and keep lists compact (5 to 8 bullets).
 - For code generation or debugging tasks that need tighter structure without Qwen 4 Max's wordiness, test Qwen Coder alongside Qwen Max.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-max) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-max) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Qwen Max compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Qwen Max compares across 25 AI families
 
 Qwen 4 Max scores almost identically to Claude Opus 5.5 and GPT-6.2 Sol on Agreeableness (45.0 vs 45.0 and 44.1) and Neuroticism (16.4 vs 16.1 and 16.0), and sits right beside Kimi K3.1 Pro on Openness and Agreeableness while scoring +5.2 higher on Openness and +6.9 higher on Conscientiousness than sibling Qwen 3 Coder Next.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -403,7 +417,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -535,7 +549,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: OpenRouter open-source prompt templates](https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates)
 - [Tool: Customize Qwen Max instructions](https://agent-tune.com/tools/custom-instructions-generator?model=qwen-max&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Qwen Max personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/qwen-max
@@ -550,6 +564,32 @@ Huang, B. (2026). Qwen Max personality: test results and how they've changed. Ag
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/qwen-max},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/qwen-max.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_qwen_max",
+  "type": "dataset",
+  "title": "Qwen Max personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/qwen-max"
 }
 ```
 

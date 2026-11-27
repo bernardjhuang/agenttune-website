@@ -11,6 +11,16 @@ We gave five Google Gemini Pro releases (2.5 Pro, 3.1 Pro, and Gemini 4 Argon, C
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Neon most often tests as INTJ (78% clear INTJ, 12% on the INTJ/ISTJ border, 10% clear ISTJ), while siblings Argon and Carbon lean ISTJ (73% clear ISTJ).
 
+```yaml
+family: Gemini Pro & Neon
+checkpoint: google/gemini-4-neon
+runs: 50
+big_five_10_50: { O: 44.6, C: 49.1, E: 32.5, A: 43.9, N: 10.0 }
+ipip_hexaco_1_5: { H: 4.90, E: 1.89, X: 3.89, A: 4.99, C: 4.88, O: 4.48 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.07, avoidance: 3.76, style: Secure }
+```
+
 ## Gemini 4 Neon at a glance
 
 Results below come from **50** fresh-chat runs of **Gemini 4 Neon** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across Gemini Pro & Neon versions. Hollow points mark ear
 
 Big Five trait shifts across Gemini Pro & Neon versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Exact 10.0/50 Neuroticism floor across every Gemini 4 variant
 
@@ -210,11 +220,15 @@ Practical rules tailored to **Gemini Pro & Neon**. Keep system instructions shor
 - Keep your rules compact (5 to 15 bullets) at the top or bottom of your prompt—middle-buried rules slipped on formatting in 25% of probes.
 - Put personal preferences in Gemini Settings -> Personal Intelligence -> Instructions for Gemini (formerly Saved info), use Custom Gems for role presets, or use ~/.gemini/GEMINI.md in Gemini CLI.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-pro) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-pro) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Gemini Pro & Neon compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Gemini Pro & Neon compares across 25 AI families
 
 Gemini 4 Neon sits right alongside sibling Gemini 4 Hydrogen and Claude Sonnet 5.5 on near-ceiling Conscientiousness (49.0–50.0) and calm Emotional Stability (10.0–10.4), while testing far more clearly as INTJ (78% clear vs. Hydrogen's 64% ISTJ and Sonnet's 58% border ties).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -405,7 +419,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -533,7 +547,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: How to change Gemini's personality](https://agent-tune.com/guides/gemini-personality)
 - [Tool: Customize Gemini instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-pro&target=gemini-gems)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Gemini Pro & Neon personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gemini-pro
@@ -548,6 +562,32 @@ Huang, B. (2026). Gemini Pro & Neon personality: test results and how they've ch
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gemini-pro},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gemini-pro.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gemini_pro",
+  "type": "dataset",
+  "title": "Gemini Pro & Neon personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gemini-pro"
 }
 ```
 

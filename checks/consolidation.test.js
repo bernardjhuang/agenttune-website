@@ -50,7 +50,9 @@ const RETIRED_TARGETS = [
   ['/research/gpt-6-sol-personality', '/models/gpt-sol'],
   ['/research/gpt-6-sol-personality.md', '/models/gpt-sol.md'],
   ['/research/first-ai-that-is-not-an-intj', '/research/ai-mbti-personalities'],
-  ['/research/first-ai-that-is-not-an-intj.md', '/research/ai-mbti-personalities.md']
+  ['/research/first-ai-that-is-not-an-intj.md', '/research/ai-mbti-personalities.md'],
+  ['/pricing', '/'],
+  ['/pricing.md', '/']
 ];
 
 const RETIRED_ROUTES = [
@@ -83,18 +85,20 @@ const RETIRED_FILES = [
   'research/first-ai-that-is-not-an-intj.md'
 ];
 
-function walkHtml(dir, base = '') {
+function walkExt(dir, ext, base = '') {
   const out = [];
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
     const rel = base ? `${base}/${ent.name}` : ent.name;
     if (ent.isDirectory()) {
-      out.push(...walkHtml(path.join(dir, ent.name), rel));
-    } else if (ent.name.endsWith('.html')) {
+      out.push(...walkExt(path.join(dir, ent.name), ext, rel));
+    } else if (ent.name.endsWith(ext)) {
       out.push(rel);
     }
   }
   return out;
 }
+const walkHtml = (dir, base = '') => walkExt(dir, '.html', base);
+const walkMd = (dir, base = '') => walkExt(dir, '.md', base);
 
 function normalizePath(href) {
   let clean = href.replace(/^https?:\/\/agent-tune\.com/i, '').split('#')[0].split('?')[0];
@@ -221,5 +225,27 @@ test('Cloudflare _headers has strictly fewer than 100 path blocks', () => {
     const text = read(file);
     const blocks = text.split(/\r?\n/).filter(line => /^\/\S*/.test(line));
     assert.ok(blocks.length < 100, `${file} has ${blocks.length} path blocks (must be < 100)`);
+  }
+});
+
+test('checkpoint reconciliation, hub Markdown mirrors, and clean Markdown code fences hold', () => {
+  const idx = JSON.parse(read(path.join(ROOT, 'research/data/model-profiles/index.json')));
+  assert.equal(idx.primary_checkpoints, 87);
+  assert.equal(idx.total_tested_checkpoints, 93);
+  assert.equal(idx.quarantined_checkpoints, 6);
+
+  const catalog = JSON.parse(read(path.join(ROOT, 'resources/catalog.json')));
+  const hubIds = new Set(catalog.resources.filter(r => r.kind === 'hub').map(r => r.id));
+  assert.ok(hubIds.has('models-hub'), 'catalog.json must register models-hub');
+
+  for (const mdRel of ['index.md', 'models/index.md', 'research.md', 'guides/index.md', 'library/index.md', 'tests/index.md', 'tools/index.md']) {
+    assert.ok(fs.existsSync(path.join(DIST, mdRel)), `Missing hub Markdown mirror dist/${mdRel}`);
+  }
+
+  for (const mdRel of walkMd(DIST)) {
+    const md = read(path.join(DIST, mdRel));
+    assert.equal(/@@(?:CELL|BLOCK|INL)_\d+@@/.test(md), false, `Unexpanded placeholder leaked in dist/${mdRel}`);
+    const fenceCount = (md.match(/^```/gm) || []).length;
+    assert.equal(fenceCount % 2, 0, `Unclosed code fence in dist/${mdRel} (${fenceCount} fences)`);
   }
 });

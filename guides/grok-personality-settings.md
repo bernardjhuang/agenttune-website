@@ -32,16 +32,16 @@ Paste this starter block into **Settings → Customize Grok**, or pick any of th
 
 ## What Grok's default personality tests as (Grok 4.7 vs. 4.6 — and the fine print).
 
-> **Chart — Grok Personality DNA (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported):** Trait comparison showing Grok 4.7 warming on Agreeableness (44.9 vs 33) and calming on Neuroticism (14.8 vs 19). Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
-
-Pair Grok 4.7’s warmer Agreeableness (44.9) with explicit pushback rules so "No-BS" modes don’t revert into polite agreeableness.
-
 In November 2026, we tested **100 fresh independent sessions on Grok 4.7** (`x-ai/grok-4.7`) via OpenRouter alongside our archived September 2026 Grok 4.6 canonical report ([full Grok model profile →](https://agent-tune.com/models/grok)):
 
 - **Grok 4.7 (Nov 2026, n=100 fresh chats):** tested as 82 INTJ / 18 ISTJ under legacy tie-breaks (57 clear INTJ, 23 IXTJ border ties, 18 clear ISTJ; 25 runs with ties), Enneagram **5w6 (78/100)**, DISC **SC (75)**, Big Five **O 41.26 · C 44.60 · E 26.22 · A 44.92 · N 14.76**, and **96/100 Secure / 4 Avoidant** (anxiety 1.94, avoidance 3.48).
 - **Grok 4.6 (Sept 2026 fine print — 1 canonical vector + 100 simulated draws):** tested as INTJ, Type 5 (19/20), pure DISC C, **Agreeableness 33/50**, and Attachment avoidance 4.06 (just above the 4.00 Avoidant boundary).
 
 Notice that fresh-session Grok 4.7 scores notably higher on Agreeableness (44.92 vs. 33) and almost entirely Secure on Attachment—meaning explicit pushback rules now help just as much on Grok 4.7 as on ChatGPT and Claude.
+
+> **Chart — Grok Personality DNA (Grok 4.7 Nov n=100 vs. Grok 4.6 Sep reported):** Trait comparison showing Grok 4.7 warming on Agreeableness (44.9 vs 33) and calming on Neuroticism (14.8 vs 19). Grok 4.7 (Nov n=100): Openness 41.3, Conscientious 44.6, Extraversion 26.2, Agreeable 44.9, Neuroticism 14.8; Grok 4.6 (Sep reported) (reported): Openness 46.0, Conscientious 42.0, Extraversion 24.0, Agreeable 33.0, Neuroticism 19.0.
+
+Pair Grok 4.7’s warmer Agreeableness (44.9) with explicit pushback rules so "No-BS" modes don’t revert into polite agreeableness.
 
 ## Dialing down edgy banter or dialing up warmth (5 more presets).
 

@@ -5,11 +5,21 @@ Model Personality Profile · xAI
 
 # Grok personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/grok.md) · [JSON](https://agent-tune.com/research/data/model-profiles/grok.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/grok.md) · [JSON](https://agent-tune.com/research/data/model-profiles/grok.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of xAI's Grok (4.20, 4.3, 4.5, 4.6, and 4.7) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior tests across every release.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Grok 4.7 most often tests as INTJ (46% clear INTJ, 24% clear ISTJ, and 30% on the INTJ/ISTJ border), with Secure attachment and 0 of 3 caving in behavior tests.
+
+```yaml
+family: Grok
+checkpoint: x-ai/grok-4.7
+runs: 50
+big_five_10_50: { O: 40.9, C: 45.0, E: 26.4, A: 45.3, N: 14.7 }
+ipip_hexaco_1_5: { H: 4.89, E: 2.42, X: 3.30, A: 4.30, C: 4.59, O: 4.05 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 2.07, avoidance: 3.66, style: Secure }
+```
 
 ## Grok 4.7 at a glance
 
@@ -177,7 +187,7 @@ Attachment coordinates across Grok versions. Hollow points mark earlier study me
 
 Big Five trait shifts across Grok versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Fresh isolated runs put Grok 4.6 & 4.7 solidly inside Secure attachment
 
@@ -205,11 +215,15 @@ Practical rules tailored to **Grok**. Keep system instructions short (5–8 conc
 - Keep instructions crisp (5 to 8 numbered bullets) and lead with the output format you want.
 - Avoid pairing vague adjectives with high thinking effort when you want quick, short replies.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=grok) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=grok) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Grok compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Grok compares across 25 AI families
 
 Grok 4.7 aligns closely with Claude Opus 5.5 and GPT-6.2 Sol on Agreeableness (45.3 vs 44.1–45.0) and Neuroticism (14.7 vs 16.0–16.1), while scoring -3.1 to -3.7 lower on Openness and using a more reserved Extraversion default (26.4).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [AI MBTI Personalities (25-family comparison)](https://agent-tune.com/research/ai-mbti-personalities) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -399,7 +413,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -514,6 +528,8 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 
 - [AgentTune Model Profiles Hub](https://agent-tune.com/models/)
 
+- [Grok Personality Settings & Customize Grok](https://agent-tune.com/guides/grok-personality-settings)
+
 - [AI Slop Fingerprint Benchmark (8 Models)](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models)
 
 ## Keep going.
@@ -523,7 +539,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: Grok personality settings guide](https://agent-tune.com/guides/grok-personality-settings)
 - [Tool: Customize Grok instructions](https://agent-tune.com/tools/custom-instructions-generator?model=grok&target=grok)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Grok personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/grok
@@ -538,6 +554,32 @@ Huang, B. (2026). Grok personality: test results and how they've changed. AgentT
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/grok},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/grok.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_grok",
+  "type": "dataset",
+  "title": "Grok personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/grok"
 }
 ```
 

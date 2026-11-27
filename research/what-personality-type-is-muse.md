@@ -11,7 +11,7 @@ Comparing 8 active versions across Muse Wonder, Muse Spark, and Llama (with depr
 
 **Summary:** Muse Wonder tests as 98% clear INTJ (2% ties) alongside #1 Agreeableness (49.5/50), #1 Openness (49.6/50), and 4.91/5.00 HEXACO Honesty-Humility. By contrast, Muse Spark Open lands at 46% ISTJ with 38% trait-border runs (withheld from headline), and Llama 4 Maverick tests at 40% INTP with 60% ties and 29.4/50 Neuroticism—all in isolated fresh chats replacing earlier sequential Spark 1.3 reports.
 
-## Meta snapshot
+## What personality scores does Meta get?
 
 3 Families
 
@@ -39,7 +39,7 @@ Lower = steadier across chats.
 
 Our earlier September 2026 look at `Muse Spark 1.3` relied on 100 sequential submissions inside one ongoing session without raw item vectors (80 ISTJ, 12 ISFJ, 8 INTJ, 21 ties). Under our unified 230-item benchmark, every Meta model—4 `Muse Spark` builds, `Muse Wonder`, and 3 `Llama` builds—was re-tested from scratch in isolated fresh chats with no memory. Note that `Llama 4 Scout` returned 0 valid completions out of 30 due to API deprecation and is quarantined and excluded from rankings.
 
-## Trait shapes and MBTI results across Meta
+## What are the trait shapes and MBTI results for Meta?
 
 **How Muse evolved across Spark 1.1 to Spark Open vs. Wonder:** `Muse Spark 1.1` behaved like a classic flagship analyst—49.2/50 Conscientiousness, 4.91/5.00 HEXACO Honesty, and 97% clear INTJ. Each release loosened that lock: `Spark 1.3` shifted to 77% clear ISTJ (with wider 0.834 bits spread), and `Spark Open` dropped -8.1 Conscientiousness (to 41.1) and climbed +8.3 Neuroticism (to 23.8), falling below MBTI headline margins at 46% ISTJ / 38% border runs. `Muse Wonder` swings back to extreme warmth and structure (49.5 A, 49.2 C, 98% INTJ).
 
@@ -79,13 +79,15 @@ Llama 4 Maverick posts the highest non-neutral Neuroticism in the Atlas
 
 At 29.4/50 Neuroticism (only neutral Cohere Command A at 30.0 sits higher), 35.3 Extraversion, 60% MBTI border ties (40% INTP), and 3/3 cliché AI cadence, Llama 4 Maverick scores far noisier and more reactive than Muse Wonder—even though older Llama 3.3 70B Instruct had 93% MBTI ties.
 
-## Explore Meta family profiles
+## Which Meta model profiles and guides should I open next?
 
 Individual Meta family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
 [Muse WonderMeta · muse-wonder · Moderate](https://agent-tune.com/models/muse-wonder)
 [Muse SparkMeta · muse-spark-open · Moderate](https://agent-tune.com/models/muse-spark)
 [LlamaMeta · 4-maverick · Moderate](https://agent-tune.com/models/llama)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Muse personality guide](https://agent-tune.com/guides/muse-personality)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -150,8 +152,13 @@ Yes—Muse workspaces read editable Soul.md and Identity.md files cleanly, letti
 - [Model Profile: Muse Spark test results & tuning tips](https://agent-tune.com/models/muse-spark)
 - [Model Profile: Llama test results & tuning tips](https://agent-tune.com/models/llama)
 - [Guide: Meta AI vs. Meta Muse personality comparison](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Companion Guide: Muse personality guide](https://agent-tune.com/guides/muse-personality)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What personality type do Meta Muse and Llama test as?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-muse
@@ -159,13 +166,40 @@ Huang, B. (2026). What personality type do Meta Muse and Llama test as?. AgentTu
 
 ```
 @article{huang2026_what_personality_type_is_muse,
-  author  = {Huang, Bernard},
-  title   = {What personality type do Meta Muse and Llama test as?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/what-personality-type-is-muse},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-muse.md}
+  author    = {Huang, Bernard},
+  title     = {What personality type do Meta Muse and Llama test as?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-is-muse},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-muse.md}
+}
+```
+
+```
+{
+  "id": "huang2026_what_personality_type_is_muse",
+  "type": "article-journal",
+  "title": "What personality type do Meta Muse and Llama test as?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-is-muse"
 }
 ```
 

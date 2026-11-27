@@ -15,7 +15,7 @@ gpt-luna,OpenAI,openai/gpt-6-luna,50,1,0,0,1,4.68,5.06,2.32,3.78,-0.10
 gpt-sol,OpenAI,openai/gpt-6.2-sol,50,0.6,0.06,0.34,0,1.88,-0.78,5.1,8.18,0.34
 gpt-terra,OpenAI,openai/gpt-6.1-terra,50,0.94,0.02,0.04,1,1.78,3.58,5.46,8.6,0.04
 grok,xAI,x-ai/grok-4.7,50,0.46,0.24,0.3,0,7.1,0.42,4.66,11.34,-0.70
-kimi,Moonshot,moonshotai/kimi-k3.1-pro,50,0.58,0.26,0.16,1,9.62,0.48,4,7.26,-0.11
+kimi,Moonshot AI,moonshotai/kimi-k3.1-pro,50,0.58,0.26,0.16,1,9.62,0.48,4,7.26,-0.11
 llama,Meta,meta-llama/llama-4-maverick,50,0.4,0,0.6,0,1.62,2.2,0.86,-2.34,-0.17
 minimax,MiniMax,minimax/minimax-m3.1-flash,50,0.08,0.06,0.8,0,0.82,0.4,0.68,-1.1,0.32
 mistral-large,Mistral,mistralai/mistral-large-2512,30,0.5,0.3,0.1667,0,1.7,0.4,-0.9333,-2,0.00

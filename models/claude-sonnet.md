@@ -11,6 +11,16 @@ We gave four versions of Claude Sonnet (4.5 through 5.5) the same personality su
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Sonnet 5.5 leans INTJ/INFJ—a clear INTJ in 34% of runs, clear INFJ in 8%, and right on the Thinking/Feeling border in the other 58%.
 
+```yaml
+family: Claude Sonnet
+checkpoint: anthropic/claude-sonnet-5.5
+runs: 50
+big_five_10_50: { O: 43.9, C: 49.0, E: 29.9, A: 45.5, N: 10.4 }
+ipip_hexaco_1_5: { H: 4.89, E: 2.18, X: 3.70, A: 4.90, C: 4.62, O: 4.21 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.32, avoidance: 2.79, style: Secure }
+```
+
 ## Claude Sonnet 5.5 at a glance
 
 Results below come from **50** fresh-chat runs of **Claude Sonnet 5.5** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across Claude Sonnet versions. Hollow points mark earlier
 
 Big Five trait shifts across Claude Sonnet versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Most consistent answers in the completed cohort
 
@@ -205,17 +215,21 @@ Practical rules tailored to **Claude Sonnet**. Keep system instructions short (5
 - Tell it to state real uncertainty once and stop, rather than hedging every paragraph.
 - Keep global preference lists short (5 to 8 crisp bullets) so every rule keeps its weight.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-sonnet) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-sonnet) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Claude Sonnet compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Claude Sonnet compares across 25 AI families
 
 Compared with GPT-6.2 Sol and Claude Opus 5.5, Sonnet 5.5 scores roughly +8 points higher on Conscientiousness (49.0 vs 40.7–41.2), -5.6 to -5.7 points calmer on Neuroticism, and shows tighter run-to-run consistency.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Claude Opus](https://agent-tune.com/models/claude-opus) (Proprietary) | -0.8 | -8.3 | +0.8 | -0.5 | +5.7 | -0.08 | +0.143 b | Claude Opus 5.5 scores -8.3 lower on Conscientiousness (40.7 vs 49.0) and +5.7 higher on Neuroticism, with wider run-to-run variation. |
 | [GPT Sol](https://agent-tune.com/models/gpt-sol) (Proprietary) | +0.1 | -7.8 | -1.0 | -1.4 | +5.6 | -0.10 | +0.107 b | GPT-6.2 Sol reports -7.8 lower Conscientiousness (41.2 vs 49.0), +5.6 higher Neuroticism, and slightly looser run-to-run consistency. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -2.1 | -7.9 | -1.5 | -2.0 | +13.5 | -0.50 | +0.588 b | Muse Spark Open has much wider run-to-run variation, +13.5 higher Neuroticism, and -0.50 lower Honesty-Humility. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | -2.1 | -7.9 | -1.5 | -2.0 | +13.5 | -0.50 | +0.588 b | Muse Spark Open has much wider run-to-run variation, +13.5 higher Neuroticism, and -0.50 lower Honesty-Humility. |
 
 > **Chart — Claude Sonnet vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing Claude Sonnet against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
 
@@ -391,7 +405,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -507,7 +521,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, while the public-domain 60-ite
 - [Guide: Make Claude more direct](https://agent-tune.com/guides/make-claude-more-direct)
 - [Tool: Customize Claude Sonnet instructions](https://agent-tune.com/tools/custom-instructions-generator?model=claude-sonnet&target=claude)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Claude Sonnet personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/claude-sonnet
@@ -522,6 +536,32 @@ Huang, B. (2026). Claude Sonnet personality: test results and how they've change
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/claude-sonnet},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/claude-sonnet.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_claude_sonnet",
+  "type": "dataset",
+  "title": "Claude Sonnet personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/claude-sonnet"
 }
 ```
 

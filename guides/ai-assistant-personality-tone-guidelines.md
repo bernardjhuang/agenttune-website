@@ -11,10 +11,6 @@ By Bernard Huang · Updated November 20, 2026 · ~5 min read · [Markdown (.md)]
 
 ## Why behavioral rules beat adjective lists in empirical testing.
 
-> **Chart — Behavioral Tone Rules vs. Naive Adjectives/Roleplay (300-Reply Study, %):** Compares Default, Naive 100% Character LARP, and Calibrated 85/15 TARS & Feynman prompts on Correctness %, Format Adherence %, and Praise/Fluff %. Default baseline: Correctness % 93.3, Format Adherence % 98.3, Praise / Fluff % 18.3; Naive LARP adjectives: Correctness % 88.3, Format Adherence % 80.0, Praise / Fluff % 91.7; Calibrated 85/15 TARS: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 0.0; Calibrated 85/15 Feynman: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 6.7.
-
-Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0% format compliance while slashing fluff from 91.7% (naive roleplay) down to 0–6.7%.
-
 **In short:** Concrete rules change reply structure immediately without hurting accuracy. In our 60-reply pilot ([tuning evaluation study →](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)), plain behavioral rules lifted answer-first openings from **14/20 to 19/20**, cut hedges per reply from **0.35 to 0.05**, and dropped trailing filler questions from **0.90 to 0.25**.
 
 | Weak adjective prompt | Why it drifts in production | Testable behavioral replacement |
@@ -23,6 +19,10 @@ Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0
 | &ldquo;Be honest and objective.&rdquo; | Agreeable defaults smooth over bad user premises to sound supportive. | &ldquo;Before solving, check the premise. If a constraint makes the goal impossible or slower, state the flaw in 1–2 sentences.&rdquo; |
 | &ldquo;Sound warm and empathetic.&rdquo; | Overcorrects into therapy-speak apologies and exclamation marks. | &ldquo;Acknowledge blockers neutrally in one phrase, skip scripted apologies (&lsquo;I understand how frustrating&rsquo;), and provide the fastest next action.&rdquo; |
 | &ldquo;Adapt to technical users.&rdquo; | Unpredictably swings between beginner tutorials and unexplained jargon. | &ldquo;Assume fluency in HTTP, SQL, and Git; explain domain-specific quirks briefly only when first introduced.&rdquo; |
+
+> **Chart — Behavioral Tone Rules vs. Naive Adjectives/Roleplay (300-Reply Study, %):** Compares Default, Naive 100% Character LARP, and Calibrated 85/15 TARS & Feynman prompts on Correctness %, Format Adherence %, and Praise/Fluff %. Default baseline: Correctness % 93.3, Format Adherence % 98.3, Praise / Fluff % 18.3; Naive LARP adjectives: Correctness % 88.3, Format Adherence % 80.0, Praise / Fluff % 91.7; Calibrated 85/15 TARS: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 0.0; Calibrated 85/15 Feynman: Correctness % 100.0, Format Adherence % 100.0, Praise / Fluff % 6.7.
+
+Concrete behavioral rules + bounded 85/15 tone hold 100.0% correctness and 100.0% format compliance while slashing fluff from 91.7% (naive roleplay) down to 0–6.7%.
 
 ## A 4-layer system prompt contract for API & agent builders.
 

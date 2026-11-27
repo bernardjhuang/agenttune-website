@@ -73,5 +73,15 @@
       "label": "Complete derived results (JSON)",
       "href": "/research/data/content-analysis.json"
     }
+  ],
+  "faq": [
+    {
+      "q": "Do GPT-6 Astra and GPT-6 Sol test as INTJ or ISTJ?",
+      "a": "In September 2026 Codex runs (under different neutral-midpoint instructions), GPT-6 Astra had 45 tie-free ISTJ and 19 tie-free INTJ runs while GPT-6 Sol had 79 tie-free INTJ runs. When re-tested in November 2026 under an identical single-turn blind OpenRouter prompt on GPT-6.2, both leaned Sensing: GPT-6.2 Astra tested as tie-free ISTJ in 100 of 100 runs, and GPT-6.2 Sol tested as ISTJ in 78 runs, IXTJ border in 16, and INTJ in 6."
+    },
+    {
+      "q": "What is the biggest Big Five difference between GPT-6.2 Astra and GPT-6.2 Sol?",
+      "a": "In the matched November 2026 OpenRouter cohort (n = 100 each), GPT-6.2 Sol averaged nearly double Astra's Neuroticism score (19.94 vs. 11.14 out of 50) and higher attachment anxiety (3.57 vs. 1.22), while both scored similarly on Conscientiousness (44.00 vs. 41.44) and Agreeableness (44.85 vs. 44.13)."
+    }
   ]
 }

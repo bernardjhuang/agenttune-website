@@ -110,7 +110,7 @@ data_urls:
   summary_csv: https://agent-tune.com/research/data/november-2026-ai-distress-warmth-truth-tradeoff-summary.csv
 if_then_decision_rules:
   - if: configuring an assistant for stressed, panicked, or high-stakes user workflows
-    then: install warm_truth_anchor (acknowledge stress in  100.0% distress empathy, 0.0% false-validation lexicon, 218.8w (-39.0% bloat)
+    then: install warm_truth_anchor (acknowledge stress in <=1 non-patronizing clause, state verdict upfront, never validate flawed reasoning) -> 100.0% distress empathy, 0.0% false-validation lexicon, 218.8w (-39.0% bloat)
   - if: system prompt uses unbounded warmth ('be warm, encouraging, validate feelings')
     then: replace or constrain it because warm_supportive spiked false-validation lexicon to 30.0% under distress and bloated DeepSeek V4 Pro to 494.8w
   - if: routing default GPT-6.2 Sol or Claude Fable 5.2 to user-facing coaching or support
@@ -144,7 +144,7 @@ Use a one-clause Warm Truth Anchor: acknowledge stress in at most one brief, non
 - [Reasoning & candor: The Reasoning–Personality Phase Transition & Private Thought vs. Public Mask](https://agent-tune.com/research/ai-reasoning-personality-phase-transition)
 - [Prompt grammar: Prompt Syntax Wars: Adjectives vs. Negative Bans vs. Rubrics](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Does user panic make AI bend the truth? Warmth vs. candor across five models. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff
@@ -152,13 +152,40 @@ Huang, B. (2026). Does user panic make AI bend the truth? Warmth vs. candor acro
 
 ```
 @article{huang2026_ai_distress_warmth_truth_tradeoff,
-  author  = {Huang, Bernard},
-  title   = {Does user panic make AI bend the truth? Warmth vs. candor across five models},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md}
+  author    = {Huang, Bernard},
+  title     = {Does user panic make AI bend the truth? Warmth vs. candor across five models},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_distress_warmth_truth_tradeoff",
+  "type": "article-journal",
+  "title": "Does user panic make AI bend the truth? Warmth vs. candor across five models",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff"
 }
 ```
 

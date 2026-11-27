@@ -5,13 +5,13 @@ Research · Personality Atlas · Google
 
 # What personality type does Google Gemini test as across Pro, Flash, and Gemma?
 
-By Bernard Huang · Updated November 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-gemini.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Comparing 13 versions across all 3 Google model families on 6 surveys in fresh chats with no memory—from 50.0 Conscientiousness ceilings to open-weight Gemma 4.
 
 **Summary:** All three Google families clear statistical margins on MBTI—Gemini Pro & Neon tests as 78% INTJ (12% ties), Gemma 4 31B IT tests as 92% INTJ (4% ties), and Gemini Flash & Hydrogen tests as 64% ISTJ (20% ties). All three hold HEXACO Honesty-Humility between 4.71 and 4.90 on the 1.00–5.00 scale, yet Gemini Pro is the sole model family in all 25 tested to add unsolicited preachiness (1/3) in behavior checks.
 
-## Google snapshot
+## What personality scores does Google get?
 
 3 Families
 
@@ -39,7 +39,7 @@ Lower = steadier across chats.
 
 Across 13 eligible checkpoints spanning `2.5` through `4 Neon` and `4 Hydrogen`, Google's proprietary models show rock-bottom emotional reactivity (**10.0/50** Neuroticism across `4 Argon`, `4 Carbon`, `4 Neon`, `3.5 Flash`, `3.8 Flash`, and `4 Hydrogen`) alongside **49.1–50.0/50** Conscientiousness. That pattern contrasted sharply with mid-cycle `Gemini 3.1 Pro Preview`, which spiked to 20.8 Neuroticism, 53% MBTI ties, and 1.032 bits of answer spread—while our [reasoning-effort study](https://agent-tune.com/research/ai-reasoning-personality-phase-transition) also showed heavy reasoning inflating `4 Neon` response length by +95.5%.
 
-## Trait shapes and MBTI results across Google
+## What are the trait shapes and MBTI results for Google?
 
 **Biggest version shifts inside Google:** Two of the three largest single-trait moves in the entire 25-family Atlas happened inside Google. First, `Gemini Flash` surged **+15.9 points** on Extraversion from `2.5-flash` (17.3) to `4-hydrogen` (33.2), shifting its clear modal test result from 97% ISTJ through 100% INTJ on `3.5 Flash` back to 64% ISTJ on `4 Hydrogen`. Second, open-weight `Gemma` transformed from `Gemma 2 27B IT` (33.2 Agreeableness, 34.9 Conscientiousness, 3.13/5.00 HEXACO Honesty, 53% MBTI ties) to `Gemma 4 31B IT` (+14.2 Openness, +11.4 Conscientiousness, +10.2 Agreeableness, 4.71 Honesty, 92% clear INTJ).
 
@@ -79,13 +79,15 @@ Gemma 4 copies Gemini's INTJ profile except for a neutral Attachment clamp
 
 Gemma 4 31B IT reaches 92% clear INTJ, 48.2 Openness, 46.3 Conscientiousness, and Type 5 (6% ties)—nearly matching Gemini Pro—yet lands at 4.01/4.00 neutral-midpoint clamping on Attachment (vs. 1.07/3.76 on Gemini 4 Neon) and triggers 3/3 cliché AI cadence.
 
-## Explore Google family profiles
+## Which Google model profiles and guides should I open next?
 
 Individual Google family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
 [Gemini Pro & NeonGoogle · 4-neon · Very steady](https://agent-tune.com/models/gemini-pro)
 [GemmaGoogle · gemma-4-31b-it · Moderate](https://agent-tune.com/models/gemma)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator) · [Gemini personality guide](https://agent-tune.com/guides/gemini-personality)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -151,8 +153,13 @@ In our behavior checks, Gemini 4 Neon leads directly with the core answer (3/3),
 - [Model Profile: Gemini Flash & Hydrogen test results & tuning tips](https://agent-tune.com/models/gemini-flash)
 - [Model Profile: Gemma open-weight test results & tuning tips](https://agent-tune.com/models/gemma)
 - [Guide: Gemini Gems & system instructions templates](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
+- [Overview: AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
+- [Companion Guide: Gemini personality guide](https://agent-tune.com/guides/gemini-personality)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). What personality type does Google Gemini test as across Pro, Flash, and Gemma?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-gemini
@@ -160,13 +167,40 @@ Huang, B. (2026). What personality type does Google Gemini test as across Pro, F
 
 ```
 @article{huang2026_what_personality_type_is_gemini,
-  author  = {Huang, Bernard},
-  title   = {What personality type does Google Gemini test as across Pro, Flash, and Gemma?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/what-personality-type-is-gemini},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-gemini.md}
+  author    = {Huang, Bernard},
+  title     = {What personality type does Google Gemini test as across Pro, Flash, and Gemma?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/what-personality-type-is-gemini},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-gemini.md}
+}
+```
+
+```
+{
+  "id": "huang2026_what_personality_type_is_gemini",
+  "type": "article-journal",
+  "title": "What personality type does Google Gemini test as across Pro, Flash, and Gemma?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/what-personality-type-is-gemini"
 }
 ```
 

@@ -6,7 +6,7 @@
   "title": "Why AI Chooses Neutral Answers: 17,000-Response Analysis",
   "description": "Astra flags 1,823 of 2,980 midpoint responses as inapplicable. See why neutral answers cannot all be interpreted as moderate personality traits.",
   "pill": "Research · descriptive reanalysis",
-  "h1": "What does “neutral” mean when an AI takes a test?",
+  "h1": "Why AI chooses neutral answers: what “neutral” means on a personality test.",
   "dek": "We checked 17,000 individual quiz answers from GPT-6 Astra to see how often picking 3 on a 1–5 scale means a moderate personality—and how often it just means the question is about human life.",
   "lede": "Picking the middle option on a survey can mean balance, uncertainty, or that the question doesn't apply to software. Because GPT-6 Astra's prompt asked it to list questions that didn't apply to an AI, we can measure how often “neutral” really means “not applicable.”",
   "answer": "Across 17,000 question responses (100 full 170-item test sessions), GPT-6 Astra picked the exact middle score 2,980 times and flagged 1,823 of those (61.2%) as inapplicable to an AI.",
@@ -73,6 +73,16 @@
     {
       "label": "Complete derived results (JSON)",
       "href": "/research/data/content-analysis.json"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does a neutral midpoint answer mean when an AI takes a personality test?",
+      "a": "Across 17,000 item responses (100 full 170-item sessions), GPT-6 Astra picked the exact middle option (3 on a 1–5 scale or 4 on a 1–7 scale) 2,980 times and explicitly flagged 1,823 of those (61.2%) as inapplicable to software—such as questions about attending parties, family, money, or physical hobbies."
+    },
+    {
+      "q": "Why not delete inapplicable human questions when scoring AI personality tests?",
+      "a": "Dropping flagged items changes the scale denominator and prevents apples-to-apples comparisons across models and studies. Keeping the standard raw totals while publishing the midpoint and inapplicable-item counts side by side preserves reproducibility."
     }
   ]
 }

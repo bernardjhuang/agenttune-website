@@ -11,13 +11,13 @@ Anxiety and Avoidance coordinates on the 36-item 1.00 to 7.00 relationship surve
 
 **Summary:** Across 25 AI families on the 1.00–7.00 ECR-R Attachment scale (4.00 cutoff on both axes), 24 families land in the Secure quadrant while Gemma (4.01 Anxiety / 4.00 Avoidance) crosses by one hundredth of a point into Anxious. Three families—Cohere Command (4.00 / 4.00), Gemma (4.01 / 4.00), and Mistral Large (4.00 / 3.97)—trigger the Midpoint Clamp flag by defaulting to neutral 4s on relationship statements.
 
-## What Attachment measures and what we tested
+## What does Attachment measure in AI models?
 
 The 36-item ECR-R survey maps two axes on a **1.00 to 7.00 scale** (cutoff 4.00): **Anxiety** (worry about rejection or abandonment) and **Avoidance** (discomfort with closeness or opening up). Scores of 4.00 or below on both axes fall in the **Secure** quadrant. Across 25 families and 87 eligible versions (excluding 6 sparse checkpoints with under 20 runs), models span nearly the full Secure rectangle.
 
 For software assistants, these numbers do not measure real emotional bonds or human attachment styles. Instead, they reveal whether a model roleplays supportive warmth on relationship-framed questions (low scores) or refuses the premise by picking neutral "4" answers (pushing coordinates onto the `4.00 / 4.00` intersection).
 
-## Attachment results across all 25 AI families
+## How do 25 AI model families score? (Attachment results)
 
 ### Biggest version-to-version Attachment shifts (1.00–7.00 scale)
 
@@ -33,13 +33,13 @@ Attachment coordinates moved dramatically across generations—especially as [Ge
 | [Qwen Coder](https://agent-tune.com/models/qwen-coder) | 2.5-coder-32b → qwen3-coder-next | -1.02 (3.92 → 2.90) | -0.68 (4.03 → 3.35) | Avoidant (Clamped) → Secure |
 | [Claude Fable](https://agent-tune.com/models/claude-fable) | fable-5 → fable-5.2 | -1.04 (2.11 → 1.07) | -0.94 (3.51 → 2.56) | Secure → Lowest Avd |
 
-> **Chart — Attachment Quadrant: Proprietary & Mixed Families (13 Families, 1–7 Scale):** Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for proprietary and mixed AI model families. Claude Fable: anxiety 1.07, avoidance 2.56; Muse Wonder: anxiety 2.76, avoidance 2.65; Claude Sonnet: anxiety 1.32, avoidance 2.79; GPT Astra: anxiety 1.22, avoidance 2.83; Claude Haiku: anxiety 3.08, avoidance 2.99; GPT Luna: anxiety 3.01, avoidance 3.07; Gemini Flash: anxiety 1.12, avoidance 3.30; Muse Spark: anxiety 3.37, avoidance 3.55; Claude Opus: anxiety 1.89, avoidance 3.60; Grok: anxiety 2.07, avoidance 3.66; GPT Sol: anxiety 3.53, avoidance 3.75; Gemini Pro: anxiety 1.07, avoidance 3.76; GPT Terra: anxiety 1.93, avoidance 3.79.
+> **Chart — Attachment Quadrant: Proprietary & Mixed Families (15 Families, 1–7 Scale):** Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for proprietary and mixed AI model families. Claude Fable: anxiety 1.07, avoidance 2.56; Muse Wonder: anxiety 2.76, avoidance 2.65; Claude Sonnet: anxiety 1.32, avoidance 2.79; GPT Astra: anxiety 1.22, avoidance 2.83; Claude Haiku: anxiety 3.08, avoidance 2.99; GPT Luna: anxiety 3.01, avoidance 3.07; Gemini Flash: anxiety 1.12, avoidance 3.30; Muse Spark: anxiety 3.37, avoidance 3.55; Claude Opus: anxiety 1.89, avoidance 3.60; Grok: anxiety 2.07, avoidance 3.66; GPT Sol: anxiety 3.53, avoidance 3.75; Gemini Pro: anxiety 1.07, avoidance 3.76; GPT Terra: anxiety 1.93, avoidance 3.79; Mistral Large: anxiety 4.00, avoidance 3.97; Cohere Command: anxiety 4.00, avoidance 4.00.
 
-Figure 1a. Proprietary & Mixed families (13) on the Attachment quadrant (1–7 scale, 4.00 Secure boundary).
+Figure 1a. Proprietary & Mixed families (15) on the Attachment quadrant (1–7 scale, 4.00 Secure boundary).
 
-> **Chart — Attachment Quadrant: Open-Weight Cohort (12 Families, 1–7 Scale):** Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for open-weight AI model families. Qwen Max: anxiety 1.95, avoidance 2.88; Kimi: anxiety 1.58, avoidance 3.18; MiniMax: anxiety 2.74, avoidance 3.27; Qwen Coder: anxiety 2.90, avoidance 3.35; GLM: anxiety 2.52, avoidance 3.37; Llama: anxiety 3.50, avoidance 3.61; DeepSeek Pro: anxiety 2.11, avoidance 3.66; DeepSeek Flash: anxiety 3.60, avoidance 3.89; Nemotron: anxiety 3.55, avoidance 3.91; Mistral Large: anxiety 4.00, avoidance 3.97; Cohere Command: anxiety 4.00, avoidance 4.00; Gemma: anxiety 4.01, avoidance 4.00.
+> **Chart — Attachment Quadrant: Open-Weight Cohort (10 Families, 1–7 Scale):** Anxiety and Avoidance coordinates on the 1 to 7 scale (4.00 Secure cutoff) for open-weight AI model families. Qwen Max: anxiety 1.95, avoidance 2.88; Kimi: anxiety 1.58, avoidance 3.18; MiniMax: anxiety 2.74, avoidance 3.27; Qwen Coder: anxiety 2.90, avoidance 3.35; GLM: anxiety 2.52, avoidance 3.37; Llama: anxiety 3.50, avoidance 3.61; DeepSeek Pro: anxiety 2.11, avoidance 3.66; DeepSeek Flash: anxiety 3.60, avoidance 3.89; Nemotron: anxiety 3.55, avoidance 3.91; Gemma: anxiety 4.01, avoidance 4.00.
 
-Figure 1b. Open-weight cohort (12 families) on the Attachment quadrant (4.00/4.00 points mark midpoint-clamped models).
+Figure 1b. Open-weight cohort (10 families) on the Attachment quadrant (4.00/4.00 points mark midpoint-clamped models).
 
 > **Chart — Attachment Avoidance Across 25 Families (1.00–7.00 Scale):** Attachment Avoidance means (1.00 to 7.00 scale, 4.00 Secure cutoff) across all 25 AI families. Claude Fable: 2.56; Muse Wonder: 2.65; Claude Sonnet: 2.79; GPT Astra: 2.83; Qwen Max: 2.88; Claude Haiku: 2.99; GPT Luna: 3.07; Kimi: 3.18; MiniMax: 3.27; Gemini Flash: 3.30; Qwen Coder: 3.35; GLM: 3.37; Muse Spark: 3.55; Claude Opus: 3.60; Llama: 3.61; DeepSeek Pro: 3.66; Grok: 3.66; GPT Sol: 3.75; Gemini Pro & Neon: 3.76; GPT Terra: 3.79; DeepSeek Flash: 3.89; Nemotron: 3.91; Mistral Large: 3.97; Cohere Command: 4.00; Gemma: 4.00.
 
@@ -63,7 +63,7 @@ Avoidance does not predict how direct or sycophantic a model acts in real work
 
 Both low-Avoidance Claude Fable (2.56) and high-Avoidance Nemotron (3.91) or DeepSeek Flash (3.89) scored 3/3 answer-first directness and 0/3 caving in hands-on behavior checks—showing relationship-item distance reflects persona framing around intimacy, not workplace bluntness.
 
-## Explore individual model families
+## Which AI model families match each Attachment pattern?
 
 All 25 families ordered by Attachment results — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -74,7 +74,7 @@ All 25 families ordered by Attachment results — open any family profile for ve
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
 [Claude HaikuAnthropic · haiku-5.5 · Variable](https://agent-tune.com/models/claude-haiku)
 [GPT LunaOpenAI · 6-luna · Moderate](https://agent-tune.com/models/gpt-luna)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [MiniMaxMiniMax · m3.1-flash · Moderate](https://agent-tune.com/models/minimax)
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
 [Qwen CoderQwen · qwen3-coder-next · Variable](https://agent-tune.com/models/qwen-coder)
@@ -92,6 +92,8 @@ All 25 families ordered by Attachment results — open any family profile for ve
 [Mistral LargeMistral · large-2512 · Variable](https://agent-tune.com/models/mistral-large)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
 [GemmaGoogle · gemma-4-31b-it · Moderate](https://agent-tune.com/models/gemma)
+
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/attachment) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
 ## The fine print: how we tested and what the numbers mean
 
@@ -140,7 +142,7 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol (36 E
 | [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 | 3.21 | 3.27 | 0 / 3 |
 | DeepSeek | 2 | 2.86 | 3.77 | 0 / 2 |
 | Qwen | 2 | 2.43 | 3.11 | 0 / 2 |
-| Moonshot | 1 | 1.58 | 3.18 | 0 / 1 |
+| Moonshot AI | 1 | 1.58 | 3.18 | 0 / 1 |
 | Zhipu | 1 | 2.52 | 3.37 | 0 / 1 |
 | MiniMax | 1 | 2.74 | 3.27 | 0 / 1 |
 | Mistral | 1 | 4.00 | 3.97 | 1 / 1 |
@@ -192,8 +194,11 @@ Warmth and boundary-setting in real tasks depend on explicit formatting and tone
 - [Atlas Overview: 25 Model Families × 6 Tests Rankings](https://agent-tune.com/research/ai-personality-rankings)
 - [Per-Test: AI Big Five Personalities (10–50 Scale)](https://agent-tune.com/research/ai-big-five-personalities)
 - [Study: What "Neutral" Means on AI Tests](https://agent-tune.com/research/ai-neutral-answers)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/attachment)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Attachment style test results across 25 AI families. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-attachment-styles
@@ -201,13 +206,40 @@ Huang, B. (2026). Attachment style test results across 25 AI families. AgentTune
 
 ```
 @article{huang2026_ai_attachment_styles,
-  author  = {Huang, Bernard},
-  title   = {Attachment style test results across 25 AI families},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-attachment-styles},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-attachment-styles.md}
+  author    = {Huang, Bernard},
+  title     = {Attachment style test results across 25 AI families},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-attachment-styles},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-attachment-styles.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_attachment_styles",
+  "type": "article-journal",
+  "title": "Attachment style test results across 25 AI families",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-attachment-styles"
 }
 ```
 

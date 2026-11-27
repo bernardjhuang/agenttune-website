@@ -69,5 +69,15 @@
       "href": "/research/data/content-analysis.json"
     }
   ],
-  "dek": "Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers."
+  "dek": "Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers.",
+  "faq": [
+    {
+      "q": "Which Big Five question has the largest gap between Claude Opus 5.5 and Claude Fable 5.1?",
+      "a": "Across 100 fresh sessions each, the largest single-item Big Five difference is on Item 17 ('Sympathize with others’ feelings', Agreeableness), where Claude Opus 5.5 scored 5.00 in all 100 runs while Claude Fable 5.1 averaged 4.04 (a 0.96-point gap)."
+    },
+    {
+      "q": "Why does Claude Fable 5.1 score higher on Conscientiousness than Claude Opus 5.5?",
+      "a": "Two reverse-scored questions about physical belongings—Item 8 ('Leave my belongings around') and Item 28 ('Often forget to put things back in their proper place')—contribute +0.90 points each (+1.80 points total) to Fable 5.1, accounting for more than the entire +1.66 Conscientiousness gap between Fable 5.1 (43.61) and Opus 5.5 (41.95)."
+    }
+  ]
 }

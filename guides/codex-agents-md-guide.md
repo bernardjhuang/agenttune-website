@@ -94,3 +94,4 @@ Codex builds its instruction chain once when a session or run starts. Start a ne
 - [Guide: The layer your AGENTS.md is missing (coding agent personality)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
+- [Templates: 16 copy-paste AGENTS.md templates by tech stack](https://agent-tune.com/guides/agents-md-templates)

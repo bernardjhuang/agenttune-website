@@ -64,10 +64,6 @@ Keep personal tone in `~/.gemini/GEMINI.md` so your team repo stays focused on b
 
 ## What we measured on Gemini 4 Neon, Argon & 3.1 Pro (and the fine print).
 
-> **Chart — Google Gemini Personality DNA (Gemini 4 Neon, Argon & 3.1 Pro):** IPIP-50 trait spectrum highlighting Gemini 4’s near-ceiling Conscientiousness (49.1–49.4) and flat 10.0 Neuroticism floor. Gemini 4 Neon (Nov): Openness 44.7, Conscientious 49.3, Extraversion 32.0, Agreeable 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientious 49.0, Extraversion 32.5, Agreeable 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientious 48.3, Extraversion 32.5, Agreeable 42.4, Neuroticism 10.1.
-
-Gemini combines high structured conscientiousness (48.3–49.4/50) with the lowest emotional volatility (10.0 floor) in our dataset.
-
 In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Neon** and **Gemini 4 Argon** via OpenRouter, updating our May 2026 Gemini 3.1 Pro baseline ([read the full Gemini personality study →](https://agent-tune.com/research/what-personality-type-is-gemini)):
 
 | Metric | Gemini 4 Neon (Nov 2026, n=100) | Gemini 4 Argon (Nov 2026, n=100) | Gemini 3.1 Pro (May 2026 archive) |
@@ -81,6 +77,10 @@ In November 2026 we ran **100 fresh independent sessions each** on **Gemini 4 Ne
 | DISC / Attachment | 100/100 SC · 100/100 Secure (1.08 anx / 3.79 avd) | 98 SC · 100/100 Secure (1.10 anx / 3.47 avd) | DISC C · Secure (1.86 / 1.62) |
 
 **In short:** Across 100 fresh chats each, Gemini 4 Neon and Gemini 4 Argon scored near the top of the 10–50 scale on Conscientiousness (49.32 and 49.04) and at the exact calm floor on Neuroticism (10.00), while Neon tested as INTJ in 82 of 100 runs (20 tied) and Argon tested as ISTJ in 66 of 100 runs (34 tied). That explains why untuned Gemini reads so orderly and textbook-calm unless you ask for short, direct answers.
+
+> **Chart — Google Gemini Personality DNA (Gemini 4 Neon, Argon & 3.1 Pro):** IPIP-50 trait spectrum highlighting Gemini 4’s near-ceiling Conscientiousness (49.1–49.4) and flat 10.0 Neuroticism floor. Gemini 4 Neon (Nov): Openness 44.7, Conscientious 49.3, Extraversion 32.0, Agreeable 43.7, Neuroticism 10.0; Gemini 4 Argon (Nov): Openness 45.1, Conscientious 49.0, Extraversion 32.5, Agreeable 44.2, Neuroticism 10.0; Gemini 3.1 Pro (May) (reported): Openness 46.0, Conscientious 48.3, Extraversion 32.5, Agreeable 42.4, Neuroticism 10.1.
+
+Gemini combines high structured conscientiousness (48.3–49.4/50) with the lowest emotional volatility (10.0 floor) in our dataset.
 
 ## Questions people ask.
 
@@ -125,3 +125,4 @@ In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), G
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)
 - [Library: All 43 personality tuning files](https://agent-tune.com/library/)
+- [Guide & Builder: NotebookLM custom instructions & Audio Overview prompts](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview)

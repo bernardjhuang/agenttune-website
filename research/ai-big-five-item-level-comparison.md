@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Why AI models score high on Agreeableness and Openness
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We looked at 20,000 individual Big Five quiz answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 to see why every AI scores so high on warmth and curiosity.
 
@@ -85,6 +85,20 @@ While Openness, Conscientiousness, and Agreeableness sit above 42/50, Extraversi
 
 Bottom line: treat raw Big Five totals as a map of default assistant habits ([see our neutral-answer study](https://agent-tune.com/research/ai-neutral-answers) and our [10,000-sheet AI &ldquo;Big One&rdquo; factor collapse & 50-item embodiment audit](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit)). To change how your AI actually writes, use explicit [Big Five communication prompts](https://agent-tune.com/guides/mbti-vs-big-five-for-ai).
 
+## Questions people ask.
+
+### Why do AI models score so high on Big Five Agreeableness and Openness?
+
+Across 400 fresh sessions (20,000 item answers), GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 scored a perfect 5.00 on every single run across three Openness items (vocabulary and abstract ideas) and two Agreeableness items (caring about others and not insulting people), reflecting standard assistant helpfulness and language training.
+
+### Which Big Five questions cause the largest differences between AI models?
+
+Models diverge most on questions about physical belongings (items 8 and 28, such as leaving belongings around, where Fable 5.1 averages 4.92 keyed vs. Sol at 3.16—a 1.76-point gap per item) and human moods (items 34, 39, and 49, up to a 1.65-point gap), depending on whether the model marks human-life statements as false or picks the neutral 3 midpoint.
+
+### Why do AI Extraversion scores stay near the middle (31–33 out of 50)?
+
+Party and crowd items like item 31 ('Talk to a lot of different people at parties') cannot apply literally to software, so all four models average 2.99 to 3.00 (the exact neutral midpoint), anchoring Extraversion near the middle of the 10–50 scale.
+
 ## Sources.
 
 - [September 2026 study: protocols and limitations](https://agent-tune.com/research/ai-personality-five-models-2026)
@@ -102,7 +116,7 @@ Bottom line: treat raw Big Five totals as a map of default assistant habits ([se
 - [Continue reading: Why midpoint answers need context](https://agent-tune.com/research/ai-neutral-answers)
 - [Continue reading: Big Five AI system prompts: all 10 high and low trait poles](https://agent-tune.com/guides/mbti-vs-big-five-for-ai)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Why AI models score high on Agreeableness and Openness. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-big-five-item-level-comparison
@@ -110,13 +124,40 @@ Huang, B. (2026). Why AI models score high on Agreeableness and Openness. AgentT
 
 ```
 @article{huang2026_ai_big_five_item_level_comparison,
-  author  = {Huang, Bernard},
-  title   = {Why AI models score high on Agreeableness and Openness},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-17},
-  url     = {https://agent-tune.com/research/ai-big-five-item-level-comparison},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-big-five-item-level-comparison.md}
+  author    = {Huang, Bernard},
+  title     = {Why AI models score high on Agreeableness and Openness},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-17},
+  url       = {https://agent-tune.com/research/ai-big-five-item-level-comparison},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-big-five-item-level-comparison.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_big_five_item_level_comparison",
+  "type": "article-journal",
+  "title": "Why AI models score high on Agreeableness and Openness",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        17
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-big-five-item-level-comparison"
 }
 ```
 

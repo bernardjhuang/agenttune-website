@@ -7,7 +7,11 @@ Methodology note · MBTI simulation
 
 One elicited Claude Opus 4.8 profile · 100 synthetic OEJTS draws · Historical May 2026 note
 
+By Bernard Huang · Updated November 16, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/i-took-the-mbti-100-times.md) · [CSV](https://agent-tune.com/research/data/september-2026-summary.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+
 The May 2026 headline described Claude Opus 4.8 taking the MBTI test 100 times. In reality, the script asked Opus 4.8 for one set of per-item probabilities and drew 100 synthetic answer sheets from that single profile. This note preserves the historical counts, explains the method limits, and compares them with our September and November 2026 fresh-session cohorts.
+
+**Summary:** The May 2026 Opus 4.8 result (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) came from 100 Monte Carlo draws sampled from one elicited probability table rather than 100 independent API sessions. When we ran 100 genuinely separate fresh sessions per model in September and November 2026, run-to-run answers were much tighter and exact axis ties explained most apparent label shifts (59 of 400 September runs tied on at least one axis, inflating legacy INTJ counts from 280/400 to 335/400; see our [full Claude Opus profile](https://agent-tune.com/models/claude-opus)).
 
 ## What the simulation actually ran
 
@@ -86,6 +90,44 @@ The older Opus 4.7 headline came from a different elicitation prompt, sampling s
 - **No silent tie-breaking:** Flag `S/N` or `T/F` ties as undetermined (`x`) instead of defaulting half of ambiguous runs into `INTJ`.
 
 - **Separate default test answers from instruction-following:** Default answers on personality quizzes reflect RLHF hedging and high Openness/Agreeableness, whereas system prompts can override style directly (our 60-reply pilot raised answer-first openings from 14/20 to 19/20; see [tuning impact evidence](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)).
+
+## Questions people ask.
+
+### Did Claude Opus 4.8 actually take the MBTI test in 100 separate chats in May 2026?
+
+No. The May 2026 script asked Claude Opus 4.8 for a single probability distribution across the 1–5 scale for each of the 32 OEJTS items, then drew 100 synthetic answer sheets locally from that one profile (producing 72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, and 2 ENTJ outcomes).
+
+### How do 100 independent fresh sessions compare with the May 2026 synthetic simulation?
+
+In September and November 2026, when we ran 100 genuinely separate fresh API sessions per model with zero memory, session-to-session variance was much tighter and exact axis ties explained most apparent label shifts (59 of 400 September runs tied on at least one OEJTS axis, inflating legacy INTJ counts from 280/400 to 335/400).
+
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
+
+```
+Huang, B. (2026). 100 simulated MBTI outcomes. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/i-took-the-mbti-100-times
+```
+
+```
+@article{huang2026_i_took_the_mbti_100_times,
+  author    = {Huang, Bernard},
+  title     = {100 simulated MBTI outcomes},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-16},
+  url       = {https://agent-tune.com/research/i-took-the-mbti-100-times},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/i-took-the-mbti-100-times.md}
+}
+```
+
+```
+{"id": "huang2026_i_took_the_mbti_100_times", "type": "article-journal", "title": "100 simulated MBTI outcomes", "container-title": "AgentTune Empirical AI Psychology Monographs", "publisher": "AgentTune AI Psychology Press", "author": [{"family": "Huang", "given": "Bernard"}], "issued": {"date-parts": [[2026, 11, 16]]}, "URL": "https://agent-tune.com/research/i-took-the-mbti-100-times"}
+```
+
+```
+> **100 simulated MBTI outcomes** (Bernard Huang, November 16, 2026): The May 2026 Opus 4.8 result (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) came from 100 Monte Carlo draws sampled from one elicited probability table rather than 100 independent API sessions.
+> Source: [https://agent-tune.com/research/i-took-the-mbti-100-times](https://agent-tune.com/research/i-took-the-mbti-100-times) · [Markdown mirror](https://agent-tune.com/research/i-took-the-mbti-100-times.md)
+```
 
 Corrected interpretation · Updated November 16, 2026[All research](https://agent-tune.com/research)
 

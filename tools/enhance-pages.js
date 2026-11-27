@@ -2,6 +2,7 @@
 const NAMED_ENTITIES={lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',le:'\u2264',ge:'\u2265',mdash:'\u2014',ndash:'\u2013',times:'\u00d7',plusmn:'\u00b1',rarr:'\u2192',larr:'\u2190',hellip:'\u2026',middot:'\u00b7',ne:'\u2260',approx:'\u2248'};
 const decodeEntities=s=>String(s).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n)).replace(/&#x([0-9a-fA-F]+);/g,(_,h)=>String.fromCodePoint(parseInt(h,16))).replace(/&([a-zA-Z]+);/g,(m,k)=>k==='amp'?m:(NAMED_ENTITIES[k]??m)).replace(/&amp;/g,'&');
 const plain=s=>decodeEntities(String(s).replace(/<[^>]*>/g,'')).trim();
+const plainCode=s=>decodeEntities(String(s).replace(/<br\s*\/?>/gi,'\n').replace(/<\/?(?:code|span|strong|em|b|i|a|mark|kbd|samp|var|sub|sup|p|div|pre)\b[^>]*>/gi,'')).trim();
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const slug=s=>plain(s).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function filter(library){return `<form class="resource-filter" role="search" data-resource-filter="${library?'library':'guides'}"><div class="resource-filter-controls"><label for="resource-query">Search ${library?'templates':'guides'}<input id="resource-query" type="search" placeholder="${library?'e.g. concise, ENTP, openness':'e.g. Muse, setup, React'}"></label><label for="resource-app">${library?'Personality system':'App'}<select id="resource-app"><option value="">All ${library?'systems':'apps'}</option>${(library?['mbti','enneagram','disc','attachment','ocean']:['chatgpt','claude','muse','grok','gemini','coding']).map(v=>`<option value="${v}">${v==='chatgpt'?'ChatGPT':v==='ocean'?'Big Five':v==='mbti'?'MBTI':v==='disc'?'DISC':v[0].toUpperCase()+v.slice(1)}</option>`).join('')}</select></label>${library?'':`<label for="resource-kind">Task or resource<select id="resource-kind"><option value="">All resources</option><option value="setup">Set up my app</option><option value="template">Find a template</option><option value="developer">Build an integration</option><option value="research">Read research</option><option value="protocol">Test a preference</option></select></label>`}</div><p role="status" data-filter-status></p><button type="reset" class="btn btn-secondary">Clear filters</button><noscript><p>Search needs JavaScript. All resources are listed below.</p></noscript></form>`;}
@@ -22,7 +23,9 @@ function enhance(html,file){
   });
   const hasAltMd=/<link\b[^>]*rel="alternate"[^>]*type="text\/markdown"/i.test(html);
   if(!hasAltMd&&html.includes('</head>')){
-    if(/^(guides|research|models)\/.+\.html$/.test(file)&&!file.endsWith('/index.html')) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="This article as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
+    if(/^(guides|research|models|tools)\/.+\.html$/.test(file)&&!file.endsWith('/index.html')) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="This page as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
+    else if(/^(?:guides|models|library|tests|tools)\/index\.html$/.test(file)) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="Section index as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
+    else if(file==='index.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="Home page as Markdown" href="https://agent-tune.com/index.md" />\n</head>');
     else if(file==='research.html') html=html.replace('</head>','<link rel="alternate" type="text/markdown" title="Research synthesis as Markdown" href="https://agent-tune.com/research.md" />\n</head>');
     else if(/^tests\/(?!index\.html$)[^/]+\.html$/.test(file)) html=html.replace('</head>',`<link rel="alternate" type="text/markdown" title="Questionnaire specification as Markdown" href="https://agent-tune.com/${file.replace(/\.html$/,'.md')}" />\n</head>`);
   }
@@ -31,7 +34,7 @@ function enhance(html,file){
     const rawDate=(/<meta property="article:published_time" content="(\d{4}-\d{2}-\d{2})"/.exec(html)||/"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})"/.exec(html)||/<time datetime="(\d{4}-\d{2}-\d{2})"/.exec(html)||[])[1]||'2026-11-26';
     const pubUrl=(/<link rel="canonical" href="([^"]+)"/.exec(html)||[])[1]||`https://agent-tune.com/${file.replace(/\.html$/,'')}`;
     if(citeTitle){
-      const scholarMeta=`  <meta name="citation_title" content="${esc(citeTitle)}" />\n  <meta name="citation_author" content="Bernard Huang" />\n  <meta name="citation_publication_date" content="${esc(rawDate.replace(/-/g,'/'))}" />\n  <meta name="citation_journal_title" content="AgentTune AI Psychology Press" />\n  <meta name="citation_public_url" content="${esc(pubUrl)}" />\n`;
+      const scholarMeta=`  <meta name="citation_title" content="${esc(citeTitle)}" />\n  <meta name="citation_author" content="Bernard Huang" />\n  <meta name="citation_publication_date" content="${esc(rawDate.replace(/-/g,'/'))}" />\n  <meta name="citation_journal_title" content="AgentTune Empirical AI Psychology Monographs" />\n  <meta name="citation_public_url" content="${esc(pubUrl)}" />\n`;
       html=html.replace('</head>',scholarMeta+'</head>');
     }
   }
@@ -97,8 +100,11 @@ function markdown(html,url){
    .replace(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi,(_,href,t)=>stashCell('['+plain(t)+']('+new URL(decodeEntities(href),url).href+')'))
    .replace(/<\/?think>/gi,m=>stashCell('`'+m.toLowerCase()+'`'))
    .replace(/<[^>]*>/g,'');
-  return decodeEntities(cleaned)
-   .replace(/@@CELL_(\d+)@@/g,(_,i)=>cellInlines[+i])
+  let out=decodeEntities(cleaned);
+  for(let pass=0;pass<6&&/@@CELL_\d+@@/.test(out);pass++){
+   out=out.replace(/@@CELL_(\d+)@@/g,(_,i)=>cellInlines[+i]??'');
+  }
+  return out
    .replace(/\s+/g,' ')
    .replace(/\|/g,'\\|')
    .trim();
@@ -110,8 +116,8 @@ function markdown(html,url){
   .replace(/<aside class="model-compatibility"[\s\S]*?<\/aside>/g,'')
   .replace(/<span class="guide-related-kicker">([\s\S]*?)<\/span>/g,'$1: ')
   .replace(/<div class="guide-related">([\s\S]*?)<\/div>/g,(_,inner)=>'\n\n'+[...inner.matchAll(/<a\b[\s\S]*?<\/a>/g)].map(m=>'- '+m[0]).join('\n')+'\n\n')
-  .replace(/<div\b[^>]*class="[^"]*\bguide-snippet\b[^"]*"[^>]*>([\s\S]*?)<\/div>/g,(_,t)=>stash('```markdown\n'+plain(t)+'\n```'))
-  .replace(/<pre[^>]*>([\s\S]*?)<\/pre>/g,(_,t)=>stash('```\n'+plain(t)+'\n```'))
+  .replace(/<div\b[^>]*class="[^"]*\bguide-snippet\b[^"]*"[^>]*>([\s\S]*?)<\/div>/g,(_,t)=>stash('```markdown\n'+plainCode(t)+'\n```'))
+  .replace(/<pre[^>]*>([\s\S]*?)<\/pre>/g,(_,t)=>stash('```\n'+plainCode(t)+'\n```'))
   .replace(/<table\b[^>]*>([\s\S]*?)<\/table>/g,(_,tableHtml)=>{
     const capMatch=/<caption\b[^>]*>([\s\S]*?)<\/caption>/.exec(tableHtml);
     const caption=capMatch?`*${plain(capMatch[1])}*\n\n`:'';
@@ -134,8 +140,11 @@ function markdown(html,url){
   .replace(/<\/(?:p|section|div|ul|ol|summary|figure|figcaption|header|aside|article|details|nav)>/g,'\n\n')
   .replace(/<br\s*\/?>/g,'\n')
   .replace(/<[^>]*>/g,'');
- text=decodeEntities(text)
-  .replace(/@@INL_(\d+)@@/g,(_,i)=>inlineBlocks[+i])
+ text=decodeEntities(text);
+ for(let pass=0;pass<6&&/@@INL_\d+@@/.test(text);pass++){
+  text=text.replace(/@@INL_(\d+)@@/g,(_,i)=>inlineBlocks[+i]??'');
+ }
+ text=text
   .replace(/^[ \t]+/gm,'')
   .replace(/[ \t]+\n/g,'\n')
   .replace(/\n{3,}/g,'\n\n')

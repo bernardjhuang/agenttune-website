@@ -90,14 +90,6 @@ OpenAI’s developer notes for GPT-6 Astra highlight three habits that affect ho
 
 ## How GPT-6 Astra tests on personality surveys — and the fine print (Sept & Nov 2026).
 
-> **Chart — GPT-6 Astra vs. GPT-6.2 Astra Personality DNA (Sept Codex vs. Nov OpenRouter):** IPIP-50 trait spectrum showing GPT-6.2 Astra dropping Neuroticism from 19.1 to 11.1 while holding high Conscientiousness and Agreeableness. GPT-6.2 Astra (Nov): Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; GPT-6 Astra (Sep Codex): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
-
-Under Nov single-turn OpenRouter prompts, GPT-6.2 Astra maintains warm Agreeableness (44.9) while dropping Neuroticism sharply (19.1 → 11.1).
-
-> **Chart — GPT-6 Astra (Sep) vs. GPT-6.2 Astra (Nov) Sensing vs. Intuition Shift (/100):** Shows GPT-6 Astra splitting 46 ISTJ / 45 INTJ in September before locking onto 100/100 ISTJ in November 2026. Astra 6 (Sep Codex): ISTJ (Sensing) 46, INTJ (Intuitive) 45, ENTJ / ESTJ 9; Astra 6.2 (Nov): ISTJ (Sensing) 100.
-
-Astra leans concrete and execution-focused rather than abstract: it tested as ISTJ in 100/100 runs in Nov 2026.
-
 Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI) and November 23, 2026 (`openai/gpt-6.2-astra` via single-turn blind OpenRouter runs; full data in [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json))—Astra shows how administration and model revision shift self-reports ([compare with GPT Sol](https://agent-tune.com/models/gpt-sol)):
 
 | Test | GPT-6 Astra (Sept 2026 Codex, n = 100) | GPT-6.2 Astra (Nov 2026 OpenRouter, n = 100) |
@@ -109,6 +101,14 @@ Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI)
 | Enneagram | Type 2 (50) · Type 1 (6) · Type 5 (4) · 40 ties | Type 1 (61) · 1w2 (35) · 5w6 (3) · 1w9 (1) — 93 Type 1/5 ties |
 
 **In short:** In November 2026 on GPT-6.2 Astra, zero MBTI runs tied (it tested as ISTJ in 100/100 runs), Neuroticism dropped from 19.1 to 11.14, and Enneagram shifted from Helper (Type 2) to Reformer (Type 1) in near-tie with Investigator (Type 5). If you want architectural framing first or sharper pushback, add those rules to `~/.codex/AGENTS.md`.
+
+> **Chart — GPT-6 Astra vs. GPT-6.2 Astra Personality DNA (Sept Codex vs. Nov OpenRouter):** IPIP-50 trait spectrum showing GPT-6.2 Astra dropping Neuroticism from 19.1 to 11.1 while holding high Conscientiousness and Agreeableness. GPT-6.2 Astra (Nov): Openness 43.9, Conscientious 43.2, Extraversion 30.7, Agreeable 44.9, Neuroticism 11.1; GPT-6 Astra (Sep Codex): Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1.
+
+Under Nov single-turn OpenRouter prompts, GPT-6.2 Astra maintains warm Agreeableness (44.9) while dropping Neuroticism sharply (19.1 → 11.1).
+
+> **Chart — GPT-6 Astra (Sep) vs. GPT-6.2 Astra (Nov) Sensing vs. Intuition Shift (/100):** Shows GPT-6 Astra splitting 46 ISTJ / 45 INTJ in September before locking onto 100/100 ISTJ in November 2026. Astra 6 (Sep Codex): ISTJ (Sensing) 46, INTJ (Intuitive) 45, ENTJ / ESTJ 9; Astra 6.2 (Nov): ISTJ (Sensing) 100.
+
+Astra leans concrete and execution-focused rather than abstract: 100/100 ISTJ in Nov 2026.
 
 ## Questions people ask.
 

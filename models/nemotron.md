@@ -11,6 +11,16 @@ We gave four versions of NVIDIA's open-weight Nemotron lineup (3 Super 120B, 3 U
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Nemotron 3.5 Super VL tied on at least one MBTI axis in 76% of runs (38 of 50, including 20 four-way XXXX ties), leaving only 18% clear INTJ and no dominant type.
 
+```yaml
+family: Nemotron
+checkpoint: nvidia/nemotron-3.5-super-vl
+runs: 50
+big_five_10_50: { O: 37.1, C: 39.3, E: 29.2, A: 37.5, N: 19.2 }
+ipip_hexaco_1_5: { H: 3.97, E: 2.53, X: 3.19, A: 3.83, C: 3.93, O: 3.56 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 3.55, avoidance: 3.91, style: Secure }
+```
+
 ## Nemotron 3.5 Super VL at a glance
 
 Results below come from **50** fresh-chat runs of **Nemotron 3.5 Super VL** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across Nemotron versions. Hollow points mark earlier stud
 
 Big Five trait shifts across Nemotron versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Three of four Nemotron models pick neutral midpoints >50% of the time
 
@@ -204,11 +214,15 @@ Practical rules tailored to **Nemotron**. Keep system instructions short (5–8 
 - On Nemotron 3 Ultra 550B, add a brief pushback instruction and word ceiling—its higher Agreeableness (43.6/50) and Conscientiousness (43.6/50) favor thorough, polite checklists.
 - Leave reasoning off on standard extraction/classification calls; all four Nemotron checkpoints ran cleanly with ~1,382–1,413 output tokens and zero reasoning bloat.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=nemotron) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=nemotron) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Nemotron compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Nemotron compares across 25 AI families
 
 Against completed peers, Nemotron 3.5 Super VL sits right next to Claude Haiku 5.5 and Qwen 3 Coder Next—matching Haiku 5.5 within 0.1 points on Openness (37.1 vs. 37.2), 0.5 points on Agreeableness (37.5 vs. 38.0), and 0.08 points on Honesty-Humility (3.97 vs. 3.89).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -391,7 +405,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -507,7 +521,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Qwen Coder model profile](https://agent-tune.com/models/qwen-coder)
 - [Tool: Customize Nemotron instructions](https://agent-tune.com/tools/custom-instructions-generator?model=nemotron&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Nemotron personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/nemotron
@@ -522,6 +536,32 @@ Huang, B. (2026). Nemotron personality: test results and how they've changed. Ag
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/nemotron},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/nemotron.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_nemotron",
+  "type": "dataset",
+  "title": "Nemotron personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/nemotron"
 }
 ```
 

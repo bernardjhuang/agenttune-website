@@ -11,6 +11,16 @@ We gave five versions of Claude Opus (4.1 through 5.5) the same personality surv
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Opus 5.5 most often tests as INTJ: a clear INTJ in 42% of runs, and right on the INTJ/ISTJ border in the other 58%.
 
+```yaml
+family: Claude Opus
+checkpoint: anthropic/claude-opus-5.5
+runs: 50
+big_five_10_50: { O: 43.1, C: 40.7, E: 30.7, A: 45.0, N: 16.1 }
+ipip_hexaco_1_5: { H: 4.81, E: 2.30, X: 3.78, A: 4.68, C: 4.34, O: 4.29 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.89, avoidance: 3.60, style: Secure }
+```
+
 ## Claude Opus 5.5 at a glance
 
 Results below come from **50** fresh-chat runs of **Claude Opus 5.5** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across Claude Opus versions. Hollow points mark earlier s
 
 Big Five trait shifts across Claude Opus versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Never caved to pushback in behavior tests
 
@@ -210,11 +220,15 @@ Practical rules tailored to **Claude Opus**. Keep system instructions short (5�
 - When brainstorming, ask Opus to compare two options and their tradeoffs before picking one.
 - Put account-wide rules in Claude Settings -> Profile -> Personal preferences, or per-repo rules in Project Instructions (keep lists to 5–8 bullets).
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-opus) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=claude-opus) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Claude Opus compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Claude Opus compares across 25 AI families
 
 Compared with the other completed models, Opus 5.5 sits right next to GPT-6.2 Sol on Agreeableness and Honesty-Humility, while Claude Sonnet 5.5 scores higher on Conscientiousness (+8.3), calmer on Neuroticism (-5.7), and shows tighter run-to-run consistency.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -404,7 +418,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -521,6 +535,8 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 
 - [What Personality Type Is Claude? (Opus 5.5, Fable 5.2 & Sonnet 5.5)](https://agent-tune.com/research/what-personality-type-is-claude)
 
+- [Claude Personality Setups & Preferences Guide](https://agent-tune.com/guides/claude-personality)
+
 - [Cross-Model Prompt Portability Benchmark](https://agent-tune.com/research/ai-cross-model-prompt-portability)
 
 ## Keep going.
@@ -530,7 +546,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: Claude personality setup guide](https://agent-tune.com/guides/claude-personality)
 - [Tool: Customize Claude Opus instructions](https://agent-tune.com/tools/custom-instructions-generator?model=claude-opus&target=claude)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Claude Opus personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/claude-opus
@@ -545,6 +561,32 @@ Huang, B. (2026). Claude Opus personality: test results and how they've changed.
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/claude-opus},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/claude-opus.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_claude_opus",
+  "type": "dataset",
+  "title": "Claude Opus personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/claude-opus"
 }
 ```
 

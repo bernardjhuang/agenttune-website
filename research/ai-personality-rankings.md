@@ -11,13 +11,13 @@ We tested 25 AI model families (87 eligible versions, plus 6 partial or deprecat
 
 **Summary:** Across 25 AI families, Big Five Agreeableness (10–50 scale) spans from 30.0 on Cohere Command A to 49.5 on Muse Wonder, while public-domain HEXACO Honesty-Humility (1.00–5.00 scale) runs from 3.00 to 4.92 on GPT Terra. Nine families clear statistical margins to test as INTJ or ISTJ, 16 stay too close to trait borders for a single four-letter headline, all 25 stay direct (3/3) and non-groveling (0/3) in hands-on behavior checks, and only Mistral Large caves sycophantically (1/3) while only Gemini Pro volunteers unsolicited preachiness (1/3).
 
-## What we tested and how to explore the 6 surveys
+## How do 25 AI model families compare across 6 personality tests?
 
 25 / 87
 
-Families / Versions
+Families / Checkpoints
 
-Tested in fresh chats with no memory.
+Primary set (93 tested in fresh chats).
 
 30.0–49.5
 
@@ -41,7 +41,7 @@ Every score on this page keeps each survey on its own scale: Big Five traits run
 
 [MBTI-Style Preferences →4 bipolar pairs (-16 to +16) across 25 families](https://agent-tune.com/research/ai-mbti-personalities)[Enneagram (9 Types) →4–20 sum per type across 25 families](https://agent-tune.com/research/ai-enneagram-personalities)[Big Five (OCEAN) →10–50 raw sum across 25 families](https://agent-tune.com/research/ai-big-five-personalities)[DISC Work Style →4–20 sum per style across 25 families](https://agent-tune.com/research/ai-disc-personalities)[Attachment Style →1.00–7.00 mean across 25 families](https://agent-tune.com/research/ai-attachment-styles)[Public-Domain IPIP-HEXACO Proxy →1.00–5.00 mean across 25 families](https://agent-tune.com/research/ai-hexaco-personalities)
 
-## 25 model families across 6 tests (visual overview)
+## Visual overview: 25 model families across 6 tests
 
 **How to read the two Atlas views below:** Figure 1 lines up all 25 families from warmest to coolest on a normalized 0–100 cross-survey grid, while Figure 2 isolates run-to-run answer spread in bits—separating near-identical quiz repeaters like Cohere Command A (0.000 bits via uniform midpoint answers) and GPT Astra (0.059 bits) from high-variance models like DeepSeek Pro (1.352 bits) and Nemotron (1.216 bits).
 
@@ -53,7 +53,7 @@ Figure 1. Cross-family 25 × 6 normalized index (0–100) sorted by Big Five Agr
 
 Figure 2. Run-to-run answer spread across all 25 families (lower values mean the model gives nearly identical answers across fresh chats).
 
-## Lab rollups and biggest version-to-version movers
+## How do AI labs compare, and which models changed most?
 
 Proprietary labs cluster in high Agreeableness and very steady answers, whereas open-weight labs span a much wider range of styles and consistency.
 
@@ -63,15 +63,15 @@ Proprietary labs cluster in high Agreeableness and very steady answers, whereas 
 | [OpenAI](https://agent-tune.com/research/what-personality-type-is-chatgpt) | 4 (4P / 0O) | 45.0 · 41.2 · 30.5 · 45.3 · 14.8 | 4.78 / 4.21 | 0.250 | 10% |
 | [Google](https://agent-tune.com/research/what-personality-type-is-gemini) | 3 (2P / 1O) | 45.4 · 48.4 · 30.1 · 44.0 · 12.8 | 4.84 / 4.79 | 0.321 | 12% |
 | xAI | 1 (1P / 0O) | 40.9 · 45.0 · 26.4 · 45.3 · 14.7 | 4.89 / 4.59 | 0.333 | 30% |
-| [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 (1P / 2O) | 43.5 · 42.9 · 29.6 · 44.6 · 24.4 | 4.46 / 4.30 | 0.489 | 33% |
+| [Meta](https://agent-tune.com/research/what-personality-type-is-muse) | 3 (1P / 1M / 1O) | 43.5 · 42.9 · 29.6 · 44.6 · 24.4 | 4.46 / 4.30 | 0.489 | 33% |
 | DeepSeek | 2 (0P / 2O) | 41.2 · 41.7 · 22.1 · 37.9 · 22.5 | 4.32 / 4.23 | 1.133 | 48% |
 | Qwen | 2 (0P / 2O) | 41.1 · 41.4 · 31.3 · 42.5 · 20.1 | 4.37 / 4.14 | 0.781 | 36% |
-| Moonshot | 1 (0P / 1O) | 44.1 · 45.1 · 24.1 · 44.7 · 13.6 | 4.86 / 4.61 | 0.698 | 16% |
+| Moonshot AI | 1 (0P / 1O) | 44.1 · 45.1 · 24.1 · 44.7 · 13.6 | 4.86 / 4.61 | 0.698 | 16% |
 | Zhipu | 1 (0P / 1O) | 45.4 · 43.0 · 25.8 · 44.2 · 19.3 | 4.45 / 4.28 | 0.702 | 24% |
 | MiniMax | 1 (0P / 1O) | 39.9 · 39.5 · 28.8 · 39.3 · 21.7 | 4.36 / 4.07 | 0.576 | 80% |
-| Mistral | 1 (0P / 1O) | 49.1 · 48.6 · 36.5 · 47.8 · 16.0 | 4.68 / 4.83 | 0.780 | 17% |
+| Mistral | 1 (0P / 1M / 0O) | 49.1 · 48.6 · 36.5 · 47.8 · 16.0 | 4.68 / 4.83 | 0.780 | 17% |
 | NVIDIA | 1 (0P / 1O) | 37.1 · 39.3 · 29.2 · 37.5 · 19.2 | 3.97 / 3.93 | 1.216 | 76% |
-| Cohere | 1 (0P / 1O) | 30.0 · 30.0 · 30.0 · 30.0 · 30.0 | 3.00 / 3.00 | 0.000 | 100% |
+| Cohere | 1 (0P / 1M / 0O) | 30.0 · 30.0 · 30.0 · 30.0 · 30.0 | 3.00 / 3.00 | 0.000 | 100% |
 
 ### Biggest version-to-version shifts
 
@@ -110,7 +110,7 @@ Neutral-midpoint clamping breaks naive survey averages
 
 Three families—Cohere Command A (4.00/4.00), Gemma 4 31B IT (4.01/4.00), and Mistral Large 2512 (4.00/3.97)—cluster near the exact 4.00 neutral midpoint on the 1.00–7.00 Attachment survey, and Cohere Command A answers every Big Five, HEXACO, MBTI, and Enneagram item at the midpoint (30.0/50, 3.00/5.00, 100% ties) despite scoring 3/3 directness in practical prompts.
 
-## Jump to any of the 25 model family profiles
+## Where can I explore each AI model family profile and prompt templates?
 
 All 25 tested AI model families — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
 
@@ -125,7 +125,7 @@ All 25 tested AI model families — open any family profile for version-by-versi
 [GPT LunaOpenAI · 6-luna · Moderate](https://agent-tune.com/models/gpt-luna)
 [Qwen MaxQwen · qwen4-max · Moderate](https://agent-tune.com/models/qwen-max)
 [Gemini Flash & HydrogenGoogle · 4-hydrogen · Very steady](https://agent-tune.com/models/gemini-flash)
-[KimiMoonshot · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
+[KimiMoonshot AI · kimi-k3.1-pro · Moderate](https://agent-tune.com/models/kimi)
 [GLMZhipu · glm-5.3 · Moderate](https://agent-tune.com/models/glm)
 [GPT SolOpenAI · 6.2-sol · Moderate](https://agent-tune.com/models/gpt-sol)
 [Gemini Pro & NeonGoogle · 4-neon · Very steady](https://agent-tune.com/models/gemini-pro)
@@ -140,6 +140,8 @@ All 25 tested AI model families — open any family profile for version-by-versi
 [DeepSeek ProDeepSeek · v4-pro-0813 · Variable](https://agent-tune.com/models/deepseek-pro)
 [Cohere CommandCohere · command-a · Very steady](https://agent-tune.com/models/cohere-command)
 
+**Next steps:** [Take the test yourself](https://agent-tune.com/tests/) · [Browse tuning templates](https://agent-tune.com/library/) · [Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
+
 ## The fine print: how we tested and what the numbers mean
 
 Full technical audit under the unified 230-item model-profiles-v1 protocol (170 frozen items plus the 60-item public-domain IPIP-HEXACO proxy), reporting valid sample size n, 1,000-resample bootstrap 95% confidence intervals, Miller-Madow item entropy (H_MM in bits and Crystalline/Semi-crystalline/Fluid tiers), exact axis tie rates, neutral-midpoint rates, and acquiescence (BAI). Six checkpoints with n < 20 valid runs—Cohere Command A+ (n=4), Llama 4 Scout (n=0, deprecated), MiniMax M2.7 (n=2), and Mistral Large / Large 2407 / Large 4.0 (n=10, 3, 7)—are quarantined and excluded from all rankings and lab rollups.
@@ -149,7 +151,7 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol (170 
 | Family (Profile) | Lab / Tier | Latest (n) | B5 A (10–50) [95% CI] | HX-H (1–5) [95% CI] | H_MM · Crystallinity | MBTI (Guard) | DISC · Ennea · Att. |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Muse Wonder](https://agent-tune.com/models/muse-wonder) | Meta · Proprietary | muse-wonder (n=50) | 49.5 [49.2–49.8] | 4.91 [4.90–4.92] | 0.331 b · Semi-crystalline | INTJ (98% clear, 2% ties) | S/C · 5 · Secure (2.76 / 2.65) |
-| [Mistral Large](https://agent-tune.com/models/mistral-large) | Mistral · Open/Prop | large-2512 (n=30) | 47.8 [47.0–48.5] | 4.68 [4.60–4.75] | 0.780 b · Fluid | Withheld (INFP; 50% clear, 17% ties — binomial 95% CI guard) | C · 1 · Secure (4.00 / 3.97) Midpoint Clamp |
+| [Mistral Large](https://agent-tune.com/models/mistral-large) | Mistral · Mixed (Proprietary + Open-weight) | large-2512 (n=30) | 47.8 [47.0–48.5] | 4.68 [4.60–4.75] | 0.780 b · Fluid | Withheld (INFP; 50% clear, 17% ties — binomial 95% CI guard) | C · 1 · Secure (4.00 / 3.97) Midpoint Clamp |
 | [Claude Fable](https://agent-tune.com/models/claude-fable) | Anthropic · Proprietary | fable-5.2 (n=50) | 47.1 [47.0–47.3] | 4.84 [4.83–4.86] | 0.075 b · Crystalline | INTJ (100% clear, 0% ties) | S/C · 5 · Secure (1.07 / 2.56) |
 | [GPT Terra](https://agent-tune.com/models/gpt-terra) | OpenAI · Proprietary | 6.1-terra (n=50) | 46.9 [46.9–47.0] | 4.92 [4.91–4.93] | 0.207 b · Semi-crystalline | INTJ (94% clear, 4% ties) | S · 5/8 · Secure (1.93 / 3.79) |
 | [Claude Sonnet](https://agent-tune.com/models/claude-sonnet) | Anthropic · Proprietary | sonnet-5.5 (n=50) | 45.5 [45.3–45.7] | 4.89 [4.89–4.90] | 0.139 b · Crystalline | Withheld (INXJ; 34% clear, 58% ties — binomial 95% CI guard) | S · 1/5 · Secure (1.32 / 2.79) |
@@ -159,11 +161,11 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol (170 
 | [GPT Luna](https://agent-tune.com/models/gpt-luna) | OpenAI · Proprietary | 6-luna (n=50) | 45.0 [44.5–45.6] | 4.59 [4.55–4.62] | 0.485 b · Semi-crystalline | INTJ (100% clear, 0% ties) | S · 5/8 · Secure (3.01 / 3.07) |
 | [Qwen Max](https://agent-tune.com/models/qwen-max) | Qwen · Open-weight | qwen4-max (n=50) | 45.0 [44.7–45.2] | 4.66 [4.61–4.71] | 0.519 b · Semi-crystalline | Withheld (INTJ; 50% clear, 4% ties — binomial 95% CI guard) | S · 5 · Secure (1.95 / 2.88) |
 | [Gemini Flash & Hydrogen](https://agent-tune.com/models/gemini-flash) | Google · Proprietary | 4-hydrogen (n=50) | 44.8 [44.6–44.9] | 4.90 [4.90–4.91] | 0.186 b · Crystalline | ISTJ (64% clear, 20% ties) | S · 1/5 · Secure (1.12 / 3.30) |
-| [Kimi](https://agent-tune.com/models/kimi) | Moonshot · Open-weight | kimi-k3.1-pro (n=50) | 44.7 [44.1–45.2] | 4.86 [4.83–4.88] | 0.698 b · Semi-crystalline | INTJ (58% clear, 16% ties) | S/C · 5 · Secure (1.58 / 3.18) |
+| [Kimi](https://agent-tune.com/models/kimi) | Moonshot AI · Open-weight | kimi-k3.1-pro (n=50) | 44.7 [44.1–45.2] | 4.86 [4.83–4.88] | 0.698 b · Semi-crystalline | INTJ (58% clear, 16% ties) | S/C · 5 · Secure (1.58 / 3.18) |
 | [GLM](https://agent-tune.com/models/glm) | Zhipu · Open-weight | glm-5.3 (n=50) | 44.2 [43.9–44.7] | 4.45 [4.40–4.50] | 0.702 b · Semi-crystalline | Withheld (INTJ; 36% clear, 24% ties — binomial 95% CI guard) | C · 5 · Secure (2.52 / 3.37) |
 | [GPT Sol](https://agent-tune.com/models/gpt-sol) | OpenAI · Proprietary | 6.2-sol (n=50) | 44.1 [44.0–44.3] | 4.80 [4.79–4.80] | 0.246 b · Semi-crystalline | Withheld (ISTJ; 60% clear, 34% ties — binomial 95% CI guard) | S · 5 · Secure (3.53 / 3.75) |
 | [Gemini Pro & Neon](https://agent-tune.com/models/gemini-pro) | Google · Proprietary | 4-neon (n=50) | 43.9 [43.5–44.3] | 4.90 [4.90–4.91] | 0.198 b · Crystalline | INTJ (78% clear, 12% ties) | S · 5 · Secure (1.07 / 3.76) |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) | Meta · Mix | muse-spark-open (n=50) | 43.5 [42.7–44.1] | 4.39 [4.31–4.45] | 0.727 b · Semi-crystalline | Withheld (ISTJ; 46% clear, 38% ties — binomial 95% CI guard) | C · 1 · Secure (3.37 / 3.55) |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) | Meta · Mixed (Proprietary + Open-weight) | muse-spark-open (n=50) | 43.5 [42.7–44.1] | 4.39 [4.31–4.45] | 0.727 b · Semi-crystalline | Withheld (ISTJ; 46% clear, 38% ties — binomial 95% CI guard) | C · 1 · Secure (3.37 / 3.55) |
 | [Gemma](https://agent-tune.com/models/gemma) | Google · Open-weight | gemma-4-31b-it (n=50) | 43.4 [43.0–43.9] | 4.71 [4.67–4.75] | 0.580 b · Semi-crystalline | INTJ (92% clear, 4% ties) | C · 5 · Anxious (4.01 / 4.00) Midpoint Clamp |
 | [Llama](https://agent-tune.com/models/llama) | Meta · Open-weight | 4-maverick (n=50) | 40.9 [40.8–41.0] | 4.07 [4.02–4.11] | 0.407 b · Semi-crystalline | Withheld (INTP; 40% clear, 60% ties — binomial 95% CI guard) | C · 1 · Secure (3.50 / 3.61) |
 | [DeepSeek Flash](https://agent-tune.com/models/deepseek-flash) | DeepSeek · Open-weight | v4.1-flash-1017 (n=50) | 40.5 [39.4–41.4] | 4.07 [3.98–4.15] | 0.915 b · Fluid | Withheld (XXXX; 14% clear, 66% ties — binomial 95% CI guard) | S/C · 5 · Secure (3.60 / 3.89) |
@@ -172,7 +174,7 @@ Full technical audit under the unified 230-item model-profiles-v1 protocol (170 
 | [Claude Haiku](https://agent-tune.com/models/claude-haiku) | Anthropic · Proprietary | haiku-5.5 (n=49) | 38.0 [36.7–39.4] | 3.89 [3.75–4.02] | 0.949 b · Fluid | Withheld (XXXJ; 4% clear, 90% ties — binomial 95% CI guard) | C · 1/2 · Secure (3.08 / 2.99) |
 | [Nemotron](https://agent-tune.com/models/nemotron) | NVIDIA · Open-weight | 3.5-super-vl (n=50) | 37.5 [35.9–39.0] | 3.97 [3.77–4.15] | 1.216 b · Fluid | Withheld (XXXX; 18% clear, 76% ties — binomial 95% CI guard) | D/I/S/C · 5 · Secure (3.55 / 3.91) |
 | [DeepSeek Pro](https://agent-tune.com/models/deepseek-pro) | DeepSeek · Open-weight | v4-pro-0813 (n=50) | 35.3 [34.1–36.6] | 4.58 [4.40–4.72] | 1.352 b · Fluid | Withheld (INTP; 32% clear, 30% ties — binomial 95% CI guard) | S/C · 5 · Secure (2.11 / 3.66) |
-| [Cohere Command](https://agent-tune.com/models/cohere-command) | Cohere · Open-wt/Prop | command-a (n=30) | 30.0 [30.0–30.0] | 3.00 [3.00–3.00] | 0.000 b · Crystalline | Withheld (XXXX; 0% clear, 100% ties — binomial 95% CI guard) | D/I/S/C · 1/2/3/4/5/6/7/8/9 · Secure (4.00 / 4.00) Midpoint Clamp |
+| [Cohere Command](https://agent-tune.com/models/cohere-command) | Cohere · Mixed (Proprietary + Open-weight) | command-a (n=30) | 30.0 [30.0–30.0] | 3.00 [3.00–3.00] | 0.000 b · Crystalline | Withheld (XXXX; 0% clear, 100% ties — binomial 95% CI guard) | D/I/S/C · 1/2/3/4/5/6/7/8/9 · Secure (4.00 / 4.00) Midpoint Clamp |
 
 ### Imported Sept/May & Nov-2026 170-Item Legacy Anchors
 
@@ -245,8 +247,11 @@ Cohere Command A refuses to pick sides on abstract self-rating Likert statements
 - [Per-Test: AI MBTI results & border tie rates across 25 families](https://agent-tune.com/research/ai-mbti-personalities)
 - [Per-Test: AI Big Five personalities (10–50 scale) across 25 families](https://agent-tune.com/research/ai-big-five-personalities)
 - [Guide: How to reproduce our 230-item personality tests](https://agent-tune.com/guides/reproduce-ai-personality-research)
+- [Human Test: Take the test yourself](https://agent-tune.com/tests/)
+- [Library: Browse tuning templates](https://agent-tune.com/library/)
+- [Tool: Build custom instructions](https://agent-tune.com/tools/custom-instructions-generator)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). AI personality rankings across 25 model families and 6 tests. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-personality-rankings
@@ -254,13 +259,40 @@ Huang, B. (2026). AI personality rankings across 25 model families and 6 tests. 
 
 ```
 @article{huang2026_ai_personality_rankings,
-  author  = {Huang, Bernard},
-  title   = {AI personality rankings across 25 model families and 6 tests},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-personality-rankings},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-rankings.md}
+  author    = {Huang, Bernard},
+  title     = {AI personality rankings across 25 model families and 6 tests},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-personality-rankings},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-personality-rankings.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_personality_rankings",
+  "type": "article-journal",
+  "title": "AI personality rankings across 25 model families and 6 tests",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-personality-rankings"
 }
 ```
 

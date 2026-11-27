@@ -5,11 +5,21 @@ Model Personality Profile · Moonshot AI
 
 # Kimi personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/kimi.md) · [JSON](https://agent-tune.com/research/data/model-profiles/kimi.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/kimi.md) · [JSON](https://agent-tune.com/research/data/model-profiles/kimi.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Moonshot AI's open-weight Kimi lineup (K2, K2.5, K2.7 Code, K3, and K3.1 Pro) the same personality surveys people take—22 to 50 valid fresh chats per version with no conversation memory.
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Kimi K3.1 Pro most often tests as INTJ: a clear INTJ in 58% of runs (29 of 50), a clear ISTJ in 26% (13 of 50), and right on the INTJ/ISTJ border in 16% (8 of 50).
+
+```yaml
+family: Kimi
+checkpoint: moonshotai/kimi-k3.1-pro
+runs: 50
+big_five_10_50: { O: 44.1, C: 45.1, E: 24.1, A: 44.7, N: 13.6 }
+ipip_hexaco_1_5: { H: 4.86, E: 2.18, X: 3.13, A: 4.49, C: 4.61, O: 4.49 }
+mbti_mode: INTJ
+attachment_1_7: { anxiety: 1.58, avoidance: 3.18, style: Secure }
+```
 
 ## Kimi K3.1 Pro at a glance
 
@@ -177,7 +187,7 @@ Attachment coordinates across Kimi versions. Hollow points mark earlier study me
 
 Big Five trait shifts across Kimi versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Shifted from wide K2 variability to 92% clear Enneagram Type 5
 
@@ -205,11 +215,15 @@ Practical rules tailored to **Kimi**. Keep system instructions short (5–8 conc
 - Take advantage of Kimi K3.1 Pro's reserved, analytical style (Extraversion 24.1/50, Type 5) by asking for step-by-step code verification and diff-only summaries.
 - Specify exact formatting rules ('read target files before proposing edits', 'one line per changed file') rather than vague personality labels.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=kimi) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=kimi) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Kimi compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Kimi compares across 25 AI families
 
 Against currently completed models, Kimi K3.1 Pro matches Grok 4.7 and Claude Sonnet 5.5 closely on Agreeableness (44.7 vs. 45.3 and 45.5 out of 50) and Honesty-Humility (4.86 vs. 4.89 out of 5.00), while sitting lower on Extraversion (24.1) and wider on run-to-run answer spread.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -399,7 +413,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -525,7 +539,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Claude Sonnet model profile](https://agent-tune.com/models/claude-sonnet)
 - [Tool: Customize Kimi instructions](https://agent-tune.com/tools/custom-instructions-generator?model=kimi&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Kimi personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/kimi
@@ -540,6 +554,32 @@ Huang, B. (2026). Kimi personality: test results and how they've changed. AgentT
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/kimi},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/kimi.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_kimi",
+  "type": "dataset",
+  "title": "Kimi personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/kimi"
 }
 ```
 

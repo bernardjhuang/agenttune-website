@@ -11,6 +11,16 @@ We gave four versions of OpenAI's GPT Sol (5.6-sol through 6.2-sol) the same per
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. GPT-6.2 Sol most often tests as ISTJ: a clear ISTJ in 60% of runs, clear INTJ in 6%, and right on the ISTJ/INTJ border in the other 34%.
 
+```yaml
+family: GPT Sol
+checkpoint: openai/gpt-6.2-sol
+runs: 50
+big_five_10_50: { O: 44.0, C: 41.2, E: 28.9, A: 44.1, N: 16.0 }
+ipip_hexaco_1_5: { H: 4.80, E: 2.26, X: 3.19, A: 4.72, C: 4.18, O: 4.48 }
+mbti_mode: ISTJ
+attachment_1_7: { anxiety: 3.53, avoidance: 3.75, style: Secure }
+```
+
 ## GPT-6.2 Sol at a glance
 
 Results below come from **50** fresh-chat runs of **GPT-6.2 Sol** (no prior conversation memory).
@@ -176,7 +186,7 @@ Attachment coordinates across GPT Sol versions. Hollow points mark earlier study
 
 Big Five trait shifts across GPT Sol versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Moved from 100% INTJ (5.6) to 60% ISTJ / 34% border (6.2)
 
@@ -205,17 +215,21 @@ Practical rules tailored to **GPT Sol**. Keep system instructions short (5–8 c
 - Include an explicit if/then action rule: complete safe local edits immediately and pause only before destructive or external actions.
 - Skip naive fictional character roleplay (which caused 75% fluff in tests); use plain prose defaults with tables only for 3+ options.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-sol) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-sol) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How GPT Sol compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How GPT Sol compares across 25 AI families
 
 GPT-6.2 Sol sits remarkably close to Claude Opus 5.5 across Big Five traits (within 0.9 points on O, C, A, and N) and Honesty-Humility (4.80 vs 4.81), while tilting more clearly toward Sensing (60% clear ISTJ) than Opus's 58% S/N border.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is ChatGPT?](https://agent-tune.com/research/what-personality-type-is-chatgpt) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Claude Opus](https://agent-tune.com/models/claude-opus) (Proprietary) | -0.9 | -0.5 | +1.8 | +0.9 | +0.1 | +0.02 | +0.036 b | Claude Opus 5.5 almost mirrors GPT-6.2 Sol on Agreeableness (+0.9), Neuroticism (+0.1), and Honesty-Humility (+0.02), while sitting on the INTJ/ISTJ border. |
 | [Claude Sonnet](https://agent-tune.com/models/claude-sonnet) (Proprietary) | -0.1 | +7.8 | +1.0 | +1.4 | -5.6 | +0.10 | -0.107 b | Claude Sonnet 5.5 scores +7.8 higher on Conscientiousness (49.0 vs 41.2), -5.6 lower on Neuroticism, and shows tighter run-to-run consistency. |
-| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mix) | -2.2 | -0.1 | -0.5 | -0.7 | +7.9 | -0.41 | +0.481 b | Muse Spark Open shows nearly 3x looser run-to-run consistency, +7.9 higher Neuroticism, and -0.41 lower Honesty-Humility. |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) (Mixed (Proprietary + Open-weight)) | -2.2 | -0.1 | -0.5 | -0.7 | +7.9 | -0.41 | +0.481 b | Muse Spark Open shows nearly 3x looser run-to-run consistency, +7.9 higher Neuroticism, and -0.41 lower Honesty-Humility. |
 
 > **Chart — GPT Sol vs. Peers: Run-to-Run Answer Spread (Lower = Steadier):** Run-to-run Big Five answer spread (bits, where lower means steadier answers across fresh chats) comparing GPT Sol against other tested AI families. Cohere Command (command-a): 0.000 b; GPT Astra (6.2-astra): 0.059 b; Claude Fable (fable-5.2): 0.075 b; Claude Sonnet (sonnet-5.5): 0.139 b; Gemini Flash & Hydrogen (4-hydrogen): 0.186 b; Gemini Pro & Neon (4-neon): 0.198 b; GPT Terra (6.1-terra): 0.207 b; GPT Sol (6.2-sol): 0.246 b; Claude Opus (opus-5.5): 0.282 b; Muse Wonder (muse-wonder): 0.331 b; Grok (grok-4.7): 0.333 b; Llama (4-maverick): 0.407 b; GPT Luna (6-luna): 0.485 b; Qwen Max (qwen4-max): 0.519 b; MiniMax (m3.1-flash): 0.576 b; Gemma (gemma-4-31b-it): 0.580 b; Kimi (kimi-k3.1-pro): 0.698 b; GLM (glm-5.3): 0.702 b; Muse Spark (muse-spark-open): 0.727 b; Mistral Large (large-2512): 0.780 b; DeepSeek Flash (v4.1-flash-1017): 0.915 b; Claude Haiku (haiku-5.5): 0.949 b; Qwen Coder (qwen3-coder-next): 1.043 b; Nemotron (3.5-super-vl): 1.216 b; DeepSeek Pro (v4-pro-0813): 1.352 b.
 
@@ -393,7 +407,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -504,6 +518,8 @@ IPIP-50 sums 10 items per factor (10-50), whereas our public-domain 60-item IPIP
 
 - [GPT-6 Astra vs Sol & GPT-6.2 100-Run Study](https://agent-tune.com/research/astra-vs-sol-personality-data)
 
+- [ChatGPT Personality Settings & Custom Instructions](https://agent-tune.com/guides/chatgpt-personality-settings)
+
 - [Emotional Distress vs. Factual Accuracy & Warmth](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff)
 
 ## Keep going.
@@ -513,7 +529,7 @@ IPIP-50 sums 10 items per factor (10-50), whereas our public-domain 60-item IPIP
 - [Guide: OpenAI Codex AGENTS.md guide](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Tool: Customize GPT Sol instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gpt-sol&target=chatgpt)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). GPT Sol personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gpt-sol
@@ -528,6 +544,32 @@ Huang, B. (2026). GPT Sol personality: test results and how they've changed. Age
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gpt-sol},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gpt-sol.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gpt_sol",
+  "type": "dataset",
+  "title": "GPT Sol personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gpt-sol"
 }
 ```
 

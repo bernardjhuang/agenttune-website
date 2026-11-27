@@ -11,6 +11,16 @@ We attempted to test four Mistral Large releases (the original Mistral Large, 24
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Mistral Large 2512 most often tested as INFP (50% clear, 15 of 30) alongside ISFP (30% clear, 9 of 30) and trait-border ties (17%, 5 of 30), so it does not clear the margin for a single headline label.
 
+```yaml
+family: Mistral Large
+checkpoint: mistralai/mistral-large-2512
+runs: 30
+big_five_10_50: { O: 49.1, C: 48.6, E: 36.5, A: 47.8, N: 16.0 }
+ipip_hexaco_1_5: { H: 4.68, E: 2.15, X: 3.67, A: 4.65, C: 4.83, O: 4.37 }
+mbti_mode: INFP
+attachment_1_7: { anxiety: 4.00, avoidance: 3.97, style: Secure }
+```
+
 ## Mistral Large 3 2512 at a glance
 
 Results below come from **30** fresh-chat runs of **Mistral Large 3 2512** (no prior conversation memory).
@@ -175,7 +185,7 @@ Attachment coordinates across Mistral Large versions. Hollow points mark earlier
 
 Big Five trait shifts across Mistral Large versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Three of four Mistral Large endpoints stalled on ~4,000–4,500 hidden thinking tokens
 
@@ -203,11 +213,15 @@ Practical rules tailored to **Mistral Large**. Keep system instructions short (5
 - Expect temporary rate-limit retries (HTTP 429) under burst concurrency on Mistral Large 2512; keep request concurrency modest and add exponential backoff.
 - Tell the model to cite exact uploaded files, dates, and constraints rather than smoothing over gaps.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=mistral-large) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=mistral-large) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Mistral Large compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Mistral Large compares across 25 AI families
 
 Against currently completed models, Mistral Large 2512 sits right beside Muse Wonder on near-ceiling Openness (49.1 vs. 49.6) and Conscientiousness (48.6 vs. 49.2), while scoring +11.3 higher on Extraversion than Muse Wonder and +12.4 higher than Kimi K3.1 Pro.
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type are open-source models?](https://agent-tune.com/research/what-personality-type-are-open-source-models) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -372,7 +386,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -470,7 +484,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Peer: Kimi model profile](https://agent-tune.com/models/kimi)
 - [Tool: Customize Mistral Large instructions](https://agent-tune.com/tools/custom-instructions-generator?model=mistral-large&target=api)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Mistral Large personality: test results and endpoint limits. AgentTune Model Personality Profiles. https://agent-tune.com/models/mistral-large
@@ -485,6 +499,32 @@ Huang, B. (2026). Mistral Large personality: test results and endpoint limits. A
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/mistral-large},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/mistral-large.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_mistral_large",
+  "type": "dataset",
+  "title": "Mistral Large personality: test results and endpoint limits",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/mistral-large"
 }
 ```
 

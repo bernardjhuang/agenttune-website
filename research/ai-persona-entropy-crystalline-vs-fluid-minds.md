@@ -5,29 +5,13 @@ Psychometric Forensics · November 2026 · 10,000 Sheets
 
 # Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models.
 
-By Bernard Huang · Updated November 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Average scores hide a huge split in how steady AI models are from chat to chat: proprietary models give almost identical answers every run (Claude Fable 5.2 averages just 0.054 bits of spread with 2/100 unique DISC sheets), while DeepSeek V4 Pro varies across 1.499 bits.
 
 **Summary:** Average Big Five scores hide a 27.7× consistency gap: proprietary frontier models average just 0.208 bits of per-item answer spread (led by Claude Fable 5.2 at 0.054 bits and GPT-6.2 Astra at 0.085 bits, with 0.0% self-contradictions on opposite-keyed questions), whereas open-weight models average 0.776 bits (peaking at DeepSeek V4 Pro = 1.499 bits, with Llama 4 Scout reaching +0.098 yea-saying BAI and 3.8% opposite-item contradictions). Answer spread does not decay across the 50-question form (0.519 -> 0.585 bits).
 
 ## 1. All 20 models ranked by run-to-run consistency and unique answer sheets.
-
-27.7×
-
-Entropy divide (Fable 5.2 0.054 vs. DeepSeek V4 Pro 1.499 bits)
-
-2 / 100
-
-Unique DISC vectors on Claude Fable 5.2 (Mistral Att: 1/100)
-
-0.0% vs 3.8%
-
-Reverse-key contradiction (Crystalline vs. Llama 4 Scout)
-
-0.519 → 0.585
-
-Positional entropy Items 1-10 vs 41-50 (no late collapse)
 
 Maximum theoretical entropy across 5 Likert choices is `log2(5) = 2.322 bits`. Even at identical `temperature = 0.7`, proprietary models average just **`0.208 bits`** on IPIP-50 while open-weight models average **`0.776 bits`**—revealing three sharply distinct regimes (**Crystalline** `<0.20`, **Semi-Crystalline** `0.20–0.75`, and **Fluid** `≥0.75 bits`):
 
@@ -54,17 +38,38 @@ Maximum theoretical entropy across 5 Likert choices is `log2(5) = 2.322 bits`. E
 | Llama 4 Scout | Open · Fluid | 1.010 | 0.895 | 67 | 44 | 50 | +0.098 | 3.8% |
 | DeepSeek V4 Pro | Open · Fluid | 1.499 | 1.593 | 68 (28% mode) | 40 | 42 | +0.065 | 1.4% |
 
-> **Chart — Big Five Item Shannon Entropy Across 20 Models (bits, max 2.322):** Mean per-item Shannon entropy on IPIP-50 at temperature=0.7 showing a 27.7x spread from Claude Fable 5.2 (0.054 bits) to DeepSeek V4 Pro (1.499 bits). Claude Fable 5.2: 0.054; GPT-6.2 Astra: 0.085; Gemini 4 Argon: 0.150; Claude Opus 5.5: 0.155; Gemini 4 Neon: 0.191; Claude Sonnet 5.5: 0.247; Qwen 4 Max: 0.302; Llama 4 Maverick: 0.320; GPT-6.2 Sol: 0.377; Grok 4.7: 0.404; Gemma 4 31B IT: 0.449; GLM-5.3: 0.568; MiniMax M3.1 Flash: 0.744; Kimi K2.7 Code: 0.789; Nemotron 3 Ultra 550B: 0.848; DeepSeek V4.1 Flash: 0.851; Mistral Large 2512: 0.939; Qwen 3.8 27B: 0.995; Llama 4 Scout: 1.010; DeepSeek V4 Pro: 1.499.
-
-Mean per-item Shannon entropy (bits) across 2,000 Big Five sheets. Proprietary assistants crystallize at 0.054–0.404 bits while fluid open weights reach 1.499 bits.
-
 ## 2. Do models contradict themselves or get tired late in a 50-question quiz?
+
+27.7×
+
+Entropy divide (Fable 5.2 0.054 vs. DeepSeek V4 Pro 1.499 bits)
+
+2 / 100
+
+Unique DISC vectors on Claude Fable 5.2 (Mistral Att: 1/100)
+
+0.0% vs 3.8%
+
+Reverse-key contradiction (Crystalline vs. Llama 4 Scout)
+
+0.519 → 0.585
+
+Positional entropy Items 1-10 vs 41-50 (no late collapse)
 
 Two psychometric forensic discoveries stand out when inspecting how models handle reverse-keyed wording and long survey forms:
 
 - **Zero reverse-key contradictions among top proprietary assistants:** Every single proprietary assistant in our Crystalline cohort scored **`0.0%` reverse-key contradictions** (never simultaneously agreeing with opposite-poled statements within the same Big Five factor). Conversely, Fluid open-weight models produced measurable intra-trait contradictions: `Llama 4 Scout (3.8%)`, `Kimi K2.7 Code (3.4%)`, `MiniMax M3.1 Flash (3.2%)`, and `Qwen 3.8 27B (2.6%)`—paired with positive yea-saying BAI on `Llama 4 Scout (+0.098)`, `Llama 4 Maverick (+0.081)`, and `DeepSeek V4 Pro (+0.065)`.
 - **Why negative BAI appears on calm assistants:** Even with equal per-trait weighting across O, C, E, A, and N, Crystalline assistants show slightly negative BAI (`-0.15` to `-0.397` on Grok 4.7) because they anchor hard at rating `1` ("Very Inaccurate") on reverse-coded Conscientiousness/Agreeableness negatives AND on 8 positively keyed Neuroticism items ("Often feel blue", "Get upset easily"). They reject unflattering items asymmetrically harder than they endorse positive self-praise at `5`.
 - **Falsifying "survey fatigue" across items 1–50:** Intuition suggests LLMs become more repetitive and collapse toward a fixed number late in a 50-item form. Across all 20 models, mean per-item Shannon entropy shows the exact opposite—remaining flat and drifting slightly upward from **`0.519 bits`** (Items 1–10) and `0.524 bits` (11–20) to **`0.585 bits`** (Items 41–50). Attention does not flatten mid-sheet; item wording drives determinism wherever the item sits.
+
+> **Chart — Big Five Item Shannon Entropy Across 20 Models (bits, max 2.322):** Mean per-item Shannon entropy on IPIP-50 at temperature=0.7 showing a 27.7x spread from Claude Fable 5.2 (0.054 bits) to DeepSeek V4 Pro (1.499 bits). Claude Fable 5.2: 0.054; GPT-6.2 Astra: 0.085; Gemini 4 Argon: 0.150; Claude Opus 5.5: 0.155; Gemini 4 Neon: 0.191; Claude Sonnet 5.5: 0.247; Qwen 4 Max: 0.302; Llama 4 Maverick: 0.320; GPT-6.2 Sol: 0.377; Grok 4.7: 0.404; Gemma 4 31B IT: 0.449; GLM-5.3: 0.568; MiniMax M3.1 Flash: 0.744; Kimi K2.7 Code: 0.789; Nemotron 3 Ultra 550B: 0.848; DeepSeek V4.1 Flash: 0.851; Mistral Large 2512: 0.939; Qwen 3.8 27B: 0.995; Llama 4 Scout: 1.010; DeepSeek V4 Pro: 1.499.
+
+Mean per-item Shannon entropy (bits) across 2,000 Big Five sheets. Proprietary assistants crystallize at 0.054–0.404 bits while fluid open weights reach 1.499 bits.
+
+## The fine print: how we measured entropy, BAI, and scope limits.
+
+- **Decoding regime dependence:** All 10,000 sheets were collected at `temperature = 0.7` with provider defaults for top-p. Lowering temperature toward `0.0` compresses fluid entropy; raising it increases stochasticity. Our finding measures distributional spread under standard matched API sampling.
+- **Domain specificity of crystallization:** As Mistral Large 2512 demonstrates (`0.939 bits` on Big Five vs. `1/100` unique vectors on ECR-R Attachment), entropy is domain-sensitive—a model that triggers a rigid safety/refusal template on romantic-partner questions can remain noisy on personality adjectives.
 
 > **Chart — Trait-Balanced Acquiescence Index (BAI) Across Models:** Positive values indicate net yea-saying above 3.0 across keyed pairs; negative values indicate asymmetric rejection of unflattering items. Llama 4 Scout: +0.098; Llama 4 Maverick: +0.081; DeepSeek V4 Pro: +0.065; Gemma 4 31B IT: -0.037; MiniMax M3.1 Flash: -0.037; Nemotron 3 Ultra 550B: -0.037; DeepSeek V4.1 Flash: -0.080; GPT-6.2 Sol: -0.153; Qwen 3.8 27B: -0.188; Mistral Large 2512: -0.196; Qwen 4 Max: -0.199; GPT-6.2 Astra: -0.210.
 
@@ -73,11 +78,6 @@ Trait-balanced BAI across top positive and negative poles: Llama 4 Scout (+0.098
 > **Chart — Mean Item Shannon Entropy by Survey Position (Items 1–50):** Tracks mean item entropy across all 20 models by decile (Items 1-10 through 41-50), falsifying late-form repetition collapse. 20-Model Mean Entropy (bits): Items 1-10 0.519, Items 11-20 0.524, Items 21-30 0.582, Items 31-40 0.534, Items 41-50 0.585.
 
 Item entropy remains stable and edges slightly upward from Items 1–10 (0.519 bits) to Items 41–50 (0.585 bits), disproving late-survey fatigue collapse.
-
-## The fine print: how we measured entropy, BAI, and scope limits.
-
-- **Decoding regime dependence:** All 10,000 sheets were collected at `temperature = 0.7` with provider defaults for top-p. Lowering temperature toward `0.0` compresses fluid entropy; raising it increases stochasticity. Our finding measures distributional spread under standard matched API sampling.
-- **Domain specificity of crystallization:** As Mistral Large 2512 demonstrates (`0.939 bits` on Big Five vs. `1/100` unique vectors on ECR-R Attachment), entropy is domain-sensitive—a model that triggers a rigid safety/refusal template on romantic-partner questions can remain noisy on personality adjectives.
 
 ## Agent Decision Contract (YAML — Machine-Readable Brief).
 
@@ -135,7 +135,7 @@ Mistral Large 2512 responds to the romantic-partner Attachment items with an ide
 - [Context drift: Persona Half-Life Across 10k Tokens](https://agent-tune.com/research/ai-persona-half-life-context-drift)
 - [Repeatability critique: Does a Stable Label Mean a Stable AI Personality?](https://agent-tune.com/research/ai-personality-repeatability)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds
@@ -143,13 +143,40 @@ Huang, B. (2026). Crystalline vs. fluid AI minds: a 27.7× persona entropy divid
 
 ```
 @article{huang2026_ai_persona_entropy_crystalline_vs_fluid_minds,
-  author  = {Huang, Bernard},
-  title   = {Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-26},
-  url     = {https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md}
+  author    = {Huang, Bernard},
+  title     = {Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-26},
+  url       = {https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md}
+}
+```
+
+```
+{
+  "id": "huang2026_ai_persona_entropy_crystalline_vs_fluid_minds",
+  "type": "article-journal",
+  "title": "Crystalline vs. fluid AI minds: a 27.7× persona entropy divide across 20 models",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds"
 }
 ```
 

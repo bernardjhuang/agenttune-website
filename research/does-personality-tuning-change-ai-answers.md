@@ -156,7 +156,7 @@ You can reproduce the published summaries with the downloadable Node script and 
 - [Research: What five AI models say about themselves](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Research: The research hub](https://agent-tune.com/research)
 
-### Cite this study (APA 7th · BibTeX · Markdown Brief)
+### Cite this study (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/does-personality-tuning-change-ai-answers
@@ -164,13 +164,40 @@ Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirica
 
 ```
 @article{huang2026_does_personality_tuning_change_ai_answers,
-  author  = {Huang, Bernard},
-  title   = {Does personality tuning change AI answers?},
-  journal = {AgentTune Empirical AI Psychology Monographs},
-  year    = {2026},
-  date    = {2026-11-23},
-  url     = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
-  note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+  author    = {Huang, Bernard},
+  title     = {Does personality tuning change AI answers?},
+  journal   = {AgentTune Empirical AI Psychology Monographs},
+  publisher = {AgentTune AI Psychology Press},
+  year      = {2026},
+  date      = {2026-11-23},
+  url       = {https://agent-tune.com/research/does-personality-tuning-change-ai-answers},
+  note      = {Open dataset and Markdown mirror at https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md}
+}
+```
+
+```
+{
+  "id": "huang2026_does_personality_tuning_change_ai_answers",
+  "type": "article-journal",
+  "title": "Does personality tuning change AI answers?",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Empirical AI Psychology Monographs",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        23
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
 }
 ```
 

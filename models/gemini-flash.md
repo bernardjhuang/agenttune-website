@@ -11,6 +11,16 @@ We gave five Google Gemini Flash releases (2.5 Flash, 3 Flash Preview, 3.5 Flash
 
 **In short:** These are the model's default answers to the questionnaires, not a human diagnosis. Gemini 4 Hydrogen most often tests as ISTJ (64% clear ISTJ, 20% on the ISTJ/INTJ border, 16% clear INTJ), reversing three INTJ-heavy Gemini 3.x Flash releases.
 
+```yaml
+family: Gemini Flash & Hydrogen
+checkpoint: google/gemini-4-hydrogen
+runs: 50
+big_five_10_50: { O: 43.3, C: 50.0, E: 33.2, A: 44.8, N: 10.0 }
+ipip_hexaco_1_5: { H: 4.90, E: 1.84, X: 3.90, A: 5.00, C: 4.91, O: 4.27 }
+mbti_mode: ISTJ
+attachment_1_7: { anxiety: 1.12, avoidance: 3.30, style: Secure }
+```
+
 ## Gemini 4 Hydrogen at a glance
 
 Results below come from **50** fresh-chat runs of **Gemini 4 Hydrogen** (no prior conversation memory).
@@ -177,7 +187,7 @@ Attachment coordinates across Gemini Flash & Hydrogen versions. Hollow points ma
 
 Big Five trait shifts across Gemini Flash & Hydrogen versions. Earlier study measurements appear separately as hollow points and are never joined onto new version lines.
 
-## What stands out
+## What stood out in testing
 
 Extraversion nearly doubled from 2.5 Flash (17.3) to 4 Hydrogen (33.2)
 
@@ -210,11 +220,15 @@ Practical rules tailored to **Gemini Flash & Hydrogen**. Keep system instruction
 - Keep reasoning effort at minimal when using Gemini 4 Hydrogen for fast extraction or classification so latency and reply length stay compact.
 - Put account-wide rules in Gemini Settings -> Personal Intelligence -> Instructions for Gemini (Saved info), or workspace rules in ~/.gemini/GEMINI.md.
 
-**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-flash) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides).
+**Put these into practice:** [Open pre-filled Custom Instructions Generator →](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-flash) · [Browse 43 tuning templates](https://agent-tune.com/library/) · [How to get honest pushback](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back) · [System vs. user instructions](https://agent-tune.com/guides/ai-instruction-precedence-overrides) · [AI Personality Glossary](https://agent-tune.com/guides/ai-personality-glossary).
 
-## How Gemini Flash & Hydrogen compares
+**Take the surveys yourself:** [Big Five](https://agent-tune.com/tests/big-five) · [MBTI](https://agent-tune.com/tests/mbti) · [DISC](https://agent-tune.com/tests/disc) · [Enneagram](https://agent-tune.com/tests/enneagram) · [Attachment](https://agent-tune.com/tests/attachment).
+
+## How Gemini Flash & Hydrogen compares across 25 AI families
 
 Gemini 4 Hydrogen mirrors sibling Gemini 4 Neon on Honesty-Humility (4.90) and floor Neuroticism (10.0) while leaning ISTJ (64% clear) rather than INTJ, and nearly matches Claude Sonnet 5.5 on Conscientiousness (50.0 vs. 49.0) and Neuroticism (10.0 vs. 10.4).
+
+**Compare across all 25 families:** [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings) · [What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini) · [Big Five rankings](https://agent-tune.com/research/ai-big-five-personalities) · [HEXACO Honesty-Humility rankings](https://agent-tune.com/research/ai-hexaco-personalities).
 
 | Peer family | Δ Openness | Δ Conscientious | Δ Extraversion | Δ Agreeable | Δ Neuroticism | Δ HEXACO H (/5) | Δ Answer spread | Key difference |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -403,7 +417,7 @@ Validity Limits & Epistemic Guardrails (4-Point Check)
 
 **4. Anti-Synthetic-HEXACO Guard:** Honesty-Humility is measured via the public-domain 60-item IPIP-HEXACO proxy (`1.00–5.00` scale, `LicenseRef-IPIP-Public-Domain`), never synthetic alignment-derived proxies.
 
-## Raw data and agent brief
+## Raw data, downloads, and agent brief
 
 Download the machine-readable numeric summaries and raw answer arrays (item text strings are excluded per licensing rules).
 
@@ -529,7 +543,7 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [Guide: How to change Gemini's personality](https://agent-tune.com/guides/gemini-personality)
 - [Tool: Customize Gemini instructions](https://agent-tune.com/tools/custom-instructions-generator?model=gemini-flash&target=gemini-gems)
 
-### Cite this model profile (APA 7th · BibTeX · Markdown Brief)
+### Cite this model profile (APA 7th · BibTeX · CSL-JSON · Markdown Brief)
 
 ```
 Huang, B. (2026). Gemini Flash & Hydrogen personality: test results and how they've changed. AgentTune Model Personality Profiles. https://agent-tune.com/models/gemini-flash
@@ -544,6 +558,32 @@ Huang, B. (2026). Gemini Flash & Hydrogen personality: test results and how they
   date    = {2026-11-26},
   url     = {https://agent-tune.com/models/gemini-flash},
   note    = {Assistant self-report defaults under fixed zero-memory elicitation; Markdown mirror at https://agent-tune.com/models/gemini-flash.md}
+}
+```
+
+```
+{
+  "id": "huang2026_model_gemini_flash",
+  "type": "dataset",
+  "title": "Gemini Flash & Hydrogen personality: test results and how they've changed",
+  "author": [
+    {
+      "family": "Huang",
+      "given": "Bernard"
+    }
+  ],
+  "container-title": "AgentTune Model Personality Profiles",
+  "publisher": "AgentTune AI Psychology Press",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        11,
+        26
+      ]
+    ]
+  },
+  "URL": "https://agent-tune.com/models/gemini-flash"
 }
 ```
 
