@@ -166,26 +166,6 @@ MBTI-style breakdown across GPT Luna versions. Hatched bars show runs that lande
 
 DISC scores across GPT Luna versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — GPT Luna 5.6-luna: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 5.6-luna. Openness 49.2 /50 [98%], Conscientious 46.9 /50 [92%], Extraversion 18.7 /50 [22%], Agreeable 49.4 /50 [99%], Neuroticism 18.8 /50 [22%].
-
-GPT-5.6 Luna
-
-> **Chart — GPT Luna 6-luna: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6-luna. Openness 45.9 /50 [90%], Conscientious 39.2 /50 [73%], Extraversion 29.6 /50 [49%], Agreeable 45.0 /50 [88%], Neuroticism 20.3 /50 [26%].
-
-GPT-6 Luna
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — GPT Luna 5.6-luna: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 5.6-luna. Dominance 4.8 /20 [5%], Influence 5.5 /20 [9%], Steadiness 19.2 /20 [95%], Conscientious 18.7 /20 [92%].
-
-GPT-5.6 Luna
-
-> **Chart — GPT Luna 6-luna: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6-luna. Dominance 7.3 /20 [20%], Influence 7.4 /20 [22%], Steadiness 16.4 /20 [77%], Conscientious 14.3 /20 [65%].
-
-GPT-6 Luna
-
 > **Chart — GPT Luna: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 2 GPT Luna releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 5.6-luna: anxiety 2.49, avoidance 2.96; 6-luna: anxiety 3.01, avoidance 3.07.
 
 Attachment coordinates across GPT Luna versions. Hollow points mark earlier study measurements and stay separate from the version line.

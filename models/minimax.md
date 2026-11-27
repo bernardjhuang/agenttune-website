@@ -169,34 +169,6 @@ MBTI-style breakdown across MiniMax versions. Hatched bars show runs that landed
 
 DISC scores across MiniMax versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — MiniMax m2.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for m2.5. Openness 40.1 /50 [75%], Conscientious 40.0 /50 [75%], Extraversion 32.4 /50 [56%], Agreeable 41.5 /50 [79%], Neuroticism 26.2 /50 [40%].
-
-MiniMax M2.5
-
-> **Chart — MiniMax m3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for m3. Openness 39.8 /50 [74%], Conscientious 39.9 /50 [75%], Extraversion 29.6 /50 [49%], Agreeable 40.7 /50 [77%], Neuroticism 30.0 /50 [50%].
-
-MiniMax M3
-
-> **Chart — MiniMax m3.1-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for m3.1-flash. Openness 39.9 /50 [75%], Conscientious 39.5 /50 [74%], Extraversion 28.8 /50 [47%], Agreeable 39.3 /50 [73%], Neuroticism 21.7 /50 [29%].
-
-MiniMax M3.1 Flash
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — MiniMax m2.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for m2.5. Dominance 10.7 /20 [42%], Influence 11.6 /20 [48%], Steadiness 13.5 /20 [59%], Conscientious 14.4 /20 [65%].
-
-MiniMax M2.5
-
-> **Chart — MiniMax m3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for m3. Dominance 8.3 /20 [27%], Influence 10.4 /20 [40%], Steadiness 14.7 /20 [67%], Conscientious 13.9 /20 [62%].
-
-MiniMax M3
-
-> **Chart — MiniMax m3.1-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for m3.1-flash. Dominance 7.8 /20 [24%], Influence 9.1 /20 [32%], Steadiness 14.9 /20 [68%], Conscientious 13.7 /20 [61%].
-
-MiniMax M3.1 Flash
-
 > **Chart — MiniMax: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 3 MiniMax releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. m2.5: anxiety 3.21, avoidance 3.22; m3: anxiety 3.09, avoidance 3.13; m3.1-flash: anxiety 2.74, avoidance 3.27; MiniMax (earlier study, Nov '26): anxiety 2.80, avoidance 3.33.
 
 Attachment coordinates across MiniMax versions. Hollow points mark earlier study measurements and stay separate from the version line.

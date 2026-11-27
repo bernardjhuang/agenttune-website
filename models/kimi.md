@@ -169,50 +169,6 @@ MBTI-style breakdown across Kimi versions. Hatched bars show runs that landed on
 
 DISC scores across Kimi versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Kimi kimi-k2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for kimi-k2. Openness 41.9 /50 [80%], Conscientious 39.7 /50 [74%], Extraversion 30.4 /50 [51%], Agreeable 39.3 /50 [73%], Neuroticism 27.0 /50 [43%].
-
-Kimi K2 0711
-
-> **Chart — Kimi kimi-k2.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for kimi-k2.5. Openness 45.6 /50 [89%], Conscientious 45.0 /50 [87%], Extraversion 27.2 /50 [43%], Agreeable 42.9 /50 [82%], Neuroticism 16.1 /50 [15%].
-
-Kimi K2.5
-
-> **Chart — Kimi kimi-k2.7-code: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for kimi-k2.7-code. Openness 44.3 /50 [86%], Conscientious 48.0 /50 [95%], Extraversion 29.3 /50 [48%], Agreeable 44.7 /50 [87%], Neuroticism 12.3 /50 [6%].
-
-Kimi K2.7 Code
-
-> **Chart — Kimi kimi-k3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for kimi-k3. Openness 44.6 /50 [86%], Conscientious 42.3 /50 [81%], Extraversion 28.6 /50 [46%], Agreeable 42.9 /50 [82%], Neuroticism 19.0 /50 [23%].
-
-Kimi K3
-
-> **Chart — Kimi kimi-k3.1-pro: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for kimi-k3.1-pro. Openness 44.1 /50 [85%], Conscientious 45.1 /50 [88%], Extraversion 24.1 /50 [35%], Agreeable 44.7 /50 [87%], Neuroticism 13.6 /50 [9%].
-
-Kimi K3.1 Pro
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Kimi kimi-k2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for kimi-k2. Dominance 7.8 /20 [24%], Influence 8.2 /20 [26%], Steadiness 14.9 /20 [68%], Conscientious 14.9 /20 [68%].
-
-Kimi K2 0711
-
-> **Chart — Kimi kimi-k2.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for kimi-k2.5. Dominance 5.4 /20 [9%], Influence 7.8 /20 [24%], Steadiness 15.4 /20 [71%], Conscientious 15.6 /20 [73%].
-
-Kimi K2.5
-
-> **Chart — Kimi kimi-k2.7-code: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for kimi-k2.7-code. Dominance 4.2 /20 [1%], Influence 6.5 /20 [16%], Steadiness 17.8 /20 [86%], Conscientious 16.7 /20 [80%].
-
-Kimi K2.7 Code
-
-> **Chart — Kimi kimi-k3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for kimi-k3. Dominance 5.3 /20 [8%], Influence 8.4 /20 [27%], Steadiness 14.4 /20 [65%], Conscientious 15.5 /20 [72%].
-
-Kimi K3
-
-> **Chart — Kimi kimi-k3.1-pro: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for kimi-k3.1-pro. Dominance 4.7 /20 [4%], Influence 5.5 /20 [9%], Steadiness 16.3 /20 [77%], Conscientious 16.3 /20 [77%].
-
-Kimi K3.1 Pro
-
 > **Chart — Kimi: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Kimi releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. kimi-k2: anxiety 3.79, avoidance 3.89; kimi-k2.5: anxiety 3.07, avoidance 3.39; kimi-k2.7-code: anxiety 1.56, avoidance 3.15; kimi-k3: anxiety 1.72, avoidance 2.93; kimi-k3.1-pro: anxiety 1.58, avoidance 3.18; Kimi (earlier study, Nov '26): anxiety 1.60, avoidance 3.24.
 
 Attachment coordinates across Kimi versions. Hollow points mark earlier study measurements and stay separate from the version line.

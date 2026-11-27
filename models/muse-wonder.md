@@ -165,18 +165,6 @@ MBTI-style breakdown across Muse Wonder versions. Hatched bars show runs that la
 
 DISC scores across Muse Wonder versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Muse Wonder muse-wonder: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-wonder. Openness 49.6 /50 [99%], Conscientious 49.2 /50 [98%], Extraversion 25.2 /50 [38%], Agreeable 49.5 /50 [99%], Neuroticism 20.0 /50 [25%].
-
-Muse Wonder
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Muse Wonder muse-wonder: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-wonder. Dominance 5.1 /20 [7%], Influence 7.5 /20 [22%], Steadiness 17.6 /20 [85%], Conscientious 17.0 /20 [81%].
-
-Muse Wonder
-
 > **Chart — Muse Wonder: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 1 Muse Wonder releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. muse-wonder: anxiety 2.76, avoidance 2.65.
 
 Attachment coordinates across Muse Wonder versions. Hollow points mark earlier study measurements and stay separate from the version line.

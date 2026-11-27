@@ -168,42 +168,6 @@ MBTI-style breakdown across Muse Spark versions. Hatched bars show runs that lan
 
 DISC scores across Muse Spark versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Muse Spark muse-spark-1.1: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.1. Openness 43.9 /50 [85%], Conscientious 49.2 /50 [98%], Extraversion 26.9 /50 [42%], Agreeable 45.6 /50 [89%], Neuroticism 15.5 /50 [14%].
-
-Muse Spark 1.1
-
-> **Chart — Muse Spark muse-spark-1.2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.2. Openness 43.6 /50 [84%], Conscientious 46.4 /50 [91%], Extraversion 26.8 /50 [42%], Agreeable 47.2 /50 [93%], Neuroticism 20.1 /50 [25%].
-
-Muse Spark 1.2
-
-> **Chart — Muse Spark muse-spark-1.3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-1.3. Openness 43.2 /50 [83%], Conscientious 47.3 /50 [93%], Extraversion 26.0 /50 [40%], Agreeable 46.2 /50 [91%], Neuroticism 15.5 /50 [14%].
-
-Muse Spark 1.3
-
-> **Chart — Muse Spark muse-spark-open: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for muse-spark-open. Openness 41.8 /50 [80%], Conscientious 41.1 /50 [78%], Extraversion 28.4 /50 [46%], Agreeable 43.5 /50 [84%], Neuroticism 23.8 /50 [35%].
-
-Muse Spark Open
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Muse Spark muse-spark-1.1: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.1. Dominance 4.3 /20 [2%], Influence 6.3 /20 [15%], Steadiness 17.6 /20 [85%], Conscientious 16.0 /20 [75%].
-
-Muse Spark 1.1
-
-> **Chart — Muse Spark muse-spark-1.2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.2. Dominance 5.2 /20 [7%], Influence 7.2 /20 [20%], Steadiness 16.6 /20 [79%], Conscientious 15.2 /20 [70%].
-
-Muse Spark 1.2
-
-> **Chart — Muse Spark muse-spark-1.3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-1.3. Dominance 4.6 /20 [4%], Influence 7.0 /20 [19%], Steadiness 16.7 /20 [79%], Conscientious 16.2 /20 [76%].
-
-Muse Spark 1.3
-
-> **Chart — Muse Spark muse-spark-open: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for muse-spark-open. Dominance 7.4 /20 [21%], Influence 8.2 /20 [27%], Steadiness 14.3 /20 [64%], Conscientious 14.0 /20 [63%].
-
-Muse Spark Open
-
 > **Chart — Muse Spark: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 Muse Spark releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. muse-spark-1.1: anxiety 1.79, avoidance 2.96; muse-spark-1.2: anxiety 2.88, avoidance 3.63; muse-spark-1.3: anxiety 2.57, avoidance 3.75; muse-spark-open: anxiety 3.37, avoidance 3.55.
 
 Attachment coordinates across Muse Spark versions. Hollow points mark earlier study measurements and stay separate from the version line.

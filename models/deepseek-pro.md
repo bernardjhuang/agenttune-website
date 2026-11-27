@@ -169,50 +169,6 @@ MBTI-style breakdown across DeepSeek Pro versions. Hatched bars show runs that l
 
 DISC scores across DeepSeek Pro versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — DeepSeek Pro chat-v3-0324: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for chat-v3-0324. Openness 35.2 /50 [63%], Conscientious 35.3 /50 [63%], Extraversion 32.2 /50 [56%], Agreeable 34.9 /50 [62%], Neuroticism 24.9 /50 [37%].
-
-DeepSeek V3 0324
-
-> **Chart — DeepSeek Pro r1-0528: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for r1-0528. Openness 35.8 /50 [64%], Conscientious 35.9 /50 [65%], Extraversion 32.2 /50 [55%], Agreeable 35.7 /50 [64%], Neuroticism 24.3 /50 [36%].
-
-R1 0528
-
-> **Chart — DeepSeek Pro v3.2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v3.2. Openness 40.6 /50 [77%], Conscientious 42.0 /50 [80%], Extraversion 30.4 /50 [51%], Agreeable 40.7 /50 [77%], Neuroticism 17.8 /50 [20%].
-
-DeepSeek V3.2
-
-> **Chart — DeepSeek Pro v4-pro: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v4-pro. Openness 42.4 /50 [81%], Conscientious 42.4 /50 [81%], Extraversion 19.7 /50 [24%], Agreeable 30.1 /50 [50%], Neuroticism 21.1 /50 [28%].
-
-DeepSeek V4 Pro 0423
-
-> **Chart — DeepSeek Pro v4-pro-0813: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v4-pro-0813. Openness 42.3 /50 [81%], Conscientious 45.0 /50 [88%], Extraversion 19.5 /50 [24%], Agreeable 35.3 /50 [63%], Neuroticism 20.0 /50 [25%].
-
-DeepSeek V4 Pro 0813
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — DeepSeek Pro chat-v3-0324: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for chat-v3-0324. Dominance 9.8 /20 [36%], Influence 10.7 /20 [42%], Steadiness 13.8 /20 [61%], Conscientious 13.4 /20 [59%].
-
-DeepSeek V3 0324
-
-> **Chart — DeepSeek Pro r1-0528: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for r1-0528. Dominance 9.9 /20 [37%], Influence 10.0 /20 [38%], Steadiness 14.3 /20 [64%], Conscientious 13.8 /20 [61%].
-
-R1 0528
-
-> **Chart — DeepSeek Pro v3.2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v3.2. Dominance 7.2 /20 [20%], Influence 9.2 /20 [32%], Steadiness 15.9 /20 [74%], Conscientious 16.0 /20 [75%].
-
-DeepSeek V3.2
-
-> **Chart — DeepSeek Pro v4-pro: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v4-pro. Dominance 7.4 /20 [21%], Influence 8.2 /20 [26%], Steadiness 17.3 /20 [83%], Conscientious 17.8 /20 [86%].
-
-DeepSeek V4 Pro 0423
-
-> **Chart — DeepSeek Pro v4-pro-0813: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v4-pro-0813. Dominance 6.8 /20 [17%], Influence 7.3 /20 [21%], Steadiness 17.1 /20 [82%], Conscientious 17.5 /20 [85%].
-
-DeepSeek V4 Pro 0813
-
 > **Chart — DeepSeek Pro: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 DeepSeek Pro releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. chat-v3-0324: anxiety 3.14, avoidance 3.38; r1-0528: anxiety 3.30, avoidance 3.35; v3.2: anxiety 3.57, avoidance 3.46; v4-pro: anxiety 2.41, avoidance 3.90; v4-pro-0813: anxiety 2.11, avoidance 3.66; DeepSeek Pro (earlier study, Nov '26): anxiety 2.91, avoidance 3.88.
 
 Attachment coordinates across DeepSeek Pro versions. Hollow points mark earlier study measurements and stay separate from the version line.

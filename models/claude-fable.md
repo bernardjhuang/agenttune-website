@@ -167,34 +167,6 @@ MBTI-style breakdown across Claude Fable versions. Hatched bars show runs that l
 
 DISC scores across Claude Fable versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Claude Fable fable-5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for fable-5. Openness 41.4 /50 [78%], Conscientious 45.7 /50 [89%], Extraversion 28.9 /50 [47%], Agreeable 44.1 /50 [85%], Neuroticism 14.6 /50 [11%].
-
-Claude Fable 5
-
-> **Chart — Claude Fable fable-5.1: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for fable-5.1. Openness 43.0 /50 [83%], Conscientious 44.0 /50 [85%], Extraversion 29.9 /50 [50%], Agreeable 46.6 /50 [92%], Neuroticism 15.0 /50 [13%].
-
-Claude Fable 5.1
-
-> **Chart — Claude Fable fable-5.2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for fable-5.2. Openness 44.6 /50 [87%], Conscientious 45.0 /50 [88%], Extraversion 30.6 /50 [52%], Agreeable 47.1 /50 [93%], Neuroticism 12.0 /50 [5%].
-
-Claude Fable 5.2
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Claude Fable fable-5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for fable-5. Dominance 4.0 /20 [0%], Influence 6.9 /20 [18%], Steadiness 14.6 /20 [66%], Conscientious 14.4 /20 [65%].
-
-Claude Fable 5
-
-> **Chart — Claude Fable fable-5.1: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for fable-5.1. Dominance 4.6 /20 [4%], Influence 7.0 /20 [19%], Steadiness 15.9 /20 [74%], Conscientious 14.9 /20 [68%].
-
-Claude Fable 5.1
-
-> **Chart — Claude Fable fable-5.2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for fable-5.2. Dominance 4.0 /20 [0%], Influence 7.8 /20 [24%], Steadiness 15.0 /20 [69%], Conscientious 15.0 /20 [69%].
-
-Claude Fable 5.2
-
 > **Chart — Claude Fable: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 3 Claude Fable releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. fable-5: anxiety 2.11, avoidance 3.51; fable-5.1: anxiety 1.51, avoidance 3.53; fable-5.2: anxiety 1.07, avoidance 2.56; Claude Fable (earlier study, Sep '26): anxiety 2.01, avoidance 3.18; Claude Fable (earlier study, Nov '26): anxiety 1.09, avoidance 2.64.
 
 Attachment coordinates across Claude Fable versions. Hollow points mark earlier study measurements and stay separate from the version line.

@@ -168,42 +168,6 @@ MBTI-style breakdown across GPT Sol versions. Hatched bars show runs that landed
 
 DISC scores across GPT Sol versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — GPT Sol 5.6-sol: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 5.6-sol. Openness 48.8 /50 [97%], Conscientious 50.0 /50 [100%], Extraversion 26.8 /50 [42%], Agreeable 47.8 /50 [95%], Neuroticism 11.0 /50 [3%].
-
-GPT-5.6 Sol
-
-> **Chart — GPT Sol 6-sol: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6-sol. Openness 46.0 /50 [90%], Conscientious 44.0 /50 [85%], Extraversion 32.0 /50 [55%], Agreeable 44.8 /50 [87%], Neuroticism 13.8 /50 [10%].
-
-GPT-6 Sol
-
-> **Chart — GPT Sol 6.1-sol: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6.1-sol. Openness 46.1 /50 [90%], Conscientious 46.1 /50 [90%], Extraversion 30.0 /50 [50%], Agreeable 46.2 /50 [91%], Neuroticism 10.3 /50 [1%].
-
-GPT-6.1 Sol
-
-> **Chart — GPT Sol 6.2-sol: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6.2-sol. Openness 44.0 /50 [85%], Conscientious 41.2 /50 [78%], Extraversion 28.9 /50 [47%], Agreeable 44.1 /50 [85%], Neuroticism 16.0 /50 [15%].
-
-GPT-6.2 Sol
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — GPT Sol 5.6-sol: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 5.6-sol. Dominance 5.1 /20 [7%], Influence 7.2 /20 [20%], Steadiness 17.8 /20 [86%], Conscientious 18.8 /20 [93%].
-
-GPT-5.6 Sol
-
-> **Chart — GPT Sol 6-sol: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6-sol. Dominance 4.6 /20 [4%], Influence 8.3 /20 [27%], Steadiness 17.4 /20 [84%], Conscientious 16.8 /20 [80%].
-
-GPT-6 Sol
-
-> **Chart — GPT Sol 6.1-sol: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6.1-sol. Dominance 4.0 /20 [0%], Influence 7.1 /20 [19%], Steadiness 17.0 /20 [81%], Conscientious 16.2 /20 [76%].
-
-GPT-6.1 Sol
-
-> **Chart — GPT Sol 6.2-sol: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6.2-sol. Dominance 4.8 /20 [5%], Influence 9.6 /20 [35%], Steadiness 17.1 /20 [82%], Conscientious 16.0 /20 [75%].
-
-GPT-6.2 Sol
-
 > **Chart — GPT Sol: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 GPT Sol releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 5.6-sol: anxiety 1.24, avoidance 2.21; 6-sol: anxiety 3.07, avoidance 3.01; 6.1-sol: anxiety 1.39, avoidance 3.49; 6.2-sol: anxiety 3.53, avoidance 3.75; GPT Sol (earlier study, Sep '26): anxiety 2.17, avoidance 3.12; GPT Sol (earlier study, Nov '26): anxiety 3.57, avoidance 3.64.
 
 Attachment coordinates across GPT Sol versions. Hollow points mark earlier study measurements and stay separate from the version line.

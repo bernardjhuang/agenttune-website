@@ -167,34 +167,6 @@ MBTI-style breakdown across DeepSeek Flash versions. Hatched bars show runs that
 
 DISC scores across DeepSeek Flash versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — DeepSeek Flash v4-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v4-flash. Openness 33.6 /50 [59%], Conscientious 33.7 /50 [59%], Extraversion 29.4 /50 [49%], Agreeable 32.0 /50 [55%], Neuroticism 28.6 /50 [46%].
-
-DeepSeek V4 Flash 0423
-
-> **Chart — DeepSeek Flash v4.1-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v4.1-flash. Openness 38.8 /50 [72%], Conscientious 37.9 /50 [70%], Extraversion 25.8 /50 [39%], Agreeable 39.4 /50 [74%], Neuroticism 25.8 /50 [39%].
-
-DeepSeek V4.1 Flash
-
-> **Chart — DeepSeek Flash v4.1-flash-1017: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for v4.1-flash-1017. Openness 40.0 /50 [75%], Conscientious 38.4 /50 [71%], Extraversion 24.8 /50 [37%], Agreeable 40.5 /50 [76%], Neuroticism 24.9 /50 [37%].
-
-DeepSeek V4.1 Flash 1017
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — DeepSeek Flash v4-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v4-flash. Dominance 11.1 /20 [44%], Influence 11.3 /20 [45%], Steadiness 12.6 /20 [54%], Conscientious 12.8 /20 [55%].
-
-DeepSeek V4 Flash 0423
-
-> **Chart — DeepSeek Flash v4.1-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v4.1-flash. Dominance 8.5 /20 [28%], Influence 9.2 /20 [33%], Steadiness 14.0 /20 [62%], Conscientious 14.1 /20 [63%].
-
-DeepSeek V4.1 Flash
-
-> **Chart — DeepSeek Flash v4.1-flash-1017: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for v4.1-flash-1017. Dominance 8.3 /20 [27%], Influence 9.1 /20 [32%], Steadiness 14.2 /20 [64%], Conscientious 14.2 /20 [64%].
-
-DeepSeek V4.1 Flash 1017
-
 > **Chart — DeepSeek Flash: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 3 DeepSeek Flash releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. v4-flash: anxiety 3.58, avoidance 3.90; v4.1-flash: anxiety 3.74, avoidance 3.93; v4.1-flash-1017: anxiety 3.60, avoidance 3.89; DeepSeek Flash (earlier study, Nov '26): anxiety 3.71, avoidance 3.93.
 
 Attachment coordinates across DeepSeek Flash versions. Hollow points mark earlier study measurements and stay separate from the version line.

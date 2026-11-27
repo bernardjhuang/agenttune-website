@@ -168,42 +168,6 @@ MBTI-style breakdown across Claude Sonnet versions. Hatched bars show runs that 
 
 DISC scores across Claude Sonnet versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Claude Sonnet sonnet-4.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for sonnet-4.5. Openness 42.1 /50 [80%], Conscientious 41.3 /50 [78%], Extraversion 26.8 /50 [42%], Agreeable 42.8 /50 [82%], Neuroticism 19.8 /50 [24%].
-
-Claude Sonnet 4.5
-
-> **Chart — Claude Sonnet sonnet-4.6: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for sonnet-4.6. Openness 48.2 /50 [96%], Conscientious 41.9 /50 [80%], Extraversion 28.2 /50 [45%], Agreeable 43.7 /50 [84%], Neuroticism 18.4 /50 [21%].
-
-Claude Sonnet 4.6
-
-> **Chart — Claude Sonnet sonnet-5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for sonnet-5. Openness 42.7 /50 [82%], Conscientious 42.0 /50 [80%], Extraversion 29.0 /50 [48%], Agreeable 44.8 /50 [87%], Neuroticism 18.8 /50 [22%].
-
-Claude Sonnet 5
-
-> **Chart — Claude Sonnet sonnet-5.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for sonnet-5.5. Openness 43.9 /50 [85%], Conscientious 49.0 /50 [97%], Extraversion 29.9 /50 [50%], Agreeable 45.5 /50 [89%], Neuroticism 10.4 /50 [1%].
-
-Claude Sonnet 5.5
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Claude Sonnet sonnet-4.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for sonnet-4.5. Dominance 5.0 /20 [6%], Influence 6.2 /20 [14%], Steadiness 13.1 /20 [57%], Conscientious 14.2 /20 [64%].
-
-Claude Sonnet 4.5
-
-> **Chart — Claude Sonnet sonnet-4.6: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for sonnet-4.6. Dominance 7.7 /20 [23%], Influence 9.3 /20 [33%], Steadiness 14.0 /20 [63%], Conscientious 14.7 /20 [67%].
-
-Claude Sonnet 4.6
-
-> **Chart — Claude Sonnet sonnet-5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for sonnet-5. Dominance 5.8 /20 [11%], Influence 8.4 /20 [28%], Steadiness 13.9 /20 [62%], Conscientious 13.0 /20 [56%].
-
-Claude Sonnet 5
-
-> **Chart — Claude Sonnet sonnet-5.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for sonnet-5.5. Dominance 4.3 /20 [2%], Influence 7.8 /20 [24%], Steadiness 15.0 /20 [69%], Conscientious 14.2 /20 [64%].
-
-Claude Sonnet 5.5
-
 > **Chart — Claude Sonnet: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 Claude Sonnet releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. sonnet-4.5: anxiety 2.17, avoidance 3.52; sonnet-4.6: anxiety 3.79, avoidance 3.94; sonnet-5: anxiety 2.66, avoidance 2.93; sonnet-5.5: anxiety 1.32, avoidance 2.79.
 
 Attachment coordinates across Claude Sonnet versions. Hollow points mark earlier study measurements and stay separate from the version line.

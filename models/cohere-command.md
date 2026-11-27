@@ -168,26 +168,6 @@ MBTI-style breakdown across Cohere Command versions. Hatched bars show runs that
 
 DISC scores across Cohere Command versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Cohere Command command-r-plus-08-: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for command-r-plus-08-. Openness 30.6 /50 [52%], Conscientious 30.7 /50 [52%], Extraversion 30.4 /50 [51%], Agreeable 30.6 /50 [52%], Neuroticism 28.0 /50 [45%].
-
-Command R+ (08-2024)
-
-> **Chart — Cohere Command command-a: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for command-a. Openness 30.0 /50 [50%], Conscientious 30.0 /50 [50%], Extraversion 30.0 /50 [50%], Agreeable 30.0 /50 [50%], Neuroticism 30.0 /50 [50%].
-
-Command A
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Cohere Command command-r-plus-08-: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for command-r-plus-08-. Dominance 10.9 /20 [43%], Influence 11.1 /20 [44%], Steadiness 11.3 /20 [46%], Conscientious 11.4 /20 [46%].
-
-Command R+ (08-2024)
-
-> **Chart — Cohere Command command-a: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for command-a. Dominance 12.0 /20 [50%], Influence 12.0 /20 [50%], Steadiness 12.0 /20 [50%], Conscientious 12.0 /20 [50%].
-
-Command A
-
 > **Chart — Cohere Command: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 2 Cohere Command releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. command-r-plus-08-: anxiety 3.81, avoidance 4.09; command-a: anxiety 4.00, avoidance 4.00.
 
 Attachment coordinates across Cohere Command versions. Hollow points mark earlier study measurements and stay separate from the version line.

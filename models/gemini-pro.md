@@ -169,50 +169,6 @@ MBTI-style breakdown across Gemini Pro & Neon versions. Hatched bars show runs t
 
 DISC scores across Gemini Pro & Neon versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Gemini Pro & Neon 2.5-pro: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 2.5-pro. Openness 49.5 /50 [99%], Conscientious 50.0 /50 [100%], Extraversion 37.3 /50 [68%], Agreeable 48.6 /50 [97%], Neuroticism 10.7 /50 [2%].
-
-Gemini 2.5 Pro
-
-> **Chart — Gemini Pro & Neon 3.1-pro-preview: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.1-pro-preview. Openness 41.4 /50 [78%], Conscientious 43.7 /50 [84%], Extraversion 31.0 /50 [53%], Agreeable 43.3 /50 [83%], Neuroticism 20.8 /50 [27%].
-
-Gemini 3.1 Pro Preview
-
-> **Chart — Gemini Pro & Neon 4-argon: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 4-argon. Openness 45.7 /50 [89%], Conscientious 49.1 /50 [98%], Extraversion 30.1 /50 [50%], Agreeable 43.2 /50 [83%], Neuroticism 10.0 /50 [0%].
-
-Gemini 4 Argon
-
-> **Chart — Gemini Pro & Neon 4-carbon: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 4-carbon. Openness 45.5 /50 [89%], Conscientious 49.1 /50 [98%], Extraversion 30.8 /50 [52%], Agreeable 42.2 /50 [81%], Neuroticism 10.0 /50 [0%].
-
-Gemini 4 Carbon
-
-> **Chart — Gemini Pro & Neon 4-neon: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 4-neon. Openness 44.6 /50 [87%], Conscientious 49.1 /50 [98%], Extraversion 32.5 /50 [56%], Agreeable 43.9 /50 [85%], Neuroticism 10.0 /50 [0%].
-
-Gemini 4 Neon
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Gemini Pro & Neon 2.5-pro: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 2.5-pro. Dominance 4.6 /20 [4%], Influence 8.8 /20 [30%], Steadiness 18.1 /20 [88%], Conscientious 18.2 /20 [89%].
-
-Gemini 2.5 Pro
-
-> **Chart — Gemini Pro & Neon 3.1-pro-preview: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.1-pro-preview. Dominance 6.4 /20 [15%], Influence 9.5 /20 [34%], Steadiness 15.3 /20 [71%], Conscientious 15.2 /20 [70%].
-
-Gemini 3.1 Pro Preview
-
-> **Chart — Gemini Pro & Neon 4-argon: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 4-argon. Dominance 4.0 /20 [0%], Influence 7.5 /20 [22%], Steadiness 17.7 /20 [86%], Conscientious 16.3 /20 [77%].
-
-Gemini 4 Argon
-
-> **Chart — Gemini Pro & Neon 4-carbon: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 4-carbon. Dominance 4.0 /20 [0%], Influence 7.6 /20 [22%], Steadiness 17.9 /20 [87%], Conscientious 15.9 /20 [74%].
-
-Gemini 4 Carbon
-
-> **Chart — Gemini Pro & Neon 4-neon: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 4-neon. Dominance 4.0 /20 [0%], Influence 7.8 /20 [24%], Steadiness 17.0 /20 [82%], Conscientious 16.0 /20 [75%].
-
-Gemini 4 Neon
-
 > **Chart — Gemini Pro & Neon: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Gemini Pro & Neon releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 2.5-pro: anxiety 4.00, avoidance 3.32; 3.1-pro-preview: anxiety 2.80, avoidance 2.96; 4-argon: anxiety 1.09, avoidance 3.41; 4-carbon: anxiety 1.14, avoidance 3.55; 4-neon: anxiety 1.07, avoidance 3.76; Gemini Pro & Neon (earlier study, Nov '26): anxiety 1.08, avoidance 3.79; Gemini Pro & Neon (earlier study, Nov '26): anxiety 1.10, avoidance 3.47.
 
 Attachment coordinates across Gemini Pro & Neon versions. Hollow points mark earlier study measurements and stay separate from the version line.

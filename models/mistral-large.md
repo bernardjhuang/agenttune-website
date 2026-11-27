@@ -167,18 +167,6 @@ MBTI-style breakdown across Mistral Large versions. Hatched bars show runs that 
 
 DISC scores across Mistral Large versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Mistral Large large-2512: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for large-2512. Openness 49.1 /50 [98%], Conscientious 48.6 /50 [97%], Extraversion 36.5 /50 [66%], Agreeable 47.8 /50 [95%], Neuroticism 16.0 /50 [15%].
-
-Mistral Large 3 2512
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Mistral Large large-2512: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for large-2512. Dominance 6.3 /20 [14%], Influence 8.6 /20 [29%], Steadiness 16.8 /20 [80%], Conscientious 16.8 /20 [80%].
-
-Mistral Large 3 2512
-
 > **Chart — Mistral Large: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 1 Mistral Large releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. large-2512: anxiety 4.00, avoidance 3.97; Mistral Large (earlier study, Nov '26): anxiety 4.00, avoidance 4.00.
 
 Attachment coordinates across Mistral Large versions. Hollow points mark earlier study measurements and stay separate from the version line.

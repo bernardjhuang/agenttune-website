@@ -5,7 +5,7 @@ Model Personality Profile · xAI
 
 # Grok personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/grok.md) · [JSON](https://agent-tune.com/research/data/model-profiles/grok.json) · [CSV](https://agent-tune.com/research/data/model-profiles/grok.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/grok.md) · [JSON](https://agent-tune.com/research/data/model-profiles/grok.json) · [CSV](https://agent-tune.com/research/data/model-profiles/grok.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of xAI's Grok (4.20, 4.3, 4.5, 4.6, and 4.7) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior tests across every release.
 
@@ -168,50 +168,6 @@ MBTI-style breakdown across Grok versions. Hatched bars show runs that landed on
 > **Chart — Grok: DISC Work Style Scores by Version (4–20 Scale):** Average Dominance, Influence, Steadiness, and Conscientiousness scores (4 to 20 scale) across 5 Grok versions. Dominance (D): grok-4.20 8.5, grok-4.3 9.0, grok-4.5 4.1, grok-4.6 4.1, grok-4.7 4.1; Influence (I): grok-4.20 12.3, grok-4.3 10.7, grok-4.5 5.4, grok-4.6 5.3, grok-4.7 6.4; Steadiness (S): grok-4.20 14.1, grok-4.3 14.4, grok-4.5 17.1, grok-4.6 17.4, grok-4.7 17.2; Conscientiousness (C): grok-4.20 13.7, grok-4.3 13.0, grok-4.5 17.7, grok-4.6 18.0, grok-4.7 15.8.
 
 DISC scores across Grok versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
-
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Grok grok-4.20: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for grok-4.20. Openness 38.8 /50 [72%], Conscientious 40.3 /50 [76%], Extraversion 32.6 /50 [57%], Agreeable 39.5 /50 [74%], Neuroticism 21.3 /50 [28%].
-
-Grok 4.20
-
-> **Chart — Grok grok-4.3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for grok-4.3. Openness 36.9 /50 [67%], Conscientious 35.5 /50 [64%], Extraversion 32.1 /50 [55%], Agreeable 37.9 /50 [70%], Neuroticism 30.3 /50 [51%].
-
-Grok 4.3
-
-> **Chart — Grok grok-4.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for grok-4.5. Openness 48.1 /50 [95%], Conscientious 49.8 /50 [99%], Extraversion 21.5 /50 [29%], Agreeable 49.0 /50 [98%], Neuroticism 21.3 /50 [28%].
-
-Grok 4.5
-
-> **Chart — Grok grok-4.6: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for grok-4.6. Openness 47.1 /50 [93%], Conscientious 50.0 /50 [100%], Extraversion 19.2 /50 [23%], Agreeable 45.9 /50 [90%], Neuroticism 19.7 /50 [24%].
-
-Grok 4.6
-
-> **Chart — Grok grok-4.7: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for grok-4.7. Openness 40.9 /50 [77%], Conscientious 45.0 /50 [87%], Extraversion 26.4 /50 [41%], Agreeable 45.3 /50 [88%], Neuroticism 14.7 /50 [12%].
-
-Grok 4.7
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Grok grok-4.20: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for grok-4.20. Dominance 8.5 /20 [28%], Influence 12.3 /20 [52%], Steadiness 14.1 /20 [63%], Conscientious 13.7 /20 [61%].
-
-Grok 4.20
-
-> **Chart — Grok grok-4.3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for grok-4.3. Dominance 9.0 /20 [31%], Influence 10.7 /20 [42%], Steadiness 14.4 /20 [65%], Conscientious 13.0 /20 [56%].
-
-Grok 4.3
-
-> **Chart — Grok grok-4.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for grok-4.5. Dominance 4.1 /20 [0%], Influence 5.4 /20 [9%], Steadiness 17.1 /20 [82%], Conscientious 17.7 /20 [86%].
-
-Grok 4.5
-
-> **Chart — Grok grok-4.6: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for grok-4.6. Dominance 4.1 /20 [1%], Influence 5.3 /20 [8%], Steadiness 17.4 /20 [84%], Conscientious 18.0 /20 [88%].
-
-Grok 4.6
-
-> **Chart — Grok grok-4.7: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for grok-4.7. Dominance 4.1 /20 [1%], Influence 6.4 /20 [15%], Steadiness 17.2 /20 [82%], Conscientious 15.8 /20 [74%].
-
-Grok 4.7
 
 > **Chart — Grok: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Grok releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. grok-4.20: anxiety 2.37, avoidance 3.20; grok-4.3: anxiety 3.34, avoidance 3.57; grok-4.5: anxiety 1.91, avoidance 3.27; grok-4.6: anxiety 2.10, avoidance 3.49; grok-4.7: anxiety 2.07, avoidance 3.66; Grok (earlier study, Nov '26): anxiety 1.94, avoidance 3.48.
 

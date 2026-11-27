@@ -5,7 +5,7 @@ Model Personality Profile · Zhipu
 
 # GLM personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/glm.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/glm.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Zhipu AI's open-weight GLM lineup (4.5, 4.7, 5, 5.2, and 5.3) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -168,50 +168,6 @@ MBTI-style breakdown across GLM versions. Hatched bars show runs that landed on 
 > **Chart — GLM: DISC Work Style Scores by Version (4–20 Scale):** Average Dominance, Influence, Steadiness, and Conscientiousness scores (4 to 20 scale) across 5 GLM versions. Dominance (D): glm-4.5 6.4, glm-4.7 4.0, glm-5 6.4, glm-5.2 7.1, glm-5.3 7.2; Influence (I): glm-4.5 6.1, glm-4.7 5.3, glm-5 6.9, glm-5.2 7.2, glm-5.3 8.4; Steadiness (S): glm-4.5 15.3, glm-4.7 17.2, glm-5 15.1, glm-5.2 14.6, glm-5.3 13.7; Conscientiousness (C): glm-4.5 17.4, glm-4.7 19.5, glm-5 16.9, glm-5.2 16.4, glm-5.3 14.9.
 
 DISC scores across GLM versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
-
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — GLM glm-4.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for glm-4.5. Openness 49.2 /50 [98%], Conscientious 47.3 /50 [93%], Extraversion 18.1 /50 [20%], Agreeable 42.2 /50 [81%], Neuroticism 14.8 /50 [12%].
-
-GLM 4.5
-
-> **Chart — GLM glm-4.7: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for glm-4.7. Openness 50.0 /50 [100%], Conscientious 50.0 /50 [100%], Extraversion 27.7 /50 [44%], Agreeable 48.9 /50 [97%], Neuroticism 10.1 /50 [0%].
-
-GLM 4.7
-
-> **Chart — GLM glm-5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for glm-5. Openness 48.3 /50 [96%], Conscientious 46.6 /50 [92%], Extraversion 19.5 /50 [24%], Agreeable 43.8 /50 [85%], Neuroticism 16.9 /50 [17%].
-
-GLM 5
-
-> **Chart — GLM glm-5.2: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for glm-5.2. Openness 46.9 /50 [92%], Conscientious 44.9 /50 [87%], Extraversion 20.4 /50 [26%], Agreeable 41.5 /50 [79%], Neuroticism 17.9 /50 [20%].
-
-GLM 5.2
-
-> **Chart — GLM glm-5.3: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for glm-5.3. Openness 45.4 /50 [89%], Conscientious 43.0 /50 [82%], Extraversion 25.8 /50 [40%], Agreeable 44.2 /50 [86%], Neuroticism 19.3 /50 [23%].
-
-GLM 5.3
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — GLM glm-4.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for glm-4.5. Dominance 6.4 /20 [15%], Influence 6.1 /20 [13%], Steadiness 15.3 /20 [71%], Conscientious 17.4 /20 [84%].
-
-GLM 4.5
-
-> **Chart — GLM glm-4.7: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for glm-4.7. Dominance 4.0 /20 [0%], Influence 5.3 /20 [8%], Steadiness 17.2 /20 [82%], Conscientious 19.5 /20 [97%].
-
-GLM 4.7
-
-> **Chart — GLM glm-5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for glm-5. Dominance 6.4 /20 [15%], Influence 6.9 /20 [18%], Steadiness 15.1 /20 [70%], Conscientious 16.9 /20 [81%].
-
-GLM 5
-
-> **Chart — GLM glm-5.2: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for glm-5.2. Dominance 7.1 /20 [20%], Influence 7.2 /20 [20%], Steadiness 14.6 /20 [66%], Conscientious 16.4 /20 [78%].
-
-GLM 5.2
-
-> **Chart — GLM glm-5.3: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for glm-5.3. Dominance 7.2 /20 [20%], Influence 8.4 /20 [28%], Steadiness 13.7 /20 [61%], Conscientious 14.9 /20 [68%].
-
-GLM 5.3
 
 > **Chart — GLM: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 GLM releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. glm-4.5: anxiety 1.96, avoidance 3.26; glm-4.7: anxiety 1.12, avoidance 1.30; glm-5: anxiety 1.94, avoidance 3.55; glm-5.2: anxiety 2.37, avoidance 3.44; glm-5.3: anxiety 2.52, avoidance 3.37; GLM (earlier study, Nov '26): anxiety 2.50, avoidance 3.32.
 

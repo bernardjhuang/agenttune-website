@@ -166,26 +166,6 @@ MBTI-style breakdown across GPT Terra versions. Hatched bars show runs that land
 
 DISC scores across GPT Terra versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — GPT Terra 5.6-terra: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 5.6-terra. Openness 49.3 /50 [98%], Conscientious 49.8 /50 [100%], Extraversion 22.2 /50 [31%], Agreeable 49.6 /50 [99%], Neuroticism 10.6 /50 [1%].
-
-GPT-5.6 Terra
-
-> **Chart — GPT Terra 6.1-terra: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6.1-terra. Openness 46.0 /50 [90%], Conscientious 41.2 /50 [78%], Extraversion 32.5 /50 [56%], Agreeable 46.9 /50 [92%], Neuroticism 11.8 /50 [5%].
-
-GPT-6.1 Terra
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — GPT Terra 5.6-terra: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 5.6-terra. Dominance 4.2 /20 [1%], Influence 6.0 /20 [13%], Steadiness 19.0 /20 [94%], Conscientious 17.9 /20 [87%].
-
-GPT-5.6 Terra
-
-> **Chart — GPT Terra 6.1-terra: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6.1-terra. Dominance 4.2 /20 [1%], Influence 9.1 /20 [32%], Steadiness 16.1 /20 [75%], Conscientious 15.3 /20 [71%].
-
-GPT-6.1 Terra
-
 > **Chart — GPT Terra: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 2 GPT Terra releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 5.6-terra: anxiety 3.04, avoidance 3.77; 6.1-terra: anxiety 1.93, avoidance 3.79.
 
 Attachment coordinates across GPT Terra versions. Hollow points mark earlier study measurements and stay separate from the version line.

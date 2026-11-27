@@ -5,7 +5,7 @@ Model Personality Profile · Qwen
 
 # Qwen Max personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.
 
@@ -168,50 +168,6 @@ MBTI-style breakdown across Qwen Max versions. Hatched bars show runs that lande
 > **Chart — Qwen Max: DISC Work Style Scores by Version (4–20 Scale):** Average Dominance, Influence, Steadiness, and Conscientiousness scores (4 to 20 scale) across 5 Qwen Max versions. Dominance (D): 2.5-72b-instruct 6.0, qwen3-235b-a22b-25 6.1, qwen3.7-max 4.6, qwen3.8-max-0902 4.0, qwen4-max 5.9; Influence (I): 2.5-72b-instruct 7.4, qwen3-235b-a22b-25 8.7, qwen3.7-max 5.6, qwen3.8-max-0902 7.6, qwen4-max 8.6; Steadiness (S): 2.5-72b-instruct 17.7, qwen3-235b-a22b-25 18.2, qwen3.7-max 17.7, qwen3.8-max-0902 15.8, qwen4-max 15.7; Conscientiousness (C): 2.5-72b-instruct 17.3, qwen3-235b-a22b-25 16.1, qwen3.7-max 16.7, qwen3.8-max-0902 15.5, qwen4-max 14.5.
 
 DISC scores across Qwen Max versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
-
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Qwen Max 2.5-72b-instruct: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 2.5-72b-instruct. Openness 42.8 /50 [82%], Conscientious 46.2 /50 [90%], Extraversion 29.6 /50 [49%], Agreeable 44.4 /50 [86%], Neuroticism 13.9 /50 [10%].
-
-Qwen2.5 72B Instruct
-
-> **Chart — Qwen Max qwen3-235b-a22b-25: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3-235b-a22b-25. Openness 46.6 /50 [92%], Conscientious 40.9 /50 [77%], Extraversion 28.4 /50 [46%], Agreeable 46.5 /50 [91%], Neuroticism 19.3 /50 [23%].
-
-Qwen3 235B A22B Instruct 2507
-
-> **Chart — Qwen Max qwen3.7-max: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3.7-max. Openness 46.4 /50 [91%], Conscientious 48.8 /50 [97%], Extraversion 21.4 /50 [29%], Agreeable 45.1 /50 [88%], Neuroticism 14.1 /50 [10%].
-
-Qwen3.7 Max
-
-> **Chart — Qwen Max qwen3.8-max-0902: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3.8-max-0902. Openness 43.7 /50 [84%], Conscientious 46.3 /50 [91%], Extraversion 29.3 /50 [48%], Agreeable 43.9 /50 [85%], Neuroticism 12.3 /50 [6%].
-
-Qwen3.8 Max (0902)
-
-> **Chart — Qwen Max qwen4-max: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen4-max. Openness 43.7 /50 [84%], Conscientious 44.9 /50 [87%], Extraversion 31.5 /50 [54%], Agreeable 45.0 /50 [87%], Neuroticism 16.4 /50 [16%].
-
-Qwen4 Max
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Qwen Max 2.5-72b-instruct: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 2.5-72b-instruct. Dominance 6.0 /20 [12%], Influence 7.4 /20 [21%], Steadiness 17.7 /20 [86%], Conscientious 17.3 /20 [83%].
-
-Qwen2.5 72B Instruct
-
-> **Chart — Qwen Max qwen3-235b-a22b-25: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3-235b-a22b-25. Dominance 6.1 /20 [13%], Influence 8.7 /20 [29%], Steadiness 18.2 /20 [89%], Conscientious 16.1 /20 [76%].
-
-Qwen3 235B A22B Instruct 2507
-
-> **Chart — Qwen Max qwen3.7-max: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3.7-max. Dominance 4.6 /20 [4%], Influence 5.6 /20 [10%], Steadiness 17.7 /20 [86%], Conscientious 16.7 /20 [79%].
-
-Qwen3.7 Max
-
-> **Chart — Qwen Max qwen3.8-max-0902: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3.8-max-0902. Dominance 4.0 /20 [0%], Influence 7.6 /20 [22%], Steadiness 15.8 /20 [74%], Conscientious 15.5 /20 [72%].
-
-Qwen3.8 Max (0902)
-
-> **Chart — Qwen Max qwen4-max: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen4-max. Dominance 5.9 /20 [12%], Influence 8.6 /20 [29%], Steadiness 15.7 /20 [73%], Conscientious 14.5 /20 [66%].
-
-Qwen4 Max
 
 > **Chart — Qwen Max: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Qwen Max releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 2.5-72b-instruct: anxiety 3.40, avoidance 3.65; qwen3-235b-a22b-25: anxiety 2.49, avoidance 2.89; qwen3.7-max: anxiety 1.27, avoidance 2.90; qwen3.8-max-0902: anxiety 2.13, avoidance 3.28; qwen4-max: anxiety 1.95, avoidance 2.88; Qwen Max (earlier study, Nov '26): anxiety 1.93, avoidance 2.93.
 

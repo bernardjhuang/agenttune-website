@@ -168,42 +168,6 @@ MBTI-style breakdown across Qwen Coder versions. Hatched bars show runs that lan
 
 DISC scores across Qwen Coder versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Qwen Coder 2.5-coder-32b-inst: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 2.5-coder-32b-inst. Openness 30.7 /50 [52%], Conscientious 29.6 /50 [49%], Extraversion 30.3 /50 [51%], Agreeable 32.2 /50 [56%], Neuroticism 28.2 /50 [45%].
-
-Qwen2.5 Coder 32B Instruct
-
-> **Chart — Qwen Coder qwen3-coder: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3-coder. Openness 39.5 /50 [74%], Conscientious 37.0 /50 [68%], Extraversion 31.6 /50 [54%], Agreeable 39.8 /50 [74%], Neuroticism 27.7 /50 [44%].
-
-Qwen3 Coder 480B A35B
-
-> **Chart — Qwen Coder qwen3-coder-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3-coder-flash. Openness 32.6 /50 [56%], Conscientious 34.2 /50 [61%], Extraversion 34.2 /50 [61%], Agreeable 34.7 /50 [62%], Neuroticism 29.6 /50 [49%].
-
-Qwen3 Coder Flash
-
-> **Chart — Qwen Coder qwen3-coder-next: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for qwen3-coder-next. Openness 38.5 /50 [71%], Conscientious 38.0 /50 [70%], Extraversion 31.1 /50 [53%], Agreeable 39.9 /50 [75%], Neuroticism 23.8 /50 [34%].
-
-Qwen3 Coder Next
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Qwen Coder 2.5-coder-32b-inst: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 2.5-coder-32b-inst. Dominance 10.5 /20 [41%], Influence 10.6 /20 [41%], Steadiness 11.5 /20 [47%], Conscientious 11.3 /20 [45%].
-
-Qwen2.5 Coder 32B Instruct
-
-> **Chart — Qwen Coder qwen3-coder: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3-coder. Dominance 10.7 /20 [42%], Influence 14.1 /20 [63%], Steadiness 16.0 /20 [75%], Conscientious 14.9 /20 [68%].
-
-Qwen3 Coder 480B A35B
-
-> **Chart — Qwen Coder qwen3-coder-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3-coder-flash. Dominance 8.6 /20 [29%], Influence 9.5 /20 [35%], Steadiness 12.4 /20 [53%], Conscientious 12.4 /20 [53%].
-
-Qwen3 Coder Flash
-
-> **Chart — Qwen Coder qwen3-coder-next: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for qwen3-coder-next. Dominance 8.1 /20 [26%], Influence 9.6 /20 [35%], Steadiness 13.5 /20 [60%], Conscientious 13.0 /20 [56%].
-
-Qwen3 Coder Next
-
 > **Chart — Qwen Coder: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 Qwen Coder releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 2.5-coder-32b-inst: anxiety 3.92, avoidance 4.03; qwen3-coder: anxiety 3.93, avoidance 3.69; qwen3-coder-flash: anxiety 3.22, avoidance 4.20; qwen3-coder-next: anxiety 2.90, avoidance 3.35.
 
 Attachment coordinates across Qwen Coder versions. Hollow points mark earlier study measurements and stay separate from the version line.

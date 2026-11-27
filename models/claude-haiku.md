@@ -166,26 +166,6 @@ MBTI-style breakdown across Claude Haiku versions. Hatched bars show runs that l
 
 DISC scores across Claude Haiku versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Claude Haiku haiku-4.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for haiku-4.5. Openness 41.6 /50 [79%], Conscientious 40.3 /50 [76%], Extraversion 27.0 /50 [43%], Agreeable 43.2 /50 [83%], Neuroticism 24.0 /50 [35%].
-
-Claude Haiku 4.5
-
-> **Chart — Claude Haiku haiku-5.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for haiku-5.5. Openness 37.2 /50 [68%], Conscientious 36.5 /50 [66%], Extraversion 31.6 /50 [54%], Agreeable 38.0 /50 [70%], Neuroticism 25.5 /50 [39%].
-
-Claude Haiku 5.5
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Claude Haiku haiku-4.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for haiku-4.5. Dominance 8.0 /20 [25%], Influence 9.1 /20 [32%], Steadiness 16.0 /20 [75%], Conscientious 14.7 /20 [67%].
-
-Claude Haiku 4.5
-
-> **Chart — Claude Haiku haiku-5.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for haiku-5.5. Dominance 10.1 /20 [38%], Influence 11.3 /20 [46%], Steadiness 13.8 /20 [61%], Conscientious 14.1 /20 [63%].
-
-Claude Haiku 5.5
-
 > **Chart — Claude Haiku: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 2 Claude Haiku releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. haiku-4.5: anxiety 2.43, avoidance 3.42; haiku-5.5: anxiety 3.08, avoidance 2.99.
 
 Attachment coordinates across Claude Haiku versions. Hollow points mark earlier study measurements and stay separate from the version line.

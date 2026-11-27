@@ -110,7 +110,9 @@ test('Group 1: roster, template, schemas, 8-section order, zero jargon in §§1-
     }
     assert.match(html, /class="trait-info-btn"/);
     assert.match(html, /class="trait-defs-fallback"/);
-    assert.match(html, /class="model-wheel-strip"/);
+    assert.doesNotMatch(html, /class="model-wheel-strip"/);
+    assert.doesNotMatch(html, /shape by version/i);
+    assert.doesNotMatch(md, /shape by version/i);
     assert.match(html, /class="model-protocol-stamp"[^>]*overflow-wrap:anywhere/);
     assert.doesNotMatch(html, /<code>instruments_sha256=/);
 

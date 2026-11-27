@@ -166,26 +166,6 @@ MBTI-style breakdown across GPT Astra versions. Hatched bars show runs that land
 
 DISC scores across GPT Astra versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — GPT Astra 6-astra: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6-astra. Openness 45.4 /50 [89%], Conscientious 45.4 /50 [88%], Extraversion 30.4 /50 [51%], Agreeable 46.6 /50 [92%], Neuroticism 10.8 /50 [2%].
-
-GPT-6 Astra
-
-> **Chart — GPT Astra 6.2-astra: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 6.2-astra. Openness 44.0 /50 [85%], Conscientious 43.3 /50 [83%], Extraversion 30.9 /50 [52%], Agreeable 45.0 /50 [88%], Neuroticism 11.0 /50 [2%].
-
-GPT-6.2 Astra
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — GPT Astra 6-astra: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6-astra. Dominance 4.0 /20 [0%], Influence 7.0 /20 [19%], Steadiness 17.0 /20 [81%], Conscientious 16.3 /20 [77%].
-
-GPT-6 Astra
-
-> **Chart — GPT Astra 6.2-astra: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 6.2-astra. Dominance 4.0 /20 [0%], Influence 7.0 /20 [19%], Steadiness 17.0 /20 [81%], Conscientious 16.2 /20 [76%].
-
-GPT-6.2 Astra
-
 > **Chart — GPT Astra: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 2 GPT Astra releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 6-astra: anxiety 1.23, avoidance 3.36; 6.2-astra: anxiety 1.22, avoidance 2.83; GPT Astra (earlier study, Sep '26): anxiety 1.45, avoidance 2.31; GPT Astra (earlier study, Nov '26): anxiety 1.22, avoidance 2.68.
 
 Attachment coordinates across GPT Astra versions. Hollow points mark earlier study measurements and stay separate from the version line.

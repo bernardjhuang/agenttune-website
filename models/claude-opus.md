@@ -169,50 +169,6 @@ MBTI-style breakdown across Claude Opus versions. Hatched bars show runs that la
 
 DISC scores across Claude Opus versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Claude Opus opus-4.1: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for opus-4.1. Openness 44.1 /50 [85%], Conscientious 45.0 /50 [88%], Extraversion 27.1 /50 [43%], Agreeable 46.4 /50 [91%], Neuroticism 19.1 /50 [23%].
-
-Claude Opus 4.1
-
-> **Chart — Claude Opus opus-4.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for opus-4.5. Openness 47.0 /50 [93%], Conscientious 49.9 /50 [100%], Extraversion 33.7 /50 [59%], Agreeable 48.1 /50 [95%], Neuroticism 20.0 /50 [25%].
-
-Claude Opus 4.5
-
-> **Chart — Claude Opus opus-4.8: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for opus-4.8. Openness 45.2 /50 [88%], Conscientious 41.3 /50 [78%], Extraversion 32.5 /50 [56%], Agreeable 45.6 /50 [89%], Neuroticism 16.1 /50 [15%].
-
-Claude Opus 4.8
-
-> **Chart — Claude Opus opus-5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for opus-5. Openness 44.4 /50 [86%], Conscientious 42.1 /50 [80%], Extraversion 31.3 /50 [53%], Agreeable 46.1 /50 [90%], Neuroticism 17.4 /50 [18%].
-
-Claude Opus 5
-
-> **Chart — Claude Opus opus-5.5: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for opus-5.5. Openness 43.1 /50 [83%], Conscientious 40.7 /50 [77%], Extraversion 30.7 /50 [52%], Agreeable 45.0 /50 [88%], Neuroticism 16.1 /50 [15%].
-
-Claude Opus 5.5
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Claude Opus opus-4.1: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for opus-4.1. Dominance 4.3 /20 [2%], Influence 9.5 /20 [34%], Steadiness 16.7 /20 [80%], Conscientious 15.3 /20 [70%].
-
-Claude Opus 4.1
-
-> **Chart — Claude Opus opus-4.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for opus-4.5. Dominance 4.4 /20 [3%], Influence 9.9 /20 [37%], Steadiness 16.5 /20 [78%], Conscientious 16.8 /20 [80%].
-
-Claude Opus 4.5
-
-> **Chart — Claude Opus opus-4.8: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for opus-4.8. Dominance 4.7 /20 [4%], Influence 7.8 /20 [24%], Steadiness 15.6 /20 [73%], Conscientious 14.0 /20 [63%].
-
-Claude Opus 4.8
-
-> **Chart — Claude Opus opus-5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for opus-5. Dominance 4.7 /20 [5%], Influence 8.3 /20 [27%], Steadiness 15.6 /20 [73%], Conscientious 14.0 /20 [63%].
-
-Claude Opus 5
-
-> **Chart — Claude Opus opus-5.5: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for opus-5.5. Dominance 4.0 /20 [0%], Influence 7.8 /20 [24%], Steadiness 14.6 /20 [66%], Conscientious 14.1 /20 [63%].
-
-Claude Opus 5.5
-
 > **Chart — Claude Opus: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Claude Opus releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. opus-4.1: anxiety 3.44, avoidance 3.63; opus-4.5: anxiety 3.24, avoidance 3.25; opus-4.8: anxiety 2.81, avoidance 4.57; opus-5: anxiety 1.99, avoidance 3.81; opus-5.5: anxiety 1.89, avoidance 3.60; Claude Opus (earlier study, Sep '26): anxiety 1.94, avoidance 3.35; Claude Opus (earlier study, Nov '26): anxiety 1.87, avoidance 3.58.
 
 Attachment coordinates across Claude Opus versions. Hollow points mark earlier study measurements and stay separate from the version line.

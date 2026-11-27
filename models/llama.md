@@ -169,34 +169,6 @@ MBTI-style breakdown across Llama versions. Hatched bars show runs that landed o
 
 DISC scores across Llama versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Llama 3.1-70b-instruct: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.1-70b-instruct. Openness 35.8 /50 [64%], Conscientious 34.9 /50 [62%], Extraversion 31.8 /50 [55%], Agreeable 35.0 /50 [63%], Neuroticism 26.4 /50 [41%].
-
-Llama 3.1 70B Instruct
-
-> **Chart — Llama 3.3-70b-instruct: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.3-70b-instruct. Openness 32.0 /50 [55%], Conscientious 32.1 /50 [55%], Extraversion 30.3 /50 [51%], Agreeable 30.7 /50 [52%], Neuroticism 28.5 /50 [46%].
-
-Llama 3.3 70B Instruct
-
-> **Chart — Llama 4-maverick: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 4-maverick. Openness 38.9 /50 [72%], Conscientious 38.4 /50 [71%], Extraversion 35.3 /50 [63%], Agreeable 40.9 /50 [77%], Neuroticism 29.4 /50 [48%].
-
-Llama 4 Maverick
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Llama 3.1-70b-instruct: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.1-70b-instruct. Dominance 10.8 /20 [42%], Influence 10.0 /20 [38%], Steadiness 13.9 /20 [62%], Conscientious 12.9 /20 [56%].
-
-Llama 3.1 70B Instruct
-
-> **Chart — Llama 3.3-70b-instruct: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.3-70b-instruct. Dominance 11.6 /20 [47%], Influence 11.6 /20 [48%], Steadiness 12.5 /20 [53%], Conscientious 12.4 /20 [53%].
-
-Llama 3.3 70B Instruct
-
-> **Chart — Llama 4-maverick: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 4-maverick. Dominance 8.3 /20 [27%], Influence 12.2 /20 [51%], Steadiness 13.1 /20 [57%], Conscientious 14.2 /20 [64%].
-
-Llama 4 Maverick
-
 > **Chart — Llama: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 3 Llama releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 3.1-70b-instruct: anxiety 2.89, avoidance 3.46; 3.3-70b-instruct: anxiety 3.74, avoidance 3.86; 4-maverick: anxiety 3.50, avoidance 3.61; Llama (earlier study, Nov '26): anxiety 3.53, avoidance 3.58; Llama (earlier study, Nov '26): anxiety 3.97, avoidance 3.60.
 
 Attachment coordinates across Llama versions. Hollow points mark earlier study measurements and stay separate from the version line.

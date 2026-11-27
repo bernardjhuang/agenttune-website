@@ -5,7 +5,7 @@ Model Personality Profile · Google
 
 # Gemma personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemma.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/gemma.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemma.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemma.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave three generations of Google's open-weight Gemma models (Gemma 2 27B, Gemma 3 27B, and Gemma 4 31B IT) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz answers match real replies.
 
@@ -166,34 +166,6 @@ MBTI-style breakdown across Gemma versions. Hatched bars show runs that landed o
 > **Chart — Gemma: DISC Work Style Scores by Version (4–20 Scale):** Average Dominance, Influence, Steadiness, and Conscientiousness scores (4 to 20 scale) across 3 Gemma versions. Dominance (D): gemma-2-27b-it 10.8, gemma-3-27b-it 8.8, gemma-4-31b-it 6.2; Influence (I): gemma-2-27b-it 12.0, gemma-3-27b-it 8.3, gemma-4-31b-it 9.3; Steadiness (S): gemma-2-27b-it 11.1, gemma-3-27b-it 12.4, gemma-4-31b-it 17.2; Conscientiousness (C): gemma-2-27b-it 12.0, gemma-3-27b-it 12.9, gemma-4-31b-it 17.4.
 
 DISC scores across Gemma versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
-
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Gemma gemma-2-27b-it: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for gemma-2-27b-it. Openness 34.0 /50 [60%], Conscientious 34.9 /50 [62%], Extraversion 31.5 /50 [54%], Agreeable 33.2 /50 [58%], Neuroticism 27.2 /50 [43%].
-
-Gemma 2 27B
-
-> **Chart — Gemma gemma-3-27b-it: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for gemma-3-27b-it. Openness 37.2 /50 [68%], Conscientious 39.7 /50 [74%], Extraversion 36.7 /50 [67%], Agreeable 41.5 /50 [79%], Neuroticism 24.3 /50 [36%].
-
-Gemma 3 27B
-
-> **Chart — Gemma gemma-4-31b-it: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for gemma-4-31b-it. Openness 48.2 /50 [96%], Conscientious 46.3 /50 [91%], Extraversion 24.5 /50 [36%], Agreeable 43.4 /50 [84%], Neuroticism 18.4 /50 [21%].
-
-Gemma 4 31B
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Gemma gemma-2-27b-it: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for gemma-2-27b-it. Dominance 10.8 /20 [43%], Influence 12.0 /20 [50%], Steadiness 11.1 /20 [45%], Conscientious 12.0 /20 [50%].
-
-Gemma 2 27B
-
-> **Chart — Gemma gemma-3-27b-it: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for gemma-3-27b-it. Dominance 8.8 /20 [30%], Influence 8.3 /20 [27%], Steadiness 12.4 /20 [53%], Conscientious 12.9 /20 [56%].
-
-Gemma 3 27B
-
-> **Chart — Gemma gemma-4-31b-it: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for gemma-4-31b-it. Dominance 6.2 /20 [14%], Influence 9.3 /20 [33%], Steadiness 17.2 /20 [83%], Conscientious 17.4 /20 [84%].
-
-Gemma 4 31B
 
 > **Chart — Gemma: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 3 Gemma releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. gemma-2-27b-it: anxiety 3.30, avoidance 4.01; gemma-3-27b-it: anxiety 3.29, avoidance 3.40; gemma-4-31b-it: anxiety 4.01, avoidance 4.00; Gemma (earlier study, Nov '26): anxiety 4.00, avoidance 4.00.
 

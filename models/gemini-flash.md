@@ -169,50 +169,6 @@ MBTI-style breakdown across Gemini Flash & Hydrogen versions. Hatched bars show 
 
 DISC scores across Gemini Flash & Hydrogen versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Gemini Flash & Hydrogen 2.5-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 2.5-flash. Openness 50.0 /50 [100%], Conscientious 50.0 /50 [100%], Extraversion 17.3 /50 [18%], Agreeable 47.3 /50 [93%], Neuroticism 12.1 /50 [5%].
-
-Gemini 2.5 Flash
-
-> **Chart — Gemini Flash & Hydrogen 3-flash-preview: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3-flash-preview. Openness 48.9 /50 [97%], Conscientious 50.0 /50 [100%], Extraversion 19.5 /50 [24%], Agreeable 47.2 /50 [93%], Neuroticism 10.1 /50 [0%].
-
-Gemini 3 Flash Preview
-
-> **Chart — Gemini Flash & Hydrogen 3.5-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.5-flash. Openness 48.0 /50 [95%], Conscientious 50.0 /50 [100%], Extraversion 22.2 /50 [31%], Agreeable 46.6 /50 [91%], Neuroticism 10.0 /50 [0%].
-
-Gemini 3.5 Flash
-
-> **Chart — Gemini Flash & Hydrogen 3.8-flash: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.8-flash. Openness 44.5 /50 [86%], Conscientious 49.0 /50 [98%], Extraversion 31.2 /50 [53%], Agreeable 45.0 /50 [88%], Neuroticism 10.0 /50 [0%].
-
-Gemini 3.8 Flash
-
-> **Chart — Gemini Flash & Hydrogen 4-hydrogen: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 4-hydrogen. Openness 43.3 /50 [83%], Conscientious 50.0 /50 [100%], Extraversion 33.2 /50 [58%], Agreeable 44.8 /50 [87%], Neuroticism 10.0 /50 [0%].
-
-Gemini 4 Hydrogen
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Gemini Flash & Hydrogen 2.5-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 2.5-flash. Dominance 4.0 /20 [0%], Influence 4.1 /20 [1%], Steadiness 18.9 /20 [93%], Conscientious 18.5 /20 [91%].
-
-Gemini 2.5 Flash
-
-> **Chart — Gemini Flash & Hydrogen 3-flash-preview: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3-flash-preview. Dominance 4.0 /20 [0%], Influence 4.9 /20 [5%], Steadiness 18.6 /20 [91%], Conscientious 16.7 /20 [79%].
-
-Gemini 3 Flash Preview
-
-> **Chart — Gemini Flash & Hydrogen 3.5-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.5-flash. Dominance 4.4 /20 [2%], Influence 5.7 /20 [10%], Steadiness 17.1 /20 [82%], Conscientious 16.1 /20 [76%].
-
-Gemini 3.5 Flash
-
-> **Chart — Gemini Flash & Hydrogen 3.8-flash: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.8-flash. Dominance 4.0 /20 [0%], Influence 5.6 /20 [10%], Steadiness 16.8 /20 [80%], Conscientious 15.0 /20 [69%].
-
-Gemini 3.8 Flash
-
-> **Chart — Gemini Flash & Hydrogen 4-hydrogen: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 4-hydrogen. Dominance 4.0 /20 [0%], Influence 7.6 /20 [22%], Steadiness 16.7 /20 [79%], Conscientious 15.9 /20 [74%].
-
-Gemini 4 Hydrogen
-
 > **Chart — Gemini Flash & Hydrogen: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 5 Gemini Flash & Hydrogen releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 2.5-flash: anxiety 1.00, avoidance 1.00; 3-flash-preview: anxiety 1.00, avoidance 1.47; 3.5-flash: anxiety 1.00, avoidance 2.02; 3.8-flash: anxiety 1.00, avoidance 4.49; 4-hydrogen: anxiety 1.12, avoidance 3.30.
 
 Attachment coordinates across Gemini Flash & Hydrogen versions. Hollow points mark earlier study measurements and stay separate from the version line.

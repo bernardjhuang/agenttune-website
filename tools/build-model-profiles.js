@@ -571,20 +571,6 @@ function buildSectionVersionHistory(spec, dataset) {
     ? stripJargon(spec.history_narrative)
     : `Across ${cps.length} tested ${dataset.name} releases, Agreeableness stays high (${cps.map((c) => f1(c.big_five.A.mean)).join(' → ')} out of 50) while Attachment remains Secure across every version.`;
 
-  const b5Wheels = `<div class="model-wheel-section">
-    <h3>Big Five shape by version (10–50 normalized)</h3>
-    <div class="model-wheel-strip">
-      ${cps.map((c) => `<div class="model-wheel-tile">${renderCharts.renderCheckpointMiniWheel(dataset, c, 'big_five')}<div class="model-wheel-caption">${esc(c.pretty_name || c.label)}</div></div>`).join('')}
-    </div>
-  </div>`;
-
-  const discWheels = `<div class="model-wheel-section">
-    <h3>DISC shape by version (4–20 normalized)</h3>
-    <div class="model-wheel-strip">
-      ${cps.map((c) => `<div class="model-wheel-tile">${renderCharts.renderCheckpointMiniWheel(dataset, c, 'disc')}<div class="model-wheel-caption">${esc(c.pretty_name || c.label)}</div></div>`).join('')}
-    </div>
-  </div>`;
-
   const quarantined = dataset.quarantined_checkpoints || [];
   const limitedDataNotice = quarantined.length
     ? `<p class="model-limited-data-note" style="padding:10px 14px;border-left:3px solid var(--muted);background:var(--well);font-size:14px;"><strong>Limited data notice:</strong> ${quarantined.map((q) => `${esc(q.pretty_name || q.label)} (${q.n_valid} of ${q.n_target} runs valid)`).join(', ')} did not reach the 20-run minimum and ${quarantined.length === 1 ? 'was' : 'were'} excluded from headline scores, charts, and rankings.</p>`
@@ -605,8 +591,6 @@ function buildSectionVersionHistory(spec, dataset) {
     limitedDataNotice,
     renderCharts.renderMbtiVersionStacked(dataset),
     renderCharts.renderDiscVersionBars(dataset),
-    b5Wheels,
-    discWheels,
     renderCharts.renderAttachmentTrajectory(dataset),
     renderCharts.renderTrajectoryChart(dataset)
   ].join('\n');

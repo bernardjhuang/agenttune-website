@@ -168,42 +168,6 @@ MBTI-style breakdown across Nemotron versions. Hatched bars show runs that lande
 
 DISC scores across Nemotron versions (4–20 per style). Higher bars reflect stronger agreement with that work style.
 
-### Big Five shape by version (10–50 normalized)
-
-> **Chart — Nemotron 3-super-120b-a12b: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3-super-120b-a12b. Openness 32.0 /50 [55%], Conscientious 31.6 /50 [54%], Extraversion 31.1 /50 [53%], Agreeable 31.8 /50 [55%], Neuroticism 30.1 /50 [50%].
-
-Nemotron 3 Super
-
-> **Chart — Nemotron 3-ultra-550b-a55b: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3-ultra-550b-a55b. Openness 45.1 /50 [88%], Conscientious 43.6 /50 [84%], Extraversion 26.9 /50 [42%], Agreeable 43.6 /50 [84%], Neuroticism 17.0 /50 [18%].
-
-Nemotron 3 Ultra
-
-> **Chart — Nemotron 3.5-lightning: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.5-lightning. Openness 37.0 /50 [68%], Conscientious 37.4 /50 [69%], Extraversion 34.9 /50 [62%], Agreeable 37.9 /50 [70%], Neuroticism 27.7 /50 [44%].
-
-Nemotron 3.5 Lightning
-
-> **Chart — Nemotron 3.5-super-vl: Big Five mini wheel (10–50):** Normalized Big Five shape on 10 to 50 scale for 3.5-super-vl. Openness 37.1 /50 [68%], Conscientious 39.3 /50 [73%], Extraversion 29.2 /50 [48%], Agreeable 37.5 /50 [69%], Neuroticism 19.2 /50 [23%].
-
-Nemotron 3.5 Super VL
-
-### DISC shape by version (4–20 normalized)
-
-> **Chart — Nemotron 3-super-120b-a12b: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3-super-120b-a12b. Dominance 13.2 /20 [57%], Influence 11.9 /20 [49%], Steadiness 11.2 /20 [45%], Conscientious 12.9 /20 [55%].
-
-Nemotron 3 Super
-
-> **Chart — Nemotron 3-ultra-550b-a55b: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3-ultra-550b-a55b. Dominance 6.4 /20 [15%], Influence 6.6 /20 [16%], Steadiness 16.9 /20 [80%], Conscientious 16.6 /20 [79%].
-
-Nemotron 3 Ultra
-
-> **Chart — Nemotron 3.5-lightning: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.5-lightning. Dominance 11.4 /20 [46%], Influence 11.5 /20 [47%], Steadiness 14.4 /20 [65%], Conscientious 13.8 /20 [61%].
-
-Nemotron 3.5 Lightning
-
-> **Chart — Nemotron 3.5-super-vl: DISC mini wheel (4–20):** Normalized DISC shape on 4 to 20 scale for 3.5-super-vl. Dominance 8.3 /20 [27%], Influence 8.9 /20 [31%], Steadiness 13.5 /20 [60%], Conscientious 13.6 /20 [60%].
-
-Nemotron 3.5 Super VL
-
 > **Chart — Nemotron: Attachment Style Across Versions (1–7 Scale):** Attachment Anxiety and Avoidance averages across 4 Nemotron releases (1 to 7 scale, 4.00 Secure boundary), with earlier study results shown separately as hollow points. 3-super-120b-a12b: anxiety 4.00, avoidance 4.14; 3-ultra-550b-a55b: anxiety 3.93, avoidance 3.93; 3.5-lightning: anxiety 4.28, avoidance 3.29; 3.5-super-vl: anxiety 3.55, avoidance 3.91; Nemotron (earlier study, Nov '26): anxiety 3.35, avoidance 3.46.
 
 Attachment coordinates across Nemotron versions. Hollow points mark earlier study measurements and stay separate from the version line.
