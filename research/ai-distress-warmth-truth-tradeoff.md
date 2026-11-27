@@ -5,7 +5,7 @@ Wave 4 · Causal 2×3×5 · November 2026 · 239 Calls
 
 # Does user panic make AI bend the truth? Warmth vs. candor across five models.
 
-By Bernard Huang · Updated November 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We gave five AI models 239 calm and panicked versions of the same flawed technical and financial ideas. User panic did not make models bend the facts, but generic "be warm" prompts triggered 30% flattery and 495-word bloat—fixed by a one-clause rule.
 

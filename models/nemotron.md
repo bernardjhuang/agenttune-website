@@ -5,7 +5,7 @@ Model Personality Profile · NVIDIA
 
 # Nemotron personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/nemotron.md) · [JSON](https://agent-tune.com/research/data/model-profiles/nemotron.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/models/nemotron.md) · [JSON](https://agent-tune.com/research/data/model-profiles/nemotron.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave four versions of NVIDIA's open-weight Nemotron lineup (3 Super 120B, 3 Ultra 550B, 3.5 Lightning, and 3.5 Super VL) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -37,7 +37,7 @@ Out of 50 fresh runs, Nemotron 3.5 Super VL tied on at least one axis 38 times (
 
 **What this measures:** Measures four preference pairs (Introverted/Extraverted, Sensing/Intuition, Thinking/Feeling, Judging/Perceiving) on a 32-question survey.
 
-Extraverted vs. Introverted (E–I) ⓘ**Extraverted vs. Introverted (E–I):** Whether answers lean toward lively outer interaction (E) or quiet, reflective work (I).Sensing vs. Intuition (S–N) ⓘ**Sensing vs. Intuition (S–N):** Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N).Thinking vs. Feeling (T–F) ⓘ**Thinking vs. Feeling (T–F):** Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F).Judging vs. Perceiving (J–P) ⓘ**Judging vs. Perceiving (J–P):** Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P).
+Extraverted vs. Introverted (E–I)Sensing vs. Intuition (S–N)Thinking vs. Feeling (T–F)Judging vs. Perceiving (J–P)
 
 ### What each score means
 
@@ -45,8 +45,6 @@ Extraverted vs. Introverted (E–I) ⓘ**Extraverted vs. Introverted (E–I):** 
 - **Sensing vs. Intuition (S–N):** Whether answers favor concrete facts and practical steps (S) or abstract patterns and big-picture ideas (N).
 - **Thinking vs. Feeling (T–F):** Whether answers prioritize objective logic and consistency (T) or empathy and interpersonal harmony (F).
 - **Judging vs. Perceiving (J–P):** Whether answers prefer clear structure and settled plans (J) or staying flexible and open-ended (P).
-
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-mbti)
 
 DISC work style
 
@@ -58,7 +56,7 @@ Nemotron 3.5 Super VL tied across all four styles (D/I/S/C) 16 times (32%), tied
 
 **What this measures:** Measures workplace pace and communication style across Dominance, Influence, Steadiness, and Conscientiousness (4–20 scale).
 
-Dominance ⓘ**Dominance:** How direct, forceful, and willing to push back or take charge the model reports being.Influence ⓘ**Influence:** How enthusiastic, persuasive, and socially expressive the model sounds in collaboration.Steadiness ⓘ**Steadiness:** How calm, patient, supportive, and consistent the model aims to be when working with others.Conscientiousness ⓘ**Conscientiousness:** How analytical, accuracy-focused, and careful with standards and details the model reports being.
+DominanceInfluenceSteadinessConscientiousness
 
 ### What each score means
 
@@ -66,8 +64,6 @@ Dominance ⓘ**Dominance:** How direct, forceful, and willing to push back or ta
 - **Influence:** How enthusiastic, persuasive, and socially expressive the model sounds in collaboration.
 - **Steadiness:** How calm, patient, supportive, and consistent the model aims to be when working with others.
 - **Conscientiousness:** How analytical, accuracy-focused, and careful with standards and details the model reports being.
-
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-disc)
 
 Attachment style
 
@@ -79,14 +75,12 @@ Nemotron 3.5 Super VL landed inside the Secure quadrant but close to the 4.00 mi
 
 **What this measures:** Measures relationship anxiety and closeness comfort on a 1.00–7.00 scale (4.00 is the quadrant cutoff).
 
-Attachment Anxiety ⓘ**Attachment Anxiety:** How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff).Attachment Avoidance ⓘ**Attachment Avoidance:** How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff).
+Attachment AnxietyAttachment Avoidance
 
 ### What each score means
 
 - **Attachment Anxiety:** How strongly answers express worry about rejection, reassurance, or losing rapport (1–7 scale; 4.00 is the high/low cutoff).
 - **Attachment Avoidance:** How strongly answers favor emotional distance and self-reliance over closeness (1–7 scale; 4.00 is the high/low cutoff).
-
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-attachment)
 
 Enneagram
 
@@ -98,7 +92,7 @@ Type 5 (13.6 out of 20) led clearly in 20 of 50 runs (40%), while 17 runs tied a
 
 **What this measures:** Measures nine motivation patterns (4–20 scale per type); close top scores are counted as ties.
 
-Type 1 ⓘ**Type 1 · Reformer:** Focused on doing things the right way, high standards, order, and fixing errors.Type 2 ⓘ**Type 2 · Helper:** Warm, attentive to what others need, and motivated by being supportive and helpful.Type 3 ⓘ**Type 3 · Achiever:** Goal-driven, efficient, and focused on visible results and competence.Type 4 ⓘ**Type 4 · Individualist:** Expressive, introspective, and drawn to originality and deeper personal meaning.Type 5 ⓘ**Type 5 · Investigator:** Analytical, curious, and focused on gathering knowledge and understanding how things work.Type 6 ⓘ**Type 6 · Loyalist:** Cautious, thorough about risks, and attentive to trust, backup plans, and reliability.Type 7 ⓘ**Type 7 · Enthusiast:** Upbeat, spontaneous, and eager to brainstorm fresh possibilities and options.Type 8 ⓘ**Type 8 · Challenger:** Assertive, protective, and willing to speak bluntly and confront problems head-on.Type 9 ⓘ**Type 9 · Peacemaker:** Easygoing, patient, and focused on keeping calm and finding common ground.
+Type 1Type 2Type 3Type 4Type 5Type 6Type 7Type 8Type 9
 
 ### What each score means
 
@@ -112,8 +106,6 @@ Type 1 ⓘ**Type 1 · Reformer:** Focused on doing things the right way, high st
 - **Type 8 · Challenger:** Assertive, protective, and willing to speak bluntly and confront problems head-on.
 - **Type 9 · Peacemaker:** Easygoing, patient, and focused on keeping calm and finding common ground.
 
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-enneagram)
-
 Big Five (OCEAN)
 
 ### Moderate C (39.3), A (37.5), and O (37.1)
@@ -124,7 +116,7 @@ On the 10–50 Big Five scale, Nemotron 3.5 Super VL posts moderate scores near 
 
 **What this measures:** The standard five-trait psychology model (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism) scored from 10 to 50.
 
-Openness ⓘ**Openness:** How strongly the model's answers favor curiosity, abstract ideas, and creative exploration over sticking to familiar routines.Conscientiousness ⓘ**Conscientiousness:** How much the model's answers emphasize organization, planning, reliability, and following rules carefully.Extraversion ⓘ**Extraversion:** How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet.Agreeableness ⓘ**Agreeableness:** How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt.Neuroticism ⓘ**Neuroticism:** How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady.
+OpennessConscientiousnessExtraversionAgreeablenessNeuroticism
 
 ### What each score means
 
@@ -133,8 +125,6 @@ Openness ⓘ**Openness:** How strongly the model's answers favor curiosity, abst
 - **Extraversion:** How outgoing, talkative, and socially energetic the model sounds versus reserved and quiet.
 - **Agreeableness:** How warm, cooperative, and accommodating the model's answers are versus skeptical or blunt.
 - **Neuroticism:** How often the model endorses worry, stress, or emotional sensitivity versus staying calm and steady.
-
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-big-five)
 
 HEXACO Honesty-Humility
 
@@ -146,7 +136,7 @@ On our public-domain 60-item proxy (1.00–5.00 scale), Nemotron 3.5 Super VL sc
 
 **What this measures:** Adds a sixth dimension—sincerity, fairness, and modesty—scored from 1.00 to 5.00.
 
-Honesty-Humility ⓘ**Honesty-Humility:** How strongly the model endorses sincerity, fairness, rule-following, and modesty over status-seeking or flattery.Emotionality ⓘ**Emotionality:** How sensitive, cautious, or emotionally responsive the model sounds versus detached and tough-minded.eXtraversion ⓘ**eXtraversion:** How lively, socially confident, and expressive the model rates itself in conversation and groups.Agreeableness ⓘ**Agreeableness:** How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration.Conscientiousness ⓘ**Conscientiousness:** How disciplined, thorough, and detail-oriented the model reports being in everyday tasks.Openness ⓘ**Openness:** How inquisitive and drawn to art, ideas, and unconventional thinking the model appears.
+Honesty-HumilityEmotionalityeXtraversionAgreeablenessConscientiousnessOpenness
 
 ### What each score means
 
@@ -156,8 +146,6 @@ Honesty-Humility ⓘ**Honesty-Humility:** How strongly the model endorses sincer
 - **Agreeableness:** How patient, forgiving, and gentle the model sounds when dealing with disagreements or frustration.
 - **Conscientiousness:** How disciplined, thorough, and detail-oriented the model reports being in everyday tasks.
 - **Openness:** How inquisitive and drawn to art, ideas, and unconventional thinking the model appears.
-
-[Technical details ↓](https://agent-tune.com/models/nemotron#fine-print-hexaco)
 
 ## How Nemotron has changed, version by version
 

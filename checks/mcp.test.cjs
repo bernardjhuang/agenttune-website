@@ -2,7 +2,9 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const modulePromise = import('data:text/javascript;base64,' + Buffer.from(fs.readFileSync(path.join(__dirname,'../functions/mcp.js'),'utf8')).toString('base64'));
+const { pathToFileURL } = require('node:url');
+const modulePromise = import(pathToFileURL(path.join(__dirname, '../functions/mcp.js')).href);
+const mwPromise = import(pathToFileURL(path.join(__dirname, '../functions/_middleware.js')).href);
 let reads = 0;
 const env = {ASSETS:{fetch:async url=>{
   reads++;
@@ -81,7 +83,85 @@ test('MCP structured results match advertised schemas and retain readable text',
 
 test('MCP free tools discovery returns the public catalog in both structured and text form without accepting personal input',async()=>{
   const list=await (await call(rpc('tools/list'))).json();
+  assert.equal(list.result.tools.length,12);
   const spec=list.result.tools.find(t=>t.name==='get_free_tools');assert.ok(spec.outputSchema);assert.equal(spec.annotations.readOnlyHint,true);
   const r=await (await call(rpc('tools/call',{name:'get_free_tools'}))).json();assert.equal(r.result.structuredContent.tools.length,8);assert.deepEqual(JSON.parse(r.result.content[0].text),r.result.structuredContent);
   const old=reads;const bad=await (await call(rpc('tools/call',{name:'get_free_tools',arguments:{text:'private'}}))).json();assert.equal(bad.error.code,-32602);assert.equal(reads,old);
+});
+
+test('MCP 1.5.0 tools check/convert/build instructions, query model profiles, compare models, and recommend rules cleanly',async()=>{
+  const init=await (await call(rpc('initialize'))).json();
+  assert.equal(init.result.serverInfo.version,'1.5.0');
+  const get405=await (await call(null,{method:'GET'})).text();
+  assert.doesNotMatch(get405,/specimen_00|permission_to_overwrite/);
+
+  const tools=(await (await call(rpc('tools/list'))).json()).result.tools;
+  assert.ok(!tools.some(t=>['memoryRows','classify','redact'].includes(t.name)));
+
+  const chk=await (await call(rpc('tools/call',{name:'check_instructions',arguments:{text:'Always be concise.\nAlways be concise.'}}))).json();
+  assert.ok(!chk.result.isError);
+  assert.ok(chk.result.structuredContent.findings.some(f=>f.code==='duplicate'));
+  conforms(tools.find(t=>t.name==='check_instructions').outputSchema,chk.result.structuredContent);
+
+  const conv=await (await call(rpc('tools/call',{name:'convert_instructions',arguments:{text:'Be direct.',destination:'claude-code',existing:'# Repo\n'}}))).json();
+  assert.ok(!conv.result.isError);
+  assert.match(conv.result.structuredContent.output,/agenttune:preferences:start/);
+  assert.match(conv.result.structuredContent.output,/# Repo/);
+  conforms(tools.find(t=>t.name==='convert_instructions').outputSchema,conv.result.structuredContent);
+
+  const pref=await (await call(rpc('tools/call',{name:'build_preferences',arguments:{length:'concise',tone:'direct',format:'prose',challenge:'candid',questions:'minimal',destination:'api'}}))).json();
+  assert.ok(!pref.result.isError);
+  assert.match(pref.result.structuredContent.output,/"instructions"/);
+  conforms(tools.find(t=>t.name==='build_preferences').outputSchema,pref.result.structuredContent);
+
+  const prof=await (await call(rpc('tools/call',{name:'get_model_profile',arguments:{model:'claude-opus'}}))).json();
+  assert.ok(!prof.result.isError);
+  assert.equal(prof.result.structuredContent.family_slug,'claude-opus');
+  conforms(tools.find(t=>t.name==='get_model_profile').outputSchema,prof.result.structuredContent);
+
+  const cmp=await (await call(rpc('tools/call',{name:'compare_models',arguments:{models:['claude-opus','gpt-sol']}}))).json();
+  assert.ok(!cmp.result.isError);
+  assert.equal(cmp.result.structuredContent.count,2);
+  conforms(tools.find(t=>t.name==='compare_models').outputSchema,cmp.result.structuredContent);
+
+  const badCmp=await (await call(rpc('tools/call',{name:'compare_models',arguments:{models:['claude-opus']}}))).json();
+  assert.equal(badCmp.error.code,-32602);
+
+  const rec=await (await call(rpc('tools/call',{name:'recommend_rules',arguments:{goal:'anti-sycophancy',destination:'chatgpt'}}))).json();
+  assert.ok(!rec.result.isError);
+  assert.ok(rec.result.structuredContent.studies.length>=1);
+  assert.ok(rec.result.structuredContent.if_then_rules.length>=1);
+  conforms(tools.find(t=>t.name==='recommend_rules').outputSchema,rec.result.structuredContent);
+});
+
+test('Markdown middleware negotiates Accept: text/markdown vs text/html and sets Vary: Accept',async()=>{
+  const {onRequest,prefersMarkdown,candidateMarkdownPath}=await mwPromise;
+  assert.equal(prefersMarkdown('text/markdown'),true);
+  assert.equal(prefersMarkdown('text/markdown, text/html;q=0.9'),true);
+  assert.equal(prefersMarkdown('text/html,application/xhtml+xml;q=0.9,*/*;q=0.8'),false);
+  assert.equal(candidateMarkdownPath('/models/claude-opus'),'/models/claude-opus.md');
+  assert.equal(candidateMarkdownPath('/guides/'),'/guides/index.md');
+  assert.equal(candidateMarkdownPath('/mcp'),null);
+
+  const mockAssets={fetch:async req=>{
+    const p=new URL(req.url).pathname;
+    if(p==='/models/claude-opus.md') return new Response('# Claude Opus\n',{status:200,headers:{'content-type':'text/markdown; charset=utf-8'}});
+    return new Response('missing',{status:404});
+  }};
+  const mdRes=await onRequest({
+    request:new Request('https://agent-tune.com/models/claude-opus',{headers:{accept:'text/markdown'}}),
+    env:{ASSETS:mockAssets},
+    next:async()=>new Response('<html></html>',{headers:{'content-type':'text/html; charset=utf-8'}})
+  });
+  assert.match(mdRes.headers.get('content-type'),/text\/markdown/);
+  assert.match(mdRes.headers.get('vary'),/Accept/i);
+  assert.match(await mdRes.text(),/# Claude Opus/);
+
+  const htmlRes=await onRequest({
+    request:new Request('https://agent-tune.com/models/claude-opus',{headers:{accept:'text/html'}}),
+    env:{ASSETS:mockAssets},
+    next:async()=>new Response('<html></html>',{headers:{'content-type':'text/html; charset=utf-8'}})
+  });
+  assert.match(htmlRes.headers.get('content-type'),/text\/html/);
+  assert.match(htmlRes.headers.get('vary'),/Accept/i);
 });

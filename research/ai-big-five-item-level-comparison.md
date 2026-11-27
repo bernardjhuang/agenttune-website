@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Why AI models score high on Agreeableness and Openness
 
-By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-big-five-item-level-comparison.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We looked at 20,000 individual Big Five quiz answers across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1 to see why every AI scores so high on warmth and curiosity.
 

@@ -5,7 +5,7 @@ Guide · MCP & Agent-First
 
 # AgentTune MCP & portable AI preferences across every agent.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Add https://agent-tune.com/mcp as a remote HTTP MCP server in Claude Code ('claude mcp add --transport http agenttune https://agent-tune.com/mcp'), Claude Connectors, Cursor, or any MCP client—no API key or account needed. Your agent gets six read-only tools (list_tunings, get_tuning, get_test_spec, list_resources, get_resource, and get_free_tools) to fetch all 43 MIT-licensed tunings, score local quizzes, and merge bounded preference blocks into CLAUDE.md or AGENTS.md.
 

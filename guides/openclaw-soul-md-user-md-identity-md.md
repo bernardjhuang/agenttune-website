@@ -5,7 +5,7 @@ Guide & Builder · OpenClaw
 
 # OpenClaw SOUL.md, IDENTITY.md, and USER.md: templates and live 3-file builder.
 
-By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Drop SOUL.md, IDENTITY.md, and USER.md into your OpenClaw workspace root folder so boot hooks load them every session. Put your communication style and safety boundaries in SOUL.md, visual metadata (name, creature, emoji, avatar) in IDENTITY.md, and your timezone and tech stack in USER.md—then pair them with AGENTS.md for tool workflows.
 

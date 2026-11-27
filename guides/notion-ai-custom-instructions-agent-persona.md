@@ -5,7 +5,7 @@ Guide · Notion AI
 
 # Notion AI custom instructions and workspace agent persona templates.
 
-By Bernard Huang · Updated November 20, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Configure Notion AI custom instructions inside your Notion AI agent or AI Meeting Notes instruction settings using four short sections: Role, Priority Hierarchy (workspace facts beat helpfulness), Voice & Tone (no filler or hype), and Data Map (which @databases hold tasks, specs, and meeting notes). Keep personal voice preferences private so you never overwrite team-wide workspace templates.
 

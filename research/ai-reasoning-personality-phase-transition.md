@@ -5,7 +5,7 @@ Within-Weights Causal · November 2026 · 216 Cells
 
 # Does thinking harder change an AI's personality? Reasoning effort vs. the Private Thought–Public Mask schism.
 
-By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested low, medium, and high thinking effort inside the same models across GPT-6.2 Sol, Claude Opus 5.5, Gemini 4 Neon, DeepSeek V4 Pro, Grok 4.7, and Qwen 3 235B (216 replies and 138 private thinking traces) to see how harder thinking changes reply length, directness, and private vs. public tone.
 

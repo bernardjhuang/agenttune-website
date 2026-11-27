@@ -5,7 +5,7 @@ Guide · Tests
 
 # The five open personality tests, explained.
 
-By Bernard Huang · Updated September 26, 2026 · ~6 min read · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated September 26, 2026 · [Markdown (.md)](https://agent-tune.com/guides/open-personality-tests.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** AgentTune includes five free in-browser personality quizzes: a 32-question MBTI-style survey (OEJTS), a 36-question Enneagram survey (OEPS adaptation), a 16-question DISC work-style survey (ODAT), a 50-question Big Five trait survey (IPIP-50), and a 36-question Attachment survey (ECR-R). Every quiz scores locally in your browser and keeps ties visible. Original AgentTune code and templates are MIT-licensed; see the fine print below for upstream item terms.
 

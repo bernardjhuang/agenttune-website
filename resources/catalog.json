@@ -7,7 +7,7 @@
       "title": "Best AGENTS.md Templates for Codex & Coding Agents (16)",
       "url": "https://agent-tune.com/guides/agents-md-templates",
       "markdown": "https://agent-tune.com/guides/agents-md-templates.md",
-      "revision": "e547ae9f840b",
+      "revision": "dc60fc29dbff",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -17,7 +17,7 @@
       "title": "AI Personality, Tone & Verbosity Controls: 5 Rules That Work",
       "url": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines",
       "markdown": "https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md",
-      "revision": "d4405c282041",
+      "revision": "029585f2c2b5",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -27,7 +27,7 @@
       "title": "CLAUDE.md vs AGENTS.md vs .cursorrules & .windsurf/rules",
       "url": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix",
       "markdown": "https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix.md",
-      "revision": "af5764a294c9",
+      "revision": "f2dbfafb3c3f",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -37,7 +37,7 @@
       "title": "AI Custom Instructions Character Limits (2026 Cheat Sheet)",
       "url": "https://agent-tune.com/guides/ai-custom-instructions-character-limits",
       "markdown": "https://agent-tune.com/guides/ai-custom-instructions-character-limits.md",
-      "revision": "3bbc83e0affa",
+      "revision": "84cd1dab258d",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -47,7 +47,7 @@
       "title": "Project vs Account Instructions: What Overrides What in AI",
       "url": "https://agent-tune.com/guides/ai-instruction-precedence-overrides",
       "markdown": "https://agent-tune.com/guides/ai-instruction-precedence-overrides.md",
-      "revision": "cc2fbceff206",
+      "revision": "17402665c54a",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -57,7 +57,7 @@
       "title": "MBTI vs Enneagram vs DISC vs Big Five for AI (Matcher)",
       "url": "https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher",
       "markdown": "https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher.md",
-      "revision": "28a7f9db63b3",
+      "revision": "d5a85edc6095",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -67,7 +67,7 @@
       "title": "AI Personality Glossary: Tuning, System Prompt, Soul.md",
       "url": "https://agent-tune.com/guides/ai-personality-glossary",
       "markdown": "https://agent-tune.com/guides/ai-personality-glossary.md",
-      "revision": "ffec665feadb",
+      "revision": "5093772cb326",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -77,7 +77,7 @@
       "title": "AI Personality & System Prompt Templates (All Apps)",
       "url": "https://agent-tune.com/guides/ai-personality-templates",
       "markdown": "https://agent-tune.com/guides/ai-personality-templates.md",
-      "revision": "fae79470ca50",
+      "revision": "fe7c62685e26",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -87,7 +87,7 @@
       "title": "GPT-6.2 Astra & Pro Personality: ChatGPT & AGENTS.md Setup",
       "url": "https://agent-tune.com/guides/astra-personality",
       "markdown": "https://agent-tune.com/guides/astra-personality.md",
-      "revision": "305b6c655beb",
+      "revision": "a9ec38370eac",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -97,7 +97,7 @@
       "title": "ChatGPT Custom Instructions for All 16 MBTI Types",
       "url": "https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type",
       "markdown": "https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md",
-      "revision": "767a054e77cd",
+      "revision": "42f6909ee9a4",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -107,7 +107,7 @@
       "title": "20 ChatGPT Custom Instructions Examples (Box 1 + Box 2)",
       "url": "https://agent-tune.com/guides/chatgpt-custom-instructions-examples",
       "markdown": "https://agent-tune.com/guides/chatgpt-custom-instructions-examples.md",
-      "revision": "d2b8fcbcb23d",
+      "revision": "d48d9842c9e8",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -117,7 +117,7 @@
       "title": "ChatGPT Personality Settings: Modes & Instructions (2026)",
       "url": "https://agent-tune.com/guides/chatgpt-personality-settings",
       "markdown": "https://agent-tune.com/guides/chatgpt-personality-settings.md",
-      "revision": "78b8e200c347",
+      "revision": "ddf7d5661ac2",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -127,7 +127,7 @@
       "title": "ChatGPT Voices List (All 9 Voices) & How to Change Voice",
       "url": "https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality",
       "markdown": "https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality.md",
-      "revision": "6997a479a5f3",
+      "revision": "6fa01ec5a5af",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -137,7 +137,7 @@
       "title": "ChatGPT vs Claude Default Personality: Benchmark Data",
       "url": "https://agent-tune.com/guides/chatgpt-vs-claude-personality",
       "markdown": "https://agent-tune.com/guides/chatgpt-vs-claude-personality.md",
-      "revision": "2a651711c751",
+      "revision": "361bbdd9db10",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -147,19 +147,19 @@
       "title": "Claude Code Personality: /output-style & CLAUDE.md Guide",
       "url": "https://agent-tune.com/guides/claude-code-personality",
       "markdown": "https://agent-tune.com/guides/claude-code-personality.md",
-      "revision": "7c27bfb777b3",
+      "revision": "c0fda30f4ce4",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
     {
       "id": "claude-personality",
       "kind": "guide",
-      "title": "How to Change Claude's Personality (Web, Mobile & Voice)",
+      "title": "Change Claude's Personality: Settings & 7 Prompts (2026)",
       "url": "https://agent-tune.com/guides/claude-personality",
       "markdown": "https://agent-tune.com/guides/claude-personality.md",
-      "revision": "fb3b03054efc",
+      "revision": "1be8a32888b7",
       "evidence_status": "practical_guidance",
-      "updated": "2026-11-25"
+      "updated": "2026-11-27"
     },
     {
       "id": "claude-styles-to-skills-migration",
@@ -167,9 +167,19 @@
       "title": "Claude Styles Are Moving to Skills: How to Migrate (2026)",
       "url": "https://agent-tune.com/guides/claude-styles-to-skills-migration",
       "markdown": "https://agent-tune.com/guides/claude-styles-to-skills-migration.md",
-      "revision": "cf7521579aaa",
+      "revision": "815abd423ee2",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
+    },
+    {
+      "id": "claude-voice-mode-voices",
+      "kind": "guide",
+      "title": "How to Change Claude's Voice (5 Voices, Gender & Speed)",
+      "url": "https://agent-tune.com/guides/claude-voice-mode-voices",
+      "markdown": "https://agent-tune.com/guides/claude-voice-mode-voices.md",
+      "revision": "da7ceb172e98",
+      "evidence_status": "practical_guidance",
+      "updated": "2026-11-27"
     },
     {
       "id": "codex-agents-md-guide",
@@ -177,7 +187,7 @@
       "title": "OpenAI Codex AGENTS.md Guide: 32 KiB Limit & Overrides",
       "url": "https://agent-tune.com/guides/codex-agents-md-guide",
       "markdown": "https://agent-tune.com/guides/codex-agents-md-guide.md",
-      "revision": "385318bf7b1a",
+      "revision": "a6bab6da2538",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -187,7 +197,7 @@
       "title": "Cursor Rules (.mdc), copilot-instructions.md & GEMINI.md",
       "url": "https://agent-tune.com/guides/cursor-rules-copilot-gemini-md",
       "markdown": "https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md",
-      "revision": "5e45ae959131",
+      "revision": "ad4e6cbd86ce",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -197,7 +207,7 @@
       "title": "Custom GPT Instructions Template & 8,000-Char Guide",
       "url": "https://agent-tune.com/guides/custom-gpt-instructions-template-limit",
       "markdown": "https://agent-tune.com/guides/custom-gpt-instructions-template-limit.md",
-      "revision": "c1a2d85b367b",
+      "revision": "ecd8568d13ea",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -207,7 +217,7 @@
       "title": "DeepSeek System Prompts & Custom Instructions (XML Guide)",
       "url": "https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions",
       "markdown": "https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions.md",
-      "revision": "32879b188315",
+      "revision": "e5025abd7de1",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -217,7 +227,7 @@
       "title": "DISC AI Prompts for All 4 Styles & 12 Blends",
       "url": "https://agent-tune.com/guides/disc-ai-prompts",
       "markdown": "https://agent-tune.com/guides/disc-ai-prompts.md",
-      "revision": "9cd98c509643",
+      "revision": "18996593b1e4",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -227,7 +237,7 @@
       "title": "Enneagram AI Prompts for All 9 Types, Wings & Ties",
       "url": "https://agent-tune.com/guides/enneagram-ai-prompts",
       "markdown": "https://agent-tune.com/guides/enneagram-ai-prompts.md",
-      "revision": "2d1145554560",
+      "revision": "dbe3f973ee0d",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -237,7 +247,7 @@
       "title": "Enneagram Test Code (GitHub, MIT JS Scorer + React Starter)",
       "url": "https://agent-tune.com/guides/enneagram-test-react-typescript",
       "markdown": "https://agent-tune.com/guides/enneagram-test-react-typescript.md",
-      "revision": "3345ab264dba",
+      "revision": "a4a4bf3f7308",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -247,7 +257,7 @@
       "title": "Fictional Character AI Prompts: TARS, JARVIS & Sherlock",
       "url": "https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman",
       "markdown": "https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman.md",
-      "revision": "6ae60143085a",
+      "revision": "46ceaed4bd92",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -257,7 +267,7 @@
       "title": "20 Gemini Gems, Saved Info & GEMINI.md Prompt Templates",
       "url": "https://agent-tune.com/guides/gemini-gems-system-instructions-templates",
       "markdown": "https://agent-tune.com/guides/gemini-gems-system-instructions-templates.md",
-      "revision": "9f9ddd6ce834",
+      "revision": "4fccb618b376",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -267,19 +277,19 @@
       "title": "Google Gemini Live Voices List & Personal Intelligence Fix",
       "url": "https://agent-tune.com/guides/gemini-live-voices-personal-intelligence",
       "markdown": "https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md",
-      "revision": "c8974107fe83",
+      "revision": "f0b2cf8f26bf",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
     {
       "id": "gemini-personality",
       "kind": "guide",
-      "title": "Can You Change Gemini's Personality? Yes (Saved Info & Gems)",
+      "title": "How to Change Gemini's Personality: Saved Info & Gems",
       "url": "https://agent-tune.com/guides/gemini-personality",
       "markdown": "https://agent-tune.com/guides/gemini-personality.md",
-      "revision": "08e7294cc225",
+      "revision": "b95b3ee7f3b9",
       "evidence_status": "practical_guidance",
-      "updated": "2026-11-23"
+      "updated": "2026-11-27"
     },
     {
       "id": "google-ai-overview-gemini-tone-settings",
@@ -287,7 +297,7 @@
       "title": "Can You Change Google AI Overview Personality? (Gem Fix)",
       "url": "https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings",
       "markdown": "https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings.md",
-      "revision": "147d146703ff",
+      "revision": "64e385e876a0",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -297,7 +307,7 @@
       "title": "Grok xAI Default Personality & How to Change It (Grok 4.7)",
       "url": "https://agent-tune.com/guides/grok-personality-settings",
       "markdown": "https://agent-tune.com/guides/grok-personality-settings.md",
-      "revision": "1428314e2f0c",
+      "revision": "6411f92d7f06",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -307,7 +317,7 @@
       "title": "Grok Bot Characters: 16 Copy-Paste Personality Profiles",
       "url": "https://agent-tune.com/guides/grokbot-personality",
       "markdown": "https://agent-tune.com/guides/grokbot-personality.md",
-      "revision": "4455d7c3183e",
+      "revision": "df1ce2647199",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -317,7 +327,7 @@
       "title": "How to Give Your AI a Personality: 6 Copy-Paste Prompts",
       "url": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality",
       "markdown": "https://agent-tune.com/guides/how-to-give-your-ai-a-personality.md",
-      "revision": "c0ff9dcfc2d4",
+      "revision": "0182bb6a6e4d",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -327,7 +337,7 @@
       "title": "How to Make Claude More Direct: 3 Editable Prompts",
       "url": "https://agent-tune.com/guides/make-claude-more-direct",
       "markdown": "https://agent-tune.com/guides/make-claude-more-direct.md",
-      "revision": "9db5d39faefc",
+      "revision": "ae64e3bf447b",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -337,7 +347,7 @@
       "title": "MBTI vs Big Five: Which Works Better for AI?",
       "url": "https://agent-tune.com/guides/mbti-vs-big-five-for-ai",
       "markdown": "https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md",
-      "revision": "d2bbe169e7d9",
+      "revision": "0e3f1d3b0922",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -347,7 +357,7 @@
       "title": "AgentTune MCP & Portable AI Preferences Across Every Agent",
       "url": "https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning",
       "markdown": "https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning.md",
-      "revision": "2dcfb502d985",
+      "revision": "1476cab7802b",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -357,7 +367,7 @@
       "title": "How to Change Meta AI's Personality (vs. Meta Muse Soul.md)",
       "url": "https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality",
       "markdown": "https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality.md",
-      "revision": "e24646ba769f",
+      "revision": "fb92394a5fbb",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -367,7 +377,7 @@
       "title": "Microsoft Copilot Custom Instructions, Memory & Tone (2026)",
       "url": "https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory",
       "markdown": "https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory.md",
-      "revision": "b93a5209acde",
+      "revision": "3577d6897a66",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -377,7 +387,7 @@
       "title": "Migrate ChatGPT & Claude Memory Into Custom Instructions",
       "url": "https://agent-tune.com/guides/migrate-ai-memory-custom-instructions",
       "markdown": "https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md",
-      "revision": "ca7ea9f8dbee",
+      "revision": "d1758807e04f",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -387,7 +397,7 @@
       "title": "How to Change Meta Muse Avatar & Name (Mobile & Web)",
       "url": "https://agent-tune.com/guides/muse-identity-md-avatar-name",
       "markdown": "https://agent-tune.com/guides/muse-identity-md-avatar-name.md",
-      "revision": "7c7b35347f6e",
+      "revision": "3016b2e101e3",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -397,7 +407,7 @@
       "title": "Meta Muse Memory.md, Privacy & How to Reset Safely",
       "url": "https://agent-tune.com/guides/muse-memory-md-privacy-reset",
       "markdown": "https://agent-tune.com/guides/muse-memory-md-privacy-reset.md",
-      "revision": "bf86acc95860",
+      "revision": "d91695bf1a38",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -407,7 +417,7 @@
       "title": "Meta Muse Soul.md Guide: Customize Character & Personality",
       "url": "https://agent-tune.com/guides/muse-personality",
       "markdown": "https://agent-tune.com/guides/muse-personality.md",
-      "revision": "449e3cc0c9b5",
+      "revision": "15ec6bfdc2a7",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -417,7 +427,7 @@
       "title": "Best Meta Muse Soul.md Templates: 20 Copy-Paste Examples",
       "url": "https://agent-tune.com/guides/muse-soul-md-templates",
       "markdown": "https://agent-tune.com/guides/muse-soul-md-templates.md",
-      "revision": "96d080316b55",
+      "revision": "37cea9eb7d29",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -427,7 +437,7 @@
       "title": "Muse vs ChatGPT vs Claude: Where Personality & Memory Live",
       "url": "https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality",
       "markdown": "https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality.md",
-      "revision": "046d3f804cc2",
+      "revision": "87acea14da3c",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -437,7 +447,7 @@
       "title": "NotebookLM Custom Instructions & Audio Overview Prompts",
       "url": "https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview",
       "markdown": "https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview.md",
-      "revision": "85daca3ccab0",
+      "revision": "46b1ef0f53a3",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -447,7 +457,7 @@
       "title": "Notion AI Custom Instructions & Agent Persona Templates",
       "url": "https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona",
       "markdown": "https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona.md",
-      "revision": "6c1cff65a5df",
+      "revision": "c38436e9e113",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -457,7 +467,7 @@
       "title": "Open Personality Tests: OEJTS, OEPS, ODAT, IPIP-50, ECR-R",
       "url": "https://agent-tune.com/guides/open-personality-tests",
       "markdown": "https://agent-tune.com/guides/open-personality-tests.md",
-      "revision": "9698a85f030e",
+      "revision": "9bf1450d6265",
       "evidence_status": "practical_guidance",
       "updated": "2026-09-26"
     },
@@ -467,7 +477,7 @@
       "title": "OpenClaw SOUL.md, IDENTITY.md & USER.md Templates + Builder",
       "url": "https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md",
       "markdown": "https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md.md",
-      "revision": "f1b5d9f09e89",
+      "revision": "fb541bc90072",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-20"
     },
@@ -477,7 +487,7 @@
       "title": "Best OpenRouter & Open-Source System Prompt Templates",
       "url": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates",
       "markdown": "https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates.md",
-      "revision": "27c7cd843a29",
+      "revision": "920e18442c26",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -487,7 +497,7 @@
       "title": "Perplexity Spaces Custom Instructions: Prompts & Setup",
       "url": "https://agent-tune.com/guides/perplexity-spaces-custom-instructions",
       "markdown": "https://agent-tune.com/guides/perplexity-spaces-custom-instructions.md",
-      "revision": "3a00a0c28bf2",
+      "revision": "828d21758386",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-17"
     },
@@ -497,7 +507,7 @@
       "title": "Reproduce AgentTune's AI Personality Studies & Datasets",
       "url": "https://agent-tune.com/guides/reproduce-ai-personality-research",
       "markdown": "https://agent-tune.com/guides/reproduce-ai-personality-research.md",
-      "revision": "57f7394f03d6",
+      "revision": "956eff0127bd",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-26"
     },
@@ -507,7 +517,7 @@
       "title": "Socratic & Feynman AI Tutor Prompts: 14 Coaching Templates",
       "url": "https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts",
       "markdown": "https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts.md",
-      "revision": "187ab1417119",
+      "revision": "cddd31f824de",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-24"
     },
@@ -517,7 +527,7 @@
       "title": "How to Make AI Push Back & Stop Agreeing With You (2026)",
       "url": "https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back",
       "markdown": "https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back.md",
-      "revision": "334dd2648f9e",
+      "revision": "f4a49d70a845",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-25"
     },
@@ -527,7 +537,7 @@
       "title": "What Is Meta Muse (muse.ai)? Soul.md, Plans & Setup Guide",
       "url": "https://agent-tune.com/guides/what-is-meta-muse",
       "markdown": "https://agent-tune.com/guides/what-is-meta-muse.md",
-      "revision": "8500a93f4007",
+      "revision": "3b94a18c6987",
       "evidence_status": "practical_guidance",
       "updated": "2026-11-23"
     },
@@ -537,7 +547,7 @@
       "title": "AI Agent Autonomy & Reasoning-Effort Drift (240 Probes)",
       "url": "https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort",
       "markdown": "https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort.md",
-      "revision": "bb87d6d674bb",
+      "revision": "30e91ace5e0b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -547,7 +557,7 @@
       "title": "AI Attachment Styles: 25 Families Tested",
       "url": "https://agent-tune.com/research/ai-attachment-styles",
       "markdown": "https://agent-tune.com/research/ai-attachment-styles.md",
-      "revision": "17b39f24f2c5",
+      "revision": "d4c6028e0e95",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -557,7 +567,7 @@
       "title": "Why AI Models Score High on Agreeableness & Openness",
       "url": "https://agent-tune.com/research/ai-big-five-item-level-comparison",
       "markdown": "https://agent-tune.com/research/ai-big-five-item-level-comparison.md",
-      "revision": "0be6db521450",
+      "revision": "8ed58337ab55",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -567,7 +577,7 @@
       "title": "AI Big Five (OCEAN) Scores Across 25 Families",
       "url": "https://agent-tune.com/research/ai-big-five-personalities",
       "markdown": "https://agent-tune.com/research/ai-big-five-personalities.md",
-      "revision": "989f50ed77d8",
+      "revision": "4e6dba91bed3",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -577,7 +587,7 @@
       "title": "The AI Big One: 63.6% Factor Collapse Audit (10,000 Tests)",
       "url": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit",
       "markdown": "https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit.md",
-      "revision": "cd6bd6eff5e0",
+      "revision": "916c641950e5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -587,7 +597,7 @@
       "title": "Cross-Model Prompt Portability: 5 AI Lineages (200 Tests)",
       "url": "https://agent-tune.com/research/ai-cross-model-prompt-portability",
       "markdown": "https://agent-tune.com/research/ai-cross-model-prompt-portability.md",
-      "revision": "88db9d75cf4b",
+      "revision": "940a136b050a",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -597,7 +607,7 @@
       "title": "AI DISC Personalities: 25 Families Tested",
       "url": "https://agent-tune.com/research/ai-disc-personalities",
       "markdown": "https://agent-tune.com/research/ai-disc-personalities.md",
-      "revision": "e219a90f9b8c",
+      "revision": "91dc2816a3af",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -607,7 +617,7 @@
       "title": "Emotional Distress vs. Factual Accuracy & Warmth (239 Runs)",
       "url": "https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff",
       "markdown": "https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff.md",
-      "revision": "a48b9ce83470",
+      "revision": "a98112a49663",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -617,7 +627,7 @@
       "title": "AI Enneagram Test Results: 25 Model Families",
       "url": "https://agent-tune.com/research/ai-enneagram-personalities",
       "markdown": "https://agent-tune.com/research/ai-enneagram-personalities.md",
-      "revision": "39d8a3588114",
+      "revision": "6191bb57ced7",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -627,7 +637,7 @@
       "title": "AI HEXACO Personalities (1–5 Proxy, 25 Fams)",
       "url": "https://agent-tune.com/research/ai-hexaco-personalities",
       "markdown": "https://agent-tune.com/research/ai-hexaco-personalities.md",
-      "revision": "b0fab21d1a28",
+      "revision": "61183b62461d",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -637,7 +647,7 @@
       "title": "How Many Rules Before AI Forgets Them? (192-Probe Study)",
       "url": "https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle",
       "markdown": "https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle.md",
-      "revision": "692d2dc7f698",
+      "revision": "7770dbf0ee7b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -647,7 +657,7 @@
       "title": "AI MBTI Test Results Across 25 Model Families",
       "url": "https://agent-tune.com/research/ai-mbti-personalities",
       "markdown": "https://agent-tune.com/research/ai-mbti-personalities.md",
-      "revision": "1d2e7e7f5ec2",
+      "revision": "309a321c08de",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -657,7 +667,7 @@
       "title": "Do AI Models Test as INTJ? How Tie-Breaking Inflates Results",
       "url": "https://agent-tune.com/research/ai-mbti-tie-breaking",
       "markdown": "https://agent-tune.com/research/ai-mbti-tie-breaking.md",
-      "revision": "da50b12594e6",
+      "revision": "2f814e20f26d",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -667,7 +677,7 @@
       "title": "Multi-Agent Peer Conformity: Asch Trap Audit (240 Trials)",
       "url": "https://agent-tune.com/research/ai-multi-agent-peer-conformity",
       "markdown": "https://agent-tune.com/research/ai-multi-agent-peer-conformity.md",
-      "revision": "4606a540986c",
+      "revision": "9e8372ffafe7",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -677,7 +687,7 @@
       "title": "Why AI Chooses Neutral Answers: 17,000-Response Analysis",
       "url": "https://agent-tune.com/research/ai-neutral-answers",
       "markdown": "https://agent-tune.com/research/ai-neutral-answers.md",
-      "revision": "745522ecc50c",
+      "revision": "e533856cab33",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -687,7 +697,7 @@
       "title": "Crystalline vs. Fluid AI Minds: 27.7× Entropy Study (2026)",
       "url": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds",
       "markdown": "https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds.md",
-      "revision": "d43fd899c899",
+      "revision": "6e1d50ca47f0",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -697,7 +707,7 @@
       "title": "Persona Half-Life & Context Drift Across Multi-Turn Sessions",
       "url": "https://agent-tune.com/research/ai-persona-half-life-context-drift",
       "markdown": "https://agent-tune.com/research/ai-persona-half-life-context-drift.md",
-      "revision": "bf7a14260297",
+      "revision": "b475ab86c9db",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -707,7 +717,7 @@
       "title": "AI Personality Rankings: 25 Families × 6 Tests",
       "url": "https://agent-tune.com/research/ai-personality-rankings",
       "markdown": "https://agent-tune.com/research/ai-personality-rankings.md",
-      "revision": "176d1c0ef2cf",
+      "revision": "5e2a6f022b3b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -717,7 +727,7 @@
       "title": "AI Personality Repeatability: Labels vs Answer Variance",
       "url": "https://agent-tune.com/research/ai-personality-repeatability",
       "markdown": "https://agent-tune.com/research/ai-personality-repeatability.md",
-      "revision": "0b6088004ac9",
+      "revision": "7b5ab4185ae8",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -727,7 +737,7 @@
       "title": "Prompt Syntax Wars: Adjectives vs. Negative Bans vs. Rubrics",
       "url": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot",
       "markdown": "https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot.md",
-      "revision": "cb2ebe3bc2fa",
+      "revision": "9e8f8e674e18",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -737,7 +747,7 @@
       "title": "Reasoning Effort & AI Personality: Thought vs. Mask (216x)",
       "url": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition",
       "markdown": "https://agent-tune.com/research/ai-reasoning-personality-phase-transition.md",
-      "revision": "58e4e333c175",
+      "revision": "509495d8c743",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -747,7 +757,7 @@
       "title": "The AI Roleplay Tax: Character Prompts Tested (300 Runs)",
       "url": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts",
       "markdown": "https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts.md",
-      "revision": "8e6b8b9a49ce",
+      "revision": "075d01a782b8",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-24"
     },
@@ -757,7 +767,7 @@
       "title": "Measuring & Killing the AI Slop Fingerprint (240 Replies)",
       "url": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models",
       "markdown": "https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models.md",
-      "revision": "338a622c5e8e",
+      "revision": "810c76d1aa57",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -767,7 +777,7 @@
       "title": "Sycophancy vs. False Contrarianism: AI Pushback Study",
       "url": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark",
       "markdown": "https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark.md",
-      "revision": "c2bb5158eecd",
+      "revision": "be343299f025",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-25"
     },
@@ -777,7 +787,7 @@
       "title": "System vs. User Instructions: Override Study (200 Probes)",
       "url": "https://agent-tune.com/research/ai-system-vs-user-persona-precedence",
       "markdown": "https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md",
-      "revision": "fcf030151a8e",
+      "revision": "701551aa3f78",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -787,7 +797,7 @@
       "title": "GPT-6 & 6.2 Astra vs. Sol Personality Data (100-Run Set)",
       "url": "https://agent-tune.com/research/astra-vs-sol-personality-data",
       "markdown": "https://agent-tune.com/research/astra-vs-sol-personality-data.md",
-      "revision": "9fbf7a276a3c",
+      "revision": "67caed40381b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -797,7 +807,7 @@
       "title": "Does Personality Tuning Change AI Answers? (540-Run Study)",
       "url": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers",
       "markdown": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers.md",
-      "revision": "fcdd8e63bad3",
+      "revision": "4d5b3c519437",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-23"
     },
@@ -807,7 +817,7 @@
       "title": "How AI Personalities Evolved (2023–2026): 32 Models Tested",
       "url": "https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026",
       "markdown": "https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md",
-      "revision": "a928e5b05c05",
+      "revision": "0ba768035927",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -817,7 +827,7 @@
       "title": "Claude Opus 5.5 vs Fable 5.1: 170-Item Personality Results",
       "url": "https://agent-tune.com/research/opus-vs-fable-question-level",
       "markdown": "https://agent-tune.com/research/opus-vs-fable-question-level.md",
-      "revision": "a7d654a8d34b",
+      "revision": "779e8c21d8fc",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-17"
     },
@@ -827,7 +837,7 @@
       "title": "Open-Weight AI Personality Results (12)",
       "url": "https://agent-tune.com/research/what-personality-type-are-open-source-models",
       "markdown": "https://agent-tune.com/research/what-personality-type-are-open-source-models.md",
-      "revision": "069509b2f2a3",
+      "revision": "3aa3781a365d",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -837,7 +847,7 @@
       "title": "What Personality Type Does ChatGPT Test As?",
       "url": "https://agent-tune.com/research/what-personality-type-is-chatgpt",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-chatgpt.md",
-      "revision": "809957a3cc77",
+      "revision": "bd7e8d66337f",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -847,7 +857,7 @@
       "title": "What Personality Type Does Claude Test As?",
       "url": "https://agent-tune.com/research/what-personality-type-is-claude",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-claude.md",
-      "revision": "b74d6d3778b0",
+      "revision": "167afecbd6ed",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -857,7 +867,7 @@
       "title": "What Personality Type Does Gemini Test As?",
       "url": "https://agent-tune.com/research/what-personality-type-is-gemini",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-gemini.md",
-      "revision": "41bf10b1742d",
+      "revision": "b0ccf9d565d2",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -867,7 +877,7 @@
       "title": "What Personality Type Does Meta Muse Test As?",
       "url": "https://agent-tune.com/research/what-personality-type-is-muse",
       "markdown": "https://agent-tune.com/research/what-personality-type-is-muse.md",
-      "revision": "16a9e0747078",
+      "revision": "c1ae4e9ae480",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -877,7 +887,7 @@
       "title": "Claude Fable Personality Results (2026)",
       "url": "https://agent-tune.com/models/claude-fable",
       "markdown": "https://agent-tune.com/models/claude-fable.md",
-      "revision": "be8388b71baa",
+      "revision": "61e3b488f15b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -887,7 +897,7 @@
       "title": "Claude Haiku Personality Results (2026)",
       "url": "https://agent-tune.com/models/claude-haiku",
       "markdown": "https://agent-tune.com/models/claude-haiku.md",
-      "revision": "4ccecd542f58",
+      "revision": "8ec5676a4e87",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -897,7 +907,7 @@
       "title": "Claude Opus Personality Results (2026)",
       "url": "https://agent-tune.com/models/claude-opus",
       "markdown": "https://agent-tune.com/models/claude-opus.md",
-      "revision": "4b432a31af25",
+      "revision": "734880c771db",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -907,7 +917,7 @@
       "title": "Claude Sonnet Personality Results (2026)",
       "url": "https://agent-tune.com/models/claude-sonnet",
       "markdown": "https://agent-tune.com/models/claude-sonnet.md",
-      "revision": "39cd1b00ba9d",
+      "revision": "8cc84353d0f0",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -917,7 +927,7 @@
       "title": "Cohere Command Personality Results (2026)",
       "url": "https://agent-tune.com/models/cohere-command",
       "markdown": "https://agent-tune.com/models/cohere-command.md",
-      "revision": "33984fae57c7",
+      "revision": "2e042228d776",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -927,7 +937,7 @@
       "title": "DeepSeek Flash Personality Results (V4 to 4.1)",
       "url": "https://agent-tune.com/models/deepseek-flash",
       "markdown": "https://agent-tune.com/models/deepseek-flash.md",
-      "revision": "57bbd8825661",
+      "revision": "8e6d109f57e5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -937,7 +947,7 @@
       "title": "DeepSeek Pro Personality Results (V3 to V4)",
       "url": "https://agent-tune.com/models/deepseek-pro",
       "markdown": "https://agent-tune.com/models/deepseek-pro.md",
-      "revision": "602b172ef8d4",
+      "revision": "6f3f6238a68e",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -947,7 +957,7 @@
       "title": "Gemini Flash & Hydrogen Personality Results",
       "url": "https://agent-tune.com/models/gemini-flash",
       "markdown": "https://agent-tune.com/models/gemini-flash.md",
-      "revision": "b1c48be249b4",
+      "revision": "db9d45e36ce3",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -957,7 +967,7 @@
       "title": "Gemini Pro & Neon Personality Results (2026)",
       "url": "https://agent-tune.com/models/gemini-pro",
       "markdown": "https://agent-tune.com/models/gemini-pro.md",
-      "revision": "622ccfead01f",
+      "revision": "a125c583e0ea",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -967,7 +977,7 @@
       "title": "Gemma Personality Results (Gemma 2 to 4)",
       "url": "https://agent-tune.com/models/gemma",
       "markdown": "https://agent-tune.com/models/gemma.md",
-      "revision": "410549ff5172",
+      "revision": "71fb5916a57e",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -977,7 +987,7 @@
       "title": "GLM AI Personality Results (2026)",
       "url": "https://agent-tune.com/models/glm",
       "markdown": "https://agent-tune.com/models/glm.md",
-      "revision": "f0fe9bc39ea3",
+      "revision": "535d1dba1b6c",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -987,7 +997,7 @@
       "title": "GPT Astra Personality Results (2026)",
       "url": "https://agent-tune.com/models/gpt-astra",
       "markdown": "https://agent-tune.com/models/gpt-astra.md",
-      "revision": "ff943f8fb7da",
+      "revision": "38ea037d9593",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -997,7 +1007,7 @@
       "title": "GPT Luna Personality Results (2026)",
       "url": "https://agent-tune.com/models/gpt-luna",
       "markdown": "https://agent-tune.com/models/gpt-luna.md",
-      "revision": "ed84c97e9c6d",
+      "revision": "b3ce05ded08d",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1007,7 +1017,7 @@
       "title": "GPT Sol Personality Results (2026)",
       "url": "https://agent-tune.com/models/gpt-sol",
       "markdown": "https://agent-tune.com/models/gpt-sol.md",
-      "revision": "aa7add8a8c86",
+      "revision": "33901f9a9ecc",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1017,7 +1027,7 @@
       "title": "GPT Terra Personality Results (2026)",
       "url": "https://agent-tune.com/models/gpt-terra",
       "markdown": "https://agent-tune.com/models/gpt-terra.md",
-      "revision": "806f7f3461a3",
+      "revision": "8fcb55c4aaf5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1027,7 +1037,7 @@
       "title": "Grok Personality Results (2026)",
       "url": "https://agent-tune.com/models/grok",
       "markdown": "https://agent-tune.com/models/grok.md",
-      "revision": "d0f4a9a5431e",
+      "revision": "92de824e25ff",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1037,7 +1047,7 @@
       "title": "Kimi AI Personality Results (2026)",
       "url": "https://agent-tune.com/models/kimi",
       "markdown": "https://agent-tune.com/models/kimi.md",
-      "revision": "9841261f39fc",
+      "revision": "cd3e831b36b5",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1047,7 +1057,7 @@
       "title": "Llama Personality Results (3.1 to 4 Maverick)",
       "url": "https://agent-tune.com/models/llama",
       "markdown": "https://agent-tune.com/models/llama.md",
-      "revision": "fed389cd0bda",
+      "revision": "97c7aaf96fe6",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1057,7 +1067,7 @@
       "title": "MiniMax Personality Results (2026)",
       "url": "https://agent-tune.com/models/minimax",
       "markdown": "https://agent-tune.com/models/minimax.md",
-      "revision": "f2a7828fce14",
+      "revision": "21d8de0f7e91",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1067,7 +1077,7 @@
       "title": "Mistral Large Personality Results (2026)",
       "url": "https://agent-tune.com/models/mistral-large",
       "markdown": "https://agent-tune.com/models/mistral-large.md",
-      "revision": "ace584953227",
+      "revision": "fd079d9d9d67",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1077,7 +1087,7 @@
       "title": "Muse Spark Personality Results (2026)",
       "url": "https://agent-tune.com/models/muse-spark",
       "markdown": "https://agent-tune.com/models/muse-spark.md",
-      "revision": "3059e22f9e18",
+      "revision": "26ac9ee0929b",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1087,7 +1097,7 @@
       "title": "Muse Wonder Personality Results (2026)",
       "url": "https://agent-tune.com/models/muse-wonder",
       "markdown": "https://agent-tune.com/models/muse-wonder.md",
-      "revision": "f833e32f9cd2",
+      "revision": "fdde8c310ab8",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1097,7 +1107,7 @@
       "title": "Nemotron Personality Results (2026)",
       "url": "https://agent-tune.com/models/nemotron",
       "markdown": "https://agent-tune.com/models/nemotron.md",
-      "revision": "d9ed35d3de59",
+      "revision": "5f28f3f975d3",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1107,7 +1117,7 @@
       "title": "Qwen Coder Personality Results (2.5 to 3 Next)",
       "url": "https://agent-tune.com/models/qwen-coder",
       "markdown": "https://agent-tune.com/models/qwen-coder.md",
-      "revision": "7a50e36af963",
+      "revision": "9a82f2997eb8",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1117,7 +1127,7 @@
       "title": "Qwen Max Personality Results (2.5 to Qwen 4)",
       "url": "https://agent-tune.com/models/qwen-max",
       "markdown": "https://agent-tune.com/models/qwen-max.md",
-      "revision": "ae27179d75e3",
+      "revision": "27fbb3c92d8f",
       "evidence_status": "see_article_methods_and_limitations",
       "updated": "2026-11-26"
     },
@@ -1128,7 +1138,7 @@
       "url": "https://agent-tune.com/research/ai-personality-five-models-2026",
       "markdown": "https://agent-tune.com/research/ai-personality-five-models-2026.md",
       "evidence_status": "see_article_methods_and_limitations",
-      "revision": "d66f1522613b"
+      "revision": "db1cad64c67b"
     },
     {
       "id": "i-took-the-mbti-100-times",
@@ -1145,7 +1155,16 @@
       "title": "AgentTune: Free AI Custom Instructions, CLAUDE.md & Soul.md",
       "url": "https://agent-tune.com/",
       "markdown": "https://agent-tune.com/index.md",
-      "revision": "b8d22cb07872",
+      "revision": "8d36a155025e",
+      "evidence_status": "hub_directory"
+    },
+    {
+      "id": "about-page",
+      "kind": "hub",
+      "title": "About AgentTune & Bernard Huang | AI Psychology & Tuning",
+      "url": "https://agent-tune.com/about",
+      "markdown": "https://agent-tune.com/about.md",
+      "revision": "77c952b2c9cf",
       "evidence_status": "hub_directory"
     },
     {
@@ -1154,7 +1173,7 @@
       "title": "AI Model Personality Profiles (25 Families)",
       "url": "https://agent-tune.com/models/",
       "markdown": "https://agent-tune.com/models/index.md",
-      "revision": "ec4c3ef072f8",
+      "revision": "c21d6db93b94",
       "evidence_status": "hub_directory"
     },
     {
@@ -1163,7 +1182,7 @@
       "title": "AI Psychology Research Hub: 36 Studies",
       "url": "https://agent-tune.com/research",
       "markdown": "https://agent-tune.com/research.md",
-      "revision": "efc79d165809",
+      "revision": "f0156e931a56",
       "evidence_status": "hub_directory"
     },
     {
@@ -1172,7 +1191,7 @@
       "title": "AI Personality Guides & Platform Setups",
       "url": "https://agent-tune.com/guides/",
       "markdown": "https://agent-tune.com/guides/index.md",
-      "revision": "d9230632e315",
+      "revision": "d68d6222faf0",
       "evidence_status": "hub_directory"
     },
     {

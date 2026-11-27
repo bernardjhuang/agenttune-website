@@ -5,7 +5,7 @@ Research · Personality Atlas · IPIP-HEXACO
 
 # HEXACO personality test results across 25 AI families (1–5 scale).
 
-By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-hexaco-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-hexaco.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-hexaco-personalities.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-hexaco.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Six-factor personality profiles—adding Honesty-Humility (H) to Emotionality, Extraversion, Agreeableness, Conscientiousness, and Openness—measured with a public-domain 60-item IPIP-HEXACO proxy on a 1.00 to 5.00 scale.
 

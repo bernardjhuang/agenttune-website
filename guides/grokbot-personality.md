@@ -5,7 +5,7 @@ Guide · Grok & Grok Bot
 
 # Grok Bot characters: 16 copy-paste personality profiles.
 
-By Bernard Huang · Updated November 23, 2026 · ~11 min read · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grokbot-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** In Grok Bot, open the Bot → Edit Profile → Description and place a 'HOW TO TALK TO ME' rules block right under the Bot's JOB and BOUNDARIES so your rules survive long chats and Bot duplication. For standard Grok on X or grok.com, paste the same rules into Settings → Customize Grok.
 

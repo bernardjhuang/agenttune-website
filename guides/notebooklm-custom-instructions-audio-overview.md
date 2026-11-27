@@ -5,7 +5,7 @@ Guide & Builder · NotebookLM
 
 # NotebookLM custom instructions: steer Audio Overview hosts and source chat tone.
 
-By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To customize a NotebookLM Audio Overview, open the Studio panel → Audio Overview → Customize and paste a 4-line directive naming the episode format, priority angle, audience level, and host banter limit. You can inspect and reuse the exact prompt tied to any saved audio file from the Studio panel menu later.
 

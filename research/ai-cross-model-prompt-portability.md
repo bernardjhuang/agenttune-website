@@ -5,7 +5,7 @@ Wave 4 Empirical · November 2026 · 200 Replies
 
 # Do your custom instructions work the same across ChatGPT, Claude, Gemini, DeepSeek, and Qwen?
 
-By Bernard Huang · Updated November 26, 2026 · ~8 min read · [Markdown (.md)](https://agent-tune.com/research/ai-cross-model-prompt-portability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-cross-model-prompt-portability.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested four prompt styles across five major AI families (200 blind-graded replies) to see why vague style words like "be concise" fail on steady defaults—and how a numbered checklist cuts cross-model gaps sixfold.
 

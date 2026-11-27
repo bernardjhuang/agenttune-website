@@ -5,7 +5,7 @@ Guide · xAI Grok
 
 # Grok’s xAI default personality — and how to change it on X and grok.com.
 
-By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/grok-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change how Grok responds on grok.com or X, open Settings → Customize Grok to pick a built-in mode or paste persistent custom instructions (~4,000-character box). For a standalone cloud-teammate bot, create a Grok Bot and paste your rules into Edit Profile → Description.
 

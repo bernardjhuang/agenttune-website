@@ -5,7 +5,7 @@ Longitudinal Study · 2023–2026 · 32 Checkpoints · 8 Labs
 
 # How AI personalities evolved from 2023 to 2026: 32 checkpoints across 8 model lineages.
 
-By Bernard Huang · Updated November 26, 2026 · ~9 min read · [Markdown (.md)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We gave the same personality quizzes and behavior tests to 32 AI releases from May 2023 GPT-4 through November 2026 frontier models—uncovering an 11× drop in "As an AI" test refusals, a 2.0× convergence across labs on the Big Five, and calmer, more polished defaults.
 

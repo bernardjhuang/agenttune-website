@@ -5,7 +5,7 @@ Guide · Frameworks
 
 # MBTI vs Big Five for AI: crisp switches or calibrated dials.
 
-By Bernard Huang · Updated November 25, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/mbti-vs-big-five-for-ai.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use MBTI for a type-based starting template or Big Five for trait-based preferences. Neither has a demonstrated advantage for tuning in our reports. Edit the rules to fit your needs and compare the resulting responses.
 

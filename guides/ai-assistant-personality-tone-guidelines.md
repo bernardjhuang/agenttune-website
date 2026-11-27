@@ -5,7 +5,7 @@ Guide · Prompt & Tone Design
 
 # AI personality, tone, and verbosity guidelines: 5 checkable rules that beat adjectives.
 
-By Bernard Huang · Updated November 20, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Replace vague tone adjectives in API system prompts with four plain rules: (1) Opening Move (give the answer in the first 1–2 sentences), (2) Honest Uncertainty (say clearly when facts are missing or conflicting), (3) Pushback Posture (when to challenge a weak premise), and (4) Phrase Banlist (skip clichés, flattery, and trailing filler questions). Check every change with blind A/B tests.
 

@@ -5,7 +5,7 @@ Multi-Agent Debate · November 2026 · 240 Trials
 
 # Do language models cave to wrong peer consensus in multi-agent debates?
 
-By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-multi-agent-peer-conformity.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-multi-agent-peer-conformity.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 240 scripted multi-agent debates across five frontier models to see if three unanimous wrong peers can pressure an AI into agreeing with a false claim—and what changes when one peer dissents.
 

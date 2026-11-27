@@ -5,7 +5,7 @@ Guide & Picker · Gemini Live
 
 # Google Gemini Live voices and Personal Intelligence: voice list, setup, and sync fix.
 
-By Bernard Huang · Updated November 20, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 20, 2026 · [Markdown (.md)](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** To change Gemini's voice on Android or iOS, open the Gemini app → Profile → Settings → Gemini's voice (or tap the three-dot menu inside an active Gemini Live session) and pick from Ursa, Vega, Capella (British), Eclipse, Dipper, Pegasus, Orbit, Orion, Flare, or Glow. Save permanent tone rules under Settings & help → Personal Intelligence → Instructions for Gemini.
 

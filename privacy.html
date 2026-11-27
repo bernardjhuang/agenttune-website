@@ -92,7 +92,7 @@
       <p>AgentTune (“we”, “us”) runs <a href="/">agent-tune.com</a> and the open-source AgentTune template library. Contact us anytime at <!--email_off--><a href="mailto:hello@agent-tune.com">hello@agent-tune.com</a><!--/email_off-->.</p>
 
       <h2>2. What stays in your browser</h2>
-      <p><strong>Tests and browser tools:</strong> All 5 personality tests (<a href="/tests/">Tests</a>) and all 10 tools (<a href="/tools/">Free tools</a>) score and process text locally in your browser tab. Your quiz answers, memory exports, and custom instructions are never uploaded to AgentTune or sent to an AI model.</p>
+      <p><strong>Tests and browser tools:</strong> All 5 personality tests (<a href="/tests/">Tests</a>) and all 10 web tools (<a href="/tools/">Free tools</a>) score and process text locally in your browser tab. Your quiz answers, memory exports, and custom instructions never leave your device when using web pages. If an external AI client invokes our stateless <a href="/guides/mcp-server-ai-preferences-portable-tuning">MCP server</a> (<code>/mcp</code>) tools such as <code>check_instructions</code> or <code>convert_instructions</code>, submitted instruction snippets are processed strictly in memory to return lint findings or formatted blocks and are immediately discarded without logging or storage.</p>
       <p><strong>Local 7-day drafts:</strong> Unfinished quiz answers and generator drafts stay in your browser’s <code>localStorage</code> for up to 7 days so you can resume where you left off. Finishing a test, clicking Reset/Clear, or clearing browser storage deletes them immediately.</p>
       <p><strong>Share links:</strong> If you create a share link in the How to Work With Me card tool, the card text is placed in the URL’s <code>#card=...</code> hash fragment. That text is never stored on our servers, and the page strips the hash from the URL before any analytics script can see it. Because anyone with the link can read it, never put passwords or private keys in a shared card.</p>
 
@@ -122,7 +122,7 @@
     </main>
     <footer class="footer">
       <span>MIT · <a href="https://github.com/bernardjhuang/agenttune" target="_blank" rel="noopener">bernardjhuang/agenttune</a></span>
-      <span class="footer-legal"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+      <span class="footer-legal"><a href="/about">About</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
     </footer>
   </div>
 </body>

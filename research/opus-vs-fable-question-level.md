@@ -5,7 +5,7 @@ Research · descriptive reanalysis
 
 # Opus 5.5 vs Fable 5.1: which answers differ?
 
-By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/research/opus-vs-fable-question-level.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Both Claude Opus 5.5 and Claude Fable 5.1 most often test as INTJ. We compared all 170 individual questions across 1,000 fresh September 2026 runs to see where the two models give different answers.
 

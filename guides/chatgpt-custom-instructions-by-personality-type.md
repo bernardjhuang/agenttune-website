@@ -5,7 +5,7 @@ Guide · ChatGPT
 
 # ChatGPT custom instructions for every MBTI personality type.
 
-By Bernard Huang · Updated November 17, 2026 · ~12 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open ChatGPT Settings → Personalization → Custom Instructions and paste your chosen MBTI block into the second box ('How would you like ChatGPT to respond?'). Each of the 16 blocks below (INTJ through ESFP) is condensed from AgentTune's full MIT-licensed tuning files to stay well under the 1,500-character limit.
 

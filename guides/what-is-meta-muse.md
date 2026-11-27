@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # What is Meta Muse? Files, plans, and how it works.
 
-By Bernard Huang · Updated November 23, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/guides/what-is-meta-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/what-is-meta-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Meta Muse (muse.ai and iOS/Android app) is Meta's personal AI agent with connected-app actions, scheduled Tasks, Side Chats, and three editable Markdown files: Soul.md (how it communicates with you), Identity.md (name, avatar, and voice), and Memory.md (facts saved about you). Plans include Free ($0, refreshing usage limit), Power ($20/month, 500M Muse tokens/week), and Maximum ($100/month, 3B Muse tokens/week).
 

@@ -5,7 +5,7 @@ Workflow · Cross-Platform Memory
 
 # How to migrate AI memory into portable custom instructions without leaking secrets.
 
-By Bernard Huang · Updated November 17, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 17, 2026 · [Markdown (.md)](https://agent-tune.com/guides/migrate-ai-memory-custom-instructions.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Do not paste raw chat archives across AI apps. Export your memory list, review it locally in our browser AI Memory Export Reviewer to strip duplicates and redact emails or keys, separate personal facts from tone rules, and paste each half into the right settings box.
 

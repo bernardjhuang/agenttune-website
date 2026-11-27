@@ -5,7 +5,7 @@ Guide · DISC Prompts
 
 # DISC AI prompts for all four workplace styles.
 
-By Bernard Huang · Updated November 23, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 23, 2026 · [Markdown (.md)](https://agent-tune.com/guides/disc-ai-prompts.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Copy the DISC block that matches your working style: Dominance (bottom-line conclusions), Influence (fast brainstorming), Steadiness (step-by-step pacing), or Conscientiousness (strict verification and edge cases). Paste it into ChatGPT Custom Instructions, Claude Personal Preferences, Meta Muse Soul.md, or ~/.codex/AGENTS.md.
 

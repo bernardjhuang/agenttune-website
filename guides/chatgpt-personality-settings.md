@@ -5,7 +5,7 @@ Guide · OpenAI ChatGPT
 
 # ChatGPT personality settings: presets, warmth controls, and custom instructions.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/chatgpt-personality-settings.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Settings → Personalization in ChatGPT to pick a Base style preset (or leave it on Default), adjust the four Characteristic toggles (Warm, Enthusiastic, Headers & Lists, Emoji), and paste checkable behavioral rules into Custom Instructions (1,500 characters per box).
 

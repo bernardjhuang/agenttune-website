@@ -11,15 +11,15 @@ Everything on the site is free (all paid products were retired in July 2026):
 - **25 Model Personality Profiles ([`/models/`](https://agent-tune.com/models/)):** Multi-version profiles covering `87` primary checkpoints (`93` tested; `6` sparse `<20`-run checkpoints disclosed and excluded from rankings) across proprietary and open-weight model families.
 - **12 Personality Atlas Pages ([`/research/ai-personality-rankings`](https://agent-tune.com/research/ai-personality-rankings)):** Overview rankings, 6 framework deep dives (MBTI, Enneagram, Big Five, DISC, IPIP-HEXACO, Attachment Styles), and 5 lab/cohort rollups (Claude, ChatGPT, Gemini, Muse, and Open-Weight models).
 - **36 Empirical Research Studies ([`/research`](https://agent-tune.com/research)):** Longitudinal Waves 1–4 plus the 12-page Personality Atlas, `.md` mirrors, and raw JSON/CSV downloads.
-- **53 Practical Setup Guides ([`/guides/`](https://agent-tune.com/guides/)):** Copy-paste custom instructions and config guides for ChatGPT, Claude, Gemini, Grok, Muse, Codex, Cursor, DeepSeek, Notion AI, NotebookLM, and OpenRouter.
+- **54 Practical Setup Guides ([`/guides/`](https://agent-tune.com/guides/)):** Copy-paste custom instructions and config guides for ChatGPT, Claude, Gemini, Grok, Muse, Codex, Cursor, DeepSeek, Notion AI, NotebookLM, and OpenRouter.
 - **43 Tuning Templates ([`/library/`](https://agent-tune.com/library/)):** Generated from the pinned `vendor/agenttune-content/` bundle across MBTI, Enneagram, DISC, Attachment, and OCEAN/Big Five.
 - **5 Free Personality Tests ([`/tests/`](https://agent-tune.com/tests/)) & 10 Browser Tools ([`/tools/`](https://agent-tune.com/tools/)):** Local browser questionnaires + interactive custom-instruction builders and prompt comparators.
 
 ## Stack
 
-- **Static HTML + CSS + vanilla JS** — deterministic content generators outputting `182` HTML pages and a public-only `dist/` deployment bundle (`726+` assets)
-- **Cloudflare Pages + Pages Functions** — hosts the static site, `301` redirect rules (`_redirects`), custom Markdown headers (`_headers`), and the stateless streamable-HTTP MCP server (`functions/mcp.js` at `/mcp`)
-- **Discovery & agent specs** — `llms.txt`, `llms-full.txt`, `SKILL.md`, `.well-known/mcp/server-card.json`, `resources/catalog.json`, and 1:1 `.md` article mirrors
+- **Static HTML + CSS + vanilla JS** — deterministic content generators outputting `184+` HTML pages and a public-only `dist/` deployment bundle
+- **Cloudflare Pages + Pages Functions** — hosts the static site, `Accept: text/markdown` content negotiation (`functions/_middleware.js` + `_routes.json`), `301` redirect rules (`_redirects`), custom Markdown headers (`_headers`), and the `v1.5.0` stateless streamable-HTTP MCP server (`functions/mcp.js` at `/mcp`)
+- **Discovery & agent specs** — curated `llms.txt` (`<= 10 KB`), `llms-full.txt`, `SKILL.md`, `.well-known/mcp/server-card.json`, `resources/catalog.json`, content-hash `sitemap.xml` (`tools/lastmod-manifest.json`), and 1:1 `.md` article mirrors
 
 ## Project layout
 

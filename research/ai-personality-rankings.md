@@ -5,7 +5,7 @@ Research · Personality Atlas
 
 # AI personality rankings across 25 model families and 6 tests.
 
-By Bernard Huang · Updated November 26, 2026 · ~12 min read · [Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-personality-rankings.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We tested 25 AI model families (87 eligible versions, plus 6 partial or deprecated checkpoints excluded from rankings) across six standard personality surveys in isolated fresh chats with no memory.
 

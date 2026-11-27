@@ -5,7 +5,7 @@ Research · Personality Atlas · Meta
 
 # What personality type do Meta Muse and Llama test as?
 
-By Bernard Huang · Updated November 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 Comparing 8 active versions across Muse Wonder, Muse Spark, and Llama (with deprecated Llama 4 Scout excluded) on 6 surveys in fresh chats with no memory.
 

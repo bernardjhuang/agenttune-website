@@ -15,7 +15,7 @@ Fewer Quiz Refusals
 
 "As an AI" personality test refusals dropped 11× from 2023 to 2026 across 32 checkpoints.
 
-63.6% PC1
+63.6%
 
 One Main Helpfulness Trait
 
@@ -31,21 +31,21 @@ Repeatable Fable 5.2 (0.054 bits, 2/100 DISC) vs. varied DeepSeek V4 Pro (1.499 
 
 Independent 3-Model Grading
 
-Wave 3–4 studies eliminate self-grading by using three separate model families as blind judges.
+Recent task studies eliminate self-grading by using three separate model families as blind judges.
 
 Open data & scripts: [Agent Briefs JSON (15 studies)](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json) · [2023–2026 CSV](https://agent-tune.com/research/data/november-2026-historical-evolution-summary.csv) · [Factor PCA JSON](https://agent-tune.com/research/data/november-2026-factor-collapse-mtmm.json) · [Entropy JSON](https://agent-tune.com/research/data/november-2026-persona-entropy-acquiescence.json) · [Reasoning Traces JSON](https://agent-tune.com/research/data/november-2026-reasoning-phase-transition-results.json) · [/research.md](https://agent-tune.com/research.md)
 
-Wave 3 Landmark Studies · Timeline, Consistency & Reasoning Traces
+Landmark Studies · Timeline, Consistency & Reasoning Traces
 
 ## Four new studies showing how AI default personalities form—and where they vary.
 
-Building on our 20-model baseline and Wave 1–2 prompt benchmarks, Wave 3 analyzes all 10,000 scored test sheets and tests how 32 historical checkpoints and reasoning budgets change model replies.
+Building on our 20-model baseline and earlier prompt benchmarks, these studies analyze 10,000 scored test sheets and test how 32 historical checkpoints and reasoning budgets change model replies.
 
 01 · 2023–2026 Timeline · 32 Checkpoints
 
 ### Historical Evolution of AI Personalities (2023–2026)
 
-Refusal 60% → 5.5% · PCI Distance 4.02 → 1.97 · Gemma 2→3→4 Control
+Refusal 60% → 5.5% · Spread 4.02 → 1.97 · Gemma 2→3→4 Control
 
 Tracks 8 labs from May 2023 GPT-4 to Nov 2026 flagships. Cross-lab Big Five differences cut in half, Neuroticism dropped steadily (ρ = -0.47), and constant-scale Gemma 3 overshot into 67% groveling/preachiness before Gemma 4 dropped to 0%.
 
@@ -67,9 +67,9 @@ Turning reasoning effort from low to high does not make replies preachier, but i
 
 03 · One Main Factor · 10,000 Sheets
 
-### The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse & MTMM Audit
+### The AI &ldquo;Big One&rdquo;: 63.6% Factor Collapse & Multi-Test Audit
 
-PC1 = 63.58% · r(DISC D, N) = +0.93 · Embodied Midpoint 36.4%
+Main Factor = 63.58% · r(DISC D, N) = +0.93 · Embodied Midpoint 36.4%
 
 Human test-takers spread across five independent Big Five traits. Across 20 LLMs (2,000 Big Five sheets), one general helpfulness factor accounts for ~64% of all score variation, and body-specific questions draw 36.4% neutral clicks.
 

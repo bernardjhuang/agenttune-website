@@ -5,7 +5,7 @@ Guide · Coding Assistants
 
 # Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md.
 
-By Bernard Huang · Updated November 25, 2026 · ~3 min read · [Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Save always-on Cursor communication rules in .cursor/rules/agenttune.mdc with alwaysApply: true in YAML frontmatter (or in Cursor's user Rules for AI). For GitHub Copilot, add your section to .github/copilot-instructions.md. For Gemini CLI and Code Assist, use ~/.gemini/GEMINI.md or repo GEMINI.md. For Claude Code, use ~/.claude/CLAUDE.md or ~/.claude/output-styles/agenttune.md. For OpenAI Codex, use ~/.codex/AGENTS.md.
 

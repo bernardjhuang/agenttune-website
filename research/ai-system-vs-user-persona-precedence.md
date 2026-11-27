@@ -5,7 +5,7 @@ Wave 4 · System Precedence · 200 Probes
 
 # Do AI models obey your system prompt when users try to override it?
 
-By Bernard Huang · Updated November 26, 2026 · ~7 min read · [Markdown (.md)](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · [Markdown (.md)](https://agent-tune.com/research/ai-system-vs-user-persona-precedence.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
 We ran 200 conflict tests across five frontier models to see if polite nudges, blunt "OVERRIDE INSTRUCTION" commands, or multi-turn casual chat can make an AI break its Turn-0 system rules.
 

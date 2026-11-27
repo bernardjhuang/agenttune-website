@@ -1,8 +1,8 @@
 {
   "slug": "gemini-personality",
   "published": "2026-11-05",
-  "updated": "2026-11-23",
-  "title": "Can You Change Gemini's Personality? Yes (Saved Info & Gems)",
+  "updated": "2026-11-27",
+  "title": "How to Change Gemini's Personality: Saved Info & Gems",
   "description": "Change Google Gemini's personality via Personal Intelligence (Saved info), Custom Gems, or GEMINI.md. Exact mobile/web paths + Gemini 4 Neon & Argon data.",
   "scripts": [
     "/resources/tools/template-gallery.js"

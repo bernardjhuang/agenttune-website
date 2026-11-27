@@ -5,7 +5,7 @@ Guide · Meta Muse
 
 # Give Meta Muse a character: the Soul.md guide.
 
-By Bernard Huang · Updated November 25, 2026 · ~12 min read · [Markdown (.md)](https://agent-tune.com/guides/muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/muse-personality.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Open Assistant icon → Identity → Soul to edit Soul.md directly, or ask Muse in chat to add your rules and show you the updated file. Keep Muse's built-in Soul.md truths intact and append one labeled 'How to work with me' block (or merge safely in our free Soul.md editor). To undo your edit, delete that section or say 'Go back to your default personality.'
 
@@ -15,8 +15,8 @@ For ready-to-copy starting points, see our [20 Muse Soul.md templates](https://a
 
 ## The short version.
 
-- In the Muse app or `muse.ai`, tap the **Assistant icon** (your Muse’s avatar) → **Identity → Soul**.
-- Append a section at the bottom of `Soul.md` using the starter block below, one of the three character presets on this page, or any profile from the [library](https://agent-tune.com/library/).
+- In the Muse app or `muse.ai`, tap the **Assistant icon** (your Muse’s avatar) → **Identity → Soul**. (To customize Muse’s display name or portrait separately, see the [Meta Muse avatar & Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name).)
+- Append a section at the bottom of `Soul.md` using the starter block below, one of the three character presets on this page, or build your own in our [Custom Instructions Generator](https://agent-tune.com/tools/custom-instructions-generator?target=muse) or [template library](https://agent-tune.com/library/).
 - Save and test the same real task before and after in fresh chats.
 
 ```markdown
@@ -28,7 +28,7 @@ For ready-to-copy starting points, see our [20 Muse Soul.md templates](https://a
 - No openers like "Great question", no recap of what I just said, no closing offers.
 ```
 
-**Append to the file—do not replace it.** `Soul.md` also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove ([see mobile & Side Chats troubleshooting](https://agent-tune.com/guides/muse-personality)).
+**Append to the file—do not replace it.** `Soul.md` also holds Muse’s built-in core truths and boundaries. Adding your own heading at the bottom keeps your rules easy to edit or remove ([see mobile & Side Chats troubleshooting below](https://agent-tune.com/guides/muse-personality#muse-mobile-side-chats-and-refusals)).
 
 ## What ships in default Soul.md (and what not to delete).
 

@@ -5,7 +5,7 @@ Reference · Precedence & Scope
 
 # Project vs account instructions: what overrides what in AI.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-instruction-precedence-overrides.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Across ChatGPT, OpenAI Codex, Claude, Claude Code, and Meta Muse, specific rules override broad ones. Your current chat message beats project or repo files, and project or repo files beat account-wide preferences. In ChatGPT Projects, project instructions replace global Custom Instructions inside that workspace. In OpenAI Codex, nested folder AGENTS.md files override root AGENTS.md, which overrides ~/.codex/AGENTS.md.
 

@@ -5,7 +5,7 @@ Reference · Coding Agent Rules
 
 # CLAUDE.md vs. AGENTS.md vs. .cursorrules, Windsurf & Cline: complete matrix.
 
-By Bernard Huang · Updated November 25, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 25, 2026 · [Markdown (.md)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 **Quick answer:** Use AGENTS.md as your shared repo rules file across tools (Codex CLI reads up to 32 KiB by default, and Cursor, Cline, and Copilot read it too). Pair it with tool-specific repo files where needed—CLAUDE.md for Claude Code, .cursor/rules/*.mdc for Cursor, .windsurf/rules/*.md for Windsurf, .clinerules/ for Cline, .github/copilot-instructions.md for Copilot, and GEMINI.md for Gemini CLI. Keep your personal tone preferences in your own home-folder config.
 
