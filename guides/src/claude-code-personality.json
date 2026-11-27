@@ -135,6 +135,26 @@
       "kicker": "Tests",
       "label": "Find your type — free MBTI test",
       "href": "/tests/mbti"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — 5 checkpoints & tuning",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Fable — 3 checkpoints & tuning",
+      "href": "/models/claude-fable"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Sonnet — baseline & tuning",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Haiku — baseline & tuning",
+      "href": "/models/claude-haiku"
     }
   ],
   "promptModel": "fable-5-1",

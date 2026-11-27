@@ -145,7 +145,7 @@ You can reproduce the published summaries with the downloadable Node script and 
 
 - [The INTJ and INFP tuning files used](https://agent-tune.com/library/)
 
-- [Claude Opus 5.5: measured default](https://agent-tune.com/guides/claude-opus-5-5-personality)
+- [Claude Opus: measured default & checkpoints](https://agent-tune.com/models/claude-opus)
 
 ## Keep going.
 
@@ -180,7 +180,7 @@ Huang, B. (2026). Does personality tuning change AI answers?. AgentTune Empirica
 ```
 
 [← The Roleplay Tax (85/15 Calibration)](https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts)
-[Study 16 of 32 · Archive Index (32)](https://agent-tune.com/research)
-[12 Open-Source AI Models Tested →](https://agent-tune.com/research/what-personality-type-are-open-source-models)
+[Study 28 of 36 · Archive Index (36)](https://agent-tune.com/research)
+[September 2026 Five-Model Study →](https://agent-tune.com/research/ai-personality-five-models-2026)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

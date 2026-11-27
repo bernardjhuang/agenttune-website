@@ -98,6 +98,31 @@
       "href": "/guides/chatgpt-custom-instructions-examples"
     },
     {
+      "kicker": "Research",
+      "label": "What personality type is ChatGPT? (4 families)",
+      "href": "/research/what-personality-type-is-chatgpt"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — 6 checkpoints & tuning",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Sol — 4 checkpoints & wing notes",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Luna — personality profile",
+      "href": "/models/gpt-luna"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Terra — personality profile",
+      "href": "/models/gpt-terra"
+    },
+    {
       "kicker": "Guide",
       "label": "Custom GPT instructions template & 8,000-char guide",
       "href": "/guides/custom-gpt-instructions-template-limit"

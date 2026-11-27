@@ -119,6 +119,31 @@
       "kicker": "Claude Code",
       "label": "Set a coding-session output style",
       "href": "/guides/claude-code-personality"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — 5 checkpoints & tuning",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Fable — 3 checkpoints & tuning",
+      "href": "/models/claude-fable"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Sonnet — baseline & tuning",
+      "href": "/models/claude-sonnet"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Haiku — fast baseline & tuning",
+      "href": "/models/claude-haiku"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Claude?",
+      "href": "/research/what-personality-type-is-claude"
     }
   ],
   "changelog": [

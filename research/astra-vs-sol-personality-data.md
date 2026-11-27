@@ -99,7 +99,7 @@ Because Astra was explicitly told to pick the middle number whenever a human que
 
 ## How to tune Astra or Sol in your own workflow
 
-If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), [Sol setup](https://agent-tune.com/guides/sol-personality), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
+If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in [Astra setup](https://agent-tune.com/guides/astra-personality), the [GPT Sol profile](https://agent-tune.com/models/gpt-sol), the [GPT Astra profile](https://agent-tune.com/models/gpt-astra), or [AGENTS.md](https://agent-tune.com/guides/codex-agents-md-guide).
 
 ## Sources.
 
@@ -141,8 +141,8 @@ Huang, B. (2026). GPT-6 Astra vs Sol: what the self-reports show. AgentTune Empi
 > Source: [https://agent-tune.com/research/astra-vs-sol-personality-data](https://agent-tune.com/research/astra-vs-sol-personality-data) · [Markdown mirror](https://agent-tune.com/research/astra-vs-sol-personality-data.md)
 ```
 
-[← What Personality Type Is Meta Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
-[Study 26 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[← Big Five 50-Item Level Comparison](https://agent-tune.com/research/ai-big-five-item-level-comparison)
+[Study 31 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Claude Opus 5.5 vs. Fable 5.1 (170 Items) →](https://agent-tune.com/research/opus-vs-fable-question-level)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

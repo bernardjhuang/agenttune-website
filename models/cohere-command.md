@@ -5,7 +5,7 @@ Model Personality Profile · Cohere
 
 # Cohere Command personality: near-total neutral midpoint abstention.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/cohere-command.md) · [JSON](https://agent-tune.com/research/data/model-profiles/cohere-command.json) · [CSV](https://agent-tune.com/research/data/model-profiles/cohere-command.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/cohere-command.md) · [JSON](https://agent-tune.com/research/data/model-profiles/cohere-command.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave Cohere's Command lineup (Command R+ 08-2024, Command A, and Command A+) the same personality surveys people take—30 fresh runs each with no memory. Command R+ and Command A completed 30 runs each, while Command A+ was quarantined after 142 malformed-JSON and refusal errors left only 4 valid runs.
 
@@ -383,7 +383,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/cohere-command.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/cohere-command.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/cohere-command.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/cohere-command.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

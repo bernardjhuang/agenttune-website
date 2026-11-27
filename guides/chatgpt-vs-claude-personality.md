@@ -88,3 +88,8 @@ Across our 60-reply pilot, explicit formatting and directness instructions lifte
 - [Guide: 7 best Claude personality setups & Personal Preferences](https://agent-tune.com/guides/claude-personality)
 - [Three-way: Muse vs ChatGPT vs Claude: customization comparison](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
 - [Tool: Instruction A/B Test Bench (randomized comparison)](https://agent-tune.com/tools/instruction-test-bench)
+- [Atlas: AI personality rankings across 25 model families](https://agent-tune.com/research/ai-personality-rankings)
+- [Model profile: GPT Astra — 6 checkpoints & tuning](https://agent-tune.com/models/gpt-astra)
+- [Model profile: GPT Sol — 4 checkpoints & tuning](https://agent-tune.com/models/gpt-sol)
+- [Model profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)

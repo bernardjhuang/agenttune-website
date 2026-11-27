@@ -95,6 +95,26 @@
       "kicker": "Library",
       "label": "Browse all 43 personality tuning files",
       "href": "/library/"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — coding & IDE baseline",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — Codex & execution baseline",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemini Pro & Neon — personality profile",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Coder — open-weight coding profile",
+      "href": "/models/qwen-coder"
     }
   ],
   "promptModel": "any",

@@ -96,7 +96,7 @@ Download the raw answers, instrument keys, and reanalysis script into one folder
 ## Keep going.
 
 - [Continue reading: Stable labels and variable answers](https://agent-tune.com/research/ai-personality-repeatability)
-- [Continue reading: The wider INTJ question](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
+- [Atlas: AI MBTI Personalities across 25 model families](https://agent-tune.com/research/ai-mbti-personalities)
 
 ### Cite this study (APA 7th · BibTeX · Markdown Brief)
 
@@ -121,8 +121,8 @@ Huang, B. (2026). Are AI models really INTJ? The tie-breaking effect. AgentTune 
 > Source: [https://agent-tune.com/research/ai-mbti-tie-breaking](https://agent-tune.com/research/ai-mbti-tie-breaking) · [Markdown mirror](https://agent-tune.com/research/ai-mbti-tie-breaking.md)
 ```
 
-[← Is Every AI Actually an INTJ?](https://agent-tune.com/research/first-ai-that-is-not-an-intj)
-[Study 29 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[← Claude Opus 5.5 vs. Fable 5.1 (170 Items)](https://agent-tune.com/research/opus-vs-fable-question-level)
+[Study 33 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [What "Neutral" Means on AI Tests →](https://agent-tune.com/research/ai-neutral-answers)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

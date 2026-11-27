@@ -31,7 +31,7 @@ test('funnel tracking is consent gated, allowlisted, payload free, and stops on 
 });
 test('public build excludes operational files but preserves content and research downloads',()=>{
  const {isPublic}=require('../tools/build-public');
- for(const p of ['package.json','README.md','docs/copy-audit-2026-09-24.md','tools/copy-metrics.py','tools/build-guides.js','guides/src/fable-personality.json','.env','.github/workflows/deploy.yml'])assert.equal(isPublic(p),false,p);
+ for(const p of ['package.json','README.md','docs/copy-audit-2026-09-24.md','tools/copy-metrics.py','tools/build-guides.js','guides/src/astra-personality.json','.env','.github/workflows/deploy.yml'])assert.equal(isPublic(p),false,p);
  for(const p of ['index.html','404.html','styles.css','consent.js','research/data/september-2026-score.cjs','research/data/september-2026-responses.json','library/index.json','tools/custom-instructions-generator.html','tunings/mbti/INTJ.md','output-styles/index.json','.well-known/mcp/server-card.json','.well-known/mcp-registry-auth','.well-known/security.txt'])assert.equal(isPublic(p),true,p);
 });
 

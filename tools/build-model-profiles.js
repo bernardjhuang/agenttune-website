@@ -1059,7 +1059,9 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
   const route = `/models/${slug}`;
   const isLive = dataset.data_status !== 'stage0_fixture' && fs.existsSync(path.join(DATA_DIR, `${slug}.json`));
   const jsonHref = isLive ? `/research/data/model-profiles/${slug}.json` : `/models/${slug}.md`;
-  const csvHref = isLive ? `/research/data/model-profiles/${slug}.csv` : `/research/data/november-2026-openrouter-summary.csv`;
+  const csvHref = isLive
+    ? (fs.existsSync(path.join(DATA_DIR, `${slug}.csv`)) ? `/research/data/model-profiles/${slug}.csv` : `/research/data/model-profiles/atlas-overview.csv`)
+    : `/research/data/november-2026-openrouter-summary.csv`;
   const cp = getLatestCheckpoint(dataset);
 
   const plainPill = spec.pill && !/crystalline|zero-memory|h_mm|track b|\bbai\b|protocol|imported-/i.test(spec.pill)
@@ -1124,7 +1126,7 @@ function buildFamilyPageSpec(spec, dataset, peerDatasets) {
       { id: 'data-and-brief', h2: 'Raw data and agent brief', html: buildSectionDataAndBrief(spec, dataset, jsonHref, csvHref) }
     ],
     faq: spec.faq,
-    sources: spec.sources,
+    sources: (spec.sources || []).filter((s) => !/\/(?:guides\/(?:fable-personality|claude-opus-5-5-personality|sol-personality)|research\/what-personality-type-is-grok)\/?$/i.test(String(s && s.href || ''))),
     related: spec.related
   };
 }

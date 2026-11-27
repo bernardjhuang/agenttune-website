@@ -1454,19 +1454,23 @@ function buildLabCohortSpec(pageMeta, data, template) {
 
 function buildAll(opts = {}) {
   const { data, template, srcPath, isFixture } = loadIndex(opts);
-  const outDir = opts.outDir || STAGING_DIR;
+  const promote = Boolean(opts.promote);
+  const outDir = promote ? path.join(ROOT, 'research') : (opts.outDir || STAGING_DIR);
   const srcDir = path.join(outDir, 'src');
-  const dataDir = path.join(outDir, 'data');
+  const dataDir = promote ? LIVE_DATA_DIR : path.join(outDir, 'data');
 
-  // Clean stale HTML/JSON/MD files in staging dir so old slugs never linger
-  if (fs.existsSync(outDir)) {
-    for (const ent of fs.readdirSync(outDir, { withFileTypes: true })) {
-      if (ent.isFile() && /\.(html|md|json)$/.test(ent.name)) fs.unlinkSync(path.join(outDir, ent.name));
+  // Clean stale HTML/JSON/MD files ONLY in staging dir so old slugs never linger;
+  // when promoting into research/, never delete non-Atlas studies.
+  if (!promote) {
+    if (fs.existsSync(outDir)) {
+      for (const ent of fs.readdirSync(outDir, { withFileTypes: true })) {
+        if (ent.isFile() && /\.(html|md|json)$/.test(ent.name)) fs.unlinkSync(path.join(outDir, ent.name));
+      }
     }
-  }
-  if (fs.existsSync(srcDir)) {
-    for (const ent of fs.readdirSync(srcDir, { withFileTypes: true })) {
-      if (ent.isFile() && ent.name.endsWith('.json')) fs.unlinkSync(path.join(srcDir, ent.name));
+    if (fs.existsSync(srcDir)) {
+      for (const ent of fs.readdirSync(srcDir, { withFileTypes: true })) {
+        if (ent.isFile() && ent.name.endsWith('.json')) fs.unlinkSync(path.join(srcDir, ent.name));
+      }
     }
   }
 
@@ -1474,10 +1478,12 @@ function buildAll(opts = {}) {
   fs.mkdirSync(dataDir, { recursive: true });
 
   const csvFiles = writeCsvFiles(data.families, dataDir);
-  if (!isFixture && !opts.outDir) {
+  if (!isFixture && !opts.outDir && !promote) {
     writeCsvFiles(data.families, LIVE_DATA_DIR);
   }
-  fs.writeFileSync(path.join(dataDir, 'index.json'), JSON.stringify(data, null, 2) + '\n');
+  if (!promote) {
+    fs.writeFileSync(path.join(dataDir, 'index.json'), JSON.stringify(data, null, 2) + '\n');
+  }
 
   const specs = [];
   specs.push(buildOverviewSpec(data, template));
@@ -1505,7 +1511,7 @@ function buildAll(opts = {}) {
     built.push({ slug: spec.slug, route: spec.route, specOut, htmlOut, mdOut });
   }
 
-  return { srcPath, isFixture, outDir, csvFiles, built };
+  return { srcPath, isFixture, promote, outDir, csvFiles, built };
 }
 
 module.exports = { buildAll, loadIndex, STAGING_DIR, PER_TEST_CONFIGS };
@@ -1513,7 +1519,8 @@ module.exports = { buildAll, loadIndex, STAGING_DIR, PER_TEST_CONFIGS };
 if (require.main === module) {
   const args = process.argv.slice(2);
   const useFixture = args.includes('--fixture');
-  const res = buildAll({ fixture: useFixture });
-  console.log(`Built ${res.built.length} Atlas staging pages (${res.isFixture ? 'stage0_fixture' : 'live_index'}) from ${path.relative(ROOT, res.srcPath)} -> ${path.relative(ROOT, res.outDir)}/`);
+  const promote = args.includes('--promote');
+  const res = buildAll({ fixture: useFixture, promote });
+  console.log(`Built ${res.built.length} Atlas ${res.promote ? 'LIVE' : 'staging'} pages (${res.isFixture ? 'stage0_fixture' : 'live_index'}) from ${path.relative(ROOT, res.srcPath)} -> ${path.relative(ROOT, res.outDir)}/`);
   console.log(`Numeric-only CSVs emitted: ${res.csvFiles.join(', ')}`);
 }

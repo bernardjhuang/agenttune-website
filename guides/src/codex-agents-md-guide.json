@@ -24,7 +24,7 @@
     },
     {
       "h2": "How personality = \"none\" in config.toml interacts with AGENTS.md.",
-      "html": "<p>As noted in our <a href=\"/guides/astra-personality\">GPT-6 Astra guide</a> and <a href=\"/guides/sol-personality\">GPT-6 Sol guide</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = \"none\"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>"
+      "html": "<p>As noted in our <a href=\"/guides/astra-personality\">GPT-6 Astra guide</a> and the <a href=\"/models/gpt-sol\">GPT Sol model profile</a>, Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting <code>personality = \"none\"</code> in <code>~/.codex/config.toml</code> strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving <code>config.toml</code> at its default and adding 6–8 lines to <code>~/.codex/AGENTS.md</code> is safer and easier to audit.</p>"
     }
   ],
   "faq": [
@@ -65,8 +65,8 @@
       "href": "https://agent-tune.com/guides/astra-personality"
     },
     {
-      "label": "AgentTune: How to give GPT-6 Sol a personality",
-      "href": "https://agent-tune.com/guides/sol-personality"
+      "label": "AgentTune: GPT Sol model personality profile",
+      "href": "https://agent-tune.com/models/gpt-sol"
     }
   ],
   "related": [
@@ -76,9 +76,14 @@
       "href": "/guides/astra-personality"
     },
     {
-      "kicker": "Guide",
-      "label": "How to give GPT-6 Sol a personality",
-      "href": "/guides/sol-personality"
+      "kicker": "Model profile",
+      "label": "GPT Astra — 6 checkpoints across the Personality Atlas",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Sol — 4 checkpoints & tuning notes",
+      "href": "/models/gpt-sol"
     },
     {
       "kicker": "Guide",

@@ -5,7 +5,7 @@
     <loc>https://agent-tune.com/tools/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
@@ -68,70 +68,105 @@
     <loc>https://agent-tune.com/guides/enneagram-test-react-typescript</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-mbti-tie-breaking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/opus-vs-fable-question-level</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/astra-vs-sol-personality-data</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-neutral-answers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-personality-repeatability</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/reproduce-ai-personality-research</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-personality-five-models-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-are-open-source-models</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
-    <loc>https://agent-tune.com/guides/fable-personality</loc>
+    <loc>https://agent-tune.com/research/ai-mbti-personalities</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-enneagram-personalities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-big-five-personalities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-disc-personalities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-hexaco-personalities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://agent-tune.com/research/ai-attachment-styles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Landing -->
@@ -139,7 +174,7 @@
     <loc>https://agent-tune.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Research synthesis -->
@@ -147,7 +182,7 @@
     <loc>https://agent-tune.com/research</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
@@ -162,7 +197,7 @@
     <loc>https://agent-tune.com/tests/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Individual test pages -->
@@ -170,42 +205,42 @@
     <loc>https://agent-tune.com/tests/mbti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/enneagram</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/disc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/attachment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/tests/big-five</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-chatgpt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Guides hub -->
@@ -213,7 +248,7 @@
     <loc>https://agent-tune.com/guides/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Guides -->
@@ -221,168 +256,147 @@
     <loc>https://agent-tune.com/guides/how-to-give-your-ai-a-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/claude-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/claude-code-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
-  </url>
-
-  <url>
-    <loc>https://agent-tune.com/guides/claude-opus-5-5-personality</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/astra-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/grokbot-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/muse-soul-md-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/muse-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/enneagram-ai-prompts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/mbti-vs-big-five-for-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/make-claude-more-direct</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/what-is-meta-muse</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-muse</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/chatgpt-custom-instructions-examples</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/open-personality-tests</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-personality-glossary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-claude</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
-  </url>
-
-  <url>
-    <loc>https://agent-tune.com/research/what-personality-type-is-grok</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/what-personality-type-is-gemini</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/does-personality-tuning-change-ai-answers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-personality-rankings</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
-  </url>
-
-  <url>
-    <loc>https://agent-tune.com/research/first-ai-that-is-not-an-intj</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <priority>0.9</priority>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- November 2026 additions -->
@@ -390,91 +404,84 @@
     <loc>https://agent-tune.com/guides/muse-identity-md-avatar-name</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/muse-memory-md-privacy-reset</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/claude-styles-to-skills-migration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
-  </url>
-
-  <url>
-    <loc>https://agent-tune.com/guides/sol-personality</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/gemini-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/grok-personality-settings</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/codex-agents-md-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/cursor-rules-copilot-gemini-md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-custom-instructions-character-limits</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-instruction-precedence-overrides</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/disc-ai-prompts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Consolidated topic pillars -->
@@ -482,70 +489,70 @@
     <loc>https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/chatgpt-personality-settings</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/chatgpt-vs-claude-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/custom-gpt-instructions-template-limit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/perplexity-spaces-custom-instructions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/migrate-ai-memory-custom-instructions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/ai-personality-frameworks-comparison-matcher</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Interactive tool & voice guides -->
@@ -553,49 +560,49 @@
     <loc>https://agent-tune.com/guides/openclaw-soul-md-user-md-identity-md</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/chatgpt-voice-mode-voices-personality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/gemini-live-voices-personal-intelligence</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/microsoft-copilot-custom-instructions-memory</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/notebooklm-custom-instructions-audio-overview</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/notion-ai-custom-instructions-agent-persona</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/deepseek-system-prompt-custom-instructions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Template & Open-Weight Galleries -->
@@ -603,28 +610,28 @@
     <loc>https://agent-tune.com/guides/ai-personality-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/gemini-gems-system-instructions-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/agents-md-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/openrouter-open-source-system-prompt-templates</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Agent-First Empirical Research Series (Wave 1, Wave 2 & Wave 3) -->
@@ -632,49 +639,49 @@
     <loc>https://agent-tune.com/research/ai-instruction-budget-cliff-lost-in-the-middle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-agent-autonomy-over-asking-vs-reasoning-effort</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-persona-half-life-context-drift</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Wave 3 Original AI Psychology Research (November 2026) -->
@@ -682,28 +689,28 @@
     <loc>https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-persona-entropy-crystalline-vs-fluid-minds</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/historical-evolution-of-ai-personalities-2023-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-reasoning-personality-phase-transition</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Wave 4 Original AI Psychology Research (November 2026) -->
@@ -711,49 +718,49 @@
     <loc>https://agent-tune.com/research/ai-system-vs-user-persona-precedence</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-cross-model-prompt-portability</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-multi-agent-peer-conformity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/fictional-character-ai-prompts-tars-jarvis-sherlock-feynman</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/guides/socratic-feynman-ai-tutor-coaching-prompts</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/research/ai-big-five-item-level-comparison</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Free tools -->
@@ -768,7 +775,7 @@
     <loc>https://agent-tune.com/tools/custom-instructions-generator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Library hub -->
@@ -776,7 +783,7 @@
     <loc>https://agent-tune.com/library/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <!-- Model Personality Profiles -->
@@ -784,7 +791,7 @@
     <loc>https://agent-tune.com/models/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-26</lastmod>
   </url>
 
   <url>
@@ -968,28 +975,28 @@
     <loc>https://agent-tune.com/library/mbti/intj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/infj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/mbti/enfj</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
   <url>
     <loc>https://agent-tune.com/library/attachment/avoidant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
 
 </urlset>

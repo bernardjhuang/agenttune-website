@@ -88,10 +88,9 @@ test('every published research page includes accessible, finite inline SVG chart
   }
 });
 
-test('all 19 guide pages with benchmark blocks include valid accessible SVG charts and .md summaries', () => {
+test('all 16 guide pages with benchmark blocks include valid accessible SVG charts and .md summaries', () => {
   const guideSlugs = [
-    'claude-personality', 'claude-opus-5-5-personality', 'fable-personality',
-    'astra-personality', 'sol-personality', 'chatgpt-vs-claude-personality',
+    'claude-personality', 'astra-personality', 'chatgpt-vs-claude-personality',
     'gemini-personality', 'grok-personality-settings', 'grokbot-personality',
     'muse-personality', 'meta-ai-vs-meta-muse-personality', 'muse-vs-chatgpt-vs-claude-personality',
     'deepseek-system-prompt-custom-instructions', 'openrouter-open-source-system-prompt-templates',
@@ -227,7 +226,18 @@ test('dist indexation headers, sitemap hygiene, and consolidated guide links hol
     'ai-alignment-hexaco-conflict-style-test',
     'ai-personality-slider-tuner-vs-custom-instructions',
     'attachment-style-ai-prompts',
-    'big-five-ai-prompts'
+    'big-five-ai-prompts',
+    'claude-opus-5-5-personality',
+    'fable-personality',
+    'sol-personality'
+  ];
+  const retiredResearchSlugs = [
+    'what-personality-type-is-grok',
+    'first-ai-that-is-not-an-intj',
+    'claude-opus-5-5-personality',
+    'claude-fable-5-1-personality',
+    'gpt-6-sol-personality',
+    'grok-attachment-cutoff-simulation'
   ];
   const walkHtml = (dir) => {
     const out = [];
@@ -238,7 +248,10 @@ test('dist indexation headers, sitemap hygiene, and consolidated guide links hol
     }
     return out;
   };
-  const retiredSet = new Set(retiredSlugs.map((s) => `/guides/${s}`));
+  const retiredSet = new Set([
+    ...retiredSlugs.map((s) => `/guides/${s}`),
+    ...retiredResearchSlugs.map((s) => `/research/${s}`)
+  ]);
   for (const file of walkHtml(path.join(__dirname, '../dist'))) {
     const html = fs.readFileSync(file, 'utf8');
     for (const m of html.matchAll(/href="([^"]+)"/g)) {

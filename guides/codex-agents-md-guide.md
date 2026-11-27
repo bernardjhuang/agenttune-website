@@ -52,7 +52,7 @@ Starter personal block for `~/.codex/AGENTS.md` (~620 bytes, leaving over 31 KiB
 
 ## How personality = "none" in config.toml interacts with AGENTS.md.
 
-As noted in our [GPT-6 Astra guide](https://agent-tune.com/guides/astra-personality) and [GPT-6 Sol guide](https://agent-tune.com/guides/sol-personality), Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting `personality = "none"` in `~/.codex/config.toml` strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving `config.toml` at its default and adding 6–8 lines to `~/.codex/AGENTS.md` is safer and easier to audit.
+As noted in our [GPT-6 Astra guide](https://agent-tune.com/guides/astra-personality) and the [GPT Sol model profile](https://agent-tune.com/models/gpt-sol), Codex 0.155.x retired the older Friendly/Pragmatic personality picker. Setting `personality = "none"` in `~/.codex/config.toml` strips the built-in personality block from the system prompt (which on Astra also removes default technical-writing rules). Leaving `config.toml` at its default and adding 6–8 lines to `~/.codex/AGENTS.md` is safer and easier to audit.
 
 ## Questions people ask.
 
@@ -84,12 +84,13 @@ Codex builds its instruction chain once when a session or run starts. Start a ne
 
 - [AgentTune: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 
-- [AgentTune: How to give GPT-6 Sol a personality](https://agent-tune.com/guides/sol-personality)
+- [AgentTune: GPT Sol model personality profile](https://agent-tune.com/models/gpt-sol)
 
 ## Keep going.
 
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
-- [Guide: How to give GPT-6 Sol a personality](https://agent-tune.com/guides/sol-personality)
+- [Model profile: GPT Astra — 6 checkpoints across the Personality Atlas](https://agent-tune.com/models/gpt-astra)
+- [Model profile: GPT Sol — 4 checkpoints & tuning notes](https://agent-tune.com/models/gpt-sol)
 - [Guide: The layer your AGENTS.md is missing (coding agent personality)](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)

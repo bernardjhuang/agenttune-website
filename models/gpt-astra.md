@@ -5,7 +5,7 @@ Model Personality Profile · OpenAI
 
 # GPT Astra personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-astra.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gpt-astra.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-astra.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave both OpenAI GPT Astra releases (gpt-6-astra and gpt-6.2-astra) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory. We also ran hands-on behavior tests to see how Astra acts when challenged.
 
@@ -382,7 +382,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/gpt-astra.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/gpt-astra.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-astra.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

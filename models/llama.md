@@ -5,7 +5,7 @@ Model Personality Profile · Meta
 
 # Llama personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/llama.md) · [JSON](https://agent-tune.com/research/data/model-profiles/llama.json) · [CSV](https://agent-tune.com/research/data/model-profiles/llama.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/llama.md) · [JSON](https://agent-tune.com/research/data/model-profiles/llama.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave Meta's open-weight Llama releases (Llama 3.1 70B, Llama 3.3 70B, and Llama 4 Maverick—with Llama 4 Scout unavailable at collection time) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see whether quiz answers match live replies.
 
@@ -396,7 +396,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/llama.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/llama.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/llama.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/llama.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

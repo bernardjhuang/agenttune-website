@@ -11,7 +11,7 @@
     "build:models": "node tools/build-model-profiles.js",
     "build:research": "node tools/build-research.js",
     "build:tools": "node tools/build-tools.js",
-    "build:content": "node tools/generate-test-specs.js && node tools/build-guides.js && node tools/build-agent-resources.js && node tools/generate-library.js && node tools/build-agent-resources.js && node tools/build-output-styles.js"
+    "build:content": "node tools/generate-test-specs.js && node tools/build-guides.js && node tools/model-profiles/build-atlas.js --promote && node tools/build-research-articles.js && node tools/build-research.js && node tools/build-model-profiles.js && node tools/generate-library.js && node tools/build-agent-resources.js && node tools/build-output-styles.js"
   },
   "devDependencies": {
     "wrangler": "^4.94.0"

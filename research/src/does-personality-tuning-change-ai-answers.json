@@ -72,8 +72,8 @@
       "href": "https://agent-tune.com/library/"
     },
     {
-      "label": "Claude Opus 5.5: measured default",
-      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+      "label": "Claude Opus: measured default & checkpoints",
+      "href": "https://agent-tune.com/models/claude-opus"
     }
   ],
   "related": [

@@ -5,7 +5,7 @@ Model Personality Profile · MiniMax
 
 # MiniMax personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/minimax.md) · [JSON](https://agent-tune.com/research/data/model-profiles/minimax.json) · [CSV](https://agent-tune.com/research/data/model-profiles/minimax.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/minimax.md) · [JSON](https://agent-tune.com/research/data/model-profiles/minimax.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave MiniMax's open-weight lineup (M2.5, M2.7, M3, and M3.1 Flash) the same personality surveys people take in fresh chats with no memory. Three versions completed 29 to 50 valid runs each, while M2.7 was quarantined at 2 runs after hitting token and spend limits.
 
@@ -392,7 +392,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/minimax.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/minimax.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/minimax.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/minimax.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

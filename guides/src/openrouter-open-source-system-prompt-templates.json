@@ -80,6 +80,71 @@
       "kicker": "All templates",
       "label": "Master AI template directory across every platform",
       "href": "/guides/ai-personality-templates"
+    },
+    {
+      "kicker": "Model directory",
+      "label": "All 25 AI model personality profiles",
+      "href": "/models/"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "DeepSeek Pro — personality profile",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "DeepSeek Flash — personality profile",
+      "href": "/models/deepseek-flash"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Max — personality profile",
+      "href": "/models/qwen-max"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Qwen Coder — personality profile",
+      "href": "/models/qwen-coder"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Llama — Meta open-weights profile",
+      "href": "/models/llama"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemma — Google open-weights profile",
+      "href": "/models/gemma"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GLM — Zhipu AI personality profile",
+      "href": "/models/glm"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Kimi — Moonshot AI personality profile",
+      "href": "/models/kimi"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "MiniMax — personality profile",
+      "href": "/models/minimax"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Mistral Large — personality profile",
+      "href": "/models/mistral-large"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Nemotron — NVIDIA personality profile",
+      "href": "/models/nemotron"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Cohere Command — enterprise profile",
+      "href": "/models/cohere-command"
     }
   ],
   "changelog": [

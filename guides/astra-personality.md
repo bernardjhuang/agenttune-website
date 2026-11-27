@@ -90,7 +90,7 @@ OpenAI’s developer notes for GPT-6 Astra highlight three habits that affect ho
 
 ## Astra's questionnaire results (Sept & Nov 2026).
 
-Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI) and November 23, 2026 (`openai/gpt-6.2-astra` via single-turn blind OpenRouter runs; full data in [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json))—Astra shows how administration and model revision shift self-reports ([compare with Sol](https://agent-tune.com/guides/sol-personality)):
+Across two 100-session cohorts—September 24, 2026 (`gpt-6-astra` in Codex CLI) and November 23, 2026 (`openai/gpt-6.2-astra` via single-turn blind OpenRouter runs; full data in [november-2026-openrouter-summary.json](https://agent-tune.com/research/data/november-2026-openrouter-summary.json))—Astra shows how administration and model revision shift self-reports ([compare with GPT Sol](https://agent-tune.com/models/gpt-sol)):
 
 | Test | GPT-6 Astra (Sept 2026 Codex, n = 100) | GPT-6.2 Astra (Nov 2026 OpenRouter, n = 100) |
 | --- | --- | --- |
@@ -178,8 +178,9 @@ OpenAI's docs do not say clearly. They say Work uses your account memory. For As
 
 ## Keep going.
 
-- [New resource: GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data)
-- [Guide: How to give GPT-6 Sol a personality](https://agent-tune.com/guides/sol-personality)
+- [Model profile: GPT Astra — 6 checkpoints across the Personality Atlas](https://agent-tune.com/models/gpt-astra)
+- [Model profile: GPT Sol — 4 checkpoints & wing notes](https://agent-tune.com/models/gpt-sol)
+- [Research: GPT-6 Astra vs Sol: what the self-reports show](https://agent-tune.com/research/astra-vs-sol-personality-data)
 - [Guide: OpenAI Codex AGENTS.md guide: 32 KiB limit and overrides](https://agent-tune.com/guides/codex-agents-md-guide)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Guide: ChatGPT custom instructions by personality type](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)

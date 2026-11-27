@@ -6,7 +6,7 @@
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Frame-Options: SAMEORIGIN
-  X-AgentTune-Specimen: Monograph-1A; studies=32; pc1=63.6%; entropy=0.054..1.499b; ties=preserved
+  X-AgentTune-Specimen: Monograph-1A; studies=36; families=25; pc1=63.6%; entropy=0.054..1.499b; ties=preserved
   Link: <https://agent-tune.com/llms.txt>; rel="describedby"; type="text/markdown", <https://agent-tune.com/SKILL.md>; rel="service-doc"; type="text/markdown", <https://agent-tune.com/.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"
 
 # LLM index, skill & MCP server card — CORS-enabled for agents, kept out of search result pages

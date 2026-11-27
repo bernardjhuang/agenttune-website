@@ -104,6 +104,21 @@
       "href": "/tools/custom-instructions-generator"
     },
     {
+      "kicker": "Model profile",
+      "label": "DeepSeek Pro — baseline & tuning",
+      "href": "/models/deepseek-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "DeepSeek Flash — baseline & tuning",
+      "href": "/models/deepseek-flash"
+    },
+    {
+      "kicker": "Atlas",
+      "label": "All 25 AI model personality profiles",
+      "href": "/models/"
+    },
+    {
       "kicker": "Anti-Sycophancy",
       "label": "How to make AI push back and stop agreeing with you",
       "href": "/guides/stop-ai-sycophancy-make-ai-push-back"

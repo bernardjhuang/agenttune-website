@@ -215,3 +215,6 @@ Saved Info (Personal Intelligence) applies globally across standard Gemini chats
 - [Search vs App: Google AI Overview vs Gemini tone settings](https://agent-tune.com/guides/google-ai-overview-gemini-tone-settings)
 - [Voice: Gemini Live voices & Personal Intelligence guide](https://agent-tune.com/guides/gemini-live-voices-personal-intelligence)
 - [Research: What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
+- [Model profile: Gemini Pro & Neon — personality profile](https://agent-tune.com/models/gemini-pro)
+- [Model profile: Gemini Flash & Hydrogen — personality profile](https://agent-tune.com/models/gemini-flash)
+- [Model profile: Gemma — open-weights profile](https://agent-tune.com/models/gemma)

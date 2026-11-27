@@ -5,7 +5,7 @@ Model Personality Profile · Meta
 
 # Muse Spark personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/muse-spark.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [CSV](https://agent-tune.com/research/data/model-profiles/muse-spark.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~20 min read · [Markdown (.md)](https://agent-tune.com/models/muse-spark.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave four versions of Meta's Muse Spark (1.1, 1.2, 1.3, and the open-weight muse-spark-open release) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -396,7 +396,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/muse-spark.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/muse-spark.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/muse-spark.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

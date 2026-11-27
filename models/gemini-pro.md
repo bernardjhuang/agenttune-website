@@ -5,7 +5,7 @@ Model Personality Profile · Google
 
 # Gemini Pro & Neon personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-pro.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-pro.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemini-pro.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~23 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-pro.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-pro.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five Google Gemini Pro releases (2.5 Pro, 3.1 Pro, and Gemini 4 Argon, Carbon, and Neon) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see whether quiz answers match how each version replies.
 
@@ -411,7 +411,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/gemini-pro.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gemini-pro.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/gemini-pro.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gemini-pro.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

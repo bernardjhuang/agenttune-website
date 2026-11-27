@@ -104,3 +104,7 @@ Yes. The core bullet points are portable across all coding assistants; only the 
 - [Guide: Claude Code personality: CLAUDE.md and /output-style](https://agent-tune.com/guides/claude-code-personality)
 - [Guide: How to change Gemini's personality: Gems, Saved Info, and CLI](https://agent-tune.com/guides/gemini-personality)
 - [Library: Browse all 43 personality tuning files](https://agent-tune.com/library/)
+- [Model profile: Claude Opus — coding & IDE baseline](https://agent-tune.com/models/claude-opus)
+- [Model profile: GPT Astra — Codex & execution baseline](https://agent-tune.com/models/gpt-astra)
+- [Model profile: Gemini Pro & Neon — personality profile](https://agent-tune.com/models/gemini-pro)
+- [Model profile: Qwen Coder — open-weight coding profile](https://agent-tune.com/models/qwen-coder)

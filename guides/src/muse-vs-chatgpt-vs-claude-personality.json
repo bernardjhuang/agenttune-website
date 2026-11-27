@@ -131,6 +131,26 @@
       "kicker": "Guide",
       "label": "How to change Claude's personality",
       "href": "/guides/claude-personality"
+    },
+    {
+      "kicker": "Atlas",
+      "label": "All 25 AI model personality profiles",
+      "href": "/models/"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Muse Spark — personality profile",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — personality profile",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — personality profile",
+      "href": "/models/claude-opus"
     }
   ]
 }

@@ -5,7 +5,7 @@ Model Personality Profile · Qwen
 
 # Qwen Coder personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-coder.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-coder.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-coder.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-coder.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-coder.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave four Qwen Coder releases (Qwen 2.5 Coder 32B, Qwen3 Coder 480B, Qwen3 Coder Flash, and Qwen3 Coder Next) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how these coding models act under pushback.
 
@@ -395,7 +395,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/qwen-coder.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/qwen-coder.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/qwen-coder.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/qwen-coder.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

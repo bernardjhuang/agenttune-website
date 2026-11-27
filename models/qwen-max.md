@@ -5,7 +5,7 @@ Model Personality Profile · Qwen
 
 # Qwen Max personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/qwen-max.md) · [JSON](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five Qwen flagship releases (Qwen 2.5 72B, Qwen 3 235B, Qwen 3.7 Max, Qwen 3.8 Max, and Qwen 4 Max) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to check how quiz defaults hold up in live replies.
 
@@ -409,7 +409,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/qwen-max.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/qwen-max.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/qwen-max.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

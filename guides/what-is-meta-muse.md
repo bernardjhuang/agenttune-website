@@ -125,3 +125,5 @@ Meta says Help improve our AI models is on initially. You can turn it off under 
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
+- [Model profile: Muse Spark — personality profile](https://agent-tune.com/models/muse-spark)
+- [Model profile: Muse Wonder — personality profile](https://agent-tune.com/models/muse-wonder)

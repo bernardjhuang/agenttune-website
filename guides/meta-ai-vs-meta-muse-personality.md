@@ -85,3 +85,7 @@ No. Selecting a spoken voice preset changes audio playback and surface tone, not
 - [Guide: Meta Muse Memory.md, privacy, and how to reset safely](https://agent-tune.com/guides/muse-memory-md-privacy-reset)
 - [Templates: Meta Muse Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
+- [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
+- [Model profile: Muse Spark — personality profile](https://agent-tune.com/models/muse-spark)
+- [Model profile: Muse Wonder — personality profile](https://agent-tune.com/models/muse-wonder)
+- [Model profile: Llama — Meta open-weights profile](https://agent-tune.com/models/llama)

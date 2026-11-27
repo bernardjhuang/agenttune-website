@@ -118,6 +118,9 @@ In our November 2026 blind OpenRouter benchmark (n = 100 fresh sessions each), G
 
 - [20 Templates: Best Gemini Gems, Saved Info & GEMINI.md templates (.md downloads)](https://agent-tune.com/guides/gemini-gems-system-instructions-templates)
 - [Research: What personality type is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
+- [Model profile: Gemini Pro & Neon — personality profile](https://agent-tune.com/models/gemini-pro)
+- [Model profile: Gemini Flash & Hydrogen — personality profile](https://agent-tune.com/models/gemini-flash)
+- [Model profile: Gemma — open-weights personality profile](https://agent-tune.com/models/gemma)
 - [Guide: Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md](https://agent-tune.com/guides/cursor-rules-copilot-gemini-md)
 - [Guide: AI custom instructions character limits (2026 cheat sheet)](https://agent-tune.com/guides/ai-custom-instructions-character-limits)
 - [Guide: How to give your AI a personality](https://agent-tune.com/guides/how-to-give-your-ai-a-personality)

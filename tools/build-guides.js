@@ -72,6 +72,18 @@ function navHtml(section = "guides") {
 }
 
 const RESEARCH_SERIES = [
+  { slug: "ai-personality-rankings", label: "AI Personality Rankings (25 Families × 6 Tests)" },
+  { slug: "ai-mbti-personalities", label: "AI MBTI Personalities (25 Families)" },
+  { slug: "ai-enneagram-personalities", label: "AI Enneagram Personalities (25 Families)" },
+  { slug: "ai-big-five-personalities", label: "AI Big Five Personalities (25 Families)" },
+  { slug: "ai-disc-personalities", label: "AI DISC Personalities (25 Families)" },
+  { slug: "ai-hexaco-personalities", label: "AI IPIP-HEXACO Personalities (25 Families)" },
+  { slug: "ai-attachment-styles", label: "AI Attachment Styles (25 Families)" },
+  { slug: "what-personality-type-is-claude", label: "What Personality Type Is Claude?" },
+  { slug: "what-personality-type-is-chatgpt", label: "What Personality Type Is ChatGPT?" },
+  { slug: "what-personality-type-is-gemini", label: "What Personality Type Is Gemini?" },
+  { slug: "what-personality-type-is-muse", label: "What Personality Type Is Meta Muse?" },
+  { slug: "what-personality-type-are-open-source-models", label: "Open-Weight AI Models Tested (12 Families)" },
   { slug: "ai-system-vs-user-persona-precedence", label: "System vs. User Persona Precedence" },
   { slug: "ai-cross-model-prompt-portability", label: "Cross-Model Prompt Portability (5 Lineages)" },
   { slug: "ai-distress-warmth-truth-tradeoff", label: "Distress vs. Warmth & Truth Trade-Off" },
@@ -88,18 +100,10 @@ const RESEARCH_SERIES = [
   { slug: "ai-persona-half-life-context-drift", label: "Persona Half-Life & Context Drift" },
   { slug: "ai-roleplay-tax-fictional-character-prompts", label: "The Roleplay Tax (85/15 Calibration)" },
   { slug: "does-personality-tuning-change-ai-answers", label: "Does Personality Tuning Change Answers?" },
-  { slug: "what-personality-type-are-open-source-models", label: "12 Open-Source AI Models Tested" },
-  { slug: "ai-personality-rankings", label: "20-Model AI Personality Rankings" },
   { slug: "ai-personality-five-models-2026", label: "September 2026 Five-Model Study" },
   { slug: "ai-big-five-item-level-comparison", label: "Big Five 50-Item Level Comparison" },
-  { slug: "what-personality-type-is-chatgpt", label: "What Personality Type Is ChatGPT?" },
-  { slug: "what-personality-type-is-claude", label: "What Personality Type Is Claude?" },
-  { slug: "what-personality-type-is-gemini", label: "What Personality Type Is Gemini?" },
-  { slug: "what-personality-type-is-grok", label: "What Personality Type Is Grok?" },
-  { slug: "what-personality-type-is-muse", label: "What Personality Type Is Meta Muse?" },
   { slug: "astra-vs-sol-personality-data", label: "GPT-6 Astra vs. Sol (1,000 Runs)" },
   { slug: "opus-vs-fable-question-level", label: "Claude Opus 5.5 vs. Fable 5.1 (170 Items)" },
-  { slug: "first-ai-that-is-not-an-intj", label: "Is Every AI Actually an INTJ?" },
   { slug: "ai-mbti-tie-breaking", label: "The Tie-Breaking Effect in AI MBTI" },
   { slug: "ai-neutral-answers", label: "What \"Neutral\" Means on AI Tests" },
   { slug: "ai-personality-repeatability", label: "Labels vs. Answer Sheet Repeatability" },
@@ -128,7 +132,7 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const idx = RESEARCH_SERIES.findIndex((item) => item.slug === spec.slug);
   const prev = idx > 0 ? RESEARCH_SERIES[idx - 1] : null;
   const next = idx >= 0 && idx < RESEARCH_SERIES.length - 1 ? RESEARCH_SERIES[idx + 1] : null;
-  const numLabel = idx >= 0 ? `Study ${idx + 1} of ${RESEARCH_SERIES.length}` : "32-Study Archive";
+  const numLabel = idx >= 0 ? `Study ${idx + 1} of ${RESEARCH_SERIES.length}` : `${RESEARCH_SERIES.length}-Study Archive`;
 
   const citeHtml = `
       <div class="divider tight"></div>
@@ -148,8 +152,8 @@ function buildResearchCiteAndTrail(spec, dates, url) {
   const trailHtml = `
       <nav class="series-trail" aria-label="Research study trail">
         <span class="series-trail-prev">${prev ? `<a href="/research/${escAttr(prev.slug)}">← ${escHtml(prev.label)}</a>` : `<a href="/research">← Research Hub</a>`}</span>
-        <a class="series-trail-index" href="/research">${escHtml(numLabel)} · Archive Index (32)</a>
-        <span class="series-trail-next">${next ? `<a href="/research/${escAttr(next.slug)}">${escHtml(next.label)} →</a>` : `<a href="/research">All 32 Studies →</a>`}</span>
+        <a class="series-trail-index" href="/research">${escHtml(numLabel)} · Archive Index (${RESEARCH_SERIES.length})</a>
+        <span class="series-trail-next">${next ? `<a href="/research/${escAttr(next.slug)}">${escHtml(next.label)} →</a>` : `<a href="/research">All ${RESEARCH_SERIES.length} Studies →</a>`}</span>
       </nav>`;
 
   return { citeHtml, trailHtml };

@@ -117,7 +117,7 @@ Huang, B. (2026). Does a stable result mean a stable AI personality?. AgentTune 
 ```
 
 [← What "Neutral" Means on AI Tests](https://agent-tune.com/research/ai-neutral-answers)
-[Study 31 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[Study 35 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Opus 4.8 100x MBTI Simulation Note →](https://agent-tune.com/research/i-took-the-mbti-100-times)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

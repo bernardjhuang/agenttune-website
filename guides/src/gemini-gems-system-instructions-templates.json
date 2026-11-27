@@ -80,6 +80,21 @@
       "kicker": "Research",
       "label": "What personality type is Gemini?",
       "href": "/research/what-personality-type-is-gemini"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemini Pro & Neon — personality profile",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemini Flash & Hydrogen — personality profile",
+      "href": "/models/gemini-flash"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemma — open-weights profile",
+      "href": "/models/gemma"
     }
   ],
   "changelog": [

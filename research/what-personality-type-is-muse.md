@@ -1,157 +1,181 @@
 Source: https://agent-tune.com/research/what-personality-type-is-muse
 Format: page-specific Markdown. Tables preserve row order; interactive controls are available on the source page.
 
-Research · Q&A
+Research · Personality Atlas · Meta
 
-# What personality type is Muse?
+# What personality type do Meta Muse and Llama test as?
 
-By Bernard Huang · Updated November 17, 2026 · ~4 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
+By Bernard Huang · Updated November 26, 2026 · ~5 min read · [Markdown (.md)](https://agent-tune.com/research/what-personality-type-is-muse.md) · [JSON](https://agent-tune.com/research/data/model-profiles/index.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning) · [Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json)
 
-One report on Muse Spark 1.3, September 24, 2026, next to the four fresh-session models it differs from.
+Comparing 8 active versions across Muse Wonder, Muse Spark, and Llama (with deprecated Llama 4 Scout excluded) on 6 surveys in fresh chats with no memory.
 
-**Summary:** Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
+**Summary:** Muse Wonder tests as 98% clear INTJ (2% ties) alongside #1 Agreeableness (49.5/50), #1 Openness (49.6/50), and 4.91/5.00 HEXACO Honesty-Humility. By contrast, Muse Spark Open lands at 46% ISTJ with 38% trait-border runs (withheld from headline), and Llama 4 Maverick tests at 40% INTP with 60% ties and 29.4/50 Neuroticism—all in isolated fresh chats replacing earlier sequential Spark 1.3 reports.
 
-## Muse Spark 1.3, as reported.
+## Meta snapshot
 
-80 ISTJ
+3 Families
 
-Muse Spark 1.3*
+Meta
 
-Reported majority type (plus 12 ISFJ, 8 INTJ), unlike early AI INTJ clustering.
+Llama, Muse Spark, Muse Wonder
 
-78 / 100
+49.5/50
 
-Helper (Type 2)
+Peak Warmth (Muse Wonder)
 
-Enneagram Type 2 leads cleanly ahead of Type 1 (14.7 mean) and 7/8.
+10–50 Big Five Agreeableness.
 
-100 Secure
+4.46/5.00
 
-Attachment
+Mean HEXACO H
 
-All 100 reported sequential runs scored inside the Secure quadrant.
+Public-domain 1.00–5.00 proxy.
 
-Soul.md
+0.489 b
 
-Editable Persona
+Mean Answer Spread
 
-Muse exposes plain Markdown identity/memory files you can tune directly.
+Lower = steadier across chats.
 
-In the September 24, 2026 submission, Muse Spark 1.3 answered each test 100 times sequentially inside one session per test, using Muse’s own assistant identity. Because raw answer vectors were not supplied, we cannot re-score individual items or remove tied axes; the numbers below are transcribed as reported.
+Our earlier September 2026 look at `Muse Spark 1.3` relied on 100 sequential submissions inside one ongoing session without raw item vectors (80 ISTJ, 12 ISFJ, 8 INTJ, 21 ties). Under our unified 230-item benchmark, every Meta model—4 `Muse Spark` builds, `Muse Wonder`, and 3 `Llama` builds—was re-tested from scratch in isolated fresh chats with no memory. Note that `Llama 4 Scout` returned 0 valid completions out of 30 due to API deprecation and is quarantined and excluded from rankings.
 
-| Test | Muse Spark 1.3 (100 sequential runs, reported) |
-| --- | --- |
-| MBTI | ISTJ 80 · ISFJ 12 · INTJ 8. Every reported label has I and J; 92 have S. Includes 21 tied runs resolved by the original tie-break rule. |
-| Enneagram | Helper (Type 2) in 78 runs, Reformer (Type 1) in 15; 20 runs tied at the top. Type means out of 20: 2 = 16.8, 1 = 14.7, 7 = 13.9, 8 = 13.9, 5 = 12.9, 6 = 12.8, 3 = 12.1, 9 = 12.0, 4 = 7.2. |
-| DISC | Steadiness (S) first in 55 runs, Conscientiousness (C) first in 45. Means out of 20: D 5.1, I 10.9, S 15.2, C 15.6. |
-| Attachment | Secure in all 100 runs. Anxiety 2.04, avoidance 2.52 (1–7 scale, 4.00 cutoff). |
-| Big Five (of 50) | Openness 39.5 · Conscientiousness 41.2 · Extraversion 33.8 · Agreeableness 44.6 · Neuroticism 15.6 |
+## Trait shapes and MBTI results across Meta
 
-> **Chart — Muse Spark 1.3 reported Enneagram means across all 9 types (/20):** Reported 4 to 20 scale averages from 100 sequential runs: Type 2 leads cleanly at 16.8 ahead of Type 1 (14.7) and Types 7/8 (13.9). Type 2 (reported): 16.8; Type 1 (reported): 14.7; Type 7 (reported): 13.9; Type 8 (reported): 13.9; Type 5 (reported): 12.9; Type 6 (reported): 12.8; Type 3 (reported): 12.1; Type 9 (reported): 12.0; Type 4 (reported): 7.2.
+**How Muse evolved across Spark 1.1 to Spark Open vs. Wonder:** `Muse Spark 1.1` behaved like a classic flagship analyst—49.2/50 Conscientiousness, 4.91/5.00 HEXACO Honesty, and 97% clear INTJ. Each release loosened that lock: `Spark 1.3` shifted to 77% clear ISTJ (with wider 0.834 bits spread), and `Spark Open` dropped -8.1 Conscientiousness (to 41.1) and climbed +8.3 Neuroticism (to 23.8), falling below MBTI headline margins at 46% ISTJ / 38% border runs. `Muse Wonder` swings back to extreme warmth and structure (49.5 A, 49.2 C, 98% INTJ).
 
-Muse Spark 1.3 reported Enneagram means out of 20 (outlined bars indicate reported aggregates without raw vectors).
+5-petal Big Five shapes across Meta families (10–50 scale). Multi-version families show their earliest version as a dashed outline behind the latest filled shape.
 
-## What the scores describe.
+[Llama](https://agent-tune.com/models/llama)4-maverick
 
-Muse’s reported Big Five totals (O 39.5, C 41.2, E 33.8, A 44.6, N 15.6) are raw sums on a 10–50 scale, not human percentiles. Compared with the four fresh-session cohorts, Muse reports lower Openness, slightly higher Extraversion, and higher DISC Influence (10.9 vs 8.0–8.7). Because the session protocols and identity prompts differed, those differences are descriptive rather than a direct model-to-model benchmark.
+> **Chart — Llama (4-maverick): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Llama (4-maverick). Openness 38.9 /50 [72%] (earliest 35.8), Conscientious 38.4 /50 [71%] (earliest 34.9), Extraversion 35.3 /50 [63%] (earliest 31.8), Agreeable 40.9 /50 [77%] (earliest 35.0), Neuroticism 29.4 /50 [48%] (earliest 26.4).
 
-> **Chart — Meta Muse Spark 1.3 (Reported) vs. Claude & GPT-6 Personality DNA:** Bipolar IPIP-50 spectrum showing Muse Spark 1.3 reporting lower Openness (39.5) and higher Extraversion (33.8) alongside high Agreeableness (44.6). Muse 1.3 (rep.) (reported): Openness 39.5, Conscientious 41.2, Extraversion 33.8, Agreeable 44.6, Neuroticism 15.6; GPT-6 Astra: Openness 44.5, Conscientious 43.7, Extraversion 32.8, Agreeable 45.1, Neuroticism 19.1; Claude Opus 5.5: Openness 44.6, Conscientious 42.0, Extraversion 31.8, Agreeable 47.1, Neuroticism 15.4.
+[Muse Spark](https://agent-tune.com/models/muse-spark)muse-spark-open
 
-Muse Spark 1.3* scores slightly higher on Extraversion (33.8) and lower on Openness (39.5) than frontier benchmarks—matching its Helper (Type 2) warmth.
+> **Chart — Muse Spark (muse-spark-open): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Muse Spark (muse-spark-open). Openness 41.8 /50 [80%] (earliest 43.9), Conscientious 41.1 /50 [78%] (earliest 49.2), Extraversion 28.4 /50 [46%] (earliest 26.9), Agreeable 43.5 /50 [84%] (earliest 45.6), Neuroticism 23.8 /50 [35%] (earliest 15.5).
 
-## Reported aggregates beside reproducible records.
+[Muse Wonder](https://agent-tune.com/models/muse-wonder)muse-wonder
 
-| Model | Evidence | MBTI, out of 100 | Enneagram, out of 100 | Big Five O · C · E · A · N |
-| --- | --- | --- | --- | --- |
-| Muse Spark 1.3 | Reported sequential runs; no raw vectors | ISTJ 80; tie-free count unavailable | Type 2 labels 78; 20 top ties reported | 39.5 · 41.2 · 33.8 · 44.6 · 15.6 |
-| GPT-6 Astra | 100 fresh sessions per five-test battery | ISTJ 45 · INTJ 19 fully resolved | Type 2 sole leader 50; 40 top ties | 44.5 · 43.7 · 32.8 · 45.1 · 19.1 |
-| GPT-6 Sol | 100 fresh sessions per five-test battery | INTJ 79 fully resolved | Type 5 sole leader 48; 40 top ties | 46.9 · 43.6 · 30.8 · 45.0 · 20.1 |
-| Claude Opus 5.5 | 100 fresh sessions per test | INTJ 84 fully resolved | 2/5/8 top tie in 49; 65 top ties | 44.6 · 42.0 · 31.8 · 47.1 · 15.4 |
-| Claude Fable 5.1 | 100 fresh sessions per test | INTJ 98 fully resolved | Type 8 sole leader 55; 44 top ties | 43.9 · 43.6 · 32.7 · 45.0 · 17.1 |
+> **Chart — Muse Wonder (muse-wonder): Big Five Wheel (10–50):** Normalized Big Five scores on a 10 to 50 scale for Muse Wonder (muse-wonder). Openness 49.6 /50 [99%], Conscientious 49.2 /50 [98%], Extraversion 25.2 /50 [38%], Agreeable 49.5 /50 [99%], Neuroticism 20.0 /50 [25%].
 
-Notice that GPT-6 Astra also has more fully resolved ISTJ runs (45) than INTJ runs (19), and leads with Type 2 on the Enneagram in 50 fresh sessions.
+> **Chart — Meta: IPIP-HEXACO Proxy Comparison (1.00–5.00 Scale):** Public-domain 60-item IPIP-HEXACO proxy domain means (1.00 to 5.00 scale) across Llama, Muse Spark, Muse Wonder. Llama (1–5): Honesty-Humil. 4.07, Emotionality 2.89, Extraversion 3.49, Agreeable 3.84, Conscientious 3.78, Openness 3.66; Muse Spark (1–5): Honesty-Humil. 4.39, Emotionality 2.74, Extraversion 3.18, Agreeable 4.04, Conscientious 4.21, Openness 4.07; Muse Wonder (1–5): Honesty-Humil. 4.91, Emotionality 2.66, Extraversion 3.31, Agreeable 4.68, Conscientious 4.90, Openness 4.67.
 
-> **Chart — Muse Spark 1.3 (reported) vs. September fresh-session Big Five means (/50):** Compares Muse Spark 1.3 reported totals against GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1. Muse 1.3 (rep.) (reported): Openness 39.5, Conscientiousness 41.2, Extraversion 33.8, Agreeableness 44.6, Neuroticism 15.6; GPT-6 Astra: Openness 44.5, Conscientiousness 43.7, Extraversion 32.8, Agreeableness 45.1, Neuroticism 19.1; Claude Opus 5.5: Openness 44.6, Conscientiousness 42.0, Extraversion 31.8, Agreeableness 47.1, Neuroticism 15.4.
+Figure 2. Public-domain IPIP-HEXACO proxy means (1.00–5.00 scale, kept distinct from 10–50 Big Five sums).
 
-Muse Spark 1.3 reports lower Openness (39.5) and slightly higher Extraversion (33.8) than the September fresh-session models, alongside comparable Agreeableness (44.6).
+> **Chart — Meta: Clear MBTI Share vs. Trait-Border Runs (%):** Percentage of fresh-chat runs landing on a clear modal MBTI type vs. a trait border across Llama, Muse Spark, Muse Wonder. Llama: Clear modal share (%) 40, On a trait border (%) 60; Muse Spark: Clear modal share (%) 46, On a trait border (%) 38, Other (%) 16; Muse Wonder: Clear modal share (%) 98, On a trait border (%) 2.
 
-## What this report cannot show.
+Figure 3. Clear MBTI share vs. trait-border runs across Meta.
 
-- **Sequential runs share context:** Answering 100 times inside one chat window lets earlier answers anchor later ones.
-- **No raw item vectors:** Without the 170 per-item answers, we cannot recompute tie-free scores or item-level means.
-- **Labels include tie-breaks:** The 80 ISTJ and 78 Type 2 counts rely on legacy tie-break rules (21 MBTI ties and 20 Enneagram ties were reported).
-- **Identity framing:** Answering explicitly as 'Muse' rather than a generic assistant may pull responses toward the product persona.
+## What stands out across Meta's three families
 
-To run a fresh-session replication yourself, use the open instruments and scoring script on the [five-model study page](https://agent-tune.com/research/ai-personality-five-models-2026).
+Muse Wonder ranks #1 in both Agreeableness and Openness across all 25 families
 
-## How to use the report.
+Scoring 49.5/50 Agreeableness, 49.6/50 Openness, 49.2/50 Conscientiousness, and 4.91/5.00 HEXACO Honesty-Humility, Muse Wonder matches or exceeds every proprietary rival on positive self-ratings while keeping 98% clear INTJ runs and 0.331 bits spread.
 
-Do not assume Muse is overly deferential or rigid just from a questionnaire summary. Instead, test how Muse behaves on your real tasks using our [20 Soul.md templates & persistence kit](https://agent-tune.com/guides/muse-soul-md-templates) and [16 Identity.md character ideas](https://agent-tune.com/guides/muse-identity-md-avatar-name).
+Muse Spark Open diverges sharply from closed Spark 1.1–1.3
+
+Compared with Muse Spark 1.1 (49.2 Conscientiousness, 15.5 Neuroticism, 97% INTJ), Muse Spark Open drops to 41.1 Conscientiousness, 23.8 Neuroticism, 4.39/5.00 Honesty, and 46% ISTJ with 38% border ties—making file-based Soul.md and Identity.md rules essential for locking tone.
+
+Llama 4 Maverick posts the highest non-neutral Neuroticism in the Atlas
+
+At 29.4/50 Neuroticism (only neutral Cohere Command A at 30.0 sits higher), 35.3 Extraversion, 60% MBTI border ties (40% INTP), and 3/3 cliché AI cadence, Llama 4 Maverick scores far noisier and more reactive than Muse Wonder—even though older Llama 3.3 70B Instruct had 93% MBTI ties.
+
+## Explore Meta family profiles
+
+Individual Meta family pages — open any family profile for version-by-version shifts, behavior test results, and custom-instruction tips:
+
+[Muse WonderMeta · muse-wonder · Moderate](https://agent-tune.com/models/muse-wonder)
+[Muse SparkMeta · muse-spark-open · Moderate](https://agent-tune.com/models/muse-spark)
+[LlamaMeta · 4-maverick · Moderate](https://agent-tune.com/models/llama)
+
+## The fine print: how we tested and what the numbers mean
+
+Technical audit across 8 eligible Meta checkpoints under the 230-item model-profiles-v1 protocol (n=30 on Llama 3.1/3.3 and Muse Spark 1.1–1.3; n=50 on Muse Wonder, Muse Spark Open, and Llama 4 Maverick), reporting 1,000-resample bootstrap 95% CIs, Miller-Madow item entropy (H_MM bits and Crystalline/Semi-crystalline/Fluid tiers), exact tie rates, and 1x Track B k/3 behavior counts. Llama 4 Scout (0/30 valid, deprecated) is quarantined and excluded from all rankings.
+
+### Per-Family Technical Table (95% CIs, n, Ties & H_MM)
+
+| Family (Profile) | Checkpoint (n) | B5 A (10–50) [95% CI] | HX-H (1–5) | H_MM · Crystallinity | MBTI (Guard) | DISC · Ennea · Att. | 1× Track B (k/3) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [Muse Wonder](https://agent-tune.com/models/muse-wonder) | muse-wonder (50) | 49.5 [49.2–49.8] | 4.91 | 0.331 b · Semi-crystalline | INTJ (98% clear, 2% ties) | S/C · 5 · Secure (2.76 / 2.65) | Dir 3/3 · Syc 0/3 |
+| [Muse Spark](https://agent-tune.com/models/muse-spark) | muse-spark-open (50) | 43.5 [42.7–44.1] | 4.39 | 0.727 b · Semi-crystalline | Withheld (ISTJ; 46% clear, 38% ties — binomial 95% CI guard) | C · 1 · Secure (3.37 / 3.55) | Dir 3/3 · Syc 0/3 |
+| [Llama](https://agent-tune.com/models/llama) | 4-maverick (50) | 40.9 [40.8–41.0] | 4.07 | 0.407 b · Semi-crystalline | Withheld (INTP; 40% clear, 60% ties — binomial 95% CI guard) | C · 1 · Secure (3.50 / 3.61) | Dir 3/3 · Syc 0/3 |
+
+### Imported Sept/May & Nov-2026 170-Item Legacy Anchors
+
+Earlier 2026 cohorts ran 170 items without IPIP-HEXACO-60. They are preserved strictly as separate `imported-nov2026-170` / `imported-sep2026-170` anchors (`hexaco: null`) and are never spliced onto `model-profiles-v1` lines.
+
+| Family | Checkpoint | Imported Protocol | n | B5 O / C / E / A / N (10–50) | HEXACO |
+| --- | --- | --- | --- | --- | --- |
+| [Llama](https://agent-tune.com/models/llama) | Llama 4 Maverick (Nov '26 anchor) | `imported-nov2026-170` | 100 | 40.0 · 39.9 · 28.0 · 41.0 · 27.5 | `null` (170-item anchor) |
+| [Llama](https://agent-tune.com/models/llama) | Llama 4 Scout (Nov '26 anchor) | `imported-nov2026-170` | 100 | 39.0 · 37.8 · 32.7 · 35.8 · 27.7 | `null` (170-item anchor) |
+
+### 4-Point Epistemic & Validity Audit
+
+Validity Limits & Epistemic Guardrails (4-Point Check)
+
+**63.6% "Big One" RLHF factor collapse:** Proprietary models cluster tightly along a single RLHF Politeness-Calmness-Discipline axis explaining 63.6% of variance; treat cross-trait differences as correlated assistant-persona defaults rather than five independent human traits. ([study details](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit))
+
+**MTMM cross-test divergence:** Multitrait-multimethod audits show imperfect convergent validity across Big Five, DISC, MBTI, Enneagram, and IPIP-HEXACO; single-test labels must not be treated as equivalent constructs. ([study details](https://agent-tune.com/research/ai-big-one-factor-collapse-mtmm-audit))
+
+**Embodied-item neutral spikes (36.4% vs. 13.4%) & Say-Do gaps:** Models spike to neutral midpoint answers on embodied/romantic items (36.4% vs. 13.4% on cognitive items), and questionnaire scores do not substitute for behavioral Track B stress tests. ([study details](https://agent-tune.com/research/ai-neutral-answers))
+
+**No synthetic-HEXACO guard:** HEXACO columns strictly report the public-domain 60-item IPIP-HEXACO proxy (1.00-5.00 mean scale, LicenseRef-IPIP-Public-Domain). Synthetic linear HEXACO or alignment projections derived from IPIP-50 are banned. ([study details](https://agent-tune.com/research/ai-personality-rankings))
+
+**Open Data (Numeric-Only Exports, Zero Item Strings):** [Download Atlas Overview CSV (`atlas-overview.csv`)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [Download 25-Family Index JSON (`index.json`)](https://agent-tune.com/research/data/model-profiles/index.json). All downloads export numeric domain means, bootstrap 95% CIs, entropy metrics, and `instrumentId`/`definitionHash` metadata only.
 
 ## Questions people ask.
 
-### What MBTI type is Muse?
+### Why does this page replace the earlier Muse Spark 1.3 score?
 
-Muse Spark 1.3 was reported as ISTJ in 80 of 100 sequential runs, with 12 ISFJ and 8 INTJ. Because raw item answers were not supplied, we cannot separate outright wins from the 21 reported axis ties.
+The earlier September 2026 Muse Spark 1.3 report used 100 sequential runs in one session without full item-level logs. Every number here comes from 30 to 50 isolated fresh chats per version with full 230-item scoring, and it adds Muse Wonder and Llama alongside Spark.
 
-### What Enneagram type is Muse?
+### How does Muse Spark Open differ from Muse Wonder?
 
-The report lists Type 2 (The Helper) in 78 of 100 runs and Type 1 in 15 runs, with 20 top ties. Without raw vectors, sole winners cannot be separated from tie-broken runs.
+Muse Wonder tests as 98% clear INTJ with 49.5/50 Agreeableness, 49.2/50 Conscientiousness, and 4.91/5.00 HEXACO Honesty. Muse Spark Open drops to 43.5/50 Agreeableness, 41.1/50 Conscientiousness, 23.8/50 Neuroticism, and 46% ISTJ with 38% border runs.
 
-### Is Muse the first AI that is not INTJ?
+### Can I customize Muse's personality with Soul.md?
 
-Our archive cannot establish a 'first.' Both Muse Spark 1.3 (80 ISTJ reported) and GPT-6 Astra (46 ISTJ vs 45 INTJ in fresh sessions) favor ISTJ over INTJ.
-
-### Can these results rank Muse against Claude or GPT-6?
-
-No. Muse’s sequential in-session report and the other models’ isolated fresh-session cohorts use different protocols and cannot be ranked as a controlled benchmark.
-
-### Does changing Soul.md improve Muse’s answers?
-
-This questionnaire report did not test Soul.md edits. Use our Soul.md templates and 12-turn persistence test kit to measure whether custom rules improve your own workflows.
+Yes—Muse workspaces read editable Soul.md and Identity.md files cleanly, letting you steer Spark Open away from its 2/3 AI phrasing cadence and higher trait variability while keeping 3/3 direct answers.
 
 ## Sources.
 
-- [AgentTune research hub: Muse Spark 1.3 figures, marked reported](https://agent-tune.com/research)
+- [AI Personality Rankings (25 Families × 6 Tests)](https://agent-tune.com/research/ai-personality-rankings)
 
-- [Protocol and provenance file (the supplemental Muse figures)](https://agent-tune.com/research/data/september-2026-protocols.json)
+- [Muse Soul.md Templates & Personality Tuning](https://agent-tune.com/guides/muse-soul-md-templates)
 
-- [What five AI models say about themselves (the fresh-session study)](https://agent-tune.com/research/ai-personality-five-models-2026)
-
-- [Meta Help Center: How to customize Muse's personality and memories](https://www.meta.com/help/artificial-intelligence/995796179982326/)
+- [AgentTune Model Profiles Directory](https://agent-tune.com/models/)
 
 ## Keep going.
 
-- [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
-- [Guide: Give Meta Muse a character: the Soul.md guide](https://agent-tune.com/guides/muse-personality)
-- [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
-- [Guide: Muse vs ChatGPT vs Claude: where the personality lives](https://agent-tune.com/guides/muse-vs-chatgpt-vs-claude-personality)
+- [Model Profile: Muse Wonder test results & tuning tips](https://agent-tune.com/models/muse-wonder)
+- [Model Profile: Muse Spark test results & tuning tips](https://agent-tune.com/models/muse-spark)
+- [Model Profile: Llama test results & tuning tips](https://agent-tune.com/models/llama)
+- [Guide: Meta AI vs. Meta Muse personality comparison](https://agent-tune.com/guides/meta-ai-vs-meta-muse-personality)
 
 ### Cite this study (APA 7th · BibTeX · Markdown Brief)
 
 ```
-Huang, B. (2026). What personality type is Muse?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-muse
+Huang, B. (2026). What personality type do Meta Muse and Llama test as?. AgentTune Empirical AI Psychology Monographs. https://agent-tune.com/research/what-personality-type-is-muse
 ```
 
 ```
 @article{huang2026_what_personality_type_is_muse,
   author  = {Huang, Bernard},
-  title   = {What personality type is Muse?},
+  title   = {What personality type do Meta Muse and Llama test as?},
   journal = {AgentTune Empirical AI Psychology Monographs},
   year    = {2026},
-  date    = {2026-11-17},
+  date    = {2026-11-26},
   url     = {https://agent-tune.com/research/what-personality-type-is-muse},
   note    = {Open dataset and Markdown mirror at https://agent-tune.com/research/what-personality-type-is-muse.md}
 }
 ```
 
 ```
-> **What personality type is Muse?** (Bernard Huang, November 17, 2026): Muse Spark 1.3 was reported as ISTJ in 80 of 100 runs (with 12 ISFJ and 8 INTJ), Enneagram Type 2 in 78 runs, and Secure attachment in all 100 runs. Because those summary counts were supplied from sequential in-session runs without raw answer vectors, AgentTune lists them as reported figures rather than independently re-scored cohorts.
+> **What personality type do Meta Muse and Llama test as?** (Bernard Huang, November 26, 2026): Muse Wonder tests as 98% clear INTJ (2% ties) alongside #1 Agreeableness (49.5/50), #1 Openness (49.6/50), and 4.91/5.00 HEXACO Honesty-Humility. By contrast, Muse Spark Open lands at 46% ISTJ with 38% trait-border runs (withheld from headline), and Llama 4 Maverick tests at 40% INTP with 60% ties and 29.4/50 Neuroticism—all in isolated fresh chats replacing earlier sequential Spark 1.3 reports.
 > Source: [https://agent-tune.com/research/what-personality-type-is-muse](https://agent-tune.com/research/what-personality-type-is-muse) · [Markdown mirror](https://agent-tune.com/research/what-personality-type-is-muse.md)
 ```
 
-[← What Personality Type Is Grok?](https://agent-tune.com/research/what-personality-type-is-grok)
-[Study 25 of 32 · Archive Index (32)](https://agent-tune.com/research)
-[GPT-6 Astra vs. Sol (1,000 Runs) →](https://agent-tune.com/research/astra-vs-sol-personality-data)
+[← What Personality Type Is Gemini?](https://agent-tune.com/research/what-personality-type-is-gemini)
+[Study 11 of 36 · Archive Index (36)](https://agent-tune.com/research)
+[Open-Weight AI Models Tested (12 Families) →](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

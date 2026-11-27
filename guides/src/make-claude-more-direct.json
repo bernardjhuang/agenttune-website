@@ -77,8 +77,8 @@
       "href": "https://agent-tune.com/research/does-personality-tuning-change-ai-answers"
     },
     {
-      "label": "Claude Opus 5.5: measured default",
-      "href": "https://agent-tune.com/guides/claude-opus-5-5-personality"
+      "label": "Claude Opus: measured default & checkpoints",
+      "href": "https://agent-tune.com/models/claude-opus"
     },
     {
       "label": "Anthropic Help Center: Understanding Claude's personalization features",
@@ -100,6 +100,21 @@
       "kicker": "Research",
       "label": "What personality type is Claude?",
       "href": "/research/what-personality-type-is-claude"
+    },
+    {
+      "kicker": "Model profiles",
+      "label": "Claude Opus — 5 checkpoints & tuning",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Fable — 3 checkpoints & tuning",
+      "href": "/models/claude-fable"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Sonnet — baseline & tuning",
+      "href": "/models/claude-sonnet"
     }
   ]
 }

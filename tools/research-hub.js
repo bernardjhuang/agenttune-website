@@ -254,7 +254,7 @@ ${enneagram}
     <div class="hub-article-title">What five AI models say about themselves.</div>
     <div class="hub-article-meta">Astra · Sol · Grok 4.6 · Opus 5.5 · Fable 5.1 · every tie shown · downloadable data and scorer · <span class="hub-article-arrow">read the study →</span></div>
   </a>
-  <p class="rh-links"><a href="/guides/astra-personality">Astra guide</a> · <a href="/guides/sol-personality">Sol guide</a> · <a href="/guides/claude-opus-5-5-personality">Opus 5.5 guide</a> · <a href="/guides/fable-personality">Fable 5.1 guide</a> · <a href="/research/data/september-2026-responses.json">Response data (JSON)</a> · <a href="/research/data/september-2026-summary.csv">Summary (CSV)</a> · <a href="/research/data/september-2026-protocols.json">Protocols</a></p>
+  <p class="rh-links"><a href="/guides/astra-personality">Astra guide</a> · <a href="/models/gpt-astra">GPT Astra profile</a> · <a href="/models/gpt-sol">GPT Sol profile</a> · <a href="/models/claude-opus">Claude Opus profile</a> · <a href="/models/claude-fable">Claude Fable profile</a> · <a href="/models/grok">Grok profile</a> · <a href="/research/data/september-2026-responses.json">Response data (JSON)</a> · <a href="/research/data/september-2026-summary.csv">Summary (CSV)</a> · <a href="/research/data/september-2026-protocols.json">Protocols</a></p>
 </section>
 <!-- SEPTEMBER_RESEARCH_END -->`;
 }

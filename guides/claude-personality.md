@@ -308,3 +308,8 @@ Compare the same tasks in fresh chats before and after one instruction change. K
 - [Migration: Claude Styles are being retired and migrated to Skills](https://agent-tune.com/guides/claude-styles-to-skills-migration)
 - [Research: The five-model questionnaire study](https://agent-tune.com/research/ai-personality-five-models-2026)
 - [Claude Code: Set a coding-session output style](https://agent-tune.com/guides/claude-code-personality)
+- [Model profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model profile: Claude Sonnet — baseline & tuning](https://agent-tune.com/models/claude-sonnet)
+- [Model profile: Claude Haiku — fast baseline & tuning](https://agent-tune.com/models/claude-haiku)
+- [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)

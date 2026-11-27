@@ -5,7 +5,7 @@ Model Personality Profile · OpenAI
 
 # GPT Luna personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-luna.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-luna.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gpt-luna.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~18 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-luna.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-luna.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave both versions of OpenAI's budget GPT Luna line (5.6-luna and 6-luna) the same personality surveys people take—30 and 50 times—in a fresh chat each time with no memory.
 
@@ -375,7 +375,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/gpt-luna.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-luna.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/gpt-luna.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-luna.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

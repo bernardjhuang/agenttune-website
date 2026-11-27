@@ -254,6 +254,9 @@ There is a free tier with a usage limit that refreshes. Paid plans are Power at 
 
 - [Free browser tool: Review a memory export locally](https://agent-tune.com/tools/ai-memory-reviewer)
 - [Guide: Meta Muse, explained](https://agent-tune.com/guides/what-is-meta-muse)
+- [Model profile: Muse Spark — personality profile](https://agent-tune.com/models/muse-spark)
+- [Model profile: Muse Wonder — personality profile](https://agent-tune.com/models/muse-wonder)
+- [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Guide: Twenty Soul.md templates](https://agent-tune.com/guides/muse-soul-md-templates)
 - [Free browser tool: Edit and merge Soul.md safely in your browser](https://agent-tune.com/tools/muse-soul-md-editor)
 - [Guide: Meta Muse avatar and name: the Identity.md guide](https://agent-tune.com/guides/muse-identity-md-avatar-name)

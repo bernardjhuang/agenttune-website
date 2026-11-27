@@ -89,6 +89,21 @@
       "href": "/research/what-personality-type-is-gemini"
     },
     {
+      "kicker": "Model profile",
+      "label": "Gemini Pro & Neon — personality profile",
+      "href": "/models/gemini-pro"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemini Flash & Hydrogen — personality profile",
+      "href": "/models/gemini-flash"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Gemma — open-weights personality profile",
+      "href": "/models/gemma"
+    },
+    {
       "kicker": "Guide",
       "label": "Cursor rules (.mdc), copilot-instructions.md, and GEMINI.md",
       "href": "/guides/cursor-rules-copilot-gemini-md"

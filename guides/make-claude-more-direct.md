@@ -127,7 +127,7 @@ It is a practical behavioral instruction telling Claude to lead with the weakest
 
 - [Does a personality tuning change AI answers? (the test)](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
 
-- [Claude Opus 5.5: measured default](https://agent-tune.com/guides/claude-opus-5-5-personality)
+- [Claude Opus: measured default & checkpoints](https://agent-tune.com/models/claude-opus)
 
 - [Anthropic Help Center: Understanding Claude's personalization features](https://support.claude.com/en/articles/10185728)
 
@@ -136,3 +136,6 @@ It is a practical behavioral instruction telling Claude to lead with the weakest
 - [Guide: Seven best Claude personality setups & settings](https://agent-tune.com/guides/claude-personality)
 - [Guide: Change Claude Code's personality](https://agent-tune.com/guides/claude-code-personality)
 - [Research: What personality type is Claude?](https://agent-tune.com/research/what-personality-type-is-claude)
+- [Model profiles: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model profile: Claude Sonnet — baseline & tuning](https://agent-tune.com/models/claude-sonnet)

@@ -67,6 +67,13 @@ test('MCP structured results match advertised schemas and retain readable text',
   if(name==='get_tuning'){assert.match(r.structuredContent.body,/^# ENTP/);assert.doesNotMatch(r.structuredContent.body,/install:/);assert.match(r.structuredContent.metadata_markdown,/install:/);}
  }
  const bad=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'../../package.json'}}))).json()).result;assert.equal(bad.isError,true);
+ const modelList=(await(await call(rpc('tools/call',{name:'list_resources',arguments:{kind:'model'}}))).json()).result;
+ assert.ok(!modelList.isError);
+ assert.equal(modelList.structuredContent.resources.length,25);
+ const opus=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'claude-opus'}}))).json()).result;
+ assert.ok(!opus.isError);assert.match(opus.structuredContent.body,/Claude Opus/);
+ const mbtiAtlas=(await(await call(rpc('tools/call',{name:'get_resource',arguments:{id:'ai-mbti-personalities'}}))).json()).result;
+ assert.ok(!mbtiAtlas.isError);assert.match(mbtiAtlas.structuredContent.body,/MBTI/);
 });
 
 test('MCP free tools discovery returns the public catalog in both structured and text form without accepting personal input',async()=>{

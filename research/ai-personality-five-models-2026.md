@@ -128,7 +128,7 @@ This September release adds 2,000 auditable per-item response vectors, frozen sc
 
 ## How to use the findings
 
-Use our [Opus 5.5 guide](https://agent-tune.com/guides/claude-opus-5-5-personality) and [Fable 5.1 guide](https://agent-tune.com/guides/fable-personality) when writing custom instructions. A high Agreeableness score on a quiz is a good reason to test a directness rule on real tasks—not proof that a prompt works without testing. Draft rules in the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator) and compare before-and-after replies in the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
+Use our [Claude Opus profile](https://agent-tune.com/models/claude-opus) and [Claude Fable profile](https://agent-tune.com/models/claude-fable) when writing custom instructions. A high Agreeableness score on a quiz is a good reason to test a directness rule on real tasks—not proof that a prompt works without testing. Draft rules in the [custom instructions generator](https://agent-tune.com/tools/custom-instructions-generator) and compare before-and-after replies in the [A/B test bench](https://agent-tune.com/tools/instruction-test-bench).
 
 ## Data, methods and reproduction
 
@@ -160,8 +160,10 @@ No. It measures how models answer human questionnaires under specific prompts. I
 
 ## Keep going.
 
-- [Guide: Claude Opus 5.5 results and tuning examples](https://agent-tune.com/guides/claude-opus-5-5-personality)
-- [Guide: Claude Fable 5.1 results and tuning examples](https://agent-tune.com/guides/fable-personality)
+- [Model Profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model Profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model Profile: GPT Astra — 6 checkpoints & tuning](https://agent-tune.com/models/gpt-astra)
+- [Atlas: AI personality rankings (25 families)](https://agent-tune.com/research/ai-personality-rankings)
 - [Tool: Custom-instructions generator](https://agent-tune.com/tools/custom-instructions-generator)
 
 ### Cite this study (APA 7th · BibTeX · Markdown Brief)
@@ -187,8 +189,8 @@ Huang, B. (2026). What five AI models say about themselves. AgentTune Empirical 
 > Source: [https://agent-tune.com/research/ai-personality-five-models-2026](https://agent-tune.com/research/ai-personality-five-models-2026) · [Markdown mirror](https://agent-tune.com/research/ai-personality-five-models-2026.md)
 ```
 
-[← 20-Model AI Personality Rankings](https://agent-tune.com/research/ai-personality-rankings)
-[Study 19 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[← Does Personality Tuning Change Answers?](https://agent-tune.com/research/does-personality-tuning-change-ai-answers)
+[Study 29 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Big Five 50-Item Level Comparison →](https://agent-tune.com/research/ai-big-five-item-level-comparison)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

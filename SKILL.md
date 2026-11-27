@@ -1,6 +1,6 @@
 ---
 name: agenttune
-description: Discover, evaluate, and safely apply portable AI communication preference templates (43 MIT-licensed profiles across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), consult 32 empirical AI psychology studies (2023–2026) and deterministic IF/THEN prompt design rules, administer open personality questionnaires locally, and merge non-destructive preference blocks into ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, AGENTS.md, and Cursor rules via https://agent-tune.com/mcp or raw Markdown/JSON endpoints.
+description: Discover, evaluate, and safely apply portable AI communication preference templates (43 MIT-licensed profiles across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN), consult 36 empirical AI psychology studies and 25 model-family personality profiles across 93 checkpoints (2023–2026) and deterministic IF/THEN prompt design rules, administer open personality questionnaires locally, and merge non-destructive preference blocks into ChatGPT, Claude, Meta Muse Soul.md, Grok, Gemini, CLAUDE.md, AGENTS.md, and Cursor rules via https://agent-tune.com/mcp or raw Markdown/JSON endpoints.
 ---
 
 # AgentTune Skill (`https://agent-tune.com`)
@@ -8,7 +8,7 @@ description: Discover, evaluate, and safely apply portable AI communication pref
 Use this skill when a user wants to:
 - Change how an AI assistant or coding agent talks to them (directness, answer-first structure, lists vs. prose, pushback, check-in frequency, reasoning-effort verbosity caps, or uncertainty flags)
 - Take a free personality test locally to find a matching communication template
-- Consult primary-source AI psychology benchmarks (32 studies across 2023–2026 checkpoints, 10,000+ psychometric sheets, and reasoning-trace audits)
+- Consult primary-source AI psychology benchmarks (36 studies, 12 Personality Atlas pages, and 25 model-family profiles spanning 93 checkpoints across 2023–2026, 10,000+ psychometric sheets, and reasoning-trace audits)
 - Audit, convert, or merge custom instructions without overwriting project rules
 
 ## 1. Zero-Auth Remote MCP Server (Preferred)
@@ -23,8 +23,8 @@ claude mcp add --transport http agenttune https://agent-tune.com/mcp
 1. `list_tunings` (`{ system?: "mbti" | "enneagram" | "disc" | "attachment" | "ocean" }`): Lists all 43 MIT communication templates with slugs, one-line summaries, and URLs.
 2. `get_tuning` (`{ system, slug }`): Returns the clean Markdown rules in `structuredContent.body` and YAML metadata in `structuredContent.metadata_markdown`. Install **only** `body`.
 3. `get_test_spec` (`{ test: "mbti" | "enneagram" | "disc" | "attachment" | "big-five" }`): Returns questions, answer scales, and local scoring rules. **Keep user answers local**—never send user answers to AgentTune.
-4. `list_resources` (`{ kind?: "guide" | "research", query?: string }`): Searches all setup guides and all 32 empirical AI psychology studies (Waves 1–4, 2023–2026).
-5. `get_resource` (`{ id }`): Fetches the clean Markdown mirror of any guide or research study.
+4. `list_resources` (`{ kind?: "guide" | "research" | "model", query?: string }`): Searches all setup guides, all 36 empirical AI psychology studies (Waves 1–4 + 12 Personality Atlas pages, 2023–2026), and all 25 model-family personality profiles.
+5. `get_resource` (`{ id }`): Fetches the clean Markdown mirror of any guide, research study, or model profile.
 6. `get_free_tools` (`{}`): Lists the 8 local `window.AgentTuneTools` text-processing instruments (paired with the 2 interactive template generators at `/tools/` — 10 free browser tools total).
 
 ## 2. Direct HTTPS / Markdown Endpoints (No MCP Required)
@@ -32,7 +32,8 @@ claude mcp add --transport http agenttune https://agent-tune.com/mcp
 - **Machine index:** `https://agent-tune.com/llms.txt`
 - **All 43 template bodies + install rules in one file:** `https://agent-tune.com/llms-full.txt`
 - **Agent Research Briefs (single-fetch IF/THEN synthesis JSON, 15 Wave 1–4 studies):** `https://agent-tune.com/research/data/november-2026-agent-research-briefs.json` (deterministic IF/THEN rules, verified recipes, and orthogonal 3-family judge Krippendorff alphas spanning **Wave 4** — *System vs. User Persona Precedence*, *Cross-Model Prompt Portability (5 Lineages)*, *Distress Warmth vs. Truth Trade-Off*, and *Multi-Agent Peer Conformity* — **Wave 3** — *Historical Evolution 2023–2026 (32 checkpoints)*, *The AI Big One 63.6% Factor Collapse & MTMM Audit (10,000 sheets)*, *Crystalline vs. Fluid AI Minds (27.7× Persona Entropy)*, and *Reasoning–Personality Phase Transition (216 cells, 138 CoTs)* — plus **Waves 1–2** — *Instruction Budget Cliff*, *AI Slop Fingerprint*, *Agent Autonomy & Reasoning Shift*, *Prompt Syntax Wars*, *Sycophancy vs. False Contrarianism*, *Persona Half-Life & Context Drift*, and *The AI Roleplay Tax (85/15)*)
-- **Research Synthesis Hub (32 studies, Markdown mirror):** `https://agent-tune.com/research.md` (or fetch any study/guide as `https://agent-tune.com/research/{slug}.md` and `https://agent-tune.com/guides/{slug}.md`)
+- **Research Synthesis Hub (36 studies, Markdown mirror):** `https://agent-tune.com/research.md` (or fetch any study/guide/model profile as `https://agent-tune.com/research/{slug}.md`, `https://agent-tune.com/guides/{slug}.md`, and `https://agent-tune.com/models/{slug}.md`)
+- **25-Family Personality Atlas Index & CSVs:** `https://agent-tune.com/research/data/model-profiles/index.json` + per-survey CSVs (`atlas-overview.csv`, `atlas-mbti.csv`, `atlas-enneagram.csv`, `atlas-big-five.csv`, `atlas-disc.csv`, `atlas-attachment.csv`, `atlas-hexaco.csv`) under `/research/data/model-profiles/`
 - **Template catalog (JSON):** `https://agent-tune.com/library/index.json`
 - **Body-only Markdown for any template:** `https://agent-tune.com/resources/tunings/{system}/{slug}.md`
   - Examples: `/resources/tunings/mbti/intj.md`, `/resources/tunings/disc/d-dominance.md`, `/resources/tunings/enneagram/5-investigator.md`, `/resources/tunings/attachment/secure.md`, `/resources/tunings/ocean/conscientiousness-high.md`

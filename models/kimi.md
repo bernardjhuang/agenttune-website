@@ -5,7 +5,7 @@ Model Personality Profile · Moonshot AI
 
 # Kimi personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/kimi.md) · [JSON](https://agent-tune.com/research/data/model-profiles/kimi.json) · [CSV](https://agent-tune.com/research/data/model-profiles/kimi.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/kimi.md) · [JSON](https://agent-tune.com/research/data/model-profiles/kimi.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Moonshot AI's open-weight Kimi lineup (K2, K2.5, K2.7 Code, K3, and K3.1 Pro) the same personality surveys people take—22 to 50 valid fresh chats per version with no conversation memory.
 
@@ -405,7 +405,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/kimi.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/kimi.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/kimi.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/kimi.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

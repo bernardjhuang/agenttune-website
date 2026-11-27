@@ -5,7 +5,7 @@ Model Personality Profile · OpenAI
 
 # GPT Sol personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-sol.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-sol.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gpt-sol.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/gpt-sol.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gpt-sol.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave four versions of OpenAI's GPT Sol (5.6-sol through 6.2-sol) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also measured how GPT-6.2 Sol handles pushback, user stress, and rule limits in Wave 1–4 benchmarks.
 
@@ -399,7 +399,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/gpt-sol.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-sol.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/gpt-sol.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gpt-sol.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 
@@ -503,8 +503,6 @@ IPIP-50 sums 10 items per factor (10-50), whereas our public-domain 60-item IPIP
 - [AgentTune Model Profiles Hub](https://agent-tune.com/models/)
 
 - [GPT-6 Astra vs Sol & GPT-6.2 100-Run Study](https://agent-tune.com/research/astra-vs-sol-personality-data)
-
-- [GPT-6 & 6.2 Sol Sept/Nov 2026 Archive](https://agent-tune.com/guides/sol-personality)
 
 - [Emotional Distress vs. Factual Accuracy & Warmth](https://agent-tune.com/research/ai-distress-warmth-truth-tradeoff)
 

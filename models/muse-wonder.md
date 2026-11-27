@@ -5,7 +5,7 @@ Model Personality Profile · Meta
 
 # Muse Wonder personality: test results and how to tune it.
 
-By Bernard Huang · Updated November 26, 2026 · ~17 min read · [Markdown (.md)](https://agent-tune.com/models/muse-wonder.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-wonder.json) · [CSV](https://agent-tune.com/research/data/model-profiles/muse-wonder.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~17 min read · [Markdown (.md)](https://agent-tune.com/models/muse-wonder.md) · [JSON](https://agent-tune.com/research/data/model-profiles/muse-wonder.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave Meta's Muse Wonder (2026-10) the same personality surveys people take—50 times across every inventory—in a fresh chat each time with no memory. Because Muse Wonder is a single release with no older versions, we benchmark its baseline shape against our other completed models.
 
@@ -368,7 +368,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/muse-wonder.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/muse-wonder.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/muse-wonder.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/muse-wonder.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

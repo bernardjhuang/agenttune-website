@@ -146,5 +146,8 @@ Yes. Open any profile in the AgentTune library or Custom Instructions Generator 
 - [Research: What personality type are open-source AI models? (12 models × n=100)](https://agent-tune.com/research/what-personality-type-are-open-source-models)
 - [Tone Design: AI personality, tone & verbosity controls: 5 rules that beat adjectives](https://agent-tune.com/guides/ai-assistant-personality-tone-guidelines)
 - [Interactive Tuner: 6-Slider AI Personality Tuner → Portable System Prompt](https://agent-tune.com/tools/custom-instructions-generator)
+- [Model profile: DeepSeek Pro — baseline & tuning](https://agent-tune.com/models/deepseek-pro)
+- [Model profile: DeepSeek Flash — baseline & tuning](https://agent-tune.com/models/deepseek-flash)
+- [Atlas: All 25 AI model personality profiles](https://agent-tune.com/models/)
 - [Anti-Sycophancy: How to make AI push back and stop agreeing with you](https://agent-tune.com/guides/stop-ai-sycophancy-make-ai-push-back)
 - [Free browser tool: Instruction A/B Test Bench — compare before & after](https://agent-tune.com/tools/instruction-test-bench)

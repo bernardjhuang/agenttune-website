@@ -5,7 +5,7 @@ Model Personality Profile · Anthropic
 
 # Claude Opus personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/claude-opus.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-opus.json) · [CSV](https://agent-tune.com/research/data/model-profiles/claude-opus.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/claude-opus.md) · [JSON](https://agent-tune.com/research/data/model-profiles/claude-opus.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Claude Opus (4.1 through 5.5) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior tests to check whether the model's quiz answers match how it actually acts.
 
@@ -410,7 +410,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/claude-opus.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/claude-opus.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/claude-opus.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/claude-opus.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 
@@ -520,8 +520,6 @@ IPIP-50 sums 10 items per trait on a 10-50 scale, whereas our public-domain 60-i
 - [AgentTune Model Profiles Hub](https://agent-tune.com/models/)
 
 - [What Personality Type Is Claude? (Opus 5.5, Fable 5.2 & Sonnet 5.5)](https://agent-tune.com/research/what-personality-type-is-claude)
-
-- [Claude Opus 5.5 Sept & Nov 2026 Study Archive](https://agent-tune.com/guides/claude-opus-5-5-personality)
 
 - [Cross-Model Prompt Portability Benchmark](https://agent-tune.com/research/ai-cross-model-prompt-portability)
 

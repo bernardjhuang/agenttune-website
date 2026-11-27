@@ -5,7 +5,7 @@ Model Personality Profile · Mistral
 
 # Mistral Large personality: test results and endpoint limits.
 
-By Bernard Huang · Updated November 26, 2026 · ~19 min read · [Markdown (.md)](https://agent-tune.com/models/mistral-large.md) · [JSON](https://agent-tune.com/research/data/model-profiles/mistral-large.json) · [CSV](https://agent-tune.com/research/data/model-profiles/mistral-large.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~19 min read · [Markdown (.md)](https://agent-tune.com/models/mistral-large.md) · [JSON](https://agent-tune.com/research/data/model-profiles/mistral-large.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We attempted to test four Mistral Large releases (the original Mistral Large, 2407, 2512, and Large 4.0) on the same personality surveys people take in fresh chats with no memory. Only Mistral Large 2512 completed all 30 runs cleanly; the other three versions triggered budget and truncation quarantines.
 
@@ -378,7 +378,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/mistral-large.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/mistral-large.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/mistral-large.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/mistral-large.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

@@ -5,7 +5,7 @@ Model Personality Profile · Google
 
 # Gemini Flash & Hydrogen personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-flash.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-flash.json) · [CSV](https://agent-tune.com/research/data/model-profiles/gemini-flash.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~22 min read · [Markdown (.md)](https://agent-tune.com/models/gemini-flash.md) · [JSON](https://agent-tune.com/research/data/model-profiles/gemini-flash.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five Google Gemini Flash releases (2.5 Flash, 3 Flash Preview, 3.5 Flash, 3.8 Flash, and Gemini 4 Hydrogen) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory. We also ran hands-on behavior stress tests to see how quiz defaults translate into real-world replies.
 
@@ -409,7 +409,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/gemini-flash.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gemini-flash.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/gemini-flash.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/gemini-flash.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

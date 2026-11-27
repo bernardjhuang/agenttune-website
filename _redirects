@@ -52,15 +52,27 @@
 /dev/*  /  301
 /me/*  /  301
 
-# Legacy model profile URLs → canonical guide URLs (301)
-/research/claude-opus-5-5-personality  /guides/claude-opus-5-5-personality  301
-/research/claude-opus-5-5-personality.md  /guides/claude-opus-5-5-personality.md  301
-/research/claude-fable-5-1-personality  /guides/fable-personality  301
-/research/claude-fable-5-1-personality.md  /guides/fable-personality.md  301
+# Legacy & Phase C consolidated model profile routes → canonical /models/* (301, zero 2-hop chains)
+/research/claude-opus-5-5-personality  /models/claude-opus  301
+/research/claude-opus-5-5-personality.md  /models/claude-opus.md  301
+/guides/claude-opus-5-5-personality  /models/claude-opus  301
+/guides/claude-opus-5-5-personality.md  /models/claude-opus.md  301
+/research/claude-fable-5-1-personality  /models/claude-fable  301
+/research/claude-fable-5-1-personality.md  /models/claude-fable.md  301
+/guides/fable-personality  /models/claude-fable  301
+/guides/fable-personality.md  /models/claude-fable.md  301
 /research/gpt-6-astra-personality  /guides/astra-personality  301
 /research/gpt-6-astra-personality.md  /guides/astra-personality.md  301
-/research/gpt-6-sol-personality  /guides/sol-personality  301
-/research/gpt-6-sol-personality.md  /guides/sol-personality.md  301
+/research/gpt-6-sol-personality  /models/gpt-sol  301
+/research/gpt-6-sol-personality.md  /models/gpt-sol.md  301
+/guides/sol-personality  /models/gpt-sol  301
+/guides/sol-personality.md  /models/gpt-sol.md  301
+/research/grok-attachment-cutoff-simulation  /models/grok  301
+/research/grok-attachment-cutoff-simulation.md  /models/grok.md  301
+/research/what-personality-type-is-grok  /models/grok  301
+/research/what-personality-type-is-grok.md  /models/grok.md  301
+/research/first-ai-that-is-not-an-intj  /research/ai-mbti-personalities  301
+/research/first-ai-that-is-not-an-intj.md  /research/ai-mbti-personalities.md  301
 
 # Consolidated cannibalizing guide routes (2026-11-16) → canonical guides (301)
 /guides/meta-muse-characters  /guides/muse-personality  301
@@ -83,8 +95,6 @@
 /guides/coding-agent-personality.md  /guides/ai-coding-agent-rules-files-matrix.md  301
 /guides/claude-personal-preferences-examples  /guides/claude-personality  301
 /guides/claude-personal-preferences-examples.md  /guides/claude-personality.md  301
-/research/grok-attachment-cutoff-simulation  /research/what-personality-type-is-grok  301
-/research/grok-attachment-cutoff-simulation.md  /research/what-personality-type-is-grok.md  301
 /guides/free-disc-assessment-guide-work-ai  /tests/disc  301
 /guides/free-disc-assessment-guide-work-ai.md  /tests/disc.md  301
 /guides/free-enneagram-test-no-email-guide  /tests/enneagram  301

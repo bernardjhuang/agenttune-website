@@ -86,6 +86,26 @@
       "kicker": "Guide",
       "label": "AI custom instructions character limits (2026 cheat sheet)",
       "href": "/guides/ai-custom-instructions-character-limits"
+    },
+    {
+      "kicker": "Research",
+      "label": "What personality type is Muse?",
+      "href": "/research/what-personality-type-is-muse"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Muse Spark — personality profile",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Muse Wonder — personality profile",
+      "href": "/models/muse-wonder"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Llama — Meta open-weights profile",
+      "href": "/models/llama"
     }
   ],
   "promptModel": "muse",

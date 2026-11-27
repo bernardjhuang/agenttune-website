@@ -86,6 +86,31 @@
       "kicker": "Tool",
       "label": "Instruction A/B Test Bench (randomized comparison)",
       "href": "/tools/instruction-test-bench"
+    },
+    {
+      "kicker": "Atlas",
+      "label": "AI personality rankings across 25 model families",
+      "href": "/research/ai-personality-rankings"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Astra — 6 checkpoints & tuning",
+      "href": "/models/gpt-astra"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "GPT Sol — 4 checkpoints & tuning",
+      "href": "/models/gpt-sol"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Opus — 5 checkpoints & tuning",
+      "href": "/models/claude-opus"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Claude Fable — 3 checkpoints & tuning",
+      "href": "/models/claude-fable"
     }
   ]
 }

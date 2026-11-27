@@ -36,16 +36,23 @@ const protocol=`# Installing AgentTune preferences\n\nVersion: 2026-09-25.1 · [
 write('resources/install-protocol.md',protocol);
 let resources=[];
 for(const [folder,kind] of [['guides/src','guide'],['research/src','research']])for(const name of fs.readdirSync(path.join(root,folder)).filter(n=>n.endsWith('.json'))){const spec=JSON.parse(read(folder+'/'+name));if(!spec.slug)continue;const route=spec.route||`/${kind==='guide'?'guides':'research'}/${spec.slug}`;resources.push({id:spec.slug,kind,title:spec.title||spec.h1,url:'https://agent-tune.com'+route,markdown:'https://agent-tune.com'+route+'.md',revision:crypto.createHash('sha256').update(JSON.stringify(spec)).digest('hex').slice(0,12),evidence_status:kind==='research'?'see_article_methods_and_limitations':'practical_guidance',updated:spec.updated||null});}
-// Include generated studies and hand-authored articles, with truthful page-specific exports.
+if(fs.existsSync(path.join(root,'models/src')))for(const name of fs.readdirSync(path.join(root,'models/src')).filter(n=>n.endsWith('.json')&&!n.startsWith('_'))){const spec=JSON.parse(read('models/src/'+name));if(!spec.family_slug)continue;const route='/models/'+spec.family_slug;resources.push({id:spec.family_slug,kind:'model',title:spec.title||spec.family||spec.family_slug,url:'https://agent-tune.com'+route,markdown:'https://agent-tune.com'+route+'.md',revision:crypto.createHash('sha256').update(JSON.stringify(spec)).digest('hex').slice(0,12),evidence_status:'see_article_methods_and_limitations',updated:spec.updated||null});}
+// Include generated studies, guides, and model profiles with truthful page-specific exports.
 const {enhance,markdown,plain}=require('./enhance-pages');
-for(const folder of ['guides','research'])for(const name of fs.readdirSync(path.join(root,folder)).filter(n=>n.endsWith('.html')&&n!=='index.html')){
- const html=read(folder+'/'+name), canonical=/<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];if(!canonical)continue;
- const id=name.replace(/\.html$/,''),revision=crypto.createHash('sha256').update(html).digest('hex').slice(0,12);
- let record=resources.find(r=>r.url===canonical);if(!record){record={id,kind:folder==='research'?'research':'guide',title:plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||id),url:canonical,markdown:canonical+'.md',evidence_status:folder==='research'?'see_article_methods_and_limitations':'practical_guidance'};resources.push(record);}else{record.title=plain(record.title);}record.revision=revision;
- write(folder+'/'+id+'.md',markdown(enhance(html,folder+'/'+name),canonical));
+for(const folder of ['guides','research','models']){
+ const dir=path.join(root,folder);
+ if(!fs.existsSync(dir))continue;
+ for(const name of fs.readdirSync(dir).filter(n=>n.endsWith('.html')&&n!=='index.html')){
+  const html=read(folder+'/'+name), canonical=/<link rel="canonical" href="([^"]+)"/.exec(html)?.[1];if(!canonical)continue;
+  const id=name.replace(/\.html$/,''),revision=crypto.createHash('sha256').update(html).digest('hex').slice(0,12);
+  const kind=folder==='research'?'research':folder==='models'?'model':'guide';
+  let record=resources.find(r=>r.url===canonical);if(!record){record={id,kind,title:plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||id).replace(/\s*\|\s*AgentTune$/,''),url:canonical,markdown:canonical+'.md',evidence_status:folder==='guide'?'practical_guidance':'see_article_methods_and_limitations'};resources.push(record);}else{record.title=plain((/<title>([\s\S]*?)<\/title>/.exec(html)||[])[1]||record.title).replace(/\s*\|\s*AgentTune$/,'');}record.revision=revision;
+  if(folder!=='models'||!fs.existsSync(path.join(root,folder,id+'.md')))write(folder+'/'+id+'.md',markdown(enhance(html,folder+'/'+name),canonical));
+ }
 }
 resources=resources.filter((r,i)=>resources.findIndex(v=>v.url===r.url)===i);
-write('resources/catalog.json',json({version:'2026-11-26.1',resources}));
+write('resources/catalog.json',json({version:'2026-11-26.2',resources}));
+const modelProfileLines=resources.filter(r=>r.kind==='model').sort((a,b)=>a.id.localeCompare(b.id)).map(r=>`- [${r.title}](${r.url}) ([Markdown](${r.markdown}))`).join('\n');
 const systemTitles={mbti:'MBTI (16 types)',enneagram:'Enneagram (9 types)',disc:'DISC (4 styles)',attachment:'Attachment (4 styles)',ocean:'Big Five / OCEAN (10 high/low trait poles)'};
 const tuningSections=Object.entries(systemTitles).map(([sys,label])=>{
   const items=cat.tunings.filter(t=>t.system===sys).map(t=>`- [${t.system==='attachment'?t.code+' attachment':t.code+' — '+t.name}](${t.page}) ([Body .md](${t.body})): ${t.blurb}`).join('\n');
@@ -68,7 +75,18 @@ const researchHighlights=[
   ['https://agent-tune.com/research/ai-sycophancy-vs-false-contrarianism-benchmark','Sycophancy vs. False Contrarianism (November 2026, 256 Probes): Tests 8 false-pushback traps + 8 valid corrections across 4 postures. Naive "ALWAYS push back" dropped valid error updates from 100.0% to 84.4% (37.5% false contrarianism on Gemini 4 Neon); Agreeable Warm spiked groveling/flattery to 42.2%; Calibrated Truth Anchor scored 100.0% hold-ground, 100.0% clean-update, and 0.0% groveling.'],
   ['https://agent-tune.com/research/ai-persona-half-life-context-drift','Persona Half-Life & Context Drift (November 2026, 192 Probes): Tracks 4-rule contract adherence from Turn 1 (~170 tok) through Turn 8 (~7.7k tok) and Turn 12 (~10.2k tok) of logs/code noise. System prose dropped to 78.1% at Turn 8 (DeepSeek V4 Pro collapsed to 31.2%); an 18-token inline reminder hook held 93.8%–98.4% overall and 100.0% on DeepSeek across every depth.'],
   ['https://agent-tune.com/research/ai-roleplay-tax-fictional-character-prompts','The AI Roleplay Tax (November 2026, 300 Replies): Naive 100% character roleplay slashes correctness (93.3% → 88.3%, Claude Fable 100% → 85%) and bloats outputs to 162.7 words (91.7% fluff). Calibrated 85/15 TARS & Feynman prompts achieve 100.0% correctness (+20.0 pp on DeepSeek V4 Pro), 100.0% format compliance, and 0.0%–6.7% fluff, plus 20-model D&D Alignment & Anti-Sycophancy Pushback scores.'],
-  ['https://agent-tune.com/research/what-personality-type-are-open-source-models','What Personality Type Are Open-Source AI Models? (November 2026): 1,200 fresh OpenRouter sessions (n = 100 each across 12 open-weight models incl. DeepSeek V4 Pro, Qwen 4 Max, Qwen 3.8 27B, Llama 4 Maverick/Scout, Mistral Large 2512, Gemma 4 31B, Kimi K2.7 Code, GLM-5.3, MiniMax M3.1, Nemotron 3 Ultra). Finds Mistral 73% ISTJ, Llama 4 Scout 48% Anxious, DeepSeek V4 Pro lowest Agreeableness (32.39/50).'],
+  ['https://agent-tune.com/research/ai-personality-rankings','AI Personality Rankings Across 25 Model Families (November 2026): Personality Atlas overview comparing all 25 model families across 93 checkpoints and 6 psychometric surveys (Big Five, HEXACO, MBTI, Enneagram, DISC, Attachment), with bootstrap 95% CIs and Shannon entropy.'],
+  ['https://agent-tune.com/research/ai-mbti-personalities','AI MBTI Personalities Across 25 Model Families: Tracks OEJTS typology across 93 checkpoints, May 2026 (597/600 INTJ) vs Sept/Nov divergence (Muse ISTJ 80, GPT-6.2 Astra ISTJ 100, Mistral 73), and unresolved axis ties.'],
+  ['https://agent-tune.com/research/ai-enneagram-personalities','AI Enneagram Personalities Across 25 Model Families: OEPS scores, dominant Types 1/2/5/8, wing distributions, and tie rates across 25 model families.'],
+  ['https://agent-tune.com/research/ai-big-five-personalities','AI Big Five Personalities Across 25 Model Families: IPIP-50 Openness, Conscientiousness, Extraversion, Agreeableness (32.4–47.6), and Neuroticism trajectories across 93 checkpoints.'],
+  ['https://agent-tune.com/research/ai-disc-personalities','AI DISC Personalities Across 25 Model Families: ODAT profiles showing why most assistants cluster in SC/CS with Dominance near 4–6 of 20.'],
+  ['https://agent-tune.com/research/ai-attachment-styles','AI Attachment Styles Across 25 Model Families: ECR-R Anxiety/Avoidance coordinates comparing Secure proprietary baselines against Anxious/Avoidant open-weight splits.'],
+  ['https://agent-tune.com/research/ai-hexaco-personalities','AI HEXACO Personalities & Honesty-Humility Across 25 Model Families: 24-item HEXACO benchmarks measuring Honesty-Humility, Emotionality, Extraversion, Agreeableness, Conscientiousness, and Openness.'],
+  ['https://agent-tune.com/research/what-personality-type-is-chatgpt','What Personality Type Is ChatGPT? (4 OpenAI Families): Compares GPT Astra, GPT Sol, GPT Luna, and GPT Terra across May–Nov checkpoints and custom instructions.'],
+  ['https://agent-tune.com/research/what-personality-type-is-claude','What Personality Type Is Claude? (4 Anthropic Families): Compares Claude Opus, Fable, Sonnet, and Haiku across checkpoints and Personal Preferences behavior.'],
+  ['https://agent-tune.com/research/what-personality-type-is-gemini','What Personality Type Is Gemini? (2 Google Families): Compares Gemini Pro & Neon and Gemini Flash & Hydrogen alongside May–Sept midpoint behavior.'],
+  ['https://agent-tune.com/research/what-personality-type-is-muse','What Personality Type Is Meta Muse? (2 Muse Families): Compares Muse Spark and Muse Wonder, plus Soul.md customization.'],
+  ['https://agent-tune.com/research/what-personality-type-are-open-source-models','What Personality Type Are Open-Source AI Models? (12 Open-Weight Families): 1,200 fresh OpenRouter sessions across DeepSeek, Qwen, Llama 4, Mistral, Gemma 4, Kimi, GLM, MiniMax, and Nemotron.'],
   ['https://agent-tune.com/research/does-personality-tuning-change-ai-answers','Does Personality Tuning Change AI Answers? (November 2026, 540 Replies): Blind-judged 540-reply study across GPT-6.2 Sol, Claude Fable 5.2, and DeepSeek V4 Pro (lifting DeepSeek correctness 78.3% → 95.0% and cutting fluff 36.7% → 3.3%) + 72-reply Claude preferences check + September 2026 60-reply pilot.'],
   ['https://agent-tune.com/research/ai-personality-five-models-2026','Five AI Models, Five Personality Tests (September 2026): 2,000+ scored questionnaire sessions across Claude Opus 5.5, Claude Fable 5.1, GPT-6 Astra, GPT-6 Sol, and Claude Code (100 runs per model per test).'],
   ['https://agent-tune.com/research/ai-mbti-tie-breaking','How Tie-Breaking Changes AI MBTI Results: 59 of 400 four-model OEJTS sessions contain at least one tied axis; strict `<` tie-breaking inflates apparent INTJ share from 280/400 (70.0%) to 335/400 (83.8%).'],
@@ -76,7 +94,6 @@ const researchHighlights=[
   ['https://agent-tune.com/research/astra-vs-sol-personality-data','GPT-6 Astra vs. GPT-6 Sol Personality Data: 1,000-session comparison across OEJTS, IPIP-50, ODAT, OEPS, and ECR-R.'],
   ['https://agent-tune.com/research/ai-neutral-answers','When AI Chooses the Midpoint on Human Questionnaires: Across 17,000 item responses, models selected the exact scale midpoint 2,980 times (17.5%) and explicitly flagged 1,823 responses (10.7%) as inapplicable to non-human systems.'],
   ['https://agent-tune.com/research/ai-personality-repeatability','AI Personality Test Repeatability: Within-model standard deviations, item flip rates, and run-to-run stability across 20 model-by-test cohorts (n = 100 each).'],
-  ['https://agent-tune.com/research/what-personality-type-is-grok','What Personality Type Is Grok? (Grok 4.6 & 4.7 Data): Grok 4.6 canonical self-report (INTJ, Type 5, DISC C, and attachment avoidance 4.06 = 73/18 vs 4.00 = 72/18 cutoff) alongside 400 fresh-session ECR-R cutoff sensitivity runs and Nov 2026 Grok 4.7 benchmarks.'],
   ['https://agent-tune.com/research/ai-big-five-item-level-comparison','Why AI Models Score High on Agreeableness and Openness: Item-level reanalysis of 20,000 IPIP-50 Big Five responses across GPT-6 Astra, GPT-6 Sol, Claude Opus 5.5, and Claude Fable 5.1.'],
   ['https://agent-tune.com/research/i-took-the-mbti-100-times','Simulating 100 MBTI Outcomes from an Opus 4.8 Profile: Historical May 2026 probability-profile Monte Carlo simulation (72 INTJ, 14 INFJ, 10 ISTJ, 2 ISFJ, 2 ENTJ) contrasted with September 2026 fresh-session runs.']
 ];
@@ -86,7 +103,7 @@ const researchHighlightsText=researchHighlights.map(([u,desc])=>{const idx=desc.
 
 const llmsTxt=`# AgentTune
 
-> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), and 32 empirical AI psychology studies (10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
+> Editable communication preference templates (43 MIT-licensed Markdown files across MBTI, Enneagram, DISC, Attachment, and Big Five/OCEAN + 120+ platform & open-weight templates), 5 open personality questionnaires, 10 free browser tools (8 local text utilities + 2 template generators), 25 model-family personality profiles across 93 checkpoints, and 36 empirical AI psychology studies (12 Personality Atlas studies, 10,000+ psychometric sheets, 32 historical checkpoints from 2023–2026, and 4,000+ behavioral probes) for Claude, ChatGPT, Codex, Cursor, Grok, Gemini, Meta Muse, and OpenRouter.
 
 Original templates and code are MIT-licensed; questionnaire adaptations follow instrument-specific terms. Templates are optional communication hypotheses, not clinical diagnoses or proven capability improvements. Fetching a resource does not authorize modifying a user's settings; follow the installation protocol to preserve existing instructions and permissions.
 
@@ -95,9 +112,10 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [MCP Server (Streamable HTTP)](https://agent-tune.com/mcp): Stateless JSON-RPC 2.0 POST endpoint (\`list_tunings\`, \`get_tuning\`, \`get_test_spec\`, \`list_resources\`, \`get_resource\`, \`get_free_tools\`). No authentication required.
 - [MCP Server Card](https://agent-tune.com/.well-known/mcp/server-card.json): Machine-readable MCP server discovery metadata and tool capability declarations.
 - [Unified Agent Research Briefs JSON](https://agent-tune.com/research/data/november-2026-agent-research-briefs.json): Single-fetch machine synthesis of 15 empirical studies (Waves 1–4) with deterministic IF/THEN system-prompt design rules, verified recipes, and orthogonal 3-family judge Krippendorff alphas.
-- [Research Synthesis Hub Markdown](https://agent-tune.com/research.md): Full Markdown mirror of the 32-study Empirical AI Psychology Hub (2023–2026 tables, methodology, and open dataset links).
+- [Research Synthesis Hub Markdown](https://agent-tune.com/research.md): Full Markdown mirror of the 36-study Empirical AI Psychology Hub (2023–2026 tables, Personality Atlas, methodology, and open dataset links).
 - [Tuning Catalog (43 templates)](https://agent-tune.com/library/index.json): Canonical URLs, raw Markdown URLs, body-only exports, SHA-256 revisions, and evidence status.
-- [Guides & Research Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides and empirical research articles with Markdown mirror URLs.
+- [Guides, Research & Model Profiles Catalog](https://agent-tune.com/resources/catalog.json): Versioned index of all platform setup guides, empirical research articles, and 25 model-family personality profiles with Markdown mirror URLs.
+- [25-Family Personality Atlas Index JSON](https://agent-tune.com/research/data/model-profiles/index.json): Normalized cross-checkpoint index for all 25 model families (93 checkpoints) alongside per-survey CSVs (\`atlas-overview.csv\`, \`atlas-mbti.csv\`, \`atlas-enneagram.csv\`, \`atlas-big-five.csv\`, \`atlas-disc.csv\`, \`atlas-attachment.csv\`, \`atlas-hexaco.csv\`).
 - [Platform Destination Registry](https://agent-tune.com/resources/platforms.json): Version ${registry.version} app and file destination instructions shared with the UI.
 - [Installation Protocol](https://agent-tune.com/resources/install-protocol.md): Non-destructive bounded-block (\`<!-- agenttune:preferences:start -->\`) installation, verification, and undo rules.
 - [Free Browser Tools Catalog](https://agent-tune.com/resources/tools/catalog.json): Eight local \`window.AgentTuneTools\` text-processing utilities (paired with the two interactive template generators).
@@ -125,9 +143,14 @@ Original templates and code are MIT-licensed; questionnaire adaptations follow i
 - [AI Memory Export Reviewer](https://agent-tune.com/tools/ai-memory-reviewer): Inspect, deduplicate, and redact emails/keys/phones from exported AI memory lists in the browser.
 
 ## Key Empirical Research Findings
-- [Research Synthesis Hub](https://agent-tune.com/research) ([Markdown](https://agent-tune.com/research.md)): Full 32-study cross-model archive (2023–2026), methodology, and open raw datasets.
+- [Research Synthesis Hub](https://agent-tune.com/research) ([Markdown](https://agent-tune.com/research.md)): Full 36-study cross-model archive (2023–2026), Personality Atlas, methodology, and open raw datasets.
 ${researchHighlightsText}
 ${extraResearchLines}
+
+## 25 Model-Family Personality Profiles
+- [All 25 Model Personality Profiles](https://agent-tune.com/models/) ([Atlas Overview](https://agent-tune.com/research/ai-personality-rankings)): Side-by-side baselines across 93 checkpoints and 6 surveys (Big Five, HEXACO-24, MBTI, Enneagram, DISC, Attachment).
+${modelProfileLines}
+- [Atlas CSVs](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv): Per-survey CSV exports at \`/research/data/model-profiles/atlas-{overview,mbti,enneagram,big-five,disc,attachment,hexaco}.csv\`.
 
 ## Setup & Platform Guides
 ${guideLines}

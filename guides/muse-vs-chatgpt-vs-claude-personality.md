@@ -128,3 +128,7 @@ No. Always test your rules on real decision, editing, or false-premise tasks in 
 - [Research: What personality type is Muse?](https://agent-tune.com/research/what-personality-type-is-muse)
 - [Guide: ChatGPT custom instructions for all 16 MBTI types](https://agent-tune.com/guides/chatgpt-custom-instructions-by-personality-type)
 - [Guide: How to change Claude's personality](https://agent-tune.com/guides/claude-personality)
+- [Atlas: All 25 AI model personality profiles](https://agent-tune.com/models/)
+- [Model profile: Muse Spark — personality profile](https://agent-tune.com/models/muse-spark)
+- [Model profile: GPT Astra — personality profile](https://agent-tune.com/models/gpt-astra)
+- [Model profile: Claude Opus — personality profile](https://agent-tune.com/models/claude-opus)

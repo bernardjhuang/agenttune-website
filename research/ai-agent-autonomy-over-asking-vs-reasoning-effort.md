@@ -166,7 +166,7 @@ Huang, B. (2026). Agent autonomy calibration & reasoning-effort drift: when bold
 ```
 
 [← AI Slop Fingerprint Benchmark](https://agent-tune.com/research/ai-slop-fingerprint-benchmark-8-models)
-[Study 11 of 32 · Archive Index (32)](https://agent-tune.com/research)
+[Study 23 of 36 · Archive Index (36)](https://agent-tune.com/research)
 [Prompt Syntax Wars →](https://agent-tune.com/research/ai-prompt-syntax-wars-adjectives-vs-rubrics-vs-few-shot)
 
 **Provenance & scoring note:** These pages analyze our frozen May 2026, September 2026, and November 2026 OpenRouter AI questionnaire and behavioral datasets. All raw answers, scoring keys, and summary tables are publicly inspectable. You can take all five tests on [Tests](https://agent-tune.com/tests/) and verify Big Five scores as raw totals (10–50 per trait, not human population percentiles). [Read the provenance note](https://agent-tune.com/research/data/rights-migration.json).

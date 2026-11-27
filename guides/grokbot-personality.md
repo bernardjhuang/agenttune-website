@@ -315,7 +315,7 @@ While each Bot has a different `JOB`, the person reading its reports is still yo
 
 ## What Grok's own self-report says (Grok 4.7 N=100 vs Grok 4.6).
 
-In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 shifted closer to the structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok comparison study →](https://agent-tune.com/research/what-personality-type-is-grok)):
+In our November 2026 OpenRouter benchmark (**100 fresh independent sessions on Grok 4.7**), untuned Grok 4.7 shifted closer to the structured INTJ/ISTJ analyst cluster seen across peers while staying cooler and lower-Extraversion than ChatGPT or Claude ([full Grok model profile →](https://agent-tune.com/models/grok)):
 
 | Test | Grok 4.7 (Nov 2026, n=100 fresh) | Grok 4.6 (Sept 2026, n=1 canonical) |
 | --- | --- | --- |
@@ -400,7 +400,7 @@ xAI's docs say Cursor manages model selection and there is no model picker. They
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
 - [Voice Mode: Grok Voice Mode voices (Ara, Rex, Sal, Eve, Leo) & Expressive Mode](https://agent-tune.com/guides/grok-personality-settings)
-- [Research: Grok 4.6 and the attachment cutoff: a sensitivity analysis](https://agent-tune.com/research/what-personality-type-is-grok)
+- [Model profile: Grok — 4.7 & 4.6 profiles + attachment cutoff sensitivity](https://agent-tune.com/models/grok)
 - [Guide: How to give GPT-6 Astra a personality](https://agent-tune.com/guides/astra-personality)
 - [Guide: How to give Meta Muse a personality](https://agent-tune.com/guides/muse-personality)
 - [Guide: Give your coding agent a personality](https://agent-tune.com/guides/ai-coding-agent-rules-files-matrix)

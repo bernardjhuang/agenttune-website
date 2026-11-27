@@ -119,6 +119,16 @@
       "kicker": "Research",
       "label": "What personality type is Muse?",
       "href": "/research/what-personality-type-is-muse"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Muse Spark — personality profile",
+      "href": "/models/muse-spark"
+    },
+    {
+      "kicker": "Model profile",
+      "label": "Muse Wonder — personality profile",
+      "href": "/models/muse-wonder"
     }
   ]
 }

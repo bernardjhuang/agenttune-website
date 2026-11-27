@@ -5,7 +5,7 @@ Model Personality Profile · Zhipu
 
 # GLM personality: test results and how they've changed.
 
-By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/glm.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
+By Bernard Huang · Updated November 26, 2026 · ~21 min read · [Markdown (.md)](https://agent-tune.com/models/glm.md) · [JSON](https://agent-tune.com/research/data/model-profiles/glm.json) · [CSV](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) · [MCP](https://agent-tune.com/guides/mcp-server-ai-preferences-portable-tuning)
 
 We gave five versions of Zhipu AI's open-weight GLM lineup (4.5, 4.7, 5, 5.2, and 5.3) the same personality surveys people take—30 to 50 times per version—in a fresh chat each time with no memory.
 
@@ -405,7 +405,7 @@ Download the machine-readable numeric summaries and raw answer arrays (item text
 
 - [Markdown mirror (.md)](https://agent-tune.com/models/glm.md) — token-clean summary for coding and research agents.
 
-- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/glm.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/glm.csv) — numeric answer arrays & protocol metadata only.
+- [Family dataset reference (JSON)](https://agent-tune.com/research/data/model-profiles/glm.json) · [Summary reference (CSV)](https://agent-tune.com/research/data/model-profiles/atlas-overview.csv) — numeric answer arrays & protocol metadata only.
 
 ### Agent Decision Contract (YAML)
 

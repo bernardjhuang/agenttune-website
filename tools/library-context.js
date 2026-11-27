@@ -22,18 +22,29 @@ const listAnd = (arr) => (arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join
 const NUM = ["none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 
 // Model questionnaires supply exploratory context, not a validated baseline.
+const ATLAS_FOR = {
+  mbti: { href: "/research/ai-mbti-personalities", label: "MBTI results across 25 AI families" },
+  enneagram: { href: "/research/ai-enneagram-personalities", label: "Enneagram results across 25 AI families" },
+  disc: { href: "/research/ai-disc-personalities", label: "DISC results across 25 AI families" },
+  attachment: { href: "/research/ai-attachment-styles", label: "Attachment styles across 25 AI families" },
+  ocean: { href: "/research/ai-big-five-personalities", label: "Big Five scores across 25 AI families" }
+};
 function defaultGap(c, research) {
   const notes = {
-    mbti: 'In our earlier May archive, 597 of 600 scoring records were labeled INTJ (including repeated scoring of single answer sets). In September 2026 fresh runs, leaving tied axes open reduced INTJ from 335/400 to 280/400.',
-    enneagram: 'On the 36-item Enneagram test, AI models often tie at the top (40 to 65 ties per 100 runs in September 2026). Model scores reflect survey wording, not human motives.',
-    disc: 'Every tested AI model scores high on Steadiness and Conscientiousness and low on Dominance (4.0 to 6.0 out of 20). If you want fast, direct answers, you have to ask for them explicitly.',
-    attachment: 'All 400 fresh September 2026 AI sessions scored in the Secure quadrant. Those scores reflect how models answer relationship questions, not emotional attachment.',
-    ocean: 'In September 2026 fresh sessions, all four tested models scored high on Agreeableness (45.0–47.1/50) and Openness (43.9–46.9/50). Explicit rules let you dial any single trait up or down.'
+    mbti: 'In our earlier May archive, 597 of 600 scoring records were labeled INTJ (including repeated scoring of single answer sets). Across 25 AI families today, 16 families stay split or border-heavy while 9 clear statistical margins for INTJ or ISTJ.',
+    enneagram: 'On the 36-item Enneagram test, AI models often tie at the top (up to 90% in some families). Model scores reflect survey wording, not human motives.',
+    disc: 'Every tested AI model scores high on Steadiness and Conscientiousness and low on Dominance (4.0 to 12.0 out of 20). If you want fast, direct answers, you have to ask for them explicitly.',
+    attachment: 'Almost every tested AI family (24 of 25) lands in the Secure quadrant, with three families clamping near the 4.00 midpoint on romantic items. Those scores reflect how models answer relationship questions, not emotional attachment.',
+    ocean: 'Across 25 tested AI families, most proprietary assistants score high on Agreeableness (43–49.5/50) and Openness (41–49.6/50). Explicit rules let you dial any single trait up or down.'
   };
   if (!notes[c.system]) return null;
+  const atlas = ATLAS_FOR[c.system];
+  const extraLink = c.system === "ocean"
+    ? ' · <a href="/research/ai-hexaco-personalities">IPIP-HEXACO scores (25 families)</a>'
+    : "";
   return {
     lede: notes[c.system],
-    html: '<p class="lib-ctx-source">Treat this ' + esc(c.code) + ' template as a practical starting draft—test the same task before and after pasting it (<a href="/research#methodology">see research methods &amp; limits</a>).</p>'
+    html: '<p class="lib-ctx-source">Treat this ' + esc(c.code) + ' template as a practical starting draft—test the same task before and after pasting it. Compare <a href="' + atlas.href + '">' + esc(atlas.label) + '</a>, browse all <a href="/models/">25 AI model profiles</a>' + extraLink + ', or <a href="/research#methodology">see research methods &amp; limits</a>.</p>'
   };
 }
 

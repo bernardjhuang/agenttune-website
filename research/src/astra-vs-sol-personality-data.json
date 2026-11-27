@@ -37,7 +37,7 @@
     },
     {
       "h2": "How to tune Astra or Sol in your own workflow",
-      "html": "<p>If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in <a href=\"/guides/astra-personality\">Astra setup</a>, <a href=\"/guides/sol-personality\">Sol setup</a>, or <a href=\"/guides/codex-agents-md-guide\">AGENTS.md</a>.</p>"
+      "html": "<p>If you use GPT-6 Astra or Sol in ChatGPT or OpenAI Codex CLI, don't rely on default survey habits. Set explicit rules in <a href=\"/guides/astra-personality\">Astra setup</a>, the <a href=\"/models/gpt-sol\">GPT Sol profile</a>, the <a href=\"/models/gpt-astra\">GPT Astra profile</a>, or <a href=\"/guides/codex-agents-md-guide\">AGENTS.md</a>.</p>"
     }
   ],
   "related": [

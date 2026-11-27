@@ -220,3 +220,7 @@ In ~/.claude/output-styles/ for every project, or .claude/output-styles/ inside 
 - [Tool: Free CLAUDE.md generator](https://agent-tune.com/tools/claude-md-generator)
 - [Library: All 43 tuning files](https://agent-tune.com/library/)
 - [Tests: Find your type — free MBTI test](https://agent-tune.com/tests/mbti)
+- [Model profile: Claude Opus — 5 checkpoints & tuning](https://agent-tune.com/models/claude-opus)
+- [Model profile: Claude Fable — 3 checkpoints & tuning](https://agent-tune.com/models/claude-fable)
+- [Model profile: Claude Sonnet — baseline & tuning](https://agent-tune.com/models/claude-sonnet)
+- [Model profile: Claude Haiku — baseline & tuning](https://agent-tune.com/models/claude-haiku)
